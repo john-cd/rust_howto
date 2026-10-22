@@ -87,12 +87,15 @@ fn median(data: &[i32]) -> Option<f32> {
         // elements. The two middle elements are at indices (size / 2) -
         // 1 and size / 2. Use the `select` function to find these
         // elements.
+        0 => None,
         even if even % 2 == 0 => {
             let fst_med = select(data, (even / 2) - 1);
             let snd_med = select(data, even / 2);
 
             match (fst_med, snd_med) {
-                (Some(fst), Some(snd)) => Some((fst + snd) as f32 / 2.0),
+                (Some(fst), Some(snd)) => {
+                    Some((i64::from(fst) + i64::from(snd)) as f32 / 2.0)
+                }
                 _ => None,
             }
         }
@@ -116,6 +119,8 @@ fn main() {
     let med = median(&data);
     println!("Median is {med:?}");
     assert_eq!(med, Some(5.5));
+    assert_eq!(median(&[]), None);
+    assert_eq!(median(&[i32::MAX, i32::MAX]), Some(i32::MAX as f32));
 }
 
 // ANCHOR_END: example
