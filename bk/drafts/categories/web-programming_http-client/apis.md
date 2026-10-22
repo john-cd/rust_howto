@@ -45,7 +45,7 @@ The example uses HTTP [`basic auth`][ietf~http-basic-auth]↗ in order to author
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![serde][c~serde~docs~badge]][c~serde~docs]{{hi:serde}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]
 
-Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fetches the next page of results from the remote server as it arrives at the end of each page.
+Wraps a paginated web API (the crates.io reverse dependencies endpoint) in a convenient Rust iterator. The iterator lazily fetches the next page of results from the remote server as it arrives at the end of each page. Dependent crate names are looked up through `version_id` in the `versions` array, as the `dependencies` entries only carry the name of the crate being depended upon.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/examples/apis/paginated.rs:example}}
@@ -55,7 +55,7 @@ Wraps a paginated web API in a convenient Rust iterator. The iterator lazily fet
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![hyper][c~hyper~docs~badge]][c~hyper~docs]{{hi:hyper}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]
 
-This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]↗{{hi:GitHub API - Rate limiting}}, as an example of how to handle remote server errors. This example checks for [`reqwest::StatusCode::FORBIDDEN`][c~reqwest::StatusCode::FORBIDDEN~docs]↗{{hi:reqwest::StatusCode::FORBIDDEN}} If the response exceeds the rate limit, the example waits and retries.
+This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]↗{{hi:GitHub API - Rate limiting}}, as an example of how to handle remote server errors. This example checks for [`reqwest::StatusCode::FORBIDDEN`][c~reqwest::StatusCode::FORBIDDEN~docs]↗{{hi:reqwest::StatusCode::FORBIDDEN}} or `429 Too Many Requests`. If the response exceeds the rate limit, it waits for `retry-after` seconds, or until `x-ratelimit-reset` when `x-ratelimit-remaining` is `0`, or at least one minute otherwise, then retries.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/examples/apis/rate_limited.rs:example}}
