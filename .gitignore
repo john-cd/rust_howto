@@ -159,3 +159,5 @@ rust-project.json
 /.worktrees/
 /build/
 /.sccache/
+# Local snapshot of registered worktrees and build-cache usage.
+WORKTREES.md
