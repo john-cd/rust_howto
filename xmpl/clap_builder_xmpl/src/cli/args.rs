@@ -82,11 +82,25 @@ pub(super) fn get_arg_verbose(matches: &ArgMatches) -> u8 {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::sync::Mutex;
+    use std::sync::MutexGuard;
+    use std::sync::PoisonError;
+
     use crate::cli::cli;
+
+    /// Tests run in parallel, but environment variables are process-wide.
+    /// Tests that set or depend on `TOOL_CONFIG_FILE` / `TOOL_VERBOSE` hold this lock.
+    static ENV_LOCK: Mutex<()> = Mutex::new(());
+
+    fn lock_env() -> MutexGuard<'static, ()> {
+        // A failed test poisons the lock; the guarded data is `()`, so ignore that.
+        ENV_LOCK.lock().unwrap_or_else(PoisonError::into_inner)
+    }
 
     /// Verify that the global argument "config" requires a value.
     #[test]
     fn test_arg_config_malformed() {
+        let _guard = lock_env();
         let m = cli().try_get_matches_from(vec!["prog", "--config"]); // no value provided.
         assert!(m.is_err());
     }
@@ -94,6 +108,7 @@ mod tests {
     /// Test the global argument "config".
     #[test]
     fn test_arg_config_short() {
+        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "-c", "config.toml"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
@@ -104,6 +119,7 @@ mod tests {
     /// Test the global argument "config", long form.
     #[test]
     fn test_arg_config_long() {
+        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "--config", "config.toml"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
@@ -114,6 +130,7 @@ mod tests {
     /// Test the global argument "config", alias form.
     #[test]
     fn test_arg_config_alias() {
+        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "--configuration", "config.toml"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
@@ -124,6 +141,7 @@ mod tests {
     /// Test passing the "config" argument via an enviroment variable.
     #[test]
     fn test_arg_config_env() {
+        let _guard = lock_env();
         let key = "TOOL_CONFIG_FILE";
         unsafe {
             std::env::set_var(key, "config.toml");
@@ -144,6 +162,7 @@ mod tests {
     /// e.g. after a subcommand.
     #[test]
     fn test_arg_config_global() {
+        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "open", "--config", "config.toml", "abc.csv"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
@@ -162,6 +181,7 @@ mod tests {
     /// Test the app-level "filepaths" argument.
     #[test]
     fn test_arg_filepaths_empty() {
+        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog"]);
         assert_eq!(get_arg_filepaths(&m), None);
     }
@@ -169,6 +189,7 @@ mod tests {
     /// Checks that several file paths are collected.
     #[test]
     fn test_arg_filepaths_multiple() {
+        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "a.csv", "b.csv"]);
         assert_eq!(
             get_arg_filepaths(&m),
@@ -179,6 +200,7 @@ mod tests {
     /// Checks that the verbosity is 0 by default.
     #[test]
     fn test_arg_verbose_none() {
+        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog"]);
         assert_eq!(get_arg_verbose(&m), 0);
     }
@@ -186,6 +208,7 @@ mod tests {
     /// Checks that repeated `-v` flags raise the verbosity.
     #[test]
     fn test_arg_verbose_multiple() {
+        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "-vvv"]);
         assert_eq!(get_arg_verbose(&m), 3);
 
@@ -196,6 +219,7 @@ mod tests {
     /// Checks that the verbosity can be set with an environment variable.
     #[test]
     fn test_arg_verbose_env() {
+        let _guard = lock_env();
         let key = "TOOL_VERBOSE";
         unsafe {
             std::env::set_var(key, "1");
@@ -209,4 +233,3 @@ mod tests {
         assert_eq!(get_arg_verbose(&m.unwrap()), 1);
     }
 }
-// [fix test](https://github.com/john-cd/rust_howto/issues/895)
