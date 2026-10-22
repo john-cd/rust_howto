@@ -37,6 +37,7 @@ pub fn remove_empty_lines(text: &str) -> (Vec<String>, String) {
 mod tests {
     use super::*;
 
+    /// Verifies that empty input produces no lines and an empty output string.
     #[test]
     fn test_remove_empty_lines_empty_input() {
         let (lines, result) = remove_empty_lines("");
@@ -44,6 +45,7 @@ mod tests {
         assert_eq!(result, "");
     }
 
+    /// Verifies that input containing only whitespace produces no output lines.
     #[test]
     fn test_remove_empty_lines_only_whitespace() {
         let (lines, result) = remove_empty_lines("   \n\t\n  \r\n ");
@@ -51,6 +53,7 @@ mod tests {
         assert_eq!(result, "");
     }
 
+    /// Verifies that non-empty input lines are preserved in order.
     #[test]
     fn test_remove_empty_lines_no_empty_lines() {
         let input = "line 1\nline 2\nline 3";
@@ -59,6 +62,7 @@ mod tests {
         assert_eq!(result, "line 1\nline 2\nline 3");
     }
 
+    /// Verifies that leading, trailing, and interspersed blank lines are removed.
     #[test]
     fn test_remove_empty_lines_leading_trailing_interspersed() {
         let input = "\n  \nHello\n\n\t\nWorld\n   \n";
@@ -67,6 +71,7 @@ mod tests {
         assert_eq!(result, "Hello\nWorld");
     }
 
+    /// Verifies that indentation and trailing spaces in non-empty lines are preserved.
     #[test]
     fn test_remove_empty_lines_preserves_indentation() {
         let input = "  indented line 1  \n\tindented line 2";
@@ -75,11 +80,49 @@ mod tests {
         assert_eq!(result, "  indented line 1  \n\tindented line 2");
     }
 
+    /// Verifies that CRLF line endings are normalized to LF in the output.
     #[test]
     fn test_remove_empty_lines_crlf() {
         let input = "line 1\r\n\r\nline 2\r\n   \r\nline 3";
         let (lines, result) = remove_empty_lines(input);
         assert_eq!(lines, vec!["line 1", "line 2", "line 3"]);
         assert_eq!(result, "line 1\nline 2\nline 3");
+    }
+
+    /// Verifies that a single line without a trailing newline is preserved.
+    #[test]
+    fn test_remove_empty_lines_single_line_no_newline() {
+        let input = "single line string";
+        let (lines, result) = remove_empty_lines(input);
+        assert_eq!(lines, vec!["single line string"]);
+        assert_eq!(result, "single line string");
+    }
+
+    /// Verifies that mixed LF and CRLF separators are normalized consistently.
+    #[test]
+    fn test_remove_empty_lines_mixed_line_endings() {
+        let input = "line 1\r\n\nline 2\r\n\r\n   \nline 3";
+        let (lines, result) = remove_empty_lines(input);
+        assert_eq!(lines, vec!["line 1", "line 2", "line 3"]);
+        assert_eq!(result, "line 1\nline 2\nline 3");
+    }
+
+    /// Verifies that Unicode whitespace-only lines are removed.
+    #[test]
+    fn test_remove_empty_lines_unicode_whitespace() {
+        // \u{00A0} is non-breaking space, \u{2003} is em space, \u{3000} is ideographic space
+        let input = "header\n\u{00A0}\n\u{2003}\nbody\n\u{3000}\nfooter";
+        let (lines, result) = remove_empty_lines(input);
+        assert_eq!(lines, vec!["header", "body", "footer"]);
+        assert_eq!(result, "header\nbody\nfooter");
+    }
+
+    /// Verifies that Unicode text remains unchanged while blank lines are removed.
+    #[test]
+    fn test_remove_empty_lines_unicode_content() {
+        let input = "🦀 Rust\n\n  \n🚀 Fast\n   \n✨ Safe";
+        let (lines, result) = remove_empty_lines(input);
+        assert_eq!(lines, vec!["🦀 Rust", "🚀 Fast", "✨ Safe"]);
+        assert_eq!(result, "🦀 Rust\n🚀 Fast\n✨ Safe");
     }
 }
