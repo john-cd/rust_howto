@@ -18,6 +18,7 @@ use notify::Watcher;
 use notify::event::Event;
 use notify::event::EventKind;
 
+/// An event handler that prints the file system events.
 struct EventPrinter;
 
 impl EventHandler for EventPrinter {
@@ -32,6 +33,7 @@ impl EventHandler for EventPrinter {
     }
 }
 
+/// Watches the current directory and prints the events received.
 fn main() -> Result<()> {
     // Initialize a file system watcher using the `notify` crate.
     // `recommended_watcher` automatically selects the best file system watcher

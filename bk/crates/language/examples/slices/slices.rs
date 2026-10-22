@@ -35,6 +35,7 @@ fn slice_from_vector() {
     println!("{mutable_slice:?}"); // Output: [1, 2, 10, 4, 5].
 }
 
+/// Creates slices from an array and from a vector.
 fn main() {
     slice_from_array();
     slice_from_vector();

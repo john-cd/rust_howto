@@ -9,6 +9,7 @@
 
 use std::collections::HashSet;
 
+/// Creates a `HashSet` and checks its elements.
 fn main() {
     // Create a new `HashSet`:
     let mut languages = HashSet::new();

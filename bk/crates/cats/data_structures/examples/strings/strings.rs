@@ -8,6 +8,7 @@
 
 // `String` is a growable, heap-allocated data structure that is
 // Unicode, not ASCII.
+/// Creates and mutates a `String`.
 fn string() {
     // Create an empty string:
     let mut s1 = String::new();
@@ -32,6 +33,7 @@ fn string() {
 
 // The `str` type, also called a 'string slice', is the most primitive string
 // type. It is usually seen in its borrowed form, `&str`.
+/// Creates string slices from a `String`.
 fn string_slices() {
     let my_string = String::from("Rust is awesome!");
 
@@ -76,6 +78,7 @@ fn string_literals() {
     println!("String from literal: '{string_from_literal}'");
 }
 
+/// Concatenates, formats and iterates over strings.
 fn common_operations() {
     let s1 = String::from("hello");
     let s2 = String::from(" Rust");
@@ -101,6 +104,7 @@ fn common_operations() {
     }
 }
 
+/// Runs all the string examples.
 fn main() {
     string();
     string_slices();

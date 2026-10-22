@@ -13,6 +13,8 @@ use toml_edit::DocumentMut;
 use toml_edit::Item;
 use toml_edit::value;
 
+/// Parses a TOML document, edits it while preserving its formatting, and prints
+/// it.
 fn main() -> anyhow::Result<()> {
     // Parse existing TOML, here a `Cargo.toml` file:
     let toml_content = r#"

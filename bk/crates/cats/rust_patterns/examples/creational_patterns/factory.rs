@@ -9,12 +9,16 @@
 // Define a common trait for all shapes.
 // This defines the common interface that all concrete shape types will
 // implement.
+/// A shape that can be drawn.
 trait Shape {
+    /// Draws the shape.
     fn draw(&self);
 }
 
 // A concrete implementation of the Shape trait.
+/// A circle.
 struct Circle {
+    /// The radius of the circle.
     radius: f64,
 }
 
@@ -25,7 +29,9 @@ impl Shape for Circle {
 }
 
 // Another concrete implementation.
+/// A square.
 struct Square {
+    /// The length of a side of the square.
     side: f64,
 }
 
@@ -36,16 +42,22 @@ impl Shape for Square {
 }
 
 // A enum that represents the types of shapes we can create.
+/// The kinds of shapes that the factory can create.
 enum ShapeType {
+    /// A circle.
     Circle,
+    /// A square.
     Square,
 }
 
 // The factory.
+/// A factory of shapes.
 struct ShapeFactory;
 
 impl ShapeFactory {
     // The logic for creating different shape objects is centralized.
+    /// Creates a shape of the given type and size: the radius of a circle or
+    /// the side of a square.
     fn create_shape(shape_type: ShapeType, size: f64) -> Box<dyn Shape> {
         match shape_type {
             ShapeType::Circle => Box::new(Circle { radius: size }),
@@ -54,6 +66,7 @@ impl ShapeFactory {
     }
 }
 
+/// Creates shapes with the factory and draws them.
 fn main() {
     // Using the factory to create different shapes.
     let circle = ShapeFactory::create_shape(ShapeType::Circle, 5.0);

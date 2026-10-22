@@ -8,6 +8,7 @@ use xmlparser::ElementEnd;
 use xmlparser::Token;
 use xmlparser::Tokenizer;
 
+/// Tokenizes an XML string and prints each token.
 fn main() {
     let xml = r#"<library><book id="b1">Rust</book></library>"#;
 

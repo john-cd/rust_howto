@@ -9,12 +9,17 @@ use serde::Deserialize;
 /// Represents a record from the CSV data.
 #[derive(Deserialize)]
 struct Record {
+    /// The year the car was built.
     year: u16,
+    /// The manufacturer.
     make: String,
+    /// The model.
     model: String,
+    /// A description of the car.
     description: String,
 }
 
+/// Deserializes CSV records into a struct and prints them.
 fn main() -> Result<(), csv::Error> {
     let csv = "year,make,model,description
 1948,Porsche,356,Luxury sports car

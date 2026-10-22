@@ -34,6 +34,7 @@ pub struct Cli {
     port: u16,
 
     // Named argument example: the path to the file to look into:
+    /// Named argument: the path to the file to look into.
     #[arg(short, long)]
     path: Option<PathBuf>,
 
@@ -69,6 +70,7 @@ pub enum Commands {
         #[arg(short, long)]
         all: bool,
 
+        /// The files to read.
         #[arg(required = true)]
         file: Vec<PathBuf>,
     },

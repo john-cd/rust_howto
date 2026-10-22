@@ -16,6 +16,8 @@ use std::time::Duration;
 
 use moka::sync::Cache;
 
+/// Builds a `moka` cache with a size limit and an idle timeout, then inserts
+/// and reads entries.
 fn main() {
     // Create a cache with a maximum of 100 entries.
     // Entries will be evicted after 10 minutes of not being accessed.

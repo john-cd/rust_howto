@@ -24,8 +24,10 @@ use frunk::hlist;
 use frunk::hlist_pat;
 use frunk::monoid::combine_all;
 
+/// A heterogeneous list of three elements.
 type Sculpted = frunk::HList![f32, i32, &'static str];
 
+/// Demonstrates heterogeneous lists, labelled generics and monoids.
 fn main() {
     // -----------------------------------------------------------------------
     // HList: a statically typed heterogeneous list.

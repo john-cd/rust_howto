@@ -24,6 +24,7 @@
 use pest::Parser;
 use pest_derive::Parser;
 
+/// A parser for arithmetic expressions, generated from a `pest` grammar.
 #[derive(Parser)]
 #[grammar = "../examples/pest/grammar.pest"] // Path relative to `src`
 struct ArithmeticParser;
@@ -38,6 +39,7 @@ struct ArithmeticParser;
 //     number,
 // }
 
+/// Parses an arithmetic expression and prints the resulting pairs.
 fn main() {
     let input = "3 + 5 * 2 - 8 / 4";
     match ArithmeticParser::parse(Rule::expression, input) {

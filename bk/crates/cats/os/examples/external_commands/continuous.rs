@@ -14,6 +14,7 @@ use std::io::Error;
 use std::process::Command;
 use std::process::Stdio;
 
+/// Runs `journalctl` and prints its output line by line as it is produced.
 fn main() -> Result<(), Error> {
     // NOTE: `systemd` should be installed for this example to work.
     let stdout = Command::new("journalctl")

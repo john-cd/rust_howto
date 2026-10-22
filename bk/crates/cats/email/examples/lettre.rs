@@ -16,6 +16,7 @@ use lettre::Transport;
 use lettre::message::header::ContentType;
 use lettre::transport::smtp::authentication::Credentials;
 
+/// Builds an email and sends it through an SMTP server.
 fn main() -> anyhow::Result<()> {
     let smtp_server = std::env::var("SMTP_SERVER")
         .unwrap_or_else(|_| "smtp.gmail.com".to_string());

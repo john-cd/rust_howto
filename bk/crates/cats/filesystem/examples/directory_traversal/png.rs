@@ -8,6 +8,7 @@
 use anyhow::Result;
 use glob::glob;
 
+/// Prints the paths of all the PNG files in the current directory tree.
 fn main() -> Result<()> {
     // Find all PNG files in the current directory and its subdirectories.
     for entry in glob("**/*.png")? {

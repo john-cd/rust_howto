@@ -11,6 +11,7 @@ use std::num::NonZeroUsize;
 
 use lru::LruCache;
 
+/// Fills an LRU cache beyond its capacity and shows which entries are evicted.
 fn main() {
     // Create an LRU cache with a capacity of 3:
     let mut cache = LruCache::new(NonZeroUsize::new(3).unwrap());

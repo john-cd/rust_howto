@@ -8,6 +8,7 @@ use std::fs;
 
 use rusqlite::Connection;
 
+/// Creates a SQLite database and a table.
 fn main() -> anyhow::Result<()> {
     // Create the "temp" directory if it doesn't exist.
     if !fs::exists("temp")? {

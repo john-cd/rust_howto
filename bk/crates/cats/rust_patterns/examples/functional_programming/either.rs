@@ -11,6 +11,7 @@
 
 use either::Either;
 
+/// Creates and matches `Either` values.
 fn simple() {
     let left: Either<i32, &str> = Either::Left(42);
     let right: Either<i32, &str> = Either::Right("hello");
@@ -27,6 +28,8 @@ fn simple() {
 }
 
 // Function that can return two different types.
+/// Returns the double of `value` on the right, or an error message on the left
+/// if `value` is not positive.
 fn process_positive_integer(value: i32) -> Either<String, i32> {
     if value > 0 {
         Either::Right(value * 2)
@@ -35,6 +38,7 @@ fn process_positive_integer(value: i32) -> Either<String, i32> {
     }
 }
 
+/// Runs the `Either` examples and prints their results.
 fn main() {
     simple();
 

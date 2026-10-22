@@ -15,13 +15,17 @@ use quick_xml::events::BytesText;
 use quick_xml::events::Event;
 use serde::Deserialize;
 
+/// A person, deserialized from XML.
 #[derive(Debug, Deserialize, PartialEq)]
 #[serde(rename = "person")]
 struct Person {
+    /// The name of the person.
     name: String,
+    /// The age of the person.
     age: u8,
 }
 
+/// Reads XML events, deserializes a struct from XML, and writes XML.
 fn main() -> anyhow::Result<()> {
     let xml = r#"<person><name>John Doe</name><age>32</age></person>"#;
 

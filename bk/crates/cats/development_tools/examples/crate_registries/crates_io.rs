@@ -65,6 +65,7 @@ fn search_for_crates(search: impl Into<String>) -> Result<CratesPage> {
     Ok(crates)
 }
 
+/// Searches `crates.io` for crates and displays information about a crate.
 #[tracing::instrument(err)]
 fn main() -> Result<()> {
     // Initialize tracing subscriber

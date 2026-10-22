@@ -14,6 +14,7 @@ fn main() {
     demo_arrays();
 }
 
+/// Creates and destructures tuples.
 fn demo_tuples() {
     println!("=== TUPLES ===");
 
@@ -66,6 +67,7 @@ fn demo_tuples() {
     println!("Swapped tuple: {swapped:?}");
 }
 
+/// Creates and indexes arrays.
 fn demo_arrays() {
     println!("=== ARRAYS ===");
 

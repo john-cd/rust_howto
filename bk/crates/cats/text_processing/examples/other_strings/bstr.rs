@@ -27,6 +27,7 @@ use bstr::ByteSlice;
 // pushing, extending, and other operations on byte vectors.
 use bstr::ByteVec;
 
+/// Creates and manipulates byte strings, which may not be valid UTF-8.
 fn main() {
     // Basic usage:
     let _bstring = BString::from("Hello, world!");

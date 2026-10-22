@@ -11,6 +11,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Loads a configuration from a custom environment source, as in a unit test.
 fn main() -> anyhow::Result<(), ::config::ConfigError> {
     // The `Environment::source` method can be used when you want to test
     // your code, without the need to change the actual system

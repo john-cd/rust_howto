@@ -18,6 +18,7 @@ fn return_a_string() -> String {
     "This will be printed.".to_string()
 }
 
+/// Prints the string returned by a documented function.
 fn main() {
     println!("{}", return_a_string());
 }

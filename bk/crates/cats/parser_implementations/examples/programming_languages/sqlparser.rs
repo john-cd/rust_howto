@@ -19,6 +19,7 @@ use sqlparser::ast::Statement;
 use sqlparser::dialect::GenericDialect;
 use sqlparser::parser::Parser;
 
+/// Parses an SQL statement and prints the syntax tree.
 fn main() -> anyhow::Result<()> {
     let sql = "SELECT * FROM users WHERE age > 18";
 

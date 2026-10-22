@@ -11,6 +11,7 @@ use thiserror::Error;
 /// A custom error type that wraps an underlying `std::io::Error`.
 #[derive(Error, Debug)]
 pub struct MyError {
+    /// A message that describes the error.
     msg: String,
 
     // The `Error` trait's `source()` method is implemented to return whichever
@@ -19,6 +20,7 @@ pub struct MyError {
     // error. `#[from]` implies `#[source]`. Any error type that implements
     // `std::error::Error` or dereferences to `dyn std::error::Error` will work
     // as a source.
+    /// The underlying I/O error.
     #[source]
     source: std::io::Error,
     // Automatically detected to implement `provide()`:
@@ -45,6 +47,7 @@ fn example() -> Result<(), Box<dyn std::error::Error>> {
     }))
 }
 
+/// Calls a function that fails and prints the outcome.
 fn main() {
     match example() {
         Ok(_) => {

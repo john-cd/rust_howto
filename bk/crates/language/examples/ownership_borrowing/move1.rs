@@ -6,6 +6,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Moves a `String` from one variable to another.
 fn main() {
     // The variable `s1` owns the string "hello".
     let s1 = String::from("hello");

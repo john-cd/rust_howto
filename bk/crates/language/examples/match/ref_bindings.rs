@@ -8,6 +8,8 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Shows that matching moves or copies the bound value, and how to bind by
+/// reference.
 fn main() {
     // A sample tuple struct with an inner field that is not `Copy`:
     #[derive(Debug)]

@@ -8,6 +8,7 @@ use std::io;
 
 use anyhow::Result;
 
+/// Writes records to the standard output as CSV.
 fn main() -> Result<()> {
     let mut wtr = csv::Writer::from_writer(io::stdout());
 

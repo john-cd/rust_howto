@@ -11,6 +11,7 @@ use opentelemetry::trace::Span;
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::trace::Tracer;
 
+/// Creates a span and logs an event.
 #[cfg(feature = "opentelemetry")]
 fn main() {
     let _ = tracing_subscriber::fmt().with_target(false).try_init();
@@ -23,6 +24,7 @@ fn main() {
     println!("Created an OpenTelemetry span named `example-request`.");
 }
 
+/// Prints a message when the `opentelemetry` feature is not enabled.
 #[cfg(not(feature = "opentelemetry"))]
 fn main() {
     println!("Enable the `opentelemetry` feature to run this example.");

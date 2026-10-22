@@ -20,23 +20,35 @@ use std::io::prelude::*;
 use serde::Deserialize;
 use serde::Serialize;
 
+/// A person, serialized to and deserialized from YAML.
 #[derive(Debug, Serialize, Deserialize)]
 struct Person {
+    /// The name of the person.
     name: String,
+    /// The age of the person.
     age: u8,
+    /// The email addresses of the person.
     emails: Vec<String>,
+    /// The address of the person.
     address: Address,
+    /// The skills of the person.
     skills: Vec<String>,
 }
 
+/// A postal address.
 #[derive(Debug, Serialize, Deserialize)]
 struct Address {
+    /// The street.
     street: String,
+    /// The city.
     city: String,
+    /// The country.
     country: String,
+    /// The postal code.
     postal_code: String,
 }
 
+/// Serializes a struct to YAML and deserializes it back.
 fn main() -> anyhow::Result<()> {
     // Create a struct instance.
     let person = Person {

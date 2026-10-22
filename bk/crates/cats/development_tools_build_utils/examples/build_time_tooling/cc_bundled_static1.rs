@@ -13,6 +13,8 @@ use std::os::raw::c_char;
 
 use anyhow::Result;
 
+/// Prints the prompt `s`, reads a line from the standard input and returns it
+/// trimmed.
 fn prompt(s: &str) -> Result<String> {
     use std::io::Write;
     print!("{s}");

@@ -5,6 +5,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Opens a file with the default application.
 fn main() {
     //  The `that` function attempts to open the specified path with the
     // appropriate application. If an error occurs during the opening

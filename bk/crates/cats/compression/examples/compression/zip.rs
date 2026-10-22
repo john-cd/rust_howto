@@ -17,6 +17,7 @@ use std::path::Path;
 use zip::write::SimpleFileOptions;
 use zip::write::ZipWriter;
 
+/// Creates a zip archive with two files and an empty directory.
 fn main() -> zip::result::ZipResult<()> {
     // Create a new zip archive file:
     let path = Path::new("temp/my_archive.zip");

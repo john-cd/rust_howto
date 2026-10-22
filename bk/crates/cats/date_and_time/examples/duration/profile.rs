@@ -13,10 +13,12 @@ use std::thread;
 use std::time::Duration;
 use std::time::Instant;
 
+/// Sleeps for one second to simulate an expensive computation.
 fn expensive_function() {
     thread::sleep(Duration::from_secs(1));
 }
 
+/// Measures the time spent in [`expensive_function`].
 fn main() {
     let start = Instant::now();
     expensive_function();

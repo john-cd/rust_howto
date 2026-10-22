@@ -6,9 +6,11 @@
 
 use riker::actors::*;
 
+/// A message that the actor receives.
 #[derive(Clone, Debug)]
 struct Ping;
 
+/// An actor that handles ping and pong messages.
 #[actor(PingPong)]
 struct PingPongActor;
 
@@ -28,6 +30,7 @@ impl Actor for PingPongActor {
     }
 }
 
+/// Starts an actor system, creates an actor and sends it a message.
 fn main() {
     // Build and start the actor system.
     let sys = SystemBuilder::new().name("ping-pong").create().unwrap();

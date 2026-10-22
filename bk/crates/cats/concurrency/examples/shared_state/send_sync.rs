@@ -16,6 +16,7 @@ use std::sync::Arc;
 use std::sync::Mutex;
 use std::thread;
 
+/// Increments a counter shared by several threads with `Arc` and `Mutex`.
 fn main() {
     let data = Arc::new(Mutex::new(0));
 

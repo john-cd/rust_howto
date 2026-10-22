@@ -25,6 +25,7 @@ use swc_ecma_parser::Parser;
 use swc_ecma_parser::Syntax;
 use swc_ecma_parser::lexer::Lexer;
 
+/// Parses a JavaScript program and prints the resulting syntax tree.
 fn main() {
     let cm: Lrc<swc_common::SourceMap> = Default::default();
     let fm = cm.new_source_file(

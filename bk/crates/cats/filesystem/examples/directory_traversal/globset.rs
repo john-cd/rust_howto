@@ -11,6 +11,7 @@ use globset::Glob;
 use globset::GlobSet;
 use globset::GlobSetBuilder;
 
+/// Prints the files of a directory that match a set of glob patterns.
 fn main() -> anyhow::Result<()> {
     // Create a glob set builder and add patterns.
     let mut builder = GlobSetBuilder::new();

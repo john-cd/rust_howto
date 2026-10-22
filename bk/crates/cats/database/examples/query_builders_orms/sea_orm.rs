@@ -16,24 +16,31 @@ use sea_orm::EntityTrait;
 use sea_orm::QueryFilter;
 use sea_orm::QueryTrait;
 
+/// The entity of the `posts` table.
 mod post {
     use sea_orm::entity::prelude::*;
 
+    /// A row of the `posts` table.
     #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
     #[sea_orm(table_name = "posts")]
     pub struct Model {
+        /// The identifier of the post.
         #[sea_orm(primary_key)]
         pub id: i32,
+        /// The title of the post.
         pub title: String,
+        /// The content of the post.
         pub content: String,
     }
 
+    /// The relations of the entity, which has none.
     #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
     pub enum Relation {}
 
     impl ActiveModelBehavior for ActiveModel {}
 }
 
+/// Builds insert and select queries and prints the SQL.
 fn main() -> Result<(), DbErr> {
     let insert_sql = post::Entity::insert(post::ActiveModel {
         id: NotSet,

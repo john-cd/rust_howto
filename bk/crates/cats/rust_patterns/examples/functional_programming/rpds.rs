@@ -11,6 +11,7 @@
 use rpds::HashTrieMap;
 use rpds::Vector;
 
+/// Uses persistent vectors, maps and sets, which are never modified in place.
 fn main() {
     // Persistent `Vector` with immutable updates:
     let v1: Vector<i32> = Vector::new().push_back(1).push_back(2).push_back(3);

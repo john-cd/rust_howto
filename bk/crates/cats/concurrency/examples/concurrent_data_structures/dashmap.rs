@@ -14,6 +14,7 @@ use std::thread;
 
 use dashmap::DashMap;
 
+/// Inserts, reads and modifies the entries of a `DashMap` from several threads.
 fn main() {
     // Create a shared `DashMap` with an `Arc`.
     let map: Arc<DashMap<&str, i32, _>> = Arc::new(DashMap::new());

@@ -57,6 +57,7 @@ impl Greeter for MyGreeter {
     }
 }
 
+/// Starts the gRPC server.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let addr = "[::1]:50051".parse().unwrap();

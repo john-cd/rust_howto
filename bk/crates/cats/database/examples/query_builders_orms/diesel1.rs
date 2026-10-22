@@ -19,15 +19,20 @@ table! {
     }
 }
 
+/// A row of the `users` table.
 #[derive(Debug, Insertable, Queryable, Selectable)]
 #[diesel(table_name = users)]
 #[diesel(check_for_backend(Sqlite))]
 struct User {
+    /// The identifier.
     id: i32,
+    /// The name.
     name: String,
+    /// The email address.
     email: String,
 }
 
+/// Builds insert and select queries and prints the SQL.
 fn main() {
     let new_user = User {
         id: 1,

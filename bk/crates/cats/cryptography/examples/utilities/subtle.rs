@@ -14,6 +14,7 @@ use subtle::CtOption;
 // constant-time cryptographic code, which is crucial for preventing
 // timing attacks.
 
+/// Compares and selects values in constant time with `subtle`.
 fn main() {
     // Example 1: Constant-time equality:
     let a = 10u8;

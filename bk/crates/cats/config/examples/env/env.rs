@@ -27,6 +27,7 @@ fn env_extract() -> String {
     optional_value.unwrap_or("no shell set").to_string()
 }
 
+/// Prints the content of a standard environment variable.
 fn main() {
     println!("SHELL: {}", env_extract());
 }

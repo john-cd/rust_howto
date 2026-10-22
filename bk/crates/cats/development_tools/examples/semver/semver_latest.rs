@@ -37,6 +37,7 @@ where
         .max())
 }
 
+/// Finds the highest version that satisfies a version requirement.
 #[tracing::instrument(err)]
 fn main() -> Result<()> {
     // Initialize tracing subscriber

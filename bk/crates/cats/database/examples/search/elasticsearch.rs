@@ -22,10 +22,13 @@ use serde_json::json;
 /// Represents a document that can be indexed in Elasticsearch.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
+    /// The identifier of the document.
     id: i32,
+    /// The title of the document.
     title: String,
 }
 
+/// Indexes a document in Elasticsearch, then searches for it.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Create an asynchronous Elasticsearch client:

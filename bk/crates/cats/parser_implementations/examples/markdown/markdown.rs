@@ -16,6 +16,7 @@
 
 use markdown::to_html;
 
+/// Converts a Markdown string to HTML and prints it.
 fn main() {
     let markdown_text = r#"
 # Hello, Markdown!

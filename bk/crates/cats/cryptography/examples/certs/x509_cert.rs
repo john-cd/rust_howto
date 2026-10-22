@@ -15,6 +15,8 @@ use x509_cert::name::Name;
 use x509_cert::serial_number::SerialNumber;
 use x509_cert::time::Validity;
 
+/// Builds the subject, serial number and validity of an X.509 certificate and
+/// prints their DER lengths.
 fn main() -> anyhow::Result<()> {
     let subject = Name::from_str("CN=example.com,O=Rust HowTo,C=US")?;
     let serial_number = SerialNumber::from(42u32);

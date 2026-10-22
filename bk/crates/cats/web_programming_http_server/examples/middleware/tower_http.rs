@@ -26,6 +26,7 @@ use tower_http::trace::TraceLayer;
 
 // Our request handler. This is where we would implement the
 // application logic for responding to HTTP requests...
+/// Returns an empty response with a custom header.
 async fn handler(
     _request: Request<Full<Bytes>>,
 ) -> Result<Response<Full<Bytes>>, BoxError> {
@@ -40,6 +41,7 @@ async fn handler(
 struct DatabaseConnectionPool;
 
 impl DatabaseConnectionPool {
+    /// Creates a pool.
     fn new() -> Self {
         DatabaseConnectionPool
     }
@@ -48,9 +50,12 @@ impl DatabaseConnectionPool {
 /// Shared state across all request handlers - in this case, a pool of database
 /// connections.
 struct State {
+    /// The pool of database connections.
     pool: DatabaseConnectionPool,
 }
 
+/// Wraps a request handler with a stack of `tower-http` middleware and sends it
+/// a request.
 #[tokio::main]
 async fn main() {
     // Construct the shared state.

@@ -64,6 +64,7 @@ impl Screen {
     }
 }
 
+/// Creates a screen and runs it.
 fn main() {
     let s = Screen::new();
     s.run();

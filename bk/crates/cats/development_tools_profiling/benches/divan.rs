@@ -27,6 +27,7 @@ fn compute_fibonacci(n: u64) -> u64 {
     }
 }
 
+/// The benchmarks.
 mod bench {
     use super::*;
 

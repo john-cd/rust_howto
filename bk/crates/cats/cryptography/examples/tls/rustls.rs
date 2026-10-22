@@ -13,6 +13,7 @@ use rustls::ClientConfig;
 use rustls::RootCertStore;
 use rustls::crypto::aws_lc_rs;
 
+/// Builds a client configuration and an async connector, then prints a message.
 fn main() -> anyhow::Result<()> {
     let root_store = RootCertStore::empty();
     let config = ClientConfig::builder_with_provider(Arc::new(

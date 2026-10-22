@@ -9,6 +9,7 @@ use std::str;
 use anyhow::Result;
 use base64::prelude::*;
 
+/// Encodes bytes as Base64, then decodes them.
 fn main() -> Result<()> {
     let hello = b"hello rustaceans";
     let encoded: String = BASE64_STANDARD.encode(hello);

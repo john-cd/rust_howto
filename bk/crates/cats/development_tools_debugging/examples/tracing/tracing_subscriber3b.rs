@@ -18,9 +18,13 @@ use tracing_subscriber::prelude::*;
 use tracing_subscriber::reload;
 use tracing_subscriber::reload::Handle;
 
+/// Configuration of the logging outputs.
 struct Config {
+    /// Whether to log to a file.
     enable_log_file: bool,
+    /// Whether to log to the standard output.
     enable_stdout: bool,
+    /// Whether to log to the standard error.
     enable_stderr: bool,
 }
 

@@ -9,6 +9,7 @@ use std::env;
 
 use which::which;
 
+/// Looks up the location of executables in the `PATH`.
 fn main() {
     // Print the current PATH environment variable.
     println!("PATH = {:?}", env::var_os("PATH"));

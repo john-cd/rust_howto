@@ -13,8 +13,11 @@ use serde_json::Value;
 /// Represents a user with a name, age, and a list of phone numbers.
 #[derive(Deserialize, Serialize, Debug)]
 struct User {
+    /// The name of the user.
     name: String,
+    /// The age of the user.
     age: u8,
+    /// The phone numbers of the user.
     phones: Vec<String>,
 }
 

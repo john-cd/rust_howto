@@ -5,6 +5,7 @@
 #![allow(unused)]
 
 // ANCHOR: example
+/// Returns the sum of the expressions passed as arguments.
 macro_rules! sum {
     // `$x:expr` matches an expression.
     // `$($x:expr),*` matches zero or more occurrences of `$x:expr` separated by commas.

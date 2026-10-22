@@ -6,6 +6,7 @@
 
 use std::time::Duration;
 
+/// Parses and formats durations and timestamps in a human-readable form.
 fn main() -> anyhow::Result<()> {
     // Parse a duration from a human-readable string.
     let human_text = "2h 30m 15s";

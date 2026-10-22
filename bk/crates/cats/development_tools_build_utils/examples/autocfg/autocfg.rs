@@ -11,6 +11,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Checks for compiler features and emits the matching `cfg` flags.
 #[tracing::instrument]
 fn main() {
     // Initialize tracing subscriber

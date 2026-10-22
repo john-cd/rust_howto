@@ -11,6 +11,7 @@ use pem_rfc7468::LineEnding;
 use pem_rfc7468::decode_vec;
 use pem_rfc7468::encode_string;
 
+/// Encodes DER data as PEM, then decodes it back.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let der_data = vec![0x30, 0x03, 0x02, 0x01, 0x2a];
     let label = "TEST DATA";

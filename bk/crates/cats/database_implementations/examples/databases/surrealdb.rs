@@ -19,10 +19,13 @@ use surrealdb::types::SurrealValue;
 // use surrealdb::engine::local::RocksDb;
 
 // The document to store in the database.
+/// A person, stored in the database.
 #[derive(Debug, Serialize, Deserialize, SurrealValue)]
 #[surreal(crate = "surrealdb::types")]
 struct Person {
+    /// The name of the person.
     name: String, // or: Cow<'static, str>
+    /// The age of the person.
     age: u16,
 }
 

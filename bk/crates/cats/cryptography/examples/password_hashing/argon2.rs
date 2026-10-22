@@ -12,6 +12,7 @@ use argon2::password_hash::PasswordVerifier;
 use argon2::password_hash::SaltString;
 use argon2::password_hash::rand_core::OsRng;
 
+/// Hashes a password with Argon2, then verifies it and derives a key.
 fn main() -> Result<(), Error> {
     let password_to_hash = b"super_secret_password"; // Bad password; don't actually use!
 

@@ -17,11 +17,15 @@ use serde::Serialize;
 /// using bincode.
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 struct MyData {
+    /// The name.
     name: String,
+    /// The age in years.
     age: u32,
+    /// Whether the data is active.
     is_active: bool,
 }
 
+/// Encodes a struct with `bincode`, then decodes it.
 fn main() -> anyhow::Result<()> {
     let data = MyData {
         name: "Alice".to_string(),

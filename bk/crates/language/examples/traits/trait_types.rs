@@ -28,7 +28,9 @@ impl Tr for MyEnum {}
 /// A union.
 #[repr(C)]
 union MyUnion {
+    /// A 32-bit unsigned integer.
     f1: u32,
+    /// A 32-bit float, which shares its memory with `f1`.
     f2: f32,
 }
 

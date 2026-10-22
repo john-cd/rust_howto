@@ -9,19 +9,27 @@ use std::collections::HashMap;
 use serde::Deserialize;
 use toml::de::Error;
 
+/// The configuration.
 #[derive(Deserialize, Debug)]
 struct Config {
+    /// The package settings.
     package: Package,
+    /// The dependencies, as a map from names to versions.
     dependencies: HashMap<String, String>,
 }
 
+/// The settings of a package.
 #[derive(Deserialize, Debug)]
 struct Package {
+    /// The name of the package.
     name: String,
+    /// The version of the package.
     version: String,
+    /// The authors of the package.
     authors: Vec<String>,
 }
 
+/// Deserializes TOML into a struct and checks its content.
 fn main() -> Result<(), Error> {
     let toml_content = r#"
           [package]

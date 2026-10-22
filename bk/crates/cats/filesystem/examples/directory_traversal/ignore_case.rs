@@ -8,6 +8,7 @@ use anyhow::Result;
 use glob::MatchOptions;
 use glob::glob_with;
 
+/// Prints the paths that match a glob pattern, ignoring case.
 fn main() -> Result<()> {
     let options = MatchOptions {
         case_sensitive: false,

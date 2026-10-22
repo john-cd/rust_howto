@@ -16,13 +16,18 @@
 
 use sqlx::SqlitePool;
 
+/// A row of the `users` table.
 #[derive(sqlx::FromRow, Debug, PartialEq, Eq)] // Derive FromRow to map database rows to this struct
 struct User {
+    /// The identifier.
     id: i32,
+    /// The name.
     name: String,
+    /// The email address.
     email: String,
 }
 
+/// Creates an in-memory database, inserts users and queries them.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Create a connection pool:

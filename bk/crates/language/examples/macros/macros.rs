@@ -36,6 +36,7 @@ fn examples() {
 
 // 4. Function-like macros can be used in a type alias.
 // Let's first write a macro-by-example that defines a tuple type:
+/// Defines a tuple type of the two given types.
 macro_rules! Tuple {
     { $A:ty, $B:ty } => { ($A, $B) };
 }
@@ -57,6 +58,7 @@ fn use_thread_local() {
 
 // 6. They can be used as an associated item (here, a `const`).
 // This macro creates a constant of a given type and value:
+/// Defines a constant `CONST` of the given type and value.
 macro_rules! const_maker {
     ($t:ty, $v:tt) => {
         const CONST: $t = $v;
@@ -75,6 +77,7 @@ trait T {
 // then the inner macro `println` is expanded.
 //
 // This macro calls the `println!` macro:
+/// Expands to a call to the `println!` macro.
 macro_rules! _example {
     () => {
         println!("Macro call in a macro!")

@@ -14,6 +14,7 @@ use tantivy::schema::Schema;
 use tantivy::schema::TEXT;
 use tantivy::schema::document::Document;
 
+/// Creates an in-memory index, adds documents to it and searches it.
 fn main() -> tantivy::Result<()> {
     let mut schema_builder = Schema::builder();
     let title = schema_builder.add_text_field("title", TEXT | STORED);

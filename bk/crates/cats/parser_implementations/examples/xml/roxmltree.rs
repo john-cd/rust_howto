@@ -16,6 +16,7 @@
 
 use roxmltree::Document;
 
+/// Parses an XML document and prints its elements.
 fn main() -> anyhow::Result<()> {
     let xml = r#"<?xml version="1.0" encoding="UTF-8"?><library><book id="1"><title>The Rust Programming Language</title><author>Steve Klabnik</author><author>Carol Nichols</author><year>2018</year><categories><category>Programming</category><category>Rust</category></categories></book></library>"#;
 

@@ -42,6 +42,7 @@ use axum::routing::get;
 use ngrok::config::ForwarderBuilder;
 use url::Url;
 
+/// Serves a web app and exposes it with an `ngrok` tunnel.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Create an Axum app.

@@ -20,6 +20,7 @@
 use slog::Drain;
 use slog::o;
 
+/// Builds an asynchronous terminal logger and logs messages with it.
 fn main() {
     // Create a terminal decorator.
     let decorator = slog_term::TermDecorator::new().build();

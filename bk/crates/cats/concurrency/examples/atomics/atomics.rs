@@ -13,8 +13,11 @@ use std::sync::atomic::Ordering;
 
 // Declare a static atomic counter.
 // Atomic variables are safe to share between threads (they implement `Sync`).
+/// Counts the number of threads, shared by all threads.
 static GLOBAL_THREAD_COUNT: AtomicUsize = AtomicUsize::new(0);
 
+/// Spawns threads that increment an atomic counter, then prints its final
+/// value.
 fn main() {
     // `fetch_add` atomically increments the counter and returns the previous
     // value.

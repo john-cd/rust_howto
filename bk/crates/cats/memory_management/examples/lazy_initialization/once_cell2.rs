@@ -20,6 +20,7 @@ static GLOBAL_DATA: Lazy<Mutex<HashMap<i32, String>>> = Lazy::new(|| {
     Mutex::new(m)
 });
 
+/// Prints the lazily initialized global data.
 fn main() {
     println!("{:?}", GLOBAL_DATA.lock().unwrap());
 }

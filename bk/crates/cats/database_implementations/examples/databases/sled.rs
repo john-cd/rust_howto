@@ -8,6 +8,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Opens a `sled` database, then inserts, reads and removes values.
 fn main() -> anyhow::Result<()> {
     // Open a sled database.
     // A directory will be created if it does not exist:

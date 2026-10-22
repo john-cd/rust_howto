@@ -27,6 +27,7 @@ use std::sync::atomic::Ordering;
 use seize::Collector;
 use seize::Guard;
 
+/// Retires a shared object and reclaims it once no thread can access it.
 fn main() {
     // A `Collector` manages the access and retirement of concurrent objects.
     // It is typically stored alongside the data structure it protects.

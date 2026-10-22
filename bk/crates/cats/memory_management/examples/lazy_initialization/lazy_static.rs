@@ -36,6 +36,7 @@ lazy_static! {
     static ref COUNTER: Mutex<i32> = Mutex::new(0);
 }
 
+/// Reads values from a lazily initialized global map.
 fn main() -> anyhow::Result<()> {
     // Accessing the CONFIG.
     println!(

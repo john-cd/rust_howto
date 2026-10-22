@@ -10,6 +10,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Application settings, loaded once and shared.
 mod settings {
     use std::sync::OnceLock;
 
@@ -18,6 +19,7 @@ mod settings {
     use serde::Deserialize;
 
     // Centralized access point to the configuration.
+    /// Returns the configuration, which is loaded on first use.
     fn config() -> &'static Config {
         // The configuration is stored in a `static`.
         // `OnceLock` can be written to only once and is thread-safe.
@@ -43,6 +45,7 @@ mod settings {
     }
 }
 
+/// Sets an environment variable, then reads the configuration.
 fn main() -> anyhow::Result<()> {
     // Set an environment variable for testing.
     unsafe {

@@ -20,6 +20,7 @@ use heck::ToPascalCase;
 use heck::ToSnakeCase;
 use heck::ToTitleCase;
 
+/// Converts a string to several cases.
 fn main() {
     let input = "hello_world example-string";
 

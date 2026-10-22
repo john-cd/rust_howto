@@ -14,6 +14,8 @@ use anyhow::Result;
 use lazy_static::lazy_static;
 use regex::Regex;
 
+/// Returns the unique internal and external links found in the wiki markup
+/// `content`.
 fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
     lazy_static! {
         static ref WIKI_REGEX: Regex = Regex::new(
@@ -38,6 +40,7 @@ fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
     links
 }
 
+/// Downloads a Wikipedia article and prints the unique links it contains.
 #[tokio::main]
 async fn main() -> Result<()> {
     let content = reqwest::get(

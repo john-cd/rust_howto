@@ -9,11 +9,14 @@
 // needing to use references or mutable references.
 use std::cell::Cell;
 
+/// A struct with a field that can be modified through a shared reference.
 struct MyStruct<T> {
+    /// The value, which can be replaced with a shared reference.
     value: Cell<T>,
 }
 
 impl<T> MyStruct<T> {
+    /// Creates a struct that holds `value`.
     fn new(value: T) -> Self {
         MyStruct {
             value: Cell::new(value),
@@ -21,12 +24,14 @@ impl<T> MyStruct<T> {
     }
 
     // Replace the interior value, dropping the replaced value.
+    /// Replaces the value.
     fn set_value(&self, new_value: T) {
         self.value.set(new_value);
     }
 }
 
 impl<T: Copy> MyStruct<T> {
+    /// Returns a copy of the value.
     fn get_value(&self) -> T {
         // For types that implement `Copy`, the `get` method
         // retrieves the current interior value by duplicating it.
@@ -37,11 +42,13 @@ impl<T: Copy> MyStruct<T> {
 // For types that implement `Default`, the take method replaces the current
 // interior value with `Default::default()` and returns the replaced value.
 impl<T: Default> MyStruct<T> {
+    /// Takes the value, leaving the default value in its place.
     fn take_value(&self) -> T {
         self.value.take()
     }
 }
 
+/// Reads and modifies a `Cell` through a shared reference.
 fn main() {
     let my_int_struct = MyStruct::new(42);
     let my_int_ref = &my_int_struct;

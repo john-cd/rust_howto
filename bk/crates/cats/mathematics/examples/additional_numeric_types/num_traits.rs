@@ -8,6 +8,7 @@ use num_traits::NumCast;
 use num_traits::One;
 use num_traits::Zero;
 
+/// Uses the `Zero`, `One` and `NumCast` traits on a number.
 fn main() {
     // Create a variable with an initial value of zero.
     let mut x: i32 = Zero::zero();

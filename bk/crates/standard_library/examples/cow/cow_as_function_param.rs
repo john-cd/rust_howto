@@ -14,6 +14,7 @@ fn process_text(input: Cow<str>) {
     }
 }
 
+/// Calls a function with borrowed and owned strings.
 fn main() {
     // Call the function with a `&str`, here a string literal.
     let borrowed_text: Cow<str> = Cow::Borrowed("Hello, Rust!");

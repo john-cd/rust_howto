@@ -40,6 +40,7 @@ fn main() -> anyhow::Result<()> {
     run()
 }
 
+/// Runs the example selected on the command line.
 fn run() -> anyhow::Result<()> {
     #[cfg(feature = "cassandra")]
     {

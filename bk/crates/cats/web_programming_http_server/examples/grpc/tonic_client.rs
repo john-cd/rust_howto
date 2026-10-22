@@ -15,6 +15,7 @@ pub mod helloworld {
     tonic::include_proto!("helloworld");
 }
 
+/// Sends a request to the gRPC server and prints the reply.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Connect to the gRPC server using the address defined in the server

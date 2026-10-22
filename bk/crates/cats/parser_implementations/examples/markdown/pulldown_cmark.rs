@@ -17,6 +17,7 @@ use pulldown_cmark::Options;
 use pulldown_cmark::Parser;
 use pulldown_cmark::html;
 
+/// Parses Markdown into events and renders them as HTML.
 fn main() {
     let markdown_input = r#"
 # Hello, Pulldown CMark!

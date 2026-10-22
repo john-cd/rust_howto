@@ -6,9 +6,12 @@
 
 use std::io;
 
+/// An error that wraps errors of several types.
 #[derive(Debug)]
 pub(crate) enum MyError {
+    /// An I/O error.
     Io(io::Error),
+    /// An error message.
     Message(String),
 }
 
@@ -24,6 +27,7 @@ impl From<&str> for MyError {
     }
 }
 
+/// Converts errors of different types into `MyError` with the `?` operator.
 fn main() -> Result<(), MyError> {
     println!("Testing custom error conversion with the ? operator:");
     let _file = std::fs::File::open("missing.txt")?; // `io::Error` becomes `MyError`.
@@ -38,6 +42,7 @@ pub fn run() -> Result<(), MyError> {
     main()
 }
 
+/// Checks that the conversions make `main` return an error.
 fn test_main() {
     assert!(main().is_err());
 }

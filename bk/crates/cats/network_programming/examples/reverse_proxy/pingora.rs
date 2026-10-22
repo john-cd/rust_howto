@@ -33,6 +33,7 @@
 use pingora::server::Server;
 
 // FIXME decide what to implement
+/// Creates a Pingora server and runs it forever.
 fn main() {
     let mut my_server = Server::new(None).unwrap();
     my_server.bootstrap();

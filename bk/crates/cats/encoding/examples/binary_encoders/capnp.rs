@@ -33,6 +33,7 @@ pub mod foo_capnp {
     include!(concat!(env!("OUT_DIR"), "/foo_capnp.rs"));
 }
 
+/// Builds a Cap'n Proto message and serializes it.
 fn main() {
     // 1. Create a message builder (the container for the data).
     let mut message = Builder::new_default();

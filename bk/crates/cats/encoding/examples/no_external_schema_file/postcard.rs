@@ -26,13 +26,17 @@ use postcard::to_stdvec;
 use serde::Deserialize;
 use serde::Serialize;
 
+/// A struct that borrows its data.
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 struct RefStruct<'a> {
+    /// The bytes.
     bytes: &'a [u8], /* NOTE: postcard handles `&[u8]` and `&[u8; N]`
                       * differently. */
+    /// The string.
     str_s: &'a str,
 }
 
+/// Serializes a struct with `postcard`, then deserializes it.
 fn main() {
     let message = "hElLo";
 

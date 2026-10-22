@@ -29,7 +29,9 @@ use std::hash::Hash;
 ///   a type, often representing a zeroed, empty, or baseline state.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
 struct Point2D {
+    /// The horizontal coordinate.
     x: i32,
+    /// The vertical coordinate.
     y: i32,
 }
 
@@ -51,6 +53,7 @@ impl fmt::Display for Point2D {
     }
 }
 
+/// Uses the traits implemented by the struct.
 fn main() {
     // Create an instance of the `Point2D` struct:
     let p = Point2D { x: 1, y: 1 };

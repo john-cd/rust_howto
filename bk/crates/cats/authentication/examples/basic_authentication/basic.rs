@@ -7,6 +7,8 @@
 use reqwest::Error;
 use reqwest::blocking::Client;
 
+/// Sends a request with basic authentication credentials and prints the
+/// response status.
 fn main() -> Result<(), Error> {
     // Create a new `reqwest` client:
     let client = Client::new();

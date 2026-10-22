@@ -11,8 +11,11 @@
 /// Each variant represents a type of US coin.
 enum Coin {
     // Unit-like variants (no fields):
+    /// A penny.
     Penny,
+    /// A nickel.
     Nickel,
+    /// A dime.
     Dime,
     /// The `Quarter` is a tuple variant.
     /// Its field stores the name of a US State.
@@ -45,6 +48,7 @@ fn value_in_cents(coin: Coin) -> u8 {
     }
 } // `match` is an expression. In this case, it is the last expression in the function's body, thus its value is returned by the function.
 
+/// Prints the value in cents of a penny.
 fn main() {
     println!("{}", value_in_cents(Coin::Penny));
 }

@@ -5,15 +5,19 @@
 //! TODO Reviewed ??-??-2026
 
 // This struct does not implement `Copy` and has therefore "move semantics":
+/// A struct that does not implement `Copy`, so it has move semantics.
 #[derive(Debug)]
 struct MyStruct(bool);
 
 // This function takes an (immutable) reference to `MyStruct`.
 // We can read but not modify `s1`.
+/// Prints `s`, which is borrowed immutably.
 fn calculate(s: &MyStruct) {
     println!("{s:?}");
 }
 
+/// Borrows a value, passes the reference to a function, then uses the value
+/// again.
 fn main() {
     let s1 = MyStruct(true);
     // `ref_s1` is an immutable reference to `s1`.

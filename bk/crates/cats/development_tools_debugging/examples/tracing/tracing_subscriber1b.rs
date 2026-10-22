@@ -51,6 +51,7 @@ fn main() {
     );
 }
 
+/// A function instrumented with a span, which logs a debug event.
 #[instrument]
 fn a_function() {
     tracing::debug!("In a_function.");

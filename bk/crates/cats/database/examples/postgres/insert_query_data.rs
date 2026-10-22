@@ -15,11 +15,15 @@ use postgres::types::ToSql;
 
 /// Represents an author with an ID, name, and country.
 struct Author {
+    /// The identifier.
     _id: i32,
+    /// The name.
     name: String,
+    /// The country.
     country: String,
 }
 
+/// Inserts authors in a PostgreSQL database, then queries them.
 fn main() -> Result<(), Error> {
     // Connect to the PostgreSQL database using the provided connection string.
     // The connection URL is formatted as

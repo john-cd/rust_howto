@@ -18,6 +18,7 @@ use http::Request;
 use http::Response;
 use http::StatusCode;
 
+/// Builds an HTTP request and response, then inspects them.
 fn main() {
     // Create a request.
     let request = Request::builder()

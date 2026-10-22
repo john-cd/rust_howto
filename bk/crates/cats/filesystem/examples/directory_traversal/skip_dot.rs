@@ -20,6 +20,8 @@ fn is_not_hidden(entry: &DirEntry) -> bool {
         .unwrap_or(false)
 }
 
+/// Prints the paths of the current directory tree, skipping hidden files and
+/// directories.
 fn main() {
     let w = WalkDir::new(".");
     w.into_iter()

@@ -7,6 +7,7 @@
 use approx::assert_abs_diff_eq;
 use ndarray::Array;
 
+/// Adds vectors and compares the results approximately.
 fn main() {
     // Create vectors.
     let a = Array::from(vec![1., 2., 3., 4., 5.]);

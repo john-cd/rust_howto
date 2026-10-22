@@ -9,6 +9,7 @@
 use anyhow::Result;
 use semver::Version;
 
+/// Parses a version string and inspects the parts of the version.
 fn main() -> Result<()> {
     let parsed_version = Version::parse("0.2.6")?;
     // The parsed version is equal to the following:

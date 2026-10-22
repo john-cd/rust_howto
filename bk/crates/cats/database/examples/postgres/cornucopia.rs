@@ -20,6 +20,7 @@
 use tokio_postgres::Error;
 use tokio_postgres::NoTls;
 
+/// Connects to a PostgreSQL database and runs the generated queries.
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     let (client, connection) = tokio_postgres::connect(

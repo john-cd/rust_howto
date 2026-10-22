@@ -15,6 +15,8 @@ use flate2::Compression;
 use flate2::read::ZlibDecoder;
 use flate2::write::ZlibEncoder;
 
+/// Compresses and decompresses a byte string with zlib and checks the round
+/// trip.
 fn main() -> anyhow::Result<()> {
     let input = b"Hello from flate2!";
 

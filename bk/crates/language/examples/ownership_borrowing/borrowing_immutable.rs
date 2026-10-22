@@ -4,6 +4,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Creates and dereferences a shared reference.
 fn main() {
     let a = 42;
 

@@ -35,6 +35,8 @@ use im::Vector;
 use im::hashmap;
 use im::vector;
 
+/// Uses immutable vectors, maps and sets, which share structure between
+/// versions.
 fn main() {
     // Immutable vector (based on RRB trees),
     // i.e. a sequence of elements in insertion order.

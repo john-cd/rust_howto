@@ -11,6 +11,7 @@ use anyhow::Result;
 use select::document::Document;
 use select::predicate::Name;
 
+/// Prints the links of a web page.
 #[tokio::main]
 async fn main() -> Result<()> {
     let res = reqwest::get("https://www.rust-lang.org/en-US/")

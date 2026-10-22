@@ -31,6 +31,7 @@ fn decode_url_component(encoded: &str) -> Result<String> {
     Ok(decoded)
 }
 
+/// Encodes and decodes a URL component.
 fn main() -> Result<()> {
     // Example URL component encoding:
     let original = "Hello, World! @#$%^&*()";

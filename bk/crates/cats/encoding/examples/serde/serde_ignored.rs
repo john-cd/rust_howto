@@ -19,13 +19,17 @@
 
 use serde::Deserialize;
 
+/// A struct, whose JSON representation may contain unknown fields.
 #[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 struct MyStruct {
+    /// A number.
     field1: i32,
+    /// A string.
     field2: String,
 }
 
+/// Deserializes JSON and collects the fields that are ignored.
 fn main() {
     let json_data = r#"
     {

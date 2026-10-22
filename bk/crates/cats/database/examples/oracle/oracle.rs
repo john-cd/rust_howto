@@ -12,6 +12,7 @@ use once_cell::sync::Lazy;
 use oracle::Connection;
 use oracle::Error;
 
+/// Serializes the tests, which change the environment variables.
 static ENV_MUTEX: Lazy<Mutex<()>> = Lazy::new(|| Mutex::new(()));
 
 // ANCHOR: example

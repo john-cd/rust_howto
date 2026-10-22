@@ -14,7 +14,9 @@ use regex::Regex;
 /// Represents a Git commit with its hash and message.
 #[derive(PartialEq, Default, Clone, Debug)]
 struct Commit {
+    /// The abbreviated hash of the commit.
     hash: String,
+    /// The message of the commit.
     message: String,
 }
 

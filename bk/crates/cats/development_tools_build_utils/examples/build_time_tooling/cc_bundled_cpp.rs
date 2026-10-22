@@ -13,6 +13,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Shows how a build script compiles a C++ file.
 fn main() {
     // Create a new `cc::Build` instance:
     // cc::Build::new()

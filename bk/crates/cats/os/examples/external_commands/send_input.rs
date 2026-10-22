@@ -24,6 +24,7 @@ use anyhow::Result;
 use anyhow::anyhow;
 use anyhow::bail;
 
+/// Sends text to the standard input of `rev` and prints the reversed output.
 fn main() -> Result<()> {
     let mut child = Command::new("rev")
         // Create pipes to connect parent and child processes.

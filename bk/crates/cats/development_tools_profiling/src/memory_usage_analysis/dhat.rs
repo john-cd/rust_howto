@@ -77,6 +77,7 @@ fn adhoc_profiling() {
     }
 }
 
+/// Runs the heap profiling and ad hoc profiling examples.
 fn main() {
     heap_profiling();
     adhoc_profiling();

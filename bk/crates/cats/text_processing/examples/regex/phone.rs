@@ -14,8 +14,11 @@ use regex::Regex;
 /// with its area code, exchange code,
 /// and subscriber number.
 struct PhoneNumber<'a> {
+    /// The area code.
     area: &'a str,
+    /// The exchange code.
     exchange: &'a str,
+    /// The subscriber number.
     subscriber: &'a str,
 }
 

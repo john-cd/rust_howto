@@ -30,6 +30,7 @@ fn required() -> u32 {
     42
 }
 
+/// Defines variables that are not used, to show the effect of lint attributes.
 fn main() {
     // This variable is defined but not used.
     let x = 1;

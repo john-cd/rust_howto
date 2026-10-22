@@ -15,6 +15,7 @@ use bcrypt::DEFAULT_COST;
 use bcrypt::hash;
 use bcrypt::verify;
 
+/// Hashes a password with `bcrypt`, then verifies it.
 fn main() -> Result<(), Box<dyn Error>> {
     // 1) When setting the password, hash it and store the hash:
 

@@ -5,12 +5,16 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// The parsed command-line arguments.
 struct Args {
+    /// The value of the `--name` option, or the positional argument.
     name: String,
+    /// The value of the `-a` or `--age` option.
     age: u32,
     // Add more fields here as needed.
 }
 
+/// Parses a fixed list of arguments into [`Args`].
 fn get_args() -> anyhow::Result<Args> {
     // Allows writing Short/Long/Value without an `Arg` prefix
     // and adds convenience methods to `OsString`:
@@ -57,6 +61,7 @@ fn get_args() -> anyhow::Result<Args> {
     Ok(Args { name, age })
 }
 
+/// Parses the arguments and prints them.
 fn main() -> anyhow::Result<()> {
     let args = get_args()?;
     println!("Name: {}", args.name);

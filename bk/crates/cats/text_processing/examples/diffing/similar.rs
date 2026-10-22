@@ -24,6 +24,7 @@ use console::Style;
 use similar::ChangeTag;
 use similar::TextDiff;
 
+/// A line of a diff, with its optional line number.
 struct Line(Option<usize>, String);
 
 impl fmt::Display for Line {
@@ -96,6 +97,7 @@ fn word_diff() {
     println!();
 }
 
+/// Prints a line diff, then a word diff.
 fn main() {
     line_diff();
     word_diff();

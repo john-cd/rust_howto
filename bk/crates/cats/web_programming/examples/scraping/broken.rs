@@ -39,6 +39,7 @@ async fn check_link(url: &Url) -> Result<bool> {
     Ok(res.status() != StatusCode::NOT_FOUND)
 }
 
+/// Checks each link of a web page and prints whether it is broken.
 #[tokio::main]
 async fn main() -> Result<()> {
     let url = Url::parse("https://www.rust-lang.org/en-US/")?;

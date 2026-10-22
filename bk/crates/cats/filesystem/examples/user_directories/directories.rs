@@ -40,6 +40,7 @@ pub fn get_config_dir() -> Result<PathBuf> {
 }
 // Look into `BaseDirs` and `UserDirs` for additional directories as well.
 
+/// Prints the data and configuration directories of the application.
 fn main() {
     println!("{:?}", get_data_dir());
     println!("{:?}", get_config_dir());

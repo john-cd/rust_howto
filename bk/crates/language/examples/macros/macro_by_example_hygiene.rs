@@ -5,6 +5,7 @@
 #![allow(unused)]
 
 // ANCHOR: example
+/// Declares a variable `x`, which is not visible where the macro is called.
 macro_rules! foo {
     () => {
         let x = 3; // `x` is local to the macro.
@@ -12,6 +13,8 @@ macro_rules! foo {
 }
 
 // To use a local variable at the macro invocation site, pass it to the macro:
+/// Declares a variable with the name passed as an argument, so it is visible
+/// where the macro is called.
 macro_rules! bar {
     ($v:ident) => {
         let $v = 3;
@@ -20,6 +23,7 @@ macro_rules! bar {
 
 // Other symbols are available at the invocation site.
 // You may define a function, `impl` block, etc... in a macro.
+/// Defines a function `f`, which is visible where the macro is called.
 macro_rules! baz {
     () => {
         fn f() {}

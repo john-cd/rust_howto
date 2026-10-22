@@ -59,8 +59,11 @@ async fn my_async_function() {
         .await;
 }
 
+/// An async function that does nothing, used to show how to instrument async
+/// code.
 async fn some_other_async_function() {}
 
+/// Initializes the subscriber and runs the instrumented async function.
 #[tokio::main]
 async fn main() {
     // Initialize the tracing subscriber to output logs to the console.

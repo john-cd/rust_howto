@@ -4,6 +4,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Returns the sum of the elements of `slice`.
 fn sum(slice: &[i32]) -> i32 {
     let mut sum = 0;
     // Note: immutable (and mutable) slices implement `IntoIterator`.
@@ -14,6 +15,7 @@ fn sum(slice: &[i32]) -> i32 {
     sum
 }
 
+/// Passes a vector, an array and slices to a function that accepts a slice.
 fn main() {
     let vector: Vec<i32> = vec![1, 2, 3, 4, 5];
 

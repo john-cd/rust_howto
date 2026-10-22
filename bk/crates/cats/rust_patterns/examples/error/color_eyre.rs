@@ -11,6 +11,7 @@
 use color_eyre::eyre::Result;
 use color_eyre::eyre::eyre;
 
+/// Installs the `color-eyre` hook, then fails with a division by zero error.
 fn main() -> Result<()> {
     // Initializes color_eyre's error reporting hook. This hook intercepts
     // panics and errors, formatting them with colors and backtraces.
@@ -22,6 +23,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+/// Divides `a` by `b`, or returns an error if `b` is zero.
 fn divide(a: i32, b: i32) -> Result<i32> {
     if b == 0 {
         // Use the `eyre!` macro to construct an ad-hoc error from a string.

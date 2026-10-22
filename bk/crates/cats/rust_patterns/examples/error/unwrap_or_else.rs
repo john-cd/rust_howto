@@ -14,6 +14,7 @@
 use std::fs::File;
 use std::io::ErrorKind;
 
+/// Provides default values with `unwrap_or` and `unwrap_or_else`.
 fn main() {
     // Use `unwrap_or` to provide a default value if `maybe_value` is `None`:
     let maybe_value: Option<i32> = None;

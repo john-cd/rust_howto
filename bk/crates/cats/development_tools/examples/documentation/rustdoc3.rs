@@ -11,6 +11,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Prints a description of inner doc comments.
 fn main() {
     println!(
         "//! ... are `inner` comments that apply to the containing module (or crate)."

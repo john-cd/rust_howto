@@ -16,6 +16,7 @@ use tracing::info;
 use tracing::trace;
 use tracing::warn;
 
+/// Emits events at several levels and records spans.
 fn main() {
     // Initialize a tracing subscriber to see the events below.
     let _ = tracing_subscriber::fmt()

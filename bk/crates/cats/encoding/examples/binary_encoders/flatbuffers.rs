@@ -6,6 +6,7 @@
 
 use flatbuffers::FlatBufferBuilder;
 
+/// Builds a FlatBuffer that contains a string and prints it.
 fn main() {
     let mut builder = FlatBufferBuilder::new();
     let greeting = builder.create_string("Hello, FlatBuffers!");

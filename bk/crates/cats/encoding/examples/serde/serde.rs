@@ -8,18 +8,23 @@ use serde::Deserialize;
 use serde::Serialize;
 
 // Define a struct and derive the `Serialize` and `Deserialize` traits.
+/// A person, serialized to and deserialized from JSON.
 #[derive(Serialize, Deserialize, Debug)]
 struct Person {
     // Rename the fields during serialization and deserialization.
+    /// The first name.
     #[serde(rename = "first_name")]
     first: String,
+    /// The last name.
     #[serde(rename = "last_name")]
     last: String,
     // Skip serializing the `age` field if it is None.
+    /// The age, if known.
     #[serde(skip_serializing_if = "Option::is_none")]
     age: Option<u8>,
 }
 
+/// Serializes a struct to JSON and deserializes it back.
 fn main() {
     // Create an instance of the struct.
     let person = Person {

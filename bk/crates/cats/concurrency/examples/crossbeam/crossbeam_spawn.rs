@@ -15,6 +15,8 @@ fn main() {
     println!("The maximum is {max:?}");
 }
 
+/// Returns the maximum value of the array, searching its halves in parallel
+/// threads.
 fn find_max(arr: &[i32]) -> Option<i32> {
     const THRESHOLD: usize = 2;
 

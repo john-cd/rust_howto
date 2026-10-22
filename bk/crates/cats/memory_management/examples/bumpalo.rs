@@ -19,6 +19,7 @@
 
 use bumpalo::Bump;
 
+/// Allocates values in a bump allocation arena.
 fn main() {
     // Create a new bump allocation arena.
     let bump = Bump::new();

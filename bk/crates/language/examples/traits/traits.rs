@@ -11,10 +11,15 @@ pub trait Summary {
     fn summarize(&self) -> String;
 }
 
+/// A news article, which can be summarized.
 pub struct NewsArticle {
+    /// The headline.
     pub headline: String,
+    /// The location where the news happened.
     pub location: String,
+    /// The author.
     pub author: String,
+    /// The text of the article.
     pub content: String,
 }
 
@@ -25,6 +30,7 @@ impl Summary for NewsArticle {
     }
 }
 
+/// Creates an article and calls the method of the trait.
 fn main() {
     let na = NewsArticle {
         headline: "headline".to_string(),

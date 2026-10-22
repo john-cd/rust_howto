@@ -13,6 +13,7 @@
 
 use ignore::WalkBuilder;
 
+/// Walks directories while respecting the ignore files, such as `.gitignore`.
 fn main() {
     // Specify the directory to walk.
     let root = std::path::Path::new("examples/");

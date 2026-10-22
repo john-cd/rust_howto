@@ -10,6 +10,7 @@ use xml::reader::XmlEvent;
 use xml::writer::EmitterConfig;
 use xml::writer::XmlEvent as WriteEvent;
 
+/// Reads XML events from a string, then writes an XML document.
 fn main() -> anyhow::Result<()> {
     // Example 1: Reading XML.
     let xml_input = r#"<?xml version="1.0"?>

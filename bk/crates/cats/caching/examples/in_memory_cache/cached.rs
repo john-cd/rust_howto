@@ -37,6 +37,7 @@ fn fetch_data(key: usize) -> String {
 // type, execution synchronization options, handling of `Result` and `Option`
 // return values, etc.
 
+/// Calls the memoized functions and shows that repeated calls use the cache.
 fn main() {
     // First call computes and caches:
     println!("Fibonacci of 10: {}", fibonacci(10));

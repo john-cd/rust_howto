@@ -50,6 +50,7 @@ fn process_file(filename: &str) -> Result<(), Error> {
     Ok(())
 }
 
+/// Runs a closure at the end of a scope, and cleans up after processing a file.
 fn main() -> Result<(), Error> {
     defer();
     process_file("temp/my_document.txt")?;

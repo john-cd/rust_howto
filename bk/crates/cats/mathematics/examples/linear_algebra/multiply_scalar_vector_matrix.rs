@@ -9,6 +9,7 @@ use ndarray::Array1;
 use ndarray::arr1;
 use ndarray::arr2;
 
+/// Multiplies a vector by a scalar, then multiplies a matrix by the result.
 fn main() {
     let scalar = 4;
 

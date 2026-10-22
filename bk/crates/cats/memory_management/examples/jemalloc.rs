@@ -11,6 +11,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Uses `jemalloc` as the global allocator.
 #[cfg(not(target_env = "msvc"))]
 mod example {
 
@@ -18,9 +19,13 @@ mod example {
 
     // Once you've defined the following static, jemalloc will be used for all
     // allocations requested by Rust code in the same program.
+    /// The global allocator, which handles all allocations requested by Rust
+    /// code.
     #[global_allocator]
     static GLOBAL: Jemalloc = Jemalloc;
 
+    /// Allocates, then drops a large vector, printing the allocator statistics
+    /// each time.
     pub fn test_alloc() -> anyhow::Result<()> {
         // Allocate a large vector.
         let v: Vec<i32> = Vec::with_capacity(1_000_000);
@@ -32,6 +37,7 @@ mod example {
         Ok(())
     }
 
+    /// Prints the allocated and resident memory according to `jemalloc`.
     fn print_alloc() -> anyhow::Result<()> {
         use tikv_jemalloc_ctl::epoch;
         use tikv_jemalloc_ctl::stats;
@@ -49,6 +55,7 @@ mod example {
     }
 }
 
+/// Allocates memory with `jemalloc` and prints its statistics, except on MSVC.
 fn main() -> anyhow::Result<()> {
     #[cfg(not(target_env = "msvc"))]
     example::test_alloc()?;

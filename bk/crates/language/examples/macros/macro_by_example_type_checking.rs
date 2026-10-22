@@ -5,6 +5,7 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
+/// Returns twice the expression `x`, whose type is not checked by the macro.
 macro_rules! double {
     ($x:expr) => {
         ($x) * 2

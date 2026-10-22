@@ -11,6 +11,7 @@ use tree_sitter::Query;
 use tree_sitter::QueryCursor;
 use tree_sitter::StreamingIterator;
 
+/// Parses Rust source code and queries the syntax tree.
 fn main() -> anyhow::Result<()> {
     let language: Language = tree_sitter_rust::LANGUAGE.into();
     let mut parser = Parser::new();

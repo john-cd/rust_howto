@@ -5,6 +5,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Serializes the tests, which change the current working directory.
 #[cfg(test)]
 static CWD_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
 

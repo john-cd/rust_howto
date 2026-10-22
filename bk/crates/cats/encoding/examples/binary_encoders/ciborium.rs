@@ -20,10 +20,14 @@ use ciborium::ser::into_writer;
 use serde::Deserialize;
 use serde::Serialize;
 
+/// A struct that is serialized to and deserialized from CBOR.
 #[derive(Serialize, Deserialize, Debug)]
 struct MyData {
+    /// The name.
     name: String,
+    /// The age in years.
     age: u32,
+    /// Whether the data is active.
     is_active: bool,
 }
 

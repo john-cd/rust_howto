@@ -12,11 +12,16 @@
 use std::sync::mpsc;
 use std::thread;
 
+/// A message that the actor can process.
 enum Message {
+    /// Prints the text.
     Print(String),
+    /// Stops the actor.
     Stop,
 }
 
+/// Sends messages to a worker thread that acts as an actor, then waits for it
+/// to stop.
 fn main() {
     let (sender, receiver) = mpsc::channel::<Message>();
 

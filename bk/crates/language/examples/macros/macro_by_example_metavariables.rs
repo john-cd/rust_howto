@@ -5,6 +5,8 @@
 #![allow(unused)]
 
 // ANCHOR: example
+/// Prints one, two or more arguments, depending on how many expressions it
+/// receives.
 macro_rules! print_args {
     // Rule 1: Matches one expression.
     ($e:expr) => {

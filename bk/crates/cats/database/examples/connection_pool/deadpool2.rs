@@ -29,12 +29,14 @@ use tokio_postgres::NoTls;
 /// Configuration for the application.
 #[derive(Debug, serde::Deserialize)]
 struct Config {
+    /// The settings of the PostgreSQL connection pool.
     pub pg: deadpool_postgres::Config,
 }
 
 impl Config {
     // With the `serde` feature enabled, we can read the configuration using the
     // `config` crate.
+    /// Reads the configuration from the environment variables.
     pub fn from_env() -> Result<Self, config::ConfigError> {
         config::Config::builder()
             .add_source(config::Environment::default().separator("__"))
@@ -43,6 +45,7 @@ impl Config {
     }
 }
 
+/// Creates a PostgreSQL connection pool and queries the database.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Loads the `.env` file from the current directory or parents.

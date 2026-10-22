@@ -77,6 +77,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Serializes the tests, which change the environment variables.
 #[cfg(feature = "postgres")]
 #[allow(dead_code)]
 pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());

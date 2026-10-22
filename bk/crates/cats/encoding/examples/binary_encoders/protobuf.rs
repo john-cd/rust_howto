@@ -7,10 +7,12 @@
 use person::Person;
 use prost::Message;
 
+/// The `Person` message, generated from the `.proto` file.
 mod person {
     include!(concat!(env!("OUT_DIR"), "/example.rs"));
 }
 
+/// Encodes a `Person` message, then decodes it and compares the result.
 fn main() {
     let person = Person {
         name: "Alice".to_string(),

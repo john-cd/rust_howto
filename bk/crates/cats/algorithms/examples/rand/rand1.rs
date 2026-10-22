@@ -7,6 +7,8 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Generates and prints a random `u8`, a random `u32` in a range and a random
+/// sample.
 fn main() {
     // Generate a random value:
     let n1: u8 = rand::random();

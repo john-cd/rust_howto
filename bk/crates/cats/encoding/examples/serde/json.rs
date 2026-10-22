@@ -9,6 +9,7 @@ use serde_json::Error;
 use serde_json::Value;
 use serde_json::json;
 
+/// Parses a JSON string into a `serde_json::Value` and inspects it.
 fn main() -> Result<(), Error> {
     let json_string: &str = r#"{
                  "userid": 103609,

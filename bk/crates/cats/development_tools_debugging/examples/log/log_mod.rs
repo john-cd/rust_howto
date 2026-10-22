@@ -6,7 +6,9 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
+/// A module that logs messages and has a nested module.
 mod foo {
+    /// A nested module that logs messages.
     mod bar {
         /// Logs warning, info, and debug messages from the `bar` module.
         pub fn run() {

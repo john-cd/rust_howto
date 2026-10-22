@@ -22,9 +22,13 @@ use reqwest::header::RANGE;
 
 /// An iterator that yields adjacent, inclusive byte ranges.
 struct PartialRangeIter {
+    /// The first byte of the next range.
     start: u64,
+    /// The last byte of the interval.
     end: u64,
+    /// The maximum size of a range.
     buffer_size: u32,
+    /// Whether all the ranges were yielded.
     finished: bool,
 }
 

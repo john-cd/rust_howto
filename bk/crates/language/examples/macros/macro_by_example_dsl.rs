@@ -10,10 +10,14 @@
 use std::collections::HashMap;
 
 // Simplified representation of the types of values our configuration can hold:
+/// A configuration value.
 #[derive(Debug, PartialEq, Clone)]
 pub enum ConfigValue {
+    /// A string.
     String(String),
+    /// A boolean.
     Boolean(bool),
+    /// A nested map of configuration values.
     Map(HashMap<String, ConfigValue>),
 }
 
@@ -21,6 +25,7 @@ pub enum ConfigValue {
 //
 // The `#[macro_export]` attribute makes the `config!` macro available to other
 // crates. See <https://doc.rust-lang.org/reference/macros-by-example.html#path-based-scope>.
+/// Builds a `HashMap` of configuration values from a declarative syntax.
 #[macro_export]
 macro_rules! config {
 
@@ -113,6 +118,7 @@ macro_rules! config {
 
 }
 
+/// Builds a nested configuration with the `config!` macro and prints it.
 fn main() {
     // Example usage of the `config!` macro to set up application settings in a
     // declarative way.

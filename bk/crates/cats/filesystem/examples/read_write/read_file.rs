@@ -12,6 +12,7 @@ use std::io::BufRead;
 use std::io::BufReader;
 use std::io::Write;
 
+/// Writes a file in several ways.
 fn write_to_file() -> Result<(), io::Error> {
     // The simplest way is to write a slice as the entire contents of a file
     // with `fs::write`. This function will create a file if it does not
@@ -41,6 +42,7 @@ fn write_to_file() -> Result<(), io::Error> {
     Ok(())
 }
 
+/// Reads the file in several ways.
 fn read_from_file() -> Result<(), io::Error> {
     let path_str = "temp/lines.txt";
 
@@ -66,6 +68,7 @@ fn read_from_file() -> Result<(), io::Error> {
     Ok(())
 }
 
+/// Writes a file, then reads it back.
 fn main() -> Result<(), io::Error> {
     write_to_file()?;
     read_from_file()?;

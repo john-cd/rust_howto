@@ -23,6 +23,7 @@ fn are_you_on_linux() {
     println!("You are *not* running Linux!");
 }
 
+/// Prints messages depending on the target operating system.
 fn main() {
     are_you_on_linux();
 

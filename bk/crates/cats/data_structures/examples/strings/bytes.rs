@@ -7,6 +7,7 @@
 use bytes::BufMut;
 use bytes::BytesMut;
 
+/// Builds a `BytesMut` buffer, then freezes it into an immutable `Bytes`.
 fn main() {
     let mut buf = BytesMut::with_capacity(64);
     buf.put(&b"hello "[..]);

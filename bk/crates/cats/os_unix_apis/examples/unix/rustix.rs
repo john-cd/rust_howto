@@ -23,6 +23,7 @@ use rustix::fs::unlink;
 use rustix::io::read;
 use rustix::io::write;
 
+/// Creates a file, writes to it and reads it back using `rustix`.
 fn main() -> anyhow::Result<()> {
     let data = b"Hello, rustix!";
     {

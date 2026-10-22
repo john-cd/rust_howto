@@ -11,10 +11,12 @@
 use person::Person;
 use prost::Message;
 
+/// The `Person` message, generated from the `.proto` file.
 mod person {
     include!(concat!(env!("OUT_DIR"), "/example.rs"));
 }
 
+/// Encodes a `Person` message with `prost`, then decodes it.
 fn main() {
     // Create a `Person` message.
     let person = Person {

@@ -13,8 +13,11 @@ use serde::Deserialize;
 /// to handle cases where the ID might not be a valid u64.
 #[derive(Debug, Deserialize)]
 struct Record {
+    /// The name.
     name: String,
+    /// The place.
     place: String,
+    /// The identifier, or `None` if it is not a valid number.
     #[serde(deserialize_with = "csv::invalid_option")]
     id: Option<u64>,
 }

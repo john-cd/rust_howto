@@ -18,6 +18,7 @@ lazy_static! {
     static ref FRUIT: Mutex<Vec<String>> = Mutex::new(Vec::new());
 }
 
+/// Adds `fruit` to the global database.
 fn insert(fruit: &str) -> Result<()> {
     let mut db = FRUIT
         .lock()
@@ -26,6 +27,8 @@ fn insert(fruit: &str) -> Result<()> {
     Ok(())
 }
 
+/// Adds fruits to the global database from the main thread and prints its
+/// content.
 fn main() -> Result<()> {
     insert("apple")?;
     insert("orange")?;

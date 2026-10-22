@@ -28,6 +28,7 @@ use nix::unistd::write;
 use rustix::fd::AsFd;
 use rustix::fd::BorrowedFd;
 
+/// Creates a file, writes to it and reads it back using `nix`.
 fn main() -> nix::Result<()> {
     let path = "example.txt";
     let data = b"Hello, nix!";

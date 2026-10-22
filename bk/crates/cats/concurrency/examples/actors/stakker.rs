@@ -20,11 +20,13 @@ enum MyMessage {
 
 /// An actor that holds a running total.
 struct Counter {
+    /// The running total.
     count: u32,
 }
 
 impl Counter {
     // Handle a single message and update or report state.
+    /// Handles a single message by updating or reporting the count.
     fn handle_message(&mut self, message: MyMessage) {
         match message {
             MyMessage::Increment(amount) => {

@@ -9,6 +9,7 @@
 
 use std::rc::Rc;
 
+/// Shares a vector between several owners with `Rc` and counts the references.
 fn main() {
     let a = Rc::new(vec![1.0, 2.0, 3.0]);
     // The two syntaxes below are equivalent for cloning an `Rc`:

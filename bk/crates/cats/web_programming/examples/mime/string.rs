@@ -7,6 +7,7 @@
 use mime::APPLICATION_OCTET_STREAM;
 use mime::Mime;
 
+/// Parses MIME types from strings, using a default value when parsing fails.
 fn main() {
     let invalid_mime_type = "i n v a l i d";
     let default_mime = invalid_mime_type

@@ -21,6 +21,7 @@ use itertools::Itertools;
 use tokio::time::Duration;
 use tokio::time::sleep;
 
+/// Registers futures in an await-tree registry and prints the tree.
 #[tokio::main]
 async fn main() {
     // Create a configuration.

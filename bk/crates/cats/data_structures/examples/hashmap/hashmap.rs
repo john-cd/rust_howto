@@ -13,6 +13,7 @@
 
 use std::collections::HashMap;
 
+/// Inserts, reads, updates and iterates over the entries of a `HashMap`.
 fn main() {
     // Create a new, empty HashMap called 'scores'.
     let mut scores = HashMap::new();

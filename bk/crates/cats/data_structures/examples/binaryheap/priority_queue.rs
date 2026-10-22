@@ -12,9 +12,12 @@ use std::cmp::Reverse;
 
 use priority_queue::PriorityQueue;
 
+/// A task in the priority queue.
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 struct Task {
+    /// The identifier of the task.
     id: u32,
+    /// The name of the task.
     name: String,
 }
 
@@ -28,6 +31,7 @@ impl Task {
     }
 }
 
+/// Pushes items into priority queues and pops them in priority order.
 fn main() {
     println!("Basic Priority Queue Usage:");
 

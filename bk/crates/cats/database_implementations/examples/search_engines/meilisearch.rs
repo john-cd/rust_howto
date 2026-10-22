@@ -19,8 +19,11 @@ use serde::Serialize;
 /// A document that can be indexed in MeiliSearch.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
+    /// The identifier of the document.
     id: usize,
+    /// The title of the document.
     title: String,
+    /// The content of the document.
     content: String,
 }
 

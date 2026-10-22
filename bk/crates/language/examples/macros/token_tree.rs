@@ -5,10 +5,12 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
+/// Accepts a single token tree and expands to nothing.
 macro_rules! accept_single_token_tree {
     ($_:tt) => {};
 }
 
+/// Accepts any number of token trees and expands to nothing.
 macro_rules! accept_multiple_token_trees {
     ( $( $_:tt )* ) => {};
 }

@@ -9,6 +9,7 @@
 
 use native_tls::TlsConnector;
 
+/// Builds a TLS connector and prints a message.
 fn main() -> anyhow::Result<()> {
     let _connector = TlsConnector::builder().build()?;
 

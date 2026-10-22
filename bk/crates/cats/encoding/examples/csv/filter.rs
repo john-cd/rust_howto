@@ -10,6 +10,7 @@ use std::io;
 
 use anyhow::Result;
 
+/// Writes the CSV records that contain the query to the standard output.
 fn main() -> Result<()> {
     let query = "CA";
     let data = "\

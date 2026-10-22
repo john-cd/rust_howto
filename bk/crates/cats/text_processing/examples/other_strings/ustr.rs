@@ -20,6 +20,7 @@
 use ustr::Ustr;
 use ustr::ustr;
 
+/// Creates interned strings and compares them.
 fn main() {
     // Creating `Ustr` instances.
     // `Ustr` is the main type representing an interned string.

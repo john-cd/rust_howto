@@ -18,12 +18,14 @@ lazy_static! {
 }
 
 // Example function: display the access privileges for a given name.
+/// Prints the access level of the user `name`.
 fn show_access(name: &str) {
     // Access the global static:
     let access = PRIVILEGES.get(name);
     println!("{name}: {access:?}");
 }
 
+/// Looks up users in a lazily initialized global map.
 fn main() {
     let access = PRIVILEGES.get("James");
     println!("James: {access:?}");

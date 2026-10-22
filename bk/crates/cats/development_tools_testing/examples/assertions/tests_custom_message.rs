@@ -5,6 +5,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Asserts that `name` contains "Carol", with a custom failure message.
 fn check_name(name: &str) {
     assert!(
         name.contains("Carol"),
@@ -12,6 +13,7 @@ fn check_name(name: &str) {
     );
 }
 
+/// Checks a name that does not contain "Carol", so that the assertion fails.
 fn main() {
     println!("Checking if 'Carl' contains 'Carol'...");
     check_name("Carl");

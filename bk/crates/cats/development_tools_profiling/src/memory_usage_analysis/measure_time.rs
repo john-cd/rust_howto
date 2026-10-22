@@ -19,6 +19,7 @@ fn measure_execution_time() {
     thread::sleep(Duration::from_millis(100));
 }
 
+/// Measures the execution time of a function.
 fn main() {
     measure_execution_time();
 }

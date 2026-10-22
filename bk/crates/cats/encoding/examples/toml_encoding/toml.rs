@@ -12,6 +12,7 @@
 use toml::Value;
 use toml::de::Error;
 
+/// Decodes a TOML document and reads its values.
 fn main() -> Result<(), Error> {
     // Sample TOML.
     // Note the use of a Rust raw string,

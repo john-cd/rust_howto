@@ -7,6 +7,7 @@
 // ANCHOR: example
 // 1. If you want to allow expressions but ensure they are numeric, you can
 //    enforce type checking:
+/// Prints an expression that must be coercible to `f64`.
 macro_rules! ensure_numeric_expression {
     ($val:expr) => {{
         let _: f64 = $val; // Forces `$val` to be coercible to `f64`.
@@ -17,6 +18,7 @@ macro_rules! ensure_numeric_expression {
 // let _ = 0 + $val;
 
 // 2. Accept only literals and rejects expressions or non-numeric values.
+/// Prints a numeric literal, and fails to compile for any other expression.
 macro_rules! ensure_numeric_literal {
     ($val:literal) => {{
         let _num: f64 = $val as f64;
@@ -28,6 +30,7 @@ macro_rules! ensure_numeric_literal {
 }
 
 // 3. Ensure that a literal passed as an argument is a string.
+/// Fails to compile unless the argument is a string literal.
 macro_rules! must_be_string {
     ($lit:literal) => {
         // This block acts as a compile-time gate.
@@ -56,6 +59,7 @@ trait Processable {
 
 // B. Create a helper macro to implement our trait for e.g. all integer types at
 //    once. This avoids a lot of repetitive boilerplate code.
+/// Implements the `Processable` trait for the given integer types.
 macro_rules! impl_processable_for_integer {
     // `$t:ty` matches a type. `$(...),*` means "repeat for zero or more, separated by commas".
     ($($t:ty),*) => {
@@ -74,6 +78,7 @@ impl_processable_for_integer!(
 
 // D. Call the trait method.
 // This compiles only if there is an `impl` for the type of the expression.
+/// Calls `process` on an expression whose type must be an integer.
 macro_rules! integer_only {
     ( $e:expr ) => {
         $e.process();

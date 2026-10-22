@@ -14,6 +14,7 @@ struct Node {
 }
 
 impl Node {
+    /// Creates a node without a successor.
     fn new(value: i32) -> Self {
         Node { value, next: None }
     }
@@ -44,6 +45,7 @@ impl Node {
 // compiler needs to know the size of the data type at compile time.
 // By using `Box`, which has a defined size on the stack, we can create the
 // `head` local variable . The actual `Node` data will be stored on the heap.
+/// Builds a linked list and prints it.
 fn main() {
     let mut head = Node::new(1);
     head.append(2);

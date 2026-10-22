@@ -9,6 +9,7 @@ use std::path::PathBuf;
 
 use anyhow::Result;
 
+/// Prints the current working directory.
 fn main() -> Result<()> {
     let cwd: PathBuf = env::current_dir()?;
     println!("The current directory is {}", cwd.display());

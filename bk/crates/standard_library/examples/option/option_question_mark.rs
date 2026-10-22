@@ -27,6 +27,7 @@ fn get_first_char_uppercase(input: Option<String>) -> Option<char> {
     Some(first_char.to_ascii_uppercase())
 }
 
+/// Applies the `?` operator to `Option` values.
 fn main() {
     // `Option` contains a `String` and it's not empty.
     let s1 = Some("hello".to_string());

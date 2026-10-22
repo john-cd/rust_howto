@@ -25,6 +25,7 @@ mod cfg {
     }
 
     impl Configuration {
+        /// Creates a shared configuration.
         pub fn new(
             server_address: String,
             max_connections: u8,
@@ -35,14 +36,18 @@ mod cfg {
             })
         }
 
+        /// Returns the address of the server.
         pub fn server_address(&self) -> &str {
             &self.server_address
         }
 
+        /// Returns the maximum number of connections.
         pub fn max_connections(&self) -> u8 {
             self.max_connections
         }
 
+        /// Updates the configuration, cloning it first if other `Arc` pointers
+        /// to it exist (clone-on-write).
         pub fn update(
             self: &mut Arc<Self>,
             server_address: String,

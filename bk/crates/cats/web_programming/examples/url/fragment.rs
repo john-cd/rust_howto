@@ -15,6 +15,7 @@ use url::ParseError;
 use url::Position;
 use url::Url;
 
+/// Removes the fragment and the query of a URL.
 fn main() -> Result<(), ParseError> {
     let parsed = Url::parse(
         "https://github.com/rust-lang/rust/issues?labels=E-easy&state=open",
@@ -26,6 +27,7 @@ fn main() -> Result<(), ParseError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()?;
     Ok(())

@@ -13,6 +13,7 @@ fn parse_list(input: &mut &str) -> ModalResult<Vec<i32>> {
     separated(1.., digit1.parse_to::<i32>(), ",").parse_next(input)
 }
 
+/// Parses a comma-separated list of numbers with `winnow`.
 fn main() -> anyhow::Result<()> {
     let mut input = "1,2,3,4,5";
     let result = parse_list(&mut input)

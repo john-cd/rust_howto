@@ -8,6 +8,7 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
+/// Shares a mutable vector between several owners with `Rc<RefCell<_>>`.
 fn main() {
     // Create a shared mutable vector
     let shared_vec: Rc<RefCell<Vec<i32>>> =

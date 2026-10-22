@@ -21,6 +21,7 @@ fn remove_whitespaces(s: &str) -> Cow<'_, str> {
     }
 }
 
+/// Removes the spaces of strings, allocating only when needed.
 fn main() {
     let original_string = "Hello world!  ";
     let modified_string = remove_whitespaces(original_string);

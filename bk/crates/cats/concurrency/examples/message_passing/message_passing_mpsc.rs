@@ -11,6 +11,8 @@ use std::sync::mpsc;
 use std::thread;
 use std::time::Duration;
 
+/// Sends messages from several producer threads to a single consumer through an
+/// `mpsc` channel.
 fn main() {
     let (tx, rx) = mpsc::channel();
     let tx2 = tx.clone();

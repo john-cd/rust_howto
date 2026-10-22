@@ -29,6 +29,7 @@ use libc::c_int; // C int.
 
 // 1. Using `puts` to print a string.
 // In real life, use the Rust `print!` macro, of course.
+/// Prints a message by calling the C function `puts`.
 fn print() {
     // C strings (nul-terminated array of bytes) are different from Rust
     // strings, thus we can't pass the latter directly to a C function.
@@ -106,6 +107,7 @@ fn null_pointer() {
     }
 }
 
+/// Calls the `libc` examples in turn.
 fn main() {
     print();
     env();

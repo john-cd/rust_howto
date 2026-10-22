@@ -10,6 +10,8 @@ use std::sync::RwLock;
 use std::thread;
 use std::time::Duration;
 
+/// Shows alternatives to `Cow`: shared immutable strings and strings behind a
+/// lock.
 fn main() {
     // When working with multiple threads, `Arc<str>` provides shared ownership
     // of an immutable string slice.

@@ -17,12 +17,16 @@
 use concat_string::concat_string;
 use concat_strs::concat_strs;
 
+/// The date part of a timestamp.
 static DATE: &str = "2024-01-15";
 
+/// The separator between the date and the time.
 static T: &str = "T";
 
+/// The time part of a timestamp.
 static TIME: &str = "12:00:09Z";
 
+/// Concatenates strings in several ways.
 fn main() {
     // Using `concat` on a slice of string slices.
     let _datetime = &[DATE, T, TIME].concat();

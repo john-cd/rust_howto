@@ -6,6 +6,7 @@
 
 use colored::Colorize;
 
+/// Prints text with colors and styles.
 fn main() {
     // Print styled text using foreground color and bold formatting.
     println!("{}", "Success".green().bold());

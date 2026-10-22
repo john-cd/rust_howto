@@ -11,9 +11,13 @@
 /// `sign_in_count`.
 #[derive(Debug)]
 struct User {
+    /// Whether the user is active.
     active: bool,
+    /// The user name.
     username: String,
+    /// The email address.
     email: String,
+    /// The number of times the user signed in.
     sign_in_count: u64,
 }
 // The `#[derive(Debug)]` attribute is not required; it enables the use of

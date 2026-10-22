@@ -11,6 +11,7 @@ use std::io;
 
 use remove_dir_all::remove_dir_all;
 
+/// Creates a directory tree, then removes it with all its content.
 fn main() -> io::Result<()> {
     // Create a directory structure for demonstration purposes
     // (if it doesn't exist already).

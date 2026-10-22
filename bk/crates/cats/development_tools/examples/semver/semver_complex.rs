@@ -10,6 +10,8 @@ use semver::BuildMetadata;
 use semver::Prerelease;
 use semver::Version;
 
+/// Parses a version with pre-release and build metadata, then compares and
+/// prints it.
 fn main() -> Result<()> {
     // Define a complex semantic version string.
     let version_str = "1.0.49-125+g72ee7853";

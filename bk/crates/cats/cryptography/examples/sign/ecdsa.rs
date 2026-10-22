@@ -13,6 +13,7 @@ use p256::ecdsa::signature::Signer;
 use p256::ecdsa::signature::Verifier;
 use p256::elliptic_curve::rand_core::OsRng;
 
+/// Signs a message with a random P-256 key and verifies the signature.
 fn main() -> anyhow::Result<()> {
     let signing_key = SigningKey::random(&mut OsRng);
     let verifying_key = VerifyingKey::from(&signing_key);

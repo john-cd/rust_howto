@@ -4,6 +4,7 @@
 
 mod autocfg;
 
+/// Runs the `autocfg` example.
 fn main() {
     autocfg::run();
 }

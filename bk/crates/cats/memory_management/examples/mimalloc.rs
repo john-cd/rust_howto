@@ -24,9 +24,11 @@
 
 use mimalloc::MiMalloc;
 
+/// The global allocator, which handles all allocations requested by Rust code.
 #[global_allocator]
 static GLOBAL: MiMalloc = MiMalloc;
 
+/// Allocates a large vector with the `mimalloc` allocator.
 fn main() {
     // Allocate a large vector.
     let _v = vec![0; 1024 * 1024];

@@ -8,6 +8,7 @@
 use std::io;
 use std::io::BufRead;
 
+/// Reads a line from an in-memory buffer and handles the `Result`.
 fn main() {
     // A `Cursor` behaves like a `File` but wraps an in-memory buffer.
     let mut my_cursor = io::Cursor::new(b"foo\nbar");

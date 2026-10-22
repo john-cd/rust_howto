@@ -73,6 +73,7 @@ async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Fetches a URL with `hyper` and prints the response.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Parse our URL...

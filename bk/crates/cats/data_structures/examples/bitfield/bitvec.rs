@@ -11,6 +11,7 @@
 use bitvec::field::BitField;
 use bitvec::prelude::*;
 
+/// Creates a `BitVec`, then reads and modifies its bits.
 fn basic_operations() {
     // Create a new `BitVec` with default parameters:
     let mut bv = bitvec![u8, Msb0; 0, 1, 0, 1, 1, 0, 1, 0];
@@ -45,6 +46,7 @@ fn basic_operations() {
     println!();
 }
 
+/// Creates `BitVec`s with different storage types and bit orders.
 fn endianness_and_storage() {
     println!("\n===== Different Endianness and Storage Types =====");
 
@@ -56,6 +58,7 @@ fn endianness_and_storage() {
     println!("u32 MSB BitVec: {bv_u32}");
 }
 
+/// Applies bitwise operations to `BitVec`s.
 fn bit_manipulation() {
     println!("\n===== Bit Manipulation Operations =====");
 
@@ -87,6 +90,7 @@ fn bit_manipulation() {
     println!("a &= b: {a}");
 }
 
+/// Slices a `BitVec` and modifies a slice.
 fn slicing_and_ranges() {
     println!("\n===== Slicing and Ranges =====");
 
@@ -102,6 +106,7 @@ fn slicing_and_ranges() {
     println!("After filling [4..8] with `1`s: {bv_slice}");
 }
 
+/// Uses a `BitVec` for permission flags and for packing booleans.
 fn practical_applications() {
     println!("\n===== Practical Applications =====");
 
@@ -147,6 +152,7 @@ fn practical_applications() {
     println!("Extracted values: {value1}, {value2}, {value3}");
 }
 
+/// Runs all the `BitVec` examples.
 fn main() {
     basic_operations();
     endianness_and_storage();

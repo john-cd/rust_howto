@@ -4,6 +4,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Loops over ranges and collections with `for`.
 fn main() {
     // Use a range to generate all numbers in sequence,
     // starting from one number and ending before another number.

@@ -13,10 +13,13 @@ use std::collections::HashMap;
 use rusqlite::Connection;
 use rusqlite::Result;
 
+/// A cat.
 #[derive(Debug)]
 #[allow(dead_code)]
 struct Cat {
+    /// The name of the cat.
     name: String,
+    /// The color of the cat.
     color: String,
 }
 

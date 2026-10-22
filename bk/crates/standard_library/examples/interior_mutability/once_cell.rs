@@ -7,6 +7,7 @@
 
 use std::cell::OnceCell;
 
+/// Initializes a `OnceCell` once and reads it.
 fn main() {
     let cell = OnceCell::new();
 

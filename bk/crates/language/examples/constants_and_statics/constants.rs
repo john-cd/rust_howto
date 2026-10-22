@@ -7,8 +7,10 @@
 // Declare a constant in the global scope.
 // - The type must be provided.
 // - Constant names, like statics, should always be in SCREAMING_SNAKE_CASE.
+/// The length, which is inlined wherever it is used.
 const LEN: usize = 5;
 
+/// Prints constants.
 fn main() {
     // Constants are essentially inlined wherever they are used, meaning that
     // they are bitwise copied wherever they are used.

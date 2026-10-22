@@ -23,6 +23,7 @@ use simd_json::derived::ValueObjectAccessAsArray;
 use simd_json::derived::ValueObjectAccessAsScalar;
 use simd_json::prelude::*;
 
+/// Parses a JSON string with `simd-json` and reads its values.
 fn main() {
     let mut json_string = br#"
     {

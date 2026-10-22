@@ -29,6 +29,7 @@ fn read_number_from_file(path: &str) -> anyhow::Result<u32> {
 // The `main` function may return a `Result` itself.
 // We return `anyhow::Result<()>` but could also use
 // `Result<(), Box<dyn Error>>` as the return type.
+/// Reads a number from a file and prints it.
 fn main() -> anyhow::Result<()> {
     let n = read_number_from_file("temp/number.txt")?;
     println!("The number is: {n}");

@@ -43,6 +43,7 @@ fn base_url(mut url: Url) -> Result<Url> {
     Ok(url)
 }
 
+/// Extracts the base of a URL.
 fn main() -> Result<()> {
     let full = "https://github.com/rust-lang/cargo?asdf";
 

@@ -89,6 +89,7 @@ mod home {
     }
 }
 
+/// Simulates the initialization of a Loco application.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // In a real application, you would use:

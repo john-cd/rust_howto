@@ -12,6 +12,7 @@ fn returns_closure() -> impl Fn(i32) -> i32 {
     |x| x + 1
 }
 
+/// Calls a function that returns a closure with `impl Trait`.
 fn main() {
     let f = returns_closure();
     println!("{}", f(1));

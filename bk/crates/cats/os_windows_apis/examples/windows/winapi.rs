@@ -27,6 +27,7 @@ use winapi::um::winuser::ShowWindow;
 use winapi::um::winuser::TranslateMessage;
 use winapi::um::winuser::WNDCLASSW;
 
+/// The window procedure, which handles the messages sent to the window.
 unsafe extern "system" fn window_proc(
     hwnd: HWND,
     msg: UINT,

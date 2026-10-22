@@ -8,11 +8,17 @@
 /// The object to build.
 #[derive(Debug)]
 struct DatabaseConfig {
+    /// The host name or address.
     host: String,
+    /// The port.
     port: u16,
+    /// The user name, if any.
     username: Option<String>,
+    /// The password, if any.
     password: Option<String>,
+    /// The size of the connection pool.
     pool_size: u32,
+    /// The connection timeout in seconds.
     connection_timeout_seconds: u64,
     // More fields...
 }
@@ -27,11 +33,17 @@ impl DatabaseConfig {
 
 /// The builder object.
 struct DatabaseConfigBuilder {
+    /// The host name or address.
     host: String,
+    /// The port.
     port: u16,
+    /// The user name, if any.
     username: Option<String>,
+    /// The password, if any.
     password: Option<String>,
+    /// The size of the connection pool.
     pool_size: u32,
+    /// The connection timeout in seconds.
     connection_timeout_seconds: u64,
 }
 
@@ -55,16 +67,19 @@ impl DatabaseConfigBuilder {
         self
     }
 
+    /// Sets the password.
     fn password(mut self, password: String) -> Self {
         self.password = Some(password);
         self
     }
 
+    /// Sets the size of the connection pool.
     fn pool_size(mut self, pool_size: u32) -> Self {
         self.pool_size = pool_size;
         self
     }
 
+    /// Sets the connection timeout in seconds.
     fn connection_timeout_seconds(
         mut self,
         connection_timeout_seconds: u64,
@@ -73,6 +88,7 @@ impl DatabaseConfigBuilder {
         self
     }
 
+    /// Creates the configuration from the builder.
     fn build(self) -> DatabaseConfig {
         DatabaseConfig {
             host: self.host,
@@ -85,6 +101,7 @@ impl DatabaseConfigBuilder {
     }
 }
 
+/// Builds a configuration with the builder and prints it.
 fn main() {
     // Create a builder struct.
     let config = DatabaseConfigBuilder::new("localhost".to_string(), 5432)

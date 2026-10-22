@@ -7,6 +7,7 @@
 use anyhow::Result;
 use semver::Version;
 
+/// Parses versions with and without a pre-release identifier.
 fn main() -> Result<()> {
     let version_1 = Version::parse("1.0.0-alpha")?;
     // Prints `Version { major: 1, minor: 0, patch: 0, pre: [Identifier(Alpha)],

@@ -10,6 +10,7 @@
 #[derive(Debug)]
 struct MyStruct(i32);
 
+/// Moves a value from the stack to the heap with a `Box`.
 fn main() {
     // `in_stack` is an instance of `MyStruct` allocated on the stack.
     let in_stack = MyStruct(5);

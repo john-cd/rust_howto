@@ -14,10 +14,14 @@ use anyhow::anyhow;
 use serde::Deserialize;
 // use anyhow::Context;
 
+/// An RGB color.
 #[derive(Debug, Deserialize)]
 struct Rgb {
+    /// The red component.
     red: u8,
+    /// The blue component.
     blue: u8,
+    /// The green component.
     green: u8,
 }
 

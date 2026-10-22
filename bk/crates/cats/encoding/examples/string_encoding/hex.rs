@@ -7,6 +7,7 @@
 use data_encoding::DecodeError;
 use data_encoding::HEXUPPER;
 
+/// Encodes bytes as hexadecimal, then decodes them.
 fn main() -> Result<(), DecodeError> {
     // The original string to be encoded.
     let original = b"The quick brown fox jumps over the lazy dog.";

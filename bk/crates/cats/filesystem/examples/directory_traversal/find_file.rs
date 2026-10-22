@@ -8,6 +8,8 @@
 use anyhow::Result;
 use walkdir::WalkDir;
 
+/// Walks the current directory tree and prints the files that were modified
+/// recently.
 fn main() -> Result<()> {
     // Traverse the current directory recursively.
     for entry in WalkDir::new(".")

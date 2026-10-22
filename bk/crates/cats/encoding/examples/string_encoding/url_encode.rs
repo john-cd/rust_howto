@@ -8,6 +8,7 @@
 use url::form_urlencoded::byte_serialize;
 use url::form_urlencoded::parse;
 
+/// Encodes bytes in the URL-encoded form format, then decodes them.
 fn main() {
     // Encode a string to URL-encoded format.
     // The `byte_serialize` function takes a byte slice and returns an iterator

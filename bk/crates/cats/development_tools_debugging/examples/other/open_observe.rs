@@ -14,6 +14,7 @@ use opentelemetry::trace::Span;
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::trace::Tracer;
 
+/// Creates a span with fields and logs events, for an OpenObserve endpoint.
 #[cfg(feature = "opentelemetry")]
 fn main() {
     let endpoint = std::env::var("OPENOBSERVE_OTLP_ENDPOINT")
@@ -29,6 +30,7 @@ fn main() {
     span.end();
 }
 
+/// Prints a message when the `opentelemetry` feature is not enabled.
 #[cfg(not(feature = "opentelemetry"))]
 fn main() {
     println!("Enable the `opentelemetry` feature to run this example.");

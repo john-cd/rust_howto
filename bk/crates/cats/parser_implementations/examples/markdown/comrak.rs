@@ -53,6 +53,7 @@ fn replace_text(
     html
 }
 
+/// Converts Markdown to HTML and replaces text in a Markdown document.
 fn main() {
     to_html();
 

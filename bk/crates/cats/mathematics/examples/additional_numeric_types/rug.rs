@@ -16,6 +16,7 @@ use rug::Rational;
 use rug::float::Round;
 use rug::ops::DivAssignRound;
 
+/// Creates, converts and operates on arbitrary-precision numbers.
 fn main() {
     // 1. Working with large integers:
     let a = Integer::from(123456789012345678901234567890_u128);

@@ -10,6 +10,7 @@ use std::sync::LazyLock;
 use anyhow::bail;
 use serde::Serialize;
 
+/// The templates, which are loaded and configured on first use.
 static TEMPLATES: LazyLock<tera::Result<tera::Tera>> = LazyLock::new(|| {
     tera::Tera::new("examples/tera/templates/*").map(|mut t| {
         // Configure the Tera template engine.
@@ -41,11 +42,15 @@ pub fn underscored(
 /// A simple page struct to be used as context for the template.
 #[derive(Serialize, Debug)]
 struct Page {
+    /// The title of the page.
     title: String,
+    /// The heading of the page.
     heading: String,
+    /// The content of the page.
     content: String,
 }
 
+/// Renders a template with values from a context and prints the result.
 fn main() -> anyhow::Result<()> {
     // Initialize the Tera template engine.
     let templ: &tera::Result<tera::Tera> = &TEMPLATES;

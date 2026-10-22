@@ -4,6 +4,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Adds two complex numbers and prints the sum.
 fn main() {
     // Create two complex numbers.
     let complex_num1 = num::complex::Complex::new(10.0, 20.0);

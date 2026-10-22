@@ -22,6 +22,7 @@ use std::net::Ipv4Addr;
 use std::net::SocketAddrV4;
 use std::net::TcpListener;
 
+/// Accepts one connection on `listener` and returns the text it sends.
 fn read_one_connection(listener: TcpListener) -> Result<String, Error> {
     let port = listener.local_addr()?;
     println!(
@@ -34,6 +35,8 @@ fn read_one_connection(listener: TcpListener) -> Result<String, Error> {
     Ok(input)
 }
 
+/// Listens on an unused port of the loopback interface and prints what one
+/// client sends.
 fn main() -> Result<(), Error> {
     let loopback = Ipv4Addr::new(127, 0, 0, 1);
     let socket = SocketAddrV4::new(loopback, 0); // 0 means any available port.

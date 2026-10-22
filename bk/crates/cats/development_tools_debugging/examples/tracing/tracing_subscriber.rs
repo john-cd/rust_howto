@@ -21,6 +21,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// Installs a global subscriber and emits events.
 fn main() {
     // In most cases, use the following to
     // initialize and install the global subscriber for your application:

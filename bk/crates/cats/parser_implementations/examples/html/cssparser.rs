@@ -9,6 +9,7 @@ use cssparser::ParserInput;
 use cssparser::ToCss;
 use cssparser::Token;
 
+/// Tokenizes a CSS declaration list and prints each token.
 fn main() {
     let css = "color: red; font-size: 16px;";
     let mut input = ParserInput::new(css);

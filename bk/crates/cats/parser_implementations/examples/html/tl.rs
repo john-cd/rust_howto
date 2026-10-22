@@ -8,6 +8,7 @@ use tl::Node;
 use tl::Parser;
 use tl::VDom;
 
+/// Parses an HTML document and queries its elements.
 fn main() -> anyhow::Result<()> {
     let html = r#"
         <!DOCTYPE html>

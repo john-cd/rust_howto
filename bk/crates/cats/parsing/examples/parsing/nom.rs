@@ -14,6 +14,7 @@ use nom::combinator::map_res;
 // Parser for handling lists:
 use nom::multi::separated_list0;
 
+/// Parses one or more digits into a `u32`.
 fn parse_number(input: &str) -> IResult<&str, u32> {
     // `digit1` is a parser that recognizes one or more ASCII numerical
     // characters (0-9). It returns a string slice containing the matched
@@ -36,6 +37,7 @@ fn parse_comma_separated_numbers(input: &str) -> IResult<&str, Vec<u32>> {
     separated_list0(tag(","), parse_number).parse(input)
 }
 
+/// Parses a comma-separated list of numbers and prints the result.
 fn main() {
     let input = "1,2,3,4,5";
     match parse_comma_separated_numbers(input) {

@@ -4,6 +4,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
+/// A message, created from raw bytes.
 #[derive(Debug)]
 struct Message(String);
 
@@ -14,6 +15,7 @@ impl From<&[u8]> for Message {
     }
 }
 
+/// Converts raw bytes into a `Message`.
 fn main() {
     let raw: &[u8] = b"Hello world";
     let msg: Message = raw.into(); // Use `From<&[u8]>`.

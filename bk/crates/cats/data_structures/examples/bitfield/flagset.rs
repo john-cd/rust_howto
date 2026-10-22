@@ -34,17 +34,20 @@ flags! {
 // A collection of flags is a `FlagSet<T>`.
 // If you are storing the flags in memory, the raw `FlagSet<T>` type should be
 // used.
+/// A container that stores a set of flags.
 #[derive(Debug)]
 struct Container(FlagSet<FlagsA>);
 
 impl Container {
     // However, if you want to receive flags as an input to a function, you
     // should use `impl Into<FlagSet<T>>`.
+    /// Creates a container from anything that converts into a set of flags.
     fn new(flags: impl Into<FlagSet<FlagsA>>) -> Container {
         Container(flags.into())
     }
 }
 
+/// Creates containers from flags and checks their bits.
 fn main() {
     let container = Container::new(FlagsA::Foo | FlagsA::Bar);
     assert_eq!(container.0.bits(), 0b011);

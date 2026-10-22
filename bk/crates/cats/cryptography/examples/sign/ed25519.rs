@@ -11,6 +11,7 @@ use ed25519_dalek::SigningKey;
 use ed25519_dalek::Verifier;
 use rand_core::OsRng;
 
+/// Signs a message with a random Ed25519 key and verifies the signature.
 fn main() -> anyhow::Result<()> {
     let mut rng = OsRng;
     let signing_key = SigningKey::generate(&mut rng);

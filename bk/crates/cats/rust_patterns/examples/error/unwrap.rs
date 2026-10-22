@@ -7,6 +7,7 @@
 
 #![allow(clippy::unnecessary_literal_unwrap)]
 
+/// Extracts a value with `unwrap` and `expect`, which panic on failure.
 fn main() {
     let number_str = "42";
 

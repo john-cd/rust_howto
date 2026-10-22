@@ -7,13 +7,18 @@
 use serde::Deserialize;
 use serde::Serialize;
 
+/// A struct that is serialized to and deserialized from MessagePack.
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 struct MyData {
+    /// The name.
     name: String,
+    /// The age in years.
     age: u32,
+    /// Whether the data is active.
     is_active: bool,
 }
 
+/// Encodes a struct as MessagePack, then decodes it.
 fn main() -> anyhow::Result<()> {
     let data = MyData {
         name: "Alice".to_string(),

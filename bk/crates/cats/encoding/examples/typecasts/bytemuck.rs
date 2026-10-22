@@ -50,7 +50,9 @@ fn cast() {
 #[repr(C)]
 #[derive(Debug, Clone, Copy, NoUninit, AnyBitPattern)]
 struct MyStruct {
+    /// A number.
     x: i32,
+    /// Four bytes.
     y: [u8; 4],
 }
 
@@ -87,6 +89,7 @@ fn to_from_bytes() {
     println!("Recovered: {recovered:?}");
 }
 
+/// Runs the `bytemuck` examples.
 fn main() {
     cast();
     cast_complex_type();

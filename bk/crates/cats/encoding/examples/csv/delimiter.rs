@@ -11,12 +11,16 @@ use serde::Deserialize;
 /// Represents a record to import.
 #[derive(Debug, Deserialize)]
 struct Record {
+    /// The name.
     name: String,
+    /// The place.
     place: String,
+    /// The identifier, if any.
     #[serde(deserialize_with = "csv::invalid_option")]
     id: Option<u64>,
 }
 
+/// Reads tab-separated data and prints each record.
 fn main() -> Result<(), Error> {
     // Tab-separated data.
     let tab_separated_data = "name\tplace\tid

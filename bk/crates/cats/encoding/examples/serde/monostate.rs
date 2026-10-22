@@ -24,15 +24,21 @@ use serde::Deserialize;
 #[derive(Deserialize)]
 #[serde(untagged)]
 pub enum ApiResponse {
+    /// A successful response.
     Success {
+        /// Always `true`.
         success: MustBe!(true),
     },
+    /// An error response.
     Error {
+        /// Always `false`.
         success: MustBe!(false),
+        /// A message that describes the error.
         _message: String,
     },
 }
 
+/// Deserializes success and error responses from JSON.
 fn main() {
     let success = "{\"success\":true}";
     let response: ApiResponse = serde_json::from_str(success).unwrap();

@@ -13,6 +13,7 @@ use std::sync::atomic::AtomicU16;
 use std::sync::atomic::Ordering;
 use std::thread;
 
+/// Modifies a mutable static, which requires `unsafe` and is discouraged.
 fn dont_do_this() {
     // Declare a mutable static variable:
     static mut VAL: i32 = 0;
@@ -35,6 +36,7 @@ fn dont_do_this() {
     assert_eq!(READ_FROM_VAL, 0);
 }
 
+/// Uses a static atomic instead of a mutable static.
 fn do_instead() {
     // Use an _immutable_ static containing an Atomic.
     // Note that Atomic variables are safe to share between threads (they
@@ -73,6 +75,7 @@ fn do_instead() {
     assert_eq!(final_count, 20_001);
 }
 
+/// Uses a static `Mutex` to share mutable state.
 fn or_do_that() {
     // The preferred way to handle mutable global state is to use
     // synchronization primitives with interior mutability
@@ -109,6 +112,7 @@ fn or_do_that() {
     assert_eq!(final_count, 20_000);
 }
 
+/// Runs the three approaches in turn.
 fn main() {
     dont_do_this();
     do_instead();

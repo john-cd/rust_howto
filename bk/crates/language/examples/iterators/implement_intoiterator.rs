@@ -11,6 +11,7 @@
 /// In this example, we simply wrap a `Vec`.
 #[derive(Debug)]
 struct MyVec<T> {
+    /// The items of the collection.
     data: Vec<T>,
 }
 
@@ -20,6 +21,7 @@ impl<T> MyVec<T> {
         MyVec { data: Vec::new() }
     }
 
+    /// Adds an item at the end of the collection.
     fn push(&mut self, item: T) {
         self.data.push(item);
     }
@@ -43,6 +45,7 @@ impl<T> IntoIterator for MyVec<T> {
 /// It must implement the `Iterator` trait.
 #[derive(Debug)]
 struct MyVecIntoIterator<T> {
+    /// The remaining items.
     data: Vec<T>,
     // Iterator types often store indices to track the progress of the
     // iteration. This is not necessary in this simple example.
@@ -69,6 +72,7 @@ impl<T> Iterator for MyVecIntoIterator<T> {
     // we get for free.
 }
 
+/// Iterates over a custom collection with a `for` loop.
 fn main() {
     let mut my_vec = MyVec::new();
     my_vec.push(1);

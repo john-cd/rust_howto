@@ -9,6 +9,7 @@ use std::time::Duration;
 
 use reqwest::ClientBuilder;
 
+/// Sends a `HEAD` request to check whether a user exists.
 #[tokio::main]
 async fn main() -> reqwest::Result<()> {
     let user = "ferris-the-crab";

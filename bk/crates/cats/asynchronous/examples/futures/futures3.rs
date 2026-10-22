@@ -17,6 +17,8 @@
 use anyhow::Result;
 use futures::future::FutureExt;
 
+/// Combines futures with `map`, `then`, `Either` and `flatten`, and prints the
+/// results.
 #[tokio::main]
 async fn main() -> Result<()> {
     // Create a future that resolves to the value 1.

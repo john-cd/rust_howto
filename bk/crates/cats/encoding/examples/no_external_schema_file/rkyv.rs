@@ -14,12 +14,16 @@ use rkyv::Deserialize;
 use rkyv::Serialize;
 use rkyv::rancor::Error;
 
+/// A struct that can be archived.
 #[derive(Archive, Deserialize, Serialize, Debug)]
 struct MyStruct {
+    /// A string.
     field1: String,
+    /// A number.
     field2: i32,
 }
 
+/// Serializes a struct with `rkyv`, then deserializes it.
 fn main() -> anyhow::Result<()> {
     // Create an instance of `MyStruct`.
     let data = MyStruct {

@@ -16,6 +16,7 @@ use tokio::net::TcpStream;
 use tokio_rustls::TlsConnector;
 use webpki_roots::TLS_SERVER_ROOTS;
 
+/// Connects to a server over TLS and sends a request.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let mut root_store = RootCertStore::empty();

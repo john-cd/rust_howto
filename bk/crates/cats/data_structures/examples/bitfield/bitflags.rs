@@ -34,6 +34,7 @@ bitflags! {
 // `impl` blocks can be added to flags types to implement additional methods.
 impl MyFlags {
     // Convert the bitflags to a u64:
+    /// Returns the flags as a `u64`.
     pub fn as_u64(&self) -> u64 {
         self.bits() as u64
     }
@@ -47,6 +48,7 @@ impl fmt::Display for MyFlags {
     }
 }
 
+/// Combines, intersects and formats flags with bitwise operations.
 fn main() {
     // Demonstrate bitwise operations with the defined flags.
     // Union:

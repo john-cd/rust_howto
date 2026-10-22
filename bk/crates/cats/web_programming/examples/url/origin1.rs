@@ -13,6 +13,7 @@ use url::Host;
 use url::Origin;
 use url::Url;
 
+/// Parses a URL and compares its origin with the expected one.
 fn main() -> Result<()> {
     let s = "ftp://rust-lang.org/examples";
 

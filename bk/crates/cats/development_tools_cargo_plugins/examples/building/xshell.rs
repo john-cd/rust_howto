@@ -11,6 +11,7 @@
 use xshell::Shell;
 use xshell::cmd;
 
+/// Runs shell commands with `xshell`.
 #[tracing::instrument(err)]
 fn main() -> anyhow::Result<()> {
     // Initialize tracing subscriber

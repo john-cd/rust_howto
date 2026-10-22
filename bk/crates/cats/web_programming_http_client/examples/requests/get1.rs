@@ -7,6 +7,8 @@
 
 use anyhow::Result;
 
+/// Sends a `GET` request and prints the status, headers and body of the
+/// response.
 #[tokio::main]
 async fn main() -> Result<()> {
     let res = reqwest::get("http://httpbin.org/get").await?;

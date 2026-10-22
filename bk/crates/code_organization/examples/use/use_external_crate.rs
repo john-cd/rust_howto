@@ -20,6 +20,7 @@ use std::collections::HashMap;
 // crate.
 use ::anyhow::Result;
 
+/// Uses items from external crates.
 fn main() -> Result<()> {
     // Use a function from the `array` module of the `std` crate.
     // In this case, create an array of length 1 from a reference.

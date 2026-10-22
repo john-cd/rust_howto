@@ -16,6 +16,7 @@ use itertools::Itertools;
 use itertools::assert_equal;
 use itertools::chain;
 
+/// Applies `itertools` functions and adaptors to iterators.
 fn main() {
     // `assert_equal`:
     // This function asserts that two iterables produce equal sequences.

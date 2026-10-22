@@ -41,6 +41,8 @@ fn contains_loop<P: AsRef<Path>>(
     Ok(None)
 }
 
+/// Checks that two paths refer to the same file and detects a loop in a
+/// directory path.
 fn main() {
     assert!(is_same_file("/tmp/foo", "/tmp/./foo").unwrap_or(false));
 

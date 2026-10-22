@@ -19,6 +19,7 @@
 use rocksdb::DB;
 use rocksdb::Options;
 
+/// Opens a database in a temporary directory, then writes and reads values.
 fn main() -> anyhow::Result<()> {
     // Create a new temporary directory to store the database,
     // which will be deleted when `tempdir` goes out of scope.

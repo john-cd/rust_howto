@@ -13,7 +13,9 @@ use rand::distr::StandardUniform;
 #[derive(Debug)]
 #[allow(dead_code)]
 struct Point {
+    /// The horizontal coordinate.
     x: i32,
+    /// The vertical coordinate.
     y: i32,
 }
 
@@ -25,6 +27,7 @@ impl Distribution<Point> for StandardUniform {
     }
 }
 
+/// Generates and prints random values, including a custom `Point`.
 fn main() {
     // Access the standard random value generator:
     let mut rng = rand::rng();

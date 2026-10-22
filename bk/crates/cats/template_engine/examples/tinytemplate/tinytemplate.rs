@@ -18,6 +18,7 @@ use std::collections::HashMap;
 
 use tinytemplate::TinyTemplate;
 
+/// Renders a template with values from a context and prints the result.
 fn main() {
     // Create a new template engine:
     let mut tt = TinyTemplate::new();
