@@ -21,9 +21,9 @@ struct Task {
 impl Task {
     /// Creates a new `Task` instance.
     fn new(id: u32, name: &str) -> Self {
-        Task {
+        Self {
             id,
-            name: name.to_string(),
+            name: name.to_owned(),
         }
     }
 }
@@ -77,7 +77,7 @@ fn main() {
 
     // Get the highest priority task without removing it:
     if let Some((task, priority)) = task_queue.peek() {
-        println!("Highest priority task: {task:?} with priority {priority}",);
+        println!("Highest priority task: {task:?} with priority {priority}");
     }
 
     // Change the priority of a task:

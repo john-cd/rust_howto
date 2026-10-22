@@ -51,3 +51,6 @@ test = true
 name = "yew"
 path = "examples/yew/main.rs"
 test = true
+
+[lints]
+workspace = true

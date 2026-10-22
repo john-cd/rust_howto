@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 // ANCHOR: example
-//! Log telemetry fields for an OpenObserve integration.
+//! Log telemetry fields for an `OpenObserve` integration.
 //!
 //! To transmit spans, first configure an OpenTelemetry SDK provider with an
 //! OTLP exporter. The global tracer is a no-op until a provider is installed.
@@ -10,14 +10,14 @@
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::global;
 #[cfg(feature = "opentelemetry")]
-use opentelemetry::trace::Span;
+use opentelemetry::trace::Span as _;
 #[cfg(feature = "opentelemetry")]
-use opentelemetry::trace::Tracer;
+use opentelemetry::trace::Tracer as _;
 
 #[cfg(feature = "opentelemetry")]
 fn main() {
     let endpoint = std::env::var("OPENOBSERVE_OTLP_ENDPOINT")
-        .unwrap_or_else(|_| "http://localhost:5080/api/default".to_string());
+        .unwrap_or_else(|_| "http://localhost:5080/api/default".to_owned());
     let _ = tracing_subscriber::fmt().with_target(false).try_init();
 
     let tracer = global::tracer("openobserve-example");

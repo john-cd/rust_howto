@@ -2,7 +2,7 @@
 mod categories_from_toml;
 mod request;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
 
 use super::Category;

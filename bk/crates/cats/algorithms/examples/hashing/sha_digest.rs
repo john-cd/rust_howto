@@ -5,7 +5,7 @@ use std::fs;
 use std::fs::File;
 use std::io::BufReader;
 use std::io::Read;
-use std::io::Write;
+use std::io::Write as _;
 
 use anyhow::Result;
 use data_encoding::HEXUPPER;

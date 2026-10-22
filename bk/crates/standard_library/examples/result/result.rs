@@ -13,7 +13,7 @@
 
 use std::fs::File;
 use std::io;
-use std::io::Read;
+use std::io::Read as _;
 use std::num::ParseIntError;
 
 fn open_file(file_path: &str) {
@@ -83,22 +83,22 @@ impl std::error::Error for MyError {}
 impl std::fmt::Display for MyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            MyError::Io(err) => write!(f, "IO error: {err}"),
-            MyError::Parse(err) => write!(f, "Parse error: {err}"),
+            Self::Io(err) => write!(f, "IO error: {err}"),
+            Self::Parse(err) => write!(f, "Parse error: {err}"),
         }
     }
 }
 
 // We should also implement the `From` trait:
 impl From<io::Error> for MyError {
-    fn from(err: io::Error) -> MyError {
-        MyError::Io(err)
+    fn from(err: io::Error) -> Self {
+        Self::Io(err)
     }
 }
 
 impl From<ParseIntError> for MyError {
-    fn from(err: ParseIntError) -> MyError {
-        MyError::Parse(err)
+    fn from(err: ParseIntError) -> Self {
+        Self::Parse(err)
     }
 }
 

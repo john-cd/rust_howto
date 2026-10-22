@@ -9,7 +9,7 @@
 //! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
-use wasmtime::error::Context;
+use wasmtime::error::Context as _;
 use wasmtime::*;
 
 // Simple example written in WAT (WebAssembly Text Format).

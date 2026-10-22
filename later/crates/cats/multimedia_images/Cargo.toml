@@ -28,3 +28,6 @@ tempfile = "3.27.0"
 name = "images"
 path = "examples/images/main.rs"
 test = true
+
+[lints]
+workspace = true

@@ -46,7 +46,7 @@ fn main() {
 
     // Check the underlying cache:
     {
-        use cached::Cached;
+        use cached::Cached as _;
         let cache = FIBONACCI.lock();
         println!("misses: {:?}", cache.cache_misses());
         assert_eq!(cache.cache_misses(), Some(11));

@@ -24,3 +24,6 @@ num_cpus = "1.17.0"
 name = "processor"
 path = "examples/processor/main.rs"
 test = true
+
+[lints]
+workspace = true

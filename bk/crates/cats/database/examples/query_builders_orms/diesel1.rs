@@ -31,8 +31,8 @@ struct User {
 fn main() {
     let new_user = User {
         id: 1,
-        name: "John Doe".to_string(),
-        email: "john@example.com".to_string(),
+        name: "John Doe".to_owned(),
+        email: "john@example.com".to_owned(),
     };
 
     let insert_query = diesel::insert_into(users::table).values(&new_user);

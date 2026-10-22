@@ -16,7 +16,7 @@ const UNCATEGORIZED_DESCRIPTION: &str =
 const CATEGORY_PAGE_HEADER: &str =
     "# Crates by Category\n\n| Category | Description | Crates |\n| --- | --- | --- |\n";
 
-const CATEGORY_PAGE_FOOTER: &str = "\n[All Valid Categories][crates.io~category_slugs]↗.\n\n{{#include refs.incl.md}}\n{{#include ../refs/link-refs.md}}\n\n<div class=\"hidden\">\n</div>\n";
+const CATEGORY_PAGE_FOOTER: &str = "\n[All Valid Categories][crates.io~category_slugs]\u{2197}.\n\n{{#include refs.incl.md}}\n{{#include ../refs/link-refs.md}}\n\n<div class=\"hidden\">\n</div>\n";
 
 #[derive(Deserialize)]
 struct CategoryCatalog {
@@ -32,14 +32,14 @@ struct CategoryRecord {
     crates: Vec<String>,
 }
 
-/// Create_category_and_crates
+/// `Create_category_and_crates`
 /// Returns one line in the "crates organized by category" table:
 /// | <category badge> | <description> | <crate badge> <crate badge>... |
 ///
 /// category: category name e.g. Encoding
 /// slug: category slug used by the crates.io website e.g. encoding
 /// description: description of the category
-/// crate_names: list of the names of the crates to include in the category (per
+/// `crate_names`: list of the names of the crates to include in the category (per
 /// lib.rs)
 pub fn create_category_and_crates(
     category: &str,
@@ -96,7 +96,7 @@ fn create_category_row(
         row.push_str(name);
         row.push_str("}}");
         for link in links {
-            row.push_str("<br>&nbsp;&nbsp;↳ [");
+            row.push_str("<br>&nbsp;&nbsp;\u{21b3} [");
             row.push_str(&link.title);
             row.push_str("][");
             row.push_str(&link.reference);
@@ -178,22 +178,21 @@ pub fn create_category_page_from_metadata_with_recipe_links(
 
     let uncategorized: BTreeSet<String> = inventory.difference(&categorized).cloned().collect();
     if !uncategorized.is_empty() {
-        let index = match uncategorized_index {
-            Some(index) => index,
-            None => {
-                anyhow::ensure!(
-                    slugs.insert(UNCATEGORIZED_SLUG.to_owned()),
-                    "crate category metadata reserves the uncategorized slug"
-                );
-                let index = groups.len();
-                groups.push((
-                    "Uncategorized".to_owned(),
-                    UNCATEGORIZED_SLUG.to_owned(),
-                    UNCATEGORIZED_DESCRIPTION.to_owned(),
-                    BTreeSet::new(),
-                ));
-                index
-            }
+        let index = if let Some(index) = uncategorized_index {
+            index
+        } else {
+            anyhow::ensure!(
+                slugs.insert(UNCATEGORIZED_SLUG.to_owned()),
+                "crate category metadata reserves the uncategorized slug"
+            );
+            let index = groups.len();
+            groups.push((
+                "Uncategorized".to_owned(),
+                UNCATEGORIZED_SLUG.to_owned(),
+                UNCATEGORIZED_DESCRIPTION.to_owned(),
+                BTreeSet::new(),
+            ));
+            index
         };
         groups[index].3.extend(uncategorized);
     }
@@ -229,7 +228,8 @@ mod tests {
         let description = " Description of the category ";
         let crate_names = vec!["base64", "hex"];
 
-        let result = create_category_and_crates(category, slug, description, crate_names).unwrap();
+        let result = create_category_and_crates(category, slug, description, crate_names)
+            .expect("input should parse");
 
         // Check for the category badge and name
         assert!(result.contains("[![cat~encoding][cat~encoding~badge]][cat~encoding]"));
@@ -252,14 +252,15 @@ mod tests {
         let description = "Empty category";
         let crate_names = vec![];
 
-        let result = create_category_and_crates(category, slug, description, crate_names).unwrap();
+        let result = create_category_and_crates(category, slug, description, crate_names)
+            .expect("input should parse");
 
         assert!(result.contains("[![cat~empty][cat~empty~badge]][cat~empty]"));
         assert!(result.contains("{{hi:Empty}}"));
         assert!(result.contains("Empty category"));
 
         // Ensure it doesn't contain crate badges (it should end with a '|')
-        assert!(result.ends_with("|"));
+        assert!(result.ends_with('|'));
     }
 
     #[test]
@@ -270,7 +271,7 @@ mod tests {
             "A &quot;one-stop-shop&quot; category &amp; description.",
             vec!["glam"],
         )
-        .unwrap();
+        .expect("input should parse");
 
         assert!(row.contains("A &quot;one-stop-shop&quot; category &amp; description."));
         assert!(!row.contains("&amp;quot;"));
@@ -294,7 +295,8 @@ mod tests {
             crates = ["old-name", "removed"]
         "#;
 
-        let page = create_category_page_from_metadata(&inventory, metadata).unwrap();
+        let page =
+            create_category_page_from_metadata(&inventory, metadata).expect("input should parse");
 
         assert_eq!(page.matches("[![shared][c~shared~docs~badge]").count(), 1);
         assert_eq!(
@@ -330,10 +332,10 @@ mod tests {
             metadata,
             &recipe_links,
         )
-        .unwrap();
+        .expect("input should parse");
 
         assert!(page.contains(
-            "[![glam][c~glam~docs~badge]][c~glam~docs]{{hi:glam}}<br>&nbsp;&nbsp;↳ [Draw with glam][ex~graphics~glam]<br>[![vello]"
+            "[![glam][c~glam~docs~badge]][c~glam~docs]{{hi:glam}}<br>&nbsp;&nbsp;\u{21b3} [Draw with glam][ex~graphics~glam]<br>[![vello]"
         ));
     }
 
@@ -360,10 +362,10 @@ mod tests {
             metadata,
             &recipe_links,
         )
-        .unwrap();
+        .expect("input should parse");
 
         assert!(page.contains(
-            "| Uncategorized | No crates.io category is recorded for these crates in the book's current inventory. | [![recipe-only][c~recipe-only~docs~badge]][c~recipe-only~docs]{{hi:recipe-only}}<br>&nbsp;&nbsp;↳ [Use recipe-only][ex~examples~recipe-only]|"
+            "| Uncategorized | No crates.io category is recorded for these crates in the book's current inventory. | [![recipe-only][c~recipe-only~docs~badge]][c~recipe-only~docs]{{hi:recipe-only}}<br>&nbsp;&nbsp;\u{21b3} [Use recipe-only][ex~examples~recipe-only]|"
         ));
     }
 
@@ -380,8 +382,8 @@ mod tests {
         let second = vec!["alpha".to_owned(), "beta".to_owned()];
 
         assert_eq!(
-            create_category_page_from_metadata(&first, metadata).unwrap(),
-            create_category_page_from_metadata(&second, metadata).unwrap()
+            create_category_page_from_metadata(&first, metadata).expect("input should parse"),
+            create_category_page_from_metadata(&second, metadata).expect("input should parse")
         );
     }
 
@@ -401,8 +403,8 @@ mod tests {
             crates = ["crate-b"]
         "#;
 
-        let error =
-            create_category_page_from_metadata(&["crate-a".to_owned()], metadata).unwrap_err();
+        let error = create_category_page_from_metadata(&["crate-a".to_owned()], metadata)
+            .expect_err("input should be rejected");
 
         assert!(error.to_string().contains("duplicate category slug"));
     }

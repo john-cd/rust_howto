@@ -23,3 +23,6 @@ autolib = false
 name = "rendering_engines"
 path = "examples/rendering_engines/main.rs"
 test = true
+
+[lints]
+workspace = true

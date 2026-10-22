@@ -91,3 +91,6 @@ test = true
 name = "typecasts"
 path = "examples/typecasts/main.rs"
 test = true
+
+[lints]
+workspace = true

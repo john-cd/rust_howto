@@ -10,7 +10,7 @@ struct Message(String);
 // Implement `From` to convert from a `u8` slice to our custom struct.
 impl From<&[u8]> for Message {
     fn from(bytes: &[u8]) -> Self {
-        Message(String::from_utf8_lossy(bytes).into())
+        Self(String::from_utf8_lossy(bytes).into())
     }
 }
 

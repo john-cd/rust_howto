@@ -14,7 +14,7 @@ use rug::Float;
 use rug::Integer;
 use rug::Rational;
 use rug::float::Round;
-use rug::ops::DivAssignRound;
+use rug::ops::DivAssignRound as _;
 
 fn main() {
     // 1. Working with large integers:

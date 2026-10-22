@@ -11,7 +11,7 @@ use std::env;
 /// Reads the `PATH` environment variable, or a default value if the variable is
 /// not set.
 fn main() {
-    let path = env::var("PATH").unwrap_or("".to_string());
+    let path = env::var("PATH").unwrap_or("".to_owned());
     println!("Path: {path}");
 }
 

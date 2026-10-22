@@ -22,7 +22,7 @@ fn insert(fruit: &str) -> Result<()> {
     let mut db = FRUIT
         .lock()
         .map_err(|_| anyhow!("Failed to acquire MutexGuard"))?;
-    db.push(fruit.to_string());
+    db.push(fruit.to_owned());
     Ok(())
 }
 

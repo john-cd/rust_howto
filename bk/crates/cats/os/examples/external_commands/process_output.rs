@@ -33,7 +33,7 @@ fn main() -> Result<()> {
     }
 
     let pattern = Regex::new(
-        r"(?x)
+        "(?x)
         ([0-9a-fA-F]+) # commit hash
         (.*)           # The commit message",
     )?;
@@ -43,7 +43,7 @@ fn main() -> Result<()> {
         .filter_map(|line| pattern.captures(line))
         .map(|cap| Commit {
             hash: cap[1].to_string(),
-            message: cap[2].trim().to_string(),
+            message: cap[2].trim().to_owned(),
         })
         .take(5)
         .for_each(|x| println!("{x:?}"));

@@ -18,3 +18,1273 @@ categories = ["development-tools"]
 readme = "README.md"
 publish = false
 license-file = "../LICENSE"
+
+[workspace.lints.rust]
+
+# Prohibit unsafe code blocks across the workspace unless explicitly audited
+unsafe_code = "deny"
+
+# Require public item documentation
+missing_docs = "deny"
+
+# Require explicit lifetime parameters in type paths
+elided_lifetimes_in_paths = "warn"
+
+# Require items declared pub in private modules to be restricted (e.g. pub(crate))
+unreachable_pub = "warn"
+
+# Catch future-incompatible language and syntax changes
+future_incompatible = { level = "warn", priority = -1 }
+
+# Enforce standard naming and casing conventions
+nonstandard_style = { level = "warn", priority = -1 }
+
+# Enforce Rust 2018 idioms (e.g. bare trait objects, unused extern crates)
+rust_2018_idioms = { level = "warn", priority = -1 }
+
+# Catch identifiers colliding with names in the Rust 2021 edition prelude
+rust_2021_prelude_collisions = "warn"
+
+# Catch trailing semicolons in macro bodies used as expressions
+semicolon_in_expressions_from_macros = "warn"
+
+# Catch numeric casts between identical types that can be removed
+trivial_numeric_casts = "warn"
+
+# Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
+# when it instruments a build, allowing timing tests to distinguish measurement from execution.
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(coverage)'] }
+
+# Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
+unsafe_op_in_unsafe_fn = "warn"
+
+# Catch unused extern crate declarations
+unused_extern_crates = "warn"
+
+# Catch unneeded braces in import declarations
+unused_import_braces = "warn"
+
+# Catch unused lifetime declarations on generics and function signatures
+unused_lifetimes = "warn"
+
+# Allow harmless trivial casts where explicit type hints aid readability
+trivial_casts = "allow"
+
+# Allow module-qualified identifiers where qualification disambiguates domain types
+unused_qualifications = "allow"
+
+# Rustdoc documentation lints
+[workspace.lints.rustdoc]
+all = "warn"
+
+# Detect broken intra-doc links within doc comments
+broken_intra_doc_links = "warn"
+
+# Detect crates missing crate-level module documentation
+missing_crate_level_docs = "warn"
+
+# See also clippy.toml
+[workspace.lints.clippy]
+# Relaxed: Variant names mirror directive names.
+enum_variant_names = "allow"
+# Relaxed: Nested control flow in the preprocessors mirrors the markdown structure.
+excessive_nesting = "allow"
+all = { level = "warn", priority = -1 }
+# ==============================================================================
+# Baseline lints (Non-allow lints previously configured in repository)
+# ==============================================================================
+
+# Warns on holding a MutexGuard across an await point
+await_holding_lock = "warn"
+
+# Warns on holding a RefCell Ref or RefMut across an await point
+await_holding_refcell_ref = "warn"
+
+# Prohibits methods specified in clippy.toml (e.g. unbounded channels)
+disallowed_methods = "warn"
+
+# Prohibits names specified in clippy.toml (e.g. cmds, res, idx)
+disallowed_names = "warn"
+
+# Checks for mutexes in an if-let pattern (relevant for pre-2024 editions)
+if_let_mutex = "warn"
+
+# Checks for TryFrom implementations that cannot fail
+infallible_try_from = "warn"
+
+# Checks for let _ = async_fn() which silently drops the returned future
+let_underscore_future = "warn"
+
+# Checks for functions returning large Err types
+result_large_err = "warn"
+
+# Checks for types used in structs, parameters and let declarations above a certain complexity threshold
+type_complexity = "warn"
+# ==============================================================================
+# Cargo lints (Packaging and Manifest metadata)
+# ==============================================================================
+
+# Checks to see if common metadata is defined in Cargo.toml.
+# Relaxed: Internal workspace members are not published.
+cargo_common_metadata = "allow"
+
+# Checks to see if multiple versions of a crate are being used. Allowed because transitive
+# dependency versions (e.g. windows, syn, thiserror) are managed via cargo-deny instead.
+multiple_crate_versions = "allow"
+
+# Checks for negative feature names with prefix no- or not-
+negative_feature_names = "warn"
+
+# Checks for feature names with prefix use-, with- or suffix -support
+redundant_feature_names = "warn"
+
+# Checks for wildcard dependencies in the Cargo.toml.
+wildcard_dependencies = "warn"
+# ==============================================================================
+# Pedantic lints (Strict idioms, code clarity, and potential pitfalls)
+# ==============================================================================
+
+# Checks for code like foo = bar.clone();
+assigning_clones = "warn"
+
+# Instead of using an if statement to convert a bool to an int, this lint suggests using a from()
+# function or an as coercion.
+bool_to_int_with_if = "warn"
+
+# Checks for the usage of &expr as *const T or &mut expr as *mut T, and suggest using &raw const or
+# &raw mut instead.
+borrow_as_ptr = "warn"
+
+# Checks for calls to ends_with with possible file extensions and suggests to use a case-insensitive
+# approach instead.
+case_sensitive_file_extension_comparisons = "warn"
+
+# Checks for casts between numeric types that can be replaced by safe conversion functions.
+cast_lossless = "warn"
+
+# Checks for casts between numeric types that may truncate large values.
+cast_possible_truncation = "warn"
+
+# Checks for casts from an unsigned type to a signed type of the same size, or possibly smaller due
+# to target-dependent integers.
+cast_possible_wrap = "warn"
+
+# Checks for casts from any numeric type to a float type where the receiving type cannot store all
+# values from the original type without rounding errors.
+cast_precision_loss = "warn"
+
+# Checks for casts, using as or pointer::cast, from a less strictly aligned pointer to a more
+# strictly aligned pointer.
+cast_ptr_alignment = "warn"
+
+# Checks for casts from a signed to an unsigned numeric type.
+cast_sign_loss = "warn"
+
+# Checks for explicit bounds checking when casting.
+checked_conversions = "warn"
+
+# Checks for usage of cloned() on an Iterator or Option where copied() could be used instead.
+cloned_instead_of_copied = "warn"
+
+# Checks for collapsible else { if ... } expressions that can be collapsed to else if ....
+collapsible_else_if = "warn"
+
+# Checks comparison chains written with if that can be rewritten with match and cmp.
+comparison_chain = "warn"
+
+# Checks for types that implement Copy as well as Iterator.
+copy_iterator = "warn"
+
+# Checks for decimal literals used as bit masks in bitwise operations.
+decimal_bitwise_operands = "warn"
+
+# Checks for literal calls to Default::default().
+default_trait_access = "warn"
+
+# Checks the doc comments have unbroken links, mostly caused by bad formatted links such as broken
+# across multiple lines.
+doc_broken_link = "warn"
+
+# Detects doc comments that use double spaces as hard line break, instead of backslash (\).
+doc_comment_double_space_linebreaks = "warn"
+
+# Detects the syntax ['foo'] in documentation comments (notice quotes instead of backticks) outside
+# of code blocks
+doc_link_with_quotes = "warn"
+
+# Checks for the presence of _, :: or camel-case words outside ticks in documentation.
+doc_markdown = "warn"
+
+# Checks for instances where a std::time::Duration is constructed using a smaller time unit when the
+# value could be expressed more clearly using a larger unit.
+duration_suboptimal_units = "warn"
+
+# Checks for lifetime annotations which can be replaced with anonymous lifetimes ('_).
+elidable_lifetime_names = "warn"
+
+# Checks for use Enum::*.
+enum_glob_use = "warn"
+
+# Checks for explicit Clone implementations for Copy types.
+expl_impl_clone_on_copy = "warn"
+
+# Checks for explicit deref() or deref_mut() method calls.
+explicit_deref_methods = "warn"
+
+# Checks for loops on y.into_iter() where y will do, and suggests the latter.
+explicit_into_iter_loop = "warn"
+
+# Checks for loops on x.iter() where &x will do, and suggests the latter.
+explicit_iter_loop = "warn"
+
+# Checks for usage of _.filter_map(_).next().
+filter_map_next = "warn"
+
+# Checks for usage of Iterator::flat_map() where filter_map() could be used instead.
+flat_map_option = "warn"
+
+# Checks for (in-)equality comparisons on floating-point values (apart from zero), except in
+# functions called *eq* (which probably implement equality for a type involving floats).
+# Relaxed: Comparing a similarity ratio against exactly 1.0 is intended.
+float_cmp = "allow"
+
+# Checks for excessive use of bools in function declarations.
+fn_params_excessive_bools = "warn"
+
+# Checks for usage of .map(|_| format!(..)).collect::<String>().
+format_collect = "warn"
+
+# Detects cases where the result of a format! call is appended to an existing String.
+# Relaxed: Clarity over allocation in infrequently run generators.
+format_push_string = "allow"
+
+# Checks for usage of ! or != in an if condition with an else branch.
+if_not_else = "warn"
+
+# Checks for ignored tests without messages.
+ignore_without_reason = "warn"
+
+# Checks for usage of _ in patterns of type ().
+ignored_unit_patterns = "warn"
+
+# Checks for the usage of _.to_owned(), vec.to_vec(), or similar when calling _.clone() would be
+# clearer.
+implicit_clone = "warn"
+
+# Checks for public impl or fn missing generalization over different hashers and implicitly
+# defaulting to the default hashing algorithm (SipHash).
+implicit_hasher = "warn"
+
+# Checks for struct constructors where the order of the field init in the constructor is
+# inconsistent with the order in the struct definition.
+inconsistent_struct_constructor = "warn"
+
+# The lint checks for slice bindings in patterns that are only used to access individual slice
+# values.
+index_refutable_slice = "warn"
+
+# Checks for usage of .to_string() on an &&T where T implements ToString directly (like &&str or
+# &&String).
+inefficient_to_string = "warn"
+
+# Checks for items annotated with #[inline(always)], unless the annotated function is empty or
+# simply panics.
+inline_always = "warn"
+
+# This is the opposite of the iter_without_into_iter lint.
+into_iter_without_iter = "warn"
+
+# Checks for comparisons where the relation is always either true or false, but where one side has
+# been upcast so that the comparison is necessary.
+invalid_upcast_comparisons = "warn"
+
+# Checks for IP addresses that could be replaced with predefined constants such as
+# Ipv4Addr::new(127, 0, 0, 1) instead of using the appropriate constants.
+ip_constant = "warn"
+
+# Checks for items declared after some statement in a block.
+# Relaxed: Local helper items are declared next to their use.
+items_after_statements = "allow"
+
+# Checks for usage of .filter(Result::is_ok) that may be replaced with a .flatten() call.
+iter_filter_is_ok = "warn"
+
+# Checks for usage of .filter(Option::is_some) that may be replaced with a .flatten() call.
+iter_filter_is_some = "warn"
+
+# Detects methods named iter or iter_mut that do not have a return type that implements Iterator.
+iter_not_returning_iterator = "warn"
+
+# Looks for iter and iter_mut methods without an associated IntoIterator for (&|&mut) Type
+# implementation.
+iter_without_into_iter = "warn"
+
+# Warns if the digits of an integral or floating-point constant are grouped into groups that are too
+# large.
+large_digit_groups = "warn"
+
+# It checks for the size of a Future created by async fn or async {}.
+large_futures = "warn"
+
+# Checks for local arrays that may be too large.
+large_stack_arrays = "warn"
+
+# Checks for functions taking arguments by value, where the argument type is Copy and large enough
+# to be worth considering passing by reference.
+large_types_passed_by_value = "warn"
+
+# Checks for usage of any LinkedList, suggesting to use a Vec or a VecDeque (formerly called
+# RingBuf).
+linkedlist = "warn"
+
+# Checks for #[macro_use] use....
+macro_use_imports = "warn"
+
+# Detects if-then-panic! that can be replaced with assert!.
+manual_assert = "warn"
+
+# Checks for assert! and debug_assert! that consist of only an (in)equality check
+manual_assert_eq = "warn"
+
+# Checks for usage of T::BITS - x.leading_zeros() when x.bit_width() is available.
+manual_bits = "warn"
+
+# Checks for expressions like N - x.leading_zeros() (where N is one less than bit width of x) or
+# x.ilog(2), which are manual reimplementations of x.ilog2()
+manual_ilog2 = "warn"
+
+# Lints subtraction between Instant::now() and another Instant.
+manual_instant_elapsed = "warn"
+
+# Checks for expressions like x.count_ones() == 1 or x & (x - 1) == 0, with x and unsigned integer,
+# which may be manual reimplementations of x.is_power_of_two().
+manual_is_power_of_two = "warn"
+
+# Checks for usage of option.map(f).unwrap_or_default() and result.map(f).unwrap_or_default() where
+# f is a function or closure that returns the bool type.
+manual_is_variant_and = "warn"
+
+# Warn of cases where let...else could be used
+manual_let_else = "warn"
+
+# Checks for manual implementation of midpoint.
+manual_midpoint = "warn"
+
+# Checks for usage of "" to create a String, such as "".to_string(), "".to_owned(), String::from("")
+# and others.
+manual_string_new = "warn"
+
+# Checks for too many variables whose name consists of a single character.
+many_single_char_names = "warn"
+
+# Checks for usage of option.map(_).unwrap_or(_) or option.map(_).unwrap_or_else(_) or
+# result.map(_).unwrap_or_else(_).
+map_unwrap_or = "warn"
+
+# Checks for matches where match expression is a bool.
+match_bool = "warn"
+
+# Checks for match with identical arm bodies.
+# Relaxed: Arms are kept separate for readability.
+match_same_arms = "allow"
+
+# Checks for arm which matches all errors with Err(_) and take drastic actions like panic!.
+match_wild_err_arm = "warn"
+
+# Checks for wildcard enum matches for a single variant.
+# Relaxed: Explicit fallback arm keeps error handling obvious.
+match_wildcard_for_single_variants = "allow"
+
+# Checks for iteration that may be infinite.
+maybe_infinite_iter = "warn"
+
+# Checks for type parameters which are positioned inconsistently between a type definition and impl
+# block.
+mismatching_type_param_order = "warn"
+
+# Checks the doc comments of publicly visible functions that return a Result type and warns if there
+# is no # Errors section.
+# Relaxed: Errors are self-evident from anyhow::Result in internal tools.
+missing_errors_doc = "allow"
+
+# Checks for manual core::fmt::Debug implementations that do not use all fields.
+missing_fields_in_debug = "warn"
+
+# Checks the doc comments of publicly visible functions that may panic and warns if there is no #
+# Panics section.
+# Relaxed: Panics are limited to constant regex expectations.
+missing_panics_doc = "allow"
+
+# Checks for public functions that have no #[must_use] attribute, but return something not already
+# marked must-use, have no mutable arg and mutate no statics.
+must_use_candidate = "warn"
+
+# Checks for instances of mut mut references.
+mut_mut = "warn"
+
+# Checks for naive byte counts
+naive_bytecount = "warn"
+
+# Checks for usage of bitwise and/or operators between booleans, where performance may be improved
+# by using a lazy and.
+needless_bitwise_bool = "warn"
+
+# The lint checks for if-statements appearing in loops that contain a continue statement in either
+# their main blocks or their else-blocks, when omitting the else-block possibly with some
+# rearrangement of code can make the code easier to understand.
+needless_continue = "warn"
+
+# Checks for usage of for_each that would be more simply written as a for loop.
+needless_for_each = "warn"
+
+# Checks for functions taking arguments by value, but not consuming them in its body.
+# Relaxed: Owned arguments keep the tools' APIs simple.
+needless_pass_by_value = "allow"
+
+# Checks for raw string literals with an unnecessary amount of hashes around them.
+needless_raw_string_hashes = "warn"
+
+# Checks for binding to underscore prefixed variable without side-effects.
+no_effect_underscore_binding = "warn"
+
+# Checks for Rust ABI functions with the #[no_mangle] attribute.
+no_mangle_with_rust_abi = "warn"
+
+# Lints when once_cell::sync::Lazy or lazy_static! are used to define a static variable, and
+# suggests replacing such cases with std::sync::LazyLock instead.
+non_std_lazy_statics = "warn"
+
+# Checks for boolean expressions that can be written more concisely.
+nonminimal_bool = "warn"
+
+# Checks for usage of .as_ref().cloned() and .as_mut().cloned() on Options
+option_as_ref_cloned = "warn"
+
+# Checks for usage of Option<Option<_>> in function signatures and type definitions
+option_option = "warn"
+
+# Checks for boolean expressions that contain terminals that can be eliminated.
+overly_complex_bool_expr = "warn"
+
+# Checks for as casts between raw pointers that don’t change their constness, namely *const T to
+# *const U and *mut T to *mut U.
+ptr_as_ptr = "warn"
+
+# Checks for as casts between raw pointers that change their constness, namely *const T to *mut T
+# and *mut T to *const T.
+ptr_cast_constness = "warn"
+
+# Checks for usage of the offset pointer method with an integer literal.
+ptr_offset_by_literal = "warn"
+
+# Checks whether any field of the struct is prefixed with an _ (underscore) and also marked pub
+# (public)
+pub_underscore_fields = "warn"
+
+# Checks for inclusive ranges where 1 is subtracted from the upper bound, e.g., x..=(y-1).
+range_minus_one = "warn"
+
+# Checks for exclusive ranges where 1 is added to the upper bound, e.g., x..(y+1).
+range_plus_one = "warn"
+
+# Checks for closures which only invoke a method on the closure argument and can be replaced by
+# referencing the method directly.
+redundant_closure_for_method_calls = "warn"
+
+# Checks for else blocks that can be removed without changing semantics.
+redundant_else = "warn"
+
+# Checks for casts of references to pointer using as and suggests std::ptr::from_ref and
+# std::ptr::from_mut instead.
+ref_as_ptr = "warn"
+
+# Checks for ref bindings which create a reference to a reference.
+ref_binding_to_reference = "warn"
+
+# Warns when a function signature uses &Option<T> instead of Option<&T>.
+ref_option = "warn"
+
+# Checks for usage of &Option<&T>.
+ref_option_ref = "warn"
+
+# This lint warns when a method returning Self doesn’t have the #[must_use] attribute.
+return_self_not_must_use = "warn"
+
+# Checks for consecutive ifs with the same function call.
+same_functions_in_if_condition = "warn"
+
+# Checks for usages of Vec::from_raw_parts and String::from_raw_parts where the same expression is
+# used for the length and the capacity.
+same_length_and_capacity = "warn"
+
+# Checks for self receiver that is only used in recursion with no side-effects.
+self_only_used_in_recursion = "warn"
+
+# Looks for blocks of expressions and fires if the last expression returns () but is not followed by
+# a semicolon.
+semicolon_if_nothing_returned = "warn"
+
+# Checks for #[should_panic] attributes without specifying the expected panic message.
+should_panic_without_expect = "warn"
+
+# Checks for names that are very similar and thus confusing.
+similar_names = "allow"
+
+# Checks for string methods that receive a single-character str as an argument, e.g., _.split("x").
+single_char_pattern = "warn"
+
+# Checks for matches with two arms where an if let else will usually suffice.
+single_match_else = "warn"
+
+# When sorting primitive values (integers, bools, chars, as well as arrays, slices, and tuples of
+# such items), it is typically better to use an unstable sort than a stable sort.
+stable_sort_primitive = "warn"
+
+# Checks for usages of str.trim().split("\n") and str.trim().split("\r\n").
+str_split_at_newline = "warn"
+
+# Checks for string appends of the form x = x + y (without let!).
+string_add_assign = "warn"
+
+# Checks for excessive use of bools in structs.
+# Relaxed: Context flags mirror independent directive options.
+struct_excessive_bools = "allow"
+
+# Detects struct fields that are prefixed or suffixed by the same characters or the name of the
+# struct itself.
+# Relaxed: Field names mirror the TOML schema.
+struct_field_names = "allow"
+
+# Checks for functions with a large amount of lines.
+# Relaxed: Dispatch functions are long but linear.
+too_many_lines = "allow"
+
+# Checks for transmutes from a pointer to a pointer, or from a reference to a reference.
+transmute_ptr_to_ptr = "warn"
+
+# Checks for functions taking arguments by reference, where the argument type is Copy and small
+# enough to be more efficient to always pass by value.
+trivially_copy_pass_by_ref = "warn"
+
+# Lints subtraction between an Instant and a Duration, or between two Duration values.
+unchecked_time_subtraction = "warn"
+
+# Checks for string literals that contain Unicode in a form that is not equal to its
+# NFC-recomposition.
+unicode_not_nfc = "warn"
+
+# Detect when a variable is not inlined in a format string, and suggests to inline it.
+uninlined_format_args = "warn"
+
+# Checks for a return type containing a Box<T> where T implements Sized
+unnecessary_box_returns = "warn"
+
+# Checks for Debug formatting ({:?}) applied to an OsStr or Path.
+# Relaxed: Debug formatting of paths keeps quoting visible in error messages.
+unnecessary_debug_formatting = "allow"
+
+# Checks for usage of .collect::<Vec<String>>().join("") on iterators.
+unnecessary_join = "warn"
+
+# Detects functions that are written to return &str that could return &'static str but instead
+# return a &'a str.
+unnecessary_literal_bound = "warn"
+
+# Checks for the presence of a semicolon at the end of a match or if statement evaluating to ().
+unnecessary_semicolon = "warn"
+
+# Suggests removing an unnecessary trailing comma before the closing parenthesis in single-line
+# macro invocations.
+unnecessary_trailing_comma = "warn"
+
+# Checks for private functions that only return Ok or Some.
+# Relaxed: Signatures stay uniform with sibling generators and tests return Result.
+unnecessary_wraps = "allow"
+
+# Checks for unnested or-patterns, e.g., Some(0) | Some(2) and suggests replacing the pattern with a
+# nested one, Some(0 | 2).
+unnested_or_patterns = "warn"
+
+# Warns if a long integral or floating-point constant does not contain underscores.
+unreadable_literal = "warn"
+
+# Checks for deriving serde::Deserialize on a type that has methods using unsafe.
+unsafe_derive_deserialize = "warn"
+
+# Checks for functions that are declared async but have no .awaits inside of them.
+unused_async = "warn"
+
+# Checks for trait method implementations that are declared async but have no .awaits inside of
+# them.
+unused_async_trait_impl = "warn"
+
+# Checks methods that contain a self argument but don’t use it
+unused_self = "warn"
+
+# Checks for the use of bindings with a single leading underscore.
+used_underscore_binding = "warn"
+
+# Checks for the use of item with a single leading underscore.
+used_underscore_items = "warn"
+
+# Checks for bit masks that can be replaced by a call to trailing_zeros
+verbose_bit_mask = "warn"
+
+# Checks for wildcard imports use _::*.
+wildcard_imports = "warn"
+
+# Checks for calls to with_capacity(0) on standard library collections and types.
+with_capacity_zero = "warn"
+
+# Checks for maps with zero-sized value types anywhere in the code.
+zero_sized_map_values = "warn"
+# ==============================================================================
+# Restriction lints (Strict opt-in rules and language feature restrictions)
+# ==============================================================================
+
+# Checks for usage of items through absolute paths, like std::f64::consts::PI.
+absolute_paths = "warn"
+
+# Finds items imported through alloc when available through core.
+alloc_instead_of_core = "warn"
+
+# Checks for usage of the #[allow] attribute and suggests replacing it with the #[expect] attribute
+# (See RFC 2383)
+allow_attributes = "warn"
+
+# Checks for attributes that allow lints without a reason.
+allow_attributes_without_reason = "warn"
+
+# Confirms that items are sorted in source files as per configuration.
+arbitrary_source_item_ordering = "allow"
+
+# Checks any kind of arithmetic operation of any type.
+# Relaxed: Indexing and offset arithmetic in small tools is bounded by the input; checked arithmetic everywhere would obscure the code.
+arithmetic_side_effects = "allow"
+
+# Checks for usage of as conversions.
+as_conversions = "warn"
+
+# Checks for the usage of as *const _ or as *mut _ conversion using inferred type.
+as_pointer_underscore = "warn"
+
+# Checks for the usage of as _ conversion using inferred type.
+as_underscore = "warn"
+
+# Checks for assert!(r.is_ok()) or assert!(r.is_err()) calls.
+assertions_on_result_states = "warn"
+
+# Checks for the usage of the to_be_bytes method and/or the function from_be_bytes.
+big_endian_bytes = "warn"
+
+# Checks for usage of cfg that excludes code from test builds.
+cfg_not_test = "warn"
+
+# Checks for usage of .clone() on a ref-counted pointer, (Rc, Arc, rc::Weak, or sync::Weak), and
+# suggests calling Clone via unified function syntax instead (e.g., Rc::clone(foo)).
+clone_on_ref_ptr = "warn"
+
+# We used to think it measured how hard a method is to understand.
+# Relaxed: Parsing loops are inherently branchy.
+cognitive_complexity = "allow"
+
+# Checks usage of std::fs::create_dir and suggest using std::fs::create_dir_all instead.
+# Relaxed: Tests create single directories in fresh temporary directories.
+create_dir = "allow"
+
+# Checks for usage of the dbg! macro.
+dbg_macro = "warn"
+
+# Warns if there is a better representation for a numeric literal.
+decimal_literal_representation = "warn"
+
+# Checks for usage of unconstrained numeric literals which may cause default numeric fallback in
+# type inference.
+# Relaxed: Literals default to i32 safely here.
+default_numeric_fallback = "allow"
+
+# Displays a warning when a union is declared with the default representation (without a #[repr(C)]
+# attribute).
+default_union_representation = "warn"
+# Checks for definitions (structs, functions, traits, etc.) in mod.rs files.
+
+# Checks for slicing expressions which are equivalent to dereferencing the value.
+deref_by_slicing = "warn"
+
+# Checks for usage of unicode scripts other than those explicitly allowed by the lint config.
+disallowed_script_idents = "warn"
+
+# Checks if included files in doc comments are included only for cfg(doc).
+doc_include_without_cfg = "warn"
+
+# Checks for doc comments whose paragraphs do not end with a period or another punctuation mark.
+# Relaxed: Human-owned 'TODO Reviewed' markers in module docs must stay verbatim.
+doc_paragraphs_missing_punctuation = "allow"
+
+# Checks for usage of if expressions with an else if branch, but without a final else branch.
+else_if_without_else = "allow"
+
+# Checks for empty Drop implementations.
+empty_drop = "warn"
+
+# Finds enum variants without fields that are declared with empty brackets.
+empty_enum_variants_with_brackets = "warn"
+
+# Finds structs without fields (a so-called “empty struct”) that are declared with brackets.
+empty_structs_with_brackets = "warn"
+
+# Checks for types named Error that implement Error.
+error_impl_error = "warn"
+
+# Warns on any exported enums that are not tagged #[non_exhaustive]
+# Relaxed: These crates are internal (publish = false); matching enums exhaustively is intended.
+exhaustive_enums = "allow"
+
+# Warns on any exported structs that are not tagged #[non_exhaustive]
+# Relaxed: These crates are internal (publish = false); records are constructed directly.
+exhaustive_structs = "allow"
+
+# Detects calls to the exit() function that are not in the main function.
+# Relaxed: mdbook preprocessors signal support through the exit status.
+exit = "allow"
+
+# Checks for .expect() or .expect_err() calls on Results and .expect() call on Options.
+# Relaxed: Regex literals and constant patterns are validated by tests.
+expect_used = "allow"
+
+# Checks for usage of scoped visibility modifiers, like pub(crate), on fields. Allowed because
+# repository guidelines and unreachable_pub mandate restricted field visibility.
+field_scoped_visibility_modifiers = "allow"
+
+# Checks for FileType::is_file().
+filetype_is_file = "warn"
+
+# Checks for float arithmetic.
+float_arithmetic = "allow"
+
+# Checks for (in-)equality comparisons on constant floating-point values (apart from zero), except
+# in functions called *eq* (which probably implement equality for a type involving floats).
+float_cmp_const = "warn"
+
+# Checks for casts of a function pointer to any integer type.
+fn_to_numeric_cast_any = "warn"
+
+# Checks for usage of .get().unwrap() (or .get_mut().unwrap) on a standard library type which
+# implements Index
+get_unwrap = "warn"
+
+# Checks for the usage of the to_ne_bytes method and/or the function from_ne_bytes.
+host_endian_bytes = "warn"
+
+# Checks for if-else that could be written using either bool::then or bool::then_some.
+if_then_some_else_none = "warn"
+
+# Lints when impl Trait is being used in a function’s parameters.
+# Relaxed: impl AsRef<Path> is the idiomatic way to accept paths.
+impl_trait_in_params = "allow"
+
+# Checks for missing return statements at the end of a block.
+implicit_return = "allow"
+
+# Checks for usage of indexing or slicing that may panic at runtime.
+# Relaxed: Indices are validated just before use.
+indexing_slicing = "allow"
+
+# Checks for infinite loops in a function where the return type is not ! and lint accordingly.
+infinite_loop = "warn"
+
+# Checks for usage of AT&T x86 assembly syntax.
+inline_asm_x86_att_syntax = "warn"
+
+# Checks for usage of Intel x86 assembly syntax.
+inline_asm_x86_intel_syntax = "warn"
+
+# Allows module layout that uses inline modules.
+inline_modules = "allow"
+
+# Do not enforce that where bounds are used for all trait bounds.
+inline_trait_bounds = "allow"
+
+# Checks for division of integers
+integer_division = "warn"
+
+# Checks for the usage of division (/) and remainder (%) operations when performed on any integer
+# types using the default Div and Rem trait implementations.
+integer_division_remainder_used = "warn"
+
+# This is a restriction lint which prevents the use of hash types (i.e., HashSet and HashMap) in for
+# loops.
+# Relaxed: Order does not matter when each name is processed independently.
+iter_over_hash_type = "allow"
+
+# Checks for the inclusion of large files via include_bytes!() or include_str!().
+large_include_file = "warn"
+
+# Checks for let _ = <expr> where expr is #[must_use]
+# Relaxed: Logger initialisation errors are intentionally ignored when already set.
+let_underscore_must_use = "allow"
+
+# Checks for let _ = <expr> without a type annotation, and suggests to either provide one, or remove
+# the let keyword altogether.
+let_underscore_untyped = "allow"
+
+# Checks for the usage of the to_le_bytes method and/or the function from_le_bytes.
+little_endian_bytes = "warn"
+
+# Checks for whole number float literals that cannot be represented as the underlying type without
+# loss.
+lossy_float_literal = "warn"
+
+# Checks for instances of map_err(|_| Some::Enum)
+map_err_ignore = "warn"
+
+# Checks for Iterator::map over ranges without using the parameter which could be more clearly
+# expressed using std::iter::repeat(...).take(...) or std::iter::repeat_n.
+map_with_unused_argument_over_ranges = "warn"
+
+# Checks for usage of std::mem::forget(t) where t is Drop or has a field that implements Drop.
+mem_forget = "warn"
+
+# Checks for identifiers which consist of a single character (or fewer than the configured
+# threshold).
+# Relaxed: Short closure parameter names are idiomatic.
+min_ident_chars = "allow"
+
+# Checks assertions without a custom panic message.
+missing_assert_message = "warn"
+
+# Checks for repeated slice indexing without asserting beforehand that the length is greater than
+# the largest index used to index into the slice.
+missing_asserts_for_indexing = "warn"
+
+# Warns if there is missing documentation for any private documentable item.
+# Relaxed: Internal helper tools; public items are documented, private items are not required to be.
+missing_docs_in_private_items = "allow"
+
+# It lints if an exported function, method, trait method with default impl, or trait method impl is
+# not #[inline].
+missing_inline_in_public_items = "allow"
+
+# Checks if a provided method is used implicitly by a trait implementation.
+missing_trait_methods = "allow"
+
+# Checks for a read and a write to the same variable where whether the read occurs before or after
+# the write depends on the evaluation order of sub-expressions.
+mixed_read_write_in_expression = "warn"
+
+# Checks that module layout uses only self named module files; bans mod.rs files.
+mod_module_files = "allow"
+
+# Detects public item names that are prefixed or suffixed by the containing public module’s name.
+# Allowed because repository guidelines mandate naming implementation modules with type prefixes.
+module_name_repetitions = "allow"
+
+# Checks for modulo arithmetic.
+modulo_arithmetic = "warn"
+
+# Checks for multiple inherent implementations of a struct
+multiple_inherent_impl = "allow"
+
+# Checks for unsafe blocks that contain more than one unsafe operation.
+multiple_unsafe_ops_per_block = "allow"
+
+# Checks for usage of Mutex<X> where an atomic will do.
+mutex_atomic = "warn"
+
+# Checks for usage of Mutex<X> where X is an integral type.
+mutex_integer = "warn"
+
+# Checks for raw string literals where a string literal can be used instead.
+needless_raw_strings = "warn"
+
+# Checks for non-ASCII characters in string and char literals.
+# Relaxed: Tests and fixtures deliberately use non-ASCII text.
+non_ascii_literal = "allow"
+
+# Checks for conversions from NonZero types to regular integer types, and suggests using NonZero
+# types for the target as well.
+non_zero_suggestions = "warn"
+
+# Checks for usage of panic!.
+panic = "warn"
+
+# Checks for usage of panic! or assertions in a function whose return type is Result.
+# Relaxed: Test functions that return Result still assert; production code propagates errors instead.
+panic_in_result_fn = "allow"
+
+# Checks whether some but not all fields of a struct are public.
+partial_pub_fields = "warn"
+
+# Checks for calls to push immediately after creating a new PathBuf.
+pathbuf_init_then_push = "warn"
+
+# Checks for patterns that aren’t exact representations of the types they are applied to.
+# Relaxed: Default binding modes are idiomatic when matching on references.
+pattern_type_mismatch = "allow"
+
+# Detects pointer format as well as Debug formatting of raw pointers or function pointers or any
+# types that have a derived Debug impl that recursively contains them.
+pointer_format = "warn"
+
+# Checks for bit shifting operations combined with bit masking/combining operators and suggest using
+# parentheses.
+precedence_bits = "warn"
+
+# Checks for printing on stderr. The purpose of this lint is to catch debugging remnants.
+# Relaxed: The tools are command-line programs; stderr carries their diagnostics.
+print_stderr = "allow"
+
+# Checks for printing on stdout. The purpose of this lint is to catch debugging remnants.
+# Relaxed: The tools are command-line programs; stdout is their output channel.
+print_stdout = "allow"
+
+# Restricts the usage of pub use ...
+pub_use = "allow"
+
+# Checks for usage of pub(<loc>) with in.
+pub_with_shorthand = "allow"
+
+# Checks for usage of pub(<loc>) without in.
+pub_without_shorthand = "allow"
+
+# Checks for expressions that use the ? operator and rejects them.
+question_mark_used = "allow"
+
+# Checks for Rc<T> and Arc<T> when T is a mutable buffer type such as String or Vec.
+rc_buffer = "warn"
+
+# Checks for Rc<Mutex<T>>.
+rc_mutex = "warn"
+
+# Checks for test functions (functions annotated with #[test]) that are prefixed with test_ which is
+# redundant.
+redundant_test_prefix = "allow"
+
+# Warns about needless / redundant type annotations.
+redundant_type_annotations = "warn"
+
+# Checks for usages of the ref keyword.
+ref_patterns = "allow"
+
+# Lints when the name of function parameters from trait impl is different than its default
+# implementation.
+renamed_function_params = "warn"
+
+# Checks for unnecessary ‘..’ pattern binding on struct when all fields are explicitly matched.
+rest_pat_in_fully_bound_structs = "warn"
+# Disallow the use of rest patterns for accessible fields
+
+# Detect functions that end with Option::and_then or Result::and_then, and suggest using the ?
+# operator instead.
+return_and_then = "warn"
+
+# It lints if a struct has two methods with the same name: one from a trait, another not from a
+# trait.
+same_name_method = "warn"
+
+# Checks that module layout uses only mod.rs files.
+self_named_module_files = "warn"
+
+# Suggests moving the semicolon after a block to the inside of the block, after its last expression.
+semicolon_inside_block = "allow"
+
+# Suggests moving the semicolon from a block’s final expression outside of the block.
+semicolon_outside_block = "allow"
+
+# Warns if literal suffixes are separated by an underscore.
+separated_literal_suffix = "allow"
+
+# Checks for bindings that shadow other bindings already in scope, while reusing the original value.
+# Relaxed: Rebinding a parameter to its converted or trimmed form (for example, let path = path.as_ref()) is idiomatic.
+shadow_reuse = "allow"
+
+# Checks for bindings that shadow other bindings already in scope, while just changing reference
+# level or mutability.
+shadow_same = "allow"
+
+# Checks for bindings that shadow other bindings already in scope, either without an initialization
+# or with one that does not even use the original value.
+# Relaxed: Shadowing in sequential setup code and iterator chains is idiomatic.
+shadow_unrelated = "allow"
+
+# Checks for functions that are only used once. Does not lint tests.
+single_call_fn = "allow"
+
+# Checks for lifetimes with names which are one character long.
+single_char_lifetime_names = "allow"
+
+# Finds items imported through std when available through alloc.
+std_instead_of_alloc = "allow"
+
+# Finds items imported through std when available through core.
+std_instead_of_core = "allow"
+
+# This lint checks for .to_string() method calls on values of type &str.
+str_to_string = "warn"
+
+# Checks for all instances of x + _ where x is of type String, but only if string_add_assign does
+# not match.
+# Relaxed: String concatenation with + is clear for short strings.
+string_add = "allow"
+
+# Checks for <string_lit>.chars().any(|i| i == c).
+string_lit_chars_any = "warn"
+
+# Checks for slice operations on strings
+string_slice = "warn"
+
+# Warns for a Bitwise XOR (^) operator being probably confused as a powering.
+suspicious_xor_used_as_pow = "warn"
+
+# Triggers when a testing function (marked with the #[test] attribute) isn’t inside a testing module
+# (marked with #[cfg(test)]).
+# Relaxed: Integration tests under tests/ are not wrapped in a test module.
+tests_outside_test_module = "allow"
+
+# Checks for usage of todo!.
+todo = "warn"
+
+# Checks for usage of Err(x)?.
+try_err = "warn"
+
+# Checks for unsafe blocks and impls without a // SAFETY: comment explaining why the unsafe
+# operations performed inside the block are safe.
+undocumented_unsafe_blocks = "warn"
+
+# Checks for usage of unimplemented!.
+unimplemented = "warn"
+# Disallow the use of rest patterns that don’t capture any fields.
+# unnecessary_rest_pattern = "warn"
+
+# Checks for // SAFETY: comments on safe code.
+unnecessary_safety_comment = "warn"
+
+# Checks for the doc comments of publicly visible safe functions and traits and warns if there is a
+# # Safety section.
+unnecessary_safety_doc = "warn"
+
+# Checks for imports ending in ::{self}.
+# Relaxed: Importing the module alongside items is clearer.
+unnecessary_self_imports = "allow"
+
+# Checks for structure field patterns bound to wildcards.
+unneeded_field_pattern = "warn"
+
+# Checks for usage of unreachable!.
+unreachable = "warn"
+
+# Warns if literal suffixes are not separated by an underscore.
+unseparated_literal_suffix = "warn"
+
+# Checks for calls to Result::ok() without using the returned Option.
+unused_result_ok = "warn"
+
+# Checks for use Trait where the Trait is only used for its methods and not referenced by a path
+# directly.
+unused_trait_names = "warn"
+
+# Checks for functions of type Result that contain expect() or unwrap()
+# Relaxed: expect is only used on constant inputs and mutex locks in tests.
+unwrap_in_result = "allow"
+
+# Checks for .unwrap() or .unwrap_err() calls on Results and .unwrap() call on Options.
+unwrap_used = "warn"
+
+# Checks for usage of Debug formatting. The purpose of this lint is to catch debugging remnants.
+use_debug = "allow"
+
+# Checks for usage of File::read_to_end and File::read_to_string.
+# Relaxed: read_to_string on File keeps the existing error context.
+verbose_file_reads = "allow"
+
+# Checks for wildcard enum matches using _.
+# Relaxed: Foreign enums may grow variants.
+wildcard_enum_match_arm = "allow"
+# ==============================================================================
+# Nursery lints (New or developing lints)
+# ==============================================================================
+
+# Checks for the result of a &self-taking as_ptr being cast to a mutable pointer.
+as_ptr_cast_mut = "warn"
+
+# Checks if the blocks of an if/else, or the arms of a match, contain shared code that can be moved
+# out of the branches.
+branches_sharing_code = "warn"
+
+# Checks for usage of .drain(..) for the sole purpose of clearing a container.
+clear_with_drain = "warn"
+
+# Protects against unintended coercion of references to container types to &dyn Any when the
+# container type dereferences to a dyn Any which could be directly referenced instead.
+coerce_container_to_any = "warn"
+
+# Checks for collections that are never queried.
+collection_is_never_read = "warn"
+
+# Checks for function/method calls with a mutable parameter in debug_assert!, debug_assert_eq! and
+# debug_assert_ne! macros.
+debug_assert_with_mut_call = "warn"
+
+# Checks for types that derive PartialEq and could implement Eq.
+derive_partial_eq_without_eq = "warn"
+
+# Checks for links with code directly adjacent to code text: [`MyItem`]`<`[`u32`]`>`.
+doc_link_code = "warn"
+
+# Checks for enums with no variants, which therefore are uninhabited types (cannot be instantiated).
+empty_enums = "warn"
+
+# Checks for pattern matchings that can be expressed using equality.
+equatable_if_let = "warn"
+
+# Checks for impls of From<..> that contain panic!() or unwrap()
+fallible_impl_from = "warn"
+
+# This lint requires Future implementations returned from functions and methods to implement the
+# Send marker trait, ignoring type parameters.
+future_not_send = "warn"
+
+# Looks for floating-point expressions that can be expressed using built-in methods to improve
+# accuracy at the cost of performance.
+imprecise_flops = "warn"
+
+# Checks for calls to iter, iter_mut or into_iter on empty collections
+iter_on_empty_collections = "warn"
+
+# Checks for calls to iter, iter_mut or into_iter on collections containing a single item
+iter_on_single_items = "warn"
+
+# Checks for usage of .drain(..) on Vec and VecDeque for iteration.
+iter_with_drain = "warn"
+
+# Checks for functions that use a lot of stack space.
+large_stack_frames = "warn"
+
+# Checks if string literals have formatting arguments outside of macros using them (like format!).
+literal_string_with_formatting_args = "warn"
+
+# Suggests the use of const in functions and methods where possible.
+missing_const_for_fn = "allow"
+
+# Checks for functions collecting an iterator when collect is not needed.
+needless_collect = "warn"
+
+# Check if a &mut function argument is actually used mutably.
+needless_pass_by_ref_mut = "warn"
+
+# Checks for bindings (constants, statics, or let bindings) that are defined with one numeric type
+# but are consistently cast to a different type in all usages.
+needless_type_cast = "warn"
+
+# This lint warns about a Send implementation for a type that contains fields that are not safe to
+# be sent across threads.
+non_send_fields_in_send_ty = "warn"
+
+# Lints usage of if let Some(v) = ... { y } else { x } and match ..
+# Relaxed: if let reads better than map_or_else chains.
+option_if_let_else = "allow"
+
+# Checks for calls to .or(foo(..)), .unwrap_or(foo(..)), .or_insert(foo(..)) etc., and suggests to
+# use .or_else(|| foo(..)), .unwrap_or_else(|| foo(..)), .unwrap_or_default() or .or_default() etc.
+# Relaxed: Eager defaults are trivial.
+or_fun_call = "allow"
+
+# Checks for push calls on PathBuf that can cause overwrites.
+path_buf_push_overwrite = "warn"
+
+# This lint catches reads into a zero-length Vec. Especially in the case of a call to with_capacity,
+# this lint warns that read gets the number of bytes from the Vec’s length, not its capacity.
+read_zero_byte_vec = "warn"
+
+# Checks for a redundant clone() (and its relatives) which clones an owned value that is going to be
+# dropped without further use.
+redundant_clone = "warn"
+
+# Checks for items declared pub(crate) that are inside a private module. Allowed because
+# it directly conflicts with rustc's unreachable_pub lint which requires pub(crate).
+redundant_pub_crate = "allow"
+
+# Checks for an iterator or string search (such as find(), position(), or rposition()) followed by a
+# call to is_some() or is_none().
+search_is_some = "warn"
+
+# Checks for usage of contains to see if a value is not present in a set like HashSet or BTreeSet,
+# followed by an insert.
+set_contains_or_insert = "warn"
+
+# Checks for temporaries returned from function calls in a match scrutinee that have the
+# clippy::has_significant_drop attribute.
+significant_drop_in_scrutinee = "warn"
+
+# Searches for elements marked with #[clippy::has_significant_drop] that could be early dropped but
+# are in fact dropped at the end of their scopes.
+# Relaxed: Test mock servers live for the whole test.
+significant_drop_tightening = "allow"
+
+# Checks for functions with method calls to .map(_) on an arg of type Option as the outermost
+# expression.
+single_option_map = "warn"
+
+# Checks for the as_bytes method called on string literals that contain only ASCII characters.
+string_lit_as_bytes = "warn"
+
+# Looks for floating-point expressions that can be expressed using built-in methods to improve both
+# accuracy and performance.
+suboptimal_flops = "warn"
+
+# Checks for unlikely usages of binary operators that are almost certainly typos and/or copy/paste
+# errors, given the other usages of binary operators nearby.
+suspicious_operation_groupings = "warn"
+
+# Checks if the first paragraph in the documentation of items listed in the module page is too long.
+too_long_first_doc_paragraph = "allow"
+
+# Displays a warning when a struct with a trailing zero-sized array is declared without a repr
+# attribute.
+trailing_empty_array = "warn"
+
+# Checks for cases where generics or trait objects are being used and multiple syntax specifications
+# for trait bounds are used simultaneously.
+trait_duplication_in_bounds = "warn"
+
+# Checks for transmutes between types which do not have a representation defined relative to each
+# other.
+transmute_undefined_repr = "warn"
+
+# Checks for trivial regex creation (with Regex::new, RegexBuilder::new, or RegexSet::new).
+trivial_regex = "warn"
+
+# Checks for tuple<=>array conversions that are not done with .into().
+tuple_array_conversions = "warn"
+
+# This lint warns about unnecessary type repetitions in trait bounds
+type_repetition_in_bounds = "warn"
+
+# It detects references to uninhabited types, such as ! and warns when those are either dereferenced
+# or returned from a function.
+uninhabited_references = "warn"
+
+# Checks for initialization of an identical struct from another instance of the type, either by
+# copying a base without setting any field or by moving all fields individually.
+unnecessary_struct_initialization = "warn"
+
+# Checks for the creation of a peekable iterator that is never .peek()ed
+unused_peekable = "warn"
+
+# Detects cases where a whole-number literal float is being rounded, using the floor, ceil, or round
+# methods.
+unused_rounding = "warn"
+
+# Checks for unnecessary repetition of structure name when a replacement with Self is applicable.
+use_self = "warn"
+
+# Checks for variable declarations immediately followed by a conditional affectation.
+# Relaxed: Conditional initialisation reads clearer here.
+useless_let_if_seq = "allow"
+
+# This lint warns when volatile load/store operations (write_volatile/read_volatile) are applied to
+# composite types.
+volatile_composites = "warn"
+
+# Checks for while loops comparing floating point values.
+while_float = "warn"

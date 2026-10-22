@@ -17,7 +17,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use slog::Drain;
+use slog::Drain as _;
 use slog::o;
 
 fn main() {

@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
-use std::io::Write;
+use std::io::Write as _;
 
 use chrono::Local;
 use env_logger::Builder;

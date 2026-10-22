@@ -13,11 +13,11 @@
 //! TODO Reviewed ??-??-2026
 
 use await_tree::ConfigBuilder;
-use await_tree::InstrumentAwait;
+use await_tree::InstrumentAwait as _;
 use await_tree::Registry;
 use futures::future::join;
 use futures::future::pending;
-use itertools::Itertools;
+use itertools::Itertools as _;
 use tokio::time::Duration;
 use tokio::time::sleep;
 

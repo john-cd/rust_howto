@@ -29,7 +29,7 @@ fn main() {
     let mut st = String::new();
     // We can modify or reassign a mutable variable.
     st.push_str("42");
-    st = "43".to_string();
+    st = "43".to_owned();
     println!("st: {st}");
     // We cannot change its type:
     // ERROR: st = 42;

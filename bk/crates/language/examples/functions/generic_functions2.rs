@@ -51,7 +51,7 @@ fn main() {
     print_value(MyStruct { value: 42 });
 
     let s = String::from("hello");
-    generic(&s[..]);
+    generic(&*s);
     generic(&s);
 }
 

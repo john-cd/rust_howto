@@ -19,3 +19,6 @@ publish.workspace = true
 anyhow = "1.0.104"
 tracing = "0.1.44"
 walkdir = "2.5.0"
+
+[lints]
+workspace = true

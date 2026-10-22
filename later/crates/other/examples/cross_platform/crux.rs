@@ -90,7 +90,7 @@ impl App for Counter {
             Event::Increment => model.count += 1,
             Event::Decrement => model.count -= 1,
             Event::Reset => model.count = 0,
-        };
+        }
         render()
     }
 

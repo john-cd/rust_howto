@@ -62,7 +62,7 @@ async fn main() -> anyhow::Result<()> {
     let addr = "[::1]:50051".parse().unwrap();
     let greeter = MyGreeter::default();
 
-    println!("GreeterServer listening on {}", addr);
+    println!("GreeterServer listening on {addr}");
 
     Server::builder()
         // Create a router:
@@ -88,7 +88,7 @@ mod tests {
     async fn test_greeter_logic() {
         let greeter = MyGreeter::default();
         let request = Request::new(HelloRequest {
-            name: "Rustacean".to_string(),
+            name: "Rustacean".to_owned(),
         });
 
         let response = greeter

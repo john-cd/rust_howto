@@ -17,7 +17,7 @@ use std::hash::Hash;
 ///   duplicated by a simple bitwise copy (like copying bytes in memory). Types
 ///   that are Copy are implicitly copied when they are assigned, passed to
 ///   functions, or returned from functions, rather than being moved (which
-///   would invalidate the original). All fields (i32) are `Copy`, so Point2D
+///   would invalidate the original). All fields (i32) are `Copy`, so `Point2D`
 ///   can be `Copy`.
 /// - `PartialEq` (and `Eq`) allow instances of a type to be compared for
 ///   equality (==) and inequality (!=).

@@ -24,3 +24,6 @@ cpal = "0.17"
 name = "audio"
 path = "examples/audio/main.rs"
 test = true
+
+[lints]
+workspace = true

@@ -25,8 +25,8 @@ fn build_user(email: String, username: String) -> User {
 impl User {
     // Associated function.
     // By convention, the constructor is called "new", but that is not required.
-    fn new(email: String, username: String) -> User {
-        User {
+    fn new(email: String, username: String) -> Self {
+        Self {
             active: true,
             username,
             email,
@@ -36,13 +36,13 @@ impl User {
 
 fn main() {
     // We create an instance of the struct by calling a function:
-    let user1: User = build_user("user@example.com".into(), "user".to_string());
+    let user1: User = build_user("user@example.com".into(), "user".to_owned());
 
     println!("user1: {user1:?}");
 
     // Or with an associated function. Note the path syntax
     // `<Type>::<function>`.
-    let user2: User = User::new("user@example.com".into(), "user".to_string());
+    let user2: User = User::new("user@example.com".into(), "user".to_owned());
 
     println!("user2: {user2:?}");
 }

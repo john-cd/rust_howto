@@ -4,7 +4,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use bytes::BufMut;
+use bytes::BufMut as _;
 use bytes::BytesMut;
 
 fn main() {

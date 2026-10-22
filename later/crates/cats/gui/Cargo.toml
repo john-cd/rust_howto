@@ -137,3 +137,6 @@ test = true
 name = "window_creation"
 path = "examples/window_creation/main.rs"
 test = true
+
+[lints]
+workspace = true

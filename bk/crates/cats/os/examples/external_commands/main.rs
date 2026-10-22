@@ -51,15 +51,15 @@ fn main() -> anyhow::Result<()> {
         match command {
             #[cfg(target_family = "unix")]
             Commands::Continuous => {
-                continuous::run();
+                continuous::run().expect("the example should run");
             }
             #[cfg(target_family = "unix")]
             Commands::ErrorFile => {
-                error_file::run();
+                error_file::run().expect("the example should run");
             }
             #[cfg(target_family = "unix")]
             Commands::Piped => {
-                piped::run();
+                piped::run().expect("the example should run");
             }
             Commands::ProcessOutput => {
                 process_output::run()?;
@@ -70,7 +70,7 @@ fn main() -> anyhow::Result<()> {
             }
             #[cfg(target_family = "unix")]
             Commands::SendInput => {
-                send_input::run();
+                send_input::run().expect("the example should run");
             }
             Commands::Which => {
                 which::run();

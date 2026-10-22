@@ -19,11 +19,11 @@ impl HealthCheck for MyHealthChecker {
 }
 
 async fn do_health_check(mut hc: impl HealthCheck) {
-    if !hc.check().await {
+    if hc.check().await {
+        println!("Health check was normal");
+    } else {
         // Use as normal.
         log_health_check_failure().await;
-    } else {
-        println!("Health check was normal");
     }
 }
 

@@ -41,7 +41,7 @@ fn main() {
             s.spawn(move |_| {
                 thread::sleep(Duration::from_millis(500));
                 // Receive until channel closes.
-                for msg in recvr.iter() {
+                for msg in &recvr {
                     println!(
                         "Worker {:?} received {msg}.",
                         thread::current().id()
@@ -56,7 +56,7 @@ fn main() {
         drop(snd2);
 
         // Sink: receives and processes messages from the workers.
-        for msg in rcv2.iter() {
+        for msg in &rcv2 {
             println!("Sink received {msg}");
         }
     })

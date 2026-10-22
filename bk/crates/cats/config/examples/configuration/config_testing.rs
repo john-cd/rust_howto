@@ -27,7 +27,7 @@ fn main() -> anyhow::Result<(), ::config::ConfigError> {
         .try_deserialize::<std::collections::HashMap<String, String>>(
     )?;
 
-    assert_eq!(config.get("host"), Some(&"1.1.1.1".to_string()));
+    assert_eq!(config.get("host"), Some(&"1.1.1.1".to_owned()));
 
     Ok(())
 }

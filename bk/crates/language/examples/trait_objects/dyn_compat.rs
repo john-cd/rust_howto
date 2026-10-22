@@ -55,7 +55,7 @@ struct Circle {
 
 impl ObjectSafeClone for Circle {
     fn clone_boxed(&self) -> Box<dyn ObjectSafeClone> {
-        Box::new(Circle {
+        Box::new(Self {
             radius: self.radius,
         })
     }
@@ -113,7 +113,7 @@ impl TraitMethods for Circle {
     where
         Self: Sized,
     {
-        Circle {
+        Self {
             radius: self.radius,
         }
     }

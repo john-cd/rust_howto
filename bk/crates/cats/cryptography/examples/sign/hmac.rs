@@ -5,7 +5,7 @@
 use ring::error::Unspecified;
 use ring::hmac;
 use ring::rand;
-use ring::rand::SecureRandom;
+use ring::rand::SecureRandom as _;
 
 /// This example demonstrates how to use the `ring` crate to generate an HMAC
 /// (Hash-based Message Authentication Code) signature for a message and then

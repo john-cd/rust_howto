@@ -27,7 +27,7 @@ fn process_message(messenger: Box<dyn Message + Send>) {
 fn main() {
     let worker = Worker {
         id: 1,
-        msg: "Hello".to_string(),
+        msg: "Hello".to_owned(),
     };
 
     // Create a boxed trait object.

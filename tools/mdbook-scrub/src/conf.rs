@@ -7,9 +7,9 @@ use serde::Serialize;
 // Configuration struct for the preprocessor
 // When deserializing, any missing fields are filled in from the struct's
 // implementation of Default. Only allowed on structs.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(default, rename_all = "kebab-case")]
-pub struct PreprocConfig {
+pub(crate) struct PreprocConfig {
     // Remove all markdown within HTML tags with class `hidden` from the book
     // (default = true).
     pub remove_hidden_sections: bool,
@@ -31,9 +31,9 @@ impl Default for PreprocConfig {
 }
 
 /// Configuration for in-memory custom directive processing.
-#[derive(Debug, Clone, Default, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(default)]
-pub struct DirectivePreprocConfig {
+pub(crate) struct DirectivePreprocConfig {
     #[serde(flatten)]
     pub directives: book_tool::directives::Config,
 }

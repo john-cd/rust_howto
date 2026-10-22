@@ -6,7 +6,7 @@ use std::boxed::Box;
 /// Demonstrates the difference between taking a reference to a `Box` and using
 /// `as_ref()`.
 fn main() {
-    let my_box: Box<String> = Box::new("hello from box".to_string());
+    let my_box: Box<String> = Box::new("hello from box".to_owned());
 
     // 1. Using `&my_box` - reference *to the Box*:
     #[allow(clippy::borrowed_box)]

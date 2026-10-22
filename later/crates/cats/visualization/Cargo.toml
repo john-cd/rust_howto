@@ -26,3 +26,6 @@ plotly = "0.14.1"
 name = "visualization"
 path = "examples/visualization/main.rs"
 test = true
+
+[lints]
+workspace = true

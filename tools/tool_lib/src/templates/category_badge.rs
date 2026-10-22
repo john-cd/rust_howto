@@ -32,7 +32,7 @@ mod tests {
 
     #[test]
     fn test_create_category_badge_basic() {
-        let result = create_category_badge("Encoding", "encoding").unwrap();
+        let result = create_category_badge("Encoding", "encoding").expect("input should parse");
         assert_eq!(
             result,
             "[![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} "
@@ -41,7 +41,8 @@ mod tests {
 
     #[test]
     fn test_create_category_badge_trimming() {
-        let result = create_category_badge("  Command line interface  \n", "\tcli\t ").unwrap();
+        let result = create_category_badge("  Command line interface  \n", "\tcli\t ")
+            .expect("input should parse");
         assert_eq!(
             result,
             "[![cat~cli][cat~cli~badge]][cat~cli]{{hi:Command line interface}} "
@@ -50,7 +51,7 @@ mod tests {
 
     #[test]
     fn test_create_category_badge_empty() {
-        let result = create_category_badge("", "").unwrap();
+        let result = create_category_badge("", "").expect("input should parse");
         assert_eq!(result, "[![cat~][cat~~badge]][cat~]{{hi:}} ");
     }
 }

@@ -3,7 +3,7 @@
 // ANCHOR: example
 // This example demonstrates how to publish and consume messages with the
 // `lapin` AMQP client.
-use futures::stream::StreamExt; /* or: use futures_lite::stream::StreamExt; */
+use futures::stream::StreamExt as _; /* or: use futures_lite::stream::StreamExt; */
 use lapin::BasicProperties;
 use lapin::Channel;
 use lapin::Connection;
@@ -15,11 +15,11 @@ use lapin::types::FieldTable;
 /// # AMQP (Advanced Message Queuing Protocol) Client Example with `lapin`
 ///
 /// This example demonstrates basic usage of the `lapin` crate, an AMQP client
-/// library, to interact with a message broker like RabbitMQ.
+/// library, to interact with a message broker like `RabbitMQ`.
 ///
 /// ## Features
 ///
-/// - Connects to a RabbitMQ server.
+/// - Connects to a `RabbitMQ` server.
 /// - Declares a queue.
 /// - Publishes a message to the queue.
 /// - Consumes a message from the queue.

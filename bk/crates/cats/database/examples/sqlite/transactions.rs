@@ -98,6 +98,7 @@ fn rolled_back_tx(connection: &mut Connection) -> rusqlite::Result<()> {
 /// # Errors
 ///
 /// Returns a SQLite error if the query cannot be prepared or read.
+#[allow(dead_code)]
 fn color_names(connection: &Connection) -> rusqlite::Result<Vec<String>> {
     let mut statement =
         connection.prepare("SELECT name FROM cat_colors ORDER BY id")?;

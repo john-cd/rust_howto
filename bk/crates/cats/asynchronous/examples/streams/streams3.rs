@@ -4,7 +4,7 @@
 use std::time::Duration;
 
 use futures_util::stream;
-use futures_util::stream::StreamExt;
+use futures_util::stream::StreamExt as _;
 // You may also need:
 // use futures_util::stream::TryStreamExt;
 use tokio::time;
@@ -57,9 +57,9 @@ async fn main() {
     let stream = stream::iter(vec![
         Ok::<_, String>("Item 1"),
         Ok("Item 2"),
-        Err("Error 1".to_string()),
+        Err("Error 1".to_owned()),
         Ok("Item 3"),
-        Err("Error 2".to_string()),
+        Err("Error 2".to_owned()),
     ]);
 
     // Using `filter_map` on a stream.

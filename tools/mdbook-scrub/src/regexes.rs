@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026
 use std::ops::Range;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use parse_lib::ast::CodeSpanData;
 use parse_lib::ast::FencedCodeBlockData;
 use parse_lib::ast::HtmlCommentData;
@@ -13,21 +13,21 @@ use regex::Regex;
 use super::conf::PreprocConfig;
 
 #[derive(Default)]
-pub struct ScrubRegexes {
+pub(crate) struct ScrubRegexes {
     pub hidden_sections: Option<Regex>,
     pub hidden_includes: Option<Regex>,
 }
 
 /// Generate the regexes used to remove hidden content and hidden file includes.
-pub fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
+pub(crate) fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
     let hidden_sections = conf.remove_hidden_sections.then(|| {
         Regex::new(r#"<div *class *= *"hidden">([^<]|<[^/])+</ *div *>"#)
             .expect("Invalid hidden-section regex")
     });
     let hidden_includes = conf.do_not_include_hidden_chapters.then(|| {
-        let re_string = r"[{]{2} *#(include|rustdoc_include|playground) *".to_string()
+        let re_string = "[{]{2} *#(include|rustdoc_include|playground) *".to_owned()
             + &conf.hidden_chapter_prefix
-            + r"[^}]*?[}]{2}";
+            + "[^}]*?[}]{2}";
         Regex::new(&re_string).expect("Invalid hidden-chapter regex")
     });
 
@@ -37,12 +37,12 @@ pub fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
     }
 }
 
-pub fn wikilink_regex() -> Regex {
-    Regex::new(r#"\[\[ *[^|\]]*?(?:\| *([^\]]+)?)?\]\]"#).expect("Invalid wikilink regex")
+pub(crate) fn wikilink_regex() -> Regex {
+    Regex::new(r"\[\[ *[^|\]]*?(?:\| *([^\]]+)?)?\]\]").expect("Invalid wikilink regex")
 }
 
 /// Apply a replacement outside code spans, fenced code blocks and HTML comments.
-pub fn replace_outside_protected_spans<F>(
+pub(crate) fn replace_outside_protected_spans<F>(
     markdown: &str,
     regex: &Regex,
     replacement: F,
@@ -53,7 +53,7 @@ where
     let document = parse_document("<in-memory Markdown>", None, markdown)
         .context("Failed to parse Markdown while cleaning residual directives")?;
     let mut collector = ProtectedSpanCollector {
-        source_base: markdown.as_ptr() as usize,
+        source_base: markdown.as_ptr().addr(),
         source_len: markdown.len(),
         spans: Vec::new(),
     };
@@ -90,7 +90,7 @@ struct ProtectedSpanCollector {
 
 impl ProtectedSpanCollector {
     fn add_span(&mut self, text: &str) {
-        let Some(start) = (text.as_ptr() as usize).checked_sub(self.source_base) else {
+        let Some(start) = text.as_ptr().addr().checked_sub(self.source_base) else {
             return;
         };
         let Some(end) = start.checked_add(text.len()) else {
@@ -132,8 +132,9 @@ mod tests {
             "```rust\n[[hidden-fenced]]\n```\n\n",
             "<!-- [[hidden-comment]] -->\n"
         );
-        let regex = Regex::new(r"\[\[hidden[^]]*\]\]").unwrap();
-        let result = replace_outside_protected_spans(source, &regex, |_| String::new()).unwrap();
+        let regex = Regex::new(r"\[\[hidden[^]]*\]\]").expect("input should parse");
+        let result = replace_outside_protected_spans(source, &regex, |_| String::new())
+            .expect("input should parse");
 
         assert!(!result.contains("[[hidden]]"));
         assert!(result.contains("`[[hidden-inline]]`"));
@@ -148,9 +149,9 @@ mod tests {
             captures
                 .get(1)
                 .map_or("", |matched| matched.as_str().trim())
-                .to_string()
+                .to_owned()
         })
-        .unwrap();
+        .expect("input should parse");
 
         assert_eq!(result, "title");
     }

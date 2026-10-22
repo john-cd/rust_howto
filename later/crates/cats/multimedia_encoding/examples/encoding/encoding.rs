@@ -26,12 +26,12 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
             Err(EncoderStatus::Encoded) => (),
             Err(EncoderStatus::LimitReached) => break,
             Err(status) => {
-                return Err(format!("Encoding failed: {:?}", status).into());
+                return Err(format!("Encoding failed: {status:?}").into());
             }
         }
     }
 
-    println!("Encoded {} AV1 packet(s) from one frame.", packet_count);
+    println!("Encoded {packet_count} AV1 packet(s) from one frame.");
     Ok(())
 }
 // ANCHOR_END: example

@@ -54,7 +54,7 @@ async fn main() {
         );
 
         angle += get_frame_time();
-        next_frame().await
+        next_frame().await;
     }
 }
 // ANCHOR_END: example

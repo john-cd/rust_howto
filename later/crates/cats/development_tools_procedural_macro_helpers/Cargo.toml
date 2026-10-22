@@ -41,3 +41,6 @@ test = true
 name = "write_proc_macros"
 path = "examples/write_proc_macros/main.rs"
 test = true
+
+[lints]
+workspace = true

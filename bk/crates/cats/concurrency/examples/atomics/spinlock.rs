@@ -18,7 +18,7 @@ pub struct Spinlock<T> {
 impl<T> Spinlock<T> {
     /// Creates a new spinlock wrapping the given data.
     pub const fn new(data: T) -> Self {
-        Spinlock {
+        Self {
             locked: AtomicBool::new(false), // Start unlocked.
             data: UnsafeCell::new(data),
         }

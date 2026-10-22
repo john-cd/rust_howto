@@ -20,7 +20,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use salsa::Setter;
+use salsa::Setter as _;
 
 /// An *input* struct. Its fields can be mutated between queries, and Salsa
 /// will track which tracked functions read them so it knows what to
@@ -37,7 +37,7 @@ struct SourceInput {
 #[salsa::tracked]
 fn word_count(db: &dyn salsa::Database, input: SourceInput) -> usize {
     let content = input.content(db);
-    println!("  [word_count] computing for {:?}", content);
+    println!("  [word_count] computing for {content:?}");
     content.split_whitespace().count()
 }
 
@@ -49,8 +49,8 @@ fn word_count(db: &dyn salsa::Database, input: SourceInput) -> usize {
 fn summary(db: &dyn salsa::Database, input: SourceInput) -> String {
     let content = input.content(db);
     let count = word_count(db, input);
-    println!("  [summary] computing for {:?}", content);
-    format!("\"{}\" — {} word(s)", content, count)
+    println!("  [summary] computing for {content:?}");
+    format!("\"{content}\" — {count} word(s)")
 }
 
 /// The *database* holds all incremental state.
@@ -70,7 +70,7 @@ fn main() {
     let mut db = MyDatabase::default();
 
     // Create an input value. `SourceInput::new` stores it in the database.
-    let input = SourceInput::new(&db, "Hello Salsa world".to_string());
+    let input = SourceInput::new(&db, "Hello Salsa world".to_owned());
 
     println!("=== Initial computation ===");
     println!("content  : {:?}", input.content(&db));
@@ -86,7 +86,7 @@ fn main() {
     // Mutate the input. Salsa marks the dependent memos as outdated.
     input
         .set_content(&mut db)
-        .to("A different string with more words".to_string());
+        .to("A different string with more words".to_owned());
 
     println!("\n=== After updating content ===");
     println!("content  : {:?}", input.content(&db));

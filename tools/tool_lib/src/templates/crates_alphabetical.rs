@@ -43,7 +43,7 @@ mod tests {
         let crate_names = vec![];
         let result =
             create_alphabetical_crate_page_section(first_letter, crate_names, &BTreeMap::new())
-                .unwrap();
+                .expect("input should parse");
         assert_eq!(result, "## A\n\n");
     }
 
@@ -53,7 +53,7 @@ mod tests {
         let crate_names = vec!["anyhow"];
         let result =
             create_alphabetical_crate_page_section(first_letter, crate_names, &BTreeMap::new())
-                .unwrap();
+                .expect("input should parse");
         assert_eq!(
             result,
             "## A\n\n- [![anyhow][c~anyhow~docs~badge]][c~anyhow~docs]\n"
@@ -66,7 +66,7 @@ mod tests {
         let crate_names = vec!["anyhow", "assert_cmd"];
         let result =
             create_alphabetical_crate_page_section(first_letter, crate_names, &BTreeMap::new())
-                .unwrap();
+                .expect("input should parse");
         assert_eq!(
             result,
             "## A\n\n- [![anyhow][c~anyhow~docs~badge]][c~anyhow~docs]\n- [![assert_cmd][c~assert_cmd~docs~badge]][c~assert_cmd~docs]\n"
@@ -84,7 +84,8 @@ mod tests {
             }],
         );
 
-        let result = create_alphabetical_crate_page_section("A", vec!["anyhow"], &links).unwrap();
+        let result = create_alphabetical_crate_page_section("A", vec!["anyhow"], &links)
+            .expect("input should parse");
 
         assert_eq!(
             result,

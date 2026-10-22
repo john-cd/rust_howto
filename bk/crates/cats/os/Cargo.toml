@@ -33,3 +33,6 @@ test = true
 name = "low_level_system_calls"
 path = "examples/low_level_system_calls/main.rs"
 test = true
+
+[lints]
+workspace = true

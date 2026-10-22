@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026
 #![allow(dead_code)]
 // ANCHOR: example
-use rand::RngExt;
+use rand::RngExt as _;
 
 fn main() {
     // Define the character set to choose from:

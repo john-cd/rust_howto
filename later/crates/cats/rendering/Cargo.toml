@@ -43,3 +43,6 @@ test = true
 name = "text_rendering"
 path = "examples/text_rendering/main.rs"
 test = true
+
+[lints]
+workspace = true

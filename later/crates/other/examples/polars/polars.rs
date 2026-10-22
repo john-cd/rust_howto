@@ -72,7 +72,7 @@ mod tests {
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;
-        use std::io::Write;
+        use std::io::Write as _;
         if !fs::exists("temp")? {
             fs::create_dir("temp")?;
         }

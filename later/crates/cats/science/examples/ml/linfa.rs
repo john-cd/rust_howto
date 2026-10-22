@@ -10,8 +10,8 @@
 //! TODO Reviewed ??-??-2026
 
 use linfa::dataset::Dataset;
-use linfa::prelude::Predict;
-use linfa::traits::Fit;
+use linfa::prelude::Predict as _;
+use linfa::traits::Fit as _;
 use linfa_linear::LinearRegression;
 
 /// Perform linear regression.

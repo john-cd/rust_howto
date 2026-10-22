@@ -12,13 +12,13 @@
 //! deadpool-postgres = { version = "0.14.1", features = ["serde"] }
 //!
 //! Add the database's configuration to your `.env` file, for example:
-//! PG__HOST=pg.example.com
-//! PG__USER=john_doe
-//! PG__PASSWORD=topsecret
-//! PG__DBNAME=example
-//! PG__POOL__MAX_SIZE=16
-//! PG__POOL__TIMEOUTS__WAIT__SECS=5
-//! PG__POOL__TIMEOUTS__WAIT__NANOS=0
+//! `PG__HOST=pg.example.com`
+//! `PG__USER=john_doe`
+//! `PG__PASSWORD=topsecret`
+//! `PG__DBNAME=example`
+//! `PG__POOL__MAX_SIZE=16`
+//! `PG__POOL__TIMEOUTS__WAIT__SECS=5`
+//! `PG__POOL__TIMEOUTS__WAIT__NANOS=0`
 //!
 //! TODO Reviewed ??-??-2026
 

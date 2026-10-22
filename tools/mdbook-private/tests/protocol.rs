@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026
-use std::io::Write;
+//! Tests of the preprocessor protocol exchanged with `mdbook`.
+use std::io::Write as _;
 use std::process::Command;
 use std::process::Output;
 use std::process::Stdio;
@@ -25,21 +26,23 @@ fn chapter(name: &str, path: &str, number: Option<Vec<u32>>) -> Chapter {
 
 fn invoke(settings: serde_json::Value, book: Book) -> Output {
     let mut config = Config::default();
-    config.set("preprocessor.private", settings).unwrap();
+    config
+        .set("preprocessor.private", settings)
+        .expect("input should parse");
     let context = PreprocessorContext::new(".".into(), config, "html".into());
     let mut child = Command::new(env!("CARGO_BIN_EXE_mdbook-private"))
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
         .stderr(Stdio::piped())
         .spawn()
-        .unwrap();
+        .expect("input should parse");
     child
         .stdin
         .take()
-        .unwrap()
-        .write_all(&serde_json::to_vec(&(context, book)).unwrap())
-        .unwrap();
-    child.wait_with_output().unwrap()
+        .expect("input should parse")
+        .write_all(&serde_json::to_vec(&(context, book)).expect("input should parse"))
+        .expect("input should parse");
+    child.wait_with_output().expect("input should parse")
 }
 
 #[test]
@@ -64,7 +67,7 @@ fn removes_private_subtrees_and_renumbers_visible_chapters() {
         "{}",
         String::from_utf8_lossy(&output.stderr)
     );
-    let book: Book = serde_json::from_slice(&output.stdout).unwrap();
+    let book: Book = serde_json::from_slice(&output.stdout).expect("input should parse");
     assert_eq!(book.items.len(), 3);
     let BookItem::Chapter(public) = &book.items[1] else {
         panic!("public chapter missing")
@@ -89,7 +92,7 @@ fn retains_and_styles_private_content_when_requested() {
     book.push_item(chapter("Private", "_private.md", None));
     let output = invoke(json!({"notice":"WORK IN PROGRESS"}), book);
     assert!(output.status.success());
-    let book: Book = serde_json::from_slice(&output.stdout).unwrap();
+    let book: Book = serde_json::from_slice(&output.stdout).expect("input should parse");
     let BookItem::Chapter(chapter) = &book.items[0] else {
         panic!("chapter missing")
     };
@@ -109,11 +112,11 @@ fn supports_custom_prefix_and_unstyled_retention() {
         book.clone(),
     );
     assert!(output.status.success());
-    let filtered: Book = serde_json::from_slice(&output.stdout).unwrap();
+    let filtered: Book = serde_json::from_slice(&output.stdout).expect("input should parse");
     assert_eq!(filtered.items.len(), 1);
     let output = invoke(json!({"remove":false,"style":false}), book);
     assert!(output.status.success());
-    let text = String::from_utf8(output.stdout).unwrap();
+    let text = String::from_utf8(output.stdout).expect("input should parse");
     assert!(text.contains("SECRET"));
     assert!(!text.contains("blockquote"));
 }
@@ -132,7 +135,7 @@ fn renderer_support_uses_only_exit_status() {
         let output = Command::new(env!("CARGO_BIN_EXE_mdbook-private"))
             .args(["supports", renderer])
             .output()
-            .unwrap();
+            .expect("input should parse");
         assert_eq!(output.status.success(), supported);
         assert!(output.stdout.is_empty());
     }
