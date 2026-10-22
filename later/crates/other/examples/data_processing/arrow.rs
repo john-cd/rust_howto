@@ -36,7 +36,10 @@ fn sum<T: ArrowPrimitiveType>(array: &PrimitiveArray<T>) -> T::Native
 where
     T::Native: std::iter::Sum,
 {
-    array.iter().map(std::option::Option::unwrap_or_default).sum()
+    array
+        .iter()
+        .map(std::option::Option::unwrap_or_default)
+        .sum()
 }
 
 #[derive(Serialize)]
@@ -45,9 +48,9 @@ struct MyStruct {
     string: String,
 }
 
-/// This example demonstrates how to create and manipulate Arrow arrays and
-/// record batches.
-fn main() -> Result<()> {
+/// Demonstrates creating primitive arrays (`Int32Array`, `Float64Array`,
+/// `StringArray`) and combining them into a `RecordBatch`.
+fn demo_arrays_and_batch() -> Result<(Arc<Schema>, Int32Array, Float64Array)> {
     // Create a new `Int32Array`.
     // An `Int32Array` represents a (potentially nullable) array of `i32`
     // values.
@@ -101,25 +104,25 @@ fn main() -> Result<()> {
     );
     assert_eq!(float_array.values(), &[5.0, 4.0, 3.0, 2.0, 1.0]);
 
-    // ------------------------------------------------------------------------
-    // Generic code
-    // ------------------------------------------------------------------------
+    Ok((schema, int_array, float_array))
+}
 
-    // We can write generic code for different concrete types.
-    let int_sum = sum(&int_array);
+/// Demonstrates writing generic code over primitive arrays.
+fn demo_generic_operations(int_array: &Int32Array, float_array: &Float64Array) {
+    let int_sum = sum(int_array);
     assert_eq!(int_sum, 15);
 
-    let float_sum = sum(&float_array);
+    let float_sum = sum(float_array);
     assert_eq!(float_sum, 15.0);
+}
 
-    // ------------------------------------------------------------------------
-    // Read from CSV
-    // ------------------------------------------------------------------------
-
-    let csv_data = b"integers,floats,strings\n1,5.0,a\n2,4.0,b\n3,3.0,c\n4,2.0,d\n5,1.0,e\n";
+/// Demonstrates reading Arrow record batches from CSV data.
+fn demo_csv_reader(schema: Arc<Schema>) -> Result<()> {
+    let csv_data =
+        b"integers,floats,strings\n1,5.0,a\n2,4.0,b\n3,3.0,c\n4,2.0,d\n5,1.0,e\n";
     let reader = std::io::Cursor::new(csv_data);
 
-    let mut csv_reader = csv::ReaderBuilder::new(schema.clone())
+    let mut csv_reader = csv::ReaderBuilder::new(schema)
         .with_header(true)
         .build(reader)?;
 
@@ -128,25 +131,26 @@ fn main() -> Result<()> {
         assert_eq!(csv_batch.num_rows(), 5);
     }
 
-    // ------------------------------------------------------------------------
-    // Read from JSON
-    // ------------------------------------------------------------------------
+    Ok(())
+}
 
+/// Demonstrates reading Arrow record batches from JSON data.
+fn demo_json_reader(schema: Arc<Schema>) -> Result<()> {
     let json_data = b"{\"integers\":1,\"floats\":5.0,\"strings\":\"a\"}\n{\"integers\":2,\"floats\":4.0,\"strings\":\"b\"}\n";
     let reader = std::io::Cursor::new(json_data);
 
-    let mut json_reader =
-        json::ReaderBuilder::new(schema).build(reader)?;
+    let mut json_reader = json::ReaderBuilder::new(schema).build(reader)?;
 
     if let Some(json_batch) = json_reader.next() {
         let json_batch = json_batch?;
         assert_eq!(json_batch.num_rows(), 2);
     }
 
-    // ------------------------------------------------------------------------
-    // Serde Compatibility
-    // ------------------------------------------------------------------------
+    Ok(())
+}
 
+/// Demonstrates converting Rust structs to Arrow record batches using Serde.
+fn demo_serde_compatibility() -> Result<()> {
     let serde_schema = Arc::new(Schema::new(vec![
         Field::new("int32", DataType::Int32, false),
         Field::new("string", DataType::Utf8, false),
@@ -170,6 +174,18 @@ fn main() -> Result<()> {
     if let Some(serde_batch) = decoder.flush()? {
         assert_eq!(serde_batch.num_rows(), 2);
     }
+
+    Ok(())
+}
+
+/// This example demonstrates how to create and manipulate Arrow arrays and
+/// record batches.
+fn main() -> Result<()> {
+    let (schema, int_array, float_array) = demo_arrays_and_batch()?;
+    demo_generic_operations(&int_array, &float_array);
+    demo_csv_reader(schema.clone())?;
+    demo_json_reader(schema)?;
+    demo_serde_compatibility()?;
 
     Ok(())
 }
