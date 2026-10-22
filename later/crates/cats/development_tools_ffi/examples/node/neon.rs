@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 #![allow(unexpected_cfgs)]
-
 // ANCHOR: example
 //! This example demonstrates how to create a simple Neon module that exports
 //! a function to JavaScript.
@@ -52,12 +51,12 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 
 #[cfg(test)]
 mod tests {
-    // use super::*;
+    use super::*;
 
     #[test]
     #[ignore = "requires Node module runtime"]
     fn test_main() {
-        // TODO main().unwrap();
+        run().unwrap();
     }
 }
 // [finish how to test](https://github.com/john-cd/rust_howto/issues/1033)?
