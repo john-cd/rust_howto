@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of `IntoIterator` implementation.
 //!
 //! Note that the iterator is a custom `struct` separate from the collection
 //! type.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// A custom collection type.
 /// In this example, we simply wrap a `Vec`.

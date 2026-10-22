@@ -34,7 +34,6 @@ trait OutlinePrint: fmt::Display {
 /// otherwise.
 impl OutlinePrint for String {}
 
-/// Prints a string with `outline_print`.
 fn main() {
     String::from("test").outline_print();
 }

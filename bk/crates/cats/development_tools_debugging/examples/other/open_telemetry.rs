@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Create a manual OpenTelemetry span and pair it with regular tracing output.
-//!
-//! TODO Reviewed ??-??-2026
 
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::global;

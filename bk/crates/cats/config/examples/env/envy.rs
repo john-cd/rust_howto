@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Examples for working with `.env` files and `envy`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 

@@ -4,7 +4,6 @@
 
 mod yew;
 
-/// Runs the example from the `yew` module.
 fn main() {
     yew::run();
 }

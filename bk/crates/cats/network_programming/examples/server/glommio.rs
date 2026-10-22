@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the usage of the `glommio` library for
 //! asynchronous I/O operations in Rust.
@@ -12,8 +13,6 @@
 //! thread-local I/O, based on the Linux `io_uring` interface plus Rust's async
 //! support. `glommio` is therefore Linux-only, with a kernel version 5.8 or
 //! newer recommended.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_os = "linux")]
 

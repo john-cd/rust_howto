@@ -138,7 +138,6 @@ KEY, name TEXT, age INT);",
     Ok(())
 }
 
-/// Runs [`example`].
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     example().await

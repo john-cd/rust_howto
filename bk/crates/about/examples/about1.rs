@@ -1,8 +1,7 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates converting a byte slice representing an IPv6
 //! address to an `IpAddr` type.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::net::IpAddr;
 use std::str;
@@ -35,7 +34,6 @@ fn example() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Runs `example`.
 fn main() -> anyhow::Result<()> {
     example()?;
     Ok(())
@@ -46,7 +44,6 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Checks that the example succeeds.
     #[test]
     fn test() -> anyhow::Result<()> {
         example()?;

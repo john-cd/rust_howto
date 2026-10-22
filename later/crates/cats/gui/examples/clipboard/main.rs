@@ -4,7 +4,6 @@
 
 mod arboard;
 
-/// Runs the example from the `arboard` module.
 fn main() {
     arboard::run();
 }

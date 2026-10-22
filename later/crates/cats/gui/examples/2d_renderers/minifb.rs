@@ -1,10 +1,9 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A minimal native graphics example using `minifb`.
 //!
 //! This example opens a native window and renders a simple animated pixel
 //! gradient by writing directly to a pixel buffer.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 use std::time::Instant;

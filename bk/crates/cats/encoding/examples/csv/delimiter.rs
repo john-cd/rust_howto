@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to use a custom delimiter during CSV deserialization.
-//!
-//! TODO Reviewed ??-??-2026
 
 use csv::Error;
 use csv::ReaderBuilder;

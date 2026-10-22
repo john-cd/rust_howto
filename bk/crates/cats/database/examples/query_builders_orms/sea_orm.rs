@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Build `SeaORM` queries from an inline entity definition.
 //!
 //! This example creates a simple active model and prints the generated SQL
 //! for an insert and select statement.
-//!
-//! TODO Reviewed ??-??-2026
 
 use sea_orm::ActiveValue::NotSet;
 use sea_orm::ActiveValue::Set;

@@ -4,7 +4,6 @@
 
 mod serde_yml;
 
-/// Runs the example from the `serde_yml` module.
 fn main() -> anyhow::Result<()> {
     serde_yml::run()
 }

@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of `as_ref`, `as_deref`, and `as_mut` methods on
 //! `Result`.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Returns a message on success, or an error.
 fn get_message(success: bool) -> Result<String, &'static str> {

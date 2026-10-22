@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the manipluation of complex numbers.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Adds two complex numbers and prints the sum.
 fn main() {

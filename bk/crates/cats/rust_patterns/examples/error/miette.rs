@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to define custom error types using `miette`
 //! and `thiserror`. It showcases various features like error codes, URLs, help
 //! text, source code snippets, and wrapping other errors.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Example code for a library.
 /// In real-life, this code would be in a separate crate.
@@ -92,7 +91,10 @@ mod mylib {
     }
 
     /// Example function that fails.
-    #[expect(unreachable_code, reason = "the example returns an error on purpose")]
+    #[expect(
+        unreachable_code,
+        reason = "the example returns an error on purpose"
+    )]
     pub fn this_fails() -> Result<()> {
         // You can use plain strings as a `Source`,
         // or anything that implements the one-method `Source` trait.
@@ -105,22 +107,14 @@ mod mylib {
             bad_bit: (9, 4).into(),
             advice: Some("Some help text".to_owned()),
             others: vec![MyLibError::BadThingHappened],
-        }.into());
+        }
+        .into());
         Ok(())
     }
 }
 
 use miette::Result;
 
-/// # To get errors printed nicely in application code, just return a `Result<()>`.
-///
-/// This `main` function demonstrates how to use the custom error types defined
-/// in the `mylib` module. It calls the `this_fails` function, which returns a
-/// `Result`, and if an error occurs, `miette` will format and print it nicely.
-///
-/// ## Note:
-/// You can swap out the default reporter for a custom one using
-/// `miette::set_hook()`.
 fn main() -> Result<()> {
     mylib::this_fails()?;
     Ok(())

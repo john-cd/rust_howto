@@ -4,7 +4,6 @@
 
 mod metadata;
 
-/// Runs the example from the `metadata` module.
 fn main() -> anyhow::Result<()> {
     metadata::run()?;
     Ok(())

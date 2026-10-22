@@ -4,7 +4,6 @@
 
 mod pest;
 
-/// Runs the example from the `pest` module.
 fn main() {
     pest::run();
 }

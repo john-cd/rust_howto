@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `http` crate for creating
 //! and manipulating HTTP requests and responses.
@@ -11,8 +12,6 @@
 //!
 //! Implementations of the HTTP protocol are elsewhere - see e.g. `hyper` or
 //! `reqwest`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use http::Request;
 use http::Response;

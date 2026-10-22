@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to deserialize TOML data into Rust structs.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 

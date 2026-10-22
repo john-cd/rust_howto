@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Buildable placeholder example.
 //!
 //! Original placeholder comments are preserved below as comments.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Prints a message: the example is a placeholder.
 fn main() {

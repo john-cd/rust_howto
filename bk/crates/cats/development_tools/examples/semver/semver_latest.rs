@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to find the maximum matching version from a
 //! list of versions based on a given version requirement string, using the
@@ -8,8 +9,6 @@
 //! and an iterable of version strings. It parses the version requirement and
 //! each version string, then filters the versions to find those that match the
 //! requirement. Finally, it returns the maximum matching version.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use semver::Version;

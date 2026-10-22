@@ -1,11 +1,10 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Add a `Run` button to code examples embedded in your crate documentation.
 //!
 //! Place the following attribute at the top of your crate.
 //! Note it is an _inner_ attribute that starts with `#!`.
 //! Adjust the URL as needed. The official playground is <https://play.rust-lang.org/>.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![doc(html_playground_url = "https://playground.example.com/")]
 

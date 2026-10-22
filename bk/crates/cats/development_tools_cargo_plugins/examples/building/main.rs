@@ -4,7 +4,6 @@
 
 mod xshell;
 
-/// Runs the `xshell` example.
 fn main() -> anyhow::Result<()> {
     xshell::run()?;
     Ok(())

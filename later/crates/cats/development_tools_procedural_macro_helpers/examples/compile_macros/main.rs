@@ -4,7 +4,6 @@
 
 mod watt;
 
-/// Runs the example from the `watt` module.
 fn main() {
     watt::run();
 }

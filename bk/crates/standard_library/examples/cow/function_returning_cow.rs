@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of a function returning a `Cow`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::borrow::Cow;
 

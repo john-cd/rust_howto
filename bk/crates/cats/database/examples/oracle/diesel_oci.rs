@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `diesel_oci` is a Diesel backend and connection implementation for Oracle
 //! databases.
@@ -11,8 +12,6 @@
 //! dotenvy = "0.15.7"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::env;
 

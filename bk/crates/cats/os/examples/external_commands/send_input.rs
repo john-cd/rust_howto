@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to send input to an external command's
 //! standard input (`stdin`) and process its standard output (`stdout`) and
@@ -10,8 +11,6 @@
 //! output is successful. If successful, it parses the output, splits it into
 //! words, converts them to lowercase, and stores them in a `HashSet` to get
 //! unique words.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_family = "unix")]
 

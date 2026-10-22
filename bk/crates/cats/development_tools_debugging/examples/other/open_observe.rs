@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Log telemetry fields for an `OpenObserve` integration.
 //!
 //! To transmit spans, first configure an OpenTelemetry SDK provider with an
 //! OTLP exporter. The global tracer is a no-op until a provider is installed.
-//!
-//! TODO Reviewed ??-??-2026
 
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::global;

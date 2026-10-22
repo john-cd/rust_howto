@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to read and write XML data using the
 //! `xml-rs` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use xml::reader::EventReader;
 use xml::reader::XmlEvent;

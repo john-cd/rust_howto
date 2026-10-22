@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to write `use` declarations to bring items
 //! from external crates into scope, without having to write their full paths.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Import a module from an external crate (here, `std`, the standard library),
 // by writing a path that begins with the external crate name.

@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Add this dependency to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
 //! priority-queue = "1.3.1" # Or latest.
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::cmp::Reverse;
 
@@ -31,6 +30,7 @@ impl Task {
     }
 }
 
+/// Pushes elements with different priorities and pops them in priority order.
 fn basic_usage() {
     println!("Basic Priority Queue Usage:");
 
@@ -51,6 +51,7 @@ fn basic_usage() {
     }
 }
 
+/// Uses `Reverse` so that the smallest priority is popped first.
 fn min_priority_queue() {
     println!("\nMin Priority Queue:");
 
@@ -67,6 +68,7 @@ fn min_priority_queue() {
     }
 }
 
+/// Queues a user-defined task type.
 fn custom_type_usage() {
     println!("\nPriority Queue with a Custom Type:");
 
@@ -103,6 +105,7 @@ fn custom_type_usage() {
     }
 }
 
+/// Looks up and increases priorities, iterates and sorts the queue.
 fn advanced_usage() {
     println!("\nAdvanced Usage:");
 

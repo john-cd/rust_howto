@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(clippy::async_yields_async)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Futures
 //!
@@ -11,8 +12,6 @@
 //! - Chain computations onto a future using `then`.
 //! - Use conditional `Either` futures.
 //! - Flatten nested futures.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use futures::future::FutureExt as _;

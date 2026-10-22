@@ -4,7 +4,6 @@
 
 mod freebsd;
 
-/// Runs the example from the `freebsd` module.
 fn main() {
     freebsd::run();
 }

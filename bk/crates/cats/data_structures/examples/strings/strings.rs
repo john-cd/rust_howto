@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates common string types in Rust.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(unused_assignments)]
 

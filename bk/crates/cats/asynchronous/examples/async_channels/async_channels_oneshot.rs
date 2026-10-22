@@ -42,7 +42,6 @@ async fn one_shot() {
     println!("{res}");
 }
 
-/// Runs the `oneshot` example.
 #[tokio::main]
 async fn main() {
     one_shot().await;

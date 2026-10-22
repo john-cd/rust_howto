@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to use the `color-eyre` crate for enhanced error reporting.
 //!
 //! `color_eyre` provides beautiful error reporting and backtraces with colors,
 //! making it easier to understand and debug errors.
 //! It's especially useful for debugging in command-line applications.
-//!
-//! TODO Reviewed ??-??-2026
 
 use color_eyre::eyre::Result;
 use color_eyre::eyre::eyre;

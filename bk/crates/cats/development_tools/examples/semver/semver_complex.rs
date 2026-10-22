@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates parsing, comparing, and serializing complex semantic version
 //! strings.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use semver::BuildMetadata;

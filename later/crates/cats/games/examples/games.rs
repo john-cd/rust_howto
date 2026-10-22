@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A minimal game example using the `macroquad` rendering engine.
 //!
 //! This example creates a window, animates a rotating triangle, and responds to
 //! the space bar by changing the triangle's color.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::f32::consts::PI;
 

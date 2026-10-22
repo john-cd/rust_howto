@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of the mimalloc memory allocator.
 //!
@@ -19,8 +20,6 @@
 //! [dependencies]
 //! mimalloc = { version = "*", features = ["secure"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use mimalloc::MiMalloc;
 

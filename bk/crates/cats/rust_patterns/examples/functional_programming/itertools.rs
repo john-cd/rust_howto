@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the usage of the `itertools` crate.
 //!
@@ -9,8 +10,6 @@
 //! ```toml
 //! itertools = "0.14.0"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use itertools::Itertools as _;
 use itertools::assert_equal;

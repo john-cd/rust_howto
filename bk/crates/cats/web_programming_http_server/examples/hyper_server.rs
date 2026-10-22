@@ -76,7 +76,6 @@ async fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Checks that the placeholder runs.
     #[test]
     fn test_main() {
         main().expect("in test");

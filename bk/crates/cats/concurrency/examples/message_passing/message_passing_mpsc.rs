@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates message passing using multiple producers and a
 //! single consumer. It showcases the use of `mpsc::channel` for creating a
 //! channel, `tx.send` for sending messages, and `rx.recv` for receiving
 //! messages.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::mpsc;
 use std::thread;

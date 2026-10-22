@@ -4,7 +4,6 @@
 
 mod insta;
 
-/// Runs the example from the `insta` module.
 fn main() {
     insta::run();
 }

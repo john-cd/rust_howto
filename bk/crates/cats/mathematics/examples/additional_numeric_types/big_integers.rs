@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates big integer manipulation.
-//!
-//! TODO Reviewed ??-??-2026
 
 use num::bigint::BigInt;
 use num::bigint::ToBigInt as _;

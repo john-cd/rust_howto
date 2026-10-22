@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Tokenize HTML with `html5ever` and print the parsed tokens.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::cell::Cell;
 

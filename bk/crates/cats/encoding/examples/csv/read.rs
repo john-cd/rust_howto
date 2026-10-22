@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to read a CSV file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use csv::Error;
 

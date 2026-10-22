@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simple `wasmi` example for virtualization.
 //!
 //! This loads a tiny WebAssembly module from a raw byte array, instantiates it
 //! with `wasmi`, and calls the exported `run` function.
-//!
-//! TODO Reviewed ??-??-2026
 
 use wasmi::Engine;
 use wasmi::Linker;

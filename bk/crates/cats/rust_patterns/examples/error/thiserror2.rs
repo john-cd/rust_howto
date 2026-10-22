@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of the `thiserror` crate for creating custom error
 //! types. This example shows how to wrap an underlying `std::io::Error` and
 //! customize its display.
-//!
-//! TODO Reviewed ??-??-2026
 
 use thiserror::Error;
 

@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Ryū Example
 //!
 //! This example demonstrates the usage of the `ryu` crate, a pure Rust
 //! implementation of the Ryū algorithm for fast floating-point to decimal
 //! string conversion.
-//!
-//! TODO Reviewed ??-??-2026
 
 use ryu::Buffer;
 

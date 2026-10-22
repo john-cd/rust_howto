@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a simple linear regression example using the
 //! `linfa` and `linfa-linear` crates. It showcases how to create a dataset, fit
@@ -6,8 +7,6 @@
 //!
 //! `linfa` is a Rust library for machine learning, providing tools for tasks,
 //! such as clustering, regression, and classification.
-//!
-//! TODO Reviewed ??-??-2026
 
 use linfa::dataset::Dataset;
 use linfa::prelude::Predict as _;

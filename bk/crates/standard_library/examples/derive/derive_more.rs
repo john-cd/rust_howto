@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `derive_more` crate extends Rust's built-in derive functionality to
 //! provide more automatic implementations for common traits.
@@ -8,8 +9,6 @@
 //! [dependencies]
 //! derive_more = "2.0.1" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use derive_more::Add;
 use derive_more::AddAssign;

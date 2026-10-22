@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example showcases how to create a custom environment source for (unit)
 //! testing purposes, allowing the simulation of different environment variable
@@ -8,8 +9,6 @@
 //! ```toml
 //! config = "0.15.6" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Loads a configuration from a custom environment source, as in a unit test.
 fn main() -> anyhow::Result<(), ::config::ConfigError> {

@@ -1,7 +1,6 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic `mio` event polling with a `Waker`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 

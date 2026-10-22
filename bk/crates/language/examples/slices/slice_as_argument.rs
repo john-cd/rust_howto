@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of a slice as a function argument.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Returns the sum of the elements of `slice`.
 fn sum(slice: &[i32]) -> i32 {

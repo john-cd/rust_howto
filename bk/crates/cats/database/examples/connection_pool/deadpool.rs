@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `deadpool` crate to manage a pool
 //! of connections.
@@ -9,8 +10,6 @@
 //! In this example, we create a simple `Server` type that represents a
 //! connection to a server. The `Manager` type is responsible for creating and
 //! recycling `Server` instances.
-//!
-//! TODO Reviewed ??-??-2026
 
 use deadpool::managed;
 

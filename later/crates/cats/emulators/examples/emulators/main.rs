@@ -4,7 +4,6 @@
 
 mod emulator;
 
-/// Runs the example from the `emulator` module.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     emulator::run()
 }

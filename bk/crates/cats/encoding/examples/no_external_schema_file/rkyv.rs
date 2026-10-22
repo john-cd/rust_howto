@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `rkyv` (short for "archive") is a high-performance, zero-copy
 //! (de)serialization framework that allows arbitrary field types
@@ -6,8 +7,6 @@
 //!
 //! This example demonstrates how to serialize and deserialize a struct
 //! using `rkyv` without an external schema file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rkyv::Archive;
 use rkyv::Deserialize;

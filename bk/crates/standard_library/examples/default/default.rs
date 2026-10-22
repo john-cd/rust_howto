@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `Default` trait provides a way to create a default value for a type.
 //! It initializes a struct without manually specifying every field.
-//!
-//! TODO Reviewed ??-??-2026
 
 // `derive` implements it automatically:
 /// A configuration, with the default values of each type.

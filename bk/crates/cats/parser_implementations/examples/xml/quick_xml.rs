@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Parse, deserialize, and write XML with `quick-xml`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io::Cursor;
 

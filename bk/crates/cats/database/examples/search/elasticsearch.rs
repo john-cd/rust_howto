@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This module provides examples of interacting with Elasticsearch using the
 //! official Rust client.
-//!
-//! TODO Reviewed ??-??-2026
 
 use elasticsearch::BulkParts;
 use elasticsearch::Elasticsearch;

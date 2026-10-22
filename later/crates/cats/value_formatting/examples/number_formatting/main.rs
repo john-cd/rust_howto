@@ -4,7 +4,6 @@
 
 mod ryu;
 
-/// Runs the example from the `ryu` module.
 fn main() {
     ryu::run();
 }

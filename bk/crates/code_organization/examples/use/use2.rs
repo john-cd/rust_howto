@@ -29,7 +29,6 @@ fn eat_at_restaurant() {
     hosting::add_to_waitlist();
 }
 
-/// Runs [`eat_at_restaurant`].
 fn main() {
     eat_at_restaurant();
 }

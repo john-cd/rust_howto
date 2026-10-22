@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `arrow` is a complete, safe, native Rust implementation of `Apache Arrow`,
 //! a cross-language development platform for in-memory data.
@@ -10,8 +11,6 @@
 //! ```sh
 //! RUSTFLAGS="-C target-cpu=native -C target-feature=-prefer-256-bit"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 

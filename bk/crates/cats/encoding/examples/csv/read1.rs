@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates deserializing CSV records into a struct.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 

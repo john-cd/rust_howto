@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to get the current working directory.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::env;
 use std::path::PathBuf;

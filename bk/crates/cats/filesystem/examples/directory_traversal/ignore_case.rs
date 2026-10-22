@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to ignore case when matching file names.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use glob::MatchOptions;

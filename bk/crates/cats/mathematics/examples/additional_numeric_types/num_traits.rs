@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `num_traits` crate provides numeric traits for generic mathematics.
-//!
-//! TODO Reviewed ??-??-2026
 
 use num_traits::NumCast;
 use num_traits::One;

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Build successive paginated URLs for an HTTP API.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use url::Url;

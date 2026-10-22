@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of percent encoding and decoding strings.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::str::Utf8Error;
 

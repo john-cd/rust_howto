@@ -4,7 +4,6 @@
 
 mod linux;
 
-/// Runs the example from the `linux` module.
 fn main() {
     linux::run();
 }

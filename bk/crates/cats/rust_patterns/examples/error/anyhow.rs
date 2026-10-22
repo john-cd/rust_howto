@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of the `anyhow` crate for error handling.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Context as _;
 use anyhow::Result;

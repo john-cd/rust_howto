@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![cfg(feature = "datafusion")]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use `DataFusion` to set up a simple
 //! in-memory table and run a SQL query on it.
@@ -10,17 +11,15 @@
 //! other Arrow-compatible systems (like Python's `PyArrow`, Spark, etc.)
 //! without expensive serialization/deserialization.
 //!
-//! - SQL Support: We can query data registered within `DataFusion` using standard
-//!   SQL.
-//! - `DataFrame` API: It also provides a programmatic `DataFrame` API (similar in
-//!   concept to Pandas or Polars) for building query plans step-by-step in Rust
-//!   code.
+//! - SQL Support: We can query data registered within `DataFusion` using
+//!   standard SQL.
+//! - `DataFrame` API: It also provides a programmatic `DataFrame` API (similar
+//!   in concept to Pandas or Polars) for building query plans step-by-step in
+//!   Rust code.
 //!
 //! The following creates a table named "people" with columns "name" and
 //! "age", inserts some data, and then runs a query to select people older
 //! than 35.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 

@@ -4,7 +4,6 @@
 
 mod graphemes;
 
-/// Runs the example from the `graphemes` module.
 fn main() {
     graphemes::run();
 }

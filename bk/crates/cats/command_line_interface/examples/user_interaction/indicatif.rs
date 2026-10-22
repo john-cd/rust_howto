@@ -68,7 +68,6 @@ fn spinner() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Runs [`spinner`].
 fn main() -> anyhow::Result<()> {
     spinner()?;
     Ok(())

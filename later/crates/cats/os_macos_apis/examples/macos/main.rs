@@ -4,7 +4,6 @@
 
 mod macos;
 
-/// Runs the example from the `macos` module.
 fn main() {
     macos::run();
 }

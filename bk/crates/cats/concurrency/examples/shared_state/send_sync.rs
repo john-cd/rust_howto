@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates safe concurrent access to shared data
 //! using `Arc` (Atomic Reference Counting) and `Mutex` (Mutual Exclusion).
@@ -9,8 +10,6 @@
 //! Under the covers, `Mutex<T>` is `Send + Sync` if `T` is `Send`.
 //! Note that `T: Sync` is not required, as the underlying data is only made
 //! available to one thread at a time.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 use std::sync::Mutex;

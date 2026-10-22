@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example showcasing `tinytemplate`.
 //!
@@ -11,8 +12,6 @@
 //! strings loaded at runtime, this is not recommended.
 //!
 //! `TinyTemplate` can only render templates into Strings, not socket or file.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 

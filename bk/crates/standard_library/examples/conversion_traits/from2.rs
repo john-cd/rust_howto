@@ -1,8 +1,7 @@
 #![allow(unused)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Converting Custom Errors.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io;
 

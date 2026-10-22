@@ -4,7 +4,6 @@
 
 mod petgraph;
 
-/// Runs the example from the `petgraph` module.
 fn main() {
     petgraph::run();
 }

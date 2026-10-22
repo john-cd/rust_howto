@@ -4,7 +4,6 @@
 
 mod profile;
 
-/// Runs the example from the `profile` module.
 fn main() {
     profile::run();
 }

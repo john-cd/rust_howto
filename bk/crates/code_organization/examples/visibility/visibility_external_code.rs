@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! In the crate root:
-//!
-//! TODO Reviewed ??-??-2026
 
 // This function is available to external code using this crate as a dependency.
 /// A function that external crates can call.

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of the `lazy_static` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 

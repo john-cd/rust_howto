@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to initialize the `wgpu` GPU abstraction layer
 //! without creating a window.
 //!
 //! It requests a GPU adapter, creates a device and queue, allocates a small
 //! buffer, and submits an empty command list to validate the initialized queue.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::future::Future;
 use std::pin::Pin;
@@ -17,7 +16,6 @@ use std::task::RawWaker;
 use std::task::RawWakerVTable;
 use std::task::Waker;
 
-/// Runs the asynchronous code that uses `wgpu`.
 fn main() {
     block_on(async_main());
 }

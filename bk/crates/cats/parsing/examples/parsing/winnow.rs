@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic usage of the `winnow` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use winnow::ascii::digit1;
 use winnow::combinator::separated;

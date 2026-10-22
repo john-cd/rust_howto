@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Tokenize a small CSS declaration list with `cssparser`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use cssparser::Parser;
 use cssparser::ParserInput;

@@ -4,7 +4,6 @@
 
 mod neuro;
 
-/// Runs the example from the `neuro` module.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     neuro::run()
 }

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `ignore` crate to traverse a
 //! directory recursively, respecting `.gitignore` and similar files, and
@@ -8,8 +9,6 @@
 //! ```toml
 //! ignore = "0.4" # or latest.
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use ignore::WalkBuilder;
 

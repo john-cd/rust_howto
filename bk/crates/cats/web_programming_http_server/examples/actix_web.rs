@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a basic Actix Web server.
 //!
 //! It defines a simple HTTP server that listens on `127.0.0.1:8080` and
 //! responds with "Hello, world!" to GET requests on the root path ("/").
-//!
-//! TODO Reviewed ??-??-2026
 
 use actix_web::App;
 use actix_web::HttpResponse;

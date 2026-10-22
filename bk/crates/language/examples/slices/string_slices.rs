@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! String slice examples.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Creates string slices from a string literal and a `String`.
 fn main() {

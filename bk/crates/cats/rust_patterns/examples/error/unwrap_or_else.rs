@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of `unwrap_or` and `unwrap_or_else` for handling
 //! `Option` and `Result` types.
@@ -6,8 +7,6 @@
 //! `unwrap_or` provides a default value if the `Option` is `None` or the
 //! `Result` is `Err`. `unwrap_or_else` provides a closure to compute a default
 //! value in the same scenarios.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(clippy::unnecessary_literal_unwrap)]
 

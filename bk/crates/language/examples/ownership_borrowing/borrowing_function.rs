@@ -1,8 +1,7 @@
 #![allow(unused_assignments, dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the concept of borrowing in Rust.
-//!
-//! TODO Reviewed ??-??-2026
 
 // This struct does not implement `Copy` and has therefore "move semantics":
 /// A struct that does not implement `Copy`, so it has move semantics.

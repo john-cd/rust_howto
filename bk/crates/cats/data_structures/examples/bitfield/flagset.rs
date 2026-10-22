@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of using the `flagset` crate to define and use bit flags.
 //!
 //! `flagset` has no dependencies, incl. the stdlib, so it can be used in
 //! `no_std` environments, such as embedded systems or kernel development.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::os::raw::c_int;
 
@@ -41,6 +40,7 @@ struct Container(FlagSet<FlagsA>);
 impl Container {
     // However, if you want to receive flags as an input to a function, you
     // should use `impl Into<FlagSet<T>>`.
+    /// Creates a container from anything convertible into a `FlagSet`.
     fn new(flags: impl Into<FlagSet<FlagsA>>) -> Self {
         Self(flags.into())
     }

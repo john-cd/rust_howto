@@ -4,7 +4,6 @@
 
 mod graphics;
 
-/// Runs the example from the `graphics` module.
 fn main() {
     graphics::run();
 }

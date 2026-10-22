@@ -4,7 +4,6 @@
 
 mod egui;
 
-/// Runs the example from the `egui` module.
 fn main() -> Result<(), eframe::Error> {
     egui::run()?;
     Ok(())

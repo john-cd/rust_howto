@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `fake` crate to generate fake data
 //! for testing. It covers basic usage, generating data for custom structs, and
@@ -8,8 +9,6 @@
 //! ```toml
 //! fake = { version = "4.3.0", features = [ "derive" ] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 // Trait that generates fake values given a type that implements `Dummy`.
 use fake::Dummy;

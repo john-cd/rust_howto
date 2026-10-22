@@ -4,7 +4,6 @@
 
 mod rc;
 
-/// Runs the example from the `rc` module.
 fn main() {
     rc::run();
 }

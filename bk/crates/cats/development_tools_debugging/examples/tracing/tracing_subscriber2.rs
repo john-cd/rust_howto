@@ -125,7 +125,6 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 mod tests {
     use super::*;
 
-    /// Checks that layers can be composed.
     #[test]
     fn test_layers() {
         layers();
@@ -140,7 +139,6 @@ mod tests {
         filter().unwrap();
     }
 
-    /// Checks that a filter can be attached to a single layer.
     #[test]
     fn test_per_layer_filtering() {
         per_layer_filtering();

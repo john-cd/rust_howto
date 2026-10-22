@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example: create a geographic polygon, compute its area, and find its
 //! centroid using the `geo` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use geo::Area as _;
 use geo::Centroid as _;

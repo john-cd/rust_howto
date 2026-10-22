@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of `Result` methods for value transformation and control flow.
-//!
-//! TODO Reviewed ??-??-2026
 
 // A contrived example of a function returning a `Result`:
 /// Divides `a` by `b`, or returns an error if `b` is zero.

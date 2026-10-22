@@ -4,7 +4,6 @@
 
 mod accesskit;
 
-/// Runs the example from the `accesskit` module.
 fn main() {
     accesskit::run();
 }

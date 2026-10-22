@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The `bytemuck` crate provides functions for reinterpreting one type as
 //! another without use of `unsafe`, whenever this is safe e.g. because both
@@ -22,8 +23,6 @@
 //! It also offers casting for types that have some invalid bit patterns by
 //! performing a runtime check. This is particularly useful for types like
 //! fieldless ('C-style') enums, char, bool, and structs containing them.
-//!
-//! TODO Reviewed ??-??-2026
 
 use bytemuck::AnyBitPattern;
 use bytemuck::NoUninit;

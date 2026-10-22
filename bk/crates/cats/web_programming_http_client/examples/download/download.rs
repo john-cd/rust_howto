@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Download a file from a URL and save it to a temporary directory.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fs::File;
 use std::io::copy;

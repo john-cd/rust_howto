@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A simple `PolkaVM` host example.
 //!
@@ -13,8 +14,6 @@
 //! ```
 //!
 //! The guest should import `host_increment` and export `add_one_with_host`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::convert::Infallible;
 use std::env;
@@ -42,7 +41,6 @@ struct HostState {
     counter: u32,
 }
 
-/// Runs the guest program given on the command line.
 fn main() -> ExampleResult<()> {
     run_guest(guest_path_from_args())
 }
@@ -50,7 +48,9 @@ fn main() -> ExampleResult<()> {
 /// Loads the guest program from `guest_path`, links a host function and calls
 /// the guest function. Prints the usage if no path is given.
 fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
-    let guest_path = if let Some(path) = guest_path { path } else {
+    let guest_path = if let Some(path) = guest_path {
+        path
+    } else {
         print_usage();
         return Ok(());
     };

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to load application configuration and store it
 //! in a singleton.
@@ -7,8 +8,6 @@
 //! ```toml
 //! config = "0.15.6" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Application settings, loaded once and shared.
 mod settings {

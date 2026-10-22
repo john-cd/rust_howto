@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates using `slab` for pre-allocated storage.
 //!
@@ -9,8 +10,6 @@
 //! ```toml
 //! slab = "0.4"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use slab::Slab;
 

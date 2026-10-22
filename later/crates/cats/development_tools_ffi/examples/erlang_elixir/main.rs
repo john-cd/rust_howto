@@ -4,7 +4,6 @@
 
 mod rustler;
 
-/// Runs the example from the `rustler` module.
 fn main() {
     rustler::run();
 }

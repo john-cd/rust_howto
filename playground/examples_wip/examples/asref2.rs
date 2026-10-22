@@ -1,7 +1,6 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Implement `AsRef` to "emulate inheritance".
-//!
-//! TODO Reviewed ??-??-2026
 
 #![expect(dead_code, reason = "scratch example with unused items")]
 

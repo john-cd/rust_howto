@@ -4,7 +4,6 @@
 
 mod tests1;
 
-/// Runs the example from the `tests1` module.
 fn main() {
     tests1::run();
 }

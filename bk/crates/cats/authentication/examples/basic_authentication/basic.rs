@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use basic authentication with `reqwest`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use reqwest::Error;
 use reqwest::blocking::Client;

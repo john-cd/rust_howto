@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `tl` crate to parse HTML.
-//!
-//! TODO Reviewed ??-??-2026
 
 use tl::Node;
 use tl::Parser;

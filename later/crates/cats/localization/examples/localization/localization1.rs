@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates locale-aware message selection using the `sys-locale` crate.
 //!
 //! This example reads the system locale, chooses a translation based on the
 //! language code, and prints a localized greeting.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 

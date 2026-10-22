@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to create a simple gRPC client using the `tonic`
 //! crate to interact with the `Greeter` server.
 //!
 //! To run this example, ensure the `Greeter` server is already running.
-//!
-//! TODO Reviewed ??-??-2026
 
 use helloworld::HelloRequest;
 use helloworld::greeter_client::GreeterClient;

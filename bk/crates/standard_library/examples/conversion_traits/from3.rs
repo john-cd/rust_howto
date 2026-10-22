@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Parsing from raw bytes.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// A message, created from raw bytes.
 #[derive(Debug)]

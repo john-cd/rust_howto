@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the usage of the `subtle` crate for
 //! constant-time cryptographic operations.
-//!
-//! TODO Reviewed ??-??-2026
 
 use subtle::Choice;
 use subtle::ConditionallySelectable as _;

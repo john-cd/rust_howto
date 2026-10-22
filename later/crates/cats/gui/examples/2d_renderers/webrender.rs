@@ -1,7 +1,6 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A simple WebRender example that draws a rotating rectangle.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Instant;
 

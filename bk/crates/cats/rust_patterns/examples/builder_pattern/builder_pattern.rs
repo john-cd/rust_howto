@@ -1,7 +1,6 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example builder pattern.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 

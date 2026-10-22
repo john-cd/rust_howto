@@ -1,10 +1,9 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example: calculate Black-Scholes prices for European call and put options.
 //!
 //! This example is self-contained and does not depend on an external finance
 //! crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// The type of an option.
 #[allow(dead_code)]

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates using `bumpalo` for fast bump allocation.
 //!
@@ -14,8 +15,6 @@
 //! ```toml
 //! bumpalo = "3"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use bumpalo::Bump;
 

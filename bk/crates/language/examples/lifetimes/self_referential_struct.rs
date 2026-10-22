@@ -25,6 +25,7 @@ struct CsvRecord<'a> {
     fields: Vec<&'a str>,
 }
 
+/// Splits a comma-separated line into a record that borrows from the line.
 fn load_record(line: &str) -> CsvRecord<'_> {
     let mut record = CsvRecord {
         line,

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Examples using `for`.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Loops over ranges and collections with `for`.
 fn main() {

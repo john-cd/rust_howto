@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Run the benchmarks with `cargo bench`:
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::hint::black_box;
 

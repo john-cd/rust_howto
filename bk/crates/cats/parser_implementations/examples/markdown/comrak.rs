@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `comrak` is a `CommonMark` and GitHub-flavored Markdown compatible parser.
-//!
-//! TODO Reviewed ??-??-2026
 
 use comrak::Arena;
 use comrak::Options;

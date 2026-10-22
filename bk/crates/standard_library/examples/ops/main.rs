@@ -8,7 +8,6 @@
 
 mod ops;
 
-/// Runs the example from the `ops` module.
 fn main() {
     ops::run();
 }

@@ -1,10 +1,9 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A small Leptos counter example showing reactive signals and view mounting.
 //!
 //! This example is browser-targeted, so the default build path remains a
 //! lightweight placeholder unless the `leptos` feature is enabled.
-//!
-//! TODO Reviewed ??-??-2026
 
 #[cfg(feature = "leptos-support")]
 use leptos::prelude::*;

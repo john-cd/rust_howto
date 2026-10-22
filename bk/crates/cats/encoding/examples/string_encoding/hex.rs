@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of encoding and decoding a string using hexadecimal encoding.
-//!
-//! TODO Reviewed ??-??-2026
 
 use data_encoding::DecodeError;
 use data_encoding::HEXUPPER;

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Calculate how long an application should wait after hitting a rate limit.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 use std::time::SystemTime;

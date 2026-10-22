@@ -22,6 +22,7 @@ const UNCATEGORIZED_DESCRIPTION: &str =
 const CATEGORY_PAGE_HEADER: &str =
     "# Crates by Category\n\n| Category | Description | Crates |\n| --- | --- | --- |\n";
 
+/// The footer of the generated page: a link reference and the includes.
 const CATEGORY_PAGE_FOOTER: &str = "\n[All Valid Categories][crates.io~category_slugs]\u{2197}.\n\n{{#include refs.incl.md}}\n{{#include ../refs/link-refs.md}}\n\n<div class=\"hidden\">\n</div>\n";
 
 /// The categories file.

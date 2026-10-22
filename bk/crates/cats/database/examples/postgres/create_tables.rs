@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates creating database tables in PostgreSQL using the
 //! `postgres` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use postgres::Client;
 use postgres::NoTls;

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of creating a Lua module using `mlua`.
 //! In module mode, `mlua` allows a compiled Lua module to be loaded from Lua
@@ -16,8 +17,6 @@
 //! 2. Build the module and load it from Lua:
 //! - Compile the Rust code: `cargo build --release`
 //! - Run the Lua script using a Lua interpreter: `lua script.lua`
-//!
-//! TODO Reviewed ??-??-2026
 
 use mlua::prelude::*;
 

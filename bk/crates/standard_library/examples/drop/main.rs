@@ -4,7 +4,6 @@
 
 mod drop;
 
-/// Runs the example from the `drop` module.
 fn main() {
     drop::run();
 }

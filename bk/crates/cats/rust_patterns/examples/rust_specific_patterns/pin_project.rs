@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The following demonstrates the use of the `pin_project` crate for pin
 //! projection.
-//!
-//! TODO Reviewed ??-??-2026
 
 // //!
 // //! Pin projection enables safely getting mutable references to fields of a

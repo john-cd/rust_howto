@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example using the `sled` embeddable database.
 //!
 //! `sled` is a pure-Rust high-performance embedded database.
 //!
 //! Add `sled = "0.34.7"` (or latest) to `Cargo.toml`.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Opens a `sled` database, then inserts, reads and removes values.
 fn main() -> anyhow::Result<()> {

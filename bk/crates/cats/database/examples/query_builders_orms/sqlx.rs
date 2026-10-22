@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates basic usage of the `sqlx` crate for interacting
 //! with a SQLite database.
@@ -11,8 +12,6 @@
 //! [dependencies]
 //! sqlx = { version = "0.8", features = [ "runtime-tokio", "sqlite" ]
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use sqlx::SqlitePool;
 

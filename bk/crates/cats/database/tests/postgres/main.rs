@@ -5,7 +5,6 @@
 #[cfg(feature = "postgres")]
 mod tokio_postgres;
 
-/// Runs the example; needs a PostgreSQL server.
 #[cfg(feature = "postgres")]
 fn main() -> anyhow::Result<()> {
     tokio_postgres::main()?;

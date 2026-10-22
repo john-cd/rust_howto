@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The following demonstrates TOML decoding.
 //!
 //! TOML is a minimal configuration file format.
 //! It is designed to map unambiguously to a hash table.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Representation of a TOML value e.g. String,
 // Integer, Float, Array, Table...

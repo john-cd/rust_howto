@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example demonstrating TOML parsing and deserialization.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 use toml::value::Datetime;

@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates parsing a JSON string into a `serde_json::Value`
 //! and comparing it to a `serde_json::Value` created using the `json!` macro.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde_json::Error;
 use serde_json::Value;

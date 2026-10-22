@@ -4,7 +4,6 @@
 
 mod rfd;
 
-/// Runs the example from the `rfd` module.
 fn main() {
     rfd::run();
 }

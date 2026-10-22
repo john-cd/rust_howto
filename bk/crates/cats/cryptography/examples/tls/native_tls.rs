@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Build a platform TLS connector with `native-tls`.
 //!
 //! This example constructs a `TlsConnector` and prints a note about when to
 //! use it with a TCP stream.
-//!
-//! TODO Reviewed ??-??-2026
 
 use native_tls::TlsConnector;
 

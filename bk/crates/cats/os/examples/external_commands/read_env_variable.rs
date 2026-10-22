@@ -1,10 +1,9 @@
 #![allow(dead_code)]
 #![cfg(target_family = "unix")]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to read an environment variable.
 //! If the environment variable is not set, a default value is used.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::env;
 

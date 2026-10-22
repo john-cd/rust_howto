@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Examples of password hashing and key derivation with Argon2.
-//!
-//! TODO Reviewed ??-??-2026
 
 use argon2::Argon2;
 use argon2::password_hash::Error;

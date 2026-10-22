@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the use of the `same_file` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_os = "linux")]
 
@@ -71,17 +70,16 @@ mod tests {
     fn test_main() -> anyhow::Result<()> {
         // mkdir -p /tmp/foo/bar/baz
         if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz")
-            && !exists {
-                std::fs::create_dir_all("/tmp/foo/bar/baz")?;
-            }
+            && !exists
+        {
+            std::fs::create_dir_all("/tmp/foo/bar/baz")?;
+        }
         // ln -s /tmp/foo/ /tmp/foo/bar/baz/qux
         if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz/qux")
-            && !exists {
-                std::os::unix::fs::symlink(
-                    "/tmp/foo/",
-                    "/tmp/foo/bar/baz/qux",
-                )?;
-            }
+            && !exists
+        {
+            std::os::unix::fs::symlink("/tmp/foo/", "/tmp/foo/bar/baz/qux")?;
+        }
         main();
         Ok(())
     }

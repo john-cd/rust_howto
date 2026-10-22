@@ -1,12 +1,11 @@
 #![allow(dead_code)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates various ways to concatenate strings in Rust.
 //! It includes examples using `concat`, `join`, `format`, `push_str`, `+`, and
 //! external macros.
-//!
-//! TODO Reviewed ??-??-2026
 
 // #[macro_use(concat_string)]
 // extern crate concat_string;

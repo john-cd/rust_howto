@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the basic usage of `HashSet`.
 //!
 //! `HashSet` is a collection that stores unique values. It's useful for
 //! scenarios where you need to ensure that no duplicate values are present.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashSet;
 

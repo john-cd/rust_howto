@@ -33,6 +33,7 @@ fn build_user(email: String, username: String) -> User {
 impl User {
     // Associated function.
     // By convention, the constructor is called "new", but that is not required.
+    /// Creates an active user.
     fn new(email: String, username: String) -> Self {
         Self {
             active: true,

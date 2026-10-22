@@ -4,7 +4,6 @@
 
 mod uavs;
 
-/// Runs the example from the `uavs` module.
 fn main() {
     uavs::run();
 }

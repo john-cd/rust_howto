@@ -4,7 +4,6 @@
 
 mod libc;
 
-/// Runs the example from the `libc` module.
 fn main() {
     libc::run();
 }

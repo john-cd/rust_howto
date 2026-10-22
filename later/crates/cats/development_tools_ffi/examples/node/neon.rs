@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(unexpected_cfgs)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to create a simple Neon module that exports
 //! a function to JavaScript.
@@ -12,8 +13,6 @@
 //! - Create a new Neon project: `npm init neon my-neon-example`
 //! - Build the native module: `cargo build`
 //! - Run the JavaScript file: `node index.js`
-//!
-//! TODO Reviewed ??-??-2026
 
 #[cfg(feature = "neon")]
 use neon::prelude::*;

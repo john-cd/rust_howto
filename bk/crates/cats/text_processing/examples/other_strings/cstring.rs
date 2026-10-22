@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to work with C-style strings (`CString` and
 //! `CStr`) in Rust, which are essential for FFI (Foreign Function Interface)
 //! interactions.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::ffi::CStr;
 use std::ffi::CString;

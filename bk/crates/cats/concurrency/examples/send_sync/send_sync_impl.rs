@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simplified implementation of the `Arc` smart pointer.
 //!
@@ -6,8 +7,6 @@
 //! reference count.
 //!
 //! This implementation is not intended for production use.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 

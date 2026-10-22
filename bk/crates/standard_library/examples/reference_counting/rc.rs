@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `Rc` is a smart pointer that allows multiple owners of the same data.
 //!
 //! `Rc` stands for "Reference Counted". It keeps track of the number of owners
 //! of the data. When the last owner is dropped, the data is deallocated.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::rc::Rc;
 

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Examples of use of the 'crates.io' API.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use crates_io_api::CrateResponse;

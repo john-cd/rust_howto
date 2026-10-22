@@ -1,10 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example using Facebook's `RocksDB` embeddable database.
 //!
-//! Ensure you have the '`RocksDB`' C++ library installed on your system, because
-//! the Rust `rocksdb` crate is just a wrapper around the native C++ `RocksDB`
-//! library. If you're on `Ubuntu`, we can install it with:
+//! Ensure you have the '`RocksDB`' C++ library installed on your system,
+//! because the Rust `rocksdb` crate is just a wrapper around the native C++
+//! `RocksDB` library. If you're on `Ubuntu`, we can install it with:
 //! ```sh
 //! sudo apt-get install librocksdb-dev
 //! ```
@@ -13,8 +14,6 @@
 //! brew install rocksdb
 //! ```
 //! You will also need Clang and LLVM.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rocksdb::DB;
 use rocksdb::Options;

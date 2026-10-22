@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to work with pre-release versions using the `semver` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use semver::Version;

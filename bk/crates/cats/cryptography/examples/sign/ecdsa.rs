@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Sign and verify a message with ECDSA using the P-256 curve.
 //!
 //! This example uses `p256` and the `Signer`/`Verifier` traits.
-//!
-//! TODO Reviewed ??-??-2026
 
 use p256::ecdsa::Signature;
 use p256::ecdsa::SigningKey;

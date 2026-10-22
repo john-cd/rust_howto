@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `const` Example.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Declare a constant in the global scope.
 // - The type must be provided.

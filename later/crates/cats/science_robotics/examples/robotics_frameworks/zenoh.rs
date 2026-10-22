@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Zero Overhead Pub/Sub/Query Protocol with `zenoh`.
 //!
@@ -6,8 +7,6 @@
 //! data at rest. Unlike MQTT and DDS, Zenoh is designed for both cloud and
 //! edge computing, offering zero-copy and schema-less communication with
 //! near-zero overhead.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Duration;
 

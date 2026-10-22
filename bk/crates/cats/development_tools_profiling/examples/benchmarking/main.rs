@@ -4,7 +4,6 @@
 
 mod criterion;
 
-/// Runs the example from the `criterion` module.
 fn main() {
     criterion::run();
 }

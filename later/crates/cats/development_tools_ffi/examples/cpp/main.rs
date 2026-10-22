@@ -4,7 +4,6 @@
 
 mod cxx;
 
-/// Runs the example from the `cxx` module.
 fn main() {
     cxx::run();
 }

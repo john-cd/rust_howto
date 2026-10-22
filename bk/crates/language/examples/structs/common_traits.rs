@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Implementation of Common Traits on a `struct`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fmt;
 use std::hash::Hash;

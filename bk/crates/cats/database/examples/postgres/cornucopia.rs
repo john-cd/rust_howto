@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates type-safe query generation for PostgreSQL
 //! with Cornucopia.
@@ -14,8 +15,6 @@
 //! cornucopia_async = "0.3.0"
 //! postgres = { version = "0.19", features = ["tokio-runtime"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use tokio_postgres::Error;
 use tokio_postgres::NoTls;

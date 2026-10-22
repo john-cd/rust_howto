@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to build a URL by joining a base URL with a path.
-//!
-//! TODO Reviewed ??-??-2026
 
 use url::ParseError;
 use url::Url;

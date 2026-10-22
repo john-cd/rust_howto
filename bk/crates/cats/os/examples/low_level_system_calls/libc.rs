@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use `libc` to call into the C standard
 //! library from Rust.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::ffi::CStr;
 use std::ffi::CString;

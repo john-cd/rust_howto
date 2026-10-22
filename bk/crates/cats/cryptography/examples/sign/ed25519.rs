@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Create and verify an Ed25519 signature using `ed25519-dalek`.
 //!
 //! The example generates a new keypair, signs a message, and verifies it.
-//!
-//! TODO Reviewed ??-??-2026
 
 use ed25519_dalek::Signer as _;
 use ed25519_dalek::SigningKey;

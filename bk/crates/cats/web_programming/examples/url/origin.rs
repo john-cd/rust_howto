@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates parsing a URL and extracting its origin components.
-//!
-//! TODO Reviewed ??-??-2026
 
 use url::Host;
 use url::ParseError;

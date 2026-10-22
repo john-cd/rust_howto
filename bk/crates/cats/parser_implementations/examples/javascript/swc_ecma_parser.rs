@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `swc_ecma_parser` crate to parse
 //! JavaScript code. It creates a simple JavaScript program, parses it, and
@@ -12,8 +13,6 @@
 //! swc_ecma_ast = "8.0"
 //! swc_common = "8.0"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use swc_common::FileName;
 use swc_common::input::StringInput;

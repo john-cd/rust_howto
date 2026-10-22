@@ -118,7 +118,6 @@ async fn run_queries(client: &Client) -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Runs the example on a new Tokio runtime.
 pub fn main() -> anyhow::Result<()> {
     tokio::runtime::Runtime::new()?.block_on(run())
 }

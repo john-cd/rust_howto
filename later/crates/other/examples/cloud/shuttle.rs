@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a simple web application using the
 //! `shuttle_runtime` and `shuttle_axum` crates.
@@ -10,8 +11,6 @@
 //! - Inside the `main` function, we create an instance of axum `Router` and
 //!   define a single route (/) that returns "Hello, Shuttle!" when accessed.
 //! - We return an instance of `ShuttleAxum` with the initialized router.
-//!
-//! TODO Reviewed ??-??-2026
 
 use axum::Router;
 use axum::routing::get;

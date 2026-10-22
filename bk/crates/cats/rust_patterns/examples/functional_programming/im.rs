@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Immutable Data Structures with `im`
 //!
@@ -26,8 +27,6 @@
 //! updating them, the values we store must implement `Clone`. If we want to
 //! store values for which cloning is expensive, or values that don't implement
 //! `Clone`, we need to wrap them in `Rc` or `Arc`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use im::HashMap;
 use im::HashSet;

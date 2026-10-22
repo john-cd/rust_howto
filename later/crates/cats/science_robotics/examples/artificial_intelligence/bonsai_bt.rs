@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Behavior Tree Example
 //!
@@ -11,8 +12,6 @@
 //! execute. BTs are a very efficient way of creating complex systems that are
 //! both modular and reactive. These properties have led to the spread of BT
 //! from computer game programming to AI and Robotics.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 

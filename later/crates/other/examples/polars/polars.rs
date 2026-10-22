@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Polars Data Processing Example
 //!
@@ -18,8 +19,6 @@
 //! ```toml
 //! polars = { version = "0.49.1", default-features = false, features = ["lazy", "csv"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use polars::prelude::*;
 

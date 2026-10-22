@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Encode and decode PEM data with the `pem_rfc7468` crate.
 //!
 //! This example converts raw DER bytes into a PEM document and parses them
 //! back to verify the round-trip.
-//!
-//! TODO Reviewed ??-??-2026
 
 use pem_rfc7468::LineEnding;
 use pem_rfc7468::decode_vec;

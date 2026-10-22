@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `glob` crate
 //! to find all PNG files in a directory tree.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use glob::glob;

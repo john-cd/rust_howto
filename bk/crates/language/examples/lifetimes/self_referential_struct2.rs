@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of a self-referential struct using pinning.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// A self-referential struct, which is pinned.
 mod selfref {
@@ -54,8 +53,7 @@ mod selfref {
                 //   (here `Pointer` is a `Box`).
                 // - `get_unchecked_mut` gets a mutable reference to what's
                 //   inside of the `Pin`.
-                let mut_ref: &mut Self =
-                    Pin::get_unchecked_mut(boxed.as_mut());
+                let mut_ref: &mut Self = Pin::get_unchecked_mut(boxed.as_mut());
                 // Assign the right address.
                 mut_ref.ptr = self_ptr;
             }

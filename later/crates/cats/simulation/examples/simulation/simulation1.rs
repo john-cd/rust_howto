@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Simulate a simple 2D bouncing ball using the `rapier2d` physics engine.
 //!
 //! This example creates a static ground and a dynamic ball, then steps the
 //! physics simulation for several frames.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rapier2d::prelude::*;
 

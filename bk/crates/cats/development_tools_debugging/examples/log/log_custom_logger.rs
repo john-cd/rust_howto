@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to create a custom logger.
 //!
 //! The custom logger will print log messages to the console.
-//!
-//! TODO Reviewed ??-??-2026
 
 use log::Level;
 use log::LevelFilter;

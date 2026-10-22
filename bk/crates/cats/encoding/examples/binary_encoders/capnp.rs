@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates reading and writing Cap'n Proto
 //! messages. It is intended to be used in conjunction with code
@@ -21,8 +22,6 @@
 //!         .expect("schema compiler command");
 //! }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use capnp::message::Builder;
 use capnp::serialize;

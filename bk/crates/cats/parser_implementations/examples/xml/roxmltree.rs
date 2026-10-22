@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to parse an XML document using the `roxmltree`
 //! crate.
@@ -11,8 +12,6 @@
 //! the serde-roxmltree crate.
 //!
 //! This example parses a simple XML document representing a library of books.
-//!
-//! TODO Reviewed ??-??-2026
 
 use roxmltree::Document;
 

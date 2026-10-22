@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `clap` crate to parse command-line
 //! arguments.
 //!
 //! It showcases various features such as positional arguments, named arguments,
 //! subcommands, default values, validation, and counting occurrences of flags.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::path::PathBuf;
 

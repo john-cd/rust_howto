@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates zero-cost memory manipulation with `zerocopy`.
 //!
@@ -27,8 +28,6 @@
 //!
 //! For that purpose, Zerocopy provides several derivable traits: `FromBytes`,
 //! `TryFromBytes`, `FromZeros`, `Immutable`...
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::mem::size_of;
 

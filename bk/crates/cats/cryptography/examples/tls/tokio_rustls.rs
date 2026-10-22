@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates an async TLS client using `tokio-rustls`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Arc;
 

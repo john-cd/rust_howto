@@ -42,7 +42,6 @@ fn example() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-/// Runs `example`.
 fn main() -> Result<(), Box<dyn Error>> {
     example()
 }

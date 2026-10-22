@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates incremental computation using the `salsa` crate.
 //!
@@ -17,8 +18,6 @@
 //! When `content` is updated, Salsa invalidates the cached results for
 //! `word_count` and `summary`, and recomputes them the next time they are
 //! queried.
-//!
-//! TODO Reviewed ??-??-2026
 
 use salsa::Setter as _;
 

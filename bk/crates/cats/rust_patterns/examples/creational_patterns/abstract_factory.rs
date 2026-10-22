@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! The Abstract Factory pattern creates families of related objects without
 //! tying-in to their concrete implementations.
@@ -13,8 +14,6 @@
 //! of widgets: buttons, text boxes, and so on. The Abstract Factory pattern
 //! lets us define an interface for creating these families of widgets,
 //!  and then we can have concrete factories for each theme.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Operations common to all concrete objects.
 /// A button, which can be rendered.

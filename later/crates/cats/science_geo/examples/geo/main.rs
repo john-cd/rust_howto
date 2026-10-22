@@ -4,7 +4,6 @@
 
 mod geo;
 
-/// Runs the example from the `geo` module.
 fn main() {
     geo::run();
 }

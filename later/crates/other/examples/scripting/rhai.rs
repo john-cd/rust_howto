@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Rhai scripting
 //!
@@ -10,8 +11,6 @@
 //! [dependencies]
 //! rhai = "1.21.0" # or latest version
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use rhai::Engine;
 use rhai::EvalAltResult;

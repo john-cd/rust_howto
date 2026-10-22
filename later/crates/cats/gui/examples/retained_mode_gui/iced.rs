@@ -14,7 +14,6 @@ use iced::widget::column;
 use iced::widget::container;
 use iced::widget::text;
 
-/// Runs the application.
 pub fn main() -> iced::Result {
     iced::run(Counter::update, Counter::view)
 }

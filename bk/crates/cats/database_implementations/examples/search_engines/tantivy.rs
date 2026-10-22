@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Create an in-memory Tantivy index and run a simple full-text search.
-//!
-//! TODO Reviewed ??-??-2026
 
 use tantivy::Index;
 use tantivy::TantivyDocument;

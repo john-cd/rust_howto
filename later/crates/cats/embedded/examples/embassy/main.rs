@@ -4,7 +4,6 @@
 
 mod embassy;
 
-/// Runs the example from the `embassy` module.
 fn main() {
     embassy::run();
 }

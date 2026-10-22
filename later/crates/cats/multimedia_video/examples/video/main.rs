@@ -4,7 +4,6 @@
 
 mod video;
 
-/// Runs the example from the `video` module.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     video::run()
 }

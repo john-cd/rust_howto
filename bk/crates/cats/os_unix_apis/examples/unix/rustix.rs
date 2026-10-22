@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `rustix` is a library that provides a safe and idiomatic Rust interface to
 //! low-level system calls.
@@ -7,8 +8,6 @@
 //! ```toml
 //! rustix = { version = "0.38.42", features = ["fs"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_family = "unix")]
 

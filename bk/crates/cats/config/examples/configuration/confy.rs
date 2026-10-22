@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of using the `confy` crate for configuration management.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 use serde::Serialize;

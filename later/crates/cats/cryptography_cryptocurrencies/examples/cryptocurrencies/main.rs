@@ -4,7 +4,6 @@
 
 mod cryptocurrencies;
 
-/// Runs the example from the `cryptocurrencies` module.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     cryptocurrencies::run()
 }

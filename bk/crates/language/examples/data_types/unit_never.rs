@@ -53,7 +53,6 @@ mod tests {
         main();
     }
 
-    /// Checks that a diverging function panics.
     #[should_panic]
     #[test]
     fn test_panic() {

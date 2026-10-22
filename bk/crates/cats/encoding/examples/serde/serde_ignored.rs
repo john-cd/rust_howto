@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `serde_ignored` is a crate that helps handle unknown fields when
 //! deserializing with `serde`. It's useful to ignore fields
@@ -14,8 +15,6 @@
 //! serde_ignored = "0.1.10"
 //! serde_json = "1.0.138"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 

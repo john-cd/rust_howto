@@ -4,7 +4,6 @@
 
 mod render;
 
-/// Runs the example from the `render` module.
 fn main() {
     render::run();
 }

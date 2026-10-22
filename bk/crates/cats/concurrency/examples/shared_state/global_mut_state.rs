@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates the use of a global mutable state protected by a `Mutex`.
 //!
 //! This example uses `lazy_static` to initialize a global `Mutex` containing a
 //! `Vec<String>`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Mutex;
 

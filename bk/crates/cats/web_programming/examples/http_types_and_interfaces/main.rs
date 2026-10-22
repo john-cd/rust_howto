@@ -4,7 +4,6 @@
 
 mod http;
 
-/// Runs the example from the `http` module.
 fn main() {
     http::run();
 }

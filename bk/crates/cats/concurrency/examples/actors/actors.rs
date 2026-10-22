@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a basic actor implementation pattern.
 //!
@@ -6,8 +7,6 @@
 //! prints them, and exits cleanly on a stop signal.
 //! An actor is a concurrent entity that can receive and process messages.
 //! It's a fundamental building block for concurrent systems.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::mpsc;
 use std::thread;

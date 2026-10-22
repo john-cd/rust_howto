@@ -35,7 +35,6 @@ enum Commands {
     CdrsTokio,
 }
 
-/// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
     run()
 }

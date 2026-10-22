@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to parse a URL and extract a portion of it.
 //!
@@ -8,8 +9,6 @@
 //! the path. The `cleaned` variable is then assigned a slice of the URL string
 //! from the beginning to the specified position. Finally, the `cleaned` string
 //! is printed to the console.
-//!
-//! TODO Reviewed ??-??-2026
 
 use url::ParseError;
 use url::Position;

@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A macOS-specific example using the `cocoa` crate to call native macOS APIs.
 //!
 //! On macOS this example queries the current user name and operating system
 //! version using `NSProcessInfo`.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// The macOS implementation, which calls Cocoa APIs.
 #[cfg(target_os = "macos")]
@@ -55,7 +54,6 @@ fn main() {
     println!("This example uses macOS APIs and is only supported on macOS.");
 }
 
-/// Runs the macOS implementation.
 #[cfg(target_os = "macos")]
 fn main() {
     macos_impl::run();

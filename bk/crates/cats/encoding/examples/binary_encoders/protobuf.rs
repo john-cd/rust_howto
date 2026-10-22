@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Serialize and deserialize a Protocol Buffers message generated with `prost`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use person::Person;
 use prost::Message;

@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This is a basic example of an AWS Lambda function written in Rust.
 //! It demonstrates how to use the `lambda_runtime` crate to create a simple
@@ -14,8 +15,6 @@
 //! sam build
 //! sam deploy --guided
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use lambda_runtime::Error;
 use lambda_runtime::LambdaEvent;

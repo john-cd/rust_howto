@@ -4,7 +4,6 @@
 
 mod tempfile;
 
-/// Runs the example from the `tempfile` module.
 fn main() -> anyhow::Result<()> {
     tempfile::run()?;
     Ok(())

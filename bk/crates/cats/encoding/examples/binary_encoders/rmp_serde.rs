@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Serialize and deserialize a struct with MessagePack via `rmp-serde`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use serde::Deserialize;
 use serde::Serialize;

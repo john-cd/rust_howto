@@ -45,6 +45,7 @@ pub enum DataStoreError {
     Other(#[from] anyhow::Error),
 }
 
+/// Returns a `DataStoreError` on purpose.
 #[expect(unreachable_code, reason = "the example returns an error on purpose")]
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // For demonstration purposes, return an error of type

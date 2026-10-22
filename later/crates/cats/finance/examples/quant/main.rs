@@ -4,7 +4,6 @@
 
 mod rustquant;
 
-/// Runs the example from the `rustquant` module.
 fn main() {
     rustquant::run();
 }

@@ -51,7 +51,6 @@ fn app() -> Html {
     }
 }
 
-/// The main function to render the App component.
 fn main() {
     yew::Renderer::<App>::new().render();
 }

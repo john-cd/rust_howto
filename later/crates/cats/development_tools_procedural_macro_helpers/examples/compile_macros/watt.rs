@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Watt is a procedural macro library that allows writing
 //! procedural macros without the overhead of the `proc_macro` crate.
@@ -14,8 +15,6 @@
 //!
 //! This approach provides isolation and can speed up compilation as the macro
 //! logic is pre-compiled to WASM.
-//!
-//! TODO Reviewed ??-??-2026
 
 // use quote::quote;
 // use syn::ItemFn;

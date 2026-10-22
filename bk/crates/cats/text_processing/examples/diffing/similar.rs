@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Text Diffing Example
 //!
@@ -15,8 +16,6 @@
 //! similar = "2.7.0" # Or latest
 //! console = "0.15.11" # Or latest
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::fmt;
 

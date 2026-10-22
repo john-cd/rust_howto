@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `assert!` macro with a custom
 //! failure message.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Asserts that `name` contains "Carol", with a custom failure message.
 fn check_name(name: &str) {

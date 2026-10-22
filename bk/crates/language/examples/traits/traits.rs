@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Trait example.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// A trait with one method.
 pub trait Summary {

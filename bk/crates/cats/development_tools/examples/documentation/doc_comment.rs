@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the `doc-comment` crate for generating
 //! documentation comments from string literals.
-//!
-//! TODO Reviewed ??-??-2026
 
 use doc_comment::doc_comment;
 
@@ -20,7 +19,6 @@ doc_comment! {
     }
 }
 
-/// Calls a documented function.
 fn main() {
     documented_function();
 }

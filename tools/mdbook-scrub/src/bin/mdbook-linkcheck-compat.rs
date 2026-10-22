@@ -72,6 +72,7 @@ fn run() -> Result<i32> {
     Ok(status.code().unwrap_or(1))
 }
 
+/// Runs the wrapper and exits with the checker's status code.
 fn main() {
     let code = match run() {
         Ok(code) => code,

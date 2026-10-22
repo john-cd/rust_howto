@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![cfg(not(windows))]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs`
 //! is a Rust crate that provides support for integrating AFL with Rust
@@ -19,8 +20,6 @@
 //! ```
 //! AFL will try different inputs to find
 //! cases that trigger the panic in the `fuzz_me` function.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// The `fuzz_me` function takes a byte slice as
 /// input and checks if the first four bytes match the sequence 'f', 'u',
@@ -31,7 +30,13 @@ fn fuzz_me(data: &[u8]) {
         return;
     }
 
-    assert!(!(data[0] == b'f' && data[1] == b'u' && data[2] == b'z' && data[3] == b'z'), "Fuzzing triggered!");
+    assert!(
+        !(data[0] == b'f'
+            && data[1] == b'u'
+            && data[2] == b'z'
+            && data[3] == b'z'),
+        "Fuzzing triggered!"
+    );
 }
 
 /// The `main` function sets up the fuzzing environment using the

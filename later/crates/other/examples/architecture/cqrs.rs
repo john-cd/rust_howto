@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! CQRS (Command Query Responsibility Segregation) is an architectural
 //! pattern that separates the models for reading and writing data.
@@ -9,8 +10,6 @@
 //! - Commands and queries are handled separately.
 //! - The write side (commands) focuses on state changes.
 //! - The read side (queries) focuses on efficient data retrieval.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Domain Model.
 mod domain {

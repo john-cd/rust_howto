@@ -7,7 +7,6 @@
 // ANCHOR: example
 use floem::prelude::*;
 
-/// Runs the application.
 pub fn main() {
     floem::launch(counter_view);
 }

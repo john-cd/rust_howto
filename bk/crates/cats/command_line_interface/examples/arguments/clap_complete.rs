@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates generating shell completions with `clap_complete`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use clap::Arg;
 use clap::Command;

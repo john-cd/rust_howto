@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `static` Example.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Statics are in SCREAMING_SNAKE_CASE, must declare their type, must be
 // initialized:

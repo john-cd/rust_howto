@@ -4,7 +4,6 @@
 
 mod stdin_stdout;
 
-/// Runs the example from the `stdin_stdout` module.
 fn main() -> anyhow::Result<()> {
     stdin_stdout::run()?;
     Ok(())

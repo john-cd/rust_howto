@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Play a simple sine tone using the `rodio` audio crate.
 //!
 //! This example opens the default audio output device, generates a 440 Hz
 //! sine wave, and plays it for two seconds.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 use std::time::Duration;

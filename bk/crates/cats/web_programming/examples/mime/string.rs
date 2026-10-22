@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates parsing MIME types from strings and handling invalid input.
-//!
-//! TODO Reviewed ??-??-2026
 
 use mime::APPLICATION_OCTET_STREAM;
 use mime::Mime;

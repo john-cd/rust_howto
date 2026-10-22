@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example show how to (de)serialize CBOR data using the ciborium crate.
 //!
@@ -9,8 +10,6 @@
 //! fast processing are crucial. CBOR supports numbers, strings, arrays, maps,
 //! and values like true, false, and null. Unlike JSON, it can handle binary
 //! data directly, avoiding the need for encoding methods like 'Base64'.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io::Cursor;
 

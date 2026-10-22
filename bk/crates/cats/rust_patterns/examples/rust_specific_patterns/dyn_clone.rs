@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to clone trait objects using the `dyn_clone` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use dyn_clone::DynClone;
 

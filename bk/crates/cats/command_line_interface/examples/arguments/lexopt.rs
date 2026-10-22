@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `lexopt` crate to parse command
 //! line arguments.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// The parsed command-line arguments.
 struct Args {

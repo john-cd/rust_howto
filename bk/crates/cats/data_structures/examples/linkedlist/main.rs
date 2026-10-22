@@ -4,7 +4,6 @@
 
 mod linkedlist;
 
-/// Runs the example from the `linkedlist` module.
 fn main() {
     linkedlist::run();
 }

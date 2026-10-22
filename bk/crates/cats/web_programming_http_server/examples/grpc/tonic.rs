@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example shows how to create a simple gRPC server using the `tonic`
 //! crate.
@@ -18,8 +19,6 @@
 //! [build-dependencies]
 //! tonic-build = "0.12"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 // Imports from the module created by `tonic` (see below):
 use helloworld::HelloReply;

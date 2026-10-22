@@ -4,7 +4,6 @@
 
 mod tera;
 
-/// Runs the example from the `tera` module.
 fn main() -> anyhow::Result<()> {
     tera::run()?;
     Ok(())

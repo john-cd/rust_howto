@@ -1,13 +1,12 @@
 #![allow(unused_imports)]
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
 //! notify = "8.1.0" # Or latest.
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::path::Path;
 

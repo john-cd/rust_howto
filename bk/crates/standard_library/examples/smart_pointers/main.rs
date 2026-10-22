@@ -4,7 +4,6 @@
 
 mod deref;
 
-/// Runs the example from the `deref` module.
 fn main() {
     deref::run();
 }

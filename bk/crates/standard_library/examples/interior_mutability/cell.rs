@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `Cell<T>` provides a way to mutate data, even when the `Cell` itself is
-//!
-//! TODO Reviewed ??-??-2026
 
 // accessed through an immutable reference. It is most often used for types that
 // implement the `Copy` trait, allowing for simple value replacement without

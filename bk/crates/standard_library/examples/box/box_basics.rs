@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Basic `Box` usage.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// An example struct, which does not implement the `Copy` trait.
 /// This means that when an instance of `MyStruct` is moved, the original

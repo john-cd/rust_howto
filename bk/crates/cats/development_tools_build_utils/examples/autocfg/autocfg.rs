@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `autocfg` is a library for build scripts to automatically configure code
 //! based on compiler support. Code snippets are dynamically tested to see if
@@ -8,8 +9,6 @@
 //! Add to your `Cargo.toml`:
 //! [build-dependencies]
 //! autocfg = "1"
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Checks for compiler features and emits the matching `cfg` flags.
 #[tracing::instrument]

@@ -84,7 +84,6 @@ where
 mod tests {
     use super::*;
 
-    /// Lets clap check the command definition for mistakes.
     #[test]
     fn verify_cmd() {
         cmd().debug_assert();

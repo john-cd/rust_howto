@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a simple `riker` actor that receives a message.
-//!
-//! TODO Reviewed ??-??-2026
 
 use riker::actors::*;
 

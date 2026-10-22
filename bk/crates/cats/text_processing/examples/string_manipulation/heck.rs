@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `heck` crate to convert strings
 //! between different casing conventions.
@@ -11,8 +12,6 @@
 //! [dependencies]
 //! heck = "0.4.1"
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use heck::ToKebabCase as _;
 use heck::ToLowerCamelCase as _;

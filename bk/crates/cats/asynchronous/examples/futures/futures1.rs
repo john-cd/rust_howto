@@ -39,7 +39,6 @@ async fn race_tasks() {
     }
 }
 
-/// Runs [`race_tasks`] on the Tokio runtime.
 #[tokio::main]
 async fn main() {
     race_tasks().await;

@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Detect scene changes in a Y4M video clip using the `av-scenechange` crate.
 //!
 //! This example loads a Y4M file, runs scene-cut analysis, and prints the
 //! frame indices where scene changes occur.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::error::Error;
 use std::path::PathBuf;

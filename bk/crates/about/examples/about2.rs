@@ -1,7 +1,6 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to parse a URL and extract a portion of it.
-//!
-//! TODO Reviewed ??-??-2026
 
 use url::Position;
 use url::Url;
@@ -22,7 +21,6 @@ fn example() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Runs `example`.
 fn main() -> anyhow::Result<()> {
     example()
 }
@@ -32,7 +30,6 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Checks that the example succeeds.
     #[test]
     fn test() -> anyhow::Result<()> {
         example()?;

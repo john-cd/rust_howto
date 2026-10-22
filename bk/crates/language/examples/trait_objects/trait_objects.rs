@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Trait object example: a highly simplified GUI.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// A trait for types that can be drawn.
 trait Draw {

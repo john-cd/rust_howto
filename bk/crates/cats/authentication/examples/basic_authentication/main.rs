@@ -4,7 +4,6 @@
 
 mod basic;
 
-/// Runs the example from the `basic` module.
 fn main() -> anyhow::Result<()> {
     basic::run()?;
     Ok(())

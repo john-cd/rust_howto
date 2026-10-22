@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `RefCell<T>` is a smart pointer that provides interior mutability.
 //! It allows us to mutate data even when there are immutable references to it.
@@ -6,8 +7,6 @@
 //!
 //! `RefCell<T>` is useful to modify data that is behind an
 //! immutable reference.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::cell::RefCell;
 

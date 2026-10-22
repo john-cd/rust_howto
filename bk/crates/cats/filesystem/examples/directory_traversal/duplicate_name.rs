@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Find duplicate filenames in the current directory.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 

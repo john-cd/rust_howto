@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! # Bindgen Example
 //!
@@ -29,8 +30,6 @@
 //! ```sh
 //! cargo run
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 // extern crate example;
 // use example::add;

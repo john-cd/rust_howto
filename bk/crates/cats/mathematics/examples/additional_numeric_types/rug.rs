@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the use of the `rug` crate for arbitrary precision
 //! arithmetic.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_os = "linux")]
 #![allow(clippy::approx_constant)]

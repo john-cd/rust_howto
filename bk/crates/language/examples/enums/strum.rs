@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `strum` provides derive macros that automatically implement various traits
 //! for your enums, making it easy to convert them to and from strings, iterate
@@ -9,8 +10,6 @@
 //! [dependencies]
 //! strum = { version = "0.27", features = ["derive"] }
 //! ```
-//!
-//! TODO Reviewed ??-??-2026
 
 use strum::Display;
 use strum::EnumIter;

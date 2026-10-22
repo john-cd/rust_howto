@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A Rust example using the `nix` crate to interface with Linux APIs.
 //!
 //! This example prints the current process ID, parent process ID, and the
 //! operating system information obtained from `uname`.
-//!
-//! TODO Reviewed ??-??-2026
 
 /// Prints information about the Linux system.
 #[cfg(target_os = "linux")]

@@ -29,7 +29,6 @@ pub async fn multi_producer_single_receiver() {
     }
 }
 
-/// Runs the multi-producer, single-consumer example.
 #[tokio::main]
 async fn main() {
     multi_producer_single_receiver().await;

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Alternatives to `Cow`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::rc::Rc;
 use std::sync::Arc;

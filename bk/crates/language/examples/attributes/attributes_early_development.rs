@@ -1,11 +1,10 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `allow` attributes suppress specific warnings.
 //!
 //! These attributes are typically used during early development to temporarily
 //! ignore warnings that are not relevant at the moment, but should be
 //! addressed before releasing the code.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(unused_variables)]
 #![allow(unused_mut)]

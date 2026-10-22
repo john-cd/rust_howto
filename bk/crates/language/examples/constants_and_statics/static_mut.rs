@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `static mut` Example.
 //!
 //! `static mut` use is generally discouraged due to the potential for data
 //! races and undefined behavior. The following demonstrates alternatives.
 //! See <https://doc.rust-lang.org/nightly/edition-guide/rust-2024/static-mut-references.html>
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::sync::Mutex;
 use std::sync::atomic::AtomicU16;

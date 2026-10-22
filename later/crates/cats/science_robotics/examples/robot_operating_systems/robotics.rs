@@ -1,12 +1,11 @@
 #![cfg(all(feature = "rosrust", not(windows)))] // TODO review Windows support
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example: publish and subscribe to a simple ROS topic using `rosrust`.
 //!
 //! This minimal ROS node publishes a `std_msgs/String` message and also
 //! subscribes to the same topic, printing any received messages.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rosrust::api::raii::Publisher;
 use rosrust_msg::std_msgs::String;

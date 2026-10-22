@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of a basic Windows application using the `winapi` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![cfg(target_os = "windows")]
 

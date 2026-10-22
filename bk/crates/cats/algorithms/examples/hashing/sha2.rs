@@ -89,7 +89,6 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Checks that the example succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

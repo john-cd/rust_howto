@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to sample from a normal distribution.
 //!
 //! The `Normal` struct represents a normal distribution with a given mean and
 //! standard deviation. The `sample` method is used to draw a random sample from
 //! the distribution.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rand_distr::Distribution as _;
 use rand_distr::Normal;

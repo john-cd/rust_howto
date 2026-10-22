@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of using the Tera template engine.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::sync::LazyLock;
@@ -62,7 +61,8 @@ fn main() -> anyhow::Result<()> {
     let page = Page {
         title: "Tera Example".to_owned(),
         heading: "Welcome to Tera".to_owned(),
-        content: "This is a simple example of using the Tera template engine.".to_owned(),
+        content: "This is a simple example of using the Tera template engine."
+            .to_owned(),
     };
 
     let context = tera::Context::from_serialize(&page)?;

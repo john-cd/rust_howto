@@ -1,9 +1,8 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `directories` crate to find the
 //! user's data and config directories for a specific application.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::path::PathBuf;
 

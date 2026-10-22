@@ -4,7 +4,6 @@
 
 mod skiplist;
 
-/// Runs the example from the `skiplist` module.
 fn main() {
     skiplist::run();
 }

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example of using the `tower-http` middleware.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::iter::once;
 use std::sync::Arc;

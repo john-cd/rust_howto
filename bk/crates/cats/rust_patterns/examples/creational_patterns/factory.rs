@@ -1,10 +1,9 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A factory is quite useful when we need to create objects of different types
 //! that share a common interface, without needing to know the exact type at
 //! compile time.
-//!
-//! TODO Reviewed ??-??-2026
 
 // Define a common trait for all shapes.
 // This defines the common interface that all concrete shape types will

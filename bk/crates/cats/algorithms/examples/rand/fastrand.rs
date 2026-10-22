@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! BEWARE: `fastrand` is NOT cryptographically secure.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::iter::repeat_with;
 

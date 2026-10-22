@@ -1,14 +1,13 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example demonstrating the use of `pulldown-cmark` to parse Markdown and
 //! convert it to HTML.
 //!
-//! `pulldown-cmark` is a parser for `CommonMark`, a standard dialect of Markdown.
-//! It uses an event-based parsing model. This means it generates a stream of
-//! events representing the Markdown structure, which can then be used to
-//! generate the HTML.
-//!
-//! TODO Reviewed ??-??-2026
+//! `pulldown-cmark` is a parser for `CommonMark`, a standard dialect of
+//! Markdown. It uses an event-based parsing model. This means it generates a
+//! stream of events representing the Markdown structure, which can then be used
+//! to generate the HTML.
 
 use pulldown_cmark::Options;
 /// The `Parser` struct is the core component of `pulldown-cmark`. It takes

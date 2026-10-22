@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrates how to implement a custom distribution for the `rand` crate.
-//!
-//! TODO Reviewed ??-??-2026
 
 use rand::Rng;
 use rand::RngExt as _;

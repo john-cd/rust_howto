@@ -4,7 +4,6 @@
 
 mod bonsai_bt;
 
-/// Runs the example from the `bonsai_bt` module.
 fn main() -> anyhow::Result<()> {
     bonsai_bt::run()
 }

@@ -1,11 +1,10 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `LruCache` from the `lru`
 //! crate. It shows how to create a cache, insert key-value pairs, access
 //! entries, and observe the eviction behavior of the LRU (Least Recently Used)
 //! cache.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::num::NonZeroUsize;
 

@@ -1,9 +1,8 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! A minimal Vello example using `winit`, `wgpu`, and `vello`.
 //!
 //! It creates a window, builds a simple 2D scene, and renders it every frame.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::time::Instant;
 

@@ -4,7 +4,6 @@
 
 mod from_str;
 
-/// Runs the example from the `from_str` module.
 fn main() {
     from_str::run();
 }

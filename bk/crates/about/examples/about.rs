@@ -14,7 +14,6 @@ fn example() {
     println!("Random f64: {}", rng.random::<f64>());
 }
 
-/// Runs `example`.
 fn main() {
     example();
 }
@@ -24,7 +23,6 @@ fn main() {
 mod tests {
     use super::*;
 
-    /// Checks that the example runs without panicking.
     #[test]
     fn test() {
         example();

@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Tokenize XML with `xml5ever` and print the parsed tokens.
-//!
-//! TODO Reviewed ??-??-2026
 
 use markup5ever::buffer_queue::BufferQueue;
 use xml5ever::tendril::ByteTendril;

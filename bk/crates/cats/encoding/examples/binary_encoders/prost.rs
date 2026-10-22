@@ -1,12 +1,11 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the `prost` crate to serialize and
 //! deserialize a protobuf message.
 //!
 //! It defines a simple `Person` message, serializes it to a byte buffer,
 //! and then deserializes it back into a `Person` struct.
-//!
-//! TODO Reviewed ??-??-2026
 
 use person::Person;
 use prost::Message;

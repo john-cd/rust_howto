@@ -1,23 +1,22 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates the use of `once_cell::sync::Lazy` to create a
 //! static variable that is initialized only once, on first access.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::sync::Mutex;
 
-
 /// A global, lazily initialized `HashMap` wrapped in a `Mutex`.
 ///
 /// Must be `static`, not `const`.
-static GLOBAL_DATA: std::sync::LazyLock<Mutex<HashMap<i32, String>>> = std::sync::LazyLock::new(|| {
-    let mut m = HashMap::new();
-    m.insert(13, "Spica".to_owned());
-    m.insert(74, "Hoyten".to_owned());
-    Mutex::new(m)
-});
+static GLOBAL_DATA: std::sync::LazyLock<Mutex<HashMap<i32, String>>> =
+    std::sync::LazyLock::new(|| {
+        let mut m = HashMap::new();
+        m.insert(13, "Spica".to_owned());
+        m.insert(74, "Hoyten".to_owned());
+        Mutex::new(m)
+    });
 
 /// Prints the lazily initialized global data.
 fn main() {

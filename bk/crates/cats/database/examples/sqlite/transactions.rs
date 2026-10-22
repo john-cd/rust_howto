@@ -1,7 +1,6 @@
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates successful and rolled-back SQLite transactions.
-//!
-//! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
 use rusqlite::Connection;

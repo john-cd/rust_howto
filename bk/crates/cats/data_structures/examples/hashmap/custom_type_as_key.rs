@@ -1,8 +1,7 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Demonstrate using a custom type as the key in a `HashMap`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::collections::HashMap;
 use std::hash::DefaultHasher;

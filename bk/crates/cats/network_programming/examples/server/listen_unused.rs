@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates a simple TCP server that listens for a single
 //! connection, reads data from the connection, and then prints the received
@@ -13,8 +14,6 @@
 //! To test this, run the server and then use a tool like `telnet` or `netcat`
 //! to connect to the printed port. For example: `telnet 127.0.0.1 <port>` or
 //! `nc 127.0.0.1 <port>`.
-//!
-//! TODO Reviewed ??-??-2026
 
 use std::io::Error;
 use std::io::Read as _;
