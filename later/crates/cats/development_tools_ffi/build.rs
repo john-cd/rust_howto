@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Generates the bindings and the headers used by the FFI examples.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: BINDGEN
 use std::env;
 use std::path::PathBuf;
 
+/// Generates Rust bindings to a C header with `bindgen`.
 fn bindgen() {
     // Outputs `libexample.a` in
     // `target/debug/build/development_tools_ffi-.../`.
@@ -28,6 +33,7 @@ fn bindgen() {
 // ANCHOR_END: BINDGEN
 
 // ANCHOR: CBINDGEN
+/// Generates a C header from the Rust code with `cbindgen`.
 fn cbindgen() {
     let crate_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
     let out_dir = std::path::PathBuf::from(env::var("OUT_DIR").unwrap())
@@ -72,6 +78,7 @@ fn cbindgen() {
 // }
 // ANCHOR_END: UNIFFI
 
+/// Runs the generators.
 fn main() {
     bindgen();
     cbindgen();

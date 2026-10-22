@@ -1,6 +1,10 @@
-// TODO Reviewed ??-??-2026
+//! Calling Python from Rust with `pyo3`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![cfg(target_os = "linux")]
+
 // ANCHOR: example
 // This example demonstrates how to embed Python code within a Rust
 // application using the `pyo3` crate. It showcases the ability to define
@@ -16,6 +20,7 @@ use pyo3::ffi::c_str;
 use pyo3::prelude::*;
 use pyo3::types::PyTuple;
 
+/// Calls a Python function with and without arguments.
 fn test_my_function() -> PyResult<()> {
     Python::attach(|py| {
         let fun: Py<PyAny> = PyModule::from_code(
@@ -48,6 +53,7 @@ fn test_my_function() -> PyResult<()> {
     })
 }
 
+/// Runs a Python script and calls a Python function.
 fn main() -> PyResult<()> {
     // Prepares the use of Python in a free-threaded context:
     Python::initialize();

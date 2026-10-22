@@ -1,7 +1,11 @@
-// TODO Reviewed ??-??-2026
+//! Creating a MAVLink heartbeat message.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use mavlink::common;
 
+/// Creates a heartbeat message; sending it is shown in comments.
 fn main() {
     // Create a new heartbeat message using the `common` dialect
     let heartbeat = common::HEARTBEAT_DATA {

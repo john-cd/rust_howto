@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Concatenating identifiers in macros with `paste`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // use paste::paste;
 
@@ -47,6 +51,7 @@
 //     println!("Baz: {}", z.get_value());
 // }
 
+/// Does nothing yet.
 fn main() {}
 // ANCHOR_END: example
 

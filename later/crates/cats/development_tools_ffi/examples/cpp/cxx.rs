@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Calling C++ from Rust with the `cxx` crate.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 // use cxx::CxxString;
 use cxx::let_cxx_string;
@@ -17,6 +21,7 @@ mod ffi {
     }
 }
 
+/// Creates a C++ string to pass to C++.
 fn main() {
     // Construct a C++ string.
     let_cxx_string!(name = "Rust");

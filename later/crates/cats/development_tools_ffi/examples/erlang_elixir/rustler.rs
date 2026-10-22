@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Native implemented functions for Erlang and Elixir with `rustler`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 #![allow(unused)]
 
@@ -8,6 +12,7 @@ use rustler::Env;
 #[cfg(feature = "erlang")]
 use rustler::NifResult;
 
+/// The functions exposed to Erlang and Elixir.
 #[cfg(feature = "erlang")]
 mod nif {
     use super::*;
@@ -19,6 +24,7 @@ mod nif {
         format!("Hello, {name}!")
     }
 
+    /// Returns a greeting for `name`.
     #[rustler::nif]
     fn greet(name: String) -> String {
         greeting(name)
@@ -29,6 +35,7 @@ mod nif {
         a + b
     }
 
+    /// Returns the sum of `a` and `b`.
     #[rustler::nif]
     fn add(a: i32, b: i32) -> i32 {
         sum(a, b)
@@ -39,11 +46,13 @@ mod nif {
         use super::greeting;
         use super::sum;
 
+        /// Checks that the greeting contains the name.
         #[test]
         fn greet_returns_a_personalized_message() {
             assert_eq!(greeting("Rust".to_owned()), "Hello, Rust!");
         }
 
+        /// Checks that the sum is correct.
         #[test]
         fn add_returns_the_sum() {
             assert_eq!(sum(20, 22), 42);
@@ -53,6 +62,7 @@ mod nif {
     rustler::init!("Elixir.MyRustLibrary");
 }
 
+/// Prints a message: the functions are meant to be loaded by Erlang or Elixir.
 fn main() {
     #[cfg(not(feature = "erlang"))]
     println!("Rustler example requires the `erlang` feature.");

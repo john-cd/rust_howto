@@ -1,8 +1,12 @@
-// TODO Reviewed ??-??-2026
+//! Exposing Rust functions to Python as a module with `pyo3`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
 #![allow(unsafe_op_in_unsafe_fn)]
 #![allow(clippy::useless_conversion)]
 #![cfg(target_os = "linux")]
+
 // ANCHOR: example
 use pyo3::prelude::*;
 
@@ -51,6 +55,7 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
     module.add_function(wrap_pyfunction!(my_function, module)?)
 }
 
+/// Initializes the interpreter and uses the Rust module from Python.
 fn main() -> PyResult<()> {
     // Initialize the Python interpreter.
     Python::initialize();

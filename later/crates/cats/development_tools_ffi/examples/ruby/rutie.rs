@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Calling Rust from Ruby with `rutie`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use rutie::Object;
 use rutie::RString;
@@ -29,6 +33,7 @@ pub extern "C" fn hello(
     RString::new_utf8("Hello from Rust!").value()
 }
 
+/// Initializes the Ruby VM.
 fn main() {
     VM::init();
     // In a real application, you would define modules and classes here.

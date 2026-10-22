@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Calling Rust from Java with the Java Native Interface.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use jni::JNIEnv;
 use jni::objects::JClass;
@@ -31,6 +35,7 @@ use jni::objects::JString;
 
 // `no_mangle` prevents the Rust compiler from mangling the function name,
 // ensuring that Java can correctly find and call it.
+/// Returns a greeting for `name`; called from Java as `NativeLibrary.greet`.
 #[unsafe(no_mangle)]
 // The Java Native Interface (JNI) function name follows the convention:
 // Java_<package_name>_<class_name>_<method_name>.
@@ -53,6 +58,7 @@ pub extern "C" fn Java_com_example_NativeLibrary_greet<'a>(
         .expect("Couldn't create Java String!")
 }
 
+/// Does nothing; the function is meant to be called from Java.
 fn main() {
     // TODO
 }

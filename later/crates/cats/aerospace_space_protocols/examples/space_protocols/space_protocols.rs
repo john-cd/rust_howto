@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Creating CCSDS space packets with `spacepackets`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use arbitrary_int::u11;
 use arbitrary_int::u14;
@@ -7,6 +11,7 @@ use spacepackets::CcsdsPacket;
 use spacepackets::SequenceFlags;
 use spacepackets::SpHeader;
 
+/// Creates telecommand and telemetry headers and checks their fields.
 fn main() {
     let sp_header = SpHeader::new_for_unseg_tc(u11::new(0x42), u14::new(12), 1);
     println!("{:?}", sp_header);

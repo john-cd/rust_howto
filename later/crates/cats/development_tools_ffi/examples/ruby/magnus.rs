@@ -1,5 +1,9 @@
-// TODO Reviewed ??-??-2026
+//! Calling Rust from Ruby with `magnus`.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 use magnus::Error;
 use magnus::RString;
@@ -11,6 +15,7 @@ fn hello_rust() -> String {
     String::from("Hello from Rust again!")
 }
 
+/// Calls Ruby's `puts` with a string created in Rust.
 fn main() -> Result<(), Error> {
     // Initialize the Ruby VM.
     // In actual usage, you might use magnus::init()? but it requires a Ruby

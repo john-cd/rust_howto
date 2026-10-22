@@ -1,23 +1,37 @@
-// TODO Reviewed ??-??-2026
+//! A basic one-dimensional rocket launch simulation.
+//!
+//! TODO Reviewed ??-??-2026
+
 #![allow(dead_code)]
+
 // ANCHOR: example
 /// A basic 1D rocket launch simulation.
 struct Rocket {
+    /// Mass of the rocket without fuel, in kg.
     mass_empty: f64, // kg
+    /// Mass of the fuel, in kg.
     fuel_mass: f64,  // kg
+    /// Thrust of the engine, in N.
     thrust: f64,     // N
+    /// Fuel burn rate, in kg/s.
     burn_rate: f64,  // kg/s
+    /// Drag coefficient; dimensionless.
     drag_coeff: f64, // dimensionless
+    /// Cross-section area, in m^2.
     area: f64,       // m^2
+    /// Vertical velocity, in m/s.
     velocity: f64,   // m/s
+    /// Altitude, in m.
     altitude: f64,   // m
 }
 
 impl Rocket {
+    /// Returns the mass of the rocket with its remaining fuel, in kg.
     fn total_mass(&self) -> f64 {
         self.mass_empty + self.fuel_mass
     }
 
+    /// Advances the simulation by `dt` seconds.
     fn update(&mut self, dt: f64) {
         let g = 9.81; // Gravity (m/s^2)
         // Exponential atmosphere model
@@ -57,6 +71,7 @@ impl Rocket {
     }
 }
 
+/// Simulates a launch and prints the flight data.
 fn main() {
     let mut rocket = Rocket {
         mass_empty: 500.0,
@@ -98,6 +113,7 @@ mod tests {
         main();
     }
 
+    /// Checks that the rocket gains altitude.
     #[test]
     fn test_rocket_simulation() {
         let mut rocket = Rocket {

@@ -1,9 +1,14 @@
-// TODO Reviewed ??-??-2026
+//! Predicting the position of a satellite from its two-line element set with
+//! `sgp4`.
+//!
+//! TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 use sgp4::Constants;
 use sgp4::Elements;
 use sgp4::MinutesSinceEpoch;
 
+/// Parses a TLE and predicts the position of the ISS at its epoch.
 fn main() {
     // TLE (Two-Line Element) for ISS (ZARYA)
     let elements = Elements::from_tle(
