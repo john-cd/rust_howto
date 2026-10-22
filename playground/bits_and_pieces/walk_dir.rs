@@ -10,7 +10,6 @@
 
 use anyhow::Result;
 use clap::Parser;
-use clap::Parser;
 use std::path::Path;
 use std::path::PathBuf;
 use walkdir::WalkDir;
@@ -28,14 +27,47 @@ pub(crate) struct Args {
 ///
 /// * `dir` - The directory to walk through.
 pub fn walk_directory(dir: &Path) -> Result<()> {
-    for entry in WalkDir::new(dir).into_iter().filter_map(|e| e.ok()) {
+    for entry in WalkDir::new(dir) {
+        let entry = entry?;
         let f_name = entry.file_name().to_string_lossy();
         if f_name.ends_with(".md") {
-            let _path = entry.path();
-            // [replace_in_file(path)?;](https://github.com/john-cd/rust_howto/issues/1439)
+            replace_in_file(entry.path())?;
         }
     }
     Ok(())
+}
+
+fn replace_in_file(path: &Path) -> Result<()> {
+    let original = std::fs::read_to_string(path)?;
+    let updated = replace_crate_placeholders(&original);
+    if updated != original {
+        std::fs::write(path, updated)?;
+    }
+    Ok(())
+}
+
+fn replace_crate_placeholders(input: &str) -> String {
+    let mut output = String::with_capacity(input.len());
+    let mut remaining = input;
+    while let Some(start) = remaining.find("{{!crate ") {
+        let after_start = &remaining[start + "{{!crate ".len()..];
+        let Some(end) = after_start.find("}}") else {
+            break;
+        };
+        let crate_name = after_start[..end].trim();
+        if crate_name.is_empty() || crate_name.chars().any(char::is_whitespace) {
+            output.push_str(&remaining[..start + "{{!crate ".len() + end + 2]);
+            remaining = &after_start[end + 2..];
+            continue;
+        }
+        output.push_str(&remaining[..start]);
+        output.push_str(&format!(
+            "[![{crate_name}][c~{crate_name}~docs~badge]][c~{crate_name}~docs]{{{{hi:{crate_name}}}}}"
+        ));
+        remaining = &after_start[end + 2..];
+    }
+    output.push_str(remaining);
+    output
 }
 
 fn main() -> Result<()> {
@@ -88,4 +120,5 @@ mod tests {
         dir.close()?;
         Ok(())
     }
+
 }
