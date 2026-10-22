@@ -3,6 +3,7 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
 #![allow(clippy::unnecessary_fold)]
+
 // ANCHOR: example
 fn main() {
     demonstrate_creation();
@@ -11,6 +12,8 @@ fn main() {
     demonstrate_slices();
 }
 
+/// Demonstrates creating vectors using macros, `Vec::new()`, and
+/// `Vec::with_capacity()`.
 fn demonstrate_creation() {
     // Vectors are resizable arrays.
 
@@ -35,6 +38,7 @@ fn demonstrate_creation() {
     let _zeroes: Vec<u8> = vec![0u8; 10];
 }
 
+/// Demonstrates modifying, indexing, searching, and sorting vector elements.
 fn demonstrate_manipulation() {
     let mut numbers = vec![1, 2, 3];
 
@@ -69,6 +73,8 @@ fn demonstrate_manipulation() {
     println!("Sorted numbers: {sorted_numbers:?}");
 }
 
+/// Demonstrates vector iteration techniques including loops, mapping,
+/// filtering, and functional combinators.
 fn demonstrate_iteration() {
     let numbers = vec![1, 2, 3, 4, 5, 6];
     let mut zeroes: Vec<u8> = vec![0u8; 10];
@@ -126,6 +132,8 @@ fn demonstrate_iteration() {
     }
 }
 
+/// Demonstrates borrowing slices from vectors, slice coercion, and slice
+/// mutation.
 fn demonstrate_slices() {
     let numbers = vec![1, 2, 3, 4, 5];
 
@@ -160,7 +168,6 @@ fn demonstrate_slices() {
     }
     println!("After slice mutation: {mutable_numbers:?}");
 }
-
 // ANCHOR_END: example
 
 pub fn run() {
