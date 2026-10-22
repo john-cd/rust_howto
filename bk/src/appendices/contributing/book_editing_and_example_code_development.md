@@ -11,6 +11,8 @@ Use `just s` to serve a preview at [http://localhost:3000][localhost:3000]↗. U
 
 Add or edit Markdown under `bk/src/`. The table of contents in `bk/src/SUMMARY.md` controls navigation, so add an entry whenever you add or move a published chapter. Many pages include a sibling `*.incl.md` file and shared reference definitions; preserve those fragments instead of copying their contents into generated pages.
 
+The keyboard-accessible **Suggest an edit** button in each page's toolbar opens its Markdown source on the `develop` branch. If the source is an include-only wrapper, edit its referenced `*.incl.md` file or shared reference file under `bk/src/`; the wrapper usually only connects those fragments.
+
 ## Add or update an example
 
 Runnable examples embedded in the book live under `bk/crates/<section-or-category>/examples/<chapter>/`. Keep the book-visible snippet between `// ANCHOR: example` and `// ANCHOR_END: example`. In a chapter, write an include directive by joining `{{` + `#include path/to/example.rs:example` + `}}` with no spaces.
