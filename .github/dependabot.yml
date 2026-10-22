@@ -9,6 +9,7 @@
 version: 2
 updates:
   - package-ecosystem: "cargo" # See documentation for possible values
+    open-pull-requests-limit: 5
     directories:
       - "/bk/crates"
       - "/later/crates"
