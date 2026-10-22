@@ -1,10 +1,9 @@
-//! String data types: `&str`, `String` and string literals.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! String data types: `&str`, `String` and string literals.
+
 /// Creates and prints strings of different types.
 fn main() {
     // Basic string types:

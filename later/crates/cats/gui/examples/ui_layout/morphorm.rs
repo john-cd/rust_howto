@@ -1,8 +1,7 @@
-//! Computing a layout with `morphorm`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Computing a layout with `morphorm`.
+
 use morphorm::*;
 
 // Morphorm is a UI layout engine.

@@ -1,10 +1,9 @@
-//! Return-position `impl Trait` in a trait method.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Return-position `impl Trait` in a trait method.
+
 /// This example demonstrates how to use `impl Trait` in a trait definition.
 ///
 /// The `Container` trait defines a method `items` that returns

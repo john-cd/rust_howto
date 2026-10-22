@@ -1,10 +1,9 @@
-//! A Tokio `oneshot` channel that carries a single value between tasks.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A Tokio `oneshot` channel that carries a single value between tasks.
+
 use tokio::sync::oneshot;
 
 /// Simulate some computation that takes a `u32` and returns a `String`.

@@ -1,10 +1,9 @@
-//! Placeholder for a 2D rendering example with `femtovg`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Placeholder for a 2D rendering example with `femtovg`.
+
 // femtovg example (commented out due to GL/windowing requirements in the
 // workspace)
 // use femtovg::{Canvas, Color, Paint, Path, renderer::OpenGl};

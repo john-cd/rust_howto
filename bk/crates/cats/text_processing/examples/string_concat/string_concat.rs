@@ -1,10 +1,9 @@
-//! Different ways to concatenate strings.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Different ways to concatenate strings.
+
 /// Concatenates with the `+` operator.
 fn concatenate_with_plus() {
     let a = String::from("hello");

@@ -1,10 +1,9 @@
-//! Returning a borrowed or an owned string with `Cow`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Returning a borrowed or an owned string with `Cow`.
+
 use std::borrow::Cow;
 
 /// An HTTP status.

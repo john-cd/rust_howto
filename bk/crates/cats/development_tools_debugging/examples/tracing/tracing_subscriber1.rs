@@ -1,11 +1,10 @@
-//! Demonstrates how to configure the tracing subscriber
-//! to change the logging level.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates how to configure the tracing subscriber
+//! to change the logging level.
+
 /// Demonstrates how to configure the tracing subscriber
 /// to change the logging level.
 fn main() {

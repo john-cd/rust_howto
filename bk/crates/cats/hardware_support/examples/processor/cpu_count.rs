@@ -1,11 +1,10 @@
-//! This example demonstrates how to get the number of logical cores on the
-//! system. It uses the `num_cpus` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates how to get the number of logical cores on the
+//! system. It uses the `num_cpus` crate.
+
 /// This example demonstrates how to get the number of logical cores on the
 /// system. It uses the `num_cpus` crate.
 fn main() {

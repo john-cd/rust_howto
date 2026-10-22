@@ -1,10 +1,9 @@
-//! Breadth-first traversal of a `petgraph` graph.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Breadth-first traversal of a `petgraph` graph.
+
 use petgraph::Graph;
 use petgraph::visit::Bfs;
 

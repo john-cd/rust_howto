@@ -1,10 +1,9 @@
-//! Creating instances of a struct.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating instances of a struct.
+
 /// Represents a user with their active status, username, and email.
 #[derive(Debug)]
 struct User {

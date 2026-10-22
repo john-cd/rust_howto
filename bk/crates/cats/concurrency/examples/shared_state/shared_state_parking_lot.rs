@@ -1,10 +1,9 @@
-//! One-time initialization with `parking_lot::Once`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! One-time initialization with `parking_lot::Once`.
+
 use parking_lot::Once;
 use parking_lot::OnceState;
 

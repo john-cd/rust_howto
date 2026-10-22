@@ -1,10 +1,9 @@
-//! An attribute procedural macro that logs function calls.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(unused)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! An attribute procedural macro that logs function calls.
+
 // Import our custom attribute macro.
 use proc_macros::log_calls;
 

@@ -1,10 +1,9 @@
-//! Defining functions with arguments and return values.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Defining functions with arguments and return values.
+
 /// Function with no parameters, no return type.
 fn say_hello() {
     println!("Hello, Rust!");

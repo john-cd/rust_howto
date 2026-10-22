@@ -1,11 +1,10 @@
-//! Restricting visibility to a scope with `pub(in path)`, `pub(super)` and
-//! `pub(crate)`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Restricting visibility to a scope with `pub(in path)`, `pub(super)` and
+//! `pub(crate)`.
+
 /// The module in which `pub(in ...)` items are visible.
 mod a {
     /// A module that is public inside `a`.

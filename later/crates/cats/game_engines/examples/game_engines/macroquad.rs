@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example uses the macroquad game engine to create a simple window

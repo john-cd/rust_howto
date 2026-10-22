@@ -1,10 +1,9 @@
-//! Generating thumbnails of images in parallel with `rayon` and `image`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generating thumbnails of images in parallel with `rayon` and `image`.
+
 use std::fs::create_dir_all;
 use std::path::Path;
 

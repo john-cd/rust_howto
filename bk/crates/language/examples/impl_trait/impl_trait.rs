@@ -1,10 +1,9 @@
-//! Using `impl Trait` as an argument type and as a return type.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Using `impl Trait` as an argument type and as a return type.
+
 // Define an example trait and two structs that implement it:
 /// A thing that can speak.
 trait Speak {

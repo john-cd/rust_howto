@@ -1,10 +1,9 @@
-//! Generating and parsing UUIDs.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generating and parsing UUIDs.
+
 use uuid::Uuid;
 use uuid::uuid;
 

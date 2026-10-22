@@ -1,10 +1,9 @@
-//! Associated constants in traits.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Associated constants in traits.
+
 /// A trait demonstrating the use of associated constants.
 trait Example {
     /// An associated constant without a default value.

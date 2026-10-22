@@ -1,10 +1,9 @@
-//! A* shortest path in a `petgraph` graph.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A* shortest path in a `petgraph` graph.
+
 use petgraph::Graph;
 use petgraph::algo::astar;
 

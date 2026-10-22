@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Example using Facebook's `RocksDB` embeddable database.

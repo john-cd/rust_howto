@@ -1,10 +1,9 @@
-//! Placeholder for a 2D rendering example with `skia-safe`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Placeholder for a 2D rendering example with `skia-safe`.
+
 // skia-safe example (commented out due to native build requirements in the
 // workspace)
 // use skia_safe::{Canvas, Color, Paint, Rect, Surface};

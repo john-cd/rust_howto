@@ -1,10 +1,9 @@
-//! Simple iterators that are built from a function or a value.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Simple iterators that are built from a function or a value.
+
 use std::iter;
 
 /// Creates and consumes each of the simple iterators.

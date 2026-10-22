@@ -1,10 +1,9 @@
-//! Many shared references or one mutable reference.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Many shared references or one mutable reference.
+
 /// A struct holding a flag.
 #[derive(Debug)]
 struct MyStruct(bool);

@@ -1,10 +1,9 @@
-//! Destructuring references.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Destructuring references.
+
 /// Destructures references with `&` and `ref`.
 fn main() {
     // Given a reference...

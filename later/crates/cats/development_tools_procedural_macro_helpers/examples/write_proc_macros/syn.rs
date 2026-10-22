@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! `syn` is a library for parsing Rust code into a syntax tree.

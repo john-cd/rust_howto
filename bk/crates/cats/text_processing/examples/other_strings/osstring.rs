@@ -1,10 +1,9 @@
-//! Working with `OsString` and `OsStr`, the platform-native strings.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Working with `OsString` and `OsStr`, the platform-native strings.
+
 use std::env;
 use std::ffi::OsStr;
 use std::ffi::OsString;

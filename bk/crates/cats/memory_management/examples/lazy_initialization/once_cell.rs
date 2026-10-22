@@ -1,10 +1,9 @@
-//! Lazy initialization of a value with `OnceCell`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Lazy initialization of a value with `OnceCell`.
+
 use std::cell::OnceCell;
 
 /// Initializes a `OnceCell` on first access.

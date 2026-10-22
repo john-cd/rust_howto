@@ -1,10 +1,9 @@
-//! SHA-256 digest of a file's contents with `ring`, printed as hexadecimal.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! SHA-256 digest of a file's contents with `ring`, printed as hexadecimal.
+
 use std::fs;
 use std::fs::File;
 use std::io::BufReader;

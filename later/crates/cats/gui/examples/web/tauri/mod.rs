@@ -1,8 +1,7 @@
-//! A desktop application with a Rust backend, built with `tauri`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A desktop application with a Rust backend, built with `tauri`.
+
 // (backend)
 #![cfg_attr(
     all(not(debug_assertions), target_os = "windows"),

@@ -1,10 +1,9 @@
-//! Calculates the mode of a dataset.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Calculates the mode of a dataset.
+
 use std::collections::HashMap;
 
 /// Calculates the mode of a dataset.

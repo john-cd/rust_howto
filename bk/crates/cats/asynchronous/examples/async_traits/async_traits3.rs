@@ -1,10 +1,9 @@
-//! Asynchronous trait methods with the `async_trait` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Asynchronous trait methods with the `async_trait` crate.
+
 use async_trait::async_trait;
 
 // Define an asynchronous trait named `Advertisement`.

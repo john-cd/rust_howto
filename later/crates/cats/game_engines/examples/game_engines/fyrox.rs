@@ -1,10 +1,9 @@
-//! Placeholder for a `fyrox` game engine example.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Placeholder for a `fyrox` game engine example.
+
 // fyrox example (commented out due to complex system dependencies like ALSA in
 // the workspace)
 // use fyrox::{

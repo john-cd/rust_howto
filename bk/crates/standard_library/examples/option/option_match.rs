@@ -1,10 +1,9 @@
-//! Handling an `Option` with `match`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Handling an `Option` with `match`.
+
 /// Divides `numerator` by `denominator`; returns `None` if the denominator is
 /// zero.
 fn divide(numerator: f64, denominator: f64) -> Option<f64> {

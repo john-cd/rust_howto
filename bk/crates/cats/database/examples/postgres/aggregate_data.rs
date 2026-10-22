@@ -1,10 +1,9 @@
-//! Aggregating rows with SQL in a PostgreSQL database.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Aggregating rows with SQL in a PostgreSQL database.
+
 // This example demonstrates aggregating query results in PostgreSQL using the
 // `postgres` crate.
 use postgres::Client;

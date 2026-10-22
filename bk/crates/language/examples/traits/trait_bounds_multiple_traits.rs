@@ -1,10 +1,9 @@
-//! Requiring several traits with `+`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Requiring several traits with `+`.
+
 use std::clone::Clone;
 use std::fmt::Debug;
 

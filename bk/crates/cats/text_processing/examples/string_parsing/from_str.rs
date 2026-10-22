@@ -1,10 +1,9 @@
-//! Parsing a color from a string by implementing `FromStr`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Parsing a color from a string by implementing `FromStr`.
+
 use std::str::FromStr;
 
 /// A color in RGB form.

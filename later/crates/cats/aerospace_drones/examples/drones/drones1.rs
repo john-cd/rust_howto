@@ -1,10 +1,9 @@
-//! Sending commands to a Tello drone.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Sending commands to a Tello drone.
+
 use tello::Drone;
 
 /// Connects to a drone and sends it commands.

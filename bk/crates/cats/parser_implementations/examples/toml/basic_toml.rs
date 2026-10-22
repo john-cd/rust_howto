@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates how to use the maintained `toml` crate to parse

@@ -1,10 +1,9 @@
-//! This example demonstrates matrix decompositions using the `nalgebra` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates matrix decompositions using the `nalgebra` crate.
+
 use nalgebra::Matrix3;
 
 /// This example demonstrates matrix decompositions using the `nalgebra` crate.

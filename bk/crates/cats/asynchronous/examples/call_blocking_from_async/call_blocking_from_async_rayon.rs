@@ -1,10 +1,9 @@
-//! Runs CPU-bound work from `async` code on the Rayon thread pool.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Runs CPU-bound work from `async` code on the Rayon thread pool.
+
 use rayon::prelude::*;
 
 /// Computes the sum of a vector of numbers in parallel using Rayon.

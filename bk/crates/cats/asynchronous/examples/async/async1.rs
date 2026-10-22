@@ -1,11 +1,10 @@
-//! Basics of `async` functions and `Future`s: calling, awaiting and combining
-//! them.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Basics of `async` functions and `Future`s: calling, awaiting and combining
+//! them.
+
 use std::future::Future;
 
 /// An empty value produced and consumed by the example tasks.

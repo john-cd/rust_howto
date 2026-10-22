@@ -1,10 +1,9 @@
-//! Demonstrates the usage of `BigInt` for large integer arithmetic.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates the usage of `BigInt` for large integer arithmetic.
+
 use std::str::FromStr as _;
 
 use num_bigint::BigInt;

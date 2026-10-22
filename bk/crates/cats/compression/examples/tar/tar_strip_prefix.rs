@@ -1,11 +1,10 @@
-//! This example demonstrates how to extract a tar archive while stripping a
-//! common prefix from the paths of the extracted files.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates how to extract a tar archive while stripping a
+//! common prefix from the paths of the extracted files.
+
 use std::fs::File;
 use std::path::Path;
 use std::path::PathBuf;

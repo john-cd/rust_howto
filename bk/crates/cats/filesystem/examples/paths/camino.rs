@@ -1,10 +1,9 @@
-//! UTF-8 paths with `camino`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! UTF-8 paths with `camino`.
+
 use std::path::PathBuf;
 
 use camino::Utf8PathBuf;

@@ -1,10 +1,9 @@
-//! Setting and getting a value in Redis.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Setting and getting a value in Redis.
+
 // This example demonstrates connecting to Redis and executing commands using
 // the `redis` crate.
 use std::env;

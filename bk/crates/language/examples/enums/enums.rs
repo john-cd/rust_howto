@@ -1,10 +1,9 @@
-//! Enums with unit-like, struct-like and tuple-like variants.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Enums with unit-like, struct-like and tuple-like variants.
+
 /// An enum to represent different types of messages.
 #[derive(Debug)]
 enum Message {

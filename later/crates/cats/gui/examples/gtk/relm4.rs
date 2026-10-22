@@ -1,10 +1,9 @@
-//! A counter application with `relm4`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A counter application with `relm4`.
+
 use gtk::prelude::*;
 use relm4::prelude::*;
 

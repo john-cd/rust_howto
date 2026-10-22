@@ -1,3 +1,7 @@
+#![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
+// ANCHOR: example
 //! # Crux Core Example
 //!
 //! This example demonstrates the core concepts of a Crux application.
@@ -12,12 +16,7 @@
 //! `crux_http` - HTTP client capability,
 //! `crux_kv` - Key-value store capability,
 //! `crux_time` - Time capability.
-//!
-//! TODO Reviewed ??-??-2026
 
-#![allow(dead_code)]
-
-// ANCHOR: example
 use crux_core::App;
 use crux_core::Command;
 use crux_core::render::render;

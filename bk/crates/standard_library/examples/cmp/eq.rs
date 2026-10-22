@@ -1,10 +1,9 @@
-//! Implementing equality with `PartialEq` and `Eq`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Implementing equality with `PartialEq` and `Eq`.
+
 // `#[derive(PartialEq, Eq)]` automatically implements equality traits.
 // When derived on structs, two instances are equal if all fields are equal,
 // and not equal if any fields are not equal.

@@ -1,10 +1,9 @@
-//! Finding the MIME type of a file from its name.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Finding the MIME type of a file from its name.
+
 use mime::Mime;
 
 /// Find the mime type of a file based on its extension.

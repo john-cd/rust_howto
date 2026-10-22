@@ -1,10 +1,9 @@
-//! Returning references and owned values from functions.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Returning references and owned values from functions.
+
 /// Return an owned type instead of a reference.
 fn return_string() -> String {
     String::new()

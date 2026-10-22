@@ -1,10 +1,9 @@
-//! Pinning values with `Pin` and `PhantomPinned`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Pinning values with `Pin` and `PhantomPinned`.
+
 use std::marker::PhantomPinned;
 use std::pin::Pin;
 

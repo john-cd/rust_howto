@@ -1,11 +1,10 @@
-//! Demonstrates basic usage of the `nu-ansi-term` crate for colored and styled
-//! terminal output.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates basic usage of the `nu-ansi-term` crate for colored and styled
+//! terminal output.
+
 use nu_ansi_term::Color;
 use nu_ansi_term::Style;
 

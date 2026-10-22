@@ -1,11 +1,10 @@
-//! Searching a text for several patterns at once with the Aho-Corasick
-//! algorithm.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Searching a text for several patterns at once with the Aho-Corasick
+//! algorithm.
+
 use std::collections::HashMap;
 
 use aho_corasick::AhoCorasick;

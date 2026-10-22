@@ -1,11 +1,10 @@
-//! Authenticated encryption with ChaCha20-Poly1305, with and without associated
-//! data.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Authenticated encryption with ChaCha20-Poly1305, with and without associated
+//! data.
+
 // Trait that provides in-place stateless AEAD:
 use chacha20poly1305::AeadInPlace as _;
 // Algorithm:

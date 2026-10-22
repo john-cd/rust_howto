@@ -1,10 +1,9 @@
-//! Generic functions with trait bounds.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generic functions with trait bounds.
+
 use std::fmt::Debug;
 use std::fmt::Display;
 

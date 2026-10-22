@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! Serialize and deserialize a Protocol Buffers message generated with `prost`.

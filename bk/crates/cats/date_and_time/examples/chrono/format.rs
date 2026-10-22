@@ -1,10 +1,9 @@
-//! Formatting the current time with `chrono`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Formatting the current time with `chrono`.
+
 use chrono::DateTime;
 use chrono::Utc;
 

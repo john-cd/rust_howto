@@ -1,10 +1,9 @@
-//! An associated constant on a struct.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! An associated constant on a struct.
+
 /// A unit struct.
 struct MyToken;
 

@@ -1,10 +1,9 @@
-//! Trait objects with auto traits such as `Send`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Trait objects with auto traits such as `Send`.
+
 // Define a trait with a method:
 /// A thing that can send a message.
 trait Message {

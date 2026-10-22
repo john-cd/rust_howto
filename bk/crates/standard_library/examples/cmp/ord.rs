@@ -1,10 +1,9 @@
-//! Implementing ordering with `PartialOrd` and `Ord`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Implementing ordering with `PartialOrd` and `Ord`.
+
 use std::cmp::Ordering;
 
 // A struct to represent a software version.

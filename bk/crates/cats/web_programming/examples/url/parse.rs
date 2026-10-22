@@ -1,10 +1,9 @@
-//! Demonstrates URL parsing.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates URL parsing.
+
 use url::ParseError;
 use url::Url;
 

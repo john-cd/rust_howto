@@ -1,10 +1,9 @@
-//! Formatting strings with `print!`, `format!` and `write!`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Formatting strings with `print!`, `format!` and `write!`.
+
 use std::io::Write as _;
 
 /// Example of using the `print` and `println!` macros:

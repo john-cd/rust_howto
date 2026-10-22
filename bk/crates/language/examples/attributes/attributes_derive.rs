@@ -1,10 +1,9 @@
-//! Deriving traits with `#[derive]`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Deriving traits with `#[derive]`.
+
 // This attribute tells the compiler to automatically generate
 // an implementation of the `std::fmt::Debug` trait for the `Point` struct.
 /// A point that derives `Debug`.

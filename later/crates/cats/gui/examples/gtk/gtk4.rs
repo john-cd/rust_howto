@@ -1,10 +1,9 @@
-//! A GTK 4 application with a button and a label.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A GTK 4 application with a button and a label.
+
 use gtk::Application;
 use gtk::ApplicationWindow;
 use gtk::Button;

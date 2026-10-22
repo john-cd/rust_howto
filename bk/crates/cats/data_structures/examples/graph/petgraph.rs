@@ -1,10 +1,9 @@
-//! Building and traversing a directed graph with `petgraph`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Building and traversing a directed graph with `petgraph`.
+
 use petgraph::Directed;
 use petgraph::Undirected;
 use petgraph::algo::dijkstra;

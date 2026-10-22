@@ -1,10 +1,9 @@
-//! The `main` function, the entry point of a binary crate.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! The `main` function, the entry point of a binary crate.
+
 // `main` takes no parameters and, in this case,
 // implicitly returns the "unit type" (),
 // similar to 'void' in C/C++/Java.

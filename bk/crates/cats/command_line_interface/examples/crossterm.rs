@@ -1,9 +1,8 @@
+// TODO Reviewed ??-??-2026
+// ANCHOR: example
 //! Terminal control with `crossterm`: raw mode, colors, cursor movement and key
 //! events.
-//!
-//! TODO Reviewed ??-??-2026
 
-// ANCHOR: example
 use std::io::Write as _;
 use std::io::stdout;
 

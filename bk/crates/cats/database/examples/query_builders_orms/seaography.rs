@@ -1,10 +1,9 @@
-//! Generating a GraphQL server from a database with Seaography.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generating a GraphQL server from a database with Seaography.
+//!
 //! Seaography is an automated GraphQL framework for SeaORM.
 //!
 //! This example demonstrates building an executable GraphQL schema from

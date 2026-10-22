@@ -1,10 +1,9 @@
-//! A struct generic over a constant, the length of an array.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A struct generic over a constant, the length of an array.
+
 /// Struct with a const parameter.
 ///
 /// Note the `const` keyword, the parameter name (here `N`),

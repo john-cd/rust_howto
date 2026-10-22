@@ -1,8 +1,7 @@
-//! Demonstrate various functionalities of the `time` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrate various functionalities of the `time` crate.
+
 use time::Date;
 use time::Duration;
 use time::OffsetDateTime;

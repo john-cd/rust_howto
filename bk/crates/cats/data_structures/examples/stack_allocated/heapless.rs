@@ -1,8 +1,7 @@
-//! Fixed-capacity collections from the `heapless` crate.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Fixed-capacity collections from the `heapless` crate.
+
 use heapless::FnvIndexMap;
 use heapless::String;
 use heapless::Vec;

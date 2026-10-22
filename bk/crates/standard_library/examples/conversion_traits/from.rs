@@ -1,10 +1,9 @@
-//! Converting between types with `From` and `Into`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Converting between types with `From` and `Into`.
+
 /// A length in millimeters.
 #[derive(Debug)]
 struct Millimeters(u32);

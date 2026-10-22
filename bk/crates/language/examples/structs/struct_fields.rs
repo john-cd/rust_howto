@@ -1,10 +1,9 @@
-//! A struct with fields of many types.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A struct with fields of many types.
+
 /// A status.
 #[derive(Debug)]
 enum Status {

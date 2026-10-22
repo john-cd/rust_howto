@@ -1,10 +1,9 @@
-//! Drawing a Julia set fractal in parallel on a thread pool.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Drawing a Julia set fractal in parallel on a thread pool.
+
 use std::fs;
 use std::sync::mpsc::channel;
 

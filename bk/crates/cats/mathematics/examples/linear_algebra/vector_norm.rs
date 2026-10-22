@@ -1,11 +1,10 @@
-//! Computing the L1 and L2 norms of a vector, and normalizing it, with
-//! `ndarray`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Computing the L1 and L2 norms of a vector, and normalizing it, with
+//! `ndarray`.
+
 use ndarray::Array1;
 use ndarray::ArrayView1;
 use ndarray::array;

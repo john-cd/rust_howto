@@ -1,10 +1,9 @@
-//! `if`, `else if` and `else` expressions.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! `if`, `else if` and `else` expressions.
+
 /// Branches on numbers and on a boolean condition.
 fn main() {
     let number = 3;

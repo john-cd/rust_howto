@@ -1,10 +1,9 @@
-//! Adding a method to an external type with a trait.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Adding a method to an external type with a trait.
+
 /// A trait for types that can be hashed to a `u64`.
 trait MyHash {
     /// Returns a hash of the object.

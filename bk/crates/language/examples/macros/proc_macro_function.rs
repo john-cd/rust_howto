@@ -1,10 +1,9 @@
-//! A function-like procedural macro that processes a SQL query.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(unused)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A function-like procedural macro that processes a SQL query.
+
 // Import our custom function-like macro.
 use proc_macros::sql;
 

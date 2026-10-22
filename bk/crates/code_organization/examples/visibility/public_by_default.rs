@@ -1,11 +1,10 @@
-//! Items that are public by default: enum variants, trait items and fields of
-//! public items.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Items that are public by default: enum variants, trait items and fields of
+//! public items.
+
 /// A module with public types and traits.
 mod a_module {
 

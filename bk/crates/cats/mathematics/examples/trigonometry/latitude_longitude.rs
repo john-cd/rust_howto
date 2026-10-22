@@ -1,10 +1,9 @@
-//! Prints the great-circle distance between Paris and London.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Prints the great-circle distance between Paris and London.
+
 /// Calculates the distance between two points on the Earth's surface using the
 /// Haversine formula.
 ///

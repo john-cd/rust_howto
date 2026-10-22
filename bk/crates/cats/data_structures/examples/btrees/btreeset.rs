@@ -1,10 +1,9 @@
-//! A `BTreeSet`, an ordered set of unique names.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A `BTreeSet`, an ordered set of unique names.
+
 use std::collections::BTreeSet;
 
 /// Creates, fills and queries a `BTreeSet`.

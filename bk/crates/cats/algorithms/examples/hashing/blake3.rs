@@ -1,11 +1,10 @@
-//! Hashing with `blake3`: one-shot, incremental, keyed, key derivation and
-//! extended output.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Hashing with `blake3`: one-shot, incremental, keyed, key derivation and
+//! extended output.
+
 use blake3::Hasher;
 
 /// This example demonstrates various ways to use the blake3 hashing library in

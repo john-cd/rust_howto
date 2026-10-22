@@ -1,10 +1,9 @@
-//! Moving a value into a function and getting it back.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Moving a value into a function and getting it back.
+
 // Move semantics is not limited to assignments.
 // They apply to function parameters as well.
 

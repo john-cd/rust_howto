@@ -1,8 +1,7 @@
-//! Authenticated encryption and decryption with AES-256-GCM.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Authenticated encryption and decryption with AES-256-GCM.
+
 // Algorithm:
 use aes_gcm::Aes256Gcm; // Use Aes128Gcm or Aes256Gcm, respectively.
 // Cryptokey:

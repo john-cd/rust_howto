@@ -1,10 +1,9 @@
-//! The unit type `()` and the never type `!`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! The unit type `()` and the never type `!`.
+
 // The unit type is used when there is nothing to return:
 /// Returns the unit type explicitly.
 #[allow(clippy::unused_unit)]

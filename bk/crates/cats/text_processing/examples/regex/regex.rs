@@ -1,10 +1,9 @@
-//! Extracting links from Markdown with several regular expressions.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Extracting links from Markdown with several regular expressions.
+
 use std::collections::BTreeMap;
 
 use regex::Regex;

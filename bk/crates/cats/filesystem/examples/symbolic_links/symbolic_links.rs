@@ -1,10 +1,9 @@
-//! Creating and inspecting symbolic links.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating and inspecting symbolic links.
+
 use std::fs;
 use std::path::Path;
 

@@ -1,10 +1,9 @@
-//! Modifying a `Cow` in place, cloning it on write.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Modifying a `Cow` in place, cloning it on write.
+
 use std::borrow::Cow;
 
 /// Demonstrates modifying a `Cow` in place.

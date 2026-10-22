@@ -1,11 +1,10 @@
-//! Propagating errors with the `?` operator through a function that parses a
-//! port.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Propagating errors with the `?` operator through a function that parses a
+//! port.
+
 use std::error::Error;
 
 /// Parses a string slice into a `u16` representing a port number.

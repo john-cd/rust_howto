@@ -1,12 +1,11 @@
-//! Ways to use function-like macros: as expressions, statements, items and
-//! types.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(clippy::useless_vec)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Ways to use function-like macros: as expressions, statements, items and
+//! types.
+
 use std::cell::RefCell;
 
 // Example uses of function-like macros:

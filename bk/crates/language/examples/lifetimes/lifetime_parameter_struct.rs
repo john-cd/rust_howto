@@ -1,11 +1,10 @@
-//! A lifetime parameter on a struct and on its `impl` blocks.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(unused_variables)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A lifetime parameter on a struct and on its `impl` blocks.
+
 /// A struct that holds a reference to a string slice.
 struct Excerpt<'a> {
     /// The excerpt, borrowed from a longer text.

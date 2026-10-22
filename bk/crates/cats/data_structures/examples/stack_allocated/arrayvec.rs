@@ -1,10 +1,9 @@
-//! This example demonstrates basic usage of `ArrayVec`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates basic usage of `ArrayVec`.
+
 use arrayvec::ArrayVec;
 
 /// This example demonstrates basic usage of `ArrayVec`.

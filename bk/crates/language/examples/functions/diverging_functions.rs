@@ -1,10 +1,9 @@
-//! Functions that never return.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Functions that never return.
+
 /// This function diverges, meaning it never returns.
 /// It uses the `!` (Never) return type to indicate this.
 fn foo() -> ! {

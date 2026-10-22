@@ -1,10 +1,9 @@
-//! Measuring the similarity of strings with `strsim`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Measuring the similarity of strings with `strsim`.
+
 use strsim::damerau_levenshtein;
 use strsim::hamming;
 use strsim::jaro;

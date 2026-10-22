@@ -1,10 +1,9 @@
-//! Defining an error type with `thiserror`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Defining an error type with `thiserror`.
+
 // Import the `Error` derive macro from the `thiserror` crate.
 use thiserror::Error;
 

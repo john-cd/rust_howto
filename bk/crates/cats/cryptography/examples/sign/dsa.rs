@@ -1,12 +1,11 @@
+#![allow(dead_code)]
+
+// TODO Reviewed ??-??-2026
+// ANCHOR: example
 //! This example demonstrates the use of the ECDSA (Elliptic Curve Digital
 //! Signature Algorithm) with the P-256 curve for signing and verifying a
 //! message. It uses the `p256` crate for cryptographic operations.
-//!
-//! TODO Reviewed ??-??-2026
 
-#![allow(dead_code)]
-
-// ANCHOR: example
 use p256::ecdsa::Signature;
 use p256::ecdsa::SigningKey;
 use p256::ecdsa::VerifyingKey;

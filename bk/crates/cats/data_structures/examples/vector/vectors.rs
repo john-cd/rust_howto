@@ -2,6 +2,7 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
 #![allow(clippy::unnecessary_fold)]
+
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
 //! This example demonstrates vector creation, manipulation, iteration, and

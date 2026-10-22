@@ -1,8 +1,7 @@
-//! Computing a flexbox layout with `taffy`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Computing a flexbox layout with `taffy`.
+
 use taffy::prelude::*;
 
 // Taffy is a flexible, high-performance UI layout library.

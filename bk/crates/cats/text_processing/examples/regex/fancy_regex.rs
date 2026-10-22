@@ -1,10 +1,9 @@
-//! Backreferences, capture groups and splitting with `fancy_regex`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Backreferences, capture groups and splitting with `fancy_regex`.
+
 use fancy_regex::Regex;
 
 // `fancy_regex` support features, including backreferences and lookaround, that

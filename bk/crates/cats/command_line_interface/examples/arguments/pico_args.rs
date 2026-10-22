@@ -1,10 +1,9 @@
-//! Parsing command-line arguments with `pico-args`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Parsing command-line arguments with `pico-args`.
+
 use pico_args::Arguments;
 
 /// Parses the optional `--name` and `--age` values, the `--verbose` flag and a

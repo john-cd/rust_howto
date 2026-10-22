@@ -1,10 +1,9 @@
-//! Describing a user interface to screen readers with `accesskit`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Describing a user interface to screen readers with `accesskit`.
+
 use accesskit::Node;
 use accesskit::NodeId;
 use accesskit::Role;

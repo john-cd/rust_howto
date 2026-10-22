@@ -1,10 +1,9 @@
-//! Building and inspecting paths with `Path` and `PathBuf`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Building and inspecting paths with `Path` and `PathBuf`.
+
 use std::path::Path;
 use std::path::PathBuf;
 

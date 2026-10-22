@@ -1,10 +1,9 @@
-//! A generic trait.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A generic trait.
+
 /// A generic trait that can be implemented for different types.
 /// `T` between angle brackets is a generic type parameter:
 trait Test<T> {

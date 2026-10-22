@@ -1,10 +1,9 @@
-//! Returning an iterator from a function with `impl Iterator`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Returning an iterator from a function with `impl Iterator`.
+
 /// Return an iterator from a function using the `impl Iterator<Item = T>`
 /// syntax as the return type, where `T` is the type of the items the iterator
 /// will yield.

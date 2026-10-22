@@ -1,10 +1,9 @@
-//! Publishing and consuming a message with the `lapin` AMQP client.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Publishing and consuming a message with the `lapin` AMQP client.
+
 // This example demonstrates how to publish and consume messages with the
 // `lapin` AMQP client.
 use futures::stream::StreamExt as _; /* or: use futures_lite::stream::StreamExt; */

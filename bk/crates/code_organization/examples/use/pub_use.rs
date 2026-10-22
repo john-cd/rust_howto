@@ -1,11 +1,10 @@
-//! Re-exporting a name with `pub use`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(unused_imports)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Re-exporting a name with `pub use`.
+
 /// A module that re-exports a function from a private module.
 mod a_module {
     /// A private module.

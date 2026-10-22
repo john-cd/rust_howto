@@ -1,10 +1,9 @@
-//! Example of using a single-threaded Tokio runtime.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Example of using a single-threaded Tokio runtime.
+
 /// Example of using a single-threaded Tokio runtime.
 fn main() {
     tokio::runtime::Builder::new_current_thread()

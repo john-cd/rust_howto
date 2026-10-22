@@ -1,11 +1,10 @@
-//! This example demonstrates how to configure the `env_logger` to output logs
-//! to `Stdout`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! This example demonstrates how to configure the `env_logger` to output logs
+//! to `Stdout`.
+
 use env_logger::Target;
 
 /// This example demonstrates how to configure the `env_logger` to output logs

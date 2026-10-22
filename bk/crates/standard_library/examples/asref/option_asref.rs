@@ -1,10 +1,9 @@
-//! Borrowing the content of an `Option` with `as_ref`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Borrowing the content of an `Option` with `as_ref`.
+
 // `Option::as_ref()` allows us to get an `Option<&String>`.
 // This lets us borrow the inner `String` if it exists, without moving it out of
 // `maybe_name`.

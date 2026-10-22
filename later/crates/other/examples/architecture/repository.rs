@@ -1,10 +1,9 @@
-//! Example usage of the `InMemoryUserRepository`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Example usage of the `InMemoryUserRepository`.
+
 use std::collections::HashMap;
 use std::sync::Arc;
 use std::sync::Mutex;

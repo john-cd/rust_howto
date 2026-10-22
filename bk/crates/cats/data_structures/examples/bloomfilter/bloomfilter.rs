@@ -1,9 +1,8 @@
+// TODO Reviewed ??-??-2026
+// ANCHOR: example
 //! A Bloom filter, a compact set that can give false positives but no false
 //! negatives.
-//!
-//! TODO Reviewed ??-??-2026
 
-// ANCHOR: example
 use bloomfilter::Bloom;
 
 /// Inserts items into a Bloom filter and checks for membership.

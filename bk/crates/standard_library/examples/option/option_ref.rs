@@ -1,10 +1,9 @@
-//! Borrowing the content of an `Option` with `as_ref` and `as_mut`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Borrowing the content of an `Option` with `as_ref` and `as_mut`.
+
 /// Reads an `Option<String>` without consuming it.
 fn as_ref() {
     let text: Option<String> = Some("Hello, world!".to_owned());

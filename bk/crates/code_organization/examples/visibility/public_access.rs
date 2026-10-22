@@ -1,11 +1,10 @@
-//! Which items are accessible through nested public and private modules.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(unused_imports)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Which items are accessible through nested public and private modules.
+
 /// A private module.
 mod a_module {
     /// A private function.

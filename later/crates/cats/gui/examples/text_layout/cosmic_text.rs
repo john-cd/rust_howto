@@ -1,8 +1,7 @@
-//! Laying out and rasterizing text with `cosmic-text`.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Laying out and rasterizing text with `cosmic-text`.
+
 use cosmic_text::Attrs;
 use cosmic_text::Buffer;
 use cosmic_text::Color;

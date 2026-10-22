@@ -1,10 +1,9 @@
-//! Generic type parameters on functions, structs, traits and type aliases.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Generic type parameters on functions, structs, traits and type aliases.
+
 use std::collections::HashMap;
 use std::fmt::Debug;
 use std::hash::RandomState;

@@ -1,10 +1,9 @@
-//! Dereferencing a `Box`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Dereferencing a `Box`.
+
 /// Reads the value inside a `Box` with `*`.
 fn main() {
     // Dereferencing with `*`:

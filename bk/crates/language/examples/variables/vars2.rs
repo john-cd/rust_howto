@@ -1,11 +1,10 @@
-//! Variables: immutability, mutability, constants and statics.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 #![allow(unused)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Variables: immutability, mutability, constants and statics.
+
 /// Declares and modifies variables.
 fn main() {
     // By default, variables are immutable.

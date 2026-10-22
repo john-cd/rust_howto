@@ -1,10 +1,9 @@
-//! Demonstrates parallel searching using Rayon's `par_iter().find_any()`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Demonstrates parallel searching using Rayon's `par_iter().find_any()`.
+
 use rayon::prelude::*;
 
 /// Demonstrates parallel searching using Rayon's `par_iter().find_any()`.

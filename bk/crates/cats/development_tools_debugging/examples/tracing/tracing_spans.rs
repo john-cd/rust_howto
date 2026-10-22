@@ -1,10 +1,9 @@
-//! Creating and entering spans with `tracing`.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! Creating and entering spans with `tracing`.
+
 use tracing::Level;
 use tracing::span;
 

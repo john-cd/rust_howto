@@ -1,10 +1,9 @@
-//! A Tokio multi-producer, single-consumer (`mpsc`) channel.
-//!
-//! TODO Reviewed ??-??-2026
-
 #![allow(dead_code)]
 
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
+//! A Tokio multi-producer, single-consumer (`mpsc`) channel.
+
 use tokio::sync::mpsc;
 
 /// Simulates some computation that takes a `u32` and returns a `String`.
