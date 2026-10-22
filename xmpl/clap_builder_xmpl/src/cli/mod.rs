@@ -62,7 +62,7 @@ fn parse_args(matches: ArgMatches) -> (config::Config, Vec<Cmd>) {
         .set_verbose(get_arg_verbose(&matches))
         .set_config_file(get_arg_config(&matches));
 
-    let mut cmds: Vec<Cmd> = Vec::new();
+    let mut commands: Vec<Cmd> = Vec::new();
 
     // Files passed directly as arguments.
     let mut opt_files = get_arg_filepaths(&matches);
@@ -75,29 +75,29 @@ fn parse_args(matches: ArgMatches) -> (config::Config, Vec<Cmd>) {
         |mut of| {
             if let Some(mut addtl_files) = opencmd::get_args(&matches) {
                 of.append(&mut addtl_files);
-            };
+            }
             Some(of)
         },
     );
 
     if let Some(files) = opt_files {
-        cmds.push(Cmd::Open(files));
+        commands.push(Cmd::Open(files));
     }
 
     let query = querycmd::get_args(&matches);
     if !query.is_empty() {
-        cmds.push(Cmd::Query(query));
+        commands.push(Cmd::Query(query));
     }
 
     if testcmd::is_present(&matches) {
-        cmds.push(Cmd::Test);
+        commands.push(Cmd::Test);
     }
 
-    if cmds.is_empty() {
-        cmds.push(Cmd::None);
+    if commands.is_empty() {
+        commands.push(Cmd::None);
     }
 
-    (config.build(), cmds)
+    (config.build(), commands)
 }
 
 #[cfg(test)]
@@ -108,10 +108,10 @@ mod tests {
     #[test]
     fn test_parse_args_global_arguments_no_cmd() {
         let m = cli().get_matches_from(vec!["foo", "-c", "config.toml", "-v"]);
-        let (config, cmds) = parse_args(m);
+        let (config, commands) = parse_args(m);
         assert_eq!(config.get_verbose(), 1);
         assert_eq!(config.get_config_file(), Some("config.toml".into()));
-        for cmd in cmds {
+        for cmd in commands {
             assert_eq!(cmd, Cmd::None);
         }
     }
@@ -120,9 +120,9 @@ mod tests {
     #[test]
     fn test_parse_args_test_cmd() {
         let m = cli().get_matches_from(vec!["foo", "-c", "config.toml", "test"]);
-        let (config, cmds) = parse_args(m);
+        let (config, commands) = parse_args(m);
         assert_eq!(config.get_config_file(), Some("config.toml".into()));
-        for cmd in cmds {
+        for cmd in commands {
             assert_eq!(cmd, Cmd::Test);
         }
     }
@@ -131,8 +131,8 @@ mod tests {
     #[test]
     fn test_parse_args_query_cmd() {
         let m = cli().get_matches_from(vec!["foo", "query", "SELECT", "col", "FROM", "tbl"]);
-        let (_config, cmds) = parse_args(m);
-        for cmd in cmds {
+        let (_config, commands) = parse_args(m);
+        for cmd in commands {
             assert_eq!(
                 cmd,
                 Cmd::Query(
@@ -149,9 +149,9 @@ mod tests {
     #[test]
     fn test_parse_args_open_cmd() {
         let m = cli().get_matches_from(vec!["foo", "-vv", "open", "a.csv"]);
-        let (config, cmds) = parse_args(m);
+        let (config, commands) = parse_args(m);
         assert_eq!(config.get_verbose(), 2);
-        for cmd in cmds {
+        for cmd in commands {
             assert_eq!(cmd, Cmd::Open(vec!["a.csv".into()]));
         }
     }
@@ -167,8 +167,8 @@ mod tests {
     #[test]
     fn test_both_arg_filepaths_and_cmd_open() {
         let m = cli().get_matches_from(vec!["foo", "a.csv", "open", "b.csv"]);
-        let (_config, cmds) = parse_args(m);
-        for cmd in cmds {
+        let (_config, commands) = parse_args(m);
+        for cmd in commands {
             assert_eq!(
                 cmd,
                 Cmd::Open(vec!["a.csv".into(), "open".into(), "b.csv".into()])
@@ -183,9 +183,9 @@ mod tests {
         let m = cli().get_matches_from(vec![
             "foo", "query", "SELECT", "col", "FROM", "_file", "open", "a.csv",
         ]);
-        let (_config, cmds) = parse_args(m);
+        let (_config, commands) = parse_args(m);
         assert_eq!(
-            cmds.first(),
+            commands.first(),
             Some(&Cmd::Query(vec![
                 "SELECT".into(),
                 "col".into(),

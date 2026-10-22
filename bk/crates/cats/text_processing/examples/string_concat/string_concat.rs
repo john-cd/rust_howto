@@ -96,7 +96,7 @@ fn concatenate_with_collect_iter() {
     println!("{result}");
 }
 
-use joinery::JoinableIterator;
+use joinery::JoinableIterator as _;
 
 /// Concatenates with the `joinery` crate.
 fn concatenate_with_joinery() {
@@ -108,7 +108,7 @@ fn concatenate_with_joinery() {
     println!("{result}");
 }
 
-use std::fmt::Write;
+use std::fmt::Write as _;
 
 /// Concatenates with the `write!` macro.
 fn concatenate_with_write_macro() {

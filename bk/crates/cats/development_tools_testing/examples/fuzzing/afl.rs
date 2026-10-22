@@ -31,10 +31,7 @@ fn fuzz_me(data: &[u8]) {
         return;
     }
 
-    if data[0] == b'f' && data[1] == b'u' && data[2] == b'z' && data[3] == b'z'
-    {
-        panic!("Fuzzing triggered!");
-    }
+    assert!(!(data[0] == b'f' && data[1] == b'u' && data[2] == b'z' && data[3] == b'z'), "Fuzzing triggered!");
 }
 
 /// The `main` function sets up the fuzzing environment using the
@@ -44,6 +41,11 @@ fn main() {
     afl::fuzz!(|data: &[u8]| {
         fuzz_me(data);
     });
+}
+// ANCHOR_END: example
+
+pub fn run() {
+    main();
 }
 
 #[cfg(test)]
@@ -56,10 +58,4 @@ mod tests {
         // Here we just check that the function exists and can be called.
         fuzz_me(b"safe");
     }
-}
-// ANCHOR_END: example
-
-/// Runs the example.
-pub fn run() {
-    main();
 }

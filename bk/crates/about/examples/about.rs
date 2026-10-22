@@ -3,7 +3,7 @@
 //! TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-use rand::RngExt;
+use rand::RngExt as _;
 
 /// This is a simple example that demonstrates how to use the `rand` crate to
 /// generate a random `f64`.

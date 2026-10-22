@@ -42,7 +42,7 @@ fn main() {
         println!("The map does not contain the key 2.718");
     }
     assert!(map.contains_key(&key));
-    assert_eq!(*map.get(&key).unwrap(), "e");
+    assert_eq!(map[&key], "e");
 }
 
 // ANCHOR_END: example

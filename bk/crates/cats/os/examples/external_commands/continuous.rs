@@ -8,7 +8,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use std::io::BufRead;
+use std::io::BufRead as _;
 use std::io::BufReader;
 use std::io::Error;
 use std::process::Command;

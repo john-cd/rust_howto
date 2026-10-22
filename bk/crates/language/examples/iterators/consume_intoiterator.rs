@@ -16,7 +16,7 @@ where
     // Additional bounds can be specified by restricting on `Item`.
 {
     let mut sum = 0;
-    for item in iterable.into_iter() {
+    for item in iterable {
         sum += item;
     }
     sum

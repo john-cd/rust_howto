@@ -28,7 +28,7 @@ impl Add for Point {
     // `self` is the left-hand side (e.g., `p1` in `p1 + p2`).
     // `rhs` (right-hand side) is the other operand (e.g., `p2`).
     fn add(self, rhs: Self) -> Self::Output {
-        Point {
+        Self {
             x: self.x + rhs.x,
             y: self.y + rhs.y,
         }

@@ -8,9 +8,9 @@ use std::fs;
 use std::fs::File;
 use std::fs::OpenOptions;
 use std::io;
-use std::io::BufRead;
+use std::io::BufRead as _;
 use std::io::BufReader;
-use std::io::Write;
+use std::io::Write as _;
 
 /// Writes a file in several ways.
 fn write_to_file() -> Result<(), io::Error> {

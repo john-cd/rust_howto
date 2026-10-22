@@ -9,8 +9,8 @@
 use std::time::Duration;
 
 use futures::future;
-use futures_util::future::FutureExt;
-use futures_util::future::TryFutureExt;
+use futures_util::future::FutureExt as _;
+use futures_util::future::TryFutureExt as _;
 use futures_util::pin_mut;
 use tokio::time;
 
@@ -47,9 +47,9 @@ async fn main() {
 
     // `ready` creates a future that is immediately ready with a value.
     let future1 =
-        time::sleep(Duration::from_millis(100)).then(|_| future::ready(1));
+        time::sleep(Duration::from_millis(100)).then(|()| future::ready(1));
     let future2 =
-        time::sleep(Duration::from_millis(50)).then(|_| future::ready(2));
+        time::sleep(Duration::from_millis(50)).then(|()| future::ready(2));
 
     // `select` requires `Future` + `Unpin` bounds.
     pin_mut!(future1);
@@ -58,10 +58,10 @@ async fn main() {
     // Select between multiple futures:
     match future::select(future1, future2).await {
         future::Either::Left((val, _)) => {
-            println!("Future 1 completed first with: {val}")
+            println!("Future 1 completed first with: {val}");
         }
         future::Either::Right((val, _)) => {
-            println!("Future 2 completed first with: {val}")
+            println!("Future 2 completed first with: {val}");
         }
     }
 

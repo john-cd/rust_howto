@@ -57,7 +57,7 @@ async fn index_document(client: &Elasticsearch) -> Result<Response, Error> {
     // Define a document to index:
     let doc = MyDocument {
         id: 1,
-        title: "Rust with Elasticsearch".to_string(),
+        title: "Rust with Elasticsearch".to_owned(),
     };
     // Index the document:
     let response = client

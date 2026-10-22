@@ -13,7 +13,7 @@
 
 // Trait that generates fake values given a type that implements `Dummy`.
 use fake::Dummy;
-use fake::Fake;
+use fake::Fake as _;
 // Generates default fake value for given type using `Fake`.
 use fake::Faker;
 // Fake value generation for specific formats:

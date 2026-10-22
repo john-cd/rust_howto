@@ -52,7 +52,7 @@ fn main() -> Result<()> {
 /// Returns `path` without `prefix`, or `None` if `path` does not start with
 /// `prefix`.
 fn strip_prefix_path(path: &Path, prefix: &Path) -> Option<PathBuf> {
-    path.strip_prefix(prefix).ok().map(|p| p.to_path_buf())
+    path.strip_prefix(prefix).ok().map(std::path::Path::to_path_buf)
 }
 // ANCHOR_END: example
 

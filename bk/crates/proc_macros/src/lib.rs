@@ -150,7 +150,7 @@ pub fn replace_ident(
 // And we can write unit tests for the core logic directly!
 #[cfg(test)]
 mod tests {
-    use std::str::FromStr;
+    use std::str::FromStr as _;
 
     use super::*;
 

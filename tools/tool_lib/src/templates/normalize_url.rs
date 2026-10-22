@@ -15,8 +15,7 @@ use regex::Regex;
 /// *   `https://docs.rs/crate/termbook` becomes `https://docs.rs/termbook`
 /// *   `https://docs.rs/tungstenite/0.24.0` becomes `https://docs.rs/tungstenite`
 pub fn normalize_docs_url(url: &str) -> std::borrow::Cow<'_, str> {
-    let re1: &Regex =
-        crate::regex!(r"http(s)?://docs.rs/(?:crate/)?(?<crt>[A-Za-z0-9_-]+)(?:/.*)?");
+    let re1: &Regex = crate::regex!("http(s)?://docs.rs/(?:crate/)?(?<crt>[A-Za-z0-9_-]+)(?:/.*)?");
     // If no match is found, then the haystack is returned unchanged.
     re1.replace(url, "https://docs.rs/${crt}")
 }

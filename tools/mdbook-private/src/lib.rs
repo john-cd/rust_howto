@@ -47,7 +47,7 @@ impl Default for Config {
 pub struct Private;
 
 impl Preprocessor for Private {
-    fn name(&self) -> &str {
+    fn name(&self) -> &'static str {
         "private"
     }
 

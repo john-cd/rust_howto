@@ -1,14 +1,12 @@
-//! The `mdbook-private` preprocessor executable, which hides private chapters.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
+//! Command-line entry point of the `mdbook-private` preprocessor.
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. See LICENSE for details.
 use std::env;
 use std::io;
 use std::process;
 
-use mdbook_preprocessor::Preprocessor;
+use mdbook_preprocessor::Preprocessor as _;
 use mdbook_private::Private;
 
 /// Runs the preprocessor, or answers the `supports` query of mdBook.

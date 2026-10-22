@@ -103,3 +103,6 @@ test = true
 name = "rocket"
 path = "examples/rocket.rs"
 test = true
+
+[lints]
+workspace = true

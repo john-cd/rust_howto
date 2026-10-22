@@ -42,13 +42,13 @@ fn main() {
     // This is the most common way to iterate over a collection,
     // when you just want to read its elements without modifying them.
     let mut c = vec![10, 20, 30];
-    for num in c.iter() {
+    for num in &c {
         println!("Element: {num}"); // `num` is an immutable reference.
     }
 
     // If you need to modify the elements of a collection during iteration, you
     // use `iter_mut()`, which provides a mutable reference to each element.
-    for num in c.iter_mut() {
+    for num in &mut c {
         *num *= 2; // Dereference the mutable reference to modify the value
     }
     println!("Modified numbers: {c:?}");

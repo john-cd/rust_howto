@@ -21,7 +21,7 @@
 /// ```
 fn new(name: &str) -> Person {
     Person {
-        name: name.to_string(),
+        name: name.to_owned(),
     }
 }
 

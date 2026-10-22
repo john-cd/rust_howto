@@ -7,7 +7,7 @@
 
 use std::ffi::CStr;
 use std::ffi::CString;
-use std::io::Write;
+use std::io::Write as _;
 use std::ptr;
 
 use anyhow::anyhow;
@@ -48,7 +48,7 @@ fn print() {
 }
 
 /// Helper function to convert a C string to a Rust String.
-/// SAFETY: Among other requirements, the memory pointed to by `cstr_ptr` must
+/// # Safety Among other requirements, the memory pointed to by `cstr_ptr` must
 /// contain a valid nul terminator at the end of the string. See the
 /// documentation of `CStr::from_ptr`.
 unsafe fn cstr_to_rust_string(
@@ -112,7 +112,7 @@ fn main() {
     print();
     env();
     strerror();
-    null_pointer()
+    null_pointer();
 }
 
 // ANCHOR_END: example

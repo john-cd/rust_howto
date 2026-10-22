@@ -6,8 +6,8 @@
 //! TODO Reviewed ??-??-2026
 
 use subtle::Choice;
-use subtle::ConditionallySelectable;
-use subtle::ConstantTimeEq;
+use subtle::ConditionallySelectable as _;
+use subtle::ConstantTimeEq as _;
 use subtle::CtOption;
 
 // The `subtle` crate provides traits and utilities for writing

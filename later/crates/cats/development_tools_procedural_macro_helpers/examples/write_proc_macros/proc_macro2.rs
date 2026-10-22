@@ -14,7 +14,7 @@ struct MyStruct;
 /// Prints a struct with the derived `Debug`.
 fn main() {
     let s = MyStruct;
-    println!("{:?}", s);
+    println!("{s:?}");
 }
 // ANCHOR_END: example
 

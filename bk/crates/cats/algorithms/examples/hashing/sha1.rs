@@ -7,7 +7,7 @@
 
 // ANCHOR: example
 use hex_literal::hex;
-use sha1::Digest;
+use sha1::Digest as _;
 use sha1::Sha1;
 
 // BEWARE: SHA-1 is considered cryptographically broken and should NOT be used

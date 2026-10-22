@@ -5,7 +5,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use std::io::Read;
+use std::io::Read as _;
 
 use anyhow::Result;
 

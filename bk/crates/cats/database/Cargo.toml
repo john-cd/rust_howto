@@ -35,7 +35,7 @@ postgres = [
 ]
 redis = ["dep:redis"]
 rocksdb = ["dep:rocksdb", "dep:tempfile"]
-sea_orm = ["dep:sea-orm", "dep:seaography"]
+sea_orm = ["dep:sea-orm", "dep:seaography", "sea-orm/sqlx-sqlite", "sea-orm/runtime-tokio-rustls"]
 sqlx = ["dep:sqlx"]
 sqlite = ["dep:rusqlite"]
 
@@ -144,3 +144,6 @@ test = true
 name = "sqlite"
 path = "examples/sqlite/main.rs"
 test = true
+
+[lints]
+workspace = true

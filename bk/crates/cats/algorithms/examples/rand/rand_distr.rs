@@ -8,7 +8,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use rand_distr::Distribution;
+use rand_distr::Distribution as _;
 use rand_distr::Normal;
 use rand_distr::NormalError;
 

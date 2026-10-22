@@ -38,7 +38,7 @@ fn main() {
 
     println!("Shortest path from A to E:");
     if let Some((cost, path_nodes)) = path {
-        println!("  Cost: {}", cost);
+        println!("  Cost: {cost}");
         for node in path_nodes {
             println!("  Node: {:?}", graph[node]);
         }

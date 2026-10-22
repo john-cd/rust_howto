@@ -7,11 +7,11 @@
 // ANCHOR: example
 /// Reads an `Option<String>` without consuming it.
 fn as_ref() {
-    let text: Option<String> = Some("Hello, world!".to_string());
+    let text: Option<String> = Some("Hello, world!".to_owned());
     // First, cast `Option<String>` to `Option<&String>` with `as_ref`,
     // then consume that with `map`, leaving `text` on the stack.
-    let text_length: Option<usize> = text.as_ref().map(|s| s.len());
-    println!("We still can print `text`: {text:?}. Length: {text_length:?}",);
+    let text_length: Option<usize> = text.as_ref().map(std::string::String::len);
+    println!("We still can print `text`: {text:?}. Length: {text_length:?}");
 }
 
 /// Modifies the content of an `Option` in place.

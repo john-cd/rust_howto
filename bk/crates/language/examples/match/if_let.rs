@@ -33,7 +33,7 @@ fn main() {
 
     // `if let` can match non-parameterized, Unit-like enum variants.
     // This works even if the enum does not implement `PartialEq`.
-    if let Direction::Left = left {
+    if matches!(left, Direction::Left) {
         println!("Going left.");
     } else {
         // We can also add `else` and `else if` clauses to `if let`.

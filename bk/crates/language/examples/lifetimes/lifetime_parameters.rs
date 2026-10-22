@@ -69,7 +69,7 @@ use std::fmt::Display;
 
 // Implementation of a trait for a generic type.
 // Note the trait bound.
-impl<'a, T: Display> Display for RefHolder<'a, T> {
+impl<T: Display> Display for RefHolder<'_, T> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RefHolder: {}", self.reference)
     }

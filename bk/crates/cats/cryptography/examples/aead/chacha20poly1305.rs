@@ -7,7 +7,7 @@
 
 // ANCHOR: example
 // Trait that provides in-place stateless AEAD:
-use chacha20poly1305::AeadInPlace;
+use chacha20poly1305::AeadInPlace as _;
 // Algorithm:
 use chacha20poly1305::ChaCha20Poly1305;
 // Cryptographic key:
@@ -20,14 +20,14 @@ use chacha20poly1305::Nonce;
 // A tag is used to authenticate the ciphertext:
 use chacha20poly1305::Tag;
 // Trait that provides `generate_nonce`:
-use chacha20poly1305::aead::AeadCore;
+use chacha20poly1305::aead::AeadCore as _;
 // Trait that provides `generate_key`, etc:
-use chacha20poly1305::aead::KeyInit;
+use chacha20poly1305::aead::KeyInit as _;
 // A random number generator that retrieves randomness from the operating
 // system:
 use chacha20poly1305::aead::OsRng;
 // Trait for securely erasing values from memory:
-use zeroize::Zeroize;
+use zeroize::Zeroize as _;
 
 // This example demonstrates how to use the ChaCha20Poly1305 AEAD cipher
 // to encrypt and decrypt data, with and without associated data.
@@ -49,7 +49,7 @@ fn encrypt_then_decrypt() {
     // Nonces MUST be unique for each encryption with the same key.
     let mut nonce: Nonce = ChaCha20Poly1305::generate_nonce(&mut OsRng);
 
-    let mut ciphertext = plaintext.to_vec();
+    let mut ciphertext = plaintext.clone();
     let tag: Tag;
 
     // --- Encryption ---
@@ -84,7 +84,7 @@ fn encrypt_then_decrypt() {
         );
 
         match decrypted_result {
-            Ok(_) => {
+            Ok(()) => {
                 println!(
                     "Decrypted plaintext: {}",
                     String::from_utf8_lossy(&decrypted_plaintext)
@@ -114,7 +114,7 @@ fn encrypt_then_decrypt() {
         );
 
         match decrypted_result_bad_tag {
-            Ok(_) => {
+            Ok(()) => {
                 println!(
                     "Decryption with bad tag succeeded (this should not happen!)"
                 );
@@ -145,7 +145,7 @@ fn aad() {
 
     let mut nonce = ChaCha20Poly1305::generate_nonce(&mut OsRng);
 
-    let mut ciphertext_aad = plaintext.to_vec();
+    let mut ciphertext_aad = plaintext.clone();
     let tag_aad = cipher_aad
         .encrypt_in_place_detached(&nonce, aad, &mut ciphertext_aad)
         .unwrap();
@@ -162,7 +162,7 @@ fn aad() {
     );
 
     match decrypted_result_aad {
-        Ok(_) => {
+        Ok(()) => {
             println!(
                 "Decrypted plaintext with AAD: {}",
                 String::from_utf8_lossy(&decrypted_plaintext_aad)

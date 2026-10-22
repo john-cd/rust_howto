@@ -3,7 +3,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-#![allow(dead_code)]
+#![expect(dead_code, reason = "scratch example with unused items")]
 
 // "Base type".
 /// A "base type" that stores the common data of media files.
@@ -54,8 +54,8 @@ impl AsRef<MediaFile> for ImageFile {
 }
 
 // We also need to implement `AsRef` for the "base type":
-impl AsRef<MediaFile> for MediaFile {
-    fn as_ref(&self) -> &MediaFile {
+impl AsRef<Self> for MediaFile {
+    fn as_ref(&self) -> &Self {
         self
     }
 }
@@ -79,14 +79,14 @@ fn main() {
     let photo = ImageFile {
         // Nested struct.
         media: MediaFile {
-            id: "IMG_001".to_string(),
-            filename: "vacation_sunset.jpg".to_string(),
+            id: "IMG_001".to_owned(),
+            filename: "vacation_sunset.jpg".to_owned(),
             file_size_bytes: 2_500_000,
-            tags: vec!["sunset".to_string(), "vacation".to_string()],
+            tags: vec!["sunset".to_owned(), "vacation".to_owned()],
         },
         width: 1920,
         height: 1080,
-        camera_model: Some("Canon EOS R6".to_string()),
+        camera_model: Some("Canon EOS R6".to_owned()),
     };
 
     println!("Printing details for a photo:");
@@ -95,10 +95,10 @@ fn main() {
 
     // We can also pass a bare `MediaFile`:
     let bare_file = MediaFile {
-        id: "TXT_001".to_string(),
-        filename: "notes.txt".to_string(),
+        id: "TXT_001".to_owned(),
+        filename: "notes.txt".to_owned(),
         file_size_bytes: 1024,
-        tags: vec!["document".to_string()],
+        tags: vec!["document".to_owned()],
     };
     println!("Printing details for a bare media file:");
     print_media_details(&bare_file);

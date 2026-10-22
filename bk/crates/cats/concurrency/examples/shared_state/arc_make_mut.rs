@@ -29,8 +29,8 @@ mod cfg {
         pub fn new(
             server_address: String,
             max_connections: u8,
-        ) -> Arc<Configuration> {
-            Arc::new(Configuration {
+        ) -> Arc<Self> {
+            Arc::new(Self {
                 server_address,
                 max_connections,
             })
@@ -57,7 +57,7 @@ mod cfg {
             // then `make_mut` will clone the inner value to a new allocation to
             // ensure unique ownership. This is also referred to as
             // clone-on-write.
-            let mutable_config: &mut Configuration = Arc::make_mut(self);
+            let mutable_config: &mut Self = Arc::make_mut(self);
             mutable_config.server_address = server_address;
             mutable_config.max_connections = max_connections;
             println!("Configuration updated to {mutable_config:?}");
@@ -73,7 +73,7 @@ mod cfg {
 fn main() {
     // Initialize the configuration and wrap it in an `Arc` for shared read
     // access.
-    let mut config = cfg::Configuration::new("localhost:8080".to_string(), 100);
+    let mut config = cfg::Configuration::new("localhost:8080".to_owned(), 100);
 
     // Simulate multiple readers accessing the configuration:
     let mut handles = vec![];
@@ -93,7 +93,7 @@ fn main() {
     // after some time:
     thread::sleep(Duration::from_millis(75));
     println!("\nAdmin task: Updating configuration...");
-    config.update("api.example.com:8443".to_string(), 200);
+    config.update("api.example.com:8443".to_owned(), 200);
 
     // Spawn more readers after the update.
     for i in 3..5 {

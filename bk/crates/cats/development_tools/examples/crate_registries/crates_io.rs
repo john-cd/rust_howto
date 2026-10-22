@@ -36,9 +36,35 @@ fn list_top_dependencies() -> Result<()> {
     let client = get_client()?;
     // Retrieve summary data.
     let summary = client.summary()?;
-    for c in summary.most_downloaded {
+
+    // Fetch dependencies concurrently while retaining the summary's crate
+    // order.
+    let client_ref = &client;
+    let results = std::thread::scope(|scope| -> Result<Vec<_>> {
+        let mut handles = Vec::with_capacity(summary.most_downloaded.len());
+        for crate_info in &summary.most_downloaded {
+            handles.push(scope.spawn(move || {
+                let deps = client_ref.crate_dependencies(
+                    &crate_info.id,
+                    &crate_info.max_version,
+                )?;
+                Ok((crate_info, deps))
+            }));
+        }
+
+        handles
+            .into_iter()
+            .map(|handle| {
+                handle.join().map_err(|_| {
+                    anyhow::anyhow!("crate dependency worker panicked")
+                })?
+            })
+            .collect()
+    })?;
+
+    for (c, deps) in results {
         tracing::info!("{} - {}:", c.id, c.downloads);
-        for dep in client.crate_dependencies(&c.id, &c.max_version)? {
+        for dep in deps {
             // Ignore optional dependencies.
             if !dep.optional {
                 tracing::info!("    * {}", dep.crate_id);

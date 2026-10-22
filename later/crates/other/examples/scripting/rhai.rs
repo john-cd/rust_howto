@@ -41,14 +41,14 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 
     // Define a simple script.
     // Review further examples at <https://github.com/rhaiscript/rhai/tree/main/scripts>.
-    let script = r#"
+    let script = r"
         // Define variables:
         let a = 42;
         let b = 58;
         /* Call the registered function */
         let result = add(a, b);
         result
-    "#;
+    ";
 
     // Evaluate the script (getting a return value).
     match engine.eval::<i64>(script) {

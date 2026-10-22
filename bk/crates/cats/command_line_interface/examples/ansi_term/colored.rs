@@ -4,7 +4,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use colored::Colorize;
+use colored::Colorize as _;
 
 /// Prints text with colors and styles.
 fn main() {

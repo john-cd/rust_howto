@@ -30,7 +30,7 @@ fn main() {
         // Match against all Points with x = 0.
         // The values of `y` and `z` are bound to variables `b` and `c`.
         Point { x: 0, y: b, z: c } => {
-            println!("x: 0, y: {b}, z: {c}")
+            println!("x: 0, y: {b}, z: {c}");
         } // Note the use of a block after `=>`.
 
         // The following pattern matches any `Point` struct not caught earlier.

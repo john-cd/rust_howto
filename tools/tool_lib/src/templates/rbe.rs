@@ -28,7 +28,7 @@ pub fn create_rbe_badge(concept: &str) -> Result<String> {
 
     let tt = super::get_template_engine()?;
     let context = RbeContext {
-        concept: concept.to_string(),
+        concept: concept.to_owned(),
     };
     let rendered = tt.render("RBE", &context)?;
     Ok(rendered)
@@ -40,7 +40,7 @@ mod tests {
 
     #[test]
     fn test_create_rbe_badge_basic() {
-        let rendered = create_rbe_badge("attributes").unwrap();
+        let rendered = create_rbe_badge("attributes").expect("input should parse");
         let expected = "\n[![Rust by example - attributes][book~rust-by-example~attributes~badge]][book~rust-by-example~attributes]\n\n[book~rust-by-example~attributes~badge]: https://img.shields.io/badge/Rust_By_Example-attributes-violet?logo=mdbook\n[book~rust-by-example~attributes]: https://doc.rust-lang.org/rust-by-example/attributes.html\n";
         assert_eq!(rendered, expected);
     }
@@ -48,7 +48,7 @@ mod tests {
     #[test]
     fn test_create_rbe_badge_formatting() {
         // Test concept with hyphens, underscores, and spaces
-        let rendered = create_rbe_badge("hello-world_test example").unwrap();
+        let rendered = create_rbe_badge("hello-world_test example").expect("input should parse");
         assert!(rendered.contains("[![Rust by example - hello-world_test example]"));
         assert!(rendered.contains("book~rust-by-example~hello_world_test example"));
         assert!(rendered.contains("https://img.shields.io/badge/Rust_By_Example-hello--world__test_example-violet?logo=mdbook"));
@@ -61,7 +61,7 @@ mod tests {
 
     #[test]
     fn test_create_rbe_badge_empty() {
-        let rendered = create_rbe_badge("").unwrap();
+        let rendered = create_rbe_badge("").expect("input should parse");
         let expected = "\n[![Rust by example - ][book~rust-by-example~~badge]][book~rust-by-example~]\n\n[book~rust-by-example~~badge]: https://img.shields.io/badge/Rust_By_Example--violet?logo=mdbook\n[book~rust-by-example~]: https://doc.rust-lang.org/rust-by-example/.html\n";
         assert_eq!(rendered, expected);
     }

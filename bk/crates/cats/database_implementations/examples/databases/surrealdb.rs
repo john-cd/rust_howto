@@ -29,13 +29,13 @@ struct Person {
     age: u16,
 }
 
-/// SurrealDB is a scalable, distributed, collaborative,
+/// `SurrealDB` is a scalable, distributed, collaborative,
 /// document-graph database for the realtime web.
 ///
 /// The `surrealdb` crate can be used to start an embedded in-memory
 /// datastore, an embedded datastore persisted to disk,
-/// a browser-based embedded datastore backed by IndexedDB,
-/// or for connecting to a distributed TiKV key-value store.
+/// a browser-based embedded datastore backed by `IndexedDB`,
+/// or for connecting to a distributed `TiKV` key-value store.
 ///
 /// Add `surrealdb = { version = "2.1.4", features = [ "kv-mem" ] }`
 /// to `Cargo.toml` for an in-memory datastore.
@@ -56,7 +56,7 @@ async fn main() -> Result<()> {
     let created: Option<Person> = db
         .create(("person", "John Doe"))
         .content(Person {
-            name: "J. Doe".to_string(),
+            name: "J. Doe".to_owned(),
             age: 42,
         })
         .await?;
@@ -85,7 +85,7 @@ async fn main() -> Result<()> {
         // Assumes that the name is unique for simplicity. In real applications,
         // use a proper ID.
         .content(Person {
-            name: "J. Doe".to_string(),
+            name: "J. Doe".to_owned(),
             age: 43,
         })
         .await?;

@@ -17,9 +17,9 @@ fn parse_list(input: &mut &str) -> ModalResult<Vec<i32>> {
 fn main() -> anyhow::Result<()> {
     let mut input = "1,2,3,4,5";
     let result = parse_list(&mut input)
-        .map_err(|e| anyhow::anyhow!("Parsing failed: {:?}", e))?;
+        .map_err(|e| anyhow::anyhow!("Parsing failed: {e:?}"))?;
 
-    println!("Parsed numbers: {:?}", result);
+    println!("Parsed numbers: {result:?}");
     assert_eq!(result, vec![1, 2, 3, 4, 5]);
 
     Ok(())

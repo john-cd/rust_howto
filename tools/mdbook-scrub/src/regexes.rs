@@ -4,7 +4,7 @@
 
 use std::ops::Range;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use parse_lib::ast::CodeSpanData;
 use parse_lib::ast::FencedCodeBlockData;
 use parse_lib::ast::HtmlCommentData;
@@ -15,25 +15,26 @@ use regex::Regex;
 
 use super::conf::PreprocConfig;
 
-/// The regular expressions of the scrub stage.
+/// Compiled patterns used to remove hidden content and includes.
 #[derive(Default)]
-pub struct ScrubRegexes {
-    /// Matches hidden sections.
+pub(crate) struct ScrubRegexes {
+    /// Pattern for HTML sections marked as hidden, when enabled.
     pub hidden_sections: Option<Regex>,
-    /// Matches includes of hidden chapters.
+    /// Pattern for includes whose paths begin with the configured hidden prefix.
     pub hidden_includes: Option<Regex>,
 }
 
 /// Generate the regexes used to remove hidden content and hidden file includes.
-pub fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
+pub(crate) fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
     let hidden_sections = conf.remove_hidden_sections.then(|| {
         Regex::new(r#"<div *class *= *"hidden">([^<]|<[^/])+</ *div *>"#)
             .expect("Invalid hidden-section regex")
     });
     let hidden_includes = conf.do_not_include_hidden_chapters.then(|| {
-        let re_string = r"[{]{2} *#(include|rustdoc_include|playground) *".to_string()
-            + &conf.hidden_chapter_prefix
-            + r"[^}]*?[}]{2}";
+        let hidden_chapter_prefix = regex::escape(&conf.hidden_chapter_prefix);
+        let re_string = "[{]{2} *#(include|rustdoc_include|playground) *".to_owned()
+            + &hidden_chapter_prefix
+            + "[^}]*?[}]{2}";
         Regex::new(&re_string).expect("Invalid hidden-chapter regex")
     });
 
@@ -43,13 +44,13 @@ pub fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
     }
 }
 
-/// Returns the regular expression that matches wikilinks.
-pub fn wikilink_regex() -> Regex {
-    Regex::new(r#"\[\[ *[^|\]]*?(?:\| *([^\]]+)?)?\]\]"#).expect("Invalid wikilink regex")
+/// Builds the pattern used to recognize mdBook wikilinks.
+pub(crate) fn wikilink_regex() -> Regex {
+    Regex::new(r"\[\[ *[^|\]]*?(?:\| *([^\]]+)?)?\]\]").expect("Invalid wikilink regex")
 }
 
 /// Apply a replacement outside code spans, fenced code blocks and HTML comments.
-pub fn replace_outside_protected_spans<F>(
+pub(crate) fn replace_outside_protected_spans<F>(
     markdown: &str,
     regex: &Regex,
     replacement: F,
@@ -60,7 +61,7 @@ where
     let document = parse_document("<in-memory Markdown>", None, markdown)
         .context("Failed to parse Markdown while cleaning residual directives")?;
     let mut collector = ProtectedSpanCollector {
-        source_base: markdown.as_ptr() as usize,
+        source_base: markdown.as_ptr().addr(),
         source_len: markdown.len(),
         spans: Vec::new(),
     };
@@ -89,21 +90,20 @@ where
     Ok(output)
 }
 
-/// Collects the byte ranges of code spans, fenced code blocks and HTML
-/// comments.
+/// Collects byte ranges occupied by Markdown constructs where replacements are skipped.
 struct ProtectedSpanCollector {
-    /// Address of the start of the Markdown source.
+    /// Address of the source buffer's first byte.
     source_base: usize,
-    /// Length of the Markdown source.
+    /// Length of the source buffer in bytes.
     source_len: usize,
-    /// The byte ranges that must not be modified.
+    /// Protected ranges measured from the start of the source buffer.
     spans: Vec<Range<usize>>,
 }
 
 impl ProtectedSpanCollector {
-    /// Records the range of `text`, a slice of the source.
+    /// Adds the source range for a protected Markdown span when it belongs to the input buffer.
     fn add_span(&mut self, text: &str) {
-        let Some(start) = (text.as_ptr() as usize).checked_sub(self.source_base) else {
+        let Some(start) = text.as_ptr().addr().checked_sub(self.source_base) else {
             return;
         };
         let Some(end) = start.checked_add(text.len()) else {
@@ -137,7 +137,60 @@ impl<'a> Visitor<'a> for ProtectedSpanCollector {
 mod tests {
     use super::*;
 
-    /// Checks that code and comments are left untouched.
+    /// Verifies that the default configuration builds both hidden-content patterns.
+    #[test]
+    fn test_get_regexes_default_config() {
+        let conf = PreprocConfig::default();
+        let regexes = get_regexes(&conf);
+
+        let hidden_sections = regexes
+            .hidden_sections
+            .expect("hidden_sections regex should be created by default");
+        assert!(hidden_sections.is_match(r#"<div class="hidden">secret text</div>"#));
+        assert!(hidden_sections.is_match(r#"<div class = "hidden">secret text</div>"#));
+
+        let hidden_includes = regexes
+            .hidden_includes
+            .expect("hidden_includes regex should be created by default");
+        assert!(hidden_includes.is_match("{{#include _hidden.rs}}"));
+        assert!(hidden_includes.is_match("{{#rustdoc_include _hidden.rs:anchor}}"));
+        assert!(hidden_includes.is_match("{{#playground _hidden.rs}}"));
+        assert!(!hidden_includes.is_match("{{#include public.rs}}"));
+    }
+
+    /// Verifies that disabling both hidden-content options omits their patterns.
+    #[test]
+    fn test_get_regexes_disabled() {
+        let conf = PreprocConfig {
+            remove_hidden_sections: false,
+            do_not_include_hidden_chapters: false,
+            hidden_chapter_prefix: "_".into(),
+        };
+        let regexes = get_regexes(&conf);
+
+        assert!(regexes.hidden_sections.is_none());
+        assert!(regexes.hidden_includes.is_none());
+    }
+
+    /// Verifies that the configured chapter prefix controls hidden include matches.
+    #[test]
+    fn test_get_regexes_custom_prefix() {
+        let conf = PreprocConfig {
+            remove_hidden_sections: true,
+            do_not_include_hidden_chapters: true,
+            hidden_chapter_prefix: "draft.".into(),
+        };
+        let regexes = get_regexes(&conf);
+
+        let hidden_includes = regexes
+            .hidden_includes
+            .expect("the configured include pattern should be created");
+        assert!(hidden_includes.is_match("{{#include draft.chapter.md}}"));
+        assert!(!hidden_includes.is_match("{{#include draftXchapter.md}}"));
+        assert!(!hidden_includes.is_match("{{#include _hidden_chapter.md}}"));
+    }
+
+    /// Verifies that cleanup leaves wikilinks inside code and HTML comments unchanged.
     #[test]
     fn replacement_skips_code_and_html_comments() {
         let source = concat!(
@@ -146,8 +199,9 @@ mod tests {
             "```rust\n[[hidden-fenced]]\n```\n\n",
             "<!-- [[hidden-comment]] -->\n"
         );
-        let regex = Regex::new(r"\[\[hidden[^]]*\]\]").unwrap();
-        let result = replace_outside_protected_spans(source, &regex, |_| String::new()).unwrap();
+        let regex = Regex::new(r"\[\[hidden[^]]*\]\]").expect("input should parse");
+        let result = replace_outside_protected_spans(source, &regex, |_| String::new())
+            .expect("the Markdown fragment should parse");
 
         assert!(!result.contains("[[hidden]]"));
         assert!(result.contains("`[[hidden-inline]]`"));
@@ -155,7 +209,7 @@ mod tests {
         assert!(result.contains("[[hidden-comment]]"));
     }
 
-    /// Checks that the title of a wikilink is kept.
+    /// Verifies that legacy wikilink cleanup keeps the displayed title.
     #[test]
     fn legacy_wikilink_cleanup_keeps_its_title() {
         let regex = wikilink_regex();
@@ -163,9 +217,9 @@ mod tests {
             captures
                 .get(1)
                 .map_or("", |matched| matched.as_str().trim())
-                .to_string()
+                .to_owned()
         })
-        .unwrap();
+        .expect("the Markdown fragment should parse");
 
         assert_eq!(result, "title");
     }

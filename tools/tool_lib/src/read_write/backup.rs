@@ -4,7 +4,7 @@
 
 use std::fs;
 use std::fs::File;
-use std::io::Write;
+use std::io::Write as _;
 use std::path::Path;
 use std::path::PathBuf;
 
@@ -43,7 +43,7 @@ pub(crate) fn backup<P: AsRef<Path>>(filepath: P) -> Result<()> {
 #[cfg(test)]
 mod tests {
     use std::fs;
-    use std::io::Read;
+    use std::io::Read as _;
 
     use tempfile::tempdir;
 
@@ -159,7 +159,7 @@ mod tests {
         fs::write(&file_path, initial_content)?;
 
         // Perform backup and write
-        backup_then_write_to(&file_path, new_content.to_string())?;
+        backup_then_write_to(&file_path, new_content.to_owned())?;
 
         // Assertions
         assert!(file_path.exists(), "Original file should still exist");
@@ -189,7 +189,7 @@ mod tests {
         let new_content = "Content for a new file.";
 
         // Perform backup and write on non-existent file
-        backup_then_write_to(&file_path, new_content.to_string())?;
+        backup_then_write_to(&file_path, new_content.to_owned())?;
 
         // Assertions
         assert!(file_path.exists(), "New file should have been created");
@@ -222,7 +222,7 @@ mod tests {
         fs::write(&backup_path, old_backup_content)?;
 
         // Perform backup and write
-        backup_then_write_to(&file_path, new_content.to_string())?;
+        backup_then_write_to(&file_path, new_content.to_owned())?;
 
         // Assertions
         assert!(file_path.exists(), "Original file should still exist");

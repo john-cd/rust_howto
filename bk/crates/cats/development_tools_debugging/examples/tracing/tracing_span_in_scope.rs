@@ -13,7 +13,7 @@
 
 // Extension trait allowing futures to be instrumented with a tracing span,
 // via `instrument(...)`:
-use tracing::Instrument;
+use tracing::Instrument as _;
 use tracing::debug_span;
 use tracing::info;
 use tracing::info_span;

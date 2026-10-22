@@ -46,7 +46,7 @@ fn main() {
     // provided by `iter_mut()`.
     // Note that the vector has to be `mut`.
     let mut vec4 = vec![4, 5, 6];
-    for x in vec4.iter_mut() {
+    for x in &mut vec4 {
         *x *= 2;
     }
     println!("The modified vector is: {vec4:?}");

@@ -15,7 +15,7 @@
 use strum::Display;
 use strum::EnumIter;
 use strum::EnumString;
-use strum::IntoEnumIterator; // Import the trait to use .iter().
+use strum::IntoEnumIterator as _; // Import the trait to use .iter().
 
 // We derive a few `strum` traits in addition to standard `Debug` and
 // `PartialEq`:
@@ -63,7 +63,7 @@ fn main() {
             "Parsed '{input_string_invalid}' successfully: {direction:?}.",
         ),
         Err(e) => {
-            println!("Failed to parse '{input_string_invalid}': {e}.")
+            println!("Failed to parse '{input_string_invalid}': {e}.");
         }
     }
 

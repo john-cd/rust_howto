@@ -16,9 +16,9 @@ use regex::Regex;
 /// A published recipe link associated with a crate.
 #[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub struct RecipeLink {
-    /// Title of the recipe.
+    /// The title of the recipe.
     pub title: String,
-    /// Reference to the recipe, as used in a link.
+    /// The reference (link target) of the recipe.
     pub reference: String,
 }
 
@@ -44,7 +44,7 @@ pub fn collect_published_recipe_links(book_root: impl AsRef<Path>) -> Result<Rec
     let crate_directive_pattern = Regex::new(r"\{\{\s*#crate\s*:?\s+(?P<name>[^\s}]+)[^}]*\}\}")?;
     let reference_pattern = Regex::new(r"(?m)^\s*\[(ex~[^\]]+)\]:\s*\S+")?;
 
-    let mut pending = vec![examples_index.clone()];
+    let mut pending = vec![examples_index];
     let mut visited = BTreeSet::<PathBuf>::new();
     let mut recipes = BTreeMap::<String, BTreeSet<RecipeLink>>::new();
 
@@ -143,17 +143,17 @@ mod tests {
 
     #[test]
     fn collect_published_recipe_links_deduplicates_and_maps_multiple_crates() {
-        let directory = tempdir().unwrap();
+        let directory = tempdir().expect("input should parse");
         let source = directory.path().join("src");
         let indices = source.join("indices");
         let recipes = source.join("recipes");
-        fs::create_dir_all(&indices).unwrap();
-        fs::create_dir_all(&recipes).unwrap();
+        fs::create_dir_all(&indices).expect("input should parse");
+        fs::create_dir_all(&recipes).expect("input should parse");
         fs::write(
             indices.join("examples_index.md"),
             "{{#include ../recipes/recipes.incl.md}}\n{{#include refs.incl.md}}\n",
         )
-        .unwrap();
+        .expect("input should parse");
         fs::write(
             recipes.join("recipes.incl.md"),
             concat!(
@@ -165,7 +165,7 @@ mod tests {
                 "| [Directive recipe][ex~sample~three] | {{#crate crate-c testing}} {{#categories testing=Testing}} |\n"
             ),
         )
-        .unwrap();
+        .expect("input should parse");
         fs::write(
             indices.join("refs.incl.md"),
             concat!(
@@ -174,9 +174,9 @@ mod tests {
                 "[ex~sample~three]: ../recipes/recipes.md#three\n"
             ),
         )
-        .unwrap();
+        .expect("input should parse");
 
-        let recipes = collect_published_recipe_links(directory.path()).unwrap();
+        let recipes = collect_published_recipe_links(directory.path()).expect("input should parse");
 
         assert_eq!(recipes["crate-a"].len(), 2);
         assert_eq!(recipes["crate-b"].len(), 1);
@@ -188,19 +188,20 @@ mod tests {
 
     #[test]
     fn collect_published_recipe_links_rejects_includes_outside_book_source() {
-        let directory = tempdir().unwrap();
+        let directory = tempdir().expect("input should parse");
         let source = directory.path().join("src");
         let indices = source.join("indices");
-        fs::create_dir_all(&indices).unwrap();
+        fs::create_dir_all(&indices).expect("input should parse");
         fs::write(
             indices.join("examples_index.md"),
             "{{#include ../../outside.md}}\n",
         )
-        .unwrap();
-        fs::write(directory.path().join("outside.md"), "outside").unwrap();
-        fs::write(indices.join("refs.incl.md"), "").unwrap();
+        .expect("input should parse");
+        fs::write(directory.path().join("outside.md"), "outside").expect("input should parse");
+        fs::write(indices.join("refs.incl.md"), "").expect("input should parse");
 
-        let error = collect_published_recipe_links(directory.path()).unwrap_err();
+        let error =
+            collect_published_recipe_links(directory.path()).expect_err("input should be rejected");
 
         assert!(format!("{error:#}").contains("escapes the book source"));
     }

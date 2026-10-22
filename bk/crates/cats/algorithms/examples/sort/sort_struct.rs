@@ -17,16 +17,16 @@ struct Person {
 impl Person {
     /// Constructor for creating a new `Person` instance.
     pub fn new(name: String, age: u32) -> Self {
-        Person { name, age }
+        Self { name, age }
     }
 }
 
 /// Sorts a vector of `Person`s in several ways and prints the results.
 fn main() {
     let mut people = vec![
-        Person::new("Zoe".to_string(), 25),
-        Person::new("Al".to_string(), 60),
-        Person::new("John".to_string(), 1),
+        Person::new("Zoe".to_owned(), 25),
+        Person::new("Al".to_owned(), 60),
+        Person::new("John".to_owned(), 1),
     ];
 
     // Sort people by derived natural order (in this case, name and age):
@@ -35,9 +35,9 @@ fn main() {
     assert_eq!(
         people,
         vec![
-            Person::new("Al".to_string(), 60),
-            Person::new("John".to_string(), 1),
-            Person::new("Zoe".to_string(), 25),
+            Person::new("Al".to_owned(), 60),
+            Person::new("John".to_owned(), 1),
+            Person::new("Zoe".to_owned(), 25),
         ]
     );
     println!("{people:?}");
@@ -48,9 +48,9 @@ fn main() {
     assert_eq!(
         people,
         vec![
-            Person::new("Al".to_string(), 60),
-            Person::new("Zoe".to_string(), 25),
-            Person::new("John".to_string(), 1),
+            Person::new("Al".to_owned(), 60),
+            Person::new("Zoe".to_owned(), 25),
+            Person::new("John".to_owned(), 1),
         ]
     );
 

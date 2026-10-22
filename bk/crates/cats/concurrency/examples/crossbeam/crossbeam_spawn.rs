@@ -22,7 +22,7 @@ fn find_max(arr: &[i32]) -> Option<i32> {
 
     // If the array is small enough, find the maximum sequentially.
     if arr.len() <= THRESHOLD {
-        return arr.iter().cloned().max();
+        return arr.iter().copied().max();
     }
 
     // Split the array into two halves.

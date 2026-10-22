@@ -67,7 +67,7 @@ impl SomeBehavior for MyStruct {
 
     // Implement the associated function:
     fn assoc_func() -> Self::Output {
-        "Associated function output".to_string()
+        "Associated function output".to_owned()
     }
 }
 
@@ -75,7 +75,7 @@ impl SomeBehavior for MyStruct {
 fn main() {
     let m = MyStruct {
         data: 42,
-        name: "Alice".to_string(),
+        name: "Alice".to_owned(),
     };
     // Use the `.` operator to call a method on a type that implements it:
     println!("{}", m.do_something());

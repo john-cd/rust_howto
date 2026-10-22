@@ -8,12 +8,10 @@ use std::env;
 use std::sync::Mutex;
 
 use dotenvy::dotenv;
-use once_cell::sync::Lazy;
 use oracle::Connection;
 use oracle::Error;
 
-/// Serializes the tests, which change the environment variables.
-static ENV_MUTEX: Lazy<Mutex<()>> = Lazy::new(|| Mutex::new(()));
+static ENV_MUTEX: std::sync::LazyLock<Mutex<()>> = std::sync::LazyLock::new(|| Mutex::new(()));
 
 // ANCHOR: example
 /// Rust bindings to ODPI-C.
@@ -22,9 +20,9 @@ static ENV_MUTEX: Lazy<Mutex<()>> = Lazy::new(|| Mutex::new(()));
 /// execute a query, and iterate over the results.
 ///
 /// Add to your `.env` file:
-/// ORACLE_DB_USERNAME=your_username
-/// ORACLE_DB_PASSWORD=your_password
-/// ORACLE_DB_URL=your_db_host:port/your_service_name
+/// `ORACLE_DB_USERNAME=your_username`
+/// `ORACLE_DB_PASSWORD=your_password`
+/// `ORACLE_DB_URL=your_db_host:port/your_service_name`
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     // Load environment variables from a .env file (for secure handling of

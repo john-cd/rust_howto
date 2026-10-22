@@ -23,7 +23,7 @@ use url::Url;
 /// document itself, up to the path component.
 async fn get_base_url(url: &Url, doc: &Document) -> Result<Url> {
     let base_tag_href =
-        doc.find(Name("base")).filter_map(|n| n.attr("href")).next();
+        doc.find(Name("base")).find_map(|n| n.attr("href"));
     let base_url = base_tag_href
         .map_or_else(|| Url::parse(&url[..Position::BeforePath]), Url::parse)?;
     Ok(base_url)
@@ -65,7 +65,7 @@ async fn main() -> Result<()> {
     }
 
     for task in tasks {
-        task.await?
+        task.await?;
     }
 
     Ok(())

@@ -33,7 +33,7 @@
 
 /// This function greets the user with a personalized message.
 pub fn hello_from_rust(name: &str) -> String {
-    format!("Hello, {}! This is Rust speaking.", name)
+    format!("Hello, {name}! This is Rust speaking.")
 }
 
 /// Does nothing yet; the function above is called from Flutter.

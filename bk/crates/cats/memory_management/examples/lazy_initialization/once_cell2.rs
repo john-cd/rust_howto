@@ -8,15 +8,14 @@
 use std::collections::HashMap;
 use std::sync::Mutex;
 
-use once_cell::sync::Lazy;
 
 /// A global, lazily initialized `HashMap` wrapped in a `Mutex`.
 ///
 /// Must be `static`, not `const`.
-static GLOBAL_DATA: Lazy<Mutex<HashMap<i32, String>>> = Lazy::new(|| {
+static GLOBAL_DATA: std::sync::LazyLock<Mutex<HashMap<i32, String>>> = std::sync::LazyLock::new(|| {
     let mut m = HashMap::new();
-    m.insert(13, "Spica".to_string());
-    m.insert(74, "Hoyten".to_string());
+    m.insert(13, "Spica".to_owned());
+    m.insert(74, "Hoyten".to_owned());
     Mutex::new(m)
 });
 

@@ -5,7 +5,7 @@
 use serde::Serialize;
 
 /// Represents a category.
-#[derive(Eq, PartialEq, PartialOrd, Ord, Hash, Serialize, Debug)]
+#[derive(Clone, Eq, PartialEq, PartialOrd, Ord, Hash, Serialize, Debug)]
 pub struct Category {
     /// The name of the category.
     pub category: String,

@@ -26,7 +26,7 @@ mod my {
 /// Calls the blanket implementation on a string.
 fn main() {
     // Don't forget to bring the trait in scope:
-    use my::VeryUsefulTrait;
+    use my::VeryUsefulTrait as _;
 
     let s = String::from("Hello, world!");
 

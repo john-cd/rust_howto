@@ -49,3 +49,6 @@ test = true
 name = "url"
 path = "examples/url/main.rs"
 test = true
+
+[lints]
+workspace = true

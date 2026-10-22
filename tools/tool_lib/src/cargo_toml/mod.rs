@@ -20,7 +20,7 @@ pub fn get_dependencies<P: AsRef<Path>>(root: P) -> Result<Vec<String>> {
 
     let root = root.as_ref();
     debug!("Searching for Cargo.toml manifests in {}", root.display());
-    for entry in WalkDir::new(root).into_iter() {
+    for entry in WalkDir::new(root) {
         let entry = entry?;
         if entry.file_name() == "Cargo.toml" {
             let path = entry.path();
@@ -97,13 +97,10 @@ mod tests {
     fn test_extract_simple() {
         let mut deps = DepsSet::new();
         deps.insert(
-            "simple_dep".to_string(),
-            Dependency::Simple("1.0".to_string()),
+            "simple_dep".to_owned(),
+            Dependency::Simple("1.0".to_owned()),
         );
-        deps.insert(
-            "another_dep".to_string(),
-            Dependency::Simple("*".to_string()),
-        );
+        deps.insert("another_dep".to_owned(), Dependency::Simple("*".to_owned()));
 
         let mut names = extract_crate_names(&deps);
         names.sort(); // Sort for consistent assertion
@@ -114,7 +111,7 @@ mod tests {
     fn test_extract_inherited() {
         let mut deps = DepsSet::new();
         deps.insert(
-            "inherited_dep".to_string(),
+            "inherited_dep".to_owned(),
             Dependency::Inherited(InheritedDependencyDetail {
                 workspace: true,
                 ..Default::default()
@@ -129,9 +126,9 @@ mod tests {
     fn test_extract_detailed_no_package() {
         let mut deps = DepsSet::new();
         deps.insert(
-            "detailed_dep".to_string(),
+            "detailed_dep".to_owned(),
             Dependency::Detailed(Box::new(DependencyDetail {
-                version: Some("1.0".to_string()),
+                version: Some("1.0".to_owned()),
                 package: None, // No explicit package name.
                 ..Default::default()
             })),
@@ -145,10 +142,10 @@ mod tests {
     fn test_extract_detailed_with_package() {
         let mut deps = DepsSet::new();
         deps.insert(
-            "alias_dep".to_string(), // This is the alias.
+            "alias_dep".to_owned(), // This is the alias.
             Dependency::Detailed(Box::new(DependencyDetail {
-                version: Some("1.0".to_string()),
-                package: Some("real_crate_name".to_string()), // Explicit package name.
+                version: Some("1.0".to_owned()),
+                package: Some("real_crate_name".to_owned()), // Explicit package name.
                 ..Default::default()
             })),
         );
@@ -161,25 +158,25 @@ mod tests {
     #[test]
     fn test_extract_mixed() {
         let mut deps = DepsSet::new();
-        deps.insert("simple".to_string(), Dependency::Simple("1.0".to_string()));
+        deps.insert("simple".to_owned(), Dependency::Simple("1.0".to_owned()));
         deps.insert(
-            "inherited".to_string(),
+            "inherited".to_owned(),
             Dependency::Inherited(InheritedDependencyDetail {
                 workspace: true,
                 ..Default::default()
             }),
         );
         deps.insert(
-            "detailed".to_string(),
+            "detailed".to_owned(),
             Dependency::Detailed(Box::new(DependencyDetail {
-                version: Some("1.0".to_string()),
+                version: Some("1.0".to_owned()),
                 ..Default::default()
             })),
         );
         deps.insert(
-            "aliased".to_string(),
+            "aliased".to_owned(),
             Dependency::Detailed(Box::new(DependencyDetail {
-                package: Some("real_name".to_string()),
+                package: Some("real_name".to_owned()),
                 ..Default::default()
             })),
         );
@@ -382,8 +379,8 @@ mod tests {
         )?;
 
         let result = get_dependencies(dir.path());
-        assert!(result.is_err());
-        // assert!(result.unwrap_err().to_string().contains("..."));
+        result.expect_err("input should be rejected");
+        // assert!(result.expect_err("input should be rejected").to_string().contains("..."));
         Ok(())
     }
 }

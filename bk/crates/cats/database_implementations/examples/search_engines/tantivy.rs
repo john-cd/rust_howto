@@ -12,7 +12,7 @@ use tantivy::query::QueryParser;
 use tantivy::schema::STORED;
 use tantivy::schema::Schema;
 use tantivy::schema::TEXT;
-use tantivy::schema::document::Document;
+use tantivy::schema::document::Document as _;
 
 /// Creates an in-memory index, adds documents to it and searches it.
 fn main() -> tantivy::Result<()> {

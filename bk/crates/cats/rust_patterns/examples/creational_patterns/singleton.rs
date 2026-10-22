@@ -17,7 +17,7 @@ struct Settings {
 impl Settings {
     /// Creates settings with the given configuration value.
     fn new(value: String) -> Self {
-        Settings {
+        Self {
             config_value: value,
         }
     }
@@ -46,7 +46,7 @@ static SETTINGS: OnceLock<Mutex<Settings>> = OnceLock::new();
 fn get_settings() -> &'static Mutex<Settings> {
     // If SETTINGS hasn't been initialized yet, execute the closure.
     SETTINGS
-        .get_or_init(|| Mutex::new(Settings::new("default_config".to_string())))
+        .get_or_init(|| Mutex::new(Settings::new("default_config".to_owned())))
 }
 
 /// Reads and updates the settings through the singleton.
@@ -62,7 +62,7 @@ fn main() {
     {
         let mut settings_guard_2 = get_settings().lock().unwrap();
         // The `MutexGuard` provides mutable access.
-        settings_guard_2.set_config("new_config".to_string());
+        settings_guard_2.set_config("new_config".to_owned());
         println!("Config 2 updated!");
     } // Lock released here.
 

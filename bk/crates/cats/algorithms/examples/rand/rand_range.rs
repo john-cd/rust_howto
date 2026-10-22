@@ -5,7 +5,7 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
-use rand::RngExt;
+use rand::RngExt as _;
 
 /// Demonstrates generating random numbers within a specified range.
 fn main() {

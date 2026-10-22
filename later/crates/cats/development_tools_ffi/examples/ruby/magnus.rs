@@ -8,7 +8,7 @@
 use magnus::Error;
 use magnus::RString;
 use magnus::class;
-use magnus::value::ReprValue;
+use magnus::value::ReprValue as _;
 
 /// Simple function to be called from Ruby.
 fn hello_rust() -> String {

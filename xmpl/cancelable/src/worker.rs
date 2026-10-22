@@ -47,11 +47,14 @@ impl Worker {
         let (s_task, r_task) = channel::bounded::<Task>(MAX_QUEUED_TASKS);
         let (s_die, r_die) = channel::bounded::<Die>(1);
         let cancel_source = CancelTokenSource::new();
+        #[expect(
+            clippy::disallowed_methods,
+            reason = "responses are produced one per submitted task, which is itself bounded"
+        )]
         let (s_taskresponse, r_taskresponse) = channel::unbounded::<TaskResponse>();
 
         let thread = {
             let cancel_source = cancel_source.clone();
-            let s_taskresponse = s_taskresponse.clone();
             thread::spawn(move || {
                 loop {
                     select! {

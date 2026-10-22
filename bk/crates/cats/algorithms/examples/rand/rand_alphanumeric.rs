@@ -5,9 +5,9 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
-use rand::RngExt;
+use rand::RngExt as _;
 use rand::distr::Alphanumeric;
-use rand::distr::SampleString;
+use rand::distr::SampleString as _;
 
 /// Generate a random string of 20 alphanumeric characters.
 fn main() {

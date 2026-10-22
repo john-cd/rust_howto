@@ -21,7 +21,7 @@ struct User {
     email: String,
 }
 
-/// Define the UserRepository trait, the contract for a user repository.
+/// Define the `UserRepository` trait, the contract for a user repository.
 /// This trait outlines the operations that can be performed on a collection of
 /// users, such as retrieving, adding, updating, deleting, and listing users.
 trait UserRepository {
@@ -53,13 +53,13 @@ struct InMemoryUserRepository {
 impl InMemoryUserRepository {
     /// Creates an empty repository.
     fn new() -> Self {
-        InMemoryUserRepository {
+        Self {
             users: Arc::new(Mutex::new(HashMap::new())),
         }
     }
 }
 
-/// Implementation of the UserRepository trait for InMemoryUserRepository.
+/// Implementation of the `UserRepository` trait for `InMemoryUserRepository`.
 impl UserRepository for InMemoryUserRepository {
     fn get_user(&self, id: i32) -> Option<User> {
         let users = self.users.lock().unwrap();
@@ -97,13 +97,13 @@ fn main() {
 
     let user1 = User {
         id: 1,
-        name: "Alice".to_string(),
-        email: "alice@example.com".to_string(),
+        name: "Alice".to_owned(),
+        email: "alice@example.com".to_owned(),
     };
     let user2 = User {
         id: 2,
-        name: "Bob".to_string(),
-        email: "bob@example.com".to_string(),
+        name: "Bob".to_owned(),
+        email: "bob@example.com".to_owned(),
     };
 
     {
@@ -122,10 +122,10 @@ fn main() {
 
         let updated_user = User {
             id: 1,
-            name: "Alice Updated".to_string(),
-            email: "alice_updated@example.com".to_string(),
+            name: "Alice Updated".to_owned(),
+            email: "alice_updated@example.com".to_owned(),
         };
-        repo.update_user(updated_user.clone());
+        repo.update_user(updated_user);
 
         let retrieved_updated_user = repo.get_user(1);
         println!("Retrieved updated user: {retrieved_updated_user:?}");

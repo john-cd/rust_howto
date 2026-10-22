@@ -41,7 +41,7 @@ fn main() -> anyhow::Result<()> {
                 json5::run();
             }
             Commands::SerdeJson => {
-                serde_json::run().map_err(|e| anyhow::anyhow!("{}", e))?;
+                serde_json::run().map_err(|e| anyhow::anyhow!("{e}"))?;
             }
             Commands::SimdJson => {
                 simd_json::run();

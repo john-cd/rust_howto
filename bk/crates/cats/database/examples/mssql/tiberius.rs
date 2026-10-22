@@ -8,13 +8,13 @@
 // ANCHOR: example
 // This example demonstrates connecting to and querying Microsoft SQL Server
 // using the `tiberius` crate.
-use futures::stream::TryStreamExt;
+use futures::stream::TryStreamExt as _;
 use tiberius::AuthMethod;
 use tiberius::Client;
 use tiberius::Config;
 use tiberius::QueryItem;
 use tiberius::QueryStream;
-use tokio_util::compat::TokioAsyncWriteCompatExt;
+use tokio_util::compat::TokioAsyncWriteCompatExt as _;
 
 // Example of connecting to a Microsoft SQL Server database using the `tiberius`
 // crate.

@@ -82,3 +82,6 @@ test = true
 name = "unicode"
 path = "examples/unicode/main.rs"
 test = true
+
+[lints]
+workspace = true

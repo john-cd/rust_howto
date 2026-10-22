@@ -105,8 +105,8 @@ impl UserRepository for ActualRepository {
         // example, we'll just return a dummy user if the ID is 1.
         (id == 1).then(|| User {
             id,
-            name: "John Doe".to_string(),
-            email: "john@example.com".to_string(),
+            name: "John Doe".to_owned(),
+            email: "john@example.com".to_owned(),
         })
     }
 
@@ -120,7 +120,7 @@ impl UserRepository for ActualRepository {
 fn main() {
     let service = UserService::new(ActualRepository);
     let updated = service
-        .update_user_email(1, "updated@example.com".to_string())
+        .update_user_email(1, "updated@example.com".to_owned())
         .expect("Repository should return a user");
 
     println!("Updated user from main(): {updated:?}");
@@ -151,8 +151,8 @@ mod tests {
                 // What it should return
                 Some(User {
                     id: 1,
-                    name: "John Doe".to_string(),
-                    email: "john@example.com".to_string(),
+                    name: "John Doe".to_owned(),
+                    email: "john@example.com".to_owned(),
                 })
             });
 
@@ -215,8 +215,8 @@ mod tests {
             .returning(|_| {
                 Some(User {
                     id: 1,
-                    name: "John Doe".to_string(),
-                    email: "john@example.com".to_string(),
+                    name: "John Doe".to_owned(),
+                    email: "john@example.com".to_owned(),
                 })
             });
 
@@ -238,7 +238,7 @@ mod tests {
 
         // Call the method we want to test.
         let result =
-            service.update_user_email(1, "newemail@example.com".to_string());
+            service.update_user_email(1, "newemail@example.com".to_owned());
 
         // Assert the result.
         assert!(result.is_ok());

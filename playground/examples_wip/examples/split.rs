@@ -1,9 +1,4 @@
-//! Splitting a path into its directory, file name and extension.
-//!
-//! TODO Reviewed ??-??-2026
-
-#![allow(dead_code)]
-
+// TODO Reviewed ??-??-2026
 // ANCHOR: example
 // Indices of / in the path
 /// Splits `path` into a directory, a file name and an extension.
@@ -13,7 +8,7 @@ fn split_path(path: &str) -> (&str, &str, &str) {
     let mut third = "";
     let mut splits = path
         .char_indices()
-        .filter_map(|(i, c)| if c == '/' { Some(i) } else { None });
+        .filter_map(|(i, c)| (c == '/').then_some(i));
 
     if let Some(first_index) = splits.next() {
         first = &path[0..first_index];

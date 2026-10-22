@@ -86,7 +86,7 @@ fn main() -> anyhow::Result<()> {
             }
             #[cfg(target_os = "linux")]
             Commands::Syslog => {
-                log_syslog::run();
+                log_syslog::run().expect("the example should run");
             }
             Commands::Timestamp => {
                 log_timestamp::run();

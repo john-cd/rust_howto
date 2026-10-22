@@ -8,10 +8,10 @@
 // ANCHOR: example
 // Constant-Time Base64 encoding:
 use base64ct::Base64;
-use base64ct::Encoding;
+use base64ct::Encoding as _;
 // Convenience wrapper trait covering functionality of
 // cryptographic hash functions with fixed output size.
-use sha2::Digest;
+use sha2::Digest as _;
 // SHA-256 hasher.
 use sha2::Sha256;
 // SHA-512 hasher.
@@ -61,9 +61,9 @@ fn main() -> anyhow::Result<()> {
     // First, we will create a file inside of `env::temp_dir()`.
     let mut file = tempfile::tempfile()?;
 
-    use std::io::Read;
-    use std::io::Seek;
-    use std::io::Write;
+    use std::io::Read as _;
+    use std::io::Seek as _;
+    use std::io::Write as _;
 
     writeln!(file, "Some data")?;
 

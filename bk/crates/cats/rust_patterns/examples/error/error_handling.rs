@@ -6,7 +6,7 @@
 //! TODO Reviewed ??-??-2026
 
 use std::io;
-use std::io::BufRead;
+use std::io::BufRead as _;
 
 /// Reads a line from an in-memory buffer and handles the `Result`.
 fn main() {

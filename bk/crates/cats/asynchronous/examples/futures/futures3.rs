@@ -15,7 +15,7 @@
 //! TODO Reviewed ??-??-2026
 
 use anyhow::Result;
-use futures::future::FutureExt;
+use futures::future::FutureExt as _;
 
 /// Combines futures with `map`, `then`, `Either` and `flatten`, and prints the
 /// results.

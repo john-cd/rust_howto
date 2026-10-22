@@ -12,7 +12,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use itertools::Itertools;
+use itertools::Itertools as _;
 use itertools::assert_equal;
 use itertools::chain;
 
@@ -50,7 +50,7 @@ fn main() {
     assert_eq!(lookup[&0], vec![10, 20]);
     assert_eq!(lookup.get(&1), None);
     assert_eq!(lookup[&2], vec![12, 42]);
-    assert_eq!(lookup[&3], vec![13, 33])
+    assert_eq!(lookup[&3], vec![13, 33]);
 
     // `itertools` also offers `all`, `any`, `concat`, `fold`, "join",
     // `partition`, `sorted`, etc.

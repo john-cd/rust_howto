@@ -13,8 +13,8 @@ fn main() {
     map.insert(1, "one");
     map.insert(2, "two");
 
-    for (k, v) in map.iter() {
-        println!("{}: {}", k, v);
+    for (k, v) in &map {
+        println!("{k}: {v}");
     }
 }
 // ANCHOR_END: example

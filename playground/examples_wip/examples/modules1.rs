@@ -1,8 +1,5 @@
-//! Demonstrates module paths, `super` and re-exports with `pub use`.
-//!
-//! TODO Reviewed ??-??-2026
-
-#![allow(dead_code)]
+// TODO Reviewed ??-??-2026
+#![expect(dead_code, reason = "scratch example with unused items")]
 
 /// A module with a public struct.
 mod a {
@@ -20,7 +17,7 @@ mod c {
     /// Creates an `A` and prints a message.
     pub fn do_something_else() {
         //
-        let _a = a::A;
+        let _ = a::A;
         println!("Do something else.");
     }
 }

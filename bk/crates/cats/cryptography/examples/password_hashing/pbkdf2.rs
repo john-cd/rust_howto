@@ -13,7 +13,7 @@ use ring::digest;
 use ring::error::Unspecified;
 use ring::pbkdf2;
 use ring::rand;
-use ring::rand::SecureRandom;
+use ring::rand::SecureRandom as _;
 
 /// Demonstrates the use of PBKDF2 for password hashing and verification.
 fn main() -> Result<(), Unspecified> {

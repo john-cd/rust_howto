@@ -53,3 +53,6 @@ test = true
 name = "requests"
 path = "examples/requests/main.rs"
 test = true
+
+[lints]
+workspace = true

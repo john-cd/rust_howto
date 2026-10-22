@@ -8,7 +8,7 @@
 use std::fs::File;
 use std::io::BufReader;
 use std::io::Error;
-use std::io::Read;
+use std::io::Read as _;
 use std::path::Path;
 use std::sync::mpsc::channel;
 
@@ -50,7 +50,7 @@ fn main() -> Result<(), Error> {
     for entry in WalkDir::new("/home/user/Downloads")
         .follow_links(true)
         .into_iter()
-        .filter_map(|e| e.ok())
+        .filter_map(std::result::Result::ok)
         .filter(|e| !e.path().is_dir() && is_iso(e.path()))
     {
         let path = entry.path().to_owned();
@@ -62,7 +62,7 @@ fn main() -> Result<(), Error> {
     }
 
     drop(tx);
-    for t in rx.iter() {
+    for t in &rx {
         let (sha, path) = t?;
         println!("{sha:?} {path:?}");
     }

@@ -39,11 +39,11 @@ fn main() {
         match command {
             #[cfg(target_family = "unix")]
             Commands::Nix => {
-                nix::run();
+                nix::run().expect("the example should run");
             }
             #[cfg(target_family = "unix")]
             Commands::Rustix => {
-                rustix::run();
+                rustix::run().expect("the example should run");
             }
         }
     }

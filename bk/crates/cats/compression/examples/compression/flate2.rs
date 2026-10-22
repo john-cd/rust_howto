@@ -8,8 +8,8 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use std::io::Read;
-use std::io::Write;
+use std::io::Read as _;
+use std::io::Write as _;
 
 use flate2::Compression;
 use flate2::read::ZlibDecoder;

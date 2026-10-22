@@ -1,4 +1,4 @@
-//! Adapt mdBook 0.5's RenderContext to mdbook-linkcheck 0.7.7's 0.4 protocol.
+//! Adapt mdBook 0.5's `RenderContext` to mdbook-linkcheck 0.7.7's 0.4 protocol.
 //!
 //! TODO Reviewed ??-??-2026
 
@@ -95,7 +95,7 @@ mod tests {
         let config = json!({"output":{"linkcheck":{"warning-policy":"error"}}});
         let adapted =
             legacy_context(json!({"book":{"items":items},"config":config,"version":"0.5.4"}))
-                .unwrap();
+                .expect("input should parse");
         assert_eq!(adapted["book"]["sections"], items);
         assert_eq!(adapted["config"], config);
         assert_eq!(adapted["version"], "0.4.43");
@@ -105,8 +105,9 @@ mod tests {
 
     #[test]
     fn rejects_invalid_book_protocol() {
-        assert!(legacy_context(json!({})).is_err());
-        assert!(legacy_context(json!({"book":{"items":"wrong type"}})).is_err());
+        legacy_context(json!({})).expect_err("input should be rejected");
+        legacy_context(json!({"book":{"items":"wrong type"}}))
+            .expect_err("input should be rejected");
     }
 
     #[test]
@@ -115,7 +116,7 @@ mod tests {
             "book":{"items":[{"Chapter":{"path":null}}]},
             "config":{"book":{"title":null,"language":"en"}}
         }))
-        .unwrap();
+        .expect("input should parse");
         assert!(adapted["config"]["book"].get("title").is_none());
         assert_eq!(adapted["config"]["book"]["language"], "en");
         assert!(adapted["book"]["sections"][0]["Chapter"]["path"].is_null());
@@ -126,7 +127,7 @@ mod tests {
         let items = json!([{"Chapter":{"content":"```rust,edition2024\nfn main() {}\n```"}}]);
         let adapted =
             legacy_context(json!({"book":{"items":items},"config":{"rust":{"edition":"2024"}}}))
-                .unwrap();
+                .expect("input should parse");
         assert_eq!(adapted["config"]["rust"]["edition"], "2021");
         assert_eq!(adapted["book"]["sections"], items);
     }

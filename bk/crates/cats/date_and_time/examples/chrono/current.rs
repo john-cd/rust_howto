@@ -7,8 +7,8 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
-use chrono::Datelike;
-use chrono::Timelike;
+use chrono::Datelike as _;
+use chrono::Timelike as _;
 use chrono::Utc;
 
 /// Demonstrates how to get the current UTC time and date using the chrono

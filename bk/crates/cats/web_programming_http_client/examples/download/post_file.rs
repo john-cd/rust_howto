@@ -6,7 +6,7 @@
 
 use std::path::Path;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
 use tokio::fs;
 
@@ -58,15 +58,15 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use std::io;
-    use std::io::Read;
-    use std::io::Write;
+    use std::io::Read as _;
+    use std::io::Write as _;
     use std::net::SocketAddr;
     use std::net::TcpListener;
     use std::net::TcpStream;
     use std::thread::JoinHandle;
     use std::time::Duration;
 
-    use anyhow::Context;
+    use anyhow::Context as _;
     use anyhow::Result;
     use reqwest::StatusCode;
 
@@ -254,7 +254,7 @@ mod tests {
 
         let status = error
             .downcast_ref::<reqwest::Error>()
-            .and_then(|error| error.status());
+            .and_then(reqwest::Error::status);
         assert_eq!(status, Some(StatusCode::INTERNAL_SERVER_ERROR));
         Ok(())
     }

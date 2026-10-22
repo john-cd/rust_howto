@@ -17,7 +17,7 @@ fn capnp() {
 // ANCHOR_END: capnp
 
 // ANCHOR: prost
-/// Compile a ProtoBuf schema.
+/// Compile a `ProtoBuf` schema.
 fn prost() {
     println!("cargo::rerun-if-changed=examples/binary_encoders/person.proto");
 

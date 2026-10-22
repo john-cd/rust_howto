@@ -7,10 +7,10 @@ use async_zip::Compression;
 use async_zip::ZipEntryBuilder;
 use async_zip::base::read::mem::ZipFileReader;
 use async_zip::base::write::ZipFileWriter;
-use futures_lite::io::AsyncReadExt as FuturesAsyncReadExt;
+use futures_lite::io::AsyncReadExt as _;
 use tokio::fs::File;
-use tokio::io::AsyncReadExt;
-use tokio_util::compat::TokioAsyncWriteCompatExt;
+use tokio::io::AsyncReadExt as _;
+use tokio_util::compat::TokioAsyncWriteCompatExt as _;
 
 /// Writes a zip file with one entry to the temporary directory, reads it back,
 /// prints its entries and removes it.
@@ -33,7 +33,7 @@ async fn main() -> Result<()> {
     writer.write_entry_whole(entry, content).await?;
     writer.close().await?;
 
-    println!("Successfully wrote zip file to {:?}", zip_path);
+    println!("Successfully wrote zip file to {zip_path:?}");
 
     // Read from zip
     let mut file = File::open(&zip_path).await?;
@@ -47,7 +47,7 @@ async fn main() -> Result<()> {
         let mut entry_reader = reader.reader_with_entry(i).await?;
         let mut entry_content = String::new();
         entry_reader.read_to_string(&mut entry_content).await?;
-        println!("Content: {}", entry_content);
+        println!("Content: {entry_content}");
     }
 
     // Clean up

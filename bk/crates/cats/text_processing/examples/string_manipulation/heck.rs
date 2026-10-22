@@ -4,7 +4,7 @@
 //! between different casing conventions.
 //!
 //! The `heck` crate provides functions for converting strings to:
-//! snake_case, kebab-case, PascalCase, lowerCamelCase, Title Case.
+//! `snake_case`, kebab-case, `PascalCase`, lowerCamelCase, Title Case.
 //!
 //! Add to your `Cargo.toml`:
 //! ```toml
@@ -14,11 +14,11 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use heck::ToKebabCase;
-use heck::ToLowerCamelCase;
-use heck::ToPascalCase;
-use heck::ToSnakeCase;
-use heck::ToTitleCase;
+use heck::ToKebabCase as _;
+use heck::ToLowerCamelCase as _;
+use heck::ToPascalCase as _;
+use heck::ToSnakeCase as _;
+use heck::ToTitleCase as _;
 
 /// Converts a string to several cases.
 fn main() {

@@ -1,14 +1,12 @@
-//! The main function of the `templ` tool.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
+//! Generates files from templates for the book.
 use anyhow::anyhow;
-use tool_lib::*;
+use tool_lib::{create_category_badge, create_crate_block, create_rbe_badge, get_info_for_crate};
 
 mod cli;
 mod config_cmd;
 
-pub(crate) use config_cmd::*;
+pub(crate) use config_cmd::{Cmd, CmdArgs, CmdArgs2, Config};
 
 /// The main function of the `templ` tool.
 ///

@@ -38,7 +38,7 @@ fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     tt.add_formatter("underscored", |val, str| {
         info!("underscored called with str: {str}, val: {val}");
         if let Some(v) = val.as_str() {
-            str.push_str(&v.replace("-", "_"));
+            str.push_str(&v.replace('-', "_"));
         }
         Ok(())
     });
@@ -48,7 +48,7 @@ fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
     tt.add_formatter("shielded", |val, str| {
         info!("str: {str}, val: {val}");
         if let Some(v) = val.as_str() {
-            str.push_str(&v.replace("-", "--").replace("_", "__").replace(" ", "_"));
+            str.push_str(&v.replace('-', "--").replace('_', "__").replace(' ', "_"));
         }
         Ok(())
     });

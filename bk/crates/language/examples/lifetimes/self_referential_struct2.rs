@@ -36,8 +36,8 @@ mod selfref {
             // Allocate on heap and construct a new `Pin<Box<T>>`.
             // Since the type does not implement `Unpin`, then the newly created
             // struct will be pinned in memory and unable to be moved.
-            let mut boxed: Pin<Box<Self>> = Box::pin(SelfRef {
-                data: txt.to_string(),
+            let mut boxed: Pin<Box<Self>> = Box::pin(Self {
+                data: txt.to_owned(),
                 ptr: std::ptr::null(), /* Initially provide a dummy value to
                                         * the pointer, since we don't know
                                         * the address yet. */
@@ -54,7 +54,7 @@ mod selfref {
                 //   (here `Pointer` is a `Box`).
                 // - `get_unchecked_mut` gets a mutable reference to what's
                 //   inside of the `Pin`.
-                let mut_ref: &mut SelfRef =
+                let mut_ref: &mut Self =
                     Pin::get_unchecked_mut(boxed.as_mut());
                 // Assign the right address.
                 mut_ref.ptr = self_ptr;
@@ -88,7 +88,7 @@ mod selfref {
                 };
 
                 // Adjust the self-pointer:
-                let new_ptr = &unpinned_self.data as *const String;
+                let new_ptr = std::ptr::from_ref::<String>(&unpinned_self.data);
                 unpinned_self.ptr = new_ptr;
             }
         }

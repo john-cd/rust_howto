@@ -6,7 +6,7 @@
 
 use std::fs::File;
 use std::io;
-use std::io::Read;
+use std::io::Read as _;
 
 /// Reads the username from the file "temp/hello.txt".
 ///

@@ -25,8 +25,7 @@ struct CsvRecord<'a> {
     fields: Vec<&'a str>,
 }
 
-/// Splits `line` into a [`CsvRecord`] that borrows from it.
-fn load_record<'a>(line: &'a str) -> CsvRecord<'a> {
+fn load_record(line: &str) -> CsvRecord<'_> {
     let mut record = CsvRecord {
         line,
         fields: Vec::new(),
@@ -38,7 +37,7 @@ fn load_record<'a>(line: &'a str) -> CsvRecord<'a> {
 
 /// Builds a [`CsvRecord`] that borrows from a string outside the struct.
 fn outside() {
-    let s = "Joe,Doe,1994-01-01".to_string();
+    let s = "Joe,Doe,1994-01-01".to_owned();
     let c = load_record(&s);
     println!("{c:?}");
 }
@@ -60,7 +59,7 @@ impl SelfRefRc {
     /// Creates a struct whose two fields share `data`.
     fn new(data: String) -> Self {
         let shared_data = Rc::new(data);
-        SelfRefRc {
+        Self {
             data: Rc::clone(&shared_data),
             reference: Rc::clone(&shared_data),
         }
@@ -69,7 +68,7 @@ impl SelfRefRc {
 
 /// Builds and prints a [`SelfRefRc`].
 fn rc() {
-    let self_ref = SelfRefRc::new("Hello, Rust!".to_string());
+    let self_ref = SelfRefRc::new("Hello, Rust!".to_owned());
     println!("Data: {}", self_ref.reference);
 }
 

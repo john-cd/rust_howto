@@ -6,9 +6,9 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use ed25519_dalek::Signer;
+use ed25519_dalek::Signer as _;
 use ed25519_dalek::SigningKey;
-use ed25519_dalek::Verifier;
+use ed25519_dalek::Verifier as _;
 use rand_core::OsRng;
 
 /// Signs a message with a random Ed25519 key and verifies the signature.

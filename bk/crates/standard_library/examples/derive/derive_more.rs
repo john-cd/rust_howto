@@ -81,7 +81,7 @@ fn main() {
     println!("User ID: {}", UserId(67890)); // Prints "User ID: 67890".
 
     // Using `Constructor`.
-    let user = User::new(UserId(12345), "Alice".to_string(), true);
+    let user = User::new(UserId(12345), "Alice".to_owned(), true);
     println!("{user:?}"); // User { id: UserId(12345), name: "Alice", active: true }.
 
     // Using `Deref` and `DerefMut`.

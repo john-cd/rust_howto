@@ -59,7 +59,7 @@ mod tests {
     use super::*;
 
     #[test]
-    #[ignore]
+    #[ignore = "requires external resources"]
     fn require_external_svc() {
         main().unwrap();
     }

@@ -81,7 +81,7 @@ impl Plugin for MyStringPlugin {
         if let Some(value) = context.get::<i32>() {
             println!("MyStringPlugin: Retrieved i32: {value}");
         }
-        context.register("Plugin Says Hello!".to_string());
+        context.register("Plugin Says Hello!".to_owned());
     }
 }
 
@@ -138,7 +138,7 @@ fn main() {
 
     manager.context.register(AppState { counter: 0 });
     manager.context.register(100i32);
-    manager.context.register("Host Greeting".to_string());
+    manager.context.register("Host Greeting".to_owned());
 
     manager.add_plugin(Box::new(MyCounterPlugin));
     manager.add_plugin(Box::new(MyStringPlugin));

@@ -10,7 +10,7 @@ mod cli;
 fn main() {
     env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init(); // Log to stderr.
 
-    let (config, cmds) = cli::get_args();
+    let (config, commands) = cli::get_args();
 
     // Demo use of the configuration and command(s) returned by
     // `get_args`.
@@ -25,7 +25,7 @@ fn main() {
         println!("Value for config file: {}", c.display());
     }
 
-    for cmd in cmds {
+    for cmd in commands {
         match cmd {
             cli::Cmd::None => {
                 println!("Command: none");

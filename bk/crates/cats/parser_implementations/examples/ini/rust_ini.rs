@@ -14,7 +14,7 @@ use ini::Ini;
 /// Reads an INI configuration from a string, manipulates it, and writes it to a
 /// file.
 fn main() -> anyhow::Result<()> {
-    let config_str = r#"
+    let config_str = "
 [section1]
 key1 = value1
 key2 = value2
@@ -22,7 +22,7 @@ key2 = value2
 [section2]
 key3 = value3
 key4 = value4
-"#;
+";
     // Read an INI configuration.
     let ini = Ini::load_from_str(config_str)?;
     // Or use: `Ini::load_from_file("conf.ini")`.
@@ -41,7 +41,7 @@ key4 = value4
     // Or iterate through key value pairs.
     for (sec, prop) in &ini {
         println!("Section: {sec:?}");
-        for (key, value) in prop.iter() {
+        for (key, value) in prop {
             println!("{key:?}:{value:?}");
         }
     }

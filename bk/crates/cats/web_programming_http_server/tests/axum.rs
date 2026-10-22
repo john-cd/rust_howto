@@ -68,7 +68,7 @@ async fn fallback(uri: Uri) -> (StatusCode, String) {
 /// e.g., `/users/123` or `/users/{id}`.
 fn create_app() -> Router {
     let state = Arc::new(AppState {
-        greeting: "Hello, world!".to_string(),
+        greeting: "Hello, world!".to_owned(),
     });
     Router::new()
         .route("/", get(root))
@@ -82,8 +82,8 @@ fn create_app() -> Router {
 async fn test_root() -> anyhow::Result<()> {
     use axum::body::Body;
     use http::Request;
-    use http_body_util::BodyExt;
-    use tower::ServiceExt; // for `oneshot`
+    use http_body_util::BodyExt as _;
+    use tower::ServiceExt as _; // for `oneshot`
 
     let app = create_app();
     // `ServiceExt::oneshot` calls the service with a single request,
@@ -93,7 +93,7 @@ async fn test_root() -> anyhow::Result<()> {
         .await?;
     assert_eq!(response.status(), StatusCode::OK);
     let body = response.into_body().collect().await?.to_bytes();
-    assert_eq!(&body[..], b"Hello, world!");
+    assert_eq!(&*body, b"Hello, world!");
     Ok(())
 }
 
@@ -101,8 +101,8 @@ async fn test_root() -> anyhow::Result<()> {
 async fn test_get_user() -> anyhow::Result<()> {
     use axum::body::Body;
     use http::Request;
-    use http_body_util::BodyExt;
-    use tower::ServiceExt;
+    use http_body_util::BodyExt as _;
+    use tower::ServiceExt as _;
 
     let app = create_app();
     let response = app
@@ -110,7 +110,7 @@ async fn test_get_user() -> anyhow::Result<()> {
         .await?;
     assert_eq!(response.status(), StatusCode::OK);
     let body = response.into_body().collect().await?.to_bytes();
-    assert_eq!(&body[..], b"User 42");
+    assert_eq!(&*body, b"User 42");
     Ok(())
 }
 
@@ -118,7 +118,7 @@ async fn test_get_user() -> anyhow::Result<()> {
 async fn test_fallback() -> anyhow::Result<()> {
     use axum::body::Body;
     use http::Request;
-    use tower::ServiceExt;
+    use tower::ServiceExt as _;
 
     let app = create_app();
     let response = app

@@ -1,7 +1,5 @@
-//! The `mdbook-scrub` preprocessor executable.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
+//! Command-line entry point of the `mdbook-scrub` preprocessor.
 use std::io;
 use std::process;
 
@@ -42,7 +40,7 @@ fn main() {
         .append(true)
         .create(true)
         .open("mdbook-scrub.log")
-        .unwrap();
+        .expect("mdbook-scrub.log should be writable");
 
     let _ = tracing_subscriber::fmt()
         .with_max_level(tracing::Level::INFO)
@@ -104,12 +102,13 @@ fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> ! {
     let renderer = sub_args
         .get_one::<String>("renderer")
         .expect("Required argument");
-    let supported = pre.supports_renderer(renderer).unwrap();
+    let supported = pre
+        .supports_renderer(renderer)
+        .expect("renderer support check should not fail");
 
     // Signal whether the renderer is supported by exiting with 1 or 0.
     if supported {
         process::exit(0);
-    } else {
-        process::exit(1);
     }
+    process::exit(1);
 }

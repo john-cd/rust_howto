@@ -13,7 +13,7 @@ static CATEGORIES_URL: &str = "https://raw.githubusercontent.com/rust-lang/crate
 pub(super) fn get_categories_toml_string() -> Result<String> {
     // Allows tests to override the URL.
     let url_str =
-        std::env::var("MOCK_CATEGORIES_URL").unwrap_or_else(|_| CATEGORIES_URL.to_string());
+        std::env::var("MOCK_CATEGORIES_URL").unwrap_or_else(|_| CATEGORIES_URL.to_owned());
     let url = reqwest::Url::parse(&url_str)?;
 
     let is_localhost = url.host_str() == Some("127.0.0.1") || url.host_str() == Some("localhost");
@@ -34,26 +34,20 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
     Ok(body)
 }
 
-#[allow(dead_code)]
-#[allow(unused_imports)]
 #[cfg(test)]
 mod tests {
-    // A mutex to ensure that tests setting MOCK_CATEGORIES_URL don't run concurrently.
-    use std::sync::Mutex;
-
     use anyhow::Result;
-    use url::Url;
 
     use super::*;
+    use crate::ENV_MUTEX;
     use crate::EnvGuard;
 
-    static ENV_MUTEX: Mutex<()> = Mutex::new(());
-
-    // Test successful retrieval of the TOML string.
-    /// Checks that the TOML text is returned on success.
+    /// Verifies that the category TOML request returns the server response.
     #[test]
     fn test_get_categories_toml_string_success() -> Result<()> {
-        let _lock = ENV_MUTEX.lock().unwrap();
+        let _lock = ENV_MUTEX
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         let mut server = mockito::Server::new();
         let expected_toml = "[category1]\nname = \"Category One\"\ndescription = \"First category\"\n\n[category2]\nname = \"Category Two\"\n";
 
@@ -68,26 +62,20 @@ mod tests {
         let mock_url = format!("{}/", server.url());
         let _url_guard = EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url);
 
-        // Call the function under test.
-        let result = get_categories_toml_string();
+        let result = get_categories_toml_string()?;
 
-        // Assertions
-        mock_endpoint.assert(); // Verify the mock endpoint was hit.
-        assert!(
-            result.is_ok(),
-            "Expected Ok result, got Err: {:?}",
-            result.err()
-        );
-        assert_eq!(result.unwrap(), expected_toml);
+        mock_endpoint.assert();
+        assert_eq!(result, expected_toml);
 
         Ok(())
     }
 
-    // Test handling of a network/server error (e.g., 404 Not Found).
-    /// Checks that an unsuccessful response is an error.
+    /// Verifies that an unsuccessful category TOML request returns an error.
     #[test]
     fn test_get_categories_toml_string_error() -> Result<()> {
-        let _lock = ENV_MUTEX.lock().unwrap();
+        let _lock = ENV_MUTEX
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         let mut server = mockito::Server::new();
 
         // Mock the GET request to return a 404 error.
@@ -100,15 +88,11 @@ mod tests {
         let mock_url = format!("{}/", server.url());
         let _url_guard = EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url);
 
-        // Call the function under test.
-        let result = get_categories_toml_string();
+        let error =
+            get_categories_toml_string().expect_err("a 404 response should fail the request");
+        mock_endpoint.assert();
 
-        // Assertions.
-        mock_endpoint.assert(); // Verify the mock endpoint was hit.
-        assert!(result.is_err(), "Expected Err result, got Ok");
-
-        // Optionally, check the specific error kind or message if needed.
-        let err_string = result.unwrap_err().to_string();
+        let err_string = error.to_string();
         assert!(
             err_string.contains("404") || err_string.contains("Not Found"),
             "Error message did not indicate a 404 error: {err_string}"

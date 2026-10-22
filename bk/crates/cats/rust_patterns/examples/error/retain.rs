@@ -49,7 +49,7 @@ mod tests {
 
     #[test]
     fn test_main() {
-        use std::io::Write;
+        use std::io::Write as _;
 
         std::fs::create_dir_all("temp").unwrap();
         let mut f = std::fs::File::create("temp/number.txt").unwrap();

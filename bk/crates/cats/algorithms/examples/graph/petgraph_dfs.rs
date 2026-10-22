@@ -36,7 +36,7 @@ fn main() {
         visited.push(graph[node]);
     }
 
-    println!("DFS traversal order: {:?}", visited);
+    println!("DFS traversal order: {visited:?}");
     // DFS goes deep first: A -> B -> D -> C -> E (or A -> C -> E -> B -> D,
     // depending on adjacency list order)
     assert!(visited.contains(&"A"));

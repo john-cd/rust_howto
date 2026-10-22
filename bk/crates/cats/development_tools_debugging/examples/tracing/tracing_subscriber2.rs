@@ -7,12 +7,12 @@
 // ANCHOR: example
 use std::io;
 
-use tracing_subscriber::Layer;
+use tracing_subscriber::Layer as _;
 use tracing_subscriber::filter::EnvFilter;
 use tracing_subscriber::filter::LevelFilter;
 use tracing_subscriber::fmt;
-use tracing_subscriber::layer::SubscriberExt;
-use tracing_subscriber::util::SubscriberInitExt;
+use tracing_subscriber::layer::SubscriberExt as _;
+use tracing_subscriber::util::SubscriberInitExt as _;
 
 /// The most important component of the `tracing-subscriber` API is the
 /// `Layer` trait. `Layer`s can be composed together to form a

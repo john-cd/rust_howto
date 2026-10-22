@@ -70,7 +70,7 @@ fn main() {
     // Type operations:
     println!("\nType operations:");
     println!("Integer addition: {a} + {} = {}", 100, a.wrapping_add(100)); // Using `wrapping_add` to avoid overflow panic.
-    println!("Float multiplication: {n} * {o} = {}", (n as f64) * o);
+    println!("Float multiplication: {n} * {o} = {}", f64::from(n) * o);
     println!("Boolean AND: {p} && {q} = {}", p && q);
     println!("Boolean OR: {p} || {q} = {}", p || q);
 }

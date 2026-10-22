@@ -36,7 +36,7 @@ impl MyFlags {
     // Convert the bitflags to a u64:
     /// Returns the flags as a `u64`.
     pub fn as_u64(&self) -> u64 {
-        self.bits() as u64
+        u64::from(self.bits())
     }
 }
 

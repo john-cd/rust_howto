@@ -4,14 +4,13 @@
 
 use std::ffi::OsString;
 use std::io;
-use std::io::BufRead;
-use std::io::IsTerminal;
+use std::io::BufRead as _;
+use std::io::IsTerminal as _;
 use std::path::PathBuf;
 
 mod commands;
 
 /// The command that the end user selected
-#[allow(dead_code)]
 #[derive(Default, Debug)]
 pub(crate) enum Cmd {
     /// No command was selected.
@@ -148,7 +147,7 @@ fn capture_stdin() -> anyhow::Result<Vec<OsString>> {
 fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
     m.get_many::<String>("crate_name")
         .unwrap_or_default()
-        .map(|v| v.into())
+        .map(std::convert::Into::into)
         .collect::<Vec<String>>()
 }
 
@@ -156,32 +155,32 @@ fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
 fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("file_path")
         .expect("file_path has a default value")
-        .to_path_buf()
+        .clone()
 }
 
 /// Get the required category metadata path.
 fn get_metadata_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("metadata")
         .expect("metadata is required")
-        .to_path_buf()
+        .clone()
 }
 
 /// Get the book root used to find published recipe links.
 fn get_book_root(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("book_root")
         .expect("book_root has a default value")
-        .to_path_buf()
+        .clone()
 }
 
 /// Get a dir path from the command line arguments
 fn get_dir_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("directory")
         .expect("directory has a default value")
-        .to_path_buf()
+        .clone()
 }
 
 /// Get an optional file path from the command line arguments.
 /// Returns `None` if the argument was not provided.
 fn get_optional_file_path(m: &clap::ArgMatches) -> Option<PathBuf> {
-    m.get_one::<PathBuf>("file_path").map(|p| p.to_path_buf())
+    m.get_one::<PathBuf>("file_path").cloned()
 }

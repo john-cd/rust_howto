@@ -11,12 +11,13 @@
 use bitvec::field::BitField;
 use bitvec::prelude::*;
 
-/// Creates a `BitVec`, then reads and modifies its bits.
-fn basic_operations() {
-    // Create a new `BitVec` with default parameters:
-    let mut bv = bitvec![u8, Msb0; 0, 1, 0, 1, 1, 0, 1, 0];
-    println!("Original BitVec: {bv}");
-
+/// Demonstrates reading and mutating individual bits in a bit vector.
+///
+/// # Arguments
+///
+/// * `bv` - The bit vector to inspect and update.
+fn bit_indexing_and_mutation(bv: &mut BitVec<u8, Msb0>) {
+    println!("===== Bit Access and Mutation =====");
     // Access individual bits:
     println!("First bit: {}", bv[0]);
     println!("Second bit: {}", bv[1]);
@@ -25,7 +26,15 @@ fn basic_operations() {
     bv.set(0, true);
     bv.set(5, true);
     println!("Modified BitVec: {bv}");
+}
 
+/// Demonstrates length, all-bit, any-bit, and set-bit queries.
+///
+/// # Arguments
+///
+/// * `bv` - The bit vector to query.
+fn bit_checking(bv: &BitVec<u8, Msb0>) {
+    println!("\n===== Bit Checking and Querying =====");
     // Get the length:
     println!("BitVec length: {}", bv.len());
 
@@ -37,16 +46,36 @@ fn basic_operations() {
 
     // Count set bits:
     println!("Number of set bits: {}", bv.count_ones());
+}
 
+/// Prints each bit in the supplied vector in order.
+///
+/// # Arguments
+///
+/// * `bv` - The bit vector to iterate over.
+fn bit_iteration(bv: &BitVec<u8, Msb0>) {
+    println!("\n===== Bit Iteration =====");
     // Iterate through bits:
     print!("Iterating through bits: ");
-    for bit in bv.iter() {
+    for bit in bv {
         print!("{bit} ");
     }
     println!();
 }
 
-/// Creates `BitVec`s with different storage types and bit orders.
+/// Creates a bit vector and demonstrates access, mutation, queries, and
+/// iteration.
+fn basic_operations() {
+    // Create a new `BitVec` with default parameters:
+    let mut bv = bitvec![u8, Msb0; 0, 1, 0, 1, 1, 0, 1, 0];
+    println!("Original BitVec: {bv}");
+
+    bit_indexing_and_mutation(&mut bv);
+    bit_checking(&bv);
+    bit_iteration(&bv);
+}
+
+/// Demonstrates different bit orders and storage element widths.
 fn endianness_and_storage() {
     println!("\n===== Different Endianness and Storage Types =====");
 
@@ -58,7 +87,7 @@ fn endianness_and_storage() {
     println!("u32 MSB BitVec: {bv_u32}");
 }
 
-/// Applies bitwise operations to `BitVec`s.
+/// Demonstrates bitwise combination and in-place operations on bit vectors.
 fn bit_manipulation() {
     println!("\n===== Bit Manipulation Operations =====");
 
@@ -90,7 +119,7 @@ fn bit_manipulation() {
     println!("a &= b: {a}");
 }
 
-/// Slices a `BitVec` and modifies a slice.
+/// Demonstrates reading and mutating ranges within a bit vector.
 fn slicing_and_ranges() {
     println!("\n===== Slicing and Ranges =====");
 
@@ -106,7 +135,7 @@ fn slicing_and_ranges() {
     println!("After filling [4..8] with `1`s: {bv_slice}");
 }
 
-/// Uses a `BitVec` for permission flags and for packing booleans.
+/// Demonstrates flags, boolean packing, and storing values in bit ranges.
 fn practical_applications() {
     println!("\n===== Practical Applications =====");
 
@@ -152,7 +181,7 @@ fn practical_applications() {
     println!("Extracted values: {value1}, {value2}, {value3}");
 }
 
-/// Runs all the `BitVec` examples.
+/// Runs each bit-vector demonstration in sequence.
 fn main() {
     basic_operations();
     endianness_and_storage();
@@ -163,7 +192,7 @@ fn main() {
 
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the bit-vector example.
 pub fn run() {
     main();
 }
@@ -172,6 +201,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the bit-vector demonstration completes.
     #[test]
     fn test_main() {
         main();

@@ -110,3 +110,6 @@ test = true
 name = "written_in_rust"
 path = "examples/written_in_rust/main.rs"
 test = true
+
+[lints]
+workspace = true

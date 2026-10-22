@@ -26,9 +26,9 @@ candle-nn = { version = "0.10.2", optional = true }
 clap = { version = "4.6.7", features = ["derive"] }
 linfa = "0.8.1"
 linfa-linear = "0.8.1"
-# Linfa 0.8.1 dataset and fit APIs use ndarray 0.16 array types.
-# TODO Upgrade when Linfa supports ndarray 0.17: https://github.com/john-cd/rust_howto/issues/1786
-ndarray = "0.16.1"
+ndarray = "0.17.2"
+# Keep Linfa 0.8.1's dataset and fit APIs on their ndarray 0.16 array types.
+ndarray_016 = { package = "ndarray", version = "0.16.1" }
 rand = { version = "0.10.3", features = ["std"] }
 smartcore = "0.5.5"
 
@@ -36,3 +36,6 @@ smartcore = "0.5.5"
 name = "ml"
 path = "examples/ml/main.rs"
 test = true
+
+[lints]
+workspace = true

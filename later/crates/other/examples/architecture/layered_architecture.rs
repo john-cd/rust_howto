@@ -50,7 +50,7 @@ mod data {
     impl InMemoryUserRepository {
         /// Creates an empty repository.
         pub fn new() -> Self {
-            InMemoryUserRepository {
+            Self {
                 users: Mutex::new(HashMap::new()),
             }
         }
@@ -100,7 +100,7 @@ mod business {
     impl<R: UserRepository + Send + Sync> SimpleUserService<R> {
         /// Creates a service that uses `repo`.
         pub fn new(repo: Arc<R>) -> Self {
-            SimpleUserService { repo }
+            Self { repo }
         }
     }
 
@@ -129,7 +129,7 @@ mod presentation {
     pub async fn run_cli(user_service: impl UserService) -> Result<()> {
         let new_user = User {
             id: 1,
-            name: "Alice".to_string(),
+            name: "Alice".to_owned(),
         };
 
         user_service.create_user(new_user).await?;

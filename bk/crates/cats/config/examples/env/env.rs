@@ -24,7 +24,7 @@ fn env_extract() -> String {
 
     let optional_value = option_env!("SHELL");
 
-    optional_value.unwrap_or("no shell set").to_string()
+    optional_value.unwrap_or("no shell set").to_owned()
 }
 
 /// Prints the content of a standard environment variable.

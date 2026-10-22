@@ -61,7 +61,7 @@ mod tests {
     use super::*;
 
     #[test]
-    #[ignore]
+    #[ignore = "requires external resources"]
     fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())

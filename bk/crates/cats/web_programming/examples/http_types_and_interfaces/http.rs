@@ -32,7 +32,7 @@ fn main() {
     let response = Response::builder()
         .status(StatusCode::OK) // NOT_FOUND...
         .header("Content-Type", "text/plain")
-        .body("Hello, HTTP World!".to_string())
+        .body("Hello, HTTP World!".to_owned())
         .unwrap();
 
     println!("Request URI: {}", request.uri());

@@ -33,10 +33,10 @@ impl Summary for NewsArticle {
 /// Creates an article and calls the method of the trait.
 fn main() {
     let na = NewsArticle {
-        headline: "headline".to_string(),
-        location: "location".to_string(),
-        author: "author".to_string(),
-        content: "...".to_string(),
+        headline: "headline".to_owned(),
+        location: "location".to_owned(),
+        author: "author".to_owned(),
+        content: "...".to_owned(),
     };
     // Since the type implements the trait, we can call its method.
     println!("Summary: {}", na.summarize());

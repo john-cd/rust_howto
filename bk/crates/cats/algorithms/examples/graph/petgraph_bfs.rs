@@ -37,7 +37,7 @@ fn main() {
         visited.push(graph[node]);
     }
 
-    println!("BFS traversal order: {:?}", visited);
+    println!("BFS traversal order: {visited:?}");
     // BFS visits level by level: A first, then B and C (in any order), then D,
     // then E.
     assert_eq!(visited[0], "A");

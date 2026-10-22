@@ -1,0 +1,60 @@
+# Composite action: install the pinned Rust toolchains and restore the Cargo cache.
+#
+# Keep this file identical in john-cd/rust_howto, john-cd/book_tooling and
+# john-cd/mdbook-utils. Works on Linux, macOS and Windows runners (uses `bash`,
+# which is available everywhere, including Git Bash on Windows).
+name: Set up Rust
+description: Install the pinned stable and nightly (rustfmt) toolchains and cache Cargo artifacts.
+
+inputs:
+  toolchain:
+    description: Stable Rust version used to build and test. Keep in sync with `rust-version` / `.devcontainer/.env`.
+    default: "1.99.1"
+  nightly:
+    description: Pinned nightly toolchain used only for `cargo fmt`. Empty to skip.
+    default: "nightly-2026-10-22"
+  components:
+    description: Space-separated rustup components to add to the stable toolchain.
+    default: "clippy"
+  cache:
+    description: Restore and save the Cargo cache (`Swatinem/rust-cache`).
+    default: "true"
+  cache-workspaces:
+    description: Newline-separated Cargo workspaces to cache, as in `Swatinem/rust-cache`.
+    default: "."
+  cache-key:
+    description: Extra cache key, to separate unrelated jobs that share the same workspace.
+    default: ""
+  save-cache:
+    description: Whether to save the cache at the end of the job.
+    default: "true"
+
+runs:
+  using: composite
+  steps:
+    - name: Install Rust toolchains
+      shell: bash
+      env:
+        TOOLCHAIN: ${{ inputs.toolchain }}
+        NIGHTLY: ${{ inputs.nightly }}
+        COMPONENTS: ${{ inputs.components }}
+      run: |
+        set -euo pipefail
+        args=()
+        for c in $COMPONENTS; do args+=(--component "$c"); done
+        rustup toolchain install "$TOOLCHAIN" --profile minimal ${args[@]+"${args[@]}"}
+        rustup default "$TOOLCHAIN"
+        if [ -n "$NIGHTLY" ]; then
+          rustup toolchain install "$NIGHTLY" --profile minimal --component rustfmt
+        fi
+        rustup show
+        cargo --version
+
+    - name: Cache Cargo artifacts
+      if: ${{ inputs.cache == 'true' }}
+      # Swatinem/rust-cache v2.9.3
+      uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
+      with:
+        workspaces: ${{ inputs.cache-workspaces }}
+        key: ${{ inputs.cache-key }}
+        save-if: ${{ inputs.save-cache == 'true' }}

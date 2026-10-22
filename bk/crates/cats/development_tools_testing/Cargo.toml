@@ -65,3 +65,6 @@ test = true
 name = "testing"
 path = "examples/testing/main.rs"
 test = true
+
+[lints]
+workspace = true

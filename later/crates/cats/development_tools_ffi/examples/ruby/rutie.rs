@@ -5,7 +5,7 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
-use rutie::Object;
+use rutie::Object as _;
 use rutie::RString;
 use rutie::VM;
 
@@ -21,7 +21,7 @@ use rutie::VM;
 /// ruby script.rb
 /// ```
 
-/// Mark the RustModule function as a Ruby module.
+/// Mark the `RustModule` function as a Ruby module.
 // Note: In a real rutie project, you'd use macros to export this.
 // This is a simplified representation for documentation.
 

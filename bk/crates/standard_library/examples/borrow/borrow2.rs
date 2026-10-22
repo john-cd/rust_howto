@@ -19,13 +19,13 @@ where
 /// Looks up a score with several key types.
 fn main() {
     let mut scores = HashMap::new();
-    scores.insert("eve".to_string(), 30);
+    scores.insert("eve".to_owned(), 30);
 
     // Pass a `&str`.
     assert_eq!(find_score(&scores, "eve"), Some(30));
 
     // Pass a `String`.
-    let name = "eve".to_string();
+    let name = "eve".to_owned();
     assert_eq!(find_score(&scores, name), Some(30));
     println!("eve's score: {:?}", find_score(&scores, "eve"));
 }

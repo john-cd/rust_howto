@@ -49,8 +49,8 @@ struct DatabaseConfigBuilder {
 
 impl DatabaseConfigBuilder {
     /// The builder's constructor (with required fields, if necessary).
-    fn new(host: String, port: u16) -> DatabaseConfigBuilder {
-        DatabaseConfigBuilder {
+    fn new(host: String, port: u16) -> Self {
+        Self {
             host,
             port,
             // The optional fields are set to None or default values.
@@ -104,11 +104,11 @@ impl DatabaseConfigBuilder {
 /// Builds a configuration with the builder and prints it.
 fn main() {
     // Create a builder struct.
-    let config = DatabaseConfigBuilder::new("localhost".to_string(), 5432)
+    let config = DatabaseConfigBuilder::new("localhost".to_owned(), 5432)
         // Call (some of) the builder's methods to initialize or update the
         // fields.
-        .username("admin".to_string())
-        .password("secret".to_string())
+        .username("admin".to_owned())
+        .password("secret".to_owned())
         .pool_size(20)
         .build();
 

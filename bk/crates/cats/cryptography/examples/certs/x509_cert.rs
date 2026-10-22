@@ -7,10 +7,10 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use std::str::FromStr;
+use std::str::FromStr as _;
 use std::time::Duration;
 
-use x509_cert::der::Encode;
+use x509_cert::der::Encode as _;
 use x509_cert::name::Name;
 use x509_cert::serial_number::SerialNumber;
 use x509_cert::time::Validity;
@@ -20,7 +20,7 @@ use x509_cert::time::Validity;
 fn main() -> anyhow::Result<()> {
     let subject = Name::from_str("CN=example.com,O=Rust HowTo,C=US")?;
     let serial_number = SerialNumber::from(42u32);
-    let validity = Validity::from_now(Duration::from_secs(24 * 60 * 60))?;
+    let validity = Validity::from_now(Duration::from_hours(24))?;
 
     println!("Subject DER length: {}", subject.to_der()?.len());
     println!("Serial number: {serial_number}");

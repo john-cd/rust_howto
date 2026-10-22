@@ -85,7 +85,7 @@ fn main() {
     // The key type is always `Ustr`.
     let mut map: UstrMap<usize> = UstrMap::default();
     map.insert(s1, 17);
-    assert_eq!(*map.get(&s1).unwrap(), 17);
+    assert_eq!(map[&s1], 17);
 }
 
 // ANCHOR_END: example

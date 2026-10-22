@@ -32,7 +32,7 @@ mod a_module {
 
 /// Calls a method of the sealed trait.
 fn main() {
-    use a_module::MySealedTrait;
+    use a_module::MySealedTrait as _;
 
     let a: usize = 42;
     a.some_public_method();

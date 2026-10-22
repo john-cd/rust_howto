@@ -21,7 +21,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use pest::Parser;
+use pest::Parser as _;
 use pest_derive::Parser;
 
 /// A parser for arithmetic expressions, generated from a `pest` grammar.

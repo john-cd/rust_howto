@@ -20,8 +20,8 @@ fn main() {
     let mut slab: Slab<String> = Slab::new();
 
     // `insert` stores a value and returns its integer key.
-    let hello_key = slab.insert("hello".to_string());
-    let world_key = slab.insert("world".to_string());
+    let hello_key = slab.insert("hello".to_owned());
+    let world_key = slab.insert("world".to_owned());
 
     println!("Key {hello_key} => {}", slab[hello_key]);
     println!("Key {world_key} => {}", slab[world_key]);
@@ -37,7 +37,7 @@ fn main() {
     println!("Slab length: {}", slab.len());
 
     // Keys may be reused after removal.
-    let reused_key = slab.insert("new entry".to_string());
+    let reused_key = slab.insert("new entry".to_owned());
     println!("Reused key {reused_key} => {}", slab[reused_key]);
 
     // Iterate over all entries.

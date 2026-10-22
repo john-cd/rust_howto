@@ -52,12 +52,10 @@ fn main() {
     // Creates an iterator with the provided closure.
     let mut counter = 0;
     let mut from_fn_iter = iter::from_fn(move || {
-        if counter < 2 {
+        (counter < 2).then(|| {
             counter += 1;
-            Some(counter)
-        } else {
-            None
-        }
+            counter
+        })
     });
     assert_eq!(from_fn_iter.next(), Some(1));
     assert_eq!(from_fn_iter.next(), Some(2));

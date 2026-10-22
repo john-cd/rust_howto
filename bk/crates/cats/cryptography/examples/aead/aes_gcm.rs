@@ -12,9 +12,9 @@ use aes_gcm::Key;
 // in a cryptographic communication.
 use aes_gcm::Nonce;
 // Trait that provides `encrypt` and `decrypt`:
-use aes_gcm::aead::Aead;
+use aes_gcm::aead::Aead as _;
 // Trait that provides `generate_key`:
-use aes_gcm::aead::KeyInit;
+use aes_gcm::aead::KeyInit as _;
 // The operating-system's random data source:
 use aes_gcm::aead::OsRng;
 

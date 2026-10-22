@@ -29,7 +29,7 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
         let categories = m
             .get_many::<String>("category")
             .unwrap_or_default()
-            .map(|v| v.into())
+            .map(std::convert::Into::into)
             .collect::<Vec<String>>();
         cmdargs = Some(CmdArgs { args: categories });
     }

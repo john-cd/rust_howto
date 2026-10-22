@@ -9,7 +9,7 @@ use tree_sitter::Language;
 use tree_sitter::Parser;
 use tree_sitter::Query;
 use tree_sitter::QueryCursor;
-use tree_sitter::StreamingIterator;
+use tree_sitter::StreamingIterator as _;
 
 /// Parses Rust source code and queries the syntax tree.
 fn main() -> anyhow::Result<()> {
@@ -31,10 +31,10 @@ fn main() -> anyhow::Result<()> {
 
     let query = Query::new(
         &language,
-        r#"
+        "
 		(function_item name: (identifier) @function)
 		(let_declaration pattern: (identifier) @binding)
-		"#,
+		",
     )?;
     let capture_names = query.capture_names();
     let mut cursor = QueryCursor::new();

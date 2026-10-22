@@ -1,16 +1,14 @@
-//! This binary creates markdown files for the crate indices
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
+//! Generates the crate index pages of the book.
 mod cli;
 
 use std::collections::BTreeMap;
 use std::collections::BTreeSet;
 use std::collections::HashMap;
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
-use itertools::Itertools;
+use itertools::Itertools as _;
 use tool_lib::Category;
 
 /// This binary creates markdown files for the crate indices
@@ -91,7 +89,11 @@ fn main() -> anyhow::Result<()> {
                 .filter(|name| !name.is_empty() && name.as_str() != "std")
                 .sorted()
                 .map(|n| {
-                    let f: String = n.chars().next().unwrap().to_uppercase().collect();
+                    let f: String = n
+                        .chars()
+                        .next()
+                        .map(|c| c.to_uppercase().collect())
+                        .unwrap_or_default();
                     (f, n)
                 })
                 .into_group_map();
@@ -121,7 +123,7 @@ fn main() -> anyhow::Result<()> {
                     tool_lib::GenerationMode::CrateBlockRefdefs,
                 )?
                 .split('\n')
-                .map(|st| st.to_string())
+                .map(std::borrow::ToOwned::to_owned)
                 .collect::<Vec<String>>();
                 all_refdefs.extend(refdefs);
             }
@@ -201,7 +203,8 @@ mod tests {
     #[test]
     fn category_index_covers_master_crates() {
         let book_root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../bk");
-        let recipe_links = tool_lib::collect_published_recipe_links(book_root).unwrap();
+        let recipe_links =
+            tool_lib::collect_published_recipe_links(book_root).expect("input should parse");
         let mut expected: BTreeSet<_> = MASTER_CRATES
             .lines()
             .map(str::trim)
@@ -227,13 +230,14 @@ mod tests {
     fn category_index_matches_offline_generation() {
         let crate_names: Vec<_> = MASTER_CRATES.lines().map(str::to_owned).collect();
         let book_root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../bk");
-        let recipe_links = tool_lib::collect_published_recipe_links(&book_root).unwrap();
+        let recipe_links =
+            tool_lib::collect_published_recipe_links(&book_root).expect("input should parse");
         let generated = tool_lib::create_category_page_from_metadata_with_recipe_links(
             &crate_names,
             CATEGORY_METADATA,
             &recipe_links,
         )
-        .unwrap();
+        .expect("input should parse");
 
         assert_eq!(generated, CATEGORY_INDEX);
     }
@@ -241,9 +245,11 @@ mod tests {
     #[test]
     fn alphabetical_index_matches_published_recipe_generation() {
         let book_root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../bk");
-        let recipe_links = tool_lib::collect_published_recipe_links(book_root).unwrap();
+        let recipe_links =
+            tool_lib::collect_published_recipe_links(book_root).expect("input should parse");
         let crate_names: Vec<_> = MASTER_CRATES.lines().map(str::to_owned).collect();
-        let generated = create_alphabetical_page(&crate_names, &recipe_links).unwrap();
+        let generated =
+            create_alphabetical_page(&crate_names, &recipe_links).expect("input should parse");
 
         assert_eq!(generated, ALPHABETICAL_INDEX);
         for crate_name in recipe_links.keys() {

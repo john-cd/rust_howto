@@ -15,7 +15,7 @@ struct Meters(u32);
 
 impl From<Meters> for Millimeters {
     fn from(m: Meters) -> Self {
-        Millimeters(m.0 * 1000)
+        Self(m.0 * 1000)
     }
 }
 

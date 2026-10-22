@@ -8,7 +8,7 @@
 // ANCHOR: example
 // This example demonstrates how to securely clear sensitive data from memory
 // using the `zeroize` crate.
-use zeroize::Zeroize;
+use zeroize::Zeroize as _;
 
 /// Demonstrates the use of the `zeroize` crate to securely clear sensitive data
 /// from memory.

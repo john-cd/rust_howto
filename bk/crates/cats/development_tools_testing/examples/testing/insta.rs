@@ -38,7 +38,7 @@ mod tests {
         use insta::assert_snapshot;
 
         let formatted = format_user("Alice", 30);
-        assert_snapshot!(formatted, @r###"Name: Alice, Age: 30"###);
+        assert_snapshot!(formatted, @"Name: Alice, Age: 30");
     }
 }
 // ANCHOR_END: example

@@ -26,8 +26,8 @@ use axum::http::StatusCode;
 use axum::http::Uri;
 use axum::routing::get;
 use axum::routing::post;
-use tracing_subscriber::layer::SubscriberExt;
-use tracing_subscriber::util::SubscriberInitExt;
+use tracing_subscriber::layer::SubscriberExt as _;
+use tracing_subscriber::util::SubscriberInitExt as _;
 
 // Application state.
 /// The state shared by all the handlers.

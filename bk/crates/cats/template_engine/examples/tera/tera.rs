@@ -34,7 +34,7 @@ pub fn underscored(
     _context: &HashMap<String, tera::Value>,
 ) -> tera::Result<tera::Value> {
     match val {
-        tera::Value::String(s) => Ok(tera::Value::String(s.replace("-", "_"))),
+        tera::Value::String(s) => Ok(tera::Value::String(s.replace('-', "_"))),
         _ => Ok(val.to_owned()),
     }
 }
@@ -60,10 +60,9 @@ fn main() -> anyhow::Result<()> {
 
     // Create a context with values for the placeholders.
     let page = Page {
-        title: "Tera Example".to_string(),
-        heading: "Welcome to Tera".to_string(),
-        content: "This is a simple example of using the Tera template engine."
-            .to_string(),
+        title: "Tera Example".to_owned(),
+        heading: "Welcome to Tera".to_owned(),
+        content: "This is a simple example of using the Tera template engine.".to_owned(),
     };
 
     let context = tera::Context::from_serialize(&page)?;

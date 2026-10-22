@@ -25,7 +25,7 @@ use std::sync::atomic::AtomicPtr;
 use std::sync::atomic::Ordering;
 
 use seize::Collector;
-use seize::Guard;
+use seize::Guard as _;
 
 /// Retires a shared object and reclaims it once no thread can access it.
 fn main() {

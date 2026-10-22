@@ -26,7 +26,7 @@ struct MyContainer {
 /// Implementation of the `Container` trait for `MyContainer`.
 impl Container for MyContainer {
     fn items(&self) -> impl Iterator<Item = u8> {
-        self.items.iter().cloned()
+        self.items.iter().copied()
     }
 }
 

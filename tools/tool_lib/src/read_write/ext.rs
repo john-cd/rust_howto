@@ -23,7 +23,7 @@ use std::path::PathBuf;
 pub fn extend_extension<P: AsRef<Path>>(filepath: &P, insert: &str) -> PathBuf {
     let filepath = filepath.as_ref();
 
-    let mut new: OsString = OsString::new();
+    let mut new = OsString::new();
 
     if let Some(file_stem) = filepath.file_stem() {
         new.push(file_stem);

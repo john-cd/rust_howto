@@ -4,7 +4,7 @@
 
 mod vectors;
 
-/// Runs the example from the `vectors` module.
+/// Entry point for the vector example.
 fn main() {
     vectors::run();
 }

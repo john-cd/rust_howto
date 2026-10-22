@@ -15,7 +15,7 @@
 /// println!("{}", return_a_string());
 /// ```
 fn return_a_string() -> String {
-    "This will be printed.".to_string()
+    "This will be printed.".to_owned()
 }
 
 /// Prints the string returned by a documented function.

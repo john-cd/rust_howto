@@ -16,7 +16,7 @@ fn create_symlink(original: &Path, link: &Path) -> anyhow::Result<()> {
     {
         use std::os::unix::fs;
 
-        use anyhow::Context;
+        use anyhow::Context as _;
         fs::symlink(original, link)
             .context("Failed to create a new symbolic link.")
     }
@@ -99,7 +99,7 @@ mod tests {
     /// Runs the example in a clean `temp` folder.
     #[test]
     fn test_main() -> anyhow::Result<()> {
-        use anyhow::Context;
+        use anyhow::Context as _;
         let temp = Path::new("./temp");
         utils::clean_folder(temp)
             .context("Failed to clean up the temp directory.")?;

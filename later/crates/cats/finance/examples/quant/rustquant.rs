@@ -88,7 +88,7 @@ impl BlackScholesMerton {
         let y = 1.0
             - (((((a5 * t + a4) * t + a3) * t + a2) * t + a1) * t)
                 * f64::exp(-z * z);
-        0.5 * (1.0 + sign * y)
+        f64::midpoint(1.0, sign * y)
     }
 
     /// Returns the price of a European call option.
@@ -140,8 +140,8 @@ fn main() {
     let call_price = bs.call_price();
     let put_price = bs.put_price();
 
-    println!("European Call Option Price: {:.4}", call_price);
-    println!("European Put Option Price: {:.4}", put_price);
+    println!("European Call Option Price: {call_price:.4}");
+    println!("European Put Option Price: {put_price:.4}");
 }
 // ANCHOR_END: example
 

@@ -14,7 +14,7 @@ use std::path::Path;
 use notify::EventHandler;
 use notify::RecursiveMode;
 use notify::Result;
-use notify::Watcher;
+use notify::Watcher as _;
 use notify::event::Event;
 use notify::event::EventKind;
 

@@ -45,7 +45,7 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     #[cfg(all(target_os = "linux", feature = "sqlite"))]
     {
-        let cli = Cli::try_parse().unwrap_or_else(|_| Cli { command: None });
+        let cli = Cli::try_parse().unwrap_or(Cli { command: None });
 
         if let Some(command) = cli.command {
             match command {

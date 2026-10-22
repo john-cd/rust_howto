@@ -13,8 +13,8 @@ use std::collections::HashMap;
 /// Looks up scores with `&str` keys.
 fn main() {
     let mut scores: HashMap<String, u32> = HashMap::new();
-    scores.insert("alice".to_string(), 10);
-    scores.insert("bob".to_string(), 20);
+    scores.insert("alice".to_owned(), 10);
+    scores.insert("bob".to_owned(), 20);
 
     // Lookup with `&str` - no need to allocate a `String`:
     assert_eq!(scores.get("alice"), Some(&10));

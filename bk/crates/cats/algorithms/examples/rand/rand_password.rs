@@ -5,7 +5,7 @@
 #![allow(dead_code)]
 
 // ANCHOR: example
-use rand::RngExt;
+use rand::RngExt as _;
 
 /// Prints a random password of fixed length.
 fn main() {

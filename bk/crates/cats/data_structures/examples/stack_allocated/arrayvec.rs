@@ -23,7 +23,7 @@ fn main() {
         .try_extend_from_slice(&[3, 4, 5])
         .expect("array has enough remaining capacity");
     assert!(array.is_full());
-    assert_eq!(&array[..], &[1, 2, 3, 4, 5]);
+    assert_eq!(&*array, &[1, 2, 3, 4, 5]);
 
     // Pushing beyond the capacity will result in a panic:
     // ERROR: array.push(6);
@@ -35,7 +35,7 @@ fn main() {
     for i in 0..array.len() {
         println!("Element at index {}: {}", i, array[i]);
     }
-    assert_eq!(&array[..], &[1, 2, 3, 4, 5]);
+    assert_eq!(&*array, &[1, 2, 3, 4, 5]);
 
     // Build from an array:
     let mut array2: ArrayVec<i32, 5> = ArrayVec::from([1, 2, 3, 4, 5]);
@@ -49,16 +49,16 @@ fn main() {
 
     // Insert an element:
     array2.insert(2, 99);
-    assert_eq!(&array2[..], &[1, 2, 99, 3, 4]);
+    assert_eq!(&*array2, &[1, 2, 99, 3, 4]);
 
     // Remove an element:
     let removed = array2.remove(2);
     assert_eq!(removed, 99);
-    assert_eq!(&array2[..], &[1, 2, 3, 4]);
+    assert_eq!(&*array2, &[1, 2, 3, 4]);
 
     // Retain elements based on a condition:
     array2.retain(|x| *x % 2 == 0);
-    assert_eq!(&array2[..], &[2, 4]);
+    assert_eq!(&*array2, &[2, 4]);
 
     // Drain elements:
     let drained: Vec<_> = array2.drain(..).collect();

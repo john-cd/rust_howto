@@ -1,8 +1,4 @@
-//! Procedural macros for the examples of the procedural macro helper crates.
-//!
-//! TODO Reviewed ??-??-2026
-
-extern crate proc_macro;
+// TODO Reviewed ??-??-2026
 
 use darling::FromDeriveInput;
 use proc_macro::TokenStream;

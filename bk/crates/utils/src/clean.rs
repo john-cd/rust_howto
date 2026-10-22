@@ -13,8 +13,7 @@ fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()
         .to_str()
-        .map(|s| s.starts_with("."))
-        .unwrap_or(false)
+        .is_some_and(|s| s.starts_with('.'))
 }
 
 /// Remove all files (not starting with .) and subfolders in a given folder.

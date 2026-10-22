@@ -37,7 +37,7 @@ fn describe_status(status: &HttpStatus) -> Cow<'static, str> {
 fn main() {
     let status1 = HttpStatus::Ok;
     let status2 = HttpStatus::NotFound;
-    let status3 = HttpStatus::Custom(500, "Internal Server Error".to_string());
+    let status3 = HttpStatus::Custom(500, "Internal Server Error".to_owned());
 
     println!("{}", describe_status(&status1)); // Output: Status: 200 OK
     println!("{}", describe_status(&status2)); // Output: Status: 404 Not Found

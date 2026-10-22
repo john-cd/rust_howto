@@ -45,11 +45,11 @@ pub enum DataStoreError {
     Other(#[from] anyhow::Error),
 }
 
-/// Returns an error of type `DataStoreError`.
+#[expect(unreachable_code, reason = "the example returns an error on purpose")]
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // For demonstration purposes, return an error of type
     // `DataStoreError::Unknown`.
-    Err(DataStoreError::Unknown)?;
+    return Err(DataStoreError::Unknown.into());
     Ok(())
 }
 
@@ -69,6 +69,6 @@ mod tests {
     fn test_main() {
         let res = main();
         println!("{res:?}");
-        assert!(res.is_err())
+        assert!(res.is_err());
     }
 }

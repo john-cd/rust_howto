@@ -17,8 +17,7 @@ pub enum ConfigValue {
     String(String),
     /// A boolean.
     Boolean(bool),
-    /// A nested map of configuration values.
-    Map(HashMap<String, ConfigValue>),
+    Map(HashMap<String, Self>),
 }
 
 // Our DSL Macro.
@@ -163,24 +162,24 @@ fn main() {
     );
     assert_eq!(
         app_config.get("log_level"),
-        Some(&ConfigValue::String("info".to_string()))
+        Some(&ConfigValue::String("info".to_owned()))
     );
     assert_eq!(
         app_config.get("max_connections"),
-        Some(&ConfigValue::String("50".to_string()))
+        Some(&ConfigValue::String("50".to_owned()))
     );
     assert_eq!(
         app_config.get("network"),
         Some(&ConfigValue::Map(HashMap::from([
             (
-                "protocol".to_string(),
-                ConfigValue::String("tcp".to_string())
+                "protocol".to_owned(),
+                ConfigValue::String("tcp".to_owned())
             ),
             (
-                "timeout_seconds".to_string(),
+                "timeout_seconds".to_owned(),
                 ConfigValue::String("30".into())
             ),
-            ("retries".to_string(), ConfigValue::String("3".into())),
+            ("retries".to_owned(), ConfigValue::String("3".into())),
         ])))
     );
 }

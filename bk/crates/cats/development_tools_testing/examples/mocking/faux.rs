@@ -73,7 +73,7 @@ impl Database for ActualDatabase {
     fn get_user(&self, id: u64) -> Option<User> {
         (id == 1).then(|| User {
             id,
-            name: "Alice".to_string(),
+            name: "Alice".to_owned(),
         })
     }
 
@@ -108,7 +108,7 @@ fn main() {
     let original_name = service
         .get_user_name(1)
         .expect("demo database should return a user");
-    let updated = service.update_user_name(1, "Bob".to_string());
+    let updated = service.update_user_name(1, "Bob".to_owned());
 
     println!("Original user name: {original_name}");
     println!("Update succeeded: {updated}");
@@ -129,21 +129,17 @@ mod tests {
 
         // Define the behavior.
         when!(mock_db.get_user).then(|id| {
-            if id == 1 {
-                Some(User {
+            (id == 1).then(|| User {
                     id: 1,
-                    name: "Alice".to_string(),
+                    name: "Alice".to_owned(),
                 })
-            } else {
-                None
-            }
         });
 
         // Create a service with the mock DB.
         let service = UserService::new(mock_db);
 
         // Test the service.
-        assert_eq!(service.get_user_name(1), Some("Alice".to_string()));
+        assert_eq!(service.get_user_name(1), Some("Alice".to_owned()));
         assert_eq!(service.get_user_name(2), None);
     }
 
@@ -154,12 +150,12 @@ mod tests {
         let mut mock_db = MockDatabase::faux();
         let user = User {
             id: 1,
-            name: "Alice".to_string(),
+            name: "Alice".to_owned(),
         };
 
         // Configure `get_user` to return our test user.
         when!(mock_db.get_user)
-            .then(move |id| if id == 1 { Some(user.clone()) } else { None });
+            .then(move |id| (id == 1).then(|| user.clone()));
 
         // Configure `save_user` to always succeed.
         when!(mock_db.save_user).then(|_| true);
@@ -168,9 +164,9 @@ mod tests {
         let service = UserService::new(mock_db);
 
         // Test that `update_user_name` succeeds.
-        assert!(service.update_user_name(1, "Bob".to_string()));
+        assert!(service.update_user_name(1, "Bob".to_owned()));
         // Test that an update fails for a non-existent user.
-        assert!(!service.update_user_name(2, "Charlie".to_string()));
+        assert!(!service.update_user_name(2, "Charlie".to_owned()));
     }
 }
 // ANCHOR_END: example

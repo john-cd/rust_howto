@@ -18,7 +18,7 @@ fn main() {
         "String concatenation: {} + {} = {}",
         u,
         v,
-        u.to_string() + &v
+        u.to_owned() + &v
     );
 }
 

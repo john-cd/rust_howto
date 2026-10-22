@@ -1,7 +1,5 @@
-//! Command-line tool that empties the `temp` folders of a directory tree.
-//!
-//! TODO Reviewed ??-??-2026
-
+// TODO Reviewed ??-??-2026
+//! Removes build artifacts and other generated files from the repository.
 use std::fs;
 use std::fs::DirEntry;
 use std::path::Path;
@@ -37,7 +35,7 @@ fn main() -> anyhow::Result<()> {
         //.min_depth(2) // Look at the grandchildren, etc of the root folder
         .into_iter()
         .filter_entry(|e| e.file_type().is_dir()) // Only look at directories
-        .filter_map(|e| e.ok())
+        .filter_map(std::result::Result::ok)
     // Silently skip folders with permission errors
     {
         if entry.path().ends_with("temp") {
@@ -52,8 +50,7 @@ fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()
         .to_str()
-        .map(|s| s.starts_with("."))
-        .unwrap_or(false)
+        .is_some_and(|s| s.starts_with('.'))
 }
 
 /// Remove all files (not starting with .) and subfolders in a given folder.
@@ -91,24 +88,24 @@ mod tests {
     /// Checks that only names starting with a dot are hidden.
     #[test]
     fn test_is_hidden() {
-        let dir = tempdir().unwrap();
+        let dir = tempdir().expect("input should parse");
         let hidden_file = dir.path().join(".hidden.txt");
         let visible_file = dir.path().join("visible.txt");
 
-        fs::File::create(&hidden_file).unwrap();
-        fs::File::create(&visible_file).unwrap();
+        fs::File::create(&hidden_file).expect("input should parse");
+        fs::File::create(&visible_file).expect("input should parse");
 
         let hidden_entry = fs::read_dir(dir.path())
-            .unwrap()
-            .find(|e| e.as_ref().unwrap().path() == hidden_file)
-            .unwrap()
-            .unwrap();
+            .expect("input should parse")
+            .find(|e| e.as_ref().expect("input should parse").path() == hidden_file)
+            .expect("input should parse")
+            .expect("input should parse");
 
         let visible_entry = fs::read_dir(dir.path())
-            .unwrap()
-            .find(|e| e.as_ref().unwrap().path() == visible_file)
-            .unwrap()
-            .unwrap();
+            .expect("input should parse")
+            .find(|e| e.as_ref().expect("input should parse").path() == visible_file)
+            .expect("input should parse")
+            .expect("input should parse");
 
         assert!(is_hidden(&hidden_entry));
         assert!(!is_hidden(&visible_entry));
@@ -116,19 +113,20 @@ mod tests {
 
     // Helper function to create a dummy directory structure for testing
     fn create_dummy_dir(root: &Path) {
-        fs::create_dir_all(root.join("temp")).unwrap();
-        fs::File::create(root.join("temp").join("file1.txt")).unwrap();
-        fs::File::create(root.join("temp").join(".hidden.txt")).unwrap();
-        fs::create_dir(root.join("temp").join("subdir")).unwrap();
-        fs::File::create(root.join("temp").join("subdir").join("file2.txt")).unwrap();
-        fs::File::create(root.join("file3.txt")).unwrap();
-        fs::File::create(root.join(".gitkeep")).unwrap();
+        fs::create_dir_all(root.join("temp")).expect("input should parse");
+        fs::File::create(root.join("temp").join("file1.txt")).expect("input should parse");
+        fs::File::create(root.join("temp").join(".hidden.txt")).expect("input should parse");
+        fs::create_dir(root.join("temp").join("subdir")).expect("input should parse");
+        fs::File::create(root.join("temp").join("subdir").join("file2.txt"))
+            .expect("input should parse");
+        fs::File::create(root.join("file3.txt")).expect("input should parse");
+        fs::File::create(root.join(".gitkeep")).expect("input should parse");
     }
 
     /// Checks that files and folders are removed, except hidden ones.
     #[test]
     fn test_clean_folder() {
-        let dir = tempdir().unwrap();
+        let dir = tempdir().expect("input should parse");
         let temp_dir = dir.path().join("temp");
         create_dummy_dir(dir.path());
 
@@ -140,7 +138,7 @@ mod tests {
         assert!(dir.path().join("file3.txt").exists());
         assert!(dir.path().join(".gitkeep").exists());
 
-        clean_folder(&temp_dir).unwrap();
+        clean_folder(&temp_dir).expect("input should parse");
 
         // Check that the files and folders have been removed
         assert!(!temp_dir.join("file1.txt").exists());
@@ -154,7 +152,7 @@ mod tests {
     /// Checks that a missing folder is not an error.
     #[test]
     fn test_clean_folder_nonexistent() {
-        let dir = tempdir().unwrap();
+        let dir = tempdir().expect("input should parse");
         let non_existent_dir = dir.path().join("nonexistent");
 
         // Check that the folder does not exist
@@ -162,6 +160,6 @@ mod tests {
 
         // Should not panic
         let result = clean_folder(&non_existent_dir);
-        assert!(result.is_ok());
+        result.expect("input should parse");
     }
 }

@@ -38,12 +38,12 @@ enum Event {
     Reset,
 }
 
-/// Implementation of the StateMachine, including state transitions and state
+/// Implementation of the `StateMachine`, including state transitions and state
 /// retrieval.
 impl StateMachine {
-    /// Creates a new StateMachine in the Idle state.
+    /// Creates a new `StateMachine` in the Idle state.
     fn new() -> Self {
-        StateMachine { state: State::Idle }
+        Self { state: State::Idle }
     }
 
     /// Transitions the state machine to a new state based on the current state

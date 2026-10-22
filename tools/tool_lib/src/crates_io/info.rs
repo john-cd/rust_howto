@@ -2,7 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use anyhow::Context;
+use anyhow::Context as _;
 use anyhow::Result;
 use crates_io_api::CrateResponse;
 use tracing::debug;

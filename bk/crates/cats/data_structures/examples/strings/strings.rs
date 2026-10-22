@@ -26,7 +26,7 @@ fn string() {
     // Alternative initialization from string literals:
     // `to_string` is available on any type that implements
     // the `Display` trait.
-    s1 = "contents".to_string();
+    s1 = "contents".to_owned();
 
     println!("String: {s1}");
 }
@@ -38,7 +38,7 @@ fn string_slices() {
     let my_string = String::from("Rust is awesome!");
 
     // Create a string slice pointing to the entire `String`:
-    let slice1 = &my_string[..]; // Using `Index<RangeFull, Output = str>`.
+    let slice1 = &*my_string; // Using `Index<RangeFull, Output = str>`.
     println!("Slice of an entire `String`: '{slice1}'");
 
     // The following works as well:
@@ -74,7 +74,7 @@ fn string_literals() {
     // ERROR: literal.push_str("!");
 
     // String literals can be used to create a `String`.
-    let string_from_literal: String = literal.to_string();
+    let string_from_literal: String = literal.to_owned();
     println!("String from literal: '{string_from_literal}'");
 }
 

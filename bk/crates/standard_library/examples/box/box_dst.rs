@@ -21,7 +21,7 @@ fn main() {
     println!("Boxed from Vec: {boxed_from_vec:?}");
 
     // Creating a Box containing a `str`.
-    let boxed_str: Box<str> = "Hello, Rust!".to_string().into_boxed_str();
+    let boxed_str: Box<str> = "Hello, Rust!".to_owned().into_boxed_str();
     println!("Boxed string: {boxed_str}");
 
     // We can also create it directly from a `&str` literal (less common).

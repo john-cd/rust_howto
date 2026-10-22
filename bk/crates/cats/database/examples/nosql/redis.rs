@@ -10,7 +10,7 @@
 use std::env;
 
 use anyhow::Result;
-use redis::Commands;
+use redis::Commands as _;
 use redis::Connection;
 
 /// Establishes a connection to a Redis server.
@@ -25,7 +25,7 @@ use redis::Connection;
 /// error if the connection fails.
 fn connect() -> Result<Connection> {
     let redis_host_name = env::var("REDIS_HOSTNAME")
-        .unwrap_or_else(|_| "127.0.0.1:6379".to_string());
+        .unwrap_or_else(|_| "127.0.0.1:6379".to_owned());
     let redis_password = env::var("REDIS_PASSWORD").unwrap_or_default();
     // Does Redis server need a secure connection?
     let uri_scheme = if tls_enabled(env::var("IS_TLS").ok().as_deref()) {
@@ -47,8 +47,8 @@ fn tls_enabled(value: Option<&str>) -> bool {
 
 /// Fetches an integer value from Redis.
 ///
-/// This function connects to a Redis server, sets a key-value pair ("my_key",
-/// 42), and then retrieves the value associated with "my_key".
+/// This function connects to a Redis server, sets a key-value pair ("`my_key`",
+/// 42), and then retrieves the value associated with "`my_key`".
 ///
 /// # Returns
 ///

@@ -6,7 +6,7 @@
 
 // ANCHOR: example
 use std::io;
-use std::io::Write;
+use std::io::Write as _;
 
 /// Retrieve user input from the standard input:
 fn get_and_print_input() -> Result<String, io::Error> {

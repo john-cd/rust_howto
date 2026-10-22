@@ -18,14 +18,14 @@ use markdown::to_html;
 
 /// Converts a Markdown string to HTML and prints it.
 fn main() {
-    let markdown_text = r#"
+    let markdown_text = "
 # Hello, Markdown!
 
 This is a simple paragraph with **bold** and *italic* text.
 
 * List item 1
 * List item 2
-"#;
+";
 
     let html_output = to_html(markdown_text);
     // Also consider using: `markdown::file_to_html`, `markdown::tokenize`.

@@ -20,22 +20,22 @@ fn extract_login(input: &str) -> Option<&str> {
         )
         .unwrap();
     }
-    RE.captures(input)
-        .and_then(|cap| cap.name("login").map(|login| login.as_str()))
+    let cap = RE.captures(input)?;
+    cap.name("login").map(|login| login.as_str())
 }
 
 /// Extracts the login from several strings.
 fn main() {
-    let login = extract_login(r"I❤email@example.com");
+    let login = extract_login("I❤email@example.com");
     println!("{login:?}");
-    assert_eq!(login, Some(r"I❤email"));
+    assert_eq!(login, Some("I❤email"));
 
-    let login = extract_login(r"sdf+sdsfsd.as.sdsd@jhkk.d.rl");
+    let login = extract_login("sdf+sdsfsd.as.sdsd@jhkk.d.rl");
     println!("{login:?}");
-    assert_eq!(login, Some(r"sdf+sdsfsd.as.sdsd"));
+    assert_eq!(login, Some("sdf+sdsfsd.as.sdsd"));
 
-    assert_eq!(extract_login(r"More@Than@One@at.com"), None);
-    assert_eq!(extract_login(r"Not an email@email"), None);
+    assert_eq!(extract_login("More@Than@One@at.com"), None);
+    assert_eq!(extract_login("Not an email@email"), None);
 }
 
 // ANCHOR_END: example

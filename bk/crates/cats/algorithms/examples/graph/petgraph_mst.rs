@@ -7,7 +7,7 @@
 // ANCHOR: example
 use petgraph::Graph;
 use petgraph::algo::min_spanning_tree;
-use petgraph::data::FromElements;
+use petgraph::data::FromElements as _;
 use petgraph::dot::Config;
 use petgraph::dot::Dot;
 
@@ -43,7 +43,7 @@ fn main() {
 
     // Total weight of MST should be 1 (A-B) + 1 (B-C) + 1 (C-D) + 1 (D-E) = 4.
     let total_weight: u32 = mst_graph.edge_weights().sum();
-    println!("Total MST weight: {}", total_weight);
+    println!("Total MST weight: {total_weight}");
     assert_eq!(total_weight, 4);
 }
 // ANCHOR_END: example

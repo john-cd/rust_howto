@@ -17,13 +17,13 @@ pub(crate) enum MyError {
 
 impl From<io::Error> for MyError {
     fn from(err: io::Error) -> Self {
-        MyError::Io(err)
+        Self::Io(err)
     }
 }
 
 impl From<&str> for MyError {
     fn from(msg: &str) -> Self {
-        MyError::Message(msg.to_string())
+        Self::Message(msg.to_owned())
     }
 }
 
@@ -31,7 +31,7 @@ impl From<&str> for MyError {
 fn main() -> Result<(), MyError> {
     println!("Testing custom error conversion with the ? operator:");
     let _file = std::fs::File::open("missing.txt")?; // `io::Error` becomes `MyError`.
-    Err("custom failure")?; // `&str` becomes `MyError`.
+    return Err("custom failure".into()); // `&str` becomes `MyError`.
     Ok(())
 }
 
