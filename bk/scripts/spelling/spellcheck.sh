@@ -81,15 +81,28 @@ elif [[ "$mode" == "list" ]]; then
         exit "$retval"
     fi
 
+    aspell_output_file="$(mktemp)"
+    trap 'rm -f -- "$aspell_output_file"' EXIT
+
     for fname in "${markdown_sources[@]}"; do
-        if ! aspell_output=$(sed 's/^/^/' "$fname" | aspell pipe --encoding=utf-8 --ignore=3 --personal="$dict_path"); then
+        if ! sed 's/^/^/' "$fname" | aspell pipe --encoding=utf-8 --ignore=3 --personal="$dict_path" > "$aspell_output_file"; then
             printf 'Failed to spell-check %s\n' "$fname" >&2
             retval=1
             continue
         fi
 
-        line_number=0
-        while IFS= read -r aspell_result; do
+        header_skipped=0
+        line_number=1
+        file_checked=0
+
+        while IFS= read -r aspell_result || [[ -n "$aspell_result" ]]; do
+            if [[ $header_skipped -eq 0 ]]; then
+                header_skipped=1
+                continue
+            fi
+
+            file_checked=1
+
             if [[ -z "$aspell_result" ]]; then
                 ((line_number += 1))
                 continue
@@ -97,13 +110,13 @@ elif [[ "$mode" == "list" ]]; then
 
             case "$aspell_result" in
             '& '* | '# '*)
-                printf '%s:%d: %s\n' "$fname" "$((line_number + 1))" "$aspell_result"
+                printf '%s:%d: %s\n' "$fname" "$line_number" "$aspell_result"
                 retval=1
                 ;;
             esac
-        done <<< "$aspell_output"
+        done < "$aspell_output_file"
 
-        if ((line_number == 0)); then
+        if ((file_checked == 0)); then
             printf 'Aspell returned no line results for %s\n' "$fname" >&2
             retval=1
         fi
