@@ -14,7 +14,7 @@ use quick_xml::events::BytesText;
 use quick_xml::events::Event;
 use serde::Deserialize;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, PartialEq)]
 #[serde(rename = "person")]
 struct Person {
     name: String,
@@ -81,5 +81,20 @@ mod tests {
     fn test_main() -> anyhow::Result<()> {
         main()
     }
-    // [finish](https://github.com/john-cd/rust_howto/issues/1236)
+
+    /// XML child elements populate the corresponding person fields.
+    #[test]
+    fn deserializes_person_fields() -> anyhow::Result<()> {
+        let person: Person =
+            from_str(r#"<person><name>John Doe</name><age>32</age></person>"#)?;
+
+        assert_eq!(
+            person,
+            Person {
+                name: "John Doe".into(),
+                age: 32
+            }
+        );
+        Ok(())
+    }
 }
