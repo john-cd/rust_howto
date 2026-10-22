@@ -58,7 +58,6 @@ mod tests {
 
     #[test]
     fn require_network() -> anyhow::Result<()> {
-        // TODO
         if std::env::var("AWS_S3_BUCKET").is_err() {
             eprintln!(
                 "Skipping AWS network test because AWS_S3_BUCKET is not set."
