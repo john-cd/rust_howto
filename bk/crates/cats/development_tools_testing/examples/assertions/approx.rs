@@ -22,7 +22,7 @@ fn main() {
 
     // Use `assert_relative_eq` to compare the two values approximately.
     // It panics with a helpful error on failure.
-    // You can specifiy the tolerance to use, and other parameters.
+    // You can specify the tolerance to use, and other parameters.
     assert_relative_eq!(a, b, epsilon = 1.0e-6);
     println!("The numbers are approximately equal!");
 

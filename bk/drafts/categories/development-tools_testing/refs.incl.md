@@ -16,6 +16,7 @@
 [ex~development-tools_testing~integration_testing]: testing.md#integration_testing
 [ex~development-tools_testing~mocking]: mocking.md#mocking
 [ex~development-tools_testing~proptesting]: property_based_testing.md#proptesting
+[ex~development-tools_testing~standard-assertions]: assertions.md#standard-library-macros
 [ex~development-tools_testing~test_data_generation]: property_based_testing.md#test_data_generation
 [ex~development-tools_testing~unit_testing]: testing.md#unit_testing
 [p~asynchronous]: ../asynchronous/index.md
