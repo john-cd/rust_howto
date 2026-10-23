@@ -8,12 +8,6 @@
 //! The `diff` crate provides functionality for computing the differences
 //! between sequences. In this example, we use it to compare lines within two
 //! strings.
-//!
-//! Add to your `Cargo.toml`:
-//! ```toml
-//! [dependencies]
-//! diff = "0.1.13" # Or latest
-//! ```
 
 use diff::Result;
 

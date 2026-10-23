@@ -219,7 +219,7 @@
   - [String Manipulation](categories/text-processing/string_manipulation.md)
   - [String Search](categories/text-processing/string_search.md)
   - [Unicode Handling](categories/text-processing/unicode.md)
-  - [Diffing](categories/text-processing/diffing.md)
+  - [Text Diffing](categories/text-processing/diffing.md)
   - [OS and C Strings](categories/text-processing/other_strings.md)
 
 - [Web Programming](categories/web-programming/index.md)
