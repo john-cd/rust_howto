@@ -3,60 +3,45 @@
 
 [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}}
 
-Configuration management {{hi:Configuration management}} is the practice of handling application settings. Key goals include:
+Configuration lets an application change its behavior without changing its source code. A program may read settings from built-in defaults, configuration files, environment variables, and command-line arguments. It should define how those sources combine and report invalid settings before the application starts using them.
 
-- Separation of configuration from code, allowing for configuration changes without recompiling the application.
-- Support for configuration specific to each environment (development, testing, and production).
-- Secure handling of sensitive data e.g. secrets like API keys and database credentials.
+## Choose configuration sources
 
-## Common Approaches
+- Use built-in defaults for safe values that apply to most runs.
+- Use a configuration file for structured settings that people need to edit or keep together. TOML, JSON, YAML, and INI are common choices; choose a format and parser that fit the project.
+- Use environment variables for deployment-specific values and settings supplied by the process environment. [`std::env`][c~std::env~docs]↗{{hi:std::env}} provides direct access. A `.env` file can help local development, but should not be committed when it contains secrets.
+- Use command-line arguments for options that belong to one invocation, such as a subcommand, a one-off output path, or an explicit override. [`clap`][c~clap~docs]↗{{hi:clap}} can define and parse these arguments.
 
-- [[environment_variables | Environment Variables]] are suitable for simple configurations. The [`std::env`][c~std::env~docs]↗{{hi:std::env}} module provides access to environment variables.
-- [[configuration | Configuration]] files like [[toml | TOML]], [[ini | INI]], [[yaml | YAML]], [[json | JSON]], or RON provide structured and organized configuration. Popular Rust crates for parsing these formats include: [`toml`][c~toml~docs]↗{{hi:toml}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`ron`][c~ron~docs]↗{{hi:ron}}, [`serde`][c~serde~docs]↗{{hi:serde}}.
+A layered application might apply sources in this order: defaults, configuration file, environment variables, then command-line overrides. This is a design choice, not a universal rule. Make precedence explicit, especially when a value appears in more than one source.
 
-FIXME Configuration crates like [`config-rs`][c~config~docs]↗{{hi:config-rs}}, a powerful and flexible crate for layered configuration. It supports merging configurations from various sources, including files, environment variables, and in-memory data.
-Excellent for 12-factor applications.
+## Parse and validate settings
 
-Command-Line Arguments:
-Using crates like [`clap`][c~clap~docs]↗{{hi:clap}} to parse command-line arguments.
-Suitable for passing simple configuration options.
+Represent related settings with a Rust type, and deserialize files into that type with [`serde`][c~serde~docs]↗{{hi:serde}} and a format-specific crate such as [`toml`][c~toml~docs]↗{{hi:toml}} or [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}. For multiple sources, a crate such as [`config`][c~config~docs]↗{{hi:config}} can collect and merge values; the application still needs to choose precedence and validate the resulting settings.
 
-## Best Practices
+Check required values, ranges, and relationships between fields before starting work. Return an actionable error that identifies the setting and source when possible. Avoid silently replacing malformed or missing values with defaults unless that fallback is intentional.
 
-- Use a layered configuration approach: Combine multiple sources (e.g., default files, environment variables, command-line arguments) to provide flexibility and override behavior.
-- Validate configuration: Ensure that configuration values are valid and within expected ranges.
-- Handle errors gracefully: Provide informative error messages when configuration is invalid or missing.
-- Secure sensitive data: Avoid storing secrets in version control. Use environment variables or dedicated secret management tools.
-- Provide clear documentation of all configuration options.
+Keep secrets out of source control. Restrict access to configuration files that contain credentials, avoid printing secret values in diagnostics, and use the deployment platform's secret-management facility where available. Environment variables can be a useful delivery mechanism, but they do not replace careful secret handling.
 
-## Configuration Management
+## Configuration examples
 
 {{#include configuration.incl.md}}
 
-## Environment Variables
+## Environment variables
 
 {{#include environment_variables.incl.md}}
 
-## Related Topics
+## Related topics
 
-### Configuration File Formats
+### Configuration file formats
 
-- TOML: [`toml`][c~toml~docs]↗{{hi:toml}}
-- YAML: [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}}, [`yaml-rust`][c~yaml-rust~docs]↗{{hi:yaml-rust}}
-- JSON: [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}
-- INI: [`ini`][c~ini~docs]↗{{hi:ini}}
+- [[toml | TOML]] and [`toml`][c~toml~docs]↗{{hi:toml}}
+- [[json | JSON]] and [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}
+- [[yaml | YAML]] and [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}}
+- [[ini | INI]] and [`ini`][c~ini~docs]↗{{hi:ini}}
 
-### Configuration Management
+### Command-line arguments
 
-- [`config`][c~config~docs]↗{{hi:config}}: A popular crate that supports multiple formats and merging configurations from different sources (files, environment variables, etc.).
-[`serde`][c~serde~docs]↗{{hi:serde}}: (Not a config crate itself, but essential for serializing and deserializing configuration - data in most cases).
-- Environment Variables: [`std::env`][c~std::env~docs]↗{{hi:std::env}} (for accessing environment variables directly).
-
-Configuration Validation: (Often done manually or with custom functions, but schemars can be used to generate JSON schema for validation).
-
-### Command-line Arguments
-
-- Command-Line Arguments (often used in conjunction with [`config`][c~config~docs]↗{{hi:config}}): [`clap`][c~clap~docs]↗{{hi:clap}}, [`structopt`][c~structopt~docs]↗{{hi:structopt}}, [`argh`][c~argh~docs]↗{{hi:argh}}
+- [`clap`][c~clap~docs]↗{{hi:clap}} for command-line interfaces and per-run overrides
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
