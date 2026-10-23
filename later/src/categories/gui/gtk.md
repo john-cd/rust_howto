@@ -33,6 +33,8 @@ Make sure the [`gtk4`][c~gtk4~docs]↗{{hi:gtk4}} crate version you're using is 
 
 [`relm4`][c~relm4~docs]↗{{hi:relm4}} is a higher-level library that sits on top of [`gtk4-rs`][c~gtk4~docs]↗{{hi:gtk4-rs}}. An idiomatic GUI library inspired by `Elm`.
 
+From `later/crates`, run `cargo run -p gui --example gtk --features gtk -- relm4` to launch this example. The GTK examples require GTK 4 development libraries; see the setup notes above.
+
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/gtk/relm4.rs:example}}
 ```
