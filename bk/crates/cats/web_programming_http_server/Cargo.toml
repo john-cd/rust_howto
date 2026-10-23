@@ -68,6 +68,7 @@ test = true
 name = "async_graphql"
 path = "examples/async_graphql.rs"
 test = true
+required-features = ["async-graphql-support"]
 
 [[example]]
 name = "axum"
