@@ -68,7 +68,7 @@ fn main() -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::DuplicateName => {
-                duplicate_name::run();
+                duplicate_name::run()?;
             }
             Commands::FindFile => {
                 find_file::run()?;
@@ -93,10 +93,10 @@ fn main() -> anyhow::Result<()> {
                 png::run()?;
             }
             Commands::Sizes => {
-                sizes::run();
+                sizes::run()?;
             }
             Commands::SkipDot => {
-                skip_dot::run();
+                skip_dot::run()?;
             }
         }
     }

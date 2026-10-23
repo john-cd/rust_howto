@@ -4,37 +4,34 @@
 //! This example demonstrates how to traverse a directory and find files that
 //! have been modified within the last 24 hours.
 
+use anyhow::Context;
 use anyhow::Result;
 use walkdir::WalkDir;
 
 /// Walks the current directory tree and prints the files that were modified
 /// recently.
 fn main() -> Result<()> {
-    // Traverse the current directory recursively.
-    for entry in WalkDir::new(".")
-        .follow_links(true)
-        .into_iter()
-        .filter_map(std::result::Result::ok)
-    {
-        let f_name = entry.file_name().to_string_lossy();
+    // By default, WalkDir does not follow symbolic links to directories.
+    for entry in WalkDir::new(".") {
+        let entry = entry?;
+        let path = entry.path();
+        let metadata = entry.metadata().with_context(|| {
+            format!("reading metadata for {}", path.display())
+        })?;
+        let modified = metadata.modified().with_context(|| {
+            format!("reading modification time for {}", path.display())
+        })?;
 
-        // `metadata()` can return errors for path values that the program
-        // does not have permissions to access or if the path no longer exists.
-        if let Ok(metadata) = entry.metadata() {
-            // Get the last modified time of the file.
-            let sec = metadata.modified()?;
-            // Calculate the elapsed time since the last modification.
-            if let Ok(elapsed) = sec.elapsed() {
-                // Check if the file was modified within the last 24 hours
-                // (86400 seconds).
-                if elapsed.as_secs() < 86400 {
-                    // Print the file name if it was modified recently.
-                    println!("{f_name}");
-                }
-            }
+        // `elapsed` returns an error if the modification time is in the future.
+        if modified
+            .elapsed()
+            .with_context(|| format!("computing age for {}", path.display()))?
+            .as_secs()
+            < 86_400
+            && metadata.is_file()
+        {
+            println!("{}", path.display());
         }
-        // You may also check for specific extensions by adding:
-        // && f_name.ends_with(".json")
     }
 
     Ok(())
@@ -51,6 +48,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the example can traverse the current directory.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

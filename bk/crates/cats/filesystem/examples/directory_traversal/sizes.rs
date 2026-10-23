@@ -4,38 +4,53 @@
 //! Calculates the total size of all files within a directory tree
 //! (within a given depth).
 
+use anyhow::Context;
+use anyhow::Result;
+use anyhow::anyhow;
 use walkdir::WalkDir;
 
 /// Calculates the total size of all files within a directory tree
 /// (within a given depth).
-fn main() {
-    // Create a new `WalkDir` iterator starting from the current directory
-    // (".").
-    let total_size = WalkDir::new(".")
-        .min_depth(1) // Set the minimum depth to 1 (exclude the root directory itself).
-        .max_depth(3)
-        .into_iter()
-        .filter_map(std::result::Result::ok)
-        .filter_map(|entry| entry.metadata().ok())
-        .filter(std::fs::Metadata::is_file)
-        .fold(0, |acc, m| acc + m.len());
+fn main() -> Result<()> {
+    let mut total_size = 0_u64;
+    for entry in WalkDir::new(".").min_depth(1).max_depth(3) {
+        let entry = entry?;
+        if entry.file_type().is_file() {
+            total_size = total_size
+                .checked_add(
+                    entry
+                        .metadata()
+                        .with_context(|| {
+                            format!(
+                                "reading metadata for {}",
+                                entry.path().display()
+                            )
+                        })?
+                        .len(),
+                )
+                .ok_or_else(|| anyhow!("total file size exceeds u64::MAX"))?;
+        }
+    }
 
     println!("Total size: {total_size} bytes.");
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+pub fn run() -> Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the example can traverse the current directory.
     #[test]
-    fn test_main() {
-        main();
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
     }
 }

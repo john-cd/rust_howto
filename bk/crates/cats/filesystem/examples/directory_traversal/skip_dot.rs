@@ -4,6 +4,7 @@
 //! This example demonstrates how to skip hidden files and directories during
 //! directory traversal.
 
+use anyhow::Result;
 use walkdir::DirEntry;
 use walkdir::WalkDir;
 
@@ -12,35 +13,35 @@ use walkdir::WalkDir;
 /// This function filters out hidden files and directories (those starting with
 /// a dot) except for the root directory itself.
 fn is_not_hidden(entry: &DirEntry) -> bool {
-    entry
-        .file_name()
-        .to_str()
-        .is_some_and(|s| entry.depth() == 0 || !s.starts_with('.'))
+    entry.depth() == 0 || !entry.file_name().to_string_lossy().starts_with('.')
 }
 
 /// Prints the paths of the current directory tree, skipping hidden files and
 /// directories.
-fn main() {
+fn main() -> Result<()> {
     let w = WalkDir::new(".");
-    w.into_iter()
-        .filter_entry(is_not_hidden)
-        .filter_map(std::result::Result::ok)
-        .for_each(|x| println!("{}", x.path().display()));
+    for entry in w.into_iter().filter_entry(is_not_hidden) {
+        let entry = entry?;
+        println!("{}", entry.path().display());
+    }
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+pub fn run() -> Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the example can traverse the current directory.
     #[test]
-    fn test_main() {
-        main();
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
     }
 }

@@ -3,6 +3,8 @@
 
 {{#include directory_traversal.incl.md}}
 
+[`std::fs::read_dir`][c~std::fs::read_dir~docs]↗{{hi:std::fs::read_dir}} lists one directory at a time; recurse over its entries to visit a tree. [`walkdir`][c~walkdir~docs]↗{{hi:walkdir}} provides recursive traversal, while [`ignore`][c~ignore~docs]↗{{hi:ignore}} can also honor ignore files such as `.gitignore`. These iterators can yield errors when entries cannot be read or have changed during traversal. Handle those errors explicitly instead of dropping them, as the examples below do.
+
 ## Find Files Modified in the Last 24 Hours {#find-files-modified-last-24-hours}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
@@ -40,7 +42,7 @@ The following would assert that a loop exists:
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-The following example uses [`walkdir::WalkDir::into_iter`][c~walkdir::WalkDir::into_iter~docs]↗{{hi:walkdir::WalkDir::into_iter}} to traverse the current directory and its subdirectories. It filters out directories with [`walkdir::DirEntry::file_type`][c~walkdir::DirEntry::file_type~docs]↗{{hi:walkdir::DirEntry::file_type}} and [`std::fs::FileType::is_dir`][c~std::fs::FileType::is_dir~docs]↗{{hi:std::fs::FileType::is_dir}}, gets the filename via [`walkdir::DirEntry::file_name`][c~walkdir::DirEntry::file_name~docs]↗{{hi:walkdir::DirEntry::file_name}}, and counts occurrences in a [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}. A duplicate is printed exactly once when its count reaches `2`.
+The following example uses [`walkdir::WalkDir`][c~walkdir~docs]↗{{hi:walkdir::WalkDir}} to traverse the current directory and its subdirectories. It skips directories, counts each remaining entry's file name in a [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}, and prints a name once when its count reaches `2`. The iterator's errors are propagated, so the example reports an unreadable entry instead of presenting a partial result as complete.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/duplicate_name.rs:example}}
@@ -50,7 +52,7 @@ The following example uses [`walkdir::WalkDir::into_iter`][c~walkdir::WalkDir::i
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-The following example finds files modified within the last day in the current directory. Using [`walkdir::WalkDir::follow_links`][c~walkdir::WalkDir::follow_links~docs]↗{{hi:walkdir::WalkDir::follow_links}} ensures symbolic links{{hi:Symbolic links}} are followed like they were normal directories and files.
+The following example finds files modified within the last day in the current directory and prints their paths. It propagates traversal and metadata errors. By default, `WalkDir` does not follow symbolic links to directories; enabling [`walkdir::WalkDir::follow_links`][c~walkdir::WalkDir::follow_links~docs]↗{{hi:walkdir::WalkDir::follow_links}} can expose additional permission and symlink-loop errors.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/find_file.rs:example}}
@@ -60,9 +62,7 @@ The following example finds files modified within the last day in the current di
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-The following example uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} to descend recursively into entries passing the `is_not_hidden` predicate thus skipping hidden files and directories. [`std::iter::Iterator::filter`][c~std::iter::Iterator::filter~docs]↗{{hi:std::iter::Iterator::filter}} applies to each [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} even if the parent is a hidden directory.
-
-Root dir `"."` yields through [`walkdir::WalkDir::depth`][c~walkdir::WalkDir::depth~docs]↗{{hi:walkdir::WalkDir::depth}} usage in `is_not_hidden` predicate.
+The following example uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} to skip hidden files and directories. Unlike a plain iterator filter, this method also prunes a hidden directory so the walker does not descend into it. The depth-zero root entry is retained, and traversal errors are propagated.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/skip_dot.rs:example}}
@@ -84,7 +84,7 @@ The following example recursively walks the file system respecting ignore files 
 
 [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}{{hi:File sizes}}
 
-The following example uses [`walkdir::WalkDir::into_iter`][c~walkdir::WalkDir::into_iter~docs]↗{{hi:walkdir::WalkDir::into_iter}} to calculate the sum of all file sizes to 3 subfolders depth, ignoring files in the root folder.
+The following example uses [`walkdir::WalkDir`][c~walkdir~docs]↗{{hi:walkdir::WalkDir}} to sum regular-file sizes at depths 1 through 3, excluding entries in the root directory. Traversal and metadata errors are propagated, and the example reports if the total cannot fit in a `u64`.
 
 Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c~walkdir::WalkDir::min_depth~docs]↗{{hi:walkdir::WalkDir::min_depth}} & [`walkdir::WalkDir::max_depth`][c~walkdir::WalkDir::max_depth~docs]↗{{hi:walkdir::WalkDir::max_depth}} methods.
 
@@ -98,7 +98,7 @@ Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c~walkdir
 
 The following example recursively finds all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
 
-Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches all PNGs in `media` and it's subdirectories.
+Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches all PNGs in `media` and its subdirectories.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/png.rs:example}}
