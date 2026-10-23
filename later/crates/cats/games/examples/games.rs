@@ -59,13 +59,6 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Does nothing, since the game logic runs through the `macroquad` runtime.
-pub fn run() {
-    // This example uses #[macroquad::main] which transforms the main function.
-    // The actual game logic runs through the macroquad runtime and cannot be
-    // directly invoked from here.
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;

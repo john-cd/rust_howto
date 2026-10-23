@@ -24,10 +24,5 @@ name = "games"
 path = "examples/games.rs"
 test = true
 
-[[example]]
-name = "examples"
-path = "examples/main.rs"
-test = true
-
 [lints]
 workspace = true
