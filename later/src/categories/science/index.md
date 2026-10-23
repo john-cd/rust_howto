@@ -3,7 +3,7 @@
 
 [![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
 
-Solving problems involving physics, chemistry, biology, machine learning, geoscience, and other scientific fields.
+Solving problems involving physics, chemistry, biology, machine learning, geoscience, and other scientific fields. See [[science_neuroscience | Biology and Neuroscience]] for biological data formats and a runnable synthetic neuroimaging example.
 
 ## Machine Learning
 

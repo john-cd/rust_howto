@@ -1,9 +1,9 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# Neuroscience
+# Neuroscience and Neuroimaging
 
 {{#include neuroscience.incl.md}}
 
-## Neuro {#neuro}
+## Generate a Synthetic NIfTI Volume {#neuro}
 
 ```rust,editable
 {{#include ../../../crates/cats/science_neuroscience/examples/neuroscience/neuro.rs:example}}

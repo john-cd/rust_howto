@@ -163,8 +163,8 @@
 - [Science - Geo](categories/science_geo/index.md)
   - [Geo](categories/science_geo/geo.md)
 
-- [Science - Neuro](categories/science_neuroscience/index.md)
-  - [Neuro](categories/science_neuroscience/neuroscience.md)
+- [Science - Biology and Neuroscience](categories/science_neuroscience/index.md)
+  - [Neuroscience and Neuroimaging](categories/science_neuroscience/neuroscience.md)
 
 - [Scripting](other/scripting/index.md)
   - [Rhai](other/scripting/rhai.md)

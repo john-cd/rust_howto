@@ -20893,7 +20893,7 @@ dependencies = [
 name = "science_neuroscience"
 version = "0.1.2"
 dependencies = [
- "ndarray 0.17.2",
+ "ndarray 0.16.1",
  "nifti",
 ]
 
