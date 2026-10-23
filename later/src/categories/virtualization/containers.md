@@ -1,40 +1,9 @@
 <!-- TODO Reviewed ??-??-2026 -->
 # Rust + Containers
 
-{{#include containers.incl.md}}
+The Docker and Docker Compose walkthroughs are now part of the [Containers section][p~containers] in the Virtualization chapter.
 
-## Docker {#docker}
-
-- [Docker][docker~website]↗.
-- [Docker Rust guide][docker~rust-guide]↗.
-- [Docker Desktop][docker~desktop~website]↗.
-
-### References {#references .skip}
-
-- Docker's [getting started][docker~getting-started]↗ docs.{{hi:docker}}.
-- [Docker's Rust guide][docker~rust-guide]↗.
-
-## Docker Compose {#docker-compose}
-
-[Docker Compose][docker~compose~website]↗.
-
-An easy way to get started is to run `docker init`{{hi:docker init}} in a new folder, select `Rust` as the project type, then edit the provided `compose.yaml` and [`Dockerfile`][dockerfile~website]↗{{hi:Dockerfile}}.{{hi:docker compose}}
-
-```bash
-cargo init .
-docker init
-```
-
-- Build your image: `docker build -t myapp .`.
-- If your [cloud][p~cloud]{{hi:Cloud}} uses a different CPU architecture than your development machine (e.g., you are on a Mac M1 and your cloud provider is amd64), you'll want to build the image for that platform, e.g.: `docker build --platform=linux/amd64 -t myapp .`.
-- Start your application by running: `docker compose up --build`.
-
-## Related Topics {#related-topics .skip}
-
-- [[virtualization | Virtualization]].
-- [[cloud | Cloud]].
-- [[development_tools | Development Tools]].
-- [[operating_systems | Operating Systems]].
+For Rust container clients, runtimes, and OCI tooling, see [[containerization | Containerization]]. For running containers in integration tests, see [[using_containers | Using Containers]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

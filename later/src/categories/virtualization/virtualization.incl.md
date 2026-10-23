@@ -1,4 +1,4 @@
 <!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Implement Virtualization][ex~virtualization~virt] | {{!crate }} | [![cat~virtualization][cat~virtualization~badge]][cat~virtualization] |
+| -------- | -------- | ------------ |
+| [Run a WebAssembly module with wasmi][ex~virtualization~virt] | [wasmi][c~wasmi~docs]↗ | [![cat~virtualization][cat~virtualization~badge]][cat~virtualization] |
