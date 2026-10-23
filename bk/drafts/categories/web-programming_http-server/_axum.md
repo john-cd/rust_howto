@@ -7,7 +7,9 @@
 
 [![axum][c~axum~docs~badge]][c~axum~docs] [![axum~crates.io][c~axum~crates.io~badge]][c~axum~crates.io] [![axum~repo][c~axum~repo~badge]][c~axum~repo] [![axum~lib.rs][c~axum~lib.rs~badge]][c~axum~lib.rs]{{hi:axum}}{{hi:Framework}}{{hi:Http}}{{hi:Web}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
-[`axum`][c~axum~docs]↗{{hi:axum}} is a web framework that focuses on ergonomics and modularity. It is an official part of the [`tokio`][c~tokio~docs]↗{{hi:tokio}} project. [`axum`][c~axum~docs]↗{{hi:axum}} is recommended for most new projects.
+[`axum`][c~axum~docs]↗{{hi:axum}} is an HTTP web framework built around [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`tower`][c~tower~docs]↗{{hi:tower}} services. A `Router` maps paths and methods to handlers. Extractors such as `Path`, `Query`, and `Json` turn request data into typed handler arguments, while `State` supplies shared application state.
+
+This example shows those pieces together: route registration, a fallback, a stateful handler, and serving the router on a Tokio TCP listener. It binds to loopback for local use. Configure the bind address for your deployment environment when the service should accept connections from outside the machine.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/axum.rs:example}}
@@ -22,7 +24,9 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[asynchronous | Asynchronous Programming]] for Tokio runtimes, async functions, and task scheduling.
+- [[network-programming | Network Programming]] for TCP sockets and lower-level server behavior.
+- [[web-programming_http-server | HTTP Servers]] for Hyper, Actix Web, GraphQL, gRPC, and middleware.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

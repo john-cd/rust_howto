@@ -4,15 +4,12 @@
 //! and `hyper`. It doesn't have its own middleware system but instead uses
 //! `tower::Service`. This means `axum` gets timeouts, tracing, compression,
 //! authorization, and more, for free.
-//! See also:
-//! - <https://docs.rs/axum/latest/axum/index.html>
-//! - <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
-//! - <https://docs.rs/axum/0.8.1/axum/extract/index.html>
+//! See the current Axum documentation for its `Router`, extractors, and
+//! server APIs.
 //!
 //! TODO Reviewed ??-??-2026.
 
 #![allow(dead_code)]
-#![allow(unused_variables)]
 // // ANCHOR: example
 use std::collections::HashMap;
 use std::sync::Arc;
@@ -33,8 +30,8 @@ use tracing_subscriber::util::SubscriberInitExt as _;
 /// The state shared by all the handlers.
 #[derive(Clone)]
 struct AppState {
-    /// The number of requests received.
-    request_count: u64,
+    /// The name displayed by the state example route.
+    app_name: &'static str,
 }
 
 // An Axum "handler" is an async function that accepts zero or more
@@ -83,9 +80,9 @@ async fn json(
 }
 
 // Access the application state via the `State` extractor.
-/// Returns the request count from the application state.
+/// Returns the application name from the shared state.
 async fn state(State(state): State<Arc<AppState>>) -> String {
-    format!("Request count: {}", state.request_count)
+    format!("Application: {}", state.app_name)
 }
 
 // Fallbacks apply to routes that aren't matched by anything in the router.
@@ -94,11 +91,30 @@ async fn fallback(uri: Uri) -> (StatusCode, String) {
     (StatusCode::NOT_FOUND, format!("No route for {uri}"))
 }
 
+/// Builds a router with the handlers and shared application state.
+fn app() -> Router {
+    let shared_state = Arc::new(AppState {
+        app_name: "Axum example",
+    });
+
+    // The `path` is a string of segments: static, captured, or wildcard.
+    // Examples include `/users/123`, `/users/{id}`, and `/assets/{*path}`.
+    Router::new()
+        .route("/", get(root))
+        .route("/users/{id}", get(get_user).post(post_user))
+        .route("/assets/{*path}", get(serve_asset))
+        .route("/query", get(query))
+        .route("/json", post(json))
+        .route("/state", get(state))
+        .fallback(fallback)
+        .with_state(shared_state)
+}
+
+/// Builds the router and serves it on a local TCP listener.
 // `tokio` macros and rt-multi-thread features should be enabled.
-/// Creates a router with the handlers and serves it.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let _ = tracing_subscriber::registry()
+    tracing_subscriber::registry()
         .with(
             tracing_subscriber::EnvFilter::try_from_default_env()
                 .unwrap_or_else(|_| {
@@ -106,28 +122,11 @@ async fn main() -> anyhow::Result<()> {
                 }),
         )
         .with(tracing_subscriber::fmt::layer())
-        .try_init();
+        .try_init()?;
 
-    let shared_state = Arc::new(AppState { request_count: 0 });
-
-    // Build our application that routes requests to handlers
-    // The `path` is a string of path segments separated by /.
-    // Each segment can be either static, a capture, or a wildcard,
-    // e.g. /users/123 or /users/{id} or /assets/{*path}.
-    let router = Router::new()
-        .route("/", get(root)) // Could be `get`, `post`, or `delete`...
-        .route("/users/{id}", get(get_user).post(post_user))
-        .route("/assets/{*path}", get(serve_asset))
-        .route("/query", get(query))
-        .route("/json", post(json))
-        .route("/state", get(state))
-        .fallback(fallback)
-        .with_state(shared_state);
-
-    // Run it
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await?;
-    tracing::debug!("Listening on {}", listener.local_addr()?);
-    axum::serve(listener, router).await?;
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:3000").await?;
+    tracing::debug!(address = %listener.local_addr()?, "Listening");
+    axum::serve(listener, app()).await?;
     Ok(())
 }
 
