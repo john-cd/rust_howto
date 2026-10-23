@@ -7,11 +7,19 @@
 
 [![ring][c~ring~docs~badge]][c~ring~docs] [![ring~crates.io][c~ring~crates.io~badge]][c~ring~crates.io] [![ring~repo][c~ring~repo~badge]][c~ring~repo] [![ring~lib.rs][c~ring~lib.rs~badge]][c~ring~lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-An HMAC (Hash-based Message Authentication Code) digest is a type of message [authentication][p~authentication] code (MAC) that combines a cryptographic hash function with a secret key. It's used to verify both the integrity and authenticity of a message.
+HMAC (Hash-based Message Authentication Code) combines a secret key with a cryptographic hash to authenticate bytes. The sender computes a tag and the receiver checks it with the same key. A valid tag shows that the data matches and that some holder of the shared key created it; it does not identify which holder. HMAC does not encrypt data.
 
-Note that HMAC (Hash-based Message Authentication Code) uses a shared secret key between two parties (symmetric cryptography). It provides both integrity and authentication. It cannot be used for non-repudiation (proof of origin by a third party). Since both parties have the key, either could have generated the HMAC.
+Use HMAC when a protocol needs integrity and shared-key authentication for data that is not already protected by an authenticated encryption or authentication mechanism. Choose the hash and tag length required by the protocol; HMAC-SHA-256 is a common general-purpose choice. See [RFC 2104][rfc~2104]↗ for the construction.
 
-The following example uses [`ring::hmac`][c~ring::hmac~docs]↗{{hi:ring::hmac}} to creates a [`ring::signature::Signature`][c~ring::signature::Signature~docs]↗{{hi:ring::signature::Signature}} of a string, then verifies the signature{{hi:Signature}} is correct.
+## Key and Message Handling {#key-and-message-handling .skip}
+
+- Generate keys with a cryptographically secure random source or derive them with a standard key-derivation function. Do not use a password directly as an HMAC key.
+- Keep keys private, replace compromised keys, and use separate keys for separate protocols or purposes. Include protocol context and version in the authenticated message when the same format could be interpreted in more than one context.
+- Define an unambiguous byte encoding for all fields before computing the tag. Authenticate every field whose value affects authorization or interpretation.
+- Verify tags with the cryptographic library's verification API. Do not compare tags with ordinary equality or hand-write a comparison loop.
+- Do not use HMAC as a digital signature, password-hashing function, or ad hoc key-derivation scheme. Use signatures for public verification, password-hashing algorithms for passwords, and a standard KDF for derived keys.
+
+The example uses [`ring::hmac`][c~ring::hmac~docs]↗{{hi:ring::hmac}} to create a tag and then verify it with the library. The signing and verification parties must use the same key and the same message bytes.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/sign/hmac.rs:example}}
@@ -19,7 +27,10 @@ The following example uses [`ring::hmac`][c~ring::hmac~docs]↗{{hi:ring::hmac}}
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[hashing | Hashing]] describes the hash functions used by HMAC.
+- [[encryption | Encryption]] and [[aead | Authenticated Encryption]] cover confidentiality and authenticated encryption.
+- [[signature | Digital Signatures]] covers public-key authentication.
+- [[password_hashing | Password Hashing]] explains why passwords need a dedicated, deliberately expensive algorithm.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
