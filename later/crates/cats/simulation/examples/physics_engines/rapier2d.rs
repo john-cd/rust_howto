@@ -8,12 +8,12 @@ use rapier2d::prelude::*;
 /// Simulates the ball and prints its position at each step.
 fn main() {
     // A small simulation: one dynamic ball falling onto a static ground.
-    let gravity = vector![0.0, -9.81];
+    let gravity = Vector::new(0.0, -9.81);
     let integration_parameters = IntegrationParameters::default();
 
     let mut physics_pipeline = PhysicsPipeline::new();
     let mut island_manager = IslandManager::new();
-    let mut broad_phase = BroadPhase::new();
+    let mut broad_phase = BroadPhaseBvh::new();
     let mut narrow_phase = NarrowPhase::new();
     let mut bodies = RigidBodySet::new();
     let mut colliders = ColliderSet::new();
@@ -21,23 +21,23 @@ fn main() {
     let mut multibody_joints = MultibodyJointSet::new();
     let mut ccd_solver = CCDSolver::new();
 
-    let ground_body = RigidBodyBuilder::new_static().build();
+    let ground_body = RigidBodyBuilder::fixed().build();
     let ground_handle = bodies.insert(ground_body);
     let ground_collider = ColliderBuilder::cuboid(5.0, 0.1)
-        .translation(vector![0.0, -0.5])
+        .translation(Vector::new(0.0, -0.5))
         .build();
-    colliders.insert(ground_collider, ground_handle, &mut bodies);
+    colliders.insert_with_parent(ground_collider, ground_handle, &mut bodies);
 
-    let ball_body = RigidBodyBuilder::new_dynamic()
-        .translation(vector![0.0, 3.0])
+    let ball_body = RigidBodyBuilder::dynamic()
+        .translation(Vector::new(0.0, 3.0))
         .build();
     let ball_handle = bodies.insert(ball_body);
     let ball_collider = ColliderBuilder::ball(0.5).restitution(0.7).build();
-    colliders.insert(ball_collider, ball_handle, &mut bodies);
+    colliders.insert_with_parent(ball_collider, ball_handle, &mut bodies);
 
     for step in 0..120 {
         physics_pipeline.step(
-            &gravity,
+            gravity,
             &integration_parameters,
             &mut island_manager,
             &mut broad_phase,

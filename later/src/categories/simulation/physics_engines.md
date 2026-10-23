@@ -7,6 +7,12 @@
 
 [`rapier`][rapier.rs~website]↗ is a physics engine (2D and 3D).
 
+The following standalone 2D example steps a falling ball on a fixed ground. It uses the pinned `rapier2d` crate without a GUI backend and compiles on Windows.
+
+```rust,editable
+{{#include ../../../crates/cats/simulation/examples/physics_engines/rapier2d.rs:example}}
+```
+
 ## See Also {#see-also .skip}
 
 - [Physics][are-we-game-yet?-physics~website]↗.

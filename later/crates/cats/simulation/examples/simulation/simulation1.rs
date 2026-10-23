@@ -10,12 +10,12 @@ use rapier2d::prelude::*;
 
 /// Simulates a ball falling and bouncing on the ground.
 fn main() {
-    let gravity = vector![0.0f32, -9.81f32];
+    let gravity = Vector::new(0.0, -9.81);
     let integration_parameters = IntegrationParameters::default();
 
     let mut physics_pipeline = PhysicsPipeline::new();
     let mut island_manager = IslandManager::new();
-    let mut broad_phase = BroadPhaseMultiSap::new();
+    let mut broad_phase = BroadPhaseBvh::new();
     let mut narrow_phase = NarrowPhase::new();
     let mut bodies = RigidBodySet::new();
     let mut colliders = ColliderSet::new();
@@ -24,15 +24,15 @@ fn main() {
     let mut ccd_solver = CCDSolver::new();
 
     let ground_body = RigidBodyBuilder::fixed()
-        .translation(vector![0.0f32, -1.0f32])
+        .translation(Vector::new(0.0, -1.0))
         .build();
     let ground_handle = bodies.insert(ground_body);
     let ground_collider = ColliderBuilder::cuboid(10.0f32, 1.0f32).build();
     colliders.insert_with_parent(ground_collider, ground_handle, &mut bodies);
 
     let ball_body = RigidBodyBuilder::dynamic()
-        .translation(vector![0.0f32, 5.0f32])
-        .linvel(vector![1.0f32, 0.0f32])
+        .translation(Vector::new(0.0, 5.0))
+        .linvel(Vector::new(1.0, 0.0))
         .build();
     let ball_handle = bodies.insert(ball_body);
     let ball_collider = ColliderBuilder::ball(0.5f32)
@@ -43,7 +43,7 @@ fn main() {
 
     for step in 0..120 {
         physics_pipeline.step(
-            &gravity,
+            gravity,
             &integration_parameters,
             &mut island_manager,
             &mut broad_phase,
@@ -53,7 +53,6 @@ fn main() {
             &mut impulse_joints,
             &mut multibody_joints,
             &mut ccd_solver,
-            None,
             &(),
             &(),
         );
