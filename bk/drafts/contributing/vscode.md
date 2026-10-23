@@ -1,95 +1,64 @@
 <!-- TODO Reviewed ??-??-2026 -->
 # VS Code Configuration
 
-## `rust-analyzer` Configuration {#rust-analyzer-configuration}
+This repository contains several independent Cargo workspaces rather than one workspace at the repository root. Configure `rust-analyzer` to load the workspaces you use, and keep the list aligned with the checkouts that are present on your machine.
 
-For large codebases, you may want to prevent `rust-analyzer` from starting automatically on workspace load to save resources, and exclude build directories like `target/` from VS Code's search index:
+Install the [`rust-analyzer` extension][rust-analyzer~plugin]↗. For Rust and repository toolchain setup, see [Develop with VS Code][ex~contributing~using-vs-code].
 
-```json
-"search.exclude": {
-    "**/target": true
-},
-"rust-analyzer.initializeStopped": true,
-```
+## Choose a settings file
 
-Main `settings.json` under e.g. `C:\Users\<user_name>\AppData\Roaming\Code\User`
+Use VS Code's **Preferences: Open User Settings (JSON)** command to edit settings that apply to all your projects. To share settings for this repository, use **Preferences: Open Workspace Settings (JSON)**; VS Code stores single-folder workspace settings in `.vscode/settings.json` at the repository root. Workspace settings override user settings. See [VS Code settings][vscode~settings~docs]↗ for the available settings scopes and file locations.
 
-`rust-analyzer` may not automatically discover all `cargo` workspaces. Add the following to your `.vscode/settings.json` file:
+## Configure `rust-analyzer` {#rust-analyzer-configuration}
+
+### Link the Cargo workspaces
+
+`rust-analyzer` can discover Cargo projects automatically. Set `rust-analyzer.linkedProjects` when you want to select the projects explicitly. The setting replaces automatic discovery, so keep every desired project in the array or remove the setting to return to automatic discovery. Paths below are relative to the repository root:
 
 ```json
 {
-    "rust-analyzer.linkedProjects": [
-        "bk/crates/Cargo.toml",
-        "later/crates/Cargo.toml",
-        "mdbook-utils/Cargo.toml",
-        "playground/Cargo.toml",
-        "publish/Cargo.toml",
-        "tools/Cargo.toml",
-        "xmpl/Cargo.toml"
-    ],
-    // More configuration settings...
+  "rust-analyzer.linkedProjects": [
+    "bk/crates/Cargo.toml",
+    "later/crates/Cargo.toml",
+    "mdbook-utils/Cargo.toml",
+    "playground/Cargo.toml",
+    "publish/Cargo.toml",
+    "tools/Cargo.toml",
+    "xmpl/Cargo.toml"
+  ],
+  "search.exclude": {
+    "**/target/**": true,
+    "**/build/**": true
+  }
 }
 ```
 
-Other configuration options include the following:
+Remove an entry if that project is not checked out locally. To reduce startup work, list only the workspace you are changing and add the others when needed. `search.exclude` keeps generated build files out of VS Code's file search; it does not change Rust analysis.
+
+### Reduce background work
+
+By default, `rust-analyzer` runs Cargo checks on save and build scripts for more accurate analysis. If background checks use too many resources, you can temporarily disable them in the settings file:
 
 ```json
-"rust-analyzer.restartServerOnConfigChange": true,
-"rust-analyzer.cargo.buildScripts.enable": false,
+{
+  "rust-analyzer.checkOnSave": false
+}
 ```
 
+This removes on-save Cargo diagnostics. Run the repository's `just` checks from the matching workspace when you need compiler or Clippy results.
 
-```json
-"rust-analyzer.checkOnSave": true,
+## Troubleshooting
 
-"rust-analyzer.showDependenciesExplorer": false,
-"rust-analyzer.cargo.buildScripts.rebuildOnSave": false,
-```
-
-```json
-"rust-analyzer.statusBar.clickAction": "stopServer",
-"rust-analyzer.statusBar.showStatusBar": "always",
-```
-
-```json
-"rust-analyzer.diagnostics.styleLints.enable": true,
-
-"rust-analyzer.imports.granularity.group": "item",
-"rust-analyzer.imports.granularity.enforce": true,
-"rust-analyzer.imports.preferPrelude": true,
-
-"rust-analyzer.inlayHints.bindingModeHints.enable": true,
-"rust-analyzer.inlayHints.closureCaptureHints.enable": true,
-"rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
-"rust-analyzer.inlayHints.discriminantHints.enable": "always",
-"rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "always",
-"rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
-"rust-analyzer.inlayHints.closingBraceHints.minLines": 1,
-"rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
-"rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
-"rust-analyzer.inlayHints.implicitDrops.enable": true,
-"rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
-
-"rust-analyzer.assist.emitMustUse": true,
-"rust-analyzer.assist.preferSelf": true,
-
-"rust-analyzer.completion.fullFunctionSignatures.enable": true,
-"rust-analyzer.completion.privateEditable.enable": true,
-"rust-analyzer.completion.termSearch.enable": true,
-
-"rust-analyzer.hover.show.traitAssocItems": 5,
-
-"rust-analyzer.completion.limit": 25,
-"rust-analyzer.completion.postfix.enable": false,
-```
+- If a workspace is missing, confirm its `Cargo.toml` path and check the `linkedProjects` array. Remember that an explicit array disables project auto-discovery.
+- If settings are not applied, open the correct User or Workspace settings file from the Command Palette and check for JSON errors. VS Code provides completion and validation for settings in `settings.json`.
+- Run **Rust Analyzer: Status** from the Command Palette to inspect the loaded projects and server state. After changing project paths, run **Rust Analyzer: Restart Server**.
+- Consult the current [`rust-analyzer` configuration reference][rust-analyzer~configuration~book]↗ for supported options and defaults.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[development_environment_setup | Development Environment Setup]].
+- [[repository_structure | Repository Structure]].
+- [[text-editors | Text Editors]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-TODO write
-</div>
