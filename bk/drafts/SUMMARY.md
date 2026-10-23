@@ -89,7 +89,6 @@
     - [Crate Registries](categories/development-tools/cargo/crate_registries.md)
   - [Rust and Binary Installation](categories/development-tools/installation/install.md)
     - [Rustup](categories/development-tools/installation/rustup.md)
-  - [Code Editing](categories/text-editors/index.md)
   - [Code Formatting](categories/development-tools/formatting/formatting.md)
   - [Documentation](categories/development-tools/documentation/documentation.md)
     - [`mdBook`](categories/development-tools/documentation/mdbook.md)
