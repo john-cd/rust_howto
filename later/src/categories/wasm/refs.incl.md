@@ -24,4 +24,5 @@
 [p~serverless]: ../../../drafts/other/cloud/_fragment.md
 [p~testing]: ../../../src/categories/development-tools_testing/testing.md
 [p~visualization]: ../../../drafts/categories/visualization/visualization.md
+[mozilla~webassembly-concepts~website]: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
 [p~wasm]: index.md

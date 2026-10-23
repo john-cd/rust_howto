@@ -3,63 +3,32 @@
 
 {{#include wasm_basics.incl.md}}
 
-## What is WASM? {#What-is-wasm .skip}
+## What is WebAssembly? {#What-is-wasm .skip}
 
-WebAssembly (abbreviated [WASM][p~wasm]) is a low-level assembly-like language with a compact binary format that can be run in modern web browsers.
+WebAssembly (Wasm) is a portable binary instruction format and execution environment designed primarily as a compiler target. Developers usually write Rust, C, C++, or another source language, then compile it to a `.wasm` module. The human-readable text representation uses the `.wat` extension. See [WebAssembly concepts on MDN][mozilla~webassembly-concepts~website]↗.
 
-WebAssembly was created primarily to address the limitations of JavaScript (performance, security...) and the desire to bring other programming languages to the Web.
+Wasm is designed to complement JavaScript in web applications. A browser loads a module through JavaScript or generated bindings, and JavaScript and Wasm can call one another through imports and exports. Wasm can run close to native speed for some workloads, but performance depends on the workload, runtime, data transfer, and startup cost. Measure the complete application before choosing it for speed.
 
-- JavaScript, while versatile, can struggle with computationally intensive tasks. WebAssembly code is small and fast, running at near-native speeds within the browser.
-- WebAssembly is designed to complement and run alongside JavaScript - using the WebAssembly JavaScript APIs, you can load WebAssembly modules into a JavaScript app and share functionality between the two.
-- WASM is a low-level, assembly-like language: It is designed to be a compilation target for other languages like C, C++, and Rust. This means you can write code in these languages and compile it into WebAssembly for execution in the browser (and nowadays, outside of it). [WASM][p~wasm] allows developers to leverage their existing codebases and skills. This opens up the web to a wider range of developers and enables the reuse of existing libraries and tools.
-- [WASM][p~wasm] is designed to be platform-independent, running consistently across different browsers and operating systems.
-- [WASM][p~wasm] operates within a secure sand-boxed environment, mitigating security risks.
+The WebAssembly core format does not provide operating-system services or browser APIs by itself. A host runtime supplies imported functions and decides which capabilities a module can use. In a browser, access to the DOM and other Web APIs is mediated by JavaScript bindings. In other environments, runtimes may expose WASI or their own APIs. Wasm's sandbox limits a module's access to its host, while the host's imports and permissions determine what it can do.
 
-WebAssembly binaries typically have a [`.wasm`][book~rustwasm]↗{{hi:.wasm}} file extension. The textual representation of WebAssembly has a `.wat` file extension.
+## Target environments {#target-environments .skip}
 
-In essence, WebAssembly bridges the gap between high-level programming languages and the Web, enabling developers to create powerful and performant web applications.
+The same `.wasm` format can be used in different runtimes, but a module must match the imports and features that its host provides. A browser module that uses Web APIs is not automatically a standalone WASI program, and a WASI module does not automatically have access to a browser DOM. See [[wasm_standalone_runtimes | WASM Standalone Runtimes]] for examples of non-browser hosts.
 
-## WASM Use Cases {#wasm-use-cases .skip}
+## Use cases {#wasm-use-cases .skip}
 
-Inside the browser:
+In browsers, Wasm is useful for compute-heavy or portable components such as image and audio processing, simulations, emulators, and parts of games. It can also run code written in languages other than JavaScript alongside a JavaScript application. It is not a replacement for browser APIs or a guarantee that an application will be faster.
 
-- Web Applications (e.g., Single Page Applications).
-- Gaming: Powering complex game logic and graphics.
-- Data [visualization][p~visualization] and analysis (e.g., charts, maps).
-- Real-time [audio][p~audio] and video manipulation / processing.
-- Real-time image processing and recognition.
-- Streaming and [caching][p~caching] music.
-- Performing cryptographic operations efficiently.
-- Peer-to-Peer Applications e.g., collaborative editing.
-- Virtual/Augmented Reality (VR/AR): Handling the demanding computations required for immersive experiences.
-- Scientific [Visualization][p~visualization] and Simulation.
+Outside browsers, Wasm can provide a portable module format for plugins, server-side tasks, edge workloads, or embedded systems when the target runtime supports the required imports. Portability depends on the APIs and WebAssembly features used by the module.
 
-While WebAssembly was initially designed for the web, its benefits like portability, performance, and security have led to its adoption in various non-browser environments:
+Rust game libraries such as [`winit`][c~winit~docs]↗{{hi:winit}}, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, and [`bevy`][c~bevy~docs]↗{{hi:bevy}} can be used for browser-targeted projects when their selected features and graphics backend support the target.
 
-- Server-Side Compute:
-  - Running untrusted code on the server side.
-  - [Serverless][p~serverless] Computing.
-  - Edge Computing.
-  - Distributed computations across multiple nodes.
-- [Cross-Platform][p~cross-platform] Development.
-- [Embedded][p~embedded] Systems and IoT.
-- Hybrid Native Apps: Combining native and web technologies on mobile devices.
-- Plugin systems for e.g. desktop applications, extending their functionality with secure and isolated modules.
+## Related topics {#related-topics .skip}
 
-WASM can be used to build virtual machines or [emulators][p~emulators] for other architectures, enabling execution of legacy software or providing sand-boxed environments.
-
-See [webassembly.org][webassembly~website] and [madewithwebassembly.com][madewithwebassembly~website]↗.
-
-### Example: Game Development Using WASM {#example .skip}
-
-Rust can be used for [game development][p~game-development] targeting the web via WASM. [`winit`][c~winit~docs]↗{{hi:winit}} handles window creation, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} provides access to WebGPU, and [`bevy`][c~bevy~docs]↗{{hi:bevy}} is a Rust game engine that can compile to WASM.
-
-## Related Topics {#related-topics .skip}
-
-- [[wasm_development | WASM Development]].
-- [[interfacing_with_javascript | Interfacing with Javascript]].
-- [[web-programming | Web Programming]].
-- [[development_tools | Development Tools]].
+- [[wasm_development | WASM Development]]
+- [[interfacing_with_javascript | Interfacing with JavaScript]]
+- [[web-programming | Web Programming]]
+- [[development_tools | Development Tools]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

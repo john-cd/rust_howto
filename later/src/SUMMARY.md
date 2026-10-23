@@ -189,6 +189,7 @@
   - [Visualization](categories/visualization/visualization.md)
 
 - [Web assembly](categories/wasm/index.md)
+  - [WASM Basics](categories/wasm/wasm_basics.md)
   - [Yew](categories/wasm/yew.md)
   - [Others](categories/wasm/wasm_standalone_runtimes.md)
 
