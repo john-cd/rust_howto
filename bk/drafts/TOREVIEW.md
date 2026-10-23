@@ -1,6 +1,14 @@
 <!-- TODO Reviewed ??-??-2026 -->
 # TO REVIEW
 
+## Curation Record (2026-10-22)
+
+- The VS Code debugger note was added to [Development Environment Setup](../src/appendices/contributing/development_environment_setup.md).
+- The `sccache` background article was added to [Dev Container and Docker](../src/appendices/contributing/dev_container_and_docker.md).
+- The Firefox WebDriver and Pake bookmarks were added to [Example Code and Templates](../src/links/example_code.md#browser-desktop-tools).
+
+The other entries remain in this draft because they lack a current chapter context or need a more specific editorial purpose than a standalone link. Revisit them when a related chapter can explain why readers should follow them.
+
 ## AI {#ai .skip}
 
 - [foreverVM][forevervm~website]↗: The sessionless code interpreter. ForeverVM is a code execution API to securely run arbitrary Python code in a remote sandbox and get back results.
@@ -65,7 +73,6 @@ Detect when another Future wants a result.
 ## Infra / Dev {#infra-dev .skip}
 
 - [Sonatype supports secure development in Rust][blog~sonatype-supports-secure-development-in-rust]↗.
-- [Why You Need sccache][blog~why_you_need_sccache]↗.
 
 ---
 
@@ -112,15 +119,6 @@ Scan your Rust crate for semver violations.
 
 - [Coroutine in `std::ops`][c~std::ops::Coroutine~docs]↗.
 - [Unstable Features][book~cargo~unstable]↗ - The Cargo Book.
-
-## VS Code {#vscode .skip}
-
-- [Fixing Rust memory allocation slowdown in VS Code on Windows][blog~vs-code-debug-heap]↗.
-
-## Web {#web .skip}
-
-- [`geckodriver`][geckodriver~repo]↗: WebDriver for Firefox.
-- [Pake][pake~repo]↗: Turn any webpage into a desktop app with Rust.
 
 cover [Hands-On Microservices with Rust 2018 (GitHub)][book~Hands-On-Microservices-with-Rust~repo]↗.
 review in particular https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust/blob/master/Chapter08/chat/src/lib.rs

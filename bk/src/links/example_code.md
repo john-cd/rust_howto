@@ -24,6 +24,11 @@ You can use the [Rust Playground][rust-playground~website]↗ to quickly test sn
 
 Reading code is the fastest way to learn idiomatic Rust. Use the following links to locate useful Rust repositories.
 
+### Browser and Desktop Tools {#browser-desktop-tools}
+
+- [`geckodriver`][geckodriver~repo]↗ is a WebDriver proxy for automating Firefox through Marionette. Use it with a WebDriver client for browser tests.
+- [Pake][pake~repo]↗ packages websites as desktop apps with Rust and Tauri.
+
 ### Lists of Popular Rust Repositories {#repositories}
 
 - GitHub Topic: ["Rust"][topics-rust~repo]↗: Popular repositories on GitHub.

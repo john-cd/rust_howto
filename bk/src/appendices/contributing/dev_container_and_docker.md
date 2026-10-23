@@ -22,6 +22,8 @@ The project uses several tools and techniques to optimize the Rust development e
 -   **`cargo binstall`**: To speed up the image build process, we use [`cargo-binstall`][c~cargo-binstall~repo]↗ to install Rust tools as pre-compiled binaries whenever possible, rather than compiling them from source.
 -   **`sccache`**: We use [`sccache`][c~sccache~repo]↗ (Shared Compilation Cache) to cache Rust compilation artifacts. This significantly speeds up subsequent builds by avoiding redundant compilation.
 
+For background on when a separate Rust compiler cache helps, see [Why You Need `sccache`][blog~why_you_need_sccache]↗.
+
 To run the development container manually, use Compose from `.devcontainer`. This reads the pinned tool versions from `.env` and applies the development volume configuration:
 
 ```bash

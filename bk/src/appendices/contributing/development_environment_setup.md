@@ -12,6 +12,10 @@ Clone the [repo][rust-howto~repo]↗ and open the folder in [VS Code][rust-in-vs
 
 Note that opening the code folder in VS Code may take a little while the first time around.
 
+### Debug Rust Programs on Windows
+
+Some debugger configurations can make allocation-heavy Rust programs run unusually slowly on Windows. The article [Fixing Rust memory allocation slowdown in VS Code on Windows][blog~vs-code-debug-heap]↗ explains the Windows debug heap and shows a CodeLLDB launch setting that disables it. The workaround depends on the debugger engine, so check that it applies to your VS Code configuration.
+
 ## Develop with Other IDEs {#other}
 
 If you are not using VS Code, install the [Dev Container CLI][dev-container-cli~repo]↗ or simply install the required tools on your local machine:
