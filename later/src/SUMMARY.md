@@ -192,6 +192,7 @@
   - [WASM Basics](categories/wasm/wasm_basics.md)
   - [WASM Development](categories/wasm/wasm_development.md)
   - [Interfacing with JavaScript](categories/wasm/interfacing_with_javascript.md)
+  - [Leptos](categories/wasm/leptos.md)
   - [Yew](categories/wasm/yew.md)
   - [Others](categories/wasm/wasm_standalone_runtimes.md)
 
