@@ -89,7 +89,10 @@ current_crate := file_name(invocation_directory())
 # Test all code, including doctests (all features)
 @nextestall: _clean_temp_dir && _clean_temp_dir
     echo "Test all code in {{ code_root }} (incl. doctests) (all features)"
-    cd {{ quote(code_root) }} && cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features && cargo test --doc --workspace
+    # sccache 0.18.0 expands web-sys rustc arguments past Windows' process command-line limit.
+    cd {{ quote(code_root) }}; cargo nextest run --workspace --exclude web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ quote(code_root) }}; $env:RUSTC_WRAPPER = ""; cargo nextest run --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ quote(code_root) }}; cargo test --doc --workspace
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
 [unix]

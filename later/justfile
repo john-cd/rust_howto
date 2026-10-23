@@ -58,8 +58,10 @@ alias nta := nextestall
 # Test all code in the workspace (incl. doctests) (all features)
 @nextestall:
   echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
-  cd {{code_root}}; cargo test --doc --workspace --all-features --locked
-  cd {{code_root}}; cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
+  # sccache expands wasm's web-sys rustc arguments past Windows' process command-line limit.
+  cd {{code_root}}; cargo test --doc --workspace --exclude wasm --all-features --locked
+  cd {{code_root}}; cargo nextest run --workspace --exclude wasm --all-targets --locked --no-fail-fast --status-level all --all-features
+  cd {{code_root}}; $env:RUSTC_WRAPPER = ""; cargo nextest run --package wasm --all-targets --locked --no-fail-fast --status-level all --all-features
 
 # Build and display the `cargo doc` documentation
 @docall:
