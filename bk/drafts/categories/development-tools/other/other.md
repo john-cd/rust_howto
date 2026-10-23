@@ -5,53 +5,49 @@
 
 ## Search for Rust APIs {#roogle}
 
-[`Roogle`][c~roogle~website]↗{{hi:roogle}} [![roogle~repo][c~roogle~repo~badge]][c~roogle~repo] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+[`Roogle`][c~roogle~website]↗ is an API search site that lets you search Rust function signatures. Treat search results as a discovery aid: confirm the item, version, and behavior in the crate's current documentation before using it.
 
-Roogle is a Rust API [search][p~search] engine to [search][p~search] functions by names and type signatures. The query can be one of the following types:
+## Reduce a Rust Binary's Size {#binary-minimizer}
 
-|||
-|---|---|
-| fn f(type) -> type | fn f(&mut HashMap<K, V>, K, V) -> Option<V> |
-| fn (type) -> type | fn (&char) -> bool |
-| fn(type) -> type | fn(Option<Option<T>>) -> [Option][p~option]<T> |
-| (type) -> type | (&mut Vec<T>, value: T) |
-
-## Minimize Rust Binary Sizes {#binary-minimizer}
-
-[How to minimize Rust binary size][min-sized-rust~repo]↗.
-
-By default, Rust optimizes for execution speed, compilation speed, and ease of debugging. This approach is suitable for most applications, as it balances [performance][p~performance] and developer productivity. However, in specific scenarios where binary size is a critical concern (e.g., embedded systems or deployment to constrained environments), Rust offers mechanisms to optimize for smaller binary sizes.
+Start by measuring a release build for the target you intend to ship. Binary size depends on the target, enabled features, dependency graph, linker, and profile settings, so compare changes under the same conditions.
 
 ```sh
 cargo build --release
 ```
 
+Inspect the release profile in `Cargo.toml` and change one option at a time. Link-time optimization and symbol stripping can reduce output size, but may increase build time or remove information needed for debugging. Use [`cargo-bloat`][c~cargo-bloat~docs]↗ to identify large contributors before replacing dependencies or changing application code. See the [Cargo release profile reference][book~cargo~release-profile]↗ and the [compilation performance guide][p~performance].
+
 ## Generate Rust Code {#code-generators}
 
-[Top artificial intelligence tools that can generate code to help programmers][blog~ai-tools-that-can-generate-code]↗.
+Code generation is useful when source code is repetitive or derived from a stable input such as a schema, protocol definition, or asset list. Choose the mechanism based on when the generated code is needed:
+
+- Use a procedural macro when Rust syntax should be transformed or generated during compilation.
+- Use a `build.rs` script or a dedicated generator when output depends on external files or tools.
+- Use a project template when generating a starting project for a human to maintain.
+
+Keep inputs and generation steps reproducible: document the command, pin generator versions when practical, and make generated output deterministic. Avoid hand-editing generated files unless the tool explicitly supports that workflow. Review generated changes and include them in version control when downstream users need to build without the generator.
+
+See [procedural macros][p~macros], [Cargo build scripts][book~cargo~build-script]↗, and [Cargo project tools][p~building] for related approaches.
+
+## Scaffold a New Project {#scaffold-a-new-project}
+
+Use a project generator when a starter template can provide useful structure or repeatable boilerplate. Treat the template as source code: review the generated files, dependencies, and configuration before building on them.
+
+| Tool | Use it when |
+| --- | --- |
+| [`cargo-generate`][c~cargo-generate~repo]↗{{hi:cargo-generate}} | Start from a Git-hosted template that you control or trust; `cargo generate --git <template-url>` creates the project from it. |
+| [`kickstart`][c~kickstart~repo]↗{{hi:kickstart}} | Use a Tera-based template with prompted variables and conditional files when the generated project needs customization. |
+| [Gerust][gerust~website]↗{{hi:Gerust}} | Create an opinionated Rust backend workspace based on Axum and SQLx when that architecture fits; `gerust <project-name>` generates the starting files. |
+| [Loco][c~loco-rs~website]↗{{hi:Loco}} | Start a batteries-included web application with `loco new`; use `cargo loco generate` (debug builds only) for application components. |
+| [Rise][rise~repo]↗{{hi:Rise}} | Choose a community template for a web app, CLI, game, or another Rust project. |
+
+As of this review, [`Protypo`][protypo~repo]↗{{hi:Protypo}} is a cloud-native headless CMS with one repository commit and no README or release; consider it only for CMS evaluation, not general project scaffolding.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
-
+- [Rust compilation and linking][p~performance].
+- [Cargo subcommands and task runners][p~building].
+- [Cargo build-time utilities][p~build-utils].
+- [Cargo configuration][p~configuration].
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-[other: expand; revise refs.incl.md](https://github.com/john-cd/rust_howto/issues/305)
-
-- [Gerust][gerust~website]↗: Rust backend project generator.
-- [`loco`][c~loco-rs~website]↗.
-
----
-
-[![kickstart][c~kickstart~docs~badge]][c~kickstart~docs] [![kickstart~crates.io][c~kickstart~crates.io~badge]][c~kickstart~crates.io] [![kickstart~lib.rs][c~kickstart~lib.rs~badge]][c~kickstart~lib.rs]{{hi:kickstart}}{{hi:Templating}}{{hi:Generator}}{{hi:Boilerplate}}{{hi:Tera}}{{hi:Scaffolding}}
-
-A simple way to get started with a project by scaffolding from a template powered by the Tera engine.
-
----
-
-- [protypo~repo][protypo~repo]↗.
-- [Rust initial setup engine][rise~repo]↗ (early).
-
-</div>

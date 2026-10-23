@@ -7,7 +7,9 @@
 [ex~other~miri-installation]: miri.md#miri-installation
 [ex~other~miri]: miri.md#miri
 [ex~other~roogle]: other.md#roogle
+[ex~other~scaffold-a-new-project]: other.md#scaffold-a-new-project
 [ex~other~shuttle]: code_verification.md#shuttle
+[p~build-utils]: ../../development-tools_build-utils/index.md
 [p~cargo]: ../cargo/cargo.md
 [p~concurrency]: ../../concurrency/index.md
 [p~cross-platform]: # "../../../other/cross-platform/index.md"

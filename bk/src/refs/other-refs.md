@@ -1246,7 +1246,7 @@
 [release-plz~website]: https://release-plz.ieni.dev
 [remoteok~remote-rust-jobs~website]: https://remoteok.com/remote-rust-jobs
 [renault~website]: https://renaultgroup.com
-[rise~repo]: https://github.com/Dexter2038/rise
+[rise~repo]: https://github.com/EryyynIT/rise
 [risingwave~repo]: https://github.com/risingwavelabs/risingwave
 [river~repo]: https://github.com/memorysafety/river
 [roadmap-rust~website]: https://roadmap.sh/rust
