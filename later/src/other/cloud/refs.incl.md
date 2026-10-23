@@ -3,6 +3,9 @@
 [ex~cloud~dapr]: _fragment.md#dapr
 [ex~cloud~lambda]: aws.md#lambda
 [ex~cloud~shuttle]: rust_native_cloud_development.md#shuttle
+[docs-shuttle-rs]: https://docs.shuttle.dev/
+[dapr~rust~sdk~docs]: https://docs.dapr.io/developing-applications/sdks/rust/
+[fly~rust~hosting~guide]: https://fly.io/learn/rust-hosting/
 [p~apis]: ../../categories/web-programming_http-client/apis.md
 [p~aws]: aws.md
 [p~building]: ../../categories/development-tools_cargo-plugins/building.md

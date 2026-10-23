@@ -1,45 +1,67 @@
 <!-- TODO Reviewed ??-??-2026 -->
 # Cloud
 
-This chapter covers the use of the Rust language in Cloud computing.
+Rust appears in cloud computing in two ways: teams build applications with Rust and run
+them on cloud platforms, and Rust is used to build parts of the cloud infrastructure
+itself. Use this page to find the relevant walkthroughs and examples.
 
-## Implement Rust Applications on the AWS Cloud
+## Run Rust applications on cloud services
+
+### AWS
+
+The [AWS chapter][p~aws]↗ covers the Rust SDK for AWS services and an AWS Lambda
+function. Its recipe table links to both examples.
 
 {{#include aws.incl.md}}
 
-It is similarly possible to use Azure, GCP (Google Cloud Platform), and other cloud providers.
-All major Cloud platforms offer a Rust SDK:
+### Azure and Google Cloud
+
+Rust client libraries are also available for Azure and Google Cloud. Check each
+project's current service coverage, Rust version support, and stability before choosing
+an SDK.
 
 - [Azure SDK for Rust][azure-sdk-for-rust~repo]↗.
-- [Google Cloud Platform Rust [Experimental] Client Libraries][google-cloud-rust~repo]↗.
+- [Google Cloud Rust client libraries][google-cloud-rust~repo]↗.
 
-## Rust-native Cloud Platforms that Offer First-class Support for Rust
+## Deploy Rust applications
+
+The [Rust-native cloud development chapter][ex~cloud~shuttle]↗ includes a Shuttle
+deployment example. See the [Shuttle examples][shuttle-examples~repo]↗ for additional
+starting points. [Fly.io's Rust hosting guide][fly~rust~hosting~guide]↗ describes a
+separate deployment option.
 
 {{#include rust_native_cloud_development.incl.md}}
 
-## Related Topics
+## Integrate a distributed application runtime
 
-### Rust as the Basis for Cloud-Native Technologies
+[Dapr][dapr~rust~sdk~docs]↗ provides building blocks for distributed applications
+that run across cloud and edge environments. Its current Rust SDK documentation marks
+the client library as alpha, so check its status and API stability before adopting it.
 
-Rust is commonly used to develop reliable and efficient cloud infrastructure components, such as [[virtualization | Virtualization]], [[network-programming | networking]] services and storage systems. That includes core cloud-native technologies, such as:
+## Build cloud infrastructure with Rust
 
-- Container runtimes (e.g., [`Youki`][youki~repo]↗{{hi:Youki}}),
-- Service meshes (e.g., [`Linkerd`][linkerd~website]↗{{hi:Linkerd}}),
-- MicroVMs (e.g., `Firecracker`),
-- Operating systems optimized for containers (e.g., [`Bottlerocket`][c~bottlerocket~docs]↗{{hi:Bottlerocket}}).
+Rust is also used in infrastructure that runs or supports cloud applications. Examples
+include:
 
-Refer to:
+- Container runtimes such as [`Youki`][youki~repo]↗{{hi:Youki}}.
+- Service meshes such as [`Linkerd`][linkerd~website]↗{{hi:Linkerd}}.
+- MicroVMs such as [`Firecracker`][firecracker~repo]↗{{hi:Firecracker}}.
+- Container-focused operating systems such as [`Bottlerocket`][c~bottlerocket~docs]↗{{hi:Bottlerocket}}.
 
-- [[written-in-rust | Written in Rust]].
-- [rust-cloud-native.github.io][rust-cloud-native~website]↗.
+Browse the [Rust cloud-native project catalog][rust-cloud-native~website]↗ and
+[[written-in-rust | Written in Rust]] for more examples.
+
+## Related topics
+
+- [[architecture | Software Architecture]] and system design.
+- [[data-processing | Data Processing]] and storage.
+- [[devops | DevOps]] and delivery.
+- [[network-programming | Networking]] and service communication.
+- [[virtualization | Virtualization]] and isolation.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [edit](https://github.com/john-cd/rust_howto/issues/579)
-
-- [`shuttle.dev` Examples][shuttle-examples~repo]↗.
-- [Deploy app servers close to your users][fly~website]↗.
-
 </div>
