@@ -76,6 +76,7 @@ Alternatives to the [Tokio][p~tokio] async ecosystem include:
 ## Related Topics {#related-topics .skip}
 
 - [[concurrency | Concurrency]].
+- [[network-programming | Network Programming]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

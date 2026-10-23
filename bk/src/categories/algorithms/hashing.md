@@ -112,6 +112,7 @@ This page covers hashes. Use the dedicated topics for other cryptographic operat
 - [[algorithms | Algorithms]].
 - [[cryptography | Cryptography]].
 - [[data-structures | Data Structures]].
+- [[hashmaps | Hash Maps]].
 - [[encryption | Encryption]].
 - [[password_hashing | Password Hashing]].
 

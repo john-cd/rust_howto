@@ -35,6 +35,7 @@
 [p~language]: ../../../src/language/index.md
 [p~macros]: ../../../src/language/macros.md
 [p~main]: ../../language/entrypoint.md
+[p~network-programming]: ../network-programming/index.md
 [p~node]: ../development-tools_ffi/node.md
 [p~standard-library]: ../../../drafts/standard-library/index.md
 [p~streams]: streams.md

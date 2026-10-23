@@ -25,3 +25,4 @@
 [ex~algorithms~sort-vector-floats]: sorting.md#sort-vector-floats
 [ex~algorithms~sort-vector-integers]: sorting.md#sort-vector-integers
 [ex~algorithms~sort-vector-structs]: sorting.md#sort-vector-structs
+[p~hashmaps]: ../data-structures/hashmaps.md
