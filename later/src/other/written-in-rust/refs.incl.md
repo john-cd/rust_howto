@@ -17,6 +17,10 @@
 [ex~written-in-rust~utilities]: development_tools.md#utilities
 [ex~written-in-rust~uv]: python_tools.md#uv
 [ex~written-in-rust~zed]: development_tools.md#zed
+[jj~repo]: https://github.com/jj-vcs/jj
+[bun~runtime~docs]: https://github.com/oven-sh/bun/blob/main/docs/runtime/index.mdx
+[pants~engine~docs]: https://www.pantsbuild.org/dev/docs/introduction/how-does-pants-work
+[volta~project~repo]: https://github.com/volta-cli/volta
 [p~cross-platform]: # "../cross-platform/index.md"
 [p~embedded]: # "../../categories/embedded/index.md"
 [p~environment-variables]: # "../../categories/config/environment_variables.md"

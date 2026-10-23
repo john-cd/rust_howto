@@ -3,66 +3,56 @@
 
 {{#include development_tools.incl.md}}
 
-## JavaScript Tooling {#javascript-tooling}
+This page maps developer-facing tools written wholly or partly in Rust, along with companion projects that help use them. Some projects use Rust for performance-critical components and another language for plugins; check each project's documentation for its architecture and current maintenance status.
 
-- [Volta][volta~website]↗[(github)][volta~repo]↗.
-- [Deno][deno~website]↗ uses Rust for its JavaScript and TypeScript runtime.
-- [`Bun`][bun.sh~website]↗{{hi:Bun}}.
+## Version control tools {#jujutsu}
 
-### `swc` Compiler {#swc}
+[Jujutsu (`jj`)][jj~repo] is a Git-compatible version control system written in Rust. [Steve Klabnik's Jujutsu tutorial][jujutsu-tutorial~website] and the [JJ workshop][jj-workshop~repo] provide guided introductions. [`gg`][gg~repo] is a graphical companion for JJ.
+
+## Build tools {#build-tools}
+
+[Pants][pantsbuild~website]↗ is a polyglot build system. Its execution engine is written in Rust, while build rules are written in typed Python. This split lets Pants use Rust for performance-critical work while keeping project-specific rules accessible; see the [Pants engine documentation][pants~engine~docs].
+
+## JavaScript tooling {#javascript-tooling}
+
+[Volta][volta~project~repo] is a Rust-based JavaScript toolchain manager. Its README now marks the project unmaintained and recommends migration, so check its current status before adopting it.
+
+[Deno][deno~website]↗ is a JavaScript, TypeScript, and WebAssembly runtime built on V8, Rust, and Tokio.
+
+[Bun][bun.sh~website]↗ uses JavaScriptCore; its current runtime documentation describes the runtime and transpiler as written in Rust. See the [Bun runtime documentation][bun~runtime~docs] for the current architecture.
+
+### SWC compiler {#swc}
 
 [![swc][c~swc~docs~badge]][c~swc~docs]{{hi:swc}}
 [![swc~crates.io][c~swc~crates.io~badge]][c~swc~crates.io]
 [![swc~repo][c~swc~repo~badge]][c~swc~repo]
 [![swc~lib.rs][c~swc~lib.rs~badge]][c~swc~lib.rs]
 
-[`swc` (github)][c~swc~repo]↗ (stands for `Speedy Web Compiler`) is a fast TypeScript / JavaScript compiler written in Rust. It's a library for Rust and JavaScript at the same time.
+[`swc`][c~swc~repo]↗ (Speedy Web Compiler) is a Rust compiler and toolkit for JavaScript and TypeScript. See also [[programming_languages | Programming Languages]] and its parser tools.
 
-See also [[programming_languages | Programming Language]] parsers.
+## Code editors {#code-editors}
 
-## Code Editors {#code-editors}
+### Lapce {#lapce}
 
-### `lapce` {#lapce}
+[Lapce][lapce~website]↗ is a cross-platform code editor written in Rust.
 
-[![lapce~website][lapce~website~badge]][lapce~website]{{hi:lapce}}
+### Zed {#zed}
 
-[`lapce`][lapce~website]↗{{hi:lapce}} is a lightning-fast and Powerful Code Editor written in Rust.
+[`Zed`][c~zed~repo]↗ is a high-performance, collaborative code editor from the creators of Atom and Tree-sitter.
 
-### `zed` {#zed}
+## Terminal utilities {#utilities}
 
-{{hi:zed}}
-[![zed~crates.io][c~zed~crates.io~badge]][c~zed~crates.io]
-[![zed~repo][c~zed~repo~badge]][c~zed~repo]
-[![zed~lib.rs][c~zed~lib.rs~badge]][c~zed~lib.rs]
+[`onefetch`][c~onefetch~repo]↗ is a command-line Git information tool that summarizes a repository in the terminal.
 
-[`zed`][c~zed~repo]↗{{hi:zed}} is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
-
-## Build Tools {#build-tools}
-
-[`pantsbuild.org`][pantsbuild~website]↗ {{hi:pants}} is a fast, scalable, user-friendly build system for codebases of all sizes. It's currently focused on Python, Go, Java, Scala, Kotlin, Shell, and Docker.
-
-## Utilities {#utilities}
-
-[`television`][c~television~docs]↗{{hi:television}} is a blazingly fast general purpose fuzzy finder TUI.
-
-It integrates with your shell and lets quickly [search][p~search] through any kind of data source (files, git repositories, [environment variables][p~environment-variables], docker images...) using a fuzzy matching algorithm.
+[`television`][c~television~docs]↗ is a general-purpose fuzzy finder TUI. It integrates with your shell and can search files, Git repositories, [environment variables][p~environment-variables], container images, and other configured data sources.
 
 ## Related Topics {#related-topics .skip}
 
-- [[programming_languages | Programming Language]] parsers.
+- [[programming_languages | Programming Languages]].
+- [[command-line-interface | Command Line Interface]].
+- [[version_control | Version Control]].
+- [[cross-platform | Cross-platform Development]].
+- [[gui | GUI]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[organize](https://github.com/john-cd/rust_howto/issues/612)
-
-- [onefetch][c~onefetch~repo]↗: Command-line Git information tool.
-
-## Jujutsu {#jujutsu}
-
-- [jujutsu-tutorial~website][jujutsu-tutorial~website]↗.
-- [`jj` workshop][jj-workshop~repo]↗.
-- [`gg` (Github)][gg~repo]↗.
-
-</div>

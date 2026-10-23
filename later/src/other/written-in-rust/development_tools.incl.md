@@ -1,11 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
-||
-|--------|
-| [`swc` Compiler][ex~written-in-rust~swc] |
-| [JavaScript Tooling][ex~written-in-rust~javascript-tooling] |
-| [Code Editors][ex~written-in-rust~code-editors] |
-| [`lapce`][ex~written-in-rust~lapce] |
-| [`zed`][ex~written-in-rust~zed] |
-| [Build Tools][ex~written-in-rust~build-tools] |
-| [Compilers written in Rust][ex~written-in-rust~compilers] |
-| [Utilities][ex~written-in-rust~utilities] |
+| Area | Tools |
+| -------- | -------- |
+| Version control | [Jujutsu and its GUI][ex~written-in-rust~jujutsu] |
+| Build systems | [Pants][ex~written-in-rust~build-tools] |
+| JavaScript toolchains and compilers | [Volta, Deno, Bun, and SWC][ex~written-in-rust~javascript-tooling] |
+| Code editors | [Lapce and Zed][ex~written-in-rust~code-editors] |
+| Terminal utilities | [onefetch and television][ex~written-in-rust~utilities] |
