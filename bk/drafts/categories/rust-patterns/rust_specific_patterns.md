@@ -28,6 +28,8 @@ The [`dyn-clone`][c~dyn-clone~docs]↗{{hi:dyn-clone}} crate provides a [`DynClo
 
 `pin-project-lite` is a lightweight version of `pin-project` written with declarative macros. The `pin_project!` macro creates a projection type covering all the fields of struct.
 
+Future implementations can be `!Unpin`, so a wrapper must poll the inner future through a pinned projection. Other wrapper state, such as a poll counter, can remain movable.
+
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs:example}}
 ```

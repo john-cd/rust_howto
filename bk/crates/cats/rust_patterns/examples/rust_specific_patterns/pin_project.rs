@@ -14,8 +14,12 @@
 //! pinning can move a value after another pointer relies on its address.
 
 use std::fmt::Debug;
+use std::future::Future;
 use std::marker::PhantomPinned;
 use std::pin::Pin;
+use std::task::Context;
+use std::task::Poll;
+use std::task::Waker;
 
 use pin_project::pin_project;
 use pin_project::pinned_drop;
@@ -142,6 +146,42 @@ fn example2() {
     println!("Pointer points to value: {}", unsafe { &*ptr });
 }
 
+/// A future wrapper that pins its inner future and keeps movable poll state.
+#[pin_project]
+struct PollCounter<F> {
+    /// The inner future may be address-sensitive and must remain pinned.
+    #[pin]
+    future: F,
+    /// The wrapper's ordinary bookkeeping does not need to be pinned.
+    polls: usize,
+}
+
+impl<F: Future> Future for PollCounter<F> {
+    type Output = F::Output;
+
+    /// Counts this poll and delegates to the pinned inner future.
+    fn poll(
+        self: Pin<&mut Self>,
+        context: &mut Context<'_>,
+    ) -> Poll<Self::Output> {
+        let this = self.project();
+        *this.polls += 1;
+        this.future.poll(context)
+    }
+}
+
+/// Demonstrates projection to a pinned future and movable bookkeeping.
+fn future_projection_example() {
+    let mut future = Box::pin(PollCounter {
+        future: std::future::ready(42),
+        polls: 0,
+    });
+    let mut context = Context::from_waker(Waker::noop());
+
+    assert_eq!(future.as_mut().poll(&mut context), Poll::Ready(42));
+    assert_eq!(future.as_ref().get_ref().polls, 1);
+}
+
 /// ## Pinned Enum
 ///
 /// This enum demonstrates how to use `pin_project`
@@ -228,6 +268,7 @@ fn example4() {
 fn main() {
     example1();
     example2();
+    future_projection_example();
     example3();
     example4();
 }
@@ -243,7 +284,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Exercises basic, self-referential, enum, and drop projections.
+    /// Exercises field, future, self-reference, enum, and drop projections.
     #[test]
     fn test_main() {
         main();
