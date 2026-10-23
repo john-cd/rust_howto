@@ -20,7 +20,7 @@ autolib = false
 [features]
 default = []
 dioxus = ["dep:dioxus"]
-femtovg = ["dep:femtovg"]
+femtovg = ["dep:femtovg", "dep:glutin", "dep:glutin-winit", "dep:raw-window-handle"]
 floem = ["dep:floem"]
 gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
 minifb = ["dep:minifb"]
@@ -46,11 +46,13 @@ femtovg = { version = "0.23.2", optional = true }
 floem = { version = "0.2.0", optional = true }
 gl = { version = "0.14.0", optional = true }
 glutin = { version = "0.32.3", optional = true }
+glutin-winit = { version = "0.5.0", optional = true }
 iced = { version = "0.14.0", optional = true }
 minifb = { version = "0.28.0", optional = true }
 morphorm = "0.8.0"
 parley = "0.9.0"
 pollster = { version = "0.4.0", optional = true } # for the Vello example
+raw-window-handle = { version = "0.6.2", optional = true }
 rfd = "0.17.2"
 skia-safe = { version = "=0.90", features = [
     "gl",
@@ -79,7 +81,13 @@ tauri-build = "2.7.4"
 [[example]]
 name = "2d_renderers"
 path = "examples/2d_renderers/main.rs"
-required-features = ["femtovg", "skia", "vger", "webrender"]
+required-features = ["femtovg", "skia", "webrender"]
+test = true
+
+[[example]]
+name = "femtovg"
+path = "examples/2d_renderers/femtovg.rs"
+required-features = ["femtovg"]
 test = true
 
 [[example]]
