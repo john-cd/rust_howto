@@ -1,37 +1,59 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# Vector-Based 2D Rendering
+# Vector Graphics in 2D
 
 {{#include 2d_vector_graphics.incl.md}}
 
+Vector graphics describe shapes and paths with coordinates, lines, and curves instead of storing a fixed grid of pixels. A vector scene can be scaled to different sizes, but it still has to be rasterized or drawn by a renderer before it appears on a screen.
+
+## Build a Path
+
+A path is an ordered set of subpaths. A subpath starts at a point, adds straight or curved segments, and ends open or closed. For example, this Lyon path describes a rounded triangular shape:
+
+```rust
+use lyon::math::point;
+use lyon::path::Path;
+
+let mut builder = Path::builder();
+builder.begin(point(12.0, 12.0));
+builder.line_to(point(72.0, 12.0));
+builder.line_to(point(42.0, 60.0));
+builder.quadratic_bezier_to(point(26.0, 48.0), point(12.0, 12.0));
+builder.end(true);
+
+let path = builder.build();
+```
+
+The path is geometry, not a colored image. A drawing operation also needs a fill or stroke style, a transform, and a renderer that turns the geometry into pixels.
+
+## From Geometry to Pixels
+
+1. Build paths in a consistent local coordinate system.
+2. Apply transforms for placement, scaling, and rotation; keep device-pixel scaling separate from the shape's design coordinates.
+3. Choose a fill rule and stroke width, cap, and join. These settings change which regions are covered and how outlines meet at corners.
+4. Tessellate curves into line segments or triangles, or use a renderer that performs this step internally. A tolerance controls the approximation error and should account for the final display scale.
+5. Rasterize the result with a CPU or GPU backend, then composite it with the rest of the scene using the expected color and alpha conventions.
+
+Use bounds and clipping to limit work for large scenes. For interactive diagrams, charts, and editors, retain the source paths so you can update geometry and perform hit testing without trying to reconstruct shapes from the rendered pixels.
+
 ## `lyon` {#lyon}
 
-[`lyon`][c~lyon~docs]↗{{hi:lyon}} is a library for generating vector paths and shapes. It's useful for creating the geometry for vector [graphics][p~graphics], but you'd typically use a [rendering][p~rendering] library like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`raqote`][c~raqote~docs]↗{{hi:raqote}}, or [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} to actually draw them. [`lyon`][c~lyon~docs]↗{{hi:lyon}} handles the math and path calculations.
-
-[`lyon`][c~lyon~docs]↗{{hi:lyon}} generates vector paths and shapes. Often used with a rendering library. For basic geometry, you might just use structs and functions within your own code. [`lyon`][c~lyon~docs]↗{{hi:lyon}} can also generate various types of curves (Bézier curves, etc.).
-
-It's useful for creating the geometry for vector graphics, but you'd typically use a [rendering][p~rendering] library like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`raqote`][c~raqote~docs]↗{{hi:raqote}}, or [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} to actually draw them.
+[`lyon`][c~lyon~docs]↗{{hi:lyon}} builds paths and tessellates fills and strokes into vertices and indices. It does not provide a window or final drawing backend; pass its generated geometry to a renderer such as `wgpu` or another graphics API. Lyon is useful when an application needs to inspect or control the generated geometry, or when it uses the same path data across rendering operations.
 
 ## `femtovg` {#femtovg}
 
 [![femtovg][c~femtovg~docs~badge]][c~femtovg~docs] [![femtovg~crates.io][c~femtovg~crates.io~badge]][c~femtovg~crates.io] [![femtovg~repo][c~femtovg~repo~badge]][c~femtovg~repo] [![femtovg~lib.rs][c~femtovg~lib.rs~badge]][c~femtovg~lib.rs]{{hi:femtovg}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
-[`femtovg`][c~femtovg~docs]↗{{hi:femtovg}} is an anti-aliased 2D vector drawing library. It is "OpenGL based. Offers a simple API. Probably the easiest to get started with." ([blessed.rs][blessed.rs-graphics~website]↗).
-
-```rust,editable
-{{#include ../../../crates/cats/gui/examples/2d_renderers/femtovg.rs:example}}
-```
+[`femtovg`][c~femtovg~docs]↗{{hi:femtovg}} provides a canvas-style API for antialiased 2D paths, images, and text. Its OpenGL renderer needs a compatible graphics context supplied by the application. Use it when you want a higher-level drawing canvas and already have, or can create, the required window and context.
 
 ## `vger` {#vger}
 
 [![vger][c~vger~docs~badge]][c~vger~docs] [![vger~crates.io][c~vger~crates.io~badge]][c~vger~crates.io] [![vger~repo][c~vger~repo~badge]][c~vger~repo] [![vger~lib.rs][c~vger~lib.rs~badge]][c~vger~lib.rs]{{hi:vger}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
-[`vger`][c~vger~docs]↗{{hi:vger}} is a 2D [GPU][p~gpu] renderer for dynamic UIs.
+[`vger`][c~vger~docs]↗{{hi:vger}} is a GPU renderer aimed at dynamic 2D interfaces. It provides a rendering layer for applications that need frequently changing shapes and UI elements; check its current backend and platform requirements before choosing it.
 
-"A simpler WGPU-based option which is less innovative but currently more stable than [`vello`][c~vello~docs]↗{{hi:vello}}." ([blessed.rs][blessed.rs-graphics~website]↗)↗.
+## Choose the Rendering Boundary
 
-```rust,editable
-{{#include ../../../crates/cats/gui/examples/2d_renderers/vger.rs:example}}
-```
+Use Lyon when your application needs path geometry and wants to select its own backend. Use a canvas renderer such as `femtovg` when you prefer drawing commands and the renderer's built-in path handling. Use a GPU renderer such as `vger` when its scene model and backend fit the rest of the application. For static vector assets, rendering SVG through an SVG-focused pipeline may be simpler than building paths by hand; see [SVG Rendering](svg_rendering.md).
 
 ## See Also {#see-also .skip}
 
@@ -39,13 +61,12 @@ It's useful for creating the geometry for vector graphics, but you'd typically u
 
 ## Related Topics {#related-topics .skip}
 
-- [[2d_renderers | 2D Renderers]].
-- [[2d_raster_graphics | 2D Raster Graphics]].
-- [[3d_renderers | 3d Renderers]].
-- [[opengl | OpenGL]].
-- [[rendering | Rendering]].
-- [[rendering_engines | Rendering Engines]].
-- [[svg_rendering | SVG Rendering]].
+- [2D Renderers](2d_renderers.md).
+- [2D Raster Graphics](2d_raster_graphics.md).
+- [3D Renderers](3d_renderers.md).
+- [Rendering](index.md).
+- [Rendering Engines](../rendering_engine/index.md).
+- [SVG Rendering](svg_rendering.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
