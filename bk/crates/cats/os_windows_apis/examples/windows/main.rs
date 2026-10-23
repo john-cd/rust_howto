@@ -2,13 +2,18 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+#[cfg(target_os = "windows")]
 use clap::Parser;
+#[cfg(target_os = "windows")]
 use clap::Subcommand;
 
+#[cfg(target_os = "windows")]
 mod winapi;
+#[cfg(target_os = "windows")]
 mod windows;
 
 /// Command-line arguments.
+#[cfg(target_os = "windows")]
 #[derive(Parser)]
 struct Cli {
     /// The example to run.
@@ -17,6 +22,7 @@ struct Cli {
 }
 
 /// The examples that can be run.
+#[cfg(target_os = "windows")]
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `winapi` example.
@@ -28,6 +34,7 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
+#[cfg(target_os = "windows")]
 fn main() {
     let cli = Cli::parse();
 
@@ -41,4 +48,10 @@ fn main() {
             }
         }
     }
+}
+
+/// Explains that this example requires Windows when built on another platform.
+#[cfg(not(target_os = "windows"))]
+fn main() {
+    println!("This example requires Windows.");
 }
