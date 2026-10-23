@@ -8,7 +8,8 @@
 [ex~rust-patterns~either]: functional_programming.md#either
 [ex~rust-patterns~factory]: creational_patterns.md#factory
 [ex~rust-patterns~frunk]: functional_programming.md#frunk
-[ex~rust-patterns~im]: functional_programming.md#im
+[ex~rust-patterns~imbl]: functional_programming.md#im
+[ex~rust-patterns~iterator-adapters]: functional_programming.md#iterator-adapters
 [ex~rust-patterns~pin-project]: rust_specific_patterns.md#pin-project
 [ex~rust-patterns~rpds]: functional_programming.md#rpds
 [ex~rust-patterns~scopeguard]: rust_specific_patterns.md#scopeguard
@@ -24,3 +25,8 @@
 [p~maps]: ../../../src/categories/data-structures/other_maps.md
 [p~parse]: ../date-and-time/parse.md
 [p~unix]: # "../os_unix-apis/unix.md"
+[c~imbl~docs]: https://docs.rs/imbl
+[c~imbl~docs~badge]: https://img.shields.io/crates/v/imbl?label=imbl
+[c~imbl~crates.io]: https://crates.io/crates/imbl
+[c~imbl~crates.io~badge]: https://img.shields.io/badge/crates.io-imbl-crimson
+[book~rust~closures]: https://doc.rust-lang.org/book/ch13-01-closures.html

@@ -8,7 +8,8 @@ use clap::Subcommand;
 
 mod either;
 mod frunk;
-mod im;
+mod imbl;
+mod iterators;
 mod itertools;
 mod rpds;
 
@@ -29,12 +30,15 @@ enum Commands {
     /// Runs the `frunk` example.
     #[command(name = "frunk")]
     Frunk,
-    /// Runs the `im` example.
-    #[command(name = "im")]
-    Im,
+    /// Runs the `imbl` example.
+    #[command(name = "imbl")]
+    Imbl,
     /// Runs the `itertools` example.
     #[command(name = "itertools")]
     Itertools,
+    /// Runs the standard-library iterator adapter example.
+    #[command(name = "iterators")]
+    Iterators,
     /// Runs the `rpds` example.
     #[command(name = "rpds")]
     Rpds,
@@ -52,11 +56,14 @@ fn main() {
             Commands::Frunk => {
                 frunk::run();
             }
-            Commands::Im => {
-                im::run();
+            Commands::Imbl => {
+                imbl::run();
             }
             Commands::Itertools => {
                 itertools::run();
+            }
+            Commands::Iterators => {
+                iterators::run();
             }
             Commands::Rpds => {
                 rpds::run();

@@ -3,15 +3,17 @@
 
 {{#include functional_programming.incl.md}}
 
-Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data.
+Functional style builds results by composing small functions over values. Rust supports this style with functions, closures, pattern matching, and lazy iterator adapters such as [`map`][c~std::iter::Iterator::map~docs]↗{{hi:map}}, [`filter`][c~std::iter::Iterator::filter~docs]↗{{hi:filter}}, and [`fold`][c~std::iter::Iterator::fold~docs]↗{{hi:fold}}. Rust is multi-paradigm: mutation is available when it makes the code clearer, while ownership and borrowing still govern how values are shared.
 
-Rust is not a purely functional language, but incorporates many features from functional programming. By default, variables in Rust are immutable. Rust treats functions as first-class citizens, meaning they can be passed as arguments to other functions, returned from functions, and assigned to variables. Closures, which are anonymous functions that can capture their environment, are also a powerful tool for functional programming in Rust. Other functional features include pattern matching, algebraic data types, and higher-order functions, such as [`map`][c~std::iter::Iterator::map~docs]↗{{hi:map}}, `filter`, and `fold`.
+Start with the standard iterator adapters, then use [`itertools`][c~itertools~docs]↗{{hi:itertools}} when its additional adapters make a transformation clearer. Persistent collections such as [`imbl`][c~imbl~docs]↗{{hi:imbl}} and [`rpds`][c~rpds~docs]↗{{hi:rpds}} can share structure between versions. [`either`][c~either~docs]↗{{hi:either}} represents one of two alternatives, and [`frunk`][c~frunk~docs]↗{{hi:frunk}} provides heterogeneous lists and type-level tools.
 
-The following explores some notable Rust crates that aid in functional programming:
+## Transform Collections with Iterator Adapters {#iterator-adapters}
 
-- [`itertools`][c~itertools~docs]↗{{hi:itertools}} is often used with iterator chains, enhancing the standard iterator functions.
-- [`im`][c~im~docs]↗{{hi:im}} replaces standard collections when immutability is required.
-- [`frunk`][c~frunk~docs]↗{{hi:frunk}} is used for complex functional programming needs, especially those involving type-level programming.
+Iterator adapters are lazy: `filter` and `map` describe a transformation, and a consumer such as `fold` runs it. Closures let each step capture values such as a threshold without introducing mutable intermediate collections.
+
+```rust,editable
+{{#include ../../../crates/cats/rust_patterns/examples/functional_programming/iterators.rs:example}}
+```
 
 ## Compose Iterators {#compose-iterators-with-itertools}
 
@@ -32,27 +34,27 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/itertools.rs:example}}
 ```
 
-## Create Immutable Data Structures with `im` {#im}
+## Create Persistent Collections with `imbl` {#im}
 
-[![im~website][c~im~website~badge]][c~im~website] [![im][c~im~docs~badge]][c~im~docs] [![im~crates.io][c~im~crates.io~badge]][c~im~crates.io] [![im~repo][c~im~repo~badge]][c~im~repo] [![im~lib.rs][c~im~lib.rs~badge]][c~im~lib.rs]{{hi:im}}{{hi:Persistent}}{{hi:Hamt}}{{hi:Immutable}}{{hi:B-tree}}{{hi:Rrb-tree}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+[![imbl][c~imbl~docs~badge]][c~imbl~docs] [![imbl][c~imbl~crates.io~badge]][c~imbl~crates.io]{{hi:imbl}}{{hi:Persistent}}{{hi:Hamt}}{{hi:Immutable}}{{hi:B-tree}}{{hi:Rrb-tree}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-[`im`][c~im~docs]↗{{hi:im}} provides immutable data structures, such as lists, [maps][p~maps], and sets. It facilitates functional programming by providing data structures that cannot be modified in place. Use it to ensure that data does not change in unexpected ways.
+[`imbl`][c~imbl~docs]↗{{hi:imbl}} provides persistent collections such as vectors, maps, and sets. Updates produce a new version that shares unchanged structure with the old one. This is useful when keeping multiple related versions is more important than in-place mutation. The example imports the crate by its package name, `imbl`.
 
 ```rust,editable
-{{#include ../../../crates/cats/rust_patterns/examples/functional_programming/im.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/examples/functional_programming/imbl.rs:example}}
 ```
 
-## `rpds` {#rpds}
+## Use Persistent Collections with `rpds` {#rpds}
 
 [![rpds][c~rpds~docs~badge]][c~rpds~docs] [![rpds~crates.io][c~rpds~crates.io~badge]][c~rpds~crates.io] [![rpds~repo][c~rpds~repo~badge]][c~rpds~repo] [![rpds~lib.rs][c~rpds~lib.rs~badge]][c~rpds~lib.rs]{{hi:rpds}}{{hi:Data-structure}}{{hi:No_std}}{{hi:Persistent}}{{hi:Immutable}}{{hi:Data-structures}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-`rpds`{{hi:rpds}} provides persistent data structures with structural sharing.
+[`rpds`][c~rpds~docs]↗{{hi:rpds}} provides persistent data structures with structural sharing. Like `imbl`, it can make it inexpensive to retain related versions of a collection; choose a collection based on its API and workload.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/rpds.rs:example}}
 ```
 
-## Use a general purpose sum type with `either` {#either}
+## Represent Two Alternatives with `either` {#either}
 
 [![either][c~either~docs~badge]][c~either~docs] [![either~crates.io][c~either~crates.io~badge]][c~either~crates.io] [![either~repo][c~either~repo~badge]][c~either~repo] [![either~lib.rs][c~either~lib.rs~badge]][c~either~lib.rs]{{hi:either}}{{hi:Data-structure}}{{hi:No_std}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
@@ -64,7 +66,7 @@ Note that [`Either`][c~either~docs]↗{{hi:Either}} is general purpose. For desc
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/either.rs:example}}
 ```
 
-## Use Functional Programming Data Structures and Type-level Programming Tools with `frunk` {#frunk}
+## Work with Heterogeneous Lists and Type-level Tools with `frunk` {#frunk}
 
 [![frunk][c~frunk~docs~badge]][c~frunk~docs] [![frunk~crates.io][c~frunk~crates.io~badge]][c~frunk~crates.io] [![frunk~repo][c~frunk~repo~badge]][c~frunk~repo] [![frunk~lib.rs][c~frunk~lib.rs~badge]][c~frunk~lib.rs]{{hi:frunk}}{{hi:Monoid}}{{hi:Generic}}{{hi:HList}}{{hi:Validated}}{{hi:frunk}}
 
@@ -76,7 +78,8 @@ Frunk is a functional programming toolbelt for Rust. It provides developers with
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Iterators][book~rust~iterators] and [closures][book~rust~closures] in the Rust Book.
+- [[structural_patterns | Structural Patterns]] for pattern matching and algebraic data types.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -88,8 +91,6 @@ review
 - [Type-Level Programming in Rust][blog~type-level-programming-in-rust]↗.
 
 review [tap][c~tap~crates.io]↗.
-
-ADD Working with Iterators: Creating custom iterators, using iterator adapters, and understanding iterator traits. Here or in `std` lib?
 
 - [Type-level Programming in Rust][blog~willcrichton-type-level-programming]↗.
 
