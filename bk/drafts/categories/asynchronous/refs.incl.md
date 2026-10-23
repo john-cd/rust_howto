@@ -14,6 +14,7 @@
 [ex~asynchronous~join]: tokio.md#join
 [ex~asynchronous~joining-futures]: futures.md#joining-futures
 [ex~asynchronous~kanal]: async_channels.md#kanal
+[ex~asynchronous~localset]: tokio.md#localset
 [ex~asynchronous~map-then-either-flatten]: futures.md#map-then-either-flatten
 [ex~asynchronous~mpmc]: async_channels.md#mpmc
 [ex~asynchronous~mpsc]: async_channels.md#mpsc
