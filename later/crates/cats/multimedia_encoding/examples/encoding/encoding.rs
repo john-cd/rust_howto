@@ -5,7 +5,7 @@
 //! Encode a blank AV1 frame using the `rav1e` crate.
 //!
 //! This example creates a default encoder context, sends one frame, flushes the
-//! encoder, and counts the packets emitted by the encoder.
+//! encoder, and reports the encoded packet payload size.
 
 use std::error::Error;
 
@@ -21,9 +21,13 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     ctx.flush();
 
     let mut packet_count = 0;
+    let mut payload_bytes = 0;
     loop {
         match ctx.receive_packet() {
-            Ok(_packet) => packet_count += 1,
+            Ok(packet) => {
+                packet_count += 1;
+                payload_bytes += packet.data.len();
+            }
             Err(EncoderStatus::Encoded) => (),
             Err(EncoderStatus::LimitReached) => break,
             Err(status) => {
@@ -32,7 +36,9 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         }
     }
 
-    println!("Encoded {packet_count} AV1 packet(s) from one frame.");
+    println!(
+        "Encoded {packet_count} AV1 packet(s) ({payload_bytes} payload bytes) from one blank frame."
+    );
     Ok(())
 }
 // ANCHOR_END: example

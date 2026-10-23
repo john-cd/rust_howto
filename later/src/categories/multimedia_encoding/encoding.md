@@ -5,6 +5,8 @@
 
 ## Encode Your Media {#encoding}
 
+[`rav1e`][c~rav1e~docs]↗{{hi:rav1e}} encodes frames into AV1 packets. The example below encodes one blank frame and reports the packet payload size. A complete video file also needs a container and muxer; this snippet does not write a playable media file.
+
 ```rust,editable
 {{#include ../../../crates/cats/multimedia_encoding/examples/encoding/encoding.rs:example}}
 ```
