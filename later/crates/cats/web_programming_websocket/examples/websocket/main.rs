@@ -8,7 +8,7 @@ mod tungstenite;
 
 /// Runs each of the WebSocket examples.
 fn main() -> anyhow::Result<()> {
-    async_tungstenite::run();
+    async_tungstenite::run()?;
     tungstenite::run()?;
     tokio_tungstenite::run()?;
     Ok(())

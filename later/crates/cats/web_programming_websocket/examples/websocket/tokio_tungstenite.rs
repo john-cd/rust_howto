@@ -1,70 +1,64 @@
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
-//! Example of an asynchronous WebSocket client with `tokio_tungstenite`.
-//!
-//! The WebSocket protocol provides a simultaneous two-way communication
-//! channel over a single TCP connection, typically between a web browser and
-//! a web server.
-//!
-//! This example connects to a test WebSocket server, sends a message, and
-//! receives an echoed message back.
+//! An asynchronous WebSocket client using Tokio and tokio-tungstenite.
 
-// Extension trait for Sinks; defines `send()`.
 use futures_util::SinkExt;
-// Extension trait for Streams; defines `next()`.
 use futures_util::StreamExt;
 use tokio_tungstenite::connect_async;
+use tokio_tungstenite::tungstenite::Message;
 use tokio_tungstenite::tungstenite::client::IntoClientRequest;
-// An enum representing the various forms of a WebSocket message:
-// text, binary...
-use tokio_tungstenite::tungstenite::protocol::Message;
+use tokio_tungstenite::tungstenite::http::Request;
 
-/// Connects to a WebSocket server, sends a message and prints the reply.
+const ECHO_ENDPOINT: &str = "wss://ws.postman-echo.com/raw";
+
+/// Creates a request for Postman's public echo service.
+fn echo_request() -> anyhow::Result<Request<()>> {
+    Ok(ECHO_ENDPOINT.into_client_request()?)
+}
+
+/// Connects, sends one message, prints the reply, and closes the connection.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Connect to a test WebSocket server, which will echo the message we sent.
-    let request = "ws://echo.websocket.in".into_client_request()?;
-    // Add headers if needed:
-    // request.headers_mut().insert("api-key", "42".parse()?);
-    let (ws_stream, response) = connect_async(request).await?;
-    println!("Connected to the server");
+    let (mut socket, response) = connect_async(echo_request()?).await?;
+    println!("Handshake status: {}", response.status());
 
-    println!("Response HTTP code: {}", response.status());
-    println!("Response contains the following headers:");
-    for (ref header, _value) in response.headers() {
-        println!("* {header}");
+    socket.send(Message::Text("Hello WebSocket".into())).await?;
+    while let Some(message) = socket.next().await {
+        let message = message?;
+        match message {
+            Message::Text(text) => {
+                println!("Received: {text}");
+                break;
+            }
+            Message::Close(frame) => {
+                println!("Server closed the connection: {frame:?}");
+                break;
+            }
+            message => println!("Received another message: {message}"),
+        }
     }
 
-    let (mut write, mut read) = ws_stream.split();
-
-    // Send a message to the server.
-    write.send(Message::Text("Hello WebSocket".into())).await?;
-    println!("Message sent!");
-
-    // Read a message from the server.
-    if let Some(msg) = read.next().await {
-        let msg = msg?;
-        println!("Received: {msg}");
-    }
-
+    socket.close(None).await?;
     Ok(())
 }
 // ANCHOR_END: example
 
 /// Runs the example.
 pub fn run() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Builds a secure WebSocket request without network access.
     #[test]
-    fn require_network() -> anyhow::Result<()> {
-        main()?;
+    fn builds_secure_echo_request() -> anyhow::Result<()> {
+        let request = echo_request()?;
+        assert_eq!(request.uri().scheme_str(), Some("wss"));
         Ok(())
     }
 }
+
 // [review https://github.com/snapview/tokio-tungstenite/tree/master/examples](https://github.com/john-cd/rust_howto/issues/1145)

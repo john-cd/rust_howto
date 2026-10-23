@@ -1,54 +1,49 @@
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
-//! This example demonstrates a basic WebSocket client using the `tungstenite`
-//! crate.
-//!
-//! `tungstenite` provides lightweight, flexible WebSockets for Rust.
+//! A blocking WebSocket client using tungstenite.
 
 use tungstenite::Message;
+use tungstenite::client::IntoClientRequest;
 use tungstenite::connect;
+use tungstenite::http::Request;
 
-/// Connects to a WebSocket server, sends a message and prints the reply.
+const ECHO_ENDPOINT: &str = "wss://ws.postman-echo.com/raw";
+
+/// Creates a request for Postman's public echo service.
+fn echo_request() -> anyhow::Result<Request<()>> {
+    Ok(ECHO_ENDPOINT.into_client_request()?)
+}
+
+/// Connects, sends one message, prints the reply, and closes the connection.
 fn main() -> anyhow::Result<()> {
-    // Connect to a test WebSocket server in blocking mode.
-    let (mut socket, response) = connect("ws://echo.websocket.in")?;
-    // To support secure "wss://"" URLs, feature "native-tls" or "rustls-tls"
-    // must be turned on. For a non-blocking or other custom stream,
-    // call `client` instead.
+    let (mut socket, response) = connect(echo_request()?)?;
+    println!("Handshake status: {}", response.status());
 
-    println!("Connected to the server");
-    println!("Response HTTP code: {}", response.status());
-    println!("Response contains the following headers:");
-    for (ref header, value) in response.headers() {
-        println!("* {header} {value:?}");
-    }
-
-    // Send a message to the server:
-    // Writes and immediately flushes a message.
     socket.send(Message::Text("Hello WebSocket".into()))?;
-    println!("Message sent");
+    let reply = socket.read()?;
+    println!("Received: {reply}");
 
-    // Read a message from the server.
-    let msg = socket.read()?;
-    println!("Received: {msg}");
-
+    socket.close(None)?;
     Ok(())
 }
 // ANCHOR_END: example
 
 /// Runs the example.
-#[allow(clippy::main_recursion)]
 pub fn run() -> anyhow::Result<()> {
-    main()?;
-    Ok(())
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Builds a secure WebSocket request without network access.
     #[test]
-    fn require_network() -> anyhow::Result<()> {
-        main()
+    fn builds_secure_echo_request() -> anyhow::Result<()> {
+        let request = echo_request()?;
+        assert_eq!(request.uri().scheme_str(), Some("wss"));
+        Ok(())
     }
 }
+
+// [finish; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)
