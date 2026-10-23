@@ -1912,7 +1912,7 @@
 [c~crossbeam-utils~repo~badge]: https://img.shields.io/badge/crossbeam--utils-steelblue?logo=github
 [c~crossbeam-utils~website]: https://github.com/crossbeam-rs/crossbeam/blob/master/crossbeam-utils/README.md
 [c~crossbeam-utils~website~badge]: https://img.shields.io/badge/crossbeam--utils-coral
-[c~crossbeam::atomic::AtomicCell~docs]: https://docs.rs/crossbeam/latest/crossbeam/atomic/struct.AtomicCell.html
+[c~crossbeam-utils::atomic::AtomicCell~docs]: https://docs.rs/crossbeam-utils/latest/crossbeam_utils/atomic/struct.AtomicCell.html
 [c~crossbeam::scope~docs]: https://docs.rs/crossbeam/latest/crossbeam/fn.scope.html
 [c~crossbeam::thread::Scope::spawn~docs]: https://docs.rs/crossbeam/latest/crossbeam/thread/struct.Scope.html#method.spawn
 [c~crossbeam~crates.io]: https://crates.io/crates/crossbeam

@@ -8,6 +8,7 @@ use std::cell::UnsafeCell;
 use std::ops::Deref;
 use std::ops::DerefMut;
 use std::ops::Drop;
+use std::sync::Arc;
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering;
 use std::thread;
@@ -64,11 +65,10 @@ impl<T> Spinlock<T> {
     }
 }
 
-// Allow the spinlock to be shared across threads if the data is `Send`.
-// The `UnsafeCell` requires us to manually declare this.
+// SAFETY: `lock` serializes access to the `UnsafeCell`, and its guard keeps
+// the flag held until all references to the protected value are dropped. The
+// `Send` bound allows the protected value to move between threads.
 unsafe impl<T: Send> Sync for Spinlock<T> {}
-
-unsafe impl<T: Send> Send for Spinlock<T> {}
 
 // --- SpinlockGuard Implementation ---
 
@@ -113,9 +113,6 @@ impl<T> DerefMut for SpinlockGuard<'_, T> {
 }
 
 // --- Example Usage ---
-use std::sync::Arc;
-use std::time::Duration;
-
 /// Increments a shared counter from several threads under the spinlock.
 fn main() {
     // Wrap shared data in `Spinlock` and `Arc`.
@@ -129,23 +126,12 @@ fn main() {
         let handle = thread::spawn(move || {
             // Acquire the lock - this call spins until successful.
             let mut num = counter_clone.lock();
-            // Lock acquired, `num` is the `SpinlockGuard`.
-
-            let current_val = *num;
-            println!(
-                "Thread {i} acquired lock, value = {current_val}. Incrementing..."
-            );
-
-            // Access and modify the data through the guard.
+            // Keep the critical section short: only update the value here.
             *num += 1;
-
-            // Simulate some *very* short work while holding the lock.
-            // If this work were longer, a `Mutex` would be better.
-            thread::sleep(Duration::from_micros(5));
-
-            println!("Thread {i} releasing lock, value = {}", *num);
-            // `num` (the guard) goes out of scope here, automatically calling
-            // `drop()`, which releases the lock.
+            let value = *num;
+            // Release the lock before doing slower output.
+            drop(num);
+            println!("Thread {i} incremented the counter to {value}.");
         });
         handles.push(handle);
     }

@@ -21,7 +21,7 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 
 [![crossbeam-utils~website][c~crossbeam-utils~website~badge]][c~crossbeam-utils~website] [![crossbeam-utils][c~crossbeam-utils~docs~badge]][c~crossbeam-utils~docs] [![crossbeam-utils~crates.io][c~crossbeam-utils~crates.io~badge]][c~crossbeam-utils~crates.io] [![crossbeam-utils~repo][c~crossbeam-utils~repo~badge]][c~crossbeam-utils~repo] [![crossbeam-utils~lib.rs][c~crossbeam-utils~lib.rs~badge]][c~crossbeam-utils~lib.rs]{{hi:crossbeam-utils}}{{hi:Atomic}}{{hi:Cache}}{{hi:Scoped}}{{hi:Thread}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-`crossbeam-utils`provides miscellaneous tools for concurrent programming. It offers [`crossbeam::atomic::AtomicCell`][c~crossbeam::atomic::AtomicCell~docs]↗{{hi:crossbeam::atomic::AtomicCell}}, a thread-safe mutable memory location. This type is equivalent to [`std::cell::Cell`][c~std::cell::Cell~docs]↗{{hi:std::cell::Cell}}, except it can also be shared among multiple threads. Operations on AtomicCells use atomic instructions whenever possible, and synchronize using global locks otherwise.
+`crossbeam-utils` provides miscellaneous tools for concurrent programming. It offers [`crossbeam_utils::atomic::AtomicCell`][c~crossbeam-utils::atomic::AtomicCell~docs]↗{{hi:crossbeam_utils::atomic::AtomicCell}}, a thread-safe mutable memory location. This type is equivalent to [`std::cell::Cell`][c~std::cell::Cell~docs]↗{{hi:std::cell::Cell}}, except it can also be shared among multiple threads. Operations on `AtomicCell`s use atomic instructions whenever possible, and synchronize using global locks otherwise.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/atomics/atomic_cell.rs:example}}
@@ -31,7 +31,7 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 
 [![arc-swap][c~arc-swap~docs~badge]][c~arc-swap~docs] [![arc-swap~crates.io][c~arc-swap~crates.io~badge]][c~arc-swap~crates.io] [![arc-swap~repo][c~arc-swap~repo~badge]][c~arc-swap~repo] [![arc-swap~lib.rs][c~arc-swap~lib.rs~badge]][c~arc-swap~lib.rs]{{hi:arc-swap}}{{hi:Arc}}{{hi:Atomic}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} is a container for an `Arc` that can be changed atomically. Semantically, it is similar to `Atomic<Arc<T>>` (if there was such a thing)↗ or `RwLock<Arc<T>>` (but without the need for the locking). It is optimized for read-mostly scenarios, with consistent performance characteristics.
+The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} stores an `Arc` that can be replaced atomically. Its lock-free reads let a writer publish a new immutable value while readers continue using their existing snapshot. It is designed for read-mostly shared state; use a mutex when callers need to mutate the value in place.
 
 ## Build a Spinlock Using Atomics {#spinlock}
 
