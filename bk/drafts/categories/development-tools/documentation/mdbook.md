@@ -3,19 +3,82 @@
 
 {{#include mdbook.incl.md}}
 
-## Write Online Books with `mdBook` {#mdbook}
+## Create and Build a Book {#mdbook}
 
 [![mdbook~repo][c~mdbook~repo~badge]][c~mdbook~repo]{{hi:mdbook}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
 
-[mdBook][c~mdbook~repo]↗ is a utility to create modern online [books][p~books]{{hi:Online books}} from Markdown files.
+[mdBook][c~mdbook~repo]↗ turns Markdown source into a searchable, linked book. A project normally keeps its configuration in `book.toml`, its chapter files under `src/`, and its navigation in `src/SUMMARY.md`.
 
 ```bash
-cargo install mdbook
+cargo install --locked mdbook
 ```
+
+Install a prebuilt release instead if you do not want to build mdBook from source. To create a starter project, run `mdbook init my-book` and then change into that directory.
 
 ```bash
 mdbook serve --open
 ```
+
+`mdbook serve` watches the source tree, rebuilds the book, and serves a local preview. Use `mdbook build` for a one-time build; by default, the generated site is written to `book/`.
+
+The `SUMMARY.md` file defines chapter order and hierarchy. `book.toml` configures the source and output directories, build behavior, preprocessors, and renderers. See the [mdBook installation guide][book~mdbook~installation]↗ and [creating a book guide][book~mdbook~creating]↗ for setup and source conventions.
+
+## Organize Chapters in `SUMMARY.md` {#summary-file}
+
+Every chapter must appear in `src/SUMMARY.md`; its list order and indentation define the book's navigation hierarchy. A section heading groups chapters without linking to a page:
+
+```markdown
+# Summary
+
+[Introduction](README.md)
+
+# Guide
+
+- [Create a book](guide/creating.md)
+- [Add chapters](guide/chapters.md)
+  - [Reuse content](guide/includes.md)
+```
+
+Keep chapter paths relative to the summary file and add new chapters there as part of the same change. See the [mdBook summary format][book~mdbook~summary]↗.
+
+## Include Shared Content and Anchored Examples {#includes-and-anchors}
+
+Use `{{#include path/to/file.md}}` to share Markdown and `{{#include path/to/example.rs:example}}` to insert a named region from a source file. Include paths are relative to the Markdown file containing the directive. In the source file, mark the region with matching anchors, for example `// ANCHOR: example` and `// ANCHOR_END: example` in Rust. This keeps the example in the book synchronized with compilable code.
+
+```rust
+{{#include path/to/example.rs:example}}
+```
+
+mdBook also supports numeric line ranges and `rustdoc_include`, which hides setup code initially while keeping it available to Rustdoc. See [including files][book~mdbook~including-files]↗ and [Rust code block attributes][book~mdbook~code-block-attributes]↗.
+
+## Test Code in Your `mdBook` {#termbook}
+
+Run `mdbook test` to compile Rust code blocks with Rustdoc. Mark intentionally non-compiling examples with attributes such as `ignore` or `compile_fail`; use `--library-path` when the snippets need dependencies already built in a Cargo workspace. For executable shell examples, `termbook` runs command blocks and captures their output, but its published crate depends on mdBook 0.3.x and is not suitable for the mdBook 0.5.4 version pinned by this repository's CI.
+
+[`mdbook-keeper`][c~mdbook-keeper~repo]↗ adds support for external crates and running documentation checks during a build. Its current source depends on mdBook 0.4.x, so verify it against your selected mdBook release before adopting it. This repository uses Cargo tests for its examples rather than either legacy tool. See the [mdBook test command][book~mdbook~test]↗.
+
+## Extend mdBook with Preprocessors and Renderers {#mdbook-plugins}
+
+Preprocessors transform a book's content before rendering; renderers turn the processed book into an output format. Configure each under `[preprocessor.<name>]` or `[output.<name>]` in `book.toml`. mdBook discovers these tools as `mdbook-<name>` executables on `PATH`. The repository pins mdBook 0.5.4 in `.devcontainer/.env` and configures `mdbook-private` and its own `mdbook-scrub` in `bk/book.toml`.
+
+The `mdbook-hide` example below is an older third-party preprocessor whose source depends on mdBook 0.4.35; it is not configured or verified against the 0.5.4 CI pin. Treat it as an example to evaluate, not a supported dependency.
+
+### Remove Private Draft Content with `mdbook-scrub` {#mdbook-scrub}
+
+This repository's `mdbook-private` handles private chapters and sections. Its `mdbook-scrub` removes hidden HTML sections and includes of hidden chapters, then expands custom directives in a second stage. The ordering in `bk/book.toml` is:
+
+```toml
+[preprocessor.scrub]
+command = "../bin/mdbook-scrub"
+after = ["private"]
+before = ["links"]
+
+[preprocessor.directives]
+command = "../bin/mdbook-scrub --stage directives"
+after = ["links"]
+```
+
+The repository builds this preprocessor and renders the book in CI. Reuse it only if its specific hidden-section and directive behavior matches your book; other projects can write a small process-based preprocessor or choose a maintained plugin.
 
 ## Let Readers Execute Sample Code in the Rust Playground {#playground}
 
@@ -23,9 +86,9 @@ mdbook serve --open
 
 [Playground (Rust by example)][book~rust-by-example~playground]↗{{hi:Rust by example}}.
 
-## Augment `mdbook` with Plugins {#augment-mdbook-with-plugins .skip}
+## Other Third-Party Plugin References {#augment-mdbook-with-plugins .skip}
 
-[`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} has a large number of [third-party plugins][c~mdbook~third-party-plugins~wiki]↗.
+[`mdBook`][c~mdbook~docs]↗{{hi:mdBook}} has a [third-party plugin list][c~mdbook~third-party-plugins~wiki]↗. The entries below are catalog pointers; this repository does not configure them, so its CI does not establish their compatibility with mdBook 0.5.4. Check their current release and mdBook dependency before use.
 
 ### Check Links with `mdbook-linkcheck` {#mdbook-linkcheck}
 
@@ -49,44 +112,30 @@ mdbook serve --open
 cargo install mdbook-hide
 ```
 
-## Deploy Your Book or Documentation via a CD / CI Pipeline {#cd-ci}
+Its configuration from the project's README is:
 
-`GitHub Actions` is a continuous integration and continuous delivery (CI/CD) platform that automates build, test, and deployment pipelines.
+```toml
+[preprocessor.hide]
+hide = true
+```
 
-[GitHub Actions for mdBook][actions-mdbook~repo]↗{{hi:Github actions}} allows you to build your site with [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}}. Linux (Ubuntu), macOS, and Windows are supported.
+Add `<!--hidden-->` to a chapter to mark it for removal when `hide = true`. The documented configuration is specific to this plugin; it does not control mdBook's built-in handling of hidden code lines.
+
+## Build and Test a Book in CI {#cd-ci}
+
+Run the same book checks in continuous integration that contributors use locally: install the pinned mdBook version, build the source, and run `mdbook test` when the book contains Rust code blocks. For example:
 
 ```yaml
-name: github pages
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-
-jobs:
-  deploy:
-    runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v2
-        with:
-          mdbook-version: '0.5.4'
-          # mdbook-version: 'latest'
-
-      - run: mdbook build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book
+steps:
+  - name: Install mdBook
+    run: cargo install --locked --version 0.5.4 mdbook
+  - name: Build and test the book
+    run: |
+      mdbook build
+      mdbook test
 ```
+
+This repository pins version 0.5.4 in `.devcontainer/.env`; its Windows workflow reads that value before installing mdBook. For deployment, publish the generated `book/` directory using the hosting provider's current instructions. See the [mdBook continuous integration guide][book~mdbook~ci]↗ and [GitHub Pages documentation][github~pages~docs]↗.
 
 ## Add a Table of Contents to Each Page {#add-a-table-of-contents-to-each-page .skip}
 
@@ -128,7 +177,7 @@ jobs:
 
 [`mdbook-journal`][c~mdbook-journal~docs]↗{{hi:mdbook-journal}} is a journal plugin for [`mdBook`][c~mdbook~docs]↗{{hi:mdBook}}.
 
-## Other {#other .skip}
+## Other Plugins {#other .skip}
 
 ### Preprocess your Book via Arbitrary Commands with `mdbook-cmdrun` {#mdbook-cmdrun}
 
@@ -136,57 +185,18 @@ jobs:
 
 [`mdbook-cmdrun`][c~mdbook-cmdrun~docs]↗{{hi:mdbook-cmdrun}} is a [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} pre-processor to run arbitrary commands.
 
+## Alternatives {#alternatives .skip}
+
+Use `rustdoc` and `cargo doc` when the primary output is API documentation generated from Rust source. Use mdBook for a navigable guide, tutorial, or book. If you want to reuse book chapters for presentations, [`mdslides`][mdslides~repo]↗ converts Markdown chapters into reveal.js slides; it is a separate command-line tool, not an mdBook preprocessor:
+
+```console
+cargo install --locked mdslides
+mdslides --mdbook-path . --template ./template.html --output-dir ./slides
+```
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+For API reference, see [Rustdoc][book~rustdoc]↗. For more documentation tooling, see [Document Rust Code][p~code-documentation] and the [mdBook third-party plugins list][c~mdbook~third-party-plugins~wiki]↗; verify plugin maintenance and compatibility before adding a dependency.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-[mdbook: organize, expand](https://github.com/john-cd/rust_howto/issues/299)
-
-- [mdslides][mdslides~repo]↗.
-
-## Test Code in Your `mdbook` {#termbook}
-
-[Byron-termbook][c~termbook~repo]↗{{hi:termbook}} is a runner for [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} to keep your documentation tested:
-
-## Alternatives {#alternatives .skip}
-
-[`mdbook-hide`][c~mdbook-hide~repo]↗{{hi:mdbook-hide}} hides chapters under construction. Install with `cargo install mdbook-hide`. Configure in [`book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}}.
-
-```toml
-# Adds support for hidden chapters. The hidden chapters can be marked by adding a special Markdown comment: <!--hidden-->
-# https://github.com/ankitrgadiya/mdbook-hide
-[preprocessor.hide]
-hide = true
-```
-
-To mark a chapter as hidden, add the following comment anywhere in the Markdown file. It is better to have it at the top of the file for clarity.
-
-```xml
-<!--hidden-->
-```
-
-- [`mdbook-keeper`][c~mdbook-keeper~crates.io]↗{{hi:mdbook-keeper}}. Install with:
-
-```bash
-cargo install mdbook-keeper --git https://github.com/tfpk/mdbook-keeper.git
-```
-
-Cover:
-- mdbook
-- mdbook-cmdrun
-- mdbook-journal
-- mdbook-keeper
-- mdbook-linkcheck
-- mdbook-pagetoc
-- mdbook-private
-- mdbook-tera
-- mdbook-theme
-- mdbook-toc
-- mdbook-yapp
-- termbook ??
-
-</div>

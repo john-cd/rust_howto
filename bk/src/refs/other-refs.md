@@ -47,7 +47,6 @@
 [OpenTelemetry~website]: https://opentelemetry.io
 [abstract-factory-in-rust~website]: https://refactoring.guru/design-patterns/abstract-factory/rust/example#example-0
 [accelerant~website]: https://accelerant.dev
-[actions-mdbook~repo]: https://github.com/peaceiris/actions-mdbook
 [actyx~repo]: https://github.com/Actyx
 [actyx~website]: https://actyx.com
 [act~repo]: https://github.com/nektos/act
@@ -380,6 +379,11 @@
 [book~little-book-of-rust-macros~metavariable-expressions]: https://lukaswirth.dev/tlborm/decl-macros/macros-methodical.html#metavariable-expressions
 [book~little-book-of-rust-macros~token-trees]: https://lukaswirth.dev/tlborm/syntax-extensions/source-analysis.html#token-trees
 [book~mdbook]: https://rust-lang.github.io/mdBook
+[book~mdbook~installation]: https://rust-lang.github.io/mdBook/guide/installation.html
+[book~mdbook~creating]: https://rust-lang.github.io/mdBook/guide/creating.html
+[book~mdbook~summary]: https://rust-lang.github.io/mdBook/format/summary.html
+[book~mdbook~test]: https://rust-lang.github.io/mdBook/cli/test.html
+[book~mdbook~ci]: https://rust-lang.github.io/mdBook/continuous-integration.html
 [book~mdbook~backends]: https://rust-lang.github.io/mdBook/for_developers/backends.html
 [book~mdbook~code-block-attributes]: https://rust-lang.github.io/mdBook/format/mdbook.html#rust-code-block-attributes
 [book~mdbook~configuration-preprocessors]: https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html
@@ -871,6 +875,7 @@
 [git-gitignore~website]: https://git-scm.com/docs/gitignore
 [github-actions~website]: https://docs.github.com/en/actions
 [github~creating-a-docker-container-action]: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
+[github~pages~docs]: https://docs.github.com/en/pages
 [github~website]: https://github.com
 [gitoxidelabs~repo]: https://github.com/GitoxideLabs
 [git~log~docs]: https://git-scm.com/docs/git-log
