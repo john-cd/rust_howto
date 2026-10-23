@@ -97,6 +97,8 @@
   - [Statistics](categories/mathematics/statistics.md)
   - [Additional Numeric Types](categories/mathematics/additional_numeric_types.md)
 
+- [Profiling and Benchmarking](categories/development-tools/profiling.md)
+
 # Resources
 
 - [Crate Selection](crate-selection/index.md)
@@ -121,6 +123,7 @@
 
 # Appendices
 
+- [Privacy](appendices/privacy.md)
 - [Contributing](appendices/contributing/index.md)
   - [Topics of Interest](appendices/contributing/topics_of_interest.md)
   - [Repository Structure](appendices/contributing/repository_structure.md)

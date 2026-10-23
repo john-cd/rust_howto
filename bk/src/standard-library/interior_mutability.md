@@ -32,13 +32,13 @@ A common pattern in Rust is using [`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::
 {{#include ../../crates/standard_library/examples/interior_mutability/rc_refcell.rs:example}}
 ```
 
-If you need shared mutable state across multiple threads, you should use `Arc<T>` with [`Mutex<T>`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} or [`RwLock<T>`][c~std::sync::RwLock~docs]↗{{hi:std::sync::RwLock}} instead of `Rc<RefCell<T>>`.
+For shared mutable state across multiple threads, use `Arc<T>` with [`Mutex<T>`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} when access should be exclusive, or [`RwLock<T>`][c~std::sync::RwLock~docs]↗{{hi:std::sync::RwLock}} when multiple readers can share access while writers remain exclusive. These types synchronize access across threads, while `Rc<RefCell<T>>` is single-threaded.
 
 ## Use `Cell` {#cell}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::cell::Cell}}
 
-[`Cell<T>`][c~std::cell::Cell~docs]↗ is a type that provides simple, byte-wise copy-able mutability. `Cell<T>` implements interior mutability by _moving values_ in and out of the cell. An `&mut T` to the inner value can never be obtained (unless `Cell` itself is mutable), and the value itself cannot be directly obtained without replacing it with something else.
+[`Cell<T>`][c~std::cell::Cell~docs]↗ provides interior mutability by moving values in and out of the cell. Its `get` method copies values when `T: Copy`; `replace` works with non-`Copy` values too. A reference to the inner value cannot be obtained through a shared `Cell` reference.
 
 `Cell<T>` is used when you need to mutate a value without using a reference or a mutable reference. Common methods include `set`, `get`, and `replace`. It is most often used for types that implement the [`Copy`][c~std::marker::Copy~docs]↗{{hi:std::marker::Copy}} trait, like integers and booleans.
 

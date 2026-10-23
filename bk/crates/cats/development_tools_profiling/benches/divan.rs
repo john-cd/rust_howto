@@ -7,7 +7,7 @@
 //!
 //! ```toml
 //! [dev-dependencies]
-//! divan = "0.1.17"
+//! divan = "0.1.21"
 //!
 //! [[bench]]
 //! name = "divan"
@@ -16,14 +16,14 @@
 //!
 //! Run the benchmark with `cargo bench`.
 //!
-//! This example demonstrates how to benchmark a simple `fibonacci` function.
+//! This example demonstrates how to benchmark a recursive Fibonacci function.
 
 /// Define a `fibonacci` function to benchmark.
 fn compute_fibonacci(n: u64) -> u64 {
-    if n <= 1 {
-        1
-    } else {
-        compute_fibonacci(n - 2) + compute_fibonacci(n - 1)
+    match n {
+        0 => 0,
+        1 => 1,
+        _ => compute_fibonacci(n - 2) + compute_fibonacci(n - 1),
     }
 }
 
@@ -34,7 +34,7 @@ mod bench {
     /// Register the function above for benchmarking.
     #[divan::bench]
     fn fibonacci() -> u64 {
-        compute_fibonacci(divan::black_box(10))
+        compute_fibonacci(divan::black_box(20))
     }
 }
 
@@ -48,6 +48,7 @@ fn main() {
 // Example adapted from https://nikolaivazquez.com/blog/divan/
 // ANCHOR_END: example
 
+/// The benchmark entry point compiles when the harness is built for tests.
 #[test]
 fn test_main() {
     main();

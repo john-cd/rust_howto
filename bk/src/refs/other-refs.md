@@ -1630,3 +1630,9 @@
 [zld~repo~badge]: https://img.shields.io/badge/zld-steelblue?logo=github
 [zola~repo]: https://github.com/getzola/zola
 [zs~website]: https://zs.com
+[divan~blog]: https://nikolaivazquez.com/blog/divan/
+[fftw~docs]: https://docs.rs/fftw/latest/fftw/
+[google-analytics~data-collection]: https://support.google.com/analytics/answer/11593727?hl=en
+[google-analytics~privacy]: https://support.google.com/analytics/answer/6004245?hl=en
+[google-analytics~regional-data]: https://support.google.com/analytics/answer/11598602?hl=en
+[rustfft~crate]: https://crates.io/crates/rustfft

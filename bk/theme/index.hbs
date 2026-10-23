@@ -3,14 +3,26 @@
      License text: https://mozilla.org/MPL/2.0/ -->
 <html lang="{{ language }}" class="{{ default_theme }} sidebar-visible" dir="{{ text_direction }}">
     <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-48JXMNH78T"></script>
+        <!-- Load analytics only on the published book, never on local or preview hosts. -->
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
+            const analyticsHosts = new Set(["john-cd.com", "www.john-cd.com"]);
+            const isPublishedBook =
+                location.protocol === "https:" &&
+                analyticsHosts.has(location.hostname) &&
+                location.pathname.startsWith("/rust_howto/");
 
-            gtag('config', 'G-48JXMNH78T');
+            if (isPublishedBook) {
+                const measurementId = "G-48JXMNH78T";
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function() { window.dataLayer.push(arguments); };
+                window.gtag("js", new Date());
+                window.gtag("config", measurementId);
+
+                const script = document.createElement("script");
+                script.async = true;
+                script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+                document.head.append(script);
+            }
         </script>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">

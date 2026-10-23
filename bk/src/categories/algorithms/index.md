@@ -116,7 +116,8 @@ For [[mathematics | Mathematics]], use the following crates for general numerica
 - [[statistics | Statistics]],
 - [[trigonometry | Trigonometry]].
 - Others
-  - `rustfft` for Fast Fourier Transforms.
+  - [`rustfft`][rustfft~crate] for Fast Fourier Transforms in Rust.
+  - [`fftw`][fftw~docs], Rust bindings for the native FFTW library.
   - `roots` for numerical root finding.
 
 ### Science
