@@ -25,3 +25,4 @@
 [ex~text-processing~verify-and-extract-login-from-an-email-address]: regex.md#verify-and-extract-login-from-an-email-address
 [p~email]: # "../email/index.md"
 [p~log]: ../development-tools_debugging/log.md
+[unicode~uax29]: https://www.unicode.org/reports/tr29/

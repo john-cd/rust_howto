@@ -3,7 +3,11 @@
 
 {{#include unicode.incl.md}}
 
-Unicode segmentation is the process of dividing a string of Unicode text into meaningful units, such as grapheme clusters (user-perceived characters), words, and sentences, following the rules defined by the Unicode Standard.
+Rust `str` and `String` values are UTF-8. Their `len()` method returns a byte count, while `chars()` iterates Unicode scalar values. Neither count necessarily matches the characters a reader sees: a visible character can be encoded as more than one scalar value, and an emoji sequence can contain several scalars.
+
+For cursor movement, selection, or a user-facing character count, use grapheme clusters. The [`unicode-segmentation`][c~unicode-segmentation~docs]↗ crate implements the default grapheme, word, and sentence boundaries described by [Unicode Text Segmentation (UAX #29)][unicode~uax29]↗. These boundaries approximate user-perceived characters; applications with language-specific rules may need to tailor them.
+
+Grapheme segmentation does not normalize text. For example, a precomposed `é` and `e` followed by a combining acute accent can look the same while having different UTF-8 bytes and comparing unequal as Rust strings. Normalize text when an application requires canonically equivalent strings to compare equally.
 
 ## Collect Unicode Graphemes {#collect-unicode-graphemes}
 
@@ -14,6 +18,8 @@ Unicode segmentation is the process of dividing a string of Unicode text into me
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/unicode/graphemes.rs:example}}
 ```
+
+The example distinguishes grapheme clusters from scalar values and bytes. A user-facing count should name which unit it uses; a grapheme count is not a limit on encoded data size.
 
 ## Related Topics {#related-topics .skip}
 

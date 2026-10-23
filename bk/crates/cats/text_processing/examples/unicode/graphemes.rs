@@ -2,17 +2,26 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Splitting a string into grapheme clusters.
+//! Comparing UTF-8 bytes, Unicode scalar values, and grapheme clusters.
 
 use unicode_segmentation::UnicodeSegmentation;
 
-/// Prints the graphemes of a string.
+/// Prints grapheme clusters and compares their count with other string lengths.
 fn main() {
-    let name = "José Guimarães\r\n";
+    let text = "e\u{301} 🇫🇷";
     let graphemes =
-        UnicodeSegmentation::graphemes(name, true).collect::<Vec<&str>>();
-    println!("{graphemes:?}");
-    assert_eq!(graphemes[3], "é");
+        UnicodeSegmentation::graphemes(text, true).collect::<Vec<_>>();
+
+    println!("UTF-8 bytes: {}", text.len());
+    println!("Unicode scalar values: {}", text.chars().count());
+    println!("Grapheme clusters: {graphemes:?}");
+
+    assert_eq!(graphemes, ["e\u{301}", " ", "🇫🇷"]);
+    assert_ne!("é", "e\u{301}");
+    assert_eq!(
+        UnicodeSegmentation::graphemes("é", true).count(),
+        UnicodeSegmentation::graphemes("e\u{301}", true).count()
+    );
 }
 
 // ANCHOR_END: example
