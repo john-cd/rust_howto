@@ -20,7 +20,7 @@ mod syn;
 struct Cli {
     /// The example to run.
     #[command(subcommand)]
-    command: Option<Commands>,
+    command: Commands,
 }
 
 /// The examples that can be run.
@@ -47,31 +47,27 @@ enum Commands {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
-    if let Some(command) = cli.command {
-        match command {
-            Commands::Darling => {
-                darling::run();
-            }
-            Commands::Paste => {
-                paste::run();
-            }
-            Commands::ProcMacro2 => {
-                proc_macro2::run();
-            }
-            Commands::Quote => {
-                quote::run();
-            }
-            Commands::Syn => {
-                syn::run()?;
-            }
+    match cli.command {
+        Commands::Darling => {
+            darling::run();
+        }
+        Commands::Paste => {
+            paste::run();
+        }
+        Commands::ProcMacro2 => {
+            proc_macro2::run();
+        }
+        Commands::Quote => {
+            quote::run();
+        }
+        Commands::Syn => {
+            syn::run()?;
         }
     }
     Ok(())
 }
 
-// // [finish; review the following; decide what examples are needed](https://github.com/john-cd/rust_howto/issues/1158)
-// // for proc macros. move proc macros to lib.rs
-// // reorganize examples in folders
+// // [reorganize examples into folders and review coverage](https://github.com/john-cd/rust_howto/issues/1158)
 // // <https://doc.rust-lang.org/proc_macro/index.html>
 // // <https://doc.rust-lang.org/rust-by-example/macros.html>
 // // <https://doc.rust-lang.org/reference/macros.html>
