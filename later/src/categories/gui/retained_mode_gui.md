@@ -68,9 +68,11 @@ Azul is a document object model, similar to HTML and CSS. Because Azul leverages
 
 [![xilem~website][c~xilem~website~badge]][c~xilem~website] [![xilem][c~xilem~docs~badge]][c~xilem~docs] [![xilem~crates.io][c~xilem~crates.io~badge]][c~xilem~crates.io] [![xilem~repo][c~xilem~repo~badge]][c~xilem~repo] [![xilem~lib.rs][c~xilem~lib.rs~badge]][c~xilem~lib.rs]{{hi:xilem}}{{hi:Gui}}{{hi:Ui}}{{hi:Native}}{{hi:Gpu}}{{hi:Performance}}[![cat~internationalization][cat~internationalization~badge]][cat~internationalization]{{hi:Internationalization (i18n)}}[![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}[![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}[![cat~accessibility][cat~accessibility~badge]][cat~accessibility]{{hi:Accessibility}}
 
-[`xilem`][c~xilem~docs]↗{{hi:xilem}} is the replacement for [`druid`][c~druid~docs]↗{{hi:druid}}, based on the more interoperable [`vello`][c~vello~docs]↗{{hi:vello}} crates. However, it's currently not complete enough to be usable.
+[`xilem`][c~xilem~docs]↗{{hi:xilem}} is an experimental reactive UI toolkit inspired by Flutter, SwiftUI, and Elm. Its API may change between releases.
 
-If you're a Swift developer, you should find Xilem easy to use because its syntax and concepts resemble SwiftUI's.
+From `later/crates`, run `cargo run -p gui --example xilem --features xilem` to launch the counter example.
+
+If you're a Swift developer, you may find Xilem familiar because its syntax and concepts resemble SwiftUI's.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/retained_mode_gui/xilem.rs:example}}
