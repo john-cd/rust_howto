@@ -1,5 +1,10 @@
 //! Build badges, index of the book, etc... using a template engine.
 //!
+//! `TinyTemplate` renders the small set of templates embedded in this module
+//! and supports the two custom formatters used by them. The templates are
+//! trusted constants, so this module does not need runtime template loading or
+//! inheritance.
+//!
 //! TODO Reviewed ??-??-2026.
 
 use tinytemplate::TinyTemplate;
@@ -69,8 +74,6 @@ fn get_template_engine() -> anyhow::Result<TinyTemplate<'static>> {
 //   let  t = INSTANCE.get_or_init(|| { build_template_engine() });
 //   t
 // }
-
-// [finish; unit tests; tinytemplate vs tera?](https://github.com/john-cd/rust_howto/issues/1361)
 
 #[cfg(test)]
 mod tests {
