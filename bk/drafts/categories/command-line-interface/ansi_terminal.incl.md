@@ -1,10 +1,10 @@
 <!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [ANSI Terminal][ex~command-line-interface~ansi_term-basic] | [![ansi_term][c~ansi_term~docs~badge]][c~ansi_term~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Print Colored Text to the Terminal][ex~command-line-interface~colored-text] | [![ansi_term][c~ansi_term~docs~badge]][c~ansi_term~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
-| [Print Bold Text to the Terminal][ex~command-line-interface~bold-text] | [![ansi_term][c~ansi_term~docs~badge]][c~ansi_term~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
-| [Print Bold and Colored Text to the Terminal][ex~command-line-interface~bold-colored-text] | [![ansi_term][c~ansi_term~docs~badge]][c~ansi_term~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
+| [Style Text with `nu-ansi-term`][ex~command-line-interface~nu-ansi-term] | [![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
+| [Print Colored Text to the Terminal][ex~command-line-interface~colored-text] | [![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
+| [Print Bold Text to the Terminal][ex~command-line-interface~bold-text] | [![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
+| [Print Bold and Colored Text to the Terminal][ex~command-line-interface~bold-colored-text] | [![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [Manipulate the Cursor, Style the Output, Handle Input Events][ex~command-line-interface~crossterm] | [![crossterm][c~crossterm~docs~badge]][c~crossterm~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [`ansiterm`][ex~command-line-interface~ansiterm] | [![ansiterm][c~ansiterm~docs~badge]][c~ansiterm~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [`anstream`][ex~command-line-interface~anstream] | [![anstream][c~anstream~docs~badge]][c~anstream~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
@@ -15,5 +15,4 @@
 | [`termcolor`][ex~command-line-interface~termcolor] | [![termcolor][c~termcolor~docs~badge]][c~termcolor~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [`yansi`][ex~command-line-interface~yansi] | [![yansi][c~yansi~docs~badge]][c~yansi~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [`termion`][ex~command-line-interface~termion] | [![termion][c~termion~docs~badge]][c~termion~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
-| [`nu-ansi-term`][ex~command-line-interface~nu-ansi-term] | [![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs]{{hi:nu-ansi-term}} | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |
 | [`colored`][ex~command-line-interface~colored] | [![colored][c~colored~docs~badge]][c~colored~docs]{{hi:colored}} | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |

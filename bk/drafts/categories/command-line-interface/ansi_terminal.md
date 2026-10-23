@@ -3,15 +3,15 @@
 
 {{#include ansi_terminal.incl.md}}
 
-[![ansi_term][c~ansi_term~docs~badge]][c~ansi_term~docs]{{hi:ansi_term}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+## Style Text with `nu-ansi-term` {#nu-ansi-term}
 
-This program depicts the use of [`ansi_term`][c~ansi_term~crates.io]↗{{hi:ansi_term}} crate and how it is used for controlling colors and formatting, such as blue bold text or yellow underlined text, on ANSI terminals{{hi:ANSI terminals}}.
+[![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs]{{hi:nu-ansi-term}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-There are two main [data structures][p~data-structures] in [`ansi_term`][c~ansi_term~crates.io]↗{{hi:ansi_term}}: [`ansi_term::ANSIString`][c~ansi_term::ANSIString~docs]↗{{hi:ansi_term::ANSIString}} and [`Style`][c~ansi_term::Style~docs]↗{{hi:ansi_term:Style}}. A [`Style`][c~ansi_term::Style~docs]↗{{hi:Style}} holds stylistic information: colors, whether the text should be bold, or blinking, or whatever. There are also Color variants that represent simple foreground color styles. An [`ansi_term::ANSIString`][c~ansi_term::ANSIString~docs]↗{{hi:ansi_term::ANSIString}} is a string paired with a [`ansi_term::Style`][c~ansi_term::Style~docs]↗{{hi:ansi_term::Style}}.
+The original `ansi_term` crate is archived. The examples below use [`nu-ansi-term`][c~nu-ansi-term~docs]↗{{hi:nu-ansi-term}}, which provides a similar API for styling text. If output may be redirected or piped, prefer a writer that detects terminal support, such as `anstream`, and compose styles with `anstyle`.
 
-**Note:** British English uses *Color* instead of *Color*.
+`nu-ansi-term` styles strings with foreground colors and attributes such as bold. ANSI escape sequences are a presentation detail: do not include them in machine-readable output, and make sure colors are not the only way to convey meaning.
 
-## Print Colored Text to the Terminal {#colored-text}
+### Print Colored Text to the Terminal {#colored-text}
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/examples/ansi_term/ansi_term_basic.rs:example}}
@@ -21,7 +21,7 @@ There are two main [data structures][p~data-structures] in [`ansi_term`][c~ansi_
 
 [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-For anything more complex than plain foreground color changes, the code needs to construct [`ansi_term::Style`][c~ansi_term::Style~docs]↗{{hi:ansi_term::Style}} struct. [`ansi_term::Style::new`][c~ansi_term::Style::new~docs]↗{{hi:ansi_term::Style::new}} creates the struct, and properties chained.
+For more than a foreground color, construct a `nu_ansi_term::Style` and chain the attributes to apply.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/examples/ansi_term/ansi_term_basic1.rs:example}}
@@ -31,7 +31,7 @@ For anything more complex than plain foreground color changes, the code needs to
 
 [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-[`ansi_term::Color`][c~ansi_term::Color~docs]↗{{hi:ansi_term::Color}} implements many similar functions as [`ansi_term::Style`][c~ansi_term::Style~docs]↗{{hi:ansi_term::Style}} and can chain methods.
+`nu_ansi_term::Color` also supports chained styling methods.
 
 ```rust,editable
 {{#include ../../../crates/cats/command_line_interface/examples/ansi_term/ansi_term_basic2.rs:example}}
@@ -44,11 +44,10 @@ For anything more complex than plain foreground color changes, the code needs to
 [![crossterm~repo][c~crossterm~repo~badge]][c~crossterm~repo]
 [![crossterm~lib.rs][c~crossterm~lib.rs~badge]][c~crossterm~lib.rs]
 
-[`crossterm`][c~crossterm~docs]↗ is a pure-Rust, low-level terminal rendering and event handling library used to write cross-platform text-based interfaces.
-It supports all [UNIX][p~unix] and [Windows][p~windows] terminals down to [Windows][p~windows] 7. Features include the following:
+[`crossterm`][c~crossterm~docs]↗ is a cross-platform, low-level library for terminal control and event handling. It is useful when an application needs cursor movement, screen modes, styled output, or keyboard and mouse events.
 
-- Full control over writing and flushing output buffer.
-- [`is_tty`][c~crossterm::tty::IsTty~docs]↗{{hi:crossterm::tty::IsTty::is_tty}} function.
+- Direct control over terminal output and flushing.
+- Terminal detection.
 - Cursor manipulation.
 - Styled output.
 - Terminal handling.
@@ -75,12 +74,6 @@ It supports all [UNIX][p~unix] and [Windows][p~windows] terminals down to [Windo
 [![anstream~website][c~anstream~website~badge]][c~anstream~website] [![anstream][c~anstream~docs~badge]][c~anstream~docs] [![anstream~crates.io][c~anstream~crates.io~badge]][c~anstream~crates.io] [![anstream~repo][c~anstream~repo~badge]][c~anstream~repo] [![anstream~lib.rs][c~anstream~lib.rs~badge]][c~anstream~lib.rs]{{hi:anstream}}{{hi:Ansi}}{{hi:Color}}{{hi:Strip}}{{hi:Terminal}}{{hi:Wincon}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
 [`anstream`][c~anstream~docs]↗ is a cross-platform library for writing colored text to a terminal. It offers a streaming API for composing and writing styled ANSI output to terminals. It facilitates efficient construction of complex styled strings via chaining, minimizing allocations and optimizing write operations. [`anstream`][c~anstream~docs]↗{{hi:anstream}} supports configurable output destinations (stdout, stderr, or custom writers) and guarantees correct ANSI escape code handling for cross-platform compatibility.
-
-## `nu-ansi-term` {#nu-ansi-term}
-
-[![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] [![nu-ansi-term~crates.io][c~nu-ansi-term~crates.io~badge]][c~nu-ansi-term~crates.io] [![nu-ansi-term~repo][c~nu-ansi-term~repo~badge]][c~nu-ansi-term~repo] [![nu-ansi-term~lib.rs][c~nu-ansi-term~lib.rs~badge]][c~nu-ansi-term~lib.rs]{{hi:nu-ansi-term}}
-
-[`nu-ansi-term`][c~nu-ansi-term~docs]↗ is a library for ANSI terminal colors and styles (e.g. bold, underline). [`nu-ansi-term`][c~nu-ansi-term~docs]↗{{hi:nu-ansi-term}} provides ANSI terminal coloring and styling capabilities, particularly focused on supporting the styling needs of the [`NuShell`][nushell~website]↗{{hi:NuShell}} project. When used independently, it offers a convenient and familiar API for those already working within the Nu ecosystem, enabling styled terminal output with support for common formatting options.
 
 ## `ansiterm` {#ansiterm}
 
