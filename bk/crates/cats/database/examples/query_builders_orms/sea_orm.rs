@@ -42,6 +42,15 @@ mod post {
 
 /// Builds insert and select queries and prints the SQL.
 fn main() -> Result<(), DbErr> {
+    let (insert_sql, select_sql) = build_queries();
+
+    println!("INSERT SQL: {insert_sql}");
+    println!("SELECT SQL: {select_sql}");
+    Ok(())
+}
+
+/// Builds representative insert and filtered select SQL for the posts entity.
+fn build_queries() -> (String, String) {
     let insert_sql = post::Entity::insert(post::ActiveModel {
         id: NotSet,
         title: Set("Hello SeaORM".to_owned()),
@@ -55,9 +64,7 @@ fn main() -> Result<(), DbErr> {
         .build(DbBackend::Sqlite)
         .to_string();
 
-    println!("INSERT SQL: {insert_sql}");
-    println!("SELECT SQL: {select_sql}");
-    Ok(())
+    (insert_sql, select_sql)
 }
 // ANCHOR_END: example
 
@@ -66,13 +73,33 @@ pub fn run() -> Result<(), DbErr> {
     main()
 }
 
+/// Verifies the generated SQL without requiring a database connection.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Inserts the configured title and content into the posts table.
     #[test]
-    fn test_main() -> Result<(), DbErr> {
-        main()
+    fn insert_query_contains_post_fields_and_values() {
+        let (insert_sql, _) = build_queries();
+
+        assert!(insert_sql.starts_with("INSERT INTO \"posts\""));
+        assert!(insert_sql.contains("\"title\""));
+        assert!(insert_sql.contains("\"content\""));
+        assert!(insert_sql.contains("'Hello SeaORM'"));
+        assert!(
+            insert_sql.contains("'Building SQL without opening a database'")
+        );
+    }
+
+    /// Selects posts whose title contains the requested text.
+    #[test]
+    fn select_query_filters_by_title() {
+        let (_, select_sql) = build_queries();
+
+        assert!(select_sql.starts_with("SELECT "));
+        assert!(select_sql.contains("FROM \"posts\""));
+        assert!(select_sql.contains("LIKE '%SeaORM%'"));
     }
     // [finish](https://github.com/john-cd/rust_howto/issues/715)
 }
