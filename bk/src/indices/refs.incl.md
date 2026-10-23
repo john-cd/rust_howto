@@ -32,6 +32,7 @@
 [ex~code-organization~iterator-conventions]: ../code-organization/naming_conventions.md#iterator-conventions
 [ex~code-organization~large-projects]: ../code-organization/code_organization_by_project_type.md#large-projects
 [ex~code-organization~less-common-code-organization]: ../code-organization/code_organization_by_project_type.md#less-common-code-organization
+[ex~code-organization~module-tree-paths]: ../code-organization/modules_and_paths.md#module-tree-paths
 [ex~code-organization~modules]: ../code-organization/modules_and_paths.md#modules
 [ex~code-organization~monorepos-and-git-submodules]: ../code-organization/code_organization_by_project_type.md#monorepos-and-git-submodules
 [ex~code-organization~naming-conventions]: ../code-organization/naming_conventions.md#naming-conventions

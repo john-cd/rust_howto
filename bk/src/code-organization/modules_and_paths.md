@@ -129,6 +129,16 @@ fn in_parent_module() {
 }
 ```
 
+## Use `super` and a Re-Export in a Module Tree {#module-tree-paths}
+
+This example uses `super` to reach a sibling module through their common parent. It
+also re-exports a public nested module from a private module, making the shorter root
+path `f::try_that()` available:
+
+```rust,editable
+{{#include ../../crates/code_organization/examples/modules/module_paths.rs:example}}
+```
+
 Absolute paths start from the root of your crate (the top-level module, usually defined in `src/lib.rs` or `src/main.rs`). You use the keyword `crate` followed by `::` to begin an absolute path.
 
 ```rust,editable,noplayground
