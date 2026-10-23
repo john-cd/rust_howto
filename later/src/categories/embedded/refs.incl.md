@@ -3,9 +3,13 @@
 [ex~embedded~embedded-hal]: hals.md#embedded-hal
 [ex~embedded~flash~probe-rs]: flash.md#program-firmware
 [ex~embedded~flash~storage]: flash.md#application-storage
+[ex~embedded~defmt]: useful_crates_embedded.md#defmt
+[ex~embedded~embedded-storage]: useful_crates_embedded.md#embedded-storage
 [ex~embedded~pacs]: pacs.md#using-a-pac
+[ex~embedded~heapless]: useful_crates_embedded.md#heapless
 [ex~embedded~portable-atomic]: useful_crates_embedded.md#portable-atomic
 [ex~embedded~postcard]: useful_crates_embedded.md#postcard
+[ex~embedded~probe-rs]: useful_crates_embedded.md#probe-rs
 [ex~embedded~rppal]: hals.md#rppal
 [ex~embedded~rtos~embassy]: rtos.md#embassy
 [ex~embedded~rtos~freertos]: rtos.md#freertos

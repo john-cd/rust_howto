@@ -3,11 +3,21 @@
 
 {{#include useful_crates_embedded.incl.md}}
 
+Embedded projects have different constraints from desktop programs: some targets have no allocator, limited flash and RAM, strict power budgets, or no operating system. Choose crates around the exact chip and execution model, and check each crate's `no_std`, allocation, target, and `embedded-hal` compatibility before adding it.
+
+## Bounded Collections with `heapless` {#heapless}
+
+[`heapless`][c~heapless~docs]↗{{hi:heapless}} provides collection types with capacity fixed in the type or value, so an application can use queues, maps, and vectors without a global allocator. The bound makes memory use visible, but it also means the application must decide what happens when a collection fills: reject input, overwrite old data, or apply backpressure.
+
+Use a bounded queue between an interrupt or producer and a worker only after choosing its capacity from the maximum burst and service rate. Do not treat a fixed capacity as proof that data can never be lost.
+
 ## `postcard` {#postcard}
 
 [![postcard][c~postcard~docs~badge]][c~postcard~docs] [![postcard~crates.io][c~postcard~crates.io~badge]][c~postcard~crates.io] [![postcard~repo][c~postcard~repo~badge]][c~postcard~repo] [![postcard~lib.rs][c~postcard~lib.rs~badge]][c~postcard~lib.rs]{{hi:postcard}}{{hi:Cobs}}{{hi:Framing}}{{hi:Serde}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 [`postcard`][c~postcard~docs]↗{{hi:postcard}} is a [`#![no_std]`][book~rust-reference~no_std] and [`serde`][c~serde~docs]↗{{hi:serde}} compatible message library for Rust.
+
+It is useful for compact messages in constrained systems. Define a stable message schema when data persists across firmware versions, and include framing, versioning, and integrity checks when the transport or storage format requires them.
 
 ## `smoltcp` {#smoltcp}
 
@@ -21,20 +31,34 @@
 
 [![portable-atomic][c~portable-atomic~docs~badge]][c~portable-atomic~docs] [![portable-atomic~crates.io][c~portable-atomic~crates.io~badge]][c~portable-atomic~crates.io] [![portable-atomic~repo][c~portable-atomic~repo~badge]][c~portable-atomic~repo] [![portable-atomic~lib.rs][c~portable-atomic~lib.rs~badge]][c~portable-atomic~lib.rs]{{hi:portable-atomic}}{{hi:Atomic}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
 
-[`portable-atomic`][c~portable-atomic~docs]↗{{hi:portable-atomic}} provides portable atomic types, including support for 128-bit atomics, atomic float, etc.
+[`portable-atomic`][c~portable-atomic~docs]↗{{hi:portable-atomic}} provides atomic types for targets with limited native atomic support. Available widths and optional types depend on the target and enabled features.
+
+Atomic widths and operations depend on the target. Check the crate's target support and critical-section configuration; an atomic type does not make a multi-step protocol or peripheral access safe by itself.
+
+## Compact Target Logging with `defmt` {#defmt}
+
+[`defmt`][c~defmt~docs]↗{{hi:defmt}} is a logging framework designed for embedded targets. Select a compatible transport and host-side decoder as part of the development setup, and keep log volume bounded so diagnostics do not consume the timing budget. Avoid logging secrets or data that should not leave the device.
+
+## Flash Storage with `embedded-storage` {#embedded-storage}
+
+The [`embedded-storage`][c~embedded-storage~docs]↗ traits give drivers and storage algorithms a common interface to non-volatile storage. See [Flash Programming](flash.md) for erase, alignment, partition, and power-loss considerations.
+
+## Device Programming with `probe-rs` {#probe-rs}
+
+[`probe-rs`][c~probe-rs~docs]↗{{hi:probe-rs}} provides tools and libraries for detecting, flashing, and debugging supported chips with a debug probe. Check target support and the board's debug connection before choosing a probe; see [Flash Programming](flash.md) for the firmware download workflow.
 
 ## Other Useful Crates {#other-useful-crates .skip}
 
-- [`nb`][c~nb~docs]↗{{hi:nb}}: Non-blocking I/O helpers.
-- [`defmt`][c~defmt~docs]↗{{hi:defmt}}: A logging framework designed for embedded systems.
-- [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}}: Halts the microcontroller on panic.
+- [`embedded-hal-async`]: Async peripheral traits for compatible HALs and drivers.
+- [`embedded-hal-nb`]: Polling peripheral traits based on non-blocking operations.
+- [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}}: A minimal panic handler that halts the processor; choose panic behavior deliberately for the product.
 
 ## Related Topics {#related-topics .skip}
 
-- Embedded networking and sensors.
-- Safety-critical Rust patterns.
-- No-std development and toolchains.
-- Firmware build and deployment.
+- [Hardware Abstraction Layers](hals.md) and [sensors](sensors.md) provide peripheral and device-driver interfaces.
+- [Real-Time Operating Systems](rtos.md) explain task scheduling and timing constraints.
+- [Flash Programming](flash.md) covers firmware downloads and application storage.
+- [No-std development](../no-std/index.md) covers allocator-free Rust targets.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
