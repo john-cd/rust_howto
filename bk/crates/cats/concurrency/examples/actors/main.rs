@@ -8,9 +8,9 @@ use clap::Subcommand;
 mod actix;
 mod actors;
 mod ractor;
-#[cfg(not(windows))]
+#[cfg(feature = "riker")]
 mod riker;
-#[cfg(not(windows))]
+#[cfg(feature = "stakker")]
 mod stakker;
 
 /// Command-line arguments.
@@ -34,17 +34,20 @@ enum Commands {
     #[command(name = "ractor")]
     Ractor,
     /// Runs the `riker` example.
-    #[cfg(not(windows))] // TODO review if this should be gated on a feature instead of the OS
+    #[cfg(feature = "riker")]
     #[command(name = "riker")]
     Riker,
     /// Runs the `stakker` example.
-    #[cfg(not(windows))] // TODO review if this should be gated on a feature instead of the OS
+    #[cfg(feature = "stakker")]
     #[command(name = "stakker")]
     Stakker,
 }
 
 /// Runs the example selected on the command line.
-fn main() {
+///
+/// # Errors
+/// Returns an error if the selected Riker example cannot start.
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -58,14 +61,16 @@ fn main() {
             Commands::Ractor => {
                 ractor::run();
             }
-            #[cfg(not(windows))]
+            #[cfg(feature = "riker")]
             Commands::Riker => {
-                riker::run();
+                riker::run()?;
             }
-            #[cfg(not(windows))]
+            #[cfg(feature = "stakker")]
             Commands::Stakker => {
                 stakker::run();
             }
         }
     }
+
+    Ok(())
 }
