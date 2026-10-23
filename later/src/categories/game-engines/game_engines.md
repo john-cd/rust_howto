@@ -33,6 +33,12 @@
 
 [`ggez`][c~ggez~docs]↗{{hi:ggez}} is "a simpler [option][p~option] for 2d [games][p~games] only."
 
+Run the example on Windows or Linux with:
+
+```console
+cargo run --locked -p game_engines --example game_engines --features ggez -- ggez
+```
+
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/examples/game_engines/ggez.rs:example}}
 ```

@@ -42,7 +42,11 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
-fn main() {
+///
+/// # Errors
+///
+/// Returns an error if the selected engine's setup or event loop fails.
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -57,11 +61,13 @@ fn main() {
             }
             #[cfg(feature = "ggez")]
             Commands::Ggez => {
-                ggez::run();
+                ggez::run()?;
             }
             Commands::Macroquad => {
                 macroquad::run();
             }
         }
     }
+
+    Ok(())
 }
