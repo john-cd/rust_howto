@@ -91,6 +91,7 @@ tiberius = { version = "0.12.3", optional = true }
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 tokio-postgres = { version = "0.7.18", optional = true }
 tokio-util = { version = "0.7.20", features = ["compat"] }
+url = "2.5.8" # Validate Elasticsearch endpoints and their security policy.
 uuid = { version = "1.28.0", features = ["v4"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
