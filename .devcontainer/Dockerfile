@@ -25,6 +25,11 @@ FROM rust:${RUST_IMAGE_LABEL} AS rust-core
 ## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
 ## The full Rust image depends on https://github.com/docker-library/buildpack-deps
 
+## `tool-builder` bootstraps cargo-binstall through its official install script.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates curl \
+    && rm -rf /var/lib/apt/lists/*
+
 ## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code) and clippy
 RUN rustup component add clippy rustfmt
 

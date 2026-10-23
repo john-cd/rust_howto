@@ -1,5 +1,5 @@
 # TODO Reviewed ??-??-2026
-set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
 
 root := clean(source_directory() + "/../../..")
 book_root := clean(root + "/bk")
@@ -71,7 +71,7 @@ _default:
 
 # Test only tests that match a given keyword
 @nextestthis test:
-    cd {{ code_root }} && cargo nextest run --locked --no-fail-fast --success-output final -E 'test(~{{ test }}) or binary_id(~{{ test }})'
+    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --locked --no-fail-fast --success-output final -E 'test(~{{ test }}) or binary_id(~{{ test }})'
 
 current_crate := file_name(invocation_directory())
 
@@ -79,19 +79,19 @@ current_crate := file_name(invocation_directory())
 [no-cd]
 @nextestcurrent: _clean_temp_dir && _clean_temp_dir
     echo "Test {{ current_crate }} (all features)"
-    cargo nextest run --all-targets --locked --no-fail-fast --status-level all -E 'package({{ current_crate }})' --all-features
+    cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --all-targets --locked --no-fail-fast --status-level all -E 'package({{ current_crate }})' --all-features
 
 # Test all code (no doctests) (default features)
 @nextest: _clean_temp_dir && _clean_temp_dir
     echo "Test the code under {{ code_root }} (no doctests, default features)"
-    cd {{ quote(code_root) }} && cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all
+    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --all-targets --locked --no-fail-fast --status-level all
 
 # Test all code, including doctests (all features)
 @nextestall: _clean_temp_dir && _clean_temp_dir
     echo "Test all code in {{ code_root }} (incl. doctests) (all features)"
     # sccache 0.18.0 expands web-sys rustc arguments past Windows' process command-line limit.
-    cd {{ quote(code_root) }}; cargo nextest run --workspace --exclude web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
-    cd {{ quote(code_root) }}; $env:RUSTC_WRAPPER = ""; cargo nextest run --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --exclude web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ quote(code_root) }}; $env:RUSTC_WRAPPER = ""; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
     cd {{ quote(code_root) }}; cargo test --doc --workspace
 
 # Clean the `crates/**/temp` folders of most files prior / after testing

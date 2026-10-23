@@ -1,6 +1,6 @@
 # TODO Reviewed ??-??-2026
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
 
 root := clean(join(source_directory(), "..", ".."))
 

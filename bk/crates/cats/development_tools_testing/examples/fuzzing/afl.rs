@@ -13,11 +13,11 @@
 //! 1) Install AFL.
 //! 2) Compile the program for fuzzing:
 //! ```sh
-//! cargo afl build --release
+//! cargo afl build --release --features afl-fuzzing --example fuzzing
 //! ```
 //! 3) Run the fuzzer:
 //! ```sh
-//! cargo afl fuzz -i input_directory -o output_directory target/release/your_crate_name
+//! cargo afl fuzz -i input_directory -o output_directory target/release/examples/fuzzing
 //! ```
 //! AFL will try different inputs to find
 //! cases that trigger the panic in the `fuzz_me` function.

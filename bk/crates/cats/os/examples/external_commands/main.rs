@@ -5,7 +5,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
-#[cfg(target_family = "unix")]
+#[cfg(target_os = "linux")]
 mod continuous;
 #[cfg(target_family = "unix")]
 mod error_file;
@@ -30,7 +30,7 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `continuous` example.
-    #[cfg(target_family = "unix")]
+    #[cfg(target_os = "linux")]
     #[command(name = "continuous")]
     Continuous,
     /// Runs the `error_file` example.
@@ -63,7 +63,7 @@ fn main() -> anyhow::Result<()> {
 
     if let Some(command) = cli.command {
         match command {
-            #[cfg(target_family = "unix")]
+            #[cfg(target_os = "linux")]
             Commands::Continuous => {
                 continuous::run().expect("the example should run");
             }

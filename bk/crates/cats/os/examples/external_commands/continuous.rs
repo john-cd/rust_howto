@@ -1,4 +1,4 @@
-#![cfg(target_family = "unix")]
+#![cfg(target_os = "linux")]
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
@@ -47,13 +47,13 @@ pub fn run() -> Result<(), Error> {
     main()
 }
 
-#[cfg(target_family = "unix")]
+#[cfg(target_os = "linux")]
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies journal output can be read on Linux systems with systemd.
     #[test]
-    #[cfg(target_family = "unix")]
     fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())

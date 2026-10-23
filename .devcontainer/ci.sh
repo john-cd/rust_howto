@@ -32,20 +32,33 @@ echo "----------"
 ## Spell checks
 bk/scripts/spelling/spellcheck.sh list
 
+## Audit each independent Rust workspace with the shared policy.
+## cargo-deny covers advisories, licenses, bans, and sources. cargo-audit uses the
+## same RustSec advisory database; monthly Cargo updates are handled by Dependabot.
+repo_root="$(pwd -P)"
+for manifest in \
+    "bk/crates/Cargo.toml" \
+    "tools/Cargo.toml" \
+    "xmpl/Cargo.toml" \
+    "playground/Cargo.toml" \
+    "publish/Cargo.toml"; do
+    echo "Auditing ${manifest}"
+    cargo deny \
+        --manifest-path "${repo_root}/${manifest}" \
+        --workspace \
+        --config "${repo_root}/bk/crates/deny.toml" \
+        check all --hide-inclusion-graph
+done
+
+## `later/crates` is staging content, not built or published by this repository.
+## Its current graph has multiple advisories, an unapproved Git source, and a font
+## license that need review before promotion; keep it out of the blocking gate.
+
 cd bk/crates
 
 ## Checks the Rust code formatting
 ## Fails if not formatted properly
 cargo +nightly-2026-10-22 fmt --all --check
-
-## [add cargo plugins to CI script](https://github.com/john-cd/rust_howto/issues/1277)
-## Check dependencies
-# cargo deny check \
-#     && cargo outdated --exit-code 1 \
-#     && cargo udeps \
-#     && rm -rf ~/.cargo/advisory-db \
-#     && cargo audit \
-#     && cargo pants
 
 ## Fetch the dependencies
 cargo fetch
@@ -65,7 +78,7 @@ cargo clippy --workspace --all-targets --locked --profile ci --all-features -- -
 if [ "${SKIP_TESTS:-false}" != "true" ]; then
     ## Test all code examples (except heavy tests and "ignore_in_ci" tests)
     ## NEXTEST_ARGS can be used to pass --partition hash:K/N
-    cargo nextest run --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar --all-features --status-level pass ${NEXTEST_ARGS:-}
+    cargo nextest run --config-file nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar --all-features --status-level pass ${NEXTEST_ARGS:-}
 
     ## `nextest` does not handle doctests.
     cargo test --workspace --doc --locked --profile ci -- --show-output
@@ -87,6 +100,7 @@ if [ "${BUILD_PDF:-false}" != "true" ] && [ -n "$PANDOC_BACKEND" ]; then
     trap 'kill "$MONITOR_PID" 2>/dev/null || true; mv "$PANDOC_BACKEND.ci-disabled" "$PANDOC_BACKEND" 2>/dev/null || true' EXIT
 fi
 just bb
+python3 scripts/book/check_search_index.py
 if [ -n "$PANDOC_BACKEND" ] && [ -f "$PANDOC_BACKEND.ci-disabled" ]; then
     mv "$PANDOC_BACKEND.ci-disabled" "$PANDOC_BACKEND"
     trap 'kill "$MONITOR_PID" 2>/dev/null || true' EXIT

@@ -18,12 +18,12 @@ alias bb := buildbook
 
 # Generate the book's HTML / JS
 [unix]
-@_mdbook-build-book:
+@_mdbook-build-book: _install-mdbook-indexing
     echo "Build book in {{ root }}"
     cd {{ quote(root) }}; {{ quote(source_directory() + "/build_book.sh") }} {{ quote(root) }}
 
 [windows]
-@_mdbook-build-book:
+@_mdbook-build-book: _install-mdbook-indexing
     echo "Build book in {{ root }}"
     Set-Location -LiteralPath {{ quote(root) }}; mdbook build {{ quote(root) }}
 
@@ -47,6 +47,17 @@ alias bb := buildbook
 
 @_install-mdbook-utils:
     cargo install --git https://github.com/john-cd/mdbook-utils --rev {{ mdbook_utils_rev }} --locked mdbook-utils
+
+# Install the pinned word-index preprocessor when a developer renders outside CI.
+mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
+
+[unix]
+@_install-mdbook-indexing:
+    cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing
+
+[windows]
+@_install-mdbook-indexing:
+    cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing
 
 # Generate the external crates.io category page from its checked-in snapshot.
 [unix]
@@ -139,7 +150,7 @@ alias bb := buildbook
 alias s := serve
 
 # Serve the book (incl. link checking)
-@serve:
+@serve: _install-mdbook-indexing
     echo "Serve the book"
     cd {{ quote(root) }} && mdbook serve -p 3000 -n 127.0.0.1 --open {{ quote(root) }}
     ## NOTE: can conflict with "port" / EXPOSE in the Docker / Docker Compose configuration

@@ -1,4 +1,6 @@
 # TODO Reviewed ??-??-2026
+# This generated template stays with the scratch/tutorial material; CI policy
+# for active Cargo workspaces is centralized in bk/crates/deny.toml.
 # This template contains all of the possible sections and their default values
 
 # Note that all fields that take a lint level have these possible values:
