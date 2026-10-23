@@ -8,21 +8,18 @@ GitHub Action for installing [development tools][p~development-tools] (mainly fr
 ## Install Development Tools {#installation-of-development-tools}
 
 ```yaml
-    - name: Install cargo check tools
-      run: |
-        cargo install --locked cargo-deny || true
-        cargo install --locked cargo-outdated || true
-        cargo install --locked cargo-udeps || true
-        cargo install --locked cargo-audit || true
-        cargo install --locked cargo-pants || true
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
+      with:
+        toolchain: stable
+    - uses: taiki-e/install-action@v2
+      with:
+        tool: cargo-deny,cargo-outdated,cargo-udeps,cargo-audit
     - name: Check dependencies
       run: |
         cargo deny check
         cargo outdated --exit-code 1
         cargo udeps
-        rm -rf ~/.cargo/advisory-db
         cargo audit
-        cargo pants
 ```
 
 [`install-action`][install_action~repo]↗{{hi:install-action}} is a GitHub Action for installing development tools (mainly from GitHub Releases).
@@ -47,10 +44,12 @@ GitHub Action for installing [development tools][p~development-tools] (mainly fr
 Example `.github/workflows/<name>.yml`
 
 ```yaml
-- uses: actions/checkout@v4
+- uses: actions/checkout@v6
 
-# Selecting a toolchain either by action or manual `rustup` calls. That should happen before the plugin, as the cache uses the current `rustc` version as its cache key
-- run: rustup toolchain install stable --profile minimal
+# Install a toolchain before caching so the Rust version is part of the cache key.
+- uses: actions-rust-lang/setup-rust-toolchain@v1
+  with:
+    toolchain: stable
 
 - uses: Swatinem/rust-cache@v2
   with:
@@ -119,10 +118,10 @@ Example `.github/workflows/<name>.yml`
 
 These GitHub Actions help keep Rust workflows consistent, fast, and reliable across branches:
 
-- `rust-toolchain` to install the correct Rust toolchain.
+- [`actions-rust-lang/setup-rust-toolchain`][setup-rust-toolchain~repo] to install a Rust toolchain and requested components.
 - [`rust-cache`][c~rust_cache~docs]↗{{hi:rust-cache}} to cache compilation artifacts and speed up repeated CI runs.
 - `taiki-e/install-action` or `cargo-binstall-action` to install command-line tooling from GitHub Releases or crates.io.
-- `actions/checkout` to clone the repository and preserve submodules.
+- [`actions/checkout`][actions-checkout~repo] to clone the repository and preserve submodules.
 - `actions/upload-artifact` to archive build artifacts for release or debugging.
 - `actions/cache` or build-system-specific cache actions for toolchain and dependency caches.
 

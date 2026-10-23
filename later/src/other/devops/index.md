@@ -1,17 +1,17 @@
 <!-- TODO Reviewed ??-??-2026 -->
 # DevOps and Rust
 
-DevOps is the integration and automation of the software development and information technology operations. It prioritizes automation, collaboration, and continuous improvement. The following is a brief description of key DevOps practices and common tools:
+DevOps connects software development and operations through collaboration, automation, and continuous improvement. Common practices and example tools include:
 
-| Key DevOps Practices | Description | Technologies (examples) |
-| Version Control | Tracking changes. Undoing mistakes easily. Protecting against data loss. | Git, GitHub, GitLab, Bitbucket. |
-| CI/CD | Automating code testing and the release process. Automatically deploying changes to production. | Jenkins, GitLab CI/CD, CircleCI, Azure DevOps, AWS CodePipeline. |
-| Infrastructure as Code | Managing infrastructure through code. Enabling automation and version control of infrastructure. | Terraform, Open Tofu, AWS CloudFormation, Pulumi. |
-| Configuration Management Tools | Automating the configuration of systems and software. Ensuring consistency and repeatability. | Ansible, Puppet, Chef. |
-| Containerization and Orchestration | Packaging an application and its dependencies into a single, portable unit called a container. | Docker, Kubernetes, Amazon ECS. |
-| Monitoring and Logging Tools | Collecting and analyzing data to understand system performance. Proactive identification and resolution of issues. | Prometheus, Grafana, ELK stack (Elasticsearch, Logstash, Kibana), Splunk, DataDog. |
-| Cloud Computing | On-demand delivery of computing services over the Internet. | AWS, Azure, Google Cloud Platform (GCP). |
-| DevSecOps | Integrating security practices into every stage of the DevOps lifecycle. | Snyk, HashiCorp Vault, AWS Secrets Manager, Splunk |
+| Practice | Purpose | Examples |
+|---|---|---|
+| Version control | Track changes, review contributions, and recover earlier versions. | Git, GitHub, GitLab, Bitbucket |
+| Continuous integration and delivery | Build and test changes, then automate release or deployment steps. | GitHub Actions, Jenkins, GitLab CI/CD, Azure Pipelines |
+| Infrastructure as code | Describe and version infrastructure so it can be provisioned consistently. | Terraform, OpenTofu, AWS CloudFormation, Pulumi |
+| Configuration management | Apply consistent operating-system and application settings. | Ansible, Puppet, Chef |
+| Containers and orchestration | Package applications with their runtime dependencies and coordinate deployment. | Docker, Kubernetes, Amazon ECS |
+| Monitoring and logging | Collect signals that help operators understand service health and investigate failures. | Prometheus, Grafana, OpenTelemetry, Elasticsearch |
+| Security in delivery | Check dependencies, credentials, artifacts, and deployment permissions throughout delivery. | `cargo audit`, `cargo deny`, secret managers, signing tools |
 
 Rust coders, like developers in other fields, frequently leverage DevOps methods and tooling. GitHub, GitHub Actions, and Docker are especially frequently used in Rust open-source projects.
 
@@ -23,7 +23,7 @@ Rust coders, like developers in other fields, frequently leverage DevOps methods
 
 CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It's a set of practices that automate the software development lifecycle, aiming to deliver code changes more frequently and reliably.
 
-{{#include ci_cd.incl.md}}
+{{#include cd_ci.incl.md}}
 
 {{#include github_actions.incl.md}}
 
@@ -33,7 +33,11 @@ CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It's
 
 ## Infrastructure as Code
 
+Describe infrastructure declaratively and keep its configuration under version control. See [[cloud | Cloud]] for Rust on cloud platforms.
+
 ## Configuration Management Tools
+
+Use configuration management to apply repeatable host and service settings. See [[config | Configuration]] for application configuration in Rust.
 
 ## Containerization and Orchestration
 

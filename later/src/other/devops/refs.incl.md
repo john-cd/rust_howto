@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[actions-checkout~repo]: https://github.com/actions/checkout
 [ex~devops~cargo-deb]: release_automation.md#cargo-deb
 [ex~devops~cargo-dist]: release_automation.md#cargo-dist
 [ex~devops~cargo-release]: release_automation.md#cargo-release
@@ -13,6 +14,7 @@
 [ex~devops~release-plz]: release_automation.md#release-plz
 [ex~devops~useful-git-hooks-for-rust]: version_control.md#useful-git-hooks-for-rust
 [ex~devops~useful-github-actions]: github_actions.md#useful-github-actions
+[setup-rust-toolchain~repo]: https://github.com/actions-rust-lang/setup-rust-toolchain
 [p~cargo]: ../../../src/categories/development-tools/cargo/cargo.md
 [p~configuration]: ../../categories/config/configuration.md
 [p~containers]: ../../categories/virtualization/containers.md
