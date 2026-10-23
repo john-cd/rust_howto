@@ -1,47 +1,50 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# Interfacing with JavaScript (`wasm-bindgen` and `web-sys`)
+# Interfacing with JavaScript
 
 {{#include interfacing_with_javascript.incl.md}}
 
-## Calling External JavaScript Functions from Rust with `wasm-bindgen` {#wasm-bindgen}
+WebAssembly modules do not have JavaScript or browser access by themselves. On a JavaScript host, [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} generates bindings so JavaScript and Rust can call across the module boundary and exchange supported values. Use it only with a JavaScript-compatible target and runtime.
 
-[`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} handles the complexities of passing data between Rust/WASM and JavaScript.
+## Import and export functions with `wasm-bindgen` {#wasm-bindgen}
 
-[`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} is essential for bridging between Rust and JavaScript, allowing you to interact with the browser's APIs from your Rust/WASM code.
+Mark a Rust function with `#[wasm_bindgen]` to export it to JavaScript. An `extern "C"` declaration annotated with `#[wasm_bindgen]` can import a JavaScript function into Rust. The generated JavaScript glue initializes the module and handles the values supported by the binding.
 
-The [`wasm-bindgen`][book~wasm-bindgen]↗ guide covers the `wasm-bindgen` tool and crate. [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} is a Rust library and CLI tool that facilitate high-level interactions between WASM modules and JavaScript.
+See the [wasm-bindgen guide][book~wasm-bindgen]↗ for the binding model and the [[wasm_development | WASM Development]] chapter for a complete build workflow.
 
-## Bind to JS Global Objects and Functions Found in All JS Environments with `js-sys` {#js-sys}
+## Use JavaScript built-ins with `js-sys` {#js-sys}
 
 [![js-sys~website][c~js-sys~website~badge]][c~js-sys~website] [![js-sys][c~js-sys~docs~badge]][c~js-sys~docs] [![js-sys~crates.io][c~js-sys~crates.io~badge]][c~js-sys~crates.io] [![js-sys~repo][c~js-sys~repo~badge]][c~js-sys~repo] [![js-sys~lib.rs][c~js-sys~lib.rs~badge]][c~js-sys~lib.rs]{{hi:js-sys}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
-Bindings for all JS global objects and functions found in all JS environments like Node.js and browsers, built on `#[wasm_bindgen]` using the [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} crate.
-
-This does not include any Web, [Node][p~node], or any other JS environment APIs. Only the things that are guaranteed to exist in the global scope by the ECMAScript standard.
+[`js-sys`][c~js-sys~docs]↗{{hi:js-sys}} provides bindings to standard ECMAScript objects and functions, such as `Date`, `Array`, and `Promise`. It does not include browser DOM or Node.js APIs. The example exports a Rust function that reads the current time through JavaScript's `Date` object.
 
 ```rust,editable
 {{#include ../../../crates/cats/wasm/examples/interfacing_with_javascript/js_sys.rs:example}}
 ```
 
-## Accessing DOM and Web APIs via Rust {#accessing-dom .skip}
+## Use browser APIs with `web-sys` {#web-sys}
 
-The [`web-sys`][c~web-sys~crates.io]↗{{hi:web-sys}} crate provides Rust bindings to the Web's APIs, allowing you to interact with the DOM, Canvas, WebGL, and other browser features.
-Essentially, [`web-sys`][c~web-sys~docs]↗{{hi:web-sys}} is the bridge that lets your Rust code talk to the browser.
+[`web-sys`][c~web-sys~docs]↗{{hi:web-sys}} provides bindings to Web Platform APIs such as `Window`, `Document`, and the DOM. Enable the Cargo features for the API types and methods the application uses. These APIs are available only when the host provides them; a Node.js process does not provide a browser DOM.
+
+The example obtains the browser window and reports its absence or an API error instead of assuming that a window is always available:
 
 ```rust,editable
 {{#include ../../../crates/cats/wasm/examples/interfacing_with_javascript/web_sys.rs:example}}
 ```
 
-## Calling Rust/WASM Functions from JavaScript {#calling-rust-wasm .skip}
+For component-based interfaces, use the framework's view and event model where it fits; direct `web-sys` calls are useful for browser features the framework does not wrap.
 
-[`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} also facilitates calling Rust/WASM functions from JavaScript.
+## Call Rust from JavaScript {#calling-rust-wasm .skip}
 
-## Related Topics {#related-topics .skip}
+The generated JavaScript module exports the functions annotated with `#[wasm_bindgen]`. With the `web` target, import the module, await its initialization, and then call the exports. Keep the package generated from the Rust crate in sync with the JavaScript application that imports it.
 
-- [[wasm_basics | WASM Basics]].
-- [[wasm_development | WASM Development]].
-- [[programming_languages | Programming Languages]].
-- [[web-programming | Web Programming]].
+JavaScript and Rust have different type and memory models. Keep boundary conversions explicit, handle JavaScript exceptions or unavailable APIs, and avoid crossing the boundary for every item in a large data set when a coarser call will do.
+
+## Related topics {#related-topics .skip}
+
+- [[wasm_basics | WASM Basics]]
+- [[wasm_development | WASM Development]]
+- [[programming_languages | Programming Languages]]
+- [[web-programming | Web Programming]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

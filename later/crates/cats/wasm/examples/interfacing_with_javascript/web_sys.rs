@@ -2,30 +2,31 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Calling browser APIs from Rust with `web-sys`.
+//! Calls a browser API from Rust through `web-sys`.
 
-#[cfg(target_arch = "wasm32")]
+#[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;
-#[cfg(target_arch = "wasm32")]
+#[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use web_sys::window;
 
-/// Shows an alert box with the browser's `window.alert`.
-#[cfg(target_arch = "wasm32")]
+/// Shows an alert in a browser or returns an error when no window is available.
+#[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
-pub fn show_alert() {
-    if let Some(window) = window() {
-        window
-            .alert_with_message("Hello from Rust!")
-            .expect("Failed to show alert");
-    }
+pub fn show_alert() -> Result<(), JsValue> {
+    let window = window()
+        .ok_or_else(|| JsValue::from_str("No browser window is available"))?;
+    window.alert_with_message("Hello from Rust!")?;
+    Ok(())
 }
-
-/// Does nothing outside of a browser; the function above runs in WebAssembly.
-fn main() {
-    // TODO
-}
-
 // ANCHOR_END: example
+
+/// Explains how to run the browser-only example on a native host.
+fn main() {
+    #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
+    println!(
+        "Build for wasm32-unknown-unknown to call the browser Window API."
+    );
+}
 
 /// Runs the example.
 pub fn run() {
@@ -36,6 +37,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the host-side example runner succeeds.
     #[test]
     fn test_main() {
         main();

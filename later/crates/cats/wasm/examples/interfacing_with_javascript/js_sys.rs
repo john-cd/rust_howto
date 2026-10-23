@@ -2,24 +2,27 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Calling JavaScript from Rust with `js-sys`.
+//! Uses a JavaScript built-in from Rust through `js-sys`.
 
-#[cfg(target_arch = "wasm32")]
+#[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use js_sys::Date;
-#[cfg(target_arch = "wasm32")]
+#[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;
 
-/// Returns the current time, as a string, from JavaScript's `Date`.
-#[cfg(target_arch = "wasm32")]
+/// Returns the current JavaScript date as a string on the browser target.
+#[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 pub fn get_current_time() -> String {
     let date = Date::new_0();
     String::from(date.to_utc_string())
 }
-
-/// Does nothing yet.
-fn main() {} // TODO
 // ANCHOR_END: example
+
+/// Explains how to run the browser-only example on a native host.
+fn main() {
+    #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
+    println!("Build for wasm32-unknown-unknown to call JavaScript's Date API.");
+}
 
 /// Runs the example.
 pub fn run() {
@@ -30,6 +33,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the host-side example runner succeeds.
     #[test]
     fn test_main() {
         main();
