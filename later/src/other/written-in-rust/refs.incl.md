@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [ex~written-in-rust~build-tools]: development_tools.md#build-tools
 [ex~written-in-rust~code-editors]: development_tools.md#code-editors
 [ex~written-in-rust~email-applications]: other_tools.md#email-applications
@@ -21,6 +22,9 @@
 [bun~runtime~docs]: https://github.com/oven-sh/bun/blob/main/docs/runtime/index.mdx
 [pants~engine~docs]: https://www.pantsbuild.org/dev/docs/introduction/how-does-pants-work
 [volta~project~repo]: https://github.com/volta-cli/volta
+[pyoxidizer~releases~repo]: https://github.com/indygreg/PyOxidizer/releases
+[ruff~formatter~website]: https://docs.astral.sh/ruff/formatter/
+[ruff~linter~website]: https://docs.astral.sh/ruff/linter/
 [p~cross-platform]: # "../cross-platform/index.md"
 [p~embedded]: # "../../categories/embedded/index.md"
 [p~environment-variables]: # "../../categories/config/environment_variables.md"

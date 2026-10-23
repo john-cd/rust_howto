@@ -1,5 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# Tools for Python Written in Rust
+
+# Python Tools Written in Rust
+
+Rust is used to build tools across the Python workflow: an interpreter, an application packager, a linter and formatter, and a project and environment manager. These tools still work with Python programs; they do not translate Python source code into Rust.
 
 {{#include python_tools.incl.md}}
 
@@ -10,47 +13,45 @@
 [![rustpython~repo][c~rustpython~repo~badge]][c~rustpython~repo]
 [![rustpython~lib.rs][c~rustpython~lib.rs~badge]][c~rustpython~lib.rs]
 
-[`RustPython`][rustpython~repo]↗{{hi:RustPython}} is an open-source Python Interpreter written in Rust.
+[`RustPython`][rustpython~repo]↗{{hi:RustPython}} is a Python interpreter implemented in Rust. It is a separate implementation of the language, rather than a way to compile arbitrary Python programs to native Rust.
 
-RustPython supports Python 3 (CPython >= 3.11.0). RustPython can be embedded into Rust programs to use Python as a [scripting][p~scripting] language for your application, or it can be compiled to WebAssembly in order to run Python in the browser.
+The project is still in development and does not claim full compatibility with CPython. Its repository documents embedding and WebAssembly use cases; check its current compatibility and platform notes before depending on a feature.
 
-```bash
-cargo install --git https://github.com/RustPython/RustPython rustpython
-# or
-wapm install rustpython
-# or
-conda install rustpython -c conda-forge
-```
+For current build and installation instructions, see the [RustPython repository][rustpython~repo]↗.
 
 ## `pyOxidizer` {#pyoxidizer}
 
 [![pyOxidizer][c~pyoxidizer~docs~badge]][c~pyoxidizer~repo]↗{{hi:pyOxidizer}}.
 
-[`pyOxidizer`][c~pyoxidizer~docs]↗{{hi:pyOxidizer}} is a utility for producing binaries that embed Python.
+[`PyOxidizer`][c~pyoxidizer~repo]↗{{hi:PyOxidizer}} is a tool for packaging Python applications with an embedded interpreter and resources. It can also embed Python in a Rust application. Packaging and embedding approaches are sensitive to the Python version and target platform, so verify those details against the project's documentation before adopting it.
 
-[`pyOxidizer`][c~pyoxidizer~docs]↗{{hi:pyOxidizer}} is capable of producing a single file executable - with a copy of Python and all its dependencies statically linked and all resources (like `.pyc` files) embedded in the executable. You can copy a single executable file to another machine and run a Python application contained within.
-
-[`pyOxidizer`][c~pyoxidizer~docs]↗{{hi:pyOxidizer}} can also be used to (a) easily add a Python interpreter to any Rust project; (b) add Rust to Python.
+The [upstream releases page][pyoxidizer~releases~repo]↗ currently lists version 0.24.0, released in 2022. Check project activity and compatibility before choosing it for a new application.
 
 ## `Ruff` {#ruff}
 
-[Ruff][c~ruff~docs]↗{{hi:ruff}}.
+[`Ruff`][c~ruff~docs]↗{{hi:Ruff}} is a Python linter and formatter implemented in Rust. It can replace several common linting tools in one fast command-line tool.
 
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+```bash
+ruff check .
+ruff format .
+```
+
+See the [Ruff linter documentation][ruff~linter~website]↗ for rule configuration and the [formatter documentation][ruff~formatter~website]↗ for formatting options.
 
 ## `uv` {#uv}
 
-"uv" is a relatively new and fast Python package installer and resolver, designed as a drop-in replacement for [`pip`][pypi~pip]↗{{hi:pip}}, [`pip-tools`][pypi~pip-tools]↗{{hi:pip-tools}}, [`pipx`][pypi~pipx]↗{{hi:pipx}}, [`poetry`][python-poetry~website]↗{{hi:poetry}}, [`pyenv`][pyenv~repo]↗{{hi:pyenv}}, [`twine`][pypi~twine]↗{{hi:twine}}, [`virtualenv`][pypi~virtualenv]↗{{hi:virtualenv}}, and more. It's gaining popularity for its speed and efficiency.
+[`uv`][uv~repo]↗{{hi:uv}} is a Python version, project, dependency, and environment manager. It can create projects, resolve and install dependencies, manage virtual environments and Python versions, and run project commands. Its command surface covers workflows that otherwise use several tools; check the [uv documentation][uv~docs~website]↗ for details and supported behavior.
 
-Key features include:
+For example, these commands create a project, add a dependency, and run a Python command in its environment:
 
-- Installing and managing Python versions.
-- Running and installing tools published as Python packages.
-- Installing packages from [`PyPI`][pypi~website]↗{{hi:PyPI}}.
-- Resolving dependencies and generating lock files (like `pip-compile`).
-- Working with virtual environments.
-- Supports [`Cargo`][c~cargo~docs]↗{{hi:Cargo}}-style workspaces for scalable projects.
+```bash
+uv init my-project
+cd my-project
+uv add requests
+uv run python -c "print('hello')"
+```
+
+For Python extensions written in Rust, see [[python | Python FFI and extensions]] for the separate interoperability workflow.
 
 ## Related Topics {#related-topics .skip}
 
@@ -59,10 +60,9 @@ Key features include:
 - [[cross-platform | Cross-platform Development]].
 - [[programming_languages | Programming Languages]].
 
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}
+
 <div class="hidden">
 [python_tools: write](https://github.com/john-cd/rust_howto/issues/617)
-
-- [`uv` docs][uv~docs~website]↗.
-- [`pyapp`][pyapp~website]↗.
-
 </div>
