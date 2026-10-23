@@ -1,11 +1,16 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # External FFI Bindings
 
 [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
 
-Direct Rust FFI bindings to libraries written in other languages; often denoted by a `-sys` suffix. Safe and idiomatic wrappers are in the [[api-bindings | API Bindings]] category.
+This category collects low-level Rust bindings to APIs implemented outside Rust, commonly C libraries and operating-system APIs. The `-sys` suffix is a convention, not a guarantee: for example, [`libc`][c~libc~docs]↗{{hi:libc}} and `windows-sys` expose system APIs without that suffix.
 
-| Topic | Example(s) | Related Chapter(s) |
+When a maintained safe wrapper exists, start with the wrapper in [[api-bindings | API Bindings]]. Use a low-level binding directly when you need its API or are building a wrapper. In that case, check the crate's safety contract, native-library requirements, and platform support; FFI code must uphold the foreign API's ABI, ownership, lifetime, and thread-safety requirements.
+
+The table is a set of examples, not an exhaustive catalog. The `-sys` crates commonly provide the low-level layer used by higher-level Rust crates.
+
+| Area | Example bindings | Related chapter |
 | --- | --- | --- |
 | Audio | [`alsa-sys`][c~alsa-sys~docs]↗{{hi:alsa-sys}}: Bindings to the ALSA library. `portaudio-sys`: Bindings to the PortAudio library. | [[multimedia_audio | Multimedia: Audio]] |
 | Cryptography | `openssl-sys`: Bindings to OpenSSL. `libsodium-sys`: Bindings to the libsodium library. | [[cryptography | Cryptography]] |
@@ -14,7 +19,7 @@ Direct Rust FFI bindings to libraries written in other languages; often denoted 
 | Networking | `libcurl-sys`: Bindings to the libcurl library. `libssh2-sys`: Bindings to the libssh2 library. | [[network-programming | Network Programming]] |
 | Parsing | `libxml2-sys`: Bindings to the libxml2 library. | [[parsing | Parsing]] |
 | System | [`libc`][c~libc~docs]↗{{hi:libc}}: Bindings to various C library functions and types. `windows-sys`: Bindings to Windows APIs. | [[os | OS]] [[os_windows-apis | OS Windows APIs]] |
-| Miscellaneous | `libgit2-sys`: Bindings to the libgit2 library. |  |
+| Miscellaneous | `libgit2-sys`: Bindings to the libgit2 library. | |
 
 {{#include external_ffi_bindings.incl.md}}
 
