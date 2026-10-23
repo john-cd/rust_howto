@@ -12,10 +12,6 @@ use strsim::levenshtein;
 use strsim::normalized_levenshtein;
 use strsim::sorensen_dice;
 
-// Add to your `Cargo.toml`:
-// [dependencies]
-// strsim = "0.11.1" # Or latest
-
 /// Prints several string distances and similarities.
 fn main() {
     let s1 = "aleksandr";

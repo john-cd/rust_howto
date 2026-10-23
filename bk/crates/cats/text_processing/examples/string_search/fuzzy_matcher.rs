@@ -15,10 +15,11 @@ fn main() {
     // Define some example strings to search through
     let items = [
         "fuzzy", "hazy", "buzzy", "scuzzy", "cloudy", "fuzzily", "fuzzed",
+        "fuzzé",
     ];
 
     // The pattern to search for
-    let pattern = "fuzzy";
+    let pattern = "fuz";
 
     println!("Searching for pattern: '{pattern}'");
 
@@ -48,20 +49,15 @@ fn main() {
         // of characters.
         if let Some((score, indices)) = matcher.fuzzy_indices(item, pattern) {
             let mut highlighted = String::new();
-            let mut last_idx = 0;
-
-            for &idx in &indices {
-                // Add text before the match
-                highlighted.push_str(&item[last_idx..idx]);
-                // Add the matched character with formatting
-                highlighted.push('[');
-                highlighted.push(item.chars().nth(idx).unwrap());
-                highlighted.push(']');
-                last_idx = idx + 1;
+            for (char_idx, ch) in item.chars().enumerate() {
+                if indices.contains(&char_idx) {
+                    highlighted.push('[');
+                    highlighted.push(ch);
+                    highlighted.push(']');
+                } else {
+                    highlighted.push(ch);
+                }
             }
-
-            // Add remaining text
-            highlighted.push_str(&item[last_idx..]);
             println!("Score: {score}, Highlighted: '{highlighted}'");
         }
     }

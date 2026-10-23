@@ -5,16 +5,11 @@
 //! Searching bytes quickly with `memchr`.
 
 use memchr::memchr;
+use memchr::memchr_iter;
 
 // Use `memchr` to efficiently search for a byte in a slice.
 
-// Add the dependency to Cargo.toml:
-// ```toml
-// [dependencies]
-// memchr = "2.7.4" # Or latest
-// ```
-
-/// Finds the first, last and all occurrences of a byte.
+/// Demonstrates finding the first and all occurrences of a byte.
 fn main() {
     let haystack = b"hello world";
 
@@ -24,27 +19,8 @@ fn main() {
         None => println!("Character not found"),
     }
 
-    // Using `memchr` in a function.
-    /// Returns the indexes of all occurrences of `needle` in `haystack`.
-    fn find_all_occurrences(needle: u8, haystack: &[u8]) -> Vec<usize> {
-        let mut indices = Vec::new();
-        let mut start = 0;
-
-        while let Some(pos) = memchr(needle, &haystack[start..]) {
-            let absolute_pos = start + pos;
-            indices.push(absolute_pos);
-            start = absolute_pos + 1;
-
-            if start >= haystack.len() {
-                break;
-            }
-        }
-
-        indices
-    }
-
     // Find all occurrences of 'l':
-    let all_l_positions = find_all_occurrences(b'l', haystack);
+    let all_l_positions: Vec<usize> = memchr_iter(b'l', haystack).collect();
     println!("All 'l' positions: {all_l_positions:?}");
 }
 

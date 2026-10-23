@@ -40,7 +40,7 @@ fn main() -> anyhow::Result<()> {
     let result = ac.replace_all(text, &["APPLE", "BANANA", "ORANGE"]);
     println!("\nReplaced text: {result}");
 
-    // Finding all matches with overlapping patterns:
+    // Choose leftmost-first semantics when patterns overlap:
     let patterns = &["abc", "bc", "c"];
 
     // Use leftmost-first match semantics, which reports leftmost matches, like
@@ -52,7 +52,7 @@ fn main() -> anyhow::Result<()> {
         .build(patterns)?;
 
     let text = "abcdef";
-    println!("\nOverlapping matches in 'abcdef':");
+    println!("\nLeftmost-first matches in 'abcdef':");
     for mat in ac.find_iter(text) {
         println!(
             "Pattern '{}' at byte range {}..{}",
