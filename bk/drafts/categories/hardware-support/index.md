@@ -3,9 +3,17 @@
 
 [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]
 
-Interface with specific CPU{{hi:CPU}} or other hardware{{hi:Hardware}} features.
+Rust hardware support ranges from selecting CPU-specific instructions to communicating with peripherals and embedded boards. Start with portable, safe APIs where they fit; isolate target-specific code behind platform or feature checks.
 
-For operating system interaction, you'll often use system calls. For external peripherals, you'll need to find or create crates that provide access to the specific device. For embedded systems, HAL crates are essential.
+| Area | Common approach | Guidance |
+|---|---|---|
+| CPU information and features | [`std::thread`][c~std::thread~docs]↗ and [`std::arch`][c~std::arch~docs]↗ | Check whether a CPU feature is available before calling an architecture-specific intrinsic. See [[processor | Processor]]. |
+| SIMD | Standard-library architecture intrinsics or a portable SIMD API | Keep a scalar fallback when a program must run on CPUs without the selected instructions. See [[processor#simd | SIMD]]. |
+| USB and serial devices | [`rusb`][c~rusb~docs]↗ and [`serialport`][c~serialport~docs]↗ | Device access can require OS permissions, drivers, or platform-specific setup. See [[peripherals | Peripheral Devices]]. |
+| Graphics hardware | [`wgpu`][c~wgpu~docs]↗ | Use a graphics or compute API instead of mapping a GPU directly; see [[graphics | Graphics]]. |
+| Embedded boards | `no_std` support and a board or chip HAL | Use the board's peripheral abstractions and cross-compile for its target. See [[no_std | `no_std` Rust]]. |
+| Memory-mapped registers and interrupts | A chip PAC/HAL and its documented interrupt model | These low-level operations require careful ownership and synchronization; avoid hand-written register access when a maintained HAL provides it. |
+| OS device drivers | OS-specific driver interfaces and system APIs | Drivers may require privileged code and unsafe operations. Ordinary applications should use the OS device interface or a crate that wraps it. |
 
 ## Processor Management
 
@@ -17,23 +25,19 @@ For operating system interaction, you'll often use system calls. For external pe
 
 ## Memory-mapped I/O
 
-Interact with hardware registers in embedded systems.
-
-FIXME.
+Embedded firmware can interact with device registers through a peripheral access crate (PAC) or hardware abstraction layer (HAL). Follow the device documentation for register ownership, ordering, and access width; Rust's ordinary references do not by themselves make memory-mapped I/O safe.
 
 ## Interrupts
 
-Hardware signals the CPU through interrupts.
-
-FIXME.
+Interrupt handlers respond to device or timer events. Keep them short and use the chip's documented interrupt and synchronization APIs when sharing state with normal code.
 
 ## Device Drivers
 
-Software that interfaces between the operating system and hardware.
+Device drivers translate operating-system requests into device operations. Their interfaces and privilege requirements are platform-specific; application code usually accesses hardware through an existing driver and its user-space API.
 
 ## Hardware Protocols
 
-FIXME how devices communicate with each other.
+Hardware protocols define how devices exchange commands and data. Prefer an existing protocol implementation when available; when implementing one, handle framing, timeouts, and malformed input at the transport boundary.
 
 ## Related Topics
 
@@ -59,7 +63,7 @@ See [[no_std | no `std`]].
 
 ### Embedded Systems
 
-See [[embedded | Embedded]] Systems.
+Use `no_std` targets with the board's documented HAL and toolchain. See [[no_std | `no_std` Rust]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
