@@ -3,14 +3,16 @@
 
 {{#include stack-allocated.incl.md}}
 
-Stack-allocated arrays are arrays that are stored on the stack, as opposed to the heap. The stack is a region of memory that is used for storing local variables and function call information. Stack allocation has several important characteristics:
+An array or fixed-capacity collection stores its elements inline with the collection value. A local value is usually placed on the stack, but the same value can also be stored in static memory or inside another allocation. The important distinction is whether the collection asks an allocator for more space as it grows.
 
-- Allocating and deallocating memory on the stack is very fast, because it simply involves adjusting the stack pointer. There is no need for complex memory management as with heap allocation.
-- The size of stack-allocated arrays must be known at compile time. This means one cannot resize these arrays dynamically as one can with heap-allocated arrays.
-- The stack is typically much smaller than the heap, so stack-allocated arrays are only suitable for small to moderately sized arrays.
-- Stack-allocated arrays are automatically deallocated when they go out of scope.
+| Crate | Capacity and growth | When the collection is full |
+|-------|---------------------|-----------------------------|
+| [`arrayvec`][c~arrayvec~docs]↗ | Fixed capacity; no allocation when growing | `push` panics; `try_push` returns the rejected item |
+| [`heapless`][c~heapless~docs]↗ | Fixed capacity; does not use a heap allocator | Operations such as `push` return an error with the rejected item |
+| [`smallvec`][c~smallvec~docs]↗ | Stores a configured number of elements inline, then can allocate and grow | Grows like a vector after spilling to the heap |
+| [`tinyvec`][c~tinyvec~docs]↗ | With `alloc`, `TinyVec` starts inline and can move to heap storage; without it, `ArrayVec` has fixed capacity | `TinyVec` grows when it spills; `ArrayVec` panics if full |
 
-`arrayvec`, `tinyvec`, `smallvec`, and `heapless` offer alternatives to the standard library's `Vec`, but with different memory management strategies tailored for performance-critical or resource-constrained environments. `heapless` and `arrayvec` are both strictly stack-based, providing fixed-capacity vectors that never allocate on the heap; `heapless` offers a broader suite of `no_std` data structures and emphasizes explicit error handling by returning a `Result` on overflow, whereas arrayvec is a more focused crate that will panic by default when its capacity is exceeded. In contrast, `smallvec` and `tinyvec` implement a "spillover" strategy: they start with a small, inline buffer on the stack for a predefined number of elements and seamlessly allocate on the heap if that capacity is surpassed, offering a hybrid approach that optimizes for common small-vector cases while retaining the flexibility of dynamic growth.
+Fixed-capacity collections are useful when a maximum size is known or dynamic allocation is unavailable. Choose an inline capacity with care: the collection value occupies space for that capacity even when it is empty, and large local values can use substantial stack space. `SmallVec` and `TinyVec` trade a larger inline value for avoiding allocations in common small cases. These layouts do not guarantee faster code; measure when performance matters.
 
 ## Store Fixed-size Vectors and Strings on the Stack with `arrayvec` {#arrayvec}
 
