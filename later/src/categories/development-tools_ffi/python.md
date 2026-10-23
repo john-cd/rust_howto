@@ -31,7 +31,7 @@ This example is an embedded Python executable. It is enabled on Linux, where the
 
 This example registers a Rust-defined module in the embedded interpreter's `sys.modules`, then imports it from Python code. It demonstrates module and function registration inside a Rust executable; the next section shows how to build a native extension that a separate Python process can import.
 
-```rust
+```rust,noplayground
 {{#include ../../../crates/cats/development_tools_ffi/examples/python/use_rust_from_python.rs:example}}
 ```
 
@@ -39,7 +39,7 @@ This example registers a Rust-defined module in the embedded interpreter's `sys.
 
 The example above embeds Python in a Rust executable. To build a native Python module that an ordinary Python script can import, use the separate PyO3 `cdylib` package and Maturin:
 
-```rust
+```rust,noplayground
 {{#include ../../../crates/cats/development_tools_ffi/python_extension/src/lib.rs}}
 ```
 

@@ -62,7 +62,7 @@ You cannot directly return a reference to a local variable created within and ow
 
 In Rust, the borrow checker prevents returning references to local data, enforcing memory safety:
 
-```rust,compile_fail
+```rust,compile_fail,noplayground
 // Compile Error[E0515]: cannot return reference to temporary value.
 fn try_create<'a>() -> &'a String {
     let s = String::new();

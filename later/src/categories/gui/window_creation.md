@@ -33,7 +33,7 @@
 
 The `winit`, `tao`, and `baseview` examples are compiled on Windows as well as other supported desktop platforms. `baseview` selects its Windows backend for Windows builds.
 
-```rust
+```rust,noplayground
 {{#include ../../../crates/cats/gui/examples/window_creation/baseview.rs:example}}
 ```
 
