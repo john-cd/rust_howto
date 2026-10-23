@@ -1,70 +1,81 @@
 <!-- TODO Reviewed ??-??-2026 -->
 # Cross-platform Development
 
-Cross-platform development refers to the practice of creating software applications that can run on multiple operating systems and devices (Windows, macOS, Linux, and mobile operating systems like iOS and Android) without requiring multiple codebases.
+Cross-platform software targets more than one operating system, device, or runtime. Sharing Rust code helps, but each target still has its own toolchain, libraries, UI conventions, and platform APIs. Decide which parts to share, then keep target-specific code behind small boundaries.
 
-## Approaches
+## Choose what to share
 
-## Cross-compilation
+### Build the same program for several targets
 
-For applications that do not require a graphical user interface (e.g., CLI tools, servers), simple cross-compilation may be sufficient.
+For command-line programs, servers, and libraries, use portable Rust APIs and build for each supported target. A separate target build produces a target-specific artifact; it does not make one binary run on every platform.
 
-- [`cargo`][c~cargo~docs]↗{{hi:cargo}} and [`rustup`][rustup~website]↗{{hi:rustup}} natively allow developers to build applications for different target platforms from a single development environment.
-- [`cross`][c~cross~docs]↗{{hi:cross}} is a tool for cross-compiling Rust projects.
+### Share behavior and keep platform UIs
 
-See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Compiling]].
-
-Conditional compilation allows writing platform-specific code, for example to call OS-specific APIs, such as [[os_freebsd-apis | FreeBSD]], [[os_linux-apis | Linux]], [[os_macos-apis | macOS]], [[os_unix-apis | Unix]] or [[os_windows-apis | Windows APIs]].
-
-The [`#[cfg(...)]`][book~rust-reference~conditional-compilation]↗{{hi:#[cfg(...)]}} attribute is the primary mechanism for conditional compilation. It specifies conditions that must be met for the code to be included in the compilation, including the target operating system (e.g., `target_os = "windows"`, `target_os = "linux"`) and/or the target architectures (e.g., `target_arch = "x86_64"`, `target_arch = "arm"`).
-
-## Web Development
-
-Web applications are intrinsically cross-platform, since most platforms have a web browser. You may ship your software as a web application (e.g., a single page application).
-
-Rust can also be compiled to WebAssembly, allowing developers to run performant code in web browsers. See the [[wasm | WASM]] chapter.
-
-## Desktop Applications
-
-Rust can be used to build high-performance desktop applications for Windows, macOS, and Linux.
-
-### `tauri`
-
-[`tauri`][c~tauri~docs]↗{{hi:tauri}} allows building cross-platform desktop applications for major operating systems (Windows, macOS, Linux) using web technologies for the frontend and Rust for the backend.
-
-### `wry`
-
-Wry is a cross-platform WebView rendering library. It provides a way to create cross-platform desktop applications with a focus on simplicity and performance. It is often used in conjunction with [`tauri`][c~tauri~docs]↗{{hi:tauri}}.
-
-`Wry` is a good choice when you want a lightweight native wrapper around a web-based frontend without the extra opinionated tooling of a larger framework.
-
-### GTK
-
-[`GTK-rs`][c~gtk4~crates.io]↗{{hi:GTK-rs}} is a Rust binding for the GTK (GIMP Toolkit) library, which is widely used for creating graphical user interfaces on Linux and other platforms.
-
-GTK is appropriate when you want a more traditional desktop application with native Linux look-and-feel and an established UI toolkit.
-
-## Mobile Development
-
-While native mobile development with Rust is still maturing, Rust can be combined with frameworks like [`Flutter`][docs.flutter.dev~website]↗{{hi:Flutter}} or [`React Native`][react-native~website]↗ to build mobile apps where Rust provides backend or shared business logic and the UI is rendered with platform-specific tooling.
-
-Mobile development with Rust is currently most compelling for shared libraries, native modules, or performance-critical parts of the app rather than full UI stacks.
-
-## Embedded Systems
-
-Rust is increasingly used in embedded systems because it offers memory safety and predictable performance. Embedded Rust projects often compile for bare-metal or `no_std` environments and use crates such as `cortex-m`, `embedded-hal`, and `rtic`.
-
-## Notable Cross-Platform Application Frameworks
-
-### `crux`
-
-Crux is a framework for building cross-platform applications with a focus on testability and code reuse. It separates your application's logic into a Rust core that can be shared across platforms, with platform-specific "shells" for the UI.
+When the business rules should match but the interfaces should feel native, put the shared behavior in a Rust library and connect each platform shell to it. The [Crux chapter][ex~cross-platform~develop-across-platforms] shows this Core/Shell approach.
 
 {{#include crux.incl.md}}
 
-### `dioxus`
+### Target a browser or embedded device
 
-Dioxus is a Rust-based framework designed for building cross-platform user interfaces. It enables developers to create applications for web, desktop, and mobile platforms using a single Rust codebase. Dioxus is designed to be familiar to developers with web development experience, utilizing concepts similar to HTML, CSS, and JavaScript. It includes features like hot reloading, server-side rendering, and support for modern web technologies. It uses a Virtual DOM for efficient UI updates. It also provides a CLI tool to aid in project creation, building, and serving.
+For browser applications, compile Rust to WebAssembly and integrate with browser APIs as needed; see [[wasm | WebAssembly]]. Embedded projects also target specific chips and often use `no_std` libraries and hardware abstraction layers; see [[embedded | Embedded Systems]] and [[no-std | no_std]].
+
+## Cross-compile for another target
+
+Rust's target triple identifies the platform for which the compiler produces code. `rustup` can install a target's standard library, and Cargo can then build for it:
+
+```sh
+rustup target add aarch64-unknown-linux-gnu
+cargo build --target aarch64-unknown-linux-gnu
+```
+
+Installing the Rust target does not install every tool needed to link an application. Cross-compilation may also require a target linker, system libraries, or a platform SDK. The [`cross`][c~cross~docs]↗{{hi:cross}} project can help with supported targets and their toolchains; check its current target support and prerequisites.
+
+Read the [rustup cross-compilation guide][rustup-cross-compilation] for target setup details. A successful cross-build checks compilation for that target, but exercising platform behavior still requires a suitable runner, emulator, device, or CI host.
+
+## Compile only the code a target needs
+
+Use conditional compilation for code that must call a target-specific API or depend on a target-specific crate. For example, `#[cfg]` includes only the matching function in the compiled program:
+
+```rust
+#[cfg(target_os = "windows")]
+fn platform_name() -> &'static str {
+    "Windows"
+}
+
+#[cfg(target_os = "linux")]
+fn platform_name() -> &'static str {
+    "Linux"
+}
+
+#[cfg(not(any(target_os = "windows", target_os = "linux")))]
+fn platform_name() -> &'static str {
+    "another target"
+}
+
+fn main() {
+    println!("Running on {}", platform_name());
+}
+```
+
+`target_os`, `target_arch`, and related configuration values describe the compilation target, not necessarily the machine running the compiler. The [`#[cfg]` attribute][rust-reference-conditional-compilation] removes a non-matching item before type checking. By contrast, `cfg!(...)` produces a boolean expression; it does not remove code from the build, so both sides must still compile for the current target.
+
+Prefer portable APIs and dependencies that support all your targets. Isolate unavoidable platform differences in a small adapter, and use Cargo target-specific dependencies when a crate is only needed on some targets.
+
+## Choose an application framework
+
+### Web applications
+
+WebAssembly can run Rust code in browsers, but a web app still uses browser APIs for tasks such as the DOM, storage, and networking. See the [[wasm | WebAssembly]] chapter for browser integration and framework examples.
+
+### Desktop and mobile applications
+
+Choose how much UI and platform integration to share. [`tauri`][c~tauri~docs]↗{{hi:tauri}} uses a web frontend with a Rust application layer; [`Wry`][wry-docs] is a lower-level WebView library. For a GTK-based interface, see [`gtk4`][c~gtk4~crates.io]↗{{hi:GTK-rs}}. On mobile, a native UI can call a shared Rust library through an FFI boundary; Crux is one way to share behavior while leaving each UI native.
+
+[`Dioxus`][dioxus-platform-support] provides web, desktop, and mobile renderers. Their setup and platform-specific features differ, so check the current platform guide before selecting it.
+
+## Keep operating-system APIs local
+
+For system-specific APIs, use the smallest platform-specific layer possible. The book has guides for [[os_freebsd-apis | FreeBSD]], [[os_linux-apis | Linux]], and [[os_macos-apis | macOS]].
 
 ## Related Topics
 
@@ -72,6 +83,7 @@ Dioxus is a Rust-based framework designed for building cross-platform user inter
 - [[gui | GUI]].
 - [[embedded | Embedded Systems]].
 - [[wasm | WebAssembly]].
+- [[architecture | Software Architecture]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
