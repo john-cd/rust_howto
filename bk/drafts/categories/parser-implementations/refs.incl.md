@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[c~async-graphql-parser~docs]: https://docs.rs/async-graphql-parser
 [ex~parser-implementations~basic-toml]: toml.md#basic-toml
 [ex~parser-implementations~comrak]: markdown.md#comrak
 [ex~parser-implementations~configparser]: ini.md#configparser
