@@ -5,6 +5,8 @@
 
 High-level robotics frameworks in pure Rust are still emerging.
 
+The `zenoh` dependency is optional so users of the other robotics examples do not need its networking stack. To run the example, from `later/crates`, use `cargo run -p science_robotics --example robotics_frameworks --features zenoh -- zenoh`.
+
 ## Zero Overhead Pub/Sub/Query Protocol with `zenoh` {#zenoh}
 
 [![zenoh][c~zenoh~docs~badge]][c~zenoh~docs]{{hi:zenoh}}
