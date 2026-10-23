@@ -6,6 +6,10 @@
 use std::time::Duration;
 
 /// Parses and formats durations and timestamps in a human-readable form.
+///
+/// # Errors
+///
+/// Returns an error if either sample duration or timestamp is invalid.
 fn main() -> anyhow::Result<()> {
     // Parse a duration from a human-readable string.
     let human_text = "2h 30m 15s";
@@ -18,7 +22,7 @@ fn main() -> anyhow::Result<()> {
     println!("Formatted duration: {formatted}");
 
     // Compute and format half of the duration.
-    let half_duration = duration.checked_div(2).unwrap_or_default();
+    let half_duration = duration / 2;
     println!(
         "Half the duration is: {}",
         humantime::format_duration(half_duration)
@@ -31,6 +35,16 @@ fn main() -> anyhow::Result<()> {
         humantime::format_duration(fast_duration)
     );
 
+    // Parse an RFC 3339 timestamp and format it back to the same
+    // representation.
+    let timestamp_text = "2018-01-01T12:53:00Z";
+    let timestamp = humantime::parse_rfc3339(timestamp_text)?;
+    let formatted_timestamp = humantime::format_rfc3339(timestamp).to_string();
+    assert_eq!(formatted_timestamp, timestamp_text);
+    println!(
+        "Formatted timestamp '{timestamp_text}' as '{formatted_timestamp}'."
+    );
+
     Ok(())
 }
 // ANCHOR_END: example
@@ -39,8 +53,10 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the duration and timestamp examples complete successfully.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn humantime_parses_and_formats_durations_and_timestamps()
+    -> anyhow::Result<()> {
         main()
     }
 }

@@ -10,7 +10,12 @@ use time::Time;
 use time::format_description;
 
 /// Demonstrate various functionalities of the `time` crate.
-fn main() {
+///
+/// # Errors
+///
+/// Returns an error if a date, format description, or formatted value is
+/// invalid.
+fn main() -> anyhow::Result<()> {
     // `OffsetDateTime::now_utc()` retrieves the current date and time
     // with the UTC offset.
     let now = OffsetDateTime::now_utc();
@@ -19,14 +24,12 @@ fn main() {
     // Parse a date from a string.
     let date = Date::parse(
         "2025-01-02",
-        &format_description::parse_borrowed::<2>("[year]-[month]-[day]")
-            .unwrap(),
-    )
-    .unwrap();
+        &format_description::parse_borrowed::<2>("[year]-[month]-[day]")?,
+    )?;
     println!("Parsed date: {date}");
 
     // Create a specific time using `Time::from_hms()`.
-    let time = Time::from_hms(12, 30, 45).unwrap();
+    let time = Time::from_hms(12, 30, 45)?;
     println!("Specific time: {time}");
 
     // Create a date and time using `PrimitiveDateTime::new()`.
@@ -38,15 +41,11 @@ fn main() {
     println!("Date and time after 5 hours: {later}");
 
     // Format a date and time as a string.
-    let formatted = now
-        .format(
-            &format_description::parse_borrowed::<2>(
-                "[year]-[month]-[day] [hour]:[minute]:[second]",
-            )
-            .unwrap(),
-        )
-        .unwrap();
+    let formatted = now.format(&format_description::parse_borrowed::<2>(
+        "[year]-[month]-[day] [hour]:[minute]:[second]",
+    )?)?;
     println!("Formatted date and time: {formatted}");
+    Ok(())
 }
 // ANCHOR_END: example
 
@@ -54,8 +53,10 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Verifies parsing and formatting work with the configured `time`
+    /// features.
     #[test]
-    fn test_main() {
-        main();
+    fn time_example_parses_and_formats_values() -> anyhow::Result<()> {
+        main()
     }
 }

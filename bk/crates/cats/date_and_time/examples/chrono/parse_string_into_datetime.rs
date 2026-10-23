@@ -54,8 +54,9 @@ pub fn run() -> Result<(), ParseError> {
 mod tests {
     use super::*;
 
+    /// Verifies the documented RFC and custom date strings parse successfully.
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn chrono_parses_the_documented_date_formats() -> Result<(), ParseError> {
+        main()
     }
 }

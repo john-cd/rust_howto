@@ -5,17 +5,21 @@
 
 use chrono::DateTime;
 use chrono::NaiveDate;
-use chrono::NaiveDateTime;
+use chrono::Utc;
 
 /// Converts a `NaiveDateTime` to a timestamp and back.
-fn main() {
+///
+/// # Errors
+///
+/// Returns an error if a demonstration date, time, or timestamp is out of
+/// range.
+fn main() -> Result<(), &'static str> {
     // Create a `NaiveDateTime` object representing November 12, 2017, at
     // 17:33:44.
-    let date_time: NaiveDateTime = NaiveDate::from_ymd_opt(2017, 11, 12)
-        // Unwrap the result of from_ymd_opt, which returns an Option.
-        .unwrap()
+    let date_time = NaiveDate::from_ymd_opt(2017, 11, 12)
+        .ok_or("invalid demonstration date")?
         .and_hms_opt(17, 33, 44)
-        .unwrap();
+        .ok_or("invalid demonstration time")?;
     println!(
         "Number of seconds between 1970-01-01 00:00:00 and {date_time} is
     {}.",
@@ -25,26 +29,33 @@ fn main() {
     // Create a `DateTime` object representing the time one billion seconds
     // after the Unix epoch.
     let date_time_after_a_billion_seconds =
-        // from_timestamp returns an Option, so we unwrap it.
-        DateTime::from_timestamp(1_000_000_000, 0).unwrap();
+        DateTime::<Utc>::from_timestamp(1_000_000_000, 0)
+            .ok_or("timestamp is outside the supported range")?;
     println!(
         "Date after a billion seconds since 1970-01-01 00:00:00 was {date_time_after_a_billion_seconds}."
     );
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+///
+/// # Errors
+///
+/// Returns an error if a demonstration date, time, or timestamp is out of
+/// range.
+pub fn run() -> Result<(), &'static str> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the checked constructors and timestamp conversion succeed.
     #[test]
-    fn test_main() {
-        main();
+    fn chrono_timestamp_conversion_runs() -> Result<(), &'static str> {
+        main()
     }
 }

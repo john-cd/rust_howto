@@ -63,7 +63,7 @@ fn main() -> anyhow::Result<()> {
                     .map_err(anyhow::Error::msg)?;
             }
             Commands::Timestamp => {
-                timestamp::run();
+                timestamp::run().map_err(anyhow::Error::msg)?;
             }
             Commands::Timezone => {
                 timezone::run();
