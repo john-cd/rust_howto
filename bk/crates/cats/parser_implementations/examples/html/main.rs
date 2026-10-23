@@ -38,7 +38,7 @@ fn main() -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::Cssparser => {
-                cssparser::run();
+                cssparser::run()?;
             }
             Commands::Html5ever => {
                 html5ever::run()?;
