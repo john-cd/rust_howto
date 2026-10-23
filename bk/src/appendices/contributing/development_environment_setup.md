@@ -83,7 +83,7 @@ apt-get -y install just
 ```dockerfile
 # RUN <<EOF
 # set -e
-# wget -c <https://github.com/rust-lang/mdBook/releases/download/v0.4.36/mdbook-v0.4.36-x86_64-unknown-linux-gnu.tar.gz> -O - | sudo tar -xvz -C /usr/local/bin
+# wget -c <https://github.com/rust-lang/mdBook/releases/download/v0.5.4/mdbook-v0.5.4-x86_64-unknown-linux-gnu.tar.gz> -O - | sudo tar -xvz -C /usr/local/bin
 # EOF
 ```
 
