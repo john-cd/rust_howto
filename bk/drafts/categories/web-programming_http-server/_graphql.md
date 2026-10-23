@@ -3,7 +3,7 @@
 
 {{#include graphql.incl.md}}
 
-'GraphQL' is a data query language for APIs that allows clients to request only the data they need, avoiding over-fetching or under-fetching. It is intended to serve mobile and web application frontends. Unlike REST APIs, which rely on multiple endpoints, 'GraphQL' uses a single endpoint and a type system to define the structure of the data.
+GraphQL is a query language and execution model for APIs. A schema defines the available types and fields; a client selects the fields it needs in each request. Servers commonly expose a GraphQL schema at one HTTP endpoint, though GraphQL can also be transported over other protocols.
 
 ## Create a GraphQL Endpoint {#async-graphql}
 
@@ -14,7 +14,17 @@
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-[`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}} is a high-performance graphql server library that's fully specification compliant. It integrates with [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`axum`][c~axum~docs]↗{{hi:axum}}, [`poem`][c~poem~docs]↗{{hi:poem}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}, [`tide`][c~tide~docs]↗{{hi:tide}}, and [`warp`][c~warp~docs]↗{{hi:warp}}.
+[`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}} defines the schema and resolvers. The `async-graphql-axum` adapter extracts GraphQL requests and converts execution results into HTTP responses. In this example the schema has one `hello` field and Axum serves it at `POST /graphql` on the loopback interface. The example is enabled with the `async-graphql-support` Cargo feature.
+
+A query can request just the `hello` field:
+
+```graphql
+{
+  hello
+}
+```
+
+The HTTP request body wraps that document in JSON, for example `{"query":"{ hello }"}`.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/async_graphql.rs:example}}
@@ -30,7 +40,9 @@ Juniper doesn't include a web server. Instead, it provides building blocks to ma
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[asynchronous | Asynchronous Programming]] for async resolvers and Tokio.
+- [[web-programming_http-server | HTTP Servers]] for the Axum endpoint and other server frameworks.
+- [[web-programming_http-client | HTTP Clients]] for making HTTP requests to an API.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

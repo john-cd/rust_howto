@@ -1,85 +1,76 @@
-//! Placeholder for a GraphQL server with `async-graphql` and `axum`.
+//! A small GraphQL endpoint using `async-graphql` with Axum.
+//!
+//! The `/graphql` route accepts GraphQL requests and runs them against a schema
+//! with one `hello` query field. The optional `async-graphql-support` feature
+//! enables this example.
 //!
 //! TODO Reviewed ??-??-2026.
 
-#![cfg(feature = "async-graphql-support")]
-
 // // ANCHOR: example
-// // COMING SOON
-// // ANCHOR_END: example
+use async_graphql::EmptyMutation;
+use async_graphql::EmptySubscription;
+use async_graphql::Object;
+use async_graphql::Schema;
+use async_graphql_axum::GraphQLRequest;
+use async_graphql_axum::GraphQLResponse;
+use axum::Router;
+use axum::extract::State;
+use axum::routing::post;
+use tokio::net::TcpListener;
 
-// //! # Example: Async GraphQL with Axum
-// //!
-// //! This example demonstrates how to set up a simple GraphQL server using the
-// //! `async-graphql` and `axum` crates.
-// //!
-// //! It defines a basic query that returns "Hello, world!" and sets up an Axum
-// //! server to handle GraphQL requests.
+/// The root query object for the example schema.
+struct QueryRoot;
 
-// use async_graphql::Context;
-// use async_graphql::EmptyMutation;
-// use async_graphql::EmptySubscription;
-// use async_graphql::Object;
-// use async_graphql::Schema;
-// use async_graphql_axum::GraphQLRequest;
-// use async_graphql_axum::GraphQLResponse;
-// use axum::Router;
-// use axum::extract::Extension;
-// use axum::routing::post;
-
-// struct Query;
-
-// #[Object]
-// impl Query {
-//     async fn hello(&self, _ctx: &Context<'_>) -> &str {
-//         "Hello, world!"
-//     }
-// }
-
-/// Does nothing yet.
-#[tokio::main]
-async fn main() {
-    //     // Create the schema
-    //     let schema =
-    //         Schema::build(Query, EmptyMutation, EmptySubscription).finish();
-
-    //     // Set up the Axum app with the GraphQL endpoint
-    //     let app = Router::new()
-    //         .route("/graphql", post(graphql_handler))
-    //         .layer(Extension(schema));
-
-    //     // Run the Axum server
-    //     println!("GraphQL server started at http://localhost:8000");
-    //     Server::bind(&"127.0.0.1:8000".parse().unwrap())
-    //         .serve(app.into_make_service())
-    //         .await
-    //         .unwrap();
-}
-
-// /// Handles incoming GraphQL requests.
-// ///
-// /// This function extracts the GraphQL schema from the Axum extension and the
-// /// GraphQL request from the request body. It then executes the GraphQL
-// /// request against the schema and returns the response.
-// ///
-// /// # Arguments
-// ///
-// /// * `schema` - The GraphQL schema, extracted from the Axum extension.
-// /// * `req` - The GraphQL request, extracted from the request body.
-// async fn graphql_handler(
-//     schema: Extension<Schema<Query, EmptyMutation, EmptySubscription>>,
-//     req: GraphQLRequest,
-// ) -> GraphQLResponse {
-//     schema.execute(req.into_inner()).await.into()
-// }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main() {
-        main();
+#[Object]
+impl QueryRoot {
+    /// Returns a greeting from the GraphQL endpoint.
+    async fn hello(&self) -> &'static str {
+        "Hello, world!"
     }
 }
-// [finish;  https://github.com/async-graphql/examples](https://github.com/john-cd/rust_howto/issues/864)
+
+/// The GraphQL schema shared with the request handler.
+type HelloSchema = Schema<QueryRoot, EmptyMutation, EmptySubscription>;
+
+/// Executes a GraphQL request against the shared schema.
+async fn graphql_handler(
+    State(schema): State<HelloSchema>,
+    request: GraphQLRequest,
+) -> GraphQLResponse {
+    schema.execute(request.into_inner()).await.into()
+}
+
+/// Starts the GraphQL HTTP endpoint on the loopback interface.
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    serve().await
+}
+
+/// Builds the GraphQL schema and serves it until the listener stops.
+async fn serve() -> anyhow::Result<()> {
+    let schema =
+        Schema::build(QueryRoot, EmptyMutation, EmptySubscription).finish();
+    let app = Router::new()
+        .route("/graphql", post(graphql_handler))
+        .with_state(schema);
+
+    let listener = TcpListener::bind("127.0.0.1:8000").await?;
+    println!(
+        "GraphQL endpoint listening on http://{}",
+        listener.local_addr()?
+    );
+    axum::serve(listener, app).await?;
+    Ok(())
+}
+
+// ANCHOR_END: example
+
+/// Runs the example.
+pub fn run() -> anyhow::Result<()> {
+    tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()?
+        .block_on(serve())
+}
+
+// [finish; https://github.com/async-graphql/examples](https://github.com/john-cd/rust_howto/issues/864)
