@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A blocking WebSocket client using tungstenite.
 
@@ -7,6 +8,7 @@ use tungstenite::client::IntoClientRequest;
 use tungstenite::connect;
 use tungstenite::http::Request;
 
+/// WebSocket echo service endpoint used by this example.
 const ECHO_ENDPOINT: &str = "wss://ws.postman-echo.com/raw";
 
 /// Creates a request for Postman's public echo service.

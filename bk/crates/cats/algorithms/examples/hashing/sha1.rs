@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! SHA-1 hashing with the `sha1` crate. SHA-1 is broken; do not use it for
 //! security.

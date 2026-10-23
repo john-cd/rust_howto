@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! An asynchronous WebSocket client using Tokio and tokio-tungstenite.
 
@@ -9,6 +10,7 @@ use tokio_tungstenite::tungstenite::Message;
 use tokio_tungstenite::tungstenite::client::IntoClientRequest;
 use tokio_tungstenite::tungstenite::http::Request;
 
+/// WebSocket echo service endpoint used by this example.
 const ECHO_ENDPOINT: &str = "wss://ws.postman-echo.com/raw";
 
 /// Creates a request for Postman's public echo service.

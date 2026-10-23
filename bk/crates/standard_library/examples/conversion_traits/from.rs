@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Converting between types with `From` and `Into`.
 

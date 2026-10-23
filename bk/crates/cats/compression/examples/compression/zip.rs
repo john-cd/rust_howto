@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Example of using the `zip` crate.
 //!
@@ -59,6 +60,7 @@ pub fn run() -> zip::result::ZipResult<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the zip example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

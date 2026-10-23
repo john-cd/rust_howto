@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates basic `mio` event polling with a `Waker`.
 
@@ -46,7 +47,6 @@ fn main() -> std::io::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the poller handles a wake event.
     #[test]
     fn test_main() -> std::io::Result<()> {
         main()

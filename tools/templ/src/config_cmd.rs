@@ -1,6 +1,6 @@
 //! The configuration and possible commands of the application
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::path::PathBuf;
 

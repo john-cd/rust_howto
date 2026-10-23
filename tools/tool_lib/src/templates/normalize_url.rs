@@ -1,6 +1,6 @@
 //! Normalizing documentation URLs.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use regex::Regex;
 
@@ -24,6 +24,7 @@ pub fn normalize_docs_url(url: &str) -> std::borrow::Cow<'_, str> {
 mod tests {
     use super::*;
 
+    /// Verifies that normalize docs url.
     #[test]
     fn test_normalize_docs_url() {
         assert_eq!(

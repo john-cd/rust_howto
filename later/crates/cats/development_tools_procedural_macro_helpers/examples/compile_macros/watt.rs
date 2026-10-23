@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Watt is a procedural macro library that allows writing
 //! procedural macros without the overhead of the `proc_macro` crate.

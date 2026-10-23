@@ -1,6 +1,6 @@
 //! Placeholder for a GraphQL server with `async-graphql` and `axum`.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #![cfg(feature = "async-graphql-support")]
 

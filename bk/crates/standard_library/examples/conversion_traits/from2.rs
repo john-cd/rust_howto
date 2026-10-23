@@ -1,5 +1,6 @@
 #![allow(unused)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Converting Custom Errors.
 
@@ -50,6 +51,7 @@ fn test_main() {
 mod tests {
     use super::*;
 
+    /// Verifies that the from2 example's main path succeeds.
     #[test]
     fn test_main() {
         assert!(main().is_err());

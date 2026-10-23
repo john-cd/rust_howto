@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Generates a random `f64` with the `rand` crate.
 
@@ -13,6 +14,7 @@ fn example() {
     println!("Random f64: {}", rng.random::<f64>());
 }
 
+/// Runs the about example.
 fn main() {
     example();
 }
@@ -22,6 +24,7 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Verifies the about example behavior.
     #[test]
     fn test() {
         example();

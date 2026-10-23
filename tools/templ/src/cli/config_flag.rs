@@ -1,6 +1,6 @@
 //! Handle the global CLI argument `--verbose`
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use clap::Arg;
 use clap::ArgMatches;

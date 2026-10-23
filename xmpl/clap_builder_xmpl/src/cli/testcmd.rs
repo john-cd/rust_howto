@@ -1,6 +1,6 @@
 //! The hidden `test` subcommand.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use clap::ArgMatches;
 use clap::Command;

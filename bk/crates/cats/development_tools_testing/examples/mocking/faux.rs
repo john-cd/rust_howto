@@ -1,6 +1,4 @@
 //! Mocking a struct's methods with `faux`.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 
@@ -8,6 +6,8 @@
 pub fn run() {
     main();
 }
+
+// TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 // `faux` mocks the methods of structs for testing without

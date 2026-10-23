@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates customizing the formatting of log lines for spans
 //! and events. See

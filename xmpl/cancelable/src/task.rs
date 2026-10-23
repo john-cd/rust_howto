@@ -1,6 +1,6 @@
 //! A task that reports its progress and can be interrupted.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::sync::atomic::AtomicU64;
 use std::sync::atomic::Ordering;

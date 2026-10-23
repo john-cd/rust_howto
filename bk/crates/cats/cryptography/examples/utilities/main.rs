@@ -1,6 +1,6 @@
 //! Runs one of the `utilities` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;

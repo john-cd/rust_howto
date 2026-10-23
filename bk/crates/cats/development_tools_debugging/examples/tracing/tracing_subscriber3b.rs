@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates how to configure tracing at runtime,
 //! - dealing with a variable number of `Layer`s of different types.
@@ -95,6 +96,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the tracing subscriber3b example's main path succeeds.
     #[test]
     fn test_main() {
         use std::fs;

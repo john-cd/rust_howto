@@ -1,6 +1,6 @@
 //! Read Cargo.toml files and extract dependencies
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::path::Path;
 
@@ -86,6 +86,7 @@ mod tests {
 
     // --- Tests for `extract_crate_names` ---
 
+    /// Verifies that extract empty.
     #[test]
     fn test_extract_empty() {
         let deps = DepsSet::new();
@@ -93,6 +94,7 @@ mod tests {
         assert!(names.is_empty());
     }
 
+    /// Verifies that extract simple.
     #[test]
     fn test_extract_simple() {
         let mut deps = DepsSet::new();
@@ -107,6 +109,7 @@ mod tests {
         assert_eq!(names, vec!["another_dep", "simple_dep"]);
     }
 
+    /// Verifies that extract inherited.
     #[test]
     fn test_extract_inherited() {
         let mut deps = DepsSet::new();
@@ -122,6 +125,7 @@ mod tests {
         assert_eq!(names, vec!["inherited_dep"]);
     }
 
+    /// Verifies that extract detailed no package.
     #[test]
     fn test_extract_detailed_no_package() {
         let mut deps = DepsSet::new();
@@ -138,6 +142,7 @@ mod tests {
         assert_eq!(names, vec!["detailed_dep"]);
     }
 
+    /// Verifies that extract detailed with package.
     #[test]
     fn test_extract_detailed_with_package() {
         let mut deps = DepsSet::new();
@@ -155,6 +160,7 @@ mod tests {
         assert_eq!(names, vec!["real_crate_name"]);
     }
 
+    /// Verifies that extract mixed.
     #[test]
     fn test_extract_mixed() {
         let mut deps = DepsSet::new();
@@ -189,11 +195,13 @@ mod tests {
     // --- Tests for `get_dependencies` ---
 
     // Helper to create a `Cargo.toml` file.
+    /// Creates the cargo toml.
     fn create_cargo_toml(dir: &Path, filename: &str, content: &str) -> Result<()> {
         fs::write(dir.join(filename), content)?;
         Ok(())
     }
 
+    /// Verifies that get deps empty dir.
     #[test]
     fn test_get_deps_empty_dir() -> Result<()> {
         let dir = tempdir()?;
@@ -202,6 +210,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies dependency discovery when no Cargo.toml file is present.
     #[test]
     fn test_get_deps_no_cargo_toml() -> Result<()> {
         let dir = tempdir()?;
@@ -214,6 +223,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that get deps root cargo toml.
     #[test]
     fn test_get_deps_root_cargo_toml() -> Result<()> {
         let dir = tempdir()?;
@@ -246,6 +256,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that get deps single file simple.
     #[test]
     fn test_get_deps_single_file_simple() -> Result<()> {
         let dir = tempdir()?;
@@ -266,6 +277,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that get deps single file mixed types.
     #[test]
     fn test_get_deps_single_file_mixed_types() -> Result<()> {
         let dir = tempdir()?;
@@ -302,6 +314,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that get deps multiple files dedup sort.
     #[test]
     fn test_get_deps_multiple_files_dedup_sort() -> Result<()> {
         let dir = tempdir()?;
@@ -362,6 +375,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that get deps invalid toml propagates error.
     #[test]
     fn test_get_deps_invalid_toml_propagates_error() -> Result<()> {
         let dir = tempdir()?;

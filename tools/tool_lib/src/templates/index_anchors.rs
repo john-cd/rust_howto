@@ -1,6 +1,6 @@
 //! Index anchors for `mdbook-indexing`.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 use serde::Serialize;
@@ -23,8 +23,10 @@ pub(super) static INDEX_ANCHORS: &str =
 ///
 /// Returns an error if the index-anchor template cannot be loaded or rendered.
 pub fn create_index_anchors(keywords: Vec<&str>) -> Result<String> {
+    /// Template data used to render anchors for the book index.
     #[derive(Serialize)]
     struct Context<'a> {
+        /// Keywords associated with the example.
         keywords: Vec<&'a str>,
     }
     let tt = super::get_template_engine()?;

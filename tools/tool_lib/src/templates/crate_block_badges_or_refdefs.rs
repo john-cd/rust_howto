@@ -1,6 +1,6 @@
 //! The templates of the badges and reference definitions of a crate block.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 use serde::Serialize;
@@ -86,17 +86,29 @@ pub fn create_crate_block_badges_or_refdefs(
     #[derive(Serialize)]
     /// Context data used for rendering templates.
     struct Context<'a> {
+        /// The name of the crate being described.
         crate_name: &'a str,
+        /// Whether a description was provided.
         description_defined: bool,
+        /// The crate description, if one was provided.
         description: &'a str,
+        /// Whether a documentation URL was provided.
         documentation_defined: bool,
+        /// The documentation URL, if one was provided.
         documentation: &'a str, // URL e.g. https://docs.rs/{crate}
+        /// Whether a homepage URL was provided.
         homepage_defined: bool,
+        /// The homepage URL, if one was provided.
         homepage: &'a str, /* URL e.g. https://github.com/sollimann/bonsai, https://serde.rs */
+        /// Whether a source repository URL was provided.
         repository_defined: bool,
-        repository: &'a str,   // URL e.g. https://github.com/serde-rs/serde
+        /// The source repository URL, if one was provided.
+        repository: &'a str, // URL e.g. https://github.com/serde-rs/serde
+        /// Whether a GitHub repository was detected.
         github_detected: bool, // The repository is hosted on GitHub.
+        /// The GitHub account that owns the repository.
         github_user: &'a str,
+        /// The GitHub repository name.
         github_repo: &'a str,
     }
 
@@ -418,47 +430,56 @@ mod tests {
         );
     }
 
+    /// Verifies that simple crate directive.
     #[test]
     fn test_simple_crate_directive() {
         assert_captures_crate_name("{{#crate crt}}", "crt");
     }
 
+    /// Verifies that crate directive trailing space.
     #[test]
     fn test_crate_directive_trailing_space() {
         assert_captures_crate_name("{{#crate crt }}", "crt");
     }
 
+    /// Verifies that crate directive colon.
     #[test]
     fn test_crate_directive_colon() {
         assert_captures_crate_name("{{#crate: crt}}", "crt");
     }
 
+    /// Verifies that crate directive space colon space.
     #[test]
     fn test_crate_directive_space_colon_space() {
         assert_captures_crate_name("{{#crate : crt}}", "crt");
     }
 
+    /// Verifies that crate directive hyphen underscore.
     #[test]
     fn test_crate_directive_hyphen_underscore() {
         assert_captures_crate_name("{{#crate x_y-z}}", "x_y-z");
     }
 
+    /// Verifies that crate directive with additional categories.
     #[test]
     fn test_crate_directive_with_additional_categories() {
         assert_captures_crate_name("{{#crate: crt cat1 cat-2 cat-2-2 cat3::sub-cat-3 }}", "crt");
     }
 
+    /// Verifies that no match missing crate name.
     #[test]
     fn test_no_match_missing_crate_name() {
         assert_no_match("{{#crate}}");
         assert_no_match("{{#crate }}");
     }
 
+    /// Verifies that no match example directive.
     #[test]
     fn test_no_match_example_directive() {
         assert_no_match("{{#example some_example}}");
     }
 
+    /// Verifies that multiple directives in content.
     #[test]
     fn test_multiple_directives_in_content() {
         let re = &*CRATE_BLOCK_RE;
@@ -472,6 +493,7 @@ mod tests {
         assert!(names.contains(&"anyhow"), "expected 'anyhow' in {names:?}");
     }
 
+    /// Verifies that process crate block directives no directives.
     #[test]
     fn test_process_crate_block_directives_no_directives() {
         let content = "# Hello\n\nNo directives here.\n";

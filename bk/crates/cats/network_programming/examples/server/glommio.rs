@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates the usage of the `glommio` library for
 //! asynchronous I/O operations in Rust.
@@ -109,6 +110,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the glommio example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

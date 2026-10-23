@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `lazy_static` defines statically initialized values that are
 //! computed lazily at runtime. It can be particularly useful for initializing
@@ -21,6 +22,7 @@ use lazy_static::lazy_static;
 //   language per se.
 lazy_static! {
     // `CONFIG` is a lazily-initialized HashMap that holds configuration data.
+/// Configuration map initialized once and shared by all callers.
     static ref CONFIG: HashMap<String, String> = {
         let mut m = HashMap::new();
         m.insert("host".to_owned(), "localhost".to_owned());
@@ -28,10 +30,12 @@ lazy_static! {
         m
     };
     // You can call a method or a function:
+/// Number of entries in the lazily initialized configuration map.
     static ref COUNT: usize = CONFIG.len();
 
     // `COUNTER` is a lazily-initialized Mutex-protected integer counter.
     // The `Mutex` ensures that the COUNTER can be safely incremented from multiple threads, if needed.
+/// Mutex-protected counter initialized on first use.
     static ref COUNTER: Mutex<i32> = Mutex::new(0);
 }
 

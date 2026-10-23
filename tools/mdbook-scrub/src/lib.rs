@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! An `mdbook` preprocessor that scrubs hidden chapters and wikilinks.
+//!
+//! TODO Reviewed ??-??-2026.
+
 mod conf;
 mod regexes;
 

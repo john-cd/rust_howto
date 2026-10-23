@@ -1,6 +1,6 @@
 //! Getting the list of categories of `crates.io`.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod categories_from_toml;
 mod request;

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates a simple `riker` actor that receives a message.
 
@@ -98,7 +99,6 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the actor system starts and receives a message.
     #[test]
     fn test_main() -> Result<()> {
         main()

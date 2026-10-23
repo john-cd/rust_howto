@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `syn` is a library for parsing Rust code into a syntax tree.
 //! It is used in procedural macros to manipulate Rust code at compile time.
@@ -32,6 +33,7 @@ fn simple() -> Result<()> {
 fn m() -> anyhow::Result<()> {
     // Example Rust code to parse:
     let code = r"
+/// Returns the input incremented by one.
         fn example_function(x: i32) -> i32 {
             x + 1
         }

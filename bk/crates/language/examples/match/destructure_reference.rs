@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Destructuring references.
 
@@ -20,6 +21,7 @@ fn main() {
     let _value: i32 = *reference;
 
     // Note that it won't work if the underlying type is not `Copy`:
+    /// A value type that does not implement `Copy`.
     struct NotCopyStruct;
     let _reference = &NotCopyStruct;
     // let &value = _reference; // Error[E0507]: cannot move out of `*reference`

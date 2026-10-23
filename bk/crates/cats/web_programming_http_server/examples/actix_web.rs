@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates a basic Actix Web server.
 //!
@@ -41,6 +42,7 @@ mod tests {
 
     use super::*;
 
+    /// Verifies the server's network-facing response.
     #[actix_web::test]
     async fn require_network() -> std::io::Result<()> {
         let app = test::init_service(App::new().service(greet)).await;

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates a simple linear regression example using the
 //! `linfa` and `linfa-linear` crates. It showcases how to create a dataset, fit

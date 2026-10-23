@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Finds the maximum value in an array using `crossbeam` for concurrency.
 
@@ -16,6 +17,7 @@ fn main() {
 /// Returns the maximum value of the array, searching its halves in parallel
 /// threads.
 fn find_max(arr: &[i32]) -> Option<i32> {
+    /// Maximum slice length handled without spawning another thread.
     const THRESHOLD: usize = 2;
 
     // If the array is small enough, find the maximum sequentially.

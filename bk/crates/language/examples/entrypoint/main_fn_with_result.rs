@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Example of a `main` function returning a `Result`,
 //! in this case a specialized `Result` type for I/O operations.
@@ -28,6 +29,7 @@ pub fn run() -> std::io::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the main fn with result example's main path succeeds.
     #[test]
     fn test_main() {
         assert!(main().is_err());

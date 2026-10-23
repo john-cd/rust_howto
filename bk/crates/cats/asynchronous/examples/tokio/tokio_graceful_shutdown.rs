@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Graceful shutdown of nested subsystems with `tokio_graceful_shutdown`.
 

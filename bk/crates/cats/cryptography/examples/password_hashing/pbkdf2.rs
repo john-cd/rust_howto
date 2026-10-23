@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates the use of PBKDF2 for password hashing and verification.
 
@@ -15,6 +16,7 @@ use ring::rand::SecureRandom as _;
 
 /// Demonstrates the use of PBKDF2 for password hashing and verification.
 fn main() -> Result<(), Unspecified> {
+    /// Number of bytes in the password-hashing credential.
     const CREDENTIAL_LEN: usize = digest::SHA512_OUTPUT_LEN;
     let n_iter = NonZeroU32::new(100_000).unwrap();
     let rng = rand::SystemRandom::new();
@@ -67,6 +69,7 @@ pub fn run() -> Result<(), Unspecified> {
 mod tests {
     use super::*;
 
+    /// Verifies that the pbkdf2 example's main path succeeds.
     #[test]
     fn test_main() {
         println!("{:?}", main());

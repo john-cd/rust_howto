@@ -4,7 +4,7 @@
 // Adapted from https://github.com/RealAtix/mdbook-private (Razvan Nicolescu).
 //! mdBook 0.5-compatible private chapter and comment filtering.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::sync::LazyLock;
 
@@ -57,6 +57,7 @@ impl Preprocessor for Private {
             .config
             .get::<Config>("preprocessor.private")?
             .unwrap_or_default();
+        /// Matches private code blocks that should be removed from the rendered book.
         static BLOCK: LazyLock<Regex> = LazyLock::new(|| {
             Regex::new(r"<!--\s*private\b\s*[\r?\n]?((?s).*?)[\r?\n]?\s*-->[\r?\n]?")
                 .expect("valid private comment expression")

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: C
 //! Build script examples for `development_tools_build_utils`.
 //!
@@ -54,6 +55,7 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Verifies that build functions are defined.
     #[test]
     fn test_build_functions_are_defined() {
         // Just assert they are valid syntax.

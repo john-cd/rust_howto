@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! Generates files from templates for the book.
+//!
+//! TODO Reviewed ??-??-2026.
+
 use anyhow::anyhow;
 use tool_lib::create_category_badge;
 use tool_lib::create_crate_block;

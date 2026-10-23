@@ -1,6 +1,6 @@
 //! Runs the `tiberius` SQL Server example when the `mssql` feature is enabled.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(feature = "mssql")]
 mod tiberius;

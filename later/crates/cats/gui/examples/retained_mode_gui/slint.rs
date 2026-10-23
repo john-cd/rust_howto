@@ -3,6 +3,7 @@
 // methods.
 #![allow(clippy::same_name_method)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A window defined with `slint`.
 

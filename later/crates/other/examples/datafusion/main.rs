@@ -1,6 +1,6 @@
 //! Runs the `datafusion` query example.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod datafusion;
 

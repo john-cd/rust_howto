@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates generating shell completions with `clap_complete`.
 
@@ -58,7 +59,6 @@ pub fn run() -> std::io::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the example can generate a completion script.
     #[test]
     fn test_main() -> std::io::Result<()> {
         main()

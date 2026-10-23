@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Parses category hierarchy data from TOML.
+//!
+//! TODO Reviewed ??-??-2026.
+
 use anyhow::Context as _;
 use anyhow::Result;
 

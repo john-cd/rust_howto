@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A simple `PolkaVM` host example.
 //!
@@ -41,6 +42,7 @@ struct HostState {
     counter: u32,
 }
 
+/// Runs the emulator example.
 fn main() -> ExampleResult<()> {
     run_guest(guest_path_from_args())
 }
@@ -91,6 +93,7 @@ fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
     );
     println!("Exports: {export_names:?}");
 
+    /// Name of the WebAssembly function exported by the guest module.
     const EXPECTED_EXPORT: &str = "add_one_with_host";
     if !export_names.iter().any(|name| name == EXPECTED_EXPORT) {
         println!(
@@ -152,11 +155,13 @@ pub fn run() -> ExampleResult<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that no guest path prints usage.
     #[test]
     fn no_guest_path_prints_usage() {
         run_guest(None).unwrap();
     }
 
+    /// Verifies that host runtime builds.
     #[test]
     fn test_host_runtime_builds() {
         let mut config = Config::default();

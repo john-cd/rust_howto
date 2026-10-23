@@ -1,10 +1,12 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Passing preprocessor definitions to C code compiled with the `cc` crate.
 
 // Declare an external C function that a build script could link in.
 unsafe extern "C" {
+    /// Prints application details from the linked C implementation.
     fn print_app_info();
 }
 

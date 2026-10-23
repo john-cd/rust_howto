@@ -1,6 +1,6 @@
 //! Layered application settings with the `config` crate.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 use config::Config;

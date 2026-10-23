@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This module contains an example of verifying Rust code using Kani.
 //!
@@ -118,6 +119,7 @@ mod tests {
         main();
     }
 
+    /// Checks addition for positive, zero, and negative inputs.
     #[test]
     fn test_add() {
         assert_eq!(add(2, 3), 5);
@@ -125,6 +127,7 @@ mod tests {
         assert_eq!(add(-1, 1), 0);
     }
 
+    /// Verifies that add corner case.
     #[test]
     #[should_panic(expected = "Oh no, a failing corner case!")]
     fn test_add_corner_case() {

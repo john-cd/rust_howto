@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Fixed-capacity collections from the `heapless` crate.
 

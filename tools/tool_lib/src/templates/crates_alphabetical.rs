@@ -1,6 +1,6 @@
 //! The alphabetical index of crates.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::collections::BTreeMap;
 
@@ -40,6 +40,7 @@ pub fn create_alphabetical_crate_page_section<'a>(
 mod tests {
     use super::*;
 
+    /// Verifies that create alphabetical crate page section empty.
     #[test]
     fn test_create_alphabetical_crate_page_section_empty() {
         let first_letter = "A";
@@ -50,6 +51,7 @@ mod tests {
         assert_eq!(result, "## A\n\n");
     }
 
+    /// Verifies that create alphabetical crate page section one crate.
     #[test]
     fn test_create_alphabetical_crate_page_section_one_crate() {
         let first_letter = "A";
@@ -63,6 +65,7 @@ mod tests {
         );
     }
 
+    /// Verifies that create alphabetical crate page section multiple crates.
     #[test]
     fn test_create_alphabetical_crate_page_section_multiple_crates() {
         let first_letter = "A";
@@ -76,6 +79,7 @@ mod tests {
         );
     }
 
+    /// Verifies that create alphabetical crate page section links recipes.
     #[test]
     fn test_create_alphabetical_crate_page_section_links_recipes() {
         let mut links = BTreeMap::new();

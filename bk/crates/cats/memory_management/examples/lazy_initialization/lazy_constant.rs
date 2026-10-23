@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates the use of the `lazy_static` crate.
 
@@ -8,6 +9,7 @@ use std::collections::HashMap;
 use lazy_static::lazy_static;
 
 lazy_static! {
+/// Permissions keyed by user name, initialized on first access.
     static ref PRIVILEGES: HashMap<&'static str, Vec<&'static str>> = {
         let mut map = HashMap::new();
         map.insert("James", vec!["user", "admin"]);

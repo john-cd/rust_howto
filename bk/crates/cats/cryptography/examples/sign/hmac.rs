@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use the `ring` crate to generate an HMAC
 //! (Hash-based Message Authentication Code) signature for a message and then
@@ -49,6 +50,7 @@ pub fn run() -> Result<(), Unspecified> {
 mod tests {
     use super::*;
 
+    /// Verifies that the hmac example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main().map_err(|_| anyhow::anyhow!("hmac.rs failure"))?;

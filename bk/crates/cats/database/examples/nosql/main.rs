@@ -1,6 +1,6 @@
 //! Runs one of the `nosql` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(any(feature = "mongodb", feature = "redis"))]
 use clap::Parser;

@@ -1,6 +1,6 @@
 //! Runs the `Default` trait example.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 pub mod default;
 

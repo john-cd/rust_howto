@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Filtering the lines of a log file with a set of regular expressions.
 
@@ -43,6 +44,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Text processed by the regular-expression example.
     static EXAMPLE_TEXT: &str = r#"
 Lorem ipsum dolor sit amet version "0.1.2"
 127.0.0.1:443 consectetur adipisicing elit

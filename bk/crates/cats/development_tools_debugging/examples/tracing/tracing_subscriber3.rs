@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to enable or
 //! disable layers at runtime based on a configuration flag.
@@ -75,6 +76,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the tracing subscriber3 example's main path succeeds.
     #[test]
     fn test_main() {
         use std::fs;

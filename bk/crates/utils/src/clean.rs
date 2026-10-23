@@ -1,6 +1,6 @@
 //! Removing the content of a folder.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::fs;
 use std::fs::DirEntry;

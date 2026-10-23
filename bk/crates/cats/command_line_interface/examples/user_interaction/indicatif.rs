@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A styled progress spinner with `indicatif` and `console`.
 
@@ -66,6 +67,7 @@ fn spinner() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs the indicatif example.
 fn main() -> anyhow::Result<()> {
     spinner()?;
     Ok(())

@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! Command-line entry point of the `mdbook-private` preprocessor.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. See LICENSE for details.
 use std::env;

@@ -1,5 +1,6 @@
 #![cfg(target_os = "linux")]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates how to define a PyO3 Python module in Rust, register it with
 //! `sys.modules`, and invoke its functions from embedded Python code.
@@ -101,8 +102,6 @@ pub fn run() -> PyResult<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that `main` runs successfully and executes the embedded Python
-    /// script.
     #[test]
     fn test_main() -> PyResult<()> {
         main()

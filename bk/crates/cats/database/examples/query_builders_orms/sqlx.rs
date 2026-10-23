@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates basic usage of the `sqlx` crate for interacting
 //! with a SQLite database.

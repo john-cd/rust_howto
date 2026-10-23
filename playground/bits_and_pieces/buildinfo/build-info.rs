@@ -1,6 +1,6 @@
 //! Placeholder for a build information example.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 // // List build info, incl. dependencies
 // //

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example shows how to POST a file to a server.
 
@@ -177,8 +178,7 @@ mod tests {
         Ok(request)
     }
 
-    /// Verifies that file bytes are posted and a successful response is
-    /// returned.
+    /// Verifies that the server receives the file bytes and returns success.
     #[tokio::test]
     async fn posts_file_bytes_to_local_server() -> Result<()> {
         let (address, server) = start_server(
@@ -216,8 +216,7 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that reqwest request construction errors propagate to the
-    /// caller.
+    /// Verifies that request-construction errors propagate to the caller.
     #[tokio::test]
     async fn invalid_endpoint_returns_request_error() -> Result<()> {
         let directory = tempfile::tempdir()?;

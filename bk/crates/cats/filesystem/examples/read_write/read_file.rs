@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates writing to and reading from a file.
 
@@ -85,6 +86,7 @@ pub fn run() -> Result<(), io::Error> {
 mod tests {
     use super::*;
 
+    /// Verifies that the read file example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A* pathfinding on a grid with the `pathfinding` crate.
 
@@ -10,14 +11,17 @@ use pathfinding::prelude::astar;
 /// This example finds the shortest path on a 2D grid from (0, 0) to (4, 4),
 /// avoiding some blocked cells.
 fn main() {
+    /// Represents an x-y position in the A* search grid.
     #[derive(Clone, Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
     struct Pos(i32, i32);
 
     impl Pos {
+        /// Returns the Manhattan distance between the two grid positions.
         fn distance(&self, other: &Self) -> u32 {
             self.0.abs_diff(other.0) + self.1.abs_diff(other.1)
         }
 
+        /// Returns the states reachable from the current state in one step.
         fn successors(&self) -> Vec<(Self, u32)> {
             let &Self(x, y) = self;
             vec![

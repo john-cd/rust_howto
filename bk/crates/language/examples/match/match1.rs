@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example defines different types of US coins using an `enum` and then
 //! uses a `match` expression to determine the value of a given coin in cents,

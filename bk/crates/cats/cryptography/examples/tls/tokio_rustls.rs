@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates an async TLS client using `tokio-rustls`.
 
@@ -59,6 +60,7 @@ async fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+/// Verifies the test main behavior.
     #[tokio::test]
     #[ignore = "Requires network"]
     async fn test_main() {

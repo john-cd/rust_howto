@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Returning references and owned values from functions.
 
@@ -32,6 +33,8 @@ fn use_literal() -> &'static str {
 /// Use a static variable.
 fn use_static() -> &'static str {
     // Statics have by default a `'static` lifetime.
+    /// Static string returned by the function to demonstrate a `'static`
+    /// reference.
     static MY_STATIC: &str = "hello";
     MY_STATIC
 }
@@ -39,6 +42,7 @@ fn use_static() -> &'static str {
 /// Use a constant.
 fn use_const() -> &'static str {
     // Constants have by default a `'static` lifetime.
+    /// Constant string returned by the function to compare reference lifetimes.
     const MY_CONST: &str = "hello";
     MY_CONST
 }

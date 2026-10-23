@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Generating a GraphQL server from a database with Seaography.
 //!
@@ -125,8 +126,6 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the generated GraphQL query returns the post inserted into
-    /// SQLite.
     #[test]
     fn generated_graphql_query_returns_inserted_post() -> anyhow::Result<()> {
         run()

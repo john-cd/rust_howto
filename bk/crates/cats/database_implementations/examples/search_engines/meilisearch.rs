@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This is an example of how to use the MeiliSearch Rust SDK to index and
 //! search documents.
@@ -99,6 +100,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example against its required external service.
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         unsafe {

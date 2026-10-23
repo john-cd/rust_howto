@@ -1,6 +1,6 @@
 //! Tera filters.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 // Filters are functions with the
 // fn(Value, HashMap<String, Value>) -> Result<Value>

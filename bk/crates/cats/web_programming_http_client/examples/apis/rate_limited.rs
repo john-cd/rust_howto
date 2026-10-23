@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Calculate how long to wait after hitting a GitHub REST API rate limit.
 //!
@@ -89,8 +90,10 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Fixed Unix timestamp used to make rate-limit calculations deterministic.
     const NOW: u64 = 1_700_000_000;
 
+    /// Returns the fixed Unix timestamp used by the rate-limiter example.
     fn now() -> SystemTime {
         UNIX_EPOCH + Duration::from_secs(NOW)
     }
@@ -100,6 +103,7 @@ mod tests {
         main()
     }
 
+    /// Verifies that success does not wait.
     #[test]
     fn success_does_not_wait() -> Result<()> {
         assert_eq!(
@@ -109,6 +113,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that expired window waits zero.
     #[test]
     fn expired_window_waits_zero() -> Result<()> {
         let mut headers = HeaderMap::new();
@@ -124,6 +129,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that retry after takes precedence.
     #[test]
     fn retry_after_takes_precedence() -> Result<()> {
         let mut headers = HeaderMap::new();
@@ -140,6 +146,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that secondary limit waits a minute.
     #[test]
     fn secondary_limit_waits_a_minute() -> Result<()> {
         assert_eq!(
@@ -153,6 +160,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that plain forbidden is not a rate limit.
     #[test]
     fn plain_forbidden_is_not_a_rate_limit() -> Result<()> {
         assert_eq!(

@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Example of (non-)dyn-compatible traits.
 

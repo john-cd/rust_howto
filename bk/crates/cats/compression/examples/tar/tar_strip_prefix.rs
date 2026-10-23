@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to extract a tar archive while stripping a
 //! common prefix from the paths of the extracted files.
@@ -71,6 +72,7 @@ mod tests {
 
     use super::*;
 
+    /// Verifies that the tar strip prefix example's main path succeeds.
     #[test]
     fn test_main() -> Result<()> {
         let work_dir = std::env::temp_dir().join(format!(

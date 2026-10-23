@@ -7,7 +7,7 @@
 //!
 //! See <https://crates.io/crates/skeptic> for configuration.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::path::Path;
 

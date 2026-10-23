@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use the `clap` crate to parse command-line
 //! arguments.
@@ -21,6 +22,7 @@ use clap::Subcommand;
 // Alternatively, use `#[command(name = "MyApp")]`, etc...
 #[command(author, version, about, long_about = None)]
 // Displays Help if no arguments are provided:
+/// Stores the command-line options accepted by the example.
 #[command(arg_required_else_help = true)]
 pub struct Cli {
     // Positional argument example.
@@ -133,6 +135,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the clap example's main path succeeds.
     #[test]
     fn test_main() {
         println!("{:?}", main());

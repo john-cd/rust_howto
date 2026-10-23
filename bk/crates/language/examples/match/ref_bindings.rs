@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Variable binding moves or copies the bound value by default.
 //! Use `ref` or `ref mut` to get a reference instead.
@@ -11,6 +12,7 @@
 /// reference.
 fn main() {
     // A sample tuple struct with an inner field that is not `Copy`:
+    /// Newtype used to show how match bindings borrow or move a value.
     #[derive(Debug)]
     struct My(String);
 

@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A small Leptos counter example showing reactive signals and view mounting.
 //!
@@ -61,6 +62,7 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
+    /// Verifies that the leptos example's main path succeeds.
     #[test]
     fn test_main() {
         #[cfg(not(feature = "leptos-support"))]

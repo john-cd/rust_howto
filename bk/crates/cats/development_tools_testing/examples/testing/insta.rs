@@ -1,6 +1,4 @@
 //! Snapshot testing with `insta`.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 
@@ -8,6 +6,8 @@
 pub fn run() {
     main();
 }
+
+// TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 // Snapshot testing with the `insta` crate keeps track of how your data

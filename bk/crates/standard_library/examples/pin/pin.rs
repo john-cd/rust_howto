@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Pinning values with `Pin` and `PhantomPinned`.
 
@@ -58,8 +59,10 @@ fn main() {
     // does not move in the `unsafe` code. Here, we have exclusive control of
     // `y`.
     {
+        /// Demonstrates a type that does not implement `Unpin`.
         struct NotUnpin {
             // The `PhantomPinned` field makes the struct as `!Unpin`.
+            /// Pinning marker used by the example.
             _pin: PhantomPinned,
         }
 
@@ -84,6 +87,7 @@ fn main() {
     // does not implement `Unpin` is to put that value inside a `Box` and
     // then wrapping it in a `Pin`.
     // Example fom <https://doc.rust-lang.org/std/pin/struct.Pin.html#pinning-a-value-inside-a-box>.
+    /// Returns the input incremented by one when awaited.
     async fn add_one(x: u32) -> u32 {
         x + 1
     }
@@ -106,8 +110,10 @@ fn main() {
     // heap allocation. <https://doc.rust-lang.org/std/pin/macro.pin.html>.
     use core::pin::pin;
 
+    /// Type used to demonstrate pinning a mutable reference.
     struct Foo;
 
+    /// Accepts a pinned mutable reference to a `Foo` value.
     fn stuff(_foo: Pin<&mut Foo>) {
         // ...
     }

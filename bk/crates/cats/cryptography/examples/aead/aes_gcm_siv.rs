@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use the `aes-gcm-siv` crate to encrypt and
 //! decrypt data using the AES-GCM-SIV algorithm (Misuse-Resistant Authenticated
@@ -72,6 +73,7 @@ pub fn run() -> Result<(), aes_gcm_siv::Error> {
 mod tests {
     use super::*;
 
+    /// Verifies that the aes gcm siv example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

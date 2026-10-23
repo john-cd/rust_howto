@@ -1,6 +1,6 @@
 //! Detecting differences between texts.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use similar::ChangeTag;
 use similar::TextDiff;

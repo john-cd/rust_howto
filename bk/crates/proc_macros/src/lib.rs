@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: attribute_macro
 //! Procedural macros used by the book's examples: an attribute, a derive, a
 //! function-like and a `proc-macro2` macro.

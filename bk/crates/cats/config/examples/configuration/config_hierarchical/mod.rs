@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use the `config` crate to load
 //! application configuration.
@@ -171,6 +172,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the mod example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

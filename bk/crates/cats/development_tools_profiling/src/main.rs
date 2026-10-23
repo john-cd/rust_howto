@@ -1,6 +1,6 @@
 //! Memory usage and timing examples.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 /// Examples that analyze memory usage and measure time.
 mod memory_usage_analysis {

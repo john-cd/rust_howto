@@ -1,6 +1,6 @@
 //! Runs the gpu abstraction layers example.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(feature = "wgpu")]
 mod wgpu;

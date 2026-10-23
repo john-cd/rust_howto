@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `dhat` provides heap profiling and ad-hoc profiling capabilities,
 //! similar to those provided by `DHAT`, a powerful heap profiler that
@@ -66,6 +67,7 @@ fn adhoc_profiling() {
     #[cfg(feature = "dhat-ad-hoc")]
     let _profiler = dhat::Profiler::new_ad_hoc();
 
+    /// Allocates sample data to create a visible profiling hotspot.
     fn hot_function() {
         #[cfg(feature = "dhat-ad-hoc")]
         dhat::ad_hoc_event(1);
@@ -96,6 +98,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that heap usage testing.
     #[test]
     fn heap_usage_testing() {
         // `testing()` allows the use of dhat::assert! and related macros,

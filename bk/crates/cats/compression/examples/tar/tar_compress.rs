@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(clippy::incompatible_msrv)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This function creates a compressed tar archive (tar.gz) of the 'tests'
 //! directory.
@@ -44,6 +45,7 @@ pub fn run() -> Result<(), std::io::Error> {
 mod tests {
     use super::*;
 
+    /// Verifies that the tar compress example's main path succeeds.
     #[test]
     fn test_main() {
         let _cwd_lock = crate::CWD_LOCK.lock().unwrap();

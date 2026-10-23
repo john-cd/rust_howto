@@ -1,6 +1,6 @@
 //! Runs the Arrow data processing example when the `arrow` feature is enabled.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A `no_std` example using only `core` and a fixed-size stack buffer.
 //!

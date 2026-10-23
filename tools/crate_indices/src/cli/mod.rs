@@ -1,6 +1,6 @@
 //! Command-line interface of the crate indices tool.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::ffi::OsString;
 use std::io;

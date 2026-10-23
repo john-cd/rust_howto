@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Example demonstrating the use of `pulldown-cmark` to parse Markdown and
 //! convert it to HTML.
@@ -27,6 +28,7 @@ This is a simple paragraph with **bold** and *italic* text.
 * List item 2
 
 ```rust
+/// Prints the greeting embedded in the Markdown code fence.
 fn example() {
     println!("Hello from Rust!");
 }

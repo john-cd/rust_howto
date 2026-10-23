@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Calling Rust from Ruby with `rutie`.
 
@@ -23,6 +24,7 @@ use rutie::VM;
 // Note: In a real rutie project, you'd use macros to export this.
 // This is a simplified representation for documentation.
 
+/// Prints a greeting to the console.
 pub extern "C" fn hello(
     _argc: i32,
     _argv: *const rutie::types::Value,

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use the `fake` crate to generate fake data
 //! for testing. It covers basic usage, generating data for custom structs, and

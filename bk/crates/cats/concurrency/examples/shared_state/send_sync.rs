@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates safe concurrent access to shared data
 //! using `Arc` (Atomic Reference Counting) and `Mutex` (Mutual Exclusion).

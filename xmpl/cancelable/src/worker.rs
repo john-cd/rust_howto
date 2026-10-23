@@ -1,6 +1,6 @@
 //! A worker thread that runs queued tasks.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::thread;
 

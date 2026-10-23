@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to call C functions from Rust.
 //! It uses the `cc` crate to compile a C file into a static library,
@@ -23,7 +24,9 @@ fn prompt(s: &str) -> Result<String> {
 }
 
 unsafe extern "C" {
+    /// Prints a greeting to the console.
     fn hello();
+    /// Greets the supplied user.
     fn greet(name: *const c_char);
 }
 
@@ -49,6 +52,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the cc bundled static1 example's main path succeeds.
     #[test]
     #[ignore = "Needs review"]
     fn test_main() {

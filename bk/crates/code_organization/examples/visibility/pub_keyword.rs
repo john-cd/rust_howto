@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused_imports)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The `pub` keyword on functions, types, traits and modules.
 

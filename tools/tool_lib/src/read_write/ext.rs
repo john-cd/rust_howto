@@ -1,6 +1,6 @@
 //! Manipulating file extensions.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::ffi::OsStr;
 use std::ffi::OsString;
@@ -58,6 +58,7 @@ pub fn extend_extension<P: AsRef<Path>>(filepath: &P, insert: &str) -> PathBuf {
 mod tests {
     use super::*;
 
+    /// Verifies that the ext example's main path succeeds.
     #[test]
     fn test_main() {
         assert_eq!(

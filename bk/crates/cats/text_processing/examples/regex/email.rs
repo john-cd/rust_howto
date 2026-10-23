@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Extracting the login of an email address with a regular expression.
 
@@ -9,15 +10,16 @@ use regex::Regex;
 /// Returns the login part of the first email address in `input`.
 fn extract_login(input: &str) -> Option<&str> {
     lazy_static! {
-        static ref RE: Regex = Regex::new(
-            r"(?x)
+    /// Matches the email address format demonstrated by this example.
+            static ref RE: Regex = Regex::new(
+                r"(?x)
             ^(?P<login>[^@\s]+)@
             ([[:word:]]+\.)*
             [[:word:]]+$
             "
-        )
-        .unwrap();
-    }
+            )
+            .unwrap();
+        }
     let cap = RE.captures(input)?;
     cap.name("login").map(|login| login.as_str())
 }

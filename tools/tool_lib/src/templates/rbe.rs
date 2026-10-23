@@ -1,6 +1,6 @@
 //! The Rust By Example badge.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 use serde::Serialize;
@@ -21,8 +21,10 @@ pub(super) static RBE: &str = "
 /// concept: name of the language element / Rust By Example book
 /// chapter e.g. "attributes"
 pub fn create_rbe_badge(concept: &str) -> Result<String> {
+    /// Template data used to render a Rust By Example badge.
     #[derive(Serialize)]
     struct RbeContext {
+        /// The concept demonstrated by the example.
         concept: String,
     }
 
@@ -38,6 +40,7 @@ pub fn create_rbe_badge(concept: &str) -> Result<String> {
 mod tests {
     use super::*;
 
+    /// Verifies that create rbe badge basic.
     #[test]
     fn test_create_rbe_badge_basic() {
         let rendered = create_rbe_badge("attributes").expect("input should parse");
@@ -45,6 +48,7 @@ mod tests {
         assert_eq!(rendered, expected);
     }
 
+    /// Verifies that create rbe badge formatting.
     #[test]
     fn test_create_rbe_badge_formatting() {
         // Test concept with hyphens, underscores, and spaces
@@ -59,6 +63,7 @@ mod tests {
         );
     }
 
+    /// Verifies that create rbe badge empty.
     #[test]
     fn test_create_rbe_badge_empty() {
         let rendered = create_rbe_badge("").expect("input should parse");

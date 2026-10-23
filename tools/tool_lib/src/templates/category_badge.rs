@@ -1,6 +1,6 @@
 //! The template of a category badge.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 use serde::Serialize;
@@ -22,9 +22,12 @@ pub(super) static CAT_BADGE: &str =
 ///
 /// Returns an error if the category badge template cannot be loaded or rendered.
 pub fn create_category_badge(category: &str, slug: &str) -> Result<String> {
+    /// Template data used to render a crate category badge.
     #[derive(Serialize)]
     struct Context<'a> {
+        /// The category name.
         category: &'a str,
+        /// The URL-friendly category identifier.
         slug: &'a str,
     }
     let tt = super::get_template_engine()?;

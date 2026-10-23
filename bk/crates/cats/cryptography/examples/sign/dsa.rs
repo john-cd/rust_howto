@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates the use of the ECDSA (Elliptic Curve Digital
 //! Signature Algorithm) with the P-256 curve for signing and verifying a

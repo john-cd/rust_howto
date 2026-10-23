@@ -1,6 +1,6 @@
 //! The `open` subcommand.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::path::PathBuf;
 

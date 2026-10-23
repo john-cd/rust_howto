@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Formatting strings with `print!`, `format!` and `write!`.
 
@@ -90,7 +91,9 @@ fn format() {
     #[allow(dead_code)]
     #[derive(Debug)]
     struct Point {
+        /// The horizontal coordinate.
         x: i32,
+        /// The vertical coordinate.
         y: i32,
     }
     let p = Point { x: 10, y: 20 };

@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates basic usage of the `axum` web framework.
 //!
@@ -77,6 +78,7 @@ fn create_app() -> Router {
 }
 // ANCHOR_END: example
 
+/// Verifies the test root behavior.
 #[tokio::test]
 async fn test_root() -> anyhow::Result<()> {
     use axum::body::Body;
@@ -96,6 +98,7 @@ async fn test_root() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies the test get user behavior.
 #[tokio::test]
 async fn test_get_user() -> anyhow::Result<()> {
     use axum::body::Body;
@@ -113,6 +116,7 @@ async fn test_get_user() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies the test fallback behavior.
 #[tokio::test]
 async fn test_fallback() -> anyhow::Result<()> {
     use axum::body::Body;

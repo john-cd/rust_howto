@@ -1,6 +1,6 @@
 //! Placeholder for a code coverage example.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 // LATER
 

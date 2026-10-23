@@ -1,6 +1,6 @@
 //! A recipe, a list of crates that work together.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use serde::Serialize;
 

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Destructuring tuples, arrays and structs into variables.
 
@@ -14,8 +15,11 @@ fn main() {
 
     println!("x: {x}, y: {y}");
 
+    /// Represents a two-dimensional point.
     struct Point {
+        /// The horizontal coordinate.
         x: i32,
+        /// The vertical coordinate.
         y: i32,
     }
 

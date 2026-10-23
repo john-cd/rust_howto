@@ -1,4 +1,7 @@
+//! Example functions for splitting a path into its components.
+
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 
 // Indices of / in the path

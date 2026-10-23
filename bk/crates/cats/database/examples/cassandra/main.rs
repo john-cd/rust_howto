@@ -1,6 +1,6 @@
 //! Runs one of the `cassandra` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(feature = "cassandra")]
 use clap::Parser;
@@ -35,6 +35,7 @@ enum Commands {
     CdrsTokio,
 }
 
+/// Runs the cassandra example.
 fn main() -> anyhow::Result<()> {
     run()
 }

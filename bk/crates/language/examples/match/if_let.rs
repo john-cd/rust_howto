@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The `if let` syntax allows you to combine `if` and `let`
 //! to handle values that match a specific pattern, while ignoring others.
@@ -22,6 +23,7 @@ fn main() {
         _ => {} // Required because `match` is exhaustive.
     };
 
+    /// Specifies one of the supported movement directions.
     enum Direction {
         Left,
         Right,

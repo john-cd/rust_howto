@@ -1,18 +1,18 @@
 //! Runs the `tokio-postgres` example as an integration test.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(feature = "postgres")]
 mod tokio_postgres;
 
+/// Runs the postgres example.
 #[cfg(feature = "postgres")]
 fn main() -> anyhow::Result<()> {
     tokio_postgres::main()?;
     Ok(())
 }
 
-/// Runs the example against the server at `TEST_PG_URL`, skipping if it is
-/// unset.
+/// Runs the example when `TEST_PG_URL` is set and skips when it is unset.
 #[cfg(feature = "postgres")]
 #[test]
 fn require_external_svc() -> anyhow::Result<()> {

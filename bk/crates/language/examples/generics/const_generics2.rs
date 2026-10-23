@@ -1,5 +1,6 @@
 #![allow(unused)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A trait with an associated constant, implemented for arrays of any length.
 
@@ -16,6 +17,7 @@ trait FixedSizeBuffer {
 // With const generics, we can implement this for any array of bytes:
 impl<const N: usize> FixedSizeBuffer for [u8; N] {
     // The capacity is the array size.
+    /// Capacity of the array implementing this trait.
     const CAPACITY: usize = N;
 
     fn get_buffer(&self) -> &[u8] {

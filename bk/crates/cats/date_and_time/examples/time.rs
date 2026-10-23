@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrate various functionalities of the `time` crate.
 
@@ -53,8 +54,6 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies parsing and formatting work with the configured `time`
-    /// features.
     #[test]
     fn time_example_parses_and_formats_values() -> anyhow::Result<()> {
         main()

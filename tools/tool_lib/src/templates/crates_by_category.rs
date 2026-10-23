@@ -1,6 +1,6 @@
 //! The page of crates by category.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::collections::BTreeSet;
 use std::collections::HashSet;
@@ -236,6 +236,7 @@ mod tests {
     use super::super::RecipeLink;
     use super::*;
 
+    /// Verifies that create category and crates.
     #[test]
     fn test_create_category_and_crates() {
         let category = " Encoding ";
@@ -260,6 +261,7 @@ mod tests {
         assert!(result.contains("{{hi:hex}}"));
     }
 
+    /// Verifies that create category and crates empty.
     #[test]
     fn test_create_category_and_crates_empty() {
         let category = "Empty";
@@ -278,6 +280,7 @@ mod tests {
         assert!(result.ends_with('|'));
     }
 
+    /// Verifies that category row preserves existing markdown entities.
     #[test]
     fn category_row_preserves_existing_markdown_entities() {
         let row = create_category_and_crates(
@@ -293,6 +296,7 @@ mod tests {
         assert!(!row.contains("&amp;amp;"));
     }
 
+    /// Verifies that category page from metadata handles duplicates renames and missing categories.
     #[test]
     fn category_page_from_metadata_handles_duplicates_renames_and_missing_categories() {
         let inventory = ["shared", "shared", "new-name", "std"].map(str::to_owned);
@@ -324,6 +328,7 @@ mod tests {
         assert!(page.contains("| Uncategorized | No metadata is recorded. |"));
     }
 
+    /// Verifies that category page from metadata nests recipe links under their crates.
     #[test]
     fn category_page_from_metadata_nests_recipe_links_under_their_crates() {
         let inventory = ["glam", "vello"].map(str::to_owned);
@@ -354,6 +359,7 @@ mod tests {
         ));
     }
 
+    /// Verifies that category page from metadata includes crates found only in recipes.
     #[test]
     fn category_page_from_metadata_includes_crates_found_only_in_recipes() {
         let inventory = ["known".to_owned(), "std".to_owned()];
@@ -384,6 +390,7 @@ mod tests {
         ));
     }
 
+    /// Verifies that category page from metadata is deterministic.
     #[test]
     fn category_page_from_metadata_is_deterministic() {
         let metadata = r#"
@@ -402,6 +409,7 @@ mod tests {
         );
     }
 
+    /// Verifies that category page from metadata rejects duplicate slugs.
     #[test]
     fn category_page_from_metadata_rejects_duplicate_slugs() {
         let metadata = r#"

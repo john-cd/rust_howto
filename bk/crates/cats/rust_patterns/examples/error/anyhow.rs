@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates the use of the `anyhow` crate for error handling.
 
@@ -35,6 +36,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the anyhow example's main path succeeds.
     #[test]
     fn test_main() {
         let res = main();

@@ -4,7 +4,7 @@
 //! This example parses a simple struct syntax tree, generates a `Debug`
 //! implementation, and prints the resulting token stream.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;

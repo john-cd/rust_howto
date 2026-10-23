@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Aggregating rows with SQL in a PostgreSQL database.
 
@@ -21,6 +22,7 @@ struct Nation {
 /// Connects to a PostgreSQL database, queries artist nationalities and their
 /// counts, and prints the results. Data from
 // <https://github.com/MuseumofModernArt/collection/tree/main>.
+/// Runs the aggregate data example.
 fn main() -> Result<(), Error> {
     // The connection URL is formatted as
     // `postgresql://<user>:<password>@<host>/<db>`, for example
@@ -56,8 +58,7 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
-    /// Runs the example against a PostgreSQL server; needs the external
-    /// service.
+    /// Runs the integration example against a PostgreSQL service.
     #[test]
     fn require_external_svc() -> Result<(), Error> {
         if std::env::var("PG_URL").is_err() {

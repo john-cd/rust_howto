@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A Tokio `oneshot` channel that carries a single value between tasks.
 
@@ -40,6 +41,7 @@ async fn one_shot() {
     println!("{res}");
 }
 
+/// Runs the async channels oneshot example.
 #[tokio::main]
 async fn main() {
     one_shot().await;

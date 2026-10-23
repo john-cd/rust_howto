@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example shows how to filter CSV data based on a query.
 //! It reads CSV data from a string, filters rows where any field matches the

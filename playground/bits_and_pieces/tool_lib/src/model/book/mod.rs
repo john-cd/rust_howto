@@ -1,6 +1,6 @@
 //! The objects that make up the book.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod chapter;
 mod exampleindex;

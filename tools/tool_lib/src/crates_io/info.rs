@@ -1,6 +1,6 @@
 //! Retrieves crate metadata and retains contextual lookup failures.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Context as _;
 use anyhow::Result;
@@ -30,6 +30,7 @@ fn get_info_for_crate_with(
 mod tests {
     use super::*;
 
+    /// Sample crates.io API response used by the request parsing tests.
     const CRATE_RESPONSE: &str = r#"{
         "crate": {
             "id": "fixture-crate",

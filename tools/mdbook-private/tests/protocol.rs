@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! Tests of the preprocessor protocol exchanged with `mdbook`.
+//!
+//! TODO Reviewed ??-??-2026.
+
 use std::io::Write as _;
 use std::process::Command;
 use std::process::Output;

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `autocfg` probes compiler support for use in Cargo build scripts.
 //!
@@ -29,7 +30,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that the probe runs without Cargo's build-script environment.
     #[test]
     fn probe_runs_outside_build_script() {
         main();

@@ -1,6 +1,6 @@
 //! Tests of an mdBook preprocessor.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(test)]
 mod tests {

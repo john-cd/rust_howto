@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The `bytemuck` crate provides functions for reinterpreting one type as
 //! another without use of `unsafe`, whenever this is safe e.g. because both

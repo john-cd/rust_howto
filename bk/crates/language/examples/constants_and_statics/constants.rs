@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `const` Example.
 
@@ -34,20 +35,24 @@ fn main() {
         _ => unreachable!(),
     }
 
+    /// Static copy of `LEN`, initialized from the constant.
     static MY_LEN: usize = LEN; // Use to initialize a `static`.
 
     // Use as a "const generic" parameter:
+    /// Wraps an integer array whose length is selected by a const generic.
     struct Foo<const N: usize>([i32; N]);
     let _foo = Foo::<LEN>([0; 5]);
 
     // A constant's value can be calculated from an expression
     // at _compile_ time:
+    /// Number of seconds in one hour.
     const SECONDS_IN_ONE_HOUR: u32 = 60 * 60;
 
     // Of course, not all expressions can be evaluated at compile-time.
     // "Constant expressions" can only include literals, as above;
     // other constants; read-only statics; const parameters; and calls to
     // "const fn" functions.
+    /// Compile-time sum that also uses the size of `u32`.
     const C: usize = LEN + MY_LEN + std::mem::size_of::<u32>(); // `size_of` is `const fn`.
 
     // The following is prohibited, because the expression's value can only be
@@ -63,6 +68,7 @@ fn main() {
     println!("The length again: {refer}");
 
     // Let's create a struct that implements a `Drop` destructor:
+    /// Prints a message when its value is dropped.
     struct PrintOnDrop(&'static str);
 
     impl Drop for PrintOnDrop {
@@ -73,10 +79,12 @@ fn main() {
     }
 
     // Simply declaring a constant does not result in a call to `Drop`.
+    /// Constant value whose destructor is not run when it is unused.
     const POD: PrintOnDrop = PrintOnDrop("This message does not appear.");
 
     // However, variables initialized with a constant follow normal `Drop`
     // behavior.
+    /// Constant used to demonstrate that a copied temporary is dropped.
     const POD2: PrintOnDrop = PrintOnDrop("Dropped.");
     let _pod = POD2;
     let _pod1 = POD2;

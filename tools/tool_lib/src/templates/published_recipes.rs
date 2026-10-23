@@ -1,6 +1,6 @@
 //! Read the recipe tables included in the published example index.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::collections::BTreeMap;
 use std::collections::BTreeSet;
@@ -141,6 +141,7 @@ mod tests {
 
     use super::*;
 
+    /// Verifies that collect published recipe links deduplicates and maps multiple crates.
     #[test]
     fn collect_published_recipe_links_deduplicates_and_maps_multiple_crates() {
         let directory = tempdir().expect("input should parse");
@@ -186,6 +187,7 @@ mod tests {
         assert_eq!(recipes["crate-c"][0].title, "Directive recipe");
     }
 
+    /// Verifies that collect published recipe links rejects includes outside book source.
     #[test]
     fn collect_published_recipe_links_rejects_includes_outside_book_source() {
         let directory = tempdir().expect("input should parse");

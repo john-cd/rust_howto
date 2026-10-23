@@ -1,5 +1,6 @@
 #![allow(unused)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `bitflags` generate types for C-style flags with ergonomic APIs.
 
@@ -13,12 +14,17 @@ bitflags! {
     #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
     // You can derive additional traits on generated flags types if you enable the corresponding features:
     // #[derive(Serialize, Deserialize)]
+/// Flags that can be combined with bitwise operations.
     pub struct MyFlags: u32 {
         // A flag is a set of bits that may have a unique name.
+/// First independent flag bit.
         const FLAG_A       = 0b0000_0001;
+/// Second independent flag bit.
         const FLAG_B       = 0b0000_0010; // Or 1 << 1;
+/// Third independent flag bit.
         const FLAG_C       = 0b0000_0100;
         // Flags that set multiple bits are possible:
+/// Combination of the three independent flag bits.
         const FLAG_ABC     = Self::FLAG_A.bits()
                            | Self::FLAG_B.bits()
                            | Self::FLAG_C.bits();

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `tracing` crate for logging
 //! events.
@@ -75,6 +76,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the tracing example's main path succeeds.
     #[test]
     fn test_main() {
         tracing_subscriber::fmt()

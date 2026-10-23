@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use the `ignore` crate to traverse a
 //! directory recursively, respecting `.gitignore` and similar files, and
@@ -53,6 +54,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the ignore example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

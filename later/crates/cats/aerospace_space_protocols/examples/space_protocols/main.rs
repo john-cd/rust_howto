@@ -1,9 +1,10 @@
 //! Runs the space protocols example.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod space_protocols;
 
+/// Runs the space protocols example.
 fn main() {
     space_protocols::run();
 }

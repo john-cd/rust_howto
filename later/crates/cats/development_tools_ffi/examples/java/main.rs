@@ -1,6 +1,6 @@
 //! Compiles the Java JNI example on any supported Rust target.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(feature = "java")]
 mod jni;

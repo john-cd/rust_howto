@@ -1,6 +1,6 @@
 //! Runs the vector example.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod vectors;
 

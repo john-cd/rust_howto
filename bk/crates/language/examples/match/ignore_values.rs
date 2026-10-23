@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Ignoring values in patterns with `_` and `..`.
 
@@ -16,6 +17,7 @@ fn main() {
     println!("Some numbers: first = {first}, last = {last}");
 
     // Use `_` to ignore a value completely:
+    /// Prints the second argument while ignoring the first.
     fn foo(_: i32, y: i32) {
         // The first parameter is ignored.
         println!("y is: {y}");

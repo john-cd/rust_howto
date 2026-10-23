@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Prints the great-circle distance between Paris and London.
 
@@ -14,6 +15,7 @@ fn haversine_distance_kilometers(
     latitude2_degrees: f64,
     longitude2_degrees: f64,
 ) -> f64 {
+    /// Mean radius of Earth in kilometers.
     const EARTH_RADIUS_KILOMETERS: f64 = 6371.0;
 
     let latitude1 = latitude1_degrees.to_radians();
@@ -82,8 +84,8 @@ mod tests {
         assert!((distance - std::f64::consts::PI * 6371.0).abs() < 1e-9);
     }
 
-    /// Coincident points have zero distance, and Paris is about 344 km from
-    /// London.
+    /// Verifies zero distance for coincident points and about 344 km from Paris
+    /// to London.
     #[test]
     fn distance_matches_coincident_points_and_paris_to_london() {
         assert_eq!(haversine_distance_kilometers(48.0, 2.0, 48.0, 2.0), 0.0);

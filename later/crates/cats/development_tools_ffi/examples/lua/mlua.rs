@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `mlua` provides bindings to Lua programming language for Rust.
 //! By default, `mlua` does not enable any features.

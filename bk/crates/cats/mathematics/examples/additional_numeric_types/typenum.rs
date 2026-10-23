@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Type-level numbers with `typenum`.
 
@@ -47,10 +48,12 @@ fn main() {
     println!("U3 = {}", U3::USIZE);
 
     // Compute 2 + 3 at the type level.
+    /// Represents the type-level sum of two and three.
     type Five = Sum<U2, U3>;
     println!("U2 + U3 = {}", Five::USIZE);
 
     // Compute 2 * 3 at the type level.
+    /// Represents the type-level product of two and three.
     type Six = Prod<U2, U3>;
     println!("U2 * U3 = {}", Six::USIZE);
 

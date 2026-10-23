@@ -1,6 +1,6 @@
 //! Configuration of the `mdbook-scrub` preprocessor.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::default::Default;
 

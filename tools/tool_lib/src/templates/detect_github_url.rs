@@ -1,6 +1,6 @@
 //! Detecting GitHub URLs.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 /// Detect a GitHub URL, returning `(detected, username, repo)`, where `detected` is `true` if it is a proper Github URL,
 /// `false` otherwise. In the latter case, `username` and `repo` are empty string slices.
@@ -72,9 +72,7 @@ mod tests {
         }
     }
 
-    /// Verifies that invalid GitHub URLs, empty strings, whitespace, malformed URLs,
-    /// missing path segments, non-GitHub domains, and URLs with leading/trailing characters
-    /// return `false` with empty string slices `("", "")`.
+    /// Rejects malformed GitHub URLs, missing path segments, and non-GitHub domains.
     #[test]
     fn test_detect_github_url_invalid() {
         let invalid_cases = [

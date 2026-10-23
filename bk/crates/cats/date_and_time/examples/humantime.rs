@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates the `humantime` crate for parsing and formatting
 //! human-readable durations.
@@ -53,7 +54,6 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the duration and timestamp examples complete successfully.
     #[test]
     fn humantime_parses_and_formats_durations_and_timestamps()
     -> anyhow::Result<()> {

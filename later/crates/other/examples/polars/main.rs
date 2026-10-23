@@ -1,6 +1,6 @@
 //! Runs the `polars` data frame example.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(feature = "polars")]
 mod polars;

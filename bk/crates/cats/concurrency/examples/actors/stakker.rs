@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! An actor with the `stakker` crate: a counter that processes messages.
 
@@ -53,7 +54,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies the counter actor processes its queued messages.
     #[test]
     fn test_main() {
         main();

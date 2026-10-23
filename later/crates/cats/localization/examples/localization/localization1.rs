@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates locale-aware message selection using the `sys-locale` crate.
 //!
@@ -61,6 +62,7 @@ mod tests {
         main().unwrap();
     }
 
+    /// Verifies that translate greeting selects spanish.
     #[test]
     fn translate_greeting_selects_spanish() {
         assert_eq!(
@@ -69,6 +71,7 @@ mod tests {
         );
     }
 
+    /// Verifies that translate greeting defaults to english.
     #[test]
     fn translate_greeting_defaults_to_english() {
         assert_eq!(

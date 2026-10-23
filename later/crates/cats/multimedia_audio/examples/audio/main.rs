@@ -1,9 +1,10 @@
 //! Runs the audio example.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod audio;
 
+/// Runs the audio example.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     audio::run()?;
     Ok(())

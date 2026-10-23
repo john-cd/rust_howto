@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Connecting to Cassandra with the `cdrs-tokio` async client.
 
@@ -136,6 +137,7 @@ KEY, name TEXT, age INT);",
     Ok(())
 }
 
+/// Runs the cdrs tokio example.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     example().await
@@ -151,6 +153,7 @@ pub async fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the example against the configured Cassandra service.
     #[tokio::test]
     async fn require_external_svc() -> anyhow::Result<()> {
         run().await?;

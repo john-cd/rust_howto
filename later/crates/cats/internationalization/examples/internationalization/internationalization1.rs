@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates basic internationalization using `sys-locale` and `icu_locid`.
 //!
@@ -71,6 +72,7 @@ mod tests {
         main().unwrap();
     }
 
+    /// Verifies that render greeting returns english for unknown locale.
     #[test]
     fn render_greeting_returns_english_for_unknown_locale() {
         assert_eq!(
@@ -79,6 +81,7 @@ mod tests {
         );
     }
 
+    /// Verifies that render greeting returns portuguese for brazil.
     #[test]
     fn render_greeting_returns_portuguese_for_brazil() {
         assert_eq!(

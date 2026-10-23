@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use `deadpool-postgres` to manage a pool of
 //! PostgreSQL connections.
@@ -105,6 +106,7 @@ mod tests {
     #[ignore = "requires a reachable PostgreSQL service and PG__* environment variables"]
     async fn serves_concurrent_queries_through_the_pool() -> anyhow::Result<()>
     {
+        /// Maximum number of database queries run concurrently.
         const CONCURRENT_QUERIES: usize = 64;
 
         let pool = create_pool()?;

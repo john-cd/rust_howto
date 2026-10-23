@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates a simple TCP server that listens for a single
 //! connection, reads data from the connection, and then prints the received
@@ -56,6 +57,7 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Verifies that reads one local connection and returns.
     #[test]
     fn reads_one_local_connection_and_returns() -> Result<(), Error> {
         let listener = TcpListener::bind((Ipv4Addr::LOCALHOST, 0))?;

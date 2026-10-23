@@ -1,5 +1,6 @@
 #![allow(unused)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Example of a sealed trait, preventing external implementations.
 

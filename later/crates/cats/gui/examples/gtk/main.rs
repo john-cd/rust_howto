@@ -1,6 +1,6 @@
 //! Runs one of the `gtk` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 use clap::Parser;

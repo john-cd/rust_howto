@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The main function where the Objective-C interaction takes place.
 //! This function uses `unsafe` because it interacts with raw pointers and

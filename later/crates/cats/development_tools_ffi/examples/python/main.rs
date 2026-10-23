@@ -1,6 +1,6 @@
 //! Runs one of the `python` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(target_os = "linux")]
 use clap::Parser;

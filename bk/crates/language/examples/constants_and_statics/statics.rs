@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `static` Example.
 
@@ -16,6 +17,7 @@ fn main() {
     println!("Welcome to {APPLICATION_NAME} v{VERSION}");
 
     // Statics do not `Drop`.
+    /// Static value whose `Drop` implementation is not run at program exit.
     static POD: PrintOnDrop = PrintOnDrop("This message does not appear.");
 }
 

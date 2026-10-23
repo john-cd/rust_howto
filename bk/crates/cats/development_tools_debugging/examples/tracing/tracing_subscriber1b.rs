@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates how to log in JSON format.
 //! This is intended for production use with systems where structured logs are
@@ -65,6 +66,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the tracing subscriber1b example's main path succeeds.
     #[test]
     fn test_main() {
         use std::fs;

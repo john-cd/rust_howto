@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Destructuring in a `let` statement.
 
@@ -16,8 +17,11 @@ fn main() {
     // let (3, y) = t; // ERROR: refutable pattern in local binding.
 
     // Destructuring with structs:
+    /// Represents a two-dimensional point.
     struct Point {
+        /// The horizontal coordinate.
         x: i32,
+        /// The vertical coordinate.
         y: i32,
     }
 

@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![cfg(not(windows))]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs`
 //! is a Rust crate that provides support for integrating AFL with Rust
@@ -49,6 +50,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the afl example.
 pub fn run() {
     main();
 }
@@ -57,6 +59,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the afl example's main path succeeds.
     #[test]
     fn test_main() {
         // In a real fuzzing environment, this would run indefinitely.

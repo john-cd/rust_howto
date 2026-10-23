@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+//! Procedural macros used by the workspace's macro examples.
 
 use darling::FromDeriveInput;
 use proc_macro::TokenStream;
@@ -14,14 +14,17 @@ pub fn my_macro(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
     let name = input.ident;
     let expanded = quote! {
-        impl #name {
-            fn hello_world() {
-                println!("Hello, World! I am #name");
+            impl #name {
+    /// Prints a greeting that includes the type name.
+                fn hello_world() {
+                    println!("Hello, World! I am #name");
+                }
             }
-        }
-    };
+        };
     TokenStream::from(expanded)
 }
+
+// TODO Reviewed ??-??-2026
 
 // ANCHOR: attribute_macro
 /// This is an attribute macro example.
@@ -103,9 +106,10 @@ pub fn derive_debug(input: TokenStream) -> TokenStream {
 pub fn watt_macro(input: TokenStream) -> TokenStream {
     let input_str = input.to_string();
     let expanded = quote! {
-        fn watt_demo() {
-            println!("Watt macro received: {}", #input_str);
-        }
-    };
+    /// Prints the token stream passed to the procedural macro.
+            fn watt_demo() {
+                println!("Watt macro received: {}", #input_str);
+            }
+        };
     TokenStream::from(expanded)
 }

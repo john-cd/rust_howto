@@ -1,6 +1,6 @@
 //! The index of the examples of a book.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use serde::Serialize;
 

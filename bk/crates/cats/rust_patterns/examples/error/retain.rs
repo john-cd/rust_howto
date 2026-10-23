@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to avoid discarding errors during error
 //! conversions using the `anyhow` crate.
@@ -46,6 +47,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the retain example's main path succeeds.
     #[test]
     fn test_main() {
         use std::io::Write as _;

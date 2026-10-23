@@ -1,6 +1,6 @@
 //! Runs the OpenCV example on Linux when the `opencv` feature is enabled.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(all(target_os = "linux", feature = "opencv"))]
 mod opencv;

@@ -1,6 +1,6 @@
 //! Errors of the tasks.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::fmt::Display;
 use std::fmt::Formatter;

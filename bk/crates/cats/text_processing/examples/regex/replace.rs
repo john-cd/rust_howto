@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Reformatting dates with a regular expression replacement.
 
@@ -11,9 +12,10 @@ use regex::Regex;
 /// Rewrites the ISO 8601 dates in `before` as `MM/DD/YYYY`.
 fn reformat_dates(before: &str) -> Cow<'_, str> {
     lazy_static! {
-        static ref ISO8601_DATE_REGEX: Regex =
-            Regex::new(r"(?P<y>\d{4})-(?P<m>\d{2})-(?P<d>\d{2})").unwrap();
-    }
+    /// Captures the year, month, and day components of an ISO 8601 date.
+            static ref ISO8601_DATE_REGEX: Regex =
+                Regex::new(r"(?P<y>\d{4})-(?P<m>\d{2})-(?P<d>\d{2})").unwrap();
+        }
     ISO8601_DATE_REGEX.replace_all(before, "$m/$d/$y")
 }
 

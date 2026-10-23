@@ -1,10 +1,10 @@
 //! This example demonstrates how to check if a command line tool is installed
 //! and if it meets a minimum version requirement.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 #![cfg(not(windows))] // TODO make work on Windows
+
+// TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 use std::process::Command;

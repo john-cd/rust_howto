@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Types that can implement a trait.
 
@@ -65,6 +66,7 @@ fn main() {
     a.foo();
     let t = (1, 2.0);
     t.foo();
+    /// Prints the label used by the function-pointer example.
     fn bar() {
         println!("bar");
     }

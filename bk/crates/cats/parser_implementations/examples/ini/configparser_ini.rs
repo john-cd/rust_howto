@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates parsing INI text and using typed getters with
 //! `configparser`.

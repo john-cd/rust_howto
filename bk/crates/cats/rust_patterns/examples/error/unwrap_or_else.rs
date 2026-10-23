@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates the use of `unwrap_or` and `unwrap_or_else` for handling
 //! `Option` and `Result` types.
@@ -58,6 +59,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the unwrap or else example's main path succeeds.
     #[test]
     fn test_main() {
         use std::fs;

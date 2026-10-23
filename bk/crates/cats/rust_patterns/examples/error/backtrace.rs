@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use backtraces to debug errors.
 //!
@@ -72,6 +73,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the backtrace example's main path succeeds.
     #[test]
     fn test_main() {
         unsafe {

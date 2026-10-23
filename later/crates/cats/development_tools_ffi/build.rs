@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: BINDGEN
 //! Generates the bindings and the headers used by the FFI examples.
 

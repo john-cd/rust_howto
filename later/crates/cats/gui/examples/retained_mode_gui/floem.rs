@@ -1,10 +1,12 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A counter application with `floem`.
 
 use floem::prelude::*;
 
+/// Runs the floem example.
 pub fn main() {
     floem::launch(counter_view);
 }

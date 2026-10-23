@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The `kanal` crate is used for inter-thread communication, similar to Rust's
 //! standard `std::sync::mpsc` module but with additional features and

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to initialize the `wgpu` GPU abstraction layer
 //! without creating a window.
@@ -16,6 +17,7 @@ use std::task::RawWaker;
 use std::task::RawWakerVTable;
 use std::task::Waker;
 
+/// Runs the wgpu example.
 fn main() {
     block_on(async_main());
 }
@@ -76,14 +78,19 @@ fn block_on<F: Future>(mut future: F) -> F::Output {
 
 /// Returns a waker that does nothing.
 fn noop_waker() -> Waker {
+    /// Creates a raw waker that uses the shared no-op vtable.
     unsafe fn clone_raw(_: *const ()) -> RawWaker {
         RawWaker::new(ptr::null(), &VTABLE)
     }
 
+    /// Ignores a wake request because this waker schedules no work.
     unsafe fn wake_raw(_: *const ()) {}
+    /// Ignores a borrowed wake request because this waker schedules no work.
     unsafe fn wake_by_ref_raw(_: *const ()) {}
+    /// Does nothing when the raw waker data is dropped.
     unsafe fn drop_raw(_: *const ()) {}
 
+    /// No-op callbacks used to construct the example's `Waker`.
     static VTABLE: RawWakerVTable =
         RawWakerVTable::new(clone_raw, wake_raw, wake_by_ref_raw, drop_raw);
 

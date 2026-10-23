@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Basics of `async` functions and `Future`s: calling, awaiting and combining
 //! them.

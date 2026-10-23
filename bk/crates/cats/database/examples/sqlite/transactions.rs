@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates successful and rolled-back SQLite transactions.
 
@@ -150,8 +151,7 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that a unique-constraint error rolls back all transaction
-    /// changes.
+    /// Verifies that a unique-constraint error rolls back the transaction.
     #[test]
     fn duplicate_color_error_rolls_back_transaction() -> Result<()> {
         let mut connection = test_connection()?;
@@ -177,7 +177,6 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that the example handles the expected duplicate-color error.
     #[test]
     fn example_handles_expected_duplicate_error() -> Result<()> {
         main()

@@ -1,6 +1,6 @@
 //! Runs one of the `sqlite` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 use clap::Parser;
@@ -71,6 +71,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the sqlite example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

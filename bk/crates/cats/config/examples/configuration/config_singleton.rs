@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to load application configuration and store it
 //! in a singleton.
@@ -22,6 +23,7 @@ mod settings {
     fn config() -> &'static Config {
         // The configuration is stored in a `static`.
         // `OnceLock` can be written to only once and is thread-safe.
+        /// Lazily initialized application configuration shared by all callers.
         static CONFIG: OnceLock<Config> = OnceLock::new();
 
         // Get the config, initializing it if it was uninitialized.

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example shows how to create a simple gRPC client using the `tonic`
 //! crate to interact with the `Greeter` server.
@@ -44,8 +45,8 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Full-stack integration test that spawns the server from the sibling
-    /// `tonic` module and connects to it using the client.
+    /// Verifies a client can connect to the sibling server and complete a gRPC
+    /// call.
     #[tokio::test]
     async fn test_grpc_full_stack() -> anyhow::Result<()> {
         let port = 50052;

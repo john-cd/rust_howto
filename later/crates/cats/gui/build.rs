@@ -1,7 +1,7 @@
 //! Build script that runs the Tauri build helper when the `tauri` feature is
 //! enabled.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 /// Runs the Tauri build helper if the `tauri` feature is enabled.
 fn main() {

@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! End-to-end tests of the `mdbook-scrub` preprocessor.
+//!
+//! TODO Reviewed ??-??-2026.
+
 use std::io::Write as _;
 use std::process::Command;
 use std::process::Output;

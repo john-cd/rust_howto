@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Immutable Reference Example.
 
@@ -20,7 +21,9 @@ fn main() {
 
     // The `.` operator used to retrieve a field from a struct or enum also
     // automatically dereferences:
+    /// Struct used to demonstrate immutable borrowing through dereferencing.
     struct S {
+        /// The value stored in this field.
         field: u32,
     }
 

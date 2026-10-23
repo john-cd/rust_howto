@@ -1,6 +1,6 @@
 //! Objects that can be rendered with templates.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use serde::Serialize;
 

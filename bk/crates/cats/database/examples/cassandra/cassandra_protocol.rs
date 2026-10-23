@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Talking to Cassandra over its native protocol with `cassandra-protocol`.
 
@@ -26,6 +27,11 @@ use tokio::io::AsyncWriteExt as _;
 use tokio::net::TcpStream;
 
 /// Reads one protocol envelope from `stream`.
+/// Reads one Cassandra protocol envelope from the TCP stream.
+///
+/// # Errors
+///
+/// Returns an error if the stream ends early or the envelope cannot be decoded.
 #[allow(
     clippy::result_large_err,
     reason = "Keep the protocol crate's Result type, as in the calling example."

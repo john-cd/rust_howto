@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to define custom error types using `miette`
 //! and `thiserror`. It showcases various features like error codes, URLs, help
@@ -91,6 +92,8 @@ mod mylib {
     }
 
     /// Example function that fails.
+    /// Returns an error with source-code context to demonstrate Miette
+    /// diagnostics.
     #[expect(
         unreachable_code,
         reason = "the example returns an error on purpose"
@@ -115,6 +118,7 @@ mod mylib {
 
 use miette::Result;
 
+/// Runs the miette example.
 fn main() -> Result<()> {
     mylib::this_fails()?;
     Ok(())
@@ -131,6 +135,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the miette example's main path succeeds.
     #[test]
     fn test_main() {
         let res = main();

@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Renders a simple 2D scene into a Vello GPU texture.
 

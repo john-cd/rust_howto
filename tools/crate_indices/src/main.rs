@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! Generates the crate index pages of the book.
+//!
+//! TODO Reviewed ??-??-2026.
+
 mod cli;
 
 use std::collections::BTreeMap;
@@ -192,12 +194,16 @@ mod tests {
 
     use super::create_alphabetical_page;
 
+    /// Names of crates listed in the book's master crate inventory.
     const MASTER_CRATES: &str = include_str!("../../../bk/master/crates.txt");
 
+    /// Generated category index page checked into the book source.
     const CATEGORY_INDEX: &str = include_str!("../../../bk/src/indices/crates_by_category.md");
 
+    /// Category metadata used to generate the category index page.
     const CATEGORY_METADATA: &str = include_str!("../../../bk/master/crate_categories.toml");
 
+    /// Generated alphabetical index page checked into the book source.
     const ALPHABETICAL_INDEX: &str = include_str!("../../../bk/src/indices/crates_alphabetical.md");
 
     /// Ensures the category index covers the master list and published recipes.

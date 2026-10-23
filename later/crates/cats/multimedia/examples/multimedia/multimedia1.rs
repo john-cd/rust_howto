@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Play a simple sine tone using the `rodio` audio crate.
 //!
@@ -44,6 +45,7 @@ mod tests {
         main().unwrap();
     }
 
+    /// Verifies that create rodio output stream.
     #[test]
     fn create_rodio_output_stream() {
         let _result = DeviceSinkBuilder::open_default_sink(); // TODO review - this test is not really a unit test, but it does verify that we can create an output stream without panicking. It will fail if there is no audio output device available, which is common in CI environments. We could consider using a mock or virtual audio device for testing in the future.

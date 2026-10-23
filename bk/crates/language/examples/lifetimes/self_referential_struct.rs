@@ -1,6 +1,6 @@
 //! Alternatives to self-referential structs.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #![allow(dead_code)]
 

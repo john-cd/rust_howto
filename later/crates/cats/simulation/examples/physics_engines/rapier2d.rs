@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A ball falling onto the ground in a 2D physics simulation with `rapier2d`.
 

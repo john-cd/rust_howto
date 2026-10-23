@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Hashing and verifying a password with `scrypt`.
 
@@ -40,6 +41,7 @@ fn example() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+/// Runs the scrypt example.
 fn main() -> Result<(), Box<dyn Error>> {
     example()
 }

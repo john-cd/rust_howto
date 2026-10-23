@@ -1,4 +1,5 @@
-// TODO Reviewed ??-??-2026
+//! Hidden chapter fixture used to verify book preprocessing.
+
 // THIS IS HIDDEN
 
 // Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -18,8 +19,12 @@
 // exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
 // aute irure dolor in reprehenderit
 
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: component
+/// Component fixture containing the float field used by the scrubber example.
 struct Paddle {
+    /// The greeting displayed by the hidden fixture.
     hello: f32,
 }
 // ANCHOR_END: component

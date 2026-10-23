@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use the `prost` crate to serialize and
 //! deserialize a protobuf message.
@@ -54,7 +55,6 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies encoding and decoding preserve every field in the message.
     #[test]
     fn prost_round_trip_preserves_the_person_message() -> anyhow::Result<()> {
         main()

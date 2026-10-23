@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates transformations in 3D using the `nalgebra` crate:
 //! rotations, translations, and composing them into isometries.

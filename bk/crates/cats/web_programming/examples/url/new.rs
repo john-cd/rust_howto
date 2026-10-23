@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates how to build a URL by joining a base URL with a path.
 
@@ -14,6 +15,7 @@ use url::Url;
 ///
 /// Returns a `Result` containing the joined `Url` or a `ParseError`.
 fn build_github_url(path: &str) -> Result<Url, ParseError> {
+    /// GitHub base URL used to demonstrate URL parsing and joining.
     const GITHUB: &str = "https://github.com";
 
     let base =

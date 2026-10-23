@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Connecting to PostgreSQL with `tokio-postgres`.
 
@@ -116,6 +117,7 @@ async fn run_queries(client: &Client) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs the tokio postgres example.
 pub fn main() -> anyhow::Result<()> {
     tokio::runtime::Runtime::new()?.block_on(run())
 }

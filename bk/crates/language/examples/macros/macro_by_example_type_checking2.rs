@@ -1,5 +1,6 @@
 #![allow(unused)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Restricting the types a declarative macro accepts.
 
@@ -35,6 +36,8 @@ macro_rules! must_be_string {
         {
             const _: () = {
                 // This helper function *only* accepts a string slice.
+                /// Accepts a string slice to enforce the macro's literal type
+                /// check.
                 const fn must_be_string(_s: &str) {}
 
                 // This line will only compile if `$lit` is a string

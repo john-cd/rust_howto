@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Property-based testing with `proptest`.
 
@@ -26,8 +27,7 @@ mod tests {
     // 2. The result is equal to one of the inputs.
     proptest! {
         // Generate random integers in the range -1000 to 1000.
-        /// Checks that the maximum is at least both inputs and equals one of
-        /// them.
+    /// Checks that the maximum equals an input and is no smaller than either input.
         #[test]
         fn test_max_of_two(a in -1000..1000, b in -1000..1000) {
             let result = max_of_two(a, b);
@@ -49,8 +49,7 @@ mod tests {
     // 3. `is_even(n * 2)` should always be true.
     proptest! {
         // Generate integers across a wide range.
-        /// Checks that `is_even` agrees with the remainder of a division by
-        /// two.
+    /// Checks that `is_even` agrees with whether the input has zero remainder modulo two.
         #[test]
         fn test_is_even(n in -1000..1000) {
             // Property 1: Even numbers should always return true:

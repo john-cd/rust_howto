@@ -1,6 +1,4 @@
 //! Writing tests that pass, fail, return a `Result` or are ignored.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 #![allow(clippy::eq_op)]
@@ -9,6 +7,8 @@
 pub fn run() {
     main();
 }
+
+// TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 // This example demonstrates how to write unit tests.
@@ -53,9 +53,7 @@ fn main() {
 mod tests {
     use super::*;
 
-    /// Test functions must be free, monomorphic functions that take no
-    /// arguments, and commonly return `()` or `Result<T, E> where T:
-    /// Termination, E: Debug`.
+    /// Verifies that a larger rectangle can contain a smaller one.
     #[test]
     fn larger_can_hold_smaller() {
         let larger = Rectangle {
@@ -72,15 +70,14 @@ mod tests {
         // or `assert_ne!(...)`.
     }
 
-    /// This test passes if the code inside the function panics;
-    /// It fails if the code inside the function doesn't panic.
+    /// Verifies that the expected panic makes this test pass.
     #[should_panic]
     #[test]
     fn another() {
         panic!("Make this test fail");
     }
 
-    /// Example of test returning `Result`.
+    /// Verifies that returning `Ok` marks a result-returning test as passing.
     #[test]
     fn it_works() -> Result<(), String> {
         if 2 + 2 == 4 {
@@ -90,8 +87,7 @@ mod tests {
         }
     }
 
-    /// You may use the `ignore` attribute to bypass a long test during normal
-    /// testing.
+    /// Long-running test that is skipped during the normal test run.
     #[ignore = "This test takes an hour to run. Only run it manually when needed"]
     #[test]
     fn expensive_test() {

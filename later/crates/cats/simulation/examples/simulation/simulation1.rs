@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Simulate a simple 2D bouncing ball using the `rapier2d` physics engine.
 //!

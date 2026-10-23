@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! CQRS (Command Query Responsibility Segregation) is an architectural
 //! pattern that separates the models for reading and writing data.
@@ -352,6 +353,7 @@ mod query {
     // - Maintains a read-optimized representation of the data.
     // - Is updated by processing events from the Event Store.
     // - Uses a hashmap as an in-memory database for the read model.
+    /// Reads product data to answer queries in the CQRS example.
     pub struct QueryHandler<R: ProductRepository> {
         /// The repository of products to read from.
         read_repo: R,
@@ -450,6 +452,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that rebuild replaces snapshot and applies quantity updates.
     #[test]
     fn rebuild_replaces_snapshot_and_applies_quantity_updates() {
         let read_store = read_store::SimpleReadStore::new();
@@ -479,6 +482,7 @@ mod tests {
         assert_eq!(product.quantity(), 7);
     }
 
+    /// Verifies that negative quantity update returns error.
     #[test]
     fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
         let event_store = events::SimpleEventStore::new();
@@ -507,6 +511,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that get all products.
     #[test]
     fn test_get_all_products() {
         let read_store = read_store::SimpleReadStore::new();

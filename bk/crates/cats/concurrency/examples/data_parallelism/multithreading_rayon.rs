@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Parallel iterators with `rayon`: a sum of squares and an in-place update.
 

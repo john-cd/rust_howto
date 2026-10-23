@@ -1,6 +1,6 @@
 //! Cancelling tasks with tokens that are checked while the task runs.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::collections::BTreeMap;
 use std::sync::Arc;

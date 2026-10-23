@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(clippy::useless_vec)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Ways to use function-like macros: as expressions, statements, items and
 //! types.
@@ -59,6 +60,8 @@ fn use_thread_local() {
 /// Defines a constant `CONST` of the given type and value.
 macro_rules! const_maker {
     ($t:ty, $v:tt) => {
+        /// Constant emitted by the macro with the caller-supplied type and
+        /// value.
         const CONST: $t = $v;
     };
 }

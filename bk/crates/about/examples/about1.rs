@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates converting a byte slice representing an IPv6
 //! address to an `IpAddr` type.
@@ -34,6 +35,7 @@ fn example() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs the about1 example.
 fn main() -> anyhow::Result<()> {
     example()?;
     Ok(())
@@ -44,6 +46,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the about1 example behavior.
     #[test]
     fn test() -> anyhow::Result<()> {
         example()?;

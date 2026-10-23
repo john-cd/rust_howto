@@ -1,6 +1,4 @@
 //! Mocking a trait with `mockall`.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 
@@ -8,6 +6,8 @@
 pub fn run() {
     main();
 }
+
+// TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 // This example demonstrates how to use the `mockall` crate for mocking.
@@ -132,10 +132,7 @@ fn main() {
 mod tests {
     use super::*;
 
-    /// Tests the `get_user` method when a user is found.
-    ///
-    /// This test verifies that `get_user` returns the correct user when the
-    /// repository successfully finds a user by ID.
+    /// Verifies that `get_user` returns the user found by the repository.
     #[test]
     fn test_get_user_success() {
         let mut mock_repo = MockUserRepository::new();
@@ -170,10 +167,8 @@ mod tests {
         assert_eq!(user.email, "john@example.com");
     }
 
-    /// Tests the `get_user` method when a user is not found.
-    ///
-    /// This test verifies that `get_user` returns an error when the
-    /// repository does not find a user with the given ID.
+    /// Verifies that `get_user` returns an error when the repository finds no
+    /// user.
     #[test]
     fn test_get_user_not_found() {
         let mut mock_repo = MockUserRepository::new();
@@ -198,10 +193,8 @@ mod tests {
         assert_eq!(result.unwrap_err(), "User with id 999 not found");
     }
 
-    /// Tests the `update_user_email` method.
-    ///
-    /// This test verifies that `update_user_email` correctly updates a
-    /// user's email and saves the updated user to the repository.
+    /// Verifies that `update_user_email` saves the new address to the
+    /// repository.
     #[test]
     fn test_update_user_email() {
         let mut mock_repo = MockUserRepository::new();

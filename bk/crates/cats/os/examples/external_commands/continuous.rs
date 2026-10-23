@@ -1,6 +1,7 @@
 #![cfg(target_family = "unix")]
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to continuously read from the standard output
 //! of an external command, filter the output, and print the filtered lines. It

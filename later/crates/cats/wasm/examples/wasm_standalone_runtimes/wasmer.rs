@@ -1,6 +1,6 @@
 //! Running a WebAssembly module with the `wasmer` runtime.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 // #![allow(dead_code)]
 // // ANCHOR: example
@@ -75,6 +75,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the wasmer example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main();

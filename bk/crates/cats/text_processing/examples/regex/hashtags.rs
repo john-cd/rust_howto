@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Extracting hashtags from a text with a regular expression.
 
@@ -11,9 +12,10 @@ use regex::Regex;
 /// Returns the distinct hashtags in `text`.
 fn extract_hashtags(text: &str) -> HashSet<&str> {
     lazy_static! {
-        static ref HASHTAG_REGEX: Regex =
-            Regex::new(r"\#[a-zA-Z][0-9a-zA-Z_]*").unwrap();
-    }
+    /// Matches hashtags that start with a letter and continue with letters, digits, or underscores.
+            static ref HASHTAG_REGEX: Regex =
+                Regex::new(r"\#[a-zA-Z][0-9a-zA-Z_]*").unwrap();
+        }
     HASHTAG_REGEX
         .find_iter(text)
         .map(|mat| mat.as_str())

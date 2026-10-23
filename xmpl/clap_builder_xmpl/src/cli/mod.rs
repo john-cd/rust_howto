@@ -1,6 +1,6 @@
 //! The command-line interface: arguments, subcommands and their parsing.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use args::*;
 use clap::ArgMatches;

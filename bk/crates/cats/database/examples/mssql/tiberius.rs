@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Connects to a Microsoft SQL Server database, executes a query, and prints
 //! the result.
@@ -83,6 +84,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example against its required external service.
     #[test]
     #[ignore = "Requires an external Microsoft SQL Server instance"]
     fn require_external_svc() -> anyhow::Result<()> {

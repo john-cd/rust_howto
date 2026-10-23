@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![cfg(target_os = "linux")]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Calling Python from Rust with `pyo3`.
 
@@ -80,8 +81,6 @@ pub fn run() -> PyResult<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the embedded Python program and function calls run
-    /// successfully.
     #[test]
     fn test_main() -> PyResult<()> {
         main()

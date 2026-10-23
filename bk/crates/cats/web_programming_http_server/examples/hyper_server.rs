@@ -1,6 +1,6 @@
 //! Placeholder for an HTTP server with `hyper`.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 // // ANCHOR: example
 // // COMING SOON

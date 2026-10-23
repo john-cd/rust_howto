@@ -1,6 +1,6 @@
 //! Runs one of the `search_engines` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
 use clap::Parser;

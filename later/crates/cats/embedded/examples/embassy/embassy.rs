@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Embassy is an async runtime designed for embedded systems in Rust. It
 //! provides async capabilities to work with hardware, making it easier to

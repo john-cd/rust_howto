@@ -1,6 +1,6 @@
 //! Runs one of the `postgres` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(feature = "postgres")]
 use clap::Parser;
@@ -87,6 +87,7 @@ pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
 mod tests {
     use super::*;
 
+    /// Runs the example against its required external service.
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         let _lock = ENV_MUTEX.lock().unwrap();

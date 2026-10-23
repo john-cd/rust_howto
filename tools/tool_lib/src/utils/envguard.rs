@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Provides an environment-variable guard for serialized process-wide changes.
+//!
+//! TODO Reviewed ??-??-2026.
+
 /// Restores an environment variable to its original state when dropped.
 ///
 /// Callers must serialize access to the process environment while a guard is active.

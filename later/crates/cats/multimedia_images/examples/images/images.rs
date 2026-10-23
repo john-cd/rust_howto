@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Generate and save a simple RGB image using the `image` crate.
 //!
@@ -74,6 +75,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 mod tests {
     use super::*;
 
+    /// Verifies that gradient image round trips through png.
     #[test]
     fn gradient_image_round_trips_through_png()
     -> Result<(), Box<dyn Error + Send + Sync>> {
@@ -87,6 +89,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that build gradient image has expected pixel values.
     #[test]
     fn build_gradient_image_has_expected_pixel_values() {
         let img = build_gradient_image(3, 3);
@@ -96,6 +99,7 @@ mod tests {
         assert_eq!(img[(2, 2)], Rgb([255, 255, 255]));
     }
 
+    /// Verifies that single pixel gradient is black.
     #[test]
     fn single_pixel_gradient_is_black() {
         let img = build_gradient_image(1, 1);

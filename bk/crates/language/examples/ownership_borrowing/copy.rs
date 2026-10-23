@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Types that implement `Copy` are copied instead of moved.
 
@@ -15,6 +16,7 @@ fn main() {
 
     // It is possible to make a custom type `Copy` by using the `derive`
     // attribute:
+    /// Tuple struct whose `i32` value is copied when assigned.
     #[derive(Copy, Clone, Debug)]
     struct S(i32);
     // Notes:

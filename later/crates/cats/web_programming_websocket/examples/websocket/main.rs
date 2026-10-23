@@ -1,6 +1,6 @@
 //! Runs the WebSocket examples.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod async_tungstenite;
 mod tokio_tungstenite;

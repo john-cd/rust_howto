@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The `derive_more` crate extends Rust's built-in derive functionality to
 //! provide more automatic implementations for common traits.
@@ -92,10 +93,10 @@ fn main() {
 }
 
 // More complex example: Multiple derives on a single type.
+/// An amount of money.
 #[derive(
     Add, AddAssign, Sub, SubAssign, From, Into, Display, Debug, Clone, Copy,
 )]
-/// An amount of money.
 struct Amount(f64);
 
 // Custom error type with derive_more's `Error` trait.

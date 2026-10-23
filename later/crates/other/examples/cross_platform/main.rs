@@ -1,6 +1,6 @@
 //! Runs one of the `cross_platform` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 use clap::Parser;

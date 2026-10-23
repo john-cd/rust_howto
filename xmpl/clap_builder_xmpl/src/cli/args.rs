@@ -1,6 +1,6 @@
 //! The arguments of the command line that apply to the whole application.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::path::PathBuf;
 
@@ -92,6 +92,7 @@ mod tests {
     /// Tests that set or depend on `TOOL_CONFIG_FILE` / `TOOL_VERBOSE` hold this lock.
     static ENV_LOCK: Mutex<()> = Mutex::new(());
 
+    /// Acquires the shared environment-variable lock for a test.
     fn lock_env() -> MutexGuard<'static, ()> {
         // A failed test poisons the lock; the guarded data is `()`, so ignore that.
         ENV_LOCK.lock().unwrap_or_else(PoisonError::into_inner)
@@ -158,8 +159,7 @@ mod tests {
         );
     }
 
-    /// Verify that "--config" can be used globally
-    /// e.g. after a subcommand.
+    /// Verifies that `--config` works globally, including after a subcommand.
     #[test]
     fn test_arg_config_global() {
         let _guard = lock_env();

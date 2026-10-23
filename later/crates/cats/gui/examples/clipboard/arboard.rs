@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to interact with the system clipboard using
 //! the `arboard` crate.

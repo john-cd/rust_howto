@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates a basic HTTP server using the Loco framework.
 //! It defines a simple application with a controller and routes.
@@ -74,6 +75,10 @@ mod home {
     use super::*;
 
     /// A basic handler that returns a "Hello, World!" message.
+    /// Returns the plain-text greeting for the Loco route.
+    ///
+    /// The framework supplies the application state, which this handler does
+    /// not use.
     #[allow(
         clippy::result_large_err,
         reason = "Loco handlers use the framework's Result<Response> error type."
@@ -106,6 +111,7 @@ async fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the test app init behavior.
     #[tokio::test]
     async fn test_app_init() {
         // Verification that the main logic is accessible

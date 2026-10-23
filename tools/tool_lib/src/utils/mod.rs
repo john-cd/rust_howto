@@ -1,7 +1,7 @@
 //! Utilities: a guard for environment variables and a macro for lazily compiled
 //! regular expressions.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod envguard;
 
@@ -14,6 +14,7 @@ pub use envguard::EnvGuard;
 /// Compiles a regular expression literal once and caches it in a static.
 macro_rules! regex {
     ($re:literal $(,)?) => {{
+        /// Lazily compiled regular expression shared by the utility functions.
         static RE: once_cell::sync::OnceCell<regex::Regex> = once_cell::sync::OnceCell::new();
         RE.get_or_init(|| regex::Regex::new($re).unwrap())
     }};

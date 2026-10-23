@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A trait that requires another trait.
 
@@ -32,6 +33,7 @@ trait OutlinePrint: fmt::Display {
 /// otherwise.
 impl OutlinePrint for String {}
 
+/// Runs the supertraits example.
 fn main() {
     String::from("test").outline_print();
 }

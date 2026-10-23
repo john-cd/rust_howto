@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to extract unique links from a Wikipedia page.
 //!
@@ -17,15 +18,16 @@ use regex::Regex;
 /// `content`.
 fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
     lazy_static! {
-        static ref WIKI_REGEX: Regex = Regex::new(
-            r"(?x)
+    /// Matches Wikipedia article URLs in scraped text.
+            static ref WIKI_REGEX: Regex = Regex::new(
+                r"(?x)
                 \[\[(?P<internal>[^\[\]|]*)[^\[\]]*\]\]    # internal links
                 |
                 (url=|URL\||\[)(?P<external>http.*?)[ \|}] # external links
             "
-        )
-        .unwrap();
-    }
+            )
+            .unwrap();
+        }
 
     let links: HashSet<_> = WIKI_REGEX
         .captures_iter(content)

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A minimal `ggez` application that draws a greeting in a window.
 
@@ -16,6 +17,7 @@ use ggez::graphics::DrawParam;
 
 /// Holds the text drawn by the game.
 struct MainState {
+    /// Text displayed in the game window.
     greeting: graphics::Text,
 }
 

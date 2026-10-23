@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A broadcast channel from the `postage` crate: several receivers get every
 //! message.

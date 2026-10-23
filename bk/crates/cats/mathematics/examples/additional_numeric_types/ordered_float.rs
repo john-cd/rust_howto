@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The `ordered-float` crate provides a wrapper type `OrderedFloat` for
 //! floating-point numbers that can be used as keys in ordered collections

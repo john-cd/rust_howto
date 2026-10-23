@@ -1,7 +1,7 @@
 //! Draft of a test that walks the templates folder; it is not part of the
 //! crate.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::collections::HashMap;
 use anyhow::anyhow;

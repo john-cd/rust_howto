@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates the use of the `same_file` crate.
 
@@ -66,6 +67,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the loops example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         // mkdir -p /tmp/foo/bar/baz

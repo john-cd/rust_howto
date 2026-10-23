@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Parse Rust source code and query its syntax tree with Tree-sitter.
 
@@ -17,6 +18,7 @@ fn main() -> anyhow::Result<()> {
     parser.set_language(&language)?;
 
     let source = r#"
+/// Greets the supplied user.
 		fn greet() {
 			let message = "hello";
 			println!("{message}");

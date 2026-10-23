@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates the use of the `quote!` macro from the `quote`
 //! crate to generate Rust code dynamically. It shows how to create an

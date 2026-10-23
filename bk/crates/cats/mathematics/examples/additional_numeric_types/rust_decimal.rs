@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates the use of the `rust_decimal` crate for high-precision decimal
 //! arithmetic, which can be particularly useful for financial calculations.

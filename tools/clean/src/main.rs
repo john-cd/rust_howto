@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! Removes build artifacts and other generated files from the repository.
+//!
+//! TODO Reviewed ??-??-2026.
+
 use std::fs;
 use std::fs::DirEntry;
 use std::path::Path;
@@ -112,6 +114,7 @@ mod tests {
     }
 
     // Helper function to create a dummy directory structure for testing
+    /// Creates the dummy dir.
     fn create_dummy_dir(root: &Path) {
         fs::create_dir_all(root.join("temp")).expect("input should parse");
         fs::File::create(root.join("temp").join("file1.txt")).expect("input should parse");

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Example of using the `confy` crate for configuration management.
 
@@ -44,6 +45,7 @@ pub fn run() -> Result<(), confy::ConfyError> {
 mod tests {
     use super::*;
 
+    /// Verifies that loads defaults from an isolated config path.
     #[test]
     fn loads_defaults_from_an_isolated_config_path() -> anyhow::Result<()> {
         let dir = std::env::temp_dir().join(format!(

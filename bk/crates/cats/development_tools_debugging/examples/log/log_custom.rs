@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Configures and initializes the logging system using log4rs.
 
@@ -42,6 +43,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the log custom example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         std::fs::create_dir_all("temp/log/")?;

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to capture both standard output and standard
 //! error from an external command and redirect them to the same file.
@@ -52,6 +53,7 @@ pub fn run() -> Result<(), std::io::Error> {
 mod tests {
     use super::*;
 
+    /// Verifies that the error file example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         // Preparation.

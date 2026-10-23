@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A counter application with `iced`.
 
@@ -12,6 +13,7 @@ use iced::widget::column;
 use iced::widget::container;
 use iced::widget::text;
 
+/// Runs the iced example.
 pub fn main() -> iced::Result {
     iced::run(Counter::update, Counter::view)
 }

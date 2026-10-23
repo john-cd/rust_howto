@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Example of using the `reqwest` crate to create and delete a GitHub Gist.
 
@@ -127,8 +128,11 @@ mod tests {
 
     /// Holds one request captured by the local HTTP server.
     struct RecordedRequest {
+        /// The first line of the HTTP request.
         request_line: String,
+        /// The HTTP headers sent with the request.
         headers: String,
+        /// The request body.
         body: String,
     }
 
@@ -281,7 +285,7 @@ mod tests {
             .map_err(|_| anyhow!("local HTTP fixture thread panicked"))?
     }
 
-    /// Verifies token authorization, the gist JSON, and the create/delete
+    /// Verifies authorization, the gist payload, and the create/delete
     /// sequence.
     #[tokio::test]
     async fn creates_and_deletes_gist_with_authorization_and_json() -> Result<()>
@@ -350,8 +354,8 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that a failed create response is returned and no delete is
-    /// attempted.
+    /// Verifies that a failed create response is returned without a delete
+    /// request.
     #[tokio::test]
     async fn returns_create_status_failure_without_deleting() -> Result<()> {
         let (endpoint, server) = start_server(vec![(500, "{}")])?;
@@ -370,8 +374,7 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that a failed delete response is returned after the delete
-    /// request is sent.
+    /// Verifies that an error is returned when the delete request fails.
     #[tokio::test]
     async fn returns_delete_status_failure() -> Result<()> {
         let (endpoint, server) = start_server(vec![

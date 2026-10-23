@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates reading from a memory-mapped file.
 
@@ -54,6 +55,7 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Verifies that the memmap2 example's main path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         use std::fs;

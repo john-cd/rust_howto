@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use `rust-ini` to parse and manipulate INI
 //! files.
@@ -75,7 +76,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the `rust-ini` example parses and writes its configuration.
+    /// Verifies that the rust ini example's main path succeeds.
     #[test]
     fn rust_ini_example_parses_and_writes_configuration() -> anyhow::Result<()>
     {

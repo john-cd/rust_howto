@@ -1,6 +1,6 @@
 //! Writing and reading a zip archive asynchronously with `async_zip`.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 use async_zip::Compression;

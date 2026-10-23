@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates two key uses of the `cached` crate:
 //! - Simple function memoization with `#[cached]`,
@@ -19,7 +20,9 @@ fn fibonacci(n: u64) -> u64 {
     fibonacci(n - 1) + fibonacci(n - 2)
 }
 
-/// Cached function with custom time-to-live and max capacity.
+/// Returns simulated data for the requested cache key and caches the result.
+///
+/// The cache stores at most 50 entries and refreshes its 60-second TTL on hits.
 #[cached(
     // Max cache size:
     size = 50,

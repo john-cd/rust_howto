@@ -1,6 +1,6 @@
 //! Rendering objects with the Tera template engine.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::path::PathBuf;
 use std::sync::LazyLock;

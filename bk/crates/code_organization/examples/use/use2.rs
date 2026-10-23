@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Bringing a function into scope with `use`.
 
@@ -27,6 +28,7 @@ fn eat_at_restaurant() {
     hosting::add_to_waitlist();
 }
 
+/// Runs the use2 example.
 fn main() {
     eat_at_restaurant();
 }

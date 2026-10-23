@@ -1,7 +1,7 @@
 //! Manipulate src/refs/*-refs.md files that contain all the reference
 //! definitions for the book.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::fs::File;
 use std::io::BufRead as _;
@@ -75,6 +75,11 @@ mod tests {
     use super::*;
 
     // Helper to read file content.
+    /// Reads UTF-8 text from `path`.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the file cannot be opened or read.
     fn read_file_content<P: AsRef<Path>>(path: P) -> Result<String> {
         let mut file = File::open(path)?;
         let mut content = String::new();
@@ -83,6 +88,7 @@ mod tests {
     }
 
     // Write empty Vec.
+    /// Verifies that write each empty.
     #[test]
     fn test_write_each_empty() -> Result<()> {
         let dir = tempdir()?;
@@ -96,6 +102,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that write each vec string.
     #[test]
     fn test_write_each_vec_string() -> Result<()> {
         let dir = tempdir()?;
@@ -109,6 +116,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that write each ref vec string.
     #[test]
     fn test_write_each_ref_vec_string() -> Result<()> {
         let dir = tempdir()?;
@@ -123,6 +131,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that merge new file.
     #[test]
     fn test_merge_new_file() -> Result<()> {
         let dir = tempdir()?;
@@ -141,6 +150,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that merge existing file no new lines.
     #[test]
     fn test_merge_existing_file_no_new_lines() -> Result<()> {
         let dir = tempdir()?;
@@ -163,6 +173,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that merge existing file with new lines.
     #[test]
     fn test_merge_existing_file_with_new_lines() -> Result<()> {
         let dir = tempdir()?;
@@ -185,6 +196,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that merge empty file with new lines.
     #[test]
     fn test_merge_empty_file_with_new_lines() -> Result<()> {
         let dir = tempdir()?;

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The following demonstrates the use of the `pin_project` crate for pin
 //! projection.
@@ -103,6 +104,7 @@ struct SelfReferential {
     /// A marker that makes the type `!Unpin`.
     #[pin]
     // <------ This `#[pin]` is required to make `Struct` to `!Unpin`.
+    /// Marker that makes the type pinned.
     _marker: PhantomPinned,
     // This is equivalent to `#[pin_project(!Unpin)]`.
 }

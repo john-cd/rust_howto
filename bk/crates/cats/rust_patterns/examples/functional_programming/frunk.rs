@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates the `frunk` crate, a functional programming
 //! toolbelt for Rust.
@@ -68,9 +69,12 @@ fn main() {
     // representation.
     // -----------------------------------------------------------------------
 
+    /// Represents a two-dimensional point.
     #[derive(Generic, Debug, PartialEq)]
     struct Point {
+        /// The horizontal coordinate.
         x: f64,
+        /// The vertical coordinate.
         y: f64,
     }
 
@@ -86,17 +90,25 @@ fn main() {
     assert_eq!(h7, hlist![3.0f64, 4.0f64]);
 
     // Convert between two structurally identical types using `convert_from`.
+    /// Represents a three-dimensional point.
     #[derive(Generic)]
     struct Point3D {
+        /// The horizontal coordinate.
         x: f64,
+        /// The vertical coordinate.
         y: f64,
+        /// The depth coordinate.
         z: f64,
     }
 
+    /// Represents a three-dimensional vector.
     #[derive(Generic, Debug, PartialEq)]
     struct Vec3 {
+        /// The horizontal coordinate.
         x: f64,
+        /// The vertical coordinate.
         y: f64,
+        /// The depth coordinate.
         z: f64,
     }
 
@@ -121,17 +133,25 @@ fn main() {
     // converted without any hand-written boilerplate.
     // -----------------------------------------------------------------------
 
+    /// Represents a user before it is saved.
     #[derive(LabelledGeneric)]
     struct NewUser<'a> {
+        /// The first name.
         first_name: &'a str,
+        /// The last name.
         last_name: &'a str,
+        /// Age in years.
         age: usize,
     }
 
+    /// Represents a user after it is saved.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct SavedUser<'a> {
+        /// The first name.
         first_name: &'a str,
+        /// The last name.
         last_name: &'a str,
+        /// Age in years.
         age: usize,
     }
 
@@ -148,10 +168,14 @@ fn main() {
     assert_eq!(saved.age, 28);
 
     // `transform_from` additionally handles reordered fields via `Sculptor`.
+    /// Represents an archived user record.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct ArchivedUser<'a> {
+        /// Age in years.
         age: usize, // fields in a different order
+        /// The last name.
         last_name: &'a str,
+        /// The first name.
         first_name: &'a str,
     }
 

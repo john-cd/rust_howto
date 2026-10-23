@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `allow` attributes suppress specific warnings.
 //!
@@ -18,6 +19,7 @@
 use std::thread;
 
 // This struct is public but is not documented:
+/// Public unit struct used in the early-development attribute example.
 pub struct S;
 
 /// This function is defined but never called.

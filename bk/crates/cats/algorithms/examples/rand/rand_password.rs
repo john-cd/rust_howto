@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Generates a random password from a custom set of characters with `rand`.
 
@@ -8,11 +9,13 @@ use rand::RngExt as _;
 /// Prints a random password of fixed length.
 fn main() {
     // Define the character set to choose from:
+    /// Characters that may appear in the generated password.
     const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                             abcdefghijklmnopqrstuvwxyz\
                             0123456789)(*&^%$#@!~";
 
     // Define the length of the password:
+    /// Length of the generated password.
     const PASSWORD_LEN: usize = 15;
 
     // Get handle to the local `ThreadRng`, which implements `rand::CryptoRng`.

@@ -2,6 +2,6 @@
 //!
 //! Includes examples for kani.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod kani;

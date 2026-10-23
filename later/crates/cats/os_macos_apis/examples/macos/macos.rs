@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! A macOS-specific example using the `cocoa` crate to call native macOS APIs.
 //!
@@ -54,6 +55,7 @@ fn main() {
     println!("This example uses macOS APIs and is only supported on macOS.");
 }
 
+/// Runs the macos example.
 #[cfg(target_os = "macos")]
 fn main() {
     macos_impl::run();

@@ -1,6 +1,6 @@
 //! Runs one of the `tar` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;
@@ -66,6 +66,7 @@ mod tests {
 
     use super::*;
 
+    /// Creates a compressed tar archive from the fixture directory.
     #[test]
     fn test_compress() -> anyhow::Result<()> {
         let _cwd_lock = CWD_LOCK.lock().unwrap();
@@ -73,6 +74,7 @@ mod tests {
         Ok(())
     }
 
+    /// Extracts the compressed tar archive into the fixture directory.
     #[test]
     fn test_decompress() -> anyhow::Result<()> {
         let _cwd_lock = CWD_LOCK.lock().unwrap();
@@ -81,6 +83,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that strip prefix.
     #[test]
     fn test_strip_prefix() -> anyhow::Result<()> {
         let work_dir = std::env::temp_dir().join(format!(

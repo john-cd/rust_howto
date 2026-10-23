@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The unit type `()` and the never type `!`.
 
@@ -51,6 +52,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that `diverge` panics.
     #[should_panic]
     #[test]
     fn test_panic() {

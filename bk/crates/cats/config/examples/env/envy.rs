@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Examples for working with `.env` files and `envy`.
 
@@ -43,8 +44,10 @@ mod tests {
 
     use super::*;
 
+    /// Serializes tests that change process environment variables.
     static ENV_LOCK: Mutex<()> = Mutex::new(());
 
+    /// Verifies that the envy example's main path succeeds.
     #[test]
     fn test_main() {
         let _guard =

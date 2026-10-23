@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates entering and exiting a span using `entered()` and `exit()`.
 
@@ -49,6 +50,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the tracing span entered example's main path succeeds.
     #[test]
     fn test_main() {
         tracing_subscriber::fmt()

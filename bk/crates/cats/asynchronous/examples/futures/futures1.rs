@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Races two futures with `select!` from the `futures` crate.
 
@@ -37,6 +38,7 @@ async fn race_tasks() {
     }
 }
 
+/// Runs the futures1 example.
 #[tokio::main]
 async fn main() {
     race_tasks().await;

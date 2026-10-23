@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates the use of `?`.
 
@@ -49,6 +50,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the question mark example's main path succeeds.
     #[test]
     fn test_main() {
         // Make sure the `temp` folder exists.

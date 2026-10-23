@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates parsing various date and time strings into `chrono` types.
 
@@ -54,7 +55,6 @@ pub fn run() -> Result<(), ParseError> {
 mod tests {
     use super::*;
 
-    /// Verifies the documented RFC and custom date strings parse successfully.
     #[test]
     fn chrono_parses_the_documented_date_formats() -> Result<(), ParseError> {
         main()

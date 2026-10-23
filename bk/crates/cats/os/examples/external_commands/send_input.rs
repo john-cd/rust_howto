@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to send input to an external command's
 //! standard input (`stdin`) and process its standard output (`stdout`) and

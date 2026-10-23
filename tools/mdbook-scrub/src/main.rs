@@ -1,5 +1,7 @@
-// TODO Reviewed ??-??-2026
 //! Command-line entry point of the `mdbook-scrub` preprocessor.
+//!
+//! TODO Reviewed ??-??-2026.
+
 use std::io;
 use std::process;
 

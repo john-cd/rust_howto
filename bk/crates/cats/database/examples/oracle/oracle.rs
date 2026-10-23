@@ -1,6 +1,4 @@
 //! Rust bindings to ODPI-C.
-//!
-//! TODO Reviewed ??-??-2026
 
 #![allow(dead_code)]
 
@@ -14,6 +12,8 @@ use oracle::Error;
 /// Serializes the tests, which share environment variables.
 static ENV_MUTEX: std::sync::LazyLock<Mutex<()>> =
     std::sync::LazyLock::new(|| Mutex::new(()));
+
+// TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 /// Rust bindings to ODPI-C.

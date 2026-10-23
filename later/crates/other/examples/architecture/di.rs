@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Dependency Injection (DI) is a design pattern that allows us to decouple
 //! components of our application.
@@ -34,6 +35,7 @@ trait Greeter: Interface {
 #[derive(Component)]
 // The `#[shaku(interface = Greeter)]` attribute associates each component with
 // the `Greeter` interface.
+/// Greeter implementation that returns an English greeting.
 #[shaku(interface = Greeter)]
 struct EnglishGreeter;
 

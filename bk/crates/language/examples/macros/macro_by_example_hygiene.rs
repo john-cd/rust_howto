@@ -1,5 +1,6 @@
 #![allow(unused)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Macro hygiene: variables in a macro do not clash with variables outside it.
 
@@ -24,6 +25,7 @@ macro_rules! bar {
 /// Defines a function `f`, which is visible where the macro is called.
 macro_rules! baz {
     () => {
+        /// Defines the function emitted by the macro.
         fn f() {}
     };
 }

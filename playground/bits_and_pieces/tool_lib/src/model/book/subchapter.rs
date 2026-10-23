@@ -1,6 +1,6 @@
 //! A subchapter of the book.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use serde::Serialize;
 

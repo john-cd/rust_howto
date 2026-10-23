@@ -1,4 +1,7 @@
-// TODO Reviewed ??-??-2026
+//! Looks up crate categories through the crates.io API.
+//!
+//! TODO Reviewed ??-??-2026.
+
 use std::collections::HashMap;
 use std::sync::LazyLock;
 use std::sync::Mutex;
@@ -8,6 +11,7 @@ use tracing::debug;
 
 use crate::model;
 
+/// Caches category lists retrieved from crates.io.
 static CATEGORY_CACHE: LazyLock<Mutex<HashMap<String, Vec<model::Category>>>> =
     LazyLock::new(|| Mutex::new(HashMap::new()));
 
@@ -96,6 +100,7 @@ mod tests {
         assert_eq!(model_cat.description, api_cat.description);
     }
 
+    /// Serializes tests that share the local HTTP mock server.
     static TEST_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
     /// Verifies that cached category results are returned and can be cleared.

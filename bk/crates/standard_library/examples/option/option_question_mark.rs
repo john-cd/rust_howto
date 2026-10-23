@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The `?` operator shines when we have a sequence of operations, each of
 //! which might fail. It provides an early exit mechanism for functions that

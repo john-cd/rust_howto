@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Build and inspect basic X.509 certificate data with the `x509_cert` crate.
 //!

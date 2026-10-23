@@ -1,6 +1,6 @@
 //! Backing up files before they are overwritten.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::fs;
 use std::fs::File;
@@ -50,6 +50,11 @@ mod tests {
     use super::*;
 
     // Helper function to read file content.
+    /// Reads UTF-8 text from `path`.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the file cannot be opened or read.
     fn read_file_content<P: AsRef<Path>>(path: P) -> Result<String> {
         let mut file = File::open(path.as_ref())?;
         let mut content = String::new();

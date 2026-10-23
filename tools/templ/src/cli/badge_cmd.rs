@@ -1,6 +1,6 @@
 //! Handle the `badge` CLI subcommand
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::path::PathBuf;
 

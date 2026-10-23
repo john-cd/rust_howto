@@ -1,6 +1,6 @@
 //! Runs the SQL parser example when the `sqlparser` feature is enabled.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(feature = "sqlparser")]
 mod sqlparser;

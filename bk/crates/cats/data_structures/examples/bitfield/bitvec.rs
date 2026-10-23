@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Add the following to your `Cargo.toml`:
 //! ```toml
@@ -200,7 +201,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that the bit-vector demonstration completes.
     #[test]
     fn test_main() {
         main();

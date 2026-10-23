@@ -1,6 +1,6 @@
 //! Removing empty lines from text.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 /// Removes empty lines from a given string slice.
 ///

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Encode a blank AV1 frame using the `rav1e` crate.
 //!
@@ -50,6 +51,7 @@ mod tests {
         main().unwrap();
     }
 
+    /// Verifies that default config creates context.
     #[test]
     fn default_config_creates_context() {
         let cfg = Config::default();

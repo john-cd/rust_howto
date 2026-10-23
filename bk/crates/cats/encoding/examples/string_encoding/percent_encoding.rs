@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! The following demonstrates how to use percent encoding to handle special
 //! characters in URLs.
@@ -61,6 +62,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that encode decode.
     #[test]
     fn test_encode_decode() -> Result<()> {
         let test_cases = vec![

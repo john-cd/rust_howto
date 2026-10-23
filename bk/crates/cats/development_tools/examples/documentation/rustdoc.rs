@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Documenting a function, including documentation from an external file.
 
@@ -13,6 +14,7 @@ fn documented_function() {
 
 // Alternatively, we may use an external file.
 // This is useful for including large amounts of documentation.
+/// Demonstrates attaching an external Markdown file to an item's documentation.
 #[cfg_attr(doc, doc = include_str!("../../../../README.md"))]
 fn function_including_external_file_as_documentation() {}
 

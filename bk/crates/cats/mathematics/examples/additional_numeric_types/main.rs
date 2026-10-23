@@ -1,7 +1,7 @@
 //! Runs one of the `additional_numeric_types` examples, chosen on the command
 //! line.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 // #![allow(incomplete_features)]
 // #![feature(generic_const_exprs)]

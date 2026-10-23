@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Converting between a date and time and a Unix timestamp with `chrono`.
 
@@ -53,7 +54,6 @@ pub fn run() -> Result<(), &'static str> {
 mod tests {
     use super::*;
 
-    /// Verifies the checked constructors and timestamp conversion succeed.
     #[test]
     fn chrono_timestamp_conversion_runs() -> Result<(), &'static str> {
         main()

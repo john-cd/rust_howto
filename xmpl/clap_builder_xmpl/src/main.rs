@@ -1,6 +1,6 @@
 //! A demo command-line tool built with the `clap` builder API.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #![warn(clippy::all, rust_2018_idioms)]
 

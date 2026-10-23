@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Downloads a file in verified byte ranges.
 
@@ -157,6 +158,7 @@ fn download_to<W: Write>(
 ///
 /// Returns any directory, file, network, response, or write error.
 fn main() -> Result<()> {
+    /// Maximum number of bytes requested in each download chunk.
     const CHUNK_SIZE: u32 = 10_240;
     let url = "https://httpbin.org/range/102400?duration=2";
 

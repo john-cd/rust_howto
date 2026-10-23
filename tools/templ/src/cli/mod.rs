@@ -1,7 +1,7 @@
 //! The `cli` module is the command line argument parser for the
 //! application
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 
@@ -61,6 +61,7 @@ fn cli() -> clap::Command {
 mod tests {
     use super::*;
 
+    /// Checks that the command-line application definition is internally consistent.
     #[test]
     fn test_app() {
         cli().debug_assert();

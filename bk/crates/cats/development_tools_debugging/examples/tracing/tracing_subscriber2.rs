@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Composing a `tracing` subscriber from layers and filters.
 
@@ -123,6 +124,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 mod tests {
     use super::*;
 
+    /// Exercises the tracing layer configuration.
     #[test]
     fn test_layers() {
         layers();
@@ -137,6 +139,7 @@ mod tests {
         filter().unwrap();
     }
 
+    /// Verifies that per layer filtering.
     #[test]
     fn test_per_layer_filtering() {
         per_layer_filtering();

@@ -1,6 +1,6 @@
 //! Build badges, index of the book, etc... using a template engine.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use tinytemplate::TinyTemplate;
 use tracing::info;
@@ -81,6 +81,7 @@ mod tests {
     /// Context holding a single string value for formatter tests.
     #[derive(Serialize)]
     struct Value {
+        /// The vector value stored by this example.
         v: &'static str,
     }
 

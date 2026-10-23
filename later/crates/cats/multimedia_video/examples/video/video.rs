@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Detect scene changes in a Y4M video clip using the `av-scenechange` crate.
 //!

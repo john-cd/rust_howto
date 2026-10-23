@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to parse a URL and extract a portion of it.
 
@@ -21,6 +22,7 @@ fn example() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs the about2 example.
 fn main() -> anyhow::Result<()> {
     example()
 }
@@ -30,6 +32,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the about2 example behavior.
     #[test]
     fn test() -> anyhow::Result<()> {
         example()?;

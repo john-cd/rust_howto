@@ -1,7 +1,7 @@
 //! Returns information / list of categories for a given crate, using the
 //! crates.io API
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 mod categories_for_crate;
 mod info;
@@ -26,6 +26,7 @@ fn get_client() -> Result<SyncClient> {
 mod tests {
     use super::get_client;
 
+    /// Verifies that client initializes without making a request.
     #[test]
     fn client_initializes_without_making_a_request() {
         get_client().expect("input should parse");

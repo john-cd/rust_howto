@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Initializes the logger and logs warning, info, and debug messages from the
 //! root module, then calls `foo::run()`.

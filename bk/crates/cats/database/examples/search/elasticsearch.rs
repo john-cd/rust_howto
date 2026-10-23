@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This module provides examples of interacting with Elasticsearch using the
 //! official Rust client.
@@ -154,6 +155,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example against its required external service.
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
         unsafe {

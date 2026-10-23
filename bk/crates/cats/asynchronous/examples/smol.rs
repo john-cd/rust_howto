@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates a small asynchronous workload using `smol`.
 
@@ -36,7 +37,6 @@ fn main() {
 mod tests {
     use super::*;
 
-    /// Verifies the runtime waits for both tasks to finish.
     #[test]
     fn test_main() {
         main();

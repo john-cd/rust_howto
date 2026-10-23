@@ -1,9 +1,10 @@
 //! Adapted from <https://dystroy.org/btracing::info!/cancelable-background-task/>.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use cancelable::*;
 
+/// Runs the src command-line application.
 fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()
         // Sets the maximum verbosity level.

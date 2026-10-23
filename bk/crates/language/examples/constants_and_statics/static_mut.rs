@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! `static mut` Example.
 //!
@@ -15,6 +16,7 @@ use std::thread;
 /// Modifies a mutable static, which requires `unsafe` and is discouraged.
 fn dont_do_this() {
     // Declare a mutable static variable:
+    /// Mutable global integer used to demonstrate `static mut` access.
     static mut VAL: i32 = 0;
 
     // An unsafe block is required when either reading or writing a mutable
@@ -31,6 +33,7 @@ fn dont_do_this() {
 
     // BEWARE: In addition, statics can be initialized from mutable statics,
     // but they read the _initial_ value of that static.
+    /// Value copied from `VAL` during static initialization.
     static READ_FROM_VAL: i32 = unsafe { VAL };
     assert_eq!(READ_FROM_VAL, 0);
 }
@@ -40,6 +43,7 @@ fn do_instead() {
     // Use an _immutable_ static containing an Atomic.
     // Note that Atomic variables are safe to share between threads (they
     // implement `Sync`).
+    /// Atomic counter that supports concurrent updates without a mutex.
     static COUNTER: AtomicU16 = AtomicU16::new(0);
 
     println!("Initial COUNTER value: {}", COUNTER.load(Ordering::Relaxed));
@@ -82,6 +86,7 @@ fn or_do_that() {
 
     // Use `Mutex` or `RwLock`, potentially wrapped in an `Arc`,
     // for safe concurrent access:
+    /// Counter protected by a mutex for safe shared mutation.
     static SAFE_COUNTER: Mutex<u32> = Mutex::new(0);
 
     println!(

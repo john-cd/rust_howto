@@ -1,6 +1,6 @@
 //! Runs the `lapin` AMQP example when the `lapin` feature is enabled.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #[cfg(feature = "lapin")]
 mod lapin;

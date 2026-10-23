@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Example of sending an email using the `lettre` crate.
 //!
@@ -49,6 +50,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example against its required external service.
     #[test]
     #[ignore = "Requires SMTP credentials"]
     fn require_external_svc() -> anyhow::Result<()> {

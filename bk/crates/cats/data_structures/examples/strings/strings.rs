@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates common string types in Rust.
 
@@ -52,6 +53,7 @@ fn string_slices() {
     // String slices must always be valid UTF-8!
 
     // Convert a `String` to `&str` explicitly using `as_str()`.
+    /// Prints the contents of the supplied slice.
     fn print_slice(s: &str) {
         println!("Printing a slice: '{s}'");
     }

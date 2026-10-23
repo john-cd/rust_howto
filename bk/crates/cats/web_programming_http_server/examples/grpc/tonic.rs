@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example shows how to create a simple gRPC server using the `tonic`
 //! crate.
@@ -83,8 +84,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the greeting logic by calling the service implementation
-    /// directly.
+    /// Verifies the greeting returned by the service implementation.
     #[tokio::test]
     async fn test_greeter_logic() {
         let greeter = MyGreeter::default();

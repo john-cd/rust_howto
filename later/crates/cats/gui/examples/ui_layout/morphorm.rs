@@ -1,4 +1,5 @@
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Computing a layout with `morphorm`.
 
@@ -100,6 +101,7 @@ impl Node for Entity {
     }
 
     fn children<'t>(&self, tree: &'t Self::Tree) -> Self::ChildIter<'t> {
+        /// Empty child list shared by nodes with no children.
         static EMPTY: Vec<Entity> = Vec::new();
         ChildIter {
             iter: tree.children.get(self).unwrap_or(&EMPTY).iter(),

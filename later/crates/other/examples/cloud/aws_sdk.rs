@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to use the AWS SDK for Rust to interact with
 //! Amazon S3. It lists the contents of a specified S3 bucket.
@@ -56,6 +57,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example when its network dependency is available.
     #[test]
     fn require_network() -> anyhow::Result<()> {
         // TODO

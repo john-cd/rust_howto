@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(unexpected_cfgs)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! This example demonstrates how to create a simple Neon module that exports
 //! a function to JavaScript.
@@ -54,6 +55,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     // use super::*;
 
+    /// Verifies that the neon example's main path succeeds.
     #[test]
     #[ignore = "requires Node module runtime"]
     fn test_main() {

@@ -9,7 +9,7 @@
 //! - <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
 //! - <https://docs.rs/axum/0.8.1/axum/extract/index.html>
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 #![allow(dead_code)]
 #![allow(unused_variables)]
@@ -137,6 +137,7 @@ async fn main() -> anyhow::Result<()> {
 mod tests {
     // use super::*;
 
+    /// Runs the example when its network dependency is available.
     #[test]
     fn require_network() -> anyhow::Result<()> {
         // main()?;

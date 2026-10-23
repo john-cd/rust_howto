@@ -1,6 +1,6 @@
 //! Parses the directory argument and expands markers in its Markdown files.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 // [dependencies]
 // anyhow = "1.0.95"
@@ -67,6 +67,7 @@ pub fn walk_directory(dir: &Path) -> Result<()> {
 
 /// Expands complete crate markers and preserves malformed or unfinished markers.
 fn replace_crate_markers(contents: &str) -> String {
+/// Prefix used to recognize crate include directives in book content.
     const PREFIX: &str = "{{!crate ";
 
     let mut output = String::with_capacity(contents.len());

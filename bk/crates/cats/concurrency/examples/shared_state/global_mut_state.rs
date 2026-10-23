@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates the use of a global mutable state protected by a `Mutex`.
 //!
@@ -14,6 +15,7 @@ use lazy_static::lazy_static;
 
 lazy_static! {
     // A global `Mutex` containing a vector of strings representing fruits.
+/// Global fruit list protected by a mutex.
     static ref FRUIT: Mutex<Vec<String>> = Mutex::new(Vec::new());
 }
 

@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Demonstrates how to use the `color-eyre` crate for enhanced error reporting.
 //!
@@ -44,6 +45,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the color eyre example's main path succeeds.
     #[test]
     fn test_main() {
         assert!(main().is_err());

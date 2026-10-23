@@ -1,6 +1,6 @@
 //! A `crates.io` category.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use serde::Serialize;
 

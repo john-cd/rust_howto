@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Example of using the `flagset` crate to define and use bit flags.
 //!
@@ -14,6 +15,7 @@ use flagset::flags;
 // Flags are defined using the `flags!` macro:
 flags! {
     // Flag values can be defined implicitly:
+/// Defines flags stored in a one-byte integer.
     enum FlagsA: u8 { // Note the field-size type.
         Foo, // 0b0001.
         Bar, // 0b0010.
@@ -21,6 +23,7 @@ flags! {
     }
 
     // Flag values can also be defined explicitly...
+/// Defines flags stored in a C `int`.
     enum FlagsB: c_int {
         Foo = 0x01,
         Bar = 2,

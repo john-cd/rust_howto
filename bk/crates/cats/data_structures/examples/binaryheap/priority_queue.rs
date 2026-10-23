@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Add this dependency to your `Cargo.toml`:
 //! ```toml
@@ -142,6 +143,7 @@ fn advanced_usage() {
     }
 }
 
+/// Runs the priority queue example.
 fn main() {
     basic_usage();
     min_priority_queue();
