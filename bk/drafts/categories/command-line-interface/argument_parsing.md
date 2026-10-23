@@ -86,6 +86,12 @@ cargo run -- --config config.toml query SELECT col FROM tbl
 
 `clap_complete` generates shell completion scripts for your `clap::Command`.
 
+This example defines a `clap::Command`, writes a Bash completion script to a temporary directory, and prints the generated file path:
+
+```rust,editable
+{{#include ../../../crates/cats/command_line_interface/examples/arguments/clap_complete.rs:example}}
+```
+
 ## `clap` Alternatives {#clap-alternatives .skip}
 
 ### Parse Command-line Arguments with `lexopt` {#lexopt}

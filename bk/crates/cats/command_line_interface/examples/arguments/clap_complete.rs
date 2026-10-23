@@ -21,8 +21,11 @@ fn build_cli() -> Command {
     )
 }
 
-/// Generates shell completion scripts for the command-line interface into a
-/// temporary directory.
+/// Generates a Bash completion script for the command-line interface.
+///
+/// # Errors
+/// Returns an error if the directory cannot be created or the script cannot be
+/// written.
 fn main() -> std::io::Result<()> {
     // Build the CLI application definition.
     let mut cmd = build_cli();
@@ -43,6 +46,10 @@ fn main() -> std::io::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if the directory cannot be created or the script cannot be
+/// written.
 pub fn run() -> std::io::Result<()> {
     main()
 }
@@ -51,9 +58,9 @@ pub fn run() -> std::io::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the example can generate a completion script.
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn test_main() -> std::io::Result<()> {
+        main()
     }
 }
-// TODO add to a chapter on command line interfaces with clap_complete

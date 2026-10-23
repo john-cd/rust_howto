@@ -126,7 +126,11 @@ Termion is a pure Rust library that provides a [cross-platform][p~cross-platform
 
 [![colored][c~colored~docs~badge]][c~colored~docs] [![colored~crates.io][c~colored~crates.io~badge]][c~colored~crates.io] [![colored~repo][c~colored~repo~badge]][c~colored~repo] [![colored~lib.rs][c~colored~lib.rs~badge]][c~colored~lib.rs]{{hi:colored}}{{hi:Color}}{{hi:String}}{{hi:Term}}{{hi:Ansi_term}}{{hi:Term-painter}}
 
-The most simple way to add colors in your terminal.
+[`colored`][c~colored~docs]↗{{hi:colored}} adds color and style methods to strings through its `Colorize` trait. This example prints success, warning, and error messages with different styles:
+
+```rust,editable
+{{#include ../../../crates/cats/command_line_interface/examples/ansi_term/colored.rs:example}}
+```
 
 ## Related Topics {#related-topics .skip}
 

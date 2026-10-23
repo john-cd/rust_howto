@@ -33,4 +33,3 @@ mod tests {
         main();
     }
 }
-// TODO add to a chapter on command line interfaces with colored
