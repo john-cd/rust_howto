@@ -102,7 +102,7 @@ mod tests {
 
         let response_headers = response
             .split_once("\r\n\r\n")
-            .map_or(&response, |(headers, _)| headers)
+            .map_or(response.as_str(), |(headers, _)| headers)
             .to_ascii_lowercase();
 
         assert!(response.starts_with("HTTP/1.1 200 OK"), "{response}");
