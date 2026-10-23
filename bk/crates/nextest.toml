@@ -2,6 +2,8 @@
 [profile.default]
 ## Default number of retries for tests
 retries = 0
+## Fail tests that leave child processes or handles behind.
+leak-timeout = { period = "1s", result = "fail" }
 
 [profile.ci]
 ## Handle transient failures in CI environments

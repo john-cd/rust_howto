@@ -109,9 +109,9 @@ jobs:
         run: cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
         working-directory: bk/crates
 
-      - name: Run tests
+      - name: Run tests and fail on process leaks
         run: |
-          cargo nextest run --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
+          cargo nextest run --config-file nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
           cargo test --workspace --doc --locked --profile ci -- --show-output
         working-directory: bk/crates
 
@@ -132,4 +132,5 @@ jobs:
         run: |
           python scripts/book/test_refdefs.py
           just bb
+          python scripts/book/check_search_index.py
         working-directory: bk

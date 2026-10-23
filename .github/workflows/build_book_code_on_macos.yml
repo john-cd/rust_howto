@@ -1,0 +1,97 @@
+# TODO Reviewed ??-??-2026
+## Build and test the book's Rust examples on a supported macOS runner.
+name: Build book code on macOS
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - 'bk/**'
+      - '.devcontainer/**'
+      - '.github/workflows/**'
+      - '.github/actions/**'
+      - 'scripts/**'
+      - '.cargo/**'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
+  pull_request:
+    branches: [develop]
+    paths:
+      - 'bk/**'
+      - '.devcontainer/**'
+      - '.github/workflows/**'
+      - '.github/actions/**'
+      - 'scripts/**'
+      - '.cargo/**'
+      - 'Cargo.toml'
+      - 'Cargo.lock'
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_TARGET_DIR: ${{ github.workspace }}/target
+  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/build
+  ## CI uses rust-cache instead of the local sccache wrapper.
+  RUSTC_WRAPPER: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: macos-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-book-code-on-macos:
+    name: Build book code on macOS
+    runs-on: macos-15
+    timeout-minutes: 90
+    steps:
+      - name: Code checkout
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Load pinned tool versions
+        uses: ./.github/actions/load-pinned-versions
+
+      - name: Set up Rust toolchains and cache
+        uses: ./.github/actions/setup-rust
+        with:
+          toolchain: ${{ env.RUST_VERSION }}
+          cache-workspaces: |
+            bk/crates -> ../../target
+
+      - name: Install Protocol Buffers compiler
+        run: brew install protobuf
+
+      - name: Install Nextest
+        # taiki-e/install-action v2.87.30
+        uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177
+        with:
+          tool: cargo-nextest@${{ env.CARGO_NEXTEST_VERSION }}
+
+      - name: Format
+        run: cargo +nightly-2026-10-22 fmt --all --check
+        working-directory: bk/crates
+
+      - name: Fetch
+        run: cargo fetch
+        working-directory: bk/crates
+
+      - name: Build
+        run: cargo build --workspace --all-targets --locked --profile ci
+        working-directory: bk/crates
+
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
+        working-directory: bk/crates
+
+      - name: Run tests and fail on process leaks
+        run: |
+          cargo nextest run --config-file nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
+          cargo test --workspace --doc --locked --profile ci -- --show-output
+        working-directory: bk/crates

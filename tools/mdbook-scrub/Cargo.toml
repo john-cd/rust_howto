@@ -3,6 +3,7 @@
 
 [package]
 license-file.workspace = true
+publish.workspace = true
 name = "mdbook-scrub"
 version = "0.2.0"
 edition = "2024"
