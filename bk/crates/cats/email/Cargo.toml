@@ -20,10 +20,17 @@ autolib = false
 [dependencies]
 anyhow = "1.0.104"
 lettre = { version = "0.11.23", features = ["tokio1-native-tls"] }
+# Parse raw email messages and MIME parts for the book example.
+mailparse = "0.18.0"
 
 [[example]]
 name = "lettre"
 path = "examples/lettre.rs"
+test = true
+
+[[example]]
+name = "mailparse"
+path = "examples/mailparse.rs"
 test = true
 
 [lints]

@@ -145,6 +145,7 @@
 
 - [Email](categories/email/index.md)
   - [Sending emails](categories/email/send_emails.md)
+  - [Email parsing](categories/email/email_parsing.md)
 
 - [Encoding and Serialization](categories/encoding/index.md)
   - [Character Sets](categories/encoding/string_encoding.md)
