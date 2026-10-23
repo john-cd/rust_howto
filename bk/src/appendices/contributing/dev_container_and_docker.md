@@ -70,7 +70,7 @@ It uses the `ci` target in `.devcontainer/Dockerfile`.
 To test the [`docker`][docker~website]↗{{hi:docker}} image manually, use
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.99.1-slim-trixie --build-arg MDBOOK_VERSION=0.4.49 .
+docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.99.1-slim-trixie --build-arg MDBOOK_VERSION=0.5.4 .
 docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rust_howto_ci bash
 ```
 
@@ -81,7 +81,7 @@ docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rus
 From the project root folder, use the following to build and push the `development` image:
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.99.1-slim-trixie --build-arg MDBOOK_VERSION=0.4.49 .
+docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.99.1-slim-trixie --build-arg MDBOOK_VERSION=0.5.4 .
 # Or `docker tag rust_howto_dev johncd/rust_howto_dev:latest`
 docker login
 # Or `docker login -u "user" -p "password" docker.io`
@@ -91,7 +91,7 @@ docker push johncd/rust_howto_dev:latest
 Use the following to build and push the CI image:
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.99.1-slim-trixie --build-arg MDBOOK_VERSION=0.4.49 .
+docker build --file .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.99.1-slim-trixie --build-arg MDBOOK_VERSION=0.5.4 .
 docker login
 docker push johncd/rust_howto_ci:latest
 ```
