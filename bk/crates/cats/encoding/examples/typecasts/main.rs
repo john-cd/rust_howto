@@ -6,6 +6,7 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod bytemuck;
+mod primitive;
 mod zerocopy;
 
 /// Command-line arguments.
@@ -22,6 +23,9 @@ enum Commands {
     /// Runs the `bytemuck` example.
     #[command(name = "bytemuck")]
     Bytemuck,
+    /// Runs the primitive conversion example.
+    #[command(name = "primitive")]
+    Primitive,
     /// Runs the `zerocopy` example.
     #[command(name = "zerocopy")]
     Zerocopy,
@@ -35,6 +39,9 @@ fn main() -> anyhow::Result<()> {
         match command {
             Commands::Bytemuck => {
                 bytemuck::run();
+            }
+            Commands::Primitive => {
+                primitive::run()?;
             }
             Commands::Zerocopy => {
                 zerocopy::run()?;

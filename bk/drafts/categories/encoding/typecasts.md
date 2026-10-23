@@ -3,98 +3,112 @@
 
 {{#include typecasts.incl.md}}
 
-Rust provides no implicit type conversion (coercion) between primitive types. This is a deliberate design choice to improve safety and avoid unexpected behavior.
+Rust does not perform general implicit conversions between different types. Some limited [coercions][book~rust-reference~type-coercions]↗ happen from context, but numeric casts, parsing, and byte reinterpretation are explicit operations with different rules.
 
-Instead of "casting," you'll usually implement or use [traits][p~traits] like [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}, [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}}, [`TryFrom`][c~std::convert::TryFrom~docs]↗{{hi:std::convert::TryFrom}}, [`TryInto`][c~std::convert::TryInto~docs]↗{{hi:std::convert::TryInto}}, or [`FromStr`][c~std::str::FromStr~docs]↗{{hi:FromStr}} for type conversions in Rust. The [`as`][keyword~as]↗{{hi:as}} keyword exists, but it should be used carefully and only when other options aren't suitable, as it can lead to data loss or unexpected behavior if not handled properly.
+## Use `as` for Explicit Primitive Casts {#type-conversion-using-as .skip}
 
-## Type Conversion Using `as` {#type-conversion-using-as .skip}
+The [`as`][keyword~as]↗ keyword performs a primitive cast. It is concise, but may discard information: integer-to-integer casts truncate to the destination width, signedness changes reinterpret the resulting bits, and floating-point-to-integer casts saturate at the integer bounds (with `NaN` becoming zero). Floating-point casts can also lose precision. The [Rust Reference][book~rust-reference~casts]↗ lists the supported casts and their exact behavior.
 
-The [`as`][keyword~as~docs]↗{{hi:keyword~as}} keyword is used for basic type conversions, but it's important to be aware of potential issues like truncation or overflow. This is the closest equivalent to C-style casting, but it should be used with caution.
-
-## Conversion Traits: `From`, `Into`, `TryFrom` and `TryInto` {#Conversion Traits: `From`, `Into`, `TryFrom` and `TryInto` .skip}
-
-The [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} and [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}} [traits][p~traits] are used for conversions that should always succeed. [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} defines how to convert from a type, and [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}} provides a blanket implementation for converting into a type if From is implemented. This is the preferred way to do type conversions in most cases.
-
-The [`TryFrom`][c~std::convert::TryFrom~docs]↗{{hi:std::convert::TryFrom}} and [`TryInto`][c~std::convert::TryInto~docs]↗{{hi:std::convert::TryInto}} [traits][p~traits] are used for conversions that might fail. They return a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} to indicate success or failure. Use these when there's a possibility of the conversion not working (e.g., [parsing][p~parsing] a string to a number).
-
-## Parsing Strings with the `FromStr` Trait {#Parsing Strings with the `FromStr` Trait .skip}
-
-The [`std::str::FromStr`][c~std::str::FromStr~docs]↗{{hi:std::str::FromStr}} trait is used for [parsing][p~parsing] strings into other types. Many standard types implement [`FromStr`][c~std::str::FromStr~docs]↗{{hi:FromStr}}.
+Use `as` when its behavior is intended and clear at the call site. For checked numeric conversions, use `TryFrom`:
 
 ```rust,editable
-let num: i32 = "123".parse().unwrap();
+{{#include ../../../crates/cats/encoding/examples/typecasts/primitive.rs:example}}
 ```
 
-## Casting Between Numeric Types {#Casting Between Numeric Types .skip}
+### Numeric casts {#Casting Between Numeric Types .skip}
 
-Use the [`as`][keyword~as]↗{{hi:as}} keyword, but be very cautious about potential loss of data or unexpected behavior due to truncation or overflow.
+Integer-to-integer casts truncate to the destination width, signedness changes reinterpret the resulting bits, and floating-point-to-integer casts saturate at the integer bounds (`NaN` becomes zero). Floating-point casts can lose precision. The [Rust Reference][book~rust-reference~casts]↗ lists the exact rules.
 
-## Casting Between Pointers {#Casting Between Pointers .skip4}
+### Pointer casts {#Casting Between Pointers .skip4}
 
-Pointer casting requires [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} blocks and careful consideration of memory management.
+Raw-pointer casts do not dereference memory and do not themselves require an `unsafe` block. Dereferencing a raw pointer does require `unsafe`, and a valid pointer's provenance, alignment, and lifetime still matter. Do not use integer casts as a substitute for a sound pointer or FFI design. There is no standalone pointer-cast example because a safe example needs a concrete API that establishes the pointer's validity and lifetime.
 
-## Polymorphism with Traits (Dynamic Dispatch) {#Polymorphism with Traits (Dynamic Dispatch) .skip5}
+## Prefer Conversion Traits {#Conversion Traits: `From`, `Into`, `TryFrom` and `TryInto` .skip}
 
-Use [trait objects][p~trait-objects] (`dyn Trait`) for dynamic dispatch.
+Use [`From`][c~std::convert::From~docs]↗ and [`Into`][c~std::convert::Into~docs]↗ for conversions that cannot fail. Implement `From<T> for U`; callers also get `Into<U> for T` through the standard blanket implementation. Use [`TryFrom`][c~std::convert::TryFrom~docs]↗ and [`TryInto`][c~std::convert::TryInto~docs]↗ when the input may not fit or otherwise may be rejected. These traits return a `Result`, so callers can handle failure rather than silently truncating.
 
-## Coercions (Implicit Conversions) {#Coercions (Implicit Conversions) .skip6}
+## Parse Text with `FromStr` {#Parsing Strings with the `FromStr` Trait .skip}
 
-Rust performs some implicit coercions, such as dereferencing and unsizing. These are not type casts in the traditional sense, but they do involve implicit changes in type.
+Parsing text is different from converting a value that already has a typed representation. Many standard types implement [`FromStr`][c~std::str::FromStr~docs]↗ and can be parsed with `.parse()`. Parsing returns a result; propagate or handle the error instead of unwrapping untrusted input.
 
-## `bytemuck` {#bytemuck}
+```rust
+fn parse_port(text: &str) -> Result<u16, std::num::ParseIntError> {
+    text.parse()
+}
+```
+
+## Distinguish Coercions from Casts {#Coercions (Implicit Conversions) .skip6}
+
+Rust permits a small set of context-driven coercions, such as borrowing a value, dereferencing references, and unsizing an array reference to a slice reference. These do not use `as` and have separate rules. See the [Rust Reference on type coercions][book~rust-reference~type-coercions]↗. No standalone coercion example is shown because the compiler infers these conversions from the expected type; an explicit cast would teach the wrong mechanism.
+
+A trait object such as `&dyn Display` is a way to use dynamic dispatch; creating one is not a primitive cast. See [trait objects][p~trait-objects].
+
+### Dynamic dispatch {#Polymorphism with Traits (Dynamic Dispatch) .skip5}
+
+Use trait objects such as `&dyn Display` when dynamic dispatch is appropriate. This is a trait-object coercion, not a primitive cast.
+
+## Reinterpret Bytes with `bytemuck` or `zerocopy`
+
+These crates provide checked, trait-constrained operations for viewing compatible in-memory values as bytes or constructing values from bytes. This is not general serialization: layout and validity rules apply, and byte order must be handled explicitly when defining a portable file or network format.
+
+### `bytemuck` {#bytemuck}
 
 [![bytemuck][c~bytemuck~docs~badge]][c~bytemuck~docs]{{hi:bytemuck}}
 [![bytemuck~crates.io][c~bytemuck~crates.io~badge]][c~bytemuck~crates.io]
 [![bytemuck~repo][c~bytemuck~repo~badge]][c~bytemuck~repo]
 [![bytemuck~lib.rs][c~bytemuck~lib.rs~badge]][c~bytemuck~lib.rs]
-[![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
-[![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
+[![cat~encoding][cat~encoding~badge]][cat~encoding]
+[![cat~no-std][cat~no-std~badge]][cat~no-std]
 
-[`bytemuck`][c~bytemuck~docs]↗{{hi:bytemuck}}
+The `bytemuck` example demonstrates casts guarded by its plain-data marker traits:
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/typecasts/bytemuck.rs:example}}
 ```
 
-## `zerocopy` {#zerocopy}
+### `zerocopy` {#zerocopy}
 
 [![zerocopy][c~zerocopy~docs~badge]][c~zerocopy~docs]{{hi:zerocopy}}
 [![zerocopy~crates.io][c~zerocopy~crates.io~badge]][c~zerocopy~crates.io]
 [![zerocopy~repo][c~zerocopy~repo~badge]][c~zerocopy~repo]
 [![zerocopy~lib.rs][c~zerocopy~lib.rs~badge]][c~zerocopy~lib.rs]
-[![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
-[![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
-[![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
-[![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
-[![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
-[![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
+[![cat~encoding][cat~encoding~badge]][cat~encoding]
+[![cat~parsing][cat~parsing~badge]][cat~parsing]
+[![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]
+[![cat~embedded][cat~embedded~badge]][cat~embedded]
+[![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]
 
-[`zerocopy`][c~zerocopy~docs]↗{{hi:zerocopy}} makes zero-cost memory manipulation safe. It provides a set of traits and utilities to work with types that can be safely interpreted as byte slices.
-
-- No data copying: Zero-copy avoids unnecessary data copying by directly interpreting the memory of one data structure as another.
-- [Performance][p~performance]: Eliminating data copying can significantly improve [performance][p~performance], especially in scenarios involving frequent data transfers between different memory regions (e.g., network I/O, inter-process communication).
-- Safety: The [`zerocopy`][c~zerocopy~docs]↗{{hi:zerocopy}} crate provides mechanisms to ensure safe and correct zero-copy operations.
-
-Zerocopy is often used in [network programming][p~network-programming], where high [performance][p~performance] and low memory overhead are critical, or image handling.
+Use the crate's derived traits and conversion methods to make layout and byte-validity requirements explicit:
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/typecasts/zerocopy.rs:example}}
 ```
 
-## Key Differences from C/C++ {#Key Differences from C/C++ .skip7}
+## Choose an Explicit Byte Order {#endianness}
 
-- Rust is much more explicit about type conversions. This helps to avoid bugs and makes the code more readable.
-- Rust encourages the use of [traits][p~traits] like [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}, [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}}, [`TryFrom`][c~std::convert::TryFrom~docs]↗{{hi:std::convert::TryFrom}}, and [`TryInto`][c~std::convert::TryInto~docs]↗{{hi:std::convert::TryInto}} for conversions. This makes the code more generic and reusable.
-- Rust avoids implicit type casting, which can lead to unexpected behavior in C/C++.
+An integer's in-memory byte order is platform-dependent. For a portable binary format, choose an order in the format and encode or decode with that order. The standard integer methods `to_le_bytes` and `from_le_bytes` handle fixed-width little-endian values directly:
+
+```rust
+let value = 0x1234_u16;
+let bytes = value.to_le_bytes();
+assert_eq!(u16::from_le_bytes(bytes), value);
+```
+
+For reading and writing structured streams, [`byteorder`][c~byteorder~docs]↗ offers explicit endian-aware operations. This example writes and reads a field as little-endian:
+
+```rust,editable
+{{#include ../../../crates/cats/encoding/examples/endian_byte.rs:example}}
+```
+
+Do not copy a struct's memory to define a portable format: padding, layout, validity, and byte order need explicit handling.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
-
+- [Binary encoders](_binary_encoders.md).
+- [Serialization and encoding][p~encoding].
+- [Language data types][p~data-types].
+- [Parsing text][p~parsing].
+- [Trait objects][p~trait-objects].
+- [Strings][p~strings].
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[typecasts: write; reorganize](https://github.com/john-cd/rust_howto/issues/354)
-</div>

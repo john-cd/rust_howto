@@ -6,6 +6,7 @@
 [ex~encoding~capnp]: _binary_encoders.md#capnp
 [ex~encoding~ciborium]: _binary_encoders.md#ciborium
 [ex~encoding~data-encoding]: string_encoding.md#data-encoding
+[ex~encoding~endianness]: typecasts.md#endianness
 [ex~encoding~filter-csv]: csv.md#filter-csv
 [ex~encoding~flatbuffers]: _binary_encoders.md#flatbuffers
 [ex~encoding~handle-invalid-csv]: csv.md#handle-invalid-csv
@@ -25,11 +26,13 @@
 [ex~encoding~serialize-to-csv]: csv.md#serialize-to-csv
 [ex~encoding~toml]: complex_encoding.md#toml
 [ex~encoding~transform-csv-column]: csv.md#transform-csv-column
+[ex~encoding~type-casts]: typecasts.md#type-conversion-using-as
 [ex~encoding~url]: string_encoding.md#url
 [ex~encoding~zerocopy]: typecasts.md#zerocopy
 [p~configuration]: ../config/configuration.md
 [p~csv]: # "../../other/data-processing/csv.md"
 [p~encoding]: index.md
+[p~data-types]: ../../../src/language/data_types.md
 [p~json]: ../parser-implementations/json.md
 [p~language]: ../../../src/language/index.md
 [p~memory]: ../development-tools_profiling/memory_usage_analysis.md
