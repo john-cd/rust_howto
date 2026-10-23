@@ -41,7 +41,7 @@ fn main() -> anyhow::Result<()> {
                 cssparser::run();
             }
             Commands::Html5ever => {
-                html5ever::run();
+                html5ever::run()?;
             }
             Commands::Tl => {
                 tl::run()?;

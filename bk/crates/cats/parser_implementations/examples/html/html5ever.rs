@@ -71,8 +71,13 @@ impl TokenSink for TokenPrinter {
     }
 }
 
-/// Tokenizes an HTML string and prints the tokens.
-fn main() {
+/// Tokenizes an inline HTML document and prints its tags and text.
+///
+/// # Errors
+///
+/// Returns an error if the inline input cannot be represented as an HTML
+/// tendril.
+fn main() -> anyhow::Result<()> {
     let html = "<html><body><p>Hello, world!</p></body></html>";
     let sink = TokenPrinter {
         in_char_run: Cell::new(false),
@@ -81,27 +86,36 @@ fn main() {
     let mut chunk = ByteTendril::new();
     chunk.extend(html.as_bytes());
     let input = BufferQueue::default();
-    input.push_back(chunk.try_reinterpret().expect("valid UTF-8 HTML"));
+    input.push_back(
+        chunk
+            .try_reinterpret()
+            .map_err(|_| anyhow::anyhow!("inline HTML was not valid UTF-8"))?,
+    );
 
     let tokenizer = Tokenizer::new(sink.clone(), Default::default());
     let _ = tokenizer.feed(&input);
     tokenizer.end();
     sink.is_char(false);
+    Ok(())
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the HTML tokenization example.
+///
+/// # Errors
+///
+/// Returns an error if the inline HTML cannot be tokenized.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Checks that the inline HTML document can be tokenized.
     #[test]
-    fn test_main() {
-        main();
+    fn test_main() -> anyhow::Result<()> {
+        main()
     }
-    // [finish](https://github.com/john-cd/rust_howto/issues/1090)
 }
