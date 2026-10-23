@@ -1,50 +1,70 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# Continuous Deployment / Continuous Integration {#cdci}
+# Continuous Integration and Continuous Delivery / Deployment {#cdci}
 
 {{#include cd_ci.incl.md}}
 
-CI/CD (Continuous Integration/Continuous Delivery or Deployment) systems are essential for automating the release process.
+Continuous integration (CI) runs automated checks against proposed changes. Continuous delivery keeps accepted changes ready to release, while continuous deployment promotes them to production automatically after the required checks pass. Since teams use CD for either practice, document where a human approval or operational decision sits in your pipeline.
 
-Popular tooling include:
+A pipeline should make a change traceable from its source commit through validation and a built artifact to each deployment. The same ideas apply across CI services; the [[github_actions | GitHub Actions]] chapter covers one provider in more detail.
 
-- `GitHub Actions`.
-- `GitLab CI/CD`.
-- [`Jenkins`][jenkins~website]↗{{hi:Jenkins}}.
-- [`CircleCI`][circleci~website]↗{{hi:CircleCI}}.
+## Continuous integration for Rust {#continuous-integration}
 
-## Workflow Example (GitHub Actions) {#github-actions}
+For each pull request, keep a fast, reliable set of required checks. A typical Rust starting point is:
 
-- Developers push code changes to a Git repository.
-- [`GitHub Actions`][github-actions~website]↗{{hi:GitHub Actions}} is triggered by the push or pull request.
-- Within the workflow, [`cargo`][c~cargo~docs]↗{{hi:cargo}} builds the Rust application in release mode.
-- [`cargo`][c~cargo~docs]↗{{hi:cargo}} runs all (unit, integration, and end-to-end) tests.
-- The built binary is packaged (e.g., zipped).
-- [`GitHub Actions`][github-actions~website]↗{{hi:GitHub Actions}} creates a new release on GitHub, attaching the packaged binary.
-- Deployment (Optional): [`GitHub Actions`][github-actions~website]↗{{hi:GitHub Actions}} deploys the application to a target environment.
+~~~sh
+cargo fmt --all -- --check
+cargo clippy --workspace --all-targets -- -D warnings
+cargo test --workspace --all-targets
+~~~
 
-See [[github_actions | Github Actions]].
+Adapt package, target, feature, and operating-system coverage to the configurations your project supports. Use a toolchain and platform matrix when those are part of the compatibility promise; keep optional beta, nightly, or latest-dependency checks separate from required merge gates when they are exploratory. For applications or workspaces that commit `Cargo.lock`, pass `--locked` so dependency resolution cannot silently update it. See the [Cargo continuous integration guide][book~cargo~continuous-integration] for provider examples and additional tradeoffs.
 
-## Related Topics {#related-topics .skip}
+## Deliver and deploy {#delivery-deployment}
 
-[Continuous Integration (cargo book)][book~cargo~continuous-integration]↗.
+After validation, build the release package and record its version, source commit, and checksum. Promote that same artifact through staging and production instead of rebuilding different bytes at each step. A deployment can then be rolled back or repeated using an artifact whose checks already passed.
 
-- [Optimizing CI/CD pipelines][blog~optimizing-ci-cd-pipelines-rust-project]↗.
-- [Creating a docker container action][github~creating-a-docker-container-action]↗.
-- ["Upload a Build Artifact" Github Action][upload-a-build-artifact~website]↗.
-- [`docker-cache`][docker-cache~repo]↗{{hi:docker-cache}}.
-- [Cached Docker images][cached-docker-images~repo]↗.
-- [Docker GitHub Action][docker~github-action]↗.
-- [Cache storage backends][docker~cache-storage-backends]↗.
-- [Cache management with GitHub Actions][cache-management-with-github-actions~website]↗.
-- [How to cache docker-compose build inside github-action][stackoverflow~how-to-cache-docker-compose-build-inside-github-action]↗.
-- [Optimizing CI/CD pipelines in your Rust projects][blog~optimizing-ci-cd-pipelines-rust-project]↗.
-- [GitHub Action for installing development tools (mainly from GitHub Releases)][install_action~repo]↗.
-- [Experience about deploying [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} on github using github action - tutorials - The Rust Programming Language Forum][forum-deploying-mdbook-on-github-using-github-action]↗.
+For a library, release automation may publish a crate after its version and checks are verified. For an application, it may publish archives or container images, then deploy a selected version. Keep the publish or deploy job behind the appropriate tag, branch, approval, or environment rule rather than granting those credentials to every test job.
+
+## Keep the pipeline safe and efficient {#safe-pipeline}
+
+Use caches only to avoid repeating expensive downloads or compilation; a cache miss must not make a build fail. Use workflow artifacts for files produced by a run, such as test reports, release archives, or binaries passed between jobs. Do not put secrets in caches, and treat restored cache data as an optimization rather than a trusted release input. The [GitHub Actions artifact][github-actions~workflow-artifacts~docs] and [dependency caching][github-actions~dependency-caching~docs] guides explain the distinction.
+
+Give each workflow or job only the permissions it needs. Do not expose deployment secrets to untrusted pull request code. Pin third-party actions to reviewed commit IDs, and prefer short-lived cloud credentials through OpenID Connect over long-lived cloud keys. Protected deployment environments can restrict eligible branches, require approval, and limit secret access; see GitHub's [security guidance][github-actions~security~docs] and [deployment environment documentation][github-actions~deployment-environments~docs].
+
+## Example workflow from pull request to release {#github-actions}
+
+In a GitHub Actions pipeline, pull requests can run formatting, linting, and tests without release credentials. A merge to the protected default branch can build and retain a candidate artifact. A version tag can publish that artifact, and a separate deploy job can promote it through protected environments. Define the exact triggers and approval points to match the project's release policy.
+
+For an example of a mature Rust release workflow, see [ripgrep's release workflow][ripgrep~release-workflow]. For workflow syntax, tool installation, and caching examples, see [[github_actions | GitHub Actions]].
+
+## Related resources {#related-resources .skip}
+
+### Rust and CI services
+
+- [Cargo's continuous integration guide][book~cargo~continuous-integration].
+- [GitHub Actions][github-actions~website]↗, [GitLab CI/CD][gitlab~ci~docs], [Jenkins][jenkins~website]↗, and [CircleCI][circleci~website]↗.
+- [Optimizing CI/CD pipelines for Rust projects][blog~optimizing-ci-cd-pipelines-rust-project]↗.
+
+### Artifacts, caching, and deployment
+
+- [GitHub workflow artifacts][github-actions~workflow-artifacts~docs].
+- [GitHub dependency caching][github-actions~dependency-caching~docs].
+- [GitHub deployment environments][github-actions~deployment-environments~docs].
+- [GitHub Actions security][github-actions~security~docs].
+- [Docker build caching with GitHub Actions][cache-management-with-github-actions~website]↗.
+
+### Release example
+
+- [ripgrep's release workflow][ripgrep~release-workflow].
+
+## Related topics {#related-topics .skip}
+
+- [[github_actions | GitHub Actions]].
+- [[release_automation | Release Automation]].
+- [[version_control | Version Control]].
+- [[testing | Testing]].
+- [[code_formatting_linting | Code Formatting and Linting]].
+- [[cloud | Cloud]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[cd_ci: write; organize links](https://github.com/john-cd/rust_howto/issues/595)
-example: https://github.com/BurntSushi/ripgrep/blob/master/.github/workflows/release.yml
-</div>

@@ -15,6 +15,12 @@
 [ex~devops~useful-git-hooks-for-rust]: version_control.md#useful-git-hooks-for-rust
 [ex~devops~useful-github-actions]: github_actions.md#useful-github-actions
 [setup-rust-toolchain~repo]: https://github.com/actions-rust-lang/setup-rust-toolchain
+[github-actions~dependency-caching~docs]: https://docs.github.com/en/actions/concepts/workflows-and-actions/dependency-caching
+[github-actions~deployment-environments~docs]: https://docs.github.com/en/actions/concepts/workflows-and-actions/deployment-environments
+[github-actions~security~docs]: https://docs.github.com/en/actions/how-tos/secure-your-work
+[github-actions~workflow-artifacts~docs]: https://docs.github.com/en/actions/concepts/workflows-and-actions/workflow-artifacts
+[gitlab~ci~docs]: https://docs.gitlab.com/ci/
+[ripgrep~release-workflow]: https://github.com/BurntSushi/ripgrep/blob/master/.github/workflows/release.yml
 [p~cargo]: ../../../src/categories/development-tools/cargo/cargo.md
 [p~configuration]: ../../categories/config/configuration.md
 [p~containers]: ../../categories/virtualization/containers.md
