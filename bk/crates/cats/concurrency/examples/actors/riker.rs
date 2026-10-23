@@ -46,11 +46,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
-// TODO add to a chapter on actors with riker
+/// Runs the Riker actor example.
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the actor system starts and receives a message.
     #[test]
     fn test_main() {
         main();

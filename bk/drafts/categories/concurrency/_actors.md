@@ -44,10 +44,10 @@ Possible applications of actor frameworks:
 
 [![riker~website][c~riker~website~badge]][c~riker~website] [![riker][c~riker~docs~badge]][c~riker~docs] [![riker~crates.io][c~riker~crates.io~badge]][c~riker~crates.io] [![riker~repo][c~riker~repo~badge]][c~riker~repo] [![riker~lib.rs][c~riker~lib.rs~badge]][c~riker~lib.rs]{{hi:riker}}{{hi:Async}}{{hi:Actors}}{{hi:CQRS}}{{hi:Actor-model}}{{hi:Event_sourcing}}
 
-[`riker`][c~riker~docs]↗{{hi:riker}} is an actor framework for Rust to build fast, highly concurrent, and resilient applications. Riker is an actor framework for Rust inspired by the actor model found in Erlang/OTP and Akka. It provides tools for creating, managing, and interacting with actors, which are lightweight, concurrent units of execution that communicate through message passing. Riker emphasizes fault tolerance and resilience, offering mechanisms for handling actor failures and ensuring the stability of concurrent applications.
+[`riker`][c~riker~docs]↗{{hi:riker}} is an actor framework inspired by Erlang/OTP and Akka. The example starts an actor system, creates a ping-pong actor, and sends it a message.
 
 ```rust,editable
-{{#include ../../../crates/cats/concurrency/examples/actors/actors.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/actors/riker.rs:example}}
 ```
 
 ## `ractor` {#ractor}
