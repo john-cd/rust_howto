@@ -1,4 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[debugger~codelldb]: https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb
+[debugger~cargo~profiles]: https://doc.rust-lang.org/cargo/reference/profiles.html
+[debugger~dbg]: https://doc.rust-lang.org/std/macro.dbg.html
+[vscode~rust~docs]: https://code.visualstudio.com/docs/languages/rust
 [ex~development-tools_debugging~add-tracing-spans-to-fn]: tracing.md#add-tracing-spans-to-fn
 [ex~development-tools_debugging~configure-tracing]: tracing.md#configure-tracing
 [ex~development-tools_debugging~custom-env-var-for-logging]: config_log.md#custom-env-var-for-logging

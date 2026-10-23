@@ -9,7 +9,7 @@ Helps figure out what is going on with your code such as logging{{hi:Logging}}, 
 
 | Topic | Rust Crates |
 |---|---|
-| Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}} or [`lldb`][c~lldb~docs]↗{{hi:lldb}} |
+| [[debugger | Debuggers]] | `rust-gdb`, `rust-lldb`, or VS Code with CodeLLDB |
 
 {{#include debugging.incl.md}}
 

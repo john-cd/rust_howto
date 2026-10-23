@@ -120,6 +120,7 @@
   - [Maintaining](categories/development-tools_cargo-plugins/maintaining.md)
 
 - [Development Tools - Debugging, Logging](categories/development-tools_debugging/index.md)
+  - [Debuggers](categories/development-tools_debugging/debugger.md)
   - [Debugging](categories/development-tools_debugging/debugging.md)
   - [Tracing](categories/development-tools_debugging/tracing.md)
   - [Alternatives](categories/development-tools_debugging/tracing_alternatives.md)
