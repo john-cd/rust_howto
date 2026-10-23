@@ -5,13 +5,16 @@
 
 ## Key Points {#key-points .skip}
 
-- Rust generally doesn't require direct CPU manipulation. The compiler and standard library provide good abstractions.
-- SIMD and atomic operations are important for performance.
-- Direct access to CPU features (like inline [assembly][p~assembly]) is usually only necessary for very specialized or performance-critical code. Avoid it if you can.
+- Rust's standard library and compiler handle most processor details. Start with portable APIs and ordinary optimized Rust.
+- A program's target architecture and enabled CPU features determine which instructions it may use. A binary built for one processor may not run on another.
+- Use architecture-specific intrinsics only when measurement shows a need and a portable implementation is not sufficient.
+- SIMD processes several values with one instruction; atomics coordinate concurrent access. They solve different problems and both require workload-specific reasoning.
 
 ## CPU Identification {#cpu-identification .skip}
 
-[`cpuid`][c~cpuid~docs]↗{{hi:cpuid}}: A crate for getting CPU information (vendor, features, etc.)
+Use [`std::thread::available_parallelism`][c~std::thread~docs]↗{{hi:std::thread::available_parallelism}} when an application needs a hint for sizing a worker pool. It reports the parallelism available to the process when the operating system can provide that information; it is not a promise that many workers will improve performance.
+
+For vendor, model, cache, or instruction-set inventory on x86 and x86-64, [`raw-cpuid`][c~raw-cpuid~docs]↗{{hi:raw-cpuid}} can read CPUID data. It is architecture-specific and does not replace the runtime feature-detection check required before calling an architecture-specific intrinsic. CPU identification is not required for ordinary application logic.
 
 ### Check the Number of Logical cpu Cores {#check-number-of-logical-cpu-cores}
 
@@ -27,17 +30,26 @@ Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine usi
 
 ### Inline Assembly {#inline-assembly .skip}
 
-You can use inline [assembly][p~assembly] in Rust with the `asm!` macro, but it's generally discouraged unless absolutely necessary for performance reasons. It makes code less portable.
+Rust supports inline [assembly][p~assembly] through the `asm!` macro. Assembly is architecture-specific and bypasses many compiler guarantees, so use it only when a supported intrinsic or library cannot express a measured requirement. Keep it in a small, documented boundary and provide a portable implementation where practical.
 
 ### Compiler Intrinsics {#compiler-intrinsics .skip}
 
-Compiler intrinsics are functions that map directly to CPU instructions. They're often used for low-level optimization. Access to intrinsics is usually through [`std::arch`][c~std::arch~docs]↗{{hi:std::arch}}.
+Compiler intrinsics map to operations supported by a processor architecture. Rust exposes many of them through [`std::arch`][c~std::arch~docs]↗{{hi:std::arch}}. Their availability depends on the target architecture and, for some instructions, on the CPU that runs the program.
+
+There are two common ways to enable a feature:
+
+- Compile the whole program for a known processor or feature set. This can produce fast code, but the binary requires a compatible CPU. Treat `-C target-cpu=native` as a local or deployment-specific choice, not a portable release default.
+- Compile an optimized function separately and select it at runtime after checking that the running CPU supports its required features. Keep a baseline fallback for other processors. The detection check, architecture configuration, and function's `#[target_feature]` annotation must agree; calling an unsupported intrinsic can cause undefined behavior.
+
+The `std::arch` documentation describes the architecture-specific modules and runtime feature-detection macros. Put target-specific code behind `#[cfg]` so other architectures still compile.
 
 ## SIMD (Single Instruction, Multiple Data) Operations {#simd}
 
-[`std::arch`][c~std::arch~docs]↗{{hi:std::arch}}: (Standard library) Provides access to SIMD instructions if the target CPU supports them. This is essential for performance optimization.
+SIMD can speed up data-parallel operations such as processing pixels or numeric arrays, but it is not automatically faster. Measure representative inputs, account for the cost of dispatch and data conversion, and keep a scalar or otherwise portable path when the deployment target is not fixed.
 
-[`packed_simd`][c~packed_simd~docs]↗{{hi:packed_simd}}: A crate for portable SIMD.
+[`std::arch`][c~std::arch~docs]↗{{hi:std::arch}} provides vendor-specific intrinsics. These APIs are not portable across architectures, and some intrinsics require runtime feature detection before use.
+
+[`core::simd`][c~core::simd~docs]↗{{hi:core::simd}} is the portable SIMD API. It is currently a nightly-only experimental API, so stable applications should check its current status before depending on it.
 
 ## Related Topics {#related-topics .skip}
 

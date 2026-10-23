@@ -1,4 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[c~core::simd~docs]: https://doc.rust-lang.org/core/simd/
+[c~raw-cpuid~docs]: https://docs.rs/raw-cpuid
+
 [ex~hardware-support~check-number-of-logical-cpu-cores]: processor.md#check-number-of-logical-cpu-cores
 [ex~hardware-support~simd]: processor.md#simd
 [p~assembly]: ../development-tools_profiling/assembly.md
