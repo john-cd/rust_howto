@@ -4,21 +4,14 @@
 // ANCHOR: example
 //! The following demonstrates the use of the `pin_project` crate for pin
 //! projection.
-
-// //!
-// //! Pin projection enables safely getting mutable references to fields of a
-// //! `Pin`-ned struct.
-// //!
-// //! Pinning is a mechanism that guarantees that the memory location of a
-// //! value will not change. This is useful when there are one or more
-// //! pointers pointing at that value, for example in self-referential data
-// //! structures, asynchronous programming, and `unsafe` code.
-// //! See [`std::pin`](https://doc.rust-lang.org/std/pin/index.html).
-// //!
-// //! Projection refers to allow borrowing one or more of the inner fields of a
-// //! struct when the caller has access to a borrow of the whole struct.
-// //!
-// //! `pin-project` enables safe [projection and structural pinning](https://doc.rust-lang.org/std/pin/index.html#projections-and-structural-pinning).
+//!
+//! Pinning keeps a value at a stable address. Projection borrows its fields
+//! while preserving whether each field is pinned. This is useful for
+//! address-sensitive state, including self-references and futures that borrow
+//! their own state.
+//!
+//! Prefer a projection macro to hand-written pointer manipulation. Incorrect
+//! pinning can move a value after another pointer relies on its address.
 
 use std::fmt::Debug;
 use std::marker::PhantomPinned;
@@ -65,12 +58,12 @@ impl<T: Debug, U: Clone> BasicPinned<T, U> {
 // Example 1: Basic pinned struct.
 /// Projects a pinned struct onto its fields.
 fn example1() {
-    let mut basic = BasicPinned {
+    let basic = BasicPinned {
         pinned: String::from("pinned data"),
         unpinned: 42,
     };
 
-    let mut pinned_basic = unsafe { Pin::new_unchecked(&mut basic) };
+    let mut pinned_basic = Box::pin(basic);
     let projection = pinned_basic.as_mut().project();
 
     // `projection.pinned` is `Pin<&mut String>`.
@@ -121,27 +114,22 @@ impl SelfReferential {
 
     /// Sets the pointer to the value.
     fn init(self: Pin<&mut Self>) {
-        let ptr = std::ptr::from_ref::<String>(&self.value);
-        unsafe {
-            let mut_self = self.get_unchecked_mut();
-            mut_self.pointer = ptr;
-        }
+        let this = self.project();
+        *this.pointer = std::ptr::from_ref(this.value.as_ref().get_ref());
     }
 
     /// Returns the pointer to the value.
     fn get_pointer(self: Pin<&Self>) -> *const String {
-        self.pointer
+        *self.project_ref().pointer
     }
 }
 
 // Example 2: Self-referential struct.
 /// Creates a self-referential struct, pins it and reads through its pointer.
 fn example2() {
-    let mut self_ref =
-        SelfReferential::new(String::from("self-referential data"));
-
-    // Pin the struct to the stack.
-    let mut pinned_self_ref = unsafe { Pin::new_unchecked(&mut self_ref) };
+    // Pin the struct in a heap allocation before creating the self-reference.
+    let mut pinned_self_ref =
+        Box::pin(SelfReferential::new(String::from("self-referential data")));
 
     // Initialize the self-reference.
     pinned_self_ref.as_mut().init();
@@ -149,6 +137,8 @@ fn example2() {
     // Access the data through the self-reference.
     let ptr = pinned_self_ref.as_ref().get_pointer();
 
+    // SAFETY: init stored the address of value after the !Unpin struct was
+    // pinned, and the pinned allocation remains alive for this dereference.
     println!("Pointer points to value: {}", unsafe { &*ptr });
 }
 
@@ -253,9 +243,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Exercises basic, self-referential, enum, and drop projections.
     #[test]
     fn test_main() {
         main();
     }
 }
-// [finish; provide projection example before going into pin projection; explain risks; explain use cases](https://github.com/john-cd/rust_howto/issues/1120)
