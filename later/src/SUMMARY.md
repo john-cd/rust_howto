@@ -144,6 +144,7 @@
 
 - [Rendering](categories/rendering/index.md)
   - [2D Renderers](categories/rendering/2d_renderers.md)
+  - [SVG Rendering](categories/rendering/svg_rendering.md)
 
 - [Rendering - data formats](categories/rendering_data-formats/index.md)
   - [Data formats](categories/rendering_data-formats/data_formats.md)

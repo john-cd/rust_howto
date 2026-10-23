@@ -18,6 +18,8 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+resvg = "0.48.1" # Rasterizes normalized SVG trees into pixmaps.
+usvg = "0.48.1" # Parses and normalizes SVG documents.
 
 [[example]]
 name = "2d_raster_graphics"
