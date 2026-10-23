@@ -1,31 +1,25 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # GUI
 
 [![cat~gui][cat~gui~badge]][cat~gui]{{hi::GUI}}
 
-Tooling to help you create a graphical user interface.
+Libraries and bindings for building graphical user interfaces in desktop and browser applications. This index groups them by application target and interaction model; the project pages provide the examples.
 
 ## Choosing the Right Framework
 
-GTK and Tauri are probably the only options which can be described as production-ready without caveats. The Rust native options are usable for simple projects but are all still quite incomplete.
+Framework maturity, maintenance, accessibility, styling, and platform support vary. Check the project's current documentation and native prerequisites against your deployment needs.
 
-For most common GUI needs, [`egui`][c~egui~docs]↗{{hi:egui}} and [`iced`][c~iced~docs]↗{{hi:iced}} are excellent starting points. If you're targeting the web, [`yew`][c~yew~docs]↗{{hi:yew}} or [`seed`][c~seed~docs]↗{{hi:seed}} are good choices. If you need a native look and feel or have existing experience with GTK or Qt, then their respective bindings might be appropriate. [`tauri`][c~tauri~docs]↗{{hi:tauri}} is a good option if you're comfortable with web technologies and want to build cross-platform desktop apps.
+| Application need                                         | Examples                                                                                                   | Where to look                                                         |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Native application using an existing GUI toolkit         | [`gtk4`][c~gtk4~docs]↗{{hi:GTK}}, [`qt`][c~qt~docs]↗{{hi:Qt}}, [`fltk-rs`][c~fltk~docs]↗{{hi:FLTK}}        | [Bindings to native GUI toolkits](#bindings-to-native-gui-toolkits)   |
+| Immediate-mode UI for tools and interactive applications | [`egui`][c~egui~docs]↗{{hi:egui}}                                                                          | [Immediate-mode GUIs](#immediate-mode-guis)                           |
+| Retained-mode or declarative UI                          | [`iced`][c~iced~docs]↗{{hi:iced}}, [`slint`][c~slint~docs]↗{{hi:slint}}                                    | [Retained-mode GUIs](#retained-mode-guis)                             |
+| Desktop application using web technologies               | [`tauri`][c~tauri~docs]↗{{hi:tauri}}                                                                       | [Web-based desktop GUIs](#web-based-guis)                             |
+| GUI that runs in a web browser                           | [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`dioxus`][c~dioxus~docs]↗{{hi:dioxus}} | [Web Frameworks](#web-frameworks)                                     |
+| Custom window and renderer                               | [`winit`][c~winit~docs]↗{{hi:winit}}, [`minifb`][c~minifb~docs]↗{{hi:minifb}}                              | [Window creation](#window-creation) and [2D renderers](#2d-renderers) |
 
-| GUI type | Framework |
-|---|---|
-| Simple GUIs, Tools, Games | [`egui`][c~egui~docs]↗{{hi:egui}} is an excellent choice. |
-| More Complex Applications, Declarative UI | [`iced`][c~iced~docs]↗{{hi:iced}} or [`slint`][c~slint~docs]↗{{hi:slint}}. |
-| Native Look and Feel | [`gtk4`][c~gtk4~docs]↗{{hi:gtk4}} or [`qt-rs`][c~qt~docs]↗{{hi:qt-rs}} (but require more setup and native dependencies) |
-| Web Technologies for Desktop | [`tauri`][c~tauri~docs]↗{{hi:tauri}}. |
-| Web-Based GUIs | [`yew`][c~yew~docs]↗{{hi:yew}} or [`seed`][c~seed~docs]↗{{hi:seed}}. See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming: HTTP Server]] |
-
-See also:
-
-- [Are we GUI yet?][are-we-gui-yet?~website]↗.
-- the relevant section in [blessed.rs][blessed-rs~website]↗.
-- [The State of Rust GUI libraries][blog~state-rust-gui-libraries]↗.
-- [LibHunt][libhunt-rust-gui~website]↗.
-- [Top GUI Libraries and Frameworks for Rust (simplifycpp.org)][top-GUI-simplifycpp~website]↗.
+For broader catalogs and surveys, see [Are We GUI Yet?][are-we-gui-yet?~website]↗, the GUI section of [Blessed.rs][blessed-rs~website]↗, and [The State of Rust GUI libraries][blog~state-rust-gui-libraries]↗.
 
 ## GUI Frameworks
 
@@ -33,11 +27,11 @@ See also:
 
 {{#include gtk.incl.md}}
 
-Alternatively, look at [`fltk-rs`][c~fltk~docs]↗{{hi:fltk-rs}}, which offers Rust bindings for the [`FLTK`][fltk~website]↗ 1.4 Graphical User Interface library.
+Alternatively, [`fltk-rs`][c~fltk~docs]↗{{hi:fltk-rs}} provides Rust bindings for the [`FLTK`][fltk~website]↗ graphical user interface library.
 
 ### Immediate-mode GUIs
 
-Immediate-mode GUIs redraw everything every frame, while retained-mode GUIs maintain a data structure representing the UI state.
+Immediate-mode GUIs describe the interface as application state changes, while retained-mode GUIs keep a persistent UI tree. This is a broad distinction; each toolkit defines its own update and rendering model.
 
 {{#include immediate_mode_gui.incl.md}}
 
@@ -47,13 +41,13 @@ Immediate-mode GUIs redraw everything every frame, while retained-mode GUIs main
 
 ### Web-based GUIs
 
-[`tauri`][c~tauri~docs]↗{{hi:tauri}} is a cross-platform framework for building desktop applications with web technologies (HTML, CSS, JavaScript).
+[`tauri`][c~tauri~docs]↗{{hi:tauri}} builds desktop applications with web technologies (HTML, CSS, and JavaScript). A webview-based desktop application is distinct from a site or browser-only application.
 
 {{#include web_based_gui.incl.md}}
 
 ## Web Frameworks
 
-See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming HTTP Server]].
+For browser-based user interfaces, see [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming: HTTP Server]].
 
 ## GUI Components
 
@@ -120,11 +114,4 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/397)
-review which GUI framework should be recommended - make a table; review links in Choosing the right framework section again.
-cover zola?
-
-- [`perseus`][c~perseus~docs]↗.{{hi:perseus}}
-- [Are we (I)DE yet?][are-we-ide-yet?~website]↗.
-- [Porting a cross-platform GUI application to Rust][blog~porting-a-cross-platform-gui-application-to-rust].
-
 </div>
