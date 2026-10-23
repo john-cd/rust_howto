@@ -3,6 +3,8 @@
 
 {{#include install.incl.md}}
 
+This page covers installing Rust command-line applications. To install the Rust compiler and manage Rust toolchains, start with [`rustup`][ex~installation~rustup].
+
 | Topic | Rust Crates |
 |---|---|
 | Package Managers | [cargo][p~cargo] |
@@ -11,23 +13,38 @@
 | Self-Updating | [`self_update`][c~self_update~docs]↗{{hi:self_update}} |
 | Build Systems (for installation scripts) | [`xtask`][c~xtask~docs]↗{{hi:xtask}} (for managing complex builds and installation-related tasks) |
 
-## Build and Install a Rust Binary with `cargo install` {#cargo-install}
+## Install a Rust Binary with `cargo install` {#cargo-install}
 
 [![cargo~website][c~cargo~website~badge]][c~cargo~website] [![cargo][c~cargo~docs~badge]][c~cargo~docs] [![cargo~crates.io][c~cargo~crates.io~badge]][c~cargo~crates.io] [![cargo~repo][c~cargo~repo~badge]][c~cargo~repo] [![cargo~lib.rs][c~cargo~lib.rs~badge]][c~cargo~lib.rs]{{hi:cargo}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-The [`cargo install`][book~cargo~cargo-install]↗{{hi:cargo install}} command manages [`cargo`][c~cargo~docs]↗{{hi:cargo}}'s local set of installed binary [crates][p~crates]. Only packages which have executable{{hi:Executables}} `[[bin]]` or `[[example]]` targets can be installed, and all executables are installed into the installation root's bin folder. By default only binaries, not examples, are installed. There are multiple sources from which a crate can be installed. The default source location is [`crates.io`][crates.io~website]↗{{hi:crates.io}}, but the --git, --path, and --registry flags can change this source. This command operates on system or user level, not project level.
+[`cargo install`][book~cargo~cargo-install]↗{{hi:cargo install}} builds and installs executable targets from a package. It is for tools you want available from a shell; it does not add a dependency to the current project's `Cargo.toml`. By default Cargo installs binaries from [`crates.io`][crates.io~website]↗{{hi:crates.io}} into the Cargo installation root's `bin` directory (usually `~/.cargo/bin` on Unix-like systems or `%USERPROFILE%\.cargo\bin` on Windows). Make sure that directory is on `PATH`.
+
+```sh
+# Install a published command-line tool using its packaged lockfile when present.
+cargo install --locked ripgrep
+
+# List and remove tools installed by Cargo.
+cargo install --list
+cargo uninstall ripgrep
+```
+
+Cargo can also install from a Git repository, a local path, or a named registry. Use `--version` to select a published version and `--root` to choose another installation directory. `cargo install` builds the package on your machine; `--locked` asks Cargo to use the package's published `Cargo.lock` when one is available. Some older packages do not include a lockfile, so `--locked` cannot pin their dependency resolution.
 
 ## Install a Rust Binary with `cargo binstall` {#cargo-binstall}
 
 [![cargo-binstall][c~cargo-binstall~docs~badge]][c~cargo-binstall~docs] [![cargo-binstall~crates.io][c~cargo-binstall~crates.io~badge]][c~cargo-binstall~crates.io] [![cargo-binstall~repo][c~cargo-binstall~repo~badge]][c~cargo-binstall~repo] [![cargo-binstall~lib.rs][c~cargo-binstall~lib.rs~badge]][c~cargo-binstall~lib.rs]{{hi:cargo-binstall}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-`cargo binstall` provides a low-complexity mechanism for installing Rust binaries{{hi:Rust binaries installation}} as an alternative to building from source (e.g. via `cargo install`) or manually downloading packages. This is intended to work with existing CI artifacts and infrastructure, and with minimal overhead for package maintainers.
+`cargo binstall` is an optional tool for installing Rust binaries. It can use compatible prebuilt release artifacts instead of compiling the package locally, and can fall back to a source build when an artifact is unavailable, depending on its configuration.
 
-`cargo binstall` works by fetching the crate information from [`crates.io`][crates.io~website]↗{{hi:crates.io}} and searching the linked repository for matching releases and artifacts, falling back to the `quickinstall`{{hi:quickinstall}} third-party artifact host, to alternate targets as supported, and finally to `cargo install` as a last resort.
+Prebuilt artifacts are supplied through release infrastructure outside Cargo's normal source build. Check the project's release page and the [`cargo-binstall`][c~cargo-binstall~docs]↗{{hi:cargo-binstall}} documentation to understand where an artifact comes from and which fallback behavior is enabled before installing it.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+| Topic | See also |
+|---|---|
+| Install and update the Rust compiler and toolchains | [`rustup`][ex~installation~rustup] |
+| Manage project dependencies | [Cargo][p~cargo] |
+| Find and compare crates | [Crate selection][p~crates] |
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
