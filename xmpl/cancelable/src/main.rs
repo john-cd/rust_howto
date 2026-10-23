@@ -4,21 +4,20 @@
 
 use cancelable::*;
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt()
         // Sets the maximum verbosity level.
         .with_max_level(tracing::Level::DEBUG)
         // Sets this subscriber to be the global trace collector for this application.
         .init();
 
-    let worker = Worker::new();
-    let mut tasks = Vec::new();
-    for _ in 0..10 {
-        tasks.push(Task::new());
-    }
-    for task in tasks {
-        worker.start(task);
-    }
-    std::thread::sleep(std::time::Duration::from_millis(100));
+    let mut worker = Worker::new();
+    let task = Task::new();
+    let task_id = task.task_id();
+    worker.start(task)?;
+    std::thread::sleep(std::time::Duration::from_millis(250));
+    worker.cancel_task(task_id)?;
+    worker.die()?;
     worker.process_responses();
+    Ok(())
 }

@@ -4,6 +4,7 @@
 
 use std::sync::atomic::AtomicU64;
 use std::sync::atomic::Ordering;
+use std::time::Duration;
 
 use crossbeam::channel::Sender;
 
@@ -55,6 +56,9 @@ impl Task {
             taskresponse.send(TaskResponse {
                 task_id: self.task_id,
             })?;
+            if i < 4 {
+                std::thread::sleep(Duration::from_millis(100));
+            }
         }
         Ok(FinalTaskResponse {
             task_id: self.task_id,

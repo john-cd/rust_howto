@@ -2,74 +2,88 @@
 //!
 //! TODO Reviewed ??-??-2026
 
-use crossbeam::channel;
-use crossbeam::channel::Receiver;
-use crossbeam::channel::Sender;
+use std::collections::BTreeMap;
+use std::sync::Arc;
+use std::sync::Mutex;
+use std::sync::Weak;
+
+use std::sync::atomic::AtomicBool;
+use std::sync::atomic::Ordering;
 
 use super::errors::TaskError;
 
-/// Maximum number of cancel requests that can be queued.
-const CANCEL_QUEUE_SIZE: usize = 10;
-
-// Message.
-/// A request to cancel tasks.
-#[derive(Debug)]
-enum Cancel {
-    /// Cancel all tasks.
-    All,
-    /// Cancel one task.
-    Specific {
-        /// Identifier of the task to cancel.
-        id: u64,
-    },
-}
-
-/// Sends cancel requests and creates the tokens that receive them.
+/// Sends cancellation requests and creates one token for each active task.
 #[derive(Debug, Clone)]
 pub struct CancelTokenSource {
-    /// Sends the cancel requests.
-    s_cancel: Sender<Cancel>,
-    /// Receives the cancel requests; cloned into each token.
-    r_cancel: Receiver<Cancel>,
+    /// Active task flags, shared with their tokens.
+    tasks: Arc<Mutex<BTreeMap<u64, Arc<AtomicBool>>>>,
 }
 
 impl CancelTokenSource {
-    /// Creates a source with an empty queue of requests.
+    /// Creates a source with no active tasks.
     pub fn new() -> Self {
-        let (s_cancel, r_cancel) = channel::bounded::<Cancel>(CANCEL_QUEUE_SIZE);
-        Self { s_cancel, r_cancel }
+        Self {
+            tasks: Arc::new(Mutex::new(BTreeMap::new())),
+        }
     }
 
-    /// Creates the token of the task `id`.
-    pub fn make_token(&self, id: u64) -> CancelToken {
-        CancelToken {
+    /// Registers a task and creates the token it checks while running.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if this ID is already active or the registry lock is poisoned.
+    pub fn make_token(&self, id: u64) -> anyhow::Result<CancelToken> {
+        let cancelled = Arc::new(AtomicBool::new(false));
+        let mut tasks = self
+            .tasks
+            .lock()
+            .map_err(|error| anyhow::anyhow!("task cancellation registry is poisoned: {error}"))?;
+        if tasks.contains_key(&id) {
+            anyhow::bail!("task {id} is already registered for cancellation");
+        }
+        tasks.insert(id, Arc::clone(&cancelled));
+        drop(tasks);
+        Ok(CancelToken {
             id,
-            r_cancel: self.r_cancel.clone(),
-        }
+            cancelled,
+            tasks: Arc::downgrade(&self.tasks),
+        })
     }
 
-    /// Request all token to be interrupted.
+    /// Requests cancellation of every registered task.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the task registry lock is poisoned.
     pub fn cancel_all(&self) -> anyhow::Result<()> {
-        self.cancel(Cancel::All)
-    }
-
-    /// Requests that the task `id` is interrupted.
-    pub fn cancel_task(&self, id: u64) -> anyhow::Result<()> {
-        self.cancel(Cancel::Specific { id })
-    }
-
-    /// Sends a cancel request without blocking.
-    fn cancel(&self, cancel: Cancel) -> anyhow::Result<()> {
-        match self.s_cancel.try_send(cancel) {
-            Ok(()) => tracing::info!("Cancel request sent."),
-            Err(crossbeam_channel::TrySendError::Full(_)) => {
-                tracing::error!("Cancellation channel is full.");
-            }
-            Err(e) => {
-                tracing::error!("Error when trying to cancel: {e}");
-                return Err(e.into());
-            }
+        let tasks = self
+            .tasks
+            .lock()
+            .map_err(|error| anyhow::anyhow!("task cancellation registry is poisoned: {error}"))?;
+        for cancelled in tasks.values() {
+            cancelled.store(true, Ordering::Release);
         }
+        drop(tasks);
+        tracing::info!("Cancellation requested for all active tasks.");
+        Ok(())
+    }
+
+    /// Requests cancellation of the active task with the given ID.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the task ID is not active or the registry lock is poisoned.
+    pub fn cancel_task(&self, id: u64) -> anyhow::Result<()> {
+        let tasks = self
+            .tasks
+            .lock()
+            .map_err(|error| anyhow::anyhow!("task cancellation registry is poisoned: {error}"))?;
+        let cancelled = tasks
+            .get(&id)
+            .ok_or_else(|| anyhow::anyhow!("task {id} is not active"))?;
+        cancelled.store(true, Ordering::Release);
+        drop(tasks);
+        tracing::info!("Cancellation requested for task {id}.");
         Ok(())
     }
 }
@@ -80,21 +94,41 @@ impl Default for CancelTokenSource {
     }
 }
 
-/// A token that a task checks to know whether it should stop.
+/// A task's cooperative signal to stop running.
 pub struct CancelToken {
     /// Identifier of the task.
     id: u64,
-    /// Receives the cancel requests.
-    r_cancel: Receiver<Cancel>,
+    /// The task's cancellation flag.
+    cancelled: Arc<AtomicBool>,
+    /// Registry used to remove the task when this token is dropped.
+    tasks: Weak<Mutex<BTreeMap<u64, Arc<AtomicBool>>>>,
 }
 
 impl CancelToken {
-    /// Returns an error if the task has been asked to stop.
+    /// Returns an interruption error after cancellation has been requested.
     pub fn check(&self) -> Result<(), TaskError> {
-        match self.r_cancel.try_recv() {
-            Ok(Cancel::All) => Err(TaskError::Interrupted),
-            Ok(Cancel::Specific { id }) if id == self.id => Err(TaskError::Interrupted),
-            _ => Ok(()),
+        if self.cancelled.load(Ordering::Acquire) {
+            Err(TaskError::Interrupted)
+        } else {
+            Ok(())
+        }
+    }
+}
+
+impl Drop for CancelToken {
+    fn drop(&mut self) {
+        let Some(tasks) = self.tasks.upgrade() else {
+            return;
+        };
+        let mut tasks = match tasks.lock() {
+            Ok(tasks) => tasks,
+            Err(poisoned) => poisoned.into_inner(),
+        };
+        if tasks
+            .get(&self.id)
+            .is_some_and(|cancelled| Arc::ptr_eq(cancelled, &self.cancelled))
+        {
+            tasks.remove(&self.id);
         }
     }
 }
