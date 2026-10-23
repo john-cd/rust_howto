@@ -62,9 +62,25 @@ In most cases, prefer the [`tokio`][p~tokio]{{hi:tokio}} runtime - see [The Stat
 Alternatives to the [Tokio][p~tokio] async ecosystem include:
 
 - [![async-std][c~async-std~docs~badge]][c~async-std~docs]{{hi:async-std}} [![async-std~crates.io][c~async-std~crates.io~badge]][c~async-std~crates.io]↗: async version of the Rust standard library. No longer maintained?
-- [![smol][c~smol~docs~badge]][c~smol~docs]{{hi:smol}} [Smol][c~smol~crates.io]↗.
+- [![smol][c~smol~docs~badge]][c~smol~docs]{{hi:smol}} [Smol][c~smol~crates.io]↗, a small async runtime.
 - [![embassy][c~embassy~docs~badge]][c~embassy~docs]{{hi:embassy}} [Embassy][c~embassy~website]↗ [![embassy~repo][c~embassy~repo~badge]][c~embassy~repo] for embedded systems.
-- [![mio][c~mio~docs~badge]][c~mio~docs]{{hi:mio}} [Mio][c~mio~crates.io]↗ is a fast, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS abstractions. It is part of the Tokio ecosystem.
+- [![mio][c~mio~docs~badge]][c~mio~docs]{{hi:mio}} [Mio][c~mio~crates.io]↗ is a low-level, non-blocking I/O and event-notification library. It exposes readiness events; it does not execute futures.
+
+### Execute Tasks with `smol` {#smol}
+
+This example runs two asynchronous tasks and awaits both results:
+
+```rust,editable
+{{#include ../../../crates/cats/asynchronous/examples/smol.rs:example}}
+```
+
+### Poll for I/O Events with `mio` {#mio}
+
+[`mio`][c~mio~docs]↗{{hi:mio}} provides low-level polling for non-blocking I/O. This example uses a `Waker` to wake a `Poll` instance and handle the resulting event; an application supplies its own event loop and future executor.
+
+```rust,editable
+{{#include ../../../crates/cats/asynchronous/examples/mio.rs:example}}
+```
 
 ## References {#references .skip}
 

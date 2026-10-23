@@ -8,7 +8,7 @@ use smol::Timer;
 
 /// Runs several asynchronous tasks on the `smol` runtime and waits for their
 /// results.
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() {
     // Run the async block on the smol runtime.
     smol::block_on(async {
         // Spawn a background task that waits and then returns a value.
@@ -28,8 +28,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Wait for both tasks to complete and combine their results.
         let result = task1.await + task2.await;
         println!("Total result: {result}");
-        Ok(())
-    })
+    });
 }
 // ANCHOR_END: example
 
@@ -37,9 +36,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     use super::*;
 
+    /// Verifies the runtime waits for both tasks to finish.
     #[test]
     fn test_main() {
-        main().unwrap();
+        main();
     }
 }
-// TODO add to a chapter on asynchronous programming with smol

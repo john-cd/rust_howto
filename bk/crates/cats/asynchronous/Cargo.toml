@@ -29,7 +29,8 @@ futures = "0.3.34"
 futures-executor = "0.3.34"
 futures-util = "0.3.34"
 kanal = "0.1.1"  # NOTE: pre version
-mio = "1.2.4"
+# Enable readiness polling and wakers for the Mio example.
+mio = { version = "1.2.4", features = ["os-poll"] }
 postage = "0.5.0"
 rand = { version = "0.10.3", features = ["thread_rng"] }
 rayon = "1.12.0"

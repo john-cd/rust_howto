@@ -12,7 +12,10 @@ use mio::Waker;
 /// The token that identifies the events sent by the waker.
 const WAKE_TOKEN: Token = Token(0);
 
-/// Wakes up a polling instance from another thread and handles the event.
+/// Wakes up a polling instance and handles the event.
+///
+/// # Errors
+/// Returns an error if polling or waking the instance fails.
 fn main() -> std::io::Result<()> {
     // Create a new polling instance and event storage.
     let mut poll = Poll::new()?;
@@ -43,9 +46,9 @@ fn main() -> std::io::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the poller handles a wake event.
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn test_main() -> std::io::Result<()> {
+        main()
     }
 }
-// TODO add to a chapter on asynchronous programming with mio
