@@ -8,5 +8,6 @@
 [ex~embedded~rtos~embassy]: rtos.md#embassy
 [ex~embedded~rtos~freertos]: rtos.md#freertos
 [ex~embedded~rtos~rtic]: rtos.md#rtic
+[ex~embedded~sensors]: sensors.md#read-a-register-over-i2c
 [ex~embedded~smoltcp]: useful_crates_embedded.md#smoltcp
 [svd2rust~repo]: https://github.com/rust-embedded/svd2rust
