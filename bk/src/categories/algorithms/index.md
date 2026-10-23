@@ -3,7 +3,7 @@
 
 [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
-This category covers Rust implementations of core algorithms{{hi:Algorithms}}, such as sorting{{hi:Sorting}} and random value generation, that are not covered in separate chapters.
+This category covers Rust implementations of algorithms{{hi:Algorithms}} such as sorting{{hi:Sorting}}, hashing, graph processing, and random value generation. Prefer the standard library for common operations; use a specialized crate when it adds a capability or performance your application needs.
 
 [[compression | Compression]], [[cryptography | cryptography]], [[data-structures | data structures]], [[mathematics | mathematics]], [[science | scientific algorithms]], [[search | search]], [[strings | strings]], and [[text-processing | text processing]] are discussed elsewhere but are briefly mentioned below.
 

@@ -3,32 +3,27 @@
 
 {{#include hashing.incl.md}}
 
-Hashing is a process that converts input data of any size into a "digest", a fixed-size string of characters, typically a sequence of numbers and letters, also known as a hash value or hash code. Hash functions are designed to be fast, deterministic (the same input will always produce the same output), and produce a unique hash for distinct inputs (lack of collisions). One key feature of hashing is that it is a _one-way_ function; you can't reverse-engineer the original input from the hash value.
+Hash functions map input of any length to a fixed-size output, often called a _hash_, _hash value_, or _digest_. A given function is deterministic: the same input produces the same output. Since the set of outputs is finite, different inputs can collide. Cryptographic hash functions are designed to make finding collisions or recovering an input infeasible; ordinary hash functions may only prioritize speed.
 
-Hashes are widely used in various applications such as:
+Hashes are used for several different purposes:
 
-- Hash Maps: Efficient data retrieval.
-- Data Integrity: Ensuring that data has not been altered by comparing the hash value of the original data with the hash value of the received data.
-- Password Storage: Storing hashed versions of passwords rather than plain text to enhance security.
-- Digital Signatures: Verifying the authenticity and integrity of messages or documents.
+- Hash tables compute a hash of each key to find a place to store or look it up. This hash is an implementation detail, not a stable identifier to save or send.
+- A checksum or cryptographic digest can detect changes when it is compared with a trusted value. A plain digest does not authenticate who supplied the data.
+- Password storage requires a dedicated, deliberately expensive password-hashing function. Do not store passwords with SHA-256, BLAKE3, or another fast general-purpose hash.
+- Digital-signature schemes commonly hash data as part of signing and verification; use a complete signature scheme rather than treating a digest as a signature.
 
-Depending on your specific use case, use the following crates for general-purpose hashing, fast non-cryptographic hashing, DoS-resistant hashing, and cryptographic hashing:
+Choose an implementation based on the required properties:
 
-**Cryptographic Hashing:**
-- `sha2` for standard cryptographic hashing.
-- `blake3` for fast, general-purpose cryptographic hashing.
+**Cryptographic digests:**
+- [`sha2`][c~sha2~docs]↗ for the SHA-2 family.
+- [`blake3`][c~blake3~docs]↗ for a fast, parallelizable cryptographic hash.
 
-**Fast, Non-Cryptographic Hashing:**
-- `rustc-hash` for fast, non-cryptographic hashing.
-- `murmur3` is a non-cryptographic hash function suitable for general hash-based lookup.
-- `fnv` is the Fowler–Noll–Vo hash function that is more efficient for smaller hash keys.
+**Non-cryptographic hashers:**
+- `rustc-hash`, `foldhash`, `murmur3`, and `fnv` can suit trusted inputs when speed matters. They do not provide cryptographic collision resistance.
 
-**DoS-Resistant Hashing for HashMaps:**
-- `ahash` for use as a DoS-resistant hash function in in-memory hashmaps.
-- `hashbrown` is a Rust port of Google's high-performance SwissTable hash map, adapted to make it a drop-in replacement for Rust's standard `HashMap` and `HashSet` types.
+For attacker-controlled keys, keep the standard library's randomized `HashMap` hasher unless you have measured a need to change it and reviewed the security trade-off. `hashbrown` is a hash-map implementation, not a hash function.
 
-**Checksums:**
-- `crc` or `crc32fast` for CRC checksums.
+**Checksums:** `crc` or `crc32fast` can detect accidental corruption. CRCs are not cryptographic and do not protect against deliberate changes.
 
 [RustCrypto Hashes](https://github.com/RustCrypto/hashes#rustcrypto-hashes)
 
@@ -50,13 +45,13 @@ Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::
 
 ## Use General-purpose Hashing Algorithms {#general-purpose-hashing-algorithms}
 
-For more [[algorithms | algorithms]], see Rust Crypto Hashes: sha2{{hi:sha2}}, sha1{{hi:sha1}}, md-5{{hi:md-5}}
+Use a cryptographic hash when a digest must resist deliberate attacks. For passwords, use a dedicated password-hashing function instead.
 
 ### Hash with `blake3` {#blake3}
 
 [![blake3][c~blake3~docs~badge]][c~blake3~docs] [![blake3~crates.io][c~blake3~crates.io~badge]][c~blake3~crates.io] [![blake3~repo][c~blake3~repo~badge]][c~blake3~repo] [![blake3~lib.rs][c~blake3~lib.rs~badge]][c~blake3~lib.rs]{{hi:blake3}}
 
-[`blake3`][c~blake3~docs]↗{{hi:blake3}} implements the BLAKE3 hash function. BLAKE3 is a cryptographic hash function that is faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3. It is designed to take advantage of parallel processing capabilities. BLAKE3 can produce hashes of arbitrary length, from short digests to longer ones. This is useful for various applications, including key derivation and password hashing. BLAKE3 allows for incremental hashing, i.e. updating the hash state with new data without recomputing the entire hash. This is useful for streaming data or situations where the input is received in chunks.
+[`blake3`][c~blake3~docs]↗{{hi:blake3}} implements a cryptographic hash with a tree structure that can use parallel processing. It supports incremental hashing and output of arbitrary length. BLAKE3 also provides keyed hashing and key-derivation modes, but it is not a password-hashing function; use a dedicated function such as Argon2id for passwords.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/algorithms/examples/hashing/blake3.rs:example}}
@@ -78,7 +73,7 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 
 [![foldhash][c~foldhash~docs~badge]][c~foldhash~docs] [![foldhash~crates.io][c~foldhash~crates.io~badge]][c~foldhash~crates.io] [![foldhash~repo][c~foldhash~repo~badge]][c~foldhash~repo] [![foldhash~lib.rs][c~foldhash~lib.rs~badge]][c~foldhash~lib.rs]{{hi:foldhash}}{{hi:Hash}}{{hi:Hasher}}{{hi:No-std}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
-A fast, non-cryptographic, minimally DoS-resistant hashing algorithm.
+A fast, non-cryptographic hash function. Do not use it as a cryptographic digest or assume it protects attacker-controlled keys from collision attacks.
 
 ## Legacy Hashing Algorithms {#legacy-hashing-algorithms}
 
@@ -106,13 +101,11 @@ For legacy applications, you may consider using the following hashing algorithms
 
 ## Cryptographic Algorithms {#cryptographic-algorithms}
 
-Use [`ring`][c~ring~docs]↗{{hi:ring}}, [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}}, [`sha2`][c~sha2~docs]↗{{hi:sha2}}. Choose carefully based on security needs and audit history.
+This page covers hashes. Use the dedicated topics for other cryptographic operations:
 
-- `argon2`, `scrypt`, `bcrypt` for password hashing,
-- `aes-gcm-siv`, `aes-gcm`, and `chacha20poly1305` for AEAD Encryption,
-- `rsa` for RSA,
-- `ed25519`, `ecdsa`, `dsa` for digital signatures,
-- `der`, `pem-rfc7468`, `pkcs8`, `x509-cert` for certificates,
+- [[password_hashing | Password Hashing]] for password storage with Argon2id, scrypt, or bcrypt.
+- [[encryption | Encryption]] for authenticated encryption and message authentication.
+- [[cryptography | Cryptography]] for public-key algorithms, signatures, and certificates.
 
 ## Related Topics {#related-topics .skip}
 
