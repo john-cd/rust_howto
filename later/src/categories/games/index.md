@@ -1,31 +1,30 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Games
 
 [![cat~games][cat~games~badge]][cat~games]{{hi:Games}}
 
-Here are some notable games built with Rust:
+These examples show several kinds of games built with Rust. Project availability and development status can change; follow each project link for current downloads and activity.
 
-|||
-|---|---|---|
-| [`Veloren`][veloren.net~website]↗{{hi:Veloren}} | It's a multiplayer, open-world voxel RPG with a beautiful aesthetic. Think [`Minecraft`][minecraft~website]↗{{hi:Minecraft}} meets `Breath of the Wild`, with a dash of `Dwarf Fortress`. It's open-source and has a dedicated community. |
-| [`Zemeroth`][zemeroth~website]↗{{hi:Zemeroth}} | A turn-based tactical game with a unique, tabletop-inspired design. It's also open-source and has a charming, nostalgic feel. |
-| [`Nox Futura`][nox-futura~website]↗{{hi:Nox Futura}} | This one's still in development, but it's got a lot of potential. It's a 3D colony-building game with survival elements, reminiscent of `Dwarf Fortress`. |
-| [`Epicinium`][epicinium~website]↗{{hi:Epicinium}} | A strategy game with simultaneous turns and a focus on resource management. It has a cool map editor, too. |
-| [`Hypercoven`][hypercoven~website]↗{{hi:Hypercoven}} | A real-time strategy game with a unique art style. |
+| Game                                                 | Genre / description                                                       |
+| ---------------------------------------------------- | ------------------------------------------------------------------------- |
+| [`Veloren`][veloren.net~website]↗{{hi:Veloren}}      | Multiplayer, open-world voxel role-playing game.                          |
+| [`Zemeroth`][zemeroth~website]↗{{hi:Zemeroth}}       | Turn-based tactical game.                                                 |
+| [`Nox Futura`][nox-futura~website]↗{{hi:Nox Futura}} | 3D colony-building and survival simulation.                               |
+| [`Epicinium`][epicinium~website]↗{{hi:Epicinium}}    | Turn-based strategy game with simultaneous turns and resource management. |
+| [`Hypercoven`][hypercoven~website]↗{{hi:Hypercoven}} | Real-time strategy game.                                                  |
 
-There's a growing collection of smaller indie games made with Rust on [`itch.io`][itch.io~website]↗{{hi:itch.io}}. You can find everything from puzzle games to platformers to simulations there. Check out the ["made with Rust"][itch.io~made-with-rust~website]↗ tag!
+## Browse More Games
 
-## Where to Find More
-
-- [`Are we game yet?`][are-we-game-yet?~website]↗ This website is a fantastic resource for all things Rust game development. It has lists of games, engines, libraries, and more.
-- [`itch.io`][itch.io~website]↗ or [GOG.com][gog~website]↗.
-- [`Reddit`][reddit~website]↗{{hi:Reddit}}: The 'r/rust' subreddit often has discussions about game development, and you might find announcements of new Rust games there.
+- [Are We Game Yet? games][are-we-game-yet?-games~website]↗ lists games by genre and links to project pages.
+- Browse the [games made with Rust on itch.io][itch.io~made-with-rust~website]↗{{hi:itch.io}} for indie releases and prototypes.
 
 ## Related Topics
 
-- Game engine ecosystems.
-- Indie and open-source Rust games.
-- Graphics and audio toolchains.
+- [[game-engines | Game engines and frameworks]].
+- [[game-development | Game development]].
+- [[graphics | Graphics]].
+- [[multimedia | Multimedia]].
 - [Rust game libraries](../game-engines/game_engines.md).
 
 {{#include refs.incl.md}}
