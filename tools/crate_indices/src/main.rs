@@ -200,6 +200,7 @@ mod tests {
 
     const ALPHABETICAL_INDEX: &str = include_str!("../../../bk/src/indices/crates_alphabetical.md");
 
+    /// Ensures the category index covers the master list and published recipes.
     #[test]
     fn category_index_covers_master_crates() {
         let book_root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../bk");
@@ -226,6 +227,7 @@ mod tests {
         );
     }
 
+    /// Checks that the checked-in category page matches offline generation.
     #[test]
     fn category_index_matches_offline_generation() {
         let crate_names: Vec<_> = MASTER_CRATES.lines().map(str::to_owned).collect();
@@ -239,9 +241,13 @@ mod tests {
         )
         .expect("input should parse");
 
-        assert_eq!(generated, CATEGORY_INDEX);
+        assert_eq!(
+            normalize_page_snapshot(&generated),
+            normalize_page_snapshot(CATEGORY_INDEX)
+        );
     }
 
+    /// Checks that the alphabetical page matches published recipe generation.
     #[test]
     fn alphabetical_index_matches_published_recipe_generation() {
         let book_root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../bk");
@@ -251,7 +257,10 @@ mod tests {
         let generated =
             create_alphabetical_page(&crate_names, &recipe_links).expect("input should parse");
 
-        assert_eq!(generated, ALPHABETICAL_INDEX);
+        assert_eq!(
+            normalize_page_snapshot(&generated),
+            normalize_page_snapshot(ALPHABETICAL_INDEX)
+        );
         for crate_name in recipe_links.keys() {
             assert!(
                 generated.contains(&format!(
@@ -262,6 +271,25 @@ mod tests {
         }
     }
 
+    /// Removes the leading human-review marker from an index page snapshot.
+    fn strip_review_marker(contents: &str) -> &str {
+        let Some(newline) = contents.find('\n') else {
+            return contents;
+        };
+        let marker = contents[..newline].trim_end_matches('\r');
+        if marker.starts_with("<!-- TODO Reviewed ") && marker.ends_with(" -->") {
+            &contents[newline + 1..]
+        } else {
+            contents
+        }
+    }
+
+    /// Removes review metadata and normalizes line endings in an index snapshot.
+    fn normalize_page_snapshot(contents: &str) -> String {
+        strip_review_marker(contents).replace("\r\n", "\n")
+    }
+
+    /// Extracts crate names from badge links in a generated category index.
     fn category_index_crates(contents: &str) -> BTreeSet<&str> {
         contents
             .lines()

@@ -21,6 +21,21 @@ try {
         throw "crate_indices exited with code $LASTEXITCODE"
     }
 
+    if (Test-Path -LiteralPath $indexPath) {
+        $current = [System.IO.File]::ReadAllText($indexPath)
+        $reviewMarker = [regex]::Match($current, '\A(<!-- TODO Reviewed [^\r\n]* -->\r?\n)')
+        if ($reviewMarker.Success) {
+            $generated = [System.IO.File]::ReadAllText($candidatePath)
+            if (-not $generated.StartsWith($reviewMarker.Groups[1].Value)) {
+                [System.IO.File]::WriteAllText(
+                    $candidatePath,
+                    $reviewMarker.Groups[1].Value + $generated,
+                    [System.Text.UTF8Encoding]::new($false)
+                )
+            }
+        }
+    }
+
     Move-Item -LiteralPath $candidatePath -Destination $indexPath -Force
 }
 finally {
