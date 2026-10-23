@@ -3,85 +3,53 @@
 
 [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]
 
-Create applications for the Web.
+Web applications combine HTTP, asynchronous I/O, serialization, and user-interface code. Use this index to find the guide for the layer you are building.
 
-The following table outlines common web development tasks and relevant Rust crates. The Rust web ecosystem offers a variety of options, from low-level networking to high-level frameworks.
+## Services, APIs, and Network I/O
 
-| Topic | Rust Crates | Notes |
-|---|---|---|
-| Web Frameworks (Full-Stack) | [`axum`][c~axum~docs]↗{{hi:axum}}, [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}, [`warp`][c~warp~docs]↗{{hi:warp}} | These frameworks provide tools for building web applications, including routing, middleware, templating, and more. [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} is known for its performance. [`axum`][c~axum~docs]↗{{hi:axum}} is built on top of [`tower`][c~tower~docs]↗{{hi:tower}} and [`hyper`][c~hyper~docs]↗{{hi:hyper}}. [`rocket`][c~rocket~docs]↗{{hi:rocket}} uses a more declarative approach. [`warp`][c~warp~docs]↗{{hi:warp}} is a more lightweight framework. |
-| Front-end Frameworks (WASM) | [`yew`][c~yew~docs]↗{{hi:yew}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`dominator`][c~dominator~docs]↗{{hi:dominator}} | These frameworks enable building interactive web UIs with Rust compiled to WebAssembly (WASM). They provide component-based architectures and other tools for structuring front-end applications. |
-| HTTP Servers | Covered by web frameworks. | Web frameworks typically handle HTTP server functionality. |
-| REST API Design | Often uses web frameworks and serialization crates like [`serde`][c~serde~docs]↗{{hi:serde}}. | REST APIs are typically built using web frameworks and serialization crates. |
-| HTTP Clients | [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, [`isahc`][c~isahc~docs]↗{{hi:isahc}} | These crates provide HTTP client functionality for making requests to external services. |
-| Routing | Covered by web frameworks. | Web frameworks provide routing mechanisms to map requests to handlers. |
-| Middleware | Often provided by web frameworks or through crates like [`tower`][c~tower~docs]↗{{hi:tower}}. | Middleware adds functionality to the request/response pipeline. |
-| Templating | [`minijinja`][c~minijinja~docs]↗{{hi:minijinja}}, [`tera`][c~tera~docs]↗{{hi:tera}}, [`handlebars`][c~handlebars~docs]↗{{hi:handlebars}}, [`askama`][c~askama~docs]↗{{hi:askama}} | Templating engines are used to generate HTML dynamically. |
-| Web Authentication & Authorization | [`actix-web-httpauth`][c~actix-web-httpauth~docs]↗{{hi:actix-web-httpauth}} (for Actix Web), [`tower-http`][c~tower-http~docs]↗{{hi:tower-http}} (generic middleware) | Authentication and authorization are often handled through middleware or dedicated crates. |
-| WebSockets | [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}}, [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} | These crates provide WebSocket support. |
-| GraphQL | [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}, [`juniper`][c~juniper~docs]↗{{hi:juniper}} | These crates enable building GraphQL APIs. |
-| Static Site Generation (SSG) | [`perseus`][c~perseus~docs]↗{{hi:perseus}} (based on [`sycamore`][c~sycamore~crates.io]↗{{hi:sycamore}}), [`zola`][zola~website]↗{{hi:zola}} | These tools generate static websites from templates and content. |
+| Goal | Start here |
+|---|---|
+| Build an HTTP server or REST API | [[web-programming_http-server | HTTP Servers]]. The guide covers Axum, Actix Web, Hyper, middleware, GraphQL, and gRPC. |
+| Send requests to an HTTP service | [[web-programming_http-client | HTTP Clients]]. The guide compares `reqwest`, `ureq`, and Hyper, and includes request and download examples. |
+| Implement a GraphQL endpoint | [[_graphql | GraphQL]]. |
+| Implement a gRPC service | [[_grpc | gRPC]]. |
+| Use TCP or UDP without HTTP | [[network-programming | Network Programming]]. |
+| Add WebSocket communication | [[asynchronous | Asynchronous Programming]] and [[network-programming | Network Programming]]; see [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} and [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}}. |
+| Add authentication or authorization | [[authentication | Authentication]]. |
 
-## Choosing the Right Crates
+## Browser Interfaces and Generated Pages
 
-- Full-Stack Web App: [`axum`][c~axum~docs]↗{{hi:axum}}, [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}, [`warp`][c~warp~docs]↗{{hi:warp}}.
-- Front-end Web App (WASM): [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}.
-- REST API: Web framework + [`serde`][c~serde~docs]↗{{hi:serde}}.
-- GraphQL API: [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}.
-- Static Site Generation: [`perseus`][c~perseus~docs]↗{{hi:perseus}}, [`zola`][zola~website]↗{{hi:zola}}.
+For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{hi:yew}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}, [`seed`][c~seed~docs]↗{{hi:seed}}, and [`dominator`][c~dominator~docs]↗{{hi:dominator}}. For HTML templates, see [[template-engine | Template Engines]]. The HTTP server guide also covers [[web-programming_http-server/static_website_generators | Static Site Generators]], including Zola.
 
 ## Code Examples
 
-### HTTP Types & Interfaces
+### HTTP Types and Interfaces
 
 {{#include http_types_and_interfaces.incl.md}}
 
-### Manipulate Uniform Resource Locations (URLs)
+### Parse and Build URLs
 
 {{#include url.incl.md}}
 
-### Handle Media Types (MIME)
+### Work with Media Types (MIME)
 
 {{#include mime.incl.md}}
 
-### Web Page Scraping
+### Extract Links and Scrape Web Pages
 
 {{#include scraping.incl.md}}
 
-### HTTP Clients
+## Related Topics
 
-See [[web-programming_http-client | Web Programming: HTTP Client]].
-
-### HTTP Servers
-
-See [[web-programming_http-server | Web Programming: HTTP Server]].
-
-### Web Authentication & Authorization
-
-See [[authentication | Authentication]].
-
-### GraphQL
-
-See [[_graphql | GraphQL]].
-
-### WebSockets
-
-See [[web-programming_websocket | Web Programming: Websocket]].
+- [[asynchronous | Asynchronous Programming]] for async runtimes and task coordination.
+- [[database | Databases]] for database drivers, connection pools, and query tools.
+- [[serde | Serialization and Deserialization]] for JSON and other data formats.
+- [[development-tools_testing | Testing]] for unit, integration, and end-to-end checks.
 
 ## References
 
 - [Are we Web yet?][are-we-web-yet?~website]↗.
 - [Building a crawler in Rust][blog~building-a-crawler-in-rust]↗: design and associated types.
-
-## Related Topics
-
-| Topic | Rust Crates (Examples) | Notes |
-|---|---|---|
-| [[asynchronous | Asynchronous]] Programming (Essential for Web) | [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`async-std`][c~async-std~docs]↗{{hi:async-std}} | These are asynchronous runtimes that are fundamental for writing efficient and scalable web applications in Rust. |
-| [[databases | Databases]] | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, [`diesel`][c~diesel~docs]↗{{hi:diesel}}, [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}} (drivers) | These crates provide database access for various database systems. |
-| [[network-programming | Networking]] (Low-Level) | [`tokio::net`][c~tokio::net~docs]↗{{hi:tokio::net}}, [`std::net`][c~std::net~docs]↗{{hi:std::net}} | These modules provide low-level networking primitives. Often used by higher-level frameworks. |
-| [[serde | Serialization/Deserialization]] (JSON, etc.) | [`serde`][c~serde~docs]↗{{hi:serde}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}} | [`serde`][c~serde~docs]↗{{hi:serde}} is a powerful framework for serializing and deserializing data, often used with JSON and other formats. |
-| [[development-tools_testing | Testing]] | Built-in testing framework, [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} for integration testing | Rust has a built-in testing framework, and [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} can be used for integration testing of web services. |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
