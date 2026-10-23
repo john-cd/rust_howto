@@ -9870,6 +9870,7 @@ dependencies = [
  "ngrok",
  "pingora",
  "tokio",
+ "tower 0.5.3",
  "url",
 ]
 
@@ -9887,9 +9888,9 @@ checksum = "60993920e071b0c9b66f14e2b32740a4e27ffc82854dcd72035887f336a09a28"
 
 [[package]]
 name = "ngrok"
-version = "0.18.0"
+version = "0.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "41ad94d0fd5a5e1f5bb6a99f06b8babc62594799785451f4aeb048c9b2848ef8"
+checksum = "10f6c455d972d973dded17538cb01426ca79eccb9774ae8ab8f1af637f469f3f"
 dependencies = [
  "arc-swap",
  "async-trait",
