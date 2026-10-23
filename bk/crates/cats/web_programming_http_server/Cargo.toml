@@ -40,6 +40,8 @@ clap = { version = "4.6.7", features = ["derive"] }
 http = "1.5.0"
 http-body-util = "0.1.5"
 hyper = { version = "1.12.0", features = ["full"] }
+# Adapts Tokio streams to Hyper's runtime-neutral I/O traits.
+hyper-util = "0.1.21"
 leptos = { version = "0.8.22", optional = true }
 loco-rs = { version = "0.16.4", optional = true }
 prost = "0.14.4"

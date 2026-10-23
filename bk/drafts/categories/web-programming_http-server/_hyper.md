@@ -10,20 +10,11 @@
 [![hyper~repo][c~hyper~repo~badge]][c~hyper~repo]
 [![hyper~lib.rs][c~hyper~lib.rs~badge]][c~hyper~lib.rs]
 
-[`hyper`][c~hyper~docs]↗{{hi:hyper}} is a low-level asynchronous HTTP implementation (both client and server). It implements HTTP/1 and HTTP/2. It works best with the [`tokio`][c~tokio~docs]↗{{hi:tokio}} async runtime, but can support other runtimes.
+[`hyper`][c~hyper~docs]↗{{hi:hyper}} is a low-level HTTP implementation for clients and servers. It supports HTTP/1 and HTTP/2 and does not require a particular async runtime. This example uses [`tokio`][c~tokio~docs]↗{{hi:tokio}} and the `hyper-util` Tokio I/O adapter.
 
-[`hyper`][c~hyper~docs]↗{{hi:hyper}} is meant to be a building block for libraries and applications, for uses cases including:
+Hyper provides protocol and connection building blocks. An application supplies the listener, runtime, request service, and any TLS configuration. Use a higher-level framework such as [`axum`][c~axum~docs]↗{{hi:axum}} or [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} when you want framework-provided routing and middleware.
 
-- Low-level client libraries (e.g. [`curl`][c~curl~docs]↗{{hi:curl}}, [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, `aws-sdk`).
-- Web server frameworks (e.g. [`deno`][c~deno~docs]↗{{hi:deno}}, [`axum`][c~axum~docs]↗{{hi:axum}}).
-- Services and Proxies (e.g. `linkerd`, [`cloudflare`][c~cloudflare~docs]↗{{hi:cloudflare}}, [`fastly`][fastly]↗{{hi:fastly}} ).
-- Use of bleeding-edge protocols e.g HTTP/3.
-
-For other server use cases, please consider higher-level, easier libraries (like [`axum`][c~axum~docs]↗{{hi:axum}}). Reach for the [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} crate, if looking for a convenient HTTP client.
-
-Note that [`hyper`][c~hyper~docs]↗{{hi:hyper}} developers need to bring their own async runtime (e.g. Tokio), IO, and optionally TLS. Look at the [`hyper-tls`][c~hyper-tls~crates.io]↗, [`hyper-rustls`][c~hyper-rustls~crates.io]↗ and [`hyper-openssl`][hyper-openssl]↗ crates for the latter. Routing, cookies, and non-HTTP protocols are out of scope. In particular, consider the family of [`tungstenite`][c~tungstenite~docs]↗{{hi:tungstenite}} crates for WebSockets.
-
-This said, we provide below an example of a HTTP server, following the recommendations of the [`hyper.rs`][c~hyper~website]↗ guide:
+The server below binds to loopback port 3000, accepts connections, adapts each Tokio stream with `TokioIo`, and serves an HTTP/1 connection. Its small service responds to `GET /`, `GET /health`, unknown paths, and other methods. It is an example server; use a framework for production routing, middleware, and deployment features.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/hyper_server.rs:example}}
@@ -33,15 +24,15 @@ This said, we provide below an example of a HTTP server, following the recommend
 
 [![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] [![hyper-tls][c~hyper-tls~docs~badge]][c~hyper-tls~docs] [![hyper-tls~crates.io][c~hyper-tls~crates.io~badge]][c~hyper-tls~crates.io] [![hyper-tls~repo][c~hyper-tls~repo~badge]][c~hyper-tls~repo] [![hyper-tls~lib.rs][c~hyper-tls~lib.rs~badge]][c~hyper-tls~lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
 
-Default TLS implementation for use with `hyper`.
+Hyper does not configure TLS itself. TLS adapters such as `hyper-rustls`, `hyper-tls`, and `hyper-openssl` are separate crates; check that an adapter supports the same Hyper major version as your application.
 
 [![hyper-rustls][c~hyper-rustls~docs~badge]][c~hyper-rustls~docs] [![hyper-rustls~crates.io][c~hyper-rustls~crates.io~badge]][c~hyper-rustls~crates.io] [![hyper-rustls~repo][c~hyper-rustls~repo~badge]][c~hyper-rustls~repo] [![hyper-rustls~lib.rs][c~hyper-rustls~lib.rs~badge]][c~hyper-rustls~lib.rs]{{hi:hyper-rustls}}
 
-Rustls + [`hyper`][c~hyper~docs]↗{{hi:hyper}} integration for pure rust HTTPS.
+Rustls integration for HTTPS with Hyper.
 
 [![hyper-openssl][c~hyper-openssl~docs~badge]][c~hyper-openssl~docs] [![hyper-openssl~crates.io][c~hyper-openssl~crates.io~badge]][c~hyper-openssl~crates.io] [![hyper-openssl~repo][c~hyper-openssl~repo~badge]][c~hyper-openssl~repo] [![hyper-openssl~lib.rs][c~hyper-openssl~lib.rs~badge]][c~hyper-openssl~lib.rs]{{hi:hyper-openssl}}
 
-Hyper TLS support via OpenSSL.
+OpenSSL integration for HTTPS with Hyper.
 
 ## References {#references .skip}
 
@@ -49,7 +40,10 @@ Hyper TLS support via OpenSSL.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[network-programming/server | TCP Listener Servers]] for lower-level networking.
+- [[asynchronous | Asynchronous Programming]] for Tokio and async I/O concepts.
+- [[web-programming_http-server | Higher-Level HTTP Server Frameworks]] for Axum, Actix Web, middleware, and routing.
+- [[web-programming_http-client | HTTP Clients]] for client-side requests and convenient HTTP APIs.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
