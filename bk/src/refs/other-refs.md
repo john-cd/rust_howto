@@ -348,6 +348,7 @@
 [book~cargo~reference-semver]: https://doc.rust-lang.org/cargo/reference/semver.html
 [book~cargo~registries]: https://doc.rust-lang.org/cargo/reference/registries.html
 [book~cargo~registry-authentication]: https://doc.rust-lang.org/cargo/reference/registry-authentication.html
+[book~cargo~source-replacement]: https://doc.rust-lang.org/cargo/reference/source-replacement.html
 [book~cargo~release-profile]: https://doc.rust-lang.org/cargo/reference/profiles.html#release
 [book~cargo~specifying-dependencies]: https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
 [book~cargo~unstable]: https://doc.rust-lang.org/cargo/reference/unstable.html
