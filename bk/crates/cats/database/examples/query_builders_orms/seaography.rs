@@ -87,7 +87,7 @@ async fn main() -> anyhow::Result<()> {
 
     // 5. Query the generated GraphQL schema.
     let query = "{
-        post {
+        posts {
             nodes {
                 id
                 title
@@ -104,7 +104,7 @@ async fn main() -> anyhow::Result<()> {
     );
     let data = serde_json::to_value(res.data)?;
     anyhow::ensure!(
-        data.pointer("/post/nodes/0/title")
+        data.pointer("/posts/nodes/0/title")
             .and_then(serde_json::Value::as_str)
             == Some("Seaography Example"),
         "GraphQL query did not return the inserted post: {data}"

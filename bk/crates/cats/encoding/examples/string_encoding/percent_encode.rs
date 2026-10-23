@@ -17,19 +17,15 @@ const FRAGMENT: &AsciiSet =
 /// Percent-encodes a string, then decodes it.
 fn main() -> Result<(), Utf8Error> {
     // The input string we want to encode.
-    // Note that the string contains spaces, which are not allowed in the
-    // fragment part of a URL. The FRAGMENT AsciiSet will encode spaces as
-    // %20.
+    // The FRAGMENT AsciiSet encodes spaces as %20 while leaving the plus sign
+    // unchanged.
     let input = "confident, +productive systems programming";
 
     // Encode the string using the FRAGMENT AsciiSet.
     let iter = utf8_percent_encode(input, FRAGMENT);
     let encoded: String = iter.collect();
     println!("{encoded}");
-    assert_eq!(
-        encoded,
-        "confident,%20+%20productive%20systems%20programming"
-    );
+    assert_eq!(encoded, "confident,%20+productive%20systems%20programming");
 
     // Decode the encoded string.
     let iter = percent_decode(encoded.as_bytes());
