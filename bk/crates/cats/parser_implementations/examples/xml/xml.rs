@@ -5,6 +5,7 @@
 //! This example demonstrates how to read and write XML data using the
 //! `xml-rs` crate.
 
+use anyhow::Context as _;
 use xml::reader::EventReader;
 use xml::reader::XmlEvent;
 use xml::writer::EmitterConfig;
@@ -29,38 +30,53 @@ fn main() -> anyhow::Result<()> {
     "#;
 
     println!("Example 1: Reading XML");
-    let parser = EventReader::from_str(xml_input);
+    for event in read_xml(xml_input)? {
+        println!("{event}");
+    }
 
-    for event in parser {
-        match event {
-            Ok(XmlEvent::StartElement {
+    // Example 2: Writing XML.
+    println!("\nExample 2: Writing XML");
+    println!("{}", write_catalog()?);
+
+    Ok(())
+}
+
+/// Parses XML and returns a readable description of its events.
+fn read_xml(xml_input: &str) -> anyhow::Result<Vec<String>> {
+    let mut events = Vec::new();
+
+    for event in EventReader::from_str(xml_input) {
+        match event.context("failed to parse XML event")? {
+            XmlEvent::StartElement {
                 name, attributes, ..
-            }) => {
-                print!("Start: {name}");
+            } => {
+                let mut event = format!("Start: {name}");
                 if !attributes.is_empty() {
-                    print!(" with attributes:");
+                    event.push_str(" with attributes:");
                     for attr in &attributes {
-                        print!(" {}=\"{}\"", attr.name, attr.value);
+                        event.push_str(&format!(
+                            " {}=\"{}\"",
+                            attr.name, attr.value
+                        ));
                     }
                 }
-                println!();
+                events.push(event);
             }
-            Ok(XmlEvent::EndElement { name }) => {
-                println!("End: {name}");
+            XmlEvent::EndElement { name } => {
+                events.push(format!("End: {name}"));
             }
-            Ok(XmlEvent::Characters(text)) if !text.trim().is_empty() => {
-                println!("  Text: {text}");
-            }
-            Err(e) => {
-                eprintln!("Error: {e}");
-                break;
+            XmlEvent::Characters(text) if !text.trim().is_empty() => {
+                events.push(format!("  Text: {text}"));
             }
             _ => {}
         }
     }
 
-    // Example 2: Writing XML.
-    println!("\nExample 2: Writing XML");
+    Ok(events)
+}
+
+/// Writes a catalog with two products and returns the serialized XML.
+fn write_catalog() -> anyhow::Result<String> {
     let mut writer = EmitterConfig::new()
         .perform_indent(true)
         .create_writer(Vec::new());
@@ -91,10 +107,8 @@ fn main() -> anyhow::Result<()> {
     // Close root element:
     writer.write(WriteEvent::end_element())?;
 
-    let result = writer.into_inner();
-    println!("{}", String::from_utf8(result)?);
-
-    Ok(())
+    String::from_utf8(writer.into_inner())
+        .context("XML writer produced invalid UTF-8")
 }
 
 // ANCHOR_END: example
@@ -108,9 +122,51 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Preserves element names, attributes, and text while parsing valid XML.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn read_xml_reports_elements_attributes_and_text() -> anyhow::Result<()> {
+        let events = read_xml(
+            r#"<library><book id="7"><title>Rust</title></book></library>"#,
+        )?;
+
+        assert!(events.iter().any(|event| event == "Start: library"));
+        assert!(
+            events
+                .iter()
+                .any(|event| event == "Start: book with attributes: id=\"7\"")
+        );
+        assert!(events.iter().any(|event| event == "  Text: Rust"));
+
+        Ok(())
+    }
+
+    /// Returns a parse error instead of reporting malformed XML as success.
+    #[test]
+    fn read_xml_rejects_malformed_documents() {
+        assert!(read_xml("<library><book></library>").is_err());
+    }
+
+    /// Writes catalog products that can be read back by the XML event parser.
+    #[test]
+    fn write_catalog_contains_both_products() -> anyhow::Result<()> {
+        let catalog = write_catalog()?;
+        let events = read_xml(&catalog)?;
+
+        assert!(
+            events
+                .iter()
+                .any(|event| event
+                    == "Start: product with attributes: id=\"123\"")
+        );
+        assert!(events.iter().any(|event| event == "  Text: Rust Book"));
+        assert!(
+            events
+                .iter()
+                .any(|event| event
+                    == "Start: product with attributes: id=\"456\"")
+        );
+        assert!(events.iter().any(|event| event == "  Text: XML Guide"));
+
         Ok(())
     }
 }
