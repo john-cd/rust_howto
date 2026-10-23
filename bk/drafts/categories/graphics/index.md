@@ -3,87 +3,35 @@
 
 [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
-Crates for graphics libraries and applications, including raster and vector graphics primitives such as geometry, curves, and color.
+Graphics libraries cover different layers of a rendering pipeline, from drawing 2D shapes to submitting GPU work. Choose by the output you need and how much control you want over the renderer, window, and event loop.
 
-For most 2D graphics projects, [`raqote`][c~raqote~docs]↗{{hi:raqote}}, [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}}, or a combination of [`pixels`][c~pixels~docs]↗{{hi:pixels}} and [`lyon`][c~lyon~docs]↗{{hi:lyon}} will be a good starting point. For 3D or performance-critical 2D, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the way to go.
+## Choose a Graphics Layer
 
-If you're using a [[gui | GUI]] framework or [[game-engines | Game Engine]], it will handle a lot of the low-level graphics details for you.
+| Goal | Crates | What they provide |
+|---|---|---|
+| Draw 2D shapes and paths | [`raqote`][c~raqote~docs]↗{{hi:raqote}}, [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} | 2D drawing APIs for paths, fills, strokes, and images. |
+| Render a pixel buffer | [`pixels`][c~pixels~docs]↗{{hi:pixels}} | A GPU-backed pixel buffer built on [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}. |
+| Turn vector paths into renderable geometry | [`lyon`][c~lyon~docs]↗{{hi:lyon}} | Tessellates 2D fills and strokes into geometry; a renderer still draws the result. |
+| Build a GPU renderer or 3D application | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} | A cross-platform graphics API with native and WebAssembly backends. |
+| Make sketches and generative artwork | [`nannou`][c~nannou~repo]↗{{hi:nannou}} | A creative-coding framework with drawing, graphics, windowing, and UI APIs. |
 
-## Rendering
+These tools are not interchangeable. For example, `lyon` prepares path geometry while a renderer such as `wgpu` submits it to a graphics backend. `pixels` starts from a pixel buffer, while 2D drawing APIs expose higher-level path and paint operations. A GUI framework or game engine may provide window management and rendering as part of a larger application framework.
 
-- [[rendering | Rendering]].
-- [[2d_renderers | 2D Renderers]].
-  - [[2d_raster_graphics | 2D Raster Graphics]].
-  - [[2d_vector_graphics | 2D Vector Graphics]].
-- [[3d_renderers | 3d Renderers]].
-- [[rendering_engine | Rendering Engine]].
-- [[rendering_data-formats | Rendering Data Formats]].
-- [[svg_rendering | SVG Rendering]].
-- [[text_rendering | Text Rendering]].
-- Low-level Graphics API: [[rendering_graphics-api | Rendering: Graphics API]].
-  - [[gpu_abstraction_layers | Gpu Abstraction Layers]].
-  - [[opengl | OpenGL]].
-  - [[native_graphics_apis | Native Graphics APIs]].
-  - [[vulkan | Vulkan]].
-  - [[shaders | Shaders]].
+## Rendering Topics
 
-See also:
+Graphics work commonly involves:
 
-- [[gpu | GPU]].
+- Raster drawing, pixel buffers, and image surfaces.
+- Vector paths, fills, strokes, SVG, and text rendering.
+- 3D meshes, materials, real-time rendering, and scene organization.
+- GPU APIs, shaders, and graphics data formats.
+- Visualization, creative coding, and generative art.
 
-## Applications and Fields
-
-- Image Processing - see [[multimedia_images | Multimedia: Images]].
-- Ray Tracing.
-- [[computer-vision | Computer Vision]].
-- Game Development - see [[games | Games]], [[game-development | Game Development]] and [[game-engines | Game Engines]].
-  - Real-Time Rendering.
-  - Character Animation.
-- Computer-Aided Design (CAD).
-  - 3D Modeling.
-  - Visualization and Simulation.
-- Visual Effects (VFX).
-  - Compositing.
-  - Particle Systems.
-  - Rendering for Film and Television.
-- User Interface (UI) Design - consult the [[gui | GUI]] pages.
-  - 2D and 3D UI Elements.
-  - GUI Rendering.
-  - Typography - see [[text_rendering | Text Rendering]] and [[text_layout | Text Layout]].
-- [[multimedia | Multimedia]].
-  - [[multimedia_encoding | Multimedia: Encoding]].
-  - [[multimedia_images | Multimedia: Images]].
-  - [[multimedia_video | Multimedia: Video]].
-- Scientific Visualization.
-  - Data Visualization, Plotting and Charting - see [[visualization | Visualization]].
-  - Volume Rendering of Scientific Data.
-- Creative Coding and Generative Art.
-  - Procedural Generation.
-  - Interactive Visuals.
-
-### Ray Tracing
-
-Often requires specialized libraries or custom implementations using compute [[shaders | shaders]].
-
-## References
-
-- [gfx-rs.github.io][blog~gfx-rs]↗.
+Image processing, computer vision, simulation, and physics use some of the same image, geometry, and GPU concepts, but are separate application areas.
 
 ## Related Topics
 
-- Mathematics / Linear Algebra: [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} and [`glam`][c~glam~docs]↗{{hi:glam}} are used for vector and matrix math. Also consider [`cgmath`][c~cgmath~docs]↗{{hi:cgmath}} and [`euclid`][c~euclid~docs]↗{{hi:euclid}} for geometry. See [[mathematics | Mathematics]], [[linear_algebra | Linear Algebra]] and [[game_development | Game Development]].
-- [[simulation | Simulation]] and [[physics_engines | Physics Engines]].
+Graphics code relies on [linear algebra][p~linear-algebra] for vectors, matrices, and transforms. Higher-level GUI and game frameworks can provide the windowing and rendering layers for complete applications.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write / organize / review in depth](https://github.com/john-cd/rust_howto/issues/1226)
-what applications do we want to cover?
-cover `nannou`
-
-```rust,editable
-{{#include ../../../crates/cats/graphics/examples/graphics.rs:example}}
-```
-
-</div>

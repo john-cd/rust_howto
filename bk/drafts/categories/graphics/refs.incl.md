@@ -1,8 +1,3 @@
 <!-- TODO Reviewed ??-??-2026 -->
-[p~cross-platform]: # "../../other/cross-platform/index.md"
-[p~graphics]: index.md
-[p~images]: ../multimedia_images/images.md
-[p~language]: ../../../src/language/index.md
+[c~nannou~repo]: https://github.com/nannou-org/nannou
 [p~linear-algebra]: ../../../src/categories/mathematics/linear_algebra.md
-[p~wasm]: # "../wasm/index.md"
-[p~window-creation]: # "../gui/window_creation.md"
