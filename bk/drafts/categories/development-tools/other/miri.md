@@ -11,19 +11,29 @@
 
 ## Install the `miri` Interpreter {#miri-installation}
 
-[`miri`][miri~docs]↗{{hi:miri}}
+Miri is distributed as a component of the nightly Rust toolchain. Install it and prepare its sysroot once:
 
 ```bash
-rustup +nightly component add miri
-cargo clean
-cargo miri test
-# or
-cargo miri run
+rustup toolchain install nightly --component miri
+cargo +nightly miri setup
 ```
+
+Run tests or a binary with the nightly toolchain:
+
+```bash
+cargo +nightly miri test
+cargo +nightly miri test test_name_filter
+cargo +nightly miri run
+```
+
+Miri interprets the Rust code and can detect certain forms of undefined behavior on the paths that execute. It is especially useful for tests that exercise unsafe code, but a passing run does not prove that a program is free of undefined behavior. Some foreign-function calls and operating-system operations are unsupported or behave differently under interpretation; consult the [Miri guide][miri~docs]↗ when a test cannot run.
+
+For CI, install the nightly toolchain with the Miri component, run `cargo +nightly miri setup`, then run the project's selected tests with `cargo +nightly miri test`.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[code_verification | Code Verification]].
+- [[testing | Testing]].
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
