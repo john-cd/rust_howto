@@ -17,6 +17,10 @@ categories = ["development-tools::ffi"]
 publish.workspace = true
 autolib = false
 
+[lib]
+path = "examples/c/cbindgen.rs"
+crate-type = ["cdylib"]
+
 [package.metadata.cargo-machete]
 ignored = ["cc", "bindgen", "cbindgen"]
 
