@@ -3,94 +3,79 @@
 
 {{#include wasm_runtimes.incl.md}}
 
-A typical Rust/WASM development workflow involves writing Rust code, using [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} to create bindings to JavaScript, compiling the Rust code to WASM, and then using JavaScript to load and interact with the WASM module in a web page.
+## Choose a workflow {#choose-a-workflow .skip}
 
-## Compiling Rust to WASM (wasm32-unknown-unknown Compilation target) {#compiling-rust-to-wasm .skip}
+For a browser application, use a WebAssembly-enabled UI framework such as [[yew | Yew]] or [[leptos | Leptos]] with a web application tool such as Trunk. These tools build and serve the HTML, JavaScript bindings, and WebAssembly module together.
 
-## Tools and Frameworks (e.g., `wasm-pack`, `cargo-generate`) {#tools-and-frameworks .skip}
+For a Rust library that an existing JavaScript application will call, use [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} with [`wasm-pack`][c~wasm-pack~crates.io]↗{{hi:wasm-pack}}. For a command-line program or server module, select a WASI target and runtime as described above.
 
-### `wasm-pack` {#wasm-pack}
+## Build a Rust library for JavaScript
 
-[`wasm-pack`][c~wasm-pack~crates.io]↗{{hi:wasm-pack}} helps compile the code to WebAssembly and produce the right packaging for use in the browser.
-
-The [`wasm-pack`][wasm-pack~website]↗ book covers the Rust to WebAssembly workflow tool. This book covers prerequisites, project setup, and available commands for `wasm-pack`.
+Install the browser target, create a library crate, and configure it to produce a dynamic library for WebAssembly:
 
 ```sh
-# Download and install
-cargo install wasm-pack
-# Create a new library project
-cargo new --lib hello-wasm
+rustup target add wasm32-unknown-unknown
+cargo new --lib hello_wasm
+cd hello_wasm
+cargo add wasm-bindgen
 ```
 
-Enter the following Rust code in `src/lib.rs`
+Add the library crate types to `Cargo.toml`:
+
+```toml
+[lib]
+crate-type = ["cdylib", "rlib"]
+```
+
+Export a Rust function with `wasm-bindgen`:
 
 ```rust,editable
-use wasm_bindgen::prelude::*;
-
-#[wasm_bindgen]
-extern "C" {
-    pub fn alert(s: &str);
-}
-
-#[wasm_bindgen]
-pub fn greet(name: &str) {
-    alert(&format!("Hello, {name}!"));
-}
+{{#include ../../../crates/cats/wasm/examples/wasm_development/wasm.rs:example}}
 ```
 
-`wasm-pack` uses [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} to provide a bridge between the types of JavaScript and Rust. It allows JavaScript to call a Rust API with a string, or a Rust function to catch a JavaScript exception.
+Build JavaScript bindings and a browser-loadable ES module with `wasm-pack`:
 
-### Memory Management in WASM (e.g., `std::alloc`) {#memory-management .skip}
+```sh
+cargo install --locked wasm-pack
+wasm-pack build --target web
+```
 
-[`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} helps manage WASM memory. [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a memory allocator designed for WASM.
+The generated module can be imported by browser JavaScript. Initialization loads the Wasm module before calling its exports:
 
-### Testing and Debugging {#testing-and-debugging .skip}
+```javascript
+import init, { add } from "./pkg/hello_wasm.js";
 
-#### Unit Testing WASM Modules {#unit-testing-wasm-modules .skip4}
+await init();
+console.log(add(2, 2));
+```
 
-[`wasm-bindgen-test`][c~wasm-bindgen-test~docs]↗{{hi:wasm-bindgen-test}} provides utilities for testing your Rust/WASM code.
+Use `--target bundler` for a package intended for a JavaScript bundler, or another supported target when the host is Node.js or a different JavaScript runtime. The generated JavaScript glue code is part of the interface; keep the Rust and JavaScript packages in sync when it changes.
 
-#### Integration Testing with JavaScript {#integration-testing-with-js .skip5}
+## Build a browser application
 
-#### Debugging WASM {#debugging-wasm .skip6}
+For a framework-based front end, install the `wasm32-unknown-unknown` target and use the tool supported by that framework. For example, a Yew or Leptos client-side rendering project can be served locally with `trunk serve --open` and built for deployment with `trunk build --release`. The application still calls browser APIs through JavaScript bindings; WebAssembly does not provide direct DOM access.
 
-Browser developer tools can be used to debug WASM.
+## Test and debug
 
-[`console_error_panic_hook`][c~console_error_panic_hook~docs]↗{{hi:console_error_panic_hook}} helps with better error reporting in the browser console. |
+Keep business logic that does not need browser APIs testable on the host with `cargo test`. To exercise JavaScript imports and browser-facing code, use [`wasm-bindgen-test`][c~wasm-bindgen-test~docs]↗{{hi:wasm-bindgen-test}} with `wasm-pack test --node`, or configure a browser runner such as `wasm-pack test --chrome --headless`. These runs require the corresponding JavaScript runtime or browser tooling.
 
-### Performance Optimization {#performance-optimization .skip7}
+Use browser developer tools to inspect JavaScript and WebAssembly execution. [`console_error_panic_hook`][c~console_error_panic_hook~docs]↗{{hi:console_error_panic_hook}} can route Rust panic messages to the browser console during development. Test the release artifact in its actual host because its imports, initialization, and deployment headers must all work there.
 
-[`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} can help reduce WASM binary size. [`twiggy`][c~twiggy~docs]↗{{hi:twiggy}} is a tool for analyzing WASM binaries. [`wasm-opt`][c~wasm-opt~docs]↗{{hi:wasm-opt}} is a tool for optimizing WASM code.
+## Measure and optimize
 
-#### Reducing WASM Binary Size {#reducing-wasm-binary-size .skip8}
+Build and measure the production artifact before optimizing. Inspect module size with [`twiggy`][c~twiggy~docs]↗{{hi:twiggy}}; [`wasm-opt`][c~wasm-opt~docs]↗{{hi:wasm-opt}} can perform additional optimizations when it fits the toolchain. Profile the application in its target runtime, and account for module download and initialization, memory use, and data copied across the JavaScript boundary. Choose an allocator or size optimization only after measurements show it helps.
 
-WASM binary size is important for web performance. Use tools like [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}, [`twiggy`][c~twiggy~docs]↗{{hi:twiggy}}, and [`wasm-opt`][c~wasm-opt~docs]↗{{hi:wasm-opt}} to reduce size.
+## Related topics {#related-topics .skip}
 
-#### Improving Execution Speed {#improving-execution-speed .skip}
-
-#### Leveraging SIMD in WASM {#leveraging-simd-in-wasm .skip}
-
-#### Profiling Rust-WASM Applications {#profiling-rust-wasm-applications .skip}
-
-## References {#references .skip}
-
-[Compiling from Rust to WebAssembly][mozilla~compiling-from-rust-to-webassembly~website]↗.
-
-## Related Topics {#related-topics .skip}
-
-- [[wasm_basics | WASM Basics]].
-- [[interfacing_with_javascript | Interfacing with Javascript]].
-- [[development_tools | Development Tools]].
-- [[cloud | Cloud]].
+- [[wasm_basics | WASM Basics]]
+- [[interfacing_with_javascript | Interfacing with JavaScript]]
+- [[yew | Yew]]
+- [[leptos | Leptos]]
+- [[wasm_standalone_runtimes | WASM Standalone Runtimes]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/1217)
-Improving Execution Speed.
-Integration Testing with JavaScript.
-Compiling Rust to WASM.
-Leveraging SIMD in WASM.
-Profiling Rust-WASM Applications.
 </div>

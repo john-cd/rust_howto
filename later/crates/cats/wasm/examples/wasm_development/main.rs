@@ -1,7 +1,10 @@
-//! Placeholder for WebAssembly development examples.
+//! Runs the host-side part of the WebAssembly development example.
 //!
 //! TODO Reviewed ??-??-2026.
 
-// LATER
-/// Does nothing yet.
-fn main() {}
+mod wasm;
+
+/// Runs the example.
+fn main() {
+    wasm::run();
+}

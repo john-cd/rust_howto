@@ -25,4 +25,7 @@
 [p~testing]: ../../../src/categories/development-tools_testing/testing.md
 [p~visualization]: ../../../drafts/categories/visualization/visualization.md
 [mozilla~webassembly-concepts~website]: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
+[rustc~wasm32-unknown-unknown~website]: https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html
+[rustc~wasm32-wasip1~website]: https://doc.rust-lang.org/rustc/platform-support/wasm32-wasip1.html
+[rustc~wasm32-wasip2~website]: https://doc.rust-lang.org/rustc/platform-support/wasm32-wasip2.html
 [p~wasm]: index.md
