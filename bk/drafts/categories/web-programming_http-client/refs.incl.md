@@ -15,7 +15,7 @@
 [ex~web-programming_http-client~ureq]: http_clients.md#ureq
 [p~asynchronous]: ../asynchronous/index.md
 [p~building]: ../development-tools_cargo-plugins/building.md
-[p~hyper]: # "../web-programming_http-server/hyper.md"
+[p~hyper]: # "../web-programming_http-server/_hyper.md#hyper"
 [p~json]: ../parser-implementations/json.md
 [p~main]: ../../language/entrypoint.md
 [p~server]: ../network-programming/server.md
