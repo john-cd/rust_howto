@@ -5,6 +5,18 @@
 
 Add a second book-generation path for HTML and PDF while keeping the current mdBook site intact.
 
+## Review Record (2026-10-22)
+
+The current repository confirms the direction, but the PDF path is not yet a supported contributor workflow:
+
+- `bk/book.toml` has an `output.pandoc` PDF profile using Tectonic.
+- `.devcontainer/install_deps.sh` installs Pandoc, `mdbook-pandoc`, and Tectonic.
+- `.devcontainer/ci.sh` disables `mdbook-pandoc` unless `BUILD_PDF=true`. The default CI run therefore builds the HTML book only; it does not upload a PDF artifact.
+- `bk/scripts/book/mod.just` has no dedicated PDF export recipe.
+- `typ/typst/` contains a separate template and sample content, not a generated copy of `bk/src`.
+
+**Disposition:** Keep mdBook as the canonical HTML pipeline and keep `bk/src` as the only prose source. The plan's Pandoc-first sequence remains appropriate. Phase 1 is still pending: add a local export recipe, choose representative chapters, validate a PDF, and then decide whether CI should publish it as an artifact. Do not describe Pandoc PDF generation as supported until those steps pass. Keep Typst experimental and defer its spike until the Pandoc path has been validated. The original human review marker is retained for approval of this recommendation.
+
 ## Decisions
 
 - Keep `bk/src` as the single source of truth for book content.
@@ -93,8 +105,8 @@ Expected result:
 
 The CI build should remain HTML-first, with PDF added as an artifact:
 
-1. Extend `.devcontainer/ci.sh` to run the PDF export after the HTML build.
-2. Update `.github/workflows/build_deploy_book.yml` to upload the PDF artifact.
+1. Make PDF generation opt-in in `.devcontainer/ci.sh` using the existing `BUILD_PDF` switch.
+2. After a reproducible local PDF build is verified, update `.github/workflows/build_deploy_book.yml` to upload the PDF artifact.
 3. Continue deploying only `book/html/` to GitHub Pages.
 
 This keeps the public site unchanged while making the new export path visible and testable.
