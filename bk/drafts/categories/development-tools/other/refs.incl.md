@@ -1,10 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
-[ex~other~bacon]: code_build.md#bacon
 [ex~other~binary-minimizer]: other.md#binary-minimizer
 [ex~other~code-generators]: other.md#code-generators
 [ex~other~code-verifiers]: code_verification.md#code-verifiers
 [ex~other~concurrent-code-verification]: code_verification.md#concurrent-code-verification
-[ex~other~just]: code_build.md#just
 [ex~other~loom]: code_verification.md#loom
 [ex~other~miri-installation]: miri.md#miri-installation
 [ex~other~miri]: miri.md#miri

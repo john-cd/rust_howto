@@ -77,14 +77,12 @@ The following example executes shell commands and interacts with the file system
 ## Related Topics {#related-topics .skip}
 
 | Topic | Rust Crates |
-|---|---|
-| General Build Tools | [`cargo build`][book~cargo~cargo-build]↗{{hi:cargo build}} (built-in) compiles your project. `cargo check` checks your code for errors without compiling. |
+| --- | --- |
+| General Build Guide | See the [Cargo build overview][p~code-building] for ordinary package builds and profile configuration. |
 | Cross-Compilation | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation. |
 | Packaging, Distribution | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. [`create-dmg`][create-dmg~repo]↗{{hi:create-dmg}} creates macOS disk images. |
 | Build Script Helpers | [`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code in build scripts. [`pkg-config`][c~pkg-config~docs]↗{{hi:pkg-config}} finds system libraries. |
 | Code Generation | Use build scripts. |
-| Link-Time Optimization (LTO) Configuration | Configured in Cargo.toml |
-| Incremental Compilation Management | Handled by [cargo][p~cargo] directly. |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

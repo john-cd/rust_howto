@@ -1,15 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 [ex~compilation~build-time]: reduce_compilation_duration.md#build-time
+[ex~compilation~bacon]: building.md#bacon
+[ex~compilation~build-code]: building.md#build-code
 [ex~compilation~dynamic-linking]: reduce_compilation_duration.md#dynamic-linking
 [ex~compilation~faster-linking]: faster_linking.md#faster-linking
 [ex~compilation~incremental-compilation]: reduce_compilation_duration.md#incremental-compilation
+[ex~compilation~just]: building.md#just
 [ex~compilation~mold-linker]: faster_linking.md#mold-linker
 [ex~compilation~optimization-levels]: reduce_compilation_duration.md#optimization-levels
 [p~caching]: ../../caching/index.md
 [p~cargo]: ../cargo/cargo.md
+[p~cross-compilation]: ../cross-compilation/cross_compilation.md
 [p~configuration]: ../../config/configuration.md
 [p~contributing]: ../../../../src/appendices/contributing/index.md
 [p~duration]: ../../date-and-time/duration.md
 [p~generics]: ../../../../src/language/generics.md
+[p~building]: ../../development-tools_cargo-plugins/building.md
 [p~modules]: ../../../code_organization/modules.md
 [p~performance]: ../../development-tools_cargo-plugins/performance.md

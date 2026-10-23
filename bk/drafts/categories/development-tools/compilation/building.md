@@ -1,20 +1,17 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# Manage and Build Code
+# Build Rust Code {#build-code}
 
-{{#include code_build.incl.md}}
+{{#include building.incl.md}}
 
-| Topic | Tools |
-|---|---|
-| Build System | [cargo][p~cargo] is the primary build system for Rust. |
-| Build Scripts | Use [`build.rs`][book~cargo~build-script]↗{{hi:build.rs}} files in your project. |
-| Build Profiles | Configure build options in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} for debug, release, etc. |
-| Cross-Compilation | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation, target specifications in `Cargo.toml`. |
-| Link-Time Optimization (LTO) | Controlled via `Cargo.toml`. |
-| Build Dependencies | Managed by [cargo][p~cargo] |
-| Incremental Compilation | Handled by [cargo][p~cargo]. |
-| Build Automation (for complex builds) | [`xtask`][c~xtask~docs]↗{{hi:xtask}} |
-| Compiler Flags | Configurable in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} |
-| Code Generation | Often done with procedural [macros][p~macros] or build scripts. |
+| Concern | Where to start |
+| --- | --- |
+| Build a package | Use `cargo check` for fast feedback, `cargo build` to compile, and `cargo run` to build and run a binary. |
+| Build scripts | Add `build.rs` only when a build needs to generate files, inspect the environment, or compile native code. See the [Cargo build-script reference][book~cargo~build-script]↗. |
+| Build profiles | Set development and release profile options in `Cargo.toml`; measure changes against the workload you care about. |
+| Compiler and linker configuration | Prefer Cargo's target and profile configuration. Keep machine-specific paths out of shared configuration. |
+| Repeated project tasks | Use a small `justfile` or a dedicated task runner when ordinary Cargo commands are not enough; see the [Cargo plugin build guide][p~building]. |
+
+For cross-compilation, linker choices, and compile-time optimization, use the focused [cross-compilation][p~cross-compilation] and [compilation performance][p~performance] guides. This chapter covers Cargo's normal build flow; the separate [Cargo plugin build guide][p~building] covers task runners such as `cargo-make`, `cargo-xtask`, and `xshell`.
 
 ## Save and run project-specific Commands with the `just` Command Runner {#just}
 
@@ -110,7 +107,3 @@ See [[building | Building]].
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-[review; dedupe this page and cargo plugins > building; move from other section](https://github.com/john-cd/rust_howto/issues/919)
-</div>

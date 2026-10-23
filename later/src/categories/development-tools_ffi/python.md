@@ -77,7 +77,7 @@ If you're working with numerical data, integrating with [`numpy`][c~numpy~docs]â
 - [`maturin`][c~maturin~docs]â†—{{hi:maturin}} is a popular tool for building and distributing Python packages that include Rust extensions. It handles the complexities of compilation and linking.
 - [`setuptools-rust`][pypi~setuptools-rust]{{hi:setuptools-rust}} is another option for integrating Rust builds into Python's setuptools.
 
-See [[code_build | Code Build]].
+See [[cargo | Cargo]] for Cargo's build workflow.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

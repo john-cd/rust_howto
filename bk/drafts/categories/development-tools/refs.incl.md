@@ -3,6 +3,7 @@
 [p~attributes]: ../../language/attributes.md
 [p~books]: ../../../src/links/books.md
 [p~building]: ../development-tools_cargo-plugins/building.md
+[p~code-building]: compilation/building.md#build-code
 [p~caching]: ../caching/index.md
 [p~cargo]: cargo/cargo.md
 [p~concurrency]: ../concurrency/index.md

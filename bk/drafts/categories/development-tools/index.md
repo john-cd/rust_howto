@@ -6,7 +6,7 @@
 Tools that provide developer-facing features such as testing, debugging, linting, performance profiling, autocompletion, formatting, and more.
 
 | Topic | Rust Crates |
-|---|---|
+| --- | --- |
 | Build System/Package Manager | [`cargo`][c~cargo~docs]↗{{hi:cargo}} |
 | Formatter | [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} |
 | Linter | [`clippy`][c~clippy~docs]↗{{hi:clippy}} |
@@ -29,6 +29,8 @@ See also [Rust tools][rust-tools]↗{{hi:Rust tools}}.
 {{#include cargo/package_layout.incl.md}}
 
 ## Rust Compilation
+
+{{#include compilation/building.incl.md}}
 
 {{#include compilation/reduce_compilation_duration.incl.md}}
 
@@ -68,8 +70,6 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 
 ## Other
 
-{{#include other/code_build.incl.md}}
-
 {{#include other/code_verification.incl.md}}
 
 {{#include other/miri.incl.md}}
@@ -79,7 +79,7 @@ See also [[cross_compiling | Cross Compiling (Cargo Plugins)]].
 ## Useful Utilities
 
 | Utilities |
-|---|
+| --- |
 | [`fd-find`][c~fd-find~docs]↗{{hi:fd-find}} as a more human-friendly alternative to [`find`][c~find~docs]↗{{hi:find}} which, by default, ignores paths listed in things like [`.gitignore`][git-gitignore~website]↗{{hi:.gitignore}} and mimics Vim's smartcase option. |
 | [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}} as an analogue to the UNIX time command which can do warm-up runs, run the command multiple times to do statistical outlier detection, display a progress bar for the multiple runs, export results to CSV/JSON/etc., parameterize the runs, etc. |
 | [`miniserve`][c~miniserve~docs]↗{{hi:miniserve}} as a simple, easy way to serve up some files or accept some uploads over HTTP. |
