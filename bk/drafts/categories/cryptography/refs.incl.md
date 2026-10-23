@@ -1,4 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[rfc~2104]: https://www.rfc-editor.org/rfc/rfc2104.html
+[rfc~5116]: https://www.rfc-editor.org/rfc/rfc5116.html
+[rfc~8439]: https://www.rfc-editor.org/rfc/rfc8439.html
+
 [ex~cryptography~aes-gcm-siv]: aead.md#aes-gcm-siv
 [ex~cryptography~aes-gcm]: aead.md#aes-gcm
 [ex~cryptography~argon2]: password_hashing.md#argon2

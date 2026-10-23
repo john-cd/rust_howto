@@ -3,11 +3,25 @@
 
 {{#include aead.incl.md}}
 
-"Authenticated Encryption" is a scheme that simultaneously assures the data confidentiality (the encrypted message is impossible to understand without the knowledge of a secret key) and authenticity (it is unforgeable) - see [Authenticated Encryption][wikipedia~authenticated-encryption]↗.
+Authenticated encryption combines confidentiality with an integrity check. AEAD also authenticates associated data (AAD) without encrypting it. A protocol can use AAD for visible context such as a record header, version, or sequence number, so a receiver can detect tampering with that context as well as with the ciphertext.
 
-Authenticated [encryption][p~encryption] with associated data (AEAD) is a variant of AE that allows the message to include "associated data" (AD). AD is additional non-confidential information, which integrity is protected (i.e., it is readable, but tampering with it will be detected). A typical example is the header of a network packet that contains its destination address. To properly route the packet, all intermediate nodes in the message path need to know the destination, but for security reasons they cannot possess the secret key.
+An AEAD operation takes a key, nonce, plaintext, and AAD. Encryption returns ciphertext and an authentication tag (often packaged together); decryption succeeds only when the computed tag matches. Changing the ciphertext, AAD, key, or nonce will normally make verification fail. Do not use decrypted bytes unless the library reports successful authentication.
 
-AEAD is commonly used in secure communication protocols like [TLS][p~tls] (Transport Layer Security). See also:
+Typical uses include protecting records in a network protocol, encrypting file or database contents, and authenticating visible metadata such as a record type or version. In each case, the application must define how keys and nonces are managed and how AAD is encoded. The examples below demonstrate library calls; the fixed nonce in the AES examples is for one-message demonstrations only and must not be reused with the same key.
+
+## Safe AEAD Use {#safe-use .skip}
+
+- Follow the algorithm and protocol's nonce requirements. For common AES-GCM and ChaCha20-Poly1305 uses, every encryption under one key must have a distinct nonce. A nonce is not secret, but it must be stored or transmitted so the receiver can use the same value.
+- Plan nonce allocation across processes, devices, and restarts that share a key. A per-key counter or protocol-defined sequence is easier to audit than ad hoc state. Random nonces can be appropriate when the algorithm's usage limits and collision probability are accounted for, but they do not guarantee strict uniqueness.
+- Authenticate all context that affects how a message is interpreted. Encode multiple AAD fields unambiguously, for example with fixed-width fields or explicit lengths.
+- Treat authentication failure as a normal error path. Do not return partial plaintext or reveal detailed tag-comparison results to an attacker.
+- Use a maintained AEAD implementation and let it handle encryption and tag verification. Do not combine a cipher and a MAC yourself.
+
+AES-GCM-SIV reduces the harm of accidental nonce reuse, but it is a distinct algorithm and is not wire-compatible with AES-GCM. Misuse resistance does not remove the need to follow the algorithm's limits and protocol rules.
+
+AEAD proves that a message was created by someone holding the symmetric key. It does not distinguish among parties that share that key or provide public non-repudiation. Use a digital signature when third parties must verify the sender.
+
+AEAD is commonly used in secure communication protocols such as [TLS][p~tls] (Transport Layer Security). For the AEAD interface and nonce guidance, see [RFC 5116][rfc~5116]↗. For ChaCha20-Poly1305, see [RFC 8439][rfc~8439]↗. Also see:
 
 - ["Towards a safer footgun"][codahale~website]↗.
 - [AES-GCM-SIV][imperialviolet~website]↗.
@@ -21,7 +35,7 @@ AEAD is commonly used in secure communication protocols like [TLS][p~tls] (Trans
 AES-GCM-SIV (Advanced [Encryption][p~encryption] Standard - Galois/Counter Mode - Synthetic Initialization Vector) is a mode of operation for AES that provides nonce misuse resistance. This means it can securely handle situations where a cryptographic nonce (a number used only once) might be reused accidentally.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/examples/aead/aes-gcm_siv.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/aead/aes_gcm_siv.rs:example}}
 ```
 
 ## `aes-gcm` {#aes-gcm}
@@ -50,6 +64,7 @@ For more [algorithms][p~algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-
 
 - [[encryption | Encryption]].
 - [[hashing | Hashing]].
+- [[hmac | HMAC]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -23,7 +23,8 @@ fn main() {
     // Generate a random 256-bit key:
     let key: Key<Aes256Gcm> = Aes256Gcm::generate_key(&mut OsRng);
 
-    // Generate a random 96-bit nonce.
+    // Use a fixed nonce for this one-message demonstration only. A production
+    // protocol must never repeat a nonce with the same AES-GCM key.
     let nonce = Nonce::from(*b"unique nonce");
 
     // Create the cipher...
