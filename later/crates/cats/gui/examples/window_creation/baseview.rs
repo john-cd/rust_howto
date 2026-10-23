@@ -16,56 +16,54 @@
 //! sudo apt-get install libx11-dev libxcb1-dev libx11-xcb-dev libgl1-mesa-dev
 //! ```
 
-use anyhow::Result;
-use baseview::ControlFlow;
-use baseview::Size;
+use baseview::Event;
+use baseview::EventStatus;
+use baseview::HandlerError;
 use baseview::Window;
-use baseview::WindowDelegate;
-use baseview::WindowEvent;
-use baseview::WindowOpenOptions;
-use baseview::WindowScalePolicy;
+use baseview::WindowContext;
+use baseview::WindowHandler;
+use baseview::WindowSettings;
+use baseview::WindowSize;
+use baseview::dpi::LogicalSize;
 
 /// A window delegate that handles the window events.
 struct BaseviewExample;
 
-impl WindowDelegate for BaseviewExample {
-    fn on_frame(&mut self, _window: &mut Window<'_>) {
+impl WindowHandler for BaseviewExample {
+    fn draw(&self) -> Result<(), HandlerError> {
         // No drawing is performed in this example; just keep the window
         // responsive.
+        Ok(())
     }
 
-    fn on_window_event(
-        &mut self,
-        event: WindowEvent<'_>,
-        control_flow: &mut ControlFlow,
-    ) {
-        match event {
-            WindowEvent::CloseRequested => *control_flow = ControlFlow::Exit,
-            WindowEvent::Resized(size) => {
-                println!("Window resized to: {}x{}", size.width, size.height);
-            }
-            WindowEvent::Moved(position) => {
-                println!("Window moved to: {}x{}", position.x, position.y);
-            }
-            _ => (),
-        }
+    fn resized(&self, new_size: WindowSize) -> Result<(), HandlerError> {
+        println!(
+            "Window resized to: {}x{}",
+            new_size.physical.width, new_size.physical.height
+        );
+        Ok(())
+    }
+
+    fn on_event(&self, event: Event) -> EventStatus {
+        println!("Window event: {event:?}");
+        EventStatus::Captured
     }
 }
 
 /// Opens a window.
-fn main() -> Result<()> {
-    let size = Size::new(640.0, 480.0);
-    let mut open_options =
-        WindowOpenOptions::new("Baseview Example".to_string(), size);
-    open_options.scale = WindowScalePolicy::ScaleFactor(1.0);
-
-    Window::open_parentless(open_options, Box::new(BaseviewExample));
-    Ok(())
+fn main() -> Result<(), baseview::Error> {
+    let settings = WindowSettings::new()
+        .with_title("Baseview Example")
+        .with_size(LogicalSize::new(640.0, 480.0));
+    let window = Window::create(settings, |_context: WindowContext| {
+        Ok(BaseviewExample)
+    })?;
+    window.run_until_closed()
 }
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() -> Result<()> {
+pub fn run() -> Result<(), baseview::Error> {
     main()
 }
 
@@ -75,7 +73,7 @@ mod tests {
 
     #[test]
     #[ignore = "requires interactive example runtime"]
-    fn test_main() {
-        main().unwrap();
+    fn test_main() -> Result<(), baseview::Error> {
+        main()
     }
 }

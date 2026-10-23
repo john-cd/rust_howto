@@ -31,6 +31,8 @@
 
 `baseview` is a low-level window system interface for [audio][p~audio] plugin UIs.
 
+The `winit`, `tao`, and `baseview` examples are compiled on Windows as well as other supported desktop platforms. `baseview` selects its Windows backend for Windows builds.
+
 ```rust
 {{#include ../../../crates/cats/gui/examples/window_creation/baseview.rs:example}}
 ```

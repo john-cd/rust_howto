@@ -9,6 +9,8 @@
 
 [`tauri`][c~tauri~docs]↗{{hi:tauri}} makes tiny, secure apps for all desktop platforms. [`tauri`][c~tauri~docs]↗ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. Electron-like web-based UI, except it uses system webviews rather than shipping chromium, and non-UI code is written in Rust rather than [`node.js`][node.js~website]↗{{hi:node.js}}.
 
+On Windows, Tauri development requires Microsoft C++ Build Tools with the Desktop development with C++ workload and Microsoft Edge WebView2. WebView2 is already installed on Windows 10 version 1803 and later; see the [Tauri Windows prerequisites][tauri~windows-prerequisites~website]↗ for setup details.
+
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/web/tauri/mod.rs:example}}
 ```

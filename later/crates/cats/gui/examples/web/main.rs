@@ -7,7 +7,7 @@ use clap::Subcommand;
 
 #[cfg(feature = "dioxus")]
 mod dioxus;
-#[cfg(all(not(windows), feature = "tauri"))] // TODO review Windows support
+#[cfg(feature = "tauri")]
 mod tauri;
 
 /// Command-line arguments.
@@ -26,7 +26,7 @@ enum Commands {
     #[cfg(feature = "dioxus")]
     Dioxus,
     /// Runs the `tauri` example.
-    #[cfg(all(not(windows), feature = "tauri"))]
+    #[cfg(feature = "tauri")]
     #[command(name = "tauri")]
     Tauri,
 }
@@ -41,7 +41,7 @@ fn main() {
             Commands::Dioxus => {
                 dioxus::run();
             }
-            #[cfg(all(not(windows), feature = "tauri"))]
+            #[cfg(feature = "tauri")]
             Commands::Tauri => {
                 tauri::run();
             }

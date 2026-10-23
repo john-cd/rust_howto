@@ -30,6 +30,7 @@
 [ex~gui~webassembly-wasm-considerations]: file_dialogs.md#webassembly-wasm-considerations
 [ex~gui~winit]: window_creation.md#winit
 [ex~gui~xilem]: retained_mode_gui.md#xilem
+[tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
 [p~apis]: ../../../drafts/categories/web-programming_http-client/apis.md
 [p~asynchronous]: ../../../drafts/categories/asynchronous/index.md
 [p~audio]: ../../../drafts/categories/multimedia_audio/audio.md

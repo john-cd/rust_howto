@@ -5,7 +5,6 @@
 use clap::Parser;
 use clap::Subcommand;
 
-#[cfg(not(windows))] // TODO review Windows support for window creation examples
 mod baseview;
 mod tao;
 mod winit;
@@ -22,7 +21,6 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `baseview` example.
-    #[cfg(not(windows))]
     #[command(name = "baseview")]
     Baseview,
     /// Runs the `tao` example.
@@ -34,12 +32,11 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
-fn main() -> anyhow::Result<()> {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
-            #[cfg(not(windows))]
             Commands::Baseview => {
                 baseview::run()?;
             }
