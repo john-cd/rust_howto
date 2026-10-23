@@ -35,7 +35,13 @@ postgres = [
 ]
 redis = ["dep:redis"]
 rocksdb = ["dep:rocksdb", "dep:tempfile"]
-sea_orm = ["dep:sea-orm", "dep:seaography", "sea-orm/sqlx-sqlite", "sea-orm/runtime-tokio-rustls"]
+sea_orm = [
+    "dep:sea-orm",
+    "dep:seaography",
+    "dep:serde_json",
+    "sea-orm/sqlx-sqlite",
+    "sea-orm/runtime-tokio-rustls",
+]
 sqlx = ["dep:sqlx"]
 sqlite = ["dep:rusqlite"]
 

@@ -97,7 +97,20 @@ async fn main() -> anyhow::Result<()> {
     }";
     let res = schema.execute(query).await;
 
-    println!("GraphQL response: {:?}", res.data);
+    anyhow::ensure!(
+        res.errors.is_empty(),
+        "GraphQL query failed: {:?}",
+        res.errors
+    );
+    let data = serde_json::to_value(res.data)?;
+    anyhow::ensure!(
+        data.pointer("/post/nodes/0/title")
+            .and_then(serde_json::Value::as_str)
+            == Some("Seaography Example"),
+        "GraphQL query did not return the inserted post: {data}"
+    );
+
+    println!("GraphQL response: {data}");
 
     Ok(())
 }
@@ -112,8 +125,10 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the generated GraphQL query returns the post inserted into
+    /// SQLite.
     #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
+    fn generated_graphql_query_returns_inserted_post() -> anyhow::Result<()> {
         run()
     }
 }
