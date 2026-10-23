@@ -26,8 +26,8 @@ rocket-support = ["dep:rocket"]
 loco-support = ["dep:loco-rs"]
 
 [dependencies]
-# trillium = "0.2.20"
-# [trillium: do we need LATER](https://github.com/john-cd/rust_howto/issues/1314)
+# Trillium is listed in the middleware draft but has no example here.
+# Add it as a dependency if a Trillium example is introduced.
 # The example uses HTTP/1 only; enabling Actix's default HTTP/2 feature pulls
 # the vulnerable h2 0.3 line.
 actix-web = { version = "4.17.0", default-features = false, features = ["macros"] }
