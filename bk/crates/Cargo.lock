@@ -9141,18 +9141,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "markup5ever_arcdom"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e64a3a9ca36c5a6e0352120148e6b9ea7f4030ddca750dd581cec5ecf45e8f0c"
-dependencies = [
- "html5ever 0.26.0",
- "markup5ever 0.11.0",
- "tendril 0.4.3",
- "xml5ever 0.17.0",
-]
-
-[[package]]
 name = "markup5ever_rcdom"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -10919,7 +10907,6 @@ dependencies = [
  "json5",
  "markdown",
  "markup5ever 0.39.0",
- "markup5ever_arcdom",
  "pulldown-cmark",
  "quick-xml 0.42.0",
  "roxmltree",
