@@ -20105,6 +20105,8 @@ checksum = "19b30a45b0cd0bcca8037f3d0dc3421eaf95327a17cad11964fb8179b4fc4832"
 name = "rendering"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
+ "lyon",
  "resvg 0.48.1",
  "usvg 0.48.1",
 ]

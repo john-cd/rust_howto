@@ -21,6 +21,10 @@ autolib = false
 resvg = "0.48.1" # Rasterizes normalized SVG trees into pixmaps.
 usvg = "0.48.1" # Parses and normalizes SVG documents.
 
+[dev-dependencies]
+anyhow = "1.0.104" # Provides a fallible entry point for the example runner.
+lyon = "1.0.19" # Builds and tessellates paths in the vector graphics example.
+
 [[example]]
 name = "2d_raster_graphics"
 path = "examples/2d_raster_graphics/main.rs"
