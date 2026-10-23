@@ -17,6 +17,10 @@ Runtime storage has stricter semantics than a byte array. NOR flash is erased in
 
 The [`embedded-storage`][c~embedded-storage~docs]↗ traits describe common operations for storage devices, including read-only and writable NOR flash. They make storage code reusable across compatible devices; they do not remove the need to choose a partition, respect alignment, or manage wear and interruption.
 
+The following example implements those traits over a small in-memory NOR model. It runs on the host without a flash device and demonstrates erase-block alignment and the one-to-zero programming rule; the model is not a substitute for validating a driver's geometry on the target.
+
+{{#include ../../../crates/cats/embedded/examples/flash/main.rs:example}}
+
 For persistent records, define a format with versioning and integrity checks. Design updates so power loss cannot leave the only copy unusable; common approaches include append-only records, two-slot updates, checksums, and a bootloader-managed update state. Avoid frequently erasing a single block for counters or logs, since flash endurance is finite.
 
 ## Validate the Storage Design
