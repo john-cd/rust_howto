@@ -85,7 +85,7 @@ struct Node {
     /// Content and child nodes for this node.
     kind: NodeKind,
     /// Weak parent pointer used for detach and reparent operations.
-    parent: RefCell<Option<Weak<Node>>>,
+    parent: RefCell<Option<Weak<Self>>>,
 }
 
 /// A small DOM implementation used as `xml5ever`'s tree sink.
