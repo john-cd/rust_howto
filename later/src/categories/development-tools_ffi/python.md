@@ -31,6 +31,28 @@ Use Rust from Python:
 {{#include ../../../crates/cats/development_tools_ffi/examples/python/use_rust_from_python.rs:example}}
 ```
 
+### Build and import a Python extension module {#build-python-extension}
+
+The example above embeds Python in a Rust executable. To build a native Python module that an ordinary Python script can import, use the separate PyO3 `cdylib` package and Maturin:
+
+```rust
+{{#include ../../../crates/cats/development_tools_ffi/python_extension/src/lib.rs}}
+```
+
+From `later/crates/cats/development_tools_ffi/python_extension`, activate a Python virtual environment and run:
+
+```console
+python -m pip install "maturin>=1.9.4,<2.0"
+maturin develop
+python python/use_rust_from_python.py
+```
+
+Maturin builds the extension for the active Python environment. The script imports `rust_howto_python_module` and prints the result of calling its Rust `add` function.
+
+```python
+{{#include ../../../crates/cats/development_tools_ffi/python_extension/python/use_rust_from_python.py}}
+```
+
 ## Data Exchange Between Rust and Python {#data-exchange-between-rust-and-python}
 
 While not Python-specific, [`serde`][c~serde~docs]↗{{hi:serde}}'s serialization capabilities allow for efficiently exchanging data between Rust and Python. You'd likely use [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}} or another format in conjunction with your chosen Python binding crate.

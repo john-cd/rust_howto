@@ -3,77 +3,46 @@
 // ANCHOR: example
 //! Calling Rust from Java with the Java Native Interface.
 
-use jni::JNIEnv;
+use jni::EnvUnowned;
+use jni::errors::ThrowRuntimeExAndDefault;
 use jni::objects::JClass;
 use jni::objects::JString;
 
-// In `Cargo.toml`, under [dependencies], add jni = "0.21.1"
+// In `Cargo.toml`, add jni = "0.22.4" and build the library as a cdylib.
 // Build the Rust code as a dynamic library (e.g., a .so file for Linux, .dll
 // for Windows): add a new `[lib]` section and under it,
 // `crate_type = ["cdylib"]`
 // if you run `cargo build` from inside the crate directory, you
-// should see a `libmylib.so` (if you're on Linux) or a `libmylib.dylib` (if
-// we are on OSX) in the `target/debug` directory.
+// should see a `mylib.dll` on Windows, `libmylib.so` on Linux, or
+// `libmylib.dylib` on macOS in the `target/debug` directory.
 // Compile the java code with the javac command:
 // ```sh
 // javac NativeLibrary.java
 // ```
-// Get a `NativeLibrary.h` output to your directory with the following
-// command: // ```
-// // javac - h.NativeLibrary.java
-// // ```
-// // Linking: on Linux, we can export
-// // ```
-// // LD_LIBRARY_PATH=/path/to/mylib/target/debug.
-// // ```
-// //
-// // This example defines a single native function `greet` that takes a Java
-// // String as input, formats a greeting message, and returns a new Java
-// String.
+// Generate a C header declaration with `javac -h . NativeLibrary.java`.
+// Run Java with `java -Djava.library.path=target/debug
+// com.example.NativeLibrary` so the JVM can find `mylib.dll`, `libmylib.so`, or
+// `libmylib.dylib`.
 
-// `no_mangle` prevents the Rust compiler from mangling the function name,
-// ensuring that Java can correctly find and call it.
 /// Returns a greeting for `name`; called from Java as `NativeLibrary.greet`.
+// `no_mangle` preserves the symbol name expected by the JVM.
 #[unsafe(no_mangle)]
 // The Java Native Interface (JNI) function name follows the convention:
 // Java_<package_name>_<class_name>_<method_name>.
-// env: JNIEnv is a pointer to the JNI environment, which provides access to
-// JNI functions. JClass is a pointer to the Java class that this native
-// method belongs to. It's often unused.
-pub extern "C" fn Java_com_example_NativeLibrary_greet<'a>(
-    mut env: JNIEnv<'a>,
+// unowned_env is the FFI-safe JNI environment passed by the JVM. JClass points
+// to the Java class that owns this native method and is unused in this example.
+pub extern "system" fn Java_com_example_NativeLibrary_greet<'a>(
+    mut unowned_env: EnvUnowned<'a>,
     _: JClass<'a>,
     name: JString<'a>,
 ) -> JString<'a> {
-    // Converts the JString argument into a Rust String. The `get_string`
-    // method returns a `Result` that needs to be handled.
-    let name_str: String = env.get_string(&name).expect("Invalid UTF-8").into();
-    // Formats a greeting message using the input name.
-    let hello = format!("Hello, {name_str:?}!");
-
-    // Creates a new JString object from the Rust String.
-    env.new_string(&hello)
-        .expect("Couldn't create Java String!")
-}
-
-/// Does nothing; the function is meant to be called from Java.
-fn main() {
-    // TODO
+    unowned_env
+        .with_env(|env| -> jni::errors::Result<_> {
+            let name_str = name.try_to_string(env)?;
+            let hello = format!("Hello, {name_str}!");
+            env.new_string(&hello)
+        })
+        .resolve::<ThrowRuntimeExAndDefault>()
 }
 // ANCHOR_END: example
-
-/// Runs the example.
-pub fn run() {
-    main();
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main() {
-        main();
-    }
-}
 // [finish](https://github.com/john-cd/rust_howto/issues/1029)

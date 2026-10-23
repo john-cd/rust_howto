@@ -1,12 +1,11 @@
-//! Runs the Java example on non-Windows platforms.
+//! Compiles the Java JNI example on any supported Rust target.
 //!
 //! TODO Reviewed ??-??-2026
 
-#[cfg(not(windows))] // TODO review Windows support for Java FFI examples
+#[cfg(feature = "java")]
 mod jni;
 
-/// Runs the example if it is supported.
+/// Provides the binary target required to compile the JNI example module.
 fn main() {
-    #[cfg(not(windows))]
-    jni::run();
+    // The exported JNI function is called by a JVM, not by this binary.
 }

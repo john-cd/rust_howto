@@ -11,6 +11,10 @@ Interfacing with Ruby from Rust is typically done using the Ruby C API via a bin
 
 The tie between Ruby and Rust.
 
+### Windows support status {#ruby-windows-support}
+
+The `ruby` Cargo feature and its `magnus` and `rutie` examples are currently excluded on Windows by `cfg(not(windows))` in this repository. The manifest pins Rutie 0.9.0, while the upstream support table identifies Windows for the Ruby 2 line starting at Rutie 0.10.2. The upstream Windows setup also requires 64-bit Ruby built with MinGW and the Visual Studio C++ Build Tools. This checkout has no Ruby installation, so Windows compilation and runtime support are not verified here. Keep the examples on their current platform gate until compatible versions and that toolchain are exercised. See the [Rutie Windows requirements](https://github.com/danielpclark/rutie#operating-system-requirements).
+
 The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate provides a high-level and safe interface to the Ruby C API. It's the most common and recommended approach for Ruby/Rust integration.
 
 ```rust,editable

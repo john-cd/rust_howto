@@ -11,6 +11,14 @@ Interfacing with Java from Rust is typically done using the Java Native Interfac
 
 [`jni`][c~jni~docs]↗{{hi:jni}} provides Rust bindings to the `Java` JNI API.
 
+The JNI Rust API is available on Windows. From `later/crates`, compile this example with the Java feature on Windows or another desktop target:
+
+```console
+cargo check --locked -p development_tools_ffi --example java --features java
+```
+
+Compiling the Rust JNI code does not require a JDK because the JVM supplies `JNIEnv` when it calls the native function. Running the Java program does require a JDK and a separately built Rust `cdylib`; Windows loads the resulting `.dll` through `System.loadLibrary`.
+
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/java/jni.rs:example}}
 ```

@@ -1,0 +1,16 @@
+[workspace]
+resolver = "3"
+
+[package]
+name = "rust_howto_python_module"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Provides the PyO3 macros and safe bindings used by the Python extension.
+pyo3 = "0.29.3"

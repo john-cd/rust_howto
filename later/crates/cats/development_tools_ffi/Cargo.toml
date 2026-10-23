@@ -87,6 +87,7 @@ test = true
 [[example]]
 name = "java"
 path = "examples/java/main.rs"
+required-features = ["java"]
 test = true
 
 [[example]]
