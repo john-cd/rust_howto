@@ -34,10 +34,13 @@ fn main() -> Result<(), Error> {
     // let path_to_read = Path::new("temp/new.txt");
     // let _handle = Handle::from_path(path_to_read)?;
 
-    // You may also check whether two file paths correspond to the same file
-    // (due to hard or symbolic links):
-    #[cfg(unix)]
-    assert!(same_file::is_same_file("/bin/sh", "/usr/bin/sh")?);
+    // Compare two path spellings for the same file without platform-specific
+    // paths.
+    let temp_dir = tempfile::tempdir()?;
+    let file = temp_dir.path().join("same.txt");
+    let equivalent_path = temp_dir.path().join(".").join("same.txt");
+    std::fs::File::create(&file)?;
+    assert!(same_file::is_same_file(&file, &equivalent_path)?);
 
     Ok(())
 }
