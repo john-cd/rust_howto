@@ -20,12 +20,15 @@ autolib = false
 [dependencies]
 
 [dev-dependencies]
+anyhow = "1.0.104" # Provides consistent fallible example entry points.
 cortex-m = "0.7"
 cortex-m-rt = "0.7"
 embassy = { git = "https://github.com/embassy-rs/embassy", branch = "main", features = [
     "alloc",
     "std",
 ] }
+embedded-hal = "1.0" # Portable traits used by the host-side peripheral examples.
+embedded-storage = "0.3.2" # NOR flash traits used by the in-memory flash model.
 panic-halt = "0.2"
 
 #[features]
