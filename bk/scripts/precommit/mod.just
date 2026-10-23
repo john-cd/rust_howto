@@ -1,4 +1,6 @@
 # TODO Reviewed ??-??-2026
+set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+
 ## ---- DEFAULT -------------------------------------
 
 root := clean(source_directory() + "/../../..")

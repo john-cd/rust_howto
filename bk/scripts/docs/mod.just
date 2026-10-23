@@ -1,5 +1,5 @@
 # TODO Reviewed ??-??-2026
-set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
 
 [no-exit-message]
 _default:
@@ -19,6 +19,8 @@ book_root := clean(source_directory() + "/../..")
   cargo doc --no-deps --document-private-items --locked --bins --examples --package {{pkg}}
   cd {{ book_root }}/../target/bk/doc/ ; python3 -m http.server 9000
 
+# Build all package documentation; serving it requires a Unix shell.
+[unix]
 @_builddocall:
   #!/usr/bin/env bash
   set -euo pipefail
@@ -31,6 +33,16 @@ book_root := clean(source_directory() + "/../..")
 [unix]
 @docall: _builddocall
   cd {{ book_root }}/../target/bk/doc/ ; python3 -m http.server 9000
+
+[windows]
+@doc pkg:
+  Write-Error "Documentation preview is supported on Unix only."
+  exit 1
+
+[windows]
+@docall:
+  Write-Error "Documentation preview is supported on Unix only."
+  exit 1
 # cargo doc --open does not seem to work when running from a Dev Container in VS Code;
 # the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML.
 # We could also use `live server` for dynamic reloading.
