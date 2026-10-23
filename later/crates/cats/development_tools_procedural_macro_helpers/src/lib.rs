@@ -17,7 +17,7 @@ pub fn my_macro(input: TokenStream) -> TokenStream {
             impl #name {
     /// Prints a greeting that includes the type name.
                 fn hello_world() {
-                    println!("Hello, World! I am #name");
+                    println!("Hello, World! I am {}", stringify!(#name));
                 }
             }
         };
@@ -66,7 +66,10 @@ struct MyMacroOpts {
 #[proc_macro_derive(MyDarlingMacro, attributes(my_macro))]
 pub fn my_darling_macro_derive(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
-    let opts = MyMacroOpts::from_derive_input(&input).expect("Wrong options!");
+    let opts = match MyMacroOpts::from_derive_input(&input) {
+        Ok(opts) => opts,
+        Err(error) => return error.write_errors().into(),
+    };
 
     let name = &opts.name;
     let struct_name = &input.ident;
