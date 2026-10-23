@@ -60,11 +60,6 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() -> Result<()> {
-    main()
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;

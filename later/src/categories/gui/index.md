@@ -61,6 +61,12 @@ See [[web-programming | Web Programming]] and [[web-programming_http-server | We
 
 See [[graphics | Graphics]] and [[rendering | Rendering]].
 
+For a minimal CPU-rendered desktop window, [`minifb`][c~minifb~docs]↗{{hi:minifb}} presents a pixel buffer directly. From `later/crates`, run it with `cargo run -p gui --example minifb_renderer --features minifb`.
+
+```rust,editable
+{{#include ../../../crates/cats/gui/examples/2d_renderers/minifb.rs:example}}
+```
+
 ### UI Layout
 
 {{#include ui_layout.incl.md}}

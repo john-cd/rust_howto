@@ -7,8 +7,6 @@ use clap::Subcommand;
 
 #[cfg(feature = "femtovg")]
 mod femtovg;
-#[cfg(feature = "minifb")]
-mod minifb;
 #[cfg(feature = "skia")]
 mod skia_safe;
 // #[cfg(all(feature = "vello", not(windows)))]
@@ -35,10 +33,6 @@ enum Commands {
     #[cfg(feature = "femtovg")]
     #[command(name = "femtovg")]
     Femtovg,
-    /// Runs the `minifb` example.
-    #[cfg(feature = "minifb")]
-    #[command(name = "minifb")]
-    Minifb,
     /// Runs the `skia_safe` example.
     #[cfg(feature = "skia")]
     #[command(name = "skia_safe")]
@@ -65,10 +59,6 @@ fn main() -> anyhow::Result<()> {
             #[cfg(feature = "femtovg")]
             Commands::Femtovg => {
                 femtovg::run();
-            }
-            #[cfg(feature = "minifb")]
-            Commands::Minifb => {
-                minifb::run()?;
             }
             #[cfg(feature = "skia")]
             Commands::SkiaSafe => {
