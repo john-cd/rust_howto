@@ -51,18 +51,15 @@ fn main() {
         // update operations (including `insert`). Retrievals reflect the
         // results of the most recently completed update operations
         // holding upon their onset.
-        println!("Value for key1: {:?}", mref.get(&"key1".to_owned())); // Output: Some(1)
-        println!("Value for key4: {:?}", mref.get(&"key4".to_owned())); // Output: None
+        println!("Value for key1: {:?}", mref.get("key1")); // Output: Some(1)
+        println!("Value for key4: {:?}", mref.get("key4")); // Output: None
 
         println!("\nRemoving key0");
-        mref.remove(&"key0".to_owned());
-        println!(
-            "Value for key0 after removal: {:?}",
-            mref.get(&"key0".to_owned())
-        );
+        mref.remove("key0");
+        println!("Value for key0 after removal: {:?}", mref.get("key0"));
 
         println!("\nChecking if key2 exists");
-        println!("{}", mref.contains_key(&"key2".to_owned()));
+        println!("{}", mref.contains_key("key2"));
 
         // Operations that inspect the map as a whole, rather than a single key,
         // operate on a snapshot of the underlying table. For example, iterators
@@ -77,10 +74,10 @@ fn main() {
 
         // Aggregate status methods like `len` are typically useful only when a
         // map is not undergoing concurrent updates in other threads.
-        assert!(mref.len() == 3);
+        assert_eq!(mref.len(), 3);
     }
 
-    let m = map.clone();
+    let m = Arc::clone(&map);
     let writer_thread = thread::spawn(move || {
         for i in 4..=5 {
             m.pin().insert(format!("key{i}"), i);
@@ -89,7 +86,7 @@ fn main() {
         }
     });
 
-    let m2 = map.clone();
+    let m2 = Arc::clone(&map);
     let reader_thread = thread::spawn(move || {
         for _ in 1..=2 {
             // Read multiple times:
@@ -101,8 +98,12 @@ fn main() {
         }
     });
 
-    writer_thread.join().unwrap();
-    reader_thread.join().unwrap();
+    writer_thread
+        .join()
+        .expect("writer thread should complete successfully");
+    reader_thread
+        .join()
+        .expect("reader thread should complete successfully");
 
     // Final state of the map.
     println!("\nFinal state of the map:");
