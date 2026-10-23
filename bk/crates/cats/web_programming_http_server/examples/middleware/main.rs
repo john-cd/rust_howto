@@ -37,7 +37,7 @@ fn main() -> anyhow::Result<()> {
                 cors::run()?;
             }
             Commands::TowerHttp => {
-                tower_http::run();
+                tower_http::run()?;
             }
         }
     }

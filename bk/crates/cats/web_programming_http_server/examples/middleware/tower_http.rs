@@ -1,116 +1,114 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
-//! Example of using the `tower-http` middleware.
+//! Serves an Axum route with common `tower-http` middleware.
 
-use std::iter::once;
-use std::sync::Arc;
+use std::time::Duration;
 
-use bytes::Bytes;
-use http::Request;
-use http::Response;
-use http::header::AUTHORIZATION;
-use http::header::CONTENT_TYPE;
-use http::header::HeaderName;
-use http_body_util::Full;
-use tower::BoxError;
+use axum::Router;
+use axum::routing::get;
+use http::StatusCode;
+use tokio::net::TcpListener;
 use tower::ServiceBuilder;
-use tower_http::add_extension::AddExtensionLayer;
 use tower_http::compression::CompressionLayer;
-use tower_http::propagate_header::PropagateHeaderLayer;
-use tower_http::sensitive_headers::SetSensitiveRequestHeadersLayer;
-use tower_http::set_header::SetResponseHeaderLayer;
+use tower_http::cors::CorsLayer;
+use tower_http::timeout::TimeoutLayer;
 use tower_http::trace::TraceLayer;
-// use tower_http::validate_request::ValidateRequestHeaderLayer;
 
-// Our request handler. This is where we would implement the
-// application logic for responding to HTTP requests...
-/// Returns an empty response with a custom header.
-async fn handler(
-    _request: Request<Full<Bytes>>,
-) -> Result<Response<Full<Bytes>>, BoxError> {
-    let empty_body = Full::new(Bytes::new());
-    let builder = Response::builder()
-        .header("X-Custom-Foo", "bar")
-        .status(http::status::StatusCode::OK);
-    Ok(builder.body(empty_body).unwrap())
+/// Returns a response body large enough to demonstrate compression.
+async fn handler() -> &'static str {
+    "tower-http applies tracing, compression, cross-origin headers, and a request timeout to this response."
 }
 
-/// A mock database connection pool.
-struct DatabaseConnectionPool;
-
-impl DatabaseConnectionPool {
-    /// Creates a pool.
-    fn new() -> Self {
-        Self
-    }
+/// Builds the example router with one middleware layer for each concept.
+fn app() -> Router {
+    Router::new().route("/", get(handler)).layer(
+        ServiceBuilder::new()
+            // Emit high-level request and response tracing events.
+            .layer(TraceLayer::new_for_http())
+            // Compress eligible response bodies when the client supports it.
+            .layer(CompressionLayer::new())
+            // Allow cross-origin requests for this demonstration.
+            .layer(CorsLayer::permissive())
+            // Return HTTP 408 when a request takes longer than five seconds.
+            .layer(TimeoutLayer::with_status_code(
+                StatusCode::REQUEST_TIMEOUT,
+                Duration::from_secs(5),
+            )),
+    )
 }
 
-/// Shared state across all request handlers - in this case, a pool of database
-/// connections.
-struct State {
-    /// The pool of database connections.
-    pool: DatabaseConnectionPool,
-}
-
-/// Wraps a request handler with a stack of `tower-http` middleware and sends it
-/// a request.
+/// Binds the example server and serves requests until the process is stopped.
+///
+/// # Errors
+///
+/// Returns an error if the listener cannot be bound or the server fails.
 #[tokio::main]
-async fn main() {
-    // Construct the shared state.
-    let state = State {
-        pool: DatabaseConnectionPool::new(),
-    };
-
-    let content_length_from_response = 0;
-
-    // Use tower's `ServiceBuilder` API to build a stack of tower middleware
-    // wrapping our request handler.
-    let _service = ServiceBuilder::new()
-        // Mark the `Authorization` request header as sensitive so it doesn't
-        // show in logs.
-        .layer(SetSensitiveRequestHeadersLayer::new(once(AUTHORIZATION)))
-        // High level logging of requests and responses.
-        .layer(TraceLayer::new_for_http())
-        // Share an `Arc<State>` with all requests.
-        .layer(AddExtensionLayer::new(Arc::new(state)))
-        // Compress responses.
-        .layer(CompressionLayer::new())
-        // Propagate `X-Request-Id`s from requests to responses.
-        .layer(PropagateHeaderLayer::new(HeaderName::from_static(
-            "x-request-id",
-        )))
-        // If the response has a known size set the `Content-Length` header.
-        .layer(SetResponseHeaderLayer::overriding(
-            CONTENT_TYPE,
-            content_length_from_response,
-        ))
-        // Authorize requests using a token.
-        //.layer(ValidateRequestHeaderLayer::bearer("passwordlol"))
-        // Accept only application/json, application/* and */* in a request's
-        // ACCEPT header.
-        //.layer(ValidateRequestHeaderLayer::accept("application/json"))
-        // Wrap the `Service` in our middleware stack.
-        .service_fn(handler);
-    println!(
-        "tower_http example: middleware stack built (authentication, logging, compression, etc.)"
-    );
+async fn main() -> anyhow::Result<()> {
+    let listener = TcpListener::bind("127.0.0.1:3000").await?;
+    println!("tower-http example listening on http://127.0.0.1:3000");
+    axum::serve(listener, app()).await?;
+    Ok(())
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example server.
+///
+/// # Errors
+///
+/// Returns an error if the listener cannot be bound or the server fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
+    use tokio::io::AsyncReadExt;
+    use tokio::io::AsyncWriteExt;
+    use tokio::sync::oneshot;
+
     use super::*;
 
-    #[test]
-    fn require_network() {
-        main();
+    /// Verifies a live server responds to a CORS request and exits on shutdown.
+    #[tokio::test]
+    async fn serves_a_cors_request_and_shuts_down_cleanly() -> anyhow::Result<()>
+    {
+        let listener = TcpListener::bind("127.0.0.1:0").await?;
+        let address = listener.local_addr()?;
+        let (shutdown_sender, shutdown_receiver) = oneshot::channel();
+        let server = tokio::spawn(async move {
+            axum::serve(listener, app())
+                .with_graceful_shutdown(async move {
+                    let _ = shutdown_receiver.await;
+                })
+                .await
+        });
+
+        let mut client = tokio::net::TcpStream::connect(address).await?;
+        client
+            .write_all(
+                b"GET / HTTP/1.1\r\nHost: localhost\r\nOrigin: https://client.example\r\nConnection: close\r\n\r\n",
+            )
+            .await?;
+        let mut response = Vec::new();
+        client.read_to_end(&mut response).await?;
+        let response = String::from_utf8(response)?;
+        shutdown_sender.send(()).map_err(|()| {
+            anyhow::anyhow!("server shutdown receiver dropped")
+        })?;
+        tokio::time::timeout(Duration::from_secs(2), server).await???;
+
+        let response_headers = response
+            .split_once("\r\n\r\n")
+            .map_or(&response, |(headers, _)| headers)
+            .to_ascii_lowercase();
+
+        assert!(response.starts_with("HTTP/1.1 200 OK"), "{response}");
+        assert!(
+            response_headers.contains("access-control-allow-origin: *"),
+            "{response_headers}"
+        );
+        Ok(())
     }
 }
-// [review](https://github.com/john-cd/rust_howto/issues/871)

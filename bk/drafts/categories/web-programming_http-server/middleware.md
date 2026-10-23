@@ -23,6 +23,8 @@ A number of third-party libraries support [`tower`][c~tower~docs]↗{{hi:tower}}
 
 [`Tower HTTP`][c~tower-http~docs]↗{{hi:tower-http}} contains HTTP specific Tower utilities.
 
+The example below serves an Axum route and composes tracing, response compression, CORS, and request-timeout layers. The focused CORS example is in [[cors | Cross-origin Resource Sharing]].
+
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/middleware/tower_http.rs:example}}
 ```
@@ -35,7 +37,9 @@ A number of third-party libraries support [`tower`][c~tower~docs]↗{{hi:tower}}
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[cors | Cross-origin Resource Sharing]].
+- [[axum | Axum]].
+- [[asynchronous | Asynchronous Programming]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

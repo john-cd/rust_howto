@@ -14,10 +14,11 @@
 ## See Also {#see-also .skip}
 
 - [CORS (Mozilla)][mozilla~cors]↗.
+- See [[middleware | Middleware]] for a running Axum server that combines CORS with tracing, compression, and a request timeout.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[middleware | Middleware]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
