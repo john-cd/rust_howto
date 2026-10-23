@@ -5,6 +5,8 @@
 //! Create and verify an Ed25519 signature using `ed25519-dalek`.
 //!
 //! The example generates a new keypair, signs a message, and verifies it.
+//! Keep the signing key private; only the verifying key and signature are
+//! printed.
 
 use ed25519_dalek::Signer as _;
 use ed25519_dalek::SigningKey;
@@ -21,6 +23,12 @@ fn main() -> anyhow::Result<()> {
 
     let signature: ed25519::Signature = signing_key.sign(message);
     verifying_key.verify(message, &signature)?;
+    anyhow::ensure!(
+        verifying_key
+            .verify(b"This message was changed.", &signature)
+            .is_err(),
+        "the signature must not verify for a different message"
+    );
 
     println!("Verifying key: {:?}", verifying_key.to_bytes());
     println!("Signature bytes: {:?}", signature.to_bytes());
@@ -37,9 +45,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Signs and verifies the original message while rejecting a changed one.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()
     }
-    // [finish](https://github.com/john-cd/rust_howto/issues/1084)
 }
