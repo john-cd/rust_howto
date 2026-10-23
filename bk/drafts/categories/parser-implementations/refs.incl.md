@@ -1,6 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
 [ex~parser-implementations~basic-toml]: toml.md#basic-toml
 [ex~parser-implementations~comrak]: markdown.md#comrak
+[ex~parser-implementations~configparser]: ini.md#configparser
+[ex~parser-implementations~configuration]: ../config/configuration.md
 [ex~parser-implementations~css-rs]: html.md#css-rs
 [ex~parser-implementations~html5ever]: html.md#html5ever
 [ex~parser-implementations~ini]: ini.md#ini
@@ -10,6 +12,7 @@
 [ex~parser-implementations~pulldown-cmark]: markdown.md#pulldown-cmark
 [ex~parser-implementations~quick-xml]: xml.md#quick-xml
 [ex~parser-implementations~roxmltree]: xml.md#roxmltree
+[ex~parser-implementations~rust-ini]: ini.md#rust-ini
 [ex~parser-implementations~rust_parsing]: programming_languages.md#rust_parsing
 [ex~parser-implementations~scraper]: html.md#scraper
 [ex~parser-implementations~serde-json]: json.md#serde-json

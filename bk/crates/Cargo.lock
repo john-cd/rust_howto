@@ -3089,6 +3089,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "configparser"
+version = "3.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "031ad3d167622974ed636505ae4556267ed4aa2aea0464122fa6bc9698a32825"
+
+[[package]]
 name = "confy"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -10894,6 +10900,7 @@ dependencies = [
  "chrono",
  "clap",
  "comrak",
+ "configparser",
  "cssparser 0.37.0",
  "html5ever 0.39.0",
  "json5",
