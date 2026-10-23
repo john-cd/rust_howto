@@ -5,6 +5,8 @@
 //! This example demonstrates how to read and write XML data using the
 //! `xml-rs` crate.
 
+use std::fmt::Write as _;
+
 use anyhow::Context as _;
 use xml::reader::EventReader;
 use xml::reader::XmlEvent;
@@ -54,10 +56,8 @@ fn read_xml(xml_input: &str) -> anyhow::Result<Vec<String>> {
                 if !attributes.is_empty() {
                     event.push_str(" with attributes:");
                     for attr in &attributes {
-                        event.push_str(&format!(
-                            " {}=\"{}\"",
-                            attr.name, attr.value
-                        ));
+                        write!(event, " {}=\"{}\"", attr.name, attr.value)
+                            .context("failed to format XML attribute")?;
                     }
                 }
                 events.push(event);
