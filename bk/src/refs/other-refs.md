@@ -338,6 +338,7 @@
 [book~cargo~cargo-toml]: https://doc.rust-lang.org/cargo/reference/manifest.html
 [book~cargo~cargo-tree]: https://doc.rust-lang.org/cargo/commands/cargo-tree.html
 [book~cargo~cargo-update]: https://doc.rust-lang.org/cargo/commands/cargo-update.html
+[book~cargo~config]: https://doc.rust-lang.org/cargo/reference/config.html
 [book~cargo~continuous-integration]: https://doc.rust-lang.org/cargo/guide/continuous-integration.html
 [book~cargo~dev-profile]: https://doc.rust-lang.org/cargo/reference/profiles.html#dev
 [book~cargo~env]: https://doc.rust-lang.org/cargo/reference/environment-variables.html
@@ -345,6 +346,8 @@
 [book~cargo~profiles-strip]: https://doc.rust-lang.org/cargo/reference/profiles.html#strip
 [book~cargo~project-layout]: https://doc.rust-lang.org/cargo/guide/project-layout.html
 [book~cargo~reference-semver]: https://doc.rust-lang.org/cargo/reference/semver.html
+[book~cargo~registries]: https://doc.rust-lang.org/cargo/reference/registries.html
+[book~cargo~registry-authentication]: https://doc.rust-lang.org/cargo/reference/registry-authentication.html
 [book~cargo~release-profile]: https://doc.rust-lang.org/cargo/reference/profiles.html#release
 [book~cargo~specifying-dependencies]: https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
 [book~cargo~unstable]: https://doc.rust-lang.org/cargo/reference/unstable.html
