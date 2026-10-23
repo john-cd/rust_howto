@@ -10,7 +10,9 @@
 [![http~repo][c~http~repo~badge]][c~http~repo]
 [![http~lib.rs][c~http~lib.rs~badge]][c~http~lib.rs]
 
-The [`http`][c~http~docs]↗{{hi:http}} crate doesn't actually contain an HTTP implementation. Just types and interfaces to help interoperability.
+The [`http`][c~http~docs]↗{{hi:http}} crate provides the shared vocabulary used by HTTP clients, servers, and middleware. A request carries a method, URI, version, headers, extensions, and a body; a response carries a status, version, headers, extensions, and a body. The body type is generic, so these messages can hold a byte buffer, a streaming body, or an application-specific value.
+
+These types describe messages; they do not open sockets, send requests, or implement a server. Choose a client or server such as `reqwest`, `hyper`, or `axum` to perform network I/O.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/http_types_and_interfaces/http.rs:example}}
@@ -22,15 +24,19 @@ The [`http`][c~http~docs]↗{{hi:http}} crate doesn't actually contain an HTTP i
 
 Trait representing an asynchronous, streaming, HTTP request or response body.
 
+The `Body` trait yields frames asynchronously. Data frames carry byte buffers, and HTTP/2 bodies can also carry trailers. An implementation provides an error type and may report size hints, allowing network libraries to stream large payloads without first collecting them into one allocation.
+
 ## `http-body-util` {#http-body-util}
 
 [![http-body-util][c~http-body-util~docs~badge]][c~http-body-util~docs] [![http-body-util~crates.io][c~http-body-util~crates.io~badge]][c~http-body-util~crates.io] [![http-body-util~repo][c~http-body-util~repo~badge]][c~http-body-util~repo] [![http-body-util~lib.rs][c~http-body-util~lib.rs~badge]][c~http-body-util~lib.rs]{{hi:http-body-util}}{{hi:Http}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-Combinators and adapters for HTTP request or response bodies.
+[`http-body-util`][c~http-body-util~docs]↗{{hi:http-body-util}} provides adapters for the `http_body::Body` trait. `Full` and `Empty` represent a single payload or no payload; `StreamBody` adapts a stream of frames. Its `BodyExt` extension trait includes `collect`, which is useful for small, known-size responses but buffers the full body in memory.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- HTTP clients: [[http_client | HTTP Client]].
+- HTTP servers: [[http_server | HTTP Server]].
+- Middleware often uses the `tower::Service` interface to wrap request and response handling.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
