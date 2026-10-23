@@ -2,6 +2,7 @@
 [ex~development-tools_cargo-plugins~cargo-audit]: auditing.md#cargo-audit
 [ex~development-tools_cargo-plugins~cargo-auditable]: auditing.md#cargo-auditable
 [ex~development-tools_cargo-plugins~cargo-cache]: maintaining.md#cargo-cache
+[ex~development-tools_cargo-plugins~cargo-cyclonedx]: auditing.md#cargo-cyclonedx
 [ex~development-tools_cargo-plugins~cargo-clippy]: code_formatting_linting.md#cargo-clippy
 [ex~development-tools_cargo-plugins~cargo-deny]: auditing.md#cargo-deny
 [ex~development-tools_cargo-plugins~cargo-edit]: dependency_management.md#cargo-edit
@@ -16,6 +17,7 @@
 [ex~development-tools_cargo-plugins~cargo-open]: code_writing.md#cargo-open
 [ex~development-tools_cargo-plugins~cargo-outdated]: dependency_management.md#cargo-outdated
 [ex~development-tools_cargo-plugins~cargo-semver-checks]: maintaining.md#cargo-semver-checks
+[ex~development-tools_cargo-plugins~cargo-spellcheck]: code_formatting_linting.md#cargo-spellcheck
 [ex~development-tools_cargo-plugins~cargo-watch]: watching_for_changes.md#cargo-watch
 [ex~development-tools_cargo-plugins~cargo-wizard]: performance.md#cargo-wizard
 [ex~development-tools_cargo-plugins~deps-rs]: dependency_management.md#deps-rs
@@ -27,6 +29,7 @@
 [ex~development-tools_cargo-plugins~xshell]: building.md#xshell
 [ex~development-tools_cargo-plugins~zig]: cross_compiling.md#zig
 [p~cargo]: ../development-tools/cargo/cargo.md
+[p~code-building]: ../development-tools/compilation/building.md#build-code
 [p~code-coverage]: ../development-tools_testing/code_coverage.md
 [p~configuration]: ../config/configuration.md
 [p~crates]: ../../../src/crate-selection/index.md

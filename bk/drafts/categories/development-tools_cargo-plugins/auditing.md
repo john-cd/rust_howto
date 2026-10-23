@@ -76,6 +76,17 @@ cargo deny check
 cargo deny check licenses
 ```
 
+## Generate a CycloneDX Software Bill of Materials {#cargo-cyclonedx}
+
+[![cargo-cyclonedx][c~cargo-cyclonedx~docs~badge]][c~cargo-cyclonedx~docs]{{hi:cargo-cyclonedx}}
+[![cargo-cyclonedx~crates.io][c~cargo-cyclonedx~crates.io~badge]][c~cargo-cyclonedx~crates.io]
+[![cargo-cyclonedx~repo][c~cargo-cyclonedx~repo~badge]][c~cargo-cyclonedx~repo]
+[![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+
+[`cargo-cyclonedx`][c~cargo-cyclonedx~repo]↗{{hi:cargo-cyclonedx}} generates a CycloneDX software bill of materials (SBOM) from a Cargo project and its dependencies. Run `cargo cyclonedx` from the project directory.
+
+The command invokes Cargo to inspect the project, so use it only with projects you trust; Cargo may run project-controlled code during that process.
+
 ## Related Topics {#related-topics .skip}
 
 - Dependency Analysis: Useful for understanding your supply chain and potential risks

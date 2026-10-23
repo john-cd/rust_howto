@@ -4,7 +4,7 @@
 {{#include code_formatting_linting.incl.md}}
 
 | Topic | Rust Crates |
-|---|---|
+| --- | --- |
 | Linting | [`clippy`][c~clippy~docs]↗{{hi:clippy}} is the primary linter for Rust code, catching stylistic issues and potential bugs. `rust-analyzer`: While primarily an LSP (Language Server Protocol) implementation for IDEs, it also performs code analysis checks. |
 | Formatting | [`cargo fmt`][book~cargo~cargo-fmt]↗{{hi:cargo fmt}} is the standard Rust code formatter. |
 | Dead Link Detection | [`cargo deadlinks`][c~cargo-deadlinks~docs]{{hi:cargo deadlinks}} finds broken links in your documentation. |
@@ -42,6 +42,21 @@ cargo clippy
 ```
 
 Mute a warning using the [`#[allow(clippy::lint_name)]`][book~clippy~allowingdenying-lints]↗ attributes.
+
+## Check Spelling in Rust Sources and Documentation {#cargo-spellcheck}
+
+[![cargo-spellcheck][c~cargo-spellcheck~docs~badge]][c~cargo-spellcheck~docs]{{hi:cargo-spellcheck}}
+[![cargo-spellcheck~crates.io][c~cargo-spellcheck~crates.io~badge]][c~cargo-spellcheck~crates.io]
+[![cargo-spellcheck~repo][c~cargo-spellcheck~repo~badge]][c~cargo-spellcheck~repo]
+[![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+
+[`cargo-spellcheck`][c~cargo-spellcheck~repo]↗{{hi:cargo-spellcheck}} checks Rust source files and documentation for spelling mistakes. Review its suggestions before applying changes, especially for domain-specific terms and identifiers.
+
+Run it from the project directory with:
+
+```sh
+cargo spellcheck
+```
 
 ## Fix Compiler Warnings Automatically {#rustfix}
 
