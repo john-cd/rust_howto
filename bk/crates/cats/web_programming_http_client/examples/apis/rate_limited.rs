@@ -29,8 +29,8 @@ fn header_u64(headers: &HeaderMap, name: &str) -> Result<Option<u64>> {
 ///
 /// GitHub returns `403` or `429` when a rate limit is exceeded:
 /// - If `retry-after` is present, wait that many seconds.
-/// - Else, if `x-ratelimit-remaining` is `0`, wait until the UTC epoch time
-///   in `x-ratelimit-reset`.
+/// - Else, if `x-ratelimit-remaining` is `0`, wait until the UTC epoch time in
+///   `x-ratelimit-reset`.
 /// - Otherwise (a secondary rate limit), wait at least one minute.
 fn rate_limit_wait(
     status: StatusCode,
