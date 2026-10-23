@@ -5,6 +5,10 @@
 
 An RTOS or embedded concurrency framework coordinates work that must respond to timers, interrupts, or peripheral events. The important choice is the execution model: whether tasks are preemptive or cooperative, how priorities and shared data are handled, and what memory and timing costs the design permits. A framework cannot make a system meet deadlines automatically; measure execution time and account for interrupt and bus contention.
 
+This small host-side simulation illustrates fixed-priority scheduling and preemption. It does not start an RTOS or model interrupts, locks, or real execution time; use the framework's target-specific examples and measure on the intended board for those behaviors.
+
+{{#include ../../../crates/cats/embedded/examples/rtos/main.rs:example}}
+
 ## Execution Models {#execution-models}
 
 | Framework | Model | Useful when |
