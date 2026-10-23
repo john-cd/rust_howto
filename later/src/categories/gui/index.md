@@ -67,6 +67,12 @@ For a minimal CPU-rendered desktop window, [`minifb`][c~minifb~docs]↗{{hi:mini
 {{#include ../../../crates/cats/gui/examples/2d_renderers/minifb.rs:example}}
 ```
 
+The optional Vello example renders vector shapes into a WGPU texture. From `later/crates`, run it with `cargo run -p gui --example vello_renderer --features vello`. It requires a compatible GPU adapter.
+
+```rust,editable
+{{#include ../../../crates/cats/gui/examples/2d_renderers/vello.rs:example}}
+```
+
 ### UI Layout
 
 {{#include ui_layout.incl.md}}

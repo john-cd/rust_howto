@@ -20,6 +20,7 @@ alias fa := fmtall
 @fmtall:
   echo "Formatting all packages and their local path-based dependencies in $(pwd)"
   cd {{code_root}}; cargo +nightly-2026-10-22 fmt --all
+  cd {{code_root}}/gui_vizia; cargo +nightly-2026-10-22 fmt --all
 
 alias cka := checkall
 
@@ -27,6 +28,7 @@ alias cka := checkall
 @checkall:
   echo "Check all code (all packages, all features) in $(pwd)"
   cd {{code_root}}; cargo check --workspace --all-targets --locked --all-features
+  cd {{code_root}}/gui_vizia; cargo check --workspace --all-targets --locked --all-features
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 alias ba := buildall
@@ -35,6 +37,7 @@ alias ba := buildall
 @buildall:
   echo "Build all packages, all features in $(pwd)"
   cd {{code_root}}; cargo build --workspace --all-targets --locked --all-features --timings
+  cd {{code_root}}/gui_vizia; cargo build --workspace --all-targets --locked --all-features
 
 alias ca := clippyall
 
@@ -44,6 +47,7 @@ alias ca := clippyall
   # sccache 0.18.0 expands web-sys rustc arguments past Windows' process limit.
   cd {{code_root}}; cargo clippy --workspace --exclude wasm --all-targets --locked --all-features -- -D warnings
   cd {{code_root}}; $env:RUSTC_WRAPPER = ""; cargo clippy --package wasm --all-targets --locked --all-features -- -D warnings
+  cd {{code_root}}/gui_vizia; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
 alias nta := nextestall
 

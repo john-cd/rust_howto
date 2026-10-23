@@ -1,0 +1,21 @@
+[workspace]
+resolver = "3"
+
+[package]
+name = "gui_vizia"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+publish = false
+
+[features]
+default = []
+vizia = ["dep:vizia"]
+
+[dependencies]
+vizia = { version = "0.4.0", optional = true }
+
+[[bin]]
+name = "vizia"
+path = "src/main.rs"
+required-features = ["vizia"]

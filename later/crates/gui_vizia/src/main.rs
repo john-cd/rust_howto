@@ -1,15 +1,12 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
 // ANCHOR: example
-//! A counter application with `vizia`.
+//! A counter application using Vizia 0.4's signal-based API.
 
 use vizia::prelude::*;
 
 /// The data of the application.
-#[derive(Lens)]
 pub struct AppData {
     /// The current count.
-    count: i32,
+    count: Signal<i32>,
 }
 
 /// The events that the application handles.
@@ -24,22 +21,27 @@ impl Model for AppData {
     fn event(&mut self, _: &mut EventContext, event: &mut Event) {
         event.map(|app_event, _| match app_event {
             AppEvent::Increment => {
-                self.count += 1;
+                self.count.update(|count| *count += 1);
             }
             AppEvent::Decrement => {
-                self.count -= 1;
+                self.count.update(|count| *count -= 1);
             }
         });
     }
 }
 
-/// Runs the application.
-pub fn main() {
-    let _ = Application::new(|cx| {
-        AppData { count: 0 }.build(cx);
+/// Runs the Vizia counter window.
+///
+/// # Errors
+///
+/// Returns an error if Vizia cannot initialize or run the event loop.
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    Application::new(|cx| {
+        let count = Signal::new(0);
+        AppData { count }.build(cx);
 
         VStack::new(cx, |cx| {
-            Label::new(cx, AppData::count).font_size(30.0);
+            Label::new(cx, count).font_size(30.0);
 
             HStack::new(cx, |cx| {
                 Button::new(cx, |cx| Label::new(cx, "Increment"))
@@ -52,22 +54,8 @@ pub fn main() {
     })
     .title("Vizia Counter")
     .inner_size((400, 150))
-    .run();
+    .run()?;
+
+    Ok(())
 }
 // ANCHOR_END: example
-
-/// Runs the example.
-pub fn run() {
-    main();
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    #[ignore = "requires an interactive example runtime"]
-    fn test_main() {
-        main();
-    }
-}

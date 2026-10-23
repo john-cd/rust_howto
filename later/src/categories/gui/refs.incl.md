@@ -30,6 +30,8 @@
 [ex~gui~webassembly-wasm-considerations]: file_dialogs.md#webassembly-wasm-considerations
 [ex~gui~winit]: window_creation.md#winit
 [ex~gui~xilem]: retained_mode_gui.md#xilem
+[gtk-rs~installation-linux]: https://gtk-rs.org/gtk4-rs/stable/latest/book/installation_linux.html
+[gtk-rs~installation-windows]: https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
 [tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
 [p~apis]: ../../../drafts/categories/web-programming_http-client/apis.md
 [p~asynchronous]: ../../../drafts/categories/asynchronous/index.md

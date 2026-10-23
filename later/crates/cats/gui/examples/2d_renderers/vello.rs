@@ -1,187 +1,113 @@
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
-//! A minimal Vello example using `winit`, `wgpu`, and `vello`.
-//!
-//! It creates a window, builds a simple 2D scene, and renders it every frame.
+//! Renders a simple 2D scene into a Vello GPU texture.
 
-use std::time::Instant;
+use std::num::NonZeroUsize;
 
+use anyhow::Result;
 use pollster::block_on;
 use vello::AaConfig;
-use vello::RenderParams;
 use vello::Renderer;
 use vello::RendererOptions;
-use vello::SceneBuilder;
+use vello::Scene;
 use vello::kurbo::Affine;
 use vello::kurbo::Circle;
 use vello::kurbo::Rect;
-use vello::peniko::Brush;
 use vello::peniko::Color;
-use vello::peniko::Fill;
-use vello::peniko::Stroke;
-use winit::dpi::PhysicalSize;
-use winit::event::Event;
-use winit::event::WindowEvent;
-use winit::event_loop::ControlFlow;
-use winit::event_loop::EventLoop;
-use winit::window::WindowBuilder;
+use vello::util::RenderContext;
+use wgpu::Extent3d;
+use wgpu::TextureDescriptor;
+use wgpu::TextureDimension;
+use wgpu::TextureFormat;
+use wgpu::TextureUsages;
 
-/// Opens a window and renders a scene with `vello`.
-fn main() {
-    let event_loop = EventLoop::new();
-    let window = WindowBuilder::new()
-        .with_title("Vello Example")
-        .with_inner_size(PhysicalSize::new(800, 600))
-        .build(&event_loop)
-        .expect("Failed to create window");
-
-    let instance = wgpu::Instance::new(wgpu::Backends::all());
-    let surface = unsafe { instance.create_surface(&window) }
-        .expect("Failed to create surface");
-
-    let adapter =
-        block_on(instance.request_adapter(&wgpu::RequestAdapterOptions {
-            power_preference: wgpu::PowerPreference::HighPerformance,
-            compatible_surface: Some(&surface),
-            force_fallback_adapter: false,
-        }))
-        .expect("Failed to request adapter");
-
-    let (device, queue) = block_on(adapter.request_device(
-        &wgpu::DeviceDescriptor {
-            label: None,
-            features: wgpu::Features::empty(),
-            limits: wgpu::Limits::downlevel_defaults(),
-        },
-        None,
-    ))
-    .expect("Failed to request device");
-
-    let mut surface_config = wgpu::SurfaceConfiguration {
-        usage: wgpu::TextureUsages::RENDER_ATTACHMENT
-            | wgpu::TextureUsages::COPY_SRC
-            | wgpu::TextureUsages::STORAGE_BINDING,
-        format: surface.get_supported_formats(&adapter)[0],
-        width: 800,
-        height: 600,
-        present_mode: wgpu::PresentMode::Fifo,
-        alpha_mode: wgpu::CompositeAlphaMode::Auto,
-        view_formats: vec![],
-    };
-    surface.configure(&device, &surface_config);
-
-    let mut renderer = Renderer::new(&device, RendererOptions::default())
-        .expect("Failed to create Vello renderer");
-
-    let start_time = Instant::now();
-
-    event_loop.run(move |event, _, control_flow| {
-        *control_flow = ControlFlow::Poll;
-
-        match event {
-            Event::WindowEvent { event, .. } => match event {
-                WindowEvent::Resized(new_size) => {
-                    if new_size.width > 0 && new_size.height > 0 {
-                        surface_config.width = new_size.width;
-                        surface_config.height = new_size.height;
-                        surface.configure(&device, &surface_config);
-                    }
-                }
-                WindowEvent::CloseRequested => {
-                    *control_flow = ControlFlow::Exit
-                }
-                _ => (),
-            },
-            Event::RedrawRequested(_) => {
-                let scene = build_scene();
-                let render_params = RenderParams {
-                    base_color: Color::WHITE,
-                    width: surface_config.width,
-                    height: surface_config.height,
-                    antialiasing_method: AaConfig::Msaa8,
-                };
-
-                let surface_texture = match surface.get_current_texture() {
-                    Ok(surface_texture) => surface_texture,
-                    Err(err) => {
-                        eprintln!("Failed to acquire surface texture: {err}");
-                        *control_flow = ControlFlow::Exit;
-                        return;
-                    }
-                };
-
-                let texture_view = surface_texture
-                    .texture
-                    .create_view(&wgpu::TextureViewDescriptor::default());
-
-                if let Err(err) = renderer.render_to_texture(
-                    &device,
-                    &queue,
-                    &scene,
-                    &texture_view,
-                    &render_params,
-                ) {
-                    eprintln!("Failed to render Vello scene: {err}");
-                    *control_flow = ControlFlow::Exit;
-                    return;
-                }
-
-                surface_texture.present();
-            }
-            Event::MainEventsCleared => {
-                window.request_redraw();
-            }
-            _ => (),
-        }
-    });
+/// Renders a scene into an off-screen texture with Vello.
+fn main() -> Result<()> {
+    block_on(render_scene())
 }
 
-/// Builds the scene to render.
-fn build_scene() -> vello::Scene {
-    let mut scene_builder = SceneBuilder::new();
+/// Creates a WGPU device and renders the example scene into a texture.
+async fn render_scene() -> Result<()> {
+    let mut context = RenderContext::new();
+    let device_id = context.device(None).await.ok_or_else(|| {
+        anyhow::anyhow!("No compatible GPU adapter was found")
+    })?;
+    let device_handle = &context.devices[device_id];
+    let device = &device_handle.device;
+    let queue = &device_handle.queue;
+    let mut renderer = Renderer::new(
+        device,
+        RendererOptions {
+            use_cpu: false,
+            antialiasing_support: vello::AaSupport::all(),
+            num_init_threads: NonZeroUsize::new(1),
+            ..Default::default()
+        },
+    )?;
 
-    let rect = Rect::new(50.0, 50.0, 250.0, 150.0);
-    scene_builder.fill(
-        Fill::NonZero,
+    let (width, height) = (800, 600);
+    let target = device.create_texture(&TextureDescriptor {
+        label: Some("Vello example target"),
+        size: Extent3d {
+            width,
+            height,
+            depth_or_array_layers: 1,
+        },
+        mip_level_count: 1,
+        sample_count: 1,
+        dimension: TextureDimension::D2,
+        format: TextureFormat::Rgba8Unorm,
+        usage: TextureUsages::STORAGE_BINDING | TextureUsages::COPY_SRC,
+        view_formats: &[],
+    });
+    let target_view =
+        target.create_view(&wgpu::TextureViewDescriptor::default());
+    let scene = build_scene();
+
+    renderer.render_to_texture(
+        device,
+        queue,
+        &scene,
+        &target_view,
+        &vello::RenderParams {
+            base_color: Color::WHITE,
+            width,
+            height,
+            antialiasing_method: AaConfig::Msaa8,
+        },
+    )?;
+
+    Ok(())
+}
+
+/// Builds a scene containing a filled rectangle, an outlined rectangle, and a
+/// circle.
+fn build_scene() -> Scene {
+    let mut scene = Scene::new();
+    let rectangle = Rect::new(50.0, 50.0, 250.0, 150.0);
+    scene.fill(
+        vello::peniko::Fill::NonZero,
         Affine::IDENTITY,
-        &Brush::Solid(Color::RED),
+        Color::from_rgb8(220, 70, 70),
         None,
-        &rect,
+        &rectangle,
     );
-    scene_builder.stroke(
-        &Stroke::new(5.0),
+    scene.stroke(
+        &vello::kurbo::Stroke::new(5.0),
         Affine::IDENTITY,
-        &Brush::Solid(Color::BLUE),
+        Color::from_rgb8(40, 80, 220),
         None,
-        &rect,
+        &rectangle,
     );
 
     let circle = Circle::new((400.0, 120.0), 60.0);
-    scene_builder.fill(
-        Fill::NonZero,
+    scene.fill(
+        vello::peniko::Fill::NonZero,
         Affine::IDENTITY,
-        &Brush::Solid(Color::GREEN),
+        Color::from_rgb8(60, 180, 90),
         None,
         &circle,
     );
-
-    scene_builder.build()
+    scene
 }
-
 // ANCHOR_END: example
-
-/// Runs the example.
-pub fn run() {
-    main();
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    #[ignore = "requires interactive example runtime"]
-    fn test_main() {
-        main();
-    }
-}

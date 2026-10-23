@@ -28,9 +28,8 @@ iced = ["dep:iced"]
 skia = ["dep:skia-safe", "dep:glutin", "dep:gl"]
 slint = ["dep:slint"]
 tauri = ["dep:tauri", "dep:tauri-plugin-shell"]
-# vello = ["dep:vello"] # disabled: incompatible naga 28 compile path
+vello = ["dep:pollster", "dep:vello"]
 vger = ["dep:vger"]
-# TODO vizia = ["dep:vizia"]
 webrender = ["dep:webrender", "dep:glutin", "dep:gl"]
 # xilem = ["dep:xilem"]
 
@@ -51,31 +50,25 @@ iced = { version = "0.14.0", optional = true }
 minifb = { version = "0.28.0", optional = true }
 morphorm = "0.8.0"
 parley = "0.9.0"
-pollster = { version = "0.4.0", optional = true } # for vello example
-# FIXME size-of v0.1.5 does not compile on Windows:
-# FIXME r3bl_tuify = "0.2.0"
-# GTK support requires native GTK libraries and pkg-config on the host system.
-# # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_linux.html
-# # FIXME https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
+pollster = { version = "0.4.0", optional = true } # for the Vello example
 rfd = "0.17.2"
 skia-safe = { version = "=0.90", features = [
     "gl",
-], optional = true } # TODO pinned for vizia to 0.93.1 and to 0.90 for slint
+], optional = true } # Matches Slint's Skia version; Vizia uses an isolated workspace.
 slint = { version = "1.16.1", optional = true }
 taffy = "0.10.1"
 tao = "0.35.3"
 tauri = { version = "2.12.5", optional = true } # Requires multiple libraries. See Dockerfile
 tauri-plugin-shell = { version = "2.5.0", optional = true }
-# vello = { version = "0.8.0", optional = true } # TODO disabled: incompatible naga 28 compile path
+vello = { version = "0.9.0", optional = true } # Uses wgpu 29, matching this workspace.
 vger = { version = "0.4.0", optional = true }
 # xilem = { version = "0.4.0", optional = true } # TODO conflict with Vello
-# TODO vizia = { version = "0.4.0", optional = true }
 webrender = { version = "0.68.0", optional = true }
 wgpu = "29.0.4"
 winit = "0.30.13"  # for vello, winit examples
 # xilem = { version = "0.4.0", optional = true }
 
-# TODO allow on Windows; see install_deps.ps1
+# GTK examples currently target non-Windows systems; see gtk.md for native setup.
 [target.'cfg(not(target_os = "windows"))'.dependencies]
 gtk4 = { version = "0.11.5", optional = true }
 relm4 = { version = "0.11.0", optional = true }
@@ -106,6 +99,12 @@ test = true
 name = "retained_mode_gui"
 path = "examples/retained_mode_gui/main.rs"
 required-features = ["floem", "iced", "slint"]
+test = true
+
+[[example]]
+name = "vello_renderer"
+path = "examples/2d_renderers/vello.rs"
+required-features = ["vello"]
 test = true
 
 [[example]]

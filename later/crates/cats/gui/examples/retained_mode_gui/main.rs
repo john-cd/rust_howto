@@ -13,8 +13,6 @@ mod floem;
 mod iced;
 #[cfg(feature = "slint")]
 mod slint;
-#[cfg(feature = "vizia")]
-mod vizia;
 #[cfg(feature = "xilem")]
 mod xilem;
 
@@ -41,10 +39,6 @@ enum Commands {
     #[cfg(feature = "slint")]
     #[command(name = "slint")]
     Slint,
-    /// Runs the `vizia` example.
-    #[cfg(feature = "vizia")]
-    #[command(name = "vizia")]
-    Vizia,
     /// Runs the `xilem` example.
     #[cfg(feature = "xilem")]
     #[command(name = "xilem")]
@@ -68,10 +62,6 @@ fn main() -> anyhow::Result<()> {
             #[cfg(feature = "slint")]
             Commands::Slint => {
                 slint::run()?;
-            }
-            #[cfg(feature = "vizia")]
-            Commands::Vizia => {
-                vizia::run();
             }
             #[cfg(feature = "xilem")]
             Commands::Xilem => {

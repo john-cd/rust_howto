@@ -5,6 +5,8 @@
 
 For GTK development in Rust, use the [`gtk4`][c~gtk4~docs]↗{{hi:gtk4}} crate. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The [`gdk`][c~gdk~docs]↗{{hi:gdk}}, [`gio`][c~gio~docs]↗{{hi:gio}}, and [`glib`][c~glib~docs]↗{{hi:glib}} crates are used indirectly through `gtk`. You will need to understand GTK concepts and consult the official GTK documentation for effective development.
 
+The examples in this staging workspace use native GTK 4 libraries and `pkg-config` and currently compile on non-Windows targets only. On Debian and Ubuntu, install them with `sudo apt install build-essential libgtk-4-dev pkg-config`. The repository's `.devcontainer/install_deps.sh` installs these packages for Linux development. For other distributions and Windows toolchain options, follow the [gtk-rs installation guide for Linux][gtk-rs~installation-linux] or [Windows][gtk-rs~installation-windows]. These GTK examples are not part of the Windows build.
+
 ## Key Concepts {#key-concepts}
 
 - Widgets: The basic building blocks of a GTK application (buttons, labels, windows, etc.).
