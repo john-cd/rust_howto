@@ -22,7 +22,7 @@ mod insert_query_data;
 struct Cli {
     /// The example to run.
     #[command(subcommand)]
-    command: Option<Commands>,
+    command: Commands,
 }
 
 /// The examples that can be run.
@@ -53,58 +53,33 @@ fn main() -> anyhow::Result<()> {
     {
         let cli = Cli::parse();
 
-        if let Some(command) = cli.command {
-            match command {
-                #[cfg(feature = "postgres")]
-                Commands::AggregateData => {
-                    aggregate_data::run().map_err(anyhow::Error::msg)?;
-                }
-                #[cfg(feature = "postgres")]
-                Commands::Cornucopia => {
-                    cornucopia::run().map_err(anyhow::Error::msg)?;
-                }
-                #[cfg(feature = "postgres")]
-                Commands::CreateTables => {
-                    create_tables::run()?;
-                }
-                #[cfg(feature = "postgres")]
-                Commands::InsertQueryData => {
-                    insert_query_data::run().map_err(anyhow::Error::msg)?;
-                }
+        match cli.command {
+            Commands::AggregateData => {
+                aggregate_data::run().map_err(anyhow::Error::msg)?;
+            }
+            Commands::Cornucopia => {
+                cornucopia::run().map_err(anyhow::Error::msg)?;
+            }
+            Commands::CreateTables => {
+                create_tables::run()?;
+            }
+            Commands::InsertQueryData => {
+                insert_query_data::run().map_err(anyhow::Error::msg)?;
             }
         }
     }
     Ok(())
 }
 
-/// Serializes the tests, which change the environment variables.
-#[cfg(feature = "postgres")]
-#[allow(dead_code)]
-pub(crate) static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
-
 #[cfg(test)]
 #[cfg(feature = "postgres")]
 mod tests {
     use super::*;
 
-    /// Runs the example against its required external service.
+    /// Rejects invocations that do not select a PostgreSQL example.
     #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
-        let _lock = ENV_MUTEX.lock().unwrap();
-        let test_url = if let Ok(val) = std::env::var("TEST_PG_URL") {
-            val
-        } else {
-            eprintln!(
-                "Skipping Postgres integration test; set TEST_PG_URL to run."
-            );
-            return Ok(());
-        };
-
-        unsafe {
-            std::env::set_var("PG_URL", test_url);
-        }
-        main()?;
-        Ok(())
+    fn requires_a_subcommand() {
+        assert!(Cli::try_parse_from(["postgres"]).is_err());
     }
 }
 // [review](https://github.com/john-cd/rust_howto/issues/713)
