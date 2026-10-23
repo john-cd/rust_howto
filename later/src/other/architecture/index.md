@@ -1,27 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# Architecture + Rust
+# Architecture in Rust
 
 {{#include architecture.incl.md}}{{hi:Architecture}}
-
-## Software Architecture Process
-
-See [[software_architecture_process | Software Architecture Process]].
-
-## Common Architectures
-
-See [[common_architectures | Common Architectures]].
-
-## Components and Architectural Patterns
-
-See [[architectural_patterns | Architectural Patterns]].
-
-## Related Topics
-
-- [[cloud | Cloud]].
-- [[concurrency | Concurrency]].
-- [[data-processing | Data Processing]].
-- [[web-programming | Web Programming]].
-- [[written-in-rust | Written in Rust]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
