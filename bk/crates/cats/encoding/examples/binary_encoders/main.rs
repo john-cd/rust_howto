@@ -11,7 +11,6 @@ mod capnp;
 mod ciborium;
 mod flatbuffers;
 mod prost;
-mod protobuf;
 mod rmp_serde;
 
 /// Command-line arguments.
@@ -41,9 +40,6 @@ enum Commands {
     /// Runs the `prost` example.
     #[command(name = "prost")]
     Prost,
-    /// Runs the `protobuf` example.
-    #[command(name = "protobuf")]
-    Protobuf,
     /// Runs the `rmp_serde` example.
     #[command(name = "rmp_serde")]
     RmpSerde,
@@ -69,10 +65,7 @@ fn main() -> anyhow::Result<()> {
                 flatbuffers::run();
             }
             Commands::Prost => {
-                prost::run();
-            }
-            Commands::Protobuf => {
-                protobuf::run();
+                prost::run()?;
             }
             Commands::RmpSerde => {
                 rmp_serde::run()?;

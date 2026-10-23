@@ -16,7 +16,11 @@ mod person {
 }
 
 /// Encodes a `Person` message with `prost`, then decodes it.
-fn main() {
+///
+/// # Errors
+///
+/// Returns an error if encoding or decoding the message fails.
+fn main() -> anyhow::Result<()> {
     // Create a `Person` message.
     let person = Person {
         name: "Alice".to_owned(),
@@ -25,28 +29,35 @@ fn main() {
 
     // Serialize the message.
     let mut buf = Vec::new();
-    person.encode(&mut buf).unwrap();
+    person.encode(&mut buf)?;
 
     // Deserialize the message.
-    let decoded_person = Person::decode(&*buf).unwrap();
+    let decoded_person = Person::decode(buf.as_slice())?;
+    assert_eq!(person, decoded_person);
 
     println!("Name: {}, Age: {}", decoded_person.name, decoded_person.age);
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+///
+/// # Errors
+///
+/// Returns an error if encoding or decoding the message fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies encoding and decoding preserve every field in the message.
     #[test]
-    fn test_main() {
-        main();
+    fn prost_round_trip_preserves_the_person_message() -> anyhow::Result<()> {
+        main()
     }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/1044)

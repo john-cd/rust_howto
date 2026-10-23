@@ -87,8 +87,7 @@ See [[_binary_encoders |  Binary Encoders]].
 
 ## Protocol Buffers
 
-Review [`protobuf`][c~protobuf~docs]↗{{hi:protobuf}}, [`prost`][c~prost~docs]↗{{hi:prost}}.
-See [[_binary_encoders | Binary Encoders]].
+The Protocol Buffers example uses [`prost`][c~prost~docs]↗{{hi:prost}}; see [[_binary_encoders | Binary Encoders]] for its schema, build script, and round-trip example.
 
 ### gRPC
 

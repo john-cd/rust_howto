@@ -13,13 +13,13 @@
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/bincode.rs:example}}
 ```
 
-## ProtoBuf {#protobuf .skip}
+## Protocol Buffers {#protobuf .skip}
 
 ### `prost` {#prost}
 
 [![prost][c~prost~docs~badge]][c~prost~docs] [![prost~crates.io][c~prost~crates.io~badge]][c~prost~crates.io] [![prost~repo][c~prost~repo~badge]][c~prost~repo] [![prost~lib.rs][c~prost~lib.rs~badge]][c~prost~lib.rs]{{hi:prost}}{{hi:Protobuf}}{{hi:Serialization}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-[`prost`][c~prost~docs]↗{{hi:prost}} is a Protocol Buffers implementation for the Rust Language.
+[`prost`][c~prost~docs]↗{{hi:prost}} is a Rust implementation of Protocol Buffers. This example uses `protox` and `prost-build` to generate Rust types from a `.proto` schema, then demonstrates a message round trip. The build script parses the schema without requiring an external `protoc` executable.
 
 In the `main.rs` file:
 
@@ -37,16 +37,6 @@ In `build.rs`:
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/build.rs:prost}}
-```
-
-### `protobuf` {#protobuf}
-
-[![protobuf][c~protobuf~docs~badge]][c~protobuf~docs] [![protobuf~crates.io][c~protobuf~crates.io~badge]][c~protobuf~crates.io] [![protobuf~repo][c~protobuf~repo~badge]][c~protobuf~repo] [![protobuf~lib.rs][c~protobuf~lib.rs~badge]][c~protobuf~lib.rs]{{hi:protobuf}}
-
-[`protobuf`][c~protobuf~docs]↗{{hi:protobuf}} is a Rust implementation of Google protocol buffers.
-
-```rust,editable
-{{#include ../../../crates/cats/encoding/examples/binary_encoders/protobuf.rs:example}}
 ```
 
 ## MessagePack with `rmp-serde` {#rmp-serde}
@@ -110,7 +100,8 @@ In `foo.capnp`:
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[complex_encoding | Structured Data]].
+- [[serde | Serialization with `serde`]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -13,7 +13,6 @@
 [ex~encoding~percent-encoding]: string_encoding.md#percent-encoding
 [ex~encoding~postcard]: no_external_schema.md#postcard
 [ex~encoding~prost]: _binary_encoders.md#prost
-[ex~encoding~protobuf]: _binary_encoders.md#protobuf
 [ex~encoding~read-csv-different-delimiter]: csv.md#read-csv-different-delimiter
 [ex~encoding~read-csv-records]: csv.md#read-csv-records
 [ex~encoding~rkyv]: no_external_schema.md#rkyv
