@@ -1,7 +1,7 @@
 # TODO Reviewed ??-??-2026
 ## ---- DEFAULT -------------------------------------
 
-root := clean(source_directory() + "/../..")
+root := clean(source_directory() + "/../../..")
 
 [no-exit-message]
 _default:
@@ -20,20 +20,20 @@ _default:
 # pre-commit: https://pre-commit.com/
 # based on https://github.com/casey/just/blob/master/examples/pre-commit.just
 # [review](https://github.com/john-cd/rust_howto/issues/1246)
-# https://github.com/prettier/prettier (pre-commit hook)
+# The repository's configured hooks run on staged files by default.
 
-# Fix auto-fixable lint issues in staged files.
+# Run configured hooks on staged files.
 @fix:
-    pre-commit run prettier
+    cd {{ quote(root) }} && pre-commit run
 
-# Fix auto-fixable lint issues across all tracked files.
+# Run configured hooks on all tracked files.
 @fix_all:
-    pre-commit run prettier --all-files
+    cd {{ quote(root) }} && pre-commit run --all-files
 
-# FIXME Install/update code automation: pre-commit...
+# Install or update pre-commit with pip.
 [unix]
 @install:
-    curl https://pre-commit.com/install-local.py | python3 -
+    python3 -m pip install pre-commit
 
 [windows]
 @install:
@@ -50,7 +50,7 @@ _default:
 # [review Git Town configuration](https://github.com/john-cd/rust_howto/issues/1246)
 # Optional repository-local configuration for Git Town (https://www.git-town.com/).
 
-# Configure Git Town to use this repository's GitHub remote
+# Configure Git Town to use this repository's GitHub remote.
 @config_git_town:
-    git config git-town.forge-type github
-    git config git-town.hosting-origin-hostname github.com
+    git -C {{ quote(root) }} config --local git-town.forge-type github
+    git -C {{ quote(root) }} config --local git-town.hosting-origin-hostname github.com
