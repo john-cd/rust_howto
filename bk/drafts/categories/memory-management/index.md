@@ -3,70 +3,56 @@
 
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]
 
-Deal with allocation{{hi:Allocation}}, memory mapping{{hi:Memory mapping}}, garbage collection{{hi:Garbage collection}}, reference counting{{hi:Reference counting}}, or interfaces to foreign memory managers.
+Rust's ownership, borrowing, and lifetimes handle most memory management without a garbage collector or manual allocation calls. This index links to the cases where choosing a pointer, initialization strategy, allocator, or diagnostic tool matters.
 
-Rust's memory management is a core strength: you won't often need to manually manage memory like in C/C++. For most common Rust development, relying on language features like ownership, borrowing, and lifetimes, and using smart pointers like [`Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}, [`Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}}, and [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} will be sufficient. Avoid [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} code and raw pointers unless absolutely necessary.
+## Choose an Ownership Strategy
 
-| Topic | Rust Crates or Features |
-|---|---|
-| Smart Pointers | Use [`std::boxed::Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} for heap allocation; [`std::rc::Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} for reference-counted shared ownership; [`std::sync::Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} for atomically reference-counted shared ownership (thread-safe); [`std::cell::RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}} for interior mutability; and [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} for safe mutable access from multiple threads. |
-| Global Statics and Lazy Initialization | FIXME |
-| Core Allocation (Rarely Used Directly) | [`alloc`][c~alloc~docs]↗{{hi:alloc}} (Standard library) provides the fundamental allocation APIs. Most other memory management tools are built on top of it. |
-| Specialized Allocators | [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a small and efficient allocator, often used in embedded systems or WebAssembly. |
-| Memory Profiling | [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with `massif`{{hi:massif}} or `memcheck`{{hi:memcheck}}): External tool. Powerful memory profiler. [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}}: External tool. Heap profiler. |
+| Need | Starting point | Notes |
+| --- | --- | --- |
+| Store a value on the heap with one owner | [`Box`][c~std::boxed::Box~docs]↗{{hi:Box}} | Use when a value has a dynamic size, needs indirection, or must be owned by a trait object. |
+| Share read-only data within one thread | [`Rc`][c~std::rc::Rc~docs]↗{{hi:Rc}} | Reference counting does not make the value thread-safe. |
+| Share data across threads | [`Arc`][c~std::sync::Arc~docs]↗{{hi:Arc}} | The inner type must also satisfy the thread-safety bounds. Pair with a lock or atomic type only when shared mutation is required. |
+| Mutate through a shared reference in one thread | [`Cell`][c~std::cell::Cell~docs]↗{{hi:Cell}} or [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:RefCell}} | `Cell` offers interior mutation for suitable values; `RefCell` checks borrows at runtime and panics on a conflicting borrow. |
+| Coordinate shared mutation across threads | [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:Mutex}} or [`RwLock`][c~std::sync::RwLock~docs]↗{{hi:RwLock}} | Locking adds contention and possible poisoning; prefer message passing or owned data when that is simpler. |
 
-## Memory Management Beyond Basic Ownership with Smart Pointers
+See [[smart_pointers | Smart Pointers]] for examples and trade-offs. Use raw pointers and [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} code only when a safe abstraction cannot express the requirement, such as a carefully designed FFI boundary.
 
-- [`Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}: For allocating data on the heap.
-- [`Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} (Reference Counting): For shared ownership of data.
-- [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} (Atomic Reference Counting): For shared ownership across threads.
-- [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}}: For interior mutability (allowing mutating data even when there are immutable references to it).
-- [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}}: For safe mutable access to data from multiple threads.
+## Static Data and Lazy Initialization
 
-See [[smart_pointers | Smart Pointers]].
+A constant is inlined as a value; a static item has one fixed storage location. Prefer immutable statics for process-wide constants. Avoid mutable global state because it hides ownership and synchronization requirements.
 
-## Statics and Lazy Initialization
-
-[`static`][keyword~static]↗{{hi:static}} refers to items that have a fixed memory location and a `'static`{{hi:'static}} lifetime, meaning they exist for the entire duration of the program.
-These are similar to constants but represent a specific memory location. All references to a static item point to the same memory location.
-Static items can be mutable (), but modifying them requires a block due to potential concurrency issues. They are often used for global variables or shared state across threads. See [[shared_state | Shared State]].
-
-Lazy initialization is a technique where a resource or variable is initialized only when it's first accessed, rather than at the start of the program. Lazy initialization is particularly useful for expensive computations or resources that may not be needed during the program's execution.
-It is commonly used with statics.
+For values that should be initialized on first use, use the standard library's lazy initialization types where they fit. See [[lazy_initialization | Lazy Initialization]] and [[shared_state | Shared State]].
 
 {{#include lazy_initialization.incl.md}}
 
-## Unsafe Code and Raw Pointers
+## Allocation and Reclamation
 
-Use [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} code and [raw pointers][primitive~pointer]↗ (`*const T`{{hi:*const T}}, `*mut T`{{hi:*mut T}}) only when necessary for interacting with external code or hardware. They bypass Rust's safety guarantees and require careful manual memory management.
+Use Rust's normal collection and ownership types before choosing a custom allocator. The [`alloc`][c~alloc~docs]↗{{hi:alloc}} APIs are low-level building blocks; most applications should allocate through collections or libraries that own their storage.
 
-## Custom Memory Allocation, Garbage Collection
+A bump or arena allocator can help when many objects share one lifetime. Pools and slabs can fit workloads with repeated allocations of similarly sized objects. Consider these techniques only after profiling shows allocation cost or fragmentation is a real constraint, and account for the lifetime and memory-retention trade-offs.
 
-The core [`alloc`][c~alloc~docs]↗{{hi:alloc}} crate provides the core allocation APIs. You'll rarely use this directly, but it's what the other memory management tools are built on. Custom allocators are rarely needed in typical Rust development. If needed, reach for the Rust wrappers for the well-known 'jemalloc' and 'mimalloc' memory allocation libraries. In addition, [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a small and efficient allocator often used in embedded systems or WebAssembly.
-
-Rust does not have a garbage collector in the traditional sense. It uses ownership and borrowing to manage memory automatically and deterministically. If garbage collection is needed for specific reasons, you'd have to look for specialized crates, but this is rare in Rust. For example, the [`seize`][c~seize~docs]↗{{hi:seize}} crate allows for memory reclamation in concurrent data structures.
+Rust does not provide a tracing garbage collector by default. If an application needs tracing collection, it must choose a library and design its ownership and interoperability explicitly.
 
 {{#include memory_allocation.incl.md}}
 
+## Diagnose Memory Use and Safety
+
+Measure allocation volume and retained memory with a profiler before optimizing. [`Valgrind`][c~valgrind~docs]↗{{hi:Valgrind}} and [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}} can help inspect memory behavior on supported platforms.
+
+AddressSanitizer and MemorySanitizer can find classes of memory errors in supported toolchain and target configurations. They do not replace tests or explain whether an allocation pattern is efficient. Check the compiler and platform requirements before enabling them.
+
+See [[memory_usage_analysis | Memory Usage Analysis]] and [[development-tools_profiling | Development Tools: Profiling]].
+
 ## Related Topics
 
-### Memory Safety Tools
-
-Memory profiling tools like [`Valgrind`][c~valgrind~docs]↗{{hi:Valgrind}} are useful for optimizing memory usage.
-
-- [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with `massif`{{hi:massif}} or `memcheck`{{hi:memcheck}}): While not Rust-specific, Valgrind is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
-- [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}}: A heap profiler that can track memory allocations.
-
-Address Sanitizer (`ASan`, a compiler feature) detects memory errors. Enable with compiler flags (e.g., `-fsanitize=address`). Memory Sanitizer (`MSan`, another compiler feature) detects uninitialized memory usage.
-
-See [[development-tools_profiling | Development Tools: Profiling]] and [[memory_usage_analysis | Memory Usage Analysis]].
+- [[smart_pointers | Smart Pointers]]
+- [[lazy_initialization | Lazy Initialization]]
+- [[shared_state | Shared State]]
+- [[development-tools_profiling | Development Tools: Profiling]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [memory-management/index: organize; align table and sections; write missing sections; cross link](https://github.com/john-cd/rust_howto/issues/410)
-cover [sanitizer][book~unstable-book~sanitizer]
-cover ASan and MSan.
-unsafe.
 </div>
