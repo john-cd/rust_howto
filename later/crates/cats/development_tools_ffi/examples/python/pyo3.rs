@@ -12,7 +12,7 @@
 // - Calling the Python function from Rust with and without arguments.
 // - Passing a Python tuple as an argument from Rust.
 // - Running a simple Python script from Rust.
-// - Preparing Python for use in a free-threaded context.
+// - Initializing the interpreter before attaching the current thread.
 
 use pyo3::ffi::c_str;
 use pyo3::prelude::*;
@@ -52,8 +52,14 @@ fn test_my_function() -> PyResult<()> {
 }
 
 /// Runs a Python script and calls a Python function.
+///
+/// # Errors
+///
+/// Returns a Python error if interpreter initialization or a Python operation
+/// fails.
 fn main() -> PyResult<()> {
-    // Prepares the use of Python in a free-threaded context:
+    // Initialize the embedded interpreter. This crate does not enable the
+    // `auto-initialize` feature, so initialize it before attaching to Python.
     Python::initialize();
 
     // Run a Python script:
@@ -74,6 +80,8 @@ pub fn run() -> PyResult<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the embedded Python program and function calls run
+    /// successfully.
     #[test]
     fn test_main() -> PyResult<()> {
         main()

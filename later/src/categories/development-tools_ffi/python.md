@@ -13,7 +13,7 @@
 - [`cpython`][c~cpython~docs]↗{{hi:cpython}} provides direct bindings to the CPython interpreter. Lower-level, but very powerful.
 - [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} is higher-level and easier to use than [`cpython`][c~cpython~docs]↗{{hi:cpython}} for many use cases.
 
-## Interop with Python with `pyo3` {#pyo3}
+## Embed Python in a Rust Program {#pyo3}
 
 [![pyo3][c~pyo3~docs~badge]][c~pyo3~docs] [![pyo3~crates.io][c~pyo3~crates.io~badge]][c~pyo3~crates.io] [![pyo3~repo][c~pyo3~repo~badge]][c~pyo3~repo] [![pyo3~lib.rs][c~pyo3~lib.rs~badge]][c~pyo3~lib.rs]{{hi:pyo3}}{{hi:Cpython}}{{hi:Ffi}}{{hi:pyo3}}{{hi:Python}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
 
@@ -21,11 +21,15 @@
 
 [`pyo3`][c~pyo3~website]↗ supports both calling python code from Rust and exposing Rust code to Python.
 
+This example is an embedded Python executable. It is enabled on Linux, where the `development_tools_ffi` crate declares its PyO3 dependency. It initializes the interpreter explicitly because the crate does not enable PyO3's `auto-initialize` feature.
+
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/python/pyo3.rs:example}}
 ```
 
-Use Rust from Python:
+## Define a Rust Module for Embedded Python {#use-rust-from-python}
+
+This example registers a Rust-defined module in the embedded interpreter's `sys.modules`, then imports it from Python code. It demonstrates module and function registration inside a Rust executable; the next section shows how to build a native extension that a separate Python process can import.
 
 ```rust
 {{#include ../../../crates/cats/development_tools_ffi/examples/python/use_rust_from_python.rs:example}}

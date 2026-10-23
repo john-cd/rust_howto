@@ -36,6 +36,7 @@
 [ex~development-tools_ffi~other-less-common-options]: ruby.md#other-less-common-options
 [ex~development-tools_ffi~ports]: erlang_elixir.md#ports
 [ex~development-tools_ffi~pyo3]: python.md#pyo3
+[ex~development-tools_ffi~use-rust-from-python]: python.md#use-rust-from-python
 [ex~development-tools_ffi~rust-side]: flutter.md#rust-side
 [ex~development-tools_ffi~rustler]: erlang_elixir.md#rustler
 [ex~development-tools_ffi~rutie]: ruby.md#rutie
