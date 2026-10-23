@@ -3,26 +3,57 @@
 
 {{#include code_coverage.incl.md}}
 
-[`grcov`][c~grcov~docs]↗{{hi:grcov}} or [`tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:tarpaulin}} can be used for ensuring your tests cover a good portion of your code.
+Code coverage records which instrumented parts of a program ran during a selected test run. It helps find code that tests never reached; it cannot tell whether the tests checked the right result or whether the behavior is correct.
 
-[`grcov`][c~grcov~docs]↗{{hi:grcov}}: A code coverage tool.
-[`cargo tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:cargo tarpaulin}}: Another code coverage tool.
+## Choose and Read Coverage Metrics
 
-## Coverage Testing with `grcov` {#coverage_testing}
+Tools may report line, function, region, or branch coverage. These measurements answer different questions, and not every tool or configuration reports every metric. A line marked covered only means execution reached it; it does not prove that an assertion would detect an incorrect result.
+
+Compare reports only when the source revision, test selection, features, target, and instrumentation settings are comparable. Include meaningful test configurations, such as feature combinations or platform-specific code, and decide whether examples and documentation tests belong in the report.
+
+Use uncovered lines and branches to identify behaviors that lack tests. Exclude code from a report only for a clear reason, and keep exclusions narrow. Treat a percentage as a diagnostic signal rather than a quality target.
+
+## Measure Coverage with cargo llvm-cov {#cargo-llvm-cov}
+
+[`cargo llvm-cov`][cargo-llvm-cov~repo] wraps Rust's LLVM source-based coverage instrumentation and can run tests and produce summary, HTML, or LCOV reports.
+
+Install the Cargo subcommand, then run a workspace report:
+
+```sh
+cargo install cargo-llvm-cov --locked
+cargo llvm-cov --workspace --all-features --html --open
+```
+
+For a report that a CI service can consume, write an LCOV file:
+
+```sh
+cargo llvm-cov --workspace --all-features --lcov --output-path lcov.info
+```
+
+Coverage of documentation tests may require explicit options and toolchain support. Check the tool's current documentation and make sure the generated report includes the test types you intend to measure.
+
+## Collect Coverage with grcov {#coverage_testing}
 
 [![grcov][c~grcov~docs~badge]][c~grcov~docs] [![grcov~crates.io][c~grcov~crates.io~badge]][c~grcov~crates.io] [![grcov~repo][c~grcov~repo~badge]][c~grcov~repo] [![grcov~lib.rs][c~grcov~lib.rs~badge]][c~grcov~lib.rs]{{hi:grcov}}{{hi:Coverage}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
 
-Rust tool to collect and aggregate code coverage data for multiple source files.
+grcov collects and combines Rust coverage data and can emit formats such as HTML and LCOV. It is useful when a project already has an LLVM instrumentation workflow or needs its supported report formats. Follow its documentation for the compiler flags and profile-data handling required by your setup.
 
-## Measure your Code Coverage with `cargo-tarpaulin` {#cargo-tarpaulin}
+## Measure Coverage with cargo-tarpaulin {#cargo-tarpaulin}
 
 [![cargo-tarpaulin~repo][c~cargo-tarpaulin~repo~badge]][c~cargo-tarpaulin~repo]{{hi:cargo-tarpaulin}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-`cargo tarpaulin` is a tool to determine code coverage achieved via tests.
+cargo-tarpaulin runs Rust tests and reports coverage. Its available backends and supported targets differ by operating system, so check those limits before adding it to local or continuous-integration workflows.
+
+```sh
+cargo tarpaulin --workspace --out Html
+```
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[testing | Testing]]
+- [[property_based_testing | Property-based Testing]]
+- [[fuzzing | Fuzzing]]
+- [[test_runners | Test Runners]]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
