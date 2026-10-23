@@ -3,21 +3,25 @@
 
 {{#include error_handling.incl.md}}
 
+Operations that can fail should return a value that describes the failure. Use [`Option`][c~std::option::Option~docs]↗{{hi:Option}} when the only question is whether a value exists, and [`Result`][c~std::result::Result~docs]↗{{hi:Result}} when callers need to know why an operation failed. Handle an error, propagate it to a caller that can decide what to do, or deliberately recover with a documented fallback.
+
+Reserve panics for broken invariants and other situations where continuing would be incorrect. For application and library design choices, see [[error_customization | Custom Errors]].
+
 ## Trigger Irrecoverable Panics {#irrecoverable-panics}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-The [`panic!(...)`][c~std::panic~docs]↗ macro allows a program to terminate immediately and provide feedback to the caller of the program.
+The [`panic!(...)`][c~std::panic~docs]↗ macro stops the current thread. A panic is appropriate for a violated invariant or an unrecoverable programming error. For invalid input, failed I/O, and other expected failures, return a `Result` so the caller can handle the problem.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/panic.rs:example}}
 ```
 
-## Generate and Handle Recoverable Errors with `Result` {#result}
+## Represent Recoverable Failures with `Result` {#result}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} is an enum used to represent the outcome of operations that might fail. It is a flexible way to handle errors in a type-safe manner. The enum has two variants: `Ok`{{hi:Ok}} and `Err`{{hi:Err}}.
+[`Result<T, E>`][c~std::result::Result~docs]↗{{hi:std::result::Result}} represents either a successful value of type `T` or an error of type `E`. Its variants are `Ok(T)` and `Err(E)`. It is in the prelude, so you can write `Result` without importing it.
 
 ```rust,editable
 enum Result<T, E> {
@@ -27,37 +31,18 @@ enum Result<T, E> {
 // T and E are generic.
 ```
 
-Simply return one of the two variants as needed. Note that [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} is in the prelude.
-
-```rust,editable
-fn divide_numbers(x: i32, y: i32) -> Result<i32, &'static str> {
-    if y == 0 {
-        Err("Division by zero")
-    } else {
-        Ok(x / y)
-    }
-}
-```
-
-You can handle the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} via a simple [`match`][keyword~match]↗{{hi:match}} or [`if let`][book~rust~if-let]↗{{hi:if let}} expression:
+Return `Ok(value)` on success and `Err(error)` on failure. A caller can handle both cases with [`match`][keyword~match]↗{{hi:match}} or handle one case with [`if let`][book~rust~if-let]↗{{hi:if let}}. The example uses `match` to report both successful and failed divisions.
 
 ```rust,editable
 fn main() {
-    let _result1: Result<i32, &str> = Ok(10);
-
-    let result2: Result<i32, &str> = Err("Something went wrong.");
-
-    // Here, we just print the status.
-    match result {
-        Ok(value) => println!("Success: {value}"),
-        Err(error) => eprintln!("Error: {error}"),
-    }
-}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/result.rs:example}}
 ```
 
 ## Convert a `Result` or `Option` into an Irrecoverable Panic {#convert-result-or-option-into-panic}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+
+Use `unwrap` or `expect` when failure proves a bug or violates an invariant that the program must uphold. Avoid them for ordinary user input, network, and file errors: propagate or handle those errors instead.
 
 [`panic!`][c~std::panic::panic~docs]↗{{hi:panic!}} is closely tied with the `unwrap`{{hi:unwrap}} method of both [`Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}} and [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} [enums][p~enums]. Both implementations call `panic!` when they are set to the `None` or `Err` variants. `expect` is frequently used instead of `unwrap`.
 
@@ -73,6 +58,8 @@ fn main() {
 {{#include ../../../../crates/cats/rust_patterns/examples/error/unwrap_or_else.rs:example}}
 ```
 
+`unwrap_or` evaluates its fallback argument before the call. Use `unwrap_or_else` when computing the fallback is expensive or should happen only when the value is absent or erroneous.
+
 ## Chain operations with `and_then` {#and_then}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
@@ -80,73 +67,36 @@ fn main() {
 [`and_then`][c~std::result::Result::and_then~docs]↗{{hi:and_then}} is used to chain the operations. It runs the next function only if the previous `Result` is `Ok`. If any step produces an `Err`, the chain stops, and the `Err` is returned.
 
 ```rust,editable
-fn divide_by_two(x: i32) -> Result<i32, &'static str> {
-    if x % 2 == 0 {
-        Ok(x / 2)
-    } else {
-        Err("Not divisible by 2")
-    }
-}
-
-fn divide_by_three(x: i32) -> Result<i32, &'static str> {
-    if x % 3 == 0 {
-        Ok(x / 3)
-    } else {
-        Err("Not divisible by 3")
-    }
-}
-
-fn main() {
-    let result = divide_by_two(12)
-        .and_then(divide_by_three); // Chain the second operation
-
-    match result {
-        Ok(value) => println!("Success: {value}"),
-        Err(error) => println!("Error: {error}"),
-    }
-}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/and_then.rs:example}}
 ```
 
 ## Transform `Result` Values {#map}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-The [`map`][c~std::result::Result::map~docs]↗{{hi:map}} and [`map_err`][c~std::result::Result::map_err~docs]↗{{hi:map_err}} methods transform the contents of `Ok` and `Err` respectively.
+The [`map`][c~std::result::Result::map~docs]↗{{hi:map}} method transforms a successful value while leaving an error unchanged. [`map_err`][c~std::result::Result::map_err~docs]↗{{hi:map_err}} transforms the error while leaving a successful value unchanged.
 
 ```rust,editable
-fn main() {
-    let result: Result<i32, &str> = Ok(10);
-
-    let doubled = result.map(|value| value * 2); // Applies a function to the `Ok` value
-    println!("Doubled: {doubled:?}");
-
-    let error_mapped = result.map_err(|err| format!("Error: {}", err)); // Maps the `Err` value
-    println!("Mapped error: {error_mapped:?}");
-}
-
-#[test]
-fn test_main() {
-  main();
-}
+{{#include ../../../../crates/cats/rust_patterns/examples/error/map.rs:example}}
 ```
 
 ## Propagate Recoverable Errors with the `?` Operator {#question-mark-operator}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-Use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to propagate errors from a function call 'up the stack'.
+Use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to propagate a failure to the caller. It keeps a successful value available to the rest of the function and returns early on failure.
 
-If the value of the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} is an `Ok`, the value inside the `Ok` will get returned, and the program will continue. If the value is an `Err`, the `Err` will be returned from the whole function, as if we had used the `return` keyword, so the error value gets propagated to the calling code.
+With `Result`, `?` returns an `Err` from the current function, converting it to the function's error type through [`From`][c~std::convert::From~docs]↗{{hi:From}} when that conversion is available. With `Option`, it returns `None`. This keeps error handling at the layer that has enough context to decide how to respond.
 
-Note that we're only allowed to use the `?`{{hi:?}} operator in a function that returns [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}}, [`Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}}, or another type that implements [`std::ops::FromResidual`][c~std::ops::FromResidual~docs]↗{{hi:std::ops::FromResidual}}.
+The operator is available in functions whose return type supports the corresponding residual conversion, commonly `Result` and `Option`.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/question_mark.rs:example}}
 ```
 
-Note that we could have used the common type alias `type Result<T> = std::result::Result<T, std::io::Error>;` as the return type of `read_username_from_file`.
+The standard library also provides the type alias `std::io::Result<T>` for `Result<T, std::io::Error>`, as used by many I/O APIs.
 
-The following example highlights the need to return `Result<..., Box<dyn Error>>` (or a similar type) when multiple `?`{{hi:?}} operators are used in a given method and their error types are not the same:
+The following example uses `Box<dyn Error>` so errors from different operations can be propagated from one function. A library often benefits from a dedicated error enum; an application can use a flexible report type such as [`anyhow::Error`][c~anyhow::Error~docs]↗{{hi:anyhow}}. See [[error_customization | Custom Errors]] for the tradeoffs.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/question_mark2.rs:example}}
@@ -156,13 +106,12 @@ The following example highlights the need to return `Result<..., Box<dyn Error>>
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-To handle a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} in the `main` function, you may:
+At the program boundary, either handle a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} explicitly or return it from `main`:
 
 - use a [`match`][keyword~match]↗{{hi:match}}, `if let`{{hi:if let}}, or `while let`{{hi:while let}} expression
   - to display or log the error, as described above,
   - to attempt to recover from the error (for example by retrying the last operation).
-- ignore the [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} by assigning it to `let _ = ...` (rarely the right solution),
-- return a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} from the `main` function.
+- return a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} from `main`. The runtime reports an error returned this way and exits with a failure status.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/error_handling.rs:example}}
@@ -172,7 +121,7 @@ To handle a [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} 
 
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-The `?` operator automatically converts different error types (e.g., [`std::io::Error`][p~std::io::Error]↗, [`std::num::ParseIntError`][p~std::num::ParseIntError]↗) into [`anyhow::Error`][c~anyhow::Error~docs]↗, retaining the full error information along the call chain.
+When a function returns [`anyhow::Result`][c~anyhow::Result~docs]↗, `?` converts errors such as [`std::io::Error`][p~std::io::Error]↗ and [`std::num::ParseIntError`][p~std::num::ParseIntError]↗ into `anyhow::Error` while retaining the source chain. For a library's public API, prefer an error type that preserves the distinctions callers need; see [[error_customization | Custom Errors]].
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/retain.rs:example}}
@@ -182,7 +131,7 @@ The `?` operator automatically converts different error types (e.g., [`std::io::
 
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-This recipe shows how to handle a complex error scenario and then print a backtrace.
+This recipe shows how a low-level deserialization failure can be wrapped with context as it travels through several layers. An error chain explains the sequence of failures; a captured backtrace can add the code locations where the error was created.
 
 The example attempts to deserialize the value `256` into a [`u8`][primitive~u8]↗{{hi:u8}}. An error will bubble up from [`serde`][c~serde~docs]↗{{hi:serde}} to [`csv`][c~csv~docs]↗{{hi:csv}} and finally up to the user code.
 
@@ -190,21 +139,22 @@ The example attempts to deserialize the value `256` into a [`u8`][primitive~u8]�
 {{#include ../../../../crates/cats/rust_patterns/examples/error/backtrace.rs:example}}
 ```
 
-Backtrace error rendered:
+The example prints the error with `Debug` formatting. Its context chain identifies the layer where each failure was reported.
 
 ```text
-Error level - description
-└> 0 - Cannot read CSV data
-└> 1 - Cannot deserialize RGB color
-└> 2 - CSV deserialize error: record 1 (line: 2, byte: 15): field 1: number too large to fit in target type
-└> 3 - field 1: number too large to fit in target type
+Error: Cannot read CSV data
+
+Caused by:
+   0: Cannot deserialize RGB color
+   1: CSV deserialize error: record 1 (line: 2, byte: 15): field 1: number too large to fit in target type
+   2: field 1: number too large to fit in target type
 ```
 
-Run the recipe with [`RUST_BACKTRACE=1`][c~std::backtrace~docs]↗{{hi:RUST_BACKTRACE}} to display a detailed backtrace associated with this error.
+For `anyhow`, setting `RUST_BACKTRACE=1` before running the example enables backtrace capture. An error backtrace is distinct from the panic backtrace controlled by the same variable.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+For custom error types, diagnostic reports, and application-level context, see [[error_customization | Custom Errors]]. For an introduction to recoverable failures with `Result`, see the [Rust Book chapter on error handling][book~rust~ch09-02-recoverable-errors-with-result].
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
@@ -212,9 +162,6 @@ FIXME
 <div class="hidden">
 [error_handling: fix / organize](https://github.com/john-cd/rust_howto/issues/465)
 review [![Rust by example - error][book~rust-by-example~error~badge]][book~rust-by-example~error]
-
-rename examples; move example above to separate file
-credit the [Recoverable Errors with Result chapter (Rust book)][book~rust~ch09-02-recoverable-errors-with-result]
 
 [`std::io::Error`][c~std::io::Error~docs]↗{{hi:std::io::Error}} defined type implementing the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
 

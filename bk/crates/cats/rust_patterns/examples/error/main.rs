@@ -5,14 +5,17 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod and_then;
 mod anyhow;
 mod backtrace;
 mod color_eyre;
 mod error_handling;
+mod map;
 mod miette;
 mod panic;
 mod question_mark;
 mod question_mark2;
+mod result;
 mod retain;
 mod thiserror;
 mod thiserror2;
@@ -33,6 +36,9 @@ enum Commands {
     /// Runs the `anyhow` example.
     #[command(name = "anyhow")]
     Anyhow,
+    /// Runs the `and_then` example.
+    #[command(name = "and_then")]
+    AndThen,
     /// Runs the `backtrace` example.
     #[command(name = "backtrace")]
     Backtrace,
@@ -45,6 +51,9 @@ enum Commands {
     /// Runs the `miette` example.
     #[command(name = "miette")]
     Miette,
+    /// Runs the `map` example.
+    #[command(name = "map")]
+    Map,
     /// Runs the `panic` example.
     #[command(name = "panic")]
     Panic,
@@ -57,6 +66,9 @@ enum Commands {
     /// Runs the `retain` example.
     #[command(name = "retain")]
     Retain,
+    /// Runs the `Result` example.
+    #[command(name = "result")]
+    Result,
     /// Runs the `thiserror` example.
     #[command(name = "thiserror")]
     Thiserror,
@@ -80,6 +92,9 @@ fn main() -> ::anyhow::Result<()> {
             Commands::Anyhow => {
                 anyhow::run()?;
             }
+            Commands::AndThen => {
+                and_then::run();
+            }
             Commands::Backtrace => {
                 backtrace::run()
                     .map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
@@ -94,6 +109,9 @@ fn main() -> ::anyhow::Result<()> {
             Commands::Miette => {
                 miette::run().map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
             }
+            Commands::Map => {
+                map::run();
+            }
             Commands::Panic => {
                 panic::run();
             }
@@ -105,6 +123,9 @@ fn main() -> ::anyhow::Result<()> {
             }
             Commands::Retain => {
                 retain::run()?;
+            }
+            Commands::Result => {
+                result::run();
             }
             Commands::Thiserror => {
                 thiserror::run()

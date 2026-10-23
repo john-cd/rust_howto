@@ -9,8 +9,8 @@
 
 use std::fmt;
 
+use anyhow::Context as _;
 use anyhow::Result;
-use anyhow::anyhow;
 use serde::Deserialize;
 // use anyhow::Context;
 
@@ -30,13 +30,11 @@ impl Rgb {
     /// struct.
     fn from_csv(csv_data: &[u8]) -> Result<Self> {
         let color = csv::Reader::from_reader(csv_data)
-            // Returns a borrowed iterator over deserialized records.
-            // Each item is a `Result<Rgb, Error>`.
-            .deserialize()
-            .nth(0)
-            // Convert `None` into `Result::Err`.
-            .ok_or(anyhow!("First CSV row does not exist."))?;
-        Ok(color?)
+            .deserialize::<Self>()
+            .next()
+            .context("CSV input contains no rows")?
+            .context("Cannot deserialize RGB color")?;
+        Ok(color)
     }
 }
 
@@ -56,7 +54,7 @@ fn main() -> Result<()> {
     let csv = "red,blue,green
 102,256,204"; // Note the invalid value.
 
-    let rgb = Rgb::from_csv(csv.as_bytes())?;
+    let rgb = Rgb::from_csv(csv.as_bytes()).context("Cannot read CSV data")?;
     println!("{rgb:?} to hexadecimal #{rgb:X}");
 
     Ok(())
