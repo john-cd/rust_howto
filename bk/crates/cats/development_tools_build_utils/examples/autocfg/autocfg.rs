@@ -1,43 +1,26 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 // ANCHOR: example
-//! `autocfg` is a library for build scripts to automatically configure code
-//! based on compiler support. Code snippets are dynamically tested to see if
-//! the rustc will accept them, rather than hard-coding specific version
-//! support.
+//! `autocfg` probes compiler support for use in Cargo build scripts.
 //!
 //! Add to your `Cargo.toml`:
 //! [build-dependencies]
 //! autocfg = "1"
 
-/// Checks for compiler features and emits the matching `cfg` flags.
-#[tracing::instrument]
+/// Checks for `i128` support and emits the matching custom `cfg`.
 fn main() {
-    // Initialize tracing subscriber
-    let _ = tracing_subscriber::fmt::try_init();
-    tracing::info!("Starting autocfg example");
-
-    let ac = autocfg::new();
-    // Test for 128-bit integer support:
-    tracing::info!("Testing for i128 support...");
-    ac.emit_has_type("i128");
-    tracing::info!("Emitted has_type check for i128.");
-    println!(
-        "autocfg: checked i128 support (see CARGO_ENCODED_RUSTFLAGS for results)"
+    let out_dir = std::env::var_os("OUT_DIR")
+        .map_or_else(std::env::temp_dir, std::path::PathBuf::from);
+    let ac = autocfg::AutoCfg::with_dir(out_dir).expect(
+        "Cargo OUT_DIR or the system temporary directory must be writable",
     );
-
-    // If the type test succeeds, this will write a `cargo:rustc-cfg=has_i128``
-    // line for Cargo, which translates to Rust arguments `--cfg has_i128`. Then
-    // in the rest of your Rust code, you can add `#[cfg(has_i128)]` conditions
-    // on code that should only be used when the compiler supports it.
-
-    // (optional) You don't need to rerun for anything external.
-    // autocfg::rerun_path("build.rs");
+    ac.emit_has_type("i128");
+    autocfg::rerun_path("build.rs");
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the compiler capability probe.
 pub fn run() {
     main();
 }
@@ -46,8 +29,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the probe runs without Cargo's build-script environment.
     #[test]
-    fn test_main() {
+    fn probe_runs_outside_build_script() {
         main();
     }
 }

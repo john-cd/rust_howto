@@ -16,6 +16,10 @@ Utilities for build scripts and other build time steps.
 
 {{#include build_cache.incl.md}}
 
+## Compiler Feature Detection
+
+{{#include autocfg.incl.md}}
+
 ## Related Topics
 
 | | |
