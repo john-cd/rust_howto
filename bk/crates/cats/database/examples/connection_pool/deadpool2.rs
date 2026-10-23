@@ -44,15 +44,30 @@ impl Config {
     }
 }
 
-/// Creates a PostgreSQL connection pool and queries the database.
-#[tokio::main]
-async fn main() -> anyhow::Result<()> {
+/// Loads the PostgreSQL settings and creates a Tokio-backed connection pool.
+///
+/// # Errors
+///
+/// Returns an error if configuration cannot be read or the pool cannot be
+/// built.
+fn create_pool() -> anyhow::Result<deadpool_postgres::Pool> {
     // Loads the `.env` file from the current directory or parents.
     dotenv().ok();
     // Hydrate the configuration from environment variables.
     let cfg = Config::from_env()?;
     // Creates a new `Pool` using the `deadpool_postgres::Config`.
-    let pool = cfg.pg.create_pool(Some(Runtime::Tokio1), NoTls)?;
+    Ok(cfg.pg.create_pool(Some(Runtime::Tokio1), NoTls)?)
+}
+
+/// Creates a PostgreSQL connection pool and queries the database.
+///
+/// # Errors
+///
+/// Returns an error if configuration, pool checkout, or the version query
+/// fails.
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let pool = create_pool()?;
     // Retrieves an Object from this Pool or waits for one to become available:
     let client = pool.get().await?;
     // Like `tokio_postgres::Client::prepare()`, but uses an existing
@@ -71,17 +86,54 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+///
+/// Returns an error if the PostgreSQL connection or query fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
 #[cfg(test)]
 mod tests {
+    use tokio::task::JoinSet;
+
     use super::*;
 
-    #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
-        main()?;
+    /// Exercises pool checkout and query behavior with many concurrent clients.
+    #[tokio::test]
+    #[ignore = "requires a reachable PostgreSQL service and PG__* environment variables"]
+    async fn serves_concurrent_queries_through_the_pool() -> anyhow::Result<()>
+    {
+        const CONCURRENT_QUERIES: usize = 64;
+
+        let pool = create_pool()?;
+        let mut tasks = JoinSet::new();
+
+        for request_id in 0..CONCURRENT_QUERIES as i32 {
+            let pool = pool.clone();
+            tasks.spawn(async move {
+                let client = pool.get().await?;
+                let row = client
+                    .query_one(
+                        "SELECT pg_sleep(0.01), $1::integer",
+                        &[&request_id],
+                    )
+                    .await?;
+                Ok::<i32, anyhow::Error>(row.get(1))
+            });
+        }
+
+        let mut completed_ids = Vec::with_capacity(CONCURRENT_QUERIES);
+        while let Some(result) = tasks.join_next().await {
+            completed_ids.push(result??);
+        }
+        completed_ids.sort_unstable();
+
+        assert_eq!(
+            completed_ids,
+            (0..CONCURRENT_QUERIES as i32).collect::<Vec<_>>()
+        );
         Ok(())
     }
 }
