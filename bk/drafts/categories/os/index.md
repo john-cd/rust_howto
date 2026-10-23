@@ -3,37 +3,47 @@
 
 [![cat~os][cat~os~badge]][cat~os]
 
-Bindings to operating system-specific APIs{{hi:Operating system-specific APIs}}.
+Rust applications can use portable operating-system services from the standard library and opt into platform-specific APIs when they need them. Start with a safe, portable interface; isolate platform-specific code and FFI behind a small boundary.
 
-Rust offers various ways to interact with the operating system, depending on your needs. For most common OS interactions, the standard library ([`std`][c~std~docs]↗{{hi:std}}) will be sufficient. For system information, use [`sysinfo`][c~sysinfo~docs]↗{{hi:sysinfo}}. For very specific or platform-dependent OS features, use system calls or FFI.
+## Portable Operating-System Services
+
+| Need | Starting point | Notes |
+| --- | --- | --- |
+| Files and directories | [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} and [`std::path`][c~std::path~docs]↗{{hi:std::path}} | Use path types instead of assuming a separator or filesystem layout. |
+| Child processes | [`std::process`][c~std::process~docs]↗{{hi:std::process}} | Pass arguments as separate values and handle the exit status and I/O results. |
+| Environment variables | [`std::env`][c~std::env~docs]↗{{hi:std::env}} | Treat values as external input and account for variables that may be absent. |
+| TCP and UDP networking | [`std::net`][c~std::net~docs]↗{{hi:std::net}} | Use an asynchronous runtime such as [`tokio`][c~tokio~docs]↗{{hi:tokio}} when the application needs asynchronous I/O. |
+| Threads | [`std::thread`][c~std::thread~docs]↗{{hi:std::thread}} | Use message passing or synchronization primitives to share state safely. |
+| System information | [`sysinfo`][c~sysinfo~docs]↗{{hi:sysinfo}} | Check which metrics are available on each supported operating system. |
 
 ## External Commands
 
+Use a child process only when a library or standard API does not provide the needed behavior. Pass executable and arguments separately instead of building a shell command string. Check the exit code, capture or forward output intentionally, and account for platform-specific command availability.
+
 {{#include external_commands.incl.md}}
 
-## Low-level System Calls
+## Platform-Specific APIs, System Calls, and FFI
+
+The standard library exposes platform-specific extensions through modules such as [`std::os::unix`][c~std::os::unix~docs]↗{{hi:std::os::unix}} and [`std::os::windows`][c~std::os::windows~docs]↗{{hi:std::os::windows}}. Guard these imports and implementations with target configuration, then provide a portable alternative or a clear unsupported-platform error.
+
+Direct system calls and Foreign Function Interface (FFI) bindings are lower-level choices. They require platform-specific types, calling conventions, resource cleanup, and error handling. Prefer a maintained safe wrapper when one covers the required API; otherwise keep the unsafe boundary small and document its invariants.
 
 {{#include low_level_system_calls.incl.md}}
 
+See the [Unix-specific APIs][p~unix] and [Linux APIs][p~linux] chapters for platform details.
+
 ## Operating Systems Written in Rust
+
+This section lists operating systems and system projects implemented in Rust. They are useful for studying systems programming, but their presence here does not imply that application code should depend on them as a portable library.
 
 {{#include rust_os.incl.md}}
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
-| Topic | Rust Crates |
-|---|---|
-| Basic OS interaction (files, processes, environment) | Use [`std`][c~std~docs]↗{{hi:std}}, the standard library. |
-| File System Interaction | [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} provides the core functionality for working with files and directories (opening, reading, writing, creating, deleting, etc.). [`std::path`][c~std::path~docs]↗{{hi:std::path}} provides types and functions for working with file paths (`Path`{{hi:Path}}, `PathBuf`{{hi:PathBuf}}). [`fs_extra`][c~fs_extra~docs]↗{{hi:fs_extra}} is a crate that provides additional file system operations. Use [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}} for creating temporary files and directories. |
-| Process Management | Use [`std::process`][c~std::process~docs]↗{{hi:std::process}} for spawning and managing child processes. |
-| Environment Variables | Use [`std::env`][c~std::env~docs]↗{{hi:std::env}} for accessing and manipulating environment variables. |
-| Networking | [`std::net`][c~std::net~docs]↗{{hi:std::net}} provides basic networking functionality (TCP, UDP). [`tokio`][c~tokio~docs]↗{{hi:tokio}} is a powerful asynchronous runtime, essential for high-performance networking applications. |
-| Threading | Use [`std::thread`][c~std::thread~docs]↗{{hi:std::thread}} for creating and managing threads. |
-| Date and time | Use [`std::time`][c~std::time~docs]↗{{hi:std::time}} for working with time and durations. [`chrono`][c~chrono~docs]↗{{hi:chrono}} is widely used crate for date and time calculations. [`time`][c~time~docs]↗{{hi:time}} is a newer crate for date and time. |
-| Operating System Information | Use [`sysinfo`][c~sysinfo~docs]↗{{hi:sysinfo}} to retrieve system information (CPU, memory, etc.). |
-| Low-level OS interaction or access to specific OS features | Use system calls directly (via [`std::os::unix`][c~std::os::unix~docs]↗{{hi:std::os::unix}} or [`std::os::windows`][c~std::os::windows~docs]↗{{hi:std::os::windows}}) or FFI. `std::os::unix` provides access to Unix-specific system calls. `std::os::windows` provides access to Windows-specific system calls. |
-| Foreign Function Interface (FFI) | Rust's FFI calls functions written in other languages (e.g., `C`) that might interact with the OS directly. This is often used when needing to access OS features that aren't directly exposed by Rust's standard library or other crates. |
-| Random Number Generation | [`rand`][c~rand~docs]↗{{hi:rand}} is a popular random number generator crate, which can in turn call the OS. |
+- [[filesystem | File System]] covers portable file and directory operations.
+- [[command-line-interface | Command Line Interface]] covers command arguments and user interaction.
+- [[network-programming | Network Programming]] covers networking beyond the standard library primitives.
+- [[concurrency | Concurrency]] covers threads, synchronization, and parallel work.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
