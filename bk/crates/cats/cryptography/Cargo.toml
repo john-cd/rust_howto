@@ -43,14 +43,19 @@ rand = "0.10.3"
 rand_core = "0.10.1"
 ring = "0.17.14"
 rsa = "0.9.10"
-rustls = "0.23.46"
+rustls = { version = "0.23.46", default-features = false, features = ["ring", "std", "tls12"] }
 scrypt = { version = "0.12.0", features = ["password-hash", "getrandom", "phc"] }
 sha1 = "0.11.0"
 signature = "3.0.0"
 subtle = "2.6.1"
-tokio-rustls = "0.26.6"
+tokio = { version = "1.54.1", features = ["io-util", "macros", "rt-multi-thread"] }
+tokio-rustls = { version = "0.26.6", default-features = false, features = ["ring", "tls12", "logging"] }
 x509-cert = { version = "0.2.5", features = ["builder"] }
 zeroize = "1.9.1"
+
+[dev-dependencies]
+# Generate a temporary localhost certificate for the TLS handshake test.
+rcgen = "0.14.10"
 
 [[example]]
 name = "aead"
