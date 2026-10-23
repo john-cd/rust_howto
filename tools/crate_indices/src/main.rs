@@ -273,12 +273,12 @@ mod tests {
 
     /// Removes the leading human-review marker from an index page snapshot.
     fn strip_review_marker(contents: &str) -> &str {
-        let Some(newline) = contents.find('\n') else {
+        let Some((marker, body)) = contents.split_once('\n') else {
             return contents;
         };
-        let marker = contents[..newline].trim_end_matches('\r');
+        let marker = marker.trim_end_matches('\r');
         if marker.starts_with("<!-- TODO Reviewed ") && marker.ends_with(" -->") {
-            &contents[newline + 1..]
+            body
         } else {
             contents
         }
