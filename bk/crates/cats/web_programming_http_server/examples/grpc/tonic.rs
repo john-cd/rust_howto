@@ -11,15 +11,8 @@
 //! `say_hello`. The `say_hello` method takes a `HelloRequest` and returns a
 //! `HelloReply`.
 //!
-//! Add the following to your `Cargo.toml`:
-//! ```toml
-//! [dependencies]
-//! tonic = "0.12"
-//! prost = "0.13"
-//!
-//! [build-dependencies]
-//! tonic-build = "0.12"
-//! ```
+//! The package uses `tonic` and `tonic-prost` 0.14.6 with `prost` 0.14.4.
+//! Its build script generates this module from `proto/helloworld.proto`.
 
 // Imports from the module created by `tonic` (see below):
 use helloworld::HelloReply;
@@ -60,7 +53,7 @@ impl Greeter for MyGreeter {
 /// Starts the gRPC server.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let addr = "[::1]:50051".parse().unwrap();
+    let addr = "[::1]:50051".parse::<std::net::SocketAddr>()?;
     let greeter = MyGreeter::default();
 
     println!("GreeterServer listening on {addr}");
