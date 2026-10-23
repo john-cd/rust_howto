@@ -1,38 +1,54 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Placeholder for a web server with `rocket`.
+//! A small Rocket server with one route and an in-process test.
+//!
+//! Run it with `cargo run --example rocket --features rocket-support`.
 
-// // COMING SOON
-// //! This is a simple example of a Rocket web server.
-// //!
-// //! It defines a single route that returns "Hello, world!" when accessed.
+#[cfg(feature = "rocket-support")]
+#[rocket::get("/")]
+fn hello() -> &'static str {
+    "Hello, world!"
+}
 
-// #[get("/")]
-// fn hello() -> &'static str {
-//     "Hello, world!"
-// }
+#[cfg(feature = "rocket-support")]
+fn build_rocket() -> rocket::Rocket<rocket::Build> {
+    rocket::build().mount("/", rocket::routes![hello])
+}
 
-// #[launch]
-// fn rocket() -> _ {
-//     rocket::build().mount("/", routes![hello])
-// }
+#[cfg(feature = "rocket-support")]
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    build_rocket().launch().await?;
+    Ok(())
+}
 
-// // [Implement Rocket Hello World and route mounting](https://github.com/john-cd/rust_howto/issues/869)
-
-/// Does nothing yet.
+#[cfg(not(feature = "rocket-support"))]
 fn main() {
-    // TODO
+    eprintln!("Enable the `rocket-support` feature to run this example.");
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
+/// Tests the route using Rocket's local client without opening a network port.
+#[cfg(all(test, feature = "rocket-support"))]
 mod tests {
+    use rocket::http::Status;
+    use rocket::local::asynchronous::Client;
+
     use super::*;
 
-    #[test]
-    fn test_main() {
-        main();
+    /// Returns the greeting and an OK status from the root route.
+    #[rocket::async_test]
+    async fn root_route_returns_greeting() -> anyhow::Result<()> {
+        let client = Client::tracked(build_rocket()).await?;
+        let response = client.get("/").dispatch().await;
+
+        assert_eq!(response.status(), Status::Ok);
+        assert_eq!(
+            response.into_string().await.as_deref(),
+            Some("Hello, world!")
+        );
+        Ok(())
     }
 }
-// TODO implement the Rocket example; see https://github.com/john-cd/rust_howto/issues/869
+// [Implement Rocket Hello World and route mounting](https://github.com/john-cd/rust_howto/issues/869)
