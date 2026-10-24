@@ -13,5 +13,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[API documentation: review](https://github.com/john-cd/rust_howto/issues/980)
+[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

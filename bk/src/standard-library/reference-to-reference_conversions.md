@@ -67,4 +67,5 @@ Note that [`AsMut`][c~std::convert::AsMut~docs]↗{{hi:std::convert::AsMut}} can
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

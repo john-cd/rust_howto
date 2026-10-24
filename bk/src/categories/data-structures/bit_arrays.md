@@ -61,4 +61,5 @@ Unfortunately, they can use too much memory. To compensate, [`roaring`][c~roarin
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

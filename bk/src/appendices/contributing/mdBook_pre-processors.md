@@ -37,4 +37,5 @@ Consult the project's [README][mdbook-scrub-readme~repo]↗ for more details.
 
 - [[mdbook | Mdbook]].
 
+[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

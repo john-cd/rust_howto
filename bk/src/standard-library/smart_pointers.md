@@ -120,3 +120,7 @@ The following example demonstrates the implementation of a basic smart pointer:
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+</div>

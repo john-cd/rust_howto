@@ -186,5 +186,5 @@ This guide is based on the **contributing.md**. [Make your own][contributing.md~
 [ex~contributing~styleguides]: #styleguides
 
 <div class="hidden">
-[Documentation: Finalize Contributing Guide and Styleguides](https://github.com/john-cd/rust_howto/issues/529)
+[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

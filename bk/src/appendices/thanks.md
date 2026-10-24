@@ -19,4 +19,5 @@ Please review the [LICENSE][rust-howto~license~repo]↗ file.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: decisions for the maintainer](https://github.com/john-cd/rust_howto/issues/1897)
 </div>

@@ -144,4 +144,5 @@ See also the [[asref | AsRef]] chapter.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

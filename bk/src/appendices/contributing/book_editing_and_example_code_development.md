@@ -49,5 +49,5 @@ A `rust` code block can show a play button that runs the code in the [Rust Playg
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[development_editing: review](https://github.com/john-cd/rust_howto/issues/523)
+[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

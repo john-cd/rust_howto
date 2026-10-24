@@ -46,3 +46,7 @@ The [`reflect`][c~reflect~docs]↗ crate explores a reflection-like API for writ
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+[dynamic typing: rewrite and review](https://github.com/john-cd/rust_howto/issues/1750)
+</div>

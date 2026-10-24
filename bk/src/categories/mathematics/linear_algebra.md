@@ -169,3 +169,7 @@ Note that serialization followed by deserialization gives back the original matr
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
+</div>

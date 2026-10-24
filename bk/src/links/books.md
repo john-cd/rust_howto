@@ -208,4 +208,5 @@ For convenience, this page includes a number of links to the websites of publish
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
 </div>

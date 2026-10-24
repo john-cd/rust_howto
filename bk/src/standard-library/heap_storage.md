@@ -83,4 +83,5 @@ For example, in the following, we define a linked list that has an unknown numbe
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>
