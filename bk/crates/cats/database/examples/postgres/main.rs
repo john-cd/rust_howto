@@ -55,7 +55,7 @@ fn main() -> anyhow::Result<()> {
 
         match cli.command {
             Commands::AggregateData => {
-                aggregate_data::run().map_err(anyhow::Error::msg)?;
+                aggregate_data::run()?;
             }
             Commands::Cornucopia => {
                 cornucopia::run().map_err(anyhow::Error::msg)?;

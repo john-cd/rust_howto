@@ -2,55 +2,59 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Aggregating rows with SQL in a PostgreSQL database.
+//! Group PostgreSQL rows by artist nationality and count each group.
 
-// This example demonstrates aggregating query results in PostgreSQL using the
-// `postgres` crate.
+use anyhow::Context as _;
 use postgres::Client;
-use postgres::Error;
 use postgres::NoTls;
 
-/// Represents a nation with its nationality and the count of artists from that
-/// nation.
+/// A nationality and the number of artists in its group.
 struct Nation {
-    /// Nationality of the artists.
+    /// Nationality name, or `Unknown` for rows without one.
     nationality: String,
-    /// Number of artists of that nationality.
-    count: i64,
+    /// Number of artist rows in the group.
+    artist_count: i64,
 }
 
-/// Connects to a PostgreSQL database, queries artist nationalities and their
-/// counts, and prints the results. Data from
-// <https://github.com/MuseumofModernArt/collection/tree/main>.
-/// Runs the aggregate data example.
-fn main() -> Result<(), Error> {
-    // The connection URL is formatted as
-    // `postgresql://<user>:<password>@<host>/<db>`, for example
-    // `postgresql://postgres:postgres@127.0.0.1/moma`.
-    let url = std::env::var("PG_URL").expect("PG_URL must be set");
-    let mut client = Client::connect(&url, NoTls)?;
+/// Queries an existing `artists` table and prints each nationality count.
+///
+/// # Errors
+///
+/// Returns an error if `PG_URL` is missing, PostgreSQL cannot be reached, or
+/// the query or its result rows are invalid.
+fn main() -> anyhow::Result<()> {
+    let url = std::env::var("PG_URL")
+        .context("set PG_URL to connect to the PostgreSQL database")?;
+    let mut client = Client::connect(&url, NoTls)
+        .context("connect to PostgreSQL with PG_URL")?;
 
-    let query = "SELECT nationality, COUNT(nationality) AS count
-        FROM artists
-        GROUP BY nationality
-        ORDER BY count DESC";
+    let query = "SELECT COALESCE(nationality, 'Unknown') AS nationality, \
+                 COUNT(*) AS artist_count \
+                 FROM artists \
+                 GROUP BY COALESCE(nationality, 'Unknown') \
+                 ORDER BY artist_count DESC, nationality";
 
-    for row in client.query(query, &[])? {
-        let (nationality, count): (Option<String>, Option<i64>) =
-            (row.get(0), row.get(1));
-
-        if let (Some(nationality), Some(count)) = (nationality, count) {
-            let nation = Nation { nationality, count };
-            println!("{} {}", nation.nationality, nation.count);
-        }
+    for row in client
+        .query(query, &[])
+        .context("count artists by nationality")?
+    {
+        let nation = Nation {
+            nationality: row.try_get("nationality")?,
+            artist_count: row.try_get("artist_count")?,
+        };
+        println!("{}: {}", nation.nationality, nation.artist_count);
     }
 
     Ok(())
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() -> Result<(), Error> {
+/// Runs the PostgreSQL aggregation example.
+///
+/// # Errors
+///
+/// Returns an error if `PG_URL` is missing or PostgreSQL query execution fails.
+pub fn run() -> anyhow::Result<()> {
     main()
 }
 
@@ -58,18 +62,12 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
-    /// Runs the integration example against a PostgreSQL service.
+    /// Aggregates the prepared artists table in a PostgreSQL service.
+    ///
+    /// Run with `PG_URL` set to a database that contains an `artists` table.
     #[test]
-    fn require_external_svc() -> Result<(), Error> {
-        if std::env::var("PG_URL").is_err() {
-            eprintln!(
-                "Skipping PostgreSQL aggregation example test; set PG_URL to run this test."
-            );
-            return Ok(());
-        }
-
-        main()?;
-        Ok(())
+    #[ignore = "requires PostgreSQL and an existing artists table"]
+    fn aggregates_artist_counts_by_nationality() -> anyhow::Result<()> {
+        main()
     }
 }
-// [review](https://github.com/john-cd/rust_howto/issues/1162)

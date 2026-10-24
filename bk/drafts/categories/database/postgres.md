@@ -29,11 +29,15 @@ The recipe inserts data into the `author` table using [`postgres::Client::execut
 
 [![postgres][c~postgres~docs~badge]][c~postgres~docs]{{hi:postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database}} [![csv-sample~repo][csv-sample~repo~badge]][csv-sample~repo]
 
-This recipe lists the nationalities of the first 7999 artists in the [database][p~database] of the [`Museum of Modern Art`][csv-sample~repo]↗ in descending order.
+This recipe counts artists by nationality in a PostgreSQL table populated from the [`Museum of Modern Art`][csv-sample~repo]↗ collection. Missing nationalities are grouped as `Unknown`.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/postgres/aggregate_data.rs:example}}
 ```
+
+<div class="hidden">
+This query counts every artist row, groups missing nationalities as `Unknown`, and orders equal counts consistently. It expects a PostgreSQL `artists` table, so its integration test is ignored unless run against a prepared database.
+</div>
 
 ## Connect to and Query Postgres Asynchronously with `tokio-postgres` {#tokio-postgres}
 
