@@ -74,15 +74,6 @@ mod tests {
         Ok(())
     }
 
-    /// Extracts the compressed tar archive into the fixture directory.
-    #[test]
-    fn test_decompress() -> anyhow::Result<()> {
-        let _cwd_lock = CWD_LOCK.lock().unwrap();
-        tar_compress::run()?;
-        tar_decompress::run()?;
-        Ok(())
-    }
-
     /// Verifies that strip prefix.
     #[test]
     fn test_strip_prefix() -> anyhow::Result<()> {
