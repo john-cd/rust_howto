@@ -11,7 +11,9 @@ use anyhow::Result;
 /// response.
 #[tokio::main]
 async fn main() -> Result<()> {
-    let res = reqwest::get("http://httpbin.org/get").await?;
+    let res = reqwest::get("https://httpbin.org/get")
+        .await?
+        .error_for_status()?;
     println!("Status: {}", res.status());
     println!("Headers:\n{:#?}", res.headers());
 
@@ -31,7 +33,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Marks this live-service demonstration as an opt-in network test.
     #[test]
+    #[ignore = "needs network"]
     fn require_network() -> anyhow::Result<()> {
         main()?;
         Ok(())
