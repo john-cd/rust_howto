@@ -16114,6 +16114,9 @@ dependencies = [
 [[package]]
 name = "no_std_no_alloc"
 version = "0.1.2"
+dependencies = [
+ "heapless 0.9.3",
+]
 
 [[package]]
 name = "nohash-hasher"
