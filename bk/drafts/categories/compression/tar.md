@@ -5,6 +5,10 @@
 
 The examples below read and write local filesystem paths, so their code blocks are marked `noplayground`. Prepare the source directory or archive at the paths shown before running an example.
 
+Tar groups files and metadata but does not compress them. A `.tar.gz` file combines a tar archive with gzip compression. Other combinations include tar with [`zstd`][c~zstd~docs]↗, [`xz2`][c~xz2~docs]↗, or [`bzip2`][c~bzip2~docs]↗. ZIP is a separate archive format, provided by [`zip`][c~zip~docs]↗.
+
+The default `flate2` backend uses Rust code. Some alternatives involve native code: `zstd` builds its C library, `xz2` binds to `liblzma`, and `bzip2` offers an optional native `libbz2` backend alongside a Rust backend. Those configurations may require a C compiler or target libraries when cross-compiling; check the selected backend and features.
+
 ## Decompress a Tarball {#decompress-a-tarball}
 
 [![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo]{{hi:flate2}} [![tar][c~tar~docs~badge]][c~tar~docs] [![tar~crates.io][c~tar~crates.io~badge]][c~tar~crates.io] [![tar~repo][c~tar~repo~badge]][c~tar~repo]{{hi:tar}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
@@ -42,7 +46,9 @@ Iterate over [`tar::Archive::entries`][c~tar::Archive::entries~docs]↗{{hi:tar:
 ## Related Topics {#related-topics .skip}
 
 - [Compression and decompression](compression.md).
+- [Compression formats overview](index.md).
 - [[filesystem | Filesystem]].
+- [Temporary files and directories](../../../src/categories/filesystem/temporary_files_and_directories.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
