@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 mod async1;
 mod async2;
+mod async3;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -25,6 +26,9 @@ enum Commands {
     /// Runs the `async2` example.
     #[command(name = "async2")]
     Async2,
+    /// Runs the `async3` example.
+    #[command(name = "async3")]
+    Async3,
 }
 
 /// Runs the example selected on the command line.
@@ -38,6 +42,9 @@ fn main() {
             }
             Commands::Async2 => {
                 async2::run();
+            }
+            Commands::Async3 => {
+                async3::run();
             }
         }
     }

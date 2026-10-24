@@ -3,14 +3,9 @@
 
 {{#include async.incl.md}}
 
-Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} for short, is a concurrent{{hi:Concurrency}} programming model supported by an increasing number of programming languages. It enables running a large number of concurrent tasks, while preserving much of the look and feel of ordinary synchronous programming, through the async / await{{hi:async/await}} syntax. It helps deal with events independently of the main program flow, using techniques like futures{{hi:Futures}}, promises{{hi:Promises}}, waiting, or eventing.
+Asynchronous programming{{hi:Asynchronous programming}}, or async{{hi:async}} for short, lets a program make progress on other work while an operation waits, often for input/output. Rust's `async` / `await`{{hi:async/await}} syntax expresses this work as futures{{hi:Futures}}. An executor polls those futures and schedules other ready tasks when one is waiting.
 
-- Ability to make progress on multiple tasks, even if they don't execute at the exact same time.
-- Mechanism: _cooperative_ multitasking - tasks yield control, allowing other tasks to run.
-- Involves context switching on a single thread or, most often, among a few threads (the pool of which is opaquely managed by the async runtime).
-- Achieves non-blocking I/O operations{{hi:Non-blocking I/O operations}} to improve responsiveness and efficiency.
-- Lower overhead compared to multithreading.
-- Multi-threaded async programming also requires careful synchronization to prevent data races.
+Async is cooperative: a task gives the executor a chance to run other work when it reaches an `.await` that cannot complete yet. Async can handle many waiting tasks with a small number of threads, but it does not make blocking operations non-blocking or guarantee parallel execution. Async tasks running on multiple threads still need synchronization when they share mutable state.
 
 Key constructs in Rust:
 
@@ -25,45 +20,49 @@ Key constructs in Rust:
 {{#include ../../../crates/cats/asynchronous/examples/async/async1.rs:example}}
 ```
 
-As any form of cooperative multitasking{{hi:Cooperative multitasking}}, a future{{hi:Futures}} that spends a long time without reaching an [`await`][book~rust-reference~await]↗{{hi:await}} "blocks the thread", which may prevent other tasks from running.
+Like other cooperative multitasking{{hi:Cooperative multitasking}} systems, Rust async cannot preempt a task that runs for a long time without reaching an [`await`][book~rust-reference~await]↗{{hi:await}}. Such work blocks the executor thread and can prevent other tasks from running.
 
-## Differences with Other Languages {#diff-other-languages}
+## Futures Are Lazy {#diff-other-languages}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-Rust's implementation of [`async`][book~rust-reference~async]↗{{hi:async}} differs from most languages in a few ways:
+Calling an `async fn` creates a future; it does not run the function body. The future makes progress only when an executor polls it, typically through `.await` or by spawning it on a runtime.
 
-- Rust's [`async`][book~rust-reference~async]↗{{hi:async}} operations are lazy. Futures{{hi:Futures}} are inert in Rust and only make progress only when polled. The executor calls the [`std::task::Poll`][c~std::task::Poll~docs]↗{{hi:std::task::Poll}} method repeatedly to execute futures.
+Dropping a future stops that future from making further progress. This is one reason to keep track of which task owns a future and whether it has been spawned independently.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async/async2.rs:example}}
 ```
 
-- Dropping a future stops it from making further progress.
-- Async is zero-cost in Rust. You can use [`async`][book~rust-reference~async]↗{{hi:async}} without heap allocations{{hi:Heap allocations}} and dynamic dispatch. This also allows use of async in constrained environments, such as embedded systems.
-- No built-in runtime is provided by Rust itself. Instead, runtimes are provided by community-maintained [crates][p~crates].
-- Both single- and multi-threaded runtimes{{hi:Multi-threaded runtimes}} are available.
+An `async fn` is compiled to a state machine that implements [`std::future::Future`][c~std::future::Future~docs]↗{{hi:std::future::Future}}. The future can be stored inline without a heap allocation or dynamic dispatch; boxing, trait objects, and runtime task storage may add them. The Rust standard library defines the future interfaces, but does not provide an executor, asynchronous I/O, or a runtime.
 
-## Which Crate Provides What? {#which-crate-provides-what}
+## Async Runtime and Crates {#which-crate-provides-what}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-- The [`async`][book~rust-reference~async]↗{{hi:async}} / [`await`][book~rust-reference~await]↗{{hi:await}} syntactic sugar is supported directly by the Rust compiler.
-- The most fundamental [traits][p~traits], types, and [functions][p~functions], such as the [`std::future::Future`][c~std::future::Future~docs]↗{{hi:std::future::Future}} trait, are provided by the standard library.
-- Many utility types, [macros][p~macros] and [functions][p~functions] are provided by the [`[futures`][c~futures~docs]↗{{hi:futures}} crate. They can be used in any async Rust application.
-- Execution of async code, IO and task spawning are provided by "async runtimes", such as [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`async-std`][c~async-std~docs]↗{{hi:async-std}}. Most async applications, and some async crates, depend on a specific runtime.
+- The compiler implements `async` / `await`, and the standard library provides the `Future` trait and task interfaces.
+- The [`futures`][c~futures~docs]↗{{hi:futures}} crate offers utility traits, types, and functions that are not tied to one runtime.
+- A runtime polls futures and commonly supplies task spawning, timers, and asynchronous I/O. Runtime APIs and I/O types can be runtime-specific, so check what a library requires before choosing one.
 
-## Async Runtimes {#async-runtimes}
+## Spawn Tasks {#spawn-tasks}
 
-[![async-std][c~async-std~docs~badge]][c~async-std~docs]{{hi:async-std}} [![smol][c~smol~docs~badge]][c~smol~docs]{{hi:smol}} [![embassy][c~embassy~docs~badge]][c~embassy~docs]{{hi:embassy}} [![mio][c~mio~docs~badge]][c~mio~docs]{{hi:mio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+[![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
-In most cases, prefer the [`tokio`][p~tokio]{{hi:tokio}} runtime - see [The State of Async Rust: Runtimes][blog~state-of-async-rust]↗.
+Awaiting a future runs it as part of the current task. A runtime can also spawn a task so it can make progress independently while the parent task does other work. In Tokio, `spawn` returns a handle that can be awaited to retrieve the task's result.
 
-Alternatives to the [Tokio][p~tokio] async ecosystem include:
+```rust,editable
+{{#include ../../../crates/cats/asynchronous/examples/async/async3.rs:example}}
+```
 
-- [![async-std][c~async-std~docs~badge]][c~async-std~docs]{{hi:async-std}} [![async-std~crates.io][c~async-std~crates.io~badge]][c~async-std~crates.io]↗: async version of the Rust standard library. No longer maintained?
-- [![smol][c~smol~docs~badge]][c~smol~docs]{{hi:smol}} [Smol][c~smol~crates.io]↗, a small async runtime.
-- [![embassy][c~embassy~docs~badge]][c~embassy~docs]{{hi:embassy}} [Embassy][c~embassy~website]↗ [![embassy~repo][c~embassy~repo~badge]][c~embassy~repo] for embedded systems.
+## Choose a Runtime {#async-runtimes}
+
+[![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![async-std][c~async-std~docs~badge]][c~async-std~docs]{{hi:async-std}} [![smol][c~smol~docs~badge]][c~smol~docs]{{hi:smol}} [![embassy][c~embassy~docs~badge]][c~embassy~docs]{{hi:embassy}} [![mio][c~mio~docs~badge]][c~mio~docs]{{hi:mio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+
+Choose a runtime based on the libraries and platform your application needs. Tokio has a broad ecosystem and is a common default for general-purpose services; start with the [Tokio tutorial][c~tokio~tutorial~docs]↗. For smaller applications, [`smol`][c~smol~docs]↗{{hi:smol}} is a compact alternative. [`Embassy`][c~embassy~docs]↗{{hi:Embassy}} targets embedded systems. See [The State of Async Rust: Runtimes][blog~state-of-async-rust]↗ for additional context.
+
+Other relevant projects include:
+
+- [![async-std][c~async-std~docs~badge]][c~async-std~docs]{{hi:async-std}} [![async-std~crates.io][c~async-std~crates.io~badge]][c~async-std~crates.io]↗: the maintainers [announced the project's discontinuation][async-std~discontinued] and recommend [`smol`][c~smol~docs]↗ as an alternative. Check each dependency's runtime support when migrating.
 - [![mio][c~mio~docs~badge]][c~mio~docs]{{hi:mio}} [Mio][c~mio~crates.io]↗ is a low-level, non-blocking I/O and event-notification library. It exposes readiness events; it does not execute futures.
 
 ### Execute Tasks with `smol` {#smol}
@@ -96,16 +95,3 @@ This example runs two asynchronous tasks and awaits both results:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write; review in depth](https://github.com/john-cd/rust_howto/issues/633)
-
-async-std has been officially discontinued; use smol instead
-
-Note that after smol came out years ago, async-std switched to use the same underlying async executor as smol. Thus, people switching from async-std to smol should get a very familiar experience, with much the same API structure.
-
-https://crates.io/crates/smol-axum
-
-https://github.com/ohkami-rs/ohkami uses smol
-
-</div>

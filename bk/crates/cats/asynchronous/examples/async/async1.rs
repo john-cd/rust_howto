@@ -41,10 +41,10 @@ fn second_task_2() -> impl Future<Output = ()> {
 
 /// Awaits the example tasks in sequence.
 async fn do_something() {
-    // Use `.await` to start executing the future.
+    // `.await` polls the future and suspends this task if it is not ready.
     let s = first_task().await;
-    // `await` yields control back to the executor, which may decide to do
-    // other work if the task is not ready, then come back here.
+    // If the future is not ready, the executor can run other work and poll it
+    // again later.
 
     // `join!` is like `.await`, but can wait for multiple futures
     // concurrently, returning when all branches complete.

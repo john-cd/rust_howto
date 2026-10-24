@@ -23,7 +23,7 @@ async fn main() {
     // This `println!` comes first:
     println!("hello");
 
-    // Calling `.await` on `op` starts executing `say_world`:
+    // Awaiting `op` polls it until it completes:
     op.await;
 }
 

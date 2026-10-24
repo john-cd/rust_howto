@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[async-std~discontinued]: https://github.com/async-rs/async-std/releases
 [ex~asynchronous~async-runtimes]: async.md#async-runtimes
 [ex~asynchronous~async-traits]: async_traits.md#async-traits
 [ex~asynchronous~basic-example]: async.md#basic-example
@@ -23,6 +24,7 @@
 [ex~asynchronous~selecting-futures]: futures.md#selecting-futures
 [ex~asynchronous~spawn-a-dedicated-thread]: async_and_blocking.md#spawn-a-dedicated-thread
 [ex~asynchronous~spawn-blocking]: async_and_blocking.md#spawn-blocking
+[ex~asynchronous~spawn-tasks]: async.md#spawn-tasks
 [ex~asynchronous~spawning]: tokio.md#spawning
 [ex~asynchronous~streams]: streams.md#streams
 [ex~asynchronous~tokio-runtime]: async_and_blocking.md#tokio-runtime
