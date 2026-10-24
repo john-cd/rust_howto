@@ -55,6 +55,10 @@ syslog = "7.0.0"
 
 [dev-dependencies]
 anyhow = "1.0.104"
+[[example]]
+name = "debugging"
+path = "examples/debugging/main.rs"
+test = true
 
 [[example]]
 name = "log"

@@ -48,3 +48,4 @@
 [p~parsing]: # "../parsing/index.md"
 [p~toml]: ../parser-implementations/toml.md
 [p~tracing]: tracing.md
+[p~debugging-in-vscode]: ../../../src/appendices/contributing/development_environment_setup.md#debug-rust-programs-on-windows

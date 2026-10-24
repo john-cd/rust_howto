@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Debugging, Logging
 
 [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Development tools::Debugging}}
@@ -7,9 +8,11 @@ Helps figure out what is going on with your code such as logging{{hi:Logging}}, 
 
 ## Debuggers
 
-| Topic | Rust Crates |
-|---|---|
+| Topic      | Rust Crates |
+| ---------- | ----------- |
 | [[debugger | Debuggers]] | `rust-gdb`, `rust-lldb`, or VS Code with CodeLLDB |
+
+For quick value inspection and panic backtraces, see [[debugging | Debugging]].
 
 {{#include debugging.incl.md}}
 
@@ -29,11 +32,11 @@ Helps figure out what is going on with your code such as logging{{hi:Logging}}, 
 
 ### `log` and Friends
 
-| Topic | Rust Crates |
-|---|---|
-| Logging Framework | [`log`][c~log~docs]↗{{hi:log}} is an older crate providing logging macros and facade. |
+| Topic                         | Rust Crates                                                                                                                                                                                                                                                             |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Logging Framework             | [`log`][c~log~docs]↗{{hi:log}} is an older crate providing logging macros and facade.                                                                                                                                                                                   |
 | Log Implementations (Loggers) | [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}: A simple logger that configures logging based on environment variables. [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} is a more flexible logger that supports [configuration][p~configuration] files (YAML, TOML, JSON). |
-| Log Filtering | Can be done with [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}, [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}}. |
+| Log Filtering                 | Can be done with [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}, [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}}.                                                                                                                                                          |
 
 {{#include log.incl.md}}
 
@@ -65,5 +68,5 @@ Helps figure out what is going on with your code such as logging{{hi:Logging}}, 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[index: reorganize; dedupe alternatives / `log` / config_log](https://github.com/john-cd/rust_howto/issues/319)
+  [index: reorganize; dedupe alternatives / `log` / config_log](https://github.com/john-cd/rust_howto/issues/319)
 </div>
