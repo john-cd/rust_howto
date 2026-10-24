@@ -24,3 +24,4 @@
 [rustdoc~intra-doc-links]: https://doc.rust-lang.org/rustdoc/write-documentation/linking-to-items-by-name.html
 [rustdoc~lints]: https://doc.rust-lang.org/rustdoc/lints.html
 [dprint~website]: https://dprint.dev/
+[typos~repo]: https://github.com/crate-ci/typos

@@ -1,0 +1,30 @@
+[default]
+# Reviewed book-specific commands, names, crates, product names, and acronyms.
+[default.extend-words]
+ba = "ba"
+Claus = "Claus"
+Cros = "Cros"
+flate = "flate"
+Hashi = "Hashi"
+Linz = "Linz"
+LOD = "LOD"
+Packt = "Packt"
+PN = "PN"
+ratatui = "ratatui"
+relm = "relm"
+ROBOTIS = "ROBOTIS"
+rquest = "rquest"
+RTO = "RTO"
+threed = "threed"
+
+[files]
+extend-exclude = [
+  "bk/src/refs/**",
+  "bk/src/**/refs.incl.md",
+  "bk/drafts/refs/**",
+  "bk/drafts/**/refs.incl.md",
+  "later/src/refs/**",
+  "later/src/**/refs.incl.md",
+  "bk/src/indices/**",
+  "bk/drafts/indices/**",
+]

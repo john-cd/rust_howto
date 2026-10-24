@@ -37,6 +37,8 @@ rustup toolchain install nightly-2026-10-22
 rustup component add rustfmt --toolchain nightly-2026-10-22
 ```
 
+Install the pinned spell checker with `cargo install typos-cli --version 1.51.1 --locked` on Windows, Linux, or macOS.
+
 You may need `sudo apt-get install libsqlite3-dev` on WSL.
 
 Review [`.devcontainer/Dockerfile`][rust-howto~Dockerfile~repo]↗ for other dependencies.
@@ -79,6 +81,14 @@ just mdfmt-check drafts/categories/development-tools_debugging/debugging.md
 ```
 
 Pass a path under `src`, `drafts`, or `../later/src` to format or check that file. The root configuration also excludes generated indices and build output.
+
+## Check spelling {#check-spelling}
+
+Install [`typos-cli`][typos~repo] version 1.51.1 with `cargo install typos-cli --version 1.51.1 --locked`. From `bk/`, run `just spell` to check the published book, drafts, and future chapters on Windows, Linux, or macOS. The root `_typos.toml` records reviewed project names and excludes generated reference lists.
+
+When Typos flags a correct project term, verify it in context and add it to `[default.extend-words]` in `_typos.toml` as `word = "word"`. Do not add a term before reviewing the reported location.
+
+The optional Unix-only `just spelling spell-aspell` recipe remains available for interactive Aspell checks; the cross-platform `just spell` recipe uses Typos.
 
 ## Install `just` (Alternative) {#alternative-just-install}
 

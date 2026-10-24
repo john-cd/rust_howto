@@ -9,18 +9,17 @@ _default:
 
 ## --- SPELL -----------------------------------------
 
-# Check spelling in markdown
-[unix]
-@spell extra_param='list':
-    ./spellcheck.sh {{ extra_param }}
+# Check spelling in book, draft, and future Markdown on every platform.
+spell:
+    cd {{ quote(root + "/..") }}; typos --force-exclude --config {{ quote(root + "/../_typos.toml") }} bk/src bk/drafts later/src
 
-[windows]
-@spell extra_param='':
-    Write-Error "Spell checking uses the Unix-only Aspell script."
-    exit 1
+# Run the legacy interactive Aspell checker on Unix.
+[unix]
+spell-aspell mode='list':
+    ./spellcheck.sh {{ mode }}
 
 [unix]
-add word:
+aspell-add-word:
     #!/usr/bin/env bash
     dic={{ join(source_directory(), "dictionary.txt") }};
     echo "{{ word }}" >> ${dic}

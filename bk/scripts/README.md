@@ -21,7 +21,7 @@ Use `just` to list root recipes and modules, then `just <module>` to list a modu
 | `precommit` | Fix, setup, Git Town configuration, and the native Python installer. | Fix, setup, Git Town configuration, and the Unix installer. |
 | `recipes` | Recipe table fixer runs with Python. | Recipe table fixer runs with Python. |
 | `refdefs` | Sort reference files with PowerShell. Other collection and validation scripts are Unix-only. | Sort, check, collect, and relabel recipes. |
-| `spelling` | `spell` returns an explicit error because the configured Aspell script is Unix-only. | Aspell check and dictionary update recipes. |
+| `spelling` | `spell` runs the pinned Typos configuration over book, draft, and future Markdown. `spell-aspell` and `aspell-add-word` retain the optional Unix-only Aspell workflow. | Same Typos check, plus the optional Aspell check and dictionary update recipes. |
 | `utils` | `mdbook-utils` and `templ` helper commands. | Same. |
 
 The full book build and normal `serve` recipe ensure the pinned `mdbook-indexing` preprocessor is installed. `quick` is an intentionally reduced Unix preview that skips preprocessors and other full-build checks.
