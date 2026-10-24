@@ -5,7 +5,7 @@
 //! Add the following to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
-//! bitvec = "1.0.1" # Or latest
+//! bitvec = "1.1.1"
 //! ```
 
 use bitvec::field::BitField;

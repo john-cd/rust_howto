@@ -6,8 +6,8 @@
 
 #![allow(unused_assignments)]
 
-// `String` is a growable, heap-allocated data structure that is
-// Unicode, not ASCII.
+// `String` stores UTF-8 bytes and can represent Unicode text; ASCII is a subset
+// of UTF-8.
 /// Creates and mutates a `String`.
 fn string() {
     // Create an empty string:
@@ -24,8 +24,7 @@ fn string() {
     s1.clear();
 
     // Alternative initialization from string literals:
-    // `to_string` is available on any type that implements
-    // the `Display` trait.
+    // `to_owned()` creates an owned `String` from a string slice.
     s1 = "contents".to_owned();
 
     println!("String: {s1}");
@@ -34,16 +33,20 @@ fn string() {
 // The `str` type, also called a 'string slice', is the most primitive string
 // type. It is usually seen in its borrowed form, `&str`.
 /// Creates string slices from a `String`.
+#[expect(
+    clippy::deref_by_slicing,
+    reason = "This example demonstrates indexing a String with a full range."
+)]
 fn string_slices() {
     let my_string = String::from("Rust is awesome!");
 
     // Create a string slice pointing to the entire `String`:
-    let slice1 = &*my_string; // Using `Index<RangeFull, Output = str>`.
+    let slice1 = &my_string[..]; // Using `Index<RangeFull, Output = str>`.
     println!("Slice of an entire `String`: '{slice1}'");
 
     // The following works as well:
     let _slice2 = &*my_string; // Using `Deref<Target = str>`.
-    let _slice3: &str = &my_string; // Type ascription.
+    let _slice3: &str = &my_string; // Type annotation; deref coercion converts `&String` to `&str`.
 
     // Create a string slice pointing to a part of the `String`:
     let slice4: &str = &my_string[0..4]; // "Rust"

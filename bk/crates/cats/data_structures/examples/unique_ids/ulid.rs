@@ -28,7 +28,7 @@ fn main() {
         // Or use `parse()`.
         Ok(parsed_ulid) => {
             println!("Successfully parsed ULID: {parsed_ulid}");
-            println!("Parsed timestamp: {:?} ms", parsed_ulid.datetime());
+            println!("Parsed timestamp: {} ms", parsed_ulid.timestamp_ms());
         }
         Err(e) => {
             println!("Failed to parse ULID: {e}");

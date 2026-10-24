@@ -72,7 +72,7 @@ fn main() {
         println!("{name}");
     }
 
-    // Use the  symmetric_difference` method to find elements in
+    // Use the `symmetric_difference` method to find elements in
     // either set but not both:
     let symmetric_difference = names.symmetric_difference(&other_names);
     println!("\nSymmetric difference of both sets:");

@@ -9,7 +9,7 @@ fn main() {
     // Initialize a stack with a minimum capacity.
     // The stack will be able to hold at least 5 elements without reallocating:
     let mut stack = Vec::with_capacity(5);
-    assert_eq!(stack.capacity(), 5);
+    assert!(stack.capacity() >= 5);
     assert_eq!(stack.len(), 0);
 
     // Append elements to the back of the `Vec` / top of the stack:

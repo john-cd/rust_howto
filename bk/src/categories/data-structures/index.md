@@ -4,16 +4,16 @@
 
 [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-Common data structures include [[data_types | arrays]] and [[vectors | vectors]], which are contiguous block of memory that stores elements of the same data type; [[stacks_and_queues | stacks]] ("last-in, first-out" (LIFO) data structures); [[stacks_and_queues | queues]] ("first-in, first-out" (FIFO) data structures); [[linked_lists |linked lists]] (sequences of nodes, where each node contains data and a pointer to the next node); [[hashmaps | maps]] (aka dictionaries, which store key-value pairs);  [[hashmaps | sets]] (collections of unique elements); [[b-trees | trees]] (hierarchical data structures consisting of nodes with parent-child relationships); and [[graphs | graphs]].
+Common data structures include [[data_types | arrays]] and [[vectors | vectors]], which store elements of the same type contiguously; [[stacks_and_queues | stacks]] ("last-in, first-out" (LIFO) data structures); [[stacks_and_queues | queues]] ("first-in, first-out" (FIFO) data structures); [[linked_lists | linked lists]] (sequences of nodes that contain data and links to neighboring nodes); [[hashmaps | maps]] (dictionaries that store key-value pairs); [[hashmaps | sets]] (collections of unique elements); [[b-trees | trees]] (hierarchical data structures with parent-child relationships); and [[graphs | graphs]].
 
-The `std::collections` module of the standard library includes:
+The standard library provides these common collections. `Vec` is defined in `std::vec` and `String` in `std::string`; neither is part of `std::collections`:
 
 - [[vectors | `Vec<T>`]] (Vector) is a dynamic array that can grow or shrink as needed. It's the most commonly used collection in Rust and is similar to a dynamic array or list in other languages. It provides fast access by index.
 - [[hashmaps | `HashMap<K, V>`]] (Hash Map) stores key-value pairs, allowing for efficient lookup of values based on their keys. It uses a hash function for fast average-case access.
 - [[b-trees | `BTreeMap<K, V>`]] (B-Tree Map) is similar to `HashMap`, but it keeps the keys sorted. It provides ordered access to key-value pairs.
 - [[hashmaps | `HashSet<T>`]] (Hash Set) stores a collection of unique elements. Used for efficiently checking membership and ensuring uniqueness.
 - [[btrees | `BTreeSet<T>`]] (B-Tree Set) is similar to `HashSet`, but it keeps the elements sorted.
-- [[linkedlist | `LinkedList<T>`]] is a doubly linked list. Useful for frequent insertions and deletions at arbitrary positions, but less efficient for random access.
+- [[linkedlist | `LinkedList<T>`]] is a doubly linked list with efficient operations at either end. Stable Rust does not provide the cursor API needed for efficient insertions and deletions at arbitrary positions; indexed access also takes O(n) time.
 - [[stack_and_queue | `VecDeque<T>`]] (Vector Deque) is a double-ended queue. Allows efficient insertion and deletion at both ends.
 - [[binary_heaps | `BinaryHeap<T>`]] is a binary heap, often used to implement a priority queue.
 - [[strings | `String`]] is a growable, UTF-8 encoded string. It's a fundamental data structure for working with text.
@@ -87,7 +87,6 @@ Refer to the [[language | Language]] and [[standard-library | Standard Library]]
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
-
 ## See Also
 
 - [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
@@ -99,7 +98,8 @@ Refer to the [[language | Language]] and [[standard-library | Standard Library]]
 - [[dataframes | Dataframes]].
 - [[concurrent_data_structures | Concurrent Data Structures]].
 - [`scroll`][c~scroll~docs]↗: easily and efficiently read/write types from data containers like byte arrays.
+
 <div class="hidden">
-[data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
-[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
+  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

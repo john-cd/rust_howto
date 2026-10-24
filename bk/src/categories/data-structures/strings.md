@@ -33,7 +33,7 @@ The relationship between [`String`][c~std::string::String~docs]↗{{hi:std::stri
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-`print!` and its siblings (like `println!` and `format!`) take a format string as its primary argument and prints it to the standard output (the terminal, usually). Format strings are string literals that can contain placeholders, indicated by curly braces `{}`. These placeholders tell `print!` where to insert values provided as additional arguments or in-scope variables. Use `{:?}` placeholders for [`std::fmt::Debug`][c~std::fmt::Debug~docs]↗{{hi:std::fmt::Debug}} output or `{:#?}` for pretty printing{{hi:Pretty printing}}.
+`print!` and `println!` take a format string and write formatted text to standard output; `format!` returns a `String`. Format strings are string literals that can contain placeholders, indicated by curly braces `{}`. These placeholders tell the macro where to insert values provided as additional arguments or in-scope variables. Use `{:?}` placeholders for [`std::fmt::Debug`][c~std::fmt::Debug~docs]↗{{hi:std::fmt::Debug}} output or `{:#?}` for pretty printing{{hi:Pretty printing}}.
 
 You may also use [`dbg`][c~std::dbg~docs]↗{{hi:std::dbg}} for debug output.{{hi:Debug output}} `dbg!` returns ownership of the expression's value, so it can be inserted almost anywhere.
 
@@ -82,4 +82,5 @@ See:
 - [[value_formatting | Value Formatting]].
 
 [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+
 </div>

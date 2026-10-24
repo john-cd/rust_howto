@@ -4,7 +4,7 @@
 
 {{#include bit_arrays.incl.md}}
 
-A bit array (also known as bit map, bit set, bit string, or bit vector) is an data structure that allocates one or more adjacent bits for specific purposes, so that any single bit or group of bits within the structure can be set or inspected.
+A bit array (also known as a bitmap, bit set, bit string, or bit vector) is a data structure that stores adjacent bits for specific purposes, so that any single bit or group of bits within the structure can be set or inspected.
 
 It is a way to represent a set of boolean flags or values with a limited range in a compact manner, using individual bits or small group of bits within an integer or an array of integers. Bit arrays save memory and potentially improve performance.
 
@@ -62,5 +62,5 @@ Unfortunately, they can use too much memory. To compensate, [`roaring`][c~roarin
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

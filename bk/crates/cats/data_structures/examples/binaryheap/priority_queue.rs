@@ -5,7 +5,7 @@
 //! Add this dependency to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
-//! priority-queue = "1.3.1" # Or latest.
+//! priority-queue = "2.7.0"
 //! ```
 
 use std::cmp::Reverse;

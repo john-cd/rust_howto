@@ -6,12 +6,12 @@
 
 An array or fixed-capacity collection stores its elements inline with the collection value. A local value is usually placed on the stack, but the same value can also be stored in static memory or inside another allocation. The important distinction is whether the collection asks an allocator for more space as it grows.
 
-| Crate | Capacity and growth | When the collection is full |
-|-------|---------------------|-----------------------------|
-| [`arrayvec`][c~arrayvec~docs]↗ | Fixed capacity; no allocation when growing | `push` panics; `try_push` returns the rejected item |
-| [`heapless`][c~heapless~docs]↗ | Fixed capacity; does not use a heap allocator | Operations such as `push` return an error with the rejected item |
-| [`smallvec`][c~smallvec~docs]↗ | Stores a configured number of elements inline, then can allocate and grow | Grows like a vector after spilling to the heap |
-| [`tinyvec`][c~tinyvec~docs]↗ | With `alloc`, `TinyVec` starts inline and can move to heap storage; without it, `ArrayVec` has fixed capacity | `TinyVec` grows when it spills; `ArrayVec` panics if full |
+| Crate                          | Capacity and growth                                                                                           | When the collection is full                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| [`arrayvec`][c~arrayvec~docs]↗ | Fixed capacity; no allocation when growing                                                                    | `push` panics; `try_push` returns the rejected item              |
+| [`heapless`][c~heapless~docs]↗ | Fixed capacity; does not use a heap allocator                                                                 | Operations such as `push` return an error with the rejected item |
+| [`smallvec`][c~smallvec~docs]↗ | Stores a configured number of elements inline, then can allocate and grow                                     | Grows like a vector after spilling to the heap                   |
+| [`tinyvec`][c~tinyvec~docs]↗   | With `alloc`, `TinyVec` starts inline and can move to heap storage; without it, `ArrayVec` has fixed capacity | `TinyVec` grows when it spills; `ArrayVec` panics if full        |
 
 Fixed-capacity collections are useful when a maximum size is known or dynamic allocation is unavailable. Choose an inline capacity with care: the collection value occupies space for that capacity even when it is empty, and large local values can use substantial stack space. `SmallVec` and `TinyVec` trade a larger inline value for avoiding allocations in common small cases. These layouts do not guarantee faster code; measure when performance matters.
 
@@ -21,7 +21,7 @@ Fixed-capacity collections are useful when a maximum size is known or dynamic al
 
 [`arrayvec`][c~arrayvec~docs]↗{{hi:arrayvec}} provides the types `ArrayVec` and `ArrayString`, which are stack-allocated, fixed-capacity array-backed vector and string types.
 
-`ArrayVec` is a vector-like collection with a fixed capacity that is determined at compile time. `ArrayVec` allocates its storage on the stack rather than on the heap, which can lead to better performance. It offers a simple API but also dereferences to a `slice`, so that the full `slice` API is available:
+`ArrayVec` is a vector-like collection with a fixed capacity determined at compile time. Its elements are stored inline in the array-backed value, so it does not allocate when it grows; this does not by itself guarantee better performance. It offers a simple API and dereferences to a `slice`, so the full `slice` API is available:
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/stack_allocated/arrayvec.rs:example}}
@@ -66,7 +66,7 @@ This can be particularly useful for [[embedded]] systems or performance-critical
 - `heapless::pool::object::Object`, an object managed by an object pool.
 - `heapless::String`, a fixed capacity [`String`][c~std::string::String~docs]↗.
 - `heapless::Vec`, a fixed capacity `Vec`.
-- `heapless::mpmc::Q*`, a fixed-capacity multiple-producer multiple-consumer lock-free queues.
+- `heapless::mpmc::Queue`, a fixed-capacity multiple-producer multiple-consumer queue (the `Q*` aliases were removed in heapless 0.9; this module is deprecated in that release).
 - `heapless::spsc::Queue`, a statically allocated single-producer single-consumer lock-free queue.
 
 Keep in mind that choosing `heapless` is a trade-off: gain performance and determinism, but lose the flexibility of dynamic resizing. The following example demonstrates the basic usage of `heapless` collections:
@@ -89,5 +89,5 @@ Keep in mind that choosing `heapless` is a trade-off: gain performance and deter
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

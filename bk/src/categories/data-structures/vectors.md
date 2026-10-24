@@ -34,16 +34,21 @@ If allocation fails, Rust will abort the program using `alloc::handle_alloc_erro
 Use the following suggestions to optimize memory usage:
 
 ```rust,editable
-// If you know the size in advance, using `Vec::with_capacity(n)` can avoid multiple reallocations:
-let mut v = Vec::with_capacity(100);
-// Shrink after removing elements or if the vector has grown significantly beyond what you need:
-v.shrink_to_fit();
-// Cloning large vectors or their elements can be costly:
-// - Prefer borrowing (`&T`) or moving (`T`) when possible.
-// - Use slices when you don't need ownership:
-fn process(_data: &[T]) { }
-// Reuse vectors: Instead of creating new vectors in a loop, clear and reuse them to keep the capacity:
-v.clear();
+/// Processes a slice without taking ownership of its elements.
+fn process<T>(_data: &[T]) {}
+
+fn main() {
+    // If you know the size in advance, using `Vec::with_capacity(n)` can avoid multiple reallocations.
+    let mut v: Vec<i32> = Vec::with_capacity(100);
+    v.extend([1, 2, 3]);
+    // Shrink after removing elements or if the vector has grown significantly beyond what you need.
+    v.shrink_to_fit();
+    // Prefer borrowing or moving over cloning large vectors or their elements.
+    // Use slices when you do not need ownership.
+    process(&v);
+    // Reuse vectors in loops to keep their capacity.
+    v.clear();
+}
 ```
 
 For fixed-size collections, use arrays. For small collections, using stack-allocated vectors may be more efficient by avoiding heap allocation altogether.
@@ -73,5 +78,5 @@ Read [Implementing Vec][book~rustonomicon~implementing-vec]↗ for more details 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

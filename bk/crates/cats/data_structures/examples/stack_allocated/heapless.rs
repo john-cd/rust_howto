@@ -53,9 +53,8 @@ fn main() {
     map.insert("two", 2).unwrap();
     map.insert("three", 3).unwrap();
     map.insert("four", 4).unwrap();
-    // If a key already exists in the map, the key remains and retains in its
-    // place in the order, its corresponding value is updated with the new
-    // value and the older value is returned inside `Some(_)`.
+    // When a key already exists, its position in iteration order stays the
+    // same, its value is updated, and the old value is returned in `Some(_)`.
     assert_eq!(map.insert("three", 33), Ok(Some(3)));
 
     println!("Map: {map:?}");

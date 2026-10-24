@@ -9,8 +9,7 @@ use crates_io_api::Category;
 use crates_io_api::SyncClient;
 use multimap::MultiMap;
 
-// Calls the `crates.io` API client and retrieve the categories a given crate
-// belongs to.
+// Calls the crates.io API client and retrieves the categories for a crate.
 /// Returns the categories of the crate `crate_name`, as listed on `crates.io`.
 fn get_categories_for_crate(crate_name: &str) -> Result<Vec<Category>> {
     let client = SyncClient::new(

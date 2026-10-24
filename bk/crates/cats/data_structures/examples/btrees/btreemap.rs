@@ -40,7 +40,7 @@ fn main() {
         println!("Removed Dune, rating was {rating}");
     }
 
-    // Iterate over a range of books (lexicographically between "P" and "T"):
+    // Iterate over a range of books (lexicographically between "P" and "R"):
     println!("\nRatings for books between 'P' and 'R':");
     for (book, rating) in book_ratings.range("P".."R") {
         println!("{book}: {rating}");

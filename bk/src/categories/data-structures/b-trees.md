@@ -31,7 +31,7 @@
 
 `BTreeSet` is similar to `HashSet`, but it keeps the elements sorted.
 
-It is based on a self-balancing tree, specifically a B-Tree. `BTreeSet` allows storing unique elements in a sorted order and provides efficient operations for insertion, deletion, and lookup, with average time complexity of O(log n):
+It is based on a self-balancing tree, specifically a B-Tree. `BTreeSet` stores unique elements in sorted order and provides insertion, deletion, and lookup in O(log n) worst-case time:
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/btrees/btreeset.rs:example}}
@@ -50,5 +50,5 @@ Refer as well to the [`ordered-float`][c~ordered-float~docs]↗{{hi:ordered-floa
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

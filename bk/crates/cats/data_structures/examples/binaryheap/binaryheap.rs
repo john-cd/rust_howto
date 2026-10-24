@@ -28,7 +28,7 @@ fn main() {
     assert_eq!(heap.peek(), Some(&9));
 
     // We can iterate over the items in the heap, although they are
-    // returned in a random order:
+    // returned in an arbitrary order:
     println!("Iteration:");
     for x in &heap {
         println!("{x}");

@@ -37,7 +37,7 @@ fn main() {
     assert!(small_vec.spilled());
     // The capacity grows upon spilling (typically doubling the original
     // capacity)
-    assert_eq!(small_vec.capacity(), 8);
+    assert!(small_vec.capacity() >= 5);
 
     // Print the state of the SmallVec after pushing beyond capacity.
     println!("SmallVec (heap-allocated): {small_vec:?}");
@@ -56,7 +56,7 @@ fn main() {
     // Print the state of the SmallVec after popping.
     println!("SmallVec after popping: {small_vec:?}");
 
-    // SmallVec points to a slice, so we can use normal slice indexing and
+    // SmallVec dereferences to a slice, so we can use normal slice indexing and
     // other slice methods.
     small_vec[0] = small_vec[1] + small_vec[2];
     small_vec.sort();

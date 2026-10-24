@@ -9,7 +9,7 @@
 [![indexmap][c~indexmap~docs~badge]][c~indexmap~docs] [![indexmap~crates.io][c~indexmap~crates.io~badge]][c~indexmap~crates.io] [![indexmap~repo][c~indexmap~repo~badge]][c~indexmap~repo] [![indexmap~lib.rs][c~indexmap~lib.rs~badge]][c~indexmap~lib.rs]{{hi:indexmap}}{{hi:Hashmap}}{{hi:No_std}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 [`indexmap`][c~indexmap~docs]↗{{hi:indexmap}} offers the `IndexMap` data structure that combines the features of a hashmap and a vector.
-It is a hash table that keeps track of insertion order and allows efficiently iteration over its elements in that order.
+It is a hash table that keeps track of insertion order and allows efficient iteration over its elements in that order.
 
 This example demonstrates the usage of `IndexMap`, including methods for accessing elements by index and using the `entry` API:
 
@@ -22,6 +22,8 @@ This example demonstrates the usage of `IndexMap`, including methods for accessi
 [![multimap][c~multimap~docs~badge]][c~multimap~docs] [![multimap~crates.io][c~multimap~crates.io~badge]][c~multimap~crates.io] [![multimap~repo][c~multimap~repo~badge]][c~multimap~repo] [![multimap~lib.rs][c~multimap~lib.rs~badge]][c~multimap~lib.rs]{{hi:multimap}}
 
 A `MultiMap` allows storing multiple values for a single key, which can be useful to associate several items with the same identifier. [`multimap`][c~multimap~docs]↗ is implemented as a thin wrapper around [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}.
+
+This example queries the crates.io API for crate categories at run time, so it requires network access.
 
 The following example demonstrates how to use a `MultiMap`:
 
@@ -55,5 +57,5 @@ This example showcases how to create, insert, access, and remove elements from a
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

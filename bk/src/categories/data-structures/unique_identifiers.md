@@ -20,7 +20,7 @@ A UUID is a unique 128-bit value, stored as 16 octets, and regularly formatted a
 
 [![ulid][c~ulid~docs~badge]][c~ulid~docs] [![ulid~crates.io][c~ulid~crates.io~badge]][c~ulid~crates.io] [![ulid~repo][c~ulid~repo~badge]][c~ulid~repo] [![ulid~lib.rs][c~ulid~lib.rs~badge]][c~ulid~lib.rs]{{hi:ulid}}{{hi:Identifier}}{{hi:Sortable}}{{hi:ulid}}{{hi:Uuid}}
 
-ULID stands for Universally Unique Lexicographically Sortable Identifier, which is a type of unique identifier that is 128 bits long and can be lexicographically sorted in order of creation. It is designed to avoid some limitations of UUIDs, such as being more compact and allowing for easier sorting. Of the 128-bits, the first 48 are a Unix timestamp in milliseconds. The remaining 80 are random. The first 48 provide for lexicographic sorting and the remaining 80 ensure that the identifier is unique. Canonically, a ULID is represented as a 26 character Crockford Base32-encoded string. [ulid][c~ulid~docs]↗ implements ULIDs in Rust:
+ULID stands for Universally Unique Lexicographically Sortable Identifier. Like a UUID, it stores a 128-bit value. Its canonical text form uses 26 Crockford Base32 characters, compared with 36 characters for a hyphenated UUID, so it is more compact only in text form. The first 48 bits encode a Unix timestamp in milliseconds, and the remaining 80 bits are random to reduce collision risk. UUIDv7 is another time-ordered identifier format; the [`uuid`][c~uuid~docs]↗ crate supports it when its `v7` feature is enabled. The [`ulid`][c~ulid~docs]↗ crate implements ULIDs in Rust:
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/unique_ids/ulid.rs:example}}
@@ -34,5 +34,5 @@ ULID stands for Universally Unique Lexicographically Sortable Identifier, which 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>
