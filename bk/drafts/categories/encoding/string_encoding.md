@@ -3,25 +3,37 @@
 
 {{#include string_encoding.incl.md}}
 
+## Text and UTF-8 {#text-and-utf-8}
+
+Rust `String` and `&str` values always contain valid UTF-8. A string's `.len()` is its byte length, while `.chars()` iterates Unicode scalar values (`char`), not user-perceived characters. A visible symbol may be made of multiple scalar values; use a grapheme segmentation library such as [`unicode-segmentation`][c~unicode-segmentation~docs]↗ when text editing or display needs grapheme clusters.
+
+Converting arbitrary bytes with `String::from_utf8` checks that the bytes are valid UTF-8 and returns an error otherwise. `String::from_utf8_lossy` replaces invalid sequences with the replacement character. For UTF-16 or a legacy character encoding, decode with an encoding-specific API and choose deliberately how invalid input is handled; do not treat arbitrary bytes as a Rust string.
+
 ## Percent-encode a String {#percent-encoding}
 
 [![percent-encoding][c~percent-encoding~docs~badge]][c~percent-encoding~docs]{{hi:percent-encoding}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-Encode an input string with [percent-encoding][wikipedia~percent-encoding]↗ using the [`percent-encoding`][c~percent-encoding~docs]↗{{hi:percent-encoding}} crate. Then decode using the [`percent-encoding::percent_decode`][c~percent-encoding::percent_decode~docs]↗{{hi:percent-encoding::percent_decode}} function.
+Percent encoding represents bytes as `%` followed by two hexadecimal digits. The correct encode set depends on the URL component and protocol. Do not percent-encode an entire URL with one generic set. This example defines a set for a URL fragment and decodes the result back to UTF-8.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/string_encoding/percent_encode.rs:example}}
 ```
 
-The encode set defines which bytes (in addition to non-ASCII and controls) need to be percent-encoded. The choice of this set depends on context. For example, [`url`][c~url~docs]↗{{hi:url}} encodes `?` in a [URL][p~url] path but not in a query string.
+## Encode a URL Component {#url-component-encoding}
 
-The return value of [encoding][p~encoding] is an iterator of `&str` [slices][p~slices] which collect into a [`std::string::String`][c~std::string::String~docs]↗{{hi:std::string::String}}.
+[![percent-encoding][c~percent-encoding~docs~badge]][c~percent-encoding~docs]{{hi:percent-encoding}}
 
-## Encode a String as application/x-www-form-urlencoded {#url}
+The [`percent-encoding`][c~percent-encoding~docs]↗ crate also provides common encode sets. The example encodes one component and checks that the decoded bytes form valid UTF-8. For complete URL parsing and construction, use a URL API rather than concatenating encoded pieces by hand.
 
-[![url][c~url~docs~badge]][c~url~docs] [![url~crates.io][c~url~crates.io~badge]][c~url~crates.io] [![url~repo][c~url~repo~badge]][c~url~repo] [![url~lib.rs][c~url~lib.rs~badge]][c~url~lib.rs]{{hi:url}}{{hi:Parser}}{{hi:url}}[![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}[![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}[![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+```rust,editable
+{{#include ../../../crates/cats/encoding/examples/string_encoding/percent_encoding.rs:example}}
+```
 
-Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-www-form-urlencoded]↗{{hi:application/x-www-form-urlencoded}} syntax using the [`form_urlencoded::byte_serialize`][c~form_urlencoded::byte_serialize~docs]↗{{hi:form_urlencoded::byte_serialize}} and subsequently decodes it with [`form_urlencoded::parse`][c~form_urlencoded::parse~docs]↗{{hi:form_urlencoded::parse}}. Both functions return iterators that collect into a [`std::string::String`][c~std::string::String~docs]↗{{hi:std::string::String}}.
+## Encode Form Data as `application/x-www-form-urlencoded` {#url}
+
+[![url][c~url~docs~badge]][c~url~docs] [![url~crates.io][c~url~crates.io~badge]][c~url~crates.io] [![url~repo][c~url~repo~badge]][c~url~repo] [![url~lib.rs][c~url~lib.rs~badge]][c~url~lib.rs]{{hi:url}}
+
+Form encoding uses `+` for spaces and percent-escapes other bytes as required by `application/x-www-form-urlencoded`. This is a distinct format from percent-encoding an arbitrary URL component. The `url` crate provides iterators for encoding and parsing form data.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/string_encoding/url_encode.rs:example}}
@@ -29,13 +41,9 @@ Encodes a string into [`application/x-www-form-urlencoded`][web-application/x-ww
 
 ## Encode and Decode Hexadecimal {#data-encoding}
 
-[![data-encoding][c~data-encoding~docs~badge]][c~data-encoding~docs]{{hi:Data encoding}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
+[![data-encoding][c~data-encoding~docs~badge]][c~data-encoding~docs]{{hi:Data encoding}} [![cat~encoding][cat~encoding~badge]][cat~encoding]
 
-The [`data-encoding`][c~data-encoding~docs]↗{{hi:data-encoding}} crate provides a `HEXUPPER::encode` method which takes a `&[u8]` and returns a [`std::string::String`][c~std::string::String~docs]↗{{hi:std::string::String}} containing the hexadecimal representation{{hi:Hexadecimal representation}} of the data.
-
-Similarly, a [`HEXUPPER::decode`][c~data-encoding::HEXUPPER~docs]↗{{hi:HEXUPPER::decode}} method is provided which takes a `&[u8]` and returns a `Vec<u8>` if the input data is successfully decoded.
-
-The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this value to the expected value.
+Hexadecimal represents each byte as two base-16 digits. The [`data-encoding`][c~data-encoding~docs]↗ crate exposes constants such as `HEXUPPER` for encoding and decoding byte sequences. Decoding can fail when the input contains invalid characters or has an invalid length.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/string_encoding/hex.rs:example}}
@@ -45,26 +53,17 @@ The example below coverts `&[u8]` data to hexadecimal equivalent. Compares this 
 
 [![base64][c~base64~docs~badge]][c~base64~docs]{{hi:base64}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-Encodes byte slice into [`base64`][c~base64~docs]↗{{hi:base64}} {{hi:base64}} String using [`base64::encode`][c~base64::encode~docs]↗{{hi:base64::encode}} and decodes it with [`base64::decode`][c~base64::decode~docs]↗{{hi:base64::decode}}.
+Base64 represents arbitrary bytes as ASCII text; it is not encryption or compression. The current `base64` crate API uses an `Engine`, such as `BASE64_STANDARD`, to encode a byte slice and decode the resulting text. Decoding returns bytes, which must be validated or decoded separately if they represent text.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/string_encoding/base64.rs:example}}
 ```
 
-## URL Encoding {#percent-encoding}
-
-[![percent-encoding][c~percent-encoding~docs~badge]][c~percent-encoding~docs] [![percent-encoding~crates.io][c~percent-encoding~crates.io~badge]][c~percent-encoding~crates.io] [![percent-encoding~repo][c~percent-encoding~repo~badge]][c~percent-encoding~repo] [![percent-encoding~lib.rs][c~percent-encoding~lib.rs~badge]][c~percent-encoding~lib.rs]{{hi:percent-encoding}}
-
-[`percent-encoding`][c~percent-encoding~docs]↗{{hi:percent-encoding}} handles URL encoding and decoding.
-
-```rust,editable
-{{#include ../../../crates/cats/encoding/examples/string_encoding/percent-encoding.rs:example}}
-```
-
 ## Related Topics {#related-topics .skip}
 
-FIXME
-
+- [Rust strings][p~strings].
+- [Encoding and serialization][p~encoding].
+- [URL parsing and construction][p~url].
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

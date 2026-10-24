@@ -25,6 +25,8 @@
 [ex~encoding~serialize-to-csv-using-serde]: csv.md#serialize-to-csv-using-serde
 [ex~encoding~serialize-to-csv]: csv.md#serialize-to-csv
 [ex~encoding~toml]: complex_encoding.md#toml
+[ex~encoding~text-and-utf-8]: string_encoding.md#text-and-utf-8
+[ex~encoding~url-component-encoding]: string_encoding.md#url-component-encoding
 [ex~encoding~transform-csv-column]: csv.md#transform-csv-column
 [ex~encoding~type-casts]: typecasts.md#type-conversion-using-as
 [ex~encoding~url]: string_encoding.md#url
