@@ -1,125 +1,75 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# Optimize Linking {#faster-linking}
+# Faster Linking {#faster-linking}
 
 {{#include faster_linking.incl.md}}
 
 [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
-Optimizing Rust linking involves several strategies to reduce binary size and link time.
+Linking can be a significant part of a Rust build, especially after an incremental compile. Measure before changing linkers, and compare the full build rather than link time alone. The [compilation duration guide](reduce_compilation_duration.md) covers build timing and other ways to shorten iteration.
 
-- ThinLTO: A variant of LTO that can offer a better balance between compile time and link time.
-- Reducing Dependencies: Fewer dependencies mean less code for the linker to process. Analyze your dependencies with [cargo][p~cargo] tree.
-- Code Size Reduction: Smaller code size can lead to faster linking. Techniques like minimizing [generics][p~generics] and using more compact data structures can help.
-- Linker Flags: Experiment with linker flags, but be careful and measure the impact.
-- Profiling: Use profiling tools to identify bottlenecks in the linking process. This is less common than compile-time profiling.
+## Rust's Default Linux Linker {#rust-lld}
 
-- [[development-tools_profiling | Development Tools Profiling]].
-
-## `rustc` Configuration {rustc-configuration .skip}
-
-### Link-Time Optimization (LTO) {#lto .skip}
-
-Enabling LTO allows the compiler to perform optimizations across the entire program during the linking phase. This can significantly reduce code size and improve [performance][p~performance] by eliminating dead code and inlining functions more effectively. Use the [`-C lto=fat`][book~cargo~profiles-lto]↗{{hi:LTO}} or `-C lto=thin` (faster but less aggressive) compiler flags. LTO typically requires more memory and time during compilation.
-
-Link-Time Optimization (LTO) is controlled via [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}. Can sometimes improve linking times, but often increases compile time. Experiment to see if it helps.
-
-## Codegen Units {#codegen-units .skip}
-
-Increasing the number of codegen units (using -C codegen-units=N) can improve parallelism during compilation, potentially reducing compile time. However, this can sometimes hinder LTO effectiveness. Experiment to find the optimal balance.
-
-## Panic Strategy {#panic-strategy .skip}
-
-The default panic strategy (unwind) includes unwinding information, which increases binary size. Switching to the abort panic strategy (using `-C panic=abort`) reduces binary size but prevents stack unwinding in case of a panic. Use abort only if unwinding is not required.
-
-## Strip Symbols {#strip-symbol .skip}
-
-Stripping debug symbols from the final binary using compiler flags like [`-C strip=debuginfo`][book~cargo~profiles-strip]↗{{hi:strip}} significantly reduces binary size. This is essential for release builds.
-
-## Minimize Dependencies {#minimize-dependencies .skip}
-
-Reducing the number of dependencies, especially those with large or complex codebases, directly impacts link time and binary size. Analyze dependencies and consider alternatives if possible.
-
-## Static Linking {#static-linking .skip}
-
-Static linking (using `-C prefer-dynamic=no`) can sometimes reduce binary size if shared libraries introduce overhead. However, it can also increase the size if multiple binaries link against the same library. Consider the trade-offs.
-
-Generally faster than dynamic linking. Often the default in Rust.
-
-## Optimize Dependencies {#optimize-dependencies .skip}
-
-Ensure dependencies are also built with optimizations enabled. This can be achieved by setting appropriate build profiles for dependencies in your [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
-
-## Profile-Guided Optimization (PGO) {#pgo .skip}
-
-PGO uses runtime profiling data to guide compiler optimizations, potentially leading to better [performance][p~performance] and smaller binaries. This involves a more complex build process but can be beneficial for performance-critical applications.
-
-## Linker Flags {#linker-flags .skip}
-
-Using linker-specific flags (e.g., -Wl,--gc-sections for GCC/ld) can help remove unused code and data sections, further reducing binary size.
-
-## Incremental Compilation {#incremental-compilation .skip}
-
-While primarily focused on compile time, incremental compilation can also indirectly affect linking by reducing the amount of work the linker needs to do. Ensure it's enabled.
-
-Incremental Linking: [Cargo][p~cargo]'s incremental compilation can help, but sometimes changes can invalidate the cache and require a full relink.
-
-- [[incremental_computation | Incremental Computation]].
-
-## Conditional Compilation {#conditional-compilation .skip}
-
-This feature can improve compile times, especially for larger crates.
-
-## Choosing the Right Linker {choosing-the-right-linker .skip}
-
-The Rust compiler spends a lot of time in the "link" step. LLD is much faster at linking{{hi:Linking}} than the default Rust linker.
-
-The default linker does a good job, but there are faster alternatives depending on the operating system:
-
-- [`lld`][lld~website]↗{{hi:lld}} on Windows and Linux, a linker developed by the LLVM{{hi:LLVM}} project;
-- [`zld`][zld~repo]↗{{hi:zld}} on MacOS. [![zld~repo][zld~repo~badge]][zld~repo].
-
-To speed up the linking phase, install the alternative linker on your machine and add this [configuration][p~configuration] file to the project:
+Starting with stable Rust 1.90, `rustc` uses `rust-lld` by default for `x86_64-unknown-linux-gnu` ([announcement][blog~rust-lld~1.90]↗). Most projects on that target need no extra linker configuration. The change does not apply to every operating system or target triple. If a project encounters an incompatibility, opt out for that target with:
 
 ```toml
 # .cargo/config.toml
-# On Windows
-# ```
-# Cargo install -f cargo-binutils
-# Rustup Component add llvm-tools-preview
-# ```
-[target.x86_64-pc-windows-msvc]
-rustflags = ["-C", "link-arg=-fuse-ld=lld"]
-[target.x86_64-pc-windows-gnu]
-rustflags = ["-C", "link-arg=-fuse-ld=lld"]
-
-# On Linux:
-# - Ubuntu, `sudo apt-get Install lld clang`
-# - Arch, `sudo Pacman -S lld clang`
 [target.x86_64-unknown-linux-gnu]
-rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
-
-# On MacOS, `brew Install michaeleisel/zld/zld`
-[target.x86_64-apple-darwin]
-rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
-[target.aarch64-apple-darwin]
-rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
+rustflags = ["-C", "linker-features=-lld"]
 ```
 
-[`cargo-binutils`][c~cargo-binutils~docs]↗{{hi:cargo-binutils}} packages Cargo subcommands to invoke the LLVM tools shipped with the Rust toolchain.
+## Use LLD with Clang {#lld-linker}
 
-### Alternative - `mold` Linker {#mold-linker}
-
-[![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
-
-[`mold`][mold~repo]↗{{hi:mold}} is up to 5x faster than [`lld`][lld~website]↗{{hi:lld}}, but with a few caveats like limited platform support and occasional stability issues. To install [`mold`][c~mold~docs]↗{{hi:mold}}, run `sudo apt-get install mold clang` in Ubuntu.
-
-You will also need to add the following to your [`cargo`][c~cargo~docs]↗{{hi:cargo}} config at `.cargo/config.toml`:
+LLVM's [`lld`][lld~website]↗{{hi:lld}} is a fast linker available on several platforms. On Linux targets that do not use Rust's default `rust-lld`, install Clang and LLD, then configure Cargo to pass the LLD selection through Clang:
 
 ```toml
+# .cargo/config.toml
+[target.aarch64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+```
+
+Use a linker and target triple supported by the host toolchain. On Windows, use the LLVM linker support appropriate to the MSVC or GNU target; the Linux `-fuse-ld` example does not apply unchanged.
+
+## Use mold on Linux {#mold-linker}
+
+[`mold`][mold~repo]↗{{hi:mold}} is a fast ELF linker for Linux. Install it and Clang with your system package manager, then select its path in Cargo:
+
+```toml
+# .cargo/config.toml
 [target.x86_64-unknown-linux-gnu]
 linker = "clang"
 rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 ```
+
+Adjust the path for your installation. `mold` does not target macOS or Windows.
+
+## Try Wild on Linux {#wild-linker}
+
+[`wild`][wild~repo]↗{{hi:wild}} is an actively developed linker focused on fast iterative builds. It currently targets Linux; check its support matrix before using it, and treat it as an additional toolchain component rather than a drop-in choice for every project.
+
+```sh
+cargo install --locked wild-linker
+```
+
+```toml
+# .cargo/config.toml
+[target.x86_64-unknown-linux-gnu]
+linker = "wild"
+```
+
+## Use the Apple Linker on macOS {#apple-linker}
+
+Xcode 15 introduced Apple's newer linker (`ld-prime`), which is selected by Xcode for supported Apple platform binaries ([Xcode 15 release notes][apple~xcode-15~release-notes]↗). Rust projects using the Apple target toolchain generally use the linker selected by the installed Xcode or Command Line Tools. Older instructions to install [`zld`][zld~repo]↗ are stale; it is no longer an actively maintained choice. The separate [`sold`][sold~repo]↗ and [`mold-macho`][mold-macho~repo]↗ projects are archived and should be treated as historical experiments, not current macOS recommendations.
+
+## Verify the selected linker {#verify-linker}
+
+Build with verbose Cargo output to inspect the linker command and confirm that the configured linker is actually selected:
+
+```sh
+cargo build -vv
+```
+
+When comparing linkers, use the same clean or incremental build scenario and compiler settings, and record the complete build time. Different linkers can produce different diagnostics or binaries, so run the project's tests and inspect the result on the target platform.
 
 ## References {#references .skip}
 
@@ -138,7 +88,3 @@ rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-[faster_linking: review - some linkers are deprecated](https://github.com/john-cd/rust_howto/issues/242)
-</div>
