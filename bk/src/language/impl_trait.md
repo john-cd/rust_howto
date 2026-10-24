@@ -42,4 +42,5 @@ This is useful when the exact type is complex, not relevant to the caller, or im
 
 - [[rust-patterns | Rust Patterns]].
 
+[accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
 </div>

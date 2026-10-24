@@ -51,3 +51,7 @@ The `camino` crate provides an alternative to the standard `Path` and `PathBuf` 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
+</div>

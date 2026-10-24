@@ -100,4 +100,5 @@ Refer to the [[language | Language]] and [[standard-library | Standard Library]]
 - [`scroll`][c~scroll~docs]↗: easily and efficiently read/write types from data containers like byte arrays.
 <div class="hidden">
 [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
+[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

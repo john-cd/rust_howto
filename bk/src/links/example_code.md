@@ -80,4 +80,5 @@ For example, you will find a full template for a REST API written in Rust, engin
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
 </div>

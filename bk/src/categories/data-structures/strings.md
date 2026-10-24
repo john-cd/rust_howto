@@ -80,4 +80,5 @@ See:
 - [[unicode | Unicode]] handling.
 - [[value_formatting | Value Formatting]].
 
+[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

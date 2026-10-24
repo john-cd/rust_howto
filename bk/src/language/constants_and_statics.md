@@ -65,4 +65,5 @@ Statics can be mutable (`static mut`): Unlike `const`, static variables can be d
 
 [When are Rust's `const fn`s executed?][blog~const-fn]↗.
 
+[accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
 </div>

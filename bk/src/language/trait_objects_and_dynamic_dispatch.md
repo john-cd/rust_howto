@@ -178,4 +178,5 @@ In addition,
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
 </div>

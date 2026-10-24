@@ -72,4 +72,5 @@ Read [Implementing Vec][book~rustonomicon~implementing-vec]↗ for more details 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>
