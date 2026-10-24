@@ -47,15 +47,6 @@
 [aes_gcm_siv-github]: https://github.com/RustCrypto/AEADs
 
 
-[afl]: https://docs.rs/afl
-
-
-[afl-crate]: https://crates.io/crates/afl
-
-
-[afl-github]: https://github.com/rust-fuzz/afl.rs
-
-
 [aho_corasick]: https://docs.rs/aho_corasick
 
 
@@ -452,6 +443,15 @@
 [config-github]: https://github.com/rust-cli/config-rs (*)
 
 
+[configparser]: https://docs.rs/configparser
+
+
+[configparser-crate]: https://crates.io/crates/configparser
+
+
+[configparser-github]: https://github.com/QEDK/configparser-rs
+
+
 [confy]: https://docs.rs/confy
 
 
@@ -701,7 +701,7 @@
 [ed25519-crate]: https://crates.io/crates/ed25519
 
 
-[ed25519-github]: https://github.com/RustCrypto/signatures/tree/master/ed25519
+[ed25519-github]: https://github.com/RustCrypto/signatures
 
 
 [ed25519_dalek]: https://docs.rs/ed25519_dalek
@@ -1673,7 +1673,7 @@
 [rand_core-crate]: https://crates.io/crates/rand_core
 
 
-[rand_core-github]: https://github.com/rust-random/rand
+[rand_core-github]: https://github.com/rust-random/rand_core
 
 
 [rand_distr]: https://docs.rs/rand_distr

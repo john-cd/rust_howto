@@ -1,71 +1,44 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# OS - MacOS APIs
+# OS: macOS APIs
 
-[![cat~os::macos-apis][cat~os::macos-apis~badge]][cat~os::macos-apis]
+Use macOS-specific frameworks only when portable Rust APIs do not cover the required behavior. Prefer maintained safe bindings, keep platform code behind `cfg(target_os = "macos")`, and check the framework's deployment target.
 
-Bindings to macOS-specific APIs.
+## Frameworks and Tasks
 
-Most standard Rust code will work on macOS without modification. For general system programming tasks (file I/O, networking, processes), the standard library is often sufficient. In fact, if you want your code to be portable across different operating systems, stick to the standard library and avoid macOS-specific APIs unless absolutely necessary.
+| Framework or task | Rust bindings | Common use |
+|---|---|---|
+| AppKit | [`objc2-app-kit`][c~objc2-app-kit~docs]↗{{hi:objc2-app-kit}} | Native windows, application lifecycle, menus, and controls. |
+| Swift interoperability | [swift-bridge][swift-bridge~repo]↗ | Generate bindings when a Swift application calls Rust. |
+| Foundation | [`objc2-foundation`][c~objc2-foundation~docs]↗{{hi:objc2-foundation}} | Foundation objects and services. |
+| Core Foundation | [`objc2-core-foundation`][c~objc2-core-foundation~docs]↗{{hi:objc2-core-foundation}} | Lower-level Core Foundation APIs. |
+| Security and Keychain | [`objc2-security`][c~objc2-security~docs]↗{{hi:objc2-security}} | Security framework and credential storage. |
+| File events | FSEvents bindings | Watch filesystem changes using the native event service. |
+| App packaging | [`cargo-bundle`][c~cargo-bundle~docs]↗{{hi:cargo-bundle}} | Package a Rust application bundle for distribution. |
 
-For macOS-specific features, you'll need to use the [`objc`][c~objc~docs]↗{{hi:objc}} crate and potentially FFI. Be careful with [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} code and consult the Apple documentation.
+The older `cocoa`, `core-foundation`, and `objc` crates are legacy interfaces. For new Objective-C framework code, review the `objc2-*` crates and their framework features. The older wrapper is retained in the existing example for comparison; see [[objc | Objective-C]].
 
-## System Calls (Low-Level OS Interaction)
+A short AppKit entry point uses the current main-thread marker API:
 
-- `std::os::unix`: macOS is a Unix-like operating system, so a large portion of the Unix system calls provided by `std::os::unix` will work correctly.
-- [`nix`][c~nix~docs]↗{{hi:nix}}: A crate providing more comprehensive access to Unix-like system calls. It is often preferred over using `std::os::unix` directly.
+```rust
+use objc2::MainThreadMarker;
+use objc2_app_kit::NSApplication;
 
-## File System Interaction
+let marker = MainThreadMarker::new().expect("called on the main thread");
+let application = NSApplication::sharedApplication(marker);
+```
 
-- [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} works well on macOS.
-- [`std::path`][c~std::path~docs]↗{{hi:std::path}} works well on macOS.
+This API is macOS-only; initialize AppKit on the main thread and enable the corresponding `objc2-app-kit` feature in `Cargo.toml`. See the related [Objective-C bindings issue #1075](https://github.com/john-cd/rust_howto/issues/1075).
 
-## Process Management
-
-- [`std::process`][c~std::process~docs]↗{{hi:std::process}} works well on macOS.
-
-## Networking
-
-- [`std::net`][c~std::net~docs]↗{{hi:std::net}} works well on macOS.
-- For asynchronous networking, use [`tokio`][c~tokio~docs]↗{{hi:tokio}}.
-
-## Threads
-
-- [`std::thread`][c~std::thread~docs]↗{{hi:std::thread}} works well on macOS.
-
-## Time
-
-- [`std::time`][c~std::time~docs]↗{{hi:std::time}} works well on macOS.
-- Use [`chrono`][c~chrono~docs]↗{{hi:chrono}} or [`time`][c~time~docs]↗{{hi:time}} for date and time calculations.
-
-## Objective-C Runtime Interaction
-
-If you need to work with Objective-C objects or frameworks, consider the [`objc`][c~objc~docs]↗{{hi:objc}} crate.
-See [[objc | Objc]].
-
-## Other macOS-specific APIs
-
-For interacting with macOS-specific frameworks, first review the [[api-bindings | API Bindings]] category on 'crates.io'.
-
-If no safe wrapper exists for the desired functionality, you may need to use Foreign Function Interface (FFI).
-See [[development-tools_ffi | Development Tools: FFI]] and [[external-ffi-bindings | External FFI Bindings]].
-
-## Code Examples
+## Example
 
 {{#include macos.incl.md}}
 
 ## Related Topics
 
-- macOS-specific APIs and frameworks.
-- Objective-C interop and Cocoa.
-- Native application toolkits.
-- Cross-platform Rust development.
+- [[api-bindings | API Bindings]] and [[external-ffi-bindings | External FFI Bindings]].
+- [[development-tools_ffi | Development Tools: FFI]].
+- [[objc | Objective-C]].
+- [[os | Operating Systems]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/949)
-review in depth.
-interface with `Cocoa`
-[`Swift`][swift~website]↗{{hi:Swift}} bindings
-</div>

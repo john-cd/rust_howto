@@ -18,6 +18,8 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+# Fixed-capacity collections and strings for the no-allocation example.
+heapless = { version = "0.9.3", default-features = false }
 
 [[example]]
 name = "no_alloc"

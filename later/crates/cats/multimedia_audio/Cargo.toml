@@ -19,6 +19,13 @@ autolib = false
 
 [dependencies]
 cpal = "0.17"
+# Create and read a WAV file in memory without an audio device.
+hound = "3.5"
+
+[[example]]
+name = "wav"
+path = "examples/wav/main.rs"
+test = true
 
 [[example]]
 name = "audio"

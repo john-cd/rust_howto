@@ -1,46 +1,18 @@
 <!-- TODO Reviewed ??-??-2026 -->
 # Multimedia: Audio
 
-[![cat~multimedia::audio][cat~multimedia::audio~badge]][cat~multimedia::audio]{{hi:Audio}}
+Audio tasks include device input and output, decoding and encoding, synthesis, and digital signal processing. Select a device API, format library, or DSP toolkit according to the part of the pipeline you need.
 
-Record, output, or process audio.
+| Task | Crates | Notes |
+|---|---|---|
+| Device input and output | [`cpal`][c~cpal~docs]↗{{hi:cpal}}, [`rodio`][c~rodio~docs]↗{{hi:rodio}} | `cpal` exposes audio devices and streams; `rodio` provides higher-level playback. |
+| Decode media | [`symphonia`][c~symphonia~docs]↗{{hi:symphonia}} | Decode common compressed and uncompressed formats. |
+| Read and write WAV | [`hound`][c~hound~docs]↗{{hi:hound}} | Read and write WAV files; the example creates and reads a WAV in memory. |
+| Encode Vorbis and Opus | [`vorbis_rs`][c~vorbis_rs~docs]↗{{hi:vorbis_rs}}, [`opus`][c~opus~docs]↗{{hi:opus}} | Use an encoder library appropriate to the target codec. |
+| Synthesis and DSP | [`fundsp`][c~fundsp~docs]↗{{hi:fundsp}}, [`dasp`][c~dasp~docs]↗{{hi:dasp}}, [`rubato`][c~rubato~docs]↗{{hi:rubato}} | Synthesize, process, or resample sample streams. |
+| Audio plugins | [`nih-plug`][c~nih-plug~repo]↗{{hi:nih-plug}} | Framework for building audio plugins. |
 
-For most common audio tasks, [`cpal`][c~cpal~docs]↗{{hi:cpal}} will be sufficient. If you need to work with specific audio formats, use the corresponding crates (e.g., [`ogg`][c~ogg~docs]↗{{hi:ogg}}, [`flac`][c~flac~docs]↗{{hi:flac}}, [`wav`][c~wav~docs]↗{{hi:wav}}). For game development, [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}} or game-specific audio libraries might be relevant.
-
-## General Audio
-
-- [`cpal`][c~cpal~docs]↗{{hi:cpal}}: Cross-platform audio input and output. A good general-purpose audio crate.
-- [`miniaudio`][c~miniaudio~docs]↗{{hi:miniaudio}}: A minimal audio library.
-- [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: Can also be used for audio.
-
-See also:
-
-- [`symphonia`][c~symphonia~docs]↗{{hi:symphonia}}: A comprehensive audio decoding library.
-- [`iced_audio`][c~iced_audio~docs]↗{{hi:iced_audio}}: Audio playback for the [`iced`][c~iced~docs]↗{{hi:iced}} GUI framework.
-
-## Specific Audio Codecs
-
-Use:
-
-- [`ogg`][c~ogg~docs]↗{{hi:ogg}} for Ogg Vorbis files.
-- [`flac`][c~flac~docs]↗{{hi:flac}} for FLAC files.
-- [`wav`][c~wav~docs]↗{{hi:wav}} for WAV files.
-
-## Audio Effects, Filters, and Compression
-
-Rust audio libraries support real-time audio processing such as equalization, compression, reverb, and filtering. These capabilities are useful for music production, game audio, and live audio processing.
-
-## Audio Streaming
-
-Audio streaming enables low-latency playback and capture of continuous audio streams. Rust libraries such as `cpal` and `rodio` can be combined with async runtimes to build streaming applications.
-
-## Audio Synthesis
-
-Use [`synth-rs`][c~synth~docs]↗{{hi:synth-rs}} for audio synthesis.
-
-## Audio Analysis
-
-## Code Examples
+## Examples
 
 {{#include audio.incl.md}}
 
@@ -49,13 +21,6 @@ Use [`synth-rs`][c~synth~docs]↗{{hi:synth-rs}} for audio synthesis.
 - [[multimedia | Multimedia]].
 - [[multimedia_encoding | Multimedia: Encoding]].
 - [[multimedia_video | Multimedia: Video]].
-- [[audio | Audio]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[fix](https://github.com/john-cd/rust_howto/issues/941)
-review in depth.
-synth is old.
-</div>

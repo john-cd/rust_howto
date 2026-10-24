@@ -9,6 +9,8 @@
 {{#include ../../../crates/cats/multimedia_audio/examples/audio/audio.rs:example}}
 ```
 
+Also see [Write and read a WAV file in memory](wav.md) for an example that does not require an audio device.
+
 ## Related Topics {#related-topics .skip}
 
 - [[multimedia | Multimedia]].
