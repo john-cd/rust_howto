@@ -27,6 +27,7 @@ lmdb = ["dep:heed", "dep:tempfile"]
 mongodb = ["dep:mongodb"]
 mssql = ["dep:tiberius"]
 oracle = ["dep:diesel", "dep:diesel-oci", "dep:oracle"]
+"sibyl" = ["dep:sibyl"]
 postgres = [
     "dep:deadpool-postgres",
     "dep:postgres",
@@ -81,6 +82,8 @@ sea-orm = { version = "1.1.20", optional = true }
 seaography = { version = "1.1.4", optional = true }
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = { version = "1.0.154", optional = true }
+# Provides the Oracle Instant Client-backed example on Linux and Windows.
+sibyl = { version = "0.7.1", features = ["blocking"], optional = true }
 sqlx = { version = "0.8.6", features = [
     "runtime-tokio",
     "sqlite",
@@ -93,9 +96,6 @@ tokio-postgres = { version = "0.7.18", optional = true }
 tokio-util = { version = "0.7.20", features = ["compat"] }
 url = "2.5.8" # Validate Elasticsearch endpoints and their security policy.
 uuid = { version = "1.28.0", features = ["v4"] }
-
-[target.'cfg(target_os = "linux")'.dependencies]
-sibyl = { version = "0.7.1", features = ["blocking"], optional = true }
 
 [[example]]
 name = "amqp"

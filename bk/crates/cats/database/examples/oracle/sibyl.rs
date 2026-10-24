@@ -2,48 +2,45 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Sibyl is an OCI-based interface between Rust applications and Oracle
-//! databases. Sibyl supports both blocking (threads) and nonblocking (async)
-//! API.
+//! Connects to Oracle with Sibyl's blocking API and reads a value from `DUAL`.
 
-/// Sibyl is an OCI-based interface between Rust applications and Oracle
-/// databases. Sibyl supports both blocking (threads) and nonblocking (async)
-/// API.
+/// Connects to Oracle with Sibyl's blocking API and reads a value from `DUAL`.
 ///
-/// In your `Cargo.toml`, add:
-/// `sibyl = { version = "0.6.21", features = [ "blocking" ] }`
+/// Set `ORACLE_CONNECT_STRING`, `ORACLE_USERNAME`, and `ORACLE_PASSWORD` before
+/// running this example. The connect string is typically
+/// `host:1521/FREEPDB1` for Oracle Free.
+///
+/// # Errors
+///
+/// Returns an error if required settings are missing, the client cannot load,
+/// or connecting to and querying the database fails.
 fn main() -> anyhow::Result<()> {
     #[cfg(feature = "sibyl")]
     {
+        use anyhow::Context as _;
         use sibyl as oracle;
-        // Create an Oracle environment
-        let oracle = oracle::env()?;
-        // Get database credentials from environment variables.
-        let dbname = std::env::var("DBNAME").expect("database name");
-        let dbuser = std::env::var("DBUSER").expect("user name");
-        let dbpass = std::env::var("DBPASS").expect("password");
+        let connect_string = std::env::var("ORACLE_CONNECT_STRING")
+            .context("set ORACLE_CONNECT_STRING to host:port/service_name")?;
+        let username = std::env::var("ORACLE_USERNAME")
+            .context("set ORACLE_USERNAME to a database user")?;
+        let password = std::env::var("ORACLE_PASSWORD")
+            .context("set ORACLE_PASSWORD to the database user's password")?;
 
-        // Establishes a connection to the database using the provided
-        // credentials
-        let session = oracle.connect(&dbname, &dbuser, &dbpass)?;
+        let environment =
+            oracle::env().context("load the Oracle client library")?;
+        let session = environment
+            .connect(&connect_string, &username, &password)
+            .context("connect to Oracle")?;
+        let statement = session
+            .prepare("SELECT 'Sibyl connected' FROM dual")
+            .context("prepare the connection check")?;
+        let rows = statement.query(()).context("run the connection check")?;
 
-        // Prepare the SQL statement
-        let stmt = session.prepare(
-            "SELECT first_name, last_name
-                                FROM hr.employees
-                                WHERE department_id = :department_id",
-        )?;
-
-        // Executes the prepared statement with the department ID set to 10 and
-        // retrieves a Rows iterator
-        let rows = stmt.query(&10)?;
-
-        while let Some(row) = rows.next()? {
-            let first_name: Option<&str> = row.get(0)?;
-            let last_name: Option<&str> = row.get(1)?;
-
-            if let (Some(first), Some(last)) = (first_name, last_name) {
-                println!("{first} {last}");
+        if let Some(row) = rows.next().context("read the connection check")? {
+            let message: Option<&str> =
+                row.get(0).context("read the result value")?;
+            if let Some(message) = message {
+                println!("{message}");
             }
         }
     }
@@ -53,7 +50,11 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the Sibyl Oracle example.
+///
+/// # Errors
+///
+/// Returns an error when client setup, connection, or query execution fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -62,44 +63,11 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Connects to Oracle with the configured Instant Client and credentials.
     #[test]
-    #[ignore = "requires external oracle db and oracle client library"]
-    fn require_external_svc() -> anyhow::Result<()> {
+    #[ignore = "requires Oracle Instant Client and a reachable Oracle service"]
+    fn connects_to_oracle_with_sibyl() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
 }
-
-// TODO To use Sibyl, you need to download the appropriate Instant Client
-// packages for your Linux distribution and architecture (usually 64-bit) from
-// the official Oracle website:
-// <https://www.oracle.com/database/technologies/instant-client/downloads.html>
-// Install the alien package: This tool is used to convert RPM packages
-// (which Oracle provides) to Debian packages suitable for Ubuntu.
-// sudo apt update
-// sudo apt install alien libaio1
-// Extract the downloaded ZIP files: Choose a suitable directory (e.g.,
-// /opt/oracle) and extract the downloaded ZIP files there.
-// sudo mkdir -p /opt/oracle
-// sudo unzip instantclient-basic-linux.x64-<version>.zip -d /opt/oracle
-// sudo unzip instantclient-sqlplus-linux.x64-<version>.zip -d
-// /opt/oracle
-// Convert RPM packages to DEB packages (if applicable):
-// If downloading RPM packages, convert them to DEB using the `alien`
-// command.
-// sudo alien -i oracle-instantclient-<version>-basic-<version>.rpm
-// sudo alien -i oracle-instantclient-<version>-sqlplus-<version>.rpm
-// Install the DEB packages (if applicable):
-// sudo dpkg -i oracle-instantclient*.deb
-// Update the library path:
-// sudo sh -c 'echo /opt/oracle/instantclient_<version> >
-// /etc/ld.so.conf.d/oracle-instantclient.conf' // sudo ldconfig
-// Set environment variables (optional):
-// export PATH=$PATH:/opt/oracle/instantclient_<version> (for `sqlplus`)
-// export LD_LIBRARY_PATH=/opt/oracle/instantclient_<version>:
-// $LD_LIBRARY_PATH
-// Try connecting to your Oracle database using sqlplus:
-// sqlplus <username>/<password>@<hostname>:<port>/<service_name>
-// <https://docs.oracle.com/en/database/oracle/oracle-database/21/lacli/sdk-instant-client.html>
-// <https://docs.oracle.com/en/database/oracle/oracle-database/19/lacli/installing-ic-arm-packages.html>
-// <https://help.ubuntu.com/community/RPM/AlienHowto>

@@ -2,26 +2,20 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-#[cfg(any(
-    feature = "oracle",
-    all(target_os = "linux", feature = "oracle")
-))]
+#[cfg(any(feature = "oracle", feature = "sibyl"))]
 use clap::Parser;
-#[cfg(any(
-    feature = "oracle",
-    all(target_os = "linux", feature = "oracle")
-))]
+#[cfg(any(feature = "oracle", feature = "sibyl"))]
 use clap::Subcommand;
 
 #[cfg(feature = "oracle")]
 mod diesel_oci;
 #[cfg(feature = "oracle")]
 mod oracle;
-#[cfg(all(target_os = "linux", feature = "oracle"))]
+#[cfg(feature = "sibyl")]
 mod sibyl;
 
 /// Command-line arguments.
-#[cfg(any(feature = "oracle", all(target_os = "linux", feature = "oracle")))]
+#[cfg(any(feature = "oracle", feature = "sibyl"))]
 #[derive(Parser)]
 struct Cli {
     /// The example to run.
@@ -30,7 +24,7 @@ struct Cli {
 }
 
 /// The examples that can be run.
-#[cfg(any(feature = "oracle", all(target_os = "linux", feature = "oracle")))]
+#[cfg(any(feature = "oracle", feature = "sibyl"))]
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `diesel_oci` example.
@@ -42,17 +36,14 @@ enum Commands {
     #[command(name = "oracle")]
     Oracle,
     /// Runs the `sibyl` example.
-    #[cfg(all(target_os = "linux", feature = "oracle"))]
+    #[cfg(feature = "sibyl")]
     #[command(name = "sibyl")]
     Sibyl,
 }
 
 /// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
-    #[cfg(any(
-        feature = "oracle",
-        all(target_os = "linux", feature = "oracle")
-    ))]
+    #[cfg(any(feature = "oracle", feature = "sibyl"))]
     {
         let cli = Cli::parse();
 
@@ -66,7 +57,7 @@ fn main() -> anyhow::Result<()> {
                 Commands::Oracle => {
                     oracle::run().map_err(anyhow::Error::msg)?;
                 }
-                #[cfg(all(target_os = "linux", feature = "oracle"))]
+                #[cfg(feature = "sibyl")]
                 Commands::Sibyl => {
                     sibyl::run()?;
                 }

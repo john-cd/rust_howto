@@ -33,19 +33,39 @@ Oracle [Database][p~database] is a multi-model [database][p~database] management
 {{#include ../../../crates/cats/database/examples/oracle/sibyl.rs:example}}
 ```
 
+<div class="hidden">
+
+The example reads the built-in `DUAL` table so it works without Oracle's sample schemas. Build it with `cargo run -p database --example oracle --features sibyl -- sibyl`. Run the ignored integration test with `cargo test -p database --example oracle --features sibyl -- sibyl::tests::connects_to_oracle_with_sibyl --ignored`; set `ORACLE_CONNECT_STRING`, `ORACLE_USERNAME`, and `ORACLE_PASSWORD` first.
+
+</div>
+
+### Oracle Instant Client for Sibyl
+
+Sibyl uses Oracle's native OCI library. Download the Basic (or Basic Light) and SDK packages for your OS from the [Oracle Instant Client downloads](https://www.oracle.com/database/technologies/instant-client/downloads.html).
+
+On Linux, extract both packages into the same directory. Add that directory to the dynamic loader path, for example:
+
+```sh
+export LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH
+```
+
+On Windows, extract the Basic and SDK packages into the same Instant Client directory and add it to `PATH` so `oci.dll` can be loaded. For an MSVC build, set `OCI_LIB_DIR` to the SDK directory containing `oci.lib` before building. Keep the Instant Client architecture consistent with the Rust target.
+
+For a local Oracle Free service, the official [`gvenzl/oracle-free` container](https://github.com/gvenzl/oci-oracle-free) listens on port 1521 and uses service name `FREEPDB1` by default. Create or provide a database user, then set the three environment variables documented above. The example's `DUAL` query does not require sample HR tables.
+
 ## Troubleshooting {#troubleshooting}
 
 ### Cannot locate a 64-bit Oracle Client library
 
-If you encounter the error `DPI-1047: Cannot locate a 64-bit Oracle Client library`, it means the [Oracle Instant Client](https://www.oracle.com/database/technologies/instant-client.html) is missing or not correctly configured in your system's library path.
+If the native Oracle client cannot be loaded, the Oracle Instant Client is missing or is not configured in the system's library path.
 
 To resolve this on Linux:
 
-1.  **Install dependencies**:
+1.  **Install dependencies** (package names differ by distribution):
     ```bash
-    sudo apt-get install libaio1 odpic-dev
+    sudo apt-get install libaio1
     ```
-2.  **Download and extract** the Oracle Instant Client.
+2.  **Download and extract** the Oracle Instant Client Basic and SDK packages into the same directory.
 3.  **Set `LD_LIBRARY_PATH`**:
     ```bash
     export LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH
