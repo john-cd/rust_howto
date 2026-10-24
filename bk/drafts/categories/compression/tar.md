@@ -9,7 +9,7 @@ The examples below read and write local filesystem paths, so their code blocks a
 
 [![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo]{{hi:flate2}} [![tar][c~tar~docs~badge]][c~tar~docs] [![tar~crates.io][c~tar~crates.io~badge]][c~tar~crates.io] [![tar~repo][c~tar~repo~badge]][c~tar~repo]{{hi:tar}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
 
-Read a gzip-compressed tar archive with [`flate2::read::GzDecoder`][c~flate2::read::GzDecoder~docs]↗{{hi:flate2::read::GzDecoder}}, then extract its entries with [`tar::Archive::unpack`][c~tar::Archive::unpack~docs]↗{{hi:tar::Archive::unpack}}. The example reads `temp/archive.tar.gz` and writes extracted files under `temp/unpacked`. Only extract archives you trust.
+Read a gzip-compressed tar archive with [`flate2::read::GzDecoder`][c~flate2::read::GzDecoder~docs]↗{{hi:flate2::read::GzDecoder}}, then extract its entries with [`tar::Archive::unpack`][c~tar::Archive::unpack~docs]↗{{hi:tar::Archive::unpack}}. The example reads the archive created by the compression example from the system temporary directory and extracts files into an `unpacked` subdirectory there. The decompression helper accepts explicit archive and destination paths. Only extract archives you trust.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/compression/examples/tar/tar_decompress.rs:example}}

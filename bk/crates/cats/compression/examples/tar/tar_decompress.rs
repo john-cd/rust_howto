@@ -11,16 +11,17 @@ use std::path::Path;
 use flate2::read::GzDecoder;
 use tar::Archive;
 
-/// Unpacks the sample archive into a separate output directory.
+/// Unpacks the sample archive created by the compression example.
 ///
 /// # Errors
 ///
 /// Returns an I/O error if the archive cannot be opened or its entries cannot
 /// be extracted.
 fn main() -> io::Result<()> {
+    let work_dir = std::env::temp_dir().join("rust_howto_tar_compress_example");
     decompress_archive(
-        Path::new("temp/archive.tar.gz"),
-        Path::new("temp/unpacked"),
+        &work_dir.join("archive.tar.gz"),
+        &work_dir.join("unpacked"),
     )
 }
 
