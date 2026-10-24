@@ -46,7 +46,7 @@ In `build.rs`:
 [`rmp-serde`][c~rmp-serde~docs]↗{{hi:rmp-serde}} connects the `MessagePack` library with [`serde`][c~serde~docs]↗{{hi:serde}}, providing the ability to easily serialize and deserialize Rust built-in types, types from the standard library, and custom data structures.
 
 ```rust,editable
-{{#include ../../../crates/cats/encoding/examples/binary_encoders/rmp-serde.rs:example}}
+{{#include ../../../crates/cats/encoding/examples/binary_encoders/rmp_serde.rs:example}}
 ```
 
 ## CBOR with `ciborium` {#ciborium}

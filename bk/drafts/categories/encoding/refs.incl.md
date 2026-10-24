@@ -31,6 +31,7 @@
 [ex~encoding~type-casts]: typecasts.md#type-conversion-using-as
 [ex~encoding~url]: string_encoding.md#url
 [ex~encoding~zerocopy]: typecasts.md#zerocopy
+[p~binary-encoders]: _binary_encoders.md
 [p~configuration]: ../config/configuration.md
 [p~csv]: # "../../other/data-processing/csv.md"
 [p~encoding]: index.md
@@ -47,4 +48,5 @@
 [p~toml]: ../parser-implementations/toml.md
 [p~trait-objects]: ../../../src/language/trait_objects_and_dynamic_dispatch.md
 [p~traits]: ../../../src/language/traits.md
+[p~typecasts]: typecasts.md
 [p~url]: ../web-programming/url.md
