@@ -5,10 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod lazy_cell;
 mod lazy_constant;
+mod lazy_lock;
 mod lazy_static;
 mod once_cell;
 mod once_cell2;
+mod once_lock;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -21,6 +24,12 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `lazy_cell` example.
+    #[command(name = "lazy_cell")]
+    LazyCell,
+    /// Runs the `lazy_lock` example.
+    #[command(name = "lazy_lock")]
+    LazyLock,
     /// Runs the `lazy_constant` example.
     #[command(name = "lazy_constant")]
     LazyConstant,
@@ -33,6 +42,9 @@ enum Commands {
     /// Runs the `once_cell2` example.
     #[command(name = "once_cell2")]
     OnceCell2,
+    /// Runs the `once_lock` example.
+    #[command(name = "once_lock")]
+    OnceLock,
 }
 
 /// Runs the example selected on the command line.
@@ -41,6 +53,8 @@ fn main() -> anyhow::Result<()> {
 
     if let Some(command) = cli.command {
         match command {
+            Commands::LazyCell => lazy_cell::run(),
+            Commands::LazyLock => lazy_lock::run(),
             Commands::LazyConstant => {
                 lazy_constant::run();
             }
@@ -53,6 +67,7 @@ fn main() -> anyhow::Result<()> {
             Commands::OnceCell2 => {
                 once_cell2::run();
             }
+            Commands::OnceLock => once_lock::run(),
         }
     }
 

@@ -3,36 +3,49 @@
 
 {{#include lazy_initialization.incl.md}}
 
-- Immutable Global: use the [`static`][keyword~static]↗{{hi:static}} keyword (compile-time init, limited).
-- Lazy Init: [`lazy_static`][c~lazy_static~docs]↗{{hi:lazy_static}} (runtime init, simple), [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} (runtime init, more control).
-- Mutable Global: [`parking_lot::Mutex`][c~parking_lot::Mutex~docs]↗{{hi:parking_lot::Mutex}}/[`RwLock`][c~std::sync::RwLock~docs]↗{{hi:RwLock}} (thread-safe).
-- Thread-Local: `std::thread_local`.
-- Atomics: [`std::sync::atomic`][c~std::sync::atomic~docs]↗{{hi:std::sync::atomic}}.
+Rust distinguishes compile-time initialized `static` values from values created at runtime. For runtime initialization, choose a cell based on whether callers need to supply a value or a closure, and whether access must be thread-safe:
 
-Two key libraries:
+- `OnceCell` / `OnceLock` accept a value or initializer the first time it is set.
+- `LazyCell` / `LazyLock` hold an initializer and run it on first access.
+- `std::cell` types are for single-threaded use. `std::sync` types can be shared across threads.
 
-- [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}}: newer crate with more ergonomic API. Should be preferred for all new projects.
-- [`lazy_static`][c~lazy_static~docs]↗{{hi:lazy_static}}: older crate. Its API is less convenient, but crate is stable and maintained.
+`OnceCell<T>` and `OnceLock<T>` have been stable since Rust 1.70. `LazyCell<T>` and `LazyLock<T>` have been stable since Rust 1.80. Prefer the standard library when the project's minimum Rust version supports the type. Use [`once_cell`][c~once_cell~docs]↗ when supporting an older compiler or when its additional APIs fit the project. [`lazy_static`][c~lazy_static~docs]↗ remains a supported macro-based alternative, especially in older code.
 
-Prefer [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} over lazy_static. Use mutexes / rwlocks for mutable globals. Consider alternatives to globals.
-
-The core functionality of [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} is now included in the standard library with the remaining parts on track to be stabilized in future.
+Lazy initialization is not a replacement for synchronization of later mutations. Use a [`Mutex`][c~std::sync::Mutex~docs]↗ or [`RwLock`][c~std::sync::RwLock~docs]↗ around mutable shared state, and consider whether a global is needed at all.
 
 ## Lazy Initialize Variables {#std}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-For lazy initialization scenarios where we want to defer the creation of a value until it's actually needed, without the overhead of thread synchronization, use one of the following:
+Use the single-threaded `std::cell` types when access never crosses threads. They do not provide synchronization.
 
 - The [`OnceCell`][c~core::cell::OnceCell~docs]↗{{hi:OnceCell}} type provides a way to define a value that will be initialized at most once.
-- The corresponding thread-safe version of `OnceCell<T>` is `OnceLock<T>`. [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗ is a lock that allows a value to be initialized exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.
+- The corresponding thread-safe version of `OnceCell<T>` is [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗. It allows a value to be initialized once, even when multiple threads race to access it.
 - [`LazyCell<T>`][c~std::cell::LazyCell~docs]↗ is a value which is initialized on the first access. It is not thread-safe.
-- [`LazyLock`][c~std::sync::LazyLock~docs]↗ is a lazily initialized value that is initialized on first access, ensuring that the initialization code is executed only once, even in the presence of multiple threads. This type is a thread-safe [`LazyCell`][c~std::cell::LazyCell~docs]↗{{hi:LazyCell}}, and can be used in statics. Since initialization may be called from multiple threads, any dereferencing call will block the calling thread if another initialization routine is currently running.
+- [`LazyLock`][c~std::sync::LazyLock~docs]↗ is the thread-safe counterpart of `LazyCell` and can be used in statics. Access waits while another thread runs the initializer.
 - [`Once`][c~std::sync::Once~docs]↗ is a low-level primitive that allows initialization of a value exactly once, ensuring that the initialization code is executed only once, even in the presence of multiple threads.
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/examples/lazy_initialization/once_cell.rs:example}}
+```
+
+For shared values, use `OnceLock`; it can be initialized on demand from any thread:
+
+```rust,editable
+{{#include ../../../crates/cats/memory_management/examples/lazy_initialization/once_lock.rs:example}}
+```
+
+Use `LazyCell` when the initializer should be stored with the value and access is single-threaded:
+
+```rust,editable
+{{#include ../../../crates/cats/memory_management/examples/lazy_initialization/lazy_cell.rs:example}}
+```
+
+For shared global data with a fixed initializer, use `LazyLock`:
+
+```rust,editable
+{{#include ../../../crates/cats/memory_management/examples/lazy_initialization/lazy_lock.rs:example}}
 ```
 
 ## `once_cell` {#once-cell}
@@ -44,13 +57,13 @@ For lazy initialization scenarios where we want to defer the creation of a value
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-FIXME cover once_cell in std
-
-[`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} provides two cell-like types, `unsync::OnceCell` and `sync::OnceCell`. A `OnceCell` might store arbitrary non-Copy types, can be assigned to at most once and provides direct access to the stored contents. The `sync` flavor is thread-safe. [`once_cell`][c~once_cell~docs]↗{{hi:once_cell}} also has a [`once_cell::sync::Lazy`][c~once_cell::sync::Lazy~docs]↗{{hi:once_cell::sync::Lazy}} type, build on top of [`OnceCell`][c~once_cell::sync::OnceCell~docs]↗:
+The [`once_cell`][c~once_cell~docs]↗ crate provides `unsync::OnceCell` and `sync::OnceCell`, along with lazy wrappers. Its `sync::Lazy` is useful when supporting an older Rust version or when depending on the crate already.
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/examples/lazy_initialization/once_cell2.rs:example}}
 ```
+
+The standard library types cover common new-code use cases. Avoid adding both `once_cell` and `lazy_static` to a new project unless their APIs or compiler support are needed.
 
 ## `lazy_static` {#lazy-static}
 
@@ -78,7 +91,7 @@ FIXME cover once_cell in std
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-Declares a lazily evaluated constant [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}. The [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} will be evaluated once and stored behind a global static reference.
+This legacy example uses `lazy_static!` to define a global map initialized at first access. For new code, compare it with the standard library's `LazyLock` above.
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/examples/lazy_initialization/lazy_constant.rs:example}}
@@ -86,14 +99,15 @@ Declares a lazily evaluated constant [`std::collections::HashMap`][c~std::collec
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[constants_and_statics | Constants and Statics]].
+- [[interior_mutability | Interior Mutability]].
+- [[smart_pointers | Smart Pointers]].
+- [[concurrency | Concurrency]].
+- [`std::sync::Once`][c~std::sync::Once~docs]↗.
 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[lazy_initialization: write / fix](https://github.com/john-cd/rust_howto/issues/411)
-cover / link to Once OnceCell OnceLock Lazylock.
-
 </div>
