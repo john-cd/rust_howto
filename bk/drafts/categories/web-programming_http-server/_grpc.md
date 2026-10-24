@@ -37,6 +37,8 @@ tonic-prost-build = "0.14.6"
 {{#include ../../../crates/cats/web_programming_http_server/examples/grpc/tonic.rs:example}}
 ```
 
+The integration test binds a Tokio listener to an available local port, sends a generated client request, checks the greeting, and stops the server with a one-shot shutdown signal. It does not depend on a fixed port or a timing delay.
+
 ## Related Topics {#related-topics .skip}
 
 - [[asynchronous | Asynchronous Programming]] for Tokio and async service methods.
@@ -47,5 +49,5 @@ tonic-prost-build = "0.14.6"
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[grpc: write](https://github.com/john-cd/rust_howto/issues/514)
+  [grpc: write](https://github.com/john-cd/rust_howto/issues/514)
 </div>

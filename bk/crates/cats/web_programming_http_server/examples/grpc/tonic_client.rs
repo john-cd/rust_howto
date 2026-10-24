@@ -45,35 +45,51 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies a client can connect to the sibling server and complete a gRPC
-    /// call.
+    /// Verifies a client can call the sibling gRPC server on an ephemeral port.
     #[tokio::test]
-    async fn test_grpc_full_stack() -> anyhow::Result<()> {
-        let port = 50052;
-        let addr = format!("[::1]:{port}").parse().unwrap();
-        let client_url = format!("http://[::1]:{port}");
+    async fn grpc_client_receives_greeting_and_shuts_down_server()
+    -> anyhow::Result<()> {
+        use tokio::net::TcpListener;
+        use tokio::sync::oneshot;
+        use tokio_stream::wrappers::TcpListenerStream;
 
-        // 1. Spawn the server logic from the sibling module in the background
-        tokio::spawn(async move {
-            let greeter = crate::tonic::MyGreeter::default();
+        let listener = TcpListener::bind("127.0.0.1:0").await?;
+        let address = listener.local_addr()?;
+        let client_url = format!("http://{address}");
+        let (shutdown_sender, shutdown_receiver) = oneshot::channel();
+        let server = tokio::spawn(async move {
             tonic::transport::Server::builder()
-                .add_service(crate::tonic::helloworld::greeter_server::GreeterServer::new(greeter))
-                .serve(addr)
+                .add_service(
+                    crate::tonic::helloworld::greeter_server::GreeterServer::new(
+                        crate::tonic::MyGreeter::default(),
+                    ),
+                )
+                .serve_with_incoming_shutdown(
+                    TcpListenerStream::new(listener),
+                    async move {
+                        let _ = shutdown_receiver.await;
+                    },
+                )
                 .await
-                .unwrap();
         });
 
-        // 2. Wait briefly for the server to start listening
-        tokio::time::sleep(std::time::Duration::from_millis(100)).await;
+        let call_result = async {
+            let mut client = GreeterClient::connect(client_url).await?;
+            let request = tonic::Request::new(HelloRequest {
+                name: "Integration".into(),
+            });
+            let response = client.say_hello(request).await?;
+            anyhow::Result::<String>::Ok(response.into_inner().message)
+        }
+        .await;
+        let shutdown_result = shutdown_sender.send(());
+        let server_result = server.await;
 
-        // 3. Run client logic against the test server
-        let mut client = GreeterClient::connect(client_url).await?;
-        let request = tonic::Request::new(HelloRequest {
-            name: "Integration".into(),
-        });
-        let response = client.say_hello(request).await?;
-
-        assert_eq!(response.into_inner().message, "Hello Integration!");
+        assert_eq!(call_result?, "Hello Integration!");
+        shutdown_result.map_err(|_| {
+            anyhow::anyhow!("gRPC server exited before shutdown")
+        })?;
+        server_result??;
         Ok(())
     }
 }
