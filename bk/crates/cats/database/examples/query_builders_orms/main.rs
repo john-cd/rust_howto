@@ -57,7 +57,7 @@ fn main() -> anyhow::Result<()> {
             match command {
                 #[cfg(feature = "diesel")]
                 Commands::Diesel1 => {
-                    diesel1::run();
+                    diesel1::run()?;
                 }
                 #[cfg(feature = "sea_orm")]
                 Commands::SeaOrm => {

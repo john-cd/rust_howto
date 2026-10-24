@@ -2,14 +2,19 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Build Diesel queries without requiring a live database connection.
-//!
-//! This example defines a `users` table and prints the generated SQL for an
-//! insert and a filtered select.
+//! Applies an embedded Diesel migration and round-trips a user in SQLite.
 
+use anyhow::Context as _;
 use diesel::prelude::*;
-use diesel::sqlite::Sqlite;
+use diesel::sqlite::SqliteConnection;
 use diesel::table;
+use diesel_migrations::EmbeddedMigrations;
+use diesel_migrations::MigrationHarness;
+use diesel_migrations::embed_migrations;
+
+/// Database migrations embedded in this example binary.
+const MIGRATIONS: EmbeddedMigrations =
+    embed_migrations!("examples/query_builders_orms/migrations");
 
 table! {
     users (id) {
@@ -19,55 +24,93 @@ table! {
     }
 }
 
-/// A row of the `users` table.
-#[derive(Debug, Insertable, Queryable, Selectable)]
+/// A row stored in the `users` table.
+#[derive(Debug, Queryable, Selectable)]
 #[diesel(table_name = users)]
-#[diesel(check_for_backend(Sqlite))]
+#[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 struct User {
-    /// The identifier.
+    /// The database-generated identifier.
     id: i32,
-    /// The name.
+    /// The user's display name.
     name: String,
-    /// The email address.
+    /// The user's email address.
     email: String,
 }
 
-/// Builds insert and select queries and prints the SQL.
-fn main() {
-    let new_user = User {
-        id: 1,
-        name: "John Doe".to_owned(),
-        email: "john@example.com".to_owned(),
+/// Values inserted into the `users` table.
+#[derive(Insertable)]
+#[diesel(table_name = users)]
+struct NewUser<'a> {
+    /// The user's display name.
+    name: &'a str,
+    /// The user's email address.
+    email: &'a str,
+}
+
+/// Applies the migration, inserts a user, and reads it back.
+///
+/// # Errors
+///
+/// Returns an error if the in-memory database cannot be opened, the migration
+/// fails, or Diesel cannot insert and query the user.
+fn run_example() -> anyhow::Result<User> {
+    let mut connection = SqliteConnection::establish(":memory:")
+        .context("open the in-memory SQLite database")?;
+    connection
+        .run_pending_migrations(MIGRATIONS)
+        .map_err(|error| {
+            anyhow::anyhow!("apply the embedded user-table migration: {error}")
+        })?;
+
+    let new_user = NewUser {
+        name: "Ada Lovelace",
+        email: "ada@example.com",
     };
+    diesel::insert_into(users::table)
+        .values(&new_user)
+        .execute(&mut connection)
+        .context("insert a user")?;
 
-    let insert_query = diesel::insert_into(users::table).values(&new_user);
-    let select_query = users::table
-        .filter(users::email.like("%@example.com"))
-        .select(User::as_select());
+    users::table
+        .order(users::id.desc())
+        .select(User::as_select())
+        .first(&mut connection)
+        .context("read the inserted user")
+}
 
-    println!(
-        "INSERT SQL: {}",
-        diesel::debug_query::<Sqlite, _>(&insert_query)
-    );
-    println!(
-        "SELECT SQL: {}",
-        diesel::debug_query::<Sqlite, _>(&select_query)
-    );
+/// Runs the migrated SQLite example and prints the inserted row.
+///
+/// # Errors
+///
+/// Returns an error if migration, insertion, or query execution fails.
+fn main() -> anyhow::Result<()> {
+    let user = run_example()?;
+    println!("User {}: {} <{}>", user.id, user.name, user.email);
+    Ok(())
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the Diesel SQLite example.
+///
+/// # Errors
+///
+/// Returns an error if migration, insertion, or query execution fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Applies the embedded migration and reads back the inserted row.
     #[test]
-    fn test_main() {
-        main();
+    fn applies_migration_and_round_trips_a_user() -> anyhow::Result<()> {
+        let user = run_example()?;
+
+        assert_eq!(user.name, "Ada Lovelace");
+        assert_eq!(user.email, "ada@example.com");
+
+        Ok(())
     }
-    // [finish](https://github.com/john-cd/rust_howto/issues/709)
 }

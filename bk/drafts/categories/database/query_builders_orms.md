@@ -88,6 +88,14 @@ diesel print-schema > src/schema.rs
 {{#include ../../../crates/cats/database/examples/query_builders_orms/diesel1.rs:example}}
 ```
 
+The workspace example applies its checked-in migration to an in-memory SQLite database, inserts a user, and queries that row back. Run its focused test with `cargo test -p database --example query_builders_orms --features diesel -- diesel1::tests::applies_migration_and_round_trips_a_user` from `bk/crates`.
+
+<div class="hidden">
+
+Issue #709 replaces the SQL-printing placeholder with a runnable Diesel flow using `diesel_migrations::embed_migrations!`. The example owns its migration files and uses SQLite `:memory:`, so it needs neither `DATABASE_URL` nor an external database service.
+
+</div>
+
 ## `toasty` {#toasty}
 
 [![toasty][c~toasty~docs~badge]][c~toasty~docs]{{hi:toasty}}

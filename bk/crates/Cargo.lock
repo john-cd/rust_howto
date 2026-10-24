@@ -4072,6 +4072,7 @@ dependencies = [
  "futures",
  "heed",
  "lapin",
+ "libsqlite3-sys",
  "mongodb",
  "once_cell",
  "oracle",
