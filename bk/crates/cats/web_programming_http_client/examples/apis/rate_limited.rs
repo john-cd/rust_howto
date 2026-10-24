@@ -32,7 +32,10 @@ fn header_u64(headers: &HeaderMap, name: &str) -> Result<Option<u64>> {
 /// - If `retry-after` is present, wait that many seconds.
 /// - Else, if `x-ratelimit-remaining` is `0`, wait until the UTC epoch time in
 ///   `x-ratelimit-reset`.
-/// - Otherwise (a secondary rate limit), wait at least one minute.
+/// - For a `429` without those headers, wait at least one minute.
+///
+/// A bare `403` without rate-limit headers is ambiguous, so this helper does
+/// not classify it as a rate limit; callers can inspect the response body.
 fn rate_limit_wait(
     status: StatusCode,
     headers: &HeaderMap,

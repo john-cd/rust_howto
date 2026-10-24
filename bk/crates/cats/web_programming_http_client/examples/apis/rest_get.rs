@@ -31,15 +31,15 @@ async fn main() -> Result<(), Error> {
     // Create a new HTTP client with a custom User-Agent header.
     let client = reqwest::Client::builder().user_agent("Rust-test").build()?;
 
-    // Send a GET request to the specified URL and await the response.
-    let response = client.get(&request_url).send().await?;
-
-    // Deserialize the JSON response into a vector of `User` structs.
-    if let Ok(users) = response.json::<Vec<User>>().await {
-        println!("{users:?}");
-    } else {
-        println!("Could not deserialize the response as JSON.");
-    }
+    // Send a GET request, reject HTTP error statuses, and deserialize JSON.
+    let users = client
+        .get(&request_url)
+        .send()
+        .await?
+        .error_for_status()?
+        .json::<Vec<User>>()
+        .await?;
+    println!("{users:?}");
 
     Ok(())
 }

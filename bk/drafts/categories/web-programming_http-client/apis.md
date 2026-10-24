@@ -3,13 +3,15 @@
 
 {{#include apis.incl.md}}
 
+The network examples use [`reqwest`][c~reqwest~docs]↗ for asynchronous HTTP requests; the rate-limit example isolates status and header handling without making a request. For an application that makes several requests, build one `Client` and reuse it so connection pooling and shared configuration are effective. Set a reasonable timeout, keep credentials out of source code, and handle both transport errors and non-success HTTP statuses. A successful `.send()` only means a response arrived; use `.error_for_status()` when non-2xx statuses should be errors.
+
 ## Query the GitHub API {#query-the~repo-api}
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![serde][c~serde~docs~badge]][c~serde~docs]{{hi:serde}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]
 
-Queries GitHub [stargazers API v3][stargazers]↗ with [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} to get list of all users who have marked a GitHub project with a star. [`reqwest::Response`][c~reqwest::Response~docs]↗{{hi:reqwest::Response}} is deserialized with [`reqwest::Response::json`][c~reqwest::Response::json~docs]↗{{hi:reqwest::Response::json}} into `User` objects implementing [`serde::Deserialize`][c~serde::Deserialize~docs]↗{{hi:serde::Deserialize}}.
+Queries GitHub's stargazers endpoint to get the users who have starred a project. The example builds a reusable [`reqwest::Client`][c~reqwest::Client~docs]↗, checks for an HTTP error with `error_for_status()`, and deserializes the JSON response into `User` objects implementing [`serde::Deserialize`][c~serde::Deserialize~docs]↗.
 
-`tokio::main`{{hi:tokio::main}} is used to set up the async executor and the process waits for [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} to complete before processing the response into User instances.
+`tokio::main`{{hi:tokio::main}} sets up the asynchronous executor. The example awaits the request and JSON body, then prints the deserialized users.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/examples/apis/rest_get.rs:example}}
@@ -21,7 +23,7 @@ Queries GitHub [stargazers API v3][stargazers]↗ with [`reqwest::get`][c~reqwes
 
 Query the GitHub Users Endpoint using a HEAD request [`reqwest::Client::head`][c~reqwest::Client::head~docs]↗{{hi:reqwest::Client::head}} and then inspect the response code to determine success. This is a quick way to query a rest resource without needing to receive a body. [`reqwest::Client`][c~reqwest::Client~docs]↗{{hi:reqwest::Client}} configured with [`reqwest::ClientBuilder::timeout`][c~reqwest::ClientBuilder::timeout~docs]↗{{hi:reqwest::ClientBuilder::timeout}} ensures a request will not last longer than a timeout.
 
-Due to both [`reqwest::ClientBuilder::build`][c~reqwest::ClientBuilder::build~docs]↗{{hi:reqwest::ClientBuilder::build}} and [`reqwest::RequestBuilder::send`][c~reqwest::RequestBuilder::send~docs]↗{{hi:reqwest::RequestBuilder::send}} returning [`reqwest::Error`][c~reqwest::Error~docs]↗{{hi:reqwest::Error}} types, the shortcut [`reqwest::Result`][c~reqwest::Result~docs]↗{{hi:reqwest::Result}} is used for the main function return type.
+The example sets a timeout so a request cannot wait indefinitely. A successful HEAD response indicates that the endpoint accepted the request; a 404 often indicates a missing resource, but permissions and endpoint behavior can make status codes ambiguous. Some servers do not support HEAD and return 405, so use GET when the API requires it. Network and timeout failures are returned as `reqwest::Error`.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/examples/apis/rest_head.rs:example}}
@@ -31,15 +33,15 @@ Due to both [`reqwest::ClientBuilder::build`][c~reqwest::ClientBuilder::build~do
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![serde][c~serde~docs~badge]][c~serde~docs]{{hi:serde}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]
 
-Creates a gist with POST request to GitHub [gists API v3][gist-api]↗ using [`reqwest::Client::post`][c~reqwest::Client::post~docs]↗{{hi:reqwest::Client::post}} and removes it with DELETE request using [`reqwest::Client::post`][c~reqwest::Client::post~docs]↗{{hi:reqwest::Client::post}}.
+Creates a gist with POST to the GitHub [Gists API][gist-api]↗ and deletes it with DELETE using [`reqwest::Client::delete`][c~reqwest::Client::delete~docs]↗. The example uses asynchronous requests, bearer-token authentication, and checks the HTTP status before decoding the JSON response.
 
-The [`reqwest::Client`][c~reqwest::Client~docs]↗{{hi:reqwest::Client}} is responsible for details of both requests including URL, body and authentication. The POST body from [`reqwest::Client`][c~reqwest::Client~docs]↗{{hi:reqwest::Client}} macro provides arbitrary JSON body. Call to [`reqwest::Client`][c~reqwest::Client~docs]↗{{hi:reqwest::Client}} sets the request body. [`reqwest::Client`][c~reqwest::Client~docs]↗{{hi:reqwest::Client}} handles authentication. The call to [`reqwest::Client`][c~reqwest::Client~docs]↗{{hi:reqwest::Client}} synchronously executes the requests.
+The example reads a GitHub token from the `GH_TOKEN` environment variable and sends it as a bearer token. Use a token with only the permission needed to create gists; never put the token in source code or logs. The `.json()` method serializes the POST body, and each request is awaited asynchronously.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/examples/apis/rest_post.rs:example}}
 ```
 
-The example uses HTTP [`basic auth`][ietf~http-basic-auth]↗ in order to authorize access to [`GitHub API`][github-api]↗{{hi:GitHub API}}. Typical use case would employ one of the much more complex [`OAuth`][oauth~website]↗{{hi:OAuth}} authorization flows.
+The example creates a public gist and then deletes it, so run it only with a token and account where that side effect is acceptable. It is an API token example; it does not implement an OAuth authorization flow.
 
 ## Consume a Paginated RESTful API {#consume-a-paginated-restful-api}
 
@@ -55,7 +57,7 @@ Wraps a paginated web API (the crates.io reverse dependencies endpoint) in a con
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![hyper][c~hyper~docs~badge]][c~hyper~docs]{{hi:hyper}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]
 
-This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]↗{{hi:GitHub API - Rate limiting}}, as an example of how to handle remote server errors. This example checks for [`reqwest::StatusCode::FORBIDDEN`][c~reqwest::StatusCode::FORBIDDEN~docs]↗{{hi:reqwest::StatusCode::FORBIDDEN}} or `429 Too Many Requests`. If the response exceeds the rate limit, it waits for `retry-after` seconds, or until `x-ratelimit-reset` when `x-ratelimit-remaining` is `0`, or at least one minute otherwise, then retries.
+This example demonstrates interpreting GitHub's rate-limit response headers. It calculates and prints a suggested delay from `Retry-After` or exhausted primary-limit headers, and uses a one-minute fallback for `429` without those headers. A bare `403` can be a permissions failure or a secondary rate limit; this header-only helper returns no delay for it unless rate-limit headers identify the primary limit. It does not send a request, sleep, or retry. A real client should inspect the response body, bound retries, honor cancellation and any server-provided delay, and avoid retrying permission failures.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_client/examples/apis/rate_limited.rs:example}}
@@ -63,7 +65,9 @@ This example uses the [`GitHub API - rate limiting`][github-api-rate-limiting]�
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Make HTTP requests][p~requests].
+- [HTTP client libraries][p~http-clients].
+- [Parse JSON responses][p~json].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

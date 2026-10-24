@@ -18,5 +18,7 @@
 [p~hyper]: # "../web-programming_http-server/_hyper.md#hyper"
 [p~json]: ../parser-implementations/json.md
 [p~main]: ../../language/entrypoint.md
+[p~http-clients]: http_clients.md
+[p~requests]: requests.md
 [p~server]: ../network-programming/server.md
 [p~url]: ../web-programming/url.md
