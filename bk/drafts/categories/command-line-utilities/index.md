@@ -6,9 +6,9 @@
 Here's a list of some common command-line utilities written in Rust:
 
 - [`ripgrep`][c~ripgrep~docs]↗{{hi:ripgrep}} (rg): A very fast replacement for grep.
-- [`fd`][c~fd~docs]↗{{hi:fd}}: A faster alternative to find.
+- [`fd`][c~fd-find~docs]↗{{hi:fd}}: A faster alternative to find.
 - [`bat`][c~bat~docs]↗{{hi:bat}}: A cat clone with syntax highlighting and Git integration.
-- [`exa`][c~exa~docs]↗{{hi:exa}}: A modern replacement for ls.
+- [`eza`][eza~repo]↗{{hi:eza}}: A maintained modern replacement for `ls`.
 - [`delta`][c~delta~docs]↗{{hi:delta}}: A pager for git diff output.
 - [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}}: A command-line benchmarking tool.
 - [`just`][c~just~docs]↗{{hi:just}}: A command runner for project-specific tasks (like make but better).

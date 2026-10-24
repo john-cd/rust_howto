@@ -1,12 +1,18 @@
 <!-- TODO Reviewed ??-??-2026 -->
 [ex~command-line-utilities~bat]: filesystem_cli.md#bat
-[ex~command-line-utilities~broot]: filesystem_cli.md#broot
-[ex~command-line-utilities~exa]: filesystem_cli.md#exa
+[ex~command-line-utilities~list-files]: filesystem_cli.md#list-files
+[ex~command-line-utilities~find-files]: filesystem_cli.md#find-files
+[ex~command-line-utilities~search-file-contents]: filesystem_cli.md#search-file-contents
+[ex~command-line-utilities~view-file-contents]: filesystem_cli.md#view-file-contents
+[ex~command-line-utilities~analyze-disk-usage]: filesystem_cli.md#analyze-disk-usage
+[ex~command-line-utilities~rename-and-bulk-edit]: filesystem_cli.md#rename-and-bulk-edit
 [ex~command-line-utilities~gping]: networking_cli.md#gping
 [ex~command-line-utilities~lsd]: filesystem_cli.md#lsd
 [ex~command-line-utilities~nushell]: shells.md#nushell
-[ex~command-line-utilities~open]: filesystem_cli.md#open
 [ex~command-line-utilities~starship]: shells.md#starship
+[eza~repo]: https://github.com/eza-community/eza
+[dua~repo]: https://github.com/Byron/dua-cli
+[dust~repo]: https://github.com/bootandy/dust
 [p~configuration]: ../config/configuration.md
 [p~filesystem]: ../../../src/categories/filesystem/index.md
 [p~install]: ../development-tools/installation/install.md

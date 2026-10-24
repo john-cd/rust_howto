@@ -1,8 +1,9 @@
 <!-- TODO Reviewed ??-??-2026 -->
 | Recipe | Crates | Categories |
 |--------|--------|------------|
-| [`lsd`][ex~command-line-utilities~lsd] | [![lsd][c~lsd~docs~badge]][c~lsd~docs] | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [`exa`][ex~command-line-utilities~exa] | [![exa][c~exa~docs~badge]][c~exa~docs] | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [`broot`][ex~command-line-utilities~broot] | [![broot][c~broot~docs~badge]][c~broot~docs] | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [`bat`][ex~command-line-utilities~bat] | [![bat][c~bat~docs~badge]][c~bat~docs] | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [`open`][ex~command-line-utilities~open] | [![open][c~open~docs~badge]][c~open~docs] | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
+| [List Files][ex~command-line-utilities~list-files] | [`eza`][eza~repo]↗, [`lsd`][c~lsd~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
+| [Find Files][ex~command-line-utilities~find-files] | [`fd`][c~fd-find~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
+| [Search File Contents][ex~command-line-utilities~search-file-contents] | [`ripgrep`][c~ripgrep~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
+| [View File Contents][ex~command-line-utilities~view-file-contents] | [`bat`][c~bat~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
+| [Analyze Disk Usage][ex~command-line-utilities~analyze-disk-usage] | [`dust`][dust~repo]↗, [`dua`][dua~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
+| [Rename and Bulk Edit][ex~command-line-utilities~rename-and-bulk-edit] | [`sd`][c~sd~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |

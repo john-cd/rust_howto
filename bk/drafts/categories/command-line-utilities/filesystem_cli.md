@@ -3,50 +3,76 @@
 
 {{#include filesystem_cli.incl.md}}
 
-## `lsd` {#lsd}
+## List Files {#list-files}
 
-[`lsd`][c~lsd~repo]↗{{hi:lsd}} is a command-line utility written in Rust, a rewrite of the GNU `ls` command. It aims to provide a more visually appealing and informative directory listing with features like colored output, icons for different file types, `git` integration, tree-view, and recursive directory traversal.
+Use [`eza`][eza~repo]↗, a maintained replacement for the discontinued `exa`, or [`lsd`][c~lsd~repo]↗ for a colored, detailed directory listing. Both provide options for long listings and tree views.
+
+### `eza` {#exa}
 
 ```sh
-apt install lsd
+cargo install eza --locked
+eza --long --all --git
 ```
 
-## `exa` {#exa}
+The `#exa` anchor is retained for existing links; new references should use `eza`.
 
-[![exa~repo][c~exa~repo~badge]][c~exa~repo]{{hi:exa}}
-
-[`exa`][c~exa~docs]↗{{hi:exa}} is a fast, colorful, and informative replacement for `ls`, offering improved defaults and a user-friendly experience. [`exa`][c~exa~docs]↗{{hi:exa}} offers more extensive customization options compared to lsd. You can configure colors, icons, and output format in more detail with `exa`. [`lsd`][c~lsd~docs]↗{{hi:lsd}} uses a configuration file to store user preferences, while [`exa`][c~exa~docs]↗{{hi:exa}} primarily relies on command-line flags.
-
-## `broot` {#broot}
-
-[`broot`][c~broot~website]↗{{hi:broot}} [![broot~repo][c~broot~repo~badge]][c~broot~repo] is a new way to see and navigate directory trees.
-
-[`broot`][c~broot~docs]↗{{hi:broot}} is an interactive directory tree explorer implemented in Rust, designed for efficient filesystem navigation and manipulation. It provides a navigable, hierarchical view of the [filesystem][p~filesystem], enabling rapid traversal via keyboard shortcuts and intuitive navigation. Beyond basic exploration, [`broot`][c~broot~docs]↗{{hi:broot}} integrates file management operations (move, copy, delete, rename) directly within its interface. Its shell integration allows seamless transitions between [`broot`][c~broot~docs]↗{{hi:broot}} and the shell, facilitating efficient workflow integration.
-
-## `bat` {#bat}
-
-[![bat~repo][c~bat~repo~badge]][c~bat~repo]{{hi:bat}}
-
-[`bat`][c~bat~docs]↗{{hi:bat}}{{hi:bat}} is a fast `cat` clone with syntax highlighting and Git{{hi:Git}} integration. It improves upon the standard `cat` command by providing colored output for various file types, line numbers, and integration with Git to show modifications. This enhances readability and makes it easier to quickly inspect code or configuration files directly in the terminal.
+### `lsd` {#lsd}
 
 ```sh
+cargo install lsd --locked
+lsd --long --almost-all
+```
+
+## Find Files {#find-files}
+
+[`fd`][c~fd-find~repo]↗ is a fast, user-friendly file finder. It respects ignore files by default.
+
+```sh
+cargo install fd-find --locked
+fd -e rs . src
+```
+
+## Search File Contents {#search-file-contents}
+
+[`ripgrep`][c~ripgrep~repo]↗ provides the `rg` command for recursive, ignore-aware text search.
+
+```sh
+cargo install ripgrep --locked
+rg -n 'TODO|FIXME' src
+```
+
+## View File Contents {#view-file-contents}
+
+[`bat`][c~bat~repo]↗ is a `cat` replacement with syntax highlighting, line numbers, and Git change markers.
+
+### `bat` {#bat}
+
+```sh
+cargo install bat --locked
 bat README.md
-# Display multiple Files at once
-bat src/*.rs
-# Read from stdin, determine the syntax automatically
-curl -s https://sh.rustup.rs | bat
-# Show and Highlight non-printable characters:
-bat -A /etc/hosts
 ```
 
-## `open` {#open}
+## Analyze Disk Usage {#analyze-disk-usage}
 
-[![open][c~open~docs~badge]][c~open~docs]{{hi:open}}
-[![open~crates.io][c~open~crates.io~badge]][c~open~crates.io]
-[![open~repo][c~open~repo~badge]][c~open~repo]
-[![open~lib.rs][c~open~lib.rs~badge]][c~open~lib.rs]
+[`dust`][dust~repo]↗ displays disk usage as a sorted directory tree. [`dua`][dua~repo]↗ offers an interactive disk-usage explorer.
 
-[`open`][c~open~docs]↗{{hi:open}} opens a path or [URL][p~url] using the program configured on the system. [`open`][c~open~docs]↗{{hi:open}} is a cross-platform command-line utility for opening files and URLs in their default associated applications. It abstracts away the platform-specific commands for opening files (like xdg-open on Linux, open on macOS, and start on Windows), providing a consistent and convenient way to launch files, websites, or directories from the terminal regardless of the operating system.
+```sh
+cargo install du-dust --locked
+dust -d 2 .
+
+cargo install dua-cli --locked
+dua i .
+```
+
+## Rename and Bulk Edit {#rename-and-bulk-edit}
+
+[`sd`][c~sd~repo]↗ uses regular expressions for focused text replacements. Review the diff after it edits files in place.
+
+```sh
+cargo install sd --locked
+sd 'OldName' 'NewName' src/main.rs
+git diff -- src/main.rs
+```
 
 ## Related Topics {#related-topics .skip}
 
@@ -56,7 +82,3 @@ bat -A /etc/hosts
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[filesystem: organize](https://github.com/john-cd/rust_howto/issues/237)
-</div>
