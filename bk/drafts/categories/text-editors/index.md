@@ -3,32 +3,28 @@
 
 [![cat~text-editors][cat~text-editors~badge]][cat~text-editors]{{hi:Text editors}}
 
-Applications for editing text.
-
-For the most comprehensive and user-friendly experience, VS Code (with the [`rust-analyzer`][rust-analyzer~website]↗{{hi:rust-analyzer}} extension)↗, IntelliJ IDEA (with the Rust plugin)↗ or CLion (with the Rust plugin)↗ are highly recommended. VS Code, in particular, has become popular due to its performance and the quality of the `rust-analyzer` extension.
-
-Vim, Emacs, and Neovim offer great flexibility and power, but they require a higher initial configuration investment. Sublime Text and Atom can also be configured for decent Rust support, but VS Code has largely taken over in popularity.
+These editors provide Rust support either directly or through a Rust language server such as [`rust-analyzer`][rust-analyzer~website]↗{{hi:rust-analyzer}}. Setup and available features vary by editor and plugins; the notes below describe the main integration path rather than rank editors.
 
 ## IDEs and Text Editors with Rust Support
 
-| IDE/Editor | Rust Support Level | Key Features/Notes |
+| IDE/Editor | Rust integration | Setup notes |
 |---|---|---|
-| [VS Code][rust-in-vs-code~website]↗{{hi:VS code}} (with [`rust-analyzer`][rust-analyzer~website]↗{{hi:rust-analyzer}} extension)↗ | Excellent | [`rust-analyzer`][rust-analyzer~website]↗{{hi:rust-analyzer}} provides excellent language server support, offering code completion, diagnostics, refactoring, and more. Also consider the "CodeLLDB", "Dependi" and "Even Better TOML" extensions. |
-| [RustRover][rustrover~website]↗ | Excellent | It is available for free for non-commercial use. |
-| IntelliJ IDEA (with Rust plugin) | Excellent | Comprehensive support including code completion, refactoring, debugging, navigation, and integration with Cargo. The official Rust plugin provides the most complete IDE experience. |
-| CLion JetBrains IDE (with Rust plugin) | Excellent | CLion, JetBrains' C/C++ IDE, also has a Rust plugin that leverages `rust-analyzer`. Provides a robust IDE experience similar to IntelliJ IDEA.  If you have a JetBrains license, CLion is your go-to editor for Rust in JetBrains' IDE suite. |
-| [Helix][helix-editor~website]↗[(github)][helix-editor~repo]↗{{hi:helix}} | | Install the [rust-analyzer binary][rust-analyzer~helix~website]↗ |
-| [Zed][c~zed~website]↗ | Excellent | `zed`{{hi:zed}} is available for macOS, Linux, and soon for Windows. Written in Rust. |
-| [Sublime Text][sublime-text~website]↗ (with LSP and related plugins) | Good | Can achieve good Rust support via the LSP (Language Server Protocol) and plugins like `rust-analyzer`. Requires some setup. See ["Rust enhanced" package][sublime-text-rust-enhanced~repo]↗. |
-| [Atom][atom~website]↗ (with LSP and related packages) | Good | Similar to `Sublime Text`, Atom can be configured with LSP and `rust-analyzer` for decent Rust support. `Atom`{{hi:Atom}} is no longer actively developed. |
-| Vim (with plugins like [`coc.nvim`][coc.nvim~repo]↗{{hi:coc.nvim}} or [`vim-lsp`][vim-lsp~repo]↗{{hi:vim-lsp}}) | Good (Highly Configurable) | With the right plugins (e.g., `coc.nvim`{{hi:coc.nvim}}, `vim-lsp`{{hi:vim-lsp}}, and `rust-analyzer`), Vim can be a very powerful Rust editor. Requires more configuration than other options. Configure [Vim for Rust][rust-vim~repo]↗. |
-| [Emacs][emacs~website]↗ with plugins like [`lsp-mode`][emacs-lsp~website]↗{{hi:lsp-mode}} or [`eglot`][eglot~repo]↗{{hi:eglot}} (or derivatives like Doom Emacs, [Spacemacs][spacemacs~website]↗, etc.) | Good (Highly Configurable) | Similar to Vim, Emacs can be configured for excellent Rust development with LSP and `rust-analyzer`. Also requires a learning curve for configuration. Configure [Emacs for Rust][emacs-rust-mode~repo]↗. |
-| [Neovim][nvim~website]↗ (with plugins like [`coc.nvim`][coc.nvim~repo]↗{{hi:coc.nvim}} or `nvim-lsp`{{hi:nvim-lsp}}) | Good (Highly Configurable) | Neovim, a fork of [`vim`][vim~website]↗{{hi:vim}}, also benefits from the LSP and `rust-analyzer` through plugins like `coc.nvim`{{hi:coc.nvim}} or `nvim-lsp`{{hi:nvim-lsp}}. |
-| Kate | Decent | Provides syntax highlighting and some basic code completion. LSP support might be available through plugins. |
-| [Visual Studio][visual-studio~website]↗ | | Configure [rust-analyzer for Visual Studio][rust-analyzer~visual-studio~website]↗ |
-| [Lapce][lapce~website]↗ | | Open source, written in Rust |
-| [Xcode][xcode~website]↗ | | |
-| [Eclipse Corrosion][eclipse-corrosion~website]↗ | | It provides development tools for Rust and Cargo inside the Eclipse IDE |
+| [VS Code][rust-in-vs-code~website]↗{{hi:VS code}} | `rust-analyzer` extension | Provides completion, diagnostics, navigation, and refactoring. Extensions such as CodeLLDB add debugging support. |
+| [RustRover][rustrover~website]↗ | Built-in Rust IDE support | JetBrains IDE focused on Rust, with Cargo integration, code insight, and debugging. |
+| [IntelliJ IDEA][intellij-idea~website]↗ | Rust plugin | Install JetBrains' Rust plugin to add Rust language and Cargo support. |
+| [CLion][clion~website]↗ | Rust plugin | Install JetBrains' Rust plugin; CLion also provides its C/C++ tooling. |
+| [Helix][helix-editor~website]↗ ([GitHub][helix-editor~repo]){{hi:helix}} | Built-in language-server client | Configure the [rust-analyzer binary][rust-analyzer~helix~website]↗ for Rust diagnostics and code actions. |
+| [Zed][c~zed~website]↗ | Rust extension | Uses `rust-analyzer` for Rust language features. |
+| [Sublime Text][sublime-text~website]↗ | LSP package | Install the LSP package and `rust-analyzer`; see the [Rust Enhanced package][sublime-text-rust-enhanced~repo]↗ for additional tooling. |
+| [Vim][vim~website]↗ | Language-server plugin | Configure a client such as [`coc.nvim`][coc.nvim~repo]↗{{hi:coc.nvim}} or [`vim-lsp`][vim-lsp~repo]↗{{hi:vim-lsp}} with `rust-analyzer`. |
+| [Neovim][nvim~website]↗ | Built-in LSP client | Configure `rust-analyzer` directly or through a plugin such as `coc.nvim`. |
+| [Emacs][emacs~website]↗ | LSP package | Configure `rust-analyzer` with [`eglot`][eglot~repo]↗{{hi:eglot}} or [`lsp-mode`][emacs-lsp~website]↗{{hi:lsp-mode}}. |
+| [Kate][kate-editor~website]↗ | LSP client plugin | Install the LSP Client plugin and configure `rust-analyzer`; Kate also provides syntax highlighting. |
+| [Visual Studio][visual-studio~website]↗ | Rust Analyzer extension | Install and configure the [Rust Analyzer extension][rust-analyzer~visual-studio~website]↗. Visual Studio is separate from VS Code. |
+| [Lapce][lapce~website]↗ | Built-in LSP client | Configure `rust-analyzer` for completion and diagnostics. |
+| [Eclipse Corrosion][eclipse-corrosion~website]↗ | Corrosion plugin | Integrates `rust-analyzer`, Cargo, and debugger support into Eclipse. |
+
+GitHub [sunset Atom on December 15, 2022](https://github.blog/2022-06-08-sunsetting-atom/). Atom may still edit Rust source, but it no longer receives project maintenance or updates, so it is not listed as a current Rust editor.
 
 ## Examples
 
@@ -36,11 +32,16 @@ Vim, Emacs, and Neovim offer great flexibility and power, but they require a hig
 
 ## Related Topics
 
-FIXME
+- [Development Tools][p~development-tools]
+- [Text processing](../text-processing/index.md)
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; review in depth finish the table](https://github.com/john-cd/rust_howto/issues/962)
+
+The table distinguishes native support from plugin and LSP setups, fills in integration details, removes Atom from the current-editor list because GitHub sunset it, and replaces the unfinished related-topics placeholder. Recheck vendor setup links when updating this index.
+
+[Review the text editors index](https://github.com/john-cd/rust_howto/issues/962)
+
 </div>
