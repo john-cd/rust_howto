@@ -3,53 +3,123 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This function creates a compressed tar archive (tar.gz) of the 'tests'
-//! directory.
+//! This function creates a gzip-compressed tar archive from a directory.
 
 use std::fs;
 use std::fs::File;
+use std::io;
+use std::path::Path;
 
 use flate2::Compression;
 use flate2::write::GzEncoder;
 
-/// This function creates a compressed tar archive (tar.gz) of the 'tests'
+/// Creates a sample input directory and archive under the system temp
 /// directory.
-fn main() -> Result<(), std::io::Error> {
-    // Create a temporary folder:
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
-    }
-    // Create the archive file:
-    let tar_gz_file = File::create("temp/archive.tar.gz")?;
-    // Create the compression encoder:
-    let enc = GzEncoder::new(tar_gz_file, Compression::default());
-    // Create a new archive builder with the underlying file as the
-    // destination of all data written.
-    let mut tar = tar::Builder::new(enc);
-    // Archive a directory and all of its contents
-    // (recursively), renaming it in the process:
-    tar.append_dir_all("backup", "./temp")?;
-    let enc = tar.into_inner()?;
-    enc.finish()?;
-    println!("`archive.tar.gz` file created!");
+///
+/// # Errors
+///
+/// Returns an I/O error if the sample directory or archive cannot be written.
+fn main() -> io::Result<()> {
+    let work_dir = std::env::temp_dir().join("rust_howto_tar_compress_example");
+    let source_dir = work_dir.join("source");
+    fs::create_dir_all(&source_dir)?;
+    fs::write(
+        source_dir.join("example.txt"),
+        b"A file in the sample archive.\n",
+    )?;
+    compress_directory(&source_dir, &work_dir.join("archive.tar.gz"))
+}
+
+/// Compresses `source_dir` into a gzip-compressed tar archive at
+/// `archive_path`.
+///
+/// Files are stored under the `backup/logs` path inside the archive.
+///
+/// # Errors
+///
+/// Returns an I/O error if the archive cannot be created, the directory cannot
+/// be added, or the compressed stream cannot be finished.
+fn compress_directory(
+    source_dir: &Path,
+    archive_path: &Path,
+) -> io::Result<()> {
+    let archive_file = File::create(archive_path)?;
+    let encoder = GzEncoder::new(archive_file, Compression::default());
+    let mut builder = tar::Builder::new(encoder);
+    builder.append_dir_all("backup/logs", source_dir)?;
+    drop(builder.into_inner()?.finish()?);
+    println!("Archive created at {}", archive_path.display());
     Ok(())
 }
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+///
+/// Returns an I/O error if the sample source or archive cannot be written.
 pub fn run() -> Result<(), std::io::Error> {
     main()
 }
 
 #[cfg(test)]
 mod tests {
+    use std::fs;
+    use std::io;
+    use std::path::PathBuf;
+    use std::time::SystemTime;
+
+    use flate2::read::GzDecoder;
+    use tar::Archive;
+
     use super::*;
 
-    /// Verifies that the tar compress example's main path succeeds.
+    /// Archives a temporary directory and verifies the finished gzip tarball.
+    ///
+    /// # Errors
+    ///
+    /// Returns an I/O error if the fixture cannot be created, archived, or
+    /// extracted for verification.
     #[test]
-    fn test_main() {
-        let _cwd_lock = crate::CWD_LOCK.lock().unwrap();
-        main().unwrap();
+    fn archives_directory_and_finishes_gzip_stream() -> io::Result<()> {
+        let work_dir = create_test_directory()?;
+        let source_dir = work_dir.join("source");
+        let archive_path = work_dir.join("archive.tar.gz");
+        let destination = work_dir.join("extracted");
+        let expected = b"compressed fixture";
+        fs::create_dir(&source_dir)?;
+        fs::write(source_dir.join("message.txt"), expected)?;
+
+        compress_directory(&source_dir, &archive_path)?;
+
+        let archive_file = File::open(&archive_path)?;
+        let mut archive = Archive::new(GzDecoder::new(archive_file));
+        archive.unpack(&destination)?;
+        let archived_contents =
+            fs::read(destination.join("backup/logs/message.txt"))?;
+        assert_eq!(archived_contents, expected);
+
+        fs::remove_dir_all(&work_dir)?;
+        Ok(())
+    }
+
+    /// Creates a unique temporary directory for a tar compression test.
+    ///
+    /// # Errors
+    ///
+    /// Returns an I/O error if the directory cannot be created.
+    fn create_test_directory() -> io::Result<PathBuf> {
+        let timestamp = SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .map_err(io::Error::other)?
+            .as_nanos();
+        let directory = std::env::temp_dir().join(format!(
+            "rust_howto_tar_compress_{}_{}",
+            std::process::id(),
+            timestamp
+        ));
+        fs::create_dir(&directory)?;
+        Ok(directory)
     }
 }
 // [review; tar_compress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/255)

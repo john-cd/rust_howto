@@ -19,7 +19,7 @@ Read a gzip-compressed tar archive with [`flate2::read::GzDecoder`][c~flate2::re
 
 [![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo]{{hi:flate2}} [![tar][c~tar~docs~badge]][c~tar~docs] [![tar~crates.io][c~tar~crates.io~badge]][c~tar~crates.io] [![tar~repo][c~tar~repo~badge]][c~tar~repo]{{hi:tar}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
 
-Compress the contents of `/var/log` into `archive.tar.gz`. Adjust both paths to match your source directory and output archive.
+The example creates a small source directory in the system temporary directory and writes `archive.tar.gz` there. Adapt `compress_directory` to use your own source and archive paths.
 
 Creates a [`std::fs::File`][c~std::fs::File~docs]↗{{hi:std::fs::File}} wrapped in [`flate2::write::GzEncoder`][c~flate2::write::GzEncoder~docs]↗{{hi:flate2::write::GzEncoder}} and [`tar::Builder`][c~tar::Builder~docs]↗{{hi:tar::Builder}}.
 

@@ -66,14 +66,6 @@ mod tests {
 
     use super::*;
 
-    /// Creates a compressed tar archive from the fixture directory.
-    #[test]
-    fn test_compress() -> anyhow::Result<()> {
-        let _cwd_lock = CWD_LOCK.lock().unwrap();
-        tar_compress::run()?;
-        Ok(())
-    }
-
     /// Verifies that strip prefix.
     #[test]
     fn test_strip_prefix() -> anyhow::Result<()> {
