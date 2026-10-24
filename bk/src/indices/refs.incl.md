@@ -335,6 +335,8 @@
 [ex~mathematics~creating-complex-numbers]: ../categories/mathematics/complex_numbers.md#creating-complex-numbers
 [ex~mathematics~deserialize-a-matrix]: ../categories/mathematics/linear_algebra.md#deserialize-a-matrix
 [ex~mathematics~distance-between-two-points-on-earth]: ../categories/mathematics/trigonometry.md#distance-between-two-points-on-earth
+[ex~mathematics~fixed-point]: ../categories/mathematics/additional_numeric_types.md#fixed-point
+[ex~mathematics~half-precision]: ../categories/mathematics/additional_numeric_types.md#half-precision
 [ex~mathematics~invert-matrix]: ../categories/mathematics/linear_algebra.md#invert-matrix
 [ex~mathematics~mathematical-functions]: ../categories/mathematics/complex_numbers.md#mathematical-functions
 [ex~mathematics~measures-of-central-tendency]: ../categories/mathematics/statistics.md#measures-of-central-tendency
@@ -345,6 +347,7 @@
 [ex~mathematics~nalgebra-vectors]: ../categories/mathematics/linear_algebra.md#nalgebra-vectors
 [ex~mathematics~num-bigint]: ../categories/mathematics/additional_numeric_types.md#num-bigint
 [ex~mathematics~num]: ../categories/mathematics/additional_numeric_types.md#num
+[ex~mathematics~rational-numbers]: ../categories/mathematics/additional_numeric_types.md#rational-numbers
 [ex~mathematics~rug]: ../categories/mathematics/additional_numeric_types.md#rug
 [ex~mathematics~sortable-floats]: ../categories/mathematics/additional_numeric_types.md#sortable-floats
 [ex~mathematics~standard-deviation]: ../categories/mathematics/statistics.md#standard-deviation
