@@ -49,3 +49,5 @@
 [p~toml]: ../parser-implementations/toml.md
 [p~tracing]: tracing.md
 [p~debugging-in-vscode]: ../../../src/appendices/contributing/development_environment_setup.md#debug-rust-programs-on-windows
+[metrics~website]: https://docs.rs/metrics
+[metrics-exporter-prometheus~website]: https://docs.rs/metrics-exporter-prometheus

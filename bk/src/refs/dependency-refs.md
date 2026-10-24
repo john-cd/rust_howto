@@ -1253,6 +1253,24 @@
 [memmap2-github]: https://github.com/RazrFalcon/memmap2-rs
 
 
+[metrics]: https://docs.rs/metrics
+
+
+[metrics-crate]: https://crates.io/crates/metrics
+
+
+[metrics-github]: https://github.com/metrics-rs/metrics
+
+
+[metrics_exporter_prometheus]: https://docs.rs/metrics_exporter_prometheus
+
+
+[metrics_exporter_prometheus-crate]: https://crates.io/crates/metrics_exporter_prometheus
+
+
+[metrics_exporter_prometheus-github]: https://github.com/metrics-rs/metrics
+
+
 [miette]: https://docs.rs/miette
 
 
