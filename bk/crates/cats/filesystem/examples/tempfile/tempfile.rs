@@ -30,7 +30,7 @@ fn main() -> std::io::Result<()> {
 
     // Read it:
     let mut buf = String::new();
-    temp_file.read_to_string(&mut buf).unwrap();
+    temp_file.read_to_string(&mut buf)?;
     assert_eq!(buf, "This is temporary.\n");
 
     // The temporary file will be automatically removed by the OS when the last
@@ -59,7 +59,7 @@ fn main() -> std::io::Result<()> {
     let mut temp_file = File::create(temp_file_path)?;
     writeln!(temp_file, "This is also temporary.")?;
 
-    // `TempDir` rely on Rust destructors for cleanup. Destructors may fail to
+    // `TempDir` relies on Rust destructors for cleanup. Destructors may fail to
     // run if the process exits through an unhandled signal interrupt, or if the
     // instance is declared statically, among other possible reasons.
     // a. Make sure that handles to files inside the directory are dropped
@@ -67,13 +67,13 @@ fn main() -> std::io::Result<()> {
     drop(temp_file);
     // b. By closing the `TempDir` explicitly, we can check that it has
     // been deleted successfully. If we don't close it explicitly,
-    // the directory will still be deleted when `tmp_dir` goes out
+    // the directory will still be deleted when `temp_dir` goes out
     // of scope, but we won't know whether deleting the directory
     // succeeded.
     temp_dir.close()?;
 
     // 4. Use `NamedTempFile::new()` when needing a named temporary file that
-    //    can be refered to its path. `NamedTempFile` also rely on Rust
+    //    whose path can be referred to. `NamedTempFile` also relies on Rust
     //    destructors for cleanup, which may fail. Read the documentation and
     //    prefer `tempfile()` in most cases.
     let temp_file0 = NamedTempFile::new()?;

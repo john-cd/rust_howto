@@ -50,17 +50,17 @@ fn main() -> std::io::Result<()> {
         let path = entry.path();
 
         if path.is_dir() {
-            print!("- (Directory) {} ", path.display());
+            println!("- (Directory) {}", path.display());
         } else {
-            print!("- (File)      {} ", path.display());
+            println!("- (File)      {}", path.display());
         }
     }
 
     // 6. `std::fs::remove_dir_all` removes a directory at a given path, after
     // removing all its contents - similar to `rm -rf` on Unix.
-    // Note that `remove_dir_all` will fail if `remove_dir` or `remove_file`
-    // fail on any constituent paths. The directory to be deleted must
-    // therefore exist. This function does not follow symbolic links and
+    // Note that `remove_dir_all` returns an error if the target directory does
+    // not exist or removing any of its contents fails. This function does not
+    // follow symbolic links and
     // will simply remove the symbolic link itself.
     fs::remove_dir_all("./temp/my_files")?;
     Ok(())

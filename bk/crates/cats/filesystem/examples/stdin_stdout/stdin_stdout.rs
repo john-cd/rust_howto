@@ -5,20 +5,22 @@
 //! Reading from standard input and writing to standard output.
 
 use std::io;
+use std::io::BufRead;
 use std::io::Write as _;
 
-/// Retrieve user input from the standard input:
-fn get_and_print_input() -> Result<String, io::Error> {
+/// Reads a line from the provided input after prompting the user.
+fn get_and_print_input<R: BufRead>(mut input: R) -> Result<String, io::Error> {
     println!("Please type your first name and press Enter:");
-    // Create a mutable `String` buffer:
     let mut user_input = String::new();
-    // Get a handle to stdin and read a line into the buffer:
-    io::stdin().read_line(&mut user_input)?;
+    input.read_line(&mut user_input)?;
     Ok(user_input)
 }
 
 /// Writes to a locked standard output and reads a line.
 fn main() -> io::Result<()> {
+    let user_input = get_and_print_input(io::stdin().lock())?;
+    println!("You entered: {}", user_input.trim_end());
+
     // Instead of using `print*!` to write to the standard output,
     // you may get an explicit handle...
     let stdout = io::stdout();
@@ -32,7 +34,7 @@ fn main() -> io::Result<()> {
     let mut stderr = io::stderr();
     // We could lock `stderr` as well.
     stderr.write_all(b"There was an error.\n")?;
-    // This is equivalent to `eprintln!`.
+    // `eprintln!` also writes a line to standard error, with formatting.
 
     Ok(())
 }
@@ -48,9 +50,11 @@ pub fn run() -> io::Result<()> {
 mod tests {
     use super::*;
 
+    /// Reads supplied input without blocking on interactive standard input.
     #[test]
     fn test_main() -> anyhow::Result<()> {
-        main()?;
+        let input = io::Cursor::new("Ada\n");
+        assert_eq!(get_and_print_input(input)?, "Ada\n");
         Ok(())
     }
 }

@@ -18,7 +18,7 @@ Note that temporary files and directories have subtle security and resource leak
 
 ### Other Options {#other-options .skip}
 
-- The [`tempdir`][c~tempdir~docs]↗{{hi:tempdir}} crate is being merged into [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}}.
+- The standalone `tempdir` crate is deprecated; use [`tempfile::tempdir`][c~tempfile::tempdir~docs]↗{{hi:tempfile::tempdir}} from [`tempfile`][c~tempfile~docs]↗{{hi:tempfile}} instead.
 
 ## Related Topics {#related-topics .skip}
 
@@ -29,5 +29,5 @@ Note that temporary files and directories have subtle security and resource leak
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
+  [accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
 </div>

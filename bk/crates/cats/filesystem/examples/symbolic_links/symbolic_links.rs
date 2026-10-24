@@ -73,11 +73,18 @@ where
 
 /// Creates a file and a link to it, then inspects both.
 fn main() -> anyhow::Result<()> {
+    fs::create_dir_all("temp")?;
     let original = Path::new("temp/source.txt");
     fs::write(original, "Hello, world!")?;
     let link = Path::new("temp/my_link.txt");
 
-    create_symlink(original, link)?;
+    match fs::remove_file(link) {
+        Ok(()) => {}
+        Err(error) if error.kind() == std::io::ErrorKind::NotFound => {}
+        Err(error) => return Err(error.into()),
+    }
+
+    create_symlink(&fs::canonicalize(original)?, link)?;
 
     inspect_path(original)?;
     inspect_path(link)?;

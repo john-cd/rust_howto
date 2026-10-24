@@ -33,7 +33,7 @@ fn main() -> Result<(), Error> {
     assert_eq!(&*random_bytes, b"My loaf!");
     // A file-backed memory map remains valid even after the File is dropped.
 
-    // You also create mutable memory-mapped buffers - either file-backed or
+    // You can also create mutable memory-mapped buffers - either file-backed or
     // anonymous - with `MmapMut`.
     // - A file-backed buffer may be used to read from or write to a file.
     // - An anonymous buffer may be used any place that an in-memory byte buffer

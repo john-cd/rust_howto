@@ -12,12 +12,12 @@ use camino::Utf8PathBuf;
 fn main() {
     // The standard `PathBuf` can contain non-UTF-8 data:
     let mut path = PathBuf::from("/home/user");
-    path.push("résumé.pdf"); // This might be non-UTF-8 on some systems.
+    path.push("résumé.pdf"); // This component is UTF-8 because it comes from a Rust string.
 
-    // .to_str() returns an Option, which can be `None`.
-    match path.to_str() {
-        Some(s) => println!("The path is: {s}"),
-        None => println!("Path is not valid UTF-8."),
+    // A `PathBuf` can hold non-UTF-8 data when it comes from the operating
+    // system, but this path was built only from UTF-8 string components.
+    if let Some(s) = path.to_str() {
+        println!("The path is: {s}");
     }
 
     // `Utf8Path` and `Utf8PathBuf` work just like their standard library

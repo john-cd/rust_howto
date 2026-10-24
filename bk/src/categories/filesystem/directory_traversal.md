@@ -10,11 +10,11 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-The following example gets the current working directory{{hi:Current working directory}} by calling [`std::env::current_dir`][c~std::env::current_dir~docs]↗{{hi:std::env::current_dir}} then for each entries in [`std::fs::read_dir`][c~std::fs::read_dir~docs]↗{{hi:std::fs::read_dir}} extracts the [`std::fs::DirEntry::path`][c~std::fs::DirEntry::path~docs]↗{{hi:std::fs::DirEntry::path}} and gets the metadata via [`std::fs::Metadata`][c~std::fs::Metadata~docs]↗{{hi:std::fs::Metadata}}.
+The following example gets the current working directory{{hi:Current working directory}} with [`std::env::current_dir`][c~std::env::current_dir~docs]↗{{hi:std::env::current_dir}}, then extracts the [`std::fs::DirEntry::path`][c~std::fs::DirEntry::path~docs]↗{{hi:std::fs::DirEntry::path}} and metadata from each entry in [`std::fs::read_dir`][c~std::fs::read_dir~docs]↗{{hi:std::fs::read_dir}}.
 
-The [`std::fs::Metadata::modified`][c~std::fs::Metadata::modified~docs]↗{{hi:std::fs::Metadata::modified}} returns the [`std::time::SystemTime::elapsed`][c~std::time::SystemTime::elapsed~docs]↗{{hi:std::time::SystemTime::elapsed}} time since last modification{{hi:Time since last modification}}.
+[`std::fs::Metadata::modified`][c~std::fs::Metadata::modified~docs]↗{{hi:std::fs::Metadata::modified}} returns a [`std::time::SystemTime`][c~std::time::SystemTime~docs]↗{{hi:std::time::SystemTime}} representing the last modification time. Call [`SystemTime::elapsed`][c~std::time::SystemTime::elapsed~docs]↗{{hi:std::time::SystemTime::elapsed}} on that value to get the duration since then.
 
-[`std::time::Duration::as_secs`][c~std::time::Duration::as_secs~docs]↗{{hi:std::time::Duration::as_secs}} converts the time to seconds and compared with 24 hours (24 *60* 60 seconds). [`std::fs::Metadata::is_file`][c~std::fs::Metadata::is_file~docs]↗{{hi:std::fs::Metadata::is_file}} filters out directories.
+[`std::time::Duration::as_secs`][c~std::time::Duration::as_secs~docs]↗{{hi:std::time::Duration::as_secs}} converts the duration to seconds so it can be compared with 24 hours (24 \* 60 \* 60 seconds). [`std::fs::Metadata::is_file`][c~std::fs::Metadata::is_file~docs]↗{{hi:std::fs::Metadata::is_file}} filters out directories.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/modified.rs:example}}
@@ -26,7 +26,7 @@ The [`std::fs::Metadata::modified`][c~std::fs::Metadata::modified~docs]↗{{hi:s
 
 [`same-file`][c~same-file~docs]↗{{hi:same-file}} is a simple crate for determining whether two file paths point to the same file.
 
-Use [`same-file::is_same-file`][c~same-file::is_same-file~docs]↗{{hi:same-file::is_same-file}} to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
+Use [`same_file::is_same_file`][c~same-file::is_same-file~docs]↗{{hi:same_file::is_same_file}} to detect loops for a given path{{hi:Detect loops for a given path}}. For example, a loop could be created on a Unix system via symlinks:
 
 ```bash
 mkdir -p /tmp/foo/bar/baz
@@ -87,7 +87,7 @@ The following example recursively walks the file system respecting ignore files 
 
 The following example uses [`walkdir::WalkDir`][c~walkdir~docs]↗{{hi:walkdir::WalkDir}} to sum regular-file sizes at depths 1 through 3, excluding entries in the root directory. Traversal and metadata errors are propagated, and the example reports if the total cannot fit in a `u64`.
 
-Recursion depth can be flexibly set by [`walkdir::Walkdir::min_depth`][c~walkdir::WalkDir::min_depth~docs]↗{{hi:walkdir::WalkDir::min_depth}} & [`walkdir::WalkDir::max_depth`][c~walkdir::WalkDir::max_depth~docs]↗{{hi:walkdir::WalkDir::max_depth}} methods.
+Recursion depth can be set with [`walkdir::WalkDir::min_depth`][c~walkdir::WalkDir::min_depth~docs]↗{{hi:walkdir::WalkDir::min_depth}} and [`walkdir::WalkDir::max_depth`][c~walkdir::WalkDir::max_depth~docs]↗{{hi:walkdir::WalkDir::max_depth}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/sizes.rs:example}}
@@ -109,7 +109,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 [![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~repo][c~glob~repo~badge]][c~glob~repo] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-The following example finds all image files in the `/media/` directory matching the `img_[0-9][0-9]*.png` pattern.
+The following example finds all image files in the `/media/` directory matching the `img_[0-9]*.png` pattern.
 
 A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOptions}} struct is passed to the [`glob::glob_with`][c~glob::glob_with~docs]↗{{hi:glob::glob_with}} function making the glob{{hi:glob}} pattern case insensitive while keeping the other options [`std::default::Default`][c~std::default::Default~docs]↗{{hi:std::default::Default}}.
 
@@ -137,5 +137,5 @@ The following example uses [`globset`][c~globset~docs]↗{{hi:globset}} which al
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
+  [accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
 </div>

@@ -30,10 +30,8 @@ fn main() -> io::Result<()> {
     // Beware:
     // - Calling this on a non-directory (e.g. a symlink to a directory)
     // will error.
-    // - It assumes both that the caller has permission to delete
-    // the files, and that they don't have permission to change permissions to
-    // be able to delete the files: no ACL or chmod changes are made during
-    // deletion.
+    // - The caller must have permission to delete the files. The crate does
+    // not change ACLs or file permissions to make deletion possible.
 
     // Security note: The functions `remove_dir_all`, and related
     // `remove_dir_contents`, and `ensure_empty_dir` are intrinsically

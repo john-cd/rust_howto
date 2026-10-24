@@ -10,10 +10,10 @@
 
 [`std::path`][c~std::path~docs]↗ provides types and functions for working with file paths. Its two main types are `Path` and `PathBuf`. The relationship between them is directly analogous to `str` and `String`:
 
-- [`Path`][c~std::path::Path~docs]↗{{hi:Path}} is an unsized, immutable sequence of characters representing a file path. Because it is unsized, you almost always see it used as a borrowed slice: `&Path`. It is a "view" of a path string. It's efficient because it doesn't require a memory allocation.
+- [`Path`][c~std::path::Path~docs]↗{{hi:Path}} is an unsized, immutable view of a path. Its representation follows the platform's native path encoding, so it is not necessarily a sequence of Unicode characters. Because it is unsized, it is usually borrowed as `&Path`, without allocating.
 - [`PathBuf`][c~std::path::PathBuf~docs]↗{{hi:PathBuf}} is an owned, mutable, growable buffer containing a file path. Use `PathBuf` when you need to build or modify a path.
 
-Note that `Path` and `PathBuf` are thin wrappers around `OsString` and `OsStr` respectively, meaning that they work directly on strings according to the local platform's path syntax. Path methods that do not access the filesystem, such as `Path::starts_with` and `Path::ends_with`, are _case sensitive_ no matter the platform or filesystem. An exception to this is made for Windows drive letters.
+`Path` and `PathBuf` are wrappers around `OsStr` and `OsString`, respectively. This lets them work with paths using the local platform's native path representation. Path methods that do not access the filesystem, such as `Path::starts_with` and `Path::ends_with`, are _case sensitive_ no matter the platform or filesystem. An exception to this is made for Windows drive letters.
 
 The following example demonstrates the use of `Path` and `PathBuf`:
 
@@ -54,5 +54,5 @@ The `camino` crate provides an alternative to the standard `Path` and `PathBuf` 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
+  [accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
 </div>
