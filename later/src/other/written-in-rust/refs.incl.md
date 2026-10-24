@@ -35,3 +35,7 @@
 [p~scripting]: # "../scripting/index.md"
 [p~search]: # "../../categories/database/search.md"
 [p~written-in-rust]: index.md
+
+[evcxr-jupyter~repo]: https://github.com/evcxr/evcxr/tree/main/evcxr_jupyter
+
+[c~sniffnet~repo]: https://github.com/gyulyvgc/sniffnet

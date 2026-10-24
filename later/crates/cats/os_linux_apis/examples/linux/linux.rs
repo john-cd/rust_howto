@@ -2,40 +2,20 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! A Rust example using the `nix` crate to interface with Linux APIs.
-//!
-//! This example prints the current process ID, parent process ID, and the
-//! operating system information obtained from `uname`.
+//! A Linux-specific example that queries the current process ID.
 
-/// Prints information about the Linux system.
+/// Prints the current process ID using a safe Linux API wrapper.
 #[cfg(target_os = "linux")]
 fn main() {
-    use nix::sys::utsname::uname;
-    use nix::unistd::getpid;
-    use nix::unistd::getppid;
-
-    let uname = uname();
-    let pid = getpid();
-    let ppid = getppid();
-
-    println!("Linux system information:");
-    println!("  sysname: {:?}", uname.sysname());
-    println!("  nodename: {:?}", uname.nodename());
-    println!("  release: {:?}", uname.release());
-    println!("  version: {:?}", uname.version());
-    println!("  machine: {:?}", uname.machine());
-    println!("");
-    println!("Process information:");
-    println!("  pid: {}", pid);
-    println!("  ppid: {}", ppid);
+    let pid = rustix::process::getpid();
+    assert!(pid.as_raw_nonzero().get() > 0);
+    println!("Linux process ID: {pid:?}");
 }
 
-/// Prints a message, since the example only works on Linux.
+/// Prints a message when this Linux-only example runs on another target.
 #[cfg(not(target_os = "linux"))]
 fn main() {
-    println!(
-        "This example is intended to demonstrate Linux API interop and is only supported on Linux."
-    );
+    println!("This example is intended for Linux.");
 }
 // ANCHOR_END: example
 
@@ -48,8 +28,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies the example runs on Linux and has a harmless fallback
+    /// elsewhere.
     #[test]
-    fn test_main() {
+    fn example_runs_for_the_current_target() {
         main();
     }
 }

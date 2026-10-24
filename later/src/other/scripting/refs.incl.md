@@ -7,3 +7,8 @@
 [p~functions]: ../../language/functions.md
 [p~parsing]: ../../categories/parsing/parsing.md
 [p~scripting]: index.md
+
+[c~boa~docs]: https://docs.rs/boa_engine
+[c~deno_core~docs]: https://docs.rs/deno_core
+[c~koto~docs]: https://docs.rs/koto
+[c~rune~docs]: https://docs.rs/rune

@@ -1,64 +1,26 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
+//! A no-allocation example using fixed-capacity collections.
+
+use core::fmt::Write as _;
+
+use heapless::String;
+use heapless::Vec;
+
 // ANCHOR: example
-//! A no-alloc example using `core` only.
-//!
-//! This example runs in a `#![no_std]` context and formats text into a
-//! fixed-size stack buffer without heap allocations.
-
-use core::fmt;
-use core::fmt::Write;
-
-/// Writes formatted text to a stack-allocated string and checks it.
+/// Demonstrates fixed-capacity storage and formatting without heap allocation.
 fn main() {
-    let mut buffer = ArrayString::new();
-    write!(
-        &mut buffer,
-        "no_alloc core formatting: {} + {} = {}",
-        2,
-        3,
-        2 + 3
-    )
-    .unwrap();
-
-    assert_eq!(buffer.as_str(), "no_alloc core formatting: 2 + 3 = 5");
-}
-
-/// A string stored in a fixed-size buffer on the stack.
-struct ArrayString {
-    /// The bytes of the string.
-    buf: [u8; 64],
-    /// The number of bytes in use.
-    len: usize,
-}
-
-impl ArrayString {
-    /// Creates an empty string.
-    const fn new() -> Self {
-        Self {
-            buf: [0; 64],
-            len: 0,
-        }
+    let mut samples: Vec<u8, 8> = Vec::new();
+    for sample in 0..8 {
+        assert!(samples.push(sample).is_ok());
     }
+    assert_eq!(samples.push(8), Err(8));
 
-    /// Returns the content as a string slice.
-    fn as_str(&self) -> &str {
-        unsafe { core::str::from_utf8_unchecked(&self.buf[..self.len]) }
-    }
-}
-
-impl Write for ArrayString {
-    fn write_str(&mut self, s: &str) -> fmt::Result {
-        let bytes = s.as_bytes();
-        let new_len = self.len + bytes.len();
-        if new_len > self.buf.len() {
-            return Err(fmt::Error);
-        }
-        self.buf[self.len..new_len].copy_from_slice(bytes);
-        self.len = new_len;
-        Ok(())
-    }
+    let mut message: String<32> = String::new();
+    write!(&mut message, "sample count: {}", samples.len())
+        .expect("the message fits in the fixed-capacity string");
+    assert_eq!(message.as_str(), "sample count: 8");
 }
 // ANCHOR_END: example
 
@@ -71,8 +33,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the example rejects excess items and formats into fixed
+    /// storage.
     #[test]
-    fn test_main() {
+    fn fixed_capacity_storage_rejects_overflow_and_formats() {
         main();
     }
 }

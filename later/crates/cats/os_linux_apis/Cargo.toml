@@ -19,6 +19,8 @@ autolib = false
 
 [dependencies]
 nix = "0.31"
+# Safe Linux process APIs used by the Linux-only example.
+rustix = { version = "1.1", features = ["process"] }
 
 [[example]]
 name = "linux"

@@ -34,7 +34,7 @@ mod macos_impl {
     }
 
     /// Calls Cocoa APIs.
-    fn main() {
+    fn run() {
         unsafe {
             let _pool = NSAutoreleasePool::new(nil);
             let process_info: id =

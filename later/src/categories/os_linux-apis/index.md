@@ -1,71 +1,27 @@
 <!-- TODO Reviewed ??-??-2026 -->
-# OS - Linux APIs
+# OS: Linux APIs
 
-[![cat~os::linux-apis][cat~os::linux-apis~badge]][cat~os::linux-apis]
+Linux-specific interfaces are useful when a program needs kernel or service features beyond portable `std`. Prefer safe bindings and isolate platform-specific code behind `cfg(target_os = "linux")` so other targets retain a clear fallback.
 
-Bindings to Linux-specific APIs.
+| Task | Crates and interfaces | Notes |
+|---|---|---|
+| System calls | [`rustix`][c~rustix~docs]↗{{hi:rustix}}, [`nix`][c~nix~docs]↗{{hi:nix}}, `std::os::linux` | `rustix` and `nix` offer typed wrappers; use libc bindings only when a wrapper is unavailable. |
+| Asynchronous I/O | [`io-uring`][c~io-uring~docs]↗{{hi:io-uring}}, [`tokio-uring`][c~tokio-uring~docs]↗{{hi:tokio-uring}}, [`glommio`][c~glommio~docs]↗{{hi:glommio}} | Select a runtime that matches the application's completion and cancellation model. |
+| eBPF | [`aya`][c~aya~docs]↗{{hi:aya}} | Load and manage eBPF programs from Rust. |
+| Desktop services | [`zbus`][c~zbus~docs]↗{{hi:zbus}} for D-Bus; systemd notification and journal bindings | Check the service and systemd versions you need to support. |
+| File and device events | [`notify`][c~notify~docs]↗{{hi:notify}}; inotify; udev and evdev bindings | `notify` offers a cross-platform watcher; use the Linux interfaces for kernel-specific details. |
+| Isolation and resource control | Namespaces and cgroups; see [[virtualization | Virtualization]] | These interfaces require careful privilege and lifecycle handling; see the [[virtualization | Virtualization]] work tracked by [issue #968](https://github.com/john-cd/rust_howto/issues/968). |
 
-Most standard Rust code will work on Linux without modification. For general system programming tasks, the standard library is often sufficient. For Linux-specific features, you might need to use [`nix`][c~nix~docs]↗{{hi:nix}}, [[development-tools_ffi | FFI]], or find crates that provide bindings to the specific interface you're working with. Be careful with [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} code and consult the Linux documentation.
-
-## System Calls (Low-Level OS Interaction)
-
-- `std::os::unix`: This module provides access to a large number of Unix system calls, which are generally the same or very similar across Linux and other Unix-like systems. This is your primary way to interact with the Linux kernel directly.
-
-- [`nix`][c~nix~docs]↗{{hi:nix}} provides more comprehensive access to Unix-like system calls, including many Linux-specific ones. It is often preferred over using `std::os::unix` directly for better type safety and error handling.
-
-## File System Interaction
-
-- [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}}: (Standard library) For working with files and directories. Works well on Linux.
-- [`std::path`][c~std::path~docs]↗{{hi:std::path}}: (Standard library) For working with file paths. Works well on Linux.
-
-## Process Management
-
-- `std::process`: spawning and managing child processes. Works well on Linux.
-
-## Networking
-
-- [`std::net`][c~std::net~docs]↗{{hi:std::net}}: basic networking (TCP, UDP). Works well on Linux.
-- [`tokio`][c~tokio~docs]↗{{hi:tokio}}: asynchronous networking.
-
-## Threads
-
-- `std::thread`: creating and managing threads. Works well on Linux.
-
-## Time
-
-- [`std::time`][c~std::time~docs]↗{{hi:std::time}}: working with time and durations. Works well on Linux.
-- Also use [`chrono`][c~chrono~docs]↗{{hi:chrono}} or [`time`][c~time~docs]↗{{hi:time}} for date and time calculations.
-
-## Linux-Specific Features (e.g., `systemd`, Specific Kernel interfaces)
-
-For interacting with Linux-specific services or APIs, you'll often need to find or create crates that provide bindings to those specific interfaces.
-
-See [[api-bindings | API Bindings]] and [[external_ffi_bindings | External FFI Bindings]].
-
-## Foreign Function Interface (FFI)
-
-Rust's FFI allows you to call functions written in other languages (e.g., C) that might interact with Linux directly. This is often used when you need to access OS features that aren't directly exposed by Rust's standard library or other crates.
-
-See [[development-tools_ffi | Development Tools FFI]].
-
-## Device Drivers (Kernel-Level)
-
-Writing device drivers is advanced and requires close interaction with the Linux kernel. You'll typically need to write kernel modules in C and then use FFI from Rust user-space programs.
-
-## Code Examples
+## Example
 
 {{#include linux.incl.md}}
 
 ## Related Topics
 
-- Linux system programming and kernels.
-- OS-level APIs and bindings.
-- Cross-platform compatibility.
-- Device drivers and low-level performance.
+- [[api-bindings | API Bindings]] and [[external-ffi-bindings | External FFI Bindings]].
+- [[os | Operating Systems]].
+- [[virtualization | Virtualization]].
+- [[linux | Linux]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/948)
-</div>
