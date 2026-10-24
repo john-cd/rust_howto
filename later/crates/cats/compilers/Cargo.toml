@@ -23,11 +23,18 @@ autolib = false
 anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive"] }
 comemo = "0.5.1"
+# Derive the lexer used by the tokenization example.
+logos = "0.16"
 salsa = "0.26.2"
 
 [[example]]
 name = "incremental_computation"
 path = "examples/incremental_computation/main.rs"
+test = true
+
+[[example]]
+name = "tokenization"
+path = "examples/tokenization/main.rs"
 test = true
 
 [lints]
