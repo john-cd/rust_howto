@@ -14,6 +14,9 @@
 [ex~mathematics~adding-complex-numbers]: complex_numbers.md#adding-complex-numbers
 [ex~mathematics~adding-matrices]: linear_algebra.md#adding-matrices
 [ex~mathematics~big-decimal]: additional_numeric_types.md#big-decimal
+[c~diffsol~docs]: https://docs.rs/diffsol/latest/diffsol/
+[c~ode_solvers~docs]: https://docs.rs/ode_solvers/latest/ode_solvers/
+[primitive~slice::select_nth_unstable]: https://doc.rust-lang.org/std/primitive.slice.html#method.select_nth_unstable
 [ex~mathematics~big-integers]: additional_numeric_types.md#big-integers
 [ex~mathematics~calculating-the-side-length-of-a-triangle]: trigonometry.md#calculating-the-side-length-of-a-triangle
 [ex~mathematics~creating-complex-numbers]: complex_numbers.md#creating-complex-numbers

@@ -80,7 +80,7 @@ fn select(data: &[i32], k: usize) -> Option<i32> {
 /// # Arguments
 ///
 /// * `data` - The slice of integers to calculate the median from.
-fn median(data: &[i32]) -> Option<f32> {
+fn median(data: &[i32]) -> Option<f64> {
     // Get the size of the data slice.
     let size = data.len();
 
@@ -97,14 +97,14 @@ fn median(data: &[i32]) -> Option<f32> {
 
             match (fst_med, snd_med) {
                 (Some(fst), Some(snd)) => {
-                    Some((i64::from(fst) + i64::from(snd)) as f32 / 2.0)
+                    Some((i64::from(fst) + i64::from(snd)) as f64 / 2.0)
                 }
                 _ => None,
             }
         }
         // If the size is odd, the median is the middle element.
         // The middle element is at index size / 2.
-        odd => select(data, odd / 2).map(|x| x as f32),
+        odd => select(data, odd / 2).map(f64::from),
     }
 }
 
@@ -124,7 +124,7 @@ fn main() {
     println!("Median is {med:?}");
     assert_eq!(med, Some(5.5));
     assert_eq!(median(&[]), None);
-    assert_eq!(median(&[i32::MAX, i32::MAX]), Some(i32::MAX as f32));
+    assert_eq!(median(&[i32::MAX, i32::MAX]), Some(f64::from(i32::MAX)));
 }
 
 // ANCHOR_END: example
@@ -138,6 +138,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the median example and its assertions.
     #[test]
     fn test_main() {
         main();
@@ -148,8 +149,8 @@ mod tests {
     fn median_handles_extreme_values_without_overflow() {
         assert_eq!(median(&[]), None);
         assert_eq!(median(&[3, 1, 2]), Some(2.0));
-        assert_eq!(median(&[i32::MAX, i32::MAX]), Some(i32::MAX as f32));
-        assert_eq!(median(&[i32::MIN, i32::MIN]), Some(i32::MIN as f32));
+        assert_eq!(median(&[i32::MAX, i32::MAX]), Some(f64::from(i32::MAX)));
+        assert_eq!(median(&[i32::MIN, i32::MIN]), Some(f64::from(i32::MIN)));
         assert_eq!(median(&[i32::MIN, i32::MAX]), Some(-0.5));
     }
 }

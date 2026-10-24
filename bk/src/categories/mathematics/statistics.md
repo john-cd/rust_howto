@@ -16,13 +16,13 @@ The first example calculates the mean (the sum of all measurements divided by th
 {{#include ../../../crates/cats/mathematics/examples/stats/central_tendency.rs:example}}
 ```
 
-The second example calculates the median using the quickselect algorithm, which avoids a full [`sort`][primitive~slice::sort]↗{{hi:slice::sort}} by sorting only partitions of the data set known to possibly contain the median. This uses [`std::cmp::Ord::cmp`][c~std::cmp::Ord::cmp~docs]↗{{hi:std::cmp::Ord::cmp}} and [`std::cmp::Ordering`][c~std::cmp::Ordering~docs]↗{{hi:std::cmp::Ordering}} to succinctly decide the next partition to examine, and [`split_at`][primitive~slice::split_at]↗{{hi:split_at}} to choose an arbitrary pivot for the next partition at each step.
+The second example calculates the median with a hand-written quickselect implementation. It recursively partitions into new `Vec` values; it does not sort those partitions, and it allocates while doing so. For an in-place selection, [`slice::select_nth_unstable`][primitive~slice::select_nth_unstable]↗{{hi:slice::select_nth_unstable}} is available in the standard library and has been stable since Rust 1.49.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/stats/central_tendency1.rs:example}}
 ```
 
-The final example calculates the mode using a mutable [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} to collect counts of each distinct integer from the set, using a [`std::iter::Iterator::fold`][c~std::iter::Iterator::fold~docs]↗{{hi:std::iter::Iterator::fold}} and the [`std::collections::hash_map::Entry`][c~std::collections::hash_map::Entry~docs]↗{{hi:std::collections::hash_map::Entry}} API. The most frequent value in the [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} surfaces with [`std::iter::Iterator::max_by_key`][c~std::iter::Iterator::max_by_key~docs]↗{{hi:std::iter::Iterator::max_by_key}}.
+The final example calculates the mode using a mutable [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} to collect counts of each distinct integer from the set, using a [`std::iter::Iterator::fold`][c~std::iter::Iterator::fold~docs]↗{{hi:std::iter::Iterator::fold}} and the [`std::collections::hash_map::Entry`][c~std::collections::hash_map::Entry~docs]↗{{hi:std::collections::hash_map::Entry}} API. The most frequent value in the [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}} surfaces with [`std::iter::Iterator::max_by_key`][c~std::iter::Iterator::max_by_key~docs]↗{{hi:std::iter::Iterator::max_by_key}}. If values tie for the highest frequency, this implementation returns one according to hash-map iteration order; it does not define a deterministic tie-breaking rule.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/stats/central_tendency2.rs:example}}
@@ -34,7 +34,7 @@ The final example calculates the mode using a mutable [`std::collections::HashMa
 
 This example calculates the standard deviation and z-score of a set of measurements.
 
-The standard deviation is defined as the square root of the variance (here calculated with f32's [`sqrt`][primitive~f32::sqrt]↗{{hi:f32::sqrt}} where the variance is the [`std::iter::Iterator::sum`][c~std::iter::Iterator::sum~docs]↗{{hi:std::iter::Iterator::sum}} of the squared difference between each measurement and the mean divided by the number of measurements).
+This example computes the population standard deviation: it divides the sum of squared differences from the mean by the number of measurements, then takes the square root with f64's [`sqrt`][primitive~f64::sqrt]↗{{hi:f64::sqrt}}. The sample standard deviation instead divides by `n - 1` and requires at least two observations.
 
 The z-score is the number of standard deviations a single measurement spans away from the mean of the data set.
 
@@ -50,5 +50,5 @@ The z-score is the number of standard deviations a single measurement spans away
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
+  [accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
 </div>

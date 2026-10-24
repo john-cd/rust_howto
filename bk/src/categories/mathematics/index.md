@@ -25,6 +25,7 @@ For vectors, matrices, decompositions, and transformations, the examples use `na
 ### Tensors
 
 For multidimensional arrays, see [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}. The examples below focus on vectors and matrices; there is no dedicated tensor example yet.
+
 {{#include linear_algebra.incl.md}}
 
 ## Probability and Statistics
@@ -80,6 +81,9 @@ Optimization problems include linear, nonlinear, and integer programming, as wel
 
 This topic includes ordinary and partial differential equations, dynamical systems, stability analysis, and control systems.
 
+- [`diffsol`][c~diffsol~docs]↗ provides solvers for ordinary differential equations and semi-explicit differential-algebraic equations.
+- [`ode_solvers`][c~ode_solvers~docs]↗ provides numerical methods for ordinary differential equations.
+
 ## Graph Theory
 
 For graph data structures and algorithms, see [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} and the [[graphs | Graphs]] chapter.
@@ -115,6 +119,6 @@ This area includes combinatorics, set theory, and logic. [`bit-set`][c~bit-set~d
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
-[accuracy review: decisions for the maintainer](https://github.com/john-cd/rust_howto/issues/1897)
+  [accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
+  [accuracy review: decisions for the maintainer](https://github.com/john-cd/rust_howto/issues/1897)
 </div>

@@ -37,9 +37,9 @@ This code example creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~do
 
 The following example creates a 1-D array (vector) with [`ndarray::arr1`][c~ndarray::arr1~docs]↗{{hi:ndarray::arr1}} and a 2-D array (matrix) with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}}.
 
-First, a scalar is multiplied by the vector to get another vector. Then, the matrix is multiplied by the new vector with `ndarray::Array2::dot`↗ (Matrix multiplication is performed using `ndarray::Array2::dot`↗, while the `*` operator performs element-wise multiplication.)
+First, a scalar is multiplied by the vector to get another vector. Then, the matrix is multiplied by the new vector with [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗. Matrix multiplication uses `dot`, while the `*` operator performs element-wise multiplication.
 
-In [`ndarray`][c~ndarray~docs]↗, 1-D arrays can be interpreted as either row or column vectors depending on context. If representing the orientation of a vector is important, a 2-D array with one row or one column must be used instead. In this example, the vector is a 1-D array on the right-hand side, so `ndarray::Array2::dot`↗ handles it as a column vector.
+In [`ndarray`][c~ndarray~docs]↗, 1-D arrays can be interpreted as either row or column vectors depending on context. If representing the orientation of a vector is important, a 2-D array with one row or one column must be used instead. In this example, the vector is a 1-D array on the right-hand side, so the `dot` method handles it as a column vector.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/multiply_scalar_vector_matrix.rs:example}}
@@ -49,9 +49,9 @@ In [`ndarray`][c~ndarray~docs]↗, 1-D arrays can be interpreted as either row o
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-The [`ndarray`][c~ndarray~docs]↗ crate supports a number of ways to create arrays -- this recipe create [`ndarray::Array`][c~ndarray::Array~docs]↗{{hi:ndarray::Array}} from [`std::vec::Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} using [`std::convert::From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}. Then, it sums the arrays element-wise.
+The [`ndarray`][c~ndarray~docs]↗ crate supports a number of ways to create arrays. This recipe creates an [`ndarray::Array`][c~ndarray::Array~docs]↗{{hi:ndarray::Array}} from a [`std::vec::Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} using [`std::convert::From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}, then sums arrays element-wise.
 
-This recipe contains an example of comparing two floating-point [vectors][p~vectors] element-wise. Floating-point numbers are often stored inexactly, making exact comparisons difficult. However, the [`approx::assert_abs_diff_eq`][c~approx::assert_abs_diff_eq~docs]↗{{hi:approx::assert_abs_diff_eq}} macro from the [`approx`][c~approx~docs]↗{{hi:approx}} crate allows for convenient element-wise comparisons. To use the [`approx`][c~approx~docs]↗ crate with [`ndarray`][c~ndarray~docs]↗, the [`approx`][c~approx~docs]↗{{hi:approx}} feature must be added to the [`ndarray`][c~ndarray~docs]↗ dependency in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}. For example, `ndarray = { version = "0.15.6", features = [ "approx" ] }`.
+This recipe contains an example of comparing two floating-point [vectors][p~vectors] element-wise. Floating-point numbers are often stored inexactly, making exact comparisons difficult. However, the [`approx::assert_abs_diff_eq`][c~approx::assert_abs_diff_eq~docs]↗{{hi:approx::assert_abs_diff_eq}} macro from the [`approx`][c~approx~docs]↗{{hi:approx}} crate allows for convenient element-wise comparisons. To use the [`approx`][c~approx~docs]↗ crate with [`ndarray`][c~ndarray~docs]↗, enable the `approx` feature on the [`ndarray`][c~ndarray~docs]↗ dependency. This workspace uses `ndarray = { version = "0.17.2", features = [ "approx" ] }` in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
 
 This recipe also contains additional ownership examples. Here, `let z = a + b` consumes `a` and `b`, updates `a` with the result, then moves ownership to `z`. Alternatively,
 `let w = &c + &d` creates a new vector without consuming `c` or `d`, allowing their modification later. See [Binary Operators With Two Arrays][c~ndarray::ArrayBase~docs]↗ for additional detail.
@@ -64,10 +64,9 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 
 [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
 
-This recipe demonstrates use of the [`ndarray::Array1`][c~ndarray::Array1~docs]↗{{hi:ndarray::Array1}} type, [`ndarray::Array1`][c~ndarray::Array1~docs]↗{{hi:ndarray::Array1}} type,
-[`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]↗{{hi:ndarray::ArrayBase::fold}} method, and [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}} method in computing the [`l1`][wolfram~l1-norm]↗{{hi:L1 norm}} and [`l2`][wolfram~l2-norm]↗{{hi:L2 norm}} norms of a given vector.
+This recipe demonstrates the [`ndarray::ArrayView1`][c~ndarray::ArrayView1~docs]↗{{hi:ndarray::ArrayView1}} type, the [`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]↗{{hi:ndarray::ArrayBase::fold}} method, and the [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}} method to compute the [`l1`][wolfram~l1-norm]↗{{hi:L1 norm}} and [`l2`][wolfram~l2-norm]↗{{hi:L2 norm}} norms of a vector.
 
-The [`l2_norm`][wolfram~l2-norm]↗ function is the simpler of the two, as it computes the square root of the dot product of a vector with itself. The [`l1_norm`][wolfram~l1-norm]↗ function is computed by a [`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]↗{{hi:ndarray::ArrayBase::fold}} operation that sums the absolute values of the elements. (This could also be performed with `x.mapv(f64::abs).scalar_sum()`, but that would allocate a new array for the result of the `mapv`.)
+The [`l2_norm`][wolfram~l2-norm]↗ function computes the square root of the dot product of a vector with itself. The [`l1_norm`][wolfram~l1-norm]↗ function uses [`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]↗{{hi:ndarray::ArrayBase::fold}} to sum the absolute values of the elements. The expression `x.mapv(f64::abs).sum()` is an alternative, but `mapv` allocates a new array for its result.
 
 Note that both [`l1_norm`][wolfram~l1-norm]↗ and [`l2_norm`][wolfram~l2-norm]↗ take the [`ndarray::ArrayView1`][c~ndarray::ArrayView1~docs]↗{{hi:ndarray::ArrayView1}} type. This recipe considers vector norms, so the norm functions only need to accept one-dimensional views, hence [`ndarray::ArrayView1`][c~ndarray::ArrayView1~docs]↗{{hi:ndarray::ArrayView1}}. While the functions could take a parameter of type `&Array1<f64>` instead, that would require the caller to have a reference to an owned array, which is more restrictive than just having access to a view (since a view can be created from any array or view, not just an owned array).
 
@@ -172,5 +171,5 @@ Note that serialization followed by deserialization gives back the original matr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
+  [accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
 </div>
