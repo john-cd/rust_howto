@@ -1,9 +1,10 @@
 <!-- TODO Reviewed ??-??-2026 -->
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Send HTTP Requests][ex~command-line-utilities~http-requests] | [`xh`][xh~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Load Test HTTP Services][ex~command-line-utilities~http-load-testing] | [`oha`][oha~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Monitor Local Bandwidth][ex~command-line-utilities~bandwidth-monitoring] | [`bandwhich`][bandwhich~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Diagnose Connectivity][ex~command-line-utilities~connectivity-diagnostics] | [`gping`][c~gping~repo]↗, [`trippy`][trippy~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Query DNS][ex~command-line-utilities~dns-queries] | [`doggo`][doggo~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Scan Authorized Hosts][ex~command-line-utilities~port-scanning] | [`rustscan`][c~rustscan~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
+| Tool | Use for | Install |
+|------|---------|---------|
+| [`xh`][xh~repo]↗ | HTTPie-style HTTP requests | `cargo install xh --locked` |
+| [`oha`][oha~repo]↗ | HTTP load testing | `cargo install oha --locked` |
+| [`bandwhich`][bandwhich~repo]↗ | Per-process network bandwidth | `cargo install bandwhich` |
+| [`gping`][c~gping~repo]↗ | Graphing ping latency | `cargo install gping --locked` |
+| [`trippy`][trippy~repo]↗ | Ping and traceroute diagnostics | `cargo install trippy --locked` |
+| [`doggo`][doggo~repo]↗ | DNS queries; Go alternative to the older Rust `dog` | `go install github.com/mr-karan/doggo/cmd/doggo@latest` |
+| [`rustscan`][c~rustscan~repo]↗ | Fast port discovery before an authorized Nmap scan | `cargo install rustscan --locked` |

@@ -7,7 +7,7 @@
 
 [`xh`][xh~repo]↗ is a fast, friendly HTTP client with an interface inspired by HTTPie.
 
-```sh
+```bash
 cargo install xh --locked
 xh https://example.com
 ```
@@ -16,7 +16,7 @@ xh https://example.com
 
 [`oha`][oha~repo]↗ sends concurrent HTTP requests and reports latency and throughput statistics. Load tests consume server resources; run them only against services you own or have permission to test.
 
-```sh
+```bash
 cargo install oha --locked
 oha -n 100 -c 10 http://localhost:3000/
 ```
@@ -25,7 +25,7 @@ oha -n 100 -c 10 http://localhost:3000/
 
 [`bandwhich`][bandwhich~repo]↗ shows network use by process. The project is in passive maintenance: critical issues are addressed, but new features are not being developed. Packet capture requires elevated privileges on Linux; consult the project instructions for the supported setup on your platform.
 
-```sh
+```bash
 cargo install bandwhich
 sudo bandwhich
 ```
@@ -36,14 +36,14 @@ sudo bandwhich
 
 ### `gping` {#gping}
 
-```sh
+```bash
 cargo install gping --locked
 gping example.com
 ```
 
 ### `trippy`
 
-```sh
+```bash
 cargo install trippy --locked
 sudo trip example.com
 ```
@@ -54,7 +54,7 @@ Raw-socket permissions may be required. See Trippy's installation and privilege 
 
 [`doggo`][doggo~repo]↗ is a maintained DNS client with support for encrypted DNS protocols. It is written in Go, not Rust; the original `dog` client is Rust. Use `doggo` when you want the maintained tool and do not require a Rust implementation.
 
-```sh
+```bash
 go install github.com/mr-karan/doggo/cmd/doggo@latest
 doggo MX example.com @1.1.1.1
 ```
@@ -63,7 +63,7 @@ doggo MX example.com @1.1.1.1
 
 [`rustscan`][c~rustscan~repo]↗ scans ports and can hand discovered ports to Nmap. Port scanning can disrupt systems or violate policy. Scan only hosts you own or are explicitly authorized to assess, and follow the target network's rules.
 
-```sh
+```bash
 cargo install rustscan
 rustscan -a <authorized-host>
 ```
