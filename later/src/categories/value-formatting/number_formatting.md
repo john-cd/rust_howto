@@ -15,6 +15,13 @@ Fast floating point to string conversion.
 {{#include ../../../crates/cats/value_formatting/examples/number_formatting/ryu.rs:example}}
 ```
 
+## Convert Identifiers Between Case Styles {#case-conversion}
+
+[`heck`][c~heck~docs]↗{{hi:heck}} converts identifiers between common case conventions.
+
+```rust,editable
+{{#include ../../../crates/cats/value_formatting/examples/case_conversion/case_conversion.rs:example}}
+```
 ## Convert Integers to String Quickly with `itoa` {#itoa}
 
 [![itoa][c~itoa~docs~badge]][c~itoa~docs] [![itoa~crates.io][c~itoa~crates.io~badge]][c~itoa~crates.io] [![itoa~repo][c~itoa~repo~badge]][c~itoa~repo] [![itoa~lib.rs][c~itoa~lib.rs~badge]][c~itoa~lib.rs]{{hi:itoa}}{{hi:Integer}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
