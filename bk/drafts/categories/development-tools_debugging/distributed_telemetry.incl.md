@@ -1,7 +1,9 @@
 <!-- TODO Reviewed ??-??-2026 -->
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Jaeger][ex~development-tools_debugging~jaeger] | | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
-| [`OpenObserve`][ex~development-tools_debugging~open-observe] | | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
-| [Distributed Tracing, Logs, and Metrics with `OpenTelemetry`][ex~development-tools_debugging~open-telemetry] | [![opentelemetry][c~opentelemetry~docs~badge]][c~opentelemetry~docs]{{hi:opentelemetry}} | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
-| [Metrics with Prometheus][ex~development-tools_debugging~prometheus] | [![prometheus][c~prometheus~docs~badge]][c~prometheus~docs] | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
+
+Distributed tracing links operations across services into a trace. Rust applications commonly emit spans with [`tracing`][c~tracing~docs] and bridge them to OpenTelemetry with [`tracing-opentelemetry`][tracing-opentelemetry~docs]. The OpenTelemetry SDK batches spans and exports them in the OpenTelemetry Protocol (OTLP) to a collector or compatible backend.
+
+| Recipe                                                                                                                       | Crates                                          | Categories                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| [Export Traces with OpenTelemetry and OTLP][ex~development-tools_debugging~open-telemetry]                                   | [`opentelemetry-otlp`][opentelemetry-otlp~docs] | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
+| [Propagate Trace Context Across HTTP][ex~development-tools_debugging~propagate-context-across-http]                          | [`opentelemetry-http`][opentelemetry-http~docs] | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
+| [Send Traces to Jaeger, OpenObserve, or Quickwit][ex~development-tools_debugging~other-common-observability-tools-platforms] | [OpenTelemetry Rust][opentelemetry-rust~repo]   | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |

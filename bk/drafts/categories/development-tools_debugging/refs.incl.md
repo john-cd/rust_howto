@@ -51,3 +51,12 @@
 [p~debugging-in-vscode]: ../../../src/appendices/contributing/development_environment_setup.md#debug-rust-programs-on-windows
 [metrics~website]: https://docs.rs/metrics
 [metrics-exporter-prometheus~website]: https://docs.rs/metrics-exporter-prometheus
+[opentelemetry-otlp~docs]: https://docs.rs/opentelemetry-otlp
+[opentelemetry-http~docs]: https://docs.rs/opentelemetry-http
+[tracing-opentelemetry~docs]: https://docs.rs/tracing-opentelemetry
+[opentelemetry-otlp-example]: https://github.com/open-telemetry/opentelemetry-rust/tree/main/opentelemetry-otlp/examples/basic-otlp
+[opentelemetry-rust~repo]: https://github.com/open-telemetry/opentelemetry-rust
+[otel-context-propagation]: https://opentelemetry.io/docs/concepts/context-propagation/
+[jaeger~otlp-docs]: https://www.jaegertracing.io/docs/2.22/features/
+[openobserve~traces-docs]: https://openobserve.ai/docs/reference/api/ingestion/traces/
+[quickwit~traces-docs]: https://quickwit.io/docs/main-branch/distributed-tracing/overview
