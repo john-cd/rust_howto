@@ -2,65 +2,55 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Scoped threads that borrow local data and report through a channel.
+//! Scoped threads borrow a local string and return values through their
+//! handles.
 
-use std::error::Error;
-use std::path::Path;
-use std::sync::mpsc;
 use std::thread;
 
-/// Reads the contents of a file and returns them as a `String`.
-///
-/// The error type needs to be `Send` to be used in a channel.
-fn read_contents<T: AsRef<Path>>(
-    file: T,
-) -> Result<String, Box<dyn Error + Send>> {
-    Ok(file.as_ref().to_string_lossy().into_owned())
+use anyhow::anyhow;
+
+/// Borrows local text from scoped threads and returns their joined results.
+fn scoped_results() -> anyhow::Result<(usize, usize)> {
+    let text = String::from("Rust threads");
+
+    thread::scope(|scope| -> anyhow::Result<(usize, usize)> {
+        let byte_count = scope.spawn(|| text.len());
+        let word_count = scope.spawn(|| text.split_whitespace().count());
+
+        let byte_count = byte_count
+            .join()
+            .map_err(|_| anyhow!("the byte-count worker thread panicked"))?;
+        let word_count = word_count
+            .join()
+            .map_err(|_| anyhow!("the word-count worker thread panicked"))?;
+
+        Ok((byte_count, word_count))
+    })
 }
 
-/// Reads two files on scoped threads and prints what the main thread receives.
-fn main() {
-    // To share state between threads, consider using a channel:
-    let (tx, rx) = mpsc::channel();
-
-    thread::scope(|scope| {
-        // Creates a "fork-join" scope.
-        let tx2 = tx.clone();
-        scope.spawn(move || {
-            println!("hello from the first scoped thread");
-            let contents = read_contents("foo.txt");
-            tx.send(contents).unwrap();
-        });
-        scope.spawn(move || {
-            println!("hello from the second scoped thread");
-            let contents = read_contents("bar.txt");
-            tx2.send(contents).unwrap();
-        });
-    });
-    // No join.
-    // Spawned threads get joined automatically once the scope ends!
-
-    // Receive messages from the channel:
-    println!("hello from the main thread");
-
-    for received in rx {
-        println!("Got: {received:?}");
-    }
+/// Uses scoped workers to borrow local data and checks their results.
+fn main() -> anyhow::Result<()> {
+    let results = scoped_results()?;
+    assert_eq!(results, (12, 2));
+    println!("Scoped results: {results:?}");
+    Ok(())
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the scoped-thread example.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that scoped workers borrow local text and return their values.
     #[test]
-    fn test_main() {
-        main();
+    fn scoped_threads_join_borrowing_workers() -> anyhow::Result<()> {
+        assert_eq!(scoped_results()?, (12, 2));
+        Ok(())
     }
 }

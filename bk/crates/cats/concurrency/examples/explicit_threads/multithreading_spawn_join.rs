@@ -2,42 +2,50 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Spawning threads and waiting for them with `join`.
+//! Spawn threads and collect their results through `JoinHandle::join`.
 
 use std::thread;
-use std::time::Duration;
 
-/// Spawns two threads and waits for both to finish.
-fn main() {
-    // Spawn a new thread and store its handle in `thread_one`.
-    let thread_one = thread::spawn(|| {
-        for i in 1..10 {
-            println!("hi number {i} from the spawned thread!");
-            thread::sleep(Duration::from_millis(1));
-        }
-    });
+use anyhow::anyhow;
 
-    let thread_two = thread::spawn(|| { /* ... */ });
-    // More stuff...
+/// Spawns two threads and returns their results, reporting worker panics.
+fn joined_results() -> anyhow::Result<(u32, u32)> {
+    let first = thread::spawn(|| 40 + 2);
+    let second = thread::spawn(|| 20 * 2);
 
-    // Wait for threads to complete and handle potential panics.
-    thread_one.join().expect("thread one panicked");
-    thread_two.join().expect("thread two panicked");
+    let first_result = first
+        .join()
+        .map_err(|_| anyhow!("the first worker thread panicked"))?;
+    let second_result = second
+        .join()
+        .map_err(|_| anyhow!("the second worker thread panicked"))?;
+
+    Ok((first_result, second_result))
+}
+
+/// Spawns two workers and asserts their returned values.
+fn main() -> anyhow::Result<()> {
+    let results = joined_results()?;
+    assert_eq!(results, (42, 40));
+    println!("Joined results: {results:?}");
+    Ok(())
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the spawn-and-join example.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that both joined workers return their computed values.
     #[test]
-    fn test_main() {
-        main();
+    fn spawned_threads_return_joined_values() -> anyhow::Result<()> {
+        assert_eq!(joined_results()?, (42, 40));
+        Ok(())
     }
 }

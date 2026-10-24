@@ -42,6 +42,7 @@
 [ex~concurrency~spawn-join]: explicit_threads.md#spawn-join
 [ex~concurrency~stakker]: _actors.md#stakker
 [ex~concurrency~sync]: send_sync.md#sync
+[ex~concurrency~thread-builder]: explicit_threads.md#thread-builder
 [ex~concurrency~thumbnails-in-parallel]: data_parallelism.md#thumbnails-in-parallel
 [p~async-channels]: ../asynchronous/async_channels.md
 [p~async]: ../asynchronous/async.md

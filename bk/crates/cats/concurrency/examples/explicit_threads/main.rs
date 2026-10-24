@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 mod multithreading_scoped_threads;
 mod multithreading_spawn_join;
+mod thread_builder;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -19,26 +20,34 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-    /// Runs the `multithreading_scoped_threads` example.
-    #[command(name = "multithreading_scoped_threads")]
-    MultithreadingScopedThreads,
-    /// Runs the `multithreading_spawn_join` example.
-    #[command(name = "multithreading_spawn_join")]
-    MultithreadingSpawnJoin,
+    /// Runs the scoped-thread example.
+    #[command(name = "scoped_threads")]
+    ScopedThreads,
+    /// Runs the spawn-and-join example.
+    #[command(name = "spawn_join")]
+    SpawnJoin,
+    /// Runs the thread-builder example.
+    #[command(name = "thread_builder")]
+    ThreadBuilder,
 }
 
 /// Runs the example selected on the command line.
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
-            Commands::MultithreadingScopedThreads => {
-                multithreading_scoped_threads::run();
+            Commands::ScopedThreads => {
+                multithreading_scoped_threads::run()?;
             }
-            Commands::MultithreadingSpawnJoin => {
-                multithreading_spawn_join::run();
+            Commands::SpawnJoin => {
+                multithreading_spawn_join::run()?;
+            }
+            Commands::ThreadBuilder => {
+                thread_builder::run()?;
             }
         }
     }
+
+    Ok(())
 }
