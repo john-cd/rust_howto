@@ -36,5 +36,14 @@
 [p~python]: ../../categories/development-tools_ffi/python.md
 [p~rustup]: ../../../src/categories/development-tools/installation/rustup.md
 [p~testing]: ../../../src/categories/development-tools_testing/testing.md
+[p~using-containers]: ../../categories/virtualization/using_containers.md
 [p~toml]: ../../categories/parser-implementations/toml.md
 [p~versioning]: ../../categories/development-tools/versioning/versioning.md
+[infra~pulumi-rust-status]: https://www.pulumi.com/releases/changelog/2026-08-18-experimental-rust-support/
+[infra~kcl-lang-repo]: https://github.com/kcl-lang/kcl
+[infra~kcl-rust-bindings]: https://github.com/kcl-lang/lib
+[infra~terraform-provider-language]: https://developer.hashicorp.com/terraform/plugin/best-practices/provider-code
+[infra~habitat-repo]: https://github.com/habitat-sh/habitat
+[infra~habitat-releases]: https://docs.chef.io/release_notes/habitat/
+[infra~kube-docs]: https://docs.rs/kube/latest/kube/
+[infra~bollard-repo]: https://github.com/fussybeaver/bollard

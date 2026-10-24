@@ -2,86 +2,42 @@
 
 # DevOps and Rust
 
-DevOps connects software development and operations through collaboration, automation, and continuous improvement. Common practices and example tools include:
+DevOps connects software development and operations through practices for version control, automated checks, packaging, deployment, and service operation. This index links to the Rust-specific guides and highlights infrastructure tools with Rust support.
 
-| Practice | Purpose | Examples |
-|---|---|---|
-| Version control | Track changes, review contributions, and recover earlier versions. | Git, GitHub, GitLab, Bitbucket |
-| Continuous integration and delivery | Build and test changes, then automate release or deployment steps. | GitHub Actions, Jenkins, GitLab CI/CD, Azure Pipelines |
-| Infrastructure as code | Describe and version infrastructure so it can be provisioned consistently. | Terraform, OpenTofu, AWS CloudFormation, Pulumi |
-| Configuration management | Apply consistent operating-system and application settings. | Ansible, Puppet, Chef |
-| Containers and orchestration | Package applications with their runtime dependencies and coordinate deployment. | Docker, Kubernetes, Amazon ECS |
-| Monitoring and logging | Collect signals that help operators understand service health and investigate failures. | Prometheus, Grafana, OpenTelemetry, Elasticsearch |
-| Security in delivery | Check dependencies, credentials, artifacts, and deployment permissions throughout delivery. | `cargo audit`, `cargo deny`, secret managers, signing tools |
+## Start Here {#start-here}
 
-Rust coders, like developers in other fields, frequently leverage DevOps methods and tooling. GitHub, GitHub Actions, and Docker are especially frequently used in Rust open-source projects.
+| Guide                                       | Focus                                                                       |
+| ------------------------------------------- | --------------------------------------------------------------------------- |
+| [Version Control](version_control.md)       | Review changes, manage branches, and keep development workflows repeatable. |
+| [CI/CD](cd_ci.md)                           | Run automated checks and promote verified artifacts.                        |
+| [GitHub Actions](github_actions.md)         | Configure Rust toolchains, caches, and workflows on GitHub.                 |
+| [Release Automation](release_automation.md) | Version, validate, package, and publish a release.                          |
+| [Containers][p~containers]                  | Build and operate containerized applications.                               |
+| [Using Containers][p~using-containers]      | Use Rust clients to work with container runtimes.                           |
 
-## Version Control
+## Infrastructure as Code {#infrastructure-as-code}
 
-{{#include version_control.incl.md}}
+Infrastructure as code (IaC) describes infrastructure in files that can be reviewed, versioned, and applied by a deployment tool. Rust support differs by project:
 
-## CD/CI
+- [Pulumi's Rust SDK][infra~pulumi-rust-status]↗ was released by Pulumi Labs as an **experimental** SDK and language plugin in August 2026. It is early-stage, not officially supported, and its API is still evolving.
+- [KCL][infra~kcl-lang-repo]↗ is a cloud-native configuration and policy language whose core is written in Rust. The project also publishes [Rust bindings][infra~kcl-rust-bindings]↗; KCL programs use the KCL language rather than Rust syntax.
+- [Terraform provider development][infra~terraform-provider-language]↗ is officially supported by HashiCorp in Go. Writing providers in another language is technically possible at the protocol level, but HashiCorp does not support the tooling or provider development workflow for non-Go languages.
 
-CI/CD stands for Continuous Integration and Continuous Delivery/Deployment. It's a set of practices that automate the software development lifecycle, aiming to deliver code changes more frequently and reliably.
+## Configuration Management {#configuration-management}
 
-{{#include cd_ci.incl.md}}
+Configuration management applies repeatable settings and lifecycle behavior to hosts and services. [Chef Habitat][infra~habitat-repo]↗ packages applications with their runtime and lifecycle hooks and includes a Supervisor implemented in Rust. Its [official release notes][infra~habitat-releases]↗ continue to document releases in 2026. Habitat is focused on packaging and running applications, rather than general-purpose operating-system configuration.
 
-{{#include github_actions.incl.md}}
+## Containerization and Orchestration {#containerization-and-orchestration}
 
-### Release Automation
+Use the [Containers][p~containers] guide for container concepts. For Kubernetes applications, [`kube`][infra~kube-docs]↗ provides a Rust client, custom-resource support, and a controller runtime.
 
-{{#include release_automation.incl.md}}
+For Docker or Podman API access from Rust, see [Bollard][infra~bollard-repo]↗, an asynchronous client library. The [Using Containers][p~using-containers] guide develops practical examples. The older `docker-api` bookmark has been replaced with this maintained project.
 
-## Infrastructure as Code
+## Related Topics {#related-topics .skip}
 
-Describe infrastructure declaratively and keep its configuration under version control. See [[cloud | Cloud]] for Rust on cloud platforms.
-
-## Configuration Management Tools
-
-Use configuration management to apply repeatable host and service settings. See [[config | Configuration]] for application configuration in Rust.
-
-## Containerization and Orchestration
-
-See [[containers | Containers]].
-
-## Devops Tools Written in Rust
-
-Rust is also commonly being used to build DevOps tools. A few examples follow:
-
-- Chef's [`Habitat`][chef-habitat~website]↗{{hi:Habitat}} is a Rust-based infrastructure automation and management tool. Chef Habitat bundles all of your dependencies, codebases, and lifecycle events in a package separate from the user's operating system.
-- Faraday used Rust to develop its `Cage` project. `Cage` is most useful to reuse existing Docker images. You can load existing images into your local environment and start adding new components from local source trees.
-- [`sccache`][c~sccache~docs]↗{{hi:sccache}} is a [[build_cache | cache]]. compiler tool that can automatically package local toolchains. It supports Rust and C/C++.
-- [`config-rs`][c~config~docs]↗{{hi:config-rs}} is a layered [[config | configuration]] system for Rust applications.
-
-Refer to the [[written-in-rust | "Written in Rust"]] chapter as well.
-
-## Related Topics
-
-- [[config | Config]].
-- [[environment_variables | Environment Variables]].
-- Deployment on [[cloud | Cloud]] platforms ([[aws | AWS]], Azure, GCP).
-- Unit, integration, and end-to-end [[testing | tests]].
+- [Configuration][p~configuration] for configuration inside Rust applications.
+- [Testing][p~testing] and [Cargo auditing][p~maintaining] for checks that run before release.
+- Deployment to cloud platforms and container orchestration systems.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/605)
-- Infrastructure as Code.
-- Configuration Management Tools.
-- Containerization and Orchestration.
-
-Review:
-
-- [Chef Habitat][chef-habitat~website] [(GitHub)][chef-habitat~repo].
-- [KCL Programming Language][kcl-lang~website] [(GitHub)][kcl-lang~repo].
-- [`docker-api`][c~docker-api~docs]↗{{hi:docker-api}}: a Rust interface to Docker containers.
-- [Optimizing DevOps Pipelines for Rust Projects][blog~optimizing-devops-pipelines-for-rust-projects-leveraging-cargo-and-cicd]↗: Leveraging Cargo and CI/CD.
-
-CD/CI:
-
-- [`gh-workflow`][c~gh-workflow~crates.io]↗.
-- [GitHub Actions best practices for Rust projects][blog~github-actions-best-practices]↗.
-- [`pipelight`][pipelight~repo]↗: Tiny automation pipelines. Bring CI/CD to the smallest projects. Self-hosted, Lightweight, CLI only.
-
-</div>
