@@ -10,63 +10,31 @@
 
 [`rustup`][rustup~website]↗{{hi:rustup}} is a toolchain multiplexer. It installs, manages, and upgrades versions of the rust compiler [`rustc`][book~rustc]↗{{hi:rustc}}, the Rust package manager [`cargo`][c~cargo~docs]↗{{hi:cargo}}, the Rust linter [`clippy`][c~clippy~docs]↗{{hi:clippy}}, the Rust code formatter [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}}, etc.
 
-More precisely, [`rustup`][rustup]↗{{hi:rustup}} can install and manage multiple Rust toolchains and presents them all through a single set of tools installed to `~/.cargo/bin`. The [`rustc`][book~rustc]↗{{hi:rustc}} and [`cargo`][c~cargo~docs]↗{{hi:cargo}} executables installed e.g. in `~/.cargo/bin` are proxies that delegate to the real toolchain.
+More precisely, [`rustup`][rustup~website]↗{{hi:rustup}} can install and manage multiple Rust toolchains and presents them all through a single set of tools installed to `~/.cargo/bin`. The [`rustc`][book~rustc]↗{{hi:rustc}} and [`cargo`][c~cargo~docs]↗{{hi:cargo}} executables installed e.g. in `~/.cargo/bin` are proxies that delegate to the real toolchain.
 
-[`rustup`][rustup]↗{{hi:rustup}} is similar to Python's [`pyenv`][pyenv~repo]↗{{hi:pyenv}} or Node's [`nvm`][nvm~repo]↗{{hi:nvm}}.
+[`rustup`][rustup~website]↗{{hi:rustup}} is similar in purpose to Python's [`pyenv`][pyenv~repo]↗{{hi:pyenv}} or Node's [`nvm`][nvm~repo]↗{{hi:nvm}}. Use these commands from a terminal:
 
-Key [`rustup` commands][rustup~command~examples]↗ include the following:
+| Task                                  | Command                                       | Notes                                                                                                               |
+| ------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Check installed and active toolchains | `rustup show`                                 | The active toolchain is selected for the current directory.                                                         |
+| List installed toolchains             | `rustup toolchain list`                       | Shows toolchains installed through rustup.                                                                          |
+| Install or update toolchains          | `rustup update stable`                        | Omit `stable` to update every installed toolchain.                                                                  |
+| Choose the default toolchain          | `rustup default stable`                       | Use `rustup default --help` for accepted toolchain names.                                                           |
+| Add a component                       | `rustup component add clippy`                 | Components such as `rustfmt` are distributed per toolchain; availability varies.                                    |
+| List installed targets                | `rustup target list --installed`              | A target standard library alone may not include the linker or system libraries needed to produce a runnable binary. |
+| Add a compilation target              | `rustup target add aarch64-unknown-linux-gnu` | Install a target-specific linker and other build tools when required.                                               |
+| Open local Rust documentation         | `rustup doc`                                  | Add the `rust-docs` component if the documentation is not installed.                                                |
 
-```sh
-# Rustup's help
-rustup help
-
-# Show the help page for a Subcommand (like `toolchain`)
-rustup toolchain help
-
-# Show which toolchain will be used in the current directory
-rustup show
-
-# Update to a new Version of Rust
-rustup update
-
-# Show which toolchain will be used in the current directory
-rustup target list
-
-# Overview of what is installed on your system
-rustup toolchain list
-
-# See a list of available and installed components.
-rustup component list
-```
-
-Rustup also offers convenience commands:
-
-```sh
-# Open the local documentation in your browser
-rustup doc
-# May require `rustup component add rust-docs`
-```
+Toolchain selection can be scoped to a command with `cargo +stable test` or to a project with a `rust-toolchain.toml` file. A `rustup override` can also select a toolchain for a directory. The precedence is: command-line `+toolchain`, `RUSTUP_TOOLCHAIN`, the nearest project file or directory override, then the default toolchain. Confirm the result with `rustup show`.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Install Rust and Cargo][rustup~documentation]↗.
+- [Cargo][p~cargo] and [building Rust code][p~code-building].
+- [Cross-compilation][p~cross-platform].
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[rustup: expand / clean up](https://github.com/john-cd/rust_howto/issues/302)
-
-Rustup is used to install and manage Rust toolchains. Toolchains are complete installations of Rust compiler and tools.
-
-| Command | Description |
-|---|---|
-| [`rustup show`][book~rustup~examples]↗{{hi:rustup show}} | Show currently installed & active toolchains. |
-| [`rustup update`][book~rustup~basics]↗{{hi:rustup update}} | Update all toolchains. |
-| [`rustup default TOOLCHAIN`][book~rustup~toolchains]↗{{hi:rustup default TOOLCHAIN}} | Set the default toolchain. |
-| [`rustup component list`][book~rustup~components]↗{{hi:rustup component list}} | List available components. |
-| [`rustup component add NAME`][book~rustup~components]↗{{hi:rustup component add NAME}} | Add a component (e.g., clippy, rustfmt)↗. |
-| [`rustup target list`][book~rustup~cross-compilation]↗{{hi:rustup target list}} | List available compilation targets. |
-| [`rustup target add NAME`][book~rustup~cross-compilation]↗{{hi:rustup target add NAME}} | Add a compilation target. |
-
 </div>
