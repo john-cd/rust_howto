@@ -264,6 +264,15 @@
 [bstr-github]: https://github.com/BurntSushi/bstr
 
 
+[build_info]: https://docs.rs/build_info
+
+
+[build_info-crate]: https://crates.io/crates/build_info
+
+
+[build_info-github]: https://github.com/danielschemmel/build-info/
+
+
 [bumpalo]: https://docs.rs/bumpalo
 
 

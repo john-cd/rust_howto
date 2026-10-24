@@ -47,6 +47,11 @@ fn cc_defines() {
 
 /// Entry point for the build script.
 fn main() {
+    // ANCHOR: build-info
+    build_info_build::build_script()
+        .collect_dependencies(build_info_build::DependencyDepth::Depth(1));
+    // ANCHOR_END: build-info
+
     // c();
     cc_defines();
     // cpp();

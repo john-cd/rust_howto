@@ -6,6 +6,28 @@
 
 This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a `build.rs`{{hi:build.rs}} file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See [`crates.io`][crates.io~website]{{hi:crates.io}}'s [documentation on the matter][book~cargo~build-script]↗ for more information.
 
+## Embed Build Information {#build-info}
+
+The [`build-info`][c~build-info~docs]↗ and [`build-info-build`][c~build-info-build~docs]↗ crates separate build-time collection from the runtime API. A build script records the package, Git revision, build timestamp, compiler version, and selected dependency metadata. The generated information is embedded in the binary, so the application can report which build is running without shipping the build-time collector.
+
+In `Cargo.toml`:
+
+```toml
+{{#include ../../../crates/cats/development_tools_build_utils/Cargo.toml:build-info}}
+```
+
+In `build.rs`:
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_build_utils/build.rs:build-info}}
+```
+
+In `examples/build_info/build_info.rs`:
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_info/build_info.rs:example}}
+```
+
 ## Compile and Link Statically to a Bundled C Library {#cc}
 
 [![cc][c~cc~docs~badge]][c~cc~docs]{{hi:cc}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build utils}}
@@ -148,11 +170,14 @@ This revision turns the commented build commands into the package's active build
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Cargo build scripts][book~cargo~build-script].
+- [Compiler feature detection with `autocfg`][ex~development-tools_build-utils~autocfg].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
 [review](https://github.com/john-cd/rust_howto/issues/921)
+
+The new recipe collects Git, timestamp, compiler, and dependency metadata at build time and reads it from the binary at runtime.
 </div>

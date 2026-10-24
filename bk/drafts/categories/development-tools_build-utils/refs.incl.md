@@ -1,6 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [ex~development-tools_build-utils~autocfg]: autocfg.md#autocfg
+[ex~development-tools_build-utils~build-info]: build_time_tooling.md#build-info
 [ex~development-tools_build-utils~cc-custom-defines]: build_time_tooling.md#cc-custom-defines
 [ex~development-tools_build-utils~cc]: build_time_tooling.md#cc
 [ex~development-tools_build-utils~cpp]: build_time_tooling.md#cpp

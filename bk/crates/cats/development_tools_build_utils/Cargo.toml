@@ -22,6 +22,10 @@ autolib = false
 [dependencies]
 anyhow = "1.0.104"
 autocfg = "1.5.1"
+# ANCHOR: build-info
+# Embed collected build metadata in the example binary.
+build-info = "0.0.47"
+# ANCHOR_END: build-info
 # sccache 0.18 cannot parse the MSVC /Tp command emitted by cc 1.9.
 cc = "=1.8.0"
 clap = { version = "4.6.7", features = ["derive"] }
@@ -30,6 +34,8 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 ## See build.rs
 [build-dependencies]
+# Collect Git, timestamp, compiler, and dependency metadata at build time.
+build-info-build = "0.0.47"
 cc = "=1.8.0"
 
 [[example]]
@@ -40,6 +46,11 @@ test = true
 [[example]]
 name = "build_time_tooling"
 path = "examples/build_time_tooling/main.rs"
+test = true
+
+[[example]]
+name = "build_info"
+path = "examples/build_info/main.rs"
 test = true
 
 [lints]
