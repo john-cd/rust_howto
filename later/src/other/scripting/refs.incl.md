@@ -13,3 +13,6 @@
 [c~deno_core~docs]: https://docs.rs/deno_core
 [c~koto~docs]: https://docs.rs/koto
 [c~rune~docs]: https://docs.rs/rune
+[c~object~docs]: https://docs.rs/object
+[c~quickjs-rs~docs]: https://docs.rs/quickjs-rs
+[c~v8~docs]: https://docs.rs/v8

@@ -26,3 +26,5 @@
 [c~inkwell~docs]: https://docs.rs/inkwell
 [c~string-interner~docs]: https://docs.rs/string-interner
 [c~wasm-encoder~docs]: https://docs.rs/wasm-encoder
+[c~link-cplusplus~crates.io]: https://crates.io/crates/link-cplusplus
+[c~cucumber-expressions~crates.io]: https://crates.io/crates/cucumber-expressions
