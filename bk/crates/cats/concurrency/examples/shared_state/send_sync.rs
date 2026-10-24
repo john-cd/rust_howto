@@ -16,43 +16,61 @@ use std::sync::Arc;
 use std::sync::Mutex;
 use std::thread;
 
+use anyhow::anyhow;
+
 /// Increments a counter shared by several threads with `Arc` and `Mutex`.
-fn main() {
+fn increments_with_shared_mutex() -> anyhow::Result<usize> {
     let data = Arc::new(Mutex::new(0));
+    let handles = (0..3)
+        .map(|_| {
+            let data = Arc::clone(&data);
+            thread::spawn(move || -> anyhow::Result<()> {
+                for _ in 0..50 {
+                    *data.lock().map_err(|_| {
+                        anyhow!("shared-data mutex was poisoned")
+                    })? += 1;
+                }
+                Ok(())
+            })
+        })
+        .collect::<Vec<_>>();
 
-    let mut handles = vec![];
-
-    // Create 3 threads, each of which increments the shared data by 1.
-    for _ in 0..3 {
-        let data = Arc::clone(&data);
-        let handle = thread::spawn(move || {
-            let mut num = data.lock().unwrap();
-            *num += 1;
-        });
-        handles.push(handle);
-    }
-
-    // Wait for all threads to finish.
     for handle in handles {
-        handle.join().unwrap();
+        handle
+            .join()
+            .map_err(|_| anyhow!("shared-data worker thread panicked"))??;
     }
 
-    println!("Result: {}", *data.lock().unwrap());
+    let total = *data
+        .lock()
+        .map_err(|_| anyhow!("shared-data mutex was poisoned"))?;
+    Ok(total)
+}
+
+/// Demonstrates that `Arc<Mutex<T>>` can share `T: Send` between threads.
+fn main() -> anyhow::Result<()> {
+    let result = increments_with_shared_mutex()?;
+    assert_eq!(result, 150);
+    println!("Final shared value: {result}");
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Checks that the shared mutex protects all concurrent increments.
     #[test]
-    fn test_main() {
-        main();
+    fn shared_mutex_returns_the_total_number_of_increments()
+    -> anyhow::Result<()> {
+        assert_eq!(increments_with_shared_mutex()?, 150);
+        Ok(())
     }
 }

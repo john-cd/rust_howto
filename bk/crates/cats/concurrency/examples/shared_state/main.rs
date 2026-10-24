@@ -56,10 +56,10 @@ fn main() -> anyhow::Result<()> {
                 global_mut_state::run()?;
             }
             Commands::SendSync => {
-                send_sync::run();
+                send_sync::run()?;
             }
             Commands::SharedStateMutex => {
-                shared_state_mutex::run();
+                shared_state_mutex::run()?;
             }
             Commands::SharedStateParkingLot => {
                 shared_state_parking_lot::run();

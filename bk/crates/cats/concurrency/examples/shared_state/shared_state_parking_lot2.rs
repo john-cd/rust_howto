@@ -6,9 +6,8 @@
 
 use parking_lot::RwLock;
 
-/// Takes several read locks at once, then a single write lock.
-fn main() {
-    // Create a new RwLock with an initial value of 5.
+/// Reads a value concurrently, updates it exclusively, and returns it.
+fn value_after_write() -> i32 {
     let lock = RwLock::new(5);
 
     {
@@ -26,9 +25,15 @@ fn main() {
         let mut w = lock.write();
         // Only one write lock can be held at a time.
         *w += 1;
-        assert_eq!(*w, 6);
         println!("Write lock is dropped here");
     }
+
+    *lock.read()
+}
+
+/// Demonstrates simultaneous reads followed by an exclusive update.
+fn main() {
+    assert_eq!(value_after_write(), 6);
 }
 
 // ANCHOR_END: example
@@ -42,8 +47,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the write lock's update remains after its guard is dropped.
     #[test]
-    fn test_main() {
-        main();
+    fn write_lock_publishes_the_updated_value() {
+        assert_eq!(value_after_write(), 6);
     }
 }

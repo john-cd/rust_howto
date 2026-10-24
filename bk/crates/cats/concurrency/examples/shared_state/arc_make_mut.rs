@@ -6,8 +6,6 @@
 //! with `Arc::make_mut`.
 
 use std::sync::Arc;
-use std::thread;
-use std::time::Duration;
 
 /// A configuration shared through an `Arc`.
 mod cfg {
@@ -56,59 +54,27 @@ mod cfg {
             let mutable_config: &mut Self = Arc::make_mut(self);
             mutable_config.server_address = server_address;
             mutable_config.max_connections = max_connections;
-            println!("Configuration updated to {mutable_config:?}");
-            println!(
-                "Original config after update (should be unchanged for readers): {self:?}"
-            );
         }
     }
 }
 
-/// Shares a configuration with reader threads, then updates it without
-/// disturbing them.
+/// Returns the old reader snapshot and the updated configuration.
+fn updated_views() -> (Arc<cfg::Configuration>, Arc<cfg::Configuration>) {
+    let mut current = cfg::Configuration::new("localhost:8080".to_owned(), 100);
+    let reader_snapshot = Arc::clone(&current);
+    current.update("api.example.com:8443".to_owned(), 200);
+    (reader_snapshot, current)
+}
+
+/// Demonstrates that clone-on-write preserves an existing reader snapshot.
 fn main() {
-    // Initialize the configuration and wrap it in an `Arc` for shared read
-    // access.
-    let mut config = cfg::Configuration::new("localhost:8080".to_owned(), 100);
-
-    // Simulate multiple readers accessing the configuration:
-    let mut handles = vec![];
-    for i in 0..3 {
-        let config_clone = Arc::clone(&config);
-        let handle = thread::spawn(move || {
-            thread::sleep(Duration::from_millis(50 * i));
-            println!(
-                "Reader {i} - Server Address: {}",
-                config_clone.server_address()
-            );
-        });
-        handles.push(handle);
-    }
-
-    // Simulate an administrative task updating the configuration
-    // after some time:
-    thread::sleep(Duration::from_millis(75));
-    println!("\nAdmin task: Updating configuration...");
-    config.update("api.example.com:8443".to_owned(), 200);
-
-    // Spawn more readers after the update.
-    for i in 3..5 {
-        let config_clone = Arc::clone(&config);
-        let handle = thread::spawn(move || {
-            println!(
-                "Reader {i} - Server Address: {}  Max Connections: {}",
-                config_clone.server_address(),
-                config_clone.max_connections()
-            );
-            thread::sleep(Duration::from_millis(50 * (i - 3)));
-        });
-        handles.push(handle);
-    }
-
-    // Wait for all threads to finish.
-    for handle in handles {
-        handle.join().unwrap();
-    }
+    let (reader_snapshot, current) = updated_views();
+    assert_eq!(reader_snapshot.server_address(), "localhost:8080");
+    assert_eq!(reader_snapshot.max_connections(), 100);
+    assert_eq!(current.server_address(), "api.example.com:8443");
+    assert_eq!(current.max_connections(), 200);
+    println!("Reader snapshot: {reader_snapshot:?}");
+    println!("Updated configuration: {current:?}");
 }
 
 // ANCHOR_END: example
@@ -122,8 +88,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies updates clone the inner value while readers retain old data.
     #[test]
-    fn test_main() {
-        main();
+    fn clone_on_write_preserves_the_reader_snapshot() {
+        let (reader_snapshot, current) = updated_views();
+        assert_eq!(reader_snapshot.server_address(), "localhost:8080");
+        assert_eq!(reader_snapshot.max_connections(), 100);
+        assert_eq!(current.server_address(), "api.example.com:8443");
+        assert_eq!(current.max_connections(), 200);
     }
 }

@@ -52,6 +52,7 @@
 [p~building]: ../development-tools_cargo-plugins/building.md
 [p~concurrency]: index.md
 [p~concurrent-data-structures]: concurrent_data_structures.md
+[p~data-parallelism]: data_parallelism.md
 [p~global-static]: ../memory-management/global_static.md
 [p~hashmaps]: ../../../src/categories/data-structures/hashmaps.md
 [p~interior-mutability]: ../../../src/standard-library/interior_mutability.md
