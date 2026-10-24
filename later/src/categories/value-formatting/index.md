@@ -27,3 +27,7 @@ Format values for display, potentially adapting output to a user's language and 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[content audit: category index content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1903)
+</div>

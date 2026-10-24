@@ -121,4 +121,5 @@ This page covers hashes. Use the dedicated topics for other cryptographic operat
 
 <div class="hidden">
 [accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
+[content audit: crate pointers (AEAD, signatures, certificates, ahash) removed in 68a11801; restore or keep a short list](https://github.com/john-cd/rust_howto/issues/1901)
 </div>

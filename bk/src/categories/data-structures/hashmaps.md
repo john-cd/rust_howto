@@ -64,4 +64,5 @@ You can use a custom hash function with [`HashMap`][c~std::collections::HashMap~
 - [[hashing | Hashing]].
 - [[key_value_stores | Key-Value Stores]].
 
+[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

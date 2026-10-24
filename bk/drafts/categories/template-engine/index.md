@@ -35,3 +35,7 @@ See [Web Programming](../web-programming/index.md) and [Static Website Generator
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
+</div>

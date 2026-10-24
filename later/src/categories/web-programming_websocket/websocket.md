@@ -70,4 +70,5 @@ Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} whe
 
 <div class="hidden">
 [websocket: write](https://github.com/john-cd/rust_howto/issues/520)
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

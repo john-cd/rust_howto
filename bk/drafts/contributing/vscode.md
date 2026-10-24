@@ -62,3 +62,7 @@ This removes on-save Cargo diagnostics. Run the repository's `just` checks from 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
+</div>

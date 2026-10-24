@@ -40,4 +40,5 @@ Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of short
 - [[github_actions | Github Actions]].
 - [[release_automation | Release Automation]].
 
+[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

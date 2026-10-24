@@ -82,4 +82,5 @@ OTHER:
 - [Sycamore][sycamore~website]↗.
 - [sycamore][c~sycamore~repo]↗: A library for creating reactive web apps in Rust and WebAssembly.
 
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

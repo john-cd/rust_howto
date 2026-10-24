@@ -35,4 +35,5 @@ Note that several of these websites are out-of-date. [Are We Rust Yet?][are-we-r
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
 </div>

@@ -74,4 +74,5 @@ Please also consult the [`TODO.md`][rust-howto~todo~repo]↗ file and the [`draf
 {{#include refs.incl.md}}
 
 <div class="hidden">
+[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

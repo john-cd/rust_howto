@@ -70,4 +70,5 @@ Databend, and Rerun through focused examples.
 
 <div class="hidden">
 [organize / edit](https://github.com/john-cd/rust_howto/issues/594)
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

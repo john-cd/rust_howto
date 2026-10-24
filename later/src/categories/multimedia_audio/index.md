@@ -24,3 +24,7 @@ Audio tasks include device input and output, decoding and encoding, synthesis, a
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[content audit: category index content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1903)
+</div>

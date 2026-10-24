@@ -112,4 +112,5 @@ In `foo.capnp`:
 - [pot][c~pot~docs]↗.
 - [bytes][c~bytes~lib.rs]↗.
 
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

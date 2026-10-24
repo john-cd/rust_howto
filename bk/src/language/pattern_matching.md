@@ -227,4 +227,5 @@ Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unne
 
 - [[rust-patterns | Rust Patterns]].
 
+[accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
 </div>

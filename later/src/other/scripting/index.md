@@ -47,3 +47,7 @@ For custom languages, see [[compilers | Compilers]], [[text-processing | Text Pr
 {{#include ../../refs/link-refs.md}}
 
 [cargo-script-nightly]: https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#script
+
+<div class="hidden">
+[content audit: category index content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1903)
+</div>

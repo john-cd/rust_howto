@@ -58,3 +58,7 @@ The [other tools detail page](other_tools.md) groups file managers, remote deskt
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[content audit: Written-in-Rust tool lists trimmed by recent commits; review and restore removed entries](https://github.com/john-cd/rust_howto/issues/1902)
+</div>

@@ -65,4 +65,5 @@ For Python extensions written in Rust, see [[python | Python FFI and extensions]
 
 <div class="hidden">
 [python_tools: write](https://github.com/john-cd/rust_howto/issues/617)
+[content audit: Written-in-Rust tool lists trimmed by recent commits; review and restore removed entries](https://github.com/john-cd/rust_howto/issues/1902)
 </div>
