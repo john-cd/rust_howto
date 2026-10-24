@@ -13,6 +13,7 @@
 [ex~web-programming_http-server~tower]: middleware.md#tower
 [ex~web-programming_http-server~zola]: static_website_generators.md#zola
 [p~authentication]: ../authentication/index.md
+[p~http-client]: ../web-programming_http-client/index.md
 [p~documentation]: ../development-tools/documentation/documentation.md
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~server]: ../network-programming/server.md

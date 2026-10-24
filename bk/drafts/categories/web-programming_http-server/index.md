@@ -3,31 +3,25 @@
 
 [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
-Serve data over HTTP.
+Serve data over HTTP. Start by choosing the level of abstraction that fits the application: a framework supplies routing and request handling, while a lower-level HTTP library leaves more of those choices to you.
 
-The following table outlines common tasks for building web servers in Rust and relevant crates. The Rust web server ecosystem offers a variety of options, from low-level networking to high-level frameworks.
+This index summarizes options; the framework sections below link to runnable examples and focused guides.
 
-| Topic | Rust Crates (Examples) | Notes |
-|---|---|---|
-| Web Frameworks (Full-Stack) | [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`axum`][c~axum~docs]↗{{hi:axum}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}, [`warp`][c~warp~docs]↗{{hi:warp}}, [`tower-web`][c~tower-web~docs]↗{{hi:tower-web}} (less actively maintained) | These frameworks provide tools for building complete web applications, including routing, middleware, request handling, templating, and more. [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} is known for its performance. [`axum`][c~axum~docs]↗{{hi:axum}} is built on top of [`tower`][c~tower~docs]↗{{hi:tower}} and [`hyper`][c~hyper~docs]↗{{hi:hyper}}. [`rocket`][c~rocket~docs]↗{{hi:rocket}} uses a more declarative approach. [`warp`][c~warp~docs]↗{{hi:warp}} is a more lightweight framework. [`tower-web`][c~tower-web~docs]↗{{hi:tower-web}} is a framework built on top of [`tower`][c~tower~docs]↗{{hi:tower}}, but is less actively maintained. |
-| HTTP Servers (Low-Level) | [`hyper`][c~hyper~docs]↗{{hi:hyper}} | [`hyper`][c~hyper~docs]↗{{hi:hyper}} is a low-level HTTP library that can be used to build custom web servers. Most frameworks use [`hyper`][c~hyper~docs]↗{{hi:hyper}} under the hood. |
-| Routing and Handling Requests | Provided by web frameworks. | Web frameworks handle routing to map incoming requests to the appropriate handlers. |
-| Middleware | [`tower`][c~tower~docs]↗{{hi:tower}}, often integrated into frameworks. | [`tower`][c~tower~docs]↗{{hi:tower}} is a crate for building composable middleware. Many web frameworks integrate with [`tower`][c~tower~docs]↗{{hi:tower}} or provide their own middleware systems. |
-| Request Handling | Handled by web frameworks. | Web frameworks provide mechanisms for handling incoming requests, parsing data, and generating responses. |
-| Response Generation | Handled by web frameworks. | Web frameworks provide ways to construct and send HTTP responses. |
-| REST API Design | Often uses web frameworks and serialization crates. | REST APIs are typically built using web frameworks and serialization crates. |
-| Static File Serving | Often provided by web frameworks or through crates like `serve-static`. | Serving static files is a common task, often handled by the framework or a dedicated crate. |
+| Need | Examples | What to compare |
+| --- | --- | --- |
+| Application framework | [`axum`][c~axum~docs]↗, [`actix-web`][c~actix-web~docs]↗, [`rocket`][c~rocket~docs]↗, [`warp`][c~warp~docs]↗ | Routing and extractor model, middleware, runtime, testing support, and the framework's compatibility with the rest of your stack. |
+| Other frameworks | [Cot][cot.rs~website]↗, [Salvo][salvo~website]↗ | Cot is batteries-included and built on Axum; Salvo uses handlers for routing and middleware. |
+| Lower-level HTTP building block | [`hyper`][c~hyper~docs]↗ | Choose this when you need direct control over HTTP connections and are prepared to compose more of the server yourself. |
+| Reusable middleware | [`tower`][c~tower~docs]↗ and [`tower-http`][c~tower-http~docs]↗ | Check which middleware layers your chosen framework supports; axum integrates with Tower services. |
+| Full application scaffolding | [`loco`][c~loco-rs~docs]↗ and [Rust on Nails][rust-on-nails~website]↗ | Compare the included project structure and conventions with the services your application actually needs. |
 
-## Choosing the Right Crates
+## Choosing a Framework
 
-- Full-Stack Web App: [`axum`][c~axum~docs]↗{{hi:axum}}, [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}, [`warp`][c~warp~docs]↗{{hi:warp}}.
-- REST API: Web framework + [`serde`][c~serde~docs]↗{{hi:serde}}.
-- GraphQL API: [`juniper`][c~juniper~docs]↗{{hi:juniper}}, [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}.
-- Low-Level HTTP Server (Custom): [`hyper`][c~hyper~docs]↗{{hi:hyper}}.
+Before committing to a framework, check its current documentation and release history, supported Rust version, platform and runtime requirements, feature flags, and upgrade policy. Also verify the integration points you need: authentication, database pools, observability, static assets, graceful shutdown, and integration testing. These details vary by framework and version.
 
-Choose a web framework that fits your project's complexity and requirements. [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} is popular for performance-sensitive applications. [`axum`][c~axum~docs]↗{{hi:axum}} is a good choice for those familiar with [`tower`][c~tower~docs]↗{{hi:tower}} and [`hyper`][c~hyper~docs]↗{{hi:hyper}}. [`rocket`][c~rocket~docs]↗{{hi:rocket}} is a good choice for smaller projects or for a more declarative approach. [`warp`][c~warp~docs]↗{{hi:warp}} is very lightweight.
+Axum is built around Tower's service and middleware ecosystem. Actix Web and Rocket provide their own application APIs and integration patterns. Hyper is a lower-level HTTP implementation that can serve as a building block. Pick based on the APIs and compatibility requirements of your project rather than an unverified popularity or performance ranking.
 
-If your web server needs to interact with a database, choose a framework compatible with the appropriate database driver. Plan your authentication and authorization strategy in advance. You should also consider which templating engine (like [`Tera`][c~tera~docs]↗{{hi:Tera}} or [`Handlebars`][c~handlebars~docs]↗{{hi:Handlebars}}) works best with your web framework.
+This guidance has no standalone code example because framework selection depends on a project's constraints; the framework pages below demonstrate their APIs.
 
 ## Frameworks
 
@@ -75,37 +69,10 @@ Middleware is a powerful way to add functionality to your web server.
 
 ## Related Topics
 
-| Topic | Rust Crates (Examples) | Notes |
-|---|---|---|
-| Asynchronous Programming (Essential for Web Servers) | [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`smol`][c~smol~docs]↗{{hi:smol}} | These asynchronous runtimes are fundamental for building efficient and scalable web servers in Rust. [`tokio`][c~tokio~docs]↗{{hi:tokio}} is the most widely used. |
-| Networking (Low-Level) | [`tokio::net`][c~tokio::net~docs]↗{{hi:tokio::net}}, [`std::net`][c~std::net~docs]↗{{hi:std::net}} | These modules provide low-level networking primitives. Often used by higher-level frameworks. |
-| Templating | [`minijinja`][c~minijinja~docs]↗{{hi:minijinja}}, [`tera`][c~tera~docs]↗{{hi:tera}}, [`handlebars`][c~handlebars~docs]↗{{hi:handlebars}}, [`askama`][c~askama~docs]↗{{hi:askama}} | Templating engines are used to generate HTML dynamically. |
-| Serialization/Deserialization (JSON, etc.) | [`serde`][c~serde~docs]↗{{hi:serde}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}} | [`serde`][c~serde~docs]↗{{hi:serde}} is a powerful framework for serializing and deserializing data, often used with JSON and other formats. |
-| Databases | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, [`diesel`][c~diesel~docs]↗{{hi:diesel}}, [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}} (drivers) | These crates provide database access for various database systems. |
-| Authentication & Authorization | Often handled through middleware. | Authentication and authorization are often implemented using middleware or dedicated crates, sometimes provided by the framework. |
-| WebSockets | [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}}, [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} | These crates provide WebSocket support. |
-| GraphQL | [`juniper`][c~juniper~docs]↗{{hi:juniper}}, [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}} | These crates enable building GraphQL APIs. |
-| Testing | Built-in testing framework, crates like [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} for integration testing. | Rust has a built-in testing framework, and crates like [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} can be used for integration testing of web servers. |
+This section is a navigation list to related how-to chapters.
 
+- [Authentication and authorization][p~authentication].
+- [HTTP client APIs][p~http-client].
+- [Tracing and diagnostics][p~tracing].
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write / review in depth](https://github.com/john-cd/rust_howto/issues/977)
-
-- [Cot][cot.rs~website]↗.
-- [Salvo][salvo~website]↗.
-- [Gerust][gerust~website]↗: Rust backend project generator.
-- [Rust Web Framework Comparison][rust-web-framework-comparison~repo]↗.
-- [Asynchronous Programming in Rust][book~asynchronous-programming-in-rust]↗.
-- [Tokio][c~tokio~website]↗.
-- [Tokio Examples][c~tokio~examples~docs]↗.
-- [Axum Examples][c~axum~examples]↗.
-- [Source Code for 'Practical Rust Web Projects' by Shing Lyu][practical-rust-web-projects~repo]↗.
-- [Auth Web Microservice with rust using Actix-Web 4.0 - Complete Tutorial][blog~auth-microservice-rust-actix-web1.0-diesel-complete-tutorial]↗.
-- [Realworld rust-axum-sqlx][realworld~rust-axum-sqlx~repo]↗.
-- [Realworld rust-axum-sqlx][realworld~rust-axum-sqlx~repo]↗.
-- [Realworld actix-fullstack][realworld~actix-fullstack~repo]↗.
-- [RealWorld with Rust + ActixWeb + Diesel on Clean Architecture][realworld~v1-rust-actix-web-diesel~repo]↗.
-
-</div>
