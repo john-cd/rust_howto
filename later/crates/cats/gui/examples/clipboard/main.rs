@@ -5,6 +5,6 @@
 mod arboard;
 
 /// Runs the clipboard example.
-fn main() {
-    arboard::run();
+fn main() -> anyhow::Result<()> {
+    arboard::run()
 }

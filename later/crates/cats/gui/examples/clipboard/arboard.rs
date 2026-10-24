@@ -1,50 +1,68 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates how to interact with the system clipboard using
-//! the `arboard` crate.
-//!
-//! The `arboard` crate provides a cross-platform way to copy and paste text to
-//! and from the clipboard.
-//!
-//! This example shows how to create a clipboard instance, set text to the
-//! clipboard, and get text from the clipboard.
+//! This example copies text to and reads text from the system clipboard with
+//! the current `arboard` builder API.
 
+use anyhow::Context;
 use arboard::Clipboard;
 
-/// Copies text to the clipboard, then reads it back.
-fn main() {
-    // Create a new Clipboard instance.
-    let mut clipboard = Clipboard::new().unwrap();
+/// Writes a sample string to the clipboard and reads it back.
+fn main() -> anyhow::Result<()> {
+    let mut clipboard =
+        Clipboard::new().context("create a system clipboard handle")?;
+    let text = "Hello, clipboard!";
 
-    // Set some text to the clipboard.
-    clipboard.set_text("Hello, clipboard!").unwrap();
-    println!("Text copied to clipboard.");
+    clipboard
+        .set()
+        .text(text)
+        .context("write text to the system clipboard")?;
+    let clipboard_text = clipboard
+        .get()
+        .text()
+        .context("read text from the system clipboard")?;
+    anyhow::ensure!(
+        clipboard_text == text,
+        "clipboard text did not round-trip"
+    );
+    println!("Text read from the clipboard: {clipboard_text}");
 
-    // Get the text from the clipboard.
-    let clipboard_text = clipboard.get_text().unwrap();
-    println!("Text from clipboard: {clipboard_text}");
+    Ok(())
 }
-// You may also use:  get/set_html/image...
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the clipboard example and returns any clipboard access error.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
+/// Tests that require access to the desktop clipboard.
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use anyhow::Context;
+    use arboard::Clipboard;
 
+    /// Verifies writing and reading text through the system clipboard.
+    ///
+    /// Run manually on a desktop to replace its current clipboard text:
+    /// `cargo test -p gui --example clipboard clipboard_text_round_trip --
+    /// --ignored`.
     #[test]
-    #[ignore = "requires clipboard access"]
-    fn test_main() {
-        main();
+    #[ignore = "requires a desktop clipboard and overwrites its current text"]
+    fn clipboard_text_round_trip() -> anyhow::Result<()> {
+        let mut clipboard =
+            Clipboard::new().context("create a system clipboard handle")?;
+        let text = "clipboard test value";
+
+        clipboard
+            .set()
+            .text(text)
+            .context("write text to the system clipboard")?;
+        let clipboard_text = clipboard
+            .get()
+            .text()
+            .context("read text from the system clipboard")?;
+        assert_eq!(clipboard_text, text);
+        Ok(())
     }
 }
-
-// Requires a clipboard on Linux; otherwise,
-// "Unknown error while interacting with the clipboard: X11 server connection
-// timed out because it was unreachable"
-// [review](https://github.com/john-cd/rust_howto/issues/1155)
