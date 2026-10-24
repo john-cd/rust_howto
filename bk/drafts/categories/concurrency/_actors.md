@@ -30,6 +30,20 @@ Possible applications of actor frameworks:
 - Chat applications.
 - Telecommunications.
 
+## Build a Simple Actor with Tokio {#tokio}
+
+You can build an actor from a Tokio task and channels without adopting an actor framework. The task owns the counter state, a bounded `mpsc` channel carries commands, and each command includes a `oneshot` sender for its reply. Cloning the handle gives another sender to the same actor. See [Actors with Tokio][blog~actors-with-tokio]↗ for a fuller explanation.
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/examples/actors/actors.rs:example}}
+```
+
+Frameworks such as [`actix`][c~actix~docs], [`ractor`][c~ractor~docs], and `kameo` provide higher-level actor features. Plain Tokio channels can be enough when an application only needs an owned task, a mailbox, and request/reply messages.
+
+<div class="hidden">
+This section adds the plain-Tokio example requested by issue #1011. It replaces the earlier fire-and-forget thread example with an actor that owns mutable state, supports cloned handles, returns each updated value through a one-use reply channel, and shuts down when all handles are dropped.
+</div>
+
 ## `stakker` {#stakker}
 
 [![stakker~website][c~stakker~website~badge]][c~stakker~website] [![stakker][c~stakker~docs~badge]][c~stakker~docs] [![stakker~crates.io][c~stakker~crates.io~badge]][c~stakker~crates.io] [![stakker~repo][c~stakker~repo~badge]][c~stakker~repo] [![stakker~lib.rs][c~stakker~lib.rs~badge]][c~stakker~lib.rs]{{hi:stakker}}{{hi:Runtime}}{{hi:Erlang}}{{hi:Async}}{{hi:Actor}}{{hi:Pony}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}

@@ -56,7 +56,7 @@ fn main() -> anyhow::Result<()> {
                 actix::run();
             }
             Commands::Actors => {
-                actors::run();
+                actors::run()?;
             }
             Commands::Ractor => {
                 ractor::run();
