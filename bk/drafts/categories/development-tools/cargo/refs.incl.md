@@ -15,3 +15,4 @@
 [p~main]: ../../../language/entrypoint.md
 [cloudsmith~cargo]: https://docs.cloudsmith.com/formats/cargo-registry
 [jfrog~cargo]: https://docs.jfrog.com/artifactory/docs/cargo-repositories
+[book~cargo~workspaces]: https://doc.rust-lang.org/cargo/reference/workspaces.html
