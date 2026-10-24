@@ -17,3 +17,6 @@
 [p~cargo]: ../cargo/cargo.md
 [p~concurrency]: ../../concurrency/index.md
 [p~code-documentation]: documentation.md#documenting-your-code
+[shields~badge-reference~docs]: https://shields.io/badges
+[docsrs~badge~docs]: https://docs.rs/about/badges
+[github-actions~status-badge~docs]: https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge
