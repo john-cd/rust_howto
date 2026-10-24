@@ -34,7 +34,7 @@
 [ex~encoding~zerocopy]: typecasts.md#zerocopy
 [p~binary-encoders]: _binary_encoders.md
 [p~configuration]: ../config/configuration.md
-[p~csv]: # "../../other/data-processing/csv.md"
+[p~csv]: https://datatracker.ietf.org/doc/html/rfc4180
 [p~encoding]: index.md
 [p~data-types]: ../../../src/language/data_types.md
 [p~json]: ../parser-implementations/json.md
@@ -51,3 +51,6 @@
 [p~traits]: ../../../src/language/traits.md
 [p~typecasts]: typecasts.md
 [p~url]: ../web-programming/url.md
+
+[c~yaml_serde~docs]: https://docs.rs/yaml_serde/latest/yaml_serde/
+[c~yaml_serde~docs~badge]: https://img.shields.io/crates/v/yaml_serde?label=yaml_serde

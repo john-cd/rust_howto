@@ -4,106 +4,75 @@
 
 [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-Encoding and/or decoding{{hi:Decoding}} data from one data format to another.
-
-For general character encoding, [`encoding`][c~encoding~docs]↗{{hi:encoding}} is a good choice. For JSON, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}} is the standard. For other formats, look for crates that support them specifically. [`serde`][c~serde~docs]↗{{hi:serde}} is the underlying engine for many of these, providing a consistent way to work with serialization.
+Encoding covers converting text between character sets and serializing structured values into bytes or formats such as JSON, CSV, and Protocol Buffers. Choose a format crate that matches the data and compatibility requirements; [`serde`][c~serde~docs]↗{{hi:serde}} provides a common data model for many Rust formats.
 
 ## Character Encoding
 
-- [`encoding`][c~encoding~docs]↗{{hi:encoding}}: A comprehensive crate for working with various character encodings (UTF-8, UTF-16, Latin-1, etc.). A good general-purpose choice.
-- [`base64`][c~base64~docs]↗{{hi:base64}}: A widely used crate for Base64 encoding and decoding.
-
-{{#include string_encoding.incl.md}}
+Convert text to and from byte representations, including Base64 and URL-safe encodings; use [`encoding_rs`][c~encoding_rs~docs]↗{{hi:encoding_rs}} when Web-compatible legacy character encodings are required. See [String Encoding](string_encoding.md).
 
 ## Serialization / Deserialization (Serde)
 
-- [`serde`][c~serde~docs]↗{{hi:serde}}: The powerful and widely used serialization framework in Rust. Many of the encoding crates above rely on serde. See [[complex_encoding | Complex Encoding]].
-
-{{#include serde.incl.md}}
+Use Serde to describe Rust data independently of a particular serialization format. See [Serde](serde.md).
 
 ## Structured Data (Complex Encoding)
 
-{{#include complex_encoding.incl.md}}
+Choose a structured format such as TOML, JSON, YAML, or XML when data needs named fields and a defined external representation. See [Complex Encoding](complex_encoding.md).
 
 ## CSV Processing
 
-{{#include csv.incl.md}}
+Read, validate, filter, transform, and write tabular text with the CSV format. See [CSV Processing](csv.md).
 
 ## JSON Serialization
 
-- [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}: A very popular crate for JSON serialization and deserialization.
-See [[json | JSON]].
+Use [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}} to serialize and deserialize JSON values. See [JSON](../parser-implementations/json.md).
 
 ## BSON (Binary JSON) Serialization
 
-Use [`bson`][c~bson~docs]↗{{hi:bson}} for working with BSON, a binary representation of JSON-like documents.
+Use [`bson`][c~bson~docs]↗{{hi:bson}} for binary documents compatible with the BSON data model. See [Complex Encoding](complex_encoding.md).
 
 ## TOML (Tom's Obvious, Minimal Language) Serialization
 
-Consider:
-
-- [`toml`][c~toml~docs]↗{{hi:toml}} for working with TOML files - see [[toml | TOML]].
+Use [`toml`][c~toml~docs]↗{{hi:toml}} for a human-readable configuration format with table and array support. See [TOML](../parser-implementations/toml.md).
 
 ## YAML (YAML Ain't Markup Language) Serialization
 
-Consider:
-
-- [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}} for YAML serialization and deserialization. Uses [`serde`][c~serde~docs]↗{{hi:serde}}.
-See [[yaml | YAML]].
+Use [`yaml_serde`][c~yaml_serde~docs]↗{{hi:yaml_serde}}, the actively maintained Serde-compatible YAML crate, when YAML interoperability is required. See [YAML](../parser-implementations/yaml.md).
 
 ## XML Serialization
 
-Use:
-
-- [`quick-xml`][c~quick-xml~docs]↗{{hi:quick-xml}} : A fast XML parser.
-- [`serde-xml-rs`][c~serde-xml-rs~docs]↗{{hi:serde-xml-rs}}: For serializing and deserializing XML.
-- [`serde`][c~serde~docs]↗{{hi:serde}}.
-
-See [[xml | XML]].
+Use [`quick-xml`][c~quick-xml~docs]↗{{hi:quick-xml}} for XML parsing and Serde integration. See [XML](../parser-implementations/xml.md).
 
 ## Binary Encoders
 
-{{#include _binary_encoders.incl.md}}
+Binary formats encode structured data compactly or according to an external schema. See [Binary Encoders](_binary_encoders.md).
 
 ## Binary Data Serialization (General)
 
-[`byteorder`][c~byteorder~docs]↗{{hi:byteorder}}: For reading and writing binary data in different endianness.
-[`bincode`][c~bincode~docs]↗{{hi:bincode}}: A crate for efficiently serializing and deserializing data in a compact binary format.
-
-See [[_binary_encoders |  Binary Encoders]].
+For compact Rust data serialization, compare [`bincode`][c~bincode~docs]↗{{hi:bincode}} with the schema and compatibility needs of the application. See [Binary Encoders](_binary_encoders.md).
 
 ## Binary Encoders Without External Schemas
 
-{{#include no_external_schema.incl.md}}
+Formats such as Postcard and rkyv encode values without a separately defined schema; review their compatibility and validation model. See [Binary Encoders Without External Schemas](no_external_schema.md).
 
 ## MessagePack Serialization
 
-Consider using [`rmp-serde`][c~rmp-serde~docs]↗{{hi:rmp-serde}} for MessagePack serialization and deserialization.
-See [[_binary_encoders |  Binary Encoders]].
+Use [`rmp-serde`][c~rmp-serde~docs]↗{{hi:rmp-serde}} to encode Serde values in MessagePack. See [Binary Encoders](_binary_encoders.md).
 
 ## CBOR (Concise Binary Object Representation) Serialization
 
-Use [`serde_cbor`][c~serde_cbor~docs]↗{{hi:serde_cbor}} for CBOR encoding and decoding.
-See [[_binary_encoders |  Binary Encoders]].
+Use [`ciborium`][c~ciborium~docs]↗{{hi:ciborium}} to encode and decode CBOR through Serde; check wire-format requirements with other implementations. See [Binary Encoders](_binary_encoders.md).
 
 ## Protocol Buffers
 
-The Protocol Buffers example uses [`prost`][c~prost~docs]↗{{hi:prost}}; see [[_binary_encoders | Binary Encoders]] for its schema, build script, and round-trip example.
+Use [`prost`][c~prost~docs]↗{{hi:prost}} with a `.proto` schema and generated Rust types. See [Binary Encoders](_binary_encoders.md).
 
 ### gRPC
 
-Review [`tonic`][c~tonic~docs]↗{{hi:tonic}}, [`grpc`][c~grpc~docs]↗{{hi:grpc}}. See [[_grpc | gRPC]].
+Combine Protocol Buffers with [`tonic`][c~tonic~docs]↗{{hi:tonic}} when building a gRPC service. See [gRPC](../web-programming_http-server/_grpc.md).
 
 ## Typecasts
 
-{{#include typecasts.incl.md}}
+For in-memory reinterpretation and byte-level views, check alignment, validity, and ownership requirements before using casts or helper crates. See [Typecasts](typecasts.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/929)
-
-- [encoding_rs - web char encoding library][c~encoding_rs~lib.rs]↗.
-
-</div>
