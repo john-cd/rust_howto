@@ -167,4 +167,5 @@ review [![Rust by example - error][book~rust-by-example~error~badge]][book~rust-
 
 - [`human-panic`][c~human-panic~repo]↗: Panic messages for humans.
 
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

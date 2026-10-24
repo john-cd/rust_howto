@@ -114,4 +114,5 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/397)
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

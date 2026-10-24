@@ -90,4 +90,5 @@ For system-specific APIs, use the smallest platform-specific layer possible. The
 
 <div class="hidden">
 [add / write; link to other chapters; conditional compile](https://github.com/john-cd/rust_howto/issues/583)
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

@@ -41,4 +41,5 @@ Biological data requires careful handling of identifiers, units, coordinate syst
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/959)
 [also cover Biology! see lib.rs categorization](https://github.com/john-cd/rust_howto/issues/1197)
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

@@ -45,3 +45,7 @@ Rust's "module system" helps structure your projects effectively. It gives fine-
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
+
+<div class="hidden">
+[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
+</div>

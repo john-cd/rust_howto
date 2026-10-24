@@ -35,4 +35,5 @@ Code examples are found below:
 
 <div class="hidden">
 [expand](https://github.com/john-cd/rust_howto/issues/370)
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

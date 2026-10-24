@@ -84,4 +84,5 @@ https://www.reddit.com/r/rust/comments/1l8okiy/im_blown_that_this_is_a_thing/
 
 Enum variants and tuple-like structs can be used as function items in general https://doc.rust-lang.org/reference/types/function-item.html
 
+[accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
 </div>

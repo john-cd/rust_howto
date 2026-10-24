@@ -50,4 +50,5 @@ OpenSSL integration for HTTPS with Hyper.
 
 <div class="hidden">
 [hyper: fix](https://github.com/john-cd/rust_howto/issues/515)
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

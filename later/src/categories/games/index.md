@@ -37,4 +37,5 @@ These examples show several kinds of games built with Rust. Project availability
 {{#include ../../../crates/cats/games/examples/games.rs:example}}
 ```
 
+[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>
