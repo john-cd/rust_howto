@@ -2,84 +2,90 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Complex crossbeam channel example with multiple producers, workers, and a
-//! sink.
+//! A bounded MPMC pipeline distributes messages to worker threads.
 
 use std::thread;
-use std::time::Duration;
 
+use anyhow::anyhow;
 use crossbeam_channel::bounded;
 
-/// Complex crossbeam channel example with multiple producers, workers, and a
-/// sink.
-fn main() {
-    // Create two bounded channels with a capacity of 1.
-    // `snd1`/`rcv1` are used for communication between the producer and
-    // workers. `snd2`/`rcv2` are used for communication between the workers
-    // and the sink.
-    let (snd1, rcv1) = bounded(1);
-    let (snd2, rcv2) = bounded(1);
-    let n_msgs = 4;
-    let n_workers = 2;
+/// Sends four messages through two bounded workers and returns the results.
+fn process_messages() -> anyhow::Result<Vec<u32>> {
+    let (input_tx, input_rx) = bounded(1);
+    let (output_tx, output_rx) = bounded(1);
 
-    // Create a new scope for spawning threads.
-    crossbeam::scope(|s| {
-        // Producer thread:
-        s.spawn(|_| {
-            for i in 0..n_msgs {
-                snd1.send(i).unwrap();
-                println!("Source sent {i}");
-            }
-            // Close the channel - this is necessary to exit
-            // the for-loop in the worker.
-            drop(snd1);
-        });
+    let results = thread::scope(|scope| -> anyhow::Result<Vec<u32>> {
+        let workers = (0..2)
+            .map(|_| {
+                let receiver = input_rx.clone();
+                let sender = output_tx.clone();
+                scope.spawn(move || -> anyhow::Result<()> {
+                    while let Ok(message) = receiver.recv() {
+                        sender.send(message * 2)?;
+                    }
+                    Ok(())
+                })
+            })
+            .collect::<Vec<_>>();
 
-        // Parallel processing by multiple worker threads:
-        for _ in 0..n_workers {
-            // Clone the sender for the sink and the receiver from the source.
-            let (sendr, recvr) = (snd2.clone(), rcv1.clone());
-            // Spawn worker threads.
-            // Each worker receives messages from `rcv1`, processes them,
-            // and sends the results to `snd2`.
-            s.spawn(move |_| {
-                thread::sleep(Duration::from_millis(500));
-                // Receive until channel closes.
-                for msg in &recvr {
-                    println!(
-                        "Worker {:?} received {msg}.",
-                        thread::current().id()
-                    );
-                    sendr.send(msg * 2).unwrap();
-                }
-            });
+        drop(input_rx);
+        drop(output_tx);
+
+        let producers = (0_u32..2)
+            .map(|producer| {
+                let sender = input_tx.clone();
+                scope.spawn(move || -> anyhow::Result<()> {
+                    for item in 0_u32..2 {
+                        sender.send(producer * 2 + item)?;
+                    }
+                    Ok(())
+                })
+            })
+            .collect::<Vec<_>>();
+        drop(input_tx);
+
+        let mut results = output_rx.iter().collect::<Vec<_>>();
+        for producer in producers {
+            producer.join().map_err(|_| {
+                anyhow!("a Crossbeam producer thread panicked")
+            })??;
         }
-        // Close the `snd2` channel.
-        // This is necessary to signal to the sink that no more messages will be
-        // sent.
-        drop(snd2);
-
-        // Sink: receives and processes messages from the workers.
-        for msg in &rcv2 {
-            println!("Sink received {msg}");
+        for worker in workers {
+            worker
+                .join()
+                .map_err(|_| anyhow!("a Crossbeam worker thread panicked"))??;
         }
-    })
-    .unwrap();
+
+        results.sort_unstable();
+        Ok(results)
+    })?;
+
+    Ok(results)
+}
+
+/// Runs the pipeline and verifies every input was processed once.
+fn main() -> anyhow::Result<()> {
+    let results = process_messages()?;
+    assert_eq!(results, vec![0, 2, 4, 6]);
+    println!("Processed results: {results:?}");
+    Ok(())
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the bounded MPMC pipeline example.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that every bounded-channel message reaches one worker.
     #[test]
-    fn test_main() {
-        main();
+    fn bounded_mpmc_pipeline_processes_every_message() -> anyhow::Result<()> {
+        assert_eq!(process_messages()?, vec![0, 2, 4, 6]);
+        Ok(())
     }
 }
