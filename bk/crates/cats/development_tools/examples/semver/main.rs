@@ -5,7 +5,6 @@
 use clap::Parser;
 use clap::Subcommand;
 
-#[cfg(not(windows))]
 mod semver_command;
 mod semver_complex;
 mod semver_latest;
@@ -24,7 +23,6 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `semver_command` example.
-    #[cfg(not(windows))]
     #[command(name = "semver_command")]
     Command,
     /// Runs the `semver_complex` example.
@@ -47,7 +45,6 @@ fn main() -> anyhow::Result<()> {
 
     if let Some(command) = cli.command {
         match command {
-            #[cfg(not(windows))]
             Commands::Command => {
                 semver_command::run()?;
             }
