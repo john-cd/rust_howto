@@ -20,6 +20,8 @@ autolib = false
 [dependencies]
 anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive"] }
+# Iterates over reqwest's streamed response chunks when downloading files.
+futures-util = "0.3.34"
 http-body-util = "0.1.5"
 hyper = "1.12.0"
 hyper-util = "0.1.21"

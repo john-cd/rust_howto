@@ -9,7 +9,7 @@
 [ex~web-programming_http-client~hyper]: http_clients.md#hyper
 [ex~web-programming_http-client~make-a-http-get-request]: requests.md#make-a-http-get-request
 [ex~web-programming_http-client~partial-download-with-http-range-headers]: download.md#partial-download-with-http-range-headers
-[ex~web-programming_http-client~post-a-file-to-paste-rs]: download.md#post-a-file-to-paste-rs
+[ex~web-programming_http-client~post-a-file-with-reqwest]: download.md#post-a-file-with-reqwest
 [ex~web-programming_http-client~query-the~repo-api]: apis.md#query-the~repo-api
 [ex~web-programming_http-client~reqwest]: http_clients.md#reqwest
 [ex~web-programming_http-client~ureq]: http_clients.md#ureq

@@ -19309,6 +19309,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap",
+ "futures-util",
  "http-body-util",
  "hyper 1.12.0",
  "hyper-util",
