@@ -190,8 +190,6 @@ MD039: true
 MD040:
   # List of languages
   allowed_languages: []
-  # Require language only
-  language_only: false
 
 # MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md041.md
 MD041: false

@@ -25,3 +25,4 @@
 [rustdoc~lints]: https://doc.rust-lang.org/rustdoc/lints.html
 [dprint~website]: https://dprint.dev/
 [typos~repo]: https://github.com/crate-ci/typos
+[rumdl~repo]: https://github.com/rvben/rumdl
