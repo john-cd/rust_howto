@@ -7,27 +7,24 @@
 use url::ParseError;
 use url::Url;
 
-/// Builds a GitHub URL by joining a base URL with a given path.
+/// Builds a GitHub URL by joining a base directory with a relative path.
 ///
 /// # Arguments
 ///
 /// * `path` - The path to append to the base GitHub URL.
 ///
-/// Returns a `Result` containing the joined `Url` or a `ParseError`.
+/// Returns the joined `Url`, or a parse error if the base or path is invalid.
 fn build_github_url(path: &str) -> Result<Url, ParseError> {
     /// GitHub base URL used to demonstrate URL parsing and joining.
-    const GITHUB: &str = "https://github.com";
+    const GITHUB: &str = "https://github.com/";
 
-    let base =
-        Url::parse(GITHUB).expect("This hardcoded URL is known to be valid");
-    let joined = base.join(path)?;
-
-    Ok(joined)
+    let base = Url::parse(GITHUB)?;
+    base.join(path)
 }
 
 /// Builds a URL by joining a base URL and a path.
 fn main() -> Result<(), ParseError> {
-    let path = "/rust-lang/cargo";
+    let path = "rust-lang/cargo";
 
     let gh = build_github_url(path)?;
     println!("The joined URL is: {gh}");
@@ -51,6 +48,16 @@ mod tests {
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;
+        Ok(())
+    }
+
+    /// Verifies a relative URL path is joined beneath the base directory.
+    #[test]
+    fn joins_relative_path_beneath_base() -> Result<(), ParseError> {
+        assert_eq!(
+            build_github_url("rust-lang/cargo/issues")?.as_str(),
+            "https://github.com/rust-lang/cargo/issues"
+        );
         Ok(())
     }
 }

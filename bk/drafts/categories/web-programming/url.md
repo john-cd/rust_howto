@@ -21,7 +21,7 @@ Once the URL has been parsed, it can be used with all of the methods in the
 
 [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders, files or query strings. Each of those items are stripped out of the given URL. [`url::PathSegmentsMut::clear`][c~url::PathSegmentsMut::clear~docs]↗{{hi:url::PathSegmentsMut::clear}} removes paths and [`url::Url::set_query`][c~url::Url::set_query~docs]↗{{hi:url::Url::set_query}} removes query string.
+This recipe reduces a hierarchical URL to its origin root by clearing the path, query, and fragment. That root can be useful as a base for URL resolution; when joining relative paths, remember that a trailing slash makes the final base segment a directory.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/url/base.rs:example}}
@@ -31,7 +31,7 @@ A base URL{{hi:URL}} includes a protocol and a domain. Base URLs have no folders
 
 [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-The [`url::Url::join`][c~url::Url::join~docs]↗{{hi:url::Url::join}} method creates a new URL from a base and relative path{{hi:Relative path}}.
+The [`url::Url::join`][c~url::Url::join~docs]↗{{hi:url::Url::join}} method resolves a relative reference against a base URL. A leading slash replaces the base path, while a path without one is appended relative to the base directory.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/url/new.rs:example}}
@@ -57,7 +57,7 @@ The [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} struct exposes various metho
 
 [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-Parses [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} and slices it with [`url::Position`][c~url::Position~docs]↗{{hi:url::Position}} to strip unneeded URL parts.
+Parses [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} and slices it at [`url::Position::AfterPath`][c~url::Position::AfterPath~docs]↗{{hi:url::Position::AfterPath}} to exclude the query and fragment. Use URL APIs to encode individual query components instead of concatenating untrusted text; [`percent-encoding`][c~percent-encoding~docs]↗ provides component encoders.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/url/fragment.rs:example}}
@@ -65,11 +65,12 @@ Parses [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} and slices it with [`url:
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[requests | Make HTTP Requests]].
+- [[scraping | Extracting Links]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/973)
+This review removes a stale commented implementation, makes the URL joining example show relative-path behavior, and ensures the query/fragment example actually contains and removes both components. It adds focused examples for path, query, fragment, and port handling.
 </div>

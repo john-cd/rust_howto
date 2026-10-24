@@ -2,50 +2,27 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This module demonstrates how to extract the base URL from a given URL.
-//!
-//! It uses the `url` crate to parse and manipulate URLs.
+//! This module demonstrates how to reduce a hierarchical URL to its origin.
 
 use anyhow::Result;
 use url::Url;
 
-/// Extracts the base URL from a given URL.
+/// Returns the origin root of a hierarchical URL.
 ///
 /// This function takes a URL and removes the path segments and query
 /// parameters, effectively returning the base URL.
 ///
-/// # Arguments
-///
-/// * `url` - The URL to extract the base from.
-///
-/// # Returns
-///
-/// Returns a `Result` containing the base URL or an error if the URL cannot be
-/// processed.
+/// The query and fragment are removed, and the path becomes `/`.
 fn base_url(mut url: Url) -> Result<Url> {
     url.set_fragment(None);
     url.set_query(None);
     url.set_path("");
-
-    // You could also use `path_segments_mut` to return an object with methods
-    // to manipulate the URL's path segments. match url.path_segments_mut()
-    // {     Ok(mut path) => {
-    //         path.clear();
-    //     }
-    //     Err(_) => {
-    //         // Some (uncommon) URLs are said to be cannot-be-a-base:
-    //         // they don't have a username, password, host, or port,
-    //         // and their "path" is an arbitrary string rather than
-    // slash-separated segments.         return Err(anyhow::anyhow!("This
-    // URL is cannot-be-a-base."));     }
-    // }
-
     Ok(url)
 }
 
 /// Extracts the base of a URL.
 fn main() -> Result<()> {
-    let full = "https://github.com/rust-lang/cargo?asdf";
+    let full = "https://github.com/rust-lang/cargo?tab=readme#usage";
 
     let url = Url::parse(full)?;
     let base = base_url(url)?;
@@ -70,6 +47,15 @@ mod tests {
     #[test]
     fn test_main() -> Result<()> {
         main()?;
+        Ok(())
+    }
+
+    /// Verifies origin reduction removes path, query, and fragment.
+    #[test]
+    fn removes_path_query_and_fragment() -> Result<()> {
+        let url = Url::parse("https://example.test:8443/a/b?q=rust#part")?;
+
+        assert_eq!(base_url(url)?.as_str(), "https://example.test:8443/");
         Ok(())
     }
 }
