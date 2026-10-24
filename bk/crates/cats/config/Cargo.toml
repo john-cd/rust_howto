@@ -30,6 +30,9 @@ dotenvy = "0.15.7"
 envy = "0.4.2"
 serde = { version = "1.0.229", features = ["derive"] }
 
+[dev-dependencies]
+tempfile.workspace = true
+
 [[example]]
 name = "configuration"
 path = "examples/configuration/main.rs"

@@ -2,49 +2,51 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example showcases how to create a custom environment source for (unit)
-//! testing purposes, allowing the simulation of different environment variable
-//! settings without modifying the actual system environment.
-//!
-//! Add to `Cargo.toml`:
-//! ```toml
-//! config = "0.15.6" # Or latest
-//! ```
+//! Tests a config source without changing the process environment.
 
-/// Loads a configuration from a custom environment source, as in a unit test.
-fn main() -> anyhow::Result<(), ::config::ConfigError> {
-    // The `Environment::source` method can be used when you want to test
-    // your code, without the need to change the actual system
-    // environment variables.
-    let source = ::config::Environment::default().source(Some({
-        let mut env = std::collections::HashMap::new();
-        env.insert("HOST".into(), "1.1.1.1".into()); // Fakes the env. variable HOST="1.1.1.1".
-        env
-    }));
+use std::collections::HashMap;
 
-    let config = config::Config::builder()
-        .add_source(source)
-        .build()?
-        .try_deserialize::<std::collections::HashMap<String, String>>(
-    )?;
+use config::Config;
+use config::Environment;
 
+/// Builds a configuration from a supplied set of environment values.
+fn config_from_source(
+    environment: HashMap<String, String>,
+) -> Result<HashMap<String, String>, config::ConfigError> {
+    let source = Environment::default().source(Some(environment));
+    let config = Config::builder().add_source(source).build()?;
+    config.try_deserialize()
+}
+
+/// Demonstrates an isolated environment source.
+fn main() -> anyhow::Result<()> {
+    let environment =
+        HashMap::from([("HOST".to_owned(), "1.1.1.1".to_owned())]);
+    let config = config_from_source(environment)?;
     assert_eq!(config.get("host"), Some(&"1.1.1.1".to_owned()));
-
+    println!("Host: {}", config["host"]);
     Ok(())
 }
+
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main().unwrap();
+/// Runs the isolated configuration-source example.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies a provided environment map is read without process mutation.
     #[test]
-    fn test_config() -> anyhow::Result<(), ::config::ConfigError> {
-        main()
+    fn injected_environment_source_returns_the_expected_host()
+    -> anyhow::Result<()> {
+        let environment =
+            HashMap::from([("HOST".to_owned(), "192.0.2.1".to_owned())]);
+        let config = config_from_source(environment)?;
+        assert_eq!(config.get("host"), Some(&"192.0.2.1".to_owned()));
+        Ok(())
     }
 }

@@ -48,7 +48,7 @@ fn main() -> anyhow::Result<()> {
                 config_singleton::run()?;
             }
             Commands::ConfigTesting => {
-                config_testing::run();
+                config_testing::run()?;
             }
             Commands::Confy => {
                 confy::run()?;

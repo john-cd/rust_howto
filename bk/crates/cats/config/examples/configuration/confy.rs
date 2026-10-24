@@ -2,42 +2,33 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Example of using the `confy` crate for configuration management.
+//! Loads a typed configuration with confy.
 
 use serde::Deserialize;
 use serde::Serialize;
 
-/// Represents the configuration for the application.
-#[derive(Serialize, Deserialize, Debug)]
+/// Application settings stored by confy.
+#[derive(Serialize, Deserialize, Debug, Default)]
 struct MyConfig {
-    /// The version of the configuration.
+    /// The configuration schema version.
     version: u8,
-    /// The key to access the API.
+    /// The API key.
     api_key: String,
 }
 
-/// `MyConfig` implements `Default`:
-impl ::std::default::Default for MyConfig {
-    fn default() -> Self {
-        Self {
-            version: 0,
-            api_key: "".into(),
-        }
-    }
-}
-
-/// Loads the configuration file, creating it with default values if needed.
-fn main() -> Result<(), confy::ConfyError> {
-    let cfg: MyConfig = confy::load("my-app-name", None)?;
-    // confy::store("my-app-name", None, cfg)?;
-    println!("{cfg:?}");
+/// Loads defaults from an isolated TOML path and displays them.
+fn main() -> anyhow::Result<()> {
+    let config_dir = tempfile::tempdir()?;
+    let path = config_dir.path().join("my-app.toml");
+    let config: MyConfig = confy::load_path(path)?;
+    println!("{config:?}");
     Ok(())
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() -> Result<(), confy::ConfyError> {
+/// Runs the confy example.
+pub fn run() -> anyhow::Result<()> {
     main()
 }
 
@@ -45,23 +36,14 @@ pub fn run() -> Result<(), confy::ConfyError> {
 mod tests {
     use super::*;
 
-    /// Verifies that loads defaults from an isolated config path.
+    /// Verifies confy supplies defaults for a new temporary config file.
     #[test]
     fn loads_defaults_from_an_isolated_config_path() -> anyhow::Result<()> {
-        let dir = std::env::temp_dir().join(format!(
-            "rust-howto-confy-{}-{}",
-            std::process::id(),
-            std::time::SystemTime::now()
-                .duration_since(std::time::UNIX_EPOCH)?
-                .as_nanos()
-        ));
-        std::fs::create_dir_all(&dir)?;
-        let path = dir.join("my-app-name.toml");
-        let cfg: MyConfig = confy::load_path(&path)?;
-        assert_eq!(cfg.version, 0);
-        assert!(cfg.api_key.is_empty());
-        std::fs::remove_dir_all(dir)?;
+        let config_dir = tempfile::tempdir()?;
+        let path = config_dir.path().join("my-app.toml");
+        let config: MyConfig = confy::load_path(path)?;
+        assert_eq!(config.version, 0);
+        assert!(config.api_key.is_empty());
         Ok(())
     }
 }
-// [review](https://github.com/john-cd/rust_howto/issues/148)

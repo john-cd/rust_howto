@@ -2,25 +2,17 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates how to use the `config` crate to load
-//! application configuration.
+//! Loads typed settings by layering TOML files, environment variables, and CLI
+//! overrides.
 //!
-//! It shows how to load and layer configuration from multiple sources,
-//! including default settings, default config files, environment-specific
-//! config files, and environment variables. It uses command-line arguments to
-//! change what config files are loaded and to override specific configuration
-//! options.
-//!
-//! Add to your `Cargo.toml`:
-//! ```toml
-//! [dependencies]
-//! config = "0.15.6" # Or latest
-//! serde = { version = "1.0", features = ["derive"] }
-//! clap = { version = "4.5.37", features = [ "cargo" ] } # Optional, for CLI argument parsing.
-//! ```
+//! The example uses temporary TOML files so it can run without project setup.
+//! In an application, point the same File sources at the checked-in config
+//! paths.
 
+use std::path::Path;
 use std::path::PathBuf;
 
+use anyhow::Result;
 use serde::Deserialize;
 
 mod cfg;
@@ -29,89 +21,55 @@ mod cli;
 pub(crate) use cfg::read_settings;
 pub(crate) use cli::parse_command_line_args;
 
-/// Application settings, which consist of nested configuration objects.
+/// Application settings loaded from several sources.
 #[derive(Debug, Deserialize)]
 pub(crate) struct Settings {
-    /// Settings of the service.
+    /// Settings for the service.
     pub service: ServiceSettings,
-    /// Settings of the database.
+    /// Settings for the database.
     pub database: DatabaseSettings,
-    /// Settings of the logging.
+    /// Settings for logging.
     pub logging: LoggingSettings,
 }
 
-/// Settings of the service.
+/// Service settings.
 #[derive(Debug, Deserialize)]
 pub(crate) struct ServiceSettings {
-    /// The name of the application, here a service of some sort.
+    /// The application name.
     pub name: String,
     /// The port the service listens on.
     pub port: u16,
 }
 
-/// Settings of the database.
+/// Database settings.
 #[derive(Debug, Deserialize)]
 pub(crate) struct DatabaseSettings {
-    /// Connection URL.
+    /// The connection URL.
     pub url: String,
-    /// Maximum number of connections.
+    /// The maximum connection count.
     pub max_connections: u32,
 }
 
-/// Settings of the logging.
+/// Logging settings.
 #[derive(Debug, Deserialize)]
 pub(crate) struct LoggingSettings {
-    /// The logging level, e.g. `info`.
+    /// The logging level.
     pub level: String,
 }
 
-/// Command-line arguments for our application.
+/// Command-line options that override configuration sources.
 #[derive(Debug)]
 pub(crate) struct CommandLineArgs {
-    /// "production" or "development" environment.
+    /// The selected configuration profile.
     pub run_mode: String,
-    /// Path to a custom config file.
+    /// An optional additional configuration file.
     pub custom_config_file_path: Option<PathBuf>,
-    /// CLI argument to override the port the service listens on.
+    /// An optional service port override.
     pub port: Option<u16>,
 }
 
-/// Loads the layered configuration and prints it.
-fn main() -> anyhow::Result<()> {
-    // 1. Retrieve command-line arguments - in this example, default run_mode
-    //    ("development"), no custom config file, and port value overriden.
-    let cli_args = parse_command_line_args(Some(vec!["myapp", "-p8888"]));
-    println!("Command-line arguments: {cli_args:?}\n");
-
-    // 2. Read all setting sources:
-    let settings = read_settings(cli_args)?;
-
-    // 3. Use the settings:
-    println!("Service Name: {}", settings.service.name); // From the environment variable.
-    println!("Service Port: {}", settings.service.port); // Programmatic override.
-    println!("Database URL: {}", settings.database.url); // From the base config file.
-    println!(
-        "Database Max Connections: {}",
-        settings.database.max_connections
-    ); // From `development.toml`.
-    println!("Logging Level: {}", settings.logging.level); // From `development.toml`.
-
-    Ok(())
-}
-
-/// Test function for the configuration example.
-///
-/// This function sets up temporary configuration files, runs the main
-/// function, and cleans up afterwards.
-fn test_main() -> anyhow::Result<()> {
-    use std::fs;
-
-    // Create the temp folder, if needed.
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
-    }
-
-    // Create the base configuration file.
+/// Writes example TOML files into a caller-owned temporary directory.
+fn write_sample_files(config_dir: &Path) -> Result<()> {
     let default_toml = r#"
 [service]
 name = "UserService"
@@ -124,112 +82,77 @@ max_connections = 50
 [logging]
 level = "info"
 "#;
+    std::fs::write(config_dir.join("default.toml"), default_toml)?;
 
-    fs::write("temp/default.toml", default_toml)?;
-
-    // Preparation: create a configuration file for the "development"
-    // environment.
-    let dev_toml = r#"
+    let development_toml = r#"
 [database]
 max_connections = 5
 
 [logging]
 level = "debug"
 "#;
-
-    fs::write("temp/development.toml", dev_toml)?;
-
-    // Set environment variables to override specific settings, e.g.:
-    // ```sh
-    // export APP_SERVICE__PORT=9000
-    // export APP_DATABASE__MAX_CONNECTIONS=25
-    // export APP_LOGGING__LEVEL=error
-    // ```
-    unsafe {
-        // Override the name in this example:
-        std::env::set_var("APP_SERVICE__NAME", "MyService");
-    }
-
-    main()?;
-
-    unsafe {
-        std::env::remove_var("APP_SERVICE__NAME");
-    }
-
-    fs::remove_file("temp/default.toml")?;
-    fs::remove_file("temp/development.toml")?;
-
+    std::fs::write(config_dir.join("development.toml"), development_toml)?;
     Ok(())
 }
+
+/// Loads and displays settings after applying all configured overrides.
+fn main() -> Result<()> {
+    let config_dir = tempfile::tempdir()?;
+    write_sample_files(config_dir.path())?;
+
+    let cli_args =
+        parse_command_line_args(Some(vec!["myapp", "--port", "8888"]));
+    let settings = read_settings(cli_args, config_dir.path(), None)?;
+
+    assert_eq!(settings.service.port, 8888);
+    println!("Service name: {}", settings.service.name);
+    println!("Service port: {}", settings.service.port);
+    println!("Database URL: {}", settings.database.url);
+    println!(
+        "Database connections: {}",
+        settings.database.max_connections
+    );
+    println!("Logging level: {}", settings.logging.level);
+    Ok(())
+}
+
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the layered configuration example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
 #[cfg(test)]
 mod tests {
+    use std::collections::HashMap;
+
     use super::*;
 
-    /// Verifies that the mod example's main path succeeds.
+    /// Verifies that defaults, files, environment values, and CLI overrides
+    /// layer in order.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        use std::fs;
+    fn cli_overrides_environment_and_toml_settings() -> anyhow::Result<()> {
+        let config_dir = tempfile::tempdir()?;
+        write_sample_files(config_dir.path())?;
 
-        // Create the temp folder, if needed.
-        if !fs::exists("temp")? {
-            fs::create_dir("temp")?;
-        }
+        let cli_args =
+            parse_command_line_args(Some(vec!["myapp", "--port", "8888"]));
+        let environment = HashMap::from([
+            ("APP_SERVICE__NAME".to_owned(), "MyService".to_owned()),
+            ("APP_DATABASE__MAX_CONNECTIONS".to_owned(), "25".to_owned()),
+        ]);
+        let settings =
+            read_settings(cli_args, config_dir.path(), Some(environment))?;
 
-        // Create the base configuration file.
-        let default_toml = r#"
-    [service]
-    name = "UserService"
-    port = 8080
-
-    [database]
-    url = "postgresql://user:password@localhost:5432/mydb"
-    max_connections = 50
-
-    [logging]
-    level = "info"
-    "#;
-
-        fs::write("temp/default.toml", default_toml)?;
-
-        // Preparation: create a configuration file for the "development"
-        // environment.
-        let dev_toml = r#"
-    [database]
-    max_connections = 5
-
-    [logging]
-    level = "debug"
-    "#;
-
-        fs::write("temp/development.toml", dev_toml)?;
-
-        // Set environment variables to override specific settings, e.g.:
-        // ```sh
-        // export APP_SERVICE__PORT=9000
-        // export APP_DATABASE__MAX_CONNECTIONS=25
-        // export APP_LOGGING__LEVEL=error
-        // ```
-        unsafe {
-            // Override the name in this example:
-            std::env::set_var("APP_SERVICE__NAME", "MyService");
-        }
-
-        main()?;
-
-        unsafe {
-            std::env::remove_var("APP_SERVICE__NAME");
-        }
-
-        fs::remove_file("temp/default.toml")?;
-        fs::remove_file("temp/development.toml")?;
-
+        assert_eq!(settings.service.name, "MyService");
+        assert_eq!(settings.service.port, 8888);
+        assert_eq!(
+            settings.database.url,
+            "postgresql://user:password@localhost:5432/mydb"
+        );
+        assert_eq!(settings.database.max_connections, 25);
+        assert_eq!(settings.logging.level, "debug");
         Ok(())
     }
 }
