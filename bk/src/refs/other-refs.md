@@ -94,7 +94,6 @@
 [are-we-game-yet?~scripting-languages]: https://arewegameyet.rs/ecosystem/scripting
 [are-we-game-yet?~website]: https://arewegameyet.rs
 [are-we-gui-yet?~website]: https://areweguiyet.com
-[are-we-ide-yet?~website]: https://areweideyet.com
 [are-we-learning-yet?-clustering~website]: https://arewelearningyet.com/clustering
 [are-we-learning-yet?-data-preprocessing~website]: https://arewelearningyet.com/data-preprocessing
 [are-we-learning-yet?-data-structures~website]: https://arewelearningyet.com/data-structures
@@ -111,7 +110,6 @@
 [are-we-learning-yet?~website]: https://arewelearningyet.com
 [are-we-rust-yet~repo]: https://github.com/UgurcanAkkok/AreWeRustYet
 [are-we-web-yet?~website]: https://arewewebyet.org
-[areweideyet~website]: https://areweideyet.com
 [arewertosyet~website]: https://arewertosyet.com
 [arewevfxyet~website]: https://arewevfxyet.rs
 [areweyet~website]: https://wiki.mozilla.org/Areweyet

@@ -3,27 +3,28 @@
 
 {{#include current_state_of_the_art.incl.md}}
 
-You will find below links to "Are we ... yet?" websites and similar. They list key libraries and tools and provide an idea of the current state of the art in a given domain.
+These curated lists and project directories can help you discover Rust libraries and tools by topic. Their coverage and update frequency vary, so check the linked projects' documentation and repositories before relying on an entry.
 
-- General:
-  - [Are We Rust Yet?][are-we-rust-yet~repo]↗: Awesome list of "Are We *thing* Yet" for Rust.
-    - [Are We ... Yet? (Mozilla Wiki)][areweyet~website]↗.
-  - [Not Yet Awesome Rust][not-yet-awesome-rust~repo]↗: a list of Rust code and resources that do NOT exist yet.
-- By Topic:
-  - [Are We Web Yet?][are-we-web-yet?~website]↗.
-  - [Are We Async Yet?][are-we-async-yet?~website]↗.
-  - [Are We GUI Yet?][are-we-gui-yet?~website]↗.
-  - [Are We IDE Yet?][areweideyet~website]↗.
-  - [Are We Game Yet?][are-we-game-yet?~engines~website]↗.
-  - [Are We Learning Yet?][are-we-learning-yet?~website]↗.
-  - [Are We Bio Yet?][blog~rust4bio]↗.
-  - [Are We VFX Yet?][arewevfxyet~website]↗.
-  - [Are We Quantum Yet?][blog~arewequantumyet]↗.
-  - [Are We in Space Yet?][aerorust~website]↗.
-  - [Rust Audio][rust.audio~website]↗.
-  - [Awesome Geo-Rust][awesome-georust~repo]↗: geospatial software, libraries, tools and resources, written in Rust.
+### General
 
-Note that several of these websites are out-of-date. [Are We Rust Yet?][are-we-rust-yet~repo]↗ list their last commit date and update frequency.
+- General ecosystem lists: [Are We Rust Yet?][are-we-rust-yet~repo]↗ collects topic-specific "Are We ... Yet?" projects; [Are We ... Yet? (Mozilla Wiki)][areweyet~website]↗ is a historical directory of those lists.
+- Not Yet Awesome Rust: [a list of Rust projects and resources that do not exist yet][not-yet-awesome-rust~repo]↗, useful for spotting open areas.
+
+### By Topic
+
+- Web: [Are We Web Yet?][are-we-web-yet?~website]↗ tracks web frameworks and tools.
+- Async: [Are We Async Yet?][are-we-async-yet?~website]↗ catalogs async ecosystem projects.
+- GUI: [Are We GUI Yet?][are-we-gui-yet?~website]↗ collects GUI libraries and frameworks.
+- Games: [Are We Game Yet?][are-we-game-yet?~engines~website]↗ lists Rust game engines and related tools.
+- Learning: [Are We Learning Yet?][are-we-learning-yet?~website]↗ gathers learning resources and education projects.
+- Bio: [Rust4Bio][blog~rust4bio]↗ catalogs Rust projects for computational biology.
+- VFX: [Are We VFX Yet?][arewevfxyet~website]↗ follows visual-effects tooling.
+- Quantum: [Are We Quantum Yet?][blog~arewequantumyet]↗ surveys Rust quantum-computing projects.
+- Aerospace: [AeroRust][aerorust~website]↗ lists Rust aerospace projects.
+- Audio: [Rust Audio][rust.audio~website]↗ maintains an audio ecosystem directory.
+- Geospatial: [Awesome Geo-Rust][awesome-georust~repo]↗ catalogs Rust geospatial software and resources.
+
+Some entries may be stale; check the linked project's update history before selecting a dependency.
 
 ## Related Topics {#related-topics .skip}
 
