@@ -42,6 +42,12 @@ Redis-rs is a high level [Redis][redis~website]↗{{hi:redis}} library for Rust.
 {{#include ../../../crates/cats/database/examples/cassandra/cdrs_tokio.rs:example}}
 ```
 
+<div class="hidden">
+
+This example connects without authentication to a local Cassandra node on port 9042. Start the official image with `docker run --rm -d --name rust-howto-cassandra -p 9042:9042 cassandra:5.0`, wait for initialization to finish (`docker logs -f rust-howto-cassandra`), then run `cargo test -p database --example cassandra --features cassandra -- cdrs_tokio::tests::require_external_svc --ignored`. Stop it afterward with `docker stop rust-howto-cassandra`. The example creates a keyspace and table and deletes the row it inserts.
+
+</div>
+
 ## Connect to Cassandra Using `cassandra-protocol` {#cassandra-protocol}
 
 [![cassandra-protocol][c~cassandra-protocol~docs~badge]][c~cassandra-protocol~docs] [![cassandra-protocol~crates.io][c~cassandra-protocol~crates.io~badge]][c~cassandra-protocol~crates.io] [![cassandra-protocol~repo][c~cassandra-protocol~repo~badge]][c~cassandra-protocol~repo] [![cassandra-protocol~lib.rs][c~cassandra-protocol~lib.rs~badge]][c~cassandra-protocol~lib.rs]{{hi:cassandra-protocol}}{{hi:Cassandra}}{{hi:Client}}{{hi:CassandraDB}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
