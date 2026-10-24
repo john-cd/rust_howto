@@ -6,6 +6,12 @@
 [ex~command-line-utilities~view-file-contents]: filesystem_cli.md#view-file-contents
 [ex~command-line-utilities~analyze-disk-usage]: filesystem_cli.md#analyze-disk-usage
 [ex~command-line-utilities~rename-and-bulk-edit]: filesystem_cli.md#rename-and-bulk-edit
+[ex~command-line-utilities~http-requests]: networking_cli.md#http-requests
+[ex~command-line-utilities~http-load-testing]: networking_cli.md#http-load-testing
+[ex~command-line-utilities~bandwidth-monitoring]: networking_cli.md#bandwidth-monitoring
+[ex~command-line-utilities~connectivity-diagnostics]: networking_cli.md#connectivity-diagnostics
+[ex~command-line-utilities~dns-queries]: networking_cli.md#dns-queries
+[ex~command-line-utilities~port-scanning]: networking_cli.md#port-scanning
 [ex~command-line-utilities~gping]: networking_cli.md#gping
 [ex~command-line-utilities~lsd]: filesystem_cli.md#lsd
 [ex~command-line-utilities~nushell]: shells.md#nushell
@@ -13,6 +19,11 @@
 [eza~repo]: https://github.com/eza-community/eza
 [dua~repo]: https://github.com/Byron/dua-cli
 [dust~repo]: https://github.com/bootandy/dust
+[xh~repo]: https://github.com/ducaale/xh
+[oha~repo]: https://github.com/hatoo/oha
+[bandwhich~repo]: https://github.com/imsnif/bandwhich
+[trippy~repo]: https://github.com/fujiapple852/trippy
+[doggo~repo]: https://github.com/mr-karan/doggo
 [p~configuration]: ../config/configuration.md
 [p~filesystem]: ../../../src/categories/filesystem/index.md
 [p~install]: ../development-tools/installation/install.md
