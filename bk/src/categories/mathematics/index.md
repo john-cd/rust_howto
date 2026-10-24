@@ -3,9 +3,9 @@
 
 [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
 
-This section reviews Rust crates with a mathematical aspect.
+This section collects Rust crates and runnable examples for mathematical and numerical programming. The chapter tables show the examples currently available.
 
-For most general-purpose math needs, [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} (linear algebra) and [`rand`][c~rand~docs]↗{{hi:rand}} (random numbers) are excellent starting points. For graphics or game development, [`glam`][c~glam~docs]↗{{hi:glam}} is often preferred. For statistics, [`statrs`][c~statrs~docs]↗{{hi:statrs}} is comprehensive.If you're doing numerical computing, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}. There are also specific crates available for specialized areas like number theory or units of measurement.
+Some commonly used crates are [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} for linear algebra, [`glam`][c~glam~docs]↗{{hi:glam}} for graphics-oriented vector and matrix operations, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for multidimensional arrays, and [`statrs`][c~statrs~docs]↗{{hi:statrs}} for statistical distributions and functions. See the [[randomness | Randomness]] chapter for random number generation.
 
 ## Trigonometry
 
@@ -13,37 +13,32 @@ For most general-purpose math needs, [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgeb
 
 ## Linear Algebra
 
-For vectors, matrices, eigenvalues, and eigenvectors, key crates include:
+For vectors, matrices, decompositions, and transformations, the examples use `nalgebra`. Other options include:
 
-- [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}: A widely used and mature linear algebra library. Excellent for general-purpose linear algebra.
-- [`glam`][c~glam~docs]↗{{hi:glam}}: A fast and ergonomic linear algebra library designed for graphics and games. Often preferred in those contexts.
-- [`ultraviolet`][c~ultraviolet~docs]↗{{hi:ultraviolet}}: Another linear algebra library, with a focus on graphics.
-- [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: For N-dimensional arrays.Essential for numerical computation and data analysis.
-- [`nalgebra-lapack`][c~nalgebra-lapack~docs]↗{{hi:nalgebra-lapack}} provides LAPACK bindings for linear algebra operations.
+- [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} provides statically sized and dynamically sized matrices and vectors.
+- [`glam`][c~glam~docs]↗{{hi:glam}} provides vector, matrix, quaternion, and transformation types for graphics and games.
+- [`ultraviolet`][c~ultraviolet~docs]↗{{hi:ultraviolet}} is another graphics-oriented math library.
+- [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} provides N-dimensional arrays.
+- [`nalgebra-lapack`][c~nalgebra-lapack~docs]↗{{hi:nalgebra-lapack}} connects nalgebra to LAPACK routines.
 
 ### Tensors
 
-`rusten` is a minimal, didactic implementation of tensors, or, more accurately, multi-dimensional arrays, in Rust. It mimics NumPy in terms of style and offers core functionalities such as unary, binary, and reduction operations, broadcasting, shape transformations, slicing, and more, all while prioritizing clarity. Unlike existing packages like ndarray, rusten doesn't aim for state-of-the-art performance or support for all use cases. Instead, it's targeted towards those seeking to gain a bare-bones understanding of multi-dimensional containers and related operations, without emphasizing performance or a comprehensive feature set. Coupled with Rust's intuitive syntax and clean memory management model, this means the rusten codebase is easy to explore and extend. It's also worth mentioning that, despite its compact codebase, rusten covers a surprisingly broad range of applications; in fact, with the major exception of convolutional networks, it can express the forward passes of most deep learning models, including transformers.
-
-The motivation behind rusten is that truly understanding how tensor manipulation works under the hood helps fluency in tools like PyTorch. Although there are myriad from-scratch projects devoted to other aspects of deep learning pipelines - common architectures from scratch, machine learning algorithms from scratch, autodiff from scratch, ... - there don't seem to be any learner-oriented resources on how tensors are handled on a low level. A very rudimentary tensor structure is straightforward, but its complexity grows exponentially with the addition of modern features such as broadcasting, non-contiguous views, etc., and rusten's goal is to implement these processes as transparently and plainly as possible to aid interested students.
+For multidimensional arrays, see [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}. The examples below focus on vectors and matrices; there is no dedicated tensor example yet.
 {{#include linear_algebra.incl.md}}
 
 ## Probability and Statistics
 
 For random variables, distributions, hypothesis testing, probabilistic models, stochastic processes, and statistical inference, use the following crates:
 
-- [`statrs`][c~statrs~docs]↗{{hi:statrs}} is a comprehensive statistics library.
-- While primarily for random number generation, [`rand`][c~rand~docs]↗{{hi:rand}} also provides some statistical distributions and functions.
+- [`statrs`][c~statrs~docs]↗{{hi:statrs}} provides statistical distributions and functions.
 
 {{#include statistics.incl.md}}
 
 ### Random Number Generation
 
-To generating random numbers for simulations, cryptography, etc., use [`rand`][c~rand~docs]↗{{hi:rand}}, a popular and widely used random number generator crate.
+Use [`rand`][c~rand~docs]↗{{hi:rand}} for random number generation.
 
 See the [[randomness | Randomness]] chapter.
-
-### Statistical
 
 ## Additional Numeric Types
 
@@ -61,7 +56,7 @@ To work with numeric types beyond what is available in the standard library, use
 
 [![fraction][c~fraction~docs~badge]][c~fraction~docs] [![fraction~crates.io][c~fraction~crates.io~badge]][c~fraction~crates.io] [![fraction~repo][c~fraction~repo~badge]][c~fraction~repo] [![fraction~lib.rs][c~fraction~lib.rs~badge]][c~fraction~lib.rs]{{hi:fraction}}{{hi:Float}}{{hi:Numeric}}{{hi:Decimal}}{{hi:fraction}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-`fraction` provides lossless fractions and decimals as a drop-in float replacement.
+The [`fraction`][c~fraction~docs]↗{{hi:fraction}} crate provides fraction and decimal types with lossless arithmetic. Its API is still evolving; review its current documentation before adopting it.
 {{#include additional_numeric_types.incl.md}}
 
 ### Complex Numbers
@@ -72,37 +67,29 @@ To work with numeric types beyond what is available in the standard library, use
 
 ## Numerical Analysis
 
-Numerical integration, differentiation, and root-finding.
-
-- `rust-num`{{hi:rust-num}}: numerical traits and operations.
-- [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: numerical computations.
+Numerical analysis covers methods such as interpolation, integration, differentiation, and root finding. [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} provides multidimensional arrays for numerical computations.
 
 ## Optimization
 
-Linear, nonlinear, and integer programming. Convex analysis. Game theory and decision-making models.
+For numerical optimization, [`argmin`][c~argmin~docs]↗{{hi:argmin}} provides an interface for a range of optimization algorithms.
 
-- [`argmin`][c~argmin~docs]↗{{hi:argmin}} is a pure Rust optimization library.
+Optimization problems include linear, nonlinear, and integer programming, as well as decision models.
 
 ## Differential Equations
 
-Ordinary and partial differential equations and dynamical systems.
-Stability analysis, chaos theory, and control systems.
+This topic includes ordinary and partial differential equations, dynamical systems, stability analysis, and control systems.
 
 ## Graph Theory
 
-Graphs, networks, and shortest paths.
-
-- [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} (graph data structures and algorithms).
+For graph data structures and algorithms, see [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} and the [[graphs | Graphs]] chapter.
 
 ## Discrete Mathematics
 
-Combinatorics, set theory, and logic.
-
-- [`bit-set`][c~bit-set~docs]↗{{hi:bit-set}} (bit manipulation), [`regex`][c~regex~docs]↗{{hi:regex}} (pattern matching).
+This area includes combinatorics, set theory, and logic. [`bit-set`][c~bit-set~docs]↗{{hi:bit-set}} provides a set backed by a bit vector.
 
 ## Units of Measurement
 
-- [`uom`][c~uom~docs]↗{{hi:uom}}: A type-safe dimensional analysis library.
+- [`uom`][c~uom~docs]↗{{hi:uom}} provides type-safe quantities and units of measurement.
 
 ## Related Topics
 
