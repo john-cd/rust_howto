@@ -80,5 +80,10 @@ The `crates-io` crate provides helpers for querying crates.io metadata through i
 {{#include ../../../../crates/cats/development_tools/examples/crate_registries/crates-io.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [Cargo configuration][book~cargo~config]↗.
+- [Publish to `crates.io`][p~publication-to-crates-io].
+
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
