@@ -31,6 +31,10 @@
 {{#include ../../../crates/cats/email/examples/lettre.rs:example}}
 ```
 
+<div class="hidden">
+Message construction is tested offline with reserved example addresses; sending remains an ignored integration test because it needs caller-provided relay credentials and a reachable SMTP server.
+</div>
+
 ### Send Emails Asynchronously {#send-emails-asynchronously .skip}
 
 [`lettre`][c~lettre~docs]↗{{hi:lettre}} supports asynchronous sending.
