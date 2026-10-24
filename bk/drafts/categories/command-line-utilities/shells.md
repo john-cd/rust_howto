@@ -13,17 +13,77 @@
 
 [`starship`][c~starship~repo]↗{{hi:starship}} is a fast, highly customizable prompt for any shell. It displays relevant environment info (Git branch, Node.js version, Rust version, etc.) concisely and visually. Starship is designed to be extensible, allowing users to configure the prompt to their specific needs and add support for various programming languages and tools. Its focus on performance ensures minimal overhead, even with a rich set of features.
 
+Install it with Cargo, then add the initialization command for your shell to its startup file. This example configures Bash:
+
+```sh
+cargo install starship --locked
+eval "$(starship init bash)"
+```
+
 ## `nushell` {#nushell}
 
 [Nushell][nushell~website]↗[(github)][nushell~repo]↗
 
 [`nushell`][nushell~website]↗{{hi:nushell}} (or `Nu`) is a modern shell designed with a focus on structured data and a powerful, consistent language.
 
-Unlike traditional shells that primarily handle text, `Nu` treats data as structured tables, enabling users to easily query, filter, and manipulate information directly within the shell. Its [language][p~language] combines familiar shell concepts with a more structured syntax, allowing for complex data processing pipelines. `Nu` also allows users to define custom commands and integrate with external tools.
+Unlike traditional shells that primarily handle text, `Nu` treats data as structured tables, enabling users to query, filter, and manipulate structured command output. Nu is written in Rust and has its own syntax and compatibility model; existing Bash or POSIX shell scripts do not automatically run unchanged in Nu.
+
+Install Nu from Cargo, then launch it with `nu`. Cargo installs the main binary; Nu plugins are installed separately.
+
+```sh
+cargo install nu --locked
+nu
+```
+
+## `fish` {#fish}
+
+[fish][fish~repo]↗ is an interactive shell known for autosuggestions, syntax highlighting, and completions that work without extensive configuration. Fish 4 is implemented in Rust. Fish has its own scripting language, so scripts intended for POSIX shells should keep an explicit POSIX shebang.
+
+Use your operating system's package manager. For example, on macOS install with Homebrew; on Ubuntu, the fish project documents its release PPA:
+
+```sh
+brew install fish
+
+sudo apt-add-repository ppa:fish-shell/release-4
+sudo apt update
+sudo apt install fish
+```
+
+Start an interactive fish session with `fish`.
+
+## `zoxide` {#zoxide}
+
+[`zoxide`][c~zoxide~repo]↗ is a smarter `cd` command that learns frequently visited directories. Initialize it in the shell startup file before using `z`:
+
+```sh
+cargo install zoxide --locked
+eval "$(zoxide init bash)"
+z project
+```
+
+## `atuin` {#atuin}
+
+[`Atuin`][atuin~repo]↗ replaces shell history with a local SQLite database and provides searchable history. History sync is optional; configure it only if you want to use a sync server.
+
+Install using the project's installer, then search your local history:
+
+```sh
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+atuin search cargo
+```
+
+## Shell Completion for Rust CLIs {#rust-cli-completions}
+
+For a Rust CLI built with [`clap`][c~clap~docs]↗, use [`clap_complete`][c~clap_complete~docs]↗ to generate shell completions for the command. See [CLI argument parsing](../command-line-interface/argument_parsing.md) for the `clap` setup and completion examples.
+
+```sh
+cargo add clap_complete
+```
 
 ## Related Topics {#related-topics .skip}
 
 - [[command-line-interface | Command Line Interface]].
+- [CLI argument parsing](../command-line-interface/argument_parsing.md).
 - [[external_commands | External Commands]].
 
 {{#include refs.incl.md}}

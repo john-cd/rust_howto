@@ -16,6 +16,10 @@
 [ex~command-line-utilities~lsd]: filesystem_cli.md#lsd
 [ex~command-line-utilities~nushell]: shells.md#nushell
 [ex~command-line-utilities~starship]: shells.md#starship
+[ex~command-line-utilities~fish]: shells.md#fish
+[ex~command-line-utilities~zoxide]: shells.md#zoxide
+[ex~command-line-utilities~atuin]: shells.md#atuin
+[ex~command-line-utilities~rust-cli-completions]: shells.md#rust-cli-completions
 [eza~repo]: https://github.com/eza-community/eza
 [dua~repo]: https://github.com/Byron/dua-cli
 [dust~repo]: https://github.com/bootandy/dust
@@ -24,6 +28,8 @@
 [bandwhich~repo]: https://github.com/imsnif/bandwhich
 [trippy~repo]: https://github.com/fujiapple852/trippy
 [doggo~repo]: https://github.com/mr-karan/doggo
+[fish~repo]: https://github.com/fish-shell/fish-shell
+[atuin~repo]: https://github.com/atuinsh/atuin
 [p~configuration]: ../config/configuration.md
 [p~filesystem]: ../../../src/categories/filesystem/index.md
 [p~install]: ../development-tools/installation/install.md
