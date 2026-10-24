@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Development Environment Setup
 
 {{#include development_environment_setup.incl.md}}
@@ -66,6 +67,18 @@ rustup component add rustfmt --toolchain nightly-2026-10-22
 ```
 
 > Note: On Windows, you may also need the [Microsoft C++ Build Tools][msvc~website]↗{{hi:MSVC}} or the Visual Studio C++ workload for compiling some crates.
+
+## Format Book Markdown {#format-book-markdown}
+
+Install [`dprint`][dprint~website] and use the `mdfmt` recipes from the `bk` directory to format or check book Markdown. The repository pins the Markdown plugin in `dprint.json` and retains authored line wrapping, so the formatter preserves long tables, mdBook directives, heading anchors, and fenced code examples.
+
+```sh
+cd bk
+just mdfmt drafts/categories/development-tools_debugging/debugging.md
+just mdfmt-check drafts/categories/development-tools_debugging/debugging.md
+```
+
+Pass a path under `src`, `drafts`, or `../later/src` to format or check that file. The root configuration also excludes generated indices and build output.
 
 ## Install `just` (Alternative) {#alternative-just-install}
 

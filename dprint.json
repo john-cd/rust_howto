@@ -1,0 +1,26 @@
+{
+  "includes": [
+    "bk/src/**/*.md",
+    "bk/drafts/**/*.md",
+    "later/src/**/*.md"
+  ],
+  "excludes": [
+    "**/target/**",
+    "bk/book/**",
+    "bk/src/indices/crates_alphabetical.md",
+    "bk/src/indices/crates_by_category.md",
+    "bk/src/indices/examples_index.md",
+    "bk/src/word_index.md"
+  ],
+  "markdown": {
+    "emphasisKind": "underscores",
+    "lineWidth": 120,
+    "newLineKind": "lf",
+    "strongKind": "asterisks",
+    "textWrap": "maintain",
+    "unorderedListKind": "dashes"
+  },
+  "plugins": [
+    "npm:@dprint/markdown@0.28.0"
+  ]
+}

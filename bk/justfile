@@ -82,6 +82,14 @@ bb:
 q:
   @just book quick
 
+# Format one book Markdown file or directory with dprint
+mdfmt path:
+  dprint fmt {{path}}
+
+# Check one book Markdown file or directory with dprint
+mdfmt-check path:
+  dprint check {{path}}
+
 # Alias for book serve
 s:
   @just book serve
