@@ -12,16 +12,19 @@
 
 use std::fs::File;
 use std::io::Write as _;
-use std::path::Path;
 
 use zip::write::SimpleFileOptions;
 use zip::write::ZipWriter;
 
 /// Creates a zip archive with two files and an empty directory.
-fn main() -> zip::result::ZipResult<()> {
-    // Create a new zip archive file:
-    let path = Path::new("temp/my_archive.zip");
-    let file = File::create(path)?;
+///
+/// # Errors
+///
+/// Returns an error if temporary storage or archive writing fails.
+fn main() -> anyhow::Result<()> {
+    let temp_dir = tempfile::tempdir()?;
+    let path = temp_dir.path().join("my_archive.zip");
+    let file = File::create(&path)?;
     let mut zip = ZipWriter::new(file);
 
     // Define file options for the files we'll add.
@@ -52,7 +55,11 @@ fn main() -> zip::result::ZipResult<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() -> zip::result::ZipResult<()> {
+///
+/// # Errors
+///
+/// Returns an error if archive creation fails.
+pub fn run() -> anyhow::Result<()> {
     main()
 }
 
@@ -61,13 +68,12 @@ mod tests {
     use super::*;
 
     /// Verifies that the zip example's main path succeeds.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if archive creation fails.
     #[test]
     fn test_main() -> anyhow::Result<()> {
-        use std::fs;
-        if !fs::exists("temp")? {
-            fs::create_dir("temp")?;
-        }
-        main()?;
-        Ok(())
+        main()
     }
 }

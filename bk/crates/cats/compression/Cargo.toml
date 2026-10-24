@@ -23,26 +23,19 @@ autolib = false
 anyhow = "1.0.104"
 async-compression = { version = "0.4.51", features = ["tokio", "gzip"] }
 
-# async_zip
-async_zip = { version = "0.0.18", features = ["full"] }
-bytes = "1.12.1"
+# Tokio adapter for async ZIP I/O; the example writes stored entries without a codec.
+async_zip = { version = "0.0.18", features = ["tokio"] }
 clap = { version = "4.6.7", features = ["derive"] }
 flate2 = "1.1.10"
-futures = "0.3.34"
 futures-lite = "2.6.1"
 tar = "0.4.46"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
-tokio-util = { version = "0.7.20", features = ["codec"] }
+tokio-util = { version = "0.7.20", features = ["compat"] }
 zip = "9.0.5"
 
 [dev-dependencies]
-# Creates automatically cleaned files for the gzip round-trip example.
+# Creates automatically cleaned temporary directories and files for the examples.
 tempfile = { workspace = true }
-
-[[example]]
-name = "async_zip"
-path = "examples/async_zip/main.rs"
-test = true
 
 [[example]]
 name = "compression"

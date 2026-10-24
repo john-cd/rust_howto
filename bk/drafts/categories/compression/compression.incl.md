@@ -1,6 +1,11 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
+Use `flate2` for common gzip, zlib, and raw DEFLATE streams. Add `async-compression` when those codecs need Tokio-based asynchronous I/O; use `zip` or `async_zip` when the task is to package named entries in an archive.
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Compress or Decompress Data with `flate2`][ex~compression~compress-decompress] | [![flate2][c~flate2~docs~badge]][c~flate2~docs] | [![cat~compression][cat~compression~badge]][cat~compression] |
 | [Compress and Decompress a File with Gzip][ex~compression~gzip-file] | [![flate2][c~flate2~docs~badge]][c~flate2~docs] | [![cat~compression][cat~compression~badge]][cat~compression] |
-| [Compress or Decompress Data with `zip` and `async-zip`][ex~compression~zip] | | [![cat~compression][cat~compression~badge]][cat~compression] |
+| [Compress and Decompress Files Asynchronously with `async-compression`][ex~compression~async-gzip-file] | [![async-compression][c~async-compression~docs~badge]][c~async-compression~docs] | [![cat~compression][cat~compression~badge]][cat~compression] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
+| [Create a ZIP Archive with `zip`][ex~compression~zip] | [![zip][c~zip~docs~badge]][c~zip~docs] | [![cat~compression][cat~compression~badge]][cat~compression] |
+| [Write and Read a ZIP Archive with `async_zip`][ex~compression~async-zip] | [![async_zip][c~async_zip~docs~badge]][c~async_zip~docs] | [![cat~compression][cat~compression~badge]][cat~compression] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |

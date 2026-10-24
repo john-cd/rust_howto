@@ -11,7 +11,7 @@
 
 [`flate2`][c~flate2~docs]↗{{hi:flate2}} uses a pure-Rust implementation by default. Use feature flags to opt in to system [`zlib`][zlib]↗{{hi:zlib}}.
 
-It can be used with various I/O [streams][p~streams], making it versatile for different use cases, such as file [compression][p~compression], network protocols, and in-memory data manipulation. It also offers features like checksumming and [error handling][p~error-handling], making it suitable for production environments.
+Its `Read`, `BufRead`, and `Write` adapters compose with files, sockets, and in-memory buffers. Select the matching encoder and decoder for the format expected by the other side; gzip and zlib add format metadata around DEFLATE data.
 
 The file example below uses unique temporary files and removes them automatically when they are dropped. It is marked `noplayground` because the browser playground cannot access the local filesystem.
 
@@ -23,38 +23,47 @@ The file example below uses unique temporary files and removes them automaticall
 
 [![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo] [![flate2~lib.rs][c~flate2~lib.rs~badge]][c~flate2~lib.rs]{{hi:flate2}}{{hi:Gzip}}{{hi:File I/O}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
 
+Wrap a reader in `GzDecoder` to restore a gzip stream, or a writer in `GzEncoder` to create one. The example copies through temporary files and checks that the restored bytes match the original.
+
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/compression/examples/compression/flate2.rs:gzip-file}}
 ```
 
-The following demonstrates asynchronous compression:
+## Compress and Decompress Files Asynchronously with `async-compression` {#async-gzip-file}
+
+[![async-compression][c~async-compression~docs~badge]][c~async-compression~docs] [![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:Tokio}}{{hi:Asynchronous}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+
+[`async-compression`][c~async-compression~docs]↗ adapts codecs such as gzip to asynchronous I/O traits. This example uses its Tokio adapter to copy a file into a gzip stream and then decompress it.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/compression/examples/compression/async_compression.rs:example}}
 ```
 
-## Compress or Decompress Data with `zip` and `async-zip` {#zip}
+## Create a ZIP Archive with `zip` {#zip}
 
 [![zip][c~zip~docs~badge]][c~zip~docs] [![zip~crates.io][c~zip~crates.io~badge]][c~zip~crates.io] [![zip~repo][c~zip~repo~badge]][c~zip~repo] [![zip~lib.rs][c~zip~lib.rs~badge]][c~zip~lib.rs]{{hi:zip}}{{hi:Compression}}{{hi:zip}}{{hi:Archive}}
 
-[![async_zip][c~async_zip~docs~badge]][c~async_zip~docs] [![async_zip~crates.io][c~async_zip~crates.io~badge]][c~async_zip~crates.io] [![async_zip~repo][c~async_zip~repo~badge]][c~async_zip~repo] [![async_zip~lib.rs][c~async_zip~lib.rs~badge]][c~async_zip~lib.rs]{{hi:async_zip}}{{hi:Async}}{{hi:Zip}}{{hi:Archive}}{{hi:Tokio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
-
-The [`zip`][c~zip~docs]↗{{hi:zip}} crate creates, opens, and manipulates ZIP files, including adding, extracting, and deleting files and directories within the archive. The crate supports various features of the ZIP format, such as compression (using different algorithms), encryption, and metadata handling. It offers both streaming and buffered interfaces. The `zip` crate is commonly used for tasks like archiving files, distributing software, and handling data compression in applications.
-
-[`async-zip`][c~async_zip~docs]↗{{hi:async-zip}} is a Rust crate providing asynchronous support for reading and writing ZIP archives. Building upon the foundation of the `zip` crate, async-zip leverages asynchronous programming paradigms (using async/await) to enable non-blocking operations on ZIP files. This is particularly beneficial in I/O-bound contexts, such as network applications or when working with large archives, as it allows other tasks to proceed while ZIP operations are in progress. It integrates with the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime (and other async runtimes). Like its synchronous counterpart, [`async-zip`][c~async_zip~docs]↗{{hi:async-zip}} supports various ZIP features, including compression, encryption, and metadata handling, but with the added advantage of non-blocking execution.
+[`zip`][c~zip~docs]↗ creates ZIP archives with named entries and per-entry options. Use it when synchronous file or archive I/O fits the surrounding program; choose the compression method and enabled features to match the archive you need to produce.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/compression/examples/compression/zip.rs:example}}
 ```
 
+## Write and Read a ZIP Archive with `async_zip` {#async-zip}
+
+[![async_zip][c~async_zip~docs~badge]][c~async_zip~docs] [![async_zip~crates.io][c~async_zip~crates.io~badge]][c~async_zip~crates.io] [![async_zip~repo][c~async_zip~repo~badge]][c~async_zip~repo] [![async_zip~lib.rs][c~async_zip~lib.rs~badge]][c~async_zip~lib.rs]{{hi:async_zip}}{{hi:Async}}{{hi:Zip}}{{hi:Archive}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
+
+Use `async_zip` when archive reads or writes need to participate in an async task. The example writes an entry, reads the archive back, and verifies its contents using Tokio and the crate's compatibility adapter.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/compression/examples/compression/async_zip.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[filesystem | Filesystem]].
-- [[compression | Compression]].
+- [I/O streams][p~streams].
+- [Error handling][p~error-handling].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1062)
-</div>

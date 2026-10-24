@@ -810,7 +810,6 @@ checksum = "9d5755640120b24961f8231e05892e4a4f7e0d04e8aeca161508c9c397946970"
 dependencies = [
  "compression-codecs",
  "compression-core",
- "futures-io",
  "pin-project-lite",
  "tokio",
 ]
@@ -1104,8 +1103,6 @@ version = "0.0.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0d8c50d65ce1b0e0cb65a785ff615f78860d7754290647d3b983208daa4f85e6"
 dependencies = [
- "async-compression",
- "chrono",
  "crc32fast",
  "futures-lite 2.6.1",
  "pin-project",
@@ -2912,10 +2909,8 @@ dependencies = [
  "anyhow",
  "async-compression",
  "async_zip",
- "bytes",
  "clap",
  "flate2",
- "futures",
  "futures-lite 2.6.1",
  "tar",
  "tempfile",
@@ -2931,11 +2926,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cae36683101b2899f48bd31f8db9839437356188e3b1ff23096e73dab09ba8fe"
 dependencies = [
  "brotli 9.0.0",
- "bzip2",
  "compression-core",
- "deflate64",
  "flate2",
- "liblzma",
  "memchr",
  "zstd 0.14.3",
  "zstd-safe 8.2.0",
@@ -8608,26 +8600,6 @@ checksum = "d7c4b02199fee7c5d21a5ae7d8cfa79a6ef5bb2fc834d6e9058e89c825efdc55"
 dependencies = [
  "cfg-if 1.0.5",
  "windows-link 0.2.1",
-]
-
-[[package]]
-name = "liblzma"
-version = "0.4.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aa980ea6744074a5b5e0ac6b164aca94fc970121869b3e78ae12a2b0097dbea7"
-dependencies = [
- "liblzma-sys",
-]
-
-[[package]]
-name = "liblzma-sys"
-version = "0.4.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c7e3581f367a78d7b7e7ae948d023310556f0cfc13156c2e4e00e25616492b9"
-dependencies = [
- "cc",
- "libc",
- "pkg-config",
 ]
 
 [[package]]

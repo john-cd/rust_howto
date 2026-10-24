@@ -6,6 +6,7 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod async_compression;
+mod async_zip;
 mod flate2;
 mod zip;
 
@@ -23,6 +24,9 @@ enum Commands {
     /// Runs the `async_compression` example.
     #[command(name = "async_compression")]
     AsyncCompression,
+    /// Runs the `async_zip` example.
+    #[command(name = "async_zip")]
+    AsyncZip,
     /// Runs the `flate2` example.
     #[command(name = "flate2")]
     Flate2,
@@ -39,6 +43,9 @@ fn main() -> anyhow::Result<()> {
         match command {
             Commands::AsyncCompression => {
                 async_compression::run()?;
+            }
+            Commands::AsyncZip => {
+                async_zip::run()?;
             }
             Commands::Flate2 => {
                 flate2::run()?;
