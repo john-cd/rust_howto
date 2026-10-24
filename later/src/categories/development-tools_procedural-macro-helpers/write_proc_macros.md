@@ -4,7 +4,7 @@
 
 {{#include write_proc_macros.incl.md}}
 
-You'll almost always use [`proc-macro`][c~proc_macro~docs]↗{{hi:proc-macro}}, [`syn`][c~syn~docs]↗{{hi:syn}}, and [`quote`][c~quote~docs]↗{{hi:quote}} when writing procedural macros. [`trybuild`][c~trybuild~docs]↗{{hi:trybuild}} is highly recommended for testing.
+You'll almost always use [`proc-macro`][c~proc_macro~docs]↗{{hi:proc-macro}}, [`syn`][c~syn~docs]↗{{hi:syn}}, and [`quote`][c~quote~docs]↗{{hi:quote}} when writing procedural macros.
 
 ## `proc_macro` {#proc-macro}
 
@@ -84,9 +84,7 @@ Procedural [macros][p~macros] have two ways of reporting errors. The first is to
 
 ## Testing and Debugging {#testing-and-debugging}
 
-[`trybuild`][c~trybuild~docs]↗{{hi:trybuild}} is a crate that simplifies testing procedural macros by allowing you to write test cases that check if your macro generates the expected code and handles errors correctly.
-
-Debugging procedural [macros][p~macros] can be tricky. Often involves printing token streams to the [`console`][c~console~docs]↗{{hi:console}} or using tools like `cargo expand` to see the generated code.
+Use [Tools for Macro Development][p~macro-tools] for expansion inspection, compile-fail UI tests, and expansion snapshots with `cargo expand`, `trybuild`, and `macrotest`.
 
 ## Documentation {#documentation}
 
