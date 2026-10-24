@@ -15530,6 +15530,7 @@ name = "multimedia_audio"
 version = "0.1.2"
 dependencies = [
  "cpal 0.17.1",
+ "hound",
 ]
 
 [[package]]

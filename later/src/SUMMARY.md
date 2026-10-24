@@ -31,6 +31,7 @@
 
 - [Audio](categories/multimedia_audio/index.md)
   - [Audio](categories/multimedia_audio/audio.md)
+  - [Write and read a WAV file in memory](categories/multimedia_audio/wav.md)
 
 - [Cloud](other/cloud/index.md)
   - [Rust on AWS](other/cloud/aws.md)
