@@ -4,108 +4,139 @@
 
 {{#include release_automation.incl.md}}
 
-Release automation involves automating the process of building, [testing][p~testing], packaging, and distributing your Rust applications.
+Release automation coordinates versioning, changelog updates, validation, packaging, and publication. Decide which artifacts you ship first: libraries usually go to [`crates.io`][crates.io~website]↗{{hi:crates.io}}, command-line applications may use GitHub Releases or installers, and services may also publish container images.
 
-The distribution of your application depends on the target platform:
+## Cargo Release Commands {#cargo}
 
-- Libraries: publish (open-source) Rust libraries to [`crates.io`][crates.io~website]↗{{hi:crates.io}}.
-- Executables: publish binaries to a service where they `can` be downloaded from (e.g., `GitHub Releases`).
-- [Containers][p~containers]: Use [`Docker`][docker~website]↗{{hi:Docker}} to create the container image, push it to a private or public registry (e.g. [`DockerHub`][dockerhub~website]↗{{hi:DockerHub}}, `GitHub Packages`); optionally pull the image to deploy it to an orchestrator (e.g. [`Kubernetes`][kubernetes~website]↗{{hi:Kubernetes}}) or a Cloud service like [`AWS`][c~aws~docs]↗{{hi:AWS}} or [`Azure`][azure~website]↗{{hi:Azure}}.
-- Packages: Create (`.deb`, `.rpm`...) packages for package management systems (e.g., Debian `dpkg`/`apt`, RPM, Flatpak, HomeBrew...) using [cargo][p~cargo] plugins like [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}}...
+Cargo provides the core commands to build an optimized artifact, inspect a crate package, validate a publish without uploading, and publish a package. This guide puts those commands into a release sequence; see the [Cargo chapter][p~cargo] for command details.
 
-## Cargo {#cargo}
+## Set the Version {#version}
 
-Cargo handles building the release binaries or packaging your Rust code in `.crate` format suitable for `crates.io`:
+Choose a version that follows your public API compatibility and release policy. For a direct manifest edit, [`cargo set-version`][cargo-edit~repo]↗{{hi:cargo set-version}} from `cargo-edit` can set an explicit version or bump a package:
 
-- [`cargo build --release`][book~cargo~cargo-build]↗{{hi:cargo build}} creates optimized release binaries.
-- [`cargo package`][book~cargo~cargo-package]↗{{hi:cargo package}} create a distributable, compressed .crate file with the source code of the package in the current directory. The resulting file will be stored in the `target/package` directory.
-- [`cargo publish`][book~cargo~cargo-publish]↗{{hi:cargo publish}} uploads a package to the registry (typically `crates.io`).
+```bash
+cargo install cargo-edit
+cargo set-version --bump patch
+```
 
-## Publish a Crate to `crates.io` {#publish-to-crates-io}
+For a workspace, select the intended package or use `--workspace` when all workspace packages should change. Review every edited `Cargo.toml`, especially when versions are inherited from `[workspace.package]`.
 
-The following are the typical steps to release a crate to [`crates.io`][crates.io~website]↗{{hi:crates.io}}:
+Other tools named `cargo-bump` or `cargo-bumpp` exist. Check the exact package's maintenance, workspace support, and Git side effects before adopting it; [`cargo-bumpp`][cargo-bumpp~docs]↗ can commit, tag, and push as part of its workflow. For manifest-only changes, `cargo set-version` keeps the operation explicit.
 
-- `cargo update`, if desired.
-- Update the changelog.
-- Make sure everything works as advertised:
-  - `cargo fmt --check`.
-  - [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} to inspect the documentation.
-  - [`cargo clean`][book~cargo~cargo-clean]↗{{hi:cargo clean}} to build from a clean slate.
-  - `cargo clippy`.
-  - [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} or `cargo nextest run` to run unit and integration tests.
-  - [`cargo build --locked --release`][book~cargo~cargo-build]↗{{hi:cargo build}} to build the production binaries.
-  - [`cargo run --release`][book~cargo~cargo-run]↗{{hi:cargo run}} to manually exercise the application, if relevant.
-- Increase the application's version number in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
-- Make sure all code is committed and pushed to its repository.
-- Create and push a git tag.
-- Publish the package in the [cargo][p~cargo] registry (for example, crates.io).
-  - Go to [`crates.io`][crates.io~website]↗{{hi:crates.io}}, sign in, and create an API token in `Account Settings` > `API Tokens`, if not done already.
-  - Use [`cargo login`][book~cargo~cargo-login]↗{{hi:cargo login}} to save the token in `$CARGO_HOME/credentials.toml`.
-  - Review `cargo package --list`, the list of source code files included in the package.
-  - `cargo package`, then review the packaging output in `target/package`.
-  - `cargo publish --dry-run`.
-  - When ready, `cargo publish`.
+## Prepare the Changelog {#changelog}
 
-## Publish a New Crate Version with `cargo release` {#cargo-release}
+[`git-cliff`][git-cliff~docs]↗{{hi:git-cliff}} generates a changelog from commit history and can be configured to group commits and format entries. Initialize its configuration once, then review the generated file before committing it:
 
-[![cargo-release][c~cargo-release~docs~badge]][c~cargo-release~docs]{{hi:cargo-release}}
-[![cargo-release~crates.io][c~cargo-release~crates.io~badge]][c~cargo-release~crates.io]
-[![cargo-release~repo][c~cargo-release~repo~badge]][c~cargo-release~repo]
-[![cargo-release~lib.rs][c~cargo-release~lib.rs~badge]][c~cargo-release~lib.rs]
-[![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+```bash
+cargo install git-cliff
+git-cliff --init
+git-cliff --output CHANGELOG.md
+```
 
-[`cargo-release`][c~cargo-release~docs]↗{{hi:cargo-release}} automates the release process, including version bumping and publishing to [`crates.io`][crates.io~website]↗{{hi:crates.io}}. It extends `cargo publish` with common release practices like validation, version management, tagging, and pushing. The process is customizable but with defaults that should help getting up and running quickly.
+## Validate the Release {#validate}
 
-## `release-plz` {#release-plz}
+Run the checks required by your project before tagging or publishing. A typical library release includes formatting, linting, tests, documentation, and optimized builds; choose workspace, feature, and target flags to match the project's support matrix. For example:
 
-[![release-plz][c~release-plz~docs~badge]][c~release-plz~docs]{{hi:release-plz}}
-[![release-plz~crates.io][c~release-plz~crates.io~badge]][c~release-plz~crates.io]
-[![release-plz~repo][c~release-plz~repo~badge]][c~release-plz~repo]
-[![release-plz~lib.rs][c~release-plz~lib.rs~badge]][c~release-plz~lib.rs]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
-[![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
+```bash
+cargo fmt --all -- --check
+cargo clippy --workspace --all-targets --all-features -- -D warnings
+cargo test --workspace --all-features
+cargo doc --workspace --no-deps
+cargo build --workspace --release
+```
 
-[`release-plz`][c~release-plz~docs]↗{{hi:release-plz}} releases Rust crates from CI with a "Release PR".
+For libraries, [`cargo-semver-checks`][cargo-semver-checks~repo]↗{{hi:cargo-semver-checks}} compares the new public API with a baseline and reports changes that may not match the declared version bump:
 
-## `cargo-dist` {#cargo-dist}
+```bash
+cargo install cargo-semver-checks --locked
+cargo semver-checks
+```
 
-[![cargo-dist~website][c~cargo-dist~website~badge]][c~cargo-dist~website] [![cargo-dist][c~cargo-dist~docs~badge]][c~cargo-dist~docs] [![cargo-dist~crates.io][c~cargo-dist~crates.io~badge]][c~cargo-dist~crates.io] [![cargo-dist~repo][c~cargo-dist~repo~badge]][c~cargo-dist~repo] [![cargo-dist~lib.rs][c~cargo-dist~lib.rs~badge]][c~cargo-dist~lib.rs]{{hi:cargo-dist}}
+Before publishing, inspect the exact package contents and ask Cargo to build the package without uploading it:
 
-[`cargo-dist`][c~cargo-dist~docs]↗{{hi:cargo-dist}} packages shippable applications for Rust.
+```bash
+cargo package --list
+cargo publish --dry-run
+```
 
-`cargo-dist` has evolved over time, and you should verify the current project status before adopting it. If your needs are simpler, prefer `cargo-release`, `cargo-deb`, or `cargo-rpm` for packaging native installers or crates.io releases.
+## Publish to `crates.io` {#publish-to-crates-io}
 
-## Create Debian and RPM Packages with `cargo-deb` and `cargo-rpm` {#cargo-deb}
+For a manual publish, create a scoped registry token on [`crates.io`][crates.io~website]↗{{hi:crates.io}}, then use [`cargo login`][book~cargo~cargo-login]↗{{hi:cargo login}} to store it in Cargo's credentials file. Treat it as a secret. After the checks above pass, publish the reviewed version:
+
+```bash
+cargo login
+cargo publish
+```
+
+Publishing a version to crates.io is generally permanent. For CI, prefer [trusted publishing][crates.io~trusted-publishing~docs]↗{{hi:trusted publishing}} where supported. A trusted publisher exchanges the workflow's GitHub identity for a short-lived registry token. New crates still need an initial manual publish before trusted publishing can release later versions.
+
+## Automate Crate Releases {#automation}
+
+### `cargo-release` {#cargo-release}
+
+[`cargo-release`][c~cargo-release~docs]↗{{hi:cargo-release}} automates a command-driven release, including validation, version changes, tags, and publishing. Its default behavior is a dry run, so review the proposed changes before running the release for real.
+
+### `release-plz` {#release-plz}
+
+[`release-plz`][c~release-plz~docs]↗{{hi:release-plz}} is designed for CI: it can open a release pull request with version and changelog updates, then publish after that pull request is merged. The following minimal GitHub Actions workflow shows the two jobs. Configure each crate's trusted publisher on crates.io first; the release job needs `id-token: write` and does not need a long-lived `CARGO_REGISTRY_TOKEN` secret:
+
+```yaml
+name: Release
+on:
+  push:
+    branches: [main]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: release-plz/action@v0
+        with:
+          command: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  release-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: release-plz/action@v0
+        with:
+          command: release-pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+Review the workflow permissions and release policy for your repository. See the [`release-plz` GitHub Actions guide][release-plz~quickstart]↗ for current setup details.
+
+## Package Binaries and System Installers {#cargo-dist}
+
+[`cargo-dist`][c~cargo-dist~docs]↗{{hi:cargo-dist}} builds and packages command-line applications for distribution through GitHub Releases and supported installer formats. For Linux system packages, [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} and [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} build Debian and RPM packages from Cargo projects. Review each tool's configuration and target requirements before adding its packages to a release workflow.
+
+### Debian and RPM Packages {#cargo-deb}
+
+Use [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} or [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} when your users install software through a Debian or RPM package manager. These tools produce native system packages; they do not replace publishing Rust libraries to a Cargo registry.
 
 ## Related Topics {#related-topics .skip}
 
-- [Testing][p~testing] Automation:
-  - Code [[code_formatting_linting | linting]] .
-  - Unit, integration, and end-to-end [[testing | tests]].
-- Deployment:
-  - [[cloud | Cloud]] platforms ([[aws | AWS]], Azure, GCP).
-  - Servers.
-  - [[containers | Container]] orchestration systems (Kubernetes).
-
-See also [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
+- [Cargo][p~cargo] for package metadata, workspaces, and publishing commands.
+- [Versioning][p~versioning] for semantic-versioning guidance.
+- [CI/CD](cd_ci.md) and [GitHub Actions](github_actions.md) for automated validation and deployment.
+- [Testing][p~testing] and [Cargo auditing][p~maintaining] for release checks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[release_automation: write](https://github.com/john-cd/rust_howto/issues/604)
-cover [`cargo-bump`][c~cargo-bump~repo]↗{{hi:cargo-bump}} for simple version number increments.
-Link:
-
-- [`cargo-login`][book~cargo~cargo-login].
-- [`cargo-package`][book~cargo~cargo-package].
-- [`cargo-publish`][book~cargo~cargo-publish].
-
-Review:
-
-- [`release-plz`][release-plz~website].
-- [Comprehensive guide to generating `deb`and `rpm` packages for Rust applications][blog~comprehensive-guide-to-generating-deb-and-rpm-packages-for-rust-applications].
-- [List of software package management systems][wikipedia~List_of_software_package_management_systems].
-- [Simplifying debian packaging for Rust][blog~medium~simplifying-debian-packaging-for-rust].
-
-</div>

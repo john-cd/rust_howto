@@ -47,3 +47,9 @@
 [infra~habitat-releases]: https://docs.chef.io/release_notes/habitat/
 [infra~kube-docs]: https://docs.rs/kube/latest/kube/
 [infra~bollard-repo]: https://github.com/fussybeaver/bollard
+[cargo-edit~repo]: https://github.com/killercup/cargo-edit
+[cargo-bumpp~docs]: https://docs.rs/crate/cargo-bumpp/latest
+[git-cliff~docs]: https://git-cliff.org/docs/
+[cargo-semver-checks~repo]: https://github.com/obi1kenobi/cargo-semver-checks
+[crates.io~trusted-publishing~docs]: https://crates.io/docs/trusted-publishing
+[release-plz~quickstart]: https://release-plz.dev/docs/github/quickstart
