@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | |
 |--------|
 | [Actor Model][ex~architecture~actor-model] |

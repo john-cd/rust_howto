@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Compress a Directory into a Tarball][ex~compression~compress-a-directory-into-a-tarball] | [![flate2][c~flate2~docs~badge]][c~flate2~docs] [![tar][c~tar~docs~badge]][c~tar~docs] | [![cat~compression][cat~compression~badge]][cat~compression] |

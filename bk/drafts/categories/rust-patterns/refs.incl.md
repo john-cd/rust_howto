@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [ex~rust-patterns~abstract-factory]: creational_patterns.md#abstract-factory
 [ex~rust-patterns~basic-builder-pattern]: builder_pattern.md#basic-builder-pattern
 [ex~rust-patterns~bon]: builder_pattern.md#bon

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Enable Log Levels per Module][ex~development-tools_debugging~enable-log-levels-per-module] | [![log][c~log~docs~badge]][c~log~docs] [![env_logger][c~env_logger~docs~badge]][c~env_logger~docs] | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |

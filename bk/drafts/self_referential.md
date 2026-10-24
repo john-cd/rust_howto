@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Self-Referential Types
 
 {{#include self_referential.incl.md}}

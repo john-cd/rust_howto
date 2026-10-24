@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Convert identifiers between case styles][ex~value-formatting~case-conversion] | [![heck][c~heck~docs~badge]][c~heck~docs]{{hi:heck}} | [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting] |

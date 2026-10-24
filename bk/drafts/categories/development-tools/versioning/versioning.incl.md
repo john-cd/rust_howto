@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Parse a Version String][ex~versioning~parse-a-version-string] | [![semver][c~semver~docs~badge]][c~semver~docs] | [![cat~config][cat~config~badge]][cat~config] |

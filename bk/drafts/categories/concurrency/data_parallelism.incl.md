@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`rayon`][ex~concurrency~rayon] | [![rayon][c~rayon~docs~badge]][c~rayon~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] |

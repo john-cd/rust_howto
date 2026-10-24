@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Code Formatting and Linting
 
 {{#include code_formatting_linting.incl.md}}

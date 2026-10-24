@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Peripheral Devices
 
 Peripheral access usually goes through an operating-system driver. Choose a crate for the device's protocol or class, then check its supported platforms, required native libraries, and permissions before depending on it. User-space access is not the same as writing a kernel driver.

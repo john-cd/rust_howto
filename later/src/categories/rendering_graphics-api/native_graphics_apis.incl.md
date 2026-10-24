@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | | {{!crate }} | [![cat~rendering::graphics-api][cat~rendering::graphics-api~badge]][cat~rendering::graphics-api] |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 | -------- | -------- | ------------ |
 | [`defmt`][ex~embedded~defmt] | [![defmt][c~defmt~docs~badge]][c~defmt~docs]{{hi:defmt}} | [![cat~embedded][cat~embedded~badge]][cat~embedded] |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [ex~encoding~base64]: string_encoding.md#base64
 [ex~encoding~bincode]: _binary_encoders.md#bincode
 [ex~encoding~bytemuck]: typecasts.md#bytemuck

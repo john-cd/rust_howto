@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Area | Examples |
 |---|---|
 | File managers | [File managers][ex~written-in-rust~file-managers] |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Query the GitHub API][ex~web-programming_http-client~query-the~repo-api] | [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] [![serde][c~serde~docs~badge]][c~serde~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~encoding][cat~encoding~badge]][cat~encoding] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client] |

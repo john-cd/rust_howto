@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Incremental Computation
 
 Incremental computation is a software engineering technique that attempts to save time by only recomputing those outputs which depend on changed data. When a program processes a large dataset and only a small portion of it changes, re-running the entire computation can be inefficient. Instead, an incremental computation framework keeps track of the dependencies between inputs and outputs. When an input changes, it only invalidates and recomputes the specific outputs affected by that change, reusing the previously computed results for the rest.

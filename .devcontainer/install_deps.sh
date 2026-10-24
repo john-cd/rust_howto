@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -euo pipefail
 
 # Directly install on Ubuntu all required dependencies to compile the book's code.

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Clap Builder Example
 
 This example demonstrates how to build a complete command-line interface (CLI) using [`clap`](https://docs.rs/clap)'s builder API. It organizes the CLI logic across multiple modules and showcases the following features:

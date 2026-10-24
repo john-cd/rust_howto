@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |---|---|---|
 | [Measure Build Times][ex~compilation~build-time] | [![cargo~website][c~cargo~website~badge]][c~cargo~website] | [![cat~compilers][cat~compilers~badge]][cat~compilers] |

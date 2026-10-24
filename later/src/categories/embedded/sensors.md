@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Communicating with Sensors over I2C, SPI, and UART
 
 {{#include sensors.incl.md}}

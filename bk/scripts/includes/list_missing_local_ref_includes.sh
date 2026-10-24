@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -euo pipefail
 
 # List files that do not include their local references i.e. {{#include refs.incl.md}} is missing

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Encoding Without an External Schema File
 
 {{#include no_external_schema.incl.md}}

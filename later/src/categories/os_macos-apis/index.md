@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # OS: macOS APIs
 
 Use macOS-specific frameworks only when portable Rust APIs do not cover the required behavior. Prefer maintained safe bindings, keep platform code behind `cfg(target_os = "macos")`, and check the framework's deployment target.

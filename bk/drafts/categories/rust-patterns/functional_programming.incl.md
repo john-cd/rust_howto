@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Transform Collections with Iterator Adapters][ex~rust-patterns~iterator-adapters] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |

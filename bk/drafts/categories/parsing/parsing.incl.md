@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Create a Parser with `nom`][ex~parsing~nom] | [![nom][c~nom~docs~badge]][c~nom~docs] | [![cat~parsing][cat~parsing~badge]][cat~parsing] |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Traverse a Graph with Breadth-First Search (BFS)][ex~algorithms~petgraph-bfs] | [![petgraph][c~petgraph~docs~badge]][c~petgraph~docs] | [![cat~algorithms][cat~algorithms~badge]][cat~algorithms] |

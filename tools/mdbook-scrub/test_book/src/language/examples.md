@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Example Directives
 
 {{#example ../../crates/language/examples/constants_and_statics/statics.rs:example}}

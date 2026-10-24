@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Calculate the SHA-256 Digest of a File][ex~algorithms~sha256] | [![ring][c~ring~docs~badge]][c~ring~docs] [![data-encoding][c~data-encoding~docs~badge]][c~data-encoding~docs] | [![cat~algorithms][cat~algorithms~badge]][cat~algorithms] |

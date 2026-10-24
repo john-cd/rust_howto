@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`sqlx`][ex~database~sqlx] | [![sqlx][c~sqlx~docs~badge]][c~sqlx~docs] | [![cat~database][cat~database~badge]][cat~database] |

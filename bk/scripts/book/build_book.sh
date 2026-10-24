@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -euo pipefail
 
 # Generate the book's HTML / JS

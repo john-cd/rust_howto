@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Cross-origin Resource Sharing
 
 {{#include cors.incl.md}}

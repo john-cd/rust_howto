@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Value Formatting
 
 Format values for display, potentially adapting output to a user's language and region. Keep serialization formats separate from presentation formats: localized display text is generally not a stable interchange format.

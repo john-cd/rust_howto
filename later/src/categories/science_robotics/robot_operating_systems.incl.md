@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |---|---|---|
 | [`r2r`: Minimal ROS2 Rust Bindings][ex~science_robotics~r2r] | [![r2r][c~r2r~docs~badge]][c~r2r~docs]{{hi:r2r}} | [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics] |

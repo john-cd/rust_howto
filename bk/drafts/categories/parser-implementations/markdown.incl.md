@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`comrak`][ex~parser-implementations~comrak] | [![comrak][c~comrak~docs~badge]][c~comrak~docs] | [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] |

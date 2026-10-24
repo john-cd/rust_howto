@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Impl Trait
 
 {{#include impl_trait.incl.md}}

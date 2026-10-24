@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 | -------- | -------- | ------------ |
 | [Text and UTF-8][ex~encoding~text-and-utf-8] | [String][c~std::string::String~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |

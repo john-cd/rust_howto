@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Log Trace Data to `stdout`][ex~development-tools_debugging~tracing-basics] | [![tracing][c~tracing~docs~badge]][c~tracing~docs] | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Text Diffing
 
 {{#include diffing.incl.md}}

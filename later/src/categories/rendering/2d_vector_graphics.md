@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Vector Graphics in 2D
 
 {{#include 2d_vector_graphics.incl.md}}

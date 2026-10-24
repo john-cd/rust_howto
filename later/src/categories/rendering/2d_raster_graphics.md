@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Pixel-Based (Raster) 2D Rendering
 
 {{#include 2d_raster_graphics.incl.md}}

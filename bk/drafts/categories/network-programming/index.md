@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Networking
 
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Parse JSON with `json5`][ex~parser-implementations~json5] | [![json5][c~json5~docs~badge]][c~json5~docs] | [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] |

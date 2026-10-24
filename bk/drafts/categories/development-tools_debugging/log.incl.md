@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Log a Debug Message to the Console][ex~development-tools_debugging~log-to-console] | [![log][c~log~docs~badge]][c~log~docs] [![env_logger][c~env_logger~docs~badge]][c~env_logger~docs] | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |

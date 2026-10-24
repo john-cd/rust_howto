@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`cosmic-text`][ex~gui~cosmic-text] | [![cosmic-text][c~cosmic-text~docs~badge]][c~cosmic-text~docs] | [![cat~gui][cat~gui~badge]][cat~gui] |

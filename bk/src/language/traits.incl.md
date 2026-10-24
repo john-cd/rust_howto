@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 ||
 |--------|
 | [Declare a Trait][ex~language~trait-syntax] |

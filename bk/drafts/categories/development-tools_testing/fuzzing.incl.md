@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`afl`][ex~development-tools_testing~afl] | [![afl][c~afl~docs~badge]][c~afl~docs] | [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing] |

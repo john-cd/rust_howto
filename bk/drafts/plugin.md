@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Plugin Architecture
 
 A plugin architecture lets a host application support extensions that are developed and deployed separately from the core program. In Rust, this usually means balancing safety, portability, and runtime flexibility.

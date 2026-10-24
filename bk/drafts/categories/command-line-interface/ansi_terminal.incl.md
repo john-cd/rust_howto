@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Style Text with `nu-ansi-term`][ex~command-line-interface~nu-ansi-term] | [![nu-ansi-term][c~nu-ansi-term~docs~badge]][c~nu-ansi-term~docs] | [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] |

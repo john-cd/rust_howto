@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Generate Rust code that Calls into C Libraries with `bindgen`][ex~development-tools_ffi~bindgen] | [![bindgen][c~bindgen~docs~badge]][c~bindgen~docs] | [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi] [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings] |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Download a File to a Temporary Directory][ex~web-programming_http-client~download] | [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] [![tempfile][c~tempfile~docs~badge]][c~tempfile~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~filesystem][cat~filesystem~badge]][cat~filesystem] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client] |

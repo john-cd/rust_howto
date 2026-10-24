@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Graphics
 
 [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}

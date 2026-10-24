@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`aho-corasick`][ex~text-processing~aho-corasick] | [![aho-corasick][c~aho-corasick~docs~badge]][c~aho-corasick~docs]{{hi:aho-corasick}} | [![cat~text-processing][cat~text-processing~badge]][cat~text-processing] |

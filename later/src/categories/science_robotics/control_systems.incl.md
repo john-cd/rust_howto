@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`k`: Kinematics Library for Robotics][ex~science_robotics~k] | [![k][c~k~docs~badge]][c~k~docs]{{hi:k}} | [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics] |

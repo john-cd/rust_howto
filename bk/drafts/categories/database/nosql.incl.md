@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Connect to MongoDB][ex~database~mongodb] | [![mongodb][c~mongodb~docs~badge]][c~mongodb~docs] | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] [![cat~database][cat~database~badge]][cat~database] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |

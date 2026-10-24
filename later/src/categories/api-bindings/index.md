@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # API Bindings
 
 [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Email Parsing
 
 An Internet email message has headers, a blank line, and a body. [RFC 5322][rfc~5322] defines this message format. [MIME][rfc~2045] adds media types, character sets, and content-transfer encodings; multipart messages use boundaries to hold several parts, which may themselves contain nested parts ([RFC 2046][rfc~2046]).

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Accessibility
 
 [![cat~accessibility][cat~accessibility~badge]][cat~accessibility]{{hi:Accessibility}}

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Measure the Elapsed Time Between Two Code Sections][ex~date-and-time~measure-elapsed-time] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~date-and-time][cat~date-and-time~badge]][cat~date-and-time] |

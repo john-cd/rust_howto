@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates |
 |---|---|
 | [Derive Common Traits Automatically][ex~standard-library~derive] | [![std][c~std~docs~badge]][c~std~docs] |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Contributing
 
 Thanks for helping improve the Rust How-to book and its companion tools.

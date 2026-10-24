@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -u
 
 # List subchapters that do not include a local TOC, i.e. {{#include <subchapter>.incl.md}} is missing.

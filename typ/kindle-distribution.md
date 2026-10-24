@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Kindle Distribution Evaluation
 
 Reviewed 2026-10-22. This is a distribution assessment, not a decision to sell or publish the book.

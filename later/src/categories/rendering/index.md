@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Rendering
 
 [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}}

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 | -------- | -------- | ------------ |
 | [Primitive casts and checked conversions][ex~encoding~type-casts] | | [![cat~encoding][cat~encoding~badge]][cat~encoding] |

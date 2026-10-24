@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -eu
 
 # Convert {{#example <name>}} placeholders into ```rust {#include ...}``` blocks

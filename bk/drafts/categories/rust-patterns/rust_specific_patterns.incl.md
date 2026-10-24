@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Clone a Struct Storing a Boxed Trait Object][ex~rust-patterns~dyn-clone] | [![dyn-clone][c~dyn-clone~docs~badge]][c~dyn-clone~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |

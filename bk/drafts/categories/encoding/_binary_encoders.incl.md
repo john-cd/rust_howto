@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`bincode`][ex~encoding~bincode] | [![bincode][c~bincode~docs~badge]][c~bincode~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |

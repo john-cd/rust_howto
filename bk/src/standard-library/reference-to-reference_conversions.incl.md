@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates |
 |---|---|
 | [Accept Arguments of Multiple Types with `AsRef`][ex~standard-library~asref] | [![std][c~std~docs~badge]][c~std~docs] | [![std][c~std~docs~badge]][c~std~docs] |T`][ex~standard-library~asref] | [![std][c~std~docs~badge]][c~std~docs] | [![std][c~std~docs~badge]][c~std~docs] |

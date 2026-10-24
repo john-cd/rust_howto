@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -u
 
 # Convert wiki-style links [[...|...]] to [...][p~...] and [p~...]: ...

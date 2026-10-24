@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates |
 |---|---|
 | [Implement a Smart Pointer with `Deref`][ex~standard-library~deref] | [![std][c~std~docs~badge]][c~std~docs] |

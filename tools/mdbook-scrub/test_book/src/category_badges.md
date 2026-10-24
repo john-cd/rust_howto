@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Category Badges
 
 TODO: NOT IMPLEMENTED.

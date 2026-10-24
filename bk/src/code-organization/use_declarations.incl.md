@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 ||
 |--------|
 | [Avoid Writing Full Paths with the `use` Keyword][ex~code-organization~use-keyword] |

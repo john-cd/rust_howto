@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Serialization with `serde`][ex~encoding~serde] | [![serde][c~serde~docs~badge]][c~serde~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Oracle DB
 
 Oracle [Database][p~database] is a multi-model [database][p~database] management system produced and marketed by Oracle Corporation.

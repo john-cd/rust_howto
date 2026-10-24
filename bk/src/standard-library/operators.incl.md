@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates |
 |---|---|
 | [Add Function-like Behavior to a Custom Type][ex~standard-library~function-like-behavior] | [![std][c~std~docs~badge]][c~std~docs] |

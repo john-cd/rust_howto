@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Scripting and Rust
 
 Scripting in Rust has two distinct forms: running Rust source as a lightweight script, and embedding another language in a Rust application. Choose based on startup time, deployment, host integration, and the trust level of the code being run.

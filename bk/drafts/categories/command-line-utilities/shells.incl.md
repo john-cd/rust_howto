@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Tool | What it does | Install |
 |------|--------------|---------|
 | [`starship`][c~starship~repo]↗ | Custom prompt for multiple shells | `cargo install starship --locked` |

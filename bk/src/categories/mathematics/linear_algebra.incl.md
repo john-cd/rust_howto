@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Calculate Vector Norms][ex~mathematics~vector-norm] | [![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs] | [![cat~science][cat~science~badge]][cat~science] |

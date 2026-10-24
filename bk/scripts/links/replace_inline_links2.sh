@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -uo pipefail
 
 # Rough script to convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...

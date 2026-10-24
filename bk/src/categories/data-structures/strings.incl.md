@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates |
 |---|---|
 | [`String` and `&str`][ex~data-structures~string] | [![std][c~std~docs~badge]][c~std~docs] |

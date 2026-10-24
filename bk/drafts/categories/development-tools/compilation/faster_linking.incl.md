@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |---|---|---|
 | [Rust's Default Linux Linker][ex~compilation~rust-lld] | [`rust-lld`][lld~website]↗ | [![cat~compilers][cat~compilers~badge]][cat~compilers] |

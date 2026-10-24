@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -eu
 
 # List book headings that do not have an anchor (e.g. {#some-text} after the heading).

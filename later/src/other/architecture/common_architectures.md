@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Common Architectural Patterns in Rust
 
 {{#include common_architectures.incl.md}}

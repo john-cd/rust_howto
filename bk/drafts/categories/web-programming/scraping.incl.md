@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Extract all Links from the HTML of a Webpage][ex~web-programming~extract-all-links-from-a-webpage-html] | [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] [![select][c~select~docs~badge]][c~select~docs] | [![cat~network-programming][cat~network-programming~badge]][cat~network-programming] [![cat~web-programming][cat~web-programming~badge]][cat~web-programming] |

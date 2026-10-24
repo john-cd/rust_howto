@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # WebAssembly (WASM)
 
 [![cat~wasm][cat~wasm~badge]][cat~wasm]

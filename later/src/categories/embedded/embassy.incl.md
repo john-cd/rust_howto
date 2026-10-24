@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`embassy`][ex~embedded~embassy] | [![embassy][c~embassy~docs~badge]][c~embassy~docs] | [![cat~embedded][cat~embedded~badge]][cat~embedded] |

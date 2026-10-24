@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |---|---|---|
 | [Format your Rust code with `rustfmt`][ex~formatting~rustfmt] | [![rustfmt~repo][c~rustfmt~repo~badge]][c~rustfmt~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |

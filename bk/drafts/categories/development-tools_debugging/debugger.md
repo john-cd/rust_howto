@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Debuggers
 
 Rust's toolchain provides `rust-gdb` and `rust-lldb` wrappers for launching GDB or LLDB with Rust type visualizers configured. Install the underlying debugger for your operating system, then build with Cargo's `dev` profile so the binary includes debug information.

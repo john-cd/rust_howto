@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Create Tables in a Postgres Database][ex~database~create-tables-postgres] | [![postgres][c~postgres~docs~badge]][c~postgres~docs] | [![cat~database][cat~database~badge]][cat~database] |

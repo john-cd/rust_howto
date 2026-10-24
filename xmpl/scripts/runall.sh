@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -euo pipefail
 
 # Run additional examples (under the `crates/xmpl` folder)

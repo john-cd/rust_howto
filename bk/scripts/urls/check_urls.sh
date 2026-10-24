@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -uo pipefail
 
 # Check that URLs to external websites e.g. https://... (typically found in ref defs) are valid and working (e.g. no 404).

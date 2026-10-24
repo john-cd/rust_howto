@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # The Rust How-To Book
 
 [![Build and deploy (Linux)](https://github.com/john-cd/rust_howto/actions/workflows/build_deploy_book.yml/badge.svg)](https://github.com/john-cd/rust_howto/actions/workflows/build_deploy_book.yml)[![(Windows)](https://github.com/john-cd/rust_howto/actions/workflows/build_book_code_and_book_on_windows.yml/badge.svg)](https://github.com/john-cd/rust_howto/actions/workflows/build_book_code_and_book_on_windows.yml)

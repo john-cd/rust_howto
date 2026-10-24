@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`tauri`][ex~gui~tauri] | [![tauri][c~tauri~docs~badge]][c~tauri~docs] | [![cat~gui][cat~gui~badge]][cat~gui] |

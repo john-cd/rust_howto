@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Virtualization
 
 [![cat~virtualization][cat~virtualization~badge]][cat~virtualization]{{hi:Virtualization}}

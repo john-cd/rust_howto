@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Book scripts
 
 Run the book recipes from `bk/`; `bk/justfile` is the single entry point and imports the modules below `bk/scripts/`. The supported Just version is pinned as `JUST_VERSION` in `.devcontainer/.env`. On Windows the modules run recipes with PowerShell 7 (`pwsh.exe`) without loading a user profile.

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Read CSV Records][ex~encoding~read-csv-records] | [![csv][c~csv~docs~badge]][c~csv~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |

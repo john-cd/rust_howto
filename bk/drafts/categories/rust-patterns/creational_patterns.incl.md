@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Implement a Factory][ex~rust-patterns~factory] | | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |

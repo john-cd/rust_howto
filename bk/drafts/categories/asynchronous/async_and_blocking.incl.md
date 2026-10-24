@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Call Blocking Code from Async Code][ex~asynchronous~calling-blocking-from-async] | [![tokio][c~tokio~docs~badge]][c~tokio~docs] | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |

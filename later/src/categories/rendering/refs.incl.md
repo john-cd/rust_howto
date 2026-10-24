@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [ex~rendering~ab_glyph]: text_rendering.md#ab_glyph
 [ex~rendering~applications]: 2d_renderers.md#applications
 [ex~rendering~applications]: 3d_renderers.md#applications

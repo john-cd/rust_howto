@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 ||
 |--------|
 | [Write a Rust Function][ex~language~function] |

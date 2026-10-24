@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`subtle`][ex~cryptography~subtle] | [![subtle][c~subtle~docs~badge]][c~subtle~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |

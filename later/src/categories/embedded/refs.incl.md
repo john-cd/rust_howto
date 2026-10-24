@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [ex~embedded~embassy]: embassy.md#embassy
 [ex~embedded~embedded-hal]: hals.md#embedded-hal
 [ex~embedded~flash~probe-rs]: flash.md#program-firmware

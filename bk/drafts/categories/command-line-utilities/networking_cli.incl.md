@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Tool | Use for | Install |
 |------|---------|---------|
 | [`xh`][xh~repo]↗ | HTTPie-style HTTP requests | `cargo install xh --locked` |

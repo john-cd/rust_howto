@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Software Built in Rust
 
 This overview highlights a small set of software projects that demonstrate where Rust is used. It is a curated introduction, not a complete catalog.

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Trigger Irrecoverable Panics][ex~error_handling~irrecoverable-panics] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |

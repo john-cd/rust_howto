@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -euo pipefail
 
 # `mdbook-private` is configured to hide markdown files starting with _ (and their children)

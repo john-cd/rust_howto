@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -euo pipefail
 
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes

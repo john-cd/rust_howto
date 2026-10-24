@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Cloud
 
 Rust appears in cloud computing in two ways: teams build applications with Rust and run

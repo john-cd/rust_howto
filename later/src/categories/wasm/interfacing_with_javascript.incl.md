@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Bind to JS Global Objects and Functions Found in All JS Environments with `js-sys`][ex~wasm~js-sys] | {{!crate }} | [![cat~wasm][cat~wasm~badge]][cat~wasm] |

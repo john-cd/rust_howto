@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Calculate Measures of Central Tendency][ex~mathematics~measures-of-central-tendency] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~mathematics][cat~mathematics~badge]][cat~mathematics] |

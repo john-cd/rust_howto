@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Crate Blocks
 
 The supported form expands a crate and its optional extra categories into badges.

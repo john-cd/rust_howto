@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Linear Algebra
 
 {{#include linear_algebra.incl.md}}

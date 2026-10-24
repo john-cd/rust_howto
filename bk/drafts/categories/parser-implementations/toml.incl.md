@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`basic-toml`][ex~parser-implementations~basic-toml] | [![basic-toml][c~basic-toml~docs~badge]][c~basic-toml~docs] | [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] |

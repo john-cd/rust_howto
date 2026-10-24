@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Connect to Elasticsearch][ex~database~elasticsearch] | [![elasticsearch][c~elasticsearch~docs~badge]][c~elasticsearch~docs] | [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings] [![cat~database][cat~database~badge]][cat~database] |

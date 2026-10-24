@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Existing Implementations of `Send` and `Sync`][ex~concurrency~existing-impl-send-sync] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] |

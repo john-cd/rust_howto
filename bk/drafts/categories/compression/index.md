@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Compression
 
 Compression encodes a byte stream in a smaller representation; decompression requires a compatible codec and format. An archive groups named files and metadata. These operations are separate: a `.tar.gz` file is a tar archive compressed with gzip, while a ZIP file packages entries in its own archive format.

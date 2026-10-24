@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates |
 |--------|--------|
 | [Process Columnar Data with `arrow`][ex~data-processing~arrow] | [![arrow][c~arrow~docs~badge]][c~arrow~docs] |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`dotenvy`][ex~config~dotenvy] | [![dotenvy][c~dotenvy~docs~badge]][c~dotenvy~docs] | [![cat~config][cat~config~badge]][cat~config] |

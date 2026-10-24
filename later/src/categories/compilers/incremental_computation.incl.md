@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |---|---|---|
 | [Implementing Incremental Computation with `comemo`][ex~compilers~comemo] | [![comemo][c~comemo~docs~badge]][c~comemo~docs] | [![cat~compilers][cat~compilers~badge]][cat~compilers] |

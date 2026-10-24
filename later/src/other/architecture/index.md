@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Architecture in Rust
 
 {{#include architecture.incl.md}}{{hi:Architecture}}

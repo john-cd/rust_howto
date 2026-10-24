@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 String processing often involves naming conventions, readable multiline literals, and line wrapping. Use `heck` for common word-based case conversions, and process Unicode text as characters rather than slicing it at byte offsets.
 
 | Recipe | Crates | Categories |

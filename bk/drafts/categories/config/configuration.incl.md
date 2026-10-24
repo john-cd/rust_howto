@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Load Application Settings from Multiple Sources with `config`][ex~config~config] | [![config][c~config~docs~badge]][c~config~docs] | [![cat~config][cat~config~badge]][cat~config] |

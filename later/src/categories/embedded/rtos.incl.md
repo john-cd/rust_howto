@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 | -------- | -------- | ------------ |
 | [RTIC][ex~embedded~rtos~rtic] | [![rtic][c~rtic~docs~badge]][c~rtic~docs]{{hi:RTIC}} | [![cat~embedded][cat~embedded~badge]][cat~embedded] |

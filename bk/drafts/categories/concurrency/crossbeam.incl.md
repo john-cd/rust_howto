@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Spawn a Short-lived Thread][ex~concurrency~spawn-a-short-lived-thread] | [![crossbeam][c~crossbeam~docs~badge]][c~crossbeam~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] |

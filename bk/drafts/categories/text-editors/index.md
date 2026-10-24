@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Text Editors
 
 [![cat~text-editors][cat~text-editors~badge]][cat~text-editors]{{hi:Text editors}}

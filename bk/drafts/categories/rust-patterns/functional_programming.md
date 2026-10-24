@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Functional Programming
 
 {{#include functional_programming.incl.md}}

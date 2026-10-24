@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Simplify Error Handling and Attach Context to Errors with `anyhow`][ex~error_handling~anyhow] | [![anyhow][c~anyhow~docs~badge]][c~anyhow~docs] | [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns] |

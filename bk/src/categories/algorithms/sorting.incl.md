@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Sort a Vector of Integers][ex~algorithms~sort-vector-integers] | {{#crate std}} | {{#categories algorithms=Algorithms}} |

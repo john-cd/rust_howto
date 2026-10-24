@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [intellij-idea~website]: https://www.jetbrains.com/idea/
 [kate-editor~website]: https://kate-editor.org
 [ex~text-editors~helix]: ides.md#helix

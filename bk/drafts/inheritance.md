@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Inheritance
 
 {{#include inheritance.incl.md}}

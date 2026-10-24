@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 | --- | --- | --- |
 | [Search for Rust APIs][ex~other~roogle] | [roogle][c~roogle~website] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |

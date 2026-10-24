@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [Implement a Queue Using `VecDeque`][ex~data-structures~queue] |  | [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |

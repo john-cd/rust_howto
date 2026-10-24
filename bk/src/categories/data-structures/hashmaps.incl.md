@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates |
 |---|---|
 | [Store Key-Value Pairs into a HashMap][ex~data-structures~hashmap] | [![std][c~std~docs~badge]][c~std~docs] |

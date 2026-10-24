@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Quantitative Financial Analysis
 
 {{#include quant.incl.md}}

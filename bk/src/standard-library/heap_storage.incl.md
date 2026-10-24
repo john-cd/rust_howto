@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates |
 |---|---|
 | [Store Data on the Heap with `Box`][ex~standard-library~box] | [![std][c~std~docs~badge]][c~std~docs] |

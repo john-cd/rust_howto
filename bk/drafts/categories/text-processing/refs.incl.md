@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [c~inflector~crates.io]: https://crates.io/crates/Inflector
 [ex~text-processing~aho-corasick]: string_search.md#aho-corasick
 [ex~text-processing~bstr]: other_strings.md#bstr

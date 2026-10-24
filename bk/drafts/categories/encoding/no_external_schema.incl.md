@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 These approaches use Rust types (usually described with [`serde`][ex~encoding~serde]) as the mapping for encoding and decoding values. They do not require a separate schema file or generated types. That does not make every payload self-describing: formats differ in how much type information and field names they put on the wire, and a concrete Rust type still supplies application-level meaning.
 
 | Format | Crate | Self-describing payload? | `no_std`? | Typical use |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`meilisearch`][ex~database-implementations~meilisearch] | [![meilisearch][c~meilisearch~docs~badge]][c~meilisearch~docs] | [![cat~database-implementations][cat~database-implementations~badge]][cat~database-implementations] |

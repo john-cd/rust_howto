@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Fixed-capacity and Stack-allocated Data Structures
 
 {{#include stack-allocated.incl.md}}

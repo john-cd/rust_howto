@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -uo pipefail
 
 # List (sub)chapters that somehow were not added in the main table of contents i.e. SUMMARY.md

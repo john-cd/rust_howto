@@ -1,4 +1,5 @@
 # TODO Reviewed ??-??-2026
+
 """Focused integration test for mdbook-utils reference generation."""
 
 from __future__ import annotations

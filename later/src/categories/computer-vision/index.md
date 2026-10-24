@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Computer Vision
 
 [![cat~computer-vision][cat~computer-vision~badge]][cat~computer-vision]{{hi:Computer vision}}

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # VS Code Configuration
 
 This repository contains several independent Cargo workspaces rather than one workspace at the repository root. Configure `rust-analyzer` to load the workspaces you use, and keep the list aligned with the checkouts that are present on your machine.

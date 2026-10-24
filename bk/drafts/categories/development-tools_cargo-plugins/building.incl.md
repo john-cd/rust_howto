@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 |--------|--------|------------|
 | [`cargo make`][ex~development-tools_cargo-plugins~cargo-make] | [![cargo-make][c~cargo-make~docs~badge]][c~cargo-make~docs] | [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins] |

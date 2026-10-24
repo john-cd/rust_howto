@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 ||
 |--------|
 | [Organize the Code of a Simple Library][ex~code-organization~simple-library-code-organization] |

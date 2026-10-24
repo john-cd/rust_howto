@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # OS: FreeBSD APIs
 
 Use the standard library for portable filesystem, networking, process, and thread operations. For FreeBSD-specific behavior, prefer the existing `libc`, `nix`, or `rustix` bindings when they expose the needed interface; isolate direct FFI and unsafe calls behind platform configuration.

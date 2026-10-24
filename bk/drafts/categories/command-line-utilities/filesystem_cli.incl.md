@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Task | Tool | Replaces or use for | Install |
 |------|------|---------------------|---------|
 | List files | [`eza`][eza~repo]↗ | Maintained replacement for `exa` | `cargo install eza --locked` |

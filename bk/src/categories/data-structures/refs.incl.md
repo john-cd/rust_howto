@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [ex~data-structures~arrayvec]: stack-allocated.md#arrayvec
 [ex~data-structures~bitflags]: bit_arrays.md#bitflags
 [ex~data-structures~bitvec]: bit_arrays.md#bitvec

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [ex~filesystem~avoid-writing-and-reading-from-the-same-file]: reading_and_writing_files.md#avoid-writing-and-reading-from-the-same-file
 [ex~filesystem~camino]: paths.md#camino
 [ex~filesystem~canonicalize]: paths.md#canonicalize

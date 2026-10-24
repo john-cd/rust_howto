@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # TODO Reviewed ??-??-2026
+
 set -euo pipefail
 
 # Usage: ./scripts/refdefs/sort_refdefs.sh <root folder>

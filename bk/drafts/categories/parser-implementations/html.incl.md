@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 Choose the parser layer that matches the task: `html5ever` handles browser-grade HTML5 parsing, `scraper` offers a tree and CSS selectors for extracting data, and `cssparser` parses CSS syntax itself. `tl` is another fast, pure-Rust option for working with an HTML tree.
 
 | Recipe | Crates | Categories |

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Recoverable Error Handling with `Result`
 
 {{#include recoverable_error_handling.incl.md}}

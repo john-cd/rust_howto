@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Rendering: Graphics APIs
 
 [![cat~rendering::graphics-api][cat~rendering::graphics-api~badge]][cat~rendering::graphics-api]{{hi:Rendering graphics api}}

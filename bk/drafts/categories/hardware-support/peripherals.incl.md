@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Area | Crates | Categories |
 |--------|--------|------------|
 | USB devices | [`nusb`][c~nusb~docs], [`rusb`][c~rusb~docs] | [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support] |

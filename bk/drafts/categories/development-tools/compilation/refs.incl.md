@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 [ex~compilation~build-time]: reduce_compilation_duration.md#build-time
 [ex~compilation~bacon]: building.md#bacon
 [ex~compilation~build-code]: building.md#build-code
