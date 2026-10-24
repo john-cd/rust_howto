@@ -11,8 +11,8 @@ inputs:
     description: Stable Rust version used to build and test. Keep in sync with `rust-version` / `.devcontainer/.env`.
     default: "1.99.1"
   nightly:
-    description: Pinned nightly toolchain used only for `cargo fmt`. Empty to skip.
-    default: "nightly-2026-10-22"
+    description: Optional nightly toolchain override for `cargo fmt`; use `skip` to omit nightly rustfmt.
+    default: ""
   components:
     description: Space-separated rustup components to add to the stable toolchain.
     default: "clippy"
@@ -36,7 +36,7 @@ runs:
       shell: bash
       env:
         TOOLCHAIN: ${{ inputs.toolchain }}
-        NIGHTLY: ${{ inputs.nightly }}
+        NIGHTLY_OVERRIDE: ${{ inputs.nightly }}
         COMPONENTS: ${{ inputs.components }}
       run: |
         set -euo pipefail
@@ -44,9 +44,17 @@ runs:
         for c in $COMPONENTS; do args+=(--component "$c"); done
         rustup toolchain install "$TOOLCHAIN" --profile minimal ${args[@]+"${args[@]}"}
         rustup default "$TOOLCHAIN"
-        if [ -n "$NIGHTLY" ]; then
-          rustup toolchain install "$NIGHTLY" --profile minimal --component rustfmt
+        if [ "$NIGHTLY_OVERRIDE" = "skip" ]; then
+          RUSTFMT_TOOLCHAIN=""
+        elif [ -n "$NIGHTLY_OVERRIDE" ]; then
+          RUSTFMT_TOOLCHAIN="$NIGHTLY_OVERRIDE"
+        else
+          RUSTFMT_TOOLCHAIN="$(tr -d '\r\n' < rustfmt-toolchain)"
         fi
+        if [ -n "$RUSTFMT_TOOLCHAIN" ]; then
+          rustup toolchain install "$RUSTFMT_TOOLCHAIN" --profile minimal --component rustfmt
+        fi
+        echo "RUSTFMT_TOOLCHAIN=$RUSTFMT_TOOLCHAIN" >> "$GITHUB_ENV"
         rustup show
         cargo --version
 

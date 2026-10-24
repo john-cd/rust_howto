@@ -8,6 +8,9 @@
 set -x
 set -v
 
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(tr -d '\r\n' < "$repo_root/rustfmt-toolchain")}"
+
 ## Check whether Docker has failed to bind mount the development laptop's project folder to /code
 ## You may also verify that the bind mount was created correctly using `docker inspect <container_name>`. Look for the Mounts section.
 ## Bind mount failures may happen with Dev Drives under Win 11. In this case, store your code in WSL e.g. ~/linuxcode/rust_howto/
@@ -23,7 +26,7 @@ echo "-------------------------------------------"
 cd ./bk/crates
 
 echo "Format the code"
-cargo +nightly-2026-10-22 fmt --all
+cargo +"$RUSTFMT_TOOLCHAIN" fmt --all
 
 echo "Fetch the dependencies"
 cargo fetch

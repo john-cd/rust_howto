@@ -3,6 +3,8 @@
 set -eux
 set -o pipefail
 
+RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(tr -d '\r\n' < rustfmt-toolchain)}"
+
 ## @fn monitor_resources()
 ## @brief Periodically logs tmpfs and memory usage to stdout in the background.
 monitor_resources() {
@@ -58,7 +60,7 @@ cd bk/crates
 
 ## Checks the Rust code formatting
 ## Fails if not formatted properly
-cargo +nightly-2026-10-22 fmt --all --check
+cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
 
 ## Fetch the dependencies
 cargo fetch

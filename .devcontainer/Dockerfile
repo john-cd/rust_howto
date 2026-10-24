@@ -34,9 +34,15 @@ RUN apt-get update \
 RUN rustup component add clippy rustfmt
 
 ## Install nightly with rustfmt - last, since it changes often
-RUN rustup toolchain install nightly-2026-10-22 --profile minimal --component rustfmt
+ARG RUSTFMT_TOOLCHAIN
+COPY rustfmt-toolchain /usr/local/share/rustfmt-toolchain
+ENV RUSTFMT_TOOLCHAIN_FILE=/usr/local/share/rustfmt-toolchain
+RUN RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(tr -d '\r\n' < "$RUSTFMT_TOOLCHAIN_FILE")}" \
+    && printf '%s\n' "$RUSTFMT_TOOLCHAIN" > "$RUSTFMT_TOOLCHAIN_FILE" \
+    && rustup toolchain install "$RUSTFMT_TOOLCHAIN" --profile minimal --component rustfmt
+ENV RUSTFMT_TOOLCHAIN=${RUSTFMT_TOOLCHAIN}
 ## Optional: make nightly the default
-#     && rustup default nightly-2026-10-22
+#     && rustup default "$RUSTFMT_TOOLCHAIN"
 ## You must update all .github wokflows as well
 
 # ------------------------------------------------------------------------------------------------
@@ -101,7 +107,8 @@ RUN cargo fetch --locked --manifest-path /code/tools/Cargo.toml
 
 ## Build the tools in release mode
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    cargo +nightly-2026-10-22 build --bins --locked --all-features --release -Z unstable-options --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
+    RUSTFMT_TOOLCHAIN="$(tr -d '\r\n' < "$RUSTFMT_TOOLCHAIN_FILE")" \
+    && cargo +"$RUSTFMT_TOOLCHAIN" build --bins --locked --all-features --release -Z unstable-options --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
 
 # ------------------------------------------------------------------------------------------------
 

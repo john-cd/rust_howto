@@ -32,9 +32,10 @@ cargo install mdbook
 cargo install just
 cargo install mdbook-linkcheck
 cargo install --git https://github.com/john-cd/mdbook-utils --rev dedddf3699e461cd418c1a044d82aabd3fec62e0 --locked --force mdbook-utils
-# for `cargo +nightly-2026-10-22 fmt`
-rustup toolchain install nightly-2026-10-22
-rustup component add rustfmt --toolchain nightly-2026-10-22
+# for the formatter toolchain pinned in `rustfmt-toolchain`
+RUSTFMT_TOOLCHAIN="$(tr -d '\r\n' < rustfmt-toolchain)"
+rustup toolchain install "$RUSTFMT_TOOLCHAIN"
+rustup component add rustfmt --toolchain "$RUSTFMT_TOOLCHAIN"
 ```
 
 Install the pinned spell checker with `cargo install typos-cli --version 1.51.1 --locked` on Windows, Linux, or macOS.
@@ -64,8 +65,9 @@ cargo install cargo-nextest
 cargo install mdbook
 cargo install mdbook-linkcheck
 cargo install --git https://github.com/john-cd/mdbook-utils --rev dedddf3699e461cd418c1a044d82aabd3fec62e0 --locked --force mdbook-utils
-rustup toolchain install nightly-2026-10-22
-rustup component add rustfmt --toolchain nightly-2026-10-22
+$rustfmtToolchain = (Get-Content rustfmt-toolchain -Raw).Trim()
+rustup toolchain install $rustfmtToolchain
+rustup component add rustfmt --toolchain $rustfmtToolchain
 ```
 
 > Note: On Windows, you may also need the [Microsoft C++ Build Tools][msvc~website]↗{{hi:MSVC}} or the Visual Studio C++ workload for compiling some crates.

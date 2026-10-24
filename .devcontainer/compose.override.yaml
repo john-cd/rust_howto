@@ -30,6 +30,7 @@ services:
       - cargo_build_cache:/root/.cache/
       - command_history:/command_history
     environment:
+      RUSTFMT_TOOLCHAIN: ${RUSTFMT_TOOLCHAIN:-}
       XDG_CACHE_HOME: /root/.cache
       SCCACHE_DIR: /root/.cache/sccache
     ## Required for ptrace-based debugger like C++, Go, and Rust.

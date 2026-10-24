@@ -17,6 +17,7 @@ on:
       - '.cargo/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
+      - 'rustfmt-toolchain'
   pull_request:
     branches: [develop]
     paths:
@@ -30,6 +31,7 @@ on:
       - '.cargo/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
+      - 'rustfmt-toolchain'
   ## Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -94,7 +96,7 @@ jobs:
         run: cargo install --git https://github.com/john-cd/mdbook-utils --rev "$MDBOOK_UTILS_REV" --locked mdbook-utils
 
       - name: Format
-        run: cargo +nightly-2026-10-22 fmt --all --check
+        run: cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
         working-directory: bk/crates
 
       - name: Fetch
@@ -116,12 +118,12 @@ jobs:
         working-directory: bk/crates
 
       - name: Build / release the tools, incl. mdbook-scrub
-        run: cargo +nightly-2026-10-22 build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
+        run: cargo +"$RUSTFMT_TOOLCHAIN" build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
         working-directory: tools
 
       - name: Format, lint, build, and test helper workspace
         run: |
-          cargo +nightly-2026-10-22 fmt --all --check
+          cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
           cargo build --workspace --all-targets --locked --all-features
           cargo clippy --workspace --all-targets --locked --all-features -- --deny warnings
           cargo nextest run --workspace --all-targets --locked --all-features

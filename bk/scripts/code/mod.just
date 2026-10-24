@@ -4,6 +4,9 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
 root := clean(source_directory() + "/../../..")
 book_root := clean(root + "/bk")
 code_root := clean(book_root + "/crates")
+rustfmt_toolchain_default := trim(read(join(root, "rustfmt-toolchain")))
+rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
+rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 
 [no-exit-message]
 _default:
@@ -15,12 +18,12 @@ _default:
 [no-cd]
 @fmtcurrent:
     echo "Formatting $(pwd)"
-    cargo +nightly-2026-10-22 fmt
+    cargo +{{rustfmt_toolchain}} fmt
 
 # Format all packages and their local path-based dependencies
 @fmtall:
     echo "Formatting all packages and their local path-based dependencies in {{ code_root }}"
-    cd {{ quote(code_root) }}; cargo +nightly-2026-10-22 fmt --all
+    cd {{ quote(code_root) }}; cargo +{{rustfmt_toolchain}} fmt --all
 
 # Check code in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]

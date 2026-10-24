@@ -9,6 +9,9 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
 root := source_directory()
 code_root := clean(join(root, "crates"))
+rustfmt_toolchain_default := trim(read(join(root, "..", "rustfmt-toolchain")))
+rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
+rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 
 [no-exit-message]
 _default:
@@ -19,9 +22,9 @@ alias fa := fmtall
 # Format all packages and their local path-based dependencies
 @fmtall:
   echo "Formatting all packages and their local path-based dependencies in $(pwd)"
-  cd {{code_root}}; cargo +nightly-2026-10-22 fmt --all
-  cd {{code_root}}/gui_vizia; cargo +nightly-2026-10-22 fmt --all
-  cd {{code_root}}/cats/development_tools_ffi/python_extension; cargo +nightly-2026-10-22 fmt --all
+  cd {{code_root}}; cargo +{{rustfmt_toolchain}} fmt --all
+  cd {{code_root}}/gui_vizia; cargo +{{rustfmt_toolchain}} fmt --all
+  cd {{code_root}}/cats/development_tools_ffi/python_extension; cargo +{{rustfmt_toolchain}} fmt --all
 
 alias cka := checkall
 

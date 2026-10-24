@@ -54,7 +54,7 @@ jobs:
         uses: ./.github/actions/setup-rust
         with:
           toolchain: ${{ env.RUST_VERSION }}
-          nightly: ""
+          nightly: "skip"
           components: ""
           cache-workspaces: bk/crates -> ../../target
 

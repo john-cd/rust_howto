@@ -5,10 +5,15 @@
 #>
 
 Write-Host "Installing Rust components..." -ForegroundColor Cyan
+$rustfmtToolchain = if ($env:RUSTFMT_TOOLCHAIN) {
+    $env:RUSTFMT_TOOLCHAIN
+} else {
+    (Get-Content (Join-Path $PSScriptRoot "..\rustfmt-toolchain") -Raw).Trim()
+}
 rustup default stable
-rustup toolchain install nightly-2026-10-22
+rustup toolchain install $rustfmtToolchain
 rustup component add clippy
-rustup component add rustfmt --toolchain nightly-2026-10-22
+rustup component add rustfmt --toolchain $rustfmtToolchain
 
 Write-Host "Installing system tools via Winget..." -ForegroundColor Cyan
 # Install Just (Task Runner)

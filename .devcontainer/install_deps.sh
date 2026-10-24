@@ -12,6 +12,7 @@ set -a
 # shellcheck source=.env
 source "$repo_root/.devcontainer/.env"
 set +a
+RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(tr -d '\r\n' < "$repo_root/rustfmt-toolchain")}"
 
 # GTK4 and pkg-config are required for the Rust GUI examples that depend on gtk4/relm4.
 sudo apt-get update \
@@ -69,8 +70,8 @@ wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pando
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
 rustup update && rustup component add clippy rustfmt
-rustup toolchain install nightly-2026-10-22 \
-    && rustup component add rustfmt clippy --toolchain nightly-2026-10-22
+rustup toolchain install "$RUSTFMT_TOOLCHAIN" \
+    && rustup component add rustfmt clippy --toolchain "$RUSTFMT_TOOLCHAIN"
 
 ## binstall
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
