@@ -15,11 +15,11 @@ _Program verification_ is the process of formally proving the correctness of a p
 - Functional correctness: The program produces the correct output for all valid inputs.
 - [Performance][p~performance]: The program meets specific [performance][p~performance] requirements, such as execution time or memory usage.
 
-There are two main approaches to Rust program verification:
+Rust's type system and compiler reject many invalid programs, but passing compilation does not prove that a program meets every behavioral or safety property. Choose verification methods based on the property you need to check:
 
-1. Static verification: This involves analyzing the code at compile time to identify potential errors and prove the correctness of certain properties. Rust's type system and ownership model already provide a strong foundation for static verification. Additionally, tools like [`miri`][miri]↗{{hi:miri}} and [`kani`][c~kani~docs]↗{{hi:kani}} can be used to perform more advanced static analysis.
-
-2. Dynamic verification: This involves running the program with different inputs and checking its behavior against expected results. Techniques like fuzz [testing][p~testing] can be used to identify potential issues.
+- **Static checks** inspect code without running a particular input. The compiler and [`clippy`][c~clippy~docs]↗{{hi:clippy}} catch classes of type, safety, and quality problems.
+- **Execution-based checks** run selected inputs or schedules. Unit and property tests, fuzzing, and [`miri`][ex~other~miri]↗{{hi:miri}} can expose bugs on the paths they exercise. Miri interprets Rust programs and detects certain forms of undefined behavior; it does not prove that unexecuted paths are correct.
+- **Formal verification** uses a model and stated properties to reason about a program. [`kani`][c~kani~docs]↗{{hi:kani}} model-checks proof harnesses over bounded inputs and can verify assertions and some safety properties. A proof applies to the modeled harness and supported operations, not automatically to every property of the whole application.
 
 ## Verify Your Rust Code with `kani` {#code-verifiers}
 
@@ -41,21 +41,15 @@ Python version 3.7 or newer and the package installer [`pip`][pypi~pip]↗{{hi:p
 
 Install with:
 
-```sh
-cargo install --locked kani-verifier
-```
+Install the verifier with `cargo install --locked kani-verifier`.
 
 Then [download][p~download] the Kani compiler and other necessary dependencies, and place them under ~/.kani/ by default:
 
-```sh
-cargo kani setup
-```
+Then install Kani's compiler and dependencies with `cargo kani setup`.
 
 Run kani:
 
-```sh
-cargo kani [OPTIONS]
-```
+Run it with `cargo kani [OPTIONS]` from the package or workspace containing the proof harnesses. See the [Kani documentation][c~kani~docs]↗ for supported options and platform requirements.
 
 Kani works like [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} except that it will analyze "proof harnesses" instead of running test harnesses.
 
@@ -65,7 +59,7 @@ Kani works like [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} except
 
 ## Concurrent Code Verification {#concurrent-code-verification}
 
-Loom attempts to check all possible interleavings, while Shuttle chooses interleavings randomly. The former is sound (like Kani), but the latter is more scalable to large problem spaces (like property [testing][p~testing]).
+Concurrency testing tools explore schedules through a model of the program. [`loom`][c~loom~docs]↗{{hi:loom}} systematically explores executions represented by its synchronization primitives, while [`shuttle`][c~shuttle~docs]↗{{hi:shuttle}} runs concurrent tests under a controlled scheduler and can explore many schedules. Both require the test to use the tool's modeled APIs; neither proves arbitrary concurrent code correct.
 
 ### `shuttle` {#shuttle}
 
@@ -96,19 +90,9 @@ Loom attempts to check all possible interleavings, while Shuttle chooses interle
 
 ## Related Topics {#related-topics .skip}
 
-| Topic | Rust Crates |
-|---|---|
-| Static Analysis/Linting | [`clippy`][c~clippy~docs]↗{{hi:clippy}} (for catching common code errors and style issues) |
-| Property-Based Testing | [`proptest`][c~proptest~docs]↗{{hi:proptest}}, [`quickcheck`][c~quickcheck~docs]↗{{hi:quickcheck}} |
-| Unit [Testing][p~testing] | Use [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} (built-in testing framework) |
-| Integration Testing | Often uses `cargo test`. Focuses on testing interactions between modules or components. |
-| Fuzzing | [`cargo fuzz`][book~rust-fuzz]↗{{hi:cargo fuzz}}, [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}} (bindings to AFL) |
-| Code Review Tools: Not Rust-specific, but used in conjunction with Rust code. Examples: GitHub, GitLab, etc. | |
+- [Testing][p~testing], including property-based and [fuzz testing][p~fuzzing].
+- [Concurrency][p~concurrency] and model-based schedule testing.
+- Static analysis and [linting][p~formatting] with the compiler and `clippy`.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-[code_verification: expand; revise refs.incl.md](https://github.com/john-cd/rust_howto/issues/303)
-
-</div>
