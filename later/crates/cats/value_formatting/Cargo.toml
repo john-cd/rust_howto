@@ -18,7 +18,14 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+# Case conversion used by the identifier formatting example.
+heck = "0.5"
 ryu = "1.0.23"
+
+[[example]]
+name = "case_conversion"
+path = "examples/case_conversion/main.rs"
+test = true
 
 [[example]]
 name = "number_formatting"
