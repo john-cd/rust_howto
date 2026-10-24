@@ -1,9 +1,11 @@
 <!-- TODO Reviewed ??-??-2026 -->
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [List Files][ex~command-line-utilities~list-files] | [`eza`][eza~repo]↗, [`lsd`][c~lsd~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Find Files][ex~command-line-utilities~find-files] | [`fd`][c~fd-find~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Search File Contents][ex~command-line-utilities~search-file-contents] | [`ripgrep`][c~ripgrep~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [View File Contents][ex~command-line-utilities~view-file-contents] | [`bat`][c~bat~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Analyze Disk Usage][ex~command-line-utilities~analyze-disk-usage] | [`dust`][dust~repo]↗, [`dua`][dua~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Rename and Bulk Edit][ex~command-line-utilities~rename-and-bulk-edit] | [`sd`][c~sd~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
+| Task | Tool | Replaces or use for | Install |
+|------|------|---------------------|---------|
+| List files | [`eza`][eza~repo]↗ | Maintained replacement for `exa` | `cargo install eza --locked` |
+| List files | [`lsd`][c~lsd~repo]↗ | Alternative colored listing and tree view | `cargo install lsd --locked` |
+| Find files | [`fd`][c~fd-find~repo]↗ | Faster, ignore-aware alternative to `find` | `cargo install fd-find --locked` |
+| Search contents | [`ripgrep`][c~ripgrep~repo]↗ | Ignore-aware alternative to `grep` | `cargo install ripgrep --locked` |
+| View files | [`bat`][c~bat~repo]↗ | `cat` with syntax highlighting and Git markers | `cargo install bat --locked` |
+| Analyze disk usage | [`dust`][dust~repo]↗ | Tree view for `du` results | `cargo install du-dust --locked` |
+| Analyze disk usage | [`dua`][dua~repo]↗ | Interactive disk-usage explorer | `cargo install dua-cli --locked` |
+| Rename and bulk edit | [`sd`][c~sd~repo]↗ | Regular-expression replacements; pair with `rg` to select files | `cargo install sd --locked` |
