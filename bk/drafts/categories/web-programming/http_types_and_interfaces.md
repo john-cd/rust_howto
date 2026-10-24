@@ -18,6 +18,14 @@ These types describe messages; they do not open sockets, send requests, or imple
 {{#include ../../../crates/cats/web_programming/examples/http_types_and_interfaces/http.rs:example}}
 ```
 
+Use the crate's named constants for standard header names and `HeaderName` for application-defined names. Parse untrusted values into `HeaderValue` before adding them. Use `HeaderMap::append` when a header can occur more than once, and `get_all` to inspect every value in insertion order.
+
+<div class="hidden">
+
+Issue #1355 expands the sample from a basic request/response builder into header construction and interpretation. It covers typed `Accept`, `Authorization`, `Content-Type`, and `Content-Length` names, a custom name, text and numeric parsing, repeated `Set-Cookie` values, invalid-value rejection, and offline tests.
+
+</div>
+
 ## `http-body` {#http-body}
 
 [![http-body][c~http-body~docs~badge]][c~http-body~docs] [![http-body~crates.io][c~http-body~crates.io~badge]][c~http-body~crates.io] [![http-body~repo][c~http-body~repo~badge]][c~http-body~repo] [![http-body~lib.rs][c~http-body~lib.rs~badge]][c~http-body~lib.rs]{{hi:http-body}}{{hi:Http}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}

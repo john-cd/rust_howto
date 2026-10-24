@@ -14,34 +14,116 @@
 //! Implementations of the HTTP protocol are elsewhere - see e.g. `hyper` or
 //! `reqwest`.
 
-use bytes::Bytes;
+use std::str::FromStr as _;
+
+use http::HeaderMap;
+use http::HeaderName;
+use http::HeaderValue;
 use http::Method;
 use http::Request;
 use http::Response;
 use http::StatusCode;
+use http::header::ACCEPT;
+use http::header::AUTHORIZATION;
+use http::header::CONTENT_LENGTH;
 use http::header::CONTENT_TYPE;
-use http_body_util::Full;
+use http::header::SET_COOKIE;
 
-/// Builds an HTTP request and response, then inspects them.
-fn main() -> http::Result<()> {
-    // The body type is supplied by the caller.
+/// Builds a header map with standard and application-defined headers.
+///
+/// # Errors
+///
+/// Returns an error if any configured header value contains invalid bytes.
+fn build_headers() -> anyhow::Result<HeaderMap> {
+    let mut headers = HeaderMap::new();
+    headers.insert(ACCEPT, HeaderValue::from_str("application/json")?);
+    headers.insert(
+        AUTHORIZATION,
+        HeaderValue::from_str("Bearer example-token")?,
+    );
+    headers.insert(CONTENT_TYPE, HeaderValue::from_static("application/json"));
+    headers.insert(CONTENT_LENGTH, HeaderValue::from_static("5"));
+    headers.insert(
+        HeaderName::from_static("x-request-id"),
+        HeaderValue::from_str("request-42")?,
+    );
+    headers.append(SET_COOKIE, HeaderValue::from_static("session=abc"));
+    headers.append(SET_COOKIE, HeaderValue::from_static("theme=dark"));
+
+    Ok(headers)
+}
+
+/// Builds a GET request with typed standard headers and an in-memory body.
+///
+/// # Errors
+///
+/// Returns an error if a header is invalid or the request cannot be built.
+fn build_request() -> anyhow::Result<Request<&'static str>> {
     let request = Request::builder()
         .method(Method::GET)
         .uri("https://example.com/items")
-        .header("User-Agent", "Rust http crate")
-        .body(Full::new(Bytes::new()))?;
+        .headers(build_headers()?)
+        .body("hello")?;
 
-    // Full is a simple http_body::Body implementation for one payload.
+    Ok(request)
+}
+
+/// Builds an HTTP request and response, then parses and inspects their headers.
+///
+/// # Errors
+///
+/// Returns an error if a header value is invalid or a response header cannot
+/// be represented as text.
+fn main() -> anyhow::Result<()> {
+    let request = build_request()?;
+
     let response = Response::builder()
         .status(StatusCode::OK)
-        .header(CONTENT_TYPE, "text/plain; charset=utf-8")
-        .body(Full::new(Bytes::from_static(b"Hello, HTTP World!")))?;
+        .header(
+            CONTENT_TYPE,
+            HeaderValue::from_str("text/plain; charset=utf-8")?,
+        )
+        .header(SET_COOKIE, HeaderValue::from_static("response=ok"))
+        .body("Hello, HTTP World!")?;
 
     println!("Request URI: {}", request.uri());
     println!("Response Status: {}", response.status());
     println!(
-        "Response Content-Type: {:?}",
-        response.headers().get(CONTENT_TYPE)
+        "Request Content-Type: {}",
+        request
+            .headers()
+            .get(CONTENT_TYPE)
+            .ok_or_else(|| anyhow::anyhow!(
+                "request has no Content-Type header"
+            ))?
+            .to_str()?
+    );
+    println!("Request Accept: {:?}", request.headers().get(ACCEPT));
+    println!(
+        "Request Content-Length: {}",
+        request
+            .headers()
+            .get(CONTENT_LENGTH)
+            .ok_or_else(|| anyhow::anyhow!(
+                "request has no Content-Length header"
+            ))?
+            .to_str()?
+            .parse::<usize>()?
+    );
+    println!("Request Authorization: [redacted]");
+    println!("Request ID: {:?}", request.headers().get("x-request-id"));
+    for cookie in request.headers().get_all(SET_COOKIE) {
+        println!("Request Set-Cookie: {}", cookie.to_str()?);
+    }
+    println!(
+        "Response Content-Type: {}",
+        response
+            .headers()
+            .get(CONTENT_TYPE)
+            .ok_or_else(|| anyhow::anyhow!(
+                "response has no Content-Type header"
+            ))?
+            .to_str()?
     );
 
     Ok(())
@@ -49,18 +131,85 @@ fn main() -> http::Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main().expect("the static HTTP request and response are valid");
+/// Runs the HTTP types and interfaces example.
+///
+/// # Errors
+///
+/// Returns an error if header parsing or message construction fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Preserves appended values for a repeated header in insertion order.
     #[test]
-    fn builds_request_and_response_messages() {
-        main().expect("the static HTTP request and response are valid");
+    fn appends_and_reads_repeated_header_values_in_order() -> anyhow::Result<()>
+    {
+        let headers = build_headers()?;
+        let cookies = headers
+            .get_all(SET_COOKIE)
+            .iter()
+            .map(HeaderValue::to_str)
+            .collect::<Result<Vec<_>, _>>()?;
+
+        assert_eq!(cookies, ["session=abc", "theme=dark"]);
+
+        Ok(())
+    }
+
+    /// Rejects header values that contain invalid bytes.
+    #[test]
+    fn rejects_invalid_header_values() {
+        assert!(HeaderValue::from_str("invalid\nvalue").is_err());
+    }
+
+    /// Builds a request and response with typed and parsed header values.
+    #[test]
+    fn builds_request_and_response_messages() -> anyhow::Result<()> {
+        let request = build_request()?;
+        let headers = request.headers();
+        assert_eq!(
+            headers.get(ACCEPT).map(HeaderValue::to_str).transpose()?,
+            Some("application/json")
+        );
+        assert_eq!(
+            headers
+                .get(AUTHORIZATION)
+                .map(HeaderValue::to_str)
+                .transpose()?,
+            Some("Bearer example-token")
+        );
+        assert_eq!(
+            headers
+                .get(CONTENT_TYPE)
+                .map(HeaderValue::to_str)
+                .transpose()?,
+            Some("application/json")
+        );
+        assert_eq!(
+            headers
+                .get(CONTENT_LENGTH)
+                .ok_or_else(|| anyhow::anyhow!(
+                    "request has no Content-Length"
+                ))?
+                .to_str()?
+                .parse::<usize>()?,
+            5
+        );
+        assert_eq!(request.method(), Method::GET);
+        assert_eq!(request.uri().path(), "/items");
+        assert_eq!(
+            request
+                .headers()
+                .get(CONTENT_TYPE)
+                .map(HeaderValue::to_str)
+                .transpose()?,
+            Some("application/json")
+        );
+
+        main()
     }
 }
-// [expand; HTTP header interpretation and generation.  LATER](https://github.com/john-cd/rust_howto/issues/1355)
