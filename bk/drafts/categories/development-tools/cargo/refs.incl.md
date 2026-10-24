@@ -9,9 +9,11 @@
 [ex~cargo~crates-io]: crate_registries.md#crates-io
 [ex~cargo~package-layout]: package_layout.md#package-layout
 [p~building]: ../../development-tools_cargo-plugins/building.md
+[p~cargo-plugins]: ../../development-tools_cargo-plugins/index.md
 [p~code-building]: ../compilation/building.md#build-code
 [p~cargo]: cargo.md
 [p~publication-to-crates-io]: ../../../../src/appendices/contributing/publication_to_crates.io.md
+[p~versioning]: ../versioning/versioning.md
 [p~main]: ../../../language/entrypoint.md
 [cloudsmith~cargo]: https://docs.cloudsmith.com/formats/cargo-registry
 [jfrog~cargo]: https://docs.jfrog.com/artifactory/docs/cargo-repositories
