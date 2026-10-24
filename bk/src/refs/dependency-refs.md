@@ -425,15 +425,6 @@
 [concat_string-github]: https://github.com/FaultyRAM/concat-string
 
 
-[concat_strs]: https://docs.rs/concat_strs
-
-
-[concat_strs-crate]: https://crates.io/crates/concat_strs
-
-
-[concat_strs-github]: https://github.com/9999years/concat_strs
-
-
 [config]: https://docs.rs/config
 
 
@@ -468,6 +459,15 @@
 
 
 [console-github]: https://github.com/console-rs/console (*)
+
+
+[constcat]: https://docs.rs/constcat
+
+
+[constcat-crate]: https://crates.io/crates/constcat
+
+
+[constcat-github]: https://github.com/rossmacarthur/constcat
 
 
 [crates_io_api]: https://docs.rs/crates_io_api
@@ -890,7 +890,7 @@
 [futures_util-crate]: https://crates.io/crates/futures_util
 
 
-[futures_util-github]: https://github.com/rust-lang/futures-rs
+[futures_util-github]: https://github.com/rust-lang/futures-rs (*)
 
 
 [fuzzy_matcher]: https://docs.rs/fuzzy_matcher
@@ -1314,6 +1314,15 @@
 
 
 [mime-github]: https://github.com/hyperium/mime
+
+
+[mime_guess]: https://docs.rs/mime_guess
+
+
+[mime_guess-crate]: https://crates.io/crates/mime_guess
+
+
+[mime_guess-github]: https://github.com/abonander/mime_guess
 
 
 [mio]: https://docs.rs/mio
@@ -1917,15 +1926,6 @@
 
 
 [seize-github]: https://github.com/ibraheemdev/seize
-
-
-[select]: https://docs.rs/select
-
-
-[select-crate]: https://crates.io/crates/select
-
-
-[select-github]: https://github.com/utkarshkukreti/select.rs
 
 
 [semver]: https://docs.rs/semver
