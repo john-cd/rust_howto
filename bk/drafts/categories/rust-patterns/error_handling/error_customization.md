@@ -4,7 +4,14 @@
 
 {{#include error_customization.incl.md}}
 
-Use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} if you don't care what error type your functions return, you just want it to be easy. This is common in application code. Use [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} if you are a library that wants to design your own dedicated error type(s) so that on failures the caller gets exactly the information that you choose.
+Rust provides [`Result`][c~std::result::Result~docs]↗{{hi:Result}} and the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:Error}} trait. Choose a representation based on who needs to inspect the failure and how the application presents it.
+
+- **Library API:** define a specific public error enum with [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} so callers can match variants and act on them.
+- **Application flow:** use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} to propagate different causes and add context where operations fail.
+- **Application reports:** use [`eyre`][c~eyre~docs]↗{{hi:eyre}} for a flexible report type with a customizable handler; [`color-eyre`][c~color-eyre~docs]↗{{hi:color-eyre}} adds formatted reports and panic hooks.
+- **Source diagnostics:** use [`miette`][c~miette~docs]↗{{hi:miette}} when diagnostics need codes, help, or highlighted source snippets.
+
+These approaches can be combined: a library can expose a `thiserror` type while an application adds context or formats it as a report. Avoid exposing an application report type as a library's public error contract when callers need stable, matchable failure cases.
 
 ## Simplify Error Handling and Attach Context to Errors with `anyhow` {#anyhow}
 
@@ -36,14 +43,7 @@ You can use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} to:
 {{#include ../../../../crates/cats/rust_patterns/examples/error/thiserror.rs:example}}
 ```
 
-The [`#[error(...)]`][c~thiserror~docs]↗ messages support a shorthand for interpolating fields from the error.
-
-```rust,editable,compile_fail,noplayground
-#[error("{var}")]   // write!("{}", self.var)
-#[error("{0}")]     // write!("{}", self.0)
-#[error("{var:?}")] // write!("{:?}", self.var)
-#[error("{0:?}")]   // write!("{:?}", self.0)
-```
+Use `#[error("...")]` to define a `Display` message. Named fields can be interpolated by name, tuple fields by position, and `:?` requests debug formatting. The included examples show field interpolation and transparent source wrapping.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/thiserror2.rs:example}}
@@ -63,9 +63,7 @@ The [`#[error(...)]`][c~thiserror~docs]↗ messages support a shorthand for inte
 
 [![color-eyre][c~color-eyre~docs~badge]][c~color-eyre~docs] [![color-eyre~crates.io][c~color-eyre~crates.io~badge]][c~color-eyre~crates.io] [![color-eyre~repo][c~color-eyre~repo~badge]][c~color-eyre~repo] [![color-eyre~lib.rs][c~color-eyre~lib.rs~badge]][c~color-eyre~lib.rs]{{hi:color-eyre}}
 
-[`color-eyre`][c~color-eyre~docs]↗{{hi:color-eyre}} is an error report handler for panics and `eyre::Reports` for colorful, consistent, and well formatted error reports for all kinds of errors.
-
-It is a fork of [`anyhow`][c~anyhow::Result~docs]↗{{hi:anyhow}} [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} that gives you more control over the format of the generated error messages. It is recommended if you intend to present error messages to end users. Otherwise [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} is simpler.
+[`color-eyre`][c~color-eyre~docs]↗{{hi:color-eyre}} installs panic and report hooks for [`eyre`][c~eyre~docs]↗{{hi:eyre}}. It captures diagnostic context and formats error chains for terminal applications. Choose it when the application owns top-level error presentation; use `anyhow` when contextual propagation is enough and a custom report handler is not needed.
 
 ```rust,editable
 {{#include ../../../../crates/cats/rust_patterns/examples/error/color_eyre.rs:example}}
@@ -75,15 +73,9 @@ It is a fork of [`anyhow`][c~anyhow::Result~docs]↗{{hi:anyhow}} [`anyhow`][c~a
 
 [![eyre][c~eyre~docs~badge]][c~eyre~docs]{{hi:eyre}}
 
-Do not use [Error Chain][c~error-chain~docs]↗{{hi:error-chain}}, which is deprecated.
+- [Error handling basics][ex~error_handling~result] and the [`Result`][c~std::result::Result~docs]↗{{hi:Result}} type.
+- [Derive macros][p~macros] used by `thiserror` and `miette`.
+- [Error Chain][c~error-chain~docs]↗{{hi:error-chain}} is deprecated; prefer maintained crates such as those described above.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-[error_customization: write / organize](https://github.com/john-cd/rust_howto/issues/463)
-color-eyre is archived -> eyre.
-
-- [eyre-rs][c~eyre~repo]↗.
-
-</div>
