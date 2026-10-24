@@ -62,15 +62,8 @@ impl<'de> Deserialize<'de> for HexColor {
     }
 }
 
-/// Reads colors as hex triplets and writes them as RGB values.
-fn main() -> Result<()> {
-    let data = "color_name,color
-red,#ff0000
-green,#00ff00
-blue,#0000FF
-periwinkle,#ccccff
-magenta,#ff00ff"
-        .to_owned();
+/// Converts CSV rows containing hex colors into rows containing RGB channels.
+fn transform_csv(data: &str) -> Result<String> {
     let mut out = csv::Writer::from_writer(vec![]);
     let mut reader = csv::Reader::from_reader(data.as_bytes());
     // Deserialize as `Row`, using the implementation above.
@@ -86,8 +79,18 @@ magenta,#ff00ff"
             res.color.blue,
         ))?;
     }
-    let written = String::from_utf8(out.into_inner()?)?;
-    assert_eq!(Some("magenta,255,0,255"), written.lines().last());
+    Ok(String::from_utf8(out.into_inner()?)?)
+}
+
+/// Transforms and prints the inline color CSV data.
+fn main() -> Result<()> {
+    let data = "color_name,color
+red,#ff0000
+green,#00ff00
+blue,#0000FF
+periwinkle,#ccccff
+magenta,#ff00ff";
+    let written = transform_csv(data)?;
     println!("{written}");
     Ok(())
 }
@@ -103,9 +106,16 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies each source hex color is transformed into RGB channel columns.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn converts_hex_colors_to_rgb_columns() -> anyhow::Result<()> {
+        let written = transform_csv(
+            "color_name,color\nred,#ff0000\ngreen,#00ff00\nblue,#0000FF\nperiwinkle,#ccccff\nmagenta,#ff00ff",
+        )?;
+        assert_eq!(
+            written,
+            "red,255,0,0\ngreen,0,255,0\nblue,0,0,255\nperiwinkle,204,204,255\nmagenta,255,0,255\n"
+        );
         Ok(())
     }
 }

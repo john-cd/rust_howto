@@ -11,7 +11,7 @@ use serde::Deserialize;
 ///
 /// The `id` field uses a custom deserialization function `csv::invalid_option`
 /// to handle cases where the ID might not be a valid u64.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, PartialEq)]
 struct Record {
     /// The name.
     name: String,
@@ -22,17 +22,21 @@ struct Record {
     id: Option<u64>,
 }
 
-/// The main function that reads and deserializes CSV data.
+/// Deserializes CSV text while treating invalid `id` values as absent.
+fn read_records(data: &str) -> Result<Vec<Record>, Error> {
+    csv::Reader::from_reader(data.as_bytes())
+        .deserialize()
+        .collect()
+}
+
+/// Reads and prints CSV records with optional identifiers.
 fn main() -> Result<(), Error> {
     let data = "name,place,id
 mark,sydney,46.5
 ashley,zurich,92
 akshat,delhi,37
 alisha,colombo,xyz";
-
-    let mut rdr = csv::Reader::from_reader(data.as_bytes());
-    for result in rdr.deserialize() {
-        let record: Record = result?;
+    for record in read_records(data)? {
         println!("{record:?}");
     }
 
@@ -50,9 +54,16 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Verifies invalid numeric fields become `None` and valid fields survive.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn maps_invalid_numeric_fields_to_none() -> anyhow::Result<()> {
+        let records = read_records(
+            "name,place,id\nmark,sydney,46.5\nashley,zurich,92\nakshat,delhi,37\nalisha,colombo,xyz",
+        )?;
+        assert_eq!(records.len(), 4);
+        assert_eq!(records[0].id, None);
+        assert_eq!(records[1].id, Some(92));
+        assert_eq!(records[3].id, None);
         Ok(())
     }
 }

@@ -5,12 +5,13 @@
 //! This example shows how to serialize data to a CSV file.
 
 use std::io;
+use std::io::Write as _;
 
 use anyhow::Result;
 
-/// Writes records to the standard output as CSV.
-fn main() -> Result<()> {
-    let mut wtr = csv::Writer::from_writer(io::stdout());
+/// Serializes a header and records into CSV bytes.
+fn serialize_records() -> Result<Vec<u8>> {
+    let mut wtr = csv::Writer::from_writer(Vec::new());
 
     wtr.write_record(["Name", "Place", "ID"])?;
 
@@ -19,6 +20,12 @@ fn main() -> Result<()> {
     wtr.serialize(("Akshat", "Delhi", 11))?;
 
     wtr.flush()?;
+    Ok(wtr.into_inner()?)
+}
+
+/// Writes the serialized records to standard output.
+fn main() -> Result<()> {
+    io::stdout().write_all(&serialize_records()?)?;
     Ok(())
 }
 
@@ -33,9 +40,14 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies the serialized header and tuple fields are written in order.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn serializes_tuple_records_and_header() -> anyhow::Result<()> {
+        let output = String::from_utf8(serialize_records()?)?;
+        assert_eq!(
+            output,
+            "Name,Place,ID\nMark,Sydney,87\nAshley,Dublin,32\nAkshat,Delhi,11\n"
+        );
         Ok(())
     }
 }

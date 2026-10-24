@@ -9,7 +9,7 @@ use csv::ReaderBuilder;
 use serde::Deserialize;
 
 /// Represents a record to import.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, PartialEq)]
 struct Record {
     /// The name.
     name: String,
@@ -20,21 +20,19 @@ struct Record {
     id: Option<u64>,
 }
 
-/// Reads tab-separated data and prints each record.
-fn main() -> Result<(), Error> {
-    // Tab-separated data.
-    let tab_separated_data = "name\tplace\tid
-  Mark\tMelbourne\t46
-  Ashley\tZurich\t92";
-
-    // Create a CSV reader with a tab delimiter.
+/// Parses tab-separated rows into typed records.
+fn read_records(data: &str) -> Result<Vec<Record>, Error> {
     let mut reader = ReaderBuilder::new()
         .delimiter(b'\t')
-        .from_reader(tab_separated_data.as_bytes());
+        .from_reader(data.as_bytes());
+    reader.deserialize().collect()
+}
 
-    // Iterate over the records, deserializing each into a `Record` struct.
-    for result in reader.deserialize::<Record>() {
-        println!("{:?}", result?);
+/// Reads tab-separated data and prints each record.
+fn main() -> Result<(), Error> {
+    let data = "name\tplace\tid\nMark\tMelbourne\t46\nAshley\tZurich\t92";
+    for record in read_records(data)? {
+        println!("{record:?}");
     }
 
     Ok(())
@@ -51,9 +49,27 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Verifies the configured tab delimiter separates fields into records.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn parses_tab_delimited_records() -> anyhow::Result<()> {
+        let records = read_records(
+            "name\tplace\tid\nMark\tMelbourne\t46\nAshley\tZurich\t92",
+        )?;
+        assert_eq!(
+            records,
+            vec![
+                Record {
+                    name: "Mark".to_owned(),
+                    place: "Melbourne".to_owned(),
+                    id: Some(46),
+                },
+                Record {
+                    name: "Ashley".to_owned(),
+                    place: "Zurich".to_owned(),
+                    id: Some(92),
+                },
+            ]
+        );
         Ok(())
     }
 }

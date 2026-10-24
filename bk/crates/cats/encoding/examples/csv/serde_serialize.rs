@@ -5,6 +5,7 @@
 //! Demonstrates serializing structs to CSV using `serde`.
 
 use std::io;
+use std::io::Write as _;
 
 use anyhow::Result;
 use serde::Serialize;
@@ -20,10 +21,9 @@ struct Record<'a> {
     id: u64,
 }
 
-/// The main function that serializes `Record` structs to CSV and writes to
-/// standard output.
-fn main() -> Result<()> {
-    let mut wtr = csv::Writer::from_writer(io::stdout());
+/// Serializes sample records into CSV bytes with the header inferred by Serde.
+fn serialize_records() -> Result<Vec<u8>> {
+    let mut wtr = csv::Writer::from_writer(Vec::new());
 
     let rec1 = Record {
         name: "Mark",
@@ -46,7 +46,12 @@ fn main() -> Result<()> {
     wtr.serialize(rec3)?;
 
     wtr.flush()?;
+    Ok(wtr.into_inner()?)
+}
 
+/// Writes the serialized records to standard output.
+fn main() -> Result<()> {
+    io::stdout().write_all(&serialize_records()?)?;
     Ok(())
 }
 
@@ -61,9 +66,14 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies Serde writes struct field names and values as CSV columns.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn serializes_struct_fields_as_csv_columns() -> anyhow::Result<()> {
+        let output = String::from_utf8(serialize_records()?)?;
+        assert_eq!(
+            output,
+            "name,place,id\nMark,Melbourne,56\nAshley,Sydney,64\nAkshat,Delhi,98\n"
+        );
         Ok(())
     }
 }

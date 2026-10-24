@@ -87,11 +87,9 @@ See [`csv::Reader::deserialize`][c~csv::Reader::deserialize~docs]↗{{hi:csv::Re
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Serde][c~serde~docs]↗{{hi:serde}} for mapping CSV fields to typed Rust data.
+- [Polars][c~polars~docs]↗{{hi:polars}} for DataFrame-based CSV ingestion and analytical transformations.
+- [Encoding index][p~encoding] for text, binary, and format-specific serialization guidance.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/928)
-</div>
