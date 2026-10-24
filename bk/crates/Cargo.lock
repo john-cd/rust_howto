@@ -2981,28 +2981,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7439becb5fafc780b6f4de382b1a7a3e70234afe783854a4702ee8adbb838609"
 
 [[package]]
-name = "concat_strs"
-version = "1.0.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3bb1a9cf8cf255f7f450a2168fda9e80c4e01bdcdcdbc427d303c3ee39d446de"
-dependencies = [
- "concat_strs_impl",
- "proc-macro-hack",
-]
-
-[[package]]
-name = "concat_strs_impl"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce7b7a66f93b3d000724aa9daf51c710518f86afea90b9696f2bd26d955e9271"
-dependencies = [
- "proc-macro-hack",
- "proc-macro2 1.0.107",
- "quote 1.0.47",
- "syn 1.0.109",
-]
-
-[[package]]
 name = "concurrency"
 version = "0.1.2"
 dependencies = [
@@ -3227,6 +3205,12 @@ checksum = "9eb6feb175df65d0a3ccd3e73484e940d0ac664e8034f0519fd49a93db3071d9"
 dependencies = [
  "rustversion",
 ]
+
+[[package]]
+name = "constcat"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "136d3e02915a2cea4d74caa8681e2d44b1c3254bdbf17d11d41d587ff858832c"
 
 [[package]]
 name = "convert_case"
@@ -12181,12 +12165,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "proc-macro-hack"
-version = "0.5.20+deprecated"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc375e1527247fe1a97d8b7156678dfe7c1af2fc075c9a4db3690ecd2a148068"
-
-[[package]]
 name = "proc-macro-utils"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -17373,8 +17351,8 @@ dependencies = [
  "bstr",
  "clap",
  "concat-string",
- "concat_strs",
  "console",
+ "constcat",
  "diff",
  "fancy-regex 0.18.0",
  "fuzzy-matcher",

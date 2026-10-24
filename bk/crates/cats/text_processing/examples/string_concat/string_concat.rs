@@ -32,6 +32,17 @@ fn concatenate_with_push_str() {
     println!("{a}");
 }
 
+/// Concatenates strings after reserving their known combined byte length.
+fn concatenate_with_capacity() {
+    let parts = ["hello", " ", "world"];
+    let capacity = parts.iter().map(|part| part.len()).sum();
+    let mut result = String::with_capacity(capacity);
+    for part in parts {
+        result.push_str(part);
+    }
+    println!("{result}");
+}
+
 /// Concatenates with `join`.
 fn concatenate_with_join() {
     let words = ["hello", "world"];
@@ -114,7 +125,8 @@ fn concatenate_with_write_macro() {
     let part1 = "hello";
     let part2 = " world";
     let mut result = String::new();
-    write!(&mut result, "{part1} {part2}").unwrap();
+    write!(&mut result, "{part1} {part2}")
+        .expect("writing formatted text to a String cannot fail");
     println!("{result}");
 }
 
@@ -131,6 +143,7 @@ fn main() {
     concatenate_with_plus();
     concatenate_with_format();
     concatenate_with_push_str();
+    concatenate_with_capacity();
     concatenate_with_join();
     concatenate_with_concat_macro();
     concatenate_with_concat();
