@@ -7,7 +7,10 @@
 
 use geo::Area as _;
 use geo::Centroid as _;
+use geo::Distance as _;
+use geo::Haversine;
 use geo::LineString;
+use geo::Point;
 use geo::Polygon;
 
 /// Creates a polygon, computes its area and finds its centroid.
@@ -28,6 +31,11 @@ fn main() {
 
     println!("Polygon area = {area:.2}");
     println!("Centroid = ({:.2}, {:.2})", centroid.x(), centroid.y());
+    let london = Point::new(-0.1278, 51.5074);
+    let new_york = Point::new(-74.0060, 40.7128);
+    let distance_km: f64 = Haversine.distance(london, new_york) / 1_000.0;
+    assert!((distance_km - 5_570.0).abs() < 30.0);
+    println!("London to New York = {distance_km:.0} km");
 }
 // ANCHOR_END: example
 
