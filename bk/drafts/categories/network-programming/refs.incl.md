@@ -5,6 +5,9 @@
 [ex~network-programming~perform-asynchronous-io-operations-on-storage-devices]: server.md#perform-asynchronous-io-operations-on-storage-devices
 [ex~network-programming~pingora]: reverse_proxy.md#pingora
 [ex~network-programming~rathole]: reverse_proxy.md#rathole
+[c~email_address~crates.io]: https://crates.io/crates/email_address
+[c~fast_chemail~crates.io]: https://crates.io/crates/fast_chemail
+[c~ipnet~docs]: https://docs.rs/ipnet
 [p~asynchronous]: ../asynchronous/index.md
 [p~linux]: # "../os_linux-apis/linux.md"
 [p~requests]: ../web-programming_http-client/requests.md
