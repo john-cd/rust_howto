@@ -10051,6 +10051,7 @@ dependencies = [
  "anyhow",
  "axum 0.8.9",
  "clap",
+ "futures-lite 2.6.1",
  "glommio",
  "ngrok",
  "pingora",

@@ -38,7 +38,7 @@ In this example, the port{{hi:Port}} is displayed on the console, and the progra
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
 
-Use [`glommio`][c~glommio~docs]↗{{hi:glommio}} for {{i:io_uring support}}. Still somewhat experimental but rapidly maturing.
+Use [`glommio`][c~glommio~docs]↗{{hi:glommio}} for Linux `io_uring` networking. This example binds to `127.0.0.1:8080`, accepts connections on a local executor, and returns a fixed HTTP response. Glommio requires a Linux kernel with `io_uring` support (5.8 or newer is recommended); the example is not available on other operating systems. The current Glommio dependency also includes a transitive security advisory, so keep this sample isolated from production services until that dependency is fixed.
 
 ```rust,editable
 {{#include ../../../crates/cats/network_programming/examples/server/glommio.rs:example}}
@@ -54,5 +54,5 @@ Use [`glommio`][c~glommio~docs]↗{{hi:glommio}} for {{i:io_uring support}}. Sti
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[server: write; add cross-links: async, web, `http` server](https://github.com/john-cd/rust_howto/issues/425)
+  [server: write; add cross-links: async, web, `http` server](https://github.com/john-cd/rust_howto/issues/425)
 </div>

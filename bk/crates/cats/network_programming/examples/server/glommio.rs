@@ -2,127 +2,93 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates the usage of the `glommio` library for
-//! asynchronous I/O operations in Rust.
+//! This example serves a small HTTP response with Glommio's Linux `io_uring`
+//! runtime.
 //!
 //! Security: this Glommio release transitively uses `owned-alloc`, which has
 //! no fix for RUSTSEC-2026-0291. Its double-free requires a panicking `Drop`
 //! during `OwnedAlloc::drop_in_place`; this isolated Linux example is kept for
 //! education and must not be copied into production services.
 //!
-//! `glommio` is a library providing a safe Rust interface for asynchronous,
-//! thread-local I/O, based on the Linux `io_uring` interface plus Rust's async
-//! support. `glommio` is therefore Linux-only, with a kernel version 5.8 or
-//! newer recommended.
+//! Glommio is a thread-per-core asynchronous runtime based on Linux `io_uring`.
+//! It requires a Linux kernel with `io_uring` support (5.8 or newer
+//! recommended).
 
 #![cfg(target_os = "linux")]
 
-use std::fs::File;
-use std::io::Write as _;
-
-// use glommio::prelude::*;
-use glommio::Latency;
+use futures_lite::io::AsyncReadExt as _;
+use futures_lite::io::AsyncWriteExt as _;
 use glommio::LocalExecutorBuilder;
-use glommio::Placement;
-use glommio::Shares;
-// use glommio::Task;
-use glommio::executor;
+use glommio::net::TcpListener;
+use glommio::net::TcpStream;
 
-/// The `main` function demonstrates the basic usage of `glommio` for file I/O
-/// and task scheduling. It creates a file, writes data to it, and then
-/// demonstrates how to use task queues for cooperative multitasking.
-fn main() {
-    // Spawn a new LocalExecutor in a new thread with a given task.
-    LocalExecutorBuilder::default()
-        .spawn(|| async move {
-            // Create a new file or open an existing one:
-            let mut file = File::create("temp/example3.txt")
-                .expect("Failed to create file");
+/// Handles one HTTP request and writes a small plain-text response.
+async fn handle_connection(mut stream: TcpStream) -> anyhow::Result<()> {
+    let mut request = [0_u8; 4096];
+    let bytes_read = stream.read(&mut request).await?;
+    if bytes_read == 0 {
+        return Ok(());
+    }
 
-            // Write some data to the file:
-            file.write_all(b"Hello, Glommio!")
-                .expect("Failed to write to file");
-        })
-        .expect("Failed to spawn local executor");
-
-    // Although pinned threads are not required for `glommio`,
-    // by creating N executors and binding each to a specific CPU,
-    // one can use this crate to implement a cooperative thread-per-core system,
-    // where context switches essentially never happen,
-    // allowing much higher efficiency.
-    // The following will now never leave CPU 0.
-    LocalExecutorBuilder::new(Placement::Fixed(0))
-        .spawn(|| async move {
-            // For a thread-per-core system to work well, it is paramount
-            // that some form of scheduling can happen within the thread.
-            // Traditional applications use many threads to divide
-            // the many aspects of its workload and rely on the
-            // operating system and runtime to schedule these threads fairly
-            // and switch between these as necessary.
-            // For a thread-per-core system, each thread must handle its
-            // own scheduling at the application level. This example
-            // creates two task queues: tq1 has 2 shares, tq2 has 1 share.
-            // This means that if both want to use the CPU to its maximum,
-            // tq1 will have 2/3 of the CPU time (2 / (1 + 2)) and tq2 will
-            // have 1/3 of the CPU time. Those shares are dynamic and can be
-            // changed at any time.
-            let tq1 = executor().create_task_queue(
-                Shares::Static(2),
-                Latency::NotImportant,
-                "test1",
-            );
-            let tq2 = executor().create_task_queue(
-                Shares::Static(1),
-                Latency::NotImportant,
-                "test2",
-            );
-            let t1 = glommio::spawn_local_into(
-                async move {
-                    // Your code here.
-                },
-                tq1,
-            )
-            .unwrap();
-            let t2 = glommio::spawn_local_into(
-                async move {
-                    // Your code here.
-                },
-                tq2,
-            )
-            .unwrap();
-
-            t1.await;
-            t2.await;
-        })
-        .unwrap();
-    println!("glommio example finished");
+    stream.write_all(http_response().as_bytes()).await?;
+    stream.flush().await?;
+    Ok(())
 }
 
-// Example adapted from <https://docs.rs/glommio/latest/glommio/>
+/// Formats the HTTP response returned by the example server.
+fn http_response() -> String {
+    let body = "Hello from Glommio!\n";
+    format!(
+        "HTTP/1.1 200 OK\r\nContent-Type: text/plain; charset=utf-8\r\nContent-Length: {}\r\nConnection: close\r\n\r\n{body}",
+        body.len()
+    )
+}
+
+/// Accepts connections and dispatches each request on the local executor.
+async fn serve() -> anyhow::Result<()> {
+    let listener = TcpListener::bind("127.0.0.1:8080")?;
+    println!("Glommio server listening on http://127.0.0.1:8080");
+
+    loop {
+        let stream = listener.accept().await?;
+        glommio::spawn_local(async move {
+            if let Err(error) = handle_connection(stream).await {
+                eprintln!("failed to serve HTTP request: {error:#}");
+            }
+        })
+        .detach();
+    }
+}
+
+/// Starts the Glommio executor and serves HTTP requests until the process
+/// stops.
+fn main() -> anyhow::Result<()> {
+    let executor = LocalExecutorBuilder::default()
+        .spawn(serve)
+        .map_err(|()| anyhow::anyhow!("failed to start Glommio executor"))?;
+    executor
+        .join()
+        .map_err(|_| anyhow::anyhow!("Glommio executor thread panicked"))??;
+    Ok(())
+}
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the Glommio HTTP server.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the glommio example's main path succeeds.
+    /// Verifies the response includes a valid length and a close directive.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        use std::fs;
-        if !fs::exists("temp")? {
-            fs::create_dir("temp")?;
-        }
-        main();
-        Ok(())
+    fn response_has_content_length_and_closes_connection() {
+        let response = http_response();
+
+        assert!(response.starts_with("HTTP/1.1 200 OK\r\n"));
+        assert!(response.contains("Content-Length: 20\r\n"));
+        assert!(response.ends_with("\r\n\r\nHello from Glommio!\n"));
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/810)
-// review <https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a>
-// <https://www.datadoghq.com/blog/engineering/introducing-glommio/>
-// <https://docs.rs/glommio/latest/glommio/>
-// <https://github.com/DataDog/glommio>

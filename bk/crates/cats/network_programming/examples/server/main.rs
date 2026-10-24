@@ -37,7 +37,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         match command {
             #[cfg(target_os = "linux")]
             Commands::Glommio => {
-                glommio::run();
+                glommio::run()?;
             }
             Commands::ListenUnused => {
                 listen_unused::run()?;
