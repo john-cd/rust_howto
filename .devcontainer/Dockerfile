@@ -17,9 +17,9 @@
 # ------------------------------------------------------------------------------------------------
 # The base Rust image stage, used as the starting point for both the tool builders and the final images.
 
-# The default value is overriden by the build arg passed by compose.yaml,
-# itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
-ARG RUST_IMAGE_LABEL=invalid
+# The build arg is passed by compose.yaml and set from the RUST_IMAGE_LABEL
+# variable in `.devcontainer/.env`.
+ARG RUST_IMAGE_LABEL
 
 FROM rust:${RUST_IMAGE_LABEL} AS rust-core
 ## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
@@ -50,16 +50,16 @@ ENV RUSTFMT_TOOLCHAIN=${RUSTFMT_TOOLCHAIN}
 
 FROM rust-core AS tool-builder
 
-# The default value is overriden by the build arg passed by compose.yaml,
-# itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
-ARG MDBOOK_VERSION=invalid
-ARG MDBOOK_LINKCHECK_VERSION=invalid
-ARG MDBOOK_INDEXING_VERSION=invalid
-ARG MDBOOK_PANDOC_VERSION=invalid
-ARG MDBOOK_UTILS_REV=invalid
-ARG CARGO_NEXTEST_VERSION=invalid
-ARG JUST_VERSION=invalid
-ARG TECTONIC_VERSION=invalid
+# Tool versions are passed as build args by compose.yaml and set in
+# `.devcontainer/.env`.
+ARG MDBOOK_VERSION
+ARG MDBOOK_LINKCHECK_VERSION
+ARG MDBOOK_INDEXING_VERSION
+ARG MDBOOK_PANDOC_VERSION
+ARG MDBOOK_UTILS_REV
+ARG CARGO_NEXTEST_VERSION
+ARG JUST_VERSION
+ARG TECTONIC_VERSION
 
 ## Install cargo binstall (binary install)
 ## Install nextest
@@ -117,7 +117,7 @@ FROM rust-core AS base
 
 SHELL ["bash", "-c"]
 
-ARG MDBOOK_UTILS_REV=invalid
+ARG MDBOOK_UTILS_REV
 ENV MDBOOK_UTILS_REV=${MDBOOK_UTILS_REV}
 ENV CARGO_TARGET_DIR=/code/target/ \
     CARGO_BUILD_BUILD_DIR=/code/build/
@@ -201,7 +201,7 @@ ENV LANG=en_US.UTF-8 \
 ## Install pandoc from the official GitHub binary release.
 ## Using a direct binary download instead of `apt install pandoc` avoids pulling in large Haskell dependencies.
 ## Pandoc is required by the `mdbook-pandoc` backend to generate the PDF version of the book.
-ARG PANDOC_VERSION=invalid
+ARG PANDOC_VERSION
 RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" \
     -O /tmp/pandoc.deb \
     && dpkg -i /tmp/pandoc.deb \
