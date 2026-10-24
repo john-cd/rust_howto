@@ -1892,6 +1892,15 @@
 [scopeguard-github]: https://github.com/bluss/scopeguard
 
 
+[scraper]: https://docs.rs/scraper
+
+
+[scraper-crate]: https://crates.io/crates/scraper
+
+
+[scraper-github]: https://github.com/rust-scraper/scraper
+
+
 [scrypt]: https://docs.rs/scrypt
 
 
@@ -1955,13 +1964,13 @@
 [serde_json-github]: https://github.com/serde-rs/json (*)
 
 
-[serde_norway]: https://docs.rs/serde_norway
+[serde_saphyr]: https://docs.rs/serde_saphyr
 
 
-[serde_norway-crate]: https://crates.io/crates/serde_norway
+[serde_saphyr-crate]: https://crates.io/crates/serde_saphyr
 
 
-[serde_norway-github]: https://github.com/cafkafk/serde-yaml
+[serde_saphyr-github]: https://github.com/bourumir-wyngs/serde-saphyr
 
 
 [sha1]: https://docs.rs/sha1
