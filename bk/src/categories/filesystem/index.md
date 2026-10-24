@@ -1,7 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 # File System
 
-[![cat~filesystem][cat~filesystem~badge]][cat~filesystem]
+{{#categories filesystem=Filesystem}}
 
 This chapter deals with files{{hi:Files}} and file systems.{{hi:File systems}}
 
