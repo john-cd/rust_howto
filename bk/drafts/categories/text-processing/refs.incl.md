@@ -1,6 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[c~inflector~crates.io]: https://crates.io/crates/Inflector
 [ex~text-processing~aho-corasick]: string_search.md#aho-corasick
 [ex~text-processing~bstr]: other_strings.md#bstr
+[ex~text-processing~case-conversion]: string_manipulation.md#case-conversion
 [ex~text-processing~collect-unicode-graphemes]: unicode.md#collect-unicode-graphemes
 [ex~text-processing~compact_str]: other_strings.md#compact_str
 [ex~text-processing~cstring]: other_strings.md#cstring

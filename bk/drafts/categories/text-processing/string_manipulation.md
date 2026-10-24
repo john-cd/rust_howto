@@ -3,14 +3,24 @@
 
 {{#include string_manipulation.incl.md}}
 
-## `heck` {#heck}
+## Change the Case of a String with `heck` {#heck}
 
 [![heck][c~heck~docs~badge]][c~heck~docs] [![heck~crates.io][c~heck~crates.io~badge]][c~heck~crates.io] [![heck~repo][c~heck~repo~badge]][c~heck~repo] [![heck~lib.rs][c~heck~lib.rs~badge]][c~heck~lib.rs]{{hi:heck}}{{hi:Unicode}}{{hi:String}}{{hi:Case}}{{hi:Snake}}{{hi:Camel}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 [`heck`][c~heck~docs]↗{{hi:heck}} is a case conversion library. This library exists to provide case conversion between common cases like `CamelCase` and `snake_case`.
 
+The older [`Inflector`][c~inflector~crates.io] crate's latest crates.io release is `0.11.4` from January 2019, so prefer `heck` for common case conversions. Rust strings are UTF-8: the example below uppercases the first Unicode scalar value without assuming it occupies one byte. The [capitalization discussion][blog~stackoverflow~why-is-capitalizing-the-first-letter-of-a-string-so-convoluted-in-rust]↗ explains the indexing issue.
+
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/string_manipulation/heck.rs:example}}
+```
+
+### Capitalize the First Unicode Character {#case-conversion}
+
+This helper uses `char::to_uppercase`, which can produce more than one character, and leaves the remaining characters intact. It handles an empty string and avoids slicing through a multibyte UTF-8 character.
+
+```rust,editable
+{{#include ../../../crates/cats/text_processing/examples/string_manipulation/case_conversion.rs:example}}
 ```
 
 ## `textwrap` {#textwrap}
@@ -48,18 +58,6 @@ The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1190)
-
-cover `inflector`.
-
-```rust,noplayground
-use inflector::Inflector;
-
-fn main() {
-  let capitalized = "some string".to_title_case();
-}
-```
-
-- [Why is capitalizing the first letter of a string so convoluted in Rust?][blog~stackoverflow~why-is-capitalizing-the-first-letter-of-a-string-so-convoluted-in-rust]↗ - Stack Overflow.
+This chapter compares the old `Inflector` release with `heck`, adds tested title-case and snake-case conversions, and demonstrates Unicode-safe first-character capitalization.
 
 </div>

@@ -5,6 +5,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod case_conversion;
 mod heck;
 mod indoc;
 mod textwrap;
@@ -20,6 +21,9 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the Unicode-aware case conversion example.
+    #[command(name = "case-conversion")]
+    CaseConversion,
     /// Runs the `heck` example.
     #[command(name = "heck")]
     Heck,
@@ -32,13 +36,16 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Heck => {
                 heck::run();
+            }
+            Commands::CaseConversion => {
+                return case_conversion::run();
             }
             Commands::Indoc => {
                 indoc::run();
@@ -48,4 +55,6 @@ fn main() {
             }
         }
     }
+
+    Ok(())
 }

@@ -44,6 +44,11 @@ unicode-segmentation = "1.13.3"
 ustr = "1.1.0"
 
 [[example]]
+name = "case_conversion"
+path = "examples/string_manipulation/case_conversion.rs"
+test = true
+
+[[example]]
 name = "diffing"
 path = "examples/diffing/main.rs"
 test = true
