@@ -4,6 +4,11 @@
 [ex~compilation~build-code]: building.md#build-code
 [ex~compilation~dynamic-linking]: reduce_compilation_duration.md#dynamic-linking
 [ex~compilation~faster-linking]: faster_linking.md#faster-linking
+[ex~compilation~project-structure-and-dependencies]: reduce_compilation_duration.md#project-structure-and-dependencies
+[ex~compilation~compiler-level-optimizations]: reduce_compilation_duration.md#compiler-level-optimizations
+[ex~compilation~nightly-features]: reduce_compilation_duration.md#nightly-features
+[ex~compilation~build-machine-hardware-considerations]: reduce_compilation_duration.md#build-machine-hardware-considerations
+[ex~compilation~references-and-related-topics]: reduce_compilation_duration.md#references-and-related-topics
 [ex~compilation~rust-lld]: faster_linking.md#rust-lld
 [ex~compilation~lld-linker]: faster_linking.md#lld-linker
 [ex~compilation~incremental-compilation]: reduce_compilation_duration.md#incremental-compilation
@@ -18,6 +23,9 @@
 [mold-macho~repo]: https://github.com/rui314/mold-macho
 [sold~repo]: https://github.com/bluewhalesystems/sold
 [wild~repo]: https://github.com/wild-linker/wild
+[book~cargo~build-performance]: https://doc.rust-lang.org/cargo/guide/build-performance.html
+[book~cargo~check]: https://doc.rust-lang.org/cargo/commands/cargo-check.html
+[book~cargo~profiles]: https://doc.rust-lang.org/cargo/reference/profiles.html
 [p~caching]: ../../caching/index.md
 [p~cargo]: ../cargo/cargo.md
 [p~cross-compilation]: ../cross-compilation/cross_compilation.md

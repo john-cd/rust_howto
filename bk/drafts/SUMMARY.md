@@ -100,6 +100,7 @@
     - [Code Verification](categories/development-tools/other/code_verification.md)
     - [`miri`](categories/development-tools/other/miri.md)
     - [Faster Linking](categories/development-tools/compilation/faster_linking.md)
+    - [Reduce Compilation Duration](categories/development-tools/compilation/reduce_compilation_duration.md)
     - [Transpilers](categories/development-tools/transcompilation/transpilers.md)
 
 - [Development Tools - Build-time Tooling](categories/development-tools_build-utils/index.md)
