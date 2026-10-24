@@ -64,6 +64,11 @@ path = "examples/rust_specific_patterns/main.rs"
 test = true
 
 [[example]]
+name = "structural_patterns"
+path = "examples/structural_patterns/main.rs"
+test = true
+
+[[example]]
 name = "scopeguard"
 path = "examples/scopeguard.rs"
 test = true

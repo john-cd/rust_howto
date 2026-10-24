@@ -16,6 +16,11 @@
 [ex~rust-patterns~singleton]: creational_patterns.md#singleton
 [ex~rust-patterns~typed-builder]: builder_pattern.md#typed-builder
 [ex~rust-patterns~typestate-pattern]: behavioral_patterns.md#typestate-pattern
+[ex~rust-patterns~newtype]: structural_patterns.md#newtype
+[ex~rust-patterns~adapter]: structural_patterns.md#adapter
+[ex~rust-patterns~decorator]: structural_patterns.md#decorator
+[ex~rust-patterns~facade]: structural_patterns.md#facade
+[ex~rust-patterns~composite]: structural_patterns.md#composite
 [p~closures]: ../../language/closures.md
 [p~csv]: # "../encoding/csv.md"
 [p~enums]: ../../language/enums.md
