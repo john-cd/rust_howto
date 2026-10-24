@@ -20,6 +20,8 @@ use loco_rs::boot::BootResult;
 #[cfg(feature = "loco-support")]
 use loco_rs::boot::StartMode;
 #[cfg(feature = "loco-support")]
+use loco_rs::boot::create_app;
+#[cfg(feature = "loco-support")]
 use loco_rs::controller::AppRoutes;
 #[cfg(feature = "loco-support")]
 use loco_rs::environment::Environment;
@@ -46,12 +48,11 @@ impl Hooks for App {
     }
 
     async fn boot(
-        _mode: StartMode,
-        _environment: &Environment,
-        _config: loco_rs::config::Config,
+        mode: StartMode,
+        environment: &Environment,
+        config: loco_rs::config::Config,
     ) -> Result<BootResult> {
-        // In a real app, this would initialize the application context.
-        todo!()
+        create_app::<Self>(mode, environment, config).await
     }
 
     async fn connect_workers(_ctx: &AppContext, _queue: &Queue) -> Result<()> {
@@ -93,15 +94,13 @@ mod home {
     }
 }
 
-/// Simulates the initialization of a Loco application.
+/// Prints the command needed to run this example as a Loco application.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // In a real application, you would use:
-    // use loco_rs::boot::{create_app, StartMode};
-    // let boot = create_app::<App>(StartMode::Server,
-    // &Environment::Development).await?; boot.start().await?;
-
-    println!("Loco application initialized (simulated).");
+    #[cfg(feature = "loco-support")]
+    println!("Run with `cargo loco start` from a Loco application directory.");
+    #[cfg(not(feature = "loco-support"))]
+    println!("Enable `loco-support` to compile the Loco application hooks.");
     Ok(())
 }
 // ANCHOR_END: example
@@ -111,10 +110,15 @@ async fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the test app init behavior.
+    /// Verifies the example identifies its Loco application by crate name.
     #[tokio::test]
-    async fn test_app_init() {
-        // Verification that the main logic is accessible
+    async fn app_name_matches_crate_name() {
         assert_eq!(App::app_name(), env!("CARGO_CRATE_NAME"));
+    }
+
+    /// Verifies the sample entry point returns successfully without a server.
+    #[tokio::test]
+    async fn example_entry_point_returns_successfully() -> anyhow::Result<()> {
+        main().await
     }
 }

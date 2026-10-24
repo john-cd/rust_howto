@@ -12,7 +12,7 @@
 [![loco-rs~lib.rs][c~loco-rs~lib.rs~badge]][c~loco-rs~lib.rs]
 [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
-`loco`
+[`loco`][c~loco-rs~docs]↗{{hi:loco}} is a batteries-included framework that provides application hooks, route registration, and startup support. This example implements `Hooks::boot` by delegating to `create_app`; the routes live under `/home/hello`. Build the optional integration with `--features loco-support`. To run a complete service, place the hooks and configuration in a Loco application and start it with `cargo loco start`.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/loco/main.rs:example}}
@@ -34,5 +34,5 @@ FIXME
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[batteries-included_frameworks: write](https://github.com/john-cd/rust_howto/issues/509)
+  [batteries-included_frameworks: write](https://github.com/john-cd/rust_howto/issues/509)
 </div>
