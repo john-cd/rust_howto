@@ -16,13 +16,15 @@ Hashes are used for several different purposes:
 Choose an implementation based on the required properties:
 
 **Cryptographic digests:**
+
 - [`sha2`][c~sha2~docs]↗ for the SHA-2 family.
 - [`blake3`][c~blake3~docs]↗ for a fast, parallelizable cryptographic hash.
 
 **Non-cryptographic hashers:**
+
 - `rustc-hash`, `foldhash`, `murmur3`, and `fnv` can suit trusted inputs when speed matters. They do not provide cryptographic collision resistance.
 
-For attacker-controlled keys, keep the standard library's randomized `HashMap` hasher unless you have measured a need to change it and reviewed the security trade-off. `hashbrown` is a hash-map implementation, not a hash function.
+For attacker-controlled keys, keep the standard library's randomized `HashMap` hasher unless you have measured a need to change it and reviewed the security trade-off. [`ahash`][ahash] is a keyed, denial-of-service-resistant hasher for in-memory maps, but it is not a cryptographic digest. `hashbrown` is a hash-map implementation, not a hash function.
 
 **Checksums:** `crc` or `crc32fast` can detect accidental corruption. CRCs are not cryptographic and do not protect against deliberate changes.
 
@@ -76,6 +78,12 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 
 A fast, non-cryptographic hash function. Do not use it as a cryptographic digest or assume it protects attacker-controlled keys from collision attacks.
 
+This example fixes a seed so the same input produces the same value; use randomized state for in-memory maps unless deterministic hashes are required.
+
+```rust,editable
+{{#include ../../../crates/cats/algorithms/examples/hashing/foldhash.rs:example}}
+```
+
 ## Legacy Hashing Algorithms {#legacy-hashing-algorithms}
 
 For legacy applications, you may consider using the following hashing algorithms. Note that these algorithms are considered weak by modern cryptographic standards and should not be used for security-sensitive applications.
@@ -108,6 +116,8 @@ This page covers hashes. Use the dedicated topics for other cryptographic operat
 - [[encryption | Encryption]] for authenticated encryption and message authentication.
 - [[cryptography | Cryptography]] for public-key algorithms, signatures, and certificates.
 
+Other RustCrypto ecosystem crates include [`aes-gcm`][c~aes-gcm~docs], [`aes-gcm-siv`][c~aes-gcm-siv~docs], and [`chacha20poly1305`][c~chacha20poly1305~docs] for authenticated encryption; [`ed25519`][c~ed25519~docs], [`ecdsa`][c~ecdsa~docs], [`dsa`][c~dsa~docs], and [`rsa`][c~rsa~docs] for signatures; and [`der`][c~der~docs], [`pem-rfc7468`][c~pem-rfc7468~docs], [`pkcs8`][c~pkcs8~docs], and [`x509-cert`][c~x509-cert~docs] for key and certificate formats. [`ring`][c~ring~docs] is another general-purpose cryptography library.
+
 ## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
@@ -121,6 +131,6 @@ This page covers hashes. Use the dedicated topics for other cryptographic operat
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
-[content audit: crate pointers (AEAD, signatures, certificates, ahash) removed in 68a11801; restore or keep a short list](https://github.com/john-cd/rust_howto/issues/1901)
+  [accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
+  [content audit: crate pointers (AEAD, signatures, certificates, ahash) removed in 68a11801; restore or keep a short list](https://github.com/john-cd/rust_howto/issues/1901)
 </div>

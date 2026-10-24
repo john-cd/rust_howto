@@ -6,6 +6,7 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod blake3;
+mod foldhash;
 mod md5;
 mod sha1;
 mod sha2;
@@ -25,6 +26,9 @@ enum Commands {
     /// Runs the `blake3` example.
     #[command(name = "blake3")]
     Blake3,
+    /// Runs the `foldhash` example.
+    #[command(name = "foldhash")]
+    Foldhash,
     /// Runs the `md5` example.
     #[command(name = "md5")]
     Md5,
@@ -48,6 +52,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             Commands::Blake3 => {
                 blake3::run();
             }
+            Commands::Foldhash => foldhash::run(),
             Commands::Md5 => {
                 md5::run();
             }

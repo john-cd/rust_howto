@@ -41,7 +41,7 @@ fn main() {
     );
     println!("{people:?}");
 
-    // Sort people by age only:
+    // Sort people by age descending (largest age first):
     people.sort_by_key(|p| std::cmp::Reverse(p.age));
 
     assert_eq!(
@@ -53,8 +53,22 @@ fn main() {
         ]
     );
 
-    // You can also use `sort_by_key`:
-    people.sort_by_key(|p| p.age);
+    // Use a comparator to sort by name length, then age descending:
+    people.sort_by(|left, right| {
+        left.name
+            .len()
+            .cmp(&right.name.len())
+            .then_with(|| right.age.cmp(&left.age))
+    });
+
+    assert_eq!(
+        people,
+        vec![
+            Person::new("Al".to_owned(), 60),
+            Person::new("Zoe".to_owned(), 25),
+            Person::new("John".to_owned(), 1),
+        ]
+    );
 
     println!("{people:?}");
 }

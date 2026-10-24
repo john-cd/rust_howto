@@ -4,7 +4,7 @@
 // ANCHOR: example
 //! In `Cargo.toml`, add:
 //! ```toml
-//! rand = { version = "0.9.0" } # Or latest.
+//! rand = "0.10.3"
 //! ```
 
 /// Generates and prints a random `u8`, a random `u32` in a range and a random

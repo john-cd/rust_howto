@@ -23,8 +23,8 @@ fn main() {
     let e = graph.add_node("E");
 
     // Add directed edges.
-    graph.add_edge(a, b, ());
     graph.add_edge(a, c, ());
+    graph.add_edge(a, b, ());
     graph.add_edge(b, d, ());
     graph.add_edge(c, e, ());
 
@@ -36,14 +36,17 @@ fn main() {
     }
 
     println!("DFS traversal order: {visited:?}");
-    // DFS goes deep first: A -> B -> D -> C -> E (or A -> C -> E -> B -> D,
-    // depending on adjacency list order)
+    // This graph stores B as the first outgoing neighbor of A, so DFS visits
+    // B's child D immediately after B before it backtracks to C.
     assert!(visited.contains(&"A"));
     assert!(visited.contains(&"B"));
     assert!(visited.contains(&"C"));
     assert!(visited.contains(&"D"));
     assert!(visited.contains(&"E"));
     assert_eq!(visited.len(), 5);
+    let b_position = visited.iter().position(|&node| node == "B");
+    let d_position = visited.iter().position(|&node| node == "D");
+    assert_eq!(d_position, b_position.map(|position| position + 1));
 }
 
 // ANCHOR_END: example

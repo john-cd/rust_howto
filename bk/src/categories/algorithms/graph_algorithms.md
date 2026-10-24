@@ -80,8 +80,7 @@ A Minimum Spanning Tree (MST){{hi:Minimum Spanning Tree}} is a subset of the edg
 
 ## See Also {#see-also .skip}
 
-- [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} provides pathfinding algorithms including A*, Dijkstra, BFS, DFS, and more.
-- [`petgraph`][c~petgraph~docs]↗ also supports minimum spanning tree (Kruskal's algorithm), Bellman-Ford, Floyd-Warshall, and more.
+- [`petgraph`][c~petgraph~docs]↗ also provides Bellman-Ford, Floyd-Warshall, and other graph algorithms.
 
 ## Related Topics {#related-topics .skip}
 
@@ -92,5 +91,5 @@ A Minimum Spanning Tree (MST){{hi:Minimum Spanning Tree}} is a subset of the edg
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
+  [accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
 </div>

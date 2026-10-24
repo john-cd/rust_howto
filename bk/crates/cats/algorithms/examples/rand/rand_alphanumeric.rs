@@ -18,7 +18,7 @@ fn main() {
         .take(20)
         .map(char::from)
         .collect();
-    println!("Randon string: {rand_string}");
+    println!("Random string: {rand_string}");
 
     // Or use the `SampleString` trait:
     let rand_string2 = Alphanumeric.sample_string(&mut rand::rng(), 20);

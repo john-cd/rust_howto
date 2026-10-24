@@ -30,7 +30,7 @@ fn main() {
     let hex_result = base16ct::lower::encode_string(&result);
     println!("SHA-1 hash of 'hello world': {hex_result}");
 }
-// Example adapted from <https://docs.rs/sha1/0.10.6/sha1/index.html>.
+// Example adapted from <https://docs.rs/sha1/0.11.0/sha1/index.html>.
 // ANCHOR_END: example
 
 /// Runs the example.

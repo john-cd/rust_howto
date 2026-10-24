@@ -23,15 +23,16 @@ fn main() {
     graph.add_edge(d, e, 1);
     graph.add_edge(c, e, 1);
 
+    let goal = e;
     let path = astar(
         &graph,
         a,
-        |finish| finish == e,
-        |e| *e.weight(),
+        |finish| finish == goal,
+        |edge| *edge.weight(),
         |node| {
             let (x, y) = graph[node];
-            let (ex, ey) = graph[e];
-            x.abs_diff(ex) + y.abs_diff(ey)
+            let (goal_x, goal_y) = graph[goal];
+            x.abs_diff(goal_x) + y.abs_diff(goal_y)
         },
     );
 

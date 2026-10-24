@@ -2,19 +2,19 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Sort a vector of floats.
+//! Sort floats using their IEEE 754 total ordering, including NaN.
 
 /// Sort a vector of floats.
 fn main() {
-    let mut vec = vec![1.1, 1.15, 5.5, 1.123, 2.0];
+    let mut vec = vec![1.1, f64::NAN, 1.15, 5.5, 1.123, -0.0, 0.0];
 
-    // ERROR: vec.sort();
+    // `total_cmp` defines an ordering for all floating-point values, including
+    // NaN and the distinction between negative and positive zero.
+    vec.sort_by(f64::total_cmp);
 
-    // The vector does not contain `f64::NAN`,
-    // so we can sort it using `partial_cmp` safely:
-    vec.sort_by(|a, b| a.partial_cmp(b).unwrap());
-
-    assert_eq!(vec, vec![1.1, 1.123, 1.15, 2.0, 5.5]);
+    assert_eq!(&vec[..5], &[-0.0, 0.0, 1.1, 1.123, 1.15]);
+    assert_eq!(vec[5], 5.5);
+    assert!(vec[6].is_nan());
 
     println!("{vec:?}");
 }

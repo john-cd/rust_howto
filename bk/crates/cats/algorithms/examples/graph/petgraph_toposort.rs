@@ -32,27 +32,31 @@ fn main() {
     graph.add_edge(load, report, ());
     graph.add_edge(validate, report, ()); // Validate also feeds Report directly.
 
-    // Compute a topological ordering.
-    // Returns `Err` if the graph contains a cycle.
-    match toposort(&graph, None) {
-        Ok(order) => {
-            println!("Topological order (tasks to execute in sequence):");
-            for node in &order {
-                println!("  - {}", graph[*node]);
-            }
-            // Verify that "Fetch Data" comes before "Validate"
-            // and "Validate" comes before "Load".
-            let pos: Vec<&str> = order.iter().map(|n| graph[*n]).collect();
-            let fetch_position =
-                pos.iter().position(|&s| s == "Fetch Data").unwrap();
-            let validate_position =
-                pos.iter().position(|&s| s == "Validate").unwrap();
-            let load_position = pos.iter().position(|&s| s == "Load").unwrap();
-            assert!(fetch_position < validate_position);
-            assert!(validate_position < load_position);
-        }
-        Err(_) => println!("Graph contains a cycle!"),
+    // This example graph is acyclic; `toposort` returns an error if it contains
+    // a cycle.
+    let order = toposort(&graph, None).expect("the example graph is acyclic");
+    println!("Topological order (tasks to execute in sequence):");
+    for node in &order {
+        println!("  - {}", graph[*node]);
     }
+
+    // Verify that "Fetch Data" comes before "Validate" and "Validate" comes
+    // before "Load".
+    let positions: Vec<&str> = order.iter().map(|node| graph[*node]).collect();
+    let fetch_position = positions
+        .iter()
+        .position(|&task| task == "Fetch Data")
+        .expect("Fetch Data is present in the example graph");
+    let validate_position = positions
+        .iter()
+        .position(|&task| task == "Validate")
+        .expect("Validate is present in the example graph");
+    let load_position = positions
+        .iter()
+        .position(|&task| task == "Load")
+        .expect("Load is present in the example graph");
+    assert!(fetch_position < validate_position);
+    assert!(validate_position < load_position);
 }
 
 // ANCHOR_END: example

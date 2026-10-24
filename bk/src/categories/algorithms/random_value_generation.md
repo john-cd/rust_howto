@@ -26,7 +26,7 @@ This example generates a random value{{hi:Random value}} within the half-open `[
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_range.rs:example}}
 ```
 
-Using `rand::distr::Uniform` has the same effect but may be faster than `rand::Rng::random_range` when repeatedly generating numbers in the same range:
+Using `rand::distr::Uniform` has the same effect but may be faster than `rand::RngExt::random_range` when repeatedly generating numbers in the same range:
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/rand/rand_range1.rs:example}}
@@ -98,5 +98,5 @@ You should also read the [`oorandom` README file][c~oorandom~lib.rs]↗ for a co
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
+  [accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
 </div>

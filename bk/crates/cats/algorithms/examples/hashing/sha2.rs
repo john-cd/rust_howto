@@ -57,7 +57,8 @@ fn main() -> anyhow::Result<()> {
     println!("Base64-encoded hash #3: {base64_hash}");
 
     // Hash the contents of a file:
-    // First, we will create a file inside of `env::temp_dir()`.
+    // `tempfile::tempfile()` creates an anonymous temporary file and returns
+    // its open handle; it does not create a named path under `env::temp_dir()`.
     let mut file = tempfile::tempfile()?;
 
     use std::io::Read as _;

@@ -26,4 +26,7 @@
 [ex~algorithms~sort-vector-floats]: sorting.md#sort-vector-floats
 [ex~algorithms~sort-vector-integers]: sorting.md#sort-vector-integers
 [ex~algorithms~sort-vector-structs]: sorting.md#sort-vector-structs
+[ahash]: https://docs.rs/ahash/latest/ahash/
+[f64::total_cmp~docs]: https://doc.rust-lang.org/std/primitive.f64.html#method.total_cmp
+[liblzma]: https://docs.rs/liblzma/latest/liblzma/
 [p~hashmaps]: ../data-structures/hashmaps.md

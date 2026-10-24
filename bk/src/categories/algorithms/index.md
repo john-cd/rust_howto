@@ -35,12 +35,12 @@ For [[compression | compression]], use:
 - `tar` for tar archives,
 - `zstd` for Zstandard compression,
 - `bzip2`,
-- `xz2`,
-- `snap` for Snappy compression.
+- [`liblzma`][liblzma] for XZ compression (a maintained fork of `xz2`),
+- `snap` for Snappy compression, and
 - `brotli` for Brotli compression.
 
-
 See [[compression | Compression]].
+
 ### Data Structures
 
 For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]↗, [`HashMap`][c~std::collections::HashMap~docs]↗, etc.), you will use [`std::collections`][c~std::collections~docs]↗. You may also consider:
@@ -55,10 +55,10 @@ For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]�
 
 Worth a mention: `fst` provides fast, memory-efficient, immutable set and map data structures for storing and searching (very) large collections of strings and associated values. It is based on finite state transducers (FSTs). The capabilities of ordered sets and maps mirror that of `BTreeSet` and `BTreeMap` found in the standard library. The key difference is that sets and maps in `fst` are immutable, keys are byte sequences, and values, in the case of maps, are always unsigned 64 bit integers.
 
-See [[vector | vector]] [[hashmap | hash maps]], [[maps | other maps]], [[binaryheap | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
-
+See [[vector | vector]], [[hashmap | hash maps]], [[maps | other maps]], and [[binaryheap | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
 
 See [[data-structures | Data Structures]] and [[concurrent_data_structures | Concurrent Data Structures]].
+
 ### Recursive Algorithms
 
 - `stacker` is a stack growth library useful when implementing deeply recursive algorithms that may accidentally blow the stack.
@@ -72,7 +72,7 @@ For small-scale tasks, like filtering a list of items in memory, reach first for
 - `str::find`, `str::rfind` for strings.
 
 - `argminmax` provides efficient argmin & argmax (in 1 function) with SIMD for floats and integers.
-- `bytecount` count occurrences of a given byte, or the number of UTF-8 code points, in a byte slice, fast.
+- `bytecount` counts occurrences of a given byte or UTF-8 code points in a byte slice quickly.
 
 [meilisearch][c~meilisearch~repo]↗ and [tantivy][c~tantivy~repo]↗ are full-text search engines written in Rust, similar to what you'd expect from `Elasticsearch` or `Algolia`. See also [[rust_search_engines | Search Engines]].
 
@@ -95,7 +95,6 @@ See [[cryptography | Cryptography]], [[cryptography_utilities | Cryptography Uti
 
 See [[data-processing | Data Processing]].
 
-
 ### Numerical and Mathematical Algorithms
 
 For [[mathematics | Mathematics]], use the following crates for general numerical tasks:
@@ -105,7 +104,7 @@ For [[mathematics | Mathematics]], use the following crates for general numerica
   - [`num`][c~num~docs]↗{{hi:num}}.
 - [[additional_numeric_types | Additional Numeric Types]]:
   - `num-bigint` and `rug` for big integers.
-  - `rust_decimal` for big decimals.
+  - [`rust_decimal`][c~rust_decimal~docs]↗ for fixed-precision decimal arithmetic with a 96-bit mantissa; use `bigdecimal` when arbitrary precision is required.
   - `ordered-float` for sortable floats.
 - [[complex_numbers | Complex Numbers]].
 - [[linear_algebra | Linear Algebra]]:
@@ -113,7 +112,7 @@ For [[mathematics | Mathematics]], use the following crates for general numerica
   - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}.
 - Data frames:
   - `polars`.
-  - `datafusion`.
+  - [`datafusion`][c~datafusion~docs]↗ is an extensible query engine with SQL and DataFrame APIs.
 - [[statistics | Statistics]],
 - [[trigonometry | Trigonometry]].
 - Others
@@ -125,7 +124,6 @@ For [[mathematics | Mathematics]], use the following crates for general numerica
 
 See [[science | Science]], [[_machine_learning | Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], and [[simulation | Simulation]].
 
-
 ## References
 
 - [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
@@ -134,5 +132,5 @@ See [[science | Science]], [[_machine_learning | Machine Learning]], [[science_g
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
+  [accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
 </div>

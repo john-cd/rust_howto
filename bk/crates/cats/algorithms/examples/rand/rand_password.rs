@@ -20,7 +20,7 @@ fn main() {
 
     // Get handle to the local `ThreadRng`, which implements `rand::CryptoRng`.
     // Read the following about the suitability of `rand` to generate random
-    // passwords: <https://docs.rs/rand_distr/latest/rand_distr/struct.Alphanumeric.html#passwords>.
+    // passwords: <https://docs.rs/rand/latest/rand/distr/struct.Alphanumeric.html#passwords>.
     let mut rng = rand::rng();
 
     let password: String = (0..PASSWORD_LEN)
