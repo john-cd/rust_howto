@@ -58,6 +58,12 @@ This example connects without authentication to a local Cassandra node on port 9
 {{#include ../../../crates/cats/database/examples/cassandra/cassandra_protocol.rs:example}}
 ```
 
+<div class="hidden">
+
+This example only encodes and decodes a STARTUP frame in memory, so its focused test runs without Docker or a Cassandra service. Use `cargo test -p database --example cassandra --features cassandra -- cassandra_protocol::tests::startup_request_round_trips_through_a_protocol_frame` to exercise the offline frame round trip.
+
+</div>
+
 ## Related Topics {#related-topics .skip}
 
 FIXME
