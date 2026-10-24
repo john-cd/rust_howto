@@ -26,7 +26,7 @@ fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
                 (url=|URL\||\[)(?P<external>http.*?)[ \|}] # external links
             "
             )
-            .unwrap();
+            .expect("the fixed MediaWiki link regex is valid");
         }
 
     let links: HashSet<_> = WIKI_REGEX
@@ -45,11 +45,12 @@ fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
 #[tokio::main]
 async fn main() -> Result<()> {
     let content = reqwest::get(
-    "https://en.wikipedia.org/w/index.php?title=Rust_(programming_language)&action=raw",
-  )
-  .await?
-  .text()
-  .await?;
+        "https://en.wikipedia.org/w/index.php?title=Rust_(programming_language)&action=raw",
+    )
+    .await?
+    .error_for_status()?
+    .text()
+    .await?;
 
     println!("{:#?}", extract_links(content.as_str()));
 
@@ -67,7 +68,21 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies MediaWiki links are deduplicated and internal links normalized.
     #[test]
+    fn extracts_unique_wikitext_links() {
+        let links = extract_links(
+            "[[Rust (programming language)|Rust]] [[RUST (PROGRAMMING LANGUAGE)]] [https://example.test/docs label]",
+        );
+
+        assert!(links.contains("rust (programming language)"));
+        assert!(links.contains("https://example.test/docs"));
+        assert_eq!(links.len(), 2);
+    }
+
+    /// Marks the live Wikipedia source request as an opt-in network test.
+    #[test]
+    #[ignore = "needs network"]
     fn require_network() -> Result<()> {
         main()?;
         Ok(())

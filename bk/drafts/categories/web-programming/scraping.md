@@ -3,11 +3,13 @@
 
 {{#include scraping.incl.md}}
 
+These examples use [`scraper`][c~scraper~docs]↗ for CSS-selector-based HTML parsing instead of the earlier `select` API.
+
 ## Extract all Links from the HTML of a Webpage {#extract-all-links-from-a-webpage-html}
 
-[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![select][c~select~docs~badge]][c~select~docs]{{hi:select}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![scraper][c~scraper~docs~badge]][c~scraper~docs]{{hi:scraper}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-Use [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} to perform a HTTP GET request{{hi:HTTP GET request}} and then use [`select::document::Document::from_read`][c~select::document::Document::from_read~docs]↗{{hi:select::document::Document::from_read}} to parse the response into a HTML document{{hi:HTML document}}. [`select::document::Document::find`][c~select::document::Document::find~docs]↗{{hi:select::document::Document::find}} with the criteria of [`select::predicate::Name`][c~select::predicate::Name~docs]↗{{hi:select::predicate::Name}} is "a" retrieves all links. Call [`std-core::iter::Iterator::filter_map`][c~core::iter::Iterator::filter_map~docs]↗{{hi:std-core::iter::Iterator::filter_map}} on the [`select::selection::Selection`][c~select::selection::Selection~docs]↗{{hi:select::selection::Selection}} retrieves URLs from links that have the "href" [`select::node::Node::attr`][c~select::node::Node::attr~docs]↗{{hi:select::node::Node::attr}} (attribute).
+Uses [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} to fetch the page and [`scraper::Html::parse_document`][c~scraper::Html::parse_document~docs]↗{{hi:scraper::Html::parse_document}} to parse its HTML. A CSS [`scraper::Selector`][c~scraper::Selector~docs]↗{{hi:scraper::Selector}} finds anchors with an `href` attribute.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/scraping/extract_links.rs:example}}
@@ -15,12 +17,11 @@ Use [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} to perform a HTT
 
 ## Check a Webpage for Broken Links {#check-a-webpage-for-broken-links}
 
-[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![select][c~select~docs~badge]][c~select~docs]{{hi:select}} [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![scraper][c~scraper~docs~badge]][c~scraper~docs]{{hi:scraper}} [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-FIXME Call `get_base_url`{{hi:get_base_url}} to retrieve the base [URL][p~url]{{hi:Base URL}}. If the document has a base tag, get the href{{hi:href}} [`select::node::Node::attr`][c~select::node::Node::attr~docs]↗{{hi:select::node::Node::attr}} from base tag. [`select::node::Node::attr`][c~select::node::Node::attr~docs]↗{{hi:select::node::Node::attr}} of the original URL acts as a default.
+The example resolves the first HTML `<base href>` against the page URL. If there is no base element, relative links resolve against the full document URL. It follows the URL rules in [[url | Uniform Resource Locator]] and checks only HTTP(S) links; `mailto:` and other schemes are skipped.
 
-Iterates through links{{hi:Links}} in the document and creates a [`tokio::task::spawn`][c~tokio::task::spawn~docs]↗{{hi:tokio::task::spawn}} task that will parse an individual link with [`url::ParseOptions`][c~url::ParseOptions~docs]↗{{hi:url::ParseOptions}} and [`tokio::task::spawn`][c~tokio::task::spawn~docs]↗{{hi:tokio::task::spawn}}. The task makes a request to the links with [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} and verifies
-[`reqwest::StatusCode`][c~reqwest::StatusCode~docs]↗{{hi:reqwest::StatusCode}}. Then the tasks [`await`][book~rust-reference~await]↗{{hi:await}} completion before ending the program.
+The checker makes requests sequentially with a finite per-request timeout, so a page cannot create an unbounded number of concurrent tasks. It reports `404 Not Found` and `410 Gone` as broken links; other unexpected HTTP statuses and transport errors are returned as errors.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/scraping/broken.rs:example}}
@@ -30,7 +31,7 @@ Iterates through links{{hi:Links}} in the document and creates a [`tokio::task::
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]
 
-Pull the source of a MediaWiki page using [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} and then look for all entries of internal and external links with [`regex::Regex::captures_iter`][c~regex::Regex::captures_iter~docs]↗{{hi:regex::Regex::captures_iter}}. Using [`std::borrow::Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} avoids excessive [`std::string::String`][c~std::string::String~docs]↗{{hi:std::string::String}} allocations.
+Pull a MediaWiki source page using [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} and find internal and external links with [`regex::Regex::captures_iter`][c~regex::Regex::captures_iter~docs]↗{{hi:regex::Regex::captures_iter}}. This regular expression demonstrates a small subset of wikitext link syntax; it is not a general HTML link extractor. Using [`std::borrow::Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} avoids allocating strings for every captured link.
 
 MediaWiki link syntax is described [here][mediawiki~link-syntax]↗.
 
@@ -40,14 +41,14 @@ MediaWiki link syntax is described [here][mediawiki~link-syntax]↗.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[url | Uniform Resource Locator]].
+- [[requests | Make HTTP Requests]].
+
+HTML parsing does not execute page JavaScript. For pages that need browser rendering or interaction, consider [headless_chrome](https://github.com/rust-headless-chrome/rust-headless-chrome) (Chrome DevTools Protocol), [chromiumoxide](https://github.com/mattsse/chromiumoxide) (Chrome DevTools Protocol), or [fantoccini](https://github.com/jonhoo/fantoccini) (WebDriver).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/972)
-
-- [rust-headless-chrome/rust-headless-chrome][rust-headless-chrome~repo]↗: A high-level API to control headless Chrome or Chromium over the DevTools Protocol. It is the Rust equivalent of Puppeteer, a Node library maintained by the Chrome DevTools team.
-
+This review replaces the older `select` API with `scraper`, fixes base URL resolution and HTTP status handling, and adds deterministic local HTML tests. Browser automation alternatives are visible for sites that depend on JavaScript.
 </div>

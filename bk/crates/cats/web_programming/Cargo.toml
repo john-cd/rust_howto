@@ -27,7 +27,8 @@ lazy_static = "1.5.1"
 mime = "0.3.17"
 regex = "1.13.1"
 reqwest = "0.13.5"
-select = "0.6.1"
+# Parses HTML documents and selects elements with CSS selectors.
+scraper = "0.29.0"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 url = "2.5.8"
 
