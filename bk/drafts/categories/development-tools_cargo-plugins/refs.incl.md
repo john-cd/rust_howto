@@ -29,6 +29,12 @@
 [ex~development-tools_cargo-plugins~rustfmt]: code_formatting_linting.md#rustfmt
 [ex~development-tools_cargo-plugins~xshell]: building.md#xshell
 [ex~development-tools_cargo-plugins~zig]: cross_compiling.md#zig
+[cargo-vet~repository]: https://github.com/mozilla/cargo-vet
+[cargo-crev~repository]: https://github.com/crev-dev/cargo-crev
+[cargo-geiger~repository]: https://github.com/geiger-rs/cargo-geiger
+[cargo-machete~repository]: https://github.com/bnjbvr/cargo-machete
+[cargo-udeps~repository]: https://github.com/est31/cargo-udeps
+[rustsec~advisories]: https://rustsec.org/advisories/
 [p~cargo]: ../development-tools/cargo/cargo.md
 [p~code-building]: ../development-tools/compilation/building.md#build-code
 [p~code-coverage]: ../development-tools_testing/code_coverage.md
