@@ -1,9 +1,9 @@
 <!-- TODO Reviewed ??-??-2026 -->
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Starship prompt][ex~command-line-utilities~starship] | [`starship`][c~starship~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Nushell][ex~command-line-utilities~nushell] | [`nushell`][nushell~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [fish][ex~command-line-utilities~fish] | [fish][fish~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [zoxide][ex~command-line-utilities~zoxide] | [`zoxide`][c~zoxide~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Atuin][ex~command-line-utilities~atuin] | [Atuin][atuin~repo]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
-| [Shell Completion for Rust CLIs][ex~command-line-utilities~rust-cli-completions] | [`clap_complete`][c~clap_complete~docs]↗ | [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] |
+| Tool | What it does | Install |
+|------|--------------|---------|
+| [`starship`][c~starship~repo]↗ | Custom prompt for multiple shells | `cargo install starship --locked` |
+| [Nushell][nushell~repo]↗ | Structured-data shell written in Rust | `cargo install nu --locked` |
+| [fish][fish~repo]↗ | Interactive shell; Rust implementation starting with version 4 | `brew install fish` |
+| [`zoxide`][c~zoxide~repo]↗ | Learns directories for faster `cd` navigation | `cargo install zoxide --locked` |
+| [Atuin][atuin~repo]↗ | Searchable local shell history with optional sync | `cargo install atuin --locked` |
+| [`clap_complete`][c~clap_complete~docs]↗ | Generates shell completions for Rust CLIs | `cargo add clap_complete` |

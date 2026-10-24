@@ -15,7 +15,7 @@
 
 Install it with Cargo, then add the initialization command for your shell to its startup file. This example configures Bash:
 
-```sh
+```bash
 cargo install starship --locked
 eval "$(starship init bash)"
 ```
@@ -30,7 +30,7 @@ Unlike traditional shells that primarily handle text, `Nu` treats data as struct
 
 Install Nu from Cargo, then launch it with `nu`. Cargo installs the main binary; Nu plugins are installed separately.
 
-```sh
+```bash
 cargo install nu --locked
 nu
 ```
@@ -41,7 +41,7 @@ nu
 
 Use your operating system's package manager. For example, on macOS install with Homebrew; on Ubuntu, the fish project documents its release PPA:
 
-```sh
+```bash
 brew install fish
 
 sudo apt-add-repository ppa:fish-shell/release-4
@@ -55,7 +55,7 @@ Start an interactive fish session with `fish`.
 
 [`zoxide`][c~zoxide~repo]↗ is a smarter `cd` command that learns frequently visited directories. Initialize it in the shell startup file before using `z`:
 
-```sh
+```bash
 cargo install zoxide --locked
 eval "$(zoxide init bash)"
 z project
@@ -67,7 +67,7 @@ z project
 
 Install using the project's installer, then search your local history:
 
-```sh
+```bash
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 atuin search cargo
 ```
@@ -76,7 +76,7 @@ atuin search cargo
 
 For a Rust CLI built with [`clap`][c~clap~docs]↗, use [`clap_complete`][c~clap_complete~docs]↗ to generate shell completions for the command. See [CLI argument parsing](../command-line-interface/argument_parsing.md) for the `clap` setup and completion examples.
 
-```sh
+```bash
 cargo add clap_complete
 ```
 
