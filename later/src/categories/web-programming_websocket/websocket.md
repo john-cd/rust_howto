@@ -18,13 +18,13 @@ These are protocol libraries, not application protocols. Your application still 
 
 ## Handle the connection lifecycle
 
-After the handshake, read and write WebSocket messages until the peer closes the connection or an error occurs. Handle text, binary, ping, pong, and close messages deliberately; do not assume every frame contains the application message you expect. The examples connect to [Postman's public WebSocket echo endpoint][postman-websocket-echo], send one text message, and read the reply.
+After the handshake, read and write WebSocket messages until the peer closes the connection or an error occurs. Handle text, binary, ping, pong, and close messages deliberately; do not assume every frame contains the application message you expect. The Tokio example starts a one-connection echo server on an ephemeral loopback port, so its test needs neither an external service nor network access. The blocking and other async examples use [Postman's public WebSocket echo endpoint][postman-websocket-echo].
 
 For a real client or server, decide how to detect an idle or dead peer, how to perform a graceful close, and whether reconnecting is safe for each operation. Use bounded outbound queues and apply backpressure when message production can outpace the network. Retry with a limit and backoff; replaying a non-idempotent command can repeat its effect.
 
 ## Protect WebSocket connections
 
-- Use secure WebSocket URLs in production. Enable a TLS feature on the chosen crate and verify certificates; the examples enable native TLS for the echo endpoint.
+- Use secure WebSocket URLs in production. Enable a TLS feature on the chosen crate and verify certificates. The public echo examples use native TLS; the loopback Tokio example uses plain WebSocket over local TCP.
 - Authenticate during the handshake or another explicit protocol step, then authorize each message. A successful connection does not grant access to every operation.
 - For browser-facing servers, validate the handshake Origin against an explicit allowlist to prevent cross-site WebSocket hijacking. Origin is not authentication and may be absent or supplied by non-browser clients.
 - Treat every message as untrusted input. Validate its type and fields, cap message sizes and connection counts, and rate-limit expensive operations.
@@ -42,9 +42,9 @@ Use [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}} when blocking I/O fit
 {{#include ../../../crates/cats/web_programming_websocket/examples/websocket/tungstenite.rs:example}}
 ~~~
 
-### Asynchronous client with Tokio {#general-purpose}
+### Asynchronous echo client and server with Tokio {#general-purpose}
 
-Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} when the application uses the [tokio][c~tokio~docs]↗{{hi:tokio}} runtime.
+Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} when the application uses the [tokio][c~tokio~docs]↗{{hi:tokio}} runtime. The short example binds an ephemeral loopback listener, echoes one text message, and returns the reply to its client.
 
 ~~~rust,editable
 {{#include ../../../crates/cats/web_programming_websocket/examples/websocket/tokio_tungstenite.rs:example}}
@@ -71,4 +71,5 @@ Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} whe
 <div class="hidden">
 [websocket: write](https://github.com/john-cd/rust_howto/issues/520)
 [content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
+Reviewed upstream tokio-tungstenite client and echo-server examples; updated the Tokio recipe to use `Utf8Bytes` and a tested local client/server round trip.
 </div>
