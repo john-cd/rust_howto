@@ -15,7 +15,10 @@
 [ex~written-in-rust~rustpython]: python_tools.md#rustpython
 [ex~written-in-rust~social-media]: other_tools.md#social-media
 [ex~written-in-rust~swc]: development_tools.md#swc
+[ex~written-in-rust~television]: development_tools.md#utilities
 [ex~written-in-rust~utilities]: development_tools.md#utilities
+[ex~written-in-rust~mail-servers]: other_tools.md#mail-servers
+[ex~written-in-rust~observability]: other_tools.md#observability
 [ex~written-in-rust~uv]: python_tools.md#uv
 [ex~written-in-rust~zed]: development_tools.md#zed
 [jj~repo]: https://github.com/jj-vcs/jj
@@ -35,6 +38,10 @@
 [p~scripting]: # "../scripting/index.md"
 [p~search]: # "../../categories/database/search.md"
 [p~written-in-rust]: index.md
+
+[lapce~website~badge]: https://img.shields.io/badge/lapce-coral
+[servo~repo]: https://github.com/servo/servo
+[stratis~repo]: https://github.com/stratis-storage/stratisd
 
 [evcxr-jupyter~repo]: https://github.com/evcxr/evcxr/tree/main/evcxr_jupyter
 

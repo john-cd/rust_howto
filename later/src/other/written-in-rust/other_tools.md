@@ -23,6 +23,10 @@
 
 [postsack][postsack~repo]↗{{hi:postsack}} visually cluster your emails by sender, domain, and more to identify waste.
 
+## Mail Servers {#mail-servers}
+
+[`Stalwart Mail Server`][mail-server~repo]↗ is an all-in-one mail server project.
+
 ## News {#news}
 
 [headlines][headlines~repo]↗ is a simple news reading GUI app built in Rust
@@ -34,6 +38,20 @@
 ## Social Media {#social-media}
 
 [lemmy][lemmy~repo]↗{{hi:lemmy}} is a link aggregator and forum for the fediverse.
+
+## Observability {#observability}
+
+[`OpenObserve`][openobserve~repo]↗ is an observability project for logs, metrics, traces, and related telemetry.
+
+[`opentelemetry-rust`][opentelemetry-rust~repo]↗ is the Rust implementation of OpenTelemetry.
+
+## Other Applications {#other-applications}
+
+[`evcxr_jupyter`][evcxr-jupyter~repo]↗ provides a Jupyter kernel for interactive Rust code.
+
+[`Codename Goose`][doc~block-goose]↗ and [DORA][dora~repo]↗ are additional application and robotics projects.
+
+The [Ratatui app showcase][ratatui-showcase-apps~website]↗ collects terminal applications built with Ratatui.
 
 ## Related Topics {#related-topics .skip}
 
@@ -51,4 +69,5 @@
 - [ChatGPT][chatgpt~repo]↗: ChatGPT Desktop Application (Mac, Windows and Linux).
 
 [content audit: Written-in-Rust tool lists trimmed by recent commits; review and restore removed entries](https://github.com/john-cd/rust_howto/issues/1902)
+
 </div>
