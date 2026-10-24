@@ -1,4 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[c~fixed~crates.io]: https://crates.io/crates/fixed
+[c~fixed~crates.io~badge]: https://img.shields.io/badge/crates.io-fixed-crimson
+[c~fixed~docs]: https://docs.rs/fixed
+[c~fixed~docs~badge]: https://img.shields.io/crates/v/fixed?label=fixed
 [c~num::complex::Complex::arg~docs]: https://docs.rs/num/0.4.3/num/complex/struct.Complex.html#method.arg
 [c~num::complex::Complex::exp~docs]: https://docs.rs/num/0.4.3/num/complex/struct.Complex.html#method.exp
 [c~num::complex::Complex::from_polar~docs]: https://docs.rs/num/0.4.3/num/complex/struct.Complex.html#method.from_polar
@@ -14,6 +18,8 @@
 [ex~mathematics~creating-complex-numbers]: complex_numbers.md#creating-complex-numbers
 [ex~mathematics~deserialize-a-matrix]: linear_algebra.md#deserialize-a-matrix
 [ex~mathematics~distance-between-two-points-on-earth]: trigonometry.md#distance-between-two-points-on-earth
+[ex~mathematics~fixed-point]: additional_numeric_types.md#fixed-point
+[ex~mathematics~half-precision]: additional_numeric_types.md#half-precision
 [ex~mathematics~invert-matrix]: linear_algebra.md#invert-matrix
 [ex~mathematics~mathematical-functions]: complex_numbers.md#mathematical-functions
 [ex~mathematics~measures-of-central-tendency]: statistics.md#measures-of-central-tendency
@@ -24,6 +30,7 @@
 [ex~mathematics~nalgebra-vectors]: linear_algebra.md#nalgebra-vectors
 [ex~mathematics~num-bigint]: additional_numeric_types.md#num-bigint
 [ex~mathematics~num]: additional_numeric_types.md#num
+[ex~mathematics~rational-numbers]: additional_numeric_types.md#rational-numbers
 [ex~mathematics~rug]: additional_numeric_types.md#rug
 [ex~mathematics~sortable-floats]: additional_numeric_types.md#sortable-floats
 [ex~mathematics~standard-deviation]: statistics.md#standard-deviation

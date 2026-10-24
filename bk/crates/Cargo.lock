@@ -5653,6 +5653,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "80bb028c8b4148c9ee0cca68fcd9add6044e81d3619f48577ddf13a263d047a2"
 
 [[package]]
+name = "fixed"
+version = "1.31.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9af2cbf772fa6d1c11358f92ef554cb6b386201210bcf0e91fb7fba8a907fb40"
+dependencies = [
+ "az",
+ "bytemuck",
+ "half",
+ "typenum",
+]
+
+[[package]]
 name = "fixedbitset"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -9246,10 +9258,13 @@ dependencies = [
  "anyhow",
  "approx",
  "clap",
+ "fixed",
+ "half",
  "nalgebra",
  "ndarray",
  "num",
  "num-bigint 0.4.8",
+ "num-rational",
  "num-traits 0.2.19",
  "ordered-float 5.5.0",
  "rug",

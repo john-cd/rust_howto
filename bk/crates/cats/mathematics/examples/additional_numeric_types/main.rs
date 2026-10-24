@@ -10,9 +10,12 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod big_integers;
+mod fixed_point;
+mod half_precision;
 mod num_bigint;
 mod num_traits;
 mod ordered_float;
+mod rational_numbers;
 #[cfg(target_os = "linux")]
 mod rug;
 mod rust_decimal;
@@ -32,6 +35,12 @@ enum Commands {
     /// Runs the `big_integers` example.
     #[command(name = "big_integers")]
     BigIntegers,
+    /// Runs the `fixed_point` example.
+    #[command(name = "fixed_point")]
+    FixedPoint,
+    /// Runs the `half_precision` example.
+    #[command(name = "half_precision")]
+    HalfPrecision,
     /// Runs the `num_bigint` example.
     #[command(name = "num_bigint")]
     NumBigint,
@@ -41,6 +50,9 @@ enum Commands {
     /// Runs the `ordered_float` example.
     #[command(name = "ordered_float")]
     OrderedFloat,
+    /// Runs the `rational_numbers` example.
+    #[command(name = "rational_numbers")]
+    RationalNumbers,
     /// Runs the `rug` example.
     #[cfg(target_os = "linux")]
     #[command(name = "rug")]
@@ -62,6 +74,12 @@ fn main() {
             Commands::BigIntegers => {
                 big_integers::run();
             }
+            Commands::FixedPoint => {
+                fixed_point::run();
+            }
+            Commands::HalfPrecision => {
+                half_precision::run();
+            }
             Commands::NumBigint => {
                 num_bigint::run();
             }
@@ -70,6 +88,9 @@ fn main() {
             }
             Commands::OrderedFloat => {
                 ordered_float::run();
+            }
+            Commands::RationalNumbers => {
+                rational_numbers::run();
             }
             #[cfg(target_os = "linux")]
             Commands::Rug => {

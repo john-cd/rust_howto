@@ -776,6 +776,15 @@
 [faux-github]: https://github.com/nrxus/faux
 
 
+[fixed]: https://docs.rs/fixed
+
+
+[fixed-crate]: https://crates.io/crates/fixed
+
+
+[fixed-github]: https://gitlab.com/tspiteri/fixed
+
+
 [flagset]: https://docs.rs/flagset
 
 
@@ -909,6 +918,15 @@
 
 
 [globset-github]: https://github.com/BurntSushi/ripgrep/tree/master/crates/globset
+
+
+[half]: https://docs.rs/half
+
+
+[half-crate]: https://crates.io/crates/half
+
+
+[half-github]: https://github.com/VoidStarKat/half-rs
 
 
 [heapless]: https://docs.rs/heapless
@@ -1431,6 +1449,15 @@
 
 
 [num_cpus-github]: https://github.com/seanmonstar/num_cpus
+
+
+[num_rational]: https://docs.rs/num_rational
+
+
+[num_rational-crate]: https://crates.io/crates/num_rational
+
+
+[num_rational-github]: https://github.com/rust-num/num-rational
 
 
 [num_traits]: https://docs.rs/num_traits
