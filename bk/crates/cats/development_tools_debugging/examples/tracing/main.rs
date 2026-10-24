@@ -13,11 +13,11 @@ mod tracing_spans;
 mod tracing_subscriber;
 mod tracing_subscriber1;
 mod tracing_subscriber1b;
-mod tracing_subscriber2;
 mod tracing_subscriber2b;
 mod tracing_subscriber3;
 mod tracing_subscriber3b;
 mod tracing_subscriber4;
+mod tracing_subscriber_layers;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -54,9 +54,12 @@ enum Commands {
     /// Runs the `tracing_subscriber1b` example.
     #[command(name = "tracing_subscriber1b")]
     TracingSubscriber1b,
-    /// Runs the `tracing_subscriber2` example.
-    #[command(name = "tracing_subscriber2")]
-    TracingSubscriber2,
+    /// Runs the example that composes tracing subscriber layers.
+    #[command(
+        name = "tracing_subscriber_layers",
+        alias = "tracing_subscriber2"
+    )]
+    TracingSubscriberLayers,
     /// Runs the `tracing_subscriber2b` example.
     #[command(name = "tracing_subscriber2b")]
     TracingSubscriber2b,
@@ -101,8 +104,8 @@ fn main() -> anyhow::Result<()> {
             Commands::TracingSubscriber1b => {
                 tracing_subscriber1b::run();
             }
-            Commands::TracingSubscriber2 => {
-                tracing_subscriber2::run()
+            Commands::TracingSubscriberLayers => {
+                tracing_subscriber_layers::run()
                     .map_err(|e| anyhow::anyhow!(e.to_string()))?;
             }
             Commands::TracingSubscriber2b => {

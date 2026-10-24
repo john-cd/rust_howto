@@ -4,17 +4,14 @@
 
 {{#include tracing.incl.md}}
 
-Tracing refers to the process of capturing and recording information about the execution of a software program.
+The [`tracing`][c~tracing~docs]↗ ecosystem records structured events and spans while a program runs. Instrument code with the `tracing` API, then configure one subscriber to collect, filter, format, and write those records. The instrumentation API is separate from the output backend.
 
-| Topic | Rust Crates |
-|---|---|
-| Tracing Framework | [`tracing`][c~tracing~docs]↗{{hi:tracing}} provides the `core` tracing functionality: spans, events, etc. |
-| Event Logging | Handled by [`tracing`][c~tracing~docs]↗{{hi:tracing}} using [macros][p~macros] like [`event!`][c~tracing::event~docs]↗{{hi:event!}} and [`debug!`][c~tracing::debug~docs]↗{{hi:debug!}}, [`info!`][c~tracing::info~docs]↗{{hi:info!}}, [`warn!`][c~tracing::warn~docs]↗{{hi:warn!}}, [`error!`][c~tracing::error~docs]↗{{hi:error!}}. |
-| Span Management | Also handled by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its span API. Context propagation is built into tracing's span system. |
-| Asynchronous Tracing | Supported by [`tracing`][c~tracing~docs]↗{{hi:tracing}} through its [asynchronous][p~asynchronous] span management. |
-| Output and [Formatting][p~formatting] | [`tracing-subscriber`][c~tracing-subscriber~docs]↗{{hi:tracing-subscriber}} formats and outputs traces to various destinations. |
-| Filtering | [`tracing-subscriber`][c~tracing-subscriber~docs]↗{{hi:tracing-subscriber}} allows filtering of traces based on level, target, etc. |
-| Integration with other tools | [`tracing`][c~tracing~docs]↗{{hi:tracing}} is often used with other tools like [`Jaeger`][jaegertracing~website]↗{{hi:Jaeger}} or [`Zipkin`][zipkin~website]↗{{hi:Zipkin}} for distributed tracing. |
+- **Instrumentation:** [`tracing`][c~tracing~docs]↗{{hi:tracing}} provides events, spans, and macros such as `event!`, `info!`, and `instrument`.
+- **Collection and output:** [`tracing-subscriber`][c~tracing-subscriber~docs]↗{{hi:tracing-subscriber}} provides subscribers and composable layers to collect, filter, format, and write events and spans.
+- **Filtering:** `tracing-subscriber` directives can select by level, target, span, and field.
+- **Async instrumentation:** `Future::instrument` and `#[tracing::instrument]` scope spans to future polling.
+- **File output:** [`tracing-appender`][tracing-appender~docs]↗ provides rolling file appenders and non-blocking writers.
+- **Distributed tracing:** Exporters connect events to systems such as [`Jaeger`][jaegertracing~website]↗{{hi:Jaeger}} or [`Zipkin`][zipkin~website]↗{{hi:Zipkin}}. Context propagation across process or network boundaries requires an integration that encodes and extracts context.
 
 ## Log Trace Data to `stdout` {#tracing-basics}
 
@@ -22,7 +19,9 @@ Tracing refers to the process of capturing and recording information about the e
 
 [![tracing][c~tracing~docs~badge]][c~tracing~docs]{{hi:tracing}} [![tracing~repo][c~tracing~repo~badge]][c~tracing~repo] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Tracing}}
 
-A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting them as text and logging them to `stdout`.
+This example initializes a text-formatted subscriber that writes `tracing` events and spans to `stdout`.
+
+Install and initialize a subscriber once near the application entry point. Libraries should emit spans and events but generally should not choose the application's global subscriber.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber.rs:example}}
@@ -31,6 +30,8 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 ## Change the Log Level {#tracing-change-log-level}
 
 [![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
+
+With `EnvFilter`, set the `RUST_LOG` environment variable to directives such as `info,my_crate=debug,[request]=trace`. A directive can select a level by target, span name, or span field. Treat environment-driven filters as configuration: validate and document the directives your application supports.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber1.rs:example}}
@@ -49,7 +50,7 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 [![tracing-subscriber][c~tracing-subscriber~docs~badge]][c~tracing-subscriber~docs]{{hi:tracing-subscriber}} [![tracing-subscriber~crates.io][c~tracing-subscriber~crates.io~badge]][c~tracing-subscriber~crates.io]
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber2.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber_layers.rs:example}}
 ```
 
 ## Write Logs to Multiple Destinations Simultaneously {#tracing-multiple-destinations}
@@ -59,6 +60,8 @@ A one-liner allows recording of `tracing`'s `Events` and `Spans` by formatting t
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_subscriber2b.rs:example}}
 ```
+
+The non-blocking writer returns a guard that must stay alive while the application writes logs; dropping it flushes and shuts down the worker.
 
 ## Configure Tracing at Runtime {#tracing-config-runtime}
 
@@ -112,7 +115,7 @@ An [`Event`][c~tracing::Event~docs]↗{{hi:Event}} signifies something that happ
 
 ## Use Spans to Instrument Synchronous and Asynchronous Code {#span-instrument}
 
-Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`await`][keyword~await]↗{{hi:await}} points will result in incorrect traces. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]↗{{hi:tracing::span::Span::in_scope}} to make sure the span is exited before the `await` call. Alternatively, use `instrument` to make sure that the span is automatically exited and re-entered when a async function or block is awaited then resumed.
+Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`await`][keyword~await]↗{{hi:await}} points can produce incorrect traces because the task may yield while the span remains entered on that thread. Use [`tracing::span::Span::in_scope`][c~tracing::span::Span::in_scope~docs]↗{{hi:tracing::span::Span::in_scope}} for synchronous work that ends before an `await`. For async work, use `Future::instrument` or `#[tracing::instrument]`; the span is entered while the future is polled and exited when it yields.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/tracing/tracing_span_in_scope.rs:example}}
@@ -136,16 +139,10 @@ Holding the drop guard returned by `Span::enter`{{hi:Span::enter}} across [`awai
 
 [tracing-journald][c~tracing-journald~docs]↗ provides support for logging [`tracing`][c~tracing~crates.io]↗ events natively to [journald][journald]↗, preserving any structured information.
 
-FIXME
+- [Tracing documentation][c~tracing~docs]↗.
+- [Subscriber documentation][c~tracing-subscriber~docs]↗.
+- [Async instrumentation][c~tracing~docs]↗.
+- [Tracing appender documentation][tracing-appender~docs]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/322)
-tracing_subscriber2
-rename files
-
-- [tracing-appender][c~tracing-appender~crates.io]↗.
-
-</div>

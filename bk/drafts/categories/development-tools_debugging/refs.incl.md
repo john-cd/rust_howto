@@ -61,3 +61,5 @@
 [jaeger~otlp-docs]: https://www.jaegertracing.io/docs/2.22/features/
 [openobserve~traces-docs]: https://openobserve.ai/docs/reference/api/ingestion/traces/
 [quickwit~traces-docs]: https://quickwit.io/docs/main-branch/distributed-tracing/overview
+[tracing-appender~docs]: https://docs.rs/tracing-appender/latest/tracing_appender/
+[ex~development-tools_debugging~write-logs-to-multiple-destinations]: tracing.md#tracing-multiple-destinations
