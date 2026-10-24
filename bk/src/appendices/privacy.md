@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Privacy
 
 The published book loads a Google Analytics 4 tag to measure page views and

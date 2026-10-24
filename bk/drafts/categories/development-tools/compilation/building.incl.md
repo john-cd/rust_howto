@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 | Recipe | Crates | Categories |
 | --- | --- | --- |
 | [Build Rust Code][ex~compilation~build-code] | [Cargo][p~cargo] | [![cat~compilers][cat~compilers~badge]][cat~compilers] |

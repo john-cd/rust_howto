@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Profiling and Benchmarking
 
 Benchmarks measure how long a workload takes on a particular compiler, target,

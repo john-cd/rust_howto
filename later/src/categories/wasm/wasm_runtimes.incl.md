@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 The WebAssembly target and the host runtime must agree on the module's imports and supported features.
 
 - For browser applications and JavaScript hosts, `wasm32-unknown-unknown` is commonly used with JavaScript bindings. It imports no operating-system functions, so some standard-library operations such as filesystem access are unavailable.
