@@ -12,7 +12,11 @@ use lapin::Channel;
 use lapin::Connection;
 use lapin::ConnectionProperties;
 use lapin::Queue;
-use lapin::options::*;
+use lapin::options::BasicAckOptions;
+use lapin::options::BasicConsumeOptions;
+use lapin::options::BasicPublishOptions;
+use lapin::options::ConfirmSelectOptions;
+use lapin::options::QueueDeclareOptions;
 use lapin::types::FieldTable;
 
 /// # AMQP (Advanced Message Queuing Protocol) Client Example with `lapin`
@@ -26,6 +30,7 @@ use lapin::types::FieldTable;
 /// - Declares a queue.
 /// - Publishes a message to the queue.
 /// - Consumes a message from the queue.
+/// Connects to RabbitMQ, publishes a message, consumes it, and acknowledges it.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Connect to a RabbitMQ server:
@@ -38,38 +43,53 @@ async fn main() -> anyhow::Result<()> {
     // "lightweight connection" and can be obtained from a `Connection`.
     let channel: Channel = conn.create_channel().await?;
 
-    // Declare a queue named "my_queue".
+    // Declare a temporary, server-named queue for this run.
     //
     // `QueueDeclareOptions` allows specifying properties like whether the queue
     // is passive, durable, exclusive, auto_delete, etc.
     // `FieldTable` is a map of string keys to AMQP values for additional
     // arguments.
-    let _queue: Queue = channel
+    let queue: Queue = channel
         .queue_declare(
-            "my_queue".into(),
-            QueueDeclareOptions::default(),
-            FieldTable::default(), // a Map<String, AMQPValue>
+            "".into(),
+            QueueDeclareOptions {
+                exclusive: true,
+                auto_delete: true,
+                ..QueueDeclareOptions::default()
+            },
+            FieldTable::default(),
         )
+        .await?;
+    let queue_name = queue.name().clone();
+
+    // Request broker acknowledgements for published messages on this channel.
+    channel
+        .confirm_select(ConfirmSelectOptions::default())
         .await?;
 
     // Publish a message to the queue.
     //
     // - The first argument is the exchange name (empty string for the default
     //   exchange).
-    // - The second argument is the routing key (queue name in this case).
-    // - `BasicPublishOptions` allows specifying properties like mandatory,
-    //   immediate, etc.
+    // - The second argument is the routing key (the generated queue name).
+    // - `BasicPublishOptions` controls routing behavior such as whether the
+    //   broker returns an unroutable message.
     let message = "Hello from Rust!";
-    channel
+    let confirmation = channel
         .basic_publish(
-            "".into(),         // exchange
-            "my_queue".into(), // routing key
+            "".into(),          // exchange
+            queue_name.clone(), // routing key
             BasicPublishOptions::default(),
             message.as_bytes(),
             BasicProperties::default(),
         )
         .await?
         .await?; // Wait for confirmation
+
+    anyhow::ensure!(
+        confirmation.is_ack(),
+        "broker did not acknowledge publish"
+    );
 
     println!("Sent message: {message}");
 
@@ -83,7 +103,7 @@ async fn main() -> anyhow::Result<()> {
     // - `FieldTable` is for additional arguments.
     let mut consumer = channel
         .basic_consume(
-            "my_queue".into(),
+            queue_name,
             "consumer_tag".into(),
             BasicConsumeOptions::default(),
             FieldTable::default(),
@@ -92,21 +112,18 @@ async fn main() -> anyhow::Result<()> {
 
     // Process messages:
     println!("Waiting for messages...");
-    if let Some(delivery) = consumer.next().await {
-        let delivery = delivery?;
-        println!(
-            "Received message: {:?}",
-            String::from_utf8_lossy(&delivery.data)
-        );
+    let delivery = consumer.next().await.ok_or_else(|| {
+        anyhow::anyhow!("consumer stopped before receiving a message")
+    })??;
+    let received = String::from_utf8_lossy(&delivery.data);
+    anyhow::ensure!(received == message, "received an unexpected message");
+    println!("Received message: {received}");
 
-        // Acknowledge the message.
-        //
-        // This tells the broker that the message has been processed and can be
-        // removed from the queue.
-        delivery.ack(BasicAckOptions::default()).await?;
-        // In this example, we quit after the first and only message. In real
-        // life, use `while let`.
-    }
+    // Acknowledge the delivery so the broker can remove it from the queue.
+    anyhow::ensure!(
+        delivery.ack(BasicAckOptions::default()).await?,
+        "delivery was not acknowledged"
+    );
 
     Ok(())
 }
@@ -122,12 +139,14 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Runs the example against an AMQP broker; needs the external service.
+    /// Runs the publish, consume, and acknowledgement round trip with RabbitMQ.
+    ///
+    /// Start the broker with the Docker command shown in the chapter first.
     #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
+    #[ignore = "needs RabbitMQ"]
+    fn rabbitmq_round_trip() -> anyhow::Result<()> {
         // `.devcontainer/compose-heavy-tests.yaml` configures AMQP_ADDR for the
         // book service that runs this external-service test.
-        main()?;
-        Ok(())
+        main()
     }
 }

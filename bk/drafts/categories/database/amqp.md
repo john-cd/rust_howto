@@ -3,29 +3,36 @@
 
 {{#include amqp.incl.md}}
 
-[`AMQP`][wikipedia~AMQP]↗{{hi:AMQP}} stands for `Advanced Message Queuing Protocol`. It is an open standard messaging protocol that is used to reliably exchange messages between applications or systems, even if they are written in different [programming languages][p~programming-languages] and running on different platforms. `AMQP` ensures that messages are delivered reliably, even if there are network issues or system failures. It offers different levels of delivery guarantees, from "at-most-once" to "exactly-once" delivery.
-[`AMQP`][wikipedia~AMQP]↗{{hi:AMQP}} stands for `Advanced Message Queuing Protocol`. It is an open standard messaging protocol that is used to reliably exchange messages between applications or systems, even if they are written in different [programming languages][p~programming-languages] and running on different platforms. `AMQP` ensures that messages are delivered reliably, even if there are network issues or system failures. It offers different levels of delivery guarantees, from "at-most-once" to "exactly-once" delivery.
-
-[`RabbitMQ`][rabbitmq~website]↗{{hi:RabbitMQ}} is an example of a popular message broker that implements the Advanced Message Queuing Protocol. It use cases include microservices communication,
-task queues, background job processing, and publish-subscribe (pub-sub).
-
 ## Connect to RabbitMQ with `lapin` {#lapin}
 
 [![lapin][c~lapin~docs~badge]][c~lapin~docs] [![lapin~crates.io][c~lapin~crates.io~badge]][c~lapin~crates.io] [![lapin~repo][c~lapin~repo~badge]][c~lapin~repo] [![lapin~lib.rs][c~lapin~lib.rs~badge]][c~lapin~lib.rs]{{hi:lapin}}{{hi:RabbitMQ}}{{hi:AMQP}}{{hi:Mio}}{{hi:Futures}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
-[`lapin`][c~lapin~docs]↗{{hi:lapin}} is a AMQP client library. It is a pure Rust AMQP 0.9.1 client implementation, that is feature complete, fast, and easy to use.
+[`lapin`][c~lapin~docs]↗{{hi:lapin}} is a pure Rust AMQP 0-9-1 client that integrates with [Tokio][p~tokio].
 
 ```rust,editable
 {{#include ../../../crates/cats/database/examples/amqp/lapin.rs:example}}
 ```
 
+Start RabbitMQ locally to run the ignored broker-backed example test:
+
+```sh
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-management
+```
+
+In another terminal, from `bk/crates`, run:
+
+```sh
+cargo test -p database --example amqp --features lapin rabbitmq_round_trip -- --ignored
+```
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Asynchronous programming][p~async] and [Tokio][p~tokio].
+- [Async streams][p~streams].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[finish](https://github.com/john-cd/rust_howto/issues/1064)
+The `lapin` recipe now uses a temporary queue, publisher confirms, message verification, consumption, and acknowledgement. Its RabbitMQ integration test stays ignored unless a broker is running; the Docker command and invocation are documented above.
 </div>
