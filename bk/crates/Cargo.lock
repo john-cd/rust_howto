@@ -2908,6 +2908,7 @@ dependencies = [
  "futures",
  "futures-lite 2.6.1",
  "tar",
+ "tempfile",
  "tokio",
  "tokio-util",
  "zip",

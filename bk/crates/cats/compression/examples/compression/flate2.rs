@@ -12,8 +12,11 @@ use std::io::Read as _;
 use std::io::Write as _;
 
 use flate2::Compression;
+use flate2::read::GzDecoder;
 use flate2::read::ZlibDecoder;
+use flate2::write::GzEncoder;
 use flate2::write::ZlibEncoder;
+use tempfile::NamedTempFile;
 
 /// Compresses and decompresses a byte string with zlib and checks the round
 /// trip.
@@ -35,8 +38,48 @@ fn main() -> anyhow::Result<()> {
         compressed.len()
     );
     println!("Decoded text: {decoded}");
+    gzip_file_round_trip()?;
     Ok(())
 }
+
+// ANCHOR: gzip-file
+/// Compresses a source file to gzip and restores it to another temporary file.
+///
+/// # Errors
+///
+/// Returns an error if a temporary file cannot be created or any file
+/// operation or compression step fails.
+fn gzip_file_round_trip() -> anyhow::Result<()> {
+    let original = b"File contents compressed and restored with gzip.";
+
+    let mut source_file = NamedTempFile::new()?;
+    source_file.write_all(original)?;
+
+    let compressed_file = NamedTempFile::new()?;
+    let mut source = source_file.reopen()?;
+    let mut encoder =
+        GzEncoder::new(compressed_file.reopen()?, Compression::fast());
+    std::io::copy(&mut source, &mut encoder)?;
+    encoder.finish()?;
+
+    let mut restored_file = NamedTempFile::new()?;
+    let mut decoder = GzDecoder::new(compressed_file.reopen()?);
+    std::io::copy(&mut decoder, restored_file.as_file_mut())?;
+
+    let restored = std::fs::read(restored_file.path())?;
+    assert_eq!(restored, original);
+    println!(
+        "Gzip-compressed {} bytes into {} bytes",
+        original.len(),
+        compressed_file.as_file().metadata()?.len()
+    );
+    println!(
+        "Restored file contents: {}",
+        String::from_utf8_lossy(&restored)
+    );
+    Ok(())
+}
+// ANCHOR_END: gzip-file
 // ANCHOR_END: example
 
 /// Runs the example.
@@ -48,9 +91,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks the in-memory and temporary-file compression round trips.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()
     }
-    // [read / write a file](https://github.com/john-cd/rust_howto/issues/1009)
 }

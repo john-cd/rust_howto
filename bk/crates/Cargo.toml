@@ -49,6 +49,10 @@ members = [
 ]
 exclude = []
 
+[workspace.dependencies]
+# Isolated temporary files for examples that demonstrate file-based I/O.
+tempfile = "3.27.0"
+
 # Default values for packages in the workspace
 [workspace.package]
 version = "0.1.2"

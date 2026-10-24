@@ -13,8 +13,18 @@
 
 It can be used with various I/O [streams][p~streams], making it versatile for different use cases, such as file [compression][p~compression], network protocols, and in-memory data manipulation. It also offers features like checksumming and [error handling][p~error-handling], making it suitable for production environments.
 
+The file example below uses unique temporary files and removes them automatically when they are dropped. It is marked `noplayground` because the browser playground cannot access the local filesystem.
+
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/compression/examples/compression/flate2.rs:example}}
+```
+
+## Compress and Decompress a File with Gzip {#gzip-file}
+
+[![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo] [![flate2~lib.rs][c~flate2~lib.rs~badge]][c~flate2~lib.rs]{{hi:flate2}}{{hi:Gzip}}{{hi:File I/O}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/compression/examples/compression/flate2.rs:gzip-file}}
 ```
 
 The following demonstrates asynchronous compression:
