@@ -100,4 +100,5 @@ The above is adapted from:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
 </div>

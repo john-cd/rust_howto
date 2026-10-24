@@ -60,4 +60,5 @@ fn main() -> Result<()> {
 - [[dependency_management | Dependency Management]].
 - [[development-tools_cargo-plugins | Development Tools - Cargo Plugins]].
 
+[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
 </div>

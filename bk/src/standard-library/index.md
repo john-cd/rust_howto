@@ -139,4 +139,5 @@ The following covers portions of the Rust Standard Library that are not otherwis
 - [`std::pin`][c~std::pin~projections-and-structural-pinning~docs]↗.
 - [`core::iter`][c~core::iter~docs]↗.
 
+[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

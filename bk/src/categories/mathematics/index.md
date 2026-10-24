@@ -125,3 +125,8 @@ Combinatorics, set theory, and logic.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
+[accuracy review: decisions for the maintainer](https://github.com/john-cd/rust_howto/issues/1897)
+</div>

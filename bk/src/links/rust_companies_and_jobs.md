@@ -230,4 +230,5 @@ See also the [Rust Jobs Reports][filtra.io-rust~website]↗ on Filtra.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: decisions for the maintainer](https://github.com/john-cd/rust_howto/issues/1897)
 </div>

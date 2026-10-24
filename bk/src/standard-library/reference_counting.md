@@ -51,4 +51,5 @@ See [[interior_mutability | Interior Mutability]] for more details.
 
 - [[concurrency | Concurrency]].
 
+[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

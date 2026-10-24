@@ -130,3 +130,7 @@ See [[science | Science]], [[_machine_learning | Machine Learning]], [[science_g
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
+</div>

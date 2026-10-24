@@ -196,4 +196,5 @@ The following example summarizes the visibility rules when it comes to modules. 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
 </div>

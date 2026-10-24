@@ -74,4 +74,5 @@ Note that, while these shortcuts make your code more compact and readable, they 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
+[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
 </div>

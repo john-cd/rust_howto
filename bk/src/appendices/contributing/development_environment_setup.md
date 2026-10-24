@@ -97,3 +97,7 @@ apt-get -y install just
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+</div>
