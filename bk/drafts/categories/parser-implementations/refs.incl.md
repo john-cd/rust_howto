@@ -28,4 +28,7 @@
 [ex~parser-implementations~xml5ever]: xml.md#xml5ever
 [ex~parser-implementations~xmlparser]: xml.md#xmlparser
 [p~streams]: ../asynchronous/streams.md
+[p~template-engine]: ../template-engine/index.md
 [p~traits]: ../../../src/language/traits.md
+[p~web-scraping]: ../web-programming/scraping.md
+[p~xml-parsing]: xml.md

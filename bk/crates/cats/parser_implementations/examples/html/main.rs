@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 mod cssparser;
 mod html5ever;
+mod scraper;
 mod tl;
 
 /// Command-line arguments.
@@ -26,6 +27,9 @@ enum Commands {
     /// Runs the `html5ever` example.
     #[command(name = "html5ever")]
     Html5ever,
+    /// Runs the `scraper` CSS selector example.
+    #[command(name = "scraper")]
+    Scraper,
     /// Runs the `tl` example.
     #[command(name = "tl")]
     Tl,
@@ -42,6 +46,9 @@ fn main() -> anyhow::Result<()> {
             }
             Commands::Html5ever => {
                 html5ever::run()?;
+            }
+            Commands::Scraper => {
+                scraper::run()?;
             }
             Commands::Tl => {
                 tl::run()?;

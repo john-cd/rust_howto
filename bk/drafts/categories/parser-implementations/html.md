@@ -47,7 +47,11 @@ tl = { version = "0.7.8", features = ["simd"] }
 
 [![scraper][c~scraper~docs~badge]][c~scraper~docs] [![scraper~crates.io][c~scraper~crates.io~badge]][c~scraper~crates.io] [![scraper~repo][c~scraper~repo~badge]][c~scraper~repo] [![scraper~lib.rs][c~scraper~lib.rs~badge]][c~scraper~lib.rs]{{hi:scraper}}{{hi:Css}}{{hi:Html}}{{hi:Selector}}{{hi:Scraping}}
 
-HTML parsing and querying with CSS selectors. [`scraper`][c~scraper~docs]↗{{hi:scraper}} uses CSS selectors.
+[`scraper`][c~scraper~docs]↗{{hi:scraper}} provides a tree-backed interface for selecting elements with CSS selectors. Use it to extract text and attributes from the HTML you received; it does not execute JavaScript or fetch pages for you.
+
+```rust,editable
+{{#include ../../../crates/cats/parser_implementations/examples/html/scraper.rs:example}}
+```
 
 ## Other Options {#other-options .skip}
 
@@ -55,11 +59,13 @@ HTML parsing and querying with CSS selectors. [`scraper`][c~scraper~docs]↗{{hi
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [XML parsing][p~xml-parsing] for XML-specific parsers.
+- [Web scraping][p~web-scraping] for extracting links and other page data.
+- [Template engines][p~template-engine] for generating HTML from structured data.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1187)
+This chapter now distinguishes HTML5 parsing, DOM-style CSS selection, and CSS syntax parsing, adds a tested `scraper` recipe, and links related XML, scraping, and templating guidance.
 </div>
