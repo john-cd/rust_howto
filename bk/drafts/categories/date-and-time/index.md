@@ -5,20 +5,16 @@
 
 Manage the complexity of dealing with the fourth dimension.
 
-There are two key libraries:
-
-- [`chrono`][c~chrono~docs]↗{{hi:chrono}}: a comprehensive, full-featured, yet complex date and time library.
-- [`time`][c~time~docs]↗{{hi:time}}: a smaller, simpler library with limited functionality.
-
-There is no clear answer as to which is best between [`time`][c~time~docs]↗{{hi:time}} and [`chrono`][c~chrono~docs]↗{{hi:chrono}}. Evaluate for yourself between these two, but both are trusted and well-maintained.
+[`chrono`][c~chrono~docs]↗{{hi:chrono}} provides a broad date-and-time API, including the system's local time zone. [`time`][c~time~docs]↗{{hi:time}} has a modular API and supports `no_std` configurations. Choose based on the types, time-zone data, and runtime features your application needs.
 
 | Topic | Rust Crates |
 |---|---|
-| Date and Time Types | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} (newer crate, often preferred) |
-| Time Zones | [`chrono-tz`][c~chrono-tz~docs]↗{{hi:chrono-tz}}, [`time`][c~time~docs]↗{{hi:time}} (built-in support) |
+| Date and Time Types | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} |
+| Named Time Zones | [`chrono-tz`][c~chrono-tz~docs]↗{{hi:chrono-tz}} supplies IANA time-zone data for `chrono`; `time` supports UTC offsets and can optionally query the system's local offset. |
 | Formatting and Parsing | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} |
-| Durations and Time Intervals | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} |
-| Clock and Time Measurement | [`std::time`][c~std::time~docs]↗{{hi:std::time}} (for basic timekeeping), [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} (for convenient benchmarking) |
+| Human-Readable Durations | [`humantime`][ex~date-and-time~humantime] parses and formats `std::time::Duration` values. |
+| Durations and Time Intervals | [`std::time::Duration`][c~std::time::Duration~docs]↗{{hi:std::time::Duration}}, [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} |
+| Elapsed-Time Measurement | [`std::time::Instant`][c~std::time::Instant~docs]↗{{hi:std::time::Instant}} is the baseline; [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} adds scope-based logging and printing. |
 
 ## Duration and Calculation
 
@@ -36,8 +32,6 @@ There is no clear answer as to which is best between [`time`][c~time~docs]↗{{h
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review in depth](https://github.com/john-cd/rust_howto/issues/1188)
-
-add examples for humantime
+The `time` crate represents UTC offsets and can query the system offset when its `local-offset` feature is enabled; it does not provide a bundled IANA time-zone database. `chrono-tz` supplies that database for Chrono. Keep this category in drafts while its detail pages still contain unresolved placeholders.
 
 </div>

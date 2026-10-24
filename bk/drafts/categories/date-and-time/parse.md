@@ -53,12 +53,15 @@ Escape sequences for `parse_from_str` follow Chrono's [`strftime` format rules][
 
 [![humantime][c~humantime~docs~badge]][c~humantime~docs] [![humantime~crates.io][c~humantime~crates.io~badge]][c~humantime~crates.io] [![humantime~repo][c~humantime~repo~badge]][c~humantime~repo] [![humantime~lib.rs][c~humantime~lib.rs~badge]][c~humantime~lib.rs]{{hi:humantime}}{{hi:Parser}}{{hi:Time}}{{hi:Human}}{{hi:Duration}}{{hi:Human-friendly}} [![cat~date-and-time][cat~date-and-time~badge]][cat~date-and-time]{{hi:Date and time}}
 
-A parser and formatter for `std::time::{Duration, SystemTime}`. The example parses `2h 30m 15s`, formats the resulting duration, and parses then formats `2018-01-01T12:53:00Z` as an RFC 3339 timestamp.
+A parser and formatter for `std::time::{Duration, SystemTime}`. The example parses `2h 30m 15s` into a duration and formats it back into a human-readable string. `humantime` also supports RFC 3339 timestamps when an application needs to parse a `SystemTime`.
 
-- Parses durations in free form like 15days 2min 2s.
-- Formats durations in similar form 2years 2min 12us.
-- Parses and formats timestamp in rfc3339 format: 2018-01-01T12:53:00Z.
-- Also parses timestamps in a weaker format such as `2018-01-01 12:53:00`.
+```rust,editable
+{{#include ../../../crates/cats/date_and_time/examples/humantime.rs:example}}
+```
+
+- Parses free-form durations such as `15days 2min 2s`.
+- Formats durations in similar form, such as `2years 2min 12us`.
+- Parses RFC 3339 timestamps such as `2018-01-01T12:53:00Z`, and can also parse a weaker form such as `2018-01-01 12:53:00`.
 
 ## Related Topics {#related-topics .skip}
 
@@ -70,4 +73,6 @@ A parser and formatter for `std::time::{Duration, SystemTime}`. The example pars
 
 <div class="hidden">
 [write humantime; review](https://github.com/john-cd/rust_howto/issues/914)
+
+The short example focuses on duration parsing and formatting so it complements the timestamp overview without duplicating more sample code in the category index.
 </div>

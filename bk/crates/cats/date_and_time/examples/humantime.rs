@@ -1,50 +1,20 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates the `humantime` crate for parsing and formatting
-//! human-readable durations.
+//! Parse and format a human-readable duration with `humantime`.
 
 use std::time::Duration;
 
-/// Parses and formats durations and timestamps in a human-readable form.
+/// Parses a human-readable duration and formats it again.
 ///
 /// # Errors
 ///
-/// Returns an error if either sample duration or timestamp is invalid.
+/// Returns an error if the sample duration is invalid.
 fn main() -> anyhow::Result<()> {
-    // Parse a duration from a human-readable string.
     let human_text = "2h 30m 15s";
     let duration: Duration = humantime::parse_duration(human_text)?;
-
-    println!("Parsed duration from '{human_text}': {duration:?}");
-
-    // Format the parsed duration back into a human-readable string.
     let formatted = humantime::format_duration(duration).to_string();
-    println!("Formatted duration: {formatted}");
-
-    // Compute and format half of the duration.
-    let half_duration = duration / 2;
-    println!(
-        "Half the duration is: {}",
-        humantime::format_duration(half_duration)
-    );
-
-    // Format a short duration example.
-    let fast_duration = Duration::from_millis(750);
-    println!(
-        "Fast operation time: {}",
-        humantime::format_duration(fast_duration)
-    );
-
-    // Parse an RFC 3339 timestamp and format it back to the same
-    // representation.
-    let timestamp_text = "2018-01-01T12:53:00Z";
-    let timestamp = humantime::parse_rfc3339(timestamp_text)?;
-    let formatted_timestamp = humantime::format_rfc3339(timestamp).to_string();
-    assert_eq!(formatted_timestamp, timestamp_text);
-    println!(
-        "Formatted timestamp '{timestamp_text}' as '{formatted_timestamp}'."
-    );
+    println!("{human_text} is {formatted}");
 
     Ok(())
 }
@@ -54,9 +24,16 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Parses a duration and formats it back to human-readable text.
     #[test]
-    fn humantime_parses_and_formats_durations_and_timestamps()
-    -> anyhow::Result<()> {
+    fn humantime_parses_and_formats_a_duration() -> anyhow::Result<()> {
+        let duration = humantime::parse_duration("2h 30m 15s")?;
+        assert_eq!(duration, Duration::from_secs(9_015));
+        assert_eq!(
+            humantime::format_duration(duration).to_string(),
+            "2h 30m 15s"
+        );
+
         main()
     }
 }
