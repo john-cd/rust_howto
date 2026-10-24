@@ -19155,6 +19155,7 @@ dependencies = [
  "http-body-util",
  "lazy_static",
  "mime",
+ "mime_guess",
  "regex",
  "reqwest 0.13.5",
  "scraper",

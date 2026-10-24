@@ -17,7 +17,7 @@ The following example shows how to [parse][p~parse] a [`mime::Mime`][c~mime::Mim
 
 [![mime][c~mime~docs~badge]][c~mime~docs]{{hi:mime}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-The following example shows how to return the correct MIME{{hi:MIME type}} type from a given filename using the [`mime`][c~mime~docs]↗{{hi:mime}} crate. The program will check for file extensions and match against a known list. The return value is [`mime::Mime`][c~mime::Mime~docs]↗{{hi:mime::Mime}}.
+The following example guesses a MIME type from the filename extension with [`mime_guess`][c~mime_guess~docs]↗{{hi:mime_guess}}. It returns [`mime::Mime`][c~mime::Mime~docs]↗{{hi:mime::Mime}} and uses `application/octet-stream` when the extension is unknown. This is an extension-based guess; it does not inspect the file's bytes.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/mime/filename.rs:example}}
@@ -27,7 +27,7 @@ The following example shows how to return the correct MIME{{hi:MIME type}} type 
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![mime][c~mime~docs~badge]][c~mime~docs]{{hi:mime}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-When receiving a HTTP response{{hi:HTTP response}} from [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} the [`MIME type`][mozilla~mime-type]↗{{hi:MIME type}} or media type may be found in the [`Content-Type`][mozilla~content-type]↗{{hi:Content type}} header. [`reqwest::header::HeaderMap::get`][c~reqwest::header::HeaderMap::get~docs]↗{{hi:reqwest::header::HeaderMap::get}} retrieves the header{{hi:Header}} as a [`reqwest::header::HeaderValue`][c~reqwest::header::HeaderValue~docs]↗{{hi:reqwest::header::HeaderValue}} which can be converted to a string. The [`mime`][c~mime~docs]↗{{hi:mime}} crate can then parse that, yielding a [`mime::Mime`][c~mime::Mime~docs]↗{{hi:mime::Mime}} value.
+When receiving an HTTP response from [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, the media type is available in the [`Content-Type`][mozilla~content-type]↗{{hi:Content type}} header. The example converts the header value to text and parses it with [`mime::Mime`][c~mime::Mime~docs]↗{{hi:mime::Mime}}. It checks the response status before examining the header and reports a missing or malformed media type explicitly.
 
 The [`mime`][c~mime~docs]↗{{hi:mime}} crate also defines some commonly used MIME types.
 
@@ -39,11 +39,14 @@ Note that the [`reqwest::header`][c~reqwest::header~docs]↗{{hi:reqwest::header
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[requests | Make HTTP Requests]].
+- [[filesystem | Filesystem]].
+
+To identify a file from its contents instead of its extension, use a content-sniffing crate such as [`infer`](https://docs.rs/infer/latest/infer/).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/971)
+This review replaces the hand-written extension match with `mime_guess`, documents that its result comes from the filename, and adds local tests for response `Content-Type` parsing. The live HTTP example is now opt-in.
 </div>
