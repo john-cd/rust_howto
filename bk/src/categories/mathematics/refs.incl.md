@@ -1,4 +1,10 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[c~num::complex::Complex::arg~docs]: https://docs.rs/num/0.4.3/num/complex/struct.Complex.html#method.arg
+[c~num::complex::Complex::exp~docs]: https://docs.rs/num/0.4.3/num/complex/struct.Complex.html#method.exp
+[c~num::complex::Complex::from_polar~docs]: https://docs.rs/num/0.4.3/num/complex/struct.Complex.html#method.from_polar
+[c~num::complex::Complex::norm~docs]: https://docs.rs/num/0.4.3/num/complex/struct.Complex.html#method.norm
+[c~num::complex::Complex::sin~docs]: https://docs.rs/num/0.4.3/num/complex/struct.Complex.html#method.sin
+[c~num::complex::Complex::to_polar~docs]: https://docs.rs/num/0.4.3/num/complex/struct.Complex.html#method.to_polar
 [ex~mathematics~abstracting-over-number-types]: additional_numeric_types.md#abstracting-over-number-types
 [ex~mathematics~adding-complex-numbers]: complex_numbers.md#adding-complex-numbers
 [ex~mathematics~adding-matrices]: linear_algebra.md#adding-matrices

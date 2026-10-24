@@ -2,7 +2,7 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Demonstrates the manipluation of complex numbers.
+//! Demonstrates the manipulation of complex numbers.
 
 /// Adds two complex numbers and prints the sum.
 fn main() {
@@ -27,6 +27,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the addition example runs without panicking.
     #[test]
     fn test_main() {
         main();

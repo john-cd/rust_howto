@@ -26,6 +26,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the exponential example runs without panicking.
     #[test]
     fn test_main() {
         main();

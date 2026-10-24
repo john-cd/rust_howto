@@ -27,6 +27,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the construction example runs without panicking.
     #[test]
     fn test_main() {
         main();
