@@ -2,9 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-mod serde_yml;
+mod serde_saphyr;
 
 /// Runs the yaml example.
 fn main() -> anyhow::Result<()> {
-    serde_yml::run()
+    serde_saphyr::run()
 }

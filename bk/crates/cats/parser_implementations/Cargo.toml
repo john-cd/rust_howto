@@ -42,8 +42,8 @@ rust-ini = "0.21.3"
 # HTML tree traversal and CSS selectors for the scraper example.
 scraper = "0.29.0"
 serde = { version = "1.0.229", features = ["derive"] }
+serde-saphyr = "2.0.0"
 serde_json = "1.0.154"
-serde_norway = "0.9.42"
 simd-json = "0.17.3"
 sqlparser = { version = "0.61.0", features = ["visitor"], optional = true }
 swc_common = "21.0.2"

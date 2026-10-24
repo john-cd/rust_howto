@@ -1,5 +1,11 @@
 <!-- TODO Reviewed ??-??-2026 -->
 [c~async-graphql-parser~docs]: https://docs.rs/async-graphql-parser
+[c~noyalib~docs]: https://docs.rs/noyalib
+[c~serde-saphyr~crates.io]: https://crates.io/crates/serde-saphyr
+[c~serde-saphyr~crates.io~badge]: https://img.shields.io/crates/v/serde-saphyr?label=serde-saphyr
+[c~serde-saphyr~docs]: https://docs.rs/serde-saphyr
+[c~serde-saphyr~docs~badge]: https://img.shields.io/crates/v/serde-saphyr?label=serde-saphyr
+[c~yaml-rust2~docs]: https://docs.rs/yaml-rust2
 [ex~parser-implementations~basic-toml]: toml.md#basic-toml
 [ex~parser-implementations~comrak]: markdown.md#comrak
 [ex~parser-implementations~configparser]: ini.md#configparser
@@ -17,7 +23,7 @@
 [ex~parser-implementations~rust_parsing]: programming_languages.md#rust_parsing
 [ex~parser-implementations~scraper]: html.md#scraper
 [ex~parser-implementations~serde-json]: json.md#serde-json
-[ex~parser-implementations~serde_yml]: yaml.md#serde_yml
+[ex~parser-implementations~serde-saphyr]: yaml.md#serde-saphyr
 [ex~parser-implementations~simd-json]: json.md#simd-json
 [ex~parser-implementations~sql_parsing]: programming_languages.md#sql_parsing
 [ex~parser-implementations~tl]: html.md#tl
