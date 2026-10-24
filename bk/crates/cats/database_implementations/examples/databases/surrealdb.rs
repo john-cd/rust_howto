@@ -2,26 +2,20 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! SurrealDB is a scalable, distributed, collaborative,
-//! document-graph database for the realtime web.
+//! Use SurrealDB's embedded in-memory engine for a self-contained CRUD example.
 
-#![allow(clippy::result_large_err)]
+#![allow(
+    clippy::result_large_err,
+    reason = "Keep the structured error type provided by the SurrealDB SDK."
+)]
 
-use serde::Deserialize;
-use serde::Serialize;
 use surrealdb::Result;
-// Database client instance for embedded or remote databases:
 use surrealdb::Surreal;
-// For an in-memory database, use:
 use surrealdb::engine::local::Mem;
 use surrealdb::types::SurrealValue;
-// For a RocksDB file, use:
-// use surrealdb::engine::local::RocksDb;
 
-// The document to store in the database.
 /// A person, stored in the database.
-#[derive(Debug, Serialize, Deserialize, SurrealValue)]
-#[surreal(crate = "surrealdb::types")]
+#[derive(Debug, SurrealValue)]
 struct Person {
     /// The name of the person.
     name: String, // or: Cow<'static, str>
@@ -29,30 +23,15 @@ struct Person {
     age: u16,
 }
 
-/// `SurrealDB` is a scalable, distributed, collaborative,
-/// document-graph database for the realtime web.
+/// Creates, reads, updates, and deletes one person in an in-memory database.
 ///
-/// The `surrealdb` crate can be used to start an embedded in-memory
-/// datastore, an embedded datastore persisted to disk,
-/// a browser-based embedded datastore backed by `IndexedDB`,
-/// or for connecting to a distributed `TiKV` key-value store.
-///
-/// Add `surrealdb = { version = "2.1.4", features = [ "kv-mem" ] }`
-/// to `Cargo.toml` for an in-memory datastore.
+/// The `database_implementations` package enables the `kv-mem` feature. For a
+/// persistent embedded store, enable another engine feature in `Cargo.toml`.
 #[tokio::main]
 async fn main() -> Result<()> {
-    // Initialize a SurrealDB in-memory instance.
     let db = Surreal::new::<Mem>(()).await?;
-
-    // Alternatively, connect to a local endpoint:
-    // let db = Surreal::new::<Ws>("localhost:8000").await?;
-    // Or create database connection using RocksDB:
-    // let db = Surreal::new::<RocksDb>("path/to/database-folder").await?;
-
-    // Select a namespace and database.
     db.use_ns("test_namespace").use_db("test_db").await?;
 
-    // Create a record with a specific ID.
     let created: Option<Person> = db
         .create(("person", "John Doe"))
         .content(Person {
@@ -63,14 +42,10 @@ async fn main() -> Result<()> {
 
     println!("Created person: {created:?}");
 
-    // Select all person records.
     let people: Vec<Person> = db.select("person").await?;
     println!("All people: {people:?}");
 
-    // Find a specific person by name using a WHERE clause.
-    // Demonstrates how to use `query()` with bindings to prevent SQL injection
-    // vulnerabilities. Note that the `query()` method is able to hold more
-    // than one statement.
+    // Bind the value instead of interpolating it into the query string.
     let mut result = db
         .query("SELECT * FROM person WHERE name = $name")
         .bind(("name", "J. Doe"))
@@ -79,22 +54,17 @@ async fn main() -> Result<()> {
     let people: Vec<Person> = result.take(0)?;
     println!("Specific person: {people:?}");
 
-    // Update a person's age.
     let _updated: Option<Person> = db
         .update(("person", "John Doe"))
-        // Assumes that the name is unique for simplicity. In real applications,
-        // use a proper ID.
         .content(Person {
             name: "J. Doe".to_owned(),
             age: 43,
         })
         .await?;
 
-    // Delete a person.
     let deleted: Option<Person> = db.delete(("person", "John Doe")).await?;
     println!("Deleted person: {deleted:?}");
 
-    // Check if the person exists after deletion.
     let people_after_delete: Vec<Person> = db.select("person").await?;
     println!("People after delete: {people_after_delete:?}");
 
@@ -104,6 +74,10 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+///
+/// Returns an error if the in-memory engine or any CRUD operation fails.
 pub fn run() -> Result<()> {
     main()
 }
@@ -112,10 +86,10 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs CRUD operations against an isolated in-memory database.
     #[test]
-    fn test_main() -> Result<()> {
+    fn uses_the_embedded_memory_engine() -> Result<()> {
         main()?;
         Ok(())
     }
 }
-// [review https://surrealdb.com/docs](https://github.com/john-cd/rust_howto/issues/1148)

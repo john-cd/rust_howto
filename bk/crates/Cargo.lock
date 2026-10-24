@@ -13482,7 +13482,6 @@ dependencies = [
  "js-sys",
  "log",
  "mime",
- "mime_guess",
  "percent-encoding",
  "pin-project-lite",
  "quinn",
@@ -16089,9 +16088,7 @@ dependencies = [
  "indexmap 2.14.2",
  "js-sys",
  "path-clean",
- "reqwest 0.13.5",
  "ring",
- "rustls",
  "rustls-pki-types",
  "semver",
  "serde 1.0.229",
@@ -16105,10 +16102,8 @@ dependencies = [
  "surrealdb-types",
  "surrealdb-types-derive",
  "tokio",
- "tokio-tungstenite 0.28.0",
  "tokio-tungstenite-wasm",
  "tokio-util",
- "tonic",
  "tracing",
  "url",
  "uuid 1.28.0",
@@ -17889,12 +17884,8 @@ checksum = "d25a406cddcc431a75d3d9afc6a7c0f7428d4891dd973e4d54c56b46127bf857"
 dependencies = [
  "futures-util",
  "log",
- "rustls",
- "rustls-pki-types",
  "tokio",
- "tokio-rustls",
  "tungstenite 0.28.0",
- "webpki-roots 0.26.11",
 ]
 
 [[package]]
@@ -18109,13 +18100,11 @@ dependencies = [
  "socket2 0.6.5",
  "sync_wrapper",
  "tokio",
- "tokio-rustls",
  "tokio-stream",
  "tower 0.5.3",
  "tower-layer",
  "tower-service",
  "tracing",
- "webpki-roots 1.0.10",
 ]
 
 [[package]]
@@ -18414,11 +18403,8 @@ dependencies = [
  "httparse",
  "log",
  "rand 0.9.5",
- "rustls",
- "rustls-pki-types",
  "sha1 0.10.7",
  "thiserror 2.0.21",
- "url",
  "utf-8",
 ]
 

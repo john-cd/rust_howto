@@ -47,6 +47,10 @@ SurrealDB is a scalable, distributed, collaborative, document-graph [database][p
 {{#include ../../../crates/cats/database_implementations/examples/databases/surrealdb.rs:example}}
 ```
 
+<div class="hidden">
+The example uses SurrealDB 3's current `SurrealValue` derive and the in-memory `Mem` engine so its test exercises the full CRUD path without a server or network service.
+</div>
+
 ## Related Topics {#related-topics .skip}
 
 FIXME
