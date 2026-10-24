@@ -7,10 +7,12 @@
 [ex~asynchronous~basics]: tokio.md#basics
 [ex~asynchronous~broadcast]: async_channels.md#broadcast
 [ex~asynchronous~call-async-from-blocking]: async_and_blocking.md#call-async-from-blocking
+[ex~asynchronous~cancellation-token]: async_utilities.md#cancellation-token
 [ex~asynchronous~calling-blocking-from-async]: async_and_blocking.md#calling-blocking-from-async
 [ex~asynchronous~diff-other-languages]: async.md#diff-other-languages
 [ex~asynchronous~futures-executor]: async_and_blocking.md#futures-executor
 [ex~asynchronous~futures-util]: futures.md#futures-util
+[ex~asynchronous~futures-unordered]: async_utilities.md#futures-unordered
 [ex~asynchronous~graceful-shutdown]: tokio.md#graceful-shutdown
 [ex~asynchronous~io]: tokio.md#io
 [ex~asynchronous~join]: tokio.md#join

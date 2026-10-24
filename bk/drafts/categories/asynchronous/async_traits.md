@@ -22,7 +22,7 @@ This is in turn enabled by return-position [`impl Trait`][book~rust-reference~im
 
 Note that there are still caveats for public [traits][p~traits] - see [Announcing `[async][p~async] fn` and return-position `impl Trait` in [traits][p~traits]][blog~announcing-async-fn]↗.
 
-In addition, [traits][p~traits] that use `-> impl Trait` and `[async][p~async] fn` are not object-safe{{hi:Object-safe traits}}, which means they lack support for dynamic dispatch. In the meanwhile, use the [`async-trait`][c~async-trait~docs]↗{{hi:async-trait}} crate.
+Traits that use `-> impl Trait` or `[async][p~async] fn` are not object-safe{{hi:Object-safe traits}}, so they cannot be used directly for dynamic dispatch. The [`async-trait`][c~async-trait~docs]↗{{hi:async-trait}} crate remains useful for dynamic dispatch and projects that support a Rust version earlier than 1.75.
 
 [![async-trait][c~async-trait~docs~badge]][c~async-trait~docs]{{hi:async-trait}} [![async-trait~repo][c~async-trait~repo~badge]][c~async-trait~repo] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 
@@ -39,6 +39,6 @@ In addition, [traits][p~traits] that use `-> impl Trait` and `[async][p~async] f
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[async-traits: review new Rust features](https://github.com/john-cd/rust_howto/issues/216)
-async-trait = Provides a workaround for the lack of [language][p~language] support for [async][p~async] [functions][p~functions] in traits.
+  [async-traits: review new Rust features](https://github.com/john-cd/rust_howto/issues/216)
+  async-trait = Provides a workaround for the lack of [language][p~language] support for [async][p~async] [functions][p~functions] in traits.
 </div>
