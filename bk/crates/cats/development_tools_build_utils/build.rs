@@ -30,24 +30,25 @@ fn cpp() {
 // ANCHOR: C_DEFINES
 /// Compile a C file with specific `#define` directives.
 fn cc_defines() {
-    println!("cargo::rerun-if-changed=examples/foo.c");
-    // Compile `examples/foo.c` into `libfoo.a` with defines:
+    println!(
+        "cargo::rerun-if-changed=examples/build_time_tooling/cc_defines.c"
+    );
+    println!("cargo::rerun-if-env-changed=CARGO_PKG_VERSION");
+    let version = format!("\"{}\"", env!("CARGO_PKG_VERSION"));
+    // Compile the C example with defines supplied by this Cargo package.
     cc::Build::new()
         .define("APP_NAME", "\"foo\"")
-        .define(
-            "VERSION",
-            format!("\"{}\"", env!("CARGO_PKG_VERSION")).as_str(),
-        )
+        .define("VERSION", version.as_str())
         .define("WELCOME", None)
-        .file("examples/foo.c")
-        .compile("foo");
+        .file("examples/build_time_tooling/cc_defines.c")
+        .compile("cc_defines");
 }
 // ANCHOR_END: C_DEFINES
 
 /// Entry point for the build script.
 fn main() {
     // c();
-    // cc_defines();
+    cc_defines();
     // cpp();
 }
 

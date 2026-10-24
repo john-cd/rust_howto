@@ -109,9 +109,7 @@ int multiply(int x, int y) {
 [`cc`][c~cc~docs]↗{{hi:cc}}
 
 It is simple to build bundled C code with custom defines using [`cc::Build::define`][c~cc::Build::define~docs]↗{{hi:cc::Build::define}}.
-The method takes an [`std::option::Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}} value, so it is possible to create defines such as `#define APP_NAME "foo"`
-as well as `#define WELCOME` (pass [`std::option::Option::None`][c~std::option::Option::None~docs]↗{{hi:std::option::Option::None}} as the value for a value-less define). This example builds
-a bundled C file with dynamic defines set in [`build.rs`][book~cargo~build-script]↗{{hi:build.rs}} and prints "`Welcome to foo - version 1.0.2`" when run. [Cargo][p~cargo] sets some [environment variables][book~cargo~env]↗ which may be useful for some custom defines.
+The method accepts an optional value, so it can define macros such as `APP_NAME "foo"` or a value-less macro such as `WELCOME` (pass `None` for the latter). This example sets the name, the package version from `CARGO_PKG_VERSION`, and `WELCOME` in [`build.rs`][book~cargo~build-script]↗{{hi:build.rs}}. The Rust code calls functions in the compiled C library and prints those values. [Cargo][p~cargo] sets package [environment variables][book~cargo~env]↗ that build scripts can use for custom defines.
 
 ### `Cargo.toml` (custom defines) {#cargo-toml-custom-defines .skip}
 
@@ -128,27 +126,24 @@ cc = "1"
 ### `build.rs` (custom defines) {#build-rs-custom-defines .skip}
 
 ```rust,editable
+{{#include ../../../crates/cats/development_tools_build_utils/build.rs:C_DEFINES}}
+```
+
+### `examples/build_time_tooling/cc_defines.c` {#cc-defines-c .skip}
+
+```c
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines.c:C_DEFINES}}
+```
+
+### Rust code that calls the C functions {#rust-cc-defines .skip}
+
+```rust,editable
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines.rs:example}}
 ```
 
-### `src/foo.c` (custom defines) {#foo-c-custom-defines .skip}
-
-```c
-#include <stdio.h>
-
-void print_app_info() {
-#ifdef WELCOME
-    printf("Welcome to ");
-#endif
-    printf("%s - version %s\n", APP_NAME, VERSION);
-}
-```
-
-### `src/main.rs` (custom defines) {#main-rs-custom-defines .skip}
-
-```rust,editable
-{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines1.rs:example}}
-```
+<div class="hidden">
+This revision turns the commented build commands into the package's active build script, adds a real C implementation that uses the three preprocessor definitions, and tests that Rust reads the compiled values. The build script derives `VERSION` from the Cargo package metadata so the documentation does not promise a stale hard-coded version.
+</div>
 
 ## Related Topics {#related-topics .skip}
 
