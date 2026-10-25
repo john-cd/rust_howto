@@ -4,7 +4,7 @@
 // ANCHOR: example
 //! Initializes syslog and logs debug and error messages.
 
-#![cfg(target_os = "linux")]
+#![cfg(unix)]
 
 use syslog::Facility;
 
@@ -24,12 +24,6 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Prints a message, since syslog is only supported on Linux.
-#[cfg(not(target_os = "linux"))]
-fn main() -> anyhow::Result<()> {
-    println!("So far, only Linux systems are supported.");
-    Ok(())
-}
 // ANCHOR_END: example
 
 /// Runs the example.
@@ -42,7 +36,9 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
-        main().unwrap();
+    #[ignore = "requires a Unix syslog daemon"]
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
     }
 }

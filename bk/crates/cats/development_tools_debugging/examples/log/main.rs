@@ -12,7 +12,7 @@ mod log_env_variable;
 mod log_error;
 mod log_mod;
 mod log_stdout;
-#[cfg(target_os = "linux")]
+#[cfg(unix)]
 mod log_syslog;
 mod log_timestamp;
 
@@ -49,7 +49,7 @@ enum Commands {
     #[command(name = "log_stdout")]
     Stdout,
     /// Runs the `log_syslog` example.
-    #[cfg(target_os = "linux")]
+    #[cfg(unix)]
     #[command(name = "log_syslog")]
     Syslog,
     /// Runs the `log_timestamp` example.
@@ -84,9 +84,9 @@ fn main() -> anyhow::Result<()> {
             Commands::Stdout => {
                 log_stdout::run();
             }
-            #[cfg(target_os = "linux")]
+            #[cfg(unix)]
             Commands::Syslog => {
-                log_syslog::run().expect("the example should run");
+                log_syslog::run()?;
             }
             Commands::Timestamp => {
                 log_timestamp::run();
