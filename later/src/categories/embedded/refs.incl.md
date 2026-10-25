@@ -21,3 +21,17 @@
 [c~embedded-storage~docs~badge]: https://img.shields.io/crates/v/embedded-storage?label=embedded-storage
 [c~embedded-storage~crates.io]: https://crates.io/crates/embedded-storage
 [svd2rust~repo]: https://github.com/rust-embedded/svd2rust
+[awesome-embedded-rust~repo]: https://github.com/rust-embedded/awesome-embedded-rust
+
+[arewertosyet~website]: https://arewertosyet.rs/
+[c~embassy-executor~docs]: https://docs.rs/embassy-executor/latest/embassy_executor/
+[c~embassy-executor~docs~badge]: https://img.shields.io/crates/v/embassy-executor?label=embassy-executor
+[c~embassy-time~docs]: https://docs.rs/embassy-time/latest/embassy_time/
+[c~embassy-time~docs~badge]: https://img.shields.io/crates/v/embassy-time?label=embassy-time
+[c~embassy-sync~docs]: https://docs.rs/embassy-sync/latest/embassy_sync/
+[c~embassy-sync~docs~badge]: https://img.shields.io/crates/v/embassy-sync?label=embassy-sync
+[c~embassy-stm32~docs]: https://docs.rs/embassy-stm32/latest/embassy_stm32/
+[c~embassy-nrf~docs]: https://docs.rs/embassy-nrf/latest/embassy_nrf/
+[c~embassy-rp~docs]: https://docs.rs/embassy-rp/latest/embassy_rp/
+[embassy~repo]: https://github.com/embassy-rs/embassy
+[embassy~repo~badge]: https://img.shields.io/badge/embassy-steelblue?logo=github

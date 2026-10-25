@@ -2,108 +2,52 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Embassy is an async runtime designed for embedded systems in Rust. It
-//! provides async capabilities to work with hardware, making it easier to
-//! build responsive and efficient applications for embedded devices.
+//! A target-specific Embassy task sketch.
 //!
-//! Example for a microcontroller with embedded Rust support (e.g., an
-//! STM32F4 board).
-//!
-//! Add to your `Cargo.toml`:
-//!
-//! ```toml
-//! [dependencies]
-//! embassy = { version = "0.7", features = ["alloc", "std"] }
-//! cortex-m = "0.7"
-//! cortex-m-rt = "0.7"
-//! panic-halt = "0.2"
-//!
-//! [build-dependencies]
-//! cortex-m-rtic = "0.7"
+//! Add this task to a firmware crate that selects an Embassy executor platform,
+//! chip-specific HAL, and matching Embassy time driver.
 
-#![no_std]
-#![no_main]
+use embassy_executor::Spawner;
+use embassy_sync::blocking_mutex::raw::NoopRawMutex;
+use embassy_sync::channel::Channel;
+use embassy_time::Timer;
 
-use cortex_m_rt::entry;
-use embassy::executor::Executor;
-use embassy::executor::Spawner;
-use embassy::time::Duration;
-use embassy::time::Timer;
-use panic_halt as _;
+/// Bounded sensor-message channel for tasks on a single-core executor.
+static SENSOR_VALUES: Channel<NoopRawMutex, u32, 4> = Channel::new();
 
-/// A task that blinks an LED forever.
-#[embassy::task]
-async fn blink_task() {
-    // Configure your LED pin here
-    // This is pseudo-code, you'll need to use the actual HAL for your
-    // microcontroller.
-    let led = configure_led_pin();
-
+/// Sends a placeholder sample periodically to the processing task.
+#[embassy_executor::task]
+async fn send_sensor_sample() {
     loop {
-        // Turn LED on.
-        led.set_high();
-        Timer::after(Duration::from_millis(500)).await;
-
-        // Turn LED off.
-        led.set_low();
-        Timer::after(Duration::from_millis(500)).await;
+        let sample = 42; // Replace with a reading from the selected HAL.
+        SENSOR_VALUES.send(sample).await;
+        Timer::after_secs(1).await;
     }
 }
 
-/// The executor that runs the tasks.
-static EXECUTOR: Executor = Executor::new();
-
-/// Starts the executor and spawns the blink task.
-#[entry]
-fn main() -> ! {
-    // Initialize the executor
-    EXECUTOR.run(|spawner| {
-        spawner.spawn(blink_task()).unwrap();
-    })
+/// Receives sensor samples and applies application-specific processing.
+#[embassy_executor::task]
+async fn process_sensor_values() {
+    loop {
+        let _reading = SENSOR_VALUES.receive().await;
+        // Update application state or a peripheral with the reading.
+    }
 }
 
-/// Configures the pin of the LED.
-fn configure_led_pin() -> LedPin {
-    // This is where you'd configure your LED pin
-    // Replace with actual hardware setup code
-    LedPin::new()
-}
-
-/// A placeholder for the pin of an LED.
-struct LedPin;
-
-impl LedPin {
-    /// Creates the pin.
-    fn new() -> Self {
-        // Initialize your LED pin here
-        LedPin
-    }
-
-    /// Sets the pin high, which turns the LED on.
-    fn set_high(&self) {
-        // Set the LED pin high
-    }
-
-    /// Sets the pin low, which turns the LED off.
-    fn set_low(&self) {
-        // Set the LED pin low
-    }
+/// Starts the periodic sensor and processing tasks on the supplied executor.
+pub fn spawn_tasks(spawner: Spawner) {
+    spawner.spawn(send_sensor_sample());
+    spawner.spawn(process_sensor_values());
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() -> ! {
-    main()
-}
-
 #[cfg(test)]
 mod tests {
-    use super::*;
-
+    /// Documents why the target-specific firmware sketch is not run on the
+    /// host.
     #[test]
-    #[ignore = "requires embassy crate"]
-    fn test_main() {
-        main();
-    }
+    #[ignore = "requires an MCU target, a matching HAL, and a firmware runner"]
+    fn embassy_firmware_runs_on_selected_board() {}
 }
+
 // [finish](https://github.com/john-cd/rust_howto/issues/751)
