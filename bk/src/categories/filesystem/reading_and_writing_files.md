@@ -48,6 +48,23 @@ It is also possible to write to a `File` as if it were a `&mut [u8]` by using mu
 {{#include ../../../crates/cats/filesystem/examples/read_write/memmap2.rs:example}}
 ```
 
+## Replace a File Atomically {#replace-a-file-atomically}
+
+[![tempfile][c~tempfile~docs~badge]][c~tempfile~docs]{{hi:tempfile}} [![atomicwrites][c~atomicwrites~docs~badge]][c~atomicwrites~docs]{{hi:atomicwrites}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+
+Overwriting a file in place is not crash-safe: if the process or the machine dies halfway, readers find a truncated or half-written file. The robust pattern writes the new contents to a temporary file, flushes it to disk, then renames it over the target. The rename is atomic, so readers see either the old file or the new one.
+
+The example shows two variants: [`tempfile::NamedTempFile`][c~tempfile~docs]↗{{hi:tempfile::NamedTempFile}} with `persist`, and [`atomicwrites::AtomicFile`][c~atomicwrites~docs]↗{{hi:atomicwrites::AtomicFile}}, which wraps the same steps.
+
+- Create the temporary file in the **same directory** as the target. A rename across filesystems is a copy, which is not atomic.
+- Call `sync_all` **before** the rename. Without it, a crash may leave the new name pointing at empty or partial data.
+- On Windows, `persist` replaces an existing target, but the replace fails if another process holds the target open without sharing; retry on transient errors if other programs may read the file.
+- If the target is a symbolic link, resolve it first (see [Canonicalize a Path][ex~filesystem~canonicalize]), or the rename replaces the link rather than the file it points to.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/filesystem/examples/atomic_write/atomic_write.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[file_watching | File Watching]].
