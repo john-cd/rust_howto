@@ -88,7 +88,7 @@ rocksdb = { version = "0.24.0", optional = true, default-features = false, featu
     "bindgen-runtime",
 ] }
 rusqlite = { version = "=0.32.1", optional = true } # Keep sqlite linkage compatible with sqlx 0.8.x.
-sea-orm = { version = "1.1.20", optional = true }
+sea-orm = { version = "1.1.20", optional = true } # Pinned: sea-orm 2 needs seaography 2 (release candidates only) and sqlx 0.9 / newer libsqlite3-sys.
 seaography = { version = "1.1.4", optional = true }
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = { version = "1.0.154", optional = true }

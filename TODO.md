@@ -12,8 +12,9 @@ Claude completed #1859 (bk and later strict Clippy gates pass; Oracle `sibyl` fe
 
 Compatible-only upgrades plus `cargo update` in every workspace. Major bumps that break examples are deferred (follow-up issue under #1955). Pins, each commented in its `Cargo.toml`:
 
-- bk: `bolero =0.13.4` (newer needs `indexmap =2.11.2`); `libsqlite3-sys 0.30.1` (rusqlite 0.32.1); `tera 1.20.1`, `tower-sessions 0.14`, `tree-sitter 0.26`, `cached 0.59`, `async_zip 0.0.18` (examples need porting); `cornucopia_client_core` locked at 0.4.0 in `Cargo.lock`; `data_structures`, `database`, `mathematics`, `parser_implementations` kept on compatible-only bumps.
-- later: `gui`, `aerospace_protocols`, `game_development`, `multimedia_audio`, `rendering_graphics_api`, `simulation` kept on compatible-only bumps (major bumps break examples; alsa-sys / smallvec link conflicts). `wasmer-compiler-cranelift` cannot build on Windows.
+- bk, still pinned (blocked upstream): `bolero =0.13.4` (0.13.5+ needs `indexmap =2.11.2`); `tower-sessions 0.14` (axum-login 0.18 is the latest and needs it); `libsqlite3-sys`, `rusqlite 0.32.1`, `sqlx 0.8`, `sea-orm 1.1` (sea-orm 2 needs seaography 2, which is only a release candidate); `cornucopia_async 0.4` / `cornucopia_client_core 0.4.0` (deprecated in favour of the rewritten cornucopia 1.0); `nalgebra 0.34` (`ode_solvers` still uses it).
+- bk, ported to the latest majors (2026-10-25): `tera 2`, `tree-sitter 0.27`, `cached 4`, `async_zip 0.0.19`, `skiplist 2`, `ulid 3`, `heed 0.23`, `num-bigint 0.5`, `cssparser 0.38`, `html5ever`/`markup5ever`/`xml5ever 0.40`.
+- later, ported: `mavlink 0.21`, `parry2d 0.31`, `rapier2d 0.36`, `rubato 5`, `morphorm 0.9`. Still pinned: `egui` family (0.37) and `parley` (0.12) need `smallvec` 1.16, which `kube 4.2` (via `serde-saphyr`, in `other`) caps below 1.16; `rodio 0.23` / `cpal 0.18` need `alsa-sys 0.4`, conflicting with `bevy` and `openrr`; `rendering_graphics_api` untouched. `wasmer-compiler-cranelift` cannot build on Windows.
 - `just bk bb` fails in `refdefs-check` (stale refs), unrelated to dependencies.
 
 ## IN-PROGRESS

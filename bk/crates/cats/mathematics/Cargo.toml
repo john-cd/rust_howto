@@ -27,7 +27,7 @@ cmaes = "0.2.2" # CMA-ES evolution strategy.
 clap = { version = "4.6.7", features = ["derive"] }
 fixed = "1.31.0"
 half = "2.7.1"
-nalgebra = { version = "0.34.2", features = ["serde-serialize"] }
+nalgebra = { version = "0.34.2", features = ["serde-serialize"] } # Pinned: ode_solvers uses nalgebra 0.34.
 ndarray = { version = "0.17.2", features = [
     "approx",
 ] } # was pinned to 0.15.6 for linfa
