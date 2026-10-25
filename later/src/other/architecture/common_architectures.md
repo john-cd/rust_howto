@@ -24,6 +24,8 @@ Each microservice:
 
 Microservices communicate with each other through well-defined APIs, promoting loose coupling.
 
+For distributed dataflow programs, where several services are written as one program and compiled to separate binaries, see [Hydro][hydro~website]↗.
+
 Crates like [`axum`][c~axum~docs]↗{{hi:axum}}, [`warp`][c~warp~docs]↗{{hi:warp}} or [`tonic`][c~tonic~docs]↗{{hi:tonic}} can help build such services.
 
 ### Key Technologies {#key-technologies .skip}
@@ -67,6 +69,12 @@ This [architecture][p~architecture] enables the core application to function ind
 - Traditional enterprise applications with a focus on maintainability and modularity.
 - Systems requiring strict adherence to domain-driven design principles.
 
+In Rust, a port is a trait and an adapter is a type that implements it. The core is generic over the trait, so tests can use an in-memory adapter and production code a database adapter. The example below injects two adapters into the same service.
+
+```rust,editable
+{{#include ../../../crates/other/examples/architecture/hexagonal.rs:example}}
+```
+
 See [[cross-platform | Cross Platform]] development.
 
 ## Event-Driven Architecture {#event-driven-architecture}
@@ -82,6 +90,12 @@ In an Event-driven architecture (EDA), applications communicate by producing and
 - Event Bus/Queue: Acts as a mediator for events, often using tools like [`Kafka`][kafka~website]↗{{hi:Kafka}}, [`RabbitMQ`][rabbitmq~website]↗{{hi:RabbitMQ}}, or other message brokers.
 - [Asynchronous][p~asynchronous] Communication: Components operate independently and interact via events.
 - Often implemented with libraries like [`tokio`][c~tokio~docs]↗{{hi:tokio}} or [`async-std`][c~async-std~docs]↗{{hi:async-std}}.
+
+The example below builds a small in-process event bus with channels: every subscriber receives every event. With `async` code, [`tokio::sync::broadcast`][c~tokio~docs]↗{{hi:tokio}} plays the same role.
+
+```rust,editable
+{{#include ../../../crates/other/examples/architecture/event_bus.rs:example}}
+```
 
 See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 
@@ -101,7 +115,7 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 The actor model is a conceptual model of concurrent computation that treats "actors" as the universal primitives of [concurrency][p~concurrency].
 Actors encapsulate state, behavior, and a mailbox. [Actors][p~actors] communicate exclusively by sending and receiving [asynchronous][p~asynchronous] messages. They are like independent entities that can receive and process messages.
 
-Libraries like [`actix`][c~actix~docs]↗{{hi:actix}} support actor-based designs.
+Because each actor owns its state and is touched by one message at a time, no locks are needed. Use actors for many independent, stateful entities (sessions, devices, game objects) that need isolation and supervision. Libraries like [`actix`][c~actix~docs]↗{{hi:actix}} support actor-based designs.
 
 See the [[_actors |  Actors]] chapter for more details.
 
@@ -117,11 +131,21 @@ Command Query Responsibility Segregation (CQRS) is an architectural pattern that
 
 Pipeline/stream architecture is a design pattern focused on processing a continuous flow of data through a series of sequential steps. It's particularly relevant in scenarios requiring real-time or near real-time data processing.
 
+Each stage reads from an input, transforms the data and writes to an output, so stages run concurrently and applying backpressure (bounded channels) keeps memory in check. In Rust, a pipeline can be a chain of iterator adapters in one thread, channels between threads, or [`Stream`][c~futures~docs]↗{{hi:futures}} combinators for `async` code. The example below connects three stages with channels.
+
+```rust,editable
+{{#include ../../../crates/other/examples/architecture/pipeline.rs:example}}
+```
+
 See [[data_parallelism | Data Parallelism]], [[data-processing | Data Processing]].
 
 ## Event Sourcing {#event-sourcing}
 
-Event sourcing focuses on storing a sequence of events that represent changes to the state of an application, rather than storing the current state itself. In essence, it's about recording "what happened" rather than "what is." It is useful in systems requiring auditability or history reconstruction.
+Event sourcing focuses on storing a sequence of events that represent changes to the state of an application, rather than storing the current state itself. In essence, it's about recording "what happened" rather than "what is." It is useful in systems requiring auditability or history reconstruction. The current state is a fold over the event log, so you can also rebuild the state at any earlier point. Event sourcing is often paired with CQRS: events feed the read models.
+
+```rust,editable
+{{#include ../../../crates/other/examples/architecture/event_sourcing.rs:example}}
+```
 
 ## Related Topics {#related-topics .skip}
 
@@ -132,10 +156,3 @@ Event sourcing focuses on storing a sequence of events that represent changes to
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write / detail every architecture](https://github.com/john-cd/rust_howto/issues/1230)
-
-- [Hydro][hydro~website]↗.
-
-</div>

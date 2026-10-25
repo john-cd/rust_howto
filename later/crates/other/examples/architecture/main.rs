@@ -7,7 +7,11 @@ use clap::Subcommand;
 
 mod cqrs;
 mod di;
+mod event_bus;
+mod event_sourcing;
+mod hexagonal;
 mod layered_architecture;
+mod pipeline;
 mod repository;
 mod state_machine;
 
@@ -28,6 +32,18 @@ enum Commands {
     /// Runs the `di` example.
     #[command(name = "di")]
     Di,
+    /// Runs the `event_bus` example.
+    #[command(name = "event_bus")]
+    EventBus,
+    /// Runs the `event_sourcing` example.
+    #[command(name = "event_sourcing")]
+    EventSourcing,
+    /// Runs the `hexagonal` example.
+    #[command(name = "hexagonal")]
+    Hexagonal,
+    /// Runs the `pipeline` example.
+    #[command(name = "pipeline")]
+    Pipeline,
     /// Runs the `layered_architecture` example.
     #[command(name = "layered_architecture")]
     LayeredArchitecture,
@@ -50,6 +66,18 @@ fn main() -> anyhow::Result<()> {
             }
             Commands::Di => {
                 di::run();
+            }
+            Commands::EventBus => {
+                event_bus::run();
+            }
+            Commands::EventSourcing => {
+                event_sourcing::run();
+            }
+            Commands::Hexagonal => {
+                hexagonal::run();
+            }
+            Commands::Pipeline => {
+                pipeline::run();
             }
             Commands::LayeredArchitecture => {
                 layered_architecture::run()?;
