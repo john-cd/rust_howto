@@ -12,11 +12,8 @@ use std::io::Read as _;
 use std::io::Write as _;
 
 use flate2::Compression;
-use flate2::read::GzDecoder;
 use flate2::read::ZlibDecoder;
-use flate2::write::GzEncoder;
 use flate2::write::ZlibEncoder;
-use tempfile::NamedTempFile;
 
 /// Compresses and decompresses a byte string with zlib and checks the round
 /// trip.
@@ -38,9 +35,9 @@ fn main() -> anyhow::Result<()> {
         compressed.len()
     );
     println!("Decoded text: {decoded}");
-    gzip_file_round_trip()?;
     Ok(())
 }
+// ANCHOR_END: example
 
 // ANCHOR: gzip-file
 /// Compresses a source file to gzip and restores it to another temporary file.
@@ -50,6 +47,13 @@ fn main() -> anyhow::Result<()> {
 /// Returns an error if a temporary file cannot be created or any file
 /// operation or compression step fails.
 fn gzip_file_round_trip() -> anyhow::Result<()> {
+    use std::io::Write as _;
+
+    use flate2::Compression;
+    use flate2::read::GzDecoder;
+    use flate2::write::GzEncoder;
+    use tempfile::NamedTempFile;
+
     let original = b"File contents compressed and restored with gzip.";
 
     let mut source_file = NamedTempFile::new()?;
@@ -80,11 +84,11 @@ fn gzip_file_round_trip() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: gzip-file
-// ANCHOR_END: example
 
 /// Runs the example.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    main()?;
+    gzip_file_round_trip()
 }
 
 #[cfg(test)]
@@ -94,6 +98,6 @@ mod tests {
     /// Checks the in-memory and temporary-file compression round trips.
     #[test]
     fn test_main() -> anyhow::Result<()> {
-        main()
+        run()
     }
 }
