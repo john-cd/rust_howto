@@ -10,7 +10,7 @@
 
 ```bash
 cargo install xh --locked
-xh https://example.com
+xh https://httpbin.org/json
 ```
 
 ## Load Test HTTP Services {#http-load-testing}
@@ -24,7 +24,7 @@ oha -n 100 -c 10 http://localhost:3000/
 
 ## Monitor Local Bandwidth {#bandwidth-monitoring}
 
-[`bandwhich`][bandwhich~repo]↗ shows network use by process. The project is in passive maintenance: critical issues are addressed, but new features are not being developed. Packet capture requires elevated privileges on Linux; consult the project instructions for the supported setup on your platform.
+[`bandwhich`][bandwhich~repo]↗ shows network use by process. The project is in passive maintenance: critical issues are addressed, but new features are not being developed. Packet capture requires elevated privileges on Linux and a supported packet-capture driver on Windows; consult the project instructions for your platform.
 
 ```bash
 cargo install bandwhich
@@ -65,9 +65,11 @@ doggo MX example.com @1.1.1.1
 [`rustscan`][c~rustscan~repo]↗ scans ports and can hand discovered ports to Nmap. Port scanning can disrupt systems or violate policy. Scan only hosts you own or are explicitly authorized to assess, and follow the target network's rules.
 
 ```bash
-cargo install rustscan
-rustscan -a <authorized-host>
+cargo install rustscan --locked
+rustscan -a 192.0.2.10
 ```
+
+Replace the example IP address with a host you own or have explicit permission to scan.
 
 ## Related Topics {#related-topics .skip}
 
@@ -78,7 +80,3 @@ rustscan -a <authorized-host>
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[networking: write](https://github.com/john-cd/rust_howto/issues/238)
-</div>
