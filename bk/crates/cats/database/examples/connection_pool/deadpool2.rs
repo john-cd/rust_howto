@@ -59,8 +59,8 @@ fn create_pool_with_max_size(
     dotenv().ok();
     // Hydrate pool and connection options from environment variables.
     let mut cfg = Config::from_env()?;
-    // A URL is convenient for local development and takes precedence over the
-    // individual PG__HOST / PG__USER / PG__PASSWORD settings.
+    // A URL is convenient for local development. Explicit PG__* fields also
+    // apply; keep them consistent with the URL when both are configured.
     if let Ok(database_url) = std::env::var("DATABASE_URL") {
         cfg.pg.url = Some(database_url);
     }

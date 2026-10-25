@@ -26,7 +26,9 @@ database is down, creating a connection fails and the error is returned to the
 caller; a failed recycle check discards the unhealthy connection.
 
 The PostgreSQL example reads `DATABASE_URL` or the individual `PG__HOST`,
-`PG__USER`, `PG__PASSWORD`, and `PG__DBNAME` settings. It also reads
+`PG__USER`, `PG__PASSWORD`, and `PG__DBNAME` settings. If both are set,
+individual `PG__*` connection fields are applied on top of the URL, and host
+values are additive; keep the settings consistent. It also reads
 `PG__POOL__MAX_SIZE` and the optional
 `PG__POOL__TIMEOUTS__WAIT__SECS`, `PG__POOL__TIMEOUTS__CREATE__SECS`, and
 `PG__POOL__TIMEOUTS__RECYCLE__SECS` settings. It also accepts the corresponding
