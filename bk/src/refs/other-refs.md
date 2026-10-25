@@ -96,6 +96,7 @@
 [are-we-game-yet?~scripting-languages]: https://arewegameyet.rs/ecosystem/scripting
 [are-we-game-yet?~website]: https://arewegameyet.rs
 [are-we-gui-yet?~website]: https://areweguiyet.com
+[are-we-ide-yet?~website]: https://areweideyet.com
 [are-we-learning-yet?-clustering~website]: https://arewelearningyet.com/clustering
 [are-we-learning-yet?-data-preprocessing~website]: https://arewelearningyet.com/data-preprocessing
 [are-we-learning-yet?-data-structures~website]: https://arewelearningyet.com/data-structures

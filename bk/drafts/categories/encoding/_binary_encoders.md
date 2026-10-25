@@ -109,8 +109,7 @@ In `foo.capnp`:
 [binary_encoders: write; add anchors; add examples; add table; add to index / SUMMARY](https://github.com/john-cd/rust_howto/issues/349)
 
 - [pot][c~pot~docs]↗.
+- [`protobuf`][c~protobuf~docs]↗: another Protocol Buffers implementation; its recipe was dropped in favor of `prost`.
 - [bytes][c~bytes~lib.rs]↗.
-
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 
 </div>

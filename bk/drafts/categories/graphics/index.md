@@ -30,13 +30,44 @@ Graphics work commonly involves:
 
 Image processing, computer vision, simulation, and physics use some of the same image, geometry, and GPU concepts, but are separate application areas.
 
+## Subtopics
+
+- [[rendering | Rendering]].
+  - [[2d_renderers | 2D Renderers]]: [[2d_raster_graphics | 2D Raster Graphics]] and [[2d_vector_graphics | 2D Vector Graphics]].
+  - [[3d_renderers | 3D Renderers]].
+  - [[rendering_engine | Rendering Engine]].
+  - [[rendering_data-formats | Rendering Data Formats]].
+  - [[svg_rendering | SVG Rendering]].
+  - [[text_rendering | Text Rendering]] and [[text_layout | Text Layout]].
+- Low-level graphics APIs: [[rendering_graphics-api | Rendering: Graphics API]].
+  - [[gpu_abstraction_layers | GPU Abstraction Layers]].
+  - [[opengl | OpenGL]].
+  - [[vulkan | Vulkan]].
+  - [[native_graphics_apis | Native Graphics APIs]].
+  - [[shaders | Shaders]].
+- [[gpu | GPU]].
+- [[multimedia | Multimedia]]: [[multimedia_encoding | Encoding]], [[multimedia_images | Images]] and [[multimedia_video | Video]].
+- [[visualization | Visualization]]: data visualization, plotting and charting.
+- [[games | Games]], [[game-development | Game Development]] and [[game-engines | Game Engines]].
+- [[simulation | Simulation]] and [[physics_engines | Physics Engines]].
+- [[computer-vision | Computer Vision]].
+- [[gui | GUI]].
+
+## Application Areas
+
+- Ray tracing, often with specialized libraries or custom code using compute [[shaders | shaders]].
+- Real-time rendering and character animation (games).
+- Computer-aided design (CAD), 3D modeling, visualization and simulation.
+- Visual effects: compositing, particle systems, film and television rendering.
+- User interface rendering and typography.
+- Scientific visualization, including volume rendering of scientific data.
+- Creative coding, procedural generation and generative art.
+
 ## Related Topics
 
-Graphics code relies on [linear algebra][p~linear-algebra] for vectors, matrices, and transforms. Higher-level GUI and game frameworks can provide the windowing and rendering layers for complete applications.
+Graphics code relies on [linear algebra][p~linear-algebra] for vectors, matrices, and transforms. [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} and [`glam`][c~glam~docs]↗{{hi:glam}} are widely used for vector and matrix math; also consider [`cgmath`][c~cgmath~docs]↗{{hi:cgmath}} and [`euclid`][c~euclid~docs]↗{{hi:euclid}} for geometry. See also [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]]. Higher-level GUI and game frameworks can provide the windowing and rendering layers for complete applications.
+
+Further reading: [gfx-rs.github.io][blog~gfx-rs]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
-</div>

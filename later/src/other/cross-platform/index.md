@@ -18,7 +18,7 @@ When the business rules should match but the interfaces should feel native, put 
 
 ### Target a browser or embedded device
 
-For browser applications, compile Rust to WebAssembly and integrate with browser APIs as needed; see [[wasm | WebAssembly]]. Embedded projects also target specific chips and often use `no_std` libraries and hardware abstraction layers; see [[embedded | Embedded Systems]] and [[no-std | no_std]].
+For browser applications, compile Rust to WebAssembly and integrate with browser APIs as needed; see [[wasm | WebAssembly]]. Embedded projects also target specific chips and often use `no_std` libraries and hardware abstraction layers; see [[embedded | Embedded Systems]] and [[no-std | no_std]]. Crates such as [`cortex-m`][c~cortex-m~docs]↗{{hi:cortex-m}}, [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and [`rtic`][c~rtic~docs]↗{{hi:rtic}} are common starting points.
 
 ## Cross-compile for another target
 
@@ -72,6 +72,8 @@ WebAssembly can run Rust code in browsers, but a web app still uses browser APIs
 
 Choose how much UI and platform integration to share. [`tauri`][c~tauri~docs]↗{{hi:tauri}} uses a web frontend with a Rust application layer; [`Wry`][wry-docs] is a lower-level WebView library. For a GTK-based interface, see [`gtk4`][c~gtk4~crates.io]↗{{hi:GTK-rs}}. On mobile, a native UI can call a shared Rust library through an FFI boundary; Crux is one way to share behavior while leaving each UI native.
 
+Native mobile development with Rust is still maturing. Rust is most compelling on mobile as a shared library or native module, for example behind a [Flutter][docs.flutter.dev~website]↗{{hi:Flutter}} or [React Native](https://reactnative.dev)↗{{hi:React Native}} UI, rather than as a full UI stack.
+
 [`Dioxus`][dioxus-platform-support] provides web, desktop, and mobile renderers. Their setup and platform-specific features differ, so check the current platform guide before selecting it.
 
 ## Keep operating-system APIs local
@@ -91,5 +93,4 @@ For system-specific APIs, use the smallest platform-specific layer possible. The
 
 <div class="hidden">
 [add / write; link to other chapters; conditional compile](https://github.com/john-cd/rust_howto/issues/583)
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

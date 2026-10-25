@@ -15,8 +15,20 @@ Web applications combine HTTP, asynchronous I/O, serialization, and user-interfa
 | Implement a GraphQL endpoint | [[_graphql | GraphQL]]. |
 | Implement a gRPC service | [[_grpc | gRPC]]. |
 | Use TCP or UDP without HTTP | [[network-programming | Network Programming]]. |
-| Add WebSocket communication | [[asynchronous | Asynchronous Programming]] and [[network-programming | Network Programming]]; see [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} and [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}}. |
+| Add WebSocket communication | [[web-programming_websocket | Web Programming: WebSocket]], [[asynchronous | Asynchronous Programming]] and [[network-programming | Network Programming]]; see [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} and [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}}. |
 | Add authentication or authorization | [[authentication | Authentication]]. |
+
+## Crates by Task
+
+| Task | Crates |
+|---|---|
+| Full-stack web frameworks (routing, middleware, templating) | [`axum`][c~axum~docs]↗{{hi:axum}} (built on [`tower`][c~tower~docs]↗{{hi:tower}} and [`hyper`][c~hyper~docs]↗{{hi:hyper}}), [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} (performance), [`rocket`][c~rocket~docs]↗{{hi:rocket}} (declarative), [`warp`][c~warp~docs]↗{{hi:warp}} (lightweight) |
+| HTTP clients | [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, [`isahc`][c~isahc~docs]↗{{hi:isahc}} |
+| Templating | [`minijinja`][c~minijinja~docs]↗{{hi:minijinja}}, [`tera`][c~tera~docs]↗{{hi:tera}}, [`handlebars`][c~handlebars~docs]↗{{hi:handlebars}}, [`askama`][c~askama~docs]↗{{hi:askama}} |
+| Authentication middleware | [`actix-web-httpauth`][c~actix-web-httpauth~docs]↗{{hi:actix-web-httpauth}} (Actix Web), [`tower-http`][c~tower-http~docs]↗{{hi:tower-http}} (generic) |
+| GraphQL | [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}, [`juniper`][c~juniper~docs]↗{{hi:juniper}} |
+| Static sites and full-stack WASM | [`perseus`][c~perseus~docs]↗{{hi:perseus}} (based on [`sycamore`][c~sycamore~crates.io]↗{{hi:sycamore}}), [`zola`][c~zola~docs]↗{{hi:zola}} |
+| Database drivers | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, [`diesel`][c~diesel~docs]↗{{hi:diesel}}, [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}} |
 
 ## Browser Interfaces and Generated Pages
 
@@ -83,5 +95,4 @@ OTHER:
 - [Sycamore][sycamore~website]↗.
 - [sycamore][c~sycamore~repo]↗: A library for creating reactive web apps in Rust and WebAssembly.
 
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>
