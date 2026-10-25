@@ -38,7 +38,9 @@ Adds the source directory recursively under the archive path `backup/logs` with 
 
 [![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo]{{hi:flate2}} [![tar][c~tar~docs~badge]][c~tar~docs] [![tar~crates.io][c~tar~crates.io~badge]][c~tar~crates.io] [![tar~repo][c~tar~repo~badge]][c~tar~repo]{{hi:tar}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
 
-Iterate over [`tar::Archive::entries`][c~tar::Archive::entries~docs]↗{{hi:tar::Archive::entries}} and use [`std::path::Path::strip_prefix`][c~std::path::Path::strip_prefix~docs]↗{{hi:std::path::Path::strip_prefix}} to remove `bundle/logs` from each entry path. Then extract each [`tar::Entry`][c~tar::Entry~docs]↗{{hi:tar::Entry}} with [`tar::Entry::unpack`][c~tar::Entry::unpack~docs]↗{{hi:tar::Entry::unpack}}.
+Iterate over [`tar::Archive::entries`][c~tar::Archive::entries~docs]↗{{hi:tar::Archive::entries}} and use [`std::path::Path::strip_prefix`][c~std::path::Path::strip_prefix~docs]↗{{hi:std::path::Path::strip_prefix}} to remove `bundle/logs` from each entry path. The example copies only regular-file entries beneath the destination and rejects parent path components before writing.
+
+The runnable example expects `temp/archive.tar.gz` and writes files beneath `temp/extracted`. It stays `noplayground` because the archive is a local input; the unit test creates its own archive in a temporary directory and verifies the stripped output path.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/compression/examples/tar/tar_strip_prefix.rs:example}}
@@ -55,5 +57,5 @@ Iterate over [`tar::Archive::entries`][c~tar::Archive::entries~docs]↗{{hi:tar:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tar: review](https://github.com/john-cd/rust_howto/issues/253)
+  [tar: review](https://github.com/john-cd/rust_howto/issues/253)
 </div>

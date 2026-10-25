@@ -105,7 +105,7 @@ mod tests {
         std::env::set_current_dir(original_dir)?;
 
         result?;
-        assert!(work_dir.join("example.txt").exists());
+        assert!(work_dir.join("temp/extracted/example.txt").exists());
         fs::remove_dir_all(&work_dir)?;
         Ok(())
     }
