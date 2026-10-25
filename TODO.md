@@ -325,6 +325,19 @@ The full book build (`cd bk && just bb`) fails in `aws-lc-sys` because NASM is n
 - [#396](https://github.com/john-cd/rust_howto/issues/396) — **P4** — Write the window creation chapter.
 - [#777](https://github.com/john-cd/rust_howto/issues/777) — **P4** — Finish the femtovg example.
 
+### List AE — Claude chapters and indexes (2026-10-25)
+
+Ten issues from the [#1955 comment](https://github.com/john-cd/rust_howto/issues/1955) done by Claude on branch `codex/list-ae-chapters` (worktree `.worktrees/f/checkout`). None overlap Lists 31–37. Each issue is implemented with tested examples; they stay open until `just bb`, `just spell` and `just refdefs check` pass (the Windows `bk` lockfile and the `aws-lc-sys` build block them).
+
+- [#291](https://github.com/john-cd/rust_howto/issues/291) — Search engines chapter: comparison table and design overview.
+- [#610](https://github.com/john-cd/rust_howto/issues/610) — Rhai chapter: custom type, `Scope` state, sandbox limits (tested).
+- [#585](https://github.com/john-cd/rust_howto/issues/585) — CSV page: points to the Encoding recipes, adds streaming guidance; no duplicate example.
+- [#1230](https://github.com/john-cd/rust_howto/issues/1230) — Architectures: hexagonal, event bus, pipeline and event-sourcing examples (tested).
+- [#1208](https://github.com/john-cd/rust_howto/issues/1208) — Control systems: `pid` example; page added to `SUMMARY.md`.
+- [#1209](https://github.com/john-cd/rust_howto/issues/1209) — Robotics AI: A* example, `optimization-engine`, `dora-rs`; page added to `SUMMARY.md`.
+- [#1205](https://github.com/john-cd/rust_howto/issues/1205) — Deep learning: comparison table and a `candle` CPU example; page added to `SUMMARY.md`.
+- [#942](https://github.com/john-cd/rust_howto/issues/942), [#943](https://github.com/john-cd/rust_howto/issues/943), [#953](https://github.com/john-cd/rust_howto/issues/953) — Images, video and rendering indexes.
+
 ### Epic #1955 — New recipes from the local-projects review
 
 [#1955](https://github.com/john-cd/rust_howto/issues/1955) tracks the recipes from the local-projects review (#1906–#1952). The examples and book pages were merged via PRs #1958, #1962–#1966, #1968, #1969, #1971 and #1973, but the recipe issues (#1906–#1952) are **still open on GitHub**: they close only after the verification passes below build the book pages and run the local gates. Cloud batch PR [#1980](https://github.com/john-cd/rust_howto/pull/1980) (proptest strategy, wasm round trip, Tree-sitter spans, decision-table case) is open.

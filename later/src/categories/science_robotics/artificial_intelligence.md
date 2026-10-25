@@ -26,7 +26,7 @@ Robotics AI is still maturing in Rust, but Rust's safety and performance are a g
 [![bonsai-bt~repo][c~bonsai-bt~repo~badge]][c~bonsai-bt~repo]
 [![bonsai-bt~lib.rs][c~bonsai-bt~lib.rs~badge]][c~bonsai-bt~lib.rs]
 
-[`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][behavior-tree~wikipedia]↗ (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
+[`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][wikipedia~behavior-tree]↗ (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/examples/artificial_intelligence/bonsai_bt.rs:example}}
@@ -38,7 +38,7 @@ Robotics AI is still maturing in Rust, but Rust's safety and performance are a g
 
 ## Dataflow Robotics with `dora-rs` {#dora-rs}
 
-[![dora-rs][c~dora-rs~docs~badge]][c~dora-rs~docs] [![dora-rs~crates.io][c~dora-rs~crates.io~badge]][c~dora-rs~crates.io] [![dora-rs~repo][c~dora-rs~repo~badge]][c~dora-rs~repo] [![dora-rs~lib.rs][c~dora-rs~lib.rs~badge]][c~dora-rs~lib.rs]{{hi:dora-rs}}
+[![dora-rs][c~dora-rs~docs~badge]][c~dora-rs~docs] [![dora-rs~crates.io][c~dora-rs~crates.io~badge]][c~dora-rs~crates.io] [![dora-rs~repo][c~dora-rs~repo~badge]][dora~repo] [![dora-rs~lib.rs][c~dora-rs~lib.rs~badge]][c~dora-rs~lib.rs]{{hi:dora-rs}}
 
 [`dora-rs`][c~dora-rs~docs]↗{{hi:dora-rs}} (Dataflow Oriented Robotic Architecture) is a framework for AI robotics applications: nodes, written in Rust or Python, exchange data through a declarative dataflow graph. Its Rust ecosystem is small, so check its maturity before you adopt it.
 
