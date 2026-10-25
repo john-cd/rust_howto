@@ -179,6 +179,62 @@ Live GitHub snapshot on 2026-10-24: **108 of 300 issues from Lists 1–30 remain
 - [#883](https://github.com/john-cd/rust_howto/issues/883) — **P4** — Finish the DataFusion example.
 - [#878](https://github.com/john-cd/rust_howto/issues/878) — **P4** — Finish the AWS Lambda example.
 
+### Lists 31–34 — assigned to local Codex sessions
+
+Added 2026-10-25. Lists A–D from the [#1955 comments](https://github.com/john-cd/rust_howto/issues/1955) were handed to Codex on the local Windows machine, one worktree per list. They are not part of the 300-issue count above.
+
+### List 31 — Local validation and lint gates (Codex A)
+
+- [#1859](https://github.com/john-cd/rust_howto/issues/1859) — **P2** — Complete remaining Clippy gates blocked during #1792.
+- [#1868](https://github.com/john-cd/rust_howto/issues/1868) — **P2** — Resolve the Windows Clippy spawn failure for the wasm package.
+- [#1874](https://github.com/john-cd/rust_howto/issues/1874) — **P3** — Make the excluded embedded examples directly testable.
+- [#1867](https://github.com/john-cd/rust_howto/issues/1867) — **P3** — Add executable examples for embedded and 2D graphics chapters.
+- [#1876](https://github.com/john-cd/rust_howto/issues/1876) — **P2** — Complete remaining validation for List 17 documentation changes.
+- [#1877](https://github.com/john-cd/rust_howto/issues/1877) — **P2** — Complete validation for networking, CLI, and tar issues (List 18).
+- [#1900](https://github.com/john-cd/rust_howto/issues/1900) — **P3** — Complete validation for P3 documentation and example changes (List 24).
+- [#1885](https://github.com/john-cd/rust_howto/issues/1885) — **P3** — Triage and resolve the rumdl Markdown lint baseline.
+- [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **P3** — Verify refs and links after restoring dropped content (#1904).
+- [#1929](https://github.com/john-cd/rust_howto/issues/1929) — **P4** — Validate the ONNX inference example with ort (PR #1964).
+
+### List 32 — Encoding, database and tooling examples (Codex B)
+
+- [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters build and regenerate Cap'n Proto code with `capnp` installed.
+- [#1038](https://github.com/john-cd/rust_howto/issues/1038) — **P3** — Review the postcard example.
+- [#1040](https://github.com/john-cd/rust_howto/issues/1040) — **P3** — Finish the bincode example.
+- [#708](https://github.com/john-cd/rust_howto/issues/708) — **P3** — Finish the Cornucopia example.
+- [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance.
+- [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples.
+- [#335](https://github.com/john-cd/rust_howto/issues/335) — **P3** — Write the benchmarking chapter.
+- [#483](https://github.com/john-cd/rust_howto/issues/483) — **P3** — Write the Tera chapter; add a sample from the tools code.
+- [#43](https://github.com/john-cd/rust_howto/issues/43) — **P4** — Make additional examples out of the `templ` tool.
+- [#41](https://github.com/john-cd/rust_howto/issues/41) — **P4** — Make additional examples out of mdbook-utils.
+
+### List 33 — Desktop, GPU, audio, FFI and embedded chapters (Codex C)
+
+- [#787](https://github.com/john-cd/rust_howto/issues/787) — **P4** — Finish the Slint example; figure out how to test it.
+- [#776](https://github.com/john-cd/rust_howto/issues/776) — **P4** — Finish the egui example.
+- [#607](https://github.com/john-cd/rust_howto/issues/607) — **P4** — Write the GPU chapter.
+- [#415](https://github.com/john-cd/rust_howto/issues/415) — **P4** — Write the audio chapter.
+- [#324](https://github.com/john-cd/rust_howto/issues/324) — **P4** — Write the FFI bindings generation chapter.
+- [#345](https://github.com/john-cd/rust_howto/issues/345) — **P4** — Add Embassy and other embedded frameworks.
+- [#346](https://github.com/john-cd/rust_howto/issues/346) — **P4** — Complete the embedded category overview.
+- [#42](https://github.com/john-cd/rust_howto/issues/42) — **P4** — Make additional examples out of crate_indices.
+- [#327](https://github.com/john-cd/rust_howto/issues/327) — **P4** — Write the macro compilation chapter.
+- [#331](https://github.com/john-cd/rust_howto/issues/331) — **P4** — Write the procedural macros chapter.
+
+### List 34 — Web, auth, packaging and tooling pages (Codex D)
+
+- [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment.
+- [#636](https://github.com/john-cd/rust_howto/issues/636) — **P3** — Add OAuth to the authentication index.
+- [#510](https://github.com/john-cd/rust_howto/issues/510) — **P3** — Write the CORS chapter.
+- [#921](https://github.com/john-cd/rust_howto/issues/921) — **P3** — Review the build-time tooling chapter.
+- [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Write the Python interoperability chapter.
+- [#589](https://github.com/john-cd/rust_howto/issues/589) — **P4** — Organize and edit the data engineering chapter.
+- [#453](https://github.com/john-cd/rust_howto/issues/453) — **P4** — Locate crates and write the data formats chapter.
+- [#278](https://github.com/john-cd/rust_howto/issues/278) — **P4** — Write the cryptocurrencies index.
+- [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Write the screen readers chapter.
+- [#401](https://github.com/john-cd/rust_howto/issues/401) — **P4** — Write the internationalization chapter.
+
 ## COMPLETED
 
 Live GitHub snapshot on 2026-10-24: **192 of 300 issues from Lists 1–30 are closed as completed**. The other 108 issues remain in IN-PROGRESS. Each issue below retains its original list membership.
