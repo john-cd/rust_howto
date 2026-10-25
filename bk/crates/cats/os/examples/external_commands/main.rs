@@ -17,6 +17,7 @@ mod process_output;
 mod read_env_variable;
 #[cfg(target_family = "unix")]
 mod send_input;
+mod shlex_example;
 mod which;
 mod xshell_example;
 
@@ -57,6 +58,9 @@ enum Commands {
     #[cfg(target_family = "unix")]
     #[command(name = "send_input")]
     SendInput,
+    /// Runs the `shlex` example.
+    #[command(name = "shlex")]
+    Shlex,
     /// Runs the `which` example.
     #[command(name = "which")]
     Which,
@@ -87,6 +91,7 @@ fn main() -> anyhow::Result<()> {
             }
             #[cfg(target_family = "unix")]
             Commands::SendInput => send_input::run()?,
+            Commands::Shlex => shlex_example::run()?,
             Commands::Which => {
                 which::run();
             }

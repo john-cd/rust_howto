@@ -25,6 +25,7 @@
 [ex~data-structures~priority-queue]: binary_heaps.md#priority-queue
 [ex~data-structures~queue]: stacks_and_queues.md#queue
 [ex~data-structures~roaring]: bit_arrays.md#roaring
+[ex~data-structures~short-uuid]: unique_identifiers.md#short-uuid
 [ex~data-structures~slotmap]: other_maps.md#slotmap
 [ex~data-structures~smallvec]: stack-allocated.md#smallvec-tinyvec
 [ex~data-structures~stack]: stacks_and_queues.md#stack

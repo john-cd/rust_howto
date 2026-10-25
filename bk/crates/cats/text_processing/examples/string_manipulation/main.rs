@@ -8,6 +8,7 @@ use clap::Subcommand;
 mod case_conversion;
 mod heck;
 mod indoc;
+mod slug;
 mod textwrap;
 
 /// Command-line arguments.
@@ -30,6 +31,9 @@ enum Commands {
     /// Runs the `indoc` example.
     #[command(name = "indoc")]
     Indoc,
+    /// Runs the `slug` example.
+    #[command(name = "slug")]
+    Slug,
     /// Runs the `textwrap` example.
     #[command(name = "textwrap")]
     Textwrap,
@@ -49,6 +53,9 @@ fn main() -> anyhow::Result<()> {
             }
             Commands::Indoc => {
                 indoc::run();
+            }
+            Commands::Slug => {
+                slug::run();
             }
             Commands::Textwrap => {
                 textwrap::run();

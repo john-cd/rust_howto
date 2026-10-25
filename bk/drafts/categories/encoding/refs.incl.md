@@ -1,5 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
+[c~yaml_serde~docs]: https://docs.rs/yaml_serde/latest/yaml_serde/
+[c~yaml_serde~docs~badge]: https://img.shields.io/crates/v/yaml_serde?label=yaml_serde
 [ex~encoding~base64]: string_encoding.md#base64
 [ex~encoding~bincode]: _binary_encoders.md#bincode
 [ex~encoding~bytemuck]: typecasts.md#bytemuck
@@ -10,7 +12,9 @@
 [ex~encoding~endianness]: typecasts.md#endianness
 [ex~encoding~filter-csv]: csv.md#filter-csv
 [ex~encoding~flatbuffers]: _binary_encoders.md#flatbuffers
+[ex~encoding~form-urlencoded]: string_encoding.md#form-urlencoded
 [ex~encoding~handle-invalid-csv]: csv.md#handle-invalid-csv
+[ex~encoding~hex]: string_encoding.md#hex
 [ex~encoding~monostate]: serde.md#monostate
 [ex~encoding~percent-encoding]: string_encoding.md#percent-encoding
 [ex~encoding~postcard]: no_external_schema.md#postcard
@@ -25,18 +29,18 @@
 [ex~encoding~serde]: serde.md#serde
 [ex~encoding~serialize-to-csv-using-serde]: csv.md#serialize-to-csv-using-serde
 [ex~encoding~serialize-to-csv]: csv.md#serialize-to-csv
-[ex~encoding~toml]: complex_encoding.md#toml
 [ex~encoding~text-and-utf-8]: string_encoding.md#text-and-utf-8
-[ex~encoding~url-component-encoding]: string_encoding.md#url-component-encoding
+[ex~encoding~toml]: complex_encoding.md#toml
 [ex~encoding~transform-csv-column]: csv.md#transform-csv-column
 [ex~encoding~type-casts]: typecasts.md#type-conversion-using-as
+[ex~encoding~url-component-encoding]: string_encoding.md#url-component-encoding
 [ex~encoding~url]: string_encoding.md#url
 [ex~encoding~zerocopy]: typecasts.md#zerocopy
 [p~binary-encoders]: _binary_encoders.md
 [p~configuration]: ../config/configuration.md
 [p~csv]: https://datatracker.ietf.org/doc/html/rfc4180
-[p~encoding]: index.md
 [p~data-types]: ../../../src/language/data_types.md
+[p~encoding]: index.md
 [p~json]: ../parser-implementations/json.md
 [p~language]: ../../../src/language/index.md
 [p~memory]: ../development-tools_profiling/memory_usage_analysis.md
@@ -51,6 +55,3 @@
 [p~traits]: ../../../src/language/traits.md
 [p~typecasts]: typecasts.md
 [p~url]: ../web-programming/url.md
-
-[c~yaml_serde~docs]: https://docs.rs/yaml_serde/latest/yaml_serde/
-[c~yaml_serde~docs~badge]: https://img.shields.io/crates/v/yaml_serde?label=yaml_serde

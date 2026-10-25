@@ -9,11 +9,13 @@
 [ex~filesystem~cwd]: directories.md#cwd
 [ex~filesystem~directories]: user_directories_and_preferred_applications.md#directories
 [ex~filesystem~dirs]: user_directories_and_preferred_applications.md#dirs
+[ex~filesystem~dunce]: paths.md#dunce
 [ex~filesystem~find-all-files-with-given-pattern-ignoring-filename-case]: directory_traversal.md#find-all-files-with-given-pattern-ignoring-filename-case
 [ex~filesystem~find-all-png-files-recursively]: directory_traversal.md#find-all-png-files-recursively
 [ex~filesystem~find-files-modified-last-24-hours]: directory_traversal.md#find-files-modified-last-24-hours
 [ex~filesystem~find-loop-in-path]: directory_traversal.md#find-loop-in-path
 [ex~filesystem~globset]: directory_traversal.md#globset
+[ex~filesystem~infer]: file_metadata.md#infer
 [ex~filesystem~memory-map]: reading_and_writing_files.md#memory-map
 [ex~filesystem~metadata]: file_metadata.md#metadata
 [ex~filesystem~open]: user_directories_and_preferred_applications.md#open

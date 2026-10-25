@@ -51,6 +51,16 @@ The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros 
 {{#include ../../../crates/cats/text_processing/examples/string_manipulation/indoc.rs:example}}
 ```
 
+## Create a URL-Friendly Slug with `slug` {#slug}
+
+[![slug][c~slug~docs~badge]][c~slug~docs]{{hi:slug}} [![slug~crates.io][c~slug~crates.io~badge]][c~slug~crates.io] [![slug~repo][c~slug~repo~badge]][c~slug~repo] [![slug~lib.rs][c~slug~lib.rs~badge]][c~slug~lib.rs]  [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]
+
+[`slug::slugify`][c~slug~docs]↗{{hi:slug}} turns a title into a lowercase ASCII string made of words separated by hyphens: it drops punctuation, collapses whitespace and transliterates accented characters. The result is suitable for URLs and stable references; two different titles can produce the same slug, so check for collisions if the slug is a key.
+
+```rust,editable
+{{#include ../../../crates/cats/text_processing/examples/string_manipulation/slug.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[strings | Strings]].

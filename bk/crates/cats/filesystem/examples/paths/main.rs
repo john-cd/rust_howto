@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 mod camino;
 mod canonicalize;
+mod dunce;
 mod manipulate_paths;
 
 /// Command-line arguments.
@@ -26,6 +27,9 @@ enum Commands {
     /// Runs the `canonicalize` example.
     #[command(name = "canonicalize")]
     Canonicalize,
+    /// Runs the `dunce` example.
+    #[command(name = "dunce")]
+    Dunce,
     /// Runs the `manipulate_paths` example.
     #[command(name = "manipulate_paths")]
     ManipulatePaths,
@@ -42,6 +46,9 @@ fn main() -> anyhow::Result<()> {
             }
             Commands::Canonicalize => {
                 canonicalize::run()?;
+            }
+            Commands::Dunce => {
+                dunce::run()?;
             }
             Commands::ManipulatePaths => {
                 manipulate_paths::run();

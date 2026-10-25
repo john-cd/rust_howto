@@ -41,8 +41,11 @@ prost = "0.14.4"
 prost-types = "0.14.4"
 rkyv = "0.8.18"
 rmp-serde = "1.3.1"
+hex = "0.4.3" # Hexadecimal encoding and decoding.
 serde = { version = "1.0.229", features = ["derive"] }
 serde_ignored = "0.1.14"
+urlencoding = "2.1.3" # Percent-encode and decode a string.
+serde_urlencoded = "0.7.1" # `application/x-www-form-urlencoded` (de)serialization.
 serde_json = "1.0.154"
 toml = "1.1.8"
 url = "2.5.8"

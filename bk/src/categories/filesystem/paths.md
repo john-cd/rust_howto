@@ -39,6 +39,16 @@ The `camino` crate provides an alternative to the standard `Path` and `PathBuf` 
 {{#include ../../../crates/cats/filesystem/examples/paths/camino.rs:example}}
 ```
 
+## Canonicalize a Path without the Windows `\\?\` Prefix {#dunce}
+
+[![dunce][c~dunce~docs~badge]][c~dunce~docs]{{hi:dunce}} [![dunce~crates.io][c~dunce~crates.io~badge]][c~dunce~crates.io] [![dunce~repo][c~dunce~repo~badge]][c~dunce~repo] [![dunce~lib.rs][c~dunce~lib.rs~badge]][c~dunce~lib.rs] [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+
+On Windows, `std::fs::canonicalize` returns a "verbatim" path that starts with `\\?\`. Many tools, and some other programs that receive the path as an argument, do not understand it. [`dunce::canonicalize`][c~dunce~docs]↗{{hi:dunce::canonicalize}} returns the same path in its usual form when the shorter form is equivalent, and [`dunce::simplified`][c~dunce~docs]↗ removes the prefix from a path you already have. On other platforms, both behave like the standard library.
+
+```rust,editable
+{{#include ../../../crates/cats/filesystem/examples/paths/dunce.rs:example}}
+```
+
 ## References {#references .skip}
 
 - [Rust `Path` vs `PathBuf`][blog~rust-path-vs-pathbuf]↗.
