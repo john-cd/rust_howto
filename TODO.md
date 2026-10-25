@@ -15,7 +15,7 @@ Compatible-only upgrades plus `cargo update` in every workspace. Major bumps tha
 - bk, still pinned (blocked upstream): `bolero =0.13.4` (0.13.5+ needs `indexmap =2.11.2`); `tower-sessions 0.14` (axum-login 0.18 is the latest and needs it); `libsqlite3-sys`, `rusqlite 0.32.1`, `sqlx 0.8`, `sea-orm 1.1` (sea-orm 2 needs seaography 2, which is only a release candidate); `cornucopia_async 0.4` / `cornucopia_client_core 0.4.0` (deprecated in favour of the rewritten cornucopia 1.0); `nalgebra 0.34` (`ode_solvers` still uses it).
 - bk, ported to the latest majors (2026-10-25): `tera 2`, `tree-sitter 0.27`, `cached 4`, `async_zip 0.0.19`, `skiplist 2`, `ulid 3`, `heed 0.23`, `num-bigint 0.5`, `cssparser 0.38`, `html5ever`/`markup5ever`/`xml5ever 0.40`.
 - later, ported: `mavlink 0.21`, `parry2d 0.31`, `rapier2d 0.36`, `rubato 5`, `morphorm 0.9`. Still pinned: `egui` family (0.37) and `parley` (0.12) need `smallvec` 1.16, which `kube 4.2` (via `serde-saphyr`, in `other`) caps below 1.16; `rodio 0.23` / `cpal 0.18` need `alsa-sys 0.4`, conflicting with `bevy` and `openrr`; `rendering_graphics_api` untouched. `wasmer-compiler-cranelift` cannot build on Windows.
-- `just bk bb` fails in `refdefs-check` (stale refs), unrelated to dependencies.
+- Merged dependency-derived links into `bk/src/refs/crate-refs.md`; the pinned `refdefs-check` passes. The full `just bk bb` build remains pending; parser crate validation failed in the Windows `onig_sys` linker step with `LNK1114` (error 5).
 
 ## IN-PROGRESS
 
@@ -668,3 +668,7 @@ The mathematics follow-ups previously listed as in progress are closed as of 202
 - [#1881](https://github.com/john-cd/rust_howto/issues/1881) — **P2** — Write discrete mathematics examples.
 - [#1882](https://github.com/john-cd/rust_howto/issues/1882) — **P2** — Write graph theory examples.
 - [#1883](https://github.com/john-cd/rust_howto/issues/1883) — **P2** — Write differential equations examples.
+
+### List AB — Parsing and structured text
+
+The ten issue commits (`295726b2f` through `4c60695c2`) are integrated into local `develop`. `just fa`, changed-file Markdown checks, `just spell`, `dprint check`, `git diff --check`, the focused `refdefs.py` integration tests, and the pinned `refdefs-check` pass. Parser crate all-target validation remains blocked by Windows `onig_sys` link failure `LNK1114` (error 5); the full book build and strict Clippy remain pending. All ten issues remain open until required validation completes.
