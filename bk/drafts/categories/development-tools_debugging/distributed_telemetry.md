@@ -10,7 +10,7 @@
 
 [OpenTelemetry][opentelemetry~website]↗ is a vendor-neutral API, SDK, and tooling ecosystem for generating and exporting telemetry. For distributed traces, instrument application code with `tracing` and connect it to the OpenTelemetry SDK through [`tracing-opentelemetry`][tracing-opentelemetry~docs]. The [`opentelemetry-otlp`][opentelemetry-otlp~docs] exporter sends spans in OTLP over gRPC or HTTP to a collector or backend. Set a stable `service.name` resource attribute, batch exports, and shut down the provider cleanly so buffered spans can be flushed. See the [official Rust OTLP example][opentelemetry-otlp-example] for a complete exporter setup.
 
-The example below creates an OpenTelemetry span through the API. Exporting it requires an SDK tracer provider and an exporter such as OTLP; the global tracer is a no-op until a provider is installed.
+The example below installs an SDK tracer provider with a stdout exporter, records a span, and shuts the provider down so the span is flushed. For an OTLP exporter to a collector or backend, follow the [official Rust OTLP example][opentelemetry-otlp-example].
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/open_telemetry.rs:example}}
