@@ -2822,6 +2822,15 @@
 [c~egui_plot::BarChart~docs]: https://docs.rs/egui_plot/latest/egui_plot/struct.BarChart.html
 [c~egui_plot::Line~docs]: https://docs.rs/egui_plot/latest/egui_plot/struct.Line.html
 [c~egui_plot::Plot~docs]: https://docs.rs/egui_plot/latest/egui_plot/struct.Plot.html
+[c~egui_kittest~crates.io]: https://crates.io/crates/egui_kittest
+[c~egui_kittest~crates.io~badge]: https://img.shields.io/badge/crates.io-egui__kittest-crimson
+[c~egui_kittest~docs]: https://docs.rs/egui_kittest
+[c~egui_kittest~docs~badge]: https://img.shields.io/crates/v/egui_kittest?label=egui__kittest
+[c~egui_kittest~lib.rs]: https://lib.rs/crates/egui_kittest
+[c~egui_kittest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-egui__kittest-yellow
+[c~egui_kittest~repo]: https://github.com/emilk/egui/tree/main/crates/egui_kittest
+[c~egui_kittest~repo~badge]: https://img.shields.io/badge/egui__kittest-steelblue?logo=github
+[c~egui_kittest::Harness~docs]: https://docs.rs/egui_kittest/latest/egui_kittest/struct.Harness.html
 [c~egui_plot~crates.io]: https://crates.io/crates/egui_plot
 [c~egui_plot~crates.io~badge]: https://img.shields.io/badge/crates.io-egui__plot-crimson
 [c~egui_plot~docs]: https://docs.rs/egui_plot
@@ -3992,6 +4001,7 @@
 [c~hound~lib.rs~badge]: https://img.shields.io/badge/lib.rs-hound-yellow
 [c~hound~repo]: https://github.com/ruuda/hound
 [c~hound~repo~badge]: https://img.shields.io/badge/hound-steelblue?logo=github
+[c~hrtf::HrtfProcessor~docs]: https://docs.rs/hrtf/latest/hrtf/struct.HrtfProcessor.html
 [c~hrtf~crates.io]: https://crates.io/crates/hrtf
 [c~hrtf~crates.io~badge]: https://img.shields.io/badge/crates.io-hrtf-crimson
 [c~hrtf~docs]: https://docs.rs/hrtf

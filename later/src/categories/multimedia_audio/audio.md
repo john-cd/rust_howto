@@ -115,7 +115,17 @@ The `midir` callback also runs on a thread of the library: apply the real-time r
 
 ## Binaural Audio with `hrtf` {#hrtf}
 
-[`hrtf`][c~hrtf~docs]↗{{hi:hrtf}} renders a mono source as binaural stereo from a head-related impulse response (HRIR) sphere file, which gives the impression of a position in 3D space over headphones. The crate does not ship HRIR data: download a sphere in the format that `HrirSphere` loads.
+[`hrtf`][c~hrtf~docs]↗{{hi:hrtf}} renders a mono source as binaural stereo from a head-related impulse response (HRIR) sphere file, which gives the impression of a position in 3D space over headphones. The crate does not ship HRIR data: download a sphere in the format that `HrirSphere` loads. The example below builds a tiny sphere in memory in that file format (four directions, one impulse per ear), so it runs without a download and shows the data layout.
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_audio/examples/audio/hrtf.rs:example}}
+```
+
+Points to remember:
+
+- [`hrtf::HrtfProcessor::process_samples`][c~hrtf::HrtfProcessor~docs]↗{{hi:hrtf::HrtfProcessor}} takes exactly `interpolation_steps * block_len` mono samples per call and mixes stereo output into the buffer you give it. Keep the `prev_left_samples` and `prev_right_samples` buffers of a source between calls.
+- Pass the previous and the new direction so the filter interpolates between them; moving a source without that produces clicks.
+- Responses are resampled when the sphere is loaded, so the sphere's sample rate does not need to match your device.
 
 ## Related Topics {#related-topics .skip}
 

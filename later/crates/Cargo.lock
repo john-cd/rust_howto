@@ -2050,6 +2050,43 @@ dependencies = [
 ]
 
 [[package]]
+name = "audio-core"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f93ebbf82d06013f4c41fe71303feb980cddd78496d904d06be627972de51a24"
+
+[[package]]
+name = "audioadapter"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "91f87b70b051c5866680ad79f6743a42ccab264c009d1a71f4d33a3872ae60c8"
+dependencies = [
+ "audio-core",
+ "num-traits",
+]
+
+[[package]]
+name = "audioadapter-buffers"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9097d67933fb083d382ce980430afdb758aada60846010aee6be068c06cef0ca"
+dependencies = [
+ "audioadapter",
+ "audioadapter-sample",
+ "num-traits",
+]
+
+[[package]]
+name = "audioadapter-sample"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "34ab94f2bc04a14e1f49ee5f222f66460e8a1b51627bdfedf34eed394d747938"
+dependencies = [
+ "audio-core",
+ "num-traits",
+]
+
+[[package]]
 name = "augurs"
 version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -9041,6 +9078,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "egui_kittest"
+version = "0.34.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5cb65436bc6f214ecc8ef4d9056a9344f92e70e22c162dbc3d515913df0fd3c5"
+dependencies = [
+ "egui",
+ "kittest",
+ "serde",
+ "toml 1.1.8+spec-1.1.0",
+]
+
+[[package]]
 name = "egui_plot"
 version = "0.35.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -10816,7 +10865,7 @@ dependencies = [
  "fyrox-core",
  "fyrox-resource",
  "hound",
- "hrtf",
+ "hrtf 0.8.1",
  "serde",
  "strum 0.27.2",
  "strum_macros 0.27.2",
@@ -12632,6 +12681,7 @@ dependencies = [
  "egui-notify",
  "egui-phosphor",
  "egui_extras",
+ "egui_kittest",
  "egui_plot",
  "egui_tiles",
  "egui_tracing",
@@ -13086,6 +13136,17 @@ checksum = "0f4de47a84fd55fa33aa5ef337016814fdc869fdad23e7898b5322fa290248e6"
 dependencies = [
  "byteorder",
  "rubato 0.14.1",
+ "rustfft",
+]
+
+[[package]]
+name = "hrtf"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1344e2123ddd443aceddc30d60a7fa78b9099121d57726e96611fb43f6d6b191"
+dependencies = [
+ "byteorder",
+ "rubato 3.0.0",
  "rustfft",
 ]
 
@@ -14945,6 +15006,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2db585e1d738fc771bf08a151420d3ed193d9d895a36df7f6f8a9456b911ddc"
 
 [[package]]
+name = "kittest"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "90ceaa75eb0036a32b6b9833962eb18137449e9817e2e586006471925b727fd5"
+dependencies = [
+ "accesskit 0.24.1",
+ "accesskit_consumer 0.35.0",
+]
+
+[[package]]
 name = "konst"
 version = "0.2.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -16731,6 +16802,7 @@ version = "0.1.2"
 dependencies = [
  "cpal 0.17.1",
  "hound",
+ "hrtf 0.9.0",
  "midir",
  "rodio 0.22.2",
  "rubato 0.16.2",
@@ -22379,6 +22451,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "rubato"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d4be9c88e3d722d3d36939e41941f6b6f52810c1235bf19998a7d4535b402892"
+dependencies = [
+ "audioadapter",
+ "audioadapter-buffers",
+ "num-complex 0.4.6",
+ "num-integer",
+ "num-traits",
+ "realfft",
+ "visibility",
+ "windowfunctions",
+]
+
+[[package]]
 name = "rust-fuzzy-search"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -27936,6 +28024,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "051eb1abcf10076295e815102942cc58f9d5e3b4560e46e53c21e8ff6f3af7b1"
 
 [[package]]
+name = "visibility"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d674d135b4a8c1d7e813e2f8d1c9a58308aee4a680323066025e53132218bd91"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.119",
+]
+
+[[package]]
 name = "visualization"
 version = "0.1.2"
 dependencies = [
@@ -29970,6 +30069,15 @@ dependencies = [
  "clipboard_x11",
  "raw-window-handle 0.6.2",
  "thiserror 2.0.21",
+]
+
+[[package]]
+name = "windowfunctions"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "90628d739333b7c5d2ee0b70210b97b8cddc38440c682c96fd9e2c24c2db5f3a"
+dependencies = [
+ "num-traits",
 ]
 
 [[package]]

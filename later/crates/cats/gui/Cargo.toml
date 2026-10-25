@@ -89,6 +89,7 @@ relm4-components = { version = "0.11.0", optional = true }
 tauri-build = "2.7.4"
 
 [dev-dependencies]
+egui_kittest = "0.34.1" # Same version as `egui`.
 i-slint-backend-testing = "=1.16.1" # Matches Slint's internal, non-semver testing API.
 
 [[example]]
@@ -153,6 +154,11 @@ test = true
 [[example]]
 name = "file_dialogs"
 path = "examples/file_dialogs/main.rs"
+test = true
+
+[[example]]
+name = "egui_kittest"
+path = "examples/immediate_mode_gui/egui_kittest.rs"
 test = true
 
 [[example]]
