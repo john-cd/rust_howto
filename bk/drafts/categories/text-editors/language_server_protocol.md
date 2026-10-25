@@ -16,6 +16,16 @@ The Language Server Protocol (LSP) is JSON-RPC with `Content-Length` framing, us
 {{#include ../../../crates/cats/text_editors/examples/language_server_protocol/lsp_server_minimal.rs:example}}
 ```
 
+## Open a Document and List its Symbols {#lsp-client}
+
+[![lsp-server][c~lsp-server~docs~badge]][c~lsp-server~docs] [![lsp-types][c~lsp-types~docs~badge]][c~lsp-types~docs]{{hi:lsp-server}}{{hi:lsp-types}} [![cat~text-editors][cat~text-editors~badge]][cat~text-editors]{{hi:Language Server Protocol}}
+
+A client sends the document text with the `textDocument/didOpen` notification (notifications have no response), then asks questions such as `textDocument/documentSymbol`. The server advertises what it supports in the `initialize` response (`document_symbol_provider` here), and a client should only send requests the capabilities allow. To drive a real server such as `rust-analyzer`, spawn it with piped stdin and stdout, read and write messages with `Message::read` and `Message::write` (the `Content-Length` framing shown at the end of the example), finish with `shutdown` then `exit`, and wait for the child process.
+
+```rust,editable
+{{#include ../../../crates/cats/text_editors/examples/language_server_protocol/lsp_client.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[ides | Editors and IDEs]].
