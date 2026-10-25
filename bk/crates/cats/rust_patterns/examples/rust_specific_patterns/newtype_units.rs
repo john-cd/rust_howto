@@ -19,39 +19,39 @@ use std::ops::SubAssign;
 struct Meters(f64);
 
 impl Add for Meters {
-    type Output = Meters;
+    type Output = Self;
 
-    fn add(self, rhs: Meters) -> Meters {
-        Meters(self.0 + rhs.0)
+    fn add(self, rhs: Self) -> Self {
+        Self(self.0 + rhs.0)
     }
 }
 
 impl AddAssign for Meters {
-    fn add_assign(&mut self, rhs: Meters) {
+    fn add_assign(&mut self, rhs: Self) {
         self.0 += rhs.0;
     }
 }
 
 impl Sub for Meters {
-    type Output = Meters;
+    type Output = Self;
 
-    fn sub(self, rhs: Meters) -> Meters {
-        Meters(self.0 - rhs.0)
+    fn sub(self, rhs: Self) -> Self {
+        Self(self.0 - rhs.0)
     }
 }
 
 impl SubAssign for Meters {
-    fn sub_assign(&mut self, rhs: Meters) {
+    fn sub_assign(&mut self, rhs: Self) {
         self.0 -= rhs.0;
     }
 }
 
 /// Scaling by a plain number is fine: meters * 2.0 is still meters.
 impl Mul<f64> for Meters {
-    type Output = Meters;
+    type Output = Self;
 
-    fn mul(self, rhs: f64) -> Meters {
-        Meters(self.0 * rhs)
+    fn mul(self, rhs: f64) -> Self {
+        Self(self.0 * rhs)
     }
 }
 
@@ -59,7 +59,7 @@ impl Mul<f64> for Meters {
 impl Div for Meters {
     type Output = f64;
 
-    fn div(self, rhs: Meters) -> f64 {
+    fn div(self, rhs: Self) -> f64 {
         self.0 / rhs.0
     }
 }

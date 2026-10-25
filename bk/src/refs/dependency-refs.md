@@ -47,6 +47,15 @@
 [aes_gcm_siv-github]: https://github.com/RustCrypto/AEADs
 
 
+[ahash]: https://docs.rs/ahash
+
+
+[ahash-crate]: https://crates.io/crates/ahash
+
+
+[ahash-github]: https://github.com/tkaitchuck/ahash
+
+
 [aho_corasick]: https://docs.rs/aho_corasick
 
 
@@ -54,6 +63,15 @@
 
 
 [aho_corasick-github]: https://github.com/BurntSushi/aho-corasick
+
+
+[ammonia]: https://docs.rs/ammonia
+
+
+[ammonia-crate]: https://crates.io/crates/ammonia
+
+
+[ammonia-github]: https://github.com/rust-ammonia/ammonia
 
 
 [anyhow]: https://docs.rs/anyhow
@@ -92,6 +110,15 @@
 [argmin-github]: https://github.com/argmin-rs/argmin
 
 
+[argmin_math]: https://docs.rs/argmin_math
+
+
+[argmin_math-crate]: https://crates.io/crates/argmin_math
+
+
+[argmin_math-github]: https://github.com/argmin-rs/argmin
+
+
 [argon2]: https://docs.rs/argon2
 
 
@@ -108,6 +135,15 @@
 
 
 [arrayvec-github]: https://github.com/bluss/arrayvec
+
+
+[assert_cmd]: https://docs.rs/assert_cmd
+
+
+[assert_cmd-crate]: https://crates.io/crates/assert_cmd
+
+
+[assert_cmd-github]: https://github.com/assert-rs/assert_cmd.git
 
 
 [async_channel]: https://docs.rs/async_channel
@@ -146,6 +182,15 @@
 [async_zip-github]: https://github.com/Majored/rs-async-zip
 
 
+[atomicwrites]: https://docs.rs/atomicwrites
+
+
+[atomicwrites-crate]: https://crates.io/crates/atomicwrites
+
+
+[atomicwrites-github]: https://github.com/untitaker/rust-atomicwrites
+
+
 [autocfg]: https://docs.rs/autocfg
 
 
@@ -171,6 +216,51 @@
 
 
 [axum-github]: https://github.com/tokio-rs/axum (*)
+
+
+[axum_extra]: https://docs.rs/axum_extra
+
+
+[axum_extra-crate]: https://crates.io/crates/axum_extra
+
+
+[axum_extra-github]: https://github.com/tokio-rs/axum
+
+
+[axum_login]: https://docs.rs/axum_login
+
+
+[axum_login-crate]: https://crates.io/crates/axum_login
+
+
+[axum_login-github]: https://github.com/maxcountryman/axum-login
+
+
+[axum_messages]: https://docs.rs/axum_messages
+
+
+[axum_messages-crate]: https://crates.io/crates/axum_messages
+
+
+[axum_messages-github]: https://github.com/maxcountryman/axum-messages
+
+
+[axum_server]: https://docs.rs/axum_server
+
+
+[axum_server-crate]: https://crates.io/crates/axum_server
+
+
+[axum_server-github]: https://github.com/programatik29/axum-server
+
+
+[backon]: https://docs.rs/backon
+
+
+[backon-crate]: https://crates.io/crates/backon
+
+
+[backon-github]: https://github.com/Xuanwo/backon
 
 
 [base16ct]: https://docs.rs/base16ct
@@ -332,7 +422,7 @@
 [calamine-crate]: https://crates.io/crates/calamine
 
 
-[calamine-github]: https://github.com/tafia/calamine (*)
+[calamine-github]: https://github.com/tafia/calamine
 
 
 [camino]: https://docs.rs/camino
@@ -351,6 +441,15 @@
 
 
 [capnp-github]: https://github.com/capnproto/capnproto-rust
+
+
+[cargo_metadata]: https://docs.rs/cargo_metadata
+
+
+[cargo_metadata-crate]: https://crates.io/crates/cargo_metadata
+
+
+[cargo_metadata-github]: https://github.com/oli-obk/cargo_metadata (*)
 
 
 [cc]: https://docs.rs/cc
@@ -407,6 +506,15 @@
 [clap-github]: https://github.com/clap-rs/clap (*)
 
 
+[clap_cargo]: https://docs.rs/clap_cargo
+
+
+[clap_cargo-crate]: https://crates.io/crates/clap_cargo
+
+
+[clap_cargo-github]: https://github.com/crate-ci/clap-cargo
+
+
 [clap_complete]: https://docs.rs/clap_complete
 
 
@@ -414,6 +522,15 @@
 
 
 [clap_complete-github]: https://github.com/clap-rs/clap
+
+
+[cmaes]: https://docs.rs/cmaes
+
+
+[cmaes-crate]: https://crates.io/crates/cmaes
+
+
+[cmaes-github]: https://github.com/pengowen123/cmaes
 
 
 [color_eyre]: https://docs.rs/color_eyre
@@ -578,6 +695,15 @@
 [csv-github]: https://github.com/BurntSushi/rust-csv (*)
 
 
+[ctrlc]: https://docs.rs/ctrlc
+
+
+[ctrlc-crate]: https://crates.io/crates/ctrlc
+
+
+[ctrlc-github]: https://github.com/Detegr/rust-ctrlc.git
+
+
 [dashmap]: https://docs.rs/dashmap
 
 
@@ -713,6 +839,15 @@
 [duct-github]: https://github.com/oconnor663/duct.rs
 
 
+[dunce]: https://docs.rs/dunce
+
+
+[dunce-crate]: https://crates.io/crates/dunce
+
+
+[dunce-github]: https://gitlab.com/kornelski/dunce
+
+
 [dyn_clone]: https://docs.rs/dyn_clone
 
 
@@ -819,6 +954,15 @@
 
 
 [fixed-github]: https://gitlab.com/tspiteri/fixed
+
+
+[fixedbitset]: https://docs.rs/fixedbitset
+
+
+[fixedbitset-crate]: https://crates.io/crates/fixedbitset
+
+
+[fixedbitset-github]: https://github.com/petgraph/fixedbitset
 
 
 [flagset]: https://docs.rs/flagset
@@ -974,6 +1118,15 @@
 [globset-github]: https://github.com/BurntSushi/ripgrep/tree/master/crates/globset
 
 
+[governor]: https://docs.rs/governor
+
+
+[governor-crate]: https://crates.io/crates/governor
+
+
+[governor-github]: https://github.com/boinkor-net/governor.git
+
+
 [half]: https://docs.rs/half
 
 
@@ -1017,6 +1170,15 @@
 
 
 [hex_literal-github]: https://github.com/RustCrypto/utils
+
+
+[html2text]: https://docs.rs/html2text
+
+
+[html2text-crate]: https://crates.io/crates/html2text
+
+
+[html2text-github]: https://github.com/jugglerchris/rust-html2text/
 
 
 [html5ever]: https://docs.rs/html5ever
@@ -1109,6 +1271,15 @@
 [image-github]: https://github.com/image-rs/image
 
 
+[imap]: https://docs.rs/imap
+
+
+[imap-crate]: https://crates.io/crates/imap
+
+
+[imap-github]: https://github.com/jonhoo/rust-imap
+
+
 [imbl]: https://docs.rs/imbl
 
 
@@ -1143,6 +1314,15 @@
 
 
 [indoc-github]: https://github.com/dtolnay/indoc
+
+
+[infer]: https://docs.rs/infer
+
+
+[infer-crate]: https://crates.io/crates/infer
+
+
+[infer-github]: https://github.com/bojand/infer
 
 
 [ini]: https://docs.rs/ini
@@ -1199,6 +1379,24 @@
 [json5-github]: https://github.com/callum-oakley/json5-rs
 
 
+[jsonschema]: https://docs.rs/jsonschema
+
+
+[jsonschema-crate]: https://crates.io/crates/jsonschema
+
+
+[jsonschema-github]: https://github.com/Stranger6667/jsonschema
+
+
+[jsonwebtoken]: https://docs.rs/jsonwebtoken
+
+
+[jsonwebtoken-crate]: https://crates.io/crates/jsonwebtoken
+
+
+[jsonwebtoken-github]: https://github.com/Keats/jsonwebtoken
+
+
 [kanal]: https://docs.rs/kanal
 
 
@@ -1208,6 +1406,15 @@
 [kanal-github]: https://github.com/fereidani/kanal
 
 
+[keyring]: https://docs.rs/keyring
+
+
+[keyring-crate]: https://crates.io/crates/keyring
+
+
+[keyring-github]: https://github.com/open-source-cooperative/keyring-rs
+
+
 [lazy_static]: https://docs.rs/lazy_static
 
 
@@ -1215,6 +1422,15 @@
 
 
 [lazy_static-github]: https://github.com/rust-lang-nursery/lazy-static.rs (*)
+
+
+[lcov]: https://docs.rs/lcov
+
+
+[lcov-crate]: https://crates.io/crates/lcov
+
+
+[lcov-github]: https://github.com/gifnksm/lcov/
 
 
 [lettre]: https://docs.rs/lettre
@@ -1278,6 +1494,42 @@
 
 
 [lru-github]: https://github.com/jeromefroe/lru-rs.git
+
+
+[lsp_server]: https://docs.rs/lsp_server
+
+
+[lsp_server-crate]: https://crates.io/crates/lsp_server
+
+
+[lsp_server-github]: https://github.com/rust-lang/rust-analyzer/tree/master/lib/lsp-server
+
+
+[lsp_types]: https://docs.rs/lsp_types
+
+
+[lsp_types-crate]: https://crates.io/crates/lsp_types
+
+
+[lsp_types-github]: https://github.com/gluon-lang/lsp-types
+
+
+[mail_parser]: https://docs.rs/mail_parser
+
+
+[mail_parser-crate]: https://crates.io/crates/mail_parser
+
+
+[mail_parser-github]: https://github.com/stalwartlabs/mail-parser
+
+
+[mailchecker]: https://docs.rs/mailchecker
+
+
+[mailchecker-crate]: https://crates.io/crates/mailchecker
+
+
+[mailchecker-github]: https://github.com/FGRibreau/mailchecker
 
 
 [mailparse]: https://docs.rs/mailparse
@@ -1457,7 +1709,7 @@
 [native_tls-crate]: https://crates.io/crates/native_tls
 
 
-[native_tls-github]: https://github.com/rust-native-tls/rust-native-tls
+[native_tls-github]: https://github.com/rust-native-tls/rust-native-tls (*)
 
 
 [ndarray]: https://docs.rs/ndarray
@@ -1503,6 +1755,15 @@
 
 
 [nu_ansi_term-github]: https://github.com/nushell/nu-ansi-term
+
+
+[nucleo]: https://docs.rs/nucleo
+
+
+[nucleo-crate]: https://crates.io/crates/nucleo
+
+
+[nucleo-github]: https://github.com/helix-editor/nucleo
 
 
 [num]: https://docs.rs/num
@@ -1613,6 +1874,15 @@
 [parking_lot-github]: https://github.com/Amanieu/parking_lot
 
 
+[password_auth]: https://docs.rs/password_auth
+
+
+[password_auth-crate]: https://crates.io/crates/password_auth
+
+
+[password_auth-github]: https://github.com/RustCrypto/password-hashes/tree/master/password-auth
+
+
 [pathfinding]: https://docs.rs/pathfinding
 
 
@@ -1712,6 +1982,24 @@
 [postcard-github]: https://github.com/jamesmunns/postcard
 
 
+[predicates]: https://docs.rs/predicates
+
+
+[predicates-crate]: https://crates.io/crates/predicates
+
+
+[predicates-github]: https://github.com/assert-rs/predicates-rs
+
+
+[prettyplease]: https://docs.rs/prettyplease
+
+
+[prettyplease-crate]: https://crates.io/crates/prettyplease
+
+
+[prettyplease-github]: https://github.com/dtolnay/prettyplease
+
+
 [priority_queue]: https://docs.rs/priority_queue
 
 
@@ -1719,6 +2007,15 @@
 
 
 [priority_queue-github]: https://github.com/garro95/priority-queue
+
+
+[proc_macro2]: https://docs.rs/proc_macro2
+
+
+[proc_macro2-crate]: https://crates.io/crates/proc_macro2
+
+
+[proc_macro2-github]: https://github.com/dtolnay/proc-macro2
 
 
 [proc_macros]: https://docs.rs/proc_macros
@@ -1736,7 +2033,7 @@
 [profiling-crate]: https://crates.io/crates/profiling
 
 
-[profiling-github]: https://github.com/aclysma/profiling (*)
+[profiling-github]: https://github.com/aclysma/profiling
 
 
 [proptest]: https://docs.rs/proptest
@@ -1772,7 +2069,7 @@
 [puffin-crate]: https://crates.io/crates/puffin
 
 
-[puffin-github]: https://github.com/EmbarkStudios/puffin (*)
+[puffin-github]: https://github.com/EmbarkStudios/puffin
 
 
 [puffin_http]: https://docs.rs/puffin_http
@@ -1781,7 +2078,7 @@
 [puffin_http-crate]: https://crates.io/crates/puffin_http
 
 
-[puffin_http-github]: https://github.com/EmbarkStudios/puffin (*)
+[puffin_http-github]: https://github.com/EmbarkStudios/puffin
 
 
 [pulldown_cmark]: https://docs.rs/pulldown_cmark
@@ -1790,7 +2087,7 @@
 [pulldown_cmark-crate]: https://crates.io/crates/pulldown_cmark
 
 
-[pulldown_cmark-github]: https://github.com/raphlinus/pulldown-cmark
+[pulldown_cmark-github]: https://github.com/raphlinus/pulldown-cmark (*)
 
 
 [quick_xml]: https://docs.rs/quick_xml
@@ -1802,6 +2099,15 @@
 [quick_xml-github]: https://github.com/tafia/quick-xml
 
 
+[quote]: https://docs.rs/quote
+
+
+[quote-crate]: https://crates.io/crates/quote
+
+
+[quote-github]: https://github.com/dtolnay/quote
+
+
 [ractor]: https://docs.rs/ractor
 
 
@@ -1809,6 +2115,24 @@
 
 
 [ractor-github]: https://github.com/slawlor/ractor
+
+
+[radiate]: https://docs.rs/radiate
+
+
+[radiate-crate]: https://crates.io/crates/radiate
+
+
+[radiate-github]: https://github.com/pkalivas/radiate
+
+
+[rake]: https://docs.rs/rake
+
+
+[rake-crate]: https://crates.io/crates/rake
+
+
+[rake-github]: https://github.com/yaa110/rake-rs
 
 
 [rand]: https://docs.rs/rand
@@ -1865,6 +2189,15 @@
 [rayon-github]: https://github.com/rayon-rs/rayon (*)
 
 
+[rcgen]: https://docs.rs/rcgen
+
+
+[rcgen-crate]: https://crates.io/crates/rcgen
+
+
+[rcgen-github]: https://github.com/rustls/rcgen
+
+
 [regex]: https://docs.rs/regex
 
 
@@ -1908,6 +2241,15 @@
 
 
 [ring-github]: https://github.com/briansmith/ring (*)
+
+
+[ringbuf]: https://docs.rs/ringbuf
+
+
+[ringbuf-crate]: https://crates.io/crates/ringbuf
+
+
+[ringbuf-github]: https://github.com/agerasev/ringbuf.git
 
 
 [rkyv]: https://docs.rs/rkyv
@@ -1964,6 +2306,24 @@
 [rsa-github]: https://github.com/RustCrypto/RSA
 
 
+[rstest]: https://docs.rs/rstest
+
+
+[rstest-crate]: https://crates.io/crates/rstest
+
+
+[rstest-github]: https://github.com/la10736/rstest
+
+
+[rtrb]: https://docs.rs/rtrb
+
+
+[rtrb-crate]: https://crates.io/crates/rtrb
+
+
+[rtrb-github]: https://github.com/mgeier/rtrb
+
+
 [rust_decimal]: https://docs.rs/rust_decimal
 
 
@@ -1988,7 +2348,16 @@
 [rust_xlsxwriter-crate]: https://crates.io/crates/rust_xlsxwriter
 
 
-[rust_xlsxwriter-github]: https://github.com/jmcnamara/rust_xlsxwriter (*)
+[rust_xlsxwriter-github]: https://github.com/jmcnamara/rust_xlsxwriter
+
+
+[rustc_hash]: https://docs.rs/rustc_hash
+
+
+[rustc_hash-crate]: https://crates.io/crates/rustc_hash
+
+
+[rustc_hash-github]: https://github.com/rust-lang/rustc-hash
 
 
 [rustls]: https://docs.rs/rustls
@@ -1997,7 +2366,7 @@
 [rustls-crate]: https://crates.io/crates/rustls
 
 
-[rustls-github]: https://github.com/rustls/rustls
+[rustls-github]: https://github.com/rustls/rustls (*)
 
 
 [same_file]: https://docs.rs/same_file
@@ -2007,6 +2376,15 @@
 
 
 [same_file-github]: https://github.com/BurntSushi/same-file
+
+
+[schemars]: https://docs.rs/schemars
+
+
+[schemars-crate]: https://crates.io/crates/schemars
+
+
+[schemars-github]: https://github.com/GREsau/schemars
 
 
 [scopeguard]: https://docs.rs/scopeguard
@@ -2034,6 +2412,15 @@
 
 
 [scrypt-github]: https://github.com/RustCrypto/password-hashes
+
+
+[secrecy]: https://docs.rs/secrecy
+
+
+[secrecy-crate]: https://crates.io/crates/secrecy
+
+
+[secrecy-github]: https://github.com/iqlusioninc/crates/tree/main/secrecy
 
 
 [seize]: https://docs.rs/seize
@@ -2090,6 +2477,24 @@
 [serde_saphyr-github]: https://github.com/bourumir-wyngs/serde-saphyr
 
 
+[serde_urlencoded]: https://docs.rs/serde_urlencoded
+
+
+[serde_urlencoded-crate]: https://crates.io/crates/serde_urlencoded
+
+
+[serde_urlencoded-github]: https://github.com/nox/serde_urlencoded
+
+
+[serial_test]: https://docs.rs/serial_test
+
+
+[serial_test-crate]: https://crates.io/crates/serial_test
+
+
+[serial_test-github]: https://github.com/palfrey/serial_test/
+
+
 [sha1]: https://docs.rs/sha1
 
 
@@ -2106,6 +2511,24 @@
 
 
 [sha2-github]: https://github.com/RustCrypto/hashes
+
+
+[shlex]: https://docs.rs/shlex
+
+
+[shlex-crate]: https://crates.io/crates/shlex
+
+
+[shlex-github]: https://github.com/comex/rust-shlex
+
+
+[short_uuid]: https://docs.rs/short_uuid
+
+
+[short_uuid-crate]: https://crates.io/crates/short_uuid
+
+
+[short_uuid-github]: https://github.com/radim10/short-uuid
 
 
 [signature]: https://docs.rs/signature
@@ -2198,6 +2621,15 @@
 [slotmap-github]: https://github.com/orlp/slotmap
 
 
+[slug]: https://docs.rs/slug
+
+
+[slug-crate]: https://crates.io/crates/slug
+
+
+[slug-github]: https://github.com/Stebalien/slug-rs
+
+
 [smallvec]: https://docs.rs/smallvec
 
 
@@ -2279,6 +2711,24 @@
 [swc_ecma_parser-github]: https://github.com/swc-project/swc.git
 
 
+[syn]: https://docs.rs/syn
+
+
+[syn-crate]: https://crates.io/crates/syn
+
+
+[syn-github]: https://github.com/dtolnay/syn
+
+
+[syntect]: https://docs.rs/syntect
+
+
+[syntect-crate]: https://crates.io/crates/syntect
+
+
+[syntect-github]: https://github.com/trishume/syntect
+
+
 [tar]: https://docs.rs/tar
 
 
@@ -2286,6 +2736,15 @@
 
 
 [tar-github]: https://github.com/composefs/tar-rs
+
+
+[temp_env]: https://docs.rs/temp_env
+
+
+[temp_env-crate]: https://crates.io/crates/temp_env
+
+
+[temp_env-github]: https://github.com/vmx/temp-env
 
 
 [tempfile]: https://docs.rs/tempfile
@@ -2450,13 +2909,31 @@
 [tonic_prost-github]: https://github.com/hyperium/tonic
 
 
+[tonic_web]: https://docs.rs/tonic_web
+
+
+[tonic_web-crate]: https://crates.io/crates/tonic_web
+
+
+[tonic_web-github]: https://github.com/hyperium/tonic
+
+
 [tower]: https://docs.rs/tower
 
 
 [tower-crate]: https://crates.io/crates/tower
 
 
-[tower-github]: https://github.com/tower-rs/tower
+[tower-github]: https://github.com/tower-rs/tower (*)
+
+
+[tower_cookies]: https://docs.rs/tower_cookies
+
+
+[tower_cookies-crate]: https://crates.io/crates/tower_cookies
+
+
+[tower_cookies-github]: https://github.com/imbolc/tower-cookies
 
 
 [tower_http]: https://docs.rs/tower_http
@@ -2466,6 +2943,15 @@
 
 
 [tower_http-github]: https://github.com/tower-rs/tower-http
+
+
+[tower_sessions]: https://docs.rs/tower_sessions
+
+
+[tower_sessions-crate]: https://crates.io/crates/tower_sessions
+
+
+[tower_sessions-github]: https://github.com/maxcountryman/tower-sessions (*)
 
 
 [tracing]: https://docs.rs/tracing
@@ -2493,6 +2979,15 @@
 
 
 [tracing_subscriber-github]: https://github.com/tokio-rs/tracing (*)
+
+
+[trait_variant]: https://docs.rs/trait_variant
+
+
+[trait_variant-crate]: https://crates.io/crates/trait_variant
+
+
+[trait_variant-github]: https://github.com/rust-lang/impl-trait-utils
 
 
 [tree_sitter]: https://docs.rs/tree_sitter
@@ -2567,13 +3062,22 @@
 [url-github]: https://github.com/servo/rust-url (*)
 
 
+[urlencoding]: https://docs.rs/urlencoding
+
+
+[urlencoding-crate]: https://crates.io/crates/urlencoding
+
+
+[urlencoding-github]: https://github.com/kornelski/rust_urlencoding
+
+
 [ustr]: https://docs.rs/ustr
 
 
 [ustr-crate]: https://crates.io/crates/ustr
 
 
-[ustr-github]: https://github.com/anderslanglands/ustr
+[ustr-github]: https://github.com/anderslanglands/ustr (*)
 
 
 [utils]: https://docs.rs/utils
@@ -2585,6 +3089,15 @@
 [utils-github]: https://github.com/john-cd/rust_howto/ (*)
 
 
+[utoipa]: https://docs.rs/utoipa
+
+
+[utoipa-crate]: https://crates.io/crates/utoipa
+
+
+[utoipa-github]: https://github.com/juhaku/utoipa
+
+
 [uuid]: https://docs.rs/uuid
 
 
@@ -2592,6 +3105,15 @@
 
 
 [uuid-github]: https://github.com/uuid-rs/uuid (*)
+
+
+[wait_timeout]: https://docs.rs/wait_timeout
+
+
+[wait_timeout-crate]: https://crates.io/crates/wait_timeout
+
+
+[wait_timeout-github]: https://github.com/alexcrichton/wait-timeout
 
 
 [walkdir]: https://docs.rs/walkdir
@@ -2621,6 +3143,15 @@
 [which-github]: https://github.com/harryfei/which-rs.git
 
 
+[wide]: https://docs.rs/wide
+
+
+[wide-crate]: https://crates.io/crates/wide
+
+
+[wide-github]: https://github.com/Lokathor/wide
+
+
 [winapi]: https://docs.rs/winapi
 
 
@@ -2637,6 +3168,15 @@
 
 
 [windows-github]: https://github.com/microsoft/windows-rs
+
+
+[windows_sys]: https://docs.rs/windows_sys
+
+
+[windows_sys-crate]: https://crates.io/crates/windows_sys
+
+
+[windows_sys-github]: https://github.com/microsoft/windows-rs
 
 
 [winnow]: https://docs.rs/winnow
@@ -2691,6 +3231,24 @@
 
 
 [xshell-github]: https://github.com/matklad/xshell (*)
+
+
+[xxhash_rust]: https://docs.rs/xxhash_rust
+
+
+[xxhash_rust-crate]: https://crates.io/crates/xxhash_rust
+
+
+[xxhash_rust-github]: https://github.com/DoumanAsh/xxhash-rust
+
+
+[zen_engine]: https://docs.rs/zen_engine
+
+
+[zen_engine-crate]: https://crates.io/crates/zen_engine
+
+
+[zen_engine-github]: https://github.com/gorules/zen.git
 
 
 [zerocopy]: https://docs.rs/zerocopy

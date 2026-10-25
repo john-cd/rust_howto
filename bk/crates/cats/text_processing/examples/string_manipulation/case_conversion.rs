@@ -28,6 +28,7 @@ fn capitalize_first_char(input: &str) -> String {
 // ANCHOR_END: example
 
 /// Runs the example for the command-line dispatcher and unit tests.
+#[allow(clippy::main_recursion)]
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -42,7 +42,7 @@ pub fn run() -> Result<()> {
 
     for id in session.search("UNSEEN")? {
         let messages = session.fetch(id.to_string(), "RFC822")?;
-        for message in messages.iter() {
+        for message in &messages {
             if let Some(summary) = message.body().and_then(summarize) {
                 println!("{summary:?}");
             }

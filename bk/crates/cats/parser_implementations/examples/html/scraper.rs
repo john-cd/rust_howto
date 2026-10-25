@@ -7,13 +7,13 @@ use ::scraper::Selector;
 /// Parses a small HTML document and prints its article headings.
 fn main() -> anyhow::Result<()> {
     let document = Html::parse_document(
-        r#"
+        "
         <article>
             <h2>Parsing HTML</h2>
             <p>Use the parser that fits the task.</p>
             <h2>Selecting elements</h2>
         </article>
-        "#,
+        ",
     );
 
     for heading in select_text(&document, "article h2")? {

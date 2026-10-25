@@ -11,8 +11,11 @@
 
 /// The log level from `APP_LOG`, defaulting to `info`.
 fn log_level() -> String {
-    std::env::var("APP_LOG").unwrap_or_else(|_| "info".to_string())
+    std::env::var("APP_LOG").unwrap_or_else(|_| "info".to_owned())
 }
+
+/// The example runs under `cargo test`.
+fn main() {}
 
 #[cfg(test)]
 mod tests {
@@ -38,6 +41,3 @@ mod tests {
     }
 }
 // ANCHOR_END: example
-
-/// The example runs under `cargo test`.
-fn main() {}
