@@ -4,6 +4,38 @@
 
 {{#include cryptography_utilities.incl.md}}
 
+These helpers support cryptographic applications but do not replace a reviewed cryptographic protocol or algorithm. Use operating-system randomness for secret or nonce bytes, and treat Base64 and hexadecimal only as text encodings; neither provides encryption.
+
+## Obtain Random Bytes from the Operating System with `getrandom` {#getrandom}
+
+[![getrandom][c~getrandom~docs~badge]][c~getrandom~docs] [![getrandom~crates.io][c~getrandom~crates.io~badge]][c~getrandom~crates.io] [![getrandom~repo][c~getrandom~repo~badge]][c~getrandom~repo]{{hi:getrandom}}{{hi:randomness}}{{hi:operating system}}
+
+The [`getrandom`][c~getrandom~docs]↗ crate fills byte buffers from the operating system's random source. Use it for cryptographic random bytes; the [`rand`][c~rand~docs]↗ crate is a general-purpose random-number library and is not primarily a cryptographic library.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/utilities/getrandom_example.rs:example}}
+```
+
+## Encode Bytes as Base64 {#base64}
+
+[![base64][c~base64~docs~badge]][c~base64~docs] [![base64~crates.io][c~base64~crates.io~badge]][c~base64~crates.io] [![base64~repo][c~base64~repo~badge]][c~base64~repo]{{hi:Base64}}{{hi:text encoding}}
+
+The [`base64`][c~base64~docs]↗ crate converts arbitrary bytes into Base64 text and decodes that text back into bytes. This is a transport encoding, not encryption, and it does not protect confidential data.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/utilities/base64_example.rs:example}}
+```
+
+## Encode Bytes as Hexadecimal {#hex}
+
+[![hex][c~hex~docs~badge]][c~hex~docs] [![hex~crates.io][c~hex~crates.io~badge]][c~hex~crates.io] [![hex~repo][c~hex~repo~badge]][c~hex~repo]{{hi:hexadecimal}}{{hi:text encoding}}
+
+The [`hex`][c~hex~docs]↗ crate encodes bytes as pairs of hexadecimal digits and decodes them back into bytes. Hexadecimal is useful for readable diagnostics and wire formats, but it is larger than the original binary data and is not encryption.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/utilities/hex_example.rs:example}}
+```
+
 ## `zeroize` {#zeroize}
 
 [![zeroize][c~zeroize~docs~badge]][c~zeroize~docs] [![zeroize~crates.io][c~zeroize~crates.io~badge]][c~zeroize~crates.io] [![zeroize~repo][c~zeroize~repo~badge]][c~zeroize~repo] [![zeroize~lib.rs][c~zeroize~lib.rs~badge]][c~zeroize~lib.rs]{{hi:zeroize}}{{hi:Memory}}{{hi:Volatile}}{{hi:Secure}}{{hi:Memset}}{{hi:Zero}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
@@ -33,10 +65,7 @@ The [`subtle`][c~subtle~docs]↗{{hi:subtle}} crate is a low-level library and d
 ## Related Topics {#related-topics .skip}
 
 - [[memory-management | Memory Management]].
+- [[cryptography | Cryptography]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1180)
-</div>

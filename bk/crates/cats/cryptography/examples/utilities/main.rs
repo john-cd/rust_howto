@@ -5,6 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod base64_example;
+mod getrandom_example;
+mod hex_example;
 mod subtle;
 mod zeroize;
 
@@ -25,10 +28,16 @@ enum Commands {
     /// Runs the `zeroize` example.
     #[command(name = "zeroize")]
     Zeroize,
+    /// Runs the `getrandom` example.
+    Getrandom,
+    /// Runs the `base64` example.
+    Base64,
+    /// Runs the `hex` example.
+    Hex,
 }
 
 /// Runs the example selected on the command line.
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -39,6 +48,10 @@ fn main() {
             Commands::Zeroize => {
                 zeroize::run();
             }
+            Commands::Getrandom => getrandom_example::run()?,
+            Commands::Base64 => base64_example::run()?,
+            Commands::Hex => hex_example::run()?,
         }
     }
+    Ok(())
 }

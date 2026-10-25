@@ -8,13 +8,16 @@
 [ex~cryptography~aes-gcm]: aead.md#aes-gcm
 [ex~cryptography~argon2]: password_hashing.md#argon2
 [ex~cryptography~bcrypt]: password_hashing.md#bcrypt
+[ex~cryptography~base64]: cryptography_utilities.md#base64
 [ex~cryptography~chacha20poly1305]: aead.md#chacha20poly1305
 [ex~cryptography~der]: certificates.md#der
 [ex~cryptography~dsa]: signature.md#dsa
 [ex~cryptography~ecdsa]: signature.md#ecdsa
 [ex~cryptography~ed25519-dalek]: signature.md#ed25519-dalek
 [ex~cryptography~ed25519]: signature.md#ed25519
+[ex~cryptography~getrandom]: cryptography_utilities.md#getrandom
 [ex~cryptography~hmac]: hmac.md#hmac
+[ex~cryptography~hex]: cryptography_utilities.md#hex
 [ex~cryptography~native-tls]: tls.md#native-tls
 [ex~cryptography~pbkdf2]: password_hashing.md#pbkdf2
 [ex~cryptography~pem-rfc7468]: certificates.md#pem-rfc7468
