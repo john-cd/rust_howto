@@ -4,6 +4,8 @@
 
 {{#include xml.incl.md}}
 
+Choose a streaming parser when documents may be large or should be processed incrementally. Use a tree parser when convenient random access matters. XML parsers differ in their support for namespaces, encodings, and document models; check the selected crate's behavior against the input you accept.
+
 ## `xml-rs` {#xml-rs}
 
 [![xml~website][c~xml~website~badge]][c~xml~website] [![xml][c~xml~docs~badge]][c~xml~docs] [![xml~crates.io][c~xml~crates.io~badge]][c~xml~crates.io] [![xml~repo][c~xml~repo~badge]][c~xml~repo] [![xml~lib.rs][c~xml~lib.rs~badge]][c~xml~lib.rs]{{hi:xml}}{{hi:Sax}}{{hi:Parsing}}{{hi:Writer}}{{hi:xml}}{{hi:Parser}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
@@ -60,11 +62,9 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Parsing Utilities](../parsing/parsing.md) covers parsers for custom grammars.
+- [HTML and CSS](html.md) covers parsing web documents and selecting elements.
+- [Web Scraping](../web-programming/scraping.md) demonstrates extracting content from web pages.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/446)
-</div>
