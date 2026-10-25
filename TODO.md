@@ -181,27 +181,300 @@ Live GitHub snapshot on 2026-10-24: **108 of 300 issues from Lists 1–30 remain
 
 ## COMPLETED
 
-Live state check on 2026-10-24: all listed issues in Lists 7, 8, 9, 10, 11, 15, 21, 25, 28 are closed.
+Live GitHub snapshot on 2026-10-24: **192 of 300 issues from Lists 1–30 are closed as completed**. The other 108 issues remain in IN-PROGRESS. Each issue below retains its original list membership.
 
-### List 27 — P3
+### List 1 — 1 of 10 completed
 
-Nine issues are closed and integrated into local `develop`: [#1182](https://github.com/john-cd/rust_howto/issues/1182), [#923](https://github.com/john-cd/rust_howto/issues/923), [#920](https://github.com/john-cd/rust_howto/issues/920), [#906](https://github.com/john-cd/rust_howto/issues/906), [#870](https://github.com/john-cd/rust_howto/issues/870), [#868](https://github.com/john-cd/rust_howto/issues/868), [#827](https://github.com/john-cd/rust_howto/issues/827), [#734](https://github.com/john-cd/rust_howto/issues/734), and [#733](https://github.com/john-cd/rust_howto/issues/733). The Glommio implementation is integrated as `cd72be151`; only its native Linux tests and strict Clippy remain open in [#810](https://github.com/john-cd/rust_howto/issues/810), tracked above and in [roadmap epic #1698](https://github.com/john-cd/rust_howto/issues/1698).
+- [#1747](https://github.com/john-cd/rust_howto/issues/1747) — Finish the VS Code contributor draft
 
-### List 25 — P2
+### List 2 — 9 of 10 completed
 
-All ten issues are closed and integrated into local `develop`: [#1903](https://github.com/john-cd/rust_howto/issues/1903), [#1902](https://github.com/john-cd/rust_howto/issues/1902), [#1897](https://github.com/john-cd/rust_howto/issues/1897), [#1894](https://github.com/john-cd/rust_howto/issues/1894), [#1893](https://github.com/john-cd/rust_howto/issues/1893), [#1892](https://github.com/john-cd/rust_howto/issues/1892), [#1891](https://github.com/john-cd/rust_howto/issues/1891), [#1889](https://github.com/john-cd/rust_howto/issues/1889), [#1888](https://github.com/john-cd/rust_howto/issues/1888), and [#1887](https://github.com/john-cd/rust_howto/issues/1887). Remaining broad validation gates are tracked in [#1886](https://github.com/john-cd/rust_howto/issues/1886).
+- [#1723](https://github.com/john-cd/rust_howto/issues/1723) — Polish hashing and algorithms coverage
+- [#1724](https://github.com/john-cd/rust_howto/issues/1724) — Complete missing cross-links between book pages
+- [#1721](https://github.com/john-cd/rust_howto/issues/1721) — Polish the stack allocation chapter
+- [#1722](https://github.com/john-cd/rust_howto/issues/1722) — Review and polish directory traversal coverage
+- [#1738](https://github.com/john-cd/rust_howto/issues/1738) — Integrate the Riker actor example into the book
+- [#1737](https://github.com/john-cd/rust_howto/issues/1737) — Review actor example feature gates versus OS gates
+- [#1736](https://github.com/john-cd/rust_howto/issues/1736) — Integrate colored and clap_complete examples into CLI chapters
+- [#1733](https://github.com/john-cd/rust_howto/issues/1733) — Review the standalone cancelable example
+- [#1734](https://github.com/john-cd/rust_howto/issues/1734) — Review playground WIP examples and promote ready content
 
-### List 26 — Closed entries
+### List 3 — 4 of 10 completed
 
-Completed and closed: [#1896](https://github.com/john-cd/rust_howto/issues/1896), [#1895](https://github.com/john-cd/rust_howto/issues/1895), [#1189](https://github.com/john-cd/rust_howto/issues/1189), [#1167](https://github.com/john-cd/rust_howto/issues/1167), [#950](https://github.com/john-cd/rust_howto/issues/950), and [#924](https://github.com/john-cd/rust_howto/issues/924); their commits are in `develop`.
+- [#1726](https://github.com/john-cd/rust_howto/issues/1726) — Evaluate and document Kindle distribution
+- [#1758](https://github.com/john-cd/rust_howto/issues/1758) — Complete Windows-compatible simulation and Rapier2D coverage
+- [#1756](https://github.com/john-cd/rust_howto/issues/1756) — Verify Windows support for GUI web and window-creation entry points
+- [#1754](https://github.com/john-cd/rust_howto/issues/1754) — Resolve staging GUI dependency compatibility and installation requirements
 
-### List 28 — Closed entries
+### List 4 — 7 of 10 completed
 
-List 28 is complete and excluded from this active inventory; all ten issues are currently closed: [#313](https://github.com/john-cd/rust_howto/issues/313), [#262](https://github.com/john-cd/rust_howto/issues/262), [#260](https://github.com/john-cd/rust_howto/issues/260), [#259](https://github.com/john-cd/rust_howto/issues/259), [#266](https://github.com/john-cd/rust_howto/issues/266), [#267](https://github.com/john-cd/rust_howto/issues/267), [#270](https://github.com/john-cd/rust_howto/issues/270), [#463](https://github.com/john-cd/rust_howto/issues/463), [#929](https://github.com/john-cd/rust_howto/issues/929), and [#928](https://github.com/john-cd/rust_howto/issues/928).
+- [#48](https://github.com/john-cd/rust_howto/issues/48) — fix leaky tests / examples, when using nextest on Windows
+- [#1728](https://github.com/john-cd/rust_howto/issues/1728) — Add a supported macOS CI build and test job
+- [#1250](https://github.com/john-cd/rust_howto/issues/1250) — `bk/justfile and script modules`: verify supported script recipes on Windows
+- [#1240](https://github.com/john-cd/rust_howto/issues/1240) — `bk/scripts/links/mod.just`: fix - one link only; should we have crate landing pages instead of linking to the docs?
+- [#1241](https://github.com/john-cd/rust_howto/issues/1241) — `bk/scripts/links/mod.just`: review
+- [#1358](https://github.com/john-cd/rust_howto/issues/1358) — `tools/tool_lib/src/crates_io/info.rs`: unit tests
+- [#14](https://github.com/john-cd/rust_howto/issues/14) — Improve search within the book
 
-### List 29 — Closed entries
+### List 5 — 8 of 10 completed
 
-Issues [#303](https://github.com/john-cd/rust_howto/issues/303), [#302](https://github.com/john-cd/rust_howto/issues/302), and [#322](https://github.com/john-cd/rust_howto/issues/322) are closed and excluded.
+- [#871](https://github.com/john-cd/rust_howto/issues/871) — `bk/crates/cats/web_programming_http_server/examples/middleware/tower_http.rs`: review
+- [#1045](https://github.com/john-cd/rust_howto/issues/1045) — `bk/crates/cats/encoding/examples/binary_encoders/protobuf.rs`: finish
+- [#304](https://github.com/john-cd/rust_howto/issues/304) — `bk/drafts/categories/development-tools/other/miri.md`: miri: polish
+- [#50](https://github.com/john-cd/rust_howto/issues/50) — add Debugger page
+- [#914](https://github.com/john-cd/rust_howto/issues/914) — `bk/drafts/categories/date-and-time/parse.md`: write humantime; review
+- [#66](https://github.com/john-cd/rust_howto/issues/66) — fix devops section
+- [#70](https://github.com/john-cd/rust_howto/issues/70) — `bk/drafts/categories/hardware-support/index.md`: expand hardware-support, write missing sections NOW
+- [#1197](https://github.com/john-cd/rust_howto/issues/1197) — `later/src/categories/science_neuroscience/index.md`: also cover Biology! see lib.rs categorization
+
+### List 6 — 9 of 10 completed
+
+- [#233](https://github.com/john-cd/rust_howto/issues/233) — `bk/drafts/categories/command-line-interface/argument_parsing.md`: arguments: review
+- [#213](https://github.com/john-cd/rust_howto/issues/213) — `bk/drafts/categories/asynchronous/async_and_blocking.md`: async_and_blocking: cleanup
+- [#215](https://github.com/john-cd/rust_howto/issues/215) — `bk/drafts/categories/asynchronous/async_channels.md`: async_channels: review
+- [#223](https://github.com/john-cd/rust_howto/issues/223) — `bk/drafts/categories/asynchronous/tokio.md`: tokio: review
+- [#224](https://github.com/john-cd/rust_howto/issues/224) — `bk/drafts/categories/authentication/basic_authentication.md`: expand
+- [#227](https://github.com/john-cd/rust_howto/issues/227) — `bk/drafts/categories/caching/in_memory_cache.md`: expand; review in depth
+- [#231](https://github.com/john-cd/rust_howto/issues/231) — `bk/drafts/categories/command-line-interface/ansi_terminal.md`: ansi_terminal: `ansi_term` is archived; write / decide what to cover
+- [#234](https://github.com/john-cd/rust_howto/issues/234) — `bk/drafts/categories/command-line-interface/tui.md`: tui: expand
+- [#235](https://github.com/john-cd/rust_howto/issues/235) — `bk/drafts/categories/command-line-interface/user_interaction.md`: user_interaction: write
+
+### List 7 — 10 of 10 completed
+
+- [#1264](https://github.com/john-cd/rust_howto/issues/1264) — `playground/bits_and_pieces/pre-commit/.pre-commit-config.yaml`: revise git hooks NOW
+- [#700](https://github.com/john-cd/rust_howto/issues/700) — `bk/crates/cats/cryptography/examples/tls/rustls.rs`: review tokio-rustls; need full integration test; document further; review https://github.com/rustls/rustls/tree/main/examples
+- [#710](https://github.com/john-cd/rust_howto/issues/710) — `bk/crates/cats/database/examples/search/elasticsearch.rs`: review fix heavy test; secure the connection
+- [#247](https://github.com/john-cd/rust_howto/issues/247) — review all examples and mark them as ```rust,noplayground as needed - WIP
+- [#715](https://github.com/john-cd/rust_howto/issues/715) — `bk/crates/cats/database/examples/query_builders_orms/sea_orm.rs`: finish NOW
+- [#869](https://github.com/john-cd/rust_howto/issues/869) — `bk/crates/cats/web_programming_http_server/examples/rocket.rs`: finish NOW
+- [#811](https://github.com/john-cd/rust_howto/issues/811) — `bk/crates/cats/network_programming/examples/reverse_proxy/ngrok.rs`: finish NOW
+- [#713](https://github.com/john-cd/rust_howto/issues/713) — `bk/crates/cats/database/examples/postgres/main.rs`: review NOW
+- [#1100](https://github.com/john-cd/rust_howto/issues/1100) — `bk/crates/cats/parser_implementations/examples/xml/xml.rs`: finish NOW
+- [#1342](https://github.com/john-cd/rust_howto/issues/1342) — `bk/drafts/categories/concurrency/atomics.md`: fix NOW
+
+### List 8 — 10 of 10 completed
+
+- [#465](https://github.com/john-cd/rust_howto/issues/465) — `bk/drafts/categories/rust-patterns/error_handling/error_handling.md`: error_handling: fix / organize NOW
+- [#467](https://github.com/john-cd/rust_howto/issues/467) — `bk/drafts/categories/rust-patterns/functional_programming.md`: functional_programming: organize / align intro and sections / add examples NOW
+- [#515](https://github.com/john-cd/rust_howto/issues/515) — `bk/drafts/categories/web-programming_http-server/_hyper.md`: hyper: fix
+- [#507](https://github.com/john-cd/rust_howto/issues/507) — `bk/drafts/categories/web-programming_http-server/_axum.md`: axum: write
+- [#506](https://github.com/john-cd/rust_howto/issues/506) — `bk/drafts/categories/web-programming_http-server/_actix.md`: actix: organize / write
+- [#511](https://github.com/john-cd/rust_howto/issues/511) — `bk/drafts/categories/web-programming_http-server/_graphql.md`: graphql: write
+- [#514](https://github.com/john-cd/rust_howto/issues/514) — `bk/drafts/categories/web-programming_http-server/_grpc.md`: grpc: write
+- [#504](https://github.com/john-cd/rust_howto/issues/504) — `bk/drafts/categories/web-programming_http-client/http_clients.md`: http_clients: expand; link to hyper.md in server.
+- [#500](https://github.com/john-cd/rust_howto/issues/500) — `bk/drafts/categories/web-programming/index.md`: web-programming/index: organize; need full review; further cross link NOW
+- [#425](https://github.com/john-cd/rust_howto/issues/425) — `bk/drafts/categories/network-programming/server.md`: server: write; add cross-links: async, web, http server
+
+### List 9 — 10 of 10 completed
+
+- [#341](https://github.com/john-cd/rust_howto/issues/341) — `bk/drafts/categories/development-tools_testing/index.md`: expand
+- [#1176](https://github.com/john-cd/rust_howto/issues/1176) — `bk/drafts/categories/development-tools_testing/code_coverage.md`: write
+- [#340](https://github.com/john-cd/rust_howto/issues/340) — `bk/drafts/categories/development-tools_testing/mocking.md`: testing: write
+- [#399](https://github.com/john-cd/rust_howto/issues/399) — `bk/drafts/categories/hardware-support/processor.md`: processor: expand NOW
+- [#410](https://github.com/john-cd/rust_howto/issues/410) — `bk/drafts/categories/memory-management/index.md`: memory-management/index: organize; align table and sections; write missing sections; cross link NOW
+- [#429](https://github.com/john-cd/rust_howto/issues/429) — `bk/drafts/categories/os/index.md`: os/index: fix; organize; add cross links
+- [#1183](https://github.com/john-cd/rust_howto/issues/1183) — `bk/drafts/categories/cryptography/aead.md`: write
+- [#1181](https://github.com/john-cd/rust_howto/issues/1181) — `bk/drafts/categories/cryptography/hmac.md`: write
+- [#1391](https://github.com/john-cd/rust_howto/issues/1391) — `bk/drafts/categories/rust-patterns/creational_patterns.md`: write
+- [#402](https://github.com/john-cd/rust_howto/issues/402) — `later/src/categories/internationalization/index.md`: write
+
+### List 10 — 10 of 10 completed
+
+- [#1338](https://github.com/john-cd/rust_howto/issues/1338) — `bk/drafts/categories/web-programming/http_types_and_interfaces.md`: write NOW
+- [#1246](https://github.com/john-cd/rust_howto/issues/1246) — `bk/scripts/precommit/mod.just`: review
+- [#1314](https://github.com/john-cd/rust_howto/issues/1314) — `bk/crates/cats/web_programming_http_server/Cargo.toml`: trillium: do we need LATER
+- [#1375](https://github.com/john-cd/rust_howto/issues/1375) — `later/crates/cats/science_robotics/Cargo.toml`: zenoh = { version = "1.1.0", optional = true }
+- [#1185](https://github.com/john-cd/rust_howto/issues/1185) — `bk/drafts/categories/parser-implementations/ini.md`: Write; Also consider: `configparser`
+- [#1174](https://github.com/john-cd/rust_howto/issues/1174) — `bk/drafts/categories/development-tools_testing/assertions.md`: write
+- [#1166](https://github.com/john-cd/rust_howto/issues/1166) — `bk/drafts/categories/development-tools_build-utils/autocfg.md`: write
+- [#807](https://github.com/john-cd/rust_howto/issues/807) — `later/crates/cats/multimedia_encoding/examples/encoding/encoding.rs`: write LATER
+- [#784](https://github.com/john-cd/rust_howto/issues/784) — `later/crates/cats/gui/examples/gtk/relm4.rs`: finish; review https://relm4.org/book/stable/
+- [#795](https://github.com/john-cd/rust_howto/issues/795) — `later/crates/cats/gui/examples/retained_mode_gui/xilem.rs`: finish; https://github.com/linebender/xilem
+
+### List 11 — 10 of 10 completed
+
+- [#520](https://github.com/john-cd/rust_howto/issues/520) — `later/later/src/categories/web-programming_websocket/websocket.md`: websocket: write
+- [#582](https://github.com/john-cd/rust_howto/issues/582) — `later/src/other/cross-platform/crux.md`: crux: add / edit; link to architecture pages
+- [#583](https://github.com/john-cd/rust_howto/issues/583) — `later/src/other/cross-platform/index.md`: add / write; link to other chapters; conditional compile
+- [#492](https://github.com/john-cd/rust_howto/issues/492) — `later/src/categories/virtualization/virtualization.md`: virtualization: write
+- [#573](https://github.com/john-cd/rust_howto/issues/573) — `later/src/other/architecture/index.md`: write
+- [#572](https://github.com/john-cd/rust_howto/issues/572) — `later/src/other/architecture/software_architecture_process.md`: write
+- [#579](https://github.com/john-cd/rust_howto/issues/579) — `later/src/other/cloud/index.md`: edit
+- [#594](https://github.com/john-cd/rust_howto/issues/594) — `later/src/other/data-processing/index.md`: organize / edit
+- [#612](https://github.com/john-cd/rust_howto/issues/612) — `later/later/src/other/written-in-rust/development_tools.md`: organize
+- [#595](https://github.com/john-cd/rust_howto/issues/595) — `later/src/other/devops/cd_ci.md`: cd_ci: write; organize links
+
+### List 12 — 8 of 10 completed
+
+- [#1184](https://github.com/john-cd/rust_howto/issues/1184) — `bk/drafts/categories/compression/index.md`: write
+- [#1216](https://github.com/john-cd/rust_howto/issues/1216) — `later/src/categories/rendering/svg_rendering.md`: write.
+- [#1226](https://github.com/john-cd/rust_howto/issues/1226) — `bk/drafts/categories/graphics/index.md`: write / organize / review in depth
+- [#356](https://github.com/john-cd/rust_howto/issues/356) — `later/src/categories/external-ffi-bindings/index.md`: review
+- [#617](https://github.com/john-cd/rust_howto/issues/617) — `later/src/other/written-in-rust/python_tools.md`: python_tools: write
+- [#370](https://github.com/john-cd/rust_howto/issues/370) — `later/src/categories/game-engines/index.md`: expand
+- [#373](https://github.com/john-cd/rust_howto/issues/373) — `later/src/categories/games/index.md`: write; need in depth review; review https://arewegameyet.rs/#games
+- [#397](https://github.com/john-cd/rust_howto/issues/397) — `later/src/categories/gui/index.md`: organize
+
+### List 13 — 8 of 10 completed
+
+- [#1792](https://github.com/john-cd/rust_howto/issues/1792) — Rust sources: file layout and documentation conventions
+- [#1361](https://github.com/john-cd/rust_howto/issues/1361) — `tools/tool_lib/src/templates/mod.rs`: finish; unit tests; tinytemplate vs tera\?
+- [#1385](https://github.com/john-cd/rust_howto/issues/1385) — `bk/src/standard-library/interior_mutability.md`: finish to rewrite OnceCell / example: RefCell inside of Rc / link to Mutex / RwLock
+- [#1157](https://github.com/john-cd/rust_howto/issues/1157) — `later/crates/cats/development_tools_procedural_macro_helpers/src/lib.rs`: finish NOW
+- [#1152](https://github.com/john-cd/rust_howto/issues/1152) — `bk/crates/cats/concurrency/examples/concurrent_data_structures/flurry.rs`: review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs NOW
+- [#747](https://github.com/john-cd/rust_howto/issues/747) — `bk/crates/cats/development_tools_profiling/benches/divan.rs`: finish. add to md: https://nikolaivazquez.com/blog/divan/
+- [#252](https://github.com/john-cd/rust_howto/issues/252) — review FFTW
+- [#859](https://github.com/john-cd/rust_howto/issues/859) — `bk/crates/cats/web_programming_http_client/examples/http_clients/hyper.rs`: review NOW
+
+### List 14 — 8 of 10 completed
+
+- [#1219](https://github.com/john-cd/rust_howto/issues/1219) — `later/src/categories/wasm/wasm_basics.md`: final review
+- [#1220](https://github.com/john-cd/rust_howto/issues/1220) — `later/src/categories/wasm/leptos.md`: write
+- [#1204](https://github.com/john-cd/rust_howto/issues/1204) — `bk/drafts/categories/email/email_parsing.md`: write
+- [#1195](https://github.com/john-cd/rust_howto/issues/1195) — `bk/drafts/categories/config/index.md`: write
+- [#1194](https://github.com/john-cd/rust_howto/issues/1194) — `bk/drafts/categories/text-processing/other_strings.md`: review
+- [#1193](https://github.com/john-cd/rust_howto/issues/1193) — `bk/drafts/categories/text-processing/diffing.md`: write; titles
+- [#1192](https://github.com/john-cd/rust_howto/issues/1192) — `bk/drafts/categories/text-processing/unicode.md`: review
+- [#1191](https://github.com/john-cd/rust_howto/issues/1191) — `bk/drafts/categories/text-processing/string_search.md`: write
+
+### List 15 — 10 of 10 completed
+
+- [#1221](https://github.com/john-cd/rust_howto/issues/1221) — `later/src/categories/accessibility/index.md`: write
+- [#1203](https://github.com/john-cd/rust_howto/issues/1203) — `later/src/categories/embedded/hals.md`: write
+- [#1202](https://github.com/john-cd/rust_howto/issues/1202) — `later/src/categories/embedded/rtos.md`: write
+- [#1201](https://github.com/john-cd/rust_howto/issues/1201) — `later/src/categories/embedded/useful_crates_embedded.md`: write
+- [#1200](https://github.com/john-cd/rust_howto/issues/1200) — `later/src/categories/embedded/flash.md`: write
+- [#1199](https://github.com/john-cd/rust_howto/issues/1199) — `later/src/categories/embedded/sensors.md`: write
+- [#1198](https://github.com/john-cd/rust_howto/issues/1198) — `later/src/categories/embedded/pacs.md`: write
+- [#1223](https://github.com/john-cd/rust_howto/issues/1223) — `later/src/categories/multimedia_images/color_handling.md`: write
+- [#1222](https://github.com/john-cd/rust_howto/issues/1222) — `later/src/categories/multimedia_images/pixel_buffers.md`: write
+- [#1214](https://github.com/john-cd/rust_howto/issues/1214) — `later/src/categories/rendering/2d_vector_graphics.md`: write
+
+### List 16 — 9 of 10 completed
+
+- [#1084](https://github.com/john-cd/rust_howto/issues/1084) — `bk/crates/cats/cryptography/examples/sign/ed25519.rs`: finish NOW
+- [#1120](https://github.com/john-cd/rust_howto/issues/1120) — `bk/crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs`: finish NOW
+- [#1001](https://github.com/john-cd/rust_howto/issues/1001) — `later/crates/cats/development_tools_ffi/examples/c/bindgen.rs`: fix NOW
+- [#1002](https://github.com/john-cd/rust_howto/issues/1002) — `later/crates/cats/development_tools_ffi/examples/c/cbindgen.rs`: fix; see build.rs NOW
+- [#1026](https://github.com/john-cd/rust_howto/issues/1026) — `later/crates/cats/development_tools_ffi/build.rs`: fix build.rs for ffi NOW
+- [#1090](https://github.com/john-cd/rust_howto/issues/1090) — `bk/crates/cats/parser_implementations/examples/html/html5ever.rs`: finish NOW
+- [#1092](https://github.com/john-cd/rust_howto/issues/1092) — `bk/crates/cats/parser_implementations/examples/html/cssparser.rs`: finish NOW
+- [#1103](https://github.com/john-cd/rust_howto/issues/1103) — `bk/crates/cats/parser_implementations/examples/xml/xml5ever.rs`: finish NOW
+- [#866](https://github.com/john-cd/rust_howto/issues/866) — `bk/crates/cats/web_programming_http_server/examples/hyper_server.rs`: finish NOW
+
+### List 17 — 1 of 10 completed
+
+- [#918](https://github.com/john-cd/rust_howto/issues/918) — `bk/drafts/categories/development-tools/installation/install.md`: review NOW
+
+### List 18 — 0 of 10 completed
+
+All ten issues remain in IN-PROGRESS.
+
+### List 19 — 3 of 10 completed
+
+- [#936](https://github.com/john-cd/rust_howto/issues/936) — `bk/src/categories/mathematics/index.md`: in depth review; decide what to cover in examples
+- [#486](https://github.com/john-cd/rust_howto/issues/486) — `bk/drafts/categories/text-editors/ides.md`: write NOW
+- [#33](https://github.com/john-cd/rust_howto/issues/33) — polish the 'crates' section; rename to `key crates`?
+
+### List 20 — 9 of 10 completed
+
+- [#1873](https://github.com/john-cd/rust_howto/issues/1873) — Add acceptance criteria to auto-generated TODO issues
+- [#1860](https://github.com/john-cd/rust_howto/issues/1860) — Add typos-cli for cross-platform Markdown spell checking
+- [#1861](https://github.com/john-cd/rust_howto/issues/1861) — Add rumdl for cross-platform Markdown linting
+- [#1864](https://github.com/john-cd/rust_howto/issues/1864) — Configure dprint Markdown formatting
+- [#1343](https://github.com/john-cd/rust_howto/issues/1343) — `bk/drafts/categories/development-tools_debugging/distributed_telemetry.md`: write / expand / organize. what to cover?
+- [#1344](https://github.com/john-cd/rust_howto/issues/1344) — `bk/drafts/categories/development-tools_debugging/debugging.md`: write; cross link
+- [#1345](https://github.com/john-cd/rust_howto/issues/1345) — `bk/drafts/categories/development-tools_debugging/metrics.md`: write
+- [#1196](https://github.com/john-cd/rust_howto/issues/1196) — `bk/drafts/categories/development-tools/transcompilation/transpilers.md`: write
+- [#1392](https://github.com/john-cd/rust_howto/issues/1392) — `bk/drafts/categories/rust-patterns/structural_patterns.md`: write
+
+### List 21 — 10 of 10 completed
+
+- [#991](https://github.com/john-cd/rust_howto/issues/991) — `later/src/other/scripting/index.md`: review
+- [#993](https://github.com/john-cd/rust_howto/issues/993) — `later/src/other/written-in-rust/index.md`: organize; decide if we need other pages or if we consolidate here; table?
+- [#958](https://github.com/john-cd/rust_howto/issues/958) — `later/src/categories/science_geo/index.md`: write
+- [#967](https://github.com/john-cd/rust_howto/issues/967) — `later/src/categories/value-formatting/index.md`: review
+- [#945](https://github.com/john-cd/rust_howto/issues/945) — `later/src/categories/no-std_no-alloc/index.md`: review
+- [#947](https://github.com/john-cd/rust_howto/issues/947) — `later/src/categories/os_freebsd-apis/index.md`: review
+- [#948](https://github.com/john-cd/rust_howto/issues/948) — `later/src/categories/os_linux-apis/index.md`: review
+- [#949](https://github.com/john-cd/rust_howto/issues/949) — `later/src/categories/os_macos-apis/index.md`: review
+- [#941](https://github.com/john-cd/rust_howto/issues/941) — `later/src/categories/multimedia_audio/index.md`: fix
+- [#908](https://github.com/john-cd/rust_howto/issues/908) — `later/src/categories/compilers/index.md`: review
+
+### List 22 — 0 of 10 completed
+
+All ten issues remain in IN-PROGRESS.
+
+### List 23 — 0 of 10 completed
+
+All ten issues remain in IN-PROGRESS.
+
+### List 24 — 0 of 10 completed
+
+All ten issues remain in IN-PROGRESS.
+
+### List 25 — 10 of 10 completed
+
+- [#1903](https://github.com/john-cd/rust_howto/issues/1903) — Restore crates and notes dropped from rewritten category index pages
+- [#1902](https://github.com/john-cd/rust_howto/issues/1902) — Restore projects dropped from the Written-in-Rust overview
+- [#1897](https://github.com/john-cd/rust_howto/issues/1897) — Decide on review findings that need the author's judgment
+- [#1894](https://github.com/john-cd/rust_howto/issues/1894) — Fix inaccuracies in the Mathematics chapters (numeric types, linear algebra, index)
+- [#1893](https://github.com/john-cd/rust_howto/issues/1893) — Fix inaccuracies in the File System chapters and examples
+- [#1892](https://github.com/john-cd/rust_howto/issues/1892) — Fix broken recipe links and inaccuracies in the Data Structures chapters
+- [#1891](https://github.com/john-cd/rust_howto/issues/1891) — Update the Algorithms chapters for rand 0.10 and current std sorting
+- [#1889](https://github.com/john-cd/rust_howto/issues/1889) — Fix inaccuracies in the Standard Library chapters and examples
+- [#1888](https://github.com/john-cd/rust_howto/issues/1888) — Update the traits, impl Trait, trait objects and macros chapters for current Rust
+- [#1887](https://github.com/john-cd/rust_howto/issues/1887) — Fix inaccuracies in the introduction and Language basics chapters
+
+Existing integration record: All ten issues are closed and integrated into local `develop`: [#1903](https://github.com/john-cd/rust_howto/issues/1903), [#1902](https://github.com/john-cd/rust_howto/issues/1902), [#1897](https://github.com/john-cd/rust_howto/issues/1897), [#1894](https://github.com/john-cd/rust_howto/issues/1894), [#1893](https://github.com/john-cd/rust_howto/issues/1893), [#1892](https://github.com/john-cd/rust_howto/issues/1892), [#1891](https://github.com/john-cd/rust_howto/issues/1891), [#1889](https://github.com/john-cd/rust_howto/issues/1889), [#1888](https://github.com/john-cd/rust_howto/issues/1888), and [#1887](https://github.com/john-cd/rust_howto/issues/1887). Remaining broad validation gates are tracked in [#1886](https://github.com/john-cd/rust_howto/issues/1886).
+
+### List 26 — 6 of 10 completed
+
+- [#1896](https://github.com/john-cd/rust_howto/issues/1896) — Reconcile the contributing guide with the current repository setup
+- [#1895](https://github.com/john-cd/rust_howto/issues/1895) — Refresh stale entries in the links and crate selection pages
+- [#1189](https://github.com/john-cd/rust_howto/issues/1189) — `bk/drafts/categories/command-line-utilities/index.md`: write; deduplicate with other > written in rust
+- [#1167](https://github.com/john-cd/rust_howto/issues/1167) — `bk/drafts/categories/development-tools_build-utils/build_cache.md`: write
+- [#950](https://github.com/john-cd/rust_howto/issues/950) — `bk/drafts/categories/os_windows-apis/index.md`: review in depth / write
+- [#924](https://github.com/john-cd/rust_howto/issues/924) — `bk/drafts/categories/development-tools_cargo-plugins/code_writing.md`: review
+
+Existing integration record: Completed and closed: [#1896](https://github.com/john-cd/rust_howto/issues/1896), [#1895](https://github.com/john-cd/rust_howto/issues/1895), [#1189](https://github.com/john-cd/rust_howto/issues/1189), [#1167](https://github.com/john-cd/rust_howto/issues/1167), [#950](https://github.com/john-cd/rust_howto/issues/950), and [#924](https://github.com/john-cd/rust_howto/issues/924); their commits are in `develop`.
+
+### List 27 — 9 of 10 completed
+
+- [#1182](https://github.com/john-cd/rust_howto/issues/1182) — `bk/drafts/categories/cryptography/tls.md`: write
+- [#923](https://github.com/john-cd/rust_howto/issues/923) — `bk/drafts/categories/development-tools_cargo-plugins/cross_compiling.md`: review
+- [#920](https://github.com/john-cd/rust_howto/issues/920) — `bk/drafts/categories/development-tools/versioning/versioning.md`: review / align with intro
+- [#906](https://github.com/john-cd/rust_howto/issues/906) — `bk/drafts/categories/asynchronous/async_utilities.md`: review
+- [#870](https://github.com/john-cd/rust_howto/issues/870) — `bk/crates/cats/web_programming_http_server/examples/grpc/tonic.rs`: review; need to write full integration test, testing the endpoint then stopping the server
+- [#868](https://github.com/john-cd/rust_howto/issues/868) — `bk/crates/cats/web_programming_http_server/examples/loco/main.rs`: finish
+- [#827](https://github.com/john-cd/rust_howto/issues/827) — `bk/crates/cats/parsing/examples/parsing/tree_sitter.rs`: finish
+- [#734](https://github.com/john-cd/rust_howto/issues/734) — `bk/crates/cats/development_tools_debugging/examples/other/open_telemetry.rs`: finish
+- [#733](https://github.com/john-cd/rust_howto/issues/733) — `bk/crates/cats/development_tools_debugging/examples/other/open_observe.rs`: finish
+
+Existing integration record: Nine issues are closed and integrated into local `develop`: [#1182](https://github.com/john-cd/rust_howto/issues/1182), [#923](https://github.com/john-cd/rust_howto/issues/923), [#920](https://github.com/john-cd/rust_howto/issues/920), [#906](https://github.com/john-cd/rust_howto/issues/906), [#870](https://github.com/john-cd/rust_howto/issues/870), [#868](https://github.com/john-cd/rust_howto/issues/868), [#827](https://github.com/john-cd/rust_howto/issues/827), [#734](https://github.com/john-cd/rust_howto/issues/734), and [#733](https://github.com/john-cd/rust_howto/issues/733). The Glommio implementation is integrated as `cd72be151`; only its native Linux tests and strict Clippy remain open in [#810](https://github.com/john-cd/rust_howto/issues/810), tracked above and in [roadmap epic #1698](https://github.com/john-cd/rust_howto/issues/1698).
+
+### List 28 — 10 of 10 completed
+
+- [#313](https://github.com/john-cd/rust_howto/issues/313) — `bk/drafts/categories/development-tools_cargo-plugins/maintaining.md`: maintaining: fix; titles; decide what goes where
+- [#262](https://github.com/john-cd/rust_howto/issues/262) — `bk/drafts/categories/concurrency/explicit_threads.md`: explicit_threads: polish
+- [#260](https://github.com/john-cd/rust_howto/issues/260) — `bk/drafts/categories/concurrency/data_parallelism.md`: data_parallelism: polish; dedupe with multithreading.md
+- [#259](https://github.com/john-cd/rust_howto/issues/259) — `bk/drafts/categories/concurrency/crossbeam.md`: crossbeam: cleanup
+- [#266](https://github.com/john-cd/rust_howto/issues/266) — `bk/drafts/categories/concurrency/shared_state.md`: shared_state: review; titles
+- [#267](https://github.com/john-cd/rust_howto/issues/267) — `bk/drafts/categories/concurrency/threadpool.md`: threadpool: polish
+- [#270](https://github.com/john-cd/rust_howto/issues/270) — `bk/drafts/categories/config/configuration.md`: finish
+- [#463](https://github.com/john-cd/rust_howto/issues/463) — `bk/drafts/categories/rust-patterns/error_handling/error_customization.md`: error_customization: write / organize
+- [#929](https://github.com/john-cd/rust_howto/issues/929) — `bk/drafts/categories/encoding/index.md`: review
+- [#928](https://github.com/john-cd/rust_howto/issues/928) — `bk/drafts/categories/encoding/csv.md`: review
+
+### List 29 — 3 of 10 completed
+
+- [#303](https://github.com/john-cd/rust_howto/issues/303) — `bk/drafts/categories/development-tools/other/code_verification.md`: code_verification: expand; revise refs.incl.md
+- [#302](https://github.com/john-cd/rust_howto/issues/302) — `bk/drafts/categories/development-tools/installation/rustup.md`: rustup: expand / clean up
+- [#322](https://github.com/john-cd/rust_howto/issues/322) — `bk/drafts/categories/development-tools_debugging/tracing.md`: review
+
+### List 30 — 0 of 10 completed
+
+All ten issues remain in IN-PROGRESS.
 
 ### Mathematics follow-ups — Closed
 
