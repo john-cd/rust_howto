@@ -98,6 +98,7 @@
   - [Statistics](categories/mathematics/statistics.md)
   - [Additional Numeric Types](categories/mathematics/additional_numeric_types.md)
   - [Numerical Analysis](categories/mathematics/numerical_analysis.md)
+  - [Optimization](categories/mathematics/optimization.md)
 
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
 

@@ -63,6 +63,11 @@ path = "examples/numerical_analysis/main.rs"
 test = true
 
 [[example]]
+name = "optimization"
+path = "examples/optimization/main.rs"
+test = true
+
+[[example]]
 name = "stats"
 path = "examples/stats/main.rs"
 test = true

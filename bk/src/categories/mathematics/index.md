@@ -73,7 +73,7 @@ Numerical analysis covers methods such as integration, differentiation, and root
 
 ## Optimization
 
-For numerical optimization, [`argmin`][c~argmin~docs]↗{{hi:argmin}} provides an interface for a range of optimization algorithms.
+For numerical optimization, the [Optimization chapter][p~optimization] demonstrates function minimization with [`argmin`][c~argmin~docs]↗{{hi:argmin}}, which provides an interface for a range of optimization algorithms.
 
 Optimization problems include linear, nonlinear, and integer programming, as well as decision models.
 
