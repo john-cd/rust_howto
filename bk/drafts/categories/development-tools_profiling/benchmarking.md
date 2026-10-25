@@ -11,21 +11,18 @@
 [![cargo-flamegraph~repo][c~flamegraph~repo~badge]][c~flamegraph~repo]
 [![cargo-flamegraph~lib.rs][c~flamegraph~lib.rs~badge]][c~flamegraph~lib.rs]
 
-`cargo flamegraph` generates execution flamegraphs.
+`cargo flamegraph` samples a running program and writes a flamegraph that helps
+locate hot functions. It complements a benchmark: use it to explain a measured
+regression, then rerun the benchmark after a change. Install it with:
 
-To install:
-```sh
-cargo install cargo-flamegraph
+```console
+{{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/install_flamegraph.sh}}
 ```
 
-Basic usage:
-```sh
-# Profile a binary:
-cargo flamegraph --bin <name>
-# Profile an example:
-cargo flamegraph --example <name>
-# Profile a benchmark:
-cargo flamegraph --bench <name>
+From the `bk/crates` workspace, pass the package and target you want to profile:
+
+```console
+{{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/flamegraph.sh}}
 ```
 
 ## `criterion` {#criterion}
@@ -36,7 +33,15 @@ cargo flamegraph --bench <name>
 [![criterion~lib.rs][c~criterion~lib.rs~badge]][c~criterion~lib.rs]
 [![cat~development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling]{{hi:Profiling}}
 
-[`criterion`][c~criterion~docs]↗{{hi:criterion}} is a statistically accurate benchmarking tool. [`criterion`][c~criterion~docs]↗{{hi:criterion}} helps write fast code by detecting and measuring [performance][p~performance] improvements or regressions, even small ones, quickly and accurately. You can optimize with confidence, knowing how each change affects the [performance][p~performance] of your code.
+[`criterion`][c~criterion~docs]↗{{hi:criterion}} measures a Rust function over
+repeated samples and reports statistical comparisons with prior runs. Keep
+setup outside the measured closure when possible, and use `black_box` to keep
+the input and result observable to the optimizer. Run the example in release
+mode with:
+
+```console
+{{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/run_criterion.sh}}
+```
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/criterion.rs:example}}
@@ -52,6 +57,13 @@ cargo flamegraph --bench <name>
 
 [`divan`][c~divan~docs]↗{{hi:divan}} is a simple yet powerful benchmarking library with allocation profiling.
 
+Add the benchmark as a Cargo bench target with `harness = false`, then run it
+with:
+
+```console
+{{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/run_divan.sh}}
+```
+
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_profiling/benches/divan.rs:example}}
 ```
@@ -64,44 +76,23 @@ cargo flamegraph --bench <name>
 [![hyperfine~lib.rs][c~hyperfine~lib.rs~badge]][c~hyperfine~lib.rs]
 [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
 
-[`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}} is a tool for benchmarking compiled binaries (similar to unix 'time' command but better).
+[`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}} measures whole commands and
+reports run-to-run variation. It is useful for comparing end-to-end behavior;
+run the same representative input for each command. Install it with:
 
-- Statistical analysis across multiple runs.
-- Support for arbitrary shell commands.
-- Constant feedback about the benchmark progress and current estimates.
-- Warm-up runs can be executed before the actual benchmark.
-- Cache-clearing commands can be set up before each timing run.
-- Statistical outlier detection to detect interference from other programs and [caching][p~caching] effects.
-- Export results to various formats: [CSV][p~csv], [JSON][p~json], [Markdown][p~markdown], AsciiDoc.
-- Parameterized benchmarks (e.g. vary the number of threads).
-- Cross-platform.
-
-```sh
-cargo install --locked hyperfine
-# or
-apt install hyperfine
+```console
+{{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/install_hyperfine.sh}}
 ```
 
-```sh
-hyperfine 'sleep 0.3'
-# Change the number of runs to perform
-hyperfine --runs 5 'sleep 0.3'
-# Compare the run times of different programs
-hyperfine 'hexdump file' 'xxd file'
-# Run the benchmark on a warm cache
-hyperfine --warmup 3 'grep -R TODO *'
-# Run the benchmark and export results to Markdown
-hyperfine --export-markdown results.md 'ls' 'find .'
+```console
+{{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/hyperfine.sh}}
 ```
 
 ## Related Topics {#related-topics .skip}
 
-- [[development-tools_debugging | Debugging]]
-- [[development-tools_cargo-plugins | Cargo Plugins]]
+- [Debugging](../development-tools_debugging/index.md)
+- [Cargo Plugins](../development-tools_cargo-plugins/index.md)
+- [Memory Usage Analysis][p~memory-usage-analysis]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[benchmarking: write](https://github.com/john-cd/rust_howto/issues/335)
-</div>
