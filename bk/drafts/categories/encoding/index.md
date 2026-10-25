@@ -22,6 +22,10 @@ Choose a structured format such as TOML, JSON, YAML, or XML when data needs name
 
 Read, validate, filter, transform, and write tabular text with the CSV format. See [CSV Processing](csv.md).
 
+## Excel Spreadsheets
+
+Read `.xlsx` files with [`calamine`][c~calamine~docs]↗{{hi:calamine}} and write them with [`rust_xlsxwriter`][c~rust_xlsxwriter~docs]↗{{hi:rust_xlsxwriter}}. See [Excel Spreadsheets](excel.md).
+
 ## JSON Serialization
 
 Use [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}} to serialize and deserialize JSON values. See [JSON](../parser-implementations/json.md).
