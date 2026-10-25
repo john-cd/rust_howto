@@ -85,6 +85,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the syntax parsing examples complete successfully.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;

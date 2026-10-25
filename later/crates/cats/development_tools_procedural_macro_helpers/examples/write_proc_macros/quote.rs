@@ -40,6 +40,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the quoting example completes successfully.
     #[test]
     fn test_main() {
         main();

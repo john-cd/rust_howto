@@ -4,91 +4,75 @@
 
 {{#include write_proc_macros.incl.md}}
 
-You'll almost always use [`proc-macro`][c~proc_macro~docs]↗{{hi:proc-macro}}, [`syn`][c~syn~docs]↗{{hi:syn}}, and [`quote`][c~quote~docs]↗{{hi:quote}} when writing procedural macros.
+A procedural macro's input and output are token streams. A useful implementation flow is `proc_macro` for the compiler entry point, `proc-macro2` for testable token handling, `syn` for parsing, `quote` for generating output, and optionally `darling` for derive-attribute parsing. Handle errors, tests, and documentation as part of the same authoring workflow.
 
 ## `proc_macro` {#proc-macro}
 
-Procedural macro [crates][p~crates] almost always will link to the compiler-provided [`proc_macro`][c~proc_macro~docs]↗{{hi:proc_macro}} crate. The `proc_macro` crate provides types required for writing procedural macros and facilities to make it easier.
-
-This crate primarily contains a TokenStream type. Procedural [macros][p~macros] operate over token [streams][p~streams] instead of AST nodes, which is a far more stable interface over time for both the compiler and for procedural [macros][p~macros] to target. A token stream is roughly equivalent to `Vec<TokenTree>` where a `TokenTree`{{hi:TokenTree}} can roughly be thought of as lexical token. For example `foo` is an `Ident` token, `.` is a `Punct` token, and `1.2` is a `Literal` token. The `TokenStream` type, unlike `Vec<TokenTree>`, is cheap to clone [(reference)][book~rust-reference~TokenStream]↗.
-
-## Parse Rust Source Code into an Abstract Syntax Tree {#syn}
-
-[![syn][c~syn~docs~badge]][c~syn~docs] [![syn~crates.io][c~syn~crates.io~badge]][c~syn~crates.io] [![syn~repo][c~syn~repo~badge]][c~syn~repo] [![syn~lib.rs][c~syn~lib.rs~badge]][c~syn~lib.rs]{{hi:syn}}{{hi:Macros}}{{hi:syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}[![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
-
-The [`syn`][c~syn~docs]↗{{hi:syn}} crate in Rust is a fundamental library for parsing a stream of Rust tokens into an equivalent syntax tree. It's primarily used when working with procedural macros, but it can also be helpful for other code analysis or manipulation tasks, such as:
-
-- Static analysis: Building tools to check code for specific patterns or enforce coding standards.
-- Code generation: Creating tools that automatically generate Rust code based on some input or configuration.
-- Refactoring: Developing tools to automate code refactoring tasks.
-
-```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/syn.rs:example}}
-```
-
-## `paste` {#paste}
-
-[![paste][c~paste~docs~badge]][c~paste~docs] [![paste~crates.io][c~paste~crates.io~badge]][c~paste~crates.io] [![paste~repo][c~paste~repo~badge]][c~paste~repo] [![paste~lib.rs][c~paste~lib.rs~badge]][c~paste~lib.rs]{{hi:paste}}{{hi:Macros}}[![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
-
-[`paste`][c~paste~docs]↗ provides a flexible way to paste together identifiers in a macro, including using pasted identifiers to define new items.
-
-```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/paste.rs:example}}
-```
-
-## `quote` {#quote}
-
-[![quote][c~quote~docs~badge]][c~quote~docs] [![quote~crates.io][c~quote~crates.io~badge]][c~quote~crates.io] [![quote~repo][c~quote~repo~badge]][c~quote~repo] [![quote~lib.rs][c~quote~lib.rs~badge]][c~quote~lib.rs]{{hi:quote}}{{hi:Macros}}{{hi:Syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
-
-[`quote`][c~quote~docs]↗{{hi:quote}} is a crate that makes it easy to generate Rust code (as TokenStreams). It provides quasiquoting, which makes code generation much more readable and less error-prone. [`quote`][c~quote~docs]↗ provides the `quote!` macro for turning Rust syntax tree{{hi:Syntax tree}} data structures into tokens{{hi:Tokens}} of source code.
-
-```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/quote.rs:example}}
-```
+A procedural macro crate uses the compiler-provided [`proc_macro`][c~proc_macro~docs] API for its public entry points. Function-like macros, derives, and attribute macros receive a `TokenStream` and return generated tokens. Keep the entry point small and delegate parsing and generation to ordinary functions.
 
 ## `proc-macro2` {#proc-macro2}
 
-[![proc-macro2][c~proc-macro2~docs~badge]][c~proc-macro2~docs] [![proc-macro2~crates.io][c~proc-macro2~crates.io~badge]][c~proc-macro2~crates.io] [![proc-macro2~repo][c~proc-macro2~repo~badge]][c~proc-macro2~repo] [![proc-macro2~lib.rs][c~proc-macro2~lib.rs~badge]][c~proc-macro2~lib.rs]{{hi:proc-macro2}}{{hi:Macros}}{{hi:Syn}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
+[![proc-macro2][c~proc-macro2~docs~badge]][c~proc-macro2~docs] [![proc-macro2~crates.io][c~proc-macro2~crates.io~badge]][c~proc-macro2~crates.io] [![proc-macro2~repo][c~proc-macro2~repo~badge]][c~proc-macro2~repo] [![proc-macro2~lib.rs][c~proc-macro2~lib.rs~badge]][c~proc-macro2~lib.rs]
 
-[`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} [![proc-macro2~repo][c~proc-macro2~repo~badge]][c~proc-macro2~repo] bring proc-macro-like functionality to other contexts like build.rs and main.rs and makes procedural macros unit testable.
-
-A substitute implementation of the compiler's [`proc_macro`][c~proc_macro~docs]↗{{hi:proc_macro}} API to decouple token-based libraries from the procedural macro use case.
-
-A wrapper around the procedural macro API of the compiler's [`proc_macro`][c~proc_macro~docs]{{hi:proc_macro}} crate. This library serves two purposes:
-
-Bring proc-macro-like functionality to other contexts like build.rs and main.rs. Types from proc-macro are entirely specific to procedural [macros][p~macros] and cannot ever exist in code outside of a procedural macro. Meanwhile [`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} types may exist anywhere including non-macro code. By developing foundational libraries like [`syn`][c~syn~docs]↗{{hi:syn}} and [`quote`][c~quote~docs]↗{{hi:quote}} against [`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} rather than proc-macro, the procedural macro ecosystem becomes easily applicable to many other use cases and we avoid re-implementing non-macro equivalents of those libraries.
-
-Make procedural [macros][p~macros] unit testable. As a consequence of being specific to procedural [macros][p~macros], nothing that uses [`proc_macro`][c~proc_macro~docs]{{hi:proc_macro}} can be executed from a unit test. In order for helper libraries or components of a macro to be testable in isolation, they must be implemented using `proc-macro2`.
-
-[![proc-macro-workshop~repo][proc-macro-workshop~repo~badge]][proc-macro-workshop~repo]
-
-[![proc-macro-workshop~repo][proc-macro-workshop~repo~badge]][proc-macro-workshop~repo]
+Use [`proc-macro2`][c~proc-macro2~docs] types in reusable parsing and generation code. They work in ordinary libraries and tests as well as proc-macro crates, so most behavior can be tested without invoking the compiler's macro interface.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/proc_macro2.rs:example}}
 ```
 
-### `darling` {#darling}
+## Parse Input with `syn` {#syn}
 
-[![darling][c~darling~docs~badge]][c~darling~docs] [![darling~crates.io][c~darling~crates.io~badge]][c~darling~crates.io] [![darling~repo][c~darling~repo~badge]][c~darling~repo] [![darling~lib.rs][c~darling~lib.rs~badge]][c~darling~lib.rs]{{hi:darling}}
+[![syn][c~syn~docs~badge]][c~syn~docs] [![syn~crates.io][c~syn~crates.io~badge]][c~syn~crates.io] [![syn~repo][c~syn~repo~badge]][c~syn~repo] [![syn~lib.rs][c~syn~lib.rs~badge]][c~syn~lib.rs]{{hi:syn}}{{hi:Macros}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}[![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
 
-[`darling`][c~darling~docs]↗{{hi:darling}} provides `derive` macros to easily parse `derive` macro inputs.
+[`syn`][c~syn~docs] parses Rust tokens into syntax-tree types such as `DeriveInput`, `Item`, and `Expr`. Parse only the syntax your macro needs, then validate its shape before generating code.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/syn.rs:example}}
+```
+
+See the [`syn` examples][syn-examples~repo] for additional parsing and visiting patterns.
+
+## Generate Output with `quote` {#quote}
+
+[![quote][c~quote~docs~badge]][c~quote~docs] [![quote~crates.io][c~quote~crates.io~badge]][c~quote~crates.io] [![quote~repo][c~quote~repo~badge]][c~quote~repo] [![quote~lib.rs][c~quote~lib.rs~badge]][c~quote~lib.rs]
+
+[`quote`][c~quote~docs] builds `proc_macro2::TokenStream` values from Rust-like syntax. Use interpolation for parsed identifiers and types instead of assembling generated source as strings.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/quote.rs:example}}
+```
+
+## Parse Derive Attributes with `darling` {#darling}
+
+[![darling][c~darling~docs~badge]][c~darling~docs] [![darling~crates.io][c~darling~crates.io~badge]][c~darling~crates.io] [![darling~repo][c~darling~repo~badge]][c~darling~repo] [![darling~lib.rs][c~darling~lib.rs~badge]][c~darling~lib.rs]
+
+[`darling`][c~darling~docs] derives parsers for common derive-macro inputs and attributes. Use it when its input model fits the macro; direct `syn` parsing remains available for custom syntax.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/darling.rs:example}}
 ```
 
-## Report Errors from Within a Procedural Macro {#report-errors-from-within-a-procedural-macro}
+## Report Errors from a Procedural Macro {#report-errors-from-within-a-procedural-macro}
 
-Procedural [macros][p~macros] have two ways of reporting errors. The first is to [`panic`][c~panic~docs]↗{{hi:panic}}. The second is to emit a `compile_error` macro invocation.
+Return compiler diagnostics for invalid input instead of panicking. For example, convert a spanned `syn::Error` into the macro's output:
 
-## Testing and Debugging {#testing-and-debugging}
+```rust
+return syn::Error::new_spanned(input, "unsupported attribute")
+    .to_compile_error()
+    .into();
+```
 
-Use [Tools for Macro Development][p~macro-tools] for expansion inspection, compile-fail UI tests, and expansion snapshots with `cargo expand`, `trybuild`, and `macrotest`.
+When validation finds more than one problem, combine the errors where possible so users can fix several inputs in one compile.
 
-## Documentation {#documentation}
+## Test and Debug Macros {#testing-and-debugging}
 
-Good documentation is essential for any procedural macro. Document your macro's usage, attributes, and any potential pitfalls.
+Unit-test parsing and generation helpers that use `proc-macro2`. Add compile-pass and compile-fail cases for the public macro interface, and keep expected diagnostics under review. See the [macro development tools][p~macro-tools] chapter for expansion inspection, compile-fail testing, snapshots, and Rust Analyzer.
+
+The [procedural macro workshop][proc-macro-workshop~repo] is a hands-on learning resource.
+
+## Document the Macro Contract {#documentation}
+
+Document each macro's accepted syntax, generated behavior, attributes, limitations, and diagnostics. Include compile-tested examples for common and invalid inputs; users need to know what code the macro expects and what it produces.
 
 ## Related Topics {#related-topics .skip}
 
@@ -98,12 +82,13 @@ Good documentation is essential for any procedural macro. Document your macro's 
   - [[macro_tools | Macro Tools]].
 - [[rust-patterns | Rust Patterns]].
 
+### `paste` {#paste}
+
+[`paste`][c~paste~docs] helps concatenate identifiers in `macro_rules!` definitions; it is an adjacent tool rather than a required step in procedural-macro authoring.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/paste.rs:example}}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write_proc_macros: write; compare with macros.md - what should be in here?](https://github.com/john-cd/rust_howto/issues/331)
-
-- [syn examples][syn-examples~repo]↗.
-
-</div>

@@ -28,6 +28,7 @@ pub fn run() {
     main();
 }
 
+/// Verifies that parsed derive attributes reach the generated method.
 #[test]
 fn test() {
     main();

@@ -57,6 +57,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that pasted identifiers can be used by the example.
     #[test]
     fn test_main() {
         main();

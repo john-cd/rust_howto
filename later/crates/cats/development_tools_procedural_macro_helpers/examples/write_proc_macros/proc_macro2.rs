@@ -22,6 +22,7 @@ pub fn run() {
     main();
 }
 
+/// Verifies that the derive macro generates usable Debug output.
 #[test]
 fn test() {
     main();
