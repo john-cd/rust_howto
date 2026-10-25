@@ -6,3 +6,4 @@
 [ex~multimedia_video~video]: video.md#video
 [ffmpeg~download~website]: https://ffmpeg.org/download.html
 [gstreamer~installing~website]: https://gstreamer.freedesktop.org/documentation/installing/index.html
+[gst-plugins-rs~repo]: https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
