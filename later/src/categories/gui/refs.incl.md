@@ -7,6 +7,12 @@
 [ex~gui~dioxus]: web_based_gui.md#dioxus
 [ex~gui~druid]: retained_mode_gui.md#druid
 [ex~gui~egui]: immediate_mode_gui.md#egui
+[ex~gui~egui-headless]: egui_ecosystem.md#egui-headless
+[ex~gui~egui-log-viewer]: egui_ecosystem.md#egui-log-viewer
+[ex~gui~egui-plot]: egui_ecosystem.md#egui-plot
+[ex~gui~egui-table]: egui_ecosystem.md#egui-table
+[ex~gui~egui-tiles]: egui_ecosystem.md#egui-tiles
+[ex~gui~egui-toasts-icons]: egui_ecosystem.md#egui-toasts-icons
 [ex~gui~floem]: retained_mode_gui.md#floem
 [ex~gui~gpui]: retained_mode_gui.md#gpui
 [ex~gui~gtk4]: gtk.md#gtk4
@@ -47,6 +53,7 @@
 [p~games]: ../../../drafts/categories/games/games.md
 [p~gpu]: # "../../other/gpu/gpu.md"
 [p~graphics]: # "../graphics/index.md"
+[p~egui]: immediate_mode_gui.md
 [p~gui]: index.md
 [p~html]: # "../../categories/parser-implementations/html.md"
 [p~immediate-mode-gui]: immediate_mode_gui.md

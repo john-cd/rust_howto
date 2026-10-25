@@ -37,6 +37,8 @@ For almost all cases where you want an immediate mode [GUI][p~gui] in Rust, [`eg
 {{#include ../../../crates/cats/gui/examples/immediate_mode_gui/egui.rs:example}}
 ```
 
+For tables, plots, docking, notifications and more, see [`egui` Add-on Crates](egui_ecosystem.md).
+
 ## Integration with Rendering {#integration-with-rendering}
 
 Immediate mode [GUI][p~gui] libraries often need to be integrated with a [rendering][p~rendering] backend. [`egui`][c~egui~docs]↗{{hi:egui}} has its own renderers for various platforms and backends, including [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`glow`][c~glow~docs]↗{{hi:glow}}, and others.
