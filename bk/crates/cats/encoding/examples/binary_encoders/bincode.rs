@@ -4,8 +4,12 @@
 // ANCHOR: example
 //! Serialize and deserialize a struct with `bincode` 2.x.
 //!
-//! Bincode is unmaintained. This example uses the stable 2.0.1 release for
-//! legacy format interoperability; choose a maintained format for new systems.
+//! Version 2 changed the API: encode with `bincode::serde::encode_to_vec` and
+//! decode with `bincode::serde::decode_from_slice`, using the same explicit
+//! configuration on both sides. These replace the familiar `serialize` and
+//! `deserialize` functions from version 1. This example uses the 2.0.1 release;
+//! the upstream repository is archived, so evaluate maintained alternatives
+//! before choosing a format for a new system.
 
 use bincode::config::standard;
 use bincode::serde::decode_from_slice;
@@ -25,7 +29,12 @@ struct MyData {
     is_active: bool,
 }
 
-/// Encodes a struct with `bincode`, then decodes it.
+/// Encodes a struct with bincode 2, then decodes it with the same
+/// configuration.
+///
+/// # Errors
+///
+/// Returns an error if serialization or deserialization fails.
 fn main() -> anyhow::Result<()> {
     let data = MyData {
         name: "Alice".to_owned(),
@@ -49,6 +58,10 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+///
+/// Returns an error if serialization or deserialization fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -66,6 +79,7 @@ mod tests {
         }
     }
 
+    /// The example's end-to-end encode and decode path succeeds.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()
@@ -102,6 +116,7 @@ mod tests {
         Ok(())
     }
 
+    /// Truncated bytes are rejected by the decoder.
     #[test]
     fn truncated_input_is_an_error() -> anyhow::Result<()> {
         let encoded = encode_to_vec(sample(), standard())?;
