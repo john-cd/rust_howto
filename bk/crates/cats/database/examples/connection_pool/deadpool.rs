@@ -63,7 +63,7 @@ type Pool = managed::Pool<Manager>;
 async fn main() -> anyhow::Result<()> {
     let mgr = Manager;
     // Create a new connection pool with the given manager.
-    let pool = Pool::builder(mgr).build()?;
+    let pool = Pool::builder(mgr).max_size(1).build()?;
 
     // Get a connection from the pool.
     let conn = pool.get().await.map_err(|err| {
@@ -71,6 +71,16 @@ async fn main() -> anyhow::Result<()> {
     })?;
     let answer = conn.get_answer().await;
     assert_eq!(answer, 42);
+    drop(conn);
+
+    // A dropped object is available for the next checkout, so the one-slot
+    // pool does not need to allocate another connection.
+    assert_eq!(pool.status().size, 1);
+    assert_eq!(pool.status().available, 1);
+    let reused_conn = pool.get().await?;
+    assert_eq!(pool.status().size, 1);
+    drop(reused_conn);
+
     println!("The answer is {answer}");
     Ok(())
 }
@@ -86,8 +96,10 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that dropping and rechecking out a guard reuses the pool slot.
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn test_main() -> anyhow::Result<()> {
+        main()?;
+        Ok(())
     }
 }

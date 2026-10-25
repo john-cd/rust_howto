@@ -14,11 +14,10 @@
 //! deadpool = "0.12.1" # or latest version
 //! deadpool-postgres = { version = "0.14.1", features = ["serde"] }
 //!
-//! Add the database's configuration to your `.env` file, for example:
-//! `PG__HOST=pg.example.com`
-//! `PG__USER=john_doe`
-//! `PG__PASSWORD=topsecret`
-//! `PG__DBNAME=example`
+//! Add the database URL to your `.env` file, for example:
+//! `DATABASE_URL=postgres://john_doe:topsecret@pg.example.com/example`
+//! Or set the connection fields individually with `PG__HOST`, `PG__USER`,
+//! `PG__PASSWORD`, and `PG__DBNAME`.
 //! `PG__POOL__MAX_SIZE=16`
 //! `PG__POOL__TIMEOUTS__WAIT__SECS=5`
 //! `PG__POOL__TIMEOUTS__WAIT__NANOS=0`
@@ -31,6 +30,7 @@ use tokio_postgres::NoTls;
 #[derive(Debug, serde::Deserialize)]
 struct Config {
     /// The settings of the PostgreSQL connection pool.
+    #[serde(default)]
     pub pg: deadpool_postgres::Config,
 }
 
@@ -57,8 +57,13 @@ fn create_pool_with_max_size(
 ) -> anyhow::Result<deadpool_postgres::Pool> {
     // Loads the `.env` file from the current directory or parents.
     dotenv().ok();
-    // Hydrate the configuration from environment variables.
+    // Hydrate pool and connection options from environment variables.
     let mut cfg = Config::from_env()?;
+    // A URL is convenient for local development and takes precedence over the
+    // individual PG__HOST / PG__USER / PG__PASSWORD settings.
+    if let Ok(database_url) = std::env::var("DATABASE_URL") {
+        cfg.pg.url = Some(database_url);
+    }
     if let Some(max_size) = max_size {
         let mut pool_config = cfg.pg.get_pool_config();
         pool_config.max_size = max_size;

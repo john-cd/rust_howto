@@ -53,3 +53,4 @@
 [p~url]: ../web-programming/url.md
 [p~windows]: ../os_windows-apis/windows.md
 [c~cornucopia~migration~1.0]: https://github.com/cornucopia-rs/cornucopia/blob/main/docs/src/introduction/migration_to_1_0.md
+[c~r2d2~docs]: https://docs.rs/r2d2
