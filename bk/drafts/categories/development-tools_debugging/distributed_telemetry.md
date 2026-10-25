@@ -37,7 +37,7 @@ Prometheus is commonly used for metrics collection. See [[metrics | Metrics]] fo
 
 ## `OpenObserve` {#open-observe}
 
-[OpenObserve][openobserve~repo]↗{{hi:OpenObserve}} accepts OpenTelemetry traces over OTLP. The existing example shows endpoint configuration and local `tracing` fields; configure an OTLP exporter to send spans to the endpoint, using the [trace-ingestion documentation][openobserve~traces-docs] for its path and authentication requirements.
+[OpenObserve][openobserve~repo]↗{{hi:OpenObserve}} accepts OpenTelemetry traces over OTLP/HTTP. Set `OTEL_EXPORTER_OTLP_ENDPOINT` to the organization API base URL, such as `http://localhost:5080/api/default`; the exporter appends the OTLP trace path. Set `OTEL_EXPORTER_OTLP_HEADERS` with the authorization header required by your OpenObserve deployment. The example sends a span when an endpoint is configured and prints a setup hint otherwise. See the [trace-ingestion documentation][openobserve~traces-docs] for endpoint and authentication details.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/open_observe.rs:example}}

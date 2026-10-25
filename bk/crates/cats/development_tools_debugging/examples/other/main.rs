@@ -42,7 +42,7 @@ fn main() -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::OpenObserve => {
-                open_observe::run();
+                open_observe::run()?;
             }
             Commands::OpenTelemetry => {
                 open_telemetry::run()?;
