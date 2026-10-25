@@ -23,11 +23,13 @@ cargo_metadata = "0.23.1"
 clap = { version = "4.6.7", features = ["derive"] }
 crates_io_api = "0.12.0"
 doc-comment = "0.3.4"
+gix = { version = "0.90.0", default-features = false, features = ["revision", "blob-diff", "sha1"] }
 prettyplease = "0.3.0"
 proc-macro2 = { version = "1", features = ["span-locations"] }
 quote = "1"
 semver = "1.0.28"
 syn = { version = "3", features = ["full", "visit"] }
+toml_edit = "0.25.17"
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 wasmparser = "0.262.0"
@@ -37,6 +39,16 @@ wat = "1.262.0"
 [[example]]
 name = "cargo_metadata"
 path = "examples/rust_source/cargo_metadata.rs"
+test = true
+
+[[example]]
+name = "git_churn"
+path = "examples/automation/git_churn.rs"
+test = true
+
+[[example]]
+name = "workspace_lints"
+path = "examples/automation/workspace_lints.rs"
 test = true
 
 [[example]]

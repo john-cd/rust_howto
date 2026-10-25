@@ -1,0 +1,7 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
+| Recipe | Crates | Categories |
+|--------|--------|------------|
+| [Lay Out an `xtask` Crate][ex~automation~xtask-layout] | [![cargo-xtask][c~cargo-xtask~repo~badge]][c~cargo-xtask~repo]{{hi:xtask}} | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
+| [Check that Every Member Uses the Workspace Lints][ex~automation~workspace-lints] | [![cargo_metadata][c~cargo_metadata~docs~badge]][c~cargo_metadata~docs]{{hi:cargo_metadata}}[![toml_edit][c~toml_edit~docs~badge]][c~toml_edit~docs]{{hi:toml_edit}} | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
+| [Find `unwrap()` Calls][ex~automation~find-unwraps] | [![syn][c~syn~docs~badge]][c~syn~docs]{{hi:syn}} | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |

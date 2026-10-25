@@ -3614,6 +3614,14 @@
 [c~gitoxide~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gitoxide-yellow
 [c~gitoxide~repo]: https://github.com/GitoxideLabs/gitoxide
 [c~gitoxide~repo~badge]: https://img.shields.io/badge/gitoxide-steelblue?logo=github
+[c~gix~crates.io]: https://crates.io/crates/gix
+[c~gix~crates.io~badge]: https://img.shields.io/badge/crates.io-gix-crimson
+[c~gix~docs]: https://docs.rs/gix
+[c~gix~docs~badge]: https://img.shields.io/crates/v/gix?label=gix
+[c~gix~lib.rs]: https://lib.rs/crates/gix
+[c~gix~lib.rs~badge]: https://img.shields.io/badge/lib.rs-gix-yellow
+[c~gix~repo]: https://github.com/GitoxideLabs/gitoxide
+[c~gix~repo~badge]: https://img.shields.io/badge/gix-steelblue?logo=github
 [c~glam~crates.io]: https://crates.io/crates/glam
 [c~glam~crates.io~badge]: https://img.shields.io/badge/crates.io-glam-crimson
 [c~glam~docs]: https://docs.rs/glam
