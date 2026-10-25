@@ -1,0 +1,14 @@
+# Replace the key and token placeholders with values matching server.toml.
+# Keep this file private because it contains the service token.
+[client]
+remote_addr = "example.net:2333"
+
+[client.transport]
+type = "noise"
+
+[client.transport.noise]
+remote_public_key = "BASE64_SERVER_PUBLIC_KEY"
+
+[client.services.web]
+token = "REPLACE_WITH_RANDOM_SERVICE_TOKEN"
+local_addr = "127.0.0.1:3000"

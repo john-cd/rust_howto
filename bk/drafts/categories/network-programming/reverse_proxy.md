@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# Reverse Proxies, Ingress
+# Reverse Proxies and Ingress
 
 {{#include reverse_proxy.incl.md}}
 
@@ -11,47 +11,43 @@
 [![rathole~repo][c~rathole~repo~badge]][c~rathole~repo]
 [![rathole~lib.rs][c~rathole~lib.rs~badge]][c~rathole~lib.rs]
 
-[Rathole][c~rathole~repo]↗ is a lightweight and high-performance reverse proxy for NAT traversal, written in Rust. [`rathole`][c~rathole~docs]↗{{hi:rathole}} is similar to tools like [`frp`][c~frp~docs]↗{{hi:frp}} and [`ngrok`][c~ngrok~docs]↗{{hi:ngrok}}.
+[`rathole`][c~rathole~repo]↗{{hi:rathole}} is a Rust TCP/UDP tunnel for exposing a service behind NAT through a server with a public IP. It forwards connections at the transport layer; it does not inspect HTTP paths or rewrite HTTP headers. Use it to connect a private service to a public relay, then put an HTTP reverse proxy in front when you need host or path routing.
 
-NAT (Network Address Translation) can make it challenging to expose services on devices behind a NAT to the internet. Rathole helps to overcome this by allowing these services to be accessible via a [server][p~server] with a public IP.
+The server and client use matching service names and tokens. The token is stored literally in each TOML configuration file; Rathole does not expand shell variables inside TOML strings. The default TCP transport does not encrypt traffic. This example enables Rathole's Noise transport so the client authenticates the server and the tunnel traffic is encrypted. Generate a unique key pair and service token, keep the private key and token in files readable only by the service account, and do not commit real credentials.
 
-Configuration of a service is split into the client side and the [server][p~server] side, and a token is mandatory.
+Generate the Noise key pair on a trusted machine with this command. Keep the private key on the server and copy its public key to the client configuration:
 
-- Server Setup: On a [server][p~server] with a public IP, create a `server.toml` file with the necessary configurations.
+```bash
+{{#include ../../../crates/cats/network_programming/examples/reverse_proxy/rathole_keygen.sh}}
+```
+
+On the public server, set the listener address, Noise private key, service token, and relay port in `server.toml`:
 
 ```toml
-# server.toml
-[server]
-bind_addr = "0.0.0.0:2333" # `2333` specifies the port that `rathole` listens for clients
-
-[server.services.my_nas_ssh]
-token = "$RATHOLE_SECRET_TOKEN" # Load authentication token from environment variable rather than hardcoding secrets
-bind_addr = "0.0.0.0:5202" # `5202` specifies the port that exposes `my_nas_ssh` to the Internet
+{{#include ../../../crates/cats/network_programming/examples/reverse_proxy/rathole_server.toml}}
 ```
 
-Run:
+The sample relay service binds to loopback so it can sit behind a local HTTP proxy. Change its `bind_addr` to `0.0.0.0:5202` only when clients should connect to that forwarded port directly, and restrict access with the server firewall.
 
-```sh
-RATHOLE_SECRET_TOKEN="your_secret_token" ./rathole server.toml
+Run the server with the explicit server mode:
+
+```bash
+{{#include ../../../crates/cats/network_programming/examples/reverse_proxy/rathole_run_server.sh}}
 ```
 
-- Client Setup: On the device behind NAT, create a `client.[toml][p~toml]` file to connect to the server.
+On the device behind NAT, configure the server address, its public Noise key, the matching service token, and the local service address in `client.toml`:
 
 ```toml
-# client.toml
-[client]
-remote_addr = "myserver.com:2333" # The address of the server. The port must be the same with the port in `server.bind_addr`
-
-[client.services.my_nas_ssh]
-token = "$RATHOLE_SECRET_TOKEN" # Must match the server token
-local_addr = "127.0.0.1:22" # The address of the service that needs to be forwarded
+{{#include ../../../crates/cats/network_programming/examples/reverse_proxy/rathole_client.toml}}
 ```
 
-```sh
-RATHOLE_SECRET_TOKEN="your_secret_token" ./rathole client.toml
+Run the client on the private device:
+
+```bash
+{{#include ../../../crates/cats/network_programming/examples/reverse_proxy/rathole_run_client.sh}}
 ```
 
-[`rathole`][c~rathole~docs]↗{{hi:rathole}} can automatically determine to run in the server mode or the client mode, according to the content of the configuration file, if only one of `[server]` and `[client]` block is present.
+With the sample addresses, traffic accepted by the server on `127.0.0.1:5202` reaches the private service at `127.0.0.1:3000`. Rathole can also infer client or server mode when a configuration contains only one mode block; the explicit flags make the role clear in service scripts.
 
 ## `ngrok` {#ngrok}
 
@@ -60,7 +56,7 @@ RATHOLE_SECRET_TOKEN="your_secret_token" ./rathole client.toml
 [![ngrok~repo][c~ngrok~repo~badge]][c~ngrok~repo]
 [![ngrok~lib.rs][c~ngrok~lib.rs~badge]][c~ngrok~lib.rs]
 
-[ngrok][c~ngrok~website]↗ is a simplified API-first ingress-as-a-service that adds connectivity, security, and observability to your apps. `ngrok-rust` is the Rust-native crate for adding a public internet address with secure ingress traffic directly into your Rust apps.
+Use [ngrok][c~ngrok~website]↗ when a managed ingress service is appropriate. Its Rust crate can expose a local HTTP application through an ngrok endpoint; the included example reads the authentication token from `NGROK_AUTHTOKEN`.
 
 ```rust,editable
 {{#include ../../../crates/cats/network_programming/examples/reverse_proxy/ngrok.rs:example}}
@@ -68,7 +64,7 @@ RATHOLE_SECRET_TOKEN="your_secret_token" ./rathole client.toml
 
 ## `nginx` {#nginx}
 
-[nginx proxy manager][nginx-proxy-manager~website]↗{{hi:nginx proxy manager}}.
+For a conventional HTTP reverse proxy, [`nginx`][nginx~website]↗{{hi:nginx}} and other standalone web servers route public requests to local upstream services. Use this when you need a configured edge proxy without writing a Rust service.
 
 ## `pingora` {#pingora}
 
@@ -79,7 +75,7 @@ RATHOLE_SECRET_TOKEN="your_secret_token" ./rathole client.toml
 [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-[`pingora`][c~pingora~docs]↗{{hi:pingora}} is a library for building fast, reliable and evolvable network services.
+[`Pingora`][c~pingora~docs]↗{{hi:pingora}} is a Rust framework for programmable HTTP/1 and HTTP/2 proxies, including gRPC and WebSocket traffic. It fits custom proxy logic, load balancing, and observability needs; it is a service framework rather than a ready-made reverse-proxy binary. Linux is its primary supported environment, Unix-like platforms receive best-effort support, and Windows support is preliminary.
 
 ```rust,editable
 {{#include ../../../crates/cats/network_programming/examples/reverse_proxy/pingora.rs:example}}
@@ -91,8 +87,3 @@ RATHOLE_SECRET_TOKEN="your_secret_token" ./rathole client.toml
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[Network: Complete comprehensive reverse proxy section for Pingora and Rathole](https://github.com/john-cd/rust_howto/issues/424)
-[River][river~repo]↗.
-</div>

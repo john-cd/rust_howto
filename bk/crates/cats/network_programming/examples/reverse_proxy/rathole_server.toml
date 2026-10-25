@@ -1,0 +1,14 @@
+# Replace the key and token placeholders with unique values before use.
+# Keep this file private because it contains the server's private key and token.
+[server]
+bind_addr = "0.0.0.0:2333"
+
+[server.transport]
+type = "noise"
+
+[server.transport.noise]
+local_private_key = "BASE64_SERVER_PRIVATE_KEY"
+
+[server.services.web]
+token = "REPLACE_WITH_RANDOM_SERVICE_TOKEN"
+bind_addr = "127.0.0.1:5202"
