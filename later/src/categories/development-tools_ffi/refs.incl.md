@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~development-tools_ffi~bindgen]: generate_ffi_bindings.md#bindgen
 [ex~development-tools_ffi~build-tools-for-rust-ruby]: ruby.md#build-tools-for-rust-ruby

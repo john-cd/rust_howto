@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~date-and-time~convert-local-time]: duration.md#convert-local-time
 [ex~date-and-time~display-formatted-date-time]: parse.md#display-formatted-date-time

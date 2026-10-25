@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~cargo~basic-cargo-usage]: cargo.md#basic-cargo-usage
 [ex~cargo~cargo-toml]: cargo.md#cargo-toml

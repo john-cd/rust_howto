@@ -67,4 +67,5 @@ Fast integer primitive to string conversion.
 
 <div class="hidden">
   [`num-format`][c~num-format~docs]↗{{hi:num-format}}, [`icu`][c~icu~docs]↗{{hi:icu}}, and [`fluent`][c~fluent~docs]↗{{hi:fluent}} address grouped integers, locale-aware decimal output, and translated messages, respectively.
+  [value-formatting: choose crates, write](https://github.com/john-cd/rust_howto/issues/490)
 </div>

@@ -10,12 +10,12 @@ The [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} a
 
 ## Existing Implementations of `Send` and `Sync` {#existing-impl-send-sync}
 
-| Traits | Types |
-|---|---|
+| Traits                                                                                                                                                | Types                                                                                                                                                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} and [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} | primitives; `(T1, T2)↗`, `[T; N]`, `&[T]`, `struct { x: T }`, `Arc`, `Vec`, `Box`, [`Option`][c~std::option::Option~docs]↗{{hi:Option}} (depending on underlying types); [`String`][c~std::string::ToString~docs]↗{{hi:String}}, `&str`; `Mutex`, `Atomic*`... |
-| `!Send` and `!Sync` | `Rc`, raw pointers `*const T`,`*mut T`, types from external libraries or the operating system that are not thread safe. |
-| `Send` and `!Sync` | `mpsc::Receiver<T>`; `UnsafeCell`, `Cell`, `RefCell`: when a type has interior mutability, we must be sure that we mutate it from one place only, but this place can be everywhere as long as it is singular. |
-| `!Send` and `Sync` (rare) | `RwLockReadGuard`, `RwWriteGuard` and [`MutexGuard`][c~std::sync::MutexGuard~docs]↗{{hi:MutexGuard}}; `&mut T` if `T` is `!Send`; structs which use thread-local storage and accesses that info in `Drop`. |
+| `!Send` and `!Sync`                                                                                                                                   | `Rc`, raw pointers `*const T`,`*mut T`, types from external libraries or the operating system that are not thread safe.                                                                                                                                        |
+| `Send` and `!Sync`                                                                                                                                    | `mpsc::Receiver<T>`; `UnsafeCell`, `Cell`, `RefCell`: when a type has interior mutability, we must be sure that we mutate it from one place only, but this place can be everywhere as long as it is singular.                                                  |
+| `!Send` and `Sync` (rare)                                                                                                                             | `RwLockReadGuard`, `RwWriteGuard` and [`MutexGuard`][c~std::sync::MutexGuard~docs]↗{{hi:MutexGuard}}; `&mut T` if `T` is `!Send`; structs which use thread-local storage and accesses that info in `Drop`.                                                     |
 
 ## `Send` Trait {#send}
 
@@ -99,6 +99,6 @@ PHANTOM DATA:
 
 - [phantom-data][book~rustonomicon~phantom-data]↗.
 - [PhantomData][c~std::marker::PhantomData~docs]↗.
-
 - [Understanding the `Send` trait][stackoverflow~understanding-the-send-trait]↗.
+
 </div>

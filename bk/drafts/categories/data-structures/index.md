@@ -146,6 +146,7 @@ See [Converting between different collection types][blog~converting-between-diff
 `scroll` is a library for efficiently reading and writing primitive types from byte arrays and other data containers. It is particularly useful for parsing binary protocols, file formats, and network packets.
 
 Key features of `scroll`:
+
 - Zero-copy reads via the `Pread` trait, which reads from a buffer at a given offset without advancing a cursor.
 - Automatic endianness handling for both little-endian (`LE`) and big-endian (`BE`) byte orders.
 - Support for reading into user-defined types via the `TryFromCtx` trait.
@@ -188,5 +189,5 @@ See [[functional_programming | Functional Programming]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
+  [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
 </div>

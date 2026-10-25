@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~compilers~comemo]: incremental_computation.md#comemo
 [ex~compilers~salsa]: incremental_computation.md#salsa

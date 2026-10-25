@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~error_handling~and_then]: error_handling.md#and_then
 [ex~error_handling~anyhow]: error_customization.md#anyhow

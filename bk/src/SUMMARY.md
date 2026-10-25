@@ -5,9 +5,10 @@
 [Introduction](introduction/index.md)
 [How to Read This Book](introduction/how_to_read_this_book.md)
 
-# Core Concepts
+## Core Concepts
 
 - [Rust Installation and First Steps](rust-installation/index.md)
+
 - [Language](language/index.md)
   - [Entry Points](language/entry_points.md)
   - [Data Types](language/data_types.md)
@@ -57,7 +58,7 @@
   - [Code Organization by Project Type](code-organization/code_organization_by_project_type.md)
   - [Naming Conventions](code-organization/naming_conventions.md)
 
-# Code Examples by Category
+## Code Examples by Category
 
 - [Algorithms](categories/algorithms/index.md)
   - [Random Value Generation](categories/algorithms/random_value_generation.md)
@@ -106,7 +107,7 @@
 
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
 
-# Resources
+## Resources
 
 - [Crate Selection](crate-selection/index.md)
   - [Current State of the Art](crate-selection/current_state_of_the_art.md)
@@ -122,14 +123,14 @@
   - [Meetings](links/meetings.md)
   - [Rust Companies and Jobs](links/rust_companies_and_jobs.md)
 
-# Indices
+## Indices
 
 - [Index](word_index.md)
 - [Index of Examples](indices/examples_index.md)
 - [Crates (Alphabetic)](indices/crates_alphabetical.md)
 - [Crates (by Category)](indices/crates_by_category.md)
 
-# Appendices
+## Appendices
 
 - [Privacy](appendices/privacy.md)
 - [Contributing](appendices/contributing/index.md)

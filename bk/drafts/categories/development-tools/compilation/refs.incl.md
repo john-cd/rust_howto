@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~compilation~build-time]: reduce_compilation_duration.md#build-time
 [ex~compilation~bacon]: building.md#bacon

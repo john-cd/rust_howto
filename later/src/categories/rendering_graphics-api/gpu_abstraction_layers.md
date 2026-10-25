@@ -41,7 +41,6 @@ For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the essen
 - Texture Handling: [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} provides ways to create and manage textures.
 - While primarily a low-level, cross-platform GPU API, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is capable of rasterization and can be used to draw primitives. It doesn't provide high-level drawing functions directly, but it's the foundation upon which many higher-level graphics libraries are built. It's excellent for performance and control.
 - Compute Shaders: You write compute shaders in WGSL and then use the [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} API to dispatch them.
-
 - Debugging: WebGPU has built-in debugging capabilities that can be accessed through browser developer tools (if you're targeting the web) or through [debugging][p~debugging] tools specific to your platform (if you're targeting native).
 
 ```rust,editable
@@ -51,7 +50,6 @@ For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the essen
 ### Related Topics {#related-topics .skip}
 
 - `web-sys`: Web bindings, used for WebGPU in the browser.
-
 - [[graphics | Graphics]].
 - [[mathematics | Mathematics]].
 - [[shaders | Shaders]].
@@ -60,7 +58,7 @@ For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the essen
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[webgpu: write](https://github.com/john-cd/rust_howto/issues/375)
-review [`rust-gpu` Ecosystem][rust-gpu~ecosystem~website]
-review in depth.
+  [webgpu: write](https://github.com/john-cd/rust_howto/issues/375)
+  review [`rust-gpu` Ecosystem][rust-gpu~ecosystem~website]
+  review in depth.
 </div>

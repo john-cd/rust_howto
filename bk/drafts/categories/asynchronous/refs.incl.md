@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [async-std~discontinued]: https://github.com/async-rs/async-std/releases
 [ex~asynchronous~async-runtimes]: async.md#async-runtimes

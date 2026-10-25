@@ -39,8 +39,8 @@ For [[compression | compression]], use:
 - `snap` for Snappy compression.
 - `brotli` for Brotli compression.
 
-
 See [[compression | Compression]].
+
 ### Data Structures
 
 For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]↗, [`HashMap`][c~std::collections::HashMap~docs]↗, etc.), you will use [`std::collections`][c~std::collections~docs]↗. You may also consider:
@@ -57,8 +57,8 @@ Worth a mention: `fst` provides fast, memory-efficient, immutable set and map da
 
 See [[vector | vector]] [[hashmap | hash maps]], [[maps | other maps]], [[binaryheap | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
 
-
 See [[data-structures | Data Structures]] and [[concurrent_data_structures | Concurrent Data Structures]].
+
 ### Recursive Algorithms
 
 - `stacker` is a stack growth library useful when implementing deeply recursive algorithms that may accidentally blow the stack.
@@ -70,7 +70,6 @@ For small-scale tasks, like filtering a list of items in memory, reach first for
 - `slice::binary_search*` for slices and vectors,
 - `std::iter::Iterator::find` for iterators,
 - `str::find`, `str::rfind` for strings.
-
 - `argminmax` provides efficient argmin & argmax (in 1 function) with SIMD for floats and integers.
 - `bytecount` count occurrences of a given byte, or the number of UTF-8 code points, in a byte slice, fast.
 
@@ -94,7 +93,6 @@ See [[cryptography | Cryptography]], [[cryptography_utilities | Cryptography Uti
 ### Data Processing
 
 See [[data-processing | Data Processing]].
-
 
 ### Numerical and Mathematical Algorithms
 
@@ -123,7 +121,6 @@ For [[mathematics | Mathematics]], use the following crates for general numerica
 ### Science
 
 See [[science | Science]], [[_machine_learning | Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], and [[simulation | Simulation]].
-
 
 ## References
 

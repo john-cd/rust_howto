@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~command-line-interface~ansiterm]: ansi_terminal.md#ansiterm
 [ex~command-line-interface~anstream]: ansi_terminal.md#anstream

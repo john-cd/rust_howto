@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~scripting~external-process-management]: task_automation.md#external-process-management
 [ex~scripting~interact-with-shells]: task_automation.md#interact-with-shells

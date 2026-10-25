@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~wasm~gloo-net]: leptos.md#gloo-net
 [ex~wasm~gloo-storage]: leptos.md#gloo-storage

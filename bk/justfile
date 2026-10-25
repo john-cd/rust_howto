@@ -91,7 +91,7 @@ mdfmt-check path:
 
 # Lint book, draft, and future Markdown with the existing markdownlint rules
 lint-md:
-  rumdl check --config .markdownlint.yaml --deny-config-warnings --no-cache src drafts ../later/src
+  rumdl check --config .markdownlint.yaml --deny-config-warnings --no-cache --exclude '**/refs/dependency-refs.md' src drafts ../later/src
 
 # Alias for book serve
 s:

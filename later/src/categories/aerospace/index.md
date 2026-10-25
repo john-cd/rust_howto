@@ -28,7 +28,6 @@ See [[aerospace_space-protocols | Space Protocols]].
 
 See [[aerospace_unmanned-aerial-vehicles | Unmanned Aerial Vehicles]].
 
-
 ## Related Topics
 
 ### Code Verification

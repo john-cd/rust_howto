@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~multimedia_images~gpu_accelerated_image_processing]: images.md#gpu_accelerated_image_processing
 [ex~multimedia_images~image_loading_and_saving]: images.md#image_loading_and_saving

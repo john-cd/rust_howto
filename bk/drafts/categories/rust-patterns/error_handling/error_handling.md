@@ -169,4 +169,5 @@ review [![Rust by example - error][book~rust-by-example~error~badge]][book~rust-
 [`std::io::Error`][c~std::io::Error~docs]↗{{hi:std::io::Error}} defined type implementing the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
 
 - [`human-panic`][c~human-panic~repo]↗: Panic messages for humans.
+
 </div>

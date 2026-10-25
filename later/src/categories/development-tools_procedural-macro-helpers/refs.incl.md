@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~development-tools_procedural-macro-helpers~cargo-expand]: macro_tools.md#cargo-expand
 [ex~development-tools_procedural-macro-helpers~trybuild]: macro_tools.md#trybuild

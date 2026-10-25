@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [c~yaml_serde~docs]: https://docs.rs/yaml_serde/latest/yaml_serde/
 [c~yaml_serde~docs~badge]: https://img.shields.io/crates/v/yaml_serde?label=yaml_serde

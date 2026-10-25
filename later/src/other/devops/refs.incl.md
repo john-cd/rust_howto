@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [actions-checkout~repo]: https://github.com/actions/checkout
 [ex~devops~cargo-deb]: release_automation.md#cargo-deb
@@ -53,3 +54,10 @@
 [cargo-semver-checks~repo]: https://github.com/obi1kenobi/cargo-semver-checks
 [crates.io~trusted-publishing~docs]: https://crates.io/docs/trusted-publishing
 [release-plz~quickstart]: https://release-plz.dev/docs/github/quickstart
+[prek~repo]: https://github.com/j178/prek
+[lefthook~repo]: https://github.com/evilmartians/lefthook
+[rusty-hook~repo]: https://github.com/swellaby/rusty-hook
+[git2-rs~repo]: https://github.com/rust-lang/git2-rs
+[gitoxide~repo]: https://github.com/GitoxideLabs/gitoxide
+[delta~repo]: https://github.com/dandavison/delta
+[gitui~repo]: https://github.com/gitui-org/gitui

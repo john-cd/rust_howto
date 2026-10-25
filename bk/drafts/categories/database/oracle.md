@@ -62,16 +62,20 @@ If the native Oracle client cannot be loaded, the Oracle Instant Client is missi
 
 To resolve this on Linux:
 
-1.  **Install dependencies** (package names differ by distribution):
-    ```bash
-    sudo apt-get install libaio1
-    ```
-2.  **Download and extract** the Oracle Instant Client Basic and SDK packages into the same directory.
-3.  **Set `LD_LIBRARY_PATH`**:
-    ```bash
-    export LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH
-    ```
-4.  Alternatively, configure the system-wide library path by adding a file to `/etc/ld.so.conf.d/` and running `sudo ldconfig`.
+1. **Install dependencies** (package names differ by distribution):
+
+   ```bash
+   sudo apt-get install libaio1
+   ```
+
+2. **Download and extract** the Oracle Instant Client Basic and SDK packages into the same directory.
+3. **Set `LD_LIBRARY_PATH`**:
+
+   ```bash
+   export LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH
+   ```
+
+4. Alternatively, configure the system-wide library path by adding a file to `/etc/ld.so.conf.d/` and running `sudo ldconfig`.
 
 ## Related Topics {#related-topics .skip}
 

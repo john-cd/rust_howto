@@ -56,6 +56,7 @@ This is a more advanced technique where you provide the same input to two differ
 A [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for fuzzing with [`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}}. It is the most integrated tool for Rust fuzzing.
 
 To get started:
+
 1. Install: `cargo install cargo-fuzz`
 2. Initialize: `cargo fuzz init`
 3. Add your logic to `fuzz/fuzz_targets/target1.rs`

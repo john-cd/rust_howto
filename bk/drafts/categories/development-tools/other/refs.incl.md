@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~other~binary-minimizer]: other.md#binary-minimizer
 [ex~other~code-generators]: other.md#code-generators

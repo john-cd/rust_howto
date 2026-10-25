@@ -49,7 +49,6 @@ While Axum's official examples do a fantastic job of demonstrating individual fe
 - **Swagger UI docs** powered by `utoipa-swagger-ui` (Authorize, try out endpoints in-browser),
 - **Database seeding** scripts to spin up your schema & seed data,
 - **Unit & integration tests** out of the box,
-
 - Example on how to [implement OpenTelemetry for Axum][implement-OpenTelemetry-for-Axum~repo]↗.
 - Database migrations: review [axum-rest-api-sample][axum-rest-api-sample~repo]↗.
 

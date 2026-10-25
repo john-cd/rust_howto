@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~rendering_graphics-api~ash]: vulkan.md#ash
 [ex~rendering_graphics-api~cubecl]: shaders.md#cubecl

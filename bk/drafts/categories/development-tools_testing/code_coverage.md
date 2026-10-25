@@ -51,7 +51,7 @@ cargo tarpaulin --workspace --out Html
 
 ## Read an LCOV Report with `lcov` {#lcov}
 
-[![lcov][c~lcov~docs~badge]][c~lcov~docs]{{hi:lcov}} [![lcov~crates.io][c~lcov~crates.io~badge]][c~lcov~crates.io] [![lcov~repo][c~lcov~repo~badge]][c~lcov~repo] [![lcov~lib.rs][c~lcov~lib.rs~badge]][c~lcov~lib.rs]  [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]
+[![lcov][c~lcov~docs~badge]][c~lcov~docs]{{hi:lcov}} [![lcov~crates.io][c~lcov~crates.io~badge]][c~lcov~crates.io] [![lcov~repo][c~lcov~repo~badge]][c~lcov~repo] [![lcov~lib.rs][c~lcov~lib.rs~badge]][c~lcov~lib.rs] [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]
 
 Coverage tools such as [`cargo llvm-cov`][cargo-llvm-cov~repo] and grcov write LCOV files. [`lcov::Reader`][c~lcov~docs]↗{{hi:lcov}} streams the records of a report (`SF` source file, `LF` lines found, `LH` lines hit, `end_of_record`). The example computes line coverage per file and fails if a file is below a threshold, which is a simple coverage gate for CI.
 
@@ -70,5 +70,5 @@ Coverage tools such as [`cargo llvm-cov`][cargo-llvm-cov~repo] and grcov write L
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1176)
+  [write](https://github.com/john-cd/rust_howto/issues/1176)
 </div>

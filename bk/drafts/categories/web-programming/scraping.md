@@ -34,7 +34,7 @@ The checker makes requests sequentially with a finite per-request timeout, so a 
 
 Pull a MediaWiki source page using [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} and find internal and external links with [`regex::Regex::captures_iter`][c~regex::Regex::captures_iter~docs]↗{{hi:regex::Regex::captures_iter}}. This regular expression demonstrates a small subset of wikitext link syntax; it is not a general HTML link extractor. Using [`std::borrow::Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} avoids allocating strings for every captured link.
 
-MediaWiki link syntax is described [here][mediawiki~link-syntax]↗.
+MediaWiki link syntax is described in the [MediaWiki links guide][mediawiki~link-syntax]↗.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/scraping/unique.rs:example}}
@@ -51,5 +51,5 @@ HTML parsing does not execute page JavaScript. For pages that need browser rende
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-This review replaces the older `select` API with `scraper`, fixes base URL resolution and HTTP status handling, and adds deterministic local HTML tests. Browser automation alternatives are visible for sites that depend on JavaScript.
+  This review replaces the older `select` API with `scraper`, fixes base URL resolution and HTTP status handling, and adds deterministic local HTML tests. Browser automation alternatives are visible for sites that depend on JavaScript.
 </div>

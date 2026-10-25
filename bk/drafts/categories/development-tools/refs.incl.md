@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [p~apis]: ../web-programming_http-client/apis.md
 [p~attributes]: ../../language/attributes.md

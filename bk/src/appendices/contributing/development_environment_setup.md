@@ -103,7 +103,7 @@ Pass a path under `src`, `drafts`, or `../later/src` to format or check that fil
 
 ## Lint Markdown {#lint-book-markdown}
 
-Install [`rumdl`][rumdl~repo] version 0.3.0 with `cargo install rumdl --version 0.3.0 --locked`. From `bk/`, run `just lint-md` to lint `src`, `drafts`, and `../later/src` on Windows, Linux, or macOS. This check keeps markdownlint installed and applies its rule choices from `.markdownlint.yaml` to all three paths; the config is passed explicitly because `later/src` is outside the `bk/` directory tree.
+Install [`rumdl`][rumdl~repo] version 0.3.0 with `cargo install rumdl --version 0.3.0 --locked`. From `bk/`, run `just lint-md` to lint `src`, `drafts`, and `../later/src` on Windows, Linux, or macOS. This check keeps markdownlint installed and applies its rule choices from `.markdownlint.yaml` to all three paths; the config is passed explicitly because `later/src` is outside the `bk/` directory tree. The generated `src/refs/dependency-refs.md` fragment is excluded because its intentional blank line between each reference triggers MD012 thousands of times; `just book refdefs-check` verifies that generated file instead. Include-only `refs.incl.md` fragments locally disable MD057 because their relative links are resolved from the pages that include them.
 
 The Markdownlint MD040 `language_only: false` setting is omitted because it is markdownlint's default and rumdl's compatibility loader does not support that redundant option.
 

@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [c~nix::sys::signal::killpg~docs]: https://docs.rs/nix/latest/nix/sys/signal/fn.killpg.html
 [c~tokio::signal::ctrl_c~docs]: https://docs.rs/tokio/latest/tokio/signal/fn.ctrl_c.html

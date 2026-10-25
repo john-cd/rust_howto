@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~science_robotics~astar]: artificial_intelligence.md#astar
 [ex~science_robotics~bonsai-bt]: artificial_intelligence.md#bonsai-bt

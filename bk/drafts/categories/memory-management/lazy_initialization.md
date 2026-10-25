@@ -106,7 +106,6 @@ This legacy example uses `lazy_static!` to define a global map initialized at fi
 - [[concurrency | Concurrency]].
 - [`std::sync::Once`][c~std::sync::Once~docs]↗.
 
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

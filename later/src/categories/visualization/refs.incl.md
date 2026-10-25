@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~visualization~graph-data]: visualization.md#graph-data
 [ex~visualization~plotters]: visualization.md#plotters

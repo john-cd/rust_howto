@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~rendering~ab_glyph]: text_rendering.md#ab_glyph
 [ex~rendering~applications]: 2d_renderers.md#applications

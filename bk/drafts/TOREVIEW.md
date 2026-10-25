@@ -60,7 +60,6 @@ A library for graceful shutdown with no downtime.
 
 A system for graceful upgrades: it's a fork+exec mechanism with a Linux pipe for passing data between the original process and the "upgraded" process. It's designed to work well with `systemd` for zero-downtime upgrades. In production I use it alongside systemd's socket activation, but it should be tweakable to work with alternatives. It mostly follows systemd conventions, so it can be dropped into a typical service setup without too much fuss.
 
-
 ## Example Code {#example-code .skip}
 
 - [`rust-shed`][rust-shed~repo]↗: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).

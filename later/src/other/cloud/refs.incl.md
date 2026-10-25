@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~cloud~aws-sdk-rust]: aws.md#aws-sdk-rust
 [ex~cloud~aws-shared-config]: aws.md#aws-shared-config

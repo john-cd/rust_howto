@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~web-programming_http-client~async]: requests.md#async
 [ex~web-programming_http-client~check-if-an-api-resource-exists]: apis.md#check-if-an-api-resource-exists

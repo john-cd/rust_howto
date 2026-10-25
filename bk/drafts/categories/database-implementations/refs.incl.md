@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~database-implementations~meilisearch]: rust_search_engines.md#meilisearch
 [ex~database-implementations~sled]: databases.md#sled

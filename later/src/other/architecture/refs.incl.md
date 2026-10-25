@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~architecture~actor-model]: common_architectures.md#actor-model
 [ex~architecture~choose-a-project-structure]: software_architecture_process.md#system-context-and-boundaries

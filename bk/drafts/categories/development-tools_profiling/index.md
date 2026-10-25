@@ -6,54 +6,54 @@
 
 This section covers profiling tools to identify performance bottlenecks, analyze memory usage, and benchmark your code.
 
-### CPU & System Profiling
+## CPU & System Profiling
 
 Flame graphs are excellent for visualizing CPU usage and identifying hot spots. System profilers like [`perf`][c~perf~docs]↗{{hi:perf}} provide more detailed information.
 
-| Tool | Description |
-|---|---|
-| [`cargo flamegraph`][c~flamegraph~docs]↗{{hi:flamegraph}} | Generates flame graphs from Rust programs. |
-| [`samply`][c~samply~docs]↗{{hi:samply}} | A sampling profiler for macOS and Linux. It records a profile and opens it in a web-based visualizer. |
-| [`perf`][c~perf~docs]↗{{hi:perf}} | A powerful system profiler for Linux. |
-| [`dtrace`][c~dtrace~docs]↗{{hi:dtrace}} | A system profiler for macOS and BSD. |
-| [`VTune`][vtune-profiler~website]↗{{hi:VTune}} | A commercial performance profiler from Intel. |
+| Tool                                                      | Description                                                                                           |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [`cargo flamegraph`][c~flamegraph~docs]↗{{hi:flamegraph}} | Generates flame graphs from Rust programs.                                                            |
+| [`samply`][c~samply~docs]↗{{hi:samply}}                   | A sampling profiler for macOS and Linux. It records a profile and opens it in a web-based visualizer. |
+| [`perf`][c~perf~docs]↗{{hi:perf}}                         | A powerful system profiler for Linux.                                                                 |
+| [`dtrace`][c~dtrace~docs]↗{{hi:dtrace}}                   | A system profiler for macOS and BSD.                                                                  |
+| [`VTune`][vtune-profiler~website]↗{{hi:VTune}}            | A commercial performance profiler from Intel.                                                         |
 
 ### Instrumentation Profiling
 
 Instrumentation profilers record the scopes that you mark in the code, which shows where each frame or request spends its time. See [Instrumentation Profiling](instrumentation_profiling.md).
 
-| Tool | Description |
-|---|---|
+| Tool                                             | Description                                                                     |
+| ------------------------------------------------ | ------------------------------------------------------------------------------- |
 | [`profiling`][c~profiling~docs]↗{{hi:profiling}} | A facade over several instrumentation profilers, selected with a Cargo feature. |
-| [`puffin`][c~puffin~docs]↗{{hi:puffin}} | Records scopes frame by frame; `puffin_http` serves them to `puffin_viewer`. |
+| [`puffin`][c~puffin~docs]↗{{hi:puffin}}          | Records scopes frame by frame; `puffin_http` serves them to `puffin_viewer`.    |
 
 ### Benchmarking
 
 Benchmarking helps measure the impact of code changes and ensure performance stability.
 
-| Tool | Description |
-|---|---|
-| [`cargo bench`][book~cargo~cargo-bench]↗{{hi:cargo bench}} | Built-in tool for writing benchmarks directly in your Rust code. |
-| [`criterion`][c~criterion~docs]↗{{hi:criterion}} | A statistically accurate benchmarking tool for Rust. |
-| [`divan`][c~divan~docs]↗{{hi:divan}} | A simple yet powerful benchmarking library with allocation profiling. |
-| [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}} | A command-line benchmarking tool for comparing compiled binaries. |
+| Tool                                                       | Description                                                           |
+| ---------------------------------------------------------- | --------------------------------------------------------------------- |
+| [`cargo bench`][book~cargo~cargo-bench]↗{{hi:cargo bench}} | Built-in tool for writing benchmarks directly in your Rust code.      |
+| [`criterion`][c~criterion~docs]↗{{hi:criterion}}           | A statistically accurate benchmarking tool for Rust.                  |
+| [`divan`][c~divan~docs]↗{{hi:divan}}                       | A simple yet powerful benchmarking library with allocation profiling. |
+| [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}}           | A command-line benchmarking tool for comparing compiled binaries.     |
 
 ### Memory Analysis
 
 Memory profilers help find memory leaks and excessive allocations.
 
-| Tool | Description |
-|---|---|
-| [`dhat`][c~dhat~docs]↗{{hi:dhat}} | A library for heap profiling and ad-hoc profiling. |
-| [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} | A powerful tool for memory profiling (with `massif`) and leak detection (with `memcheck`). |
-| [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}} | A heap profiler that tracks memory allocations. |
+| Tool                                             | Description                                                                                |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| [`dhat`][c~dhat~docs]↗{{hi:dhat}}                | A library for heap profiling and ad-hoc profiling.                                         |
+| [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}}    | A powerful tool for memory profiling (with `massif`) and leak detection (with `memcheck`). |
+| [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}} | A heap profiler that tracks memory allocations.                                            |
 
 ### In-Code Profiling & Tracing
 
-| Tool | Description |
-|---|---|
-| [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} | A simple crate for measuring the execution time of code blocks. |
-| [`tracing`][c~tracing~docs]↗{{hi:tracing}} | Instruments code with spans and events to understand program flow. |
+| Tool                                                      | Description                                                        |
+| --------------------------------------------------------- | ------------------------------------------------------------------ |
+| [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} | A simple crate for measuring the execution time of code blocks.    |
+| [`tracing`][c~tracing~docs]↗{{hi:tracing}}                | Instruments code with spans and events to understand program flow. |
 
 ## Code Examples
 
@@ -77,5 +77,5 @@ Memory profilers help find memory leaks and excessive allocations.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand / review](https://github.com/john-cd/rust_howto/issues/337)
+  [expand / review](https://github.com/john-cd/rust_howto/issues/337)
 </div>

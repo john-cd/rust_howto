@@ -9,7 +9,6 @@
 - send a finite number of messages to other Actors;
 - create a finite number of new Actors;
 - designate the behavior to be used for the next message it receives."
-
 - Carl Hewitt 1973.
 
 An actor is a lightweight, independent unit of computation that encapsulates state and behavior. Actors communicate with each other asynchronously by exchanging messages, which are placed in the recipient's mailbox (a queue). An actor processes messages sequentially, one at a time, from its mailbox. This message-passing paradigm simplifies concurrent programming by avoiding shared mutable state and complex locking mechanisms, enabling actors to run concurrently and potentially be distributed across multiple machines, making them well-suited for building scalable and resilient systems.
@@ -42,7 +41,7 @@ You can build an actor from a Tokio task and channels without adopting an actor 
 Frameworks such as [`actix`][c~actix~docs], [`ractor`][c~ractor~docs], and `kameo` provide higher-level actor features. Plain Tokio channels can be enough when an application only needs an owned task, a mailbox, and request/reply messages.
 
 <div class="hidden">
-This section adds the plain-Tokio example requested by issue #1011. It replaces the earlier fire-and-forget thread example with an actor that owns mutable state, supports cloned handles, returns each updated value through a one-use reply channel, and shuts down when all handles are dropped.
+  This section adds the plain-Tokio example requested by issue #1011. It replaces the earlier fire-and-forget thread example with an actor that owns mutable state, supports cloned handles, returns each updated value through a one-use reply channel, and shuts down when all handles are dropped.
 </div>
 
 ## `stakker` {#stakker}

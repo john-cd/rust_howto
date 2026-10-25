@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~cross-platform~develop-across-platforms]: crux.md#develop-across-platforms
 [dioxus-platform-support]: https://dioxuslabs.com/learn/0.7/guides/platforms/

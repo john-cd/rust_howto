@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~computer-vision~opencv]: opencv.md#opencv
 [p~cross-platform]: # "../../other/cross-platform/index.md"

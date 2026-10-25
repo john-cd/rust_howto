@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [c~bytesize~docs]: https://docs.rs/bytesize
 [c~humansize~docs]: https://docs.rs/humansize

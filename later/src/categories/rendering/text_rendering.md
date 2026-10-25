@@ -39,7 +39,6 @@ A simple [`#![no_std]`][book~rust-reference~no_std]{{hi:no_std}} font parser and
 ## Related Topics {#related-topics .skip}
 
 - [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: SDL2 bindings for Rust.
-
 - [Are we Game yet? Text Rendering][are-we-game-yet?-text-rendering~website]↗.
 - [[text_layout | Text Layout]].
 
@@ -47,5 +46,5 @@ A simple [`#![no_std]`][book~rust-reference~no_std]{{hi:no_std}} font parser and
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write / decide what to cover](https://github.com/john-cd/rust_howto/issues/1212)
+  [write / decide what to cover](https://github.com/john-cd/rust_howto/issues/1212)
 </div>

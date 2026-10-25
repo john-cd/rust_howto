@@ -41,7 +41,6 @@
 
 - [Compilers](categories/compilers/index.md)
   - [Tokenizing Input with Logos](categories/compilers/tokenization.md)
-  - [Compilation duration reduction](categories/development-tools/compilation/reduce_compilation_duration.md)
   - [Incremental computation](categories/compilers/incremental_computation.md)
 
 - [Computer vision](categories/computer-vision/index.md)

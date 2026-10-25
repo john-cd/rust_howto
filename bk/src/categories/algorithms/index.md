@@ -70,7 +70,6 @@ For small-scale tasks, like filtering a list of items in memory, reach first for
 - `slice::binary_search*` for slices and vectors,
 - `std::iter::Iterator::find` for iterators,
 - `str::find`, `str::rfind` for strings.
-
 - `argminmax` provides efficient argmin & argmax (in 1 function) with SIMD for floats and integers.
 - `bytecount` counts occurrences of a given byte or UTF-8 code points in a byte slice quickly.
 

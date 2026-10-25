@@ -16,19 +16,23 @@ Hashes are widely used in various applications such as:
 Depending on your specific use case, use the following crates for general-purpose hashing, fast non-cryptographic hashing, DoS-resistant hashing, and cryptographic hashing:
 
 **Cryptographic Hashing:**
+
 - `sha2` for standard cryptographic hashing.
 - `blake3` for fast, general-purpose cryptographic hashing.
 
 **Fast, Non-Cryptographic Hashing:**
+
 - `rustc-hash` for fast, non-cryptographic hashing.
 - `murmur3` is a non-cryptographic hash function suitable for general hash-based lookup.
 - `fnv` is the Fowler–Noll–Vo hash function that is more efficient for smaller hash keys.
 
 **DoS-Resistant Hashing for HashMaps:**
+
 - `ahash` for use as a DoS-resistant hash function in in-memory hashmaps.
 - `hashbrown` is a Rust port of Google's high-performance SwissTable hash map, adapted to make it a drop-in replacement for Rust's standard `HashMap` and `HashSet` types.
 
 **Checksums:**
+
 - `crc` or `crc32fast` for CRC checksums.
 
 [RustCrypto Hashes](https://github.com/RustCrypto/hashes#rustcrypto-hashes)

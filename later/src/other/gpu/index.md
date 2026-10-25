@@ -37,7 +37,6 @@ decide what to cover.
 
 - [`rust-gpu`][rust-gpu~repo]↗: Making Rust a first-class language and ecosystem for GPU shaders.
 - [`wgpu-template`][wgpu-template~repo]↗: A template repository to get started with WGPU and Winit.
-
 - [`cubecl`][c~cubecl~repo]↗: Multi-platform high-performance compute language extension for Rust.
 
 </div>

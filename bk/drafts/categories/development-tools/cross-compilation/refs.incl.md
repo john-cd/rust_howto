@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [ex~cross-compilation~cross-compilation]: cross_compilation.md#cross-compilation
 [ex~cross-compilation~target-and-toolchain]: cross_compilation.md#target-and-toolchain

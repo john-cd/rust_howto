@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+<!-- markdownlint-disable MD057 -->
 
 [p~algorithms]: ../../../src/categories/algorithms/index.md
 [p~gpu]: # "../../other/gpu/gpu.md"
