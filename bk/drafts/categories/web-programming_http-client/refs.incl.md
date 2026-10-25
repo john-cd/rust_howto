@@ -15,6 +15,7 @@
 [ex~web-programming_http-client~rate-limit]: rate_limiting_and_retries.md#rate-limit
 [ex~web-programming_http-client~reqwest]: http_clients.md#reqwest
 [ex~web-programming_http-client~retry]: rate_limiting_and_retries.md#retry
+[ex~web-programming_http-client~retry-after]: rate_limiting_and_retries.md#retry-after
 [ex~web-programming_http-client~ureq]: http_clients.md#ureq
 [p~asynchronous]: ../asynchronous/index.md
 [p~building]: ../development-tools_cargo-plugins/building.md

@@ -71,9 +71,11 @@ tower-sessions = { version = "0.14.0", features = ["memory-store"] }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 utoipa = { version = "6.0.0", features = ["axum_extras"] }
+utoipa-swagger-ui = { version = "10.0.2", features = ["axum", "vendored"] }
 
 [build-dependencies]
 protox = "0.10.0" # Compile .proto files without launching a protoc executable.
+protoc-bin-vendored = "3.3.0" # A prebuilt protoc for platforms without one installed.
 tonic-build = "0.14.6"
 tonic-prost-build = "0.14.6"
 

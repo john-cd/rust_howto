@@ -3098,6 +3098,15 @@
 [utoipa-github]: https://github.com/juhaku/utoipa
 
 
+[utoipa-swagger-ui]: https://docs.rs/utoipa-swagger-ui
+
+
+[utoipa-swagger-ui-crate]: https://crates.io/crates/utoipa-swagger-ui
+
+
+[utoipa-swagger-ui-github]: https://github.com/juhaku/utoipa
+
+
 [uuid]: https://docs.rs/uuid
 
 

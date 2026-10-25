@@ -69,22 +69,10 @@ The test sends a hand-framed gRPC-Web request (a five-byte length prefix followe
 - **A prebuilt `protoc`.** [`protoc-bin-vendored`][c~protoc-bin-vendored~docs]↗{{hi:protoc-bin-vendored}} ships `protoc` binaries for common platforms. Point `PROTOC` at `protoc_bin_vendored::protoc_bin_path()` before compiling. It is fast to build, but it downloads binaries with the crate.
 - **A `protoc` built from source.** [`protobuf-src`][c~protobuf-src~docs]↗{{hi:protobuf-src}} compiles `protoc` with your C++ toolchain: slow, but no prebuilt binaries are involved.
 
-Whichever you choose, honour a `PROTOC` environment variable set by the user, and tell Cargo when to rerun the script with `cargo:rerun-if-changed=proto/helloworld.proto` (and `cargo:rerun-if-env-changed=PROTOC`). A sketch of the vendored variant:
+Whichever you choose, honour a `PROTOC` environment variable set by the user, and tell Cargo when to rerun the script with `cargo:rerun-if-changed=proto/helloworld.proto` (and `cargo:rerun-if-env-changed=PROTOC`). This book's `build.rs` also compiles `proto/echo.proto` with the vendored variant, so the code below is built and tested with the book. `grpc/echo.rs` includes the generated code and checks that the message, client, and server types exist:
 
-```rust,ignore
-// build.rs
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    println!("cargo:rerun-if-changed=proto/helloworld.proto");
-    println!("cargo:rerun-if-env-changed=PROTOC");
-    if std::env::var_os("PROTOC").is_none() {
-        // SAFETY: build scripts are single-threaded at this point.
-        unsafe { std::env::set_var("PROTOC", protoc_bin_vendored::protoc_bin_path()?) };
-    }
-    tonic_prost_build::configure()
-        .build_server(true)
-        .compile_protos(&["proto/helloworld.proto"], &["proto"])?;
-    Ok(())
-}
+```rust,editable,noplayground
+{{#include ../../../crates/cats/web_programming_http_server/build.rs:vendored_protoc}}
 ```
 
 ## Related Topics {#related-topics .skip}

@@ -35,9 +35,19 @@ The example treats `429 Too Many Requests` and `5xx` responses as transient and 
 ### Retry Safely
 
 - **Retry only idempotent calls.** `GET`, `PUT`, and `DELETE` can be repeated; a `POST` that creates something may be applied twice unless the API supports an idempotency key.
-- **Honour `Retry-After`.** A `429` or `503` response may carry a `Retry-After` header, in seconds or as a date. Prefer it over the computed delay: read the header from the response, and sleep for that long before the next attempt.
+- **Honour `Retry-After`.** See the next section.
 - **Combine both tools.** Put the limiter inside the function being retried, so that retries also respect the quota.
 - **Cap everything.** Bound the number of attempts and the total time, and surface the last error to the caller.
+
+## Honour `Retry-After` {#retry-after}
+
+[![backon][c~backon~docs~badge]][c~backon~docs]{{hi:backon}} [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:web-programming::http-client}}
+
+A `429` or `503` response may carry a `Retry-After` header, in seconds or as an HTTP date. The server knows better than the client when it will be ready, so prefer the header over the computed delay. The example keeps the requested delay in a custom error type, and `backon`'s `adjust` replaces the computed delay with it (capped at a minute, so a hostile or buggy server cannot park the client). `when` limits the retries to throttling errors, so a `404` fails at once. The test checks that the client really waits for the second the mock server asks for. The example parses only the seconds form; parse the date form with `httpdate` if the API uses it.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/web_programming_http_client/examples/retry_after/main.rs:example}}
+```
 
 ## Related Topics {#related-topics .skip}
 
