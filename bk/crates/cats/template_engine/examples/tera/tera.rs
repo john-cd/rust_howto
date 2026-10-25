@@ -4,43 +4,40 @@
 // ANCHOR: example
 //! Example of using the Tera template engine.
 
-use std::collections::HashMap;
 use std::sync::LazyLock;
 
 use anyhow::bail;
 use serde::Serialize;
 
 /// The templates, which are loaded and configured on first use.
-static TEMPLATES: LazyLock<tera::Result<tera::Tera>> = LazyLock::new(|| {
+static TEMPLATES: LazyLock<tera::TeraResult<tera::Tera>> = LazyLock::new(|| {
     let manifest_dir = env!("CARGO_MANIFEST_DIR").replace('\\', "/");
     let template_glob = format!("{manifest_dir}/examples/tera/templates/*");
-    tera::Tera::new(&template_glob).map(|mut t| {
-        // Configure the Tera template engine.
-        // By default, Tera will auto-escape all content in files ending with
-        // ".html", ".htm" and ".xml".
-        // Change that with `autoescape_on`:
-        // t.autoescape_on(vec![".html"]);
-        // Also add filters here, for example:
-        t.register_filter("underscored", underscored);
-        t
-    })
+    let mut t = tera::Tera::new();
+    t.load_from_glob(&template_glob)?;
+    // Configure the Tera template engine.
+    // By default, Tera will auto-escape all content in files ending with
+    // ".html", ".htm" and ".xml".
+    // Change that with `autoescape_on`:
+    // t.autoescape_on(vec![".html"]);
+    // Also add filters here, for example:
+    t.register_filter("underscored", underscored);
+    Ok(t)
 });
 
 /// Filters are functions with the
-/// `fn(Value, HashMap<String, Value>) -> Result<Value>`
-/// definition, which can be used within templates.
+/// `fn(Value, Kwargs, &State) -> Result` definition (the value may be any
+/// type that can be extracted from a Tera `Value`, such as `&str`), which can
+/// be used within templates.
 ///
 /// The following filter replaces dashes by underscores.
 pub fn underscored(
-    val: &tera::Value,
-    _context: &HashMap<String, tera::Value>,
-) -> tera::Result<tera::Value> {
-    match val {
-        tera::Value::String(s) => Ok(tera::Value::String(s.replace('-', "_"))),
-        _ => Ok(val.to_owned()),
-    }
+    val: &str,
+    _kwargs: tera::Kwargs,
+    _state: &tera::State,
+) -> String {
+    val.replace('-', "_")
 }
-
 /// A simple page struct to be used as context for the template.
 #[derive(Serialize, Debug)]
 struct Page {
@@ -62,7 +59,7 @@ struct CrateBadge {
 /// Renders a template with values from a context and prints the result.
 fn main() -> anyhow::Result<()> {
     // Initialize the Tera template engine.
-    let templ: &tera::Result<tera::Tera> = &TEMPLATES;
+    let templ: &tera::TeraResult<tera::Tera> = &TEMPLATES;
     if let Err(e) = templ {
         bail!("The Tera template engine failed to initialize: {e}");
     }
