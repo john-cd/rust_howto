@@ -2,59 +2,79 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Parse a small XML document token by token with `xmlparser`.
+//! Use `xmlparser` when an application needs low-level tokens and control over
+//! XML processing without building a tree. Prefer `roxmltree` for convenient
+//! read-only tree access or `quick-xml` for higher-level streaming APIs.
 
 use xmlparser::ElementEnd;
 use xmlparser::Token;
 use xmlparser::Tokenizer;
 
-/// Tokenizes an XML string and prints each token.
-fn main() {
-    let xml = r#"<library><book id="b1">Rust</book></library>"#;
+/// Tokenizes a small XML string and returns its element names and attributes.
+fn tokenize(xml: &str) -> anyhow::Result<Vec<String>> {
+    let mut tokens = Vec::new();
 
     for token in Tokenizer::from(xml) {
-        match token {
-            Ok(Token::ElementStart { local, .. }) => {
-                println!("start element: {}", local.as_str());
+        match token? {
+            Token::ElementStart { local, .. } => {
+                tokens.push(format!("start:{}", local.as_str()))
             }
-            Ok(Token::Attribute { local, value, .. }) => {
-                println!("attribute: {}={}", local.as_str(), value.as_str());
+            Token::Attribute { local, value, .. } => {
+                tokens.push(format!(
+                    "attribute:{}={}",
+                    local.as_str(),
+                    value.as_str()
+                ));
             }
-            Ok(Token::Text { text, .. }) => {
-                let trimmed = text.as_str().trim();
-                if !trimmed.is_empty() {
-                    println!("text: {trimmed}");
-                }
-            }
-            Ok(Token::ElementEnd { end, .. }) => match end {
+            Token::ElementEnd { end, .. } => match end {
                 ElementEnd::Close(_, local) => {
-                    println!("end element: {}", local.as_str());
+                    tokens.push(format!("end:{}", local.as_str()))
                 }
-                ElementEnd::Empty => println!("empty element"),
+                ElementEnd::Empty => tokens.push("empty".to_owned()),
                 ElementEnd::Open => {}
             },
-            Err(error) => {
-                eprintln!("parse error: {error}");
-                break;
-            }
             _ => {}
         }
     }
+
+    Ok(tokens)
+}
+
+/// Prints the tokens collected from a small XML document.
+fn main() -> anyhow::Result<()> {
+    let xml = r#"<library><book id="b1">Rust</book></library>"#;
+    for token in tokenize(xml)? {
+        println!("{token}");
+    }
+
+    Ok(())
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example and propagates tokenization errors.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the tokenizer collects element names and attributes.
     #[test]
-    fn test_main() {
-        main();
+    fn xmlparser_collects_element_names_and_attributes() -> anyhow::Result<()> {
+        let tokens = tokenize(r#"<library><book id="b1"/></library>"#)?;
+
+        assert_eq!(
+            tokens,
+            [
+                "start:library",
+                "start:book",
+                "attribute:id=b1",
+                "empty",
+                "end:library"
+            ]
+        );
+        Ok(())
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/1102)

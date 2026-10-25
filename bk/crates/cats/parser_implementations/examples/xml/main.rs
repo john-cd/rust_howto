@@ -58,7 +58,7 @@ fn main() -> anyhow::Result<()> {
                 xml5ever::run()?;
             }
             Commands::Xmlparser => {
-                xmlparser::run();
+                xmlparser::run()?;
             }
         }
     }
