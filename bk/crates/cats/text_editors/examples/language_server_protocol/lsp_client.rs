@@ -201,4 +201,75 @@ mod tests {
     fn test_main() -> anyhow::Result<()> {
         main()
     }
+
+    /// Drives a real `rust-analyzer` over stdio. Run it with
+    /// `cargo test -- --ignored` when `rust-analyzer` is on the `PATH`.
+    #[test]
+    #[ignore = "needs rust-analyzer on the PATH"]
+    fn test_real_rust_analyzer() -> anyhow::Result<()> {
+        use std::io::BufWriter;
+        use std::process::Command;
+        use std::process::Stdio;
+
+        let mut child = Command::new("rust-analyzer")
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::null())
+            .spawn()?;
+        let mut writer = BufWriter::new(
+            child
+                .stdin
+                .take()
+                .ok_or_else(|| anyhow::anyhow!("no stdin"))?,
+        );
+        let mut reader = BufReader::new(
+            child
+                .stdout
+                .take()
+                .ok_or_else(|| anyhow::anyhow!("no stdout"))?,
+        );
+
+        let initialize = Request::new(
+            RequestId::from(1),
+            "initialize".into(),
+            serde_json::json!({ "processId": null, "rootUri": null, "capabilities": {} }),
+        );
+        Message::Request(initialize).write(&mut writer)?;
+        // Skip server-initiated messages until the response arrives.
+        let capabilities = loop {
+            match Message::read(&mut reader)? {
+                Some(Message::Response(r)) if r.id == RequestId::from(1) => {
+                    break r.response_result.map_err(|e| {
+                        anyhow::anyhow!("server error: {}", e.message)
+                    })?;
+                }
+                Some(_) => {}
+                None => anyhow::bail!("server closed the connection"),
+            }
+        };
+        assert!(capabilities["capabilities"].is_object());
+
+        Message::Notification(Notification::new("initialized".into(), ()))
+            .write(&mut writer)?;
+        Message::Request(Request::new(
+            RequestId::from(2),
+            "shutdown".into(),
+            (),
+        ))
+        .write(&mut writer)?;
+        loop {
+            match Message::read(&mut reader)? {
+                Some(Message::Response(r)) if r.id == RequestId::from(2) => {
+                    break;
+                }
+                Some(_) => {}
+                None => anyhow::bail!("server closed the connection"),
+            }
+        }
+        Message::Notification(Notification::new("exit".into(), ()))
+            .write(&mut writer)?;
+        drop(writer);
+        assert!(child.wait()?.success());
+        Ok(())
+    }
 }
