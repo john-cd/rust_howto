@@ -14,6 +14,7 @@ Consider these libraries:
 
 - [`mockall`][c~mockall~docs]↗{{hi:mockall}}: A popular crate for creating mock objects for testing.
 - [`faux`][c~faux~docs]↗{{hi:faux}}: Another mocking library.
+- [`httpmock`][c~httpmock~docs]↗{{hi:httpmock}}: A mock HTTP server for testing clients.
 
 ## Mock with `mockall` {#mocking}
 
@@ -33,6 +34,16 @@ Consider these libraries:
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_testing/examples/mocking/faux.rs:example}}
+```
+
+## Mock an HTTP Server with `httpmock` {#httpmock}
+
+[![httpmock][c~httpmock~docs~badge]][c~httpmock~docs] [![httpmock~crates.io][c~httpmock~crates.io~badge]][c~httpmock~crates.io] [![httpmock~repo][c~httpmock~repo~badge]][c~httpmock~repo]{{hi:httpmock}}{{hi:Mock}}{{hi:Mocking}}{{hi:Testing}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+
+Code that calls a web service can be tested without the network by pointing the client at a mock server on a free local port. [`httpmock`][c~httpmock~docs]↗{{hi:httpmock}} starts the server, lets each test describe the request it expects (`when`) and the response to send back (`then`), and checks that the request was received (`mock.assert()`). Because the client only needs a base URL, the same test works with any HTTP client. Use it for error paths that are hard to trigger on a real service, such as a `503` response. `wiremock` is an async-first alternative, and [`mockito`][c~mockito~docs]↗{{hi:mockito}} is a lighter one.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/examples/test_techniques/http_mock.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}

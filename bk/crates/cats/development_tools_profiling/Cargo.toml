@@ -50,6 +50,11 @@ path = "examples/benchmarking/main.rs"
 test = true
 
 [[example]]
+name = "dhat_assertions"
+path = "examples/dhat_assertions.rs"
+test = true
+
+[[example]]
 name = "profiling_scopes"
 path = "examples/profiling_scopes.rs"
 test = true

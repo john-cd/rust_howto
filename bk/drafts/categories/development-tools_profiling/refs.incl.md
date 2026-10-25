@@ -5,6 +5,7 @@
 [ex~development-tools_profiling~criterion]: benchmarking.md#criterion
 [ex~development-tools_profiling~debugging]: memory_usage_analysis.md#debugging
 [ex~development-tools_profiling~dhat]: memory_usage_analysis.md#dhat
+[ex~development-tools_profiling~dhat-testing]: memory_usage_analysis.md#dhat-testing
 [ex~development-tools_profiling~divan]: benchmarking.md#divan
 [ex~development-tools_profiling~hyperfine]: benchmarking.md#hyperfine
 [ex~development-tools_profiling~leaks]: memory_usage_analysis.md#leaks
