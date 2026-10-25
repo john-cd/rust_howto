@@ -30,8 +30,8 @@ slab = "0.4.12"
 ustr = "1.1.0"
 
 [target.'cfg(not(target_env = "msvc"))'.dependencies]
-tikv-jemalloc-ctl = { version = "0.6.1", features = ["stats", "use_std"] }
-tikv-jemallocator = "0.6.1"
+tikv-jemalloc-ctl = { version = "0.7.0", features = ["stats", "use_std"] }
+tikv-jemallocator = "0.7.0"
 
 [features]
 # Select the global allocator in the `global_allocator` example (at most one).

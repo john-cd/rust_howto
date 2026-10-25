@@ -25,6 +25,7 @@ anyhow = "1.0.104"
 async-compression = { version = "0.4.51", features = ["tokio", "gzip"] }
 
 # Tokio adapter for async ZIP I/O; the example writes stored entries without a codec.
+# Pinned: 0.0.19 deprecates `read::mem::ZipFileReader` (clippy -D warnings); example not yet ported.
 async_zip = { version = "0.0.18", features = ["tokio"] }
 clap = { version = "4.6.7", features = ["derive"] }
 flate2 = "1.1.10"
@@ -32,7 +33,7 @@ futures-lite = "2.6.1"
 tar = "0.4.46"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
 tokio-util = { version = "0.7.20", features = ["compat"] }
-zip = "9.0.5"
+zip = "9.1.0"
 
 [dev-dependencies]
 # Creates automatically cleaned temporary directories and files for the examples.

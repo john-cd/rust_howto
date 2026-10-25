@@ -25,12 +25,12 @@ color-eyre = "0.6.5"
 csv = "1.4.0"
 dyn-clone = "1.0.20"
 either = "1.19.0"
-frunk = "0.4.4"
-frunk_core = "0.4.4"
+frunk = "0.5.0"
+frunk_core = "0.5.0"
 # Use the maintained `imbl` fork instead of upstream `im`.
 imbl = "7.0.2"
 # eyre is outdated, see color-eyre
-itertools = "0.14.0"
+itertools = "0.15.0"
 miette = { version = "7.6.0", features = ["fancy"] }
 pin-project = "1.1.13"
 # pin-project-lite = "0.2.16"

@@ -41,21 +41,21 @@ futures = "0.3.34"
 glob = "0.3.4"
 # JPEG and PNG are the only codecs used by the thumbnail and fractal examples.
 image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
-itertools = "0.14.0"
+itertools = "0.15.0"
 lazy_static = "1.5.1"
 num = "0.4.3"
 num_cpus = "1.17.0"
 papaya = "0.2.5"
-parking_lot = "0.12.5"
-ractor = "0.15.13"
+parking_lot = "0.13.0"
+ractor = "0.16.5"
 rand = { version = "0.10.3", features = ["thread_rng"] }
 rayon = "1.12.0"
 ringbuf = "0.5.3"
-rtrb = "0.3.4"
+rtrb = "0.4.1"
 # Riker actor example in the actors chapter.
 riker = { version = "0.4.2", optional = true }
 # Pure Rust SHA-256 for the parallel file-hashing example, without a native `cc` build.
-sha2 = "0.11"
+sha2 = "0.11.1"
 # Stakker actor example in the actors chapter.
 stakker = { version = "0.2.16", optional = true }
 threadpool = "1.8.1"

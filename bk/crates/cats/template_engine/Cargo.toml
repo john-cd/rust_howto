@@ -21,7 +21,7 @@ autolib = false
 [dependencies]
 anyhow = "1.0.104"
 serde = { version = "1.0.229", features = ["derive"] }
-tera = "1.20.1"
+tera = "1.20.1" # Pinned: 2.x changes the API (Result, Value, Tera::new); examples not yet ported.
 tinytemplate = "1.2.1"
 
 [[example]]

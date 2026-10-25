@@ -27,7 +27,7 @@ data-encoding = "2.11.1"
 fastrand = "2.5.0"
 foldhash = "0.2.0"
 hex-literal = "1.1.0"
-md-5 = "0.10.6"
+md-5 = "0.11.0"
 
 pathfinding = "4.16.0"
 petgraph = "0.8.3"
@@ -37,7 +37,7 @@ ring = "0.17.14"
 sha1 = "0.11.0"
 sha2 = "0.11.1"
 tempfile = "3.27.0"
-xxhash-rust = { version = "0.8.15", features = ["xxh3"] }
+xxhash-rust = { version = "0.8.19", features = ["xxh3"] }
 
 [[example]]
 name = "graph_algorithms"

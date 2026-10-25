@@ -25,15 +25,15 @@ crates_io_api = "0.12.0"
 doc-comment = "0.3.4"
 gix = { version = "0.90.0", default-features = false, features = ["revision", "blob-diff", "sha1"] }
 prettyplease = "0.3.0"
-proc-macro2 = { version = "1", features = ["span-locations"] }
-quote = "1"
+proc-macro2 = { version = "1.0.107", features = ["span-locations"] }
+quote = "1.0.47"
 semver = "1.0.28"
-syn = { version = "3", features = ["full", "visit"] }
-toml_edit = "0.25.17"
+syn = { version = "3.0.9", features = ["full", "visit"] }
+toml_edit = "0.25.17+spec-1.1.0"
 # Local Cargo, metadata, and book-index operations reused from the helper tools.
 tool_lib = { path = "../../../../tools/tool_lib" }
 tracing = "0.1.44"
-tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 wasmparser = "0.262.0"
 wasmprinter = "0.262.0"
 wat = "1.262.0"

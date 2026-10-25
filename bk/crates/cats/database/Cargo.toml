@@ -58,6 +58,7 @@ clap = { version = "4.6.7", features = ["derive"] }
 config = "0.15.27"
 cornucopia = { version = "0.9.0", optional = true }
 # Runtime for executing the generated asynchronous query functions.
+# Pinned: cornucopia_async 0.4 breaks with cornucopia_client_core >0.4.0; keep it in step via the lockfile (cornucopia_client_core = 0.4.0).
 cornucopia_async = { version = "0.4.0", optional = true, default-features = false }
 deadpool = "0.13.1"
 deadpool-postgres = { version = "0.14.2", features = [
