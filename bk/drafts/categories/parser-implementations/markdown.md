@@ -12,6 +12,8 @@
 
 [`pulldown-cmark`][c~pulldown-cmark~docs]↗{{hi:pulldown-cmark}} is a pull parser for CommonMark.
 
+Use its event stream when processing Markdown without retaining a full syntax tree.
+
 ```rust,editable
 {{#include ../../../crates/cats/parser_implementations/examples/markdown/pulldown-cmark.rs:example}}
 ```
@@ -21,6 +23,8 @@
 [![markdown][c~markdown~docs~badge]][c~markdown~docs] [![markdown~crates.io][c~markdown~crates.io~badge]][c~markdown~crates.io] [![markdown~repo][c~markdown~repo~badge]][c~markdown~repo] [![markdown~lib.rs][c~markdown~lib.rs~badge]][c~markdown~lib.rs]{{hi:markdown}}{{hi:CommonMark}}{{hi:markdown}}{{hi:Parse}}{{hi:Render}}{{hi:Tokenize}} [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
 [`markdown`][c~markdown~docs]↗{{hi:markdown}} is a CommonMark compliant markdown parser in Rust with ASTs and extensions.
+
+Choose this crate when an owned abstract syntax tree is useful to later transformations.
 
 ```rust,editable
 {{#include ../../../crates/cats/parser_implementations/examples/markdown/markdown.rs:example}}
@@ -32,17 +36,19 @@
 
 [`comrak`][c~comrak~docs]↗{{hi:comrak}} is a 100% CommonMark-compatible GitHub Flavored Markdown parser and formatter.
 
+Use `comrak` when GitHub Flavored Markdown extensions or rendering and formatting are part of the task.
+
 ```rust,editable
 {{#include ../../../crates/cats/parser_implementations/examples/markdown/comrak.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Parsing Utilities](../parsing/parsing.md) explains how to construct parsers for custom grammars.
+- [Text Processing](../text-processing/index.md) covers Markdown-adjacent string operations.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[markdown: write](https://github.com/john-cd/rust_howto/issues/442)
 </div>
