@@ -15,8 +15,6 @@ Live GitHub snapshot on 2026-10-24: **108 of 300 issues from Lists 1–30 remain
 - [#1699](https://github.com/john-cd/rust_howto/issues/1699) — **P1** — Reconcile seven conflicted PRs against main and the local example changes
 - [#1750](https://github.com/john-cd/rust_howto/issues/1750) — **P1** — Review the dynamic typing chapter
 - [#1740](https://github.com/john-cd/rust_howto/issues/1740) — **P2** — Review remaining published-example dependency pins and upgrade notes
-- [#1742](https://github.com/john-cd/rust_howto/issues/1742) — **P2** — Refactor the Cassandra example entry point and error handling.
-- [#1743](https://github.com/john-cd/rust_howto/issues/1743) — **P2** — Demonstrate database queries using generated Seaography code.
 - [#1727](https://github.com/john-cd/rust_howto/issues/1727) — **P2** — Benchmark container build storage and select persistent cache mounts
 - [#1748](https://github.com/john-cd/rust_howto/issues/1748) — **P2** — Review draft and staging crate inventory for book coverage
 
