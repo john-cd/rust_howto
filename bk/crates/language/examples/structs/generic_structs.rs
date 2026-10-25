@@ -49,18 +49,22 @@ fn main() {
     // Instantiate `Point` with integer coordinates (type `i32`).
     let integer_point = Point { x: 5, y: 10 };
 
-    // Instantiate `Point` with floating-point coordinates (type `f64`).
-    let float_point = Point { x: 1.0, y: 4.0 };
+    // Instantiate `Point` with floating-point coordinates (type `f32`).
+    let float_point: Point<f32> = Point { x: 1.0, y: 4.0 };
 
     // Rust can often infer the type, but you could also be explicit:
     // let integer_point: Point<i32> = Point { x: 5, y: 10 };
-    // let float_point: Point<f64> = Point { x: 1.0, y: 4.0 };
+    // let float_point: Point<f32> = Point { x: 1.0, y: 4.0 };
 
     println!(
         "Integer point: x = {}, y = {}",
         integer_point.x, integer_point.y
     );
     println!("Float point: x = {}, y = {}", float_point.x, float_point.y);
+    println!(
+        "Distance from origin: {}",
+        float_point.distance_from_origin()
+    );
 
     // This would cause a compile-time error because x and y must be the same
     // type `T`: let wont_compile = Point { x: 5, y: 4.0 };

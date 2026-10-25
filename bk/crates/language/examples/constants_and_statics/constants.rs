@@ -17,7 +17,7 @@ fn main() {
     println!("The length is: {LEN}");
 
     // The above is equivalent to:
-    // println!("The maximum points allowed is: {10usize}");
+    // println!("The maximum points allowed is: {}", 10usize);
 
     // Constants are always immutable.
     // ERROR: LEN += 1;

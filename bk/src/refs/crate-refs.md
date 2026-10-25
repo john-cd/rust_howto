@@ -7854,6 +7854,7 @@
 [c~std::primitive~docs]: https://doc.rust-lang.org/std/primitive
 [c~std::process::Command~docs]: https://doc.rust-lang.org/std/process/struct.Command.html
 [c~std::process::Output~docs]: https://doc.rust-lang.org/std/process/struct.Output.html
+[c~std::process::Termination~docs]: https://doc.rust-lang.org/std/process/trait.Termination.html
 [c~std::process::Stdio::piped~docs]: https://doc.rust-lang.org/std/process/struct.Stdio.html#method.piped
 [c~std::process::Stdio~docs]: https://doc.rust-lang.org/std/process/struct.Stdio.html
 [c~std::process::exit~docs]: https://doc.rust-lang.org/std/process/fn.exit.html

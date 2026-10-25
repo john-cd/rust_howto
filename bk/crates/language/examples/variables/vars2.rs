@@ -3,7 +3,7 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Variables: immutability, mutability, constants and statics.
+//! Variable immutability and mutability.
 
 /// Declares and modifies variables.
 fn main() {
@@ -19,7 +19,7 @@ fn main() {
     // Rust's immutability is deep, not shallow:
     // it applies to the inner fields of a struct, tuple, array, etc.
     let s = MyStruct { flag: true };
-    // s.data = false; // ERROR: cannot assign to `s.data`, as `s` is not
+    // s.flag = false; // ERROR: cannot assign to `s.flag`, as `s` is not
     // declared as mutable.
     println!("s: {s:?}");
     let t = (2, 2);

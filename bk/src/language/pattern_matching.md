@@ -93,21 +93,21 @@ Destructuring in function or closure parameters unpacks complex data types right
 
 The following table summarizes possible patterns, which, of course, can be combined with one another:
 
-| Pattern | Description |
-|---|---|
-| Literals | Literals match exact values like `1`, "hello"... |
-| Ranges | Ranges work for `char` and `integer` types. They match a value within an interval: `1..6` (1 to 5, 6 is excluded) or `1..=5` (1 to 5 inclusive) or `'a'..='z'`. |
-| Variable Bindings | When a pattern matches, it can bind (parts of) the value to new variables. For example, `Some(data)` binds an `Option`'s inner value to the `data` variable. |
-| Destructurings | Destructuring break down structs, enums, and tuples into their components. For example, for a `Point` `struct`, use `Point { x: a, y: b }` to destructure its fields into the `a` and `b` variables. For enums, use e.g. `MyEnum::Variant(a, b)` or `MyEnum::Variant2 { x: a, y: b }`; for tuples, use e.g. `(first, second,)` to retrieve the first and second components of a 2-tuple. |
-| Ignoring Values | `_` ignores a single value without binding. For example, `(first, _)` binds the first component of a tuple only. `_name`, a variable name starting with an underscore, binds a value but the compiler won't warn if it's unused, signaling an intentional non-use. `..` ignores multiple remaining items in a tuple, struct, or slice. For example, `Point3D { x: 0, .. }` matches any `Point3D` with x = 0, regardless of the values of `y` and `z`. |
-| Or Patterns | The character `\|` between subpatterns match if any one of the subpatterns matches. `1 \| 2 \| 3` matches 1, 2, or 3. All patterns in an "or" must bind variables of the same name and type, if they do. |
-| Match Guards (`if` conditions) | Match guards add an additional conditional check to a pattern arm. The pattern must match, and the guard's `if` condition must be true for the arm to be chosen. |
-| `@` Bindings to Subpatterns | `@` binds a variable name to a value while also testing that value against a further pattern. The syntax is `variable_name @ pattern`, e.g., `id_val @ 3..=7`. |
-| `ref` and `ref mut` Bindings | `ref` or `ref mut` create references (`&T` or `&mut T`) to (parts of) the matched value, rather than moving or copying them. This is useful when you want to borrow parts of a value. Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unnecessary when matching on references. |
+| Pattern                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Literals                       | Literal patterns match exact values like `1`, `'a'`, `true`, or `"hello"`.                                                                                                                                                                                                                                                                                                                                                                            |
+| Ranges                         | Range patterns can use integer, character, and floating-point bounds. They include bounded ranges such as `1..6` (1 through 5) and `1..=5` (1 through 5), and open-ended forms such as `5..` or `..=5`.                                                                                                                                                                                                                                               |
+| Variable Bindings              | When a pattern matches, it can bind (parts of) the value to new variables. For example, `Some(data)` binds an `Option`'s inner value to the `data` variable.                                                                                                                                                                                                                                                                                          |
+| Destructurings                 | Destructuring break down structs, enums, and tuples into their components. For example, for a `Point` `struct`, use `Point { x: a, y: b }` to destructure its fields into the `a` and `b` variables. For enums, use e.g. `MyEnum::Variant(a, b)` or `MyEnum::Variant2 { x: a, y: b }`; for tuples, use e.g. `(first, second,)` to retrieve the first and second components of a 2-tuple.                                                              |
+| Ignoring Values                | `_` ignores a single value without binding. For example, `(first, _)` binds the first component of a tuple only. `_name`, a variable name starting with an underscore, binds a value but the compiler won't warn if it's unused, signaling an intentional non-use. `..` ignores multiple remaining items in a tuple, struct, or slice. For example, `Point3D { x: 0, .. }` matches any `Point3D` with x = 0, regardless of the values of `y` and `z`. |
+| Or Patterns                    | The character `\|` between subpatterns match if any one of the subpatterns matches. `1 \| 2 \| 3` matches 1, 2, or 3. All patterns in an "or" must bind variables of the same name and type, if they do.                                                                                                                                                                                                                                              |
+| Match Guards (`if` conditions) | Match guards add an additional conditional check to a pattern arm. The pattern must match, and the guard's `if` condition must be true for the arm to be chosen.                                                                                                                                                                                                                                                                                      |
+| `@` Bindings to Subpatterns    | `@` binds a variable name to a value while also testing that value against a further pattern. The syntax is `variable_name @ pattern`, e.g., `id_val @ 3..=7`.                                                                                                                                                                                                                                                                                        |
+| `ref` and `ref mut` Bindings   | `ref` or `ref mut` create references (`&T` or `&mut T`) to (parts of) the matched value, rather than moving or copying them. This is useful when you want to borrow parts of a value. Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unnecessary when matching on references.                                                                                                                                            |
 
 ### Match against Literals {#match-literals}
 
-You can match against literal values like `1`, "Rust", `true`, `(0, 0)`, `[1, 2]`, or `Some(42)` directly:
+Literal patterns match exact values such as `1`, `"Rust"`, or `true`. A pattern can also combine a literal with a structural pattern; for example, `Some(42)` is an enum variant pattern containing the literal pattern `42`, and `(0, 0)` is a tuple pattern containing two literals.
 
 ```rust,editable
 {{#include ../../crates/language/examples/match/literals.rs:example}}
@@ -115,7 +115,7 @@ You can match against literal values like `1`, "Rust", `true`, `(0, 0)`, `[1, 2]
 
 ### Match against a Range {#match-ranges}
 
-Ranges match a value between two numbers either inclusively (`start..=end`) or exclusively at the upper bound (`start_included..end_not_included`). Ranges work for both `char` and integer types:
+Range patterns match values between bounds, with an exclusive upper bound (`start..end`) or an inclusive upper bound (`start..=end`). They also support open-ended forms such as `5..` and `..=5`, and work with integer, character, and floating-point bounds:
 
 ```rust,editable
 {{#include ../../crates/language/examples/match/ranges.rs:example}}
@@ -209,6 +209,8 @@ Variable binding moves or copies a matched value into the new variable. `ref` (o
 
 Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unnecessary when matching on references.
 
+In the Rust 2024 edition, explicit `ref`, `ref mut`, or `mut` binding modifiers are allowed only while the default binding mode is `move`. Reference patterns (`&` and `&mut`) also need to appear in the fully explicit part of a pattern. Match ergonomics still infer reference bindings when matching through references; see the [Rust 2024 Edition Guide][book~edition-guide~rust-2024~match-ergonomics]↗.
+
 ## References {#references .skip}
 
 - [Pattern Matching][book~rust~pattern-matching]↗{{hi:Pattern matching}}.
@@ -229,4 +231,5 @@ Note that Rust's "match ergonomics" often make explicit `ref` and `ref mut` unne
 - [[rust-patterns | Rust Patterns]].
 
 [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+
 </div>

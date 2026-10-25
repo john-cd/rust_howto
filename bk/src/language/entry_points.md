@@ -17,7 +17,7 @@ The following is the most basic form of a main function:
 
 It is typically found in the `src/main.rs` file of a binary crate project. Note that library crates don't need one.
 
-You can also have the `main` function return a `Result<(), E>` (where `E` is a type that implements the `std::error::Error` trait).
+You can also have `main` return `Result<(), E>`. Because `Result` implements [`Termination`][c~std::process::Termination~docs]↗{{hi:Termination}} when its error type `E` implements `Debug`, `E` does not have to implement `std::error::Error`.
 
 ```rust,editable
 {{#include ../../crates/language/examples/entrypoint/main_fn_with_result.rs:example}}
@@ -31,6 +31,7 @@ use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
    // ...
+   Ok(())
 }
 ```
 
@@ -57,4 +58,5 @@ Rust also supports asynchronous main functions for writing concurrent applicatio
 - [[asynchronous | Asynchronous]].
 
 [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+
 </div>

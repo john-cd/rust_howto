@@ -14,10 +14,10 @@ struct Rectangle {
 
 /// Implementation block (multiple blocks are allowed for a given struct).
 impl Rectangle {
-    /// Method: note the paramater that reference `Self`, an alias
+    /// Method: note the parameter that references `Self`, an alias
     /// for the type that the `impl` block is for, in this case `Rectangle`.
     fn area(&self) -> u32 {
-        // `&self` is short for `self: &Self`, that a function paramater that is
+        // `&self` is short for `self: &Self`, a function parameter that is
         // an immutable reference to `Self`.
         self.width * self.height
     }

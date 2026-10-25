@@ -6,7 +6,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// // ANCHOR: example
+// ANCHOR: example
 use async_graphql::EmptyMutation;
 use async_graphql::EmptySubscription;
 use async_graphql::Object;

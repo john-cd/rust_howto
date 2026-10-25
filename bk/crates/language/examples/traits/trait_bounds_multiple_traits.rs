@@ -37,7 +37,7 @@ struct S;
 /// Calls the functions that require both traits.
 fn main() {
     let s = S;
-    // Sinc `S` implements both `Debug` and `Clone`, we can call the above
+    // Since `S` implements both `Debug` and `Clone`, we can call the above
     // functions:
     func(&s);
     func2(&s);

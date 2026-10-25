@@ -4,7 +4,7 @@
 
 #![allow(dead_code)]
 
-// // ANCHOR: example
+// ANCHOR: example
 
 /// 1. Avoid self-referential structs. Note how each field points to a portion
 ///    of the `String` owned by the struct.

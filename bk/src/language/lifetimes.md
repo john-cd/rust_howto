@@ -36,7 +36,7 @@ Note the following:
 
 As discussed above, Rust's compiler infers most lifetimes. More specifically, it has "lifetime elision rules" that allow you to omit them in common, unambiguous cases. This reduces boilerplate.{{hi:Lifetime elision rules}}
 
-- Each input lifetime parameter gets its own lifetime parameter. `fn foo(x: &str)` is automatically treated as `fn foo<'a>(x: &'a str)`.
+- Each elided input lifetime becomes a distinct lifetime parameter. `fn foo(x: &str)` is automatically treated as `fn foo<'a>(x: &'a str)`.
 - If there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters. `fn foo(x: &str) -> &str` is treated as `fn foo<'a>(x: &'a str) -> &'a str`.
 - If there are multiple input lifetime parameters but one of them is `&self` or `&mut self`, the lifetime of `self` is assigned to all output lifetime parameters.
 
@@ -58,7 +58,7 @@ These rules cover many common scenarios, but you will need lifetimes in more com
 
 Lifetime parameters can be added to function or method signatures, struct definitions, enumerations, unions, `impl` blocks, type aliases, traits, in the same way that a generic type parameter or constant can be added. They are used to specify the relationships between the lifetimes of different references in the function, type, or item.
 
-Lifetime parameters are listed in angle brackets (e.g. `<'a>`), usually immediately after the name of the item. Lifetime parameters are a form of [[generics | generics]]. Lifetime parameters, type parameters, and const generics can be intermixed within `<...>`. Lifetime parameters should appear before any generic type and const parameters (e.g. `<'a, T, const N: usize>`):
+Lifetime parameters are listed in angle brackets (e.g. `<'a>`), usually immediately after the name of the item. Lifetime parameters are a form of [[generics | generics]]. Lifetime parameters, type parameters, and const generics can be intermixed within `<...>`. Lifetime parameters must appear before any generic type and const parameters (e.g. `<'a, T, const N: usize>`):
 
 ```rust,editable
 {{#include ../../crates/language/examples/lifetimes/lifetime_parameters.rs:example}}
@@ -102,7 +102,7 @@ Instead, you may:
 ## Common Misconceptions {#common-misconceptions}
 
 - **`T` only contains owned types**: In generic code, the type parameter `T` contains all types, including references (e.g., `&i32` or `&mut i32`). Therefore, `T` is a superset of `&T` and `&mut T`.
-- **`T: 'static` means the type must be valid for the entire program**: `T: 'static` actually means that `T` *can* live at least as long as a `'static` lifetime. Owned types (like `String` or `Vec`) satisfy this bound because their owner can hold them indefinitely. It does not mean the value *has* to live for the entire program, or that it is created at compile time.
+- **`T: 'static` means the type must be valid for the entire program**: `T: 'static` actually means that `T` _can_ live at least as long as a `'static` lifetime. Owned types (like `String` or `Vec`) satisfy this bound because their owner can hold them indefinitely. It does not mean the value _has_ to live for the entire program, or that it is created at compile time.
 - **`&'a T` and `T: 'a` are the same**: `T: 'a` means type `T` must be valid for lifetime `'a`. This accepts owned types, types containing references, and references. `&'a T` only accepts references.
 - **Downgrading mutable references to shared references is always safe**: When you re-borrow a mutable reference as a shared reference (for example, returning `&T` from a method that takes `&mut self`), it extends the mutable reference's exclusive borrow for the duration of the re-borrow. This means you cannot have other overlapping shared references, keeping the restrictiveness of an exclusive borrow while only providing read-only access.
 - **Lifetimes can grow and shrink at run-time**: Lifetimes are statically verified at compile-time. The borrow checker assumes every code path can be taken and chooses the shortest possible lifetime. Lifetimes cannot grow or shrink dynamically at run-time.
@@ -126,5 +126,5 @@ Instead, you may:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+  [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
 </div>

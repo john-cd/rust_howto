@@ -31,12 +31,12 @@ fn main() {
 
     let left = Direction::Left;
 
-    // `if let` can match non-parameterized, Unit-like enum variants.
-    // This works even if the enum does not implement `PartialEq`.
+    // `matches!` can test a pattern against a non-parameterized, unit-like
+    // enum variant, even if the enum does not implement `PartialEq`.
     if matches!(left, Direction::Left) {
         println!("Going left.");
     } else {
-        // We can also add `else` and `else if` clauses to `if let`.
+        // The `else` branch handles the case where the pattern does not match.
         println!("Going right.");
     }
 }

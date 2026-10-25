@@ -64,7 +64,7 @@ You cannot directly return a reference to a local variable created within and ow
 In Rust, the borrow checker prevents returning references to local data, enforcing memory safety:
 
 ```rust,compile_fail,noplayground
-// Compile Error[E0515]: cannot return reference to temporary value.
+// Compile Error[E0515]: cannot return reference to local variable `s`.
 fn try_create<'a>() -> &'a String {
     let s = String::new();
     &s
@@ -101,4 +101,5 @@ You can also use `std::borrow::Cow` to generalize over owned data and unowned re
 - [[rust-patterns | Rust Patterns]].
 
 [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+
 </div>

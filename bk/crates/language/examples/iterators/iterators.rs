@@ -34,7 +34,7 @@ fn main() {
     let vec3 = vec![42, 43, 44];
     println!("`42` exists in `vec3`: {}", vec3.iter().any(|&x| x == 42));
 
-    // `iter()` only borrows `vec1` and its elements,
+    // `iter()` only borrows `vec3` and its elements,
     // so they can be used again.
     for x in &vec3 {
         // Calls `iter()` under the covers.

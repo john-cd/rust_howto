@@ -8,7 +8,7 @@
 
 [![Rust by example - Structs][book~rust-by-example~structs~badge]][book~rust-by-example~structs]{{hi:Structs}}
 
-Structs are custom data types that group related data together. The following example demonstrates how to define a `struct` and create a instance of it:
+Structs are custom data types that group related data together. The following example demonstrates how to define a `struct` and create an instance of it:
 
 ```rust,editable
 {{#include ../../crates/language/examples/structs/structs.rs:example}}
@@ -32,13 +32,13 @@ You can also define tuple struct (no field names) and "Unit-like" structs (witho
 
 ### Design Structs for Ownership {#struct-ownership}
 
-As shown in an example above, it is possible to declare structs, which fields are references. A lifetime parameter (e.g. `<'a>`) must be specified. See the [[lifetimes | Lifetimes]] chapter for more details.
+As shown in an example above, it is possible to declare structs whose fields are references. A lifetime parameter (e.g. `<'a>`) must be specified. See the [[lifetimes | Lifetimes]] chapter for more details.
 
 However, you will typically design `struct`s for ownership, so that the data within the struct is valid for as long as the struct itself is valid.
 
 That means that struct fields should use `T` instead of `&T` or `&mut T`, `String` instead of `&str`, `PathBuf` instead of `&Path`, `OsString` instead of `&OsStr`, etc.
 
-Note that self-referential structs, that is structs that hold a reference to their own fields, can be tricky due to Rust's ownership and borrowing rules.  You can easily run into issues when moved, as the reference might become invalid. There is also no way to tie the lifetime of a reference to the lifetime of the struct that contains it.
+Note that self-referential structs, that is structs that hold a reference to their own fields, can be tricky due to Rust's ownership and borrowing rules. You can easily run into issues when moved, as the reference might become invalid. There is also no way to tie the lifetime of a reference to the lifetime of the struct that contains it.
 
 ## Create an Instance of Struct from Another with the Struct Update Syntax {#update-struct}
 
@@ -70,7 +70,7 @@ Associated functions, in contrast, do not take `self` as a parameter. They are o
 
 Each struct is allowed to have multiple `impl` blocks. Multiple `impl` blocks are useful when implementing generic types and traits - see below; also refer to the [[generics | Generics]] chapters.
 
-Note that Rust automatic references and dereferences when calling methods: When you call a method with `object.something()`, Rust automatically adds in `&`, `&mut`, or `*`, so object matches the signature of the method. In other words, the following are the same:
+Note that Rust automatically inserts references and dereferences when calling methods: When you call a method with `object.something()`, Rust automatically adds `&`, `&mut`, or `*` as needed so the object matches the method's signature. In other words, the following are the same:
 
 ```rust,noplayground
 p1.distance(&p2);
@@ -113,7 +113,7 @@ The following example demonstrates various implementations:
 
 ### Implement Common Standard Library Traits {#common-traits}
 
-Rather then forcing you to implement very common traits repeatedly, Rust provides a `derive` attribute that can autoimplement them for you:
+Rather than forcing you to implement very common traits repeatedly, Rust provides a `derive` attribute that can automatically implement them for you:
 
 ```rust,editable
 {{#include ../../crates/language/examples/structs/common_traits.rs:example}}
@@ -154,4 +154,5 @@ Note how multiple `impl` blocks are possible; they can implement associated func
 - [[rust-patterns | Rust Patterns]].
 
 [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+
 </div>

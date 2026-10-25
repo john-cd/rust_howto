@@ -32,7 +32,7 @@ fn slice_from_vector() {
     // Mutable slice:
     let mutable_slice: &mut [i32] = &mut vector[2..];
     mutable_slice[0] = 10; // Modifies the original vector.
-    println!("{mutable_slice:?}"); // Output: [1, 2, 10, 4, 5].
+    println!("{mutable_slice:?}"); // Output: [10, 4, 5].
 }
 
 /// Creates slices from an array and from a vector.

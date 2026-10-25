@@ -8,6 +8,7 @@ Work in Progress
 This book is going through HEAVY EDITS. Pardon the dust.
 
 A large number of chapters and examples are currently hidden, as I am reorganizing the book.
+
 </div>
 
 ## What You Will Find Here
@@ -22,7 +23,7 @@ In particular, it emphasizes coverage of **foundational Rust tools and crates**,
 
 You are likely reading this book, because you are aware that Rust is a modern programming language that offers high safety, reliability, and performance.
 
-It emphasizes type safety{{hi:Type safety}}, memory safety{{hi:Memory safety}} without the overhead of a garbage collector, and fearless concurrency{{hi:Concurrency}} - that is, without code brittleness and refactoring fears. Rust is designed to prevent common errors such as memory leaks{{hi:Memory leaks}}, data races{{hi:Data races}}, and null pointer dereferences{{hi:Null pointer dereferences}}, by enforcing strict rules at compile time. No rewrite of prototypes in a "production" language is necessary.
+It emphasizes type safety{{hi:Type safety}}, memory safety{{hi:Memory safety}} without the overhead of a garbage collector, and fearless concurrency{{hi:Concurrency}} - that is, without code brittleness and refactoring fears. Rust's ownership and type systems prevent many memory-safety errors, including use-after-free and double-free bugs, and prevent data races in safe code. Memory leaks{{hi:Memory leaks}} remain possible (for example, through `Rc` cycles or `mem::forget`), but they are memory-safe. No rewrite of prototypes in a "production" language is necessary.
 
 It is a language with both low-level control and high-level, yet zero-cost, abstractions, bridging the capabilities of, say, C or C++ with that of Python. It supports powerful features such as pattern matching{{hi:Pattern matching}}, algebraic data types{{hi:Algebraic data types}}, higher-order functions{{hi:Higher-order functions}}, generics{{hi:Generics}}, traits{{hi:Traits}}, macros{{hi:Macros}}, and asynchronous programming{{hi:Async}}.
 
@@ -43,7 +44,7 @@ This book is not intended for complete beginners. Readers should have already so
 
 ## Why This Book
 
-Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]↗{{hi:crates.io}} ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager. But with _more than 360 thousand crates_ (libraries, as of October 2026) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust."
+Rust relies on the [`crates.io`][crates.io~website]↗{{hi:crates.io}} ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager for many libraries that other languages include in their standard libraries. As of October 2026, more than 360,000 crates were published on crates.io. This large selection can make it difficult for new Rust developers to decide what to use and trust; curated resources such as [`blessed.rs`][blessed-rs~website]↗ can help.
 
 Furthermore, there are no dominant comprehensive platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time - although several frameworks are first-of-mind in specific areas, such as asynchronous programming or web development.
 
@@ -64,6 +65,6 @@ Refer to the [[books | books]] chapter for a detailed list of Rust books.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
-[accuracy review: decisions for the maintainer](https://github.com/john-cd/rust_howto/issues/1897)
+  [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+  [accuracy review: decisions for the maintainer](https://github.com/john-cd/rust_howto/issues/1897)
 </div>

@@ -9,7 +9,7 @@
 [![Rust by example - Closures][book~rust-by-example~closures~badge]][book~rust-by-example~closures]
 
 Closures are anonymous functions you can define inline, often right where you need to use them.
-Here is a example of a short, inline closure with a simple expression as its body:
+Here is an example of a short, inline closure with a simple expression as its body:
 
 ```rust,editable
 {{#include ../../crates/language/examples/closures/closures.rs:example}}
@@ -31,8 +31,9 @@ They preferentially capture variables by reference and only go lower when requir
 
 [![std][c~std~docs~badge]][c~std~docs]
 
-A closure can be forced to capture its environment by copying or moving values by prefixing it with the `move` keyword.
-This is often used to ensure that the closure's lifetime is `'static` and common when creating a new thread.
+A closure can be forced to capture the values it uses by copying or moving them with the `move` keyword. This is often useful when spawning a thread, because `thread::spawn` requires a `'static` closure. `move` does not by itself make a closure `'static`: any captured references must still point to data that lives for the whole program.
+
+Since Rust 2021, closures can capture only the fields they use from a struct or tuple rather than capturing the whole value.
 
 ```rust,editable
 {{#include ../../crates/language/examples/closures/closures_move.rs:example}}
@@ -54,11 +55,13 @@ Closures can often infer parameter and return-value types, but you can add them 
 
 Closures are frequently used as arguments to functions, especially higher-order functions like those found on iterators (`map`, `filter`, `fold`, etc.).
 
-A closure automatically implements one of three special traits:
+A closure implements the call traits its body supports. The traits form a hierarchy: `Fn` implies `FnMut`, and `FnMut` implies `FnOnce`.
 
-- [`std::ops::Fn`][c~std::ops::Fn~docs]↗{{hi:std::ops::Fn}} if the closure uses the captured value by reference (`&T`) (or don't capture anything at all),
-- [`std::ops::FnMut`][c~std::ops::FnMut~docs]↗{{hi:std::ops::FnMut}} if the closure uses the captured value by mutable reference (`&mut T`),
-- [`std::ops::FnOnce`][c~std::ops::FnOnce~docs]↗{{hi:std::ops::FnOnce}} if the closure uses the captured value by value (`T`) e.g. moves it.
+- [`std::ops::Fn`][c~std::ops::Fn~docs]↗{{hi:std::ops::Fn}} if calling it only needs shared access to captures,
+- [`std::ops::FnMut`][c~std::ops::FnMut~docs]↗{{hi:std::ops::FnMut}} if calling it may mutate captures, and
+- [`std::ops::FnOnce`][c~std::ops::FnOnce~docs]↗{{hi:std::ops::FnOnce}} if calling it may move a captured value out.
+
+Every closure implements `FnOnce`. Whether it also implements `FnMut` or `Fn` depends on what its body does with captured values, not on whether it uses `move`. A `move` closure that only reads its captures can still implement `Fn`.
 
 Additionally, for any type `F` that implements `Fn` / `FnMut` / `FnOnce`, `&F` implements them, too.
 
@@ -86,4 +89,5 @@ https://www.reddit.com/r/rust/comments/1l8okiy/im_blown_that_this_is_a_thing/
 Enum variants and tuple-like structs can be used as function items in general https://doc.rust-lang.org/reference/types/function-item.html
 
 [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+
 </div>

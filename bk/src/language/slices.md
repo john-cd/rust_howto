@@ -29,6 +29,7 @@ A few important points:
 Empty slices can be created:
 
 ```rust,editable
+let x = [1, 2, 3];
 let empty = &x[..0]; // Same as `&x[0..0]`.
 assert_eq!(empty, &[]);
 ```
@@ -65,7 +66,7 @@ String slices, denoted `&str`, are very common. In particular, string literals a
 {{#include ../../crates/language/examples/slices/string_slices.rs:example}}
 ```
 
-See the [[string | String]] chapter for more details.
+See the [[strings | String]] chapter for more details.
 
 ## Related Topics {#related-topics .skip}
 
@@ -76,5 +77,5 @@ See the [[string | String]] chapter for more details.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+  [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
 </div>

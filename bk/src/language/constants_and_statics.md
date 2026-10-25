@@ -41,13 +41,15 @@ Static variables (declared with `static`) represent a single, fixed location in 
 - Static items have a consistent, fixed memory address throughout the program's execution.
 - They have the `'static` lifetime, meaning they live for the entire duration of the program.
 - Unless it's a `static mut` (see below), the type of a `static` variable generally needs to implement the `Sync` trait, ensuring thread-safe access. This prevents unsynchronized access to data that could lead to corruption.
-- `Drop` behavior: static variables are _not_ dropped when the program exits. Their memory is simply reclaimed by the operating system. If they hold resources that need explicit cleanup (like file handles), you'd typically use a runtime-initialized global like `once_cell::sync::Lazy` or `parking_lot::Mutex`.
+- `Drop` behavior: static variables are not dropped when the program exits; the operating system reclaims the process memory. For thread-safe lazy initialization, use [`std::sync::LazyLock`][c~std::sync::LazyLock~docs]↗ (stable since Rust 1.80), but a lazy static is still not dropped at process exit. If a resource needs explicit cleanup, give it an owner with a defined lifetime and close or drop it explicitly.
 
 ```rust,editable
 {{#include ../../crates/language/examples/constants_and_statics/statics.rs:example}}
 ```
 
-Statics can be mutable (`static mut`): Unlike `const`, static variables can be declared as mutable using `static mut`. However, accessing or modifying a `static mut` variable is `unsafe`, because it can lead to data races in a multi-threaded environment. Only consider `static mut` in last resort.
+Statics can be mutable (`static mut`): Unlike `const`, static variables can be declared as mutable using `static mut`. However, accessing or modifying a `static mut` variable is `unsafe`, because it can lead to data races in a multi-threaded environment. Consider `static mut` only as a last resort.
+
+In the Rust 2024 edition, the `static_mut_refs` lint is denied by default: code that creates a shared or mutable reference to a `static mut` is rejected. Prefer an immutable `static` with an atomic, lock, `OnceLock`, or `LazyLock` when global state is needed ([Rust 2024 Edition Guide][book~edition-guide~rust-2024~static-mut-references]↗).
 
 ```rust,editable
 {{#include ../../crates/language/examples/constants_and_statics/static_mut.rs:example}}
@@ -67,4 +69,5 @@ Statics can be mutable (`static mut`): Unlike `const`, static variables can be d
 [When are Rust's `const fn`s executed?][blog~const-fn]↗.
 
 [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+
 </div>

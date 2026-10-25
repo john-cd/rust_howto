@@ -9,7 +9,7 @@ fn main() {
     let x: Option<i32> = Some(5);
 
     if let Some(val) = x {
-        // Declares a `val` variable and bind it to the inner vaue of `x`.
+        // Declares a `val` variable and binds it to the inner value of `x`.
         println!("Got a value: {val}");
     }
     // `val` falls out of scope at the end of the block.

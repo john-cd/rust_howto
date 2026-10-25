@@ -45,10 +45,10 @@ cd hello_world
 code . # Open VS Code (or your favorite editor).
 ```
 
-Edit the code as you wish. `cargo new` creates a minimal `main.rs` file in the `src` subdirectory. You should also review the `Cargo.toml` package configuration file and append external dependencies using the `cargo add` command:
+Edit the code as you wish. `cargo new` creates a minimal `main.rs` file in the `src` subdirectory. You should also review the `Cargo.toml` package configuration file and add dependencies with the `cargo add` command:
 
 ```sh
-cargo add anyhow # Install the `anyhow` library as an external dependency.
+cargo add anyhow # Add `anyhow` to Cargo.toml as a dependency.
 ```
 
 - Build / run the code:
@@ -63,7 +63,7 @@ cargo run   # Run the executable.
 
 For more details, peruse the [Getting Started][book~rust~ch01-00-getting-started]↗ chapter of the Rust book.
 
-Fifth, consider adding your project to source control. If you use `git`, initialize your repository using the `git init` command and add a `.gitignore` file to skip the folder where `cargo` stores its cache and outputs:
+Fifth, consider adding your project to source control. When `cargo new` creates a project outside an existing version-control repository, it initializes Git and adds a `.gitignore` that excludes Cargo's `target/` directory by default. It does not create a nested repository when the project is already inside one. You can choose this behavior explicitly with `--vcs git` or disable it with `--vcs none`. If you disabled Git initialization, initialize the repository yourself and ensure `target/` is ignored:
 
 ```txt
 target/
@@ -94,5 +94,5 @@ Review the [git][git~website]↗ manual for more commands.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+  [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
 </div>

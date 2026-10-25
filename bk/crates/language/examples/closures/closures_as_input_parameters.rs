@@ -21,8 +21,9 @@ where
 fn apply_to_3<F>(f: F) -> i32
 where
     // The closure takes an `i32` and returns an `i32`.
-    // `Fn` closures can only take immutable references to captured variables
-    // or don't capture anything at all.
+    // An `Fn` closure can read captured values through shared references. A
+    // closure can also be `Fn` when it captures values with `move`, as long as
+    // its body does not mutate them or move them out.
     F: Fn(i32) -> i32,
 {
     f(3)

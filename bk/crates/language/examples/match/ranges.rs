@@ -12,6 +12,19 @@ fn main() {
         6..10 => println!("six through nine"),
         _ => println!("something else"),
     }
+
+    // Open-ended ranges have only a lower or upper bound.
+    match x {
+        5.. => println!("five or greater"),
+        _ => println!("less than five"),
+    }
+
+    // Floating-point bounds are also allowed in range patterns.
+    let temperature = 1.5_f32;
+    match temperature {
+        0.0..=2.0 => println!("within the range"),
+        _ => println!("outside the range"),
+    }
 }
 
 // ANCHOR_END: example

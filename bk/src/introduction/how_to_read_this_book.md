@@ -11,7 +11,7 @@ The book is organized in a few major sections. Click on a heading (with an arrow
 - Each chapter within each subsection contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c~rand~docs~badge]][c~rand~docs], and which categories on [`crates.io`][crates.io~website]↗{{hi:crates.io}} those crates belong to, like [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}.
 - The [[crate_selection | crate selection]] chapter in the "Resources" section provides additional pointers on how to locate crates suitable for your project.
 - The [links][p~links] section provides pointers to notable Rust websites, [[learning | learning]] resources, cheat sheets, [[books | books]], [[example_code | code examples]], etc.
-- The indices includes a word index, an index of examples in the book, and provides [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] lists of crates used in the book.
+- The indices include a word index, an index of examples in the book, and [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] lists of crates used in the book.
 - The [contributing][p~contributing] section details how to contribute to the book itself.
 
 ## Look for a Solution for a Specific Task {#look-for-solution-for-specific-task}
@@ -28,7 +28,7 @@ If you are simply looking for the solution to a given task, the easiest ways to 
 
 Code examples, a.k.a. recipes, are designed to give you instant access to working code, along with an explanation of what it is doing, and to guide you to further information. Most recipes can be copied to the clipboard; edited in place; and run on the Rust playground by clicking the "right arrow" button. The results, if any, are displayed below the example.
 
-All recipes are self-contained programs, so that they may be copied directly into your own projects for experimentation. To do so, follow the instructions below.
+Many recipes are self-contained programs that you can copy into your own projects. Some snippets are illustrative or marked `noplayground`, require additional crates, configuration, or an external service; check each recipe's notes before running it. The following instructions show how to set up a local project for a typical recipe.
 
 Consider the following example for generating a random number:
 
@@ -87,7 +87,7 @@ For more background on error handling in Rust, review the [[entry_points | entry
 
 This book intends to cover "key" or "foundational" crates - the crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
 
-Key crates were identified by cross-referencing [`blessed.rs`][blessed-rs~website]↗{{hi:blessed.rs}}, the most downloaded crates (overall and per category) in [`crates.io`][crates.io~website]↗{{hi:crates.io}}, [most popular Rust libraries][lib.rs~most-popular~website]↗ and high-quality crates per [`lib.rs`][lib.rs~website]↗{{hi:lib.rs}} [statistics][lib.rs~stats~website]↗, as well as pouring over countless blogs, forums, and examples.
+Key crates were identified by cross-referencing [`blessed.rs`][blessed-rs~website]↗{{hi:blessed.rs}}, the most downloaded crates (overall and per category) in [`crates.io`][crates.io~website]↗{{hi:crates.io}}, [most popular Rust libraries][lib.rs~most-popular~website]↗ and high-quality crates per [`lib.rs`][lib.rs~website]↗{{hi:lib.rs}} [statistics][lib.rs~stats~website]↗, as well as poring over blogs, forums, and examples.
 
 The crate selection process is necessarily opinionated. Feel free to offer suggestions (or submit a PR to the book's GitHub repo), if the author missed an important, widely used crate.
 
@@ -103,4 +103,5 @@ The crate selection process is necessarily opinionated. Feel free to offer sugge
 - So are [[development tools]] and programming domains such as [[command-line-interface | CLI]] and [[web_programming | Web]] development.
 
 [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+
 </div>

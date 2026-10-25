@@ -10,9 +10,9 @@ Under the covers, most CPUs maintain a pointer to the top of the stack in one of
 
 Data with an unknown size at compile time or a size that might change must be stored on the heap instead. The heap is less organized and managed by a _memory allocator_ subroutine. Upon request for a memory block, the memory allocator finds empty memory in the heap, marks it as being in use, and returns a pointer, which is the memory address of the allocated memory. Because a pointer to the heap is a known, fixed size, the pointer can be stored on the stack, but when you want the actual data, the pointer must be followed ("dereferenced").
 
-Allocating space on the heap is slower than pushing data on the stack, because the allocator must first find a big enough space to hold the data and then perform bookkeeping to prepare for the next allocation. The allocator must track outstanding allocations to ensure that they do not overlap and that no memory that is no longer used is _leaked_ (lost; not reusable for the remainder of the program's execution). The heap further suffers from _fragmentation_, which arises when many small chunks of free memory is interspersed with allocated memory, to a point where large enough chunks of free memory cannot allocated, leading to "out of memory" errors.
+Allocating space on the heap is slower than pushing data on the stack, because the allocator must find a large enough block and perform bookkeeping for the next allocation. It tracks which blocks are in use so allocations do not overlap; if a program fails to release an allocation, that memory can remain unavailable until the process exits. The heap can also suffer from _fragmentation_, when free space is split into small chunks among allocated blocks, leaving no large enough block for a request and potentially causing an out-of-memory error.
 
-Some languages (Java, C#, Go...) use _garbage collection_ (GC) that regularly reclaims no-longer-used memory as the program runs, moving memory blocks around to defragment the free memory into larger spans ("compaction"). GC is memory-safe, automatic, but expensive at runtime, as it must either temporarily stop the program or run in the background.
+Some languages (Java, C#, Go...) use _garbage collection_ (GC) to reclaim unreachable memory as the program runs. Some collectors compact the heap by moving live objects; others, including Go's non-moving mark-sweep collector, do not. GC is automatic and memory-safe, but it has runtime costs and may pause the program or run concurrently with it ([Go GC guide][go~gc-guide]↗).
 
 In other languages (C, C++...), the programmer must explicitly allocate and free the memory. This is very error-prone: each allocation must be paired with exactly one deallocation. Forgetting to free memory leaks it. Freeing memory too early or more than once ("double free" error) may lead to memory overlap and invalid variables, likely causing a program crash.
 
@@ -32,7 +32,7 @@ Ownership is a set of rules that the compiler enforces _at compile time_. If the
 
 The _scope_ of a variable is defined as follows: A variable is valid from the point it is declared until the end of its current scope (usually a block of code enclosed in curly braces `{ }` and typically the body of a function).
 
-Rules 1 and 3 ensures automatic memory cleanup (no leaks). Rule 2 ensures no "double free". The following example illustrates these rules:
+Rules 1 and 3 provide automatic cleanup when an owner leaves scope, and rule 2 prevents double frees. They do not prevent every leak: safe Rust can intentionally or accidentally keep allocations alive, for example through reference-counted cycles. Such leaks do not violate memory safety. The following example illustrates ownership and drop behavior:
 
 ```rust,editable
 {{#include ../../crates/language/examples/ownership_borrowing/scope.rs:example}}
@@ -56,7 +56,7 @@ The following example illustrates this concept:
 
 Let's explain what happens behind the scene: The local variable `s1` (on the stack) contains a pointer to the string's heap-allocated data (here, the unicode characters of the String). During the assignment `let s2 = s1`, the pointer is copied into `s2` (also on the stack). The heap data is not touched.
 
-Most importantly, the `s1` variable is made inaccessible. That means that, during compilation, the Rust compiler made sure that `s1` could not be referenced by any line of code after the "move" event (or the program would simply not compile).Note that there are no runtime checks, just purely compiler-enforced rules.
+Most importantly, the `s1` variable is made inaccessible. That means that, during compilation, the Rust compiler made sure that `s1` could not be referenced by any line of code after the "move" event (or the program would simply not compile). Note that there are no runtime checks, just purely compiler-enforced rules.
 
 Assignment (of non-`Copy` values) is not the only event that triggers a move: passing a variable to a function does as well:
 
@@ -163,4 +163,5 @@ The same applies to mutable references:
 - [[rust-patterns | Rust Patterns]].
 
 [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+
 </div>

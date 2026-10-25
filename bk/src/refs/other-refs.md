@@ -363,6 +363,8 @@
 [book~easy-rust]: https://fongyoong.github.io/easy_rust/Chapter_1.html
 [book~easy_rust]: https://freddiehaddad.github.io/fast-track-to-rust
 [book~edition-guide]: https://doc.rust-lang.org/edition-guide
+[book~edition-guide~rust-2024~match-ergonomics]: https://doc.rust-lang.org/edition-guide/rust-2024/match-ergonomics.html
+[book~edition-guide~rust-2024~static-mut-references]: https://doc.rust-lang.org/edition-guide/rust-2024/static-mut-references.html
 [book~effective-rust-oreilly]: https://oreilly.com/library/view/effective-rust/9781098151393
 [book~effective-rust]: https://amazon.com/dp/1098151402
 [book~embedded-rust-book]: https://docs.rust-embedded.org/book/intro
@@ -883,6 +885,7 @@
 [gog~website]: https://gog.com
 [google-cloud-rust~repo]: https://github.com/googleapis/google-cloud-rust
 [google~website]: https://about.google
+[go~gc-guide]: https://go.dev/doc/gc-guide
 [gpui.rs~website]: https://gpui.rs
 [grafana~website]: https://grafana.com
 [grafbase~website]: https://grafbase.com

@@ -6,7 +6,7 @@
 
 [![Rust by example - Variable bindings][book~rust-by-example~variable_bindings~badge]][book~rust-by-example~variable_bindings]{{hi:Variables}} [![Rust by example - constants][book~rust-by-example~constants~badge]][book~rust-by-example~constants]{{hi:const}}
 
-Variables are declared with `let`, following by the variable's name and an (often optional) type annotation. Rust can often infer the type of a variable, but you can provide explicit type annotations.
+Variables are declared with `let`, followed by the variable's name and an (often optional) type annotation. Rust can often infer the type of a variable, but you can provide explicit type annotations.
 
 ```rust,editable
 {{#include ../../crates/language/examples/variables/vars.rs:example}}
@@ -32,7 +32,7 @@ Shadowing is useful when you need to perform a series of transformations on a va
 
 ## Destructuring {#destructuring}
 
-Destructuring allows you to unpack values from compound types like tuples, arrays, structs, or enums into individual variables.{{hi:Destructuring}}
+Destructuring allows you to unpack values from compound types like tuples, arrays, structs, or enums into individual variables. A `let` statement requires an irrefutable pattern that matches every possible value. To handle a refutable enum variant, use `if let`, `match`, or `let ... else` with an `else` branch that diverges.{{hi:Destructuring}}
 
 ```rust,editable
 {{#include ../../crates/language/examples/variables/destructuring.rs:example}}
@@ -47,5 +47,5 @@ Destructuring allows you to unpack values from compound types like tuples, array
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
+  [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
 </div>
