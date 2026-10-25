@@ -45,6 +45,53 @@ The [`flume`][c~flume~docs]↗{{hi:flume}} crate is a library that provides mult
 {{#include ../../../crates/cats/concurrency/examples/message_passing/flume.rs:example}}
 ```
 
+### Handle Commands Once per Tick with `flume` {#flume-tick}
+
+[![flume][c~flume~docs~badge]][c~flume~docs]{{hi:flume}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+
+A game loop, a UI frame or a control cycle handles pending commands once per *tick* and must not wait for more. A bounded [`flume`][c~flume~docs]↗{{hi:flume}} channel fits: `send` blocks when the channel is full (back-pressure), `try_iter` drains only the messages already queued, and `recv_timeout` waits at most one tick for new work.
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/examples/message_passing/flume_tick.rs:example}}
+```
+
+## Wait-free Ring Buffers for Real-Time Threads {#spsc}
+
+A real-time thread, such as an audio callback, must never wait on a lock or allocate memory: either can take unbounded time. A *single-producer, single-consumer* (SPSC) ring buffer{{hi:Ring buffer}}{{hi:SPSC}} lets such a thread exchange data with the rest of the program. The buffer is allocated once, `push` and `pop` never block, and they return an error when the buffer is full or empty so the caller decides what to do.
+
+Use an ordinary channel for commands and telemetry, and a ring buffer only for the hot path.
+
+### `rtrb` {#rtrb}
+
+[![rtrb][c~rtrb~docs~badge]][c~rtrb~docs] [![rtrb~crates.io][c~rtrb~crates.io~badge]][c~rtrb~crates.io] [![rtrb~repo][c~rtrb~repo~badge]][c~rtrb~repo] [![rtrb~lib.rs][c~rtrb~lib.rs~badge]][c~rtrb~lib.rs]{{hi:rtrb}}{{hi:Ring buffer}}{{hi:Wait-free}}{{hi:Real-time}}{{hi:Audio}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+
+[`rtrb`][c~rtrb~docs]↗{{hi:rtrb}} (real-time ring buffer) is a wait-free SPSC queue. The example sends samples from a producer thread and drains them in fixed-size blocks on the consumer side. It also shows what `push` and `pop` return when the buffer is full or empty.
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/examples/spsc/rtrb.rs:example}}
+```
+
+### `ringbuf` {#ringbuf}
+
+[![ringbuf][c~ringbuf~docs~badge]][c~ringbuf~docs] [![ringbuf~crates.io][c~ringbuf~crates.io~badge]][c~ringbuf~crates.io] [![ringbuf~repo][c~ringbuf~repo~badge]][c~ringbuf~repo] [![ringbuf~lib.rs][c~ringbuf~lib.rs~badge]][c~ringbuf~lib.rs]{{hi:ringbuf}}{{hi:Ring buffer}}{{hi:Lock-free}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+
+[`ringbuf`][c~ringbuf~docs]↗{{hi:ringbuf}} is a lock-free SPSC ring buffer with a trait-based API (`Producer`, `Consumer`, `Split`).
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/examples/spsc/ringbuf.rs:example}}
+```
+
+A real-time thread often also needs a higher scheduling priority. [`thread-priority`][c~thread-priority~docs]↗{{hi:thread-priority}} sets it (`ThreadPriority::Max.set_for_current()`); the call is platform-dependent and may require privileges.
+
+## Choosing a Channel {#choosing-a-channel}
+
+| Need | Use |
+|------|-----|
+| Several producers, one consumer, no extra dependency | [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]↗ |
+| Several consumers, `select!`, tickers and timeouts | [`crossbeam-channel`][c~crossbeam-channel~docs]↗ |
+| A smaller dependency with a similar API, `try_iter`, sync and async use | [`flume`][c~flume~docs]↗ |
+| A real-time thread that must not block or allocate | an SPSC ring buffer: [`rtrb`][c~rtrb~docs]↗ or [`ringbuf`][c~ringbuf~docs]↗ |
+
 ## See Also {#see-also .skip}
 
 - [Message passing (rust book)][book~rust~message-passing]↗{{hi:Message passing}}.

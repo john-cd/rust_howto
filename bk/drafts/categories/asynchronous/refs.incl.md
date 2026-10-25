@@ -2,12 +2,15 @@
 
 [async-std~discontinued]: https://github.com/async-rs/async-std/releases
 [ex~asynchronous~async-runtimes]: async.md#async-runtimes
+[ex~asynchronous~afit]: async_traits.md#afit
+[ex~asynchronous~async-trait-dyn]: async_traits.md#async-trait-dyn
 [ex~asynchronous~async-traits]: async_traits.md#async-traits
 [ex~asynchronous~basic-example]: async.md#basic-example
 [ex~asynchronous~basics]: tokio.md#basics
 [ex~asynchronous~broadcast]: async_channels.md#broadcast
 [ex~asynchronous~call-async-from-blocking]: async_and_blocking.md#call-async-from-blocking
 [ex~asynchronous~cancellation-token]: async_utilities.md#cancellation-token
+[ex~asynchronous~cancellation-tree]: structured_concurrency.md#cancellation-tree
 [ex~asynchronous~calling-blocking-from-async]: async_and_blocking.md#calling-blocking-from-async
 [ex~asynchronous~diff-other-languages]: async.md#diff-other-languages
 [ex~asynchronous~futures-executor]: async_and_blocking.md#futures-executor
@@ -16,6 +19,7 @@
 [ex~asynchronous~graceful-shutdown]: tokio.md#graceful-shutdown
 [ex~asynchronous~io]: tokio.md#io
 [ex~asynchronous~join]: tokio.md#join
+[ex~asynchronous~joinset-pool]: structured_concurrency.md#joinset-pool
 [ex~asynchronous~joining-futures]: futures.md#joining-futures
 [ex~asynchronous~kanal]: async_channels.md#kanal
 [ex~asynchronous~localset]: tokio.md#localset
@@ -24,16 +28,20 @@
 [ex~asynchronous~mpsc]: async_channels.md#mpsc
 [ex~asynchronous~oneshot]: async_channels.md#oneshot
 [ex~asynchronous~rayon]: async_and_blocking.md#rayon
+[ex~asynchronous~rpitit-send]: async_traits.md#rpitit-send
 [ex~asynchronous~selecting-futures]: futures.md#selecting-futures
 [ex~asynchronous~spawn-a-dedicated-thread]: async_and_blocking.md#spawn-a-dedicated-thread
 [ex~asynchronous~spawn-blocking]: async_and_blocking.md#spawn-blocking
 [ex~asynchronous~spawn-tasks]: async.md#spawn-tasks
 [ex~asynchronous~spawning]: tokio.md#spawning
 [ex~asynchronous~streams]: streams.md#streams
+[ex~asynchronous~supervisor]: structured_concurrency.md#supervisor
 [ex~asynchronous~tokio-runtime]: async_and_blocking.md#tokio-runtime
 [ex~asynchronous~tokio]: async_channels.md#tokio
 [ex~asynchronous~utilities]: async_utilities.md#utilities
+[ex~asynchronous~watch-latest]: structured_concurrency.md#watch-latest
 [ex~asynchronous~which-crate-provides-what]: async.md#which-crate-provides-what
+[p~async-channels]: async_channels.md
 [p~async]: async.md
 [p~crates]: ../../../src/crate-selection/index.md
 [p~functions]: ../../language/functions.md

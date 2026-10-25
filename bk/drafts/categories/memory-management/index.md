@@ -36,6 +36,10 @@ Rust does not provide a tracing garbage collector by default. If an application 
 
 {{#include memory_allocation.incl.md}}
 
+{{#include arena_allocation.incl.md}}
+
+{{#include string_interning.incl.md}}
+
 ## Diagnose Memory Use and Safety
 
 Measure allocation volume and retained memory with a profiler before optimizing. [`Valgrind`][c~valgrind~docs]↗{{hi:Valgrind}} and [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}} can help inspect memory behavior on supported platforms.
