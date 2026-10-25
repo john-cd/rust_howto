@@ -17,3 +17,4 @@
 [p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p~serverless]: # "serverless.md"
 [p~virtualization]: # "../../categories/virtualization/index.md"
+[ex~cloud~kubernetes]: kubernetes.md#kubernetes

@@ -33,6 +33,12 @@ separate deployment option.
 
 {{#include rust_native_cloud_development.incl.md}}
 
+## Operate Kubernetes
+
+The [Kubernetes operators chapter][ex~cloud~kubernetes]↗ shows how to write an operator with `kube-rs`.
+
+{{#include kubernetes.incl.md}}
+
 ## Integrate a distributed application runtime
 
 [Dapr][dapr~rust~sdk~docs]↗ provides building blocks for distributed applications
