@@ -27,7 +27,7 @@ clap = { version = "4.6.7", features = ["derive"] }
 nom = "8.0.0"
 pest = "2.9.4"
 pest_derive = "2.9.4"
-tree-sitter = "0.26.13" # Pinned: 0.27 makes QueryMatch::captures a method; example not yet ported.
+tree-sitter = "0.27.1"
 tree-sitter-rust = "0.24.2"
 winnow = "1.0.4"
 
