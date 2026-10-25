@@ -4,10 +4,19 @@
 
 {{#include memory_usage_analysis.incl.md}}
 
-## Profile Memory and Track Allocations {profiling}
+## Measure process memory {#process-memory}
 
-- While not Rust-specific, [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with [`massif`][valgrind~massif~website]↗{{hi:massif}} or [`memcheck`][valgrind~memcheck~website]↗{{hi:memcheck}}) is a very common and powerful memory profiler. You'd run your Rust program under Valgrind.
-- [`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}} is a heap profiler that can track memory allocations.
+Start by deciding which quantity matters. Resident set size (RSS) or a platform's peak working set includes more than Rust heap allocations: it can include stacks, memory-mapped files, code pages, and allocator-retained memory. Heap allocation profilers answer a narrower question about allocations made by the program.
+
+On Linux, `/usr/bin/time -v ./target/release/my_app` reports peak resident memory for one run. macOS provides peak-memory details with `/usr/bin/time -l`; on Windows, inspect the process's working set in Task Manager or Process Explorer. These measurements are operating-system specific, so compare the same executable, input, and environment and run more than once when the workload is variable.
+
+## Profile heap peaks with Valgrind Massif {#massif}
+
+[`Massif`][valgrind~massif~website]↗{{hi:massif}} samples heap usage over time and records allocation stacks near the peak. On a supported Valgrind platform, run `valgrind --tool=massif --massif-out-file=massif.out ./target/release/my_app`, then inspect the snapshots with `ms_print massif.out`. Massif reports heap usage; it is not a replacement for an operating-system measurement of total process RSS.
+
+## Find heap allocation sites with Heaptrack {#heaptrack}
+
+[`heaptrack`][c~heaptrack~docs]↗{{hi:heaptrack}} records allocation and deallocation events with their call stacks. Run `heaptrack ./target/release/my_app` on Linux, then open the resulting profile with `heaptrack_gui`. Use the allocation timeline and call-site view to find repeated allocations, high-volume sites, or objects retained longer than expected. Profiling adds overhead, so use a representative local build and input rather than measuring production latency under the profiler.
 
 ## Profile Heap Memory with `dhat` {#dhat}
 
@@ -16,7 +25,7 @@
 [![dhat~repo][c~dhat~repo~badge]][c~dhat~repo]
 [![dhat~lib.rs][c~dhat~lib.rs~badge]][c~dhat~lib.rs]
 
-[`dhat`][c~dhat~docs]↗{{hi:dhat}} is a library for heap profiling and ad-hoc profiling with DHAT.
+[`dhat`][c~dhat~docs]↗{{hi:dhat}} is a Rust library for heap profiling and ad-hoc event profiling. Add its global allocator and profiler to a dedicated example or feature so ordinary application builds do not pay the profiling cost. The included example writes `dhat-heap.json`, which can be explored with the DHAT viewer.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_profiling/src/memory_usage_analysis/dhat.rs:example}}
@@ -34,35 +43,24 @@
 {{#include ../../../crates/cats/development_tools_profiling/examples/dhat_assertions.rs:example}}
 ```
 
-## Leak Detection {#leaks}
+## Find leaks and memory errors {#leaks}
 
-- [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with `memcheck`) is excellent for detecting memory leaks.
-- Address Sanitizer (`ASan`) can detect memory leaks and other memory errors. Enable it with compiler flags (e.g., `-fsanitize=address`).
+[`Memcheck`][valgrind~memcheck~website]↗{{hi:memcheck}} checks invalid reads and writes and reports unreachable allocations when the process exits. Run `valgrind --tool=memcheck --leak-check=full ./target/debug/my_app` on a supported platform; its instrumentation makes the program much slower, so use a small, representative input.
+
+Rust's Address Sanitizer can find memory errors such as use-after-free and out-of-bounds access in unsafe code. Rust sanitizer support is experimental, requires nightly, and is limited to supported target/toolchain combinations. Follow the current Rust sanitizer documentation for the target-specific invocation rather than copying a C compiler's `-fsanitize=address` flag into a stable Cargo build.
 
 ## Examine Memory with Debugging Tools {#debugging}
 
-[`gdb`][c~gdb~docs]↗{{hi:gdb}}, [`lldb`][c~lldb~docs]↗{{hi:lldb}} debuggers can be used to inspect memory, examine variables, and track allocations.
+[`gdb`][c~gdb~docs]↗{{hi:gdb}} and [`lldb`][c~lldb~docs]↗{{hi:lldb}} let you inspect process memory, variables, and pointers while stopped at a breakpoint. A debugger helps explain an object's state, but it does not aggregate allocation counts or replace a heap profiler.
 
 ## Use Tracing to Understand Allocation Patterns {#tracing}
 
-[`tracing`][c~tracing~docs]↗{{hi:tracing}} can help understanding the flow of your program and identify areas where excessive allocations might be occurring.
-See [[tracing | Tracing]].
-
-## Execution Time Measurement {#timing}
-
-[`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} can measure the execution time of code blocks, e.g. when investigating memory-related performance issues.
-
-```rust,editable
-{{#include ../../../crates/cats/development_tools_profiling/src/memory_usage_analysis/measure_time.rs:example}}
-```
+[`tracing`][c~tracing~docs]↗{{hi:tracing}} spans can identify which requests or operations create and retain large values. Add fields that describe useful sizes or item counts when those measurements are available; tracing alone does not measure allocated bytes. See [[tracing | Tracing]].
 
 ## Related Topics {#related-topics .skip}
 
-- [[memory-management | Memory Management]]
+- [[memory-management | Memory Management]].
+- [[benchmarking | Benchmarking]] for runtime measurements and throughput.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[memory: write / organize](https://github.com/john-cd/rust_howto/issues/336)
-</div>
