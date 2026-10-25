@@ -43,6 +43,10 @@
 [ex~development-tools_ffi~rutie]: ruby.md#rutie
 [ex~development-tools_ffi~uniffi]: generate_ffi_bindings.md#uniffi
 [ex~development-tools_ffi~utilities]: generate_ffi_bindings.md#utilities
+[c~std::ffi~CString~docs]: https://doc.rust-lang.org/std/ffi/struct.CString.html
+[c~std::ffi~CStr~docs]: https://doc.rust-lang.org/std/ffi/struct.CStr.html
+[rust-nomicon~ffi]: https://doc.rust-lang.org/nomicon/ffi.html
+[rust-reference~type-layout]: https://doc.rust-lang.org/reference/type-layout.html#representations
 [p~asynchronous]: ../asynchronous/index.md
 [p~concurrency]: # "../../categories/concurrency/index.md"
 [p~error-handling]: # "../../categories/rust-patterns/error_handling/error_handling.md"

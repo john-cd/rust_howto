@@ -4,6 +4,15 @@
 
 {{#include generate_ffi_bindings.incl.md}}
 
+## Choose a Binding Approach {#choose-a-binding-approach}
+
+- Call an existing C library from Rust: use [`bindgen`][c~bindgen~docs]↗{{hi:bindgen}} to generate Rust declarations from its headers.
+- Make Rust functions and types available to C: use [`cbindgen`][c~cbindgen~docs]↗{{hi:cbindgen}} to generate a C header for a Rust library.
+- Call between Rust and C++: use [`cxx`][c~cxx~docs]↗{{hi:cxx}} for a reviewed bridge, or [`autocxx`][book~autocxx]↗{{hi:autocxx}} when a large existing C++ API makes handwritten bridge declarations impractical.
+- Expose a Rust API to Kotlin, Swift, or Python: use [`uniffi`][c~uniffi~docs]↗{{hi:uniffi}} to generate language bindings from a cross-language interface definition.
+
+Choose a binding generator for the direction and languages involved; these tools do not remove the need to design a stable ABI and ownership contract.
+
 ## Generate Rust code that Calls into C Libraries with `bindgen` {#bindgen}
 
 [![bindgen][c~bindgen~docs~badge]][c~bindgen~docs]{{hi:bindgen}}
@@ -19,7 +28,7 @@
 {{#include ../../../crates/cats/development_tools_ffi/examples/c/bindgen.rs:example}}
 ```
 
-## Generates C Header Files from Rust code with `cbindgen` {#cbindgen}
+## Generate C Header Files from Rust Code with `cbindgen` {#cbindgen}
 
 [![cbindgen][c~cbindgen~docs~badge]][c~cbindgen~docs]{{hi:cbindgen}}
 [![cbindgen~crates.io][c~cbindgen~crates.io~badge]][c~cbindgen~crates.io]
@@ -48,6 +57,8 @@
 
 While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally preferred for modern C++ interop with Rust, because it's more idiomatic and safer.
 
+For a large existing C++ API, the [Rust ❤️ Existing C++ guide][book~autocxx]↗{{hi:autocxx}} introduces `autocxx`, which generates a `cxx` bridge from C++ headers. Review the generated surface and keep the boundary narrow.
+
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/cpp/cxx.rs:example}}
 ```
@@ -64,9 +75,11 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 
 ## FFI Caveats {#ffi-caveats}
 
-- FFI code often requires _unsafe_ blocks because the Rust compiler cannot guarantee the safety of interactions with foreign code.
-- Memory Management across FFI boundaries requires careful consideration. It often involves using [`Box::into_raw`][c~std::boxed::Box:into_raw~docs]↗{{hi:Box::into_raw}} and `Box::from_raw` to transfer ownership of memory between Rust and C.
-- [Error Handling][p~error-handling] across FFI boundaries often involves returning error codes or using [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} types and converting them to C-compatible representations.
+- Use `#[repr(C)]` on shared structs and C-compatible field types. Rust's default layout is not a stable C ABI; `repr(C)` does not make Rust-only types safe to expose. See the [Rust type-layout reference][rust-reference~type-layout].
+- Define who owns, borrows, and frees each pointer at the boundary. Keep allocation and deallocation paired: for example, a pointer from `CString::into_raw` must return to Rust for `CString::from_raw`, not be freed with C's `free`.
+- Use [`CString`][c~std::ffi~CString~docs] to create an owned, NUL-terminated C string and [`CStr`][c~std::ffi~CStr~docs] to borrow one. Validate pointer lifetime, NUL termination, mutability, and UTF-8 before converting data.
+- An `extern "C"` boundary must not unwind. Catch Rust panics and translate them into the API's error result, or abort; use `extern "C-unwind"` only when both sides intentionally support unwinding. See the [Rustonomicon FFI and unwinding guide][rust-nomicon~ffi].
+- Keep each `unsafe` operation small and document its preconditions with a nearby `// SAFETY:` comment. The caller must uphold pointer validity, alignment, lifetime, and aliasing requirements.
 
 ## Related Topics {#related-topics .skip}
 
@@ -82,10 +95,3 @@ While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally pre
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[generate_ffi_bindings: write](https://github.com/john-cd/rust_howto/issues/324)
-
-- [Rust ❤️ pre-existing C++ ♡ Existing C++][book~autocxx]↗.
-
-</div>

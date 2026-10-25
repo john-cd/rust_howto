@@ -46,20 +46,19 @@ fn cbindgen(manifest_dir: &Path, out_dir: &Path) -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: CBINDGEN
 
-// For the CXX example:
-
 // ANCHOR: CXX
-// Code generator for constructing and compiling C++ code.
-// fn cxx() {
-//     cxx_build::bridge("examples/cpp/cxx.rs")
-//         .file("examples/hello.cc")
-//         .flag_if_supported("-std=c++14")
-//         .compile("cxxbridge-demo");
-//
-//     println!("cargo:rerun-if-changed=examples/cpp/cxx.rs");
-//     println!("cargo:rerun-if-changed=examples/cpp/hello.h");
-//     println!("cargo:rerun-if-changed=examples/cpp/hello.cc");
-// }
+/// Compiles the C++ bridge example when its optional feature is enabled.
+#[cfg(feature = "cpp")]
+fn cxx() {
+    cxx_build::bridge("examples/cpp/cxx.rs")
+        .file("examples/cpp/hello.cc")
+        .flag_if_supported("-std=c++14")
+        .compile("development_tools_ffi_cxx");
+
+    println!("cargo:rerun-if-changed=examples/cpp/cxx.rs");
+    println!("cargo:rerun-if-changed=examples/cpp/hello.h");
+    println!("cargo:rerun-if-changed=examples/cpp/hello.cc");
+}
 // ANCHOR_END: CXX
 
 // ANCHOR: UNIFFI
@@ -85,5 +84,9 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     bindgen(&manifest_dir, &out_dir)?;
     cbindgen(&manifest_dir, &out_dir)?;
+
+    #[cfg(feature = "cpp")]
+    cxx();
+
     Ok(())
 }

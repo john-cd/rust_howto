@@ -66,7 +66,7 @@ bindgen = "0.72.1"
 cbindgen = "0.29.4"
 # sccache 0.18 cannot parse the MSVC /Tp command emitted by cc 1.9.
 cc = "=1.8.0"
-cxx-build = { version = "1.0.205", optional = true }
+cxx-build = { version = "1.0.205", optional = true } # Generates and compiles the optional C++ bridge example.
 uniffi = { version = "0.31.2", optional = true }
 
 [[example]]
@@ -77,6 +77,7 @@ test = true
 [[example]]
 name = "cpp"
 path = "examples/cpp/main.rs"
+required-features = ["cpp"]
 test = true
 
 [[example]]

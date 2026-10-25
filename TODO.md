@@ -212,7 +212,7 @@ Validation update (2026-10-25):
 - [#776](https://github.com/john-cd/rust_howto/issues/776) — **P4** — Finish the egui example.
 - [#607](https://github.com/john-cd/rust_howto/issues/607) — **P4** — Write the GPU chapter.
 - [#415](https://github.com/john-cd/rust_howto/issues/415) — **P4** — Write the audio chapter.
-- [#324](https://github.com/john-cd/rust_howto/issues/324) — **P4** — Write the FFI bindings generation chapter.
+- [#324](https://github.com/john-cd/rust_howto/issues/324) — **P4** — Verify the FFI chapter's book build; implementation is committed, but `just bb` is blocked by the tools workspace's missing NASM/AWS-LC build prerequisite.
 - [#345](https://github.com/john-cd/rust_howto/issues/345) — **P4** — Add Embassy and other embedded frameworks.
 - [#346](https://github.com/john-cd/rust_howto/issues/346) — **P4** — Complete the embedded category overview.
 - [#42](https://github.com/john-cd/rust_howto/issues/42) — **P4** — Make additional examples out of crate_indices.
