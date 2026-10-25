@@ -2,6 +2,6 @@
 
 # Reference definitions
 
-Use the [fixture library][fixture_library_lib] and the [manual reference][manual].
+Use the [fixture library][c~fixture-library~docs] and the [manual reference][manual].
 
 {{#include refs/link-refs.md}}

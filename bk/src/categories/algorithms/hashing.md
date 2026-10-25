@@ -24,7 +24,7 @@ Choose an implementation based on the required properties:
 
 - `rustc-hash`, `foldhash`, `xxhash-rust`, `murmur3`, and `fnv` can suit trusted inputs when speed matters. They do not provide cryptographic collision resistance.
 
-For attacker-controlled keys, keep the standard library's randomized `HashMap` hasher unless you have measured a need to change it and reviewed the security trade-off. [`ahash`][ahash] is a keyed, denial-of-service-resistant hasher for in-memory maps, but it is not a cryptographic digest. `hashbrown` is a hash-map implementation, not a hash function.
+For attacker-controlled keys, keep the standard library's randomized `HashMap` hasher unless you have measured a need to change it and reviewed the security trade-off. [`ahash`][c~ahash~docs] is a keyed, denial-of-service-resistant hasher for in-memory maps, but it is not a cryptographic digest. `hashbrown` is a hash-map implementation, not a hash function.
 
 **Checksums:** `crc` or `crc32fast` can detect accidental corruption. CRCs are not cryptographic and do not protect against deliberate changes.
 

@@ -14,7 +14,6 @@
 [ISBN~978-1098149055]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098149055
 [ISBN~978-1098151409]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098151409
 [ISBN~978-1098176228]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098176228
-[ISBN~978-1098176228]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098176228
 [ISBN~978-1484251201]: https://en.wikipedia.org/wiki/Special:BookSources/978-1484251201
 [ISBN~978-1484272077]: https://en.wikipedia.org/wiki/Special:BookSources/978-1484272077
 [ISBN~978-1492052593]: https://en.wikipedia.org/wiki/Special:BookSources/978-1492052593

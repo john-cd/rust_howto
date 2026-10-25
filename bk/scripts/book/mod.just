@@ -28,7 +28,7 @@ alias bb := buildbook
     echo "Build book in {{ root }}"
     Set-Location -LiteralPath {{ quote(root) }}; mdbook build {{ quote(root) }}
 
-# Regenerate only the owned dependency-reference fragment.
+# Merge missing dependency references into the curated crate reference file.
 [unix]
 @refdefs-generate: _install-mdbook-utils
     python3 "{{ source_directory() }}/refdefs.py" generate --book-root "{{ root }}"
@@ -37,7 +37,7 @@ alias bb := buildbook
 @refdefs-generate: _install-mdbook-utils
     python "{{ source_directory() }}/refdefs.py" generate --book-root "{{ root }}"
 
-# Check generated refs without rewriting authoring files.
+# Check for missing dependency references without rewriting authoring files.
 [unix]
 @refdefs-check: _install-mdbook-utils
     python3 "{{ source_directory() }}/refdefs.py" check --book-root "{{ root }}"
