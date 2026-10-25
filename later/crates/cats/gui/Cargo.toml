@@ -64,7 +64,7 @@ rfd = "0.17.2"
 skia-safe = { version = "=0.90", features = [
     "gl",
 ], optional = true } # Matches Slint's Skia version; Vizia uses an isolated workspace.
-slint = { version = "1.16.1", optional = true }
+slint = { version = "=1.16.1", optional = true }
 taffy = "0.10.1"
 tao = "0.35.3"
 tauri = { version = "2.12.5", optional = true } # Requires multiple libraries. See Dockerfile
@@ -78,6 +78,9 @@ wgpu = "29.0.4"
 winit = "0.30.13"  # for vello, winit examples
 wry = { version = "0.57.1", optional = true } # Needs WebKitGTK on Linux. See web_based_gui.md
 xilem = { version = "0.4.0", optional = true } # Experimental retained-mode UI example.
+
+[dev-dependencies]
+i-slint-backend-testing = "=1.16.1" # Matches Slint's internal, non-semver testing API.
 
 # GTK examples currently target non-Windows systems; see gtk.md for native setup.
 [target.'cfg(not(target_os = "windows"))'.dependencies]
@@ -115,7 +118,7 @@ test = true
 [[example]]
 name = "retained_mode_gui"
 path = "examples/retained_mode_gui/main.rs"
-required-features = ["floem", "iced", "slint"]
+required-features = ["slint"]
 test = true
 
 [[example]]

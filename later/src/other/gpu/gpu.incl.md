@@ -1,5 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe | Crates |
-|--------|--------|
-| [`rust-gpu`][ex~gpu~rust-gpu] | [![rust_gpu~repo][rust_gpu~repo~badge]][rust_gpu~repo] |
+| Recipe                | Crates                        |
+| --------------------- | ----------------------------- |
+| Run portable compute  | [`wgpu`][c~wgpu~docs]         |
+| Write shaders in Rust | [`rust-gpu`][ex~gpu~rust-gpu] |
+| Call NVIDIA CUDA      | [`cudarc`][c~cudarc~docs]     |
+| Use OpenCL            | [`opencl3`][c~opencl3~docs]   |

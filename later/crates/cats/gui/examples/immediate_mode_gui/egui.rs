@@ -13,12 +13,11 @@
 
 use eframe::egui;
 
-/// Opens a window that runs the app.
+/// Opens a native window that runs the app.
 fn main() -> Result<(), eframe::Error> {
-    let options = eframe::NativeOptions::default();
     eframe::run_native(
-        "Hello egui",
-        options,
+        "Counter",
+        eframe::NativeOptions::default(),
         Box::new(|_cc| Ok(Box::new(MyApp::default()))),
     )
 }
@@ -28,18 +27,38 @@ fn main() -> Result<(), eframe::Error> {
 struct MyApp {
     /// The number of clicks on the button.
     counter: i32,
+    /// The text shown in the editable text field.
+    name: String,
+    /// The value selected by the slider.
+    amount: f32,
 }
 
-// Simple GUI application with a button to increment a counter.
+impl MyApp {
+    /// Draws the app's controls and returns the increment button's rectangle.
+    fn show(&mut self, ui: &mut egui::Ui) -> egui::Rect {
+        egui::CentralPanel::default()
+            .show_inside(ui, |ui| {
+                ui.heading("Hello egui!");
+                ui.text_edit_singleline(&mut self.name);
+                ui.add(
+                    egui::Slider::new(&mut self.amount, 0.0..=1.0)
+                        .text("Amount"),
+                );
+                let button = ui.button("Increment counter");
+                if button.clicked() {
+                    self.counter += 1;
+                }
+                ui.label(format!("Counter: {}", self.counter));
+                button.rect
+            })
+            .inner
+    }
+}
+
 impl eframe::App for MyApp {
+    /// Draws one frame of the application.
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
-        egui::CentralPanel::default().show_inside(ui, |ui| {
-            ui.heading("Hello egui!");
-            if ui.button("Increment counter").clicked() {
-                self.counter += 1;
-            }
-            ui.label(format!("Counter: {}", self.counter));
-        });
+        self.show(ui);
     }
 }
 // ANCHOR_END: example
@@ -49,22 +68,70 @@ pub fn run() -> Result<(), eframe::Error> {
     main()
 }
 
+// eframe's native runner is deliberately covered by the ignored window test.
+
+/// Builds pointer input for the headless UI test.
+#[cfg(test)]
+fn raw_input(events: Vec<egui::Event>) -> egui::RawInput {
+    egui::RawInput {
+        screen_rect: Some(egui::Rect::from_min_size(
+            egui::Pos2::ZERO,
+            egui::vec2(500.0, 400.0),
+        )),
+        events,
+        ..Default::default()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the counter button responds to a simulated headless click.
     #[test]
-    #[ignore = "requires interactive example runtime"]
-    fn test_main() {
-        main().unwrap();
+    fn headless_frame_increments_the_counter_on_click() {
+        let mut app = MyApp::default();
+        let context = egui::Context::default();
+        let mut button_rect = egui::Rect::NOTHING;
+
+        let _ = context.run_ui(raw_input(Vec::new()), |ui| {
+            button_rect = app.show(ui);
+        });
+
+        let position = button_rect.center();
+        let _ = context.run_ui(
+            raw_input(vec![
+                egui::Event::PointerMoved(position),
+                egui::Event::PointerButton {
+                    pos: position,
+                    button: egui::PointerButton::Primary,
+                    pressed: true,
+                    modifiers: egui::Modifiers::NONE,
+                },
+            ]),
+            |ui| {
+                app.show(ui);
+            },
+        );
+        let _ = context.run_ui(
+            raw_input(vec![egui::Event::PointerButton {
+                pos: position,
+                button: egui::PointerButton::Primary,
+                pressed: false,
+                modifiers: egui::Modifiers::NONE,
+            }]),
+            |ui| {
+                app.show(ui);
+            },
+        );
+
+        assert_eq!(app.counter, 1);
+    }
+
+    /// Keeps launching a native window out of headless test runs.
+    #[test]
+    #[ignore = "requires an interactive display"]
+    fn native_window_runs() -> Result<(), eframe::Error> {
+        main()
     }
 }
-
-// Hard to test. Initializing the event loop outside of the main thread is a
-// significant cross-platform compatibility hazard.
-
-// [finish](https://github.com/john-cd/rust_howto/issues/776) verify the code manually
-// thread '<unnamed>' panicked at
-// /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zbus-4.4.0/
-// src/abstractions/executor.rs:189:27: there is no reactor running, must be
-// called from the context of a Tokio 1.x runtime
