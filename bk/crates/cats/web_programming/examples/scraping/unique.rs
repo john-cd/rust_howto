@@ -23,7 +23,7 @@ fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
                 r"(?x)
                 \[\[(?P<internal>[^\[\]|]*)[^\[\]]*\]\]    # internal links
                 |
-                (url=|URL\||\[)(?P<external>http.*?)[ \|}] # external links
+                (url=|URL\||\[)(?P<external>http.*?)[\x20|}] # external links
             "
             )
             .expect("the fixed MediaWiki link regex is valid");
