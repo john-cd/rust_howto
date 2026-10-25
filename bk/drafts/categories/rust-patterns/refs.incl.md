@@ -25,10 +25,10 @@
 [ex~rust-patterns~decorator]: structural_patterns.md#decorator
 [ex~rust-patterns~facade]: structural_patterns.md#facade
 [ex~rust-patterns~composite]: structural_patterns.md#composite
-[p~closures]: ../../language/closures.md
+[p~closures]: ../../../src/language/closures.md
 [p~csv]: # "../encoding/csv.md"
-[p~enums]: ../../language/enums.md
-[p~functions]: ../../language/functions.md
+[p~enums]: ../../../src/language/enumerations.md
+[p~functions]: ../../../src/language/functions.md
 [p~language]: ../../../src/language/index.md
 [p~macros]: ../../../src/language/macros.md
 [p~maps]: ../../../src/categories/data-structures/other_maps.md
