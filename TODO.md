@@ -221,9 +221,9 @@ Validation update (2026-10-25):
 
 ### List 34 — Web, auth, packaging and tooling pages (Codex D)
 
-- [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment.
+- [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Docs integrated as `3acb2a03c`; Linux validation remains open (no local Linux runner).
 - [#636](https://github.com/john-cd/rust_howto/issues/636) — **P3** — ✅ closed on GitHub — Add OAuth to the authentication index.
-- [#510](https://github.com/john-cd/rust_howto/issues/510) — **P3** — ✅ closed on GitHub — Write the CORS chapter.
+- [#510](https://github.com/john-cd/rust_howto/issues/510) — **P3** — ✅ closed on GitHub in `6f72064b0` — Write the CORS chapter; Cargo test did not reach the test harness.
 - [#921](https://github.com/john-cd/rust_howto/issues/921) — **P3** — Review the build-time tooling chapter.
 - [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Write the Python interoperability chapter.
 - [#589](https://github.com/john-cd/rust_howto/issues/589) — **P4** — Organize and edit the data engineering chapter.
