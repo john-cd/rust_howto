@@ -829,6 +829,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "assert_cmd"
+version = "2.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2aa3a22042e45de04255c7bf3626e239f450200fd0493c1e382263544b20aea6"
+dependencies = [
+ "anstyle",
+ "bstr",
+ "libc",
+ "predicates",
+ "predicates-core",
+ "predicates-tree",
+ "wait-timeout",
+]
+
+[[package]]
 name = "ast_node"
 version = "5.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2597,6 +2612,9 @@ name = "cargo"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "cargo_metadata",
+ "clap",
+ "clap-cargo",
  "tempfile",
  "tracing",
  "tracing-subscriber",
@@ -2754,6 +2772,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6fac387a98bb7c37292057cffc56d62ecb629900026402633ae9160df93a8766"
 dependencies = [
  "nom 7.1.3",
+]
+
+[[package]]
+name = "cfb"
+version = "0.14.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a347dcabdae9c31b0825fd6a8bed285ec9c2acb89c47827126d52fa4f59cece3"
+dependencies = [
+ "fnv",
+ "uuid 1.28.0",
+ "web-time",
 ]
 
 [[package]]
@@ -2942,6 +2971,19 @@ checksum = "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946"
 dependencies = [
  "clap_builder",
  "clap_derive",
+]
+
+[[package]]
+name = "clap-cargo"
+version = "0.19.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ac0fb996b5acdd543c8b8ff723c719715d437fdce607ac1fda01c977f568020d"
+dependencies = [
+ "anstyle",
+ "cargo_metadata",
+ "clap",
+ "serde 1.0.229",
+ "serde_json",
 ]
 
 [[package]]
@@ -4326,6 +4368,7 @@ dependencies = [
  "rangemap",
  "roaring",
  "rustc-hash 2.1.3",
+ "short-uuid",
  "skiplist",
  "slotmap",
  "smallvec",
@@ -4775,14 +4818,18 @@ name = "development_tools_testing"
 version = "0.1.2"
 dependencies = [
  "afl",
+ "anyhow",
  "approx",
  "arbitrary",
+ "assert_cmd",
  "bolero",
  "clap",
  "fake",
  "faux",
  "insta",
+ "lcov",
  "mockall",
+ "predicates",
  "proptest",
  "rstest",
  "serial_test",
@@ -4916,6 +4963,12 @@ name = "diff"
 version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56254986775e3233ffa9c4d7d3faaf6d36a2c09d30b20687e9f88bc8bafc16c8"
+
+[[package]]
+name = "difflib"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6184e33543162437515c2e2b48714794e37845ec9851711914eec9d308f6ebe8"
 
 [[package]]
 name = "digest"
@@ -5477,6 +5530,7 @@ dependencies = [
  "data-encoding",
  "flatbuffers",
  "heapless 0.9.3",
+ "hex",
  "monostate",
  "percent-encoding",
  "postcard",
@@ -5489,8 +5543,10 @@ dependencies = [
  "serde 1.0.229",
  "serde_ignored",
  "serde_json",
+ "serde_urlencoded",
  "toml 1.1.8+spec-1.1.0",
  "url",
+ "urlencoding",
  "zerocopy",
 ]
 
@@ -5940,9 +5996,11 @@ dependencies = [
  "clap",
  "directories",
  "dirs",
+ "dunce",
  "glob",
  "globset",
  "ignore",
+ "infer",
  "memmap2",
  "notify",
  "open",
@@ -8215,6 +8273,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "infer"
+version = "0.22.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f4200d433cbd5178df7797c9c2e75b348b728e39631cf14520d1e2fc424201f4"
+dependencies = [
+ "cfb",
+]
+
+[[package]]
 name = "inherent"
 version = "1.0.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8914,6 +8981,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "20870f649af7073d53e38067b2a84312175d56ea15217e1b15bc83506ec50afb"
 dependencies = [
  "spin",
+]
+
+[[package]]
+name = "lcov"
+version = "0.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4dab4f1d99e0dd8008da0d3452bb71ce08e1645465c2accc124bcb599c6b3143"
+dependencies = [
+ "thiserror 2.0.21",
 ]
 
 [[package]]
@@ -10702,6 +10778,12 @@ name = "nonzero_ext"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "38bf9645c8b145698bb0b18a4637dcacbc421ea49bef2317e4fd8065a387cf21"
+
+[[package]]
+name = "normalize-line-endings"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "61807f77802ff30975e01f4f071c8ba10c022052f98b3294119f3e615d13e5be"
 
 [[package]]
 name = "normpath"
@@ -12775,7 +12857,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ada8f2932f28a27ee7b70dd6c1c39ea0675c55a36879ab92f3a715eaa1e63cfe"
 dependencies = [
  "anstyle",
+ "difflib",
+ "float-cmp",
+ "normalize-line-endings",
  "predicates-core",
+ "regex",
 ]
 
 [[package]]
@@ -15976,6 +16062,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
 
 [[package]]
+name = "short-uuid"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d5cb9a7452a33ab94fd48d5f533d181a400bf56ec5a55cf788c470ad430f52a5"
+dependencies = [
+ "uuid 1.28.0",
+]
+
+[[package]]
 name = "sibyl"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -18644,6 +18739,7 @@ dependencies = [
  "rake",
  "regex",
  "similar 3.2.0",
+ "slug",
  "strsim 0.11.1",
  "syntect",
  "textwrap 0.16.4",
