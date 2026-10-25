@@ -31,13 +31,16 @@ fn main() -> anyhow::Result<()> {
     // Sign the message:
     let signature: Signature = signing_key.sign(message);
 
-    // Verify the signature:
-    assert!(signing_key.verify(message, &signature).is_ok());
-
     // Anyone else, given the public half of the signing_key can also easily
     // verify this signature:
     let verifying_key: VerifyingKey = signing_key.verifying_key();
-    assert!(verifying_key.verify(message, &signature).is_ok());
+    verifying_key.verify(message, &signature)?;
+    anyhow::ensure!(
+        verifying_key
+            .verify(b"Changed message", &signature)
+            .is_err(),
+        "a signature must not verify for a different message"
+    );
 
     // VerifyingKeys, SecretKeys, SigningKeys, and Signatures can be
     // serialised into byte-arrays by calling `to_bytes`.
@@ -57,6 +60,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies Ed25519 signatures reject a changed message.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;
