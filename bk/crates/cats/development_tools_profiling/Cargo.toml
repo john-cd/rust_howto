@@ -25,11 +25,16 @@ publish.workspace = true
 [features]
 dhat-heap = []
 dhat-ad-hoc = []
+# Select the `profiling` backend in one place:
+profile-with-puffin = ["profiling/profile-with-puffin"]
 
 [dependencies]
 criterion = "0.8.2"
 dhat = "0.3.3"
 measure_time = "0.9"
+profiling = "1.0.18"
+puffin = "0.20.0"
+puffin_http = "0.17.0"
 
 [dev-dependencies]
 divan = "0.1.21"
@@ -42,6 +47,16 @@ harness = false
 [[example]]
 name = "benchmarking"
 path = "examples/benchmarking/main.rs"
+test = true
+
+[[example]]
+name = "profiling_scopes"
+path = "examples/profiling_scopes.rs"
+test = true
+
+[[example]]
+name = "puffin_server"
+path = "examples/puffin_server.rs"
 test = true
 
 [lints]

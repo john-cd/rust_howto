@@ -18,6 +18,15 @@ Flame graphs are excellent for visualizing CPU usage and identifying hot spots. 
 | [`dtrace`][c~dtrace~docs]↗{{hi:dtrace}} | A system profiler for macOS and BSD. |
 | [`VTune`][vtune-profiler~website]↗{{hi:VTune}} | A commercial performance profiler from Intel. |
 
+### Instrumentation Profiling
+
+Instrumentation profilers record the scopes that you mark in the code, which shows where each frame or request spends its time. See [Instrumentation Profiling](instrumentation_profiling.md).
+
+| Tool | Description |
+|---|---|
+| [`profiling`][c~profiling~docs]↗{{hi:profiling}} | A facade over several instrumentation profilers, selected with a Cargo feature. |
+| [`puffin`][c~puffin~docs]↗{{hi:puffin}} | Records scopes frame by frame; `puffin_http` serves them to `puffin_viewer`. |
+
 ### Benchmarking
 
 Benchmarking helps measure the impact of code changes and ensure performance stability.

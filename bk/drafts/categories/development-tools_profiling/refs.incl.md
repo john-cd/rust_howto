@@ -10,9 +10,13 @@
 [ex~development-tools_profiling~leaks]: memory_usage_analysis.md#leaks
 [ex~development-tools_profiling~timing]: memory_usage_analysis.md#timing
 [ex~development-tools_profiling~tracing]: memory_usage_analysis.md#tracing
+[ex~development-tools_profiling~profiling-scopes]: instrumentation_profiling.md#profiling-scopes
+[ex~development-tools_profiling~puffin-server]: instrumentation_profiling.md#puffin-server
+[p~benchmarking]: benchmarking.md
 [p~caching]: ../caching/index.md
 [p~csv]: # "../encoding/csv.md"
 [p~json]: ../parser-implementations/json.md
 [p~markdown]: ../parser-implementations/markdown.md
+[p~memory-usage-analysis]: memory_usage_analysis.md
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~tracing]: ../development-tools_debugging/tracing.md
