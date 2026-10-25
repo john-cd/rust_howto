@@ -39,3 +39,4 @@
 [p~traits]: ../../../src/language/traits.md
 [p~web-scraping]: ../web-programming/scraping.md
 [p~xml-parsing]: xml.md
+[ex~parser-implementations~sql_readonly]: programming_languages.md#sql_readonly

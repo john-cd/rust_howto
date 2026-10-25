@@ -19,12 +19,37 @@ publish.workspace = true
 
 [dependencies]
 anyhow = "1.0.104"
+cargo_metadata = "0.23.1"
 clap = { version = "4.6.7", features = ["derive"] }
 crates_io_api = "0.12.0"
 doc-comment = "0.3.4"
+prettyplease = "0.3.0"
+proc-macro2 = { version = "1", features = ["span-locations"] }
+quote = "1"
 semver = "1.0.28"
+syn = { version = "3", features = ["full", "visit"] }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[[example]]
+name = "cargo_metadata"
+path = "examples/rust_source/cargo_metadata.rs"
+test = true
+
+[[example]]
+name = "find_unwraps"
+path = "examples/rust_source/find_unwraps.rs"
+test = true
+
+[[example]]
+name = "quote_prettyplease"
+path = "examples/rust_source/quote_prettyplease.rs"
+test = true
+
+[[example]]
+name = "syn_file"
+path = "examples/rust_source/syn_file.rs"
+test = true
 
 [[example]]
 name = "crate_registries"

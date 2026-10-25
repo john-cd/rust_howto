@@ -39,6 +39,13 @@ scopeguard = "1.2.0"
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.154"
 thiserror = "2.0.21"
+tokio = { version = "1.54.1", features = ["rt"] }
+zen-engine = "2.1.6"
+
+[[example]]
+name = "decision_table"
+path = "examples/business_rules/decision_table.rs"
+test = true
 
 [[example]]
 name = "builder_pattern"

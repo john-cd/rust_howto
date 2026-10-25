@@ -17,3 +17,6 @@
 [p~links]: ../../../src/links/index.md
 [p~parse]: ../date-and-time/parse.md
 [p~url]: url.md
+[ex~web-programming~ammonia]: html_sanitization.md#ammonia
+[ex~web-programming~markdown-to-safe-html]: html_sanitization.md#markdown-to-safe-html
+[ex~web-programming~html2text]: html_sanitization.md#html2text

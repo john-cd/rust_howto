@@ -40,3 +40,6 @@
 [p~testing]: testing.md
 [p~time]: ../date-and-time/time_crate.md
 [p~tokio]: ../asynchronous/tokio.md
+[ex~development-tools_testing~rstest]: testing.md#rstest
+[ex~development-tools_testing~env-vars]: testing.md#env-vars
+[ex~development-tools_testing~paused-time]: testing.md#paused-time

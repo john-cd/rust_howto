@@ -36,3 +36,4 @@
 [c~imbl~crates.io]: https://crates.io/crates/imbl
 [c~imbl~crates.io~badge]: https://img.shields.io/badge/crates.io-imbl-crimson
 [book~rust~closures]: https://doc.rust-lang.org/book/ch13-01-closures.html
+[ex~rust-patterns~business-rules]: behavioral_patterns.md#business-rules
