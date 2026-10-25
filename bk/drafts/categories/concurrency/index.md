@@ -4,62 +4,66 @@
 
 [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
 
-This section covers concurrent programming, and specifically parallel programming{{hi:Parallel programming}}.
+Concurrency{{hi:Concurrency}} is about coordinating tasks whose lifetimes overlap. Parallelism{{hi:Parallelism}} is the simultaneous execution of work, often across CPU cores. Rust's ownership rules and the `Send` and `Sync` traits help make cross-thread sharing safe; use async tasks for I/O-bound coordination and threads or data-parallel iterators for CPU-bound work. The recipes below focus on operating-system threads and parallel computation.
 
-Parallelism implies:
-
-- True simultaneous execution of multiple tasks on multiple cores or processors.
-- Mechanism: uses operating system threads{{hi:Operating system threads}}.
-- Important for CPU-heavy computations{{hi:CPU-heavy computations}}.
-- Often requires explicit management of threads and thread pools{{hi:Thread pools}}.
-- Requires careful synchronization to prevent data races (using mechanisms like mutexes or atomics).
-- Overhead due to thread creation and switching.
-
-Key constructs in Rust:
-
-- Threads{{hi:Threads}} are independent units of execution that can be spawned using e.g. [`std::thread::spawn`][c~std::thread::spawn~docs]↗{{hi:std::thread::spawn}}{{hi:std::thread::spawn}}.
-- Mutexes e.g. [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} protect shared data from race conditions.
-- Channels{{hi:Channels}} e.g. [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]↗{{hi:std::sync::mpsc}} allow threads to communicate and exchange data.
+| Topic                                                       | Use this chapter for                                 | Common building blocks                          |
+| ----------------------------------------------------------- | ---------------------------------------------------- | ----------------------------------------------- |
+| [Explicit Threads](explicit_threads.md)                     | Spawn, scope, and join operating-system threads      | `std::thread`                                   |
+| [Threadpools](threadpool.md)                                | Reuse workers for independent jobs                   | `threadpool`                                    |
+| [Data Parallelism](data_parallelism.md)                     | Split CPU-bound iterator work across cores           | `rayon`                                         |
+| [Message Passing](message_passing.md)                       | Send owned values between threads                    | `std::sync::mpsc`, `crossbeam-channel`, `flume` |
+| [Shared State](shared_state.md)                             | Coordinate access to shared values                   | `Mutex`, `RwLock`                               |
+| [Atomics](atomics.md)                                       | Coordinate simple shared values without a mutex      | `std::sync::atomic`, `arc-swap`                 |
+| [`crossbeam`](crossbeam.md)                                 | Use scoped threads and lower-level concurrency tools | `crossbeam`                                     |
+| [Concurrent Data Structures](concurrent_data_structures.md) | Share maps and queues across threads                 | `dashmap`, `papaya`, `crossbeam-queue`          |
+| [`Send` and `Sync`](send_sync.md)                           | Understand safe transfer and sharing between threads | `std::marker`                                   |
+| [Actors](_actors.md)                                        | Isolate state behind message-driven workers          | `ractor`, `stakker`                             |
 
 ## Explicit Threads
 
-Creating and managing threads, using mutexes and other synchronization primitives.
+Create, scope, and join threads; use [`std::thread`][c~std::thread~docs]↗ and [`std::thread::scope`][c~std::thread::scope~docs]↗ when borrowing data from the parent scope.
 
 {{#include explicit_threads.incl.md}}
 
 ## Threadpools
 
-Using thread pools for efficient task execution.
+Reuse a bounded set of workers for queued jobs with [`threadpool`][c~threadpool~docs]↗.
 
 {{#include threadpool.incl.md}}
 
 ## Multithreading with the `crossbeam` Crate
 
+Use scoped threads, channels, and other primitives from the [`crossbeam`][c~crossbeam~docs]↗ family.
+
 {{#include crossbeam.incl.md}}
 
 ## Message Passing and Channels
 
-Communicating between threads using channels.
+Transfer messages between producers and consumers with standard-library or third-party channels.
 
 {{#include message_passing.incl.md}}
 
 ## Shared State
 
-Shared Memory. Using atomic types for thread-safe data access.
+Protect shared state with locks or atomics when ownership transfer through a channel is not a fit.
 
 {{#include shared_state.incl.md}}
 
 ## Concurrent Data Structures
 
+Choose concurrent maps and queues when many threads need to access the same collection.
+
 {{#include concurrent_data_structures.incl.md}}
 
 ## Data Parallelism
 
-Using iterators in parallel with crates like [`rayon`][c~rayon~docs]↗{{hi:rayon}}.
+Parallelize CPU-bound iterator work with [`rayon`][c~rayon~docs]↗{{hi:rayon}}.
 
 {{#include data_parallelism.incl.md}}
 
 ## `Send` and `Sync`
+
+Understand the marker traits that describe values safe to transfer or share between threads.
 
 {{#include send_sync.incl.md}}
 
@@ -80,7 +84,3 @@ Using iterators in parallel with crates like [`rayon`][c~rayon~docs]↗{{hi:rayo
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[concurrency: add somewhere](https://github.com/john-cd/rust_howto/issues/263)
-</div>
