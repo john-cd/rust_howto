@@ -20,8 +20,9 @@ publish = false
 autolib = false
 
 [features]
+onnx = ["dep:ort", "dep:arc-swap"]
 datafusion = ["dep:datafusion"]
-arrow = ["dep:arrow", "dep:serde_json"]
+arrow = ["dep:arrow"]
 typegen = ["crux_core/typegen"] # for Crux
 polars = ["dep:polars"]
 # `polars` and `datafusion` can be enabled together: `Cargo.lock` resolves a single `chrono`
@@ -37,7 +38,6 @@ anyhow = "1.0.104"
 arrow = { version = "58.4.0", features = ["csv", "json", "prettyprint"], optional = true }
 async-trait = "0.1.92"
 polars = { version = "0.51.0", default-features = false, features = ["lazy", "csv"], optional = true }
-serde_json = { version = "1.0.154", optional = true } # Convert Arrow JSON output back into Serde rows.
 
 ## Scheduling
 chrono = "0.4.45"
@@ -49,6 +49,18 @@ aws-config = "1.8.18"
 aws-sdk-s3 = "1.137.0"
 axum = "0.8.9"
 clap = { version = "4.6.7", features = ["derive"] }
+futures = "0.3"
+k8s-openapi = { version = "0.28", features = ["latest"] }
+kube = { version = "4.2", features = ["derive", "runtime", "client"] }
+schemars = "1"
+serde_json = "1.0.154" # Also converts Arrow JSON output back into Serde rows.
+thiserror = "2"
+
+## Machine learning
+arc-swap = { version = "1", optional = true }
+augurs = { version = "0.10", features = ["ets", "mstl"] }
+ort = { version = "2.0.0-rc.15", optional = true } # Downloads ONNX Runtime binaries at build time
+smartcore = "0.5.5"
 
 ## Cross platform
 crux_core = "0.17.0"
@@ -96,6 +108,11 @@ name = "datafusion"
 path = "examples/datafusion/main.rs"
 test = true
 required-features = ["datafusion"]
+
+[[example]]
+name = "machine_learning"
+path = "examples/machine_learning/main.rs"
+test = true
 
 [[example]]
 name = "polars"

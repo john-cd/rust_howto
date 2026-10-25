@@ -8,6 +8,7 @@ use clap::Subcommand;
 
 mod aws_lambda;
 mod aws_sdk;
+mod kubernetes;
 mod shuttle;
 
 /// Command-line arguments.
@@ -27,6 +28,9 @@ enum Commands {
     /// Runs the `aws_sdk` example.
     #[command(name = "aws_sdk")]
     AwsSdk,
+    /// Runs the `kubernetes` example.
+    #[command(name = "kubernetes")]
+    Kubernetes,
     /// Runs the `shuttle` example.
     #[command(name = "shuttle")]
     Shuttle,
@@ -40,6 +44,7 @@ fn main() -> Result<()> {
         match command {
             Commands::AwsLambda => aws_lambda::run()?,
             Commands::AwsSdk => aws_sdk::run()?,
+            Commands::Kubernetes => kubernetes::run()?,
             Commands::Shuttle => shuttle::run(),
         }
     }

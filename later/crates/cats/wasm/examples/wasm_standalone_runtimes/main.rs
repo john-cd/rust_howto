@@ -9,6 +9,8 @@ use clap::Subcommand;
 mod wasmer;
 #[cfg(feature = "wasmtime")]
 mod wasmtime;
+#[cfg(feature = "wasmtime")]
+mod wasmtime_sandbox;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -28,6 +30,10 @@ enum Commands {
     #[cfg(feature = "wasmtime")]
     #[command(name = "wasmtime")]
     Wasmtime,
+    /// Runs the `wasmtime_sandbox` example.
+    #[cfg(feature = "wasmtime")]
+    #[command(name = "wasmtime_sandbox")]
+    WasmtimeSandbox,
 }
 
 /// Runs the example selected on the command line.
@@ -42,6 +48,10 @@ fn main() -> anyhow::Result<()> {
             #[cfg(feature = "wasmtime")]
             Commands::Wasmtime => {
                 wasmtime::run()?;
+            }
+            #[cfg(feature = "wasmtime")]
+            Commands::WasmtimeSandbox => {
+                wasmtime_sandbox::run()?;
             }
         }
     }

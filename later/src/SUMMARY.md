@@ -37,6 +37,7 @@
 - [Cloud](other/cloud/index.md)
   - [Rust on AWS](other/cloud/aws.md)
   - [Rust-native cloud development](other/cloud/rust_native_cloud_development.md)
+  - [Kubernetes operators](other/cloud/kubernetes.md)
 
 - [Compilers](categories/compilers/index.md)
   - [Tokenizing Input with Logos](categories/compilers/tokenization.md)
@@ -90,6 +91,7 @@
 
 - [Finance](categories/finance/index.md)
   - [Quant](categories/finance/quant.md)
+  - [Market data](categories/finance/market_data.md)
 
 - [Games](categories/games/index.md)
 
@@ -99,6 +101,10 @@
 - [Game engines](categories/game-engines/index.md)
   - [Game engines](categories/game-engines/game_engines.md)
 
+- [Machine learning in practice](other/machine-learning/index.md)
+  - [Run a model trained elsewhere (ONNX)](other/machine-learning/inference.md)
+  - [Classical machine learning](other/machine-learning/classical_ml.md)
+  - [Forecasting](other/machine-learning/forecasting.md)
 - [GPU programming](other/gpu/index.md)
   - [GPU](other/gpu/gpu.md)
 
