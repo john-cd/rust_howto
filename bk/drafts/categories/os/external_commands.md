@@ -4,11 +4,15 @@
 
 {{#include external_commands.incl.md}}
 
+For most application code, start with [`std::process::Command`][c~std::process::Command~docs]↗ and pass each argument separately instead of building a shell command string. Use `output()` to capture output, `status()` when you only need the exit status, or `spawn()` when you need to stream input or output. Check `status.success()` before treating a child's output as valid. A missing executable makes process creation fail; checking a command's location with `which` can improve diagnostics, but the executable can still disappear before it is launched.
+
+Use a command library when it fits the task: [`duct`][c~duct~docs]↗ helps compose pipelines in application code, while [`xshell`][c~xshell~docs]↗ provides shell-like command macros suited to build and maintenance scripts.
+
 ## Locate Installed Executables with `which` {#which}
 
 [![which][c~which~docs~badge]][c~which~docs] [![which~crates.io][c~which~crates.io~badge]][c~which~crates.io] [![which~repo][c~which~repo~badge]][c~which~repo] [![which~lib.rs][c~which~lib.rs~badge]][c~which~lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:which}}{{hi:Which-rs}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
 
-[`which`][c~which~docs]↗{{hi:which}} is a Rust equivalent of Unix command "which". It locates installed executables in a cross-platform way.
+[`which`][c~which~docs]↗{{hi:which}} locates executables using the platform's search path. It can help explain why an optional tool cannot be found, but still handle errors from launching the returned path.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/os/examples/external_commands/which.rs:example}}
@@ -90,13 +94,28 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 
 [`duct`][c~duct~repo]↗{{hi:duct}} is a library for running child processes. [`duct`][c~duct~docs]↗{{hi:duct}} makes it easy to build pipelines and redirect I/O like a shell. At the same time, [`duct`][c~duct~docs]↗{{hi:duct}} helps write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c~duct~gotchas~repo]↗ are handled for you.
 
+```rust,editable
+{{#include ../../../crates/cats/os/examples/external_commands/duct_example.rs:example}}
+```
+
+## Write Shell-Oriented Scripts with `xshell` {#xshell}
+
+[`xshell`][c~xshell~docs]↗ offers shell-like command composition and interpolation for Rust scripts. Its command helpers report spawn and nonzero-exit failures; use this style for build or maintenance scripts, while `std::process::Command` keeps application code explicit about arguments and process I/O.
+
+```rust,editable
+{{#include ../../../crates/cats/os/examples/external_commands/xshell_example.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[command-line-interface | Command Line Interface]].
+- [[command-line-utilities | Command-line Utilities Written in Rust]].
+- [[shells | Shells]].
+- [[os | Operating Systems]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write which; review](https://github.com/john-cd/rust_howto/issues/946)
+  [write which; review](https://github.com/john-cd/rust_howto/issues/946)
 </div>

@@ -10855,9 +10855,11 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap",
+ "duct",
  "libc",
  "regex",
  "which",
+ "xshell",
 ]
 
 [[package]]

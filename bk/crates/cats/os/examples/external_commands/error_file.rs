@@ -19,7 +19,7 @@ use std::process::Stdio;
 /// error. Both the standard output (listing of the current directory) and the
 /// standard error (error message about "oops") will be written to
 /// "temp/out.txt".
-fn main() -> Result<(), std::io::Error> {
+fn main() -> anyhow::Result<()> {
     let path = Path::new("temp/out.txt");
     let outputs = File::create(path)?;
     // Creates a new `File` instance that shares the same underlying file handle
@@ -27,12 +27,19 @@ fn main() -> Result<(), std::io::Error> {
     // `File` instances simultaneously.
     let errors = outputs.try_clone()?;
 
-    Command::new("ls")
+    let status = Command::new("ls")
         .args([".", "oops"])
         .stdout(Stdio::from(outputs))
         .stderr(Stdio::from(errors))
         .spawn()?
-        .wait_with_output()?;
+        .wait()?;
+
+    if status.success() {
+        anyhow::bail!(
+            "`ls` unexpectedly succeeded for the missing path `oops`."
+        );
+    }
+    println!("`ls` exited with {status}, as expected for the missing path.");
 
     // Print contents of the file.
     std::fs::read_to_string(path)?
@@ -45,7 +52,7 @@ fn main() -> Result<(), std::io::Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() -> Result<(), std::io::Error> {
+pub fn run() -> anyhow::Result<()> {
     main()
 }
 

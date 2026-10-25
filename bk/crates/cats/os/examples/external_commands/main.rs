@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 #[cfg(target_os = "linux")]
 mod continuous;
+mod duct_example;
 #[cfg(target_family = "unix")]
 mod error_file;
 #[cfg(target_family = "unix")]
@@ -17,6 +18,7 @@ mod read_env_variable;
 #[cfg(target_family = "unix")]
 mod send_input;
 mod which;
+mod xshell_example;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -33,6 +35,9 @@ enum Commands {
     #[cfg(target_os = "linux")]
     #[command(name = "continuous")]
     Continuous,
+    /// Runs the `duct` example.
+    #[command(name = "duct")]
+    Duct,
     /// Runs the `error_file` example.
     #[cfg(target_family = "unix")]
     #[command(name = "error_file")]
@@ -55,6 +60,9 @@ enum Commands {
     /// Runs the `which` example.
     #[command(name = "which")]
     Which,
+    /// Runs the `xshell` example.
+    #[command(name = "xshell")]
+    Xshell,
 }
 
 /// Runs the example selected on the command line.
@@ -64,17 +72,12 @@ fn main() -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             #[cfg(target_os = "linux")]
-            Commands::Continuous => {
-                continuous::run().expect("the example should run");
-            }
+            Commands::Continuous => continuous::run()?,
+            Commands::Duct => duct_example::run()?,
             #[cfg(target_family = "unix")]
-            Commands::ErrorFile => {
-                error_file::run().expect("the example should run");
-            }
+            Commands::ErrorFile => error_file::run()?,
             #[cfg(target_family = "unix")]
-            Commands::Piped => {
-                piped::run().expect("the example should run");
-            }
+            Commands::Piped => piped::run()?,
             Commands::ProcessOutput => {
                 process_output::run()?;
             }
@@ -83,12 +86,11 @@ fn main() -> anyhow::Result<()> {
                 read_env_variable::run();
             }
             #[cfg(target_family = "unix")]
-            Commands::SendInput => {
-                send_input::run().expect("the example should run");
-            }
+            Commands::SendInput => send_input::run()?,
             Commands::Which => {
                 which::run();
             }
+            Commands::Xshell => xshell_example::run()?,
         }
     }
 

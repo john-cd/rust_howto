@@ -14,28 +14,36 @@ use std::io::Error;
 use std::process::Command;
 use std::process::Stdio;
 
+use anyhow::bail;
+
 /// Runs `journalctl` and prints its output line by line as it is produced.
-fn main() -> Result<(), Error> {
+fn main() -> anyhow::Result<()> {
     // NOTE: `systemd` should be installed for this example to work.
-    let stdout = Command::new("journalctl")
+    let mut child = Command::new("journalctl")
         .stdout(Stdio::piped())
         // Spawn the command and capture its standard output.
-        .spawn()?
+        .spawn()?;
+    let stdout = child
         .stdout
+        .take()
         // Ensure that standard output was captured successfully.
         .ok_or_else(|| Error::other("Could not capture standard output."))?;
 
     // Create a buffered reader for efficient line-by-line reading.
     let reader = BufReader::new(stdout);
 
-    // Iterate over the lines from the reader.
-    reader
-        .lines()
-        // Convert each line to a String, discarding errors.
-        .map_while(Result::ok)
-        // Filter lines that contain the substring "usb".
-        .filter(|line| line.contains("usb"))
-        .for_each(|line| println!("{line}"));
+    // Read each line and propagate I/O errors rather than dropping them.
+    for line in reader.lines() {
+        let line = line?;
+        if line.contains("usb") {
+            println!("{line}");
+        }
+    }
+
+    let status = child.wait()?;
+    if !status.success() {
+        bail!("`journalctl` exited with status {status}.");
+    }
 
     Ok(())
 }
@@ -43,7 +51,7 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() -> Result<(), Error> {
+pub fn run() -> anyhow::Result<()> {
     main()
 }
 
@@ -54,6 +62,7 @@ mod tests {
 
     /// Verifies journal output can be read on Linux systems with systemd.
     #[test]
+    #[ignore = "requires access to a Linux systemd journal"]
     fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())

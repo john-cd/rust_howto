@@ -31,7 +31,7 @@ struct Commit {
 fn main() -> Result<()> {
     let output = Command::new("git").arg("log").arg("--oneline").output()?;
     if !output.status.success() {
-        bail!("Command executed with failing error code.");
+        bail!("`git log` exited with status {}.", output.status);
     }
 
     let pattern = Regex::new(

@@ -19,8 +19,8 @@ use std::process::Stdio;
 ///
 /// The `du` command is used to get the disk usage of each file and directory.
 /// The `sort` command is used to sort the output of `du` in reverse
-/// human-readable order. The `head` command is used to get the first 10 lines
-/// of the sorted output.
+/// human-readable order. The Rust code prints the first 10 sorted lines after
+/// checking both child processes' exit statuses.
 fn main() -> anyhow::Result<()> {
     let directory = std::env::current_dir()?;
     let mut du_output_child = Command::new("du")
@@ -29,36 +29,32 @@ fn main() -> anyhow::Result<()> {
         .stdout(Stdio::piped())
         .spawn()?;
 
-    if let Some(du_output) = du_output_child.stdout.take() {
-        let mut sort_output_child = Command::new("sort")
-            .arg("-hr")
-            .stdin(du_output)
-            .stdout(Stdio::piped())
-            .spawn()?;
+    let du_output = du_output_child
+        .stdout
+        .take()
+        .ok_or_else(|| std::io::Error::other("`du` stdout was not captured"))?;
+    let mut sort_output_child = Command::new("sort")
+        .arg("-hr")
+        .stdin(du_output)
+        .stdout(Stdio::piped())
+        .spawn()?;
+    let sort_output = sort_output_child.wait_with_output()?;
+    let du_status = du_output_child.wait()?;
 
-        du_output_child.wait()?;
-
-        match sort_output_child.stdout.take() {
-            Some(sort_output) => {
-                let head_output_child = Command::new("head")
-                    .args(["-n", "10"])
-                    .stdin(sort_output)
-                    .stdout(Stdio::piped())
-                    .spawn()?;
-
-                let head_stdout = head_output_child.wait_with_output()?;
-
-                sort_output_child.wait()?;
-
-                println!(
-                    "Top 10 biggest files and directories in '{}':\n{}",
-                    directory.display(),
-                    String::from_utf8(head_stdout.stdout).unwrap()
-                );
-            }
-            _ => {}
-        }
+    if !du_status.success() {
+        anyhow::bail!("`du` exited with status {du_status}.");
     }
+    if !sort_output.status.success() {
+        anyhow::bail!("`sort` exited with status {}.", sort_output.status);
+    }
+
+    let sorted_usage = String::from_utf8(sort_output.stdout)?;
+    let largest = sorted_usage.lines().take(10).collect::<Vec<_>>().join("\n");
+    println!(
+        "Top 10 biggest files and directories in '{}':\n{}",
+        directory.display(),
+        largest
+    );
 
     Ok(())
 }

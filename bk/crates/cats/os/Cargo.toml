@@ -21,9 +21,11 @@ autolib = false
 [dependencies]
 anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive"] }
+duct = "1.1.2"
 libc = "0.2.191"
 regex = "1.13.1"
 which = "8.0.6"
+xshell = "0.2.7"
 
 [[example]]
 name = "external_commands"
