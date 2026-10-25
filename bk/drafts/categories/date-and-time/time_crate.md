@@ -12,7 +12,9 @@
 [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-[`time`][c~time~docs]↗{{hi:time}} is a [date and time][p~date-and-time] library that is fully interoperable with the [standard library][p~standard-library] and mostly compatible with [`#![no_std]`][book~rust-reference~no_std].
+[`time`][c~time~docs]↗{{hi:time}} is a date-and-time library that interoperates with `std` and supports `no_std` configurations. Its `OffsetDateTime`, `PrimitiveDateTime`, and `Duration` types cover timestamp, local date-time, and arithmetic use cases. Enable the `macros` feature for compile-time format descriptions and fixed date literals. Compared with `chrono`, `time` emphasizes a smaller modular API and `no_std` support; [`jiff`][c~jiff~docs]↗ is another actively developed option with richer time-zone handling.
+
+`OffsetDateTime::now_utc()` is suitable for a current UTC timestamp. Avoid relying on wall-clock time in tests: construct fixed values with `datetime!` and assert exact parse, format, and arithmetic results. Local offset lookup such as `OffsetDateTime::now_local()` can fail on multithreaded Unix programs because the platform's local-time APIs may mutate process-global state.
 
 ```rust,editable
 {{#include ../../../crates/cats/date_and_time/examples/time.rs:example}}
@@ -20,11 +22,12 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Duration and Calculation](duration.md) explains elapsed-time measurement and checked arithmetic.
+- [Parsing and Displaying](parse.md) covers date parsing and formatting.
+- [Time-zone handling](duration.md#convert-local-time) demonstrates conversion with Chrono.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[time: write](https://github.com/john-cd/rust_howto/issues/293)
 </div>

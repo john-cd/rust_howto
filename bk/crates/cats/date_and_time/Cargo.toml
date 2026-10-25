@@ -23,7 +23,7 @@ anyhow = "1.0.104"
 chrono = "0.4.45"
 clap = { version = "4.6.7", features = ["derive"] }
 humantime = "2.4.0"
-time = { version = "0.3.55", features = ["formatting", "parsing"] } # Parse and display dates and times.
+time = { version = "0.3.55", features = ["formatting", "parsing", "macros"] } # Parse, display, construct, and calculate with dates and times.
 
 [[example]]
 name = "chrono"

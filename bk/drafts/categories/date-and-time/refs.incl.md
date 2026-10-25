@@ -11,3 +11,4 @@
 [ex~date-and-time~unix-timestamp]: parse.md#unix-timestamp
 [p~date-and-time]: index.md
 [p~standard-library]: ../../../src/standard-library/index.md
+[c~jiff~docs]: https://docs.rs/jiff
