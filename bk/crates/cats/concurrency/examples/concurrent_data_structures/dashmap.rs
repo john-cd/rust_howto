@@ -9,90 +9,42 @@
 //! it from multiple threads, and perform various operations like insertion,
 //! retrieval, modification, and removal.
 
-use std::sync::Arc;
 use std::thread;
 
 use dashmap::DashMap;
 
 /// Inserts, reads and modifies the entries of a `DashMap` from several threads.
-fn main() {
-    // Create a shared `DashMap` with an `Arc`.
-    let map: Arc<DashMap<&str, i32, _>> = Arc::new(DashMap::new());
-    // Alternatively, your can use `DashMap::with_capacity(20)` to pre-allocate
-    // space.
-
-    // Create multiple threads.
-    let mut threads = Vec::new();
-    for i in 0..4 {
-        let map_clone = map.clone();
-        let thread_id = i;
-        threads.push(thread::spawn(move || {
-            // Access and modify the map from each thread.
-            match thread_id {
-                0 => {
-                    map_clone.insert("key1", thread_id);
-                    println!("Thread {thread_id} inserted key1");
+fn main() -> anyhow::Result<()> {
+    let map = DashMap::new();
+    thread::scope(|scope| {
+        for worker in 0..4 {
+            let map = &map;
+            scope.spawn(move || {
+                for entry in 0..100 {
+                    map.insert((worker, entry), entry);
                 }
-                1 => {
-                    map_clone.insert("key2", thread_id);
-                    println!("Thread {thread_id} inserted key2");
-                }
-                2 => match map_clone.get("key1") {
-                    Some(value) => {
-                        println!("Thread {thread_id} read key1: {}", *value);
-                    }
-                    _ => {
-                        println!("Thread {thread_id} couldn't find key1");
-                    }
-                },
-                3 => match map_clone.get_mut("key2") {
-                    Some(mut value) => {
-                        *value += 10;
-                        println!(
-                            "Thread {thread_id} incremented key2 value to {}",
-                            *value
-                        );
-                    }
-                    _ => {
-                        println!("Thread {thread_id} couldn't find key2");
-                    }
-                },
-                _ => panic!("Unknown thread ID"),
-            }
-        }));
-    }
-
-    // Wait for all threads to finish.
-    for thread in threads {
-        thread.join().unwrap();
-    }
-
-    // Remove "key1" and assert its value:
-    assert_eq!(map.remove("key1").unwrap().1, 0); // `remove` returns Option<(K, V)>.
-
-    // Check if "key2" exists:
-    assert!(map.contains_key("key2"));
-
-    // Remove "key2" if its value is 11:
-    map.remove_if("key2", |_, val| *val == 11);
-
-    // Access the final state of the map from the main thread:
-    println!("final count: {}", map.iter().count());
+            });
+        }
+    });
+    assert_eq!(map.len(), 400);
+    assert_eq!(map.get(&(3, 99)).map(|value| *value), Some(99));
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that concurrent inserts produce the expected map contents.
     #[test]
     fn test_main() {
-        main();
+        main().expect("dashmap recipe should pass its assertions");
     }
 }

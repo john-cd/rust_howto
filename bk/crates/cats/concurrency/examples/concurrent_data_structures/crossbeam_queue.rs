@@ -7,7 +7,7 @@
 use crossbeam_queue::ArrayQueue;
 
 /// Demonstrates the basic usage of `ArrayQueue`.
-fn main() {
+fn main() -> anyhow::Result<()> {
     // Create a new `ArrayQueue` with a capacity of 2.
     let q = ArrayQueue::new(2);
     // Push 'a' onto the queue. This should succeed.
@@ -16,22 +16,26 @@ fn main() {
     assert_eq!(q.push('b'), Ok(()));
     assert_eq!(q.push('c'), Err('c'));
     assert_eq!(q.pop(), Some('a'));
-    println!("{:?}", q.pop());
+    assert_eq!(q.pop(), Some('b'));
+    assert_eq!(q.pop(), None);
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that the bounded queue accepts values up to capacity in FIFO
+    /// order.
     #[test]
     fn test_main() {
-        main();
+        main().expect("queue recipe should pass its assertions");
     }
 }

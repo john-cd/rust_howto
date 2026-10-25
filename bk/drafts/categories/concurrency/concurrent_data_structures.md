@@ -6,6 +6,15 @@
 
 Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench~repo]↗.
 
+| Crate                                        | Structure                       | Lock-free?                                                   | Notes                                                                                   |
+| -------------------------------------------- | ------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| [`dashmap`][c~dashmap~docs]↗                 | Sharded hash map                | No; uses shard locks                                         | Familiar map API. Keep entry guards short-lived.                                        |
+| [`papaya`][c~papaya~docs]↗                   | Concurrent hash table           | Yes; lock-free map API                                       | Pin the map for access; pins also protect values from reclamation.                      |
+| [`scc`][c~scc~docs]↗                         | Concurrent hash map and indexes | Mixed; entry access uses bucket locks, resizing is lock-free | Provides sync and async interfaces.                                                     |
+| [`flurry`][c~flurry~docs]↗                   | Concurrent hash table           | Reads do not lock; updates are synchronized                  | Access methods use a guard for safe reclamation.                                        |
+| [`crossbeam-queue`][c~crossbeam-queue~docs]↗ | Bounded MPMC queue              | Yes                                                          | `ArrayQueue` has a fixed capacity and reports when it is full.                          |
+| [`arc-swap`][c~arc-swap~docs]↗               | Atomic shared-pointer slot      | Readers are lock-free; writers are lock-free                 | Useful for read-mostly configuration snapshots; see [ArcSwap][ex~concurrency~arc-swap]. |
+
 ## `dashmap` {#dashmap}
 
 [![dashmap][c~dashmap~docs~badge]][c~dashmap~docs] [![dashmap~crates.io][c~dashmap~crates.io~badge]][c~dashmap~crates.io] [![dashmap~repo][c~dashmap~repo~badge]][c~dashmap~repo] [![dashmap~lib.rs][c~dashmap~lib.rs~badge]][c~dashmap~lib.rs]{{hi:dashmap}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Atomic}}[![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
@@ -15,6 +24,8 @@ Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench~repo
 [`dashmap`][c~dashmap~docs]↗{{hi:dashmap}} tries to be a direct replacement for `RwLock<HashMap<K, V>>`.
 
 It allows multiple threads to concurrently read and write to the map with minimal contention, using a technique called "shard-based" or "bucket-based" concurrency. This makes [`dashmap`][c~dashmap~docs]↗{{hi:dashmap}} a good choice for a hash map that can be accessed frequently by multiple threads without significant performance bottlenecks.
+
+An entry guard returned by `get` or `get_mut` holds a shard lock. Drop guards promptly; holding one across `.await` can block executor progress, and re-entering the same map while a guard is held can deadlock.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/dashmap.rs:example}}
@@ -52,11 +63,13 @@ It allows multiple threads to concurrently read and write to the map with minima
 - Extremely scalable, low-latency reads (see [performance][p~performance]).
 - Predictable latency across all operations.
 - Efficient memory usage, with garbage collection powered by [`seize`][c~seize~docs]↗{{hi:seize}}.
-([doc][c~papaya~docs]↗).
+  ([doc][c~papaya~docs]↗).
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/papaya.rs:example}}
 ```
+
+For applications that need a synchronous or asynchronous concurrent map with bucket-level locking, consider [`scc`][c~scc~docs]↗{{hi:scc}}. Its map uses read-write locks for entry access while resizing proceeds lock-free.
 
 ## Related Topics {#related-topics .skip}
 
@@ -72,5 +85,4 @@ It allows multiple threads to concurrently read and write to the map with minima
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[concurrent_data_structures: finish](https://github.com/john-cd/rust_howto/issues/258)
 </div>

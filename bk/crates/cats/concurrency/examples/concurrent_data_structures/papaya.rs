@@ -12,7 +12,7 @@ use papaya::HashMap;
 
 // Use a map from multiple threads.
 /// Inserts into and reads from a shared `papaya` map from several threads.
-fn main() {
+fn main() -> anyhow::Result<()> {
     // Create a map.
     let map = HashMap::new();
     std::thread::scope(|s| {
@@ -33,12 +33,11 @@ fn main() {
             }
         });
 
-        // Remove the values.
-        // Note that the map is accessed from multiple threads.
+        // Insert a disjoint range from another thread.
         s.spawn(|| {
             let m = map.pin();
-            for i in 'A'..='Z' {
-                m.remove(&i);
+            for i in 'a'..='z' {
+                m.insert(i, 2);
             }
         });
 
@@ -51,9 +50,7 @@ fn main() {
         // - Read operations (such as get) reflect the results of the
         //   most-recent write.
         s.spawn(|| {
-            for (key, value) in &map.pin() {
-                println!("{key}: {value}");
-            }
+            let _entries_seen = map.pin().iter().count();
         });
 
         // Atomic operations:
@@ -65,22 +62,25 @@ fn main() {
         // Updates an existing entry atomically.
         assert_eq!(m.update('#', |e| e + 1), Some(&2));
     });
-    // Example adapted from <https://docs.rs/papaya/latest/papaya>
+    assert_eq!(map.pin().iter().count(), 53);
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies concurrent inserts and atomic updates leave the expected
+    /// entries.
     #[test]
     fn test_main() {
-        main();
+        main().expect("papaya recipe should pass its assertions");
     }
 }

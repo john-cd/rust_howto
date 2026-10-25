@@ -14,7 +14,7 @@ use flurry::HashMap;
 /// This example demonstrates the basic usage of the `flurry::HashMap` for
 /// concurrent data access. It showcases how to insert, read, remove, and
 /// iterate over the map, both sequentially and concurrently.
-fn main() {
+fn main() -> anyhow::Result<()> {
     // Create a new Flurry `HashMap`.
     // Wrap in an `Arc`, so that it can be shared between threads:
     let map = Arc::new(HashMap::new());
@@ -51,26 +51,17 @@ fn main() {
         // update operations (including `insert`). Retrievals reflect the
         // results of the most recently completed update operations
         // holding upon their onset.
-        println!("Value for key1: {:?}", mref.get("key1")); // Output: Some(1)
-        println!("Value for key4: {:?}", mref.get("key4")); // Output: None
+        assert_eq!(mref.get("key1"), Some(&1));
+        assert_eq!(mref.get("key4"), None);
 
-        println!("\nRemoving key0");
         mref.remove("key0");
-        println!("Value for key0 after removal: {:?}", mref.get("key0"));
-
-        println!("\nChecking if key2 exists");
-        println!("{}", mref.contains_key("key2"));
+        assert_eq!(mref.get("key0"), None);
+        assert!(mref.contains_key("key2"));
 
         // Operations that inspect the map as a whole, rather than a single key,
         // operate on a snapshot of the underlying table. For example, iterators
         // return elements reflecting the state of the hash table at some point
         // at or since the creation of the iterator.
-
-        // Iterate over the map (read-only).
-        println!("Iterating over the map:");
-        for (key, value) in &mref {
-            println!("{key}: {value}");
-        }
 
         // Aggregate status methods like `len` are typically useful only when a
         // map is not undergoing concurrent updates in other threads.
@@ -81,8 +72,6 @@ fn main() {
     let writer_thread = thread::spawn(move || {
         for i in 4..=5 {
             m.pin().insert(format!("key{i}"), i);
-            // Simulate some work:
-            thread::sleep(std::time::Duration::from_millis(10));
         }
     });
 
@@ -94,7 +83,6 @@ fn main() {
             for (key, value) in &m2.pin() {
                 println!("{key}: {value}");
             }
-            thread::sleep(std::time::Duration::from_millis(10));
         }
     });
 
@@ -105,26 +93,27 @@ fn main() {
         .join()
         .expect("reader thread should complete successfully");
 
-    // Final state of the map.
-    println!("\nFinal state of the map:");
-    for (key, value) in &map.pin() {
-        println!("{key}: {value}");
+    let mref = map.pin();
+    for i in 1..=5 {
+        assert_eq!(mref.get(&format!("key{i}")), Some(&i));
     }
+    Ok(())
 }
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that concurrent map updates are visible after the workers join.
     #[test]
     fn test_main() {
-        main();
+        main().expect("flurry recipe should pass its assertions");
     }
 }
 // [review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs](https://github.com/john-cd/rust_howto/issues/1152)

@@ -1,5 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
+[c~scc~crates.io]: https://crates.io/crates/scc
+[c~scc~docs]: https://docs.rs/scc
+
 [ex~concurrency~actix]: _actors.md#actix
 [ex~concurrency~actors]: _actors.md#tokio
 [ex~concurrency~any-or-all-in-parallel]: data_parallelism.md#any-or-all-in-parallel

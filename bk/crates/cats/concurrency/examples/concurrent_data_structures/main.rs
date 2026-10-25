@@ -37,23 +37,24 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::CrossbeamQueue => {
-                crossbeam_queue::run();
+                crossbeam_queue::run()?;
             }
             Commands::Dashmap => {
-                dashmap::run();
+                dashmap::run()?;
             }
             Commands::Flurry => {
-                flurry::run();
+                flurry::run()?;
             }
             Commands::Papaya => {
-                papaya::run();
+                papaya::run()?;
             }
         }
     }
+    Ok(())
 }
