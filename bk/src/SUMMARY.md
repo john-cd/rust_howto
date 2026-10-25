@@ -110,6 +110,7 @@
 
 - [Crate Selection](crate-selection/index.md)
   - [Current State of the Art](crate-selection/current_state_of_the_art.md)
+  - [Generate Crate Indices Offline](crate-selection/crate_indices.md)
 
 - [Links](links/index.md)
   - [Rust Cheat Sheets](links/rust_cheatsheets.md)

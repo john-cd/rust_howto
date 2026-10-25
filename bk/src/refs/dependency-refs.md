@@ -2918,6 +2918,15 @@
 [tonic_web-github]: https://github.com/hyperium/tonic
 
 
+[tool_lib]: https://docs.rs/tool_lib
+
+
+[tool_lib-crate]: https://crates.io/crates/tool_lib
+
+
+[tool_lib-github]: https://github.com/john-cd/rust_howto/tools/
+
+
 [tower]: https://docs.rs/tower
 
 

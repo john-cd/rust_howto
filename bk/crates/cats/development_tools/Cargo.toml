@@ -30,11 +30,17 @@ quote = "1"
 semver = "1.0.28"
 syn = { version = "3", features = ["full", "visit"] }
 toml_edit = "0.25.17"
+# Local Cargo, metadata, and book-index operations reused from the helper tools.
+tool_lib = { path = "../../../../tools/tool_lib" }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 wasmparser = "0.262.0"
 wasmprinter = "0.262.0"
 wat = "1.262.0"
+
+[dev-dependencies]
+# Isolated filesystem fixtures for local crate-index examples.
+tempfile = { workspace = true }
 
 [[example]]
 name = "cargo_metadata"
@@ -69,6 +75,11 @@ test = true
 [[example]]
 name = "syn_file"
 path = "examples/rust_source/syn_file.rs"
+test = true
+
+[[example]]
+name = "crate_indices"
+path = "examples/crate_indices/main.rs"
 test = true
 
 [[example]]

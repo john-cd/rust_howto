@@ -22,6 +22,8 @@ It is the main purpose of this book to provide expansive coverage of "key" or "f
 1. Use this book's [[links | links]] to Rust documentation, books, videos, cheatsheets, etc.
 1. The [[example_code | Example Code and Templates]] chapter provides lists of popular Rust repositories.
 
+Contributors can also see how this book builds its local category and alphabetical indices in [Generate Crate Indices Offline](crate_indices.md).
+
 ### Evaluate a Crate
 
 Before adding a crate, check whether it fits your project's needs and maintenance expectations:
