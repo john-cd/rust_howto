@@ -10070,6 +10070,14 @@
 [c~wkt~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wkt-yellow
 [c~wkt~repo]: https://github.com/georust/wkt
 [c~wkt~repo~badge]: https://img.shields.io/badge/wkt-steelblue?logo=github
+[c~wry~crates.io]: https://crates.io/crates/wry
+[c~wry~crates.io~badge]: https://img.shields.io/badge/crates.io-wry-crimson
+[c~wry~docs]: https://docs.rs/wry
+[c~wry~docs~badge]: https://img.shields.io/crates/v/wry?label=wry
+[c~wry~lib.rs]: https://lib.rs/crates/wry
+[c~wry~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wry-yellow
+[c~wry~repo]: https://github.com/tauri-apps/wry
+[c~wry~repo~badge]: https://img.shields.io/badge/wry-steelblue?logo=github
 [c~x264~crates.io]: https://crates.io/crates/x264
 [c~x264~crates.io~badge]: https://img.shields.io/badge/crates.io-x264-crimson
 [c~x264~docs]: https://docs.rs/x264

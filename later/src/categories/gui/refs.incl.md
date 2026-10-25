@@ -30,6 +30,7 @@
 [ex~gui~webassembly-wasm-considerations]: clipboard.md#webassembly-wasm-considerations
 [ex~gui~webassembly-wasm-considerations]: file_dialogs.md#webassembly-wasm-considerations
 [ex~gui~winit]: window_creation.md#winit
+[ex~gui~wry]: web_based_gui.md#wry
 [ex~gui~xilem]: retained_mode_gui.md#xilem
 [gtk-rs~installation-linux]: https://gtk-rs.org/gtk4-rs/stable/latest/book/installation_linux.html
 [gtk-rs~installation-windows]: https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html

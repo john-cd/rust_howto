@@ -38,6 +38,27 @@ Dioxus supports:
 {{#include ../../../crates/cats/gui/examples/web/dioxus.rs:example}}
 ```
 
+## `wry` {#wry}
+
+[![wry][c~wry~docs~badge]][c~wry~docs]{{hi:wry}} [![tao][c~tao~docs~badge]][c~tao~docs]{{hi:tao}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}{{hi:Web view}}
+
+[`wry`][c~wry~docs]↗{{hi:wry}} is the cross-platform web view library that [`tauri`][c~tauri~docs]↗{{hi:tauri}} is built on, and [`tao`][c~tao~docs]↗{{hi:tao}} is the window and event loop library that goes with it. Using them directly is the lightweight option when an application needs only one web view, for example to show a local dashboard or report, and no bundler or JavaScript toolchain.
+
+The example below needs a display, so it is not run by the tests. The tests cover the allow-list for the pages that the program accepts: only local `file://` URIs, validated with the [`url`][c~url~docs]↗{{hi:url}} crate before they reach the web view. The function that opens the page is passed as a closure, so the validation is tested without a window. Do the same whenever the address comes from outside.
+
+```rust,no_run,editable
+{{#include ../../../crates/cats/gui/examples/web/wry_window.rs:example}}
+```
+
+Run it with `cargo run --example wry_window --features wry`.
+
+Points to remember:
+
+- **The web view belongs to the system.** `wry` uses WebView2 on Windows, WKWebView on macOS and WebKitGTK on Linux. WebView2 ships with current versions of Windows 10 and 11. Linux needs the WebKitGTK and GTK 3 development packages to build (`libwebkit2gtk-4.1-dev` and `libgtk-3-dev` on Debian and Ubuntu) and the runtime libraries to run. Rendering and JavaScript support therefore differ slightly between platforms.
+- **Rust and JavaScript talk through IPC.** JavaScript calls `window.ipc.postMessage(text)`, which reaches the handler registered with `WebViewBuilder::with_ipc_handler`. Rust calls back with `WebView::evaluate_script`. Treat the messages as untrusted input.
+- **Load content deliberately.** `with_url` loads a page and `with_html` an inline document. Do not navigate to arbitrary addresses from an application that exposes IPC.
+- **When to choose [`tauri`][c~tauri~docs]↗{{hi:tauri}} instead.** Tauri adds a command system, a permission model, bundling and installers, auto-update and a JavaScript API. Choose it for a full application with a web front end, and `wry` for a window that displays a page.
+
 ## Related Topics {#related-topics .skip}
 
 - Web and desktop UI frameworks.
@@ -51,4 +72,5 @@ Dioxus supports:
 <div class="hidden">
 [web_based_gui: write](https://github.com/john-cd/rust_howto/issues/394)
 where should we put Dioxus?
+[show a local web page in a native window](https://github.com/john-cd/rust_howto/issues/1952)
 </div>
