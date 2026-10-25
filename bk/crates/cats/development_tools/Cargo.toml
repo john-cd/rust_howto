@@ -30,6 +30,9 @@ semver = "1.0.28"
 syn = { version = "3", features = ["full", "visit"] }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+wasmparser = "0.262.0"
+wasmprinter = "0.262.0"
+wat = "1.262.0"
 
 [[example]]
 name = "cargo_metadata"
@@ -44,6 +47,11 @@ test = true
 [[example]]
 name = "quote_prettyplease"
 path = "examples/rust_source/quote_prettyplease.rs"
+test = true
+
+[[example]]
+name = "wasm_roundtrip"
+path = "examples/rust_source/wasm_roundtrip.rs"
 test = true
 
 [[example]]

@@ -46,6 +46,16 @@ Project-specific rules that `clippy` does not cover can be written in Rust, for 
 {{#include ../../../../crates/cats/development_tools/examples/rust_source/find_unwraps.rs:example}}
 ```
 
+## Assemble, Inspect and Print WebAssembly with `wat`, `wasmparser` and `wasmprinter` {#wasm-roundtrip}
+
+[![wat][c~wat~docs~badge]][c~wat~docs] [![wat~crates.io][c~wat~crates.io~badge]][c~wat~crates.io] [![wasmparser][c~wasmparser~docs~badge]][c~wasmparser~docs] [![wasmparser~crates.io][c~wasmparser~crates.io~badge]][c~wasmparser~crates.io] [![wasmprinter][c~wasmprinter~docs~badge]][c~wasmprinter~docs] [![wasmprinter~crates.io][c~wasmprinter~crates.io~badge]][c~wasmprinter~crates.io]{{hi:wat}}{{hi:wasmparser}}{{hi:wasmprinter}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:WebAssembly}}
+
+The [Bytecode Alliance `wasm-tools`](https://github.com/bytecodealliance/wasm-tools)↗ crates read and write WebAssembly without a runtime. [`wat`][c~wat~docs]↗{{hi:wat}} assembles the text format into a binary module, [`wasmparser`][c~wasmparser~docs]↗{{hi:wasmparser}} validates a binary and iterates over its sections as `Payload` values, and [`wasmprinter`][c~wasmprinter~docs]↗{{hi:wasmprinter}} turns a binary back into text. Together they make small test fixtures easy to write and let a build tool inspect a module's imports and exports. Note that `wat` only checks syntax: validation is a separate step.
+
+```rust,editable
+{{#include ../../../../crates/cats/development_tools/examples/rust_source/wasm_roundtrip.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[parsing | Parsing Utilities]].
