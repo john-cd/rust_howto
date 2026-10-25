@@ -230,6 +230,7 @@
 [blog~raphlinus]: https://raphlinus.github.io
 [blog~reddit~rust_gpu_the_future_of_gpu_programming]: https://reddit.com/r/rust/comments/1fyown4/rust_gpu_the_future_of_gpu_programming
 [blog~releases]: https://blog.rust-lang.org/releases
+[blog~rust-1.86]: https://blog.rust-lang.org/2025/04/03/Rust-1.86.0/
 [blog~roto]: https://blog.nlnetlabs.nl/introducing-roto-a-compiled-scripting-language-for-rust
 [blog~rust-a-unique-perspective-html]: https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html
 [blog~rust-a-unique-perspective]: https://limpet.net/mbrubeck/2019/02/07/rust-a-unique-perspective.html
@@ -531,7 +532,7 @@
 [book~rust-reference~modules-search]: https://doc.rust-lang.org/reference/items/modules.html#r-items.mod.outlined.search-mod
 [book~rust-reference~modules]: https://doc.rust-lang.org/reference/items/modules.html
 [book~rust-reference~no_std]: https://doc.rust-lang.org/reference/names/preludes.html#r-names.preludes.extern.no_std
-[book~rust-reference~object-safe]: https://doc.rust-lang.org/nightly/reference/items/traits.html#object-safety
+[book~rust-reference~object-safe]: https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility
 [book~rust-reference~path-attribute]: https://doc.rust-lang.org/reference/items/modules.html#the-path-attribute
 [book~rust-reference~procedural-macros-attribute]: https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.attribute
 [book~rust-reference~procedural-macros-macro.proc.derive.attributes]: https://doc.rust-lang.org/reference/procedural-macros.html#r-macro.proc.derive.attributes
@@ -551,7 +552,7 @@
 [book~rust-web-development-bastian-gruber]: https://amazon.com/Rust-Web-Development-Bastian-Gruber/dp/1617299006
 [book~rust]: https://doc.rust-lang.org/book
 [book~rustc]: https://doc.rust-lang.org/rustc
-[book~rustc~badge]:https://img.shields.io/badge/rustc-tan
+[book~rustc~badge]: https://img.shields.io/badge/rustc-tan
 [book~rustc~lints]: https://doc.rust-lang.org/rustc/lints
 [book~rustdoc]: https://doc.rust-lang.org/rustdoc
 [book~rustdoc~badge]: https://img.shields.io/badge/Rustdoc-peru?logo=mdbook
@@ -1574,7 +1575,7 @@
 [wikipedia~List_of_software_package_management_systems]: https://en.wikipedia.org/wiki/List_of_software_package_management_systems
 [wikipedia~QEMU]: https://en.wikipedia.org/wiki/QEMU
 [wikipedia~authenticated-encryption]: https://en.wikipedia.org/wiki/Authenticated_encryption
-[wikipedia~behavior-tree]:https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence%2C_robotics_and_control)
+[wikipedia~behavior-tree]: https://en.wikipedia.org/wiki/Behavior_tree_(artificial_intelligence%2C_robotics_and_control)
 [wikipedia~bullet]: https://en.wikipedia.org/wiki/Bullet_%28software%29
 [wikipedia~haversine-formula]: https://en.wikipedia.org/wiki/Haversine_formula
 [wikipedia~model-checking]: https://en.wikipedia.org/wiki/Model_checking

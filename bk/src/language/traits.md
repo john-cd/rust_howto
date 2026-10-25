@@ -117,7 +117,7 @@ The newtype pattern involves creating a new local type (typically, a tuple struc
 
 The sealed trait pattern is a way to prevent crates from implementing a trait that they don't own. This allows the author of the trait to add new items to it in the future without that being a breaking change for downstream users.
 
-This is typically achieved by defining a public trait that has a dependency on another "sealer" trait which is kept private to the crate. Because the sealer trait is not accessible outside of the crate, no downstream crate can satisfy the necessary trait bounds to implement the public-facing trait. More recently, the `#[sealed]` attribute has been introduced as a more direct and cleaner way to apply this pattern:
+This is typically achieved by defining a public trait that has a dependency on another "sealer" trait which is kept private to the crate. Because the sealer trait is not accessible outside of the crate, no downstream crate can satisfy the necessary trait bounds to implement the public-facing trait. The `sealed` crate provides an attribute macro that can apply this pattern, but Rust itself has no built-in `#[sealed]` attribute:
 
 ```rust,editable
 {{#include ../../crates/language/examples/traits/sealed_trait_pattern.rs:example}}
@@ -149,7 +149,7 @@ Trait bounds are often used with generics to specify that a generic type must im
 {{#include ../../crates/language/examples/traits/trait_bounds.rs:example}}
 ```
 
-Trait bounds are specified using the `TypeParameter: Trait` syntax, where `TypeParameter` is a generic type parameter and `Trait` is the trait that the type must implement. There are written within `< >` or in a separate `where` clause, which can be more readable. The `impl Trait` syntax may also used:
+Trait bounds are specified using the `TypeParameter: Trait` syntax, where `TypeParameter` is a generic type parameter and `Trait` is the trait that the type must implement. They are written within `< >` or in a separate `where` clause, which can be more readable. The `impl Trait` syntax may also be used:
 
 ```rust,editable
 {{#include ../../crates/language/examples/traits/trait_bounds2.rs:example}}
@@ -188,4 +188,5 @@ This topic is covered in the [[asynchronous | Async]] chapter.
 - [[rust-patterns | Rust Patterns]].
 
 [accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
+
 </div>

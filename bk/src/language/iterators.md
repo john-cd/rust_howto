@@ -30,11 +30,11 @@ There are three common methods, which can create iterators from a collection:
 
 Use `iter()` when you need to iterate over the elements of a collection without modifying them, `iter_mut()` when you need to modify them in place, and `into_iter()` when you want to consume the collection. The latter is often used when you're done with the original collection after iteration or when you want to transfer ownership of the elements. The following table summarizes the use cases:
 
-| Feature | Mutability | Element Type | Ownership | Collection Use Afterwards |
-|---|---|---|---|---|
-| `iter()` | Immutable | `&T` | Borrows | Usable after |
-| `iter_mut()` | Mutable | `&mut T` | Borrows | Usable after |
-| `into_iter()` | Depends on type | `T` (typically) | Consumes | Not usable after |
+| Feature       | Mutability      | Element Type    | Ownership | Collection Use Afterwards |
+| ------------- | --------------- | --------------- | --------- | ------------------------- |
+| `iter()`      | Immutable       | `&T`            | Borrows   | Usable after              |
+| `iter_mut()`  | Mutable         | `&mut T`        | Borrows   | Usable after              |
+| `into_iter()` | Depends on type | `T` (typically) | Consumes  | Not usable after          |
 
 ```rust,editable
 {{#include ../../crates/language/examples/iterators/iterators.rs:example}}
@@ -52,7 +52,7 @@ The [`std::iter`][c~std::iter~docs]↗{{hi:std::iter}} module in the standard li
 
 Iterators are composable: it's very common to chain them together to do more complex forms of processing.
 
-Functions which take an [`Iterator`][c~std::iter::Iterator~docs]↗{{hi:std::iter::Iterator}} as input and return another `Iterator` are often called "iterator adapters". Common iterator adapters include `map`, `take`, and `filter`:
+Functions which take an [`Iterator`][c~std::iter::Iterator~docs]↗{{hi:std::iter::Iterator}} as input and return another `Iterator` are often called "iterator adapters". They can use return-position `impl Trait` in ordinary functions and in trait methods (RPITIT, stable since Rust 1.75). In Rust 2024, return-position `impl Trait` captures all in-scope generic parameters by default; a `use<...>` bound can narrow which parameters are captured. Common iterator adapters include `map`, `take`, and `filter`:
 
 ```rust,editable
 {{#include ../../crates/language/examples/iterators/iterator_adapters.rs:example}}
@@ -109,5 +109,5 @@ One benefit of implementing `IntoIterator` is that your type will work with the 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
+  [accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
 </div>

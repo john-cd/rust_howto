@@ -28,6 +28,8 @@ pub fn log_calls(_attr: TokenStream, item: TokenStream) -> TokenStream {
     let expanded = quote::quote! {
         #vis #sig {
             println!("Calling function `{}`...", stringify!(#fn_name));
+            // A `return` in the original body returns from this function and
+            // skips the "finished" message below.
             let result = #block; // Execute the original function body.
             println!("Function `{}` finished.", stringify!(#fn_name));
             result // Return the result.
@@ -46,19 +48,21 @@ pub fn log_calls(_attr: TokenStream, item: TokenStream) -> TokenStream {
 // The input `TokenStream` is the token stream of the struct, enum, or union
 // that has the `derive` attribute.
 /// A derive macro that implements the `DebugPrint` trait.
-#[proc_macro_derive(DebugPrint)]
+#[proc_macro_derive(DebugPrint, attributes(helper))]
 pub fn debug_print_derive(
     input: proc_macro::TokenStream,
 ) -> proc_macro::TokenStream {
     // Parse the input tokens into a syntax tree.
     // `syn`'s `parse_macro_input!` macro converts the input `TokenStream` into
-    // a structured `DeriveInput` enum.
+    // a structured `DeriveInput` struct.
     let ast = syn::parse_macro_input!(input as syn::DeriveInput);
 
     let name = &ast.ident; // The name of the struct/enum.
     let (impl_generics, ty_generics, where_clause) =
         ast.generics.split_for_impl();
 
+    // The generated implementation formats `self` with `Debug`, so the type
+    // deriving `DebugPrint` must also implement `Debug`.
     // Generate the implementation of the `DebugPrint` trait.
     // `quote!` allows us to write Rust code directly, and `#ident`,
     // `#ty_generics`, etc. are "splices" that insert the captured syntax
@@ -91,6 +95,8 @@ pub fn sql(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     // For this simple example, we'll just treat the input as a string literal
     // and wrap it. For robust parsing of complex SQL, you'd use a dedicated
     // parser.
+    // `TokenStream::to_string()` normalizes token spacing and does not preserve
+    // the original source formatting; parse tokens for a structured SQL input.
     let sql_query = input.to_string();
 
     // Generate Rust code that uses the SQL string:

@@ -16,7 +16,7 @@ macro_rules! accept_multiple_token_trees {
 
 /// Calls macros with single tokens and groups of tokens.
 fn main() {
-    // A "token tree" can a single lexical token (identifier, Rust keyword,
+    // A "token tree" can be a single lexical token (identifier, Rust keyword,
     // operator, punctuation, or literal):
     accept_single_token_tree!("a");
     accept_single_token_tree!( :: );
@@ -28,7 +28,7 @@ fn main() {
     accept_single_token_tree!( {"a" ~ async 42} );
 
     // Use a `$( $_:tt )*` repetition to accept zero or more token trees,
-    // here "select", "*", ""from", "table", "where", and "( a > 10 )".
+    // here "select", "*", "from", "table", "where", and "( a > 10 )".
     accept_multiple_token_trees! {
         select * from table where ( a > 10 )
     }

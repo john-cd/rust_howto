@@ -50,7 +50,7 @@ Apply the `#[must_use]` attribute to functions, methods, or entire types (like s
 {{#include ../../crates/language/examples/attributes/attributes_must_use.rs:example}}
 ```
 
-Functions that return `Result<T, E>` are often `#[must_use]`. If you call such a function and ignore the `Result`, you're potentially ignoring an error that occurred and could be corrected or reported.
+`Result<T, E>` itself is marked `#[must_use]`, so ignoring a returned result produces a warning even when the function that produced it has no `#[must_use]` attribute. If you ignore the result, you may also be ignoring an error that could be corrected or reported.
 
 In the [[builder_pattern | builder pattern]], methods often return `Self` or a modified version of the builder. The final `.build()` or similar method returns the constructed object. If you forget to call the final method or assign the result, you haven't actually created the object you intended. Adding `#[must_use]` on the builder type or its methods helps catch this problem.
 
@@ -147,5 +147,5 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
+  [accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
 </div>

@@ -14,10 +14,10 @@ Unlike C or C++ macros, which rely on simple text substitution via the preproces
 
 ## Use Macros {#use-macros}
 
-Macros comes in three forms:
+Macros come in three forms:
 
 - Function-like macros, e.g. `println!("Hello, world!");`,
-- Attribute-like macros e.g. `#[foo = "bar"]`,
+- Attribute-like macros, e.g. `#[foo("bar")]`,
 - Custom [derive macros][book~rust-reference~derive]↗ e.g., `#[derive(MyTrait)]`.
 
 ### Use Function-like Macros {#function-like-macros}
@@ -33,7 +33,7 @@ fn main() {
 ```
 
 - Note the `!` suffix after the macro's name.
-- Square or curly brackets (`[]` or `{}`)  may be used as outer delimiters instead of parentheses e.g., `println!{ "Curly" };`. This is most often used with `vec!` to give it an array-like syntax: `let _ = vec![1, 2, 3];`.
+- Square or curly brackets (`[]` or `{}`) may be used as outer delimiters instead of parentheses e.g., `println!{ "Curly" };`. This is most often used with `vec!` to give it an array-like syntax: `let _ = vec![1, 2, 3];`.
 - When a function-like macro is used as an item or a statement (see below) and is not using curly braces, a semicolon is required at the end.
 
 This said, function-like macros are more general and powerful than function calls:
@@ -134,7 +134,7 @@ Macros-by-example are expanded at compile-time, meaning they incur no runtime pe
 
 - _Procedural Macros_ are more advanced and operate on one or more [`TokenStream`][c~proc_macro::TokenStream~docs]↗ (representing the source code). They are compiled before the main program and can perform more complex code generation. They come in three flavors:
   - Custom [derive macros][book~rust-reference~derive]↗ (e.g., `#[derive(MyTrait)]`) automatically generate trait implementations for structs and enums.
-  - Attribute-like macros (outer attribute `#[route(GET, "/")]`, where `route` is a custom name; or inner attribute `#![foo="bar"]`) modify the behavior of items (e.g., functions or modules) they are applied to.
+  - Attribute-like macros (outer attributes such as `#[route(GET, "/")]`, where `route` is a custom name) modify the behavior of items (e.g., functions or modules) they are applied to.
   - Function-like procedural macros (`my_proc_macro!(...)`) have the same call syntax as macros-by-example.
 
 Read the sections below; the [macro][book~rust~ch20-05-macros]↗ chapter of the Rust book; and the ["Little Book of Rust Macros"][book~little-book-of-rust-macros]↗ for more details.
@@ -164,16 +164,16 @@ Note: To be more precise, `macro_rules!` interchangeably accepts `{}`, `()` and 
 You can use _metavariables_ to capture parts of a macro's input. They are prefixed with a dollar sign (`$`). Inside matchers, `$name:fragment-specifier` matches a Rust syntax fragment of the kind specified and binds it to the metavariable `$name`, which can then be used in the transcriber. Valid [syntax fragment specifiers][book~rust-reference~macros-by-example-macro.decl.meta.specifier]↗, also called designators, are:
 
 - `block`: a block expression e.g. `{ let x = 1; x + 2 }`,
-- `expr`: an expression that produces a value, e.g. `a + 2` or `some_function()` or even `"a literal"`,
+- `expr`: an expression that produces a value, e.g. `a + 2` or `some_function()` or even `"a literal"`. In the 2024 edition, it also matches `_` and const-block expressions; use `expr_2021` for the pre-2024 matching behavior,
 - `ident`: a variable or function name, e.g. `foo` or `_identifier` or even a raw identifier like `r#true`; or a keyword.
 - `item`: an item definition, i.e. a function, module, `use` declaration, `type` alias, `struct`, `enum`, `const`, `trait`, `impl` block...
 - `lifetime`: a lifetime token e.g. `'a`,
-- `literal`: a literal e.g. `'c'`, `42`, `1.2`, `b'bin'`, `"hello"`, `true`,
+- `literal`: a literal e.g. `'c'`, `42`, `1.2`, `b'b'`, `b"bin"`, `"hello"`, `true`,
 - `meta`: the contents of an attribute (use the `#[$meta:meta]` or `#![$meta:meta]` patterns to match an attribute),
 - `pat`: a pattern (in `match`, `if let`, `for`... expressions) e.g., `Message::Move{ x, y: 0 }`, `Some((a, _))`, `0..3` or `0 | 42`,
 - `pat_param`: (part of) a pattern without `|`,
 - `path`: a type path, e.g. `std::future::Future` or `::std::ops::FnOnce(isize) -> isize`,
-- `stmt`: a statement without the trailing semicolon (except for item statements that require semicolons) , e.g. `let x = 5;`,
+- `stmt`: a statement without its trailing semicolon, except for item statements that require one, e.g. `let x = 5`,
 - `tt`: a [token tree][book~little-book-of-rust-macros~token-trees]↗, i.e. a single token (identifier, Rust keyword, operator, or literal) or multiple tokens within matching delimiters `()`, `[]`, or `{}`,
 - `ty`: a type, e.g. `bool`, `[(i32, i32); 3]`, `impl Trait`, `dyn Trait + Send + Sync`...
 - `vis`: a possibly empty visibility qualifier, e.g. `pub`, `pub(crate)`...
@@ -217,7 +217,7 @@ The following example demonstrates how to use a local variable; and how to defin
 {{#include ../../crates/language/examples/macros/macro_by_example_hygiene.rs:example}}
 ```
 
-#### Macros-by-Example {#macros-by-example-limitations}
+#### Limitations of Macros-by-Example {#macros-by-example-limitations}
 
 Macros operate on syntax, not types. As a result, you can't specify the type of an argument in the matcher (the pattern before `=>`) of a rule of a macro-by-example.
 
@@ -325,13 +325,8 @@ proc-macros = { path = "../proc_macros" } # Adjust the path as necessary.
 
 Note that `derive` macros can add additional attributes ("derive macro helper attributes") into the scope of the item they are on [(Rust reference)][book~rust-reference~procedural-macros-macro.proc.derive.attributes]↗. This is useful for adding metadata or additional functionality to the item being derived:
 
-```rust,editable
-# [derive(MyCustomDeriveMacro)]
-struct MyStruct {
-    // `helper` attributes can be added here.
-    // They are inert.
-    #[helper] field: ()
-}
+```rust,editable,noplayground
+{{#include ../../crates/language/examples/macros/proc_macro_derive.rs:example}}
 ```
 
 #### Create Custom Attributes with Procedural Macros {#attribute-macros}
@@ -353,7 +348,7 @@ struct MyStruct {
 
 #### Create Function-like Procedural Macros {#function-like-procedural-macros}
 
-[Function-like procedural macros][book~rust-reference~procedural-macros-attribute]↗ are invoked using the macro invocation operator (!).
+[Function-like procedural macros][book~rust-reference~procedural-macros-macro.proc.proc_macro]↗ are invoked using the macro invocation operator (!).
 
 - Create a separate crate and add it to your main crate's `Cargo.toml`, as above.
 - Add the following to `lib.rs`, the root of the new crate:
@@ -426,5 +421,5 @@ Debugging macros can be challenging. To see what a macro expands to and debug it
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
+  [accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
 </div>

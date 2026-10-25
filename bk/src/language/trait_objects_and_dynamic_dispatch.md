@@ -12,7 +12,7 @@ Trait objects enable "dynamic dispatch", a form of polymorphism. They treat diff
 
 Recall that a [trait][p~traits]{{hi:Traits}} (also called contract or interface in other programming languages) represents a behavior that multiple types can implement. In the example below, the `Draw` trait describes the ability to be drawn on a screen. A trait is at its core a set of function signatures (and associated types and constants).
 
-A "trait object", denoted `dyn SomeTrait` where [`dyn`][keyword~dyn]↗{{hi:dyn}} is a keyword and `SomeTrait` is a trait (or a set thereof, see below), is an object that implements that specific trait, but which underlying concrete type is _not known at compile time_. In the example below, `dyn Draw` may be either a `Button` or a `Text` instance, since both types implement the `Draw` trait.
+A "trait object", denoted `dyn SomeTrait` where [`dyn`][keyword~dyn]↗{{hi:dyn}} is a keyword and `SomeTrait` is a trait (or a set thereof, see below), is an object that implements that specific trait, whose underlying concrete type is _not known at compile time_. In the example below, `dyn Draw` may be either a `Button` or a `Text` instance, since both types implement the `Draw` trait.
 
 Because it can host different concrete types at runtime, a trait object is "unsized"{{hi:Unsized}}, a.k.a. dynamically sized, which implies that it is only allowed to show up behind a reference or a smart pointer like [`std::boxed::Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}:
 
@@ -80,15 +80,15 @@ Consider alternatives (like generics or enums) when:
 
 ```rust,editable
 enum Shape {
-    Circle(CircleData),
-    Square(SquareData),
+    Circle { radius: f64 },
+    Square { side: f64 },
 }
 
 impl Shape {
     fn draw(&self) {
         match self {
-            Shape::Circle(data) => data.draw_circle(),
-            Shape::Square(data) => data.draw_square(),
+            Shape::Circle { radius } => println!("Draw a circle with radius {radius}"),
+            Shape::Square { side } => println!("Draw a square with side {side}"),
         }
     }
 }
@@ -98,14 +98,14 @@ impl Shape {
 
 Trait objects enable _dynamic dispatch_. This means that the decision of which concrete method implementation to call is made _at runtime_, rather than at compile time. This is in contrast to _static dispatch_, which Rust uses with generics (and `impl Trait`, see below), where the compiler generates specialized code for each concrete type used by a generic item.
 
-| Feature | Static Dispatch (Generics) | Dynamic Dispatch (Trait Objects) |
-|---------|----------------------------|---------------------------------|
-| Mechanism | Monomorphization (code duplication at compile time) | vtable lookups at runtime |
-| Performance | Generally faster (no runtime lookup overhead) | Slightly slower (due to vtable indirection) |
-| Flexibility | Less flexible for heterogeneous collections | More flexible for heterogeneous collections |
-| Code Size | Can lead to larger binaries (due to monomorphization) | Can lead to smaller binaries (no code duplication) |
-| Type Known | At compile time | At runtime (for the trait object itself) |
-| Syntax | `fn foo<T: MyTrait>(item: T)` | `fn foo(item: &dyn MyTrait)` |
+| Feature     | Static Dispatch (Generics)                            | Dynamic Dispatch (Trait Objects)                   |
+| ----------- | ----------------------------------------------------- | -------------------------------------------------- |
+| Mechanism   | Monomorphization (code duplication at compile time)   | vtable lookups at runtime                          |
+| Performance | Generally faster (no runtime lookup overhead)         | Slightly slower (due to vtable indirection)        |
+| Flexibility | Less flexible for heterogeneous collections           | More flexible for heterogeneous collections        |
+| Code Size   | Can lead to larger binaries (due to monomorphization) | Can lead to smaller binaries (no code duplication) |
+| Type Known  | At compile time                                       | At runtime (for the trait object itself)           |
+| Syntax      | `fn foo<T: MyTrait>(item: T)`                         | `fn foo(item: &dyn MyTrait)`                       |
 
 ### `impl Trait` vs `dyn Trait` {#impl-trait-vs-dyn-trait}
 
@@ -153,19 +153,20 @@ Common examples include `Send` and `Sync` for thread safety. A type is `Send` if
 
 ### Dyn Compatibility / Object Safety {#dyn-compatibility}
 
-Only a trait that is "dyn-compatible" (or "object-safe") can be made into a trait object. The rules for dyn compatibility are rather complicated, constraining both the trait and the methods within, and (as of June 2025) not consistently documented in the [Rust reference][book~rust-reference~object-safe]↗. When designing a trait for use in a trait object, let the compiler's error messages guide you.
+Only a trait that is "dyn-compatible" (or "object-safe") can be made into a trait object. The rules constrain both the trait and its methods; the [Rust reference][book~rust-reference~object-safe]↗ documents the full set. When designing a trait for use in a trait object, let the compiler's error messages guide you.
 
 The dyn compatibility restrictions stem from the fact that trait objects are inherently `!Sized` (dynamically sized types), because their concrete type (`Self`) isn't known at compile time:
 
 - The underlying trait cannot require `Self: Sized`.
-- All methods must not have `Self` as a return type. If a method returns `Self`, the compiler wouldn't know the concrete size of `Self` at runtime when dealing with a trait object.
-- All methods must not use generic type parameters. Generics are not compatible with vtables. If a method had a generic type parameter (e.g., `fn foo<T>(&self, arg: T)`), the compiler couldn't fill in the concrete type for `T` at runtime.
-- For the same reason, opaque return type (impl Trait, `async fn`) are not allowed.
+- A dispatchable method uses `Self` only for its receiver and has a supported receiver such as `&self`, `&mut self`, `self: Box<Self>`, `self: Rc<Self>`, `self: Arc<Self>`, or `self: Pin<P>` for one of these pointer types. Lifetime parameters are allowed, but type and const generic parameters are not.
+- Associated functions without a receiver, methods that use `Self` outside the receiver (including a `Self` return type), methods with type or const generic parameters, and methods returning an opaque type such as `impl Trait` or `async fn` are not dispatchable through a trait object. They may remain in the trait when they explicitly require `where Self: Sized`.
 
 In addition,
 
 - The trait must not have any associated constant or any associated type with generics.
 - All supertraits, if any, must also be dyn-compatible.
+
+Trait-object upcasting lets you coerce a trait object to one of its supertrait objects. It has been stable since Rust 1.86 ([release announcement][blog~rust-1.86]↗).
 
 ```rust
 {{#include ../../crates/language/examples/trait_objects/dyn_compat.rs:example}}
@@ -179,5 +180,5 @@ In addition,
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
+  [accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
 </div>

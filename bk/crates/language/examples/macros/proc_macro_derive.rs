@@ -24,6 +24,7 @@ struct User {
     /// Name of the user.
     name: String,
     /// Whether the user is active.
+    #[helper]
     active: bool,
 }
 

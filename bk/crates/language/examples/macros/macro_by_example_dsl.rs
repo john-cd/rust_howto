@@ -126,7 +126,8 @@ fn main() {
     // The macro allows for nested structures, making it easy to define complex
     // configurations. The result will be a `HashMap` with keys as strings
     // and values as `ConfigValue` enums, which can represent strings,
-    // numbers, booleans, or nested maps.
+    // booleans, or nested maps. Numeric literals in this example's macro are
+    // converted to strings; they are not stored as numeric values.
     let app_config: HashMap<String, ConfigValue> = config! {
         debug_mode: true,
         log_level: "info",
