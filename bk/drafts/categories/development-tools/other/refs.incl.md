@@ -26,3 +26,7 @@
 [p~performance]: ../../development-tools_cargo-plugins/performance.md
 [p~search]: ../../database/search.md
 [p~testing]: ../../development-tools_testing/testing.md
+[ex~rust_source~syn-parse-file]: rust_source.md#syn-parse-file
+[ex~rust_source~quote-prettyplease]: rust_source.md#quote-prettyplease
+[ex~rust_source~cargo-metadata]: rust_source.md#cargo-metadata
+[ex~rust_source~find-unwraps]: rust_source.md#find-unwraps

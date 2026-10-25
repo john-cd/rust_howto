@@ -35,6 +35,11 @@ winnow = "1.0.4"
 pest_generator = "2.9.4"
 
 [[example]]
+name = "calc_parser"
+path = "examples/calc/calc_parser.rs"
+test = true
+
+[[example]]
 name = "parsing"
 path = "examples/parsing/main.rs"
 test = true

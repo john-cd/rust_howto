@@ -19,21 +19,39 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+ammonia = "4.2.4"
 anyhow = "1.0.104"
 bytes = "1.12.1"
 clap = { version = "4.6.7", features = ["derive"] }
 http = "1.5.0"
+html2text = "0.17.4"
 http-body-util = "0.1.5"
 lazy_static = "1.5.1"
 mime = "0.3.17"
 # Guesses a MIME type from a file name's extension.
 mime_guess = "2.0.5"
+pulldown-cmark = "0.13.5"
 regex = "1.13.1"
 reqwest = "0.13.5"
 # Parses HTML documents and selects elements with CSS selectors.
 scraper = "0.29.0"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 url = "2.5.8"
+
+[[example]]
+name = "ammonia_clean"
+path = "examples/html_text/ammonia_clean.rs"
+test = true
+
+[[example]]
+name = "html2text"
+path = "examples/html_text/html2text.rs"
+test = true
+
+[[example]]
+name = "markdown_to_safe_html"
+path = "examples/html_text/markdown_to_safe_html.rs"
+test = true
 
 [[example]]
 name = "http_types_and_interfaces"

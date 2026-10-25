@@ -1,0 +1,40 @@
+// TODO Reviewed ??-??-2026
+
+// ANCHOR: example
+//! Generates Rust source with `quote` and formats it with `prettyplease`.
+
+use quote::format_ident;
+use quote::quote;
+
+fn main() -> syn::Result<()> {
+    // Splice values into the generated code with `#name`.
+    let name = format_ident!("add_one");
+    let tokens = quote! {
+        pub fn #name(x: i32) -> i32 { x + 1 }
+    };
+
+    // A `TokenStream` prints on one line. Parse it into a `syn::File`, then
+    // unparse with `prettyplease` for rustfmt-like output.
+    let file: syn::File = syn::parse2(tokens)?;
+    let text = prettyplease::unparse(&file);
+    print!("{text}");
+
+    assert_eq!(text, "pub fn add_one(x: i32) -> i32 {\n    x + 1\n}\n");
+    Ok(())
+}
+// ANCHOR_END: example
+
+/// Runs the example.
+pub fn run() -> syn::Result<()> {
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() -> syn::Result<()> {
+        main()
+    }
+}

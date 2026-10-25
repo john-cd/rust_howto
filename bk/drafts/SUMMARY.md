@@ -100,6 +100,7 @@
   - [Other](categories/development-tools/other/other.md)
     - [Cross-compilation](categories/development-tools/cross-compilation/cross_compilation.md)
     - [Code Verification](categories/development-tools/other/code_verification.md)
+    - [Analyze and Generate Rust Code](categories/development-tools/other/rust_source.md)
     - [`miri`](categories/development-tools/other/miri.md)
     - [Faster Linking](categories/development-tools/compilation/faster_linking.md)
     - [Reduce Compilation Duration](categories/development-tools/compilation/reduce_compilation_duration.md)
@@ -189,6 +190,7 @@
 
 - [Parsing](categories/parsing/index.md)
   - [Parsing](categories/parsing/parsing.md)
+  - [Expression Parser](categories/parsing/expression_parser.md)
 
 - [Parser Implementations](categories/parser-implementations/index.md)
   - [HTML](categories/parser-implementations/html.md)
@@ -214,6 +216,7 @@
 
 - [Text Editors](categories/text-editors/index.md)
   - [IDEs](categories/text-editors/ides.md)
+  - [Language Server Protocol](categories/text-editors/language_server_protocol.md)
 
 - [Text Processing](categories/text-processing/index.md)
   - [Regular Expressions](categories/text-processing/regex.md)
@@ -221,6 +224,8 @@
   - [String Concatenation](categories/text-processing/string_concat.md)
   - [String Manipulation](categories/text-processing/string_manipulation.md)
   - [String Search](categories/text-processing/string_search.md)
+  - [Text Analysis](categories/text-processing/text_analysis.md)
+  - [Syntax Highlighting](categories/text-processing/syntax_highlighting.md)
   - [Unicode Handling](categories/text-processing/unicode.md)
   - [Text Diffing](categories/text-processing/diffing.md)
   - [OS and C Strings](categories/text-processing/other_strings.md)
@@ -230,6 +235,7 @@
   - [Extracting Links](categories/web-programming/scraping.md)
   - [URLs](categories/web-programming/url.md)
   - [Media Types](categories/web-programming/mime.md)
+  - [Sanitize HTML](categories/web-programming/html_sanitization.md)
 
 - [Web Programming - HTTP Clients](categories/web-programming_http-client/index.md)
   - [HTTP clients](categories/web-programming_http-client/http_clients.md)

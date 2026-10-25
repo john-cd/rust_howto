@@ -1,0 +1,33 @@
+# TODO Reviewed ??-??-2026
+
+[package]
+license-file.workspace = true
+name = "text_editors"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+readme = "README.md"
+description = "Book code examples and their crate dependencies - text_editors"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["text-editors"]
+publish.workspace = true
+autolib = false
+
+[dependencies]
+anyhow = "1.0.104"
+lsp-server = "0.10.0"
+lsp-types = "0.97.0"
+serde_json = "1.0.154"
+
+[[example]]
+name = "lsp_server_minimal"
+path = "examples/language_server_protocol/lsp_server_minimal.rs"
+test = true
+
+[lints]
+workspace = true

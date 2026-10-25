@@ -38,6 +38,7 @@ members = [
     "cats/parsing",
     "cats/rust_patterns",
     "cats/template_engine",
+    "cats/text_editors",
     "cats/text_processing",
     "cats/web_programming",
     "cats/web_programming_http_client",
