@@ -65,6 +65,7 @@ mod tests {
 
 /// Runs the example.
 #[allow(clippy::main_recursion)]
+#[allow(clippy::items_after_test_module)]
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -18,6 +18,11 @@ fn with_capacity(parts: &[&str]) -> String {
 
 /// Runs the allocation example outside the test harness.
 fn main() {
+    run();
+}
+
+/// Runs the example.
+pub fn run() {
     println!("{}", with_capacity(&["a", "b", "c"]));
 }
 
@@ -46,8 +51,3 @@ mod tests {
     }
 }
 // ANCHOR_END: example
-
-/// Runs the example.
-pub fn run() {
-    main();
-}

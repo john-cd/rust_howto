@@ -40,6 +40,8 @@ fn main() -> anyhow::Result<()> {
     for package in metadata.workspace_packages() {
         let text = std::fs::read_to_string(&package.manifest_path)?;
         if !has_workspace_lints(&text)? {
+            // Show the manifest as it would look once fixed.
+            println!("{}", add_workspace_lints(&text)?);
             missing.push(package.name.to_string());
         }
     }

@@ -20,8 +20,8 @@ struct Order {
 fn create_order(id: u64) -> Order {
     Order {
         id,
-        customer: "Ferris".to_string(),
-        items: vec!["crab".to_string(), "shell".to_string()],
+        customer: "Ferris".to_owned(),
+        items: vec!["crab".to_owned(), "shell".to_owned()],
     }
 }
 
@@ -71,6 +71,8 @@ mod tests {
 // ANCHOR_END: example
 
 /// Runs the example.
+#[allow(clippy::main_recursion)]
+#[allow(clippy::items_after_test_module)]
 pub fn run() {
     main();
 }
