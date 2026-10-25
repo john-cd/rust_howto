@@ -6,11 +6,11 @@
 
 ## Construct a Complex Struct with a Builder {#basic-builder-pattern}
 
-The builder pattern provides a clean and readable way to construct complex objects, especially when dealing with multiple optional fields or validation rules.
+Use a builder when construction has many optional settings, needs validation, or benefits from readable call-site configuration. Keep required values required in the constructor or use a typestate builder; represent optional values with `Option<T>` or defaults. A handwritten builder gives direct control over validation and error types, while derive crates reduce repetitive code. Prefer a simple constructor when there are only a few required fields.
 
-- Instead of creating the object directly, you first create a separate Builder object. It is typically named `xyzBuilder` where `xyz` is the name of the struct you're building. The builder holds the state needed to construct the final object, often storing fields as `Option<T>` internally.
+- Instead of creating the object directly, you create a separate builder, typically named `XyzBuilder` after the type being built. The builder holds the state needed to construct the final object, often storing optional fields as `Option<T>`.
 - The builder provides methods (often named after the fields they set, like `.name("Example")`, `.timeout(Duration::from_secs(5))`) to configure the object piece by piece. These methods usually return `self`, allowing chaining calls together fluently: `builder.field_a(value_a).field_b(value_b)`.
-- Once the desired fields are set, call a final method on the builder (commonly named `.build()` or `.finish()`). This method takes the configuration stored in the builder, performs any necessary validation (like checking if required fields were provided), and then constructs and returns the final, fully-formed object. If the validation can fail, the `build` method typically returns a `Result`.
+- Once the desired fields are set, call a final method on the builder (commonly named `.build()`). It performs any necessary validation and returns the completed object, or a `Result` when validation can fail.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/builder_pattern/builder_pattern.rs:example}}
@@ -36,14 +36,13 @@ The builder pattern provides a clean and readable way to construct complex objec
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Rust Patterns](index.md) groups builders with other creational, structural, and behavioral patterns.
+- [Error Handling](error_handling/error_handling.md) covers reporting validation failures from `build`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write and add to index and SUMMARY](https://github.com/john-cd/rust_howto/issues/648)
-
 - [Next-gen builder macro Bon Revolutional typestate design][blog~bon-v3-release]↗.
 
 </div>

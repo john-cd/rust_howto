@@ -127,7 +127,16 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
+    fn builder_applies_required_and_optional_configuration() {
+        let config = DatabaseConfigBuilder::new("localhost".to_owned(), 5432)
+            .username("admin".to_owned())
+            .pool_size(20)
+            .build();
+        assert_eq!(config.host, "localhost");
+        assert_eq!(config.port, 5432);
+        assert_eq!(config.username.as_deref(), Some("admin"));
+        assert_eq!(config.pool_size, 20);
+        assert_eq!(config.connection_timeout_seconds, 30);
         main();
     }
 }
