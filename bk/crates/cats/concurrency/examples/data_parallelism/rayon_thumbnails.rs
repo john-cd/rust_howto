@@ -119,4 +119,3 @@ mod tests {
         Ok(())
     }
 }
-// [review; rayon_thumbnails: address the need for test jpg data_parallelism: rayon_thumbnails.rs is noplayground - linking with cc](https://github.com/john-cd/rust_howto/issues/261)
