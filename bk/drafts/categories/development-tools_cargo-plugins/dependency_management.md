@@ -7,7 +7,7 @@
 Rust's dependency management is handled by [`Cargo`][c~cargo~docs]↗{{hi:Cargo}}, its built-in package manager.
 
 - [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}, located at the root of a Rust project, is the manifest file that defines the project's metadata and dependencies.
-The `[dependencies]` section within `Cargo.toml` is where you specify the external crates (libraries)↗ your project relies on.
+  The `[dependencies]` section within `Cargo.toml` is where you specify the external crates (libraries)↗ your project relies on.
 - [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} records the exact versions of all dependencies used in a project. It ensures that builds are reproducible, even if new versions of dependencies are released.
 - [Cargo][p~cargo] automates the process of downloading from [`crates.io`][crates.io~website]↗{{hi:crates.io}}, building, and linking dependencies. It resolves dependency versions, ensuring compatibility and preventing conflicts.
 
@@ -17,7 +17,7 @@ See the [[cargo | Cargo]] and [[development-tools_cargo-plugins | Development To
 
 [![cargo-edit][c~cargo-edit~docs~badge]][c~cargo-edit~docs] [![cargo-edit~crates.io][c~cargo-edit~crates.io~badge]][c~cargo-edit~crates.io] [![cargo-edit~repo][c~cargo-edit~repo~badge]][c~cargo-edit~repo] [![cargo-edit~lib.rs][c~cargo-edit~lib.rs~badge]][c~cargo-edit~lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Cargo-subcommand}}{{hi:Cli}}{{hi:Crates}}{{hi:Dependencies}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`cargo edit`][c~cargo-edit~docs]↗{{hi:cargo edit}} provides commands for modifying a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file. It allows adding, removing, and upgrading dependencies by modifying your `Cargo.toml` file from the command line.
+[`cargo-edit`][c~cargo-edit~docs]↗{{hi:cargo-edit}} provides commands for modifying a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file. Current Cargo versions provide `cargo add` and `cargo remove` as built-in commands; `cargo-edit` still provides `cargo upgrade` and `cargo set-version`.
 
 Currently available subcommands:
 
@@ -86,5 +86,5 @@ The [`deps.rs`][deps.rs~website]↗ website uses semantic versioning to detect o
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[dependency_management: review](https://github.com/john-cd/rust_howto/issues/597)
+  [dependency_management: review](https://github.com/john-cd/rust_howto/issues/597)
 </div>

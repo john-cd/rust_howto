@@ -7,13 +7,14 @@
 [ex~development-tools_cargo-plugins~cargo-clippy]: code_formatting_linting.md#cargo-clippy
 [ex~development-tools_cargo-plugins~cargo-deny]: auditing.md#cargo-deny
 [ex~development-tools_cargo-plugins~cargo-edit]: dependency_management.md#cargo-edit
-[ex~development-tools_cargo-plugins~cargo-expand]: maintaining.md#cargo-expand
+[ex~development-tools_cargo-plugins~cargo-expand]: code_writing.md#cargo-expand
 [ex~development-tools_cargo-plugins~cargo-generate]: code_writing.md#cargo-generate
-[ex~development-tools_cargo-plugins~cargo-hack]: maintaining.md#cargo-hack
+[ex~development-tools_cargo-plugins~cargo-hack]: code_writing.md#cargo-hack
 [ex~development-tools_cargo-plugins~cargo-hakari]: performance.md#cargo-hakari
 [ex~development-tools_cargo-plugins~cargo-husky]: code_formatting_linting.md#cargo-husky
 [ex~development-tools_cargo-plugins~cargo-license]: auditing.md#cargo-license
 [ex~development-tools_cargo-plugins~cargo-limit]: watching_for_changes.md#cargo-limit
+[ex~development-tools_cargo-plugins~cargo-modules]: code_writing.md#cargo-modules
 [ex~development-tools_cargo-plugins~cargo-make]: building.md#cargo-make
 [ex~development-tools_cargo-plugins~cargo-open]: code_writing.md#cargo-open
 [ex~development-tools_cargo-plugins~cargo-outdated]: dependency_management.md#cargo-outdated
