@@ -938,6 +938,10 @@
 [c~build-info~lib.rs~badge]: https://img.shields.io/badge/lib.rs-build--info-yellow
 [c~build-info~repo]: https://github.com/danielschemmel/build-info
 [c~build-info~repo~badge]: https://img.shields.io/badge/build--info-steelblue?logo=github
+[c~build-info-build~crates.io]: https://crates.io/crates/build-info-build
+[c~build-info-build~crates.io~badge]: https://img.shields.io/crates/v/build-info-build?label=build-info-build
+[c~build-info-build~docs]: https://docs.rs/build-info-build
+[c~build-info-build~docs~badge]: https://img.shields.io/crates/v/build-info-build?label=build-info-build
 [c~bumpalo~crates.io]: https://crates.io/crates/bumpalo
 [c~bumpalo~crates.io~badge]: https://img.shields.io/badge/crates.io-bumpalo-crimson
 [c~bumpalo~docs]: https://docs.rs/bumpalo
@@ -10190,6 +10194,10 @@
 [c~winapi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-winapi-yellow
 [c~winapi~repo]: https://github.com/retep998/winapi-rs
 [c~winapi~repo~badge]: https://img.shields.io/badge/winapi-steelblue?logo=github
+[c~winres~crates.io]: https://crates.io/crates/winres
+[c~winres~crates.io~badge]: https://img.shields.io/crates/v/winres?label=winres
+[c~winres~docs]: https://docs.rs/winres
+[c~winres~docs~badge]: https://img.shields.io/crates/v/winres?label=winres
 [c~windows-sys~crates.io]: https://crates.io/crates/windows-sys
 [c~windows-sys~crates.io~badge]: https://img.shields.io/badge/crates.io-windows--sys-crimson
 [c~windows-sys~docs]: https://docs.rs/windows-sys

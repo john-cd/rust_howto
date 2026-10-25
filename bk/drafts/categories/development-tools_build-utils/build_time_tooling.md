@@ -4,16 +4,21 @@
 
 {{#include build_time_tooling.incl.md}}
 
-This section covers "build-time" tooling, or code that is run prior to compiling a crate's source code. Conventionally, build-time code lives in a `build.rs`{{hi:build.rs}} file and is commonly referred to as a "build script". Common use cases include rust code generation and compilation of bundled C/C++/asm code. See [`crates.io`][crates.io~website]{{hi:crates.io}}'s [documentation on the matter][book~cargo~build-script]↗ for more information.
+Cargo compiles and runs a `build.rs`{{hi:build.rs}} program on the host before compiling the package for its target. Build scripts are useful for work that must happen during a build, such as compiling bundled native code, generating Rust source or resources, or emitting target-specific configuration. Cargo documents their [inputs, outputs, and directives][book~cargo~build-script]↗. Keep build scripts small and write generated files only to `OUT_DIR`.
 
 ## Embed Build Information {#build-info}
 
-The [`build-info`][c~build-info~docs]↗ and [`build-info-build`][c~build-info-build~docs]↗ crates separate build-time collection from the runtime API. A build script records the package, Git revision, build timestamp, compiler version, and selected dependency metadata. The generated information is embedded in the binary, so the application can report which build is running without shipping the build-time collector.
+The [`build-info`][c~build-info~docs]↗ and [`build-info-build`][c~build-info-build~docs]↗ crates separate build-time collection from the runtime API. A build script records package, Git, timestamp, compiler, and dependency metadata. The runtime example reads that metadata from the binary.
 
-In `Cargo.toml`:
+Declare the runtime and build-time crates in their respective manifest sections:
 
 ```toml
 {{#include ../../../crates/cats/development_tools_build_utils/Cargo.toml:build-info}}
+```
+
+```toml
+[build-dependencies]
+build-info-build = "0.0.47"
 ```
 
 In `build.rs`:
@@ -32,9 +37,9 @@ In `examples/build_info/build_info.rs`:
 
 [![cc][c~cc~docs~badge]][c~cc~docs]{{hi:cc}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build utils}}
 
-To accommodate scenarios where additional C, C++, or [assembly][p~assembly] is required in a project, the [`cc`][c~cc~docs]↗{{hi:cc}} crate offers a simple api for compiling bundled C/C++/asm code into static libraries (`.a`) that can be statically linked to by [`rustc`][book~rustc]↗.
+Use [`cc`][c~cc~docs]↗{{hi:cc}} as a build dependency to compile bundled C source and link the resulting static library into Rust targets. Its `Build::compile` method emits Cargo's native link metadata, including `cargo::rustc-link-lib`. Cargo supplies target-aware compiler settings to `cc`.
 
-The following example has some bundled C code (`src/hello.c`) that will be used from rust. Before compiling rust source code, the "build" file ([`build.rs`][book~cargo~build-script]↗{{hi:build.rs}}) specified in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} runs. Using the [cc][c~cc~docs]↗{{hi:cc}} crate, a static library file will be produced (in this case, `libhello.a`, see [`cc::Build::compile`][c~cc::Build::compile~docs]↗{{hi:cc::Build::compile}}) which can then be used from rust by declaring the external function signatures in an [`compile`][c~cc::Build::compile~docs]↗, which can then be used from rust by declaring the external function signatures in an [`extern` block][book~rust-reference~extern-blocks]↗ block.
+The build script below compiles `hello.c` into a static library. Rust code declares the C function in an [`extern` block][book~rust-reference~extern-blocks]↗ and calls it through the C ABI. The C example is compiled by the package's normal test build, so its behavior is checked with the Rust example.
 
 Since the bundled C is very simple, only a single source file needs to be passed to [`cc::Build`][c~cc::Build~docs]↗{{hi:cc::Build}}. For more complex build requirements, [`cc::Build`][c~cc::Build~docs]↗{{hi:cc::Build}} offers a full suite of builder methods for specifying [`cc::Build::include`][c~cc::Build::include~docs]↗{{hi:cc::Build::include}} paths and extra compiler [`cc::Build::flag`][c~cc::Build::flag~docs]↗{{hi:cc::Build::flag}}.
 
@@ -44,14 +49,10 @@ Since the bundled C is very simple, only a single source file needs to be passed
 
 ```toml
 [package]
-...
 build = "build.rs"
 
 [build-dependencies]
 cc = "1"
-
-[dependencies]
-error-chain = "0.11"
 ```
 
 ### `build.rs` {#build-rs .skip}
@@ -59,36 +60,26 @@ error-chain = "0.11"
 `build.rs`
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_static.rs:example}}
+{{#include ../../../crates/cats/development_tools_build_utils/build.rs:C}}
 ```
 
-### `src/hello.c` {#hello-c .skip}
+### `examples/build_time_tooling/hello.c` {#hello-c .skip}
 
 ```c
-#include <stdio.h>
-
-void hello() {
-    printf("Hello from C!\n");
-}
-
-void greet(const char* name) {
-    printf("Hello, %s!\n", name);
-}
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/hello.c}}
 ```
 
-### `src/main.rs` {#main-rs .skip}
+### `examples/build_time_tooling/c_library.rs` {#main-rs .skip}
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_static1.rs:example}}
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/c_library.rs:example}}
 ```
 
 ## Compile and Link Statically to a Bundled C++ Library {#cpp}
 
 [![cc][c~cc~docs~badge]][c~cc~docs]{{hi:cc}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
 
-[`cc`][c~cc~docs]↗{{hi:cc}}
-
-Linking a bundled C++ library is very similar to linking a bundled C library. The two core differences when compiling and statically linking a bundled C++ library are specifying a C++ compiler via the builder method [`cc::Build::cpp`][c~cc::Build::cpp~docs]↗{{hi:cc::Build::cpp}} and preventing name mangling by the C++ compiler by adding the `extern "C"` section at the top of our C++ source file.
+Linking a bundled C++ library follows the same pattern as C. Select C++ with [`cc::Build::cpp`][c~cc::Build::cpp~docs]↗{{hi:cc::Build::cpp}} and export functions with `extern "C"` so the Rust declaration and C++ symbol use the same unmangled name.
 
 ### `Cargo.toml` (static C++) {#cargo-toml .skip}
 
@@ -104,25 +95,19 @@ cc = "1"
 ### `build.rs` (static C++) {#build-rs-static-cpp .skip}
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_cpp.rs:example}}
+{{#include ../../../crates/cats/development_tools_build_utils/build.rs:CPP}}
 ```
 
-### `src/foo.cpp` (static C++) {#foo-cpp .skip}
+### `examples/build_time_tooling/foo.cpp` {#foo-cpp .skip}
 
 ```cpp
-extern "C" {
-    int multiply(int x, int y);
-}
-
-int multiply(int x, int y) {
-    return x*y;
-}
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/foo.cpp}}
 ```
 
-### `src/main.rs` (static C++) {#main-rs .skip}
+### `examples/build_time_tooling/cpp_library.rs` (static C++) {#main-rs .skip}
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_cpp1.rs:example}}
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cpp_library.rs:example}}
 ```
 
 ## Compile a C Library While Setting Custom Defines {#cc-custom-defines}
@@ -164,20 +149,29 @@ cc = "1"
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines.rs:example}}
 ```
 
-<div class="hidden">
-This revision turns the commented build commands into the package's active build script, adds a real C implementation that uses the three preprocessor definitions, and tests that Rust reads the compiled values. The build script derives `VERSION` from the Cargo package metadata so the documentation does not promise a stale hard-coded version.
-</div>
+## Generate Rust Source in `OUT_DIR` {#out-dir-codegen}
+
+Code generation can turn a checked-in schema, a source file, or other build input into Rust code. Write the generated file to Cargo's [`OUT_DIR`][book~cargo~build-script]↗, then include it from the crate with `include!`. Cargo preserves `OUT_DIR` between builds, so the script must write the complete output it needs instead of assuming that directory is empty.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_build_utils/build.rs:out-dir-codegen}}
+```
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/out_dir_codegen.rs:example}}
+```
+
+## Rebuild Inputs and Target Configuration {#rerun-if}
+
+Emit `cargo::rerun-if-changed=PATH` for files or directories that affect generated output, and `cargo::rerun-if-env-changed=NAME` for relevant environment variables such as `PROTOC`. If no `rerun-if` instruction is emitted, Cargo conservatively scans the package for changes. Cargo itself tracks the build script and values referenced by `env!` in Rust source.
+
+Build scripts run on the host, while `TARGET` and `CARGO_CFG_TARGET_*` describe the platform being built. Do not use `cfg!()` or `#[cfg]` in `build.rs` to choose target-specific behavior: those check the host. Read Cargo's `CARGO_CFG_TARGET_OS`, `CARGO_CFG_TARGET_ARCH`, or another `CARGO_CFG_*` value instead. See [cross-compilation][ex~development-tools_cargo-plugins~cross-compiling] for target linker setup.
 
 ## Related Topics {#related-topics .skip}
 
-- [Cargo build scripts][book~cargo~build-script].
+- [Foreign Function Interfaces (FFI)][ex~links~ffi] and [cross-compilation][ex~development-tools_cargo-plugins~cross-compiling].
 - [Compiler feature detection with `autocfg`][ex~development-tools_build-utils~autocfg].
+- [`winres`][c~winres~docs]↗{{hi:winres}} generates Windows executable resources. [`protoc-bin-vendored`][c~protoc-bin-vendored~docs]↗{{hi:protoc-bin-vendored}} supplies a host `protoc` binary for Protocol Buffers code generation. Add either as a build dependency only when the package needs it.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/921)
-
-The new recipe collects Git, timestamp, compiler, and dependency metadata at build time and reads it from the binary at runtime.
-</div>
