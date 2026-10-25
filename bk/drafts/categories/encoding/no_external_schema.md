@@ -4,6 +4,16 @@
 
 {{#include no_external_schema.incl.md}}
 
+## MessagePack with `rmp-serde` {#rmp-serde}
+
+[![rmp-serde][c~rmp-serde~docs~badge]][c~rmp-serde~docs] [![rmp-serde~crates.io][c~rmp-serde~crates.io~badge]][c~rmp-serde~crates.io] [![rmp-serde~repo][c~rmp-serde~repo~badge]][c~rmp-serde~repo] [![rmp-serde~lib.rs][c~rmp-serde~lib.rs~badge]][c~rmp-serde~lib.rs]{{hi:rmp-serde}}{{hi:MessagePack}}{{hi:Serialization}}{{hi:Serde}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
+
+[`rmp-serde`][c~rmp-serde~docs]↗{{hi:rmp-serde}} connects MessagePack with [`serde`][c~serde~docs]↗{{hi:serde}}. This example uses `to_vec_named` to encode struct field names as a map. `to_vec` uses a compact positional array; both formats require the matching Rust type when decoding into `MyData`.
+
+```rust,editable
+{{#include ../../../crates/cats/encoding/examples/binary_encoders/rmp_serde.rs:example}}
+```
+
 ## `postcard` {#postcard}
 
 [![postcard][c~postcard~docs~badge]][c~postcard~docs] [![postcard~crates.io][c~postcard~crates.io~badge]][c~postcard~crates.io] [![postcard~repo][c~postcard~repo~badge]][c~postcard~repo] [![postcard~lib.rs][c~postcard~lib.rs~badge]][c~postcard~lib.rs]{{hi:postcard}}{{hi:Framing}}{{hi:Serde}}{{hi:Cobs}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
@@ -37,4 +47,5 @@
 [write](https://github.com/john-cd/rust_howto/issues/1078)
 
 This chapter compares formats that use application types without a separate schema file, including their wire-level type information and `no_std` support. The `rkyv` example remains as a distinct type-specific archive approach.
+
 </div>

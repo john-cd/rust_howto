@@ -40,16 +40,6 @@ In `build.rs`:
 {{#include ../../../crates/cats/encoding/build.rs:prost}}
 ```
 
-## MessagePack with `rmp-serde` {#rmp-serde}
-
-[![rmp-serde][c~rmp-serde~docs~badge]][c~rmp-serde~docs] [![rmp-serde~crates.io][c~rmp-serde~crates.io~badge]][c~rmp-serde~crates.io] [![rmp-serde~repo][c~rmp-serde~repo~badge]][c~rmp-serde~repo] [![rmp-serde~lib.rs][c~rmp-serde~lib.rs~badge]][c~rmp-serde~lib.rs]{{hi:rmp-serde}}{{hi:MessagePack}}{{hi:MessagePack}}{{hi:Serialization}}{{hi:Serde}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
-
-[`rmp-serde`][c~rmp-serde~docs]↗{{hi:rmp-serde}} connects the `MessagePack` library with [`serde`][c~serde~docs]↗{{hi:serde}}, providing the ability to easily serialize and deserialize Rust built-in types, types from the standard library, and custom data structures.
-
-```rust,editable
-{{#include ../../../crates/cats/encoding/examples/binary_encoders/rmp_serde.rs:example}}
-```
-
 ## CBOR with `ciborium` {#ciborium}
 
 [![ciborium][c~ciborium~docs~badge]][c~ciborium~docs] [![ciborium~crates.io][c~ciborium~crates.io~badge]][c~ciborium~crates.io] [![ciborium~repo][c~ciborium~repo~badge]][c~ciborium~repo] [![ciborium~lib.rs][c~ciborium~lib.rs~badge]][c~ciborium~lib.rs]{{hi:ciborium}}{{hi:CBOR}}{{hi:Serde}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}

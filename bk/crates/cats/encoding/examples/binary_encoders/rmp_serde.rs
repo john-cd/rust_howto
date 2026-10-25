@@ -3,6 +3,9 @@
 
 // ANCHOR: example
 //! Serialize and deserialize a struct with MessagePack via `rmp-serde`.
+//!
+//! `to_vec_named` encodes a struct as a map with field names. The compact
+//! `to_vec` form encodes struct values as an array and relies on field order.
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -26,7 +29,7 @@ fn main() -> anyhow::Result<()> {
         is_active: true,
     };
 
-    let encoded = rmp_serde::to_vec(&data)?;
+    let encoded = rmp_serde::to_vec_named(&data)?;
     let decoded: MyData = rmp_serde::from_slice(&encoded)?;
     assert_eq!(data, decoded);
 
@@ -46,8 +49,8 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn named_messagepack_round_trip_preserves_the_struct() -> anyhow::Result<()>
+    {
         main()
     }
-    // [finish](https://github.com/john-cd/rust_howto/issues/1046)
 }
