@@ -6,13 +6,7 @@
 
 High-level solutions for rendering on the screen.
 
-## 2D/3D General Purpose Rendering Engines
-
-Consider:
-
-- [`rend3`][c~rend3~docs]↗{{hi:rend3}}: A 3D rendering engine built on top of [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}. Provides higher-level abstractions for rendering.
-- [`bevy_render`][c~bevy_render~docs]↗{{hi:bevy_render}}: Bevy's rendering system (part of the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine).
-- `three-rs`.
+Rendering engines sit above low-level graphics APIs such as [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} and provide scenes, materials, and cameras. This category lists the crates; the engines themselves ([`rend3`][c~rend3~docs]↗{{hi:rend3}}, [`three-d`][c~three-d~docs]↗{{hi:three-d}}, [`kiss3d`][c~kiss3d~docs]↗{{hi:kiss3d}}, [`bevy_render`][c~bevy_render~docs]↗{{hi:bevy_render}}) are compared in [[3d_renderers | 3D Renderers]], part of the [[rendering | Rendering]] category.
 
 {{#include rendering_engines.incl.md}}
 
@@ -31,8 +25,3 @@ Consider:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/955)
-should be a pointer to rendering.
-</div>
