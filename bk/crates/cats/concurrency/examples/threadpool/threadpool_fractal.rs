@@ -1,146 +1,177 @@
+//! Renders and saves a Julia set with Rayon and the image crate.
+
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
-// ANCHOR: example
-//! Drawing a Julia set fractal in parallel on a thread pool.
-
 use std::fs;
-use std::sync::mpsc::channel;
+use std::path::Path;
 
+use anyhow::Context as _;
 use anyhow::Result;
 use image::ImageBuffer;
 use image::Rgb;
 use num::complex::Complex;
-use threadpool::ThreadPool;
+use rayon::prelude::*;
 
-/// Converts a wavelength (in nanometers) to an RGB color.
+// ANCHOR: example
+/// Renders a Julia set into an in-memory RGB image.
 ///
-/// This function maps a given wavelength to a corresponding RGB color,
-/// simulating the colors of the visible light spectrum. It uses a piecewise
-/// linear function to determine the red, green, and blue components.
-fn wavelength_to_rgb(wavelength: u32) -> Rgb<u8> {
-    let wave = wavelength as f32;
-    let (r, g, b) = match wavelength {
-        380..=439 => ((440. - wave) / (440. - 380.), 0.0, 1.0),
-        440..=489 => (0.0, (wave - 440.) / (490. - 440.), 1.0),
-        490..=509 => (0.0, 1.0, (510. - wave) / (510. - 490.)),
-        510..=579 => ((wave - 510.) / (580. - 510.), 1.0, 0.0),
-        580..=644 => (1.0, (645. - wave) / (645. - 580.), 0.0),
-        645..=780 => (1.0, 0.0, 0.0),
-        _ => (0.0, 0.0, 0.0),
-    };
-    let factor = match wavelength {
-        380..=419 => 0.3 + 0.7 * (wave - 380.) / (420. - 380.),
-        701..=780 => 0.3 + 0.7 * (780. - wave) / (780. - 700.),
-        _ => 1.0,
-    };
-    let (r, g, b) = (
-        normalize(r, factor),
-        normalize(g, factor),
-        normalize(b, factor),
+/// # Errors
+///
+/// Returns an error if the dimensions or iteration count are zero, the output
+/// buffer size overflows, or the buffer cannot be represented by ImageBuffer.
+fn render_julia(
+    width: u32,
+    height: u32,
+    max_iterations: u32,
+) -> Result<ImageBuffer<Rgb<u8>, Vec<u8>>> {
+    anyhow::ensure!(width > 0, "image width must be greater than zero");
+    anyhow::ensure!(height > 0, "image height must be greater than zero");
+    anyhow::ensure!(
+        max_iterations > 0,
+        "iteration limit must be greater than zero"
     );
-    Rgb([r, g, b])
+
+    let width_usize =
+        usize::try_from(width).context("image width does not fit usize")?;
+    let height_usize =
+        usize::try_from(height).context("image height does not fit usize")?;
+    let row_length = width_usize
+        .checked_mul(3)
+        .context("image row size overflows usize")?;
+    let buffer_length = row_length
+        .checked_mul(height_usize)
+        .context("image buffer size overflows usize")?;
+    let mut pixels = vec![0; buffer_length];
+    let julia_constant = Complex::new(-0.8, 0.156);
+
+    pixels
+        .par_chunks_mut(row_length)
+        .enumerate()
+        .for_each(|(y, row)| {
+            let y = y as u32;
+            let (pixels, remainder) = row.as_chunks_mut::<3>();
+            debug_assert!(remainder.is_empty());
+            for (x, pixel) in pixels.iter_mut().enumerate() {
+                let x = x as u32;
+                let iterations = julia_escape_iterations(
+                    julia_constant,
+                    x,
+                    y,
+                    width,
+                    height,
+                    max_iterations,
+                );
+                let wavelength = 380
+                    + ((u64::from(iterations) * 400)
+                        / u64::from(max_iterations))
+                        as u32;
+                *pixel = wavelength_to_rgb(wavelength).0;
+            }
+        });
+
+    ImageBuffer::from_raw(width, height, pixels)
+        .context("rendered pixel buffer has an unexpected length")
 }
 
-/// Calculates the number of iterations required for a point to escape the Julia
-/// set.
+/// Renders and saves a sample Julia set image.
 ///
-/// This function determines whether a given point (x, y) belongs to the Julia
-/// set for a given complex number `c`. It does this by iteratively applying the
-/// function z = z^2 + c, starting with z as the complex representation of the
-/// point (x, y). If the magnitude of z exceeds 2.0 within `max_iter`
-/// iterations, the point is considered to have escaped the set. The number of
-/// iterations required for escape is returned.
+/// # Errors
 ///
-/// # Arguments
-/// * `c` - The complex number defining the Julia set.
-/// * `x`, `y` - The coordinates of the point to test.
-/// * `width`, `height` - The dimensions of the image.
-fn julia(
-    c: Complex<f32>,
+/// Returns an error if the image cannot be rendered, the output directory
+/// cannot be created, or the PNG file cannot be written.
+fn main() -> Result<()> {
+    let image = render_julia(640, 480, 300)?;
+    fs::create_dir_all("temp")
+        .context("could not create the temp output directory")?;
+    image
+        .save(Path::new("temp/output.png"))
+        .context("could not save the Julia set image")?;
+    Ok(())
+}
+// ANCHOR_END: example
+
+/// Calculates how many iterations a point takes to escape the Julia set.
+fn julia_escape_iterations(
+    constant: Complex<f32>,
     x: u32,
     y: u32,
     width: u32,
     height: u32,
-    max_iter: u32,
+    max_iterations: u32,
 ) -> u32 {
-    let width = width as f32;
-    let height = height as f32;
-    let mut z = Complex {
-        // Scale and translate the point to image coordinates:
-        re: 3.0 * (x as f32 - 0.5 * width) / width,
-        im: 2.0 * (y as f32 - 0.5 * height) / height,
+    let width_f32 = width as f32;
+    let height_f32 = height as f32;
+    let mut point = Complex {
+        re: 3.0 * (x as f32 - 0.5 * width_f32) / width_f32,
+        im: 2.0 * (y as f32 - 0.5 * height_f32) / height_f32,
     };
-    let mut i = 0;
-    for t in 0..max_iter {
-        if z.norm() >= 2.0 {
-            break;
+
+    for iteration in 0..max_iterations {
+        if point.norm_sqr() >= 4.0 {
+            return iteration;
         }
-        z = z * z + c;
-        i = t;
+        point = point * point + constant;
     }
-    i
+    max_iterations
 }
 
-/// Normalizes a color component value.
-///
-/// This function takes a color component (r, g, or b) and a factor, and
-/// normalizes the color component to an 8-bit value (0-255). It applies a
-/// power function to adjust the intensity and then scales it to the range
-/// of 0-255.
-fn normalize(color: f32, factor: f32) -> u8 {
-    ((color * factor).powf(0.8) * 255.) as u8
+/// Maps a visible-light wavelength to an RGB color for the fractal palette.
+fn wavelength_to_rgb(wavelength: u32) -> Rgb<u8> {
+    let wave = wavelength as f32;
+    let (red, green, blue) = match wavelength {
+        380..=439 => ((440.0 - wave) / 60.0, 0.0, 1.0),
+        440..=489 => (0.0, (wave - 440.0) / 50.0, 1.0),
+        490..=509 => (0.0, 1.0, (510.0 - wave) / 20.0),
+        510..=579 => ((wave - 510.0) / 70.0, 1.0, 0.0),
+        580..=644 => (1.0, (645.0 - wave) / 65.0, 0.0),
+        645..=780 => (1.0, 0.0, 0.0),
+        _ => (0.0, 0.0, 0.0),
+    };
+    let factor = match wavelength {
+        380..=419 => 0.3 + 0.7 * (wave - 380.0) / 40.0,
+        701..=780 => 0.3 + 0.7 * (780.0 - wave) / 80.0,
+        _ => 1.0,
+    };
+    Rgb([
+        normalize_color_component(red, factor),
+        normalize_color_component(green, factor),
+        normalize_color_component(blue, factor),
+    ])
 }
 
-/// Draws a Julia set on a thread pool and saves the image.
-fn main() -> Result<()> {
-    let (width, height) = (1920, 1080);
-    let mut img = ImageBuffer::new(width, height);
-    let iterations = 300;
-
-    let c = Complex::new(-0.8, 0.156);
-
-    let pool = ThreadPool::new(num_cpus::get());
-    let (tx, rx) = channel();
-
-    for y in 0..height {
-        let tx = tx.clone();
-        pool.execute(move || {
-            for x in 0..width {
-                let i = julia(c, x, y, width, height, iterations);
-                let pixel = wavelength_to_rgb(380 + i * 400 / iterations);
-                tx.send((x, y, pixel)).expect("Could not send data!");
-            }
-        });
-    }
-
-    for _ in 0..(width * height) {
-        let (x, y, pixel) = rx.recv()?;
-        img.put_pixel(x, y, pixel);
-    }
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
-    }
-    img.save("temp/output.png")?;
-    println!("Image saved!");
-    Ok(())
+/// Scales one normalized color component into an 8-bit channel.
+fn normalize_color_component(component: f32, factor: f32) -> u8 {
+    ((component * factor).powf(0.8) * 255.0) as u8
 }
 
-// ANCHOR_END: example
-
-/// Runs the example.
+/// Runs the fractal example.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Unit tests for the in-memory Julia set renderer.
 #[cfg(test)]
 mod tests {
+    use image::GenericImageView as _;
+
     use super::*;
 
+    /// Verifies that rendering preserves the image dimensions in memory and in
+    /// a temporary PNG.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn threadpool_fractal_renders_requested_dimensions_in_memory_and_in_temporary_png()
+    -> Result<()> {
+        let temp_dir = tempfile::tempdir()?;
+        let output_path = temp_dir.path().join("fractal.png");
+        let image = render_julia(64, 64, 128)?;
+
+        assert_eq!(image.dimensions(), (64, 64));
+        assert_eq!(image.as_raw().len(), 64 * 64 * 3);
+
+        image.save(&output_path)?;
+        let saved_image = image::open(output_path)?;
+        assert_eq!(saved_image.dimensions(), (64, 64));
         Ok(())
     }
 }
-// [review; threadpool_fractal.rs is noplayground - linking with cc](https://github.com/john-cd/rust_howto/issues/268)

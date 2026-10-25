@@ -14,7 +14,7 @@
 [ex~concurrency~crossbeam-queue]: concurrent_data_structures.md#crossbeam-queue
 [ex~concurrency~custom-parallel-tasks]: data_parallelism.md#custom-parallel-tasks
 [ex~concurrency~dashmap]: concurrent_data_structures.md#dashmap
-[ex~concurrency~draw-fractal-threadpool]: threadpool.md#draw-fractal-threadpool
+[ex~concurrency~draw-fractal-rayon]: threadpool.md#draw-fractal-rayon
 [ex~concurrency~existing-impl-send-sync]: send_sync.md#existing-impl-send-sync
 [ex~concurrency~flume]: message_passing.md#flume
 [ex~concurrency~flume-tick]: message_passing.md#flume-tick
@@ -56,13 +56,12 @@
 [p~concurrency]: index.md
 [p~concurrent-data-structures]: concurrent_data_structures.md
 [p~data-parallelism]: data_parallelism.md
-[p~global-static]: ../memory-management/global_static.md
 [p~hashmaps]: ../../../src/categories/data-structures/hashmaps.md
 [p~interior-mutability]: ../../../src/standard-library/interior_mutability.md
 [p~iterators]: ../../../src/language/iterators.md
 [p~lazy-initialization]: ../memory-management/lazy_initialization.md
 [p~main]: ../../../src/language/entry_points.md
-[p~memory]: ../development-tools_profiling/memory.md
+[p~memory]: ../development-tools_profiling/memory_usage_analysis.md
 [p~ownership-and-borrowing]: ../../../src/language/ownership_and_borrowing.md
 [p~message-passing]: message_passing.md
 [p~multithreading]: explicit_threads.md
@@ -70,7 +69,7 @@
 [p~scraping]: ../web-programming/scraping.md
 [p~shared-state]: shared_state.md
 [p~smart-pointers]: ../../../src/standard-library/smart_pointers.md
-[p~standard-library]: ../../../drafts/standard-library/index.md
+[p~standard-library]: ../../../src/standard-library/index.md
 [p~streams]: ../asynchronous/streams.md
 [p~strings]: ../../../src/categories/data-structures/strings.md
 [p~traits]: ../../../src/language/traits.md

@@ -54,7 +54,8 @@ ringbuf = "0.5.3"
 rtrb = "0.3.4"
 # Riker actor example in the actors chapter.
 riker = { version = "0.4.2", optional = true }
-ring = "0.17.14"
+# Pure Rust SHA-256 for the parallel file-hashing example, without a native `cc` build.
+sha2 = "0.11"
 # Stakker actor example in the actors chapter.
 stakker = { version = "0.2.16", optional = true }
 threadpool = "1.8.1"

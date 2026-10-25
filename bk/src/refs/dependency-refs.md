@@ -404,7 +404,7 @@
 [bytes-crate]: https://crates.io/crates/bytes
 
 
-[bytes-github]: https://github.com/tokio-rs/bytes
+[bytes-github]: https://github.com/tokio-rs/bytes (*)
 
 
 [cached]: https://docs.rs/cached
@@ -1097,7 +1097,16 @@
 [getrandom-crate]: https://crates.io/crates/getrandom
 
 
-[getrandom-github]: https://github.com/rust-random/getrandom
+[getrandom-github]: https://github.com/rust-random/getrandom (*)
+
+
+[gix]: https://docs.rs/gix
+
+
+[gix-crate]: https://crates.io/crates/gix
+
+
+[gix-github]: https://github.com/GitoxideLabs/gitoxide
 
 
 [glob]: https://docs.rs/glob
@@ -1206,6 +1215,15 @@
 
 
 [http_body_util-github]: https://github.com/hyperium/http-body (*)
+
+
+[httpmock]: https://docs.rs/httpmock
+
+
+[httpmock-crate]: https://crates.io/crates/httpmock
+
+
+[httpmock-github]: https://github.com/httpmock/httpmock
 
 
 [humantime]: https://docs.rs/humantime
@@ -2510,7 +2528,7 @@
 [sha2-crate]: https://crates.io/crates/sha2
 
 
-[sha2-github]: https://github.com/RustCrypto/hashes
+[sha2-github]: https://github.com/RustCrypto/hashes (*)
 
 
 [shlex]: https://docs.rs/shlex
@@ -2888,7 +2906,7 @@
 [toml_edit-crate]: https://crates.io/crates/toml_edit
 
 
-[toml_edit-github]: https://github.com/toml-rs/toml
+[toml_edit-github]: https://github.com/toml-rs/toml (*)
 
 
 [tonic]: https://docs.rs/tonic
@@ -3059,7 +3077,7 @@
 [ureq-crate]: https://crates.io/crates/ureq
 
 
-[ureq-github]: https://github.com/algesten/ureq
+[ureq-github]: https://github.com/algesten/ureq (*)
 
 
 [url]: https://docs.rs/url
@@ -3107,13 +3125,13 @@
 [utoipa-github]: https://github.com/juhaku/utoipa
 
 
-[utoipa-swagger-ui]: https://docs.rs/utoipa-swagger-ui
+[utoipa_swagger_ui]: https://docs.rs/utoipa_swagger_ui
 
 
-[utoipa-swagger-ui-crate]: https://crates.io/crates/utoipa-swagger-ui
+[utoipa_swagger_ui-crate]: https://crates.io/crates/utoipa_swagger_ui
 
 
-[utoipa-swagger-ui-github]: https://github.com/juhaku/utoipa
+[utoipa_swagger_ui-github]: https://github.com/juhaku/utoipa
 
 
 [uuid]: https://docs.rs/uuid
@@ -3141,6 +3159,33 @@
 
 
 [walkdir-github]: https://github.com/BurntSushi/walkdir (*)
+
+
+[wasmparser]: https://docs.rs/wasmparser
+
+
+[wasmparser-crate]: https://crates.io/crates/wasmparser
+
+
+[wasmparser-github]: https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wasmparser
+
+
+[wasmprinter]: https://docs.rs/wasmprinter
+
+
+[wasmprinter-crate]: https://crates.io/crates/wasmprinter
+
+
+[wasmprinter-github]: https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wasmprinter
+
+
+[wat]: https://docs.rs/wat
+
+
+[wat-crate]: https://crates.io/crates/wat
+
+
+[wat-github]: https://github.com/bytecodealliance/wasm-tools/tree/main/crates/wat
 
 
 [webpki_roots]: https://docs.rs/webpki_roots

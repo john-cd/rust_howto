@@ -6,23 +6,25 @@
 
 ## Hash ISO Files in Parallel {#sha256-of-iso-files-concurrently}
 
-[![threadpool][c~threadpool~docs~badge]][c~threadpool~docs]{{hi:threadpool}} [![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs]{{hi:num_cpus}} [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs]{{hi:walkdir}} [![ring][c~ring~docs~badge]][c~ring~docs]{{hi:ring}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] [{{hi:Concurrency}}![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+[![threadpool][c~threadpool~docs~badge]][c~threadpool~docs]{{hi:threadpool}} [![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs]{{hi:num_cpus}} [![walkdir][c~walkdir~docs~badge]][c~walkdir~docs]{{hi:walkdir}} [![sha2][c~sha2~docs~badge]][c~sha2~docs]{{hi:sha2}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] [{{hi:Concurrency}}![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-This recipe walks the current directory, submits `.iso` files to a fixed-size pool, and computes a SHA-256 digest with `ring`. The worker count comes from `num_cpus::get`; the example requires matching ISO files in its working directory.
+This recipe walks the current directory, submits `.iso` files to a fixed-size pool, and computes SHA-256 digests with the pure-Rust `sha2` crate. The worker count comes from `num_cpus::get`; the example requires matching ISO files in its working directory.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/threadpool/threadpool_walk.rs:example}}
 ```
 
-## Render a Fractal with a Thread Pool {#draw-fractal-threadpool}
+## Render a Fractal with Rayon {#draw-fractal-rayon}
 
-[![threadpool][c~threadpool~docs~badge]][c~threadpool~docs]{{hi:threadpool}} [![num][c~num~docs~badge]][c~num~docs]{{hi:num}} [![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs]{{hi:num_cpus}} [![image][c~image~docs~badge]][c~image~docs]{{hi:image}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~science][cat~science~badge]][cat~science]{{hi:science}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}}
+[![rayon][c~rayon~docs~badge]][c~rayon~docs]{{hi:rayon}} [![num][c~num~docs~badge]][c~num~docs]{{hi:num}} [![image][c~image~docs~badge]][c~image~docs]{{hi:image}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~science][cat~science~badge]][cat~science]{{hi:science}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}}
 
-This recipe divides Julia-set pixels into jobs, renders them with the `threadpool` crate, and saves the resulting image. Use a pool for many independent jobs; Rayon is often a simpler fit when the work is over Rust collections.
+This recipe renders independent Julia-set rows with Rayon and saves the resulting image. Rayon is a good fit for parallel work over Rust collections.
 
 [![julia set][web-julia-set]][web-julia-set]
 
-The example uses `image::ImageBuffer` to store RGB pixels and an MPSC channel to return completed jobs to the main thread, which writes `output.png`.
+The example uses `image::ImageBuffer` to store RGB pixels and Rayon to render rows in parallel. It writes `temp/output.png` using the PNG-only image codec configuration shared with the thumbnail examples.
+
+The book excerpt hides the fractal math helpers outside the anchor, so it is not a complete standalone Playground program.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/threadpool/threadpool_fractal.rs:example}}
@@ -37,7 +39,3 @@ The example uses `image::ImageBuffer` to store RGB pixels and an MPSC channel to
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  The fractal recipe remains `noplayground` because its native `cc` dependency failed to link in a previous validation; issue #268 owns that example.
-</div>
