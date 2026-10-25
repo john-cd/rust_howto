@@ -20,9 +20,11 @@ autolib = false
 
 [dependencies]
 anyhow = "1.0.104"
+backon = "1.6.0"
 clap = { version = "4.6.7", features = ["derive"] }
 # Iterates over reqwest's streamed response chunks when downloading files.
 futures-util = "0.3.34"
+governor = "0.10.4"
 http-body-util = "0.1.5"
 hyper = "1.12.0"
 hyper-util = "0.1.21"
@@ -34,8 +36,10 @@ ureq = "3.5.0"
 url = "2.5.8"
 
 [dev-dependencies]
+mockito = "1.7.2"
 # Parses captured JSON request bodies in the REST API example tests.
 serde_json = "1.0.154"
+tokio = { version = "1.54.1", features = ["time", "test-util"] }
 
 [[example]]
 name = "apis"
@@ -53,8 +57,18 @@ path = "examples/http_clients/main.rs"
 test = true
 
 [[example]]
+name = "rate_limit"
+path = "examples/rate_limit/main.rs"
+test = true
+
+[[example]]
 name = "requests"
 path = "examples/requests/main.rs"
+test = true
+
+[[example]]
+name = "retry"
+path = "examples/retry/main.rs"
 test = true
 
 [lints]
