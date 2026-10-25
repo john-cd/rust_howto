@@ -17,7 +17,7 @@ It is the main purpose of this book to provide expansive coverage of "key" or "f
 1. Browse the left sidebar for a relevant category.
 1. Search by keyword for recipes for your specific problem.
 1. Consult the index of examples.
-1. Consult the [[word index | word_index]].
+1. Consult the [[word_index | word index]].
 1. Consult [Crates by Alphabetical Order][p~crates-alphabetical] and [Crates by Category][p~crates-categories].
 1. Use this book's [[links | links]] to Rust documentation, books, videos, cheatsheets, etc.
 1. The [[example_code | Example Code and Templates]] chapter provides lists of popular Rust repositories.
@@ -50,7 +50,7 @@ You can also search or post on Rust chat servers and forums - see [[blogs | Blog
 ### Consult Dated Lists and Reviews
 
 - [Awesome Rust (libhunt.com)][rust-libhunt~website]↗ is a broad directory of Rust projects.
-- [Top Rust Libraries 2025][libs.tech-rust~website]↗ and [State of the Crates 2025][blog~state-of-the-crates]↗ are dated snapshots; use them to discover candidates, then verify current maintenance and compatibility.
+- [Top Rust Libraries 2026][libs.tech-rust~website]↗ and [State of the Crates 2025][blog~state-of-the-crates]↗ are dated snapshots; use them to discover candidates, then verify current maintenance and compatibility.
 - [r/rust: "What are some less popular but well-made crates you'd like others to know about?"][reddit~what_are_some_less_popular_but_wellmade_crates]↗ contains community recommendations.
 - ["Must know" Rust Crates][must_know_rust_crates~website]↗ and [RustRepo][rustrepo~website]↗ collect additional crate recommendations and project listings.
 
@@ -68,5 +68,5 @@ You may also consult older resources, such as:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
+  [accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
 </div>

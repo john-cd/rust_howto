@@ -13,6 +13,8 @@
 [ISBN~978-1098109431]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098109431
 [ISBN~978-1098149055]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098149055
 [ISBN~978-1098151409]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098151409
+[ISBN~978-1098176228]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098176228
+[ISBN~978-1098176228]: https://en.wikipedia.org/wiki/Special:BookSources/978-1098176228
 [ISBN~978-1484251201]: https://en.wikipedia.org/wiki/Special:BookSources/978-1484251201
 [ISBN~978-1484272077]: https://en.wikipedia.org/wiki/Special:BookSources/978-1484272077
 [ISBN~978-1492052593]: https://en.wikipedia.org/wiki/Special:BookSources/978-1492052593
@@ -396,7 +398,8 @@
 [book~nightly-nomicon]: https://doc.rust-lang.org/nightly/nomicon
 [book~nomicon~other-reprs]: https://doc.rust-lang.org/nomicon/other-reprs.html
 [book~perf-book]: https://nnethercote.github.io/perf-book/title-page.html
-[book~programming-rust-2nd-edition]: https://oreilly.com/library/view/programming-rust-2nd/9781492052586
+[book~programming-rust-2nd-edition]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/
+[book~programming-rust-3rd-edition]: https://www.oreilly.com/library/view/programming-rust-3rd/9781098176228/
 [book~py2rs]: https://rochacbruno.github.io/py2rs
 [book~rust-101]: https://ralfj.de/projects/rust-101/main.html
 [book~rust-atomics]: https://marabos.nl/atomics
@@ -1330,6 +1333,7 @@
 [rust-iot-platform~repo]: https://github.com/iot-ecology/rust-iot-platform
 [rust-lang-user-groups~website]: https://prev.rust-lang.org/en-US/user-groups.html
 [rust-lang~blog]: https://blog.rust-lang.org
+[rust-lang~blog~adopting-the-fls]: https://blog.rust-lang.org/2025/03/26/adopting-the-fls/
 [rust-lang~embedded-devices-working-group]: https://rust-lang.org/governance/wgs/embedded
 [rust-lang~install-rust]: https://rust-lang.org/tools/install
 [rust-lang~website]: https://rust-lang.org

@@ -18,16 +18,17 @@
 
 ## Rust Blogs and Newsletters {#blogs}
 
-The "official" Rust blogs are written by the Rust Foundation or core Rust team members:
+The Rust Project publishes official updates through:
 
 - [Rust Blog][rust-lang~blog]↗.
 - ["Inside Rust"][blog~inside-rust]↗.
 - [Rust Release Announcements][blog~releases]↗.
-- [This Week in Rust][this-week-in-rust~website]↗.
+
+[This Week in Rust][this-week-in-rust~website]↗ is a community-run weekly newsletter, not an official Rust Project blog.
 
 Lists of popular Rust blogs can be found in:
 
-- [Today's 10 Best Rust Blogs][blog~bloggingfordevs-rust-blogs]↗.
+- [Today's 10 Best Rust Blogs][blog~bloggingfordevs-rust-blogs]↗ is a dynamically refreshed ranking.
 - [Rust Blogs (rustmeup.com)][rustmeup-resources-rust-blogs~website]↗.
 - [Rust Anthology Master List][rust-anthology~repo]↗.
 
@@ -35,53 +36,53 @@ You may also consult the lists of [Medium Blogs Tagged with 'Rust'][blog~medium~
 
 ### Personal Blogs {#personal-blogs}
 
-| Title (URL) | Description |
-|---|---|
-| A learning journal: [`lpalmieri.com`][lpalmieri~website]↗ | Luca Palmieri's blog. |
-| [Andrew Gallant][burntsushi.net~website]↗ | Blogs covering [`regex`][c~regex~docs]↗{{hi:regex}}, [`ripgrep`][c~ripgrep~repo]↗{{hi:ripgrep}}, etc. |
-| [Billy DM][blog~billydm]↗ | Posts on programming, including Rust. |
-| [Brian Anderson][blog~brson]↗ | LLVM, blockchain, Rust. |
-| [`codevoweb.com`][codevoweb~website]↗ | Demonstrates how to build common applications using multiple languages, including Rust. |
-| [Denys Séguret][dystroy~website]↗ | From the author of [`broot`][c~broot~website]↗{{hi:broot}}, [`bacon`][bacon~website]↗{{hi:bacon}}, etc. |
-| The [Embedded Rustacean][blog~theembeddedrustacean]↗ | Tutorial-style articles on embedded Rust. |
-| [`fasterthanli.me`][fasterthanli.me~website]↗ | In-depth articles on Rust, networking, and systems programming. |
-| [`faultlore.com`][faultlore~website]↗ | Posts on systems programming and Rust. |
-| [Llogiq][blog~llogiq]↗ | Rust and Clippy. |
-| [`lord.io`][lord.io~website]↗ | Articles on Rust, game development, and more. |
-| [Mara Bos][blog~m-ou.se]↗ | Thoughts and articles from a core Rust library team member. |
-| [Matklad][blog~matklad]↗ | Musings on Rust syntax, IDEs, and language design. |
-| [Matthew Brubeck][blog~rust-a-unique-perspective-html]↗ | Writings on Rust, Servo, and web technologies. |
-| [Nicholas Nethercote][blog~nnethercote]↗ | A blog focusing on Rust performance and memory usage. |
-| [PoignardAzur][blog~poignardazur]↗ | A blog covering various topics, including Rust. |
-| [`polymonster.co.uk`][blog~polymonster]↗ | A blog about Rust, graphics, and game development. |
-| [Raph Levien][blog~raphlinus]↗ | Insights on Rust, GUIs, and high-performance code. |
-| [Rust Magazine][rustmagazine~website]↗ | A monthly magazine for the Rust community. |
-| [Sam Sartor][samsartor~website]↗ | Posts on Rust, Nix, and software development. |
-| [Sean McArthur][seanmonstar~website]↗ | Focused on [`hyper`][c~hyper~website]↗{{hi:hyper}}, [`tokio`][c~tokio~website]↗{{hi:tokio}}, and web development in Rust. |
-| [`readrust.net`][readrust.net~website]↗ | Interesting posts related to the Rust programming language. |
-| [`rust-osdev.com`][rust-osdev~website]↗ | Monthly news on OS and bootloader development in Rust. |
-| [Rust Trends][rust-trends~website]↗ | Biweekly newsletter on all things Rust. |
-| [`smallcultfollowing.com/babysteps`][smallcultfollowing~website]↗ | General thoughts about Rust by Niko Matsakis. |
-| [Steve Klabnik][steveklabnik~website]↗ | Rust, Ruby on Rails. |
-| [Sylvain Kerkour][kerkour~website]↗ | Black Hat Rust. |
-| [`tavianator.com`][tavianator~website]↗ | Technical articles on performance and low-level programming. |
-| [`tedinski.com/archive`][tedinski~website]↗ | An archive of posts on various programming topics. |
-| Writing an OS in Rust: [`os.phil-opp.com`][blog~writing-an-OS-in-rust]↗ | A classic blog series on building a basic OS in Rust. |
+| Title (URL)                                                             | Description                                                                                                               |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| A learning journal: [`lpalmieri.com`][lpalmieri~website]↗               | Luca Palmieri's blog.                                                                                                     |
+| [Andrew Gallant][burntsushi.net~website]↗                               | Blogs covering [`regex`][c~regex~docs]↗{{hi:regex}}, [`ripgrep`][c~ripgrep~repo]↗{{hi:ripgrep}}, etc.                     |
+| [Billy DM][blog~billydm]↗                                               | Posts on programming, including Rust.                                                                                     |
+| [Brian Anderson][blog~brson]↗                                           | LLVM, blockchain, Rust.                                                                                                   |
+| [`codevoweb.com`][codevoweb~website]↗                                   | Demonstrates how to build common applications using multiple languages, including Rust.                                   |
+| [Denys Séguret][dystroy~website]↗                                       | From the author of [`broot`][c~broot~website]↗{{hi:broot}}, [`bacon`][bacon~website]↗{{hi:bacon}}, etc.                   |
+| The [Embedded Rustacean][blog~theembeddedrustacean]↗                    | Tutorial-style articles on embedded Rust.                                                                                 |
+| [`fasterthanli.me`][fasterthanli.me~website]↗                           | In-depth articles on Rust, networking, and systems programming.                                                           |
+| [`faultlore.com`][faultlore~website]↗                                   | Posts on systems programming and Rust.                                                                                    |
+| [Llogiq][blog~llogiq]↗                                                  | Rust and Clippy.                                                                                                          |
+| [`lord.io`][lord.io~website]↗                                           | Articles on Rust, game development, and more.                                                                             |
+| [Mara Bos][blog~m-ou.se]↗                                               | Thoughts and articles from a core Rust library team member.                                                               |
+| [Matklad][blog~matklad]↗                                                | Musings on Rust syntax, IDEs, and language design.                                                                        |
+| [Matthew Brubeck][blog~rust-a-unique-perspective-html]↗                 | Writings on Rust, Servo, and web technologies.                                                                            |
+| [Nicholas Nethercote][blog~nnethercote]↗                                | A blog focusing on Rust performance and memory usage.                                                                     |
+| [PoignardAzur][blog~poignardazur]↗                                      | A blog covering various topics, including Rust.                                                                           |
+| [`polymonster.co.uk`][blog~polymonster]↗                                | A blog about Rust, graphics, and game development.                                                                        |
+| [Raph Levien][blog~raphlinus]↗                                          | Insights on Rust, GUIs, and high-performance code.                                                                        |
+| [Rust Magazine][rustmagazine~website]↗                                  | An archive of Rust articles; its latest issue is dated June 2023.                                                         |
+| [Sam Sartor][samsartor~website]↗                                        | Posts on Rust, Nix, and software development.                                                                             |
+| [Sean McArthur][seanmonstar~website]↗                                   | Focused on [`hyper`][c~hyper~website]↗{{hi:hyper}}, [`tokio`][c~tokio~website]↗{{hi:tokio}}, and web development in Rust. |
+| [`readrust.net`][readrust.net~website]↗                                 | An aggregator of articles and posts about Rust.                                                                           |
+| [`rust-osdev.com`][rust-osdev~website]↗                                 | Monthly news on OS and bootloader development in Rust.                                                                    |
+| [Rust Trends][rust-trends~website]↗                                     | Biweekly newsletter on all things Rust.                                                                                   |
+| [`smallcultfollowing.com/babysteps`][smallcultfollowing~website]↗       | General thoughts about Rust by Niko Matsakis.                                                                             |
+| [Steve Klabnik][steveklabnik~website]↗                                  | Rust, Ruby on Rails.                                                                                                      |
+| [Sylvain Kerkour][kerkour~website]↗                                     | Black Hat Rust.                                                                                                           |
+| [`tavianator.com`][tavianator~website]↗                                 | Technical articles on performance and low-level programming.                                                              |
+| [`tedinski.com/archive`][tedinski~website]↗                             | An archive of posts on various programming topics.                                                                        |
+| Writing an OS in Rust: [`os.phil-opp.com`][blog~writing-an-OS-in-rust]↗ | A classic blog series on building a basic OS in Rust.                                                                     |
 
 You may also consult [this list][forum~fearless-rust-bloggers]↗ (somewhat outdated).
 
 ### Project and Organization Blogs {#project-blogs}
 
-| Project (URL) | Description |
-|---|---|
-| [Bevy Engine News][bevy~news~website]↗ | News and updates for the [`bevy`][bevy~website]↗{{hi:bevy}} game engine. |
-| [Bytecode Alliance Articles][blog~bytecodealliance-wasm]↗ | WASM-focused articles and announcements. |
-| [Kani Verifier][blog~model-checking]↗ | News and updates for the [`kani`][book~model-checking]↗{{hi:kani}} formal verification tool. |
-| [`kellnr.io`][blog~kellnr]↗ | A private crate registry for Rust. |
-| [Meilisearch][blog.meilisearch~website]↗ | Updates regarding a fast, open-source search engine. |
-| [Quickwit][blog~quickwit]↗ | A distributed search engine for logs and traces. |
-| [`rust-analyzer`: This Week][blog~rust-analyzer-this-week]↗ | Weekly news about the `rust-analyzer` language server. |
-| `shuttle.dev` [blog][blog~shuttle.dev]↗ and [launchpad][launchpad-shuttle-dev~website]↗ | Shuttle is a service to deploy Rust applications to the Cloud. |
+| Project (URL)                                                                           | Description                                                                                  |
+| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| [Bevy Engine News][bevy~news~website]↗                                                  | News and updates for the [`bevy`][bevy~website]↗{{hi:bevy}} game engine.                     |
+| [Bytecode Alliance Articles][blog~bytecodealliance-wasm]↗                               | WASM-focused articles and announcements.                                                     |
+| [Kani Verifier][blog~model-checking]↗                                                   | News and updates for the [`kani`][book~model-checking]↗{{hi:kani}} formal verification tool. |
+| [`kellnr.io`][blog~kellnr]↗                                                             | A private crate registry for Rust.                                                           |
+| [Meilisearch][blog.meilisearch~website]↗                                                | Updates regarding a fast, open-source search engine.                                         |
+| [Quickwit][blog~quickwit]↗                                                              | A distributed search engine for logs and traces.                                             |
+| [`rust-analyzer`: This Week][blog~rust-analyzer-this-week]↗                             | Weekly news about the `rust-analyzer` language server.                                       |
+| `shuttle.dev` [blog][blog~shuttle.dev]↗ and [launchpad][launchpad-shuttle-dev~website]↗ | Shuttle is a service to deploy Rust applications to the Cloud.                               |
 
 ## Related Topics {#related-topics .skip}
 
@@ -91,5 +92,5 @@ You may also consult [this list][forum~fearless-rust-bloggers]↗ (somewhat outd
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
+  [accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
 </div>

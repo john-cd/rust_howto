@@ -686,6 +686,15 @@
 [dsa-github]: https://github.com/RustCrypto/signatures/tree/master/dsa
 
 
+[duct]: https://docs.rs/duct
+
+
+[duct-crate]: https://crates.io/crates/duct
+
+
+[duct-github]: https://github.com/oconnor663/duct.rs
+
+
 [dyn_clone]: https://docs.rs/dyn_clone
 
 
@@ -920,6 +929,15 @@
 [fuzzy_matcher-github]: https://github.com/lotabout/fuzzy-matcher
 
 
+[getrandom]: https://docs.rs/getrandom
+
+
+[getrandom-crate]: https://crates.io/crates/getrandom
+
+
+[getrandom-github]: https://github.com/rust-random/getrandom
+
+
 [glob]: https://docs.rs/glob
 
 
@@ -963,6 +981,15 @@
 
 
 [heck-github]: https://github.com/withoutboats/heck
+
+
+[hex]: https://docs.rs/hex
+
+
+[hex-crate]: https://crates.io/crates/hex
+
+
+[hex-github]: https://github.com/KokaKiwi/rust-hex
 
 
 [hex_literal]: https://docs.rs/hex_literal
@@ -2573,7 +2600,7 @@
 [xshell-crate]: https://crates.io/crates/xshell
 
 
-[xshell-github]: https://github.com/matklad/xshell
+[xshell-github]: https://github.com/matklad/xshell (*)
 
 
 [zerocopy]: https://docs.rs/zerocopy

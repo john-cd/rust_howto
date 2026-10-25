@@ -15,7 +15,7 @@
 - [Rust by Practice][practice.course.rs~website]↗.
 - The [Rust Cookbook][book~rust-cookbook]↗: A collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem. Some examples are outdated.
 - [Rust Mastery Exercises][app.codecrafters.io~rust]↗.
-- [Rust Quizz][rust-quizz~website]↗.
+- [Rust Quiz][rust-quizz~website]↗.
 - [Rust Practice Questions][rust-practise-questions~repo]↗.
 - Top 15 Rust projects to elevate your skills: [Rust Practice Projects][blog~rust-practice-projects]↗.
 
@@ -47,7 +47,7 @@ For example, [`realworld-rust-axum-sqlx`][realworld~rust-axum-sqlx~repo]↗ is a
 
 ### ChromeOS Virtual Machine Monitor {#crosvm}
 
-The ChromeOS Virtual Machine Monitor [(github)][crosvm~repo]↗ is written in Rust, with over 300k LoC. Its repository contains many well-documented crates. There is a [book][book~crosvm]↗ and thorough [documentation][crosvm~docs~website]↗ for all crates.
+The ChromeOS Virtual Machine Monitor [(GitHub)][crosvm~repo]↗ is written in Rust and organized into many well-documented crates. See its [book][book~crosvm]↗ and [crate documentation][crosvm~docs~website]↗.
 
 ### Build Your Own X {#build-your-own-x}
 
@@ -81,5 +81,5 @@ For example, you will find a full template for a REST API written in Rust, engin
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
+  [accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
 </div>
