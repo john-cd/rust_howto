@@ -5,6 +5,7 @@
 [ex~cloud~lambda]: aws.md#lambda
 [ex~cloud~shuttle]: rust_native_cloud_development.md#shuttle
 [docs-shuttle-rs]: https://docs.shuttle.dev/
+[cargo-lambda~website]: https://www.cargo-lambda.info/
 [dapr~rust~sdk~docs]: https://docs.dapr.io/developing-applications/sdks/rust/
 [fly~rust~hosting~guide]: https://fly.io/learn/rust-hosting/
 [p~apis]: ../../categories/web-programming_http-client/apis.md

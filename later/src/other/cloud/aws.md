@@ -19,7 +19,7 @@ Rust code is frequently implemented as:
 
 Rust's performance and small binary size make it a great choice for serverless functions. Rust Lambda functions can start quickly and consume fewer resources, leading to lower costs and improved performance.
 
-The following example provides a template for a Lambda function written in Rust.
+The following example provides a testable Lambda handler written in Rust. Install [Cargo Lambda][cargo-lambda~website]↗ to build and deploy it, then use `cargo lambda watch` to run it locally. Before deploying, configure AWS credentials and a deployment role.
 
 You can also use the AWS SDK from within a Lambda function to interact with AWS services like S3 or CloudWatch (see the example below).
 

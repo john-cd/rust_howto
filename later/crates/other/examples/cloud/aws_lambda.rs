@@ -6,15 +6,13 @@
 //! It demonstrates how to use the `lambda_runtime` crate to create a simple
 //! function that takes a name as input and returns a greeting message.
 //!
-//! Prerequisites:
-//!
-//! - Install the AWS CLI.
-//! - Install the AWS SAM CLI.
+//! Install Cargo Lambda to build, run locally, and deploy this function.
+//! Configure AWS credentials and a deployment role before deploying.
 //!
 //! ```sh
-//! cargo build --release --target x86_64-unknown-linux-musl
-//! sam build
-//! sam deploy --guided
+//! cargo lambda build --release
+//! cargo lambda watch
+//! cargo lambda deploy
 //! ```
 
 use lambda_runtime::Error;
@@ -31,7 +29,7 @@ struct Request {
 }
 
 /// The response that the function returns.
-#[derive(Serialize)]
+#[derive(PartialEq, Serialize)]
 struct Response {
     /// The greeting.
     message: String,
@@ -60,7 +58,7 @@ async fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Starts the Lambda runtime for this handler.
 pub fn run() -> anyhow::Result<()> {
     main().map_err(|e| anyhow::anyhow!("{e}"))?;
     Ok(())
@@ -70,10 +68,18 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    #[test]
-    #[ignore = "requires Lambda runtime"]
-    fn test_main() {
-        main().unwrap();
+    /// Verifies the handler response without starting the AWS Lambda runtime.
+    #[tokio::test]
+    async fn handler_returns_a_greeting_for_the_request() -> Result<(), Error> {
+        let request = Request {
+            name: "Ada".to_owned(),
+        };
+        let event =
+            LambdaEvent::new(request, lambda_runtime::Context::default());
+
+        let response = function_handler(event).await?;
+
+        assert_eq!(response.message, "Hello, Ada!");
+        Ok(())
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/878)
