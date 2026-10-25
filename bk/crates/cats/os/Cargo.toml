@@ -21,9 +21,13 @@ autolib = false
 [dependencies]
 anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive"] }
+ctrlc = { version = "3.5.2", features = ["termination"] }
 duct = "1.1.2"
 libc = "0.2.191"
 regex = "1.13.1"
+shlex = "2.0.1"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "signal", "time", "process"] }
+wait-timeout = "0.2.1"
 which = "8.0.6"
 xshell = "0.2.7"
 
@@ -33,9 +37,25 @@ path = "examples/external_commands/main.rs"
 test = true
 
 [[example]]
+name = "process_management"
+path = "examples/process_management/main.rs"
+test = true
+
+[[example]]
+name = "signals"
+path = "examples/signals/main.rs"
+test = true
+
+[[example]]
 name = "low_level_system_calls"
 path = "examples/low_level_system_calls/main.rs"
 test = true
 
 [lints]
 workspace = true
+
+[target."cfg(unix)".dependencies]
+nix = { version = "0.31.3", features = ["signal", "process"] }
+
+[target."cfg(windows)".dependencies]
+windows-sys = { version = "0.61.2", features = ["Win32_Foundation", "Win32_System_JobObjects", "Win32_System_Threading", "Win32_Security"] }
