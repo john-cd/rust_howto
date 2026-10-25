@@ -385,6 +385,14 @@
 [c~async_zip~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async__zip-yellow
 [c~async_zip~repo]: https://github.com/Majored/rs-async-zip
 [c~async_zip~repo~badge]: https://img.shields.io/badge/async__zip-steelblue?logo=github
+[c~atomicwrites~crates.io]: https://crates.io/crates/atomicwrites
+[c~atomicwrites~crates.io~badge]: https://img.shields.io/badge/crates.io-atomicwrites-crimson
+[c~atomicwrites~docs]: https://docs.rs/atomicwrites
+[c~atomicwrites~docs~badge]: https://img.shields.io/crates/v/atomicwrites?label=atomicwrites
+[c~atomicwrites~lib.rs]: https://lib.rs/crates/atomicwrites
+[c~atomicwrites~lib.rs~badge]: https://img.shields.io/badge/lib.rs-atomicwrites-yellow
+[c~atomicwrites~repo]: https://github.com/jwilm/atomicwrites
+[c~atomicwrites~repo~badge]: https://img.shields.io/badge/atomicwrites-steelblue?logo=github
 [c~atomic~crates.io]: https://crates.io/crates/atomic
 [c~atomic~crates.io~badge]: https://img.shields.io/badge/crates.io-atomic-crimson
 [c~atomic~docs]: https://docs.rs/atomic
