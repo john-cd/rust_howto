@@ -40,11 +40,11 @@ priority-queue = "2.7.0"
 rangemap = "1.8.0"
 roaring = "0.11.5"
 rustc-hash = "2.1.1"
-skiplist = "1.2.0"
+skiplist = "2.0.0"
 slotmap = "1.1.1"
 smallvec = "1.16.3" # alpha
 tinyvec = { version = "1.13.3", features = ["alloc"] }
-ulid = "1.2.1"
+ulid = "3.0.0"
 short-uuid = "0.2.1" # Compact, URL-safe UUIDs.
 uuid = { version = "1.28.0", features = [
     # Lets us generate random UUIDs.

@@ -4613,7 +4613,7 @@ dependencies = [
  "slotmap",
  "smallvec",
  "tinyvec",
- "ulid",
+ "ulid 3.0.0",
  "uuid 1.29.0",
 ]
 
@@ -17936,9 +17936,9 @@ dependencies = [
 
 [[package]]
 name = "skiplist"
-version = "1.3.4"
+version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "86d918b45747bdccdc3ab878fa2bad75400d32cc44c44466865cf2b4a2ad79c9"
+checksum = "6a5f20abc94886e808e956797f74d8fd752445a11f61f5371eeed491ede5729a"
 dependencies = [
  "rand 0.10.3",
 ]
@@ -19056,7 +19056,7 @@ dependencies = [
  "surrealdb-types",
  "thiserror 2.0.21",
  "tracing",
- "ulid",
+ "ulid 1.2.1",
  "uuid 1.29.0",
 ]
 
@@ -19280,7 +19280,7 @@ dependencies = [
  "surrealdb-strand",
  "surrealdb-syn",
  "surrealdb-types",
- "ulid",
+ "ulid 1.2.1",
  "url",
  "uuid 1.29.0",
 ]
@@ -19373,7 +19373,7 @@ dependencies = [
  "surrealdb-protocol",
  "surrealdb-types-derive",
  "tracing",
- "ulid",
+ "ulid 1.2.1",
  "url",
  "uuid 1.29.0",
 ]
@@ -21735,6 +21735,16 @@ checksum = "470dbf6591da1b39d43c14523b2b469c86879a53e8b758c8e090a470fe7b1fbe"
 dependencies = [
  "rand 0.9.5",
  "serde 1.0.229",
+ "web-time",
+]
+
+[[package]]
+name = "ulid"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "947dde63b6d514cc5e044edad4e0ca7261afd1099d16c83d942cb2b2f348689c"
+dependencies = [
+ "rand 0.10.3",
  "web-time",
 ]
 

@@ -13,7 +13,7 @@ fn main() {
     // Generate a new ULID.
     // It automatically captures the current system time for the timestamp
     // portion and fills the rest with cryptographically secure random data:
-    let new_ulid = Ulid::new();
+    let new_ulid = Ulid::generate();
     println!("Generated ULID: {new_ulid}");
 
     // You can also get its components:
