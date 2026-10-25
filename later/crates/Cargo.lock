@@ -22095,6 +22095,8 @@ version = "0.1.2"
 name = "rendering_graphics_api"
 version = "0.1.2"
 dependencies = [
+ "naga 29.0.4",
+ "pollster",
  "wgpu 29.0.4",
 ]
 

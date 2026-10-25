@@ -2,29 +2,41 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates how to initialize the `wgpu` GPU abstraction layer
-//! without creating a window.
-//!
-//! It requests a GPU adapter, creates a device and queue, allocates a small
-//! buffer, and submits an empty command list to validate the initialized queue.
+//! Runs a headless `wgpu` compute shader that doubles each storage-buffer
+//! value.
 
-use std::future::Future;
-use std::pin::Pin;
-use std::ptr;
-use std::task::Context;
-use std::task::Poll;
-use std::task::RawWaker;
-use std::task::RawWakerVTable;
-use std::task::Waker;
+use std::error::Error;
 
-/// Runs the wgpu example.
-fn main() {
-    block_on(async_main());
+use pollster::block_on;
+use wgpu::util::DeviceExt;
+
+const COMPUTE_SHADER: &str = r"
+@group(0) @binding(0)
+var<storage, read_write> values: array<u32>;
+
+@compute @workgroup_size(64)
+fn double_values(@builtin(global_invocation_id) id: vec3<u32>) {
+    if (id.x < arrayLength(&values)) {
+        values[id.x] *= 2u;
+    }
+}
+";
+
+const INPUT_VALUES: [u32; 8] = [1, 2, 3, 4, 5, 6, 7, 8];
+const WORKGROUP_SIZE: u32 = 64;
+
+/// Runs the compute example.
+fn main() -> Result<(), Box<dyn Error>> {
+    block_on(run_compute())
 }
 
-/// Creates a `wgpu` instance, requests an adapter and a device, and submits
-/// empty commands.
-async fn async_main() {
+/// Requests a headless device, doubles the storage-buffer values, and reads
+/// them back.
+#[expect(
+    clippy::little_endian_bytes,
+    reason = "WGSL u32 storage buffers use little-endian byte order"
+)]
+async fn run_compute() -> Result<(), Box<dyn Error>> {
     let mut instance_desc =
         wgpu::InstanceDescriptor::new_without_display_handle();
     instance_desc.backends = wgpu::Backends::PRIMARY;
@@ -36,79 +48,166 @@ async fn async_main() {
             compatible_surface: None,
             force_fallback_adapter: false,
         })
-        .await
-        .expect("Failed to find a compatible GPU adapter");
-
-    let info = adapter.get_info();
-    println!("Using adapter: {} ({:?})", info.name, info.backend);
+        .await?;
 
     let (device, queue) = adapter
         .request_device(&wgpu::DeviceDescriptor {
-            label: Some("wgpu example device"),
+            label: Some("headless compute example device"),
             required_features: wgpu::Features::empty(),
             required_limits: wgpu::Limits::default(),
             ..Default::default()
         })
-        .await
-        .expect("Failed to create device");
+        .await?;
 
-    let buffer = device.create_buffer(&wgpu::BufferDescriptor {
-        label: Some("Example buffer"),
-        size: 4 * 4,
-        usage: wgpu::BufferUsages::COPY_SRC | wgpu::BufferUsages::COPY_DST,
+    let input_bytes = INPUT_VALUES
+        .iter()
+        .flat_map(|value| value.to_ne_bytes())
+        .collect::<Vec<_>>();
+    let storage_buffer =
+        device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
+            label: Some("values to double"),
+            contents: &input_bytes,
+            usage: wgpu::BufferUsages::STORAGE | wgpu::BufferUsages::COPY_SRC,
+        });
+    let buffer_size = u64::try_from(input_bytes.len())?;
+    let readback_buffer = device.create_buffer(&wgpu::BufferDescriptor {
+        label: Some("compute results"),
+        size: buffer_size,
+        usage: wgpu::BufferUsages::COPY_DST | wgpu::BufferUsages::MAP_READ,
         mapped_at_creation: false,
     });
 
-    println!("Created a {}-byte GPU buffer.", buffer.size());
-    queue.submit(std::iter::empty());
-}
+    let shader = device.create_shader_module(wgpu::ShaderModuleDescriptor {
+        label: Some("double values shader"),
+        source: wgpu::ShaderSource::Wgsl(COMPUTE_SHADER.into()),
+    });
+    let pipeline =
+        device.create_compute_pipeline(&wgpu::ComputePipelineDescriptor {
+            label: Some("double values pipeline"),
+            layout: None,
+            module: &shader,
+            entry_point: Some("double_values"),
+            compilation_options: Default::default(),
+            cache: None,
+        });
+    let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
+        label: Some("values bind group"),
+        layout: &pipeline.get_bind_group_layout(0),
+        entries: &[wgpu::BindGroupEntry {
+            binding: 0,
+            resource: storage_buffer.as_entire_binding(),
+        }],
+    });
 
-/// Runs `future` to completion by polling it in a loop.
-fn block_on<F: Future>(mut future: F) -> F::Output {
-    let waker = noop_waker();
-    let mut cx = Context::from_waker(&waker);
-    let mut future = unsafe { Pin::new_unchecked(&mut future) };
-
-    loop {
-        if let Poll::Ready(value) = future.as_mut().poll(&mut cx) {
-            return value;
-        }
+    let value_count = u32::try_from(INPUT_VALUES.len())?;
+    let mut encoder =
+        device.create_command_encoder(&wgpu::CommandEncoderDescriptor {
+            label: Some("double values commands"),
+        });
+    {
+        let mut compute_pass =
+            encoder.begin_compute_pass(&wgpu::ComputePassDescriptor {
+                label: Some("double values pass"),
+                timestamp_writes: None,
+            });
+        compute_pass.set_pipeline(&pipeline);
+        compute_pass.set_bind_group(0, &bind_group, &[]);
+        compute_pass.dispatch_workgroups(
+            value_count.div_ceil(WORKGROUP_SIZE),
+            1,
+            1,
+        );
     }
-}
+    encoder.copy_buffer_to_buffer(
+        &storage_buffer,
+        0,
+        &readback_buffer,
+        0,
+        buffer_size,
+    );
+    let _submission = queue.submit([encoder.finish()]);
 
-/// Returns a waker that does nothing.
-fn noop_waker() -> Waker {
-    /// Creates a raw waker that uses the shared no-op vtable.
-    unsafe fn clone_raw(_: *const ()) -> RawWaker {
-        RawWaker::new(ptr::null(), &VTABLE)
+    let result = read_u32_values(&device, &readback_buffer)?;
+    let expected = INPUT_VALUES.map(|value| value * 2);
+    if result != expected {
+        return Err(std::io::Error::other(format!(
+            "compute result {result:?} did not match expected values {expected:?}"
+        ))
+        .into());
     }
-
-    /// Ignores a wake request because this waker schedules no work.
-    unsafe fn wake_raw(_: *const ()) {}
-    /// Ignores a borrowed wake request because this waker schedules no work.
-    unsafe fn wake_by_ref_raw(_: *const ()) {}
-    /// Does nothing when the raw waker data is dropped.
-    unsafe fn drop_raw(_: *const ()) {}
-
-    /// No-op callbacks used to construct the example's `Waker`.
-    static VTABLE: RawWakerVTable =
-        RawWakerVTable::new(clone_raw, wake_raw, wake_by_ref_raw, drop_raw);
-
-    unsafe { Waker::from_raw(RawWaker::new(ptr::null(), &VTABLE)) }
+    println!("Doubled values: {result:?}");
+    Ok(())
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Maps a staging buffer and converts its little-endian words to `u32` values.
+///
+/// # Errors
+///
+/// Returns an error if mapping, device polling, callback delivery, or byte
+/// conversion fails.
+#[expect(
+    clippy::little_endian_bytes,
+    reason = "WGSL u32 storage buffers use little-endian byte order"
+)]
+fn read_u32_values(
+    device: &wgpu::Device,
+    buffer: &wgpu::Buffer,
+) -> Result<Vec<u32>, Box<dyn Error>> {
+    let (sender, receiver) = std::sync::mpsc::sync_channel(1);
+    buffer.slice(..).map_async(wgpu::MapMode::Read, move |result| {
+        // The receiver remains alive through polling and receiving the callback below.
+        sender
+            .send(result)
+            .expect("the readback receiver remains in scope until mapping completes");
+    });
+    device.poll(wgpu::PollType::wait_indefinitely())?;
+    receiver.recv()??;
+
+    let values = {
+        let mapped = buffer.slice(..).get_mapped_range();
+        let (words, remainder) =
+            mapped.as_chunks::<{ std::mem::size_of::<u32>() }>();
+        if !remainder.is_empty() {
+            return Err(std::io::Error::other(
+                "readback size is not a multiple of four",
+            )
+            .into());
+        }
+        words.iter().copied().map(u32::from_ne_bytes).collect()
+    };
+    buffer.unmap();
+    Ok(values)
+}
+
+/// Runs the example's asynchronous compute workflow on a blocking executor.
+pub fn run() -> Result<(), Box<dyn Error>> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the embedded WGSL shader parses and validates without a GPU.
     #[test]
-    fn test_main() {
-        main();
+    fn test_compute_shader_is_valid_wgsl() {
+        let module = naga::front::wgsl::parse_str(COMPUTE_SHADER)
+            .expect("the example shader should parse as WGSL");
+        let mut validator = naga::valid::Validator::new(
+            naga::valid::ValidationFlags::all(),
+            naga::valid::Capabilities::all(),
+        );
+        validator
+            .validate(&module)
+            .expect("the example shader should pass Naga validation");
+    }
+
+    /// Verifies the headless compute pipeline doubles each storage-buffer
+    /// value.
+    #[test]
+    #[ignore = "requires a compatible GPU adapter"]
+    fn test_compute_doubles_storage_values() -> Result<(), Box<dyn Error>> {
+        run()
     }
 }
