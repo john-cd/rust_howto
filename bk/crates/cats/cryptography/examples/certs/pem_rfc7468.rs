@@ -38,9 +38,43 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     use super::*;
 
+    /// The example runs end to end.
     #[test]
     fn test_main() -> Result<(), Box<dyn std::error::Error>> {
         main()
     }
-    // [finish](https://github.com/john-cd/rust_howto/issues/697)
+
+    /// The document has the RFC 7468 boundary lines and a base64 body.
+    #[test]
+    fn encoded_document_has_boundary_lines()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let pem = encode_string(
+            "TEST DATA",
+            LineEnding::LF,
+            &[0x30, 0x03, 0x02, 0x01, 0x2a],
+        )?;
+        assert_eq!(
+            pem,
+            "-----BEGIN TEST DATA-----\nMAMCASo=\n-----END TEST DATA-----\n"
+        );
+        Ok(())
+    }
+
+    /// Long input is wrapped at 64 characters per line.
+    #[test]
+    fn long_bodies_wrap_at_64_columns() -> Result<(), Box<dyn std::error::Error>>
+    {
+        let pem = encode_string("DATA", LineEnding::LF, &[7_u8; 100])?;
+        let body: Vec<&str> =
+            pem.lines().filter(|l| !l.starts_with("-----")).collect();
+        assert!(body.len() > 1);
+        assert!(body.iter().all(|l| l.len() <= 64));
+        Ok(())
+    }
+
+    /// Text without boundary lines is not valid PEM.
+    #[test]
+    fn missing_boundaries_are_rejected() {
+        assert!(decode_vec(b"MAMCASo=").is_err());
+    }
 }
