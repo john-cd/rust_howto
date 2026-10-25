@@ -10,7 +10,7 @@ Linking can be a significant part of a Rust build, especially after an increment
 
 ## Rust's Default Linux Linker {#rust-lld}
 
-Starting with stable Rust 1.90, `rustc` uses `rust-lld` by default for `x86_64-unknown-linux-gnu` ([announcement][blog~rust-lld~1.90]↗). Most projects on that target need no extra linker configuration. The change does not apply to every operating system or target triple. If a project encounters an incompatibility, opt out for that target with:
+Starting with stable Rust 1.90, `rustc` uses `rust-lld` by default for the `x86_64-unknown-linux-gnu` target ([announcement][blog~rust-lld~1.90]↗). This default applies to that Linux x86-64 GNU target; it does not select the linker for macOS, Windows, or every other Linux target. Most projects on the covered target need no configuration. If a project encounters an incompatibility, opt out for that target with:
 
 ```toml
 # .cargo/config.toml
@@ -20,7 +20,7 @@ rustflags = ["-C", "linker-features=-lld"]
 
 ## Use LLD with Clang {#lld-linker}
 
-LLVM's [`lld`][lld~website]↗{{hi:lld}} is a fast linker available on several platforms. On Linux targets that do not use Rust's default `rust-lld`, install Clang and LLD, then configure Cargo to pass the LLD selection through Clang:
+LLVM's [`lld`][lld~website]↗{{hi:lld}} has ELF, COFF, and Mach-O variants for supported Linux, Windows, and Apple targets. Install the matching linker and Clang driver for the target. For a Linux ELF target that does not use Rust's default `rust-lld`, configure Cargo to pass the LLD selection through Clang:
 
 ```toml
 # .cargo/config.toml
@@ -46,7 +46,7 @@ Adjust the path for your installation. `mold` does not target macOS or Windows.
 
 ## Try Wild on Linux {#wild-linker}
 
-[`wild`][wild~repo]↗{{hi:wild}} is an actively developed linker focused on fast iterative builds. It currently targets Linux; check its support matrix before using it, and treat it as an additional toolchain component rather than a drop-in choice for every project.
+[`wild`][wild~repo]↗{{hi:wild}} is an actively developed linker focused on fast iterative builds. It targets Linux, with support centered on x86-64, AArch64, RISC-V, and LoongArch; check its current support matrix for the exact architecture and binary features you need. Treat it as an additional toolchain component rather than a drop-in choice for every project.
 
 ```sh
 cargo install --locked wild-linker
@@ -60,7 +60,15 @@ linker = "wild"
 
 ## Use the Apple Linker on macOS {#apple-linker}
 
-Xcode 15 introduced Apple's newer linker (`ld-prime`), which is selected by Xcode for supported Apple platform binaries ([Xcode 15 release notes][apple~xcode-15~release-notes]↗). Rust projects using the Apple target toolchain generally use the linker selected by the installed Xcode or Command Line Tools. Older instructions to install [`zld`][zld~repo]↗ are stale; it is no longer an actively maintained choice. The separate [`sold`][sold~repo]↗ and [`mold-macho`][mold-macho~repo]↗ projects are archived and should be treated as historical experiments, not current macOS recommendations.
+Xcode 15 introduced Apple's newer linker (`ld-prime`), selected by Xcode for supported macOS, iOS, and other Apple platform binaries ([Xcode 15 release notes][apple~xcode-15~release-notes]↗). Rust projects using Apple targets normally need no linker override: install the matching Xcode or Command Line Tools and let Clang use its selected linker. If an older project needs the classic linker for compatibility, pass Apple's `-ld_classic` option:
+
+```toml
+# .cargo/config.toml
+[target.aarch64-apple-darwin]
+rustflags = ["-C", "link-arg=-Wl,-ld_classic"]
+```
+
+The [`zld`][zld~repo]↗ project is archived. [`sold`][sold~repo]↗ is archived and its maintainers point users to Apple's Xcode linker. The standalone [`mold-macho`][mold-macho~repo]↗ repository was archived after its macOS work moved into the main `mold` project; check the upstream project for its current macOS support instead of treating that archived repository as a separate maintained linker.
 
 ## Verify the selected linker {#verify-linker}
 

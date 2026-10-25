@@ -23,6 +23,7 @@
 [blog~rust-lld~1.90]: https://blog.rust-lang.org/2025/09/01/rust-lld-on-1.90.0-stable/
 [mold-macho~repo]: https://github.com/rui314/mold-macho
 [sold~repo]: https://github.com/bluewhalesystems/sold
+[zld~repo]: https://github.com/michaeleisel/zld
 [wild~repo]: https://github.com/wild-linker/wild
 [book~cargo~build-performance]: https://doc.rust-lang.org/cargo/guide/build-performance.html
 [book~cargo~check]: https://doc.rust-lang.org/cargo/commands/cargo-check.html
