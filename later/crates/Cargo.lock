@@ -11245,7 +11245,7 @@ dependencies = [
  "lightmap",
  "open",
  "opener",
- "rapier2d",
+ "rapier2d 0.32.0",
  "rapier3d",
  "rayon",
  "ron 0.11.0",
@@ -12252,6 +12252,7 @@ checksum = "28d74079318e3a077bd3d15faa90fde24fa37bb9f157f92f853e6019a15fd413"
 dependencies = [
  "approx",
  "glam 0.33.12",
+ "nalgebra 0.35.0",
  "num-traits",
  "simba 0.10.2",
 ]
@@ -17992,6 +17993,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "nalgebra"
+version = "0.35.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "adc43a60c217b0c6ff46e47f26911015ad8d2e5a8be1af668c67e370d99a4346"
+dependencies = [
+ "approx",
+ "glam 0.30.10",
+ "glam 0.31.1",
+ "glam 0.32.1",
+ "glam 0.33.12",
+ "matrixmultiply",
+ "nalgebra-macros 0.3.0",
+ "num-complex 0.4.6",
+ "num-rational 0.4.2",
+ "num-traits",
+ "simba 0.10.2",
+ "typenum",
+]
+
+[[package]]
 name = "nalgebra-macros"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -22209,6 +22230,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "rapier2d"
+version = "0.36.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b73d84c8e78f4fbd46fb5c800bbdb15cad6ef2bd517de6a4d31fe60edd838f8d"
+dependencies = [
+ "approx",
+ "arrayvec",
+ "bitflags 2.13.2",
+ "glamx 0.3.1",
+ "log 0.4.34",
+ "nalgebra 0.35.0",
+ "num-traits",
+ "parry2d 0.31.1",
+ "profiling",
+ "serde",
+ "simba 0.10.2",
+ "static_assertions",
+ "thiserror 2.0.21",
+ "wide 1.7.1",
+]
+
+[[package]]
 name = "rapier3d"
 version = "0.32.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -25066,7 +25109,7 @@ dependencies = [
 name = "simulation"
 version = "0.1.2"
 dependencies = [
- "rapier2d",
+ "rapier2d 0.36.1",
 ]
 
 [[package]]

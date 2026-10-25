@@ -22,6 +22,7 @@ fn main() {
     let mut colliders = ColliderSet::new();
     let mut impulse_joints = ImpulseJointSet::new();
     let mut multibody_joints = MultibodyJointSet::new();
+    let mut soft_bodies = SoftBodySet::new();
     let mut ccd_solver = CCDSolver::new();
 
     let ground_body = RigidBodyBuilder::fixed()
@@ -53,6 +54,7 @@ fn main() {
             &mut colliders,
             &mut impulse_joints,
             &mut multibody_joints,
+            &mut soft_bodies,
             &mut ccd_solver,
             &(),
             &(),

@@ -19,7 +19,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-rapier2d = "0.32"
+rapier2d = "0.36.1"
 
 [[example]]
 name = "physics_engines"
