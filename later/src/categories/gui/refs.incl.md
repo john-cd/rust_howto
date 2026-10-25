@@ -8,6 +8,7 @@
 [ex~gui~druid]: retained_mode_gui.md#druid
 [ex~gui~egui]: immediate_mode_gui.md#egui
 [ex~gui~egui-headless]: egui_ecosystem.md#egui-headless
+[ex~gui~egui-kittest]: egui_ecosystem.md#egui-kittest
 [ex~gui~egui-log-viewer]: egui_ecosystem.md#egui-log-viewer
 [ex~gui~egui-plot]: egui_ecosystem.md#egui-plot
 [ex~gui~egui-table]: egui_ecosystem.md#egui-table

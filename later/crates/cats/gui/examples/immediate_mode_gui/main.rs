@@ -4,6 +4,7 @@
 
 mod egui;
 mod egui_headless;
+mod egui_kittest;
 mod egui_log_viewer;
 mod egui_plot;
 mod egui_table;

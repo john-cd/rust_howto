@@ -10,11 +10,23 @@
 
 [![egui][c~egui~docs~badge]][c~egui~docs]{{hi:egui}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}{{hi:Testing}}
 
-An `egui::Context` does not need a window. `Context::run_ui` runs one frame from a `RawInput` that you build, and returns the shapes to paint. Use it to run the examples of this page in continuous integration, where there is no display. Add events to the `RawInput` to simulate input. For tests that find widgets by label and click them, look at the `egui_kittest` crate.
+An `egui::Context` does not need a window. `Context::run_ui` runs one frame from a `RawInput` that you build, and returns the shapes to paint. Use it to run the examples of this page in continuous integration, where there is no display. Add events to the `RawInput` to simulate input. For tests that find widgets by label and click them, use [`egui_kittest`][c~egui_kittest~docs]↗{{hi:egui_kittest}}, shown below.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/immediate_mode_gui/egui_headless.rs:example}}
 ```
+
+### Click a Button by Label {#egui-kittest}
+
+[![egui_kittest][c~egui_kittest~docs~badge]][c~egui_kittest~docs]{{hi:egui_kittest}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}{{hi:Testing}}
+
+[`egui_kittest::Harness`][c~egui_kittest::Harness~docs]↗{{hi:egui_kittest::Harness}} owns an `egui` context and runs your UI headless. Its queries use the accessibility tree, so `get_by_label("Increment")` finds a widget the way a screen reader user would, and `click` simulates a pointer press. Call `run` after an action to let the UI settle.
+
+```rust,editable
+{{#include ../../../crates/cats/gui/examples/immediate_mode_gui/egui_kittest.rs:example}}
+```
+
+Use the same `egui_kittest` version as `egui`: the crate releases in lockstep.
 
 ## Data Tables {#egui-table}
 

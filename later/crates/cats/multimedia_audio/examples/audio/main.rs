@@ -3,6 +3,7 @@
 //! TODO Reviewed ??-??-2026.
 
 mod audio;
+mod hrtf;
 mod midi_ports;
 mod resampling;
 mod rodio_file;
@@ -13,6 +14,7 @@ mod wav_write_read;
 /// Runs the audio examples.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     audio::run()?;
+    hrtf::run()?;
     wav_write_read::run()?;
     rodio_file::run()?;
     tone::run();
