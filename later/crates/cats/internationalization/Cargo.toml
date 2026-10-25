@@ -18,8 +18,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-icu_locale_core = { version = "2.3.0", features = ["alloc"] }
-sys-locale = "0.3.2"
+icu = { version = "2.4.0", features = ["compiled_data"] }
 
 [[example]]
 name = "internationalization"
