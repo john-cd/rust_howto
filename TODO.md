@@ -232,6 +232,49 @@ Validation update (2026-10-25):
 - [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Write the screen readers chapter.
 - [#401](https://github.com/john-cd/rust_howto/issues/401) — **P4** — Write the internationalization chapter.
 
+### Lists 35–37 — assigned to local Codex sessions (second round)
+
+Added 2026-10-25. Three more lists of 10 for local Codex, from the [#1955 comment](https://github.com/john-cd/rust_howto/issues/1955). They avoid Lists 1–34, the open PRs and the issues handled in Claude batches (#1970, #1972, #1974, #1977–#1983). Lists 36 and 37 are in different crates from 35. Within List 37 the `gui` and `game_engines` crates are shared, so run its issues one after another.
+
+### List 35 — Build, profiling and CLI tooling pages (Codex E)
+
+- [#242](https://github.com/john-cd/rust_howto/issues/242) — **P3** — Review the faster linking chapter (deprecated linkers).
+- [#245](https://github.com/john-cd/rust_howto/issues/245) — **P3** — Write and align the reduce compilation duration chapter.
+- [#240](https://github.com/john-cd/rust_howto/issues/240) — **P3** — Expand the cross-compilation chapter.
+- [#333](https://github.com/john-cd/rust_howto/issues/333) — **P3** — Write the assembly profiling chapter.
+- [#336](https://github.com/john-cd/rust_howto/issues/336) — **P3** — Write the memory usage analysis chapter.
+- [#314](https://github.com/john-cd/rust_howto/issues/314) — **P3** — Expand the cargo plugin performance chapter.
+- [#315](https://github.com/john-cd/rust_howto/issues/315) — **P3** — Expand the watching-for-changes chapter.
+- [#268](https://github.com/john-cd/rust_howto/issues/268) — **P3** — Review `threadpool_fractal.rs` (noplayground, links `cc`).
+- [#238](https://github.com/john-cd/rust_howto/issues/238) — **P3** — Write the networking CLI chapter.
+- [#424](https://github.com/john-cd/rust_howto/issues/424) — **P3** — Write the reverse proxy chapter.
+
+### List 36 — OS, FFI, native TLS and media pages (Codex F)
+
+- [#438](https://github.com/john-cd/rust_howto/issues/438) — **P3** — Write the Windows API chapter (`windows`, `winapi`).
+- [#430](https://github.com/john-cd/rust_howto/issues/430) — **P3** — Write the low-level system calls chapter.
+- [#436](https://github.com/john-cd/rust_howto/issues/436) — **P3** — Write the Unix API chapter.
+- [#738](https://github.com/john-cd/rust_howto/issues/738) — **P4** — Finish the `cxx` bridge example.
+- [#696](https://github.com/john-cd/rust_howto/issues/696) — **P3** — Finish the `native_tls` example.
+- [#225](https://github.com/john-cd/rust_howto/issues/225) — **P3** — Rewrite the basic authentication example without network.
+- [#645](https://github.com/john-cd/rust_howto/issues/645) — **P3** — Expand the streams chapter and rewrite `streams2.rs` (network).
+- [#519](https://github.com/john-cd/rust_howto/issues/519) — **P3** — Write the static website generators chapter.
+- [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Write the video chapter.
+- [#638](https://github.com/john-cd/rust_howto/issues/638) — **P4** — Write the clipboard chapter.
+
+### List 37 — Desktop GUI, game engine and GPU examples (Codex G)
+
+- [#775](https://github.com/john-cd/rust_howto/issues/775) — **P4** — Finish the Dioxus example.
+- [#778](https://github.com/john-cd/rust_howto/issues/778) — **P4** — Finish the Floem example.
+- [#781](https://github.com/john-cd/rust_howto/issues/781) — **P4** — Finish the Iced example.
+- [#780](https://github.com/john-cd/rust_howto/issues/780) — **P4** — Finish the GTK4 example.
+- [#767](https://github.com/john-cd/rust_howto/issues/767) — **P4** — Finish the Bevy example.
+- [#769](https://github.com/john-cd/rust_howto/issues/769) — **P4** — Finish or remove the ggez example.
+- [#771](https://github.com/john-cd/rust_howto/issues/771) — **P4** — Finish the macroquad example.
+- [#772](https://github.com/john-cd/rust_howto/issues/772) — **P4** — Finish the wgpu compute example.
+- [#396](https://github.com/john-cd/rust_howto/issues/396) — **P4** — Write the window creation chapter.
+- [#777](https://github.com/john-cd/rust_howto/issues/777) — **P4** — Finish the femtovg example.
+
 ### Epic #1955 — New recipes from the local-projects review
 
 [#1955](https://github.com/john-cd/rust_howto/issues/1955) tracks the recipes from the local-projects review (#1906–#1952). The examples and book pages were merged via PRs #1958, #1962–#1966, #1968, #1969, #1971 and #1973, but the recipe issues (#1906–#1952) are **still open on GitHub**: they close only after the verification passes below build the book pages and run the local gates. Cloud batch PR [#1980](https://github.com/john-cd/rust_howto/pull/1980) (proptest strategy, wasm round trip, Tree-sitter spans, decision-table case) is open.
