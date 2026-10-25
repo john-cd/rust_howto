@@ -848,6 +848,15 @@
 [fnv-github]: https://github.com/servo/rust-fnv
 
 
+[foldhash]: https://docs.rs/foldhash
+
+
+[foldhash-crate]: https://crates.io/crates/foldhash
+
+
+[foldhash-github]: https://github.com/orlp/foldhash
+
+
 [frunk]: https://docs.rs/frunk
 
 
@@ -1259,7 +1268,7 @@
 [md5-crate]: https://crates.io/crates/md5
 
 
-[md5-github]: https://github.com/stainless-steel/md5
+[md5-github]: https://github.com/RustCrypto/hashes
 
 
 [measure_time]: https://docs.rs/measure_time
