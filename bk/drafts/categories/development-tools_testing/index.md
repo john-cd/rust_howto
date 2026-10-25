@@ -10,6 +10,10 @@ Testing techniques and tools help find defects and protect behavior as code chan
 
 {{#include testing.incl.md}}
 
+### Snapshot Testing
+
+{{#include snapshot_testing.incl.md}}
+
 ### Test Runners
 
 Cargo's built-in test command is a good default. Alternative runners can improve parallelism, filtering, or output for larger workspaces.
@@ -43,6 +47,7 @@ Coverage shows which instrumented code ran for a particular test configuration. 
 ## Related Topics {#related-topics .skip}
 
 - [[testing | Testing]]
+- [[snapshot_testing | Snapshot Testing]]
 - [[code_coverage | Code Coverage]]
 - [[fuzzing | Fuzzing]]
 - [[property_based_testing | Property-based Testing]]

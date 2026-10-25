@@ -145,6 +145,7 @@
 - [Development Tools - Testing](categories/development-tools_testing/index.md)
   - [Assertions](categories/development-tools_testing/assertions.md)
   - [Testing](categories/development-tools_testing/testing.md)
+  - [Snapshot Testing](categories/development-tools_testing/snapshot_testing.md)
   - [Property-based Testing](categories/development-tools_testing/property_based_testing.md)
   - [Mocking](categories/development-tools_testing/mocking.md)
   - [Test Runners](categories/development-tools_testing/test_runners.md)

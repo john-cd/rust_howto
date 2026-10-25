@@ -22,6 +22,18 @@
 {{#include ../../../crates/cats/development_tools_profiling/src/memory_usage_analysis/dhat.rs:example}}
 ```
 
+## Assert on Heap Allocations in a Test with `dhat` {#dhat-testing}
+
+[![dhat][c~dhat~docs~badge]][c~dhat~docs]{{hi:dhat}}
+[![dhat~crates.io][c~dhat~crates.io~badge]][c~dhat~crates.io]
+[![dhat~repo][c~dhat~repo~badge]][c~dhat~repo]
+
+`dhat` can also check allocation behavior in a test. Create the profiler in testing mode (`Profiler::builder().testing().build()`), read the counters with `HeapStats::get()`, and use `dhat::assert!` and `dhat::assert_eq!`, which print the profile to `dhat-heap.json` when an assertion fails. Only one profiler can exist per process, so keep all such assertions in a single test (or run them with `--test-threads=1`). Allocation counts can change between compiler versions; assert on stable properties such as "no reallocation" rather than exact byte totals.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_profiling/examples/dhat_assertions.rs:example}}
+```
+
 ## Leak Detection {#leaks}
 
 - [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} (with `memcheck`) is excellent for detecting memory leaks.

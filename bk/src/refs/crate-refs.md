@@ -4042,6 +4042,14 @@
 [c~http~lib.rs~badge]: https://img.shields.io/badge/lib.rs-http-yellow
 [c~http~repo]: https://github.com/hyperium/http
 [c~http~repo~badge]: https://img.shields.io/badge/http-steelblue?logo=github
+[c~httpmock~crates.io]: https://crates.io/crates/httpmock
+[c~httpmock~crates.io~badge]: https://img.shields.io/badge/crates.io-httpmock-crimson
+[c~httpmock~docs]: https://docs.rs/httpmock
+[c~httpmock~docs~badge]: https://img.shields.io/crates/v/httpmock?label=httpmock
+[c~httpmock~lib.rs]: https://lib.rs/crates/httpmock
+[c~httpmock~lib.rs~badge]: https://img.shields.io/badge/lib.rs-httpmock-yellow
+[c~httpmock~repo]: https://github.com/httpmock/httpmock
+[c~httpmock~repo~badge]: https://img.shields.io/badge/httpmock-steelblue?logo=github
 [c~human-panic~crates.io]: https://crates.io/crates/human-panic
 [c~human-panic~crates.io~badge]: https://img.shields.io/badge/crates.io-human--panic-crimson
 [c~human-panic~docs]: https://docs.rs/human-panic

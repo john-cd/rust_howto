@@ -16,7 +16,9 @@
 [ex~development-tools_testing~custom-message]: assertions.md#custom-message
 [ex~development-tools_testing~doc_testing]: testing.md#doc_testing
 [ex~development-tools_testing~faux]: mocking.md#faux
+[ex~development-tools_testing~httpmock]: mocking.md#httpmock
 [ex~development-tools_testing~insta]: testing.md#insta
+[ex~development-tools_testing~insta_redactions]: snapshot_testing.md#insta-redactions
 [ex~development-tools_testing~integration_testing]: testing.md#integration_testing
 [ex~development-tools_testing~lcov]: code_coverage.md#lcov
 [ex~development-tools_testing~mocking]: mocking.md#mocking
