@@ -21,3 +21,4 @@
 [p~windows]: ../os_windows-apis/windows.md
 [p~written-in-rust]: # "../../other/written-in-rust/index.md"
 [ex~text-editors~lsp]: language_server_protocol.md#lsp
+[ex~text-editors~lsp-client]: language_server_protocol.md#lsp-client
