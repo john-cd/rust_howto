@@ -4,112 +4,42 @@
 
 {{#include code_formatting_linting.incl.md}}
 
-| Topic | Rust Crates |
-| --- | --- |
-| Linting | [`clippy`][c~clippy~docs]↗{{hi:clippy}} is the primary linter for Rust code, catching stylistic issues and potential bugs. `rust-analyzer`: While primarily an LSP (Language Server Protocol) implementation for IDEs, it also performs code analysis checks. |
-| Formatting | [`cargo fmt`][book~cargo~cargo-fmt]↗{{hi:cargo fmt}} is the standard Rust code formatter. |
-| Dead Link Detection | [`cargo deadlinks`][c~cargo-deadlinks~docs]{{hi:cargo deadlinks}} finds broken links in your documentation. |
+Run formatting and lint checks locally and in continuous integration. Formatting makes source consistent; linting points out suspicious or hard-to-maintain code. Review diagnostics before changing code or suppressing a warning.
 
-## Format Your Code {#rustfmt}
+## Format Rust Code with `rustfmt` {#rustfmt}
 
-[![rustfmt~repo][c~rustfmt~repo~badge]][c~rustfmt~repo]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[![rustfmt~repo][c~rustfmt~repo~badge]][c~rustfmt~repo] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}}
+`rustfmt` is the standard Rust formatter, available through the `rustfmt` Rustup component. Use `cargo fmt --all` to format a workspace and `cargo fmt --all -- --check` in CI to fail when formatting is needed. Commit the workspace's `rustfmt.toml` or `rustfmt.toml` configuration when the team needs consistent non-default settings.
 
-```sh
-# Install `rustfmt` if needed
-rustup component add rustfmt
+## Find Common Mistakes with Clippy {#cargo-clippy}
 
-cargo fmt
+[![clippy][c~clippy~docs~badge]][c~clippy~docs]{{hi:clippy}} [![clippy~crates.io][c~clippy~crates.io~badge]][c~clippy~crates.io] [![clippy~repo][c~clippy~repo~badge]][c~clippy~repo] [![clippy~lib.rs][c~clippy~lib.rs~badge]][c~clippy~lib.rs] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-# Fails if code is not formatted; use in CD / CI
-cargo fmt -- --check
-```
+`cargo clippy` runs the Clippy lints for the selected packages and targets. For a workspace-wide CI check, use `cargo clippy --workspace --all-targets --all-features -- -D warnings` when those feature combinations are supported on the CI host. If the project supports only a subset of targets or features on that host, list the combinations that CI can actually build.
 
-## Lint Your Code {#cargo-clippy}
+Clippy diagnostics include suggestions, not automatic requirements. Prefer the clearest code that fits the project's declared Rust version. Fix warnings where appropriate; use a narrow `#[allow(clippy::lint_name)]` with a reason when a lint does not fit a particular item.
 
-[![clippy][c~clippy~docs~badge]][c~clippy~docs]{{hi:clippy}}
-[![clippy~crates.io][c~clippy~crates.io~badge]][c~clippy~crates.io]
-[![clippy~repo][c~clippy~repo~badge]][c~clippy~repo]
-[![clippy~lib.rs][c~clippy~lib.rs~badge]][c~clippy~lib.rs]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+`rust-analyzer` provides editor diagnostics while you work. Keep the command-line CI check as the shared gate so local editor settings do not determine whether a change passes.
 
-[`cargo-clippy`][c~clippy~book]↗{{hi:cargo-clippy}} is the official Rust linter. It catches common mistakes and improves your Rust code.
+## Apply Compiler Suggestions with `cargo fix` {#cargo-fix}
 
-```sh
-rustup component add clippy # install if needed
-cargo clippy
-```
+[`cargo fix`][cargo-fix~docs]↗ applies machine-applicable compiler suggestions to source code. Run it on a clean or otherwise understood working tree, review the resulting diff, and then run formatting, checks, and tests. It does not replace Clippy or code review.
 
-Mute a warning using the [`#[allow(clippy::lint_name)]`][book~clippy~allowingdenying-lints]↗ attributes.
+## Check Spelling and Documentation Links {#spelling-and-links}
 
-## Check Spelling in Rust Sources and Documentation {#cargo-spellcheck}
+[`cargo-spellcheck`][c~cargo-spellcheck~docs]↗{{hi:cargo-spellcheck}} scans Rust source and documentation comments for likely spelling errors. Review suggestions because crate names, identifiers, and technical terms may be intentional.
 
-[![cargo-spellcheck][c~cargo-spellcheck~docs~badge]][c~cargo-spellcheck~docs]{{hi:cargo-spellcheck}}
-[![cargo-spellcheck~crates.io][c~cargo-spellcheck~crates.io~badge]][c~cargo-spellcheck~crates.io]
-[![cargo-spellcheck~repo][c~cargo-spellcheck~repo~badge]][c~cargo-spellcheck~repo]
-[![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[`cargo-deadlinks`][c~cargo-deadlinks~docs]↗{{hi:cargo-deadlinks}} checks links in generated Rust documentation. Generate the documentation first, then run the link checker against the project's documentation output; confirm tool options against its current help for the installed version.
 
-[`cargo-spellcheck`][c~cargo-spellcheck~repo]↗{{hi:cargo-spellcheck}} checks Rust source files and documentation for spelling mistakes. Review its suggestions before applying changes, especially for domain-specific terms and identifiers.
-
-Run it from the project directory with:
-
-```sh
-cargo spellcheck
-```
-
-## Fix Compiler Warnings Automatically {#rustfix}
-
-[![rustfix][c~rustfix~docs~badge]][c~rustfix~docs]{{hi:rustfix}}
-[![rustfix~crates.io][c~rustfix~crates.io~badge]][c~rustfix~crates.io]
-[![rustfix~repo][c~rustfix~repo~badge]][c~rustfix~repo]
-[![rustfix~lib.rs][c~rustfix~lib.rs~badge]][c~rustfix~lib.rs]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
-
-Can automatically fix compiler warnings that have a clear way to correct the problem that's likely what we want.
-
-```sh
-cargo fix
-```
-
-## Format or Lint Your Code Before Committing it {#cargo-husky}
-
-[![cargo-husky][c~cargo-husky~docs~badge]][c~cargo-husky~docs]{{hi:cargo-husky}}
-[![cargo-husky~crates.io][c~cargo-husky~crates.io~badge]][c~cargo-husky~crates.io]
-[![cargo-husky~repo][c~cargo-husky~repo~badge]][c~cargo-husky~repo]
-[![cargo-husky~lib.rs][c~cargo-husky~lib.rs~badge]][c~cargo-husky~lib.rs]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
-
-[cargo-husky][c~cargo-husky~repo]↗{{hi:cargo-husky}} setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶
-
-Git hook scripts are useful for identifying simple issues (failing tests, trailing white spaces, [formatting][p~formatting] of the code, of [JSON][p~json], and YAML files...) before committing code, prior to submission to code review.
-
-Add the [`cargo-husky`][c~cargo-husky~docs]↗{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
-
-```toml
-[dev-dependencies]
-cargo-husky = "1"
-```
-
-Then run tests in your project directory.
-
-```sh
-cargo test
-```
-
-See also [`pre-commit`][pre-commit.com~website]↗, which is a Python framework for managing and [maintaining][p~maintaining] multi-language pre-commit hooks.
+For Markdown in this book, use the repository's Markdown lint and link-check recipes instead of adding an unrelated Rust crate. See [[version_control | Version Control and Git Hooks]] for running existing checks automatically before a commit.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[building | Building]].
+- [[testing | Testing]].
+- [[documentation | Documentation]].
+- [[version_control | Version Control and Git Hooks]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[code_formatting_linting: expand](https://github.com/john-cd/rust_howto/issues/310)
-
-- [overcommit][overcommit~repo]↗: A fully configurable and extendable Git hook manager.
-
-</div>

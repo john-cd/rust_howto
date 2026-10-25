@@ -64,3 +64,4 @@
 [p~testing]: ../development-tools_testing/testing.md
 [p~toml]: ../parser-implementations/toml.md
 [rustsec~advisories]: https://rustsec.org/advisories/
+[cargo-fix~docs]: https://doc.rust-lang.org/cargo/commands/cargo-fix.html
