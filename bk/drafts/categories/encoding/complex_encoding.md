@@ -4,6 +4,8 @@
 
 {{#include complex_encoding.incl.md}}
 
+These examples focus on converting serialized data to and from application values. For library-specific parser comparisons, including format-preserving TOML editing, see [TOML parsing](../parser-implementations/toml.md).
+
 ## Serialize and Deserialize Unstructured JSON {#serde-json}
 
 [![serde_json][c~serde_json~docs~badge]][c~serde_json~docs]{{hi:serde_json}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}{{hi:Deserialization}}{{hi:JSON}}
@@ -47,12 +49,9 @@ Parse [TOML][p~toml] into your own [structs][p~structs] using [`serde`][c~serde~
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [TOML parsing](../parser-implementations/toml.md) compares Rust TOML libraries and format-preserving editing.
+- [JSON parsing](../parser-implementations/json.md) covers parser-specific JSON options.
+- [Binary Encoders](_binary_encoders.md) covers converting structured data to binary formats.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[complex: clean up `toml`](https://github.com/john-cd/rust_howto/issues/350)
-move to `serde` / binary_encoders?
-</div>
