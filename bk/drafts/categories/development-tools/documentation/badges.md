@@ -10,43 +10,43 @@ A badge{{hi:Badges}} is a small image that displays status information about a c
 
 [Shields.io][shield-io~website]↗{{hi:shields.io}} generates badges from a range of services. Replace `CRATE` and `OWNER/REPO` in these examples with your crate name and repository. Link each badge to a page where readers can verify its status.
 
-### Crates.io Version
+## Crates.io Version
 
 ```markdown
 [![Crates.io version](https://img.shields.io/crates/v/CRATE)](https://crates.io/crates/CRATE)
 ```
 
-### Documentation
+## Documentation
 
 ```markdown
 [![Documentation](https://docs.rs/CRATE/badge.svg)](https://docs.rs/CRATE)
 ```
 
-### License
+## License
 
 ```markdown
 [![License](https://img.shields.io/crates/l/CRATE)](https://crates.io/crates/CRATE)
 ```
 
-### Continuous Integration
+## Continuous Integration
 
 ```markdown
 [![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
 ```
 
-### Downloads
+## Downloads
 
 ```markdown
 [![Downloads](https://img.shields.io/crates/d/CRATE)](https://crates.io/crates/CRATE)
 ```
 
-### Minimum Supported Rust Version
+## Minimum Supported Rust Version
 
 ```markdown
 [![MSRV](https://img.shields.io/crates/msrv/CRATE)](https://crates.io/crates/CRATE)
 ```
 
-### Coverage
+## Coverage
 
 ```markdown
 [![Coverage](https://img.shields.io/codecov/c/github/OWNER/REPO)](https://app.codecov.io/gh/OWNER/REPO)
