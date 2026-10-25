@@ -6,9 +6,11 @@ use anyhow::Result;
 use anyhow::anyhow;
 
 mod rhai;
+mod rhai_types_and_limits;
 
 /// Runs the scripting example.
 fn main() -> Result<()> {
     rhai::run().map_err(|error| anyhow!(error.to_string()))?;
+    rhai_types_and_limits::run().map_err(|error| anyhow!(error.to_string()))?;
     Ok(())
 }

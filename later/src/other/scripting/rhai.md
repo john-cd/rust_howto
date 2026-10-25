@@ -29,9 +29,21 @@ Features:
 {{#include ../../../crates/other/examples/scripting/rhai.rs:example}}
 ```
 
+## Expose Rust Types and Sandbox Scripts {#rhai-types-and-limits}
+
+[![rhai][c~rhai~docs~badge]][c~rhai~docs]{{hi:rhai}}
+
+Register a Rust type with `register_type_with_name`, then add a constructor, methods (`register_fn`) and property getters (`register_get`). Reuse a `Scope` across calls to keep script variables between runs.
+
+Untrusted scripts must not run forever. `set_max_operations` and `set_max_call_levels` bound the work and recursion depth, and `disable_symbol("eval")` removes `eval` from the language. A script that exceeds the operation limit fails with `ErrorTooManyOperations`.
+
+```rust,editable
+{{#include ../../../crates/other/examples/scripting/rhai_types_and_limits.rs:example}}
+```
+
 ## Rhai Ecosystem {#rhai-ecosystem}
 
-There are independent packages that provides additional functionality, for example:
+There are independent packages that provide additional functionality, for example:
 
 - [`rhai-fs`][c~rhai-fs~docs]↗{{hi:rhai-fs}} provides file system access within Rhai scripts.
 - [`rhai-rand`][c~rhai-rand~docs]↗{{hi:rhai-rand}} provides random number generation using the [`rand`][c~rand~docs]↗{{hi:rand}} crate and array shuffling and sampling.
@@ -46,7 +58,3 @@ There are independent packages that provides additional functionality, for examp
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[rhai: write](https://github.com/john-cd/rust_howto/issues/610)
-</div>

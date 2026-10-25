@@ -3,6 +3,7 @@
 [ex~scripting~external-process-management]: task_automation.md#external-process-management
 [ex~scripting~interact-with-shells]: task_automation.md#interact-with-shells
 [ex~scripting~rhai-ecosystem]: rhai.md#rhai-ecosystem
+[ex~scripting~rhai-types-and-limits]: rhai.md#rhai-types-and-limits
 [ex~scripting~rust-scripting]: rhai.md#rust-scripting
 [ex~scripting~scheduling]: task_automation.md#scheduling
 [p~functions]: ../../language/functions.md
