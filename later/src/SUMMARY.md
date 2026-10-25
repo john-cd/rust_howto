@@ -155,6 +155,9 @@
 
 - [Rendering](categories/rendering/index.md)
   - [2D Renderers](categories/rendering/2d_renderers.md)
+    - [2D Raster Graphics](categories/rendering/2d_raster_graphics.md)
+  - [3D Renderers](categories/rendering/3d_renderers.md)
+  - [Text Rendering](categories/rendering/text_rendering.md)
   - [SVG Rendering](categories/rendering/svg_rendering.md)
 
 - [Rendering - data formats](categories/rendering_data-formats/index.md)
@@ -169,8 +172,11 @@
 - [Robotics](categories/science_robotics/index.md)
   - [Robotics](categories/science_robotics/robot_operating_systems.md)
   - [Useful robotics tools and libraries](categories/science_robotics/robotics_frameworks.md)
+  - [Control Systems](categories/science_robotics/control_systems.md)
+  - [Artificial Intelligence for Robotics](categories/science_robotics/artificial_intelligence.md)
 
 - [Science](categories/science/index.md)
+  - [Neural Networks and Deep Learning](categories/science/deep_learning.md)
 
 - [Science - Geo](categories/science_geo/index.md)
   - [Geo](categories/science_geo/geo.md)

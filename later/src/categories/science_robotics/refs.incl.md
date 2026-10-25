@@ -1,5 +1,6 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
+[ex~science_robotics~astar]: artificial_intelligence.md#astar
 [ex~science_robotics~bonsai-bt]: artificial_intelligence.md#bonsai-bt
 [ex~science_robotics~copper]: robotics_frameworks.md#copper
 [ex~science_robotics~k]: control_systems.md#k
@@ -8,6 +9,7 @@
 [ex~science_robotics~open-rust-robotics]: robotics_frameworks.md#open-rust-robotics
 [ex~science_robotics~openrr-planner]: control_systems.md#openrr-planner
 [ex~science_robotics~pathfinding]: control_systems.md#pathfinding
+[ex~science_robotics~pid]: control_systems.md#pid
 [ex~science_robotics~r2r]: robot_operating_systems.md#r2r
 [ex~science_robotics~rerun]: simulation_visualization.md#rerun
 [ex~science_robotics~rosrust]: robot_operating_systems.md#rosrust
@@ -16,11 +18,16 @@
 [ex~science_robotics~safe_drive]: robot_operating_systems.md#safe_drive
 [ex~science_robotics~urdf-viz]: simulation_visualization.md#urdf-viz
 [ex~science_robotics~zenoh]: robotics_frameworks.md#zenoh
+[adskalman~repo]: https://github.com/strawlab/adskalman-rs
+[optimization-engine~repo]: https://github.com/alphaville/optimization-engine
+[p~classical-machine-learning]: ../science/classical_machine_learning.md
 [p~computer-vision]: ../computer-vision/index.md
 [p~concurrency]: ../../../src/categories/concurrency/index.md
+[p~deep-learning]: ../science/deep_learning.md
 [p~embedded]: ../embedded/index.md
 [p~graphics]: ../graphics/index.md
 [p~grpc]: ../../../src/categories/web-programming_http-server/_grpc.md
+[p~hardware-integration]: hardware_integration.md
 [p~json]: ../parser-implementations/json.md
 [p~linear-algebra]: ../../../src/categories/mathematics/linear_algebra.md
 [p~localization]: ../localization/index.md
@@ -31,6 +38,7 @@
 [p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~python]: ../development-tools_ffi/python.md
+[p~robotics-ai]: artificial_intelligence.md
 [p~robotics]: robot_operating_systems.md
 [p~sensors]: ../embedded/sensors.md
 [p~simulation]: ../simulation/simulation.md

@@ -1,7 +1,10 @@
-//! Placeholder for the control systems examples.
+//! Runs the control systems example.
 //!
 //! TODO Reviewed ??-??-2026.
 
-// LATER
-/// Does nothing yet.
-fn main() {}
+mod pid;
+
+/// Runs the control systems example.
+fn main() {
+    pid::run();
+}

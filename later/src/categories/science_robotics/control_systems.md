@@ -2,7 +2,7 @@
 
 # Control Systems
 
-Motion control, feedback loops, PID controllers.
+A control system measures a quantity (speed, position, temperature), compares it with a setpoint, and adjusts an actuator to reduce the error. This page covers feedback control with PID, the linear algebra used for state-space models and estimators, and motion planning. Hardware access is covered in [Hardware Integration][p~hardware-integration].
 
 {{#include control_systems.incl.md}}
 
@@ -11,11 +11,29 @@ Motion control, feedback loops, PID controllers.
 - Motion Planning: [Linear algebra][p~linear-algebra] crates like [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} and [`alga`][c~alga~docs]↗{{hi:alga}} are foundational.
 - [[path_planning | Path Planning]]: Path planning algorithms are often implemented using graph algorithms and search techniques.
 
+## Feedback Control with `pid` {#pid}
+
+[![pid][c~pid~docs~badge]][c~pid~docs]{{hi:pid}}
+[![pid~crates.io][c~pid~crates.io~badge]][c~pid~crates.io]
+[![pid~repo][c~pid~repo~badge]][c~pid~repo]
+[![pid~lib.rs][c~pid~lib.rs~badge]][c~pid~lib.rs]
+[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+
+[`pid`][c~pid~docs]↗{{hi:pid}} is a small, generic, `no_std` PID (proportional, integral, derivative) controller. Set a target with `Pid::new(setpoint, output_limit)`, configure each term with `p`, `i` and `d` (a gain and a limit), then call `next_control_output(measurement)` once per control period. The limits keep the output, and the integral term, bounded (anti-windup).
+
+The example drives a simulated first-order plant (a motor speed or a heater) toward a setpoint. Because the plant is simulated, the test needs no hardware.
+
+```rust,editable
+{{#include ../../../crates/cats/science_robotics/examples/control_systems/pid.rs:example}}
+```
+
+For more demanding designs, estimate the hidden state of the system with a Kalman filter (see the filters in [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}-based crates such as [`adskalman`][adskalman~repo]↗) before feeding it to the controller. Run the loop at a fixed period, on a real-time thread or an [embedded][p~embedded] timer interrupt.
+
 ## `nalgebra`: Linear Algebra Library for Control Algorithms {#nalgebra}
 
 [![nalgebra~website][c~nalgebra~website~badge]][c~nalgebra~website] [![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs] [![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io] [![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo] [![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]{{hi:nalgebra}}{{hi:Math}}{{hi:Algebra}}{{hi:Linear}}{{hi:Matrix}}{{hi:Vector}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
 
-General-purpose [linear algebra][p~linear-algebra] library with transformations and statically-sized or dynamically-sized matrices.
+General-purpose [linear algebra][p~linear-algebra] library with transformations and statically-sized or dynamically-sized matrices. Use it for state-space models (`x' = Ax + Bu`), coordinate transforms and the matrices of estimators.
 
 ## `k`: Kinematics Library for Robotics {#k}
 
@@ -55,15 +73,10 @@ Inverse and forward kinematics for 6-axis robots with a parallel base and spheri
 
 ## Related Topics {#related-topics .skip}
 
-- Robotics kinematics and motion planning.
-- Embedded control and real-time systems.
-- Path finding and optimization.
+- [Hardware Integration][p~hardware-integration].
+- [[embedded | Embedded Systems]].
+- Path finding: see [Artificial Intelligence for Robotics][p~robotics-ai].
 - [Robot frameworks](./robotics_frameworks.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1208)
-Review `pid`
-</div>

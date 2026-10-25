@@ -2,6 +2,7 @@
 
 | Recipe | Crates | Categories |
 |--------|--------|------------|
+| [Feedback Control with `pid`][ex~science_robotics~pid] | [![pid][c~pid~docs~badge]][c~pid~docs]{{hi:pid}} | [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics] |
 | [`k`: Kinematics Library for Robotics][ex~science_robotics~k] | [![k][c~k~docs~badge]][c~k~docs]{{hi:k}} | [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics] |
 | [`nalgebra`: Linear Algebra Library for Control Algorithms][ex~science_robotics~nalgebra] | [![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}} | [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics] |
 | [`openrr-planner`][ex~science_robotics~openrr-planner] | [![openrr-planner][c~openrr-planner~docs~badge]][c~openrr-planner~docs]{{hi:openrr-planner}} | [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics] |
