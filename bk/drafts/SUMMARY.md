@@ -11,6 +11,7 @@
   - [Futures crate](categories/asynchronous/futures.md)
   - [Mixing Async and Blocking Code](categories/asynchronous/async_and_blocking.md)
   - [Utilities](categories/asynchronous/async_utilities.md)
+  - [Cancellation and Structured Concurrency](categories/asynchronous/structured_concurrency.md)
 
 - [Authentication](categories/authentication/index.md)
   - [Basic Authentication](categories/authentication/basic_authentication.md)
@@ -172,6 +173,8 @@
 - [Memory Management](categories/memory-management/index.md)
   - [Lazy Initialization](categories/memory-management/lazy_initialization.md)
   - [Memory Allocation](categories/memory-management/memory_allocation.md)
+  - [Arena Allocation](categories/memory-management/arena_allocation.md)
+  - [String Interning](categories/memory-management/string_interning.md)
 
 - [Network Programming](categories/network-programming/index.md)
   - [Server](categories/network-programming/server.md)

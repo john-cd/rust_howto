@@ -42,6 +42,16 @@ The following example creates a type `MyFlags` with the help of the [`bitflags::
 {{#include ../../../crates/cats/data_structures/examples/bitfield/bitvec.rs:example}}
 ```
 
+## Track Visited Nodes with `fixedbitset` {#fixedbitset}
+
+[![fixedbitset][c~fixedbitset~docs~badge]][c~fixedbitset~docs] [![fixedbitset~crates.io][c~fixedbitset~crates.io~badge]][c~fixedbitset~crates.io] [![fixedbitset~repo][c~fixedbitset~repo~badge]][c~fixedbitset~repo] [![fixedbitset~lib.rs][c~fixedbitset~lib.rs~badge]][c~fixedbitset~lib.rs]{{hi:fixedbitset}}{{hi:Bit set}}{{hi:Visited set}}{{hi:Graph}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+
+[`fixedbitset`][c~fixedbitset~docs]↗{{hi:fixedbitset}} is a bit set with a size fixed at creation. It uses one bit per element, where a `Vec<bool>` uses a byte, and offers fast set operations such as `union_with`. The example uses it as the visited set of a graph walk. Choose [`bitvec`][c~bitvec~docs]↗{{hi:bitvec}} instead for arbitrary bit-level views or a growable vector.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/data_structures/examples/bitfield/fixedbitset.rs:example}}
+```
+
 ## Store Large Sets of Integers with `roaring` {#roaring}
 
 [![roaring][c~roaring~docs~badge]][c~roaring~docs] [![roaring~crates.io][c~roaring~crates.io~badge]][c~roaring~crates.io] [![roaring~repo][c~roaring~repo~badge]][c~roaring~repo] [![roaring~lib.rs][c~roaring~lib.rs~badge]][c~roaring~lib.rs]{{hi:roaring}}{{hi:Bitmap}}{{hi:Data-structure}}{{hi:roaring}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}

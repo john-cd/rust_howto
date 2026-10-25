@@ -46,6 +46,22 @@ You can use a custom hash function with [`HashMap`][c~std::collections::HashMap~
 {{#include ../../../crates/cats/data_structures/examples/hashmap/custom_hash_function.rs:example}}
 ```
 
+## Choose a Faster Hasher: `ahash` and `rustc-hash` {#fast-hashmap}
+
+[![ahash][c~ahash~docs~badge]][c~ahash~docs] [![ahash~crates.io][c~ahash~crates.io~badge]][c~ahash~crates.io] [![ahash~repo][c~ahash~repo~badge]][c~ahash~repo] [![ahash~lib.rs][c~ahash~lib.rs~badge]][c~ahash~lib.rs]{{hi:ahash}}{{hi:AHashMap}}{{hi:Performance}} [![rustc-hash][c~rustc-hash~docs~badge]][c~rustc-hash~docs] [![rustc-hash~crates.io][c~rustc-hash~crates.io~badge]][c~rustc-hash~crates.io] [![rustc-hash~repo][c~rustc-hash~repo~badge]][c~rustc-hash~repo] [![rustc-hash~lib.rs][c~rustc-hash~lib.rs~badge]][c~rustc-hash~lib.rs]{{hi:rustc-hash}}{{hi:FxHashMap}}{{hi:Hash}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+
+The example counts words with three maps: the standard library's [`HashMap`][c~std::collections::HashMap~docs]↗, [`ahash::AHashMap`][c~ahash~docs]↗{{hi:AHashMap}} and [`rustc_hash::FxHashMap`][c~rustc-hash~docs]↗{{hi:FxHashMap}}. The trade-offs:
+
+- `HashMap` uses SipHash, which resists HashDoS (attacker-chosen keys that all collide). Keep it for keys that come from untrusted input.
+- `AHashMap` is much faster on strings and other larger keys, and is randomly seeded by default.
+- `FxHashMap` is the fastest for small integer or enum keys. It is deterministic (not seeded) and has weak distribution for some key patterns.
+
+[`hashbrown`][c~hashbrown~docs]↗{{hi:hashbrown}} (the table behind the standard library's `HashMap`) and [`foldhash`][c~foldhash~docs]↗{{hi:foldhash}} are other options. Measure with [`criterion`][c~criterion~docs]↗{{hi:criterion}} before switching.
+
+```rust,editable
+{{#include ../../../crates/cats/data_structures/examples/hashmap/fast_hashmap.rs:example}}
+```
+
 ## Related Data Structures {#related-data-structures .skip}
 
 - [[btrees | B-trees]].

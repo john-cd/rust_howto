@@ -22,7 +22,7 @@ Choose an implementation based on the required properties:
 
 **Non-cryptographic hashers:**
 
-- `rustc-hash`, `foldhash`, `murmur3`, and `fnv` can suit trusted inputs when speed matters. They do not provide cryptographic collision resistance.
+- `rustc-hash`, `foldhash`, `xxhash-rust`, `murmur3`, and `fnv` can suit trusted inputs when speed matters. They do not provide cryptographic collision resistance.
 
 For attacker-controlled keys, keep the standard library's randomized `HashMap` hasher unless you have measured a need to change it and reviewed the security trade-off. [`ahash`][ahash] is a keyed, denial-of-service-resistant hasher for in-memory maps, but it is not a cryptographic digest. `hashbrown` is a hash-map implementation, not a hash function.
 
@@ -82,6 +82,16 @@ This example fixes a seed so the same input produces the same value; use randomi
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/hashing/foldhash.rs:example}}
+```
+
+### Checksum Data with `xxhash-rust` {#xxh3}
+
+[![xxhash-rust][c~xxhash-rust~docs~badge]][c~xxhash-rust~docs] [![xxhash-rust~crates.io][c~xxhash-rust~crates.io~badge]][c~xxhash-rust~crates.io] [![xxhash-rust~repo][c~xxhash-rust~repo~badge]][c~xxhash-rust~repo] [![xxhash-rust~lib.rs][c~xxhash-rust~lib.rs~badge]][c~xxhash-rust~lib.rs]{{hi:xxhash-rust}}{{hi:XXH3}}{{hi:Checksum}}{{hi:Hash}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+
+XXH3 is a fast, non-cryptographic hash. The example appends a 128-bit XXH3 tag to a buffer, verifies it on read, and rejects a corrupted byte. A tag like this detects accidental corruption such as a truncated or bit-flipped cache file. It is **not** a message authentication code: an attacker can forge a matching tag. For tamper resistance, use an HMAC or a signature - see [[encryption | Encryption]].
+
+```rust,editable
+{{#include ../../../crates/cats/algorithms/examples/hashing/xxh3_checksum.rs:example}}
 ```
 
 ## Legacy Hashing Algorithms {#legacy-hashing-algorithms}

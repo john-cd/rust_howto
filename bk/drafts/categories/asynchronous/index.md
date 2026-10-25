@@ -44,6 +44,10 @@ Crates to deal with events independently of the main program flow, using techniq
 
 {{#include async_utilities.incl.md}}
 
+## Cancellation and Structured Concurrency
+
+{{#include structured_concurrency.incl.md}}
+
 ## Related Topics
 
 ### Networking / Websocket / HTTP

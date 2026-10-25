@@ -8,6 +8,7 @@
 
 [ex~hardware-support~check-number-of-logical-cpu-cores]: processor.md#check-number-of-logical-cpu-cores
 [ex~hardware-support~simd]: processor.md#simd
+[ex~hardware-support~simd-dot-product]: processor.md#simd-dot-product
 [p~assembly]: ../development-tools_profiling/assembly.md
 [p~asynchronous]: ../asynchronous/index.md
 [p~data-parallelism]: ../concurrency/data_parallelism.md

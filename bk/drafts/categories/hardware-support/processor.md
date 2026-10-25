@@ -52,6 +52,27 @@ SIMD can speed up data-parallel operations such as processing pixels or numeric 
 
 [`core::simd`][c~core::simd~docs]↗{{hi:core::simd}} is the portable SIMD API. It is currently a nightly-only experimental API, so stable applications should check its current status before depending on it.
 
+### Compute a Dot Product with `std::arch` and `wide` {#simd-dot-product}
+
+[![std::arch][c~std::arch~docs~badge]][c~std::arch~docs]{{hi:std::arch}} [![wide][c~wide~docs~badge]][c~wide~docs] [![wide~crates.io][c~wide~crates.io~badge]][c~wide~crates.io] [![wide~repo][c~wide~repo~badge]][c~wide~repo] [![wide~lib.rs][c~wide~lib.rs~badge]][c~wide~lib.rs]{{hi:wide}}{{hi:SIMD}}{{hi:Intrinsics}}{{hi:Runtime feature detection}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}}
+
+The example computes a dot product three ways:
+
+- With `std::arch` intrinsics (SSE2 and AVX2 on x86-64), selected at run time with `is_x86_feature_detected!`. The `unsafe` code sits behind a small safe function that documents its `SAFETY` invariants.
+- With the scalar loop, which is the fallback on other targets and the reference in the tests.
+- With the portable [`wide`][c~wide~docs]↗{{hi:wide}} crate, which works on stable Rust on any target.
+
+```rust,editable
+{{#include ../../../crates/cats/hardware_support/examples/simd/simd_arch.rs:example}}
+```
+
+When SIMD pays off:
+
+- SIMD helps on long, contiguous numeric loops. Measure with [`criterion`][c~criterion~docs]↗{{hi:criterion}} before and after.
+- SIMD changes the order of floating-point additions, so results can differ from the scalar version in the last bits. The example's fixtures use small integers, which `f32` represents exactly.
+- Handle `NaN` and infinity deliberately; lane-wise operations propagate them without any check.
+- WebAssembly has its own `simd128` target feature, enabled at compile time rather than detected at run time.
+
 ## Related Topics {#related-topics .skip}
 
 ### Atomic Operations {#atomic-operations .skip}

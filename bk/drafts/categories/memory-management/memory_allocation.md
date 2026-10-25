@@ -32,6 +32,18 @@ Mimalloc is a general purpose, performance-oriented allocator built by Microsoft
 {{#include ../../../crates/cats/memory_management/examples/mimalloc.rs:example}}
 ```
 
+### Select the Global Allocator with Cargo Features {#global-allocator}
+
+[![mimalloc][c~mimalloc~docs~badge]][c~mimalloc~docs]{{hi:mimalloc}} [![tikv-jemallocator][c~tikv-jemallocator~docs~badge]][c~tikv-jemallocator~docs]{{hi:tikv-jemallocator}}{{hi:Global allocator}}{{hi:Cargo features}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
+
+A library or an application can let the build choose the [`#[global_allocator]`][c~std::alloc::GlobalAlloc~docs]↗{{hi:GlobalAlloc}}. The example defines the features `use-mimalloc` and `use-jemalloc`, prefers `mimalloc` if both are enabled (so `--all-features` still builds), and falls back to the system allocator when neither is. Run it with `cargo run --example global_allocator --features use-mimalloc`.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/memory_management/examples/global_allocator.rs:example}}
+```
+
+Measure before switching: the best allocator depends on the workload and the platform. `tikv-jemallocator` does not support the MSVC target.
+
 ## Pre-allocated Storage for a Uniform Data Type {#pre-allocated-storage .skip}
 
 ### `slab` {#slab}
@@ -76,6 +88,8 @@ The key types are:
 ## Related Topics {#related-topics .skip}
 
 - [[memory-management/index | Memory Management overview]]
+- [[arena_allocation | Arena Allocation]]
+- [[string_interning | String Interning]]
 - [[lazy_initialization | Global Statics and Lazy Initialization]]
 - [[smart_pointers | Smart Pointers]]
 - [[shared_state | Shared State]]

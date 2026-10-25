@@ -119,6 +119,9 @@
 [ex~language~struct-ownership]: structs.md#struct-ownership
 [ex~language~struct]: structs.md#struct
 [ex~language~strum]: enumerations.md#strum
+[ex~language~strum-case]: enumerations.md#strum-case
+[ex~language~strum-messages]: enumerations.md#strum-messages
+[ex~language~strum-props]: enumerations.md#strum-props
 [ex~language~supertraits]: traits.md#supertraits
 [ex~language~trait-bounds]: traits.md#trait-bounds
 [ex~language~trait-object-restrictions]: trait_objects_and_dynamic_dispatch.md#trait-object-restrictions

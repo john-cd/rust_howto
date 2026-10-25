@@ -18,6 +18,9 @@
 [ex~rust-patterns~typed-builder]: builder_pattern.md#typed-builder
 [ex~rust-patterns~typestate-pattern]: behavioral_patterns.md#typestate-pattern
 [ex~rust-patterns~newtype]: structural_patterns.md#newtype
+[ex~rust-patterns~newtype-equality]: rust_specific_patterns.md#newtype-equality
+[ex~rust-patterns~newtype-units]: rust_specific_patterns.md#newtype-units
+[ex~rust-patterns~validated-newtype]: rust_specific_patterns.md#validated-newtype
 [ex~rust-patterns~adapter]: structural_patterns.md#adapter
 [ex~rust-patterns~decorator]: structural_patterns.md#decorator
 [ex~rust-patterns~facade]: structural_patterns.md#facade
