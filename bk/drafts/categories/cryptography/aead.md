@@ -66,10 +66,9 @@ For more [algorithms][p~algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-
 - [[encryption | Encryption]].
 - [[hashing | Hashing]].
 - [[hmac | HMAC]].
+- [[password_hashing | Password hashing]].
+- [[signature | Digital signatures]].
+- [Cryptography category](index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1183)
-</div>

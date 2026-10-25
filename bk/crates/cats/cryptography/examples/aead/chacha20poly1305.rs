@@ -37,7 +37,7 @@ use zeroize::Zeroize as _;
 // pure software.
 
 /// Encrypts a message and decrypts it again.
-fn encrypt_then_decrypt() {
+fn encrypt_then_decrypt() -> anyhow::Result<()> {
     // Example plaintext to encrypt.
     let mut plaintext: Vec<u8> = b"This is a secret message.".to_vec();
 
@@ -61,7 +61,9 @@ fn encrypt_then_decrypt() {
         // In-place encryption eliminates `alloc` requirements.
         tag = cipher
             .encrypt_in_place_detached(&nonce, b"", &mut ciphertext)
-            .unwrap();
+            .map_err(|_| {
+                anyhow::anyhow!("ChaCha20-Poly1305 encryption failed")
+            })?;
 
         println!("Ciphertext: {ciphertext:x?}");
         println!("Tag: {tag:x?}");
@@ -82,19 +84,9 @@ fn encrypt_then_decrypt() {
             &tag,
         );
 
-        match decrypted_result {
-            Ok(()) => {
-                println!(
-                    "Decrypted plaintext: {}",
-                    String::from_utf8_lossy(&decrypted_plaintext)
-                );
-            }
-            Err(e) => {
-                eprintln!("Decryption error: {e}");
-            }
-        }
-
-        // Check if decryption was successful:
+        decrypted_result.map_err(|_| {
+            anyhow::anyhow!("ChaCha20-Poly1305 authentication failed")
+        })?;
         assert_eq!(decrypted_plaintext, plaintext);
     }
 
@@ -112,17 +104,8 @@ fn encrypt_then_decrypt() {
             &bad_tag,
         );
 
-        match decrypted_result_bad_tag {
-            Ok(()) => {
-                println!(
-                    "Decryption with bad tag succeeded (this should not happen!)"
-                );
-            }
-            Err(e) => {
-                println!("Decryption with bad tag failed as expected: {e}");
-                // This is the expected behavior.
-            }
-        }
+        assert!(decrypted_result_bad_tag.is_err());
+        println!("Decryption with modified tag failed as expected.");
     }
 
     // Fill all sensitive fields with zeroes.
@@ -130,11 +113,12 @@ fn encrypt_then_decrypt() {
     key.zeroize();
     nonce.zeroize();
     ciphertext.zeroize();
+    Ok(())
 }
 
 // --- Example with associated data (AAD) ---
 /// Encrypts with associated data, which must match when decrypting.
-fn aad() {
+fn aad() -> anyhow::Result<()> {
     let mut plaintext = Vec::from(b"This is a secret message.");
     let aad = b"Associated Data";
 
@@ -147,7 +131,7 @@ fn aad() {
     let mut ciphertext_aad = plaintext.clone();
     let tag_aad = cipher_aad
         .encrypt_in_place_detached(&nonce, aad, &mut ciphertext_aad)
-        .unwrap();
+        .map_err(|_| anyhow::anyhow!("ChaCha20-Poly1305 encryption failed"))?;
 
     println!("Ciphertext with AAD: {ciphertext_aad:x?}");
     println!("Tag with AAD: {tag_aad:x?}");
@@ -160,43 +144,52 @@ fn aad() {
         &tag_aad,
     );
 
-    match decrypted_result_aad {
-        Ok(()) => {
-            println!(
-                "Decrypted plaintext with AAD: {}",
-                String::from_utf8_lossy(&decrypted_plaintext_aad)
-            );
-        }
-        Err(e) => {
-            eprintln!("Decryption error with AAD: {e}");
-        }
-    }
+    decrypted_result_aad.map_err(|_| {
+        anyhow::anyhow!("ChaCha20-Poly1305 authentication failed")
+    })?;
+    assert_eq!(decrypted_plaintext_aad, plaintext);
+
+    let wrong_aad = b"different associated data";
+    let mut tampered_plaintext = ciphertext_aad.clone();
+    assert!(
+        cipher_aad
+            .decrypt_in_place_detached(
+                &nonce,
+                wrong_aad,
+                &mut tampered_plaintext,
+                &tag_aad
+            )
+            .is_err()
+    );
 
     plaintext.zeroize();
     key.zeroize();
     nonce.zeroize();
     ciphertext_aad.zeroize();
+    Ok(())
 }
 
 /// Runs both examples.
-fn main() {
-    encrypt_then_decrypt();
-    aad();
+fn main() -> anyhow::Result<()> {
+    encrypt_then_decrypt()?;
+    aad()?;
+    Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() {
-    main();
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies ChaCha20-Poly1305 round trips and rejects altered tags and AAD.
     #[test]
-    fn test_main() {
-        main();
+    fn test_chacha20poly1305_round_trip_and_tampering() -> anyhow::Result<()> {
+        main()
     }
 }

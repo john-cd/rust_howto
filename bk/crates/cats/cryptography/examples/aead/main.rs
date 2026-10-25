@@ -38,13 +38,13 @@ fn main() -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::AesGcm => {
-                aes_gcm::run();
+                aes_gcm::run()?;
             }
             Commands::AesGcmSiv => {
                 aes_gcm_siv::run().map_err(|e| anyhow::anyhow!("{e:?}"))?;
             }
             Commands::Chacha20poly1305 => {
-                chacha20poly1305::run();
+                chacha20poly1305::run()?;
             }
         }
     }
