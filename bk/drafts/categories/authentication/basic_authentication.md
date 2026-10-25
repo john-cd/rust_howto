@@ -6,7 +6,7 @@
 
 HTTP Basic authentication sends a user name and password in the `Authorization` header. The credentials are Base64-encoded; Base64 is not encryption. Use Basic authentication only over HTTPS, which protects the header in transit.
 
-Treat the credentials as secrets: do not commit them, put them in command-line arguments, or log request headers. The example reads its endpoint and credentials from environment variables so it has no embedded secret. In a deployed application, use the secret-management mechanism provided by the environment.
+Treat the credentials as secrets: do not commit them, put them in command-line arguments, or log request headers. This example uses fixed placeholders only; load the endpoint and credentials from a secret-management mechanism in a deployed application.
 
 ## Perform a Basic HTTP Authentication {#basic-authentication}
 
@@ -18,7 +18,7 @@ Treat the credentials as secrets: do not commit them, put them in command-line a
 {{#include ../../../crates/cats/authentication/examples/basic_authentication/basic.rs:example}}
 ```
 
-Its unit test checks that the `Authorization` header is present and correctly encoded without sending a request. If you send a real Basic-authenticated request, use HTTPS, keep credentials in a secret manager, and never log the header. The example is excluded from Rust Playground because the blocking `reqwest` client depends on native TLS support.
+Its test sends the built request through an in-memory Axum route and verifies that valid credentials receive `200 OK` while invalid credentials receive `401 Unauthorized`. It does not open a socket or contact a service. If you send a real Basic-authenticated request, use HTTPS, keep credentials in a secret manager, and never log the header. The example is excluded from Rust Playground because the blocking `reqwest` client depends on native TLS support.
 
 ## Related Topics {#related-topics .skip}
 
