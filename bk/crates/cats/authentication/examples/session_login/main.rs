@@ -3,6 +3,7 @@
 //! TODO Reviewed ??-??-2026.
 
 mod axum_login;
+mod csrf;
 mod hashing;
 
 fn main() {

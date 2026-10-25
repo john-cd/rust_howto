@@ -3548,6 +3548,14 @@
 [c~geo~lib.rs~badge]: https://img.shields.io/badge/lib.rs-geo-yellow
 [c~geo~repo]: https://github.com/georust/geo
 [c~geo~repo~badge]: https://img.shields.io/badge/geo-steelblue?logo=github
+[c~getrandom~crates.io]: https://crates.io/crates/getrandom
+[c~getrandom~crates.io~badge]: https://img.shields.io/badge/crates.io-getrandom-crimson
+[c~getrandom~docs]: https://docs.rs/getrandom
+[c~getrandom~docs~badge]: https://img.shields.io/crates/v/getrandom?label=getrandom
+[c~getrandom~lib.rs]: https://lib.rs/crates/getrandom
+[c~getrandom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-getrandom-yellow
+[c~getrandom~repo]: https://github.com/rust-random/getrandom
+[c~getrandom~repo~badge]: https://img.shields.io/badge/getrandom-steelblue?logo=github
 [c~gettext~crates.io]: https://crates.io/crates/gettext
 [c~gettext~crates.io~badge]: https://img.shields.io/badge/crates.io-gettext-crimson
 [c~gettext~docs]: https://docs.rs/gettext

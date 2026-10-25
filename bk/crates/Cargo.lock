@@ -1368,6 +1368,7 @@ dependencies = [
  "argon2 0.6.0",
  "axum 0.8.9",
  "axum-login",
+ "getrandom 0.4.3",
  "http-body-util",
  "jsonwebtoken",
  "password-auth",

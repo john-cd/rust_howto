@@ -3,6 +3,7 @@
 [ex~authentication~basic-authentication]: basic_authentication.md#basic-authentication
 [ex~authentication~hash-passwords]: session_login.md#hash-passwords
 [ex~authentication~session-login]: session_login.md#session-login
+[ex~authentication~csrf]: session_login.md#csrf
 
 [c~openidconnect~docs]: https://docs.rs/openidconnect
 [c~openidconnect~docs~badge]: https://img.shields.io/crates/v/openidconnect?label=openidconnect
