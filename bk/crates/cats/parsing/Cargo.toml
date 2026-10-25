@@ -45,6 +45,11 @@ path = "examples/parsing/main.rs"
 test = true
 
 [[example]]
+name = "tree_sitter_spans"
+path = "examples/parsing/tree_sitter_spans.rs"
+test = true
+
+[[example]]
 name = "pest"
 path = "examples/pest/main.rs"
 test = true
