@@ -48,6 +48,11 @@ path = "examples/business_rules/decision_table.rs"
 test = true
 
 [[example]]
+name = "behavioral_patterns"
+path = "examples/behavioral_patterns/main.rs"
+test = true
+
+[[example]]
 name = "builder_pattern"
 path = "examples/builder_pattern/main.rs"
 test = true

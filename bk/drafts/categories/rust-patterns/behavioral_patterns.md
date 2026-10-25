@@ -4,6 +4,8 @@
 
 {{#include behavioral_patterns.incl.md}}
 
+Behavioral patterns describe how components communicate and how operations are represented. In Rust, enums, traits, closures, and ownership often express these patterns directly, without a class hierarchy. The recipes below show a typestate API, data-driven business rules, and a command-based undo/redo history.
+
 ## Implement the Typestate Pattern in Rust {#typestate-pattern}
 
 The typestate pattern is a design pattern that encodes information about an object's run-time state in its compile-time type.
@@ -20,13 +22,21 @@ When rules change more often than releases, or are owned by non-developers, keep
 {{#include ../../../crates/cats/rust_patterns/examples/business_rules/decision_table.rs:example}}
 ```
 
+## Add Undo and Redo to a Text Editor with Commands {#undo-redo}
+
+A command records the data needed to apply and reverse one edit. Keeping the undo and redo stacks in the editor makes the state transitions explicit and deterministic.
+
+```rust,editable
+{{#include ../../../crates/cats/rust_patterns/examples/behavioral_patterns/undo_redo.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Builder Pattern](builder_pattern.md) covers object construction.
+- [Rust-specific Patterns](rust_specific_patterns.md) describes type-level patterns.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/461)
 </div>
