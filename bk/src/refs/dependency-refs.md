@@ -2333,6 +2333,15 @@
 [tokio_rustls-github]: https://github.com/rustls/tokio-rustls
 
 
+[tokio_stream]: https://docs.rs/tokio_stream
+
+
+[tokio_stream-crate]: https://crates.io/crates/tokio_stream
+
+
+[tokio_stream-github]: https://github.com/tokio-rs/tokio
+
+
 [tokio_util]: https://docs.rs/tokio_util
 
 
@@ -2520,6 +2529,15 @@
 
 
 [walkdir-github]: https://github.com/BurntSushi/walkdir (*)
+
+
+[webpki_roots]: https://docs.rs/webpki_roots
+
+
+[webpki_roots-crate]: https://crates.io/crates/webpki_roots
+
+
+[webpki_roots-github]: https://github.com/rustls/webpki-roots
 
 
 [which]: https://docs.rs/which
