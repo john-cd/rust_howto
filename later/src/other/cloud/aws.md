@@ -43,6 +43,66 @@ See, for example:
 {{#include ../../../crates/other/examples/cloud/aws_sdk.rs:example}}
 ```
 
+## Share the AWS Configuration Across Clients {#aws-shared-config}
+
+[![aws-config][c~aws-config~docs~badge]][c~aws-config~docs]{{hi:aws-config}}
+
+Load the `SdkConfig` once, then build every service client from it. The default credential provider chain checks environment variables, shared profiles, SSO, and container or instance roles, so code never contains keys. Pin a `BehaviorVersion`, and set retries and timeouts explicitly.
+
+```rust,no_run
+{{#include ../../../crates/other/examples/cloud/aws_shared_config.rs:example}}
+```
+
+## Send Email with Amazon SES {#aws-ses}
+
+[![aws-sdk-sesv2][c~aws-sdk-sesv2~docs~badge]][c~aws-sdk-sesv2~docs]{{hi:aws-sdk-sesv2}}
+
+Send a multipart message with an HTML body and a plain-text fallback. The sender must be a verified identity. Request construction is separated from sending so the unit test needs no AWS account.
+
+```rust,no_run
+{{#include ../../../crates/other/examples/cloud/aws_ses.rs:example}}
+```
+
+## Publish Metrics to Amazon CloudWatch {#aws-cloudwatch}
+
+[![aws-sdk-cloudwatch][c~aws-sdk-cloudwatch~docs~badge]][c~aws-sdk-cloudwatch~docs]{{hi:aws-sdk-cloudwatch}}
+
+Send custom metrics with dimensions. Every unique combination of dimension values is billed as a separate metric, so avoid unbounded values such as user identifiers.
+
+```rust,no_run
+{{#include ../../../crates/other/examples/cloud/aws_cloudwatch.rs:example}}
+```
+
+## Invoke an AWS Lambda Function {#aws-lambda-invoke}
+
+[![aws-sdk-lambda][c~aws-sdk-lambda~docs~badge]][c~aws-sdk-lambda~docs]{{hi:aws-sdk-lambda}}
+
+Invoke a function synchronously (`RequestResponse`) and parse its JSON payload, or fire and forget with `InvocationType::Event`. A failing function still returns HTTP 200: check `function_error`. See the function example [above](#lambda) for the handler.
+
+```rust,no_run
+{{#include ../../../crates/other/examples/cloud/aws_lambda_invoke.rs:example}}
+```
+
+## Use an S3-compatible Store {#aws-s3-compatible}
+
+[![aws-sdk-s3][c~aws-sdk-s3~docs~badge]][c~aws-sdk-s3~docs]{{hi:aws-sdk-s3}}
+
+MinIO, RustFS and LocalStack speak the S3 protocol. Point the client at the store's endpoint, supply static development credentials, and enable path-style addressing. The integration test is `#[ignore]`d unless a server is running.
+
+```rust,no_run
+{{#include ../../../crates/other/examples/cloud/aws_s3_compatible.rs:example}}
+```
+
+## Exchange Typed Messages over AWS SQS and SNS {#aws-message-bus}
+
+[![aws-sdk-sqs][c~aws-sdk-sqs~docs~badge]][c~aws-sdk-sqs~docs]{{hi:aws-sdk-sqs}} [![aws-sdk-sns][c~aws-sdk-sns~docs~badge]][c~aws-sdk-sns~docs]{{hi:aws-sdk-sns}} [![prost][c~prost~docs~badge]][c~prost~docs]{{hi:prost}}
+
+Hide the queue behind `MessagePublisher` and `MessageSubscriber` traits so business code and tests use an in-memory implementation, while production uses SQS (point-to-point) or SNS (fan-out to several queues). Payloads are Protobuf messages encoded with `prost` and base64, within the 256 KiB SQS limit. SQS delivers at least once: acknowledge (delete) a message only after it is handled, make handlers idempotent, tune the visibility timeout, and configure a dead-letter queue for messages that keep failing.
+
+```rust,editable
+{{#include ../../../crates/other/examples/cloud/aws_message_bus.rs:example}}
+```
+
 ## References {#references .skip}
 
 - [AWS and Rust][blog~sustainability-with-rust]↗.

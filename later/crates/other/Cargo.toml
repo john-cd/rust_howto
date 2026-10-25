@@ -22,7 +22,7 @@ autolib = false
 [features]
 onnx = ["dep:ort", "dep:arc-swap"]
 datafusion = ["dep:datafusion"]
-arrow = ["dep:arrow"]
+arrow = ["dep:arrow", "dep:arrow-array", "dep:arrow-cast", "dep:arrow-ipc"]
 typegen = ["crux_core/typegen"] # for Crux
 polars = ["dep:polars"]
 # `polars` and `datafusion` can be enabled together: `Cargo.lock` resolves a single `chrono`
@@ -36,6 +36,9 @@ anyhow = "1.0.104"
 
 ## Data processing
 arrow = { version = "58.4.0", features = ["csv", "json", "prettyprint"], optional = true }
+arrow-array = { version = "58.4.0", optional = true } # Typed columns and `RecordBatch`, without the umbrella crate.
+arrow-cast = { version = "58.4.0", features = ["prettyprint"], optional = true } # Pretty-print record batches.
+arrow-ipc = { version = "58.4.0", optional = true } # Arrow IPC file and stream formats.
 async-trait = "0.1.92"
 polars = { version = "0.51.0", default-features = false, features = ["lazy", "csv"], optional = true }
 
@@ -45,15 +48,21 @@ cron = "0.17.0"
 tokio-util = "0.7.20"
 
 ## Cloud
-aws-config = "1.8.18"
-aws-sdk-s3 = "1.137.0"
+aws-config = "1.13.0"
+aws-sdk-cloudwatch = "1.138.0"
+aws-sdk-lambda = "1.154.0"
+aws-sdk-s3 = "1.155.0"
+aws-sdk-sesv2 = "1.143.0"
+aws-sdk-sns = "1.119.0"
+aws-sdk-sqs = "1.117.0"
 axum = "0.8.9"
+base64 = "0.23.1" # Binary Protobuf payloads in SQS text bodies.
 clap = { version = "4.6.7", features = ["derive"] }
 futures = "0.3"
 k8s-openapi = { version = "0.28", features = ["latest"] }
 kube = { version = "4.2", features = ["derive", "runtime", "client"] }
 schemars = "1"
-serde_json = "1.0.154" # Also converts Arrow JSON output back into Serde rows.
+serde_json = "1.0.154" # Converts Arrow JSON output back into Serde rows, and parses Lambda payloads.
 thiserror = "2"
 
 ## Machine learning
@@ -66,6 +75,7 @@ smartcore = "0.5.5"
 crux_core = "0.17.0"
 datafusion = { version = "55.2.0", default-features = false, features = ["sql"], optional = true } # Enable SQL without unused native compression codecs.
 lambda_runtime = "1.5.0"
+prost = "0.14.4" # Protobuf message derive.
 
 ## Scripting
 rhai = "1.27.0"

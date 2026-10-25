@@ -1,6 +1,12 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [ex~cloud~aws-sdk-rust]: aws.md#aws-sdk-rust
+[ex~cloud~aws-shared-config]: aws.md#aws-shared-config
+[ex~cloud~aws-ses]: aws.md#aws-ses
+[ex~cloud~aws-cloudwatch]: aws.md#aws-cloudwatch
+[ex~cloud~aws-lambda-invoke]: aws.md#aws-lambda-invoke
+[ex~cloud~aws-s3-compatible]: aws.md#aws-s3-compatible
+[ex~cloud~aws-message-bus]: aws.md#aws-message-bus
 [ex~cloud~dapr]: _fragment.md#dapr
 [ex~cloud~lambda]: aws.md#lambda
 [ex~cloud~shuttle]: rust_native_cloud_development.md#shuttle

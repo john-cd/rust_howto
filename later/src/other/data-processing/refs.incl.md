@@ -1,6 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [ex~data-processing~arrow]: data_engineering.md#arrow
+[ex~data-processing~arrow-ipc]: data_engineering.md#arrow-ipc
+[ex~data-processing~arrow-sub-crates]: data_engineering.md#arrow-sub-crates
 [ex~data-processing~databend]: data_engineering.md#databend
 [ex~data-processing~dataframes]: dataframes.md#dataframes
 [ex~data-processing~datafusion]: data_engineering.md#datafusion

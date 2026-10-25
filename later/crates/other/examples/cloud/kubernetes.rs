@@ -78,7 +78,9 @@ pub fn desired_deployment(echo: &Echo) -> Result<Deployment, Error> {
     let name = echo.name_any();
     // The owner reference makes Kubernetes garbage-collect the Deployment
     // when the `Echo` is deleted.
-    let owner = echo.controller_owner_ref(&()).ok_or(Error::MissingMetadata)?;
+    let owner = echo
+        .controller_owner_ref(&())
+        .ok_or(Error::MissingMetadata)?;
     Ok(serde_json::from_value(json!({
         "apiVersion": "apps/v1",
         "kind": "Deployment",
@@ -99,9 +101,13 @@ pub fn desired_deployment(echo: &Echo) -> Result<Deployment, Error> {
 }
 
 /// Brings the cluster closer to the desired state, then reports the status.
-async fn reconcile(echo: Arc<Echo>, ctx: Arc<Context>) -> Result<Action, Error> {
+async fn reconcile(
+    echo: Arc<Echo>,
+    ctx: Arc<Context>,
+) -> Result<Action, Error> {
     let namespace = echo.namespace().ok_or(Error::MissingMetadata)?;
-    let deployments: Api<Deployment> = Api::namespaced(ctx.client.clone(), &namespace);
+    let deployments: Api<Deployment> =
+        Api::namespaced(ctx.client.clone(), &namespace);
     let desired = desired_deployment(&echo)?;
 
     // Server-side apply: creates or updates, so reconciling twice is harmless.
@@ -121,7 +127,9 @@ async fn reconcile(echo: Arc<Echo>, ctx: Arc<Context>) -> Result<Action, Error> 
             .patch_status(
                 &echo.name_any(),
                 &PatchParams::default(),
-                &Patch::Merge(json!({ "status": EchoStatus { ready_replicas: ready } })),
+                &Patch::Merge(
+                    json!({ "status": EchoStatus { ready_replicas: ready } }),
+                ),
             )
             .await?;
     }
