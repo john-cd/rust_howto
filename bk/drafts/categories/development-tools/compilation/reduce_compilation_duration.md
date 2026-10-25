@@ -10,13 +10,13 @@ Rust compile times can dominate the edit-build-test loop. Measure the build you 
 
 [![cargo~website][c~cargo~website~badge]][c~cargo~website] [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
 
-```sh
+```bash
 cargo check
 ```
 
 [`cargo check`][book~cargo~check]↗ type-checks a package without generating an executable or linking it, so it is useful when the next step does not need a runnable binary. For full builds, use Cargo's timing report:
 
-```sh
+```bash
 cargo build --timings
 ```
 
@@ -30,20 +30,26 @@ The `dev` profile enables incremental compilation by default. Cargo reuses artif
 
 Incremental compilation has storage and build-time trade-offs. Keep it enabled for repeated local builds, and measure before disabling it in continuous integration. A CI job that starts with a warm build cache may benefit from incremental artifacts; a clean one-shot job may not.
 
-For reusable compiler artifacts across clean builds, [`sccache`][c~sccache~docs]↗ can act as `RUSTC_WRAPPER`. Cache hits require matching compiler inputs and settings, and it does not replace Cargo's local target directory.
+For reusable compiler artifacts across clean builds, [`sccache`][c~sccache~docs]↗ can act as `RUSTC_WRAPPER`. Install it with `cargo install sccache --locked`, then set the wrapper when building:
+
+```bash
+RUSTC_WRAPPER=sccache cargo build
+```
+
+In Windows PowerShell, set `$env:RUSTC_WRAPPER = "sccache"` before running Cargo. Cache hits require matching compiler inputs and settings, and sccache does not replace Cargo's local target directory. Check its cache statistics with `sccache --show-stats` when a build does not get the expected hits.
 
 ## Project Structure and Dependencies {#project-structure-and-dependencies .skip}
 
 Every dependency and enabled feature adds code that may need to be resolved, compiled, and linked. Inspect the dependency graph and feature selection before replacing crates or changing workspace structure:
 
-```sh
+```bash
 cargo tree -e features
 cargo tree --duplicates
 ```
 
 Remove unused dependencies and disable unneeded optional features when their behavior is not required. [`cargo-udeps`][c~cargo-udeps~repo]↗ can help find unused dependencies, but it requires nightly Rust and its results still need manual review. Keep shared, stable code in separate crates only when the ownership boundary is useful; splitting crates adds build and maintenance overhead of its own.
 
-```sh
+```bash
 cargo install cargo-udeps --locked
 cargo +nightly udeps
 ```
@@ -78,7 +84,7 @@ Cargo defaults to `opt-level = 0` for development code and dependencies. Optimiz
 
 Dynamic linking can let multiple local binaries share dependencies, but it adds deployment and loader-path considerations and is not a general replacement for Cargo's default static Rust dependency linking. Treat it as a local development optimization and verify the resulting binaries in the environments where they will run.
 
-```sh
+```bash
 cargo install cargo-add-dynamic
 cargo add-dynamic polars --features csv-file,lazy,list,describe,rows,fmt,strings,temporal
 cargo build
@@ -94,7 +100,7 @@ These compiler options are unstable, require nightly Rust, and may change. Keep 
 
 The Cranelift backend can generate development code faster than LLVM on supported targets, at the cost of less optimized runtime code and incomplete feature support. Install the nightly component, enable Cargo's unstable backend option, then select it for the `dev` profile:
 
-```sh
+```bash
 rustup component add rustc-codegen-cranelift-preview --toolchain nightly
 cargo +nightly build -Z codegen-backend
 ```
