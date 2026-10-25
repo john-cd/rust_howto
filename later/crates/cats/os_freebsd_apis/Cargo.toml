@@ -19,7 +19,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-nix = "0.31"
+nix = "0.31.3"
 
 [[example]]
 name = "freebsd"

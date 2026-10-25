@@ -19,7 +19,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-polkavm = "0.33.1"
+polkavm = "0.37.0"
 
 [[example]]
 name = "emulators"

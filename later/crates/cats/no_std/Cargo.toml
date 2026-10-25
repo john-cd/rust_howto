@@ -19,6 +19,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+# LATER
 
 [[example]]
 name = "no_std"

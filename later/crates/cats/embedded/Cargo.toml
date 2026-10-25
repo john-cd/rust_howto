@@ -21,7 +21,7 @@ autoexamples = false
 
 [dev-dependencies]
 anyhow = "1.0.104" # Provides consistent fallible example entry points.
-embedded-hal = "1.0" # Portable traits used by the host-side peripheral examples.
+embedded-hal = "1.0.0" # Portable traits used by the host-side peripheral examples.
 embedded-storage = "0.3.2" # NOR flash traits used by the in-memory flash model.
 
 [[example]]

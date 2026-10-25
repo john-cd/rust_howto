@@ -20,7 +20,7 @@ autolib = false
 
 [dependencies]
 arbitrary-int = "2.2.0"
-spacepackets = "0.17.0"
+spacepackets = "0.18.0"
 
 [[example]]
 name = "space_protocols"

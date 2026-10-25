@@ -18,6 +18,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
+# Pinned: rodio 0.23 needs cpal 0.18 / alsa-sys 0.4, conflicting with cpal =0.17.1 (multimedia_audio) and openrr.
 rodio = "0.22.2"
 
 [[example]]

@@ -22,8 +22,8 @@ default = []
 candle = ["dep:candle-core", "dep:candle-nn"]
 
 [dependencies]
-candle-core = { version = "0.10.2", optional = true }
-candle-nn = { version = "0.10.2", optional = true }
+candle-core = { version = "0.11.0", optional = true }
+candle-nn = { version = "0.11.0", optional = true }
 clap = { version = "4.6.7", features = ["derive"] }
 linfa = "0.8.1"
 linfa-linear = "0.8.1"
@@ -31,7 +31,7 @@ ndarray = "0.17.2"
 # Keep Linfa 0.8.1's dataset and fit APIs on their ndarray 0.16 array types.
 ndarray_016 = { package = "ndarray", version = "0.16.1" }
 rand = { version = "0.10.3", features = ["std"] }
-smartcore = "0.5.5"
+smartcore = "0.6.16"
 
 [[example]]
 name = "ml"

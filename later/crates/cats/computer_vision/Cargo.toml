@@ -26,7 +26,7 @@ opencv = ["dep:opencv", "dep:image"]
 [dependencies]
 [target.'cfg(target_os = "linux")'.dependencies]
 image = { version = "0.25.10", optional = true }
-opencv = { version = "0.98.2", default-features = false, features = ["clang-runtime", "imgcodecs", "imgproc"], optional = true }
+opencv = { version = "0.101.1", default-features = false, features = ["clang-runtime", "imgcodecs", "imgproc"], optional = true }
 
 [dev-dependencies]
 # Gives the image-processing test isolated input and output paths.

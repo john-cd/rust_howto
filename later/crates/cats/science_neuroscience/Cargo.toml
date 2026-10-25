@@ -19,8 +19,8 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-ndarray = "0.16.1" # Matches the ndarray type used by nifti's volume writer.
-nifti = { version = "0.17", features = ["ndarray_volumes"] }
+ndarray = "0.17.2" # Matches the ndarray type used by nifti's volume writer.
+nifti = { version = "0.18.0", features = ["ndarray_volumes"] }
 
 [[example]]
 name = "neuroscience"
