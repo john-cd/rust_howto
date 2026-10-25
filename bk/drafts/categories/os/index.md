@@ -23,6 +23,18 @@ Use a child process only when a library or standard API does not provide the nee
 
 {{#include external_commands.incl.md}}
 
+## Process Management
+
+Starting a child is easy; stopping it, together with the processes it spawned, is where programs go wrong. Use a process group (Unix) or a Job Object (Windows) to signal a whole process tree, wait for a child with a timeout, and guard a child so that it does not outlive its parent.
+
+{{#include process_management.incl.md}}
+
+## Signals and Graceful Shutdown
+
+Catch Ctrl-C and `SIGTERM`, set a flag or send on a channel, and let the program flush its state and stop its workers.
+
+{{#include signals.incl.md}}
+
 ## Platform-Specific APIs, System Calls, and FFI
 
 The standard library exposes platform-specific extensions through modules such as [`std::os::unix`][c~std::os::unix~docs]↗{{hi:std::os::unix}} and [`std::os::windows`][c~std::os::windows~docs]↗{{hi:std::os::windows}}. Guard these imports and implementations with target configuration, then provide a portable alternative or a clear unsupported-platform error.
