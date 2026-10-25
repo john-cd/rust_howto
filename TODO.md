@@ -8,6 +8,14 @@ Track tasks, priorities, and progress in [GitHub Issues](https://github.com/john
 
 Claude completed #1859 (bk and later strict Clippy gates pass; Oracle `sibyl` feature not linted) and #1867, both closed and on `develop`. All other List A, List C, List F and verify-and-close items are Codex's again; none were started or changed by Claude. Worktree `.worktrees/ca` (branch `claude/list-a-clippy`) is clean and fully merged.
 
+## Dependency pins (2026-10-25)
+
+Compatible-only upgrades plus `cargo update` in every workspace. Major bumps that break examples are deferred (follow-up issue under #1955). Pins, each commented in its `Cargo.toml`:
+
+- bk: `bolero =0.13.4` (newer needs `indexmap =2.11.2`); `libsqlite3-sys 0.30.1` (rusqlite 0.32.1); `tera 1.20.1`, `tower-sessions 0.14`, `tree-sitter 0.26`, `cached 0.59`, `async_zip 0.0.18` (examples need porting); `cornucopia_client_core` locked at 0.4.0 in `Cargo.lock`; `data_structures`, `database`, `mathematics`, `parser_implementations` kept on compatible-only bumps.
+- later: `gui`, `aerospace_protocols`, `game_development`, `multimedia_audio`, `rendering_graphics_api`, `simulation` kept on compatible-only bumps (major bumps break examples; alsa-sys / smallvec link conflicts). `wasmer-compiler-cranelift` cannot build on Windows.
+- `just bk bb` fails in `refdefs-check` (stale refs), unrelated to dependencies.
+
 ## IN-PROGRESS
 
 - [ ] Review the six-month-old `main` autostash preserved on branch `wip/stash-3-extract` (16 files: `development_tools_ffi`, web server and websocket examples); it does not apply cleanly to `develop`. The other three autostashes remain in the local stash list (`stash@{0}`–`{2}`) pending deletion.
