@@ -10,3 +10,4 @@
 [p~encoding]: ../encoding/index.md
 [p~iterators]: ../../language/iterators.md
 [p~search]: ../database/search.md
+[lancedb~repo]: https://github.com/lancedb/lancedb
