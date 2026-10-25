@@ -2,57 +2,36 @@
 
 # OS - Unix APIs
 
-[![cat~os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis]
+[![cat~os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis]{{hi:Operating systems::Unix APIs}}
 
-Bindings to Unix-specific APIs.{{hi:UNIX-specific APIs}}.
+Rust programs can use portable standard-library APIs, safe wrappers for operating-system interfaces, or low-level C bindings. Start with `std` when it meets the requirement; when using a Unix-specific API, check target support and prefer a safe wrapper such as [`rustix`][c~rustix~docs]↗{{hi:rustix}} or [`nix`][c~nix~docs]↗{{hi:nix}} where available.
 
-## File System Operations: Working with Files, Directories, Permissions, etc
+| Area                | Portable starting point                                           | Unix-specific options                                                                                        |
+| ------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Files and paths     | [`std::fs`][c~std::fs~docs]↗ and [`std::path`][c~std::path~docs]↗ | `rustix` or `nix` for file descriptors and OS-specific operations                                            |
+| Processes and pipes | [`std::process`][c~std::process~docs]↗                            | `nix` for Unix process and descriptor APIs                                                                   |
+| Sockets             | [`std::net`][c~std::net~docs]↗                                    | [`socket2`][c~socket2~docs]↗ for lower-level socket options                                                  |
+| Terminal control    | `std::io`                                                         | [`crossterm`][c~crossterm~docs]↗ for cross-platform terminal control; `termion` for Unix terminal interfaces |
+| Time                | [`std::time`][c~std::time~docs]↗                                  | Use an OS interface only when a system clock or timer API is required                                        |
+| Users and groups    | No portable standard-library API                                  | `nix` where supported; use `libc` only when a safe wrapper does not expose the needed operation              |
+| Signals             | No portable standard-library API                                  | [`signal-hook`][c~signal-hook~docs]↗ or `nix`, according to the required signal behavior                     |
 
-- [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}}, [`std::path`][c~std::path~docs]↗{{hi:std::path}}.
+Raw [`libc`][c~libc~docs]↗ calls expose platform-specific details and unsafe contracts. Keep them behind a small interface, check the target-specific documentation, and propagate OS errors instead of assuming an operation is available on every Unix-like system.
 
-## Process Management: Forking, Spawning Processes, Signals, Pipes
+## Unix API Examples
 
-- `std::process`, [`nix`][c~nix~docs]↗{{hi:nix}}.
-
-## Networking (Sockets): TCP/IP, UDP, low-level Socket Programming
-
-- [`std::net`][c~std::net~docs]↗{{hi:std::net}}, [`socket2`][c~socket2~docs]↗{{hi:socket2}}.
-
-## System Calls: Directly Interacting with the Operating System
-
-- [`nix`][c~nix~docs]↗{{hi:nix}}, [`libc`][c~libc~docs]↗{{hi:libc}} (for raw system call access, use with caution).
-
-## Terminal Interaction: Working with TTYs, Terminal Attributes
-
-- [`termion`][c~termion~docs]↗{{hi:termion}}, [`crossterm`][c~crossterm~docs]↗{{hi:crossterm}}.
-
-## Time and Dates: Working with System Time, Timers
-
-- [`std::time`][c~std::time~docs]↗{{hi:std::time}}, [`chrono`][c~chrono~docs]↗{{hi:chrono}}.
-
-## User and Group Management: Getting User/Group Information
-
-- [`nix`][c~nix~docs]↗{{hi:nix}}.
-
-## Handling POSIX Signals
-
-- [`nix`][c~nix~docs]↗{{hi:nix}}, [`signal-hook`][c~signal-hook~docs]↗{{hi:signal-hook}}.
-
-## Code Examples
+The [[unix | Unix APIs]] chapter compares [`rustix`][c~rustix~docs]↗ and [`nix`][c~nix~docs]↗ and includes working examples.
 
 {{#include unix.incl.md}}
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
-FIXME
+- [[os | Operating System]].
+- [[linux | Linux APIs]].
+- [[macos | macOS APIs]].
+- [[windows | Windows APIs]].
+- [[low_level_system_calls | Low-level System Calls]].
+- [[generate_ffi_bindings | FFI Bindings]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/437)
-convert into table?
-
-- [extrasafe - Rust API for Unix][c~extrasafe~lib.rs]↗.
-
-</div>
