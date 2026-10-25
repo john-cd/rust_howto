@@ -25,12 +25,16 @@ afl-fuzzing = ["dep:afl"]
 afl = { version = "0.18.2", optional = true }
 approx = "0.5.1" # was pinned at 0.4.0
 arbitrary = { version = "1.5.0", features = ["derive"] }
+anyhow = "1.0.104"
+assert_cmd = "2.2.2" # Test command-line programs.
 bolero = "0.13.4"
 clap = { version = "4.6.7", features = ["derive"] }
 fake = { version = "5.1.0", features = ["derive"] }
 faux = "0.1.13"
 insta = "1.49.0"
+lcov = "0.8.2" # Parse LCOV coverage reports.
 mockall = "0.14.0"
+predicates = "3.1.4"
 proptest = "1.12.0"
 rstest = "0.26.1"
 serial_test = "3.2.0"
@@ -57,6 +61,11 @@ test = true
 [[example]]
 name = "assertions"
 path = "examples/assertions/main.rs"
+test = true
+
+[[example]]
+name = "cli_testing"
+path = "examples/cli_testing/main.rs"
 test = true
 
 [[example]]

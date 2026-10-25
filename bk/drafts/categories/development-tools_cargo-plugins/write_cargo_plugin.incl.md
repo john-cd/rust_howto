@@ -1,0 +1,5 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
+| Recipe | Crates | Categories |
+|--------|--------|------------|
+| [Write a Cargo Subcommand][ex~development-tools_cargo-plugins~write-cargo-subcommand] | [![clap-cargo][c~clap-cargo~docs~badge]][c~clap-cargo~docs] [![cargo_metadata][c~cargo_metadata~docs~badge]][c~cargo_metadata~docs] | [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins] |

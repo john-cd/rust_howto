@@ -122,6 +122,7 @@
   - [Improving Performance](categories/development-tools_cargo-plugins/performance.md)
   - [Auditing](categories/development-tools_cargo-plugins/auditing.md)
   - [Maintaining](categories/development-tools_cargo-plugins/maintaining.md)
+  - [Write a Cargo Plugin](categories/development-tools_cargo-plugins/write_cargo_plugin.md)
 
 - [Development Tools - Debugging, Logging](categories/development-tools_debugging/index.md)
   - [Debuggers](categories/development-tools_debugging/debugger.md)

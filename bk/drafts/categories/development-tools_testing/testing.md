@@ -79,6 +79,16 @@ With `#[tokio::test(start_paused = true)]` (the `test-util` feature of [`tokio`]
 {{#include ../../../crates/cats/development_tools_testing/examples/test_techniques/paused_time.rs:example}}
 ```
 
+## Test a Command-line Program with `assert_cmd` {#cli-testing}
+
+[![assert_cmd][c~assert_cmd~docs~badge]][c~assert_cmd~docs]{{hi:assert_cmd}} [![assert_cmd~crates.io][c~assert_cmd~crates.io~badge]][c~assert_cmd~crates.io] [![assert_cmd~repo][c~assert_cmd~repo~badge]][c~assert_cmd~repo] [![assert_cmd~lib.rs][c~assert_cmd~lib.rs~badge]][c~assert_cmd~lib.rs]  [![predicates][c~predicates~docs~badge]][c~predicates~docs]{{hi:predicates}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]
+
+[`assert_cmd`][c~assert_cmd~docs]↗{{hi:assert_cmd}} runs a program and asserts on its exit status, `stdout` and `stderr`, using the [`predicates`][c~predicates~docs]↗ crate for matching. In an integration test (`tests/*.rs`) of a package that builds a binary, `Command::cargo_bin("my-tool")` finds the freshly built executable; the example runs `rustc` so that it is self-contained. To compare whole outputs, consider `snapbox` or `trycmd`, which keep expected output in snapshot files.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/development_tools_testing/examples/cli_testing/cli_test.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 FIXME
