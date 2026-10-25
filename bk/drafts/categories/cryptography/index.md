@@ -4,95 +4,41 @@
 
 [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
 
-Cryptography protects data from unauthorized access, ensuring confidentiality, integrity, authenticity, and non-repudiation. Cryptography is used to secure emails, messages, and data transfers to protect them from eavesdropping. Data Integrity ensures that data has not been tampered with. Authentication means verifying the identity of users and devices.
+Cryptography provides tools for confidentiality, integrity, and authentication. A cryptographic hash can detect changes when its expected value is trusted, but it does not authenticate a sender by itself. A digital signature can prove that a message was signed with a particular private key; linking that key to a person or organization requires a separate trust model.
 
-This section covers:
-
-- Encryption: The process of converting plaintext into ciphertext using an algorithm and a key. Only someone with the correct key can decrypt the ciphertext back into plaintext.
-- Hashing: A method of transforming data into a fixed-size value, which is unique to the original data. Hashes are used for verifying data integrity.
-- Digital Signatures: A cryptographic technique that uses asymmetric keys to verify the authenticity and integrity of a message or document.
-
-It covers both Symmetric Cryptography and Asymmetric Cryptography. The former uses the same key for both encryption and decryption. It's fast and efficient but requires secure key distribution. The latter uses a pair of keys (public and private). The public key is shared openly, while the private key is kept secret. This method enhances security but is slower than symmetric cryptography.
+Prefer high-level, well-reviewed APIs and established protocols; do not implement cryptographic primitives yourself. Check the security and maintenance status of the specific crate and algorithm you choose, and review [RustSec advisories][rustsec~advisories]. The [RustCrypto project][rustcrypto~github] provides focused crates for many common algorithms and formats; `ring` and `aws-lc-rs` are other options, and `rustls` is a TLS implementation. `sodiumoxide` is deprecated; for its style of API, consider [`dryoc`][c~dryoc~docs], or use the relevant RustCrypto crates directly.
 
 ## Encryption
 
-Transforming plaintext into ciphertext for confidentiality.
-
-- Types: Symmetric (shared key) vs. Asymmetric (key pair).
-- Algorithms: AES, RSA.
-- Purpose: Confidentiality.
-
-{{#include encryption.incl.md}}
+Use authenticated encryption with a shared key for most application data. Public-key cryptography is usually used to establish or wrap keys rather than encrypting large messages directly. See [Encryption](encryption.md) for algorithms and APIs such as `aes-gcm`, `chacha20poly1305`, and legacy `rsa`.
 
 ## AEAD (Authenticated Encryption with Associated Data)
 
-Encryption scheme providing both confidentiality and authentication.
-
-- Associated Data: Additional data bound to the ciphertext but not encrypted.
-- Algorithms: AES-GCM, ChaCha20-Poly1305.
-- Purpose: Confidentiality and authentication.
-
-{{#include aead.incl.md}}
+Authenticated encryption with associated data (AEAD) protects a message's confidentiality and integrity while allowing unencrypted metadata to be authenticated. See [AEAD](aead.md) for `aes-gcm`, `aes-gcm-siv`, and `chacha20poly1305` recipes; never reuse a nonce with the same key.
 
 ## Password Hashing
 
-One-way hashing specifically to protect passwords.
-
-- Goals: Resistance to brute-force, rainbow table attacks.
-- Algorithms: bcrypt, Argon2, scrypt; salting (adding a unique random value before hashing).
-- Purpose: Password protection.
-
-{{#include password_hashing.incl.md}}
+Store a slow, salted password hash rather than a plaintext or fast general-purpose hash. See [Password Hashing](password_hashing.md) for Argon2id with the `argon2` and `password-hash` APIs, plus `scrypt`, `bcrypt`, and PBKDF2 compatibility options.
 
 ## HMAC (Hash-based Message Authentication Code)
 
-A Message Authentication Code (MAC) is a cryptographic checksum using a shared secret key.
-HMAC (Hash-based MAC) uses a hash function with a secret key.
-
-- Purpose: Integrity and authentication (but not non-repudiation).
-
-{{#include hmac.incl.md}}
+Use a message authentication code when parties share a secret and need integrity and authentication. See [HMAC](hmac.md) for the `hmac` and `ring` APIs. Because both parties hold the key, HMAC does not provide public verifiability.
 
 ## Digital Signatures
 
-Cryptographic mechanism for authentication, integrity, and non-repudiation.
-Digital signatures are used to sign certificates and other documents.
-
-- Process: Signing with private key, verifying with public key.
-- Algorithms: RSA, ECDSA, Ed25519.
-- Purpose: Authentication, message integrity, non-repudiation.
-
-{{#include signature.incl.md}}
+Sign with a private key and verify with the corresponding public key. See [Digital Signatures](signature.md) for Ed25519 (`ed25519-dalek`), P-256 ECDSA, RSA compatibility, and the `signature` traits. Protect private keys and choose an identity and key-distribution scheme separately.
 
 ## Digital Certificates (X.509)
 
-Digital documents binding a public key to an identity.
-
-- Components: Subject, issuer, public key, validity period, signature.
-- Certificate Authorities (CAs): Trusted third parties.
-- Purpose: Identity verification.
-
-{{#include certificates.incl.md}}
+X.509 certificates bind a public key to claims that a verifier evaluates under a trust policy. See [Digital Certificates](certificates.md) for DER, PEM, PKCS#8, and X.509 formats using crates such as `x509-cert`, `der`, and `pem-rfc7468`.
 
 ## TLS (Transport Layer Security)
 
-Cryptographic protocol for secure communication over a network.
-
-- Handshake: Establishing a secure connection.
-- Encryption: TLS uses encryption (often AEAD) to protect data in transit.
-- Authentication: Verifying server (and optionally client) identity.
-- Certificates: Used for authentication.
-- Purpose: Secure communication.
-
-{{#include tls.incl.md}}
+Use a maintained TLS implementation instead of assembling a protocol from primitives. See [TLS](tls.md) for `rustls` with `ring` or `aws-lc-rs` providers, and `native-tls` when the operating system's TLS stack is needed.
 
 ## Cryptographic Utilities
 
-{{#include cryptography_utilities.incl.md}}
+See [Cryptographic Utilities](cryptography_utilities.md) for operating-system randomness (`getrandom`), constant-time helpers (`subtle`), and clearing sensitive values (`zeroize`).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[cryptography: review](https://github.com/john-cd/rust_howto/issues/274)
-</div>

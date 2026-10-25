@@ -5,6 +5,10 @@
 [rfc~8439]: https://www.rfc-editor.org/rfc/rfc8439.html
 
 [c~aws-lc-rs~docs]: https://docs.rs/aws-lc-rs
+[c~dryoc~docs]: https://docs.rs/dryoc
+
+[rustcrypto~github]: https://github.com/RustCrypto
+[rustsec~advisories]: https://rustsec.org/
 
 [ex~cryptography~aes-gcm-siv]: aead.md#aes-gcm-siv
 [ex~cryptography~aes-gcm]: aead.md#aes-gcm
