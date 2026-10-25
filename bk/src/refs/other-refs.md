@@ -611,7 +611,7 @@
 [book~unsafe-code-guidelines]: https://rust-lang.github.io/unsafe-code-guidelines
 [book~unstable-book]: https://doc.rust-lang.org/unstable-book
 [book~unstable-book~sanitizer]: https://doc.rust-lang.org/unstable-book/compiler-flags/sanitizer.html
-[book~wasm-bindgen]: https://rustwasm.github.io/docs/wasm-bindgen
+[book~wasm-bindgen]: https://wasm-bindgen.github.io/wasm-bindgen/
 [book~writing-interpreters-in-rust]: https://rust-hosted-langs.github.io/book
 [book~writing-interpreters-in-rust~repo]: https://github.com/rust-hosted-langs/book
 [book~yarr.fyi]: https://yarr.fyi/introduction
@@ -1427,6 +1427,7 @@
 [servo~website]: https://servo.org
 [shield-io~website]: https://shields.io
 [shopify~website]: https://shopify.com
+[shopify~rust~blog]: https://shopify.engineering/shopify-rust-systems-programming
 [shuttle-dev~docs]: https://docs.shuttle.dev/introduction/welcome
 [shuttle-dev~website]: https://shuttle.dev
 [shuttle-examples~repo]: https://github.com/shuttle-hq/shuttle-examples

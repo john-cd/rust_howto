@@ -67,10 +67,10 @@ The books found on [`rust-lang.org`][rust-lang~website]↗ and friends are liste
 - [Refactoring to Rust][book~Refactoring-Rust-Lily-Mara]↗ by Lily Mara, Joel Holmes. [9781617299018][ISBN~9781617299018]↗.
 - [Rust Brain Teasers][book~rust-brain-teasers]: Exercise Your Mind, 1st Edition, by Herbert Wolverson. [978-1680509557][ISBN~978-1680509557]↗.
 - [Rust Crash Course][book~rust-crash-course]↗: Build High-Performance, Efficient and Productive Software with the Power of Next-Generation Programming Skills, by Abhishek Kumar. [978-9355510952][ISBN~978-9355510952]↗.
-- [Rust Essentials][book~Rust-Essentials-writing-concurrent-applications-dp-1788390016]↗  2nd ed. [978-1788390019][ISBN~978-1788390019]↗.
+- [Rust Essentials][book~Rust-Essentials-writing-concurrent-applications-dp-1788390016]↗ 2nd ed. [978-1788390019][ISBN~978-1788390019]↗.
 - [Rust for Rustaceans][book~Rust-Rustaceans-Programming-Experienced-Developers]↗: Idiomatic Programming for Experienced Developers, by Jon Gjengset. [978-1718501850][ISBN~978-1718501850]↗.
 - [Rust from the Ground Up][book~rust-from-the-ground-up]↗.
-It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat`, `head`, `wc`...).
+  It teaches Rust by implementing a classic Unix CLI utility in each chapter (`cat`, `head`, `wc`...).
 - [Rust in Action][book~Rust-Action-Tim-McNamara]↗: Systems Programming Concepts and Techniques, by Tim McNamara. [978-1617294556][ISBN~978-1617294556]↗.
 - [Rust Programming by Example][book~rust-programming-by-example]↗: Enter the world of Rust by building engaging, concurrent, reactive, and robust applications, by Guillaume Gomez, Antoni Boucher (Packt). [978-1788390637][ISBN~978-1788390637]↗.
 - The [Rust Programming Language][book~rust-programming-language]↗, 2nd Edition, by Steve Klabnik and Carol Nichols. [978-1718503106][ISBN~978-1718503106]↗.
@@ -195,7 +195,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~repo]↗, a curated l
 
 ### Webassembly (WASM) {#wasm}
 
-- [Rust and Webassembly][book~rustwasm]↗: this small book describes how to use Rust and WebAssembly together. Note: the `rustwasm` GitHub organization that hosts it was archived in 2025, so parts of the book may be out of date.{{hi:WASM}}
+- [Rust and WebAssembly][book~rustwasm]↗: this small book describes how to use Rust and WebAssembly together. The `rustwasm` GitHub organization was archived in 2025, so parts of the book may be out of date. For current `wasm-bindgen` guidance, see the [guide maintained in the `wasm-bindgen` organization][book~wasm-bindgen]↗. [MDN's Rust-to-WebAssembly guide][mozilla~compiling-from-rust-to-webassembly~website]↗ provides another browser-focused introduction.{{hi:WASM}}
 - [Programming WebAssembly with Rust][book~Programming-WebAssembly-Rust-Development-Applications]↗: Unified Development for Web, Mobile, and Embedded Applications, 1st Edition, by Kevin Hoffman. [978-1680506365][ISBN~978-1680506365]↗.
 
 For convenience, this page includes a number of links to the websites of publishers and book merchants. It is not an endorsement of these particular retailers or publishers. Click on the ISBN number link to gain access to a Wikipedia page with links to a variety of catalogs, ebook databases, and book sellers to choose from.
@@ -209,5 +209,5 @@ For convenience, this page includes a number of links to the websites of publish
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
+  [accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
 </div>
