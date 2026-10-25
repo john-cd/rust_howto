@@ -7,7 +7,7 @@
 //!
 //! Add to your `Cargo.toml`:
 //! ```toml
-//! rustix = { version = "0.38.42", features = ["fs"] }
+//! rustix = { version = "1.1", features = ["fs"] }
 //! ```
 
 #![cfg(target_family = "unix")]
