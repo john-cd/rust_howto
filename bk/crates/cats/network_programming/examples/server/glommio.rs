@@ -46,11 +46,15 @@ fn http_response() -> String {
 
 /// Accepts connections and dispatches each request on the local executor.
 async fn serve() -> anyhow::Result<()> {
-    let listener = TcpListener::bind("127.0.0.1:8080")?;
+    let listener = TcpListener::bind("127.0.0.1:8080")
+        .map_err(|e| anyhow::anyhow!("failed to bind: {e}"))?;
     println!("Glommio server listening on http://127.0.0.1:8080");
 
     loop {
-        let stream = listener.accept().await?;
+        let stream = listener
+            .accept()
+            .await
+            .map_err(|e| anyhow::anyhow!("failed to accept: {e}"))?;
         glommio::spawn_local(async move {
             if let Err(error) = handle_connection(stream).await {
                 eprintln!("failed to serve HTTP request: {error:#}");
@@ -63,9 +67,10 @@ async fn serve() -> anyhow::Result<()> {
 /// Starts the Glommio executor and serves HTTP requests until the process
 /// stops.
 fn main() -> anyhow::Result<()> {
-    let executor = LocalExecutorBuilder::default()
-        .spawn(serve)
-        .map_err(|()| anyhow::anyhow!("failed to start Glommio executor"))?;
+    let executor =
+        LocalExecutorBuilder::default().spawn(serve).map_err(|e| {
+            anyhow::anyhow!("failed to start Glommio executor: {e}")
+        })?;
     executor
         .join()
         .map_err(|_| anyhow::anyhow!("Glommio executor thread panicked"))??;
