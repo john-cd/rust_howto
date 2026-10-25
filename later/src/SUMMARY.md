@@ -105,6 +105,7 @@
   - [Run a model trained elsewhere (ONNX)](other/machine-learning/inference.md)
   - [Classical machine learning](other/machine-learning/classical_ml.md)
   - [Forecasting](other/machine-learning/forecasting.md)
+
 - [GPU programming](other/gpu/index.md)
   - [GPU](other/gpu/gpu.md)
 
@@ -157,7 +158,7 @@
   - [SVG Rendering](categories/rendering/svg_rendering.md)
 
 - [Rendering - data formats](categories/rendering_data-formats/index.md)
-  - [Data formats](categories/rendering_data-formats/data_formats.md)
+  - [3D model formats](categories/rendering_data-formats/3d_model_formats.md)
 
 - [Rendering engines](categories/rendering_engine/index.md)
   - [Rendering engines](categories/rendering_engine/rendering_engines.md)

@@ -2,9 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-mod data_formats;
+mod gltf_example;
 
-/// Runs the data formats example.
-fn main() {
-    data_formats::run();
+/// Runs the glTF example.
+fn main() -> Result<(), ::gltf::Error> {
+    gltf_example::run()
 }
