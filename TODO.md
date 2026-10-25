@@ -234,6 +234,20 @@ List B completion update (2026-10-25):
 - [#327](https://github.com/john-cd/rust_howto/issues/327) — **P4** — Write the macro compilation chapter.
 - [#331](https://github.com/john-cd/rust_howto/issues/331) — **P4** — Write the procedural macros chapter.
 
+List C implementation update (2026-10-25):
+
+- #787: headless Slint counter and testing-backend test in [6a38d606d](https://github.com/john-cd/rust_howto/commit/6a38d606d); focused GUI tests and strict Clippy passed.
+- #776: headless egui controls in [fa3c726f3](https://github.com/john-cd/rust_howto/commit/fa3c726f3); focused GUI tests and strict Clippy passed.
+- #607: GPU guidance for wgpu, rust-gpu, CUDA, and OpenCL in [797887d91](https://github.com/john-cd/rust_howto/commit/797887d91).
+- #415: audio recipes and resampling in [8417f001f](https://github.com/john-cd/rust_howto/commit/8417f001f), formatted in [d5d4d665a](https://github.com/john-cd/rust_howto/commit/d5d4d665a); focused tests and Clippy passed.
+- #324: FFI chapter and examples in [05fdc16c7](https://github.com/john-cd/rust_howto/commit/05fdc16c7); `just bb` remains blocked by the Windows NASM/AWS-LC tools build.
+- #345: Embassy tasks, timers, channels, HALs, and target setup in [23d9c5791](https://github.com/john-cd/rust_howto/commit/23d9c5791); the example is explicitly target-only.
+- #346: embedded requirements and learning path in [fa75a635d](https://github.com/john-cd/rust_howto/commit/fa75a635d).
+- #327: Watt's two-crate Wasm workflow and build-time alternatives in [a59877582](https://github.com/john-cd/rust_howto/commit/a59877582); removed the non-self-contained demo per [#744](https://github.com/john-cd/rust_howto/issues/744).
+- #331: procedural-macro authoring path in [86e2e8326](https://github.com/john-cd/rust_howto/commit/86e2e8326); five example tests and strict Clippy passed.
+- #42: offline crate-index examples and chapter in [2f7a65e02](https://github.com/john-cd/rust_howto/commit/2f7a65e02); four tests, strict Clippy, and the example build passed after rebasing.
+- Nightly rustfmt, dprint, spelling, changed-manifest sorting, generated dependency-reference freshness, and `git diff --check` passed. The full `just bb` gate remains blocked by missing NASM/AWS-LC support; the Windows checkout has no `refdefs check` recipe, so the full local-reference scan remains unverified. Keep List C issues open until the required book and reference checks pass.
+
 ### List 34 — Web, auth, packaging and tooling pages (Codex D)
 
 - [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Docs integrated as `3acb2a03c`; Linux validation remains open (no local Linux runner).
