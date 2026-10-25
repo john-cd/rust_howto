@@ -6,7 +6,7 @@
 //! - Simple function memoization with `#[cached]`,
 //! - Advanced caching with custom configuration options.
 //!
-//! Remember to add `cached = "0.55.1"` or latest to your Cargo.toml.
+//! Remember to add `cached = "4.0.3"` or latest to your Cargo.toml.
 
 use cached::proc_macro::cached;
 
@@ -25,11 +25,11 @@ fn fibonacci(n: u64) -> u64 {
 /// The cache stores at most 50 entries and refreshes its 60-second TTL on hits.
 #[cached(
     // Max cache size:
-    size = 50,
+    max_size = 50,
     // Set a time-to-live (TTL) for cached entries:
-    time = 60,
+    ttl_secs = 60,
     // Specify whether to refresh the TTL on cache hits:
-    time_refresh = true,
+    refresh = true,
  )]
 fn fetch_data(key: usize) -> String {
     println!("Expensive data fetching simulated here.");
@@ -50,7 +50,7 @@ fn main() {
     // Check the underlying cache:
     {
         use cached::Cached as _;
-        let cache = FIBONACCI.lock();
+        let cache = FIBONACCI.write();
         println!("misses: {:?}", cache.cache_misses());
         assert_eq!(cache.cache_misses(), Some(11));
         // Make sure the lock is dropped.
