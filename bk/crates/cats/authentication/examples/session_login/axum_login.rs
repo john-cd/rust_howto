@@ -81,9 +81,9 @@ impl Backend {
 }
 
 impl AuthnBackend for Backend {
-    type User = User;
     type Credentials = Credentials;
     type Error = Infallible;
+    type User = User;
 
     async fn authenticate(
         &self,
