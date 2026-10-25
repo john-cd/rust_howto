@@ -5,8 +5,8 @@
 [ex~text-processing~bstr]: other_strings.md#bstr
 [ex~text-processing~case-conversion]: string_manipulation.md#case-conversion
 [ex~text-processing~collect-unicode-graphemes]: unicode.md#collect-unicode-graphemes
-[ex~text-processing~constcat]: string_concat.md#compile-time
 [ex~text-processing~compact_str]: other_strings.md#compact_str
+[ex~text-processing~constcat]: string_concat.md#compile-time
 [ex~text-processing~cstring]: other_strings.md#cstring
 [ex~text-processing~diff]: diffing.md#diff
 [ex~text-processing~extract-a-list-of-unique-hashtags-from-a-text]: regex.md#extract-a-list-of-unique-hashtags-from-a-text
@@ -22,6 +22,7 @@
 [ex~text-processing~osstring]: other_strings.md#osstring
 [ex~text-processing~replace-all-occurrences-of-one-text-pattern-with-another-pattern]: regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
 [ex~text-processing~similar]: diffing.md#similar
+[ex~text-processing~slug]: string_manipulation.md#slug
 [ex~text-processing~string-concat]: string_concat.md#string-concat
 [ex~text-processing~strsim]: string_search.md#strsim
 [ex~text-processing~textwrap]: string_manipulation.md#textwrap

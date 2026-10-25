@@ -8,3 +8,5 @@
 | [Encode Form Data][ex~encoding~url] | [![url][c~url~docs~badge]][c~url~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
 | [Encode and Decode Hexadecimal][ex~encoding~data-encoding] | [![data-encoding][c~data-encoding~docs~badge]][c~data-encoding~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
 | [Encode and Decode with `base64`][ex~encoding~base64] | [![base64][c~base64~docs~badge]][c~base64~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
+| [Encode and Decode Hexadecimal with `hex`][ex~encoding~hex] | [![hex][c~hex~docs~badge]][c~hex~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
+| [Encode Forms and Path Segments with `serde_urlencoded` and `urlencoding`][ex~encoding~form-urlencoded] | [![serde_urlencoded][c~serde_urlencoded~docs~badge]][c~serde_urlencoded~docs] [![urlencoding][c~urlencoding~docs~badge]][c~urlencoding~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |

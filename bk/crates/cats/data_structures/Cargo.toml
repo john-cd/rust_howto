@@ -45,6 +45,7 @@ slotmap = "1.1.1"
 smallvec = "1.16.3" # alpha
 tinyvec = { version = "1.13.3", features = ["alloc"] }
 ulid = "1.2.1"
+short-uuid = "0.2.1" # Compact, URL-safe UUIDs.
 uuid = { version = "1.28.0", features = [
     # Lets us generate random UUIDs.
     "v4",

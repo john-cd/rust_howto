@@ -5,6 +5,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod short_uuid;
 mod ulid;
 mod uuid;
 
@@ -19,6 +20,9 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `short_uuid` example.
+    #[command(name = "short_uuid")]
+    ShortUuid,
     /// Runs the `ulid` example.
     #[command(name = "ulid")]
     Ulid,
@@ -33,6 +37,11 @@ fn main() {
 
     if let Some(command) = cli.command {
         match command {
+            Commands::ShortUuid => {
+                if let Err(e) = short_uuid::run() {
+                    eprintln!("{e}");
+                }
+            }
             Commands::Ulid => {
                 ulid::run();
             }

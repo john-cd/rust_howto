@@ -1,8 +1,14 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
+[c~nix::sys::signal::killpg~docs]: https://docs.rs/nix/latest/nix/sys/signal/fn.killpg.html
+[c~tokio::signal::ctrl_c~docs]: https://docs.rs/tokio/latest/tokio/signal/fn.ctrl_c.html
 [ex~os~bottlerocket]: rust_os.md#bottlerocket
 [ex~os~call-libc]: low_level_system_calls.md#call-libc
 [ex~os~continuously-process-child-process-outputs]: external_commands.md#continuously-process-child-process-outputs
+[ex~os~ctrlc]: signals.md#ctrlc
+[ex~os~job-object]: process_management.md#job-object
+[ex~os~kill-a-process-group]: process_management.md#kill-a-process-group
+[ex~os~kill-guard]: process_management.md#kill-guard
 [ex~os~read-environment-variable]: external_commands.md#read-environment-variable
 [ex~os~redirect-both-stdout-and-stderr-of-child-process-to-the-same-file]: external_commands.md#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file
 [ex~os~redox]: rust_os.md#redox
@@ -10,8 +16,11 @@
 [ex~os~run-an-external-command-passing-stdin-and-check-for-error-code]: external_commands.md#run-an-external-command-passing-stdin-and-check-for-error-code
 [ex~os~run-child-processes-using-duct]: external_commands.md#run-child-processes-using-duct
 [ex~os~run-piped-external-commands]: external_commands.md#run-piped-external-commands
-[ex~os~xshell]: external_commands.md#xshell
+[ex~os~shlex]: external_commands.md#shlex
+[ex~os~timeout-kill]: process_management.md#timeout-kill
+[ex~os~tokio-signal]: signals.md#tokio-signal
 [ex~os~which]: external_commands.md#which
+[ex~os~xshell]: external_commands.md#xshell
 [p~functions]: ../../language/functions.md
 [p~log]: ../development-tools_debugging/log.md
 [p~unix]: # "../os_unix-apis/unix.md"

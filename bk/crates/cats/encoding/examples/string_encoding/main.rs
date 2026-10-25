@@ -6,7 +6,9 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod base64;
+mod form_urlencoded;
 mod hex;
+mod hex_crate;
 mod percent_encode;
 mod percent_encoding;
 mod url_encode;
@@ -25,9 +27,15 @@ enum Commands {
     /// Runs the `base64` example.
     #[command(name = "base64")]
     Base64,
+    /// Runs the `form_urlencoded` example.
+    #[command(name = "form_urlencoded")]
+    FormUrlencoded,
     /// Runs the `hex` example.
     #[command(name = "hex")]
     Hex,
+    /// Runs the `hex_crate` example.
+    #[command(name = "hex_crate")]
+    HexCrate,
     /// Runs the `percent_encode` example.
     #[command(name = "percent_encode")]
     PercentEncode,
@@ -47,6 +55,12 @@ fn main() -> anyhow::Result<()> {
         match command {
             Commands::Base64 => {
                 base64::run()?;
+            }
+            Commands::FormUrlencoded => {
+                form_urlencoded::run()?;
+            }
+            Commands::HexCrate => {
+                hex_crate::run()?;
             }
             Commands::Hex => {
                 hex::run()?;

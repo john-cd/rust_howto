@@ -12,6 +12,16 @@ You can get file metadata in Rust using the `fs::metadata` function from the sta
 {{#include ../../../crates/cats/filesystem/examples/metadata/metadata.rs:example}}
 ```
 
+## Detect a File's Type from its Content {#infer}
+
+[![infer][c~infer~docs~badge]][c~infer~docs]{{hi:infer}} [![infer~crates.io][c~infer~crates.io~badge]][c~infer~crates.io] [![infer~repo][c~infer~repo~badge]][c~infer~repo] [![infer~lib.rs][c~infer~lib.rs~badge]][c~infer~lib.rs] [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+
+A file extension can be missing or wrong. [`infer`][c~infer~docs]↗{{hi:infer}} inspects the first bytes of a file (its "magic number") and returns its type and MIME type. `infer::get` works on bytes in memory, `infer::get_from_path` reads the start of a file, and helpers like `infer::is_image` match a whole family of types. Content that has no magic number, such as plain text, is not recognized.
+
+```rust,editable
+{{#include ../../../crates/cats/filesystem/examples/metadata/infer.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[read_write | Reading and Writing Files]].

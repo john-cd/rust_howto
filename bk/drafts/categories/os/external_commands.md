@@ -106,6 +106,18 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 {{#include ../../../crates/cats/os/examples/external_commands/xshell_example.rs:example}}
 ```
 
+## Split and Quote Command Lines with `shlex` {#shlex}
+
+[![shlex][c~shlex~docs~badge]][c~shlex~docs]{{hi:shlex}} [![shlex~crates.io][c~shlex~crates.io~badge]][c~shlex~crates.io] [![shlex~repo][c~shlex~repo~badge]][c~shlex~repo] [![shlex~lib.rs][c~shlex~lib.rs~badge]][c~shlex~lib.rs] [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+
+[`shlex`][c~shlex~docs]↗ splits a string into words the way a POSIX shell would (`shlex::split`), and quotes a word so that it can be pasted into a shell (`shlex::try_quote`). Use it to parse a command line you receive as a string, or to print a copy-pasteable command in logs and error messages. `try_quote` returns an error for input it cannot quote, such as a NUL byte.
+
+Quoting for display is not a reason to run a command through a shell: pass each argument to `Command::args` instead (see [[process_management | Process Management]]).
+
+```rust,editable
+{{#include ../../../crates/cats/os/examples/external_commands/shlex_example.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[command-line-interface | Command Line Interface]].
