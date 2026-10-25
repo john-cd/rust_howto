@@ -20,7 +20,7 @@
 //! Example adapted from <https://lib.rs/crates/postcard>.
 
 use postcard::from_bytes;
-use postcard::to_stdvec;
+use postcard::to_allocvec;
 use serde::Deserialize;
 use serde::Serialize;
 
@@ -40,7 +40,7 @@ fn main() {
 
     let bytes = [0x01, 0x10, 0x02, 0x20];
 
-    let output = to_stdvec(&RefStruct {
+    let output = to_allocvec(&RefStruct {
         bytes: &bytes,
         str_s: message,
     })
@@ -79,5 +79,32 @@ mod tests {
     #[test]
     fn test_main() {
         main();
+    }
+
+    /// `to_slice` writes into a caller-provided buffer: no allocation, which
+    /// is what `no_std` targets need.
+    #[test]
+    fn to_slice_encodes_into_a_fixed_buffer() {
+        let mut buf = [0_u8; 16];
+        let used = postcard::to_slice(&(1_u8, "hi"), &mut buf)
+            .expect("the buffer is large enough");
+        assert_eq!(used, &[1, 2, b'h', b'i']);
+    }
+
+    #[test]
+    fn a_buffer_that_is_too_small_is_an_error() {
+        let mut buf = [0_u8; 2];
+        assert!(postcard::to_slice(&(1_u8, "hi"), &mut buf).is_err());
+    }
+
+    #[test]
+    fn truncated_input_is_an_error() {
+        let output = to_allocvec(&RefStruct {
+            bytes: &[1, 2],
+            str_s: "abc",
+        })
+        .expect("failed to serialize");
+        let truncated = &output[..output.len() - 1];
+        assert!(from_bytes::<RefStruct>(truncated).is_err());
     }
 }

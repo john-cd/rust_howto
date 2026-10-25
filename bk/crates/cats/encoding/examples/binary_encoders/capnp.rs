@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+#![allow(clippy::needless_doctest_main)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
@@ -36,6 +37,12 @@ use capnp::message::ReaderOptions;
 use capnp::serialize;
 
 /// Define the module for the generated code.
+#[allow(
+    clippy::all,
+    clippy::pedantic,
+    clippy::nursery,
+    reason = "generated code"
+)]
 pub mod foo_capnp {
     // The `capnpc` compiler generates a file named [filename]_capnp.rs.
     include!(concat!(env!("OUT_DIR"), "/foo_capnp.rs"));
@@ -89,5 +96,34 @@ mod tests {
     #[test]
     fn capnp_round_trip_preserves_the_message() -> anyhow::Result<()> {
         main()
+    }
+
+    /// Reading a message that is cut short must fail rather than panic.
+    #[test]
+    fn truncated_message_is_an_error() -> anyhow::Result<()> {
+        let mut message = Builder::new_default();
+        message
+            .init_root::<foo_capnp::my_struct::Builder>()
+            .set_value(7);
+        let mut bytes = Vec::new();
+        serialize::write_message(&mut bytes, &message)?;
+
+        let mut cursor = std::io::Cursor::new(&bytes[..bytes.len() - 4]);
+        assert!(
+            serialize::read_message(&mut cursor, ReaderOptions::new()).is_err()
+        );
+        Ok(())
+    }
+
+    /// Unset fields read back as the schema default.
+    #[test]
+    fn unset_fields_read_back_as_defaults() -> anyhow::Result<()> {
+        let mut message = Builder::new_default();
+        message.init_root::<foo_capnp::my_struct::Builder>();
+        let reader =
+            message.get_root_as_reader::<foo_capnp::my_struct::Reader>()?;
+        assert_eq!(reader.get_name()?, "");
+        assert_eq!(reader.get_value(), 0);
+        Ok(())
     }
 }

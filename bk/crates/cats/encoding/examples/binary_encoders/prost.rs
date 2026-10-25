@@ -64,4 +64,36 @@ mod tests {
     fn prost_round_trip_preserves_the_person_message() -> anyhow::Result<()> {
         main()
     }
+
+    /// Pins the wire format: field 1 (a string) then field 2 (a varint).
+    #[test]
+    fn encoding_matches_the_protobuf_wire_format() {
+        let person = Person {
+            name: "Alice".to_owned(),
+            age: 30,
+        };
+        assert_eq!(
+            person.encode_to_vec(),
+            [0x0a, 5, b'A', b'l', b'i', b'c', b'e', 0x10, 30]
+        );
+    }
+
+    /// Proto3 omits fields that hold their default value.
+    #[test]
+    fn default_values_are_not_encoded() {
+        assert!(Person::default().encode_to_vec().is_empty());
+        let decoded =
+            Person::decode(&[][..]).expect("an empty buffer is valid");
+        assert_eq!(decoded, Person::default());
+    }
+
+    #[test]
+    fn truncated_input_is_an_error() {
+        let bytes = Person {
+            name: "Alice".to_owned(),
+            age: 30,
+        }
+        .encode_to_vec();
+        assert!(Person::decode(&bytes[..4]).is_err());
+    }
 }
