@@ -6,7 +6,7 @@ Track tasks, priorities, and progress in [GitHub Issues](https://github.com/john
 
 ## IN-PROGRESS
 
-Snapshot from active Codex issue threads and live GitHub issue states on 2026-10-24. List 25 was subsequently completed and moved out of the active list; the other entries retain the state recorded at the original check. Update this inventory as issues close or their work is integrated.
+Snapshot from active Codex issue threads and live GitHub issue states on 2026-10-24. List 25 is complete; List 27 now contains only #810, pending native Linux validation. Other entries retain the state recorded at the original check. Update this inventory as issues close or their work is integrated.
 
 ### List 26 — P3
 
@@ -19,16 +19,7 @@ Completed and closed: [#1896](https://github.com/john-cd/rust_howto/issues/1896)
 
 ### List 27 — P3
 
-- [#1182](https://github.com/john-cd/rust_howto/issues/1182) — Write the TLS cryptography chapter.
-- [#923](https://github.com/john-cd/rust_howto/issues/923) — Review the cross-compiling chapter.
-- [#920](https://github.com/john-cd/rust_howto/issues/920) — Align the versioning chapter with the introduction.
-- [#906](https://github.com/john-cd/rust_howto/issues/906) — Review the async utilities chapter.
-- [#870](https://github.com/john-cd/rust_howto/issues/870) — Complete the tonic gRPC integration test.
-- [#868](https://github.com/john-cd/rust_howto/issues/868) — Finish the Loco example.
-- [#827](https://github.com/john-cd/rust_howto/issues/827) — Finish the tree-sitter example.
-- [#810](https://github.com/john-cd/rust_howto/issues/810) — Finish the Glommio server example.
-- [#734](https://github.com/john-cd/rust_howto/issues/734) — Finish the OpenTelemetry example.
-- [#733](https://github.com/john-cd/rust_howto/issues/733) — Finish the OpenObserve example.
+- [#810](https://github.com/john-cd/rust_howto/issues/810) — Run the Glommio example's tests and strict Clippy on native Linux, then record the results and close the issue. The implementation is integrated; this Windows session could not start WSL (`Wsl/E_ACCESSDENIED`).
 
 List 28 is complete and excluded from this active inventory; all ten issues are currently closed: [#313](https://github.com/john-cd/rust_howto/issues/313), [#262](https://github.com/john-cd/rust_howto/issues/262), [#260](https://github.com/john-cd/rust_howto/issues/260), [#259](https://github.com/john-cd/rust_howto/issues/259), [#266](https://github.com/john-cd/rust_howto/issues/266), [#267](https://github.com/john-cd/rust_howto/issues/267), [#270](https://github.com/john-cd/rust_howto/issues/270), [#463](https://github.com/john-cd/rust_howto/issues/463), [#929](https://github.com/john-cd/rust_howto/issues/929), and [#928](https://github.com/john-cd/rust_howto/issues/928).
 
@@ -80,6 +71,10 @@ Issues [#303](https://github.com/john-cd/rust_howto/issues/303), [#302](https://
 - [#1883](https://github.com/john-cd/rust_howto/issues/1883) — Write differential equations examples.
 
 ## COMPLETED
+
+### List 27 — P3
+
+Nine issues are closed and integrated into local `develop`: [#1182](https://github.com/john-cd/rust_howto/issues/1182), [#923](https://github.com/john-cd/rust_howto/issues/923), [#920](https://github.com/john-cd/rust_howto/issues/920), [#906](https://github.com/john-cd/rust_howto/issues/906), [#870](https://github.com/john-cd/rust_howto/issues/870), [#868](https://github.com/john-cd/rust_howto/issues/868), [#827](https://github.com/john-cd/rust_howto/issues/827), [#734](https://github.com/john-cd/rust_howto/issues/734), and [#733](https://github.com/john-cd/rust_howto/issues/733). The Glommio implementation is integrated as `cd72be151`; only its native Linux tests and strict Clippy remain open in [#810](https://github.com/john-cd/rust_howto/issues/810), tracked above and in [roadmap epic #1698](https://github.com/john-cd/rust_howto/issues/1698).
 
 ### List 25 — P2
 
