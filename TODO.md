@@ -196,15 +196,30 @@ Validation update (2026-10-25):
 ### List 32 — Encoding, database and tooling examples (Codex B)
 
 - [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters build and regenerate Cap'n Proto code with `capnp` installed.
-- [#1038](https://github.com/john-cd/rust_howto/issues/1038) — **P3** — Review the postcard example.
-- [#1040](https://github.com/john-cd/rust_howto/issues/1040) — **P3** — Finish the bincode example.
+- [#1038](https://github.com/john-cd/rust_howto/issues/1038) — **P3** — ✅ closed on GitHub — Review the postcard example.
+- [#1040](https://github.com/john-cd/rust_howto/issues/1040) — **P3** — ✅ closed on GitHub — Finish the bincode example.
 - [#708](https://github.com/john-cd/rust_howto/issues/708) — **P3** — Finish the Cornucopia example.
 - [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance.
 - [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples.
-- [#335](https://github.com/john-cd/rust_howto/issues/335) — **P3** — Write the benchmarking chapter.
-- [#483](https://github.com/john-cd/rust_howto/issues/483) — **P3** — Write the Tera chapter; add a sample from the tools code.
+- [#335](https://github.com/john-cd/rust_howto/issues/335) — **P3** — ✅ closed on GitHub — Write the benchmarking chapter.
+- [#483](https://github.com/john-cd/rust_howto/issues/483) — **P3** — ✅ closed on GitHub — Write the Tera chapter; add a sample from the tools code.
 - [#43](https://github.com/john-cd/rust_howto/issues/43) — **P4** — Make additional examples out of the `templ` tool.
 - [#41](https://github.com/john-cd/rust_howto/issues/41) — **P4** — Make additional examples out of mdbook-utils.
+
+Validation update (2026-10-25):
+
+- #286 is implemented in `develop` at [b7000d8](https://github.com/john-cd/rust_howto/commit/b7000d8acf8a964f13f1313de380f6219f943819). Formatting, spelling, strict database Clippy, and all five live PostgreSQL tests passed.
+- `just ntt postgres` selected zero tests; `just ca` stopped in the unrelated Windows `onig_sys` archive build (`LNK1114`); `just bb` stopped on an sccache connection reset while building `crate_indices`. The reference checker reported 6,475 unmatched references repository-wide; the five new PostgreSQL labels each have one definition and one use.
+- Keep #286 open until the repository-wide test, Clippy, and book gates pass.
+
+List B completion update (2026-10-25):
+
+- #708 is implemented in `develop` at [c49856e](https://github.com/john-cd/rust_howto/commit/c49856efb). Focused build, test, Clippy, and live PostgreSQL evidence passed in the earlier run; keep open because the shared full Clippy/book gates remain unresolved.
+- #284 is implemented in `develop` at [24a7e90](https://github.com/john-cd/rust_howto/commit/24a7e90cf), with follow-up fixes at [f4ccafb](https://github.com/john-cd/rust_howto/commit/f4ccafb18), [c1e109c](https://github.com/john-cd/rust_howto/commit/c1e109ca0), and [30936c4](https://github.com/john-cd/rust_howto/commit/30936c4dd). The generic pool test and explicit live PostgreSQL test passed; strict database Clippy, the pinned dependency-reference check, formatting, spelling, and targeted Markdown lint passed. `just ntt deadpool` fails because its nextest binary-id filter matches no binary; its direct example-target equivalent passed. Keep open pending `just ca` and `just bb`.
+- #335 and #483 are closed on GitHub. Their draft pages and included examples are in `develop` at [2343a11](https://github.com/john-cd/rust_howto/commit/2343a11c5), [996094d](https://github.com/john-cd/rust_howto/commit/996094db5), and [158dd1c](https://github.com/john-cd/rust_howto/commit/158dd1c75); focused formatting, spelling, Markdown, local-link, and Tera test checks passed.
+- #41 and #43 have partial draft documentation in `develop` at [e8291b7](https://github.com/john-cd/rust_howto/commit/e8291b72d) and [e10fde0](https://github.com/john-cd/rust_howto/commit/e10fde00b). Keep open: their acceptance asks for per-feature Rust examples in a Cargo example crate; current additions are shell recipes, and four `templ` commands require live crates.io data, which conflicts with the offline/deterministic requirement.
+- #1959 remains open. Its issue comments report real capnp 1.0.1 regeneration and successful all-features encoding tests; `just bb` with encoding includes, Windows `just ntt` filters, and human editorial review remain outstanding. `capnp` is not on this session's `PATH`. #1038 and #1040 were already closed on GitHub.
+- The remaining full `just ca` and `just bb` runs were deferred while unrelated workspace Cargo jobs saturated the workstation (100% CPU, under 1 GiB free memory). Do not close #284, #708, #286, or #1959 until their required gates pass.
 
 ### List 33 — Desktop, GPU, audio, FFI and embedded chapters (Codex C)
 
