@@ -26,17 +26,22 @@ async fn collect_results() -> Vec<&'static str> {
     results
 }
 
-/// Runs the futures collection example.
-fn main() {
+/// Runs the futures collection example's behavior.
+fn run_example() {
     let results = futures_executor::block_on(collect_results());
     println!("Completed tasks: {results:?}");
+}
+
+/// Runs the futures collection example.
+fn main() {
+    run_example();
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
 pub fn run() {
-    main();
+    run_example();
 }
 
 #[cfg(test)]

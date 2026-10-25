@@ -19,19 +19,24 @@ async fn cancel_child_task() -> anyhow::Result<bool> {
     Ok(parent.is_cancelled())
 }
 
-/// Runs the cancellation-token example.
-fn main() -> anyhow::Result<()> {
+/// Runs the cancellation-token example's behavior.
+fn run_example() -> anyhow::Result<()> {
     let runtime = tokio::runtime::Builder::new_current_thread().build()?;
     let cancelled = runtime.block_on(cancel_child_task())?;
     println!("Worker cancelled: {cancelled}");
     Ok(())
 }
 
+/// Runs the cancellation-token example.
+fn main() -> anyhow::Result<()> {
+    run_example()
+}
+
 // ANCHOR_END: example
 
 /// Runs the example.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    run_example()
 }
 
 #[cfg(test)]
