@@ -53,6 +53,17 @@ pub fn write_report(path: &Path) -> Result<(), XlsxError> {
     // The date of this row is left empty on purpose.
     worksheet.write_formula(2, 4, Formula::new("=B3*C3").set_result("40"))?;
 
+    // A formula that Excel evaluates to an error. The cached result is an
+    // error code, which readers see as an error cell.
+    worksheet.write(3, 0, "Freebie")?;
+    worksheet.write(3, 1, 5)?;
+    worksheet.write(3, 2, 0)?;
+    worksheet.write_formula(
+        3,
+        4,
+        Formula::new("=B4/C4").set_result("#DIV/0!"),
+    )?;
+
     workbook.save(path)?;
     Ok(())
 }

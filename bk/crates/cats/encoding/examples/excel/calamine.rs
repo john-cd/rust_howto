@@ -7,6 +7,7 @@
 //! The workbook is the one written by the `rust_xlsxwriter` recipe,
 //! so the example needs no binary fixture.
 
+use calamine::CellErrorType;
 use calamine::Data;
 use calamine::Reader;
 use calamine::Xlsx;
@@ -25,7 +26,7 @@ fn main() -> anyhow::Result<()> {
 
     // `worksheet_range` returns the used area of the sheet, with typed cells.
     let range = workbook.worksheet_range("Sales")?;
-    assert_eq!(range.get_size(), (3, 5));
+    assert_eq!(range.get_size(), (4, 5));
 
     for row in range.rows().skip(1) {
         println!("{row:?}");
@@ -49,6 +50,10 @@ fn main() -> anyhow::Result<()> {
     // A formula cell holds its cached result...
     assert_eq!(range.get((1, 4)), Some(&Data::Float(7.5)));
     assert_eq!(range.get((2, 4)), Some(&Data::Float(40.0)));
+
+    // A formula that fails is an error cell. Match on `Data::Error` instead of
+    // treating the cell as a number.
+    assert_eq!(range.get((3, 4)), Some(&Data::Error(CellErrorType::Div0)));
 
     // ...and the formula text, without the leading `=`, is available
     // separately. `get_value` takes sheet coordinates, unlike `get`, which
