@@ -26,6 +26,8 @@ See also: [Rustls (Wikipedia)][c~rustls~wikipedia]↗.
 
 [`native-tls`][c~native-tls~docs]↗{{hi:native-tls}} provides a cross-platform API over the platform's TLS implementation. It uses SChannel on Windows, Secure Transport on macOS, and OpenSSL on most other platforms.
 
+The example builds a connector without network access by default. Set `NATIVE_TLS_HOST` to a hostname to opt in to a verified TLS handshake on port 443.
+
 Choose [`native-tls`][c~native-tls~docs]↗{{hi:native-tls}} when integration with the system's TLS configuration and certificate store is important. With [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, enable the `native-tls` Cargo feature; its default TLS backend is Rustls. For lower-level Hyper clients, use a connector such as [`hyper-tls`][c~hyper-tls~docs]↗{{hi:hyper-tls}} or [`hyper-rustls`][c~hyper-rustls~docs]↗{{hi:hyper-rustls}}.
 
 ```rust,editable

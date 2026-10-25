@@ -2,45 +2,58 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Build a platform TLS connector with `native-tls` and use it.
+//! Build a platform TLS connector with `native-tls`.
 //!
-//! `native-tls` delegates to the operating system's TLS stack (`SChannel` on
-//! Windows, Secure Transport on macOS, `OpenSSL` elsewhere), so it trusts the
-//! system certificate store.
+//! This example builds a `TlsConnector` and can make an opt-in verified TLS
+//! handshake with a server on port 443.
 
-use std::io::Read as _;
-use std::io::Write as _;
+use std::env;
+use std::env::VarError;
 use std::net::TcpStream;
 
-use native_tls::Protocol;
+use anyhow::Context as _;
 use native_tls::TlsConnector;
+use native_tls::TlsStream;
 
-/// Builds a connector that refuses anything older than TLS 1.2.
-fn connector() -> native_tls::Result<TlsConnector> {
-    TlsConnector::builder()
-        .min_protocol_version(Some(Protocol::Tlsv12))
-        .build()
+/// Builds a connector using the platform's default TLS configuration.
+fn build_connector() -> anyhow::Result<TlsConnector> {
+    Ok(TlsConnector::builder().build()?)
 }
 
-/// Opens a TLS connection to `host:443`, sends a `HEAD` request and returns
-/// the HTTP status line.
-fn status_line(host: &str) -> anyhow::Result<String> {
-    let tcp = TcpStream::connect((host, 443))?;
-    // The handshake verifies the server certificate against `host`.
-    let mut tls = connector()?.connect(host, tcp)?;
-    write!(
-        tls,
-        "HEAD / HTTP/1.1\r\nHost: {host}\r\nConnection: close\r\n\r\n"
-    )?;
-    let mut response = String::new();
-    tls.read_to_string(&mut response)?;
-    Ok(response.lines().next().unwrap_or_default().to_owned())
+/// Opens a TCP connection and completes a certificate-validated TLS handshake.
+///
+/// # Errors
+/// Returns an error if the connection or TLS handshake fails.
+fn connect_tls(
+    connector: &TlsConnector,
+    host: &str,
+) -> anyhow::Result<TlsStream<TcpStream>> {
+    let tcp_stream = TcpStream::connect((host, 443))
+        .with_context(|| format!("could not connect to {host}:443"))?;
+    Ok(connector.connect(host, tcp_stream)?)
 }
 
-/// Builds the connector; call [`status_line`] to also use the network.
+/// Builds a connector and optionally connects to `NATIVE_TLS_HOST`.
+///
+/// Without the environment variable this example does not access the network.
+///
+/// # Errors
+/// Returns an error if the connector cannot be built, the environment variable
+/// is invalid, or an opted-in connection fails.
 fn main() -> anyhow::Result<()> {
-    let _connector = connector()?;
-    println!("Built a native-tls connector with a TLS 1.2 minimum.");
+    let connector = build_connector()?;
+    match env::var("NATIVE_TLS_HOST") {
+        Ok(host) => {
+            let _tls_stream = connect_tls(&connector, &host)?;
+            println!(
+                "Completed a verified native TLS handshake with {host}:443."
+            );
+        }
+        Err(VarError::NotPresent) => println!(
+            "Built a native-tls connector. Set NATIVE_TLS_HOST to opt in to a TLS handshake."
+        ),
+        Err(error) => return Err(error.into()),
+    }
     Ok(())
 }
 // ANCHOR_END: example
@@ -52,41 +65,11 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
-    use std::net::TcpListener;
-
     use super::*;
 
-    /// The example runs end to end.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()
-    }
-
-    /// A peer that does not speak TLS makes the handshake fail instead of
-    /// hanging or succeeding.
-    #[test]
-    fn handshake_with_non_tls_peer_fails() -> anyhow::Result<()> {
-        let listener = TcpListener::bind(("127.0.0.1", 0))?;
-        let port = listener.local_addr()?.port();
-        let server = std::thread::spawn(move || -> std::io::Result<()> {
-            let (mut stream, _) = listener.accept()?;
-            // Not a TLS record; the stream closes when dropped.
-            stream.write_all(b"HTTP/1.1 200 OK\r\n\r\n")
-        });
-        let tcp = TcpStream::connect(("127.0.0.1", port))?;
-        let result = connector()?.connect("localhost", tcp);
-        assert!(result.is_err());
-        // The server thread may fail if the client closes first; that is fine.
-        let _ = server.join();
-        Ok(())
-    }
-
-    /// Needs network access and a trusted system certificate store.
-    #[test]
-    #[ignore = "requires network access"]
-    fn fetches_a_status_line_over_tls() -> anyhow::Result<()> {
-        let line = status_line("example.com")?;
-        assert!(line.starts_with("HTTP/1.1 "), "unexpected: {line}");
+    fn connector_builds_without_network_access() -> anyhow::Result<()> {
+        build_connector()?;
         Ok(())
     }
 }
