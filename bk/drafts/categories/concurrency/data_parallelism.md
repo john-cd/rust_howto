@@ -92,7 +92,9 @@ Filter items, map them to partial results, and combine those values with `reduce
 
 [![rayon][c~rayon~docs~badge]][c~rayon~docs] [![glob][c~glob~docs~badge]][c~glob~docs] [![image][c~image~docs~badge]][c~image~docs] [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]
 
-This example finds JPEG files in the current directory and resizes them concurrently. Its file-system and native image requirements are tracked separately in [#261](https://github.com/john-cd/rust_howto/issues/261).
+This example reads `images/*.jpg` and writes resized images under `temp/thumbnails`. Its block is `noplayground` because it expects local image files; tests create small JPEG fixtures in temporary directories. The `image` dependency enables only the JPEG and PNG codecs used by the examples.
+
+[`glob::glob_with::glob_with`][c~glob::glob_with~docs]↗{{hi:glob::glob_with::glob_with}} finds jpeg files in current directory. [`rayon`][c~rayon~docs]↗{{hi:rayon}} resizes images in parallel using [`rayon::iter::IntoParallelRefIterator::par_iter`][c~rayon::iter::IntoParallelRefIterator::par_iter~docs]↗{{hi:rayon::iter::IntoParallelRefIterator::par_iter}} calling [`image::DynamicImage::resize`][c~image::DynamicImage::resize~docs]↗{{hi:image::DynamicImage::resize}}
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/data_parallelism/rayon_thumbnails.rs:example}}
@@ -108,5 +110,5 @@ This example finds JPEG files in the current directory and resizes them concurre
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  rayon_thumbnails.rs remains noplayground until #261 resolves its native dependency and test-data requirements.
+  [data_parallelism: polish; dedupe with multithreading.md](https://github.com/john-cd/rust_howto/issues/260)
 </div>

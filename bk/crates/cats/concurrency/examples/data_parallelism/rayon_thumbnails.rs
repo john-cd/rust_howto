@@ -4,97 +4,78 @@
 // ANCHOR: example
 //! Generating thumbnails of images in parallel with `rayon` and `image`.
 
-use std::fs::create_dir_all;
+use std::fs;
 use std::path::Path;
+use std::path::PathBuf;
 
 use anyhow::Context as _;
 use anyhow::Result;
+use anyhow::anyhow;
 use glob::MatchOptions;
 use glob::glob_with;
-use image::ImageFormat;
-use image::Rgb;
-use image::RgbImage;
 use image::imageops::FilterType;
 use rayon::prelude::*;
 
-/// Creates sample images, then writes a thumbnail of each, in parallel.
+/// Maximum width or height of the example thumbnails.
+const THUMBNAIL_EDGE: u32 = 300;
+
+/// Creates thumbnails for the JPEG files in `input_dir` in parallel.
 fn main() -> Result<()> {
-    // Create test files for the test function.
-    create_test_files()?;
-
-    let options: MatchOptions = Default::default();
-    let files: Vec<_> = glob_with("temp/test_images/*.jpg", options)?
-        .filter_map(std::result::Result::ok)
-        .collect();
-
-    if files.is_empty() {
-        println!("No .jpg files found in temp/test_images");
-        return Ok(());
-    }
-
-    let thumb_dir = "temp/thumbnails";
-    create_dir_all(thumb_dir)?;
-
-    println!("Saving {} thumbnails into '{thumb_dir}'...", files.len());
-
-    let image_failures: Vec<_> = files
-        .par_iter()
-        .map(|path| {
-            make_thumbnail(path, thumb_dir, 300).with_context(|| {
-                format!("Failed to create thumbnail for: {}", path.display())
-            })
-        })
-        .filter_map(std::result::Result::err)
-        .collect();
-
-    image_failures.iter().for_each(|x| println!("{x}"));
-
+    let input_dir = Path::new("images");
+    let output_dir = Path::new("temp/thumbnails");
+    let thumbnail_count =
+        create_thumbnails(input_dir, output_dir, THUMBNAIL_EDGE)?;
     println!(
-        "{} thumbnails saved successfully",
-        files.len() - image_failures.len()
+        "Saved {thumbnail_count} thumbnails into '{}'.",
+        output_dir.display()
     );
     Ok(())
 }
 
-/// Resizes the image `original` so that its longest edge is `longest_edge`
-/// pixels, and saves it in `thumb_dir`.
-fn make_thumbnail<PA, PB>(
-    original: PA,
-    thumb_dir: PB,
+/// Finds JPEG files in `input_dir` and creates their thumbnails in parallel.
+///
+/// # Errors
+///
+/// Returns an error if the glob cannot be read or any image cannot be decoded
+/// or written.
+fn create_thumbnails(
+    input_dir: &Path,
+    output_dir: &Path,
     longest_edge: u32,
-) -> Result<()>
-where
-    PA: AsRef<Path>,
-    PB: AsRef<Path>,
-{
-    let img = image::open(original.as_ref())?;
-    let file_path = thumb_dir
-        .as_ref()
-        .join(original.as_ref().file_name().unwrap());
+) -> Result<usize> {
+    let pattern = input_dir.join("*.jpg").to_string_lossy().replace('\\', "/");
+    let files: Vec<PathBuf> = glob_with(&pattern, MatchOptions::default())?
+        .collect::<std::result::Result<_, _>>()?;
 
-    Ok(img
-        .resize(longest_edge, longest_edge, FilterType::Nearest)
-        .save(file_path)?)
+    if files.is_empty() {
+        return Err(anyhow!("no JPEG files found in {}", input_dir.display()));
+    }
+
+    fs::create_dir_all(output_dir)?;
+    files.par_iter().try_for_each(|path| {
+        make_thumbnail(path, output_dir, longest_edge).with_context(|| {
+            format!("creating a thumbnail for {}", path.display())
+        })
+    })?;
+
+    Ok(files.len())
 }
 
-/// Creates the sample images in `temp/test_images`.
-fn create_test_files() -> Result<()> {
-    // Create a directory for test files.
-    let test_dir = Path::new("temp/test_images");
-    if !test_dir.exists() {
-        std::fs::create_dir_all(test_dir)?;
-    }
+/// Resizes one image and saves it under the same file name in `output_dir`.
+fn make_thumbnail(
+    original: &Path,
+    output_dir: &Path,
+    longest_edge: u32,
+) -> Result<()> {
+    let image = image::open(original)?;
+    let file_name = original.file_name().ok_or_else(|| {
+        anyhow!("image path has no file name: {}", original.display())
+    })?;
+    let output_path = output_dir.join(file_name);
 
-    // Create a few small valid JPEG image files for the example.
-    for i in 0..3 {
-        let file_path = test_dir.join(format!("test_{i}.jpg"));
-        let mut image = RgbImage::new(32, 32);
-        for (x, y, pixel) in image.enumerate_pixels_mut() {
-            let value = ((x + y + i) % 256) as u8;
-            *pixel = Rgb([value, 255 - value, value / 2]);
-        }
-        image.save_with_format(&file_path, ImageFormat::Jpeg)?;
-    }
+    image
+        .resize(longest_edge, longest_edge, FilterType::Nearest)
+        .save(output_path)?;
     Ok(())
 }
 // ANCHOR_END: example
@@ -106,11 +87,35 @@ pub fn run() -> Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use std::fs;
+
+    use image::GenericImageView;
+    use image::Rgb;
+    use image::RgbImage;
+
     use super::*;
 
+    /// Creates sample JPEGs in a temporary directory and verifies each output.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn generated_jpegs_receive_parallel_thumbnails() -> anyhow::Result<()> {
+        let temp_dir = tempfile::tempdir()?;
+        let input_dir = temp_dir.path().join("images");
+        let output_dir = temp_dir.path().join("thumbnails");
+        fs::create_dir_all(&input_dir)?;
+
+        for index in 0..3 {
+            let image = RgbImage::from_pixel(32, 16, Rgb([20, 40, 60]));
+            image.save(input_dir.join(format!("image_{index}.jpg")))?;
+        }
+
+        let thumbnail_count = create_thumbnails(&input_dir, &output_dir, 16)?;
+
+        assert_eq!(thumbnail_count, 3);
+        for index in 0..3 {
+            let thumbnail =
+                image::open(output_dir.join(format!("image_{index}.jpg")))?;
+            assert_eq!(thumbnail.dimensions(), (16, 8));
+        }
         Ok(())
     }
 }
