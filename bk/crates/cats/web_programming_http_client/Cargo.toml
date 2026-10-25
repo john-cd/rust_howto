@@ -71,5 +71,10 @@ name = "retry"
 path = "examples/retry/main.rs"
 test = true
 
+[[example]]
+name = "retry_after"
+path = "examples/retry_after/main.rs"
+test = true
+
 [lints]
 workspace = true

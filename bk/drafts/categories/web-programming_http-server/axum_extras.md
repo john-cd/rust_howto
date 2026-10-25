@@ -80,7 +80,13 @@ When a function is not a valid handler, the compiler reports a long error about 
 
 For example, this handler does not compile, because `String` consumes the request body and must therefore be the last argument. With the attribute, the error says so:
 
-```rust,ignore
+```rust,compile_fail,noplayground
+# use axum::debug_handler;
+# use axum::extract::State;
+# #[derive(Clone)]
+# struct AppState {
+#     greeting: &'static str,
+# }
 #[debug_handler]
 async fn bad(body: String, State(state): State<AppState>) -> String {
     format!("{body}{}", state.greeting)

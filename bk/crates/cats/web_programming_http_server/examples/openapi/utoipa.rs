@@ -11,6 +11,7 @@ use axum::routing::get;
 use serde::Serialize;
 use utoipa::OpenApi;
 use utoipa::ToSchema;
+use utoipa_swagger_ui::SwaggerUi;
 
 /// A greeting.
 #[derive(Serialize, ToSchema)]
@@ -37,10 +38,13 @@ async fn hello(Path(name): Path<String>) -> Json<Greeting> {
 #[openapi(paths(hello), components(schemas(Greeting)))]
 pub struct ApiDoc;
 
-/// The application router; serve `openapi_json()` from a route as well,
-/// or add `utoipa-swagger-ui` for an interactive UI.
+/// The application router. `SwaggerUi` serves the interactive UI at
+/// `/swagger-ui` and the generated document at `/api-docs/openapi.json`.
 pub fn app() -> Router {
-    Router::new().route("/hello/{name}", get(hello))
+    Router::new().route("/hello/{name}", get(hello)).merge(
+        SwaggerUi::new("/swagger-ui")
+            .url("/api-docs/openapi.json", ApiDoc::openapi()),
+    )
 }
 
 /// Renders the document as pretty-printed JSON.
@@ -51,6 +55,12 @@ pub fn openapi_json() -> anyhow::Result<String> {
 
 #[cfg(test)]
 mod tests {
+    use axum::body::Body;
+    use axum::http::Request;
+    use axum::http::StatusCode;
+    use http_body_util::BodyExt;
+    use tower::ServiceExt;
+
     use super::*;
 
     #[test]
@@ -61,8 +71,29 @@ mod tests {
         Ok(())
     }
 
-    #[test]
-    fn router_builds() {
-        let _ = app();
+    async fn get_status_and_body(uri: &str) -> (StatusCode, Vec<u8>) {
+        let response = app()
+            .oneshot(Request::get(uri).body(Body::empty()).unwrap())
+            .await
+            .unwrap();
+        let status = response.status();
+        let body = response.into_body().collect().await.unwrap().to_bytes();
+        (status, body.to_vec())
+    }
+
+    #[tokio::test]
+    async fn serves_the_spec_from_a_route() {
+        let (status, body) =
+            get_status_and_body("/api-docs/openapi.json").await;
+        assert_eq!(status, StatusCode::OK);
+        let doc: serde_json::Value = serde_json::from_slice(&body).unwrap();
+        assert!(doc["paths"]["/hello/{name}"].is_object());
+    }
+
+    #[tokio::test]
+    async fn serves_the_swagger_ui() {
+        let (status, body) = get_status_and_body("/swagger-ui/").await;
+        assert_eq!(status, StatusCode::OK);
+        assert!(String::from_utf8_lossy(&body).contains("swagger"));
     }
 }

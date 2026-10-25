@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+mod echo;
 mod grpc_web;
 mod tonic;
 mod tonic_client;
