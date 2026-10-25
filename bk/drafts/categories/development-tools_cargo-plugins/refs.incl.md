@@ -4,6 +4,9 @@
 [cargo-geiger~repository]: https://github.com/geiger-rs/cargo-geiger
 [cargo-machete~repository]: https://github.com/bnjbvr/cargo-machete
 [cargo-udeps~repository]: https://github.com/est31/cargo-udeps
+[c~cargo-chef~repo]: https://github.com/LukeMathWalker/cargo-chef
+[c~bacon~repo]: https://github.com/Canop/bacon
+[c~watchexec~repo]: https://github.com/watchexec/watchexec
 [cargo-vet~repository]: https://github.com/mozilla/cargo-vet
 [ex~development-tools_cargo-plugins~cargo-audit]: auditing.md#cargo-audit
 [ex~development-tools_cargo-plugins~cargo-auditable]: auditing.md#cargo-auditable
@@ -16,9 +19,14 @@
 [ex~development-tools_cargo-plugins~cargo-generate]: code_writing.md#cargo-generate
 [ex~development-tools_cargo-plugins~cargo-hack]: code_writing.md#cargo-hack
 [ex~development-tools_cargo-plugins~cargo-hakari]: performance.md#cargo-hakari
+[ex~development-tools_cargo-plugins~cargo-flamegraph]: performance.md#cargo-flamegraph
+[ex~development-tools_cargo-plugins~cargo-nextest]: performance.md#cargo-nextest
+[ex~development-tools_cargo-plugins~cargo-chef]: performance.md#cargo-chef
 [ex~development-tools_cargo-plugins~cargo-husky]: code_formatting_linting.md#cargo-husky
 [ex~development-tools_cargo-plugins~cargo-license]: auditing.md#cargo-license
 [ex~development-tools_cargo-plugins~cargo-limit]: watching_for_changes.md#cargo-limit
+[ex~development-tools_cargo-plugins~bacon]: watching_for_changes.md#bacon
+[ex~development-tools_cargo-plugins~watchexec]: watching_for_changes.md#watchexec
 [ex~development-tools_cargo-plugins~cargo-make]: building.md#cargo-make
 [ex~development-tools_cargo-plugins~cargo-modules]: code_writing.md#cargo-modules
 [ex~development-tools_cargo-plugins~cargo-open]: code_writing.md#cargo-open
@@ -49,8 +57,7 @@
 [p~ides]: ../text-editors/ides.md
 [p~json]: ../parser-implementations/json.md
 [p~language]: ../../../src/language/index.md
-[p~links]: ../../../drafts/links/links.md
-[p~macos]: ../os_macos-apis/macos.md
+[p~links]: ../../../src/links/index.md
 [p~macros]: ../../../src/language/macros.md
 [p~maintaining]: maintaining.md
 [p~regex]: ../text-processing/regex.md
