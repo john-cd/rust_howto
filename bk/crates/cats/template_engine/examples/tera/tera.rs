@@ -12,7 +12,9 @@ use serde::Serialize;
 
 /// The templates, which are loaded and configured on first use.
 static TEMPLATES: LazyLock<tera::Result<tera::Tera>> = LazyLock::new(|| {
-    tera::Tera::new("examples/tera/templates/*").map(|mut t| {
+    let manifest_dir = env!("CARGO_MANIFEST_DIR").replace('\\', "/");
+    let template_glob = format!("{manifest_dir}/examples/tera/templates/*");
+    tera::Tera::new(&template_glob).map(|mut t| {
         // Configure the Tera template engine.
         // By default, Tera will auto-escape all content in files ending with
         // ".html", ".htm" and ".xml".
@@ -50,6 +52,13 @@ struct Page {
     content: String,
 }
 
+/// Crate metadata used to render a Markdown badge like the book tooling emits.
+#[derive(Serialize)]
+struct CrateBadge {
+    /// The crates.io package name.
+    crate_name: String,
+}
+
 /// Renders a template with values from a context and prints the result.
 fn main() -> anyhow::Result<()> {
     // Initialize the Tera template engine.
@@ -74,6 +83,14 @@ fn main() -> anyhow::Result<()> {
 
     // Print the rendered template:
     println!("{rendered}");
+
+    // Tera can also render Markdown fragments from the same data model.
+    let badge = CrateBadge {
+        crate_name: "serde".to_owned(),
+    };
+    let badge_context = tera::Context::from_serialize(&badge)?;
+    let rendered_badge = tera.render("crate_badge.md", &badge_context)?;
+    println!("{rendered_badge}");
 
     Ok(())
 }

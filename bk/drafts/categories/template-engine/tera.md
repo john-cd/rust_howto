@@ -8,7 +8,20 @@
 
 [![tera~website][c~tera~website~badge]][c~tera~website] [![tera][c~tera~docs~badge]][c~tera~docs] [![tera~crates.io][c~tera~crates.io~badge]][c~tera~crates.io] [![tera~repo][c~tera~repo~badge]][c~tera~repo] [![tera~lib.rs][c~tera~lib.rs~badge]][c~tera~lib.rs]{{hi:tera}}{{hi:Django}}{{hi:Markup}}{{hi:Html}}{{hi:Jinja2}}{{hi:Template}} [![cat~template-engine][cat~template-engine~badge]][cat~template-engine]{{hi:Template engine}}
 
-[`tera`][c~tera~docs]↗{{hi:tera}} is a [template engine][p~template-engine] based on Jinja2/Django templates. It allows developers to embed dynamic content within text-based templates, supporting features like control flow (if/else, for loops), expressions, filters, and custom functions.  Tera excels at generating various text-based outputs, from HTML for web applications to configuration files.
+[`tera`][c~tera~docs]↗{{hi:tera}} is a [template engine][p~template-engine]
+based on Jinja2 and Django templates. It renders text from a serializable
+context, with control flow, filters, and functions. Tera is useful for HTML,
+configuration files, and other text output. HTML templates are autoescaped by
+default; preserve that behavior for untrusted values unless the output is
+deliberately safe markup.
+
+The example loads its template files relative to the crate manifest, serializes
+a page into a `Context`, and registers a custom filter. This is a common shape
+for a documentation or site-generation tool: Rust supplies the data and the
+template controls its presentation. The second included template adapts the
+crate-badge generation pattern used by this repository's `tools/templ`; that
+tool currently uses TinyTemplate internally, while this sample renders the
+same kind of Markdown with Tera and fixed local data.
 
 ```rust,editable
 {{#include ../../../crates/cats/template_engine/examples/tera/tera.rs:example}}
@@ -24,14 +37,9 @@ Escaping and sanitizing solve different problems. *Escaping* turns text into har
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Template Engines][p~template-engine]
+- [TinyTemplate][ex~template-engine~tinytemplate]
+- [Tera built-in filters][doc~tera-built-in-filters]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[tera: write; add sample from tools code](https://github.com/john-cd/rust_howto/issues/483)
-
-- [Tera Built-in Filters][doc~tera-built-in-filters]↗.
-
-</div>
