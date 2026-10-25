@@ -68,7 +68,11 @@ winget install Docker.DockerDesktop
 winget install Casey.Just
 winget install Python.Python.3
 winget install openssl  # Required by crates that depend on native TLS (e.g. `openssl-sys`)
+winget install NASM.NASM  # Required to build `aws-lc-sys` (used by `rustls` / `aws-lc-rs`) on Windows
+winget install Ninja-build.Ninja  # Build backend for CMake-based `-sys` crates
 ```
+
+`winget` places Ninja on your `PATH` (via `%LOCALAPPDATA%\Microsoft\WinGet\Links`). The NASM installer does not always add itself to `PATH`: if `nasm --version` fails in a new terminal, add the install folder (for example `%LOCALAPPDATA%\bin\NASM` or `C:Program FilesNASM`) to your user `PATH`, then restart the terminal. Without NASM, `aws-lc-sys` fails to build with an error that `nasm` was not found. On Linux and macOS the build uses the system C compiler, so NASM is not needed; install Ninja with `sudo apt-get install ninja-build` or `brew install ninja` if a CMake-based crate asks for it.
 
 After installing Rust via `rustup`, open a new terminal and run:
 

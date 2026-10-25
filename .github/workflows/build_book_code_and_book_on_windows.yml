@@ -76,9 +76,12 @@ jobs:
             bk/crates -> ../../target
             tools -> ../target
 
-      - name: Install `protoc` and `jq` (choco)
+      - name: Install `protoc`, `jq`, NASM and Ninja (choco)
         shell: pwsh
-        run: choco install jq protoc --confirm --no-progress
+        run: |
+          choco install jq protoc nasm ninja --confirm --no-progress
+          # NASM (required by aws-lc-sys) is not added to PATH by its installer.
+          Add-Content $env:GITHUB_PATH 'C:\Program Files\NASM'
 
       - name: Protoc version (debug)
         run: protoc --version

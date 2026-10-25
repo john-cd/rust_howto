@@ -52,6 +52,7 @@ sudo apt-get update \
     llvm \
     m4 \
     make \
+    ninja-build \
     pkg-config \
     protobuf-compiler \
     python3 \

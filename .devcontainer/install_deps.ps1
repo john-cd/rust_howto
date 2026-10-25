@@ -22,6 +22,10 @@ winget install --id Casey.Just --exact
 # Install LLVM/Clang (Required for bindgen in some crates)
 winget install --id LLVM.LLVM -e --source winget
 winget install --id SQLite.SQLite -e --source winget
+# NASM is required to build aws-lc-sys; Ninja is the build backend for CMake-based -sys crates.
+# If `nasm` is not found afterwards, add its install folder to PATH and restart the terminal.
+winget install --id NASM.NASM -e --source winget
+winget install --id Ninja-build.Ninja -e --source winget
 
 # The GTK 4 and Relm4 examples are Linux-only in later/crates/cats/gui.
 

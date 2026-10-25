@@ -138,6 +138,7 @@ WORKDIR /code
 ## `clang` `libwayland-dev` `libxkbcommon-x11-dev` `libvulkan-dev` for `xilem`
 ## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for `openrr`
 ## `diffutils gcc m4 make` for `gmp-mpfr-sys` / `rug`
+## `ninja-build` for CMake-based `-sys` crates
 ## `pandoc` for `mdbook-pandoc`
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
