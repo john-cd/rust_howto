@@ -4,6 +4,19 @@
 
 {{#include development_environment_setup.incl.md}}
 
+## Validation Environments {#validation-environments}
+
+Run each check from its owning workspace. A successful build on one operating system does not validate code behind another platform's `cfg` condition.
+
+| Validation target                                                                  | Environment                                                                                                    |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Formatting, linting, tests, and book checks                                        | Windows, Linux, or macOS, subject to the workspace's native dependencies. Use the workspace's `just` recipes.  |
+| Linux-specific examples such as the `ggez` and `Relm4` paths                       | Linux with the required system development libraries. A Windows fallback does not compile the Linux-only code. |
+| Example bodies excluded by Windows `cfg` conditions, including Tauri and WebRender | A platform where those bodies are enabled, with their native dependencies installed.                           |
+| Windows API examples and MSVC build or link behavior                               | Native Windows with the required Windows SDK and MSVC tools.                                                   |
+| Tests that connect to PostgreSQL, Cassandra, Oracle, or another service            | A reachable service with its required credentials and native client libraries.                                 |
+| Interactive GUI or speech tests                                                    | A desktop session with a window system or the required speech backend.                                         |
+
 ## Develop with VS Code {#using-vs-code}
 
 Clone the [repo][rust-howto~repo]↗ and open the folder in [VS Code][rust-in-vs-code~website]↗. Edit `.devcontainer/.env` if needed. VS Code{{hi:VS Code}} should prompt you to open the code in a [`docker`][docker~website]↗{{hi:docker}} container, which installs [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} and rust tooling{{hi:Rust tooling}} automatically. Make sure you have previously installed
