@@ -86,7 +86,7 @@ fn show_window(url: Option<&Url>) -> Result<(), Box<dyn Error>> {
     }
     // Receives `window.ipc.postMessage(...)` calls from JavaScript.
     .with_ipc_handler(|request| {
-        println!("From JavaScript: {}", request.body())
+        println!("From JavaScript: {}", request.body());
     });
 
     // On Linux, `wry` needs the GTK container of the `tao` window.
@@ -123,6 +123,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+#[allow(clippy::main_recursion)]
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }

@@ -61,7 +61,7 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
 
     let input_bytes = INPUT_VALUES
         .iter()
-        .flat_map(|value| value.to_ne_bytes())
+        .flat_map(|value| value.to_le_bytes())
         .collect::<Vec<_>>();
     let storage_buffer =
         device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
@@ -174,7 +174,7 @@ fn read_u32_values(
             )
             .into());
         }
-        words.iter().copied().map(u32::from_ne_bytes).collect()
+        words.iter().copied().map(u32::from_le_bytes).collect()
     };
     buffer.unmap();
     Ok(values)
