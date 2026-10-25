@@ -14,8 +14,9 @@ export RUSTC_WRAPPER := "sccache"
 export CARGO_INCREMENTAL := "0"
 export SCCACHE_DIR := env("SCCACHE_DIR", if os_family() == "windows" { "D:/sccache" } else { join(build_cache_home, "sccache") })
 build_inherited_cache_bases := env("SCCACHE_BASEDIRS", "")
-# Longest matching base wins, so each slot is normalized like the main checkout.
-export SCCACHE_BASEDIRS := replace(build_repo, "\\", "/")
+build_cache_separator := if os_family() == "windows" { ";" } else { ":" }
+# Keep the configured shared roots, and include this checkout as a fallback.
+export SCCACHE_BASEDIRS := if build_inherited_cache_bases == "" { replace(build_repo, "\\", "/") } else { build_inherited_cache_bases + build_cache_separator + replace(build_repo, "\\", "/") }
 
 # Connect direct Cargo commands to the same persistent directories as just.
 [windows]

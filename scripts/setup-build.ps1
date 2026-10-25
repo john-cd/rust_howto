@@ -20,7 +20,7 @@ if ($RestartCache) {
         throw 'Wait for running Cargo/rustc processes before restarting the shared sccache daemon.'
     }
     # sccache reads BASEDIRS when its daemon starts, not on each client request.
-    # Retain other projects' bases and register every reusable slot in advance.
+    # Retain other projects' bases, reusable slots, and every registered worktree.
     $configuredBases = @(
         $ExistingBaseDirs,
         [Environment]::GetEnvironmentVariable('SCCACHE_BASEDIRS', 'User'),
@@ -29,6 +29,11 @@ if ($RestartCache) {
     $bases = @($configuredBases -split ';' | Where-Object { $_ })
     $bases += $mainRepo.Replace('\', '/')
     $bases += 'a'..'z' | ForEach-Object { (Join-Path $mainRepo ".worktrees/$_").Replace('\', '/') }
+    $worktreePaths = @(& git -C $mainRepo worktree list --porcelain | ForEach-Object {
+        if ($_ -match '^worktree (.+)$') { $Matches[1].Replace('\', '/') }
+    })
+    if ($LASTEXITCODE) { throw 'Could not enumerate registered Git worktrees.' }
+    $bases += $worktreePaths
     $env:SCCACHE_BASEDIRS = ($bases | Select-Object -Unique) -join ';'
     & sccache --stop-server
     & sccache --start-server

@@ -15,10 +15,20 @@ if [[ ${1:-} == --restart-cache ]]; then
         exit 1
     fi
     bases=${2:-${SCCACHE_BASEDIRS:-}}
-    bases=${bases:+$bases:}$main_repo
+    append_base() {
+        case ":$bases:" in
+            *":$1:"*) ;;
+            *) bases=${bases:+$bases:}$1 ;;
+        esac
+    }
+    append_base "$main_repo"
     for slot in {a..z}; do
-        bases+=":$main_repo/.worktrees/$slot"
+        append_base "$main_repo/.worktrees/$slot"
     done
+    worktrees=$(git -C "$main_repo" worktree list --porcelain)
+    while IFS= read -r line; do
+        [[ $line == 'worktree '* ]] && append_base "${line#worktree }"
+    done <<< "$worktrees"
     export SCCACHE_BASEDIRS=$bases
     sccache --stop-server || true # An already stopped daemon needs no action.
     sccache --start-server

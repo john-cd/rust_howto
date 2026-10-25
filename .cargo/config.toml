@@ -10,5 +10,5 @@ incremental = false
 
 [env]
 SCCACHE_DIR = { value = ".sccache", relative = true }
-# Cargo expands this to the current checkout, including a reused worktree slot.
-SCCACHE_BASEDIRS = { value = ".", relative = true, force = true }
+# Keep a caller's shared worktree list; fall back to this checkout when unset.
+SCCACHE_BASEDIRS = { value = ".", relative = true }
