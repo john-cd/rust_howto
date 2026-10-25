@@ -7,7 +7,9 @@
 // This example demonstrates asynchronous Cassandra access using `cdrs-tokio`.
 
 use std::sync::Arc;
+use std::time::Duration;
 
+use anyhow::Context as _;
 use cdrs_tokio::IntoCdrsValue;
 use cdrs_tokio::authenticators::NoneAuthenticatorProvider;
 use cdrs_tokio::cluster::NodeTcpConfigBuilder;
@@ -23,6 +25,11 @@ use cdrs_tokio::transport::TransportTcp;
 use uuid::Uuid;
 
 // `cdrs_tokio` is a native async Cassandra DB client written in Rust.
+
+/// Contact point used by this local Cassandra example.
+const CONTACT_POINT: &str = "127.0.0.1:9042";
+/// Maximum time to wait for the initial Cassandra connection.
+const CONNECTION_TIMEOUT: Duration = Duration::from_secs(10);
 
 /// A session that uses TCP transport and round-robin load balancing.
 type CurrentSession = Session<
@@ -84,17 +91,23 @@ async fn select_user(
 /// fails.
 async fn example() -> anyhow::Result<()> {
     let cluster_config = NodeTcpConfigBuilder::new()
-        .with_contact_point("127.0.0.1:9042".into())
+        .with_contact_point(CONTACT_POINT.into())
         .with_authenticator_provider(Arc::new(NoneAuthenticatorProvider))
         .build()
-        .await?;
+        .await
+        .context("configure Cassandra contact point 127.0.0.1:9042")?;
 
-    let session: CurrentSession = TcpSessionBuilder::new(
-        RoundRobinLoadBalancingStrategy::new(),
-        cluster_config,
+    let session: CurrentSession = tokio::time::timeout(
+        CONNECTION_TIMEOUT,
+        TcpSessionBuilder::new(
+            RoundRobinLoadBalancingStrategy::new(),
+            cluster_config,
+        )
+        .build(),
     )
-    .build()
-    .await?;
+    .await
+    .context("time out connecting to Cassandra at 127.0.0.1:9042")?
+    .context("connect to Cassandra at 127.0.0.1:9042")?;
 
     session
         .query(

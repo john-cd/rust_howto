@@ -15,10 +15,11 @@ mod cdrs_tokio;
 /// Command-line arguments.
 #[cfg(feature = "cassandra")]
 #[derive(Parser)]
+#[command(arg_required_else_help = true)]
 struct Cli {
     /// The example to run.
     #[command(subcommand)]
-    command: Option<Commands>,
+    command: Commands,
 }
 
 /// The examples that can be run.
@@ -46,17 +47,41 @@ fn run() -> anyhow::Result<()> {
     {
         let cli = Cli::parse();
 
-        if let Some(command) = cli.command {
-            match command {
-                Commands::CassandraProtocol => {
-                    cassandra_protocol::run()?;
-                }
-                Commands::CdrsTokio => {
-                    let runtime = tokio::runtime::Runtime::new()?;
-                    runtime.block_on(cdrs_tokio::run())?;
-                }
+        match cli.command {
+            Commands::CassandraProtocol => {
+                cassandra_protocol::run()?;
+            }
+            Commands::CdrsTokio => {
+                let runtime = tokio::runtime::Runtime::new()?;
+                runtime.block_on(cdrs_tokio::run())?;
             }
         }
     }
     Ok(())
+}
+
+#[cfg(all(test, feature = "cassandra"))]
+mod tests {
+    use super::*;
+
+    /// Shows the available backends when the user omits a subcommand.
+    #[test]
+    fn missing_subcommand_displays_backend_help() -> anyhow::Result<()> {
+        let error = match Cli::try_parse_from(["cassandra"]) {
+            Ok(_) => {
+                anyhow::bail!("the Cassandra dispatcher accepted no subcommand")
+            }
+            Err(error) => error,
+        };
+
+        assert_eq!(
+            error.kind(),
+            clap::error::ErrorKind::DisplayHelpOnMissingArgumentOrSubcommand
+        );
+        let help = error.to_string();
+        assert!(help.contains("cassandra_protocol"));
+        assert!(help.contains("cdrs_tokio"));
+
+        Ok(())
+    }
 }
