@@ -17,6 +17,7 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 categories = ["embedded"]
 publish = false
 autolib = false
+autoexamples = false
 
 [dev-dependencies]
 anyhow = "1.0.104" # Provides consistent fallible example entry points.
