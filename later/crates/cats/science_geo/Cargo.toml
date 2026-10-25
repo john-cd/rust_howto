@@ -20,6 +20,9 @@ autolib = false
 
 [dependencies]
 geo = "0.33"
+geocoding = "0.4.0"
+haversine = "0.2.1"
+us-state-info = "0.2.7"
 
 [[example]]
 name = "geo"

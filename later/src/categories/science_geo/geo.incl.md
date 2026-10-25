@@ -3,3 +3,6 @@
 | Recipe | Crates | Categories |
 |---|---|---|
 | [Process Spatial Information, Maps, Navigation Data, and Geographic Information Systems][ex~science_geo~geo] | {{!crate }} | [![cat~science::geo][cat~science::geo~badge]][cat~science::geo] |
+| [Compute the Distance Between Two Places][ex~science_geo~haversine] | [![haversine][c~haversine~docs~badge]][c~haversine~docs] [![geo][c~geo~docs~badge]][c~geo~docs] | [![cat~science::geo][cat~science::geo~badge]][cat~science::geo] |
+| [Geocode an Address][ex~science_geo~geocode] | [![geocoding][c~geocoding~docs~badge]][c~geocoding~docs] | [![cat~science::geo][cat~science::geo~badge]][cat~science::geo] |
+| [Recognize US States][ex~science_geo~us-states] | [![us-state-info][c~us-state-info~docs~badge]][c~us-state-info~docs] | [![cat~science::geo][cat~science::geo~badge]][cat~science::geo] |
