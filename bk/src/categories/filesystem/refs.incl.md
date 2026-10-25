@@ -22,6 +22,7 @@
 [ex~filesystem~recursively-find-all-files-with-given-predicate]: directory_traversal.md#recursively-find-all-files-with-given-predicate
 [ex~filesystem~recursively-find-duplicate-file-names]: directory_traversal.md#recursively-find-duplicate-file-names
 [ex~filesystem~remove_dir_all]: directories.md#remove_dir_all
+[ex~filesystem~replace-a-file-atomically]: reading_and_writing_files.md#replace-a-file-atomically
 [ex~filesystem~stdin-stdout]: working_with_the_standard_input_and_output.md#stdin-stdout
 [ex~filesystem~symbolic-links]: symbolic_links.md#symbolic-links
 [ex~filesystem~temporary-files-or-directories]: temporary_files_and_directories.md#temporary-files-or-directories

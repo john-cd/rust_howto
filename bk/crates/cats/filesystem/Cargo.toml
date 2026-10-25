@@ -20,6 +20,7 @@ autolib = false
 
 [dependencies]
 anyhow = "1.0.104"
+atomicwrites = "0.4.4" # Atomic file replacement.
 camino = "1.2.6"
 clap = { version = "4.6.7", features = ["derive"] }
 directories = "6.0.0"
@@ -36,6 +37,11 @@ same-file = "1.0.6"
 tempfile = "3.27.0"
 utils = { path = "../../utils" }
 walkdir = "2.5.0"
+
+[[example]]
+name = "atomic_write"
+path = "examples/atomic_write/main.rs"
+test = true
 
 [[example]]
 name = "directories"
