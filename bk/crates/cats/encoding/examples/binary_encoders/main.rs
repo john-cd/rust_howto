@@ -6,7 +6,6 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod bincode;
-#[cfg(target_os = "linux")]
 mod capnp;
 mod ciborium;
 mod flatbuffers;
@@ -28,7 +27,6 @@ enum Commands {
     #[command(name = "bincode")]
     Bincode,
     /// Runs the `capnp` example.
-    #[cfg(target_os = "linux")]
     #[command(name = "capnp")]
     Capnp,
     /// Runs the `ciborium` example.
@@ -54,9 +52,8 @@ fn main() -> anyhow::Result<()> {
             Commands::Bincode => {
                 bincode::run()?;
             }
-            #[cfg(target_os = "linux")]
             Commands::Capnp => {
-                capnp::run();
+                capnp::run()?;
             }
             Commands::Ciborium => {
                 ciborium::run()?;
