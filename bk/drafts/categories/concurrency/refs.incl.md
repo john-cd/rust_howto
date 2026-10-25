@@ -17,6 +17,7 @@
 [ex~concurrency~draw-fractal-threadpool]: threadpool.md#draw-fractal-threadpool
 [ex~concurrency~existing-impl-send-sync]: send_sync.md#existing-impl-send-sync
 [ex~concurrency~flume]: message_passing.md#flume
+[ex~concurrency~flume-tick]: message_passing.md#flume-tick
 [ex~concurrency~flurry]: concurrent_data_structures.md#flurry
 [ex~concurrency~global-mutable-state]: shared_state.md#global-mutable-state
 [ex~concurrency~implementing-send-sync]: send_sync.md#implementing-send-sync
@@ -32,7 +33,9 @@
 [ex~concurrency~pass-data-between-two-threads]: message_passing.md#crossbeam-channel
 [ex~concurrency~ractor]: _actors.md#ractor
 [ex~concurrency~rayon]: data_parallelism.md#rayon
+[ex~concurrency~ringbuf]: message_passing.md#ringbuf
 [ex~concurrency~riker]: _actors.md#riker
+[ex~concurrency~rtrb]: message_passing.md#rtrb
 [ex~concurrency~scoped-threads]: explicit_threads.md#scoped-threads
 [ex~concurrency~search-in-parallel]: data_parallelism.md#search-in-parallel
 [ex~concurrency~select-channels]: crossbeam.md#select-channels

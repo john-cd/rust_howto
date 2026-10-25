@@ -1,7 +1,10 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [ex~memory-management~bumpalo]: memory_allocation.md#bumpalo
+[ex~memory-management~bumpalo-tree]: arena_allocation.md#bumpalo-tree
 [ex~memory-management~declare-lazily-evaluated-constant]: lazy_initialization.md#declare-lazily-evaluated-constant
+[ex~memory-management~global-allocator]: memory_allocation.md#global-allocator
+[ex~memory-management~interning]: string_interning.md#interning
 [ex~memory-management~lazy-static]: lazy_initialization.md#lazy-static
 [ex~memory-management~mimalloc]: memory_allocation.md#mimalloc
 [ex~memory-management~once-cell]: lazy_initialization.md#once-cell
@@ -11,3 +14,4 @@
 [ex~memory-management~tikv-jemallocator]: memory_allocation.md#tikv-jemallocator
 [ex~memory-management~wee_alloc]: memory_allocation.md#wee_alloc
 [p~lazy-initialization]: lazy_initialization.md
+[p~memory-allocation]: memory_allocation.md

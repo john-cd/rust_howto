@@ -49,6 +49,36 @@ First, install the CLI with `cargo install cargo-insta`. Second, create a test, 
 
 Often involves using [`tokio::test`][c~tokio::test~docs]↗{{hi:tokio::test}} or similar runtime-specific [attributes][p~attributes] for testing [asynchronous][p~asynchronous] code.
 
+## Parameterized Tests and Fixtures (`rstest`) {#rstest}
+
+[![rstest][c~rstest~docs~badge]][c~rstest~docs] [![rstest~crates.io][c~rstest~crates.io~badge]][c~rstest~crates.io]{{hi:rstest}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Parameterized tests}}
+
+[`rstest`][c~rstest~docs]↗{{hi:rstest}} expands one test function into many: `#[case]` rows, `#[values]` combinations and `#[fixture]` functions for shared setup. Each expanded test has its own name, so a failure points at the failing row.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/examples/test_techniques/rstest_cases.rs:example}}
+```
+
+## Test Code that Reads Environment Variables {#env-vars}
+
+[![serial_test][c~serial_test~docs~badge]][c~serial_test~docs] [![serial_test~crates.io][c~serial_test~crates.io~badge]][c~serial_test~crates.io] [![temp-env][c~temp-env~docs~badge]][c~temp-env~docs] [![temp-env~crates.io][c~temp-env~crates.io~badge]][c~temp-env~crates.io]{{hi:serial_test}}{{hi:temp-env}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Environment variables}}
+
+Environment variables are process-global, but tests run in parallel threads. [`serial_test`][c~serial_test~docs]↗{{hi:serial_test}} runs the tests that share a key one at a time, and [`temp-env`][c~temp-env~docs]↗{{hi:temp-env}} sets or unsets a variable for the duration of a closure, then restores it. In edition 2024, `std::env::set_var` is `unsafe` for the same reason.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/examples/test_techniques/env_vars.rs:example}}
+```
+
+## Test Timeouts Instantly with Paused Time {#paused-time}
+
+[![tokio][c~tokio~docs~badge]][c~tokio~docs] [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io]{{hi:tokio}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Async testing}}
+
+With `#[tokio::test(start_paused = true)]` (the `test-util` feature of [`tokio`][c~tokio~docs]↗{{hi:tokio}}), the clock only advances when every task is idle, so timeouts and retry back-offs run instantly and deterministically.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/examples/test_techniques/paused_time.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 FIXME

@@ -30,3 +30,7 @@
 [p~email]: # "../email/index.md"
 [p~log]: ../development-tools_debugging/log.md
 [unicode~uax29]: https://www.unicode.org/reports/tr29/
+[ex~text-processing~nucleo]: text_analysis.md#nucleo
+[ex~text-processing~rake]: text_analysis.md#rake
+[ex~text-processing~word-boundaries]: text_analysis.md#word-boundaries
+[ex~text-processing~syntect]: syntax_highlighting.md#syntect

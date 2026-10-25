@@ -41,6 +41,16 @@ See [[write_proc_macros | Write Proc Macros]].
 
 Refer to the [[wasm | WASM]] chapter.
 
+## Accept Only Read-only SQL {#sql_readonly}
+
+[![sqlparser][c~sqlparser~docs~badge]][c~sqlparser~docs] [![sqlparser~crates.io][c~sqlparser~crates.io~badge]][c~sqlparser~crates.io]{{hi:sqlparser}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:SQL}}
+
+Parse SQL before it reaches a database and reject anything that is not exactly one `SELECT`. Checking the parsed `Statement` is more robust than searching the text for keywords, and rejects a second statement hidden after a semicolon. This is a defense in depth: also use a read-only database role and parameterized queries. This example needs the `sqlparser` feature of the examples crate.
+
+```rust,editable
+{{#include ../../../crates/cats/parser_implementations/examples/programming_languages/sql_readonly.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 FIXME

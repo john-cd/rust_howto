@@ -45,6 +45,38 @@ The [`strum`][c~strum~docs]↗{{hi:strum}} crate provides helpful macros for wor
 {{#include ../../crates/language/examples/enums/strum.rs:example}}
 ```
 
+### Label Variants and Build Menus with `strum` {#strum-messages}
+
+[![strum][c~strum~docs~badge]][c~strum~docs]{{hi:strum}}{{hi:EnumMessage}}{{hi:IntoEnumIterator}}{{hi:EnumCount}}{{hi:VariantNames}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+
+`#[strum(message = "...", detailed_message = "...")]` with the `EnumMessage` derive attaches a label and a tooltip to each variant. `IntoEnumIterator` iterates over the variants to build a settings menu, `VariantNames` and `EnumCount` provide the list of names and the number of variants, and `AsRefStr` borrows the name as a `&'static str` without allocating, unlike `Display`.
+
+```rust,editable,noplayground
+{{#include ../../crates/language/examples/enums/strum_messages.rs:example}}
+```
+
+### Attach Constant Properties to Variants with `strum` {#strum-props}
+
+[![strum][c~strum~docs~badge]][c~strum~docs]{{hi:strum}}{{hi:EnumProperty}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+
+`#[strum(props(icon = "save", shortcut = "Ctrl+S"))]` with the `EnumProperty` derive stores arbitrary string properties on a variant. `get_str("icon")` returns `None` for a missing property.
+
+```rust,editable,noplayground
+{{#include ../../crates/language/examples/enums/strum_props.rs:example}}
+```
+
+### Parse and Print Config Values with `strum` {#strum-case}
+
+[![strum][c~strum~docs~badge]][c~strum~docs]{{hi:strum}}{{hi:serialize_all}}{{hi:Case-insensitive parsing}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+
+`#[strum(serialize_all = "snake_case")]` renames every variant at once, and `ascii_case_insensitive` makes `FromStr` ignore ASCII case. The example round-trips every variant and shows the error for an unknown value.
+
+```rust,editable,noplayground
+{{#include ../../crates/language/examples/enums/strum_case.rs:example}}
+```
+
+If the same enum is also serialized with [`serde`][c~serde~docs]↗{{hi:serde}}, keep the two consistent: `#[serde(rename_all = "snake_case")]` matches `#[strum(serialize_all = "snake_case")]`. Prefer `serde` alone when the value only ever travels through `serde`; use `strum` for command-line arguments, environment variables and menus.
+
 ## Related Topics {#related-topics .skip}
 
 - [[match | Match]].

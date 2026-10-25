@@ -5,6 +5,7 @@
 [ex~algorithms~cryptographic-algorithms]: hashing.md#cryptographic-algorithms
 [ex~algorithms~fastrand]: random_value_generation.md#fastrand
 [ex~algorithms~foldhash]: hashing.md#foldhash
+[ex~algorithms~xxh3]: hashing.md#xxh3
 [ex~algorithms~general-purpose-hashing-algorithms]: hashing.md#general-purpose-hashing-algorithms
 [ex~algorithms~generate-random-numbers-within-a-given-distribution]: random_value_generation.md#generate-random-numbers-within-a-given-distribution
 [ex~algorithms~generate-random-numbers-within-a-range]: random_value_generation.md#generate-random-numbers-within-a-range

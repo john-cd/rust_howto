@@ -83,6 +83,12 @@ path = "examples/markdown/main.rs"
 test = true
 
 [[example]]
+name = "sql_readonly"
+path = "examples/programming_languages/sql_readonly.rs"
+required-features = ["sqlparser"]
+test = true
+
+[[example]]
 name = "programming_languages"
 path = "examples/programming_languages/main.rs"
 test = true
