@@ -19,7 +19,7 @@ publish.workspace = true
 autolib = false
 
 [dependencies]
-mavlink = "0.17.1"
+mavlink = "0.21.0"
 
 [[example]]
 name = "aerospace_protocols"

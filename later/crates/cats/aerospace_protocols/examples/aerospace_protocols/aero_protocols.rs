@@ -3,7 +3,7 @@
 // ANCHOR: example
 //! Creating a MAVLink heartbeat message.
 
-use mavlink::common;
+use mavlink::dialects::common;
 
 /// Creates a heartbeat message; sending it is shown in comments.
 fn main() {
