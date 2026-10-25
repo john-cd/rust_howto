@@ -30,3 +30,4 @@
 [ex~rust_source~quote-prettyplease]: rust_source.md#quote-prettyplease
 [ex~rust_source~cargo-metadata]: rust_source.md#cargo-metadata
 [ex~rust_source~find-unwraps]: rust_source.md#find-unwraps
+[ex~rust_source~wasm-roundtrip]: rust_source.md#wasm-roundtrip
