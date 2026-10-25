@@ -83,6 +83,15 @@
 [arbitrary-github]: https://github.com/rust-fuzz/arbitrary/
 
 
+[argmin]: https://docs.rs/argmin
+
+
+[argmin-crate]: https://crates.io/crates/argmin
+
+
+[argmin-github]: https://github.com/argmin-rs/argmin
+
+
 [argon2]: https://docs.rs/argon2
 
 

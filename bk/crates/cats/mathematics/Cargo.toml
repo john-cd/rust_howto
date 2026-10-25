@@ -21,6 +21,7 @@ autolib = false
 [dependencies]
 anyhow = "1.0.104"
 approx = "0.5.1" # was pinned at 0.4.0
+argmin = { version = "0.11.0", default-features = false } # Scalar root finding and optimization algorithms.
 clap = { version = "4.6.7", features = ["derive"] }
 fixed = "1.31.0"
 half = "2.7.1"
@@ -54,6 +55,11 @@ test = true
 [[example]]
 name = "linear_algebra"
 path = "examples/linear_algebra/main.rs"
+test = true
+
+[[example]]
+name = "numerical_analysis"
+path = "examples/numerical_analysis/main.rs"
 test = true
 
 [[example]]

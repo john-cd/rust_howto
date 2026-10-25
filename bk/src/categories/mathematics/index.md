@@ -69,7 +69,7 @@ The [`fraction`][c~fraction~docs]↗{{hi:fraction}} crate provides fraction and 
 
 ## Numerical Analysis
 
-Numerical analysis covers methods such as interpolation, integration, differentiation, and root finding. [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} provides multidimensional arrays for numerical computations.
+Numerical analysis covers methods such as integration, differentiation, and root finding. The [Numerical Analysis chapter][p~numerical-analysis] demonstrates root finding with [`argmin`][c~argmin~docs]↗{{hi:argmin}}.
 
 ## Optimization
 
