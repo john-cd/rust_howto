@@ -4,6 +4,10 @@
 
 Track tasks, priorities, and progress in [GitHub Issues](https://github.com/john-cd/rust_howto/issues).
 
+## Handoff note (2026-10-25)
+
+Claude completed #1859 (bk and later strict Clippy gates pass; Oracle `sibyl` feature not linted) and #1867, both closed and on `develop`. All other List A, List C, List F and verify-and-close items are Codex's again; none were started or changed by Claude. Worktree `.worktrees/ca` (branch `claude/list-a-clippy`) is clean and fully merged.
+
 ## IN-PROGRESS
 
 - [ ] Review the six-month-old `main` autostash preserved on branch `wip/stash-3-extract` (16 files: `development_tools_ffi`, web server and websocket examples); it does not apply cleanly to `develop`. The other three autostashes remain in the local stash list (`stash@{0}`–`{2}`) pending deletion.
