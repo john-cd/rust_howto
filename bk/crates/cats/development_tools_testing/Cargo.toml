@@ -54,6 +54,11 @@ path = "examples/test_techniques/paused_time.rs"
 test = true
 
 [[example]]
+name = "proptest_strategy"
+path = "examples/test_techniques/proptest_strategy.rs"
+test = true
+
+[[example]]
 name = "rstest_cases"
 path = "examples/test_techniques/rstest_cases.rs"
 test = true
