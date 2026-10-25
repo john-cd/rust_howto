@@ -12,7 +12,8 @@
 [ex~documentation~alternatives]: mdbook.md#alternatives
 [ex~documentation~module-or-crate-level-documentation]: documentation.md#module-or-crate-level-documentation
 [ex~documentation~playground]: mdbook.md#playground
-[ex~documentation~roxygen]: documentation.md#roxygen
+[ex~documentation~doc-comment]: documentation.md#documentation-tests
+[ex~documentation~aquamarine]: documentation.md#aquamarine
 [ex~documentation~termbook]: mdbook.md#termbook
 [p~apis]: ../../web-programming_http-client/apis.md
 [p~books]: ../../../../src/links/books.md
@@ -28,3 +29,4 @@
 [shields~badge-reference~docs]: https://shields.io/badges
 [docsrs~badge~docs]: https://docs.rs/about/badges
 [github-actions~status-badge~docs]: https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge
+[aquamarine~repo]: https://github.com/mersinvald/aquamarine

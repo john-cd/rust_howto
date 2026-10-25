@@ -102,5 +102,10 @@ name = "semver"
 path = "examples/semver/main.rs"
 test = true
 
+[[example]]
+name = "documentation_doc_comment"
+path = "examples/documentation/doc_comment.rs"
+test = true
+
 [lints]
 workspace = true
