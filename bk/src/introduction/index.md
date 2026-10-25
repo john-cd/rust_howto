@@ -43,7 +43,7 @@ This book is not intended for complete beginners. Readers should have already so
 
 ## Why This Book
 
-Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]↗{{hi:crates.io}} ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager. But with _more than 195 thousand crates_ (libraries) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust."
+Per the curated list of Rust crates [`blessed.rs`][blessed-rs~website]↗, "the standard library in Rust is much smaller than in Python or Go, for example. Those languages come with "batteries included" support... Rust, on the other hand, gets things like that from the [`crates.io`][crates.io~website]↗{{hi:crates.io}} ecosystem and the [`cargo`][c~cargo~docs]↗{{hi:cargo}} package manager. But with _more than 360 thousand crates_ (libraries, as of October 2026) to choose from, a common complaint from new Rust developers is that they don't know where to start, which crates they ought to use, and which crates they ought to trust."
 
 Furthermore, there are no dominant comprehensive platforms akin to `Rails`, `Django`, `Spring` or `Node` in the Rust world at this time - although several frameworks are first-of-mind in specific areas, such as asynchronous programming or web development.
 
@@ -56,7 +56,7 @@ This book therefore aims at reducing this learning curve by providing numerous *
 This book is a complement to similar works:
 
 - [Rust by Example][book~rust-by-example~book]↗ is similar in concept - a collection of runnable examples - but not in scope, as it focuses solely on the Rust language and standard library.
-- The [Rust Cookbook][book~rust-cookbook]↗ community project shares very similar goals with this book. While it is the official "cookbook" for Rust, few updates have been made in the last four years. Many of its examples no longer work. Several crates it references are no longer maintained. The author therefore decided to merge the (public domain) contents of the `Rust Cookbook` into this book and refresh its examples.
+- The [Rust Cookbook][book~rust-cookbook]↗ community project shares very similar goals with this book. While it is the official "cookbook" for Rust, its updates have been sporadic, and some of its examples no longer work. Several crates it references are no longer maintained. The author therefore decided to merge the (public domain) contents of the `Rust Cookbook` into this book and refresh its examples.
 
 Refer to the [[books | books]] chapter for a detailed list of Rust books.
 

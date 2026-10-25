@@ -195,7 +195,7 @@ See also the [Awesome Embedded Rust][awesome-embedded-rust~repo]↗, a curated l
 
 ### Webassembly (WASM) {#wasm}
 
-- [Rust and Webassembly][book~rustwasm]↗.This small book describes how to use Rust and WebAssembly together.{{hi:WASM}}
+- [Rust and Webassembly][book~rustwasm]↗: this small book describes how to use Rust and WebAssembly together. Note: the `rustwasm` GitHub organization that hosts it was archived in 2025, so parts of the book may be out of date.{{hi:WASM}}
 - [Programming WebAssembly with Rust][book~Programming-WebAssembly-Rust-Development-Applications]↗: Unified Development for Web, Mobile, and Embedded Applications, 1st Edition, by Kevin Hoffman. [978-1680506365][ISBN~978-1680506365]↗.
 
 For convenience, this page includes a number of links to the websites of publishers and book merchants. It is not an endorsement of these particular retailers or publishers. Click on the ISBN number link to gain access to a Wikipedia page with links to a variety of catalogs, ebook databases, and book sellers to choose from.
