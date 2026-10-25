@@ -53,6 +53,7 @@
   - [Password Hashing](categories/cryptography/password_hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
   - [AEAD](categories/cryptography/aead.md)
+  - [Protect Secrets](categories/cryptography/secrets.md)
   - [Signatures](categories/cryptography/signature.md)
   - [HMAC](categories/cryptography/hmac.md)
   - [Certificates](categories/cryptography/certificates.md)
