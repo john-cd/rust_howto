@@ -671,4 +671,4 @@ The mathematics follow-ups previously listed as in progress are closed as of 202
 
 ### List AB — Parsing and structured text
 
-The ten issue commits (`295726b2f` through `4c60695c2`) are integrated into local `develop`. `just fa`, changed-file Markdown checks, `just spell`, `dprint check`, `git diff --check`, the focused `refdefs.py` integration tests, and the pinned `refdefs-check` pass. Parser crate all-target validation remains blocked by Windows `onig_sys` link failure `LNK1114` (error 5); the full book build and strict Clippy remain pending. All ten issues remain open until required validation completes.
+The ten issue commits (`7d4d6757a` through `1c81bff14`) are integrated into local `develop` after rebasing onto `origin/develop`. `just fa`, changed-file Markdown checks, `just spell`, `dprint check`, `git diff --check`, the focused `refdefs.py` integration tests, and the pinned `refdefs-check` pass. Parser crate all-target validation remains blocked by Windows `onig_sys` link failure `LNK1114` (error 5); the full book build and strict Clippy remain pending. All ten issues remain open until required validation completes.
