@@ -2,8 +2,7 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Items that are public by default: enum variants, trait items and fields of
-//! public items.
+//! Enum variants and trait items are public by default; struct fields are not.
 
 /// A module with public types and traits.
 mod a_module {
@@ -55,7 +54,7 @@ fn main() {
     // ERROR: let _ = a_module::PublicStruct { private_val: true };
     let _ = a_module::PublicStruct::new(false);
     println!(
-        "public_by_default example: enum variants and struct fields can be public by default"
+        "public_by_default example: enum variants and trait items are public by default"
     );
 }
 

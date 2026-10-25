@@ -12,8 +12,8 @@ use std::default::*;
 // The most common use of globs is to import a "prelude", a group of items
 // commonly used together. See the "code organization" chapter.
 use std::io::prelude::*;
-// We can combine multiple `use` lines together with { }.
-use std::io::{Read, Write};
+// The `std::io::prelude::*` import above includes the common `Read` and
+// `Write` traits, so they do not need a second explicit import here.
 // Idiom: use `self` to refer to the module itself.
 // The following is equivalent to `use std::iter; use std::iter::empty;`.
 use std::iter::{self, empty};

@@ -8,9 +8,9 @@ Rust's "module system" helps structure your projects effectively. It gives fine-
 
 - _Modules_ organize your code hierarchically, define the scope in which names are valid, and control the privacy of items (via the [`pub`][book~rust-reference~visibility-and-privacy]↗{{hi:pub}} keyword).
 - _Paths_{{hi:Paths}} provide a way to uniquely identify items within your code, such as structs, functions, or other modules. The [`use`][book~rust-reference~use-declarations]↗{{hi:use}} keyword creates shortcuts to paths.
-- _Crates_ represent a logical unit of code, forming a tree of modules that compiles into either a library or an executable.
+- _Crates_ are compilation units, each with a root module and its descendant modules. A crate compiles into a library or an executable.
 - _Packages_, managed by [`cargo`][c~cargo~website]↗{{hi:cargo}}, are used to build, test, and share your Rust crates.
-- _Workspaces_, used for large projects, are a set of packages that share the same dependencies.
+- _Workspaces_, used for projects with multiple packages, share a lockfile and build output directory. A workspace root can define reusable dependency declarations, but each package declares the dependencies it uses.
 
 ## Modules and Paths
 
@@ -48,5 +48,5 @@ Rust's "module system" helps structure your projects effectively. It gives fine-
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
+  [accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
 </div>

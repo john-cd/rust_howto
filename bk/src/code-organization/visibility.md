@@ -36,7 +36,7 @@ Rust visibility rules are as follows:
 {{#include ../../crates/code_organization/examples/visibility/private_access.rs:example}}
 ```
 
-- If an item is _public_, then it can be accessed externally from some module `m`, if all the item's ancestor modules from `m`.
+- An item is accessible from a module `m` when every segment of its path is visible from `m`. For code in another crate, each module between the crate root and the item must be public or re-exported.
 
 In other words,
 
@@ -48,7 +48,7 @@ In other words,
 {{#include ../../crates/code_organization/examples/visibility/public_access.rs:example}}
 ```
 
-More precisely, _an item is accessible if all segments in its path are accessible_. That means that all enclosing modules traversed in the "parent to child" direction must be [`pub`][keyword~pub]↗{{hi:pub}} with the appropriate visibility scope (see below), or, if an enclosing module is not, there must be a suitable reexport - see the `pub use` section of the[[use_keyword | `use` Keyword]] chapter for more details.
+More precisely, _an item is accessible if all segments in its path are accessible_. When a path goes from a parent module to a child, each enclosing module must have a visibility scope that includes the caller (see below). If an enclosing module is private, a suitable re-export can expose the item; see the [`pub use`][book~rust-reference~use-declarations-visibility]↗ section of the [[use_keyword | `use` keyword]] chapter for details.
 
 ### Make your Code Items Visible to your Library's Clients {#visible-to-library-clients}
 
@@ -93,5 +93,5 @@ When writing a library or in contexts where the public API must remain stable, `
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
+  [accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
 </div>

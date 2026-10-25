@@ -16,10 +16,9 @@ pub mod public_api {
     pub fn also_public_to_external_crates() {}
 }
 
-// In constrast, this module is private, meaning that no external crate can
-// access this module. It is however accessible from the current module and any
-// descendants. If it is private at the root of this current crate, any module
-// in the crate may access any publicly visible item in this module.
+// In contrast, this module is private, so an external crate cannot access it.
+// It is accessible from this module and its descendants. Its public items are
+// still limited by the private module's visibility boundary.
 /// A private module, which external crates cannot access.
 mod crate_helper_module {
     /// A function that can only be used within the crate.

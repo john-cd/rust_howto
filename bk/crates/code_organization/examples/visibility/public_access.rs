@@ -39,7 +39,7 @@ fn main() {
     a_module::public();
 
     // Here, `a_module` is accessible, despite being private,
-    // because it is in the same module than `main`.
+    // because it is in the same module as `main`.
 
     // No access, if one or more segments in the path are inaccessible.
     // Here, `private` can't be reached from a parent.
@@ -54,7 +54,7 @@ fn main() {
     );
 }
 
-// The same applies when calling from a brother module.
+// The same applies when calling from a sibling module.
 /// A module that is a sibling of `a_module`.
 mod another_module {
     /// Calls the items accessible from this module.

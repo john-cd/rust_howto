@@ -14,7 +14,7 @@ mod a_module {
     pub(crate) fn visible_in_crate_only() {}
 }
 
-// We can also explictly mark the top module as `pub(crate)`:
+// We can also explicitly mark the top module as `pub(crate)`:
 /// A `pub(crate)` module.
 pub(crate) mod b_module {
     /// A function visible only in the current crate, since its module is.

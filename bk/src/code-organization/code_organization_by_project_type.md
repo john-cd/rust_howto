@@ -44,7 +44,7 @@ On the contrary, it is idiomatic for a module to contain multiple functions, `st
 
 ## Organize the Code of a Complex Library {#complex-library-code-organization}
 
-As needs grow, you may create nest modules:
+As needs grow, you may create nested modules:
 
 ```txt
 - src
@@ -214,7 +214,7 @@ Commonly, `main.rs` is kept minimal and refers to a library crate in the same `s
 Cargo.toml
 ```
 
-In that case, `main.rs` imports the public contents of the library crate via `use crate_name::module_name;` and only contain a short `main()` function.
+In that case, `main.rs` imports the public contents of the library crate via `use crate_name::module_name;` and contains only a short `main()` function.
 
 This code organization exposes a public library crate API, which has the advantages of being reusable and more easily testable (via integration tests in the [`tests`][book~rust~tests-directory]↗{{hi:tests directory}} folder). However, if the crate is published on [`crates.io`][crates.io~website]↗{{hi:crates.io}}, you must make sure to update your crate version according to Cargo's SemVer (semantic versioning) rules, every time you change the (now public) API. Your code will also break if you decide to rename your crate.
 
@@ -236,7 +236,7 @@ If your project is large, you may want to split it into several crates, which yo
 
 Each crate, of course, should be further split into modules and submodules as needed.
 
-You will most often create a 'Cargo workspace' to tie together your project's crates. A 'workspace' is a set of 'packages' developed in tandem that share the same [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} and output (e.g. [`target`][book~cargo~build-cache]↗) directory - and therefore share the same dependencies. A package is a bundle of one or more crates with `Cargo.toml`{{hi:Cargo.toml}} file that describes how to build those crates. A package include at least one crate, as many binary crates as you like, but at most only one library crate. Note that the concept of a 'package' is often conflated with that of a 'crate' and the latter word is often used to describe the former. Practically, a package is a subfolder of your workspace that contains a `Cargo.toml` file.
+You will most often create a Cargo workspace to tie together a project's packages. Workspace members share the same [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} and output (e.g. [`target`][book~cargo~build-cache]↗) directory, but they do not have to use the same dependencies. The root manifest can define reusable dependencies in `[workspace.dependencies]`; each member opts into the ones it uses. A package is a bundle of crates described by a `Cargo.toml` file. It contains at least one crate, can contain multiple binary crates, and can contain at most one library crate. The terms _package_ and _crate_ are often conflated in casual use, but a package is the Cargo-managed directory while a crate is a compilation unit. A package is typically a subfolder of the workspace with its own `Cargo.toml`.
 
 A typical organization may look as follows:
 
@@ -307,5 +307,5 @@ When working with Git submodules in your Rust projects, remember this crucial be
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
+  [accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
 </div>

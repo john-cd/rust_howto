@@ -24,7 +24,7 @@ mod private_module {
 /// Calls the private items that are accessible from here.
 fn main() {
     // `private_in_parent` is accessible, since it is
-    // in the same module than `main`.
+    // in the same module as `main`.
     private_in_parent();
 
     // `private_module` is accessible as well,

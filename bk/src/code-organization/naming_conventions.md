@@ -4,7 +4,7 @@
 
 {{#include naming_conventions.incl.md}}
 
-Rust prefers snake case for variables and functions, so a function or method would be called `read_str` instead of `readStr`. For structs, traits and enums, camel case is used, for example `HttpClient`.
+Rust prefers snake case for variables and functions, so a function or method would be called `read_str` instead of `readStr`. For structs, traits, and enums, UpperCamelCase is used, for example `HttpClient`.
 
 ## Name your Functions, Types, etc. (Naming Conventions) {#naming-conventions}
 
@@ -31,11 +31,11 @@ In `snake_case` or `SCREAMING_SNAKE_CASE`, a "word" should never consist of a si
 
 Conversions should be provided as methods, with names prefixed as follows:
 
-| Prefix | Cost | Ownership |
-|---|---|---|
-| `as_` | Cheap | Borrowed -> borrowed. Use if it returns another "view" of the data. |
-| `to_` | Expensive | Borrowed -> borrowed; borrowed -> owned (non-`Copy` types); owned -> owned (`Copy` types) |
-| `into_` | Variable | Owned -> owned (non-Copy types). `into_*` consumes its input. |
+| Prefix  | Cost      | Ownership                                                                                 |
+| ------- | --------- | ----------------------------------------------------------------------------------------- |
+| `as_`   | Cheap     | Borrowed -> borrowed. Use if it returns another "view" of the data.                       |
+| `to_`   | Expensive | Borrowed -> borrowed; borrowed -> owned (non-`Copy` types); owned -> owned (`Copy` types) |
+| `into_` | Variable  | Owned -> owned (non-Copy types). `into_*` consumes its input.                             |
 
 Examples:
 
@@ -101,5 +101,5 @@ The above is adapted from:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
+  [accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
 </div>

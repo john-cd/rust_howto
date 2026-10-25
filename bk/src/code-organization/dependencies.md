@@ -10,7 +10,7 @@ To use a (public) item (structs, enums, traits, functions, etc.) of an external 
 
 ```toml
 [dependencies]
-anyhow = "1.0.95"
+anyhow = "1.0.104"
 ```
 
 The name of the external crate is followed by `=` and a semantic version specifier. See the [[cargo | Cargo]] chapters for details.
@@ -26,7 +26,7 @@ fn a_func() -> anyhow::Result<()> {
 
 The path may include one or more modules as needed e.g., `<crate_name>::<module_name>::<item_name>`.
 
-You may start the path with `::` followed by the name of the crate, if a crate name is the same than a module in your crate.
+You may start the path with `::` followed by the name of the crate if a crate name is the same as a module in your crate.
 
 Once adding an external crate as a dependency, you will very often bring items from external crates into scope with the `use` keyword. See the [[use_keyword | `use` Keyword]] chapter for details.
 
@@ -62,4 +62,5 @@ fn main() -> Result<()> {
 - [[development-tools_cargo-plugins | Development Tools - Cargo Plugins]].
 
 [accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
+
 </div>

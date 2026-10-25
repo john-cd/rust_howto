@@ -16,7 +16,7 @@ Modules{{hi:Modules}} are Rust's way of organizing code within a crate (a binary
 
 Modules form a tree that originates in the "crate root file" (usually `src/lib.rs` for a library crate or `src/main.rs` for a binary crate). In the crate root file, you can declare modules. In turn, in each module, you can nest other modules, and so on.
 
-To declare a module, use the [`mod`][keyword~mod]↗{{hi:mod}} keyword. A module can be written inline, in the same file than its parent, by using curly brackets: `mod <module_name> { ... }` or it may be defined in a separate file or folder, by inserting a semicolon after its declaration: `mod <module_name>;`:
+To declare a module, use the [`mod`][keyword~mod]↗{{hi:mod}} keyword. A module can be written inline in its parent's file with curly brackets: `mod <module_name> { ... }`. It can also be declared in a separate file by ending the declaration with a semicolon: `mod <module_name>;`:
 
 ```rust,noplayground
 // Module in separate file: `a_file.rs` or `a_file/mod.rs` - see below.
@@ -42,7 +42,7 @@ Write `mod module_name;` to declare a module that has its code in a separate fil
 - `module_name.rs`,
 - `module_name/mod.rs` (older style),
 
-and effectively insert the contents in the parent module, as if it were an inline module.
+and compile that file as the module's contents.
 
 You can nest (inline or external-file) modules as you wish:
 
@@ -50,7 +50,7 @@ You can nest (inline or external-file) modules as you wish:
 // Inline module.
 mod a {
 
-    // The module code is in `a/b.rs` or to `a/b/mod.rs`.
+    // The module code is in `a/b.rs` or `a/b/mod.rs`.
     // `b.rs` or `mod.rs` can in turn contain modules.
     mod b;
 
@@ -68,6 +68,7 @@ Note the following:
 - Adding `.rs` files to your source code folder does not automatically incorporate the code in your crate. You must add explicit `mod` statements. Editors like 'VS Code' will not analyze your code or display hints while typing if you forget to do so!
 
 - The [`mod`][keyword~mod]↗{{hi:mod}} statement must be added to the _parent_ file, not to the file that contains the module itself.
+
 - Modules (and items within) are private by default. Use the [`pub`][keyword~pub]↗{{hi:pub}} keyword - see [[visibility | visibility rules]].
 
 - It is possible (but confusing) to override the name and path of the file where a module is stored, using the [path attribute][book~rust-reference~path-attribute]↗.
@@ -90,7 +91,7 @@ super::brother_module             // Path to another module declared in the pare
 crate::first_level::second_level  // Path to a nested module, starting from the crate root.
 ```
 
-Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in [[use_keyword | [`use`][keyword~use]↗{{hi:use}} keyword]] chapter.{{hi:use}}
+Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in the [[use_keyword | `use` keyword]] chapter.{{hi:use}}
 
 Going into more details, there are two main kinds of paths: relative and absolute paths. Relative paths start from the current module you are writing code in:
 
@@ -152,11 +153,13 @@ mod module_a {
   }
 }
 
-// Elsewhere in the code:
-crate::module_a::submodule_b::some_function();
+// Elsewhere in the crate:
+fn main() {
+    crate::module_a::submodule_b::some_function();
+}
 ```
 
-{{i:Absolute paths}} are infrequently seen but useful for disambiguation, when a module name is the same than an external dependency.
+{{i:Absolute paths}} are infrequently seen but useful for disambiguation when a module name is the same as an external dependency.
 
 Paths can be used to refer to elements within containers other than modules: structs, enums, traits, etc.
 
@@ -197,5 +200,5 @@ The following example summarizes the visibility rules when it comes to modules. 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
+  [accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
 </div>
