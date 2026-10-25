@@ -48,6 +48,30 @@ By default, `rust-analyzer` runs Cargo checks on save and build scripts for more
 
 This removes on-save Cargo diagnostics. Run the repository's `just` checks from the matching workspace when you need compiler or Clippy results.
 
+### Useful optional settings
+
+The following settings are optional preferences, not requirements. Add the ones you want to your settings file:
+
+```json
+{
+  "rust-analyzer.restartServerOnConfigChange": true,
+  "rust-analyzer.cargo.buildScripts.enable": false,
+  "rust-analyzer.initializeStopped": true,
+  "rust-analyzer.imports.granularity.group": "item",
+  "rust-analyzer.imports.granularity.enforce": true,
+  "rust-analyzer.imports.preferPrelude": true,
+  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
+  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+  "rust-analyzer.completion.fullFunctionSignatures.enable": true,
+  "rust-analyzer.assist.emitMustUse": true,
+  "rust-analyzer.statusBar.showStatusBar": "always"
+}
+```
+
+The `rust-analyzer` settings reference lists more: the remaining `inlayHints.*` hints (binding mode, closure captures, discriminants, expression adjustments, closing braces, implicit drops), `completion.*` options, `hover.show.traitAssocItems` and `diagnostics.styleLints.enable`.
+
+On Windows, the user-level `settings.json` is under `%APPDATA%\Code\User` (typically `C:\Users\<user_name>\AppData\Roaming\Code\User`).
+
 ## Troubleshooting
 
 - If a workspace is missing, confirm its `Cargo.toml` path and check the `linkedProjects` array. Remember that an explicit array disables project auto-discovery.
@@ -63,7 +87,3 @@ This removes on-save Cargo diagnostics. Run the repository's `just` checks from 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
-</div>

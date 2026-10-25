@@ -53,6 +53,9 @@ For an example of a mature Rust release workflow, see [ripgrep's release workflo
 - [GitHub deployment environments][github-actions~deployment-environments~docs].
 - [GitHub Actions security][github-actions~security~docs].
 - [Docker build caching with GitHub Actions][cache-management-with-github-actions~website]↗.
+- [Docker cache storage backends][docker~cache-storage-backends]↗, [Docker GitHub Action][docker~github-action]↗, [Creating a Docker container action][github~creating-a-docker-container-action]↗.
+- [`docker-cache`][docker-cache~repo]↗{{hi:docker-cache}}, [cached Docker images][cached-docker-images~repo]↗, and [caching a docker-compose build in GitHub Actions][stackoverflow~how-to-cache-docker-compose-build-inside-github-action]↗.
+- [`install-action`][install_action~repo]↗ installs development tools in a workflow, mainly from GitHub Releases.
 
 ### Release example
 
@@ -69,7 +72,3 @@ For an example of a mature Rust release workflow, see [ripgrep's release workflo
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
-</div>

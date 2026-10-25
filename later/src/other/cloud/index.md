@@ -65,5 +65,4 @@ Browse the [Rust cloud-native project catalog][rust-cloud-native~website]↗ and
 
 <div class="hidden">
 [edit](https://github.com/john-cd/rust_howto/issues/579)
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

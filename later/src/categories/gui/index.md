@@ -19,6 +19,8 @@ Framework maturity, maintenance, accessibility, styling, and platform support va
 | GUI that runs in a web browser                           | [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`dioxus`][c~dioxus~docs]↗{{hi:dioxus}} | [Web Frameworks](#web-frameworks)                                     |
 | Custom window and renderer                               | [`winit`][c~winit~docs]↗{{hi:winit}}, [`minifb`][c~minifb~docs]↗{{hi:minifb}}                              | [Window creation](#window-creation) and [2D renderers](#2d-renderers) |
 
+GTK and Tauri are the options that are most production-ready without caveats; the Rust-native toolkits are usable for simple projects but are still maturing. For web front ends that also generate static pages, see [`perseus`][c~perseus~docs]↗{{hi:perseus}}.
+
 For broader catalogs and surveys, see [Are We GUI Yet?][are-we-gui-yet?~website]↗, the GUI section of [Blessed.rs][blessed-rs~website]↗, and [The State of Rust GUI libraries][blog~state-rust-gui-libraries]↗.
 
 ## GUI Frameworks
@@ -114,5 +116,7 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 
 <div class="hidden">
 [organize](https://github.com/john-cd/rust_howto/issues/397)
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
+[Are we (I)DE yet?][are-we-ide-yet?~website]↗.
+[Porting a cross-platform GUI application to Rust][blog~porting-a-cross-platform-gui-application-to-rust]↗.
+cover zola?
 </div>

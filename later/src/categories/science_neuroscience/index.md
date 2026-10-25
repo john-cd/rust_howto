@@ -2,7 +2,7 @@
 
 ## Biology and Neuroscience
 
-[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+[![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~science::neuroscience][cat~science::neuroscience~badge]][cat~science::neuroscience]{{hi:Neuroscience}}
 
 Biology studies living systems; neuroscience is one area that studies the brain and nervous system. Rust can help build reliable tools for processing large sequence and imaging datasets, implementing analysis algorithms, and running simulations. The wider scientific category also includes [[science | machine learning and scientific computing]].
 
@@ -42,5 +42,4 @@ Biological data requires careful handling of identifiers, units, coordinate syst
 <div class="hidden">
 [write](https://github.com/john-cd/rust_howto/issues/959)
 [also cover Biology! see lib.rs categorization](https://github.com/john-cd/rust_howto/issues/1197)
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 </div>

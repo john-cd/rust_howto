@@ -2,6 +2,8 @@
 
 # WebSockets
 
+[![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket]{{hi:WebSocket}}
+
 {{#include websocket.incl.md}}
 
 WebSockets begin with an HTTP handshake and then keep one connection open for messages in both directions. Either side can send the next message without waiting for a new request. Because a connection is long-lived, plan for timeouts, disconnections, and cleanup as part of the application protocol.
@@ -37,6 +39,8 @@ See the [OWASP WebSocket Security Cheat Sheet][owasp-websocket-security] for a s
 
 ### Blocking client with tungstenite {#low-level}
 
+[![tungstenite][c~tungstenite~docs~badge]][c~tungstenite~docs] [![tungstenite~crates.io][c~tungstenite~crates.io~badge]][c~tungstenite~crates.io] [![tungstenite~repo][c~tungstenite~repo~badge]][c~tungstenite~repo] [![tungstenite~lib.rs][c~tungstenite~lib.rs~badge]][c~tungstenite~lib.rs]{{hi:tungstenite}}
+
 Use [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}} when blocking I/O fits the application or when you need its lower-level stream APIs.
 
 ~~~rust,editable
@@ -45,6 +49,8 @@ Use [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}} when blocking I/O fit
 
 ### Asynchronous echo client and server with Tokio {#general-purpose}
 
+[![tokio-tungstenite][c~tokio-tungstenite~docs~badge]][c~tokio-tungstenite~docs] [![tokio-tungstenite~crates.io][c~tokio-tungstenite~crates.io~badge]][c~tokio-tungstenite~crates.io] [![tokio-tungstenite~repo][c~tokio-tungstenite~repo~badge]][c~tokio-tungstenite~repo] [![tokio-tungstenite~lib.rs][c~tokio-tungstenite~lib.rs~badge]][c~tokio-tungstenite~lib.rs]{{hi:tokio-tungstenite}}
+
 Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} when the application uses the [tokio][c~tokio~docs]↗{{hi:tokio}} runtime. The short example binds an ephemeral loopback listener, echoes one text message, and returns the reply to its client.
 
 ~~~rust,editable
@@ -52,6 +58,8 @@ Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} whe
 ~~~
 
 ### Asynchronous client with async-tungstenite {#async-tungstenite}
+
+[![async-tungstenite][c~async-tungstenite~docs~badge]][c~async-tungstenite~docs] [![async-tungstenite~crates.io][c~async-tungstenite~crates.io~badge]][c~async-tungstenite~crates.io] [![async-tungstenite~repo][c~async-tungstenite~repo~badge]][c~async-tungstenite~repo] [![async-tungstenite~lib.rs][c~async-tungstenite~lib.rs~badge]][c~async-tungstenite~lib.rs]{{hi:async-tungstenite}}
 
 [async-tungstenite][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} also provides a Tokio adapter; this example uses that adapter to show the crate's API.
 
@@ -71,6 +79,5 @@ Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} whe
 
 <div class="hidden">
 [websocket: write](https://github.com/john-cd/rust_howto/issues/520)
-[content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
 Reviewed upstream tokio-tungstenite client and echo-server examples; updated the Tokio recipe to use `Utf8Bytes` and a tested local client/server round trip.
 </div>
