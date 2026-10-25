@@ -2,8 +2,8 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates the use of the `pest` parser generator framework
-//! for parsing a simple arithmetic expression like 3 + 5 * 2 - 8 / 4.
+//! This example demonstrates `pest` parsing a flat arithmetic expression
+//! into alternating number and operator tokens.
 //!
 //! In `Cargo.toml`, add:
 //! ```toml
@@ -29,45 +29,53 @@ use pest_derive::Parser;
 #[grammar = "../examples/pest/grammar.pest"] // Path relative to `src`
 struct ArithmeticParser;
 
-// // `pest` creates the function `ArithmeticParser::parse` and an enum called
-// // `Rule` with multiple variants:
-// #[allow(non_camel_case_types)]
-// enum Rule {
-//     expression,
-//     term,
-//     factor,
-//     number,
-// }
+/// Parses an arithmetic expression into its number and operator tokens.
+fn parse_expression(input: &str) -> anyhow::Result<Vec<String>> {
+    let pairs = ArithmeticParser::parse(Rule::expression, input)?;
+    let expression = pairs
+        .next()
+        .expect("the expression rule produces one outer pair");
 
-/// Parses an arithmetic expression and prints the resulting pairs.
-fn main() {
+    Ok(expression
+        .into_inner()
+        .map(|pair| pair.as_str().to_owned())
+        .collect())
+}
+
+/// Parses an arithmetic expression and prints its tokens.
+fn main() -> anyhow::Result<()> {
     let input = "3 + 5 * 2 - 8 / 4";
-    match ArithmeticParser::parse(Rule::expression, input) {
-        Ok(pairs) => {
-            for pair in pairs {
-                println!("{pair:?}");
-            }
-        }
-        Err(e) => {
-            eprintln!("Error: {e:?}");
-        }
+    for token in parse_expression(input)? {
+        println!("{token}");
     }
+
+    Ok(())
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example and propagates parse errors.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies a valid expression becomes alternating tokens.
     #[test]
-    fn test_main() {
-        main();
+    fn pest_parser_returns_number_and_operator_tokens() -> anyhow::Result<()> {
+        assert_eq!(
+            parse_expression("3 + 5 * 2 - 8 / 4")?,
+            ["3", "+", "5", "*", "2", "-", "8", "/", "4"]
+        );
+        Ok(())
+    }
+
+    /// Verifies malformed input returns a parser error.
+    #[test]
+    fn parser_rejects_an_incomplete_expression() {
+        assert!(parse_expression("3 +").is_err());
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/826)

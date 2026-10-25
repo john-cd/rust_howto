@@ -5,6 +5,6 @@
 mod pest;
 
 /// Runs the pest example.
-fn main() {
-    pest::run();
+fn main() -> anyhow::Result<()> {
+    pest::run()
 }
