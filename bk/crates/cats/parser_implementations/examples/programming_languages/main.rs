@@ -4,9 +4,11 @@
 
 #[cfg(feature = "sqlparser")]
 mod sqlparser;
+mod syn;
 
 /// Runs the example if the `sqlparser` feature is enabled.
 fn main() -> anyhow::Result<()> {
+    syn::run()?;
     #[cfg(feature = "sqlparser")]
     {
         sqlparser::run()?;

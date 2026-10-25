@@ -4,6 +4,8 @@
 
 {{#include programming_languages.incl.md}}
 
+Choose a parser that matches the language and the task. [`syn`][c~syn~docs]↗{{hi:syn}} provides Rust syntax trees for macros and source analysis; Tree-sitter grammars parse many languages and support incremental editor updates; [`swc_ecma_parser`][c~swc_ecma_parser~docs]↗{{hi:swc_ecma_parser}} parses JavaScript and TypeScript for tooling. For Python, use the parser that matches the toolchain you are integrating, such as `rustpython-parser` for RustPython syntax or Ruff's parser for Ruff tooling. These libraries expose different syntax trees and error models, so their ASTs are not interchangeable.
+
 ## Parse JavaScript {#javascript_parsing}
 
 [![swc_ecma_parser][c~swc_ecma_parser~docs~badge]][c~swc_ecma_parser~docs]{{hi:swc_ecma_parser}}
@@ -35,6 +37,14 @@ See also [`diesel`][c~diesel~docs]↗{{hi:diesel}}, an ORM that includes SQL par
 
 See [[write_proc_macros | Write Proc Macros]].
 
+This example parses source into a `syn::File` AST and extracts selected top-level declarations.
+
+```rust,editable
+{{#include ../../../crates/cats/parser_implementations/examples/programming_languages/syn.rs:example}}
+```
+
+For expression parsing in a small custom language, see [Expression Parser](../parsing/expression_parser.md).
+
 ## Parse WebAssembly (WAT/WASM) {#wasm_parsing}
 
 [`wat`][c~wat~docs]↗{{hi:wat}} parses WAT (WebAssembly Text Format). [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}} is a more general WebAssembly tooling library.
@@ -53,14 +63,9 @@ Parse SQL before it reaches a database and reject anything that is not exactly o
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Parsing](../parsing/index.md) covers parser combinators, grammar-driven parsers, and lexer design.
+- [[write_proc_macros | Write Proc Macros]] uses `syn` and `quote` to inspect and generate Rust syntax.
+- [Text Processing](../text-processing/index.md) covers operations on source text that do not require a full syntax tree.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/951)
-
-- [Reval - Rust expression parser][c~reval~lib.rs]↗.
-
-</div>

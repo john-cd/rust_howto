@@ -50,6 +50,7 @@ sqlparser = { version = "0.61.0", features = ["visitor"], optional = true }
 swc_common = "21.0.2"
 swc_ecma_ast = "23.0.1"
 swc_ecma_parser = "39.1.1"
+syn = { workspace = true }
 tl = "0.7.8"
 toml = "1.1.8"
 toml_edit = "0.25.17"
