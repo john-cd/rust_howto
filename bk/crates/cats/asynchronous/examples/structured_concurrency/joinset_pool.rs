@@ -63,7 +63,8 @@ async fn run_pool(inputs: Vec<u64>) -> Outcome {
     outcome
 }
 
-/// `abort_all` cancels the remaining tasks; they report a cancelled `JoinError`.
+/// `abort_all` cancels the remaining tasks; they report a cancelled
+/// `JoinError`.
 async fn abort_demo() -> usize {
     let mut set = JoinSet::new();
     for _ in 0..3 {

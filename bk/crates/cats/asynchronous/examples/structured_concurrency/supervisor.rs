@@ -11,8 +11,8 @@ use tokio::select;
 use tokio::time::sleep;
 use tokio_util::sync::CancellationToken;
 
-/// The delay before restart number `attempt` (starting at 0): `base * 2^attempt`,
-/// capped at `cap`.
+/// The delay before restart number `attempt` (starting at 0): `base *
+/// 2^attempt`, capped at `cap`.
 fn backoff(attempt: u32, base: Duration, cap: Duration) -> Duration {
     base.saturating_mul(2_u32.saturating_pow(attempt)).min(cap)
 }

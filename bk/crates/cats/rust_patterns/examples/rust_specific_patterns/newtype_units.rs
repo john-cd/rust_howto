@@ -20,6 +20,7 @@ struct Meters(f64);
 
 impl Add for Meters {
     type Output = Meters;
+
     fn add(self, rhs: Meters) -> Meters {
         Meters(self.0 + rhs.0)
     }
@@ -33,6 +34,7 @@ impl AddAssign for Meters {
 
 impl Sub for Meters {
     type Output = Meters;
+
     fn sub(self, rhs: Meters) -> Meters {
         Meters(self.0 - rhs.0)
     }
@@ -47,6 +49,7 @@ impl SubAssign for Meters {
 /// Scaling by a plain number is fine: meters * 2.0 is still meters.
 impl Mul<f64> for Meters {
     type Output = Meters;
+
     fn mul(self, rhs: f64) -> Meters {
         Meters(self.0 * rhs)
     }
@@ -55,6 +58,7 @@ impl Mul<f64> for Meters {
 /// Dividing two lengths gives a dimensionless ratio.
 impl Div for Meters {
     type Output = f64;
+
     fn div(self, rhs: Meters) -> f64 {
         self.0 / rhs.0
     }

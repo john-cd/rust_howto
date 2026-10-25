@@ -1,4 +1,5 @@
-//! Runs one of the `structured_concurrency` examples, chosen on the command line.
+//! Runs one of the `structured_concurrency` examples, chosen on the command
+//! line.
 //!
 //! TODO Reviewed ??-??-2026.
 

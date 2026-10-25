@@ -9,8 +9,8 @@
 //! - `std::collections::HashMap` uses SipHash, which resists HashDoS
 //!   (attacker-chosen keys that all collide). Keep it for keys that come from
 //!   untrusted input.
-//! - `ahash::AHashMap` is much faster on strings and other larger keys, and
-//!   is randomly seeded by default.
+//! - `ahash::AHashMap` is much faster on strings and other larger keys, and is
+//!   randomly seeded by default.
 //! - `rustc_hash::FxHashMap` is the fastest for small integer or enum keys, is
 //!   deterministic (not seeded), and has weak distribution for some key
 //!   patterns.

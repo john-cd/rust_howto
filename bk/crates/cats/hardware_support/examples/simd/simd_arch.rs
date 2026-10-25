@@ -137,7 +137,8 @@ mod tests {
 
     #[test]
     fn test_all_lengths() {
-        // Covers empty input, a tail shorter than a vector, and exact multiples.
+        // Covers empty input, a tail shorter than a vector, and exact
+        // multiples.
         for len in 0..40 {
             let a = fixture(len, 3);
             let b = fixture(len, 4);

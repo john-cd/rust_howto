@@ -19,7 +19,8 @@ struct Config {
     version: u32,
 }
 
-/// `watch`: subscribers see the latest value; intermediate values may be skipped.
+/// `watch`: subscribers see the latest value; intermediate values may be
+/// skipped.
 async fn watch_latest() {
     let (tx, mut rx) = watch::channel(Arc::new(Config { version: 1 }));
 

@@ -54,6 +54,7 @@ impl SendStore for MemoryStore {
     async fn get(&self, key: &str) -> Option<String> {
         self.0.get(key).cloned()
     }
+
     async fn put(&mut self, key: &str, value: String) {
         self.0.insert(key.to_owned(), value);
     }

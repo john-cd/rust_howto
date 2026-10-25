@@ -28,6 +28,7 @@ impl Store for Constant {
     fn name(&self) -> &'static str {
         "constant"
     }
+
     async fn read(&self, _key: &str) -> Option<String> {
         Some(self.0.to_owned())
     }
@@ -41,6 +42,7 @@ impl Store for Empty {
     fn name(&self) -> &'static str {
         "empty"
     }
+
     async fn read(&self, _key: &str) -> Option<String> {
         None
     }

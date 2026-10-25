@@ -5,9 +5,9 @@
 //! A periodic job with `tokio::time::interval`.
 //!
 //! `MissedTickBehavior::Skip` drops most of the ticks missed while a run was
-//! still in progress, instead of firing a burst to catch up. The loop ends when the
-//! cancellation token fires. The test runtime has a paused clock, so no real
-//! time passes.
+//! still in progress, instead of firing a burst to catch up. The loop ends when
+//! the cancellation token fires. The test runtime has a paused clock, so no
+//! real time passes.
 
 use std::time::Duration;
 
