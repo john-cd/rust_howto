@@ -100,6 +100,7 @@
   - [Numerical Analysis](categories/mathematics/numerical_analysis.md)
   - [Optimization](categories/mathematics/optimization.md)
   - [Units of Measurement](categories/mathematics/units.md)
+  - [Discrete Mathematics](categories/mathematics/discrete_mathematics.md)
 
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
 

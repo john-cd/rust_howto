@@ -90,7 +90,7 @@ For graph data structures and algorithms, see [`petgraph`][c~petgraph~docs]↗{{
 
 ## Discrete Mathematics
 
-This area includes combinatorics, set theory, and logic. [`bit-set`][c~bit-set~docs]↗{{hi:bit-set}} provides a set backed by a bit vector.
+This area includes combinatorics, set theory, and logic. The [Discrete Mathematics chapter][p~discrete-mathematics] demonstrates set operations with [`std::collections::BTreeSet`][c~std::collections::BTreeSet~docs]↗{{hi:BTreeSet}}. For compact integer sets, [`bit-set`][c~bit-set~docs]↗{{hi:bit-set}} provides a set backed by a bit vector.
 
 ## Units of Measurement
 

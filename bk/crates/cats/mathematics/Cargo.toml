@@ -54,6 +54,11 @@ path = "examples/complex_numbers/main.rs"
 test = true
 
 [[example]]
+name = "discrete_mathematics"
+path = "examples/discrete_mathematics/main.rs"
+test = true
+
+[[example]]
 name = "linear_algebra"
 path = "examples/linear_algebra/main.rs"
 test = true

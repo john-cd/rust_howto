@@ -35,6 +35,7 @@
 [ex~mathematics~find-a-root-with-brents-method]: numerical_analysis.md#find-a-root-with-brents-method
 [ex~mathematics~minimize-a-function-with-brents-method]: optimization.md#minimize-a-function-with-brents-method
 [ex~mathematics~convert-units-with-uom]: units.md#convert-units-with-uom
+[ex~mathematics~compare-sets-with-btreeset]: discrete_mathematics.md#compare-sets-with-btreeset
 [ex~mathematics~num-bigint]: additional_numeric_types.md#num-bigint
 [ex~mathematics~num]: additional_numeric_types.md#num
 [ex~mathematics~rational-numbers]: additional_numeric_types.md#rational-numbers
@@ -52,6 +53,7 @@
 [p~numerical-analysis]: numerical_analysis.md
 [p~optimization]: optimization.md
 [p~units]: units.md
+[p~discrete-mathematics]: discrete_mathematics.md
 [p~option]: ../../standard-library/optional_values.md
 [p~traits]: ../../language/traits.md
 [p~vectors]: ../data-structures/vectors.md
