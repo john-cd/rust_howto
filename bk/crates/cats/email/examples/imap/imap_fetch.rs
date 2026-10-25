@@ -1,3 +1,6 @@
+#![allow(dead_code)]
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Fetch unread messages over IMAP and parse them with [`mail_parser`].
 //!
@@ -9,7 +12,7 @@ use anyhow::Result;
 use mail_parser::MessageParser;
 
 /// A message reduced to the fields we care about.
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct Summary {
     pub subject: String,
     pub from: String,
@@ -18,13 +21,9 @@ pub struct Summary {
 /// Parses a raw RFC 822 message. Pure, so it is easy to unit test.
 pub fn summarize(raw: &[u8]) -> Option<Summary> {
     let message = MessageParser::default().parse(raw)?;
-    let from = message
-        .from()?
-        .first()?
-        .address()?
-        .to_string();
+    let from = message.from()?.first()?.address()?.to_owned();
     Some(Summary {
-        subject: message.subject().unwrap_or_default().to_string(),
+        subject: message.subject().unwrap_or_default().to_owned(),
         from,
     })
 }
@@ -66,8 +65,8 @@ Subject: Hello\r\n\r\nBody\r\n";
         assert_eq!(
             summarize(eml),
             Some(Summary {
-                subject: "Hello".to_string(),
-                from: "alice@example.com".to_string(),
+                subject: "Hello".to_owned(),
+                from: "alice@example.com".to_owned(),
             })
         );
     }

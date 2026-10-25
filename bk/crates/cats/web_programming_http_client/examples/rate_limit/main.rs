@@ -37,6 +37,7 @@ async fn rate_limited_calls(count: u32) -> Vec<u32> {
 async fn main() {
     let done = rate_limited_calls(4).await;
     println!("Made {} calls", done.len());
+    println!("Fake clock check: {:?}", check_with_fake_clock());
 }
 
 /// The quota can be checked deterministically with a fake clock,
@@ -70,6 +71,6 @@ mod tests {
         let done = rate_limited_calls(3).await;
         assert_eq!(done, vec![0, 1, 2]);
         // governor uses a real clock, so only check the result here.
-        assert!(start.elapsed() < Duration::from_secs(60));
+        assert!(start.elapsed() < Duration::from_mins(1));
     }
 }
