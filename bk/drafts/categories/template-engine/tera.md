@@ -14,6 +14,14 @@
 {{#include ../../../crates/cats/template_engine/examples/tera/tera.rs:example}}
 ```
 
+## Sanitize or Escape: What Protects a Template {#sanitize-vs-escape}
+
+[![tera][c~tera~docs~badge]][c~tera~docs]{{hi:tera}}{{hi:Escaping}}{{hi:Sanitizing}} [![cat~template-engine][cat~template-engine~badge]][cat~template-engine]{{hi:Template engine}}
+
+Escaping and sanitizing solve different problems. *Escaping* turns text into harmless data for one output context: `<` becomes `&lt;`, so user input is displayed instead of interpreted. [`tera`][c~tera~docs]↗{{hi:tera}} escapes automatically for templates whose name ends in `.html`, `.htm` or `.xml` (`Tera::autoescape_on`); the `safe` filter turns it off for one value and should be reserved for HTML you produced yourself. Escaping does not make a URL safe (a `javascript:` link stays a `javascript:` link), and it applies to the context you are in: an HTML-escaped value is not safe inside a `<script>` block or a CSS rule.
+
+*Sanitizing* keeps some of the markup and removes the dangerous part, for the case where users are allowed to submit HTML (a rich-text comment) or when Markdown is rendered. Run user-supplied HTML through [`ammonia`][c~ammonia~docs]↗{{hi:ammonia}} before it reaches a template, and only then mark it `safe`. See [[html_sanitization | Sanitize HTML]]. As a rule: escape everything by default, sanitize only the values that must contain markup, and never use `safe` on unsanitized input.
+
 ## Related Topics {#related-topics .skip}
 
 FIXME

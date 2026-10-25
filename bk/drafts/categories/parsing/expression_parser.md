@@ -25,6 +25,18 @@ The tree is then evaluated recursively. The tests check `1 + 2 * 3 = 7`, `2 ^ 3 
 
 A hand-written parser is a good fit when the grammar is small, error messages matter, or the grammar is not context free in a convenient way. Prefer a grammar-driven tool such as [`pest`][c~pest~docs]↗{{hi:pest}} (see [[parsing | Parsing Utilities]]) when the grammar is large or changes often, and a combinator library such as [`nom`][c~nom~docs]↗{{hi:nom}} or `chumsky` for binary formats or when you want recovery from errors.
 
+## Hand-Written Parser, `pest`, `chumsky` or `nom` {#parser-choices}
+
+[![pest][c~pest~docs~badge]][c~pest~docs] [![chumsky][c~chumsky~docs~badge]][c~chumsky~docs] [![nom][c~nom~docs~badge]][c~nom~docs] [![winnow][c~winnow~docs~badge]][c~winnow~docs]{{hi:pest}}{{hi:chumsky}}{{hi:nom}}{{hi:winnow}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+
+The calculator above is hand-written on top of a lexer and a precedence-climbing loop. That is a good choice for a small, stable grammar: no extra build step, full control over error messages and recovery, and few dependencies. Consider a library when the grammar is large or changes often:
+
+- [`pest`][c~pest~docs]↗{{hi:pest}} generates a parser from a PEG grammar file. The grammar is readable and checked at compile time, but you get a generic parse tree to convert into your own types, and error messages are generic unless you customize them.
+- [`chumsky`][c~chumsky~docs]↗{{hi:chumsky}} is a parser-combinator library focused on good error reporting and error recovery, which suits programming languages and editors.
+- [`nom`][c~nom~docs]↗{{hi:nom}} is a fast parser-combinator library for byte and text formats; it is a frequent choice for binary protocols and streaming input. [`winnow`][c~winnow~docs]↗{{hi:winnow}}, used above, is a nom-derived library with a friendlier API and error handling.
+
+A rule of thumb: a hand-written parser for one small language, `pest` when a separate grammar file helps readers, `chumsky` when diagnostics matter, `nom` or `winnow` for data formats. Whichever you pick, keep the lexer or tokenizer tests and the byte spans: they are what make error messages useful.
+
 ## Related Topics
 
 - [[parsing | Parsing Utilities]].

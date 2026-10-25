@@ -105,6 +105,11 @@ path = "examples/string_parsing/main.rs"
 test = true
 
 [[example]]
+name = "aho_corasick_redact"
+path = "examples/string_search/aho_corasick_redact.rs"
+test = true
+
+[[example]]
 name = "string_search"
 path = "examples/string_search/main.rs"
 test = true
