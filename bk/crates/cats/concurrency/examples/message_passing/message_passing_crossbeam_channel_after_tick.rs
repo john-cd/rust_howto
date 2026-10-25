@@ -18,23 +18,23 @@ use crossbeam_channel::tick;
 /// after a certain duration, respectively.
 fn main() {
     let start = Instant::now();
-    // Create a channel that delivers messages periodically every 50
+    // Create a channel that delivers messages periodically every 5
     // milliseconds.
-    let ticker = tick(Duration::from_millis(50));
+    let ticker = tick(Duration::from_millis(5));
 
-    // Create a channel that delivers a single message after 1 second.
+    // Create a channel that delivers a single message after 20 milliseconds.
     // This acts as a timeout mechanism.
-    let timeout = after(Duration::from_secs(1));
-
-    loop {
+    let timeout = after(Duration::from_millis(20));
+    let timeout_fired = loop {
         // `select` wait until any one of the channels becomes ready and
         // execute it.
         select! {
             recv(ticker) -> _ => println!("elapsed: {:?}", start.elapsed()),
-            recv(timeout) -> _ => break,
+            recv(timeout) -> _ => break true,
             // or use: default(Duration::from_millis(1000)) => break,
         }
-    }
+    };
+    assert!(timeout_fired);
 }
 
 // ANCHOR_END: example

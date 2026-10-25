@@ -6,11 +6,8 @@
 //! `select`.
 
 use std::thread;
-use std::time::Duration;
 
-use flume::Receiver;
-use flume::RecvTimeoutError;
-use flume::Sender;
+use flume::Selector;
 use flume::bounded;
 use flume::unbounded;
 
@@ -25,86 +22,61 @@ use flume::unbounded;
 // - `select`-like interface.
 // - No `unsafe` code.
 
-/// Sends messages over several kinds of `flume` channels and prints what is
-/// received.
+/// Sends messages through a bounded `flume` channel and selects between
+/// channels.
 fn main() {
-    // Create a bounded channel:
-    let (tx, rx): (Sender<i32>, Receiver<i32>) = bounded(2);
-
-    let tx2 = tx.clone();
-    // Spawn a producer thread:
-    let producer_handle = thread::spawn(move || {
-        for i in 1..6 {
-            // If there is no space left for new messages, calls to
-            // `Sender::send` will block
-            // (unblocking once a receiver has made space).
-            tx2.send(i).expect("All receivers have been dropped");
-            println!("Produced: {i}");
-            // Send a value into the channel, returning an error if all
-            // receivers have been dropped or the timeout has expired.
-            match tx2.send_timeout(i + 10, Duration::from_millis(5)) {
-                Ok(()) => println!("Produced: {}", i + 10),
-                Err(e) => eprintln!("{e}"),
-            }
+    // A bounded channel applies back-pressure when its two slots are full.
+    let (tx, rx) = bounded(2);
+    let producer = thread::spawn(move || {
+        for value in 1..=5 {
+            tx.send(value).expect("receiver remains alive");
         }
     });
 
-    let rx2 = rx.clone();
-    // Spawn a consumer thread:
-    let consumer_handle = thread::spawn(move || {
-        // Receive values from the channel in a loop.
-        loop {
-            match rx2.recv_timeout(Duration::from_millis(10)) {
-                Ok(value) => println!("Consumed: {value}"),
-                e @ Err(RecvTimeoutError::Timeout) => {
-                    eprintln!("The timeout has expired: {e:?}.");
-                }
-                Err(RecvTimeoutError::Disconnected) => {
-                    eprintln!(
-                        "All senders are dropped and there are no values left in the channel."
-                    );
-                    break;
-                }
-            }
-            thread::sleep(Duration::from_millis(10));
-        }
-    });
+    // Iteration ends when the producer drops its sender.
+    let mut received: Vec<_> = rx.iter().collect();
+    producer.join().expect("producer should finish");
+    received.sort();
+    assert_eq!(received, [1, 2, 3, 4, 5]);
+    println!("Received: {received:?}");
 
-    // Wait for producer thread to finish:
-    match producer_handle.join() {
-        Ok(()) => println!("Producer thread finished."),
-        Err(e) => eprintln!("Producer thread error: {e:?}"),
-    }
-    // Drop the original sender as well to signal to the consumer
-    // that no more values will be sent.
-    drop(tx);
-    // All senders for this channel have been dropped.
-    assert!(rx.is_disconnected());
-
-    match consumer_handle.join() {
-        Ok(()) => println!("Consumer thread finished."),
-        Err(e) => eprintln!("Consumer thread error: {e:?}"),
-    }
-
-    select();
+    assert_eq!(select(), (true, 42));
 }
 
-/// Requires the "select" feature to be enabled.
-fn select() {
+/// Selects between two ready channels and returns both received values.
+fn select() -> (bool, i32) {
     let (tx0, rx0) = unbounded();
     let (tx1, rx1) = unbounded();
 
-    std::thread::spawn(move || {
-        tx0.send(true).unwrap();
-        tx1.send(42).unwrap();
+    let producer = thread::spawn(move || {
+        tx0.send(true).expect("receiver remains alive");
+        tx1.send(42).expect("receiver remains alive");
     });
 
-    // `Selector` allows a thread to wait
-    // upon the result of more than one operation at once.
-    flume::Selector::new()
-        .recv(&rx0, |b| println!("Received {b:?}"))
-        .recv(&rx1, |n| println!("Received {n:?}"))
+    enum Selected {
+        Boolean(bool),
+        Number(i32),
+    }
+
+    // `Selector` waits for whichever receive operation becomes ready first.
+    let selected = Selector::new()
+        .recv(&rx0, |value| {
+            Selected::Boolean(value.expect("sender remains alive"))
+        })
+        .recv(&rx1, |value| {
+            Selected::Number(value.expect("sender remains alive"))
+        })
         .wait();
+    let result = match selected {
+        Selected::Boolean(value) => {
+            (value, rx1.recv().expect("second value was sent"))
+        }
+        Selected::Number(value) => {
+            (rx0.recv().expect("first value was sent"), value)
+        }
+    };
+    producer.join().expect("producer should finish");
+    result
 }
 // ANCHOR_END: example
 

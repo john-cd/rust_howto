@@ -4,7 +4,9 @@
 
 {{#include message_passing.incl.md}}
 
-One increasingly popular approach to ensuring safe [concurrency][p~concurrency] is *message passing*{{hi:Message passing}}, where threads communicate by sending each other messages{{hi:Messages}} containing data. The Rust standard library provides *channels*{{hi:Channels}} for message passing that are safe to use in concurrent contexts{{hi:Concurrent contexts}}.
+One approach to safe [concurrency][p~concurrency] is _message passing_{{hi:Message passing}}: threads communicate by sending messages{{hi:Messages}} through channels{{hi:Channels}} instead of sharing mutable data directly. The standard library's `std::sync::mpsc` provides an unbounded multi-producer, single-consumer channel; use `sync_channel` when producers need a bounded queue and back-pressure.
+
+For multiple consumers and `select!`, [`crossbeam-channel`][c~crossbeam-channel~docs]↗{{hi:crossbeam-channel}} provides bounded and unbounded MPMC channels. [`flume`][c~flume~docs]↗{{hi:flume}} and [`kanal`][c~kanal~docs]↗{{hi:kanal}} offer sync and async channel APIs. Compare their behavior and workload fit rather than relying on unqualified speed claims.
 
 Message passing in [`async`][book~rust-reference~async]↗{{hi:async}} programming is covered in a separate page: [async channels][p~async-channels]↗{{hi:Async channels}}.
 
@@ -20,13 +22,13 @@ Message passing in [`async`][book~rust-reference~async]↗{{hi:async}} programmi
 
 [![crossbeam-channel~website][c~crossbeam-channel~website~badge]][c~crossbeam-channel~website] [![crossbeam-channel][c~crossbeam-channel~docs~badge]][c~crossbeam-channel~docs] [![crossbeam-channel~crates.io][c~crossbeam-channel~crates.io~badge]][c~crossbeam-channel~crates.io] [![crossbeam-channel~repo][c~crossbeam-channel~repo~badge]][c~crossbeam-channel~repo] [![crossbeam-channel~lib.rs][c~crossbeam-channel~lib.rs~badge]][c~crossbeam-channel~lib.rs]{{hi:crossbeam-channel}}{{hi:Channel}}{{hi:Select}}{{hi:Mpmc}}{{hi:Golang}}{{hi:Message}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-[`crossbeam-channel`][c~crossbeam-channel~docs]↗{{hi:crossbeam-channel}} offers multi-producer multi-consumer channels{{hi:Multi-consumer channels}} for message passing. The absolute fastest channel implementation available. Implements Go-like 'select' feature.
+[`crossbeam-channel`][c~crossbeam-channel~docs]↗{{hi:crossbeam-channel}} offers bounded and unbounded multi-producer, multi-consumer channels{{hi:Multi-consumer channels}} for message passing. Its `select!` macro waits for one of several channel operations to become ready.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/message_passing/message_passing_crossbeam_channel.rs:example}}
 ```
 
-Example using specialized channels for [`tickers`][c~tickers~docs]↗{{hi:tickers}}{{hi:Tickers}} and [`timeout`][c~reqwest::ClientBuilder::timeout~docs]↗{{hi:Timeout}}
+This example also uses `tick` and `after` to schedule periodic work and a timeout.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/message_passing/message_passing_crossbeam_channel_after_tick.rs:example}}
@@ -49,7 +51,7 @@ The [`flume`][c~flume~docs]↗{{hi:flume}} crate is a library that provides mult
 
 [![flume][c~flume~docs~badge]][c~flume~docs]{{hi:flume}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
 
-A game loop, a UI frame or a control cycle handles pending commands once per *tick* and must not wait for more. A bounded [`flume`][c~flume~docs]↗{{hi:flume}} channel fits: `send` blocks when the channel is full (back-pressure), `try_iter` drains only the messages already queued, and `recv_timeout` waits at most one tick for new work.
+A game loop, a UI frame or a control cycle handles pending commands once per _tick_ and must not wait for more. A bounded [`flume`][c~flume~docs]↗{{hi:flume}} channel fits: `send` blocks when the channel is full (back-pressure), `try_iter` drains only the messages already queued, and `recv_timeout` waits at most one tick for new work.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/message_passing/flume_tick.rs:example}}
@@ -57,7 +59,7 @@ A game loop, a UI frame or a control cycle handles pending commands once per *ti
 
 ## Wait-free Ring Buffers for Real-Time Threads {#spsc}
 
-A real-time thread, such as an audio callback, must never wait on a lock or allocate memory: either can take unbounded time. A *single-producer, single-consumer* (SPSC) ring buffer{{hi:Ring buffer}}{{hi:SPSC}} lets such a thread exchange data with the rest of the program. The buffer is allocated once, `push` and `pop` never block, and they return an error when the buffer is full or empty so the caller decides what to do.
+A real-time thread, such as an audio callback, must never wait on a lock or allocate memory: either can take unbounded time. A _single-producer, single-consumer_ (SPSC) ring buffer{{hi:Ring buffer}}{{hi:SPSC}} lets such a thread exchange data with the rest of the program. The buffer is allocated once, `push` and `pop` never block, and they return an error when the buffer is full or empty so the caller decides what to do.
 
 Use an ordinary channel for commands and telemetry, and a ring buffer only for the hot path.
 
@@ -85,12 +87,12 @@ A real-time thread often also needs a higher scheduling priority. [`thread-prior
 
 ## Choosing a Channel {#choosing-a-channel}
 
-| Need | Use |
-|------|-----|
-| Several producers, one consumer, no extra dependency | [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]↗ |
-| Several consumers, `select!`, tickers and timeouts | [`crossbeam-channel`][c~crossbeam-channel~docs]↗ |
-| A smaller dependency with a similar API, `try_iter`, sync and async use | [`flume`][c~flume~docs]↗ |
-| A real-time thread that must not block or allocate | an SPSC ring buffer: [`rtrb`][c~rtrb~docs]↗ or [`ringbuf`][c~ringbuf~docs]↗ |
+| Need                                                    | Use                                                                         |
+| ------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Several producers, one consumer, no extra dependency    | [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]↗                       |
+| Several consumers, `select!`, tickers and timeouts      | [`crossbeam-channel`][c~crossbeam-channel~docs]↗                            |
+| A channel API that can be used from sync and async code | [`flume`][c~flume~docs]↗ or [`kanal`][c~kanal~docs]↗                        |
+| A real-time thread that must not block or allocate      | an SPSC ring buffer: [`rtrb`][c~rtrb~docs]↗ or [`ringbuf`][c~ringbuf~docs]↗ |
 
 ## See Also {#see-also .skip}
 
@@ -98,11 +100,14 @@ A real-time thread often also needs a higher scheduling priority. [`thread-prior
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[shared_state | Shared State]] for data that must be accessed by multiple threads.
+- [[concurrent_data_structures | Concurrent Data Structures]] for shared maps and queues.
+- [[_actors | Actors]] for message-driven state isolation.
+- [[threadpool | Threadpools]] for dispatching independent work to reusable workers.
+- [[async_channels | Async Channels]] for communication between async tasks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[message_passing: polish](https://github.com/john-cd/rust_howto/issues/264)
 </div>

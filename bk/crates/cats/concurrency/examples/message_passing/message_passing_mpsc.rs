@@ -9,34 +9,34 @@
 
 use std::sync::mpsc;
 use std::thread;
-use std::time::Duration;
-
 /// Sends messages from several producer threads to a single consumer through an
 /// `mpsc` channel.
 fn main() {
     let (tx, rx) = mpsc::channel();
     let tx2 = tx.clone();
-    thread::spawn(move || {
-        let vals = vec![String::from("hi"), String::from("hi again")];
-
-        for val in vals {
-            tx.send(val).unwrap();
-            thread::sleep(Duration::from_secs(1));
+    let first = thread::spawn(move || {
+        for value in ["hi", "hi again"] {
+            tx.send(String::from(value)).unwrap();
         }
     });
 
-    thread::spawn(move || {
-        let vals = vec![String::from("more"), String::from("messages")];
-
-        for val in vals {
-            tx2.send(val).unwrap();
-            thread::sleep(Duration::from_secs(1));
+    let second = thread::spawn(move || {
+        for value in ["more", "messages"] {
+            tx2.send(String::from(value)).unwrap();
         }
     });
 
-    while let Ok(msg) = rx.recv() {
-        println!("{msg}");
-    }
+    // Both producer-owned senders are dropped when their threads finish, so
+    // iteration ends after all four messages have arrived.
+    let mut received: Vec<_> = rx.into_iter().collect();
+    first.join().expect("first producer should finish");
+    second.join().expect("second producer should finish");
+    received.sort();
+
+    let mut expected = vec!["hi", "hi again", "more", "messages"];
+    expected.sort();
+    assert_eq!(received, expected);
+    println!("{received:?}");
 }
 
 // ANCHOR_END: example

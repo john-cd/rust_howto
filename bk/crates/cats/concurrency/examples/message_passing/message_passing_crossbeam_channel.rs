@@ -29,11 +29,12 @@ fn main() {
 
     // Spawn a new thread to send a message into the channel.
     // Note that the cloned sender is moved into the thread.
-    thread::spawn(move || s2.send("Hi!").unwrap());
+    let producer = thread::spawn(move || s2.send("Hi!").unwrap());
 
     // Blocks until receiving the message from the channel.
     // Receive the message and assert that it's "Hi!".
     assert_eq!(r1.recv(), Ok("Hi!"));
+    producer.join().expect("producer should finish");
 
     // Try receiving a message without blocking.
     // The channel is now empty:
@@ -43,6 +44,7 @@ fn main() {
     // Receive all remaining messages currently in the channel
     // (non-blocking).
     let v: Vec<_> = r1.try_iter().collect();
+    assert_eq!(v, ["0"]);
     println!("{v:?}");
 
     // When all senders or all receivers associated with a channel get
@@ -54,7 +56,9 @@ fn main() {
     // ERROR s1.send("2").unwrap();
 
     // ...but any remaining messages can still be received.
-    println!("{:?}", r1.iter().collect::<Vec<_>>());
+    let remaining: Vec<_> = r1.iter().collect();
+    assert_eq!(remaining, ["1"]);
+    println!("{remaining:?}");
     // Note that the call to `collect` would block if the channel were not
     // disconnected.
 
