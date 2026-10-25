@@ -35,3 +35,4 @@
 [ex~text-processing~rake]: text_analysis.md#rake
 [ex~text-processing~word-boundaries]: text_analysis.md#word-boundaries
 [ex~text-processing~syntect]: syntax_highlighting.md#syntect
+[ex~text-processing~tree-sitter-spans]: syntax_highlighting.md#tree-sitter-spans
