@@ -2,6 +2,8 @@
 
 # Parsing Utilities
 
+Use parser combinators to compose reusable parsing functions, or choose a parser generator when a separate grammar is easier to review and maintain. The examples below build custom parsers; for established formats such as JSON, TOML, Markdown, and XML, see [[parser-implementations | Parser Implementations]].
+
 {{#include parsing.incl.md}}
 
 ## Create a Parser with `nom` {#nom}
@@ -36,7 +38,7 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 {{#include ../../../crates/cats/parsing/examples/pest/pest.rs:example}}
 ```
 
-### Create a Parser with `tree-sitter` {#tree-sitter}
+## Create a Parser with `tree-sitter` {#tree-sitter}
 
 [![tree-sitter][c~tree-sitter~docs~badge]][c~tree-sitter~docs]{{hi:tree-sitter}}
 [![tree-sitter~crates.io][c~tree-sitter~crates.io~badge]][c~tree-sitter~crates.io]
@@ -51,9 +53,8 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 
 ## Other Notable Crates {#other-notable-crates .skip}
 
-- [`combine`][c~combine~docs]↗{{hi:combine}}.
-- [`peg`][c~peg~docs]↗{{hi:peg}}.
-- [`chumsky`][c~chumsky~docs]↗{{hi:chumsky}}.
+- [`combine`][c~combine~docs]↗{{hi:combine}} and [`chumsky`][c~chumsky~docs]↗{{hi:chumsky}} are parser-combinator libraries; compare their error and recovery APIs when diagnostics are important.
+- [`peg`][c~peg~docs]↗{{hi:peg}} generates a parser from a PEG grammar, like `pest`.
 
 ## Related Topics {#related-topics .skip}
 
@@ -65,8 +66,6 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[parsing: write; examples](https://github.com/john-cd/rust_howto/issues/448)
-
 - [Awesome Pest][awesome-pest~repo]↗: A curated list of resources, projects, and tools using or for the `pest` parser generator in Rust.
 - [ABNF to Pest][c~abnf_to_pest~crates.io]↗.
 - [`winnow`][c~winnow~docs]↗.
