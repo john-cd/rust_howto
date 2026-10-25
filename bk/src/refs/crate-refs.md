@@ -3282,6 +3282,14 @@
 [c~fltk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fltk-yellow
 [c~fltk~repo]: https://github.com/fltk-rs/fltk-rs
 [c~fltk~repo~badge]: https://img.shields.io/badge/fltk-steelblue?logo=github
+[c~float-cmp~crates.io]: https://crates.io/crates/float-cmp
+[c~float-cmp~crates.io~badge]: https://img.shields.io/badge/crates.io-float--cmp-crimson
+[c~float-cmp~docs]: https://docs.rs/float-cmp
+[c~float-cmp~docs~badge]: https://img.shields.io/crates/v/float-cmp?label=float-cmp
+[c~float-cmp~lib.rs]: https://lib.rs/crates/float-cmp
+[c~float-cmp~lib.rs~badge]: https://img.shields.io/badge/lib.rs-float--cmp-yellow
+[c~float-cmp~repo]: https://github.com/mikedilger/float-cmp
+[c~float-cmp~repo~badge]: https://img.shields.io/badge/float--cmp-steelblue?logo=github
 [c~fluent~crates.io]: https://crates.io/crates/fluent
 [c~fluent~crates.io~badge]: https://img.shields.io/badge/crates.io-fluent-crimson
 [c~fluent~docs]: https://docs.rs/fluent

@@ -77,6 +77,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that cancelling the root token reaches all child tasks.
     #[test]
     fn test_main() {
         main();

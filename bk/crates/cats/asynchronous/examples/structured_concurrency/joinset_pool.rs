@@ -114,6 +114,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks the bounded pool returns each completed task result.
     #[test]
     fn test_main() {
         main();

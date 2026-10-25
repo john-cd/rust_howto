@@ -16,6 +16,7 @@ struct Order {
     items: Vec<String>,
 }
 
+/// Builds an order with deterministic fields and a caller-provided id.
 fn create_order(id: u64) -> Order {
     Order {
         id,
@@ -24,6 +25,7 @@ fn create_order(id: u64) -> Order {
     }
 }
 
+/// Prints one representative order for the example binary.
 fn main() {
     println!("{:?}", create_order(1));
 }
@@ -32,6 +34,7 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Redacts the generated order id from the JSON snapshot.
     #[test]
     fn json_snapshot_with_redaction() {
         // Redactions replace values that change between runs, so the
@@ -50,6 +53,7 @@ mod tests {
         "#);
     }
 
+    /// Captures the stable debug representation of an order.
     #[test]
     fn debug_snapshot() {
         insta::assert_debug_snapshot!(create_order(7), @r#"

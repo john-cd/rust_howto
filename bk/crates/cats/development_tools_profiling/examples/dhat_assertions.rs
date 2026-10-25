@@ -16,6 +16,7 @@ fn with_capacity(parts: &[&str]) -> String {
     s
 }
 
+/// Runs the allocation example outside the test harness.
 fn main() {
     println!("{}", with_capacity(&["a", "b", "c"]));
 }
@@ -26,6 +27,7 @@ mod tests {
 
     // `dhat` allows one profiler at a time per process, so keep all the
     // allocation assertions in a single test.
+    /// Verifies the optimized string builder performs one allocation.
     #[test]
     fn allocation_counts() {
         let _profiler = dhat::Profiler::builder().testing().build();

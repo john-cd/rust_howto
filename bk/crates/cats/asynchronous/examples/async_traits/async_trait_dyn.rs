@@ -25,10 +25,12 @@ struct Constant(&'static str);
 
 #[async_trait]
 impl Store for Constant {
+    /// Names this backend for display in the results.
     fn name(&self) -> &'static str {
         "constant"
     }
 
+    /// Returns the constant value for every key.
     async fn read(&self, _key: &str) -> Option<String> {
         Some(self.0.to_owned())
     }
@@ -39,10 +41,12 @@ struct Empty;
 
 #[async_trait]
 impl Store for Empty {
+    /// Names this backend for display in the results.
     fn name(&self) -> &'static str {
         "empty"
     }
 
+    /// Reports that the empty backend has no stored values.
     async fn read(&self, _key: &str) -> Option<String> {
         None
     }
@@ -82,6 +86,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks heterogeneous async stores through trait objects.
     #[test]
     fn test_main() {
         main();

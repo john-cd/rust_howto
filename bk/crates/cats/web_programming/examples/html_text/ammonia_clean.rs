@@ -5,6 +5,7 @@
 
 use ammonia::Builder;
 
+/// Cleans unsafe tags, attributes, and URL schemes from untrusted HTML.
 fn main() -> anyhow::Result<()> {
     let dirty = r#"<p onclick="steal()">Hi<script>alert(1)</script>
         <a href="javascript:steal()">bad</a>
@@ -44,6 +45,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the sanitizer example and verifies its assertions.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

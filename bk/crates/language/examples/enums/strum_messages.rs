@@ -82,11 +82,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the menu example builds and prints the enum metadata.
     #[test]
     fn test_main() {
         main();
     }
 
+    /// Verifies that menu labels and tooltips match their variants.
     #[test]
     fn test_menu() {
         let entries = menu();

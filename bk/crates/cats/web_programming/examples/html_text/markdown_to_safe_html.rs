@@ -16,6 +16,7 @@ fn render_safe(markdown: &str) -> String {
     ammonia::clean(&unsafe_html)
 }
 
+/// Renders Markdown to HTML, then sanitizes the result before use.
 fn main() -> anyhow::Result<()> {
     let markdown = concat!(
         "# Title\n\n",
@@ -43,6 +44,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that rendered Markdown is sanitized before it is returned.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

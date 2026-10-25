@@ -15,10 +15,10 @@ fn reachable(adjacency: &[Vec<usize>], start: usize) -> FixedBitSet {
     let mut visited = FixedBitSet::with_capacity(adjacency.len());
     let mut stack = vec![start];
     while let Some(node) = stack.pop() {
-        // `put` sets the bit and returns its previous value.
-        if visited.put(node) {
+        if visited.contains(node) {
             continue;
         }
+        visited.insert(node);
         stack.extend(
             adjacency[node]
                 .iter()
@@ -62,6 +62,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks graph traversal and fixed-bit-set operations.
     #[test]
     fn test_main() {
         main();

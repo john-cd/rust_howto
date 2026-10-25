@@ -52,6 +52,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that string, integer, and boolean properties are accessible.
     #[test]
     fn test_main() {
         main();

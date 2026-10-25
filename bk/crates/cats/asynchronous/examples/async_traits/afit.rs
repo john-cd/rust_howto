@@ -25,6 +25,7 @@ trait Store {
 struct MemoryStore(HashMap<String, String>);
 
 impl Store for MemoryStore {
+    /// Returns the value associated with `key`, if any.
     async fn get(&self, key: &str) -> Option<String> {
         self.0.get(key).cloned()
     }
@@ -67,6 +68,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that generic code can await the in-memory store.
     #[test]
     fn test_main() {
         main();

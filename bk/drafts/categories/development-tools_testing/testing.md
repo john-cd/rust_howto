@@ -10,6 +10,16 @@ For most basic code testing needs, using [`cargo test`][book~cargo~cargo-test]�
 
 [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} (built-in) is the standard Rust testing framework for writing unit tests. Uses `#[test]` attribute.
 
+## Compare Floating-Point Values Approximately {#float-asserts}
+
+[![float-cmp][c~float-cmp~docs~badge]][c~float-cmp~docs] [![float-cmp~crates.io][c~float-cmp~crates.io~badge]][c~float-cmp~crates.io]{{hi:float-cmp}} [![approx][c~approx~docs~badge]][c~approx~docs]{{hi:approx}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Floating point}}
+
+Floating-point values are rounded to representable binary numbers, so `0.1 + 0.2` is not exactly `0.3`. Avoid `assert_eq!` for computed floating-point results. [`float-cmp`][c~float-cmp~docs]↗{{hi:float-cmp}} compares by ULPs (units in the last place) or an absolute epsilon; [`approx`][c~approx~docs]↗{{hi:approx}} provides assertion macros such as `assert_relative_eq!`. Choose a tolerance that matches the scale and error bounds of the calculation.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/examples/test_techniques/float_asserts.rs:example}}
+```
+
 ## Integration Testing {#integration_testing}
 
 Often uses [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} as well, but integration tests are placed in a separate tests directory and focus on testing interactions between [modules][p~modules] or components.
@@ -91,7 +101,7 @@ Random inputs that violate a type's invariants waste test cases. [`prop_compose!
 
 ## Test a Command-line Program with `assert_cmd` {#cli-testing}
 
-[![assert_cmd][c~assert_cmd~docs~badge]][c~assert_cmd~docs]{{hi:assert_cmd}} [![assert_cmd~crates.io][c~assert_cmd~crates.io~badge]][c~assert_cmd~crates.io] [![assert_cmd~repo][c~assert_cmd~repo~badge]][c~assert_cmd~repo] [![assert_cmd~lib.rs][c~assert_cmd~lib.rs~badge]][c~assert_cmd~lib.rs]  [![predicates][c~predicates~docs~badge]][c~predicates~docs]{{hi:predicates}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]
+[![assert_cmd][c~assert_cmd~docs~badge]][c~assert_cmd~docs]{{hi:assert_cmd}} [![assert_cmd~crates.io][c~assert_cmd~crates.io~badge]][c~assert_cmd~crates.io] [![assert_cmd~repo][c~assert_cmd~repo~badge]][c~assert_cmd~repo] [![assert_cmd~lib.rs][c~assert_cmd~lib.rs~badge]][c~assert_cmd~lib.rs] [![predicates][c~predicates~docs~badge]][c~predicates~docs]{{hi:predicates}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]
 
 [`assert_cmd`][c~assert_cmd~docs]↗{{hi:assert_cmd}} runs a program and asserts on its exit status, `stdout` and `stderr`, using the [`predicates`][c~predicates~docs]↗ crate for matching. In an integration test (`tests/*.rs`) of a package that builds a binary, `Command::cargo_bin("my-tool")` finds the freshly built executable; the example runs `rustc` so that it is self-contained. To compare whole outputs, consider `snapbox` or `trycmd`, which keep expected output in snapshot files.
 

@@ -84,6 +84,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that equality and hashing ignore display-only presentation.
     #[test]
     fn test_main() {
         main();

@@ -47,3 +47,4 @@
 [ex~development-tools_testing~env-vars]: testing.md#env-vars
 [ex~development-tools_testing~paused-time]: testing.md#paused-time
 [ex~development-tools_testing~proptest-strategy]: testing.md#proptest-strategy
+[ex~development-tools_testing~float-asserts]: testing.md#float-asserts

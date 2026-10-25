@@ -137,6 +137,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks validation, parsing, conversion, and JSON round trips.
     #[test]
     fn test_main() -> Result<(), Box<dyn std::error::Error>> {
         main()

@@ -30,6 +30,7 @@ mod tests {
 
     // One test function expands to one test per `#[case]` row; a failure
     // names the row, e.g. `tests::parses::case_2`.
+    /// Parses valid duration suffixes and rejects unknown or empty input.
     #[rstest]
     #[case("90s", Some(90))]
     #[case("5m", Some(300))]
@@ -41,11 +42,13 @@ mod tests {
     }
 
     // A fixture builds shared test data; tests receive it by argument name.
+    /// Supplies representative durations for parameterized tests.
     #[fixture]
     fn inputs() -> Vec<&'static str> {
         vec!["1s", "1m", "1h"]
     }
 
+    /// Checks that durations increase as the unit gets larger.
     #[rstest]
     fn units_increase(inputs: Vec<&str>) {
         let seconds: Vec<u64> =
@@ -54,6 +57,7 @@ mod tests {
     }
 
     // `#[values]` runs every combination.
+    /// Checks that zero remains zero with each supported unit.
     #[rstest]
     fn zero_is_zero(#[values("0s", "0m", "0h")] input: &str) {
         assert_eq!(parse_seconds(input), Some(0));

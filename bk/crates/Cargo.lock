@@ -5044,6 +5044,7 @@ dependencies = [
  "clap",
  "fake",
  "faux",
+ "float-cmp",
  "httpmock",
  "insta",
  "lcov",

@@ -72,6 +72,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Keeps a child alive after the guard explicitly releases ownership.
     #[test]
     fn released_child_keeps_running() -> anyhow::Result<()> {
         let guard = KillOnDrop::new(sleep_command(30).spawn()?);
@@ -84,6 +85,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that a completed command is reaped normally.
     #[test]
     fn run_completes() -> anyhow::Result<()> {
         run()

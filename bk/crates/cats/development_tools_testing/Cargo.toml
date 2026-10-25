@@ -23,14 +23,15 @@ afl-fuzzing = ["dep:afl"]
 
 [dependencies]
 afl = { version = "0.18.2", optional = true }
+anyhow = "1.0.104"
 approx = "0.5.1" # was pinned at 0.4.0
 arbitrary = { version = "1.5.0", features = ["derive"] }
-anyhow = "1.0.104"
 assert_cmd = "2.2.2" # Test command-line programs.
 bolero = "0.13.4"
 clap = { version = "4.6.7", features = ["derive"] }
 fake = { version = "5.1.0", features = ["derive"] }
 faux = "0.1.13"
+float-cmp = "0.10.0"
 httpmock = "0.9.0" # Mock an HTTP server.
 insta = { version = "1.49.0", features = ["json", "redactions"] }
 lcov = "0.8.2" # Parse LCOV coverage reports.
@@ -41,14 +42,19 @@ rstest = "0.26.1"
 serde = { version = "1", features = ["derive"] }
 serial_test = "3.2.0"
 temp-env = "0.3.6"
-ureq = "3.5.0"
 tokio = { version = "1.54.1", features = ["macros", "rt", "time", "test-util"] }
+ureq = "3.5.0"
 
 ## General
 
 [[example]]
 name = "env_vars"
 path = "examples/test_techniques/env_vars.rs"
+test = true
+
+[[example]]
+name = "float_asserts"
+path = "examples/test_techniques/float_asserts.rs"
 test = true
 
 [[example]]

@@ -60,6 +60,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks case-insensitive parsing and serde-compatible names.
     #[test]
     fn test_main() {
         main();

@@ -17,6 +17,7 @@ fn fetch_greeting(base_url: &str, name: &str) -> anyhow::Result<String> {
     Ok(body)
 }
 
+/// Calls the greeting service at the local development address.
 fn main() -> anyhow::Result<()> {
     println!("{}", fetch_greeting("http://localhost:8080", "Ferris")?);
     Ok(())
@@ -28,6 +29,7 @@ mod tests {
 
     use super::*;
 
+    /// Returns the mocked greeting and verifies the request was received.
     #[test]
     fn returns_the_greeting() -> anyhow::Result<()> {
         // Starts a server on a free local port, shut down on drop.
@@ -44,6 +46,7 @@ mod tests {
         Ok(())
     }
 
+    /// Converts a non-success HTTP status into an error.
     #[test]
     fn reports_a_server_error() {
         let server = MockServer::start();

@@ -98,6 +98,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that a completed command returns its output and exit status.
     #[test]
     fn run_completes() -> anyhow::Result<()> {
         run()

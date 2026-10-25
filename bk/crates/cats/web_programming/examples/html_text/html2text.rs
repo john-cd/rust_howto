@@ -4,6 +4,7 @@
 //! Converts an HTML email body to wrapped plain text with `html2text`, e.g.
 //! for the `text/plain` part of a multipart message.
 
+/// Converts the sample HTML email and checks its text alternative.
 fn main() -> anyhow::Result<()> {
     let html = r#"<html><body>
         <h1>Order shipped</h1>
@@ -35,6 +36,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that the email text preserves its heading, link, and list.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

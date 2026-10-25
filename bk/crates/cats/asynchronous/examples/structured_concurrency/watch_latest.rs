@@ -80,6 +80,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks watch state, broadcasts, and bounded message delivery.
     #[test]
     fn test_main() {
         main();

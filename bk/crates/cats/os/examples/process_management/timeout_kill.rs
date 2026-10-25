@@ -52,11 +52,13 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Terminates and reaps a command that exceeds its deadline.
     #[test]
     fn slow_command_times_out() -> anyhow::Result<()> {
         run()
     }
 
+    /// Preserves the output of a command that finishes before its deadline.
     #[test]
     fn fast_command_completes() -> anyhow::Result<()> {
         let mut child = sleep_command(0).spawn()?;

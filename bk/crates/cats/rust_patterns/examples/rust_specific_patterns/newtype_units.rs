@@ -101,11 +101,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the quantity example formats its computed values.
     #[test]
     fn test_main() {
         main();
     }
 
+    /// Checks the supported operations preserve their expected units.
     #[test]
     fn test_ops() {
         assert_eq!(Meters(1.0) + Meters(2.0), Meters(3.0));

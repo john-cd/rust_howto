@@ -23,6 +23,7 @@ mod tests {
 
     use super::*;
 
+    /// Reads a temporary log level from the environment.
     #[test]
     #[serial(env)]
     fn reads_the_variable() {
@@ -31,6 +32,7 @@ mod tests {
         });
     }
 
+    /// Uses the default level when the environment variable is absent.
     #[test]
     #[serial(env)]
     fn defaults_when_unset() {

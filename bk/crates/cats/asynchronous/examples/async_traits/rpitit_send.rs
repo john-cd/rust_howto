@@ -20,6 +20,7 @@ trait Refresh {
 struct Counter(u32);
 
 impl Refresh for Counter {
+    /// Increments and returns the counter value.
     async fn refresh(&mut self) -> Result<u32, String> {
         self.0 += 1;
         Ok(self.0)
@@ -51,10 +52,12 @@ trait LocalStore {
 struct MemoryStore(HashMap<String, String>);
 
 impl SendStore for MemoryStore {
+    /// Returns the value associated with `key`, if any.
     async fn get(&self, key: &str) -> Option<String> {
         self.0.get(key).cloned()
     }
 
+    /// Stores a cloned key and owned value.
     async fn put(&mut self, key: &str, value: String) {
         self.0.insert(key.to_owned(), value);
     }
@@ -93,6 +96,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks both `Send` trait styles on a multi-threaded runtime.
     #[test]
     fn test_main() {
         main();

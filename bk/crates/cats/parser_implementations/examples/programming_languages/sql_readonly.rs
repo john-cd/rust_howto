@@ -30,6 +30,7 @@ fn check_read_only(sql: &str) -> Result<(), Rejection> {
     }
 }
 
+/// Demonstrates accepting a single read-only SQL query.
 fn main() -> anyhow::Result<()> {
     assert_eq!(
         check_read_only("SELECT id FROM users WHERE age > 18"),
@@ -63,6 +64,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the SQL validation example as a test.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()

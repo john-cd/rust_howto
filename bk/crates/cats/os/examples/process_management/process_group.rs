@@ -68,6 +68,7 @@ mod tests {
         }
     }
 
+    /// Confirms that terminating a group also terminates its grandchild.
     #[test]
     fn grandchild_is_killed_with_the_group() -> anyhow::Result<()> {
         // The shell prints the pid of its background `sleep` and waits.
@@ -103,6 +104,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that a completed group command returns normally.
     #[test]
     fn run_completes() -> anyhow::Result<()> {
         run()

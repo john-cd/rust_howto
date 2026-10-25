@@ -90,6 +90,7 @@ struct ExprParser<'a> {
 }
 
 impl<'a> ExprParser<'a> {
+    /// Creates a parser for spanned tokens and records the input length.
     fn new(tokens: Vec<Spanned<'a>>, end: usize) -> Self {
         Self {
             tokens,
@@ -98,6 +99,7 @@ impl<'a> ExprParser<'a> {
         }
     }
 
+    /// Returns the next token without advancing the parser.
     fn peek(&self) -> Option<&Spanned<'a>> {
         self.tokens.get(self.pos)
     }
@@ -197,6 +199,7 @@ fn calculate(source: &str) -> Result<f64, String> {
     eval(&parse(source)?)
 }
 
+/// Runs representative valid and invalid calculator expressions.
 fn main() {
     for source in ["1 + 2 * 3", "2 ^ 3 ^ 2", "-2 ^ 2", "(1 + 2) * 3", "1 +"] {
         match calculate(source) {
@@ -217,6 +220,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Evaluates the calculator examples with the expected precedence.
     #[test]
     fn precedence_and_associativity() {
         assert_eq!(calculate("1 + 2 * 3"), Ok(7.0));
@@ -226,13 +230,15 @@ mod tests {
         assert_eq!(calculate("10 - 4 - 3"), Ok(3.0));
     }
 
+    /// Verifies that each lexer token retains its original byte range.
     #[test]
     fn tokens_carry_spans() {
-        let tokens = lex("12 + x").unwrap();
+        let tokens = lex("12 + x").expect("the sample expression should lex");
         assert_eq!(tokens[0], (Token::Number(12.0), 0..2));
         assert_eq!(tokens[2], (Token::Ident("x"), 5..6));
     }
 
+    /// Checks that malformed input reports the relevant byte position.
     #[test]
     fn errors_report_positions() {
         assert_eq!(

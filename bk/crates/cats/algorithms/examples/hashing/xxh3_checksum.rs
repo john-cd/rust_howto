@@ -54,6 +54,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that a corrupted checksum causes rejection.
     #[test]
     fn test_main() {
         main();

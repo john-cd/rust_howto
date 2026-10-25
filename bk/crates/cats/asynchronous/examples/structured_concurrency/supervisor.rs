@@ -93,6 +93,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks the supervisor restarts a failed worker and observes shutdown.
     #[test]
     fn test_main() {
         main();

@@ -28,6 +28,7 @@ mod tests {
     // With `start_paused`, the runtime advances the clock automatically
     // whenever every task is waiting on a timer, so the test does not really
     // sleep.
+    /// Advances virtual time to the timeout without sleeping in real time.
     #[tokio::test(start_paused = true)]
     async fn times_out_without_waiting() {
         let started = Instant::now();
@@ -41,6 +42,7 @@ mod tests {
         assert_eq!(started.elapsed(), Duration::from_secs(5));
     }
 
+    /// Completes before the deadline on the paused Tokio clock.
     #[tokio::test(start_paused = true)]
     async fn completes_in_time() {
         let result = timeout(

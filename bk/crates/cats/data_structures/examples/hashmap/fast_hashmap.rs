@@ -86,6 +86,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that all hash-map implementations count words consistently.
     #[test]
     fn test_main() {
         main();

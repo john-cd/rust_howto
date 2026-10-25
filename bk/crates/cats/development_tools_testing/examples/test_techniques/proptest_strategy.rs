@@ -51,6 +51,7 @@ mod tests {
     // argument depends on the first, so every generated `Span` is valid
     // and no test input is discarded.
     prop_compose! {
+        /// Generates spans whose endpoints satisfy `start <= end`.
         fn any_span()(start in -1_000..1_000i32)
                      (length in 0..500i32, start in Just(start)) -> Span {
             Span::new(start, start + length).expect("valid by construction")
@@ -58,6 +59,7 @@ mod tests {
     }
 
     proptest! {
+        /// Checks that the union contains both input spans.
         #[test]
         fn union_contains_both(a in any_span(), b in any_span()) {
             let u = a.union(&b);
@@ -65,16 +67,19 @@ mod tests {
             prop_assert!(u.start <= b.start && b.end <= u.end);
         }
 
+        /// Checks that span union is commutative.
         #[test]
         fn union_is_commutative(a in any_span(), b in any_span()) {
             prop_assert_eq!(a.union(&b), b.union(&a));
         }
 
+        /// Checks that span overlap is symmetric.
         #[test]
         fn overlap_is_symmetric(a in any_span(), b in any_span()) {
             prop_assert_eq!(a.overlaps(&b), b.overlaps(&a));
         }
 
+        /// Checks that disjoint spans produce a union at least as large as their total length.
         #[test]
         fn disjoint_union_is_not_smaller(a in any_span(), b in any_span()) {
             prop_assume!(!a.overlaps(&b));
@@ -82,6 +87,7 @@ mod tests {
         }
 
         // `new` rejects exactly the inverted ranges.
+        /// Checks that construction succeeds exactly when endpoints are ordered.
         #[test]
         fn new_matches_ordering(start in any::<i32>(), end in any::<i32>()) {
             prop_assert_eq!(Span::new(start, end).is_some(), start <= end);

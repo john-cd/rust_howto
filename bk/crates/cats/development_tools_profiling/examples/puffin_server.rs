@@ -76,6 +76,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the example can run without starting a server.
     #[test]
     fn test_main() {
         main();
@@ -96,6 +97,7 @@ mod tests {
         assert!(scopes >= 4);
     }
 
+    /// Reports a bind failure as inactive profiling instead of panicking.
     #[test]
     fn failed_bind_does_not_panic() {
         // Port 1 is privileged, so binding fails for a normal user.
