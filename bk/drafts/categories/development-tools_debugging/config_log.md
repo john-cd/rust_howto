@@ -51,7 +51,7 @@ All these steps are normally done internally by [`env_logger::init`][c~env_logge
 [![log][c~log~docs~badge]][c~log~docs]{{hi:log}} [![env_logger][c~env_logger~docs~badge]][c~env_logger~docs]{{hi:env_logger}} [![chrono][c~chrono~docs~badge]][c~chrono~docs]{{hi:chrono}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}{{hi:Timestamp}}
 
 Creates a custom logger{{hi:Custom logger}} configuration with [`env_logger::Builder`][c~env_logger::Builder~docs]↗{{hi:env_logger::Builder}}.
-Each [log][p~log] entry calls [`chrono::offset::Local::now`][c~chrono::offset::Local::now~docs]↗{{hi:chrono::offset::Local::now}} to get the current [`chrono::DateTime`][c~chrono::DateTime~docs]↗{{hi:chrono::DateTime}} in local timezone and uses [`chrono::DateTime::format`][c~chrono::DateTime::format~docs]↗{{hi:chrono::DateTime::format}} with [`chrono::format::strftime`][c~chrono::format::strftime~docs]↗{{hi:chrono::format::strftime}} to format a timestamp used in the final log.
+Each [log][p~log] entry calls [`chrono::offset::Local::now`][c~chrono::offset::Local::now~docs]↗{{hi:chrono::offset::Local::now}} to get the current [`chrono::DateTime`][c~chrono::DateTime~docs]↗{{hi:chrono::DateTime}} in the local time zone and uses [`chrono::DateTime::format`][c~chrono::DateTime::format~docs]↗{{hi:chrono::DateTime::format}} with [`chrono::format::strftime`][c~chrono::format::strftime~docs]↗{{hi:chrono::format::strftime}} to format a timestamp. Exact timestamp output varies with the current time and system time zone.
 
 The example calls [`env_logger::Builder::format`][c~env_logger::Builder::format~docs]↗{{hi:env_logger::Builder::format}} to set a closure which formats each message text with timestamp, [`log::Record::level`][c~log::Record::level~docs]↗{{hi:log::Record::level}} and body ([`log::Record::args`][c~log::Record::args~docs]↗{{hi:log::Record::args}}).
 
@@ -62,8 +62,8 @@ The example calls [`env_logger::Builder::format`][c~env_logger::Builder::format~
 stderr output will contain
 
 ```sh
-2017-05-22T21:57:06 [WARN] - warn
-2017-05-22T21:57:06 [INFO] - info
+<timestamp> [WARN] - warn
+<timestamp> [INFO] - info
 ```
 
 ## Log Messages to a Custom Location {#log-to-custom-location}
@@ -80,11 +80,12 @@ Create the log configuration{{hi:Log configuration}} with [`log4rs::append::file
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Log Messages](log.md) covers the `log` facade and conventional levels.
+- [Tracing](tracing.md) documents subscribers and `EnvFilter` for structured diagnostics.
+- [Configuration](../config/configuration.md) covers application configuration beyond logging filters.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/925)
 </div>
