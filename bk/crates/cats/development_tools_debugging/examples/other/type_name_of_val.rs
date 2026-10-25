@@ -18,6 +18,10 @@ fn main() {
     let sum: i32 = iter.sum();
     println!("The sum of the `{iter_name}` is {sum}.");
     // prints: The sum of the `core::array::iter::IntoIter<i32, 3>` is 6.
+    println!("A Vec<u8> has type `{}`.", std::any::type_name::<Vec<u8>>());
+    println!("{}:{} in {}", file!(), line!(), module_path!());
+    let backtrace = std::backtrace::Backtrace::capture();
+    println!("Backtrace status: {:?}", backtrace.status());
 }
 
 // ANCHOR_END: example
@@ -31,6 +35,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the type and source-location diagnostics can be evaluated.
     #[test]
     fn test_main() {
         main();
