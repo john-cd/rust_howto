@@ -6,6 +6,11 @@ Track tasks, priorities, and progress in [GitHub Issues](https://github.com/john
 
 ## IN-PROGRESS
 
+- [ ] Review the six-month-old `main` autostash preserved on branch `wip/stash-3-extract` (16 files: `development_tools_ffi`, web server and websocket examples); it does not apply cleanly to `develop`. The other three autostashes remain in the local stash list (`stash@{0}`–`{2}`) pending deletion.
+- [x] 2026-10-25: NASM (needed by `aws-lc-sys` on Windows) and Ninja install steps documented in the book's development environment setup, `.devcontainer` scripts, Dockerfile and CI workflows.
+
+- [ ] Verify and complete examples for [#1936](https://github.com/john-cd/rust_howto/issues/1936), [#1935](https://github.com/john-cd/rust_howto/issues/1935), [#1934](https://github.com/john-cd/rust_howto/issues/1934), [#1932](https://github.com/john-cd/rust_howto/issues/1932), [#1924](https://github.com/john-cd/rust_howto/issues/1924), [#1923](https://github.com/john-cd/rust_howto/issues/1923), [#1922](https://github.com/john-cd/rust_howto/issues/1922), [#1920](https://github.com/john-cd/rust_howto/issues/1920), [#1919](https://github.com/john-cd/rust_howto/issues/1919), and [#1918](https://github.com/john-cd/rust_howto/issues/1918): fill acceptance gaps, format and validate, create focused commits, integrate into `develop`, and close issues when evidence supports it. Worktree: `.worktrees\a\work` on `codex/issue-example-batch`.
+
 Live GitHub snapshot on 2026-10-25 (re-checked against open issues and `develop` at `b463e22`): **98 of 300 issues from Lists 1–30 remain open**; #510 and #636 closed since the earlier snapshot. The entries below retain their original list membership and show their current priority labels. GitHub Issues remains the source of truth; refresh this inventory as issues close.
 
 ### List 1
@@ -220,6 +225,10 @@ List B completion update (2026-10-25):
 - #41 and #43 have partial draft documentation in `develop` at [e8291b7](https://github.com/john-cd/rust_howto/commit/e8291b72d) and [e10fde0](https://github.com/john-cd/rust_howto/commit/e10fde00b). Keep open: their acceptance asks for per-feature Rust examples in a Cargo example crate; current additions are shell recipes, and four `templ` commands require live crates.io data, which conflicts with the offline/deterministic requirement.
 - #1959 remains open. Its issue comments report real capnp 1.0.1 regeneration and successful all-features encoding tests; `just bb` with encoding includes, Windows `just ntt` filters, and human editorial review remain outstanding. `capnp` is not on this session's `PATH`. #1038 and #1040 were already closed on GitHub.
 - The remaining full `just ca` and `just bb` runs were deferred while unrelated workspace Cargo jobs saturated the workstation (100% CPU, under 1 GiB free memory). Do not close #284, #708, #286, or #1959 until their required gates pass.
+
+Board update (2026-10-25):
+
+- The requested moves of #1959, #708, #286, #284, #43, and #41 to the `Partial / Follow-ups` project column were not applied. The available GitHub connector has no project-board mutation operation, browser automation failed to initialize (`os error 3`), and `gh auth status` reports the `john-cd` token is invalid. Retry after restoring authenticated board access.
 
 ### List 33 — Desktop, GPU, audio, FFI and embedded chapters (Codex C)
 
