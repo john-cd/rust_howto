@@ -73,6 +73,12 @@ fn main() -> anyhow::Result<()> {
         evaluate(json!({ "accountType": "margin", "assetClass": "stock" }))?;
     println!("no match: {result}");
     assert!(result.get("preferred").is_none());
+
+    // A missing input field is not an error either: the cell cannot match a
+    // specific value, but an empty cell still does, so `r2` applies.
+    let result = evaluate(json!({ "assetClass": "bond" }))?;
+    println!("missing field: {result}");
+    assert_eq!(result["preferred"], "taxable");
     Ok(())
 }
 // ANCHOR_END: example
