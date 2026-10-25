@@ -37,7 +37,6 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Atlassian][atlassian~website]↗ | Uses Rust to analyze petabytes of source code. |
 | [Attain][attainoutcomes~website]↗ | |
 | [Automata][ata~website]↗ | |
-| [Autumn Engineering][autumnai~repo]↗ | Offers machine learning frameworks written in Rust. |
 | [Bencher][bencher~website]↗ [(github)][bencher~repo]↗ | Continuous [[benchmarking | benchmarking]] tools designed to catch [[performance | performance]] regressions in CI. |
 | [Bitfury][bitfury~website]↗ | Exonum is an extensible framework for blockchain projects written in Rust. |
 | [Block][block~website]↗ | |
@@ -51,13 +50,12 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [CarGurus][cargurus~website]↗ | |
 | [Cash App][cash-app~website]↗ | |
 | [Ceph][ceph~website]↗ | Provides an open-source storage system partially written in Rust. Rust bindings for `librbd`, an interface into the Ceph storage platform. |
-| [Chef][chef~website]↗ [(github)][chef~repo]↗ | Offers a platform to configure, deploy, and manage applications, written in Rust. |
+| [Chef][chef~website]↗ [(github)][chef~repo]↗ | Offers a platform to configure, deploy, and manage applications. Its application automation tool, Habitat, is written in Rust. |
 | [Chroma][chroma~website]↗ [(github)][chroma~repo]↗ | |
 | [Clever Cloud][clever-cloud~website]↗ | Allow developers to host web applications. A part of their infrastructure is developed in Rust. |
 | [Cloudflare Workers][cloudflare-workers~website]↗ | Deploy serverless code across the globe with Rust support. |
 | [Cloudflare][cloudflare~website]↗ [(github)][cloudflare~repo]↗ | Uses Rust for its core edge logic. See, for example, [Pingora (blog)][cloudflare~blog]↗. |
 | [CodeDay][codeday~website]↗ | |
-| [CoreOS][coreos~website]↗ | CoreOS is a open-sourced container host, using Rust as one of its main programming languages. |
 | [Corrode][corrode~website]↗ [(github)][corrode~repo]↗ | Corrode is a Germany-based Rust consulting and development firm. |
 | [Coursera][coursera~website]↗ | Uses Rust for its [[learning | learning]] platform. |
 | [Craft][craft~website]↗ | Their core machine learning engine is written in Rust. |
@@ -69,10 +67,9 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Deno][deno~website]↗ | Uses Rust for its JavaScript and TypeScript runtime. |
 | [Devolutions][devolutions~website]↗ | |
 | [Dioxus Labs][dioxuslabs~website]↗ [(github)][c~dioxus~repo]↗ | |
-| [Discord][discord~website]↗ | Uses Rust for both the client and server sides of its codebase, including their real-time communication services. |
+| [Discord][discord~website]↗ | Uses Rust for parts of its backend, including components of its real-time communication services. |
 | [Disney][disney~website]↗ | |
-| [Distil Networks][distil-networks~website]↗ | Uses Rust in their low-latency bot detection and mitigation platform. |
-| [Dropbox][dropbox~website]↗ | Uses Rust for its file-syncing engine. See, for example, [Capture][dropbox-capture~website]↗. |
+| [Dropbox][dropbox~website]↗ | Uses Rust for its file-syncing engine. |
 | [DungeonFog][dungeonfog~website]↗ [(github)][dungeonfog~repo]↗ | Uses Rust in their game engine and map-making tool for RPGs. The "Project Deios" map maker tool is written completely in Rust. |
 | [EVO][evo~website]↗ | Develops marketplaces for online shopping, fintech, and logistics. [[Development tools | development-tools]], containerization, monitoring and orchestration systems written in Rust. |
 | [Embark Studios][embark-studios~website]↗ | |
@@ -91,7 +88,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [GRAIL][grail~website]↗ | |
 | [Gama Space][gamaspace~website]↗ | |
 | [Gitoxide Labs (github)][gitoxidelabs~repo]↗ | |
-| [Google][google~website]↗ | Uses Rust for ChromeOS, Google Fuchsia, and other projects. In Android 13, about 21% of all new native code (C/C++/Rust) is in Rust. There are approximately 1.5 million total lines of Rust code in Android across new functionality and components such as Keystore2, the new Ultra-wideband (UWB) stack, DNS-over-HTTP3, Android's Virtualization Framework (AVF), and various other components and their open source dependencies. |
+| [Google][google~website]↗ | Uses Rust for ChromeOS, Google Fuchsia, and other projects. Android uses Rust for new native code, in components such as Keystore2, the Ultra-wideband (UWB) stack, DNS-over-HTTP3 and the Android Virtualization Framework (AVF). |
 | [Grafbase][grafbase~website]↗ | |
 | [Greenbone][greenbone~website]↗ | |
 | [Gremlin][gremlin~website]↗ | Safely and efficiently causing controlled chaos. |
@@ -124,15 +121,14 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Matic Robots][maticrobots~website]↗ | See also this [blog][blog~matic-apr-25]↗. |
 | [Meilisearch][meilisearch~website]↗ [(github)][meilisearch~repo]↗ | |
 | [Memfault][memfault~website]↗ | |
-| [Meta][meta~website]↗ | Uses Rust for the source control backend, Libra (now Diem), and other server-side projects. Facebook's primary source control system is partially written in Rust. |
+| [Meta][meta~website]↗ | Uses Rust for parts of its source control backend (Sapling) and other server-side projects. |
 | [Microsoft][microsoft~website]↗ | Uses Rust for various projects, including the [[windows | Windows]] kernel, Azure, and Visual Studio. [`windows-rs`][c~windows~docs]↗{{hi:windows-rs}} calls Windows APIs from Rust. There are several Azure services also using Rust, including [Azure IoT Edge][azure-iot-edge~repo]↗ and 'Kusto', the core query and storage engine for [Azure Data Explorer][azure-data-explorer]↗. |
 | [MoveParallel][moveparallel~website]↗ | |
-| [Mozilla][mozilla~website]↗ [(github)][mozilla~repo]↗ | The creators of Rust, Mozilla has used the Rust language in various projects, including parts of the Firefox web browser. See [Servo][servo~website]↗. |
+| [Mozilla][mozilla~website]↗ [(github)][mozilla~repo]↗ | The creators of Rust, Mozilla has used the Rust language in various projects, including parts of the Firefox web browser. [Servo][servo~website]↗, the browser engine that Mozilla started, is now hosted by the Linux Foundation Europe. |
 | [Multi Media, LLC][multimediallc~website]↗ | |
 | [NextRoll][nextroll~website]↗ | |
 | [Novo Nordisk][novonordisk~website]↗ | |
 | [Npm][npm~website]↗ [(github)][npm~repo]↗ | The package manager for JavaScript has components written in Rust. Also uses Rust for their authorization service. |
-| [Nvim][nvim~website]↗ | Uses Rust for its powerful text editor. |
 | [OVHcloud][ovhcloud~website]↗ | Use Rust to build a high performance, highly available log management system. |
 | [OneSignal][onesignal~website]↗ [(blog)][onesignal~blog]↗ | Offers high volume, cross platform push notification delivery. |
 | [OpenUK][openuk~website]↗ | |
@@ -144,7 +140,6 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Personio][personio~website]↗ | |
 | [Pollen Robotics][pollen-robotics~website]↗ | |
 | [PolySync][polysync~website]↗ | Builds safety-critical runtime environments & infrastructure for autonomous vehicles. |
-| [Postmates][postmates~website]↗ | |
 | [Qdrant][qdrant~website]↗ [(github)][qdrant~repo]↗ | High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. |
 | [Qumulo][qumulo~website]↗ | Offers a hybrid data storage for large file and object data. |
 | [Qwiet][qwiet-ai~website]↗ | |
@@ -169,7 +164,6 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Slint][c~slint~website]↗ [(github)][c~slint~repo]↗ | |
 | [Slowtec][slowtec~website]↗ | Their automation systems are entirely written in Rust. |
 | [SmartThings (Samsung)][smartthings~website]↗ | Uses Rust in memory-safe embedded applications on the SmartThings Hub and in supporting services in the cloud. |
-| [Snips (Sonos)][snips~website]↗ | Builds AI assistants that are private by design. |
 | [Solana Labs][solana~website]↗ | Use Rust as their main programming language for smart contracts. |
 | [SpectralOps][spectralops~website]↗ | |
 | [Sprinklenet][sprinklenet~website]↗ | |
@@ -198,7 +192,6 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Tweede Golf][tweedegolf~website]↗ [(github)][tweedegolf~repo]↗ | Creates safe internet infrastructure with Rust and secure connected devices with Embedded Rust. |
 | [Vail Systems][vailsys~website]↗ | |
 | [Veecle][veecle~website]↗ | |
-| [VersionEye][versioneye~website]↗ [(github)][versioneye~repo]↗ | Use Rust to implement a command line tool, which can identify software dependencies by their SHA values. |
 | [Volvo][volvo~website]↗ | |
 | [Warp][warp~website]↗ | |
 | [Watchful][watchful~website]↗ | |
