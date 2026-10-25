@@ -6,6 +6,8 @@
 
 [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}} is the most commonly used crate for JSON Parsing. [`simd-json`][c~simd-json~docs]↗{{hi:simd-json}} is optimized for performance.
 
+Use `serde_json` for the usual Serde-based typed or dynamic JSON data model. Choose `json5` only when the input intentionally uses JSON5 syntax, or `simd-json` when profiling shows JSON parsing is a bottleneck and its mutable input and feature requirements fit the application.
+
 ## Parse JSON with `serde_json` {#serde-json}
 
 [![serde_json][c~serde_json~docs~badge]][c~serde_json~docs] [![serde_json~crates.io][c~serde_json~crates.io~badge]][c~serde_json~crates.io] [![serde_json~repo][c~serde_json~repo~badge]][c~serde_json~repo] [![serde_json~lib.rs][c~serde_json~lib.rs~badge]][c~serde_json~lib.rs]{{hi:serde_json}}{{hi:Json}}{{hi:Serde}}{{hi:Serialization}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
@@ -38,11 +40,8 @@
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Structured Data](../encoding/complex_encoding.md) demonstrates deserializing JSON and TOML into values and application types.
+- [Parsing Utilities](../parsing/parsing.md) covers custom grammars and parser construction.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[json: include in index.md / SUMMARY.md; write](https://github.com/john-cd/rust_howto/issues/440)
-</div>
