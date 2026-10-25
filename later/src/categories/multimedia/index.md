@@ -10,61 +10,20 @@ While there aren't dominant, all-encompassing multimedia frameworks in Rust yet,
 
 {{#include multimedia.incl.md}}
 
-## Audio Processing
+## Sub-categories
 
-See [[multimedia_audio | Multimedia: Audio]].
+- [[multimedia_audio | Audio]]: playback, decoding, resampling, and WAV files.
+- [[multimedia_images | Images]]: loading, transforming, and encoding images.
+- [[multimedia_video | Video]]: FFmpeg, GStreamer, and frame analysis.
+- [[multimedia_encoding | Encoding]]: codecs and container formats.
 
-## Image Processing
-
-See [[multimedia_images | Multimedia: Images]].
-
-## Video Processing
-
-See [[multimedia_video | Multimedia: Video]].
-
-## Encoding
-
-See [[multimedia_encoding | Multimedia: Encoding]].
+Real-time streaming (RTSP, WebRTC, RTP) has no page yet; see https://github.com/john-cd/rust_howto/issues/1999 and [[network-programming | Network Programming]].
 
 ## Related Topics
 
-### Graphics and Rendering
-
-- [[graphics | Graphics]].
-- [[rendering | Rendering]].
-- [[rendering_data-formats | Rendering Data Formats]].
-- [[rendering_engines | Rendering Engines]].
-- [[rendering_graphics-api | Rendering: Graphics API]].
-
-### Networking and Streaming
-
-- Real-time Streaming Protocols (RTSP, WebRTC).
-- Media Servers.
-- Live Streaming.
-- Peer-to-Peer Streaming.
-- Network Protocols (HTTP, RTP).
-
-See [[network-programming | Network Programming]].
-
-### Cross-Platform Development
-
-- WebAssembly - see [[wasm | WASM]].
-- Mobile Development (Android, iOS).
-- Desktop Applications (Windows, macOS, Linux) - see [[gui | GUI]].
-- [[embedded | Embedded Systems]].
-
-### Performance Optimization
-
-- [[memory-management | Memory Management]].
-- [[concurrency | Concurrency]] and Parallelism.
-- Low-Level System Programming.
-- [[development-tools_profiling | Profiling]] and [[benchmarking | Benchmarking]].
-- [[hardware-support | Hardware]] Acceleration.
+- [[graphics | Graphics]], [[rendering | Rendering]], [[rendering_data-formats | Rendering Data Formats]], [[rendering_engines | Rendering Engines]], [[rendering_graphics-api | Rendering: Graphics API]].
+- [[wasm | WASM]], [[gui | GUI]] and [[embedded | Embedded Systems]] for other targets.
+- [[memory-management | Memory Management]], [[concurrency | Concurrency]], [[development-tools_profiling | Profiling]], [[benchmarking | Benchmarking]] and [[hardware-support | Hardware]] acceleration for performance.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/940)
-cover areas without links above.
-</div>
