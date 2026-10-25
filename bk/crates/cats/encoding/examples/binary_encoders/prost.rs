@@ -7,6 +7,10 @@
 //!
 //! It defines a simple `Person` message, serializes it to a byte buffer,
 //! and then deserializes it back into a `Person` struct.
+//!
+//! The crate's build script compiles `person.proto` with `protox` and
+//! `prost-build`, so building this example does not require an external
+//! `protoc` executable.
 
 use person::Person;
 use prost::Message;
@@ -55,9 +59,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the generated Protobuf type preserves its fields.
     #[test]
     fn prost_round_trip_preserves_the_person_message() -> anyhow::Result<()> {
         main()
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/1044)
