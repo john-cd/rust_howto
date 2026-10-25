@@ -87,6 +87,7 @@
 [ex~data-structures~priority-queue]: ../categories/data-structures/binary_heaps.md#priority-queue
 [ex~data-structures~queue]: ../categories/data-structures/stacks_and_queues.md#queue
 [ex~data-structures~roaring]: ../categories/data-structures/bit_arrays.md#roaring
+[ex~data-structures~short-uuid]: ../categories/data-structures/unique_identifiers.md#short-uuid
 [ex~data-structures~slotmap]: ../categories/data-structures/other_maps.md#slotmap
 [ex~data-structures~smallvec]: ../categories/data-structures/stack-allocated.md#smallvec-tinyvec
 [ex~data-structures~stack]: ../categories/data-structures/stacks_and_queues.md#stack
@@ -103,11 +104,13 @@
 [ex~filesystem~cwd]: ../categories/filesystem/directories.md#cwd
 [ex~filesystem~directories]: ../categories/filesystem/user_directories_and_preferred_applications.md#directories
 [ex~filesystem~dirs]: ../categories/filesystem/user_directories_and_preferred_applications.md#dirs
+[ex~filesystem~dunce]: ../categories/filesystem/paths.md#dunce
 [ex~filesystem~find-all-files-with-given-pattern-ignoring-filename-case]: ../categories/filesystem/directory_traversal.md#find-all-files-with-given-pattern-ignoring-filename-case
 [ex~filesystem~find-all-png-files-recursively]: ../categories/filesystem/directory_traversal.md#find-all-png-files-recursively
 [ex~filesystem~find-files-modified-last-24-hours]: ../categories/filesystem/directory_traversal.md#find-files-modified-last-24-hours
 [ex~filesystem~find-loop-in-path]: ../categories/filesystem/directory_traversal.md#find-loop-in-path
 [ex~filesystem~globset]: ../categories/filesystem/directory_traversal.md#globset
+[ex~filesystem~infer]: ../categories/filesystem/file_metadata.md#infer
 [ex~filesystem~memory-map]: ../categories/filesystem/reading_and_writing_files.md#memory-map
 [ex~filesystem~metadata]: ../categories/filesystem/file_metadata.md#metadata
 [ex~filesystem~open]: ../categories/filesystem/user_directories_and_preferred_applications.md#open
@@ -116,6 +119,7 @@
 [ex~filesystem~recursively-find-all-files-with-given-predicate]: ../categories/filesystem/directory_traversal.md#recursively-find-all-files-with-given-predicate
 [ex~filesystem~recursively-find-duplicate-file-names]: ../categories/filesystem/directory_traversal.md#recursively-find-duplicate-file-names
 [ex~filesystem~remove_dir_all]: ../categories/filesystem/directories.md#remove_dir_all
+[ex~filesystem~replace-a-file-atomically]: ../categories/filesystem/reading_and_writing_files.md#replace-a-file-atomically
 [ex~filesystem~stdin-stdout]: ../categories/filesystem/working_with_the_standard_input_and_output.md#stdin-stdout
 [ex~filesystem~symbolic-links]: ../categories/filesystem/symbolic_links.md#symbolic-links
 [ex~filesystem~temporary-files-or-directories]: ../categories/filesystem/temporary_files_and_directories.md#temporary-files-or-directories

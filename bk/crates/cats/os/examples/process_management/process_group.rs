@@ -47,10 +47,26 @@ mod tests {
     use std::thread;
     use std::time::Duration;
 
-    use nix::errno::Errno;
     use nix::sys::signal::kill;
 
     use super::*;
+
+    /// Returns true if the process exists and is not a zombie. A killed
+    /// orphan stays a zombie until its new parent reaps it, which a minimal
+    /// container init may not do.
+    fn is_running(pid: Pid) -> bool {
+        if kill(pid, None).is_err() {
+            return false;
+        }
+        match std::fs::read_to_string(format!("/proc/{pid}/stat")) {
+            // The state is the first field after the parenthesized name.
+            Ok(stat) => !stat
+                .rsplit(')')
+                .next()
+                .is_some_and(|rest| rest.trim_start().starts_with('Z')),
+            Err(_) => true,
+        }
+    }
 
     #[test]
     fn grandchild_is_killed_with_the_group() -> anyhow::Result<()> {
@@ -69,15 +85,15 @@ mod tests {
         BufReader::new(stdout).read_line(&mut line)?;
         let grandchild = Pid::from_raw(line.trim().parse()?);
 
-        // The grandchild is alive (a `None` signal only checks existence).
-        assert!(kill(grandchild, None).is_ok());
+        // The grandchild is alive.
+        assert!(is_running(grandchild));
 
         kill_group(&mut child)?;
 
         // It is gone: poll briefly, since the kernel may need a moment.
         let mut gone = false;
         for _ in 0..50 {
-            if kill(grandchild, None) == Err(Errno::ESRCH) {
+            if !is_running(grandchild) {
                 gone = true;
                 break;
             }

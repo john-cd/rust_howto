@@ -182,6 +182,8 @@
 
 - [Operating Systems](categories/os/index.md)
   - [External Commands](categories/os/external_commands.md)
+  - [Process Management](categories/os/process_management.md)
+  - [Signals and Graceful Shutdown](categories/os/signals.md)
   - [Low-level System Calls](categories/os/low_level_system_calls.md)
   - [Rust OSes](categories/os/rust_os.md)
 
