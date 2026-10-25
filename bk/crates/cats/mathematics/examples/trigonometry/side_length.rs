@@ -9,7 +9,7 @@
 /// of the side opposite to it.
 fn main() {
     // The angle in radians.
-    let angle: f64 = 2.0;
+    let angle: f64 = 1.0;
     // The length of the side opposite to the angle.
     let side_length = 80.0;
 

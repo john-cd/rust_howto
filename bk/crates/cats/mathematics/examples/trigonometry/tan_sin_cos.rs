@@ -17,7 +17,7 @@ fn main() {
     let b = x.sin() / x.cos();
 
     println!("a: {a}, b: {b}");
-    assert_eq!(a, b);
+    assert!((a - b).abs() < 1e-10, "tan(x)={a}, sin(x)/cos(x)={b}");
 }
 
 // ANCHOR_END: example

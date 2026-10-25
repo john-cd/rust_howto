@@ -8,7 +8,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~science][cat~science~badge]][cat~science]{{hi:Trigonometry}}
 
-The following example calculates the hypotenuse of a right triangle with an angle of 2 radians and an opposite side of length 80.
+The following example calculates the hypotenuse of a right triangle with an acute angle of 1 radian and an opposite side of length 80.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/trigonometry/side_length.rs:example}}
