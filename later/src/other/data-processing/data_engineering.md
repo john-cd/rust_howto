@@ -11,10 +11,30 @@
 [![arrow~repo][c~arrow~repo~badge]][c~arrow~repo]
 [![arrow~lib.rs][c~arrow~lib.rs~badge]][c~arrow~lib.rs]
 
-[`arrow`][c~arrow~docs]↗{{hi:arrow}} is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}
+[`arrow`][c~arrow~docs]↗{{hi:arrow}} is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}. These examples build typed arrays and record batches, read and write CSV and newline-delimited JSON, and convert Serde-compatible Rust rows to and from Arrow.
+
+### Build typed arrays and record batches {#arrow-arrays}
 
 ```rust,editable
-{{#include ../../../crates/other/examples/data_processing/arrow.rs:example}}
+{{#include ../../../crates/other/examples/data_processing/arrow/arrays.rs:example}}
+```
+
+### Read and write CSV with Arrow {#arrow-csv}
+
+```rust,editable
+{{#include ../../../crates/other/examples/data_processing/arrow/csv_io.rs:example}}
+```
+
+### Read and write JSON with Arrow {#arrow-json}
+
+```rust,editable
+{{#include ../../../crates/other/examples/data_processing/arrow/json_io.rs:example}}
+```
+
+### Convert Serde rows to and from Arrow {#arrow-serde}
+
+```rust,editable
+{{#include ../../../crates/other/examples/data_processing/arrow/serde_convert.rs:example}}
 ```
 
 ## Query In-memory Data with `datafusion` {#datafusion}

@@ -21,7 +21,7 @@ autolib = false
 
 [features]
 datafusion = ["dep:datafusion"]
-arrow = ["dep:arrow"]
+arrow = ["dep:arrow", "dep:serde_json"]
 typegen = ["crux_core/typegen"] # for Crux
 polars = ["dep:polars"]
 # `polars` and `datafusion` can be enabled together: `Cargo.lock` resolves a single `chrono`
@@ -37,6 +37,7 @@ anyhow = "1.0.104"
 arrow = { version = "58.4.0", features = ["csv", "json", "prettyprint"], optional = true }
 async-trait = "0.1.92"
 polars = { version = "0.51.0", default-features = false, features = ["lazy", "csv"], optional = true }
+serde_json = { version = "1.0.154", optional = true } # Convert Arrow JSON output back into Serde rows.
 
 ## Cloud
 aws-config = "1.8.18"
