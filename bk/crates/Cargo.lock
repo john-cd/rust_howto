@@ -11077,7 +11077,7 @@ dependencies = [
  "nalgebra 0.34.2",
  "ndarray",
  "num",
- "num-bigint 0.4.8",
+ "num-bigint 0.5.1",
  "num-rational",
  "num-traits 0.2.19",
  "ode_solvers",

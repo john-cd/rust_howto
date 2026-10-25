@@ -32,7 +32,7 @@ ndarray = { version = "0.17.2", features = [
     "approx",
 ] } # was pinned to 0.15.6 for linfa
 num = "0.4.3"
-num-bigint = "0.4.8"
+num-bigint = "0.5.1"
 num-rational = "0.4.2"
 num-traits = "0.2.19"
 ode_solvers = "0.6.2" # Fixed-step and adaptive solvers for ordinary differential equations.
