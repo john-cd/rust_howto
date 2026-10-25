@@ -77,7 +77,11 @@ async fn main() -> anyhow::Result<()> {
     // pool does not need to allocate another connection.
     assert_eq!(pool.status().size, 1);
     assert_eq!(pool.status().available, 1);
-    let reused_conn = pool.get().await?;
+    let reused_conn = pool.get().await.map_err(|err| {
+        anyhow::anyhow!(
+            "failed to get a reused connection from the pool: {err}"
+        )
+    })?;
     assert_eq!(pool.status().size, 1);
     drop(reused_conn);
 
