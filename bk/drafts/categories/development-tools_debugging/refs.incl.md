@@ -18,6 +18,7 @@
 [ex~development-tools_debugging~log-to-stdout]: log.md#log-to-stdout
 [ex~development-tools_debugging~log4rs]: tracing_alternatives.md#log4rs
 [ex~development-tools_debugging~log]: tracing_alternatives.md#log
+[ex~development-tools_debugging~metrics-route]: metrics.md#serve-metrics-from-an-axum-route
 [ex~development-tools_debugging~open-observe]: distributed_telemetry.md#open-observe
 [ex~development-tools_debugging~open-telemetry]: distributed_telemetry.md#open-telemetry
 [ex~development-tools_debugging~prometheus]: distributed_telemetry.md#prometheus

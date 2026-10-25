@@ -4956,9 +4956,11 @@ name = "development_tools_debugging"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "axum 0.8.9",
  "chrono",
  "clap",
  "env_logger",
+ "http-body-util",
  "log",
  "log4rs",
  "metrics",
@@ -4976,6 +4978,7 @@ dependencies = [
  "syslog",
  "tempfile",
  "tokio",
+ "tower 0.5.3",
  "tracing",
  "tracing-appender",
  "tracing-opentelemetry",

@@ -3,6 +3,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod metrics_route;
 mod prometheus;
 mod record_metrics;
 
@@ -21,6 +22,8 @@ enum Commands {
     Record,
     /// Renders metrics in Prometheus exposition format.
     Prometheus,
+    /// Serves the payload from an Axum `/metrics` route.
+    Route,
 }
 
 /// Runs the selected metrics example.
@@ -28,5 +31,6 @@ fn main() -> anyhow::Result<()> {
     match Cli::parse().command {
         Commands::Record => record_metrics::run(),
         Commands::Prometheus => prometheus::run(),
+        Commands::Route => metrics_route::run(),
     }
 }

@@ -32,6 +32,7 @@ opentelemetry = [
 
 ## General
 anyhow = "1.0.104"
+axum = { version = "0.8.9", default-features = false, features = ["http1", "tokio"] } # Serve a `/metrics` route.
 chrono = "0.4.45"
 clap = { version = "4.6.7", features = ["derive"] }
 env_logger = "0.11.11"
@@ -63,6 +64,8 @@ syslog = "7.0.0"
 
 [dev-dependencies]
 anyhow = "1.0.104"
+http-body-util = "0.1.5"
+tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
 metrics-util = { version = "0.20.4", features = ["debugging"] } # In-memory recorder for metric behavior tests.
 
 [[example]]
