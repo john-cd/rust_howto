@@ -2486,6 +2486,15 @@
 [unicode_segmentation-github]: https://github.com/unicode-rs/unicode-segmentation
 
 
+[uom]: https://docs.rs/uom
+
+
+[uom-crate]: https://crates.io/crates/uom
+
+
+[uom-github]: https://github.com/iliekturtles/uom
+
+
 [ureq]: https://docs.rs/ureq
 
 

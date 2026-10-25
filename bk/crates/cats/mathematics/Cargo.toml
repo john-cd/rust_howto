@@ -38,6 +38,7 @@ rust_decimal = "1.43.0"
 rust_decimal_macros = "1.40.0"
 serde_json = "1.0.154"
 typenum = "1.20.1"
+uom = "0.38.0" # Type-safe physical quantities and unit conversion.
 
 [target.'cfg(target_os = "linux")'.dependencies]
 rug = "1.30.0"
@@ -75,6 +76,11 @@ test = true
 [[example]]
 name = "trigonometry"
 path = "examples/trigonometry/main.rs"
+test = true
+
+[[example]]
+name = "units"
+path = "examples/units/main.rs"
 test = true
 
 [lints]

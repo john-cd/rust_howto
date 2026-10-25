@@ -94,7 +94,7 @@ This area includes combinatorics, set theory, and logic. [`bit-set`][c~bit-set~d
 
 ## Units of Measurement
 
-- [`uom`][c~uom~docs]↗{{hi:uom}} provides type-safe quantities and units of measurement.
+The [Units of Measurement chapter][p~units] demonstrates dimensional types and conversions with [`uom`][c~uom~docs]↗{{hi:uom}}.
 
 ## Related Topics
 
