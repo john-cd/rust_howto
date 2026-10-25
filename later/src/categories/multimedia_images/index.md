@@ -8,6 +8,24 @@ Process or build images.
 
 For most common image tasks, the [`image`][c~image~docs]↗{{hi:image}} crate will be sufficient. If you need very low-level control or are working with GPU-accelerated [[graphics | graphics]] , [`pixels`][c~pixels~docs]↗{{hi:pixels}} or [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} might be relevant. For more specialized image processing algorithms, explore [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}}. And for color management, use [`palette`][c~palette~docs]↗{{hi:palette}}.
 
+## Choose a Crate by Task {#choose-a-crate}
+
+| Task | Crates |
+|---|---|
+| Load, save and convert formats | [`image`][c~image~docs]↗{{hi:image}} |
+| Resize and crop | [`image`][c~image~docs]↗{{hi:image}}, [`fast_image_resize`][c~fast_image_resize~docs]↗{{hi:fast_image_resize}} (SIMD-accelerated) |
+| Filters, drawing and geometry | [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} (see [[2d_raster_graphics | 2D Raster Graphics]]) |
+| Read metadata (EXIF) | [`kamadak-exif`][kamadak-exif~repo]↗ |
+| Optimize PNG files | [`oxipng`][oxipng~repo]↗ |
+| Fast decoders | [`zune-image`][zune-image~repo]↗ |
+| Detect objects, faces or features | See [[computer-vision | Computer Vision]]. |
+
+The example creates an image in memory, resizes it and converts it to grayscale. It needs no files.
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_images/examples/images/resize.rs:example}}
+```
+
 ## Image Loading and Saving, Manipulation, and Image Processing
 
 [`image`][c~image~docs]↗{{hi:image}} is the most popular and comprehensive crate for working with images. It supports a wide range of formats (PNG, JPEG, GIF, TIFF, WebP, BMP, etc.) and provides functionality for loading, saving, and manipulating images. It provides functions for resizing, cropping, rotating, filtering, and other image processing operations.
@@ -55,7 +73,3 @@ Refer as well to [image-rs (GitHub)][image-rs~repo]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/942)
-</div>
