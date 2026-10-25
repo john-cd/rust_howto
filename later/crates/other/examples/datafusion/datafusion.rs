@@ -3,8 +3,8 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates how to use `DataFusion` to set up a simple
-//! in-memory table and run a SQL query on it.
+//! This example registers an in-memory Arrow table and groups its rows with
+//! both SQL and DataFusion's `DataFrame` API.
 //!
 //! `DataFusion` is an extensible query execution framework, written in Rust,
 //! that uses Apache Arrow as its in-memory format. This means it's very
@@ -18,90 +18,121 @@
 //!   in concept to Pandas or Polars) for building query plans step-by-step in
 //!   Rust code.
 //!
-//! The following creates a table named "people" with columns "name" and
-//! "age", inserts some data, and then runs a query to select people older
-//! than 35.
+//! Both query APIs calculate the same total amount for each department.
 
 use std::sync::Arc;
 
+use anyhow::Result;
+use anyhow::anyhow;
 use datafusion::arrow::array::ArrayRef;
+use datafusion::arrow::array::Int64Array;
+use datafusion::arrow::array::StringArray;
 use datafusion::arrow::datatypes::DataType;
 use datafusion::arrow::datatypes::Field;
 use datafusion::arrow::datatypes::Schema;
 use datafusion::arrow::record_batch::RecordBatch;
 use datafusion::datasource::MemTable;
 use datafusion::execution::context::SessionContext;
+use datafusion::functions_aggregate::expr_fn::sum;
+use datafusion::prelude::col;
 
-/// Registers an in-memory table and queries it with SQL.
-async fn run_query() -> datafusion::error::Result<()> {
-    // Create a simple schema and data.
+/// Registers an in-memory table and compares SQL and DataFrame aggregations.
+async fn run_query() -> Result<()> {
     let schema = Schema::new(vec![
-        Field::new("name", DataType::Utf8, false),
-        Field::new("age", DataType::Int32, false),
+        Field::new("department", DataType::Utf8, false),
+        Field::new("amount", DataType::Int64, false),
     ]);
-
-    let data = [
-        vec!["Alice".to_owned(), "30".to_owned()],
-        vec!["Bob".to_owned(), "40".to_owned()],
-    ];
-
-    // Convert data into `RecordBatch`.
-    let name_array: datafusion::arrow::array::StringArray =
-        data.iter().map(|r| Some(r[0].clone())).collect();
-    let age_array: datafusion::arrow::array::Int32Array = data
-        .iter()
-        .map(|r| Some(r[1].parse::<i32>().unwrap()))
-        .collect();
-
-    let record_batches = vec![RecordBatch::try_new(
+    let batch = RecordBatch::try_new(
         Arc::new(schema.clone()),
         vec![
-            Arc::new(name_array) as ArrayRef,
-            Arc::new(age_array) as ArrayRef,
+            Arc::new(StringArray::from(vec![
+                "engineering",
+                "engineering",
+                "sales",
+            ])) as ArrayRef,
+            Arc::new(Int64Array::from(vec![10, 20, 5])) as ArrayRef,
         ],
-    )?];
+    )?;
 
-    // Create a `MemoryTable` with the schema and data.
-    let table = MemTable::try_new(Arc::new(schema), vec![record_batches])?;
+    let table = MemTable::try_new(Arc::new(schema), vec![vec![batch]])?;
+    let context = SessionContext::new();
+    context.register_table("sales", Arc::new(table))?;
 
-    // Create a session context.
-    let ctx = SessionContext::new();
-
-    // Register the table.
-    ctx.register_table("people", Arc::new(table))?;
-
-    // Run a SQL query.
-    let df = ctx
-        .sql("SELECT name, age FROM people WHERE age > 35")
+    let sql_batches = context
+        .sql(
+            "SELECT department, SUM(amount) AS total_amount \
+             FROM sales GROUP BY department ORDER BY department",
+        )
+        .await?
+        .collect()
         .await?;
-    let results = df.collect().await?;
+    assert_grouped_totals(&sql_batches)?;
 
-    // Print the results.
-    for batch in results {
-        println!("{batch:?}");
-    }
+    let dataframe_batches = context
+        .table("sales")
+        .await?
+        .aggregate(
+            vec![col("department")],
+            vec![sum(col("amount")).alias("total_amount")],
+        )?
+        .collect()
+        .await?;
+    assert_grouped_totals(&dataframe_batches)?;
 
     Ok(())
 }
 
-/// Runs the query on a Tokio runtime.
-fn main() {
-    let rt = tokio::runtime::Runtime::new().unwrap();
-    rt.block_on(run_query()).unwrap();
+/// Checks the department totals returned by either query API.
+fn assert_grouped_totals(batches: &[RecordBatch]) -> Result<()> {
+    let mut totals = Vec::new();
+    for batch in batches {
+        let departments = batch
+            .column(0)
+            .as_any()
+            .downcast_ref::<StringArray>()
+            .ok_or_else(|| {
+                anyhow!("query returned a non-string department column")
+            })?;
+        let amounts = batch
+            .column(1)
+            .as_any()
+            .downcast_ref::<Int64Array>()
+            .ok_or_else(|| {
+                anyhow!("query returned a non-integer total column")
+            })?;
+        for row in 0..batch.num_rows() {
+            totals
+                .push((departments.value(row).to_owned(), amounts.value(row)));
+        }
+    }
+    totals.sort_unstable();
+    assert_eq!(
+        totals,
+        vec![("engineering".to_owned(), 30), ("sales".to_owned(), 5)]
+    );
+    Ok(())
+}
+
+/// Runs the asynchronous queries on a single-threaded Tokio runtime.
+fn main() -> Result<()> {
+    tokio::runtime::Builder::new_current_thread()
+        .build()?
+        .block_on(run_query())
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example and propagates query or runtime errors.
+pub fn run() -> Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that both DataFusion APIs return the grouped totals.
     #[test]
-    fn test_main() {
-        main();
+    fn grouped_queries_return_the_same_totals() -> Result<()> {
+        main()
     }
 }

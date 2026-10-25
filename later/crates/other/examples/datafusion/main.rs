@@ -4,8 +4,9 @@
 
 mod datafusion;
 
-/// Runs the example from the `datafusion` module.
-fn main() {
+/// Runs the DataFusion example when the feature is enabled.
+fn main() -> anyhow::Result<()> {
     #[cfg(feature = "datafusion")]
-    datafusion::run();
+    datafusion::run()?;
+    Ok(())
 }
