@@ -1730,6 +1730,15 @@
 [proc_macros-github]: https://github.com/john-cd/rust_howto/ (*)
 
 
+[profiling]: https://docs.rs/profiling
+
+
+[profiling-crate]: https://crates.io/crates/profiling
+
+
+[profiling-github]: https://github.com/aclysma/profiling (*)
+
+
 [proptest]: https://docs.rs/proptest
 
 
@@ -1755,6 +1764,24 @@
 
 
 [prost_types-github]: https://github.com/tokio-rs/prost
+
+
+[puffin]: https://docs.rs/puffin
+
+
+[puffin-crate]: https://crates.io/crates/puffin
+
+
+[puffin-github]: https://github.com/EmbarkStudios/puffin (*)
+
+
+[puffin_http]: https://docs.rs/puffin_http
+
+
+[puffin_http-crate]: https://crates.io/crates/puffin_http
+
+
+[puffin_http-github]: https://github.com/EmbarkStudios/puffin (*)
 
 
 [pulldown_cmark]: https://docs.rs/pulldown_cmark

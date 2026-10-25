@@ -52,3 +52,7 @@ Points to remember:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+[excel: write](https://github.com/john-cd/rust_howto/issues/1909)
+</div>
