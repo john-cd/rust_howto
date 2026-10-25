@@ -79,7 +79,7 @@ async fn main() -> anyhow::Result<()> {
     assert_eq!(pool.status().available, 1);
     let reused_conn = pool.get().await.map_err(|err| {
         anyhow::anyhow!(
-            "failed to get a reused connection from the pool: {err}"
+            "failed to get a reused connection from the pool: {err:?}"
         )
     })?;
     assert_eq!(pool.status().size, 1);
