@@ -6,6 +6,7 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod flume;
+mod flume_commands;
 mod flume_tick;
 mod message_passing_crossbeam_channel;
 mod message_passing_crossbeam_channel_after_tick;
@@ -37,6 +38,9 @@ enum Commands {
     /// Runs the `flume_tick` example.
     #[command(name = "flume_tick")]
     FlumeTick,
+    /// Runs the bounded command-channel `flume` example.
+    #[command(name = "flume_commands")]
+    FlumeCommands,
 }
 
 /// Runs the example selected on the command line.
@@ -59,6 +63,9 @@ fn main() {
             }
             Commands::FlumeTick => {
                 flume_tick::run();
+            }
+            Commands::FlumeCommands => {
+                flume_commands::run();
             }
         }
     }
