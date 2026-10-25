@@ -4,98 +4,22 @@
 
 [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded systems}}
 
-Crates that are primarily useful on embedded devices or without an operating system.
+Embedded applications interact with device peripherals under limits on memory, energy, and timing. Decide whether firmware uses `no_std`, then select crates that fit the actual target and execution model.
 
-## Key Considerations
+## Requirements
 
-- Often no operating systems.
-- Low-power design to conserve energy.
-- Real-time constraints.
-- Concurrency: management of multiple tasks.
+- Choose the board or MCU, Rust target triple, linker script, and chip-specific HAL or PAC before building firmware; for example, install `thumbv7em-none-eabihf` with `rustup target add thumbv7em-none-eabihf`.
+- Host tests cover host-compatible logic; firmware examples need the selected target plus physical hardware or a supported emulator such as QEMU, and are not run in ordinary host CI.
+- Follow the board and HAL instructions for flashing, debugging, interrupts, and time drivers; [probe-rs][ex~embedded~flash~probe-rs] supports flashing and debugging selected chips.
 
-## Embassy
+## Learning Path
 
-{{#include embassy.incl.md}}
+1. Inspect a chip's [PAC][ex~embedded~pacs], often generated from an SVD with [`svd2rust`][svd2rust~repo], then use [HALs and `embedded-hal` traits][ex~embedded~embedded-hal] to work with peripherals.
+2. Choose startup and concurrency tools for the target: `cortex-m-rt` provides Cortex-M startup, while [RTIC][ex~embedded~rtos~rtic] and [Embassy][ex~embedded~embassy] offer different task models; compare the [RTOS options](rtos.md).
+3. Add [sensor drivers][ex~embedded~sensors], [flash storage][ex~embedded~flash~storage], and [probe-based firmware programming][ex~embedded~flash~probe-rs] as needed by the board.
+4. Review [embedded logging and support crates][ex~embedded~defmt] for `defmt`, panic handlers such as `panic-halt`, memory, and serialization.
 
-## Embedded Frameworks/HALs (Hardware Abstraction Layers)
-
-{{#include hals.incl.md}}
-
-## Peripheral Access Crates (PACs)
-
-{{#include pacs.incl.md}}
-
-## Real-Time Operating Systems (RTOS)
-
-{{#include rtos.incl.md}}
-
-## Interfacing with Sensors (e.g. I2C)
-
-{{#include sensors.incl.md}}
-
-## Flash Programming
-
-{{#include flash.incl.md}}
-
-## Data Acquisition and Calibration
-
-Embedded systems often collect sensor data and calibrate measurements for accuracy. Common tasks include sampling analog inputs, converting signals to digital values, and compensating for drift or nonlinearity.
-
-## Memory-mapped I/O
-
-Memory-mapped I/O allows peripherals to appear as memory addresses. Reading and writing to those addresses is how drivers communicate with hardware on many microcontrollers.
-Microcontrollers commonly interact with peripherals via memory-mapped I/O.
-
-## Interrupts
-
-Interrupts allow the processor to react immediately to external or internal events, such as timer expiries or peripheral input. Writing safe interrupt handlers is a key part of embedded Rust design.
-Microcontrollers respond to events via interrupts.
-
-## Useful Crates for Embedded Systems Programming
-
-{{#include useful_crates_embedded.incl.md}}
-
-## References
-
-- [Embedded devices working group][rust-lang~embedded-devices-working-group]↗.
-- [Rust Raspberry Pi OS tutorials][rust-raspberrypi-OS-tutorials~repo]↗.
-
-## Related Topics
-
-| Topic | Rust Crates |
-|---|---|
-| [`no-std`][book~rust-reference~no_std]{{hi:no-std}} Environments | `core` (part of the standard library) provides the bare minimum for writing code without the standard library. `alloc` provides memory allocation APIs for no-std environments. See [[no_std | No Std]] and [[no-std_no-alloc | No Alloc]]. |
-| Memory Management (in no-std) | [`alloc`][c~alloc~docs]↗{{hi:alloc}} provides allocation APIs. [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a small and efficient allocator for embedded systems. See [[memory-management | Memory Management]] and [[memory_usage_analysis | Memory Usage Analysis]]. |
-| Concurrency | [`atomic`][c~atomic~docs]↗{{hi:atomic}}: Provides atomic types for safe concurrency in embedded systems. See [[concurrency | Concurrency]]. |
-| Debugging | [`OpenOCD`][openocd~website]↗{{hi:OpenOCD}}, [`GDB`][c~gdb~docs]↗{{hi:GDB}} are common debugging tools for embedded systems. See [[development-tools_debugging | Debugging]]. |
-| Cross-compiling Rust Code for Commonly Used Target Architectures (e.g., ARM, RISC-V) | See [[cross_compilation | Cross Compilation]] and [[cross_compiling | Cross Compiling]]. |
+For broader project discovery, browse [Awesome Embedded Rust][awesome-embedded-rust~repo] and [Are We RTOS Yet?][arewertosyet~website]. Check maintenance, target support, and feature compatibility in each project's current documentation before choosing a dependency.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write; cover](https://github.com/john-cd/rust_howto/issues/346)
-
-- [awesome-embedded-rust][awesome-embedded-rust~repo]↗: Curated list of resources for Embedded and Low-level development in the Rust programming language,
-- [Are We RTOS Yet?][arewertosyet~website]↗.
-
-## Libs
-
-- [embassy][embassy~repo]↗: Modern embedded framework, using Rust and async.
-- [rust-iot-platform][rust-iot-platform~repo]↗: A high-performance IoT development platform built with Rust, designed for multi-protocol support and real-time data processing. This platform supports MQTT, WebSockets (WS), TCP, and CoAP protocols, making it highly flexible for diverse IoT applications.
-- [stm32-rs][stm32-rs~repo]↗: Embedded Rust device crates for STM32 microcontrollers.
-- [rtic][c~rtic~repo]↗: Real-Time Interrupt-driven Concurrency (RTIC) framework for ARM Cortex-M microcontrollers.
-
-## Panic Handling
-
-- [better-panic][better-panic~repo]↗: A Python-inspired `panic` handler for rust.
-- [No-Panic Rust][blog~no-panic]↗: A Nice Technique for Systems Programming.
-- [no-panics-whatsoever (crates.io)][c~no-panics-whatsoever~crates.io]↗.
-
-## Embedded
-
-- [5 Rust Runtimes Every Embedded Developer Needs to Know][blog~5-rust-runtimes-every-embedded-developer-needs-to-know]↗.
-- [`drone-os.com`][drone-os~website]↗.
-- [How to Use Rust Procedural Macros to Replace Panic with `syn`'s `Fold`][blog~rust-procedural-macros-replace-panic]↗.
-
-</div>
