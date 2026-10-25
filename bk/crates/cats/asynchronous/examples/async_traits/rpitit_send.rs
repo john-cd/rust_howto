@@ -27,7 +27,9 @@ impl Refresh for Counter {
 }
 
 /// Runs a generic `Refresh` on another task.
-async fn refresh_in_task<R: Refresh + Send + 'static>(mut r: R) -> Result<u32, String> {
+async fn refresh_in_task<R: Refresh + Send + 'static>(
+    mut r: R,
+) -> Result<u32, String> {
     tokio::spawn(async move { r.refresh().await })
         .await
         .map_err(|e| e.to_string())?
@@ -58,7 +60,9 @@ impl SendStore for MemoryStore {
 }
 
 /// Stores a value and reads it back on a spawned task.
-async fn roundtrip_in_task<S: SendStore + Send + 'static>(mut store: S) -> Option<String> {
+async fn roundtrip_in_task<S: SendStore + Send + 'static>(
+    mut store: S,
+) -> Option<String> {
     tokio::spawn(async move {
         store.put("k", "v".to_owned()).await;
         store.get("k").await

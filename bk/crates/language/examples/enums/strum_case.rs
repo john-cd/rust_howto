@@ -32,7 +32,10 @@ fn main() {
     assert_eq!(Verbosity::VeryVerbose.to_string(), "very_verbose");
 
     // ...and parsing accepts it in any ASCII case.
-    assert_eq!(Verbosity::from_str("very_verbose"), Ok(Verbosity::VeryVerbose));
+    assert_eq!(
+        Verbosity::from_str("very_verbose"),
+        Ok(Verbosity::VeryVerbose)
+    );
     assert_eq!("QUIET".parse::<Verbosity>(), Ok(Verbosity::Quiet));
     assert_eq!("Normal".parse::<Verbosity>(), Ok(Verbosity::Normal));
 

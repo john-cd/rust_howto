@@ -7,9 +7,9 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod dyn_clone;
-mod pin_project;
 mod newtype_equality;
 mod newtype_units;
+mod pin_project;
 mod validated_newtype;
 
 /// Command-line arguments.

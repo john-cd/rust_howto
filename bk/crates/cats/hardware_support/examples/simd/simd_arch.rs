@@ -75,7 +75,8 @@ fn dot_wide(a: &[f32], b: &[f32]) -> f32 {
     let mut ca = a.chunks_exact(4);
     let mut cb = b.chunks_exact(4);
     for (x, y) in ca.by_ref().zip(cb.by_ref()) {
-        acc += f32x4::new([x[0], x[1], x[2], x[3]]) * f32x4::new([y[0], y[1], y[2], y[3]]);
+        acc += f32x4::new([x[0], x[1], x[2], x[3]])
+            * f32x4::new([y[0], y[1], y[2], y[3]]);
     }
     acc.reduce_add() + dot_scalar(ca.remainder(), cb.remainder())
 }

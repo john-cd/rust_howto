@@ -13,7 +13,12 @@ use strum::IntoEnumIterator;
 enum Command {
     #[strum(props(icon = "save", shortcut = "Ctrl+S", confirm = false))]
     Save,
-    #[strum(props(icon = "trash", shortcut = "Ctrl+D", confirm = true, order = 9))]
+    #[strum(props(
+        icon = "trash",
+        shortcut = "Ctrl+D",
+        confirm = true,
+        order = 9
+    ))]
     Delete,
     // A variant without properties.
     Noop,

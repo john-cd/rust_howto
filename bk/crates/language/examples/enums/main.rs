@@ -7,9 +7,9 @@ use clap::Subcommand;
 
 mod enums;
 mod strum;
+mod strum_case;
 mod strum_messages;
 mod strum_props;
-mod strum_case;
 
 /// Command-line arguments.
 #[derive(Parser)]

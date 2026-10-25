@@ -7,9 +7,9 @@ use clap::Subcommand;
 
 mod bitflags;
 mod bitvec;
+mod fixedbitset;
 mod flagset;
 mod roaring;
-mod fixedbitset;
 
 /// Command-line arguments.
 #[derive(Parser)]

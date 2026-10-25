@@ -14,12 +14,30 @@ use strum::IntoEnumIterator;
 use strum::VariantNames;
 
 /// How a boolean cell is displayed.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Display, EnumIter, EnumMessage, EnumCount, VariantNames, AsRefStr)]
+#[derive(
+    Debug,
+    Clone,
+    Copy,
+    PartialEq,
+    Eq,
+    Display,
+    EnumIter,
+    EnumMessage,
+    EnumCount,
+    VariantNames,
+    AsRefStr,
+)]
 enum BoolDisplayMode {
     /// `message` is a short label; `detailed_message` is a tooltip.
-    #[strum(message = "True / False", detailed_message = "Shows the words True and False")]
+    #[strum(
+        message = "True / False",
+        detailed_message = "Shows the words True and False"
+    )]
     Words,
-    #[strum(message = "1 / 0", detailed_message = "Shows 1 for true and 0 for false")]
+    #[strum(
+        message = "1 / 0",
+        detailed_message = "Shows 1 for true and 0 for false"
+    )]
     Digits,
     #[strum(message = "Checkbox", detailed_message = "Shows a checkbox")]
     Checkbox,

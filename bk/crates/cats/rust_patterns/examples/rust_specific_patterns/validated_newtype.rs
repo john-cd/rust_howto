@@ -100,9 +100,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let email: EmailAddress = "ferris@example.com".parse()?;
     println!("Valid: {email}");
 
-    assert_eq!("no-at-sign".parse::<EmailAddress>(), Err(EmailError::MissingAt));
-    assert_eq!("@example.com".parse::<EmailAddress>(), Err(EmailError::EmptyLocalPart));
-    assert_eq!("a@localhost".parse::<EmailAddress>(), Err(EmailError::InvalidDomain));
+    assert_eq!(
+        "no-at-sign".parse::<EmailAddress>(),
+        Err(EmailError::MissingAt)
+    );
+    assert_eq!(
+        "@example.com".parse::<EmailAddress>(),
+        Err(EmailError::EmptyLocalPart)
+    );
+    assert_eq!(
+        "a@localhost".parse::<EmailAddress>(),
+        Err(EmailError::InvalidDomain)
+    );
 
     // Serialization round trip:
     let json = serde_json::to_string(&email)?;

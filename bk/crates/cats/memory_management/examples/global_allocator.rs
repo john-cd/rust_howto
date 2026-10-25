@@ -9,7 +9,9 @@
 //! depends on the workload (see the benchmarking pages).
 
 #[cfg(all(feature = "use-mimalloc", feature = "use-jemalloc"))]
-compile_error!("Enable only one of the features `use-mimalloc` and `use-jemalloc`.");
+compile_error!(
+    "Enable only one of the features `use-mimalloc` and `use-jemalloc`."
+);
 
 #[cfg(feature = "use-mimalloc")]
 #[global_allocator]
@@ -33,7 +35,11 @@ const fn allocator_name() -> &'static str {
 /// Allocates a little, using whichever allocator is active.
 fn main() {
     let v: Vec<u64> = (0..1_000).collect();
-    println!("Allocator: {}; sum: {}", allocator_name(), v.iter().sum::<u64>());
+    println!(
+        "Allocator: {}; sum: {}",
+        allocator_name(),
+        v.iter().sum::<u64>()
+    );
 }
 // ANCHOR_END: example
 

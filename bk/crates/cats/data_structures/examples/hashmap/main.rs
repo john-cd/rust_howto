@@ -7,9 +7,9 @@ use clap::Subcommand;
 
 mod custom_hash_function;
 mod custom_type_as_key;
+mod fast_hashmap;
 mod hashmap;
 mod hashset;
-mod fast_hashmap;
 
 /// Command-line arguments.
 #[derive(Parser)]

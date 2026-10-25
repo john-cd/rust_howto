@@ -47,7 +47,10 @@ impl Store for Empty {
 }
 
 /// Queries every backend in a heterogeneous list.
-async fn read_all(stores: &[Box<dyn Store>], key: &str) -> Vec<(&'static str, Option<String>)> {
+async fn read_all(
+    stores: &[Box<dyn Store>],
+    key: &str,
+) -> Vec<(&'static str, Option<String>)> {
     let mut out = Vec::new();
     for store in stores {
         out.push((store.name(), store.read(key).await));
@@ -58,7 +61,8 @@ async fn read_all(stores: &[Box<dyn Store>], key: &str) -> Vec<(&'static str, Op
 /// Builds a `Vec<Box<dyn Store>>` and queries it.
 #[tokio::main]
 async fn main() {
-    let stores: Vec<Box<dyn Store>> = vec![Box::new(Constant("hello")), Box::new(Empty)];
+    let stores: Vec<Box<dyn Store>> =
+        vec![Box::new(Constant("hello")), Box::new(Empty)];
     let results = read_all(&stores, "k").await;
     assert_eq!(
         results,

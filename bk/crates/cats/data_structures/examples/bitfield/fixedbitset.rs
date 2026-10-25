@@ -19,7 +19,12 @@ fn reachable(adjacency: &[Vec<usize>], start: usize) -> FixedBitSet {
         if visited.put(node) {
             continue;
         }
-        stack.extend(adjacency[node].iter().copied().filter(|n| !visited.contains(*n)));
+        stack.extend(
+            adjacency[node]
+                .iter()
+                .copied()
+                .filter(|n| !visited.contains(*n)),
+        );
     }
     visited
 }

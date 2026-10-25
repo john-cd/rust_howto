@@ -32,7 +32,10 @@ impl Store for MemoryStore {
 
 /// Generic code can call the method as usual.
 async fn lookup<S: Store>(store: &S, key: &str) -> String {
-    store.get(key).await.unwrap_or_else(|| "<missing>".to_owned())
+    store
+        .get(key)
+        .await
+        .unwrap_or_else(|| "<missing>".to_owned())
 }
 
 // The compiler cannot know that `S::get`'s future is `Send` for every `S`, so

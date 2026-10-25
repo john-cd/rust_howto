@@ -5,12 +5,12 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod afit;
+mod async_trait_dyn;
 mod async_traits;
 mod async_traits2;
 mod async_traits3;
-mod afit;
 mod rpitit_send;
-mod async_trait_dyn;
 
 /// Command-line arguments.
 #[derive(Parser)]
