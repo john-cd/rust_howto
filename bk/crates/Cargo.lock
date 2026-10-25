@@ -3776,6 +3776,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "cornucopia_async"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "38063b8553edf452cccc674f07b3b5e3144a24712e46647bfc357040f25fdc12"
+dependencies = [
+ "async-trait",
+ "cornucopia_client_core",
+ "tokio-postgres",
+]
+
+[[package]]
+name = "cornucopia_client_core"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "95a087271917ca54f32499539f3f44c8dc112ffea0f39f47d6cde075df8d2f18"
+dependencies = [
+ "fallible-iterator 0.2.0",
+ "postgres-protocol",
+ "postgres-types",
+]
+
+[[package]]
 name = "cpubits"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4534,6 +4556,7 @@ dependencies = [
  "clap",
  "config 0.15.27",
  "cornucopia",
+ "cornucopia_async",
  "deadpool",
  "deadpool-postgres",
  "diesel",
@@ -4549,6 +4572,7 @@ dependencies = [
  "once_cell",
  "oracle",
  "postgres",
+ "postgres-types",
  "redis",
  "rocksdb",
  "rusqlite",

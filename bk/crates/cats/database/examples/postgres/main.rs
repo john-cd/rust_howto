@@ -58,7 +58,7 @@ fn main() -> anyhow::Result<()> {
                 aggregate_data::run()?;
             }
             Commands::Cornucopia => {
-                cornucopia::run().map_err(anyhow::Error::msg)?;
+                cornucopia::run()?;
             }
             Commands::CreateTables => {
                 create_tables::run()?;
