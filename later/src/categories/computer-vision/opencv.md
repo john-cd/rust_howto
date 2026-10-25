@@ -31,7 +31,9 @@ See also [OpenCV (example)][c~opencv~example]↗{{hi:opencv}}.
 
 The [`opencv`][c~opencv~docs]↗{{hi:opencv}} Rust crate provides bindings to OpenCV.
 
-```rust,editable
+This example uses the optional `opencv` feature and is enabled on Linux. On Ubuntu, install `libopencv-dev`, `clang`, and `libclang-dev`, then run `cargo test -p computer_vision --example opencv --features opencv` from `later/crates`. The test creates its input image in a temporary directory and checks that the written edge image contains detected edges.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/computer_vision/examples/opencv/opencv.rs:example}}
 ```
 
@@ -40,7 +42,7 @@ The [`opencv`][c~opencv~docs]↗{{hi:opencv}} Rust crate provides bindings to Op
 - [[algorithms | Algorithms]].
 - [[mathematics | Mathematics]].
 - [[linear_algebra | Linear Algebra]].
-- [[_machine_learning |  Machine Learning]].
+- [[_machine_learning | Machine Learning]].
 - [[multimedia | Multimedia]].
 - [[multimedia_images | Multimedia Images]].
 - [[multimedia_video | Multimedia Video]].
@@ -50,5 +52,5 @@ The [`opencv`][c~opencv~docs]↗{{hi:opencv}} Rust crate provides bindings to Op
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[opencv: expand, add example](https://github.com/john-cd/rust_howto/issues/257)
+  [opencv: expand, add example](https://github.com/john-cd/rust_howto/issues/257)
 </div>

@@ -24,11 +24,13 @@ autolib = false
 opencv = ["dep:opencv", "dep:image"]
 
 [dependencies]
-rand = { version = "0.10.3", features = ["thread_rng"] }
-
 [target.'cfg(target_os = "linux")'.dependencies]
 image = { version = "0.25.10", optional = true }
 opencv = { version = "0.98.2", default-features = false, features = ["clang-runtime", "imgcodecs", "imgproc"], optional = true }
+
+[dev-dependencies]
+# Gives the image-processing test isolated input and output paths.
+tempfile = "3.27.0"
 
 [[example]]
 name = "opencv"
