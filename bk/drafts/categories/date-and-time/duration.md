@@ -20,7 +20,7 @@ Calling [`std::time::Instant::elapsed`][c~std::time::Instant::elapsed~docs]↗{{
 
 [![chrono][c~chrono~docs~badge]][c~chrono~docs]{{hi:chrono}} [![cat~date-and-time][cat~date-and-time~badge]][cat~date-and-time]
 
-Calculates and displays the [date and time][p~date-and-time]{{hi:Date and time}} two weeks from now using [`chrono::Date::checked_add_signed`][c~chrono::Date::checked_add_signed~docs]↗{{hi:chrono::Date::checked_add_signed}} and the date of the day before that using [`chrono::Date::checked_sub_signed`][c~chrono::Date::checked_sub_signed~docs]↗{{hi:chrono::Date::checked_sub_signed}}.
+Calculates and displays a [date and time][p~date-and-time]{{hi:Date and time}} three weeks after a fixed UTC timestamp, then subtracts one day. The example uses [`chrono::DateTime::checked_add_signed`][c~chrono::DateTime::checked_add_signed~docs]↗{{hi:chrono::DateTime::checked_add_signed}} and [`chrono::DateTime::checked_sub_signed`][c~chrono::DateTime::checked_sub_signed~docs]↗{{hi:chrono::DateTime::checked_sub_signed}} so overflow is represented as `None`.
 
 The methods return None if the [date and time][p~date-and-time] cannot be calculated.
 
@@ -30,11 +30,11 @@ Escape sequences that are available for the[`chrono::DateTime::format`][c~chrono
 {{#include ../../../crates/cats/date_and_time/examples/chrono/checked.rs:example}}
 ```
 
-## Convert a Local Time to Another Timezone {#convert-local-time}
+## Convert a UTC Time to Fixed Time Zones {#convert-local-time}
 
 [![chrono][c~chrono~docs~badge]][c~chrono~docs]{{hi:chrono}} [![cat~date-and-time][cat~date-and-time~badge]][cat~date-and-time]
 
-Gets the local time{{hi:Time}} and displays it using [`chrono::offset::Local::now`][c~chrono::offset::Local::now~docs]↗{{hi:chrono::offset::Local::now}} and then converts it to the UTC{{hi:UTC}} standard using the [`chrono::DateTime::from_utc`][c~chrono::DateTime::from_utc~docs]↗{{hi:chrono::DateTime::from_utc}} struct method. A time is then converted using the [`chrono::offset::FixedOffset`][c~chrono::offset::FixedOffset~docs]↗{{hi:chrono::offset::FixedOffset}} struct and the UTC time is then converted to UTC+8 and UTC-2.
+This example converts a fixed UTC timestamp to fixed offsets, so its output is deterministic. Use a time-zone database such as [`chrono-tz`][c~chrono-tz~docs]↗ when daylight-saving rules and named zones matter; fixed offsets do not model those rules.
 
 ```rust,editable
 {{#include ../../../crates/cats/date_and_time/examples/chrono/timezone.rs:example}}
@@ -42,11 +42,12 @@ Gets the local time{{hi:Time}} and displays it using [`chrono::offset::Local::no
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Parsing and Displaying](parse.md) covers date parsing and formatting.
+- [Time](time_crate.md) demonstrates the `time` crate.
+- [Benchmarking](../development-tools_profiling/benchmarking.md) uses a benchmark harness for repeatable measurements; `Instant` is useful for elapsed-time diagnostics, not a substitute for benchmarking.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/913)
 </div>
