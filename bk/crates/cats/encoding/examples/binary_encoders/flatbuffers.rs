@@ -22,6 +22,12 @@ use flatbuffers::FlatBufferBuilder;
     explicit_outlives_requirements,
     reason = "flatc emits lifetime bounds that the compiler can infer"
 )]
+#[allow(
+    clippy::all,
+    clippy::pedantic,
+    clippy::nursery,
+    reason = "generated code"
+)]
 mod my_game_generated {
     include!("my_game_generated.rs");
 }
@@ -63,5 +69,32 @@ mod tests {
     #[test]
     fn flatbuffer_round_trip_preserves_the_monster() -> anyhow::Result<()> {
         main()
+    }
+
+    /// `root` verifies offsets and bounds, so arbitrary bytes are rejected.
+    #[test]
+    fn garbage_bytes_are_rejected() {
+        let result = flatbuffers::root::<my_game_generated::my_game::Monster>(
+            &[0xff; 8],
+        );
+        assert!(result.is_err());
+    }
+
+    /// Optional fields that were never written read back as `None` or as the
+    /// schema default.
+    #[test]
+    fn unset_fields_read_back_as_defaults() -> anyhow::Result<()> {
+        let mut builder = FlatBufferBuilder::new();
+        let monster = my_game_generated::my_game::Monster::create(
+            &mut builder,
+            &my_game_generated::my_game::MonsterArgs::default(),
+        );
+        builder.finish(monster, None);
+        let decoded = flatbuffers::root::<my_game_generated::my_game::Monster>(
+            builder.finished_data(),
+        )?;
+        assert_eq!(decoded.name(), None);
+        assert_eq!(decoded.hp(), 0);
+        Ok(())
     }
 }

@@ -36,6 +36,8 @@ fn main() -> anyhow::Result<()> {
     let encoded = encode_to_vec(&data, standard())?;
     let (decoded, consumed): (MyData, usize) =
         decode_from_slice(&encoded, standard())?;
+    assert_eq!(data, decoded);
+    assert_eq!(encoded.len(), consumed);
 
     println!(
         "Encoded {} bytes; decoder consumed {consumed} bytes",
@@ -55,9 +57,56 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// The sample value used by the tests below.
+    fn sample() -> MyData {
+        MyData {
+            name: "Alice".to_owned(),
+            age: 30,
+            is_active: true,
+        }
+    }
+
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()
     }
-    // [finish](https://github.com/john-cd/rust_howto/issues/1040)
+
+    /// Pins the wire format: a varint length, the UTF-8 bytes, a varint age
+    /// and one byte for the boolean.
+    #[test]
+    fn standard_config_uses_varint_integers() -> anyhow::Result<()> {
+        let encoded = encode_to_vec(sample(), standard())?;
+        assert_eq!(
+            encoded,
+            [5, b'A', b'l', b'i', b'c', b'e', 30, 1],
+            "unexpected bincode wire format"
+        );
+        Ok(())
+    }
+
+    /// Both sides of a connection must agree on the configuration.
+    #[test]
+    fn fixed_int_encoding_is_larger_and_incompatible_with_standard()
+    -> anyhow::Result<()> {
+        let fixed = bincode::config::standard().with_fixed_int_encoding();
+        let encoded = encode_to_vec(sample(), fixed)?;
+        // 8-byte length + 5 name bytes + 4-byte age + 1 boolean byte.
+        assert_eq!(encoded.len(), 18);
+
+        let (decoded, _): (MyData, usize) = decode_from_slice(&encoded, fixed)?;
+        assert_eq!(decoded, sample());
+
+        // Decoding with the wrong configuration does not yield the value.
+        let wrong = decode_from_slice::<MyData, _>(&encoded, standard());
+        assert!(wrong.map_or(true, |(value, _)| value != sample()));
+        Ok(())
+    }
+
+    #[test]
+    fn truncated_input_is_an_error() -> anyhow::Result<()> {
+        let encoded = encode_to_vec(sample(), standard())?;
+        let truncated = &encoded[..encoded.len() - 2];
+        assert!(decode_from_slice::<MyData, _>(truncated, standard()).is_err());
+        Ok(())
+    }
 }
