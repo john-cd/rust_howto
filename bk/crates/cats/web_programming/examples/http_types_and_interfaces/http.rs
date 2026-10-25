@@ -59,11 +59,11 @@ fn build_headers() -> anyhow::Result<HeaderMap> {
 ///
 /// Returns an error if a header is invalid or the request cannot be built.
 fn build_request() -> anyhow::Result<Request<&'static str>> {
-    let request = Request::builder()
+    let mut request = Request::builder()
         .method(Method::GET)
         .uri("https://example.com/items")
-        .headers(build_headers()?)
         .body("hello")?;
+    *request.headers_mut() = build_headers()?;
 
     Ok(request)
 }
