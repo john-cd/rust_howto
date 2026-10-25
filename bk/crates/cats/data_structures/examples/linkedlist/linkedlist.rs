@@ -20,7 +20,7 @@ fn main() {
     list.push_back(4);
     list.push_back(5);
 
-    // Print the list (elements are printed in the order they were added):
+    // Print the current list order, from front to back:
     println!("List elements:");
     for element in &list {
         println!("{element}");
