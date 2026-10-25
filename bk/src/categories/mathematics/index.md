@@ -86,7 +86,7 @@ This topic includes ordinary and partial differential equations, dynamical syste
 
 ## Graph Theory
 
-For graph data structures and algorithms, see [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} and the [[graphs | Graphs]] chapter.
+For graph data structures and algorithms, the [Graph Theory chapter][p~graph-theory] demonstrates DAG scheduling and cycle detection with [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}. See also the [[graphs | Graphs]] chapter.
 
 ## Discrete Mathematics
 

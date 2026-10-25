@@ -101,6 +101,7 @@
   - [Optimization](categories/mathematics/optimization.md)
   - [Units of Measurement](categories/mathematics/units.md)
   - [Discrete Mathematics](categories/mathematics/discrete_mathematics.md)
+  - [Graph Theory](categories/mathematics/graph_theory.md)
 
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
 

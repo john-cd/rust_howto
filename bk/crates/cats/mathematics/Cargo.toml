@@ -34,6 +34,8 @@ num-bigint = "0.4.8"
 num-rational = "0.4.2"
 num-traits = "0.2.19"
 ordered-float = "5.5.0"
+petgraph = "0.8.3" # Directed graphs and graph algorithms.
+rayon = "1.12.0" # Parallel evaluation of independent graph levels.
 rust_decimal = "1.43.0"
 rust_decimal_macros = "1.40.0"
 serde_json = "1.0.154"
@@ -42,6 +44,9 @@ uom = "0.38.0" # Type-safe physical quantities and unit conversion.
 
 [target.'cfg(target_os = "linux")'.dependencies]
 rug = "1.30.0"
+
+[dev-dependencies]
+proptest = "1.12.0" # Generate DAGs for topological order property tests.
 
 [[example]]
 name = "additional_numeric_types"
@@ -56,6 +61,11 @@ test = true
 [[example]]
 name = "discrete_mathematics"
 path = "examples/discrete_mathematics/main.rs"
+test = true
+
+[[example]]
+name = "graph_theory"
+path = "examples/graph_theory/main.rs"
 test = true
 
 [[example]]
