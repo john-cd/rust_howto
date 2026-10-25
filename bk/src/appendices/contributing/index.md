@@ -125,7 +125,7 @@ Enhancement suggestions are tracked as [GitHub issues][rust-howto~issues]↗.
 - Use a **clear and descriptive title** for the issue to identify the suggestion.
 - Provide a **step-by-step description of the suggested enhancement** in as many details as possible.
 - **Describe the current behavior** and **explain which behavior you expected to see instead** and why. At this point you can also tell which alternatives do not work for you.
-- You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool][licecap~website]↗ to record GIFs on macOS and Windows, and [this tool][silentcast~repo]↗ on Linux.
+- You may want to **include screenshots and animated GIFs** to demonstrate the steps or draw attention to a detail. Use a screen-recording tool available for your operating system, then attach the resulting image or GIF to the issue or pull request.
 - **Explain why this enhancement would be useful** to most users of this book. You may also want to point out the other projects that solved it better and which could serve as inspiration.
 
 ### Your First Contribution {#your-first-contribution}
@@ -159,8 +159,8 @@ Start small: fix a typo, improve a code example, or add a link before taking on 
 
 ### Commit Messages {#commit-messages}
 
-- Use the present tense and imperative mood: "Add example for X" rather than "Added example for X".
-- Keep the first line under 72 characters.
+- Use `type(scope): imperative summary`, for example `docs(contributing): update setup instructions`.
+- Keep the summary concise and use the imperative mood.
 - Reference related issues with `#<issue number>` in the commit message body when applicable.
 - Group logically related changes in a single commit.
 
@@ -168,7 +168,6 @@ Start small: fix a typo, improve a code example, or add a link before taking on 
 
 - [TODO list][rust-howto~todo~repo]↗.
 - [LICENSE][rust-howto~license~repo]↗.
-
 - [Existing Issues (GitHub)][rust-howto~issues]
 
 ## Attribution {#attribution}
@@ -187,5 +186,5 @@ This guide is based on the **contributing.md**. [Make your own][contributing.md~
 [ex~contributing~styleguides]: #styleguides
 
 <div class="hidden">
-[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+  [accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

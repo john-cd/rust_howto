@@ -12,14 +12,14 @@ The following are topics that deserve (additional) coverage and examples:
 - [[data-structures | Data Structures]].
 - [[testing | Testing]].
 - [[gpu | GPU]] processing, CUDA.
-- [[machine-learning | Machine Learning]], Tensorflow.
+- [[machine-learning | Machine Learning]], for example [Burn][c~burn~docs]↗, [Candle][candle~repo]↗, and [tch][c~tch~docs]↗.
 - [[email | Email]].
 - [[template-engine | Template Engines]].
 - [[caching | Caching]].
 - [[compilers | Compilers]].
 - [[wasm | WASM]].
 - [[algorithms | Algorithms]].
-- [[authentication | Authentication]] / authorization: OAuth2, LDAP/AD, DNS lookups...
+- [[authentication | Authentication]] and authorization: OAuth 2.0, LDAP/Active Directory.
 - Continuous Deployment & Integration ([[cd_ci | CD / CI]]) for Rust projects.
 - Use of Rust in [[aws | AWS]] and other [[cloud | Cloud]] services.
 - [[serverless | Serverless]] Rust.
@@ -39,6 +39,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [[version-control | Version Control]]: libgit2: clone, change branches, create commits, push, pull.
 - [[cryptography | Cryptography]], SSL, SSH, other public key [[encryption | encryption]], X.509, RusTLS.
 - [[network-programming | Network Programming]]: Basic and advanced TCP/IP networking.
+- DNS lookups and resolution.
 - Interfacing with FLTK (Fast Light Tool Kit).
 - Raft Consensus library.
 - Network file systems.
@@ -64,7 +65,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [[aerospace | Aerospace]]-related crates: [[drones | Drones]], UAVs, [[space-protocols | Space Protocols]], simulation...
 - [[cryptocurrencies | Cryptocurrencies]].
 
-Please also consult the [`TODO.md`][rust-howto~todo~repo]↗ file and the [`drafts`][rust-howto~drafts~repo]↗ and [`later`][rust-howto~bk-later~repo]↗ folders.
+Check the [open issues][rust-howto~issues]↗ for tracked work, and browse the [`bk/drafts`][rust-howto~drafts~repo]↗ and [`later/src`][rust-howto~bk-later~repo]↗ folders for chapters still in progress.
 
 ## Related Topics {#related-topics .skip}
 
@@ -75,5 +76,5 @@ Please also consult the [`TODO.md`][rust-howto~todo~repo]↗ file and the [`draf
 {{#include refs.incl.md}}
 
 <div class="hidden">
-[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+  [accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

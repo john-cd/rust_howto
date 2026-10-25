@@ -10,9 +10,9 @@ The `.devcontainer/Dockerfile` uses a multi-stage build{{hi:Multi-stage build}} 
 
 The `Dockerfile` is organized into three main stages:
 
-1.  **`base` stage**: Contains all the system dependencies, common Rust tools (like `clippy`, `rustfmt`), and specialized tools (like `mdbook`, `pandoc`, `tectonic`). It serves as the foundation for the other stages.
-2.  **`development` stage**: Extends the `base` stage with additional tools for local development, such as `jq`, `fzf`, the GitHub CLI (`gh`), and debugging tools like `bacon` and `kani-verifier`. It is used by [Dev Container][ex~contributing~using-vs-code]↗ and contains user-specific configuration (like Git settings).
-3.  **`ci` stage**: Also extends the `base` stage. It is optimized for building the book in Continuous Integration environments (like GitHub Actions). It copies the entire repository into the image and uses a specific entrypoint script to build the documentation.
+1. **`base` stage**: Contains all the system dependencies, common Rust tools (like `clippy`, `rustfmt`), and specialized tools (like `mdbook`, `pandoc`, `tectonic`). It serves as the foundation for the other stages.
+2. **`development` stage**: Extends the `base` stage with additional tools for local development, such as `jq`, `fzf`, and the GitHub CLI (`gh`). It includes [Bacon][bacon~repo]↗, a background file checker, and [Kani][kani~repo]↗, a Rust verifier for checking program properties. It is used by [Dev Container][ex~contributing~using-vs-code]↗ and contains user-specific configuration (like Git settings).
+3. **`ci` stage**: Also extends the `base` stage. It is optimized for building the book in Continuous Integration environments (like GitHub Actions). It copies the entire repository into the image and uses a specific entrypoint script to build the documentation.
 
 The `development` target is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} and rust tooling{{hi:Rust tooling}}.
 
@@ -20,8 +20,8 @@ The `development` target is used by `.devcontainer/devcontainer.json` to install
 
 The project uses several tools and techniques to optimize the Rust development experience within Docker:
 
--   **`cargo binstall`**: To speed up the image build process, we use [`cargo-binstall`][c~cargo-binstall~repo]↗ to install Rust tools as pre-compiled binaries whenever possible, rather than compiling them from source.
--   **`sccache`**: We use [`sccache`][c~sccache~repo]↗ (Shared Compilation Cache) to cache Rust compilation artifacts. This significantly speeds up subsequent builds by avoiding redundant compilation.
+- **`cargo binstall`**: To speed up the image build process, we use [`cargo-binstall`][c~cargo-binstall~repo]↗ to install Rust tools as pre-compiled binaries whenever possible, rather than compiling them from source.
+- **`sccache`**: We use [`sccache`][c~sccache~repo]↗ (Shared Compilation Cache) to cache Rust compilation artifacts. This significantly speeds up subsequent builds by avoiding redundant compilation.
 
 For background on when a separate Rust compiler cache helps, see [Why You Need `sccache`][blog~why_you_need_sccache]↗.
 
@@ -106,5 +106,5 @@ docker push johncd/rust_howto_ci:latest
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+  [accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

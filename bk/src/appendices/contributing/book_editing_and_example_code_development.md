@@ -18,7 +18,7 @@ The keyboard-accessible **Suggest an edit** button in each page's toolbar opens 
 
 Runnable examples embedded in the book live under `bk/crates/<section-or-category>/examples/<chapter>/`. Keep the book-visible snippet between `// ANCHOR: example` and `// ANCHOR_END: example`. In a chapter, write an include directive by joining `{{` + `#include path/to/example.rs:example` + `}}` with no spaces.
 
-The hidden part of an example normally provides `pub fn run() { main(); }` and a `#[test] fn test() { main(); }` so workspace tests exercise it. A very short snippet can live directly in Markdown, but it will not be formatted, linted, or tested by the Rust workspace.
+The hidden part of an example normally provides `pub fn run() { main(); }` and a `#[cfg(test)] mod tests` containing `#[test] fn test_main() { main(); }`, so workspace tests exercise it. A very short snippet can live directly in Markdown, but it will not be formatted, linted, or tested by the Rust workspace.
 
 For a complex standalone example that does not fit the embedded-example layout, use the separate `xmpl/` workspace and link to it from the relevant chapter.
 
@@ -50,5 +50,5 @@ A `rust` code block can show a play button that runs the code in the [Rust Playg
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+  [accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

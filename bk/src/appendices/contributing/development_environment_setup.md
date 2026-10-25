@@ -24,14 +24,14 @@ If you are not using VS Code, install the [Dev Container CLI][dev-container-cli~
 ```bash
 sudo apt-get update # Or equivalent for other distros
 # sudo apt-get install fzf # Optional
-# sudo apt-get mold clang # If using
+# sudo apt-get install mold clang # If using
 rustup update
 rustup component add clippy
-cargo install cargo-nextest
-cargo install mdbook
+cargo install cargo-nextest --version 0.9.148 --locked
+cargo install mdbook --version 0.5.4 --locked
 cargo install just
-cargo install mdbook-linkcheck
-cargo install --git https://github.com/john-cd/mdbook-utils --rev dedddf3699e461cd418c1a044d82aabd3fec62e0 --locked --force mdbook-utils
+cargo install mdbook-linkcheck --version 0.7.7 --locked
+cargo install --git https://github.com/john-cd/mdbook-utils --rev 171a98f93a6d3817561c8dd9f8075a9dcf6629f3 --locked --force mdbook-utils
 # for the formatter toolchain pinned in `rustfmt-toolchain`
 RUSTFMT_TOOLCHAIN="$(tr -d '\r\n' < rustfmt-toolchain)"
 rustup toolchain install "$RUSTFMT_TOOLCHAIN"
@@ -61,10 +61,10 @@ After installing Rust via `rustup`, open a new terminal and run:
 
 ```powershell
 rustup component add clippy
-cargo install cargo-nextest
-cargo install mdbook
-cargo install mdbook-linkcheck
-cargo install --git https://github.com/john-cd/mdbook-utils --rev dedddf3699e461cd418c1a044d82aabd3fec62e0 --locked --force mdbook-utils
+cargo install cargo-nextest --version 0.9.148 --locked
+cargo install mdbook --version 0.5.4 --locked
+cargo install mdbook-linkcheck --version 0.7.7 --locked
+cargo install --git https://github.com/john-cd/mdbook-utils --rev 171a98f93a6d3817561c8dd9f8075a9dcf6629f3 --locked --force mdbook-utils
 $rustfmtToolchain = (Get-Content rustfmt-toolchain -Raw).Trim()
 rustup toolchain install $rustfmtToolchain
 rustup component add rustfmt --toolchain $rustfmtToolchain
@@ -104,7 +104,7 @@ The optional Unix-only `just spelling spell-aspell` recipe remains available for
 
 ```sh
 sudo apt update
-apt-get -y install just
+sudo apt-get -y install just
 ```
 
 ## Install `mdbook` (Alternative) {#alternative-mdbook-install}
@@ -130,5 +130,5 @@ apt-get -y install just
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+  [accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
 </div>

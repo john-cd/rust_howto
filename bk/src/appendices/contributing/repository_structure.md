@@ -20,7 +20,7 @@ This book's [GitHub repository][rust-howto~repo]↗ is structured as follows:
   - The Rust examples embedded in the book are found below `bk/crates` (see below for details).
   - The [`bk/master`][rust-howto~bk-master~repo]↗ folder contains the master list of crates used in the book (which is used by a few scripts to generate tables).
   - [`bk/scripts`][rust-howto~bk-scripts~repo]↗ contains [just][c~just~website]↗ modules (`mod.just` files) and shell scripts (`*.sh` files) for building the code & book and managing references, links, recipe tables, examples, etc.
-- Additional code and tools is found in the `playground`, `publish`, `tools` and `xmpl` folders.
+- Additional code and tools are found in the `playground`, `publish`, `tools`, and `xmpl` folders.
   - The [`playground`][rust-howto~playground~repo]↗ folder contains bits and pieces of code for testing and exploration. Use it to develop new code examples.
   - The [`publish`][rust-howto~publish~repo]↗ folder contains a placeholder crate that is published to `crates.io`, so that the links to the book could be found there.
   - [`tools`][rust-howto~tools~repo]↗ contains several command-line utilities to build specific sections of the book, for example book indices.
@@ -54,16 +54,16 @@ The [`bk/drafts`][rust-howto~drafts~repo]↗ and [`later/src`][rust-howto~bk-lat
 
 The book's [GitHub repository][rust-howto~repo]↗ is a "monorepo" with multiple independent projects:
 
-- The Rust examples embedded in the book use a very large number of dependencies, therefore their compile time is quite long. For that reason, they are in an isolated [`cargo`][c~cargo~docs]↗{{hi:cargo}} workspace, which manifest is in `bk/crates/Cargo.toml`. The workspace consists of multiple crates below [`bk/crates`][rust-howto~code-examples~repo]↗, each named after sections of the book (e.g., `bk/crates/language`) or, within the `bk/crates/cats` folder, after `crates.io` categories (e.g., `bk/crates/cats/algorithms`).
-  - Each crate in the workspace contains a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file, which list the dependencies used by its code examples. Use `cargo add <crate>` or `cargo add <crate> -F <feature>` while in the appropriate crate folder, in order to add more as required.
-  - The examples themselves are stored within the crate's `tests` folder in a subfolder named after their chapter, e.g., `bk/crates/<section or cats/some_category>/examples/<chapter_name>/<example_name>.rs`. In a few cases, you may also find examples in the crate's `tests` or `src` folders or within its `build.rs` file.
-  - Each example are in a separate `.rs` Rust file that is a module in a `main.rs` file. All examples of a given chapter are therefore compiled together.
-  - The book's code examples, being in a [`cargo`][c~cargo~docs]↗{{hi:cargo}} [workspace][book~rust~ch14-03-cargo-workspaces]↗, share the same dependency versions (a single `Cargo.lock` file) and one shared `target` directory, avoid unnecessary dependency rebuilding.
+- The Rust examples embedded in the book use many dependencies, so compiling them can take time. They live in an isolated [`cargo`][c~cargo~docs]↗{{hi:cargo}} workspace whose manifest is `bk/crates/Cargo.toml`. Its member crates are grouped by book section (for example, `bk/crates/language`) or, under `bk/crates/cats`, by `crates.io` category (for example, `bk/crates/cats/algorithms`).
+  - Each workspace crate contains a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file that declares the dependencies used by its examples. Use `cargo add <crate>` or `cargo add <crate> -F <feature>` from that crate's directory to add a dependency.
+  - Most examples live under `bk/crates/<section-or-category>/examples/<chapter_name>/<example_name>.rs`. A few supporting files live in `src`, `tests`, or `build.rs`.
+  - Each example is a separate `.rs` module included by the chapter's `main.rs`, so the examples for a chapter compile together.
+  - The book examples share one `Cargo.lock` and workspace output directory. Workspace members can inherit dependency versions from `[workspace.dependencies]`, but each crate declares the dependencies it uses.
 - The rest of the code is either in standalone crates (`publish`) or independent workspaces (`playground`,`tools` and `xmpl`).
   - The [`tools`][rust-howto~tools~repo]↗ workspace builds a few CLI binaries that share a common `tool_lib` library.
   - In the base folder of each project, type [`just`][c~just~docs]↗{{hi:just}} at the shell prompt for a list of commands you can use to format, check, build, lint and test the code. `just release` builds tools in release mode and copies the binaries into the `bin` folder (in the repo root).
 
-Note that, instead of storing the [`cargo`][c~cargo~docs]↗{{hi:cargo}} cache and compiler outputs in a separate `target` folder for each workspace or standalone crate, there is a common `target` folder in the repository root. For example, the compiled examples for the book are in `target/bk`. This is configured in `.cargo/config.toml` files.
+Cargo's `target` and intermediate `build` directories are linked from the repository root to persistent, per-checkout cache directories by `just build-setup`. On Windows these are `D:\target\rust_howto\<slot>` and `C:\code_build\rust_howto\<slot>`; the Dev Container uses `/root/.cache/rust_howto/target/<slot>` and `/root/.cache/rust_howto/build/<slot>`. The root `.cargo/config.toml` and shared `scripts/build.just` configure these paths for the independent workspaces. Run `just build-setup` once in a checkout before direct Cargo commands; `just worktree` sets up new slots automatically.
 
 Consult the `README.md` files of each crate for more details.
 
@@ -108,4 +108,5 @@ For the sake of readability, the test boilerplate is hidden in the book.
 - [[cargo | Cargo]].
 
 [accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+
 </div>

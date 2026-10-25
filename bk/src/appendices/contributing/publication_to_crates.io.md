@@ -15,14 +15,13 @@ To publish the crate to `crates.io`, use the following steps:
 - [`cargo update`][book~cargo~cargo-update]↗{{hi:cargo update}} if necessary.
 - Go to [`crates.io`][crates.io~website]↗{{hi:crates.io}}, sign in, and create an API token in `Account Settings` > `API Tokens`.
 - Use [`cargo login`][book~cargo~cargo-login]↗{{hi:cargo login}} to save the token in `$CARGO_HOME/credentials.toml`.
-
 - `cargo build --locked --release`.
 - `cargo clippy`.
 - `cargo run --release`.
 - `cargo doc`.
 - Review `cargo package --list`.
 - `cargo package`.
-- Review the packaging output in `target/publish/package`.
+- Review the packaging output in `<target-dir>/package/`. Cargo places it below the target directory configured for the checkout; see the repository's `.cargo/config.toml` and `just build-setup` instructions.
 - When ready, `cargo publish --dry-run; cargo publish`.
 
 Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of shortcuts for some of the above commands.
@@ -42,4 +41,5 @@ Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of short
 - [[release_automation | Release Automation]].
 
 [accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+
 </div>

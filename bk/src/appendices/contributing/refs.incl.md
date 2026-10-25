@@ -27,3 +27,6 @@
 [dprint~website]: https://dprint.dev/
 [typos~repo]: https://github.com/crate-ci/typos
 [rumdl~repo]: https://github.com/rvben/rumdl
+[candle~repo]: https://github.com/huggingface/candle
+[bacon~repo]: https://github.com/Canop/bacon
+[kani~repo]: https://github.com/model-checking/kani
