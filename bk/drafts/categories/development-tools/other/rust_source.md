@@ -56,6 +56,14 @@ The [Bytecode Alliance `wasm-tools`](https://github.com/bytecodealliance/wasm-to
 {{#include ../../../../crates/cats/development_tools/examples/rust_source/wasm_roundtrip.rs:example}}
 ```
 
+## `proc_macro2` versus `proc_macro`, and Choosing `syn` Features {#proc-macro2}
+
+[![proc-macro2][c~proc-macro2~docs~badge]][c~proc-macro2~docs] [![syn][c~syn~docs~badge]][c~syn~docs]{{hi:proc-macro2}}{{hi:syn}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Rust source}}
+
+The compiler's `proc_macro` crate can only be used inside a procedural macro, so a build script, a test or a command-line tool cannot call it. [`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} is a drop-in wrapper that works everywhere: inside a procedural macro it forwards to `proc_macro`, and elsewhere it uses a fallback implementation. That is why `syn` and `quote` are written against `proc_macro2` types, and why this chapter's examples run as ordinary programs. Convert at the boundary with `.into()` when a macro returns a `proc_macro2::TokenStream` as a `proc_macro::TokenStream`.
+
+`syn` is modular, so enable only the features you use. `parsing`, `printing`, `derive` and `proc-macro` are on by default. Add `full` to parse items, function bodies and statements (needed to parse a whole file), `visit` or `visit-mut` for visitors, `fold` for tree rewriting, `extra-traits` for `Debug` and `PartialEq` on syntax nodes, and `proc-macro2`'s `span-locations` for line and column numbers outside a macro. Parsing a file with `full` compiles noticeably slower than a `derive`-only build.
+
 ## Related Topics {#related-topics .skip}
 
 - [[parsing | Parsing Utilities]].

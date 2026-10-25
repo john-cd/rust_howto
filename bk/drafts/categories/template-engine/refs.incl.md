@@ -1,5 +1,6 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [ex~template-engine~create-html-from-template]: tera.md#create-html-from-template
+[ex~template-engine~sanitize-vs-escape]: tera.md#sanitize-vs-escape
 [ex~template-engine~tinytemplate]: tinytemplate.md#tinytemplate
 [p~template-engine]: index.md

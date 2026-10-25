@@ -60,6 +60,16 @@ Before queueing a message, drop recipients that cannot or should not receive it.
 
 A syntax-and-domain-list check cannot tell whether a mailbox exists. For syntax alone use an address-parsing crate, and for deliverability rely on bounce handling and a confirmation email.
 
+## Add a Plain-Text Alternative with `html2text` {#html2text}
+
+[![html2text][c~html2text~docs~badge]][c~html2text~docs] [![html2text~crates.io][c~html2text~crates.io~badge]][c~html2text~crates.io]{{hi:html2text}} [![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
+
+A multipart email should carry a `text/plain` part next to the HTML one, for clients that cannot show HTML and for spam filters. Instead of writing the text version by hand, generate it from the HTML body with [`html2text`][c~html2text~docs]↗{{hi:html2text}}, then pass both strings to the `lettre` message builder (`MultiPart::alternative_plain_html`). See also [[html_sanitization | Sanitize HTML]].
+
+```rust,editable
+{{#include ../../../crates/cats/web_programming/examples/html_text/html2text.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 FIXME

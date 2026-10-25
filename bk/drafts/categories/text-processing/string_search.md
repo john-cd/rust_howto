@@ -26,6 +26,16 @@ Exact search, fuzzy ranking, and similarity scores answer different questions. A
 {{#include ../../../crates/cats/text_processing/examples/string_search/aho_corasick.rs:example}}
 ```
 
+## Redact Many Words at Once with `aho-corasick` {#aho-corasick-redact}
+
+[![aho-corasick][c~aho-corasick~docs~badge]][c~aho-corasick~docs] [![aho-corasick~crates.io][c~aho-corasick~crates.io~badge]][c~aho-corasick~crates.io]{{hi:aho-corasick}}{{hi:Redaction}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+
+Building the automaton is the expensive step, so build it once and reuse it for every text. `ascii_case_insensitive(true)` ignores ASCII case only. Use `MatchKind::LeftmostLongest` when one pattern is a prefix of another (`pass` and `password`); the default `Standard` kind reports the match that ends first, which would redact only part of the longer word. `replace_all` takes one replacement per pattern, in the order the patterns were added. For a large dictionary of words that must match on word boundaries, check the match edges yourself, because the automaton also matches inside longer words.
+
+```rust,editable
+{{#include ../../../crates/cats/text_processing/examples/string_search/aho_corasick_redact.rs:example}}
+```
+
 ## `memchr` {#memchr}
 
 [![memchr][c~memchr~docs~badge]][c~memchr~docs] [![memchr~crates.io][c~memchr~crates.io~badge]][c~memchr~crates.io] [![memchr~repo][c~memchr~repo~badge]][c~memchr~repo] [![memchr~lib.rs][c~memchr~lib.rs~badge]][c~memchr~lib.rs]{{hi:memchr}}{{hi:Search}}{{hi:Find}}{{hi:memchr}}{{hi:Substring}}{{hi:Memmem}}

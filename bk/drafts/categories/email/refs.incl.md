@@ -1,6 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [ex~email~build_email_messages]: send_emails.md#build_email_messages
+[ex~email~html2text]: send_emails.md#html2text
 [ex~email~imap]: read_emails.md#imap
 [ex~email~lettre]: send_emails.md#lettre
 [ex~email~mailchecker]: send_emails.md#mailchecker
