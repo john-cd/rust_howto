@@ -15,6 +15,10 @@ use toml_edit::value;
 
 /// Parses a TOML document, edits it while preserving its formatting, and prints
 /// it.
+///
+/// # Errors
+///
+/// Returns an error if parsing or document edits fail.
 fn main() -> anyhow::Result<()> {
     // Parse existing TOML, here a `Cargo.toml` file:
     let toml_content = r#"
@@ -59,10 +63,10 @@ path = "src/main.rs"
 
     // Add a new table.
     let mut dev_deps = toml_edit::table(); // Empty table.
-    dev_deps
+    let dev_deps_table = dev_deps
         .as_table_mut()
-        .unwrap()
-        .insert("pretty_assertions", value("1.4.1"));
+        .ok_or_else(|| anyhow::anyhow!("a TOML table could not be created"))?;
+    dev_deps_table.insert("pretty_assertions", value("1.4.1"));
     doc.insert("dev-dependencies", dev_deps);
 
     // Add to the array of tables.

@@ -33,9 +33,10 @@ struct Database {
 
 /// Demonstrates parsing a TOML string into a `Config` struct.
 ///
-/// It uses `toml::from_str` to parse a string into a
-/// `Config` struct.
-fn main() {
+/// # Errors
+///
+/// Returns an error if the example TOML cannot be deserialized.
+fn main() -> anyhow::Result<()> {
     let toml_string = r#"
         title = "TOML Example"
 
@@ -47,16 +48,17 @@ fn main() {
         date = 1979-05-27T07:32:00Z
     "#;
 
-    let parsed_toml: Config =
-        toml::from_str(toml_string).expect("Failed to parse TOML");
+    let parsed_toml: Config = toml::from_str(toml_string)?;
     println!("{parsed_toml:#?}");
+
+    Ok(())
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example and propagates deserialization errors.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
@@ -64,7 +66,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
-        main();
+    fn test_main() -> anyhow::Result<()> {
+        main()
     }
 }

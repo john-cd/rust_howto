@@ -41,7 +41,7 @@ fn main() -> anyhow::Result<()> {
                 basic_toml::run()?;
             }
             Commands::Toml => {
-                toml::run();
+                toml::run()?;
             }
             Commands::TomlEdit => {
                 toml_edit::run()?;

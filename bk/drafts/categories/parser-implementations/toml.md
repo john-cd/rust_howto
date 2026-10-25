@@ -6,6 +6,8 @@
 
 [`toml`][c~toml~docs]↗{{hi:toml}} is the primary crate.
 
+Use `toml` with Serde to map data to Rust types, or parse into `toml::Value` when the structure is not known in advance. Use `toml_edit` when an editor must preserve comments and formatting. The smaller `basic-toml` example provides a minimal alternative. For application configuration, see [Configuration](../config/configuration.md) and [Structured Data](../encoding/complex_encoding.md).
+
 ## `toml` {#toml}
 
 [![toml][c~toml~docs~badge]][c~toml~docs] [![toml~crates.io][c~toml~crates.io~badge]][c~toml~crates.io] [![toml~repo][c~toml~repo~badge]][c~toml~repo] [![toml~lib.rs][c~toml~lib.rs~badge]][c~toml~lib.rs]{{hi:toml}}{{hi:Encoding}}{{hi:toml}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
@@ -36,18 +38,17 @@
 {{#include ../../../crates/cats/parser_implementations/examples/toml/basic_toml.rs:example}}
 ```
 
+## Analyze and Format TOML with Taplo {#taplo}
+
+[![taplo~website][c~taplo~website~badge]][c~taplo~website] [![taplo][c~taplo~docs~badge]][c~taplo~docs] [![taplo~crates.io][c~taplo~crates.io~badge]][c~taplo~crates.io] [![taplo~repo][c~taplo~repo~badge]][c~taplo~repo] [![taplo~lib.rs][c~taplo~lib.rs~badge]][c~taplo~lib.rs]{{hi:taplo}}{{hi:Parser}}{{hi:Toml}}{{hi:Linter}}{{hi:Formatter}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
+
+[`Taplo`][c~taplo~website]↗{{hi:Taplo}} is a TOML parser, analyzer, formatter, and language server. Use its editor tooling to validate and format configuration files; use the Rust libraries above when TOML parsing is part of an application.
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Configuration](../config/configuration.md) covers loading and validating application settings.
+- [Structured Data](../encoding/complex_encoding.md) shows deserializing TOML alongside other serialized formats.
+- [Parsing Utilities](../parsing/parsing.md) covers building parsers for custom grammars.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[toml: write](https://github.com/john-cd/rust_howto/issues/444)
-
-[![taplo~website][c~taplo~website~badge]][c~taplo~website] [![taplo][c~taplo~docs~badge]][c~taplo~docs] [![taplo~crates.io][c~taplo~crates.io~badge]][c~taplo~crates.io] [![taplo~repo][c~taplo~repo~badge]][c~taplo~repo] [![taplo~lib.rs][c~taplo~lib.rs~badge]][c~taplo~lib.rs]{{hi:taplo}}{{hi:Parser}}{{hi:Toml}}{{hi:Linter}}{{hi:Formatter}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
-
-A TOML parser, analyzer and formatter library.
-
-</div>
