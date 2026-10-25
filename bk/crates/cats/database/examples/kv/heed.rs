@@ -9,6 +9,7 @@
 
 // This example demonstrates using the `heed` crate as an LMDB-backed key-value
 // store.
+use heed::CommitOrAbort;
 use heed::Database;
 use heed::EnvOpenOptions;
 use heed::types::*;
@@ -31,15 +32,21 @@ fn main() -> anyhow::Result<()> {
             .open(dir.path())?
     };
 
+    // Create the default unnamed database inside a write transaction, which
+    // is committed along with the database. We specify the key type as a
+    // 32-bit unsigned integer in native endianness and the value type as a
+    // string.
+    let wtxn = env.write_txn()?;
+    let db: Database<U32<byteorder::NativeEndian>, Str> = env
+        .create_databases_and_commit(wtxn, |opener, wtxn| {
+            let db = opener.create_database(wtxn, None)?;
+            anyhow::Ok(CommitOrAbort::<_, ()>::Commit(db))
+        })?
+        .unwrap_commit();
+
     // Create a transaction with read and write access for use with the
     // environment.
     let mut wtxn = env.write_txn()?;
-
-    // Open the default unnamed database. We specify the key type as a
-    // 32-bit unsigned integer in native endianness and the value type as a
-    // string.
-    let db: Database<U32<byteorder::NativeEndian>, Str> =
-        env.create_database(&mut wtxn, None)?;
 
     // Write data to the database. We insert a key-value pair where the key is
     // 1 and the value is "Hello, world!".
