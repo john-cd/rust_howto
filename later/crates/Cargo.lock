@@ -1995,6 +1995,58 @@ dependencies = [
 ]
 
 [[package]]
+name = "augurs"
+version = "0.10.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9fdc2e6862d3efa5152f15bacd0cb88fc0452a815cee31ac7999a3a080d871c0"
+dependencies = [
+ "augurs-core",
+ "augurs-ets",
+ "augurs-mstl",
+]
+
+[[package]]
+name = "augurs-core"
+version = "0.10.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "304774394b274d23e2440648709efd47ccffa94e03ccc26fa4501cf69f52300c"
+dependencies = [
+ "num-traits",
+]
+
+[[package]]
+name = "augurs-ets"
+version = "0.10.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "822469daf3558b05db63d14c54a13756753373ad92bccfa44912f40598d454e7"
+dependencies = [
+ "augurs-core",
+ "augurs-mstl",
+ "distrs",
+ "itertools 0.14.0",
+ "lstsq",
+ "nalgebra 0.34.2",
+ "rand 0.8.8",
+ "rand_distr 0.4.3",
+ "roots",
+ "thiserror 2.0.21",
+ "tracing",
+]
+
+[[package]]
+name = "augurs-mstl"
+version = "0.10.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8e3f37da49fef8f960e99b7af346258ac8f5ed03821a008fdd9a5b34e83b1ce1"
+dependencies = [
+ "augurs-core",
+ "distrs",
+ "stlrs",
+ "thiserror 2.0.21",
+ "tracing",
+]
+
+[[package]]
 name = "auto_enums"
 version = "0.8.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8180,6 +8232,12 @@ name = "disqualified"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e90a5dd66beeca277ae954f8055b02a712792b6b6b43f2bc2f92b0b7d8291614"
+
+[[package]]
+name = "distrs"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2906d3628a885aa49a23b88e71f63e51ae8df41cd76652287f0a6179a11833a9"
 
 [[package]]
 name = "dlib"
@@ -14785,6 +14843,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4050469837a6ff301cd14c1f8f24f88549e6d548f24f64e2148eb0f72cebc51f"
 
 [[package]]
+name = "lstsq"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "23ec6a3ba23bb2580ae4ea21f002edff262671a7bcc833f87728e2f8007a5ea2"
+dependencies = [
+ "nalgebra 0.34.2",
+]
+
+[[package]]
 name = "lua-src"
 version = "550.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -17503,6 +17570,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "ort"
+version = "2.0.0-rc.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "37c87aa7a90b7ff3e0fe36cccd475df8d67f15f07f4d6c370c4b38464232813c"
+dependencies = [
+ "libloading 0.9.0",
+ "ndarray 0.17.2",
+ "ort-sys",
+ "smallvec",
+ "tracing",
+]
+
+[[package]]
+name = "ort-sys"
+version = "2.0.0-rc.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8d22b0417f1838db5a3ac0b3f98dfe39f6fb73624aa0a27c6bbb5040b9c7db2b"
+
+[[package]]
 name = "os_freebsd_apis"
 version = "0.1.2"
 dependencies = [
@@ -17551,8 +17637,10 @@ name = "other"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "arc-swap",
  "arrow 58.4.0",
  "async-trait",
+ "augurs",
  "aws-config",
  "aws-sdk-s3",
  "axum",
@@ -17563,6 +17651,7 @@ dependencies = [
  "k8s-openapi",
  "kube",
  "lambda_runtime",
+ "ort",
  "polars",
  "rhai",
  "schemars 1.2.3",
@@ -17571,6 +17660,7 @@ dependencies = [
  "shaku",
  "shuttle-axum",
  "shuttle-runtime",
+ "smartcore",
  "spirv-std",
  "thiserror 2.0.21",
  "tokio",
@@ -20577,6 +20667,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "roots"
+version = "0.0.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "082f11ffa03bbef6c2c6ea6bea1acafaade2fd9050ae0234ab44a2153742b058"
+
+[[package]]
 name = "ros_message"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -22940,6 +23036,12 @@ name = "static_vcruntime"
 version = "3.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ff7589a1859b09232522bb9edf076ca7fcf14ded96685d3fa629db73023ffbb7"
+
+[[package]]
+name = "stlrs"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1bc437f5340cfad02b97cb7bba65a364f6121845a7a25aaf79f3d3dea46e6cf3"
 
 [[package]]
 name = "str-buf"

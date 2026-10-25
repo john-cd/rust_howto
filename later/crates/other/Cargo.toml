@@ -20,6 +20,7 @@ publish = false
 autolib = false
 
 [features]
+onnx = ["dep:ort", "dep:arc-swap"]
 datafusion = ["dep:datafusion"]
 arrow = ["dep:arrow", "dep:serde_json"]
 typegen = ["crux_core/typegen"] # for Crux
@@ -55,6 +56,12 @@ kube = { version = "4.2", features = ["derive", "runtime", "client"] }
 schemars = "1"
 serde_json = "1"
 thiserror = "2"
+
+## Machine learning
+arc-swap = { version = "1", optional = true }
+augurs = { version = "0.10", features = ["ets", "mstl"] }
+ort = { version = "2.0.0-rc.15", optional = true } # Downloads ONNX Runtime binaries at build time
+smartcore = "0.5.5"
 
 ## Cross platform
 crux_core = "0.17.0"
@@ -102,6 +109,11 @@ name = "datafusion"
 path = "examples/datafusion/main.rs"
 test = true
 required-features = ["datafusion"]
+
+[[example]]
+name = "machine_learning"
+path = "examples/machine_learning/main.rs"
+test = true
 
 [[example]]
 name = "polars"

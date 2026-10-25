@@ -101,6 +101,10 @@
 - [Game engines](categories/game-engines/index.md)
   - [Game engines](categories/game-engines/game_engines.md)
 
+- [Machine learning in practice](other/machine-learning/index.md)
+  - [Run a model trained elsewhere (ONNX)](other/machine-learning/inference.md)
+  - [Classical machine learning](other/machine-learning/classical_ml.md)
+  - [Forecasting](other/machine-learning/forecasting.md)
 - [GPU programming](other/gpu/index.md)
   - [GPU](other/gpu/gpu.md)
 
