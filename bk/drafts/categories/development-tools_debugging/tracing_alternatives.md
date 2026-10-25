@@ -4,72 +4,34 @@
 
 {{#include tracing_alternatives.incl.md}}
 
-## Use Older Alternatives to `tracing` {#use-older-alternatives-to-tracing .skip}
+[`tracing`][c~tracing~docs]↗{{hi:tracing}} is the usual starting point for new applications that need structured events, spans, or context that follows asynchronous work. The [`log`][c~log~docs]↗{{hi:log}} facade remains useful when a project needs simple level-based records or already depends on the logging ecosystem. These APIs solve related but different problems; choose one instrumentation API for each component and add a compatibility layer only when needed.
 
-[`tracing`][c~tracing~docs]↗{{hi:tracing}} is now the "go-to" crate for logging, but [`log`][c~log~docs]↗{{hi:log}}, [`slog`][c~slog~docs]↗{{hi:slog}} and [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} are still in extensive use.
-
-### `log` {#log}
+## Use the `log` Facade {#log}
 
 [![log][c~log~docs~badge]][c~log~docs] [![log~crates.io][c~log~crates.io~badge]][c~log~crates.io] [![log~repo][c~log~repo~badge]][c~log~repo] [![log~lib.rs][c~log~lib.rs~badge]][c~log~lib.rs]{{hi:log}}{{hi:Logging}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}
 
-[`log`][c~log~docs]↗{{hi:log}} is an older and simpler crate, if your needs are simple and you are not using any [async][p~async] code.
+[`log`][c~log~docs]↗{{hi:log}} defines a small facade for level-based records. The application selects one logging implementation, such as [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} for environment-configured console output or [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} for configurable appenders and formats. See [[log | Log Messages]] for tested recipes.
 
-### `slog` {#slog}
+## Keep an Existing `slog` Integration {#slog}
 
-[![slog][c~slog~docs~badge]][c~slog~docs] [![slog~crates.io][c~slog~crates.io~badge]][c~slog~crates.io] [![slog~repo][c~slog~repo~badge]][c~slog~repo] [![slog~lib.rs][c~slog~lib.rs~badge]][c~slog~lib.rs]{{hi:slog}}{{hi:Structured}}{{hi:Log}}{{hi:Logging}}{{hi:Hierarchical}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}
+[![slog][c~slog~docs~badge]][c~slog~docs] [![slog~crates.io][c~slog~crates.io~badge]][c~slog~crates.io] [![slog~repo][c~slog~repo~badge]][c~slog~repo] [![slog~lib.rs][c~slog~lib.rs~badge]][c~slog~lib.rs]{{hi:slog}}{{hi:Structured}}{{hi:Logging}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}
 
-[`slog`][c~slog~docs]↗{{hi:slog}} provides structured, extensible, composable logging.
-
-Consider using [`tracing`][c~tracing~docs]↗{{hi:tracing}} instead, especially if you need [`async`][rust~book~async-await]↗{{hi:async}} support. [`slog`][c~slog~docs]↗{{hi:slog}} remains a stable, featureful and battle-tested library, used in many important projects.
+[`slog`][c~slog~docs]↗{{hi:slog}} provides structured, composable logging. It can be a reasonable choice when it is already established in a project; evaluate its ecosystem and maintenance needs before choosing it for new work. Its current example is included from the book's tested example crate.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/slog.rs:example}}
 ```
 
-### `log4rs` {#log4rs}
+## Bridge Existing `log` Calls to `tracing` {#log-compatibility}
 
-[![log4rs][c~log4rs~docs~badge]][c~log4rs~docs] [![log4rs~crates.io][c~log4rs~crates.io~badge]][c~log4rs~crates.io] [![log4rs~repo][c~log4rs~repo~badge]][c~log4rs~repo] [![log4rs~lib.rs][c~log4rs~lib.rs~badge]][c~log4rs~lib.rs]{{hi:log4rs}}{{hi:Log4}}{{hi:Logger}}{{hi:Log}}{{hi:Logging}}
-
-[`log4rs`][c~log4rs::append::file::FileAppender~docs]↗{{hi:log4rs}} [`log4rs`][c~log4rs::config::Config~docs]↗{{hi:log4rs}} [`log4rs`][c~log4rs::encode::pattern~docs]↗{{hi:log4rs}} [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} is a highly configurable multi-output logging implementation for the [`log`][c~log~docs]↗{{hi:log}} facade.
-
-```rust,editable
-use log::{error, info, warn};
-use log4rs;
-
-fn main() {
-    log4rs::init_file("config/log4rs.yaml", Default::default()).unwrap();
-
-    info!("booting up");
-
-    // ...
-}
-```
-
-### `env_logger` {#env-logger}
-
-[![env_logger][c~env_logger~docs~badge]][c~env_logger~docs] [![env_logger~crates.io][c~env_logger~crates.io~badge]][c~env_logger~crates.io] [![env_logger~repo][c~env_logger~repo~badge]][c~env_logger~repo] [![env_logger~lib.rs][c~env_logger~lib.rs~badge]][c~env_logger~lib.rs]{{hi:env_logger}}{{hi:Log}}{{hi:Logger}}{{hi:Logging}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}
-
-[`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} is a logging implementation for [`log`][c~log~docs]↗{{hi:log}} which is configured via an environment variable. [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} makes sense when used in executables (binary projects). Libraries should use the [`log`][c~log~docs]↗{{hi:log}} crate instead.
-
-```rust,editable
-use log::info;
-
-fn main() {
-    env_logger::init();
-
-    info!("starting up");
-
-    // ...
-}
-```
+The [`tracing`][c~tracing~docs]↗{{hi:tracing}} ecosystem provides compatibility crates for applications that need to collect records from existing [`log`][c~log~docs]↗{{hi:log}} instrumentation alongside tracing events. Use that bridge at the application boundary when migrating incrementally, and avoid initializing competing global subscribers or loggers.
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[tracing | Tracing]].
+- [[log | Log Messages]].
+- [[config_log | Logging Configuration]].
+- [[distributed_telemetry | Distributed Telemetry]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write, organize together with the old log content.](https://github.com/john-cd/rust_howto/issues/649)
-</div>
