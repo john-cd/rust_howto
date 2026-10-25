@@ -267,16 +267,13 @@ Added 2026-10-25. Three more lists of 10 for local Codex, from the [#1955 commen
 
 ### List 35 — Build, profiling and CLI tooling pages (Codex E)
 
-- [#242](https://github.com/john-cd/rust_howto/issues/242) — **P3** — Review the faster linking chapter (deprecated linkers).
-- [#245](https://github.com/john-cd/rust_howto/issues/245) — **P3** — Write and align the reduce compilation duration chapter.
-- [#240](https://github.com/john-cd/rust_howto/issues/240) — **P3** — Expand the cross-compilation chapter.
-- [#333](https://github.com/john-cd/rust_howto/issues/333) — **P3** — Write the assembly profiling chapter.
-- [#336](https://github.com/john-cd/rust_howto/issues/336) — **P3** — Write the memory usage analysis chapter.
-- [#314](https://github.com/john-cd/rust_howto/issues/314) — **P3** — Expand the cargo plugin performance chapter.
-- [#315](https://github.com/john-cd/rust_howto/issues/315) — **P3** — Expand the watching-for-changes chapter.
-- [#268](https://github.com/john-cd/rust_howto/issues/268) — **P3** — Review `threadpool_fractal.rs` (noplayground, links `cc`).
-- [#238](https://github.com/john-cd/rust_howto/issues/238) — **P3** — Write the networking CLI chapter.
-- [#424](https://github.com/john-cd/rust_howto/issues/424) — **P3** — Write the reverse proxy chapter.
+Five issues are closed and recorded under COMPLETED. The other five are implemented in local `develop` but remain open until their required validation gates pass. The Windows `just bb` gate fails while compiling the unrelated `crate_indices` / `aws-lc-sys` dependency; #268 also requires the full concurrency workspace gate.
+
+- [#242](https://github.com/john-cd/rust_howto/issues/242) — **P3** — Faster-linking review implemented in `8f42ad624`; open pending `just bb`.
+- [#245](https://github.com/john-cd/rust_howto/issues/245) — **P3** — Compilation-duration chapter implemented in `f1328400b`; open pending `just bb`.
+- [#240](https://github.com/john-cd/rust_howto/issues/240) — **P3** — Cross-compilation chapter implemented in `e2d4e4e3f`; open pending `just bb`.
+- [#268](https://github.com/john-cd/rust_howto/issues/268) — **P3** — Fractal/threadpool example implemented in `6d753313c`; focused test and Clippy pass, full `just ca` / `just bb` remain blocked.
+- [#238](https://github.com/john-cd/rust_howto/issues/238) — **P3** — Networking CLI chapter implemented in `2562faeb2`; open pending `just bb`.
 
 ### List 36 — OS, FFI, native TLS and media pages (Codex F)
 
@@ -626,6 +623,16 @@ Existing integration record: Nine issues are closed and integrated into local `d
 - [#1081](https://github.com/john-cd/rust_howto/issues/1081) — Expand the Arrow example.
 - [#883](https://github.com/john-cd/rust_howto/issues/883) — Finish the DataFusion example.
 - [#878](https://github.com/john-cd/rust_howto/issues/878) — Finish the AWS Lambda example.
+
+### List 35 — 5 of 10 completed
+
+- [#333](https://github.com/john-cd/rust_howto/issues/333) — Write the assembly profiling chapter (`c953d63b7`).
+- [#336](https://github.com/john-cd/rust_howto/issues/336) — Write the memory usage analysis chapter (`5127c8dea`).
+- [#314](https://github.com/john-cd/rust_howto/issues/314) — Expand the Cargo plugin performance chapter (`1ee8002a6`).
+- [#315](https://github.com/john-cd/rust_howto/issues/315) — Expand the watching-for-changes chapter (`b67f76f9c`).
+- [#424](https://github.com/john-cd/rust_howto/issues/424) — Write the reverse proxy chapter (`52186ffba`).
+
+These five issues are closed on GitHub and integrated into local `develop`. The five implemented issues still open for validation are tracked above.
 
 ### Mathematics follow-ups — Closed
 
