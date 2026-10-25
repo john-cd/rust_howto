@@ -38,13 +38,29 @@ The tests drive the router with `tower::ServiceExt::oneshot`, so no network port
 
 ### Harden the Session
 
-- **Cookie flags.** Serve the application over HTTPS and call `SessionManagerLayer::with_secure(true)`. Keep the cookie `HttpOnly` (the default), so that scripts cannot read it. `tower-sessions` defaults to `SameSite=Strict`; relax it with `with_same_site(SameSite::Lax)` only if users must stay logged in when they arrive from links on other sites. The example sets `Secure` to `false` only so that it can run over plain HTTP in tests; see [[axum_extras | Axum Add-ons]] for an HTTP to HTTPS redirect and TLS.
+- **Cookie flags.** Serve the application over HTTPS and call `SessionManagerLayer::with_secure(true)`. Keep the cookie `HttpOnly` (the default), so that scripts cannot read it. `tower-sessions` defaults to `SameSite=Strict`; relax it with `with_same_site(SameSite::Lax)` only if users must stay logged in when they arrive from links on other sites. The example sets `Secure` to `false` only so that it can run over plain HTTP in tests; see [[axum_extras | Axum Add-ons]] for an HTTP to HTTPS redirect and for TLS with `axum-server`; serving the login page only over HTTPS is what makes the `Secure` flag useful.
 - **Session fixation.** `AuthSession::login` issues a new session ID after authenticating, so an ID planted before the login is useless. Do not bypass it by writing the user ID into the session yourself.
 - **Timing leaks.** The example verifies a dummy hash when the username is unknown, so that the response time does not reveal which accounts exist. Return the same error for an unknown user and a wrong password.
-- **CSRF.** `SameSite` cookies blunt most cross-site request forgery, but state-changing forms should also carry a CSRF token or be checked with the `Origin` header.
+- **CSRF.** `SameSite` cookies blunt most cross-site request forgery, but state-changing forms should also carry a CSRF token or be checked with the `Origin` header. See the next section.
 - **Brute force.** Limit login attempts per account and per address, for example with a token bucket ([[rate_limiting_and_retries | Rate Limiting and Retries]] shows one for outgoing calls).
 
 For single sign-on with an external identity provider, see OAuth 2.0 in the [[authentication | Authentication]] overview.
+
+## Protect Forms with a CSRF Token {#csrf}
+
+[![tower-sessions][c~tower-sessions~docs~badge]][c~tower-sessions~docs]{{hi:tower-sessions}} [![axum][c~axum~docs~badge]][c~axum~docs]{{hi:axum}} [![cat~authentication][cat~authentication~badge]][cat~authentication]{{hi:authentication}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:web-programming::http-server}}
+
+A cross-site request forgery makes a logged-in user's browser send a state-changing request, such as "change my email", that the user never intended. The browser attaches the session cookie by itself, so the cookie alone proves nothing. The synchronizer-token pattern fixes this: the server stores a random token in the session, embeds it as a hidden field in each form, and rejects any post whose field does not match. An attacker's page cannot read the token, so it cannot forge the field.
+
+The example generates 32 random bytes with [`getrandom`][c~getrandom~docs]↗{{hi:getrandom}}, keeps the hex-encoded token in the [`tower-sessions`][c~tower-sessions~docs]↗{{hi:tower-sessions}} `Session`, renders the form, and compares the submitted token in constant time. The tests check that a valid token is accepted, and that a forged token or one from another session gets `403 Forbidden`.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/authentication/examples/session_login/csrf.rs:example}}
+```
+
+- Check the token on every `POST`, `PUT`, `PATCH`, and `DELETE`, never on `GET`, and never put it in a URL.
+- For JSON APIs called by scripts, send the token in a custom header, or require a header that browsers will not send cross-site without a CORS preflight; see [[cors | Cross-origin Resource Sharing]].
+- Rotate the token when the user logs in, so it is tied to the authenticated session.
 
 ## Related Topics {#related-topics .skip}
 
