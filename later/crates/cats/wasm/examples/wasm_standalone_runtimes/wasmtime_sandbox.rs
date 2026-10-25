@@ -114,7 +114,7 @@ impl Sandbox {
 fn main() -> Result<()> {
     let mut sandbox = Sandbox::new(SandboxConfig {
         fuel: 10_000,
-        max_memory_bytes: 2 * 65_536, // Two Wasm pages.
+        max_memory_bytes: 2 * 0x0001_0000, // Two Wasm pages.
     })?;
 
     // A normal call.
@@ -150,7 +150,7 @@ mod tests {
     fn modules_are_cached_by_content() -> Result<()> {
         let mut sandbox = Sandbox::new(SandboxConfig {
             fuel: 10_000,
-            max_memory_bytes: 65_536,
+            max_memory_bytes: 0x0001_0000,
         })?;
         sandbox.module(WAT)?;
         sandbox.module(WAT)?;
