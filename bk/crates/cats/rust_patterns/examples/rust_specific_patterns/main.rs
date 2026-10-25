@@ -8,6 +8,9 @@ use clap::Subcommand;
 
 mod dyn_clone;
 mod pin_project;
+mod newtype_equality;
+mod newtype_units;
+mod validated_newtype;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -26,6 +29,15 @@ enum Commands {
     /// Runs the `pin_project` example.
     #[command(name = "pin_project")]
     PinProject,
+    /// Runs the `newtype_equality` example.
+    #[command(name = "newtype_equality")]
+    NewtypeEquality,
+    /// Runs the `newtype_units` example.
+    #[command(name = "newtype_units")]
+    NewtypeUnits,
+    /// Runs the `validated_newtype` example.
+    #[command(name = "validated_newtype")]
+    ValidatedNewtype,
 }
 
 /// Runs the example selected on the command line.
@@ -39,6 +51,15 @@ fn main() {
             }
             Commands::PinProject => {
                 pin_project::run();
+            }
+            Commands::NewtypeEquality => {
+                newtype_equality::run();
+            }
+            Commands::NewtypeUnits => {
+                newtype_units::run();
+            }
+            Commands::ValidatedNewtype => {
+                validated_newtype::run();
             }
         }
     }

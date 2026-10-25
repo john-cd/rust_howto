@@ -9,6 +9,7 @@ mod custom_hash_function;
 mod custom_type_as_key;
 mod hashmap;
 mod hashset;
+mod fast_hashmap;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -33,6 +34,9 @@ enum Commands {
     /// Runs the `hashset` example.
     #[command(name = "hashset")]
     Hashset,
+    /// Runs the `fast_hashmap` example.
+    #[command(name = "fast_hashmap")]
+    FastHashmap,
 }
 
 /// Runs the example selected on the command line.
@@ -52,6 +56,9 @@ fn main() {
             }
             Commands::Hashset => {
                 hashset::run();
+            }
+            Commands::FastHashmap => {
+                fast_hashmap::run();
             }
         }
     }

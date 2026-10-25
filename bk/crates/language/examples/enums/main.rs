@@ -7,6 +7,9 @@ use clap::Subcommand;
 
 mod enums;
 mod strum;
+mod strum_messages;
+mod strum_props;
+mod strum_case;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -25,6 +28,15 @@ enum Commands {
     /// Runs the `strum` example.
     #[command(name = "strum")]
     Strum,
+    /// Runs the `strum_messages` example.
+    #[command(name = "strum_messages")]
+    StrumMessages,
+    /// Runs the `strum_props` example.
+    #[command(name = "strum_props")]
+    StrumProps,
+    /// Runs the `strum_case` example.
+    #[command(name = "strum_case")]
+    StrumCase,
 }
 
 /// Runs the example selected on the command line.
@@ -38,6 +50,15 @@ fn main() {
             }
             Commands::Strum => {
                 strum::run();
+            }
+            Commands::StrumMessages => {
+                strum_messages::run();
+            }
+            Commands::StrumProps => {
+                strum_props::run();
+            }
+            Commands::StrumCase => {
+                strum_case::run();
             }
         }
     }
