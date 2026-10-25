@@ -1,77 +1,47 @@
 #![allow(dead_code)]
-#![allow(clippy::single_match)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates downloading multiple files concurrently using
-//! streams.
-//!
-//! It uses `reqwest` to download files from URLs and `tokio` for asynchronous
-//! operations. The `futures` crate provides the `StreamExt` trait for working
-//! with streams.
+//! Demonstrates bounded concurrent processing with a deterministic stream.
 
-use std::fs;
+use std::time::Duration;
 
+use anyhow::Result;
 use futures::StreamExt as _;
-use tokio::fs::File;
-use tokio::io;
+use futures::TryStreamExt as _;
+use futures::stream;
+use tokio::time::sleep;
 
-/// The result of the download functions.
-type Result = std::result::Result<(), anyhow::Error>;
-
-/// Downloads the content at `url` and saves it to the file `filename`.
-async fn download_file(url: &str, filename: &str) -> Result {
-    let response = reqwest::get(url).await?;
-    let content = response.bytes().await?;
-    let mut file = File::create(filename).await?;
-    io::copy(&mut content.as_ref(), &mut file).await?;
-    Ok(())
+/// Processes a fixed list of items with bounded concurrency.
+async fn process_items() -> Result<Vec<String>> {
+    let items = ["red", "green", "blue", "yellow"];
+    let item_count = items.len();
+    stream::iter(items.into_iter().enumerate())
+        .map(move |(index, value)| async move {
+            // Simulate independent asynchronous work without using a network.
+            sleep(Duration::from_millis(4 * (item_count - index) as u64)).await;
+            Ok::<_, anyhow::Error>(format!("{index}:{value}"))
+        })
+        .buffer_unordered(2)
+        .try_collect()
+        .await
 }
 
-/// Downloads several files concurrently using a stream of futures.
+/// Runs the example and prints the results in input order.
 #[tokio::main]
-async fn main() -> Result {
-    let urls = ["https://www.gutenberg.org/cache/epub/43/pg43.txt"]; // Add more here...
-    let filenames = ["temp/file1.txt"]; // Add more here...
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
+async fn main() -> Result<()> {
+    let mut results = process_items().await?;
+    results.sort();
+    for result in results {
+        println!("{result}");
     }
-
-    // Create a stream of futures:
-    let futures = urls
-        .iter()
-        .zip(filenames.iter())
-        .map(|(url, filename)| download_file(url, filename));
-
-    let fut = futures::stream::iter(futures).for_each_concurrent(
-        4,
-        |fut| async move {
-            match fut.await {
-                Err(e) => {
-                    println!("Error: {e}");
-                    match e.source() {
-                        // Print the source of the error if available:
-                        Some(source) => {
-                            println!("  Caused by: {source}");
-                        }
-                        _ => {}
-                    }
-                }
-                _ => {}
-            }
-        },
-    );
-
-    fut.await;
-
-    println!("Downloaded files successfully!");
     Ok(())
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() -> Result {
+pub fn run() -> Result<()> {
     main()
 }
 
@@ -79,10 +49,13 @@ pub fn run() -> Result {
 mod tests {
     use super::*;
 
-    #[test]
-    fn require_network() -> anyhow::Result<()> {
-        main()?;
+    /// Verifies stream processing completes offline and returns every item.
+    #[tokio::test]
+    async fn processes_all_items_without_network_access() -> Result<()> {
+        let mut results = process_items().await?;
+        results.sort();
+
+        assert_eq!(results, ["0:red", "1:green", "2:blue", "3:yellow"]);
         Ok(())
     }
-    // [finish; asynchronous/streams.md: add more. streams2.rs is noplayground because it requires a network. rewrite](https://github.com/john-cd/rust_howto/issues/645)
 }
