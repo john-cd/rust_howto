@@ -24,12 +24,12 @@ fn main() {
     let intersects =
         query::intersection_test(&ball_pos, &ball, &cuboid_pos, &cuboid)
             .expect("Intersection test failed");
-    println!("Shapes intersect: {intersects}");
+    println!("Shapes intersect: {}", intersects.intersecting);
 
     // 2. Distance computation
     let distance = query::distance(&ball_pos, &ball, &cuboid_pos, &cuboid)
         .expect("Distance computation failed");
-    println!("Distance between shapes: {distance}");
+    println!("Distance between shapes: {}", distance.distance);
 
     // 3. Contact points
     if let Some(contact) = query::contact(
