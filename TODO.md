@@ -6,7 +6,7 @@ Track tasks, priorities, and progress in [GitHub Issues](https://github.com/john
 
 ## IN-PROGRESS
 
-Live GitHub snapshot on 2026-10-25: **100 of 300 issues from Lists 1–30 remain open**. The entries below retain their original list membership and show their current priority labels. GitHub Issues remains the source of truth; refresh this inventory as issues close.
+Live GitHub snapshot on 2026-10-25 (re-checked against open issues and `develop` at `b463e22`): **98 of 300 issues from Lists 1–30 remain open**; #510 and #636 closed since the earlier snapshot. The entries below retain their original list membership and show their current priority labels. GitHub Issues remains the source of truth; refresh this inventory as issues close.
 
 ### List 1
 
@@ -171,13 +171,13 @@ Live GitHub snapshot on 2026-10-25: **100 of 300 issues from Lists 1–30 remain
 
 ### Lists 31–34 — assigned to local Codex sessions
 
-Added 2026-10-25. Lists A–D from the [#1955 comments](https://github.com/john-cd/rust_howto/issues/1955) were handed to Codex on the local Windows machine, one worktree per list. They are not part of the 300-issue count above.
+Added 2026-10-25. Lists A–D from the [#1955 comments](https://github.com/john-cd/rust_howto/issues/1955) were handed to Codex on the local Windows machine, one worktree per list. **All four lists are still in progress with Codex; do not start their open issues in Claude or Jules batches.** They are not part of the 300-issue count above. Issues already closed on GitHub are marked ✅ and kept in place.
 
 ### List 31 — Local validation and lint gates (Codex A)
 
 - [#1859](https://github.com/john-cd/rust_howto/issues/1859) — **P2** — Complete remaining Clippy gates blocked during #1792.
-- [#1868](https://github.com/john-cd/rust_howto/issues/1868) — **P2** — Resolve the Windows Clippy spawn failure for the wasm package.
-- [#1874](https://github.com/john-cd/rust_howto/issues/1874) — **P3** — Make the excluded embedded examples directly testable.
+- [#1868](https://github.com/john-cd/rust_howto/issues/1868) — **P2** — ✅ closed on GitHub — Resolve the Windows Clippy spawn failure for the wasm package.
+- [#1874](https://github.com/john-cd/rust_howto/issues/1874) — **P3** — ✅ closed on GitHub — Make the excluded embedded examples directly testable.
 - [#1867](https://github.com/john-cd/rust_howto/issues/1867) — **P3** — Add executable examples for embedded and 2D graphics chapters.
 - [#1876](https://github.com/john-cd/rust_howto/issues/1876) — **P2** — Complete remaining validation for List 17 documentation changes.
 - [#1877](https://github.com/john-cd/rust_howto/issues/1877) — **P2** — Complete validation for networking, CLI, and tar issues (List 18).
@@ -223,7 +223,7 @@ Validation update (2026-10-25):
 
 - [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment.
 - [#636](https://github.com/john-cd/rust_howto/issues/636) — **P3** — ✅ closed on GitHub — Add OAuth to the authentication index.
-- [#510](https://github.com/john-cd/rust_howto/issues/510) — **P3** — Write the CORS chapter.
+- [#510](https://github.com/john-cd/rust_howto/issues/510) — **P3** — ✅ closed on GitHub — Write the CORS chapter.
 - [#921](https://github.com/john-cd/rust_howto/issues/921) — **P3** — Review the build-time tooling chapter.
 - [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Write the Python interoperability chapter.
 - [#589](https://github.com/john-cd/rust_howto/issues/589) — **P4** — Organize and edit the data engineering chapter.
@@ -234,12 +234,17 @@ Validation update (2026-10-25):
 
 ### Epic #1955 — New recipes from the local-projects review
 
-[#1955](https://github.com/john-cd/rust_howto/issues/1955) tracks the recipes from the local-projects review (#1906–#1952). The recipe issues themselves are closed and merged via PRs #1958, #1962–#1966, #1968, #1969, #1971 and #1973. The epic stays open for these follow-ups:
+[#1955](https://github.com/john-cd/rust_howto/issues/1955) tracks the recipes from the local-projects review (#1906–#1952). The examples and book pages were merged via PRs #1958, #1962–#1966, #1968, #1969, #1971 and #1973, but the recipe issues (#1906–#1952) are **still open on GitHub**: they close only after the verification passes below build the book pages and run the local gates. Cloud batch PR [#1980](https://github.com/john-cd/rust_howto/pull/1980) (proptest strategy, wasm round trip, Tree-sitter spans, decision-table case) is open.
+
+Follow-ups and verification issues:
 
 - [#1959](https://github.com/john-cd/rust_howto/issues/1959) — Verify the encoding chapters build and regenerate Cap'n Proto code with `capnp` installed (also in List 32).
 - [#1970](https://github.com/john-cd/rust_howto/issues/1970) — Follow-ups to the web examples and pages (#1910 #1911 #1916 #1939 #1944 #1945 #1946).
 - [#1972](https://github.com/john-cd/rust_howto/issues/1972) — Validate and finish the Arrow IPC, optimization and AWS SDK examples from PR #1971.
 - [#1974](https://github.com/john-cd/rust_howto/issues/1974) — Follow-ups to the Excel, profiling, geo, audio, wry and egui add-on examples (#1973).
+- [#1977](https://github.com/john-cd/rust_howto/issues/1977) — Finish remaining examples left over from #1965 (dev tools, parsing, text, testing).
+- [#1978](https://github.com/john-cd/rust_howto/issues/1978) — Run local book gates and close the verified example issues (#1009 #810 #1355 #1003 #1046 #1890). PR #1976 (merged) repaired the Linux compile failures and split the flate2 examples for #1009, #810 and #1355.
+- [#1979](https://github.com/john-cd/rust_howto/issues/1979) — Verify the package B book pages build and close #1908 #1914 #1919 #1920 #1923 #1925 #1935 #1936.
 
 Remaining cross-cutting work:
 
@@ -249,7 +254,7 @@ Remaining cross-cutting work:
 
 ## COMPLETED
 
-Live GitHub snapshot on 2026-10-25: **200 of 300 issues from Lists 1–30 are closed as completed**. The other 100 issues remain in IN-PROGRESS. Each issue below retains its original list membership.
+Live GitHub snapshot on 2026-10-25: **202 of 300 issues from Lists 1–30 are closed as completed** (the 200 inventoried below plus #510 and #636, which are tracked under Lists 34). The other 98 issues remain in IN-PROGRESS. Each issue below retains its original list membership.
 
 ### List 1 — 1 of 10 completed
 
