@@ -13085,7 +13085,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0f4de47a84fd55fa33aa5ef337016814fdc869fdad23e7898b5322fa290248e6"
 dependencies = [
  "byteorder",
- "rubato",
+ "rubato 0.14.1",
  "rustfft",
 ]
 
@@ -16733,6 +16733,7 @@ dependencies = [
  "hound",
  "midir",
  "rodio 0.22.2",
+ "rubato 0.16.2",
 ]
 
 [[package]]
@@ -22358,6 +22359,18 @@ name = "rubato"
 version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e6dd52e80cfc21894deadf554a5673002938ae4625f7a283e536f9cf7c17b0d5"
+dependencies = [
+ "num-complex 0.4.6",
+ "num-integer",
+ "num-traits",
+ "realfft",
+]
+
+[[package]]
+name = "rubato"
+version = "0.16.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5258099699851cfd0082aeb645feb9c084d9a5e1f1b8d5372086b989fc5e56a1"
 dependencies = [
  "num-complex 0.4.6",
  "num-integer",

@@ -12,6 +12,73 @@
 
 Also see [Write and read a WAV file in memory](wav.md) for an example that does not require an audio device.
 
+## Play an Audio File with `rodio` {#audio-file-playback}
+
+[`rodio`][c~rodio~docs]↗{{hi:rodio}} decodes audio files and sends samples to an output device. Keep the device sink alive until playback ends; dropping it stops the sound. The test decodes generated WAV bytes in memory, while the `play_file` function demonstrates device playback.
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_audio/examples/audio/rodio_file.rs:example}}
+```
+
+## Generate a Tone with `rodio` {#tone-generation}
+
+`rodio::source::SineWave` generates a tone as a stream of samples. This example pulls a short buffer directly, so it can be tested without a speaker.
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_audio/examples/audio/tone.rs:example}}
+```
+
+## Capture Microphone Audio with `cpal` {#microphone-input}
+
+`cpal` exposes input callbacks. This snippet accepts a device with an `f32` input format and counts captured samples. Select and convert the device's actual supported sample format in a production application. The callback does no allocation or I/O; move samples into a preallocated ring buffer for recording or processing elsewhere.
+
+```rust,ignore
+use std::sync::{
+    Arc,
+    atomic::{AtomicUsize, Ordering},
+};
+use std::time::Duration;
+
+use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
+
+fn capture_for_one_second() -> Result<(), Box<dyn std::error::Error>> {
+    let host = cpal::default_host();
+    let device = host
+        .default_input_device()
+        .ok_or("no input device available")?;
+    let supported = device.default_input_config()?;
+    if supported.sample_format() != cpal::SampleFormat::F32 {
+        return Err("the example requires an f32 input format".into());
+    }
+
+    let sample_count = Arc::new(AtomicUsize::new(0));
+    let callback_count = Arc::clone(&sample_count);
+    let config = supported.config();
+    let stream = device.build_input_stream(
+        &config,
+        move |samples: &[f32], _| {
+            callback_count.fetch_add(samples.len(), Ordering::Relaxed);
+        },
+        |error| eprintln!("input stream error: {error}"),
+        None,
+    )?;
+
+    stream.play()?;
+    std::thread::sleep(Duration::from_secs(1));
+    drop(stream);
+    println!("Captured {} samples.", sample_count.load(Ordering::Relaxed));
+    Ok(())
+}
+```
+
+## Resample with `rubato` {#resample}
+
+Sample rates must match before mixing or writing a stream to a target format. This example converts a 48 kHz mono chunk to 44.1 kHz; real-time code should reuse `rubato`'s preallocated buffers.
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_audio/examples/audio/resampling.rs:example}}
+```
+
 ## Play a Custom Sound Source with `rodio` {#rodio-source}
 
 [![rodio][c~rodio~docs~badge]][c~rodio~docs]{{hi:rodio}} [![cat~multimedia::audio][cat~multimedia::audio~badge]][cat~multimedia::audio]{{hi:Audio playback}}{{hi:Synthesis}}
@@ -50,7 +117,6 @@ The `midir` callback also runs on a thread of the library: apply the real-time r
 
 [`hrtf`][c~hrtf~docs]↗{{hi:hrtf}} renders a mono source as binaural stereo from a head-related impulse response (HRIR) sphere file, which gives the impression of a position in 3D space over headphones. The crate does not ship HRIR data: download a sphere in the format that `HrirSphere` loads.
 
-
 ## Related Topics {#related-topics .skip}
 
 - [[multimedia | Multimedia]].
@@ -61,7 +127,6 @@ The `midir` callback also runs on a thread of the library: apply the real-time r
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[audio: write](https://github.com/john-cd/rust_howto/issues/415)
-[audio files, playback and MIDI](https://github.com/john-cd/rust_howto/issues/1943)
-[ring-buffer recipe for audio callbacks](https://github.com/john-cd/rust_howto/issues/1908)
+  [audio files, playback and MIDI](https://github.com/john-cd/rust_howto/issues/1943)
+  [ring-buffer recipe for audio callbacks](https://github.com/john-cd/rust_howto/issues/1908)
 </div>
