@@ -4,13 +4,33 @@
 
 {{#include postgres.incl.md}}
 
+## Prerequisites {#postgres-prerequisites .skip}
+
+These examples need a reachable PostgreSQL server. One way to start a disposable local server is Docker:
+
+```console
+docker run --rm --name rust-howto-postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=rust_howto -p 5432:5432 -d postgres
+```
+
+Set `DATABASE_URL` in the shell where you run the examples:
+
+```powershell
+$env:DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/rust_howto"
+```
+
+```sh
+export DATABASE_URL="postgresql://postgres:postgres@localhost:5432/rust_howto"
+```
+
+Stop the temporary service with `docker stop rust-howto-postgres`. The examples and ignored PostgreSQL integration tests use `DATABASE_URL`; the aggregate example expects an `artists` table. Its integration test creates a temporary table with a small fixture.
+
 ## Create Tables in a Postgres Database {#create-tables-postgres}
 
 [![postgres][c~postgres~docs~badge]][c~postgres~docs]{{hi:postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-Use the [`postgres`][c~postgres~docs]↗{{hi:postgres}} crate to create tables in a Postgres database.
+Use the synchronous [`postgres`][c~postgres~docs]↗{{hi:postgres}} crate to create tables in PostgreSQL.
 
-[`postgres::Client::connect`][c~postgres::Client::connect~docs]↗{{hi:postgres::Client::connect}} helps in connecting to an existing database{{hi:Database}}. The recipe uses a URL string format with [`Client::connect`][c~postgres::Client::connect~docs]↗{{hi:Client::connect}}. It assumes an existing database named `library`, the username is `postgres` and the password is `postgres`.
+[`postgres::Client::connect`][c~postgres::Client::connect~docs]↗{{hi:postgres::Client::connect}} opens a connection using `DATABASE_URL`. The example creates `author` and `book` tables with `CREATE TABLE IF NOT EXISTS`, so it can be run again against the same database.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/postgres/create_tables.rs:example}}
@@ -20,7 +40,7 @@ Use the [`postgres`][c~postgres~docs]↗{{hi:postgres}} crate to create tables i
 
 [![postgres][c~postgres~docs~badge]][c~postgres~docs]{{hi:postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-The recipe inserts data into the `author` table using [`postgres::Client::execute`][c~postgres::Client::execute~docs]↗{{hi:postgres::Client::execute}} method of [`postgres::Client`][c~postgres::Client~docs]↗{{hi:postgres::Client}}. Then, displays the data from the `author`{{hi:author}} table using [`postgres::Client::query`][c~postgres::Client::query~docs]↗{{hi:postgres::Client::query}} method of [`postgres::Client`][c~postgres::Client~docs]↗{{hi:postgres::Client}}.
+The recipe creates a temporary `author` table for this connection, then uses [`postgres::Client::execute`][c~postgres::Client::execute~docs]↗{{hi:postgres::Client::execute}} with bound parameters to insert several rows in one statement. [`postgres::Client::query`][c~postgres::Client::query~docs]↗{{hi:postgres::Client::query}} reads them back in a stable order. The temporary table keeps repeated runs isolated.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/postgres/insert_query_data.rs:example}}
@@ -30,14 +50,14 @@ The recipe inserts data into the `author` table using [`postgres::Client::execut
 
 [![postgres][c~postgres~docs~badge]][c~postgres~docs]{{hi:postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database}} [![csv-sample~repo][csv-sample~repo~badge]][csv-sample~repo]
 
-This recipe counts artists by nationality in a PostgreSQL table populated from the [`Museum of Modern Art`][csv-sample~repo]↗ collection. Missing nationalities are grouped as `Unknown`.
+This recipe counts artist rows by nationality in an existing PostgreSQL `artists` table. Missing nationalities are grouped as `Unknown`, and equal counts are ordered by nationality. The linked [`Museum of Modern Art`][csv-sample~repo]↗ data can populate the table for a full dataset run.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/postgres/aggregate_data.rs:example}}
 ```
 
 <div class="hidden">
-This query counts every artist row, groups missing nationalities as `Unknown`, and orders equal counts consistently. It expects a PostgreSQL `artists` table, so its integration test is ignored unless run against a prepared database.
+  The ignored integration test creates a connection-local `artists` table and verifies the counts with a small fixture. Running the example itself reads the existing `artists` table from `DATABASE_URL`.
 </div>
 
 ## Connect to and Query Postgres Asynchronously with `tokio-postgres` {#tokio-postgres}
@@ -47,7 +67,7 @@ This query counts every artist row, groups missing nationalities as `Unknown`, a
 [![tokio-postgres~repo][c~tokio-postgres~repo~badge]][c~tokio-postgres~repo]
 [![tokio-postgres~lib.rs][c~tokio-postgres~lib.rs~badge]][c~tokio-postgres~lib.rs]
 
-[`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}} provides an asynchronous PostgreSQL client. It is built on top of the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime and thus supports non-blocking interactions with PostgreSQL databases. This crate offers connection pooling, prepared statements, transactions, and support for various PostgreSQL data types. It performs better than [`SQLx`][c~sqlx~docs]↗{{hi:SQLx}}.
+[`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}} is an asynchronous PostgreSQL client for the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime. The example starts the connection driver on a separate task, then uses parameterized statements inside a temporary table. `tokio-postgres` does not provide a pool; see [Connection Pools][ex~database~connection_pool] for pooling options. [`sqlx`][c~sqlx~docs]↗{{hi:SQLx}} is another async client with compile-time query checking when its offline or live metadata is configured.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/postgres/tokio_postgres.rs:example}}
@@ -57,36 +77,28 @@ This query counts every artist row, groups missing nationalities as `Unknown`, a
 
 [![cornucopia~website][c~cornucopia~website~badge]][c~cornucopia~website] [![cornucopia][c~cornucopia~docs~badge]][c~cornucopia~docs] [![cornucopia~crates.io][c~cornucopia~crates.io~badge]][c~cornucopia~crates.io] [![cornucopia~repo][c~cornucopia~repo~badge]][c~cornucopia~repo] [![cornucopia~lib.rs][c~cornucopia~lib.rs~badge]][c~cornucopia~lib.rs]{{hi:cornucopia}}{{hi:Query}}{{hi:Generator}}{{hi:Tokio-postgres}}{{hi:Postgresql}}{{hi:Sql}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
-[`cornucopia`][c~cornucopia~docs]↗{{hi:cornucopia}} generates type-checked Rust from your PostgreSQL: [cornucopia-rs][c~cornucopia~repo]↗.
+Cornucopia is a command-line generator that prepares annotated SQL against a PostgreSQL database and writes Rust query bindings. The example uses the workspace's Cornucopia 0.9 CLI and `cornucopia_async` 0.4 runtime. Keep the generator, runtime, SQL, and checked-in generated module in sync.
 
-[`cornucopia`][c~cornucopia~docs]↗{{hi:cornucopia}} is a tool powered by `rust-postgres` designed to generate type-checked Rust interfaces from your PostgreSQL queries. It works by preparing your queries against an actual [database][p~database] and then running an extensive validation suite on them. Once the queries are prepared and validated, Rust code is generated into a module, which can be imported and used in your project.
+The sample's annotated queries are in `bk/crates/cats/database/examples/postgres/cornucopia/queries/greetings.sql`; its schema is in `schema.sql`. Apply the schema to the database from `DATABASE_URL`, then run `cornucopia -q <queries-dir> -d <generated-file> live <DATABASE_URL>` from the repository root. Format the generated Rust with the pinned nightly rustfmt. Generation requires a live database so Cornucopia can validate the SQL and infer the result types.
 
-The basic premise is thus to:
+The workflow is:
 
-- Write PostgreSQL queries.
-- Use Cornucopia to generate Rust code.
-- Use the generated code in your project.
+- Write annotated SQL and define its schema.
+- Prepare the schema in PostgreSQL and generate the Rust bindings.
+- Call the generated functions with a compatible PostgreSQL client.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/postgres/cornucopia.rs:example}}
 ```
 
+Cornucopia 1.0 incorporated the Clorinde fork's rewritten code generator. This example intentionally follows the older 0.9 API used by the workspace dependencies; do not mix its generated code with the 1.0 runtime. See the [Cornucopia migration guide][c~cornucopia~migration~1.0] when upgrading.
+
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [Connection Pools][ex~database~connection_pool]
+- [`sqlx`][ex~database~sqlx]
+- [Query Builders and ORMs][ex~database~query-builders-orms]
+- [Database Search][ex~database~search]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[postgres: `cornucopia`](https://github.com/john-cd/rust_howto/issues/286)
-
-If you are not familiar with Cornucopia, it is kinda like SQLc for Go - you write a query in Postgres SQL and then use cli to generate checked Rust code. So no macro compilation time overhead or complex types that are hard for the rust-analyzer to handle. It uses `rust-postgres` under the hood, so it supports query pipelining and the performance should be pretty good as well.
-
-Fork:
-
-[![clorinde][c~clorinde~docs~badge]][c~clorinde~docs] [![clorinde~crates.io][c~clorinde~crates.io~badge]][c~clorinde~crates.io] [![clorinde~repo][c~clorinde~repo~badge]][c~clorinde~repo] [![clorinde~lib.rs][c~clorinde~lib.rs~badge]][c~clorinde~lib.rs]{{hi:clorinde}}{{hi:Sql}}{{hi:Generator}}{{hi:Postgresql}}{{hi:Query}}{{hi:Tokio-postgres}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
-
-Generate type-checked Rust from your PostgreSQL queries.
-
-</div>

@@ -88,7 +88,7 @@ mod tests {
 
     /// Generated greeting queries work against a configured local database.
     #[test]
-    #[ignore = "requires PostgreSQL; set DATABASE_URL and prepare a local database"]
+    #[ignore = "needs Postgres"]
     fn generated_greetings_run_on_postgres() -> anyhow::Result<()> {
         main()
     }

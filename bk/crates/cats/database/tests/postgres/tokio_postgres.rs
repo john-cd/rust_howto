@@ -16,8 +16,9 @@ use tokio_postgres::Client;
 /// - Insert, query, update, and delete one row.
 /// - Wait for the connection task to finish after closing the client.
 pub async fn run() -> anyhow::Result<()> {
-    let url = std::env::var("PG_URL").context("PG_URL must be set")?;
-    run_with_url(&url).await
+    let database_url = std::env::var("DATABASE_URL")
+        .context("set DATABASE_URL to connect to PostgreSQL")?;
+    run_with_url(&database_url).await
 }
 
 /// Runs the example against the database at `url`.

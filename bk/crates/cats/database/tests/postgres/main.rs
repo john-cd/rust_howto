@@ -2,6 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+#[cfg(all(feature = "postgres", test))]
+use anyhow::Context as _;
+
 #[cfg(feature = "postgres")]
 mod tokio_postgres;
 
@@ -12,26 +15,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Runs the example when `TEST_PG_URL` is set and skips when it is unset.
+/// Runs the PostgreSQL example against the configured database.
 #[cfg(feature = "postgres")]
 #[test]
-fn require_external_svc() -> anyhow::Result<()> {
-    let test_url = match std::env::var("TEST_PG_URL") {
-        Ok(url) => url,
-        Err(_) if std::env::var_os("REQUIRE_PG_SERVICE").is_some() => {
-            anyhow::bail!(
-                "REQUIRE_PG_SERVICE is set but TEST_PG_URL is missing"
-            );
-        }
-        Err(_) => {
-            eprintln!(
-                "Skipping PostgreSQL integration test; set TEST_PG_URL to run it."
-            );
-            return Ok(());
-        }
-    };
+#[ignore = "needs Postgres"]
+fn tokio_postgres_round_trip_on_postgres() -> anyhow::Result<()> {
+    let database_url = std::env::var("DATABASE_URL")
+        .context("set DATABASE_URL to connect to PostgreSQL")?;
     tokio::runtime::Runtime::new()?
-        .block_on(tokio_postgres::run_with_url(&test_url))
+        .block_on(tokio_postgres::run_with_url(&database_url))
 }
 
 /// Does nothing when the `postgres` feature is disabled.
