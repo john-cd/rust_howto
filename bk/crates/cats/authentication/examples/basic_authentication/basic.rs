@@ -2,10 +2,8 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates how to use basic authentication with `reqwest`.
+//! This example builds a Basic-authenticated request without sending it.
 
-use anyhow::Context as _;
-use reqwest::Url;
 use reqwest::blocking::Client;
 use reqwest::blocking::RequestBuilder;
 
@@ -19,32 +17,26 @@ fn basic_auth_request(
     client.get(endpoint).basic_auth(user_name, Some(password))
 }
 
-/// Sends a Basic-authenticated request using settings from the environment.
+/// Builds a request locally so the example can run without a network service.
+///
+/// The credentials are placeholders. Real credentials must be kept secret and
+/// sent only to an HTTPS endpoint.
 ///
 /// # Errors
-/// Returns an error if a setting is missing, the URL is invalid or insecure, or
-/// the request fails.
+/// Returns an error if the request cannot be constructed.
 fn main() -> anyhow::Result<()> {
-    let endpoint = std::env::var("BASIC_AUTH_URL")
-        .context("set BASIC_AUTH_URL to an HTTPS endpoint protected by Basic authentication")?;
-    let endpoint =
-        Url::parse(&endpoint).context("BASIC_AUTH_URL must be a valid URL")?;
-    anyhow::ensure!(
-        endpoint.scheme() == "https",
-        "BASIC_AUTH_URL must use HTTPS to protect credentials in transit"
-    );
-    let user_name = std::env::var("BASIC_AUTH_USERNAME")
-        .context("set BASIC_AUTH_USERNAME to the account name")?;
-    let password = std::env::var("BASIC_AUTH_PASSWORD").context(
-        "set BASIC_AUTH_PASSWORD using your secret-management mechanism",
-    )?;
-
     let client = Client::new();
-    let response =
-        basic_auth_request(&client, endpoint.as_str(), &user_name, &password)
-            .send()?
-            .error_for_status()?;
-    println!("Authentication succeeded (HTTP {})", response.status());
+    let request = basic_auth_request(
+        &client,
+        "https://example.test/protected",
+        "demo-user",
+        "demo-password",
+    )
+    .build()?;
+    println!(
+        "Built a Basic-authenticated request for {} (not sent).",
+        request.url()
+    );
     Ok(())
 }
 
@@ -53,14 +45,14 @@ fn main() -> anyhow::Result<()> {
 /// Runs the example.
 ///
 /// # Errors
-/// Returns an error if a setting is missing, the URL is invalid or insecure, or
-/// the request fails.
+/// Returns an error if the request cannot be constructed.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
 #[cfg(test)]
 mod tests {
+    use anyhow::Context as _;
     use reqwest::header::AUTHORIZATION;
 
     use super::*;

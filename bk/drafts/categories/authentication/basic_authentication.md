@@ -12,13 +12,13 @@ Treat the credentials as secrets: do not commit them, put them in command-line a
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~authentication][cat~authentication~badge]][cat~authentication]{{hi:Authentication}}
 
-[`reqwest::RequestBuilder::basic_auth`][c~reqwest::RequestBuilder::basic_auth~docs]↗{{hi:reqwest::RequestBuilder::basic_auth}} adds the Basic authorization header to a request. Set `BASIC_AUTH_URL`, `BASIC_AUTH_USERNAME`, and `BASIC_AUTH_PASSWORD` before running the example. The example rejects an invalid URL or a URL that does not use HTTPS; the endpoint must also require Basic authentication.
+[`reqwest::RequestBuilder::basic_auth`][c~reqwest::RequestBuilder::basic_auth~docs]↗{{hi:reqwest::RequestBuilder::basic_auth}} adds the Basic authorization header to a request. The example uses placeholder credentials and builds the request locally; it does not send it, read environment variables, or require a service.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/authentication/examples/basic_authentication/basic.rs:example}}
 ```
 
-The example checks the HTTP status and reports success only for a successful response. Its unit test builds the request and checks the header without sending it, so the example crate's test does not depend on a remote service.
+Its unit test checks that the `Authorization` header is present and correctly encoded without sending a request. If you send a real Basic-authenticated request, use HTTPS, keep credentials in a secret manager, and never log the header. The example is excluded from Rust Playground because the blocking `reqwest` client depends on native TLS support.
 
 ## Related Topics {#related-topics .skip}
 
@@ -31,5 +31,5 @@ The example checks the HTTP status and reports success only for a successful res
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand](https://github.com/john-cd/rust_howto/issues/224)
+  [expand](https://github.com/john-cd/rust_howto/issues/224)
 </div>
