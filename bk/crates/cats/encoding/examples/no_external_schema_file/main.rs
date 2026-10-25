@@ -35,7 +35,7 @@ fn main() -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::Postcard => {
-                postcard::run();
+                postcard::run()?;
             }
             Commands::Rkyv => {
                 rkyv::run()?;
