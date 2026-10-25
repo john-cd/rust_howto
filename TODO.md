@@ -249,30 +249,28 @@ Board update (2026-10-25):
 
 ### List 33 — Desktop, GPU, audio, FFI and embedded chapters (Codex C)
 
-- [#787](https://github.com/john-cd/rust_howto/issues/787) — **P4** — Finish the Slint example; figure out how to test it.
-- [#776](https://github.com/john-cd/rust_howto/issues/776) — **P4** — Finish the egui example.
-- [#607](https://github.com/john-cd/rust_howto/issues/607) — **P4** — Write the GPU chapter.
-- [#415](https://github.com/john-cd/rust_howto/issues/415) — **P4** — Write the audio chapter.
-- [#324](https://github.com/john-cd/rust_howto/issues/324) — **P4** — Verify the FFI chapter's book build; implementation is committed, but `just bb` is blocked by the tools workspace's missing NASM/AWS-LC build prerequisite.
-- [#345](https://github.com/john-cd/rust_howto/issues/345) — **P4** — Add Embassy and other embedded frameworks.
-- [#346](https://github.com/john-cd/rust_howto/issues/346) — **P4** — Complete the embedded category overview.
-- [#42](https://github.com/john-cd/rust_howto/issues/42) — **P4** — Make additional examples out of crate_indices.
-- [#327](https://github.com/john-cd/rust_howto/issues/327) — **P4** — Write the macro compilation chapter.
-- [#331](https://github.com/john-cd/rust_howto/issues/331) — **P4** — Write the procedural macros chapter.
+- [#787](https://github.com/john-cd/rust_howto/issues/787) — **P4** — ✅ Closed 2026-10-25 — Finish the Slint example; its counter is tested headlessly.
+- [#776](https://github.com/john-cd/rust_howto/issues/776) — **P4** — ✅ Closed 2026-10-25 — Finish the egui example with controls and a headless test.
+- [#607](https://github.com/john-cd/rust_howto/issues/607) — **P4** — ✅ Closed 2026-10-25 — Write the GPU chapter.
+- [#415](https://github.com/john-cd/rust_howto/issues/415) — **P4** — ✅ Closed 2026-10-25 — Write the audio chapter.
+- [#324](https://github.com/john-cd/rust_howto/issues/324) — **P4** — ✅ Closed 2026-10-25 — Write and verify the FFI bindings chapter.
+- [#345](https://github.com/john-cd/rust_howto/issues/345) — **P4** — ✅ Closed 2026-10-25 — Add Embassy tasks, timers, channels, and HAL guidance.
+- [#346](https://github.com/john-cd/rust_howto/issues/346) — **P4** — Keep open: acceptance explicitly requires human review of the staged embedded promotion scope.
+- [#42](https://github.com/john-cd/rust_howto/issues/42) — **P4** — ✅ Closed 2026-10-25 — Add offline crate-index examples using local fixtures.
+- [#327](https://github.com/john-cd/rust_howto/issues/327) — **P4** — ✅ Closed 2026-10-25 — Document Watt's workflow and alternatives.
+- [#331](https://github.com/john-cd/rust_howto/issues/331) — **P4** — ✅ Closed 2026-10-25 — Write and test the procedural-macro authoring guide.
 
-List C implementation update (2026-10-25):
+List C delivery update (2026-10-25; integrated on `develop`):
 
-- #787: headless Slint counter and testing-backend test in [6a38d606d](https://github.com/john-cd/rust_howto/commit/6a38d606d); focused GUI tests and strict Clippy passed.
-- #776: headless egui controls in [fa3c726f3](https://github.com/john-cd/rust_howto/commit/fa3c726f3); focused GUI tests and strict Clippy passed.
-- #607: GPU guidance for wgpu, rust-gpu, CUDA, and OpenCL in [797887d91](https://github.com/john-cd/rust_howto/commit/797887d91).
-- #415: audio recipes and resampling in [8417f001f](https://github.com/john-cd/rust_howto/commit/8417f001f), formatted in [d5d4d665a](https://github.com/john-cd/rust_howto/commit/d5d4d665a); focused tests and Clippy passed.
-- #324: FFI chapter and examples in [05fdc16c7](https://github.com/john-cd/rust_howto/commit/05fdc16c7); `just bb` remains blocked by the Windows NASM/AWS-LC tools build.
-- #345: Embassy tasks, timers, channels, HALs, and target setup in [23d9c5791](https://github.com/john-cd/rust_howto/commit/23d9c5791); the example is explicitly target-only.
-- #346: embedded requirements and learning path in [fa75a635d](https://github.com/john-cd/rust_howto/commit/fa75a635d).
-- #327: Watt's two-crate Wasm workflow and build-time alternatives in [a59877582](https://github.com/john-cd/rust_howto/commit/a59877582); removed the non-self-contained demo per [#744](https://github.com/john-cd/rust_howto/issues/744).
+- #787, #776, and #607: GUI and GPU examples/pages in [e0ad6a263](https://github.com/john-cd/rust_howto/commit/e0ad6a263), formatted in [7e27deca6](https://github.com/john-cd/rust_howto/commit/7e27deca6); headless GUI tests, focused tests, and strict Clippy passed.
+- #415: audio recipes and resampling in [adc9c8734](https://github.com/john-cd/rust_howto/commit/adc9c8734) and [8417f001f](https://github.com/john-cd/rust_howto/commit/8417f001f); focused tests and strict Clippy passed.
+- #324: FFI chapter and examples in [05fdc16c7](https://github.com/john-cd/rust_howto/commit/05fdc16c7); package tests and strict Clippy passed.
+- #345: Embassy tasks, timers, channels, HALs, and target setup in [23d9c5791](https://github.com/john-cd/rust_howto/commit/23d9c5791); host tests and strict Clippy passed, and the target-only example is labeled.
+- #346: embedded requirements and learning path in [fa75a635d](https://github.com/john-cd/rust_howto/commit/fa75a635d); awaiting the issue's required human review before promotion.
+- #327: Watt's two-crate Wasm workflow and build-time alternatives in [a59877582](https://github.com/john-cd/rust_howto/commit/a59877582); the official [release history](https://github.com/dtolnay/watt/releases) currently lists 0.5.0 as a pre-release and shows sparse releases, which is not by itself evidence of abandonment.
 - #331: procedural-macro authoring path in [86e2e8326](https://github.com/john-cd/rust_howto/commit/86e2e8326); five example tests and strict Clippy passed.
-- #42: offline crate-index examples and chapter in [2f7a65e02](https://github.com/john-cd/rust_howto/commit/2f7a65e02); four tests, strict Clippy, and the example build passed after rebasing.
-- Nightly rustfmt, dprint, spelling, changed-manifest sorting, generated dependency-reference freshness, and `git diff --check` passed. The full `just bb` gate remains blocked by missing NASM/AWS-LC support; the Windows checkout has no `refdefs check` recipe, so the full local-reference scan remains unverified. Keep List C issues open until the required book and reference checks pass.
+- #42: offline crate-index examples and chapter in [2f7a65e02](https://github.com/john-cd/rust_howto/commit/2f7a65e02); four local-fixture tests and the example build passed.
+- Final shared checks on `develop` at `1caa9ca9f`: `just bb`, `just book refdefs-check`, `just spell`, nightly Rust formatting, targeted Markdown formatting, and generated reference freshness passed. `just bb` used `nasmpath.bat` and emitted only mdBook version and optional missing-pandoc warnings. Earlier focused strict Clippy passed with `RUSTC_WRAPPER=`; a final repeat in the primary checkout hit Windows `os error 650` writing metadata through the build junction. The completed List C issues were closed; #346 remains open for human review.
 
 ### List 34 — Web, auth, packaging and tooling pages (Codex D)
 
@@ -314,7 +312,7 @@ Implemented in local `develop`, still open pending required gates:
 - [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter covers FFmpeg, GStreamer, installation, and frame analysis; test and strict Clippy passed (`11f2693fd`).
 - [#638](https://github.com/john-cd/rust_howto/issues/638) — **P4** — Clipboard chapter covers platform caveats and local references (`dc09ec89a`).
 
-The full book build (`cd bk && just bb`) fails in `aws-lc-sys` because NASM is not visible to the build shell, then MSVC reports `LNK1114`. The full `just ca` gate stops because `--locked` would need to update `bk/crates/Cargo.lock`. The Windows `just refdefs check` recipe is unavailable; the equivalent Python check finds stale generated `float_cmp` entries in `bk/src/refs/dependency-refs.md`. These blockers and the exact remaining gates are recorded on the open issues. Focused tests, strict Clippy, and Markdown formatting/link checks are recorded above and in the issue comments. `TODO Reviewed` markers were preserved.
+Shared gate update (2026-10-25): on current `develop`, `cd bk && just bb`, `just book refdefs-check`, and `just spell` pass after loading NASM with the supplied `nasmpath.bat`; the reference generator reports `bk/src/refs/crate-refs.md` up to date. The full `just ca` gate was not rerun after the lockfile update. Keep the other lists' issues open until their issue-specific validation is complete. Earlier blocker notes in this tracking file are superseded for these shared book/reference/spelling gates. `TODO Reviewed` markers were preserved.
 
 ### List 37 — Desktop GUI, game engine and GPU examples (Codex G)
 
