@@ -56,6 +56,14 @@ Middleware is a powerful way to add functionality to your web server.
 
 {{#include cors.incl.md}}
 
+### Axum Add-ons
+
+{{#include axum_extras.incl.md}}
+
+## OpenAPI and JSON Schema
+
+{{#include openapi.incl.md}}
+
 ## Static Website Generators
 
 {{#include static_website_generators.incl.md}}

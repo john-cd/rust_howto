@@ -1,6 +1,10 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
+[ex~wasm~gloo-net]: leptos.md#gloo-net
+[ex~wasm~gloo-storage]: leptos.md#gloo-storage
+[ex~wasm~grpc-web-client]: leptos.md#grpc-web-client
 [ex~wasm~js-sys]: interfacing_with_javascript.md#js-sys
+[ex~wasm~leptos-router]: leptos.md#leptos-router
 [ex~wasm~leptos]: leptos.md#leptos
 [ex~wasm~wasm-bindgen]: interfacing_with_javascript.md#wasm-bindgen
 [ex~wasm~wasm-pack]: wasm_development.md#wasm-pack

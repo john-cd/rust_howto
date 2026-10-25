@@ -32,6 +32,10 @@ Most HTTP client crates support asynchronous requests using [`async`][keyword~as
 
 {{#include apis.incl.md}}
 
+## Rate Limit and Retry
+
+{{#include rate_limiting_and_retries.incl.md}}
+
 ## Download and Upload
 
 {{#include download.incl.md}}

@@ -35,8 +35,10 @@ actix-web = { version = "4.17.0", default-features = false, features = ["macros"
 anyhow = "1.0.104"
 async-graphql = { version = "7.2.1", optional = true }
 async-graphql-axum = { version = "7.2.1", optional = true }
-axum = "0.8.9"
+axum = { version = "0.8.9", features = ["macros"] }
 axum-extra = { version = "0.12.6", features = ["typed-header"] }
+axum-messages = "0.8.0"
+axum-server = { version = "0.8.0", features = ["tls-rustls"] }
 bytes = "1.12.1"
 clap = { version = "4.6.7", features = ["derive"] }
 http = "1.5.0"
@@ -49,6 +51,9 @@ leptos = { version = "0.8.22", optional = true }
 # This HTTP example does not need Loco's database or queue integrations.
 loco-rs = { version = "0.16.4", optional = true, default-features = false }
 prost = "0.14.4"
+rcgen = "0.14.10"
+reqwest = { version = "0.13.5", default-features = false, features = ["rustls"] }
+rustls = { version = "0.23", default-features = false, features = ["aws-lc-rs"] }
 rocket = { version = "0.5.1", optional = true }
 schemars = "1.2.3"
 serde = { version = "1.0.229", features = ["derive"] }
@@ -60,7 +65,9 @@ tonic = "0.14.6"
 tonic-prost = "0.14.6"
 tonic-web = "0.14.6"
 tower = { version = "0.5.3", features = ["util"] }
+tower-cookies = "0.11.0"
 tower-http = { version = "0.6.11", features = ["full", "auth"] }
+tower-sessions = { version = "0.14.0", features = ["memory-store"] }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 utoipa = { version = "6.0.0", features = ["axum_extras"] }

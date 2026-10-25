@@ -33,6 +33,8 @@
 ```
 
 <div class="hidden">
+[mailchecker recipe written for issue #1946](https://github.com/john-cd/rust_howto/issues/1946)
+
 Message construction is tested offline with reserved example addresses; sending remains an ignored integration test because it needs caller-provided relay credentials and a reachable SMTP server.
 </div>
 
@@ -45,6 +47,18 @@ Message construction is tested offline with reserved example addresses; sending 
 [`lettre`][c~lettre~docs]↗{{hi:lettre}} integrates with TLS (Transport Layer Security) for secure email transmission.
 
 [`lettre`][c~lettre~docs]↗{{hi:lettre}} also supports various authentication mechanisms for SMTP.
+
+## Filter Invalid and Disposable Addresses {#mailchecker}
+
+[![mailchecker][c~mailchecker~docs~badge]][c~mailchecker~docs]{{hi:mailchecker}} [![cat~email][cat~email~badge]][cat~email]{{hi:email}}
+
+Before queueing a message, drop recipients that cannot or should not receive it. [`mailchecker`][c~mailchecker~docs]↗{{hi:mailchecker}} checks an address's syntax and compares its domain with a list of disposable-address providers, so `user@mailinator.com` is rejected while an ordinary address passes. The check runs offline.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/email/examples/imap/mailchecker.rs:example}}
+```
+
+A syntax-and-domain-list check cannot tell whether a mailbox exists. For syntax alone use an address-parsing crate, and for deliverability rely on bounce handling and a confirmation email.
 
 ## Related Topics {#related-topics .skip}
 

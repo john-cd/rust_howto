@@ -12,6 +12,7 @@ use axum::http::uri::Authority;
 use axum::http::uri::Scheme;
 use axum::response::Redirect;
 use axum::routing::get;
+#[allow(deprecated)]
 use axum_extra::extract::Host;
 
 /// Ports of the plain HTTP and HTTPS listeners.

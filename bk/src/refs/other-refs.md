@@ -899,6 +899,7 @@
 [graylog~website]: https://graylog.org
 [greenbone~website]: https://greenbone.github.io
 [gremlin~website]: https://gremlin.com
+[grpc-web~repo]: https://github.com/grpc/grpc-web
 [grpc~website]: https://grpc.io
 [habitat~repo]: https://github.com/habitat-sh/habitat
 [hachyderm~rustlang~website]: https://hachyderm.io/tags/rustlang
