@@ -94,6 +94,27 @@ The [`wasmtime`][c~wasmtime~repo]↗ crate is a high-level API to expose the Was
 {{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmtime.rs:example}}
 ```
 
+### Sandbox Untrusted Code {#wasmtime-sandbox}
+
+[![wasmtime][c~wasmtime~docs~badge]][c~wasmtime~docs]{{hi:wasmtime}}
+[![wasmtime~crates.io][c~wasmtime~crates.io~badge]][c~wasmtime~crates.io]
+[![wasmtime~repo][c~wasmtime~repo~badge]][c~wasmtime~repo]
+[![wasmtime~lib.rs][c~wasmtime~lib.rs~badge]][c~wasmtime~lib.rs]
+[![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+
+[`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} can run plugins or generated code inside your process with strict limits:
+
+- **Fuel** (`Config::consume_fuel`, `Store::set_fuel`) bounds CPU use deterministically: an infinite loop traps with `Trap::OutOfFuel`. *Epoch interruption* is the cheaper, wall-clock alternative, but is not deterministic.
+- **`StoreLimits`** bound the linear memory (and tables, instances): a `memory.grow` past the limit returns -1.
+- **Host functions** registered on a `Linker` are the only capabilities the guest has. This example links no WASI, hence no filesystem or network.
+- **Compiled modules** can be cached by a content hash ([`blake3`][c~blake3~docs]↗{{hi:blake3}}). A `Module` is only valid for an `Engine` with a compatible `Config`; `Module::serialize` supports ahead-of-time (AOT) compilation.
+
+Wasm isolation protects the host's memory, but it does not stop a guest from using all the CPU and memory you allow, nor does it protect against bugs in the runtime. For defense in depth, also isolate at the process level.
+
+```rust,editable
+{{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmtime_sandbox.rs:example}}
+```
+
 ## WebAssembly System Interface (WASI) {#wasi.skip}
 
 [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} provides bindings for the WASI API, enabling your WASM code to interact with the host environment (file system, networking, etc.). In particular, WASI allows you to run WASM code on servers or other environments outside the browser. Used by [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} and [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}.
@@ -116,6 +137,7 @@ The [`wasmtime`][c~wasmtime~repo]↗ crate is a high-level API to expose the Was
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+[sandbox example](https://github.com/john-cd/rust_howto/issues/1926)
 [others: organize/write](https://github.com/john-cd/rust_howto/issues/496) need full review
 cover [`wasmer`][c~wasmer~docs]↗{{hi:wasmer}} in intro
 </div>

@@ -3704,7 +3704,7 @@
 [c~ibapi~docs~badge]: https://img.shields.io/crates/v/ibapi?label=ibapi
 [c~ibapi~lib.rs]: https://lib.rs/crates/ibapi
 [c~ibapi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ibapi-yellow
-[c~ibapi~repo]: https://github.com/wboayue/rust-ibapi/
+[c~ibapi~repo]: https://github.com/wboayue/rust-ibapi
 [c~ibapi~repo~badge]: https://img.shields.io/badge/ibapi-steelblue?logo=github
 [c~iced_audio~crates.io]: https://crates.io/crates/iced_audio
 [c~iced_audio~crates.io~badge]: https://img.shields.io/badge/crates.io-iced__audio-crimson

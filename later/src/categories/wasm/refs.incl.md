@@ -35,3 +35,4 @@
 [leptos~cargo-leptos~repo]: https://github.com/leptos-rs/cargo-leptos
 [leptos~start-axum~repo]: https://github.com/leptos-rs/start-axum
 [leptos~trunk~website]: https://trunkrs.dev/
+[ex~wasm~wasmtime-sandbox]: wasm_standalone_runtimes.md#wasmtime-sandbox

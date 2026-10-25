@@ -25830,11 +25830,13 @@ name = "wasm"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "blake3",
  "clap",
  "js-sys",
  "wasm-bindgen",
  "wasmer",
  "wasmtime",
+ "wat",
  "web-sys",
  "yew",
 ]
