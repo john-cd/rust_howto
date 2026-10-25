@@ -25,3 +25,7 @@
 [p~wasm]: # "../wasm/index.md"
 [macrotest~docs]: https://docs.rs/macrotest/latest/macrotest/
 [rust-analyzer~macro-expansion~docs]: https://rust-analyzer.github.io/book/features.html#expand-macro-recursively
+
+[watt~releases]: https://github.com/dtolnay/watt/releases
+[sccache~repo]: https://github.com/mozilla/sccache
+[cargo~timings~docs]: https://doc.rust-lang.org/cargo/reference/timings.html
