@@ -30,3 +30,5 @@
 [p~server]: ../network-programming/server.md
 [p~toml]: ../parser-implementations/toml.md
 [p~tracing]: ../development-tools_debugging/tracing.md
+[fetch~cors]: https://fetch.spec.whatwg.org/#cors-protocol
+[c~tower-http~cors~docs]: https://docs.rs/tower-http/0.6.11/tower_http/cors/
