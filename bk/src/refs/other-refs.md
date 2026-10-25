@@ -1647,6 +1647,13 @@
 [zld~repo]: https://github.com/michaeleisel/zld
 [zld~repo~badge]: https://img.shields.io/badge/zld-steelblue?logo=github
 [zola~repo]: https://github.com/getzola/zola
+[zola~website]: https://www.getzola.org/documentation/
+[zola~website~badge]: https://img.shields.io/badge/zola-coral
+[dioxus~ssg]: https://dioxuslabs.com/learn/0.7/essentials/fullstack/static_site_generation/
+[c~av-scenechange~docs]: https://docs.rs/av-scenechange
+[c~gstreamer~docs]: https://docs.rs/gstreamer
+[c~clipboard-win~docs]: https://docs.rs/clipboard-win
+[navigator~clipboard~mdn]: https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
 [zs~website]: https://zs.com
 [divan~blog]: https://nikolaivazquez.com/blog/divan/
 [fftw~docs]: https://docs.rs/fftw/latest/fftw/
