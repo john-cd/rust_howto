@@ -158,6 +158,7 @@
 - [Encoding and Serialization](categories/encoding/index.md)
   - [Character Sets](categories/encoding/string_encoding.md)
   - [CSV Processing](categories/encoding/csv.md)
+  - [Excel Spreadsheets](categories/encoding/excel.md)
   - [Structured Data](categories/encoding/complex_encoding.md)
   - [Serialization with `serde`](categories/encoding/serde.md)
   - [Typecasting](categories/encoding/typecasts.md)

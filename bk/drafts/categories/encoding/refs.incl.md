@@ -10,6 +10,8 @@
 [ex~encoding~ciborium]: _binary_encoders.md#ciborium
 [ex~encoding~data-encoding]: string_encoding.md#data-encoding
 [ex~encoding~endianness]: typecasts.md#endianness
+[ex~encoding~read-xlsx]: excel.md#read-xlsx
+[ex~encoding~write-xlsx]: excel.md#write-xlsx
 [ex~encoding~filter-csv]: csv.md#filter-csv
 [ex~encoding~flatbuffers]: _binary_encoders.md#flatbuffers
 [ex~encoding~form-urlencoded]: string_encoding.md#form-urlencoded
@@ -39,6 +41,7 @@
 [p~binary-encoders]: _binary_encoders.md
 [p~configuration]: ../config/configuration.md
 [p~csv]: https://datatracker.ietf.org/doc/html/rfc4180
+[p~csv-processing]: csv.md
 [p~data-types]: ../../../src/language/data_types.md
 [p~encoding]: index.md
 [p~json]: ../parser-implementations/json.md

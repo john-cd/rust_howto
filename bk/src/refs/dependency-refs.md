@@ -326,6 +326,15 @@
 [cached-github]: https://github.com/jaemk/cached
 
 
+[calamine]: https://docs.rs/calamine
+
+
+[calamine-crate]: https://crates.io/crates/calamine
+
+
+[calamine-github]: https://github.com/tafia/calamine (*)
+
+
 [camino]: https://docs.rs/camino
 
 
@@ -1944,6 +1953,15 @@
 
 
 [rust_decimal_macros-github]: https://github.com/paupino/rust-decimal
+
+
+[rust_xlsxwriter]: https://docs.rs/rust_xlsxwriter
+
+
+[rust_xlsxwriter-crate]: https://crates.io/crates/rust_xlsxwriter
+
+
+[rust_xlsxwriter-github]: https://github.com/jmcnamara/rust_xlsxwriter (*)
 
 
 [rustls]: https://docs.rs/rustls

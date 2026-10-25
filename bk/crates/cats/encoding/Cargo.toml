@@ -27,6 +27,7 @@ base64 = "0.22.1"
 bincode = { version = "2.0.1", features = ["serde"] } # Keep 2.x: 3.0.0 is a tombstone release without the `serde` feature or an API
 bytemuck = { version = "1.25.2", features = ["derive"] }
 byteorder = "1.5.0"
+calamine = "0.37.0"
 capnp = "0.25.6"
 ciborium = "0.2.2"
 clap = { version = "4.6.7", features = ["derive"] }
@@ -42,6 +43,7 @@ prost-types = "0.14.4"
 rkyv = "0.8.18"
 rmp-serde = "1.3.1"
 hex = "0.4.3" # Hexadecimal encoding and decoding.
+rust_xlsxwriter = "0.101.0"
 serde = { version = "1.0.229", features = ["derive"] }
 serde_ignored = "0.1.14"
 urlencoding = "2.1.3" # Percent-encode and decode a string.
@@ -50,6 +52,9 @@ serde_json = "1.0.154"
 toml = "1.1.8"
 url = "2.5.8"
 zerocopy = { version = "0.8.63", features = ["derive"] }
+
+[dev-dependencies]
+tempfile.workspace = true
 
 [build-dependencies]
 capnpc = "0.25.3"
@@ -69,6 +74,11 @@ test = true
 [[example]]
 name = "endian_byte"
 path = "examples/endian_byte.rs"
+test = true
+
+[[example]]
+name = "excel"
+path = "examples/excel/main.rs"
 test = true
 
 [[example]]
