@@ -79,6 +79,16 @@ With `#[tokio::test(start_paused = true)]` (the `test-util` feature of [`tokio`]
 {{#include ../../../crates/cats/development_tools_testing/examples/test_techniques/paused_time.rs:example}}
 ```
 
+## Generate Valid Test Inputs with a Custom `proptest` Strategy {#proptest-strategy}
+
+[![proptest][c~proptest~docs~badge]][c~proptest~docs]{{hi:proptest}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]
+
+Random inputs that violate a type's invariants waste test cases. [`prop_compose!`][c~proptest~docs]↗{{hi:proptest}} builds a strategy from smaller ones, and the second parameter list may depend on the first, so every generated `Span` satisfies `start <= end` by construction. Use `prop_assume!` to discard the remaining unwanted cases.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/examples/test_techniques/proptest_strategy.rs:example}}
+```
+
 ## Test a Command-line Program with `assert_cmd` {#cli-testing}
 
 [![assert_cmd][c~assert_cmd~docs~badge]][c~assert_cmd~docs]{{hi:assert_cmd}} [![assert_cmd~crates.io][c~assert_cmd~crates.io~badge]][c~assert_cmd~crates.io] [![assert_cmd~repo][c~assert_cmd~repo~badge]][c~assert_cmd~repo] [![assert_cmd~lib.rs][c~assert_cmd~lib.rs~badge]][c~assert_cmd~lib.rs]  [![predicates][c~predicates~docs~badge]][c~predicates~docs]{{hi:predicates}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]
