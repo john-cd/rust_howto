@@ -52,7 +52,7 @@ fn cbindgen(manifest_dir: &Path, out_dir: &Path) -> Result<(), Box<dyn Error>> {
 fn cxx() {
     cxx_build::bridge("examples/cpp/cxx.rs")
         .file("examples/cpp/hello.cc")
-        .flag_if_supported("-std=c++14")
+        .std("c++17")
         .compile("development_tools_ffi_cxx");
 
     println!("cargo:rerun-if-changed=examples/cpp/cxx.rs");

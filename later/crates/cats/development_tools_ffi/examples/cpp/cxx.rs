@@ -24,15 +24,28 @@ mod ffi {
         include!("development_tools_ffi/examples/cpp/hello.h");
 
         fn hello(name: &CxxString);
+        fn cpp_multiply(left: i32, right: i32) -> i32;
+        fn cpp_add_via_rust(left: i32, right: i32) -> i32;
+    }
+
+    extern "Rust" {
+        fn rust_add(left: i32, right: i32) -> i32;
     }
 }
 
-/// Creates a C++ string to pass to C++.
+/// Adds two integers in Rust for the generated bridge.
+fn rust_add(left: i32, right: i32) -> i32 {
+    left + right
+}
+
+/// Creates a C++ string and exercises the Rust and C++ functions.
 fn main() {
     // Construct a C++ string.
     let_cxx_string!(name = "Rust");
     // Call the C++ function compiled by the package build script.
     call_cpp(&name);
+    println!("6 * 7 = {}", ffi::cpp_multiply(6, 7));
+    println!("40 + 2 = {}", ffi::cpp_add_via_rust(40, 2));
 }
 
 /// Passes a C++ string through the generated bridge.
@@ -54,6 +67,8 @@ mod tests {
     #[test]
     fn test_main() {
         main();
+        assert_eq!(ffi::cpp_multiply(6, 7), 42);
+        assert_eq!(rust_add(40, 2), 42);
+        assert_eq!(ffi::cpp_add_via_rust(40, 2), 42);
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/738)

@@ -55,6 +55,8 @@ Choose a binding generator for the direction and languages involved; these tools
 
 [`cxx`][c~cxx~docs]↗{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides. [`cxx`][c~cxx~docs]↗{{hi:cxx}} handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
 
+The example uses a C++17 build and calls functions in both directions across the bridge.
+
 While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally preferred for modern C++ interop with Rust, because it's more idiomatic and safer.
 
 For a large existing C++ API, the [Rust ❤️ Existing C++ guide][book~autocxx]↗{{hi:autocxx}} introduces `autocxx`, which generates a `cxx` bridge from C++ headers. Review the generated surface and keep the boundary narrow.
