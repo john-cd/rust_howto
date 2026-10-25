@@ -8,6 +8,7 @@
 //! `deadpool_postgres` implements a `deadpool` manager for `tokio-postgres`
 //! and also provides a statement cache by wrapping `tokio_postgres::Client` and
 //! `tokio_postgres::Transaction`.
+//! Use `pool.status()` to inspect the current size and checkout activity.
 //!
 //! Add to your `Config.toml`:
 //! deadpool = "0.12.1" # or latest version
@@ -50,14 +51,31 @@ impl Config {
 /// # Errors
 ///
 /// Returns an error if configuration cannot be read or the pool cannot be
-/// built.
-fn create_pool() -> anyhow::Result<deadpool_postgres::Pool> {
+/// built. When `max_size` is set, it overrides the environment configuration.
+fn create_pool_with_max_size(
+    max_size: Option<usize>,
+) -> anyhow::Result<deadpool_postgres::Pool> {
     // Loads the `.env` file from the current directory or parents.
     dotenv().ok();
     // Hydrate the configuration from environment variables.
-    let cfg = Config::from_env()?;
+    let mut cfg = Config::from_env()?;
+    if let Some(max_size) = max_size {
+        let mut pool_config = cfg.pg.get_pool_config();
+        pool_config.max_size = max_size;
+        cfg.pg.pool = Some(pool_config);
+    }
     // Creates a new `Pool` using the `deadpool_postgres::Config`.
     Ok(cfg.pg.create_pool(Some(Runtime::Tokio1), NoTls)?)
+}
+
+/// Creates a PostgreSQL connection pool using its configured maximum size.
+///
+/// # Errors
+///
+/// Returns an error if environment configuration cannot be read or the pool
+/// cannot be built.
+fn create_pool() -> anyhow::Result<deadpool_postgres::Pool> {
+    create_pool_with_max_size(None)
 }
 
 /// Creates a PostgreSQL connection pool and queries the database.
@@ -71,6 +89,11 @@ async fn main() -> anyhow::Result<()> {
     let pool = create_pool()?;
     // Retrieves an Object from this Pool or waits for one to become available:
     let client = pool.get().await?;
+    let status = pool.status();
+    println!(
+        "Pool status: {} available, {} allocated, {} maximum, {} waiting",
+        status.available, status.size, status.max_size, status.waiting
+    );
     // Like `tokio_postgres::Client::prepare()`, but uses an existing
     // `Statement` from the `StatementCache` if possible:
     let stmt = client.prepare_cached("SELECT version()").await?;
@@ -97,6 +120,10 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use std::sync::Arc;
+    use std::sync::atomic::AtomicUsize;
+    use std::sync::atomic::Ordering;
+
     use tokio::task::JoinSet;
 
     use super::*;
@@ -106,22 +133,39 @@ mod tests {
     #[ignore = "requires a reachable PostgreSQL service and PG__* environment variables"]
     async fn serves_concurrent_queries_through_the_pool() -> anyhow::Result<()>
     {
-        /// Maximum number of database queries run concurrently.
+        /// Maximum number of PostgreSQL connections in the test pool.
+        const MAX_POOL_SIZE: usize = 8;
+        /// Number of requests submitted to the pool.
         const CONCURRENT_QUERIES: usize = 64;
 
-        let pool = create_pool()?;
+        let pool = create_pool_with_max_size(Some(MAX_POOL_SIZE))?;
+        assert_eq!(pool.status().max_size, MAX_POOL_SIZE);
+
+        let active_checkouts = Arc::new(AtomicUsize::new(0));
+        let peak_checkouts = Arc::new(AtomicUsize::new(0));
         let mut tasks = JoinSet::new();
 
-        for request_id in 0..CONCURRENT_QUERIES as i32 {
+        for query_index in 0..CONCURRENT_QUERIES {
+            let request_id = i32::try_from(query_index)?;
             let pool = pool.clone();
+            let active_checkouts = Arc::clone(&active_checkouts);
+            let peak_checkouts = Arc::clone(&peak_checkouts);
             tasks.spawn(async move {
                 let client = pool.get().await?;
-                let row = client
+                let active =
+                    active_checkouts.fetch_add(1, Ordering::SeqCst) + 1;
+                peak_checkouts.fetch_max(active, Ordering::SeqCst);
+
+                let query_result = client
                     .query_one(
                         "SELECT pg_sleep(0.01), $1::integer",
                         &[&request_id],
                     )
-                    .await?;
+                    .await;
+                drop(client);
+                active_checkouts.fetch_sub(1, Ordering::SeqCst);
+
+                let row = query_result?;
                 Ok::<i32, anyhow::Error>(row.get(1))
             });
         }
@@ -132,9 +176,14 @@ mod tests {
         }
         completed_ids.sort_unstable();
 
-        assert_eq!(
-            completed_ids,
-            (0..CONCURRENT_QUERIES as i32).collect::<Vec<_>>()
+        let expected_ids = (0..CONCURRENT_QUERIES)
+            .map(i32::try_from)
+            .collect::<Result<Vec<_>, _>>()?;
+        assert_eq!(completed_ids, expected_ids);
+        assert_eq!(active_checkouts.load(Ordering::SeqCst), 0);
+        assert!(
+            peak_checkouts.load(Ordering::SeqCst) <= MAX_POOL_SIZE,
+            "the pool allowed more simultaneous checkouts than its configured maximum"
         );
         Ok(())
     }
