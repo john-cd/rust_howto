@@ -66,8 +66,16 @@ Concise Binary Object Representation is a binary data serialization format loose
 
 [`flatbuffers`][c~flatbuffers~docs]↗{{hi:flatbuffers}} is the official FlatBuffers Rust runtime library. FlatBuffers is a free software library implementing a serialization format similar to Protocol Buffers, Thrift, Apache Avro, SBE, and Cap'n Proto, open-sourced by Google. It supports "zero-copy" deserialization, so that accessing the serialized data does not require first copying it into a separate part of memory.
 
+From the repository root, compile the schema with `flatc --rust -o bk/crates/cats/encoding/examples/binary_encoders bk/crates/cats/encoding/examples/binary_encoders/my_game.fbs`. The generated Rust source is checked in beside the example so builds do not need `flatc`.
+
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/flatbuffers.rs:example}}
+```
+
+In `my_game.fbs`:
+
+```text
+{{#include ../../../crates/cats/encoding/examples/binary_encoders/my_game.fbs}}
 ```
 
 ## Cap'n Proto {#capnp}
@@ -114,4 +122,5 @@ In `foo.capnp`:
 - [bytes][c~bytes~lib.rs]↗.
 
 [content audit: content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1904)
+
 </div>

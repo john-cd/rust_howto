@@ -59,7 +59,7 @@ fn main() -> anyhow::Result<()> {
                 ciborium::run()?;
             }
             Commands::Flatbuffers => {
-                flatbuffers::run();
+                flatbuffers::run()?;
             }
             Commands::Prost => {
                 prost::run()?;
