@@ -7,6 +7,7 @@
 [ex~data-processing~dataframes]: dataframes.md#dataframes
 [ex~data-processing~datafusion]: data_engineering.md#datafusion
 [ex~data-processing~jsonpath]: data_engineering.md#jsonpath
+[ex~data-processing~read-and-write-csv-files]: csv.md#read-and-write-csv-files
 [ex~data-processing~manipulate-csv-files-from-the-command-line]: csv.md#manipulate-csv-files-from-the-command-line
 [ex~data-processing~spice-ai]: data_engineering.md#spice-ai
 [ex~data-processing~visualization]: data_engineering.md#visualization
