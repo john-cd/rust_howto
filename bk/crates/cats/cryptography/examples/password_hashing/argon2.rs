@@ -101,9 +101,25 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Verifies a password hash accepts the original password and rejects a
+    /// guess.
     #[test]
-    fn test_main() -> Result<(), Error> {
-        main()?;
+    fn argon2_verification_rejects_wrong_password() -> Result<(), Error> {
+        let phc_string = password_hashing(b"correct horse battery staple")?;
+
+        assert!(password_verification(
+            b"correct horse battery staple",
+            &phc_string
+        )?);
+        assert!(!password_verification(b"incorrect", &phc_string)?);
         Ok(())
+    }
+
+    /// Reports malformed PHC strings as errors instead of accepting them.
+    #[test]
+    fn argon2_verification_rejects_malformed_hash() {
+        assert!(
+            password_verification(b"password", "not a PHC string").is_err()
+        );
     }
 }

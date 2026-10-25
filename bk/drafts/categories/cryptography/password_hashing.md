@@ -4,18 +4,19 @@
 
 {{#include password_hashing.incl.md}}
 
-Password [hashing][p~hashing] is a crucial security practice that protects user passwords by one-way transforming them into a string of characters, called a "hash", which reverse-engineering into the password is computationally infeasible. This hash is then stored instead of the actual password. Password [hashing][p~hashing] protects against data breaches: If a [database][p~database] is compromised, attackers won't be able to see the actual passwords, only the hashed versions.
+Password hashing stores a deliberately expensive, salted verifier instead of a user's plaintext password. It does not make a database breach harmless: an attacker can still guess passwords offline, so use a password-hashing algorithm and parameters chosen to make each guess costly.
 
 A [key derivation function][key_derivation_function]↗ (KDF) is a cryptographic algorithm that derives one or more secret keys from a secret value, such as a master key, a password, or a passphrase, using a pseudorandom function (typically a cryptographic hash function or block cipher).
 
 The original use for a KDF is key derivation, the generation of multiple keys from secret passwords or passphrases.
 
 Despite their original use for key derivation, KDFs are possibly better known for their use in password [hashing][p~hashing] (password verification by hash comparison), as used by the [`passwd`][wikipedia~passwd]↗{{hi:passwd}} file or `shadow` password file. Password hash [functions][p~functions] should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic.
-Despite their original use for key derivation, KDFs are possibly better known for their use in password [hashing][p~hashing] (password verification by hash comparison), as used by the [`passwd`][wikipedia~passwd]↗{{hi:passwd}} file or `shadow` password file. Password hash [functions][p~functions] should be relatively expensive to calculate in case of brute-force attacks, and the key stretching of KDFs happen to provide this characteristic.
 
 In that role, key derivation [functions][p~functions] take a password, a salt, (and sometimes a cost factor) as inputs, then generate a password hash - deliberately slowly. Their purpose is to make each password guessing trial by an attacker who has obtained a password hash file expensive and therefore the cost of a guessing attack high or prohibitive. In cryptography, "salt" refers to non-secret, random data added to input data before hashing it.
 
 Popular password hashing algorithms include [`bcrypt`][c~bcrypt~docs]↗{{hi:bcrypt}}, [`Argon2`][c~argon2~docs]↗{{hi:Argon2}} and [`scrypt`][c~scrypt~docs]↗{{hi:scrypt}}.
+
+For new applications, prefer Argon2id and tune its memory, iteration, and parallelism parameters for the deployment environment. Store the complete PHC string, which includes the algorithm parameters and salt, alongside the verifier. After a successful login, check whether the stored parameters need an upgrade and rehash when necessary. Use PBKDF2 or bcrypt when compatibility requires them; do not use a fast general-purpose hash such as SHA-256 for passwords.
 
 ## Hash a Password, then Verify a Password Against the Hash {#argon2}
 
@@ -80,11 +81,10 @@ For more [algorithms][p~algorithms], see [Rust Crypto Password Hashes][rustcrypt
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[hashing | Cryptographic hashing]].
+- [[encryption | Encryption]].
+- [[aead | Authenticated encryption]].
+- [Cryptography category](index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[password_hashing: write](https://github.com/john-cd/rust_howto/issues/275)
-</div>
