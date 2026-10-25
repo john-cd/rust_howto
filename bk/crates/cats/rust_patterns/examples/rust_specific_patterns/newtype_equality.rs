@@ -65,7 +65,7 @@ fn main() {
     };
     let b = PhoneNumber {
         style: Style::National,
-        ..a.clone()
+        ..a
     };
     assert_ne!(a.to_string(), b.to_string());
     assert_eq!(a, b);

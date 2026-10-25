@@ -5,6 +5,8 @@
 [ex~database~cdrs-tokio]: nosql.md#cdrs-tokio
 [ex~database~connection-pool]: connection_pool.md#connection-pool
 [ex~database~cornucopia]: postgres.md#cornucopia
+[ex~database~query-builders-orms]: query_builders_orms.md
+[ex~database~search]: search.md
 [ex~database~create-database-sqlite]: sqlite.md#create-database-sqlite
 [ex~database~create-tables-postgres]: postgres.md#create-tables-postgres
 [ex~database~diesel-oci]: oracle.md#diesel-oci
@@ -50,3 +52,4 @@
 [p~toml]: ../parser-implementations/toml.md
 [p~url]: ../web-programming/url.md
 [p~windows]: ../os_windows-apis/windows.md
+[c~cornucopia~migration~1.0]: https://github.com/cornucopia-rs/cornucopia/blob/main/docs/src/introduction/migration_to_1_0.md

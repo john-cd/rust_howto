@@ -8,7 +8,6 @@ use anyhow::Context as _;
 use reqwest::Url;
 use reqwest::blocking::Client;
 use reqwest::blocking::RequestBuilder;
-use reqwest::header::AUTHORIZATION;
 
 /// Creates a GET request that uses HTTP Basic authentication.
 fn basic_auth_request(
@@ -62,6 +61,8 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use reqwest::header::AUTHORIZATION;
+
     use super::*;
 
     /// Builds a request with an authorization header without sending it.

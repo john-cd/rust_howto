@@ -7,17 +7,21 @@
 use std::time::Duration;
 
 use tokio::time::sleep;
-use tokio::time::timeout;
 
 /// Waits `delay`, then returns the answer.
 async fn slow_answer(delay: Duration) -> u32 {
     sleep(delay).await;
     42
 }
+// ANCHOR_END: example
+
+/// The example runs under `cargo test`.
+fn main() {}
 
 #[cfg(test)]
 mod tests {
     use tokio::time::Instant;
+    use tokio::time::timeout;
 
     use super::*;
 
@@ -47,7 +51,3 @@ mod tests {
         assert_eq!(result, Ok(42));
     }
 }
-// ANCHOR_END: example
-
-/// The example runs under `cargo test`.
-fn main() {}

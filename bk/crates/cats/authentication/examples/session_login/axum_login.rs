@@ -250,7 +250,7 @@ mod tests {
         let response = get_with(&app, "/protected", Some(&session)).await?;
         assert_eq!(response.status(), StatusCode::OK);
         let body = response.into_body().collect().await?.to_bytes();
-        assert_eq!(&body[..], b"Hello, alice!");
+        assert_eq!(&*body, b"Hello, alice!");
         Ok(())
     }
 

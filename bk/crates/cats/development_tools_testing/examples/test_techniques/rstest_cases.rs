@@ -16,6 +16,10 @@ fn parse_seconds(text: &str) -> Option<u64> {
     };
     number.checked_mul(factor)
 }
+// ANCHOR_END: example
+
+/// The example runs under `cargo test`.
+fn main() {}
 
 #[cfg(test)]
 mod tests {
@@ -55,7 +59,3 @@ mod tests {
         assert_eq!(parse_seconds(input), Some(0));
     }
 }
-// ANCHOR_END: example
-
-/// The example runs under `cargo test`.
-fn main() {}

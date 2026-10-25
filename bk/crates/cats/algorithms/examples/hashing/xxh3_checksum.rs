@@ -18,7 +18,7 @@ const TAG_LEN: usize = 16;
 fn seal(payload: &[u8]) -> Vec<u8> {
     let mut out = Vec::with_capacity(payload.len() + TAG_LEN);
     out.extend_from_slice(payload);
-    out.extend_from_slice(&xxh3_128(payload).to_le_bytes());
+    out.extend_from_slice(&xxh3_128(payload).to_be_bytes());
     out
 }
 
@@ -26,7 +26,7 @@ fn seal(payload: &[u8]) -> Vec<u8> {
 fn open(sealed: &[u8]) -> Option<&[u8]> {
     let split = sealed.len().checked_sub(TAG_LEN)?;
     let (payload, tag) = sealed.split_at(split);
-    let expected = xxh3_128(payload).to_le_bytes();
+    let expected = xxh3_128(payload).to_be_bytes();
     (tag == expected).then_some(payload)
 }
 
@@ -45,6 +45,7 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+#[allow(clippy::main_recursion)]
 pub fn run() {
     main();
 }

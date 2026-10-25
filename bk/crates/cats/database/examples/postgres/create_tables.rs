@@ -5,6 +5,7 @@
 //! This example demonstrates creating database tables in PostgreSQL using the
 //! `postgres` crate.
 
+use anyhow::Context as _;
 use postgres::Client;
 use postgres::NoTls;
 
@@ -14,12 +15,16 @@ use postgres::NoTls;
 /// The `author` table has columns for `id`, `name`, and `country`.
 /// The `book` table has columns for `id`, `title`, and `author_id` (a foreign
 /// key referencing the `author` table).
+///
+/// # Errors
+///
+/// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
+/// or either table cannot be created.
 fn main() -> anyhow::Result<()> {
-    // Establish a connection to the PostgreSQL database.
-    // The connection URL format is
-    // `postgresql://<user>:<password>@<host>/<db>`.
-    let url = std::env::var("PG_URL").expect("PG_URL must be set");
-    let mut client = Client::connect(&url, NoTls)?;
+    let database_url = std::env::var("DATABASE_URL")
+        .context("set DATABASE_URL to connect to PostgreSQL")?;
+    let mut client = Client::connect(&database_url, NoTls)
+        .context("connect to PostgreSQL using DATABASE_URL")?;
 
     client.batch_execute(
         "
@@ -43,12 +48,29 @@ fn main() -> anyhow::Result<()> {
             )
     ",
     )?;
-    println!("Tables created!");
+    println!("Created the author and book tables.");
     Ok(())
 }
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+///
+/// Returns an error if PostgreSQL cannot be reached or the tables cannot be
+/// created.
 pub fn run() -> anyhow::Result<()> {
     main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// The example creates its tables in the configured PostgreSQL database.
+    #[test]
+    #[ignore = "needs Postgres"]
+    fn creates_tables_on_postgres() -> anyhow::Result<()> {
+        main()
+    }
 }

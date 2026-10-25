@@ -5,23 +5,43 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! A window defined with `slint`.
+//! A counter window defined with Slint.
 
 slint::slint! {
-    export component HelloWorld inherits Window {
-        Text {
-            text: "hello world";
-            color: green;
+    import { Button, VerticalBox } from "std-widgets.slint";
+
+    export component App inherits Window {
+        in-out property <int> counter: 0;
+        callback increment_counter();
+
+        VerticalBox {
+            Button {
+                text: "Increment";
+                clicked => { root.increment_counter(); }
+            }
+            Text {
+                text: "Count: {root.counter}";
+            }
         }
     }
 }
 
-/// Shows the window and runs the event loop.
+/// Shows the counter window and runs Slint's event loop.
 fn main() -> anyhow::Result<()> {
-    // `run` is a convenience function that first calls Self::show, followed by
-    // crate::run_event_loop() and Self::hide.
-    HelloWorld::new()?.run()?;
+    let app = App::new()?;
+    connect_counter_increment(&app);
+    app.run()?;
     Ok(())
+}
+
+/// Connects the counter callback to its Rust-side state update.
+fn connect_counter_increment(app: &App) {
+    let weak_app = app.as_weak();
+    app.on_increment_counter(move || {
+        if let Some(app) = weak_app.upgrade() {
+            app.set_counter(app.get_counter() + 1);
+        }
+    });
 }
 // ANCHOR_END: example
 
@@ -34,10 +54,17 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the counter callback updates state without a display server.
     #[test]
-    #[ignore = "requires interactive example runtime"]
-    fn test_main() -> anyhow::Result<()> {
-        main()
+    fn increments_counter_without_a_display() -> anyhow::Result<()> {
+        i_slint_backend_testing::init_no_event_loop();
+        let app = App::new()?;
+        connect_counter_increment(&app);
+
+        assert_eq!(app.get_counter(), 0);
+        app.invoke_increment_counter();
+        assert_eq!(app.get_counter(), 1);
+
+        Ok(())
     }
 }
-// [finish; figure how to test - neither WAYLAND_DISPLAY nor WAYLAND_SOCKET nor DISPLAY is set. see vs code Wayland setting](https://github.com/john-cd/rust_howto/issues/787)

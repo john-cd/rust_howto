@@ -18,8 +18,8 @@ use bumpalo::Bump;
 /// A tree node. The references point into the same arena.
 struct Node<'bump> {
     key: i32,
-    left: Option<&'bump Node<'bump>>,
-    right: Option<&'bump Node<'bump>>,
+    left: Option<&'bump Self>,
+    right: Option<&'bump Self>,
 }
 
 /// Returns a new tree that also contains `key` (the old nodes are shared).
@@ -102,6 +102,7 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+#[allow(clippy::main_recursion)]
 pub fn run() {
     main();
 }

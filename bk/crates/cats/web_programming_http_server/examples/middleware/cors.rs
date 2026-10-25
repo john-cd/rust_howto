@@ -65,8 +65,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the CORS layer allows any origin in this local example.
     #[test]
-    fn require_network() -> Result<()> {
+    fn cors_layer_allows_any_origin() -> Result<()> {
         main()?;
         Ok(())
     }

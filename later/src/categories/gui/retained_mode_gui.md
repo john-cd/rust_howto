@@ -4,6 +4,8 @@
 
 {{#include retained_mode_gui.incl.md}}
 
+From `later/crates`, run `cargo run -p gui --example retained_mode_gui --features slint -- slint` to open this example. `App::run()` creates a window and therefore needs a display server; the example's component test uses Slint's testing backend and does not need `DISPLAY` or `WAYLAND_DISPLAY`. If backend selection is needed, set `SLINT_BACKEND=winit-software` before launching.
+
 ## `iced` {#iced}
 
 [![iced~website][c~iced~website~badge]][c~iced~website] [![iced][c~iced~docs~badge]][c~iced~docs] [![iced~crates.io][c~iced~crates.io~badge]][c~iced~crates.io] [![iced~repo][c~iced~repo~badge]][c~iced~repo] [![iced~lib.rs][c~iced~lib.rs~badge]][c~iced~lib.rs]{{hi:iced}}{{hi:Graphics}}{{hi:Gui}}{{hi:Interface}}{{hi:Ui}}{{hi:Widgets}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
@@ -103,5 +105,5 @@ If you're a Swift developer, you may find Xilem familiar because its syntax and 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[retained_mode_gui: organize/write](https://github.com/john-cd/rust_howto/issues/389)
+  [retained_mode_gui: organize/write](https://github.com/john-cd/rust_howto/issues/389)
 </div>

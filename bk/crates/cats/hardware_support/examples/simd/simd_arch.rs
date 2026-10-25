@@ -72,13 +72,12 @@ fn dot_avx2(a: &[f32], b: &[f32]) -> f32 {
 /// target (to SSE, NEON, WASM `simd128`, or scalar code).
 fn dot_wide(a: &[f32], b: &[f32]) -> f32 {
     let mut acc = f32x4::ZERO;
-    let mut ca = a.chunks_exact(4);
-    let mut cb = b.chunks_exact(4);
-    for (x, y) in ca.by_ref().zip(cb.by_ref()) {
-        acc += f32x4::new([x[0], x[1], x[2], x[3]])
-            * f32x4::new([y[0], y[1], y[2], y[3]]);
+    let (ca, ra) = a.as_chunks::<4>();
+    let (cb, rb) = b.as_chunks::<4>();
+    for (x, y) in ca.iter().zip(cb) {
+        acc += f32x4::new(*x) * f32x4::new(*y);
     }
-    acc.reduce_add() + dot_scalar(ca.remainder(), cb.remainder())
+    acc.reduce_add() + dot_scalar(ra, rb)
 }
 
 /// A safe API: picks the best implementation at run time.
@@ -122,6 +121,7 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+#[allow(clippy::main_recursion)]
 pub fn run() {
     main();
 }

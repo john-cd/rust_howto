@@ -1,4 +1,4 @@
-<!-- TODO Reviewed 10-21-2026 -->
+<!-- TODO Reviewed 10-25-2026 -->
 
 # Tasks
 
@@ -6,7 +6,7 @@ Track tasks, priorities, and progress in [GitHub Issues](https://github.com/john
 
 ## IN-PROGRESS
 
-Live GitHub snapshot on 2026-10-24: **108 of 300 issues from Lists 1–30 remain open**. The entries below retain their original list membership and show their current priority labels. GitHub Issues remains the source of truth; refresh this inventory as issues close.
+Live GitHub snapshot on 2026-10-25: **100 of 300 issues from Lists 1–30 remain open**. The entries below retain their original list membership and show their current priority labels. GitHub Issues remains the source of truth; refresh this inventory as issues close.
 
 ### List 1
 
@@ -20,7 +20,6 @@ Live GitHub snapshot on 2026-10-24: **108 of 300 issues from Lists 1–30 remain
 
 ### List 2
 
-- [#1735](https://github.com/john-cd/rust_howto/issues/1735) — **P2** — Integrate mio and smol examples into async chapters.
 
 ### List 3
 
@@ -112,9 +111,7 @@ Live GitHub snapshot on 2026-10-24: **108 of 300 issues from Lists 1–30 remain
 - [#1144](https://github.com/john-cd/rust_howto/issues/1144) — **P2** — `bk/crates/cats/email/examples/lettre.rs`: review; Requires valid SMTP credentials to run NOW
 - [#1022](https://github.com/john-cd/rust_howto/issues/1022) — **P2** — Finish the Sibyl example and review installation steps.
 - [#1017](https://github.com/john-cd/rust_howto/issues/1017) — **P2** — Finish the cdrs_tokio example.
-- [#1016](https://github.com/john-cd/rust_howto/issues/1016) — **P2** — Write the cassandra_protocol example.
 - [#962](https://github.com/john-cd/rust_howto/issues/962) — **P2** — `bk/drafts/categories/text-editors/index.md`: write; review in depth finish the table NOW
-- [#709](https://github.com/john-cd/rust_howto/issues/709) — **P2** — Finish the Diesel example.
 - [#1355](https://github.com/john-cd/rust_howto/issues/1355) — **P3** — `bk/crates/cats/web_programming/examples/http_types_and_interfaces/http.rs`: expand; HTTP header interpretation and generation. LATER
 
 ### List 23
@@ -166,16 +163,11 @@ Live GitHub snapshot on 2026-10-24: **108 of 300 issues from Lists 1–30 remain
 
 ### List 30 — Code examples
 
-- [#256](https://github.com/john-cd/rust_howto/issues/256) — **P3** — Review and fix the tar `strip_prefix` example.
-- [#261](https://github.com/john-cd/rust_howto/issues/261) — **P3** — Fix the Rayon thumbnails example's test data and linking.
 - [#1041](https://github.com/john-cd/rust_howto/issues/1041) — **P3** — Finish the Cap'n Proto example.
 - [#1043](https://github.com/john-cd/rust_howto/issues/1043) — **P3** — Finish the FlatBuffers example.
 - [#1044](https://github.com/john-cd/rust_howto/issues/1044) — **P3** — Finish the Prost example.
 - [#1046](https://github.com/john-cd/rust_howto/issues/1046) — **P3** — Finish the rmp-serde example.
-- [#1081](https://github.com/john-cd/rust_howto/issues/1081) — **P4** — Expand the Arrow example.
 - [#1079](https://github.com/john-cd/rust_howto/issues/1079) — **P4** — Review and expand the OpenCV example.
-- [#883](https://github.com/john-cd/rust_howto/issues/883) — **P4** — Finish the DataFusion example.
-- [#878](https://github.com/john-cd/rust_howto/issues/878) — **P4** — Finish the AWS Lambda example.
 
 ### Lists 31–34 — assigned to local Codex sessions
 
@@ -193,6 +185,13 @@ Added 2026-10-25. Lists A–D from the [#1955 comments](https://github.com/john-
 - [#1885](https://github.com/john-cd/rust_howto/issues/1885) — **P3** — Triage and resolve the rumdl Markdown lint baseline.
 - [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **P3** — Verify refs and links after restoring dropped content (#1904).
 - [#1929](https://github.com/john-cd/rust_howto/issues/1929) — **P4** — Validate the ONNX inference example with ort (PR #1964).
+
+Validation update (2026-10-25):
+
+- #1874 is already integrated in `origin/develop` at `7175a9f3e`; standalone tests, strict Clippy, and formatting passed.
+- For #1867, Lyon and FemtoVG tests and strict Clippy passed; the interactive FemtoVG test remains ignored on this headless host.
+- The #1868 wasm strict Clippy gate passed with the repository's wrapper-disabled workaround.
+- #1859's `later` `just ca` remains incomplete. AWS-LC built with CMake and one job, but sccache disconnected while compiling `clang-sys`. The full `bk` gate and remaining List 31 checks are outstanding.
 
 ### List 32 — Encoding, database and tooling examples (Codex B)
 
@@ -223,7 +222,7 @@ Added 2026-10-25. Lists A–D from the [#1955 comments](https://github.com/john-
 ### List 34 — Web, auth, packaging and tooling pages (Codex D)
 
 - [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment.
-- [#636](https://github.com/john-cd/rust_howto/issues/636) — **P3** — Add OAuth to the authentication index.
+- [#636](https://github.com/john-cd/rust_howto/issues/636) — **P3** — ✅ closed on GitHub — Add OAuth to the authentication index.
 - [#510](https://github.com/john-cd/rust_howto/issues/510) — **P3** — Write the CORS chapter.
 - [#921](https://github.com/john-cd/rust_howto/issues/921) — **P3** — Review the build-time tooling chapter.
 - [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Write the Python interoperability chapter.
@@ -233,15 +232,30 @@ Added 2026-10-25. Lists A–D from the [#1955 comments](https://github.com/john-
 - [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Write the screen readers chapter.
 - [#401](https://github.com/john-cd/rust_howto/issues/401) — **P4** — Write the internationalization chapter.
 
+### Epic #1955 — New recipes from the local-projects review
+
+[#1955](https://github.com/john-cd/rust_howto/issues/1955) tracks the recipes from the local-projects review (#1906–#1952). The recipe issues themselves are closed and merged via PRs #1958, #1962–#1966, #1968, #1969, #1971 and #1973. The epic stays open for these follow-ups:
+
+- [#1959](https://github.com/john-cd/rust_howto/issues/1959) — Verify the encoding chapters build and regenerate Cap'n Proto code with `capnp` installed (also in List 32).
+- [#1970](https://github.com/john-cd/rust_howto/issues/1970) — Follow-ups to the web examples and pages (#1910 #1911 #1916 #1939 #1944 #1945 #1946).
+- [#1972](https://github.com/john-cd/rust_howto/issues/1972) — Validate and finish the Arrow IPC, optimization and AWS SDK examples from PR #1971.
+- [#1974](https://github.com/john-cd/rust_howto/issues/1974) — Follow-ups to the Excel, profiling, geo, audio, wry and egui add-on examples (#1973).
+
+Remaining cross-cutting work:
+
+- Run the full book build (`just bb`) and the refdefs check.
+- Run the Windows test task (`just ntt`).
+- Fix the Linux CI `book_tooling` fetch problem and re-enable CI ([#1850](https://github.com/john-cd/rust_howto/issues/1850)).
+
 ## COMPLETED
 
-Live GitHub snapshot on 2026-10-24: **192 of 300 issues from Lists 1–30 are closed as completed**. The other 108 issues remain in IN-PROGRESS. Each issue below retains its original list membership.
+Live GitHub snapshot on 2026-10-25: **200 of 300 issues from Lists 1–30 are closed as completed**. The other 100 issues remain in IN-PROGRESS. Each issue below retains its original list membership.
 
 ### List 1 — 1 of 10 completed
 
 - [#1747](https://github.com/john-cd/rust_howto/issues/1747) — Finish the VS Code contributor draft
 
-### List 2 — 9 of 10 completed
+### List 2 — 10 of 10 completed
 
 - [#1723](https://github.com/john-cd/rust_howto/issues/1723) — Polish hashing and algorithms coverage
 - [#1724](https://github.com/john-cd/rust_howto/issues/1724) — Complete missing cross-links between book pages
@@ -252,6 +266,7 @@ Live GitHub snapshot on 2026-10-24: **192 of 300 issues from Lists 1–30 are cl
 - [#1736](https://github.com/john-cd/rust_howto/issues/1736) — Integrate colored and clap_complete examples into CLI chapters
 - [#1733](https://github.com/john-cd/rust_howto/issues/1733) — Review the standalone cancelable example
 - [#1734](https://github.com/john-cd/rust_howto/issues/1734) — Review playground WIP examples and promote ready content
+- [#1735](https://github.com/john-cd/rust_howto/issues/1735) — Integrate mio and smol examples into async chapters.
 
 ### List 3 — 4 of 10 completed
 
@@ -455,9 +470,10 @@ All ten issues remain in IN-PROGRESS.
 - [#941](https://github.com/john-cd/rust_howto/issues/941) — `later/src/categories/multimedia_audio/index.md`: fix
 - [#908](https://github.com/john-cd/rust_howto/issues/908) — `later/src/categories/compilers/index.md`: review
 
-### List 22 — 0 of 10 completed
+### List 22 — 2 of 10 completed
 
-All ten issues remain in IN-PROGRESS.
+- [#1016](https://github.com/john-cd/rust_howto/issues/1016) — Write the cassandra_protocol example.
+- [#709](https://github.com/john-cd/rust_howto/issues/709) — Finish the Diesel example.
 
 ### List 23 — 0 of 10 completed
 
@@ -526,9 +542,13 @@ Existing integration record: Nine issues are closed and integrated into local `d
 - [#302](https://github.com/john-cd/rust_howto/issues/302) — `bk/drafts/categories/development-tools/installation/rustup.md`: rustup: expand / clean up
 - [#322](https://github.com/john-cd/rust_howto/issues/322) — `bk/drafts/categories/development-tools_debugging/tracing.md`: review
 
-### List 30 — 0 of 10 completed
+### List 30 — 5 of 10 completed
 
-All ten issues remain in IN-PROGRESS.
+- [#256](https://github.com/john-cd/rust_howto/issues/256) — Review and fix the tar `strip_prefix` example.
+- [#261](https://github.com/john-cd/rust_howto/issues/261) — Fix the Rayon thumbnails example's test data and linking.
+- [#1081](https://github.com/john-cd/rust_howto/issues/1081) — Expand the Arrow example.
+- [#883](https://github.com/john-cd/rust_howto/issues/883) — Finish the DataFusion example.
+- [#878](https://github.com/john-cd/rust_howto/issues/878) — Finish the AWS Lambda example.
 
 ### Mathematics follow-ups — Closed
 

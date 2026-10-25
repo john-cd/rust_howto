@@ -29,9 +29,9 @@ enum EmailError {
 impl fmt::Display for EmailError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            EmailError::MissingAt => write!(f, "expected exactly one '@'"),
-            EmailError::EmptyLocalPart => write!(f, "empty local part"),
-            EmailError::InvalidDomain => write!(f, "invalid domain"),
+            Self::MissingAt => write!(f, "expected exactly one '@'"),
+            Self::EmptyLocalPart => write!(f, "empty local part"),
+            Self::InvalidDomain => write!(f, "invalid domain"),
         }
     }
 }
@@ -63,7 +63,7 @@ impl TryFrom<String> for EmailAddress {
         {
             return Err(EmailError::InvalidDomain);
         }
-        Ok(EmailAddress(value))
+        Ok(Self(value))
     }
 }
 
@@ -84,7 +84,7 @@ impl FromStr for EmailAddress {
 }
 
 impl From<EmailAddress> for String {
-    fn from(email: EmailAddress) -> String {
+    fn from(email: EmailAddress) -> Self {
         email.0
     }
 }

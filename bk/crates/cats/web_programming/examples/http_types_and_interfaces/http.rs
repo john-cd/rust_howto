@@ -14,8 +14,6 @@
 //! Implementations of the HTTP protocol are elsewhere - see e.g. `hyper` or
 //! `reqwest`.
 
-use std::str::FromStr as _;
-
 use http::HeaderMap;
 use http::HeaderName;
 use http::HeaderValue;
