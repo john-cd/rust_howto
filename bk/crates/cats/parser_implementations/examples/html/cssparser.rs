@@ -5,7 +5,6 @@
 //! Tokenize a small CSS declaration list with `cssparser`.
 
 use cssparser::Parser;
-use cssparser::ParserInput;
 use cssparser::ToCss as _;
 use cssparser::Token;
 
@@ -16,16 +15,12 @@ use cssparser::Token;
 /// Returns an error if the declaration list contains an invalid token.
 fn main() -> anyhow::Result<()> {
     let css = "color: red; font-size: 16px;";
-    let mut input = ParserInput::new(css);
-    let mut parser = Parser::new(&mut input);
+    let mut parser = Parser::new(css);
 
     while !parser.is_exhausted() {
+        let location = parser.current_source_location();
         let token = parser.next().map_err(|error| {
-            anyhow::anyhow!(
-                "invalid CSS token at {:?}: {}",
-                error.location,
-                error.kind
-            )
+            anyhow::anyhow!("invalid CSS token at {location:?}: {}", error.kind)
         })?;
         match token {
             Token::Ident(ident) => println!("identifier: {}", ident.as_ref()),

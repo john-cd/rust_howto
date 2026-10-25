@@ -396,7 +396,7 @@ fn main() -> anyhow::Result<()> {
         NodeKind::Element { attrs, .. } => attrs
             .borrow()
             .iter()
-            .find(|attr| attr.name.local.as_ref() == "id")
+            .find(|attr| &*attr.name.local == "id")
             .map(|attr| attr.value.to_string())
             .ok_or_else(|| anyhow::anyhow!("book has no id attribute"))?,
         _ => anyhow::bail!("book handle is not an element"),
