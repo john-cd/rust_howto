@@ -33,8 +33,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("point forecast: {:.2?}", forecast.point);
 
     assert_eq!(forecast.point.len(), horizon);
-    for ((lo, point), hi) in
-        intervals.lower.iter().zip(&forecast.point).zip(&intervals.upper)
+    for ((lo, point), hi) in intervals
+        .lower
+        .iter()
+        .zip(&forecast.point)
+        .zip(&intervals.upper)
     {
         assert!(lo <= point && point <= hi);
     }

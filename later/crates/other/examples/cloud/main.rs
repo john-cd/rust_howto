@@ -6,8 +6,14 @@ use anyhow::Result;
 use clap::Parser;
 use clap::Subcommand;
 
+mod aws_cloudwatch;
 mod aws_lambda;
+mod aws_lambda_invoke;
+mod aws_message_bus;
+mod aws_s3_compatible;
 mod aws_sdk;
+mod aws_ses;
+mod aws_shared_config;
 mod kubernetes;
 mod shuttle;
 
@@ -25,6 +31,12 @@ enum Commands {
     /// Runs the `aws_lambda` example.
     #[command(name = "aws_lambda")]
     AwsLambda,
+    /// Runs the in-memory message bus example (no AWS calls).
+    #[command(name = "aws_message_bus")]
+    AwsMessageBus,
+    /// Prints the region of clients built from one shared configuration.
+    #[command(name = "aws_shared_config")]
+    AwsSharedConfig,
     /// Runs the `aws_sdk` example.
     #[command(name = "aws_sdk")]
     AwsSdk,
@@ -43,6 +55,8 @@ fn main() -> Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::AwsLambda => aws_lambda::run()?,
+            Commands::AwsMessageBus => aws_message_bus::run()?,
+            Commands::AwsSharedConfig => aws_shared_config::run()?,
             Commands::AwsSdk => aws_sdk::run()?,
             Commands::Kubernetes => kubernetes::run()?,
             Commands::Shuttle => shuttle::run(),

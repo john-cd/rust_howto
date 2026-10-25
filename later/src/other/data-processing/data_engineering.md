@@ -37,6 +37,26 @@
 {{#include ../../../crates/other/examples/data_processing/arrow/serde_convert.rs:example}}
 ```
 
+### Build columns with the `arrow-array` sub-crate {#arrow-sub-crates}
+
+[![arrow-array][c~arrow-array~docs~badge]][c~arrow-array~docs]{{hi:arrow-array}} [![arrow-cast][c~arrow-cast~docs~badge]][c~arrow-cast~docs]{{hi:arrow-cast}}
+
+Many projects depend on the smaller `arrow-array`, `arrow-cast` and `arrow-ipc` crates instead of the umbrella `arrow` crate, which shortens compile times and reduces binary size. `RecordBatch::try_from_iter` builds a batch from named columns and infers the schema, including nullability, from the arrays.
+
+```rust,editable
+{{#include ../../../crates/other/examples/data_processing/arrow/arrow_build.rs:example}}
+```
+
+### Save record batches as Arrow IPC files {#arrow-ipc}
+
+[![arrow-ipc][c~arrow-ipc~docs~badge]][c~arrow-ipc~docs]{{hi:arrow-ipc}}
+
+The Arrow IPC *file* format supports random access and memory mapping. The IPC *stream* format has no footer and suits sockets and pipes. Use Arrow IPC to exchange columnar data between processes or with other Arrow libraries (Polars, DataFusion, Python's `pyarrow`) without a conversion step; use Parquet instead when compression and long-term storage matter more than zero-copy reads.
+
+```rust,editable
+{{#include ../../../crates/other/examples/data_processing/arrow/arrow_ipc_file.rs:example}}
+```
+
 ## Query In-memory Data with `datafusion` {#datafusion}
 
 [![datafusion][c~datafusion~docs~badge]][c~datafusion~docs]{{hi:datafusion}}

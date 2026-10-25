@@ -62,3 +62,8 @@
 [p~option]: ../../standard-library/optional_values.md
 [p~traits]: ../../language/traits.md
 [p~vectors]: ../data-structures/vectors.md
+
+[ex~mathematics~minimize-a-function-with-nelder-mead]: optimization.md#minimize-a-function-with-nelder-mead
+[ex~mathematics~minimize-a-function-with-cma-es]: optimization.md#minimize-a-function-with-cma-es
+[ex~mathematics~minimize-a-function-with-particle-swarm-optimization]: optimization.md#minimize-a-function-with-particle-swarm-optimization
+[ex~mathematics~maximize-fitness-with-a-genetic-algorithm]: optimization.md#maximize-fitness-with-a-genetic-algorithm

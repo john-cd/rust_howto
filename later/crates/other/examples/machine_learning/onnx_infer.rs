@@ -48,7 +48,8 @@ impl Engine {
 
     /// Replaces the model. Calls in flight finish on the old one.
     fn hot_swap(&self, version: u32, bytes: &[u8]) -> Result<()> {
-        self.model.store(Arc::new(Model::load(&self.env, version, bytes)?));
+        self.model
+            .store(Arc::new(Model::load(&self.env, version, bytes)?));
         Ok(())
     }
 
