@@ -299,18 +299,18 @@ Five issues are closed and recorded under COMPLETED. The other five are implemen
 - [#268](https://github.com/john-cd/rust_howto/issues/268) — **P3** — Fractal/threadpool example implemented in `6d753313c`; focused test and Clippy pass, full `just ca` / `just bb` remain blocked.
 - [#238](https://github.com/john-cd/rust_howto/issues/238) — **P3** — Networking CLI chapter implemented in `2562faeb2`; open pending `just bb`.
 
-### List 36 — OS, FFI, native TLS and media pages (Codex F)
+### List 36 — 6 of 10 completed
 
-- [#438](https://github.com/john-cd/rust_howto/issues/438) — **P3** — Write the Windows API chapter (`windows`, `winapi`).
-- [#430](https://github.com/john-cd/rust_howto/issues/430) — **P3** — Write the low-level system calls chapter.
-- [#436](https://github.com/john-cd/rust_howto/issues/436) — **P3** — Write the Unix API chapter.
-- [#738](https://github.com/john-cd/rust_howto/issues/738) — **P4** — Finish the `cxx` bridge example.
-- [#696](https://github.com/john-cd/rust_howto/issues/696) — **P3** — Finish the `native_tls` example.
-- [#225](https://github.com/john-cd/rust_howto/issues/225) — **P3** — Rewrite the basic authentication example without network.
-- [#645](https://github.com/john-cd/rust_howto/issues/645) — **P3** — Expand the streams chapter and rewrite `streams2.rs` (network).
-- [#519](https://github.com/john-cd/rust_howto/issues/519) — **P3** — Write the static website generators chapter.
-- [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Write the video chapter.
-- [#638](https://github.com/john-cd/rust_howto/issues/638) — **P4** — Write the clipboard chapter.
+Closed and integrated into local `develop`: [#438](https://github.com/john-cd/rust_howto/issues/438) (`cef3d5a59`), [#430](https://github.com/john-cd/rust_howto/issues/430) (`5875e3102`), [#436](https://github.com/john-cd/rust_howto/issues/436) (`16f444279`), [#645](https://github.com/john-cd/rust_howto/issues/645) (`691ebc1f3`), and [#519](https://github.com/john-cd/rust_howto/issues/519) (`5a3ae73e1`). [#696](https://github.com/john-cd/rust_howto/issues/696) was already closed and its implementation is integrated (`9c97f92da`).
+
+Implemented in local `develop`, still open pending required gates:
+
+- [#738](https://github.com/john-cd/rust_howto/issues/738) — **P4** — CXX bridge; test and strict Clippy passed, `just bb` remains blocked (`25647c5dc`).
+- [#225](https://github.com/john-cd/rust_howto/issues/225) — **P3** — Offline Basic authentication test now asserts 200/401; focused test and strict Clippy passed (`5fc4c0b74`).
+- [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter covers FFmpeg, GStreamer, installation, and frame analysis; test and strict Clippy passed (`11f2693fd`).
+- [#638](https://github.com/john-cd/rust_howto/issues/638) — **P4** — Clipboard chapter covers platform caveats and local references (`dc09ec89a`).
+
+The full book build (`cd bk && just bb`) fails in `aws-lc-sys` because NASM is not visible to the build shell, then MSVC reports `LNK1114`. The full `just ca` gate stops because `--locked` would need to update `bk/crates/Cargo.lock`. The Windows `just refdefs check` recipe is unavailable; the equivalent Python check finds stale generated `float_cmp` entries in `bk/src/refs/dependency-refs.md`. These blockers and the exact remaining gates are recorded on the open issues. Focused tests, strict Clippy, and Markdown formatting/link checks are recorded above and in the issue comments. `TODO Reviewed` markers were preserved.
 
 ### List 37 — Desktop GUI, game engine and GPU examples (Codex G)
 
