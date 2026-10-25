@@ -28,6 +28,10 @@ const INTERPOLATION_STEPS: usize = 4;
 /// Serializes a sphere: magic, sample rate, HRIR length, vertex count, index
 /// count, face indices, then for each vertex its position and both HRIRs
 /// (little endian).
+#[expect(
+    clippy::little_endian_bytes,
+    reason = "the HRIR sphere file format is little-endian"
+)]
 fn tetrahedron_sphere_bytes(left_gain: f32, right_gain: f32) -> Vec<u8> {
     let vertices = [
         [1.0_f32, 1.0, 1.0],

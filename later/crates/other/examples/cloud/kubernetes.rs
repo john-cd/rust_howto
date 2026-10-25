@@ -55,7 +55,7 @@ pub struct EchoStatus {
 
 /// Reconciliation errors.
 #[derive(Debug, thiserror::Error)]
-pub enum Error {
+pub enum ReconcileError {
     /// The `Echo` has no name or UID, so it cannot own a `Deployment`.
     #[error("the Echo is missing metadata")]
     MissingMetadata,
@@ -74,13 +74,13 @@ struct Context {
 
 /// A pure function from the spec to the desired `Deployment`: it is
 /// idempotent and can be unit-tested without a cluster.
-pub fn desired_deployment(echo: &Echo) -> Result<Deployment, Error> {
+pub fn desired_deployment(echo: &Echo) -> Result<Deployment, ReconcileError> {
     let name = echo.name_any();
     // The owner reference makes Kubernetes garbage-collect the Deployment
     // when the `Echo` is deleted.
     let owner = echo
         .controller_owner_ref(&())
-        .ok_or(Error::MissingMetadata)?;
+        .ok_or(ReconcileError::MissingMetadata)?;
     Ok(serde_json::from_value(json!({
         "apiVersion": "apps/v1",
         "kind": "Deployment",
@@ -104,8 +104,8 @@ pub fn desired_deployment(echo: &Echo) -> Result<Deployment, Error> {
 async fn reconcile(
     echo: Arc<Echo>,
     ctx: Arc<Context>,
-) -> Result<Action, Error> {
-    let namespace = echo.namespace().ok_or(Error::MissingMetadata)?;
+) -> Result<Action, ReconcileError> {
+    let namespace = echo.namespace().ok_or(ReconcileError::MissingMetadata)?;
     let deployments: Api<Deployment> =
         Api::namespaced(ctx.client.clone(), &namespace);
     let desired = desired_deployment(&echo)?;
@@ -137,7 +137,7 @@ async fn reconcile(
 }
 
 /// Decides what to do after a failed reconciliation: retry later.
-fn error_policy(_echo: Arc<Echo>, error: &Error, _ctx: Arc<Context>) -> Action {
+fn error_policy(_echo: Arc<Echo>, error: &ReconcileError, _ctx: Arc<Context>) -> Action {
     eprintln!("reconcile failed: {error}");
     Action::requeue(Duration::from_secs(15))
 }
@@ -205,7 +205,7 @@ mod tests {
     }
 
     #[test]
-    fn desired_deployment_follows_the_spec() -> Result<(), Error> {
+    fn desired_deployment_follows_the_spec() -> Result<(), ReconcileError> {
         let deployment = desired_deployment(&echo())?;
         let spec = deployment.spec.expect("spec");
         assert_eq!(spec.replicas, Some(2));
@@ -220,7 +220,7 @@ mod tests {
         echo.metadata.uid = None;
         assert!(matches!(
             desired_deployment(&echo),
-            Err(Error::MissingMetadata)
+            Err(ReconcileError::MissingMetadata)
         ));
     }
 

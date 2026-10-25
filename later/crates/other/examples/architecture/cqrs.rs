@@ -348,12 +348,13 @@ mod query {
     use super::domain::Product;
     use super::read_store::ProductRepository;
 
+    /// Reads product data to answer queries in the CQRS example.
+    ///
     /// Query Handler:
     /// - Handles read requests.
     // - Maintains a read-optimized representation of the data.
     // - Is updated by processing events from the Event Store.
     // - Uses a hashmap as an in-memory database for the read model.
-    /// Reads product data to answer queries in the CQRS example.
     pub struct QueryHandler<R: ProductRepository> {
         /// The repository of products to read from.
         read_repo: R,
