@@ -51,7 +51,7 @@ Many projects depend on the smaller `arrow-array`, `arrow-cast` and `arrow-ipc` 
 
 [![arrow-ipc][c~arrow-ipc~docs~badge]][c~arrow-ipc~docs]{{hi:arrow-ipc}}
 
-The Arrow IPC *file* format supports random access and memory mapping. The IPC *stream* format has no footer and suits sockets and pipes. Use Arrow IPC to exchange columnar data between processes or with other Arrow libraries (Polars, DataFusion, Python's `pyarrow`) without a conversion step; use Parquet instead when compression and long-term storage matter more than zero-copy reads.
+The Arrow IPC _file_ format supports random access and memory mapping. The IPC _stream_ format has no footer and suits sockets and pipes. Use Arrow IPC to exchange columnar data between processes and Arrow-compatible clients such as Python's `pyarrow`; use Parquet instead when compression and long-term storage matter more than zero-copy reads.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/data_processing/arrow/arrow_ipc_file.rs:example}}
@@ -64,37 +64,31 @@ The Arrow IPC *file* format supports random access and memory mapping. The IPC *
 [![datafusion~repo][c~datafusion~repo~badge]][c~datafusion~repo]
 [![datafusion~lib.rs][c~datafusion~lib.rs~badge]][c~datafusion~lib.rs]
 
-[![datafusion][c~datafusion~docs~badge]][c~datafusion~docs]↗{{hi:datafusion}} is the `Apache Arrow DataFusion` {{i:SQL}} Query Engine.
-
-{{i:Apache DataFusion}} is an in-memory query engine that uses Apache Arrow as the memory model
-
-[`datafusion`][c~datafusion~docs]↗{{hi:datafusion}} offers SQL and Dataframe APIs, excellent performance, built-in support for CSV, Parquet, JSON, and Avro, plus extensive customization. DataFusion is great for building projects such as domain specific query engines, new database platforms and data pipelines, query languages and more.
+[`datafusion`][c~datafusion~docs]↗{{hi:datafusion}} is an extensible in-process SQL query engine built on Apache Arrow. It can query CSV, Parquet, JSON, and Avro data and can serve as the query layer for a database, data pipeline, or domain-specific engine.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/datafusion/datafusion.rs:example}}
 ```
 
-## `databend` {#databend}
+## Distributed SQL with `ballista` {#ballista}
 
-`databend`
+[`ballista`][c~ballista~docs]↗{{hi:ballista}} is a distributed query engine built on Apache Arrow and DataFusion. It extends DataFusion's query model across a cluster; choose it when a workload needs distributed execution rather than a single-process engine.
 
-Modern alternative to Snowflake. Cost-effective and simple for massive-scale analytics. [datafuselabs databend][databend~repo]↗{{hi:Analytics}}
+## DataFrame processing {#dataframes}
 
-## `rerun` {#rerun}
+For in-memory table operations, see [[dataframes | Dataframes]], which covers Polars. This page focuses on Arrow interchange and query engines rather than repeating DataFrame recipes.
 
-[![rerun~website][c~rerun~website~badge]][c~rerun~website] [![rerun][c~rerun~docs~badge]][c~rerun~docs] [![rerun~crates.io][c~rerun~crates.io~badge]][c~rerun~crates.io] [![rerun~repo][c~rerun~repo~badge]][c~rerun~repo] [![rerun~lib.rs][c~rerun~lib.rs~badge]][c~rerun~lib.rs]{{hi:rerun}}{{hi:Mesh}}{{hi:Plotting}}{{hi:Point-cloud}}{{hi:Robotics}}{{hi:Visualization}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}} [![cat~computer-vision][cat~computer-vision~badge]][cat~computer-vision]{{hi:Computer vision}}
+## Data apps with Spice.ai {#spice-ai}
 
-[`rerun`][c~rerun~repo]↗ visualizes streams of multi-modal data. (see also [[science_robotics | Robotics]]).
+[Spice.ai][spice.ai~website]↗ is a Rust-based query, search, and inference runtime for data applications. Its SQL and Arrow Flight interfaces connect applications to federated data sources; it is a runtime to deploy, not a Rust crate to add as a library dependency.
 
-Log images, point clouds, etc, and visualize them effortlessly.
+## Query JSON documents with JSONPath {#jsonpath}
 
-## Other Frameworks {#other-frameworks}
+[`serde_json_path`][c~serde_json_path~docs]↗ provides JSONPath queries over `serde_json` values. [`jsonpath-rust`][c~jsonpath-rust~docs] is another option; compare supported query features and error behavior against the JSONPath version your application needs.
 
-- Big [Data Processing][p~data-processing] for the AI Era: [LakeSail][lakesail~website]↗.
+## Visualize results {#visualization}
 
-## References {#references .skip}
-
-- Rust Data Engineering course By Alfredo Deza et al., O'Reilly{{hi:Data engineering}}.
+Use a visualization crate after selecting and transforming data; see [[visualization | Visualization]] for plotting and charting options.
 
 ## Related Topics {#related-topics .skip}
 
@@ -105,29 +99,3 @@ Log images, point clouds, etc, and visualize them effortlessly.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[data_engineering: organize / edit](https://github.com/john-cd/rust_howto/issues/589)
-
-[![jsonschema][c~jsonschema~docs~badge]][c~jsonschema~docs] [![jsonschema~crates.io][c~jsonschema~crates.io~badge]][c~jsonschema~crates.io] [![jsonschema~repo][c~jsonschema~repo~badge]][c~jsonschema~repo] [![jsonschema~lib.rs][c~jsonschema~lib.rs~badge]][c~jsonschema~lib.rs]{{hi:jsonschema}}{{hi:Validation}}{{hi:jsonschema}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
-
-[![jsonpath][c~jsonpath~docs~badge]][c~jsonpath~docs] [![jsonpath~crates.io][c~jsonpath~crates.io~badge]][c~jsonpath~crates.io] [![jsonpath~repo][c~jsonpath~repo~badge]][c~jsonpath~repo] [![jsonpath~lib.rs][c~jsonpath~lib.rs~badge]][c~jsonpath~lib.rs]{{hi:jsonpath}}{{hi:JSON}}{{hi:Query}}{{hi:XPath}}{{hi:Javascript}}{{hi:jsonpath}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
-
-JSONPath for Rust
-
----
-
-[![jsonpath-rust][c~jsonpath-rust~docs~badge]][c~jsonpath-rust~docs] [![jsonpath-rust~crates.io][c~jsonpath-rust~crates.io~badge]][c~jsonpath-rust~crates.io] [![jsonpath-rust~repo][c~jsonpath-rust~repo~badge]][c~jsonpath-rust~repo] [![jsonpath-rust~lib.rs][c~jsonpath-rust~lib.rs~badge]][c~jsonpath-rust~lib.rs]{{hi:jsonpath-rust}}{{hi:JSON}}{{hi:XPath}}{{hi:jsonpath}}{{hi:json-path}}{{hi:jsonpath-rust}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
-
-The library provides the basic functionality to find the set of the data according to the filtering query.
-
----
-
-- [`ballista`][c~ballista~docs]↗.{{hi:ballista}}
-- [`spice.ai`][spice.ai~website]↗.{{hi:spice.ai}}
-- [`datawithrust.com`][datawithrust~website]↗.
-- [`plotters`][c~plotters~docs]↗.
-- [`polars` additional docs][c~polars~more-docs~website]↗.
-- [`ndarray`][c~ndarray~repo]↗.
-
-</div>
