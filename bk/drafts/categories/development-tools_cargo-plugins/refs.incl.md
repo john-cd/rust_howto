@@ -1,10 +1,15 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
+[cargo-crev~repository]: https://github.com/crev-dev/cargo-crev
+[cargo-geiger~repository]: https://github.com/geiger-rs/cargo-geiger
+[cargo-machete~repository]: https://github.com/bnjbvr/cargo-machete
+[cargo-udeps~repository]: https://github.com/est31/cargo-udeps
+[cargo-vet~repository]: https://github.com/mozilla/cargo-vet
 [ex~development-tools_cargo-plugins~cargo-audit]: auditing.md#cargo-audit
 [ex~development-tools_cargo-plugins~cargo-auditable]: auditing.md#cargo-auditable
 [ex~development-tools_cargo-plugins~cargo-cache]: maintaining.md#cargo-cache
-[ex~development-tools_cargo-plugins~cargo-cyclonedx]: auditing.md#cargo-cyclonedx
 [ex~development-tools_cargo-plugins~cargo-clippy]: code_formatting_linting.md#cargo-clippy
+[ex~development-tools_cargo-plugins~cargo-cyclonedx]: auditing.md#cargo-cyclonedx
 [ex~development-tools_cargo-plugins~cargo-deny]: auditing.md#cargo-deny
 [ex~development-tools_cargo-plugins~cargo-edit]: dependency_management.md#cargo-edit
 [ex~development-tools_cargo-plugins~cargo-expand]: code_writing.md#cargo-expand
@@ -14,8 +19,8 @@
 [ex~development-tools_cargo-plugins~cargo-husky]: code_formatting_linting.md#cargo-husky
 [ex~development-tools_cargo-plugins~cargo-license]: auditing.md#cargo-license
 [ex~development-tools_cargo-plugins~cargo-limit]: watching_for_changes.md#cargo-limit
-[ex~development-tools_cargo-plugins~cargo-modules]: code_writing.md#cargo-modules
 [ex~development-tools_cargo-plugins~cargo-make]: building.md#cargo-make
+[ex~development-tools_cargo-plugins~cargo-modules]: code_writing.md#cargo-modules
 [ex~development-tools_cargo-plugins~cargo-open]: code_writing.md#cargo-open
 [ex~development-tools_cargo-plugins~cargo-outdated]: dependency_management.md#cargo-outdated
 [ex~development-tools_cargo-plugins~cargo-semver-checks]: maintaining.md#cargo-semver-checks
@@ -28,14 +33,9 @@
 [ex~development-tools_cargo-plugins~rust-digger]: dependency_management.md#rust-digger
 [ex~development-tools_cargo-plugins~rustfix]: code_formatting_linting.md#rustfix
 [ex~development-tools_cargo-plugins~rustfmt]: code_formatting_linting.md#rustfmt
+[ex~development-tools_cargo-plugins~write-cargo-subcommand]: write_cargo_plugin.md#write-cargo-subcommand
 [ex~development-tools_cargo-plugins~xshell]: building.md#xshell
 [ex~development-tools_cargo-plugins~zig]: cross_compiling.md#zig
-[cargo-vet~repository]: https://github.com/mozilla/cargo-vet
-[cargo-crev~repository]: https://github.com/crev-dev/cargo-crev
-[cargo-geiger~repository]: https://github.com/geiger-rs/cargo-geiger
-[cargo-machete~repository]: https://github.com/bnjbvr/cargo-machete
-[cargo-udeps~repository]: https://github.com/est31/cargo-udeps
-[rustsec~advisories]: https://rustsec.org/advisories/
 [p~cargo]: ../development-tools/cargo/cargo.md
 [p~code-building]: ../development-tools/compilation/building.md#build-code
 [p~code-coverage]: ../development-tools_testing/code_coverage.md
@@ -56,3 +56,4 @@
 [p~regex]: ../text-processing/regex.md
 [p~testing]: ../development-tools_testing/testing.md
 [p~toml]: ../parser-implementations/toml.md
+[rustsec~advisories]: https://rustsec.org/advisories/

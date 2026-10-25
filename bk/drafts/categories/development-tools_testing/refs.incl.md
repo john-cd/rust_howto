@@ -1,23 +1,24 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [cargo-llvm-cov~repo]: https://github.com/taiki-e/cargo-llvm-cov
-
 [ex~development-tools_testing~afl]: fuzzing.md#afl
-[ex~development-tools_testing~bolero]: fuzzing.md#bolero
 [ex~development-tools_testing~approx]: assertions.md#approx
 [ex~development-tools_testing~assertion_libraries]: assertions.md#assertion_libraries
 [ex~development-tools_testing~async_testing]: testing.md#async_testing
+[ex~development-tools_testing~bolero]: fuzzing.md#bolero
 [ex~development-tools_testing~cargo-fuzz]: fuzzing.md#cargo-fuzz
+[ex~development-tools_testing~cargo-llvm-cov]: code_coverage.md#cargo-llvm-cov
 [ex~development-tools_testing~cargo-nextest]: test_runners.md#cargo-nextest
 [ex~development-tools_testing~cargo-tarpaulin]: code_coverage.md#cargo-tarpaulin
-[ex~development-tools_testing~cargo-llvm-cov]: code_coverage.md#cargo-llvm-cov
 [ex~development-tools_testing~cargo-test]: test_runners.md#cargo-test
+[ex~development-tools_testing~cli-testing]: testing.md#cli-testing
 [ex~development-tools_testing~coverage_testing]: code_coverage.md#coverage_testing
 [ex~development-tools_testing~custom-message]: assertions.md#custom-message
 [ex~development-tools_testing~doc_testing]: testing.md#doc_testing
 [ex~development-tools_testing~faux]: mocking.md#faux
 [ex~development-tools_testing~insta]: testing.md#insta
 [ex~development-tools_testing~integration_testing]: testing.md#integration_testing
+[ex~development-tools_testing~lcov]: code_coverage.md#lcov
 [ex~development-tools_testing~mocking]: mocking.md#mocking
 [ex~development-tools_testing~proptesting]: property_based_testing.md#proptesting
 [ex~development-tools_testing~standard-assertions]: assertions.md#standard-library-macros
