@@ -17645,9 +17645,9 @@ checksum = "1fafa6961cabd9c63bcd77a45d7e3b7f3b552b70417831fb0f56db717e72407e"
 
 [[package]]
 name = "morphorm"
-version = "0.8.0"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "810a18a0afed4cf6e711e3bd61d1611cadf81d5281a89af945d943868a6a8060"
+checksum = "a0997abf77163b581acc08914106e206f6cc9eac30e4512b9a611dd8e6916b13"
 dependencies = [
  "smallvec",
 ]

@@ -6,7 +6,7 @@
 use morphorm::*;
 
 // Morphorm is a UI layout engine.
-// In version 0.8, it requires implementing Cache, Tree, and Store traits.
+// In version 0.9, it requires implementing Cache, Tree, and Store traits.
 
 /// A node of the layout tree.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
@@ -64,12 +64,15 @@ impl Cache for SimpleCache {
 pub struct SimpleTree {
     /// The children of each node.
     pub children: std::collections::HashMap<Entity, Vec<Entity>>,
+    /// The parent of each node.
+    pub parents: std::collections::HashMap<Entity, Entity>,
 }
 
 impl SimpleTree {
     /// Adds `entity` to the tree, as a child of `parent` if there is one.
     pub fn add(&mut self, entity: Entity, parent: Option<Entity>) {
         if let Some(p) = parent {
+            self.parents.insert(entity, p);
             self.children.entry(p).or_default().push(entity);
         }
     }
@@ -106,6 +109,10 @@ impl Node for Entity {
         ChildIter {
             iter: tree.children.get(self).unwrap_or(&EMPTY).iter(),
         }
+    }
+
+    fn parent<'t>(&'t self, tree: &'t Self::Tree) -> Option<&'t Self> {
+        tree.parents.get(self)
     }
 
     fn layout_type(&self, _store: &Self::Store) -> Option<LayoutType> {
@@ -213,30 +220,6 @@ impl Node for Entity {
 
     fn max_height(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Auto)
-    }
-
-    fn border_left(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
-    }
-
-    fn border_right(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
-    }
-
-    fn border_top(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
-    }
-
-    fn border_bottom(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
-    }
-
-    fn vertical_scroll(&self, _: &Self::Store) -> Option<f32> {
-        Some(0.0)
-    }
-
-    fn horizontal_scroll(&self, _: &Self::Store) -> Option<f32> {
-        Some(0.0)
     }
 
     fn grid_columns(&self, _: &Self::Store) -> Option<Vec<Units>> {
