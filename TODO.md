@@ -186,6 +186,13 @@ Added 2026-10-25. Lists A–D from the [#1955 comments](https://github.com/john-
 - [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **P3** — Verify refs and links after restoring dropped content (#1904).
 - [#1929](https://github.com/john-cd/rust_howto/issues/1929) — **P4** — Validate the ONNX inference example with ort (PR #1964).
 
+Validation update (2026-10-25):
+
+- #1874 is already integrated in `origin/develop` at `7175a9f3e`; standalone tests, strict Clippy, and formatting passed.
+- For #1867, Lyon and FemtoVG tests and strict Clippy passed; the interactive FemtoVG test remains ignored on this headless host.
+- The #1868 wasm strict Clippy gate passed with the repository's wrapper-disabled workaround.
+- #1859's `later` `just ca` remains incomplete. AWS-LC built with CMake and one job, but sccache disconnected while compiling `clang-sys`. The full `bk` gate and remaining List 31 checks are outstanding.
+
 ### List 32 — Encoding, database and tooling examples (Codex B)
 
 - [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters build and regenerate Cap'n Proto code with `capnp` installed.
