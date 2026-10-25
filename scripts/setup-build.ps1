@@ -11,16 +11,11 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path -Parent $PSScriptRoot
-$mainRepo = if ((Split-Path -Leaf (Split-Path -Parent $repo)) -eq '.worktrees') {
-    Split-Path -Parent (Split-Path -Parent $repo)
-} else { $repo }
+$commonGitDir = (& git -C $repo rev-parse --path-format=absolute --git-common-dir)
+if ($LASTEXITCODE) { throw 'Could not locate the shared Git directory.' }
+$mainRepo = Split-Path -Parent $commonGitDir.Trim()
 
-if ($RestartCache) {
-    if (Get-Process cargo,rustc -ErrorAction SilentlyContinue) {
-        throw 'Wait for running Cargo/rustc processes before restarting the shared sccache daemon.'
-    }
-    # sccache reads BASEDIRS when its daemon starts, not on each client request.
-    # Retain other projects' bases, reusable slots, and every registered worktree.
+function Get-CacheBaseDirs {
     $configuredBases = @(
         $ExistingBaseDirs,
         [Environment]::GetEnvironmentVariable('SCCACHE_BASEDIRS', 'User'),
@@ -34,7 +29,16 @@ if ($RestartCache) {
     })
     if ($LASTEXITCODE) { throw 'Could not enumerate registered Git worktrees.' }
     $bases += $worktreePaths
-    $env:SCCACHE_BASEDIRS = ($bases | Select-Object -Unique) -join ';'
+    return $bases | Select-Object -Unique
+}
+
+if ($RestartCache) {
+    if (Get-Process cargo,rustc -ErrorAction SilentlyContinue) {
+        throw 'Wait for running Cargo/rustc processes before restarting the shared sccache daemon.'
+    }
+    # sccache reads BASEDIRS when its daemon starts, not on each client request.
+    # Retain other projects' bases, reusable slots, and every registered worktree.
+    $env:SCCACHE_BASEDIRS = (Get-CacheBaseDirs) -join ';'
     & sccache --stop-server
     & sccache --start-server
     if ($LASTEXITCODE) { throw 'sccache startup failed.' }

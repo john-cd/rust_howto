@@ -4,17 +4,11 @@
 set -euo pipefail
 
 repo=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)
-main_repo=$repo
-if [[ $(basename -- "$(dirname -- "$repo")") == .worktrees ]]; then
-    main_repo=$(dirname -- "$(dirname -- "$repo")")
-fi
+common_git_dir=$(git -C "$repo" rev-parse --path-format=absolute --git-common-dir)
+main_repo=$(dirname -- "$common_git_dir")
 
-if [[ ${1:-} == --restart-cache ]]; then
-    if pgrep -x 'cargo|rustc' >/dev/null; then
-        echo 'Wait for running Cargo/rustc processes before restarting sccache.' >&2
-        exit 1
-    fi
-    bases=${2:-${SCCACHE_BASEDIRS:-}}
+get_cache_bases() {
+    local bases=${1:-${SCCACHE_BASEDIRS:-}}
     append_base() {
         case ":$bases:" in
             *":$1:"*) ;;
@@ -25,11 +19,20 @@ if [[ ${1:-} == --restart-cache ]]; then
     for slot in {a..z}; do
         append_base "$main_repo/.worktrees/$slot"
     done
+    local worktrees
     worktrees=$(git -C "$main_repo" worktree list --porcelain)
     while IFS= read -r line; do
         [[ $line == 'worktree '* ]] && append_base "${line#worktree }"
     done <<< "$worktrees"
-    export SCCACHE_BASEDIRS=$bases
+    printf '%s' "$bases"
+}
+
+if [[ ${1:-} == --restart-cache ]]; then
+    if pgrep -x 'cargo|rustc' >/dev/null; then
+        echo 'Wait for running Cargo/rustc processes before restarting sccache.' >&2
+        exit 1
+    fi
+    export SCCACHE_BASEDIRS=$(get_cache_bases "${2:-${SCCACHE_BASEDIRS:-}}")
     sccache --stop-server || true # An already stopped daemon needs no action.
     sccache --start-server
     sccache --show-stats
