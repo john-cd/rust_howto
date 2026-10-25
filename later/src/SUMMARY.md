@@ -90,6 +90,7 @@
 
 - [Finance](categories/finance/index.md)
   - [Quant](categories/finance/quant.md)
+  - [Market data](categories/finance/market_data.md)
 
 - [Games](categories/games/index.md)
 

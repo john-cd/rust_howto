@@ -1,10 +1,16 @@
-//! Runs the quantitative finance example.
+//! Runs the quantitative finance examples.
 //!
 //! TODO Reviewed ??-??-2026.
 
+mod black_scholes;
+mod rolling_stats;
 mod rustquant;
+mod trading_days;
 
-/// Runs the quant example.
-fn main() {
+/// Runs the quant examples.
+fn main() -> trading_calendar::Result<()> {
     rustquant::run();
+    black_scholes::run();
+    rolling_stats::run();
+    trading_days::run()
 }
