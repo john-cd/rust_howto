@@ -14,7 +14,7 @@
 
 Its `Read`, `BufRead`, and `Write` adapters compose with files, sockets, and in-memory buffers. Select the matching encoder and decoder for the format expected by the other side; gzip and zlib add format metadata around DEFLATE data.
 
-The file example below uses unique temporary files and removes them automatically when they are dropped. It is marked `noplayground` because the browser playground cannot access the local filesystem.
+The in-memory example below needs no files; the next section works with files.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/compression/examples/compression/flate2.rs:example}}

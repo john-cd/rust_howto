@@ -39,11 +39,11 @@ log = "0.4.34"
 log4rs = "1.4.0"
 metrics = "0.24.6" # Instrumentation facade for emitting counters and histograms.
 metrics-exporter-prometheus = { version = "0.18.3", default-features = false } # In-memory recorder and Prometheus exposition format.
-opentelemetry = { version = "0.31.0", optional = true }
+opentelemetry = { version = "0.32.0", optional = true }
 # Builds an OTLP/HTTP exporter for OpenObserve traces.
-opentelemetry-otlp = { version = "0.31.0", default-features = false, features = ["http-proto", "reqwest-blocking-client", "trace"], optional = true }
+opentelemetry-otlp = { version = "0.32.0", default-features = false, features = ["http-proto", "reqwest-blocking-client", "trace"], optional = true }
 # Exports spans to stdout for a self-contained example.
-opentelemetry-stdout = { version = "0.31.0", optional = true }
+opentelemetry-stdout = { version = "0.32.0", optional = true }
 # Provides tracer providers for the stdout exporter example.
 opentelemetry_sdk = { version = "0.31.0", default-features = false, features = ["rt-tokio", "trace"], optional = true }
 serde = { version = "1.0.229", features = ["derive"] }
