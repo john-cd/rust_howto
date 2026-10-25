@@ -9,9 +9,10 @@ use anyhow::Context as _;
 use anyhow::Result;
 use async_zip::Compression;
 use async_zip::ZipEntryBuilder;
-use async_zip::base::read::mem::ZipFileReader;
+use async_zip::base::read1::seek::ZipArchiveReader;
 use async_zip::base::write::ZipFileWriter;
 use futures_lite::io::AsyncReadExt as _;
+use futures_lite::io::Cursor;
 use tokio::fs::File;
 use tokio::io::AsyncReadExt as _;
 use tokio_util::compat::TokioAsyncWriteCompatExt as _;
@@ -43,20 +44,19 @@ async fn main() -> Result<()> {
     let mut buffer = Vec::new();
     file.read_to_end(&mut buffer).await?;
 
-    let reader = ZipFileReader::new(buffer).await?;
+    let mut reader = ZipArchiveReader::open(Cursor::new(buffer)).await?;
 
-    anyhow::ensure!(
-        reader.file().entries().len() == 1,
-        "expected one ZIP entry"
-    );
-    for (i, entry) in reader.file().entries().iter().enumerate() {
-        let filename = entry
-            .filename()
+    anyhow::ensure!(reader.cdrs().len() == 1, "expected one ZIP entry");
+    for i in 0..reader.cdrs().len() {
+        // File names in an archive are untrusted; here we only compare them.
+        let filename = reader.cdrs()[i]
+            .insecure_file_name
             .as_str()
-            .context("ZIP filename is not UTF-8")?;
+            .context("ZIP filename is not UTF-8")?
+            .to_owned();
         anyhow::ensure!(filename == "hello.txt", "unexpected ZIP entry name");
         println!("Entry {i}: {filename}");
-        let mut entry_reader = reader.reader_with_entry(i).await?;
+        let mut entry_reader = reader.file(i).await?;
         let mut entry_content = String::new();
         entry_reader.read_to_string(&mut entry_content).await?;
         anyhow::ensure!(
