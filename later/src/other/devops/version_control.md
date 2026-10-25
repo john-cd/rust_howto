@@ -8,96 +8,53 @@ Rust projects use version control (typically [`git`][git~website]↗{{hi:git}}) 
 
 The following describes tools that make version control workflows more reliable and easier to maintain for Rust projects.
 
-## Check Your Code Before Committing it {#check-your-code-before-committing}
+## Check Your Code Before Committing {#check-your-code-before-committing}
 
-[![cargo-husky][c~cargo-husky~docs~badge]][c~cargo-husky~docs]{{hi:cargo-husky}}
-[![cargo-husky~crates.io][c~cargo-husky~crates.io~badge]][c~cargo-husky~crates.io]
-[![cargo-husky~repo][c~cargo-husky~repo~badge]][c~cargo-husky~repo]
-[![cargo-husky~lib.rs][c~cargo-husky~lib.rs~badge]][c~cargo-husky~lib.rs]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+Git hooks can run quick, deterministic checks before a commit or push. They help catch mistakes early, but they are a convenience for each local clone: hooks can be skipped or absent, so continuous integration remains the authoritative shared check. Keep hooks short and document their commands so contributors can also run them directly.
 
-Git hook scripts are useful for automatically identifying simple issues, such as missing semicolons, trailing whitespace, poor [[code_formatting_linting | formatting]] of the code or [configuration][p~configuration] files, when committing in [`git`][git~website]↗{{hi:git}}, prior to submission to code review or start of a CI workflow.
+## Choose a Hook Manager {#choose-a-hook-manager}
 
-[cargo-husky][c~cargo-husky~repo]↗{{hi:cargo-husky}} setup Git hooks automatically for [`cargo`][c~cargo~docs]↗{{hi:cargo}} projects with 🐶.
+[`pre-commit`][pre-commit.com~website]↗ is a Python framework with a broad ecosystem of reusable hooks and configuration in `.pre-commit-config.yaml`. Install it with your preferred Python tool and register the hooks with `pre-commit install`; use `pre-commit run --all-files` to run them across the repository.
 
-Add the [`cargo-husky`][c~cargo-husky~docs]↗{{hi:cargo-husky}} crate to the `[dev-dependencies]` section of your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
+[`prek`][prek~repo]↗ is a Rust implementation of the pre-commit workflow. It can use existing `.pre-commit-config.yaml` files and also supports a native `prek.toml` format. The repository includes both formats; choose one configuration as the source of truth for a project rather than maintaining duplicate hook lists.
 
-```toml
-[dev-dependencies]
-cargo-husky = "1"
+[`lefthook`][lefthook~repo]↗ is a language-agnostic hook manager with a YAML configuration and support for parallel jobs and staged-file selection. It is an option when a project needs more control over job execution than a simple list of pre-commit hooks.
+
+## Run Rust Checks with pre-commit {#pre-commit-rust-checks}
+
+This example uses local hooks to run workspace-wide formatting and Clippy checks when Rust files change. Those commands can be expensive for a large workspace; narrow them to the affected package or move slower checks to a pre-push hook or CI as appropriate.
+
+```yaml
+{{#include examples/pre-commit-config.yaml}}
 ```
 
-Then run tests in your project directory.
+For this configuration, install hooks with `pre-commit install`, then run `pre-commit run --all-files` to check the initial baseline. `prek install` and `prek run --all-files` provide corresponding commands when using `prek`.
 
-```sh
-cargo test
-```
+## Cargo-Integrated Hook Managers {#cargo-integrated-hook-managers}
 
-## `pre-commit` {#pre-commit}
+[`cargo-husky`][c~cargo-husky~docs]↗ installs Git hooks from a Cargo build script when the development dependency is built. Its default setup creates a `pre-push` hook that runs `cargo test`; features can add `pre-commit`, `cargo fmt`, and Clippy checks. Because the hook installation is coupled to Cargo builds, review the generated scripts and ensure they do not replace hooks managed by another tool.
 
-[`pre-commit`][pre-commit.com~website]↗ is a Python framework for managing and maintaining multi-language pre-commit hooks.
+[`rusty-hook`][rusty-hook~repo]↗ is another Rust-focused manager. Its README describes it as functional but still in beta, with hooks configured in `.rusty-hook.toml`; check the current repository and crate compatibility before adopting it.
 
-- [`pre-commit` hooks][pre-commit.com~hooks~website].
+For most projects, format with `cargo fmt --all -- --check`, lint with `cargo clippy --workspace --all-targets --all-features -- -D warnings`, and run tests at a cadence that fits their cost. Keep the same required checks in CI, even when a hook runs them locally.
 
-`pre-commit` is written in Python. Include the following into your [`Dockerfile`][dockerfile~website]↗{{hi:Dockerfile}} or run the commands by hand to install `pre-commit`:
+## Git Libraries and Rust Tools {#git-libraries-and-rust-tools}
 
-```sh
-# Install `python3`, `pipx`, `pre-commit` (Ubuntu & friends)
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y python3 pipx \
-    && pipx install pre-commit \
-    && pipx ensurepath
-```
+Use a library when an application needs to inspect or manipulate repositories directly: [`git2`][git2-rs~repo]↗ provides Rust bindings to the C `libgit2` library, while [`gix`][c~gix~docs]↗ is the entry point to the Gitoxide project's pure-Rust Git implementation. Compare their supported features and platform/build requirements for the operations your application needs.
 
-Verify that it is properly installed:
-
-```sh
-pre-commit --version
-```
-
-Add a file called `.pre-commit-config.yaml`{{hi:.pre-commit-config.yaml}} to the root of your project. Use `pre-commit sample-config` for a template.
-Edit it to configure your preferred hooks.
-
-```sh
-# Set up the git hook scripts
-pre-commit install
-
-# It's usually a good idea to run the hooks against all of the files when adding new hooks
-# (`pre-commit` will only run on the changed files during git hooks)
-pre-commit run --all-files
-```
-
-## Useful Git Hooks for Rust {#useful-git-hooks-for-rust}
-
-A few useful Git hooks for Rust projects include formatting, linting, static analysis, and tests. These hooks help enforce consistency and catch common mistakes before changes are committed.
-
-- `cargo fmt --all` for code formatting.
-- `cargo check` and `cargo clippy` for compile-time validation and linting.
-- `cargo test` or `cargo nextest run` to run unit and integration tests.
-- Targeted spell checks for README, documentation, and comments.
-- `cargo fmt --check` and `cargo clippy --all-targets --all-features` for CI-friendly validation.
+Rust also has standalone Git tools: [`gitoxide`][gitoxide~repo]↗ provides Git command-line tools, [`delta`][delta~repo]↗ is a syntax-highlighting pager for Git and diff output, and [`gitui`][gitui~repo]↗ is a terminal interface for Git repositories. These are developer tools, not Git hook managers.
 
 ## See Also {#see-also .skip}
 
-- [Rust CI Tooling][rust-ci-tooling~website]↗: Clippy, commitlint, pre-commit.
-- [`pre-commit-rust`][pre-commit-rust~repo].
-- [A pre-commit hook for `commitlint`][commitlint-pre-commit-hook~repo]↗.
+- [Rust CI Tooling][rust-ci-tooling~website]↗ for CI, Clippy, and commit checks.
+- [`pre-commit` hook collection][pre-commit.com~hooks~website]↗.
+- [Code Formatting and Linting][p~formatting] for details about `rustfmt` and Clippy.
 
 ## Related Topics {#related-topics .skip}
 
 - [[development-tools_testing | Development Tools Testing]].
 - [[development-tools_cargo-plugins | Development Tools Cargo Plugins]].
-  - [[building | Building]].
-  - [[code_formatting_linting | Code Formatting & Linting]].
-  - [[versioning | Versioning]].
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[git_hooks: write](https://github.com/john-cd/rust_howto/issues/602)
-dedupe with code_formatting_linting.
-
-- [overcommit][overcommit~repo]↗: A fully configurable and extendable Git hook manager.
-
-</div>
+- [[building | Building]].
+- [[versioning | Versioning]].
+  {{#include refs.incl.md}}
+  {{#include ../../refs/link-refs.md}}
