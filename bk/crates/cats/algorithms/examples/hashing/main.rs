@@ -11,6 +11,7 @@ mod md5;
 mod sha1;
 mod sha2;
 mod sha_digest;
+mod xxh3_checksum;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -41,6 +42,9 @@ enum Commands {
     /// Runs the `sha_digest` example.
     #[command(name = "sha_digest")]
     ShaDigest,
+    /// Runs the `xxh3_checksum` example.
+    #[command(name = "xxh3_checksum")]
+    Xxh3Checksum,
 }
 
 /// Runs the example selected on the command line.
@@ -64,6 +68,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
             Commands::ShaDigest => {
                 sha_digest::run()?;
+            }
+            Commands::Xxh3Checksum => {
+                xxh3_checksum::run();
             }
         }
     }

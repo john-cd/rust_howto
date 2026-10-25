@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 mod bitflags;
 mod bitvec;
+mod fixedbitset;
 mod flagset;
 mod roaring;
 
@@ -33,6 +34,9 @@ enum Commands {
     /// Runs the `roaring` example.
     #[command(name = "roaring")]
     Roaring,
+    /// Runs the `fixedbitset` example.
+    #[command(name = "fixedbitset")]
+    Fixedbitset,
 }
 
 /// Runs the example selected on the command line.
@@ -52,6 +56,9 @@ fn main() {
             }
             Commands::Roaring => {
                 roaring::run();
+            }
+            Commands::Fixedbitset => {
+                fixedbitset::run();
             }
         }
     }

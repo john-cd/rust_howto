@@ -5,9 +5,12 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod afit;
+mod async_trait_dyn;
 mod async_traits;
 mod async_traits2;
 mod async_traits3;
+mod rpitit_send;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -29,6 +32,15 @@ enum Commands {
     /// Runs the `async_traits3` example.
     #[command(name = "async_traits3")]
     AsyncTraits3,
+    /// Runs the `afit` example.
+    #[command(name = "afit")]
+    Afit,
+    /// Runs the `rpitit_send` example.
+    #[command(name = "rpitit_send")]
+    RpititSend,
+    /// Runs the `async_trait_dyn` example.
+    #[command(name = "async_trait_dyn")]
+    AsyncTraitDyn,
 }
 
 /// Runs the example selected on the command line.
@@ -45,6 +57,15 @@ fn main() {
             }
             Commands::AsyncTraits3 => {
                 async_traits3::run();
+            }
+            Commands::Afit => {
+                afit::run();
+            }
+            Commands::RpititSend => {
+                rpitit_send::run();
+            }
+            Commands::AsyncTraitDyn => {
+                async_trait_dyn::run();
             }
         }
     }

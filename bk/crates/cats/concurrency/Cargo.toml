@@ -50,6 +50,8 @@ parking_lot = "0.12.5"
 ractor = "0.15.13"
 rand = { version = "0.10.3", features = ["thread_rng"] }
 rayon = "1.12.0"
+ringbuf = "0.5.3"
+rtrb = "0.3.4"
 # Riker actor example in the actors chapter.
 riker = { version = "0.4.2", optional = true }
 ring = "0.17.14"
@@ -112,6 +114,11 @@ test = true
 [[example]]
 name = "shared_state"
 path = "examples/shared_state/main.rs"
+test = true
+
+[[example]]
+name = "spsc"
+path = "examples/spsc/main.rs"
 test = true
 
 [[example]]

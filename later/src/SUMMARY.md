@@ -170,6 +170,9 @@
 - [Science - Biology and Neuroscience](categories/science_neuroscience/index.md)
   - [Neuroscience and Neuroimaging](categories/science_neuroscience/neuroscience.md)
 
+- [Scheduling](other/scheduling/index.md)
+  - [Scheduling](other/scheduling/scheduling.md)
+
 - [Scripting](other/scripting/index.md)
   - [Rhai](other/scripting/rhai.md)
 
