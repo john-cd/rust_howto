@@ -1,5 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
+[c~clipboard-win~docs]: https://docs.rs/clipboard-win
+[navigator~clipboard~mdn]: https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
 [ex~gui~arboard]: clipboard.md#arboard
 [ex~gui~azul]: retained_mode_gui.md#azul
 [ex~gui~baseview]: window_creation.md#baseview
@@ -42,26 +44,26 @@
 [gtk-rs~installation-linux]: https://gtk-rs.org/gtk4-rs/stable/latest/book/installation_linux.html
 [gtk-rs~installation-windows]: https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
 [tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
-[p~apis]: ../../../drafts/categories/web-programming_http-client/apis.md
-[p~asynchronous]: ../../../drafts/categories/asynchronous/index.md
-[p~audio]: ../../../drafts/categories/multimedia_audio/audio.md
+[p~apis]: ../../../../bk/drafts/categories/web-programming_http-client/apis.md
+[p~asynchronous]: ../../../../bk/drafts/categories/asynchronous/index.md
+[p~audio]: ../multimedia_audio/audio.md
 [p~containers]: ../virtualization/containers.md
-[p~cross-platform]: ../../../drafts/other/cross-platform/index.md
-[p~data-formats]: ../../../drafts/categories/rendering_data-formats/data_formats.md
-[p~documentation]: ../../../drafts/categories/development-tools/documentation/documentation.md
+[p~cross-platform]: ../../other/cross-platform/index.md
+[p~data-formats]: ../rendering_data-formats/index.md
+[p~documentation]: ../../../../bk/drafts/categories/development-tools/documentation/documentation.md
 [p~embedded]: # "../embedded/index.md"
-[p~game-development]: ../../../drafts/categories/game-development/game_development.md
-[p~games]: ../../../drafts/categories/games/games.md
+[p~game-development]: ../game-development/game_development.md
+[p~games]: ../games/index.md
 [p~gpu]: # "../../other/gpu/gpu.md"
 [p~graphics]: # "../graphics/index.md"
 [p~egui]: immediate_mode_gui.md
 [p~gui]: index.md
 [p~html]: # "../../categories/parser-implementations/html.md"
 [p~immediate-mode-gui]: immediate_mode_gui.md
-[p~main]: ../../../drafts/language/entrypoint.md
-[p~option]: ../../../drafts/standard-library/option.md
+[p~main]: ../../../../bk/src/language/entry_points.md
+[p~option]: ../../../../bk/src/standard-library/optional_values.md
 [p~performance]: # "../../categories/development-tools_cargo-plugins/performance.md"
-[p~rendering]: ../../../drafts/categories/rendering/index.md
+[p~rendering]: ../rendering/index.md
 [p~ui-layout]: ui_layout.md
 [p~wasm]: ../wasm/index.md
-[p~windows]: ../../../drafts/categories/os_windows-apis/windows.md
+[p~windows]: ../../../../bk/drafts/categories/os_windows-apis/windows.md

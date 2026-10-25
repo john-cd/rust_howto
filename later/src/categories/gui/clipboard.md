@@ -18,7 +18,7 @@ This example uses the builder API in `arboard` 3.7.0: `set().text(...)` writes t
 {{#include ../../../crates/cats/gui/examples/clipboard/arboard.rs:example}}
 ```
 
-On Linux, X11 and Wayland clipboard contents are served by the application that set them. After that application drops its last `Clipboard` or exits, the contents may become unavailable unless another app or clipboard manager has requested or retained them. A long-running GUI should keep its `Clipboard` instance alive as appropriate; a short-lived command should account for this ownership behavior rather than assume the clipboard text will persist after exit.
+On Linux, clipboard contents are served by the application that set them, so they may become unavailable when it exits unless another app or clipboard manager has requested or retained them. The default `arboard` backend uses X11 or XWayland; for native Wayland, enable its `wayland-data-control` feature and check that the target compositor supports the required data-control protocol. If it does not, the application may need XWayland. Keep the `Clipboard` instance alive as appropriate and test clipboard persistence on the target desktop.
 
 ## Windows Clipboard Formats {#windows-clipboard-formats}
 
