@@ -1,63 +1,39 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# Command Line
+# Command-line Interface
 
-Techniques to help create command line interfaces{{hi:Command-line interface}}, such as argument parsers{{hi:Argument parsers}}, line editing{{hi:Line editing}}, or output coloring and formatting{{hi:Output coloring and formatting}}
+A command-line interface (CLI) accepts arguments and input, performs work, and presents results in a terminal. These chapters cover argument parsing, terminal output, text-based interfaces, and interactive prompts.
 
-| Topic | Relevant Rust Crates |
-|---|---|
-| [[argument_parsing | Argument Parsing]] | [`clap`][c~clap~docs]↗{{hi:clap}}, [`structopt`][c~structopt~docs]↗{{hi:structopt}}, [`argh`][c~argh~docs]↗{{hi:argh}} |
-| Interactive Prompts | [`dialoguer`][c~dialoguer~docs]↗{{hi:dialoguer}}, [`console`][c~console~docs]↗{{hi:console}} | See [[user_interaction | User Interaction]]. |
-| Progress Bars | [`indicatif`][c~indicatif~docs]↗{{hi:indicatif}}, [`pbr`][c~pbr~docs]↗{{hi:pbr}} | See [[command-line-interface | Command Line Interface]]. |
-| Table Formatting | [`prettytable`][c~prettytable~docs]↗{{hi:prettytable}}, [`term-table`][c~term-table~docs]↗{{hi:term-table}} | |
-| Color Output | [`ansi_term`][c~ansi_term~docs]↗{{hi:ansi_term}}, [`owo-colors`][c~owo-colors~docs]↗{{hi:owo-colors}} | |
-| File System Operations | Use `std::fs`, [`pathdiff`][c~pathdiff~docs]↗{{hi:pathdiff}}. | See [[filesystem | Filesystem]]. |
-| Process Management | [`std::process`][c~std::process~docs]↗{{hi:std::process}} | See [[external_commands | External Commands]]. |
-| Text Manipulation | [`regex`][c~regex~docs]↗{{hi:regex}}, [`grep-cli`][c~grep-cli~docs]↗{{hi:grep-cli}}, [`bat`][c~bat~docs]↗{{hi:bat}} (for `cat` like functionality) | See [[text-processing | Text Processing]]. |
-| Configuration | [`config`][c~config~docs]↗{{hi:config}}, [`serde`][c~serde~docs]↗{{hi:serde}} (for serialization) | See [[config | Config]] and [[configuration | Configuration]]. |
-| Logging | [`log`][c~log~docs]↗{{hi:log}}, [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} | See [[log | Log]], [[tracing | Tracing]] and [[tracing_alternatives | Tracing Alternatives]]. |
+## Parse Command-line Arguments
 
-## Argument Parsing
+Choose a parser based on the interface you need: [`clap`][c~clap~docs]↗{{hi:clap}} offers derive and builder APIs; [`lexopt`][c~lexopt~docs]↗{{hi:lexopt}} and [`pico-args`][c~pico-args~docs]↗{{hi:pico-args}} are smaller alternatives. See [[argument_parsing | Argument Parsing]].
 
 {{#include argument_parsing.incl.md}}
 
-## ANSI Terminal Handling
+## Handle Terminal Output
+
+Use [`crossterm`][c~crossterm~docs]↗{{hi:crossterm}} for cross-platform terminal control and [`owo-colors`][c~owo-colors~docs]↗{{hi:owo-colors}} for styling text. [`termimad`][c~termimad~docs]↗{{hi:termimad}} can render Markdown in a terminal. See [[ansi_terminal | ANSI Terminal Handling]].
 
 {{#include ansi_terminal.incl.md}}
 
-## Terminal User Interfaces (TUI)
+## Build a Text User Interface
+
+For a full-screen terminal interface, see [[tui | Terminal User Interfaces]] and [`ratatui`][c~ratatui~docs]↗{{hi:ratatui}}.
 
 {{#include tui.incl.md}}
 
-## User Interactions
+## Prompt Users and Report Progress
+
+For prompts and selections, consider [`dialoguer`][c~dialoguer~docs]↗{{hi:dialoguer}} or [`inquire`][c~inquire~docs]↗{{hi:inquire}}. Use [`indicatif`][c~indicatif~docs]↗{{hi:indicatif}} for progress indicators and [`rustyline`][c~rustyline~docs]↗{{hi:rustyline}} for line editing and REPL input. See [[user_interaction | User Interaction]].
 
 {{#include user_interaction.incl.md}}
 
-## References
+## See Also {#see-also .skip}
 
-- [Command Line Applications in Rust (book)][book~rust-cli]↗.
-- Look to the [Code][book~command-line-rust~repo]↗ for `Command-Line Rust` (O'Reilly, 2022, ISBN 9781098109417).
-
-## Related Topics
-
-- [[command-line-utilities | Command Line Utilities]].
+- [Command Line Applications in Rust][book~rust-cli]↗.
+- [Command-Line Rust][book~command-line-rust]↗ and [its code repository][book~command-line-rust~repo]↗ (O'Reilly, 2022).
+- [[command-line-utilities | Command-line Utilities]].
 - [[internationalization | Internationalization]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/907)
-
-- [rustyline][c~rustyline~docs]↗.
-- [termimad][c~termimad~repo]↗: A library to display rich (Markdown) snippets and texts in a rust terminal application.
-- [rust-terminfo][rust-terminfo~repo]↗: Terminal information for Rust.
-
-review [Command Line Applications in Rust (book)][book~rust-cli]↗.
-
-review
-
-- [Command-line Rust][book~command-line-rust]↗.
-- [Code for Command-Line Rust (O'Reilly, 2024, ISBN 9781098109417)][book~command-line-rust~repo]↗.
-
-</div>

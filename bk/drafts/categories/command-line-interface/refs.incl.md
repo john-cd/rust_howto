@@ -34,3 +34,7 @@
 [p~testing]: ../development-tools_testing/testing.md
 [p~unix]: # "../os_unix-apis/unix.md"
 [p~windows]: ../os_windows-apis/windows.md
+[c~indicatif~crates.io]: https://crates.io/crates/indicatif
+[c~indicatif~docs]: https://docs.rs/indicatif
+[c~rustyline~crates.io]: https://crates.io/crates/rustyline
+[c~rustyline~docs]: https://docs.rs/rustyline
