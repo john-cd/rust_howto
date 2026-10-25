@@ -4,87 +4,43 @@
 
 {{#include dependency_management.incl.md}}
 
-Rust's dependency management is handled by [`Cargo`][c~cargo~docs]↗{{hi:Cargo}}, its built-in package manager.
+Cargo resolves, builds, and records a Rust project's dependency graph. Use the manifest to express the versions your project accepts and the lockfile to record the exact versions selected for a build. Applications normally commit `Cargo.lock`; libraries often leave the lockfile out of their published source so downstream users can resolve the library with their own graph.
 
-- [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}, located at the root of a Rust project, is the manifest file that defines the project's metadata and dependencies.
-  The `[dependencies]` section within `Cargo.toml` is where you specify the external crates (libraries)↗ your project relies on.
-- [`Cargo.lock`][c~cargo~cargo.lock]↗{{hi:Cargo.lock}} records the exact versions of all dependencies used in a project. It ensures that builds are reproducible, even if new versions of dependencies are released.
-- [Cargo][p~cargo] automates the process of downloading from [`crates.io`][crates.io~website]↗{{hi:crates.io}}, building, and linking dependencies. It resolves dependency versions, ensuring compatibility and preventing conflicts.
+See [[cargo | Cargo]] for Cargo basics and [[development-tools_cargo-plugins | Cargo Plugins]] for other subcommands.
 
-See the [[cargo | Cargo]] and [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]] chapters.
+## Add or Remove Dependencies {#cargo-edit}
 
-## Edit `Cargo.toml` {#cargo-edit}
+[![cargo-edit][c~cargo-edit~docs~badge]][c~cargo-edit~docs] [![cargo-edit~crates.io][c~cargo-edit~crates.io~badge]][c~cargo-edit~crates.io] [![cargo-edit~repo][c~cargo-edit~repo~badge]][c~cargo-edit~repo] [![cargo-edit~lib.rs][c~cargo-edit~lib.rs~badge]][c~cargo-edit~lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Dependencies}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-[![cargo-edit][c~cargo-edit~docs~badge]][c~cargo-edit~docs] [![cargo-edit~crates.io][c~cargo-edit~crates.io~badge]][c~cargo-edit~crates.io] [![cargo-edit~repo][c~cargo-edit~repo~badge]][c~cargo-edit~repo] [![cargo-edit~lib.rs][c~cargo-edit~lib.rs~badge]][c~cargo-edit~lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Cargo-subcommand}}{{hi:Cli}}{{hi:Crates}}{{hi:Dependencies}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+Use Cargo's built-in `cargo add` and `cargo remove` to edit a manifest. `cargo add <crate>` can also select features or a renamed dependency; review the resulting `Cargo.toml` and lockfile before committing. The [`cargo-edit`][c~cargo-edit~docs]↗{{hi:cargo-edit}} project provides additional commands such as `cargo upgrade` for changing version requirements and `cargo set-version` for package versions.
 
-[`cargo-edit`][c~cargo-edit~docs]↗{{hi:cargo-edit}} provides commands for modifying a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file. Current Cargo versions provide `cargo add` and `cargo remove` as built-in commands; `cargo-edit` still provides `cargo upgrade` and `cargo set-version`.
+## Inspect the Dependency Graph {#dependency-graph}
 
-Currently available subcommands:
+Use `cargo tree` to inspect direct and transitive dependencies. Add `-d` to find multiple versions of a package in the resolved graph. This is useful when investigating build size, duplicate versions, or why a crate is present.
 
-- `cargo upgrade`.
-- `cargo set-version`.
+`cargo tree` reports what the current manifest and lockfile resolve to; it does not determine whether your source uses every direct dependency.
 
-## Find Unused Dependencies {#find-unused-dependencies}
+## Update Locked Versions {#cargo-update}
 
-### `cargo udeps` {#cargo-udeps .skip}
+`cargo update` refreshes `Cargo.lock` while keeping the version requirements in `Cargo.toml`. Use `cargo update -p <crate>` to focus an update on one package. Review the diff and run the project's checks because a newer compatible release can still change behavior.
 
-[![cargo-udeps][c~cargo-udeps~docs~badge]][c~cargo-udeps~docs]{{hi:cargo-udeps}}
-[![cargo-udeps~crates.io][c~cargo-udeps~crates.io~badge]][c~cargo-udeps~crates.io]
-[![cargo-udeps~repo][c~cargo-udeps~repo~badge]][c~cargo-udeps~repo]
-[![cargo-udeps~lib.rs][c~cargo-udeps~lib.rs~badge]][c~cargo-udeps~lib.rs]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
-[![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+[`cargo-outdated`][c~cargo-outdated~docs]↗{{hi:cargo-outdated}} reports dependencies for which newer versions are available. Treat its output as an update list to review: a newer version may require a manifest change, a Rust version change, or code updates. The `cargo upgrade` command from `cargo-edit` changes manifest requirements, while `cargo update` changes the resolved lockfile within existing requirements.
 
-[`udeps`][c~cargo-udeps~crates.io]↗{{hi:udeps}} find unused dependencies in [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} .
+## Find Unused Dependencies {#unused-dependencies}
 
-While compilation of this tool also works on Rust stable, it needs Rust nightly to actually run.
+[![cargo-machete][c~cargo-machete~docs~badge]][c~cargo-machete~docs]{{hi:cargo-machete}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
 
-### `cargo machete` {#cargo-machete .skip}
+[`cargo-machete`][c~cargo-machete~docs]↗{{hi:cargo-machete}} quickly searches for dependencies that do not appear to be used in a package's source. It is a heuristic: build scripts, generated code, macros, and renamed crates can require configuration or manual review. Run `cargo machete` from the workspace and inspect each suggestion before removing a dependency; its `--fix` option edits manifests automatically.
 
-[![cargo-machete][c~cargo-machete~docs~badge]][c~cargo-machete~docs]{{hi:cargo-machete}}
-[![cargo-machete~crates.io][c~cargo-machete~crates.io~badge]][c~cargo-machete~crates.io]
-[![cargo-machete~repo][c~cargo-machete~repo~badge]][c~cargo-machete~repo]
-[![cargo-machete~lib.rs][c~cargo-machete~lib.rs~badge]][c~cargo-machete~lib.rs]
+[`cargo-udeps`][c~cargo-udeps~docs]↗{{hi:cargo-udeps}} uses compiler information to find unused dependencies and generally requires a nightly toolchain. Prefer it when source-text scanning is insufficient and the project can run the required toolchain.
 
-[`cargo-machete`][blog~cargo-machete]↗ is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} tool that detects unused dependencies in Rust projects, in a fast (yet imprecise) way.
+## Check Advisories and Dependency Policy {#dependency-policy}
 
-Install and run with:
-
-```sh
-cargo install cargo-machete
-cargo machete
-```
-
-## Detect Dependencies that are Out of Date {#cargo-outdated}
-
-[![cargo-outdated][c~cargo-outdated~docs~badge]][c~cargo-outdated~docs]{{hi:cargo-outdated}}
-[![cargo-outdated~crates.io][c~cargo-outdated~crates.io~badge]][c~cargo-outdated~crates.io]
-[![cargo-outdated~repo][c~cargo-outdated~repo~badge]][c~cargo-outdated~repo]
-[![cargo-outdated~lib.rs][c~cargo-outdated~lib.rs~badge]][c~cargo-outdated~lib.rs]
-
-[`cargo-outdated`][c~cargo-outdated~docs]↗{{hi:cargo-outdated}} is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for displaying when dependencies are out of date.
-
-If using VS Code, also look into the [`Dependi`][vscode~dependi~website]↗{{hi:Dependi}} VS Code plugin.
-
-## `deps.rs` {#deps-rs}
-
-[`deps.rs`][deps.rs~website]↗ [(github)][deps.rs~repo]↗
-
-The [`deps.rs`][deps.rs~website]↗ website uses semantic versioning to detect outdated or insecure dependencies in your project's [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}}.
-
-## Rust Digger {#rust-digger}
-
-[`rust-digger.code-maven.com`][rust-digger~website]↗ collects data about [Rust Crates][crates.io~website]↗ to find the common practices of Open Source Rust developers and trying to improve the Rust ecosystem.
+[`cargo-audit`][c~cargo-audit~docs]↗{{hi:cargo-audit}} checks the versions in `Cargo.lock` against the RustSec advisory database. [`cargo-deny`][c~cargo-deny~docs]↗{{hi:cargo-deny}} can also enforce advisory, license, source, and duplicate-dependency policies. Configure these checks for the project's policy and review exceptions narrowly; they answer different questions from an unused-dependency scan or an update report.
 
 ## Related Topics {#related-topics .skip}
 
 - [[cargo | Cargo]].
-- [[development_tools | Development Tools]].
+- [[code_formatting_linting | Code Formatting and Linting]].
+- [[maintaining | Maintaining Rust Projects]].
 - [[versioning | Versioning]].
-
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [dependency_management: review](https://github.com/john-cd/rust_howto/issues/597)
-</div>
