@@ -102,6 +102,7 @@
   - [Units of Measurement](categories/mathematics/units.md)
   - [Discrete Mathematics](categories/mathematics/discrete_mathematics.md)
   - [Graph Theory](categories/mathematics/graph_theory.md)
+  - [Differential Equations](categories/mathematics/differential_equations.md)
 
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
 
@@ -144,5 +145,6 @@
 [Thanks](appendices/thanks.md)
 
 {{#include refs.incl.md}}
+
 <div class="hidden">
 </div>

@@ -1541,6 +1541,15 @@
 [num_traits-github]: https://github.com/rust-num/num-traits
 
 
+[ode_solvers]: https://docs.rs/ode_solvers
+
+
+[ode_solvers-crate]: https://crates.io/crates/ode_solvers
+
+
+[ode_solvers-github]: https://github.com/srenevey/ode-solvers
+
+
 [once_cell]: https://docs.rs/once_cell
 
 

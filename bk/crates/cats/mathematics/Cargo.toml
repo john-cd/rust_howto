@@ -33,6 +33,7 @@ num = "0.4.3"
 num-bigint = "0.4.8"
 num-rational = "0.4.2"
 num-traits = "0.2.19"
+ode_solvers = "0.6.2" # Fixed-step and adaptive solvers for ordinary differential equations.
 ordered-float = "5.5.0"
 petgraph = "0.8.3" # Directed graphs and graph algorithms.
 rayon = "1.12.0" # Parallel evaluation of independent graph levels.
@@ -61,6 +62,11 @@ test = true
 [[example]]
 name = "discrete_mathematics"
 path = "examples/discrete_mathematics/main.rs"
+test = true
+
+[[example]]
+name = "differential_equations"
+path = "examples/differential_equations/main.rs"
 test = true
 
 [[example]]

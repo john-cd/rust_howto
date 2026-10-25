@@ -38,6 +38,7 @@
 [ex~mathematics~compare-sets-with-btreeset]: discrete_mathematics.md#compare-sets-with-btreeset
 [ex~mathematics~schedule-dag-tasks-by-level]: graph_theory.md#schedule-dag-tasks-by-level
 [ex~mathematics~find-cyclic-dependencies]: graph_theory.md#find-cyclic-dependencies
+[ex~mathematics~solve-an-initial-value-problem]: differential_equations.md#solve-an-initial-value-problem
 [ex~mathematics~num-bigint]: additional_numeric_types.md#num-bigint
 [ex~mathematics~num]: additional_numeric_types.md#num
 [ex~mathematics~rational-numbers]: additional_numeric_types.md#rational-numbers
@@ -56,6 +57,7 @@
 [p~optimization]: optimization.md
 [p~units]: units.md
 [p~discrete-mathematics]: discrete_mathematics.md
+[p~differential-equations]: differential_equations.md
 [p~graph-theory]: graph_theory.md
 [p~option]: ../../standard-library/optional_values.md
 [p~traits]: ../../language/traits.md

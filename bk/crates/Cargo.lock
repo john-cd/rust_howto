@@ -9269,6 +9269,7 @@ dependencies = [
  "num-bigint 0.4.8",
  "num-rational",
  "num-traits 0.2.19",
+ "ode_solvers",
  "ordered-float 5.5.0",
  "petgraph 0.8.3",
  "proptest",
@@ -10434,6 +10435,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed0423ff9973dea4d6bd075934fdda86ebb8c05bdf9d6b0507067d4a1226371d"
 dependencies = [
  "serde 1.0.229",
+ "thiserror 2.0.21",
+]
+
+[[package]]
+name = "ode_solvers"
+version = "0.6.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "18501982e08afc982434c92e1a2968d3b696b368c6df40a210475ba447fba8d9"
+dependencies = [
+ "nalgebra",
+ "num-traits 0.2.19",
+ "serde 1.0.229",
+ "simba",
  "thiserror 2.0.21",
 ]
 

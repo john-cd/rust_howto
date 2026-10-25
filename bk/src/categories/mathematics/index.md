@@ -79,7 +79,7 @@ Optimization problems include linear, nonlinear, and integer programming, as wel
 
 ## Differential Equations
 
-This topic includes ordinary and partial differential equations, dynamical systems, stability analysis, and control systems.
+This topic includes ordinary and partial differential equations, dynamical systems, stability analysis, and control systems. The [Differential Equations chapter][p~differential-equations] demonstrates solving an initial value problem with [`ode_solvers`][c~ode_solvers~docs]↗{{hi:ode_solvers}}.
 
 - [`diffsol`][c~diffsol~docs]↗ provides solvers for ordinary differential equations and semi-explicit differential-algebraic equations.
 - [`ode_solvers`][c~ode_solvers~docs]↗ provides numerical methods for ordinary differential equations.
