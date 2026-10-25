@@ -58,6 +58,8 @@ There are many options depending on your data source.
 Examples include [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} for making HTTP requests to financial APIs,
 [`csv`][c~csv~docs]↗{{hi:csv}} for reading and writing CSV files (common for financial data), and [`serde`][c~serde~docs]↗{{hi:serde}} for serializing and deserializing financial data.
 
+Spreadsheets are the most common interchange format in accounting and reporting: see [[excel | Excel Spreadsheets]] to read and write `.xlsx` workbooks with [`calamine`][c~calamine~docs]↗{{hi:calamine}} and [`rust_xlsxwriter`][c~rust_xlsxwriter~docs]↗{{hi:rust_xlsxwriter}}.
+
 See [[encoding | Encoding]], [[serde | Serde]], [[csv | CSV]], [[json | JSON]], [[web-programming_http-client | Web Programming: HTTP Client]].
 
 ## Charting and Visualization
@@ -97,7 +99,7 @@ Review / incorporate:
 - Mention [`financial`][c~financial~docs]↗{{hi:financial}} a collection of finance calculations mimicking some of Excel Financial Functions interface.
 - Mention `black_scholes`.
 
-Cover Excel data import, yahoo finance, databento, alpaca.
+Cover yahoo finance, databento, alpaca.
 
 - [yata][c~yata~docs]: Yet Another Technical Analysis library.
 

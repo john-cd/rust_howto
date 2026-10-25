@@ -1030,6 +1030,7 @@
 [c~cairo~repo~badge]: https://img.shields.io/badge/cairo-steelblue?logo=github
 [c~cairo~website]: https://github.com/passcod/rust-cairo
 [c~cairo~website~badge]: https://img.shields.io/badge/cairo-coral
+[c~calamine::CellErrorType~docs]: https://docs.rs/calamine/latest/calamine/enum.CellErrorType.html
 [c~calamine::Data~docs]: https://docs.rs/calamine/latest/calamine/enum.Data.html
 [c~calamine::Reader~docs]: https://docs.rs/calamine/latest/calamine/trait.Reader.html
 [c~calamine::open_workbook~docs]: https://docs.rs/calamine/latest/calamine/fn.open_workbook.html
@@ -2727,6 +2728,14 @@
 [c~ed25519~repo~badge]: https://img.shields.io/badge/ed25519-steelblue?logo=github
 [c~ed25519~website]: https://github.com/RustCrypto/signatures/blob/master/ed25519/README.md
 [c~ed25519~website~badge]: https://img.shields.io/badge/ed25519-coral
+[c~edit-xlsx~crates.io]: https://crates.io/crates/edit-xlsx
+[c~edit-xlsx~crates.io~badge]: https://img.shields.io/badge/crates.io-edit--xlsx-crimson
+[c~edit-xlsx~docs]: https://docs.rs/edit-xlsx
+[c~edit-xlsx~docs~badge]: https://img.shields.io/crates/v/edit-xlsx?label=edit--xlsx
+[c~edit-xlsx~lib.rs]: https://lib.rs/crates/edit-xlsx
+[c~edit-xlsx~lib.rs~badge]: https://img.shields.io/badge/lib.rs-edit--xlsx-yellow
+[c~edit-xlsx~repo]: https://github.com/MortalreminderPT/edit-xlsx
+[c~edit-xlsx~repo~badge]: https://img.shields.io/badge/edit--xlsx-steelblue?logo=github
 [c~eframe~crates.io]: https://crates.io/crates/eframe
 [c~eframe~crates.io~badge]: https://img.shields.io/badge/crates.io-eframe-crimson
 [c~eframe~docs]: https://docs.rs/eframe

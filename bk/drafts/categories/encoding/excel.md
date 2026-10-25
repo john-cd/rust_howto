@@ -34,6 +34,7 @@ Points to remember:
 - Excel stores every number as a floating-point value, so whole numbers are usually read as `Data::Float`. Convert explicitly when you need an integer.
 - Dates are serial numbers, wrapped in `Data::DateTime`. Enable the `chrono` feature of `calamine` to convert them to `chrono` types.
 - A formula cell yields its cached result. `worksheet_formula` returns the formula text. Neither recalculates anything.
+- A cell whose formula fails (`#DIV/0!`, `#N/A`) is read as `Data::Error`, with a [`calamine::CellErrorType`][c~calamine::CellErrorType~docs]↗{{hi:calamine::CellErrorType}} that says which error. Handle it instead of treating the cell as a number.
 - `worksheet_range` returns the used area only, so cell `(0, 0)` of the `Range` is not necessarily `A1`.
 
 ## Choosing a Crate {#choosing-a-crate}
@@ -42,7 +43,7 @@ Points to remember:
 | ---------------------------- | --------------------------------------------------------------------- |
 | Read only                    | [`calamine`][c~calamine~docs]↗{{hi:calamine}}                         |
 | Create a new file            | [`rust_xlsxwriter`][c~rust_xlsxwriter~docs]↗{{hi:rust_xlsxwriter}}    |
-| Modify an existing file      | [`umya-spreadsheet`][c~umya-spreadsheet~docs]↗{{hi:umya-spreadsheet}} |
+| Modify an existing file      | [`umya-spreadsheet`][c~umya-spreadsheet~docs]↗{{hi:umya-spreadsheet}}, [`edit-xlsx`][c~edit-xlsx~docs]↗{{hi:edit-xlsx}} |
 | Plain tabular text           | [`csv`][c~csv~docs]↗{{hi:csv}}, see [CSV Processing][p~csv-processing] |
 
 ## Related Topics {#related-topics .skip}
