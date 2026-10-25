@@ -250,16 +250,18 @@ List C implementation update (2026-10-25):
 
 ### List 34 — Web, auth, packaging and tooling pages (Codex D)
 
-- [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Docs integrated as `3acb2a03c`; Linux validation remains open (no local Linux runner).
+- [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Docs integrated as `3acb2a03c`; Linux validation remains open (WSL is unavailable and Docker's Linux engine is unavailable).
 - [#636](https://github.com/john-cd/rust_howto/issues/636) — **P3** — ✅ closed on GitHub — Add OAuth to the authentication index.
 - [#510](https://github.com/john-cd/rust_howto/issues/510) — **P3** — ✅ closed on GitHub in `6f72064b0` — Write the CORS chapter; Cargo test did not reach the test harness.
-- [#921](https://github.com/john-cd/rust_howto/issues/921) — **P3** — Review the build-time tooling chapter.
-- [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Write the Python interoperability chapter.
-- [#589](https://github.com/john-cd/rust_howto/issues/589) — **P4** — Organize and edit the data engineering chapter.
-- [#453](https://github.com/john-cd/rust_howto/issues/453) — **P4** — Locate crates and write the data formats chapter.
-- [#278](https://github.com/john-cd/rust_howto/issues/278) — **P4** — Write the cryptocurrencies index.
-- [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Write the screen readers chapter.
-- [#401](https://github.com/john-cd/rust_howto/issues/401) — **P4** — Write the internationalization chapter.
+- [#921](https://github.com/john-cd/rust_howto/issues/921) — **P3** — Implemented in `fb39a9c72`; keep open: the package test stopped before its harness at missing system `libgit2`/`pkg-config`, and `just bb` stopped in `aws-lc-sys` (NASM unavailable; MSVC LNK1114).
+- [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Implemented in `6bfaab4a6`; Windows package tests and strict Clippy passed. Keep open for Linux-gated Python example execution and the blocked `just bb` gate.
+- [#589](https://github.com/john-cd/rust_howto/issues/589) — **P4** — Implemented in `7db3d3901`; keep open until `just bb` and Unix-only `just refdefs check` run.
+- [#453](https://github.com/john-cd/rust_howto/issues/453) — **P4** — Implemented in `5313b1f96`; the glTF example test and strict Clippy passed. Keep open until `just bb` and Unix-only `just refdefs check` run.
+- [#278](https://github.com/john-cd/rust_howto/issues/278) — **P4** — Implemented in `85f0e8f47`; keep open until `just bb` and Unix-only `just refdefs check` run.
+- [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Implemented in `3e051d152`; the semantic-tree test and strict Clippy passed. Keep open until `just bb` and Unix-only `just refdefs check` run.
+- [#401](https://github.com/john-cd/rust_howto/issues/401) — **P4** — Implemented in `73318b73f`; the ICU4X example test and strict Clippy passed. Keep open until `just bb` and Unix-only `just refdefs check` run.
+
+List D validation: `dprint check`, `just spell`, and `git diff --check` passed. Changed-page reference labels resolve, but `just refdefs check` is Unix-only on this Windows host. The book gate is blocked by the Windows `aws-lc-sys`/NASM/MSVC failure; a full `cargo sort -w --check --check-format` also found unsorted dependencies in five untouched crates, while the changed internationalization manifest passes its targeted sort check.
 
 ### Lists 35–37 — assigned to local Codex sessions (second round)
 
