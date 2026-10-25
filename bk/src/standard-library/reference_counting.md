@@ -30,7 +30,7 @@ Also of note: the [`Weak`][c~std::rc::Weak~docs]↗{{hi:std::rc::Weak}} (weak re
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-[`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} allows you to share data between multiple parts of your program but it doesn't allow unrestricted _mutability_ by itself. If `Rc<T>` allowed multiple mutable references, it may violate Rust's borrowing rules: multiple mutable borrows to the same place can cause data races and inconsistencies.
+[`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} allows you to share data between multiple parts of a single-threaded program, but it does not allow unrestricted _mutability_ by itself. If multiple mutable references to the same value were allowed, they would violate Rust's exclusive-access rules and could cause undefined behavior. `Rc<T>` is not `Send`, so it cannot be used to share its value across threads and does not itself create cross-thread data races.
 
 If you need mutability inside an `Rc`, you can use [`RefCell<T>`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}}, which offers _interior mutability_: `RefCell<T>` enforces borrowing rules _at runtime_ instead of compile-time. It allows mutable borrows to the inner data at runtime, but _panics_ if borrowing rules are violated (again, only one mutable borrow is allowed at a time).
 
@@ -53,4 +53,5 @@ See [[interior_mutability | Interior Mutability]] for more details.
 - [[concurrency | Concurrency]].
 
 [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+
 </div>

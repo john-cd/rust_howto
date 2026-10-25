@@ -55,10 +55,11 @@ fn people() {
         last_name: "Smith".to_owned(),
     };
     let p2 = Person {
-        id: 2,
-        last_name: "Smith".to_owned(),
+        id: 1,
+        last_name: "Jones".to_owned(),
     };
-    assert_ne!(p1, p2);
+    assert_eq!(p1, p2);
+    assert_ne!(p1.last_name, p2.last_name);
 }
 
 /// Runs the examples.

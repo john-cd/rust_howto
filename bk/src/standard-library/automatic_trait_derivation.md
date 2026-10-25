@@ -17,7 +17,7 @@ Instead of manually writing large amounts of repetitive code, you can apply the 
 As described by [Derivable traits][book~rust~derivable-traits]↗{{hi:Derivable traits}}, the following traits are derivable "out of the box":
 
 - Comparison traits [`Eq`][c~std::cmp::Eq~docs]↗{{hi:std::cmp::Eq}}, [`PartialEq`][c~std::cmp::PartialEq~docs]↗{{hi:std::cmp::PartialEq}}, [`Ord`][c~std::cmp::Ord~docs]↗{{hi:std::cmp::Ord}}, and [`PartialOrd`][c~std::cmp::PartialOrd~docs]↗{{hi:std::cmp::PartialOrd}},
-- [`Clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}}, which explicitly creates a deep copy of a value,
+- [`Clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}}, which explicitly creates a copy according to the type's `Clone` implementation. A derived implementation clones each field, so cloning an `Rc<T>` field only increments its reference count rather than cloning the inner `T`.
 - [`Copy`][c~std::marker::Copy~docs]↗{{hi:std::marker::Copy}}, which gives a type 'copy semantics' instead of 'move semantics' (less common),
 - [`Hash`][c~std::hash::Hash~docs]↗{{hi:std::hash::Hash}}, to compute a hash of the item,
 - [`Default`][c~std::default::Default~docs]↗{{hi:std::default::Default}}, to provide a default instance of the type,
@@ -25,7 +25,7 @@ As described by [Derivable traits][book~rust~derivable-traits]↗{{hi:Derivable 
 
 The `PartialEq` trait allows checking for equality and enables use of the `==` and `!=` operators. The `Eq` trait signals that for _every_ value of a type, the value is equal to itself. The `PartialOrd` trait allows comparisons for sorting purposes. The `Ord` trait guarantees that, for _any_ two values of a type, a valid ordering will exist. Certain primitive types, namely floats, implement `PartialEq` and `PartialOrd` but cannot implement `Eq` and `Ord`.
 
-The `Copy` trait marks types that can be duplicated (cloned) by solely copying bits stored on the stack.
+The `Copy` trait marks types whose values can be duplicated implicitly, such as by assignment or passing them by value, without invalidating the original. A type can implement `Copy` only when all its fields are `Copy`; the trait does not imply that the value is stored on the stack.
 
 The `Debug` trait enables debug formatting, which you request by adding `:?` within `{}` placeholders in format strings.
 
@@ -35,7 +35,7 @@ The `Hash` trait takes an instance of a type of arbitrary size and map that inst
 
 Note that the above traits can still be manually implemented, if a more complex behavior than what `derive` provides is required.
 
-```rust,editable,editable
+```rust,editable
 {{#include ../../crates/standard_library/examples/derive/derive.rs:example}}
 ```
 
@@ -76,5 +76,5 @@ You can also implement `derive` for your own traits through procedural [[macros 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

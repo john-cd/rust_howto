@@ -29,7 +29,7 @@ fn main() {
     };
 
     println!("CustomStructs created.");
-    // c and d will be dropped automatically when they go out of scope here.
+    // `_c` and `_d` remain in scope until the end of `main`.
 
     let e = CustomStruct {
         data: String::from("explicit drop example"),
@@ -41,6 +41,8 @@ fn main() {
     println!("CustomStruct 'e' dropped before end of main.");
 
     println!("End of main.");
+    // After this statement, `_d` is dropped first, then `_c` (reverse
+    // declaration order).
 }
 
 // ANCHOR_END: example

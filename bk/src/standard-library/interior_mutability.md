@@ -4,9 +4,9 @@
 
 {{#include interior_mutability.incl.md}}
 
-The core idea of interior mutability is to allow data to be mutated even when there are immutable references to it. This is a deviation from Rust's usual compile-time borrowing rules (either _multiple_ immutable references or _one_ mutable reference) and instead enforces these rules at runtime. This pattern is useful for shared state within a single thread, such as in GUI applications or complex data structures.
+The core idea of interior mutability is to allow data to be mutated through a shared reference. The mechanisms differ: `RefCell<T>` checks borrowing rules at runtime, while `Cell<T>` replaces values without exposing references to its contents. This pattern is useful for shared state within a single thread, such as in GUI applications or complex data structures.
 
-[`RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}}, [`Cell`][c~std::cell::Cell~docs]↗{{hi:std::cell::Cell}}, and [`OnceCell`][c~std::cell::OnceCell~docs]↗{{hi:std::cell::OnceCell}} provide flexibility in managing mutable state in Rust, especially when the strict compile-time borrow checker is too restrictive for certain single-threaded patterns, by shifting the borrow checking to runtime.
+[`RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}}, [`Cell`][c~std::cell::Cell~docs]↗{{hi:std::cell::Cell}}, and [`OnceCell`][c~std::cell::OnceCell~docs]↗{{hi:std::cell::OnceCell}} provide flexibility in managing mutable state in Rust. `RefCell` shifts borrow checking to runtime; `Cell` permits replacing or copying out values without creating references to the contents; and `OnceCell` permits a value to be initialized once.
 
 `RefCell<T>` (and `Cell<T>`, `OnceCell<T>`) do not implement `Sync` and are therefore _single-threaded_. The corresponding `Sync` version of `RefCell<T>` is [`RwLock<T>`][c~std::sync::RwLock~docs]↗{{hi:std::sync::RwLock}}. Use [`Mutex<T>`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}}, `RwLock<T>`, [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗{{hi:std::sync::OnceLock}}, or atomic types when working with multiple threads.
 
@@ -14,12 +14,12 @@ The core idea of interior mutability is to allow data to be mutated even when th
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![book~rust~refcell][book~rust~refcell~badge]][book~rust~refcell]{{hi:std::cell::RefCell}}
 
-Rust memory safety allows (i) several immutable references (`&T`) to an object `T`; or (ii) _one_ mutable reference (`&mut T`). This is enforced _at compile time_. However, sometimes it is required to have multiple references to an object and yet mutate it. `RefCell<T>` (and related types `Cell<T>` and `OnceCell<T>`) have _interior mutability_, a pattern that allows you to mutate data even when there are immutable references to it.
+Rust memory safety allows either several immutable references (`&T`) to an object `T` or one mutable reference (`&mut T`) at a time. References follow these rules at compile time. `RefCell<T>` provides interior mutability by checking the same borrowing rules at runtime; `Cell<T>` instead moves values in and out without exposing an interior reference, and `OnceCell<T>` allows one-time initialization.
 
 These types are used in scenarios involving [[shared-state | shared state]] within a single thread, like GUI applications or when creating complex [data structures][p~data-structures] like graphs.
 
 `RefCell` keeps track of borrowing rules _at runtime_ and ensures that only one mutable or multiple immutable borrows exist at a time.
-Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, [`borrow_mut`][c~std::borrow::BorrowMut~docs]↗, and [`try_borrow`][c~std::cell::RefCell::try_borrow~docs]↗.
+Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, [`borrow_mut`][c~std::cell::RefCell::borrow_mut~docs]↗, and [`try_borrow`][c~std::cell::RefCell::try_borrow~docs]↗.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/interior_mutability/refcell.rs:example}}
@@ -76,5 +76,5 @@ For a multi-threaded context, use [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

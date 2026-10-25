@@ -43,6 +43,7 @@ These traits are related but have distinct purposes:
 - [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::convert::AsRef}} enables _explicit_ (via `.as_ref()`) cheap reference-to-reference conversions, often used in generic bounds for flexibility.
 - [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} enables _implicit_ coercions (e.g., [`String`][c~std::string::String~docs]↗{{hi:std::string::String}} to [`&str`][primitive~str]↗{{hi:&str}}).
 - [`Borrow`][c~std::borrow::Borrow~docs]↗{{hi:std::borrow::Borrow}} is similar to `AsRef` but imposes additional constraints (e.g., [`Hash`][c~std::hash::Hash~docs]↗{{hi:std::hash::Hash}}, [`Eq`][c~std::cmp::Eq~docs]↗{{hi:std::cmp::Eq}}, [`Ord`][c~std::cmp::Ord~docs]↗{{hi:std::cmp::Ord}} must be equivalent for the borrowed value and the owned value). It's commonly used for keys in collections like [`HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}.
+- [`AsMut`][c~std::convert::AsMut~docs]↗{{hi:std::convert::AsMut}} provides the mutable equivalent: a cheap conversion between mutable references.
 
 For non-generic contexts or when `Deref` coercion suffices, `&T` remains the simpler and often preferred choice.
 
@@ -51,7 +52,6 @@ If you need to do a _costly_ conversion, it is better to implement [`From`][c~st
 ## References {#references .skip}
 
 - [When and why to use `AsRef<T>` instead of `&T`][stackoverflow~asref]↗.
-- [Rust's `AsRef` Explained][blog~rust-asref-explained]↗.
 - [Rust's `AsRef` Explained][blog~rust-asref-explained]↗.
 
 ## Related Topics {#related-topics .skip}
@@ -62,11 +62,9 @@ If you need to do a _costly_ conversion, it is better to implement [`From`][c~st
 - [[reference_counting | `Rc` and `Arc`]].
 - [[smart_pointers | Smart Pointers]].
 
-Note that [`AsMut`][c~std::convert::AsMut~docs]↗{{hi:std::convert::AsMut}} can be used for converting between mutable references.
-
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

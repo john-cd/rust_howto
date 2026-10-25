@@ -12,7 +12,7 @@
 
 The [`Default`][c~std::default::Default~docs]↗ trait provides a way to create a default value for a type. This is useful when you want to initialize a variable with a default value without having to specify it explicitly.
 
-The `Default` trait has a single method, `default()`, which returns the default value for the type. You can implement this trait for your own types to provide a default value. Alternatively, the `#[derive(Default)]` attribute automatically implement the trait for a type.
+The `Default` trait has a single method, `default()`, which returns the default value for the type. You can implement this trait for your own types to provide a default value. Alternatively, the `#[derive(Default)]` attribute automatically implements the trait for eligible types. On enums, mark a unit variant with `#[default]` when deriving `Default`; this attribute has been stable since Rust 1.62.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/default/default.rs:example}}
@@ -27,5 +27,5 @@ The `Default` trait has a single method, `default()`, which returns the default 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

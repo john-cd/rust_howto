@@ -22,9 +22,10 @@ For example, to overload the `+` operator for a custom type, you would implement
 
 ## Add Function-like Behavior to a Custom Type {#function-like-behavior}
 
-The `std::ops` module also provides traits for function-like / closure-like behavior: `Fn`, `FnMut`, and `FnOnce`. You can make your own types callable like functions by implementing these traits. This is _unstable_ and requires nightly Rust:
+The `std::ops` module also provides traits for function-like / closure-like behavior: `Fn`, `FnMut`, and `FnOnce`. You can make your own types callable like functions by implementing these traits. This is _unstable_ and requires nightly Rust. The example below is intentionally ignored by the stable book build; to try it, put the feature attribute at the crate root on nightly:
 
-```rust,editable
+```rust,ignore
+#![feature(unboxed_closures, fn_traits)]
 {{#include ../../crates/standard_library/examples/ops/callable.rs:example}}
 ```
 

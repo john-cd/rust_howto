@@ -8,7 +8,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:Clone-on-write}}
 
-The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} is a smart pointer providing clone-on-write functionality: it encloses and provides immutable access to borrowed data, and clone the data lazily when mutation or ownership is required.
+The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} is a smart pointer providing clone-on-write functionality: it encloses and provides immutable access to borrowed data, and clones the data lazily when mutation or ownership is required.
 
 `Cow` optimizes memory usage by delaying cloning until mutation is required, if it is required. It is especially useful in cases where:
 
@@ -18,7 +18,7 @@ The type [`std::borrow::Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}}
 
 `Cow`, as a smart pointer, implements [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}}, which means that you can call non-mutating methods directly on the data it encloses. If mutation is desired, [`to_mut`][c~std::borrow::Cow::to_mut~docs]↗{{hi:std::borrow::Cow::to_mut}} will obtain a mutable reference to an owned value, cloning if necessary.
 
-## Accept Either a Owned or Borrowed Value as the Input of a Function {#accept-either-owned-or-borrowed-values}
+## Accept Either an Owned or Borrowed Value as the Input of a Function {#accept-either-owned-or-borrowed-values}
 
 Since [`Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} allows borrowing until mutation is needed, it's ideal for functions that take either borrowed or owned strings without unnecessary cloning.
 
@@ -101,5 +101,5 @@ Taking the example of strings: using `&str` for borrowing and `String` for owned
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

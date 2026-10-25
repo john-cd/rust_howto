@@ -61,7 +61,7 @@ fn main() {
     {
         /// Demonstrates a type that does not implement `Unpin`.
         struct NotUnpin {
-            // The `PhantomPinned` field makes the struct as `!Unpin`.
+            // The `PhantomPinned` field makes the struct `!Unpin`.
             /// Pinning marker used by the example.
             _pin: PhantomPinned,
         }
@@ -86,7 +86,7 @@ fn main() {
     // 3. **Pinned Box**: The simplest way to pin a value that
     // does not implement `Unpin` is to put that value inside a `Box` and
     // then wrapping it in a `Pin`.
-    // Example fom <https://doc.rust-lang.org/std/pin/struct.Pin.html#pinning-a-value-inside-a-box>.
+    // Example from <https://doc.rust-lang.org/std/pin/struct.Pin.html#pinning-a-value-inside-a-box>.
     /// Returns the input incremented by one when awaited.
     async fn add_one(x: u32) -> u32 {
         x + 1

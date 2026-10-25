@@ -17,8 +17,7 @@ fn main() {
     // Append the `Cow` to a `String` (conversion to a `&str`).
     my_string.push_str(&example);
     println!("{my_string}");
-    // Alternatively, use `borrow`, `asref` or `deref`:
-    println!("{my_string}");
+    // Alternatively, use `borrow`, `as_ref` or deref coercion:
     my_string.push_str(example.borrow());
     println!("{my_string}");
     my_string.push_str(example.as_ref());

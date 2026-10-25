@@ -19,7 +19,7 @@ The [`std::pin`][c~std::pin~docs]↗{{hi:std::pin}} module enables pinning data 
 Pinning is typically used for self-referential types, compiler-generated generators for [`async fn`][keyword~async]↗{{hi:async fn}}, and intrusive data structure, where moving would break safety invariants:
 
 - In _asynchronous programming_, you may have futures that need to maintain a stable memory address, as they may need to reference themselves or other data that should not be moved.
-- Pinning a value is an useful building block for _unsafe code_ to be able to reason about whether a raw pointer to the pinned value is still valid.
+- Pinning a value is a useful building block for _unsafe code_ to reason about whether a raw pointer to the pinned value is still valid.
 
 The main type in [`std::pin`][c~std::pin~docs]↗{{hi:std::pin}} is [`Pin<Ptr>`][c~std::pin::Pin~docs]↗{{hi:std::pin::Pin}}, a smart pointer wrapper that flags that the data behind the pointer `Ptr` should not be moved in memory, even if it is mutable, _unless it implements `Unpin`_(see below).
 
@@ -27,7 +27,7 @@ Note that the pointer wrapped by `Pin` is not the value which we want to pin its
 
 It is important to note that pinning does not make use of any compiler "magic". It _does not change the way the compiler behaves_ towards the inner value (it still considers the inner value fundamentally movable). Instead, `Pin<Ptr>` is a wrapper that prohibits calling code that would perform a move on the pinned value and enforces the use of `unsafe` code for dangerous operations. BEWARE: It is the responsibility of the programmer to implement that `unsafe` code correctly to satisfy the `Pin` invariants.
 
-Because `Pin` has a restrictive API, Rust provide an "escape hatch" for the vast majority of Rust types, which have no address-sensitive states.
+Because `Pin` has a restrictive API, Rust provides an "escape hatch" for the vast majority of Rust types, which have no address-sensitive states.
 
 The [`Unpin`][c~std::pin::Unpin~docs]↗{{hi:std::pin::Unpin}} trait is a built-in, auto-implemented marker trait that signifies a type can be safely moved in memory, even after it has been "pinned." It cancels the restrictive effects of `Pin`.
 
@@ -55,4 +55,5 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 - [[async_programming | Async Programming]].
 
 [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+
 </div>

@@ -8,7 +8,7 @@
 
 [![book~rust~box][book~rust~box~badge]][book~rust~box]{{hi:Box}} [![Rust by example - box][book~rust-by-example~box~badge]][book~rust-by-example~box] [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-All values in Rust are stack-allocated by default. [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} allow you to store data on the heap{{hi:Heap}} rather than the stack{{hi:Stack}}. What remains on the stack is the pointer to the heap data. `Box<T>` owns its inner data and drop its contents when it goes out of scope:
+Values are stored inline by default. [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} lets you store data on the heap{{hi:Heap}} rather than inline on the stack{{hi:Stack}}. The box itself is a pointer-sized value; it owns its inner data and drops that data when the box goes out of scope:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/box/box_basics.rs:example}}
@@ -28,7 +28,8 @@ Use [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} when
 
 - you don't want to rely on stack space;
 - you have a large amount of data and you want to avoid copying it on the stack: If you have a very large struct, you might want to allocate it on the heap using `Box` to avoid stack overflow.
-- you have a dynamically sized type, whose size can't be known at compile time. This is common with recursive data structures like linked lists, trees, or enums where one variant contains another instance of the same enum.
+- you need to store a dynamically sized type, whose size is not known at compile time, behind a pointer such as `Box<dyn Trait>` or `Box<[T]>`;
+- you need indirection to make a recursive type have a finite, known size. For example, a linked-list node can contain `Option<Box<Node>>`; the `Box` has a known pointer size even though the list can grow recursively.
 - you want to own a value and you care only that it's a type that implements a particular trait rather than being of a specific type.
 - When you need to transfer ownership of data between functions - although [`Arc<T>`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} or [`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} might be more appropriate for shared ownership.
 
@@ -84,5 +85,5 @@ For example, in the following, we define a linked list that has an unknown numbe
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

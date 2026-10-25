@@ -9,7 +9,7 @@
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
-//! strum = { version = "0.27", features = ["derive"] }
+//! strum = { version = "0.28", features = ["derive"] }
 //! ```
 
 use strum::Display;

@@ -32,7 +32,7 @@ The [`std::cmp`][c~std::cmp~docs]↗{{hi:std::cmp}} module provides traits for c
 
 Both traits can be automatically implemented with `#[derive(...)]`. When writing a custom implementation, it is recommended to read the documentation for `Ord` and `PartialOrd` to avoid logic errors: `Ord` must be consistent with the `PartialOrd` implementation, and `PartialOrd` with `PartialEq`.
 
-Sorting algorithms often rely on the `PartialOrd` and `Ord` trait to determine the order of elements. The standard library provides several sorting functions that use these traits, such as [`sort()`][primitive~slice::sort]↗{{hi:slice::sort}} and [`sort_by()`][primitive~slice::sort_by]↗{{hi:slice::sort_by}} on slices.
+Slice [`sort()`][primitive~slice::sort]↗{{hi:slice::sort}} requires elements to implement `Ord`, which provides a total ordering. [`sort_by()`][primitive~slice::sort_by]↗{{hi:slice::sort_by}} accepts a comparator and can order values without an `Ord` implementation. For floating-point values, whose `PartialOrd` is not a total order because of `NaN`, use `f64::total_cmp` (or `f32::total_cmp`) as the comparator when you need a deterministic total order.
 
 The following example implements a custom order for software versions:
 
@@ -53,5 +53,5 @@ The following example implements a custom order for software versions:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

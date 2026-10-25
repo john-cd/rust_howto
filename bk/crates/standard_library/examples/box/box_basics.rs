@@ -29,7 +29,7 @@ fn main() {
 
     // If the inner value is `Copy`:
     let x: u32 = 7;
-    // `x` is copied, `y` owns a new `i32` on the heap.
+    // `x` is copied; `y` owns a new `u32` on the heap.
     let y: Box<u32> = Box::new(x);
     println!("x: {x}, *y: {}", *y);
 

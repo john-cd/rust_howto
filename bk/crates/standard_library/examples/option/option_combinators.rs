@@ -1,32 +1,26 @@
 #![allow(dead_code)]
-#![allow(clippy::bind_instead_of_map)]
-#![allow(clippy::unwrap_or_default)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 //! Combining `Option` values with `map`, `and_then` and other combinators.
 
-use std::fs;
-
-/// Reads a file and returns its contents as `Some(String)` containing the
-/// trimmed, lower-case file contents if successful, otherwise `None`.
-fn read_file(filename: &str) -> Option<String> {
-    fs::read_to_string(filename)
+/// Parses an even integer and halves it, returning `None` for invalid or odd
+/// input.
+fn parse_even_half(input: &str) -> Option<u32> {
+    input
+        .parse::<u32>()
         // Convert a `Result` to `Option`.
         .ok()
-        // `and_then` applies a function to the wrapped value if it's `Some`.
-        .and_then(|contents| Some(contents.trim().to_owned()))
-        // `map` is similar, but the closure does not need to return an
-        // `Option`:
-        .map(|s| s.to_lowercase())
+        // `and_then` applies a function that can itself return `None`.
+        .and_then(|number| (number % 2 == 0).then_some(number))
+        // `map` transforms the value without another fallible step.
+        .map(|number| number / 2)
 }
 
-/// Reads a file and transforms its content with combinators.
+/// Parses a number and transforms it with `Option` combinators.
 fn main() {
-    let contents_maybe = read_file("temp/poem.txt");
-    // Provide a default with `unwrap_or_else` or `unwrap_or_default`.
-    let contents = contents_maybe.unwrap_or_else(String::new);
-    println!("{contents}");
+    let half = parse_even_half("24").unwrap_or(0);
+    println!("Half of the even number is {half}.");
 }
 
 // ANCHOR_END: example
@@ -40,14 +34,18 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Checks that the example runs.
+    /// Verifies that parsing, filtering and mapping produce the expected
+    /// options.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        if !std::fs::exists("temp")? {
-            std::fs::create_dir("temp")?;
-        }
-        fs::write("temp/poem.txt", b" Lorem ipsum ")?;
+    fn test_parse_even_half() {
+        assert_eq!(parse_even_half("24"), Some(12));
+        assert_eq!(parse_even_half("25"), None);
+        assert_eq!(parse_even_half("not a number"), None);
+    }
+
+    /// Verifies that the example's main path runs.
+    #[test]
+    fn test_main() {
         main();
-        Ok(())
     }
 }

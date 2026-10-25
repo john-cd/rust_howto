@@ -18,7 +18,7 @@ use std::num::ParseIntError;
 
 /// Opens a file and handles the `Result` where it is returned.
 fn open_file(file_path: &str) {
-    // Faillible functions like `File::open` return a `Result`...
+    // Fallible functions like `File::open` return a `Result`...
     let open_result: Result<File, io::Error> = File::open(file_path);
 
     // We could handle their `Result` there and then...
@@ -39,7 +39,7 @@ fn read_file(file_path: &str) -> Result<String, io::Error> {
     };
 
     // This said, having to use multiple `match` or `if let` is verbose
-    // when chaining calls to faillible methods...
+    // when chaining calls to fallible methods...
     let mut contents = String::new();
     if let Err(e) = file.read_to_string(&mut contents) {
         Err(e)
@@ -110,7 +110,7 @@ impl From<ParseIntError> for MyError {
     }
 }
 
-// The above boilerplate can be avoided with the `thisError` crate,
+// The above boilerplate can be avoided with the `thiserror` crate,
 // which provides a convenient `derive` macro
 // for the standard library's `std::error::Error` trait.
 // Use it when writing libraries, in which case custom error types are
@@ -153,15 +153,15 @@ fn read_and_parse_file3(file_path: &str) -> anyhow::Result<i32> {
     Ok(number)
 }
 
-// A function without return value in truth returns `Unit`:
-// `fn func() {...}` is a shorthand for `fn func() -> () { ... }`
-// To convert it to a faillible function, return `Result<(), SomeErrorType>`.
+// A function without a return value in its signature returns the unit type
+// `()`: `fn func() {...}` is a shorthand for `fn func() -> () { ... }`
+// To convert it to a fallible function, return `Result<(), SomeErrorType>`.
 /// Reads a number from a file and returns `()` on success.
 fn unit_return_value(file_path: &str) -> Result<(), anyhow::Error> {
     let _i: i32 = read_and_parse_file3(file_path)?;
     println!("I don't return anything!");
     // Do not forget to return a `Result` in the happy path!
-    // The double parentheses are required. It is really `Ok( () )`.
+    // The `()` is the success value wrapped by `Ok`.
     Ok(())
 }
 
@@ -195,8 +195,9 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     use super::*;
 
+    /// Verifies that the example completes successfully.
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn test_main() -> Result<(), Box<dyn std::error::Error>> {
+        main()
     }
 }

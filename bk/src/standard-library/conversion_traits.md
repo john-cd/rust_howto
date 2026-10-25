@@ -39,8 +39,8 @@ Since `From` is infallible by design, conversions must never fail. `From` enable
 Paraphrasing the [`std::convert`][c~std::convert~docs]↗ module documentation, you should:
 
 - Implement the [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} trait for _explicit_, _infallible_, _consuming_ value-to-value conversions.
-  - `From` creates new owned values and automatically implements `Into`. `From` is the only trait here that changes ownership and produces a new value, while the others below borrow existing ones.
-  - Implement the [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}} trait for consuming value-to-value conversions to types outside the current crate.
+  - `From` and `TryFrom` consume their input values and produce values of the destination type; `From` is infallible and automatically provides `Into`, while `TryFrom` can fail and automatically provides `TryInto`. `Into` and `TryInto` also consume their input values. `AsRef` and `AsMut` borrow their input and return references.
+  - Prefer implementing `From` or `TryFrom` when the orphan rules permit it. Since Rust 1.41, the standard library supplies the corresponding `Into` or `TryInto` implementation. Directly implementing `Into` or `TryInto` is only needed for certain conversions to foreign types when supporting Rust versions before 1.41.
 - Use [`TryFrom`][c~std::convert::TryFrom~docs]↗{{hi:std::convert::TryFrom}}/[`TryInto`][c~std::convert::TryInto~docs]↗{{hi:std::convert::TryInto}} when a conversion might fail. The `TryFrom` and `TryInto` traits behave like `From` and `Into` otherwise.
 - Use [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::convert::AsRef}} / [`AsMut`][c~std::convert::AsMut~docs]↗{{hi:std::convert::AsMut}} when passing around references without consuming. `AsRef` lends a borrowed view into another type without transferring ownership.
   - Implement the `AsRef` trait for _explicit_, _cheap_ _reference-to-reference_ conversions.
@@ -64,5 +64,5 @@ Distinguish the above traits from the following:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
 </div>

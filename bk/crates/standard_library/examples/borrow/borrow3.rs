@@ -2,9 +2,9 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Implementing `Borrow` for a case-insensitive string type.
+//! Implementing `Borrow` for a string type with canonical lowercase storage.
 
-/// A case-insensitive string type.
+/// A string wrapper that normalizes input for case-insensitive comparisons.
 mod cis {
     use std::borrow::Borrow;
     use std::convert::From;
@@ -12,7 +12,7 @@ mod cis {
 
     // Case-insensitive string.
     // Implement `Eq`, `PartialEq`, `Hash` (used by `HashMap`).
-    /// A string that is compared and hashed ignoring case.
+    /// A string normalized to lowercase when it is constructed.
     #[derive(Debug, PartialEq, Eq, Hash)]
     pub struct CaseInsensitiveString(String);
 
@@ -23,20 +23,7 @@ mod cis {
         }
     }
 
-    // Equality with `str`, both ways:
-    impl PartialEq<str> for CaseInsensitiveString {
-        fn eq(&self, other: &str) -> bool {
-            self.0.eq_ignore_ascii_case(other)
-        }
-    }
-
-    impl PartialEq<CaseInsensitiveString> for str {
-        fn eq(&self, other: &CaseInsensitiveString) -> bool {
-            self.eq_ignore_ascii_case(&other.0)
-        }
-    }
-
-    // Implement `Borrow<str>` to allow lookup.
+    // Implement `Borrow<str>` to allow lookup by the canonical lowercase form.
     impl Borrow<str> for CaseInsensitiveString {
         fn borrow(&self) -> &str {
             &self.0
@@ -52,7 +39,7 @@ fn calculate_hash<T: std::hash::Hash>(t: &T) -> u64 {
     s.finish()
 }
 
-/// Looks up a map with case-insensitive keys.
+/// Looks up a map with normalized lowercase keys.
 fn main() {
     use std::borrow::Borrow as _;
     use std::collections::HashMap;
@@ -62,8 +49,7 @@ fn main() {
     let x = CaseInsensitiveString::from("Hello".to_owned());
     let y = CaseInsensitiveString::from("HELLO".to_owned());
 
-    assert!(x == *"heLLo");
-    assert!(*"HellO" == y);
+    assert_eq!(x, y);
 
     // The `Borrow`-required invariants must hold:
     let xb: &str = x.borrow();
@@ -81,20 +67,15 @@ fn main() {
     let z = CaseInsensitiveString::from("World".to_owned());
     let zb: &str = z.borrow();
     assert!(x != z);
-    assert_ne!(calculate_hash(&x), calculate_hash(&z));
     assert!(xb != zb);
-    assert_ne!(calculate_hash(&xb), calculate_hash(&zb));
 
     // Use the new `CaseInsensitiveString` type:
     let mut map: HashMap<CaseInsensitiveString, usize> = HashMap::new();
     map.insert(CaseInsensitiveString::from("HelLO".to_owned()), 1);
 
-    // Lookup with a (lowercase) `&str` thanks to `Borrow<str>`.
-    if let Some(value) = map.get("hello") {
-        println!("Found: {value}");
-    } else {
-        panic!("Not found.");
-    }
+    // Lookup uses the same canonical representation as the owned key.
+    assert_eq!(map.get("hello"), Some(&1));
+    assert_eq!(map.get("HELLO"), None);
 }
 
 // ANCHOR_END: example

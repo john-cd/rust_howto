@@ -8,7 +8,7 @@
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
-//! derive_more = "2.0.1" # Or latest
+//! derive_more = { version = "2.1.1", features = ["full"] }
 //! ```
 
 use derive_more::Add;
@@ -90,6 +90,18 @@ fn main() {
     };
     stack.push(4); // Using `Vec`'s push method through `DerefMut`.
     assert_eq!(stack.len(), 4); // Using `Vec`'s len method through `Deref`.
+
+    // Using the derived arithmetic and error traits.
+    let mut from = Amount(10.0);
+    let mut to = Amount(2.0);
+    transfer_amount(&mut from, &mut to, Amount(3.0))
+        .expect("the source balance covers the transfer");
+    assert_eq!(from.0, 7.0);
+    assert_eq!(to.0, 5.0);
+
+    assert!(transfer_amount(&mut from, &mut to, Amount(20.0)).is_err());
+    let database_error = AppError::DatabaseError;
+    assert_eq!(database_error.to_string(), "Database error");
 }
 
 // More complex example: Multiple derives on a single type.
