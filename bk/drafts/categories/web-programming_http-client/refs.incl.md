@@ -12,7 +12,9 @@
 [ex~web-programming_http-client~partial-download-with-http-range-headers]: download.md#partial-download-with-http-range-headers
 [ex~web-programming_http-client~post-a-file-with-reqwest]: download.md#post-a-file-with-reqwest
 [ex~web-programming_http-client~query-the~repo-api]: apis.md#query-the~repo-api
+[ex~web-programming_http-client~rate-limit]: rate_limiting_and_retries.md#rate-limit
 [ex~web-programming_http-client~reqwest]: http_clients.md#reqwest
+[ex~web-programming_http-client~retry]: rate_limiting_and_retries.md#retry
 [ex~web-programming_http-client~ureq]: http_clients.md#ureq
 [p~asynchronous]: ../asynchronous/index.md
 [p~building]: ../development-tools_cargo-plugins/building.md

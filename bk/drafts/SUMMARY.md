@@ -15,6 +15,7 @@
 
 - [Authentication](categories/authentication/index.md)
   - [Basic Authentication](categories/authentication/basic_authentication.md)
+  - [Session Login](categories/authentication/session_login.md)
 
 - [Caching](categories/caching/index.md)
   - [In-memory Caching](categories/caching/in_memory_cache.md)
@@ -152,6 +153,7 @@
 - [Email](categories/email/index.md)
   - [Sending emails](categories/email/send_emails.md)
   - [Email parsing](categories/email/email_parsing.md)
+  - [Reading emails](categories/email/read_emails.md)
 
 - [Encoding and Serialization](categories/encoding/index.md)
   - [Character Sets](categories/encoding/string_encoding.md)
@@ -247,6 +249,7 @@
   - [HTTP clients](categories/web-programming_http-client/http_clients.md)
   - [Making Requests](categories/web-programming_http-client/requests.md)
   - [Calling a Web API](categories/web-programming_http-client/apis.md)
+  - [Rate Limiting and Retries](categories/web-programming_http-client/rate_limiting_and_retries.md)
   - [Downloads](categories/web-programming_http-client/download.md)
 
 - [Web Programming - HTTP Servers](categories/web-programming_http-server/index.md)
@@ -256,6 +259,8 @@
   - [Static Website Generators](categories/web-programming_http-server/static_website_generators.md)
   - [Middleware](categories/web-programming_http-server/middleware.md)
   - [CORS](categories/web-programming_http-server/cors.md)
+  - [Axum Add-ons](categories/web-programming_http-server/axum_extras.md)
+  - [OpenAPI and JSON Schema](categories/web-programming_http-server/openapi.md)
   - [Batteries-included Frameworks](categories/web-programming_http-server/_batteries-included_frameworks.md)
   - [GraphQL](categories/web-programming_http-server/_graphql.md)
   - [gRPC](categories/web-programming_http-server/_grpc.md)

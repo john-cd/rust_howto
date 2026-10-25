@@ -8,6 +8,10 @@ The process of confirming identities.
 
 {{#include basic_authentication.incl.md}}
 
+## Session Login
+
+{{#include session_login.incl.md}}
+
 ## References
 
 The [Copenhagen Book][book~copenhagen]↗ provides a general guideline on implementing Auth in web applications.

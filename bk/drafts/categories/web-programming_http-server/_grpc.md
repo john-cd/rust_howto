@@ -39,6 +39,54 @@ tonic-prost-build = "0.14.6"
 
 The integration test binds a Tokio listener to an available local port, sends a generated client request, checks the greeting, and stops the server with a one-shot shutdown signal. It does not depend on a fixed port or a timing delay.
 
+## Serve gRPC to Browsers with gRPC-Web {#grpc-web}
+
+[![tonic-web][c~tonic-web~docs~badge]][c~tonic-web~docs]{{hi:tonic-web}} [![tonic][c~tonic~docs~badge]][c~tonic~docs]{{hi:tonic}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
+
+Browsers cannot make the HTTP/2 trailers-based calls that gRPC needs. [gRPC-Web][grpc-web~repo]↗ is a variant of the protocol that browsers can speak with `fetch`. [`tonic-web`][c~tonic-web~docs]↗{{hi:tonic-web}} provides `GrpcWebLayer`, which translates gRPC-Web requests into gRPC for the same `tonic` service, so one port serves native and browser clients.
+
+Two details matter. First, `Server::builder().accept_http1(true)` is required, because gRPC-Web may arrive over HTTP/1.1. Second, a page served from another origin needs CORS: add a [`tower-http`][c~tower-http~docs]↗{{hi:tower-http}} `CorsLayer` that allows the request headers and exposes `grpc-status` and `grpc-message` (see [[cors | Cross-origin Resource Sharing]]). The example mirrors any origin to stay short; allow only your own origins in production.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/web_programming_http_server/examples/grpc/grpc_web.rs:example}}
+```
+
+The test sends a hand-framed gRPC-Web request (a five-byte length prefix followed by the protobuf message) to the service and checks the reply, so no browser is needed. In the browser, the [`tonic-web-wasm-client`][c~tonic-web-wasm-client~docs]↗{{hi:tonic-web-wasm-client}} crate provides the matching client; see [[leptos | Leptos]].
+
+**gRPC, gRPC-Web, or something else?**
+
+- Use plain gRPC between servers: it supports all four streaming modes.
+- Use gRPC-Web for browser clients. It supports unary and server-streaming calls, but not client or bidirectional streaming; if you need those, put a proxy such as Envoy in front of the service instead.
+- If the API is small and public, a JSON API described with OpenAPI may be simpler for outside developers; see [[openapi | OpenAPI and JSON Schema]].
+
+## Generate Code Without a System `protoc` {#protoc}
+
+[![tonic-prost-build][c~tonic-prost-build~docs~badge]][c~tonic-prost-build~docs]{{hi:tonic-prost-build}} [![protox][c~protox~docs~badge]][c~protox~docs]{{hi:protox}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
+
+[`tonic-prost-build`][c~tonic-prost-build~docs]↗{{hi:tonic-prost-build}} normally runs the `protoc` compiler from a build script, which fails on machines that do not have it. There are three ways to avoid a system install:
+
+- **A pure-Rust compiler.** [`protox`][c~protox~docs]↗{{hi:protox}} parses `.proto` files in Rust. This book's build script uses it: `protox::compile(["proto/helloworld.proto"], ["proto"])` returns a file descriptor set, and `tonic_prost_build::compile_fds(descriptors)` generates the Rust code.
+- **A prebuilt `protoc`.** [`protoc-bin-vendored`][c~protoc-bin-vendored~docs]↗{{hi:protoc-bin-vendored}} ships `protoc` binaries for common platforms. Point `PROTOC` at `protoc_bin_vendored::protoc_bin_path()` before compiling. It is fast to build, but it downloads binaries with the crate.
+- **A `protoc` built from source.** [`protobuf-src`][c~protobuf-src~docs]↗{{hi:protobuf-src}} compiles `protoc` with your C++ toolchain: slow, but no prebuilt binaries are involved.
+
+Whichever you choose, honour a `PROTOC` environment variable set by the user, and tell Cargo when to rerun the script with `cargo:rerun-if-changed=proto/helloworld.proto` (and `cargo:rerun-if-env-changed=PROTOC`). A sketch of the vendored variant:
+
+```rust,ignore
+// build.rs
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    println!("cargo:rerun-if-changed=proto/helloworld.proto");
+    println!("cargo:rerun-if-env-changed=PROTOC");
+    if std::env::var_os("PROTOC").is_none() {
+        // SAFETY: build scripts are single-threaded at this point.
+        unsafe { std::env::set_var("PROTOC", protoc_bin_vendored::protoc_bin_path()?) };
+    }
+    tonic_prost_build::configure()
+        .build_server(true)
+        .compile_protos(&["proto/helloworld.proto"], &["proto"])?;
+    Ok(())
+}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[asynchronous | Asynchronous Programming]] for Tokio and async service methods.
@@ -49,5 +97,7 @@ The integration test binds a Tokio listener to an available local port, sends a 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+[gRPC-Web and codegen written for issue #1945](https://github.com/john-cd/rust_howto/issues/1945)
+
   [grpc: write](https://github.com/john-cd/rust_howto/issues/514)
 </div>

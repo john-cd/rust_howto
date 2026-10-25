@@ -52,6 +52,54 @@ Plan to host the server executable and its site assets together. A CSR app can b
 |Server-rendered HTML and a Rust server|SSR with `cargo-leptos`|
 |Browser APIs outside Leptos's view and event model|Use the bindings described in [[interfacing_with_javascript]]|
 
+## Build a Client-side App {#client-side-app}
+
+A client-side Leptos dashboard needs routing, HTTP calls from WebAssembly, browser storage, and, when the back end speaks gRPC, a gRPC-Web client. The examples below live in one crate whose tests run natively. Code that touches browser APIs is compiled only for `wasm32-unknown-unknown` (`#[cfg(target_arch = "wasm32")]`), and the logic around it is kept in plain functions that the tests cover.
+
+### Route with `leptos_router` {#leptos-router}
+
+[![leptos_router][c~leptos_router~docs~badge]][c~leptos_router~docs]{{hi:leptos_router}} [![leptos][c~leptos~docs~badge]][c~leptos~docs]{{hi:leptos}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+
+[`leptos_router`][c~leptos_router~docs]↗{{hi:leptos_router}} maps URLs to components. `<Router>` and `<Routes>` wrap the route tree; `<ParentRoute>` renders a shared layout with an `<Outlet/>` for its children; `<Route path=path!("users/:id") .../>` declares a route with a parameter, which a component reads with `use_params_map`; and `fallback` renders the not-found page. Declare paths with the `path!` macro.
+
+The test renders the application to HTML for several URLs as a server would, by providing a `RequestUrl`, so no browser is needed.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/wasm/examples/leptos_client/leptos_router.rs:example}}
+```
+
+### Call an API with `gloo-net` {#gloo-net}
+
+[![gloo-net][c~gloo-net~docs~badge]][c~gloo-net~docs]{{hi:gloo-net}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+
+[`gloo-net`][c~gloo-net~docs]↗{{hi:gloo-net}} wraps the browser's `fetch` API. `Request::get(url).header("Authorization", ..).send().await?.json::<T>().await` returns typed data. The function that builds the URL and the bearer header is target-independent and unit tested; only `fetch_json` is compiled for the browser.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/wasm/examples/leptos_client/gloo_fetch.rs:example}}
+```
+
+Keep the token out of `localStorage` where possible, since any script on the page can read it; an `HttpOnly` session cookie is safer.
+
+### Persist Settings with `gloo-storage` {#gloo-storage}
+
+[![gloo-storage][c~gloo-storage~docs~badge]][c~gloo-storage~docs]{{hi:gloo-storage}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+
+[`gloo-storage`][c~gloo-storage~docs]↗{{hi:gloo-storage}} reads and writes typed values in `localStorage` (or `sessionStorage`) as JSON. Give every field of the settings struct a default, so that a missing key, an invalid value, or a value saved by an older version of the application falls back to the defaults instead of failing.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/wasm/examples/leptos_client/gloo_storage.rs:example}}
+```
+
+### Call a gRPC Service with `tonic-web-wasm-client` {#grpc-web-client}
+
+[![tonic-web-wasm-client][c~tonic-web-wasm-client~docs~badge]][c~tonic-web-wasm-client~docs]{{hi:tonic-web-wasm-client}} [![tonic][c~tonic~docs~badge]][c~tonic~docs]{{hi:tonic}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+
+[`tonic-web-wasm-client`][c~tonic-web-wasm-client~docs]↗{{hi:tonic-web-wasm-client}} lets a `tonic` client speak gRPC-Web from the browser. The same call runs over `tonic-web-wasm-client::Client` on `wasm32` and over a regular `Channel` on native targets; the server side is described in [[grpc | gRPC]]. The example writes the messages and the call by hand to stay self-contained; in a real project `tonic-prost-build` generates them from a `.proto` file.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/wasm/examples/leptos_client/grpc_web_client.rs:example}}
+```
+
 ## Related topics {#related-topics .skip}
 
 - [[wasm_basics | WASM Basics]]
@@ -64,5 +112,7 @@ Plan to host the server executable and its site assets together. A CSR app can b
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
+[client-side app written for issue #1944](https://github.com/john-cd/rust_howto/issues/1944)
+
 [write](https://github.com/john-cd/rust_howto/issues/1220)
 </div>
