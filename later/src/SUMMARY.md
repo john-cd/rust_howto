@@ -113,6 +113,7 @@
   - [File Dialogs](categories/gui/file_dialogs.md)
   - [GTK](categories/gui/gtk.md)
   - [Immediate-mode GUI](categories/gui/immediate_mode_gui.md)
+  - [`egui` Add-on Crates](categories/gui/egui_ecosystem.md)
   - [Retained-mode GUI](categories/gui/retained_mode_gui.md)
   - [Text layout](categories/gui/text_layout.md)
   - [UI layout](categories/gui/ui_layout.md)
