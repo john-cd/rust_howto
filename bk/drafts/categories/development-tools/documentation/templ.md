@@ -38,6 +38,7 @@ fixture or a local-data option to the tool.
 
 ## Related Topics {#related-topics .skip}
 
+- [`mdbook-utils`][ex~documentation~mdbook-utils]
 - [Template Engines][p~template-engine]
 - [Rust How-to `templ` source][rust-howto~templ~repo]↗
 

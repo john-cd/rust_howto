@@ -97,6 +97,7 @@
   - [Code Formatting](categories/development-tools/formatting/formatting.md)
   - [Documentation](categories/development-tools/documentation/documentation.md)
     - [`mdBook`](categories/development-tools/documentation/mdbook.md)
+    - [`mdbook-utils`](categories/development-tools/documentation/mdbook_utils.md)
     - [`templ`](categories/development-tools/documentation/templ.md)
     - [Badges](categories/development-tools/documentation/badges.md)
   - [Versioning](categories/development-tools/versioning/versioning.md)
