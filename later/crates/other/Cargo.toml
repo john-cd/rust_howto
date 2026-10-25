@@ -22,7 +22,7 @@ autolib = false
 [features]
 onnx = ["dep:ort", "dep:arc-swap"]
 datafusion = ["dep:datafusion"]
-arrow = ["dep:arrow", "dep:serde_json"]
+arrow = ["dep:arrow"]
 typegen = ["crux_core/typegen"] # for Crux
 polars = ["dep:polars"]
 # `polars` and `datafusion` can be enabled together: `Cargo.lock` resolves a single `chrono`
@@ -38,7 +38,6 @@ anyhow = "1.0.104"
 arrow = { version = "58.4.0", features = ["csv", "json", "prettyprint"], optional = true }
 async-trait = "0.1.92"
 polars = { version = "0.51.0", default-features = false, features = ["lazy", "csv"], optional = true }
-serde_json = { version = "1.0.154", optional = true } # Convert Arrow JSON output back into Serde rows.
 
 ## Scheduling
 chrono = "0.4.45"
@@ -54,7 +53,7 @@ futures = "0.3"
 k8s-openapi = { version = "0.28", features = ["latest"] }
 kube = { version = "4.2", features = ["derive", "runtime", "client"] }
 schemars = "1"
-serde_json = "1"
+serde_json = "1.0.154" # Also converts Arrow JSON output back into Serde rows.
 thiserror = "2"
 
 ## Machine learning
