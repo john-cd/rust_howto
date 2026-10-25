@@ -28,7 +28,7 @@ midir = "0.11.1"
 # Keep 0.22: rodio 0.23 needs cpal 0.18, whose `alsa-sys` 0.4 conflicts with the 0.3 used by `bevy` in this workspace.
 rodio = "0.22.2"
 # Resample audio buffers between sample rates.
-rubato = "0.16.2"
+rubato = "5.0.1"
 
 [[example]]
 name = "wav"

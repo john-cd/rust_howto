@@ -4,12 +4,14 @@
 
 use std::error::Error;
 
-use rubato::FftFixedInOut;
+use rubato::Fft;
+use rubato::FixedSync;
 use rubato::Resampler;
+use rubato::audioadapter_buffers::direct::SequentialSliceOfVecs;
 
 /// Converts one generated mono chunk to a different sample rate.
 fn resample_chunk() -> Result<(usize, Vec<f32>), Box<dyn Error>> {
-    let mut resampler = FftFixedInOut::<f32>::new(48_000, 44_100, 1_024, 1)?;
+    let mut resampler = Fft::<f32>::new(48_000, 44_100, 1_024, 1, FixedSync::Both)?;
     let input_frames = resampler.input_frames_next();
     let input = (0..input_frames)
         .map(|frame| {
@@ -17,12 +19,11 @@ fn resample_chunk() -> Result<(usize, Vec<f32>), Box<dyn Error>> {
             (std::f32::consts::TAU * 440.0 * time).sin()
         })
         .collect::<Vec<_>>();
-    let output = resampler.process(&[input], None)?;
-    let channel = output
-        .into_iter()
-        .next()
-        .ok_or("resampler returned no output channel")?;
-    Ok((input_frames, channel))
+    let channels = [input];
+    let input_adapter = SequentialSliceOfVecs::new(&channels, 1, input_frames)?;
+    let output = resampler.process(&input_adapter, None)?;
+    // The output is a single interleaved channel.
+    Ok((input_frames, output.take_data()))
 }
 
 /// Resamples a chunk and checks the output buffer.
