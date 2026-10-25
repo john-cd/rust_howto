@@ -137,7 +137,11 @@ async fn reconcile(
 }
 
 /// Decides what to do after a failed reconciliation: retry later.
-fn error_policy(_echo: Arc<Echo>, error: &ReconcileError, _ctx: Arc<Context>) -> Action {
+fn error_policy(
+    _echo: Arc<Echo>,
+    error: &ReconcileError,
+    _ctx: Arc<Context>,
+) -> Action {
     eprintln!("reconcile failed: {error}");
     Action::requeue(Duration::from_secs(15))
 }

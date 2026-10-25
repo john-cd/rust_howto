@@ -54,7 +54,8 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that the counter callback updates state without a display server.
+    /// Verifies that the counter callback updates state without a display
+    /// server.
     #[test]
     fn increments_counter_without_a_display() -> anyhow::Result<()> {
         i_slint_backend_testing::init_no_event_loop();

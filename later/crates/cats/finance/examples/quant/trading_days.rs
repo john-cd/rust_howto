@@ -33,7 +33,10 @@ fn main() -> trading_calendar::Result<()> {
     // weekend: Fri 28th, Mon Dec 1st, Tue Dec 2nd.
     let wed = NaiveDate::from_ymd_opt(2025, 11, 26).expect("valid date");
     let later = add_trading_days(&nyse, wed, 3);
-    assert_eq!(later, NaiveDate::from_ymd_opt(2025, 12, 2).expect("valid date"));
+    assert_eq!(
+        later,
+        NaiveDate::from_ymd_opt(2025, 12, 2).expect("valid date")
+    );
     Ok(())
 }
 
