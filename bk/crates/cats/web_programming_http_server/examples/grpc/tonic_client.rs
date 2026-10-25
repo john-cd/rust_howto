@@ -86,7 +86,7 @@ mod tests {
         let server_result = server.await;
 
         assert_eq!(call_result?, "Hello Integration!");
-        shutdown_result.map_err(|_| {
+        shutdown_result.map_err(|()| {
             anyhow::anyhow!("gRPC server exited before shutdown")
         })?;
         server_result??;
