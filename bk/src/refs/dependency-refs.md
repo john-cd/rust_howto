@@ -1,5 +1,4 @@
 <!-- TODO Reviewed ??-??-2026 -->
-
 # Reference Definitions
 
 
@@ -1227,6 +1226,15 @@
 [lru-github]: https://github.com/jeromefroe/lru-rs.git
 
 
+[mailparse]: https://docs.rs/mailparse
+
+
+[mailparse-crate]: https://crates.io/crates/mailparse
+
+
+[mailparse-github]: https://github.com/staktrace/mailparse
+
+
 [markdown]: https://docs.rs/markdown
 
 
@@ -1917,7 +1925,7 @@
 [scraper-crate]: https://crates.io/crates/scraper
 
 
-[scraper-github]: https://github.com/rust-scraper/scraper
+[scraper-github]: https://github.com/rust-scraper/scraper (*)
 
 
 [scrypt]: https://docs.rs/scrypt
