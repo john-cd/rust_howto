@@ -2168,18 +2168,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f2032f911046de80f0a198e0901378627c33f59ea0ac00e363d481118bd70a53"
 
 [[package]]
-name = "av-decoders"
-version = "0.9.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "93ef6a87c007444f81cb3948e39dd2566e2d70d7abbbb806d4bf19e98cae3b60"
-dependencies = [
- "num-rational 0.4.2",
- "thiserror 2.0.21",
- "v_frame 0.5.2",
- "y4m",
-]
-
-[[package]]
 name = "av-scenechange"
 version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2195,29 +2183,7 @@ dependencies = [
  "pastey 0.1.1",
  "rayon",
  "thiserror 2.0.21",
- "v_frame 0.3.9",
- "y4m",
-]
-
-[[package]]
-name = "av-scenechange"
-version = "0.23.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4a6f553be33f9c84cc95b7391e8c4a7732e9c11aca66aaeaa1102c554f756fed"
-dependencies = [
- "aligned",
- "anyhow",
- "arrayvec",
- "av-decoders",
- "cfg-if",
- "cpufeatures 0.3.1",
- "log 0.4.34",
- "num-rational 0.4.2",
- "num-traits",
- "pastey 0.2.3",
- "rayon",
- "thiserror 2.0.21",
- "v_frame 0.5.2",
+ "v_frame",
  "y4m",
 ]
 
@@ -2232,7 +2198,7 @@ dependencies = [
  "log 0.4.34",
  "nom 8.0.0",
  "num-rational 0.4.2",
- "v_frame 0.3.9",
+ "v_frame",
 ]
 
 [[package]]
@@ -17148,7 +17114,8 @@ dependencies = [
 name = "multimedia_video"
 version = "0.1.2"
 dependencies = [
- "av-scenechange 0.23.0",
+ "anyhow",
+ "rav1e",
 ]
 
 [[package]]
@@ -21563,7 +21530,7 @@ dependencies = [
  "arbitrary",
  "arg_enum_proc_macro",
  "arrayvec",
- "av-scenechange 0.14.1",
+ "av-scenechange",
  "av1-grain",
  "bitstream-io",
  "built",
@@ -21584,7 +21551,7 @@ dependencies = [
  "rand_chacha 0.9.0",
  "simd_helpers",
  "thiserror 2.0.21",
- "v_frame 0.3.9",
+ "v_frame",
  "wasm-bindgen",
 ]
 
@@ -28121,17 +28088,6 @@ checksum = "666b7727c8875d6ab5db9533418d7c764233ac9c0cff1d469aec8fa127597be2"
 dependencies = [
  "aligned-vec",
  "num-traits",
- "wasm-bindgen",
-]
-
-[[package]]
-name = "v_frame"
-version = "0.5.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "706b485cfdd36c867e946509da6f8b9fa38f40a1aecb92d702e04d135c4335bb"
-dependencies = [
- "num-traits",
- "thiserror 2.0.21",
  "wasm-bindgen",
 ]
 

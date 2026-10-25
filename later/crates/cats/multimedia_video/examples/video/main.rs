@@ -5,6 +5,9 @@
 mod video;
 
 /// Runs the video example.
-fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+///
+/// # Errors
+/// Returns an error if encoder setup or frame encoding fails.
+fn main() -> anyhow::Result<()> {
     video::run()
 }
