@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-#![allow(unused_variables)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
@@ -7,9 +6,6 @@
 //! It defines a simple application with a controller and routes.
 //!
 //! Loco is a web framework for Rust inspired by Ruby on Rails.
-
-#[cfg(feature = "loco-support")]
-use std::path::Path;
 
 #[cfg(feature = "loco-support")]
 use loco_rs::app::Hooks;
@@ -47,6 +43,7 @@ impl Hooks for App {
         AppRoutes::with_default_routes().add_route(home::routes())
     }
 
+    /// Creates the application without enabling database support.
     async fn boot(
         mode: StartMode,
         environment: &Environment,
@@ -55,19 +52,13 @@ impl Hooks for App {
         create_app::<Self>(mode, environment, config).await
     }
 
+    /// Leaves background worker registration empty for this HTTP-only example.
     async fn connect_workers(_ctx: &AppContext, _queue: &Queue) -> Result<()> {
         Ok(())
     }
 
+    /// Registers no scheduled or one-off tasks for this example.
     fn register_tasks(_tasks: &mut Tasks) {}
-
-    async fn truncate(_ctx: &AppContext) -> Result<()> {
-        Ok(())
-    }
-
-    async fn seed(_ctx: &AppContext, _path: &Path) -> Result<()> {
-        Ok(())
-    }
 }
 
 /// A simple controller for the home page.
@@ -95,8 +86,7 @@ mod home {
 }
 
 /// Prints the command needed to run this example as a Loco application.
-#[tokio::main]
-async fn main() -> anyhow::Result<()> {
+fn main() -> anyhow::Result<()> {
     #[cfg(feature = "loco-support")]
     println!("Run with `cargo loco start` from a Loco application directory.");
     #[cfg(not(feature = "loco-support"))]
@@ -117,8 +107,8 @@ mod tests {
     }
 
     /// Verifies the sample entry point returns successfully without a server.
-    #[tokio::test]
-    async fn example_entry_point_returns_successfully() -> anyhow::Result<()> {
-        main().await
+    #[test]
+    fn example_entry_point_returns_successfully() -> anyhow::Result<()> {
+        main()
     }
 }
