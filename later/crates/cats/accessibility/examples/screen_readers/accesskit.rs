@@ -19,30 +19,29 @@ use accesskit::TreeUpdate;
 
 // In this example, we
 // - create a simple accessibility tree with a root node and a button node.
-/// Builds a small accessibility tree.
-fn main() {
+/// Builds a small accessibility tree without creating a native window.
+fn accessibility_tree() -> TreeUpdate {
     let root_id = NodeId(0);
-    let button_id = NodeId(1);
+    let save_button_id = NodeId(1);
 
-    // Create a basic tree structure
     let mut root = Node::new(Role::Window);
-    root.set_children(vec![button_id]);
+    root.set_children(vec![save_button_id]);
 
-    let mut button = Node::new(Role::Button);
-    // In accesskit 0.20, accessible names are set via `set_label`
-    button.set_label("Click me");
+    let mut save_button = Node::new(Role::Button);
+    save_button.set_label("Save document");
 
-    let tree = Tree::new(root_id);
-
-    let update = TreeUpdate {
-        nodes: vec![(root_id, root), (button_id, button)],
-        tree: Some(tree),
+    TreeUpdate {
+        nodes: vec![(root_id, root), (save_button_id, save_button)],
+        tree: Some(Tree::new(root_id)),
         tree_id: TreeId::ROOT,
         focus: root_id,
-    };
+    }
+}
 
-    assert_eq!(update.nodes.len(), 2);
-    assert_eq!(update.tree.unwrap().root, root_id);
+/// Prints the semantic nodes that a toolkit would send to its platform adapter.
+fn main() {
+    let update = accessibility_tree();
+    println!("Accessibility tree contains {} nodes.", update.nodes.len());
 }
 // ANCHOR_END: example
 
@@ -55,8 +54,21 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the tree exposes a button with a meaningful accessible
+    /// name.
     #[test]
-    fn test_main() {
-        main();
+    fn tree_contains_named_save_button() {
+        let update = accessibility_tree();
+        let button = update
+            .nodes
+            .iter()
+            .find(|(node_id, _)| *node_id == NodeId(1))
+            .map(|(_, node)| node);
+
+        assert!(button.is_some());
+        if let Some(button) = button {
+            assert_eq!(button.role(), Role::Button);
+            assert_eq!(button.label(), Some("Save document"));
+        }
     }
 }
