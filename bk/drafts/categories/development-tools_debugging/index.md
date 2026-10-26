@@ -26,21 +26,23 @@ For quick value inspection and panic backtraces, see [[debugging | Debugging]].
 
 {{#include tracing.incl.md}}
 
-### Older Frameworks
+### The `log` Facade and Other Implementations
 
-{{#include tracing_alternatives.incl.md}}
-
-### `log` and Friends
-
-| Topic                         | Rust Crates                                                                                                                                                                                                                                                             |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Logging Framework             | [`log`][c~log~docs]↗{{hi:log}} is an older crate providing logging macros and facade.                                                                                                                                                                                   |
-| Log Implementations (Loggers) | [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}: A simple logger that configures logging based on environment variables. [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} is a more flexible logger that supports [configuration][p~configuration] files (YAML, TOML, JSON). |
-| Log Filtering                 | Can be done with [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}, [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}}.                                                                                                                                                          |
+Use [`log`][c~log~docs]↗{{hi:log}} when a library needs to emit records without choosing an application's logger. An executable initializes one compatible implementation; `env_logger` is a small environment-configured choice, while `log4rs` supports file-based configuration. The recipes below are the single index for these alternatives.
 
 {{#include log.incl.md}}
 
+### Configure Output and Filtering
+
+Configure the selected logger once near application startup. Environment filters are convenient for local runs; file configuration is useful when output destinations or formats belong to deployment settings. The examples below cover these choices.
+
 {{#include config_log.incl.md}}
+
+### Other Logging Frameworks
+
+[`slog`][c~slog~docs]↗{{hi:slog}} is another logging facade with structured key-value records. The alternatives table keeps this separate from the `log` facade and its `env_logger` and `log4rs` implementations.
+
+{{#include tracing_alternatives.incl.md}}
 
 ## Panics & Logging
 
@@ -66,7 +68,3 @@ For quick value inspection and panic backtraces, see [[debugging | Debugging]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [index: reorganize; dedupe alternatives / `log` / config_log](https://github.com/john-cd/rust_howto/issues/319)
-</div>
