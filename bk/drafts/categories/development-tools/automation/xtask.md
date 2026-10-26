@@ -30,7 +30,7 @@ members = ["xtask", "crates/*"]
 
 [![cargo_metadata][c~cargo_metadata~docs~badge]][c~cargo_metadata~docs] [![toml_edit][c~toml_edit~docs~badge]][c~toml_edit~docs]{{hi:cargo_metadata}}{{hi:toml_edit}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Linting}}
 
-A `[workspace.lints]` table is only applied to members that opt in with `[lints] workspace = true`. [`cargo_metadata`][c~cargo_metadata~docs]↗{{hi:cargo_metadata}} lists the manifests of the members, and [`toml_edit`][c~toml_edit~docs]↗{{hi:toml_edit}} parses them. Unlike `toml`, `toml_edit` preserves comments and formatting, so the same code can also fix a manifest in place.
+A `[workspace.lints]` table is only applied to members that opt in with `[lints] workspace = true`. [`cargo_metadata`][c~cargo_metadata~docs]↗{{hi:cargo_metadata}} lists the manifests of the members, and [`toml_edit`][c~toml_edit~docs]↗{{hi:toml_edit}} parses them. Unlike `toml`, `toml_edit` preserves comments and formatting, so the check can print a candidate repair without rewriting manifests automatically.
 
 ```rust,editable
 {{#include ../../../../crates/cats/development_tools/examples/automation/workspace_lints.rs:example}}

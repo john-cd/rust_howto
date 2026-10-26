@@ -37,16 +37,18 @@ fn churn(
     Ok(counts)
 }
 
+/// Finds the repository containing `path` and counts recent path changes.
+fn churn_at(
+    path: &Path,
+    limit: usize,
+) -> anyhow::Result<BTreeMap<String, usize>> {
+    let repo = gix::discover(path)?;
+    churn(&repo, limit)
+}
+
+/// Prints the most frequently changed paths in the current checkout.
 fn main() -> anyhow::Result<()> {
-    // Find the repository that contains this source file.
-    let repo = match gix::discover(Path::new(env!("CARGO_MANIFEST_DIR"))) {
-        Ok(repo) => repo,
-        Err(e) => {
-            println!("Not in a Git repository: {e}");
-            return Ok(());
-        }
-    };
-    let counts = churn(&repo, 20)?;
+    let counts = churn_at(Path::new(env!("CARGO_MANIFEST_DIR")), 20)?;
     let mut ranked: Vec<_> = counts.iter().collect();
     ranked.sort_by(|a, b| b.1.cmp(a.1).then(a.0.cmp(b.0)));
     for (path, count) in ranked.into_iter().take(5) {
@@ -65,16 +67,18 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Counts recent file changes in the checkout containing this example.
     #[test]
-    #[ignore = "needs a Git checkout with history"]
-    fn test_main() -> anyhow::Result<()> {
+    fn counts_changes_in_the_example_checkout() -> anyhow::Result<()> {
         main()
     }
 
+    /// Reports a clear failure for a temporary directory outside any
+    /// repository.
     #[test]
-    fn not_a_repository_is_an_error() {
-        let dir = std::env::temp_dir().join("not_a_git_repository_for_gix");
-        std::fs::create_dir_all(&dir).expect("create dir");
-        assert!(gix::open(&dir).is_err());
+    fn not_a_repository_is_an_error() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
+        assert!(churn_at(dir.path(), 1).is_err());
+        Ok(())
     }
 }

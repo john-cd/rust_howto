@@ -27,6 +27,7 @@ fn add_workspace_lints(manifest: &str) -> anyhow::Result<String> {
     Ok(doc.to_string())
 }
 
+/// Checks every workspace package and fails with its missing opt-ins.
 fn main() -> anyhow::Result<()> {
     let manifest = Path::new(env!("CARGO_MANIFEST_DIR")).join("Cargo.toml");
     let metadata = MetadataCommand::new()
@@ -46,7 +47,11 @@ fn main() -> anyhow::Result<()> {
         }
     }
     println!("members without `[lints] workspace = true`: {missing:?}");
-    assert!(missing.is_empty(), "missing workspace lints: {missing:?}");
+    if !missing.is_empty() {
+        anyhow::bail!(
+            "workspace packages missing `[lints] workspace = true`: {missing:?}"
+        );
+    }
     Ok(())
 }
 // ANCHOR_END: example
@@ -60,11 +65,14 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Confirms the current example crate opts into the workspace lint table.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()
     }
 
+    /// Checks that a candidate fix preserves comments and enables workspace
+    /// lints.
     #[test]
     fn detects_and_fixes_a_missing_table() -> anyhow::Result<()> {
         let before = "[package]\nname = \"demo\" # keep this comment\n";
