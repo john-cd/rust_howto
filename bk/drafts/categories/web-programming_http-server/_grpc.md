@@ -65,15 +65,17 @@ The test sends a hand-framed gRPC-Web request (a five-byte length prefix followe
 
 [`tonic-prost-build`][c~tonic-prost-build~docs]↗{{hi:tonic-prost-build}} normally runs the `protoc` compiler from a build script, which fails on machines that do not have it. There are three ways to avoid a system install:
 
-- **A pure-Rust compiler.** [`protox`][c~protox~docs]↗{{hi:protox}} parses `.proto` files in Rust. This book's build script uses it: `protox::compile(["proto/helloworld.proto"], ["proto"])` returns a file descriptor set, and `tonic_prost_build::compile_fds(descriptors)` generates the Rust code.
+- **A pure-Rust compiler.** [`protox`][c~protox~docs]↗{{hi:protox}} parses `.proto` files in Rust. This book's build script uses it for both gRPC schemas: `protox::compile([proto], ["proto"])` returns a file descriptor set, and `tonic_prost_build` generates the Rust code from it.
 - **A prebuilt `protoc`.** [`protoc-bin-vendored`][c~protoc-bin-vendored~docs]↗{{hi:protoc-bin-vendored}} ships `protoc` binaries for common platforms. Point `PROTOC` at `protoc_bin_vendored::protoc_bin_path()` before compiling. It is fast to build, but it downloads binaries with the crate.
 - **A `protoc` built from source.** [`protobuf-src`][c~protobuf-src~docs]↗{{hi:protobuf-src}} compiles `protoc` with your C++ toolchain: slow, but no prebuilt binaries are involved.
 
-Whichever you choose, honour a `PROTOC` environment variable set by the user, and tell Cargo when to rerun the script with `cargo:rerun-if-changed=proto/helloworld.proto` (and `cargo:rerun-if-env-changed=PROTOC`). This book's `build.rs` also compiles `proto/echo.proto` with the vendored variant, so the code below is built and tested with the book. `grpc/echo.rs` includes the generated code and checks that the message, client, and server types exist:
+The book uses the pure-Rust approach for both `helloworld.proto` and `echo.proto`; it does not need or launch a `protoc` executable. The build script asks Cargo to rerun when either schema changes. The code below is the schema compilation loop:
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/web_programming_http_server/build.rs:vendored_protoc}}
+{{#include ../../../crates/cats/web_programming_http_server/build.rs:protox_build}}
 ```
+
+`grpc/echo.rs` includes the generated code and checks that the message, client, and server types exist.
 
 ## Related Topics {#related-topics .skip}
 
@@ -87,5 +89,6 @@ Whichever you choose, honour a `PROTOC` environment variable set by the user, an
 <div class="hidden">
 [gRPC-Web and codegen written for issue #1945](https://github.com/john-cd/rust_howto/issues/1945)
 
-  [grpc: write](https://github.com/john-cd/rust_howto/issues/514)
+[grpc: write](https://github.com/john-cd/rust_howto/issues/514)
+
 </div>
