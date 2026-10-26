@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Exercise the link generators against temporary Markdown files.
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Cross-links between pages.
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 # TODO Reviewed ??-??-2026
 
 set -ue

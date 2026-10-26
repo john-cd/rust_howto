@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Run the continuous integration build inside the development container.
+# Usage: Run with bash .devcontainer/ci.sh from the repository root and provide any required arguments.
+#
 # TODO Reviewed ??-??-2026
 
 set -eux

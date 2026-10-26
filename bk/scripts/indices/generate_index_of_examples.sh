@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Generate the index of Rust examples from the book source.
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail
@@ -8,7 +11,6 @@ IFS=$'\n\t'
 # Outputs the contents of index of examples `src/examples_index.md`
 # This script reads the local tables of content of all subchapters
 #
-# Usage:
 # ./scripts/index_of_examples/generate_index_of_examples.sh <root folder>
 
 clean() {

@@ -1,3 +1,6 @@
+# Purpose: Build, serve, and maintain the generated book, its indexes, and references.
+# Usage: From bk/, run just book <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set unstable := true

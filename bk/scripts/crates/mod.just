@@ -1,3 +1,6 @@
+# Purpose: Audit crate references and maintain the book workspace crate list.
+# Usage: From bk/, run just crates <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
@@ -13,7 +16,6 @@ _default:
 ## ---- CRATE MANAGEMENT -----------------------------------
 
 # (BEWARE: modifies many files; manual review required) Put all crate names in the book's Markdown between ` `
-[unix]
 backtick:
     #! /usr/bin/env bash
     set -euo pipefail
@@ -24,19 +26,7 @@ backtick:
          -exec sed -E -i 's~(\s)('"${crate}"')(\s)~\1`\2`\3~g' {} \;
     done
 
-[windows]
-backtick:
-    #! /usr/bin/env bash
-    set -euo pipefail
-    for crate in $(cat {{ book_root }}/master/crates.txt | sed -E -e '/^\s*(vision|markup|combine|matrix|derive|raster|job|thumbnails|digest|encoding|ping|clear|can|core|fetch|find|atomic|protobuf|ignore|select|windows|tracing|heapless|bytes|regex|futures|cached|config|diff|which|fake|glob|markdown|insta|similar|time|just|directories|image|open|log|either|which|similar|cargo|just|cross|colored|console)\s*$/d')
-    do
-      echo ">> $crate"
-      find {{ book_root }}/src {{ book_root }}/drafts {{ book_root }}/../later -type f -name '*.md' -not -name '*.incl.md' -not -name '*refs.md' \
-         -exec sed -E -i 's~(\s)('"${crate}"')(\s)~\1`\2`\3~g' {} \;
-    done
-
 # Check the master list of crates against `crates.io` and print invalid names (slow).
-[unix]
 check:
     #! /usr/bin/env bash
     set -uo pipefail
@@ -46,18 +36,7 @@ check:
     done
     echo "DONE"
 
-[windows]
-check:
-    #! /usr/bin/env bash
-    set -uo pipefail
-    for crate in $(cat {{ book_root }}/master/crates.txt)
-    do
-      cargo info ${crate} > /dev/null 2>&1 || echo "$crate"
-    done
-    echo "DONE"
-
 # Extract crate names from [c~<name>::optional::path~suffix] link labels in all Markdown files in `src` (except refdef files) and compare with the master list.
-[unix]
 compare_with_markdown:
     #! /usr/bin/env bash
     set -euo pipefail
@@ -68,20 +47,7 @@ compare_with_markdown:
     # You may add: ${root}drafts ${root}later
     rg --no-line-number --no-filename --only-matching -g "*.md" -g "!*-refs.md" --replace '$2' "${regex}" "${root}src" | sort -u | comm --check-order -3 --output-delimiter="|" - <(sort -u ${root}master/crates.txt)
 
-[windows]
-compare_with_markdown:
-    #! /usr/bin/env bash
-    set -euo pipefail
-    root={{ book_root }}/
-    regex='(\[c~)([^:~]+)([^]]+\])'
-    rg --no-line-number --no-filename --only-matching -g "*.md" -g "!*-refs.md" --replace '$2' "${regex}" "${root}src" | sort -u | comm --check-order -3 --output-delimiter="|" - <(sort -u ${root}master/crates.txt)
-
 # Sort the master list of crates.
-[unix]
-@sort:
-    sort -u -o {{ book_root }}/master/crates.txt {{ book_root }}//master/crates.txt
-
-[windows]
 @sort:
     sort -u -o {{ book_root }}/master/crates.txt {{ book_root }}//master/crates.txt
 

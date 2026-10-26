@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Insert links to categories: [<category>][cat~<category>].
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 # TODO Reviewed ??-??-2026
 
 set -u

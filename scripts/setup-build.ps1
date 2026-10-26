@@ -1,3 +1,6 @@
+# Purpose: Set up this checkout's external Cargo build paths and compiler-cache links.
+# Usage: Run with pwsh -File scripts/setup-build.ps1; pass any required parameters.
+#
 # TODO Reviewed ??-??-2026
 
 param(

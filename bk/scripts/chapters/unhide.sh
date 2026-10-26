@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Restore hidden book pages by removing filename prefixes.
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail

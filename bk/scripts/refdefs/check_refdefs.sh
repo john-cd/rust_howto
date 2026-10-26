@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+# Purpose: List links without corresponding reference definitions and vice versa.
+# Usage: ./scripts/refdefs/check_refdefs.sh <root folder>.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail
 
 # List links without corresponding reference definitions and vice versa
-# Usage: ./scripts/refdefs/check_refdefs.sh <root folder>
 
 root="$(realpath $1)/"
 # Extract reference definitions e.g. [label]: http://xyz

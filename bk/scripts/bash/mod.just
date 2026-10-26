@@ -1,3 +1,7 @@
+# Purpose: Provide shared Bash recipes for book tasks with the same behavior on all platforms.
+# Usage: From bk/, run just bash <recipe>.
+#
+
 # Shared Bash-backed recipes for book tasks that have the same behavior on all platforms.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]

@@ -1,6 +1,8 @@
+# Purpose: Set shared Cargo output and compiler-cache defaults for repository workspaces.
+# Usage: Imported by each workspace justfile; use that workspace's just recipes.
+#
 # TODO Reviewed ??-??-2026
 
-# Imported by every workspace entry point, including root fan-out commands.
 build_repo := parent_directory(source_directory())
 build_slot := if file_name(parent_directory(build_repo)) == ".worktrees" { file_name(build_repo) } else { "main" }
 build_cache_home := env("XDG_CACHE_HOME", join(home_directory(), ".cache"))
@@ -8,13 +10,16 @@ build_target_base := if os_family() == "windows" { "D:/target/rust_howto" } else
 build_intermediate_base := if os_family() == "windows" { "C:/code_build/rust_howto" } else { join(build_cache_home, "rust_howto/build") }
 build_inherited_target := env("CARGO_TARGET_DIR", "")
 build_inherited_intermediate := env("CARGO_BUILD_BUILD_DIR", "")
+
 export CARGO_TARGET_DIR := env("CARGO_TARGET_DIR", join(build_target_base, build_slot))
 export CARGO_BUILD_BUILD_DIR := env("CARGO_BUILD_BUILD_DIR", join(build_intermediate_base, build_slot))
 export RUSTC_WRAPPER := env("RUSTC_WRAPPER", "sccache")
 export CARGO_INCREMENTAL := env("CARGO_INCREMENTAL", "0")
 export SCCACHE_DIR := env("SCCACHE_DIR", if os_family() == "windows" { "D:/sccache" } else { join(build_cache_home, "sccache") })
+
 build_inherited_cache_bases := env("SCCACHE_BASEDIRS", "")
 build_cache_separator := if os_family() == "windows" { ";" } else { ":" }
+
 # Preserve caller-supplied roots and add this checkout as a fallback.
 export SCCACHE_BASEDIRS := if build_inherited_cache_bases == "" { replace(build_repo, "\\", "/") } else { build_inherited_cache_bases + build_cache_separator + replace(build_repo, "\\", "/") }
 

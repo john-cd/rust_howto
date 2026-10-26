@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Generate a template for the book language index.
+# Usage: Run from bk/ with just indices generate_language_index.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail
@@ -7,7 +10,6 @@ set -euo pipefail
 # Outputs a template for `language/index.md`
 # Manual editing required afterwards
 #
-# Usage: ./scripts/language/generate_language_index.sh /root-folder >> ./src/language/index.incl.md
 
 # Print header
 echo '| Language Constructs |

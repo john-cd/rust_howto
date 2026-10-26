@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Install the operating-system and Rust tools required by the development container.
+# Usage: Run with bash .devcontainer/install_deps.sh from the repository root and provide any required arguments.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail

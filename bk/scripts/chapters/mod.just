@@ -1,3 +1,6 @@
+# Purpose: Hide and restore book pages listed in hiddenfiles.txt.
+# Usage: From bk/, run just chapters <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
@@ -12,22 +15,10 @@ _default:
 
 # Hides some markdown sections/ pages by adding a _ prefix to all filenames listed in `hiddenfiles.txt`
 [confirm]
-[unix]
-@hide:
-  ./hide.sh {{root}}
-
-[windows]
-[confirm]
 @hide:
   ./hide.sh {{root}}
 
 # Make all markdown sections / pages visible
-[confirm]
-[unix]
-@unhide:
-  ./unhide.sh {{root}}
-
-[windows]
 [confirm]
 @unhide:
   ./unhide.sh {{root}}

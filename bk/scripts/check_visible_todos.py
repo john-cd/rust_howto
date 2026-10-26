@@ -1,3 +1,6 @@
+# Purpose: Fail when a TODO placeholder is visible in published Markdown.
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 """Fail when a TODO placeholder is visible in published Markdown."""
 
 from __future__ import annotations

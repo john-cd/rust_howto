@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Create reference-style links and reference definitions, which can be used to replace bare URLs in the Markdown.
+# Usage: ./scripts/urls/<script_name>.sh <root folder> [output path].
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail
@@ -8,7 +11,6 @@ set -euo pipefail
 # Manual review necessary
 # Requires ripgrep
 #
-# Usage: ./scripts/urls/<script_name>.sh <root folder> [output path]
 # Alternatively, set INPUT_PATH and optionally OUTPUT_PATH.
 
 input_path="${1:-${INPUT_PATH:-}}"

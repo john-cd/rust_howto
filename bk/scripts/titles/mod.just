@@ -1,3 +1,6 @@
+# Purpose: Normalize capitalization in book Markdown headings.
+# Usage: From bk/, run just titles <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]

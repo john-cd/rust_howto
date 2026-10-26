@@ -1,3 +1,6 @@
+# Purpose: Build and preview Rust API documentation for the book examples.
+# Usage: From bk/, run just docs <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]

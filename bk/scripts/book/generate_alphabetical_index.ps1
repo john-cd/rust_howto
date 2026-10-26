@@ -1,3 +1,6 @@
+# Purpose: Generate the alphabetized crate index page.
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 # TODO Reviewed ??-??-2026
 
 param(

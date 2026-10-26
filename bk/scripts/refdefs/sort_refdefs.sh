@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
+# Purpose: Sort and deduplicate reference definitions in the central `*-refs.md` files.
+# Usage: ./scripts/refdefs/sort_refdefs.sh <root folder>.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail
 
-# Usage: ./scripts/refdefs/sort_refdefs.sh <root folder>
 
 # Sort and deduplicate reference definitions in the central `*-refs.md` files
 

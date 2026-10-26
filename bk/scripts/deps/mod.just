@@ -1,3 +1,6 @@
+# Purpose: Update and inspect dependencies in the repository Cargo workspaces.
+# Usage: From bk/, run just deps <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]

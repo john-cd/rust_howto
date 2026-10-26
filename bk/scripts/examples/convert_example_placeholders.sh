@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Convert {{#example <name>}} placeholders into ```rust {#include ...}``` blocks.
+# Usage: ./scripts/examples/convert_example_placeholders.sh <root folder>.
+#
 # TODO Reviewed ??-??-2026
 
 set -eu
@@ -6,7 +9,6 @@ set -eu
 # Convert {{#example <name>}} placeholders into ```rust {#include ...}``` blocks
 # and create the necessary code stubs (in subfolders of crates/**/examples/)
 #
-# Usage: ./scripts/examples/convert_example_placeholders.sh <root folder>
 
 root="$(realpath $1)/"
 

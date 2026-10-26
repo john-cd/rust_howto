@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+# Purpose: List examples (.rs files) in `tests` that are not included in the book markdown.
+# Usage: ./scripts/examples/list_examples_not_used_in_book.sh <root folder of the book>.
+#
 # TODO Reviewed ??-??-2026
 
 set -eu
 
 # List examples (.rs files) in `tests` that are not included in the book markdown.
-# Usage: ./scripts/examples/list_examples_not_used_in_book.sh <root folder of the book>
 
 root="$(realpath $1)/" # Removes the final / if it exists
 src="${root}src"

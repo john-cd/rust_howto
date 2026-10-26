@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Script executed at the end of the development Docker image build.
+# Usage: Run with bash .devcontainer/dev.sh from the repository root and provide any required arguments.
+#
 # TODO Reviewed ??-??-2026
 
 # Script executed at the end of the development Docker image build.

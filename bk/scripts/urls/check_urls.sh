@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Check that URLs to external websites e.g. https://... (typically found in ref defs) are valid and working (e.g. no 404).
+# Usage: ./scripts/urls/check_urls.sh <root folder>.
+#
 # TODO Reviewed ??-??-2026
 
 set -uo pipefail
@@ -6,7 +9,6 @@ set -uo pipefail
 # Check that URLs to external websites e.g. https://... (typically found in ref defs) are valid and working (e.g. no 404).
 # This script does NOT check whether reference definitions are used or not.
 #
-# Usage: ./scripts/urls/check_urls.sh <root folder>
 
 root="$(realpath $1)/"
 lychee --exclude-all-private --no-ignore --hidden --format detailed --cache "${root}**/*.md" "${root}**/*.toml" "${root}**/*.yaml" "${root}**/*.yml" || true

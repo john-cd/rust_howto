@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Convert inline links such as [...](http://...) into reference-style links: [...][...] [...]: http://...
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 # TODO Reviewed ??-??-2026
 
 set -uo pipefail

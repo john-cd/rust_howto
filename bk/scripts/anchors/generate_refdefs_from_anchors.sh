@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+# Purpose: Generate reference definitions from book heading anchors e.g. {#some-text} and add them to the local references in `refs.incl.md`.
+# Usage: ./scripts/anchors/generate_refdefs_from_anchors.sh <root folder>.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail
 
 # (BEWARE: modifies files directly) Generate reference definitions from book heading anchors e.g. {#some-text} and add them to the local references in `refs.incl.md`
-# Usage: ./scripts/anchors/generate_refdefs_from_anchors.sh <root folder>
 
 root="$(realpath $1)/"
 

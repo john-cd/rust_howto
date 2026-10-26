@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
+# Purpose: Create a new cat crate for a given crates.io category.
+# Usage: ./scripts/examples/create.sh <root folder> <category name>.
+#
 # TODO Reviewed ??-??-2026
 
 # Create a new cat crate for a given crates.io category.
 #
-# Usage: ./scripts/examples/create.sh <root folder> <category name>
 #
 # The root folder should be the `bk` directory.
 # The category name should match the crates.io category slug (e.g., algorithms, asynchronous).

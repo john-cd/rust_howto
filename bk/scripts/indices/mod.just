@@ -1,3 +1,6 @@
+# Purpose: Generate crate, language, and example indexes for the book.
+# Usage: From bk/, run just indices <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]

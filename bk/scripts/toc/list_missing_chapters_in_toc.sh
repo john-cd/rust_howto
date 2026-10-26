@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+# Purpose: List (sub)chapters that somehow were not added in the main table of contents i.e. SUMMARY.md.
+# Usage: Run from bk/ with just toc list_missing_chapters.
+#
 # TODO Reviewed ??-??-2026
 
 set -uo pipefail
 
 # List (sub)chapters that somehow were not added in the main table of contents i.e. SUMMARY.md
-# Usage: ./scripts/main_table_of_contents/list_missing_chapters_in_toc.sh <root folder>
 
 root="$(realpath $1)/"
 # List all markdown files, except TOCs and references

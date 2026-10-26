@@ -1,3 +1,6 @@
+# Purpose: Format, build, lint, and test the Rust example workspaces.
+# Usage: From bk/, run just code <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]

@@ -1,3 +1,6 @@
+# Purpose: Install and run the repository pre-commit hooks.
+# Usage: From bk/, run just precommit <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]

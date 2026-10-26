@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+# Purpose: Generate the book's HTML / JS.
+# Usage: ./scripts/build_book.sh.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail
 
 # Generate the book's HTML / JS
-# Usage: ./scripts/build_book.sh
 
 root="$(realpath $1)/"
 

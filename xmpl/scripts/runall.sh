@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+# Purpose: Run additional examples (under the `crates/xmpl` folder).
+# Usage: ./scripts/runall.sh <root_folder>.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail
 
 # Run additional examples (under the `crates/xmpl` folder)
-# Usage: ./scripts/runall.sh <root_folder>
 
 set -o pipefail
 set -e

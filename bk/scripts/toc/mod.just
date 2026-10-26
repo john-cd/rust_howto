@@ -1,3 +1,6 @@
+# Purpose: Find Markdown pages missing from the book table of contents.
+# Usage: From bk/, run just toc <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
@@ -11,11 +14,7 @@ _default:
 ## ---- MAIN TOC MANAGEMENT -----------------------------------
 
 # List (sub)chapters that somehow were not added in `SUMMARY.md`
-[unix]
 @list_missing_chapters:
     ./list_missing_chapters_in_toc.sh {{root}}
 
-[windows]
-@list_missing_chapters:
-    ./list_missing_chapters_in_toc.sh {{root}}
 # Usage: just list_missing_chapters_in_toc >> ./src/SUMMARY.md

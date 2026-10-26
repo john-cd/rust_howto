@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes.
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail

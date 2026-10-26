@@ -1,3 +1,6 @@
+# Purpose: Test the recipe-table updater and its title synchronization behavior.
+# Usage: From bk/, run the matching just recipe and pass its arguments.
+#
 # TODO Reviewed ??-??-2026
 
 from __future__ import annotations

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Purpose: Add missing reference definitions required by the examples index.
+# Usage: Run from bk/ with just indices update_refdefs_for_examples.
+#
 # TODO Reviewed ??-??-2026
 
 set -euo pipefail
@@ -7,7 +10,6 @@ IFS=$'\n\t'
 # Quick and dirty script
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
 #
-# Usage: ./scripts/index_of_examples/update_refdefs_for_index_of_examples.sh <root folder>
 #
 # This script is idempotent
 

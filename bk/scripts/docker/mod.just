@@ -1,3 +1,6 @@
+# Purpose: Build and inspect the repository development and CI Docker images.
+# Usage: From bk/, run just docker <recipe>.
+#
 # TODO Reviewed ??-??-2026
 
 set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
