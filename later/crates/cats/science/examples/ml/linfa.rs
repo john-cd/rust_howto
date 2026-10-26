@@ -2,48 +2,55 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! This example demonstrates a simple linear regression example using the
-//! `linfa` and `linfa-linear` crates. It showcases how to create a dataset, fit
-//! a linear regression model, and make predictions.
-//!
-//! `linfa` is a Rust library for machine learning, providing tools for tasks,
-//! such as clustering, regression, and classification.
+//! Predict numeric values with a linear regression model from `linfa-linear`.
+
+use std::error::Error;
 
 use linfa::dataset::Dataset;
 use linfa::prelude::Predict as _;
 use linfa::traits::Fit as _;
 use linfa_linear::LinearRegression;
 
-/// Perform linear regression.
-fn main() {
-    // Create a dataset with features (X) and targets (y).
-    let x = ndarray_016::array![[1.0], [2.0], [3.0], [4.0], [5.0]];
-    let y = ndarray_016::array![1.1, 2.2, 2.8, 3.95, 5.1];
-
-    // Create a dataset.
-    let dataset = Dataset::new(x, y);
-
-    // Fit a linear regression model.
-    let model = LinearRegression::default().fit(&dataset).unwrap();
-
-    // Make predictions.
+/// Fits a linear model and predicts two values outside the training range.
+///
+/// # Errors
+///
+/// Returns an error if fitting the linear model fails.
+fn regression_predictions() -> Result<Vec<f64>, Box<dyn Error>> {
+    let features = ndarray_016::array![[1.0], [2.0], [3.0], [4.0], [5.0]];
+    let targets = ndarray_016::array![1.1, 2.2, 2.8, 3.95, 5.1];
+    let dataset = Dataset::new(features, targets);
+    let model = LinearRegression::default().fit(&dataset)?;
     let test_data = ndarray_016::array![[6.0], [7.0]];
-    let predictions = model.predict(&test_data);
 
+    Ok(model.predict(&test_data).to_vec())
+}
+
+/// Runs the regression example and prints its predictions.
+fn main() -> Result<(), Box<dyn Error>> {
+    let predictions = regression_predictions()?;
     println!("Predictions: {predictions:?}");
+    Ok(())
 }
 // ANCHOR_END: example
 
 pub fn run() {
-    main();
+    main().expect("the Linfa regression example failed");
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that the regression model predicts the expected numeric range.
     #[test]
-    fn test_main() {
-        main();
+    fn regression_predicts_values_near_the_linear_trend()
+    -> Result<(), Box<dyn Error>> {
+        let predictions = regression_predictions()?;
+
+        assert_eq!(predictions.len(), 2);
+        assert!((predictions[0] - 6.0).abs() < 0.2);
+        assert!((predictions[1] - 7.0).abs() < 0.2);
+        Ok(())
     }
 }

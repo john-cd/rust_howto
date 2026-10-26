@@ -8,14 +8,14 @@
 
 ## Choosing a Deep Learning Crate {#choosing}
 
-| Crate | Training | Inference | GPU backends | Maintained |
-|---|---|---|---|---|
-| [`candle`][c~candle-core~repo]↗ | Basic | Yes, many pre-trained models | CUDA, Metal | Yes |
-| [`burn`][c~burn~repo]↗ | Yes | Yes | wgpu, CUDA, Metal, LibTorch | Yes |
-| [`tch`][c~tch~repo]↗ | Yes | Yes | CUDA (through LibTorch) | Yes; binds the C++ PyTorch library |
-| [`ort`][c~ort~repo]↗ | No | Yes (ONNX models) | CUDA, TensorRT, CoreML, others | Yes; binds ONNX Runtime |
-| [`tract`][c~tract~repo]↗ | No | Yes (ONNX, NNEF) | CPU only | Yes; pure Rust |
-| [`tensorflow`][tensorflow-rust~repo]↗ | Yes | Yes | CUDA | Little activity; prefer the other crates for new projects |
+| Crate                                 | Training | Inference                    | GPU backends                   | Maintained                                                |
+| ------------------------------------- | -------- | ---------------------------- | ------------------------------ | --------------------------------------------------------- |
+| [`candle`][c~candle-core~repo]↗       | Basic    | Yes, many pre-trained models | CUDA, Metal                    | Yes                                                       |
+| [`burn`][c~burn~repo]↗                | Yes      | Yes                          | wgpu, CUDA, Metal, LibTorch    | Yes                                                       |
+| [`tch`][c~tch~repo]↗                  | Yes      | Yes                          | CUDA (through LibTorch)        | Yes; binds the C++ PyTorch library                        |
+| [`ort`][c~ort~repo]↗                  | No       | Yes (ONNX models)            | CUDA, TensorRT, CoreML, others | Yes; binds ONNX Runtime                                   |
+| [`tract`][c~tract~repo]↗              | No       | Yes (ONNX, NNEF)             | CPU only                       | Yes; pure Rust                                            |
+| [`tensorflow`][tensorflow-rust~repo]↗ | Yes      | Yes                          | CUDA                           | Little activity; prefer the other crates for new projects |
 
 Train with `burn` or `candle`, or train in Python and run the exported model in Rust with `ort` or `tract` (see the ONNX example in [Machine Learning][p~classical-machine-learning]). Use `tch` or `tensorflow` when you need an existing PyTorch or TensorFlow model unchanged.
 
@@ -41,6 +41,7 @@ The example trains a one-layer model on generated values entirely on `Device::Cp
 
 - [`tch`][c~tch~repo]↗{{hi:tch}} provides Rust bindings to the C++ API of PyTorch (LibTorch).
 - [`tensorflow`][tensorflow-rust~repo]↗{{hi:tensorflow}} provides Rust bindings for TensorFlow. Its development has slowed down.
+- [`mistral.rs`][mistral.rs~repo]↗ is an inference engine for running large language models in Rust.
 
 ## References {#references .skip}
 

@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 #[cfg(feature = "candle")]
 mod candle;
+mod kmeans;
 mod linfa;
 mod smartcore;
 
@@ -25,7 +26,10 @@ enum Commands {
     #[cfg(feature = "candle")]
     #[command(name = "candle")]
     Candle,
-    /// Runs the `linfa` example.
+    /// Runs the `kmeans` example.
+    #[command(name = "kmeans")]
+    Kmeans,
+    /// Runs the `linfa` regression example.
     #[command(name = "linfa")]
     Linfa,
     /// Runs the `smartcore` example.
@@ -42,6 +46,9 @@ fn main() {
             #[cfg(feature = "candle")]
             Commands::Candle => {
                 candle::run();
+            }
+            Commands::Kmeans => {
+                kmeans::run();
             }
             Commands::Linfa => {
                 linfa::run();
