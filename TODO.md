@@ -196,7 +196,7 @@ Added 2026-10-25. Lists A–D from the [#1955 comments](https://github.com/john-
 
 ### List 31 — Local validation and lint gates (Codex A)
 
-- [#1859](https://github.com/john-cd/rust_howto/issues/1859) — **P2** — Complete remaining Clippy gates blocked during #1792.
+- [#1859](https://github.com/john-cd/rust_howto/issues/1859) — **P2** — ✅ closed on GitHub — Complete remaining Clippy gates blocked during #1792.
 - [#1868](https://github.com/john-cd/rust_howto/issues/1868) — **P2** — ✅ closed on GitHub — Resolve the Windows Clippy spawn failure for the wasm package.
 - [#1874](https://github.com/john-cd/rust_howto/issues/1874) — **P3** — ✅ closed on GitHub — Make the excluded embedded examples directly testable.
 - [#1867](https://github.com/john-cd/rust_howto/issues/1867) — **P3** — Add executable examples for embedded and 2D graphics chapters.
@@ -218,7 +218,7 @@ Validation update (2026-10-25):
 - #1876, #1877, and #1900 remain open for required source-issue evidence and platform/full-workspace gates. Wrapper-free serial `just ca` was stopped after waiting on the shared build-directory lock so it would not contend with another active task.
 - #1957 remains open: current central refdefs pass and the protobuf pointer is confirmed, but the restored-page link/wikilink audit and standalone drafts/later book builds remain outstanding (those directories have no book configuration).
 - The scoped #1929 ort/ONNX test from PR #1964 passed (1 passed, 2 filtered); the wider smartcore/augurs issue remains open. Results and remaining work are recorded in comments on the corresponding issues.
-- Repository-wide Rust lint follow-up: `later/crates` strict Clippy passed after enabling Naga 27's `termcolor` feature; `gui_vizia` and the Python extension strict Clippy checks passed. The separate Wasm crate remains blocked on Windows because `wasmer-compiler-cranelift` emits a platform compile error. The `bk` strict Clippy pass succeeded with the existing RocksDB archive, after pinning `cornucopia_client_core` to the documented compatible 0.4.0; the following all-target check is blocked because Windows cannot start vendored `protoc.exe` (OS error 623, Illegal System DLL Relocation). Re-run that gate on a host where protoc starts, and the Wasm gate on a supported platform.
+- Follow-up (2026-10-26): full `bk just ca` and `later just ca` passed with sccache disabled and incremental compilation enabled. The gRPC build now compiles both schemas with `protox`, avoiding `protoc.exe`. The unfinished Wasmer example no longer depends on an unused crate that pulls in a Windows-unsupported compiler. `scripts/build.just` now honors caller overrides for `RUSTC_WRAPPER` and `CARGO_INCREMENTAL`.
 
 ### List 32 — Encoding, database and tooling examples (Codex B)
 
@@ -748,10 +748,10 @@ All ten issues are implemented and integrated into local `develop`: #905, #645, 
 
 ## Status snapshot (2026-10-26)
 
-Local `develop` is eleven commits ahead of `origin/develop` and has not been pushed. Codex branches List AB, AC (including #1885), AD and issue-921 are cherry-picked in; their TODO-only commits were dropped in favor of the newer develop text. Strict Clippy passed for `tools`, `xmpl`, `playground`, `mdbook-utils`, `publish`, `bk`'s first pass, `later/crates` excluding Wasm, `gui_vizia`, and the Python extension. The `bk` follow-up is blocked because Windows cannot launch `protoc.exe` (OS error 623); `later` Wasm is blocked by the Windows-incompatible `wasmer-compiler-cranelift`. rustfmt (nightly) is clean. See List 31 for the remaining platform gates.
+Local `develop` is nine commits ahead of `origin/develop` and has not been pushed. Codex branches List AB, AC (including #1885), AD and issue-921 are cherry-picked in; their TODO-only commits were dropped in favor of the newer develop text. Strict Clippy passed for `tools`, `xmpl`, `playground`, `mdbook-utils`, `publish`, and the full `bk` and `later` recipes, including GUI Vizia and the Python extension. The unfinished Wasmer example no longer builds its unused Windows-incompatible compiler dependency. rustfmt (nightly) is clean. See List 31 for remaining platform gates.
 
 - List AC: all ten assigned issues are closed on GitHub. The final repository-wide `rumdl` scan passed after clearing the lint baseline; #1885 is closed. See the linked issue records for per-issue implementation and verification comments.
 - List A: #1859, #1867, #1868, #1874, and [#1885](https://github.com/john-cd/rust_howto/issues/1885) are closed. The 1,115-file `just lint-md` gate passed; focused example tests/Clippy and the scoped #1929 ort/ONNX test passed. #1876, #1877, and #1900 remain open for Unix/Aspell, source-issue evidence and full-workspace validation. #1957 remains open for restored-page reference/link checks and unavailable drafts/later book builds. See the List 31 evidence and issue comments above.
 - List AD: #905, #645, #264, #263, #258, #1178, #275, #274, #272, and #352 closed; all List AD commits integrated on local `develop`.
 - `claude/examples-concurrency`, `-devtools`, `-web` still conflict with develop (#1992).
-- Current worktree snapshot: primary `develop` has focused lockfile and documentation changes for the Clippy follow-up; reusable slots `a`, `b`, and `c` are clean. See `WORKTREES.md` for branch and HEAD details.
+- Current worktree snapshot: primary `develop` has the lint follow-up commits; slots `b` and `d` contain active dirty work and are preserved. See `WORKTREES.md` for branch and HEAD details.
