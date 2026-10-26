@@ -102,4 +102,16 @@ mod tests {
             "[![cat~data_structures-v2][cat~data_structures-v2~badge]][cat~data_structures-v2]{{hi:Data Structures}} "
         );
     }
+
+    /// Verifies that trimming preserves repeated whitespace inside category names.
+    #[test]
+    fn test_create_category_badge_preserves_internal_whitespace() {
+        let result =
+            create_category_badge("   Web  programming:   HTTP   ", "   web-programming   ")
+                .expect("the category badge with internal whitespace should render");
+        assert_eq!(
+            result,
+            "[![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web  programming:   HTTP}} "
+        );
+    }
 }
