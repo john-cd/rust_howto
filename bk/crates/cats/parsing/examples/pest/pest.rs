@@ -38,6 +38,7 @@ fn parse_expression(input: &str) -> anyhow::Result<Vec<String>> {
 
     Ok(expression
         .into_inner()
+        .filter(|pair| pair.as_rule() != Rule::EOI)
         .map(|pair| pair.as_str().to_owned())
         .collect())
 }

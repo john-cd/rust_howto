@@ -1,7 +1,7 @@
-expression = { term ~ (operator ~ term)* } // ~ matches the sequence
+expression = { SOI ~ term ~ (operator ~ term)* ~ EOI } // Require the whole input.
 term = { number }
 operator = { "+" | "-" | "*" | "/" } // | matches one of the four strings (either or)
-number = { ASCII_DIGIT+ } // + matches one or more times
+number = @{ ASCII_DIGIT+ } // Atomic rule excludes skipped whitespace from its token.
 
 // This rule starts with a _ and is therefore silent
 // (it produces no tokens or error reports).
