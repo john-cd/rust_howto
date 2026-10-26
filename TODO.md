@@ -37,14 +37,14 @@
 
 ## In progress
 
-B1 implementation commits are on `codex/list-1-everyday-examples` in `.worktrees\b`; validation details were added to all ten GitHub issues. Integration is pending because the automatic approval reviewer hit its usage limit on Git metadata writes. The #1940 MIME correction is tested but uncommitted, and #864 retains its human-review marker. Preserve the separate active integration worktree `.worktrees\g`.
+B1 is integrated into local `develop` at `7761c5e6c` (39 commits ahead of `origin/develop`; not pushed). Seven B1 issues are closed: #1941, #1940, #939, #1252, #1281, #1912, and #1950. #912 and #1058 remain open because their done criteria require PR links; #864 remains open because its human-review marker is preserved. Formatting, focused tests/Clippy, reference checks, Markdown lint, direct mdBook build/linkcheck, sitemap generation, static asset copy, and `git diff --check` passed. The `just bb` wrapper hit Windows AWS-LC/sccache/Bash-launch failures; its book and remaining steps passed when run directly.
 
 ### Code examples
 
 #### ACTIVE-CODE-01 — Networking, authentication and email
 
 - [#812](https://github.com/john-cd/rust_howto/issues/812) — **P2** — Finish and locally verify the Pingora reverse-proxy example — **PARTIAL; OPEN — Unix/Pingora validation and book build blocked**
-- [#1058](https://github.com/john-cd/rust_howto/issues/1058) — **P4** — Replace the obsolete public WebSocket endpoint in the async-tungstenite example — Everyday examples and concrete fixes chat — **LOCAL COMMIT; PR/INTEGRATION PENDING**
+- [#1058](https://github.com/john-cd/rust_howto/issues/1058) — **P4** — Replace the obsolete public WebSocket endpoint in the async-tungstenite example — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
 
 #### ACTIVE-CODE-02 — Databases and service clients
 
@@ -66,16 +66,16 @@ B1 implementation commits are on `codex/list-1-everyday-examples` in `.worktrees
 
 #### ACTIVE-CODE-08 — Formatting, encoding, paths and global state
 
-- [#939](https://github.com/john-cd/rust_howto/issues/939) — **P3** — Modernize lazy initialization and synchronized global-state examples — Everyday examples and concrete fixes chat — **LOCAL COMMIT; INTEGRATION PENDING**
-- [#1940](https://github.com/john-cd/rust_howto/issues/1940) — **P3** — Add portable path, file-signature, and argument-quoting examples — Everyday examples and concrete fixes chat — **FOLLOW-UP UNCOMMITTED; INTEGRATION PENDING**
-- [#1941](https://github.com/john-cd/rust_howto/issues/1941) — **P3** — Add small formatting and encoding recipes — Everyday examples and concrete fixes chat — **LOCAL COMMIT; INTEGRATION PENDING**
+- [#939](https://github.com/john-cd/rust_howto/issues/939) — **P3** — Modernize lazy initialization and synchronized global-state examples — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
+- [#1940](https://github.com/john-cd/rust_howto/issues/1940) — **P3** — Add portable path, file-signature, and argument-quoting examples — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
+- [#1941](https://github.com/john-cd/rust_howto/issues/1941) — **P3** — Add small formatting and encoding recipes — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
 
 #### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
 
-- [#864](https://github.com/john-cd/rust_howto/issues/864) — **P3** — Finish Async-GraphQL with deterministic schema/query tests — Everyday examples and concrete fixes chat — **LOCAL COMMIT; HUMAN REVIEW/INTEGRATION PENDING**
-- [#912](https://github.com/john-cd/rust_howto/issues/912) — **P3** — Extract the Toasty example and finish ORM guidance using in-memory SQLite — Everyday examples and concrete fixes chat — **LOCAL COMMIT; PR/INTEGRATION PENDING**
-- [#1912](https://github.com/john-cd/rust_howto/issues/1912) — **P4** — Demonstrate metrics and Prometheus output without an HTTP server — Everyday examples and concrete fixes chat — **LOCAL COMMIT; INTEGRATION PENDING**
-- [#1950](https://github.com/john-cd/rust_howto/issues/1950) — **P4** — Finish the decision-table missing-input error case and validation — Everyday examples and concrete fixes chat — **LOCAL COMMIT; INTEGRATION PENDING**
+- [#864](https://github.com/john-cd/rust_howto/issues/864) — **P3** — Finish Async-GraphQL with deterministic schema/query tests — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — HUMAN REVIEW MARKER PRESERVED**
+- [#912](https://github.com/john-cd/rust_howto/issues/912) — **P3** — Extract the Toasty example and finish ORM guidance using in-memory SQLite — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
+- [#1912](https://github.com/john-cd/rust_howto/issues/1912) — **P4** — Demonstrate metrics and Prometheus output without an HTTP server — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
+- [#1950](https://github.com/john-cd/rust_howto/issues/1950) — **P4** — Finish the decision-table missing-input error case and validation — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
 
 ### Prose and book structure
 
@@ -90,7 +90,7 @@ B1 implementation commits are on `codex/list-1-everyday-examples` in `.worktrees
 - #1249 — **P3** — Document native Windows support and Unix-only recipe boundaries — **CLOSED**
 - #1252 — **P3** — Define and test Windows/POSIX path-conversion boundaries / Codex — Everyday examples and concrete fixes chat — **CLOSED**
 - [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **PARTIAL; OPEN — Windows just 1.59.0 verified; Linux entry-point verification unavailable**
-- [#1281](https://github.com/john-cd/rust_howto/issues/1281) — **P3** — Update category-link generation to use landing pages and preprocessor directives / Codex — Everyday examples and concrete fixes chat — **PARTIAL; OPEN — book build blocked by AWS-LC LNK1114**
+- [#1281](https://github.com/john-cd/rust_howto/issues/1281) — **P3** — Update category-link generation to use landing pages and preprocessor directives / Codex — Everyday examples and concrete fixes chat — **CLOSED; LOCAL CATEGORY LINKS INTEGRATED; #248 TRACKS BADGE DIRECTIVES**
 
 ## Available for Codex now
 
