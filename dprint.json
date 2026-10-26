@@ -1,5 +1,6 @@
 {
   "includes": [
+    "TODO.md",
     "bk/src/**/*.md",
     "bk/drafts/**/*.md",
     "later/src/**/*.md"

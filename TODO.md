@@ -4,28 +4,23 @@
 
 - [ ] JOHN review tools/
 - [ ] JOHN review .github\actions
-
 - [x] add a comment section at the beginning of all mod.just files and scripts with usage and purpose (after shebang line if there is one)
 - [x] move # TODO Reviewed ??-??-2026 after a comment blank line at the end of a comment section after the shebang line in all .sh files
 - [ ] verify that all .sh files can run in git bash
 - [ ] update windows-shell to git bash
 - [x] mod.just: deduplicate tasks for unix / windows if they are the same. see e.g. bk\scripts\anchors\mod.just
 - [/] in all files: remove markdown link to a github issue if it has been fully resolved and closed
-
 - [ ] JOHN rewrite the .py scripts
-
 - [ ] give descriptive names to test functions.
 - [ ] improve comments within examples. add context and explanations where necessary. end with a period.
 - [ ] no unwrap() except in places where we demonstrate unwrap()
 - [ ] all examples need a test that exercise the main() function or similar entry point
-
 - [ ] move playground\examples_wip examples to bk/ if ready
 - [/] review and remove playground\drafts\workflow.yml
 - [/] review playground\bits_and_pieces and determine if any content should be moved or removed
-
 - [ ] JOHN bookmarks.json
 - [ ] decide between _typos.toml vs bk\scripts\spelling\spellcheck.sh . convert bk\scripts\spelling\dictionary.txt if needed
-- [/] dprint.json expand to YAML, etc.
+- [/] dprint.json expand to YAML, etc. (root TODO.md is included; full check reports 573 unformatted Markdown files)
 - [ ] Review .pre-commit-config.yaml vs prek.toml
 - [ ] JOHN review LICENSE
 - [ ] tasks.json - do we need?
@@ -52,6 +47,8 @@ B1 implementation commits are on `codex/list-1-everyday-examples` in `.worktrees
 - [#1058](https://github.com/john-cd/rust_howto/issues/1058) — **P4** — Replace the obsolete public WebSocket endpoint in the async-tungstenite example — Everyday examples and concrete fixes chat — **LOCAL COMMIT; PR/INTEGRATION PENDING**
 
 #### ACTIVE-CODE-02 — Databases and service clients
+
+- [#1021](https://github.com/john-cd/rust_howto/issues/1021) — **P3** — Finish the Oracle example and document its optional Instant Client test — **PARTIAL; OPEN — Oracle test cannot link; live service validation pending**
 
 #### ACTIVE-CODE-04 — Cryptography and Windows APIs
 
@@ -90,9 +87,9 @@ B1 implementation commits are on `codex/list-1-everyday-examples` in `.worktrees
 
 #### ACTIVE-INFRA-01 — Preprocessors, references and recipe portability
 
-- [#1249](https://github.com/john-cd/rust_howto/issues/1249) — **P3** — Document native Windows support and Unix-only recipe boundaries — **CLOSED**
-- [#1252](https://github.com/john-cd/rust_howto/issues/1252) — **P3** — Define and test Windows/POSIX path-conversion boundaries / Codex — Everyday examples and concrete fixes chat — **CLOSED**
-- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **PARTIAL; OPEN — Linux entry-point verification unavailable**
+- #1249 — **P3** — Document native Windows support and Unix-only recipe boundaries — **CLOSED**
+- #1252 — **P3** — Define and test Windows/POSIX path-conversion boundaries / Codex — Everyday examples and concrete fixes chat — **CLOSED**
+- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **PARTIAL; OPEN — Windows just 1.59.0 verified; Linux entry-point verification unavailable**
 - [#1281](https://github.com/john-cd/rust_howto/issues/1281) — **P3** — Update category-link generation to use landing pages and preprocessor directives / Codex — Everyday examples and concrete fixes chat — **PARTIAL; OPEN — book build blocked by AWS-LC LNK1114**
 
 ## Available for Codex now
