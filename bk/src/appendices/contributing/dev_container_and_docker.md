@@ -35,7 +35,7 @@ docker compose exec book bash
 
 The Compose configuration keeps Cargo's registry, direct Cargo target directory, and `just`/`sccache` caches in named Docker volumes. The latter is mounted at `/root/.cache`; `just` stores per-checkout target and intermediate build outputs below `/root/.cache/rust_howto`, while `sccache` uses `/root/.cache/sccache`. Volume names include the Rust toolchain version so caches are reused only with a matching toolchain.
 
-To connect to the (host OS) docker engine from within the container, add
+To connect to the (host OS) docker [engine][cat~rendering::engine]↗{{hi:rendering::engine}} from within the container, add
 
 ```bash
 --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker-host.sock

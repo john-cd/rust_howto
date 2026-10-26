@@ -11,6 +11,74 @@ script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 tmp_root="$(mktemp -d "${TMPDIR:-/tmp}/rust-howto links.XXXXXX")"
 trap 'rm -rf -- "$tmp_root"' EXIT
 
+category_root="${tmp_root}/category book"
+mkdir -p \
+  "${category_root}/src/refs" \
+  "${category_root}/src/categories/algorithms" \
+  "${category_root}/src/topics" \
+  "${category_root}/drafts/categories/science"
+cat > "${category_root}/src/refs/category-refs.md" <<'EOF'
+[cat~algorithms]: https://crates.io/categories/algorithms
+[cat~science]: https://crates.io/categories/science
+[cat~computer-vision]: https://crates.io/categories/computer-vision
+EOF
+cat > "${category_root}/src/categories/algorithms/index.md" <<'EOF'
+# Algorithms
+
+Algorithms link to their own page only from other chapters.
+EOF
+cat > "${category_root}/drafts/categories/science/index.md" <<'EOF'
+# Science
+EOF
+cat > "${category_root}/src/topics/page.md" <<'EOF'
+# Topic
+
+Use algorithms, science, and computer vision in this example.
+
+[[algorithms | Algorithms]], `algorithms`, and <!-- algorithms --> stay unchanged.
+[Algorithms](https://example.invalid) stays unchanged.
+[Walk algorithms][ex~walk] stays unchanged.
+
+```text
+algorithms science computer vision
+```
+
+{{#include refs.incl.md}}
+EOF
+printf '%s\n' '<!-- local references -->' > "${category_root}/src/topics/refs.incl.md"
+
+category_source_before="$(sha256sum "${category_root}/src/topics/page.md")"
+category_preview="${tmp_root}/category-preview.diff"
+bash "${script_dir}/insert_category_links.sh" --dry-run "$category_root" > "$category_preview"
+grep -Fq -- '[algorithms][p~algorithms]↗{{hi:algorithms}}' "$category_preview"
+grep -Fq -- '[science][cat~science]↗{{hi:science}}' "$category_preview"
+grep -Fq -- '[computer vision][cat~computer-vision]↗{{hi:computer-vision}}' "$category_preview"
+[[ "$category_source_before" == "$(sha256sum "${category_root}/src/topics/page.md")" ]]
+
+bash "${script_dir}/insert_category_links.sh" --apply "$category_root" > /dev/null
+grep -Fq -- '[algorithms][p~algorithms]↗{{hi:algorithms}}' "${category_root}/src/topics/page.md"
+grep -Fq -- '[science][cat~science]↗{{hi:science}}' "${category_root}/src/topics/page.md"
+grep -Fq -- '[computer vision][cat~computer-vision]↗{{hi:computer-vision}}' "${category_root}/src/topics/page.md"
+grep -Fq -- '[[algorithms | Algorithms]], `algorithms`, and <!-- algorithms --> stay unchanged.' "${category_root}/src/topics/page.md"
+grep -Fq -- '[Algorithms](https://example.invalid) stays unchanged.' "${category_root}/src/topics/page.md"
+grep -Fq -- '[Walk algorithms][ex~walk] stays unchanged.' "${category_root}/src/topics/page.md"
+grep -Fq -- 'algorithms science computer vision' "${category_root}/src/topics/page.md"
+grep -Fq -- '[p~algorithms]: ../categories/algorithms/index.md' "${category_root}/src/topics/refs.incl.md"
+
+category_after_first_apply="$(sha256sum "${category_root}/src/topics/page.md" "${category_root}/src/topics/refs.incl.md")"
+cp "${category_root}/src/topics/page.md" "${tmp_root}/first-category-page.md"
+bash "${script_dir}/insert_category_links.sh" --apply "$category_root" > /dev/null
+category_after_second_apply="$(sha256sum "${category_root}/src/topics/page.md" "${category_root}/src/topics/refs.incl.md")"
+if [[ "$category_after_first_apply" != "$category_after_second_apply" ]]; then
+  diff -u "${tmp_root}/first-category-page.md" "${category_root}/src/topics/page.md" || true
+  exit 1
+fi
+
+if [[ ${1:-} == "--category-only" ]]; then
+  echo "Category-link generation fixture checks passed."
+  exit 0
+fi
+
 book_root="${tmp_root}/book root"
 mkdir -p "${book_root}/src/refs" "${book_root}/drafts"
 cat > "${book_root}/src/refs/crate-refs.md" <<'EOF'

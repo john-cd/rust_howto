@@ -369,7 +369,7 @@ Watch out for the following common macro pitfalls:
 
 - Overusing Macros: Macros can obscure logic and make code harder to read or debug, if used unnecessarily.
 - Poor Macro Hygiene: If your (procedural) macro introduces variables without care, it can clash with names in the surrounding scope. This can lead to confusing bugs.
-- Lack of Testing: If you don't write tests that exercise all of the macro's patterns and edge cases, you might miss subtle bugs.
+- Lack of [Testing][cat~development-tools::testing]↗{{hi:development-tools::testing}}: If you don't write tests that exercise all of the macro's patterns and edge cases, you might miss subtle bugs.
 - Unexpected Expansion Behavior: Macros expand before type checking, so they can produce code that compiles incorrectly or fails in surprising ways.
 - Lifetime and Type Issues: Especially in procedural macros, forgetting to handle lifetimes or generic parameters properly can lead to compiler errors that are hard to trace.
 - Unclear Error Messages.

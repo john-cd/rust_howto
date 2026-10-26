@@ -30,7 +30,7 @@ For multidimensional arrays, see [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}. T
 
 ## Probability and Statistics
 
-For random variables, distributions, hypothesis testing, probabilistic models, stochastic processes, and statistical inference, use the following crates:
+For random variables, distributions, hypothesis [testing][cat~development-tools::testing]↗{{hi:development-tools::testing}}, probabilistic models, stochastic processes, and statistical inference, use the following crates:
 
 - [`statrs`][c~statrs~docs]↗{{hi:statrs}} provides statistical distributions and functions.
 

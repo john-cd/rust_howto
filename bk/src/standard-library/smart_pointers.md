@@ -6,7 +6,7 @@
 
 [![Rust by Example - box][book~rust-by-example~box~badge]][book~rust-by-example~box]
 
-Smart pointers{{hi:Smart pointers}} are special data structures that act as pointers / references to data, while including additional functionality, such as:
+Smart pointers{{hi:Smart pointers}} are special [data structures][p~data-structures]↗{{hi:data-structures}} that act as pointers / references to data, while including additional functionality, such as:
 
 - _Ownership and Borrowing_ allowing for shared ownership ([`Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}}, [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}}) or unique ownership ([`Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}), while also providing borrowing capabilities.
 - _Automatic memory management_, such as allocation and deallocation of heap memory.
