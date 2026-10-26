@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Purpose: Exercise the link generators against temporary Markdown files.
-# Usage: From bk/, run the matching just recipe and pass its arguments.
+# Purpose: Exercise category, crate, and bare-URL link generation in temporary books.
+# Usage: bash test.sh [--category-only]
 #
 # TODO Reviewed ??-??-2026
 
@@ -49,25 +49,25 @@ printf '%s\n' '<!-- local references -->' > "${category_root}/src/topics/refs.in
 
 category_source_before="$(sha256sum "${category_root}/src/topics/page.md")"
 category_preview="${tmp_root}/category-preview.diff"
-bash "${script_dir}/insert_category_links.sh" --dry-run "$category_root" > "$category_preview"
-grep -Fq -- '[algorithms][p~algorithms]↗{{hi:algorithms}}' "$category_preview"
+bash "${script_dir}/insert_category_links.sh" "$category_root" > "$category_preview"
+grep -Fq -- '[algorithms][p~category-algorithms]{{hi:algorithms}}' "$category_preview"
 grep -Fq -- '[science][cat~science]↗{{hi:science}}' "$category_preview"
 grep -Fq -- '[computer vision][cat~computer-vision]↗{{hi:computer-vision}}' "$category_preview"
 [[ "$category_source_before" == "$(sha256sum "${category_root}/src/topics/page.md")" ]]
 
-bash "${script_dir}/insert_category_links.sh" --apply "$category_root" > /dev/null
-grep -Fq -- '[algorithms][p~algorithms]↗{{hi:algorithms}}' "${category_root}/src/topics/page.md"
+bash "${script_dir}/insert_category_links.sh" "$category_root" --apply > /dev/null
+grep -Fq -- '[algorithms][p~category-algorithms]{{hi:algorithms}}' "${category_root}/src/topics/page.md"
 grep -Fq -- '[science][cat~science]↗{{hi:science}}' "${category_root}/src/topics/page.md"
 grep -Fq -- '[computer vision][cat~computer-vision]↗{{hi:computer-vision}}' "${category_root}/src/topics/page.md"
 grep -Fq -- '[[algorithms | Algorithms]], `algorithms`, and <!-- algorithms --> stay unchanged.' "${category_root}/src/topics/page.md"
 grep -Fq -- '[Algorithms](https://example.invalid) stays unchanged.' "${category_root}/src/topics/page.md"
 grep -Fq -- '[Walk algorithms][ex~walk] stays unchanged.' "${category_root}/src/topics/page.md"
 grep -Fq -- 'algorithms science computer vision' "${category_root}/src/topics/page.md"
-grep -Fq -- '[p~algorithms]: ../categories/algorithms/index.md' "${category_root}/src/topics/refs.incl.md"
+grep -Fq -- '[p~category-algorithms]: ../categories/algorithms/index.md' "${category_root}/src/topics/refs.incl.md"
 
 category_after_first_apply="$(sha256sum "${category_root}/src/topics/page.md" "${category_root}/src/topics/refs.incl.md")"
 cp "${category_root}/src/topics/page.md" "${tmp_root}/first-category-page.md"
-bash "${script_dir}/insert_category_links.sh" --apply "$category_root" > /dev/null
+bash "${script_dir}/insert_category_links.sh" "$category_root" --apply > /dev/null
 category_after_second_apply="$(sha256sum "${category_root}/src/topics/page.md" "${category_root}/src/topics/refs.incl.md")"
 if [[ "$category_after_first_apply" != "$category_after_second_apply" ]]; then
   diff -u "${tmp_root}/first-category-page.md" "${category_root}/src/topics/page.md" || true
