@@ -36,83 +36,64 @@
 - [/] update .devcontainer\WINDOWS_BUILD.md
 - [/] tools/ xmpl/ Cargo.toml - move dependencies to workspace
 - [/] later\crates\gui_vizia\Cargo.toml move to proper location
-- [/] integrate embedded see:  exclude = ["cats/embedded"] ; see later\crates\cats\embedded\Cargo.toml
+- [/] integrate embedded see: exclude = ["cats/embedded"] ; see later\crates\cats\embedded\Cargo.toml
 - [ ] make all Cargo.toml consistent
 - [ ] move code examples from later/ to bk/ when code + text ready
 
 ## In progress
 
+B1 implementation commits are on `codex/list-1-everyday-examples` in `.worktrees\b`; validation details were added to all ten GitHub issues. Integration is pending because the automatic approval reviewer hit its usage limit on Git metadata writes. The #1940 MIME correction is tested but uncommitted, and #864 retains its human-review marker. Preserve the separate active integration worktree `.worktrees\g`.
+
 ### Code examples
 
 #### ACTIVE-CODE-01 — Networking, authentication and email
 
-- [#812](https://github.com/john-cd/rust_howto/issues/812) — **P2** — Finish and locally verify the Pingora reverse-proxy example — **IN PROGRESS**
-- [#1058](https://github.com/john-cd/rust_howto/issues/1058) — **P4** — Replace the obsolete public WebSocket endpoint in the async-tungstenite example — Everyday examples and concrete fixes chat — **IN PROGRESS**
+- [#812](https://github.com/john-cd/rust_howto/issues/812) — **P2** — Finish and locally verify the Pingora reverse-proxy example — **PARTIAL; OPEN — Unix/Pingora validation and book build blocked**
+- [#1058](https://github.com/john-cd/rust_howto/issues/1058) — **P4** — Replace the obsolete public WebSocket endpoint in the async-tungstenite example — Everyday examples and concrete fixes chat — **LOCAL COMMIT; PR/INTEGRATION PENDING**
 
 #### ACTIVE-CODE-02 — Databases and service clients
 
-
-#### ACTIVE-CODE-03 — Foreign function interfaces
-
-- [#1031](https://github.com/john-cd/rust_howto/issues/1031) — **P4** — Finish a distinct Lua userdata example — Text processing, automation, and local runtimes chat — **IN PROGRESS**
-
 #### ACTIVE-CODE-04 — Cryptography and Windows APIs
 
-- [#705](https://github.com/john-cd/rust_howto/issues/705) — **P3** — Finish the X.509 certificate example — **IN PROGRESS**
-- [#822](https://github.com/john-cd/rust_howto/issues/822) — **P3** — Review and test the Windows API example — **IN PROGRESS**
+- [#705](https://github.com/john-cd/rust_howto/issues/705) — **P3** — Finish the X.509 certificate example — **PARTIAL; OPEN — book build blocked; human review pending**
+- [#822](https://github.com/john-cd/rust_howto/issues/822) — **P3** — Review and test the Windows API example — **PARTIAL; OPEN — book build blocked; human review pending**
 
 #### ACTIVE-CODE-05 — Parsing and XML
 
-- [#826](https://github.com/john-cd/rust_howto/issues/826) — **P3** — Finish and test the Pest arithmetic example — **IN PROGRESS; PARTIAL**
-- [#1102](https://github.com/john-cd/rust_howto/issues/1102) — **P3** — Finish the XML parser example — **IN PROGRESS; PARTIAL**
-
-#### ACTIVE-CODE-06 — Text analysis, syntax highlighting and language servers
-
-- [#1931](https://github.com/john-cd/rust_howto/issues/1931) — **P4** — Finish multi-pattern text matching and remaining text-analysis recipes — Text processing, automation, and local runtimes chat — **IN PROGRESS; PARTIAL**
-- [#1947](https://github.com/john-cd/rust_howto/issues/1947) — **P4** — Finish the LSP client example and offline protocol tests — Text processing, automation, and local runtimes chat — **IN PROGRESS; PARTIAL**
-- [#1948](https://github.com/john-cd/rust_howto/issues/1948) — **P4** — Add the Tree-sitter JSON span-highlighting example — Text processing, automation, and local runtimes chat — **IN PROGRESS; PARTIAL**
+- [#826](https://github.com/john-cd/rust_howto/issues/826) — **P3** — Finish and test the Pest arithmetic example — **PARTIAL; OPEN — book build blocked; human review pending**
+- [#1102](https://github.com/john-cd/rust_howto/issues/1102) — **P3** — Finish the XML parser example — **PARTIAL; OPEN — XML test blocked by onig_sys LNK1114; human review pending**
 
 #### ACTIVE-CODE-07 — Scheduling and sandboxed runtimes
 
-- [#1926](https://github.com/john-cd/rust_howto/issues/1926) — **P4** — Add Wasmtime fuel, memory-limit, and host-function tests — Text processing, automation, and local runtimes chat — **IN PROGRESS**
-- [#1927](https://github.com/john-cd/rust_howto/issues/1927) — **P4** — Add deterministic cron and paused-time Tokio scheduling examples — Text processing, automation, and local runtimes chat — **IN PROGRESS**
+- [#1926](https://github.com/john-cd/rust_howto/issues/1926) — **P4** — Add Wasmtime fuel, memory-limit, and host-function tests — Text processing, automation, and local runtimes chat — **PARTIAL; OPEN — exact-source harness 5/5; Windows workspace test blocked by Wasmer Cranelift compilation**
 
 #### ACTIVE-CODE-08 — Formatting, encoding, paths and global state
 
-- [#939](https://github.com/john-cd/rust_howto/issues/939) — **P3** — Modernize lazy initialization and synchronized global-state examples — Everyday examples and concrete fixes chat — **IN PROGRESS**
-- [#1940](https://github.com/john-cd/rust_howto/issues/1940) — **P3** — Add portable path, file-signature, and argument-quoting examples — Everyday examples and concrete fixes chat — **IN PROGRESS**
-- [#1941](https://github.com/john-cd/rust_howto/issues/1941) — **P3** — Add small formatting and encoding recipes — Everyday examples and concrete fixes chat — **IN PROGRESS**
+- [#939](https://github.com/john-cd/rust_howto/issues/939) — **P3** — Modernize lazy initialization and synchronized global-state examples — Everyday examples and concrete fixes chat — **LOCAL COMMIT; INTEGRATION PENDING**
+- [#1940](https://github.com/john-cd/rust_howto/issues/1940) — **P3** — Add portable path, file-signature, and argument-quoting examples — Everyday examples and concrete fixes chat — **FOLLOW-UP UNCOMMITTED; INTEGRATION PENDING**
+- [#1941](https://github.com/john-cd/rust_howto/issues/1941) — **P3** — Add small formatting and encoding recipes — Everyday examples and concrete fixes chat — **LOCAL COMMIT; INTEGRATION PENDING**
 
 #### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
 
-- [#864](https://github.com/john-cd/rust_howto/issues/864) — **P3** — Finish Async-GraphQL with deterministic schema/query tests — Everyday examples and concrete fixes chat — **IN PROGRESS**
-- [#912](https://github.com/john-cd/rust_howto/issues/912) — **P3** — Extract the Toasty example and finish ORM guidance using in-memory SQLite — Everyday examples and concrete fixes chat — **IN PROGRESS**
-- [#1912](https://github.com/john-cd/rust_howto/issues/1912) — **P4** — Demonstrate metrics and Prometheus output without an HTTP server — Everyday examples and concrete fixes chat — **IN PROGRESS**
-- [#1950](https://github.com/john-cd/rust_howto/issues/1950) — **P4** — Finish the decision-table missing-input error case and validation — Everyday examples and concrete fixes chat — **IN PROGRESS; PARTIAL**
+- [#864](https://github.com/john-cd/rust_howto/issues/864) — **P3** — Finish Async-GraphQL with deterministic schema/query tests — Everyday examples and concrete fixes chat — **LOCAL COMMIT; HUMAN REVIEW/INTEGRATION PENDING**
+- [#912](https://github.com/john-cd/rust_howto/issues/912) — **P3** — Extract the Toasty example and finish ORM guidance using in-memory SQLite — Everyday examples and concrete fixes chat — **LOCAL COMMIT; PR/INTEGRATION PENDING**
+- [#1912](https://github.com/john-cd/rust_howto/issues/1912) — **P4** — Demonstrate metrics and Prometheus output without an HTTP server — Everyday examples and concrete fixes chat — **LOCAL COMMIT; INTEGRATION PENDING**
+- [#1950](https://github.com/john-cd/rust_howto/issues/1950) — **P4** — Finish the decision-table missing-input error case and validation — Everyday examples and concrete fixes chat — **LOCAL COMMIT; INTEGRATION PENDING**
 
 ### Prose and book structure
 
 #### ACTIVE-PROSE-01 — Foreign function interfaces
 
-- [#1073](https://github.com/john-cd/rust_howto/issues/1073) — **P4** — Complete Lua integration recipes and tested includes — Text processing, automation, and local runtimes chat — **IN PROGRESS**
-
-#### ACTIVE-PROSE-02 — Debugging and Cargo build plugins
-
-- [#309](https://github.com/john-cd/rust_howto/issues/309) — **P3** — Expand Cargo build-plugin guidance and cross-links — Text processing, automation, and local runtimes chat — **IN PROGRESS**
-- [#319](https://github.com/john-cd/rust_howto/issues/319) — **P3** — Deduplicate debugging, logging, and configuration guidance — Text processing, automation, and local runtimes chat — **IN PROGRESS**
+- [#1073](https://github.com/john-cd/rust_howto/issues/1073) — **P4** — Complete Lua integration recipes and tested includes — Text processing, automation, and local runtimes chat — **PARTIAL; OPEN — sandbox guidance is documented, but a hostile-script sandbox and external module runtime test remain**
 
 ### Tools and infrastructure
 
 #### ACTIVE-INFRA-01 — Preprocessors, references and recipe portability
 
-- [#1249](https://github.com/john-cd/rust_howto/issues/1249) — **P3** — Document native Windows support and Unix-only recipe boundaries — **IN PROGRESS**
-- [#1252](https://github.com/john-cd/rust_howto/issues/1252) — **P3** — Define and test Windows/POSIX path-conversion boundaries / Codex — Everyday examples and concrete fixes chat — **IN PROGRESS**
-- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **IN PROGRESS**
-- [#1281](https://github.com/john-cd/rust_howto/issues/1281) — **P3** — Update category-link generation to use landing pages and preprocessor directives / Codex — Everyday examples and concrete fixes chat — **IN PROGRESS**
-
-#### ACTIVE-INFRA-02 — Repository automation
-
-- [#1930](https://github.com/john-cd/rust_howto/issues/1930) — **P4** — Finish xtask layout, workspace-lint checks, and Git-history examples — Text processing, automation, and local runtimes chat — **IN PROGRESS; PARTIAL**
+- [#1249](https://github.com/john-cd/rust_howto/issues/1249) — **P3** — Document native Windows support and Unix-only recipe boundaries — **CLOSED**
+- [#1252](https://github.com/john-cd/rust_howto/issues/1252) — **P3** — Define and test Windows/POSIX path-conversion boundaries / Codex — Everyday examples and concrete fixes chat — **CLOSED**
+- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **PARTIAL; OPEN — Linux entry-point verification unavailable**
+- [#1281](https://github.com/john-cd/rust_howto/issues/1281) — **P3** — Update category-link generation to use landing pages and preprocessor directives / Codex — Everyday examples and concrete fixes chat — **PARTIAL; OPEN — book build blocked by AWS-LC LNK1114**
 
 ## Available for Codex now
 
