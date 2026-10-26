@@ -46,6 +46,7 @@
 [ex~development-tools_ffi~utilities]: generate_ffi_bindings.md#utilities
 [c~std::ffi~CString~docs]: https://doc.rust-lang.org/std/ffi/struct.CString.html
 [c~std::ffi~CStr~docs]: https://doc.rust-lang.org/std/ffi/struct.CStr.html
+[c~piccolo~docs]: https://docs.rs/piccolo/latest/piccolo/
 [rust-nomicon~ffi]: https://doc.rust-lang.org/nomicon/ffi.html
 [rust-reference~type-layout]: https://doc.rust-lang.org/reference/type-layout.html#representations
 [p~asynchronous]: ../asynchronous/index.md

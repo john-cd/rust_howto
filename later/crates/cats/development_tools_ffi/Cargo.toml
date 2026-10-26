@@ -31,6 +31,7 @@ erlang = ["dep:rustler"]
 flutter = ["dep:flutter_rust_bridge"]
 java = ["dep:jni"]
 lua = ["dep:mlua", "mlua/vendored"]
+lua-module = ["dep:mlua", "mlua/module"]
 objc = ["dep:objc2", "dep:objc2-foundation", "dep:objc2-app-kit"]
 node = ["dep:napi", "dep:neon"]
 ruby = ["dep:magnus", "dep:rutie", "dep:anyhow"]
@@ -100,6 +101,13 @@ test = true
 name = "lua"
 path = "examples/lua/main.rs"
 test = true
+
+[[example]]
+name = "lua_module"
+path = "examples/lua/module.rs"
+required-features = ["lua-module"]
+crate-type = ["cdylib"]
+test = false
 
 [[example]]
 name = "node"

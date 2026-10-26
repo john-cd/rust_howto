@@ -12,6 +12,8 @@ use clap::Subcommand;
 #[cfg(feature = "lua")]
 mod mlua;
 #[cfg(feature = "lua")]
+mod mlua_scripting;
+#[cfg(feature = "lua")]
 mod mlua_userdata;
 
 /// Command-line arguments.
@@ -31,6 +33,10 @@ enum Commands {
     #[cfg(feature = "lua")]
     #[command(name = "mlua")]
     Mlua,
+    /// Runs the embedded scripting example.
+    #[cfg(feature = "lua")]
+    #[command(name = "mlua_scripting")]
+    MluaScripting,
     /// Runs the userdata example.
     #[cfg(feature = "lua")]
     #[command(name = "mlua_userdata")]
@@ -49,6 +55,10 @@ fn main() -> LuaResult<()> {
                 #[cfg(feature = "lua")]
                 Commands::Mlua => {
                     mlua::run()?;
+                }
+                #[cfg(feature = "lua")]
+                Commands::MluaScripting => {
+                    mlua_scripting::run()?;
                 }
                 Commands::MluaUserdata => {
                     mlua_userdata::run()?;
