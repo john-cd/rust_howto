@@ -14,7 +14,7 @@
 //! sqlx = { version = "0.8", features = [ "runtime-tokio", "sqlite" ]
 //! ```
 
-use sqlx::SqlitePool;
+use sqlx::sqlite::SqlitePoolOptions;
 
 /// A row of the `users` table.
 #[derive(sqlx::FromRow, Debug, PartialEq, Eq)] // Derive FromRow to map database rows to this struct
@@ -31,7 +31,10 @@ struct User {
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Create a connection pool:
-    let pool = SqlitePool::connect("sqlite::memory:").await?;
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await?;
 
     // In SQL, queries can be separated into prepared (parameterized) or
     // unprepared (simple). Prepared queries have their query plan cached,
@@ -67,6 +70,15 @@ async fn main() -> anyhow::Result<()> {
             .fetch_all(&pool)
             .await?;
 
+    assert_eq!(
+        users,
+        [User {
+            id: 1,
+            name: "John Doe".to_owned(),
+            email: "john@example.com".to_owned(),
+        }]
+    );
+
     // Print the retrieved users:
     for user in users {
         println!(
@@ -88,8 +100,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies a user can be inserted and read from in-memory SQLite.
     #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
+    fn round_trips_user_in_memory() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
