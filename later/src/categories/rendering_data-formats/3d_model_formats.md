@@ -6,14 +6,14 @@
 
 glTF is a portable format for 3D scenes, meshes, materials, and animation. A `.gltf` file stores JSON plus referenced assets; `.glb` packages the JSON and binary data together.
 
-## Parse a glTF document {#data-format}
+## Parse an inline glTF triangle {#gltf-triangle}
 
 [![gltf][c~gltf~docs~badge]][c~gltf~docs]{{hi:gltf}}
 
-The [`gltf`][c~gltf~docs]↗ crate parses and validates glTF 2.0 documents. This example parses a small in-memory document and verifies that its default scene is available.
+The [`gltf`][c~gltf~docs]↗ crate parses and validates glTF 2.0 documents. This example parses an inline triangle and reports its vertex and index counts.
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering_data_formats/examples/data_formats/gltf_example.rs:example}}
+{{#include ../../../crates/cats/rendering_data_formats/examples/data_formats/inline_gltf_triangle.rs:example}}
 ```
 
 ## Other 3D mesh formats {#other-mesh-formats}

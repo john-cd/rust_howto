@@ -2,9 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-mod gltf_example;
+mod inline_gltf_triangle;
 
-/// Runs the glTF example.
+/// Runs the inline glTF triangle example.
 fn main() -> Result<(), ::gltf::Error> {
-    gltf_example::run()
+    inline_gltf_triangle::run()
 }

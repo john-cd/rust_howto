@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-[ex~rendering_data-formats~data-format]: 3d_model_formats.md#data-format
+[ex~rendering_data-formats~gltf-triangle]: 3d_model_formats.md#gltf-triangle
 [c~gltf~docs]: https://docs.rs/gltf
 [c~gltf~docs~badge]: https://img.shields.io/crates/v/gltf?label=gltf
 [c~ply-rs~docs]: https://docs.rs/ply-rs
