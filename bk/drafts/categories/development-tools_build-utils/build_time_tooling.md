@@ -69,10 +69,10 @@ cc = "1"
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/hello.c}}
 ```
 
-### `examples/build_time_tooling/c_library.rs` {#main-rs .skip}
+### `examples/build_time_tooling/cc_bundled_static1.rs` {#c-main-rs .skip}
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/c_library.rs:example}}
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_static1.rs:example}}
 ```
 
 ## Compile and Link Statically to a Bundled C++ Library {#cpp}
@@ -104,10 +104,10 @@ cc = "1"
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/foo.cpp}}
 ```
 
-### `examples/build_time_tooling/cpp_library.rs` (static C++) {#main-rs .skip}
+### `examples/build_time_tooling/cc_bundled_cpp1.rs` (static C++) {#cpp-main-rs .skip}
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cpp_library.rs:example}}
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_cpp1.rs:example}}
 ```
 
 ## Compile a C Library While Setting Custom Defines {#cc-custom-defines}

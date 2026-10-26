@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-#![allow(unused_variables)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
@@ -12,17 +10,6 @@ use std::os::raw::c_char;
 
 use anyhow::Result;
 
-/// Prints the prompt `s`, reads a line from the standard input and returns it
-/// trimmed.
-fn prompt(s: &str) -> Result<String> {
-    use std::io::Write as _;
-    print!("{s}");
-    std::io::stdout().flush()?;
-    let mut input = String::new();
-    std::io::stdin().read_line(&mut input)?;
-    Ok(input.trim().to_owned())
-}
-
 unsafe extern "C" {
     /// Prints a greeting to the console.
     fn hello();
@@ -30,20 +17,34 @@ unsafe extern "C" {
     fn greet(name: *const c_char);
 }
 
-/// This example demonstrates how to call C functions from Rust.
-/// It uses the `cc` crate to compile a C file into a static library,
-/// and then links against that library.
-fn main() -> Result<()> {
-    // unsafe { hello() }
-    let name = prompt("What's your name? ")?;
-    let c_name = CString::new(name)?;
-    // unsafe { greet(c_name.as_ptr()) }
+/// Calls the no-argument C greeting function.
+fn hello_from_c() {
+    // SAFETY: `build.rs` links the matching no-argument `hello` function.
+    unsafe { hello() };
+}
+
+/// Greets a name through the bundled C function.
+///
+/// # Errors
+///
+/// Returns an error if `name` contains an interior NUL byte.
+fn greet_from_c(name: &str) -> Result<()> {
+    let name = CString::new(name)?;
+    // SAFETY: `name` is NUL-terminated and remains alive for this call; the C
+    // function reads it without retaining the pointer.
+    unsafe { greet(name.as_ptr()) };
     Ok(())
+}
+
+/// Runs the C functions linked by the package build script.
+fn main() -> Result<()> {
+    hello_from_c();
+    greet_from_c("Rust")
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the bundled C greeting example.
 pub fn run() -> Result<()> {
     main()
 }
@@ -52,11 +53,19 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that the cc bundled static1 example's main path succeeds.
+    /// Verifies that the bundled C function accepts a valid C string.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the C string is invalid.
     #[test]
-    #[ignore = "Needs review"]
-    fn test_main() {
-        println!("{:?}", main());
+    fn bundled_c_greeting_runs() -> Result<()> {
+        greet_from_c("workspace")
+    }
+
+    /// Rejects a name that cannot be represented as a C string.
+    #[test]
+    fn rejects_interior_nul() {
+        assert!(greet_from_c("not\0a C string").is_err());
     }
 }
-// [finish; deal with extern](https://github.com/john-cd/rust_howto/issues/900)
