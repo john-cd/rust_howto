@@ -1,83 +1,97 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! `syn` is a library for parsing Rust code into a syntax tree.
-//! It is used in procedural macros to manipulate Rust code at compile time.
-//!
-//! `syn` takes Rust code as input (typically a `TokenStream`, which represents
-//! a sequence of tokens in Rust code) and transforms it into an Abstract Syntax
-//! Tree (AST). This AST is represented by a set of `syn` data structures that
-//! mirror the grammatical structure of Rust. For example, you'll find structs
-//! in `syn` representing items (like functions, structs, enums), expressions,
-//! statements, attributes, and more. You can then easily traverse the AST,
-//! inspect different parts of the code and modify it.
+//! `syn` parses a token stream into Rust syntax-tree types such as
+//! `DeriveInput`. A derive helper can inspect the input shape, reject
+//! unsupported data with a spanned error, and return generated tokens for a
+//! thin compiler entry point.
 
-use anyhow::Context as _;
+use anyhow::Result;
+use proc_macro2::TokenStream;
 use quote::quote;
-use syn::Expr;
-use syn::ItemFn;
-use syn::Result;
+use syn::Data;
+use syn::DeriveInput;
+use syn::Fields;
+use syn::Ident;
+use syn::Result as SynResult;
 
-/// Parse a simple expression - here, an assertion,
-/// and print it.
-fn simple() -> Result<()> {
-    let code = "assert_eq!(u8::max_value(), 255)";
-    let expr = syn::parse_str::<Expr>(code)?;
-    let expr_tokens = quote! { #expr };
-    println!("{expr_tokens}");
-    Ok(())
+/// Generates a `describe` method for a struct with named fields.
+///
+/// # Errors
+///
+/// Returns a spanned error for invalid syntax or unsupported input.
+fn derive_describe(input: TokenStream) -> SynResult<TokenStream> {
+    let input: DeriveInput = syn::parse2(input)?;
+    let ident = input.ident;
+    let generics = input.generics;
+
+    let fields = match input.data {
+        Data::Struct(data) => match data.fields {
+            Fields::Named(fields) => fields
+                .named
+                .into_iter()
+                .map(|field| {
+                    field.ident.ok_or_else(|| {
+                        syn::Error::new_spanned(
+                            &ident,
+                            "Describe requires named fields",
+                        )
+                    })
+                })
+                .collect::<SynResult<Vec<Ident>>>()?,
+            _ => {
+                return Err(syn::Error::new_spanned(
+                    &ident,
+                    "Describe requires a struct with named fields",
+                ));
+            }
+        },
+        _ => {
+            return Err(syn::Error::new_spanned(
+                &ident,
+                "Describe can only be derived for structs",
+            ));
+        }
+    };
+
+    let (impl_generics, ty_generics, where_clause) = generics.split_for_impl();
+    Ok(quote! {
+        impl #impl_generics #ident #ty_generics #where_clause {
+            /// Returns a formatted description of the struct fields.
+            pub fn describe(&self) -> String {
+                let mut fields = Vec::new();
+                #(
+                    fields.push(format!(
+                        concat!(stringify!(#fields), " = {:?}"),
+                        &self.#fields
+                    ));
+                )*
+                format!("{} {{ {} }}", stringify!(#ident), fields.join(", "))
+            }
+        }
+    })
 }
 
-/// Parse a function and modify it.
-fn m() -> anyhow::Result<()> {
-    // Example Rust code to parse:
-    let code = r"
-/// Returns the input incremented by one.
-        fn example_function(x: i32) -> i32 {
-            x + 1
-        }
-    ";
-
-    // Parse the code into a syntax tree.
-    let ast: ItemFn = syn::parse_str(code).context("Failed to parse code")?;
-
-    // Manipulate the syntax tree (e.g., change the function body).
-    let new_body = quote! {
-        {
-            println!("Function called with: {x}");
-            x + 2
-        }
-    };
-
-    let new_fn = ItemFn {
-        block: Box::new(
-            syn::parse2(new_body).expect("Failed to parse new body"),
-        ),
-        ..ast
-    };
-
-    // Generate the new code.
-    let generated_code = quote! {
-        #new_fn
-    };
-
-    // Print the generated code.
-    println!("{generated_code}");
-
-    Ok(())
-}
-
-/// Runs the `syn` examples.
-fn main() -> anyhow::Result<()> {
-    simple()?;
-    m()?;
+/// Generates and pretty-prints the method for a named struct.
+///
+/// # Errors
+///
+/// Returns an error if generation or Rust syntax parsing fails.
+fn main() -> Result<()> {
+    let input = quote! { struct Point { x: i32, y: i32 } };
+    let generated = derive_describe(input)?;
+    let syntax: syn::File = syn::parse2(generated)?;
+    println!("{}", prettyplease::unparse(&syntax));
     Ok(())
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() -> anyhow::Result<()> {
+/// Runs the `syn` derive-helper example.
+///
+/// # Errors
+///
+/// Returns an error if parsing or generation fails.
+pub fn run() -> Result<()> {
     main()
 }
 
@@ -85,11 +99,22 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that the syntax parsing examples complete successfully.
+    /// Verifies the generated method and a useful enum rejection.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the generated code cannot be parsed.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        main()?;
+    fn generates_for_structs_and_rejects_enums() -> SynResult<()> {
+        let input = quote! { struct Point { x: i32, y: i32 } };
+        let generated = derive_describe(input)?;
+        let syntax: syn::File = syn::parse2(generated)?;
+        let source = prettyplease::unparse(&syntax);
+        assert!(source.contains("pub fn describe(&self) -> String"));
+
+        let error = derive_describe(quote! { enum Direction { North } })
+            .expect_err("derive_describe must reject enums");
+        assert!(error.to_string().contains("only be derived for structs"));
         Ok(())
     }
 }
-// [finish. See https://github.com/dtolnay/syn/tree/master/examples](https://github.com/john-cd/rust_howto/issues/743)

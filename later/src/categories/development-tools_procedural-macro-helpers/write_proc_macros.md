@@ -32,6 +32,17 @@ Use [`proc-macro2`][c~proc-macro2~docs] types in reusable parsing and generation
 
 See the [`syn` examples][syn-examples~repo] for additional parsing and visiting patterns.
 
+A `#[proc_macro_derive]` entry point must live in a crate with `proc-macro = true`. Keep the reusable helper on `proc_macro2::TokenStream`; the compiler-facing wrapper can be thin:
+
+```rust,ignore
+#[proc_macro_derive(Describe)]
+pub fn describe(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
+    derive_describe(input.into())
+        .unwrap_or_else(syn::Error::into_compile_error)
+        .into()
+}
+```
+
 ## Generate Output with `quote` {#quote}
 
 [![quote][c~quote~docs~badge]][c~quote~docs] [![quote~crates.io][c~quote~crates.io~badge]][c~quote~crates.io] [![quote~repo][c~quote~repo~badge]][c~quote~repo] [![quote~lib.rs][c~quote~lib.rs~badge]][c~quote~lib.rs]
