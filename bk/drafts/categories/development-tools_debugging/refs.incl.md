@@ -22,7 +22,8 @@
 [ex~development-tools_debugging~metrics-route]: metrics.md#serve-metrics-from-an-axum-route
 [ex~development-tools_debugging~open-observe]: distributed_telemetry.md#open-observe
 [ex~development-tools_debugging~open-telemetry]: distributed_telemetry.md#open-telemetry
-[ex~development-tools_debugging~prometheus]: distributed_telemetry.md#prometheus
+[ex~development-tools_debugging~prometheus]: metrics.md#expose-prometheus-metrics
+[ex~development-tools_debugging~record-metrics]: metrics.md#record-counters-and-histograms
 [ex~development-tools_debugging~slog]: tracing_alternatives.md#slog
 [ex~development-tools_debugging~span-entered]: tracing.md#span-entered
 [ex~development-tools_debugging~span-instrument]: tracing.md#span-instrument

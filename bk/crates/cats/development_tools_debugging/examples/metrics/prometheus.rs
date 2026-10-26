@@ -12,6 +12,7 @@ fn main() -> anyhow::Result<()> {
 
     metrics::with_local_recorder(&recorder, || {
         counter!("http_requests_total", "method" => "GET").increment(1);
+        metrics::gauge!("active_requests").set(3.0);
         histogram!("http_request_duration_seconds", "route" => "/health")
             .record(0.025);
     });
@@ -40,12 +41,14 @@ mod tests {
         metrics::with_local_recorder(&recorder, || {
             metrics::counter!("test_requests_total", "method" => "GET")
                 .increment(1);
+            metrics::gauge!("test_active_requests").set(3.0);
             metrics::histogram!("test_request_duration_seconds").record(0.025);
         });
 
         let rendered = handle.render();
 
-        assert!(rendered.contains("test_requests_total"));
-        assert!(rendered.contains("test_request_duration_seconds"));
+        assert!(rendered.contains("test_requests_total{method=\"GET\"} 1"));
+        assert!(rendered.contains("test_active_requests 3"));
+        assert!(rendered.contains("test_request_duration_seconds_count 1"));
     }
 }
