@@ -6,14 +6,22 @@
 
 ## Generate a Synthetic NIfTI Volume {#neuro}
 
+This example writes a small synthetic 3D volume to a temporary NIfTI file.
+
 ```rust,editable
 {{#include ../../../crates/cats/science_neuroscience/examples/neuroscience/neuro.rs:example}}
 ```
 
+## Simulate a Leaky Integrate-and-Fire Neuron {#lif}
+
+```rust,editable
+{{#include ../../../crates/cats/science_neuroscience/examples/neuroscience/leaky_integrate_fire.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
-- Scientific data processing.
-- Neuroimaging and signal analysis.
+- Neuroimaging formats such as NIfTI and DICOM.
+- Signal analysis, including EEG/EDF readers and FFTs.
 - Machine learning for biology.
 - `nifti` and `dicom` ecosystem tooling.
 
