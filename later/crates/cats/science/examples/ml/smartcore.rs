@@ -2,94 +2,81 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Placeholder for a machine learning example with `smartcore`.
+//! Train a SmartCore decision-tree classifier on synthetic data and measure its
+//! accuracy on a seeded holdout split.
 
-// COMING SOON
-/// Does nothing yet.
-fn main() {}
-// ANCHOR_END: example
-// //! This example demonstrates a basic usage of the `smartcore` crate for
-// //! machine learning tasks.
-// //!
-// //! `smartcore` provides various algorithms for clustering, classification,
-// // regression, and more.
-// //!
-// //! The following includes:
-// //!
-// //! 1.  Generating a synthetic dataset.
-// //! 2.  Fitting a linear regression model to the dataset.
-// //! 3.  Making predictions using the fitted model.
-// //! 4.  Calculating the mean squared error to evaluate the model's
-// performance.
+use std::error::Error;
 
-// use rand::Rng;
-// use smartcore::linalg::basic::matrix::DenseMatrix;
-// use smartcore::linear::linear_regression::LinearRegression;
-// use smartcore::metrics::mean_squared_error;
-// // KNNClassifier
-// // use smartcore::neighbors::knn_classifier::*;
-// // Various distance metrics
-// // use smartcore::metrics::distance::*;
+use smartcore::linalg::basic::matrix::DenseMatrix;
+use smartcore::metrics::accuracy;
+use smartcore::model_selection::train_test_split;
+use smartcore::tree::decision_tree_classifier::DecisionTreeClassifier;
 
-// fn main() {
-//     // Generate a dataset.
-//     let x: DenseMatrix<f64> = make_blobs(100, 1, 1.0, &vec![1.0, 2.0]);
-//     let y = x.iter().map(|col| col[0] * 3.0 + 1.0).collect::<Vec<f64>>();
+/// Creates two linearly separable classes with small, deterministic offsets.
+fn synthetic_classification_data() -> (Vec<Vec<f64>>, Vec<u32>) {
+    let mut features = Vec::with_capacity(120);
+    let mut labels = Vec::with_capacity(120);
 
-//     // Fit a linear regression model to the dataset.
-//     let lr = LinearRegression::fit(&x, &y, Default::default()).unwrap();
+    for index in 0..60 {
+        let offset = f64::from(index) / 60.0;
+        features.push(vec![-2.0 - offset, -1.0 + offset / 4.0]);
+        labels.push(0);
+        features.push(vec![2.0 + offset, 1.0 - offset / 4.0]);
+        labels.push(1);
+    }
 
-//     // Make predictions.
-//     let y_hat = lr.predict(&x).unwrap();
+    (features, labels)
+}
 
-//     // Calculate the mean squared error.
-//     let mse = mean_squared_error(&y, &y_hat);
+/// Trains the classifier and returns its accuracy on a reproducible test split.
+///
+/// # Errors
+///
+/// Returns an error if SmartCore cannot build the feature matrix, fit the
+/// classifier, or predict the holdout labels.
+fn holdout_accuracy() -> Result<f64, Box<dyn Error>> {
+    let (features, labels) = synthetic_classification_data();
+    let features = DenseMatrix::from_2d_vec(&features)?;
+    let (x_train, x_test, y_train, y_test) =
+        train_test_split(&features, &labels, 0.25, true, Some(42));
 
-//     println!("Predictions: {y_hat:?}");
-//     println!("Mean Squared Error: {mse}");
-// }
+    let classifier =
+        DecisionTreeClassifier::fit(&x_train, &y_train, Default::default())?;
+    let predictions = classifier.predict(&x_test)?;
 
-// /// The `make_blobs` function generates random samples around the specified
-// /// cluster centers, creating a dataset with the specified number of samples
-// /// and feature.
-// /// `n_samples` is the number of samples to generate.
-// /// `n_features` is the number of features for each sample.
-// /// `cluster_std` is the standard deviation of the clusters.
-// /// `centers` is a vector of the center points for the clusters.
-// pub fn make_blobs(
-//     n_samples: usize,
-//     n_features: usize,
-//     cluster_std: f64,
-//     centers: &Vec<f64>,
-// ) -> DenseMatrix<f64> {
-//     let mut rng = rand::rng()();
-//     let n_centers = centers.len() / n_features;
-//     let mut data = vec![0.0; n_samples * n_features];
+    Ok(accuracy(&y_test, &predictions))
+}
 
-//     for i in 0..n_samples {
-//         let center = &centers
-//             [(i % n_centers) * n_features..(i % n_centers + 1) * n_features];
-//         for j in 0..n_features {
-//             data[i * n_features + j] =
-//                 rng.r#gen::<f64>() * cluster_std + center[j];
-//         }
-//     }
-
-//     DenseMatrix::from_array(n_samples, n_features, &data)
-// }
+/// Trains a decision-tree classifier and reports holdout accuracy.
+fn main() -> Result<(), Box<dyn Error>> {
+    let score = holdout_accuracy()?;
+    println!("Holdout accuracy: {score:.2}");
+    assert!(
+        score >= 0.8,
+        "expected at least 80% accuracy, got {score:.2}"
+    );
+    Ok(())
+}
 // ANCHOR_END: example
 
 pub fn run() {
-    main();
+    main().expect("the SmartCore classification example failed");
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that the seeded holdout split yields accurate predictions.
     #[test]
-    fn test_main() {
-        main();
+    fn seeded_classifier_exceeds_accuracy_threshold()
+    -> Result<(), Box<dyn Error>> {
+        let score = holdout_accuracy()?;
+
+        assert!(
+            score >= 0.8,
+            "expected at least 80% accuracy, got {score:.2}"
+        );
+        Ok(())
     }
 }
-// [finish; kNN example; syn data generation for linear regr.; 70/30 split; etc](https://github.com/john-cd/rust_howto/issues/837)
