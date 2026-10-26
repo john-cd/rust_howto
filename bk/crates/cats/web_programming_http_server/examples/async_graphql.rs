@@ -40,6 +40,11 @@ async fn graphql_handler(
     schema.execute(request.into_inner()).await.into()
 }
 
+/// Creates the schema shared by the server and deterministic tests.
+fn build_schema() -> HelloSchema {
+    Schema::build(QueryRoot, EmptyMutation, EmptySubscription).finish()
+}
+
 /// Starts the GraphQL HTTP endpoint on the loopback interface.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -48,8 +53,7 @@ async fn main() -> anyhow::Result<()> {
 
 /// Builds the GraphQL schema and serves it until the listener stops.
 async fn serve() -> anyhow::Result<()> {
-    let schema =
-        Schema::build(QueryRoot, EmptyMutation, EmptySubscription).finish();
+    let schema = build_schema();
     let app = Router::new()
         .route("/graphql", post(graphql_handler))
         .with_state(schema);
@@ -72,4 +76,33 @@ pub fn run() -> anyhow::Result<()> {
         .block_on(serve())
 }
 
-// [finish; https://github.com/async-graphql/examples](https://github.com/john-cd/rust_howto/issues/864)
+/// Verifies the example schema with deterministic queries and no network
+/// server.
+#[cfg(test)]
+mod tests {
+    use serde_json::json;
+
+    use super::build_schema;
+
+    /// Returns the greeting JSON for a valid GraphQL query.
+    #[tokio::test]
+    async fn hello_query_returns_expected_data() {
+        let response = build_schema().execute("{ hello }").await;
+
+        assert!(response.errors.is_empty(), "query should succeed");
+        let data = response
+            .data
+            .into_json()
+            .expect("GraphQL response data should be valid JSON");
+        assert_eq!(data, json!({ "hello": "Hello, world!" }));
+    }
+
+    /// Reports one deterministic validation error for an unknown field.
+    #[tokio::test]
+    async fn unknown_field_returns_validation_error() {
+        let response = build_schema().execute("{ missing }").await;
+
+        assert_eq!(response.errors.len(), 1);
+        assert!(response.errors[0].message.contains("Unknown field"));
+    }
+}
