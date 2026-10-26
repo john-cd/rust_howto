@@ -4,11 +4,7 @@
 
 {{#include signature.incl.md}}
 
-A digital signature lets a holder of a private key sign data so that anyone with the corresponding public key can verify that the signed bytes have not changed and that the signature was made by someone holding that private key. A signature alone does not identify a person or organization; applications need a separate way to trust and distribute public keys. Signatures do not encrypt the message.
-
-For new applications, Ed25519 is a practical default when the protocol supports it. Choose P-256 ECDSA for interoperability with systems that require it. RSA signatures remain useful for compatibility with older protocols; use a supported padding scheme such as RSA-PSS where the protocol permits, and do not use raw RSA operations.
-
-The [`signature`][c~signature~docs]↗ crate provides common signer and verifier traits. Keep private keys secret, and use an established encoding such as PKCS#8 when keys need to be stored or exchanged; see [PKCS#8](certificates.md#pkcs8). Define what exactly is signed with an unambiguous, versioned representation.
+See the overview above for what a signature proves, how to choose an algorithm, and how to store private keys. The recipes demonstrate signing and verifying data with the listed Rust crates.
 
 ## `ed25519` {#ed25519}
 

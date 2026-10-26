@@ -1,8 +1,12 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [`ed25519`][ex~cryptography~ed25519] | [![ed25519~website][c~ed25519~website~badge]][c~ed25519~website] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
+Digital signatures let a private-key holder sign data so that a verifier can check its integrity and confirm that the signature was made by someone holding the corresponding key. A signature does not encrypt data or identify a real-world person; applications must establish trust in public keys separately.
+
+For new protocols, Ed25519 with `ed25519-dalek` is a practical default. Choose P-256 ECDSA when interoperability requires it; RSA signatures are mainly for legacy protocol compatibility. The `signature` crate provides common signing and verification traits. Keep private keys protected and use a standard encoding such as [PKCS#8](certificates.md#pkcs8) for storage; sign a well-defined, unambiguous representation of the data.
+
+| Recipe                                           | Crates                                                                             | Categories                                                      |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| [`ed25519`][ex~cryptography~ed25519]             | [![ed25519~website][c~ed25519~website~badge]][c~ed25519~website]                   | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
 | [`ed25519-dalek`][ex~cryptography~ed25519-dalek] | [![ed25519-dalek~website][c~ed25519-dalek~website~badge]][c~ed25519-dalek~website] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
-| [`ecdsa`][ex~cryptography~ecdsa] | [![ecdsa][c~ecdsa~docs~badge]][c~ecdsa~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
-| [`dsa`][ex~cryptography~dsa] | [![dsa][c~dsa~docs~badge]][c~dsa~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
+| [`ecdsa`][ex~cryptography~ecdsa]                 | [![ecdsa][c~ecdsa~docs~badge]][c~ecdsa~docs]                                       | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
+| [`dsa`][ex~cryptography~dsa]                     | [![dsa][c~dsa~docs~badge]][c~dsa~docs]                                             | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
