@@ -25,7 +25,7 @@ Train with `burn` or `candle`, or train in Python and run the exported model in 
 
 [`candle`][c~candle-core~docs]↗{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural networks. Read [Candle][blog~candle]↗ for the motivation behind the project.
 
-The example below runs on the CPU, needs no model download, and is behind the `candle` Cargo feature of the `science` crate (`cargo test -p science --features candle`).
+The example trains a one-layer model on generated values entirely on `Device::Cpu`, needs no model download, and is behind the `candle` Cargo feature of the `science` crate (`cargo test -p science --features candle`).
 
 ```rust,editable
 {{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}
