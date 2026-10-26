@@ -31,7 +31,7 @@ struct ArithmeticParser;
 
 /// Parses an arithmetic expression into its number and operator tokens.
 fn parse_expression(input: &str) -> anyhow::Result<Vec<String>> {
-    let pairs = ArithmeticParser::parse(Rule::expression, input)?;
+    let mut pairs = ArithmeticParser::parse(Rule::expression, input)?;
     let expression = pairs
         .next()
         .expect("the expression rule produces one outer pair");
