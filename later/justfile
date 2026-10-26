@@ -49,9 +49,18 @@ alias ba := buildall
 alias ca := clippyall
 
 # Scan all code for common mistakes (all packages, all features)
+[unix]
 @clippyall:
   echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
   # sccache 0.18.0 expands web-sys rustc arguments past Windows' process limit.
+  cd {{code_root}}; cargo clippy --workspace --exclude wasm --all-targets --locked --all-features -- -D warnings
+  cd {{code_root}}; RUSTC_WRAPPER= cargo clippy --package wasm --all-targets --locked --all-features -- -D warnings
+  cd {{code_root}}/gui_vizia; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+  cd {{code_root}}/cats/development_tools_ffi/python_extension; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+
+[windows]
+@clippyall:
+  echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
   cd {{code_root}}; cargo clippy --workspace --exclude wasm --all-targets --locked --all-features -- -D warnings
   cd {{code_root}}; $env:RUSTC_WRAPPER = ""; cargo clippy --package wasm --all-targets --locked --all-features -- -D warnings
   cd {{code_root}}/gui_vizia; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
@@ -60,9 +69,17 @@ alias ca := clippyall
 alias nta := nextestall
 
 # Test all code in the workspace (incl. doctests) (all features)
+[unix]
 @nextestall:
   echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
   # sccache expands wasm's web-sys rustc arguments past Windows' process command-line limit.
+  cd {{code_root}}; cargo test --doc --workspace --exclude wasm --all-features --locked
+  cd {{code_root}}; cargo nextest run --workspace --exclude wasm --all-targets --locked --no-fail-fast --status-level all --all-features
+  cd {{code_root}}; RUSTC_WRAPPER= cargo nextest run --package wasm --all-targets --locked --no-fail-fast --status-level all --all-features
+
+[windows]
+@nextestall:
+  echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
   cd {{code_root}}; cargo test --doc --workspace --exclude wasm --all-features --locked
   cd {{code_root}}; cargo nextest run --workspace --exclude wasm --all-targets --locked --no-fail-fast --status-level all --all-features
   cd {{code_root}}; $env:RUSTC_WRAPPER = ""; cargo nextest run --package wasm --all-targets --locked --no-fail-fast --status-level all --all-features

@@ -1,14 +1,14 @@
 # TODO Reviewed ??-??-2026
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(source_directory() + "/../..")
+root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 set tempdir := "."
 
 [no-exit-message]
 _default:
-    @just --list --unsorted --justfile {{ source_file() }}
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 @login:
     gh auth login
@@ -18,7 +18,6 @@ _default:
     gh issue create --title {{ quote(title) }} --body ''
 
 # Return a list of GitHub issues with the same title
-[unix]
 find_dupe_issues:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -29,7 +28,6 @@ find_dupe_issues:
 # --jq '.[] | [.number, .title]'
 
 # Create an GH issue for each TODO line in the book's Markdown files
-[unix]
 create_issues_for_markdown:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -53,7 +51,6 @@ create_issues_for_markdown:
     done
 
 # Create an GH issue for each TODO line in .rs files (incl. code examples)
-[unix]
 create_issues_for_code:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -78,7 +75,6 @@ create_issues_for_code:
     done
 
 # Create an GH issue for each TODO line in other files (*.sh, *.toml, *.yaml...)
-[unix]
 create_issues_for_other:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -104,7 +100,6 @@ create_issues_for_other:
 
 # Refresh GitHub issues
 [confirm]
-[unix]
 refresh:
     #!/usr/bin/env bash
     set -euo pipefail

@@ -1,12 +1,12 @@
 # TODO Reviewed ??-??-2026
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(source_directory() + "/../..")
+root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+  @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- INCLUDE MANAGEMENT -----------------------------------
 
@@ -15,7 +15,15 @@ _default:
 @list_missing_local_refs:
   ./list_missing_local_ref_includes.sh {{root}}
 
+[windows]
+@list_missing_local_refs:
+  ./list_missing_local_ref_includes.sh {{root}}
+
 # Make sure that a local recipe table / TOC i.e. {{#include <subchapter>.incl.md}} is present in each subchapter
 [unix]
+@list_missing_tables:
+  ./list_missing_subchapter_includes.sh {{root}}
+
+[windows]
 @list_missing_tables:
   ./list_missing_subchapter_includes.sh {{root}}

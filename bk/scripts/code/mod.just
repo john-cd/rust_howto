@@ -61,10 +61,17 @@ _default:
     cd {{ quote(code_root) }}; cargo build --workspace --all-targets --locked --all-features --timings
 
 # Scan all code for common mistakes (all features)
+[unix]
 @clippyall:
     echo "Scan all code for common mistakes (all features) in {{ code_root }}"
     # sccache 0.18.0 expands the Leptos web-sys rustc arguments past Windows'
     # process command-line limit, so lint this package directly and separately.
+    cd {{ quote(code_root) }}; cargo clippy --workspace --exclude web_programming_http_server --all-targets --locked --all-features -- -D warnings
+    cd {{ quote(code_root) }}; RUSTC_WRAPPER= cargo clippy --package web_programming_http_server --all-targets --locked --all-features -- -D warnings
+
+[windows]
+@clippyall:
+    echo "Scan all code for common mistakes (all features) in {{ code_root }}"
     cd {{ quote(code_root) }}; cargo clippy --workspace --exclude web_programming_http_server --all-targets --locked --all-features -- -D warnings
     cd {{ quote(code_root) }}; $env:RUSTC_WRAPPER = ""; cargo clippy --package web_programming_http_server --all-targets --locked --all-features -- -D warnings
 
@@ -91,9 +98,17 @@ current_crate := file_name(invocation_directory())
     cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --all-targets --locked --no-fail-fast --status-level all
 
 # Test all code, including doctests (all features)
+[unix]
 @nextestall: _clean_temp_dir && _clean_temp_dir
     echo "Test all code in {{ code_root }} (incl. doctests) (all features)"
     # sccache 0.18.0 expands web-sys rustc arguments past Windows' process command-line limit.
+    cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --exclude web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ quote(code_root) }}; RUSTC_WRAPPER= cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ quote(code_root) }}; cargo test --doc --workspace
+
+[windows]
+@nextestall: _clean_temp_dir && _clean_temp_dir
+    echo "Test all code in {{ code_root }} (incl. doctests) (all features)"
     cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --exclude web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
     cd {{ quote(code_root) }}; $env:RUSTC_WRAPPER = ""; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
     cd {{ quote(code_root) }}; cargo test --doc --workspace

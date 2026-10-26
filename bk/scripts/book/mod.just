@@ -167,5 +167,7 @@ alias q := quick
 
 [windows]
 @quick:
-    Write-Error "Quick serving is not supported on Windows; use 'just s' instead."
-    exit 1
+    echo "Serve the book (no link checking)"
+    $bash = if ($env:GIT_BASH) { $env:GIT_BASH } else { Join-Path $env:ProgramFiles "Git\bin\bash.exe" }
+    & $bash "{{ source_directory() }}/quick.sh" "{{ root }}"
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

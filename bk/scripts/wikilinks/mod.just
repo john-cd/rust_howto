@@ -1,12 +1,12 @@
 # TODO Reviewed ??-??-2026
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(source_directory() + "/../..")
+root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+  @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- WIKILINK MANAGEMENT -----------------------------------
 
@@ -15,12 +15,24 @@ _default:
 @for keyword:
   ./list_chapters.sh {{root}} {{keyword}}
 
+[windows]
+@for keyword:
+  ./list_chapters.sh {{root}} {{keyword}}
+
 # List all chapters in Wikilink format
 [unix]
 @list:
   ./list_chapters.sh {{root}}
 
+[windows]
+@list:
+  ./list_chapters.sh {{root}}
+
 # (BEWARE: modifies many files) Convert wiki-style links [[...|...]] to [...][p~...] and [p~...]: ...
 [unix]
+@dewikilink:
+  ./dewikilink.sh {{root}}
+
+[windows]
 @dewikilink:
   ./dewikilink.sh {{root}}

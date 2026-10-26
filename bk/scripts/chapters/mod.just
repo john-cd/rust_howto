@@ -1,12 +1,12 @@
 # TODO Reviewed ??-??-2026
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(source_directory() + "/../..")
+root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+  @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- CHAPTER MANAGEMENT -----------------------------------
 
@@ -16,8 +16,18 @@ _default:
 @hide:
   ./hide.sh {{root}}
 
+[windows]
+[confirm]
+@hide:
+  ./hide.sh {{root}}
+
 # Make all markdown sections / pages visible
 [confirm]
 [unix]
+@unhide:
+  ./unhide.sh {{root}}
+
+[windows]
+[confirm]
 @unhide:
   ./unhide.sh {{root}}

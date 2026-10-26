@@ -1,18 +1,22 @@
 # TODO Reviewed ??-??-2026
 
 #set shell := ["bash", "-uc"]
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(source_directory() + "/../..")
+root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+  @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- CODE EXAMPLE MANAGEMENT -----------------------------------
 
 # List examples (.rs files) in `crates/**/tests` that may not be included in the book markdown.
 [unix]
+@list_not_used_in_book:
+    ./list_examples_not_used_in_book.sh {{ quote(justfile_directory()) }}
+
+[windows]
 @list_not_used_in_book:
     ./list_examples_not_used_in_book.sh {{ quote(justfile_directory()) }}
 # The script matches e.g. {{#include ../../../crates/cats/development_tools_debugging/examples/<...>/type_name_of_val.rs:example}}
@@ -28,12 +32,28 @@ list_not_tested:
           <(find "${root}crates" -type f -wholename "*/examples/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)
     echo "DONE"
 
+[windows]
+list_not_tested:
+    #!/usr/bin/env bash
+    root="{{root}}/"
+    comm -1 -3 <(find "${root}crates" -type f \( -name "*.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
+          <(find "${root}crates" -type f -wholename "*/examples/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)
+    echo "DONE"
+
 # Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of crates)
 [unix]
 @convert_example_placeholders:
     ./convert_example_placeholders.sh {{root}}
 
+[windows]
+@convert_example_placeholders:
+    ./convert_example_placeholders.sh {{root}}
+
 # Create a new cat crate for a given crates.io category (e.g., `just create algorithms`)
 [unix]
+@create cat:
+    ./create.sh {{root}} {{cat}}
+
+[windows]
 @create cat:
     ./create.sh {{root}} {{cat}}
