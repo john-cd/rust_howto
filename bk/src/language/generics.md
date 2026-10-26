@@ -62,7 +62,7 @@ Const generic parameters are declared in the angle brackets alongside type and l
 
 Const generics allow you to:
 
-- Create data structures that have their size or other properties determined at compile time by a constant,
+- Create [data structures][p~category-data-structures]{{hi:data-structures}} that have their size or other properties determined at compile time by a constant,
 - Implement traits for types based on constant values, i.e. define a single trait implementation that applies to all arrays (or your custom const-generic types) of a certain kind.
 - Perform compile-time checks and optimizations. Const generics can shift certain checks from runtime to compile time. For example, you could define a function that only accepts a matrix if its dimensions meet certain criteria (e.g., for matrix multiplication), catching errors earlier in the development process.
 

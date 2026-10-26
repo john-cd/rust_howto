@@ -4,7 +4,7 @@
 
 {{#include graph_algorithms.incl.md}}
 
-Graph algorithms operate on data structures consisting of nodes (vertices) connected by edges. They are used in a wide variety of applications, including network routing, social network analysis, dependency resolution, and pathfinding in games.
+Graph [algorithms][p~category-algorithms]{{hi:algorithms}} operate on [data structures][p~category-data-structures]{{hi:data-structures}} consisting of nodes (vertices) connected by edges. They are used in a wide variety of applications, including network routing, social network analysis, dependency resolution, and pathfinding in [games][cat~games]↗{{hi:games}}.
 
 The [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} crate provides graph data structures and a rich set of graph algorithms. It supports directed and undirected graphs, and provides implementations of many classic algorithms.
 

@@ -27,11 +27,11 @@ It emphasizes type safety{{hi:Type safety}}, memory safety{{hi:Memory safety}} w
 
 It is a language with both low-level control and high-level, yet zero-cost, abstractions, bridging the capabilities of, say, C or C++ with that of Python. It supports powerful features such as pattern matching{{hi:Pattern matching}}, algebraic data types{{hi:Algebraic data types}}, higher-order functions{{hi:Higher-order functions}}, generics{{hi:Generics}}, traits{{hi:Traits}}, macros{{hi:Macros}}, and asynchronous programming{{hi:Async}}.
 
-It compiles for many CPUs and operating systems (or no OS), making it suitable for a wide range of applications - from embedded development & systems programming to web development.
+It compiles for many CPUs and operating systems (or no OS), making it suitable for a wide range of applications - from [embedded][cat~embedded]↗{{hi:embedded}} development & systems programming to web development.
 
 Above all, Rust's key strength is that it forces you - and assists you greatly in - writing high-quality code. Writing Rust can take more time upfront, but that translates into fewer flaky tests, fewer irreproducible bugs, fewer customer service tickets, fewer costly production environment failures (which, of course, happen in the middle of the night), fewer security breaches. Its rigor results in higher productivity overall.
 
-It has also a very rich ecosystem of crates, for anything from algorithms to websockets - as we will discover in this book.
+It has also a very rich ecosystem of crates, for anything from [algorithms][p~category-algorithms]{{hi:algorithms}} to websockets - as we will discover in this book.
 
 ## Who Should Read This Book
 

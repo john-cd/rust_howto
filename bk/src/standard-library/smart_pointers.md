@@ -12,7 +12,7 @@ Smart pointers{{hi:Smart pointers}} are special data structures that act as poin
 - _Automatic memory management_, such as allocation and deallocation of heap memory.
 - _Reference counting_, allowing multiple parts of a program to share ownership of data. Reference Counting is a mechanism where a count is kept of how many references point to a piece of data. When the count drops to zero, the data is deallocated.
 - _Interior Mutability_ is the ability to mutate data even when you only have an immutable reference to it. This is typically achieved through smart pointers that enforce borrowing rules at runtime (e.g., [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}}, [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}}).
-- _Thread Safety_ ensures that data is accessed and modified correctly when multiple threads are involved, preventing race conditions and other concurrency bugs.
+- _Thread Safety_ ensures that data is accessed and modified correctly when multiple threads are involved, preventing race conditions and other [concurrency][cat~concurrency]↗{{hi:concurrency}} bugs.
 
 Smart pointers are used to manage memory and data access in a way that is safe, efficient, and idiomatic in Rust.
 

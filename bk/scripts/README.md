@@ -27,6 +27,8 @@ Use `just` to list root recipes and modules, then `just <module>` to list a modu
 
 The full book build and normal `serve` recipe ensure the pinned `mdbook-indexing` preprocessor is installed. `quick` is an intentionally reduced preview that skips preprocessors and other full-build checks; on Windows it requires Git Bash.
 
+The `links insert_category_links` recipe previews category links in published `src/` pages without changing files. Review the diff, then run `links insert_category_links_apply` to write the changes. Categories with a published book page use a local `[p~category-...]` reference; other categories keep their crates.io link. Pass `--include-drafts` to the script to preview or apply the same behavior to draft pages. The preprocessor-directive variant is tracked in issue [#248](https://github.com/john-cd/rust_howto/issues/248).
+
 ## Contributor commands
 
 From `bk/`, run `just ba`, `just ca`, and `just nta` for the example workspace build, Clippy, and tests. Run `just bb` to build the book and `just s` to serve it. Use `just q` for a faster Unix-only preview. A focused example test is `just ntt <keyword>` from `bk/`; direct Cargo tests run from `bk/crates/`.

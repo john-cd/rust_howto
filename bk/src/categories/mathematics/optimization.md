@@ -58,8 +58,8 @@ A genetic algorithm evolves a population through selection, crossover and mutati
 
 - Smooth, convex or nearly so, with gradients available: gradient-based solvers (`argmin`'s `LBFGS`, line searches).
 - Smooth but no gradients, few variables: Nelder-Mead, or Brent's method in one dimension.
-- Black-box, noisy, multimodal: CMA-ES, particle swarm, genetic algorithms.
-- Discrete or combinatorial: genetic algorithms, or a specialized solver.
+- Black-box, noisy, multimodal: CMA-ES, particle swarm, genetic [algorithms][p~category-algorithms]{{hi:algorithms}}.
+- Discrete or combinatorial: genetic [algorithms][p~category-algorithms]{{hi:algorithms}}, or a specialized solver.
 
 Always seed random number generators in tests, and cap iterations or generations so a poorly scaled problem cannot run forever.
 

@@ -249,7 +249,7 @@ The following example demonstrates how to create a simple configuration DSL:
 {{#include ../../crates/language/examples/macros/macro_by_example_dsl.rs:example}}
 ```
 
-The caveat of DSLs, of course, is that an unfamiliar syntax embedded within Rust code may be confusing to the reader.
+The caveat of DSLs, of course, is that an unfamiliar syntax [embedded][cat~embedded]↗{{hi:embedded}} within Rust code may be confusing to the reader.
 
 To parse Rust-like syntax, refer to the [relevant section][book~the-little-book-of-macros~parsing-rust]↗ of the little book of macros or use the [`syn`][c~syn~docs]↗ crate.
 

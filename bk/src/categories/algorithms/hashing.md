@@ -96,7 +96,7 @@ XXH3 is a fast, non-cryptographic hash. The example appends a 128-bit XXH3 tag t
 
 ## Legacy Hashing Algorithms {#legacy-hashing-algorithms}
 
-For legacy applications, you may consider using the following hashing algorithms. Note that these algorithms are considered weak by modern cryptographic standards and should not be used for security-sensitive applications.
+For legacy applications, you may consider using the following hashing [algorithms][p~category-algorithms]{{hi:algorithms}}. Note that these [algorithms][p~category-algorithms]{{hi:algorithms}} are considered weak by modern cryptographic standards and should not be used for security-sensitive applications.
 
 ### Hash with `sha1` {#sha1}
 

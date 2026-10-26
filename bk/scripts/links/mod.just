@@ -13,11 +13,15 @@ _default:
 
 ## ---- LINK DEFINITION MANAGEMENT -----------------------------------
 
-# (BEWARE: modifies many files; manual editing required) Insert links to categories
+# Preview category links using book landing pages where available; the default is a dry run.
 @insert_category_links:
-    ./insert_category_links.sh {{ root }}
+    ./insert_category_links.sh {{ quote(root) }}
 
-# [insert preproc directive instead of link. replace link to crates.io category search page to link to category main page.](https://github.com/john-cd/rust_howto/issues/1281)
+# Apply category links after reviewing the dry-run diff.
+@insert_category_links_apply:
+    ./insert_category_links.sh {{ quote(root) }} --apply
+
+# Category badge preprocessor directives are tracked in #248.
 
 # (BEWARE: modifies many files; manual editing required) Insert links to crate [`...`][c~<crate name>~docs] into the book's Markdown
 @insert_crate_links:

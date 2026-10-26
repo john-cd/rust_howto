@@ -21,7 +21,7 @@
 A priority queue is a type of data structure where each element is assigned a priority, and elements with higher priority are processed before those with lower priority. Common use cases include:
 
 - Managing tasks where the highest-priority task must always be processed next.
-- Graph algorithms like Dijkstra's or A*.
+- Graph [algorithms][p~category-algorithms]{{hi:algorithms}} like Dijkstra's or A*.
 - Handling events in chronological order.
 - Efficiently finding the K largest items in a stream of data without sorting the entire set.
 
@@ -44,5 +44,5 @@ inserting elements, popping elements, using custom types, and more:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
 </div>

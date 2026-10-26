@@ -67,3 +67,4 @@
 [ex~mathematics~minimize-a-function-with-cma-es]: optimization.md#minimize-a-function-with-cma-es
 [ex~mathematics~minimize-a-function-with-particle-swarm-optimization]: optimization.md#minimize-a-function-with-particle-swarm-optimization
 [ex~mathematics~maximize-fitness-with-a-genetic-algorithm]: optimization.md#maximize-fitness-with-a-genetic-algorithm
+[p~category-algorithms]: ../algorithms/index.md

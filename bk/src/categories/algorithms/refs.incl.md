@@ -31,3 +31,5 @@
 [f64::total_cmp~docs]: https://doc.rust-lang.org/std/primitive.f64.html#method.total_cmp
 [liblzma]: https://docs.rs/liblzma/latest/liblzma/
 [p~hashmaps]: ../data-structures/hashmaps.md
+[p~category-data-structures]: ../data-structures/index.md
+[p~category-algorithms]: index.md

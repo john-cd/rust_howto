@@ -15,7 +15,7 @@ Run each check from its owning workspace. A successful build on one operating sy
 | Example bodies excluded by Windows `cfg` conditions, including Tauri and WebRender | A platform where those bodies are enabled, with their native dependencies installed.                           |
 | Windows API examples and MSVC build or link behavior                               | Native Windows with the required Windows SDK and MSVC tools.                                                   |
 | Tests that connect to PostgreSQL, Cassandra, Oracle, or another service            | A reachable service with its required credentials and native client libraries.                                 |
-| Interactive GUI or speech tests                                                    | A desktop session with a window system or the required speech backend.                                         |
+| Interactive [GUI][cat~gui]↗{{hi:gui}} or speech tests                              | A desktop session with a window system or the required speech backend.                                         |
 
 ## Develop with VS Code {#using-vs-code}
 

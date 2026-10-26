@@ -18,7 +18,7 @@ The [`std::pin`][c~std::pin~docs]↗{{hi:std::pin}} module enables pinning data 
 
 Pinning is typically used for self-referential types, compiler-generated generators for [`async fn`][keyword~async]↗{{hi:async fn}}, and intrusive data structure, where moving would break safety invariants:
 
-- In _asynchronous programming_, you may have futures that need to maintain a stable memory address, as they may need to reference themselves or other data that should not be moved.
+- In _[asynchronous][cat~asynchronous]↗{{hi:asynchronous}} programming_, you may have futures that need to maintain a stable memory address, as they may need to reference themselves or other data that should not be moved.
 - Pinning a value is a useful building block for _unsafe code_ to reason about whether a raw pointer to the pinned value is still valid.
 
 The main type in [`std::pin`][c~std::pin~docs]↗{{hi:std::pin}} is [`Pin<Ptr>`][c~std::pin::Pin~docs]↗{{hi:std::pin::Pin}}, a smart pointer wrapper that flags that the data behind the pointer `Ptr` should not be moved in memory, even if it is mutable, _unless it implements `Unpin`_(see below).

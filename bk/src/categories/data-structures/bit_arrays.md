@@ -56,7 +56,7 @@ The following example creates a type `MyFlags` with the help of the [`bitflags::
 
 [![roaring][c~roaring~docs~badge]][c~roaring~docs] [![roaring~crates.io][c~roaring~crates.io~badge]][c~roaring~crates.io] [![roaring~repo][c~roaring~repo~badge]][c~roaring~repo] [![roaring~lib.rs][c~roaring~lib.rs~badge]][c~roaring~lib.rs]{{hi:roaring}}{{hi:Bitmap}}{{hi:Data-structure}}{{hi:roaring}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
 
-Bitmaps are commonly used as fast data structures, for example as indices for databases, search engines, and big data processing systems.
+Bitmaps are commonly used as fast [data structures][p~category-data-structures]{{hi:data-structures}}, for example as indices for databases, search engines, and big data processing systems.
 
 Unfortunately, they can use too much memory. To compensate, [`roaring`][c~roaring~docs]↗{{hi:roaring}} implements compressed bitmap data structures. They efficiently store and manipulate large sets of integers:
 

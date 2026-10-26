@@ -151,3 +151,4 @@
 [p~standard-library]: ../standard-library/index.md
 [p~structs]: structs.md
 [p~traits]: traits.md
+[p~category-data-structures]: ../categories/data-structures/index.md

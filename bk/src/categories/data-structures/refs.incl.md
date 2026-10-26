@@ -36,3 +36,5 @@
 [ex~data-structures~vec]: vectors.md#vec
 [p~functions]: ../../language/functions.md
 [p~links]: ../../links/index.md
+[p~category-algorithms]: ../algorithms/index.md
+[p~category-data-structures]: index.md
