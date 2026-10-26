@@ -37,7 +37,9 @@
 
 ## In progress
 
-B1 implementation commits are integrated into local `develop` through `7761c5e6c` (not pushed). Seven B1 issues are closed: #1941, #1940, #939, #1252, #1281, #1912, and #1950. #912 and #1058 remain open because their done criteria require PR links; #864 remains open because its human-review marker is preserved. Formatting, focused tests/Clippy, reference checks, Markdown lint, direct mdBook build/linkcheck, sitemap generation, static asset copy, and `git diff --check` passed. The `just bb` wrapper hit Windows AWS-LC/sccache/Bash-launch failures; its book and remaining steps passed when run directly.
+B1 implementation commits are integrated into local `develop` through `7761c5e6c` (not pushed). Seven B1 issues are closed: #1941, #1940, #939, #1252, #1281, #1912, and #1950. #912 and #1058 remain open because their done criteria require PR links; #864 remains open because its human-review marker is preserved. Formatting, focused tests/Clippy, reference checks, Markdown lint, mdBook build/linkcheck, sitemap generation, static asset copy, and `git diff --check` passed. `just bb` passed in the elevated run; mdBook reported an indexing-plugin version warning and the optional Pandoc backend was unavailable.
+
+Selected topic branches are integrated linearly into local `develop` through `fa58e2dba` (not pushed). This includes the async/concurrency examples and the science changes for #835, #837, #473, #839, and #840; the existing NIfTI example was retained alongside the new neuron simulation. GitHub marks #473 closed. Issues #835, #837, #839, and #840 remain open because their done criteria require PR links. Focused Clippy and tests passed for the changed science packages (including Candle), async/concurrency packages, MIME and GraphQL examples, and link-generation fixture. The full all-features Clippy gate is blocked by the missing Oracle `OCI_LIB_DIR`; the broad `development_tools_debugging` test run still fails in existing log examples that initialize the process-wide logger together.
 
 ### Code examples
 
@@ -150,8 +152,10 @@ B1 implementation commits are integrated into local `develop` through `7761c5e6c
 #### NOW-CODE-04 — Machine learning, data and robotics
 
 - [#764](https://github.com/john-cd/rust_howto/issues/764) — **P4** — quant/rustquant.rs: finish; review — **NOT STARTED**
-- [#835](https://github.com/john-cd/rust_howto/issues/835) — **P4** — Finish the Candle machine-learning example I — **NOT STARTED**
-- [#837](https://github.com/john-cd/rust_howto/issues/837) — **P4** — Finish the SmartCore machine-learning example I — **NOT STARTED**
+- [#835](https://github.com/john-cd/rust_howto/issues/835) — **P4** — Finish the Candle machine-learning example I — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
+- [#837](https://github.com/john-cd/rust_howto/issues/837) — **P4** — Finish the SmartCore machine-learning example I — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
+- [#839](https://github.com/john-cd/rust_howto/issues/839) — **P4** — geo/geo.rs: write — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
+- [#840](https://github.com/john-cd/rust_howto/issues/840) — **P4** — neuroscience/neuro.rs: write — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
 - [#843](https://github.com/john-cd/rust_howto/issues/843) — **P4** — robotics_frameworks/openrr.rs: write — **NOT STARTED**
 - [#845](https://github.com/john-cd/rust_howto/issues/845) — **P4** — Add the Zenoh robotics example I — **NOT STARTED**
 - [#885](https://github.com/john-cd/rust_howto/issues/885) — **P4** — Finish the Polars example I — **NOT STARTED**
@@ -244,7 +248,7 @@ B1 implementation commits are integrated into local `develop` through `7761c5e6c
 - [#364](https://github.com/john-cd/rust_howto/issues/364) — **P4** — finance/quant.md: quant: write — **NOT STARTED**
 - [#365](https://github.com/john-cd/rust_howto/issues/365) — **P4** — `finance/index.md`: write — **NOT STARTED**
 - [#472](https://github.com/john-cd/rust_howto/issues/472) — **P4** — science/index.md: write — **NOT STARTED**
-- [#473](https://github.com/john-cd/rust_howto/issues/473) — **P4** — science/classical_machine_learning.md: organize / write — **NOT STARTED**
+- [#473](https://github.com/john-cd/rust_howto/issues/473) — **P4** — science/classical_machine_learning.md: organize / write — **CLOSED; IMPLEMENTED AND INTEGRATED ON LOCAL DEVELOP**
 - [#474](https://github.com/john-cd/rust_howto/issues/474) — **P4** — science_geo/geo.md: geo: write — **NOT STARTED**
 - [#476](https://github.com/john-cd/rust_howto/issues/476) — **P4** — science_neuroscience/neuroscience.md: neuro: write — **NOT STARTED**
 - [#477](https://github.com/john-cd/rust_howto/issues/477) — **P4** — science_robotics/robot_operating_systems.md: robotics: organize — **NOT STARTED**
@@ -637,8 +641,6 @@ B1 implementation commits are integrated into local `develop` through `7761c5e6c
 
 #### DEFERRED-CODE-02 — Machine learning, data and robotics
 
-- [#839](https://github.com/john-cd/rust_howto/issues/839) — **P4** — geo/geo.rs: write — **NOT STARTED; DEFERRED**
-- [#840](https://github.com/john-cd/rust_howto/issues/840) — **P4** — neuroscience/neuro.rs: write — **NOT STARTED; DEFERRED**
 - [#844](https://github.com/john-cd/rust_howto/issues/844) — **P4** — robot_operating_systems/robotics.rs: write — **NOT STARTED; DEFERRED**
 - [#846](https://github.com/john-cd/rust_howto/issues/846) — **P4** — simulation/simulation1.rs: write — **NOT STARTED; DEFERRED**
 
