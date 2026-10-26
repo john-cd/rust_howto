@@ -42,6 +42,8 @@ The two distinguishing features of [`xtask`][c~cargo-xtask~docs]↗{{hi:xtask}} 
 - It doesn't require any other binaries besides [`cargo`][c~cargo~docs]↗{{hi:cargo}} and [`rustc`][book~rustc]↗{{hi:rustc}}, it fully bootstraps from them.
 - Unlike `bash`, it can more easily be cross platform, as it doesn't use the shell.
 
+Choose the smallest tool that fits the task: use Cargo profiles and build scripts for package compilation, a Cargo subcommand for a reusable Cargo operation, and a task runner or `xtask` for repository workflows such as release checks or code generation. Keep `build.rs` focused on work required to build that package; it runs as part of Cargo's build graph and is not a general task runner. An `xtask` is ordinary Rust code in a separate workspace member, so it can share project types and report errors through Rust's normal tooling.
+
 ### Use `devx` {#devx}
 
 [![devx-cmd][c~devx-cmd~docs~badge]][c~devx-cmd~docs] [![devx-cmd~crates.io][c~devx-cmd~crates.io~badge]][c~devx-cmd~crates.io] [![devx-cmd~repo][c~devx-cmd~repo~badge]][c~devx-cmd~repo] [![devx-cmd~lib.rs][c~devx-cmd~lib.rs~badge]][c~devx-cmd~lib.rs]{{hi:devx-cmd}}{{hi:Cmd}}{{hi:Bash}}{{hi:Shell}}{{hi:Process}} [![devx-pre-commit][c~devx-pre-commit~docs~badge]][c~devx-pre-commit~docs] [![devx-pre-commit~crates.io][c~devx-pre-commit~crates.io~badge]][c~devx-pre-commit~crates.io] [![devx-pre-commit~repo][c~devx-pre-commit~repo~badge]][c~devx-pre-commit~repo] [![devx-pre-commit~lib.rs][c~devx-pre-commit~lib.rs~badge]][c~devx-pre-commit~lib.rs]{{hi:devx-pre-commit}}{{hi:Formatter}}{{hi:Hook}}{{hi:Pre-commit}}{{hi:Rustfmt}}{{hi:Git}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
@@ -77,17 +79,16 @@ The following example executes shell commands and interacts with the file system
 
 ## Related Topics {#related-topics .skip}
 
-| Topic | Rust Crates |
-| --- | --- |
-| General Build Guide | See the [Cargo build overview][p~code-building] for ordinary package builds and profile configuration. |
-| Cross-Compilation | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation. |
+| Topic                   | Rust Crates                                                                                                                                                                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| General Build Guide     | See the [Cargo build overview][p~code-building] for ordinary package builds and profile configuration.                                                                                                                        |
+| Repository Automation   | See [[development-tools_automation                                                                                                                                                                                            | Repository Automation]] for an `xtask` project-check example and Git history automation. |
+| Cargo Commands          | See [[development-tools_cargo                                                                                                                                                                                                 | Cargo]] for built-in commands, package layout, workspaces, and build scripts. |
+| Testing                 | See [[development-tools_testing                                                                                                                                                                                               | Testing]] for test runners and CI checks that can be composed by a task runner. |
+| Cross-Compilation       | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation.                                                                                                                                                            |
 | Packaging, Distribution | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. [`create-dmg`][create-dmg~repo]↗{{hi:create-dmg}} creates macOS disk images. |
-| Build Script Helpers | [`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code in build scripts. [`pkg-config`][c~pkg-config~docs]↗{{hi:pkg-config}} finds system libraries. |
-| Code Generation | Use build scripts. |
+| Build Script Helpers    | [`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code in build scripts. [`pkg-config`][c~pkg-config~docs]↗{{hi:pkg-config}} finds system libraries.                                                                     |
+| Code Generation         | Use build scripts.                                                                                                                                                                                                            |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[building: expand; cross link](https://github.com/john-cd/rust_howto/issues/309)
-</div>
