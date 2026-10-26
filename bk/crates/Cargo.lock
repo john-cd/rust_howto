@@ -3861,14 +3861,9 @@ dependencies = [
 
 [[package]]
 name = "cornucopia_client_core"
-version = "0.4.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "95a087271917ca54f32499539f3f44c8dc112ffea0f39f47d6cde075df8d2f18"
-dependencies = [
- "fallible-iterator 0.2.0",
- "postgres-protocol",
- "postgres-types",
-]
+checksum = "d8685fe8f0504cf94f9c5147614d4e7595cb058711de3418a1667142c4e34c0a"
 
 [[package]]
 name = "cpubits"
