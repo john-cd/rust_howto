@@ -47,7 +47,10 @@ impl Store for Empty {
 }
 
 /// Returns the first value found by a chain of stores of different types.
-async fn first_hit(stores: &[Box<dyn Store>], key: &str) -> Option<(String, String)> {
+async fn first_hit(
+    stores: &[Box<dyn Store>],
+    key: &str,
+) -> Option<(String, String)> {
     for store in stores {
         if let Some(v) = store.get(key).await {
             return Some((store.name().to_owned(), v));
@@ -56,28 +59,49 @@ async fn first_hit(stores: &[Box<dyn Store>], key: &str) -> Option<(String, Stri
     None
 }
 
-/// Runs the example.
+/// Runs the trait-object lookups and prints the first matching value.
+async fn example() {
+    let stores: Vec<Box<dyn Store>> =
+        vec![Box::new(Empty), Box::new(Always("hit"))];
+    println!("{:?}", first_hit(&stores, "k").await);
+}
+
+/// Runs the example on a current-thread Tokio runtime.
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
-    let stores: Vec<Box<dyn Store>> = vec![Box::new(Empty), Box::new(Always("hit"))];
-    println!("{:?}", first_hit(&stores, "k").await);
+    example().await;
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example on a current-thread Tokio runtime.
+///
+/// # Errors
+///
+/// Returns an error if the Tokio runtime cannot be created.
+pub fn run() -> anyhow::Result<()> {
+    let runtime = tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?;
+    runtime.block_on(example());
+    Ok(())
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the example entry point runs successfully.
+    #[test]
+    fn main_runs() -> anyhow::Result<()> {
+        run()
+    }
+
     /// Verifies the chain skips the empty store.
     #[tokio::test]
     async fn chain_finds_first_hit() {
-        let stores: Vec<Box<dyn Store>> = vec![Box::new(Empty), Box::new(Always("hit"))];
+        let stores: Vec<Box<dyn Store>> =
+            vec![Box::new(Empty), Box::new(Always("hit"))];
         assert_eq!(
             first_hit(&stores, "k").await,
             Some(("always".to_owned(), "hit".to_owned()))

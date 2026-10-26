@@ -26,7 +26,9 @@ impl Refresh for Counter {
 }
 
 /// Spawns the refresh on a multi-threaded runtime: this requires `Send`.
-async fn refresh_in_task<R: Refresh + Send + 'static>(mut r: R) -> Result<u32, String> {
+async fn refresh_in_task<R: Refresh + Send + 'static>(
+    mut r: R,
+) -> Result<u32, String> {
     tokio::spawn(async move { r.refresh().await })
         .await
         .map_err(|e| e.to_string())?
@@ -49,30 +51,51 @@ impl SendStore for Fixed {
 }
 
 /// Spawns a [`SendStore`] lookup.
-async fn get_in_task<S: SendStore + Send + Sync + 'static>(s: S) -> Option<String> {
+async fn get_in_task<S: SendStore + Send + Sync + 'static>(
+    s: S,
+) -> Option<String> {
     tokio::spawn(async move { s.get("k").await })
         .await
         .ok()
         .flatten()
 }
 
-/// Runs the example.
-#[tokio::main]
-async fn main() {
+/// Runs both `Send` future examples and prints their results.
+async fn example() {
     println!("{:?}", refresh_in_task(Counter(0)).await);
     println!("{:?}", get_in_task(Fixed).await);
 }
 
+/// Runs the example on Tokio's default runtime.
+#[tokio::main]
+async fn main() {
+    example().await;
+}
+
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example on a multi-threaded Tokio runtime.
+///
+/// # Errors
+///
+/// Returns an error if the Tokio runtime cannot be created.
+pub fn run() -> anyhow::Result<()> {
+    let runtime = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()?;
+    runtime.block_on(example());
+    Ok(())
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Verifies the example entry point runs successfully.
+    #[test]
+    fn main_runs() -> anyhow::Result<()> {
+        run()
+    }
 
     /// Verifies both styles run on a multi-threaded runtime.
     #[tokio::test(flavor = "multi_thread")]

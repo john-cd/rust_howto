@@ -22,7 +22,7 @@ async fn worker(token: CancellationToken) -> u32 {
 }
 
 /// Cancels one child, then the parent, and reports the final token states.
-async fn run() -> (bool, bool, bool) {
+async fn cancellation_states() -> (bool, bool, bool) {
     let parent = CancellationToken::new();
     let child_a = parent.child_token();
     let child_b = parent.child_token();
@@ -50,28 +50,47 @@ async fn run() -> (bool, bool, bool) {
     )
 }
 
-/// Runs the example.
+/// Cancels the worker tree and prints its final token states.
+async fn example() {
+    let states = cancellation_states().await;
+    println!("parent, child_a, child_b cancelled: {states:?}");
+}
+
+/// Runs the example on a current-thread Tokio runtime.
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
-    let states = run().await;
-    println!("parent, child_a, child_b cancelled: {states:?}");
+    example().await;
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run_example() {
-    main();
+/// Runs the example on a current-thread Tokio runtime.
+///
+/// # Errors
+///
+/// Returns an error if the Tokio runtime cannot be created.
+pub fn run() -> anyhow::Result<()> {
+    let runtime = tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?;
+    runtime.block_on(example());
+    Ok(())
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the example entry point runs successfully.
+    #[test]
+    fn main_runs() -> anyhow::Result<()> {
+        run()
+    }
+
     /// Verifies cancellation flows down the tree and not up.
     #[tokio::test(start_paused = true)]
     async fn parent_cancels_children_not_the_reverse() {
-        assert_eq!(run().await, (true, true, true));
+        assert_eq!(cancellation_states().await, (true, true, true));
     }
 
     /// Verifies a worker stops promptly when cancelled.

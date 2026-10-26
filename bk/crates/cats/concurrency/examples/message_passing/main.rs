@@ -40,7 +40,7 @@ enum Commands {
     FlumeTick,
     /// Runs the bounded command-channel `flume` example.
     #[command(name = "flume_commands")]
-    FlumeCommands,
+    FlumeCommand,
 }
 
 /// Runs the example selected on the command line.
@@ -64,7 +64,7 @@ fn main() {
             Commands::FlumeTick => {
                 flume_tick::run();
             }
-            Commands::FlumeCommands => {
+            Commands::FlumeCommand => {
                 flume_commands::run();
             }
         }

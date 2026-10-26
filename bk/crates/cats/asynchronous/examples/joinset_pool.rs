@@ -12,7 +12,11 @@ use std::time::Duration;
 use tokio::task::JoinSet;
 
 /// Squares `n` after a delay, tracking how many workers run at once.
-async fn work(n: u64, in_flight: Arc<AtomicUsize>, peak: Arc<AtomicUsize>) -> u64 {
+async fn work(
+    n: u64,
+    in_flight: Arc<AtomicUsize>,
+    peak: Arc<AtomicUsize>,
+) -> u64 {
     let now = in_flight.fetch_add(1, Ordering::SeqCst) + 1;
     peak.fetch_max(now, Ordering::SeqCst);
     tokio::time::sleep(Duration::from_millis(10 * (10 - n % 10))).await;
@@ -65,23 +69,44 @@ async fn join_errors() -> (bool, bool) {
     (panicked, cancelled)
 }
 
-/// Runs the example.
+/// Runs the bounded pool and prints its results.
+async fn example() {
+    let (results, peak) = run_pool((1..=8).collect(), 3).await;
+    println!(
+        "results (completion order): {results:?}, peak concurrency: {peak}"
+    );
+}
+
+/// Runs the example on a current-thread Tokio runtime.
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
-    let (results, peak) = run_pool((1..=8).collect(), 3).await;
-    println!("results (completion order): {results:?}, peak concurrency: {peak}");
+    example().await;
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example on a current-thread Tokio runtime.
+///
+/// # Errors
+///
+/// Returns an error if the Tokio runtime cannot be created.
+pub fn run() -> anyhow::Result<()> {
+    let runtime = tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?;
+    runtime.block_on(example());
+    Ok(())
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Verifies the example entry point runs successfully.
+    #[test]
+    fn main_runs() -> anyhow::Result<()> {
+        run()
+    }
 
     /// Verifies concurrency is bounded and every result is returned.
     #[tokio::test(start_paused = true)]

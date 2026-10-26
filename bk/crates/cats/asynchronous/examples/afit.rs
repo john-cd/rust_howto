@@ -39,24 +39,43 @@ async fn lookup<S: Store>(store: &S, key: &str) -> String {
 //           `impl Future<Output = Option<String>>`
 // See `rpitit_send.rs` for the fix.
 
-/// Runs the example.
-#[tokio::main(flavor = "current_thread")]
-async fn main() {
+/// Looks up two keys and prints their values.
+async fn example() {
     let store = MemoryStore(vec![("a".into(), "1".into())]);
     println!("a = {}", lookup(&store, "a").await);
     println!("b = {}", lookup(&store, "b").await);
 }
 
+/// Runs the example on a current-thread Tokio runtime.
+#[tokio::main(flavor = "current_thread")]
+async fn main() {
+    example().await;
+}
+
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example on a current-thread Tokio runtime.
+///
+/// # Errors
+///
+/// Returns an error if the Tokio runtime cannot be created.
+pub fn run() -> anyhow::Result<()> {
+    let runtime = tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?;
+    runtime.block_on(example());
+    Ok(())
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Verifies the example entry point runs successfully.
+    #[test]
+    fn main_runs() -> anyhow::Result<()> {
+        run()
+    }
 
     /// Verifies lookups of present and missing keys.
     #[tokio::test]

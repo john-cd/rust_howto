@@ -42,18 +42,31 @@ async fn flaky(attempt: u32, succeed_at: u32) -> Result<(), String> {
     }
 }
 
-/// Runs the example.
-#[tokio::main(flavor = "current_thread")]
-async fn main() {
+/// Runs the supervisor and prints its outcome.
+async fn example() {
     let result = supervise(|n| flaky(n, 3), CancellationToken::new()).await;
     println!("(attempts, succeeded): {result:?}");
 }
 
+/// Runs the example on a current-thread Tokio runtime.
+#[tokio::main(flavor = "current_thread")]
+async fn main() {
+    example().await;
+}
+
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the example on a current-thread Tokio runtime.
+///
+/// # Errors
+///
+/// Returns an error if the Tokio runtime cannot be created.
+pub fn run() -> anyhow::Result<()> {
+    let runtime = tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?;
+    runtime.block_on(example());
+    Ok(())
 }
 
 #[cfg(test)]
@@ -61,6 +74,12 @@ mod tests {
     use tokio::time::Instant;
 
     use super::*;
+
+    /// Verifies the example entry point runs successfully.
+    #[test]
+    fn main_runs() -> anyhow::Result<()> {
+        run()
+    }
 
     /// Verifies the backoff delays double and are capped.
     #[tokio::test(start_paused = true)]

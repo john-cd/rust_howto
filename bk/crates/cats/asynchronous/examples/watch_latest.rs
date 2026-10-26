@@ -21,7 +21,7 @@ struct Config {
 ///
 /// `watch` keeps only the latest value; `broadcast` queues events and
 /// reports a lag when its buffer overflows.
-async fn run() -> (Arc<Config>, Result<u8, RecvError>) {
+async fn latest_and_first_event() -> (Arc<Config>, Result<u8, RecvError>) {
     let (tx, mut rx) = watch::channel(Arc::new(Config { level: "info" }));
     let (btx, mut brx) = broadcast::channel::<u8>(2);
 
@@ -40,28 +40,47 @@ async fn run() -> (Arc<Config>, Result<u8, RecvError>) {
     (latest, first)
 }
 
-/// Runs the example.
+/// Publishes the sample state changes and prints each subscriber result.
+async fn example() {
+    let (latest, first) = latest_and_first_event().await;
+    println!("watch saw only {latest:?}; broadcast first recv: {first:?}");
+}
+
+/// Runs the example on a current-thread Tokio runtime.
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
-    let (latest, first) = run().await;
-    println!("watch saw only {latest:?}; broadcast first recv: {first:?}");
+    example().await;
 }
 
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run_example() {
-    main();
+/// Runs the example on a current-thread Tokio runtime.
+///
+/// # Errors
+///
+/// Returns an error if the Tokio runtime cannot be created.
+pub fn run() -> anyhow::Result<()> {
+    let runtime = tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?;
+    runtime.block_on(example());
+    Ok(())
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies the example entry point runs successfully.
+    #[test]
+    fn main_runs() -> anyhow::Result<()> {
+        run()
+    }
+
     /// Verifies `watch` coalesces updates and `broadcast` can lag.
     #[tokio::test]
     async fn watch_coalesces_broadcast_lags() {
-        let (latest, first) = run().await;
+        let (latest, first) = latest_and_first_event().await;
         assert_eq!(*latest, Config { level: "trace" });
         assert_eq!(first, Err(RecvError::Lagged(1)));
     }

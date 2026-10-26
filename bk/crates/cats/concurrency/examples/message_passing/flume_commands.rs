@@ -63,21 +63,32 @@ fn run_commands() -> i32 {
     worker(&rx)
 }
 
-/// Runs the example.
-fn main() {
+/// Runs the command channel and prints the total.
+fn example() {
     println!("total: {}", run_commands());
+}
+
+/// Runs the command-channel example.
+fn main() {
+    example();
 }
 
 // ANCHOR_END: example
 
 /// Runs the example.
 pub fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Verifies the example entry point runs successfully.
+    #[test]
+    fn main_runs() {
+        run();
+    }
 
     /// Verifies all commands are applied.
     #[test]
