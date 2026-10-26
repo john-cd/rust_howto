@@ -4,7 +4,7 @@
 set -eux
 set -o pipefail
 
-RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(tr -d '\r\n' < rustfmt-toolchain)}"
+RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' rustfmt-toolchain.toml)}"
 
 ## @fn monitor_resources()
 ## @brief Periodically logs tmpfs and memory usage to stdout in the background.

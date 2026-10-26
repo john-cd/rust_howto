@@ -9,7 +9,7 @@ Write-Host "Installing Rust components..." -ForegroundColor Cyan
 $rustfmtToolchain = if ($env:RUSTFMT_TOOLCHAIN) {
     $env:RUSTFMT_TOOLCHAIN
 } else {
-    (Get-Content (Join-Path $PSScriptRoot "..\rustfmt-toolchain") -Raw).Trim()
+    (Select-String -Path (Join-Path $PSScriptRoot "..\rustfmt-toolchain.toml") -Pattern '^channel\s*=\s*"([^"]+)"').Matches[0].Groups[1].Value
 }
 rustup default stable
 rustup toolchain install $rustfmtToolchain

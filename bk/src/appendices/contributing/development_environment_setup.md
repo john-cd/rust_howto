@@ -45,8 +45,8 @@ cargo install mdbook --version 0.5.4 --locked
 cargo install just
 cargo install mdbook-linkcheck --version 0.7.7 --locked
 cargo install --git https://github.com/john-cd/mdbook-utils --rev 171a98f93a6d3817561c8dd9f8075a9dcf6629f3 --locked --force mdbook-utils
-# for the formatter toolchain pinned in `rustfmt-toolchain`
-RUSTFMT_TOOLCHAIN="$(tr -d '\r\n' < rustfmt-toolchain)"
+# for the formatter toolchain pinned in `rustfmt-toolchain.toml`
+RUSTFMT_TOOLCHAIN="$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' rustfmt-toolchain.toml)"
 rustup toolchain install "$RUSTFMT_TOOLCHAIN"
 rustup component add rustfmt --toolchain "$RUSTFMT_TOOLCHAIN"
 ```
@@ -82,7 +82,7 @@ cargo install cargo-nextest --version 0.9.148 --locked
 cargo install mdbook --version 0.5.4 --locked
 cargo install mdbook-linkcheck --version 0.7.7 --locked
 cargo install --git https://github.com/john-cd/mdbook-utils --rev 171a98f93a6d3817561c8dd9f8075a9dcf6629f3 --locked --force mdbook-utils
-$rustfmtToolchain = (Get-Content rustfmt-toolchain -Raw).Trim()
+$rustfmtToolchain = (Select-String -Path rustfmt-toolchain.toml -Pattern '^channel\s*=\s*"([^"]+)"').Matches[0].Groups[1].Value
 rustup toolchain install $rustfmtToolchain
 rustup component add rustfmt --toolchain $rustfmtToolchain
 ```

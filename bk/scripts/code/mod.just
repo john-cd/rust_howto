@@ -5,7 +5,7 @@ set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
 root := clean(source_directory() + "/../../..")
 book_root := clean(root + "/bk")
 code_root := clean(book_root + "/crates")
-rustfmt_toolchain_default := trim(read(join(root, "rustfmt-toolchain")))
+rustfmt_toolchain_default := trim(replace_regex(read(join(root, "rustfmt-toolchain.toml")), '(?s).*channel\s*=\s*"([^"]+)".*', "$1"))
 rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 

@@ -9,7 +9,7 @@ set -x
 set -v
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(tr -d '\r\n' < "$repo_root/rustfmt-toolchain")}"
+RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' "$repo_root/rustfmt-toolchain.toml")}"
 
 ## Check whether Docker has failed to bind mount the development laptop's project folder to /code
 ## You may also verify that the bind mount was created correctly using `docker inspect <container_name>`. Look for the Mounts section.

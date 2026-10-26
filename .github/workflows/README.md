@@ -30,7 +30,7 @@ called job lacked the Pages permissions.)
 - **Shell.** `run` steps use `bash`, including on Windows.
 - **Compiler wrapper.** `.cargo/config.toml` enables `sccache`; CI sets `RUSTC_WRAPPER=""` and relies on `rust-cache`.
 - **Permissions.** `contents: read` by default; only the Pages deploy job gets `pages: write` and `id-token: write`.
-- **Toolchain bumps.** Update `.devcontainer/.env` (`RUST_VERSION`) and `rustfmt-toolchain`. Workflows and Just
+- **Toolchain bumps.** Update `.devcontainer/.env` (`RUST_VERSION`) and `rustfmt-toolchain.toml`. Workflows and Just
   recipes read the nightly formatter pin from that file.
 
 ## Checking workflows locally

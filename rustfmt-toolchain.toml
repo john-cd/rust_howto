@@ -1,0 +1,6 @@
+# Nightly toolchain used only to format code (`cargo +<channel> fmt`).
+# Not named `rust-toolchain.toml`, so rustup does not make it the default.
+[toolchain]
+channel = "nightly-2026-10-22"
+profile = "minimal"
+components = ["rustfmt"]

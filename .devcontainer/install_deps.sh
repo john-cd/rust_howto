@@ -13,7 +13,7 @@ set -a
 # shellcheck source=.env
 source "$repo_root/.devcontainer/.env"
 set +a
-RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(tr -d '\r\n' < "$repo_root/rustfmt-toolchain")}"
+RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' "$repo_root/rustfmt-toolchain.toml")}"
 
 # GTK4 and pkg-config are required for the Rust GUI examples that depend on gtk4/relm4.
 sudo apt-get update \

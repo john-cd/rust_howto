@@ -14,7 +14,7 @@ on:
       - '.github/actions/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
-      - 'rustfmt-toolchain'
+      - 'rustfmt-toolchain.toml'
   pull_request:
     branches: [ "develop" ]
     paths:
@@ -24,7 +24,7 @@ on:
       - '.github/actions/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
-      - 'rustfmt-toolchain'
+      - 'rustfmt-toolchain.toml'
   workflow_dispatch:
 
 permissions:
@@ -70,7 +70,7 @@ jobs:
       run: |
         docker run --rm rust_howto_tools_app_builder:latest bash -lc '
           set -euo pipefail
-          RUSTFMT_TOOLCHAIN="$(tr -d "\r\n" < "$RUSTFMT_TOOLCHAIN_FILE")"
+          RUSTFMT_TOOLCHAIN="$(sed -n "s/^channel *= *\"\([^\"]*\)\".*/\1/p" "$RUSTFMT_TOOLCHAIN_FILE")"
           cd /code/tools
           cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
           cargo build --workspace --all-targets --locked --all-features

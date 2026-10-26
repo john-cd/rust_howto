@@ -39,7 +39,7 @@ Additional repo-specific commands:
 
 - `just all <cmd>` at the repo root fans out to the main subprojects.
 - `just release` in `tools\` builds the helper binaries and copies them into the repo-level `bin\` directory.
-- `rustfmt-toolchain` is the nightly formatter pin used by the workspace `just` recipes. Use `just fmtall` to format a workspace.
+- `rustfmt-toolchain.toml` is the nightly formatter pin used by the workspace `just` recipes. Use `just fmtall` to format a workspace.
 
 ## High-level architecture
 

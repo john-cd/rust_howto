@@ -15,7 +15,7 @@ on:
       - '.cargo/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
-      - 'rustfmt-toolchain'
+      - 'rustfmt-toolchain.toml'
   pull_request:
     branches: [develop]
     paths:
@@ -27,7 +27,7 @@ on:
       - '.cargo/**'
       - 'Cargo.toml'
       - 'Cargo.lock'
-      - 'rustfmt-toolchain'
+      - 'rustfmt-toolchain.toml'
   workflow_dispatch:
 
 env:
