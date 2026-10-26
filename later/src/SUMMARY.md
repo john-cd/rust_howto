@@ -161,6 +161,8 @@
 
 - [Rendering - data formats](categories/rendering_data-formats/index.md)
   - [3D model formats](categories/rendering_data-formats/3d_model_formats.md)
+  - [Vector formats](categories/rendering_data-formats/vector_formats.md)
+  - [Texture formats](categories/rendering_data-formats/texture_formats.md)
 
 - [Rendering engines](categories/rendering_engine/index.md)
   - [Rendering engines](categories/rendering_engine/rendering_engines.md)
