@@ -11,7 +11,8 @@ use rubato::audioadapter_buffers::direct::SequentialSliceOfVecs;
 
 /// Converts one generated mono chunk to a different sample rate.
 fn resample_chunk() -> Result<(usize, Vec<f32>), Box<dyn Error>> {
-    let mut resampler = Fft::<f32>::new(48_000, 44_100, 1_024, 1, FixedSync::Both)?;
+    let mut resampler =
+        Fft::<f32>::new(48_000, 44_100, 1_024, 1, FixedSync::Both)?;
     let input_frames = resampler.input_frames_next();
     let input = (0..input_frames)
         .map(|frame| {

@@ -10,20 +10,21 @@ use anyhow::bail;
 use serde::Serialize;
 
 /// The templates, which are loaded and configured on first use.
-static TEMPLATES: LazyLock<tera::TeraResult<tera::Tera>> = LazyLock::new(|| {
-    let manifest_dir = env!("CARGO_MANIFEST_DIR").replace('\\', "/");
-    let template_glob = format!("{manifest_dir}/examples/tera/templates/*");
-    let mut t = tera::Tera::new();
-    t.load_from_glob(&template_glob)?;
-    // Configure the Tera template engine.
-    // By default, Tera will auto-escape all content in files ending with
-    // ".html", ".htm" and ".xml".
-    // Change that with `autoescape_on`:
-    // t.autoescape_on(vec![".html"]);
-    // Also add filters here, for example:
-    t.register_filter("underscored", underscored);
-    Ok(t)
-});
+static TEMPLATES: LazyLock<tera::TeraResult<tera::Tera>> =
+    LazyLock::new(|| {
+        let manifest_dir = env!("CARGO_MANIFEST_DIR").replace('\\', "/");
+        let template_glob = format!("{manifest_dir}/examples/tera/templates/*");
+        let mut t = tera::Tera::new();
+        t.load_from_glob(&template_glob)?;
+        // Configure the Tera template engine.
+        // By default, Tera will auto-escape all content in files ending with
+        // ".html", ".htm" and ".xml".
+        // Change that with `autoescape_on`:
+        // t.autoescape_on(vec![".html"]);
+        // Also add filters here, for example:
+        t.register_filter("underscored", underscored);
+        Ok(t)
+    });
 
 /// Filters are functions with the
 /// `fn(Value, Kwargs, &State) -> Result` definition (the value may be any
