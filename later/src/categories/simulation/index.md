@@ -6,25 +6,21 @@
 
 Crates used to model or construct models for some activity, e.g. to simulate a networking protocol.
 
-The Rust ecosystem offers several options for building simulations, ranging from game engines that can be adapted for simulation to specialized crates for specific simulation domains.
+Scope: this category covers software that models a system over time or space. The domains below are the ones with usable Rust crates today; others (CFD, FEA, molecular dynamics) rely on general numerical crates, bindings through [[development-tools_ffi | FFI]], or custom code.
 
-- Some simulation domains have more mature crate options than others. Areas like DES, ABM, CFD, FEA, and MD are still developing in pure Rust.
-- Game engines can be adapted for simulations with visual components.
-- Consider adapting game engines like [`bevy`][c~bevy~docs]↗{{hi:bevy}} for simulations, especially if visualization is important.
-- Integrate with existing simulation libraries (often written in other languages) using FFI. See [[development-tools_ffi | Development Tools: FFI]] and [[external-ffi-bindings | External FFI Bindings]].
-
-| Topic | Rust Crate(s) | Notes |
+| Domain | Rust Crate(s) | Notes |
 |---|---|---|
-| Physics Engines | `rapier`, `bevy_rapier` (Bevy integration) | `rapier` is a physics engine focused on performance. `bevy_rapier` integrates `rapier` with the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine. `nphysics2d` is another physics engine. |
-| Discrete Event Simulation (DES) | | This area is still developing in pure Rust. General-purpose crates might be used to implement DES logic. |
-| Agent-Based Modeling (ABM) | | Similar to DES, ABM libraries are emerging. General-purpose crates and custom logic are often used. |
-| Computational Fluid Dynamics (CFD) |  | CFD often involves complex numerical computations. Rust's numerical libraries can be used, but dedicated CFD crates are less common. |
-| Finite Element Analysis (FEA) | | Similar to CFD, FEA relies on numerical computation and is an area where development is ongoing. |
-| Molecular Dynamics (MD) | | MD simulations also rely heavily on numerical computation. |
+| Physics | [`rapier`][c~rapier~docs]↗{{hi:rapier}} | Rigid-body physics; see [[physics_engines | Physics Engines]]. [`bevy`][c~bevy~docs]↗{{hi:bevy}} integrates it via `bevy_rapier` when visualization matters. |
+| Discrete-event simulation | [`nexosim`][c~nexosim~docs]↗{{hi:nexosim}}, [`desim`][c~desim~docs]↗{{hi:desim}} | `nexosim` is the actively developed, general-purpose option; `desim` is small and appears unmaintained. Check release dates before adopting either. |
+| Agent-based models | [`krabmaga`][c~krabmaga~docs]↗{{hi:krabmaga}} | Framework for agent-based simulation with optional visualization and parallel runs. |
+| Numerical ODE solving | [`ode_solvers`][c~ode_solvers~docs]↗{{hi:ode_solvers}}, [`diffsol`][c~diffsol~docs]↗{{hi:diffsol}} | Runge-Kutta solvers; `diffsol` adds stiff (implicit) solvers. |
+| Monte Carlo | [`rand`][c~rand~docs]↗{{hi:rand}} | See [[randomness | Random Numbers]]. |
+
+Follow-up pages worth writing (discrete-event, agent-based models, ODE solving) are tracked in the epic [#1994](https://github.com/john-cd/rust_howto/issues/1994).
 
 ## Physics Engines
 
-{{#include physics_engine.incl.md}}
+{{#include physics_engines.incl.md}}
 
 ## Other Code Examples
 
@@ -42,7 +38,3 @@ The Rust ecosystem offers several options for building simulations, ranging from
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/961)
-</div>

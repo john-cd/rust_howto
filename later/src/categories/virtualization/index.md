@@ -8,74 +8,32 @@ Creation and management of virtual environments and resources of any form, inclu
 
 The Rust virtualization ecosystem is still under development, but there's growing interest and activity.
 
-## Containerization
+## Pages
 
-See [[containerization | Containerization]].
+- [[virtualization | Virtualization]]: virtual machines, hypervisors, `virt` (libvirt) and Firecracker.
+- [[containers | Containers]], [[containerization | Containerization]] and [[using_containers | Using Containers]]: build, run and manage containers.
 
-## Hypervisor / Virtual Machine Monitors (VMMs)
+## Virtual Machine Monitors and Building Blocks
 
-- `Firecracker`: A lightweight VMM designed for running microVMs.
-- `CrosVM`: A VMM for Chrome OS, focusing on security and simplicity.
-- Cloud Hypervisor: [`cloud-hypervisor`][cloud-hypervisor~website]{{hi:cloud-hypervisor}} is a VMM specifically designed for cloud workloads.
+| Project | Role | Notes |
+|---|---|---|
+| [Firecracker][firecracker~repo]↗{{hi:Firecracker}} | VMM | Lightweight microVMs; see also its [`jailer`][jailer~lib.rs]↗. |
+| [`crosvm`][crosvm~repo]↗{{hi:crosvm}} | VMM | Chrome OS VMM focused on security. |
+| [Cloud Hypervisor][cloud-hypervisor~website]↗{{hi:cloud-hypervisor}} | VMM | Built for cloud workloads. |
+| [Hyperlight][hyperlight~repo]↗{{hi:Hyperlight}} | Micro-VM library | Runs functions in hypervisor-isolated micro-VMs. |
+| [`rust-vmm`][rust-vmm~community~repo]↗{{hi:rust-vmm}} | Components | Shared crates for building custom VMMs. |
+| [`kvm-ioctls`][rust-vmm~kvm~repo]↗{{hi:kvm-ioctls}} | KVM wrapper | Safe wrappers over the KVM API. |
+| [`kvm-bindings`][c~kvm-bindings~crates.io]↗{{hi:kvm-bindings}} | KVM FFI | `bindgen`-generated KVM bindings. |
+| [`vmm-sys-util`][rust-vmm~vmm-sys-util~repo]↗{{hi:vmm-sys-util}} | Utilities | Helpers shared by `rust-vmm` components. |
+| [`virt`][c~virt~docs]↗{{hi:virt}} | libvirt bindings | Manage QEMU/KVM and other hypervisors through `libvirt`. |
+| [`tun-tap`][c~tun-tap~docs]↗{{hi:tun-tap}} | Networking | Virtual network interfaces. |
+| [`polkavm`][c~polkavm~crates.io]↗{{hi:polkavm}} | Emulator | RISC-V VM for smart contracts; see [[emulators | Emulators]]. |
 
-## Virtualization Frameworks
-
-These crates provide low-level interfaces for interacting with hypervisors like KVM. These are often used to build higher-level VMMs.
-
-- `rust-vmm`: A collection of virtualization components for building custom VMMs.
-- `vmm-sys-util`: Utilities for system programming in VMMs.
-- `kvm-ioctls`: Safe wrappers over KVM ioctls for interacting with the Linux Kernel-based Virtual Machine.
-
-## Device Emulation
-
-- `virtio-devices`: Implementation of Virtio device models.
-- `vhost`: Libraries for implementing vhost-based backends.
-
-## Kernel and Bootloaders
-
-- `linux-loader`: A library for loading Linux kernels.
-- `bootparam`: Utilities for working with Linux boot parameters.
-
-## Memory Management
-
-- `vm-memory`: Abstractions for managing guest memory in VMMs.
-- `guest-memory`: Safe and efficient guest memory management.
-
-## Virtual Networking
-
-- `net_util`: Utilities for network device emulation.
-- `vhost-user-backend`: A library for implementing vhost-user backends.
-- [`tun-tap`][c~tun-tap~docs]↗{{hi:tun-tap}}.
-
-[`tun-tap`][c~tun-tap~docs]↗{{hi:tun-tap}} allows creating virtual network interfaces.
-
-## Virtual Storage
-
-Virtual storage solutions are an area where development is ongoing.
-
-- `block-util`: Utilities for block device emulation.
-- `virtio-blk`: Virtio block device implementation.
-
-## Image Formats (Virtual Disks)
-
-Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using existing image processing libraries or creating custom parsers.
-
-## Security
-
-- `seccomp`: A library for managing seccomp filters in VMMs.
-- `sandbox`: Tools for sandboxing virtualized environments.
+[`QEMU`][wikipedia~QEMU]↗{{hi:QEMU}} and [`KVM`][c~kvm~docs]↗{{hi:KVM}} remain the usual integration points. Rust's memory safety is a strong advantage for security-sensitive virtualization code.
 
 ## Code Examples
 
 {{#include virtualization.incl.md}}
-
-## Key Considerations
-
-- The Rust virtualization ecosystem is under active development. Some areas are more mature than others. Low-level VMM interaction is relatively well-supported, but higher-level frameworks are still emerging.
-- Rust's performance, safety, and concurrency features make it well-suited for virtualization.
-- Virtualization requires in-depth security and Rust's memory safety is a significant advantage.
-- Rust is also relevant for virtualization on embedded systems.
-- Integrating with existing virtualization technologies (e.g., [`KVM`][c~kvm~docs]↗{{hi:KVM}}, [`QEMU`][c~qemu~docs]↗{{hi:QEMU}}) is a common approach.
 
 ## Related Topics
 
@@ -87,35 +45,3 @@ Working with virtual disk image formats (e.g., qcow2, vmdk) often involves using
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write; need in-depth review](https://github.com/john-cd/rust_howto/issues/968)
-
-cover:
-
-- [rust-vmm community content][rust-vmm~community~repo].
-
-- [vmm-sys-util][rust-vmm~vmm-sys-util~repo]: Helpers and utilities used by multiple rust-vmm components and VMMs.
-
-- [rust-vmm~kvm~repo][rust-vmm~kvm~repo]: The kvm workspace hosts libraries related to Rust bindings to the Kernel Virtual Machine (KVM). It currently consists of the following crates:
-
-kvm-bindings -> Rust FFI bindings to KVM
-kvm-ioctls -> Safe wrappers over the KVM API
-
-- [`kvm-bindings`][kvm-bindings~crates.io]: Rust FFI bindings to KVM generated using bindgen.
-
-- [`firecracker`][firecracker~repo].
-- [`firecracker-microvm`][firecracker-microvm~website].
-- [`jailer`][jailer~lib.rs].
-
-- [Google `crosvm`][crosvm~repo].
-
-- [`hyperlight` (GitHub)][hyperlight~repo].
-
-- [QEMU][wikipedia~QEMU].
-
-Mention [`polkavm`][c~polkavm~crates.io]{{hi:polkavm}} (in Emulators) (smart contracts)
-
-Mention [`virt`][c~virt~docs]{{hi:virt}} / `libvirt` C lib?
-
-</div>

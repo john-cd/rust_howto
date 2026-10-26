@@ -340,6 +340,12 @@ Ten issues from the [#1955 comment](https://github.com/john-cd/rust_howto/issues
 - [#1205](https://github.com/john-cd/rust_howto/issues/1205) — Deep learning: comparison table and a `candle` CPU example; page added to `SUMMARY.md`.
 - [#942](https://github.com/john-cd/rust_howto/issues/942), [#943](https://github.com/john-cd/rust_howto/issues/943), [#953](https://github.com/john-cd/rust_howto/issues/953) — Images, video and rendering indexes.
 
+### List AF — Claude later/ indexes (2026-10-25)
+
+Nine category indexes under `later/src/categories/` rewritten as landing pages on branch `claude/list-af-docs` (worktree `.worktrees/f/checkout`); [#327](https://github.com/john-cd/rust_howto/issues/327) was already closed (List C) and skipped. Issues stay open until `just bb`, `just refdefs check` and `just spell` run (Windows `bk` build and Aspell unavailable); a script check found no undefined reference definitions or missing includes in the changed indexes. Streaming media follow-up: [#1999](https://github.com/john-cd/rust_howto/issues/1999).
+
+- [#427](https://github.com/john-cd/rust_howto/issues/427) no-std, [#969](https://github.com/john-cd/rust_howto/issues/969) visualization, [#968](https://github.com/john-cd/rust_howto/issues/968) virtualization, [#970](https://github.com/john-cd/rust_howto/issues/970) wasm, [#961](https://github.com/john-cd/rust_howto/issues/961) simulation, [#979](https://github.com/john-cd/rust_howto/issues/979) websocket, [#955](https://github.com/john-cd/rust_howto/issues/955) rendering engine, [#940](https://github.com/john-cd/rust_howto/issues/940) multimedia, [#956](https://github.com/john-cd/rust_howto/issues/956) graphics API (subpages nested in `SUMMARY.md`).
+
 ### Epic #1955 — New recipes from the local-projects review
 
 [#1955](https://github.com/john-cd/rust_howto/issues/1955) tracks the recipes from the local-projects review (#1906–#1952). The examples and book pages were merged via PRs #1958, #1962–#1966, #1968, #1969, #1971 and #1973, but the recipe issues (#1906–#1952) are **still open on GitHub**: they close only after the verification passes below build the book pages and run the local gates. Cloud batch PR [#1980](https://github.com/john-cd/rust_howto/pull/1980) (proptest strategy, wasm round trip, Tree-sitter spans, decision-table case) is open.

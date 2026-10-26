@@ -6,32 +6,31 @@
 
 Tooling targeting WebAssembly or manipulating WebAssembly.
 
-## WASM Basics and Use Cases
+WebAssembly (Wasm) is a portable binary instruction format. Rust compiles to it for the browser (with JavaScript glue) and for server-side runtimes that use the WebAssembly System Interface (WASI).
 
-See [[wasm_basics | WASM Basics]].
+## Pages
 
-## WASM Development Process
+- [[wasm_basics | WASM Basics]]: concepts and use cases.
+- [[wasm_development | WASM Development]]: toolchain, `wasm-bindgen`, `wasm-pack`, and running Wasm in the browser or with Node.js.
+- [[interfacing_with_javascript | Interfacing with JavaScript]]: calling between Rust and JavaScript.
+- [[leptos | Leptos]] and [[yew | Yew]]: front-end frameworks.
+- [[wasm_standalone_runtimes | WASM Standalone Runtimes]]: running Wasm outside the browser.
 
-See [[wasm_development | WASM Development]].
+## Run Wasm Outside the Browser
 
-## WASM Runtime Environments
-
-- Browser-based Execution.
-- Node.js with WASM.
-- [[wasm_standalone_runtimes | WASM Standalone Runtimes]].
-- Embedded Systems with WASM in Rust.
+[`wasmtime`][c~wasmtime~repo]↗{{hi:wasmtime}} and [`wasmer`][c~wasmer~repo]↗{{hi:wasmer}} embed Wasm in a Rust program or run it as a standalone runtime. [WASI][wasi~website]↗{{hi:WASI}} gives modules a portable system interface; [WASIX][wasix~website]↗{{hi:WASIX}} is Wasmer's extension adding threads and sockets.
 
 {{#include wasm_runtimes.incl.md}}
 
-## Interfacing Rust WASM and JavaScript
+## Reading and Writing Wasm
 
-See [[interfacing_with_javascript | Interfacing with Javascript]].
+Use [`wat`][c~wat~docs]↗{{hi:wat}} to convert text format to binary, and [`wasm-encoder`][c~wasm-encoder~docs]↗{{hi:wasm-encoder}} and [`wasmparser`][c~wasmparser~docs]↗{{hi:wasmparser}} (part of `wasm-tools`) to build and parse modules. [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}} is deprecated.
+
+## Rust Front-End Frameworks
+
+[`yew`][c~yew~docs]↗{{hi:yew}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}, [`dioxus`][c~dioxus~docs]↗{{hi:dioxus}}, [`sycamore`][c~sycamore~repo]↗{{hi:sycamore}} and [`seed`][c~seed~docs]↗{{hi:seed}} build entire web applications in Rust. See also [[web-programming | Web Programming]].
 
 {{#include interfacing_with_javascript.incl.md}}
-
-## Build an Entire Web Application in Rust Using WASM-based Web Frameworks
-
-The [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}} frameworks enable building complex web applications with Rust/WASM.
 
 {{#include yew.incl.md}}
 
@@ -51,25 +50,3 @@ The [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`lep
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/970)
-Browser-based Execution.
-Node.js with WASM.
-Cover [`wat`][c~wat~docs]↗{{hi:wat}}, [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}}
-
-- [WASIX][wasix~website]↗ - The Superset of WASI.
-- [wasmtime][c~wasmtime~repo]↗: A fast and secure runtime for WebAssembly.
-- [WASI.dev][wasi~website]↗.
-
-- [Sycamore][sycamore~website]↗.
-- [`sycamore`][c~sycamore~repo]↗: A library for creating reactive web apps in Rust and WebAssembly.
-
-- [Rust and WebAssembly][book~rustwasm]↗.
-
-- [wasmtime][c~wasmtime~website]↗.
-
-- [rust-yew-realworld-example-app~repo][rust-yew-realworld-example-app~repo]↗.
-- [rust-web-framework-comparison][rust-web-framework-comparison~frontend-frameworks-wasm~repo]↗.
-
-</div>

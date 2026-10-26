@@ -6,42 +6,31 @@
 
 Provide direct access to the hardware's or the operating system's rendering capabilities.
 
-## GPU Abstraction Layers
+Portable APIs (WebGPU through [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}) run on every major platform and the web. Native APIs (Vulkan, OpenGL, Metal, DirectX 12) give finer control or access to platform-only features, at the cost of more code per platform. Start with `wgpu` unless you need something it does not expose.
 
-Libraries that provide a cross-platform abstraction over native graphics APIs.
+## Choosing a Graphics API
 
-| Topic/Area | Rust Crates (Examples) | Notes |
-|---|---|---|
-| Abstracted [[graphics | Graphics]] (Cross-Platform) | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} | These provide a common API that can target multiple backends (Vulkan, D3D12, Metal, etc.). They provide a lower level than game engines or higher-level frameworks. [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is focused on WebGPU compatibility. |
+| API | Crate(s) | Platforms | When to use |
+|---|---|---|---|
+| WebGPU | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} | Windows, macOS, Linux, iOS, Android, web | The default choice. One code base, backends for Vulkan, Metal, DX12, OpenGL and WebGPU. |
+| Vulkan | [`ash`][c~ash~docs]↗{{hi:ash}} (raw bindings), [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}} (safe wrapper) | Windows, Linux, Android | Maximum control on Vulkan-capable platforms. |
+| OpenGL | [`glow`][c~glow~docs]↗{{hi:glow}}, [`glium`][c~glium~docs]↗{{hi:glium}} | Desktop, web (WebGL) | Legacy hardware and existing OpenGL code. |
+| Metal | [`objc2-metal`][c~objc2-metal~docs]↗{{hi:objc2-metal}} | macOS, iOS | Apple-only features. The `metal` crate is deprecated. |
+| DirectX 12 | [`windows`][c~windows~docs]↗{{hi:windows}} | Windows | Windows-only features. |
+
+[`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} is no longer maintained; use `wgpu` instead.
+
+## Pages
+
+- [[native_graphics_apis | Native Graphics APIs]], [[vulkan | Vulkan]], [[opengl | OpenGL]], [[shaders | Shaders]], and [[gpu_abstraction_layers | GPU Abstraction Layers]].
 
 {{#include gpu_abstraction_layers.incl.md}}
-
-## Low-level Native Graphics APIs
-
-| Topic/Area | Rust Crates (Examples) | Notes |
-|---|---|---|
-| Low-Level Graphics (Vulkan) | | |
-| Low-Level Graphics (Direct3D 12 - Windows) | [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} (with a D3D12 backend), [`d3d12`][c~d3d12~crates.io]↗{{hi:d3d12}} (more raw bindings) | Direct3D 12 access is usually through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}'s backend or lower level bindings like [`d3d12`][c~d3d12~crates.io]↗{{hi:d3d12}}. Windows-specific. |
-| Low-Level Graphics (Metal - macOS/iOS) | [`metal`][c~metal~docs]↗{{hi:metal}}, [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} (with a Metal backend) | Metal access is provided by the [`metal`][c~metal~docs]↗{{hi:metal}} crate or through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}. macOS/iOS specific. |
-
-Note the following:
-
-- Direct hardware access is often platform-specific. Crates like [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} and [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} provide cross-platform abstractions, but they still rely on platform-specific backends.
-- Working directly with low-level graphics APIs is complex. Consider using a higher-level [[gui | GUI]] framework or game engine (e.g., [`Bevy`][c~bevy~docs]↗{{hi:Bevy}}, [`Amethyst`][c~amethyst~docs]↗{{hi:Amethyst}}, or even [`Unreal Engine`][unrealengine~website]↗{{hi:Unreal Engine}} or [`Unity`][unity~website]↗{{hi:Unity}} via Rust bindings) if your needs allow.
 
 {{#include native_graphics_apis.incl.md}}
 
 {{#include vulkan.incl.md}}
 
-## OpenGL
-
 {{#include opengl.incl.md}}
-
-## Shaders and GPU Compute
-
-| Topic/Area | Rust Crates (Examples) | Notes |
-|---|---|---|
-| Shader Compilation | [`shaderc`][c~shaderc~docs]↗{{hi:shaderc}}, [`glsl-to-spirv`][c~glsl-to-spirv~docs]↗{{hi:glsl-to-spirv}} | Needed for compiling shaders (GLSL, HLSL, etc.) into formats like SPIR-V, which is used by Vulkan and other APIs. |
 
 {{#include shaders.incl.md}}
 
@@ -59,7 +48,3 @@ Note the following:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/956)
-</div>

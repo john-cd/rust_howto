@@ -11,24 +11,30 @@ The term "no_std" refers to environments where you don't have access to the stan
 - You may need to manage memory manually, especially if you need dynamic allocation.
 - If you're working with multiple tasks or interrupts, you'll need to consider [[concurrency | Concurrency]] carefully.
 
-When working in [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}}, you'll almost always use the [`core`][c~core~docs]↗{{hi:core}} crate. If you need dynamic allocation, you'll also use the [`alloc`][c~alloc~docs]↗{{hi:alloc}} crate and provide an allocator. For [[embedded | Embedded]] Systems, you'll need to choose the appropriate HAL and PAC crates for your target microcontroller.
+Under [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}}, you use [`core`][c~core~docs]↗{{hi:core}}, and optionally [`alloc`][c~alloc~docs]↗{{hi:alloc}} with an allocator you provide. For [[embedded | Embedded]] systems, also choose the HAL and PAC crates for your microcontroller.
 
-Remember to handle panics appropriately. Consider other useful crates like [`nb`][c~nb~docs]↗{{hi:nb}}, [`defmt`][c~defmt~docs]↗{{hi:defmt}}, and [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} as needed.
+## The Three Layers
 
-## Key Crates
+| Layer | Crate | Needs | Provides |
+|---|---|---|---|
+| `core` | [`core`][c~core~docs]↗{{hi:core}} | Nothing | Primitive types, `Option`, `Result`, iterators, atomics, formatting. Always available. |
+| `alloc` | [`alloc`][c~alloc~docs]↗{{hi:alloc}} | A global allocator | `Box`, `Vec`, `String`, `Rc`, `Arc`, `BTreeMap`. See [[no-std_no-alloc | No Alloc]] for working without it. |
+| `std` | [`std`][c~std~docs]↗{{hi:std}} | An operating system | Files, networking, threads, `HashMap`, and everything above. |
 
-- The Core library ([`core`][c~core~docs]↗{{hi:core}}) is the foundation of [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}} programming. It provides the bare minimum functionality required for Rust code, including basic types, traits, and memory management primitives. It's always used in `#![no_std]` environments.
+A `#![no_std]` binary must also provide a panic handler. Crates such as [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} and [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} supply one.
 
-- Allocation ([`alloc`][c~alloc~docs]↗{{hi:alloc}}) library: If you need dynamic memory allocation in [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}}, the `alloc` crate provides the necessary APIs. It's important to note that you'll need to provide your own allocator implementation. See also the [[no-std_no-alloc | No Alloc]] chapter.
+## Useful `no_std` Crates
 
-- In [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}} environments, you can't rely on the standard library's `panic` handling mechanisms. You'll need to define your own `panic` handler. Crates like [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} (halts execution) or [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} (aborts execution) can be helpful. You might also implement custom `panic` behavior.
-
-## Other Useful Crates for `#![no_std]`
-
-- [`nb`][c~nb~docs]↗{{hi:nb}}: Non-blocking I/O helpers.
-- [`defmt`][c~defmt~docs]↗{{hi:defmt}}: A logging framework designed for embedded systems.
-- [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}: A small and efficient allocator for embedded systems or WebAssembly.
-- [`atomic`][c~atomic~docs]↗{{hi:atomic}}: Provides atomic types for safe concurrency in embedded systems.
+| Need | Crate | Notes |
+|---|---|---|
+| Fixed-capacity collections without `alloc` | [`heapless`][c~heapless~docs]↗{{hi:heapless}} | `Vec`, `String`, queues and maps with a compile-time capacity. |
+| Hardware abstraction traits | [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} | Portable traits for GPIO, SPI, I2C and timers. See [[embedded | Embedded]]. |
+| Logging | [`defmt`][c~defmt~docs]↗{{hi:defmt}} | Compact, deferred-formatting logger for microcontrollers. |
+| Serialization | [`postcard`][c~postcard~docs]↗{{hi:postcard}} | Compact `serde` format that works without `std` or `alloc`. |
+| Floating-point math | [`libm`][c~libm~docs]↗{{hi:libm}}, [`micromath`][c~micromath~repo]↗{{hi:micromath}} | `core` lacks `sin`, `sqrt` and similar; `libm` is accurate, `micromath` is faster and approximate, and adds 2D/3D vectors and statistics. |
+| Non-blocking I/O | [`nb`][c~nb~docs]↗{{hi:nb}} | Helpers for polling-style peripherals. |
+| Atomics on any target | [`atomic`][c~atomic~docs]↗{{hi:atomic}} | Generic `Atomic<T>` wrapper. |
+| Global allocator | [`embedded-alloc`][c~embedded-alloc~docs]↗{{hi:embedded-alloc}} | Heap allocator for use with `alloc`. Prefer it over the unmaintained [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}. |
 
 ## Code Examples
 
@@ -47,11 +53,3 @@ Consult the [`no-std`][cat~no-std]↗ category on [`crates.io`][crates.io~websit
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/427)
-review in depth.
-
-- [micromath][c~micromath~repo]↗: Embedded Rust arithmetic, 2D/3D vector, and statistics library.
-
-</div>

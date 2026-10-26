@@ -168,6 +168,10 @@
 
 - [Rendering - graphics APIs](categories/rendering_graphics-api/index.md)
   - [Native Graphics APIs](categories/rendering_graphics-api/native_graphics_apis.md)
+  - [GPU Abstraction Layers](categories/rendering_graphics-api/gpu_abstraction_layers.md)
+  - [Vulkan](categories/rendering_graphics-api/vulkan.md)
+  - [OpenGL](categories/rendering_graphics-api/opengl.md)
+  - [Shaders](categories/rendering_graphics-api/shaders.md)
 
 - [Robotics](categories/science_robotics/index.md)
   - [Robotics](categories/science_robotics/robot_operating_systems.md)
