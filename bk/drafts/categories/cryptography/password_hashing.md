@@ -82,8 +82,10 @@ For more [algorithms][p~algorithms], see [Rust Crypto Password Hashes][rustcrypt
 ## Related Topics {#related-topics .skip}
 
 - [[hashing | Cryptographic hashing]].
+- [Authentication](../authentication/index.md).
 - [[encryption | Encryption]].
 - [[aead | Authenticated encryption]].
+- [[secrets | Secret handling]].
 - [Cryptography category](index.md).
 
 {{#include refs.incl.md}}

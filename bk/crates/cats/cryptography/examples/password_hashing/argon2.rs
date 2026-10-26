@@ -61,11 +61,24 @@ fn password_verification(
     password_to_check: &[u8],
     phc_string: &str,
 ) -> Result<bool, Error> {
+    password_verification_with(
+        &Argon2::default(),
+        password_to_check,
+        phc_string,
+    )
+}
+
+/// Verifies a password using the provided Argon2 configuration.
+fn password_verification_with(
+    argon2: &Argon2<'_>,
+    password_to_check: &[u8],
+    phc_string: &str,
+) -> Result<bool, Error> {
     // Parsed representation of a PHC string:
     let parsed_hash = PasswordHash::new(phc_string)?;
 
     // Verify the password:
-    Ok(Argon2::default()
+    Ok(argon2
         .verify_password(password_to_check, &parsed_hash)
         .is_ok())
 }
@@ -99,19 +112,33 @@ pub fn run() -> Result<(), Error> {
 
 #[cfg(test)]
 mod tests {
+    use argon2::Algorithm;
+    use argon2::Params;
+    use argon2::Version;
+
     use super::*;
 
     /// Verifies a password hash accepts the original password and rejects a
     /// guess.
     #[test]
     fn argon2_verification_rejects_wrong_password() -> Result<(), Error> {
-        let phc_string = password_hashing(b"correct horse battery staple")?;
+        let params = Params::new(32, 1, 1, None)?;
+        let argon2 = Argon2::new(Algorithm::Argon2id, Version::V0x13, params);
+        let salt = SaltString::generate(&mut OsRng);
+        let phc_string = argon2
+            .hash_password(b"correct horse battery staple", &salt)?
+            .to_string();
 
-        assert!(password_verification(
+        assert!(password_verification_with(
+            &argon2,
             b"correct horse battery staple",
             &phc_string
         )?);
-        assert!(!password_verification(b"incorrect", &phc_string)?);
+        assert!(!password_verification_with(
+            &argon2,
+            b"incorrect",
+            &phc_string
+        )?);
         Ok(())
     }
 
