@@ -10,8 +10,8 @@ build_inherited_target := env("CARGO_TARGET_DIR", "")
 build_inherited_intermediate := env("CARGO_BUILD_BUILD_DIR", "")
 export CARGO_TARGET_DIR := env("CARGO_TARGET_DIR", join(build_target_base, build_slot))
 export CARGO_BUILD_BUILD_DIR := env("CARGO_BUILD_BUILD_DIR", join(build_intermediate_base, build_slot))
-export RUSTC_WRAPPER := "sccache"
-export CARGO_INCREMENTAL := "0"
+export RUSTC_WRAPPER := env("RUSTC_WRAPPER", "sccache")
+export CARGO_INCREMENTAL := env("CARGO_INCREMENTAL", "0")
 export SCCACHE_DIR := env("SCCACHE_DIR", if os_family() == "windows" { "D:/sccache" } else { join(build_cache_home, "sccache") })
 build_inherited_cache_bases := env("SCCACHE_BASEDIRS", "")
 build_cache_separator := if os_family() == "windows" { ";" } else { ":" }
