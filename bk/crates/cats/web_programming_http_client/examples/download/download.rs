@@ -64,11 +64,8 @@ pub fn run() -> Result<()> {
 
 #[cfg(test)]
 mod tests {
-    use std::io::Write as _;
-    use std::net::TcpListener;
-    use std::thread;
-
     use anyhow::Result;
+    use mockito::Server;
 
     use super::download_to;
     use super::main;
@@ -84,28 +81,22 @@ mod tests {
     /// Verifies streaming preserves arbitrary binary bytes from a local server.
     #[tokio::test]
     async fn downloads_binary_response_bytes() -> Result<()> {
-        let listener = TcpListener::bind("127.0.0.1:0")?;
-        let address = listener.local_addr()?;
         let body = b"\0\x01\x02\xffPNG";
-        let server = thread::spawn(move || -> std::io::Result<()> {
-            let (mut stream, _) = listener.accept()?;
-            write!(
-                stream,
-                "HTTP/1.1 200 OK\r\nContent-Length: {}\r\nConnection: close\r\n\r\n",
-                body.len()
-            )?;
-            stream.write_all(body)
-        });
+        let mut server = Server::new_async().await;
+        let mock = server
+            .mock("GET", "/file")
+            .with_status(200)
+            .with_body(body)
+            .create_async()
+            .await;
         let directory = tempfile::tempdir()?;
         let destination = directory.path().join("download.bin");
 
         let downloaded =
-            download_to(&format!("http://{address}/file"), &destination)
+            download_to(&format!("{}/file", server.url()), &destination)
                 .await?;
-        server
-            .join()
-            .map_err(|_| anyhow::anyhow!("local download server panicked"))??;
 
+        mock.assert_async().await;
         assert_eq!(downloaded, 7);
         assert_eq!(tokio::fs::read(destination).await?, b"\0\x01\x02\xffPNG");
         Ok(())
