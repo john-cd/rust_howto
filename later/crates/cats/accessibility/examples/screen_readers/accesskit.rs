@@ -7,8 +7,8 @@
 use accesskit::Node;
 use accesskit::NodeId;
 use accesskit::Role;
-use accesskit::TreeInfo;
 use accesskit::TreeId;
+use accesskit::TreeInfo;
 use accesskit::TreeUpdate;
 
 // AccessKit makes it easier to implement accessibility, for screen readers
