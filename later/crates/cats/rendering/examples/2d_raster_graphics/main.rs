@@ -1,10 +1,10 @@
-//! Runs the 2d raster graphics example.
+//! Runs the headless 2D raster graphics example.
 //!
 //! TODO Reviewed ??-??-2026.
 
-mod render;
+mod tiny_skia;
 
-/// Runs the 2d raster graphics example.
-fn main() {
-    render::run();
+/// Runs the 2D raster graphics example.
+fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    tiny_skia::run()
 }

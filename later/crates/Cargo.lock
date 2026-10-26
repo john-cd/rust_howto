@@ -22493,6 +22493,7 @@ dependencies = [
  "anyhow",
  "lyon",
  "resvg 0.49.0",
+ "tiny-skia 0.12.0",
  "usvg 0.49.0",
 ]
 

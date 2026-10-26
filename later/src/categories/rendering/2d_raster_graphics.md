@@ -6,19 +6,19 @@
 
 ## `pixels` {#pixels}
 
-[`pixels`][c~pixels~docs]↗{{hi:pixels}} is a crate for working with pixel buffers directly. Provides low-level access to pixel data, allowing you to draw primitives by manipulating the buffer. Good for simple 2D [graphics][p~graphics] or when you need fine-grained control.
+[`pixels`][c~pixels~docs]↗{{hi:pixels}} exposes a pixel buffer for direct manipulation when an application needs low-level control.
+
+## `tiny-skia` {#tiny-skia}
+
+[`tiny-skia`][c~tiny-skia~docs]↗ renders vector paths into an in-memory pixmap on the CPU. This example fills a circle, draws a diagonal stroke, and reads pixel colors without opening a window or using a GPU.
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering/examples/2d_raster_graphics/render.rs:example}}
+{{#include ../../../crates/cats/rendering/examples/2d_raster_graphics/tiny_skia.rs:example}}
 ```
 
 ## `raqote` {#raqote}
 
 [`raqote`][c~raqote~docs]↗{{hi:raqote}} is a fast 2D [graphics][p~graphics] library focused on rasterization. Provides a canvas-like API for drawing shapes, text, and images. A good choice for general-purpose 2D rendering.
-
-## `tiny-skia` {#tiny-skia}
-
-[`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} is a small, fast, and portable 2D [graphics][p~graphics] library that can render to bitmaps. Supports paths, gradients, and text. Excellent for when you need something lightweight and performant.
 
 ## See Also {#see-also .skip}
 
@@ -34,5 +34,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write. decide what to cover.](https://github.com/john-cd/rust_howto/issues/1215)
+  [write. decide what to cover.](https://github.com/john-cd/rust_howto/issues/1215)
 </div>
