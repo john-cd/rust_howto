@@ -1,63 +1,39 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! # Polars Data Processing Example
+//! Example: filter and aggregate inline data with a lazy Polars query.
 //!
-//! This example demonstrates basic data processing operations using the Polars
-//! library.
-//!
-//! In `Cargo.toml`, add:
-//!
-//! ```toml
-//! [dependencies]
-//! polars = "0.49.1" # or latest
-//! ```
-//!
-//! `polars` has a large list of default features, therefore we may want to
-//! cherry-pick required features:
-//!
-//! ```toml
-//! polars = { version = "0.49.1", default-features = false, features = ["lazy", "csv"] }
-//! ```
+//! The input is built in memory with `df!`. The lazy query filters rows,
+//! groups by region, sums revenue, sorts the result, and collects it.
 
-use polars::prelude::*;
+use polars::df;
+use polars::prelude::DataFrame;
+use polars::prelude::IntoLazy;
+use polars::prelude::col;
+use polars::prelude::lit;
 
-/// Reads a CSV file into a data frame, then filters it and selects columns.
+/// Filters sales and returns sorted revenue totals by region.
+fn summarize_sales() -> anyhow::Result<DataFrame> {
+    let sales = df![
+        "region" => ["north", "north", "south", "south", "north", "west"],
+        "amount" => [120_i64, 80, 200, 50, 130, 10],
+    ]?;
+
+    let summary = sales
+        .lazy()
+        .filter(col("amount").gt_eq(lit(50)))
+        .group_by([col("region")])
+        .agg([col("amount").sum().alias("revenue")])
+        .sort(["region"], Default::default())
+        .collect()?;
+
+    Ok(summary)
+}
+
+/// Runs the example and prints the grouped revenue totals.
 fn main() -> anyhow::Result<()> {
-    // Read a CSV file into a DataFrame.
-    let df = CsvReadOptions::default()
-        .with_has_header(true)
-        .try_into_reader_with_file_path(Some("temp/data.csv".into()))?
-        .finish()?;
-
-    // Display the first few rows of the DataFrame.
-    println!("DataFrame:\n{}", df.head(Some(5)));
-
-    // Perform some data manipulation.
-    let df_filtered = df
-        .lazy()
-        .filter(col("some_column").gt_eq(lit(100)))
-        .collect()?;
-    println!("Filtered DataFrame:\n{df_filtered}");
-
-    let df_selected = df_filtered
-        .lazy()
-        .select([col("some_column"), col("another_column")])
-        .collect()?;
-    println!("Selected Columns:\n{df_selected}");
-
-    // Group by a column and aggregate.
-    let df_grouped = df_selected
-        .lazy()
-        .group_by([col("some_column")])
-        .agg([
-            col("another_column").sum().alias("sum"),
-            col("another_column").mean().alias("mean"),
-        ])
-        .collect()?;
-    println!("Grouped DataFrame:\n{df_grouped}");
-
+    let summary = summarize_sales()?;
+    println!("Revenue by region:\n{summary}");
     Ok(())
 }
 // ANCHOR_END: example
@@ -68,24 +44,16 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::summarize_sales;
 
-    /// Verifies that the polars example's main path succeeds.
+    /// Verifies the lazy query filters, groups, and sorts its inline data.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
-        use std::fs;
-        use std::io::Write as _;
-        if !fs::exists("temp")? {
-            fs::create_dir("temp")?;
-        }
-        let mut file = fs::File::create("temp/data.csv")?;
-        writeln!(file, "some_column,another_column")?;
-        writeln!(file, "150,10.5")?;
-        writeln!(file, "50,5.0")?;
-        writeln!(file, "120,20.0")?;
-        writeln!(file, "150,15.5")?;
+    fn lazy_query_has_expected_shape_and_revenue() -> anyhow::Result<()> {
+        let summary = summarize_sales()?;
 
-        main()?;
+        assert_eq!(summary.shape(), (2, 2));
+        assert_eq!(summary.column("region")?.str()?.get(0), Some("north"));
+        assert_eq!(summary.column("revenue")?.i64()?.get(0), Some(330));
         Ok(())
     }
 }

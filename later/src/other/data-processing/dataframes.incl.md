@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe | Crates |
-|--------|--------|
-| [Manipulate Data in a Tabular Format][ex~data-processing~dataframes] | [![polars][c~polars~docs~badge]][c~polars~docs] |
+| Recipe                                                                       | Crates                                          |
+| ---------------------------------------------------------------------------- | ----------------------------------------------- |
+| [Filter and aggregate DataFrames with Polars][ex~data-processing~dataframes] | [![polars][c~polars~docs~badge]][c~polars~docs] |
