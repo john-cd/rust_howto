@@ -4,37 +4,31 @@
 
 [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
 
-The term 'macro' [(book)][book~rust~macros]↗ refers to a family of features in Rust: declarative macros (also known as "macros by example") and three kinds of _procedural macros_, the focus of this section:
-
-- Custom #[derive] macros, used on structs and enums, which specify code to be added.
-- Attribute-like macros that define custom attributes usable on any item.
-- Function-like macros that look like function calls but operate on the tokens specified as their argument.
+Procedural macros run at compile time and transform token streams into generated code. A [`TokenStream`][ex~development-tools_procedural-macro-helpers~proc-macro2] is their input and output format; `proc-macro2` also makes token handling testable outside the compiler's macro interface.
 
 ## Write Procedural Macros
+
+[Write Procedural Macros guide][p~write-proc-macros]
 
 {{#include write_proc_macros.incl.md}}
 
 ## Tools for Macro Development
 
+[Macro Tools guide][p~macro-tools]
+
 {{#include macro_tools.incl.md}}
 
 ## Compile Procedural Macros Ahead of Time
+
+[Compile Macros guide][p~compile-macros]
 
 {{#include compile_macros.incl.md}}
 
 ## Related Topics
 
-- Procedural macro authoring.
-- Rust compiler tooling.
-- Compile-time code generation.
-- Development productivity and debugging.
+- [Declarative macros][p~macros].
+- [Procedural macro authoring][p~write-proc-macros].
+- [Compile-time code generation][p~compile-macros].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[fix](https://github.com/john-cd/rust_howto/issues/332)
-explain:
-- token streams.
-- ASTs.
-</div>

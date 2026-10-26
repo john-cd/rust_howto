@@ -14,7 +14,9 @@
 [ex~development-tools_procedural-macro-helpers~report-errors-from-within-a-procedural-macro]: write_proc_macros.md#report-errors-from-within-a-procedural-macro
 [ex~development-tools_procedural-macro-helpers~syn]: write_proc_macros.md#syn
 [ex~development-tools_procedural-macro-helpers~testing-and-debugging]: write_proc_macros.md#testing-and-debugging
+[p~compile-macros]: compile_macros.md
 [p~macro-tools]: macro_tools.md
+[p~write-proc-macros]: write_proc_macros.md
 [ex~development-tools_procedural-macro-helpers~watt]: compile_macros.md#watt
 [p~attributes]: ../../../src/language/attributes.md
 [p~building]: ../development-tools_cargo-plugins/building.md
