@@ -700,9 +700,9 @@ All ten issues are implemented and integrated into local `develop`: #905, #645, 
 
 ## Status snapshot (2026-10-26)
 
-`develop` is pushed to `origin/develop` (linear, fast-forward). Codex branches List AB, AC (incl. #1885 lint baseline minus two develop-newer files), AD and issue-921 are cherry-picked in; their TODO-only commits were dropped in favour of the newer develop text. Clippy (`-D warnings`, all features, locked) is clean for tools, xmpl, playground, bk and later, except `later` crates `wasm` (wasmer-cranelift does not build on Windows) and `gui` (naga 27 vs termcolor, external). rustfmt (nightly) is clean.
+Local `develop` is eleven commits ahead of `origin/develop` and has not been pushed. Codex branches List AB, AC (incl. #1885 lint baseline minus two develop-newer files), AD and issue-921 are cherry-picked in; their TODO-only commits were dropped in favour of the newer develop text. Clippy (`-D warnings`, all features, locked) is clean for tools, xmpl, playground, bk and later, except `later` crates `wasm` (wasmer-cranelift does not build on Windows) and `gui` (naga 27 vs termcolor, external). rustfmt (nightly) is clean.
 
 - List A: #1868, #1874 closed. #1859 bk and later Clippy now pass (wasm and gui excluded, Oracle `sibyl` not linted). #1867 done. Still open: #1876, #1877, #1900 (need Unix/Linux gates), #1885 (baseline cleared, re-run `rumdl` after the two virtualization/wasm index edits), #1957 (verify refs), #1929 (ort/ONNX check on PR #1964).
 - List AD: #905, #645, #264, #263, #258, #1178, #275, #274, #272, and #352 closed; all List AD commits integrated on local `develop`.
 - `claude/examples-concurrency`, `-devtools`, `-web` still conflict with develop (#1992).
-- Dirty Codex worktrees: `ca` (refdefs / crate-refs consolidation, 12 files), `h` (Cargo.lock, rest_get.rs, dependency-refs.md), `c` (wgpu.rs). Preserve.
+- Current worktree snapshot: primary `develop` has a modified `later/crates/Cargo.lock`; preserve it. Registered reusable slots `a`, `b`, and `c` are clean; see `WORKTREES.md` for branch and HEAD details.
