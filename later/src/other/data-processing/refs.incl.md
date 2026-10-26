@@ -19,3 +19,6 @@
 [p~csv]: # "../../categories/encoding/csv.md"
 [p~data-processing]: index.md
 [p~python]: ../../categories/development-tools_ffi/python.md
+
+[c~polars~lazy~guide]: https://docs.pola.rs/api/rust/dev/polars/docs/lazy/index.html
+[c~polars~sources~guide]: https://docs.pola.rs/user-guide/lazy/sources_sinks/
