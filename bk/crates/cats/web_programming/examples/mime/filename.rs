@@ -16,6 +16,11 @@ fn find_mimetype(filename: &str) -> Mime {
 }
 
 /// Inserts a guessed MIME type into an HTTP `Content-Type` header.
+///
+/// # Errors
+///
+/// Returns an error if the guessed MIME type cannot be represented as a header
+/// value.
 fn set_content_type(
     filename: &str,
     headers: &mut HeaderMap,
@@ -26,12 +31,20 @@ fn set_content_type(
 }
 
 /// Prints the MIME type of several file names.
-fn main() -> Result<(), InvalidHeaderValue> {
+///
+/// # Errors
+///
+/// Returns an error if a MIME type cannot be inserted into the header map or
+/// read as text.
+fn main() -> anyhow::Result<()> {
     let filenames = ["foobar.jpg", "foo.bar", "foobar.png"];
     for file in filenames {
         let mut headers = HeaderMap::new();
         set_content_type(file, &mut headers)?;
-        println!("Content-Type for {file}: {}", headers[CONTENT_TYPE]);
+        println!(
+            "Content-Type for {file}: {}",
+            headers[CONTENT_TYPE].to_str()?
+        );
     }
     Ok(())
 }
@@ -39,7 +52,12 @@ fn main() -> Result<(), InvalidHeaderValue> {
 // ANCHOR_END: example
 
 /// Runs the example.
-pub fn run() -> Result<(), InvalidHeaderValue> {
+///
+/// # Errors
+///
+/// Returns an error if the example cannot create or read a `Content-Type`
+/// header.
+pub fn run() -> anyhow::Result<()> {
     main()
 }
 

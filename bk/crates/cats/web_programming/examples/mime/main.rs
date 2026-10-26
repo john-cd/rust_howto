@@ -39,7 +39,7 @@ fn main() -> Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::Filename => {
-                filename::run();
+                filename::run()?;
             }
             Commands::Request => {
                 request::run()?;
