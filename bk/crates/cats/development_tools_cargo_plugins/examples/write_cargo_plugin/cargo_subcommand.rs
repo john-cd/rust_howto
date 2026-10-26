@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
@@ -31,6 +30,10 @@ struct HelloArgs {
 }
 
 /// Returns the names of the packages selected by the command-line flags.
+///
+/// # Errors
+///
+/// Returns an error if Cargo metadata cannot be read.
 fn selected_packages(args: &HelloArgs) -> anyhow::Result<Vec<String>> {
     let mut command = cargo_metadata::MetadataCommand::new();
     if let Some(path) = &args.manifest_path {
@@ -44,7 +47,13 @@ fn selected_packages(args: &HelloArgs) -> anyhow::Result<Vec<String>> {
     Ok(selected.iter().map(|p| p.name.to_string()).collect())
 }
 
-/// Runs the subcommand with the given arguments.
+/// Selects packages from the supplied command-line arguments.
+///
+/// # Errors
+///
+/// Returns an error if the arguments are invalid or Cargo metadata cannot be
+/// read.
+#[cfg(test)]
 fn execute<I, T>(args: I) -> anyhow::Result<Vec<String>>
 where
     I: IntoIterator<Item = T>,
@@ -54,10 +63,33 @@ where
     selected_packages(&args)
 }
 
-/// Says hello to the packages of the current workspace.
+/// Runs the executable with the subcommand arguments supplied by Cargo.
+///
+/// # Errors
+///
+/// Returns an error if Cargo metadata cannot be read.
+pub fn run_from<I, T>(args: I) -> anyhow::Result<()>
+where
+    I: IntoIterator<Item = T>,
+    T: Into<std::ffi::OsString> + Clone,
+{
+    let packages = match CargoCli::try_parse_from(args) {
+        Ok(CargoCli::Hello(args)) => selected_packages(&args)?,
+        Err(error) => error.exit(),
+    };
+    for name in packages {
+        println!("Hello, {name}!");
+    }
+    Ok(())
+}
+
+/// Demonstrates the subcommand against a temporary Cargo package.
+///
+/// # Errors
+///
+/// Returns an error if the temporary project cannot be created or queried.
+#[cfg(test)]
 pub fn run() -> anyhow::Result<()> {
-    // In a real plugin, use `CargoCli::parse()` and print to `stdout`.
-    // Here, build a throwaway workspace so that the example is self-contained.
     let dir = tempfile::tempdir()?;
     let manifest = dir.path().join("Cargo.toml");
     std::fs::write(
@@ -68,10 +100,7 @@ pub fn run() -> anyhow::Result<()> {
     std::fs::write(dir.path().join("src/lib.rs"), "")?;
 
     let manifest = manifest.display().to_string();
-    for name in execute(["cargo", "hello", "--manifest-path", &manifest])? {
-        println!("Hello, {name}!");
-    }
-    Ok(())
+    run_from(["cargo", "hello", "--manifest-path", &manifest])
 }
 // ANCHOR_END: example
 
@@ -79,6 +108,11 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that Cargo's subcommand name is consumed by the parser.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the argument parser or metadata command fails.
     #[test]
     fn the_subcommand_name_is_skipped() -> anyhow::Result<()> {
         let CargoCli::Hello(args) = CargoCli::try_parse_from([
@@ -95,6 +129,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that unknown options are rejected.
     #[test]
     fn unknown_flags_are_rejected() {
         assert!(
@@ -102,6 +137,11 @@ mod tests {
         );
     }
 
+    /// Verifies that package selection honors the workspace and exclude flags.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the temporary package cannot be created or queried.
     #[test]
     fn selects_the_default_package() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
@@ -128,6 +168,11 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that the book example runs against a temporary package.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the example cannot create or query its package.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {
         run()

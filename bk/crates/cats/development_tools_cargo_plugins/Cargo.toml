@@ -16,6 +16,12 @@ repository.workspace = true
 keywords = ["cargo", "plugins", "xshell", "automation", "development-tools"]
 categories = ["development-tools::cargo-plugins"]
 publish.workspace = true
+autoexamples = false
+
+[[bin]]
+name = "cargo-hello"
+path = "examples/write_cargo_plugin/main.rs"
+test = true
 
 [dependencies]
 
@@ -32,11 +38,6 @@ xshell = "0.2.7"
 [[example]]
 name = "building"
 path = "examples/building/main.rs"
-test = true
-
-[[example]]
-name = "write_cargo_plugin"
-path = "examples/write_cargo_plugin/main.rs"
 test = true
 
 [lints]

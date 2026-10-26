@@ -8,6 +8,8 @@ Cargo runs any executable named `cargo-<name>` found in `PATH` (or in `~/.cargo/
 
 To publish it, name the package `cargo-<name>` so that `cargo install cargo-<name>` installs a `cargo-<name>` binary.
 
+This example is built as the `cargo-hello` executable. Its entry point forwards the arguments from `std::env::args_os()` to the parser, so Cargo's extra `hello` argument is handled by the same code shown below.
+
 ## Write a Cargo Subcommand {#write-cargo-subcommand}
 
 [![clap-cargo][c~clap-cargo~docs~badge]][c~clap-cargo~docs]{{hi:clap-cargo}} [![clap-cargo~crates.io][c~clap-cargo~crates.io~badge]][c~clap-cargo~crates.io] [![clap-cargo~repo][c~clap-cargo~repo~badge]][c~clap-cargo~repo] [![clap-cargo~lib.rs][c~clap-cargo~lib.rs~badge]][c~clap-cargo~lib.rs] [![cargo_metadata][c~cargo_metadata~docs~badge]][c~cargo_metadata~docs]{{hi:cargo_metadata}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}

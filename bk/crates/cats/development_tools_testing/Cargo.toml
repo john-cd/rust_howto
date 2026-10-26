@@ -18,6 +18,13 @@ categories = ["development-tools::testing"]
 publish.workspace = true
 autolib = false
 
+## General
+
+[[bin]]
+name = "cli-demo"
+path = "examples/cli_testing/cli_demo.rs"
+test = false
+
 [features]
 afl-fuzzing = ["dep:afl"]
 
@@ -36,7 +43,9 @@ httpmock = "0.9.0" # Mock an HTTP server.
 insta = { version = "1.49.0", features = ["json", "redactions"] }
 lcov = "0.8.2" # Parse LCOV coverage reports.
 mockall = "0.15.0"
+# Match command-line output and diagnostics in tests.
 predicates = "3.1.4"
+
 proptest = "1.12.0"
 rstest = "0.28.0"
 serde = { version = "1.0.229", features = ["derive"] }
@@ -44,8 +53,6 @@ serial_test = "4.0.1"
 temp-env = "0.3.6"
 tokio = { version = "1.54.1", features = ["macros", "rt", "time", "test-util"] }
 ureq = "3.5.0"
-
-## General
 
 [[example]]
 name = "env_vars"

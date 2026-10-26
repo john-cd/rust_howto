@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
@@ -32,6 +31,10 @@ impl FileCoverage {
 }
 
 /// Streams the records of an LCOV report and collects per-file line coverage.
+///
+/// # Errors
+///
+/// Returns an error if the report contains malformed LCOV records.
 fn summarize(input: impl BufRead) -> anyhow::Result<Vec<FileCoverage>> {
     let mut files = Vec::new();
     let mut current: Option<FileCoverage> = None;
@@ -62,6 +65,10 @@ fn summarize(input: impl BufRead) -> anyhow::Result<Vec<FileCoverage>> {
 }
 
 /// Fails if any file is covered below `threshold` percent.
+///
+/// # Errors
+///
+/// Returns an error when a file is below the requested coverage threshold.
 fn check_threshold(
     files: &[FileCoverage],
     threshold: f64,
@@ -97,6 +104,10 @@ end_of_record
 ";
 
 /// Summarizes the report, then applies a coverage gate.
+///
+/// # Errors
+///
+/// Returns an error if the report is invalid or below the coverage threshold.
 pub fn run() -> anyhow::Result<()> {
     let files = summarize(REPORT.as_bytes())?;
     for file in &files {
@@ -110,6 +121,11 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the report yields the expected per-file percentages.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the inline report cannot be parsed.
     #[test]
     fn computes_coverage_per_file() -> anyhow::Result<()> {
         let files = summarize(REPORT.as_bytes())?;
@@ -120,6 +136,11 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that the threshold gate rejects under-covered files.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the inline report cannot be parsed.
     #[test]
     fn gate_fails_below_the_threshold() -> anyhow::Result<()> {
         let files = summarize(REPORT.as_bytes())?;
@@ -127,11 +148,17 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that malformed LCOV records are rejected.
     #[test]
     fn malformed_input_is_an_error() {
         assert!(summarize(&b"LF:x\n"[..]).is_err());
     }
 
+    /// Verifies that the summary example completes successfully.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the inline report cannot be summarized.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {
         run()

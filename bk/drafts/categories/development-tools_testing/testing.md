@@ -103,10 +103,14 @@ Random inputs that violate a type's invariants waste test cases. [`prop_compose!
 
 [![assert_cmd][c~assert_cmd~docs~badge]][c~assert_cmd~docs]{{hi:assert_cmd}} [![assert_cmd~crates.io][c~assert_cmd~crates.io~badge]][c~assert_cmd~crates.io] [![assert_cmd~repo][c~assert_cmd~repo~badge]][c~assert_cmd~repo] [![assert_cmd~lib.rs][c~assert_cmd~lib.rs~badge]][c~assert_cmd~lib.rs] [![predicates][c~predicates~docs~badge]][c~predicates~docs]{{hi:predicates}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]
 
-[`assert_cmd`][c~assert_cmd~docs]↗{{hi:assert_cmd}} runs a program and asserts on its exit status, `stdout` and `stderr`, using the [`predicates`][c~predicates~docs]↗ crate for matching. In an integration test (`tests/*.rs`) of a package that builds a binary, `Command::cargo_bin("my-tool")` finds the freshly built executable; the example runs `rustc` so that it is self-contained. To compare whole outputs, consider `snapbox` or `trycmd`, which keep expected output in snapshot files.
+[`assert_cmd`][c~assert_cmd~docs]↗{{hi:assert_cmd}} runs a program and asserts on its exit status, `stdout` and `stderr`, using the [`predicates`][c~predicates~docs]↗ crate for matching. In an integration test (`tests/*.rs`) of a package that builds a binary, `Command::cargo_bin("cli-demo")` finds the executable built for the test. The example below defines a small CLI, then checks its help, success, and error behavior. To compare whole outputs, consider `snapbox` or `trycmd`, which keep expected output in snapshot files.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/development_tools_testing/examples/cli_testing/cli_test.rs:example}}
+{{#include ../../../crates/cats/development_tools_testing/examples/cli_testing/cli_demo.rs:example}}
+```
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/development_tools_testing/tests/cli_test.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}
