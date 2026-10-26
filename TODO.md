@@ -37,7 +37,7 @@
 
 ## In progress
 
-B1 is integrated into local `develop` at `7761c5e6c` (39 commits ahead of `origin/develop`; not pushed). Seven B1 issues are closed: #1941, #1940, #939, #1252, #1281, #1912, and #1950. #912 and #1058 remain open because their done criteria require PR links; #864 remains open because its human-review marker is preserved. Formatting, focused tests/Clippy, reference checks, Markdown lint, direct mdBook build/linkcheck, sitemap generation, static asset copy, and `git diff --check` passed. The `just bb` wrapper hit Windows AWS-LC/sccache/Bash-launch failures; its book and remaining steps passed when run directly.
+B1 implementation commits are integrated into local `develop` through `7761c5e6c` (not pushed). Seven B1 issues are closed: #1941, #1940, #939, #1252, #1281, #1912, and #1950. #912 and #1058 remain open because their done criteria require PR links; #864 remains open because its human-review marker is preserved. Formatting, focused tests/Clippy, reference checks, Markdown lint, direct mdBook build/linkcheck, sitemap generation, static asset copy, and `git diff --check` passed. The `just bb` wrapper hit Windows AWS-LC/sccache/Bash-launch failures; its book and remaining steps passed when run directly.
 
 ### Code examples
 
