@@ -25,7 +25,7 @@ femtovg = ["dep:femtovg", "dep:glutin", "dep:glutin-winit", "dep:raw-window-hand
 floem = ["dep:floem"]
 gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
 minifb = ["dep:minifb"]
-iced = ["dep:iced"]
+iced = ["dep:iced", "dep:naga27"]
 skia = ["dep:skia-safe", "dep:glutin", "dep:gl"]
 slint = ["dep:slint"]
 tauri = ["dep:tauri", "dep:tauri-plugin-shell"]
@@ -57,6 +57,11 @@ glutin-winit = { version = "0.5.0", optional = true }
 iced = { version = "0.14.0", optional = true }
 minifb = { version = "0.28.0", optional = true }
 morphorm = "0.9.0"
+# xilem 0.4 pulls naga 26, which only builds when codespan-reporting's `termcolor`
+# feature matches naga's own; enabling it here avoids a feature-unification failure.
+naga26 = { package = "naga", version = "26.0.0", features = ["termcolor"], optional = true }
+# Iced 0.14 pulls naga 27 with the same codespan-reporting `termcolor` requirement.
+naga27 = { package = "naga", version = "27.0.3", features = ["termcolor"], optional = true }
 parley = "0.9.0" # Pinned: 0.12 needs smallvec 1.16, which kube 4.2 (crate `other`) caps below 1.16.
 pollster = { version = "0.4.0", optional = true } # for the Vello example
 raw-window-handle = { version = "0.6.2", optional = true }
@@ -72,9 +77,6 @@ tauri-plugin-shell = { version = "2.5.0", optional = true }
 tracing = "0.1.44"
 tracing-subscriber = "0.3.23"
 url = "2.5.8"
-# xilem 0.4 pulls naga 26, which only builds when codespan-reporting's `termcolor`
-# feature matches naga's own; enabling it here avoids a feature-unification failure.
-naga26 = { package = "naga", version = "26.0.0", features = ["termcolor"], optional = true }
 vello = { version = "0.9.0", optional = true } # Uses wgpu 29, matching this workspace.
 webrender = { version = "0.68.0", optional = true }
 wgpu = "29.0.4"
