@@ -58,4 +58,5 @@
 [p~trait-objects]: ../../../src/language/trait_objects_and_dynamic_dispatch.md
 [p~traits]: ../../../src/language/traits.md
 [p~typecasts]: typecasts.md
+[p~unique-identifiers]: ../../../src/categories/data-structures/unique_identifiers.md
 [p~url]: ../web-programming/url.md

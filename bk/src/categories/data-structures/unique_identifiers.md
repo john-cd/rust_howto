@@ -30,7 +30,7 @@ ULID stands for Universally Unique Lexicographically Sortable Identifier. Like a
 
 [![short-uuid][c~short-uuid~docs~badge]][c~short-uuid~docs]{{hi:short-uuid}} [![short-uuid~crates.io][c~short-uuid~crates.io~badge]][c~short-uuid~crates.io] [![short-uuid~repo][c~short-uuid~repo~badge]][c~short-uuid~repo] [![short-uuid~lib.rs][c~short-uuid~lib.rs~badge]][c~short-uuid~lib.rs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
 
-[`short-uuid`][c~short-uuid~docs]↗{{hi:short-uuid}} encodes a UUID in a shorter, URL-safe string. It converts losslessly to and from a regular [`uuid::Uuid`][c~uuid~docs]↗. Use it for identifiers that appear in URLs or are typed by people. If you need time-ordered identifiers, consider UUID version 7 or a ULID (see above).
+[`short-uuid`][c~short-uuid~docs]↗{{hi:short-uuid}} encodes a UUID in a shorter, URL-safe string. It converts losslessly to and from a regular [`uuid::Uuid`][c~uuid~docs]↗. Use it for identifiers that appear in URLs or are typed by people. For time-ordered identifiers, consider UUID version 7 or a ULID (see above); for compact random identifiers without UUID structure, consider `nanoid`.
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/unique_ids/short_uuid.rs:example}}
