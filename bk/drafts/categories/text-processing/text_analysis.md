@@ -4,7 +4,7 @@
 
 {{#include text_analysis.incl.md}}
 
-Recipes for finding things inside text beyond what `regex` offers: ranking by fuzzy match, extracting key phrases and finding word boundaries. Multi-pattern search with `aho-corasick` is in [[string_search | String Search and Fuzzy Matching]].
+Recipes for finding things inside text beyond what `regex` offers: ranking by fuzzy match, extracting key phrases and finding word boundaries. Multi-pattern search with `aho-corasick` is in [[string_search | String Search and Fuzzy Matching]]. A spell checker can use Unicode word boundaries to find candidate tokens, then compare each token with a language-specific dictionary; handle names, code, and unknown words as product choices instead of treating every miss as a typo.
 
 ## Rank Candidates with Fuzzy Search (`nucleo`) {#nucleo}
 

@@ -94,6 +94,38 @@ fn main() -> anyhow::Result<()> {
         println!("{pattern}: {count}");
     }
 
+    // Build one automaton for a larger vocabulary. ASCII case-insensitive
+    // matching avoids lowercasing the input and reports original byte spans.
+    let keywords: Vec<String> = (0..100)
+        .map(|index| format!("keyword-{index:03}"))
+        .collect();
+    let keyword_refs: Vec<&str> = keywords.iter().map(String::as_str).collect();
+    let automaton = AhoCorasick::builder()
+        .ascii_case_insensitive(true)
+        .build(&keyword_refs)?;
+    let text = "KEYWORD-001 and keyword-099; keyword-001 appears twice";
+    let matches: Vec<_> = automaton
+        .find_iter(text)
+        .map(|mat| (mat.pattern().as_usize(), mat.start(), mat.end()))
+        .collect();
+    println!("\nMatches from a 100-keyword vocabulary:");
+    for (pattern, start, end) in &matches {
+        println!("{} at byte range {start}..{end}", keywords[*pattern]);
+    }
+
+    // Compare with checking every lowercased keyword using `contains`.
+    let folded_text = text.to_ascii_lowercase();
+    let contains_matches: Vec<bool> = keywords
+        .iter()
+        .map(|keyword| folded_text.contains(&keyword.to_ascii_lowercase()))
+        .collect();
+    let mut aho_matches = vec![false; keywords.len()];
+    for (pattern, _, _) in &matches {
+        aho_matches[*pattern] = true;
+    }
+    assert_eq!(aho_matches, contains_matches);
+    assert_eq!(matches.len(), 3);
+
     Ok(())
 }
 
