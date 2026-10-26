@@ -252,6 +252,13 @@ Board update (2026-10-25):
 
 - The requested moves of #1959, #708, #286, #284, #43, and #41 to the `Partial / Follow-ups` project column were not applied. The available GitHub connector has no project-board mutation operation, browser automation failed to initialize (`os error 3`), and `gh auth status` reports the `john-cd` token is invalid. Retry after restoring authenticated board access.
 
+List B2 delivery update (2026-10-26; integrated into local `develop`):
+
+- #1951: Cargo CLI and LCOV examples in `edbd38873`.
+- #899/#900: paired C static-library and Rust wrapper examples in `9c4210513`; #897/#898: paired C++ linkage and Rust wrapper examples in `aa151e819`.
+- #741: token parsing and traversal in `589b66409`; #742: quote-based getter generation in `b28b2664b`; #743: testable `syn` derive logic in `c1c73684e`; #739: Darling attribute parsing in `2816dc65f`; #332: procedural macro helper index in `f793d7411`.
+- Focused CLI and procedural-macro tests and strict package Clippy passed. `just fa`, `cargo sort` checks, `just book refdefs-check`, `just spell`, `just lint-md`, targeted `dprint check`, and `git diff --check` passed. The build-utils package test is blocked before its example by vendored `libgit2-sys` archive failure (`LNK1114`). `bk just ca` fails in unrelated `onig_sys`/AWS-LC native builds; `just bb` fails in AWS-LC because NASM is unavailable and MSVC cannot overwrite its archive (`LNK1114`). All ten issues remain open with evidence comments until their required native/package and book gates pass.
+
 ### List 33 — Desktop, GPU, audio, FFI and embedded chapters (Codex C)
 
 - [#787](https://github.com/john-cd/rust_howto/issues/787) — **P4** — ✅ Closed 2026-10-25 — Finish the Slint example; its counter is tested headlessly.
@@ -748,10 +755,10 @@ All ten issues are implemented and integrated into local `develop`: #905, #645, 
 
 ## Status snapshot (2026-10-26)
 
-Local `develop` is nine commits ahead of `origin/develop` and has not been pushed. Codex branches List AB, AC (including #1885), AD and issue-921 are cherry-picked in; their TODO-only commits were dropped in favor of the newer develop text. Strict Clippy passed for `tools`, `xmpl`, `playground`, `mdbook-utils`, `publish`, and the full `bk` and `later` recipes, including GUI Vizia and the Python extension. The unfinished Wasmer example no longer builds its unused Windows-incompatible compiler dependency. rustfmt (nightly) is clean. See List 31 for remaining platform gates.
+Local `develop` is nineteen commits ahead of `origin/develop` and has not been pushed. Codex branches List AB, AC (including #1885), AD and issue-921 are cherry-picked in; their TODO-only commits were dropped in favor of the newer develop text. Strict Clippy passed for `tools`, `xmpl`, `playground`, `mdbook-utils`, `publish`, and the full `bk` and `later` recipes, including GUI Vizia and the Python extension. The unfinished Wasmer example no longer builds its unused Windows-incompatible compiler dependency. rustfmt (nightly) is clean. See List 31 for remaining platform gates.
 
 - List AC: all ten assigned issues are closed on GitHub. The final repository-wide `rumdl` scan passed after clearing the lint baseline; #1885 is closed. See the linked issue records for per-issue implementation and verification comments.
 - List A: #1859, #1867, #1868, #1874, and [#1885](https://github.com/john-cd/rust_howto/issues/1885) are closed. The 1,115-file `just lint-md` gate passed; focused example tests/Clippy and the scoped #1929 ort/ONNX test passed. #1876, #1877, and #1900 remain open for Unix/Aspell, source-issue evidence and full-workspace validation. #1957 remains open for restored-page reference/link checks and unavailable drafts/later book builds. See the List 31 evidence and issue comments above.
 - List AD: #905, #645, #264, #263, #258, #1178, #275, #274, #272, and #352 closed; all List AD commits integrated on local `develop`.
 - `claude/examples-concurrency`, `-devtools`, `-web` still conflict with develop (#1992).
-- Current worktree snapshot: primary `develop` has the lint follow-up commits; slots `b` and `d` contain active dirty work and are preserved. See `WORKTREES.md` for branch and HEAD details.
+- Current worktree snapshot: primary `develop` is clean and includes List B2; slots `a`–`d` and `f` are clean, while slot `e` contains active List 3 changes. Slot `d` holds the B2 branch and is integrated. See `WORKTREES.md` for branch and HEAD details.
