@@ -10,18 +10,18 @@ WebSockets begin with an HTTP handshake and then keep one connection open for me
 
 ## Choose a crate that matches the runtime
 
-| Need | Crate | Use it when |
-| --- | --- | --- |
-| Blocking client or custom I/O | [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}} | Synchronous I/O fits the application, or you need to adapt the protocol to a custom stream. |
-| Tokio client or server | [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} | The application already uses Tokio and needs asynchronous socket I/O. |
-| Another supported async runtime | [async-tungstenite][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} | The project needs an async WebSocket implementation with an adapter for its runtime. |
-| A WebSocket route in an HTTP application | Your web framework | The framework already owns the HTTP server and provides WebSocket upgrade support. |
+| Need                                     | Crate                                                                  | Use it when                                                                                 |
+| ---------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Blocking client or custom I/O            | [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}}                   | Synchronous I/O fits the application, or you need to adapt the protocol to a custom stream. |
+| Tokio client or server                   | [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} | The application already uses Tokio and needs asynchronous socket I/O.                       |
+| Another supported async runtime          | [async-tungstenite][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} | The project needs an async WebSocket implementation with an adapter for its runtime.        |
+| A WebSocket route in an HTTP application | Your web framework                                                     | The framework already owns the HTTP server and provides WebSocket upgrade support.          |
 
 These are protocol libraries, not application protocols. Your application still defines message formats, authorization, reconnect behavior, and how clients handle server-initiated messages.
 
 ## Handle the connection lifecycle
 
-After the handshake, read and write WebSocket messages until the peer closes the connection or an error occurs. Handle text, binary, ping, pong, and close messages deliberately; do not assume every frame contains the application message you expect. The Tokio example starts a one-connection echo server on an ephemeral loopback port, so its test needs neither an external service nor network access. The blocking and other async examples use [Postman's public WebSocket echo endpoint][postman-websocket-echo].
+After the handshake, read and write WebSocket messages until the peer closes the connection or an error occurs. Handle text, binary, ping, pong, and close messages deliberately; do not assume every frame contains the application message you expect. The two Tokio-based examples start one-connection echo servers on ephemeral loopback ports, so their tests need neither an external service nor network access. The blocking example uses [Postman's public WebSocket echo endpoint][postman-websocket-echo].
 
 For a real client or server, decide how to detect an idle or dead peer, how to perform a graceful close, and whether reconnecting is safe for each operation. Use bounded outbound queues and apply backpressure when message production can outpace the network. Retry with a limit and backoff; replaying a non-idempotent command can repeat its effect.
 
@@ -43,9 +43,9 @@ See the [OWASP WebSocket Security Cheat Sheet][owasp-websocket-security] for a s
 
 Use [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}} when blocking I/O fits the application or when you need its lower-level stream APIs.
 
-~~~rust,editable
+```rust,editable
 {{#include ../../../crates/cats/web_programming_websocket/examples/websocket/tungstenite.rs:example}}
-~~~
+```
 
 ### Asynchronous echo client and server with Tokio {#general-purpose}
 
@@ -53,9 +53,9 @@ Use [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}} when blocking I/O fit
 
 Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} when the application uses the [tokio][c~tokio~docs]↗{{hi:tokio}} runtime. The short example binds an ephemeral loopback listener, echoes one text message, and returns the reply to its client.
 
-~~~rust,editable
+```rust,editable
 {{#include ../../../crates/cats/web_programming_websocket/examples/websocket/tokio_tungstenite.rs:example}}
-~~~
+```
 
 ### Asynchronous client with async-tungstenite {#async-tungstenite}
 
@@ -63,9 +63,9 @@ Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} whe
 
 [async-tungstenite][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} also provides a Tokio adapter; this example uses that adapter to show the crate's API.
 
-~~~rust,editable
+```rust,editable
 {{#include ../../../crates/cats/web_programming_websocket/examples/websocket/async_tungstenite.rs:example}}
-~~~
+```
 
 ## Related Topics {#related-topics .skip}
 
@@ -78,6 +78,6 @@ Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} whe
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[websocket: write](https://github.com/john-cd/rust_howto/issues/520)
-Reviewed upstream tokio-tungstenite client and echo-server examples; updated the Tokio recipe to use `Utf8Bytes` and a tested local client/server round trip.
+  [websocket: write](https://github.com/john-cd/rust_howto/issues/520)
+  Reviewed upstream tokio-tungstenite client and echo-server examples; updated the Tokio recipe to use `Utf8Bytes` and a tested local client/server round trip.
 </div>
