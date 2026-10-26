@@ -11839,6 +11839,7 @@ name = "network_programming"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "async-trait",
  "axum 0.8.9",
  "clap",
  "futures-lite 2.6.1",

@@ -52,6 +52,8 @@ members = [
 exclude = []
 
 [workspace.dependencies]
+# Async trait implementations for the async examples and Pingora proxy.
+async-trait = "0.1.92"
 # Rust syntax trees for the programming-language parser examples.
 syn = { version = "3.0.9", features = ["full"] }
 # Isolated temporary files for examples that demonstrate file-based I/O.

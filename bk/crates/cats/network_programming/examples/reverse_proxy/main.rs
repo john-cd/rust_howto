@@ -40,7 +40,7 @@ fn main() -> anyhow::Result<()> {
             }
             #[cfg(target_family = "unix")]
             Commands::Pingora => {
-                pingora::run();
+                pingora::run()?;
             }
         }
     }
