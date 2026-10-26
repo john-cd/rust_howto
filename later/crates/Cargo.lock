@@ -8431,6 +8431,7 @@ dependencies = [
  "clap",
  "darling 0.24.1",
  "paste",
+ "prettyplease 0.3.0",
  "proc-macro2",
  "quote",
  "syn 3.0.9",
