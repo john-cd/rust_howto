@@ -25,7 +25,6 @@ FROM rust:${RUST_IMAGE_LABEL} AS rust-core
 ## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
 ## The full Rust image depends on https://github.com/docker-library/buildpack-deps
 
-## `tool-builder` bootstraps cargo-binstall through its official install script.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates curl \
     && rm -rf /var/lib/apt/lists/*
@@ -41,8 +40,9 @@ RUN RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(sed -n 's/^channel *= *"\([^"]*\)"
     && printf '[toolchain]\nchannel = "%s"\n' "$RUSTFMT_TOOLCHAIN" > "$RUSTFMT_TOOLCHAIN_FILE" \
     && rustup toolchain install "$RUSTFMT_TOOLCHAIN" --profile minimal --component rustfmt
 ENV RUSTFMT_TOOLCHAIN=${RUSTFMT_TOOLCHAIN}
+
 ## Optional: make nightly the default
-#     && rustup default "$RUSTFMT_TOOLCHAIN"
+# RUN rustup default "$RUSTFMT_TOOLCHAIN"
 ## You must update all .github wokflows as well
 
 # ------------------------------------------------------------------------------------------------
@@ -105,6 +105,7 @@ COPY tools/ /code/tools/
 
 RUN cargo fetch --locked --manifest-path /code/tools/Cargo.toml
 
+# TODO RUSTFMT_TOOLCHAIN is already defined?
 ## Build the tools in release mode
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     RUSTFMT_TOOLCHAIN="$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' "$RUSTFMT_TOOLCHAIN_FILE")" \
