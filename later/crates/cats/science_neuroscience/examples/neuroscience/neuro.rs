@@ -68,5 +68,4 @@ mod tests {
         std::fs::remove_file(path)?;
         Ok(())
     }
-    // [review](https://github.com/john-cd/rust_howto/issues/840)
 }
