@@ -16,6 +16,14 @@ Interfacing with Lua from Rust is typically done using the Lua C API, and there 
 {{#include ../../../crates/cats/development_tools_ffi/examples/lua/mlua.rs:example}}
 ```
 
+### Expose Rust Userdata
+
+Implement `UserData` to expose Rust-owned values and methods to scripts. This example uses the package's vendored Lua 5.4 configuration.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_ffi/examples/lua/mlua_userdata.rs:example}}
+```
+
 ## Communication/Data Marshaling {#communication-data-marshaling}
 
 The Lua binding crates usually handle data marshaling between Rust and Lua types. You won't typically need separate serialization crates like [serde][p~serde] in the same way as with some other FFI scenarios.

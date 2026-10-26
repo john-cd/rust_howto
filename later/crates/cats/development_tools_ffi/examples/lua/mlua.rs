@@ -2,15 +2,7 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! `mlua` provides bindings to Lua programming language for Rust.
-//! By default, `mlua` does not enable any features.
-//!
-//! For example, add the following to your `Cargo.toml` file
-//! to enable Lua 5.4 support:
-//! ```toml
-//! [dependencies]
-//! mlua = { version = "0.10.2", features = ["lua54", "vendored"] }
-//! ```
+//! Creates a Lua table in Rust and reads it from an embedded Lua 5.4 runtime.
 
 use mlua::prelude::*;
 
@@ -41,6 +33,7 @@ pub fn run() -> LuaResult<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that Rust-created values are available to the Lua runtime.
     #[test]
     fn test_main() -> LuaResult<()> {
         main()?;
