@@ -14,28 +14,8 @@
 			"path": "bk/src/indices/examples_index.md",
 			"bookmarks": [
 				{
-					"line": 0,
-					"column": 0,
-					"label": ""
-				},
-				{
-					"line": 2,
-					"column": 6,
-					"label": ""
-				},
-				{
-					"line": 198,
+					"line": 197,
 					"column": 5,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/appendices/thanks.md",
-			"bookmarks": [
-				{
-					"line": 10,
-					"column": 12,
 					"label": ""
 				}
 			]
@@ -171,16 +151,6 @@
 				{
 					"line": 66,
 					"column": 13,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/categories/mathematics/complex_numbers.md",
-			"bookmarks": [
-				{
-					"line": 63,
-					"column": 9,
 					"label": ""
 				}
 			]
@@ -381,16 +351,6 @@
 				{
 					"line": 117,
 					"column": 10,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "bk/src/language/macros.md",
-			"bookmarks": [
-				{
-					"line": 426,
-					"column": 11,
 					"label": ""
 				}
 			]
