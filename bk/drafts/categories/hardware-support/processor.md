@@ -113,7 +113,7 @@ In embedded systems, we often have more direct access to CPU features and periph
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[processor: expand](https://github.com/john-cd/rust_howto/issues/399)
+processor: expand
 
 - [Nine Rules for SIMD Acceleration of Your Rust Code (Part 1)][blog~towardsdatascience-nine-rules-for-simd-acceleration-of-your-rust-code-part-1]↗.
 - [Towards fearless SIMD, 7 years later][blog~towards-fearless-simd]↗ - Linebender.

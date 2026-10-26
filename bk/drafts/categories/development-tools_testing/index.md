@@ -58,7 +58,7 @@ Coverage shows which instrumented code ran for a particular test configuration. 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand](https://github.com/john-cd/rust_howto/issues/341)
+expand
 
 - [trybuild][c~trybuild~repo]↗: Test harness for ui tests of compiler diagnostics.
 

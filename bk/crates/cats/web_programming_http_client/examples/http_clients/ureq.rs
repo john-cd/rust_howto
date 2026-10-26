@@ -40,4 +40,4 @@ mod tests {
         Ok(())
     }
 }
-// [write more?](https://github.com/john-cd/rust_howto/issues/862)
+// write more?

@@ -82,4 +82,4 @@ mod tests {
         assert!(Cli::try_parse_from(["postgres"]).is_err());
     }
 }
-// [review](https://github.com/john-cd/rust_howto/issues/713)
+// review

@@ -11,4 +11,3 @@
 [c~anchor-lang~docs~badge]: https://img.shields.io/crates/v/anchor-lang?label=anchor-lang
 [c~k256~docs]: https://docs.rs/k256
 [c~k256~docs~badge]: https://img.shields.io/crates/v/k256?label=k256
-[ethers~deprecation]: https://github.com/gakonst/ethers-rs/issues/2667

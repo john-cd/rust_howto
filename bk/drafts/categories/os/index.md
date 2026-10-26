@@ -8,14 +8,14 @@ Rust applications can use portable operating-system services from the standard l
 
 ## Portable Operating-System Services
 
-| Need | Starting point | Notes |
-| --- | --- | --- |
-| Files and directories | [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} and [`std::path`][c~std::path~docs]↗{{hi:std::path}} | Use path types instead of assuming a separator or filesystem layout. |
-| Child processes | [`std::process`][c~std::process~docs]↗{{hi:std::process}} | Pass arguments as separate values and handle the exit status and I/O results. |
-| Environment variables | [`std::env`][c~std::env~docs]↗{{hi:std::env}} | Treat values as external input and account for variables that may be absent. |
-| TCP and UDP networking | [`std::net`][c~std::net~docs]↗{{hi:std::net}} | Use an asynchronous runtime such as [`tokio`][c~tokio~docs]↗{{hi:tokio}} when the application needs asynchronous I/O. |
-| Threads | [`std::thread`][c~std::thread~docs]↗{{hi:std::thread}} | Use message passing or synchronization primitives to share state safely. |
-| System information | [`sysinfo`][c~sysinfo~docs]↗{{hi:sysinfo}} | Check which metrics are available on each supported operating system. |
+| Need                   | Starting point                                                                                  | Notes                                                                                                                 |
+| ---------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Files and directories  | [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} and [`std::path`][c~std::path~docs]↗{{hi:std::path}} | Use path types instead of assuming a separator or filesystem layout.                                                  |
+| Child processes        | [`std::process`][c~std::process~docs]↗{{hi:std::process}}                                       | Pass arguments as separate values and handle the exit status and I/O results.                                         |
+| Environment variables  | [`std::env`][c~std::env~docs]↗{{hi:std::env}}                                                   | Treat values as external input and account for variables that may be absent.                                          |
+| TCP and UDP networking | [`std::net`][c~std::net~docs]↗{{hi:std::net}}                                                   | Use an asynchronous runtime such as [`tokio`][c~tokio~docs]↗{{hi:tokio}} when the application needs asynchronous I/O. |
+| Threads                | [`std::thread`][c~std::thread~docs]↗{{hi:std::thread}}                                          | Use message passing or synchronization primitives to share state safely.                                              |
+| System information     | [`sysinfo`][c~sysinfo~docs]↗{{hi:sysinfo}}                                                      | Check which metrics are available on each supported operating system.                                                 |
 
 ## External Commands
 
@@ -62,5 +62,5 @@ This section lists operating systems and system projects implemented in Rust. Th
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[os/index: fix; organize; add cross links](https://github.com/john-cd/rust_howto/issues/429)
+  os/index: fix; organize; add cross links
 </div>

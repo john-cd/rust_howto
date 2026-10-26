@@ -70,5 +70,5 @@ Use the blocking API in synchronous code. Keep it off async runtime worker threa
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[http_clients: expand; link to hyper.md in server.](https://github.com/john-cd/rust_howto/issues/504)
+  http_clients: expand; link to hyper.md in server.
 </div>

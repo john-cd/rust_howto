@@ -70,5 +70,5 @@ You may also consult older resources, such as:
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
+  accuracy review: links and crate selection
 </div>

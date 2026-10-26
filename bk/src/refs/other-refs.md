@@ -1635,8 +1635,6 @@
 [youtube~youcodethings]: https://youtube.com/playlist?list=PLVT0QN6kDrbd3KZr4EkBNvjSDTaZyxwhM
 [zama-ai~repo]: https://github.com/zama-ai
 [zama~website]: https://zama.ai
-[zed-issue-14126-comment~repo]: https://github.com/zed-industries/zed/issues/14126#issuecomment-2230014829
-[zed-issue-14126~repo]: https://github.com/zed-industries/zed/issues/14126
 [zemeroth~website]: https://ozkriff.itch.io/zemeroth
 [zeplin~website]: https://zeplin.io
 [zero-mq-guide~website]: http://zguide.zeromq.org/page:all#Divide-and-Conquer

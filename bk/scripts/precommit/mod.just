@@ -25,7 +25,7 @@ _default:
 # Combining just + pre-commit
 # pre-commit: https://pre-commit.com/
 # based on https://github.com/casey/just/blob/master/examples/pre-commit.just
-# [review](https://github.com/john-cd/rust_howto/issues/1246)
+# review
 # The repository's configured hooks run on staged files by default.
 
 # Run configured hooks on staged files.
@@ -53,7 +53,7 @@ _default:
     pre-commit install --install-hooks # uninstall: `pre-commit uninstall`
 
 ## ---- GIT TOWN -----------------------------------------
-# [review Git Town configuration](https://github.com/john-cd/rust_howto/issues/1246)
+# review Git Town configuration
 # Optional repository-local configuration for Git Town (https://www.git-town.com/).
 
 # Configure Git Town to use this repository's GitHub remote.

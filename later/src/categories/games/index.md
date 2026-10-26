@@ -31,7 +31,7 @@ These examples show several kinds of games built with Rust. Project availability
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; need in depth review; review [are-we-game-yet? games][are-we-game-yet?-games~website] ](https://github.com/john-cd/rust_howto/issues/373)
+write; need in depth review; review [are-we-game-yet? games][are-we-game-yet?-games~website]
 
 ```rust,editable
 {{#include ../../../crates/cats/games/examples/games.rs:example}}

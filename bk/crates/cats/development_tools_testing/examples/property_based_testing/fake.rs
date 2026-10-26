@@ -165,4 +165,4 @@ mod tests {
         main();
     }
 }
-// [review https://docs.rs/fake/4.2.0/fake/index.html](https://github.com/john-cd/rust_howto/issues/1124)
+// review https://docs.rs/fake/4.2.0/fake/index.html

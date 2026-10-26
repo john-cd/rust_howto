@@ -407,4 +407,4 @@ mod tests {
         Ok(())
     }
 }
-// [review; rewrite so that a username and password are not required?](https://github.com/john-cd/rust_howto/issues/178)
+// review; rewrite so that a username and password are not required?

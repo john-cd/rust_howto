@@ -78,6 +78,6 @@ Use [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} whe
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [websocket: write](https://github.com/john-cd/rust_howto/issues/520)
+  websocket: write
   Reviewed upstream tokio-tungstenite client and echo-server examples; updated the Tokio recipe to use `Utf8Bytes` and a tested local client/server round trip.
 </div>

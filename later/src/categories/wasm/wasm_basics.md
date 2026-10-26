@@ -35,5 +35,5 @@ Rust game libraries such as [`winit`][c~winit~docs]↗{{hi:winit}}, [`wgpu`][c~w
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[final review](https://github.com/john-cd/rust_howto/issues/1219)
+  final review
 </div>

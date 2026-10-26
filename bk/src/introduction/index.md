@@ -65,6 +65,6 @@ Refer to the [[books | books]] chapter for a detailed list of Rust books.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: introduction and language basics](https://github.com/john-cd/rust_howto/issues/1887)
-  [accuracy review: decisions for the maintainer](https://github.com/john-cd/rust_howto/issues/1897)
+  accuracy review: introduction and language basics
+  accuracy review: decisions for the maintainer
 </div>

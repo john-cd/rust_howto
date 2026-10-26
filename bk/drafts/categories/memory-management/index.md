@@ -8,13 +8,13 @@ Rust's ownership, borrowing, and lifetimes handle most memory management without
 
 ## Choose an Ownership Strategy
 
-| Need | Starting point | Notes |
-| --- | --- | --- |
-| Store a value on the heap with one owner | [`Box`][c~std::boxed::Box~docs]↗{{hi:Box}} | Use when a value has a dynamic size, needs indirection, or must be owned by a trait object. |
-| Share read-only data within one thread | [`Rc`][c~std::rc::Rc~docs]↗{{hi:Rc}} | Reference counting does not make the value thread-safe. |
-| Share data across threads | [`Arc`][c~std::sync::Arc~docs]↗{{hi:Arc}} | The inner type must also satisfy the thread-safety bounds. Pair with a lock or atomic type only when shared mutation is required. |
-| Mutate through a shared reference in one thread | [`Cell`][c~std::cell::Cell~docs]↗{{hi:Cell}} or [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:RefCell}} | `Cell` offers interior mutation for suitable values; `RefCell` checks borrows at runtime and panics on a conflicting borrow. |
-| Coordinate shared mutation across threads | [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:Mutex}} or [`RwLock`][c~std::sync::RwLock~docs]↗{{hi:RwLock}} | Locking adds contention and possible poisoning; prefer message passing or owned data when that is simpler. |
+| Need                                            | Starting point                                                                                        | Notes                                                                                                                             |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Store a value on the heap with one owner        | [`Box`][c~std::boxed::Box~docs]↗{{hi:Box}}                                                            | Use when a value has a dynamic size, needs indirection, or must be owned by a trait object.                                       |
+| Share read-only data within one thread          | [`Rc`][c~std::rc::Rc~docs]↗{{hi:Rc}}                                                                  | Reference counting does not make the value thread-safe.                                                                           |
+| Share data across threads                       | [`Arc`][c~std::sync::Arc~docs]↗{{hi:Arc}}                                                             | The inner type must also satisfy the thread-safety bounds. Pair with a lock or atomic type only when shared mutation is required. |
+| Mutate through a shared reference in one thread | [`Cell`][c~std::cell::Cell~docs]↗{{hi:Cell}} or [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:RefCell}} | `Cell` offers interior mutation for suitable values; `RefCell` checks borrows at runtime and panics on a conflicting borrow.      |
+| Coordinate shared mutation across threads       | [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:Mutex}} or [`RwLock`][c~std::sync::RwLock~docs]↗{{hi:RwLock}} | Locking adds contention and possible poisoning; prefer message passing or owned data when that is simpler.                        |
 
 See [[smart_pointers | Smart Pointers]] for examples and trade-offs. Use raw pointers and [`unsafe`][keyword~unsafe]↗{{hi:unsafe}} code only when a safe abstraction cannot express the requirement, such as a carefully designed FFI boundary.
 
@@ -59,5 +59,5 @@ See [[memory_usage_analysis | Memory Usage Analysis]] and [[development-tools_pr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[memory-management/index: organize; align table and sections; write missing sections; cross link](https://github.com/john-cd/rust_howto/issues/410)
+  memory-management/index: organize; align table and sections; write missing sections; cross link
 </div>

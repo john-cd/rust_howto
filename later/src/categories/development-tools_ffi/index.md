@@ -85,5 +85,5 @@ Usually handled with build scripts ([`build.rs`][book~cargo~build-script]↗{{hi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/325)
+  write
 </div>

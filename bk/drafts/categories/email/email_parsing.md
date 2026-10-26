@@ -35,5 +35,5 @@ Treat headers, HTML, filenames, and attachments as untrusted input. Set message-
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1204)
+  write
 </div>

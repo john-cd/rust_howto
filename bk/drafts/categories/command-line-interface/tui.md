@@ -58,5 +58,5 @@ cargo generate ratatui/templates simple
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tui: expand](https://github.com/john-cd/rust_howto/issues/234)
+  tui: expand
 </div>

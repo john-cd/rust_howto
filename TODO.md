@@ -68,16 +68,16 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### ACTIVE-CODE-08 — Formatting, encoding, paths and global state
 
-- [#939](https://github.com/john-cd/rust_howto/issues/939) — **P3** — Modernize lazy initialization and synchronized global-state examples — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
-- [#1940](https://github.com/john-cd/rust_howto/issues/1940) — **P3** — Add portable path, file-signature, and argument-quoting examples — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
-- [#1941](https://github.com/john-cd/rust_howto/issues/1941) — **P3** — Add small formatting and encoding recipes — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
+- #939 — **P3** — Modernize lazy initialization and synchronized global-state examples — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
+- #1940 — **P3** — Add portable path, file-signature, and argument-quoting examples — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
+- #1941 — **P3** — Add small formatting and encoding recipes — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
 
 #### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
 
 - [#864](https://github.com/john-cd/rust_howto/issues/864) — **P3** — Finish Async-GraphQL with deterministic schema/query tests — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — HUMAN REVIEW MARKER PRESERVED**
 - [#912](https://github.com/john-cd/rust_howto/issues/912) — **P3** — Extract the Toasty example and finish ORM guidance using in-memory SQLite — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
-- [#1912](https://github.com/john-cd/rust_howto/issues/1912) — **P4** — Demonstrate metrics and Prometheus output without an HTTP server — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
-- [#1950](https://github.com/john-cd/rust_howto/issues/1950) — **P4** — Finish the decision-table missing-input error case and validation — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
+- #1912 — **P4** — Demonstrate metrics and Prometheus output without an HTTP server — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
+- #1950 — **P4** — Finish the decision-table missing-input error case and validation — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
 
 ### Prose and book structure
 
@@ -92,7 +92,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - #1249 — **P3** — Document native Windows support and Unix-only recipe boundaries — **CLOSED**
 - #1252 — **P3** — Define and test Windows/POSIX path-conversion boundaries / Codex — Everyday examples and concrete fixes chat — **CLOSED**
 - [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **PARTIAL; OPEN — Windows just 1.59.0 verified; Linux entry-point verification unavailable**
-- [#1281](https://github.com/john-cd/rust_howto/issues/1281) — **P3** — Update category-link generation to use landing pages and preprocessor directives / Codex — Everyday examples and concrete fixes chat — **CLOSED; LOCAL CATEGORY LINKS INTEGRATED; #248 TRACKS BADGE DIRECTIVES**
+- #1281 — **P3** — Update category-link generation to use landing pages and preprocessor directives / Codex — Everyday examples and concrete fixes chat — **CLOSED; LOCAL CATEGORY LINKS INTEGRATED; #248 TRACKS BADGE DIRECTIVES**
 
 ## Available for Codex now
 
@@ -248,7 +248,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#364](https://github.com/john-cd/rust_howto/issues/364) — **P4** — finance/quant.md: quant: write — **NOT STARTED**
 - [#365](https://github.com/john-cd/rust_howto/issues/365) — **P4** — `finance/index.md`: write — **NOT STARTED**
 - [#472](https://github.com/john-cd/rust_howto/issues/472) — **P4** — science/index.md: write — **NOT STARTED**
-- [#473](https://github.com/john-cd/rust_howto/issues/473) — **P4** — science/classical_machine_learning.md: organize / write — **CLOSED; IMPLEMENTED AND INTEGRATED ON LOCAL DEVELOP**
+- #473 — **P4** — science/classical_machine_learning.md: organize / write — **CLOSED; IMPLEMENTED AND INTEGRATED ON LOCAL DEVELOP**
 - [#474](https://github.com/john-cd/rust_howto/issues/474) — **P4** — science_geo/geo.md: geo: write — **NOT STARTED**
 - [#476](https://github.com/john-cd/rust_howto/issues/476) — **P4** — science_neuroscience/neuroscience.md: neuro: write — **NOT STARTED**
 - [#477](https://github.com/john-cd/rust_howto/issues/477) — **P4** — science_robotics/robot_operating_systems.md: robotics: organize — **NOT STARTED**

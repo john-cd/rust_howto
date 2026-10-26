@@ -8,13 +8,13 @@
 
 [![accesskit][c~accesskit~docs~badge]][c~accesskit~docs] [![accesskit~crates.io][c~accesskit~crates.io~badge]][c~accesskit~crates.io] [![accesskit~repo][c~accesskit~repo~badge]][c~accesskit~repo] [![accesskit~lib.rs][c~accesskit~lib.rs~badge]][c~accesskit~lib.rs]{{hi:accesskit}}{{hi:Gui}}{{hi:Ui}}{{hi:Accessibility}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
 
-| Recipe |
-|--------|
+| Recipe                                                                           |
+| -------------------------------------------------------------------------------- |
 | [Make a User Interface Accessible to Screen Readers][ex~accessibility~accesskit] |
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-[create script to generate crate pages](https://github.com/john-cd/rust_howto/issues/1395)
+  create script to generate crate pages
 </div>

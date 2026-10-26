@@ -56,5 +56,5 @@ Use a determinate bar when the total work is known and a spinner when it is not.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[user_interaction: write](https://github.com/john-cd/rust_howto/issues/235)
+  user_interaction: write
 </div>

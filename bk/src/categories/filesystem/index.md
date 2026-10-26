@@ -65,16 +65,16 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 ## Related Topics
 
-| Topic         | Rust Crates or Modules          |
-| ------------- | ------------------------------- |
-| [[async       | Async Programming]]             | [`async-fs`][c~async-fs~docs]↗{{hi:async-fs}} provides async file I/O. Async runtimes like Tokio also provide async filesystem modules. |
-| [[serde       | Serialization/Deserialization]] | [`serde`][c~serde~docs]↗{{hi:serde}} is often used with file I/O to read and write structured data (JSON, YAML, TOML, etc.) to files. |
+| Topic                                           | Rust Crates or Modules                                                                                                                                       |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [[async       | Async Programming]]             | [`async-fs`][c~async-fs~docs]↗{{hi:async-fs}} provides async file I/O. Async runtimes like Tokio also provide async filesystem modules.                      |
+| [[serde       | Serialization/Deserialization]] | [`serde`][c~serde~docs]↗{{hi:serde}} is often used with file I/O to read and write structured data (JSON, YAML, TOML, etc.) to files.                        |
 | [[compression | Compression/Decompression]]     | [`flate2`][c~flate2~docs]↗{{hi:flate2}}, [`bzip2`][c~bzip2~docs]↗{{hi:bzip2}}, [`zstd`][c~zstd~docs]↗{{hi:zstd}} work with various file compression formats. |
-| [[tar         | Archive Files]]                 | [`tar`][c~tar~docs]↗{{hi:tar}}, [`zip`][c~zip~docs]↗{{hi:zip}} can be used for working with `tar` and `zip` archives. |
+| [[tar         | Archive Files]]                 | [`tar`][c~tar~docs]↗{{hi:tar}}, [`zip`][c~zip~docs]↗{{hi:zip}} can be used for working with `tar` and `zip` archives.                                        |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
+  accuracy review: file system
 </div>

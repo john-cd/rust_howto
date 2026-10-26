@@ -59,4 +59,4 @@ mod tests {
         Ok(())
     }
 }
-// [review how to test](https://github.com/john-cd/rust_howto/issues/884
+// review how to test

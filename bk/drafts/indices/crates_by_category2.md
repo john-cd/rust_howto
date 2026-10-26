@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-[crates_by_category: verify all crates are added to at least one category](https://github.com/john-cd/rust_howto/issues/534)
+crates_by_category: verify all crates are added to at least one category
 
 [![bacon][c~bacon~docs~badge]][c~bacon~docs]{{hi:bacon}}
 [![cornucopia][c~cornucopia~docs~badge]][c~cornucopia~docs]{{hi:cornucopia}}

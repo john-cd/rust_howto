@@ -169,4 +169,4 @@ mod tests {
         Ok(())
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/1100)
+// finish

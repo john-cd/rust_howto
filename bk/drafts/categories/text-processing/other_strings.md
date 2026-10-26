@@ -65,5 +65,5 @@ You may also use the [string_cache][c~string_cache~docs]↗ library for internin
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/1194)
+  review
 </div>

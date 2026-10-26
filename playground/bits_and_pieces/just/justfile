@@ -4,11 +4,11 @@ set fallback
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+    @just --list --unsorted --justfile {{ source_file() }}
 
 ## ---- DEFAULT -------------------------------------
 
-# [would like to use `bash` as the shell, when on Windows, rather than](https://github.com/john-cd/rust_howto/issues/1249)
+# would like to use `bash` as the shell, when on Windows, rather than
 #set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 #set windows-shell := ["cmd.exe", "/c"]
 
@@ -23,32 +23,32 @@ _default:
 # 3) Cygwin
 # - Requires cygwin installation
 
-set windows-shell := [ "C:\\cygwin64\\bin\\bash.exe", "-uc"]
+set windows-shell := ["C:\\cygwin64\\bin\\bash.exe", "-uc"]
 
 @pwd:
-    echo '{{absolute_path(".")}}'
+    echo '{{ absolute_path(".") }}'
 
 @test:
-    echo '{{just_executable()}}'
-    echo '{{justfile()}}'
-    echo '{{justfile_directory()}}'
-    echo '{{source_directory()}}'
-    echo '{{invocation_directory()}}'
+    echo '{{ just_executable() }}'
+    echo '{{ justfile() }}'
+    echo '{{ justfile_directory() }}'
+    echo '{{ source_directory() }}'
+    echo '{{ invocation_directory() }}'
 
-# [make [script] work](https://github.com/john-cd/rust_howto/issues/1250)
+# make [script] work
 
 set unstable
 
-set script-interpreter := [ "C:\\cygwin64\\bin\\bash.exe", "-u"]
+set script-interpreter := ["C:\\cygwin64\\bin\\bash.exe", "-u"]
 
-[windows]
 [script]
+[windows]
 @test2:
-    echo '{{just_executable()}}'
-    echo '{{justfile()}}'
-    echo '{{justfile_directory()}}'
-    echo '{{source_directory()}}'
-    echo '{{invocation_directory()}}'
+    echo '{{ just_executable() }}'
+    echo '{{ justfile() }}'
+    echo '{{ justfile_directory() }}'
+    echo '{{ source_directory() }}'
+    echo '{{ invocation_directory() }}'
     PATH="/bin:$PATH" && echo "$PATH"; pwd
 
 # [make cypath conversion work](https://github.com/john-cd/rust_howto/issues/1251)
@@ -61,12 +61,8 @@ set script-interpreter := [ "C:\\cygwin64\\bin\\bash.exe", "-u"]
 #test3:
 #    echo '{{ p }}'
 
-# [convert Windows path to Cygwin path](https://github.com/john-cd/rust_howto/issues/1252)
+# convert Windows path to Cygwin path
 
-root := if os_family() == 'windows' {
-  quote(replace(justfile_directory(), '\', '/'))
-} else {
-  quote(justfile_directory())
-}
+root := if os_family() == 'windows' { quote(replace(justfile_directory(), '\', '/')) } else { quote(justfile_directory()) }
 
 # [review https://github.com/casey/just/issues/2599](https://github.com/john-cd/rust_howto/issues/1253)

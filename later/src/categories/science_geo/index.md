@@ -34,5 +34,5 @@ Python's geospatial stack has long used GDAL/OGR for raster and vector data. Rus
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [content audit: category index content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1903)
+  content audit: category index content removed by recent commits; review and restore
 </div>

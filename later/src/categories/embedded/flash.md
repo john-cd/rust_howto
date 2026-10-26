@@ -42,5 +42,5 @@ For persistent records, define a format with versioning and integrity checks. De
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1200)
+  write
 </div>

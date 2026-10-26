@@ -139,4 +139,4 @@ mod tests {
         Ok(())
     }
 }
-// [review; https://docs.wasmtime.dev/introduction.html https://docs.rs/wasmtime/latest/wasmtime/](https://github.com/john-cd/rust_howto/issues/855)
+// review; https://docs.wasmtime.dev/introduction.html https://docs.rs/wasmtime/latest/wasmtime/

@@ -37,5 +37,5 @@ For embedded hardware interfaces, see [`embedded-hal`][c~embedded-hal~docs]↗{{
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [content audit: category index content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1903)
+  content audit: category index content removed by recent commits; review and restore
 </div>

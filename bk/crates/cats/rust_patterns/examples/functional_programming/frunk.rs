@@ -215,4 +215,4 @@ mod tests {
         main();
     }
 }
-// [finish example](https://github.com/john-cd/rust_howto/issues/1318)
+// finish example

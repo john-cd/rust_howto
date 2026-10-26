@@ -47,7 +47,7 @@ This API is macOS-only; initialize AppKit on the main thread and enable the corr
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[content audit: category index content removed by recent commits; review and restore](https://github.com/john-cd/rust_howto/issues/1903)
+content audit: category index content removed by recent commits; review and restore
 
 - Historical research notes: interface with Cocoa using Objective-C bindings where needed, and see the [Swift bindings project][swift~website]↗ for Swift interoperability options. Prefer the maintained `objc2-*` crates described above for new AppKit work.
 

@@ -65,12 +65,12 @@ A trait with a native `async fn` is not dyn-compatible, so `Vec<Box<dyn Store>>`
 
 ## Choose a Style {#choose-a-style}
 
-| Need | Use |
-|------|-----|
-| Static dispatch, one thread or a local executor | native `async fn` in the trait |
+| Need                                              | Use                                                     |
+| ------------------------------------------------- | ------------------------------------------------------- |
+| Static dispatch, one thread or a local executor   | native `async fn` in the trait                          |
 | Static dispatch, work spawned with `tokio::spawn` | `-> impl Future<Output = T> + Send`, or `trait_variant` |
-| `dyn Trait`, for example a `Vec<Box<dyn Store>>` | `#[async_trait]` (boxes each future) or `dynosaur` |
-| Support for a Rust version earlier than 1.75 | `#[async_trait]` |
+| `dyn Trait`, for example a `Vec<Box<dyn Store>>`  | `#[async_trait]` (boxes each future) or `dynosaur`      |
+| Support for a Rust version earlier than 1.75      | `#[async_trait]`                                        |
 
 ## Related Topics {#related-topics .skip}
 
@@ -82,6 +82,6 @@ A trait with a native `async fn` is not dyn-compatible, so `Vec<Box<dyn Store>>`
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [async-traits: review new Rust features](https://github.com/john-cd/rust_howto/issues/216)
+  async-traits: review new Rust features
   async-trait = Provides a workaround for the lack of [language][p~language] support for [async][p~async] [functions][p~functions] in traits.
 </div>

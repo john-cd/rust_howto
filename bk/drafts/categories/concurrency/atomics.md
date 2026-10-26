@@ -55,5 +55,5 @@ The following example implements a spinlock using [`std::sync::atomic::AtomicBoo
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[fix](https://github.com/john-cd/rust_howto/issues/1342)
+  fix
 </div>

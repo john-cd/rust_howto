@@ -48,5 +48,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write. create missing examples. cover [`inventory`][c~inventory~docs]↗{{hi:inventory}} crate for DI](https://github.com/john-cd/rust_howto/issues/1231)?
+  write. create missing examples. cover [`inventory`][c~inventory~docs]↗{{hi:inventory}} crate for DI?
 </div>

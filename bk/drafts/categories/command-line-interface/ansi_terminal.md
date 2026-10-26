@@ -134,5 +134,5 @@ Termion is a pure Rust library that provides a [cross-platform][p~cross-platform
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ansi_terminal: `ansi_term` is archived; write / decide what to cover](https://github.com/john-cd/rust_howto/issues/231)
+  ansi_terminal: `ansi_term` is archived; write / decide what to cover
 </div>

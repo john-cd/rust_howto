@@ -97,5 +97,5 @@ See the [Cargo profile reference][debugger~cargo~profiles]↗ for other debug in
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[add Debugger page](https://github.com/john-cd/rust_howto/issues/50)
+  add Debugger page
 </div>

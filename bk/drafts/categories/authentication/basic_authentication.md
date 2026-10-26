@@ -31,5 +31,5 @@ Its test sends the built request through an in-memory Axum route and verifies th
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [expand](https://github.com/john-cd/rust_howto/issues/224)
+  expand
 </div>

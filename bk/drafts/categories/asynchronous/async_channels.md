@@ -102,5 +102,5 @@ When all senders or all receivers are dropped, the channel becomes closed. A clo
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[async_channels: review](https://github.com/john-cd/rust_howto/issues/215) add other [`postage`][c~postage~docs]↗{{hi:postage}} channels?
+  async_channels: review add other [`postage`][c~postage~docs]↗{{hi:postage}} channels?
 </div>

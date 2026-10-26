@@ -27,5 +27,5 @@ The `Default` trait has a single method, `default()`, which returns the default 
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  accuracy review: standard library
 </div>

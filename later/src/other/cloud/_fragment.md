@@ -20,6 +20,6 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[decide where that goes](https://github.com/john-cd/rust_howto/issues/578)
-| [Use the `dapr` distributed runtime][ex~cloud~dapr]↗ | [![dapr-rust-sdk~repo][dapr-rust-sdk~repo~badge]][dapr-rust-sdk~repo] |
+  decide where that goes
+  | [Use the `dapr` distributed runtime][ex~cloud~dapr]↗ | [![dapr-rust-sdk~repo][dapr-rust-sdk~repo~badge]][dapr-rust-sdk~repo] |
 </div>

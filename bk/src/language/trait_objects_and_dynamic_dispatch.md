@@ -180,5 +180,5 @@ Trait-object upcasting lets you coerce a trait object to one of its supertrait o
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
+  accuracy review: traits, iterators, attributes and macros
 </div>

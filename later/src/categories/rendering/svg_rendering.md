@@ -35,6 +35,6 @@ These examples use inline SVG to keep the parsing and rendering steps self-conta
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write.](https://github.com/john-cd/rust_howto/issues/1216)
-Decide what to cover.
+  write.
+  Decide what to cover.
 </div>

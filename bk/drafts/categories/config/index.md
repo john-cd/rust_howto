@@ -48,5 +48,5 @@ Keep secrets out of source control. Restrict access to configuration files that 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1195)
+  write
 </div>

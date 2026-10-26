@@ -77,5 +77,5 @@ Memory profilers help find memory leaks and excessive allocations.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [expand / review](https://github.com/john-cd/rust_howto/issues/337)
+  expand / review
 </div>

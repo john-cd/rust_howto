@@ -1,6 +1,6 @@
 # Proposal: make every command work on Linux and Windows
 
-Status: implementation in progress ([issue #2000](https://github.com/john-cd/rust_howto/issues/2000)). Keep `just` as the task runner, use Bash as the preferred scripting language with Git Bash on Windows, and migrate suitable shared script logic to Rust tools incrementally. Do not adopt cargo-make or Python for tooling. Scope: `rust_howto` (the `justfile`s, `bk/scripts/**`, `scripts/`, `.devcontainer/`), with notes on `book_tooling` and `mdbook-utils`.
+Status: implementation in progress (issue #2000). Keep `just` as the task runner, use Bash as the preferred scripting language with Git Bash on Windows, and migrate suitable shared script logic to Rust tools incrementally. Do not adopt cargo-make or Python for tooling. Scope: `rust_howto` (the `justfile`s, `bk/scripts/**`, `scripts/`, `.devcontainer/`), with notes on `book_tooling` and `mdbook-utils`.
 
 ## What exists today
 
@@ -17,13 +17,13 @@ The simple recipes (`cargo ...`, `just code ...`) already work on both OSes. The
 
 ## Options compared
 
-| | (a) Keep just, use Bash | (b) Rewrite in cargo-make | (c) Rust tools | (d) Python (`uv`) |
-|---|---|---|---|---|
-| Idea | Keep recipes in just; make Bash the preferred scripting language and use Git Bash on Windows, with OS-specific recipes where needed | Move all tasks to `Makefile.toml` | Port shared script logic to Rust CLIs called from thin recipes | Port scripts to Python |
-| Effort | 2-4 days | 2-3 weeks | 1-2 weeks, incremental, per script | 1-2 weeks, incremental |
-| Cross-platform quality | Good for one-liners, poor for the 40 script bodies | Good, but cargo-make shell tasks still shell out | Best: one implementation, testable, no quoting issues | Good; needs Python or pwsh installed |
-| Fit with this repo | Excellent: modules, `JUST_VERSION` pin, AGENTS.md, CI, devcontainer all assume just; Git Bash is the shell bridge for Windows | Poor: loses `mod` namespaces, `just --list` groups, and everything above must be rewritten | Excellent: `tools/` workspace, `tool_lib`, `bin/` release flow and `mdbook-utils` already exist | Not selected: adds another maintained tooling language |
-| Main risk | Behavioural drift between bash and pwsh; Git-Bash vs WSL `bash.exe` ambiguity on Windows | Big-bang migration, new DSL and Duckscript to learn, docs and CI rewrites | Compile time before first use; needs the `bin/` release step | Extra runtime to install; two languages to maintain |
+|                        | (a) Keep just, use Bash                                                                                                             | (b) Rewrite in cargo-make                                                                  | (c) Rust tools                                                                                  | (d) Python (`uv`)                                      |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Idea                   | Keep recipes in just; make Bash the preferred scripting language and use Git Bash on Windows, with OS-specific recipes where needed | Move all tasks to `Makefile.toml`                                                          | Port shared script logic to Rust CLIs called from thin recipes                                  | Port scripts to Python                                 |
+| Effort                 | 2-4 days                                                                                                                            | 2-3 weeks                                                                                  | 1-2 weeks, incremental, per script                                                              | 1-2 weeks, incremental                                 |
+| Cross-platform quality | Good for one-liners, poor for the 40 script bodies                                                                                  | Good, but cargo-make shell tasks still shell out                                           | Best: one implementation, testable, no quoting issues                                           | Good; needs Python or pwsh installed                   |
+| Fit with this repo     | Excellent: modules, `JUST_VERSION` pin, AGENTS.md, CI, devcontainer all assume just; Git Bash is the shell bridge for Windows       | Poor: loses `mod` namespaces, `just --list` groups, and everything above must be rewritten | Excellent: `tools/` workspace, `tool_lib`, `bin/` release flow and `mdbook-utils` already exist | Not selected: adds another maintained tooling language |
+| Main risk              | Behavioural drift between bash and pwsh; Git-Bash vs WSL `bash.exe` ambiguity on Windows                                            | Big-bang migration, new DSL and Duckscript to learn, docs and CI rewrites                  | Compile time before first use; needs the `bin/` release step                                    | Extra runtime to install; two languages to maintain    |
 
 Notes on each:
 
@@ -36,8 +36,8 @@ Notes on each:
 
 Keep `just`, use Bash through Git Bash for shell-based tooling, and migrate suitable shared logic to Rust tools over time. Do not adopt cargo-make or Python for repository tooling.
 
-1. **Quick wins.** Completed in [#2000](https://github.com/john-cd/rust_howto/issues/2000): fix recipes that contain PowerShell syntax without a `[windows]` guard, and add Windows counterparts for frequently used Unix-only recipes using Git Bash where supported.
-2. **Consolidate duplicated pairs.** Completed in [#2001](https://github.com/john-cd/rust_howto/issues/2001) for `copystatic`, `sitemap`, the mdBook build, and doctest-cache cleanup. These recipes now use one shared Bash module on Unix and Windows. The module uses the standard Git for Windows Bash path, which can be overridden with just's `--shell` and `--shell-arg` options. The shared mdBook build calls `build_book.sh` on both platforms so its `book.toml` fallback behavior is consistent.
+1. **Quick wins.** Completed in #2000: fix recipes that contain PowerShell syntax without a `[windows]` guard, and add Windows counterparts for frequently used Unix-only recipes using Git Bash where supported.
+2. **Consolidate duplicated pairs.** Completed in #2001 for `copystatic`, `sitemap`, the mdBook build, and doctest-cache cleanup. These recipes now use one shared Bash module on Unix and Windows. The module uses the standard Git for Windows Bash path, which can be overridden with just's `--shell` and `--shell-arg` options. The shared mdBook build calls `build_book.sh` on both platforms so its `book.toml` fallback behavior is consistent.
 3. **Port suitable scripts to Rust tools incrementally.** Start with frequently used shared logic such as reference definitions, URLs, TOC, includes, links, and build setup. Reuse `mdbook-utils` and `book_tooling/parse_lib` where possible. Keep one-off integrations and book examples in their existing language when a Rust port has no clear benefit.
 4. **Review** remaining scripts for incremental Rust ports and record which external commands still need per-OS installation guidance.
 

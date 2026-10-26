@@ -14,5 +14,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+  accuracy review: contributing guide
 </div>

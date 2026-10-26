@@ -143,7 +143,7 @@ mod tests {
         Ok(())
     }
 }
-// // [review time limit](https://github.com/john-cd/rust_howto/issues/865)
+// // review time limit
 // // <https://docs.rs/axum/latest/axum/index.html>
 // // <https://docs.rs/axum/0.8.1/axum/extract/struct.State.html>
 // // <https://docs.rs/axum/0.8.1/axum/extract/index.html>

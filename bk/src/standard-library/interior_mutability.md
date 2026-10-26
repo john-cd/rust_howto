@@ -76,5 +76,5 @@ For a multi-threaded context, use [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+  accuracy review: standard library
 </div>

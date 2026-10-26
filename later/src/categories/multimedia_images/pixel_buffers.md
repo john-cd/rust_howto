@@ -54,5 +54,5 @@ Do not cast arbitrary bytes to a pixel struct unless its layout, alignment, and 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1222)
+  write
 </div>

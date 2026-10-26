@@ -124,7 +124,7 @@ pub fn run() -> Result<()> {
     main()
 }
 
-// [flaky test](https://github.com/john-cd/rust_howto/issues/1419)
+// flaky test
 
 #[cfg(test)]
 mod tests {

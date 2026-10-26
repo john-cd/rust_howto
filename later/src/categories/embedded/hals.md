@@ -76,5 +76,5 @@ The following host-side example implements `embedded-hal`'s output-pin trait for
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1203)
+  write
 </div>

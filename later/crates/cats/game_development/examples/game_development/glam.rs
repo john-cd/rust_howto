@@ -56,4 +56,4 @@ mod tests {
         main();
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/770)
+// finish

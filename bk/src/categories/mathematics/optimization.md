@@ -72,5 +72,5 @@ Always seed random number generators in tests, and cap iterations or generations
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
+  accuracy review: mathematics
 </div>

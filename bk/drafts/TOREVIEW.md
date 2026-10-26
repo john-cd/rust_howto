@@ -125,8 +125,8 @@ review in particular https://github.com/PacktPublishing/Hands-On-Microservices-w
 
 ## Zed {#zed .skip}
 
-- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126-comment~repo]↗.
-- [zed hanging on startup because of 'unsupportedversion' Issue #14126][zed-issue-14126~repo]↗.
+- zed hanging on startup because of 'unsupportedversion' Issue #14126.
+- zed hanging on startup because of 'unsupportedversion' Issue #14126.
 
 ## Satire {#satire .skip}
 

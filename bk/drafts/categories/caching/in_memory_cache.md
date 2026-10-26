@@ -57,5 +57,5 @@ Consider these questions when designing a cache:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[expand; review in depth](https://github.com/john-cd/rust_howto/issues/227)
+  expand; review in depth
 </div>

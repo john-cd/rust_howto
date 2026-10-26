@@ -42,5 +42,5 @@ FIXME
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[testing: write](https://github.com/john-cd/rust_howto/issues/340)
+  testing: write
 </div>

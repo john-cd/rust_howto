@@ -46,11 +46,11 @@ Plan to host the server executable and its site assets together. A CSR app can b
 
 ### Choose a rendering mode {#choose-a-rendering-mode}
 
-|Need|Starting point|
-|------|----------------|
-|Static hosting or an existing backend|CSR with Trunk|
-|Server-rendered HTML and a Rust server|SSR with `cargo-leptos`|
-|Browser APIs outside Leptos's view and event model|Use the bindings described in [[interfacing_with_javascript]]|
+| Need                                               | Starting point                                                |
+| -------------------------------------------------- | ------------------------------------------------------------- |
+| Static hosting or an existing backend              | CSR with Trunk                                                |
+| Server-rendered HTML and a Rust server             | SSR with `cargo-leptos`                                       |
+| Browser APIs outside Leptos's view and event model | Use the bindings described in [[interfacing_with_javascript]] |
 
 ## Build a Client-side App {#client-side-app}
 
@@ -114,5 +114,6 @@ Keep the token out of `localStorage` where possible, since any script on the pag
 <div class="hidden">
 [client-side app written for issue #1944](https://github.com/john-cd/rust_howto/issues/1944)
 
-[write](https://github.com/john-cd/rust_howto/issues/1220)
+write
+
 </div>

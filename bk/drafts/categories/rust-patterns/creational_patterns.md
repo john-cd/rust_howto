@@ -45,5 +45,5 @@ A singleton exposes one shared instance, often through a global lazy initializer
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1391)
+  write
 </div>

@@ -40,5 +40,5 @@ For CI, install the nightly toolchain with the Miri component, run `cargo +night
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[miri: polish](https://github.com/john-cd/rust_howto/issues/304)
+  miri: polish
 </div>

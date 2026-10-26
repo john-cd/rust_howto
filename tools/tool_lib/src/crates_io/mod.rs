@@ -20,7 +20,7 @@ fn get_client() -> Result<SyncClient> {
     Ok(client)
 }
 
-// [unit tests; cleanup](https://github.com/john-cd/rust_howto/issues/1356)
+// unit tests; cleanup
 
 #[cfg(test)]
 mod tests {

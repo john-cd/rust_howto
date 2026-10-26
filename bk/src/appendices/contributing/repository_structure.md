@@ -107,6 +107,6 @@ For the sake of readability, the test boilerplate is hidden in the book.
 
 - [[cargo | Cargo]].
 
-[accuracy review: contributing guide](https://github.com/john-cd/rust_howto/issues/1896)
+accuracy review: contributing guide
 
 </div>

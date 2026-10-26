@@ -51,4 +51,4 @@ mod tests {
         Ok(())
     }
 }
-// [Implement Rocket Hello World and route mounting](https://github.com/john-cd/rust_howto/issues/869)
+// Implement Rocket Hello World and route mounting

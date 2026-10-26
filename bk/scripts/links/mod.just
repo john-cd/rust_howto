@@ -27,7 +27,7 @@ _default:
 @insert_crate_links:
     ./insert_crate_links.sh {{ root }}
 
-# [fix - one link only; should we have crate landing pages instead of linking to the docs](https://github.com/john-cd/rust_howto/issues/1240)?
+# fix - one link only; should we have crate landing pages instead of linking to the docs?
 
 # (BEWARE: modifies many files; manual editing required) Insert cross-links (from page to page) [...][p~<page>] into the book's Markdown
 @cross_link:
@@ -37,7 +37,7 @@ _default:
 @suggest:
     ./suggest_links_for_bare_urls.sh {{ root }}
 
-# [review suggest_links_for_bare_urls](https://github.com/john-cd/rust_howto/issues/1241)
+# review suggest_links_for_bare_urls
 
 # (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
 @replace_inline_links:

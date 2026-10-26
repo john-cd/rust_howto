@@ -11,7 +11,7 @@ set -u
 #
 # Usage <script>.sh <root folder of book>
 
-# [handle [[...]] without title](https://github.com/john-cd/rust_howto/issues/1244)
+# handle [[...]] without title
 
 root="$(realpath $1)/"
 

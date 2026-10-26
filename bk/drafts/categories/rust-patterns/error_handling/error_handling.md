@@ -163,7 +163,7 @@ For custom error types, diagnostic reports, and application-level context, see [
 Some examples above are adapted from the [Recoverable Errors with `Result`][book~rust~ch09-02-recoverable-errors-with-result]↗ chapter of the Rust book. The `?` operator is available in functions whose return type implements [`std::ops::FromResidual`][c~std::ops::FromResidual~docs]↗{{hi:std::ops::FromResidual}}, such as `Result` and `Option`.
 
 <div class="hidden">
-[error_handling: fix / organize](https://github.com/john-cd/rust_howto/issues/465)
+error_handling: fix / organize
 review [![Rust by example - error][book~rust-by-example~error~badge]][book~rust-by-example~error]
 
 [`std::io::Error`][c~std::io::Error~docs]↗{{hi:std::io::Error}} defined type implementing the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.

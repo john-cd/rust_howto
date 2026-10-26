@@ -26,4 +26,4 @@ _default:
 @check_crates:
     cd {{ quote(root + "/crates") }} && cargo deny --manifest-path Cargo.toml --workspace --config deny.toml check all --hide-inclusion-graph
 
-# [review cargo deny](https://github.com/john-cd/rust_howto/issues/1275)
+# review cargo deny

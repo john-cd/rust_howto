@@ -114,5 +114,5 @@ mod tests {
         Ok(())
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/811)
+// finish
 // https://ngrok.com/download/rust

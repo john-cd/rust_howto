@@ -6,13 +6,13 @@
 
 This page covers installing Rust command-line applications. To install the Rust compiler and manage Rust toolchains, start with [`rustup`][ex~installation~rustup].
 
-| Topic | Rust Crates |
-|---|---|
-| Package Managers | [cargo][p~cargo] |
-| Installer Generators | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}}, [`create-dmg`][create-dmg~repo]↗{{hi:create-dmg}} (for creating Debian packages, RPM packages, and [macOS][p~macos] disk [images][p~images], respectively) |
-| Cross-Platform Installers | [`tauri-bundler`][c~tauri-bundler~docs]↗{{hi:tauri-bundler}} (for bundling desktop applications)↗ |
-| Self-Updating | [`self_update`][c~self_update~docs]↗{{hi:self_update}} |
-| Build Systems (for installation scripts) | [`xtask`][c~xtask~docs]↗{{hi:xtask}} (for managing complex builds and installation-related tasks) |
+| Topic                                    | Rust Crates                                                                                                                                                                                                                                                    |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Package Managers                         | [cargo][p~cargo]                                                                                                                                                                                                                                               |
+| Installer Generators                     | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}}, [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}}, [`create-dmg`][create-dmg~repo]↗{{hi:create-dmg}} (for creating Debian packages, RPM packages, and [macOS][p~macos] disk [images][p~images], respectively) |
+| Cross-Platform Installers                | [`tauri-bundler`][c~tauri-bundler~docs]↗{{hi:tauri-bundler}} (for bundling desktop applications)↗                                                                                                                                                              |
+| Self-Updating                            | [`self_update`][c~self_update~docs]↗{{hi:self_update}}                                                                                                                                                                                                         |
+| Build Systems (for installation scripts) | [`xtask`][c~xtask~docs]↗{{hi:xtask}} (for managing complex builds and installation-related tasks)                                                                                                                                                              |
 
 ## Install a Rust Binary with `cargo install` {#cargo-install}
 
@@ -41,15 +41,15 @@ Prebuilt artifacts are supplied through release infrastructure outside Cargo's n
 
 ## Related Topics {#related-topics .skip}
 
-| Topic | See also |
-|---|---|
+| Topic                                               | See also                           |
+| --------------------------------------------------- | ---------------------------------- |
 | Install and update the Rust compiler and toolchains | [`rustup`][ex~installation~rustup] |
-| Manage project dependencies | [Cargo][p~cargo] |
-| Find and compare crates | [Crate selection][p~crates] |
+| Manage project dependencies                         | [Cargo][p~cargo]                   |
+| Find and compare crates                             | [Crate selection][p~crates]        |
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/918)
+  review
 </div>

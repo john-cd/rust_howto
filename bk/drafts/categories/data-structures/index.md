@@ -189,5 +189,5 @@ See [[functional_programming | Functional Programming]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [data-structures: expand](https://github.com/john-cd/rust_howto/issues/280)
+  data-structures: expand
 </div>

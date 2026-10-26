@@ -56,5 +56,5 @@ FIXME
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[environment_variables: interaction between [config][p~config] and env variables](https://github.com/john-cd/rust_howto/issues/271)
+  environment_variables: interaction between [config][p~config] and env variables
 </div>

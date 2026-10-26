@@ -115,4 +115,4 @@ mod tests {
         main().expect("flurry recipe should pass its assertions");
     }
 }
-// [review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs](https://github.com/john-cd/rust_howto/issues/1152)
+// review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs

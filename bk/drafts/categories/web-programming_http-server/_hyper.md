@@ -52,5 +52,5 @@ TLS support for Hyper through OpenSSL.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[hyper: fix](https://github.com/john-cd/rust_howto/issues/515)
+  hyper: fix
 </div>

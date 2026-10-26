@@ -421,5 +421,5 @@ Debugging macros can be challenging. To see what a macro expands to and debug it
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
+  accuracy review: traits, iterators, attributes and macros
 </div>

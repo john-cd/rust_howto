@@ -104,5 +104,5 @@ The resources below cover different learning styles, from structured courses and
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
+  accuracy review: links and crate selection
 </div>

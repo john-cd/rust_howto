@@ -41,7 +41,7 @@ if [[ ${#search_paths[@]} -eq 0 ]]; then
   search_paths=("${root}")
 fi
 
-# [pass a var](https://github.com/john-cd/rust_howto/issues/1243)
+# pass a var
 patterns=(
   '(?<!: |["`([])(https?://(?:www\d?\.)?)(?!github\.com/)([^./?#\s]+)([A-Za-z0-9/._~?&=%#-]*)' '[`$2`][$2~website] [$2~website]: $1$2$3'
   '(?<!: |["`([])(https?://github\.com/)([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)' '[`$2/$3`][$2~$3~repo] [$2~$3~repo]: $1$2/$3'

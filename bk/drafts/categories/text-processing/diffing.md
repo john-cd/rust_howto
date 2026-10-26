@@ -38,5 +38,5 @@ The example compares lines and words, then renders a unified diff. The output is
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; titles](https://github.com/john-cd/rust_howto/issues/1193)
+  write; titles
 </div>

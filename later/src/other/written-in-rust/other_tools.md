@@ -68,6 +68,6 @@ The [Ratatui app showcase][ratatui-showcase-apps~website]↗ collects terminal a
 
 - [ChatGPT][chatgpt~repo]↗: ChatGPT Desktop Application (Mac, Windows and Linux).
 
-[content audit: Written-in-Rust tool lists trimmed by recent commits; review and restore removed entries](https://github.com/john-cd/rust_howto/issues/1902)
+content audit: Written-in-Rust tool lists trimmed by recent commits; review and restore removed entries
 
 </div>

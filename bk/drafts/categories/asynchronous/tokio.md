@@ -75,5 +75,5 @@ The following example uses `tokio-graceful-shutdown` to organize nested services
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[tokio: review](https://github.com/john-cd/rust_howto/issues/223)
+  tokio: review
 </div>

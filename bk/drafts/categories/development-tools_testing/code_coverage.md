@@ -70,5 +70,5 @@ Coverage tools such as [`cargo llvm-cov`][cargo-llvm-cov~repo] and grcov write L
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/1176)
+  write
 </div>

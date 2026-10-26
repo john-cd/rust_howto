@@ -23,5 +23,5 @@ Symbolic links are handled primarily through the standard library's `std::fs` mo
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
+  accuracy review: file system
 </div>

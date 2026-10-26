@@ -105,6 +105,6 @@ See also the [[option | Option]] chapter.
 - [[error_customization | Error Customization]].
 - [[rust-patterns | Rust Patterns]].
 
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+accuracy review: standard library
 
 </div>

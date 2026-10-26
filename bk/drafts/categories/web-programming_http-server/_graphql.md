@@ -49,5 +49,5 @@ Juniper doesn't include a web server. Instead, it provides building blocks to ma
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[graphql: write](https://github.com/john-cd/rust_howto/issues/511) integrate in seography graphql section?
+  graphql: write integrate in seography graphql section?
 </div>

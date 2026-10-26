@@ -51,6 +51,6 @@ Test messages with missing translations and fallback locales, long translated st
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/402)
-Review `whoami`
+  write
+  Review `whoami`
 </div>

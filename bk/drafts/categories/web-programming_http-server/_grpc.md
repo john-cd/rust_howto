@@ -89,6 +89,6 @@ The book uses the pure-Rust approach for both `helloworld.proto` and `echo.proto
 <div class="hidden">
 [gRPC-Web and codegen written for issue #1945](https://github.com/john-cd/rust_howto/issues/1945)
 
-[grpc: write](https://github.com/john-cd/rust_howto/issues/514)
+grpc: write
 
 </div>

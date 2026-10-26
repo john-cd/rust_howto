@@ -3,7 +3,7 @@
 #
 # TODO Reviewed ??-??-2026
 
-set unstable := true
+set unstable
 set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
 
 root := clean(source_directory() + "/../..")
@@ -74,8 +74,8 @@ mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
 @_generate-index-category:
     pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/generate_category_index.ps1") }} -BookRoot {{ quote(root) }} -ToolsRoot {{ quote(root + "/../tools") }}
 
-# [generate index of crates by category](https://github.com/john-cd/rust_howto/issues/1274)
-# [link crates to published recipes](https://github.com/john-cd/rust_howto/issues/28)
+# generate index of crates by category
+# link crates to published recipes
 
 # Generate the alphabetical crate index with links to published recipes.
 [unix]
@@ -101,7 +101,7 @@ mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
 @_generate-index-alphabetical:
     pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/generate_alphabetical_index.ps1") }} -BookRoot {{ quote(root) }} -ToolsRoot {{ quote(root + "/../tools") }}
 
-# [link crates to published recipes](https://github.com/john-cd/rust_howto/issues/27)
+# link crates to published recipes
 
 # Build / release the tools, incl. mdbook-scrub preprocessor, if needed
 [unix]

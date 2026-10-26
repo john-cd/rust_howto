@@ -119,6 +119,6 @@ The [Units of Measurement chapter][p~units] demonstrates dimensional types and c
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
-  [accuracy review: decisions for the maintainer](https://github.com/john-cd/rust_howto/issues/1897)
+  accuracy review: mathematics
+  accuracy review: decisions for the maintainer
 </div>

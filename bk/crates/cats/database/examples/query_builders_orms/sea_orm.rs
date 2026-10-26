@@ -100,5 +100,5 @@ mod tests {
         assert!(select_sql.contains("FROM \"posts\""));
         assert!(select_sql.contains("LIKE '%SeaORM%'"));
     }
-    // [finish](https://github.com/john-cd/rust_howto/issues/715)
+    // finish
 }

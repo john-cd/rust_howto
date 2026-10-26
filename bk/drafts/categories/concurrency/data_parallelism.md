@@ -110,5 +110,5 @@ This example reads `images/*.jpg` and writes resized images under `temp/thumbnai
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [data_parallelism: polish; dedupe with multithreading.md](https://github.com/john-cd/rust_howto/issues/260)
+  data_parallelism: polish; dedupe with multithreading.md
 </div>

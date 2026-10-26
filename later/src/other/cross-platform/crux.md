@@ -44,5 +44,5 @@ Crux is a good fit when several clients need the same business rules but need di
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[crux: add / edit; link to architecture pages](https://github.com/john-cd/rust_howto/issues/582)
+  crux: add / edit; link to architecture pages
 </div>

@@ -89,6 +89,6 @@ mod tests {
         assert_eq!(fetch_data(123), "Data for key 123");
     }
 }
-// [review further](https://github.com/john-cd/rust_howto/issues/1354)
+// review further
 // <https://docs.rs/cached/latest/cached/proc_macro/index.html>
 // <https://github.com/jaemk/cached/tree/master/examples>

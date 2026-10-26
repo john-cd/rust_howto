@@ -75,4 +75,4 @@ mod tests {
         Ok(())
     }
 }
-// [finish; listens to a connection forever](https://github.com/john-cd/rust_howto/issues/166)
+// finish; listens to a connection forever

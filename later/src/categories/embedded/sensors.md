@@ -8,11 +8,11 @@ An external sensor usually exposes a small register map or a byte-oriented proto
 
 ## Choose the Bus and Driver
 
-| Bus | What to configure | Common checks |
-| --- | --- | --- |
-| I2C | 7-bit address, bus speed, and any required pull-up resistors. | Confirm the address and voltage levels; check for a NACK and whether the device requires a combined write/read transaction. |
-| SPI | Clock mode, bit order, clock rate, and chip-select behavior. | Confirm the mode and maximum clock rate; keep the correct chip select active for the complete transaction. |
-| UART | Baud rate, data bits, parity, stop bits, and framing. | Confirm message boundaries, checksums, and how the receiver resynchronizes after malformed input. |
+| Bus  | What to configure                                             | Common checks                                                                                                               |
+| ---- | ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| I2C  | 7-bit address, bus speed, and any required pull-up resistors. | Confirm the address and voltage levels; check for a NACK and whether the device requires a combined write/read transaction. |
+| SPI  | Clock mode, bit order, clock rate, and chip-select behavior.  | Confirm the mode and maximum clock rate; keep the correct chip select active for the complete transaction.                  |
+| UART | Baud rate, data bits, parity, stop bits, and framing.         | Confirm message boundaries, checksums, and how the receiver resynchronizes after malformed input.                           |
 
 The bus wiring and the software configuration must agree with the sensor data sheet. Check logic voltage, pin muxing, pull-ups, reset timing, and any required startup delay before debugging a driver.
 
@@ -47,5 +47,5 @@ See [Hardware Abstraction Layers](hals.md), [Peripheral Access Crates](pacs.md),
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1199)
+  write
 </div>

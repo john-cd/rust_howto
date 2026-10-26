@@ -89,5 +89,5 @@ Keep in mind that choosing `heapless` is a trade-off: gain performance and deter
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  accuracy review: data structures
 </div>

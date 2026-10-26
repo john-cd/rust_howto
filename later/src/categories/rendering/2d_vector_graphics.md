@@ -69,5 +69,5 @@ Use Lyon when your application needs path geometry and wants to select its own b
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1214)
+  write
 </div>

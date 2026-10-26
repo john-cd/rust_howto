@@ -141,6 +141,6 @@ Other RustCrypto ecosystem crates include [`aes-gcm`][c~aes-gcm~docs], [`aes-gcm
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
-  [content audit: crate pointers (AEAD, signatures, certificates, ahash) removed in 68a11801; restore or keep a short list](https://github.com/john-cd/rust_howto/issues/1901)
+  accuracy review: algorithms
+  content audit: crate pointers (AEAD, signatures, certificates, ahash) removed in 68a11801; restore or keep a short list
 </div>

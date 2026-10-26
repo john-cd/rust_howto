@@ -101,6 +101,6 @@ mod tests {
         Ok(())
     }
 }
-// [review](https://github.com/john-cd/rust_howto/issues/859)
+// review
 // review <https://hyper.rs/>
 // reference <https://github.com/hyperium/hyper/blob/master/examples/client.rs>

@@ -57,5 +57,5 @@ Code that calls a web service can be tested without the network by pointing the 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[testing: write](https://github.com/john-cd/rust_howto/issues/340)
+  testing: write
 </div>

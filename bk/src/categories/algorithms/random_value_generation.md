@@ -98,5 +98,5 @@ You should also read the [`oorandom` README file][c~oorandom~lib.rs]↗ for a co
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
+  accuracy review: algorithms
 </div>

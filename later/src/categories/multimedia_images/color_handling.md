@@ -58,5 +58,5 @@ Convert and manage colors with a focus on correctness, flexibility and ease of u
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1223)
+  write
 </div>

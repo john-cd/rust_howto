@@ -51,5 +51,5 @@ The `Body` trait yields frames asynchronously. Data frames carry byte buffers, a
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1338)
+  write
 </div>

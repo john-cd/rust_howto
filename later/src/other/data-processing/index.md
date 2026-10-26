@@ -70,5 +70,5 @@ Databend, and Rerun through focused examples.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[organize / edit](https://github.com/john-cd/rust_howto/issues/594)
+  organize / edit
 </div>

@@ -54,5 +54,5 @@ Use [`glommio`][c~glommio~docs]↗{{hi:glommio}} for Linux `io_uring` networking
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [server: write; add cross-links: async, web, `http` server](https://github.com/john-cd/rust_howto/issues/425)
+  server: write; add cross-links: async, web, `http` server
 </div>

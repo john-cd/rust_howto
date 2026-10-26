@@ -60,7 +60,7 @@ See also [`std::ops::Drop`][c~std::ops::Drop~docs]↗{{hi:std::ops::Drop}} for c
 
 ## Domain Newtypes {#domain-newtypes}
 
-A *newtype*{{hi:Newtype}} wraps a primitive in a type that carries meaning and, when needed, enforces an invariant. The compiler then rejects mixing a distance with a duration, or passing an unvalidated string where a validated email address is expected. For the pattern itself, see [Newtype][ex~rust-patterns~newtype].
+A _newtype_{{hi:Newtype}} wraps a primitive in a type that carries meaning and, when needed, enforces an invariant. The compiler then rejects mixing a distance with a duration, or passing an unvalidated string where a validated email address is expected. For the pattern itself, see [Newtype][ex~rust-patterns~newtype].
 
 ### Newtypes That Carry a Unit {#newtype-units}
 
@@ -105,7 +105,7 @@ When a value has a field that only affects how it is shown, such as a display st
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1393)
+write
 
 - [& vs. ref in Rust patterns][blog~rust-patterns-ref]↗.
 

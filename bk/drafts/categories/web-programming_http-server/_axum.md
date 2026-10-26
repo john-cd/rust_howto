@@ -33,7 +33,7 @@ This example shows those pieces together: route registration, a fallback, a stat
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[axum: write](https://github.com/john-cd/rust_howto/issues/507)
+axum: write
 
 [Rust Axum clean demo][clean_axum_demo~repo]↗ is a one-stop, production-ready API template.
 

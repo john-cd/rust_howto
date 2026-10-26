@@ -147,5 +147,5 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: traits, iterators, attributes and macros](https://github.com/john-cd/rust_howto/issues/1888)
+  accuracy review: traits, iterators, attributes and macros
 </div>

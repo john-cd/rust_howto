@@ -92,5 +92,5 @@ For system-specific APIs, use the smallest platform-specific layer possible. The
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[add / write; link to other chapters; conditional compile](https://github.com/john-cd/rust_howto/issues/583)
+  add / write; link to other chapters; conditional compile
 </div>

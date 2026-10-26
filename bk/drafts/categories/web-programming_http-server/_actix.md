@@ -33,5 +33,5 @@ The example binds to `127.0.0.1:8080` for local access. The accompanying test in
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[actix: organize / write](https://github.com/john-cd/rust_howto/issues/506)
+  actix: organize / write
 </div>

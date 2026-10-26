@@ -69,5 +69,5 @@ To sort in a different way, provide a custom comparator function to the [`std::v
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
+  accuracy review: algorithms
 </div>

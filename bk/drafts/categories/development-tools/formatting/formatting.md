@@ -6,11 +6,11 @@
 
 ## Key Tools {#key-tools .skip}
 
-| Topic | Rust Crates |
-|---|---|
-| Code Formatter | [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} is the standard Rust code formatter. |
-| Formatting Configuration | [Configuration][p~configuration] is done through `rustfmt.toml` files. |
-| Integration | Most [IDEs][p~ides] have built-in [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} integration. |
+| Topic                    | Rust Crates                                                                               |
+| ------------------------ | ----------------------------------------------------------------------------------------- |
+| Code Formatter           | [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} is the standard Rust code formatter.           |
+| Formatting Configuration | [Configuration][p~configuration] is done through `rustfmt.toml` files.                    |
+| Integration              | Most [IDEs][p~ides] have built-in [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}} integration. |
 
 ## Format your Rust code with `rustfmt` {#rustfmt}
 
@@ -97,5 +97,5 @@ FIXME
 {{#include ../../../refs/link-refs.md}}
 
 <div class="hidden">
-[formatting: add link for formatting attributes](https://github.com/john-cd/rust_howto/issues/300)
+  formatting: add link for formatting attributes
 </div>

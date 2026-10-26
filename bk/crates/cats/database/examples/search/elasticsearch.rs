@@ -290,4 +290,4 @@ mod tests {
         main()
     }
 }
-// [review fix heavy test; secure the connection](https://github.com/john-cd/rust_howto/issues/710)
+// review fix heavy test; secure the connection

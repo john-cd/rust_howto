@@ -73,7 +73,8 @@ A parser and formatter for `std::time::{Duration, SystemTime}`. The example pars
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write humantime; review](https://github.com/john-cd/rust_howto/issues/914)
+write humantime; review
 
 The short example focuses on duration parsing and formatting so it complements the timestamp overview without duplicating more sample code in the category index.
+
 </div>

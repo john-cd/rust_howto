@@ -91,5 +91,5 @@ A Minimum Spanning Tree (MST){{hi:Minimum Spanning Tree}} is a subset of the edg
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: algorithms](https://github.com/john-cd/rust_howto/issues/1891)
+  accuracy review: algorithms
 </div>

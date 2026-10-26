@@ -54,6 +54,6 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 
 - [[async_programming | Async Programming]].
 
-[accuracy review: standard library](https://github.com/john-cd/rust_howto/issues/1889)
+accuracy review: standard library
 
 </div>

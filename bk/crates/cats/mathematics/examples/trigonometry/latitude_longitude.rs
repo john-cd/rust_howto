@@ -94,4 +94,4 @@ mod tests {
         assert!((distance - 344.0).abs() < 2.0);
     }
 }
-// [review](https://github.com/john-cd/rust_howto/issues/1350)
+// review

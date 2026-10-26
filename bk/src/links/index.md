@@ -59,5 +59,5 @@ This section provides a large number of links to Rust resources.
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: links and crate selection](https://github.com/john-cd/rust_howto/issues/1895)
+  accuracy review: links and crate selection
 </div>

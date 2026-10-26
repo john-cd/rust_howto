@@ -50,5 +50,5 @@ Refer as well to the [`ordered-float`][c~ordered-float~docs]↗{{hi:ordered-floa
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: data structures](https://github.com/john-cd/rust_howto/issues/1892)
+  accuracy review: data structures
 </div>

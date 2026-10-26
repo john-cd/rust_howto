@@ -33,5 +33,5 @@ A directed acyclic graph (DAG) represents tasks and their prerequisites. Kahn's 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: mathematics](https://github.com/john-cd/rust_howto/issues/1894)
+  accuracy review: mathematics
 </div>

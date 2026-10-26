@@ -78,4 +78,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     prost()?;
     Ok(())
 }
-// [is prost fixed?](https://github.com/john-cd/rust_howto/issues/1417)
+// is prost fixed?

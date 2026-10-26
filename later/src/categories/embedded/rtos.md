@@ -12,11 +12,11 @@ This small host-side simulation illustrates fixed-priority scheduling and preemp
 
 ## Execution Models {#execution-models}
 
-| Framework | Model | Useful when |
-| --- | --- | --- |
-| [`RTIC`][c~rtic~docs]↗{{hi:rtic}} | Statically described tasks and resources, scheduled using supported hardware interrupt controllers; current RTIC releases also support async software tasks. | Priorities and shared resources are known at build time and bounded interrupt latency matters. |
-| [`Embassy`][c~embassy~docs]↗{{hi:embassy}} | Cooperative `async` tasks run on an executor, with HALs and drivers for supported chips. | Many I/O operations wait on timers or peripherals and can yield without dedicating a thread and stack to each operation. |
-| [FreeRTOS Rust bindings][c~freertos~docs]↗{{hi:FreeRTOS}} | Rust bindings to the FreeRTOS kernel's task, queue, timer, and synchronization model. | An existing product or vendor ecosystem already depends on FreeRTOS and its APIs. |
+| Framework                                                 | Model                                                                                                                                                        | Useful when                                                                                                              |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| [`RTIC`][c~rtic~docs]↗{{hi:rtic}}                         | Statically described tasks and resources, scheduled using supported hardware interrupt controllers; current RTIC releases also support async software tasks. | Priorities and shared resources are known at build time and bounded interrupt latency matters.                           |
+| [`Embassy`][c~embassy~docs]↗{{hi:embassy}}                | Cooperative `async` tasks run on an executor, with HALs and drivers for supported chips.                                                                     | Many I/O operations wait on timers or peripherals and can yield without dedicating a thread and stack to each operation. |
+| [FreeRTOS Rust bindings][c~freertos~docs]↗{{hi:FreeRTOS}} | Rust bindings to the FreeRTOS kernel's task, queue, timer, and synchronization model.                                                                        | An existing product or vendor ecosystem already depends on FreeRTOS and its APIs.                                        |
 
 These are not interchangeable APIs. RTIC's statically analyzed resource model differs from a general-purpose thread-based kernel. Embassy tasks make progress when they yield at an `.await`; a long non-yielding future can delay other work on the same executor. FreeRTOS tasks have separate stacks and kernel scheduling behavior, so budget stack space and synchronization explicitly.
 
@@ -52,5 +52,5 @@ Bare-metal firmware can use interrupts and a main loop without an RTOS. A small 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1202)
+  write
 </div>

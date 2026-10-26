@@ -137,5 +137,5 @@ The following example uses [`globset`][c~globset~docs]↗{{hi:globset}} which al
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [accuracy review: file system](https://github.com/john-cd/rust_howto/issues/1893)
+  accuracy review: file system
 </div>

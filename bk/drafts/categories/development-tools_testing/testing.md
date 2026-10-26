@@ -121,7 +121,7 @@ FIXME
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[testing: write](https://github.com/john-cd/rust_howto/issues/340)
+testing: write
 
 - [serial_test][c~serial_test~docs]↗ allows for the creation of serialized Rust tests using the serial attribute.
 

@@ -126,7 +126,7 @@ The structopt project has been superseded by clap's derive API. For existing app
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[arguments: review](https://github.com/john-cd/rust_howto/issues/233)
+arguments: review
 
 [Parsing arguments in Rust with no dependencies][blog~parsing-arguments-rust-no-dep]↗.
 
