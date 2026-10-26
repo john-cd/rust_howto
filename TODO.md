@@ -697,3 +697,12 @@ The ten issue commits (`7d4d6757a` through `1c81bff14`) are integrated into loca
 ### List AD — paused after #352 (2026-10-25)
 
 The reused `.worktrees/p5` branch `codex/list-ad-concurrency-serialization-crypto` contains issue commits for #905, #264, #263, #258, #274, #272, #275, #1178, and #352. #905 and #352 are closed with verification comments. #645 was already closed by earlier List F work. The seven implemented issues #264, #263, #258, #274, #272, #275, and #1178 remain open; their issue comments/closures and integration into `develop` are pending. The batch was stopped after #352 at the user's direction. The topic branch has passed strict Clippy and focused nextest for `concurrency`, strict Clippy and focused nextest for `cryptography`, strict Clippy for `encoding`, plus `just spell`, Markdown formatting checks, and `just bb` with `AWS_LC_SYS_NO_ASM=1 CARGO_BUILD_JOBS=1`. Continue by closing those seven issues with the recorded commit and validation evidence, then rebase/integrate the topic branch into the current `develop` without disturbing the primary checkout's unrelated edits.
+
+## Status snapshot (2026-10-26)
+
+`develop` is pushed to `origin/develop` (linear, fast-forward). Codex branches List AB, AC (incl. #1885 lint baseline minus two develop-newer files), AD and issue-921 are cherry-picked in; their TODO-only commits were dropped in favour of the newer develop text. Clippy (`-D warnings`, all features, locked) is clean for tools, xmpl, playground, bk and later, except `later` crates `wasm` (wasmer-cranelift does not build on Windows) and `gui` (naga 27 vs termcolor, external). rustfmt (nightly) is clean.
+
+- List A: #1868, #1874 closed. #1859 bk and later Clippy now pass (wasm and gui excluded, Oracle `sibyl` not linted). #1867 done. Still open: #1876, #1877, #1900 (need Unix/Linux gates), #1885 (baseline cleared, re-run `rumdl` after the two virtualization/wasm index edits), #1957 (verify refs), #1929 (ort/ONNX check on PR #1964).
+- List AD: #905 #352 closed; #264 #263 #258 #1178 #275 #274 #272 integrated on develop and awaiting issue closure; #645 closed earlier.
+- `claude/examples-concurrency`, `-devtools`, `-web` still conflict with develop (#1992).
+- Dirty Codex worktrees: `ca` (refdefs / crate-refs consolidation, 12 files), `h` (Cargo.lock, rest_get.rs, dependency-refs.md), `c` (wgpu.rs). Preserve.
