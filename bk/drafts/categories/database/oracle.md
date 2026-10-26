@@ -24,6 +24,27 @@ Oracle [Database][p~database] is a multi-model [database][p~database] management
 {{#include ../../../crates/cats/database/examples/oracle/oracle.rs:example}}
 ```
 
+The example reads `ORACLE_USER`, `ORACLE_PASSWORD`, and
+`ORACLE_CONNECT_STRING` from the environment. Its optional integration test
+requires an Oracle database and Oracle Instant Client. For example, start
+Oracle Free with Docker, set the connection variables, then run the ignored
+test:
+
+```sh
+docker run --detach --name oracle-free -p 1521:1521 \
+  -e ORACLE_PASSWORD=change-me gvenzl/oracle-free
+export ORACLE_USER=system
+export ORACLE_PASSWORD=change-me
+export ORACLE_CONNECT_STRING=127.0.0.1:1521/FREEPDB1
+cargo test -p database --example oracle --features oracle -- \
+  oracle::tests::require_external_svc --ignored
+```
+
+Install Oracle Instant Client before running the test. On Linux, put its
+library directory on `LD_LIBRARY_PATH`; on Windows, add the directory
+containing `oci.dll` to `PATH`. The test is ignored during ordinary workspace
+test runs so they do not require a database or native client installation.
+
 ## `sibyl` {#sibyl}
 
 [![sibyl~website][c~sibyl~website~badge]][c~sibyl~website] [![sibyl][c~sibyl~docs~badge]][c~sibyl~docs] [![sibyl~crates.io][c~sibyl~crates.io~badge]][c~sibyl~crates.io] [![sibyl~repo][c~sibyl~repo~badge]][c~sibyl~repo] [![sibyl~lib.rs][c~sibyl~lib.rs~badge]][c~sibyl~lib.rs]{{hi:sibyl}}{{hi:Database}}{{hi:Sql}}{{hi:Ffi}}{{hi:Async}}{{hi:Oracle}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
@@ -76,6 +97,9 @@ To resolve this on Linux:
    ```
 
 4. Alternatively, configure the system-wide library path by adding a file to `/etc/ld.so.conf.d/` and running `sudo ldconfig`.
+
+On Windows, install the 64-bit Oracle Instant Client Basic package and add its
+directory to `PATH` before running the Oracle example or its integration test.
 
 ## Related Topics {#related-topics .skip}
 

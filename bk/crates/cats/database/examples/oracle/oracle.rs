@@ -1,69 +1,53 @@
-//! Rust bindings to ODPI-C.
-
 #![allow(dead_code)]
-
-use std::env;
-use std::sync::Mutex;
-
-use dotenvy::dotenv;
-use oracle::Connection;
-use oracle::Error;
-
-/// Serializes the tests, which share environment variables.
-static ENV_MUTEX: std::sync::LazyLock<Mutex<()>> =
-    std::sync::LazyLock::new(|| Mutex::new(()));
-
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-/// Rust bindings to ODPI-C.
-///
-/// This example demonstrates how to connect to an Oracle database,
-/// execute a query, and iterate over the results.
-///
-/// Add to your `.env` file:
-/// `ORACLE_DB_USERNAME=your_username`
-/// `ORACLE_DB_PASSWORD=your_password`
-/// `ORACLE_DB_URL=your_db_host:port/your_service_name`
-#[tokio::main]
-async fn main() -> Result<(), Error> {
-    // Load environment variables from a .env file (for secure handling of
-    // credentials).
-    dotenv().ok();
+//! Connect to Oracle, query user tables with bind variables, and print rows.
+//!
+//! Set `ORACLE_USER`, `ORACLE_PASSWORD`, and `ORACLE_CONNECT_STRING` in the
+//! environment. The optional integration test also requires an Oracle
+//! database and Oracle Instant Client; the chapter documents how to run it.
 
-    // Fetch the connection details from environment variables.
-    let username =
-        env::var("ORACLE_DB_USERNAME").expect("ORACLE_DB_USERNAME not set");
-    let password =
-        env::var("ORACLE_DB_PASSWORD").expect("ORACLE_DB_PASSWORD not set");
-    let db_url = env::var("ORACLE_DB_URL").expect("ORACLE_DB_URL not set");
+use std::env;
 
-    // Connect to the Oracle database.
-    let conn = Connection::connect(&username, &password, &db_url)?;
+use anyhow::Context as _;
+use oracle::Connection;
 
-    // Query the database (example: retrieve the database name;
-    // user_tables is a common system table in Oracle).
-    let sql = "SELECT * FROM user_tables WHERE ROWNUM <= 5";
-    let mut stmt = conn.statement(sql).build()?;
+/// Connects to Oracle and prints up to five tables matching `R%`.
+fn main() -> anyhow::Result<()> {
+    let username = env::var("ORACLE_USER")
+        .context("set ORACLE_USER to an Oracle database user")?;
+    let password = env::var("ORACLE_PASSWORD")
+        .context("set ORACLE_PASSWORD to the user's password")?;
+    let connect_string = env::var("ORACLE_CONNECT_STRING")
+        .context("set ORACLE_CONNECT_STRING to host:port/service_name")?;
 
-    // Execute the query and fetch results.
-    let rows = stmt.query(&[])?;
+    let connection =
+        Connection::connect(&username, &password, &connect_string)?;
+    let mut statement = connection
+        .statement(
+            "SELECT table_name FROM user_tables \
+             WHERE table_name LIKE :1 AND ROWNUM <= :2",
+        )
+        .build()?;
+    let table_name_pattern = "R%";
+    let row_limit = 5;
+    let rows = statement.query(&[&table_name_pattern, &row_limit])?;
 
-    // Iterate over the rows and print the results.
-    for row in rows {
-        let row = row?;
-        // Print each column's value
-        // (assuming the result has one column, adjust as needed).
-        println!("Table: {}", row.get::<_, String>(0)?);
+    for row_result in rows {
+        let row = row_result?;
+        let table_name: String = row.get("table_name")?;
+        println!("Table: {table_name}");
     }
 
-    conn.close()?;
+    connection.close()?;
     Ok(())
 }
 
 // ANCHOR_END: example
 
-pub fn run() -> Result<(), Error> {
+/// Runs the example and reports missing configuration or Oracle errors.
+pub fn run() -> anyhow::Result<()> {
     main()
 }
 
@@ -71,12 +55,10 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Connects to Oracle and exercises the parameterized table query.
     #[test]
-    #[ignore = "requires external oracle db and oracle client library"]
+    #[ignore = "requires Oracle Free, Instant Client, and ORACLE_* settings"]
     fn require_external_svc() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
+        main()
     }
 }
-// TODO Troubleshooting "DPI-1047: Cannot locate a 64-bit Oracle Client library"
-// See https://odpi-c.readthedocs.io/en/latest/user_guide/installation.html
