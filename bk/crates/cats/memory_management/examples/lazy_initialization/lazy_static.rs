@@ -5,7 +5,8 @@
 //! `lazy_static` defines statically initialized values that are
 //! computed lazily at runtime. It can be particularly useful for initializing
 //! data that is expensive to compute or that needs to be shared across multiple
-//! threads.
+//! threads. Since Rust 1.80, `std::sync::LazyLock` is the standard-library
+//! replacement for this pattern in new code.
 
 use std::collections::HashMap;
 use std::sync::Mutex;
@@ -60,10 +61,10 @@ fn main() -> anyhow::Result<()> {
     // The (mutable) shared state within the Mutex can only be accessed once the
     // lock is held. Our non-atomic increment is safe because we're the only
     // thread which can access the shared state when the lock is held.
-    // We `unwrap()` the return value to assert that we are not expecting
-    // threads to ever fail while holding the lock.
     {
-        let mut counter: MutexGuard<'_, i32> = COUNTER.lock().unwrap();
+        let mut counter: MutexGuard<'_, i32> = COUNTER.lock().expect(
+            "counter mutex is not poisoned before this example locks it",
+        );
         *counter += 1;
         println!("Counter: {}", *counter);
     } // The lock is unlocked here.
@@ -81,7 +82,7 @@ fn main() -> anyhow::Result<()> {
         }
     })
     .join()
-    .expect("thread::spawn failed");
+    .map_err(|_| anyhow!("counter worker thread panicked"))?;
 
     Ok(())
 }
@@ -96,10 +97,10 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies lazy values and synchronized counter access work together.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
 }
-// [review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939)

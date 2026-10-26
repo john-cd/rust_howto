@@ -30,9 +30,9 @@ Use `Arc::make_mut` when updates are infrequent and readers can keep an older sn
 
 ## Maintain Global Mutable State {#global-mutable-state}
 
-[![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs] [![lazy_static~crates.io][c~lazy_static~crates.io~badge]][c~lazy_static~crates.io] [![lazy_static~repo][c~lazy_static~repo~badge]][c~lazy_static~repo] [![lazy_static~lib.rs][c~lazy_static~lib.rs~badge]][c~lazy_static~lib.rs]{{hi:lazy_static}}{{hi:Macro}}{{hi:Lazy}}{{hi:Static}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}{{hi:Global mutable state}}
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}{{hi:Global mutable state}}
 
-For new code, `std::sync::LazyLock` can initialize a global value on first access without an extra dependency. Lazy initialization does not make a value mutable: wrap shared mutable state in a `Mutex<T>` or `RwLock<T>`. The [`lazy_static`][c~lazy_static~docs] recipe shows the same pattern with a `static ref`; prefer the standard-library type for new code.
+A lazy initializer only controls construction; the `Mutex` controls access to the mutable value. This example uses `LazyLock<Mutex<T>>` so the global mutex is created on first use, then locks it around each read or write. Prefer avoiding global mutable state when it can be passed explicitly.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/shared_state/global_mut_state.rs:example}}

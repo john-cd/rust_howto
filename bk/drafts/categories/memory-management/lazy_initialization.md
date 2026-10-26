@@ -76,7 +76,7 @@ The standard library types cover common new-code use cases. Avoid adding both `o
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-[`lazy_static`][c~lazy_static~docs]↗{{hi:lazy_static}}
+`lazy_static!` is a supported legacy alternative. Since Rust 1.80, prefer the standard library's `LazyLock` for the same thread-safe lazy initialization pattern in new code.
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/examples/lazy_initialization/lazy_static.rs:example}}
@@ -84,15 +84,12 @@ The standard library types cover common new-code use cases. Avoid adding both `o
 
 ## Declare Lazily Evaluated Constants {#declare-lazily-evaluated-constant}
 
-[![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs]{{hi:lazy_static}}
-[![lazy_static~crates.io][c~lazy_static~crates.io~badge]][c~lazy_static~crates.io]
-[![lazy_static~repo][c~lazy_static~repo~badge]][c~lazy_static~repo]
-[![lazy_static~lib.rs][c~lazy_static~lib.rs~badge]][c~lazy_static~lib.rs]
+[![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}}
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-This legacy example uses `lazy_static!` to define a global map initialized at first access. For new code, compare it with the standard library's `LazyLock` above.
+This example uses `std::sync::LazyLock` to define a global map initialized on first access. The map is immutable after initialization, so it does not need a mutex.
 
 ```rust,editable
 {{#include ../../../crates/cats/memory_management/examples/lazy_initialization/lazy_constant.rs:example}}

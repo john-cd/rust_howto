@@ -2,35 +2,30 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Demonstrates the use of the `lazy_static` crate.
+//! Demonstrates a lazily initialized global map with `std::sync::LazyLock`.
 
 use std::collections::HashMap;
+use std::sync::LazyLock;
 
-use lazy_static::lazy_static;
-
-lazy_static! {
 /// Permissions keyed by user name, initialized on first access.
-    static ref PRIVILEGES: HashMap<&'static str, Vec<&'static str>> = {
+static PRIVILEGES: LazyLock<HashMap<&'static str, Vec<&'static str>>> =
+    LazyLock::new(|| {
         let mut map = HashMap::new();
         map.insert("James", vec!["user", "admin"]);
         map.insert("Jim", vec!["user"]);
         map
-    };
-}
+    });
 
 // Example function: display the access privileges for a given name.
 /// Prints the access level of the user `name`.
 fn show_access(name: &str) {
-    // Access the global static:
     let access = PRIVILEGES.get(name);
     println!("{name}: {access:?}");
 }
 
 /// Looks up users in a lazily initialized global map.
 fn main() {
-    let access = PRIVILEGES.get("James");
-    println!("James: {access:?}");
-
+    show_access("James");
     show_access("Jim");
 }
 
@@ -44,9 +39,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the lazy global map contains the configured users.
     #[test]
-    fn test_main() {
-        main();
+    fn lazy_map_contains_configured_users() {
+        assert_eq!(PRIVILEGES.get("James"), Some(&vec!["user", "admin"]));
+        assert_eq!(PRIVILEGES.get("Jim"), Some(&vec!["user"]));
     }
 }
-// [review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939)

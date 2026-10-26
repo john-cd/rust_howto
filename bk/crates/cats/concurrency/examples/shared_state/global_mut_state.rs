@@ -4,20 +4,17 @@
 // ANCHOR: example
 //! Demonstrates the use of a global mutable state protected by a `Mutex`.
 //!
-//! This example uses `lazy_static` to initialize a global `Mutex` containing a
-//! `Vec<String>`.
+//! `LazyLock` initializes a global `Mutex` containing a `Vec<String>` once.
 
+use std::sync::LazyLock;
 use std::sync::Mutex;
 
 use anyhow::Result;
 use anyhow::anyhow;
-use lazy_static::lazy_static;
 
-lazy_static! {
-    // A global `Mutex` containing a vector of strings representing fruits.
-/// Global fruit list protected by a mutex.
-    static ref FRUIT: Mutex<Vec<String>> = Mutex::new(Vec::new());
-}
+/// Global fruit list initialized once and protected by a mutex.
+static FRUIT: LazyLock<Mutex<Vec<String>>> =
+    LazyLock::new(|| Mutex::new(Vec::new()));
 
 /// Adds `fruit` to the global database.
 fn insert(fruit: &str) -> Result<()> {
@@ -57,10 +54,10 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies inserts are visible through the synchronized global list.
     #[test]
     fn test_main() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
 }
-// [review lazy_constant.rs and lazy_static.rs and global_mut_state.rs](https://github.com/john-cd/rust_howto/issues/939)
