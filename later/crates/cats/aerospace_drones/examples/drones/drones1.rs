@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+// TODO avoid Result<(), String> use anyhow?
 
 // ANCHOR: example
 //! Sending commands to a Tello drone.
@@ -20,7 +21,6 @@ fn main() -> Result<(), String> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), String> {
     main()
 }
@@ -32,6 +32,6 @@ mod tests {
     #[test]
     #[ignore = "requires real drone"]
     fn test_main() {
-        main().unwrap();
+        main().unwrap(); // TODO no unwrap
     }
 }
