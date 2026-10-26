@@ -2,6 +2,8 @@
 
 import "../scripts/build.just"
 
+mod bash 'scripts/bash'
+
 set shell := ["bash", "-uc"]
 
 # Set shell for Windows OSs:
@@ -133,17 +135,10 @@ mod wikilinks 'scripts/wikilinks'
 ## ---- CLEAN ------------------------------------------
 
 # Clean Cargo's `target` and mdbook's `book` directories
-@clean: && _clean
+@clean:
+    just --justfile "{{ source_directory() }}/scripts/bash/mod.just" clean-doctest-cache
     cargo clean
     mdbook clean
-
-[unix]
-@_clean:
-    rm --recursive --force ./doctest_cache/
-
-[windows]
-@_clean:
-    if ( Test-Path -Path .doctest_cache) { rmdir /s /q .doctest_cache }
 
 ## ---- PRE-PUSH -----------------------------------
 # Prepare for git push: spell sortrefs fmtall clean clippyall testall _builddocall buildbook

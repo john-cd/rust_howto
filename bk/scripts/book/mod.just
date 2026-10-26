@@ -15,18 +15,10 @@ _default:
 alias bb := buildbook
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
-@buildbook: _release_mbdbook-scrub refdefs-check _generate-index-category _mdbook-build-book && _sitemap _copystatic
-
-# Generate the book's HTML / JS
-[unix]
-@_mdbook-build-book: _install-mdbook-indexing
-    echo "Build book in {{ root }}"
-    cd {{ quote(root) }}; {{ quote(source_directory() + "/build_book.sh") }} {{ quote(root) }}
-
-[windows]
-@_mdbook-build-book: _install-mdbook-indexing
-    echo "Build book in {{ root }}"
-    Set-Location -LiteralPath {{ quote(root) }}; mdbook build {{ quote(root) }}
+@buildbook: _release_mbdbook-scrub _install-mdbook-indexing refdefs-check _generate-index-category
+    just --justfile "{{ source_directory() }}/../bash/mod.just" mdbook-build
+    just --justfile "{{ source_directory() }}/../bash/mod.just" sitemap
+    just --justfile "{{ source_directory() }}/../bash/mod.just" copystatic
 
 # Merge missing dependency references into the curated crate reference file.
 [unix]
@@ -52,11 +44,6 @@ alias bb := buildbook
 # Install the pinned word-index preprocessor when a developer renders outside CI.
 mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
 
-[unix]
-@_install-mdbook-indexing:
-    cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing
-
-[windows]
 @_install-mdbook-indexing:
     cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing
 
@@ -112,28 +99,6 @@ mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
     pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/generate_alphabetical_index.ps1") }} -BookRoot {{ quote(root) }} -ToolsRoot {{ quote(root + "/../tools") }}
 
 # [link crates to published recipes](https://github.com/john-cd/rust_howto/issues/27)
-
-# Add static assets to book output
-[unix]
-@_copystatic:
-    echo "Copy static files"
-    cp {{ quote(root + "/static") }}/*.* {{ quote(root + "/book/html") }}/
-
-[windows]
-@_copystatic:
-    echo "Copy static files"
-    Copy-Item -Path {{ quote(root + "/static/*.*") }} -Destination {{ quote(root + "/book/html") }}
-
-# Generate the sitemap.xml file
-[unix]
-@_sitemap:
-    echo "Generate the sitemap"
-    cd {{ quote(root) }} && mdbook-utils sitemap
-
-[windows]
-@_sitemap:
-    echo "Generate the sitemap"
-    Set-Location -LiteralPath {{ quote(root) }}; mdbook-utils sitemap
 
 # Build / release the tools, incl. mdbook-scrub preprocessor, if needed
 [unix]
