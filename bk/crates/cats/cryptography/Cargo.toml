@@ -73,6 +73,11 @@ path = "examples/aead/main.rs"
 test = true
 
 [[example]]
+name = "encryption"
+path = "examples/encryption/main.rs"
+test = true
+
+[[example]]
 name = "certs"
 path = "examples/certs/main.rs"
 test = true

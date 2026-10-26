@@ -4,7 +4,23 @@
 
 {{#include encryption.incl.md}}
 
-Encryption transforms readable data (plaintext) into an unreadable format (ciphertext) to protect its confidentiality. Decryption reverses this process, restoring the original plaintext from the ciphertext using a secret key.
+Use symmetric authenticated encryption to protect application data. The shared key encrypts and authenticates a message; the nonce must follow the algorithm's requirements and must not be reused with the same key for AES-GCM or ChaCha20-Poly1305. Public-key algorithms are generally used to establish or wrap keys rather than encrypt large messages directly. Authentication failure must be treated as an error, and unauthenticated plaintext must not be used.
+
+## AES-256-GCM {#aes-256-gcm}
+
+[`aes-gcm`][c~aes-gcm~docs]↗ provides AES-GCM authenticated encryption. The example generates a key and nonce from the operating system's random source, encrypts and decrypts a message, and tests that modified ciphertext is rejected.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/encryption/aes_gcm.rs:example}}
+```
+
+## ChaCha20-Poly1305 {#chacha20-poly1305}
+
+[`chacha20poly1305`][c~chacha20poly1305~docs]↗ provides ChaCha20-Poly1305 authenticated encryption. The example verifies a round trip and confirms that modified tags and associated data fail authentication.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/encryption/chacha20poly1305.rs:example}}
+```
 
 ## Use the RSA Algorithm {#rsa}
 
@@ -26,11 +42,10 @@ RSA (Rivest-Shamir-Adleman) is one of the most widely used public-key cryptosyst
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[aead | Authenticated encryption and associated data]].
+- [[password_hashing | Password hashing]].
+- [[signature | Digital signatures]].
+- [Cryptography category](index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[encryption: expand](https://github.com/john-cd/rust_howto/issues/272)
-</div>

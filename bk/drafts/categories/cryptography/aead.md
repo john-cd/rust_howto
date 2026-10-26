@@ -8,7 +8,7 @@ Authenticated encryption combines confidentiality with an integrity check. AEAD 
 
 An AEAD operation takes a key, nonce, plaintext, and AAD. Encryption returns ciphertext and an authentication tag (often packaged together); decryption succeeds only when the computed tag matches. Changing the ciphertext, AAD, key, or nonce will normally make verification fail. Do not use decrypted bytes unless the library reports successful authentication.
 
-Typical uses include protecting records in a network protocol, encrypting file or database contents, and authenticating visible metadata such as a record type or version. In each case, the application must define how keys and nonces are managed and how AAD is encoded. The examples below demonstrate library calls; the fixed nonce in the AES examples is for one-message demonstrations only and must not be reused with the same key.
+Typical uses include protecting records in a network protocol, encrypting file or database contents, and authenticating visible metadata such as a record type or version. In each case, the application must define how keys and nonces are managed and how AAD is encoded. The AES-GCM and ChaCha20-Poly1305 recipes in the [encryption chapter](encryption.md) use a fresh operating-system nonce for each demonstration; production protocols still need a nonce-allocation strategy across every writer that shares a key.
 
 ## Safe AEAD Use {#safe-use .skip}
 
@@ -45,9 +45,7 @@ AES-GCM-SIV (Advanced [Encryption][p~encryption] Standard - Galois/Counter Mode 
 
 [`aes-gcm`][c~aes-gcm~docs]↗{{hi:aes-gcm}} is a pure Rust implementation of the AES-GCM (Galois/Counter Mode) Authenticated Encryption with Associated Data (AEAD) Cipher with optional architecture-specific hardware acceleration.
 
-```rust,editable
-{{#include ../../../crates/cats/cryptography/examples/aead/aes_gcm.rs:example}}
-```
+For a complete AES-GCM round trip and tampering test, see the [AES-256-GCM recipe](encryption.md#aes-256-gcm).
 
 ## ChaCha20Poly1305 {#chacha20poly1305}
 
@@ -55,9 +53,7 @@ AES-GCM-SIV (Advanced [Encryption][p~encryption] Standard - Galois/Counter Mode 
 
 [`chacha20poly1305`][c~chacha20poly1305~docs]↗{{hi:chacha20poly1305}} is a pure Rust implementation of the ChaCha20Poly1305 Authenticated Encryption with Additional Data Cipher (RFC 8439) with optional architecture-specific hardware acceleration. Also contains implementations of the XChaCha20Poly1305 extended nonce variant of ChaCha20Poly1305, and the reduced-round ChaCha8Poly1305 and ChaCha12Poly1305 lightweight variants.
 
-```rust,editable
-{{#include ../../../crates/cats/cryptography/examples/aead/chacha20poly1305.rs:example}}
-```
+For a complete ChaCha20-Poly1305 round trip and tampering test, see the [ChaCha20-Poly1305 recipe](encryption.md#chacha20-poly1305).
 
 For more [algorithms][p~algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-gcm-siv}}, aes-gcm{{hi:aes-gcm}}, chacha20poly1305{{hi:chacha20poly1305}}.
 
