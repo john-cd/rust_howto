@@ -13078,7 +13078,7 @@ dependencies = [
  "swc_common 21.0.2",
  "swc_ecma_ast 23.0.1",
  "swc_ecma_parser 39.1.1",
- "syn 2.0.119",
+ "syn 3.0.9",
  "tl",
  "toml 1.1.8+spec-1.1.0",
  "toml_edit 0.25.17+spec-1.1.0",
