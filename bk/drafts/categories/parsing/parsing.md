@@ -51,6 +51,8 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 {{#include ../../../crates/cats/parsing/examples/parsing/tree_sitter.rs:example}}
 ```
 
+For editor-style token colors, see [[syntax_highlighting | Syntax Highlighting]].
+
 ## Other Notable Crates {#other-notable-crates .skip}
 
 - [`combine`][c~combine~docs]↗{{hi:combine}} and [`chumsky`][c~chumsky~docs]↗{{hi:chumsky}} are parser-combinator libraries; compare their error and recovery APIs when diagnostics are important.

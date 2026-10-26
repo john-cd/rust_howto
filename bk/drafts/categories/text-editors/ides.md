@@ -64,6 +64,7 @@
 
 - [[debugging | Debugging]].
 - [[development_environment_setup | Development Environment Setup]].
+- [[syntax_highlighting | Syntax Highlighting]].
 - [[cargo | Cargo]].
 
 {{#include refs.incl.md}}

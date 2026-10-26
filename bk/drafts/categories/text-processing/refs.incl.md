@@ -37,3 +37,4 @@
 [ex~text-processing~word-boundaries]: text_analysis.md#word-boundaries
 [ex~text-processing~syntect]: syntax_highlighting.md#syntect
 [ex~text-processing~tree-sitter-spans]: syntax_highlighting.md#tree-sitter-spans
+[tree-sitter-json~crates.io]: https://crates.io/crates/tree-sitter-json

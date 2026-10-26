@@ -9638,6 +9638,9 @@
 [c~transforms~lib.rs~badge]: https://img.shields.io/badge/lib.rs-transforms-yellow
 [c~transforms~repo]: https://github.com/deniz-hofmeister/transforms
 [c~transforms~repo~badge]: https://img.shields.io/badge/transforms-steelblue?logo=github
+[c~tree-sitter-json~crates.io]: https://crates.io/crates/tree-sitter-json
+[c~tree-sitter-json~docs]: https://docs.rs/tree-sitter-json
+[c~tree-sitter-json~repo]: https://github.com/tree-sitter/tree-sitter-json
 [c~tree-sitter-rust~crates.io]: https://crates.io/crates/tree-sitter-rust
 [c~tree-sitter-rust~crates.io~badge]: https://img.shields.io/badge/crates.io-tree--sitter--rust-crimson
 [c~tree-sitter-rust~docs]: https://docs.rs/tree-sitter-rust

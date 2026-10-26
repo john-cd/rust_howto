@@ -4,7 +4,7 @@
 
 {{#include syntax_highlighting.incl.md}}
 
-TextMate grammars (`syntect`) and real parse trees (`tree-sitter`) are the two common approaches to highlighting code.
+TextMate grammars (`syntect`) and real parse trees (`tree-sitter`) are two approaches to highlighting code. Tree-sitter grammars are language-specific, so the example below uses [`tree-sitter-json`][tree-sitter-json~crates.io] to classify JSON keys and values by their parsed node kinds.
 
 ## Highlight Code with `syntect` {#syntect}
 
@@ -23,7 +23,7 @@ TextMate grammars (`syntect`) and real parse trees (`tree-sitter`) are the two c
 [`tree-sitter`][c~tree-sitter~docs]↗{{hi:tree-sitter}} builds a concrete syntax tree, so a highlighter can classify tokens by their role (a string literal, a number, a keyword) instead of matching regular expressions. The example walks the tree and collects a byte range per class. After an edit, describe the change with `Tree::edit` and pass the old tree to the next `parse` call: Tree-sitter reuses unchanged subtrees, which keeps highlighting fast in an editor. For production use, see the `tree-sitter-highlight` crate, which runs the grammar's `highlights.scm` query. Grammars are separate crates, such as `tree-sitter-rust`.
 
 ```rust,editable
-{{#include ../../../crates/cats/parsing/examples/parsing/tree_sitter_spans.rs:example}}
+{{#include ../../../crates/cats/text_processing/examples/text_analysis/tree_sitter_json_spans.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}
