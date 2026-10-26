@@ -39,24 +39,39 @@ const RULES: &str = r#"{
   ]
 }"#;
 
-fn main() -> anyhow::Result<()> {
-    let content: DecisionContent = serde_json::from_str(RULES)?;
-    let engine = DecisionEngine::default();
-    let decision = engine.create_decision(content.into())?;
+/// Evaluates one context and rejects missing inputs or an unmatched rule.
+///
+/// # Errors
+///
+/// Returns an error when a required input is absent, engine evaluation fails,
+/// or the decision table produces no preferred account.
+fn evaluate(context: serde_json::Value) -> anyhow::Result<serde_json::Value> {
+    for field in ["accountType", "assetClass"] {
+        if context.get(field).is_none() {
+            anyhow::bail!("missing required input field `{field}`");
+        }
+    }
 
-    // Evaluation is async.
+    let content: DecisionContent = serde_json::from_str(RULES)?;
+    let decision = DecisionEngine::default().create_decision(content.into())?;
     let runtime = tokio::runtime::Builder::new_current_thread()
         .enable_all()
         .build()?;
-    // Convert the result back to plain JSON.
-    let evaluate =
-        |context: serde_json::Value| -> anyhow::Result<serde_json::Value> {
-            let response = runtime
-                .block_on(decision.evaluate(context.into()))
-                .map_err(|e| anyhow::anyhow!("{e}"))?;
-            Ok(response.result.to_value())
-        };
+    let response = runtime
+        .block_on(decision.evaluate(context.into()))
+        .map_err(|error| {
+            anyhow::anyhow!("decision evaluation failed: {error}")
+        })?;
+    let result = response.result.to_value();
+    if result.get("preferred").is_none() {
+        anyhow::bail!("no decision-table rule matched the supplied inputs");
+    }
 
+    Ok(result)
+}
+
+/// Demonstrates successful matches and clear errors for invalid inputs.
+fn main() -> anyhow::Result<()> {
     // Rule `r1` matches first.
     let result =
         evaluate(json!({ "accountType": "tfsa", "assetClass": "bond" }))?;
@@ -68,17 +83,27 @@ fn main() -> anyhow::Result<()> {
         evaluate(json!({ "accountType": "margin", "assetClass": "bond" }))?;
     assert_eq!(result["preferred"], "taxable");
 
-    // No rule matches: the table produces no output rather than an error.
-    let result =
-        evaluate(json!({ "accountType": "margin", "assetClass": "stock" }))?;
-    println!("no match: {result}");
-    assert!(result.get("preferred").is_none());
+    // Missing required inputs are rejected before evaluation.
+    let missing_input_error = evaluate(json!({ "assetClass": "bond" }))
+        .expect_err("accountType is required");
+    assert!(
+        missing_input_error
+            .to_string()
+            .contains("missing required input field `accountType`")
+    );
+    println!("missing field: {missing_input_error}");
 
-    // A missing input field is not an error either: the cell cannot match a
-    // specific value, but an empty cell still does, so `r2` applies.
-    let result = evaluate(json!({ "assetClass": "bond" }))?;
-    println!("missing field: {result}");
-    assert_eq!(result["preferred"], "taxable");
+    // No matching row becomes an explicit domain error.
+    let no_match_error = evaluate(json!({
+        "accountType": "margin",
+        "assetClass": "stock",
+    }))
+    .expect_err("a missing preferred account should be rejected");
+    assert_eq!(
+        no_match_error.to_string(),
+        "no decision-table rule matched the supplied inputs"
+    );
+    println!("no match: {no_match_error}");
     Ok(())
 }
 // ANCHOR_END: example
@@ -92,8 +117,37 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that an absent account type produces an actionable error.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn missing_account_type_is_rejected() {
+        let error = evaluate(json!({ "assetClass": "bond" }))
+            .expect_err("accountType is required");
+
+        assert!(
+            error
+                .to_string()
+                .contains("missing required input field `accountType`")
+        );
+    }
+
+    /// Verifies that no matching row produces a decision-table error.
+    #[test]
+    fn no_matching_rule_is_reported() {
+        let error = evaluate(json!({
+            "accountType": "margin",
+            "assetClass": "stock",
+        }))
+        .expect_err("the decision table has no matching row");
+
+        assert_eq!(
+            error.to_string(),
+            "no decision-table rule matched the supplied inputs"
+        );
+    }
+
+    /// Verifies the example's successful decision-table scenarios.
+    #[test]
+    fn main_succeeds_with_valid_inputs() -> anyhow::Result<()> {
         main()
     }
 }
