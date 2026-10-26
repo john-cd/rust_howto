@@ -89,6 +89,12 @@ rustup component add rustfmt --toolchain $rustfmtToolchain
 
 > Note: On Windows, you may also need the [Microsoft C++ Build Tools][msvc~website]↗{{hi:MSVC}} or the Visual Studio C++ workload for compiling some crates.
 
+### Native Windows and book recipe support {#windows-book-recipes}
+
+The book workspaces and many `just` recipes run natively on Windows. The root `bk/justfile` uses PowerShell 7. Some imported modules use PowerShell, while others launch Git Bash explicitly; each module declares its own Windows shell. Recipes marked `[unix]` are unavailable on Windows, and a `[windows]` recipe provides the Windows implementation. The `bk/scripts/README.md` support table records the current module boundaries.
+
+The pinned `just` version is defined by `JUST_VERSION` in `.devcontainer/.env`; use the repository's setup script or install that version explicitly. From `bk/`, `just bb`, `just s`, `just spell`, and `just lnk <pattern>` are available on Windows. The faster `just q` preview also has a Windows recipe and requires Git Bash. `just indices` exposes the Windows crate-index commands; the Bash-based index generators remain Unix-only. Native Windows API examples and tests still need a Windows host, and Linux-only code paths need Linux with their system dependencies.
+
 ## Format Book Markdown {#format-book-markdown}
 
 Install [`dprint`][dprint~website] and use the `mdfmt` recipes from the `bk` directory to format or check book Markdown. The repository pins the Markdown plugin in `dprint.json` and retains authored line wrapping, so the formatter preserves long tables, mdBook directives, heading anchors, and fenced code examples.

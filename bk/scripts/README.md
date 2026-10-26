@@ -10,22 +10,22 @@ Use `just` to list root recipes and modules, then `just <module>` to list a modu
 
 | Module | Windows support | Unix support |
 | --- | --- | --- |
-| `anchors`, `chapters`, `crates`, `examples`, `includes`, `titles`, `toc`, `urls`, `wikilinks` | Listing only; processing recipes are gated as Unix-only Bash/tooling commands. | All listed processing recipes. |
-| `book` | Full build, `refdefs-generate`, `refdefs-check`, category/alphabetical index generation, static-file copy, sitemap, and `serve`. `quick` prints an unsupported-platform error. | Full build and serve recipes, plus the faster `quick` preview. |
-| `code` | Format, build, Clippy, nextest, doctests, package run, and temp cleanup. Heavy tests are gated as Unix-only. | Same, including heavy tests that start external services. |
+| `anchors`, `chapters`, `crates`, `examples`, `includes`, `titles`, `toc`, `urls`, `wikilinks` | Their listed processing recipes have Windows implementations. Several use Git Bash; see each module's `mod.just`. | Their listed processing recipes. |
+| `book` | Full build, `refdefs-generate`, `refdefs-check`, category/alphabetical index generation, static-file copy, sitemap, `serve`, and `quick`. `quick` runs its Bash preview through Git Bash. | Full build and serve recipes, plus the faster `quick` preview. |
+| `code` | Format, build, Clippy, nextest, doctests, package run, and temp cleanup. `heavy_test` and `heavytestall` are Unix-only. | Same, including heavy tests that start external services. |
 | `deps` | Cargo update, crate information, and cargo-deny checks. | Same. |
 | `docker` | `push_dev` only; it requires Docker credentials and publishes an image. | Docker image push and service-list recipes. |
-| `docs` | Listing only; documentation preview uses Unix shell/server commands. | Build and serve package or workspace documentation. |
-| `gh` | `login` and `issue` use the GitHub CLI. Bulk issue creation and refresh are gated as Unix-only. | All listed recipes. |
+| `docs` | The `doc` and `docall` preview recipes return an explicit Unix-only error. | Build and serve package or workspace documentation. |
+| `gh` | All listed recipes run through Git Bash and use the GitHub CLI. | All listed recipes. |
 | `indices` | `crate_indices` and `crate_page` use the built helper binary. | Those recipes and the Bash-based index/reference generators. |
-| `links` | `get` returns an explicit unsupported-platform error; link scanning and editing recipes are gated as Unix-only. | Link insertion, cross-linking, URL suggestions, inline-link conversion, and reference lookup. |
+| `links` | Link insertion, cross-linking, URL suggestions, inline-link conversion, and reference lookup run through Git Bash. | Same. |
 | `precommit` | Fix, setup, Git Town configuration, and the native Python installer. | Fix, setup, Git Town configuration, and the Unix installer. |
 | `recipes` | Recipe table fixer runs with Python. | Recipe table fixer runs with Python. |
 | `refdefs` | Sort reference files with PowerShell. Other collection and validation scripts are Unix-only. | Sort, check, collect, and relabel recipes. |
-| `spelling` | `spell` runs the pinned Typos configuration over book, draft, and future Markdown. `spell-aspell` and `aspell-add-word` retain the optional Unix-only Aspell workflow. | Same Typos check, plus the optional Aspell check and dictionary update recipes. |
+| `spelling` | `spell` runs the pinned Typos configuration over book, draft, and future Markdown. The optional Aspell check and dictionary recipes run through Git Bash. | Same Typos and Aspell recipes. |
 | `utils` | `mdbook-utils` and `templ` helper commands. | Same. |
 
-The full book build and normal `serve` recipe ensure the pinned `mdbook-indexing` preprocessor is installed. `quick` is an intentionally reduced Unix preview that skips preprocessors and other full-build checks.
+The full book build and normal `serve` recipe ensure the pinned `mdbook-indexing` preprocessor is installed. `quick` is an intentionally reduced preview that skips preprocessors and other full-build checks; on Windows it requires Git Bash.
 
 ## Contributor commands
 
