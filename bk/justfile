@@ -6,6 +6,8 @@ mod bash 'scripts/bash'
 
 set shell := ["bash", "-uc"]
 
+# Windows recipes keep native paths in PowerShell; POSIX recipes are Unix-only.
+# The sole Windows-to-forward-slash normalization is for SCCACHE_BASEDIRS.
 # Set shell for Windows OSs:
 # PowerShell Core has some of the Unix shell skills we need, such as || and &&
 
@@ -85,15 +87,15 @@ q:
 
 # Format one book Markdown file or directory with dprint
 mdfmt path:
-  dprint fmt {{path}}
+    dprint fmt {{ path }}
 
 # Check one book Markdown file or directory with dprint
 mdfmt-check path:
-  dprint check {{path}}
+    dprint check {{ path }}
 
 # Lint book, draft, and future Markdown with the existing markdownlint rules
 lint-md:
-  rumdl check --config .markdownlint.yaml --deny-config-warnings --no-cache --exclude '**/refs/dependency-refs.md' src drafts ../later/src
+    rumdl check --config .markdownlint.yaml --deny-config-warnings --no-cache --exclude '**/refs/dependency-refs.md' src drafts ../later/src
 
 # Alias for book serve
 s:
@@ -139,6 +141,16 @@ mod wikilinks 'scripts/wikilinks'
     just --justfile "{{ source_directory() }}/scripts/bash/mod.just" clean-doctest-cache
     cargo clean
     mdbook clean
+
+# Verify Windows path quoting and the SCCACHE_BASEDIRS separator/normalization.
+[windows]
+path-boundary-test:
+    & pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/scripts/tests/test-path-boundaries.ps1") }}
+
+# Internal target used by the path-boundary test to exercise just's PowerShell quoting.
+[windows]
+_path-boundary-probe value:
+    & pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/scripts/tests/path-boundary-probe.ps1") }} -Value {{ quote(value) }}
 
 ## ---- PRE-PUSH -----------------------------------
 # Prepare for git push: spell sortrefs fmtall clean clippyall testall _builddocall buildbook
