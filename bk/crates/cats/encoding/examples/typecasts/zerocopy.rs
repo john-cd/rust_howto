@@ -226,7 +226,6 @@ fn main() -> anyhow::Result<()> {
 // Examples adapted from <https://docs.rs/zerocopy/>
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

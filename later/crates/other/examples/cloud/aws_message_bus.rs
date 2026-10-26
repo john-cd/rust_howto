@@ -265,7 +265,6 @@ pub async fn demo() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<()> {
     tokio::runtime::Builder::new_current_thread()
         .build()?

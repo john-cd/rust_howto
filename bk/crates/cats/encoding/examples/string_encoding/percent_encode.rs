@@ -39,7 +39,6 @@ fn main() -> Result<(), Utf8Error> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), Utf8Error> {
     main()
 }

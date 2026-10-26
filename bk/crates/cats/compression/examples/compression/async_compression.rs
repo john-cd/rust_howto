@@ -107,8 +107,6 @@ async fn decompress_file_async(
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 ///
 /// Returns an error if compression or decompression fails.

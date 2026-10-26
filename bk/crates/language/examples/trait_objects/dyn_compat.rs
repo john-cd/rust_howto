@@ -181,7 +181,6 @@ fn main() {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

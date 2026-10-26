@@ -76,8 +76,6 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 ///
 /// Returns an error if serialization or deserialization fails.

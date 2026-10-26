@@ -42,7 +42,6 @@ fn main() -> trading_calendar::Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> trading_calendar::Result<()> {
     main()
 }

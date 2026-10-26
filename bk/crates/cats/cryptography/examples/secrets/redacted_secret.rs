@@ -78,7 +78,6 @@ fn main() -> Result<(), Infallible> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     let _ = main();
 }

@@ -105,7 +105,6 @@ fn main() -> Result<(), GeocodingError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), GeocodingError> {
     main()
 }

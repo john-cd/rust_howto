@@ -117,7 +117,6 @@ impl Profiler for NullProfiler {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

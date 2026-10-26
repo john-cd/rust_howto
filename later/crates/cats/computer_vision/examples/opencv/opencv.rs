@@ -89,7 +89,6 @@ fn process_image(
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
 }

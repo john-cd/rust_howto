@@ -1,5 +1,4 @@
 //! Runs the AES-GCM and ChaCha20-Poly1305 encryption examples.
-//!
 
 mod aes_gcm;
 mod chacha20poly1305;

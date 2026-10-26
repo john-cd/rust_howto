@@ -63,7 +63,6 @@ impl eframe::App for MyApp {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), eframe::Error> {
     main()
 }

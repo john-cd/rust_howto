@@ -102,7 +102,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example. The playback is not run.
 pub fn run() {
     main();
 }

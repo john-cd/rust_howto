@@ -30,7 +30,6 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), Error> {
     main()
 }

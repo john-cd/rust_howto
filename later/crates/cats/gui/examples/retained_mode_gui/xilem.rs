@@ -48,7 +48,6 @@ fn main() -> Result<(), winit::error::EventLoopError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), winit::error::EventLoopError> {
     run_app()
 }

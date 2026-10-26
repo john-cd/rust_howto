@@ -68,7 +68,6 @@ fn main() -> nix::Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> nix::Result<()> {
     main()
 }

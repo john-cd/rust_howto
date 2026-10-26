@@ -54,7 +54,6 @@ fn main() {
 // Adapted from <https://doc.rust-lang.org/book/ch10-02-traits.html>
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

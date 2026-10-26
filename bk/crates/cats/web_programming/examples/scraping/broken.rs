@@ -117,8 +117,6 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 ///
 /// Returns any request, parsing, or link-checking error from the example.

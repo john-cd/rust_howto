@@ -68,7 +68,6 @@ fn main() -> Result<(), MyError> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), MyError> {
     main()
 }

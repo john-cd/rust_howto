@@ -24,7 +24,6 @@ fn main() {
     println!("Build for wasm32-unknown-unknown to call JavaScript's Date API.");
 }
 
-/// Runs the example.
 pub fn run() {
     main();
 }

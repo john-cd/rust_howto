@@ -2,7 +2,6 @@
 
 #![allow(dead_code)]
 
-/// Runs the example.
 pub fn run() {
     main();
 }

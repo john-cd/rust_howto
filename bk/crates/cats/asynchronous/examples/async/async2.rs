@@ -33,7 +33,6 @@ async fn main() {
 // Example from <https://tokio.rs/tokio/tutorial/hello-tokio>
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

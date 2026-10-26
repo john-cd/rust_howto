@@ -33,7 +33,6 @@ fn main() {
 // Example adapted from <https://docs.rs/sha1/0.11.0/sha1/index.html>.
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

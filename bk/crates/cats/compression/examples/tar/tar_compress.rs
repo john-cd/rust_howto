@@ -53,8 +53,6 @@ fn compress_directory(
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 ///
 /// Returns an I/O error if the sample source or archive cannot be written.

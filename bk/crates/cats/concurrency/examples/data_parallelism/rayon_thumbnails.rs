@@ -80,7 +80,6 @@ fn make_thumbnail(
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

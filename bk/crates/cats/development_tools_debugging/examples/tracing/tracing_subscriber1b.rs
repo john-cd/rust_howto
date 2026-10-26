@@ -57,7 +57,6 @@ fn a_function() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

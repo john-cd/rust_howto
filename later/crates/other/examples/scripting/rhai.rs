@@ -81,7 +81,6 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), Box<EvalAltResult>> {
     main()?;
     Ok(())

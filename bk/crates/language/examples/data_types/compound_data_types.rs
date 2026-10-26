@@ -135,7 +135,6 @@ fn demo_arrays() {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

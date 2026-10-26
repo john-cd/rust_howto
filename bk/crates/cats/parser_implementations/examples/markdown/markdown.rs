@@ -35,7 +35,6 @@ This is a simple paragraph with **bold** and *italic* text.
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

@@ -4,7 +4,6 @@
 
 mod wasm;
 
-/// Runs the example.
 fn main() {
     wasm::run();
 }

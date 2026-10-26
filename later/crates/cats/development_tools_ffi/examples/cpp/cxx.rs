@@ -54,7 +54,6 @@ fn call_cpp(name: &CxxString) {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

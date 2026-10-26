@@ -70,7 +70,6 @@ mod tests {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 #[allow(clippy::main_recursion)]
 #[allow(clippy::items_after_test_module)]
 pub fn run() {

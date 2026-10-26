@@ -57,7 +57,6 @@ async fn consumer(rx: AsyncReceiver<i32>) -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

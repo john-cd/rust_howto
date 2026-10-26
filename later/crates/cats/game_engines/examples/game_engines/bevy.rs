@@ -34,7 +34,6 @@ fn move_system(mut query: Query<'_, '_, &mut Transform>, time: Res<'_, Time>) {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

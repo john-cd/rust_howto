@@ -33,7 +33,6 @@ fn main() -> LuaResult<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> LuaResult<()> {
     main()
 }

@@ -63,7 +63,6 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), aes_gcm_siv::Error> {
     main()
 }

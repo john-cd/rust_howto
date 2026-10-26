@@ -46,8 +46,6 @@ fn main() -> std::io::Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 /// Returns an error if the directory cannot be created or the script cannot be
 /// written.

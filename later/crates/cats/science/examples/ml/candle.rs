@@ -44,7 +44,6 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main().expect("the candle example failed");
 }

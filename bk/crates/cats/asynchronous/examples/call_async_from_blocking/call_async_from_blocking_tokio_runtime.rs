@@ -49,7 +49,6 @@ async fn my_bg_task(i: u64) {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

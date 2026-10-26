@@ -55,7 +55,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
 }

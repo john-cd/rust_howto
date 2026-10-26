@@ -63,7 +63,6 @@ fn main() -> Result<(), baseview::Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), baseview::Error> {
     main()
 }

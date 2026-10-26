@@ -48,8 +48,6 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 ///
 /// Returns any request or HTML parsing error from the example.

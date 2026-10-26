@@ -27,7 +27,6 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

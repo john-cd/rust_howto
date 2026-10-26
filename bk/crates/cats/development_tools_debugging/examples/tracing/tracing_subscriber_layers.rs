@@ -115,7 +115,6 @@ fn per_layer_filtering() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     main()
 }

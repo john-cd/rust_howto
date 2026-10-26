@@ -73,8 +73,6 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 ///
 /// Returns an error if the in-memory engine or any CRUD operation fails.

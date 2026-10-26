@@ -30,7 +30,6 @@ fn fib(n: usize) -> usize {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

@@ -40,8 +40,6 @@ fn main() -> Result<(), &'static str> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 ///
 /// Returns an error if a demonstration date, time, or timestamp is out of

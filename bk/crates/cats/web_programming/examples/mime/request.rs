@@ -58,7 +58,6 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

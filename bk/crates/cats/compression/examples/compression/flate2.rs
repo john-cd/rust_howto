@@ -85,7 +85,6 @@ fn gzip_file_round_trip() -> anyhow::Result<()> {
 }
 // ANCHOR_END: gzip-file
 
-/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()?;
     gzip_file_round_trip()

@@ -132,7 +132,6 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     if let Err(error) = main() {
         eprintln!("libc example failed: {error:#}");

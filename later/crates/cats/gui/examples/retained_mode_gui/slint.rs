@@ -45,7 +45,6 @@ fn connect_counter_increment(app: &App) {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

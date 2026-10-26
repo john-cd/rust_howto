@@ -53,8 +53,6 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 ///
 /// Returns any error from the asynchronous download.

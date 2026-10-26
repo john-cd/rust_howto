@@ -78,7 +78,6 @@ fn main() {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 #[allow(clippy::main_recursion)]
 pub fn run() {
     main();

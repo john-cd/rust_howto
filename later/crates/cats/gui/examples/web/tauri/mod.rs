@@ -61,7 +61,6 @@ pub fn main() {
         .expect("error while running tauri application");
 }
 
-/// Runs the example.
 pub fn run() {
     main();
 }

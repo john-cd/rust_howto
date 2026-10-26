@@ -95,8 +95,6 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-///
 /// # Errors
 ///
 /// Returns an error if PostgreSQL cannot be reached or the sample query fails.

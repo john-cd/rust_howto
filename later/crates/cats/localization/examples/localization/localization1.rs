@@ -48,7 +48,6 @@ fn translate_greeting(locale: &str) -> &'static str {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

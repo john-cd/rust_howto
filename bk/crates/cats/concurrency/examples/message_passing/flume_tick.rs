@@ -82,7 +82,6 @@ fn timeout_on_empty() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

@@ -89,7 +89,6 @@ fn main() {
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() {
     main();
 }

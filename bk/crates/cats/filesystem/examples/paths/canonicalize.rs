@@ -29,7 +29,6 @@ fn main() -> std::io::Result<()> {
 
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> std::io::Result<()> {
     main()
 }

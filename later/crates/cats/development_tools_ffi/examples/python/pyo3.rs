@@ -72,7 +72,6 @@ fn main() -> PyResult<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 pub fn run() -> PyResult<()> {
     main()
 }
