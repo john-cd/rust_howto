@@ -53,7 +53,7 @@ exclude = []
 
 [workspace.dependencies]
 # Rust syntax trees for the programming-language parser examples.
-syn = { version = "2.0", features = ["full"] }
+syn = { version = "3.0.9", features = ["full"] }
 # Isolated temporary files for examples that demonstrate file-based I/O.
 tempfile = "3.27.0"
 

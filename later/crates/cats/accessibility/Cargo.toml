@@ -19,8 +19,8 @@ readme = "README.md"
 autolib = false
 
 [dependencies]
-accesskit = "0.25.1"
-accesskit_winit = "0.34.1"
+accesskit = "0.25.2"
+accesskit_winit = "0.34.2"
 winit = "0.30.13"
 
 [[example]]
