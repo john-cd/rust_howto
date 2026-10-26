@@ -332,6 +332,49 @@ Shared gate update (2026-10-25): on current `develop`, `cd bk && just bb`, `just
 - [#396](https://github.com/john-cd/rust_howto/issues/396) — **P4** — Write the window creation chapter.
 - [#777](https://github.com/john-cd/rust_howto/issues/777) — **P4** — Finish the femtovg example.
 
+### Lists 38–40 — queued for local Codex sessions (third round)
+
+Added 2026-10-26 from the issue groups in [#1955](https://github.com/john-cd/rust_howto/issues/1955) and [#1997](https://github.com/john-cd/rust_howto/issues/1997), using the roadmap and verification criteria in [#1698](https://github.com/john-cd/rust_howto/issues/1698) and [#1886](https://github.com/john-cd/rust_howto/issues/1886). All 30 selected issues were verified open on 2026-10-26; existing GitHub priority labels are shown. They do not duplicate issue IDs in Lists 1–37, and omit `human-review` issues. Use separate worktrees for the three lists. In List 38, coordinate Oracle Instant Client setup for #1021 with the existing List 22 work on #1022. In List 39, #835/#837 share a crate; run its builds sequentially. In List 40, #739/#741/#742/#743 share the procedural-macro-helper crate.
+
+### List 38 — Published examples and Windows build tooling (Codex H)
+
+- [#812](https://github.com/john-cd/rust_howto/issues/812) — **P2** — Finish and locally verify the Pingora reverse-proxy example.
+- [#1021](https://github.com/john-cd/rust_howto/issues/1021) — **P3** — Finish the Oracle example and document its optional Instant Client test.
+- [#705](https://github.com/john-cd/rust_howto/issues/705) — **P3** — Finish the X.509 certificate example.
+- [#822](https://github.com/john-cd/rust_howto/issues/822) — **P3** — Review and test the Windows API example.
+- [#826](https://github.com/john-cd/rust_howto/issues/826) — **P3** — Finish and test the Pest example.
+- [#1102](https://github.com/john-cd/rust_howto/issues/1102) — **P3** — Finish the XML parser example.
+- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior.
+- [#1252](https://github.com/john-cd/rust_howto/issues/1252) — **P3** — Define and test Windows/POSIX path-conversion boundaries.
+- [#1249](https://github.com/john-cd/rust_howto/issues/1249) — **P3** — Document native Windows support and Unix-only recipe boundaries.
+- [#1281](https://github.com/john-cd/rust_howto/issues/1281) — **P3** — Update category-link generation to use landing pages and preprocessor directives.
+
+### List 39 — Repository curation and systems examples (Codex I)
+
+- [#36](https://github.com/john-cd/rust_howto/issues/36) — **P3** — Triage relevant pending Rust Cookbook issues and PRs.
+- [#246](https://github.com/john-cd/rust_howto/issues/246) — **P3** — Review `blessed.rs` recommendations against the book.
+- [#53](https://github.com/john-cd/rust_howto/issues/53) — **P4** — Evaluate whether a slim or Alpine CI image improves the supported builds.
+- [#676](https://github.com/john-cd/rust_howto/issues/676) — **P4** — Finish the AccessKit screen-reader example.
+- [#835](https://github.com/john-cd/rust_howto/issues/835) — **P4** — Finish the Candle machine-learning example.
+- [#837](https://github.com/john-cd/rust_howto/issues/837) — **P4** — Finish the SmartCore machine-learning example.
+- [#845](https://github.com/john-cd/rust_howto/issues/845) — **P4** — Add the Zenoh robotics example.
+- [#880](https://github.com/john-cd/rust_howto/issues/880) — **P4** — Finish the Crux cross-platform example.
+- [#885](https://github.com/john-cd/rust_howto/issues/885) — **P4** — Finish the Polars example.
+- [#1058](https://github.com/john-cd/rust_howto/issues/1058) — **P4** — Replace the obsolete public WebSocket endpoint in the async-tungstenite example.
+
+### List 40 — Code generation and FFI examples (Codex J)
+
+- [#739](https://github.com/john-cd/rust_howto/issues/739) — **P4** — Finish the `darling` procedural-macro helper example.
+- [#741](https://github.com/john-cd/rust_howto/issues/741) — **P4** — Finish the `proc_macro2` helper example.
+- [#742](https://github.com/john-cd/rust_howto/issues/742) — **P4** — Review and expand the `quote` helper example.
+- [#743](https://github.com/john-cd/rust_howto/issues/743) — **P4** — Finish the `syn` procedural-macro helper example.
+- [#744](https://github.com/john-cd/rust_howto/issues/744) — **P4** — Finish the Watt compile-time macro example.
+- [#996](https://github.com/john-cd/rust_howto/issues/996) — **P4** — Fix and finish the Python-to-Rust example.
+- [#1028](https://github.com/john-cd/rust_howto/issues/1028) — **P4** — Finish the Flutter Rust Bridge example without adding a Flutter app to the workspace.
+- [#1029](https://github.com/john-cd/rust_howto/issues/1029) — **P4** — Finish the Java JNI example and its Rust test path.
+- [#1031](https://github.com/john-cd/rust_howto/issues/1031) — **P4** — Finish a distinct Lua userdata example.
+- [#1032](https://github.com/john-cd/rust_howto/issues/1032) — **P4** — Finish the Node N-API example.
+
 ### List AE — Claude chapters and indexes (2026-10-25)
 
 Ten issues from the [#1955 comment](https://github.com/john-cd/rust_howto/issues/1955) done by Claude on branch `codex/list-ae-chapters` (worktree `.worktrees/f/checkout`). None overlap Lists 31–37. Each issue is implemented with tested examples; they stay open until `just bb`, `just spell` and `just refdefs check` pass (the Windows `bk` lockfile and the `aws-lc-sys` build block them).
