@@ -18,7 +18,7 @@ The following example shows how to [parse][p~parse] a [`mime::Mime`][c~mime::Mim
 
 [![mime][c~mime~docs~badge]][c~mime~docs]{{hi:mime}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-The following example guesses a MIME type from the filename extension with [`mime_guess`][c~mime_guess~docs]↗{{hi:mime_guess}}. It returns [`mime::Mime`][c~mime::Mime~docs]↗{{hi:mime::Mime}} and uses `application/octet-stream` when the extension is unknown. This is an extension-based guess; it does not inspect the file's bytes.
+The following example guesses a MIME type from the filename extension with [`mime_guess`][c~mime_guess~docs]↗{{hi:mime_guess}}. It returns [`mime::Mime`][c~mime::Mime~docs]↗{{hi:mime::Mime}} and uses `application/octet-stream` when the extension is unknown. This is an extension-based guess; it does not inspect the file's bytes. The example inserts the result into an HTTP `Content-Type` header.
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/mime/filename.rs:example}}
@@ -43,11 +43,11 @@ Note that the [`reqwest::header`][c~reqwest::header~docs]↗{{hi:reqwest::header
 - [[requests | Make HTTP Requests]].
 - [[filesystem | Filesystem]].
 
-To identify a file from its contents instead of its extension, use a content-sniffing crate such as [`infer`](https://docs.rs/infer/latest/infer/).
+To identify a file from its contents instead of its extension, use a content-sniffing crate such as [`infer`][c~infer~docs]↗.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-This review replaces the hand-written extension match with `mime_guess`, documents that its result comes from the filename, and adds local tests for response `Content-Type` parsing. The live HTTP example is now opt-in.
+  This review replaces the hand-written extension match with `mime_guess`, documents that its result comes from the filename, and adds local tests for response `Content-Type` parsing. The live HTTP example is now opt-in.
 </div>

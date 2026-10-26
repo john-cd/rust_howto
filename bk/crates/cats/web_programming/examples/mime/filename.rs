@@ -4,6 +4,10 @@
 // ANCHOR: example
 //! Finding the MIME type of a file from its name.
 
+use http::header::CONTENT_TYPE;
+use http::header::HeaderMap;
+use http::header::HeaderValue;
+use http::header::InvalidHeaderValue;
 use mime::Mime;
 
 /// Guesses the MIME type from a file name's extension.
@@ -11,19 +15,32 @@ fn find_mimetype(filename: &str) -> Mime {
     mime_guess::from_path(filename).first_or_octet_stream()
 }
 
+/// Inserts a guessed MIME type into an HTTP `Content-Type` header.
+fn set_content_type(
+    filename: &str,
+    headers: &mut HeaderMap,
+) -> Result<(), InvalidHeaderValue> {
+    let mime = find_mimetype(filename);
+    headers.insert(CONTENT_TYPE, HeaderValue::try_from(mime.as_ref())?);
+    Ok(())
+}
+
 /// Prints the MIME type of several file names.
-fn main() {
+fn main() -> Result<(), InvalidHeaderValue> {
     let filenames = ["foobar.jpg", "foo.bar", "foobar.png"];
     for file in filenames {
-        let mime = find_mimetype(file);
-        println!("MIME for {file}: {mime}");
+        let mut headers = HeaderMap::new();
+        set_content_type(file, &mut headers)?;
+        println!("Content-Type for {file}: {}", headers[CONTENT_TYPE]);
     }
+    Ok(())
 }
 
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the example.
+pub fn run() -> Result<(), InvalidHeaderValue> {
+    main()
 }
 
 #[cfg(test)]
@@ -46,5 +63,15 @@ mod tests {
             find_mimetype("data.unknown-extension"),
             mime::APPLICATION_OCTET_STREAM
         );
+    }
+
+    /// Verifies the guessed MIME type can be used as an HTTP response header.
+    #[test]
+    fn sets_content_type_header() -> Result<(), InvalidHeaderValue> {
+        let mut headers = HeaderMap::new();
+        set_content_type("report.PDF", &mut headers)?;
+
+        assert_eq!(headers[CONTENT_TYPE], "application/pdf");
+        Ok(())
     }
 }
