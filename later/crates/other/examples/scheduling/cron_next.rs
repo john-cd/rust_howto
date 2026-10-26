@@ -30,18 +30,18 @@ fn next_times(
     expression: &str,
     after: DateTime<Utc>,
     n: usize,
-) -> Result<Vec<DateTime<Utc>>, cron::error::Error> {
+) -> anyhow::Result<Vec<DateTime<Utc>>> {
     let schedule = Schedule::from_str(&normalize(expression))?;
     Ok(schedule.after(&after).take(n).collect())
 }
 
 /// Lists the next three runs of "09:30 on weekdays" after a fixed instant.
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() -> anyhow::Result<()> {
     // Friday 2026-10-23, 10:00 UTC: today's 09:30 has passed.
     let now = Utc
         .with_ymd_and_hms(2026, 10, 23, 10, 0, 0)
         .single()
-        .ok_or("invalid date")?;
+        .ok_or_else(|| anyhow::anyhow!("invalid date"))?;
 
     let times = next_times("0 30 9 * * Mon-Fri *", now, 3)?;
     let expected: Vec<_> = [(2026, 10, 26), (2026, 10, 27), (2026, 10, 28)]
@@ -61,18 +61,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    if let Err(e) = main() {
-        eprintln!("{e}");
-    }
+/// Runs the example.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies deterministic next-fire times and invalid expression handling.
     #[test]
-    fn test_main() -> Result<(), Box<dyn std::error::Error>> {
+    fn computes_expected_weekday_fire_times() -> anyhow::Result<()> {
         main()
     }
 }

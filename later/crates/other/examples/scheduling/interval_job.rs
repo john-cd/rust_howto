@@ -33,6 +33,7 @@ where
     let mut runs = 0;
     loop {
         select! {
+            biased;
             () = token.cancelled() => return runs,
             _ = ticker.tick() => {
                 job().await;
@@ -43,7 +44,7 @@ where
 }
 
 /// Runs a job every 10 s for 35 s: ticks at 0, 10, 20 and 30 s.
-async fn demo() {
+async fn demo() -> anyhow::Result<()> {
     let token = CancellationToken::new();
     let stopper = token.clone();
     tokio::spawn(async move {
@@ -58,7 +59,7 @@ async fn demo() {
     let token = CancellationToken::new();
     let stopper = token.clone();
     tokio::spawn(async move {
-        sleep(Duration::from_secs(100)).await;
+        sleep(Duration::from_secs(124)).await;
         stopper.cancel();
     });
     let origin = tokio::time::Instant::now();
@@ -70,8 +71,9 @@ async fn demo() {
         sleep(Duration::from_secs(25)).await;
     })
     .await;
-    // A tick missed during a run fires as soon as the run ends (so the runs
-    // are back to back); the other missed ticks are skipped. With
+    // A missed tick fires as soon as the run ends; subsequent missed ticks
+    // are skipped. The cancellation becomes ready during the fifth run, and
+    // cancellation has priority over another tick after that run ends. With
     // `MissedTickBehavior::Delay` the next tick is instead one full period
     // after the late one.
     assert_eq!(runs, 5);
@@ -79,31 +81,32 @@ async fn demo() {
         starts.lock().map(|s| s.clone()).ok(),
         Some(vec![0, 25, 50, 75, 100])
     );
+    Ok(())
 }
 
-/// Runs the demonstration on a paused-clock runtime.
-fn main() {
-    match tokio::runtime::Builder::new_current_thread()
+/// Runs the demonstration on a paused-clock runtime and reports setup errors.
+fn main() -> anyhow::Result<()> {
+    let runtime = tokio::runtime::Builder::new_current_thread()
         .enable_time()
         .start_paused(true)
-        .build()
-    {
-        Ok(runtime) => runtime.block_on(demo()),
-        Err(e) => eprintln!("Cannot build the runtime: {e}"),
-    }
+        .build()?;
+    runtime.block_on(demo())
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the example.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[test]
-    fn test_main() {
-        main();
+    /// Exercises the interval and missed-tick behavior using Tokio's paused
+    /// clock.
+    #[tokio::test(start_paused = true)]
+    async fn paused_clock_runs_expected_ticks() -> anyhow::Result<()> {
+        demo().await
     }
 }

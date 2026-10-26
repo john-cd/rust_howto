@@ -28,6 +28,7 @@ struct Clock {
 }
 
 impl Clock {
+    /// Associates an absolute start time with Tokio's pausable monotonic clock.
     fn new(start: DateTime<Utc>) -> Self {
         Self {
             start,
@@ -35,19 +36,20 @@ impl Clock {
         }
     }
 
+    /// Returns the current simulated UTC time.
     fn now(&self) -> DateTime<Utc> {
         self.start + self.origin.elapsed()
     }
 }
 
-/// Runs `job` at every fire time of `schedule` until cancelled. Returns the
-/// fire times at which the job started.
+/// Runs a scheduled job until cancellation and returns its simulated start
+/// times.
 async fn run_cron<F, Fut>(
     schedule: &Schedule,
     clock: &Clock,
     token: CancellationToken,
     mut job: F,
-) -> Vec<DateTime<Utc>>
+) -> anyhow::Result<Vec<DateTime<Utc>>>
 where
     F: FnMut() -> Fut,
     Fut: std::future::Future<Output = ()>,
@@ -55,11 +57,11 @@ where
     let mut started = Vec::new();
     loop {
         let Some(next) = schedule.after(&clock.now()).next() else {
-            return started; // The schedule has ended.
+            return Ok(started); // The schedule has ended.
         };
-        let wait = (next - clock.now()).to_std().unwrap_or(Duration::ZERO);
+        let wait = (next - clock.now()).to_std()?;
         select! {
-            () = token.cancelled() => return started,
+            () = token.cancelled() => return Ok(started),
             () = sleep(wait) => {}
         }
         started.push(next);
@@ -68,12 +70,12 @@ where
 }
 
 /// Runs a "every 10 seconds" schedule, with a job that sometimes overruns.
-async fn demo() -> Result<(), Box<dyn std::error::Error>> {
+async fn demo() -> anyhow::Result<()> {
     let schedule = Schedule::from_str("*/10 * * * * *")?;
     let start = Utc
         .with_ymd_and_hms(2026, 10, 25, 12, 0, 0)
         .single()
-        .ok_or("invalid date")?;
+        .ok_or_else(|| anyhow::anyhow!("invalid date"))?;
     let clock = Clock::new(start);
 
     let token = CancellationToken::new();
@@ -94,7 +96,7 @@ async fn demo() -> Result<(), Box<dyn std::error::Error>> {
             }
         }
     })
-    .await;
+    .await?;
 
     let offsets: Vec<i64> =
         started.iter().map(|t| (*t - start).num_seconds()).collect();
@@ -104,35 +106,29 @@ async fn demo() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-/// Runs the demonstration on a paused-clock runtime.
-fn main() {
-    let runtime = match tokio::runtime::Builder::new_current_thread()
+/// Runs the demonstration on a paused-clock runtime and reports setup errors.
+fn main() -> anyhow::Result<()> {
+    let runtime = tokio::runtime::Builder::new_current_thread()
         .enable_time()
         .start_paused(true)
-        .build()
-    {
-        Ok(runtime) => runtime,
-        Err(e) => {
-            eprintln!("Cannot build the runtime: {e}");
-            return;
-        }
-    };
-    if let Err(e) = runtime.block_on(demo()) {
-        eprintln!("{e}");
-    }
+        .build()?;
+    runtime.block_on(demo())
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the example.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[test]
-    fn test_main() {
-        main();
+    /// Exercises cron wakeups and missed-fire behavior using Tokio's paused
+    /// clock.
+    #[tokio::test(start_paused = true)]
+    async fn cron_loop_skips_missed_fires() -> anyhow::Result<()> {
+        demo().await
     }
 }

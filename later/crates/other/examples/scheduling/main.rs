@@ -31,21 +31,22 @@ enum Commands {
     IntervalJob,
 }
 
-/// Runs the example selected on the command line.
-fn main() {
+/// Runs the example selected on the command line and propagates failures.
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::CronLoop => {
-                cron_loop::run();
+                cron_loop::run()?;
             }
             Commands::CronNext => {
-                cron_next::run();
+                cron_next::run()?;
             }
             Commands::IntervalJob => {
-                interval_job::run();
+                interval_job::run()?;
             }
         }
     }
+    Ok(())
 }
