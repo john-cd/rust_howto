@@ -1,5 +1,3 @@
-<!-- TODO Reviewed ??-??-2026 -->
-
 # Tools
 
 This workspace contains tools written in Rust, which you may use to manage the book.
@@ -8,3 +6,5 @@ This workspace contains tools written in Rust, which you may use to manage the b
 - `crate_indices` creates the `crates by category` and `crates (alphabetical)` pages.
 - `templ` generate markdown links and reference definitions. The outputs can be copy-pasted into the book's markdown where needed.
 - `tool_lib` is a Rust library shared between all Rust CLI tools.
+
+<!-- TODO Reviewed ??-??-2026 -->
