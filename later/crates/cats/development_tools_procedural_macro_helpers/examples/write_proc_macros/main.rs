@@ -49,16 +49,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     match cli.command {
         Commands::Darling => {
-            darling::run();
+            darling::run()?;
         }
         Commands::Paste => {
             paste::run();
         }
         Commands::ProcMacro2 => {
-            proc_macro2::run();
+            proc_macro2::run()?;
         }
         Commands::Quote => {
-            quote::run();
+            quote::run()?;
         }
         Commands::Syn => {
             syn::run()?;
