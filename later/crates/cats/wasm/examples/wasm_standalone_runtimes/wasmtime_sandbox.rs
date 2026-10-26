@@ -111,6 +111,7 @@ impl Sandbox {
     }
 }
 
+/// Demonstrates normal host calls, fuel exhaustion, and memory limits.
 fn main() -> Result<()> {
     let mut sandbox = Sandbox::new(SandboxConfig {
         fuel: 10_000,
@@ -121,7 +122,10 @@ fn main() -> Result<()> {
     assert_eq!(sandbox.call(WAT, "run", 20)?, 41);
 
     // An infinite loop runs out of fuel instead of hanging the host.
-    let err = sandbox.call_unit(WAT, "spin").unwrap_err();
+    let err = match sandbox.call_unit(WAT, "spin") {
+        Ok(()) => anyhow::bail!("the infinite loop unexpectedly completed"),
+        Err(error) => error,
+    };
     assert_eq!(err.downcast_ref::<Trap>(), Some(&Trap::OutOfFuel));
 
     // Growing past the limit is refused: `memory.grow` returns -1.
@@ -140,11 +144,52 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Exercises the complete sandbox example.
     #[test]
     fn test_main() -> Result<()> {
         main()
     }
 
+    /// Confirms that the host function is the capability used by the guest.
+    #[test]
+    fn host_function_returns_guest_result() -> Result<()> {
+        let mut sandbox = Sandbox::new(SandboxConfig {
+            fuel: 10_000,
+            max_memory_bytes: 0x0001_0000,
+        })?;
+        assert_eq!(sandbox.call(WAT, "run", 20)?, 41);
+        Ok(())
+    }
+
+    /// Confirms that an infinite guest loop traps when its fuel budget expires.
+    #[test]
+    fn fuel_budget_traps_infinite_loop() -> Result<()> {
+        let mut sandbox = Sandbox::new(SandboxConfig {
+            fuel: 10_000,
+            max_memory_bytes: 0x0001_0000,
+        })?;
+        let error = match sandbox.call_unit(WAT, "spin") {
+            Ok(()) => anyhow::bail!("the infinite loop unexpectedly completed"),
+            Err(error) => error,
+        };
+        assert_eq!(error.downcast_ref::<Trap>(), Some(&Trap::OutOfFuel));
+        Ok(())
+    }
+
+    /// Confirms that memory growth beyond the store limit fails without
+    /// trapping.
+    #[test]
+    fn memory_growth_is_limited() -> Result<()> {
+        let mut sandbox = Sandbox::new(SandboxConfig {
+            fuel: 10_000,
+            max_memory_bytes: 2 * 0x0001_0000,
+        })?;
+        assert_eq!(sandbox.call(WAT, "grow", 1)?, 1);
+        assert_eq!(sandbox.call(WAT, "grow", 5)?, -1);
+        Ok(())
+    }
+
+    /// Confirms that identical source reuses the compiled module.
     #[test]
     fn modules_are_cached_by_content() -> Result<()> {
         let mut sandbox = Sandbox::new(SandboxConfig {
