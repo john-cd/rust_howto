@@ -1,9 +1,10 @@
 // TODO Reviewed ??-??-2026
+// TODO explain this is last resort
+
+#![expect(dead_code, reason = "scratch example with unused items")]
 
 // ANCHOR: example
 //! Implement `AsRef` to "emulate inheritance".
-
-#![expect(dead_code, reason = "scratch example with unused items")]
 
 // "Base type".
 /// A "base type" that stores the common data of media files.
@@ -103,8 +104,12 @@ fn main() {
     println!("Printing details for a bare media file:");
     print_media_details(&bare_file);
 }
-
 // ANCHOR_END: example
+
+/// Runs the AsRef example for the workspace test harness.
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

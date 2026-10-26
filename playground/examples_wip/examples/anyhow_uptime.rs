@@ -38,6 +38,11 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the uptime example for the workspace test harness.
+pub fn run() -> Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

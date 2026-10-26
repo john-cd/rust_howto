@@ -1,8 +1,7 @@
-//! Example functions for splitting a path into its components.
-
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
+//! Example functions for splitting a path into its components.
 
 // Indices of / in the path
 /// Splits `path` into a directory, a file name and an extension.
@@ -40,6 +39,11 @@ fn main() {
     println!("Third segment: {third}");
 }
 // ANCHOR_END: example
+
+/// Runs the path splitting example for the workspace test harness.
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
