@@ -7,7 +7,7 @@
 use accesskit::Node;
 use accesskit::NodeId;
 use accesskit::Role;
-use accesskit::Tree;
+use accesskit::TreeInfo;
 use accesskit::TreeId;
 use accesskit::TreeUpdate;
 
@@ -32,7 +32,7 @@ fn accessibility_tree() -> TreeUpdate {
 
     TreeUpdate {
         nodes: vec![(root_id, root), (save_button_id, save_button)],
-        tree: Some(Tree::new(root_id)),
+        tree: Some(TreeInfo::new(root_id)),
         tree_id: TreeId::ROOT,
         focus: root_id,
     }
