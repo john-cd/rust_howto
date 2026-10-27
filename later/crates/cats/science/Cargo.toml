@@ -1,21 +1,21 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "science"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Scientific computing and machine learning examples using Ndarray, Linfa, and Candle."
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["science", "machine-learning", "ndarray", "linfa", "candle", "ai"]
-categories = ["science"]
-publish.workspace = true
 autolib = false
+categories = ["science"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["science", "machine-learning", "ndarray", "linfa", "candle", "ai"]
+license-file.workspace = true
+publish.workspace = true
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Scientific computing and machine learning examples using Ndarray, Linfa, and Candle."
 
 [features]
 default = []

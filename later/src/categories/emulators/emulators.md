@@ -31,6 +31,6 @@ PolkaVM is a general purpose user-level RISC-V based virtual machine. This proje
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[emulators: write](https://github.com/john-cd/rust_howto/issues/347)
-[in-depth-analysis-of-polkavm-a-perfect-path-to-understanding-polkadot][blog~medium~in-depth-analysis-of-polkavm].
+  [emulators: write](https://github.com/john-cd/rust_howto/issues/347)
+  [in-depth-analysis-of-polkavm-a-perfect-path-to-understanding-polkadot][blog~medium~in-depth-analysis-of-polkavm].
 </div>

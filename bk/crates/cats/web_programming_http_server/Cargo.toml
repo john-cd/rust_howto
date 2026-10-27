@@ -1,21 +1,21 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "web_programming_http_server"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Examples for building web servers using Actix-web, Axum, Rocket, and gRPC with Tonic."
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["http-server", "actix-web", "axum", "rocket", "grpc", "tonic"]
-categories = ["web-programming::http-server"]
-publish.workspace = true
 autolib = false
+categories = ["web-programming::http-server"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["http-server", "actix-web", "axum", "rocket", "grpc", "tonic"]
+license-file.workspace = true
+publish.workspace = true
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Examples for building web servers using Actix-web, Axum, Rocket, and gRPC with Tonic."
 
 [package.metadata.cargo-machete]
 ignored = ["prost"]

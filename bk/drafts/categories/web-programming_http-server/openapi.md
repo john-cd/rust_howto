@@ -44,5 +44,5 @@ The tests check that a valid configuration passes, that a wrongly typed or incom
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[written for issue #1916](https://github.com/john-cd/rust_howto/issues/1916)
+  [written for issue #1916](https://github.com/john-cd/rust_howto/issues/1916)
 </div>

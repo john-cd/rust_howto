@@ -66,6 +66,6 @@ Before geocoding at scale:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[geo: write](https://github.com/john-cd/rust_howto/issues/474)
-[geocode addresses and compute distances](https://github.com/john-cd/rust_howto/issues/1942)
+  [geo: write](https://github.com/john-cd/rust_howto/issues/474)
+  [geocode addresses and compute distances](https://github.com/john-cd/rust_howto/issues/1942)
 </div>

@@ -1,26 +1,26 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "data_structures"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples and their crate dependencies - data_structures"
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - data_structures"
 
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["data-structures"]
-publish.workspace = true
 autolib = false
+categories = ["data-structures"]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+publish.workspace = true
 
 [dependencies]
-anyhow = "1.0.104"
 ahash = "0.8.12"
+anyhow = "1.0.104"
 arrayvec = "0.7.8"
 bitflags = "2.13.2"
 bitvec = "1.1.1"
@@ -28,8 +28,8 @@ bloomfilter = "3.0.2"
 bytes = "1.12.1"
 clap = { version = "4.6.7", features = ["derive"] }
 crates_io_api = "0.12.0"
-flagset = "0.4.7"
 fixedbitset = "0.5.7"
+flagset = "0.4.7"
 fnv = "1.0.7"
 heapless = "0.9.3"
 indexmap = "2.14.2"
@@ -40,19 +40,19 @@ priority-queue = "2.7.0"
 rangemap = "1.8.0"
 roaring = "0.11.5"
 rustc-hash = "2.1.1"
+short-uuid = "0.2.1" # Compact, URL-safe UUIDs.
 skiplist = "2.0.0"
 slotmap = "1.1.1"
 smallvec = "1.16.3" # alpha
 tinyvec = { version = "1.13.3", features = ["alloc"] }
 ulid = "3.0.0"
-short-uuid = "0.2.1" # Compact, URL-safe UUIDs.
 uuid = { version = "1.28.0", features = [
-    # Lets us generate random UUIDs.
-    "v4",
-    # Use a faster (but still sufficiently random) RNG.
-    "fast-rng",
-    # Enable better diagnostics for compile-time UUIDs.
-    "macro-diagnostics",
+  # Lets us generate random UUIDs.
+  "v4",
+  # Use a faster (but still sufficiently random) RNG.
+  "fast-rng",
+  # Enable better diagnostics for compile-time UUIDs.
+  "macro-diagnostics",
 ] }
 
 [[example]]

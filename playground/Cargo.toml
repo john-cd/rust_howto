@@ -8,19 +8,18 @@ resolver = "3"
 [workspace.package]
 version = "0.1.2"
 authors = ["John CD"]
+categories = ["development-tools"]
+documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
+homepage = "https://john-cd.com/rust_howto/"
+keywords = ["rust-howto", "playground", "experimental", "snippets"]
+license-file = "../LICENSE"
+publish = false
+repository = "https://github.com/john-cd/rust_howto/tools/"
 rust-version = "1.99"
 description = "Experimental scratchpad and work-in-progress snippets for the Rust How-to project."
-documentation = "https://docs.rs/rust_howto/"
-homepage = "https://john-cd.com/rust_howto/"
-repository = "https://github.com/john-cd/rust_howto/tools/"
-keywords = ["rust-howto", "playground", "experimental", "snippets"]
-categories = ["development-tools"]
-publish = false
-license-file = "../LICENSE"
 
 [workspace.lints.rust]
-
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
 # Relaxed: Playground crates demonstrate unsafe Rust.
 unsafe_code = "allow"
@@ -56,7 +55,7 @@ trivial_numeric_casts = "warn"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
-unexpected_cfgs = { level = "warn", check-cfg = ['cfg(coverage)'] }
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)"] }
 
 # Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
 unsafe_op_in_unsafe_fn = "warn"

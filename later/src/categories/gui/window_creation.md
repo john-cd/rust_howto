@@ -54,5 +54,5 @@ The `winit`, `tao`, and `baseview` examples are compiled on Windows as well as o
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[window_creation: write](https://github.com/john-cd/rust_howto/issues/396)
+  [window_creation: write](https://github.com/john-cd/rust_howto/issues/396)
 </div>

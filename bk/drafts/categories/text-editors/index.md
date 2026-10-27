@@ -8,22 +8,22 @@ These editors provide Rust support either directly or through a Rust language se
 
 ## IDEs and Text Editors with Rust Support
 
-| IDE/Editor | Rust integration | Setup notes |
-|---|---|---|
-| [VS Code][rust-in-vs-code~website]↗{{hi:VS code}} | `rust-analyzer` extension | Provides completion, diagnostics, navigation, and refactoring. Extensions such as CodeLLDB add debugging support. |
-| [RustRover][rustrover~website]↗ | Built-in Rust IDE support | JetBrains IDE focused on Rust, with Cargo integration, code insight, and debugging. |
-| [IntelliJ IDEA][intellij-idea~website]↗ | Rust plugin | Install JetBrains' Rust plugin to add Rust language and Cargo support. |
-| [CLion][clion~website]↗ | Rust plugin | Install JetBrains' Rust plugin; CLion also provides its C/C++ tooling. |
-| [Helix][helix-editor~website]↗ ([GitHub][helix-editor~repo]){{hi:helix}} | Built-in language-server client | Configure the [rust-analyzer binary][rust-analyzer~helix~website]↗ for Rust diagnostics and code actions. |
-| [Zed][c~zed~website]↗ | Rust extension | Uses `rust-analyzer` for Rust language features. |
-| [Sublime Text][sublime-text~website]↗ | LSP package | Install the LSP package and `rust-analyzer`; see the [Rust Enhanced package][sublime-text-rust-enhanced~repo]↗ for additional tooling. |
-| [Vim][vim~website]↗ | Language-server plugin | Configure a client such as [`coc.nvim`][coc.nvim~repo]↗{{hi:coc.nvim}} or [`vim-lsp`][vim-lsp~repo]↗{{hi:vim-lsp}} with `rust-analyzer`. |
-| [Neovim][nvim~website]↗ | Built-in LSP client | Configure `rust-analyzer` directly or through a plugin such as `coc.nvim`. |
-| [Emacs][emacs~website]↗ | LSP package | Configure `rust-analyzer` with [`eglot`][eglot~repo]↗{{hi:eglot}} or [`lsp-mode`][emacs-lsp~website]↗{{hi:lsp-mode}}. |
-| [Kate][kate-editor~website]↗ | LSP client plugin | Install the LSP Client plugin and configure `rust-analyzer`; Kate also provides syntax highlighting. |
-| [Visual Studio][visual-studio~website]↗ | Rust Analyzer extension | Install and configure the [Rust Analyzer extension][rust-analyzer~visual-studio~website]↗. Visual Studio is separate from VS Code. |
-| [Lapce][lapce~website]↗ | Built-in LSP client | Configure `rust-analyzer` for completion and diagnostics. |
-| [Eclipse Corrosion][eclipse-corrosion~website]↗ | Corrosion plugin | Integrates `rust-analyzer`, Cargo, and debugger support into Eclipse. |
+| IDE/Editor                                                               | Rust integration                | Setup notes                                                                                                                              |
+| ------------------------------------------------------------------------ | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [VS Code][rust-in-vs-code~website]↗{{hi:VS code}}                        | `rust-analyzer` extension       | Provides completion, diagnostics, navigation, and refactoring. Extensions such as CodeLLDB add debugging support.                        |
+| [RustRover][rustrover~website]↗                                          | Built-in Rust IDE support       | JetBrains IDE focused on Rust, with Cargo integration, code insight, and debugging.                                                      |
+| [IntelliJ IDEA][intellij-idea~website]↗                                  | Rust plugin                     | Install JetBrains' Rust plugin to add Rust language and Cargo support.                                                                   |
+| [CLion][clion~website]↗                                                  | Rust plugin                     | Install JetBrains' Rust plugin; CLion also provides its C/C++ tooling.                                                                   |
+| [Helix][helix-editor~website]↗ ([GitHub][helix-editor~repo]){{hi:helix}} | Built-in language-server client | Configure the [rust-analyzer binary][rust-analyzer~helix~website]↗ for Rust diagnostics and code actions.                                |
+| [Zed][c~zed~website]↗                                                    | Rust extension                  | Uses `rust-analyzer` for Rust language features.                                                                                         |
+| [Sublime Text][sublime-text~website]↗                                    | LSP package                     | Install the LSP package and `rust-analyzer`; see the [Rust Enhanced package][sublime-text-rust-enhanced~repo]↗ for additional tooling.   |
+| [Vim][vim~website]↗                                                      | Language-server plugin          | Configure a client such as [`coc.nvim`][coc.nvim~repo]↗{{hi:coc.nvim}} or [`vim-lsp`][vim-lsp~repo]↗{{hi:vim-lsp}} with `rust-analyzer`. |
+| [Neovim][nvim~website]↗                                                  | Built-in LSP client             | Configure `rust-analyzer` directly or through a plugin such as `coc.nvim`.                                                               |
+| [Emacs][emacs~website]↗                                                  | LSP package                     | Configure `rust-analyzer` with [`eglot`][eglot~repo]↗{{hi:eglot}} or [`lsp-mode`][emacs-lsp~website]↗{{hi:lsp-mode}}.                    |
+| [Kate][kate-editor~website]↗                                             | LSP client plugin               | Install the LSP Client plugin and configure `rust-analyzer`; Kate also provides syntax highlighting.                                     |
+| [Visual Studio][visual-studio~website]↗                                  | Rust Analyzer extension         | Install and configure the [Rust Analyzer extension][rust-analyzer~visual-studio~website]↗. Visual Studio is separate from VS Code.       |
+| [Lapce][lapce~website]↗                                                  | Built-in LSP client             | Configure `rust-analyzer` for completion and diagnostics.                                                                                |
+| [Eclipse Corrosion][eclipse-corrosion~website]↗                          | Corrosion plugin                | Integrates `rust-analyzer`, Cargo, and debugger support into Eclipse.                                                                    |
 
 GitHub [sunset Atom on December 15, 2022](https://github.blog/2022-06-08-sunsetting-atom/). Atom may still edit Rust source, but it no longer receives project maintenance or updates, so it is not listed as a current Rust editor.
 

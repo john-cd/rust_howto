@@ -12,11 +12,11 @@ A pipeline should make a change traceable from its source commit through validat
 
 For each pull request, keep a fast, reliable set of required checks. A typical Rust starting point is:
 
-~~~sh
+```sh
 cargo fmt --all -- --check
 cargo clippy --workspace --all-targets -- -D warnings
 cargo test --workspace --all-targets
-~~~
+```
 
 Adapt package, target, feature, and operating-system coverage to the configurations your project supports. Use a toolchain and platform matrix when those are part of the compatibility promise; keep optional beta, nightly, or latest-dependency checks separate from required merge gates when they are exploratory. For applications or workspaces that commit `Cargo.lock`, pass `--locked` so dependency resolution cannot silently update it. See the [Cargo continuous integration guide][book~cargo~continuous-integration] for provider examples and additional tradeoffs.
 

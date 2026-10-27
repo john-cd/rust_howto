@@ -28,5 +28,5 @@ Robotics-related sensor/motor drivers:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1211)
+  [write](https://github.com/john-cd/rust_howto/issues/1211)
 </div>

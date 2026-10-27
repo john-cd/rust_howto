@@ -50,5 +50,5 @@ Trillium is a separate web framework rather than a Tower middleware crate. Its r
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-This review adds a concrete Axum `from_fn` middleware example, verifies it together with the existing CORS layer using a local request, and clarifies the permissive CORS and alternative-framework guidance. The Tower concepts remain concise because the adjacent code demonstrates the composition directly.
+  This review adds a concrete Axum `from_fn` middleware example, verifies it together with the existing CORS layer using a local request, and clarifies the permissive CORS and alternative-framework guidance. The Tower concepts remain concise because the adjacent code demonstrates the composition directly.
 </div>

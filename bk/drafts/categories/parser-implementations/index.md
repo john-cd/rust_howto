@@ -46,11 +46,11 @@ This index links format-specific parser topics and their runnable examples. Use 
 
 ## Other Text and Query Formats
 
-| Format | Crates | Notes |
-| --- | --- | --- |
-| CSV | [`csv`][c~csv~docs]↗{{hi:csv}} | Parse delimited records with a CSV-aware reader that handles quoting and escaping. |
-| GraphQL | [`async-graphql-parser`][c~async-graphql-parser~docs]↗{{hi:async-graphql-parser}}, [`graphql-parser`][c~graphql-parser~docs]↗{{hi:graphql-parser}} | `async-graphql-parser` is the parser used by [`async-graphql`][c~async-graphql~docs]; `graphql-parser` is an independent parser with query and schema ASTs. For schema execution, see [`async-graphql`][c~async-graphql~docs] or [`juniper`][c~juniper~docs]. |
-| Regular expressions | [`regex`][c~regex~docs]↗{{hi:regex}} | Match text with regular-expression patterns. For nested or structurally rich syntax, use a grammar-based parser. |
+| Format              | Crates                                                                                                                                             | Notes                                                                                                                                                                                                                                                         |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CSV                 | [`csv`][c~csv~docs]↗{{hi:csv}}                                                                                                                     | Parse delimited records with a CSV-aware reader that handles quoting and escaping.                                                                                                                                                                            |
+| GraphQL             | [`async-graphql-parser`][c~async-graphql-parser~docs]↗{{hi:async-graphql-parser}}, [`graphql-parser`][c~graphql-parser~docs]↗{{hi:graphql-parser}} | `async-graphql-parser` is the parser used by [`async-graphql`][c~async-graphql~docs]; `graphql-parser` is an independent parser with query and schema ASTs. For schema execution, see [`async-graphql`][c~async-graphql~docs] or [`juniper`][c~juniper~docs]. |
+| Regular expressions | [`regex`][c~regex~docs]↗{{hi:regex}}                                                                                                               | Match text with regular-expression patterns. For nested or structurally rich syntax, use a grammar-based parser.                                                                                                                                              |
 
 ## Related Topics
 

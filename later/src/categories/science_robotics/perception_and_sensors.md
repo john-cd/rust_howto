@@ -30,5 +30,5 @@ See [[simulation_visualization | Simulation Visualization]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1207)
+  [write](https://github.com/john-cd/rust_howto/issues/1207)
 </div>

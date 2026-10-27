@@ -42,5 +42,5 @@ The [`jni`][c~jni~docs]↗{{hi:jni}} crate is the core crate for JNI interaction
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1072)
+  [write](https://github.com/john-cd/rust_howto/issues/1072)
 </div>

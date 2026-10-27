@@ -1,7 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe | Crates | Categories |
-| -------- | -------- | ------------ |
-| [Implement Websocket Using a low-level Library][ex~web-programming_websocket~low-level] | [![tungstenite][c~tungstenite~docs~badge]][c~tungstenite~docs] | [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket] |
+| Recipe                                                                                                    | Crates                                                                           | Categories                                                                                                |
+| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| [Implement Websocket Using a low-level Library][ex~web-programming_websocket~low-level]                   | [![tungstenite][c~tungstenite~docs~badge]][c~tungstenite~docs]                   | [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket] |
 | [Implement Websocket While Using the `tokio` Async Runtime][ex~web-programming_websocket~general-purpose] | [![tokio-tungstenite][c~tokio-tungstenite~docs~badge]][c~tokio-tungstenite~docs] | [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket] |
-| [Use async-tungstenite with Tokio][ex~web-programming_websocket~async-tungstenite] | [![async-tungstenite][c~async-tungstenite~docs~badge]][c~async-tungstenite~docs] | [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket] |
+| [Use async-tungstenite with Tokio][ex~web-programming_websocket~async-tungstenite]                        | [![async-tungstenite][c~async-tungstenite~docs~badge]][c~async-tungstenite~docs] | [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket] |

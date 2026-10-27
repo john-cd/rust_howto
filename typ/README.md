@@ -103,7 +103,7 @@ name = "name"
 paper = "us-letter"
 text_size = "11pt"
 text_font = "Helvetica" # text_font = "libertinus serif"
-paragraph_spacing  = "2em"
+paragraph_spacing = "2em"
 paragraph_leading = ".8em"
 heading_numbering = ""
 heading_below = "2em"
@@ -119,12 +119,12 @@ enable = true
 depth = 2
 indent = "2em"
 entry_show_rules = [
-{ level = 1, text_size = "11pt", strong = true }
+  { level = 1, text_size = "11pt", strong = true },
 ]
 
 [output.typst.advanced]
-#typst_markup_header = ""
-#typst_markup_footer = ""
+# typst_markup_header = ""
+# typst_markup_footer = ""
 ```
 
 ---

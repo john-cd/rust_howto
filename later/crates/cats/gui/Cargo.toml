@@ -1,22 +1,22 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "gui"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Comprehensive examples of Rust GUI frameworks including Slint, Egui, Iced, and Tauri."
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Comprehensive examples of Rust GUI frameworks including Slint, Egui, Iced, and Tauri."
 
-keywords = ["gui", "slint", "egui", "iced", "tauri", "dioxus"]
-categories = ["gui"]
-publish.workspace = true
 autolib = false
+categories = ["gui"]
+keywords = ["gui", "slint", "egui", "iced", "tauri", "dioxus"]
+publish.workspace = true
 
 [features]
 default = []
@@ -67,7 +67,7 @@ pollster = { version = "0.4.0", optional = true } # for the Vello example
 raw-window-handle = { version = "0.6.2", optional = true }
 rfd = "0.17.2"
 skia-safe = { version = "=0.90", features = [
-    "gl",
+  "gl",
 ], optional = true } # Matches Slint's Skia version; Vizia uses an isolated workspace.
 slint = { version = "=1.16.1", optional = true }
 taffy = "0.10.1"
@@ -80,7 +80,7 @@ url = "2.5.8"
 vello = { version = "0.9.0", optional = true } # Uses wgpu 29, matching this workspace.
 webrender = { version = "0.68.0", optional = true }
 wgpu = "29.0.4"
-winit = "0.30.13"  # for vello, winit examples
+winit = "0.30.13" # for vello, winit examples
 wry = { version = "0.57.1", optional = true } # Needs WebKitGTK on Linux. See web_based_gui.md
 xilem = { version = "0.4.0", optional = true } # Experimental retained-mode UI example.
 

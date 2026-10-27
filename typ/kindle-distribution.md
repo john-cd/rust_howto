@@ -6,11 +6,11 @@ Reviewed 2026-10-22. This is a distribution assessment, not a decision to sell o
 
 ## Options
 
-| Route | Fit | Trade-off |
-| --- | --- | --- |
-| Keep the existing website as the primary edition | Best for a frequently updated, openly readable technical book with working links and code snippets. | Readers need a browser connection; the site remains the canonical experience. |
-| Publish a Kindle eBook through Kindle Direct Publishing (KDP) | KDP accepts EPUB and Kindle Package Format (KPF). KDP recommends previewing the converted book before publication. | Requires a separate eBook layout review, metadata and cover work, and an ongoing process for updates. Code-heavy pages, tables, and web links need device testing. |
-| Offer an EPUB or PDF directly | A direct download can complement the website and can be distributed through the author's own site or a digital storefront such as Gumroad. | Adds a second release artifact to rebuild and keep current; storefront fees and checkout experience need a separate comparison. |
+| Route                                                         | Fit                                                                                                                                        | Trade-off                                                                                                                                                          |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Keep the existing website as the primary edition              | Best for a frequently updated, openly readable technical book with working links and code snippets.                                        | Readers need a browser connection; the site remains the canonical experience.                                                                                      |
+| Publish a Kindle eBook through Kindle Direct Publishing (KDP) | KDP accepts EPUB and Kindle Package Format (KPF). KDP recommends previewing the converted book before publication.                         | Requires a separate eBook layout review, metadata and cover work, and an ongoing process for updates. Code-heavy pages, tables, and web links need device testing. |
+| Offer an EPUB or PDF directly                                 | A direct download can complement the website and can be distributed through the author's own site or a digital storefront such as Gumroad. | Adds a second release artifact to rebuild and keep current; storefront fees and checkout experience need a separate comparison.                                    |
 
 ## Recommendation
 

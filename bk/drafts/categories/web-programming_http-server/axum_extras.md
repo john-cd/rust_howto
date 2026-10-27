@@ -109,4 +109,5 @@ Remove the attribute once the handler compiles; it only improves diagnostics. As
 [written for issue #1939](https://github.com/john-cd/rust_howto/issues/1939)
 
 [written for issue #1910](https://github.com/john-cd/rust_howto/issues/1910)
+
 </div>

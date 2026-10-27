@@ -36,6 +36,7 @@
 [mailchecker recipe written for issue #1946](https://github.com/john-cd/rust_howto/issues/1946)
 
 Message construction is tested offline with reserved example addresses; sending remains an ignored integration test because it needs caller-provided relay credentials and a reachable SMTP server.
+
 </div>
 
 ### Send Emails Asynchronously {#send-emails-asynchronously .skip}

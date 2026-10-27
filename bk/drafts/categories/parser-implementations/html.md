@@ -68,5 +68,5 @@ tl = { version = "0.7.8", features = ["simd"] }
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-This chapter now distinguishes HTML5 parsing, DOM-style CSS selection, and CSS syntax parsing, adds a tested `scraper` recipe, and links related XML, scraping, and templating guidance.
+  This chapter now distinguishes HTML5 parsing, DOM-style CSS selection, and CSS syntax parsing, adds a tested `scraper` recipe, and links related XML, scraping, and templating guidance.
 </div>

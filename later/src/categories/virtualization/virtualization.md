@@ -36,10 +36,10 @@ Containers isolate application processes and package the files they need, while 
 
 [Docker Compose][docker~compose~website]↗ describes a multi-container application in a Compose file. To scaffold a Rust project, you can run cargo init and docker init in its directory, then review the generated Dockerfile and compose.yaml before using them.
 
-~~~sh
+```sh
 cargo init .
 docker init
-~~~
+```
 
 Build and start the services with `docker compose up --build`. If the deployment host uses a different CPU architecture, select the target platform when building the image, such as `docker build --platform=linux/amd64 -t myapp .`. See [[cloud | Cloud]] for deployment context.
 
@@ -55,17 +55,17 @@ A WebAssembly runtime runs a module inside a constrained execution environment. 
 
 The example below loads a small WebAssembly module with wasmi and calls its exported function.
 
-~~~rust,editable
+```rust,editable
 {{#include ../../../crates/cats/virtualization/examples/virtualization/virtualization1.rs:example}}
-~~~
+```
 
 ## Choose an isolation boundary
 
-| Need | Starting point | Boundary to understand |
-| --- | --- | --- |
-| Package an application and its user-space dependencies | Container image and runtime | Containers share a host kernel; configure kernel isolation and resource limits. |
-| Run a guest operating system or a different kernel | A VM or microVM managed by a hypervisor | The guest has its own kernel; the host still needs a secure VMM and lifecycle controls. |
-| Run portable, constrained modules | A WebAssembly runtime such as wasmi | The runtime exposes selected host capabilities; it does not provide a guest operating system. |
+| Need                                                   | Starting point                          | Boundary to understand                                                                        |
+| ------------------------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Package an application and its user-space dependencies | Container image and runtime             | Containers share a host kernel; configure kernel isolation and resource limits.               |
+| Run a guest operating system or a different kernel     | A VM or microVM managed by a hypervisor | The guest has its own kernel; the host still needs a secure VMM and lifecycle controls.       |
+| Run portable, constrained modules                      | A WebAssembly runtime such as wasmi     | The runtime exposes selected host capabilities; it does not provide a guest operating system. |
 
 ## Related Topics {#related-topics .skip}
 

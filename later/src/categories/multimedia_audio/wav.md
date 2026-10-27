@@ -22,5 +22,5 @@ Pick the sample format to match what you do with the file. 16-bit integers are t
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[audio files, playback and MIDI](https://github.com/john-cd/rust_howto/issues/1943)
+  [audio files, playback and MIDI](https://github.com/john-cd/rust_howto/issues/1943)
 </div>

@@ -1,21 +1,21 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "rendering_graphics_api"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples for low-level Rendering Graphics APIs like WGPU."
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["rendering", "graphics", "wgpu", "gpu", "api"]
-categories = ["rendering::graphics-api"]
-publish.workspace = true
 autolib = false
+categories = ["rendering::graphics-api"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["rendering", "graphics", "wgpu", "gpu", "api"]
+license-file.workspace = true
+publish.workspace = true
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples for low-level Rendering Graphics APIs like WGPU."
 
 [features]
 default = []

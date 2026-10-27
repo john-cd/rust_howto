@@ -21,5 +21,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[multimedia: write](https://github.com/john-cd/rust_howto/issues/413)
+  [multimedia: write](https://github.com/john-cd/rust_howto/issues/413)
 </div>

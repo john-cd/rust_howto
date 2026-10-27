@@ -82,10 +82,10 @@ services:
   mssql:
     image: "mcr.microsoft.com/mssql/server"
     ports:
-        - 1433:1433
+      - 1433:1433
     environment:
-        SA_PASSWORD: "password123!"
-        ACCEPT_EULA: "Y"
+      SA_PASSWORD: "password123!"
+      ACCEPT_EULA: "Y"
 
   oracle:
     image: container-registry.oracle.com/database/enterprise:latest

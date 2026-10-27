@@ -73,5 +73,5 @@ Parses [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} and slices it at [`url::P
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-This review removes a stale commented implementation, makes the URL joining example show relative-path behavior, and ensures the query/fragment example actually contains and removes both components. It adds focused examples for path, query, fragment, and port handling.
+  This review removes a stale commented implementation, makes the URL joining example show relative-path behavior, and ensures the query/fragment example actually contains and removes both components. It adds focused examples for path, query, fragment, and port handling.
 </div>

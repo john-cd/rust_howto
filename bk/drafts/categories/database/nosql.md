@@ -73,5 +73,5 @@ FIXME
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review](https://github.com/john-cd/rust_howto/issues/1068)
+  [review](https://github.com/john-cd/rust_howto/issues/1068)
 </div>

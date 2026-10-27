@@ -1,21 +1,21 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "algorithms"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples and their crate dependencies - algorithms"
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["algorithms"]
-publish.workspace = true
 autolib = false
+categories = ["algorithms"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+license-file.workspace = true
+publish.workspace = true
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - algorithms"
 
 [dependencies]
 anyhow = "1.0.104"

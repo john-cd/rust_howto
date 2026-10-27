@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Run a Model Trained Elsewhere (ONNX)
 
 {{#include inference.incl.md}}
@@ -21,5 +22,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[ML examples](https://github.com/john-cd/rust_howto/issues/1929)
+  [ML examples](https://github.com/john-cd/rust_howto/issues/1929)
 </div>

@@ -46,5 +46,5 @@ See also [`metal-rs`][c~metal~docs]↗{{hi:metal-rs}}: 'Metal' bindings.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[graphics_apis: write](https://github.com/john-cd/rust_howto/issues/457)
+  [graphics_apis: write](https://github.com/john-cd/rust_howto/issues/457)
 </div>

@@ -37,5 +37,5 @@ Key Features:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[yew: write / organize](https://github.com/john-cd/rust_howto/issues/498)
+  [yew: write / organize](https://github.com/john-cd/rust_howto/issues/498)
 </div>

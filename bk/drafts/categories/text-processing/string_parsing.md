@@ -25,5 +25,5 @@ Creates an `Rgb` type and implements [`FromStr`][c~std::str::FromStr~docs]↗{{h
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-This review replaces unchecked byte slicing with explicit format and ASCII validation, gives parse failures a focused error type, and covers valid and malformed input in unit tests. The unrelated validator bookmark was dropped.
+  This review replaces unchecked byte slicing with explicit format and ASCII validation, gives parse failures a focused error type, and covers valid and malformed input in unit tests. The unrelated validator bookmark was dropped.
 </div>

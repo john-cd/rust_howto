@@ -52,5 +52,5 @@ To test instrumented code without a server or a viewer, add a sink with `puffin:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[instrumentation profiling: write](https://github.com/john-cd/rust_howto/issues/1934)
+  [instrumentation profiling: write](https://github.com/john-cd/rust_howto/issues/1934)
 </div>

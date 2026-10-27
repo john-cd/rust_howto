@@ -2,31 +2,31 @@
 
 # This crate is a placeholder published to crates.io to make rust_howto searchable there.
 [package]
-license = "MIT OR Apache-2.0"
 name = "rust_howto"
 version = "0.1.2"
 authors = ["John CD"]
+categories = ["development-tools"]
+documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
+homepage = "https://john-cd.com/rust_howto/"
+keywords = [
+  "book",
+  "cookbook",
+  "howto",
+  "how-to",
+  "documentation",
+  "Rust bible",
+  "patterns",
+  "Rust ecosystem",
+  "recipes",
+  "examples",
+  "summary",
+]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/john-cd/rust_howto/"
 rust-version = "1.99"
 description = "A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem. Everything you need for day-to-day Rust coding, all in one place."
-documentation = "https://docs.rs/rust_howto/"
-homepage = "https://john-cd.com/rust_howto/"
-repository = "https://github.com/john-cd/rust_howto/"
-keywords = [
-    "book",
-    "cookbook",
-    "howto",
-    "how-to",
-    "documentation",
-    "Rust bible",
-    "patterns",
-    "Rust ecosystem",
-    "recipes",
-    "examples",
-    "summary",
-]
-categories = ["development-tools"]
-readme = "README.md"
 
 publish = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -34,7 +34,6 @@ publish = true
 [dependencies]
 cargo_toml = "1.0.1"
 [lints.rust]
-
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
 unsafe_code = "deny"
 
@@ -67,7 +66,7 @@ trivial_numeric_casts = "warn"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
-unexpected_cfgs = { level = "warn", check-cfg = ['cfg(coverage)'] }
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)"] }
 
 # Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
 unsafe_op_in_unsafe_fn = "warn"

@@ -35,5 +35,5 @@ cargo test -p database --example amqp --features lapin rabbitmq_round_trip -- --
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-The `lapin` recipe now uses a temporary queue, publisher confirms, message verification, consumption, and acknowledgement. Its RabbitMQ integration test stays ignored unless a broker is running; the Docker command and invocation are documented above.
+  The `lapin` recipe now uses a temporary queue, publisher confirms, message verification, consumption, and acknowledgement. Its RabbitMQ integration test stays ignored unless a broker is running; the Docker command and invocation are documented above.
 </div>

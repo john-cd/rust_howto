@@ -48,5 +48,5 @@ FIXME
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-cover property [testing][p~testing] [proptest][c~proptest~repo]
+  cover property [testing][p~testing] [proptest][c~proptest~repo]
 </div>

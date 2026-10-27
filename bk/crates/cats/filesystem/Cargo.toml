@@ -1,22 +1,22 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "filesystem"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples and their crate dependencies - filesystem"
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - filesystem"
 
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["filesystem"]
-publish.workspace = true
 autolib = false
+categories = ["filesystem"]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+publish.workspace = true
 
 [dependencies]
 anyhow = "1.0.104"
@@ -24,8 +24,8 @@ atomicwrites = "0.4.4" # Atomic file replacement.
 camino = "1.2.6"
 clap = { version = "4.6.7", features = ["derive"] }
 directories = "6.0.0"
-dunce = "1.0.5" # Canonicalize paths without the Windows `\\?\` prefix.
 dirs = "7.0.0"
+dunce = "1.0.5" # Canonicalize paths without the Windows `\\?\` prefix.
 glob = "0.3.4"
 globset = "0.4.20"
 ignore = "0.4.33"

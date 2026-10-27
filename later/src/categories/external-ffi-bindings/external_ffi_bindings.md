@@ -19,5 +19,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[external_ffi_bindings: write](https://github.com/john-cd/rust_howto/issues/355)
+  [external_ffi_bindings: write](https://github.com/john-cd/rust_howto/issues/355)
 </div>

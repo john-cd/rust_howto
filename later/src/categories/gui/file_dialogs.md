@@ -37,6 +37,6 @@ File dialogs in [WASM][p~wasm] are restricted due to security reasons. You'll ty
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[file_dialogs: write](https://github.com/john-cd/rust_howto/issues/381)
-review in depth.
+  [file_dialogs: write](https://github.com/john-cd/rust_howto/issues/381)
+  review in depth.
 </div>

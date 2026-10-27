@@ -6,24 +6,24 @@
 
 ## WASM Runtimes {#wasm-runtimes .skip}
 
-This table focuses on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute [WASM][p~wasm] bytecode. This is distinct from tools used to *compile* to [WASM][p~wasm].
+This table focuses on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute [WASM][p~wasm] bytecode. This is distinct from tools used to _compile_ to [WASM][p~wasm].
 
-| Runtime Crate | Description | Key Features | WASI Support | Embeddable | Notes |
-|---|---|---|---|---|---|
-| [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} | WASM interpreter written in Rust. | Interprets WASM bytecode, good for sandboxing and portability. | Yes (via [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}}) | Yes | A popular and actively maintained WASM interpreter. |
-| [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} | A fast and secure runtime for WebAssembly, developed by Mozilla. | Ahead-of-time (AOT) compilation for performance, supports WASI. | Yes | Yes | Focuses on speed and security. |
-| [`cranelift`][c~cranelift~docs]↗{{hi:cranelift}} (used by [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}) | A code generator used by [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} for AOT compilation. | Generates optimized machine code from WASM. | N/A (part of [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}) | N/A | Not a runtime itself, but a crucial component of [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}. |
-| [`rwasm`][c~rwasm~docs]↗{{hi:rwasm}} | A lightweight WASM runtime. | Small footprint, suitable for embedded systems. | Yes | Yes | Designed for resource-constrained environments. |
+| Runtime Crate                                                                                            | Description                                                                                 | Key Features                                                    | WASI Support                                                | Embeddable | Notes                                                                                           |
+| -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------- |
+| [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}                                                                     | WASM interpreter written in Rust.                                                           | Interprets WASM bytecode, good for sandboxing and portability.  | Yes (via [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}})           | Yes        | A popular and actively maintained WASM interpreter.                                             |
+| [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}                                                            | A fast and secure runtime for WebAssembly, developed by Mozilla.                            | Ahead-of-time (AOT) compilation for performance, supports WASI. | Yes                                                         | Yes        | Focuses on speed and security.                                                                  |
+| [`cranelift`][c~cranelift~docs]↗{{hi:cranelift}} (used by [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}) | A code generator used by [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} for AOT compilation. | Generates optimized machine code from WASM.                     | N/A (part of [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}) | N/A        | Not a runtime itself, but a crucial component of [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}. |
+| [`rwasm`][c~rwasm~docs]↗{{hi:rwasm}}                                                                     | A lightweight WASM runtime.                                                                 | Small footprint, suitable for embedded systems.                 | Yes                                                         | Yes        | Designed for resource-constrained environments.                                                 |
 
 ## Choosing a Runtime {#choosing-a-runtime .skip}
 
 The [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} runtime, backed by Mozilla, has become very popular and is a strong default choice for many projects.
 
-| Purpose | Recommendation |
-|---|---|
-| Performance | [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} is highly recommended. |
-| Sandboxing | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} is a good choice. |
-| Cloud/Serverless | [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} is the most common choice. |
+| Purpose                        | Recommendation                                                                          |
+| ------------------------------ | --------------------------------------------------------------------------------------- |
+| Performance                    | [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} is highly recommended.                    |
+| Sandboxing                     | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} is a good choice.                                  |
+| Cloud/Serverless               | [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} is the most common choice.                |
 | [Embedded][p~embedded] Systems | [`rwasm`][c~rwasm~docs]↗{{hi:rwasm}} is designed for resource-constrained environments. |
 
 Notes:
@@ -104,7 +104,7 @@ The [`wasmtime`][c~wasmtime~repo]↗ crate is a high-level API to expose the Was
 
 [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} can run plugins or generated code inside your process with strict limits:
 
-- **Fuel** (`Config::consume_fuel`, `Store::set_fuel`) bounds CPU use deterministically: an infinite loop traps with `Trap::OutOfFuel`. *Epoch interruption* is the cheaper, wall-clock alternative, but is not deterministic.
+- **Fuel** (`Config::consume_fuel`, `Store::set_fuel`) bounds CPU use deterministically: an infinite loop traps with `Trap::OutOfFuel`. _Epoch interruption_ is the cheaper, wall-clock alternative, but is not deterministic.
 - **`StoreLimits`** bound the linear memory (and tables, instances): a `memory.grow` past the limit returns -1.
 - **Host functions** registered on a `Linker` are the only capabilities the guest has. This example links no WASI, hence no filesystem or network.
 - **Compiled modules** can be cached by a content hash ([`blake3`][c~blake3~docs]↗{{hi:blake3}}). A `Module` is only valid for an `Engine` with a compatible `Config`; `Module::serialize` supports ahead-of-time (AOT) compilation.
@@ -137,7 +137,7 @@ Wasm isolation protects the host's memory, but it does not stop a guest from usi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[sandbox example](https://github.com/john-cd/rust_howto/issues/1926)
-[others: organize/write](https://github.com/john-cd/rust_howto/issues/496) need full review
-cover [`wasmer`][c~wasmer~docs]↗{{hi:wasmer}} in intro
+  [sandbox example](https://github.com/john-cd/rust_howto/issues/1926)
+  [others: organize/write](https://github.com/john-cd/rust_howto/issues/496) need full review
+  cover [`wasmer`][c~wasmer~docs]↗{{hi:wasmer}} in intro
 </div>

@@ -65,5 +65,5 @@ cargo run --locked -p game_engines --example game_engines --features ggez -- gge
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[game_engines: write](https://github.com/john-cd/rust_howto/issues/369)
+  [game_engines: write](https://github.com/john-cd/rust_howto/issues/369)
 </div>

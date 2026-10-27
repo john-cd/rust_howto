@@ -49,7 +49,7 @@ SurrealDB is a scalable, distributed, collaborative, document-graph [database][p
 ```
 
 <div class="hidden">
-The example uses SurrealDB 3's current `SurrealValue` derive and the in-memory `Mem` engine so its test exercises the full CRUD path without a server or network service.
+  The example uses SurrealDB 3's current `SurrealValue` derive and the in-memory `Mem` engine so its test exercises the full CRUD path without a server or network service.
 </div>
 
 ## Related Topics {#related-topics .skip}
@@ -60,5 +60,5 @@ FIXME
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[databases: expand / write](https://github.com/john-cd/rust_howto/issues/290)
+  [databases: expand / write](https://github.com/john-cd/rust_howto/issues/290)
 </div>

@@ -8,14 +8,14 @@ Caching stores a copy of a value or computation result so a later request can re
 
 ## Choose a Cache by Scope
 
-| Scope or need | Crates | Typical fit |
-|---|---|---|
-| Bounded in-process cache with explicit LRU behavior | [`lru`][c~lru~docs]↗ | A simple cache owned by one process, where you choose the capacity and eviction policy. |
-| Concurrent in-process cache with expiration | [`moka`][c~moka~docs]↗ | Synchronous or asynchronous applications that need bounded entries, time-to-live (TTL), or time-to-idle expiration. |
-| Concurrent in-process cache with a small API and configurable eviction | [`quick_cache`][c~quick_cache~docs]↗ | A local cache where you want sync or unsync variants and will measure its behavior against your workload. |
-| Function memoization and cache stores | [`cached`][c~cached~docs]↗ | Caching function results with macros or selecting one of its provided stores. |
-| Memory plus local disk tiers | [`foyer`][c~foyer~docs]↗ | A larger local cache whose working set should extend beyond RAM; check platform, MSRV, and project status before adopting it. |
-| Shared cache service | [`redis`][c~redis~docs]↗ or [`fred`][c~fred~docs]↗ | Multiple application instances need a common Redis or Valkey service, with network and operational costs. |
+| Scope or need                                                          | Crates                                             | Typical fit                                                                                                                   |
+| ---------------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Bounded in-process cache with explicit LRU behavior                    | [`lru`][c~lru~docs]↗                               | A simple cache owned by one process, where you choose the capacity and eviction policy.                                       |
+| Concurrent in-process cache with expiration                            | [`moka`][c~moka~docs]↗                             | Synchronous or asynchronous applications that need bounded entries, time-to-live (TTL), or time-to-idle expiration.           |
+| Concurrent in-process cache with a small API and configurable eviction | [`quick_cache`][c~quick_cache~docs]↗               | A local cache where you want sync or unsync variants and will measure its behavior against your workload.                     |
+| Function memoization and cache stores                                  | [`cached`][c~cached~docs]↗                         | Caching function results with macros or selecting one of its provided stores.                                                 |
+| Memory plus local disk tiers                                           | [`foyer`][c~foyer~docs]↗                           | A larger local cache whose working set should extend beyond RAM; check platform, MSRV, and project status before adopting it. |
+| Shared cache service                                                   | [`redis`][c~redis~docs]↗ or [`fred`][c~fred~docs]↗ | Multiple application instances need a common Redis or Valkey service, with network and operational costs.                     |
 
 The [in-memory cache chapter][p~in-memory-cache] includes small examples for `lru`, `moka`, and `cached`. Pick the smallest scope that meets the consistency and sharing requirements; a remote cache adds serialization, network failure, authentication, and deployment concerns.
 
@@ -68,5 +68,5 @@ Refer to:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-Added a cache-selection overview that compares process-local, hybrid, and distributed options, and explains cache scope, expiration, invalidation, and cache-aside flows.
+  Added a cache-selection overview that compares process-local, hybrid, and distributed options, and explains cache scope, expiration, invalidation, and cache-aside flows.
 </div>

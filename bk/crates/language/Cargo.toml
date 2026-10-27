@@ -1,20 +1,20 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "language"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Examples covering fundamental Rust language features, macros, and asynchronous programming."
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["language", "rust-fundamentals", "macros", "tokio", "strum"]
-publish = false
 autolib = false
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["language", "rust-fundamentals", "macros", "tokio", "strum"]
+license-file.workspace = true
+publish = false
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Examples covering fundamental Rust language features, macros, and asynchronous programming."
 
 [features]
 full = []

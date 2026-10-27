@@ -1,25 +1,24 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "command_line_interface"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples and their crate dependencies - command_line_interface"
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - command_line_interface"
 
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["command-line-interface"]
-publish.workspace = true
 autolib = false
+categories = ["command-line-interface"]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+publish.workspace = true
 
 [dependencies]
-nu-ansi-term = "0.50.3"
 anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive"] }
 clap_complete = "4.6.11"
@@ -29,6 +28,7 @@ crossterm = "0.29.0"
 indicatif = "0.18.6"
 inquire = "0.9.4"
 lexopt = "0.3.2"
+nu-ansi-term = "0.50.3"
 pico-args = "0.5.0"
 ratatui = "0.30.2" # requires crossterm
 

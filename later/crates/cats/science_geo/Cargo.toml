@@ -1,22 +1,22 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "science_geo"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples and their crate dependencies - science_geo"
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - science_geo"
 
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["science::geo"]
-publish.workspace = true
 autolib = false
+categories = ["science::geo"]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+publish.workspace = true
 
 [dependencies]
 geo = "0.33.1"

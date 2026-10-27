@@ -15,7 +15,7 @@
 A small calculator shows the two stages found in most language front ends:
 
 1. A **lexer** turns text into tokens. [`winnow`][c~winnow~docs]↗{{hi:winnow}} tokens can borrow from the input (zero-copy), and `LocatingSlice` plus `with_span` records the byte range of each token for error messages.
-1. A **parser** turns tokens into a tree. Precedence climbing needs only a loop and a *binding power* per operator: a right-associative operator such as `^` gets a lower right power than left power. Unary minus is handled in the "atom" step.
+1. A **parser** turns tokens into a tree. Precedence climbing needs only a loop and a _binding power_ per operator: a right-associative operator such as `^` gets a lower right power than left power. Unary minus is handled in the "atom" step.
 
 The tree is then evaluated recursively. The tests check `1 + 2 * 3 = 7`, `2 ^ 3 ^ 2 = 512`, and the byte offsets reported in errors.
 

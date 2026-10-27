@@ -52,12 +52,12 @@ do-not-include-hidden-chapters = true
 hidden-chapter-prefix = "_"
 # Remove hidden includes before mdBook's built-in links preprocessor expands them.
 # <https://rust-lang.github.io/mdBook/format/configuration/preprocessors.html>
-after = [ "private" ]
-before = [ "links" ]
+after = ["private"]
+before = ["links"]
 
 [preprocessor.directives]
 command = "../bin/mdbook-scrub --stage directives"
-after = [ "links" ]
+after = ["links"]
 # Directive families can be disabled independently (all default to true).
 process-crate-block-directives = true
 process-example-directives = true

@@ -4,7 +4,7 @@
 
 {{#include arena_allocation.incl.md}}
 
-An *arena*{{hi:Arena}}{{hi:Bump allocation}} allocates many small objects that share one lifetime from a few large blocks. Each allocation only advances a pointer, and everything is freed at once when the arena is dropped. Consider an arena after profiling shows that allocation cost or fragmentation matters, for example when building a large tree or graph in one pass, and measure before and after. See [Memory Allocation][p~memory-allocation] for the basic `bumpalo` recipe.
+An _arena_{{hi:Arena}}{{hi:Bump allocation}} allocates many small objects that share one lifetime from a few large blocks. Each allocation only advances a pointer, and everything is freed at once when the arena is dropped. Consider an arena after profiling shows that allocation cost or fragmentation matters, for example when building a large tree or graph in one pass, and measure before and after. See [Memory Allocation][p~memory-allocation] for the basic `bumpalo` recipe.
 
 ## Build a Tree in a `bumpalo` Arena {#bumpalo-tree}
 
@@ -28,5 +28,5 @@ Beware that `Drop` does not run for values allocated with `Bump::alloc`. Enable 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[arena allocation: review the new page](https://github.com/john-cd/rust_howto/issues/1925)
+  [arena allocation: review the new page](https://github.com/john-cd/rust_howto/issues/1925)
 </div>

@@ -1,25 +1,24 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "asynchronous"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples for Asynchronous programming with Tokio, Smol, and Rayon."
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples for Asynchronous programming with Tokio, Smol, and Rayon."
 
-keywords = ["async", "tokio", "smol", "futures", "concurrency"]
-categories = ["asynchronous"]
-publish.workspace = true
 autolib = false
+categories = ["asynchronous"]
+keywords = ["async", "tokio", "smol", "futures", "concurrency"]
+publish.workspace = true
 
 [dependencies]
-
 ## General
 anyhow = "1.0.104"
 async-channel = "2.5.0"
@@ -29,7 +28,7 @@ clap = { version = "4.6.7", features = ["derive"] }
 futures = "0.3.34"
 futures-executor = "0.3.34"
 futures-util = "0.3.34"
-kanal = "0.1.1"  # NOTE: pre version
+kanal = "0.1.1" # NOTE: pre version
 # Enable readiness polling and wakers for the Mio example.
 mio = { version = "1.2.4", features = ["os-poll"] }
 postage = "0.5.0"
@@ -42,9 +41,9 @@ tokio = { version = "1.54.1", features = ["rt-multi-thread", "fs", "macros", "sy
 tokio-graceful-shutdown = "0.20.0"
 # Cancellation tokens for coordinating task shutdown.
 tokio-util = { version = "0.7.20", features = ["rt"] }
-trait-variant = "0.1.3"
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+trait-variant = "0.1.3"
 
 [[example]]
 name = "async"

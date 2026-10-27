@@ -46,10 +46,10 @@ Plan to host the server executable and its site assets together. A CSR app can b
 
 ### Choose a rendering mode {#choose-a-rendering-mode}
 
-| Need                                               | Starting point                                                |
-| -------------------------------------------------- | ------------------------------------------------------------- |
-| Static hosting or an existing backend              | CSR with Trunk                                                |
-| Server-rendered HTML and a Rust server             | SSR with `cargo-leptos`                                       |
+| Need                                               | Starting point                                                                           |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Static hosting or an existing backend              | CSR with Trunk                                                                           |
+| Server-rendered HTML and a Rust server             | SSR with `cargo-leptos`                                                                  |
 | Browser APIs outside Leptos's view and event model | Use the bindings described in [[interfacing_with_javascript]] |
 
 ## Build a Client-side App {#client-side-app}

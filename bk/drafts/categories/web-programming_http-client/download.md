@@ -51,5 +51,5 @@ The Range header is defined in [`RFC7233`][ietf~http-range-rfc7233]↗{{hi:RFC-7
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-This review changes the basic download example to stream binary chunks into a temporary file, verifies that behavior with a local server, and corrects the upload and byte-range descriptions to match the existing examples.
+  This review changes the basic download example to stream binary chunks into a temporary file, verifies that behavior with a local server, and corrects the upload and byte-range descriptions to match the existing examples.
 </div>

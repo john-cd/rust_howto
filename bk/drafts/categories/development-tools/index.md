@@ -6,19 +6,19 @@
 
 Tools that provide developer-facing features such as testing, debugging, linting, performance profiling, autocompletion, formatting, and more.
 
-| Topic                             | Rust Crates                                                                                                                                                                                                                          |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Build System/Package Manager      | [`cargo`][c~cargo~docs]↗{{hi:cargo}}                                                                                                                                                                                                 |
-| Formatter                         | [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}}                                                                                                                                                                                           |
-| Linter                            | [`clippy`][c~clippy~docs]↗{{hi:clippy}}                                                                                                                                                                                              |
-| Testing Framework                 | [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} (built-in), [`rstest`][c~rstest~docs]↗{{hi:rstest}} (for data-driven tests)                                                                                                  |
-| Debugging                         | [`gdb`][c~gdb~docs]↗{{hi:gdb}}, [`lldb`][c~lldb~docs]↗{{hi:lldb}} (often used via IDE integration), `cargo-debug`                                                                                                                    |
-| Profiling                         | `cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (system profiler)                                                                                                                                                              |
-| Documentation Generator           | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}}                                                                                                                                                                                 |
+| Topic                             | Rust Crates                                                                                                                                  |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Build System/Package Manager      | [`cargo`][c~cargo~docs]↗{{hi:cargo}}                                                                                                         |
+| Formatter                         | [`rustfmt`][c~rustfmt~repo]↗{{hi:rustfmt}}                                                                                                   |
+| Linter                            | [`clippy`][c~clippy~docs]↗{{hi:clippy}}                                                                                                      |
+| Testing Framework                 | [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} (built-in), [`rstest`][c~rstest~docs]↗{{hi:rstest}} (for data-driven tests)          |
+| Debugging                         | [`gdb`][c~gdb~docs]↗{{hi:gdb}}, [`lldb`][c~lldb~docs]↗{{hi:lldb}} (often used via IDE integration), `cargo-debug`                            |
+| Profiling                         | `cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (system profiler)                                                                      |
+| Documentation Generator           | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}}                                                                                         |
 | Versioning and Release Management | [[versioning                                                                                                                        | Versioning]] covers SemVer parsing, compatibility checks, and version-related release tooling. |
-| Code Coverage                     | [`grcov`][c~grcov~docs]↗{{hi:grcov}}, [`tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:tarpaulin}}                                                                                                                                         |
-| Continuous Integration            | often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c~xtask~docs]↗{{hi:xtask}} can help manage CI tasks                                                                                                  |
-| Code Analysis                     | `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs)                                                                                                                                                       |
+| Code Coverage                     | [`grcov`][c~grcov~docs]↗{{hi:grcov}}, [`tarpaulin`][c~cargo-tarpaulin~docs]↗{{hi:tarpaulin}}                                                 |
+| Continuous Integration            | often uses CI platforms directly; no specific Rust crates needed, but [`xtask`][c~xtask~docs]↗{{hi:xtask}} can help manage CI tasks          |
+| Code Analysis                     | `cargo clippy`, `rust-analyzer` (for Language Server Protocol support in IDEs)                                                               |
 
 See also [Rust tools][rust-tools]↗{{hi:Rust tools}}.
 

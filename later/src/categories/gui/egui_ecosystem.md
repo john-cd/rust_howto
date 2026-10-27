@@ -80,15 +80,15 @@ Use the same `egui_kittest` version as `egui`: the crate releases in lockstep.
 
 ## More Add-ons {#more-add-ons}
 
-| Need                       | Crate                                                                                | Notes                                                        |
-| -------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
-| Graphs with layouts        | [`egui_graphs`][c~egui_graphs~docs]↗{{hi:egui_graphs}}                               | Node and edge graph widget built on `petgraph`.              |
-| Drag-and-drop reordering   | [`egui_dnd`][c~egui_dnd~docs]↗{{hi:egui_dnd}}                                        | Reorder a list of items by dragging.                         |
-| JSON tree viewer           | [`egui_json_tree`][c~egui_json_tree~docs]↗{{hi:egui_json_tree}}                      | Collapsible view of a `serde_json::Value`, with search.      |
-| Markdown rendering         | [`egui_commonmark`][c~egui_commonmark~docs]↗{{hi:egui_commonmark}}                   | Render CommonMark text, including code blocks.               |
-| File dialog inside egui    | [`egui-file-dialog`][c~egui-file-dialog~docs]↗{{hi:egui-file-dialog}}                | An `egui`-drawn dialog, unlike the native one of [`rfd`][c~rfd~docs]↗{{hi:rfd}}. |
-| Pull to refresh            | [`egui_pull_to_refresh`][c~egui_pull_to_refresh~docs]↗{{hi:egui_pull_to_refresh}}    | Touch gesture for lists on mobile.                           |
-| Scale the whole UI         | [`egui-scale`][c~egui-scale~docs]↗{{hi:egui-scale}}                                  | Let the user choose the UI scale.                            |
+| Need                     | Crate                                                                             | Notes                                                                            |
+| ------------------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Graphs with layouts      | [`egui_graphs`][c~egui_graphs~docs]↗{{hi:egui_graphs}}                            | Node and edge graph widget built on `petgraph`.                                  |
+| Drag-and-drop reordering | [`egui_dnd`][c~egui_dnd~docs]↗{{hi:egui_dnd}}                                     | Reorder a list of items by dragging.                                             |
+| JSON tree viewer         | [`egui_json_tree`][c~egui_json_tree~docs]↗{{hi:egui_json_tree}}                   | Collapsible view of a `serde_json::Value`, with search.                          |
+| Markdown rendering       | [`egui_commonmark`][c~egui_commonmark~docs]↗{{hi:egui_commonmark}}                | Render CommonMark text, including code blocks.                                   |
+| File dialog inside egui  | [`egui-file-dialog`][c~egui-file-dialog~docs]↗{{hi:egui-file-dialog}}             | An `egui`-drawn dialog, unlike the native one of [`rfd`][c~rfd~docs]↗{{hi:rfd}}. |
+| Pull to refresh          | [`egui_pull_to_refresh`][c~egui_pull_to_refresh~docs]↗{{hi:egui_pull_to_refresh}} | Touch gesture for lists on mobile.                                               |
+| Scale the whole UI       | [`egui-scale`][c~egui-scale~docs]↗{{hi:egui-scale}}                               | Let the user choose the UI scale.                                                |
 
 ## Related Topics {#related-topics .skip}
 
@@ -100,5 +100,5 @@ Use the same `egui_kittest` version as `egui`: the crate releases in lockstep.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[egui add-on crates](https://github.com/john-cd/rust_howto/issues/1933)
+  [egui add-on crates](https://github.com/john-cd/rust_howto/issues/1933)
 </div>

@@ -1,11 +1,11 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
+title: ""
+labels: ""
+assignees: ""
 ---
+
 <!-- TODO Reviewed ??-??-2026 -->
 
 **Describe the bug**

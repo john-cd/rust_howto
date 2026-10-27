@@ -33,5 +33,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[game_development: identify crates; write](https://github.com/john-cd/rust_howto/issues/366)
+  [game_development: identify crates; write](https://github.com/john-cd/rust_howto/issues/366)
 </div>

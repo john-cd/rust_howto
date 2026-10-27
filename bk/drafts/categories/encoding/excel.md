@@ -39,12 +39,12 @@ Points to remember:
 
 ## Choosing a Crate {#choosing-a-crate}
 
-| Need                         | Crate                                                                 |
-| ---------------------------- | --------------------------------------------------------------------- |
-| Read only                    | [`calamine`][c~calamine~docs]↗{{hi:calamine}}                         |
-| Create a new file            | [`rust_xlsxwriter`][c~rust_xlsxwriter~docs]↗{{hi:rust_xlsxwriter}}    |
-| Modify an existing file      | [`umya-spreadsheet`][c~umya-spreadsheet~docs]↗{{hi:umya-spreadsheet}}, [`edit-xlsx`][c~edit-xlsx~docs]↗{{hi:edit-xlsx}} |
-| Plain tabular text           | [`csv`][c~csv~docs]↗{{hi:csv}}, see [CSV Processing][p~csv-processing] |
+| Need                    | Crate                                                                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Read only               | [`calamine`][c~calamine~docs]↗{{hi:calamine}}                                                                           |
+| Create a new file       | [`rust_xlsxwriter`][c~rust_xlsxwriter~docs]↗{{hi:rust_xlsxwriter}}                                                      |
+| Modify an existing file | [`umya-spreadsheet`][c~umya-spreadsheet~docs]↗{{hi:umya-spreadsheet}}, [`edit-xlsx`][c~edit-xlsx~docs]↗{{hi:edit-xlsx}} |
+| Plain tabular text      | [`csv`][c~csv~docs]↗{{hi:csv}}, see [CSV Processing][p~csv-processing]                                                  |
 
 ## Related Topics {#related-topics .skip}
 
@@ -55,5 +55,5 @@ Points to remember:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[excel: write](https://github.com/john-cd/rust_howto/issues/1909)
+  [excel: write](https://github.com/john-cd/rust_howto/issues/1909)
 </div>

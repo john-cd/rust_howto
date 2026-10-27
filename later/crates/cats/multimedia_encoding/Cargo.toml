@@ -1,22 +1,22 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "multimedia_encoding"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples and their crate dependencies - multimedia_encoding"
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - multimedia_encoding"
 
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["multimedia::encoding"]
-publish.workspace = true
 autolib = false
+categories = ["multimedia::encoding"]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+publish.workspace = true
 
 [dependencies]
 rav1e = { version = "0.8.1", default-features = false }

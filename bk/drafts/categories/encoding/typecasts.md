@@ -111,5 +111,5 @@ Do not copy a struct's memory to define a portable format: padding, layout, vali
 - [Parsing text][p~parsing].
 - [Trait objects][p~trait-objects].
 - [Strings][p~strings].
-{{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+  {{#include refs.incl.md}}
+  {{#include ../../refs/link-refs.md}}

@@ -9,10 +9,18 @@ description = "A compendium of links, code snippets, and recipes for the Rust la
 
 [build]
 # build-dir = "book"                # the directory where the output is placed, "book" by default
-create-missing = false              # whether or not to create missing pages
+create-missing = false # whether or not to create missing pages
 # use-default-preprocessors = true  # use the default preprocessors `links` and `index`, true by default
 # Directories to watch for triggering builds:
-extra-watch-dirs = ["static", "theme", "crates/about", "crates/cats", "crates/language", "crates/other", "crates/standard_library"]
+extra-watch-dirs = [
+  "static",
+  "theme",
+  "crates/about",
+  "crates/cats",
+  "crates/language",
+  "crates/other",
+  "crates/standard_library",
+]
 
 [rust]
 edition = "2024" # the default edition for code blocks. Default is "2015"
@@ -24,7 +32,7 @@ edition = "2024" # the default edition for code blocks. Default is "2015"
 [preprocessor.private]
 command = "../bin/mdbook-private"
 remove = true # Determines whether to remove or retain sections marked as private
-style = true  # Styles the private sections (when retained) using blockquote CSS.
+style = true # Styles the private sections (when retained) using blockquote CSS.
 notice = "WORK IN PROGRESS" # Adds a notice to styled sections at the top right corner.
 chapter-prefix = "_" # If the remove option is active, chapters with filenames prefixed with this value will be excluded.
 
@@ -34,35 +42,35 @@ chapter-prefix = "_" # If the remove option is active, chapters with filenames p
 # # The source code is in the `mdbook-scrub` folder in the repository root.
 [preprocessor.scrub]
 command = "../bin/mdbook-scrub"
-after = [ "private" ]
-before = [ "links" ]
+after = ["private"]
+before = ["links"]
 
 # Expand custom book directives after mdBook has expanded native includes.
 [preprocessor.directives]
 command = "../bin/mdbook-scrub --stage directives"
-after = [ "links" ]
+after = ["links"]
 
 # # Default preprocessor: `index`.
 # Convert all chapter files named README.md into index.md. That is to say, all `README.md` would be rendered to an index file `index.html` in the rendered book.
 [preprocessor.index]
-after = [ "directives" ]
+after = ["directives"]
 
 # # Default preprocessor: `links`.
 # # Expands the {{ #playground }}, {{ #include }}, and {{ #rustdoc_include }} handlebars helpers in a chapter
 [preprocessor.links]
-after = [ "scrub" ]
+after = ["scrub"]
 
 # # Build a word index via {{i:<text>}}, {{hi:<text>}}...
 # # https://github.com/daviddrysdale/mdbook-indexing/tree/main
 [preprocessor.indexing]
 # use_chapter_names = true
 # Run after directives, which follow links, scrub, and private-content removal.
-after = [ "directives" ]
+after = ["directives"]
 
-#[preprocessor.indexing.see_instead]
+# [preprocessor.indexing.see_instead]
 # "unit type" = "`()`"  # index entries where the key should point to the value
 
-#[preprocessor.indexing.nest_under]
+# [preprocessor.indexing.nest_under]
 # "generic type" = "generics"
 
 ## OUTPUTS --------------------------------------------------------
@@ -89,7 +97,7 @@ traverse-parent-directories = true
 # # escape things twice.
 ## Exclude links in e.g. `examples_index.md` for now, to avoid linkcheck warning
 ## when hidding sections / pages with `mdbook-private`
-exclude = [ '^categories/*' ]
+exclude = ["^categories/*"]
 
 # # The User-Agent to use when sending web requests
 # user-agent = "mdbook-linkcheck-0.4.0"
@@ -127,10 +135,8 @@ warning-policy = "warn"
 # # but may be helpful (e.g. when working with rate limiting).
 # #'website\.com' = ["Authorization: Basic $TOKEN"]
 
-
 # # Output as markdown (in addition to HTML) for debugging purposes
-#[output.markdown]
-
+# [output.markdown]
 
 # # See https://rust-lang.github.io/mdBook/format/configuration/renderers.html
 [output.html]
@@ -152,15 +158,15 @@ site-url = "/rust_howto/"
 # input-404 = "not-found.md"
 
 [output.html.print]
-enable = false             # support for printable output
-page-break = false         # insert page-break after each chapter
+enable = false # support for printable output
+page-break = false # insert page-break after each chapter
 
 [output.html.fold]
-enable = true     # whether or not to enable section folding
-level = 0         # the depth to start folding
+enable = true # whether or not to enable section folding
+level = 0 # the depth to start folding
 
 [output.html.playground]
-editable = true            # allows editing the source code
+editable = true # allows editing the source code
 # copyable = true          # include the copy button for copying code snippets; default: true
 # copy-js = true           # includes the JavaScript for the code editor
 # line-numbers = false     # displays line numbers for editable code
@@ -175,14 +181,14 @@ editable = true            # allows editing the source code
 # to add the book's `{{hi:...}}` terms. Revisit Algolia only if recipe searches
 # remain hard to find after these settings are tested.
 [output.html.search]
-enable = true             # Keep built-in search available in every renderer.
-limit-results = 50        # This large book needs more than the default page of matches.
-teaser-word-count = 40    # Include enough surrounding text to distinguish recipe matches.
-use-boolean-and = true    # Multi-word searches should match every term.
+enable = true # Keep built-in search available in every renderer.
+limit-results = 50 # This large book needs more than the default page of matches.
+teaser-word-count = 40 # Include enough surrounding text to distinguish recipe matches.
+use-boolean-and = true # Multi-word searches should match every term.
 # boost-title = 2          # ranking boost factor for matches in headers
 # boost-hierarchy = 1      # ranking boost factor for matches in page names
 # boost-paragraph = 1      # ranking boost factor for matches in text
-expand = true            # partial words will match longer terms
+expand = true # partial words will match longer terms
 # heading-split-level = 3  # link results to heading levels
 # copy-js = true           # include Javascript code for search
 
@@ -210,8 +216,8 @@ show-hidden-lines = false
 
 # options to pass to Pandoc (see https://pandoc.org/MANUAL.html#defaults-files)
 [output.pandoc.profile.pdf]
-output-file = "book.pdf"  # output file (within the profile's build directory)
-to = "latex"              # output format
+output-file = "book.pdf" # output file (within the profile's build directory)
+to = "latex" # output format
 
 # PDF-specific settings
 # Use tectonic as the PDF engine: it is self-contained and does not require a separate LaTeX installation.
@@ -219,10 +225,10 @@ to = "latex"              # output format
 pdf-engine = "tectonic"
 
 # `mdbook-pandoc` overrides Pandoc's defaults for the following options to better support mdBooks
-file-scope = true           # parse each file individually before combining
-number-sections = true      # number section headings
-standalone = true           # produce output with an appropriate header and footer
-table-of-contents = true    # include an automatically generated table of contents
+file-scope = true # parse each file individually before combining
+number-sections = true # number section headings
+standalone = true # produce output with an appropriate header and footer
+table-of-contents = true # include an automatically generated table of contents
 
 # Arbitrary other Pandoc options can be specified as they would be in a Pandoc defaults file
 # (see https://pandoc.org/MANUAL.html#defaults-files) but written in TOML instead of YAML.

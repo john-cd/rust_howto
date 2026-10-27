@@ -70,7 +70,7 @@ Points to remember:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[web_based_gui: write](https://github.com/john-cd/rust_howto/issues/394)
-where should we put Dioxus?
-[show a local web page in a native window](https://github.com/john-cd/rust_howto/issues/1952)
+  [web_based_gui: write](https://github.com/john-cd/rust_howto/issues/394)
+  where should we put Dioxus?
+  [show a local web page in a native window](https://github.com/john-cd/rust_howto/issues/1952)
 </div>

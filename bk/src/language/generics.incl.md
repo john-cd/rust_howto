@@ -1,8 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-||
-|---|
-| [Const Generics][ex~language~const-generics] |
+|                                                            |
+| ---------------------------------------------------------- |
+| [Const Generics][ex~language~const-generics]               |
 | [Use Lifetime Parameters][ex~language~lifetime-parameters] |
-| [Use Type Parameters][ex~language~type-parameters] |
-| [Generics Syntax][ex~language~generics-syntax] |
+| [Use Type Parameters][ex~language~type-parameters]         |
+| [Generics Syntax][ex~language~generics-syntax]             |

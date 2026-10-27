@@ -1,25 +1,24 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "compilers"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Examples focused on compiler design and incremental computation using Salsa and Comemo."
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Examples focused on compiler design and incremental computation using Salsa and Comemo."
 
-keywords = ["compilers", "incremental", "salsa", "comemo", "ast"]
-categories = ["compilers"]
-publish.workspace = true
 autolib = false
+categories = ["compilers"]
+keywords = ["compilers", "incremental", "salsa", "comemo", "ast"]
+publish.workspace = true
 
 [dependencies]
-
 ## General
 anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive"] }

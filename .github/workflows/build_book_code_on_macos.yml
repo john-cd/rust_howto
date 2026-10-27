@@ -7,27 +7,27 @@ on:
   push:
     branches: [develop]
     paths:
-      - 'bk/**'
-      - '.devcontainer/**'
-      - '.github/workflows/**'
-      - '.github/actions/**'
-      - 'scripts/**'
-      - '.cargo/**'
-      - 'Cargo.toml'
-      - 'Cargo.lock'
-      - 'rustfmt-toolchain.toml'
+      - "bk/**"
+      - ".devcontainer/**"
+      - ".github/workflows/**"
+      - ".github/actions/**"
+      - "scripts/**"
+      - ".cargo/**"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rustfmt-toolchain.toml"
   pull_request:
     branches: [develop]
     paths:
-      - 'bk/**'
-      - '.devcontainer/**'
-      - '.github/workflows/**'
-      - '.github/actions/**'
-      - 'scripts/**'
-      - '.cargo/**'
-      - 'Cargo.toml'
-      - 'Cargo.lock'
-      - 'rustfmt-toolchain.toml'
+      - "bk/**"
+      - ".devcontainer/**"
+      - ".github/workflows/**"
+      - ".github/actions/**"
+      - "scripts/**"
+      - ".cargo/**"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rustfmt-toolchain.toml"
   workflow_dispatch:
 
 env:

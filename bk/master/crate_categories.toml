@@ -12,7 +12,20 @@ crates = ["bzip2", "flate2", "rug", "xz2"]
 category = "Algorithms"
 slug = "algorithms"
 description = "Rust implementations of core algorithms such as hashing, sorting, searching, and more."
-crates = ["fastrand", "glidesort", "itertools", "num", "num-bigint", "num-complex", "num-rational", "num-traits", "pathfinding", "priority-queue", "rand", "rand_distr"]
+crates = [
+  "fastrand",
+  "glidesort",
+  "itertools",
+  "num",
+  "num-bigint",
+  "num-complex",
+  "num-rational",
+  "num-traits",
+  "pathfinding",
+  "priority-queue",
+  "rand",
+  "rand_distr",
+]
 
 [[categories]]
 category = "Asynchronous"
@@ -60,7 +73,31 @@ crates = ["ring", "sha2"]
 category = "Data structures"
 slug = "data-structures"
 description = "Rust implementations of particular ways of organizing data suited for specific purposes."
-crates = ["arrayvec", "bitvec", "graph-rs", "heapless", "im", "indexmap", "indextree", "ndarray", "num", "num-bigint", "num-complex", "num-rational", "petgraph", "priority-queue", "rangemap", "roaring", "rpds", "rust_decimal", "skiplist", "slotmap", "smallvec", "tinyvec", "uuid"]
+crates = [
+  "arrayvec",
+  "bitvec",
+  "graph-rs",
+  "heapless",
+  "im",
+  "indexmap",
+  "indextree",
+  "ndarray",
+  "num",
+  "num-bigint",
+  "num-complex",
+  "num-rational",
+  "petgraph",
+  "priority-queue",
+  "rangemap",
+  "roaring",
+  "rpds",
+  "rust_decimal",
+  "skiplist",
+  "slotmap",
+  "smallvec",
+  "tinyvec",
+  "uuid",
+]
 
 [[categories]]
 category = "Debugging"
@@ -144,7 +181,32 @@ crates = ["itertools", "serde"]
 category = "No standard library"
 slug = "no-std"
 description = "Crates that are able to function without the Rust standard library."
-crates = ["anyhow", "arrayvec", "bitflags", "bitvec", "derive_more", "glam", "heapless", "indexmap", "itertools", "nalgebra", "num-traits", "ordered-float", "rand", "rand_distr", "ring", "serde", "serde_ignored", "serde_json", "sha2", "slint", "tinyvec", "typenum", "uom", "uuid"]
+crates = [
+  "anyhow",
+  "arrayvec",
+  "bitflags",
+  "bitvec",
+  "derive_more",
+  "glam",
+  "heapless",
+  "indexmap",
+  "itertools",
+  "nalgebra",
+  "num-traits",
+  "ordered-float",
+  "rand",
+  "rand_distr",
+  "ring",
+  "serde",
+  "serde_ignored",
+  "serde_json",
+  "sha2",
+  "slint",
+  "tinyvec",
+  "typenum",
+  "uom",
+  "uuid",
+]
 
 [[categories]]
 category = "Parser implementations"
@@ -186,7 +248,20 @@ crates = ["anyhow", "bitvec", "itertools", "ordered-float"]
 category = "Science"
 slug = "science"
 description = "Crates related to solving problems involving physics, chemistry, biology, machine learning, geoscience, and other scientific fields."
-crates = ["nalgebra", "nalgebra-lapack", "ndarray", "num", "num-bigint", "num-complex", "num-rational", "num-traits", "ordered-float", "rust_decimal", "statrs", "uom"]
+crates = [
+  "nalgebra",
+  "nalgebra-lapack",
+  "ndarray",
+  "num",
+  "num-bigint",
+  "num-complex",
+  "num-rational",
+  "num-traits",
+  "ordered-float",
+  "rust_decimal",
+  "statrs",
+  "uom",
+]
 
 [[categories]]
 category = "Text processing"
@@ -222,4 +297,35 @@ crates = ["windows"]
 category = "Uncategorized"
 slug = "uncategorized"
 description = "No crates.io category is recorded for these crates in the book's current inventory."
-crates = ["approx", "bloomfilter", "cargo", "cargo-generate", "cfg-if", "clear", "dioxus", "directories", "dirs", "enumflags", "flagset", "fnv", "fs_extra", "globset", "ignore", "leptos", "mdbook", "mdbook-linkcheck", "mdbook-private", "memmap2", "multimap", "open", "rust-crypto", "same-file", "sqlx", "stdx", "tar", "tempfile", "ultraviolet", "zip"]
+crates = [
+  "approx",
+  "bloomfilter",
+  "cargo",
+  "cargo-generate",
+  "cfg-if",
+  "clear",
+  "dioxus",
+  "directories",
+  "dirs",
+  "enumflags",
+  "flagset",
+  "fnv",
+  "fs_extra",
+  "globset",
+  "ignore",
+  "leptos",
+  "mdbook",
+  "mdbook-linkcheck",
+  "mdbook-private",
+  "memmap2",
+  "multimap",
+  "open",
+  "rust-crypto",
+  "same-file",
+  "sqlx",
+  "stdx",
+  "tar",
+  "tempfile",
+  "ultraviolet",
+  "zip",
+]

@@ -55,5 +55,5 @@ In user space, an application normally opens an OS-provided device interface or 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-Expanded the peripheral guide with USB, serial, HID, GPIO, networking, GPU, driver, and user-space access guidance, including platform permission boundaries and local topic references.
+  Expanded the peripheral guide with USB, serial, HID, GPIO, networking, GPU, driver, and user-space access guidance, including platform permission boundaries and local topic references.
 </div>

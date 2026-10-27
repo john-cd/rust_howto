@@ -52,7 +52,7 @@ For video streaming, you'll often need to combine video encoding/decoding with [
 
 Video playback crates are less common in Rust.
 
-Building a full-fledged video player in Rust is a complex undertaking. You'd likely combine video decoding with [[graphics | graphics]]  libraries ([`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`pixels`][c~pixels~docs]↗{{hi:pixels}}, etc.) and [[multimedia_audio | audio]] libraries (e.g. [`cpal`][c~cpal~docs]↗{{hi:cpal}}).
+Building a full-fledged video player in Rust is a complex undertaking. You'd likely combine video decoding with [[graphics | graphics]] libraries ([`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`pixels`][c~pixels~docs]↗{{hi:pixels}}, etc.) and [[multimedia_audio | audio]] libraries (e.g. [`cpal`][c~cpal~docs]↗{{hi:cpal}}).
 
 ## Related Topics
 

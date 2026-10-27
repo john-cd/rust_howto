@@ -1,22 +1,22 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "database_implementations"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Examples for interacting with various database backends like Sled, SurrealDB, and Meilisearch."
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Examples for interacting with various database backends like Sled, SurrealDB, and Meilisearch."
 
-keywords = ["database", "sled", "surrealdb", "meilisearch", "tantivy", "persistence"]
-categories = ["database-implementations"]
-publish.workspace = true
 autolib = false
+categories = ["database-implementations"]
+keywords = ["database", "sled", "surrealdb", "meilisearch", "tantivy", "persistence"]
+publish.workspace = true
 
 [features]
 # default = []
@@ -26,7 +26,6 @@ surrealdb = ["dep:surrealdb"]
 tantivy = ["dep:tantivy"]
 
 [dependencies]
-
 ## General
 anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive"] }

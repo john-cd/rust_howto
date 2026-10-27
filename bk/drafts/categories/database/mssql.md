@@ -22,5 +22,5 @@ FIXME
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[organize / write](https://github.com/john-cd/rust_howto/issues/1067)
+  [organize / write](https://github.com/john-cd/rust_howto/issues/1067)
 </div>

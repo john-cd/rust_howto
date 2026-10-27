@@ -1,21 +1,21 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "standard_library"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Core examples demonstrating idiomatic use of the Rust standard library and common error handling patterns."
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["std", "standard-library", "thiserror", "derive_more"]
-categories.workspace = true
-publish = false
 autolib = false
+categories.workspace = true
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["std", "standard-library", "thiserror", "derive_more"]
+license-file.workspace = true
+publish = false
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Core examples demonstrating idiomatic use of the Rust standard library and common error handling patterns."
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

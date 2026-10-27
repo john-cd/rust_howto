@@ -29,6 +29,6 @@ We decided to cover localization as a part of the closely related [[internationa
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/405)
-do we need a code example??
+  [write](https://github.com/john-cd/rust_howto/issues/405)
+  do we need a code example??
 </div>

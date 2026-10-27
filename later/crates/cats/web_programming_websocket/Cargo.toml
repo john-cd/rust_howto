@@ -1,27 +1,27 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "web_programming_websocket"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples for Web Programming with WebSockets using Tungstenite."
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["websocket", "networking", "tungstenite", "tokio", "async"]
-categories = ["web-programming::websocket"]
-publish.workspace = true
 autolib = false
+categories = ["web-programming::websocket"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["websocket", "networking", "tungstenite", "tokio", "async"]
+license-file.workspace = true
+publish.workspace = true
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples for Web Programming with WebSockets using Tungstenite."
 
 [dependencies]
 anyhow = "1.0.104"
 async-tungstenite = { version = "0.35.0", features = [
-    "tokio-runtime",
-    "tokio-native-tls",
+  "tokio-runtime",
+  "tokio-native-tls",
 ] }
 futures-util = "0.3.34"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net"] }

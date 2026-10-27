@@ -23,5 +23,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[encoding: write](https://github.com/john-cd/rust_howto/issues/417)
+  [encoding: write](https://github.com/john-cd/rust_howto/issues/417)
 </div>

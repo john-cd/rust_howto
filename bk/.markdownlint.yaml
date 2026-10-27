@@ -71,22 +71,22 @@ MD012:
 
 # MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md013.md
 MD013: false
-  # # Number of characters
-  # line_length: 80
-  # # Number of characters for headings
-  # heading_line_length: 80
-  # # Number of characters for code blocks
-  # code_block_line_length: 80
-  # # Include code blocks
-  # code_blocks: true
-  # # Include tables
-  # tables: true
-  # # Include headings
-  # headings: true
-  # # Strict length checking
-  # strict: false
-  # # Stern length checking
-  # stern: false
+# # Number of characters
+# line_length: 80
+# # Number of characters for headings
+# heading_line_length: 80
+# # Number of characters for code blocks
+# code_block_line_length: 80
+# # Include code blocks
+# code_blocks: true
+# # Include tables
+# tables: true
+# # Include headings
+# headings: true
+# # Strict length checking
+# strict: false
+# # Stern length checking
+# stern: false
 
 # MD014/commands-show-output : Dollar signs used before commands without showing output : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md014.md
 MD014: true
@@ -162,8 +162,8 @@ MD032: true
 
 # MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md033.md
 MD033: false
-  # Allowed elements
-  # allowed_elements: []
+# Allowed elements
+# allowed_elements: []
 
 # MD034/no-bare-urls : Bare URL used : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md034.md
 MD034: false
@@ -194,20 +194,20 @@ MD040:
 
 # MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md041.md
 MD041: false
-  # # Heading level
-  # level: 1
-  # # RegExp for matching title in front matter
-  # front_matter_title: "^\\s*title\\s*[:=]"
+# # Heading level
+# level: 1
+# # RegExp for matching title in front matter
+# front_matter_title: "^\\s*title\\s*[:=]"
 
 # MD042/no-empty-links : No empty links : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md042.md
 MD042: true
 
 # MD043/required-headings : Required heading structure : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md043.md
 MD043: false
-  # # List of headings
-  # headings: []
-  # # Match case of headings
-  # match_case: false
+# # List of headings
+# headings: []
+# # Match case of headings
+# match_case: false
 
 # MD044/proper-names : Proper names should have the correct capitalization : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md044.md
 MD044:
@@ -249,14 +249,14 @@ MD051: true
 
 # MD052/reference-links-images : Reference links and images should use a label that is defined : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md052.md
 MD052: false
-  ## Include shortcut syntax
-  #shortcut_syntax: false
+## Include shortcut syntax
+#shortcut_syntax: false
 
 # MD053/link-image-reference-definitions : Link and image reference definitions should be needed : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md053.md
 MD053: false
-  ## Ignored definitions
-  #ignored_definitions:
-  #  - "//"
+## Ignored definitions
+#ignored_definitions:
+#  - "//"
 
 # MD054/link-image-style : Link and image style : https://github.com/DavidAnson/markdownlint/blob/v0.33.0/doc/md054.md
 MD054:

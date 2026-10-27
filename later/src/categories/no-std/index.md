@@ -15,26 +15,26 @@ Under [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}}, you use [`core
 
 ## The Three Layers
 
-| Layer | Crate | Needs | Provides |
-|---|---|---|---|
-| `core` | [`core`][c~core~docs]↗{{hi:core}} | Nothing | Primitive types, `Option`, `Result`, iterators, atomics, formatting. Always available. |
-| `alloc` | [`alloc`][c~alloc~docs]↗{{hi:alloc}} | A global allocator | `Box`, `Vec`, `String`, `Rc`, `Arc`, `BTreeMap`. See [[no-std_no-alloc | No Alloc]] for working without it. |
-| `std` | [`std`][c~std~docs]↗{{hi:std}} | An operating system | Files, networking, threads, `HashMap`, and everything above. |
+| Layer   | Crate                                | Needs               | Provides                                                                                                                                |
+| ------- | ------------------------------------ | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `core`  | [`core`][c~core~docs]↗{{hi:core}}    | Nothing             | Primitive types, `Option`, `Result`, iterators, atomics, formatting. Always available.                                                  |
+| `alloc` | [`alloc`][c~alloc~docs]↗{{hi:alloc}} | A global allocator  | `Box`, `Vec`, `String`, `Rc`, `Arc`, `BTreeMap`. See [[no-std_no-alloc | No Alloc]] for working without it. |
+| `std`   | [`std`][c~std~docs]↗{{hi:std}}       | An operating system | Files, networking, threads, `HashMap`, and everything above.                                                                            |
 
 A `#![no_std]` binary must also provide a panic handler. Crates such as [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} and [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} supply one.
 
 ## Useful `no_std` Crates
 
-| Need | Crate | Notes |
-|---|---|---|
-| Fixed-capacity collections without `alloc` | [`heapless`][c~heapless~docs]↗{{hi:heapless}} | `Vec`, `String`, queues and maps with a compile-time capacity. |
-| Hardware abstraction traits | [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} | Portable traits for GPIO, SPI, I2C and timers. See [[embedded | Embedded]]. |
-| Logging | [`defmt`][c~defmt~docs]↗{{hi:defmt}} | Compact, deferred-formatting logger for microcontrollers. |
-| Serialization | [`postcard`][c~postcard~docs]↗{{hi:postcard}} | Compact `serde` format that works without `std` or `alloc`. |
-| Floating-point math | [`libm`][c~libm~docs]↗{{hi:libm}}, [`micromath`][c~micromath~repo]↗{{hi:micromath}} | `core` lacks `sin`, `sqrt` and similar; `libm` is accurate, `micromath` is faster and approximate, and adds 2D/3D vectors and statistics. |
-| Non-blocking I/O | [`nb`][c~nb~docs]↗{{hi:nb}} | Helpers for polling-style peripherals. |
-| Atomics on any target | [`atomic`][c~atomic~docs]↗{{hi:atomic}} | Generic `Atomic<T>` wrapper. |
-| Global allocator | [`embedded-alloc`][c~embedded-alloc~docs]↗{{hi:embedded-alloc}} | Heap allocator for use with `alloc`. Prefer it over the unmaintained [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}. |
+| Need                                       | Crate                                                                               | Notes                                                                                                                                     |
+| ------------------------------------------ | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Fixed-capacity collections without `alloc` | [`heapless`][c~heapless~docs]↗{{hi:heapless}}                                       | `Vec`, `String`, queues and maps with a compile-time capacity.                                                                            |
+| Hardware abstraction traits                | [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}}                           | Portable traits for GPIO, SPI, I2C and timers. See [[embedded | Embedded]].                            |
+| Logging                                    | [`defmt`][c~defmt~docs]↗{{hi:defmt}}                                                | Compact, deferred-formatting logger for microcontrollers.                                                                                 |
+| Serialization                              | [`postcard`][c~postcard~docs]↗{{hi:postcard}}                                       | Compact `serde` format that works without `std` or `alloc`.                                                                               |
+| Floating-point math                        | [`libm`][c~libm~docs]↗{{hi:libm}}, [`micromath`][c~micromath~repo]↗{{hi:micromath}} | `core` lacks `sin`, `sqrt` and similar; `libm` is accurate, `micromath` is faster and approximate, and adds 2D/3D vectors and statistics. |
+| Non-blocking I/O                           | [`nb`][c~nb~docs]↗{{hi:nb}}                                                         | Helpers for polling-style peripherals.                                                                                                    |
+| Atomics on any target                      | [`atomic`][c~atomic~docs]↗{{hi:atomic}}                                             | Generic `Atomic<T>` wrapper.                                                                                                              |
+| Global allocator                           | [`embedded-alloc`][c~embedded-alloc~docs]↗{{hi:embedded-alloc}}                     | Heap allocator for use with `alloc`. Prefer it over the unmaintained [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}.                    |
 
 ## Code Examples
 

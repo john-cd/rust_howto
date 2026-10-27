@@ -42,7 +42,7 @@ style_edition = "2024"
 unstable_features = true
 
 newline_style = "Unix"
-#max_width = 100 # default: 100
+# max_width = 100 # default: 100
 use_small_heuristics = "Max"
 format_code_in_doc_comments = true
 indent_style = "Visual"

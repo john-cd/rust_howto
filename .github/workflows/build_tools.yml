@@ -6,25 +6,25 @@ name: Build tools on Linux
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: ["develop"]
     paths:
-      - 'tools/**'
-      - '.devcontainer/**'
-      - '.github/workflows/**'
-      - '.github/actions/**'
-      - 'Cargo.toml'
-      - 'Cargo.lock'
-      - 'rustfmt-toolchain.toml'
+      - "tools/**"
+      - ".devcontainer/**"
+      - ".github/workflows/**"
+      - ".github/actions/**"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rustfmt-toolchain.toml"
   pull_request:
-    branches: [ "develop" ]
+    branches: ["develop"]
     paths:
-      - 'tools/**'
-      - '.devcontainer/**'
-      - '.github/workflows/**'
-      - '.github/actions/**'
-      - 'Cargo.toml'
-      - 'Cargo.lock'
-      - 'rustfmt-toolchain.toml'
+      - "tools/**"
+      - ".devcontainer/**"
+      - ".github/workflows/**"
+      - ".github/actions/**"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rustfmt-toolchain.toml"
   workflow_dispatch:
 
 permissions:
@@ -45,36 +45,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Code checkout (clones the Git repository)
-      # actions/checkout v7.0.1
-      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Code checkout (clones the Git repository)
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
-    - name: Set up Docker Buildx
-      # docker/setup-buildx-action v4.4.1
-      uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
+      - name: Set up Docker Buildx
+        # docker/setup-buildx-action v4.4.1
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
 
-    - name: Build local-tool-builder image
-      run: |
-        source .devcontainer/.env
-        cache_scope="rust_howto_tools-${RUST_VERSION}-$(sha256sum tools/Cargo.lock | cut -c1-12)"
-        docker buildx build \
-          --file .devcontainer/Dockerfile \
-          --target local-tool-builder \
-          --tag rust_howto_tools_app_builder:latest \
-          --build-arg RUST_IMAGE_LABEL="$RUST_IMAGE_LABEL" \
-          --cache-from type=gha,scope="$cache_scope" \
-          --cache-to type=gha,mode=max,scope="$cache_scope" \
-          --load .
+      - name: Build local-tool-builder image
+        run: |
+          source .devcontainer/.env
+          cache_scope="rust_howto_tools-${RUST_VERSION}-$(sha256sum tools/Cargo.lock | cut -c1-12)"
+          docker buildx build \
+            --file .devcontainer/Dockerfile \
+            --target local-tool-builder \
+            --tag rust_howto_tools_app_builder:latest \
+            --build-arg RUST_IMAGE_LABEL="$RUST_IMAGE_LABEL" \
+            --cache-from type=gha,scope="$cache_scope" \
+            --cache-to type=gha,mode=max,scope="$cache_scope" \
+            --load .
 
-    - name: Run tools tests inside container
-      run: |
-        docker run --rm rust_howto_tools_app_builder:latest bash -lc '
-          set -euo pipefail
-          RUSTFMT_TOOLCHAIN="$(sed -n "s/^channel *= *\"\([^\"]*\)\".*/\1/p" "$RUSTFMT_TOOLCHAIN_FILE")"
-          cd /code/tools
-          cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
-          cargo build --workspace --all-targets --locked --all-features
-          cargo clippy --workspace --all-targets --locked --all-features -- --deny warnings
-          cargo test --workspace --all-targets --locked --all-features
-          cargo test --workspace --doc --locked --all-features
-        '
+      - name: Run tools tests inside container
+        run: |
+          docker run --rm rust_howto_tools_app_builder:latest bash -lc '
+            set -euo pipefail
+            RUSTFMT_TOOLCHAIN="$(sed -n "s/^channel *= *\"\([^\"]*\)\".*/\1/p" "$RUSTFMT_TOOLCHAIN_FILE")"
+            cd /code/tools
+            cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
+            cargo build --workspace --all-targets --locked --all-features
+            cargo clippy --workspace --all-targets --locked --all-features -- --deny warnings
+            cargo test --workspace --all-targets --locked --all-features
+            cargo test --workspace --doc --locked --all-features
+          '

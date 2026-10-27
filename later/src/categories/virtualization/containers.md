@@ -10,5 +10,5 @@ For Rust container clients, runtimes, and OCI tooling, see [[containerization | 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review/write](https://github.com/john-cd/rust_howto/issues/988)
+  [review/write](https://github.com/john-cd/rust_howto/issues/988)
 </div>

@@ -55,5 +55,5 @@ The request targets [httpbin.org][httpbin.org~headers]↗, which responds with a
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-This review makes success-status handling explicit, uses HTTPS for the remote examples, and keeps network-dependent checks opt-in. A local HTTP echo test covers default headers, bearer authentication, and JSON decoding without relying on an external service.
+  This review makes success-status handling explicit, uses HTTPS for the remote examples, and keeps network-dependent checks opt-in. A local HTTP echo test covers default headers, bearer authentication, and JSON decoding without relying on an external service.
 </div>

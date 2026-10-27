@@ -4,10 +4,10 @@
 
 [`lapin`][c~lapin~docs]↗{{hi:lapin}} is an asynchronous Rust client for AMQP 0-9-1 and RabbitMQ.
 
-| Recipe | Crates | Categories |
-|--------|--------|------------|
+| Recipe                                                | Crates                                       | Categories                                          |
+| ----------------------------------------------------- | -------------------------------------------- | --------------------------------------------------- |
 | [Connect to RabbitMQ with `lapin`][ex~database~lapin] | [![lapin][c~lapin~docs~badge]][c~lapin~docs] | [![cat~database][cat~database~badge]][cat~database] |
 
 <div class="hidden">
-This shared include introduces AMQP, RabbitMQ's queue flow, and the `lapin` client used by the recipe.
+  This shared include introduces AMQP, RabbitMQ's queue flow, and the `lapin` client used by the recipe.
 </div>

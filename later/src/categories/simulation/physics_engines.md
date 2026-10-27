@@ -29,6 +29,6 @@ The following standalone 2D example steps a falling ball on a fixed ground. It u
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write / decide what to cover](https://github.com/john-cd/rust_howto/issues/1206)
-`bevy_rapier` integrates [`rapier`][rapier.rs~website]↗{{hi:rapier}} with the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine.
+  [write / decide what to cover](https://github.com/john-cd/rust_howto/issues/1206)
+  `bevy_rapier` integrates [`rapier`][rapier.rs~website]↗{{hi:rapier}} with the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine.
 </div>

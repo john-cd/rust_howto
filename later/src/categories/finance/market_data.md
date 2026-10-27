@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Market Data and Brokers
 
 {{#include market_data.incl.md}}
@@ -23,5 +24,5 @@ Market data is licensed. Check the terms of your provider before storing or redi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[examples](https://github.com/john-cd/rust_howto/issues/1949)
+  [examples](https://github.com/john-cd/rust_howto/issues/1949)
 </div>

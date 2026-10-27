@@ -29,6 +29,6 @@ This example writes a small synthetic 3D volume to a temporary NIfTI file.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[neuro: write](https://github.com/john-cd/rust_howto/issues/476)
-cover [`nifti`][c~nifti~docs]↗{{hi:nifti}}, [`dicom`][c~dicom~docs]↗{{hi:dicom}}?
+  [neuro: write](https://github.com/john-cd/rust_howto/issues/476)
+  cover [`nifti`][c~nifti~docs]↗{{hi:nifti}}, [`dicom`][c~dicom~docs]↗{{hi:dicom}}?
 </div>

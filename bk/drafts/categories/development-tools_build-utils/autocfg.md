@@ -47,11 +47,11 @@ Keep the fallback branch valid for every compiler that can reach it. The probe o
 
 ## Related Topics {#related-topics .skip}
 
-| Topic | Description |
-|-------|-------------|
-| [Cargo build scripts][book~cargo~build-script] | Run build-time checks and pass instructions to Cargo before compiling a package. |
-| [Conditional compilation][book~rust-reference~conditional-compilation] | Use the emitted `cfg` setting to select code at compile time. |
-| [Cargo][p~cargo] | Configure user-selectable package features separately from compiler capability probes. |
+| Topic                                                                  | Description                                                                            |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [Cargo build scripts][book~cargo~build-script]                         | Run build-time checks and pass instructions to Cargo before compiling a package.       |
+| [Conditional compilation][book~rust-reference~conditional-compilation] | Use the emitted `cfg` setting to select code at compile time.                          |
+| [Cargo][p~cargo]                                                       | Configure user-selectable package features separately from compiler capability probes. |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

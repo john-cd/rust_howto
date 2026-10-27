@@ -34,13 +34,13 @@ See [procedural macros][p~macros], [Cargo build scripts][book~cargo~build-script
 
 Use a project generator when a starter template can provide useful structure or repeatable boilerplate. Treat the template as source code: review the generated files, dependencies, and configuration before building on them.
 
-| Tool | Use it when |
-| --- | --- |
-| [`cargo-generate`][c~cargo-generate~repo]↗{{hi:cargo-generate}} | Start from a Git-hosted template that you control or trust; `cargo generate --git <template-url>` creates the project from it. |
-| [`kickstart`][c~kickstart~repo]↗{{hi:kickstart}} | Use a Tera-based template with prompted variables and conditional files when the generated project needs customization. |
-| [Gerust][gerust~website]↗{{hi:Gerust}} | Create an opinionated Rust backend workspace based on Axum and SQLx when that architecture fits; `gerust <project-name>` generates the starting files. |
-| [Loco][c~loco-rs~website]↗{{hi:Loco}} | Start a batteries-included web application with `loco new`; use `cargo loco generate` (debug builds only) for application components. |
-| [Rise][rise~repo]↗{{hi:Rise}} | Choose a community template for a web app, CLI, game, or another Rust project. |
+| Tool                                                            | Use it when                                                                                                                                            |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`cargo-generate`][c~cargo-generate~repo]↗{{hi:cargo-generate}} | Start from a Git-hosted template that you control or trust; `cargo generate --git <template-url>` creates the project from it.                         |
+| [`kickstart`][c~kickstart~repo]↗{{hi:kickstart}}                | Use a Tera-based template with prompted variables and conditional files when the generated project needs customization.                                |
+| [Gerust][gerust~website]↗{{hi:Gerust}}                          | Create an opinionated Rust backend workspace based on Axum and SQLx when that architecture fits; `gerust <project-name>` generates the starting files. |
+| [Loco][c~loco-rs~website]↗{{hi:Loco}}                           | Start a batteries-included web application with `loco new`; use `cargo loco generate` (debug builds only) for application components.                  |
+| [Rise][rise~repo]↗{{hi:Rise}}                                   | Choose a community template for a web app, CLI, game, or another Rust project.                                                                         |
 
 As of this review, [`Protypo`][protypo~repo]↗{{hi:Protypo}} is a cloud-native headless CMS with one repository commit and no README or release; consider it only for CMS evaluation, not general project scaffolding.
 
@@ -50,5 +50,5 @@ As of this review, [`Protypo`][protypo~repo]↗{{hi:Protypo}} is a cloud-native 
 - [Cargo subcommands and task runners][p~building].
 - [Cargo build-time utilities][p~build-utils].
 - [Cargo configuration][p~configuration].
-{{#include refs.incl.md}}
-{{#include ../../../refs/link-refs.md}}
+  {{#include refs.incl.md}}
+  {{#include ../../../refs/link-refs.md}}

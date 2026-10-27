@@ -7,7 +7,7 @@
 ## Testing and Debugging with Containers {#testing-and-debugging-with-containers .skip}
 
 - [Testcontainers][c~testcontainers~crates.io]↗: A library for running Docker containers in integration tests.
-See the [testcontainers][testcontainers~website]↗ website.
+  See the [testcontainers][testcontainers~website]↗ website.
 
 - [Mockito][c~mockito~crates.io]↗: Useful for mocking HTTP requests in containerized environments.
 
@@ -24,5 +24,5 @@ See [[mocking | Mocking]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write / fix](https://github.com/john-cd/rust_howto/issues/1224)
+  [write / fix](https://github.com/john-cd/rust_howto/issues/1224)
 </div>

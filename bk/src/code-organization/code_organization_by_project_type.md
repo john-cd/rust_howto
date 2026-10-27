@@ -285,7 +285,7 @@ The main [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file in the r
 
 ```toml
 [workspace]
-members = [ "lib1", "lib2", "main_lib" ]
+members = ["lib1", "lib2", "main_lib"]
 ```
 
 Confusingly, a workspace [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} can also include a 'root package' in addition to member crates. That lets you place the code of the main library or executable in e.g. a [`src`][book~cargo~project-layout]↗{{hi:src folder}} folder directly under the workspace root.

@@ -59,5 +59,5 @@ A `429` or `503` response may carry a `Retry-After` header, in seconds or as an 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[written for issue #1911](https://github.com/john-cd/rust_howto/issues/1911)
+  [written for issue #1911](https://github.com/john-cd/rust_howto/issues/1911)
 </div>

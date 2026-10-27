@@ -23,28 +23,28 @@ on:
   push:
     branches: ["develop"]
     paths:
-      - 'bk/**'
-      - 'tools/**'
-      - '.devcontainer/**'
-      - '.github/workflows/**'
-      - '.github/actions/**'
-      - 'justfile'
-      - 'Cargo.toml'
-      - 'Cargo.lock'
-      - 'rustfmt-toolchain.toml'
+      - "bk/**"
+      - "tools/**"
+      - ".devcontainer/**"
+      - ".github/workflows/**"
+      - ".github/actions/**"
+      - "justfile"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rustfmt-toolchain.toml"
 
   pull_request:
     branches: ["develop"]
     paths:
-      - 'bk/**'
-      - 'tools/**'
-      - '.devcontainer/**'
-      - '.github/workflows/**'
-      - '.github/actions/**'
-      - 'justfile'
-      - 'Cargo.toml'
-      - 'Cargo.lock'
-      - 'rustfmt-toolchain.toml'
+      - "bk/**"
+      - "tools/**"
+      - ".devcontainer/**"
+      - ".github/workflows/**"
+      - ".github/actions/**"
+      - "justfile"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rustfmt-toolchain.toml"
 
   ## Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

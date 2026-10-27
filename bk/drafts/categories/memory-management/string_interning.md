@@ -4,7 +4,7 @@
 
 {{#include string_interning.incl.md}}
 
-*Interning*{{hi:Interning}}{{hi:String interning}} stores each distinct string once and hands out cheap handles. Comparing, hashing and copying a handle costs the same regardless of the string's length, which helps a program that compares the same identifiers many times, such as a compiler, a parser or a code-analysis tool. The price is that the pool keeps every string alive. Measure the effect on your workload before adopting it.
+_Interning_{{hi:Interning}}{{hi:String interning}} stores each distinct string once and hands out cheap handles. Comparing, hashing and copying a handle costs the same regardless of the string's length, which helps a program that compares the same identifiers many times, such as a compiler, a parser or a code-analysis tool. The price is that the pool keeps every string alive. Measure the effect on your workload before adopting it.
 
 ## Intern Strings by Hand or with `ustr` {#interning}
 
@@ -29,5 +29,5 @@ The example shows two interners:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[string interning: review the new page](https://github.com/john-cd/rust_howto/issues/1925)
+  [string interning: review the new page](https://github.com/john-cd/rust_howto/issues/1925)
 </div>

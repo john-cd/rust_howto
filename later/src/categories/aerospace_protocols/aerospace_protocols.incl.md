@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe | Crates | Categories |
-|---|---|---|
+| Recipe                                                            | Crates             | Categories                                                                              |
+| ----------------------------------------------------------------- | ------------------ | --------------------------------------------------------------------------------------- |
 | [Aerospace Protocols][ex~aerospace_protocols~aerospace_protocols] | {{!crate mavlink}} | [![cat~aerospace::protocols][cat~aerospace::protocols~badge]][cat~aerospace::protocols] |

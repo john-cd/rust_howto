@@ -9,18 +9,18 @@ GitHub Action for installing [development tools][p~development-tools] (mainly fr
 ## Install Development Tools {#installation-of-development-tools}
 
 ```yaml
-    - uses: actions-rust-lang/setup-rust-toolchain@v1
-      with:
-        toolchain: stable
-    - uses: taiki-e/install-action@v2
-      with:
-        tool: cargo-deny,cargo-outdated,cargo-udeps,cargo-audit
-    - name: Check dependencies
-      run: |
-        cargo deny check
-        cargo outdated --exit-code 1
-        cargo udeps
-        cargo audit
+- uses: actions-rust-lang/setup-rust-toolchain@v1
+  with:
+    toolchain: stable
+- uses: taiki-e/install-action@v2
+  with:
+    tool: cargo-deny,cargo-outdated,cargo-udeps,cargo-audit
+- name: Check dependencies
+  run: |
+    cargo deny check
+    cargo outdated --exit-code 1
+    cargo udeps
+    cargo audit
 ```
 
 [`install-action`][install_action~repo]↗{{hi:install-action}} is a GitHub Action for installing development tools (mainly from GitHub Releases).

@@ -91,5 +91,5 @@ cargo add clap_complete
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[shells: expand](https://github.com/john-cd/rust_howto/issues/239)
+  [shells: expand](https://github.com/john-cd/rust_howto/issues/239)
 </div>

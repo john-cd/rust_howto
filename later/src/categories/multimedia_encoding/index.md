@@ -41,5 +41,5 @@ See [[multimedia_images | Multimedia: Image]].
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/418)
+  [write](https://github.com/john-cd/rust_howto/issues/418)
 </div>

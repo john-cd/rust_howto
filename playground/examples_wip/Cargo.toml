@@ -1,19 +1,19 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "playground"
 version = "0.1.2"
 authors = ["John CD"]
+categories = ["development-tools"]
+documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
+homepage = "https://john-cd.com/rust_howto/"
+keywords = ["experimental", "playground", "wip", "snippets"]
+license-file.workspace = true
+publish = false
+repository = "https://github.com/john-cd/rust_howto/playground/"
 rust-version = "1.99"
 description = "A scratchpad for work-in-progress code snippets and experimental Rust patterns."
-documentation = "https://docs.rs/rust_howto/"
-homepage = "https://john-cd.com/rust_howto/"
-repository = "https://github.com/john-cd/rust_howto/playground/"
-keywords = ["experimental", "playground", "wip", "snippets"]
-categories = ["development-tools"]
-publish = false
 
 [dependencies]
 anyhow = "1.0.104"

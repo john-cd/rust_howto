@@ -5,7 +5,7 @@
 ## The Following <div> Should Be Hidden
 
 <div class="hidden">
-THIS SHOULD NOT BE SEEN.
+  THIS SHOULD NOT BE SEEN.
 </div>
 
 ## The Following File Should Be Included

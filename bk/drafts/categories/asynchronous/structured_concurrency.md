@@ -9,7 +9,7 @@ An asynchronous program often starts a group of tasks that should live and die t
 ## How Cancellation Works {#how-cancellation-works .skip}
 
 - **Cancellation is cooperative.** A task stops only at an `.await` where it observes a signal, such as a [`CancellationToken`][c~tokio_util::sync::CancellationToken~docs]↗{{hi:CancellationToken}}. A token lets the task clean up first.
-- **Dropping a future cancels it.** The rest of its body never runs. Dropping a [`JoinHandle`][c~tokio::task::JoinHandle::abort~docs]↗{{hi:JoinHandle}} does *not* cancel the task; call `abort()` for that.
+- **Dropping a future cancels it.** The rest of its body never runs. Dropping a [`JoinHandle`][c~tokio::task::JoinHandle::abort~docs]↗{{hi:JoinHandle}} does _not_ cancel the task; call `abort()` for that.
 - **`abort()` is abrupt.** It cancels the task at its next suspension point from the outside, without a chance to clean up. Prefer a token when the task holds resources.
 - **A panic or a cancellation is reported by the `JoinHandle`.** `JoinError::is_panic` and `JoinError::is_cancelled` tell them apart.
 
@@ -43,11 +43,11 @@ For a server-wide shutdown signal, see [graceful shutdown][ex~asynchronous~grace
 
 Pick the Tokio channel by what the receivers need:
 
-| Receivers need | Use |
-|----------------|-----|
+| Receivers need                                        | Use                                                                                                                  |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | Only the latest value, such as configuration or state | [`watch`][c~tokio::sync::watch~docs]↗{{hi:watch}}: `send_replace` publishes, `changed().await` waits for a new value |
-| Every event, accepting that a slow receiver can lag | [`broadcast`][c~tokio::sync::broadcast~docs]↗{{hi:broadcast}} |
-| A work queue where each message goes to one consumer | `mpsc` (see [Async Channels][p~async-channels]) |
+| Every event, accepting that a slow receiver can lag   | [`broadcast`][c~tokio::sync::broadcast~docs]↗{{hi:broadcast}}                                                        |
+| A work queue where each message goes to one consumer  | `mpsc` (see [Async Channels][p~async-channels])                                                                      |
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/structured_concurrency/watch_latest.rs:example}}
@@ -74,5 +74,5 @@ A supervisor runs a task, restarts it when it fails with capped exponential back
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[structured concurrency: review the new page](https://github.com/john-cd/rust_howto/issues/1920)
+  [structured concurrency: review the new page](https://github.com/john-cd/rust_howto/issues/1920)
 </div>

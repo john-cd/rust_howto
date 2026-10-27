@@ -20,8 +20,10 @@ need_stdout = false
 # Run clippy on the default target
 [jobs.clippy]
 command = [
-    "cargo", "clippy",
-    "--color", "always",
+  "cargo",
+  "clippy",
+  "--color",
+  "always",
 ]
 need_stdout = false
 
@@ -40,9 +42,11 @@ need_stdout = false
 # need_stdout = false
 [jobs.clippy-all]
 command = [
-    "cargo", "clippy",
-    "--all-targets",
-    "--color", "always",
+  "cargo",
+  "clippy",
+  "--all-targets",
+  "--color",
+  "always",
 ]
 need_stdout = false
 
@@ -52,8 +56,13 @@ need_stdout = false
 # - the tests of a package: bacon test -- -- -p config
 [jobs.test]
 command = [
-    "cargo", "test", "--color", "always",
-    "--", "--color", "always", # see https://github.com/Canop/bacon/issues/124
+  "cargo",
+  "test",
+  "--color",
+  "always",
+  "--",
+  "--color",
+  "always", # see https://github.com/Canop/bacon/issues/124
 ]
 need_stdout = true
 
@@ -83,14 +92,16 @@ on_success = "back" # so that we don't open the browser at each change
 # every change, then uncomment the 'on_change_strategy' line.
 [jobs.run]
 command = [
-    "cargo", "run",
-    "--color", "always",
-    # put launch parameters for your program behind a `--` separator
+  "cargo",
+  "run",
+  "--color",
+  "always",
+  # put launch parameters for your program behind a `--` separator
 ]
 need_stdout = true
 allow_warnings = true
 background = true
-#on_change_strategy = "kill_then_restart"
+# on_change_strategy = "kill_then_restart"
 
 # This parameterized job runs the example of your choice, as soon
 # as the code compiles.

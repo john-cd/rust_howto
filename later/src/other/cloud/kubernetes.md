@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Kubernetes Operators
 
 {{#include kubernetes.incl.md}}
@@ -20,7 +21,7 @@ The recipe has three layers:
 Design notes:
 
 - **Reconciliation must be idempotent**: it runs repeatedly, and may run for events it has already handled. Server-side apply creates or updates the same object.
-- **Owner references** let Kubernetes delete the children of a deleted resource. Use *finalizers* when you must clean up something outside the cluster first.
+- **Owner references** let Kubernetes delete the children of a deleted resource. Use _finalizers_ when you must clean up something outside the cluster first.
 - **Status subresource**: write observed state with `patch_status`, and skip the write when nothing changed, or you will trigger another reconcile.
 - **Requeue strategy**: return `Action::requeue(..)` for periodic resync, and use `error_policy` to retry failures after a delay.
 
@@ -37,5 +38,5 @@ Design notes:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[kubernetes operator](https://github.com/john-cd/rust_howto/issues/1928)
+  [kubernetes operator](https://github.com/john-cd/rust_howto/issues/1928)
 </div>

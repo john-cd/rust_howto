@@ -8,13 +8,13 @@ Template engines render text by combining a template with data. Choose by where 
 
 ## Choose a Template Workflow
 
-| Workflow | Crates | How they fit |
-| --- | --- | --- |
-| Compile templates with Rust | [`askama`][c~askama~docs]↗{{hi:askama}} | Jinja-like template files are bound to a Rust `struct` or `enum` with a derive macro and checked during compilation. |
-| Write HTML in Rust | [`maud`][c~maud~docs]↗{{hi:maud}}, [`markup`][c~markup~docs]↗{{hi:markup}} | HTML or markup is written with Rust macro syntax and rendered as a Rust value. |
+| Workflow                              | Crates                                                                              | How they fit                                                                                                                                          |
+| ------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Compile templates with Rust           | [`askama`][c~askama~docs]↗{{hi:askama}}                                             | Jinja-like template files are bound to a Rust `struct` or `enum` with a derive macro and checked during compilation.                                  |
+| Write HTML in Rust                    | [`maud`][c~maud~docs]↗{{hi:maud}}, [`markup`][c~markup~docs]↗{{hi:markup}}          | HTML or markup is written with Rust macro syntax and rendered as a Rust value.                                                                        |
 | Load Jinja-style templates at runtime | [`minijinja`][c~minijinja~docs]↗{{hi:minijinja}}, [`tera`][c~tera~docs]↗{{hi:tera}} | Both use Jinja-inspired syntax. MiniJinja emphasizes a small dependency footprint; Tera includes template inheritance, filters, and custom functions. |
-| Use Handlebars templates | [`handlebars`][c~handlebars~docs]↗{{hi:handlebars}} | Register named templates and helpers in a runtime registry; useful when you already have Handlebars templates. |
-| Keep text templating minimal | [`tinytemplate`][c~tinytemplate~docs]↗{{hi:tinytemplate}} | A small runtime engine for interpolation and simple control flow. |
+| Use Handlebars templates              | [`handlebars`][c~handlebars~docs]↗{{hi:handlebars}}                                 | Register named templates and helpers in a runtime registry; useful when you already have Handlebars templates.                                        |
+| Keep text templating minimal          | [`tinytemplate`][c~tinytemplate~docs]↗{{hi:tinytemplate}}                           | A small runtime engine for interpolation and simple control flow.                                                                                     |
 
 For HTML output, check the selected engine's auto-escaping behavior and only bypass escaping for trusted content.
 
@@ -38,5 +38,5 @@ See [Web Programming](../web-programming/index.md) and [Static Website Generator
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[askama][c~askama~repo]↗: Type-safe, compiled Jinja-like templates for Rust.
+  [askama][c~askama~repo]↗: Type-safe, compiled Jinja-like templates for Rust.
 </div>

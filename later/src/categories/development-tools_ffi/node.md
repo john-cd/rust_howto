@@ -47,5 +47,5 @@ Interfacing with Node.js from Rust is typically done using Node-API (N-API), whi
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1074)
+  [write](https://github.com/john-cd/rust_howto/issues/1074)
 </div>

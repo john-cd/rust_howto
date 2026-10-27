@@ -1,35 +1,34 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "development_tools_debugging"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Examples of logging, tracing, and observability patterns using tracing, log4rs, and OpenTelemetry."
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Examples of logging, tracing, and observability patterns using tracing, log4rs, and OpenTelemetry."
 
-keywords = ["debugging", "tracing", "logging", "opentelemetry", "observability"]
-categories = ["development-tools::debugging"]
-publish.workspace = true
 autolib = false
+categories = ["development-tools::debugging"]
+keywords = ["debugging", "tracing", "logging", "opentelemetry", "observability"]
+publish.workspace = true
 
 [features]
 default = []
 opentelemetry = [
-    "dep:opentelemetry",
-    "dep:opentelemetry-otlp",
-    "dep:opentelemetry_sdk",
-    "dep:opentelemetry-stdout",
-    "dep:tracing-opentelemetry",
+  "dep:opentelemetry",
+  "dep:opentelemetry-otlp",
+  "dep:opentelemetry_sdk",
+  "dep:opentelemetry-stdout",
+  "dep:tracing-opentelemetry",
 ]
 
 [dependencies]
-
 ## General
 anyhow = "1.0.104"
 axum = { version = "0.8.9", default-features = false, features = ["http1", "tokio"] } # Serve a `/metrics` route.
@@ -42,7 +41,11 @@ metrics = "0.24.6" # Instrumentation facade for emitting counters and histograms
 metrics-exporter-prometheus = { version = "0.18.3", default-features = false } # In-memory recorder and Prometheus exposition format.
 opentelemetry = { version = "0.33.1", optional = true }
 # Builds an OTLP/HTTP exporter for OpenObserve traces.
-opentelemetry-otlp = { version = "0.33.1", default-features = false, features = ["http-proto", "reqwest-blocking-client", "trace"], optional = true }
+opentelemetry-otlp = { version = "0.33.1", default-features = false, features = [
+  "http-proto",
+  "reqwest-blocking-client",
+  "trace",
+], optional = true }
 # Exports spans to stdout for a self-contained example.
 opentelemetry-stdout = { version = "0.33.1", optional = true }
 # Provides tracer providers for the stdout exporter example.
@@ -65,8 +68,8 @@ syslog = "7.0.0"
 [dev-dependencies]
 anyhow = "1.0.104"
 http-body-util = "0.1.5"
-tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
 metrics-util = { version = "0.20.4", features = ["debugging"] } # In-memory recorder for metric behavior tests.
+tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
 
 [[example]]
 name = "metrics"

@@ -10,7 +10,7 @@ fn main() {}
 
 ## Links
 
-- [Inline link]( https://rust-lang.org/what/cli )↗.
+- [Inline link](https://rust-lang.org/what/cli)↗.
 - [Reference-style Link][ref]↗.
 - [Link to Github][github]↗.
 - [Shortcut]↗.

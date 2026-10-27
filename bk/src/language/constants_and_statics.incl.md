@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-||
-|--------|
+|                                            |
+| ------------------------------------------ |
 | [Declare Constants][ex~language~constants] |
-| [Declare Statics][ex~language~statics] |
+| [Declare Statics][ex~language~statics]     |

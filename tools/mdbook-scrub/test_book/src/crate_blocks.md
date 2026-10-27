@@ -12,8 +12,8 @@ The supported form expands a crate and its optional extra categories into badges
 
 ## Badge Migration Fixture {#badge-migration-fixture}
 
-| Recipe | Crates | Categories |
-|--------|--------|------------|
+| Recipe                                                          | Crates         | Categories                            |
+| --------------------------------------------------------------- | -------------- | ------------------------------------- |
 | [Sort a Vector of Integers][ex~algorithms~sort-vector-integers] | {{#crate std}} | {{#categories algorithms=Algorithms}} |
 
 [ex~algorithms~sort-vector-integers]: sorting.md#sort-vector-integers

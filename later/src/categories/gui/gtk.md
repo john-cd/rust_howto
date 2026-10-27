@@ -57,6 +57,6 @@ From `later/crates`, run `cargo run -p gui --example gtk --features gtk -- relm4
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[gtk: write](https://github.com/john-cd/rust_howto/issues/383)
-review in depth.
+  [gtk: write](https://github.com/john-cd/rust_howto/issues/383)
+  review in depth.
 </div>

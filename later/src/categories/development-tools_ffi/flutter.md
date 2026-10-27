@@ -52,5 +52,5 @@ Use:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write; review in depth](https://github.com/john-cd/rust_howto/issues/1071)
+  [write; review in depth](https://github.com/john-cd/rust_howto/issues/1071)
 </div>

@@ -1,22 +1,22 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "development_tools_testing"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Examples of advanced testing techniques including property-based testing, mocking, and fuzzing."
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Examples of advanced testing techniques including property-based testing, mocking, and fuzzing."
 
-keywords = ["testing", "proptest", "mockall", "insta", "fuzzing", "bolero"]
-categories = ["development-tools::testing"]
-publish.workspace = true
 autolib = false
+categories = ["development-tools::testing"]
+keywords = ["testing", "proptest", "mockall", "insta", "fuzzing", "bolero"]
+publish.workspace = true
 
 ## General
 

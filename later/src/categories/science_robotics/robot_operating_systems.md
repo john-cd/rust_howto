@@ -81,7 +81,7 @@ Formally specified Rust bindings for ROS2.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[robotics: organize](https://github.com/john-cd/rust_howto/issues/477)
-review in depth.
-review ROS related libraries.
+  [robotics: organize](https://github.com/john-cd/rust_howto/issues/477)
+  review in depth.
+  review ROS related libraries.
 </div>

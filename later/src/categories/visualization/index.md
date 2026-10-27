@@ -6,13 +6,13 @@
 
 View, plot or graph data.
 
-| Topic | Rust Crates | Notes |
-|---|---|---|
-| Charts and plots | [`plotters`][c~plotters~docs]↗{{hi:plotters}}, [`charming`][c~charming~docs]↗{{hi:charming}}, [`plotly`][c~plotly~docs]↗{{hi:plotly}} | `plotters` draws static 2D charts to bitmaps, SVG or a canvas; `charming` and `plotly` wrap the ECharts and Plotly.js libraries for interactive HTML output. |
-| Interactive plots in a GUI | [`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}} | Live plots inside an [`egui`][c~egui~docs]↗{{hi:egui}} application. See [[gui | GUI]]. |
-| 3D and custom rendering | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`three-d`][c~three-d~crates.io]↗{{hi:three-d}}, [`glium`][c~glium~docs]↗{{hi:glium}} | Use a graphics library when `plotters` is not enough. |
-| Graph (network) diagrams | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`layout-rs`][c~layout-rs~docs]↗{{hi:layout-rs}} | `petgraph::dot` writes DOT for [Graphviz][graphviz~website]↗{{hi:Graphviz}}; `layout-rs` renders DOT-style graphs to SVG in pure Rust. |
-| Data exploration | [`rerun`][c~rerun~docs]↗{{hi:rerun}}, [`polars`][c~polars~docs]↗{{hi:polars}} | `rerun` logs and visualizes time-series, images and 3D data; `polars` prepares the data. |
+| Topic                      | Rust Crates                                                                                                                           | Notes                                                                                                                                                        |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Charts and plots           | [`plotters`][c~plotters~docs]↗{{hi:plotters}}, [`charming`][c~charming~docs]↗{{hi:charming}}, [`plotly`][c~plotly~docs]↗{{hi:plotly}} | `plotters` draws static 2D charts to bitmaps, SVG or a canvas; `charming` and `plotly` wrap the ECharts and Plotly.js libraries for interactive HTML output. |
+| Interactive plots in a GUI | [`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}}                                                                                      | Live plots inside an [`egui`][c~egui~docs]↗{{hi:egui}} application. See [[gui | GUI]].                          |
+| 3D and custom rendering    | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`three-d`][c~three-d~crates.io]↗{{hi:three-d}}, [`glium`][c~glium~docs]↗{{hi:glium}}              | Use a graphics library when `plotters` is not enough.                                                                                                        |
+| Graph (network) diagrams   | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`layout-rs`][c~layout-rs~docs]↗{{hi:layout-rs}}                                       | `petgraph::dot` writes DOT for [Graphviz][graphviz~website]↗{{hi:Graphviz}}; `layout-rs` renders DOT-style graphs to SVG in pure Rust.                       |
+| Data exploration           | [`rerun`][c~rerun~docs]↗{{hi:rerun}}, [`polars`][c~polars~docs]↗{{hi:polars}}                                                         | `rerun` logs and visualizes time-series, images and 3D data; `polars` prepares the data.                                                                     |
 
 {{#include visualization.incl.md}}
 
@@ -32,8 +32,8 @@ Choose by output: static image or SVG (`plotters`), interactive HTML (`charming`
 
 ## Related Topics
 
-| Topic | Rust Crates (Examples) | Notes |
-|---|---|---|
+| Topic            | Rust Crates (Examples)                                                                  | Notes                                                                                                            |
+| ---------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | Image Processing | [`image`][c~image~docs]↗{{hi:image}} , [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | These crates are used for image processing and manipulation, which can be part of a data visualization pipeline. |
 
 {{#include refs.incl.md}}

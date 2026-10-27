@@ -1,22 +1,22 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "memory_management"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Examples of advanced memory management, allocators, and data structures like Slab and Bumpalo."
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "Examples of advanced memory management, allocators, and data structures like Slab and Bumpalo."
 
-keywords = ["memory", "allocators", "bumpalo", "mimalloc", "slab", "optimization"]
-categories = ["memory-management"]
-publish.workspace = true
 autolib = false
+categories = ["memory-management"]
+keywords = ["memory", "allocators", "bumpalo", "mimalloc", "slab", "optimization"]
+publish.workspace = true
 
 [dependencies]
 anyhow = "1.0.104"

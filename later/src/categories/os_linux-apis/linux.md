@@ -21,5 +21,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[linux: write](https://github.com/john-cd/rust_howto/issues/434)
+  [linux: write](https://github.com/john-cd/rust_howto/issues/434)
 </div>

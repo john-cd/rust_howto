@@ -40,5 +40,5 @@ When the parts are constant string slices, [`constcat`][c~constcat~docs]↗{{hi:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-This review separates runtime concatenation methods from compile-time concatenation, adds the requested capacity-reservation example, and gives the existing second example a visible `constcat` section. The obsolete `concat_strs` dependency and duplicated recipes were removed.
+  This review separates runtime concatenation methods from compile-time concatenation, adds the requested capacity-reservation example, and gives the existing second example a visible `constcat` section. The obsolete `concat_strs` dependency and duplicated recipes were removed.
 </div>

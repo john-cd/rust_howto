@@ -10,9 +10,9 @@ edition = "2024" # Default: "2015"
 style_edition = "2024"
 
 newline_style = "Unix" # Default: "Auto"
-max_width = 80         # Default: 100
-#use_small_heuristics = "Max" # Default: "Default"; with "Max", each granular width setting is set to the same value as max_width, as opposed to a ratio of max_width.
-#indent_style = "Visual" # Default: "Block"
+max_width = 80 # Default: 100
+# use_small_heuristics = "Max" # Default: "Default"; with "Max", each granular width setting is set to the same value as max_width, as opposed to a ratio of max_width.
+# indent_style = "Visual" # Default: "Block"
 
 ## Imports
 imports_granularity = "Item" # Default: Preserve; consider "Crate" or "Module" as well
@@ -20,14 +20,14 @@ imports_granularity = "Item" # Default: Preserve; consider "Crate" or "Module" a
 group_imports = "StdExternalCrate" # Default: "Preserve"; "StdExternalCrate" creates three groups for: std, core and alloc; external crates; and self, super and crate imports.
 
 ## Comments
-comment_width = 80                 # Default: 80
-wrap_comments = true               # Default: false
-normalize_comments = true          # Convert /* */ comments to // comments where possible; default: false
+comment_width = 80 # Default: 80
+wrap_comments = true # Default: false
+normalize_comments = true # Convert /* */ comments to // comments where possible; default: false
 # normalize_doc_attributes = true    # Convert #![doc] and #[doc] attributes to //! and /// doc comments. Default: false
 format_code_in_doc_comments = true # Default: false
 
 ## Functions
-#fn_params_layout = "Compressed" # Control the layout of parameters in function signatures. default: "Tall"
+# fn_params_layout = "Compressed" # Control the layout of parameters in function signatures. default: "Tall"
 
 ## Impl
 reorder_impl_items = true # Reorder impl items. type and const are put first, then macros and methods. Default: false

@@ -3,21 +3,21 @@
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [package]
-license-file.workspace = true
 name = "other"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples and their crate dependencies"
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["development-tools"]
-publish = false
 autolib = false
+categories = ["development-tools"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+license-file.workspace = true
+publish = false
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies"
 
 [features]
 onnx = ["dep:ort", "dep:arc-swap"]
@@ -30,7 +30,6 @@ polars = ["dep:polars"]
 # `cargo tree --locked -i chrono --features polars,datafusion` when bumping either crate.
 
 [dependencies]
-
 ## General
 anyhow = "1.0.104"
 
@@ -73,7 +72,9 @@ smartcore = "0.5.5"
 
 ## Cross platform
 crux_core = "0.17.0"
-datafusion = { version = "55.2.0", default-features = false, features = ["sql"], optional = true } # Enable SQL without unused native compression codecs.
+datafusion = { version = "55.2.0", default-features = false, features = [
+  "sql",
+], optional = true } # Enable SQL without unused native compression codecs.
 lambda_runtime = "1.5.0"
 prost = "0.14.4" # Protobuf message derive.
 

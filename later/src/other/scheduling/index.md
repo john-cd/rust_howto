@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+
 # Scheduling
 
 A long-running service often has to run jobs on a timetable: every few seconds, hourly, or at 09:30 on weekdays. This chapter shows how to compute fire times from cron expressions, run a periodic job in a Tokio service, and cope with jobs that overrun.

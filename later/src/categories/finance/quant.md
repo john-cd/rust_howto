@@ -56,6 +56,6 @@ Use `f64` for statistics and model inputs. For money amounts (cash balances, ord
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[quant: write](https://github.com/john-cd/rust_howto/issues/364)
-[examples](https://github.com/john-cd/rust_howto/issues/1949)
+  [quant: write](https://github.com/john-cd/rust_howto/issues/364)
+  [examples](https://github.com/john-cd/rust_howto/issues/1949)
 </div>

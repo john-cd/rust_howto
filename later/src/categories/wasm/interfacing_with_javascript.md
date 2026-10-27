@@ -51,5 +51,5 @@ JavaScript and Rust have different type and memory models. Keep boundary convers
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1218)
+  [write](https://github.com/john-cd/rust_howto/issues/1218)
 </div>

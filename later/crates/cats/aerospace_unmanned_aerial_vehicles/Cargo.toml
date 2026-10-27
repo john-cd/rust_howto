@@ -1,21 +1,21 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "aerospace_unmanned_aerial_vehicles"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Book code examples and their crate dependencies - aerospace_unmanned_aerial_vehicles"
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["aerospace::unmanned-aerial-vehicles"]
-publish.workspace = true
 autolib = false
+categories = ["aerospace::unmanned-aerial-vehicles"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+license-file.workspace = true
+publish.workspace = true
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Book code examples and their crate dependencies - aerospace_unmanned_aerial_vehicles"
 
 [dependencies]
 tello = "0.6.3"

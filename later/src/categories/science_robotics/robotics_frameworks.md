@@ -68,5 +68,5 @@ gRPC A high performance, open source universal RPC framework.
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[useful_robotics_tools_and_libs: locate libs, organize, write](https://github.com/john-cd/rust_howto/issues/479)
+  [useful_robotics_tools_and_libs: locate libs, organize, write](https://github.com/john-cd/rust_howto/issues/479)
 </div>

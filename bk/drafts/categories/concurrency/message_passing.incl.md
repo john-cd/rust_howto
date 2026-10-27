@@ -1,10 +1,10 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe | Crates | Categories |
-|--------|--------|------------|
-| [Multiple Producers, Single Consumer][ex~concurrency~mpsc] | [![std][c~std~docs~badge]][c~std~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] |
-| [`crossbeam-channel`][ex~concurrency~crossbeam-channel] | [![crossbeam-channel][c~crossbeam-channel~docs~badge]][c~crossbeam-channel~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] |
-| [`flume`][ex~concurrency~flume] | [![flume][c~flume~docs~badge]][c~flume~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] |
-| [Handle Commands Once per Tick with `flume`][ex~concurrency~flume-tick] | [![flume][c~flume~docs~badge]][c~flume~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] |
-| [`rtrb`][ex~concurrency~rtrb] | [![rtrb][c~rtrb~docs~badge]][c~rtrb~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |
-| [`ringbuf`][ex~concurrency~ringbuf] | [![ringbuf][c~ringbuf~docs~badge]][c~ringbuf~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |
+| Recipe                                                                  | Crates                                                                           | Categories                                                                                                                            |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| [Multiple Producers, Single Consumer][ex~concurrency~mpsc]              | [![std][c~std~docs~badge]][c~std~docs]                                           | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]                                                                          |
+| [`crossbeam-channel`][ex~concurrency~crossbeam-channel]                 | [![crossbeam-channel][c~crossbeam-channel~docs~badge]][c~crossbeam-channel~docs] | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]                                                                          |
+| [`flume`][ex~concurrency~flume]                                         | [![flume][c~flume~docs~badge]][c~flume~docs]                                     | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]                                                                          |
+| [Handle Commands Once per Tick with `flume`][ex~concurrency~flume-tick] | [![flume][c~flume~docs~badge]][c~flume~docs]                                     | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]                                                                          |
+| [`rtrb`][ex~concurrency~rtrb]                                           | [![rtrb][c~rtrb~docs~badge]][c~rtrb~docs]                                        | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |
+| [`ringbuf`][ex~concurrency~ringbuf]                                     | [![ringbuf][c~ringbuf~docs~badge]][c~ringbuf~docs]                               | [![cat~concurrency][cat~concurrency~badge]][cat~concurrency] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |

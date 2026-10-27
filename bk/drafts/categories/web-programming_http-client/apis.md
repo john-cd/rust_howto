@@ -74,5 +74,5 @@ This example demonstrates interpreting GitHub's rate-limit response headers. It 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[review / fix](https://github.com/john-cd/rust_howto/issues/974)
+  [review / fix](https://github.com/john-cd/rust_howto/issues/974)
 </div>

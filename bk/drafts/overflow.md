@@ -26,12 +26,12 @@ fn main() {
 
 ## Summary of Arithmetic Behaviors
 
-| Method Class | Behavior on Overflow | Example |
-|---|---|---|
-| `wrapping_` | Performs two's complement wrapping | `255u8.wrapping_add(1) == 0` |
-| `checked_` | Returns `None` | `255u8.checked_add(1) == None` |
+| Method Class   | Behavior on Overflow                 | Example                                 |
+| -------------- | ------------------------------------ | --------------------------------------- |
+| `wrapping_`    | Performs two's complement wrapping   | `255u8.wrapping_add(1) == 0`            |
+| `checked_`     | Returns `None`                       | `255u8.checked_add(1) == None`          |
 | `overflowing_` | Returns `(result, overflowed: bool)` | `255u8.overflowing_add(1) == (0, true)` |
-| `saturating_` | Returns the max/min of the type | `255u8.saturating_add(1) == 255` |
+| `saturating_`  | Returns the max/min of the type      | `255u8.saturating_add(1) == 255`        |
 
 For repeated wrapping arithmetic, the `std::num::Wrapping` type can also be useful:
 
