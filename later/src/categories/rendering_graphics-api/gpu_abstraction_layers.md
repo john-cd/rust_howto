@@ -6,6 +6,8 @@
 
 Libraries that provide a [cross-platform][p~cross-platform] abstraction over native graphics APIs.
 
+For most Rust graphics applications, start with [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}. Its safe Rust API follows WebGPU and targets native backends as well as browsers, so one renderer can reach multiple platforms without application code selecting a different graphics API for each one. Choose a lower-level option when you need a different trade-off or are maintaining an existing integration.
+
 ## Key Concepts {#key-concepts .skip}
 
 - [Shaders][p~shaders]: Programs that run on the GPU.
@@ -14,51 +16,31 @@ Libraries that provide a [cross-platform][p~cross-platform] abstraction over nat
 - Textures: [Images][p~images] used in rendering.
 - Bind Groups: How [shaders][p~shaders] access resources.
 
-## Key Rust Crates {#Key Rust Crates .skip}
-
-- [`wgpu-rs`][c~wgpu~docs]↗{{hi:wgpu-rs}}.
-- [`gfx-rs`][c~gfx~crates.io]↗{{hi:gfx-rs}}: A low-level, cross-platform graphics abstraction (historically used, less active now).
-  - [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}: A lower-level graphics API abstraction layer. More control, but more complex. Similar to [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} in that it can be used for drawing primitives, but requires more manual setup.
-
-[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is often preferred for its ease of use.
-
-## WebGPU {#webgpu .skip}
-
-WebGPU is a JavaScript, C++, Rust, and C API that allows portably and efficiently utilizing a device's graphics processing unit ([GPU][p~gpu]). This is achieved with the underlying [Vulkan][p~vulkan], Metal, or Direct3D 12 system APIs.
-
-WebGPU enables 3D graphics within an HTML canvas. It also has robust support for general-purpose GPU computations.
-
-For WebGPU development in Rust, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is the essential crate. You'll use it to interact with the WebGPU API, manage resources, configure pipelines, and write shaders in WGSL.
-
-## WebGPU Bindings with `wgpu` {#wgpu}
+## `wgpu` {#wgpu}
 
 [![wgpu~website][c~wgpu~website~badge]][c~wgpu~website] [![wgpu][c~wgpu~docs~badge]][c~wgpu~docs] [![wgpu~crates.io][c~wgpu~crates.io~badge]][c~wgpu~crates.io] [![wgpu~repo][c~wgpu~repo~badge]][c~wgpu~repo] [![wgpu~lib.rs][c~wgpu~lib.rs~badge]][c~wgpu~lib.rs]{{hi:wgpu}}{{hi:Graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
-[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a safe and portable Rusty [WebGPU][wikipedia~webgpu]↗{{hi:WebGPU}} API wrapper. It is a cross-platform, safe, pure-Rust [graphics][p~graphics] API that exposes modern GPU capabilities. It runs natively on Vulkan, Metal, D3D12, and OpenGL; and on top of WebGL2 and WebGPU on WASM. The API is based on the [WebGPU standard][webgpu~website]↗. It is suitable for general purpose graphics and compute on the GPU. It serves as the core of the WebGPU integration in Firefox and Deno.
+[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a safe, portable Rust API based on the [WebGPU standard][webgpu~website]↗{{hi:WebGPU}}. On native targets it can use Vulkan, Metal, Direct3D 12, or OpenGL; in browsers, WebAssembly applications can use WebGPU or WebGL2. Backend availability depends on the target platform and device.
 
-- Shader Language: WGSL (WebGPU Shading Language) is the shader language used by WebGPU. You'll write your [shaders][p~shaders] in WGSL. You'll use it in your shader code (which is then loaded by [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}).
-- Graphics Pipeline: You configure the [graphics][p~graphics] pipeline using the [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} API.
-- Texture Handling: [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} provides ways to create and manage textures.
-- While primarily a low-level, cross-platform GPU API, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is capable of rasterization and can be used to draw primitives. It doesn't provide high-level drawing functions directly, but it's the foundation upon which many higher-level graphics libraries are built. It's excellent for performance and control.
-- Compute Shaders: You write compute shaders in WGSL and then use the [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} API to dispatch them.
-- Debugging: WebGPU has built-in debugging capabilities that can be accessed through browser developer tools (if you're targeting the web) or through [debugging][p~debugging] tools specific to your platform (if you're targeting native).
+The same API covers graphics and compute workloads while leaving resource creation, pipelines, command submission, and shader dispatch explicit. This makes `wgpu` a practical default: it handles backend differences while preserving a consistent Rust interface, and it can target browser builds as well as native applications.
 
 ```rust,editable
 {{#include ../../../crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
 ```
 
+## Blade {#blade}
+
+[`Blade`][c~blade~repo]↗{{hi:Blade}} is a lean, low-level GPU abstraction by `kvark`, one of the authors of `wgpu`. Its graphics library supports Vulkan and GLES on Linux, Vulkan on Windows, Metal on Apple platforms, Vulkan on Android, and WebGL2 on the web. The full Blade Engine has narrower requirements: its ray-traced renderer needs Vulkan hardware ray-tracing support. Choose Blade when its lower-level design fits your renderer and target platforms.
+
+## `gfx-hal` {#gfx-hal}
+
+[`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} is in maintenance mode; its development moved to the `wgpu-hal` abstraction used internally by `wgpu`. Treat `gfx-hal` as deprecated for new projects. Use `wgpu` by default, and use `gfx-hal` when maintaining existing code that depends on it.
+
 ### Related Topics {#related-topics .skip}
 
-- `web-sys`: Web bindings, used for WebGPU in the browser.
+- For Rust shader authoring, see [Shaders][p~shaders]; for GPU programming and compute options, see [GPU programming][p~gpu].
 - [[graphics | Graphics]].
 - [[mathematics | Mathematics]].
-- [[shaders | Shaders]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [webgpu: write](https://github.com/john-cd/rust_howto/issues/375)
-  review [`rust-gpu` Ecosystem][rust-gpu~ecosystem~website]
-  review in depth.
-</div>

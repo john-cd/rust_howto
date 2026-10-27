@@ -28,4 +28,5 @@
 [p~rendering]: ../rendering/index.md
 [p~shaders]: shaders.md
 [p~vulkan]: vulkan.md
+[c~blade~repo]: https://github.com/kvark/blade
 [c~objc2-metal~docs]: https://docs.rs/objc2-metal
