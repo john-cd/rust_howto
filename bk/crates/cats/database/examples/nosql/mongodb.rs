@@ -46,14 +46,22 @@ async fn main() -> anyhow::Result<()> {
         age: 30,
     };
     // Insert the user into the collection.
-    collection.insert_one(&user).await?;
+    let inserted = collection.insert_one(&user).await?;
 
-    let filter = doc! { "name": "Alice" };
-    if let Some(user) = collection.find_one(filter).await? {
-        println!("Found user: {user:?}");
-    } else {
-        println!("User not found");
-    }
+    // Query by the generated identifier so repeated runs find this insert.
+    let filter = doc! { "_id": inserted.inserted_id };
+    let found =
+        collection.find_one(filter.clone()).await?.ok_or_else(|| {
+            anyhow::anyhow!("inserted MongoDB user was not found")
+        })?;
+    anyhow::ensure!(
+        found.name == "Alice" && found.age == 30,
+        "inserted MongoDB user did not match the expected values"
+    );
+    println!("Found user: {found:?}");
+
+    // Remove only the document created by this example.
+    collection.delete_one(filter).await?;
 
     Ok(())
 }
@@ -68,22 +76,10 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Runs the example against a MongoDB server; needs the external service.
+    /// Runs the example against a MongoDB deployment configured by `MONGO_URI`.
     #[test]
+    #[ignore = "needs MongoDB reachable through MONGO_URI"]
     fn require_external_svc() -> anyhow::Result<()> {
-        unsafe {
-            // Set the MONGO_URI environment variable to connect to the MongoDB
-            // service. Refer to the compose*.yaml files for the service
-            // configuration.
-            let password =
-                env::var("MONGO_PASSWORD").expect("MONGO_PASSWORD must be set");
-            env::set_var(
-                "MONGO_URI",
-                format!(
-                    "mongodb://mongoadmin:{password}@rust_howto_dev-mongodb-1:27017/"
-                ),
-            );
-        }
         main()?;
         Ok(())
     }

@@ -213,7 +213,7 @@ mod tests {
     /// cassandra:5.0` and wait for it to become ready before running this
     /// ignored integration test.
     #[tokio::test]
-    #[ignore = "requires a reachable Cassandra service on 127.0.0.1:9042"]
+    #[ignore = "needs Cassandra at 127.0.0.1:9042"]
     async fn require_external_svc() -> anyhow::Result<()> {
         run().await?;
         Ok(())

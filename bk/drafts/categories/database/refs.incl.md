@@ -59,3 +59,7 @@
 [c~qdrant-client~docs]: https://docs.rs/qdrant-client
 [elastic~local-docker~docs]: https://www.elastic.co/search-labs/tutorials/install-elasticsearch/docker
 [postgres~full-text~docs]: https://www.postgresql.org/docs/current/textsearch.html
+[mongodb~docker~docs]: https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-community-with-docker/
+[redis~docker~docs]: https://redis.io/docs/latest/operate/oss_and_stack/install/install-stack/docker/
+[cassandra~docker~docs]: https://hub.docker.com/_/cassandra
+[scylla~docs]: https://docs.rs/scylla

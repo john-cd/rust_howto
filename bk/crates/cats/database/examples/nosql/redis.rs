@@ -90,18 +90,12 @@ mod tests {
         assert!(tls_enabled(Some("TRUE")));
     }
 
-    /// Runs the example against a Redis server; needs the external service.
+    /// Verifies that the Redis example stores and reads the expected value.
     #[test]
-    #[ignore = "Requires an external Redis server"]
+    #[ignore = "needs a reachable Redis server"]
     fn require_external_svc() -> Result<()> {
-        if env::var("REDIS_HOSTNAME").is_err() {
-            eprintln!(
-                "Skipping Redis integration test; set REDIS_HOSTNAME to run this test."
-            );
-            return Ok(());
-        }
-
-        main()?;
+        let value = fetch_an_integer()?;
+        anyhow::ensure!(value == 42, "Redis returned {value}, expected 42");
         Ok(())
     }
 }
