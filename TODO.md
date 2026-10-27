@@ -211,7 +211,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-CODE-08 — Media encoding, images and video
 
-- [#1943](https://github.com/john-cd/rust_howto/issues/1943) — **P4** — Add examples: audio files, playback and MIDI (hound, rodio with a custom Source, midir, hrtf) — **PARTIAL**
+- [#1943](https://github.com/john-cd/rust_howto/issues/1943) — **P4** — Add examples: audio files, playback and MIDI (hound, rodio with a custom Source, midir, hrtf) — **BLOCKED ON FINAL VALIDATION — WAV, Rodio, MIDI, and HRTF examples exist; book refdefs and build checks remain (Cargo test/Clippy evidence is Linux-only and requires ALSA development files)**
 
 #### NOW-CODE-09 — Networking, authentication and email
 
