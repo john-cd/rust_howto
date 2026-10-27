@@ -15,27 +15,31 @@
 
 - [/] review dirty worktrees, create commits, integrate useful branches, discard stale work, and clean up topic refs
   - [x] review `.worktrees\d`: 890 uncommitted deletions were accidental removals under `later/`; restored them
+  - [x] commit the main-worktree example cleanup, entry-point test coverage, and formatting in separate commits
+  - [/] `.worktrees\b` is active in another task; keep `.worktrees\c` untouched while its owner is working
 - [/] integrate all useful topic branches into develop and discard the rest
-- [ ] format all Markdown files with dprint, etc if not done already
+- [x] format all dprint-included Markdown and configuration files
+  - [x] `dprint fmt` formatted 54 files; `dprint check` passed
 
 ### Scripts, Tools
 
 - [x] add a comment section at the beginning of all mod.just files and scripts with usage and purpose (after shebang line if there is one)
 - [x] move # TODO Reviewed ??-??-2026 after a comment blank line at the end of a comment section after the shebang line in all .sh files
-- [ ] verify that all .sh files can run in git bash
+- [/] verify that all .sh files can run in git bash
+  - [x] all 60 repository shell scripts passed `bash -n`; runtime-dependent commands were not executed
 - [/] just files: update all `rust_howto`-owned `windows-shell` settings to Git Bash
   - [x] Updated and parser-checked the repository-owned justfiles; `mdbook-utils` remains a separately versioned submodule and was left unchanged.
 - [x] mod.just: deduplicate tasks for unix / windows if they are the same. see e.g. bk\scripts\anchors\mod.just
-- [ ] decide between _typos.toml vs bk\scripts\spelling\spellcheck.sh . convert bk\scripts\spelling\dictionary.txt if needed
-- [/] dprint.json expand to YAML, JSON, TOML, and Dockerfile; format tracked Markdown and configuration files
-- [ ] tasks.json - do we need?
+- [x] use `_typos.toml` and the `typos` recipe as the cross-platform spelling check; keep the Aspell script and dictionary as an optional interactive legacy workflow
+- [x] dprint.json expand to YAML, JSON, TOML, and Dockerfile; format tracked Markdown and configuration files
+- [x] keep `.vscode/tasks.json` for the one-click default `just bk book serve` build task
 
 ### Docker
 
-- [ ] no raw passwords in compose*.yaml
+- [x] no raw passwords in compose*.yaml; service credentials use required environment-variable placeholders
 - [x] Dockerfile: fix comments; remove the unused toolchain-file rewrite
   - [x] keep `cargo install --git --rev --locked` for the pinned, in-development `mdbook-utils` revision
-- [ ] update .devcontainer\install_deps.ps1 and .devcontainer\install_deps.sh do we need both? use of git bash?
+- [x] keep both installers: PowerShell installs native Windows dependencies; the shell script installs Debian/Ubuntu dependencies and must run in Linux, WSL, or a container, not Git Bash
 - [x] update .devcontainer\WINDOWS_BUILD.md
 
 ### Miscellaneous
@@ -46,17 +50,19 @@
 
 ### Code Examples
 
-- [ ] update to syn 3.x
+- [x] update to syn 3.x; maintained direct dependencies use syn 3.0.9
 - [x] review playground\bits_and_pieces and determine if any content should be moved or removed
 - [x] later\crates\gui_vizia\Cargo.toml move to proper location
 - [x] integrate embedded see: exclude = ["cats/embedded"] ; see later\crates\cats\embedded\Cargo.toml
-- [ ] no unwrap() except in places where we demonstrate unwrap()
-- [ ] all examples need a test that exercise the main() function or similar entry point
-- [ ] give descriptive names to test functions.
-- [ ] improve comments within examples. add context and explanations where necessary. end with a period.
-- [ ] move playground\examples_wip examples to bk/ if ready
-- [ ] make all Cargo.toml consistent
-- [ ] move code examples from later/ to bk/ when code + text ready
+- [x] no unwrap() except in places where we demonstrate unwrap(); preserved dedicated demonstrations, generated code, and archival scratch files
+- [x] all maintained examples with a `main()` or equivalent entry point have test coverage; interactive and platform-dependent tests are ignored by default
+- [x] give descriptive names to test functions; generic example test names were replaced, with trait methods excluded
+- [/] improve comments within examples. add context and explanations where necessary. end with a period.
+  - [x] added behavior-specific doc comments to new example entry-point tests; a broad editorial comment review remains
+- [x] move playground\examples_wip examples to bk/ if ready; reviewed remaining examples and kept them in scratch because each needs design or portability work
+- [x] make all Cargo.toml consistent; sort workspace manifests and centralize shared dependencies where workspaces support it
+- [/] move code examples from later/ to bk/ when code + text ready
+  - [x] retain the separate LATER text and staging workspaces; no additional matching chapter paths or ready package pairs were identified in this pass
 
 ---
 
