@@ -91,7 +91,7 @@ In an Event-driven architecture (EDA), applications communicate by producing and
 - [Asynchronous][p~asynchronous] Communication: Components operate independently and interact via events.
 - Often implemented with libraries like [`tokio`][c~tokio~docs]↗{{hi:tokio}} or [`async-std`][c~async-std~docs]↗{{hi:async-std}}.
 
-The example below builds a small in-process event bus with channels: every subscriber receives every event. With `async` code, [`tokio::sync::broadcast`][c~tokio~docs]↗{{hi:tokio}} plays the same role.
+The example below builds a small in-process event bus with bounded channels. It sends each event to each connected subscriber, waits when a subscriber's channel is full, and ignores disconnected subscribers; it is not a durable message broker. [`tokio::sync::broadcast`][c~tokio~docs]↗{{hi:tokio}} supports asynchronous fan-out with different lag and delivery behavior.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/event_bus.rs:example}}
@@ -115,7 +115,7 @@ See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
 The actor model is a conceptual model of concurrent computation that treats "actors" as the universal primitives of [concurrency][p~concurrency].
 Actors encapsulate state, behavior, and a mailbox. [Actors][p~actors] communicate exclusively by sending and receiving [asynchronous][p~asynchronous] messages. They are like independent entities that can receive and process messages.
 
-Because each actor owns its state and is touched by one message at a time, no locks are needed. Use actors for many independent, stateful entities (sessions, devices, game objects) that need isolation and supervision. Libraries like [`actix`][c~actix~docs]↗{{hi:actix}} support actor-based designs.
+An actor can own its state and process messages sequentially, avoiding locks around that state. Shared resources outside the actor may still require synchronization. Use actors for independent, stateful entities (sessions, devices, game objects) that need isolation and supervision. Libraries like [`actix`][c~actix~docs]↗{{hi:actix}} support actor-based designs.
 
 See the [[_actors | Actors]] chapter for more details.
 
@@ -131,7 +131,7 @@ Command Query Responsibility Segregation (CQRS) is an architectural pattern that
 
 Pipeline/stream architecture is a design pattern focused on processing a continuous flow of data through a series of sequential steps. It's particularly relevant in scenarios requiring real-time or near real-time data processing.
 
-Each stage reads from an input, transforms the data and writes to an output, so stages run concurrently and applying backpressure (bounded channels) keeps memory in check. In Rust, a pipeline can be a chain of iterator adapters in one thread, channels between threads, or [`Stream`][c~futures~docs]↗{{hi:futures}} combinators for `async` code. The example below connects three stages with channels.
+Each stage reads input, transforms data, and passes results onward. Stages may run sequentially or concurrently; bounded channels apply backpressure between independently running stages, though collected results and individual items can still grow. In Rust, a pipeline can be a chain of iterator adapters in one thread, channels between threads, or [`Stream`][c~futures~docs]↗{{hi:futures}} combinators for `async` code. The example below connects three stages with channels.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/pipeline.rs:example}}

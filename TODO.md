@@ -591,7 +591,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 #### VALIDATE-PROSE-11 — Architecture and scripting
 
 - [#610](https://github.com/john-cd/rust_howto/issues/610) — **P4** — — Rhai chapter — **IMPLEMENTED; OPEN — script errors propagate and sandbox assertions added; tests, refdefs, book, spelling, and linked PR remain**
-- [#1230](https://github.com/john-cd/rust_howto/issues/1230) — **P4** — — Architecture chapters — **PARTIAL**
+- [#1230](https://github.com/john-cd/rust_howto/issues/1230) — **P4** — — Architecture chapters — **PARTIAL; OPEN — event, actor, and pipeline guarantees clarified; full chapter review, tests, book checks, and linked PR remain**
 
 #### VALIDATE-PROSE-12 — Foreign function interfaces
 
