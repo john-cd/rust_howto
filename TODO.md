@@ -447,8 +447,8 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-12 — Language and domain models
 
-- [#1923](https://github.com/john-cd/rust_howto/issues/1923) — **P3** — Add a "Domain Newtypes" recipe: validated value types with operator overloading, Display/FromStr and serde — **PARTIAL**
-- [#1935](https://github.com/john-cd/rust_howto/issues/1935) — **P3** — Add examples: more strum derives (EnumMessage, EnumProperty, serialize_all, case-insensitive parsing, variant lists for UIs) — **PARTIAL**
+- [#1923](https://github.com/john-cd/rust_howto/issues/1923) — **P3** — Add a "Domain Newtypes" recipe: validated value types with operator overloading, Display/FromStr and serde — **IMPLEMENTED ON DEVELOP; BLOCKED — examples, book coverage, and source docs are integrated; affected-package tests and full Clippy/refdefs/book gates remain unresolved; details are on the issue**
+- [#1935](https://github.com/john-cd/rust_howto/issues/1935) — **P3** — Add examples: more strum derives (EnumMessage, EnumProperty, serialize_all, case-insensitive parsing, variant lists for UIs) — **IMPLEMENTED ON DEVELOP; BLOCKED — enum message/property/case examples, book coverage, and source docs are integrated; affected-package tests and full Clippy/refdefs/book gates remain unresolved; details are on the issue**
 
 #### VALIDATE-CODE-13 — Testing and observability
 
