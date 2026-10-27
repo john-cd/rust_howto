@@ -423,11 +423,11 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-08 — Concurrency
 
-- [#268](https://github.com/john-cd/rust_howto/issues/268) — **P3** — Fractal/threadpool example E — **PARTIAL**
-- [#1011](https://github.com/john-cd/rust_howto/issues/1011) — **P3** — `actors/actors.rs`: finish — **PARTIAL**
-- [#1907](https://github.com/john-cd/rust_howto/issues/1907) — **P3** — Add example: graceful shutdown on Ctrl-C (ctrlc, tokio::signal) — **PARTIAL**
-- [#1919](https://github.com/john-cd/rust_howto/issues/1919) — **P3** — Add examples: async functions in traits (native AFIT/RPITIT with Send bounds, trait_variant, async_trait for dyn) — **PARTIAL**
-- [#1920](https://github.com/john-cd/rust_howto/issues/1920) — **P3** — Add a "Cancellation and Structured Concurrency" topic: JoinSet worker pools, CancellationToken trees, watch/broadcast state — **PARTIAL**
+- [#268](https://github.com/john-cd/rust_howto/issues/268) — **P3** — Fractal/threadpool example E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused nextest/Clippy passed and the concurrency dependency graph excludes ring/cc; required full Clippy/book gates remain; details are on the issue**
+- [#1011](https://github.com/john-cd/rust_howto/issues/1011) — **P3** — `actors/actors.rs`: finish — **IMPLEMENTED ON DEVELOP; BLOCKED — task-owned actor state, bounded messages, replies, shutdown, and chapter are present; prior focused tests/Clippy passed; required repository gates and issue-linked PR remain; details are on the issue**
+- [#1907](https://github.com/john-cd/rust_howto/issues/1907) — **P3** — Add example: graceful shutdown on Ctrl-C (ctrlc, tokio::signal) — **IMPLEMENTED ON DEVELOP; OPEN — synchronous/async signal examples and shutdown fixtures, OS page/table, and refdefs are present; required tests/Clippy/refdefs/book checks deferred to final validation**
+- [#1919](https://github.com/john-cd/rust_howto/issues/1919) — **P3** — Add examples: async functions in traits (native AFIT/RPITIT with Send bounds, trait_variant, async_trait for dyn) — **IMPLEMENTED ON DEVELOP; BLOCKED — examples and source docs are integrated; affected-package tests and full gates remain unresolved after Windows native-build/private-tooling failures; details are on the issue**
+- [#1920](https://github.com/john-cd/rust_howto/issues/1920) — **P3** — Add a "Cancellation and Structured Concurrency" topic: JoinSet worker pools, CancellationToken trees, watch/broadcast state — **IMPLEMENTED ON DEVELOP; BLOCKED — pool, cancellation tree, watch state, supervisor, and source docs are integrated; affected-package tests and full gates remain unresolved; details are on the issue**
 - [#1908](https://github.com/john-cd/rust_howto/issues/1908) — **P4** — Add examples: real-time-safe communication between threads (rtrb, ringbuf, flume) — **IMPLEMENTED ON DEVELOP; OPEN — bounded allocation-free SPSC drain with silence on underrun, command-channel examples, worker error propagation, and callback guidance are present; formatted; tests, Clippy, refdefs, and book checks deferred to final validation**
 
 #### VALIDATE-CODE-09 — Tabular data and finance
