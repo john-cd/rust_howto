@@ -36,6 +36,7 @@
 [ex~gui~taffy]: ui_layout.md#taffy
 [ex~gui~tao]: window_creation.md#tao
 [ex~gui~tauri]: web_based_gui.md#tauri
+[ex~gui~text-rendering]: ../rendering/text_rendering.md
 [ex~gui~vizia]: retained_mode_gui.md#vizia
 [ex~gui~webassembly-wasm-considerations]: clipboard.md#webassembly-wasm-considerations
 [ex~gui~webassembly-wasm-considerations]: file_dialogs.md#webassembly-wasm-considerations
@@ -71,10 +72,14 @@
 [c~bevy_egui~docs]: https://docs.rs/bevy_egui
 [c~egui-wgpu~docs]: https://docs.rs/egui-wgpu
 [c~egui-winit~docs]: https://docs.rs/egui-winit
+[c~harfrust~repo]: https://github.com/harfbuzz/harfrust
+[c~glyphon~repo]: https://github.com/grovesNL/glyphon
 [c~imgui~docs]: https://docs.rs/imgui
 [c~imgui~repo]: https://github.com/imgui-rs/imgui-rs
 [c~native-dialog~docs]: https://docs.rs/native-dialog
 [c~native-dialog~repo]: https://github.com/native-dialog-rs/native-dialog-rs
+[c~rustybuzz~repo]: https://github.com/RazrFalcon/rustybuzz
+[c~swash~repo]: https://github.com/dfrg/swash
 [c~tinyfiledialogs~docs]: https://docs.rs/tinyfiledialogs
 [c~tinyfiledialogs~repo]: https://github.com/jdm/tinyfiledialogs-rs
 [tinyfiledialogs~upstream~website]: https://sourceforge.net/projects/tinyfiledialogs/
