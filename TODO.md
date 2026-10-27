@@ -268,7 +268,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#608](https://github.com/john-cd/rust_howto/issues/608) — **P4** — gpu/index.md: write — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#934](https://github.com/john-cd/rust_howto/issues/934) — **P4** — gui/ui_layout.md: review — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#954](https://github.com/john-cd/rust_howto/issues/954) — **P4** — rendering_data-formats/index.md: review — **IMPLEMENTED ON DEVELOP; final validation pending**
-- [#1229](https://github.com/john-cd/rust_howto/issues/1229) — **P4** — rendering_graphics-api/opengl.md: write — **NOT STARTED**
+- [#1229](https://github.com/john-cd/rust_howto/issues/1229) — **P4** — rendering_graphics-api/opengl.md: write — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#1999](https://github.com/john-cd/rust_howto/issues/1999) — **Unprioritized** — categories/multimedia: write a streaming media page (RTSP, WebRTC, RTP) — **NOT STARTED**
 
 #### NOW-PROSE-03 — Science, finance, data processing and visualization

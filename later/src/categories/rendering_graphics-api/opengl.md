@@ -2,31 +2,50 @@
 
 # OpenGL
 
-OpenGL (Open Graphics Library) is a cross-language, cross-platform application programming interface (API) for rendering 2D and 3D vector graphics. The API is typically used to interact with a graphics processing unit (GPU), to achieve hardware-accelerated rendering.
+{{#include opengl.incl.md}}
 
-## `gl` {#gl}
+OpenGL is a cross-platform graphics API with a large installed base, but it is a legacy choice for new Rust applications. Apple deprecates OpenGL on macOS ([platform notice][apple~opengl~deprecation]) and OpenGL ES on iOS ([platform notice][apple~opengles~deprecation]); use Metal for new native Apple rendering. For new cross-platform applications, start with the [wgpu guide][ex~rendering_graphics-api~wgpu]. OpenGL still makes sense for existing applications, older hardware, and WebGL-compatible targets.
 
-OpenGL bindings.
+## Cross-platform bindings with `glow` {#glow}
 
-## `glow` {#glow}
+[![glow][c~glow~docs~badge]][c~glow~docs] [![glow~crates.io][c~glow~crates.io~badge]][c~glow~crates.io]{{hi:glow}}
 
-GL on Whatever: a set of bindings to run GL (Open GL, OpenGL ES, and WebGL) anywhere, and avoid target-specific code.
+[`glow`][c~glow~docs]↗{{hi:glow}} provides bindings for OpenGL, OpenGL ES, and WebGL behind one Rust API. The [`egui_glow` integration][egui_glow~repo] uses it for GL rendering; `wgpu` provides a separate GL/GLES backend on supported targets.
 
-## `glium` {#glium}
+The fragment below assumes a current OpenGL context and a `gl_display` from `glutin`; it is illustrative and is not compiled with the book examples.
 
-[`glium`][c~glium~docs]↗{{hi:glium}} is an older, but simpler OpenGL wrapper.
+```rust,ignore
+let gl = unsafe {
+    glow::Context::from_loader_function(|symbol| {
+        let symbol = std::ffi::CString::new(symbol)
+            .expect("OpenGL function names contain no NUL bytes");
+        gl_display.get_proc_address(&symbol)
+    })
+};
 
-Elegant and safe OpenGL wrapper. Glium is an intermediate layer between OpenGL and your application. You still need to manually handle the graphics pipeline, but without having to use OpenGL's old and error-prone API. Its objectives:
+unsafe {
+    gl.clear_color(0.08, 0.12, 0.2, 1.0);
+    gl.clear(glow::COLOR_BUFFER_BIT);
+}
+```
 
-- Be safe to use. Many aspects of OpenGL that can trigger a crash if misused are automatically handled by glium.
-- Provide an API that enforces good practices, such as RAII or stateless function calls.
-- Be compatible with all OpenGL versions that support [shaders][p~shaders], providing unified API when things diverge.
-- Avoid all OpenGL errors beforehand.
-- Produce optimized OpenGL function calls, and allow the user to easily use modern OpenGL techniques.
+## Create a window and context with `glutin` and `winit` {#glutin}
 
-## `glutin` {#glutin}
+[![glutin][c~glutin~docs~badge]][c~glutin~docs] [![winit][c~winit~docs~badge]][c~winit~docs]{{hi:glutin}}{{hi:winit}}
 
-Cross-platform OpenGL context provider.
+[`winit`][c~winit~docs] handles cross-platform windows and input events. [`glutin`][c~glutin~docs] creates the platform OpenGL context and surface; [`glutin-winit`][c~glutin-winit~docs] provides helpers to connect them.
+
+## Higher-level OpenGL with `glium` {#glium}
+
+[![glium][c~glium~docs~badge]][c~glium~docs] [![glium~crates.io][c~glium~crates.io~badge]][c~glium~crates.io]{{hi:glium}}
+
+[`glium`][c~glium~docs] provides a safe, higher-level wrapper for OpenGL 3+ buffers, textures, and drawing. The [project README][c~glium~repo] notes that the original author no longer actively develops it and that community maintenance continues; check current releases and issues before choosing it for new work.
+
+## Raw OpenGL bindings with `gl` {#gl}
+
+[![gl][c~gl~docs~badge]][c~gl~docs] [![gl~crates.io][c~gl~crates.io~badge]][c~gl~crates.io]{{hi:gl}}
+
+[`gl`][c~gl~docs] provides low-level function-pointer bindings generated for OpenGL APIs. Applications must load the functions from a current context and call them through `unsafe`; use `glow` when you need a shared OpenGL, OpenGL ES, and WebGL interface.
 
 ## Related Topics {#related-topics .skip}
 
@@ -37,7 +56,3 @@ Cross-platform OpenGL context provider.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/1229)
-</div>

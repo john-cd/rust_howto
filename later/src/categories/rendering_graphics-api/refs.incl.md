@@ -30,3 +30,8 @@
 [p~vulkan]: vulkan.md
 [c~blade~repo]: https://github.com/kvark/blade
 [c~objc2-metal~docs]: https://docs.rs/objc2-metal
+[apple~opengl~deprecation]: https://developer.apple.com/documentation/appkit/nsopenglcontext
+[apple~opengles~deprecation]: https://developer.apple.com/documentation/opengles
+[c~glium~repo]: https://github.com/glium/glium
+[c~glutin-winit~docs]: https://docs.rs/glutin-winit
+[egui_glow~repo]: https://github.com/emilk/egui/tree/main/crates/egui_glow
