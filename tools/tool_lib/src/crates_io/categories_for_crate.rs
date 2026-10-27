@@ -45,10 +45,8 @@ pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<model::Category>
         return Ok(cats.clone());
     }
 
-    let client = super::get_client()?;
-    debug!("Calling crates.io API for {crate_name}");
-    let crt = client.get_crate(crate_name)?;
-    let categories: Vec<model::Category> = crt
+    let info = super::get_info_for_crate(crate_name)?;
+    let categories: Vec<model::Category> = info
         .categories
         .into_iter()
         .map(model::Category::new)
@@ -61,11 +59,12 @@ pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<model::Category>
     Ok(categories)
 }
 
-/// Clears the in-memory category cache.
+/// Clears the in-memory category cache and crate info cache.
 pub fn clear_category_cache() {
     if let Ok(mut cache) = CATEGORY_CACHE.lock() {
         cache.clear();
     }
+    super::clear_crate_info_cache();
 }
 
 #[cfg(test)]
@@ -166,6 +165,77 @@ mod tests {
             elapsed.as_millis() < 50,
             "1000 cached lookups took too long: {elapsed:?}"
         );
+
+        super::clear_category_cache();
+        Ok(())
+    }
+
+    /// Verifies that category lookups can hit the crate info cache when primed.
+    #[test]
+    fn test_get_categories_uses_crate_info_cache() -> Result<()> {
+        let _guard = TEST_MUTEX
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
+        super::clear_category_cache();
+
+        let fake_crate = "crate-info-cache-shared-test";
+        let api_cat = mock_crates_io_category("web", "Web Stuff", "All about web");
+
+        let response_json = format!(
+            r#"{{
+            "crate": {{
+                "id": "{fake_crate}",
+                "name": "{fake_crate}",
+                "description": "Shared cache test",
+                "documentation": null,
+                "homepage": null,
+                "repository": null,
+                "downloads": 1,
+                "recent_downloads": 1,
+                "categories": [],
+                "keywords": [],
+                "versions": [],
+                "max_version": "1.0.0",
+                "max_stable_version": "1.0.0",
+                "links": {{
+                    "owner_team": "",
+                    "owner_user": "",
+                    "owners": "",
+                    "reverse_dependencies": "",
+                    "version_downloads": "",
+                    "versions": ""
+                }},
+                "created_at": "2024-01-01T00:00:00Z",
+                "updated_at": "2024-01-01T00:00:00Z",
+                "exact_match": true
+            }},
+            "versions": [],
+            "keywords": [],
+            "categories": [
+                {{
+                    "category": "{}",
+                    "crates_cnt": 1,
+                    "created_at": "2024-01-01T00:00:00Z",
+                    "description": "{}",
+                    "id": "{}",
+                    "slug": "{}"
+                }}
+            ]
+        }}"#,
+            api_cat.category, api_cat.description, api_cat.id, api_cat.slug
+        );
+
+        let fake_response: crates_io_api::CrateResponse = serde_json::from_str(&response_json)?;
+
+        // Seed crate info cache directly
+        if let Ok(mut cache) = super::super::info::CRATE_INFO_CACHE.lock() {
+            cache.insert(fake_crate.to_owned(), fake_response);
+        }
+
+        // Category lookup should succeed by using crate info cache
+        let categories = super::get_categories_for_crate(fake_crate)?;
+        assert_eq!(categories.len(), 1);
+        assert_eq!(categories[0].category, "Web Stuff");
 
         super::clear_category_cache();
         Ok(())

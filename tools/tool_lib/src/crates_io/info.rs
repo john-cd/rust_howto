@@ -2,18 +2,46 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+use std::collections::HashMap;
+use std::sync::LazyLock;
+use std::sync::Mutex;
+
 use anyhow::Context as _;
 use anyhow::Result;
 use crates_io_api::CrateResponse;
 use tracing::debug;
+
+/// Caches crate info responses retrieved from crates.io.
+pub(super) static CRATE_INFO_CACHE: LazyLock<Mutex<HashMap<String, CrateResponse>>> =
+    LazyLock::new(|| Mutex::new(HashMap::new()));
 
 /// Returns information for a crate, given its name
 ///
 /// # Errors
 /// Returns client initialization or crates.io lookup failures with the requested crate name.
 pub fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
+    if let Ok(cache) = CRATE_INFO_CACHE.lock()
+        && let Some(info) = cache.get(crate_name)
+    {
+        debug!("Cache hit for crates.io crate info lookup of {crate_name}");
+        return Ok(info.clone());
+    }
+
     let client = super::get_client()?;
-    get_info_for_crate_with(crate_name, |name| Ok(client.get_crate(name)?))
+    let info = get_info_for_crate_with(crate_name, |name| Ok(client.get_crate(name)?))?;
+
+    if let Ok(mut cache) = CRATE_INFO_CACHE.lock() {
+        cache.insert(crate_name.to_owned(), info.clone());
+    }
+
+    Ok(info)
+}
+
+/// Clears the in-memory crate info cache.
+pub fn clear_crate_info_cache() {
+    if let Ok(mut cache) = CRATE_INFO_CACHE.lock() {
+        cache.clear();
+    }
 }
 
 /// Fetches metadata with request logging and crate-specific error context.
@@ -91,5 +119,69 @@ mod tests {
             "Failed to retrieve metadata for crate `missing`"
         );
         assert_eq!(error.root_cause().to_string(), "crate lookup failed");
+    }
+
+    /// Serializes tests that share the local cache.
+    static TEST_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
+
+    /// Verifies that cached crate info results are returned and can be cleared.
+    #[test]
+    fn test_crate_info_cache_hit_and_clear() -> Result<()> {
+        let _guard = TEST_MUTEX
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
+        clear_crate_info_cache();
+
+        let fake_crate = "mock-crate-for-info-cache-test";
+        let fake_response: CrateResponse = serde_json::from_str(CRATE_RESPONSE)?;
+
+        // Seed internal cache
+        if let Ok(mut cache) = CRATE_INFO_CACHE.lock() {
+            cache.insert(fake_crate.to_owned(), fake_response.clone());
+        }
+
+        // Subsequent lookup hits the cache directly
+        let result = get_info_for_crate(fake_crate).expect("cache hit should succeed");
+        assert_eq!(result.crate_data.id, "fixture-crate");
+
+        // Clear cache
+        clear_crate_info_cache();
+        if let Ok(cache) = CRATE_INFO_CACHE.lock() {
+            assert!(cache.get(fake_crate).is_none());
+        }
+        Ok(())
+    }
+
+    /// Verifies that repeated cached crate info lookups remain within the expected time budget.
+    #[test]
+    fn test_crate_info_cache_performance() -> Result<()> {
+        let _guard = TEST_MUTEX
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
+        clear_crate_info_cache();
+
+        let fake_crate = "perf-test-crate-info";
+        let fake_response: CrateResponse = serde_json::from_str(CRATE_RESPONSE)?;
+
+        if let Ok(mut cache) = CRATE_INFO_CACHE.lock() {
+            cache.insert(fake_crate.to_owned(), fake_response);
+        }
+
+        let start = std::time::Instant::now();
+        let iterations = 1_000;
+        for _ in 0..iterations {
+            let res = get_info_for_crate(fake_crate)?;
+            assert_eq!(res.crate_data.id, "fixture-crate");
+        }
+        let elapsed = start.elapsed();
+
+        // 1000 cached lookups should execute in < 50ms
+        assert!(
+            elapsed.as_millis() < 50,
+            "1000 cached crate info lookups took too long: {elapsed:?}"
+        );
+
+        clear_crate_info_cache();
+        Ok(())
     }
 }
