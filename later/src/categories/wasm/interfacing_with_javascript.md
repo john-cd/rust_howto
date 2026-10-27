@@ -4,13 +4,34 @@
 
 {{#include interfacing_with_javascript.incl.md}}
 
-WebAssembly modules do not have JavaScript or browser access by themselves. On a JavaScript host, [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} generates bindings so JavaScript and Rust can call across the module boundary and exchange supported values. Use it only with a JavaScript-compatible target and runtime.
+WebAssembly modules do not have JavaScript or browser access by themselves. On a JavaScript host, [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}} generates bindings so JavaScript and Rust can call across the module boundary and exchange supported values. Use these bindings with a JavaScript-compatible target and runtime.
 
-## Import and export functions with `wasm-bindgen` {#wasm-bindgen}
+## Export Rust functions to JavaScript {#wasm-bindgen}
 
-Mark a Rust function with `#[wasm_bindgen]` to export it to JavaScript. An `extern "C"` declaration annotated with `#[wasm_bindgen]` can import a JavaScript function into Rust. The generated JavaScript glue initializes the module and handles the values supported by the binding.
+Annotate a Rust function with `#[wasm_bindgen]` to export it to JavaScript. The example exports `add` only for the browser target while keeping the arithmetic function available to native tests:
 
-See the [wasm-bindgen guide][book~wasm-bindgen]↗ for the binding model and the [[wasm_development | WASM Development]] chapter for a complete build workflow.
+```rust,editable
+{{#include ../../../crates/cats/wasm/examples/wasm_development/wasm.rs:example}}
+```
+
+JavaScript imports the generated module and awaits initialization before calling an export. For a package named `my_app` built with the `web` target, the generated module can be used like this:
+
+```javascript
+import init, { add } from "./pkg/my_app.js";
+
+await init();
+console.log(add(2, 3));
+```
+
+See the [wasm-bindgen guide][book~wasm-bindgen]↗ for the binding model and supported conversions.
+
+## Import JavaScript functions into Rust {#js-import}
+
+An `extern "C"` block annotated with `#[wasm_bindgen]` declares JavaScript functions that Rust can call. Rust 2024 requires foreign blocks to be `unsafe`; the imported call is therefore made in an explicit unsafe block. This example imports `console.log`:
+
+```rust,editable
+{{#include ../../../crates/cats/wasm/examples/interfacing_with_javascript/js_import.rs:example}}
+```
 
 ## Use JavaScript built-ins with `js-sys` {#js-sys}
 
@@ -34,11 +55,37 @@ The example obtains the browser window and reports its absence or an API error i
 
 For component-based interfaces, use the framework's view and event model where it fits; direct `web-sys` calls are useful for browser features the framework does not wrap.
 
-## Call Rust from JavaScript {#calling-rust-wasm .skip}
+## Convert structured values with Serde {#serde-wasm-bindgen}
 
-The generated JavaScript module exports the functions annotated with `#[wasm_bindgen]`. With the `web` target, import the module, await its initialization, and then call the exports. Keep the package generated from the Rust crate in sync with the JavaScript application that imports it.
+[`serde-wasm-bindgen`][c~serde-wasm-bindgen~docs]↗ converts between `JsValue` and Serde data types. It represents values as JavaScript objects, arrays, and primitives rather than encoding everything as JSON. Add it as a target-specific dependency when only the WebAssembly build needs the conversion.
 
-JavaScript and Rust have different type and memory models. Keep boundary conversions explicit, handle JavaScript exceptions or unavailable APIs, and avoid crossing the boundary for every item in a large data set when a coarser call will do.
+This example accepts a JavaScript object, deserializes it, increments a field, and returns the updated object:
+
+```rust,editable
+{{#include ../../../crates/cats/wasm/examples/interfacing_with_javascript/serde_wasm_bindgen.rs:example}}
+```
+
+## Await JavaScript Promises {#wasm-bindgen-futures}
+
+[`wasm-bindgen-futures`][c~wasm-bindgen-futures~docs] provides `JsFuture` to await a JavaScript `Promise` from Rust. An exported `async` function is exposed to JavaScript as a `Promise`; propagate rejection with `?` and validate the resolved value before using it.
+
+```rust,editable
+{{#include ../../../crates/cats/wasm/examples/interfacing_with_javascript/promises.rs:example}}
+```
+
+## Build and test
+
+For a browser library crate, install the target and `wasm-pack`, then build the JavaScript package for the browser's native ES module loader:
+
+```sh
+rustup target add wasm32-unknown-unknown
+cargo install --locked wasm-pack
+wasm-pack build --target web
+```
+
+The resulting package includes generated JavaScript glue and a WebAssembly module. Import its generated JavaScript module, call its async initializer, and then use the exported functions. This repository's examples crate is not a library package for `wasm-pack`; build its examples with Cargo and the `wasm32-unknown-unknown` target instead.
+
+Keep pure logic separate from JavaScript calls so native Cargo tests can exercise it. For behavior that needs JavaScript or browser APIs, add `wasm-bindgen-test` and run the tests in Node.js or a browser, for example with `wasm-pack test --node` or `wasm-pack test --headless --chrome`. See the [browser test guide][wasm-bindgen-test~guide]↗.
 
 ## Related topics {#related-topics .skip}
 
@@ -49,7 +96,3 @@ JavaScript and Rust have different type and memory models. Keep boundary convers
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/1218)
-</div>

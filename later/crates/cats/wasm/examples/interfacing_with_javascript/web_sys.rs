@@ -28,6 +28,7 @@ fn main() {
     );
 }
 
+/// Runs the example's host-side runner.
 pub fn run() {
     main();
 }

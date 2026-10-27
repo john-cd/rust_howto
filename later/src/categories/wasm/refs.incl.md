@@ -5,6 +5,9 @@
 [ex~wasm~gloo-storage]: leptos.md#gloo-storage
 [ex~wasm~grpc-web-client]: leptos.md#grpc-web-client
 [ex~wasm~js-sys]: interfacing_with_javascript.md#js-sys
+[ex~wasm~serde-wasm-bindgen]: interfacing_with_javascript.md#serde-wasm-bindgen
+[ex~wasm~wasm-bindgen-futures]: interfacing_with_javascript.md#wasm-bindgen-futures
+[ex~wasm~web-sys]: interfacing_with_javascript.md#web-sys
 [ex~wasm~leptos-router]: leptos.md#leptos-router
 [ex~wasm~leptos]: leptos.md#leptos
 [ex~wasm~wasm-bindgen]: interfacing_with_javascript.md#wasm-bindgen
@@ -49,6 +52,9 @@
 [ex~wasm~wasmtime-sandbox]: wasm_standalone_runtimes.md#wasmtime-sandbox
 
 [cargo-component~repo]: https://github.com/bytecodealliance/cargo-component
+[c~serde-wasm-bindgen~docs]: https://docs.rs/serde-wasm-bindgen/latest/serde_wasm_bindgen/
+[c~wasm-bindgen-futures~docs]: https://docs.rs/wasm-bindgen-futures/latest/wasm_bindgen_futures/
+[c~web-sys~docs]: https://docs.rs/web-sys/latest/web_sys/
 [wasm-bindgen-test~guide]: https://rustwasm.github.io/docs/wasm-bindgen/wasm-bindgen-test/browsers.html
 [rust~cargo-profiles~book]: https://doc.rust-lang.org/cargo/reference/profiles.html
 [binaryen~repo]: https://github.com/WebAssembly/binaryen

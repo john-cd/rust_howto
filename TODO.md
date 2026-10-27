@@ -244,7 +244,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#496](https://github.com/john-cd/rust_howto/issues/496) — **P4** — wasm/wasm_standalone_runtimes.md: others: organize/write — **NOT STARTED**
 - [#498](https://github.com/john-cd/rust_howto/issues/498) — **P4** — wasm/yew.md: yew: write / organize — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#1217](https://github.com/john-cd/rust_howto/issues/1217) — **P4** — `wasm/wasm_development.md`: write — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
-- [#1218](https://github.com/john-cd/rust_howto/issues/1218) — **P4** — `wasm/interfacing_with_javascript.md`: write — **PARTIAL**
+- [#1218](https://github.com/john-cd/rust_howto/issues/1218) — **P4** — `wasm/interfacing_with_javascript.md`: write — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 
 #### NOW-PROSE-02 — UI, accessibility, media and rendering
 
