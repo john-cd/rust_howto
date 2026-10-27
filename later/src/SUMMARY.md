@@ -211,6 +211,7 @@
 - [Virtualization](categories/virtualization/index.md)
   - [Virtualization](categories/virtualization/virtualization.md)
   - [Containers](categories/virtualization/containers.md)
+    - [Containerization](categories/virtualization/containerization.md)
 
 - [Visualization](categories/visualization/index.md)
   - [Visualization](categories/visualization/visualization.md)
