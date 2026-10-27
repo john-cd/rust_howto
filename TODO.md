@@ -286,7 +286,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#1065](https://github.com/john-cd/rust_howto/issues/1065) — **P3** — database/index.md: organize — **IMPLEMENTED — pending final reference, draft-book, spelling, and diff validation**
 - [#1067](https://github.com/john-cd/rust_howto/issues/1067) — **P3** — database/mssql.md: organize / write — **BLOCKED — Docker CLI is installed, but Docker API access fails with `permission denied`; SQL Server service validation is unavailable**
 - [#1068](https://github.com/john-cd/rust_howto/issues/1068) — **P3** — database/nosql.md: review — **IMPLEMENTED — pending final code, reference, draft-book, spelling, and diff validation**
-- [#1069](https://github.com/john-cd/rust_howto/issues/1069) — **P3** — database/oracle.md: write — **NOT STARTED**
+- [#1069](https://github.com/john-cd/rust_howto/issues/1069) — **P3** — database/oracle.md: write — **BLOCKED — Oracle Instant Client is unavailable (`OCI_LIB_DIR` unset and `sqlplus` absent); Docker API access is denied, so the required local Oracle service cannot be validated**
 
 #### NOW-PROSE-09 — Development tools, build systems and editors — IMPLEMENTED; FULL VALIDATION BLOCKED
 
