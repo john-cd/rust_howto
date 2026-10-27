@@ -284,7 +284,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#509](https://github.com/john-cd/rust_howto/issues/509) — **P3** — web-programming_http-server/_batteries-included_frameworks.md: batteries-included_frameworks: write — **IMPLEMENTED — pending final reference, draft-book, spelling, and diff validation**
 - [#518](https://github.com/john-cd/rust_howto/issues/518) — **P3** — web-programming_http-server/other_frameworks.md: other_frameworks: organize — **IMPLEMENTED — pending final reference, draft-book, spelling, and diff validation**
 - [#1065](https://github.com/john-cd/rust_howto/issues/1065) — **P3** — database/index.md: organize — **IMPLEMENTED — pending final reference, draft-book, spelling, and diff validation**
-- [#1067](https://github.com/john-cd/rust_howto/issues/1067) — **P3** — database/mssql.md: organize / write — **NOT STARTED**
+- [#1067](https://github.com/john-cd/rust_howto/issues/1067) — **P3** — database/mssql.md: organize / write — **BLOCKED — Docker CLI is installed, but Docker API access fails with `permission denied`; SQL Server service validation is unavailable**
 - [#1068](https://github.com/john-cd/rust_howto/issues/1068) — **P3** — database/nosql.md: review — **NOT STARTED**
 - [#1069](https://github.com/john-cd/rust_howto/issues/1069) — **P3** — database/oracle.md: write — **NOT STARTED**
 
