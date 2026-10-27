@@ -4,11 +4,11 @@
 
 {{#include rendering_engines.incl.md}}
 
-## Use a Render Engine {#render}
+## Choose a Render Engine {#render}
 
-```rust,editable
-{{#include ../../../crates/cats/rendering_engine/examples/rendering_engines/render.rs:example}}
-```
+See [[3d_renderers | 3D Renderers]] for `rend3`, `three-d`, `kiss3d`, and engine renderers such as `bevy_render`. That chapter owns the engine coverage; this category provides a navigation entry for crates classified as rendering engines.
+
+For the graphics APIs that engines build on, see [[rendering_graphics-api | Rendering Graphics API]]. For a smaller example that selects an adapter and reports its native backend, see [[native_graphics_apis | Native Graphics APIs]].
 
 ## Related Topics {#related-topics .skip}
 
