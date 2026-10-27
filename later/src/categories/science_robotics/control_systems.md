@@ -23,6 +23,8 @@ A control system measures a quantity (speed, position, temperature), compares it
 
 The example drives a simulated first-order plant (a motor speed or a heater) toward a setpoint. Because the plant is simulated, the test needs no hardware.
 
+`next_control_output` takes a measurement, not an elapsed time: the integral term accumulates error once per call, and the derivative term uses the change in measurement between calls. Tune the gains for the chosen fixed sampling period and retune or rescale them if that period changes. Real controllers must also account for timing jitter, actuator limits, and the behavior of the actual plant.
+
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/examples/control_systems/pid.rs:example}}
 ```
