@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
@@ -42,7 +41,6 @@ fn main() {
     // Test it out.
     tracing::error!("tracing configured!");
 }
-
 // ANCHOR_END: example
 
 pub fn run() {

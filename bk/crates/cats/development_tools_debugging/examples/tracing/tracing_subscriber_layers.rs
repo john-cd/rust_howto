@@ -1,9 +1,9 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 //! Composing a `tracing` subscriber from layers and filters.
 
+use std::error::Error;
 use std::io;
 
 use tracing_subscriber::Layer as _;
@@ -35,14 +35,11 @@ fn layers() {
     tracing::debug!("tracing configured!");
 }
 
-use std::error::Error;
-
 // A `Layer`, which filters spans and events based on a set of filter
 // directives. `EnvFilter` implements both the `Layer` and `Filter` traits, so
 // it may be used for both global filtering and per-layer filtering,
 // respectively.
 /// Shows several ways to build an `EnvFilter`.
-#[allow(dead_code)]
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
     //    variable, ignoring any invalid filter directives.
@@ -71,15 +68,6 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 
     // Test it.
     tracing::debug!("tracing configured!");
-    Ok(())
-}
-
-/// Initializes the layered subscriber.
-fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
-    // Note: layers() and filter() both try to initialize the global subscriber.
-    // In a real application, only one subscriber should be initialized.
-    layers();
-    // filter()?;
     Ok(())
 }
 
@@ -113,6 +101,13 @@ fn per_layer_filtering() {
     tracing::info!(target: "http_access", "This is an access log message");
     tracing::info!("This is a general log message");
 }
+
+/// Initializes the layered subscriber.
+fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
+    // These are alternative global-subscriber setups; use one at a time.
+    layers();
+    Ok(())
+}
 // ANCHOR_END: example
 
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
@@ -132,6 +127,7 @@ mod tests {
     /// Checks that filters can be built.
     #[test]
     fn test_filter() {
+        // TODO need a mutex?
         unsafe {
             std::env::set_var("MY_CUSTOM_FILTER_ENV_VAR", "info");
         }
@@ -146,4 +142,3 @@ mod tests {
         per_layer_filtering();
     }
 }
-// TODO review
