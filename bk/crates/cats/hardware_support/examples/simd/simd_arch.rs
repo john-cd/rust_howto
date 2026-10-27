@@ -17,7 +17,7 @@ use std::arch::x86_64::*;
 
 use wide::f32x4;
 
-/// The reference implementation.
+/// Computes the scalar dot product of the common prefix of both inputs.
 fn dot_scalar(a: &[f32], b: &[f32]) -> f32 {
     a.iter().zip(b).map(|(x, y)| x * y).sum()
 }
@@ -72,8 +72,9 @@ fn dot_avx2(a: &[f32], b: &[f32]) -> f32 {
 /// target (to SSE, NEON, WASM `simd128`, or scalar code).
 fn dot_wide(a: &[f32], b: &[f32]) -> f32 {
     let mut acc = f32x4::ZERO;
-    let (ca, ra) = a.as_chunks::<4>();
-    let (cb, rb) = b.as_chunks::<4>();
+    let len = a.len().min(b.len());
+    let (ca, ra) = a[..len].as_chunks::<4>();
+    let (cb, rb) = b[..len].as_chunks::<4>();
     for (x, y) in ca.iter().zip(cb) {
         acc += f32x4::new(*x) * f32x4::new(*y);
     }
@@ -81,6 +82,9 @@ fn dot_wide(a: &[f32], b: &[f32]) -> f32 {
 }
 
 /// A safe API: picks the best implementation at run time.
+///
+/// Computes the dot product of the common prefix, ignoring trailing values in
+/// the longer input.
 pub fn dot(a: &[f32], b: &[f32]) -> f32 {
     #[cfg(target_arch = "x86_64")]
     {
@@ -120,6 +124,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Compares scalar, runtime-dispatched, and portable SIMD on fixed inputs.
 #[allow(clippy::main_recursion)]
 pub fn run() {
     main();
@@ -135,6 +140,7 @@ mod tests {
         main();
     }
 
+    /// Matches scalar results for empty inputs, vector tails, and full vectors.
     #[test]
     fn test_all_lengths() {
         // Covers empty input, a tail shorter than a vector, and exact
@@ -150,6 +156,18 @@ mod tests {
                 // SAFETY: SSE2 is part of the `x86_64` baseline.
                 assert_eq!(unsafe { dot_sse2(&a, &b) }, expected);
             }
+        }
+    }
+
+    /// Uses the same common prefix when inputs have different vector tails.
+    #[test]
+    fn truncates_unequal_inputs_to_shared_prefix() {
+        for (a_len, b_len) in [(0, 7), (3, 8), (5, 3), (17, 9), (9, 17)] {
+            let a = fixture(a_len, 3);
+            let b = fixture(b_len, 4);
+            let expected = dot_scalar(&a, &b);
+            assert_eq!(dot(&a, &b), expected, "dispatch, {a_len}/{b_len}");
+            assert_eq!(dot_wide(&a, &b), expected, "wide, {a_len}/{b_len}");
         }
     }
 }

@@ -442,7 +442,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 #### VALIDATE-CODE-11 — Algorithms, data structures and memory
 
 - [#1936](https://github.com/john-cd/rust_howto/issues/1936) — **P3** — Add examples: fast non-cryptographic hashing (ahash, rustc-hash, xxhash-rust) and bit sets (fixedbitset) — **PARTIAL**
-- [#1914](https://github.com/john-cd/rust_howto/issues/1914) — **P4** — Add examples: SIMD vector math with std::arch (and portable alternatives) — **PARTIAL**
+- [#1914](https://github.com/john-cd/rust_howto/issues/1914) — **P4** — Add examples: SIMD vector math with std::arch (and portable alternatives) — **IMPLEMENTED ON DEVELOP; OPEN — runtime-dispatched intrinsics, scalar/wide alternatives, and page are present; portable dot product now shares scalar common-prefix semantics with unequal-length coverage; formatted; tests and final gates deferred**
 - [#1925](https://github.com/john-cd/rust_howto/issues/1925) — **P4** — Add examples: memory techniques: arena allocation (bumpalo), string interning (ustr), feature-selected global allocator — **PARTIAL**
 
 #### VALIDATE-CODE-12 — Language and domain models

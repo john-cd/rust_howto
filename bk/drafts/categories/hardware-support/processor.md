@@ -62,6 +62,8 @@ The example computes a dot product three ways:
 - With the scalar loop, which is the fallback on other targets and the reference in the tests.
 - With the portable [`wide`][c~wide~docs]↗{{hi:wide}} crate, which works on stable Rust on any target.
 
+All three implementations use the common prefix when the input lengths differ. The vectorized versions truncate both inputs before splitting them into vector-sized chunks, so the scalar tail covers the same positions.
+
 ```rust,editable
 {{#include ../../../crates/cats/hardware_support/examples/simd/simd_arch.rs:example}}
 ```
