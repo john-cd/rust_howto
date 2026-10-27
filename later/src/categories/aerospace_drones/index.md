@@ -10,46 +10,15 @@ Rust's memory safety, zero-cost abstractions, and fearless concurrency make it a
 
 ## Core Flight Control & Communication
 
-Reliable flight control combines state estimation, control loops, and hardware-facing interfaces. For communication and device protocol crate support, see [[aerospace_protocols | Aerospace Protocols]]; verify timing and safety constraints for the target flight controller.
-
-- Flight Control Algorithms: PID controllers, sensor fusion (IMU, GPS, barometer), state estimation, path planning, trajectory generation.
-- Communication Protocols: MAVLink (Micro Air Vehicle Link), other custom protocols. Serial communication (UART, I2C, SPI).
-- Real-time Systems: Handling sensor data and control loops within strict timing constraints.
-- Embedded Systems: Interfacing with hardware, memory management, `no-std`{{hi:no-std}} programming (if applicable).
-
-Consider using:
-
-- [`mavlink`][c~mavlink~docs]↗{{hi:mavlink}} for MAVLink encoding/decoding.
-- [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} for hardware abstraction (if working with embedded systems).
-- [`pid`][c~pid~docs]↗{{hi:pid}} for PID controller implementation.
+Flight-control work spans PID control loops, sensor fusion, state estimation, path and trajectory planning, and execution within real-time constraints. Use [`mavlink`][c~mavlink~docs] for standard ground-station messages and [`embedded-hal`][c~embedded-hal~docs] for portable peripheral abstractions such as I2C and SPI; select UART or custom-protocol support for the target, account for `no_std` requirements on constrained controllers, and see [[aerospace_protocols | Aerospace Protocols]] for protocol choices.
 
 ## Sensor Integration
 
-Attitude and heading reference systems combine inertial measurements to estimate orientation; the [`ahrs`][c~ahrs~docs] crate provides algorithms for this work. Sensor drivers and calibration remain specific to the connected hardware.
-
-- IMU (Inertial Measurement Unit) Data Processing: Accelerometer, gyroscope, magnetometer data. Sensor fusion for orientation estimation.
-- GPS Integration: Receiving and processing GPS data for localization and navigation.
-- Barometer/Altimeter: Altitude measurement.
-- Other Sensors: Cameras, LiDAR, ultrasonic sensors.
-
-Consider using:
-
-- [`i2cdev`][c~i2cdev~docs]↗{{hi:i2cdev}}, [`spidev`][c~spidev~docs]↗{{hi:spidev}}, [`serialport`][c~serialport~docs]↗{{hi:serialport}} for low-level hardware communication.
-- [`gpsd-client`][c~gpsd_client~docs]↗{{hi:gpsd-client}} for interacting with the gpsd daemon (if using a GPS receiver that works with gpsd).
-
-Sensor-specific crates are common: Often, you'll use crates provided by the sensor manufacturer or community-developed drivers.
+Sensor inputs include IMU accelerometers, gyroscopes and magnetometers, GPS, barometers, cameras, lidar, and ultrasonic rangefinders; drivers and calibration remain hardware-specific. Use target-compatible [`embedded-hal`][c~embedded-hal~docs] drivers where available, and [`ahrs`][c~ahrs~docs] algorithms for orientation estimates from inertial measurements.
 
 ## Computer Vision & Image Processing
 
-- Object Detection: Detecting objects in images/video (e.g., obstacles, landing pads).
-- Image Processing: Image filtering, feature extraction.
-- SLAM (Simultaneous Localization and Mapping): Building a map of the environment and localizing the drone within it.
-
-Consider using:
-
-- [`opencv`][c~opencv~docs]↗{{hi:opencv}}: Bindings for the OpenCV library (powerful for computer vision).
-- [`image`][c~image~docs]↗{{hi:image}} for image loading and manipulation.
-- [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for efficient array operations (often used in image processing).
+Vision tasks include obstacle and landing-pad detection, image filtering and feature extraction, and simultaneous localization and mapping (SLAM). Use [`opencv`][c~opencv~docs] for computer-vision algorithms, [`image`][c~image~docs] for image loading and manipulation, and [`ndarray`][c~ndarray~docs] for n-dimensional arrays; see [[computer-vision | Computer Vision]], [[images | Images]], and [[multimedia_images | Multimedia Images]] for broader guidance.
 
 ## Related Topics
 
