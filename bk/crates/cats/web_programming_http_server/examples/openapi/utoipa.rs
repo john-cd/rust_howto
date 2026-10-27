@@ -48,6 +48,10 @@ pub fn app() -> Router {
 }
 
 /// Renders the document as pretty-printed JSON.
+///
+/// # Errors
+///
+/// Returns an error if the OpenAPI document cannot be serialized as JSON.
 pub fn openapi_json() -> anyhow::Result<String> {
     Ok(ApiDoc::openapi().to_pretty_json()?)
 }
@@ -63,6 +67,7 @@ mod tests {
 
     use super::*;
 
+    /// Includes the greeting route and response schema in the document.
     #[test]
     fn document_describes_path_and_schema() -> anyhow::Result<()> {
         let doc: serde_json::Value = serde_json::from_str(&openapi_json()?)?;
@@ -71,39 +76,36 @@ mod tests {
         Ok(())
     }
 
-    async fn get_status_and_body(uri: &str) -> (StatusCode, Vec<u8>) {
+    /// Calls a route in memory and collects its response status and body.
+    async fn get_status_and_body(
+        uri: &str,
+    ) -> anyhow::Result<(StatusCode, Vec<u8>)> {
         let response = app()
-            .oneshot(
-                Request::get(uri)
-                    .body(Body::empty())
-                    .expect("the utoipa example invariant should hold"),
-            )
-            .await
-            .expect("the utoipa example invariant should hold");
+            .oneshot(Request::get(uri).body(Body::empty())?)
+            .await?;
         let status = response.status();
-        let body = response
-            .into_body()
-            .collect()
-            .await
-            .expect("the utoipa example invariant should hold")
-            .to_bytes();
-        (status, body.to_vec())
+        let body = response.into_body().collect().await?.to_bytes();
+        Ok((status, body.to_vec()))
     }
 
+    /// Serves a document containing the greeting route through the JSON
+    /// endpoint.
     #[tokio::test]
-    async fn serves_the_spec_from_a_route() {
+    async fn serves_the_spec_from_a_route() -> anyhow::Result<()> {
         let (status, body) =
-            get_status_and_body("/api-docs/openapi.json").await;
+            get_status_and_body("/api-docs/openapi.json").await?;
         assert_eq!(status, StatusCode::OK);
-        let doc: serde_json::Value = serde_json::from_slice(&body)
-            .expect("the utoipa example invariant should hold");
+        let doc: serde_json::Value = serde_json::from_slice(&body)?;
         assert!(doc["paths"]["/hello/{name}"].is_object());
+        Ok(())
     }
 
+    /// Serves the embedded Swagger UI without starting a network listener.
     #[tokio::test]
-    async fn serves_the_swagger_ui() {
-        let (status, body) = get_status_and_body("/swagger-ui/").await;
+    async fn serves_the_swagger_ui() -> anyhow::Result<()> {
+        let (status, body) = get_status_and_body("/swagger-ui/").await?;
         assert_eq!(status, StatusCode::OK);
         assert!(String::from_utf8_lossy(&body).contains("swagger"));
+        Ok(())
     }
 }

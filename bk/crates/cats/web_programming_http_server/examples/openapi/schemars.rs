@@ -21,13 +21,21 @@ pub struct Config {
 }
 
 /// The JSON Schema of `Config`.
-pub fn config_schema() -> serde_json::Value {
-    serde_json::to_value(schema_for!(Config)).unwrap_or_default()
+///
+/// # Errors
+///
+/// Returns an error if the generated schema cannot be serialized as JSON.
+pub fn config_schema() -> anyhow::Result<serde_json::Value> {
+    Ok(serde_json::to_value(schema_for!(Config))?)
 }
 
 /// Validates `instance` against the schema.
+///
+/// # Errors
+///
+/// Returns an error if schema serialization or validator construction fails.
 pub fn is_valid(instance: &serde_json::Value) -> anyhow::Result<bool> {
-    let validator = jsonschema::validator_for(&config_schema())?;
+    let validator = jsonschema::validator_for(&config_schema()?)?;
     Ok(validator.is_valid(instance))
 }
 // ANCHOR_END: example
@@ -38,6 +46,7 @@ mod tests {
 
     use super::*;
 
+    /// Accepts valid configuration and rejects wrong types or missing fields.
     #[test]
     fn round_trip() -> anyhow::Result<()> {
         assert!(is_valid(&json!({ "port": 8080 }))?);
@@ -46,9 +55,11 @@ mod tests {
         Ok(())
     }
 
+    /// Includes the configuration fields in the generated schema.
     #[test]
-    fn schema_lists_properties() {
-        let schema = config_schema();
+    fn schema_lists_properties() -> anyhow::Result<()> {
+        let schema = config_schema()?;
         assert!(schema["properties"]["port"].is_object());
+        Ok(())
     }
 }
