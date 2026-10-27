@@ -223,4 +223,98 @@ mod tests {
         assert!(err_msg.contains("child categories of bad-children were not a table"));
         Ok(())
     }
+
+    /// Verifies that parsing an empty table yields an empty vector of categories.
+    #[test]
+    fn test_categories_from_toml_empty_table() -> Result<()> {
+        let table = toml::value::Table::new();
+        let categories = categories_from_toml(&table, None)?;
+
+        assert!(categories.is_empty());
+        Ok(())
+    }
+
+    /// Verifies that multi-level nested categories build their slug and name recursively.
+    #[test]
+    fn test_categories_from_toml_deeply_nested() -> Result<()> {
+        let toml_str = r#"
+            [grandparent]
+            name = "Grandparent"
+            description = "Level 1"
+
+            [grandparent.categories.parent]
+            name = "Parent"
+            description = "Level 2"
+
+            [grandparent.categories.parent.categories.child]
+            name = "Child"
+            description = "Level 3"
+        "#;
+        let table: toml::value::Table = toml::from_str(toml_str)?;
+        let categories = categories_from_toml(&table, None)?;
+
+        assert_eq!(categories.len(), 3);
+
+        let child = categories
+            .iter()
+            .find(|c| c.slug == "grandparent::parent::child")
+            .expect("child category found");
+        assert_eq!(child.category, "Grandparent::Parent::Child");
+        assert_eq!(child.description, "Level 3");
+
+        Ok(())
+    }
+
+    /// Verifies that a category with a non-string `name` attribute returns an error.
+    #[test]
+    fn test_categories_from_toml_name_not_a_string() -> Result<()> {
+        let toml_str = r#"
+            [bad-name]
+            name = 12345
+        "#;
+        let table: toml::value::Table = toml::from_str(toml_str)?;
+        let error = categories_from_toml(&table, None)
+            .expect_err("a non-string category name should be rejected");
+
+        let err_msg = error.to_string();
+        assert!(err_msg.contains("Expected category TOML attribute 'name' to be a String"));
+        Ok(())
+    }
+
+    /// Verifies that a non-string description falls back to an empty string.
+    #[test]
+    fn test_categories_from_toml_description_not_a_string() -> Result<()> {
+        let toml_str = r#"
+            [non-string-desc]
+            name = "Valid Name"
+            description = 12345
+        "#;
+        let table: toml::value::Table = toml::from_str(toml_str)?;
+        let categories = categories_from_toml(&table, None)?;
+
+        assert_eq!(categories.len(), 1);
+        assert_eq!(categories[0].slug, "non-string-desc");
+        assert_eq!(categories[0].category, "Valid Name");
+        assert_eq!(categories[0].description, "");
+        Ok(())
+    }
+
+    /// Verifies that errors in child categories propagate properly.
+    #[test]
+    fn test_categories_from_toml_child_missing_name() -> Result<()> {
+        let toml_str = r#"
+            [parent-cat]
+            name = "Parent"
+
+            [parent-cat.categories.child-no-name]
+            description = "No name field"
+        "#;
+        let table: toml::value::Table = toml::from_str(toml_str)?;
+        let error = categories_from_toml(&table, None)
+            .expect_err("child category without name should be rejected");
+
+        let err_msg = error.to_string();
+        assert!(err_msg.contains("Expected category TOML attribute 'name' to be a String"));
+        Ok(())
+    }
 }
