@@ -2,50 +2,50 @@
 
 # Windows build and test
 
-This repository is designed to work on Windows with PowerShell.
+The repository's Windows recipes use PowerShell 7 at the entry point. Some imported book modules run Git Bash recipes; see [the script support table](../bk/scripts/README.md) before invoking a platform-specific recipe.
 
-1. Install Rust and required components:
-   - Run `./scripts/install_deps.ps1` from an elevated PowerShell prompt.
+## Install prerequisites
 
-2. Install `just` if needed:
-   - The repository pins `just` in `.devcontainer/.env`; run `./scripts/install_deps.ps1` to install that version.
-   - If installing it separately, use `cargo install just --version 1.59.0 --locked`.
+From the repository root, run:
 
-3. Install native toolchain dependencies for Windows examples:
-   - `winget install --id LLVM.LLVM -e --source winget`
-   - ensure `clang.exe` and `llvm-config.exe` are on `PATH`
-   - The staging GTK 4 and Relm4 examples are excluded on Windows; GTK and this repository's MSVC toolchain require separate platform setup. See the GUI chapter for GTK instructions.
+```powershell
+pwsh -File .devcontainer/install_deps.ps1
+```
 
-4. Run the book workspace commands from `bk`:
-   - `cd bk`
-   - `just cka` — check all code with all features
-   - `just ca` — run clippy across the workspace
-   - `just ba` — build all code (all features)
-   - `just nta` — run all tests including doctests
-   - `just bb` — build the book; `just s` — serve it locally
+The script reads pinned tool versions from `.devcontainer/.env` and installs Rust components, `just`, LLVM/Clang, SQLite, NASM, Ninja, and the book tools with Winget and Cargo. It does not take command-line parameters. If Git for Windows is installed outside `C:\Program Files\Git`, set `GIT_BASH` to the full path of `bash.exe`.
 
-The root `bk/justfile` uses PowerShell 7 on Windows. Each imported module has
-its own shell setting: several modules use Git Bash from Git for Windows, while
-others use PowerShell. A recipe tagged `[unix]` is unavailable on Windows;
-recipes with a `[windows]` implementation or no platform tag can be listed and
-run there. See `bk/scripts/README.md` for the module support table. The book's
-`quick` recipe (`just q`) runs its Bash preview through Git Bash. `just spell`
-uses Typos and `just lnk <pattern>` uses the Windows `mdbook-utils` binary; both
-are available on Windows. Set `GIT_BASH` if Git for Windows is installed outside
-`C:\Program Files\Git`.
+Run the repository build setup once per checkout:
 
-From `bk`, `just recipes fix_recipe_tables` and `just refdefs sort` also have
-native Windows implementations. Run `just --list` to see root recipes and
-modules, then `just <module>` to see that module's recipes. Module settings and
-default working directories belong to each module's `mod.just`; root settings
-do not automatically apply to them. Commands that need to run relative to the
-repository root use an explicit root path.
+```powershell
+just build-setup
+```
 
-5. If you want to compile or test a single crate directly:
-   - `cd bk/crates`
-   - `cargo check --all-targets --all-features --locked`
-   - `cargo test -p <crate> --all-targets`
+## Run book recipes
 
-6. Example-specific notes:
-   - Some examples require native system libraries or external services.
-   - Examples that need external services are often tagged with `#[ignore]` or `require_external_svc` tests.
+From `bk`, the main workspace recipes are:
+
+```powershell
+just cka  # Check all code with all features.
+just ca   # Run Clippy across the workspace.
+just ba   # Build all code with all features.
+just nta  # Run all tests, including doctests.
+just bb   # Build the book.
+just s    # Serve the book locally.
+```
+
+The `quick` recipe (`just q`) runs its Bash preview through Git Bash. `just spell` uses Typos, and `just lnk <pattern>` uses the Windows `mdbook-utils` binary. `just recipes fix_recipe_tables` and `just refdefs sort` also have native Windows implementations.
+
+Run `just --list` for root recipes and modules, then `just <module> --list` for a module's recipes. Each imported module owns its shell settings and working directory; root settings do not automatically apply to it. Recipes tagged `[unix]` are unavailable on Windows.
+
+## Native dependencies and validation
+
+Full-workspace recipes build optional examples that depend on native libraries, SDKs, or external services. The installer covers common Windows tools, but some examples still need separately configured development libraries. A native linker error means the affected full gate has not passed; record the missing library and keep focused checks separate from the full gate.
+
+Pingora validation requires a working Unix environment. On Windows, use WSL only when it is installed and starts successfully. For a single crate, run from `bk/crates`:
+
+```powershell
+cargo check --all-targets --all-features --locked
+cargo test -p <crate> --all-targets
+```
+
+Some examples require external services and are marked with `#[ignore]` or `require_external_svc` tests.

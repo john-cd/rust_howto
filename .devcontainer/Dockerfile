@@ -1,21 +1,18 @@
 # syntax=docker/dockerfile:1-labs
 # TODO Reviewed ??-??-2026
 
-# This Dockerfile defines multiple stages to build a Rust development environment optimized for building the Rust How-To book and its examples.
-# The stages are:
-# 1. `tool-builder`: Builds and installs Rust tools and binaries (e.g., mdbook and its plugins) in a Rust image.
-# 2. `base`: Sets up the base image with necessary system dependencies and copies the tools from the builder stage.
-# 3. `local-tool-builder`: Builds local Rust tools (e.g., mdbook-scrub) from the source code.
-# 4. `development`: The final image for development, which includes additional tools and configurations for an optimal development experience.
-# 5. `ci`: A stage optimized for Continuous Integration, which includes only the necessary tools and dependencies to build the book in a CI environment.
-# Each stage is designed to optimize caching and reduce the final image size by only including necessary components
+# This multi-stage build supplies the Rust toolchains and native libraries used by the book workspace.
+# `rust-core` installs the pinned formatter toolchain. `tool-builder` installs external Rust tools,
+# and `local-tool-builder` builds this repository's tools. `base` combines those tools with native
+# libraries; `development` adds interactive utilities, while `ci` copies in the source tree and runs
+# the CI entry point.
 #
 # Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
 # See also https://docs.docker.com/language/rust/
 
 # ------------------------------------------------------------------------------------------------
-# The base Rust image stage, used as the starting point for both the tool builders and the final images.
+# Start from the official Rust image for all build stages.
 
 # The build arg is passed by compose.yaml and set from the RUST_IMAGE_LABEL
 # variable in `.devcontainer/.env`.
@@ -29,21 +26,20 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates curl \
     && rm -rf /var/lib/apt/lists/*
 
-## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code) and clippy
+## Install stable rustfmt for editor integration and Clippy for linting.
 RUN rustup component add clippy rustfmt
 
-## Install nightly with rustfmt - last, since it changes often
+## Install the repository-pinned formatter toolchain after stable, because it changes more often.
 ARG RUSTFMT_TOOLCHAIN
 COPY rustfmt-toolchain.toml /usr/local/share/rustfmt-toolchain.toml
 ENV RUSTFMT_TOOLCHAIN_FILE=/usr/local/share/rustfmt-toolchain.toml
 RUN RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' "$RUSTFMT_TOOLCHAIN_FILE")}" \
-    && printf '[toolchain]\nchannel = "%s"\n' "$RUSTFMT_TOOLCHAIN" > "$RUSTFMT_TOOLCHAIN_FILE" \
     && rustup toolchain install "$RUSTFMT_TOOLCHAIN" --profile minimal --component rustfmt
 ENV RUSTFMT_TOOLCHAIN=${RUSTFMT_TOOLCHAIN}
 
-## Optional: make nightly the default
+## Optional: make the pinned formatter toolchain the default for interactive Cargo commands.
 # RUN rustup default "$RUSTFMT_TOOLCHAIN"
-## You must update all .github wokflows as well
+## Update CI workflow toolchain pins when changing the repository's formatter toolchain.
 
 # ------------------------------------------------------------------------------------------------
 # Stage to build and install (external) Rust tools (e.g., mdbook and its plugins) in the image, used for both development and CI stages.
@@ -83,8 +79,8 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo install --locked --force --version ${MDBOOK_INDEXING_VERSION} mdbook-indexing
 EOF
 
-## Install the mdbook-utils tool that is a companion to the book.
-## Installed last, because the tool is still in development
+## Build mdbook-utils from its pinned Git revision while it is still in development.
+## Cargo's --rev keeps this binary aligned with the revision pinned in .devcontainer/.env.
 RUN cargo install --git https://github.com/john-cd/mdbook-utils --rev ${MDBOOK_UTILS_REV} --locked mdbook-utils
 
 ## ------------------------------------------------------------------------------------------------
@@ -105,15 +101,14 @@ COPY tools/ /code/tools/
 
 RUN cargo fetch --locked --manifest-path /code/tools/Cargo.toml
 
-# TODO RUSTFMT_TOOLCHAIN is already defined?
-## Build the tools in release mode
+## Build repository tools in release mode with the pinned formatter toolchain.
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    RUSTFMT_TOOLCHAIN="$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' "$RUSTFMT_TOOLCHAIN_FILE")" \
+    RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' "$RUSTFMT_TOOLCHAIN_FILE")}" \
     && cargo +"$RUSTFMT_TOOLCHAIN" build --bins --locked --all-features --release -Z unstable-options --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
 
 # ------------------------------------------------------------------------------------------------
 
-# The base image with all system dependencies and tools installed, used for both development and CI stages.
+# Add the native libraries and external tools shared by the development and CI images.
 FROM rust-core AS base
 
 SHELL ["bash", "-c"]
@@ -239,14 +234,14 @@ RUN curl -sS https://webi.sh/gh | sh
 ## Install additional dev tools
 RUN cargo binstall --no-confirm --secure kani-verifier bacon ripgrep
 ## Install optional cargo plugins:
-#  cargo install --locked cargo-outdated || true
-#  cargo-udeps
-#  cargo-audit
-#  cargo-pants
-#  cargo-sweep
-#  cargo-cache
+# cargo install --locked cargo-outdated || true
+# cargo-udeps
+# cargo-audit
+# cargo-pants
+# cargo-sweep
+# cargo-cache
 ## Optionally, install tool to convert TOML to JSON
-#   && cargo binstall --no-confirm toml2json \
+# && cargo binstall --no-confirm toml2json \
 
 ## Copy only binaries from local tool builder to keep the base image lean
 COPY --from=local-tool-builder /code/bin/ /code/bin/
@@ -263,8 +258,7 @@ RUN <<EOF
 EOF
 
 ## Git config
-# The default values are overriden by the build arg passed by compose.override.yaml,
-# itself set from the RUST_IMAGE_LABEL env. variable in `.devcontainer/.env` file
+# Compose build arguments override these fallback Git identity values.
 ARG EMAIL=nobody@users.noreply.github.com
 ARG GIT_AUTHOR_NAME=nemo
 RUN git config --global user.email ${EMAIL} && git config --global user.name ${GIT_AUTHOR_NAME}
@@ -274,11 +268,11 @@ EXPOSE 3000
 
 ## https://code.visualstudio.com/remote/advancedcontainers/start-processes
 COPY --link --chmod=755 .devcontainer/dev.sh ./.devcontainer/
-ENTRYPOINT [ "./.devcontainer/dev.sh" ]
+ENTRYPOINT ["./.devcontainer/dev.sh"]
 
 ## Sleep to keep the container running.
 ## The command is passed to `dev.sh`.
-CMD [ "sleep", "infinity" ]
+CMD ["sleep", "infinity"]
 
 ## ------------------------------------------------------------------------------------------------
 
@@ -304,4 +298,4 @@ RUN find . -name "target" -prune -o \( -type f -name "*.sh" -exec chmod +x {} \;
 RUN rm -rf /usr/local/cargo/registry/index/*
 
 ## Compilation of the whole code happens within that script at runtime
-ENTRYPOINT [ "./.devcontainer/ci.sh" ]
+ENTRYPOINT ["./.devcontainer/ci.sh"]
