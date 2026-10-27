@@ -83,18 +83,10 @@ fn main() {
         altitude: 0.0,
     };
 
-    let dt = 0.1;
-    let mut time = 0.0;
-
-    let mut final_altitude = 0.0;
-
-    while time <= 10.0 {
-        rocket.update(dt);
-        time += dt;
-        final_altitude = rocket.altitude;
+    for _ in 0..100 {
+        rocket.update(0.1);
     }
-
-    assert!(final_altitude > 0.0);
+    println!("Altitude after 10 seconds: {:.1} m", rocket.altitude);
 }
 // ANCHOR_END: example
 
@@ -171,7 +163,7 @@ mod tests {
         main();
     }
 
-    /// Checks that the rocket gains altitude.
+    /// Checks fuel consumption, ascent, descent, and the ground boundary.
     #[test]
     fn test_rocket_simulation() {
         let mut rocket = Rocket {
@@ -186,25 +178,29 @@ mod tests {
         };
 
         let initial_mass = rocket.total_mass();
-        rocket.update(1.0); // 1 second update
+        rocket.update(0.1);
+        assert!(rocket.total_mass() < initial_mass);
+        assert!(rocket.altitude > 0.0);
 
-        // The rocket should move upwards and burn fuel
+        let mut saw_descent_after_burnout = false;
+        let mut landed = false;
+        for _ in 0..10_000 {
+            let previous_altitude = rocket.altitude;
+            rocket.update(0.1);
+            assert!(rocket.altitude >= 0.0);
+            if rocket.fuel_mass == 0.0 && rocket.altitude < previous_altitude {
+                saw_descent_after_burnout = true;
+            }
+            if saw_descent_after_burnout && rocket.altitude == 0.0 {
+                landed = true;
+                break;
+            }
+        }
         assert!(
-            rocket.altitude > 0.0,
-            "Rocket should have positive altitude"
+            saw_descent_after_burnout,
+            "rocket should descend after burnout"
         );
-        assert!(
-            rocket.velocity > 0.0,
-            "Rocket should have positive velocity"
-        );
-        assert!(
-            rocket.fuel_mass < 1500.0,
-            "Rocket should have burned some fuel"
-        );
-        assert!(
-            rocket.total_mass() < initial_mass,
-            "Total mass should decrease"
-        );
+        assert!(landed, "rocket should return to the ground");
     }
 
     /// Checks that a fixed ISS TLE yields a finite position near low Earth

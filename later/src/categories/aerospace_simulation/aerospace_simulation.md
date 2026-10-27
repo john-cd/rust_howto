@@ -6,7 +6,7 @@
 
 ## Simulate a Rocket Launch {#rocket-launch-simulation}
 
-The existing rocket example demonstrates a simple time-stepped model. The following recipes add an orbital propagation example and a fixed-step numerical solver for an ordinary differential equation.
+This from-scratch rocket example demonstrates a simple time-stepped model, with mass, thrust, drag, and a ground boundary. It is illustrative rather than a flight-certified simulation. The following recipes use libraries for orbital propagation and numerical integration.
 
 ```rust,editable
 {{#include ../../../crates/cats/aerospace_simulation/examples/aerospace_simulation/aero_simulation.rs:example}}
