@@ -1,5 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
+[tempfile~persist-durability]: https://docs.rs/tempfile/latest/tempfile/struct.NamedTempFile.html#method.persist
+
 [c~tempfile::tempdir~docs]: https://docs.rs/tempfile/latest/tempfile/fn.tempdir.html
 [ex~filesystem~avoid-writing-and-reading-from-the-same-file]: reading_and_writing_files.md#avoid-writing-and-reading-from-the-same-file
 [ex~filesystem~camino]: paths.md#camino

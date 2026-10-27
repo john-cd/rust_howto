@@ -56,10 +56,13 @@ Overwriting a file in place is not crash-safe: if the process or the machine die
 
 The example shows two variants: [`tempfile::NamedTempFile`][c~tempfile~docs]↗{{hi:tempfile::NamedTempFile}} with `persist`, and [`atomicwrites::AtomicFile`][c~atomicwrites~docs]↗{{hi:atomicwrites::AtomicFile}}, which wraps the same steps.
 
-- Create the temporary file in the **same directory** as the target. A rename across filesystems is a copy, which is not atomic.
+- Create the temporary file in the **same directory** as the target. Atomic rename requires the same filesystem; `persist` fails across filesystems.
 - Call `sync_all` **before** the rename. Without it, a crash may leave the new name pointing at empty or partial data.
+- Synchronize the parent directory **after** the rename on Unix to persist the directory entry. [`persist` does not synchronize file contents or the parent directory itself][tempfile~persist-durability]. The example reports a directory-sync failure even though replacement has already happened.
 - On Windows, `persist` replaces an existing target, but the replace fails if another process holds the target open without sharing; retry on transient errors if other programs may read the file.
 - If the target is a symbolic link, resolve it first (see [Canonicalize a Path][ex~filesystem~canonicalize]), or the rename replaces the link rather than the file it points to.
+
+Atomic visibility and durability after power loss are different guarantees. The standard library does not provide a portable directory-sync equivalent on Windows, so the tempfile variant does not promise complete power-loss durability there. Its ordinary replacement tests check final contents and cleanup, not recovery after a system crash.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/atomic_write/atomic_write.rs:example}}

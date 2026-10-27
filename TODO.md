@@ -465,7 +465,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-16 — Filesystem and process management
 
-- [#1906](https://github.com/john-cd/rust_howto/issues/1906) — **P3** — Add example: crash-safe atomic file replacement (temp file + fsync + rename) — **PARTIAL**
+- [#1906](https://github.com/john-cd/rust_howto/issues/1906) — **P3** — Add example: crash-safe atomic file replacement (temp file + fsync + rename) — **IMPLEMENTED ON DEVELOP; OPEN — tempfile/atomicwrites variants and replacement tests are present; Unix parent-directory sync and post-replacement error reporting added; Windows durability limits documented; formatted; tests and required gates deferred**
 - [#1922](https://github.com/john-cd/rust_howto/issues/1922) — **P3** — Add examples: manage child processes (kill a process tree, resource limits, sandboxed workers) — **PARTIAL**
 
 ### Prose and book structure

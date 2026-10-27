@@ -14,6 +14,14 @@ use tempfile::NamedTempFile;
 
 /// Replaces `target` with `contents` using a temporary file in the same
 /// directory.
+///
+/// On Unix, synchronizes the parent directory after replacement as well.
+///
+/// # Errors
+///
+/// Returns an error if temporary-file creation, writing, synchronization, or
+/// replacement fails. A parent-directory sync error occurs after replacement,
+/// so an error does not always mean that the old contents remain.
 fn replace_with_tempfile(target: &Path, contents: &[u8]) -> anyhow::Result<()> {
     // The temporary file must live on the same filesystem as the target,
     // otherwise the final rename is not atomic. The parent directory is the
@@ -21,19 +29,34 @@ fn replace_with_tempfile(target: &Path, contents: &[u8]) -> anyhow::Result<()> {
     let dir = target
         .parent()
         .context("the target path has no parent directory")?;
+    #[cfg(unix)]
+    let parent_directory = fs::File::open(dir)
+        .context("open parent directory for synchronization")?;
     let mut temp = NamedTempFile::new_in(dir)?;
     temp.write_all(contents)?;
     // Flush the data to disk *before* the rename. Otherwise, after a crash the
     // new name could point to an empty or partially written file.
     temp.as_file().sync_all()?;
     // `persist` renames the temporary file over the target. It also replaces
-    // an existing target on Windows. The temporary file is removed on error.
+    // an existing target on Windows. On failure, PersistError retains the
+    // temporary file until the error is dropped.
     temp.persist(target)?;
+    // Persisting the directory entry requires a separate sync on Unix.
+    // The standard library has no equivalent portable directory sync on
+    // Windows.
+    #[cfg(unix)]
+    parent_directory
+        .sync_all()
+        .context("file replaced, but syncing the parent directory failed")?;
     Ok(())
 }
 
-/// Replaces `target` with `contents` using the `atomicwrites` crate, which
-/// performs the same steps behind a closure-based API.
+/// Replaces `target` with `contents` through `atomicwrites`' closure-based API.
+///
+/// # Errors
+///
+/// Returns an error if temporary-file creation, writing, synchronization, or
+/// replacement fails.
 fn replace_with_atomicwrites(
     target: &Path,
     contents: &[u8],
@@ -44,6 +67,11 @@ fn replace_with_atomicwrites(
 }
 
 /// Writes the same file twice with each variant.
+///
+/// # Errors
+///
+/// Returns an error if fixture creation, replacement, synchronization, or
+/// reading the resulting contents fails.
 pub fn run() -> anyhow::Result<()> {
     let dir = tempfile::tempdir()?;
     let target = dir.path().join("settings.txt");
@@ -72,6 +100,8 @@ mod tests {
         Ok(names)
     }
 
+    /// Replaces an existing file through tempfile and cleans up temporary
+    /// names.
     #[test]
     fn tempfile_variant_replaces_and_leaves_no_stray_files()
     -> anyhow::Result<()> {
@@ -84,6 +114,7 @@ mod tests {
         Ok(())
     }
 
+    /// Replaces an existing file through atomicwrites without stray files.
     #[test]
     fn atomicwrites_variant_replaces_and_leaves_no_stray_files()
     -> anyhow::Result<()> {
@@ -96,6 +127,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs both replacement variants in an isolated temporary directory.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {
         run()
