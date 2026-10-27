@@ -640,7 +640,7 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 
 #### DEFERRED-CODE-03 — Operating-system APIs, emulation and no-std
 
-- [#752](https://github.com/john-cd/rust_howto/issues/752) — **P4** — emulators/emulator.rs: write — **NOT STARTED; DEFERRED**
+- [#752](https://github.com/john-cd/rust_howto/issues/752) — **P4** — emulators/register_vm.rs: bounded fetch/decode/execute VM; preserved PolkaVM host — **IMPLEMENTED; tests and lints skipped by request; book build pending**
 - [#814](https://github.com/john-cd/rust_howto/issues/814) — **P4** — no_std/no_std1.rs: write — **NOT STARTED; DEFERRED**
 - [#815](https://github.com/john-cd/rust_howto/issues/815) — **P4** — no_alloc/no_alloc.rs: write — **NOT STARTED; DEFERRED**
 - [#817](https://github.com/john-cd/rust_howto/issues/817) — **P4** — freebsd/freebsd.rs: write — **NOT STARTED; DEFERRED**

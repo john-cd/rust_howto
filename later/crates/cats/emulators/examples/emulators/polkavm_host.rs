@@ -146,6 +146,7 @@ fn _guest_contract(_path: &Path) -> ExampleResult<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the optional PolkaVM guest supplied on the command line.
 pub fn run() -> ExampleResult<()> {
     main()
 }
