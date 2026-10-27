@@ -10,7 +10,7 @@ use std::io::Write as _;
 use std::path::Path;
 
 use anyhow::Result;
-use itertools::Itertools as _;
+use itertools_014::Itertools as _;
 
 /// Merge the contents of a text file and a `Vec` of text lines.
 ///

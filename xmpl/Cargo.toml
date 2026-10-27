@@ -4,23 +4,31 @@
 resolver = "3"
 members = ["cancelable", "clap_builder_xmpl"]
 
+[workspace.dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["cargo", "env"] }
+crossbeam = "0.8.5"
+crossbeam-channel = "0.5.17"
+env_logger = "0.11.11"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+
 # Default values for packages in the workspace
 [workspace.package]
 version = "0.1.2"
 authors = ["John CD"]
+categories = ["asynchronous", "command-line-utilities"]
+documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
+homepage = "https://john-cd.com/rust_howto/"
+keywords = ["examples", "rust-by-example", "tutorial", "reference"]
+license-file = "../LICENSE"
+publish = false
+repository = "https://github.com/john-cd/rust_howto/xmpl/"
 rust-version = "1.99"
 description = "A collection of standalone, ready-to-run Rust code examples for various programming domains."
-documentation = "https://docs.rs/rust_howto/"
-homepage = "https://john-cd.com/rust_howto/"
-repository = "https://github.com/john-cd/rust_howto/xmpl/"
-keywords = ["examples", "rust-by-example", "tutorial", "reference"]
-categories = ["asynchronous", "command-line-utilities"]
-publish = false
-license-file = "../LICENSE"
 
 [workspace.lints.rust]
-
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
 # Relaxed: Example crates demonstrate unsafe Rust.
 unsafe_code = "allow"
@@ -56,7 +64,7 @@ trivial_numeric_casts = "warn"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
-unexpected_cfgs = { level = "warn", check-cfg = ['cfg(coverage)'] }
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)"] }
 
 # Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
 unsafe_op_in_unsafe_fn = "warn"

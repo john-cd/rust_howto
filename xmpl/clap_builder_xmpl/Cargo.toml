@@ -1,25 +1,25 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "clap_builder_xmpl"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Example demonstrating the builder pattern for command-line argument parsing using the clap library."
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["clap", "cli", "builder-pattern", "arg-parsing"]
 categories = ["command-line-utilities"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["clap", "cli", "builder-pattern", "arg-parsing"]
+license-file.workspace = true
 publish = false
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Example demonstrating the builder pattern for command-line argument parsing using the clap library."
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-clap = { version = "4.6.7", features = ["cargo", "env"] }
-env_logger = "0.11.11"
+clap = { workspace = true }
+env_logger = { workspace = true }
 
 [lints]
 workspace = true

@@ -1,29 +1,29 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "clean"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "A utility to clean up temporary directories and build artifacts during development and testing."
 documentation.workspace = true
+edition.workspace = true
 homepage.workspace = true
+license-file.workspace = true
+readme = "README.md"
 repository.workspace = true
+rust-version.workspace = true
+description = "A utility to clean up temporary directories and build artifacts during development and testing."
 
-keywords = ["cleanup", "testing", "filesystem", "dev-tools", "cli"]
 categories = ["development-tools", "command-line-utilities"]
+keywords = ["cleanup", "testing", "filesystem", "dev-tools", "cli"]
 publish = false
 
 [dependencies]
-anyhow = "1.0.104"
-clap = { version = "4.6.7", features = ["derive"] }
-tempfile = "3.27.0"
-tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
-walkdir = "2.5.0"
+anyhow = { workspace = true }
+clap = { workspace = true }
+tempfile = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+walkdir = { workspace = true }
 
 [lints]
 workspace = true

@@ -1,43 +1,43 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "tool_lib"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Tools & templates for the rust_howto book"
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["markdown generation"]
 categories = ["development-tools", "command-line-utilities", "text-processing"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["markdown generation"]
+license-file.workspace = true
 publish = false
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Tools & templates for the rust_howto book"
 
 [dependencies]
-anyhow = "1.0.104"
-cargo_toml = "0.22.3"
-crates_io_api = "0.12.0"
-itertools = "0.14.0"
-once_cell = "1.21.4"
-regex = "1.13.1"
-reqwest = { version = "0.13.5", features = ["blocking"] }
-serde = { version = "1.0.229", features = ["derive"] }
-similar = "3.2.0"
-tinytemplate = "1.2.1"
-toml = "1.1.8"
-tracing = "0.1.44"
-trim-in-place = "0.1.8"
-walkdir = "2.5.0"
+anyhow = { workspace = true }
+cargo_toml = { workspace = true }
+crates_io_api = { workspace = true }
+itertools_014 = { workspace = true }
+once_cell = { workspace = true }
+regex = { workspace = true }
+reqwest = { workspace = true }
+serde = { workspace = true }
+similar = { workspace = true }
+tinytemplate = { workspace = true }
+toml = { workspace = true }
+tracing = { workspace = true }
+trim-in-place = { workspace = true }
+walkdir = { workspace = true }
 
 [dev-dependencies]
-chrono = "0.4.45"
-mockito = "1.7.2"
-serde_json = "1.0.154"
-tempfile = "3.27.0"
-url = "2.5.8"
+chrono = { workspace = true }
+mockito = { workspace = true }
+serde_json = { workspace = true }
+tempfile = { workspace = true }
+url = { workspace = true }
 
 [lints]
 workspace = true

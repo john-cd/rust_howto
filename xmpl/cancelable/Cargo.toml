@@ -1,27 +1,27 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file.workspace = true
 name = "cancelable"
 version.workspace = true
 authors.workspace = true
-edition.workspace = true
-rust-version.workspace = true
-readme = "README.md"
-description = "Code examples demonstrating how to implement cancelable tasks and threads using crossbeam-channel."
-documentation.workspace = true
-homepage.workspace = true
-repository.workspace = true
-keywords = ["concurrency", "cancellation", "crossbeam", "patterns", "threads"]
 categories = ["asynchronous"]
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords = ["concurrency", "cancellation", "crossbeam", "patterns", "threads"]
+license-file.workspace = true
 publish.workspace = true
+readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
+description = "Code examples demonstrating how to implement cancelable tasks and threads using crossbeam-channel."
 
 [dependencies]
-anyhow = "1.0.104"
-crossbeam = "0.8.5"
-crossbeam-channel = "0.5.17"
-tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+anyhow = { workspace = true }
+crossbeam = { workspace = true }
+crossbeam-channel = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
 
 [lints]
 workspace = true

@@ -4,19 +4,20 @@
 name = "mdbook-private"
 version = "0.3.0"
 edition.workspace = true
-publish = false
 license = "MPL-2.0"
+publish = false
 description = "Repository-local mdBook 0.5 port of mdbook-private"
 
 [dependencies]
 # Use the same book protocol and configuration API as mdbook-scrub.
-mdbook-preprocessor = "0.5.4"
+# Use the same book protocol and configuration API as mdbook-scrub.
+mdbook-preprocessor = { workspace = true }
 # Match private comment blocks across lines.
-regex = "1.13.1"
+regex = { workspace = true }
 # Decode the private preprocessor's configuration.
-serde = { version = "1.0.229", features = ["derive"] }
+serde = { workspace = true }
 # Read and write mdBook's preprocessor protocol.
-serde_json = "1.0.154"
+serde_json = { workspace = true }
 
 [lints]
 workspace = true

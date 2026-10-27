@@ -2,26 +2,66 @@
 
 [workspace]
 resolver = "3"
-members = ["clean", "crate_indices", "mdbook-private", "mdbook-scrub", "templ", "tool_lib"]
+members = [
+  "clean",
+  "crate_indices",
+  "mdbook-private",
+  "mdbook-scrub",
+  "templ",
+  "tool_lib",
+]
+
+[workspace.dependencies]
+anyhow = "1.0.104"
+book_tool = { git = "https://github.com/john-cd/book_tooling", rev = "404e8fe0d4adc40517b0b40a2536cc6833b29059", default-features = false, features = [
+  "directives",
+] }
+cargo_toml = "0.22.3"
+chrono = "0.4.45"
+clap = { version = "4.6.7", features = ["cargo", "derive"] }
+clap_builder = "4.6.7"
+crates_io_api = "0.12.0"
+itertools = "0.15.0"
+# `tool_lib` still uses 0.14 while `crate_indices` uses 0.15.
+itertools_014 = { package = "itertools", version = "0.14.0" }
+mdbook-driver = "0.5.4"
+mdbook-preprocessor = "0.5.4"
+mockito = "1.7.2"
+once_cell = "1.21.4"
+parse_lib = { git = "https://github.com/john-cd/book_tooling", rev = "404e8fe0d4adc40517b0b40a2536cc6833b29059" }
+regex = "1.13.1"
+reqwest = { version = "0.13.5", features = ["blocking"] }
+semver = "1.0.28"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+similar = "3.2.0"
+tempfile = "3.27.0"
+tinytemplate = "1.2.1"
+toml = "1.1.8"
+tool_lib = { path = "tool_lib" }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter", "json"] }
+trim-in-place = "0.1.8"
+url = "2.5.8"
+walkdir = "2.5.0"
 
 # Default values for packages in the workspace
 [workspace.package]
 version = "0.1.2"
 authors = ["John CD"]
+categories = ["development-tools"]
+documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
+homepage = "https://john-cd.com/rust_howto/"
+keywords = ["rust-howto", "tooling", "mdbook", "automation", "preprocessor"]
+license-file = "../LICENSE"
+publish = false
+readme = "README.md"
+repository = "https://github.com/john-cd/rust_howto/tools/"
 rust-version = "1.99"
 description = "Internal tooling for managing the Rust How-to book, including cleaning, templating, and link scrubbing."
-documentation = "https://docs.rs/rust_howto/"
-homepage = "https://john-cd.com/rust_howto/"
-repository = "https://github.com/john-cd/rust_howto/tools/"
-keywords = ["rust-howto", "tooling", "mdbook", "automation", "preprocessor"]
-categories = ["development-tools"]
-readme = "README.md"
-publish = false
-license-file = "../LICENSE"
 
 [workspace.lints.rust]
-
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
 unsafe_code = "deny"
 
@@ -54,7 +94,7 @@ trivial_numeric_casts = "warn"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
-unexpected_cfgs = { level = "warn", check-cfg = ['cfg(coverage)'] }
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)"] }
 
 # Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
 unsafe_op_in_unsafe_fn = "warn"
