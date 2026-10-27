@@ -268,10 +268,10 @@ mod tests {
     /// Verifies that a category with a non-string `name` attribute returns an error.
     #[test]
     fn test_categories_from_toml_name_not_a_string() -> Result<()> {
-        let toml_str = r#"
+        let toml_str = "
             [bad-name]
             name = 12345
-        "#;
+        ";
         let table: toml::value::Table = toml::from_str(toml_str)?;
         let error = categories_from_toml(&table, None)
             .expect_err("a non-string category name should be rejected");
