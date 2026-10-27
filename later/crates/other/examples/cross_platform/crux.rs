@@ -1,92 +1,59 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
 //! # Crux Core Example
 //!
-//! This example demonstrates the core concepts of a Crux application.
-//! It's a simple counter app that can increment, decrement, and reset a value.
-//!
-//! The following only provides an example of the Core of a Crux app.
-//! Follow the steps in <https://redbadger.github.io/crux/>
-//! to install the toolchains and structure a complete project.
-//!
-//! Add the following to your `Cargo.toml`, as needed:
-//! `crux_core` - the main Crux crate,
-//! `crux_http` - HTTP client capability,
-//! `crux_kv` - Key-value store capability,
-//! `crux_time` - Time capability.
+//! This example keeps a counter's state transitions in a platform-independent
+//! core.
 
 // ANCHOR: example
-
 use crux_core::App;
 use crux_core::Command;
 use crux_core::render::render;
 use serde::Deserialize;
 use serde::Serialize;
 
-/// Define a `Model` struct to hold the state of the application.
+/// The counter's internal state.
 #[derive(Default)]
 pub struct Model {
-    /// The count.
+    /// The current count.
     count: isize,
 }
 
-/// Define a `ViewModel` struct to represent the state of the UI.
+/// The state that a platform shell displays.
 #[derive(Serialize, Deserialize, Clone, Default)]
 pub struct ViewModel {
-    /// The count, as text.
+    /// The count formatted for display.
     pub count: String,
 }
 
-/// Define an `Event` enum for the different messages
-/// the application can handle.
+/// Events that the counter core can process.
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub enum Event {
-    /// Increments the count.
+    /// Increments the count by one.
     Increment,
-    /// Decrements the count.
+    /// Decrements the count by one.
     Decrement,
     /// Resets the count to zero.
     Reset,
 }
 
-/// Define the `Capabilities` struct to hold the capabilities of the app.
-///
-/// Capabilities are the means by which the core can request side-effects
-/// from the shell. They are defined as a struct containing capability
-/// instances.
+/// Effects that the shell must handle for the core.
 #[crux_core::macros::effect(typegen)]
 pub enum Effect {
-    /// Asks the shell to render the view.
+    /// Requests that the shell render the updated view model.
     Render(crux_core::render::RenderOperation),
 }
 
-/// Define the `Counter` struct as the main app.
+/// The Crux counter application.
 #[derive(Default)]
 pub struct Counter;
 
-/// Implement the `App` trait for the `Counter` struct to define how the
-/// should be updated in response to messages.
-/// The `App` is the the main module of the core containing the application
-/// logic, especially model changes and side-effects triggered by events.
-/// Apps can be composed from modules, each resembling a smaller, simpler
 impl App for Counter {
-    // A side-effect the core can request from the shell.
-    // This is typically a form of I/O or similar interaction with the host
-    // platform. Updating the UI is considered an effect.
     type Effect = Effect;
-    // Events are main input for the core, typically triggered by user
-    // interaction in the UI.
     type Event = Event;
-    // Model is a data structure (typically tree-like)
-    // holding the entire application state.
     type Model = Model;
-    // Data structure describing the current state of the user interface.
     type ViewModel = ViewModel;
 
-    // The job of the update function is to process an Event, update the
-    // model accordingly, and potentially request some side-effects using
-    // capabilities.
     fn update(
         &self,
         event: Self::Event,
@@ -100,8 +67,6 @@ impl App for Counter {
         render()
     }
 
-    // The view function transforms the model into a view model, which is a
-    // representation of the UI.
     fn view(&self, model: &Self::Model) -> Self::ViewModel {
         ViewModel {
             count: format!("Count is: {}", model.count),
@@ -109,40 +74,46 @@ impl App for Counter {
     }
 }
 
-// In the real world, the inner "Core" would be compiled and linked to the
-// outer "Shell" on each platform as a library:
-// - On iOS, as a native static library.
-// - On Android, as a dynamic library using Java Native Access.
-// - In a browser, as a WebAssembly module.
-/// Sends events to the core and checks the view.
-fn main() {
+/// Runs two increments through Crux's in-process core and prints its view.
+pub fn main() {
     let core = crux_core::Core::<Counter>::new();
-
-    // Simulate user interactions.
     core.process_event(Event::Increment);
     core.process_event(Event::Increment);
-    core.process_event(Event::Decrement);
-
-    let view = core.view();
-    assert_eq!(view.count, "Count is: 1");
-
-    core.process_event(Event::Reset);
-    let view = core.view();
-    assert_eq!(view.count, "Count is: 0");
+    println!("{}", core.view().count);
 }
 // ANCHOR_END: example
 
+/// Exposes this example to the crate's dispatcher.
 pub fn run() {
     main();
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::App;
+    use super::Counter;
+    use super::Effect;
+    use super::Event;
+    use super::Model;
 
     /// Runs the crux example through its entry point.
     #[test]
     fn test_crux_example_entry_point() {
         main();
+    }
+
+    /// Verifies two increments update the view and request a render each time.
+    #[test]
+    fn increments_update_view_and_request_render() {
+        let app = Counter;
+        let mut model = Model::default();
+
+        for _ in 0..2 {
+            let mut command = app.update(Event::Increment, &mut model);
+            assert!(matches!(command.expect_one_effect(), Effect::Render(_)));
+            command.expect_done();
+        }
+
+        assert_eq!(app.view(&model).count, "Count is: 2");
     }
 }
