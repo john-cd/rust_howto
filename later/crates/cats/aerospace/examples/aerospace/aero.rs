@@ -1,54 +1,43 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Predicting the position of a satellite from its two-line element set with
-//! `sgp4`.
+//! Sample a satellite's orbit from a fixed two-line element set using `sgp4`.
 
 use sgp4::Constants;
 use sgp4::Elements;
 use sgp4::MinutesSinceEpoch;
+use sgp4::Prediction;
 
-/// Parses a TLE and predicts the position of the ISS at its epoch.
-fn main() {
-    // TLE (Two-Line Element) for ISS (ZARYA)
+/// Builds propagation constants from a fixed historical ISS element set.
+fn iss_constants() -> Constants {
     let elements = Elements::from_tle(
         Some("ISS (ZARYA)".to_owned()),
-        "1 25544U 98067A   20194.81180556  .00000000  00000-0  16238-4 0  9997"
-            .as_bytes(),
-        "2 25544  51.6462 108.9734 0001099 261.2185 119.5393 15.49520038236166"
-            .as_bytes(),
-    );
+        b"1 25544U 98067A   26113.55475666  .00008745  00000+0  16716-3 0  9994",
+        b"2 25544  51.6320 210.5007 0006819 341.8336  18.2408 15.48911267563287",
+    )
+    .expect("the fixed ISS element set should parse");
+    Constants::from_elements(&elements)
+        .expect("the fixed ISS elements should yield propagation constants")
+}
 
-    // Provide a valid TLE or handle the parsing error (which could happen if
-    // checksum fails)
-    let elements = elements.unwrap_or_else(|_| {
-        // Fallback to a valid hardcoded TLE for testing purposes
-        Elements::from_tle(
-            Some("ISS (ZARYA)".to_owned()),
-            "1 25544U 98067A   26113.55475666  .00008745  00000+0  16716-3 0  9994".as_bytes(),
-            "2 25544  51.6320 210.5007 0006819 341.8336  18.2408 15.48911267563287".as_bytes(),
-        )
-        .expect("the aero example invariant should hold")
-    });
+/// Predicts position and velocity at a number of minutes from the TLE epoch.
+fn predict(constants: &Constants, minutes: f64) -> Prediction {
+    constants
+        .propagate(MinutesSinceEpoch(minutes))
+        .expect("the fixed ISS elements should propagate over one orbit")
+}
 
-    let constants = Constants::from_elements(&elements)
-        .expect("the aero example invariant should hold");
-    // Predict satellite position at epoch (time zero)
-    let prediction = constants
-        .propagate(MinutesSinceEpoch(0.0))
-        .expect("the aero example invariant should hold");
-
-    let pos = prediction.position;
-    let vel = prediction.velocity;
-
-    println!("Satellite position (x, y, z) in km: {pos:?}");
-    println!("Satellite velocity (x, y, z) in km/s: {vel:?}");
-
-    assert!(pos[0] != 0.0);
-    assert!(vel[0] != 0.0);
+/// Samples roughly one orbit at ten-minute intervals.
+fn main() {
+    let constants = iss_constants();
+    for minute in (0..=90).step_by(10) {
+        let prediction = predict(&constants, f64::from(minute));
+        println!("{minute:>2} min: {:?} km", prediction.position);
+    }
 }
 // ANCHOR_END: example
 
+/// Runs the orbit sampling example.
 pub fn run() {
     main();
 }
@@ -57,9 +46,22 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the aero example through its entry point.
+    /// Checks the ISS orbital radius at epoch and approximately one orbit
+    /// later.
     #[test]
-    fn test_aero_example_entry_point() {
-        main();
+    fn predicted_positions_have_plausible_orbital_radii() {
+        let constants = iss_constants();
+        for minutes in [0.0, 90.0] {
+            let position = predict(&constants, minutes).position;
+            let radius = position
+                .iter()
+                .map(|coordinate| coordinate * coordinate)
+                .sum::<f64>()
+                .sqrt();
+            assert!(
+                (6_700.0..=6_800.0).contains(&radius),
+                "unexpected radius at {minutes} minutes: {radius} km"
+            );
+        }
     }
 }

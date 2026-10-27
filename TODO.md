@@ -660,7 +660,7 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 
 #### DEFERRED-CODE-06 — Aerospace and device protocols
 
-- [#60](https://github.com/john-cd/rust_howto/issues/60) — **P4** — aerospace/aero.rs: write — **NOT STARTED; DEFERRED**
+- [#60](https://github.com/john-cd/rust_howto/issues/60) — **P4** — aerospace/aero.rs: write — **IMPLEMENTED; OPEN — sample an ISS orbit and assert orbital radii; tests, Clippy, book validation, and linked PR remain**
 - [#61](https://github.com/john-cd/rust_howto/issues/61) — **P4** — drones/drones1.rs: write — **NOT STARTED; DEFERRED**
 - [#62](https://github.com/john-cd/rust_howto/issues/62) — **P4** — aerospace_protocols/aero_protocols.rs: write — **NOT STARTED; DEFERRED**
 - [#63](https://github.com/john-cd/rust_howto/issues/63) — **P4** — aerospace_simulation/aero_simulation.rs: write — **NOT STARTED; DEFERRED**

@@ -6,6 +6,8 @@
 
 ## Aerospace {#aero}
 
+This example samples a historical ISS orbit at ten-minute intervals. Positions are in kilometers in the TEME frame; use current element sets for operational predictions. For a single prediction at a chosen time, see [[aerospace_simulation | Aerospace Simulation]].
+
 ```rust,editable
 {{#include ../../../crates/cats/aerospace/examples/aerospace/aero.rs:example}}
 ```
