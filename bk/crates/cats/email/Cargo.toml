@@ -21,17 +21,17 @@ publish.workspace = true
 [dependencies]
 anyhow = "1.0.104"
 async-imap = { version = "0.12.0", default-features = false, features = [
-    "runtime-tokio",
+  "runtime-tokio",
 ] }
 futures = "0.3.34"
 lettre = { version = "0.11.23", features = ["tokio1-native-tls"] }
 mail-parser = "1.0.0"
 mailchecker = "6.0.21"
-tokio = { version = "1.54.1", features = ["macros", "net", "rt-multi-thread"] }
-tokio-native-tls = "0.3.1"
 # Parse raw email messages and MIME parts for the book example.
 mailparse = "0.18.0"
 native-tls = "0.2.18"
+tokio = { version = "1.54.1", features = ["macros", "net", "rt-multi-thread"] }
+tokio-native-tls = "0.3.1"
 
 [[example]]
 name = "imap"
