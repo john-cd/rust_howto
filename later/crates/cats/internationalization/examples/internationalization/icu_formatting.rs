@@ -2,10 +2,13 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Formats a number with ICU4X using two different locales.
+//! Formats numbers and dates with ICU4X using two different locales.
 
 use std::error::Error;
 
+use icu::datetime::DateTimeFormatter;
+use icu::datetime::fieldsets::YMD;
+use icu::datetime::input::Date;
 use icu::decimal::DecimalFormatter;
 use icu::decimal::input::Decimal;
 use icu::locale::Locale;
@@ -22,7 +25,7 @@ fn format_number(
     Ok(formatter.format_to_string(value))
 }
 
-/// Prints the same number formatted for US English and German.
+/// Prints the same number and date formatted for US English and German.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let value = Decimal::from(1_234_567);
     let english = format_number(locale!("en-US"), &value)?;
@@ -30,10 +33,17 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
     println!("en-US: {english}");
     println!("de-DE: {german}");
+    let date = Date::try_new_iso(2025, 1, 15)?;
+    for locale in [locale!("en-US"), locale!("de-DE")] {
+        let formatter =
+            DateTimeFormatter::try_new(locale.into(), YMD::medium())?;
+        println!("{}", formatter.format(&date));
+    }
     Ok(())
 }
 // ANCHOR_END: example
 
+/// Runs the locale-sensitive formatting example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

@@ -6,12 +6,12 @@
 
 Internationalization (i18n) prepares software for different languages and regions. Select a locale from user preferences with a documented fallback, and keep it overridable. Localization (l10n) adapts translated messages and presentation for a particular audience; see [[localization | Localization]] and [issue #404](https://github.com/john-cd/rust_howto/issues/404).
 
-## Format Numbers by Locale {#internationalization}
+## Format Numbers and Dates by Locale {#internationalization}
 
-ICU4X's `DecimalFormatter` formats basic decimal numbers using locale-specific digits and grouping separators. The example formats the same value for US English and German. ICU4X 2.x does not yet format currencies or measurement units with this formatter; see [[value-formatting | Value Formatting]] and the open [number-formatting work in issue #490](https://github.com/john-cd/rust_howto/issues/490) for currency display.
+ICU4X's `DecimalFormatter` formats basic decimal numbers using locale-specific digits and grouping separators. The example formats the same value and date for US English and German. ICU4X 2.x does not yet format currencies or measurement units with this formatter; see [[value-formatting | Value Formatting]] and the open [number-formatting work in issue #490](https://github.com/john-cd/rust_howto/issues/490) for currency display.
 
 ```rust,editable
-{{#include ../../../crates/cats/internationalization/examples/internationalization/internationalization1.rs:example}}
+{{#include ../../../crates/cats/internationalization/examples/internationalization/icu_formatting.rs:example}}
 ```
 
 Enable ICU4X's `compiled_data` feature to use the locale data bundled with the crate. This is the simplest setup for common locales and services. If binary size or supported locales need tighter control, use `icu4x-datagen` to produce application-specific data and load it through an ICU4X data provider.

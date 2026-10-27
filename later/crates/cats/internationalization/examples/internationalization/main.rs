@@ -2,9 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-mod internationalization1;
+mod icu_formatting;
 
 /// Runs the internationalization example.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    internationalization1::run()
+    icu_formatting::run()
 }
