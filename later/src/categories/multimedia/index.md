@@ -17,7 +17,7 @@ While there aren't dominant, all-encompassing multimedia frameworks in Rust yet,
 - [[multimedia_video | Video]]: FFmpeg, GStreamer, and frame analysis.
 - [[multimedia_encoding | Encoding]]: codecs and container formats.
 
-Real-time streaming (RTSP, WebRTC, RTP) has no page yet; see https://github.com/john-cd/rust_howto/issues/1999 and [[network-programming | Network Programming]].
+Real-time streaming (RTSP, WebRTC, RTP) is covered in [Streaming Media](streaming.md). For transport protocols and networking, see [[network-programming | Network Programming]].
 
 ## Related Topics
 

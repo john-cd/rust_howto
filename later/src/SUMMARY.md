@@ -133,6 +133,7 @@
 
 - [Multimedia](categories/multimedia/index.md)
   - [Multimedia](categories/multimedia/multimedia.md)
+  - [Streaming Media](categories/multimedia/streaming.md)
 
 - [Multimedia encoding](categories/multimedia_encoding/index.md)
   - [Multimedia encoding](categories/multimedia_encoding/encoding.md)
