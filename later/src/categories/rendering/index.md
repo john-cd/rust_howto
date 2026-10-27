@@ -42,23 +42,23 @@ See also:
 
 ## Code Examples
 
-## 2D Raster Graphics
+### 2D Raster Graphics
 
 {{#include 2d_raster_graphics.incl.md}}
 
-## 2D Vector Graphics
+### 2D Vector Graphics
 
 {{#include 2d_vector_graphics.incl.md}}
 
-## 3D Renderers
+### 3D Renderers
 
 {{#include 3d_renderers.incl.md}}
 
-## SVG Rendering
+### SVG Rendering
 
 {{#include svg_rendering.incl.md}}
 
-## Font Loading & Text Rendering
+### Font Loading & Text Rendering
 
 {{#include text_rendering.incl.md}}
 
