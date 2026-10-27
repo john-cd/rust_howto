@@ -7,6 +7,7 @@ fn ccsds_space_packet() -> [u8; 8] {
     use arbitrary_int::u11;
     use arbitrary_int::u14;
     use spacepackets::CcsdsPacket as _;
+    use spacepackets::PacketType;
     use spacepackets::SequenceFlags;
     use spacepackets::SpHeader;
 
@@ -27,51 +28,18 @@ fn ccsds_space_packet() -> [u8; 8] {
         .expect("serialized CCSDS header should parse");
     assert_eq!(parsed_header.apid().value(), 0x10);
     assert_eq!(parsed_header.seq_count().value(), 1);
+    assert_eq!(parsed_header.packet_type(), PacketType::Tm);
     assert_eq!(parsed_payload, payload);
     packet
 }
 // ANCHOR_END: ccsds-space-packet
 
-// ANCHOR: pus-telecommand
-/// Creates, serializes, and parses a PUS-C connection-test telecommand.
-fn pus_telecommand() {
-    use arbitrary_int::u11;
-    use arbitrary_int::u14;
-    use spacepackets::CcsdsPacket as _;
-    use spacepackets::SpHeader;
-    use spacepackets::ecss::CreatorConfig;
-    use spacepackets::ecss::PusPacket as _;
-    use spacepackets::ecss::tc::MessageTypeId;
-    use spacepackets::ecss::tc::PusTcCreator;
-    use spacepackets::ecss::tc::PusTcReader;
-
-    let app_data = [0xCA, 0xFE];
-    let telecommand = PusTcCreator::new_simple(
-        SpHeader::new_for_unseg_tc(u11::new(0x42), u14::new(12), 0),
-        MessageTypeId::new(17, 1),
-        &app_data,
-        CreatorConfig::default(),
-    );
-    let mut packet = [0_u8; 32];
-    let packet_len = telecommand
-        .write_to_bytes(&mut packet)
-        .expect("PUS telecommand should fit in the packet buffer");
-    let parsed = PusTcReader::new(&packet[..packet_len])
-        .expect("serialized PUS telecommand should parse");
-
-    assert_eq!(parsed.apid().value(), 0x42);
-    assert_eq!(parsed.seq_count().value(), 12);
-    assert_eq!(parsed.service_type_id(), 17);
-    assert_eq!(parsed.message_subtype_id(), 1);
-    assert_eq!(parsed.user_data(), app_data);
-}
-// ANCHOR_END: pus-telecommand
-
-/// Runs both packet construction examples.
+/// Runs the packet construction examples.
 fn main() {
     let packet = ccsds_space_packet();
     println!("CCSDS packet: {packet:02X?}");
-    pus_telecommand();
+    crate::pus_telecommand::pus_telecommand();
+    crate::pus_telemetry::pus_telemetry();
 }
 
 /// Runs the space protocols examples through the chapter entry point.
@@ -100,8 +68,6 @@ mod tests {
     /// Checks that a PUS telecommand preserves its service and payload fields.
     #[test]
     fn pus_telecommand_round_trips_service_and_payload() {
-        pus_telecommand();
+        crate::pus_telecommand::pus_telecommand();
     }
 }
-// TODO review the space_protocols crate and add more examples for telemetry,
-// telecommand, and file transfer protocols.

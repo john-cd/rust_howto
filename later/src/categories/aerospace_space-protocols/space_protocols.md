@@ -19,7 +19,15 @@ The broader CCSDS suite also covers packet telemetry, telecommands, space-link p
 The ECSS Packet Utilization Standard (PUS-C) defines packet formats and services layered on CCSDS space packets. This recipe creates a service 17, subservice 1 connection-test telecommand and parses the serialized packet.
 
 ```rust,editable
-{{#include ../../../crates/cats/aerospace_space_protocols/examples/space_protocols/space_protocols.rs:pus-telecommand}}
+{{#include ../../../crates/cats/aerospace_space_protocols/examples/space_protocols/pus_telecommand.rs:pus-telecommand}}
+```
+
+## Create PUS telemetry {#pus-telemetry}
+
+This response uses service 17, subservice 2 and a fixed timestamp, then decodes the serialized telemetry packet.
+
+```rust,editable
+{{#include ../../../crates/cats/aerospace_space_protocols/examples/space_protocols/pus_telemetry.rs:pus-telemetry}}
 ```
 
 The [`spacepackets`][c~spacepackets~docs] crate implements CCSDS packets and PUS-C telecommands and telemetry. The [`satrs`][c~satrs~docs] crate is a framework for on-board software with event management, PUS support, and telemetry and telecommand routing; its latest published version is 0.2.1, so verify current maintenance and mission fit before adoption.

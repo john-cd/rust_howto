@@ -664,7 +664,7 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 - [#61](https://github.com/john-cd/rust_howto/issues/61) — **P4** — drones/drones1.rs: write — **BLOCKED — flight-plan work and real-drone validation remain; details are on the issue**
 - [#62](https://github.com/john-cd/rust_howto/issues/62) — **P4** — aerospace_protocols/aero_protocols.rs: write — **IMPLEMENTED; OPEN — in-memory MAVLink heartbeat round trip and field assertions; tests, Clippy, book validation, and linked PR remain**
 - [#63](https://github.com/john-cd/rust_howto/issues/63) — **P4** — aerospace_simulation/aero_simulation.rs: write — **IMPLEMENTED; OPEN — simplify launch output and assert ascent, burnout, descent, and ground boundary; tests, Clippy, book validation, and linked PR remain**
-- [#64](https://github.com/john-cd/rust_howto/issues/64) — **P4** — space_protocols/space_protocols.rs: write — **NOT STARTED; DEFERRED**
+- [#64](https://github.com/john-cd/rust_howto/issues/64) — **P4** — space_protocols/space_protocols.rs: write — **IMPLEMENTED; OPEN — CCSDS and PUS telecommand/telemetry examples; tests, Clippy, book validation, and linked PR remain**
 - [#65](https://github.com/john-cd/rust_howto/issues/65) — **P4** — uavs/uavs.rs: write — **BLOCKED — telemetry decoding and real-drone validation remain; details are on the issue**
 
 ### Tools and infrastructure
