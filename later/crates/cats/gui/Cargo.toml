@@ -13,6 +13,7 @@ repository.workspace = true
 rust-version.workspace = true
 description = "Comprehensive examples of Rust GUI frameworks including Slint, Egui, Iced, and Tauri."
 
+autoexamples = false
 autolib = false
 categories = ["gui"]
 keywords = ["gui", "slint", "egui", "iced", "tauri", "dioxus"]

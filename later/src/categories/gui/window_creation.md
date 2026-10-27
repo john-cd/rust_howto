@@ -32,7 +32,7 @@
 
 `baseview` is a low-level window system interface for [audio][p~audio] plugin UIs.
 
-The `winit`, `tao`, and `baseview` examples are compiled on Windows as well as other supported desktop platforms. `baseview` selects its Windows backend for Windows builds.
+The `winit` and `baseview` examples are compiled on Windows as well as other supported desktop platforms. `baseview` selects its Windows backend for Windows builds. The Tao source remains in this chapter, but its Cargo dependency and command are disabled because the current GTK 3 / `glib 0.18` dependency chain is incompatible with the workspace.
 
 ```rust,noplayground
 {{#include ../../../crates/cats/gui/examples/window_creation/baseview.rs:example}}

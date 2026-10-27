@@ -10,15 +10,15 @@ fn compute_child_layouts() -> anyhow::Result<[(f32, f32, f32, f32); 2]> {
     let mut tree: TaffyTree<()> = TaffyTree::new();
     let fixed_child = tree.new_leaf(Style {
         size: Size {
-            width: length(100.0),
-            height: length(50.0),
+            width: length(100.0_f32),
+            height: length(50.0_f32),
         },
         ..Default::default()
     })?;
     let flexible_child = tree.new_leaf(Style {
         size: Size {
             width: auto(),
-            height: length(50.0),
+            height: length(50.0_f32),
         },
         flex_grow: 1.0,
         ..Default::default()
@@ -28,8 +28,8 @@ fn compute_child_layouts() -> anyhow::Result<[(f32, f32, f32, f32); 2]> {
             display: Display::Flex,
             flex_direction: FlexDirection::Row,
             size: Size {
-                width: length(400.0),
-                height: length(80.0),
+                width: length(400.0_f32),
+                height: length(80.0_f32),
             },
             ..Default::default()
         },

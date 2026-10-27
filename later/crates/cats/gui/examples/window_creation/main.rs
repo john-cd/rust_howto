@@ -6,7 +6,9 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod baseview;
-mod tao;
+// Tao's dependency is disabled because its current GTK 3 / glib 0.18 chain is
+// incompatible with the workspace. Keep tao.rs and the book example for a
+// compatible dependency update.
 mod winit;
 
 /// Command-line arguments.
@@ -23,9 +25,6 @@ enum Commands {
     /// Runs the `baseview` example.
     #[command(name = "baseview")]
     Baseview,
-    /// Runs the `tao` example.
-    #[command(name = "tao")]
-    Tao,
     /// Runs the `winit` example.
     #[command(name = "winit")]
     Winit,
@@ -39,9 +38,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         match command {
             Commands::Baseview => {
                 baseview::run()?;
-            }
-            Commands::Tao => {
-                tao::run()?;
             }
             Commands::Winit => {
                 winit::run()?;
