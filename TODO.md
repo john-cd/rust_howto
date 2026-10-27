@@ -235,7 +235,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 #### NOW-PROSE-01 — Systems, embedded, WebAssembly and virtualization
 
 - [#348](https://github.com/john-cd/rust_howto/issues/348) — **P4** — emulators/emulators.md: write — **NOT STARTED**
-- [#349](https://github.com/john-cd/rust_howto/issues/349) — **P4** — emulators/index.md: write — **NOT STARTED**
+- [#349](https://github.com/john-cd/rust_howto/issues/349) — **P4** — emulators/index.md: write — **IMPLEMENTED ON ISSUE BRANCH; OPEN — final validation pending**
 - [#426](https://github.com/john-cd/rust_howto/issues/426) — **P4** — no-std/no_std.md: no_std: write — **NOT STARTED**
 - [#428](https://github.com/john-cd/rust_howto/issues/428) — **P4** — no-std_no-alloc/no_alloc.md: no_alloc: write — **NOT STARTED**
 - [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **NOT STARTED**
