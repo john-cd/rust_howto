@@ -16,6 +16,8 @@
 {{#include ../../../crates/cats/game_engines/examples/game_engines/bevy.rs:example}}
 ```
 
+This headless example uses MinimalPlugins and no renderer. A full game typically uses DefaultPlugins, which adds the windowing, input, asset, and rendering plugins enabled by its Cargo features.
+
 ### Develop Games with `fyrox` {#fyrox}
 
 [![fyrox~website][c~fyrox~website~badge]][c~fyrox~website] [![fyrox][c~fyrox~docs~badge]][c~fyrox~docs] [![fyrox~crates.io][c~fyrox~crates.io~badge]][c~fyrox~crates.io] [![fyrox~repo][c~fyrox~repo~badge]][c~fyrox~repo] [![fyrox~lib.rs][c~fyrox~lib.rs~badge]][c~fyrox~lib.rs]{{hi:fyrox}}{{hi:3d}}{{hi:Engine}}{{hi:Game}}{{hi:Gui}}{{hi:Sound}} [![cat~game-engines][cat~game-engines~badge]][cat~game-engines]{{hi:Game engines}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
