@@ -483,8 +483,8 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-02 — Asynchronous programming and caching
 
-- [#633](https://github.com/john-cd/rust_howto/issues/633) — **P2** — `asynchronous/async.md`: write; review in depth — **PARTIAL**
-- [#1173](https://github.com/john-cd/rust_howto/issues/1173) — **P3** — `caching/index.md`: write — **PARTIAL**
+- [#633](https://github.com/john-cd/rust_howto/issues/633) — **P2** — `asynchronous/async.md`: write; review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — async fundamentals and runtime guidance are present; prior focused tests/Clippy and book build passed; full Clippy and Windows spelling gate remain; details are on the issue**
+- [#1173](https://github.com/john-cd/rust_howto/issues/1173) — **P3** — `caching/index.md`: write — **IMPLEMENTED ON DEVELOP; BLOCKED — caching overview, crate table, and child links are present; book/spelling gates and issue-linked PR remain; details are on the issue**
 
 #### VALIDATE-PROSE-03 — Development tools, build systems and editors
 
