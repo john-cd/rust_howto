@@ -37,6 +37,8 @@
 [p~toml]: ../parser-implementations/toml.md
 [p~tracing]: ../development-tools_debugging/tracing.md
 [p~web-servers]: index.md
+[connectrpc~protocol]: https://connectrpc.com/docs/protocol/
+[connectrpc~web]: https://connectrpc.com/docs/web/getting-started/
 [c~cot~crates.io]: https://crates.io/crates/cot
 [c~cot~crates.io~badge]: https://img.shields.io/badge/crates.io-cot-crimson
 [c~cot~docs]: https://docs.rs/cot

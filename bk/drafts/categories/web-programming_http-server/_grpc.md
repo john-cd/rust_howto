@@ -53,10 +53,11 @@ Two details matter. First, `Server::builder().accept_http1(true)` is required, b
 
 The test sends a hand-framed gRPC-Web request (a five-byte length prefix followed by the protobuf message) to the service and checks the reply, so no browser is needed. In the browser, the [`tonic-web-wasm-client`][c~tonic-web-wasm-client~docs]↗{{hi:tonic-web-wasm-client}} crate provides the matching client; see [[leptos | Leptos]].
 
-**gRPC, gRPC-Web, or something else?**
+**gRPC, gRPC-Web, Connect, or something else?**
 
 - Use plain gRPC between servers: it supports all four streaming modes.
-- Use gRPC-Web for browser clients. It supports unary and server-streaming calls, but not client or bidirectional streaming; if you need those, put a proxy such as Envoy in front of the service instead.
+- Use gRPC-Web for browser clients. It supports unary and server-streaming calls, but not client or bidirectional streaming. A proxy such as Envoy can translate supported gRPC-Web calls when the server cannot use `GrpcWebLayer`; it cannot add browser request-streaming support.
+- Connect is a separate HTTP-based protocol that supports all four RPC shapes. Bidirectional streaming requires HTTP/2; the other modes also work over HTTP/1.1. Connect's browser client supports unary and server streaming because request streaming is not supported across browsers. Connect implementations can also serve gRPC and gRPC-Web; the `tonic-web` layer in this example does not implement Connect. See the [Connect protocol reference][connectrpc~protocol] and [browser guide][connectrpc~web].
 - If the API is small and public, a JSON API described with OpenAPI may be simpler for outside developers; see [[openapi | OpenAPI and JSON Schema]].
 
 ## Generate Code Without a System `protoc` {#protoc}
