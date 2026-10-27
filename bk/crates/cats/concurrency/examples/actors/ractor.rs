@@ -7,12 +7,11 @@
 
 #![allow(unexpected_cfgs)]
 
+use anyhow::Context;
 use ractor::Actor;
 use ractor::ActorProcessingErr;
 use ractor::ActorRef;
-use ractor::cast;
-use tokio::time::Duration;
-use tokio::time::sleep;
+use tokio::sync::oneshot;
 
 // `ractor` is a pure-Rust actor framework, inspired from Erlang's gen_server.
 // <https://slawlor.github.io/ractor>
@@ -25,13 +24,17 @@ use tokio::time::sleep;
 // Add to your `Cargo.toml`:
 // ```toml
 // [dependencies]
-// ractor = "0.14"
+// ractor = "0.16"
 // ```
 
 // Message type that the actor accepts:
-/// A message that asks the greeter to greet someone.
-#[derive(Debug, Clone)]
-struct Greet(String);
+/// A message that asks the greeter to greet someone and return a reply.
+struct Greet {
+    /// Name to include in the greeting.
+    name: String,
+    /// One-use channel for the greeting reply.
+    reply_to: oneshot::Sender<String>,
+}
 
 #[cfg(feature = "cluster")]
 impl ractor::Message for Greet {}
@@ -59,17 +62,9 @@ impl ractor::Actor for Greeter {
     // creates the state, starts internal processing...
     async fn pre_start(
         &self,
-        myself: ActorRef<Self::Msg>,
+        _myself: ActorRef<Self::Msg>,
         _args: (),
     ) -> Result<Self::State, ActorProcessingErr> {
-        println!("Greeter actor is starting.");
-
-        // Startup the event processing:
-        // Actors communicate by passing messages to each other.
-        cast!(myself, Greet("Hello!".to_owned()))?;
-        // Or: myself.send_message(Greet("Hello!".to_string()))?;
-
-        // Create the initial state:
         Ok(GreeterState { count: 0 })
     }
 
@@ -81,7 +76,11 @@ impl ractor::Actor for Greeter {
         state: &mut Self::State,
     ) -> Result<(), ActorProcessingErr> {
         state.count += 1;
-        println!("Received a message: {}", message.0);
+        let reply =
+            format!("Hello, {}! (greeting #{})", message.name, state.count);
+        // A caller may cancel a request after sending it; the actor can still
+        // process the message and stop normally.
+        let _ = message.reply_to.send(reply);
 
         // In this case, we stop the actor after just one message:
         myself.stop(Some("Received greeting.".into()));
@@ -94,38 +93,67 @@ impl ractor::Actor for Greeter {
         _myself: ActorRef<Self::Msg>,
         state: &mut Self::State,
     ) -> Result<(), ActorProcessingErr> {
-        println!("Greeter actor is stopping. Count: {}", state.count);
+        println!("Greeter handled {} greeting(s).", state.count);
         Ok(())
     }
 }
 
-/// Spawns the greeter actor and waits for it to exit.
-#[tokio::main]
-async fn main() {
-    // Create a `Greeter` actor:
-    let (_actor, handle) = Actor::spawn(Some("Actor1".to_owned()), Greeter, ())
+/// Sends one greeting request and returns the actor's reply.
+///
+/// # Errors
+/// Returns an error if the actor cannot start, receive its message, reply, or
+/// shut down successfully.
+async fn run_actor() -> anyhow::Result<String> {
+    let (actor, handle) = Actor::spawn(Some("Greeter".to_owned()), Greeter, ())
         .await
-        .expect("Failed to start the actor"); // panic in `pre_start()`.
+        .context("starting the greeter actor")?;
 
-    handle.await.expect("Actor failed to exit properly");
+    let (reply_to, reply_from) = oneshot::channel();
+    actor
+        .send_message(Greet {
+            name: "Rust".to_owned(),
+            reply_to,
+        })
+        .context("sending a greeting to the actor")?;
 
-    // Sleep for a bit to let the actor finish any remaining work:
-    sleep(Duration::from_millis(50)).await;
+    let reply = reply_from
+        .await
+        .context("greeter actor stopped before replying")?;
+    handle
+        .await
+        .context("joining the greeter actor task")?
+        .context("greeter actor stopped with an error")?;
+    Ok(reply)
+}
+
+/// Runs the asynchronous Ractor example on a Tokio runtime.
+///
+/// # Errors
+/// Returns an error if the actor cannot complete its message exchange.
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    println!("{}", run_actor().await?);
+    Ok(())
 }
 
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the Ractor actor example.
+///
+/// # Errors
+/// Returns an error if the actor cannot complete its message exchange.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the ractor example through its entry point.
-    #[test]
-    fn test_ractor_example_entry_point() {
-        main();
+    /// Verifies that the greeter replies with the requested name.
+    #[tokio::test]
+    async fn greeter_replies_to_message() -> anyhow::Result<()> {
+        assert_eq!(run_actor().await?, "Hello, Rust! (greeting #1)");
+        Ok(())
     }
 }

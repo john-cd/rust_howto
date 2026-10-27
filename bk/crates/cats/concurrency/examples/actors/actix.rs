@@ -2,85 +2,92 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! A minimal `actix` actor that handles a `Ping` message.
+//! An `actix` counter actor that replies with its updated total.
 
 use actix::prelude::*;
+use anyhow::Context;
 
-// Define a message named `Ping`.
-// Messages are used to communicate with actors.
-/// A message sent to [`MyActor`].
-struct Ping;
+/// A message that adds an amount to the counter.
+struct Add(u64);
 
-// Implement the `Message` trait for `Ping`.
-// This trait is required for types that will be sent as messages to actors.
-impl Message for Ping {
-    // Define the result type for this message.
-    // In this case, the message doesn't return any value, so it's `()`.
-    type Result = ();
+impl Message for Add {
+    type Result = u64;
 }
 
-// Define an actor named `MyActor`.
-// Actors are the fundamental units of concurrency in Actix.
-/// An actor that handles [`Ping`] messages.
-struct MyActor;
+/// An actor that owns a running total.
+struct Counter {
+    /// The total after processing the last message.
+    total: u64,
+}
 
-// Implement the `Actor` trait for `MyActor`.
-impl Actor for MyActor {
-    // Define the context type for this actor.
-    // `Context<Self>` is the standard context type for actors.
+impl Actor for Counter {
     type Context = Context<Self>;
 }
 
-// Implement the `Handler` trait for `MyActor` to handle the `Ping` message.
-// This trait defines how the actor should respond to a specific message type.
-impl Handler<Ping> for MyActor {
-    // Define the result type for this handler.
-    // In this case, the handler doesn't return any value, so it's `()`.
-    type Result = ();
+impl Handler<Add> for Counter {
+    type Result = u64;
 
-    // Define the handler function for the `Ping` message.
-    fn handle(&mut self, _msg: Ping, _ctx: &mut Context<Self>) {
-        println!("Received Ping message");
+    /// Adds the message amount and returns the updated total.
+    fn handle(
+        &mut self,
+        message: Add,
+        _context: &mut Context<Self>,
+    ) -> Self::Result {
+        self.total += message.0;
+        self.total
     }
 }
 
-/// Starts [`MyActor`], sends it a [`Ping`] and runs the actor system.
-fn main() {
+/// Starts the counter and returns the replies to two messages.
+///
+/// # Errors
+/// Returns an error if a message reply or the Actix system fails.
+fn run_actor() -> anyhow::Result<(u64, u64)> {
     let system = System::new();
+    let totals = system.block_on(async {
+        let counter = Counter { total: 0 }.start();
+        let first = counter.send(Add(2)).await.context(
+            "counter actor stopped before replying to the first message",
+        )?;
+        let second = counter.send(Add(3)).await.context(
+            "counter actor stopped before replying to the second message",
+        )?;
+        Ok::<_, anyhow::Error>((first, second))
+    })?;
 
-    // Actors must be started within a running system, hence `block_on`:
-    system.block_on(async {
-        // Start the actor:
-        let addr = MyActor.start();
+    System::current().stop();
+    system.run().context("Actix system failed")?;
+    Ok(totals)
+}
 
-        // Send a Ping message to the actor and wait for it to be handled:
-        addr.send(Ping)
-            .await
-            .expect("the actix example invariant should hold");
-
-        // Ask the system to stop:
-        System::current().stop();
-    });
-
-    // Run the system until it stops:
-    system
-        .run()
-        .expect("the actix example invariant should hold");
+/// Runs the Actix counter example.
+///
+/// # Errors
+/// Returns an error if a message reply or the Actix system fails.
+fn main() -> anyhow::Result<()> {
+    let (first, second) = run_actor()?;
+    println!("Totals: {first}, {second}");
+    Ok(())
 }
 
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the Actix actor example.
+///
+/// # Errors
+/// Returns an error if a message reply or the Actix system fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the actix example through its entry point.
+    /// Verifies that Actix replies with each updated counter total.
     #[test]
-    fn test_actix_example_entry_point() {
-        main();
+    fn actor_replies_with_updated_totals() -> anyhow::Result<()> {
+        assert_eq!(run_actor()?, (2, 5));
+        Ok(())
     }
 }

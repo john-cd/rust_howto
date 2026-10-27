@@ -302,9 +302,9 @@ Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references an
 - [#404](https://github.com/john-cd/rust_howto/issues/404) — **P4** — localization/localization.md: localization: write — **IMPLEMENTED ON DEVELOP; OPEN — PR link pending**
 - [#405](https://github.com/john-cd/rust_howto/issues/405) — **P4** — localization/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — PR link pending**
 
-#### NOW-PROSE-11 — Asynchronous programming and caching
+#### NOW-PROSE-11 — Asynchronous programming and caching - IN PROGRESS
 
-- [#269](https://github.com/john-cd/rust_howto/issues/269) — **P3** — concurrency/_actors.md: _actors: organize — **NOT STARTED**
+- [#269](https://github.com/john-cd/rust_howto/issues/269) — **P3** — concurrency/_actors.md: _actors: organize — **IN PROGRESS on `codex/issue-269-actors-organize` in worktree `h`**
 
 #### NOW-PROSE-12 — Aerospace and device protocols - IN PROGRESS
 

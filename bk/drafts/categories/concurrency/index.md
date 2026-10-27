@@ -17,7 +17,7 @@ Concurrency{{hi:Concurrency}} is about coordinating tasks whose lifetimes overla
 | [`crossbeam`](crossbeam.md)                                 | Use scoped threads and lower-level concurrency tools | `crossbeam`                                     |
 | [Concurrent Data Structures](concurrent_data_structures.md) | Share maps and queues across threads                 | `dashmap`, `papaya`, `crossbeam-queue`          |
 | [`Send` and `Sync`](send_sync.md)                           | Understand safe transfer and sharing between threads | `std::marker`                                   |
-| [Actors](_actors.md)                                        | Isolate state behind message-driven workers          | `ractor`, `stakker`                             |
+| [Actors](_actors.md)                                        | Isolate state behind message-driven workers          | Tokio, Actix, Ractor, Kameo, Stakker            |
 
 ## Explicit Threads
 

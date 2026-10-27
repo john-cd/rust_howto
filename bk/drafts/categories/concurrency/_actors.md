@@ -4,97 +4,84 @@
 
 {{#include _actors.incl.md}}
 
-"An Actor is a computational entity that, in response to a message it receives, can concurrently:
+## Actor Model {#actor-model}
 
-- send a finite number of messages to other Actors;
-- create a finite number of new Actors;
-- designate the behavior to be used for the next message it receives."
-- Carl Hewitt 1973.
+An actor owns its state and processes messages from a mailbox one at a time. It can send messages to other actors and create actors; this message-passing model lets independent tasks coordinate without sharing mutable state.
 
-An actor is a lightweight, independent unit of computation that encapsulates state and behavior. Actors communicate with each other asynchronously by exchanging messages, which are placed in the recipient's mailbox (a queue). An actor processes messages sequentially, one at a time, from its mailbox. This message-passing paradigm simplifies concurrent programming by avoiding shared mutable state and complex locking mechanisms, enabling actors to run concurrently and potentially be distributed across multiple machines, making them well-suited for building scalable and resilient systems.
+## Build Actors with Tokio {#tokio}
 
-Key Benefits of Using Actors:
-
-- Simplified [concurrency][p~concurrency]: Actors make it easier to write concurrent code without having to deal with low-level threading primitives.
-- Improved modularity: Actors promote a modular design, making it easier to develop and maintain complex systems.
-- Enhanced scalability: Actors can be easily distributed across multiple machines, allowing your system to scale horizontally.
-- Increased resilience: Actors can be restarted or replicated, making your system more fault-tolerant.
-
-Possible applications of actor frameworks:
-
-- Web [scraping][p~scraping]: fetch data from multiple websites simultaneously.
-- Game servers: represent each player or game entity by an actor.
-- Microservices: implement microservices as a set of actors.
-- IoT devices: represent individual devices as actors.
-- Real-time analytics: process [streams][p~streams] of data by a succession of actors.
-- Chat applications.
-- Telecommunications.
-
-## Build a Simple Actor with Tokio {#tokio}
-
-You can build an actor from a Tokio task and channels without adopting an actor framework. The task owns the counter state, a bounded `mpsc` channel carries commands, and each command includes a `oneshot` sender for its reply. Cloning the handle gives another sender to the same actor. See [Actors with Tokio][blog~actors-with-tokio]↗ for a fuller explanation.
+A Tokio task and channels can implement a small actor without an actor-framework dependency. The task owns the counter, a bounded `mpsc` channel carries commands, and each command uses a `oneshot` channel to return its reply. See [Actors with Tokio][blog~actors-with-tokio]↗ for a fuller explanation.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/actors/actors.rs:example}}
 ```
 
-Frameworks such as [`actix`][c~actix~docs], [`ractor`][c~ractor~docs], and `kameo` provide higher-level actor features. Plain Tokio channels can be enough when an application only needs an owned task, a mailbox, and request/reply messages.
-
-<div class="hidden">
-  This section adds the plain-Tokio example requested by issue #1011. It replaces the earlier fire-and-forget thread example with an actor that owns mutable state, supports cloned handles, returns each updated value through a one-use reply channel, and shuts down when all handles are dropped.
-</div>
-
-## `stakker` {#stakker}
-
-[![stakker~website][c~stakker~website~badge]][c~stakker~website] [![stakker][c~stakker~docs~badge]][c~stakker~docs] [![stakker~crates.io][c~stakker~crates.io~badge]][c~stakker~crates.io] [![stakker~repo][c~stakker~repo~badge]][c~stakker~repo] [![stakker~lib.rs][c~stakker~lib.rs~badge]][c~stakker~lib.rs]{{hi:stakker}}{{hi:Runtime}}{{hi:Erlang}}{{hi:Async}}{{hi:Actor}}{{hi:Pony}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
-
-[`stakker`][c~stakker~docs]↗{{hi:stakker}} is a lightweight low-level single-threaded actor runtime. It simplifies the development of concurrent applications by promoting message-passing between isolated actors, ensuring data safety and preventing race conditions.
-
-```rust,editable
-{{#include ../../../crates/cats/concurrency/examples/actors/stakker.rs:example}}
-```
-
-## `riker` {#riker}
-
-[![riker~website][c~riker~website~badge]][c~riker~website] [![riker][c~riker~docs~badge]][c~riker~docs] [![riker~crates.io][c~riker~crates.io~badge]][c~riker~crates.io] [![riker~repo][c~riker~repo~badge]][c~riker~repo] [![riker~lib.rs][c~riker~lib.rs~badge]][c~riker~lib.rs]{{hi:riker}}{{hi:Async}}{{hi:Actors}}{{hi:CQRS}}{{hi:Actor-model}}{{hi:Event_sourcing}}
-
-[`riker`][c~riker~docs]↗{{hi:riker}} is an actor framework inspired by Erlang/OTP and Akka. The example starts an actor system, creates a ping-pong actor, and sends it a message. Its source remains available, but the Cargo feature and dependency are commented out because this release requires vulnerable `linked-hash-map 0.3` and `rand 0.7` versions with no compatible fixed releases.
-
-```rust,ignore
-{{#include ../../../crates/cats/concurrency/examples/actors/riker.rs:example}}
-```
-
-## `ractor` {#ractor}
-
-[![ractor][c~ractor~docs~badge]][c~ractor~docs]{{hi:ractor}}
-[![ractor~crates.io][c~ractor~crates.io~badge]][c~ractor~crates.io]
-[![ractor~repo][c~ractor~repo~badge]][c~ractor~repo]
-[![ractor~lib.rs][c~ractor~lib.rs~badge]][c~ractor~lib.rs]
-
-[`ractor`][c~ractor~docs]↗{{hi:ractor}} is a pure-Rust actor framework, inspired from Erlang's `gen_server`.
-
-Ractor is a Rust crate providing a simple, lightweight actor framework. It facilitates concurrent programming by enabling the creation and management of actors, which communicate through [asynchronous][p~asynchronous] message passing. Ractor focuses on ease of use and aims to provide a minimal but functional actor system, suitable for applications where a full-fledged actor framework like Riker might be overkill. It provides tools for defining actor behavior, sending and receiving messages, and handling actor lifecycles.
-
-```rust,editable
-{{#include ../../../crates/cats/concurrency/examples/actors/ractor.rs:example}}
-```
-
 ## `actix` {#actix}
 
-[![actix][c~actix~docs~badge]][c~actix~docs]{{hi:actix}}
-[![actix~crates.io][c~actix~crates.io~badge]][c~actix~crates.io]
-[![actix~repo][c~actix~repo~badge]][c~actix~repo]
-[![actix~lib.rs][c~actix~lib.rs~badge]][c~actix~lib.rs]
+[![actix][c~actix~docs~badge]][c~actix~docs] [![actix~crates.io][c~actix~crates.io~badge]][c~actix~crates.io] [![actix~repo][c~actix~repo~badge]][c~actix~repo] [![actix~lib.rs][c~actix~lib.rs~badge]][c~actix~lib.rs]
 
-[`actix`][c~actix~docs]↗{{hi:actix}} is a performant actor framework for Rust, emphasizing message passing concurrency. It provides tools for creating, managing, and interacting with actors, which are isolated units of execution that communicate asynchronously via messages. Actix is widely used for building concurrent applications, particularly web services, due to its efficiency and support for asynchronous I/O. It offers features like message routing, supervision, and a variety of actor communication patterns.
+[`actix`][c~actix~docs]↗ uses typed messages and an actor system for synchronous or asynchronous message handling, with supervision support.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/actors/actix.rs:example}}
 ```
 
+## `ractor` {#ractor}
+
+[![ractor][c~ractor~docs~badge]][c~ractor~docs] [![ractor~crates.io][c~ractor~crates.io~badge]][c~ractor~crates.io] [![ractor~repo][c~ractor~repo~badge]][c~ractor~repo] [![ractor~lib.rs][c~ractor~lib.rs~badge]][c~ractor~lib.rs]
+
+[`ractor`][c~ractor~docs]↗ is an Erlang-inspired actor framework with actor lifecycle and supervision primitives, and support for Tokio or async-std runtimes.
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/examples/actors/ractor.rs:example}}
+```
+
+## `kameo` {#kameo}
+
+[![kameo][c~kameo~docs~badge]][c~kameo~docs] [![kameo~crates.io][c~kameo~crates.io~badge]][c~kameo~crates.io] [![kameo~repo][c~kameo~repo~badge]][c~kameo~repo] [![kameo~lib.rs][c~kameo~lib.rs~badge]][c~kameo~lib.rs]
+
+[`kameo`][c~kameo~docs]↗ provides asynchronous actors with supervision and fault-recovery support; see its guide for examples.
+
+## `stakker` {#stakker}
+
+[![stakker~website][c~stakker~website~badge]][c~stakker~website] [![stakker][c~stakker~docs~badge]][c~stakker~docs] [![stakker~crates.io][c~stakker~crates.io~badge]][c~stakker~crates.io] [![stakker~repo][c~stakker~repo~badge]][c~stakker~repo] [![stakker~lib.rs][c~stakker~lib.rs~badge]][c~stakker~lib.rs]
+
+[`stakker`][c~stakker~docs]↗ is a lightweight, single-threaded actor runtime that uses deferred calls and callbacks for message replies.
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/examples/actors/stakker.rs:example}}
+```
+
+## Comparison
+
+| Option                  | Runtime and model                                                          | Local example                                                               |
+| ----------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Tokio task and channels | Tokio task with an explicit mailbox and request/reply messages             | [`actors.rs`](../../../crates/cats/concurrency/examples/actors/actors.rs)   |
+| Actix                   | Actor system with typed messages, sync and async handling, and supervision | [`actix.rs`](../../../crates/cats/concurrency/examples/actors/actix.rs)     |
+| Ractor                  | Erlang-inspired actor lifecycle and supervision; Tokio or async-std        | [`ractor.rs`](../../../crates/cats/concurrency/examples/actors/ractor.rs)   |
+| Kameo                   | Asynchronous actors with supervision and fault recovery                    | [Kameo guide][c~kameo~docs]↗                                                |
+| Xtra (low activity)     | Small asynchronous actors that can use different futures executors         | [Xtra guide][c~xtra~docs]↗                                                  |
+| Stakker                 | Lightweight, single-threaded actors with deferred calls and callbacks      | [`stakker.rs`](../../../crates/cats/concurrency/examples/actors/stakker.rs) |
+
+## Historical and Unmaintained Frameworks {#historical-frameworks}
+
+`bastion` and `riker` are retained here for historical context; their upstream repositories have had no recent development activity. `xtra` is not archived, but its latest upstream commit is dated November 16, 2024, so check maintenance and compatibility before adopting it. Riker is disabled in the example workspace because its dependency chain includes vulnerable, outdated crates.
+
+### `bastion`
+
+[`bastion`][c~bastion~repo]↗ was a distributed, fault-tolerant actor runtime.
+
+### `riker` {#riker}
+
+[`riker`][c~riker~repo]↗ was inspired by Erlang/OTP and Akka; its source is kept in the repository but its feature and dependency remain disabled.
+
+### `xtra` {#xtra}
+
+[`xtra`][c~xtra~repo]↗ is a small asynchronous actor framework whose handlers can run on different futures executors.
+
 ## References {#references .skip}
 
-- [Actors with `Tokio`][blog~actors-with-tokio]↗{{hi:Actors}}.
+- [Actors with Tokio][blog~actors-with-tokio]↗{{hi:Actors}}.
 - [`ractor` blog][ractor blog][c~ractor~blog]↗.
 
 ## Related Topics {#related-topics .skip}
@@ -109,13 +96,3 @@ Ractor is a Rust crate providing a simple, lightweight actor framework. It facil
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[_actors: organize](https://github.com/john-cd/rust_howto/issues/269)
-
-- [bastion][c~bastion~repo]↗: Highly-available Distributed Fault-tolerant Runtime.
-
-https://riker.rs/actors
-https://github.com/uazu/stakker
-
-</div>

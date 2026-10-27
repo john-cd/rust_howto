@@ -3,8 +3,27 @@
 [c~scc~crates.io]: https://crates.io/crates/scc
 [c~scc~docs]: https://docs.rs/scc
 
+[c~kameo~crates.io]: https://crates.io/crates/kameo
+[c~kameo~crates.io~badge]: https://img.shields.io/badge/crates.io-kameo-crimson
+[c~kameo~docs]: https://docs.rs/kameo
+[c~kameo~docs~badge]: https://img.shields.io/crates/v/kameo?label=kameo
+[c~kameo~lib.rs]: https://lib.rs/crates/kameo
+[c~kameo~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kameo-yellow
+[c~kameo~repo]: https://github.com/tqwewe/kameo
+[c~kameo~repo~badge]: https://img.shields.io/badge/kameo-steelblue?logo=github
+
+[c~xtra~crates.io]: https://crates.io/crates/xtra
+[c~xtra~crates.io~badge]: https://img.shields.io/badge/crates.io-xtra-crimson
+[c~xtra~docs]: https://docs.rs/xtra
+[c~xtra~docs~badge]: https://img.shields.io/crates/v/xtra?label=xtra
+[c~xtra~lib.rs]: https://lib.rs/crates/xtra
+[c~xtra~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xtra-yellow
+[c~xtra~repo]: https://github.com/Restioson/xtra
+[c~xtra~repo~badge]: https://img.shields.io/badge/xtra-steelblue?logo=github
+
 [ex~concurrency~actix]: _actors.md#actix
 [ex~concurrency~actors]: _actors.md#tokio
+[ex~concurrency~kameo]: _actors.md#kameo
 [ex~concurrency~any-or-all-in-parallel]: data_parallelism.md#any-or-all-in-parallel
 [ex~concurrency~arc-mutex]: shared_state.md#arc-mutex
 [ex~concurrency~arc-swap]: atomics.md#arc-swap
@@ -48,6 +67,7 @@
 [ex~concurrency~spawn-a-short-lived-thread]: explicit_threads.md#spawn-join
 [ex~concurrency~spawn-join]: explicit_threads.md#spawn-join
 [ex~concurrency~stakker]: _actors.md#stakker
+[ex~concurrency~xtra]: _actors.md#xtra
 [ex~concurrency~sync]: send_sync.md#sync
 [ex~concurrency~thread-builder]: explicit_threads.md#thread-builder
 [ex~concurrency~thumbnails-in-parallel]: data_parallelism.md#thumbnails-in-parallel
