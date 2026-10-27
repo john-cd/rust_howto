@@ -8,6 +8,7 @@
 use std::thread;
 use std::time::Duration;
 
+use anyhow::Result;
 use flume::RecvTimeoutError;
 use flume::bounded;
 
@@ -35,18 +36,20 @@ fn drain_commands(rx: &flume::Receiver<Command>, total: &mut i32) -> bool {
 }
 
 /// Runs a controller thread and a tick loop connected by a bounded channel.
-fn main() {
+///
+/// # Errors
+///
+/// Returns an error if the controller panics or the command receiver closes.
+fn main() -> Result<()> {
     // A bounded MPMC channel: `send` blocks when it is full.
     let (tx, rx) = bounded::<Command>(4);
 
-    let controller = thread::spawn(move || {
+    let controller = thread::spawn(move || -> Result<()> {
         for n in 1..=10 {
-            if tx.send(Command::Add(n)).is_err() {
-                return;
-            }
+            tx.send(Command::Add(n))?;
         }
-        // Ignore the error: the loop may already be gone.
-        let _ = tx.send(Command::Quit);
+        tx.send(Command::Quit)?;
+        Ok(())
     });
 
     let mut total = 0;
@@ -63,27 +66,32 @@ fn main() {
         }
     }
 
-    match controller.join() {
-        Ok(()) => println!("Controller thread finished."),
-        Err(e) => eprintln!("Controller thread panicked: {e:?}"),
-    }
+    controller
+        .join()
+        .map_err(|_| anyhow::anyhow!("command controller thread panicked"))??;
 
     assert_eq!(total, 55);
     println!("Total: {total}");
+    Ok(())
 }
 
 /// An empty channel times out instead of blocking forever.
 fn timeout_on_empty() {
     let (_tx, rx) = bounded::<Command>(1);
     assert_eq!(
-        rx.recv_timeout(Duration::from_millis(1)),
+        rx.recv_timeout(Duration::ZERO),
         Err(RecvTimeoutError::Timeout)
     );
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the command loop and reports controller failures.
+///
+/// # Errors
+///
+/// Returns an error if the controller panics or cannot send its commands.
+pub fn run() -> Result<()> {
+    main()
 }
 
 #[cfg(test)]
@@ -92,10 +100,11 @@ mod tests {
 
     /// Runs the flume tick example through its entry point.
     #[test]
-    fn test_flume_tick_example_entry_point() {
-        main();
+    fn test_flume_tick_example_entry_point() -> Result<()> {
+        main()
     }
 
+    /// Reports a timeout immediately when an open channel has no command.
     #[test]
     fn test_timeout_on_empty() {
         timeout_on_empty();

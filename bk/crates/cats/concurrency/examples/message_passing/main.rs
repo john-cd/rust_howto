@@ -44,7 +44,7 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
@@ -62,11 +62,12 @@ fn main() {
                 message_passing_mpsc::run();
             }
             Commands::FlumeTick => {
-                flume_tick::run();
+                flume_tick::run()?;
             }
             Commands::FlumeCommand => {
                 flume_commands::run();
             }
         }
     }
+    Ok(())
 }

@@ -11,6 +11,8 @@
 
 use std::thread;
 
+use anyhow::Result;
+use rtrb::Consumer;
 use rtrb::PopError;
 use rtrb::PushError;
 use rtrb::RingBuffer;
@@ -38,9 +40,34 @@ fn full_and_empty() {
     assert_eq!(consumer.pop(), Err(PopError::Empty));
 }
 
-/// Sends `TOTAL` samples from a producer thread and drains them in fixed-size
-/// blocks on the consumer side.
-fn main() {
+/// Drains at most one block without waiting, filling an underrun with silence.
+///
+/// This function neither allocates nor yields; it handles the sample transfer
+/// portion of a real-time callback.
+fn drain_block(
+    consumer: &mut Consumer<f32>,
+    block: &mut [f32; BLOCK_SIZE],
+) -> usize {
+    block.fill(0.0);
+    let mut filled = 0;
+    for slot in block {
+        match consumer.pop() {
+            Ok(sample) => {
+                *slot = sample;
+                filled += 1;
+            }
+            Err(PopError::Empty) => break,
+        }
+    }
+    filled
+}
+
+/// Sends `TOTAL` samples and drives the block consumer from an ordinary thread.
+///
+/// # Errors
+///
+/// Returns an error if the producer thread panics.
+fn main() -> Result<()> {
     full_and_empty();
 
     let (mut producer, mut consumer) = RingBuffer::<f32>::new(CAPACITY);
@@ -56,21 +83,12 @@ fn main() {
         }
     });
 
-    // The "real-time" side: it never waits on a lock and never allocates in
-    // the loop, other than the `received` vector we use for the assertions.
+    // This is a test driver, not a real-time callback: it may yield while
+    // waiting for the producer. A callback calls `drain_block` only once.
     let mut received = Vec::with_capacity(TOTAL);
     let mut block = [0.0_f32; BLOCK_SIZE];
     while received.len() < TOTAL {
-        let mut filled = 0;
-        while filled < BLOCK_SIZE {
-            match consumer.pop() {
-                Ok(sample) => {
-                    block[filled] = sample;
-                    filled += 1;
-                }
-                Err(PopError::Empty) => break,
-            }
-        }
+        let filled = drain_block(&mut consumer, &mut block);
         received.extend_from_slice(&block[..filled]);
 
         // Stop if the producer is gone and nothing is left.
@@ -82,10 +100,9 @@ fn main() {
         }
     }
 
-    match producer_thread.join() {
-        Ok(()) => println!("Producer thread finished."),
-        Err(e) => eprintln!("Producer thread panicked: {e:?}"),
-    }
+    producer_thread
+        .join()
+        .map_err(|_| anyhow::anyhow!("sample producer thread panicked"))?;
 
     // All samples arrived, in order.
     assert_eq!(received.len(), TOTAL);
@@ -96,11 +113,17 @@ fn main() {
             .all(|(i, sample)| *sample == i as f32)
     );
     println!("Received {} samples in order.", received.len());
+    Ok(())
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the SPSC transfer example and reports producer thread failures.
+///
+/// # Errors
+///
+/// Returns an error if the producer thread panics.
+pub fn run() -> Result<()> {
+    main()
 }
 
 #[cfg(test)]
@@ -109,12 +132,29 @@ mod tests {
 
     /// Runs the rtrb example through its entry point.
     #[test]
-    fn test_rtrb_example_entry_point() {
-        main();
+    fn test_rtrb_example_entry_point() -> Result<()> {
+        main()
     }
 
+    /// Returns full/empty errors without blocking or losing buffered values.
     #[test]
     fn test_full_and_empty() {
         full_and_empty();
+    }
+
+    /// Drains available samples once and fills the rest of the block with
+    /// silence.
+    #[test]
+    fn drains_one_block_and_silences_underruns() {
+        let (mut producer, mut consumer) = RingBuffer::new(2);
+        assert!(producer.push(1.0).is_ok());
+        assert!(producer.push(2.0).is_ok());
+        let mut block = [9.0; BLOCK_SIZE];
+
+        assert_eq!(drain_block(&mut consumer, &mut block), 2);
+        assert_eq!(&block[..2], &[1.0, 2.0]);
+        assert!(block[2..].iter().all(|sample| *sample == 0.0));
+        assert_eq!(drain_block(&mut consumer, &mut block), 0);
+        assert_eq!(block, [0.0; BLOCK_SIZE]);
     }
 }

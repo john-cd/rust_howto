@@ -428,7 +428,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 - [#1907](https://github.com/john-cd/rust_howto/issues/1907) — **P3** — Add example: graceful shutdown on Ctrl-C (ctrlc, tokio::signal) — **PARTIAL**
 - [#1919](https://github.com/john-cd/rust_howto/issues/1919) — **P3** — Add examples: async functions in traits (native AFIT/RPITIT with Send bounds, trait_variant, async_trait for dyn) — **PARTIAL**
 - [#1920](https://github.com/john-cd/rust_howto/issues/1920) — **P3** — Add a "Cancellation and Structured Concurrency" topic: JoinSet worker pools, CancellationToken trees, watch/broadcast state — **PARTIAL**
-- [#1908](https://github.com/john-cd/rust_howto/issues/1908) — **P4** — Add examples: real-time-safe communication between threads (rtrb, ringbuf, flume) — **PARTIAL**
+- [#1908](https://github.com/john-cd/rust_howto/issues/1908) — **P4** — Add examples: real-time-safe communication between threads (rtrb, ringbuf, flume) — **IMPLEMENTED ON DEVELOP; OPEN — bounded allocation-free SPSC drain with silence on underrun, command-channel examples, worker error propagation, and callback guidance are present; formatted; tests, Clippy, refdefs, and book checks deferred to final validation**
 
 #### VALIDATE-CODE-09 — Tabular data and finance
 

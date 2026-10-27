@@ -73,6 +73,8 @@ Use an ordinary channel for commands and telemetry, and a ring buffer only for t
 {{#include ../../../crates/cats/concurrency/examples/spsc/rtrb.rs:example}}
 ```
 
+`drain_block` returns after at most one fixed-size block and fills missing samples with silence. Call it once per real-time callback. The example's outer loop is an ordinary test driver that yields while waiting for the producer; that waiting loop does not belong in the callback.
+
 ### `ringbuf` {#ringbuf}
 
 [![ringbuf][c~ringbuf~docs~badge]][c~ringbuf~docs] [![ringbuf~crates.io][c~ringbuf~crates.io~badge]][c~ringbuf~crates.io] [![ringbuf~repo][c~ringbuf~repo~badge]][c~ringbuf~repo] [![ringbuf~lib.rs][c~ringbuf~lib.rs~badge]][c~ringbuf~lib.rs]{{hi:ringbuf}}{{hi:Ring buffer}}{{hi:Lock-free}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
