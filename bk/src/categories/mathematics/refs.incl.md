@@ -33,6 +33,7 @@
 [ex~mathematics~nalgebra-transformations]: linear_algebra.md#nalgebra-transformations
 [ex~mathematics~nalgebra-vectors]: linear_algebra.md#nalgebra-vectors
 [ex~mathematics~find-a-root-with-brents-method]: numerical_analysis.md#find-a-root-with-brents-method
+[ex~mathematics~composite-trapezoidal-and-simpsons-rules]: numerical_integration.md#composite-trapezoidal-and-simpsons-rules
 [ex~mathematics~minimize-a-function-with-brents-method]: optimization.md#minimize-a-function-with-brents-method
 [ex~mathematics~convert-units-with-uom]: units.md#convert-units-with-uom
 [ex~mathematics~compare-sets-with-btreeset]: discrete_mathematics.md#compare-sets-with-btreeset
@@ -54,6 +55,7 @@
 [p~iterators]: ../../language/iterators.md
 [p~mathematics]: index.md
 [p~numerical-analysis]: numerical_analysis.md
+[p~numerical-integration]: numerical_integration.md
 [p~optimization]: optimization.md
 [p~units]: units.md
 [p~discrete-mathematics]: discrete_mathematics.md
@@ -68,3 +70,4 @@
 [ex~mathematics~minimize-a-function-with-particle-swarm-optimization]: optimization.md#minimize-a-function-with-particle-swarm-optimization
 [ex~mathematics~maximize-fitness-with-a-genetic-algorithm]: optimization.md#maximize-fitness-with-a-genetic-algorithm
 [p~category-algorithms]: ../algorithms/index.md
+[rust-cookbook~numerical-integration-issue]: https://github.com/rust-lang-nursery/rust-cookbook/issues/699

@@ -23,7 +23,7 @@ anyhow = "1.0.104"
 approx = "0.5.1" # was pinned at 0.4.0
 argmin = { version = "0.11.0", default-features = false } # Scalar root finding and optimization algorithms.
 argmin-math = { version = "0.5.1", default-features = false, features = [
-  "vec",
+    "vec",
 ] } # `Vec<f64>` parameters for `argmin` solvers.
 clap = { version = "4.6.7", features = ["derive"] }
 cmaes = "0.2.2" # CMA-ES evolution strategy.
@@ -31,7 +31,7 @@ fixed = "1.31.0"
 half = "2.7.1"
 nalgebra = { version = "0.34.2", features = ["serde-serialize"] } # Pinned: ode_solvers uses nalgebra 0.34.
 ndarray = { version = "0.17.2", features = [
-  "approx",
+    "approx",
 ] } # was pinned to 0.15.6 for linfa
 num = "0.4.3"
 num-bigint = "0.5.1"
@@ -88,6 +88,11 @@ test = true
 [[example]]
 name = "numerical_analysis"
 path = "examples/numerical_analysis/main.rs"
+test = true
+
+[[example]]
+name = "numerical_integration"
+path = "examples/numerical_integration/main.rs"
 test = true
 
 [[example]]

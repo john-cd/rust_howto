@@ -99,6 +99,7 @@
   - [Statistics](categories/mathematics/statistics.md)
   - [Additional Numeric Types](categories/mathematics/additional_numeric_types.md)
   - [Numerical Analysis](categories/mathematics/numerical_analysis.md)
+  - [Numerical Integration](categories/mathematics/numerical_integration.md)
   - [Optimization](categories/mathematics/optimization.md)
   - [Units of Measurement](categories/mathematics/units.md)
   - [Discrete Mathematics](categories/mathematics/discrete_mathematics.md)

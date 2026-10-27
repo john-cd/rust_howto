@@ -241,7 +241,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#480](https://github.com/john-cd/rust_howto/issues/480) — **P4** — science_robotics/index.md: organize — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#481](https://github.com/john-cd/rust_howto/issues/481) — **P4** — simulation/simulation.md: simulation: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#494](https://github.com/john-cd/rust_howto/issues/494) — **P4** — `visualization/visualization.md`: visualization: write — **BLOCKED — Plotters dependency required for SVG example**
-- [#2019](https://github.com/john-cd/rust_howto/issues/2019) — **P4** — Add dependency-free numerical integration recipes — **NOT STARTED; identified from Rust Cookbook #699**
+- [#2019](https://github.com/john-cd/rust_howto/issues/2019) — **P4** — Add dependency-free numerical integration recipes — **IMPLEMENTED ON DEVELOP; OPEN — focused tests, Clippy, reference checks, and book validation deferred to the final pass**
 - [#587](https://github.com/john-cd/rust_howto/issues/587) — **P4** — data-processing/dataframes.md: dataframes: organize / edit — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#1207](https://github.com/john-cd/rust_howto/issues/1207) — **P4** — science_robotics/perception_and_sensors.md: write — **PARTIAL ON DEVELOP; BLOCKED — `kiddo` example dependency unavailable**
 - [#1210](https://github.com/john-cd/rust_howto/issues/1210) — **P4** — science_robotics/simulation_visualization.md: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**

@@ -71,6 +71,10 @@ The [`fraction`][c~fraction~docs]↗{{hi:fraction}} crate provides fraction and 
 
 Numerical analysis covers methods such as integration, differentiation, and root finding. The [Numerical Analysis chapter][p~numerical-analysis] demonstrates root finding with [`argmin`][c~argmin~docs]↗{{hi:argmin}}.
 
+## Numerical Integration
+
+The [Numerical Integration chapter][p~numerical-integration] demonstrates dependency-free composite trapezoidal and Simpson's rules for estimating definite integrals.
+
 ## Optimization
 
 For numerical optimization, the [Optimization chapter][p~optimization] demonstrates function minimization with [`argmin`][c~argmin~docs]↗{{hi:argmin}}, which provides an interface for a range of optimization algorithms.
