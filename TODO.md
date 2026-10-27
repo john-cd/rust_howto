@@ -572,7 +572,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 - [#943](https://github.com/john-cd/rust_howto/issues/943) — **P4** — Complete the video index — **PARTIAL; OPEN — GStreamer and FFmpeg release status reviewed; external media setup, refdefs, book, spelling, and linked PR remain**
 - [#953](https://github.com/john-cd/rust_howto/issues/953) — **P4** — Complete the rendering index — **PARTIAL**
 - [#955](https://github.com/john-cd/rust_howto/issues/955) — **P4** — Complete the rendering-engine index — **PARTIAL**
-- [#956](https://github.com/john-cd/rust_howto/issues/956) — **P4** — Complete the graphics-API index — **PARTIAL**
+- [#956](https://github.com/john-cd/rust_howto/issues/956) — **P4** — Complete the graphics-API index — **PARTIAL; OPEN — related-topic table repaired; platform review, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-10 — Science, finance, data processing and visualization
 
