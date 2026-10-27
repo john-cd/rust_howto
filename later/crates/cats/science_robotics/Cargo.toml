@@ -39,10 +39,10 @@ anyhow = "1.0.104"
 async-trait = "0.1.92"
 bonsai-bt = "0.14.0"
 clap = { version = "4.6.7", features = ["derive"] }
-futures = { workspace = true, optional = true }
-pathfinding = "4.14.0"
+futures = { version = "0.3.34", optional = true }
+pathfinding = "4.16.0"
 pid = "4.0.0"
-r2r = { workspace = true, optional = true }
+r2r = { version = "0.9.7", optional = true }
 rapier2d = "0.36.1"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 tracing = "0.1.44"

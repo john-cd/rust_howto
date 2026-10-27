@@ -20,8 +20,7 @@ publish.workspace = true
 
 [dependencies]
 # Fixed-capacity collections and strings for the no-allocation example.
-heapless.workspace = true
-
+heapless = { version = "0.9.3", default-features = false }
 [[example]]
 name = "no_alloc"
 path = "examples/no_alloc/main.rs"

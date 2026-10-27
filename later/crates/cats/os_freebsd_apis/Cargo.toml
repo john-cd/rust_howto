@@ -19,8 +19,7 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 publish.workspace = true
 
 [target.'cfg(target_os = "freebsd")'.dependencies]
-sysctl.workspace = true
-
+sysctl = "=0.6.0" # Pinned: 0.7.1 conflicts with gemm-common's `sysctl` requirement.
 [[example]]
 name = "freebsd"
 path = "examples/freebsd/main.rs"

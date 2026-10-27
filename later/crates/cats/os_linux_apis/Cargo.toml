@@ -19,9 +19,8 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 publish.workspace = true
 
 [target.'cfg(target_os = "linux")'.dependencies]
-rustix.workspace = true
-tempfile.workspace = true
-
+rustix = { version = "1.1.6", features = ["fs"] }
+tempfile = "3.27.0"
 [[example]]
 name = "linux"
 path = "examples/linux/main.rs"
