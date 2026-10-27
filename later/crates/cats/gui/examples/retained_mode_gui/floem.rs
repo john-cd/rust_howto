@@ -1,29 +1,41 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! A counter application with `floem`.
+//! A reactive counter application with Floem.
 
 use floem::prelude::*;
 
-/// Runs the floem example.
-pub fn main() {
-    floem::launch(counter_view);
+/// Increases the counter's reactive state by one.
+fn increment(counter: RwSignal<i32>) {
+    counter.set(counter.get() + 1);
 }
 
-/// Returns the view of the counter.
+/// Decreases the counter's reactive state by one.
+fn decrement(counter: RwSignal<i32>) {
+    counter.set(counter.get() - 1);
+}
+
+/// Builds the counter view with fine-grained reactive signals.
 fn counter_view() -> impl IntoView {
     let counter = RwSignal::new(0);
 
-    h_stack((
-        button("Increment").action(move || counter.set(counter.get() + 1)),
+    v_stack((
         label(move || format!("Value: {}", counter.get())),
-        button("Decrement").action(move || counter.set(counter.get() - 1)),
+        h_stack((
+            button("+").action(move || increment(counter)),
+            button("-").action(move || decrement(counter)),
+        )),
     ))
     .style(|s| s.size_full().items_center().justify_center().gap(10))
 }
+
+/// Starts the Floem counter window.
+pub fn main() {
+    floem::launch(counter_view);
+}
 // ANCHOR_END: example
 
+/// Runs the Floem counter example.
 pub fn run() {
     main();
 }
@@ -32,9 +44,21 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the floem example through its entry point.
+    /// Verifies that counter actions update the signal without a window.
     #[test]
-    #[ignore = "requires an interactive example runtime"]
+    fn actions_update_reactive_counter_state() {
+        let counter = RwSignal::new(0);
+
+        increment(counter);
+        assert_eq!(counter.get(), 1);
+
+        decrement(counter);
+        assert_eq!(counter.get(), 0);
+    }
+
+    /// Runs the Floem entry point in a native window.
+    #[test]
+    #[ignore = "opens a window"]
     fn test_floem_example_entry_point() {
         main();
     }
