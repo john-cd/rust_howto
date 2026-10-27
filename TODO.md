@@ -565,8 +565,8 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-09 — UI, accessibility, media and rendering
 
-- [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Complete the screen-reader and AccessKit chapter D — **PARTIAL**
-- [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter and example F — **PARTIAL**
+- [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Complete the screen-reader and AccessKit chapter D — **PARTIAL; BLOCKED — desktop accessibility verification and deferred checks remain; details are on the issue**
+- [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter and example F — **PARTIAL; BLOCKED — native media environment and deferred checks remain; details are on the issue**
 - [#453](https://github.com/john-cd/rust_howto/issues/453) — **P4** — Finish and validate the glTF example D — **IMPLEMENTED; OPEN — model-format chapter and metadata-count example present; tests, Clippy, refdefs, book, spelling, and linked PR remain**
 - [#638](https://github.com/john-cd/rust_howto/issues/638) — **P4** — Clipboard chapter F — **IMPLEMENTED; OPEN — text/image and platform guidance present; desktop checks, refdefs, book, spelling, and linked PR remain**
 - [#940](https://github.com/john-cd/rust_howto/issues/940) — **P4** — Complete the multimedia index — **IMPLEMENTED; OPEN — subcategory and streaming links present; refdefs, book, spelling, and linked PR remain**
