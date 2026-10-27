@@ -19,13 +19,29 @@ Imaging library. Provides basic image processing and encoders/decoders for commo
 {{#include ../../../crates/cats/multimedia_images/examples/images/images.rs:example}}
 ```
 
+Encode an image to PNG and JPEG in memory without writing files:
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_images/examples/images/convert.rs:example}}
+```
+
 ## Image Manipulation {#image_manipulation}
 
 [![image][c~image~docs~badge]][c~image~docs] [![image~crates.io][c~image~crates.io~badge]][c~image~crates.io] [![image~repo][c~image~repo~badge]][c~image~repo] [![image~lib.rs][c~image~lib.rs~badge]][c~image~lib.rs]{{hi:image}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~multimedia::encoding][cat~multimedia::encoding~badge]][cat~multimedia::encoding]{{hi:Encoding}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}}
 
 - Image Filters and Transformations.
 
-{{#example image}}
+Resize and convert an image to grayscale:
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_images/examples/images/resize.rs:example}}
+```
+
+Apply a Gaussian blur:
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_images/examples/images/blur.rs:example}}
+```
 
 ## Image Processing {#image_processing}
 
