@@ -216,7 +216,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 #### NOW-CODE-09 — Networking, authentication and email
 
 - [#867](https://github.com/john-cd/rust_howto/issues/867) — **P3** — examples/leptos.rs: finish — **IMPLEMENTED ON TOPIC BRANCH; OPEN — optional feature now enables Leptos CSR; feature build/test and book validation pending**
-- [#1939](https://github.com/john-cd/rust_howto/issues/1939) — **P3** — Add examples: axum add-ons (axum-extra Host and TypedHeader, axum-server TLS, flash messages, #[debug_handler], tower-cookies) — **PARTIAL**
+- [#1939](https://github.com/john-cd/rust_howto/issues/1939) — **P3** — Add examples: axum add-ons (axum-extra Host and TypedHeader, axum-server TLS, flash messages, #[debug_handler], tower-cookies) — **BLOCKED ON FINAL VALIDATION — examples, recipe page, and compile-fail tip exist in the checkout; Cargo, Clippy, format, refdefs, and book gates remain**
 
 #### NOW-CODE-10 — Cloud services and SDKs
 
