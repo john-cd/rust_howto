@@ -26,7 +26,7 @@ FROM rust:${RUST_IMAGE_LABEL} AS rust-core
 ## The full Rust image depends on https://github.com/docker-library/buildpack-deps
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends ca-certificates curl \
+    && apt-get install -y --no-install-recommends ca-certificates curl pkg-config libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ## Install stable rustfmt (used by `rust-analyzer` e.g. when using VS code) and clippy
