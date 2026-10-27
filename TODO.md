@@ -340,10 +340,10 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references and local fragments, focused mdBook rendering, rendered tables/anchors, and `git diff --check` passed. All three YAML workflows passed Zizmor's offline audit. `just bb` is blocked before rendering because `cargo tree --locked` needs to update the existing `bk/crates/Cargo.lock`; no Cargo inputs changed in this batch. `just refdefs check` is Unix-only; running its script through Git Bash reports existing unresolved global labels, while all labels used by the two completed chapters resolve. Issues remain open pending the full book gate. Commits are local; no push was requested.
 
-#### NOW-PROSE-10 — Localization and internationalization
+#### NOW-PROSE-10 — Localization and internationalization - IN PROGRESS
 
-- [#404](https://github.com/john-cd/rust_howto/issues/404) — **P4** — localization/localization.md: localization: write — **NOT STARTED**
-- [#405](https://github.com/john-cd/rust_howto/issues/405) — **P4** — localization/index.md: write — **NOT STARTED**
+- [#404](https://github.com/john-cd/rust_howto/issues/404) — **P4** — localization/localization.md: localization: write — **IMPLEMENTED ON DEVELOP; OPEN — PR link pending**
+- [#405](https://github.com/john-cd/rust_howto/issues/405) — **P4** — localization/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — PR link pending**
 
 #### NOW-PROSE-11 — Asynchronous programming and caching
 
