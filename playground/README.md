@@ -14,4 +14,7 @@ examples are scratch material, with these review dispositions:
   to return a directory, file name, and extension. Use `std::path` before promoting it.
 
 The reviewed module paths example was moved to the published Modules and Paths chapter.
-Other files under `bits_and_pieces` remain experiments without a chapter-ready scope.
+`bits_and_pieces` remains an archival scratch area: its old `tool_lib` and parser
+prototypes have no package or book entry points, and no chapter references them. None of
+the remaining fragments is ready to publish. The commented-out ASCII scan in
+`just/justfile.2` had no caller and was removed during this review.
