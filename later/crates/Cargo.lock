@@ -16614,8 +16614,8 @@ dependencies = [
 name = "os_linux_apis"
 version = "0.1.2"
 dependencies = [
- "nix 0.31.3",
  "rustix 1.1.6",
+ "tempfile",
 ]
 
 [[package]]

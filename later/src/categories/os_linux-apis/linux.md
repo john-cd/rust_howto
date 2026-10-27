@@ -10,7 +10,11 @@ The index summarizes the available Linux-specific crates. These recipes show whe
 
 [`rustix`][c~rustix~docs] provides safe, typed wrappers for many Linux and POSIX system calls. Gate Linux-only operations with `#[cfg(target_os = "linux")]` and keep a clear fallback for other targets. For example, `rustix::process::getpid()` reads the current process ID without a direct unsafe syscall. For filesystem metadata or event watching, use the relevant `statx` or inotify wrapper and check its return value rather than assuming the requested feature exists on every kernel.
 
-The included starter example currently demonstrates `getpid`; the planned inotify or `statx` example and its Linux-only test are tracked separately in [#818](https://github.com/john-cd/rust_howto/issues/818).
+The included `statx` example creates a temporary file, writes a known message, and queries its open descriptor with `AtFlags::EMPTY_PATH`. It requests size and birth time, then checks the returned field mask before using either value. Birth time is optional even when the call succeeds. The temporary file is closed and removed explicitly; failures propagate to the caller.
+
+`statx` requires Linux 4.11 or later and may be denied by a host's syscall policy. A missing birth-time field is reported as unavailable; syscall errors are propagated rather than replaced by zero metadata. The example and its dependencies are gated to Linux, and other targets print a message.
+
+From `later/crates` on Linux, run `cargo run -p os_linux_apis --example linux`. The file size is 23 bytes; the birth-time output depends on the host filesystem.
 
 ## Choose an `io_uring` runtime
 
@@ -31,7 +35,7 @@ The included starter example currently demonstrates `getpid`; the planned inotif
 ## Example {#linux}
 
 ```rust,editable
-{{#include ../../../crates/cats/os_linux_apis/examples/linux/linux.rs:example}}
+{{#include ../../../crates/cats/os_linux_apis/examples/linux/statx_metadata.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}
