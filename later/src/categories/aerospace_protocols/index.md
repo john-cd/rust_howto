@@ -14,7 +14,7 @@ This guide surveys protocol choices for aircraft, uncrewed vehicles, and spacecr
 
 MAVLink is a widely used protocol for communication between drones and other unmanned vehicles and ground control stations. It is message-based and defines standard messages for flight control, telemetry, and sensor data.
 
-The [`mavlink`][c~mavlink~docs] crate provides message encoding and decoding. The selected dialect and autopilot determine which messages and commands are supported.
+The maintained [`mavlink`][c~mavlink~docs] crate provides message encoding and decoding. The selected dialect and autopilot determine which messages and commands are supported.
 
 ### CAN (Controller Area Network)
 
@@ -26,13 +26,13 @@ For Linux systems, [`socketcan`][c~socketcan~docs] exposes SocketCAN interfaces 
 
 ARINC 429 is a widely used standard for data transfer in commercial aircraft avionics. It is a unidirectional, broadcast-oriented protocol.
 
-The [`arinc429`][c~arinc429~docs] crate is a small Rust implementation to evaluate for word encoding and decoding. Direct ecosystem support remains limited; before using a crate in avionics, check its current maintenance, test coverage, and conformance against the licensed standard and target hardware. Existing C or C++ libraries may require [[development-tools_ffi | FFI]].
+No maintained ARINC 429 crate is available to recommend; the small [`arinc429`][c~arinc429~docs] implementation is a candidate for evaluation. Check its release activity, test coverage, and conformance against the licensed standard and target hardware; existing C or C++ libraries may require [[development-tools_ffi | FFI]].
 
 ### MIL-STD-1553
 
 MIL-STD-1553 is a serial data bus used in reliable, fault-tolerant military and aerospace systems.
 
-The [`mil_std_1553b`][c~mil_std_1553b~docs] crate provides Rust support for MIL-STD-1553B protocol data, though mission-ready support still depends on compatible bus-controller or remote-terminal hardware and a validated driver. Confirm the crate's current status and mission requirements before adoption; FFI or a custom implementation may be needed for a particular device.
+The maintained [`mil_std_1553b`][c~mil_std_1553b~docs] crate parses and constructs MIL-STD-1553B messages. Mission-ready support still depends on compatible bus-controller or remote-terminal hardware and a validated driver.
 
 ### SpaceWire
 
@@ -40,9 +40,9 @@ SpaceWire is a high-speed serial data bus commonly used in spacecraft and other 
 
 I found no maintained SpaceWire crate to recommend. A hardware vendor's SDK or a project-specific implementation may be needed; validate link initialization, routing, and error handling against the device and applicable standard. FFI may be required when integrating an existing vendor library.
 
-### CCSDS (Consultative Committee for Space Data Systems)
+### CCSDS
 
-CCSDS is a set of standards for space data systems, including packet telemetry and telecommand protocols. The [`spacepackets`][c~spacepackets~docs] crate implements CCSDS packets and ECSS PUS packet formats. For packet serialization examples and the [`satrs`][c~satrs~docs] framework, see the [[aerospace_space-protocols | Space Protocols]] category.
+For CCSDS packet and PUS guidance, see the [Space Protocols][p~space-protocols] category.
 
 ## Related Topics
 
