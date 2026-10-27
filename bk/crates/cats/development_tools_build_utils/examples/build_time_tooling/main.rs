@@ -68,7 +68,7 @@ fn main() -> anyhow::Result<()> {
                 cc_bundled_cpp1::run();
             }
             Commands::CcBundledStatic => {
-                cc_bundled_static::run();
+                cc_bundled_static::run()?;
             }
             Commands::CcBundledStatic1 => {
                 cc_bundled_static1::run()?;
