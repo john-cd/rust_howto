@@ -555,7 +555,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 - [#946](https://github.com/john-cd/rust_howto/issues/946) — **P3** — Write and review the external commands chapter — **PARTIAL; OPEN — stdin description corrected; platform-dependent examples, full checks, and linked PR remain**
 - [#1177](https://github.com/john-cd/rust_howto/issues/1177) — **P3** — `hardware-support/peripherals.md`: write — **PARTIAL**
-- [#427](https://github.com/john-cd/rust_howto/issues/427) — **P4** — Complete the no-std index — **PARTIAL**
+- [#427](https://github.com/john-cd/rust_howto/issues/427) — **P4** — Complete the no-std index — **IMPLEMENTED; OPEN — index and crate table clarified; crate review, refdefs, book, spelling, and linked PR remain**
 - [#968](https://github.com/john-cd/rust_howto/issues/968) — **P4** — Complete the virtualization index — **PARTIAL**
 - [#970](https://github.com/john-cd/rust_howto/issues/970) — **P4** — Complete the WebAssembly index — **PARTIAL**
 
