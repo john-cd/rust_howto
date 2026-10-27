@@ -452,8 +452,8 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-13 — Testing and observability
 
-- [#1918](https://github.com/john-cd/rust_howto/issues/1918) — **P3** — Add testing recipes: snapshots, parameterized cases, env-var isolation, HTTP mocks, paused time, heap assertions — **PARTIAL**
-- [#1934](https://github.com/john-cd/rust_howto/issues/1934) — **P3** — Add examples: instrument code for frame profiling (profiling, puffin, puffin_http) — **PARTIAL**
+- [#1918](https://github.com/john-cd/rust_howto/issues/1918) — **P3** — Add testing recipes: snapshots, parameterized cases, env-var isolation, HTTP mocks, paused time, heap assertions — **IMPLEMENTED ON DEVELOP; BLOCKED — recipes and source docs are integrated; prior testing-package run passed 44 with 1 ignored; affected-package/Clippy/refdefs/book gates remain unresolved; details are on the issue**
+- [#1934](https://github.com/john-cd/rust_howto/issues/1934) — **P3** — Add examples: instrument code for frame profiling (profiling, puffin, puffin_http) — **IMPLEMENTED ON DEVELOP; BLOCKED — profiling facade/Puffin server examples, prose, and source docs are integrated; affected-package/Clippy/refdefs/book gates remain unresolved; details are on the issue**
 
 #### VALIDATE-CODE-14 — Text processing and HTML
 
