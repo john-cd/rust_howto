@@ -181,6 +181,8 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 - [#867](https://github.com/john-cd/rust_howto/issues/867) — **P3** — examples/leptos.rs: finish — **IMPLEMENTED ON TOPIC BRANCH; OPEN — optional feature now enables Leptos CSR; feature build/test and book validation pending**
 - [#1939](https://github.com/john-cd/rust_howto/issues/1939) — **P3** — Add examples: axum add-ons (axum-extra Host and TypedHeader, axum-server TLS, flash messages, #[debug_handler], tower-cookies) — **BLOCKED ON FINAL VALIDATION — examples, recipe page, and compile-fail tip exist in the checkout; Cargo, Clippy, format, refdefs, and book gates remain**
+- [#2017](https://github.com/john-cd/rust_howto/issues/2017) — **P3** — Add an offline-testable OAuth 2.0 client-credentials example — **NOT STARTED; identified from Rust Cookbook #827**
+- [#2018](https://github.com/john-cd/rust_howto/issues/2018) — **P3** — Demonstrate mutual TLS with a client certificate — **NOT STARTED; identified from Rust Cookbook #826**
 
 #### NOW-CODE-10 — Cloud services and SDKs
 
@@ -248,6 +250,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#480](https://github.com/john-cd/rust_howto/issues/480) — **P4** — science_robotics/index.md: organize — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#481](https://github.com/john-cd/rust_howto/issues/481) — **P4** — simulation/simulation.md: simulation: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#494](https://github.com/john-cd/rust_howto/issues/494) — **P4** — `visualization/visualization.md`: visualization: write — **BLOCKED — Plotters dependency required for SVG example**
+- [#2019](https://github.com/john-cd/rust_howto/issues/2019) — **P4** — Add dependency-free numerical integration recipes — **NOT STARTED; identified from Rust Cookbook #699**
 - [#587](https://github.com/john-cd/rust_howto/issues/587) — **P4** — data-processing/dataframes.md: dataframes: organize / edit — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#1207](https://github.com/john-cd/rust_howto/issues/1207) — **P4** — science_robotics/perception_and_sensors.md: write — **PARTIAL ON DEVELOP; BLOCKED — `kiddo` example dependency unavailable**
 - [#1210](https://github.com/john-cd/rust_howto/issues/1210) — **P4** — science_robotics/simulation_visualization.md: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
@@ -255,7 +258,6 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-PROSE-04 — Publishing, curation and book coverage
 
-- [#36](https://github.com/john-cd/rust_howto/issues/36) — **P3** — Triage relevant pending Rust Cookbook issues and PRs I — **NOT STARTED**
 - [#246](https://github.com/john-cd/rust_howto/issues/246) — **P3** — Review `blessed.rs` recommendations against the book I — **NOT STARTED**
 - [#1720](https://github.com/john-cd/rust_howto/issues/1720) — **P3** — Curate remaining VS Code, browser and TOREVIEW bookmarks into book content — **BLOCKED — the Chrome bookmarks export (`bookmarks.json`) is absent from this checkout; request the source before further curation**
 - [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **Unprioritized** — Audit references and links in restored book pages A — **PARTIAL** — human scope decision also required
