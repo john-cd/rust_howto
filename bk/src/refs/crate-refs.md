@@ -9366,6 +9366,9 @@
 [c~tokio-metrics~repo~badge]: https://img.shields.io/badge/tokio--metrics-steelblue?logo=github
 [c~tokio-metrics~website]: https://tokio.rs
 [c~tokio-metrics~website~badge]: https://img.shields.io/badge/tokio--metrics-coral
+[c~tokio-native-tls~crates.io]: https://crates.io/crates/tokio-native-tls
+[c~tokio-native-tls~docs]: https://docs.rs/tokio-native-tls
+[c~tokio-native-tls~repo]: https://github.com/tokio-rs/tls
 [c~tokio-postgres~crates.io]: https://crates.io/crates/tokio-postgres
 [c~tokio-postgres~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio--postgres-crimson
 [c~tokio-postgres~docs]: https://docs.rs/tokio-postgres
