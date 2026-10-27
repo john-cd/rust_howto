@@ -5,8 +5,51 @@
 
 use morphorm::*;
 
-// Morphorm is a UI layout engine.
-// In version 0.9, it requires implementing Cache, Tree, and Store traits.
+/// Builds a tree with fixed and stretch-sized children and computes its layout.
+fn compute_layout() -> [(f32, f32, f32, f32); 3] {
+    let mut cache = SimpleCache::default();
+    let mut tree = SimpleTree::default();
+    let mut store = SimpleStore::default();
+
+    let root = Entity(0);
+    tree.add(root, None);
+    store.width.insert(root, Units::Pixels(500.0));
+    store.height.insert(root, Units::Pixels(400.0));
+
+    let fixed_child = Entity(1);
+    tree.add(fixed_child, Some(root));
+    store.width.insert(fixed_child, Units::Pixels(100.0));
+    store.height.insert(fixed_child, Units::Pixels(100.0));
+
+    let stretch_child = Entity(2);
+    tree.add(stretch_child, Some(root));
+    store.width.insert(stretch_child, Units::Stretch(1.0));
+    store.height.insert(stretch_child, Units::Pixels(100.0));
+
+    root.layout(&mut cache, &tree, &store, &mut ());
+    let bounds = |node: &Entity| {
+        (
+            cache.posx(node),
+            cache.posy(node),
+            cache.width(node),
+            cache.height(node),
+        )
+    };
+    [bounds(&root), bounds(&fixed_child), bounds(&stretch_child)]
+}
+
+/// Prints the computed position and size of each node.
+fn main() {
+    let [root, fixed_child, stretch_child] = compute_layout();
+    for (name, (x, y, width, height)) in [
+        ("Root", root),
+        ("Fixed child", fixed_child),
+        ("Stretch child", stretch_child),
+    ] {
+        println!("{name}: x={x}, y={y}, width={width}, height={height}");
+    }
+}
+// ANCHOR_END: example
 
 /// A node of the layout tree.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
@@ -247,53 +290,7 @@ impl Node for Entity {
     }
 }
 
-/// Builds a tree of nodes and computes its layout.
-pub fn main() {
-    let mut cache = SimpleCache::default();
-    let mut tree = SimpleTree::default();
-    let mut store = SimpleStore::default();
-
-    let root = Entity(0);
-    tree.add(root, None);
-    store.width.insert(root, Units::Pixels(500.0));
-    store.height.insert(root, Units::Pixels(400.0));
-
-    let child1 = Entity(1);
-    tree.add(child1, Some(root));
-    store.width.insert(child1, Units::Pixels(100.0));
-    store.height.insert(child1, Units::Pixels(100.0));
-
-    let child2 = Entity(2);
-    tree.add(child2, Some(root));
-    store.width.insert(child2, Units::Pixels(200.0));
-    store.height.insert(child2, Units::Pixels(100.0));
-
-    root.layout(&mut cache, &tree, &store, &mut ());
-
-    println!(
-        "Root bounds: ({}, {}, {}, {})",
-        cache.posx(&root),
-        cache.posy(&root),
-        cache.width(&root),
-        cache.height(&root)
-    );
-    println!(
-        "Child 1 bounds: ({}, {}, {}, {})",
-        cache.posx(&child1),
-        cache.posy(&child1),
-        cache.width(&child1),
-        cache.height(&child1)
-    );
-    println!(
-        "Child 2 bounds: ({}, {}, {}, {})",
-        cache.posx(&child2),
-        cache.posy(&child2),
-        cache.width(&child2),
-        cache.height(&child2)
-    );
-}
-// ANCHOR_END: example
-
+/// Runs the Morphorm layout example.
 pub fn run() {
     main();
 }
@@ -302,9 +299,17 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the morphorm example through its entry point.
+    /// Verifies that a stretch child fills the parent space after a fixed
+    /// sibling.
     #[test]
-    #[ignore = "requires an interactive example runtime"]
+    fn stretch_child_uses_remaining_width() {
+        let [_, _, stretch_child] = compute_layout();
+        assert_eq!(stretch_child.0, 100.0);
+        assert_eq!(stretch_child.2, 400.0);
+    }
+
+    /// Runs the deterministic Morphorm layout example entry point.
+    #[test]
     fn test_morphorm_example_entry_point() {
         main();
     }

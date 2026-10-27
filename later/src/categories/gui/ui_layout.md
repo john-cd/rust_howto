@@ -33,6 +33,8 @@ Morphorm is suitable for various use cases, including:
 {{#include ../../../crates/cats/gui/examples/ui_layout/morphorm.rs:example}}
 ```
 
+The compact snippet omits the small `Node`, `Tree`, `Store`, and `Cache` implementations required by Morphorm; the complete implementations remain in the compiled example.
+
 ## Related Topics {#related-topics .skip}
 
 - GUI frameworks and rendering.
