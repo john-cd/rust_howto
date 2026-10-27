@@ -2,6 +2,9 @@
 #![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
+// Preserved for reference; Cargo.toml keeps this ROS 1 example disabled while
+// rosrust depends on affected, unmaintained transitive packages.
+
 // ANCHOR: example
 //! Example: publish and subscribe to a simple ROS topic using `rosrust`.
 //!

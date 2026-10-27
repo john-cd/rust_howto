@@ -4,9 +4,7 @@
 
 {{#include robotics_frameworks.incl.md}}
 
-High-level robotics frameworks in pure Rust are still emerging.
-
-The `zenoh` dependency is optional so users of the other robotics examples do not need its networking stack. To run the example, from `later/crates`, use `cargo run -p science_robotics --example robotics_frameworks --features zenoh -- zenoh`.
+High-level robotics frameworks in pure Rust are still emerging. Zenoh and OpenRR source examples remain available, but their Cargo features and example registrations are commented out because their dependency trees include unresolved security advisories.
 
 ## Zero Overhead Pub/Sub/Query Protocol with `zenoh` {#zenoh}
 
@@ -19,13 +17,13 @@ The `zenoh` dependency is optional so users of the other robotics examples do no
 
 [Zenoh][c~zenoh~website]↗{{hi:zenoh}} is a zero-overhead Pub/Sub/Query protocol. Zenoh (pronounced as /zeno/) unifies data in motion, data at rest and computations. It blends traditional pub/sub with geo-distributed storages, queries and computations, while retaining time and space efficiency.
 
-Zenoh is a great tool for data storage, query, and computations over geographically distributed systems.
+Zenoh is a tool for data storage, queries, and computations over geographically distributed systems. The preserved example publishes and receives local telemetry, but is not compiled while Zenoh requires affected `lz4_flex 0.10`:
 
-Zenoh deals with keys/values where each key is a path and is associated to a value. A key looks like just a Unix file system path, such as `myhome/kitchen/temperature`. The value can be defined with different encodings (string, [JSON][p~json], raw bytes buffers).
-
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/science_robotics/examples/robotics_frameworks/zenoh.rs:example}}
 ```
+
+Zenoh deals with keys/values where each key is a path and is associated to a value. A key looks like just a Unix file system path, such as `myhome/kitchen/temperature`. The value can be defined with different encodings (string, [JSON][p~json], raw bytes buffers).
 
 ## Open Rust Robotics {#open-rust-robotics}
 
@@ -36,9 +34,7 @@ Zenoh deals with keys/values where each key is a path and is associated to a val
 
 [`openrr`][c~openrr~docs]↗{{hi:openrr}} (Open Rust Robotics)
 
-```rust,editable
-{{#include ../../../crates/cats/science_robotics/examples/robotics_frameworks/openrr.rs:example}}
-```
+The preserved Rust source is still only a placeholder. Its dependency tree includes affected `fast-float` and `serde_with` releases, so the Cargo feature and example registration remain commented out until those dependencies can be updated.
 
 ## `copper` {#copper}
 

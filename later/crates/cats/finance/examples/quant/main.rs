@@ -8,9 +8,9 @@ mod rustquant;
 mod trading_days;
 
 /// Runs the quant examples.
-fn main() -> trading_calendar::Result<()> {
+fn main() {
     rustquant::run();
     black_scholes::run();
     rolling_stats::run();
-    trading_days::run()
+    trading_days::run();
 }
