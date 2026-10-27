@@ -190,6 +190,82 @@ mod tests {
         assert!(!hidden_includes.is_match("{{#include _hidden_chapter.md}}"));
     }
 
+    /// Verifies that enabling only one option generates only that specific pattern.
+    #[test]
+    fn test_get_regexes_partial_config() {
+        let sections_only = PreprocConfig {
+            remove_hidden_sections: true,
+            do_not_include_hidden_chapters: false,
+            hidden_chapter_prefix: "_".into(),
+        };
+        let regexes_sections = get_regexes(&sections_only);
+        assert!(regexes_sections.hidden_sections.is_some());
+        assert!(regexes_sections.hidden_includes.is_none());
+
+        let includes_only = PreprocConfig {
+            remove_hidden_sections: false,
+            do_not_include_hidden_chapters: true,
+            hidden_chapter_prefix: "_".into(),
+        };
+        let regexes_includes = get_regexes(&includes_only);
+        assert!(regexes_includes.hidden_sections.is_none());
+        assert!(regexes_includes.hidden_includes.is_some());
+    }
+
+    /// Verifies that regex meta-characters in the chapter prefix are properly escaped.
+    #[test]
+    fn test_get_regexes_special_characters_in_prefix() {
+        let conf = PreprocConfig {
+            remove_hidden_sections: false,
+            do_not_include_hidden_chapters: true,
+            hidden_chapter_prefix: "[draft].".into(),
+        };
+        let regexes = get_regexes(&conf);
+
+        let hidden_includes = regexes
+            .hidden_includes
+            .expect("prefix with regex special characters should be built");
+        assert!(hidden_includes.is_match("{{#include [draft].chapter.md}}"));
+        assert!(!hidden_includes.is_match("{{#include d.chapter.md}}"));
+        assert!(!hidden_includes.is_match("{{#include draft.chapter.md}}"));
+    }
+
+    /// Verifies hidden section HTML matching against various div structures and attributes.
+    #[test]
+    fn test_get_regexes_hidden_sections_matching_behavior() {
+        let conf = PreprocConfig::default();
+        let regexes = get_regexes(&conf);
+        let hidden_sections = regexes
+            .hidden_sections
+            .expect("hidden_sections regex should be created");
+
+        assert!(hidden_sections.is_match(r#"<div class="hidden">secret text</div>"#));
+        assert!(hidden_sections.is_match(r#"<div   class  =  "hidden"  >secret text</  div  >"#));
+        assert!(hidden_sections.is_match("<div class=\"hidden\">line1\nline2</div>"));
+        assert!(hidden_sections.is_match(r#"<div class="hidden"><span>nested</span></div>"#));
+
+        assert!(!hidden_sections.is_match(r#"<div class="visible">public text</div>"#));
+        assert!(!hidden_sections.is_match("<div>no class</div>"));
+    }
+
+    /// Verifies hidden include pattern matching across all directive types and spacing.
+    #[test]
+    fn test_get_regexes_hidden_includes_directives() {
+        let conf = PreprocConfig::default();
+        let regexes = get_regexes(&conf);
+        let hidden_includes = regexes
+            .hidden_includes
+            .expect("hidden_includes regex should be created");
+
+        assert!(hidden_includes.is_match("{{#include _secret.rs}}"));
+        assert!(hidden_includes.is_match("{{#rustdoc_include _secret.rs:anchor}}"));
+        assert!(hidden_includes.is_match("{{#playground _secret.rs}}"));
+        assert!(hidden_includes.is_match("{{  #include  _secret.rs  }}"));
+
+        assert!(!hidden_includes.is_match("{{#include public.rs}}"));
+        assert!(!hidden_includes.is_match("{{#other_directive _secret.rs}}"));
+    }
+
     /// Verifies that cleanup leaves wikilinks inside code and HTML comments unchanged.
     #[test]
     fn replacement_skips_code_and_html_comments() {
