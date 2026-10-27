@@ -4,48 +4,64 @@
 
 {{#include simulation_visualization.incl.md}}
 
-Physics [simulation][p~simulation], 3D [visualization][p~visualization], testing environments.
+Robotics simulations combine a physical model, sensor or controller data, and tools for inspection. Keep the simulator headless for repeatable runs, then send recorded state to a viewer or charting backend.
 
-## Physics Simulation for Robots {#physics-simulation .skip}
+## Record Robot State with Rerun {#rerun}
 
-- [`rapier`][rapier.rs~website]↗{{hi:rapier}} - 2 and 3-dimensional rigid body physics engine for Rust.
-- Rust [`zmqRemoteApi`][c~zmqRemoteApi~docs]{{hi:zmqRemoteApi}} - A Rust ZeroMQ remote API client for coppeliasim robotics simulator.
+[![rerun][c~rerun~docs~badge]][c~rerun~docs]
 
-## Visualization {#visualization .skip}
+Rerun records time-indexed robot data and can buffer it in memory. A points log can show chassis vertices, sensor locations, or path samples:
 
-Graphics and [visualization][p~visualization] for Robotics.
+```rust,ignore
+fn log_robot_pose() -> Result<(), Box<dyn std::error::Error>> {
+    let (recording, storage) = rerun::RecordingStreamBuilder::new("robotics").memory()?;
+    recording.set_time_sequence("frame", 42);
+    recording.log(
+        "robot/chassis",
+        &rerun::Points3D::new([(0.0, 0.0, 0.0), (1.0, 0.0, 0.0)]),
+    )?;
+    let _logged_chunks = storage.take();
+    Ok(())
+}
+```
 
-- [`kiss3d`][c~kiss3d~crates.io]↗{{hi:kiss3d}} - Keep it simple, stupid 3D [graphics][p~graphics] engine for Rust.
-- [`urdf-viz`][c~urdf-viz~crates.io]↗{{hi:urdf-viz}} - URDF visualizer
-- [`rerun`][c~rerun~docs]↗{{hi:rerun}} - A logging SDK and visualizer for computer vision and robotics
+## Simulate Robot Physics with Rapier {#physics-simulation}
 
-### `kiss3d` {#kiss3d}
+[![rapier2d][c~rapier2d~docs~badge]][c~rapier2d~docs]
 
-Simple 3D [graphics][p~graphics] engine for visualization.
+Rapier provides 2D and 3D rigid-body physics. This headless example drops a simple robot chassis onto a floor and checks its resting height and speed; see the [physics engines chapter][p~physics-engines] for broader guidance.
 
-### `urdf-viz` {#urdf-viz}
+```rust,editable
+{{#include ../../../crates/cats/science_robotics/examples/simulation_visualization/robot_simulation.rs:example}}
+```
 
-URDF visualizer for robot models.
+## Build an Interactive Environment with Bevy {#game-engine}
 
-### `rerun` {#rerun}
+[![bevy][c~bevy~docs~badge]][c~bevy~docs]
 
-Logging SDK and visualizer for robotics.
+Bevy provides an ECS-based game engine for interactive robot scenes. The old standalone `bevy_rapier` repository is archived; its integration now lives in the [Rapier repository][bevy_rapier~repo]. Choose a plugin release compatible with the Bevy version in your project.
+
+## Plot Simulation Results {#plot-results}
+
+[![plotters][c~plotters~docs~badge]][c~plotters~docs]
+
+Use Plotters for static plots of numeric traces such as position, speed, or controller error. Its `svg_backend` feature enables portable SVG output; select only the backend features the application needs.
+
+## Other Visualization Tools {#other-tools .skip}
+
+- [`kiss3d`][c~kiss3d~crates.io] provides a lightweight 3D viewer.
+- [`urdf-viz`][c~urdf-viz~crates.io] visualizes robot descriptions in URDF format.
+- [`zmqRemoteApi`][c~zmqRemoteApi~docs] connects Rust clients to the CoppeliaSim robotics simulator.
 
 ## Related Topics {#related-topics .skip}
 
-- Robotics development and testing.
-- Simulation engines and visualization.
-- Sensor and motion planning tools.
-- [Robot operating systems](./robot_operating_systems.md).
+- [[robotics_frameworks | Robotics Frameworks]].
+- [[robot_operating_systems | Robot Operating Systems]].
+- [[simulation | Simulation]].
+- [[visualization | Visualization]].
 - [[aerospace_simulation | Aerospace Simulation]].
 
-Game engines such as [`bevy`][c~bevy~docs] can also support interactive robotics simulations.
-
-For ROS 2 data visualization outside Rust applications, [Foxglove][foxglove~ros2] supports live ROS 2 connections and recorded MCAP files.
+For ROS 2 data visualization outside Rust applications, [Foxglove][foxglove~ros2] supports live connections and recorded MCAP files.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/1210)
-</div>

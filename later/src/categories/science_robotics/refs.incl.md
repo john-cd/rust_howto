@@ -12,6 +12,7 @@
 [ex~science_robotics~open-rust-robotics]: robotics_frameworks.md#open-rust-robotics
 [ex~science_robotics~openrr-planner]: control_systems.md#openrr-planner
 [ex~science_robotics~pathfinding]: control_systems.md#pathfinding
+[ex~science_robotics~physics-simulation]: simulation_visualization.md#physics-simulation
 [ex~science_robotics~pid]: control_systems.md#pid
 [ex~science_robotics~r2r]: robot_operating_systems.md#r2r
 [ex~science_robotics~rerun]: simulation_visualization.md#rerun
@@ -26,6 +27,8 @@
 [dora~repo]: https://github.com/dora-rs/dora
 [ehmi~repo]: https://github.com/roboplc/ehmi
 [faer~docs]: https://docs.rs/faer/latest/faer/
+[c~rapier2d~docs]: https://docs.rs/rapier2d/latest/rapier2d/
+[bevy_rapier~repo]: https://github.com/dimforge/rapier/tree/master/bindings/bevy_rapier
 [foxglove~ros2]: https://docs.foxglove.dev/docs/getting-started/frameworks/ros2
 [kornia-rs~repo]: https://github.com/kornia/kornia-rs
 [roboplc~repo]: https://github.com/roboplc/roboplc
@@ -55,3 +58,4 @@
 [p~simulation]: ../simulation/simulation.md
 [p~unix]: ../os_unix-apis/unix.md
 [p~visualization]: ../visualization/visualization.md
+[p~physics-engines]: ../simulation/physics_engines.md

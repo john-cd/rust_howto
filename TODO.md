@@ -286,7 +286,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#494](https://github.com/john-cd/rust_howto/issues/494) — **P4** — `visualization/visualization.md`: visualization: write — **BLOCKED — Plotters dependency required for SVG example**
 - [#587](https://github.com/john-cd/rust_howto/issues/587) — **P4** — data-processing/dataframes.md: dataframes: organize / edit — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#1207](https://github.com/john-cd/rust_howto/issues/1207) — **P4** — science_robotics/perception_and_sensors.md: write — **PARTIAL ON DEVELOP; BLOCKED — `kiddo` example dependency unavailable**
-- [#1210](https://github.com/john-cd/rust_howto/issues/1210) — **P4** — science_robotics/simulation_visualization.md: write — **PARTIAL ON DEVELOP; IN PROGRESS — parent links added; example and page content remain**
+- [#1210](https://github.com/john-cd/rust_howto/issues/1210) — **P4** — science_robotics/simulation_visualization.md: write — **IMPLEMENTED ON TOPIC BRANCH; OPEN — final validation and PR link pending**
 - [#1211](https://github.com/john-cd/rust_howto/issues/1211) — **P4** — science_robotics/hardware_integration.md: write — **PARTIAL ON DEVELOP; BLOCKED — `embedded-hal-mock` example dependency unavailable**
 
 #### NOW-PROSE-04 — Publishing, curation and book coverage
