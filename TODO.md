@@ -656,7 +656,7 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 #### DEFERRED-CODE-05 — Localization and internationalization
 
 - [#796](https://github.com/john-cd/rust_howto/issues/796) — **P4** — internationalization/internationalization1.rs: write — **IMPLEMENTED; OPEN — ICU number and date formatting in two locales; tests, lints, book validation, and linked PR remain**
-- [#797](https://github.com/john-cd/rust_howto/issues/797) — **P4** — localization/localization1.rs: write — **NOT STARTED; DEFERRED**
+- [#797](https://github.com/john-cd/rust_howto/issues/797) — **P4** — localization/localization1.rs: write — **PARTIAL; DEFERRED — Fluent dependencies and translation/plural example remain; details are on the issue**
 
 #### DEFERRED-CODE-06 — Aerospace and device protocols
 
