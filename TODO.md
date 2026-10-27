@@ -527,18 +527,18 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-05 — Web, networking and databases
 
-- [#944](https://github.com/john-cd/rust_howto/issues/944) — **P2** — `network-programming/index.md`: write; add cross-links; review; review `email_address`, `fast_chemail` — **PARTIAL**
-- [#974](https://github.com/john-cd/rust_howto/issues/974) — **P2** — `web-programming_http-client/apis.md`: review / fix — **PARTIAL**
-- [#977](https://github.com/john-cd/rust_howto/issues/977) — **P2** — `web-programming_http-server/index.md`: write / review in depth — **PARTIAL**
-- [#238](https://github.com/john-cd/rust_howto/issues/238) — **P3** — Networking CLI chapter E — **PARTIAL**
-- [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples B — **PARTIAL**
-- [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance B — **PARTIAL**
-- [#291](https://github.com/john-cd/rust_howto/issues/291) — **P3** — — Search engines chapter — **PARTIAL**
-- [#971](https://github.com/john-cd/rust_howto/issues/971) — **P3** — `web-programming/mime.md`: review — **PARTIAL**
-- [#972](https://github.com/john-cd/rust_howto/issues/972) — **P3** — `web-programming/scraping.md`: review — **PARTIAL**
-- [#978](https://github.com/john-cd/rust_howto/issues/978) — **P3** — `web-programming_http-server/middleware.md`: review — **PARTIAL**
-- [#1064](https://github.com/john-cd/rust_howto/issues/1064) — **P3** — `database/amqp.md`: finish — **PARTIAL**
-- [#979](https://github.com/john-cd/rust_howto/issues/979) — **P4** — Review the WebSocket index — **PARTIAL**
+- [#944](https://github.com/john-cd/rust_howto/issues/944) — **P2** — `network-programming/index.md`: write; add cross-links; review; review `email_address`, `fast_chemail` — **PARTIAL ON DEVELOP; BLOCKED — network index and cross-links are present; refreshed crates.io maintenance review, refdefs/spelling/book gates, and linked PR remain; details are on the issue**
+- [#974](https://github.com/john-cd/rust_howto/issues/974) — **P2** — `web-programming_http-client/apis.md`: review / fix — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Clippy, refdefs, and book build passed; example/spelling and all-features checks remain; details are on the issue**
+- [#977](https://github.com/john-cd/rust_howto/issues/977) — **P2** — `web-programming_http-server/index.md`: write / review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
+- [#238](https://github.com/john-cd/rust_howto/issues/238) — **P3** — Networking CLI chapter E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior spelling/refdefs/Markdown checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
+- [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused and live PostgreSQL checks passed; nextest selector and full gates remain; details are on the issue**
+- [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Clippy and live PostgreSQL checks passed; nextest selector, full gates, and repository-wide refdefs remain; details are on the issue**
+- [#291](https://github.com/john-cd/rust_howto/issues/291) — **P3** — — Search engines chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — search overview and comparison are present; Meilisearch service verification and refdefs/book/spelling gates remain; details are on the issue**
+- [#971](https://github.com/john-cd/rust_howto/issues/971) — **P3** — `web-programming/mime.md`: review — **IMPLEMENTED ON DEVELOP; BLOCKED — MIME guidance and examples are present; native-build, focused tests, full gates, and linked PR remain; details are on the issue**
+- [#972](https://github.com/john-cd/rust_howto/issues/972) — **P3** — `web-programming/scraping.md`: review — **IMPLEMENTED ON DEVELOP; BLOCKED — scraping guidance and offline fixtures are present; native-build, focused tests, full gates, and linked PR remain; details are on the issue**
+- [#978](https://github.com/john-cd/rust_howto/issues/978) — **P3** — `web-programming_http-server/middleware.md`: review — **IMPLEMENTED ON DEVELOP; BLOCKED — prior middleware tests/Clippy and direct mdBook build passed; book wrapper, Unix spelling, and linked PR remain; details are on the issue**
+- [#1064](https://github.com/john-cd/rust_howto/issues/1064) — **P3** — `database/amqp.md`: finish — **IMPLEMENTED ON DEVELOP; BLOCKED — AMQP guide and example are present; RabbitMQ service and native-build/full gates remain; details are on the issue**
+- [#979](https://github.com/john-cd/rust_howto/issues/979) — **P4** — Review the WebSocket index — **IMPLEMENTED ON DEVELOP; BLOCKED — WebSocket index and direct reference checks are present; book/refdefs/spelling gates remain; details are on the issue**
 
 #### VALIDATE-PROSE-06 — Filesystem utilities, shells and compression
 
