@@ -335,7 +335,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### NOW-INFRA-04 — Windows validation and tooling repairs
 
-- [#1983](https://github.com/john-cd/rust_howto/issues/1983) — **P3** — Finish Windows validation and reference-generator repairs — **PARTIAL**
+- [#1983](https://github.com/john-cd/rust_howto/issues/1983) — **P3** — Finish Windows validation and reference-generator repairs — **BLOCKED FOR COMPLETION — Windows full-suite/linker failures remain; Oracle Instant Client and a compatible OpenTelemetry release are unavailable; reference generation and book-link checks are unfinished**
 
 #### NOW-INFRA-05 — Contributor hooks and container setup
 
