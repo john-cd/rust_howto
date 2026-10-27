@@ -12,16 +12,16 @@ While there aren't dominant, all-encompassing multimedia frameworks in Rust yet,
 
 ## Sub-categories
 
-- [[multimedia_audio | Audio]]: playback, decoding, resampling, and WAV files.
-- [[multimedia_images | Images]]: loading, transforming, and encoding images.
-- [[multimedia_video | Video]]: FFmpeg, GStreamer, and frame analysis.
-- [[multimedia_encoding | Encoding]]: codecs and container formats.
+- [Audio](../multimedia_audio/index.md): playback, decoding, resampling, and WAV files.
+- [Images](../multimedia_images/index.md): loading, transforming, and encoding images.
+- [Video](../multimedia_video/index.md): FFmpeg, GStreamer, and frame analysis.
+- [Encoding](../multimedia_encoding/index.md): codecs and container formats.
 
 Real-time streaming (RTSP, WebRTC, RTP) is covered in [Streaming Media](streaming.md). For transport protocols and networking, see [[network-programming | Network Programming]].
 
 ## Related Topics
 
-- [[graphics | Graphics]], [[rendering | Rendering]], [[rendering_data-formats | Rendering Data Formats]], [[rendering_engines | Rendering Engines]], [[rendering_graphics-api | Rendering: Graphics API]].
+- [[graphics | Graphics]], [[rendering | Rendering]], [[rendering_data-formats | Rendering Data Formats]], [Rendering Engines](../rendering_engine/index.md), [[rendering_graphics-api | Rendering: Graphics API]].
 - [[wasm | WASM]], [[gui | GUI]] and [[embedded | Embedded Systems]] for other targets.
 - [[memory-management | Memory Management]], [[concurrency | Concurrency]], [[development-tools_profiling | Profiling]], [[benchmarking | Benchmarking]] and [[hardware-support | Hardware]] acceleration for performance.
 

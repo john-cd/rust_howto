@@ -567,7 +567,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 - [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter and example F — **PARTIAL**
 - [#453](https://github.com/john-cd/rust_howto/issues/453) — **P4** — Finish and validate the glTF example D — **IMPLEMENTED; OPEN — model-format chapter and metadata-count example present; tests, Clippy, refdefs, book, spelling, and linked PR remain**
 - [#638](https://github.com/john-cd/rust_howto/issues/638) — **P4** — Clipboard chapter F — **PARTIAL**
-- [#940](https://github.com/john-cd/rust_howto/issues/940) — **P4** — Complete the multimedia index — **PARTIAL**
+- [#940](https://github.com/john-cd/rust_howto/issues/940) — **P4** — Complete the multimedia index — **IMPLEMENTED; OPEN — subcategory and streaming links present; refdefs, book, spelling, and linked PR remain**
 - [#942](https://github.com/john-cd/rust_howto/issues/942) — **P4** — Complete the images index — **PARTIAL; OPEN — task table links repaired and image recipes present; example checks, refdefs, book, spelling, and linked PR remain**
 - [#943](https://github.com/john-cd/rust_howto/issues/943) — **P4** — Complete the video index — **PARTIAL; OPEN — GStreamer and FFmpeg release status reviewed; external media setup, refdefs, book, spelling, and linked PR remain**
 - [#953](https://github.com/john-cd/rust_howto/issues/953) — **P4** — Complete the rendering index — **PARTIAL; OPEN — subpages nested and recipe tables grouped; content review, refdefs, book, spelling, and linked PR remain**
