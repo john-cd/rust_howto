@@ -25,7 +25,7 @@ fn greeting() -> &'static str {
 /// A simple function that returns a JavaScript string.
 #[cfg(feature = "node")]
 fn hello(mut cx: FunctionContext<'_>) -> JsResult<'_, JsString> {
-    // Create a JavaScript string
+    // Create a JavaScript string.
     Ok(cx.string(greeting()))
 }
 
@@ -34,21 +34,18 @@ fn hello(mut cx: FunctionContext<'_>) -> JsResult<'_, JsString> {
 #[cfg(feature = "node")]
 #[::neon::main]
 fn register(mut cx: ModuleContext<'_>) -> NeonResult<()> {
-    // Expose the hello function to JavaScript
+    // Expose the hello function to JavaScript.
     cx.export_function("hello", hello)?;
     Ok(())
 }
-// ANCHOR_END: example
 
+// TODO fix - should excercise the Neon module through Node.js runtime.
 /// Runs the host-independent part without pretending to load a Node addon.
 fn main() {
     println!("{}", greeting());
 }
+// ANCHOR_END: example
 
-/// Runs the Neon example.
-///
-/// Note: This is a placeholder as Neon modules are typically executed
-/// within a Node.js environment.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main();
     Ok(())
@@ -56,13 +53,13 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 
 #[cfg(test)]
 mod tests {
-    // use super::*;
+    use super::*;
 
     /// Verifies that the neon example's main path succeeds.
     #[test]
     #[ignore = "requires Node module runtime"]
     fn test_neon_example_entry_point() {
-        // TODO main().unwrap();
+        main();
     }
 
     /// Checks the string returned by the native callback without Node.js.
@@ -71,4 +68,3 @@ mod tests {
         assert_eq!(super::greeting(), "hello from neon!");
     }
 }
-// [finish how to test](https://github.com/john-cd/rust_howto/issues/1033)?
