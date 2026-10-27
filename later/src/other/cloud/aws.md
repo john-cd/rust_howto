@@ -34,6 +34,8 @@ See also the ["Create Lambda Functions with Rust"][aws-create-lambda-functions-w
 AWS has developed an official AWS SDK for Rust, which allows developers to interact with AWS services using the Rust programming language.
 This SDK provides a set of libraries that simplify the use of services like Amazon S3, Amazon EC2, DynamoDB, and others.
 
+The example loads configuration with `aws-config` and uses its default credential provider chain. Supply credentials through the environment, a shared profile or SSO, or an assigned workload role; never put access keys in source code. The example lists buckets visible to the active AWS identity and is ignored in tests because it needs AWS credentials and network access.
+
 See, for example:
 
 - [AWS Rust SDK][aws-rust-sdk~website]↗{{hi:AWS}}.
@@ -103,6 +105,16 @@ Hide the queue behind `MessagePublisher` and `MessageSubscriber` traits so busin
 {{#include ../../../crates/other/examples/cloud/aws_message_bus.rs:example}}
 ```
 
+## Deploy a Rust Service {#deploy-rust-service}
+
+Build and publish a container image for your Rust service; see [[using_containers | Using Containers]] for a Dockerfile walkthrough. Choose an AWS target based on how much infrastructure you want to manage:
+
+- **Amazon ECS Express Mode:** Provide a container image and the required IAM roles; ECS provisions a Fargate service, load balancer, scaling, and networking. See [Creating an Amazon ECS Express Mode service][aws-ecs~express-mode~docs]↗.
+- **Amazon ECS on AWS Fargate:** Run ECS tasks and services on managed compute without managing host instances. See [ECS capacity options][aws-ecs~capacity-options~docs]↗.
+- **Amazon EKS:** Use a managed Kubernetes control plane when the application needs Kubernetes APIs or fits an existing Kubernetes platform; choose EC2 or Fargate for pod compute. See [EKS deployment options][aws-eks~deployment-options~docs]↗.
+- **Amazon EC2:** Run a container or binary on virtual machines when you need operating-system or instance-level control and can manage patching and scaling. See the [Amazon EC2 User Guide][aws-ec2~user-guide]↗.
+- **AWS App Runner:** App Runner can deploy source code or an image as a managed web service, but AWS has closed it to new customers. Existing customers can continue using it; new deployments should consider ECS Express Mode. See [App Runner availability][aws-app-runner~availability]↗.
+
 ## References {#references .skip}
 
 - [AWS and Rust][blog~sustainability-with-rust]↗.
@@ -117,15 +129,3 @@ Hide the queue behind `MessagePublisher` and `MessageSubscriber` traits so busin
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[aws: write](https://github.com/john-cd/rust_howto/issues/574)
-Cover?
-Containerized Applications on AWS Fargate, ECS, EKS
-Deploy Rust Applications to Elastic Beanstalk
-Deploy Rust Applications to App Runner
-Deploy Rust Applications to EC2 machines
-
-- [`aws-config`][c~aws-config~lib.rs]↗.
-
-</div>

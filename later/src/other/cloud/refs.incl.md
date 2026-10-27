@@ -15,6 +15,11 @@
 [cargo-lambda~website]: https://www.cargo-lambda.info/
 [dapr~rust~sdk~docs]: https://docs.dapr.io/developing-applications/sdks/rust/
 [fly~rust~hosting~guide]: https://fly.io/learn/rust-hosting/
+[aws-app-runner~availability]: https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html
+[aws-ecs~express-mode~docs]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-create-full.html
+[aws-ecs~capacity-options~docs]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/capacity-launch-type-comparison.html
+[aws-eks~deployment-options~docs]: https://docs.aws.amazon.com/eks/latest/userguide/eks-deployment-options.html
+[aws-ec2~user-guide]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
 [p~apis]: ../../categories/web-programming_http-client/apis.md
 [p~aws]: aws.md
 [p~building]: ../../categories/development-tools_cargo-plugins/building.md

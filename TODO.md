@@ -263,7 +263,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-PROSE-05 — Cloud platforms and containers
 
-- [#574](https://github.com/john-cd/rust_howto/issues/574) — **P4** — cloud/aws.md: aws: write — **NOT STARTED**
+- [#574](https://github.com/john-cd/rust_howto/issues/574) — **P4** — cloud/aws.md: aws: write — **IMPLEMENTED — pending final crate and book validation**
 - [#576](https://github.com/john-cd/rust_howto/issues/576) — **P4** — cloud/rust_native_cloud_development.md: write — **NOT STARTED**
 - [#988](https://github.com/john-cd/rust_howto/issues/988) — **P4** — virtualization/containers.md: review/write — **NOT STARTED**
 - [#1224](https://github.com/john-cd/rust_howto/issues/1224) — **P4** — virtualization/using_containers.md: write / fix — **NOT STARTED**
