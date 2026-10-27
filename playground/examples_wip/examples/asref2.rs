@@ -2,7 +2,6 @@
 // TODO explain this is last resort
 
 #![expect(dead_code, reason = "scratch example with unused items")]
-
 // ANCHOR: example
 //! Implement `AsRef` to "emulate inheritance".
 
