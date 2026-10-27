@@ -407,7 +407,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-05 — Foreign function interfaces
 
-- [#738](https://github.com/john-cd/rust_howto/issues/738) — **P4** — CXX bridge F — **PARTIAL**
+- [#738](https://github.com/john-cd/rust_howto/issues/738) — **P4** — CXX bridge F — **IMPLEMENTED ON DEVELOP; BLOCKED — prior CXX example tests and strict Clippy passed; required book gate stops in Windows AWS-LC/NASM/MSVC; details are on the issue**
 
 #### VALIDATE-CODE-06 — Desktop UI, accessibility, games and GPU
 
