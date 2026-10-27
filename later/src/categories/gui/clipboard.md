@@ -18,6 +18,8 @@ This example uses the builder API in `arboard` 3.7.0: `set().text(...)` writes t
 {{#include ../../../crates/cats/gui/examples/clipboard/arboard.rs:example}}
 ```
 
+For images, construct an `arboard::ImageData` with the width, height, and RGBA pixel bytes, then call `clipboard.set().image(image)`. Read an available image with `clipboard.get().image()` and use its dimensions and bytes. Image support uses the `image-data` feature, which is enabled by default; clipboard contents may not include an image, so handle read errors.
+
 On Linux, clipboard contents are served by the application that set them, so they may become unavailable when it exits unless another app or clipboard manager has requested or retained them. The default `arboard` backend uses X11 or XWayland; for native Wayland, enable its `wayland-data-control` feature and check that the target compositor supports the required data-control protocol. If it does not, the application may need XWayland. Keep the `Clipboard` instance alive as appropriate and test clipboard persistence on the target desktop.
 
 ## Windows Clipboard Formats {#windows-clipboard-formats}
