@@ -113,5 +113,6 @@ mod tests {
         expected.sort();
 
         assert_eq!(publish_and_receive(config).await?, expected);
+        Ok(())
     }
 }
