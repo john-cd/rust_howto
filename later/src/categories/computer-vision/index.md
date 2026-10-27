@@ -47,7 +47,7 @@ See [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]].
 - [`tract`][c~tract~docs]↗{{hi:tract}} provides a framework for running and training neural networks, including those used in computer vision.
 - [`candle`][c~candle_core~docs]↗{{hi:candle}} provides a minimal and efficient tensor library for machine learning.
 
-See [[_machine_learning |  Machine Learning]].
+See [[_machine_learning | Machine Learning]].
 
 ## Robotics
 

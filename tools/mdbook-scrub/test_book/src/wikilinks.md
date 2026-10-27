@@ -11,7 +11,7 @@ The following wikilinks should be replaced by their `title`, if present:
 - ~~[[file]]~~
 - ~~[[ file ]]~~
 - ~~[[ file |]]~~
-- ~~[[ file |  ]]~~
+- ~~[[ file | ]]~~
 - ~~[[ file | title1 ]]~~
 - ~~[[file|title2]]~~
 - ~~[[ file|title3]]~~

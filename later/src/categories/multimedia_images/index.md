@@ -14,11 +14,11 @@ For most common image tasks, the [`image`][c~image~docs]↗{{hi:image}} crate wi
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Load, save and convert formats    | [`image`][c~image~docs]↗{{hi:image}}                                                                                              |
 | Resize and crop                   | [`image`][c~image~docs]↗{{hi:image}}, [`fast_image_resize`][c~fast_image_resize~docs]↗{{hi:fast_image_resize}} (SIMD-accelerated) |
-| Filters, drawing and geometry     | [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} (see [[2d_raster_graphics | 2D Raster Graphics]])                 |
+| Filters, drawing and geometry     | [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} (see [[2d_raster_graphics                                                        | 2D Raster Graphics]]) |
 | Read metadata (EXIF)              | [`kamadak-exif`][kamadak-exif~repo]↗                                                                                              |
 | Optimize PNG files                | [`oxipng`][oxipng~repo]↗                                                                                                          |
 | Fast decoders                     | [`zune-image`][zune-image~repo]↗                                                                                                  |
-| Detect objects, faces or features | See [[computer-vision | Computer Vision]].                                                                   |
+| Detect objects, faces or features | See [[computer-vision                                                                                                             | Computer Vision]]. |
 
 The example creates an image in memory, resizes it and converts it to grayscale. It needs no files.
 

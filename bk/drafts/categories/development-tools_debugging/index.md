@@ -8,8 +8,8 @@ Helps figure out what is going on with your code such as logging{{hi:Logging}}, 
 
 ## Debuggers
 
-| Topic                                                      | Rust Crates                                       |
-| ---------------------------------------------------------- | ------------------------------------------------- |
+| Topic      | Rust Crates |
+| ---------- | ----------- |
 | [[debugger | Debuggers]] | `rust-gdb`, `rust-lldb`, or VS Code with CodeLLDB |
 
 For quick value inspection and panic backtraces, see [[debugging | Debugging]].

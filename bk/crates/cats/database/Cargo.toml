@@ -30,21 +30,21 @@ mssql = ["dep:tiberius"]
 oracle = ["dep:diesel", "dep:diesel-oci", "dep:oracle"]
 "sibyl" = ["dep:sibyl"]
 postgres = [
-    "dep:deadpool-postgres",
-    "dep:postgres",
-    "dep:tokio-postgres",
-    "dep:cornucopia",
-    "dep:cornucopia_async",
-    "dep:postgres-types",
+  "dep:deadpool-postgres",
+  "dep:postgres",
+  "dep:tokio-postgres",
+  "dep:cornucopia",
+  "dep:cornucopia_async",
+  "dep:postgres-types",
 ]
 redis = ["dep:redis"]
 rocksdb = ["dep:rocksdb", "dep:tempfile"]
 sea_orm = [
-    "dep:sea-orm",
-    "dep:seaography",
-    "dep:serde_json",
-    "sea-orm/sqlx-sqlite",
-    "sea-orm/runtime-tokio-rustls",
+  "dep:sea-orm",
+  "dep:seaography",
+  "dep:serde_json",
+  "sea-orm/sqlx-sqlite",
+  "sea-orm/runtime-tokio-rustls",
 ]
 sqlx = ["dep:sqlx"]
 sqlite = ["dep:rusqlite"]
@@ -62,12 +62,12 @@ cornucopia = { version = "0.9.0", optional = true }
 cornucopia_async = { version = "0.4.0", optional = true, default-features = false }
 deadpool = "0.13.1"
 deadpool-postgres = { version = "0.14.2", features = [
-    "serde",
+  "serde",
 ], optional = true }
 diesel = { version = "2.3.14", features = ["sqlite"], optional = true }
 diesel-oci = { version = "0.5.1", optional = true }
 diesel_migrations = { version = "2.3.2", features = [
-    "sqlite",
+  "sqlite",
 ], optional = true }
 dotenvy = "0.15.7"
 elasticsearch = { version = "9.1.0-alpha.1", optional = true } # NOTE: alpha version
@@ -85,7 +85,7 @@ postgres-types = { version = "0.2.14", optional = true }
 redis = { version = "1.7.1", optional = true }
 # Use bindgen-runtime so Windows can load libclang.dll from the LLVM installation.
 rocksdb = { version = "0.24.0", optional = true, default-features = false, features = [
-    "bindgen-runtime",
+  "bindgen-runtime",
 ] }
 rusqlite = { version = "=0.32.1", optional = true } # Keep sqlite linkage compatible with sqlx 0.8.x.
 sea-orm = { version = "1.1.20", optional = true } # Pinned: sea-orm 2 needs seaography 2 (release candidates only) and sqlx 0.9 / newer libsqlite3-sys.
@@ -95,9 +95,9 @@ serde_json = { version = "1.0.154", optional = true }
 # Provides the Oracle Instant Client-backed example on Linux and Windows.
 sibyl = { version = "0.7.1", features = ["blocking"], optional = true }
 sqlx = { version = "0.8.6", features = [
-    "runtime-tokio",
-    "sqlite",
-    "macros",
+  "runtime-tokio",
+  "sqlite",
+  "macros",
 ], optional = true }
 tempfile = { version = "3.27.0", optional = true }
 tiberius = { version = "0.12.3", optional = true }

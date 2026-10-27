@@ -10,17 +10,17 @@ documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
 homepage = "https://john-cd.com/rust_howto/"
 keywords = [
-    "book",
-    "cookbook",
-    "howto",
-    "how-to",
-    "documentation",
-    "Rust bible",
-    "patterns",
-    "Rust ecosystem",
-    "recipes",
-    "examples",
-    "summary",
+  "book",
+  "cookbook",
+  "howto",
+  "how-to",
+  "documentation",
+  "Rust bible",
+  "patterns",
+  "Rust ecosystem",
+  "recipes",
+  "examples",
+  "summary",
 ]
 license = "MIT OR Apache-2.0"
 readme = "README.md"

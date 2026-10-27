@@ -117,7 +117,7 @@ Actors encapsulate state, behavior, and a mailbox. [Actors][p~actors] communicat
 
 Because each actor owns its state and is touched by one message at a time, no locks are needed. Use actors for many independent, stateful entities (sessions, devices, game objects) that need isolation and supervision. Libraries like [`actix`][c~actix~docs]↗{{hi:actix}} support actor-based designs.
 
-See the [[_actors |  Actors]] chapter for more details.
+See the [[_actors | Actors]] chapter for more details.
 
 ## Command Query Responsibility Segregation (CQRS) {#cqrs}
 

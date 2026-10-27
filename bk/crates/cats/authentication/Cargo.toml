@@ -27,7 +27,7 @@ axum-login = "0.18.0"
 getrandom = "0.4.3" # Generate random CSRF tokens.
 http-body-util = "0.1.5"
 jsonwebtoken = { version = "11.1.0", features = [
-    "rust_crypto",
+  "rust_crypto",
 ] } # Sign and validate HS256 JSON Web Tokens with RustCrypto.
 password-auth = "1.0.0"
 reqwest = { version = "0.13.5", features = ["blocking"] }

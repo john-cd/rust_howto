@@ -61,13 +61,13 @@ The `tantivy` example above shows each of these steps: the `Schema`, the `IndexW
 
 ## Related Topics {#related-topics .skip}
 
-| Topic                                     | Rust crate(s)                                                                                           | Notes                                                                                                                                       |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Full-Text [Search][p~search]              | [`elastic`][c~elastic~docs]↗{{hi:elastic}} (for Elasticsearch)                                          |                                                                                                                                             |
+| Topic                                     | Rust crate(s)                                                                                           | Notes                                                                                             |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Full-Text [Search][p~search]              | [`elastic`][c~elastic~docs]↗{{hi:elastic}} (for Elasticsearch)                                          |                                                                                                   |
 | Fuzzy Searching                           | [`fuzzy-matcher`][c~fuzzy-matcher~docs]↗{{hi:fuzzy-matcher}}, [`strsim`][c~strsim~docs]↗{{hi:strsim}}   | [`strsim`][c~strsim~docs]↗{{hi:strsim}} provides string similarity metrics. See [[text-processing | Text Processing]]. |
-| Regular Expressions                       | [`regex`][c~regex~docs]↗{{hi:regex}}                                                                    | See [[regex | Regex]].                                                                             |
-| String Search (Multiple Patterns at Once) | [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}}                                               | See [[text-processing | Text Processing]].                                                                             |
-| Vector Search                             | [`qdrant`][c~qdrant~docs]↗{{hi:qdrant}}, [`faiss-rs`][c~faiss~docs]↗{{hi:faiss-rs}} (bindings to FAISS) |                                                                                                                                             |
+| Regular Expressions                       | [`regex`][c~regex~docs]↗{{hi:regex}}                                                                    | See [[regex                                                                                       | Regex]]. |
+| String Search (Multiple Patterns at Once) | [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}}                                               | See [[text-processing                                                                             | Text Processing]]. |
+| Vector Search                             | [`qdrant`][c~qdrant~docs]↗{{hi:qdrant}}, [`faiss-rs`][c~faiss~docs]↗{{hi:faiss-rs}} (bindings to FAISS) |                                                                                                   |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

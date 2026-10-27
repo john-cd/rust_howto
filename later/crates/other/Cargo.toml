@@ -63,7 +63,7 @@ cron = "0.17.0"
 ## Cross platform
 crux_core = "0.17.0"
 datafusion = { version = "55.2.0", default-features = false, features = [
-    "sql",
+  "sql",
 ], optional = true } # Enable SQL without unused native compression codecs.
 futures = "0.3"
 k8s-openapi = { version = "0.28", features = ["latest"] }

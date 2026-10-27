@@ -9,7 +9,6 @@
 - [ ] JOHN review LICENSE
 - [ ] JOHN bookmarks.json
 
-
 ## Tasks
 
 ### Urgent
@@ -19,18 +18,19 @@
 - [/] integrate all useful topic branches into develop and discard the rest
 - [ ] format all Markdown files with dprint, etc if not done already
 
-## Scripts, Tools
+### Scripts, Tools
 
 - [x] add a comment section at the beginning of all mod.just files and scripts with usage and purpose (after shebang line if there is one)
 - [x] move # TODO Reviewed ??-??-2026 after a comment blank line at the end of a comment section after the shebang line in all .sh files
 - [ ] verify that all .sh files can run in git bash
-- [ ] just files: update all windows-shell to git bash
+- [/] just files: update all `rust_howto`-owned `windows-shell` settings to Git Bash
+  - [x] Updated and parser-checked the repository-owned justfiles; `mdbook-utils` remains a separately versioned submodule and was left unchanged.
 - [x] mod.just: deduplicate tasks for unix / windows if they are the same. see e.g. bk\scripts\anchors\mod.just
 - [ ] decide between _typos.toml vs bk\scripts\spelling\spellcheck.sh . convert bk\scripts\spelling\dictionary.txt if needed
 - [/] dprint.json expand to YAML, JSON, TOML, and Dockerfile; format tracked Markdown and configuration files
 - [ ] tasks.json - do we need?
 
-## Docker
+### Docker
 
 - [ ] no raw passwords in compose*.yaml
 - [x] Dockerfile: fix comments; remove the unused toolchain-file rewrite
@@ -38,13 +38,13 @@
 - [ ] update .devcontainer\install_deps.ps1 and .devcontainer\install_deps.sh do we need both? use of git bash?
 - [x] update .devcontainer\WINDOWS_BUILD.md
 
-## Miscellaneous
+### Miscellaneous
 
 - [x] in all files: remove markdown link to a GitHub issue if it has been fully resolved and closed
 - [x] review and remove playground\drafts\workflow.yml
 - [x] tools/ xmpl/ Cargo.toml - move dependencies to workspace
 
-## Code Examples
+### Code Examples
 
 - [ ] update to syn 3.x
 - [x] review playground\bits_and_pieces and determine if any content should be moved or removed
@@ -57,6 +57,8 @@
 - [ ] move playground\examples_wip examples to bk/ if ready
 - [ ] make all Cargo.toml consistent
 - [ ] move code examples from later/ to bk/ when code + text ready
+
+---
 
 ## In progress
 

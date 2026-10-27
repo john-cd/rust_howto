@@ -163,18 +163,18 @@ the one that helps this team explain, test, operate, and safely change its syste
 
 Treat these as starting points to evaluate against your requirements, not as defaults.
 
-| Concern                    | Crates and tools                                                                                                                                            |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Web services               | [`axum`][c~axum~docs]↗{{hi:axum}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}                                                                                  |
-| Command-line tools         | [`clap`][c~clap~docs]↗{{hi:clap}}                                                                                                                           |
-| Configuration              | [`config`][c~config~docs]↗{{hi:config}}, [`dotenvy`][c~dotenvy~docs]↗{{hi:dotenvy}}                                                                         |
-| Databases                  | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, [`diesel`][c~diesel~docs]↗{{hi:diesel}}                                                                                  |
-| Logging and tracing        | [`tracing`][c~tracing~docs]↗{{hi:tracing}}, [`log`][c~log~docs]↗{{hi:log}}                                                                                  |
-| Errors                     | [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} for library error types, [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} for application context                   |
+| Concern                    | Crates and tools                                                                                                                          |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Web services               | [`axum`][c~axum~docs]↗{{hi:axum}}, [`rocket`][c~rocket~docs]↗{{hi:rocket}}                                                                |
+| Command-line tools         | [`clap`][c~clap~docs]↗{{hi:clap}}                                                                                                         |
+| Configuration              | [`config`][c~config~docs]↗{{hi:config}}, [`dotenvy`][c~dotenvy~docs]↗{{hi:dotenvy}}                                                       |
+| Databases                  | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, [`diesel`][c~diesel~docs]↗{{hi:diesel}}                                                                |
+| Logging and tracing        | [`tracing`][c~tracing~docs]↗{{hi:tracing}}, [`log`][c~log~docs]↗{{hi:log}}                                                                |
+| Errors                     | [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} for library error types, [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} for application context |
 | Cryptography               | The [RustCrypto](https://github.com/RustCrypto)↗ crates (see [[cryptography                                                               | Cryptography]]), [`ring`][c~ring~docs]↗{{hi:ring}} |
-| Mocking                    | [`mockall`][c~mockall~docs]↗{{hi:mockall}}                                                                                                                  |
-| Benchmarking and profiling | [`criterion`][c~criterion~docs]↗{{hi:criterion}}, `perf`, `valgrind`                                                                                        |
-| Data parallelism           | [`rayon`][c~rayon~docs]↗{{hi:rayon}}                                                                                                                        |
+| Mocking                    | [`mockall`][c~mockall~docs]↗{{hi:mockall}}                                                                                                |
+| Benchmarking and profiling | [`criterion`][c~criterion~docs]↗{{hi:criterion}}, `perf`, `valgrind`                                                                      |
+| Data parallelism           | [`rayon`][c~rayon~docs]↗{{hi:rayon}}                                                                                                      |
 
 An example `src/` layout for a modular application (adapt it; do not copy it blindly):
 

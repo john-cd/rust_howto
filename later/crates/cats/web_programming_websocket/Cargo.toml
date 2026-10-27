@@ -20,8 +20,8 @@ description = "Book code examples for Web Programming with WebSockets using Tung
 [dependencies]
 anyhow = "1.0.104"
 async-tungstenite = { version = "0.35.0", features = [
-    "tokio-runtime",
-    "tokio-native-tls",
+  "tokio-runtime",
+  "tokio-native-tls",
 ] }
 futures-util = "0.3.34"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net"] }

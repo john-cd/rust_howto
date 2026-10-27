@@ -8,15 +8,15 @@ Web applications combine HTTP, asynchronous I/O, serialization, and user-interfa
 
 ## Services, APIs, and Network I/O
 
-| Goal                                | Start here                                                                                                                                                                                                                                                                                                                                        |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Build an HTTP server or REST API    | [[web-programming_http-server | HTTP Servers]]. The guide covers Axum, Actix Web, Hyper, middleware, GraphQL, and gRPC.                                                                                                                                                                                                               |
-| Send requests to an HTTP service    | [[web-programming_http-client | HTTP Clients]]. The guide compares `reqwest`, `ureq`, and Hyper, and includes request and download examples.                                                                                                                                                                                          |
-| Implement a GraphQL endpoint        | [[_graphql                    | GraphQL]].                                                                                                                                                                                                                                                                                       |
-| Implement a gRPC service            | [[_grpc                       | gRPC]].                                                                                                                                                                                                                                                                                       |
-| Use TCP or UDP without HTTP         | [[network-programming         | Network Programming]].                                                                                                                                                                                                                                                                                       |
+| Goal                                | Start here                    |
+| ----------------------------------- | ----------------------------- |
+| Build an HTTP server or REST API    | [[web-programming_http-server | HTTP Servers]]. The guide covers Axum, Actix Web, Hyper, middleware, GraphQL, and gRPC. |
+| Send requests to an HTTP service    | [[web-programming_http-client | HTTP Clients]]. The guide compares `reqwest`, `ureq`, and Hyper, and includes request and download examples. |
+| Implement a GraphQL endpoint        | [[_graphql                    | GraphQL]]. |
+| Implement a gRPC service            | [[_grpc                       | gRPC]]. |
+| Use TCP or UDP without HTTP         | [[network-programming         | Network Programming]]. |
 | Add WebSocket communication         | [[web-programming_websocket   | Web Programming: WebSocket]], [[asynchronous | Asynchronous Programming]] and [[network-programming | Network Programming]]; see [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} and [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}}. |
-| Add authentication or authorization | [[authentication              | Authentication]].                                                                                                                                                                                                                                                                                       |
+| Add authentication or authorization | [[authentication              | Authentication]]. |
 
 ## Crates by Task
 
