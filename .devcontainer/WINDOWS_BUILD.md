@@ -14,6 +14,8 @@ pwsh -File .devcontainer/install_deps.ps1
 
 The script reads pinned tool versions from `.devcontainer/.env` and installs Rust components, `just`, LLVM/Clang, SQLite, NASM, Ninja, and the book tools with Winget and Cargo. It does not take command-line parameters. If Git for Windows is installed outside `C:\Program Files\Git`, set `GIT_BASH` to the full path of `bash.exe`.
 
+Use `.devcontainer/install_deps.ps1` for native Windows. `.devcontainer/install_deps.sh` is the separate Debian/Ubuntu installer; it uses `apt-get` and `sudo` and must run in Linux, WSL, or a Linux container. Do not run it through Git Bash on Windows.
+
 Run the repository build setup once per checkout:
 
 ```powershell

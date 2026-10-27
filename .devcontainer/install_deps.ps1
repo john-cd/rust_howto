@@ -1,5 +1,5 @@
 # Purpose: Install the operating-system and Rust tools required by the development container.
-# Usage: Run with pwsh -File .devcontainer/install_deps.ps1; pass any required parameters.
+# Usage: Run with pwsh -File .devcontainer/install_deps.ps1; no arguments are required.
 #
 # TODO Reviewed ??-??-2026
 
