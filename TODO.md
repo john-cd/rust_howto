@@ -23,10 +23,8 @@
 ### Code Examples
 
 - [/] improve comments within examples. add context and explanations where necessary. end with a period.
-  - [x] added behavior-specific doc comments to new example entry-point tests; a broad editorial comment review remains
   - [/] clarified commentary in 15 examples; the broader editorial review remains.
 - [/] WAIT move code examples from later/ to bk/ when code + text ready
-  - [x] retain the separate LATER text and staging workspaces; no additional matching chapter paths or ready package pairs were identified in this pass
 
 ---
 
@@ -35,6 +33,8 @@
 B1 implementation commits are integrated into local `develop` through `7761c5e6c` (not pushed). Seven B1 issues are closed: #1941, #1940, #939, #1252, #1281, #1912, and #1950. #912 and #1058 remain open because their done criteria require PR links; #864 remains open because its human-review marker is preserved. Formatting, focused tests/Clippy, reference checks, Markdown lint, mdBook build/linkcheck, sitemap generation, static asset copy, and `git diff --check` passed. `just bb` passed in the elevated run; mdBook reported an indexing-plugin version warning and the optional Pandoc backend was unavailable.
 
 Selected topic branches are integrated linearly into local `develop` through `fa58e2dba` (not pushed). This includes the async/concurrency examples and the science changes for #835, #837, #473, #839, and #840; the existing NIfTI example was retained alongside the new neuron simulation. GitHub marks #473 closed. Issues #835, #837, #839, and #840 remain open because their done criteria require PR links. Focused Clippy and tests passed for the changed science packages (including Candle), async/concurrency packages, MIME and GraphQL examples, and link-generation fixture. The full all-features Clippy gate is blocked by the missing Oracle `OCI_LIB_DIR`; the broad `development_tools_debugging` test run still fails in existing log examples that initialize the process-wide logger together.
+
+Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`, and `later/src` pass. All-features Clippy passes for `tools`, `xmpl`, `playground`, `publish`, the isolated WASM, Vizia, Python-extension, and embedded workspaces; the embedded all-target tests pass. The PostgreSQL-feature database package also passes Clippy with the Cornucopia client pinned to 0.4.0. GUI all-target Clippy passes with default features after disabling the stale Tauri build hook, keeping the disabled Tao source out of auto-discovered targets, and fixing Taffy `f32` literals. Full all-features Clippy for `bk` and the main `later` workspace remains blocked by the Windows `aws-lc-sys` 0.46.0 MSVC archive failure (LNK1114, error 5). The `just` entry point cannot start Git Bash in this session because MSYS cannot create its `BaseNamedObjects` directory.
 
 ### Code examples
 
@@ -61,18 +61,10 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 - [#1926](https://github.com/john-cd/rust_howto/issues/1926) — **P4** — Add Wasmtime fuel, memory-limit, and host-function tests — Text processing, automation, and local runtimes chat — **PARTIAL; OPEN — exact-source harness 5/5; Windows workspace test blocked by Wasmer Cranelift compilation**
 
-#### ACTIVE-CODE-08 — Formatting, encoding, paths and global state
-
-- #939 — **P3** — Modernize lazy initialization and synchronized global-state examples — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
-- #1940 — **P3** — Add portable path, file-signature, and argument-quoting examples — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
-- #1941 — **P3** — Add small formatting and encoding recipes — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
-
 #### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
 
 - [#864](https://github.com/john-cd/rust_howto/issues/864) — **P3** — Finish Async-GraphQL with deterministic schema/query tests — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — HUMAN REVIEW MARKER PRESERVED**
 - [#912](https://github.com/john-cd/rust_howto/issues/912) — **P3** — Extract the Toasty example and finish ORM guidance using in-memory SQLite — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
-- #1912 — **P4** — Demonstrate metrics and Prometheus output without an HTTP server — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
-- #1950 — **P4** — Finish the decision-table missing-input error case and validation — Everyday examples and concrete fixes chat — **CLOSED; INTEGRATED ON LOCAL DEVELOP**
 
 ### Prose and book structure
 
@@ -85,7 +77,6 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 #### ACTIVE-INFRA-01 — Preprocessors, references and recipe portability
 
 - [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **PARTIAL; OPEN — Windows just 1.59.0 verified; Linux entry-point verification unavailable**
-- #1281 — **P3** — Update category-link generation to use landing pages and preprocessor directives / Codex — Everyday examples and concrete fixes chat — **CLOSED; LOCAL CATEGORY LINKS INTEGRATED; #248 TRACKS BADGE DIRECTIVES**
 
 ## Available for Codex now
 
@@ -194,7 +185,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-CODE-12 — Embedded systems and hardware interfaces
 
-- [#751](https://github.com/john-cd/rust_howto/issues/751) — **P4** — embassy/embassy.rs: finish — **IMPLEMENTED ON ISSUE BRANCH; OPEN — final validation pending**
+- [#751](https://github.com/john-cd/rust_howto/issues/751) — **P4** — embassy/embassy.rs: finish — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — embedded all-target Clippy and tests pass; book gate pending**
 
 ### Prose and book structure
 
@@ -214,28 +205,28 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-PROSE-02 — UI, accessibility, media and rendering
 
-- [#367](https://github.com/john-cd/rust_howto/issues/367) — **P4** — game-development/index.md: expand — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
-- [#369](https://github.com/john-cd/rust_howto/issues/369) — **P4** — game-engines/game_engines.md: game_engines: write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
-- [#375](https://github.com/john-cd/rust_howto/issues/375) — **P4** — rendering_graphics-api/gpu_abstraction_layers.md: webgpu: write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
+- [#367](https://github.com/john-cd/rust_howto/issues/367) — **P4** — game-development/index.md: expand — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
+- [#369](https://github.com/john-cd/rust_howto/issues/369) — **P4** — game-engines/game_engines.md: game_engines: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
+- [#375](https://github.com/john-cd/rust_howto/issues/375) — **P4** — rendering_graphics-api/gpu_abstraction_layers.md: webgpu: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#377](https://github.com/john-cd/rust_howto/issues/377) — **P4** — rendering/2d_renderers.md: 2d_renderers: write; titles — **BLOCKED — #792 Vger status/compatibility and #793 WebRender disposition unresolved**
-- [#381](https://github.com/john-cd/rust_howto/issues/381) — **P4** — gui/file_dialogs.md: file_dialogs: write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
+- [#381](https://github.com/john-cd/rust_howto/issues/381) — **P4** — gui/file_dialogs.md: file_dialogs: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#383](https://github.com/john-cd/rust_howto/issues/383) — **P4** — gui/gtk.md: gtk: write — **BLOCKED — GTK 4 development SDK and pkg-config metadata unavailable**
-- [#385](https://github.com/john-cd/rust_howto/issues/385) — **P4** — gui/immediate_mode_gui.md: immediate_mode_gui: write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
-- [#389](https://github.com/john-cd/rust_howto/issues/389) — **P4** — gui/retained_mode_gui.md: retained_mode_gui: organize/write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; GUI test/Clippy also fail at undeclared `tauri_build` in `later/crates/cats/gui/build.rs`**
-- [#391](https://github.com/john-cd/rust_howto/issues/391) — **P4** — gui/text_layout.md: text_layout: write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
-- [#394](https://github.com/john-cd/rust_howto/issues/394) — **P4** — gui/web_based_gui.md: web_based_gui: write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
+- [#385](https://github.com/john-cd/rust_howto/issues/385) — **P4** — gui/immediate_mode_gui.md: immediate_mode_gui: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
+- [#389](https://github.com/john-cd/rust_howto/issues/389) — **P4** — gui/retained_mode_gui.md: retained_mode_gui: organize/write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — book and reference checks and the Slint-feature check remain; stale undeclared Tauri build-hook reference removed**
+- [#391](https://github.com/john-cd/rust_howto/issues/391) — **P4** — gui/text_layout.md: text_layout: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
+- [#394](https://github.com/john-cd/rust_howto/issues/394) — **P4** — gui/web_based_gui.md: web_based_gui: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#396](https://github.com/john-cd/rust_howto/issues/396) — **P4** — Write the window creation chapter G — **BLOCKED — #1056 baseview disposition and new softbuffer dependency review pending**
 - [#413](https://github.com/john-cd/rust_howto/issues/413) — **P4** — multimedia/multimedia.md: multimedia: write — **BLOCKED — #805 playback example is unfinished; a distinct cross-media scope remains**
 - [#417](https://github.com/john-cd/rust_howto/issues/417) — **P4** — multimedia_encoding/encoding.md: encoding: write — **BLOCKED — symphonia, hound, and mp4 dependencies are not in the workspace**
-- [#418](https://github.com/john-cd/rust_howto/issues/418) — **P4** — multimedia_encoding/index.md: write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
+- [#418](https://github.com/john-cd/rust_howto/issues/418) — **P4** — multimedia_encoding/index.md: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#420](https://github.com/john-cd/rust_howto/issues/420) — **P4** — multimedia_images/images.md: images: write — **BLOCKED — required example split and EXIF/oxipng dependency review in #808 are incomplete**
 - [#455](https://github.com/john-cd/rust_howto/issues/455) — **P4** — rendering_engine/rendering_engines.md: rendering_engines: write — **BLOCKED — #955 category pointer decision and #830 example disposition remain unresolved**
 - [#457](https://github.com/john-cd/rust_howto/issues/457) — **P4** — rendering_graphics-api/native_graphics_apis.md: graphics_apis: write — **BLOCKED — required wgpu adapter-info example in #831 remains a stub**
-- [#608](https://github.com/john-cd/rust_howto/issues/608) — **P4** — gpu/index.md: write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
-- [#934](https://github.com/john-cd/rust_howto/issues/934) — **P4** — gui/ui_layout.md: review — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; GUI test/Clippy also fail at undeclared `tauri_build` in `later/crates/cats/gui/build.rs`**
-- [#954](https://github.com/john-cd/rust_howto/issues/954) — **P4** — rendering_data-formats/index.md: review — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
-- [#1229](https://github.com/john-cd/rust_howto/issues/1229) — **P4** — rendering_graphics-api/opengl.md: write — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
-- [#1999](https://github.com/john-cd/rust_howto/issues/1999) — **Unprioritized** — categories/multimedia: write a streaming media page (RTSP, WebRTC, RTP) — **IMPLEMENTED ON DEVELOP; BLOCKED — `just bb` stops before rendering because mdbook-utils reports `bk/crates/Cargo.lock` needs updating under `--locked`; reconcile the lock and rerun book/reference checks**
+- [#608](https://github.com/john-cd/rust_howto/issues/608) — **P4** — gpu/index.md: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
+- [#934](https://github.com/john-cd/rust_howto/issues/934) — **P4** — gui/ui_layout.md: review — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — focused GUI all-target Clippy passes; book and reference checks remain**
+- [#954](https://github.com/john-cd/rust_howto/issues/954) — **P4** — rendering_data-formats/index.md: review — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
+- [#1229](https://github.com/john-cd/rust_howto/issues/1229) — **P4** — rendering_graphics-api/opengl.md: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
+- [#1999](https://github.com/john-cd/rust_howto/issues/1999) — **Unprioritized** — categories/multimedia: write a streaming media page (RTSP, WebRTC, RTP) — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 
 #### NOW-PROSE-03 — Science, finance, data processing and visualization
 
