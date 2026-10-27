@@ -12,20 +12,15 @@ use zeroize::Zeroize as _;
 /// Demonstrates the use of the `zeroize` crate to securely clear sensitive data
 /// from memory.
 fn main() {
-    // Create a vector of sensitive data, e.g., a password or key.
-    let mut sensitive_data = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-
-    // Print the sensitive data before zeroizing.
-    println!("Sensitive data before zeroizing: {sensitive_data:?}");
-
-    // Securely zeroize the sensitive data:
+    // Example bytes only; never print real keys or passwords.
+    let mut sensitive_data = [1_u8, 2, 3, 4, 5, 6, 7, 8];
     sensitive_data.zeroize();
-
-    println!("Sensitive data after zeroizing: {sensitive_data:?}");
+    assert_eq!(sensitive_data, [0; 8]);
 }
 
 // ANCHOR_END: example
 
+/// Runs the zeroization example.
 pub fn run() {
     main();
 }

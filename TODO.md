@@ -548,7 +548,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-07 — Security and cryptocurrencies
 
-- [#1180](https://github.com/john-cd/rust_howto/issues/1180) — **P3** — Write the cryptography utilities chapter — **PARTIAL**
+- [#1180](https://github.com/john-cd/rust_howto/issues/1180) — **P3** — Write the cryptography utilities chapter — **IMPLEMENTED; OPEN — helper recipes and security limitations documented; tests, Clippy, refdefs, book, spelling, and linked PR remain**
 - [#278](https://github.com/john-cd/rust_howto/issues/278) — **P4** — Complete the cryptocurrency category overview D — **PARTIAL**
 
 #### VALIDATE-PROSE-08 — Systems, embedded, WebAssembly and virtualization
