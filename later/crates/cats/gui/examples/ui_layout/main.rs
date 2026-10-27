@@ -28,17 +28,14 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
-fn main() {
+fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
-            Commands::Morphorm => {
-                morphorm::run();
-            }
-            Commands::Taffy => {
-                taffy::run();
-            }
+            Commands::Morphorm => morphorm::run(),
+            Commands::Taffy => taffy::run()?,
         }
     }
+    Ok(())
 }

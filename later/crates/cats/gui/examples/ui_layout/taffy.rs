@@ -1,99 +1,95 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Computing a flexbox layout with `taffy`.
+//! Computes and inspects a flexbox layout with taffy.
 
 use taffy::prelude::*;
 
-// Taffy is a flexible, high-performance UI layout library.
-// It implements CSS Block, Flexbox, and CSS Grid layout algorithms.
-
-/// Builds a tree of nodes and computes its layout.
-pub fn main() {
-    // Create a new TaffyTree instance
+/// Computes the x and y positions and sizes of two flex-row children.
+fn compute_child_layouts() -> anyhow::Result<[(f32, f32, f32, f32); 2]> {
     let mut tree: TaffyTree<()> = TaffyTree::new();
-
-    // Create leaf nodes with fixed dimensions
-    let child1 = tree
-        .new_leaf(Style {
+    let fixed_child = tree.new_leaf(Style {
+        size: Size {
+            width: length(100.0),
+            height: length(50.0),
+        },
+        ..Default::default()
+    })?;
+    let flexible_child = tree.new_leaf(Style {
+        size: Size {
+            width: auto(),
+            height: length(50.0),
+        },
+        flex_grow: 1.0,
+        ..Default::default()
+    })?;
+    let root = tree.new_with_children(
+        Style {
+            display: Display::Flex,
+            flex_direction: FlexDirection::Row,
             size: Size {
-                width: length(100.0_f32),
-                height: length(50.0_f32),
+                width: length(400.0),
+                height: length(80.0),
             },
             ..Default::default()
-        })
-        .expect("the taffy example invariant should hold");
+        },
+        &[fixed_child, flexible_child],
+    )?;
 
-    let child2 = tree
-        .new_leaf(Style {
-            size: Size {
-                width: length(150.0_f32),
-                height: length(75.0_f32),
-            },
-            ..Default::default()
-        })
-        .expect("the taffy example invariant should hold");
+    tree.compute_layout(root, Size::MAX_CONTENT)?;
+    let fixed_layout = tree.layout(fixed_child)?;
+    let flexible_layout = tree.layout(flexible_child)?;
+    Ok([
+        (
+            fixed_layout.location.x,
+            fixed_layout.location.y,
+            fixed_layout.size.width,
+            fixed_layout.size.height,
+        ),
+        (
+            flexible_layout.location.x,
+            flexible_layout.location.y,
+            flexible_layout.size.width,
+            flexible_layout.size.height,
+        ),
+    ])
+}
 
-    // Create a root container with Flexbox layout
-    let root = tree
-        .new_with_children(
-            Style {
-                display: Display::Flex,
-                flex_direction: FlexDirection::Column,
-                align_items: Some(AlignItems::Center),
-                justify_content: Some(JustifyContent::Center),
-                size: Size {
-                    width: length(300.0_f32),
-                    height: length(200.0_f32),
-                },
-                ..Default::default()
-            },
-            &[child1, child2],
-        )
-        .expect("the taffy example invariant should hold");
-
-    // Compute the layout
-    tree.compute_layout(root, Size::MAX_CONTENT)
-        .expect("the taffy example invariant should hold");
-
-    // Get the computed layout of the nodes
-    let root_layout = tree
-        .layout(root)
-        .expect("the taffy example invariant should hold");
-    let child1_layout = tree
-        .layout(child1)
-        .expect("the taffy example invariant should hold");
-    let child2_layout = tree
-        .layout(child2)
-        .expect("the taffy example invariant should hold");
-
-    println!(
-        "Root size: {}x{}",
-        root_layout.size.width, root_layout.size.height
-    );
-    println!(
-        "Child 1 position: ({}, {})",
-        child1_layout.location.x, child1_layout.location.y
-    );
-    println!(
-        "Child 2 position: ({}, {})",
-        child2_layout.location.x, child2_layout.location.y
-    );
+/// Prints each child's computed position and size.
+fn main() -> anyhow::Result<()> {
+    for (index, (x, y, width, height)) in
+        compute_child_layouts()?.into_iter().enumerate()
+    {
+        println!(
+            "Child {}: x = {x}, y = {y}, width = {width}, height = {height}",
+            index + 1
+        );
+    }
+    Ok(())
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the taffy layout example.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the taffy example through its entry point.
+    /// Verifies that the flexible child fills the remaining row width.
     #[test]
-    #[ignore = "requires an interactive example runtime"]
-    fn test_taffy_example_entry_point() {
-        main();
+    fn flex_grow_uses_remaining_width() -> anyhow::Result<()> {
+        let [_, (x, _, width, _)] = compute_child_layouts()?;
+        assert_eq!(x, 100.0);
+        assert_eq!(width, 300.0);
+        Ok(())
+    }
+
+    /// Runs the deterministic layout example entry point.
+    #[test]
+    fn test_taffy_example_entry_point() -> anyhow::Result<()> {
+        main()
     }
 }
