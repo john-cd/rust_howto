@@ -41,7 +41,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 baseview::run()?;
             }
             Commands::Tao => {
-                tao::run();
+                tao::run()?;
             }
             Commands::Winit => {
                 winit::run()?;
