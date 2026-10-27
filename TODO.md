@@ -339,7 +339,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### NOW-INFRA-05 — Contributor hooks and container setup
 
-- [#1247](https://github.com/john-cd/rust_howto/issues/1247) — **P3** — precommit/mod.just: move to Dockerfile — **NOT STARTED**
+- [#1247](https://github.com/john-cd/rust_howto/issues/1247) — **P3** — precommit/mod.just: move to Dockerfile — **BLOCKED — waiting for the human tool choice in prerequisite issue #1245 (pre-commit vs. cargo-husky)**
 
 ### Roadmaps and epics
 
