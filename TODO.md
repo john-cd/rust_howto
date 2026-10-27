@@ -370,7 +370,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 #### VALIDATE-CODE-01 — Networking, authentication and email
 
 - [#225](https://github.com/john-cd/rust_howto/issues/225) — **P3** — Offline Basic authentication example F — **IMPLEMENTED ON DEVELOP; BLOCKED ON FULL GATES — focused offline tests, Clippy, and formatting passed; `just ca` needs a Cargo.lock update and `just bb` is blocked by the Windows AWS-LC/NASM build; details are on the issue**
-- [#810](https://github.com/john-cd/rust_howto/issues/810) — **P3** — Run native Linux tests and strict Clippy for the Glommio example — **PARTIAL**
+- [#810](https://github.com/john-cd/rust_howto/issues/810) — **P3** — Run native Linux tests and strict Clippy for the Glommio example — **IMPLEMENTED ON DEVELOP; BLOCKED — Linux-only tests/Clippy cannot run here; WSL startup returns `Wsl/E_ACCESSDENIED`; the issue comment records the native Linux follow-up**
 - [#1145](https://github.com/john-cd/rust_howto/issues/1145) — **P3** — `websocket/tokio_tungstenite.rs`: review https://github.com/snapview/tokio-tungstenite/tree/master/examples — **IMPLEMENTED ON DEVELOP; OPEN — local echo client/server and loopback test are present (`8c757a2c0`); prior focused tests/format passed; full Clippy blocked by Windows `aws-lc-sys`/`naga`; PR link pending**
 - [#1910](https://github.com/john-cd/rust_howto/issues/1910) — **P3** — Add examples: web login with axum-login, tower-sessions and Argon2 password hashing — **PARTIAL**
 - [#1911](https://github.com/john-cd/rust_howto/issues/1911) — **P3** — Add examples: client-side rate limiting and retries (governor, backon/backoff) — **PARTIAL**
