@@ -64,8 +64,6 @@ pub fn run() -> Result<(), std::io::Error> {
 mod tests {
     use std::fs;
     use std::io;
-    use std::path::PathBuf;
-    use std::time::SystemTime;
 
     use flate2::read::GzDecoder;
     use tar::Archive;
@@ -80,7 +78,8 @@ mod tests {
     /// extracted for verification.
     #[test]
     fn archives_directory_and_finishes_gzip_stream() -> io::Result<()> {
-        let work_dir = create_test_directory()?;
+        let temporary = tempfile::tempdir()?;
+        let work_dir = temporary.path();
         let source_dir = work_dir.join("source");
         let archive_path = work_dir.join("archive.tar.gz");
         let destination = work_dir.join("extracted");
@@ -97,27 +96,7 @@ mod tests {
             fs::read(destination.join("backup/logs/message.txt"))?;
         assert_eq!(archived_contents, expected);
 
-        fs::remove_dir_all(&work_dir)?;
         Ok(())
-    }
-
-    /// Creates a unique temporary directory for a tar compression test.
-    ///
-    /// # Errors
-    ///
-    /// Returns an I/O error if the directory cannot be created.
-    fn create_test_directory() -> io::Result<PathBuf> {
-        let timestamp = SystemTime::now()
-            .duration_since(std::time::UNIX_EPOCH)
-            .map_err(io::Error::other)?
-            .as_nanos();
-        let directory = std::env::temp_dir().join(format!(
-            "rust_howto_tar_compress_{}_{}",
-            std::process::id(),
-            timestamp
-        ));
-        fs::create_dir(&directory)?;
-        Ok(directory)
     }
 }
 // [review; tar_compress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/255)
