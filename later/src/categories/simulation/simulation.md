@@ -10,6 +10,10 @@
 
 A discrete-event simulator advances directly from one scheduled event to the next. The example uses a min-priority [`BinaryHeap`][std~collections~BinaryHeap] to model customer arrivals and service completions without a runtime or network. For larger event-driven models, [NeXosim][c~nexosim~docs] has a v1.0 release and supports component-based simulation benches; review its [release notes][nexosim~releases] when choosing an API version.
 
+The bank has one server and a first-in, first-out waiting line. Fixed arrival times `[0, 1, 2, 13, 14]` and service durations `[3, 2, 1, 1, 1]`, measured in seconds, make each run deterministic without an RNG. `Reverse<Event>` turns Rust's max-heap into a min-heap. The event priority processes departures before arrivals at the same timestamp; customer IDs break any remaining ties.
+
+The five customers wait `[0, 2, 3, 0, 0]` seconds before service, so the reported average is `5 / 5 = 1.0` seconds. All five are served, including the customers who arrive after the server becomes idle. The simulation drains the event schedule, including the final departure, before reporting its result.
+
 ```rust,editable
 {{#include ../../../crates/cats/simulation/examples/simulation/discrete_event.rs:example}}
 ```
