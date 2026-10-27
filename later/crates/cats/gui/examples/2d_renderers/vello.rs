@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026
 
-// ANCHOR: example
-//! Renders a simple 2D scene into a Vello GPU texture.
+//! Builds and renders a simple Vello 2D scene.
 
 use std::num::NonZeroUsize;
 
@@ -93,19 +92,31 @@ async fn render_scene() -> Result<()> {
     Ok(())
 }
 
-/// Renders a scene into an off-screen texture with Vello.
+/// Renders the example scene into a GPU texture.
+///
+/// # Errors
+///
+/// Returns an error if GPU setup or rendering fails.
 pub fn run() -> Result<()> {
     block_on(render_scene())
 }
 
-/// Renders a scene into an off-screen texture with Vello.
+/// Runs the Vello example through its entry point.
+///
+/// # Errors
+///
+/// Returns an error if GPU setup or rendering fails.
 fn main() -> Result<()> {
     run()
 }
 
-/// Builds a scene containing a filled rectangle, an outlined rectangle, and a
-/// circle.
+// ANCHOR: example
+/// Builds a scene containing a filled rectangle, a circle, and a stroked path.
 fn build_scene() -> Scene {
+    use vello::kurbo::BezPath;
+    use vello::kurbo::PathEl;
+    use vello::kurbo::Point;
+    use vello::kurbo::Stroke;
     let mut scene = Scene::new();
     let rectangle = Rect::new(50.0, 50.0, 250.0, 150.0);
     scene.fill(
@@ -127,9 +138,22 @@ fn build_scene() -> Scene {
     scene.fill(
         vello::peniko::Fill::NonZero,
         Affine::IDENTITY,
-        Color::from_rgb8(60, 180, 90),
+        Color::from_rgb8(230, 170, 30),
         None,
         &circle,
+    );
+
+    let path = BezPath::from_vec(vec![
+        PathEl::MoveTo(Point::new(320.0, 70.0)),
+        PathEl::LineTo(Point::new(440.0, 70.0)),
+        PathEl::LineTo(Point::new(380.0, 170.0)),
+    ]);
+    scene.stroke(
+        &Stroke::new(8.0),
+        Affine::IDENTITY,
+        Color::from_rgb8(60, 180, 90),
+        None,
+        &path,
     );
     scene
 }

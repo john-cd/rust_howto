@@ -67,7 +67,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 [![vello][c~vello~docs~badge]][c~vello~docs] [![vello~crates.io][c~vello~crates.io~badge]][c~vello~crates.io] [![vello~repo][c~vello~repo~badge]][c~vello~repo] [![vello~lib.rs][c~vello~lib.rs~badge]][c~vello~lib.rs]{{hi:vello}}{{hi:2d}}{{hi:Vector-graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}}
 
-[`vello`][c~vello~docs]↗{{hi:vello}} is a GPU compute-centric 2D renderer. "WGPU-based and uses cutting edge techniques to render vector paths using the GPU. Still somewhat immature and hasn't yet put out a stable release." ([blessed.rs][[blessed.rs-graphics~website]]↗).
+[`vello`][c~vello~docs]↗{{hi:vello}} is a GPU compute-centric 2D renderer built on `wgpu`. Build and test its scene independently of a device, then render it when a compatible GPU adapter is available. From `later/crates`, run the off-screen example with `cargo run -p gui --example vello_renderer --features vello`; it requires a compatible GPU adapter.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/vello.rs:example}}
