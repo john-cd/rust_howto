@@ -5,6 +5,6 @@
 mod aero_protocols;
 
 /// Runs the aerospace protocols example.
-fn main() {
-    aero_protocols::run();
+fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    aero_protocols::run()
 }
