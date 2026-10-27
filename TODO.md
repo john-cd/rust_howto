@@ -153,7 +153,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#767](https://github.com/john-cd/rust_howto/issues/767) — **P4** — Finish the Bevy example G — **NOT STARTED**
 - [#768](https://github.com/john-cd/rust_howto/issues/768) — **P4** — game_engines/fyrox.rs: finish — **NOT STARTED**
 - [#769](https://github.com/john-cd/rust_howto/issues/769) — **P4** — Finish or remove the ggez example G — **NOT STARTED**
-- [#771](https://github.com/john-cd/rust_howto/issues/771) — **P4** — Finish the macroquad example G — **NOT STARTED**
+- [#771](https://github.com/john-cd/rust_howto/issues/771) — **P4** — Finish the macroquad example G — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#772](https://github.com/john-cd/rust_howto/issues/772) — **P4** — Finish the wgpu compute example G — **NOT STARTED**
 - [#774](https://github.com/john-cd/rust_howto/issues/774) — **P4** — text_layout/cosmic_text.rs: finish — **NOT STARTED**
 - [#775](https://github.com/john-cd/rust_howto/issues/775) — **P4** — Finish the Dioxus example G — **NOT STARTED**
