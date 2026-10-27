@@ -4,7 +4,7 @@
 
 {{#include send_emails.incl.md}}
 
-[`lettre`][c~lettre~docs]↗{{hi:lettre}} is a widely used crate for sending emails and is generally the recommended choice. It supports various transports (SMTP, sendmail, etc.). [`mail-send`][c~mail-send~docs]↗{{hi:mail-send}} is another option for sending emails.
+[`lettre`][c~lettre~docs]↗{{hi:lettre}} builds messages and sends them through a configured transport. Its SMTP transport sends to a relay; the relay and its operator handle delivery to recipients. [`mail-send`][c~mail-send~docs]↗{{hi:mail-send}} is another library for sending.
 
 ## Build Email Messages {#build_email_messages}
 
@@ -15,9 +15,7 @@
 [![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
-[`lettre`][c~lettre~docs]↗{{hi:lettre}} provides convenient builders.
-
-{{example build_email_messages}}
+[`lettre`][c~lettre~docs]↗{{hi:lettre}} provides a typed message builder for headers, addresses, and body content. The complete example below uses a helper to build a message before choosing an SMTP transport.
 
 ## Send Emails {#lettre}
 
@@ -32,12 +30,7 @@
 {{#include ../../../crates/cats/email/examples/lettre.rs:example}}
 ```
 
-<div class="hidden">
-[mailchecker recipe written for issue #1946](https://github.com/john-cd/rust_howto/issues/1946)
-
-Message construction is tested offline with reserved example addresses; sending remains an ignored integration test because it needs caller-provided relay credentials and a reachable SMTP server.
-
-</div>
+The example requires an SMTP relay and reads `SMTP_SERVER`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM`, and `SMTP_TO` from the environment. Its regular test only builds a message with reserved `.invalid` addresses; the ignored integration test sends through the relay and needs credentials and network access. A relay may be hosted by your provider or an email service such as [SendGrid][sendgrid~website].
 
 ### Send Emails Asynchronously {#send-emails-asynchronously .skip}
 
@@ -73,14 +66,10 @@ A multipart email should carry a `text/plain` part next to the HTML one, for cli
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[read_emails | Read Emails]] for retrieving messages from a mailbox.
+- [[email_parsing | Email Parsing]] for parsing raw message bytes and MIME parts.
+- [Network Programming][p~network-programming] for protocol clients and transports.
+- [Transport Layer Security][p~tls] for protecting network connections.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[send_emails: write](https://github.com/john-cd/rust_howto/issues/342)
-
-- [SendGrid][sendgrid~website]↗.
-
-</div>

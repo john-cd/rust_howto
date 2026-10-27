@@ -288,7 +288,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#288](https://github.com/john-cd/rust_howto/issues/288) — **P3** — database/search.md: expand database search guidance — **NOT STARTED**
 - [#290](https://github.com/john-cd/rust_howto/issues/290) — **P3** — database-implementations/databases.md: databases: expand / write — **NOT STARTED**
 - [#292](https://github.com/john-cd/rust_howto/issues/292) — **P3** — database-implementations/index.md: database-implementations: expand — **NOT STARTED**
-- [#342](https://github.com/john-cd/rust_howto/issues/342) — **P3** — email/send_emails.md: send_emails: write — **NOT STARTED**
+- [#342](https://github.com/john-cd/rust_howto/issues/342) — **P3** — email/send_emails.md: send_emails: write — **IMPLEMENTED — pending final SMTP example, draft book, reference, spelling, and diff validation**
 - [#343](https://github.com/john-cd/rust_howto/issues/343) — **P3** — email/index.md: write — **IMPLEMENTED — pending final email reference, draft book, spelling, and diff validation**
 - [#509](https://github.com/john-cd/rust_howto/issues/509) — **P3** — web-programming_http-server/_batteries-included_frameworks.md: batteries-included_frameworks: write — **NOT STARTED**
 - [#518](https://github.com/john-cd/rust_howto/issues/518) — **P3** — web-programming_http-server/other_frameworks.md: other_frameworks: organize — **NOT STARTED**
