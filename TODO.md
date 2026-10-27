@@ -238,7 +238,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#349](https://github.com/john-cd/rust_howto/issues/349) — **P4** — emulators/index.md: write — **IMPLEMENTED ON ISSUE BRANCH; OPEN — final validation pending**
 - [#426](https://github.com/john-cd/rust_howto/issues/426) — **P4** — no-std/no_std.md: no_std: write — **IMPLEMENTED ON ISSUE BRANCH; OPEN — final validation and issue-link removal pending**
 - [#428](https://github.com/john-cd/rust_howto/issues/428) — **P4** — no-std_no-alloc/no_alloc.md: no_alloc: write — **IMPLEMENTED ON ISSUE BRANCH; OPEN — final validation and issue-link removal pending**
-- [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **NOT STARTED**
+- [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **PARTIAL ON ISSUE BRANCH; #817 sysctl example and FreeBSD CI check remain; final validation pending**
 - [#434](https://github.com/john-cd/rust_howto/issues/434) — **P4** — os_linux-apis/linux.md: linux: write — **NOT STARTED**
 - [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **NOT STARTED**
 - [#496](https://github.com/john-cd/rust_howto/issues/496) — **P4** — wasm/wasm_standalone_runtimes.md: others: organize/write — **NOT STARTED**
