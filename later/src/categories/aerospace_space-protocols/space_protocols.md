@@ -8,6 +8,8 @@
 
 The CCSDS Space Packet Protocol places an application process identifier (APID), sequence flags and count, and data length in a primary header. This recipe serializes a packet with a short payload, then parses the header and checks those fields.
 
+The broader CCSDS suite also covers packet telemetry, telecommands, space-link protocols, Navigation Data Messages (NADM), and Tracking Data Messages (TDM).
+
 ```rust,editable
 {{#include ../../../crates/cats/aerospace_space_protocols/examples/space_protocols/space_protocols.rs:ccsds-space-packet}}
 ```
@@ -28,7 +30,7 @@ The CCSDS Communications Operation Procedure 1 (COP-1) provides reliable telecom
 
 ## Mission control integration
 
-SCOS-2000 is an ESA spacecraft control and operations system. Integration is specific to the mission's ground-system interfaces and supported libraries; the packet examples here do not implement that system.
+SCOS-2000 is an ESA spacecraft control and operations system. Integration depends on mission interfaces and supported libraries; existing native libraries may require [[development-tools_ffi | FFI]]. The packet examples here do not implement SCOS-2000.
 
 ## Related Topics {#related-topics .skip}
 
