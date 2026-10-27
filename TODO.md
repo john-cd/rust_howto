@@ -228,7 +228,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-CODE-12 — Embedded systems and hardware interfaces
 
-- [#751](https://github.com/john-cd/rust_howto/issues/751) — **P4** — embassy/embassy.rs: finish — **NOT STARTED**
+- [#751](https://github.com/john-cd/rust_howto/issues/751) — **P4** — embassy/embassy.rs: finish — **IMPLEMENTED ON ISSUE BRANCH; OPEN — final validation pending**
 
 ### Prose and book structure
 

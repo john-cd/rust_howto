@@ -2,7 +2,7 @@
 
 # README
 
-This package is part of the `later/crates` workspace. Its host examples use a simulated pin, I2C bus, scheduler, and NOR flash.
+This package is part of the `later/crates` workspace. Its examples use a simulated pin, I2C bus, scheduler, and NOR flash. The registered Embassy example uses Embassy's standard-library executor and timer driver to test two async tasks exchanging messages through a bounded channel. The RP2040 firmware remains a non-compiled book snippet.
 
 From `later/crates`, validate the examples with:
 
@@ -12,4 +12,4 @@ cargo clippy -p embedded --locked --all-targets -- -D warnings
 cargo +nightly-2026-10-22 fmt --package embedded --all -- --check
 ```
 
-The Embassy sketch is not registered as a Cargo target; it remains a board-specific book snippet until a supported board and executor setup is available (tracked by [#751](https://github.com/john-cd/rust_howto/issues/751)).
+The standalone Embassy workspace demonstrates host task behavior; board-specific firmware uses a matching HAL and target configuration. See [the Embassy chapter](../../../src/categories/embedded/embassy.md) and [#751](https://github.com/john-cd/rust_howto/issues/751).
