@@ -36,6 +36,8 @@ This headless example uses MinimalPlugins and no renderer. A full game typically
 
 [`ggez`][c~ggez~docs]↗{{hi:ggez}} is "a simpler [option][p~option] for 2d [games][p~games] only."
 
+The 0.10 release uses wgpu for graphics and an EventHandler for game updates and drawing.
+
 Run the example on Windows or Linux with:
 
 ```console
