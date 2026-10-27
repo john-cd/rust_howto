@@ -643,7 +643,7 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 - [#752](https://github.com/john-cd/rust_howto/issues/752) — **P4** — emulators/register_vm.rs: bounded fetch/decode/execute VM; preserved PolkaVM host — **IMPLEMENTED; tests and lints skipped by request; book build pending**
 - [#814](https://github.com/john-cd/rust_howto/issues/814) — **P4** — no_std/checksum.rs: core-only library and host runner; feature and bare-metal guidance — **IMPLEMENTED; tests and lints skipped by request; target and book builds pending**
 - [#815](https://github.com/john-cd/rust_howto/issues/815) — **P4** — no_alloc/no_alloc.rs: heapless capacity handling, core-only snippet, and fallible formatting — **IMPLEMENTED; tests and lints skipped by request; book build pending**
-- [#817](https://github.com/john-cd/rust_howto/issues/817) — **P4** — freebsd/freebsd.rs: write — **NOT STARTED; DEFERRED**
+- [#817](https://github.com/john-cd/rust_howto/issues/817) — **P4** — freebsd/freebsd.rs: read-only sysctl query and target-gated dependency — **IMPLEMENTED; tests and lints skipped by request; FreeBSD and book builds pending**
 - [#818](https://github.com/john-cd/rust_howto/issues/818) — **P4** — linux/linux.rs: write — **NOT STARTED; DEFERRED**
 - [#819](https://github.com/john-cd/rust_howto/issues/819) — **P4** — macos/macos.rs: write — **NOT STARTED; DEFERRED**
 

@@ -1,47 +1,29 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
+//! Read-only queries of FreeBSD kernel state.
+
 // ANCHOR: example
-//! A FreeBSD-specific example using the `nix` crate to call FreeBSD APIs.
-//!
-//! This example prints operating system information from `uname` and the
-//! current process ID / parent process ID.
+use sysctl::Ctl;
+use sysctl::Sysctl;
+use sysctl::SysctlError;
 
-/// Prints information about the FreeBSD system.
-#[cfg(target_os = "freebsd")]
-fn main() {
-    use nix::sys::utsname::uname;
-    use nix::unistd::getpid;
-    use nix::unistd::getppid;
-
-    let uname = uname();
-    let pid = getpid();
-    let ppid = getppid();
-
-    println!("FreeBSD system information:");
-    println!("  sysname: {:?}", uname.sysname());
-    println!("  nodename: {:?}", uname.nodename());
-    println!("  release: {:?}", uname.release());
-    println!("  version: {:?}", uname.version());
-    println!("  machine: {:?}", uname.machine());
-    println!("");
-    println!("Process information:");
-    println!("  pid: {}", pid);
-    println!("  ppid: {}", ppid);
+/// Reads and prints the kernel's operating-system type without modifying it.
+///
+/// # Errors
+/// Propagates lookup, permission, and value-conversion errors from `sysctl`.
+fn main() -> Result<(), SysctlError> {
+    let os_type = Ctl::new("kern.ostype")?.value_string()?;
+    println!("Kernel operating-system type: {os_type}");
+    Ok(())
 }
-
-/// Prints a message, since the example only works on FreeBSD.
-#[cfg(not(target_os = "freebsd"))]
-fn main() {
-    println!(
-        "This example is intended for FreeBSD and is only supported on FreeBSD."
-    );
-}
-
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the FreeBSD-only sysctl query.
+///
+/// # Errors
+/// Propagates errors reading the named kernel value.
+pub fn run() -> Result<(), SysctlError> {
+    main()
 }
 
 #[cfg(test)]
@@ -51,7 +33,6 @@ mod tests {
     /// Runs the freebsd example through its entry point.
     #[test]
     fn test_freebsd_example_entry_point() {
-        main();
+        main().expect("kern.ostype should be readable on FreeBSD");
     }
 }
-// TODO review

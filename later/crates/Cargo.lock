@@ -16607,7 +16607,7 @@ dependencies = [
 name = "os_freebsd_apis"
 version = "0.1.2"
 dependencies = [
- "nix 0.31.3",
+ "sysctl",
 ]
 
 [[package]]

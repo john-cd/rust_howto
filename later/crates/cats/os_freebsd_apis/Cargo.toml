@@ -18,8 +18,8 @@ categories = ["os::freebsd-apis"]
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
 
-[dependencies]
-nix = "0.31.3"
+[target.'cfg(target_os = "freebsd")'.dependencies]
+sysctl.workspace = true
 
 [[example]]
 name = "freebsd"
