@@ -13,3 +13,4 @@
 [rfc~10017]: https://www.rfc-editor.org/rfc/rfc10017.html
 [rfc~8252]: https://www.rfc-editor.org/rfc/rfc8252.html
 [openid~core]: https://openid.net/specs/openid-connect-core-1_0.html
+[owasp~session-management]: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html
