@@ -6,7 +6,7 @@
 
 High-level solutions for rendering on the screen.
 
-Rendering engines sit above low-level graphics APIs such as [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} and provide scenes, materials, and cameras. This category lists the crates; the engines themselves ([`rend3`][c~rend3~docs]↗{{hi:rend3}}, [`three-d`][c~three-d~docs]↗{{hi:three-d}}, [`kiss3d`][c~kiss3d~docs]↗{{hi:kiss3d}}, [`bevy_render`][c~bevy_render~docs]↗{{hi:bevy_render}}) are compared in [[3d_renderers | 3D Renderers]], part of the [[rendering | Rendering]] category.
+Rendering engines sit above low-level graphics APIs such as [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} and provide scenes, materials, and cameras. This category lists the crates; see the [3D renderers chapter](../rendering/3d_renderers.md) in the [rendering category](../rendering/index.md) for descriptions of `rend3`, `three-d`, `kiss3d`, and `bevy_render`.
 
 {{#include rendering_engines.incl.md}}
 
