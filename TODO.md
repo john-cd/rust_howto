@@ -277,7 +277,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-PROSE-08 — Web, networking and databases
 
 - [#288](https://github.com/john-cd/rust_howto/issues/288) — **P3** — database/search.md: expand database search guidance — **IMPLEMENTED — pending final code, draft-book, reference, spelling, service, and diff validation**
-- [#290](https://github.com/john-cd/rust_howto/issues/290) — **P3** — database-implementations/databases.md: databases: expand / write — **NOT STARTED**
+- [#290](https://github.com/john-cd/rust_howto/issues/290) — **P3** — database-implementations/databases.md: databases: expand / write — **BLOCKED — requires adding and validating a new `redb` or `fjall` dependency and tempfile-backed example; deferred per request**
 - [#292](https://github.com/john-cd/rust_howto/issues/292) — **P3** — database-implementations/index.md: database-implementations: expand — **IMPLEMENTED — pending final reference, draft-book, spelling, and diff validation**
 - [#342](https://github.com/john-cd/rust_howto/issues/342) — **P3** — email/send_emails.md: send_emails: write — **IMPLEMENTED — pending final SMTP example, draft book, reference, spelling, and diff validation**
 - [#343](https://github.com/john-cd/rust_howto/issues/343) — **P3** — email/index.md: write — **IMPLEMENTED — pending final email reference, draft book, spelling, and diff validation**
