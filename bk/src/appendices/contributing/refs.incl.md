@@ -10,6 +10,7 @@
 [ex~contributing~examples-fully-tested]: repository_structure.md#examples-fully-tested
 [ex~contributing~folders-and-key-files]: repository_structure.md#folders-and-key-files
 [ex~contributing~mdbook-scrub]: mdBook_pre-processors.md#mdbook-scrub
+[ex~contributing~mdbook-utils]: documentation_generation.md#mdbook-utils
 [ex~contributing~other-methods-to-preview-the-documentation-html]: documentation_generation.md#other-methods-to-preview-the-documentation-html
 [ex~contributing~templ]: documentation_generation.md#templ
 [ex~contributing~other]: development_environment_setup.md#other
@@ -32,3 +33,8 @@
 [bacon~repo]: https://github.com/Canop/bacon
 [kani~repo]: https://github.com/model-checking/kani
 [templ~source]: https://github.com/john-cd/rust_howto/tree/develop/tools/templ
+[mdbook-utils~docs]: https://docs.rs/mdbook-utils/latest/mdbook_utils
+[mdbook-utils~docs~badge]: https://img.shields.io/crates/v/mdbook-utils?label=mdbook-utils
+[mdbook-utils~repo]: https://github.com/john-cd/mdbook-utils
+[mdbook-utils~repo~badge]: https://img.shields.io/badge/mdbook--utils-GitHub-steelblue?logo=github
+[mdbook-utils~user-guide]: https://john-cd.github.io/mdbook-utils

@@ -201,7 +201,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-CODE-06 — Examples derived from repository tools
 
-- [#41](https://github.com/john-cd/rust_howto/issues/41) — **P4** — Make additional examples out of mdbook-utils B — **PARTIAL**
+- [#41](https://github.com/john-cd/rust_howto/issues/41) — **P4** — Make additional examples out of mdbook-utils B — **IMPLEMENTED ON TOPIC BRANCH; OPEN — offline feature scripts documented; live broken-link check omitted; focused checks, book build, and PR link pending**
 - [#43](https://github.com/john-cd/rust_howto/issues/43) — **P4** — Make additional examples out of the templ tool B — **PARTIAL — document deterministic help/category_badge/rbe commands; crates.io-backed metadata commands and final gates remain**
 
 #### NOW-CODE-07 — WebAssembly and browser applications

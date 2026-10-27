@@ -22,6 +22,34 @@ bash bk/crates/cats/development_tools_documentation/examples/templ/rbe.sh
 
 Commands that fetch crate metadata depend on crates.io and are omitted from these offline examples.
 
+## Manage mdBook Sources with `mdbook-utils` {#mdbook-utils}
+
+[![mdbook-utils][mdbook-utils~docs~badge]][mdbook-utils~docs] [![mdbook-utils~repo][mdbook-utils~repo~badge]][mdbook-utils~repo]
+
+[`mdbook-utils`][mdbook-utils~repo]↗ manages reference definitions, links, code examples, and sitemaps. See the [user guide][mdbook-utils~user-guide] for installation and command options. Run the examples from `bk/`; the link and reference reports are local and repeatable. The online `broken-links` command is omitted from the script because its results depend on external HTTP services.
+
+```bash
+bash crates/cats/development_tools_documentation/examples/mdbook_utils/link_reports.sh
+```
+
+Build the book before generating a sitemap. The fixed base URL keeps the output stable:
+
+```bash
+bash crates/cats/development_tools_documentation/examples/mdbook_utils/indexes_and_sitemap.sh
+```
+
+Find pages missing from the book summary and Rust examples that are not included:
+
+```bash
+bash crates/cats/development_tools_documentation/examples/mdbook_utils/find_unreferenced_files.sh
+```
+
+Extract code examples and resolve includes in a scratch `drafts/` directory before changing book sources:
+
+```bash
+bash crates/cats/development_tools_documentation/examples/mdbook_utils/code_examples.sh
+```
+
 Use `just docs docall` to generate the code [[documentation]] in the [`docs.rs`][docs.rs~website]↗{{hi:docs.rs}} format.
 
 Note that [`cargo doc --open`][book~cargo~cargo-doc]↗{{hi:cargo doc}} does not seem to work when running from a Dev Container{{hi:Dev Container}} in VS Code{{hi:VS Code}}; the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML. Use `python3 -m http.server 9000` (or live server) to serve the files instead.
