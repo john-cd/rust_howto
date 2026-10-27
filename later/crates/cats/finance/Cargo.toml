@@ -17,12 +17,6 @@ autolib = false
 categories = ["finance"]
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-# TODO RustQuant = { version = "0.3", optional = true }
-
-[features]
-default = []
-rustquant = []
-
 [dependencies]
 anyhow = "1.0.104"
 black_scholes = "0.11.1"

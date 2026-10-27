@@ -135,7 +135,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-04 — Machine learning, data and robotics
 
-- [#764](https://github.com/john-cd/rust_howto/issues/764) — **P4** — quant/rustquant.rs: finish; review — **BLOCKED — prerequisite #1283 must decide the RustQuant dependency; dependency-tree/build-cost review deferred**
+- [#764](https://github.com/john-cd/rust_howto/issues/764) — **P4** — quant/rustquant.rs: finish; review — **PARTIAL — #1283 decision keeps RustQuant out; complete the standalone example and its acceptance checks**
 - [#835](https://github.com/john-cd/rust_howto/issues/835) — **P4** — Finish the Candle machine-learning example I — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
 - [#837](https://github.com/john-cd/rust_howto/issues/837) — **P4** — Finish the SmartCore machine-learning example I — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
 - [#839](https://github.com/john-cd/rust_howto/issues/839) — **P4** — geo/geo.rs: write — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
@@ -231,8 +231,8 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-PROSE-03 — Science, finance, data processing and visualization
 
 - [#257](https://github.com/john-cd/rust_howto/issues/257) — **P4** — computer-vision/opencv.md: opencv: expand, add example — **BLOCKED — OpenCV/libclang SDKs unavailable in this environment**
-- [#364](https://github.com/john-cd/rust_howto/issues/364) — **P4** — finance/quant.md: quant: write — **BLOCKED — RustQuant decision #1283 pending**
-- [#365](https://github.com/john-cd/rust_howto/issues/365) — **P4** — `finance/index.md`: write — **BLOCKED — RustQuant decision #1283 pending**
+- [#364](https://github.com/john-cd/rust_howto/issues/364) — **P4** — finance/quant.md: quant: write — **PARTIAL — #1283 decision keeps RustQuant out; remaining chapter work and checks require review**
+- [#365](https://github.com/john-cd/rust_howto/issues/365) — **P4** — `finance/index.md`: write — **PARTIAL — #1283 decision keeps RustQuant out; remaining index work and checks require review**
 - [#472](https://github.com/john-cd/rust_howto/issues/472) — **P4** — science/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#474](https://github.com/john-cd/rust_howto/issues/474) — **P4** — science_geo/geo.md: geo: write — **BLOCKED — GeoJSON dependencies and PROJ C library required**
 - [#476](https://github.com/john-cd/rust_howto/issues/476) — **P4** — science_neuroscience/neuroscience.md: neuro: write — **IMPLEMENTED ON DEVELOP; final validation pending**
@@ -671,7 +671,7 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 
 #### DEFERRED-INFRA-01 — Dependencies, CI and containers
 
-- [#1283](https://github.com/john-cd/rust_howto/issues/1283) — **P4** — finance/Cargo.toml: RustQuant: heavy build (polars, nalgebra, etc) — **NOT STARTED; DEFERRED**
+- [#1283](https://github.com/john-cd/rust_howto/issues/1283) — **P4** — finance/Cargo.toml: RustQuant: heavy build (polars, nalgebra, etc) — **IMPLEMENTED; OPEN — keep RustQuant out, document the existing standalone example; build timing, tests, Clippy, and linked PR remain**
 
 ### Roadmaps and epics
 
