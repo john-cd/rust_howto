@@ -12,7 +12,7 @@ mod log_env_variable;
 mod log_error;
 mod log_mod;
 mod log_stdout;
-#[cfg(unix)]
+#[cfg(target_os = "linux")]
 mod log_syslog;
 mod log_timestamp;
 
@@ -49,7 +49,7 @@ enum Commands {
     #[command(name = "log_stdout")]
     Stdout,
     /// Runs the `log_syslog` example.
-    #[cfg(unix)]
+    #[cfg(target_os = "linux")]
     #[command(name = "log_syslog")]
     Syslog,
     /// Runs the `log_timestamp` example.
@@ -84,7 +84,7 @@ fn main() -> anyhow::Result<()> {
             Commands::Stdout => {
                 log_stdout::run();
             }
-            #[cfg(unix)]
+            #[cfg(target_os = "linux")]
             Commands::Syslog => {
                 log_syslog::run()?;
             }

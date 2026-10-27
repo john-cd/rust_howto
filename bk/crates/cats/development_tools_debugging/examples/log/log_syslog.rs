@@ -4,7 +4,7 @@
 // ANCHOR: example
 //! Initializes syslog and logs debug and error messages.
 
-#![cfg(unix)]
+#![cfg(target_os = "linux")]
 
 use syslog::Facility;
 
