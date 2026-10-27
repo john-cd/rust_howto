@@ -34,9 +34,42 @@ fn double_values(@builtin(global_invocation_id) id: vec3<u32>) {
 
 [`rust-gpu`][rust-gpu~repo]↗{{hi:rust-gpu}} compiles Rust shader crates to SPIR-V for Vulkan. It is experimental and requires a nightly toolchain plus `spirv-builder`; follow its [development guide][rust-gpu~book]↗ for the matching setup and compiler version.
 
-```rust,editable
-{{#include ../../../crates/other/examples/gpu/rust_gpu.rs:example}}
+The following is shader-crate source, shown as an ignored snippet because it requires the rust-gpu compiler backend. It emits a triangle with a solid red fragment color. It belongs in a separate shader crate's `src/lib.rs`, outside the shared `later/crates` workspace.
+
+```rust,ignore
+#![no_std]
+
+use spirv_std::glam::{vec4, Vec4};
+use spirv_std::spirv;
+
+/// Writes the clip-space position for each of the triangle's three vertices.
+#[spirv(vertex)]
+pub fn main_vs(
+    #[spirv(vertex_index)] vertex_index: i32,
+    #[spirv(position)] position: &mut Vec4,
+) {
+    *position = match vertex_index {
+        0 => vec4(-0.5, -0.5, 0.0, 1.0),
+        1 => vec4(0.5, -0.5, 0.0, 1.0),
+        _ => vec4(0.0, 0.5, 0.0, 1.0),
+    };
+}
+
+/// Writes opaque red to the first color attachment.
+#[spirv(fragment)]
+pub fn main_fs(#[spirv(location = 0)] output: &mut Vec4) {
+    *output = vec4(1.0, 0.0, 0.0, 1.0);
+}
 ```
+
+### Build the shader separately {#rust-gpu-build}
+
+1. Select a rust-gpu release or Git revision and copy its `rust-toolchain.toml` into a separate project. The compiler backend requires that exact nightly; the book's stable toolchain and nightly formatter pin serve different purposes.
+2. Create a shader library with `crate-type = ["dylib"]` and a `spirv-std` dependency matching the selected release or revision. Keep it in its own workspace so its toolchain and dependencies are independent of this book's examples.
+3. In a host crate in that project, add the matching `spirv-builder` as a build dependency. Its `build.rs` compiles the shader crate for a SPIR-V target such as `spirv-unknown-vulkan1.1`; follow the [shader build guide][rust-gpu~shader-guide] for the builder API and required toolchain components of the chosen version.
+4. Load the generated SPIR-V module in a compatible graphics application, select `main_vs` and `main_fs` as the pipeline entry points, and draw three vertices. A shader defines GPU stages; the host must still create the device, pipeline, render target, and draw commands.
+
+SPIR-V uses rust-gpu's target backend. Gating these entry points behind `target_arch = "wasm32"` would select WebAssembly rather than compile them as SPIR-V. The shared `other` crate therefore has no rust-gpu example target or shader dependency. For a stable host-side GPU example, use the `wgpu` compute example above.
 
 ## Call CUDA from Rust with `cudarc` {#cudarc}
 

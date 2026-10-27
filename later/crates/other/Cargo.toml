@@ -111,8 +111,6 @@ shuttle-axum = "0.57.0"
 shuttle-runtime = "0.57.0"
 smartcore = "0.5.5"
 
-## GPU
-spirv-std = "0.9.0"
 thiserror = "2"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time", "test-util"] }
 tokio-util = "0.7.20"
@@ -156,11 +154,6 @@ name = "polars"
 path = "examples/polars/main.rs"
 test = true
 required-features = ["polars"]
-
-[[example]]
-name = "gpu"
-path = "examples/gpu/main.rs"
-test = true
 
 [[example]]
 name = "scheduling"

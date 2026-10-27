@@ -1,6 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [ex~gpu~rust-gpu]: gpu.md#rust-gpu
+[rust-gpu~shader-guide]: https://github.com/Rust-GPU/rust-gpu/blob/main/docs/src/writing-shader-crates.md
 [c~cudarc~docs]: https://docs.rs/cudarc
 [c~cudarc~docs~badge]: https://img.shields.io/crates/v/cudarc?label=cudarc
 [c~cudarc~crates.io]: https://crates.io/crates/cudarc
