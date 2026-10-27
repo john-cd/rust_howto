@@ -4,7 +4,7 @@
 
 {{#include simulation.incl.md}}
 
-## Aerospace Simulation {#aerospace_simulation}
+## Simulate a Rocket Launch {#rocket-launch-simulation}
 
 The existing rocket example demonstrates a simple time-stepped model. The following recipes add an orbital propagation example and a fixed-step numerical solver for an ordinary differential equation.
 
@@ -20,7 +20,7 @@ SGP4 propagates a satellite's two-line element (TLE) set from its epoch. This fi
 {{#include ../../../crates/cats/aerospace_simulation/examples/aerospace_simulation/aero_simulation.rs:sgp4-tle-propagation}}
 ```
 
-The [`sgp4`][c~sgp4~docs] crate provides the propagator. For more precise time-scale and date-time handling, consider [`hifitime`][c~hifitime~docs], which supports time scales such as UTC, TAI, and TDB. The [`uom`][c~uom~docs] crate can represent physical quantities with units and dimensions.
+The [`sgp4`][c~sgp4~docs] crate provides the propagator. For more precise time-scale and date-time handling, consider [`hifitime`][c~hifitime~docs], which supports time scales such as UTC, TAI, and TDB. The [`uom`][c~uom~docs] crate can represent physical quantities with units and dimensions. Both crates continue to publish updated releases; check their current documentation and features for the target application.
 
 ## Solve equations of motion with RK4 {#rk4-ballistic-trajectory}
 
@@ -34,6 +34,7 @@ An ordinary differential equation solver can integrate coupled equations of moti
 
 - [[aerospace | Aerospace]].
 - [[simulation | Simulation]].
+- [[mathematics | Mathematics]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
