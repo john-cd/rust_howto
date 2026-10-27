@@ -21,6 +21,8 @@ Both examples use the bundled Roboto font, so their wrapping does not depend on 
 
 [`parley`][c~parley~docs]↗ provides rich-text layout for applications built on the Linebender ecosystem. It handles styled ranges, line breaking, bidirectional text, and text selection or editing utilities. It is used by Xilem and Masonry.
 
+Both examples load the bundled `Roboto-Regular.ttf`, so wrapping is independent of installed fonts. The font is distributed under the SIL Open Font License 1.1, reproduced in `later/crates/cats/gui/assets/OFL.txt`.
+
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/text_layout/parley.rs:example}}
 ```
