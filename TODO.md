@@ -331,7 +331,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### NOW-INFRA-03 — Branch integration and retained work
 
-- [#1992](https://github.com/john-cd/rust_howto/issues/1992) — **P1** — Triage and integrate unique work from retained example branches — **PARTIAL** — preserve branch ownership
+- [#1992](https://github.com/john-cd/rust_howto/issues/1992) — **P1** — Triage and integrate unique work from retained example branches — **BLOCKED — the three `claude/examples-*` refs are absent locally and from current GitHub/remote branch listings; owner confirmation or commit IDs are needed before diffing or integrating**
 
 #### NOW-INFRA-04 — Windows validation and tooling repairs
 
