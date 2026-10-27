@@ -74,7 +74,6 @@ The Wry/Tao source remains available, but its Cargo registration, feature, and d
 - **The webview comes from the platform.** Wry uses WebView2 on Windows, WKWebView on macOS and iOS, WebKitGTK on Linux, and Android System WebView on Android. Runtime versions and capabilities vary by platform. Linux builds need WebKitGTK and GTK development packages.
 - **Rust and JavaScript communicate through IPC.** JavaScript can call `window.ipc.postMessage(text)`, handled by `WebViewBuilder::with_ipc_handler`; Rust can call `WebView::evaluate_script`. Validate messages and restrict navigation before loading untrusted content.
 - **Load content deliberately.** `with_url` loads a page and `with_html` loads inline markup. Avoid allowing an application with an IPC bridge to navigate to arbitrary sites.
-
 - **Choose [`tauri`][c~tauri~docs]↗{{hi:tauri}} for a full application.** It adds a command system, a permission model, bundling and installers, auto-update, and a JavaScript API.
 
 ## Related Topics {#related-topics .skip}
