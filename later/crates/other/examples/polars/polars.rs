@@ -1,21 +1,19 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! Example: query inline sales data with Polars and join regional targets.
+//! Example: aggregate sales by region with a Polars lazy query.
 //!
 //! The example builds DataFrames with `df!`, runs a lazy filter, projection,
-//! aggregation, and sort, then joins the totals to an inline target table.
+//! aggregation, and sort over inline data.
 
 use polars::df;
 use polars::prelude::DataFrame;
 use polars::prelude::IntoLazy;
-use polars::prelude::JoinArgs;
-use polars::prelude::JoinType;
 use polars::prelude::col;
 use polars::prelude::lit;
 
-/// Filters sales, aggregates revenue by region, and joins regional targets.
-fn summarize_and_join_sales() -> anyhow::Result<(DataFrame, DataFrame)> {
+/// Filters sales and aggregates the remaining revenue by region.
+fn summarize_sales() -> anyhow::Result<DataFrame> {
     let sales = df![
         "region" => ["north", "north", "south", "south", "north", "west"],
         "product" => ["tea", "coffee", "tea", "coffee", "tea", "coffee"],
@@ -31,51 +29,41 @@ fn summarize_and_join_sales() -> anyhow::Result<(DataFrame, DataFrame)> {
         .sort(["region"], Default::default())
         .collect()?;
 
-    let targets = df![
-        "region" => ["north", "south", "west"],
-        "target" => [300_i64, 260, 100],
-    ]?;
-
-    let joined = summary
-        .clone()
-        .lazy()
-        .join(
-            targets.lazy(),
-            [col("region")],
-            [col("region")],
-            JoinArgs::new(JoinType::Inner),
-        )
-        .sort(["region"], Default::default())
-        .collect()?;
-
-    Ok((summary, joined))
+    Ok(summary)
 }
 
-/// Runs the example and prints the aggregate and joined data frames.
+/// Runs the example and prints the regional revenue totals.
+///
+/// # Errors
+///
+/// Returns an error if Polars cannot evaluate the query.
 fn main() -> anyhow::Result<()> {
-    let (summary, joined) = summarize_and_join_sales()?;
-    println!("Revenue by region:\n{summary}\nJoined with targets:\n{joined}");
+    let summary = summarize_sales()?;
+    println!("Revenue by region:\n{summary}");
     Ok(())
 }
 // ANCHOR_END: example
 
+/// Runs the Polars example.
+///
+/// # Errors
+///
+/// Returns an error if Polars cannot evaluate the query.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
 #[cfg(test)]
 mod tests {
-    use super::summarize_and_join_sales;
+    use super::summarize_sales;
 
-    /// Verifies the aggregation values and joined row count for inline data.
+    /// Verifies the lazy query's result shape and expected regional revenue.
     #[test]
-    fn aggregate_and_join_return_expected_results() -> anyhow::Result<()> {
-        let (summary, joined) = summarize_and_join_sales()?;
+    fn lazy_query_returns_expected_regional_revenue() -> anyhow::Result<()> {
+        let summary = summarize_sales()?;
 
         assert_eq!(summary.shape(), (2, 2));
         assert_eq!(summary.column("revenue")?.i64()?.get(0), Some(330));
-        assert_eq!(joined.height(), 2);
-        assert_eq!(joined.column("target")?.i64()?.get(0), Some(300));
         Ok(())
     }
 }

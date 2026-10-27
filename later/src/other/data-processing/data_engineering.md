@@ -74,6 +74,16 @@ The Arrow IPC _file_ format supports random access and memory mapping. The IPC _
 
 [`ballista`][c~ballista~docs]↗{{hi:ballista}} is a distributed query engine built on Apache Arrow and DataFusion. It extends DataFusion's query model across a cluster; choose it when a workload needs distributed execution rather than a single-process engine.
 
+## Process DataFrames with Polars {#polars}
+
+[![polars][c~polars~docs~badge]][c~polars~docs]{{hi:polars}}
+
+Polars provides eager and lazy APIs for columnar data. This example filters inline sales rows, groups and sums revenue by region, and sorts the result. From `later/crates`, run it with `cargo run -p other --example polars --features polars`.
+
+```rust,editable
+{{#include ../../../crates/other/examples/polars/polars.rs:example}}
+```
+
 ## DataFrame processing {#dataframes}
 
 For in-memory table operations, see [[dataframes | Dataframes]], which covers Polars. This page focuses on Arrow interchange and query engines rather than repeating DataFrame recipes.
