@@ -311,7 +311,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-PROSE-07 — Foreign function interfaces - IN PROGRESS
 
-- [#355](https://github.com/john-cd/rust_howto/issues/355) — **P4** — external-ffi-bindings/external_ffi_bindings.md: external_ffi_bindings: write — **NOT STARTED**
+- [#355](https://github.com/john-cd/rust_howto/issues/355) — **P4** — external-ffi-bindings/external_ffi_bindings.md: external_ffi_bindings: write — **IMPLEMENTED; OPEN — Windows checks passed; Unix run, full book gate and PR link pending**
 - [#1070](https://github.com/john-cd/rust_howto/issues/1070) — **P4** — development-tools_ffi/erlang_elixir.md: write — **NOT STARTED**
 - [#1071](https://github.com/john-cd/rust_howto/issues/1071) — **P4** — development-tools_ffi/flutter.md: write; review in depth — **NOT STARTED**
 - [#1072](https://github.com/john-cd/rust_howto/issues/1072) — **P4** — development-tools_ffi/java.md: write — **NOT STARTED**

@@ -4,6 +4,9 @@
 resolver = "3"
 members = ["cats/*", "other"]
 
+[workspace.dependencies]
+libc = "0.2.191"
+
 # Default values for packages in the workspace
 [workspace.package]
 version = "0.1.2"

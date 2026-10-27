@@ -18,8 +18,8 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 publish.workspace = true
 # autolib = false
 
-[dependencies]
-# LATER
+[target.'cfg(unix)'.dependencies]
+libc = { workspace = true }
 
 [[example]]
 name = "external_ffi_bindings"
