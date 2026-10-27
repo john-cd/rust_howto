@@ -28,7 +28,7 @@ Use [`wat`][c~wat~docs]↗{{hi:wat}} to convert text format to binary, and [`was
 
 ## Rust Front-End Frameworks
 
-[`yew`][c~yew~docs]↗{{hi:yew}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}, [`dioxus`][c~dioxus~docs]↗{{hi:dioxus}}, [`sycamore`][c~sycamore~repo]↗{{hi:sycamore}} and [`seed`][c~seed~docs]↗{{hi:seed}} build entire web applications in Rust. See also [[web-programming | Web Programming]].
+[`yew`][c~yew~docs]↗{{hi:yew}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}, [`dioxus`][c~dioxus~docs]↗{{hi:dioxus}}, [`sycamore`][c~sycamore~repo]↗{{hi:sycamore}} and [`seed`][c~seed~docs]↗{{hi:seed}} build entire web applications in Rust. See also [[web-programming | Web Programming]]. Dioxus's web renderer targets WebAssembly in the browser; its [desktop and mobile webview options](../gui/web_based_gui.md#dioxus) are covered in the GUI chapter.
 
 {{#include interfacing_with_javascript.incl.md}}
 

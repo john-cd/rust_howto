@@ -42,9 +42,12 @@
 [ex~gui~webassembly-wasm-considerations]: file_dialogs.md#webassembly-wasm-considerations
 [ex~gui~winit]: window_creation.md#winit
 [ex~gui~wry]: web_based_gui.md#wry
+[ex~gui~wry-local-page]: https://github.com/john-cd/rust_howto/issues/1952
 [ex~gui~xilem]: retained_mode_gui.md#xilem
 [gtk-rs~installation-linux]: https://gtk-rs.org/gtk4-rs/stable/latest/book/installation_linux.html
 [gtk-rs~installation-windows]: https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
+[dioxus~desktop~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/desktop/
+[dioxus~mobile~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/mobile/
 [tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
 [p~apis]: ../../../../bk/drafts/categories/web-programming_http-client/apis.md
 [p~asynchronous]: ../../../../bk/drafts/categories/asynchronous/index.md
