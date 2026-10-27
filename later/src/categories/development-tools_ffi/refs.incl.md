@@ -84,3 +84,7 @@
 [ffi~napi-task]: https://napi.rs/docs/concepts/async-task
 [ffi~napi-async]: https://napi.rs/docs/concepts/async-fn
 [ffi~neon-start]: https://neon-rs.dev/docs/hello-world/
+
+[ffi~objc-frameworks]: https://docs.rs/objc2/latest/objc2/topics/about_generated/index.html
+[ffi~objc-class]: https://docs.rs/objc2/latest/objc2/macro.define_class.html
+[ffi~swift-bridge]: https://docs.rs/swift-bridge/latest/swift_bridge/

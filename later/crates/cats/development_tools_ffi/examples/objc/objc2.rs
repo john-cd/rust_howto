@@ -2,45 +2,29 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! The main function where the Objective-C interaction takes place.
-//! This function uses `unsafe` because it interacts with raw pointers and
-//! foreign code.
+//! Convert a Rust string with the typed Objective-C Foundation bindings.
 
-#[cfg(any(target_os = "macos", target_os = "ios"))]
-use objc2::class;
-#[cfg(any(target_os = "macos", target_os = "ios"))]
-use objc2::msg_send;
+#[cfg(all(target_vendor = "apple", feature = "objc"))]
+use objc2::rc::Retained;
+#[cfg(all(target_vendor = "apple", feature = "objc"))]
+use objc2_foundation::NSString;
 
-/// The main function where the Objective-C interaction takes place.
-/// This function uses `unsafe` because it interacts with raw pointers and
-/// foreign code.
+/// Creates an owned Foundation string and checks its Rust round trip.
 fn main() {
-    #[cfg(any(target_os = "macos", target_os = "ios"))]
-    unsafe {
-        let class_name = "NSString";
-        // Retrieve the Objective-C class object for the given class name
-        // ("NSString" in this case).
-        // NSString is a fundamental class in the
-        // Foundation framework of Apple's Cocoa and Cocoa Touch frameworks.
-        // It represents an immutable sequence of Unicode characters.
-        let class = class!(class_name);
-
-        // Send messages (invoke methods) to Objective-C objects.
-        let string: *mut objc2::runtime::AnyObject = msg_send![class, alloc];
-        // Send the initWithString: message to the allocated object,
-        // initializing it with the given string.
-        // Note: in actual objc2 this would need more setup but this represents
-        // the concept let string: *mut objc2::runtime::AnyObject =
-        // msg_send![string, initWithString: "Hello from Rust!"];
-        // Send the length message to the initialized string object, which
-        // returns its length.
-        // let length: usize = msg_send![string, length];
-        // println!("String length: {length}");
-        let _ = string;
+    #[cfg(all(target_vendor = "apple", feature = "objc"))]
+    {
+        // Foundation's typed constructor returns a strong reference, released
+        // automatically when the Retained value leaves this scope.
+        let string: Retained<NSString> = NSString::from_str("Hello from Rust!");
+        assert_eq!(string.to_string(), "Hello from Rust!");
+        println!("String length in UTF-16 units: {}", string.len_utf16());
     }
+    #[cfg(not(all(target_vendor = "apple", feature = "objc")))]
+    println!("Foundation example needs an Apple target and the objc feature.");
 }
 // ANCHOR_END: example
 
+/// Runs the Foundation example or its platform fallback.
 pub fn run() {
     main();
 }
