@@ -527,7 +527,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-05 — Web, networking and databases
 
-- [#944](https://github.com/john-cd/rust_howto/issues/944) — **P2** — `network-programming/index.md`: write; add cross-links; review; review `email_address`, `fast_chemail` — **PARTIAL ON DEVELOP; BLOCKED — network index and cross-links are present; refreshed crates.io maintenance review, refdefs/spelling/book gates, and linked PR remain; details are on the issue**
+- [#944](https://github.com/john-cd/rust_howto/issues/944) — **P2** — `network-programming/index.md`: write; add cross-links; review; review `email_address`, `fast_chemail` — **IMPLEMENTED ON DEVELOP; BLOCKED — network index and cross-links are present; crate release and repository activity reviewed on 2026-10-27; refdefs/spelling/book gates and linked PR remain; details are on the issue**
 - [#974](https://github.com/john-cd/rust_howto/issues/974) — **P2** — `web-programming_http-client/apis.md`: review / fix — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Clippy, refdefs, and book build passed; example/spelling and all-features checks remain; details are on the issue**
 - [#977](https://github.com/john-cd/rust_howto/issues/977) — **P2** — `web-programming_http-server/index.md`: write / review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
 - [#238](https://github.com/john-cd/rust_howto/issues/238) — **P3** — Networking CLI chapter E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior spelling/refdefs/Markdown checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
