@@ -8,8 +8,11 @@ use clap::Subcommand;
 mod actix;
 mod actors;
 mod ractor;
-#[cfg(feature = "riker")]
-mod riker;
+// Disabled with the `riker` Cargo feature while its dependency chain is
+// vulnerable.
+
+// #[cfg(feature = "riker")]
+// mod riker;
 #[cfg(feature = "stakker")]
 mod stakker;
 
@@ -33,10 +36,13 @@ enum Commands {
     /// Runs the `ractor` example.
     #[command(name = "ractor")]
     Ractor,
-    /// Runs the `riker` example.
-    #[cfg(feature = "riker")]
-    #[command(name = "riker")]
-    Riker,
+    // Disabled with the `riker` Cargo feature while its dependency chain is
+    // vulnerable.
+
+    // /// Runs the `riker` example.
+    // #[cfg(feature = "riker")]
+    // #[command(name = "riker")]
+    // Riker,
     /// Runs the `stakker` example.
     #[cfg(feature = "stakker")]
     #[command(name = "stakker")]
@@ -46,7 +52,7 @@ enum Commands {
 /// Runs the example selected on the command line.
 ///
 /// # Errors
-/// Returns an error if the selected Riker example cannot start.
+/// Returns an error if the selected actor example cannot start.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
@@ -61,10 +67,13 @@ fn main() -> anyhow::Result<()> {
             Commands::Ractor => {
                 ractor::run();
             }
-            #[cfg(feature = "riker")]
-            Commands::Riker => {
-                riker::run()?;
-            }
+            // Disabled with the `riker` Cargo feature while its dependency
+            // chain is vulnerable.
+
+            // #[cfg(feature = "riker")]
+            // Commands::Riker => {
+            //     riker::run()?;
+            // }
             #[cfg(feature = "stakker")]
             Commands::Stakker => {
                 stakker::run();

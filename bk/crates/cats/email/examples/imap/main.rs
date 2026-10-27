@@ -5,6 +5,12 @@
 mod imap_fetch;
 mod mailchecker;
 
-fn main() -> anyhow::Result<()> {
-    imap_fetch::run()
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    run().await
+}
+
+/// Fetches unread mail from the configured IMAP server.
+async fn run() -> anyhow::Result<()> {
+    imap_fetch::run().await
 }
