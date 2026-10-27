@@ -37,6 +37,7 @@ test = true
 name = "native_graphics_apis"
 path = "examples/native_graphics_apis/main.rs"
 test = true
+required-features = ["wgpu"]
 
 [[example]]
 name = "opengl"

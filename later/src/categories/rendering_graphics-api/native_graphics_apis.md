@@ -12,6 +12,20 @@ Low-Level [Rendering][p~rendering] Graphics APIs include:
 - Vulkan.
 - WebGL and WebGPU.
 
+## Identify the Native Backend with `wgpu` {#adapter-info}
+
+[`wgpu`][c~wgpu~docs]↗ selects an adapter and exposes the underlying native graphics API through `get_info()`. This headless example reports the adapter name, backend (Vulkan, Metal, or Direct3D 12), and device type. It requests no device or window and returns an error if no compatible adapter is available.
+
+From `later/crates`, run:
+
+```sh
+cargo run --locked -p rendering_graphics_api --example native_graphics_apis --features wgpu
+```
+
+```rust,editable
+{{#include ../../../crates/cats/rendering_graphics_api/examples/native_graphics_apis/wgpu_adapter_info.rs:example}}
+```
+
 ## Vulkan {#vulkan .skip}
 
 See [[vulkan | Vulkan]].
@@ -25,10 +39,6 @@ See [[opengl | OpenGL]].
 Direct3D 12 access is usually through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}'s backend or lower level bindings like [`d3d12`][c~d3d12~crates.io]↗{{hi:d3d12}}. Windows-specific.
 
 [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} (with a D3D12 backend), `d3d12` (more raw bindings)
-
-```rust,editable
-{{#include ../../../crates/cats/rendering_graphics_api/examples/native_graphics_apis/graphics.rs:example}}
-```
 
 ## Low-Level Graphics (Metal) {#metal}
 
