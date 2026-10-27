@@ -36,7 +36,7 @@ The example treats `429 Too Many Requests` and `5xx` responses as transient and 
 
 - **Retry only idempotent calls.** `GET`, `PUT`, and `DELETE` can be repeated; a `POST` that creates something may be applied twice unless the API supports an idempotency key.
 - **Honour `Retry-After`.** See the next section.
-- **Combine both tools.** Put the limiter inside the function being retried, so that retries also respect the quota.
+- **Combine both tools.** Keep the shared limiter outside the retry closure and await it just before each request is sent. Every retry then consumes the same quota after any `Retry-After` delay.
 - **Cap everything.** Bound the number of attempts and the total time, and surface the last error to the caller.
 
 ## Honour `Retry-After` {#retry-after}
