@@ -88,3 +88,11 @@
 [ffi~objc-frameworks]: https://docs.rs/objc2/latest/objc2/topics/about_generated/index.html
 [ffi~objc-class]: https://docs.rs/objc2/latest/objc2/macro.define_class.html
 [ffi~swift-bridge]: https://docs.rs/swift-bridge/latest/swift_bridge/
+
+[ffi~rb-sys]: https://github.com/oxidize-rb/rb-sys
+[ffi~rutie-support]: https://github.com/danielpclark/rutie#operating-system-requirements
+[ffi~helix]: https://github.com/tildeio/helix
+[ffi~magnus-guide]: https://docs.rs/magnus/0.9.3/magnus/
+[ffi~magnus-embed]: https://docs.rs/magnus/0.9.3/magnus/embed/index.html
+[ffi~ruby-ffi]: https://github.com/ffi/ffi
+[ffi~ruby-extensions]: https://guides.rubygems.org/gems-with-extensions/

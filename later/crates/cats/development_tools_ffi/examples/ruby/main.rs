@@ -5,9 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
-#[cfg(not(windows))] // TODO review Windows support for Ruby FFI examples
+mod greeting;
+#[cfg(all(not(windows), feature = "ruby"))]
+// TODO review Windows support for Ruby FFI examples
 mod magnus;
-#[cfg(not(windows))]
+#[cfg(all(not(windows), feature = "ruby"))]
 mod rutie;
 
 /// Command-line arguments.
@@ -22,11 +24,11 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `magnus` example.
-    #[cfg(not(windows))]
+    #[cfg(all(not(windows), feature = "ruby"))]
     #[command(name = "magnus")]
     Magnus,
     /// Runs the `rutie` example.
-    #[cfg(not(windows))]
+    #[cfg(all(not(windows), feature = "ruby"))]
     #[command(name = "rutie")]
     Rutie,
 }
@@ -34,14 +36,15 @@ enum Commands {
 /// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();
+    println!("{}", greeting::message());
 
     if let Some(command) = cli.command {
         match command {
-            #[cfg(not(windows))]
+            #[cfg(all(not(windows), feature = "ruby"))]
             Commands::Magnus => {
                 magnus::run().expect("the Ruby example should run");
             }
-            #[cfg(not(windows))]
+            #[cfg(all(not(windows), feature = "ruby"))]
             Commands::Rutie => {
                 rutie::run();
             }

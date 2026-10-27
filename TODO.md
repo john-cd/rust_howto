@@ -317,7 +317,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#1072](https://github.com/john-cd/rust_howto/issues/1072) — **P4** — development-tools_ffi/java.md: write — **IMPLEMENTED; OPEN — focused checks passed; full book gate and PR link pending**
 - [#1074](https://github.com/john-cd/rust_howto/issues/1074) — **P4** — development-tools_ffi/node.md: write — **IMPLEMENTED; OPEN — focused checks passed; full book gate and PR link pending**
 - [#1075](https://github.com/john-cd/rust_howto/issues/1075) — **P4** — development-tools_ffi/objc.md: write — **IMPLEMENTED; OPEN — Windows checks passed; native runtime, full book gate and PR link pending**
-- [#1076](https://github.com/john-cd/rust_howto/issues/1076) — **P4** — development-tools_ffi/ruby.md: write — **NOT STARTED**
+- [#1076](https://github.com/john-cd/rust_howto/issues/1076) — **P4** — development-tools_ffi/ruby.md: write — **IMPLEMENTED; OPEN — Windows checks passed; native runtime, full book gate and PR link pending**
 
 #### NOW-PROSE-08 — Web, networking and databases
 

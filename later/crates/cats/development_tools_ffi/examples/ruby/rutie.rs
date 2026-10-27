@@ -50,7 +50,7 @@ mod tests {
 
     /// Runs the rutie example through its entry point.
     #[test]
-    #[ignore = "requires Ruby VM initialization"]
+    #[ignore = "needs Ruby; run this test alone in its own process"]
     fn test_rutie_example_entry_point() {
         main();
     }

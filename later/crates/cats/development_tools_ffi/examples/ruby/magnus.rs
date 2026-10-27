@@ -5,27 +5,26 @@
 //! Calling Rust from Ruby with `magnus`.
 
 use magnus::Error;
-use magnus::RString;
-use magnus::class;
 use magnus::value::ReprValue as _;
 
 /// Simple function to be called from Ruby.
 fn hello_rust() -> String {
-    String::from("Hello from Rust again!")
+    super::greeting::message()
 }
 
 /// Calls Ruby's `puts` with a string created in Rust.
 fn main() -> Result<(), Error> {
-    // Initialize the Ruby VM.
-    // In actual usage, you might use magnus::init()? but it requires a Ruby
-    // environment.
+    // SAFETY: this standalone entry point initializes the sole VM and keeps
+    // the guard alive until all Ruby execution has finished.
+    let ruby = unsafe { magnus::embed::init() };
 
     // Create a new Ruby string object from the given Rust string.
-    let string = RString::new("Hello from Rust!");
+    let string = ruby.str_new(&hello_rust());
 
     // Safely call the `puts` method via the Object class without evaluating
     // dynamic strings.
-    class::object().funcall::<_, _, magnus::Value>("puts", (string,))?;
+    ruby.class_object()
+        .funcall::<_, _, magnus::Value>("puts", (string,))?;
 
     // Define a global Ruby function that calls a Rust function.
     // define_global_function("hello_rust", hello_rust);
@@ -51,7 +50,7 @@ mod tests {
 
     /// Runs the magnus example through its entry point.
     #[test]
-    #[ignore = "requires Ruby VM initialization"]
+    #[ignore = "needs Ruby; run this test alone in its own process"]
     fn test_magnus_example_entry_point() {
         main().expect("example entry point should succeed");
     }
