@@ -15,14 +15,17 @@ struct Counter {
 }
 
 impl Counter {
+    /// Creates a counter starting at zero.
     fn new() -> Self {
         Self { value: 0 }
     }
 
+    /// Increments the stored count.
     fn increment(&mut self) {
         self.value += 1;
     }
 
+    /// Returns the count to the script property getter.
     fn value(&mut self) -> i64 {
         self.value
     }
@@ -62,6 +65,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 }
 // ANCHOR_END: example
 
+/// Runs the type registration and limits example.
 pub fn run() -> Result<(), Box<EvalAltResult>> {
     main()
 }
@@ -75,5 +79,13 @@ mod tests {
     fn test_rhai_types_and_limits_example_entry_point()
     -> Result<(), Box<EvalAltResult>> {
         main()
+    }
+
+    /// Checks that disabling `eval` rejects a script that invokes it.
+    #[test]
+    fn disabled_eval_is_rejected() {
+        let mut engine = Engine::new();
+        engine.disable_symbol("eval");
+        assert!(engine.eval::<i64>("eval(\"40 + 2\")").is_err());
     }
 }

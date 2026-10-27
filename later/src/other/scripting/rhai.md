@@ -22,7 +22,7 @@ Features:
 - Similar to JavaScript + Rust, with dynamic typing.
 - Tight integration with native Rust [functions][p~functions] and types.
 - Function Registration: it can expose Rust functions into scripts.
-- Sand-boxing: the [scripting][p~scripting] engine, if declared immutable, cannot mutate the containing environment unless explicitly permitted.
+- Sandboxing: scripts only access capabilities made available to them, but registered host functions can have side effects. Configure resource limits and expose only the functions and data the script needs.
 - Robust error reporting.
 
 ```rust,editable

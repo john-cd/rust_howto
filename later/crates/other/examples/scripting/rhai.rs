@@ -50,11 +50,10 @@ fn main() -> Result<(), Box<EvalAltResult>> {
         result
     ";
 
-    // Evaluate the script (getting a return value).
-    match engine.eval::<i64>(script) {
-        Ok(result) => println!("The result of the script is: {result}"),
-        Err(e) => println!("Error evaluating the script: {e:?}"),
-    }
+    // Evaluate the script and propagate any error to the caller.
+    let result = engine.eval::<i64>(script)?;
+    assert_eq!(result, 100);
+    println!("The result of the script is: {result}");
     // Use 'Dynamic' as the return type if you're not sure what it will be.
 
     // Or run a script:
@@ -72,6 +71,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
     scope.push_constant("SCALE", 10_i64);
     let result: i64 =
         engine.eval_expression_with_scope(&mut scope, "(x + 1) * SCALE")?;
+    assert_eq!(result, 430);
     println!("{result}");
 
     // Rhai also allows calling a Rhai-scripted function from Rust via
@@ -81,6 +81,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 }
 // ANCHOR_END: example
 
+/// Runs the scripting example, returning any script evaluation error.
 pub fn run() -> Result<(), Box<EvalAltResult>> {
     main()?;
     Ok(())
