@@ -45,6 +45,8 @@ Fyrox is a 2D and 3D engine built around scenes, plugins, and scripts rather tha
 
 ggez is a lightweight framework for 2D games with an event-handler model, drawing, audio, and resource loading. It also offers basic 3D drawing, but does not prescribe physics or an ECS. Its maintainers list Windows, Linux, and macOS as supported platforms; web and mobile targets are not officially supported ([platform details][ggez~platforms~repo]↗).
 
+The 0.10 release uses wgpu for graphics and an EventHandler for game updates and drawing.
+
 Run the example on Windows or Linux with:
 
 ```console
@@ -74,3 +76,7 @@ Macroquad is an immediate-mode framework designed to make a simple 2D game loop 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+  [game_engines: write](https://github.com/john-cd/rust_howto/issues/369)
+</div>
