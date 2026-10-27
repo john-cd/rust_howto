@@ -26,7 +26,7 @@ _default:
 
 # Format all packages and their local path-based dependencies
 @fmtall:
-    echo "Formatting all packages and their local path-based dependencies in {{ code_root }}"
+    echo "Formatting all packages and their local path-based dependencies in {{ quote(code_root) }}"
     cd {{ quote(code_root) }}; cargo +{{rustfmt_toolchain}} fmt --all
 
 # Check code in the current crate (or the default packages of the workspace if in the root) (all features)
@@ -55,17 +55,17 @@ _default:
 
 # Build all code (default features)
 @build:
-    echo "Build all code (default features) in {{ code_root }}"
+    echo "Build all code (default features) in {{ quote(code_root) }}"
     cd {{ quote(code_root) }}; cargo build --workspace --all-targets --locked --timings
 
 # Build all code (all features)
 @buildall:
-    echo "Build all code (all features) in {{ code_root }}"
+    echo "Build all code (all features) in {{ quote(code_root) }}"
     cd {{ quote(code_root) }}; cargo build --workspace --all-targets --locked --all-features --timings
 
 # Scan all code for common mistakes (all features)
 @clippyall:
-    echo "Scan all code for common mistakes (all features) in {{ code_root }}"
+    echo "Scan all code for common mistakes (all features) in {{ quote(code_root) }}"
     # sccache 0.18.0 expands the Leptos web-sys rustc arguments past Windows'
     # process command-line limit, so lint this package directly and separately.
     cd {{ quote(code_root) }}; cargo clippy --workspace --exclude web_programming_http_server --all-targets --locked --all-features -- -D warnings
@@ -73,7 +73,7 @@ _default:
 
 # Test any doctests in the workspace
 @doctest:
-    echo "Test any doctests in the workspace in {{ code_root }}"
+    echo "Test any doctests in the workspace in {{ quote(code_root) }}"
     cd {{ quote(code_root) }}; cargo test --workspace --doc --locked
 
 # Test only tests that match a given keyword
@@ -90,12 +90,12 @@ current_crate := file_name(invocation_directory())
 
 # Test all code (no doctests) (default features)
 @nextest: _clean_temp_dir && _clean_temp_dir
-    echo "Test the code under {{ code_root }} (no doctests, default features)"
+    echo "Test the code under {{ quote(code_root) }} (no doctests, default features)"
     cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --all-targets --locked --no-fail-fast --status-level all
 
 # Test all code, including doctests (all features)
 @nextestall: _clean_temp_dir && _clean_temp_dir
-    echo "Test all code in {{ code_root }} (incl. doctests) (all features)"
+    echo "Test all code in {{ quote(code_root) }} (incl. doctests) (all features)"
     # sccache 0.18.0 expands web-sys rustc arguments past Windows' process command-line limit.
     cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --exclude web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
     cd {{ quote(code_root) }}; RUSTC_WRAPPER= cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features

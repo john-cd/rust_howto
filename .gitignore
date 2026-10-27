@@ -6,6 +6,18 @@ __pycache__/
 *.py[cod]
 mdbook-scrub.log
 
+# Persistent worktree slots and external Cargo build junctions
+/.worktrees/
+
+/build/
+
+/.sccache/
+
+# Local snapshot of registered worktrees and build-cache usage.
+WORKTREES.md
+
+.rumdl_cache/
+
 # Windows ------------------------
 
 # Windows thumbnail cache files
@@ -154,10 +166,3 @@ rust-project.json
 *.msm
 *.msp
 *.txz
-
-# Persistent worktree slots and external Cargo build junctions
-/.worktrees/
-/build/
-/.sccache/
-# Local snapshot of registered worktrees and build-cache usage.
-WORKTREES.md

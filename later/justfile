@@ -8,7 +8,7 @@ set shell := ["bash", "-uc"]
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 root := source_directory()
-code_root := clean(join(root, "crates"))
+code_root := quote(clean(join(root, "crates")))
 rustfmt_toolchain_default := trim(replace_regex(read(join(root, "..", "rustfmt-toolchain.toml")), '(?s).*channel\s*=\s*"([^"]+)".*', "$1"))
 rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
@@ -22,18 +22,18 @@ alias fa := fmtall
 # Format all packages and their local path-based dependencies
 @fmtall:
   echo "Formatting all packages and their local path-based dependencies in $(pwd)"
-  cd {{code_root}}; cargo +{{rustfmt_toolchain}} fmt --all
-  cd {{code_root}}/cats/gui/vizia; cargo +{{rustfmt_toolchain}} fmt --all
-  cd {{code_root}}/cats/development_tools_ffi/python_extension; cargo +{{rustfmt_toolchain}} fmt --all
+  cd {{ code_root }}; cargo +{{rustfmt_toolchain}} fmt --all
+  cd {{ code_root }}/cats/gui/vizia; cargo +{{rustfmt_toolchain}} fmt --all
+  cd {{ code_root }}/cats/development_tools_ffi/python_extension; cargo +{{rustfmt_toolchain}} fmt --all
 
 alias cka := checkall
 
 # Check all code (all packages, all features)
 @checkall:
   echo "Check all code (all packages, all features) in $(pwd)"
-  cd {{code_root}}; cargo check --workspace --all-targets --locked --all-features
-  cd {{code_root}}/cats/gui/vizia; cargo check --workspace --all-targets --locked --all-features
-  cd {{code_root}}/cats/development_tools_ffi/python_extension; cargo check --workspace --all-targets --locked --all-features
+  cd {{ code_root }}; cargo check --workspace --all-targets --locked --all-features
+  cd {{ code_root }}/cats/gui/vizia; cargo check --workspace --all-targets --locked --all-features
+  cd {{ code_root }}/cats/development_tools_ffi/python_extension; cargo check --workspace --all-targets --locked --all-features
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 alias ba := buildall
@@ -41,9 +41,9 @@ alias ba := buildall
 # Build all packages (all features)
 @buildall:
   echo "Build all packages, all features in $(pwd)"
-  cd {{code_root}}; cargo build --workspace --all-targets --locked --all-features --timings
-  cd {{code_root}}/cats/gui/vizia; cargo build --workspace --all-targets --locked --all-features
-  cd {{code_root}}/cats/development_tools_ffi/python_extension; cargo build --workspace --all-targets --locked --all-features
+  cd {{ code_root }}; cargo build --workspace --all-targets --locked --all-features --timings
+  cd {{ code_root }}/cats/gui/vizia; cargo build --workspace --all-targets --locked --all-features
+  cd {{ code_root }}/cats/development_tools_ffi/python_extension; cargo build --workspace --all-targets --locked --all-features
 
 alias ca := clippyall
 
@@ -51,10 +51,10 @@ alias ca := clippyall
 @clippyall:
   echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
   # sccache 0.18.0 expands web-sys rustc arguments past Windows' process limit.
-  cd {{code_root}}; cargo clippy --workspace --exclude wasm --all-targets --locked --all-features -- -D warnings
-  cd {{code_root}}; RUSTC_WRAPPER= cargo clippy --package wasm --all-targets --locked --all-features -- -D warnings
-  cd {{code_root}}/cats/gui/vizia; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
-  cd {{code_root}}/cats/development_tools_ffi/python_extension; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+  cd {{ code_root }}; cargo clippy --workspace --exclude wasm --all-targets --locked --all-features -- -D warnings
+  cd {{ code_root }}; RUSTC_WRAPPER= cargo clippy --package wasm --all-targets --locked --all-features -- -D warnings
+  cd {{ code_root }}/cats/gui/vizia; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+  cd {{ code_root }}/cats/development_tools_ffi/python_extension; cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
 alias nta := nextestall
 
@@ -62,13 +62,13 @@ alias nta := nextestall
 @nextestall:
   echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
   # sccache expands wasm's web-sys rustc arguments past Windows' process command-line limit.
-  cd {{code_root}}; cargo test --doc --workspace --exclude wasm --all-features --locked
-  cd {{code_root}}; cargo nextest run --workspace --exclude wasm --all-targets --locked --no-fail-fast --status-level all --all-features
-  cd {{code_root}}; RUSTC_WRAPPER= cargo nextest run --package wasm --all-targets --locked --no-fail-fast --status-level all --all-features
+  cd {{ code_root }}; cargo test --doc --workspace --exclude wasm --all-features --locked
+  cd {{ code_root }}; cargo nextest run --workspace --exclude wasm --all-targets --locked --no-fail-fast --status-level all --all-features
+  cd {{ code_root }}; RUSTC_WRAPPER= cargo nextest run --package wasm --all-targets --locked --no-fail-fast --status-level all --all-features
 
 # Build and display the `cargo doc` documentation
 @docall:
   echo "Build and display the `cargo doc` documentation for $(pwd)"
-  cd {{code_root}}; cargo clean --doc
-  cd {{code_root}}; cargo doc --no-deps --workspace --locked --document-private-items
+  cd {{ code_root }}; cargo clean --doc
+  cd {{ code_root }}; cargo doc --no-deps --workspace --locked --document-private-items
   cd ../target/later/doc/ ; python3 -m http.server 9000

@@ -1,8 +1,8 @@
-# TODO Reviewed ??-??-2026
-
 # Configuration file for `prek`, a git hook framework written in Rust.
 # See https://prek.j178.dev for more information.
 # :schema https://www.schemastore.org/prek.json
+#
+# TODO Reviewed ??-??-2026
 
 [[repos]]
 repo = "builtin"
@@ -26,8 +26,8 @@ hooks = [
   { id = "destroyed-symlinks" },
   { id = "check-merge-conflict" },
   { id = "detect-private-key" },
-  # { id = "no-commit-to-branch" },
-  # { id = "check-executables-have-shebangs" },
+  { id = "no-commit-to-branch" },
+  { id = "check-executables-have-shebangs" },
   # { id = "check-shebang-scripts-are-executable" },
 ]
 
