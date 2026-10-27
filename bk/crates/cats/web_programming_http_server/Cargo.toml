@@ -22,7 +22,7 @@ ignored = ["prost"]
 
 [features]
 async-graphql-support = ["dep:async-graphql", "dep:async-graphql-axum"]
-leptos-support = ["dep:leptos"]
+leptos-support = ["dep:leptos", "leptos/csr"]
 rocket-support = ["dep:rocket"]
 loco-support = ["dep:loco-rs"]
 
