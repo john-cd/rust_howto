@@ -6,40 +6,30 @@
 
 {{#include encoding.incl.md}}
 
-Encode or decode binary data in multimedia formats.
+Encoding converts media samples or frames into a codec's representation. A container such as MP4 or Matroska packages encoded streams with timing and metadata; it does not define the codec itself. Transcoding combines decoding and encoding, while playback also needs a decoder, clock, and output device. Use this index to choose a format library, then follow the media-specific pages for recipes.
 
-## Video Encoding
+| Media or format | Example crates                                                                                                                                   | Scope                                                                                                                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Audio           | [`symphonia`][c~symphonia~docs]↗, [`hound`][c~hound~docs]↗, [`opus`][c~opus~docs]↗                                                               | Symphonia demuxes and decodes audio formats; Hound reads and writes WAV; Opus bindings encode and decode Opus.                                                                         |
+| Images          | [`image`][c~image~docs]↗, [`png`][c~png~docs]↗, [`jpeg-decoder`][c~jpeg-decoder~docs]↗, [`zune-jpeg`][c~zune-jpeg~docs]↗, [`webp`][c~webp~docs]↗ | Common image codecs; use the [image page][ex~multimedia_encoding~images] for loading, manipulation, and saving.                                                                        |
+| Video           | [`rav1e`][c~rav1e~docs]↗, [`dav1d`][c~dav1d~repo]↗                                                                                               | `rav1e` encodes AV1; `dav1d` provides Rust bindings to the native AV1 decoder library. Broader format support through FFmpeg or GStreamer requires their native libraries and plugins. |
+| Containers      | [`mp4`][c~mp4~docs]↗, [`matroska`][c~matroska~docs]↗                                                                                             | Read or write container metadata and streams; container support is separate from codec support.                                                                                        |
 
-Crates are available for most common codecs: [`rav1e`][c~rav1e~docs]↗{{hi:rav1e}}, [`x264`][c~x264~docs]↗{{hi:x264}}, [`vpx`][c~vpx~docs]↗{{hi:vpx}}.
+## Recipes by Media Type {#recipes-by-media-type}
 
-If you need to work with a wide range of codecs (MP4, AVI, MKV, H.264, VP9, Opus...), [`ffmpeg-next`][c~ffmpeg-next~docs]↗{{hi:ffmpeg-next}} is a powerful but more complex option.
+- [Audio encoding and decoding][ex~multimedia_encoding~audio], including sample formats and WAV files.
+- [Image formats][ex~multimedia_encoding~images], including image encoding and decoding.
+- [Video encoding and pipelines][ex~multimedia_encoding~video], including AV1 and system multimedia frameworks.
+- [Encoding examples][ex~multimedia_encoding~encoding] in this category.
 
-See [[multimedia_video | Multimedia: Video]].
+Feature flags often determine which codecs a crate supports. Check the selected format and codec features, licensing requirements, platform support, and native-library requirements before choosing a dependency. For broad format support, FFmpeg and GStreamer are flexible options, but their build and runtime requirements vary by platform.
 
-## Audio Encoding
+## Related Topics {#related-topics .skip}
 
-Many crates exist for specific audio codecs (WAV, OGG): [`ogg`][c~ogg~docs]↗{{hi:ogg}}, [`flac`][c~flac~docs]↗{{hi:flac}}, [`wav`][c~wav~docs]↗{{hi:wav}}... See [[multimedia_audio | Multimedia: Audio]].
-
-## Image Encoding
-
-While primarily for image loading and manipulation, [`image`][c~image~docs]↗{{hi:image}} also supports encoding to some formats (e.g., JPEG, PNG, GIF).
-See [[multimedia_images | Multimedia: Image]].
-
-## Transcoding
-
-[`ffmpeg-next`][c~ffmpeg-next~docs]↗{{hi:ffmpeg-next}} is a powerful tool for transcoding (converting from one format to another).
-
-## Related Topics
-
-- [[encoding | Encoding]].
 - [[multimedia | Multimedia]].
 - [[multimedia_audio | Multimedia: Audio]].
-- [[multimedia_video | Multimedia: Video]].
 - [[multimedia_images | Multimedia: Images]].
+- [[multimedia_video | Multimedia: Video]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/418)
-</div>
