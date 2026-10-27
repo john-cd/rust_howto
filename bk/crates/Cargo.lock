@@ -17840,10 +17840,11 @@ dependencies = [
 
 [[package]]
 name = "skiplist"
-version = "2.0.0"
+version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a5f20abc94886e808e956797f74d8fd752445a11f61f5371eeed491ede5729a"
+checksum = "3bf45244f5313a159627de5a9036765b14e444a7426d1950389b0432f90f9bb5"
 dependencies = [
+ "arrayvec 0.7.8",
  "rand 0.10.3",
 ]
 
