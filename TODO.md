@@ -155,7 +155,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#769](https://github.com/john-cd/rust_howto/issues/769) — **P4** — Finish or remove the ggez example G — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#771](https://github.com/john-cd/rust_howto/issues/771) — **P4** — Finish the macroquad example G — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#772](https://github.com/john-cd/rust_howto/issues/772) — **P4** — Finish the wgpu compute example G — **NOT STARTED**
-- [#774](https://github.com/john-cd/rust_howto/issues/774) — **P4** — text_layout/cosmic_text.rs: finish — **NOT STARTED**
+- [#774](https://github.com/john-cd/rust_howto/issues/774) — **P4** — text_layout/cosmic_text.rs: finish — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#775](https://github.com/john-cd/rust_howto/issues/775) — **P4** — Finish the Dioxus example G — **NOT STARTED**
 - [#777](https://github.com/john-cd/rust_howto/issues/777) — **P4** — Finish the femtovg example G — **NOT STARTED**
 - [#778](https://github.com/john-cd/rust_howto/issues/778) — **P4** — Finish the Floem example G — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
