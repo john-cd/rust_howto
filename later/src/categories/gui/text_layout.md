@@ -20,6 +20,8 @@
 
 [`parley`][c~parley~docs]↗{{hi:parley}} provides an API for implementing rich text layout. "Another very accomplished text layout library used by [`druid`][c~druid~docs]↗{{hi:druid}} and [`xilem`][c~xilem~docs]↗{{hi:xilem}}."
 
+Both examples load the bundled `Roboto-Regular.ttf`, so wrapping is independent of installed fonts. The font is distributed under the SIL Open Font License 1.1, reproduced in `later/crates/cats/gui/assets/OFL.txt`.
+
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/text_layout/parley.rs:example}}
 ```
