@@ -40,7 +40,7 @@ Adds the source directory recursively under the archive path `backup/logs` with 
 
 Iterate over [`tar::Archive::entries`][c~tar::Archive::entries~docs]↗{{hi:tar::Archive::entries}} and use [`std::path::Path::strip_prefix`][c~std::path::Path::strip_prefix~docs]↗{{hi:std::path::Path::strip_prefix}} to remove `bundle/logs` from each entry path. The example copies only regular-file entries beneath the destination and rejects parent path components before writing.
 
-The runnable example expects `temp/archive.tar.gz` and writes files beneath `temp/extracted`. It stays `noplayground` because the archive is a local input; the unit test creates its own archive in a temporary directory and verifies the stripped output path.
+The runnable example expects `temp/archive.tar.gz` and writes files beneath `temp/extracted`. Its input must use the `bundle/logs` prefix; the compression example above uses `backup/logs`, so its archive cannot be used here unchanged. The example stays `noplayground` because the archive is a local input; the unit test creates its own archive in a temporary directory and verifies the stripped output path.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/compression/examples/tar/tar_strip_prefix.rs:example}}
