@@ -10,22 +10,26 @@
 {{#include ../../../crates/cats/emulators/examples/emulators/emulator.rs:example}}
 ```
 
-## Virtual Machines / CPU Emulators {#virtual-machines-cpu-emulators}
+## RISC-V Virtual Machines {#virtual-machines-cpu-emulators}
 
-Mention [`polkavm`][c~polkavm~docs]{{hi:polkavm}} (used in smart contracts, etc.) - ~500k downloads.
-
-PolkaVM is a general purpose user-level RISC-V based virtual machine. This project is still unfinished and is a very heavy work-in-progress.
+[`PolkaVM`][polkavm~repo]{{hi:polkavm}} is a general-purpose, user-level virtual machine based on RISC-V. Its maintainers list sandboxing among its design goals and describe the project as unfinished, so check the upstream documentation for its current status before choosing it.
 
 ## ROM Loading {#rom-loading}
 
-[`ihex`][c~ihex~docs]↗{{hi:ihex}} is a Rust library for [parsing][p~parsing] and generating Intel HEX (or IHEX) objects. This format is commonly used for representing compiled program code and data to be loaded into a microcontroller, flash memory or ROM.
+Intel HEX (IHEX) is a text format for program data used by microcontrollers, flash memory, and ROM. The `ihex` reader parses records with checksums and exposes data offsets and byte values:
+
+```rust,editable
+{{#include ../../../crates/cats/emulators/examples/emulators/intel_hex.rs:example}}
+```
+
+See the [`ihex` documentation][c~ihex~docs] and the [parsing chapter][p~parsing] for more formats and parser design.
 
 ## Related Topics {#related-topics .skip}
 
-- Virtual machines and CPU emulators.
-- ROM and firmware handling.
-- Graphics and audio output.
-- Platform compatibility.
+- [[virtualization | Virtualization]] and [[embedded | Embedded Systems]] for related guest and firmware topics.
+- [[graphics | Graphics]] and [[audio | Audio]] for display and sound output.
+- [[development-tools_debugging | Development Tools: Debugging]] for diagnostics.
+- [[parsing | Parsing]] for additional binary formats.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -19,6 +19,7 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 publish.workspace = true
 
 [dependencies]
+ihex = "3.0.0"
 polkavm = "0.37.0"
 
 [[example]]

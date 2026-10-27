@@ -3,8 +3,10 @@
 //! TODO Reviewed ??-??-2026.
 
 mod emulator;
+mod intel_hex;
 
 /// Runs the emulators example.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    emulator::run()
+    emulator::run()?;
+    intel_hex::run()
 }
