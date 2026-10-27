@@ -17,26 +17,16 @@ use vello::kurbo::Rect;
 use vello::peniko::Color;
 use vello::util::RenderContext;
 use wgpu::Extent3d;
+use wgpu::Texture;
 use wgpu::TextureDescriptor;
 use wgpu::TextureDimension;
 use wgpu::TextureFormat;
 use wgpu::TextureUsages;
+use wgpu::TextureView;
 
-/// Renders a scene into an off-screen texture with Vello.
-fn main() -> Result<()> {
-    block_on(render_scene())
-}
-
-/// Creates a WGPU device and renders the example scene into a texture.
-async fn render_scene() -> Result<()> {
-    let mut context = RenderContext::new();
-    let device_id = context.device(None).await.ok_or_else(|| {
-        anyhow::anyhow!("No compatible GPU adapter was found")
-    })?;
-    let device_handle = &context.devices[device_id];
-    let device = &device_handle.device;
-    let queue = &device_handle.queue;
-    let mut renderer = Renderer::new(
+/// Creates a new Vello renderer using the provided WGPU device.
+fn create_vello_renderer(device: &wgpu::Device) -> Result<Renderer> {
+    Ok(Renderer::new(
         device,
         RendererOptions {
             use_cpu: false,
@@ -44,9 +34,15 @@ async fn render_scene() -> Result<()> {
             num_init_threads: NonZeroUsize::new(1),
             ..Default::default()
         },
-    )?;
+    )?)
+}
 
-    let (width, height) = (800, 600);
+/// Creates an off-screen render target texture and its texture view.
+fn create_target_texture(
+    device: &wgpu::Device,
+    width: u32,
+    height: u32,
+) -> (Texture, TextureView) {
     let target = device.create_texture(&TextureDescriptor {
         label: Some("Vello example target"),
         size: Extent3d {
@@ -63,6 +59,22 @@ async fn render_scene() -> Result<()> {
     });
     let target_view =
         target.create_view(&wgpu::TextureViewDescriptor::default());
+    (target, target_view)
+}
+
+/// Creates a WGPU device and renders the example scene into a texture.
+async fn render_scene() -> Result<()> {
+    let mut context = RenderContext::new();
+    let device_id = context.device(None).await.ok_or_else(|| {
+        anyhow::anyhow!("No compatible GPU adapter was found")
+    })?;
+    let device_handle = &context.devices[device_id];
+    let device = &device_handle.device;
+    let queue = &device_handle.queue;
+    let mut renderer = create_vello_renderer(device)?;
+
+    let (width, height) = (800, 600);
+    let (_target, target_view) = create_target_texture(device, width, height);
     let scene = build_scene();
 
     renderer.render_to_texture(
@@ -79,6 +91,16 @@ async fn render_scene() -> Result<()> {
     )?;
 
     Ok(())
+}
+
+/// Renders a scene into an off-screen texture with Vello.
+pub fn run() -> Result<()> {
+    block_on(render_scene())
+}
+
+/// Renders a scene into an off-screen texture with Vello.
+fn main() -> Result<()> {
+    run()
 }
 
 /// Builds a scene containing a filled rectangle, an outlined rectangle, and a
@@ -112,3 +134,24 @@ fn build_scene() -> Scene {
     scene
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies that scene construction produces a non-empty Vello scene.
+    #[test]
+    fn test_build_scene() {
+        let scene = build_scene();
+        // Simply ensure the scene can be built without panicking.
+        let _encoding = scene.encoding();
+    }
+
+    /// Renders the Vello scene when explicitly run in a GPU-enabled
+    /// environment.
+    #[test]
+    #[ignore = "requires compatible GPU adapter"]
+    fn test_run() -> Result<()> {
+        run()
+    }
+}
