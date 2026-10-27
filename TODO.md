@@ -472,14 +472,14 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-01 — Language, mathematics, date and time
 
-- [#407](https://github.com/john-cd/rust_howto/issues/407) — **P2** — `mathematics/additional_numeric_types.md`: additional_numeric_types: write — **PARTIAL**
-- [#938](https://github.com/john-cd/rust_howto/issues/938) — **P2** — Final review of trigonometry — **PARTIAL**
-- [#1188](https://github.com/john-cd/rust_howto/issues/1188) — **P2** — `date-and-time/index.md`: review in depth — **PARTIAL**
-- [#293](https://github.com/john-cd/rust_howto/issues/293) — **P3** — Write the time-crate chapter — **PARTIAL**
-- [#913](https://github.com/john-cd/rust_howto/issues/913) — **P3** — Review the duration chapter — **PARTIAL**
-- [#1890](https://github.com/john-cd/rust_howto/issues/1890) — **P3** — Fix Code Organization chapters and visibility examples — **PARTIAL**
-- [#401](https://github.com/john-cd/rust_howto/issues/401) — **P4** — Complete the internationalization chapter D — **PARTIAL**
-- [#490](https://github.com/john-cd/rust_howto/issues/490) — **P4** — Write the number-formatting chapter — **PARTIAL**
+- [#407](https://github.com/john-cd/rust_howto/issues/407) — **P2** — `mathematics/additional_numeric_types.md`: additional_numeric_types: write — **IMPLEMENTED ON DEVELOP; BLOCKED — numeric choices and examples are present; prior focused checks passed; full Clippy/reference gates remain; details are on the issue**
+- [#938](https://github.com/john-cd/rust_howto/issues/938) — **P2** — Final review of trigonometry — **IMPLEMENTED ON DEVELOP; BLOCKED — prior example suite passed; full book validation remains; details are on the issue**
+- [#1188](https://github.com/john-cd/rust_howto/issues/1188) — **P2** — `date-and-time/index.md`: review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — humantime and guidance are present; book validation and human review/promotion remain; details are on the issue**
+- [#293](https://github.com/john-cd/rust_howto/issues/293) — **P3** — Write the time-crate chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and documentation checks passed; full book build remains; details are on the issue**
+- [#913](https://github.com/john-cd/rust_howto/issues/913) — **P3** — Review the duration chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and documentation checks passed; full book build remains; details are on the issue**
+- [#1890](https://github.com/john-cd/rust_howto/issues/1890) — **P3** — Fix Code Organization chapters and visibility examples — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy, refdefs, and book build passed; full-workspace Clippy remains; details are on the issue**
+- [#401](https://github.com/john-cd/rust_howto/issues/401) — **P4** — Complete the internationalization chapter D — **IMPLEMENTED ON DEVELOP; BLOCKED — prior ICU4X tests/Clippy and targeted documentation checks passed; full book/reference gates remain; details are on the issue**
+- [#490](https://github.com/john-cd/rust_howto/issues/490) — **P4** — Write the number-formatting chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and documentation checks passed; full book build remains; details are on the issue**
 
 #### VALIDATE-PROSE-02 — Asynchronous programming and caching
 
