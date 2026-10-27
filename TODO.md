@@ -259,7 +259,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 #### NOW-PROSE-04 — Publishing, curation and book coverage
 
 - [#1720](https://github.com/john-cd/rust_howto/issues/1720) — **P3** — Curate remaining VS Code, browser and TOREVIEW bookmarks into book content — **BLOCKED — the Chrome bookmarks export (`bookmarks.json`) is absent from this checkout; request the source before further curation**
-- [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **Unprioritized** — Audit references and links in restored book pages A — **PARTIAL** — human scope decision also required
+- [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **Unprioritized** — Audit references and links in restored book pages A — **BLOCKED — restored-page reference and wikilink audits remain; the requested `bk/drafts` and `later` book builds lack standalone book configurations, as documented in the issue comment**
 
 #### NOW-PROSE-05 — Cloud platforms and containers
 
