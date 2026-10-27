@@ -10,11 +10,11 @@ Rust's memory safety, zero-cost abstractions, and fearless concurrency make it a
 
 ## Core Flight Control & Communication
 
-Flight-control work spans PID control loops, sensor fusion, state estimation, path and trajectory planning, and execution within real-time constraints. Use [`mavlink`][c~mavlink~docs] for standard ground-station messages and [`embedded-hal`][c~embedded-hal~docs] for portable peripheral abstractions such as I2C and SPI; select UART or custom-protocol support for the target, account for `no_std` requirements on constrained controllers, and see [[aerospace_protocols | Aerospace Protocols]] for protocol choices.
+Flight-control algorithms include PID control, sensor fusion for IMU, GPS, and barometer data, state estimation, path planning, and trajectory generation. Control loops must meet strict real-time timing while interfacing with hardware and managing constrained memory; use `no_std` when the controller requires it. Use [`mavlink`][c~mavlink~docs] for ground-station messages and [`embedded-hal`][c~embedded-hal~docs] for portable I2C/SPI abstractions; choose UART or custom-protocol support for the target and see [[aerospace_protocols | Aerospace Protocols]] for protocol choices.
 
 ## Sensor Integration
 
-Sensor inputs include IMU accelerometers, gyroscopes and magnetometers, GPS, barometers, cameras, lidar, and ultrasonic rangefinders; drivers and calibration remain hardware-specific. Use target-compatible [`embedded-hal`][c~embedded-hal~docs] drivers where available, and [`ahrs`][c~ahrs~docs] algorithms for orientation estimates from inertial measurements.
+Sensor integration may include IMU accelerometer, gyroscope, and magnetometer processing, GPS for localization and navigation, barometric altitude, and cameras, lidar, or ultrasonic rangefinders. Prefer target-compatible [`embedded-hal`][c~embedded-hal~docs] drivers where available; vendor or community drivers and calibration depend on the hardware. The [`ahrs`][c~ahrs~docs] crate provides sensor-fusion algorithms for orientation estimates.
 
 ## Computer Vision & Image Processing
 
