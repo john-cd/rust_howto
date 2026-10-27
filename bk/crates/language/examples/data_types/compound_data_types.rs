@@ -56,7 +56,7 @@ fn demo_tuples() {
 
     // Functions with tuples.
     // Tuples can be passed to and returned from functions.
-    /// Returns a two-element tuple with its values swapped.
+    // Returns a two-element tuple with its values swapped.
     fn swap_tuple(tuple: (i32, i32)) -> (i32, i32) {
         (tuple.1, tuple.0)
     }
@@ -148,13 +148,13 @@ mod tests {
         main();
     }
 
-    /// Verifies that demo tuples.
+    /// Verifies `demo_tuples`.
     #[test]
     fn test_demo_tuples() {
         demo_tuples();
     }
 
-    /// Verifies that demo arrays.
+    /// Verifies `demo_arrays`.
     #[test]
     fn test_demo_arrays() {
         demo_arrays();
