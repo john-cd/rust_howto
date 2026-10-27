@@ -4,6 +4,8 @@
 
 Peripheral access usually goes through an operating-system driver. Choose a crate for the device's protocol or class, then check its supported platforms, required native libraries, and permissions before depending on it. User-space access is not the same as writing a kernel driver.
 
+{{#include peripherals.incl.md}}
+
 ## USB {#usb .skip}
 
 [`nusb`][c~nusb~docs]↗{{hi:nusb}} provides cross-platform, pure-Rust USB access with blocking and asynchronous APIs. [`rusb`][c~rusb~docs]↗{{hi:rusb}} wraps `libusb` and is another option when its ecosystem or platform support fits your device. Both expose low-level device operations; for standard USB classes such as HID, serial, audio, and mass storage, prefer the operating system's existing class driver and a class-specific API when available.
