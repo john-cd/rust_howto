@@ -12,6 +12,8 @@
 
 PyO3 lets a Rust program call Python code through the interpreter. In current PyO3, `Python::attach` provides the interpreter token used by Python APIs; older examples may call the renamed `Python::with_gil` method. Python objects tied to that scope use the `Bound<'py, T>` API, while `Py<T>` owns a reference beyond the scope.
 
+The two embedded-interpreter examples in this workspace are currently enabled only on Linux and require a compatible Python installation and development environment. The separate extension package has its own Python and Maturin setup below; platform support for PyO3 itself is broader than this workspace's example configuration.
+
 This example is an embedded Python executable. It is enabled on Linux, where the `development_tools_ffi` crate declares its PyO3 dependency. It initializes the interpreter explicitly because the crate does not enable PyO3's `auto-initialize` feature.
 
 ```rust,editable

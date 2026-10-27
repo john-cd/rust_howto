@@ -586,7 +586,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 - [#969](https://github.com/john-cd/rust_howto/issues/969) — **P4** — Review the visualization index — **PARTIAL; OPEN — GUI table and three-d backend corrected; crate review, refdefs, book, spelling, and linked PR remain**
 - [#1205](https://github.com/john-cd/rust_howto/issues/1205) — **P4** — — Deep learning chapter — **PARTIAL; OPEN — CPU example and framework guidance present; feature build, tests, Clippy, refdefs, book, spelling, and linked PR remain**
 - [#1208](https://github.com/john-cd/rust_howto/issues/1208) — **P4** — — Control systems chapter — **PARTIAL; OPEN — PID simulation and sample-period guidance present; crate review, tests, Clippy, refdefs, book, spelling, and linked PR remain**
-- [#1209](https://github.com/john-cd/rust_howto/issues/1209) — **P4** — — Robotics AI chapter — *_IMPLEMENTED; OPEN — A_ example and dataflow guidance present; tests, Clippy, refdefs, book, spelling, and linked PR remain**
+- [#1209](https://github.com/john-cd/rust_howto/issues/1209) — **P4** — — Robotics AI chapter — **IMPLEMENTED; OPEN — A-star example and dataflow guidance present; tests, Clippy, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-11 — Architecture and scripting
 
@@ -595,7 +595,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-12 — Foreign function interfaces
 
-- [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Finish the Python example and validate its platform requirements D — **PARTIAL**
+- [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Finish the Python example and validate its platform requirements D — **PARTIAL; BLOCKED — Linux Python and extension environment verification, full checks, and linked PR remain**
 
 ### Tools and infrastructure
 
