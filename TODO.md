@@ -192,12 +192,12 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-CODE-05 — Recipe batches with accompanying prose
 
-- [#1970](https://github.com/john-cd/rust_howto/issues/1970) — **P4** — Follow up on the web examples and pages — **PARTIAL**
-- [#1972](https://github.com/john-cd/rust_howto/issues/1972) — **P4** — Validate the Arrow IPC, optimization, and AWS SDK examples — **PARTIAL** — human acceptance also required
-- [#1974](https://github.com/john-cd/rust_howto/issues/1974) — **P4** — Follow up on Excel, profiling, geo, audio, wry, and egui examples — **PARTIAL**
-- [#1977](https://github.com/john-cd/rust_howto/issues/1977) — **P4** — Finish the remaining dev-tools, parsing, text, and testing examples — **PARTIAL** — unclaimed subtasks only; coordinate with active chats
-- [#1986](https://github.com/john-cd/rust_howto/issues/1986) — **P4** — Finish remaining cloud recipe batches — **PARTIAL** — unclaimed subtasks only; coordinate with active chats
-- [#1991](https://github.com/john-cd/rust_howto/issues/1991) — **Unprioritized** — Resolve local recipe-batch follow-ups — **PARTIAL** — unclaimed subtasks only; coordinate with active chats
+- [#1970](https://github.com/john-cd/rust_howto/issues/1970) — **P4** — Follow up on the web examples and pages — **BLOCKED — dedicated localization crate, Leptos wasm32 dependency split, and full book/toolchain gates remain**
+- [#1972](https://github.com/john-cd/rust_howto/issues/1972) — **P4** — Validate the Arrow IPC, optimization, and AWS SDK examples — **BLOCKED — MinIO/LocalStack, Windows NASM, full validation, and human review remain**
+- [#1974](https://github.com/john-cd/rust_howto/issues/1974) — **P4** — Follow up on Excel, profiling, geo, audio, wry, and egui examples — **PARTIAL — egui_kittest example already exists; HRTF fixture, native audio alignment, Wry display validation, and full gates remain**
+- [#1977](https://github.com/john-cd/rust_howto/issues/1977) — **P4** — Finish the remaining dev-tools, parsing, text, and testing examples — **BLOCKED — external crate integrations, rust-analyzer, and full book/toolchain validation remain; unclaimed subtasks only**
+- [#1986](https://github.com/john-cd/rust_howto/issues/1986) — **P4** — Finish remaining cloud recipe batches — **BLOCKED — external services, native GUI validation, dependency work, and parent-issue coordination remain; unclaimed subtasks only**
+- [#1991](https://github.com/john-cd/rust_howto/issues/1991) — **Unprioritized** — Resolve local recipe-batch follow-ups — **BLOCKED — crypto dependency mismatch, external databases, Linux, Cap'n Proto tooling, and native compilers remain**
 
 #### NOW-CODE-06 — Examples derived from repository tools
 
