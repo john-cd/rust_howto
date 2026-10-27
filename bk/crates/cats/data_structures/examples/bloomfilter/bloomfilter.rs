@@ -9,7 +9,8 @@ use bloomfilter::Bloom;
 /// Inserts items into a Bloom filter and checks for membership.
 fn main() {
     let items_count = 100;
-    let mut bloom = Bloom::new_for_fp_rate(items_count, 0.01).unwrap();
+    let mut bloom = Bloom::new_for_fp_rate(items_count, 0.01)
+        .expect("the bloomfilter example invariant should hold");
 
     bloom.set(&"item1");
     bloom.set(&"item2");

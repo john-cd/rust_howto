@@ -51,8 +51,8 @@ mod tests {
 
     #[test]
     #[ignore = "requires Ruby VM initialization"]
-    fn test_main() {
-        main().unwrap();
+    fn test_magnus_example_entry_point() {
+        main().expect("example entry point should succeed");
     }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/1035)

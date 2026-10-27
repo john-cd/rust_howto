@@ -54,18 +54,21 @@ fn main() {
     assert!(SETTINGS.get().is_none());
 
     // Acquire a lock.
-    let settings_guard_1 = get_settings().lock().unwrap();
+    let settings_guard_1 =
+        get_settings().lock().expect("mutex should not be poisoned");
     println!("Config 1: {}", settings_guard_1.get_config());
     drop(settings_guard_1); // Release the lock.
 
     {
-        let mut settings_guard_2 = get_settings().lock().unwrap();
+        let mut settings_guard_2 =
+            get_settings().lock().expect("mutex should not be poisoned");
         // The `MutexGuard` provides mutable access.
         settings_guard_2.set_config("new_config".to_owned());
         println!("Config 2 updated!");
     } // Lock released here.
 
-    let settings_guard_3 = get_settings().lock().unwrap();
+    let settings_guard_3 =
+        get_settings().lock().expect("mutex should not be poisoned");
     println!("Config 3: {}", settings_guard_3.get_config());
 }
 

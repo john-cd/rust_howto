@@ -22,7 +22,7 @@ fn progress() {
     pb.set_style(ProgressStyle::default_bar()
         // 40 characters wide. Has cyan as primary style color and blue as alternative style color.
         .template("{spinner:.green} [{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
-        .unwrap()
+        .expect("the indicatif2 example invariant should hold")
         .progress_chars("=>."));
 
     for _ in 0..100 {
@@ -61,7 +61,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn test_indicatif2_example_entry_point() {
+        main().expect("example entry point should succeed");
     }
 }

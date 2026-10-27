@@ -14,7 +14,7 @@ fn reformat_dates(before: &str) -> Cow<'_, str> {
     lazy_static! {
     /// Captures the year, month, and day components of an ISO 8601 date.
             static ref ISO8601_DATE_REGEX: Regex =
-                Regex::new(r"(?P<y>\d{4})-(?P<m>\d{2})-(?P<d>\d{2})").unwrap();
+                Regex::new(r"(?P<y>\d{4})-(?P<m>\d{2})-(?P<d>\d{2})").expect("regular expression should be valid");
         }
     ISO8601_DATE_REGEX.replace_all(before, "$m/$d/$y")
 }

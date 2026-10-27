@@ -73,11 +73,20 @@ mod tests {
 
     async fn get_status_and_body(uri: &str) -> (StatusCode, Vec<u8>) {
         let response = app()
-            .oneshot(Request::get(uri).body(Body::empty()).unwrap())
+            .oneshot(
+                Request::get(uri)
+                    .body(Body::empty())
+                    .expect("the utoipa example invariant should hold"),
+            )
             .await
-            .unwrap();
+            .expect("the utoipa example invariant should hold");
         let status = response.status();
-        let body = response.into_body().collect().await.unwrap().to_bytes();
+        let body = response
+            .into_body()
+            .collect()
+            .await
+            .expect("the utoipa example invariant should hold")
+            .to_bytes();
         (status, body.to_vec())
     }
 
@@ -86,7 +95,8 @@ mod tests {
         let (status, body) =
             get_status_and_body("/api-docs/openapi.json").await;
         assert_eq!(status, StatusCode::OK);
-        let doc: serde_json::Value = serde_json::from_slice(&body).unwrap();
+        let doc: serde_json::Value = serde_json::from_slice(&body)
+            .expect("the utoipa example invariant should hold");
         assert!(doc["paths"]["/hello/{name}"].is_object());
     }
 

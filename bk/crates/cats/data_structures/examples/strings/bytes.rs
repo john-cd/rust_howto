@@ -15,7 +15,11 @@ fn main() {
 
     let res = buf.freeze();
     assert_eq!(res, "hello world");
-    println!("{}", std::str::from_utf8(&res).unwrap());
+    println!(
+        "{}",
+        std::str::from_utf8(&res)
+            .expect("sample plaintext should be valid UTF-8")
+    );
 }
 
 // ANCHOR_END: example

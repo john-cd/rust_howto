@@ -54,14 +54,18 @@ fn main() {
         let addr = MyActor.start();
 
         // Send a Ping message to the actor and wait for it to be handled:
-        addr.send(Ping).await.unwrap();
+        addr.send(Ping)
+            .await
+            .expect("the actix example invariant should hold");
 
         // Ask the system to stop:
         System::current().stop();
     });
 
     // Run the system until it stops:
-    system.run().unwrap();
+    system
+        .run()
+        .expect("the actix example invariant should hold");
 }
 
 // ANCHOR_END: example

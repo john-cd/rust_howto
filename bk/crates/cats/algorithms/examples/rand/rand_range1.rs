@@ -13,7 +13,7 @@ fn main() {
     // Create a random number generator:
     let mut rng = rand::rng();
     // Create a uniform distribution over the range [1, 7):
-    let die = Uniform::try_from(1..7).unwrap();
+    let die = Uniform::try_from(1..7).expect("sample range should be valid");
 
     loop {
         let throw = die.sample(&mut rng);

@@ -17,7 +17,9 @@ fn main() {
     let v1: Vector<i32> = Vector::new().push_back(1).push_back(2).push_back(3);
 
     // Create a new vector with index 1 set to 20:
-    let v2 = v1.set(1, 20).unwrap();
+    let v2 = v1
+        .set(1, 20)
+        .expect("the rpds example invariant should hold");
 
     println!("Original v1: {v1}"); // [1, 2, 3]
     println!("Modified v2: {v2}"); // [1, 20, 3]

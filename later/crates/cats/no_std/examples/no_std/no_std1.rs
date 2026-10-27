@@ -48,7 +48,8 @@ impl Write for ArrayString {
 /// Writes formatted text to a stack-allocated string and checks it.
 fn main() {
     let mut buffer = ArrayString::new();
-    write!(&mut buffer, "no_std core example: {} + {} = {}", 3, 4, 7).unwrap();
+    write!(&mut buffer, "no_std core example: {} + {} = {}", 3, 4, 7)
+        .expect("example output should be writable");
     assert_eq!(buffer.as_str(), "no_std core example: 3 + 4 = 7");
 }
 // ANCHOR_END: example

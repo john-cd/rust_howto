@@ -41,7 +41,8 @@ pub enum ApiResponse {
 /// Deserializes success and error responses from JSON.
 fn main() {
     let success = "{\"success\":true}";
-    let response: ApiResponse = serde_json::from_str(success).unwrap();
+    let response: ApiResponse = serde_json::from_str(success)
+        .expect("sample input should parse successfully");
 
     match response {
         ApiResponse::Success {
@@ -51,7 +52,8 @@ fn main() {
     }
 
     let error = "{\"success\":false,\"_message\":\"...\"}";
-    let response: ApiResponse = serde_json::from_str(error).unwrap();
+    let response: ApiResponse = serde_json::from_str(error)
+        .expect("sample input should parse successfully");
     match response {
         ApiResponse::Error {
             success: MustBe!(false),

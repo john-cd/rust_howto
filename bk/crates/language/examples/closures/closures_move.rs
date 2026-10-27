@@ -22,7 +22,7 @@ fn main() {
 
     // println!("{data:?}"); // Error: `data` was moved into the closure.
 
-    handle.join().unwrap();
+    handle.join().expect("worker thread should not panic");
 }
 
 // ANCHOR_END: example

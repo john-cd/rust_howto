@@ -22,7 +22,7 @@ pub fn main() {
             },
             ..Default::default()
         })
-        .unwrap();
+        .expect("the taffy example invariant should hold");
 
     let child2 = tree
         .new_leaf(Style {
@@ -32,7 +32,7 @@ pub fn main() {
             },
             ..Default::default()
         })
-        .unwrap();
+        .expect("the taffy example invariant should hold");
 
     // Create a root container with Flexbox layout
     let root = tree
@@ -50,15 +50,22 @@ pub fn main() {
             },
             &[child1, child2],
         )
-        .unwrap();
+        .expect("the taffy example invariant should hold");
 
     // Compute the layout
-    tree.compute_layout(root, Size::MAX_CONTENT).unwrap();
+    tree.compute_layout(root, Size::MAX_CONTENT)
+        .expect("the taffy example invariant should hold");
 
     // Get the computed layout of the nodes
-    let root_layout = tree.layout(root).unwrap();
-    let child1_layout = tree.layout(child1).unwrap();
-    let child2_layout = tree.layout(child2).unwrap();
+    let root_layout = tree
+        .layout(root)
+        .expect("the taffy example invariant should hold");
+    let child1_layout = tree
+        .layout(child1)
+        .expect("the taffy example invariant should hold");
+    let child2_layout = tree
+        .layout(child2)
+        .expect("the taffy example invariant should hold");
 
     println!(
         "Root size: {}x{}",

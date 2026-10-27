@@ -72,7 +72,12 @@ fn main() -> Result<(), Error> {
     let toml: Value = toml::from_str(toml_content)?;
 
     assert_eq!(toml["table"]["key"].as_integer(), Some(123));
-    println!("{}", toml["strings"]["str1"].as_str().unwrap());
+    println!(
+        "{}",
+        toml["strings"]["str1"]
+            .as_str()
+            .expect("the toml example invariant should hold")
+    );
     Ok(())
 }
 // ANCHOR_END: example

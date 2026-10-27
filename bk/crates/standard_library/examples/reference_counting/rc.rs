@@ -35,7 +35,7 @@ fn main() {
     // otherwise. Consider also `make_mut`, which will clone the inner value
     // when there are other `Rc` pointers.
     let mut y = Rc::new(4);
-    *Rc::get_mut(&mut y).unwrap() = 5;
+    *Rc::get_mut(&mut y).expect("the Rc should be uniquely owned") = 5;
     assert_eq!(*y, 5);
 
     // We can also consume the `Rc` to return its inner value if the `Rc` has

@@ -24,7 +24,9 @@ fn main() {
 
     // 2. You can also parse a string into an Integer.
     let s = "123456789012345678901234567890";
-    let c = s.parse::<Integer>().unwrap();
+    let c = s
+        .parse::<Integer>()
+        .expect("the rug example invariant should hold");
 
     // 3. Casting to primitive types (None if not possible).
     assert_eq!(c.to_u32(), None);

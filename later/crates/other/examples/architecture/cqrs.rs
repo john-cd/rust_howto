@@ -106,13 +106,19 @@ mod events {
 
     impl EventRepository for SimpleEventStore {
         fn apply_event(&self, event: ProductEvent) {
-            let mut events = self.events.write().unwrap();
+            let mut events = self
+                .events
+                .write()
+                .expect("the cqrs example invariant should hold");
             events.push(event);
         }
 
         // Get a snapshot of the events
         fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent> {
-            let events = self.events.read().unwrap();
+            let events = self
+                .events
+                .read()
+                .expect("the cqrs example invariant should hold");
             if let Some(limit) = limit {
                 events.iter().rev().take(limit).rev().cloned().collect()
             } else {
@@ -298,12 +304,18 @@ mod read_store {
 
     impl ProductRepository for SimpleReadStore {
         fn get_product(&self, id: u32) -> Option<Product> {
-            let read_model = self.read_model.read().unwrap();
+            let read_model = self
+                .read_model
+                .read()
+                .expect("the cqrs example invariant should hold");
             read_model.get(&id).cloned()
         }
 
         fn get_all_products(&self) -> Vec<Product> {
-            let read_model = self.read_model.read().unwrap();
+            let read_model = self
+                .read_model
+                .read()
+                .expect("the cqrs example invariant should hold");
             read_model.values().cloned().collect()
         }
     }
@@ -337,7 +349,11 @@ mod read_store {
                 }
             }
             // Publish the complete snapshot with one write-lock acquisition.
-            *self.read_model.write().unwrap() = read_model;
+            *self
+                .read_model
+                .write()
+                .expect("the read-model lock should not be poisoned") =
+                read_model;
         }
     }
 }
@@ -419,7 +435,7 @@ fn main() -> anyhow::Result<()> {
             name: "Mouse".to_owned(),
             quantity: 20,
         })
-        .unwrap();
+        .expect("the cqrs example invariant should hold");
 
     let events = command_handler.event_store.get_events(None);
     read_store.rebuild_read_model(events);
@@ -477,7 +493,9 @@ mod tests {
         ]);
 
         assert!(query_handler.get_product(2).is_none());
-        let product = query_handler.get_product(1).unwrap();
+        let product = query_handler
+            .get_product(1)
+            .expect("the cqrs example invariant should hold");
         assert_eq!(product.name(), "Laptop");
         assert_eq!(product.quantity(), 7);
     }

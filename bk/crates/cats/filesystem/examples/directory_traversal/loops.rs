@@ -47,7 +47,8 @@ fn main() {
     assert!(is_same_file("/tmp/foo", "/tmp/./foo").unwrap_or(false));
 
     assert_eq!(
-        contains_loop("/tmp/foo/bar/baz/qux/bar/baz").unwrap(),
+        contains_loop("/tmp/foo/bar/baz/qux/bar/baz")
+            .expect("the loops example invariant should hold"),
         Some((
             PathBuf::from("/tmp/foo"),
             PathBuf::from("/tmp/foo/bar/baz/qux")

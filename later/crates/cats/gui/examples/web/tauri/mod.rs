@@ -18,13 +18,19 @@ use tauri::menu::MenuItemBuilder;
 /// Returns the current value of the counter.
 #[tauri::command]
 fn get_counter(state: tauri::State<'_, CounterState>) -> i32 {
-    *state.value.lock().unwrap()
+    *state
+        .value
+        .lock()
+        .expect("the counter lock should not be poisoned")
 }
 
 /// Increments the counter.
 #[tauri::command]
 fn increment_counter(state: tauri::State<'_, CounterState>) {
-    *state.value.lock().unwrap() += 1;
+    *state
+        .value
+        .lock()
+        .expect("the counter lock should not be poisoned") += 1;
 }
 
 /// The state of the counter, managed by Tauri.

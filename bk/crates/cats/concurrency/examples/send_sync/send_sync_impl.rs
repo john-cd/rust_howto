@@ -97,7 +97,11 @@ mod my {
             assert!(!self.ptr.is_null());
             assert!(self.ptr.is_aligned());
 
-            unsafe { self.ptr.as_ref().unwrap() }
+            unsafe {
+                self.ptr
+                    .as_ref()
+                    .expect("the send sync impl example invariant should hold")
+            }
         }
 
         /// Creates a new `Arc` from a raw pointer to an `ArcInner`.
@@ -205,7 +209,7 @@ fn main() {
         .collect();
 
     for handle in handles {
-        handle.join().unwrap();
+        handle.join().expect("worker thread should not panic");
     } // At this point, all clones have been dropped and only `my_arc` remains.
 
     println!("`my_arc` will drop next.");

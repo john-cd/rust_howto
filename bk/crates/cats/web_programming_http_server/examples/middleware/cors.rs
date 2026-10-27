@@ -40,7 +40,7 @@ async fn main() -> Result<()> {
     let request = Request::builder()
         .header(header::ORIGIN, "https://example.com")
         .body(Full::default())
-        .unwrap();
+        .expect("the cors example invariant should hold");
 
     let response = service.ready().await?.call(request).await?;
     println!("{response:?}");
@@ -48,7 +48,7 @@ async fn main() -> Result<()> {
         response
             .headers()
             .get(header::ACCESS_CONTROL_ALLOW_ORIGIN)
-            .unwrap(),
+            .expect("the cors example invariant should hold"),
         "*",
     );
     Ok(())

@@ -30,15 +30,20 @@ fn main() {
             thread::sleep(Duration::from_millis(50 * i));
             println!(
                 "Thread {i} - {string_slice_clone} {}",
-                shared_mutable_string_clone.read().unwrap()
+                shared_mutable_string_clone.read().expect(
+                    "the cow alternatives example invariant should hold"
+                )
             );
             // Edit the `String`.
-            shared_mutable_string_clone.write().unwrap().push('!');
+            shared_mutable_string_clone
+                .write()
+                .expect("the cow alternatives example invariant should hold")
+                .push('!');
         });
         handles.push(handle);
     }
     for handle in handles {
-        handle.join().unwrap();
+        handle.join().expect("worker thread should not panic");
     }
     // `Rc<str>` is similar to `Arc<str>`, but optimized for single-threaded
     // environments.

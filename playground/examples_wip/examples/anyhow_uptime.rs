@@ -48,7 +48,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn test_anyhow_uptime_example_entry_point() {
+        main().expect("the uptime example should read its source data");
     }
 }

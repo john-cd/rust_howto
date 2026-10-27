@@ -154,7 +154,8 @@ mod tests {
         }
         assert!(std::env::var(key).is_err());
         assert_eq!(
-            get_arg_config(&m.unwrap()).map(|pb| format!("{}", pb.display())),
+            get_arg_config(&m.expect("valid --configuration arguments should parse"))
+                .map(|pb| format!("{}", pb.display())),
             Some("config.toml".into())
         );
     }
@@ -230,6 +231,9 @@ mod tests {
             std::env::remove_var(key);
         }
         assert!(std::env::var(key).is_err());
-        assert_eq!(get_arg_verbose(&m.unwrap()), 1);
+        assert_eq!(
+            get_arg_verbose(&m.expect("valid --verbose environment value should parse")),
+            1
+        );
     }
 }

@@ -28,12 +28,15 @@ fn main() {
             "1 25544U 98067A   26113.55475666  .00008745  00000+0  16716-3 0  9994".as_bytes(),
             "2 25544  51.6320 210.5007 0006819 341.8336  18.2408 15.48911267563287".as_bytes(),
         )
-        .unwrap()
+        .expect("the aero example invariant should hold")
     });
 
-    let constants = Constants::from_elements(&elements).unwrap();
+    let constants = Constants::from_elements(&elements)
+        .expect("the aero example invariant should hold");
     // Predict satellite position at epoch (time zero)
-    let prediction = constants.propagate(MinutesSinceEpoch(0.0)).unwrap();
+    let prediction = constants
+        .propagate(MinutesSinceEpoch(0.0))
+        .expect("the aero example invariant should hold");
 
     let pos = prediction.position;
     let vel = prediction.velocity;

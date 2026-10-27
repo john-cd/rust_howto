@@ -14,7 +14,7 @@ fn extract_hashtags(text: &str) -> HashSet<&str> {
     lazy_static! {
     /// Matches hashtags that start with a letter and continue with letters, digits, or underscores.
             static ref HASHTAG_REGEX: Regex =
-                Regex::new(r"\#[a-zA-Z][0-9a-zA-Z_]*").unwrap();
+                Regex::new(r"\#[a-zA-Z][0-9a-zA-Z_]*").expect("regular expression should be valid");
         }
     HASHTAG_REGEX
         .find_iter(text)

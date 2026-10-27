@@ -25,7 +25,8 @@ async fn one_shot() {
         // `unwrap()` is used here for simplicity, but in a real application,
         // we should handle the potential error (e.g., if the receiver is
         // dropped).
-        tx.send(res).unwrap();
+        tx.send(res)
+            .expect("the async channels oneshot example invariant should hold");
         // Alternatively, return the value via the joinhandle returned
         // by `spawn`.
     });
@@ -37,7 +38,9 @@ async fn one_shot() {
     // `await` will block until a value is received or the channel is closed.
     // `unwrap()` is used here for simplicity, but in a real application,
     // we should handle the potential error (e.g., if the sender is dropped).
-    let res = rx.await.unwrap();
+    let res = rx
+        .await
+        .expect("the async channels oneshot example invariant should hold");
     println!("{res}");
 }
 

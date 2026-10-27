@@ -37,7 +37,8 @@ async fn main() -> anyhow::Result<()> {
     let meilisearch_api_key: Option<String> = env::var("MEILI_MASTER_KEY").ok();
 
     // Create a client and connect to MeiliSearch.
-    let client = Client::new(meilisearch_url, meilisearch_api_key).unwrap();
+    let client = Client::new(meilisearch_url, meilisearch_api_key)
+        .expect("the meilisearch example invariant should hold");
 
     // Create an index.
     let index: Index = client.index("my_index");

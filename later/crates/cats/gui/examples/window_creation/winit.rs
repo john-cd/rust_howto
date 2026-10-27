@@ -31,8 +31,11 @@ impl ApplicationHandler for App {
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
         let window_attributes =
             Window::default_attributes().with_title("Test window");
-        self.window =
-            Some(event_loop.create_window(window_attributes).unwrap());
+        self.window = Some(
+            event_loop
+                .create_window(window_attributes)
+                .expect("the winit example invariant should hold"),
+        );
     }
 
     fn window_event(
@@ -61,7 +64,10 @@ impl ApplicationHandler for App {
                 // need to redraw in applications which do not always
                 // need to. Applications that redraw continuously
                 // can render here instead.
-                self.window.as_ref().unwrap().request_redraw();
+                self.window
+                    .as_ref()
+                    .expect("the winit example invariant should hold")
+                    .request_redraw();
             }
             _ => (),
         }
@@ -100,8 +106,8 @@ mod tests {
 
     #[test]
     #[ignore = "requires interactive example runtime"]
-    fn test_main() {
-        main().unwrap();
+    fn test_winit_example_entry_point() {
+        main().expect("example entry point should succeed");
     }
 
     // TODO proper test

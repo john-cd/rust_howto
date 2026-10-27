@@ -56,7 +56,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn test_scrypt_example_entry_point() {
+        main().expect("example entry point should succeed");
     }
 }

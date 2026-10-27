@@ -160,7 +160,7 @@ mod tests {
 
         // Assert the result:
         assert!(result.is_ok());
-        let user = result.unwrap();
+        let user = result.expect("the mockall example invariant should hold");
         assert_eq!(user.id, 1);
         assert_eq!(user.name, "John Doe");
         assert_eq!(user.email, "john@example.com");
@@ -234,7 +234,8 @@ mod tests {
 
         // Assert the result.
         assert!(result.is_ok());
-        let updated_user = result.unwrap();
+        let updated_user =
+            result.expect("the mockall example invariant should hold");
         assert_eq!(updated_user.id, 1);
         assert_eq!(updated_user.name, "John Doe");
         assert_eq!(updated_user.email, "newemail@example.com");

@@ -16,13 +16,17 @@ fn main() {
     let tx2 = tx.clone();
     let first = thread::spawn(move || {
         for value in ["hi", "hi again"] {
-            tx.send(String::from(value)).unwrap();
+            tx.send(String::from(value)).expect(
+                "the message passing mpsc example invariant should hold",
+            );
         }
     });
 
     let second = thread::spawn(move || {
         for value in ["more", "messages"] {
-            tx2.send(String::from(value)).unwrap();
+            tx2.send(String::from(value)).expect(
+                "the message passing mpsc example invariant should hold",
+            );
         }
     });
 

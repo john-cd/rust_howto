@@ -46,7 +46,8 @@ fn main() {
 
     // Controlling hyphenation.
     println!("\nWith hyphenation enabled:");
-    let dictionary = Standard::from_embedded(Language::EnglishUS).unwrap();
+    let dictionary = Standard::from_embedded(Language::EnglishUS)
+        .expect("the textwrap example invariant should hold");
     let options =
         Options::new(15).word_splitter(WordSplitter::Hyphenation(dictionary));
     let hyphenated = fill(text, &options);

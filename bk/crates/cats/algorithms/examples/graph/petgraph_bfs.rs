@@ -43,10 +43,22 @@ fn main() {
     assert!(visited.contains(&"B"));
     assert!(visited.contains(&"C"));
     // D must appear after both B and C; E must appear last.
-    let b_position = visited.iter().position(|&s| s == "B").unwrap();
-    let c_position = visited.iter().position(|&s| s == "C").unwrap();
-    let d_position = visited.iter().position(|&s| s == "D").unwrap();
-    let e_position = visited.iter().position(|&s| s == "E").unwrap();
+    let b_position = visited
+        .iter()
+        .position(|&s| s == "B")
+        .expect("expected item should appear in the traversal");
+    let c_position = visited
+        .iter()
+        .position(|&s| s == "C")
+        .expect("expected item should appear in the traversal");
+    let d_position = visited
+        .iter()
+        .position(|&s| s == "D")
+        .expect("expected item should appear in the traversal");
+    let e_position = visited
+        .iter()
+        .position(|&s| s == "E")
+        .expect("expected item should appear in the traversal");
     assert!(d_position > b_position && d_position > c_position);
     assert!(e_position > d_position);
 }

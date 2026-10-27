@@ -23,7 +23,7 @@ async fn main() {
     });
 
     // Await the completion of the blocking task.
-    blocking_task.await.unwrap();
+    blocking_task.await.expect("the call blocking from async spawn blocking example invariant should hold");
 }
 
 // ANCHOR_END: example

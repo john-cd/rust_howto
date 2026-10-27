@@ -61,27 +61,30 @@ impl InMemoryUserRepository {
 /// Implementation of the `UserRepository` trait for `InMemoryUserRepository`.
 impl UserRepository for InMemoryUserRepository {
     fn get_user(&self, id: i32) -> Option<User> {
-        let users = self.users.lock().unwrap();
+        let users = self.users.lock().expect("mutex should not be poisoned");
         users.get(&id).cloned()
     }
 
     fn add_user(&self, user: User) {
-        let mut users = self.users.lock().unwrap();
+        let mut users =
+            self.users.lock().expect("mutex should not be poisoned");
         users.insert(user.id, user);
     }
 
     fn update_user(&self, user: User) {
-        let mut users = self.users.lock().unwrap();
+        let mut users =
+            self.users.lock().expect("mutex should not be poisoned");
         users.insert(user.id, user);
     }
 
     fn delete_user(&self, id: i32) {
-        let mut users = self.users.lock().unwrap();
+        let mut users =
+            self.users.lock().expect("mutex should not be poisoned");
         users.remove(&id);
     }
 
     fn get_all_users(&self) -> Vec<User> {
-        let users = self.users.lock().unwrap();
+        let users = self.users.lock().expect("mutex should not be poisoned");
         users.values().cloned().collect()
     }
 }
@@ -106,13 +109,13 @@ fn main() {
     };
 
     {
-        let repo = repository.lock().unwrap();
+        let repo = repository.lock().expect("mutex should not be poisoned");
         repo.add_user(user1);
         repo.add_user(user2);
     }
 
     {
-        let repo = repository.lock().unwrap();
+        let repo = repository.lock().expect("mutex should not be poisoned");
         let retrieved_user = repo.get_user(1);
         println!("Retrieved user: {retrieved_user:?}");
 

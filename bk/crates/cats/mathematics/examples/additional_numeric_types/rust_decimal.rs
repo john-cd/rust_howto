@@ -41,7 +41,8 @@ fn main() {
 
     // 3. Converting to and from strings:
     let number_str = "98.76";
-    let number_from_str = Decimal::from_str(number_str).unwrap();
+    let number_from_str = Decimal::from_str(number_str)
+        .expect("sample input should parse successfully");
     println!("Number from string: {number_from_str}");
     assert_eq!(number_from_str.to_string(), "98.76");
 

@@ -30,8 +30,12 @@ fn main() {
 
     let windowed_context = context_builder
         .build_windowed(window_builder, &event_loop)
-        .unwrap();
-    let windowed_context = unsafe { windowed_context.make_current().unwrap() };
+        .expect("the webrender example invariant should hold");
+    let windowed_context = unsafe {
+        windowed_context
+            .make_current()
+            .expect("the webrender example invariant should hold")
+    };
 
     let gl =
         gl::Gl::load_with(|s| windowed_context.get_proc_address(s) as *const _);
@@ -43,7 +47,7 @@ fn main() {
     let builder = RendererBuilder::new().set_profiler(Box::new(NullProfiler));
     let mut renderer = builder
         .build(gl, DeviceIntSize::new(width, height))
-        .unwrap();
+        .expect("the webrender example invariant should hold");
 
     let document_id = renderer.create_document(DocumentId(0));
     let mut epoch = Epoch(0);
@@ -99,7 +103,9 @@ fn main() {
                     FrameBuilder::new(DeviceIntSize::new(width, height));
                 frame_builder.begin(DeviceIntSize::new(width, height));
                 renderer.render(epoch, frame_builder);
-                windowed_context.swap_buffers().unwrap();
+                windowed_context
+                    .swap_buffers()
+                    .expect("the webrender example invariant should hold");
                 windowed_context.window().request_redraw();
             }
             _ => (),

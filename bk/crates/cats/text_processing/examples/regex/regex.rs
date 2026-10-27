@@ -26,14 +26,18 @@ static GLOBAL_REGEX: std::sync::LazyLock<BTreeMap<&str, Re>> =
             "[text](http...)",
             Re(
                 Regex::new(r"[^!]\[(?<text>.*?)\]\s?\(\s*?(?<link>\S*?)\s*?\)")
-                    .unwrap(),
+                    .expect("the regex example invariant should hold"),
                 vec!["text", "link"],
             ),
         );
         // A Markdown autolink.
         m.insert(
             "<http...>",
-            Re(Regex::new("<(?<link>http.*?)>").unwrap(), vec!["link"]),
+            Re(
+                Regex::new("<(?<link>http.*?)>")
+                    .expect("regular expression should be valid"),
+                vec!["link"],
+            ),
         );
         // A Markdown shortcut link.
         // [text] not preceded by ! or ], not followed by <optional spaces>[ or
@@ -42,7 +46,7 @@ static GLOBAL_REGEX: std::sync::LazyLock<BTreeMap<&str, Re>> =
             "[text] ...",
             Re(
                 Regex::new(r"[^!\]]\[(?<text>[^\[\]]+?)\]\s*?[^\[\(:]")
-                    .unwrap(),
+                    .expect("the regex example invariant should hold"),
                 vec!["text"],
             ),
         );
@@ -51,7 +55,7 @@ static GLOBAL_REGEX: std::sync::LazyLock<BTreeMap<&str, Re>> =
             "[text][label]",
             Re(
                 Regex::new(r"[^!\]]\[(?<text>.*?)\]\s?\[(?<label>.+?)\]")
-                    .unwrap(),
+                    .expect("the regex example invariant should hold"),
                 vec!["text", "label"],
             ),
         );
@@ -61,7 +65,7 @@ static GLOBAL_REGEX: std::sync::LazyLock<BTreeMap<&str, Re>> =
         // ^ and $ are the beginning and end of a line, respectively.
         m.insert(
         "[label]: url \"title\"",
-        Re(Regex::new(r#"(?m)^\s*?\[(?<label>.*?)\]:\s*?(?<url>\S+)\s*?(?:"(?<title>.*)")?\s*$"#).unwrap(),
+        Re(Regex::new(r#"(?m)^\s*?\[(?<label>.*?)\]:\s*?(?<url>\S+)\s*?(?:"(?<title>.*)")?\s*$"#).expect("regular expression should be valid"),
         vec!["label", "url", "title"])
     );
         m

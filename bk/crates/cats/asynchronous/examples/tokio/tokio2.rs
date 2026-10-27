@@ -9,7 +9,7 @@ fn main() {
     tokio::runtime::Builder::new_current_thread()
         .enable_all()
         .build()
-        .unwrap()
+        .expect("the tokio2 example invariant should hold")
         .block_on(async {
             println!("Hello world");
         });

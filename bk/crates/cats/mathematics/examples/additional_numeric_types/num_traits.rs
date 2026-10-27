@@ -35,7 +35,8 @@ fn main() {
     assert_eq!(x, 1);
 
     // Perform a type conversion using `NumCast`:
-    let y: f64 = NumCast::from(x).unwrap();
+    let y: f64 =
+        NumCast::from(x).expect("the num traits example invariant should hold");
     println!("Value of y after converting from x: {y}");
     assert_eq!(y, 1.0);
 }

@@ -18,7 +18,8 @@ use ring::rand::SecureRandom as _;
 fn main() -> Result<(), Unspecified> {
     /// Number of bytes in the password-hashing credential.
     const CREDENTIAL_LEN: usize = digest::SHA512_OUTPUT_LEN;
-    let n_iter = NonZeroU32::new(100_000).unwrap();
+    let n_iter = NonZeroU32::new(100_000)
+        .expect("the pbkdf2 example invariant should hold");
     let rng = rand::SystemRandom::new();
 
     let mut salt = [0u8; CREDENTIAL_LEN];

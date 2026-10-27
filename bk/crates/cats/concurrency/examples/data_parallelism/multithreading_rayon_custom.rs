@@ -10,7 +10,9 @@ fn main() {
     let pool = rayon::ThreadPoolBuilder::new()
         .num_threads(8)
         .build()
-        .unwrap();
+        .expect(
+            "the multithreading rayon custom example invariant should hold",
+        );
     // `install` executes the closure within the threadpool. Any attempts
     // to use join, scope, or parallel iterators will then operate
     // within that threadpool.

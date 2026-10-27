@@ -49,7 +49,7 @@ fn main() {
     let handle = std::thread::spawn(move || {
         cache_clone.insert("key2", "value2");
     });
-    handle.join().unwrap();
+    handle.join().expect("worker thread should not panic");
 }
 
 // ANCHOR_END: example

@@ -32,7 +32,8 @@ fn main() {
     let message = b"Secret message";
     println!(
         "Original message: {:?}",
-        String::from_utf8(message.to_vec()).unwrap()
+        String::from_utf8(message.to_vec())
+            .expect("sample plaintext should be valid UTF-8")
     );
 
     // Generate a 2048-bit private key:
@@ -60,7 +61,8 @@ fn main() {
 
     println!(
         "Decrypted message: {:?}",
-        String::from_utf8(decrypted_message).unwrap()
+        String::from_utf8(decrypted_message)
+            .expect("sample plaintext should be valid UTF-8")
     );
 }
 // ANCHOR_END: example

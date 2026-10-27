@@ -15,7 +15,8 @@ use tracing_subscriber::fmt::format::FmtSpan;
 /// This is intended for production use with systems where structured logs are
 /// consumed as JSON by analysis and viewing tools.
 fn main() {
-    let file = File::create("temp/my_log.json").unwrap();
+    let file = File::create("temp/my_log.json")
+        .expect("example output should be writable");
 
     // Build a custom subscriber.
     let json_subscriber = tracing_subscriber::fmt()
@@ -70,7 +71,7 @@ mod tests {
     fn test_main() {
         use std::fs;
         if !std::path::Path::new("temp").exists() {
-            fs::create_dir("temp").unwrap();
+            fs::create_dir("temp").expect("example output should be writable");
         }
         main();
     }

@@ -17,7 +17,7 @@ pub fn main() {
     let window = WindowBuilder::new()
         .with_title("Tao Example")
         .build(&event_loop)
-        .unwrap();
+        .expect("the tao example invariant should hold");
 
     event_loop.run(move |event, _, control_flow| {
         *control_flow = ControlFlow::Wait;

@@ -70,8 +70,8 @@ fn do_instead() {
         }
     });
 
-    handle1.join().unwrap();
-    handle2.join().unwrap();
+    handle1.join().expect("worker thread should not panic");
+    handle2.join().expect("worker thread should not panic");
 
     let final_count = COUNTER.load(Ordering::Relaxed);
     println!("Final COUNTER value: {final_count}");
@@ -91,27 +91,30 @@ fn or_do_that() {
 
     println!(
         "Initial SAFE_COUNTER value: {}",
-        SAFE_COUNTER.lock().unwrap()
+        SAFE_COUNTER.lock().expect("mutex should not be poisoned")
     );
 
     let safe_handle1 = thread::spawn(|| {
         for _ in 0..10_000 {
-            let mut num = SAFE_COUNTER.lock().unwrap();
+            let mut num =
+                SAFE_COUNTER.lock().expect("mutex should not be poisoned");
             *num += 1;
         }
     });
 
     let safe_handle2 = thread::spawn(|| {
         for _ in 0..10_000 {
-            let mut num = SAFE_COUNTER.lock().unwrap();
+            let mut num =
+                SAFE_COUNTER.lock().expect("mutex should not be poisoned");
             *num += 1;
         }
     });
 
-    safe_handle1.join().unwrap();
-    safe_handle2.join().unwrap();
+    safe_handle1.join().expect("worker thread should not panic");
+    safe_handle2.join().expect("worker thread should not panic");
 
-    let final_count = *SAFE_COUNTER.lock().unwrap();
+    let final_count =
+        *SAFE_COUNTER.lock().expect("mutex should not be poisoned");
     println!("Final SAFE_COUNTER value: {final_count}");
     assert_eq!(final_count, 20_000);
 }

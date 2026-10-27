@@ -157,7 +157,7 @@ mod tests {
     /// Verifies that no guest path prints usage.
     #[test]
     fn no_guest_path_prints_usage() {
-        run_guest(None).unwrap();
+        run_guest(None).expect("the emulator example invariant should hold");
     }
 
     /// Verifies that host runtime builds.

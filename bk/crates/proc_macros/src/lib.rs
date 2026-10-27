@@ -163,10 +163,10 @@ mod tests {
     /// Checks that `old_ident` is replaced.
     #[test]
     fn test_process_tokens() {
-        let input =
-            proc_macro2::TokenStream::from_str("let old_ident = 1;").unwrap();
-        let expected =
-            proc_macro2::TokenStream::from_str("let new_ident = 1;").unwrap();
+        let input = proc_macro2::TokenStream::from_str("let old_ident = 1;")
+            .expect("sample input should parse successfully");
+        let expected = proc_macro2::TokenStream::from_str("let new_ident = 1;")
+            .expect("sample input should parse successfully");
 
         let output = process_tokens(input);
 

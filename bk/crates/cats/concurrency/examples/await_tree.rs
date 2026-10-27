@@ -25,7 +25,10 @@ use tokio::time::sleep;
 #[tokio::main]
 async fn main() {
     // Create a configuration.
-    let config = ConfigBuilder::default().verbose(true).build().unwrap();
+    let config = ConfigBuilder::default()
+        .verbose(true)
+        .build()
+        .expect("the await tree example invariant should hold");
 
     // Create a new registry, which can contain multiple await-trees.
     let registry = Registry::new(config);

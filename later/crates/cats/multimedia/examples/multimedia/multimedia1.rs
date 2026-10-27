@@ -40,8 +40,8 @@ mod tests {
 
     #[test]
     #[ignore = "requires audio output device"]
-    fn test_main() {
-        main().unwrap();
+    fn test_multimedia1_example_entry_point() {
+        main().expect("example entry point should succeed");
     }
 
     /// Verifies that create rodio output stream.

@@ -53,7 +53,7 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     //    any invalid filter directives.
     let _filter_layer2 = EnvFilter::try_from_default_env()
         .or_else(|_| EnvFilter::try_new("info"))
-        .unwrap();
+        .expect("the tracing subscriber layers example invariant should hold");
 
     // "development_tools_debugging=debug,axum=debug,tower_http=debug,
     // mongodb=debug" "my_crate=info,my_crate::my_mod=debug,
@@ -135,7 +135,9 @@ mod tests {
         unsafe {
             std::env::set_var("MY_CUSTOM_FILTER_ENV_VAR", "info");
         }
-        filter().unwrap();
+        filter().expect(
+            "the tracing subscriber layers example invariant should hold",
+        );
     }
 
     /// Verifies that per layer filtering.

@@ -77,7 +77,8 @@ fn main() {
     // This is slower then the `BorrowedValue` as a tradeoff for getting rid of
     // lifetimes.
     let mut owned_json: OwnedValue =
-        simd_json::to_owned_value(&mut json_string).unwrap();
+        simd_json::to_owned_value(&mut json_string)
+            .expect("the simd json example invariant should hold");
 
     if let Some(name) = owned_json.get_mut("name") {
         *name = OwnedValue::from("Bob");

@@ -50,8 +50,11 @@ fn main() {
     let closest = candidates
         .iter()
         .map(|&c| (c, jaro_winkler(target, c)))
-        .max_by(|a, b| a.1.partial_cmp(&b.1).unwrap())
-        .unwrap();
+        .max_by(|a, b| {
+            a.1.partial_cmp(&b.1)
+                .expect("the strsim example invariant should hold")
+        })
+        .expect("the strsim example invariant should hold");
 
     println!(
         "Closest match to '{target}' is '{}' with score {}",

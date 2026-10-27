@@ -12,8 +12,10 @@ use num_traits::One as _;
 /// Demonstrates the usage of `BigInt` for large integer arithmetic.
 fn main() {
     // Parse big integers from strings.
-    let a = BigInt::from_str("123456789012345678901234567890").unwrap();
-    let b = BigInt::from_str("987654321098765432109876543210").unwrap();
+    let a = BigInt::from_str("123456789012345678901234567890")
+        .expect("sample input should parse successfully");
+    let b = BigInt::from_str("987654321098765432109876543210")
+        .expect("sample input should parse successfully");
 
     // Add.
     let sum = &a + &b;

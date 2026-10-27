@@ -18,7 +18,11 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(db.insert(b"key1", b"Hello, Sled!"), Ok(None));
 
     // Retrieve a value, if it exists:
-    assert_eq!(&db.get(b"key1")?.unwrap(), b"Hello, Sled!");
+    assert_eq!(
+        &db.get(b"key1")?
+            .expect("expected example value should be present"),
+        b"Hello, Sled!"
+    );
     // Note: under the cover, `get` returns an `IVec`, which is a data structure
     // that makes some things more efficient. IVec implements `AsRef<[u8]>`,
     // so we can use `&` above.
@@ -54,8 +58,16 @@ fn main() -> anyhow::Result<()> {
         Ok(())
     })?;
 
-    assert_eq!(&db.get(b"key3")?.unwrap(), b"stuff");
-    assert_eq!(&db.get(b"key4")?.unwrap(), b"much");
+    assert_eq!(
+        &db.get(b"key3")?
+            .expect("expected example value should be present"),
+        b"stuff"
+    );
+    assert_eq!(
+        &db.get(b"key4")?
+            .expect("expected example value should be present"),
+        b"much"
+    );
 
     // Multiple trees with isolated keyspaces are supported with the
     // `Db::open_tree` method.

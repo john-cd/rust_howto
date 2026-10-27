@@ -52,8 +52,10 @@ async fn async_main() -> Result<(), Box<dyn std::error::Error>> {
 
 /// Creates a Tokio runtime and runs [`async_main`] on it.
 fn main() {
-    let rt = tokio::runtime::Runtime::new().unwrap();
-    rt.block_on(async { async_main().await }).unwrap();
+    let rt = tokio::runtime::Runtime::new()
+        .expect("the async channels oneshot2 example invariant should hold");
+    rt.block_on(async { async_main().await })
+        .expect("the async channels oneshot2 example invariant should hold");
 }
 
 // ANCHOR_END: example

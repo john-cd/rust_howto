@@ -24,7 +24,9 @@ fn connect_drone() -> Result<(), String> {
             }
             Message::Response(ResponseMsg::Connected(_)) => {
                 println!("connected");
-                drone.throw_and_go().unwrap();
+                drone
+                    .throw_and_go()
+                    .expect("the uavs example invariant should hold");
             }
             _ => (),
         }

@@ -13,9 +13,9 @@ fn main() {
     // Here we define a fixed-size vector with capacity of 3.
     let mut vec: Vec<u32, 3> = Vec::new();
 
-    vec.push(1).unwrap();
-    vec.push(2).unwrap();
-    vec.push(3).unwrap();
+    vec.push(1).expect("the heapless example invariant should hold");
+    vec.push(2).expect("the heapless example invariant should hold");
+    vec.push(3).expect("the heapless example invariant should hold");
     // Because they have a fixed size, operations like `push` or `insert` can
     // fail if the collection is full. In that case, `push` returns back the
     // item.
@@ -49,10 +49,10 @@ fn main() {
     // Define a fixed-size map (using the `Fnv` hash for performance):
     let mut map: FnvIndexMap<&str, u32, 4> = FnvIndexMap::new();
 
-    map.insert("one", 1).unwrap();
-    map.insert("two", 2).unwrap();
-    map.insert("three", 3).unwrap();
-    map.insert("four", 4).unwrap();
+    map.insert("one", 1).expect("the heapless example invariant should hold");
+    map.insert("two", 2).expect("the heapless example invariant should hold");
+    map.insert("three", 3).expect("the heapless example invariant should hold");
+    map.insert("four", 4).expect("the heapless example invariant should hold");
     // When a key already exists, its position in iteration order stays the
     // same, its value is updated, and the old value is returned in `Some(_)`.
     assert_eq!(map.insert("three", 33), Ok(Some(3)));

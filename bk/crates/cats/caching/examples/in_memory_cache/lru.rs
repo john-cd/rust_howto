@@ -14,7 +14,9 @@ use lru::LruCache;
 /// Fills an LRU cache beyond its capacity and shows which entries are evicted.
 fn main() {
     // Create an LRU cache with a capacity of 3:
-    let mut cache = LruCache::new(NonZeroUsize::new(3).unwrap());
+    let mut cache = LruCache::new(
+        NonZeroUsize::new(3).expect("cache capacity should be nonzero"),
+    );
 
     // Insert some key-value pairs into the cache:
     cache.put(1, "one");
@@ -23,7 +25,12 @@ fn main() {
 
     // Access some entries:
     println!("a) value for key 1: {:?}", cache.get(&1)); // Should print `Some("one")`.
-    assert_eq!(*cache.get(&2).unwrap(), "two");
+    assert_eq!(
+        *cache
+            .get(&2)
+            .expect("expected example value should be present"),
+        "two"
+    );
     assert_eq!(cache.get(&3), Some(&"three"));
     assert!(cache.get(&4).is_none());
 
@@ -48,7 +55,9 @@ fn main() {
         // Returns a mutable reference to the value of the key in the cache or
         // `None`, if it is not present in the cache.
         // Moves the key to the head of the LRU list, if it exists.
-        let v = cache.get_mut(&5).unwrap();
+        let v = cache
+            .get_mut(&5)
+            .expect("expected example value should be present");
         *v = "new value";
         assert_eq!(cache.get_mut(&5), Some(&mut "new value"));
 

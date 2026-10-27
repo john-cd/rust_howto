@@ -52,7 +52,8 @@ fn build_ui(app: &Application) {
         let label = label.clone();
         let conditional_label = conditional_label.clone();
         move |_| {
-            let mut value = counter_value.lock().unwrap();
+            let mut value =
+                counter_value.lock().expect("mutex should not be poisoned");
             *value += 1;
             label.set_text(&format!("Counter: {}", *value));
             update_conditional_label(&conditional_label, *value);
@@ -64,7 +65,8 @@ fn build_ui(app: &Application) {
         let label = label.clone();
         let conditional_label = conditional_label.clone();
         move |_| {
-            let mut value = counter_value.lock().unwrap();
+            let mut value =
+                counter_value.lock().expect("mutex should not be poisoned");
             *value -= 1;
             label.set_text(&format!("Counter: {}", *value));
             update_conditional_label(&conditional_label, *value);

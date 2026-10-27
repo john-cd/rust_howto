@@ -19,7 +19,9 @@ pub async fn multi_producer_single_receiver() {
     tokio::spawn(async move {
         for i in 1..=10 {
             let res = some_computation(i).await;
-            tx.send(res).await.unwrap();
+            tx.send(res).await.expect(
+                "the async channels mpsc example invariant should hold",
+            );
         }
     });
 

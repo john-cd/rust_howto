@@ -51,10 +51,12 @@ mod tests {
     fn test_main() {
         use std::io::Write as _;
 
-        std::fs::create_dir_all("temp").unwrap();
-        let mut f = std::fs::File::create("temp/number.txt").unwrap();
-        writeln!(f, "42").unwrap();
+        std::fs::create_dir_all("temp")
+            .expect("example output should be writable");
+        let mut f = std::fs::File::create("temp/number.txt")
+            .expect("example output should be writable");
+        writeln!(f, "42").expect("the retain example invariant should hold");
 
-        main().unwrap();
+        main().expect("example entry point should succeed");
     }
 }

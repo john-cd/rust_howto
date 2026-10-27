@@ -34,11 +34,13 @@ fn main() {
     };
 
     // Serialize the struct to a JSON string.
-    let json = serde_json::to_string(&person).unwrap();
+    let json = serde_json::to_string(&person)
+        .expect("the serde example invariant should hold");
     println!("Serialized: {json}");
 
     // Deserialize the JSON string back to a struct.
-    let deserialized_person: Person = serde_json::from_str(&json).unwrap();
+    let deserialized_person: Person = serde_json::from_str(&json)
+        .expect("sample input should parse successfully");
     println!("Deserialized: {deserialized_person:?}");
 }
 

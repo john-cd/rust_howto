@@ -57,8 +57,8 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
-        main().unwrap();
+    fn test_localization1_example_entry_point() {
+        main().expect("example entry point should succeed");
     }
 
     /// Verifies that translate greeting selects spanish.

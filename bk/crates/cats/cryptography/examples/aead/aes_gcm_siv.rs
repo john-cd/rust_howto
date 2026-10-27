@@ -54,7 +54,8 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
     )?;
     println!(
         "Decrypted Ciphertext: {}",
-        String::from_utf8(decrypted_ciphertext.clone()).unwrap()
+        String::from_utf8(decrypted_ciphertext.clone())
+            .expect("sample plaintext should be valid UTF-8")
     );
 
     assert_eq!(plaintext, decrypted_ciphertext.as_slice());

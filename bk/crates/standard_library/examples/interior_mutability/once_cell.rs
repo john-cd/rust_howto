@@ -36,7 +36,11 @@ fn main() {
     assert!(result.is_err());
 
     // `get` returns an Option with a reference to the value
-    assert_eq!(cell.get().unwrap(), "Hello, World!");
+    assert_eq!(
+        cell.get()
+            .expect("expected example value should be present"),
+        "Hello, World!"
+    );
 }
 
 // ANCHOR_END: example

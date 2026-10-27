@@ -15,7 +15,7 @@ fn main() {
         .worker_threads(1)
         .enable_all()
         .build()
-        .unwrap();
+        .expect("the call async from blocking tokio runtime example invariant should hold");
 
     let mut handles = Vec::with_capacity(10);
     for i in 0..10 {
@@ -31,7 +31,7 @@ fn main() {
     for handle in handles {
         // The `spawn` method returns a `JoinHandle`. A `JoinHandle` is
         // a future, so we can wait for it using `block_on`.
-        runtime.block_on(handle).unwrap();
+        runtime.block_on(handle).expect("the call async from blocking tokio runtime example invariant should hold");
     }
 }
 

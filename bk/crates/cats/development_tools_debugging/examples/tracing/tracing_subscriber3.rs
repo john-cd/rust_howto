@@ -80,8 +80,8 @@ mod tests {
     fn test_main() {
         use std::fs;
         if !std::path::Path::new("temp").exists() {
-            fs::create_dir("temp").unwrap();
+            fs::create_dir("temp").expect("example output should be writable");
         }
-        main().unwrap();
+        main().expect("example entry point should succeed");
     }
 }

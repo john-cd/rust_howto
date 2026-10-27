@@ -18,7 +18,7 @@ fn extract_login(input: &str) -> Option<&str> {
             [[:word:]]+$
             "
             )
-            .unwrap();
+            .expect("the email example invariant should hold");
         }
     let cap = RE.captures(input)?;
     cap.name("login").map(|login| login.as_str())

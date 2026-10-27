@@ -64,6 +64,6 @@ mod tests {
     #[tokio::test]
     #[ignore = "Requires network"]
     async fn test_main() {
-        main().await.unwrap();
+        main().await.expect("example entry point should succeed");
     }
 }

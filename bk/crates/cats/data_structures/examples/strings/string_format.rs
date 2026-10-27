@@ -10,7 +10,9 @@ use std::io::Write as _;
 fn print() {
     // The first argument of `print` must be a string literal.
     print!("This prints the string literal. ");
-    std::io::stdout().flush().unwrap(); // Emit message immediately, if stdout is line-buffered.
+    std::io::stdout()
+        .flush()
+        .expect("example output should be writable"); // Emit message immediately, if stdout is line-buffered.
 
     println!("This prints a newline after the string.");
 

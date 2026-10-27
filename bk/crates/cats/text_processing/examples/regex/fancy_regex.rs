@@ -54,9 +54,12 @@ fn capture_groups() {
 
 /// Splits a text on runs of whitespace.
 fn split_text() {
-    let re = Regex::new(r"[ \t]+").unwrap();
+    let re = Regex::new(r"[ \t]+").expect("regular expression should be valid");
     let target = "Lorem ipsum\t dolor sit amet";
-    let fields: Vec<&str> = re.split(target).map(|x| x.unwrap()).collect();
+    let fields: Vec<&str> = re
+        .split(target)
+        .map(|x| x.expect("the fancy regex example invariant should hold"))
+        .collect();
     assert_eq!(fields, vec!["Lorem", "ipsum", "dolor", "sit", "amet"]);
 }
 

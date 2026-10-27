@@ -21,7 +21,10 @@ static GLOBAL_DATA: Lazy<Mutex<HashMap<i32, String>>> = Lazy::new(|| {
 
 /// Prints the lazily initialized global data.
 fn main() {
-    println!("{:?}", GLOBAL_DATA.lock().unwrap());
+    println!(
+        "{:?}",
+        GLOBAL_DATA.lock().expect("mutex should not be poisoned")
+    );
 }
 
 // ANCHOR_END: example

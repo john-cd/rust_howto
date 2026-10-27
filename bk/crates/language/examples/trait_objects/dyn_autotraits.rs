@@ -51,7 +51,7 @@ fn main() {
         process_message(messenger);
     });
 
-    handle.join().unwrap();
+    handle.join().expect("worker thread should not panic");
 }
 
 // ANCHOR_END: example

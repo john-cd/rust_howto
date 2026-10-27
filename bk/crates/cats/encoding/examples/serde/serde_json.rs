@@ -31,12 +31,13 @@ fn main() {
     };
 
     // Serialize the `Person` instance to a JSON string.
-    let json_string = serde_json::to_string(&person).unwrap();
+    let json_string = serde_json::to_string(&person)
+        .expect("the serde json example invariant should hold");
     println!("Serialized JSON: {json_string}");
 
     // Deserialize the JSON string back into a `Person` instance.
-    let deserialized_person: Person =
-        serde_json::from_str(&json_string).unwrap();
+    let deserialized_person: Person = serde_json::from_str(&json_string)
+        .expect("sample input should parse successfully");
     println!("Deserialized person: {deserialized_person:?}");
 }
 

@@ -75,7 +75,7 @@ mod tests {
             std::thread::current().id(),
             std::path::Path::new(file!())
                 .file_name()
-                .unwrap()
+                .expect("the main example invariant should hold")
                 .to_string_lossy(),
             SystemTime::now()
                 .duration_since(std::time::UNIX_EPOCH)?
@@ -98,7 +98,7 @@ mod tests {
         let enc = tar_builder.into_inner()?;
         enc.finish()?;
 
-        let _cwd_lock = CWD_LOCK.lock().unwrap();
+        let _cwd_lock = CWD_LOCK.lock().expect("mutex should not be poisoned");
         let original_dir = std::env::current_dir()?;
         std::env::set_current_dir(&work_dir)?;
         let result = tar_strip_prefix::run();
