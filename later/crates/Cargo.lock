@@ -16622,8 +16622,7 @@ dependencies = [
 name = "os_macos_apis"
 version = "0.1.2"
 dependencies = [
- "cocoa",
- "objc",
+ "objc2-foundation 0.3.2",
 ]
 
 [[package]]

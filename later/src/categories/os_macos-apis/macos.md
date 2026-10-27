@@ -10,7 +10,9 @@ Use portable Rust APIs when they cover the task. For native frameworks, prefer t
 
 Use [`objc2-foundation`][c~objc2-foundation~docs] for Foundation objects and [`objc2-app-kit`][c~objc2-app-kit~docs] for native windows, menus, and application lifecycle. AppKit APIs are main-thread-only; obtain an `objc2::MainThreadMarker` on the main thread and pass it to APIs that require one. For a small system-information task, Foundation's `NSProcessInfo` exposes the operating-system version string. See the [[objc | Objective-C]] chapter and [#1075](https://github.com/john-cd/rust_howto/issues/1075) for the broader binding patterns.
 
-The included starter example still uses the older `cocoa` and `objc` crates. Replacing it with an `objc2-*` example and adding a macOS-only assertion are tracked separately in [#819](https://github.com/john-cd/rust_howto/issues/819).
+The included example reads `NSProcessInfo::processInfo().operatingSystemVersionString()` through the typed, safe `objc2-foundation` methods. The bindings return retained objects, and the example copies the version into a Rust `String` before printing. It reports an empty result as an error and needs no application window, user data, or direct unsafe Objective-C calls.
+
+The package enables only the Foundation `std`, `NSProcessInfo`, and `NSString` features explicitly. From `later/crates` on macOS, run `cargo run -p os_macos_apis --example macos`. The version string depends on the installed operating system; other hosts run a message-only fallback.
 
 ## Store credentials in the Keychain
 

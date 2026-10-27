@@ -1,69 +1,36 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
+//! Read the macOS version through typed Foundation bindings.
+
 // ANCHOR: example
-//! A macOS-specific example using the `cocoa` crate to call native macOS APIs.
-//!
-//! On macOS this example queries the current user name and operating system
-//! version using `NSProcessInfo`.
+use std::io;
 
-/// The macOS implementation, which calls Cocoa APIs.
-#[cfg(target_os = "macos")]
-mod macos_impl {
-    use cocoa::base::id;
-    use cocoa::base::nil;
-    use cocoa::foundation::NSAutoreleasePool;
-    use cocoa::foundation::NSString;
-    use objc::class;
-    use objc::msg_send;
-    use objc::sel;
-    use objc::sel_impl;
+use objc2_foundation::NSProcessInfo;
 
-    /// Converts an `NSString` to a Rust `String`.
-    fn nsstring_to_string(nsstring: id) -> String {
-        unsafe {
-            if nsstring == nil {
-                return String::new();
-            }
-            let bytes: *const std::os::raw::c_char =
-                msg_send![nsstring, UTF8String];
-            std::ffi::CStr::from_ptr(bytes)
-                .to_string_lossy()
-                .into_owned()
-        }
+/// Reads and prints the operating-system version using safe retained objects.
+///
+/// # Errors
+/// Returns `InvalidData` if Foundation unexpectedly returns an empty version.
+fn main() -> io::Result<()> {
+    let process_info = NSProcessInfo::processInfo();
+    let version = process_info.operatingSystemVersionString().to_string();
+    if version.is_empty() {
+        return Err(io::Error::new(
+            io::ErrorKind::InvalidData,
+            "Foundation returned an empty operating-system version",
+        ));
     }
-
-    /// Calls Cocoa APIs.
-    fn run() {
-        unsafe {
-            let _pool = NSAutoreleasePool::new(nil);
-            let process_info: id =
-                msg_send![class!(NSProcessInfo), processInfo];
-            let os_version: id =
-                msg_send![process_info, operatingSystemVersionString];
-            let user_name: id = msg_send![process_info, userName];
-
-            println!("macOS user: {}", nsstring_to_string(user_name));
-            println!("Operating system: {}", nsstring_to_string(os_version));
-        }
-    }
-}
-
-/// Prints a message, since the example only works on macOS.
-#[cfg(not(target_os = "macos"))]
-fn main() {
-    println!("This example uses macOS APIs and is only supported on macOS.");
-}
-
-/// Runs the macos example.
-#[cfg(target_os = "macos")]
-fn main() {
-    macos_impl::run();
+    println!("Operating system: {version}");
+    Ok(())
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Runs the native macOS Foundation query.
+///
+/// # Errors
+/// Propagates an empty system-version response from Foundation.
+pub fn run() -> io::Result<()> {
+    main()
 }
 
 #[cfg(test)]
@@ -73,6 +40,6 @@ mod tests {
     /// Runs the macos example through its entry point.
     #[test]
     fn test_macos_example_entry_point() {
-        main();
+        main().expect("Foundation should return a non-empty system version");
     }
 }
