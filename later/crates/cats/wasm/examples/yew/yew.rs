@@ -52,7 +52,11 @@ fn app() -> Html {
 
 /// Runs the yew example.
 fn main() {
+    #[cfg(target_arch = "wasm32")]
     yew::Renderer::<App>::new().render();
+
+    #[cfg(not(target_arch = "wasm32"))]
+    println!("Build for wasm32-unknown-unknown and serve with Trunk.");
 }
 // ANCHOR_END: example
 
@@ -60,17 +64,22 @@ pub fn run() {
     main();
 }
 
-#[cfg(test)]
+#[cfg(all(test, not(target_arch = "wasm32")))]
 mod tests {
     use super::*;
 
     /// Runs the yew example through its entry point.
     #[test]
     #[ignore = "requires wasm example runtime"]
-    fn test_yew_example_entry_point() {
+    fn yew_example_entry_point_runs() {
         main();
     }
+
+    /// Renders the initial counter state to HTML with Yew's server renderer.
+    #[tokio::test]
+    async fn server_render_shows_counter() {
+        let html = yew::ServerRenderer::<App>::new().render().await;
+        assert!(html.contains("Yew Counter Example"));
+        assert!(html.contains("Counter: 0"));
+    }
 }
-// [review](https://github.com/john-cd/rust_howto/issues/856)
-// figure out how to test - cannot access imported statics on non-wasm
-// targets

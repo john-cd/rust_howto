@@ -20,6 +20,16 @@ Key Features:
 {{#include ../../../crates/cats/wasm/examples/yew/yew.rs:example}}
 ```
 
+To run the component in a browser, put it in a Yew application with an
+`index.html` file and serve that project with [Trunk][trunk~website]. Install
+Trunk and the WebAssembly target, then run this from the application directory:
+
+```bash
+cargo install trunk
+rustup target add wasm32-unknown-unknown
+trunk serve --open
+```
+
 ### See Also {#see-also .skip}
 
 - [What is Yew?][c~yew~website]↗.

@@ -206,7 +206,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-CODE-07 — WebAssembly and browser applications
 
-- [#856](https://github.com/john-cd/rust_howto/issues/856) — **P4** — yew/yew.rs: review — **NOT STARTED**
+- [#856](https://github.com/john-cd/rust_howto/issues/856) — **P4** — yew/yew.rs: review — **IMPLEMENTED ON TOPIC BRANCH; OPEN — browser renderer gated to wasm32, native SSR test added, Trunk steps documented; focused checks and PR evidence pending**
 - [#1944](https://github.com/john-cd/rust_howto/issues/1944) — **P4** — Add examples: Leptos web app building blocks (leptos_router, gloo-net, gloo-storage, icons, gRPC-Web client) — **PARTIAL**
 
 #### NOW-CODE-08 — Media encoding, images and video
