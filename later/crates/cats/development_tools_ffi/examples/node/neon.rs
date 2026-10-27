@@ -7,39 +7,42 @@
 //! a function to JavaScript.
 //!
 //! `neon` is a library for embedding Rust code in 'Node.js' applications.
-//! It is slower than `napi`, but also widely used and well-maintained.
+//! Its context API manages access to JavaScript values.
 //!
 //! # Steps
-//! - Install the `neon` crate first: `cargo install neon`
-//! - Create a new Neon project: `npm init neon my-neon-example`
-//! - Build the native module: `cargo build`
+//! - Create a new Neon project with the upstream npm initializer.
+//! - Build the native module with the generated package's npm build script.
 //! - Run the JavaScript file: `node index.js`
 
-#[cfg(feature = "neon")]
+#[cfg(feature = "node")]
 use neon::prelude::*;
 
+/// Returns the message independently of the JavaScript runtime.
+fn greeting() -> &'static str {
+    "hello from neon!"
+}
+
 /// A simple function that returns a JavaScript string.
-#[cfg(feature = "neon")]
-fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
+#[cfg(feature = "node")]
+fn hello(mut cx: FunctionContext<'_>) -> JsResult<'_, JsString> {
     // Create a JavaScript string
-    Ok(cx.string("hello from neon!"))
+    Ok(cx.string(greeting()))
 }
 
 // Entry point of the Neon module.
 /// Registers the `hello` function in the exports of the Node.js module.
-#[cfg(feature = "neon")]
+#[cfg(feature = "node")]
 #[::neon::main]
-fn main(mut cx: ModuleContext) -> NeonResult<()> {
+fn register(mut cx: ModuleContext<'_>) -> NeonResult<()> {
     // Expose the hello function to JavaScript
     cx.export_function("hello", hello)?;
     Ok(())
 }
 // ANCHOR_END: example
 
-/// Prints a message when the `neon` feature is not enabled.
-#[cfg(not(feature = "neon"))]
+/// Runs the host-independent part without pretending to load a Node addon.
 fn main() {
-    println!("Neon example requires the `neon` feature.");
+    println!("{}", greeting());
 }
 
 /// Runs the Neon example.
@@ -60,6 +63,12 @@ mod tests {
     #[ignore = "requires Node module runtime"]
     fn test_neon_example_entry_point() {
         // TODO main().unwrap();
+    }
+
+    /// Checks the string returned by the native callback without Node.js.
+    #[test]
+    fn greeting_matches_the_native_callback_message() {
+        assert_eq!(super::greeting(), "hello from neon!");
     }
 }
 // [finish how to test](https://github.com/john-cd/rust_howto/issues/1033)?

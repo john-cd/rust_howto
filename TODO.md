@@ -315,7 +315,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#1070](https://github.com/john-cd/rust_howto/issues/1070) — **P4** — development-tools_ffi/erlang_elixir.md: write — **IMPLEMENTED; OPEN — focused checks passed; full book gate and PR link pending**
 - [#1071](https://github.com/john-cd/rust_howto/issues/1071) — **P4** — development-tools_ffi/flutter.md: write; review in depth — **IMPLEMENTED AND REVIEWED; OPEN — focused checks passed; full book gate and PR link pending**
 - [#1072](https://github.com/john-cd/rust_howto/issues/1072) — **P4** — development-tools_ffi/java.md: write — **IMPLEMENTED; OPEN — focused checks passed; full book gate and PR link pending**
-- [#1074](https://github.com/john-cd/rust_howto/issues/1074) — **P4** — development-tools_ffi/node.md: write — **NOT STARTED**
+- [#1074](https://github.com/john-cd/rust_howto/issues/1074) — **P4** — development-tools_ffi/node.md: write — **IMPLEMENTED; OPEN — focused checks passed; full book gate and PR link pending**
 - [#1075](https://github.com/john-cd/rust_howto/issues/1075) — **P4** — development-tools_ffi/objc.md: write — **NOT STARTED**
 - [#1076](https://github.com/john-cd/rust_howto/issues/1076) — **P4** — development-tools_ffi/ruby.md: write — **NOT STARTED**
 

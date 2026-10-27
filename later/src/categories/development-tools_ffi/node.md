@@ -12,6 +12,37 @@ Interfacing with Node.js from Rust is typically done using Node-API (N-API), whi
 
 [`napi`][c~napi~docs]↗{{hi:napi}} provides N-API bindings for `Node.js`.
 
+Use the [napi-rs v3 scaffold][ffi~napi-start] for a native addon project:
+
+```bash
+npm install --global @napi-rs/cli
+napi new
+```
+
+Choose a package name and targets in the prompts, then enter the generated directory, install its npm dependencies, and run its build script (`npm run build`, which invokes `napi build`). The scaffold configures `napi`, `napi-derive`, the native library target, and JavaScript/TypeScript entry points together.
+
+In the generated `src/lib.rs`, import `napi_derive::napi` and mark exported functions with `#[napi]`. For example:
+
+```rust
+use napi_derive::napi;
+
+/// Returns a greeting for the JavaScript caller.
+#[napi]
+pub fn hello(name: String) -> String {
+    format!("Hello, {name}!")
+}
+```
+
+After building a CommonJS package, its generated loader can be called from a local smoke test:
+
+```js
+const assert = require('node:assert/strict');
+const { hello } = require('./index.js');
+assert.equal(hello('Ada'), 'Hello, Ada!');
+```
+
+This book's included example tests the plain greeting function. It is not the generated addon package; copying `#[napi]` into an executable alone does not create an npm-loadable library.
+
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/node/napi.rs:example}}
 ```
@@ -22,6 +53,8 @@ Interfacing with Node.js from Rust is typically done using Node-API (N-API), whi
 
 [`neon`][c~neon~docs]↗{{hi:neon}} is a safe abstraction layer for Node.js.
 
+Neon uses a `FunctionContext` to access JavaScript values and `#[neon::main]` to register exports in a native module. Its [project guide][ffi~neon-start] starts with Node.js and Rust; use the generated package's npm build script and load its `.node` artifact through the package entry point. Choose between Neon and napi-rs according to their API and packaging needs; this chapter makes no comparative performance claim.
+
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/node/neon.rs:example}}
 ```
@@ -31,10 +64,14 @@ Interfacing with Node.js from Rust is typically done using Node-API (N-API), whi
 - [`serde`][c~serde~docs]↗{{hi:serde}}: Often used for serializing and deserializing data passed between Rust and Node.js.
 - [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}: If you're exchanging [JSON][p~json] data.
 
+For ordinary calls, napi-rs and Neon convert runtime values directly. Use typed arrays or buffers for bulk bytes, with explicit ownership/lifetime rules, rather than converting a large binary payload to JSON. Use `Result` at the wrapper boundary to return a JavaScript error when validation fails.
+
 ## Build Tools {#build-tools .skip}
 
 - Use [`cargo`][c~cargo~docs]↗{{hi:cargo}} for building the Rust library.
 - Use `npm` or `yarn` for managing the Node.js side and integrating with the Rust addon.
+
+For distribution, use napi-rs's [native package release workflow][ffi~napi-release]. Build and test binaries for each supported operating system, architecture, and ABI/libc combination; publish those artifacts with the generated loader. Node-API stability does not make one compiled binary portable across all targets. Test loading from the packed npm package on each target, including a clean machine without Rust installed.
 
 ## Key Concepts and Workflow {#key-concepts-and-workflow .skip}
 
@@ -43,9 +80,17 @@ Interfacing with Node.js from Rust is typically done using Node-API (N-API), whi
 - Data Marshaling: You'll need to convert data between Rust and JavaScript types. [`neon`][c~neon~docs]↗{{hi:neon}} helps with this.
 - Event Loop: You'll need to be mindful of Node.js's event loop and ensure that your Rust code interacts with it correctly (e.g., using [asynchronous][p~asynchronous] operations when necessary).
 
+### Export Classes and Asynchronous Work {#node-async}
+
+A napi-rs class marks its struct and exported `impl` with `#[napi]`, with `#[napi(constructor)]` for construction; see the [class guide][ffi~napi-class]. Keep resource ownership in the Rust instance and define what happens when JavaScript releases it.
+
+For CPU work, implement `Task` and return [`AsyncTask`][ffi~napi-task] so computation runs in libuv's worker pool and resolves a Promise. Avoid touching JavaScript objects during `compute`; convert the owned result in `resolve`. For asynchronous IO, [`#[napi] async fn`][ffi~napi-async] integrates with Tokio when its runtime feature is enabled. An async function still blocks its worker if it performs long synchronous work, so move that work to a bounded blocking pool.
+
+### Choose WebAssembly When Appropriate {#node-wasm}
+
+Use [WebAssembly](../wasm/index.md) when sharing a portable computation with a browser is more useful than direct native integration. The [JavaScript interop chapter](../wasm/interfacing_with_javascript.md) covers that boundary. Native addons remain useful for native dependencies and OS resources; WebAssembly still needs an explicit host interface for such capabilities.
+
+From `later/crates`, run `cargo test --locked -p development_tools_ffi --example node` for the pure-Rust examples. This does not run the Node loader. Build the separate addon with `napi build` (or the scaffold's npm script), then run the JavaScript smoke test there.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/1074)
-</div>

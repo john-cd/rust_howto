@@ -77,3 +77,10 @@
 [ffi~jni-invocation]: https://docs.rs/jni/0.22.4/jni/#launching-jvm-from-rust
 [ffi~java-ffm]: https://docs.oracle.com/en/java/javase/22/core/foreign-function-and-memory-api.html
 [ffi~mobile]: https://github.com/rust-mobile
+
+[ffi~napi-start]: https://napi.rs/docs/introduction/getting-started
+[ffi~napi-release]: https://napi.rs/docs/deep-dive/release
+[ffi~napi-class]: https://napi.rs/docs/concepts/class
+[ffi~napi-task]: https://napi.rs/docs/concepts/async-task
+[ffi~napi-async]: https://napi.rs/docs/concepts/async-fn
+[ffi~neon-start]: https://neon-rs.dev/docs/hello-world/
