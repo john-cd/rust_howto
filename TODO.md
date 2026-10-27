@@ -198,7 +198,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **PARTIAL ON ISSUE BRANCH; #817 sysctl example and FreeBSD CI check remain; final validation pending**
 - [#434](https://github.com/john-cd/rust_howto/issues/434) — **P4** — os_linux-apis/linux.md: linux: write — **PARTIAL ON ISSUE BRANCH; #818 inotify/statx example and final validation pending**
 - [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **PARTIAL ON ISSUE BRANCH; #819 legacy example and macOS CI inclusion remain; final validation pending**
-- [#496](https://github.com/john-cd/rust_howto/issues/496) — **P4** — wasm/wasm_standalone_runtimes.md: others: organize/write — **NOT STARTED**
+- [#496](https://github.com/john-cd/rust_howto/issues/496) — **P4** — wasm/wasm_standalone_runtimes.md: others: organize/write — **DEFERRED — current support checks for six runtimes and Wasmer/Wasmtime example builds/tests are held for the final validation pass; blocker details are on the issue**
 - [#498](https://github.com/john-cd/rust_howto/issues/498) — **P4** — wasm/yew.md: yew: write / organize — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#1217](https://github.com/john-cd/rust_howto/issues/1217) — **P4** — `wasm/wasm_development.md`: write — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#1218](https://github.com/john-cd/rust_howto/issues/1218) — **P4** — `wasm/interfacing_with_javascript.md`: write — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
