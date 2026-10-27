@@ -47,3 +47,12 @@
 [yew~ssr~website]: https://yew.rs/docs/advanced-topics/server-side-rendering
 [dioxus~ssr~website]: https://dioxuslabs.com/learn/0.7/essentials/fullstack/ssr/
 [ex~wasm~wasmtime-sandbox]: wasm_standalone_runtimes.md#wasmtime-sandbox
+
+[cargo-component~repo]: https://github.com/bytecodealliance/cargo-component
+[wasm-bindgen-test~guide]: https://rustwasm.github.io/docs/wasm-bindgen/wasm-bindgen-test/browsers.html
+[rust~cargo-profiles~book]: https://doc.rust-lang.org/cargo/reference/profiles.html
+[binaryen~repo]: https://github.com/WebAssembly/binaryen
+[twiggy~repo]: https://github.com/AlexEne/twiggy
+[rustc~wasm-simd~docs]: https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html#enabled-webassembly-features
+[rust~core-arch-wasm32~docs]: https://doc.rust-lang.org/core/arch/wasm32/
+[tracing-wasm~docs]: https://docs.rs/tracing-wasm/latest/tracing_wasm/
