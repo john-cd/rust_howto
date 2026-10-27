@@ -3,6 +3,7 @@
 [workspace]
 resolver = "3"
 members = ["cats/*", "other"]
+exclude = ["cats/embedded"]
 
 [workspace.dependencies]
 libc = "0.2.191"
