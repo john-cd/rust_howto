@@ -29,6 +29,7 @@ http-body-util = "0.1.5"
 jsonwebtoken = { version = "11.1.0", features = [
   "rust_crypto",
 ] } # Sign and validate HS256 JSON Web Tokens with RustCrypto.
+oauth2 = "5.0.0"
 password-auth = "1.0.0"
 reqwest = { version = "0.13.5", features = ["blocking"] }
 serde = "1.0.229"
@@ -36,6 +37,9 @@ tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] } # Run t
 tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
 # Pinned: axum-login needs the tower-sessions 0.14 SessionManagerLayer.
 tower-sessions = { version = "0.14.0", features = ["memory-store"] }
+
+[dev-dependencies]
+httpmock = "0.9.0"
 
 [[example]]
 name = "basic_authentication"
@@ -50,6 +54,11 @@ test = true
 [[example]]
 name = "jwt_authentication"
 path = "examples/jwt_authentication/main.rs"
+test = true
+
+[[example]]
+name = "oauth_client_credentials"
+path = "examples/oauth_client_credentials/main.rs"
 test = true
 
 [lints]

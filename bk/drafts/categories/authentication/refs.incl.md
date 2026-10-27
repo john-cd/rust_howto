@@ -4,6 +4,8 @@
 [ex~authentication~hash-passwords]: session_login.md#hash-passwords
 [ex~authentication~session-login]: session_login.md#session-login
 [ex~authentication~csrf]: session_login.md#csrf
+[ex~authentication~oauth-client-credentials]: oauth_client_credentials.md#oauth-client-credentials
+[rust-cookbook~oauth2-827]: https://github.com/rust-lang-nursery/rust-cookbook/issues/827
 
 [c~openidconnect~docs]: https://docs.rs/openidconnect
 [c~openidconnect~docs~badge]: https://img.shields.io/crates/v/openidconnect?label=openidconnect
