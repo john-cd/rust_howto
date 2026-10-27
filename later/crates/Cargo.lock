@@ -8895,6 +8895,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "force-send-sync"
+version = "1.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eb5682bd193aa441fe571a005561e0c0ada74f89ec2dc390483a6ff17c0665b9"
+
+[[package]]
 name = "foreign-types"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -12938,6 +12944,15 @@ checksum = "a6cb138bb79a146c1bd460005623e142ef0181e3d0219cb493e02f7d08a35695"
 
 [[package]]
 name = "itertools"
+version = "0.10.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b0fd2260e829bddf4cb6ea802289de2f86d6a7a690192fbe91b3f46e0f2c8473"
+dependencies = [
+ "either",
+]
+
+[[package]]
+name = "itertools"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ba291022dbbd398a455acf126c1e341954079855bc60dfdda641363bd6922569"
@@ -16612,6 +16627,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "os_str_bytes"
+version = "6.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e2355d85b9a3786f481747ced0e0ff2ba35213a1f9bd406ed906554d7af805a1"
+dependencies = [
+ "memchr",
+]
+
+[[package]]
 name = "oslog"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -18454,6 +18478,99 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8dcc9c7d52a811697d2151c701e0d08956f92b0e24136cf4cf27b57a6a0d9bf"
 
 [[package]]
+name = "r2r"
+version = "0.9.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1fe8623ef13a4f3c25f4ef407c6032eee9e1c95d0912d8ed758f616cbb95a6cd"
+dependencies = [
+ "force-send-sync",
+ "futures",
+ "indexmap 2.14.2",
+ "lazy_static",
+ "log",
+ "phf 0.11.3",
+ "prettyplease 0.2.37",
+ "proc-macro2",
+ "quote",
+ "r2r_actions",
+ "r2r_common",
+ "r2r_macros",
+ "r2r_msg_gen",
+ "r2r_rcl",
+ "rayon",
+ "serde",
+ "serde_json",
+ "syn 2.0.119",
+ "thiserror 1.0.69",
+ "uuid",
+]
+
+[[package]]
+name = "r2r_actions"
+version = "0.9.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "441f4aca2b1dfe553ab40f03bd869445d02dccd7ddff4c5f32e3a681fcd47c57"
+dependencies = [
+ "bindgen 0.72.1",
+ "r2r_common",
+ "r2r_msg_gen",
+ "r2r_rcl",
+]
+
+[[package]]
+name = "r2r_common"
+version = "0.9.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "786a8b50036ed5d38a1dfbee73c711e270acd9a518b73351c66d541c1fa05422"
+dependencies = [
+ "bindgen 0.72.1",
+ "os_str_bytes",
+ "regex",
+ "sha2 0.10.9",
+]
+
+[[package]]
+name = "r2r_macros"
+version = "0.9.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "743bfcbea83d856d97d222b3c3545d4848ba81572f1d52dc5b6bff4899b8583d"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.119",
+]
+
+[[package]]
+name = "r2r_msg_gen"
+version = "0.9.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "db410864937e12357cd65f3e82c6fb7c8372d0493f154886952522bad87817c9"
+dependencies = [
+ "bindgen 0.72.1",
+ "force-send-sync",
+ "itertools 0.10.5",
+ "phf 0.11.3",
+ "proc-macro2",
+ "quote",
+ "r2r_common",
+ "r2r_rcl",
+ "rayon",
+ "syn 2.0.119",
+]
+
+[[package]]
+name = "r2r_rcl"
+version = "0.9.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7c0420d9ea790fe2b4f66f7a88c8a7901491075d2fed4037010b03173392a22a"
+dependencies = [
+ "bindgen 0.72.1",
+ "paste",
+ "r2r_common",
+ "widestring",
+]
+
+[[package]]
 name = "rand"
 version = "0.8.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -20057,8 +20174,10 @@ dependencies = [
  "async-trait",
  "bonsai-bt",
  "clap",
+ "futures",
  "pathfinding",
  "pid",
+ "r2r",
  "rapier2d 0.36.1",
  "tokio",
  "tracing",

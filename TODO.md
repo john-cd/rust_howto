@@ -633,7 +633,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### DEFERRED-CODE-02 — Machine learning, data and robotics
 
-- [#844](https://github.com/john-cd/rust_howto/issues/844) — **P4** — robot_operating_systems/robotics.rs: write — **NOT STARTED; DEFERRED**
+- [#844](https://github.com/john-cd/rust_howto/issues/844) — **P4** — robot_operating_systems/ros2_pubsub.rs: write — **IMPLEMENTED ON TOPIC BRANCH; OPEN — ROS 2 publisher/subscriber and optional feature complete; tests and lints skipped by request; ROS environment, book validation, and PR link pending**
 - [#846](https://github.com/john-cd/rust_howto/issues/846) — **P4** — simulation/simulation1.rs: write — **NOT STARTED; DEFERRED**
 
 #### DEFERRED-CODE-03 — Operating-system APIs, emulation and no-std

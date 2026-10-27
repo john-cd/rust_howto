@@ -30,33 +30,54 @@ ROS supports various programming languages, such as Python, C++, and now Rust. D
 
 - Versioning:
 
-ROS 1 was the original system, widely used in academia and industry. However, it had some limitations with real-time performance.ROS 2 is the newer version designed to address these limitations. It emphasizes performance, security, and support for multi-robot systems.
+ROS 1 was the original system, widely used in academia and industry. ROS 2 is the newer version designed to address its limitations. It emphasizes performance, security, and support for multi-robot systems. New examples in this chapter target ROS 2.
 
 - Rust in ROS:
 
-While ROS traditionally favored [Python][p~python] and C++, Rust is gradually gaining traction due to its strong memory safety, [concurrency][p~concurrency] features, and [performance][p~performance] benefits. Libraries like [`rosrust`][c~rosrust~docs]↗{{hi:rosrust}} and `r2r` bring ROS functionality to Rust, enabling developers to create safe and efficient robotics applications.
-
-[`rosrust`][c~rosrust~docs]↗{{hi:rosrust}} provides a client library for interacting with ROS. `ros_control_rs` aims to provide Rust bindings for ROS Control.
+While ROS traditionally favored [Python][p~python] and C++, Rust offers strong memory safety, [concurrency][p~concurrency] features, and [performance][p~performance] benefits. [`r2r`][c~r2r~docs] provides bindings to the ROS 2 client libraries.
 
 ## `rosrust`: Pure Rust Implementation of a ROS Client Library {#rosrust}
 
 [![rosrust][c~rosrust~docs~badge]][c~rosrust~docs] [![rosrust~crates.io][c~rosrust~crates.io~badge]][c~rosrust~crates.io] [![rosrust~repo][c~rosrust~repo~badge]][c~rosrust~repo] [![rosrust~lib.rs][c~rosrust~lib.rs~badge]][c~rosrust~lib.rs]{{hi:rosrust}}
 
-[`rosrust`][c~rosrust~docs]↗{{hi:rosrust}} is a pure Rust implementation of a ROS client library.
-
-The ROS 1 example source remains available, but its Cargo feature and example registration are commented out: `rosrust` brings vulnerable versions of `hyper`, `idna`, `time`, and the unmaintained `traitobject` crate through its XML-RPC dependency. No compatible fixed releases are available in that chain. For ROS 2, see the [`r2r` documentation][c~r2r~docs] and review its current platform and dependency requirements.
-
-The preserved example is shown below for reference; it is not compiled by this workspace while those dependencies remain affected:
-
-```rust,ignore
-{{#include ../../../crates/cats/science_robotics/examples/robot_operating_systems/robotics.rs:example}}
-```
+[`rosrust`][c~rosrust~docs]↗{{hi:rosrust}} targets ROS 1. The former ROS 1 example and dependencies have been replaced with the ROS 2 recipe below; `rosrust` is not enabled by this workspace.
 
 ## `r2r`: Minimal ROS2 Rust Bindings {#r2r}
 
 [![r2r][c~r2r~docs~badge]][c~r2r~docs] [![r2r~crates.io][c~r2r~crates.io~badge]][c~r2r~crates.io] [![r2r~repo][c~r2r~repo~badge]][c~r2r~repo] [![r2r~lib.rs][c~r2r~lib.rs~badge]][c~r2r~lib.rs]{{hi:r2r}}
 
-[`r2r`][c~r2r~docs]↗{{hi:r2r}} offers minimal ROS2 Rust bindings. Easy to use, runtime-agnostic, async rust bindings for ROS2.
+[`r2r`][c~r2r~docs]↗{{hi:r2r}} offers runtime-agnostic ROS 2 bindings and typed message streams. This recipe uses `r2r` rather than a pure Rust DDS client so it can generate `std_msgs` bindings from the sourced ROS 2 installation and use its installed middleware. See the [upstream setup instructions][r2r~setup] for supported ROS distributions and prerequisites.
+
+The upstream project documents Linux, macOS, and Windows support. There is no Windows exclusion in this example: each platform needs a compatible ROS 2 installation, its development environment loaded in the current shell, and libclang available for binding generation. Platform and ROS distribution combinations must follow the upstream instructions; enabling the feature alone does not install ROS.
+
+The `science_robotics` crate's `ros2` feature is off by default, and the example has `required-features = ["ros2"]`. Default builds skip the ROS dependencies and example. Builds with `--all-features` require the ROS environment too. The dependency versions are declared in `later/crates/Cargo.toml` and inherited by the owning crate.
+
+This node publishes five `std_msgs/String` greetings on `/rust_howto/hello` and receives them through a local subscriber. DDS discovery can take time, so each greeting is retried until received, with a ten-second timeout. `spin_once` transfers ROS events into the subscription stream, which is then polled without blocking on an async executor. Duplicate or unrelated greetings are ignored.
+
+```rust,ignore
+{{#include ../../../crates/cats/science_robotics/examples/robot_operating_systems/ros2_pubsub.rs:example}}
+```
+
+For example, in a Linux shell with ROS 2 Jazzy and libclang installed, run from `later/crates`:
+
+```bash
+source /opt/ros/jazzy/setup.bash
+cargo run -p science_robotics --example robot_operating_systems --features ros2
+```
+
+On macOS or Windows, load the installed ROS 2 distribution's environment using its platform-specific setup instructions, then use the same Cargo command. No ROS 1 master (`roscore`) is involved. An external ROS 2 observer in the same ROS domain can also receive the greetings:
+
+```bash
+ros2 topic echo /rust_howto/hello std_msgs/msg/String
+```
+
+The existing example test is ignored because it needs ROS 2 and working DDS discovery. To run it explicitly in a configured environment:
+
+```bash
+cargo test -p science_robotics --example robot_operating_systems --features ros2 -- --ignored
+```
+
+If the example times out, check the selected ROS domain, middleware configuration, and local discovery/firewall settings.
 
 ## `safe_drive` {#safe_drive}
 
@@ -83,6 +104,8 @@ Formally specified Rust bindings for ROS2.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+[r2r~setup]: https://github.com/sequenceplanner/r2r#how-to-use
 
 <div class="hidden">
   [robotics: organize](https://github.com/john-cd/rust_howto/issues/477)

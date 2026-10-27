@@ -2,14 +2,15 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// This example remains as source but is disabled in Cargo.toml until ROS 1's
-// affected hyper, idna, time, and traitobject dependency chain can be updated.
+#[cfg(feature = "ros2")]
+mod ros2_pubsub;
 
-#[cfg(all(feature = "rosrust", not(windows)))]
-mod robotics;
-
-/// Runs the example from the `robotics` module where it is supported.
-fn main() {
-    #[cfg(all(feature = "rosrust", not(windows)))]
-    robotics::run();
+/// Publishes and receives ROS 2 messages in a sourced ROS 2 environment.
+///
+/// # Errors
+/// Returns ROS initialization, communication, or receive timeout failures.
+fn main() -> anyhow::Result<()> {
+    #[cfg(feature = "ros2")]
+    ros2_pubsub::run()?;
+    Ok(())
 }
