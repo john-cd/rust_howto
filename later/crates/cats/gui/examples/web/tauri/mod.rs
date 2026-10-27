@@ -1,85 +1,38 @@
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
-//! A desktop application with a Rust backend, built with `tauri`.
+//! A plain Rust command function that a Tauri app can expose to its frontend.
 
-// (backend)
-#![cfg_attr(
-    all(not(debug_assertions), target_os = "windows"),
-    windows_subsystem = "windows"
-)]
-
-use std::sync::Mutex;
-
-use tauri::Manager;
-use tauri::menu::MenuBuilder;
-use tauri::menu::MenuItemBuilder;
-
-/// Returns the current value of the counter.
-#[tauri::command]
-fn get_counter(state: tauri::State<'_, CounterState>) -> i32 {
-    *state
-        .value
-        .lock()
-        .expect("the counter lock should not be poisoned")
+/// Greets the caller by name.
+pub fn greet(name: &str) -> String {
+    format!("Hello, {name}! Welcome to Tauri.")
 }
 
-/// Increments the counter.
-#[tauri::command]
-fn increment_counter(state: tauri::State<'_, CounterState>) {
-    *state
-        .value
-        .lock()
-        .expect("the counter lock should not be poisoned") += 1;
-}
-
-/// The state of the counter, managed by Tauri.
-struct CounterState {
-    /// The current value.
-    value: Mutex<i32>,
-}
-
-/// Runs the application.
+/// Prints a greeting to demonstrate the Rust-side command without a Tauri
+/// runtime.
 pub fn main() {
-    tauri::Builder::default()
-        .plugin(tauri_plugin_shell::init())
-        .setup(|app| {
-            let quit = MenuItemBuilder::with_id("quit", "Quit").build(app)?;
-            let menu = MenuBuilder::new(app).items(&[&quit]).build()?;
-            app.set_menu(menu)?;
-
-            app.on_menu_event(move |app_handle, event| {
-                if event.id().as_ref() == "quit" {
-                    app_handle.exit(0);
-                }
-            });
-
-            app.manage(CounterState {
-                value: Mutex::new(0),
-            });
-            Ok(())
-        })
-        .invoke_handler(tauri::generate_handler![
-            get_counter,
-            increment_counter
-        ])
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+    println!("{}", greet("Ferris"));
 }
+// ANCHOR_END: example
 
+/// Exposes this example to the crate's dispatcher.
 pub fn run() {
     main();
 }
-// ANCHOR_END: example
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Launches the Tauri application when a desktop session is available.
+    /// Runs the Tauri command example entry point.
     #[test]
-    #[ignore = "requires an interactive desktop application runtime"]
     fn test_tauri_application_entry_point() {
         main();
+    }
+
+    /// Verifies the command returns a greeting for the supplied name.
+    #[test]
+    fn greets_named_caller() {
+        assert_eq!(greet("Ferris"), "Hello, Ferris! Welcome to Tauri.");
     }
 }

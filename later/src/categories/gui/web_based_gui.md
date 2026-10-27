@@ -10,11 +10,32 @@
 
 [`tauri`][c~tauri~docs]↗{{hi:tauri}} makes tiny, secure apps for all desktop platforms. [`tauri`][c~tauri~docs]↗ is an app construction toolkit that lets you build software for all major desktop operating systems using web technologies. Electron-like web-based UI, except it uses system webviews rather than shipping chromium, and non-UI code is written in Rust rather than [`node.js`][node.js~website]↗{{hi:node.js}}.
 
-On Windows, Tauri development requires Microsoft C++ Build Tools with the Desktop development with C++ workload and Microsoft Edge WebView2. WebView2 is already installed on Windows 10 version 1803 and later; see the [Tauri Windows prerequisites][tauri~windows-prerequisites~website]↗ for setup details.
+The shared GUI crate includes a plain Rust greeting function and a unit test for it. Tauri applications need a generated project with a frontend, `tauri.conf.json`, and `build.rs`; scaffold one with `cargo create-tauri-app`. The shared example compiles without Tauri's native SDK or front-end toolchain:
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/web/tauri/mod.rs:example}}
 ```
+
+In the Tauri project's Rust backend, expose the same function as a command and register it with the application:
+
+```rust,ignore,editable
+#[tauri::command]
+fn greet(name: &str) -> String {
+    format!("Hello, {name}! Welcome to Tauri.")
+}
+
+tauri::Builder::default().invoke_handler(tauri::generate_handler![greet]);
+```
+
+The JavaScript front end imports and invokes the command:
+
+```javascript
+import { invoke } from "@tauri-apps/api/core";
+
+const greeting = await invoke("greet", { name: "Ferris" });
+```
+
+Develop the complete app with `cargo tauri dev`. On Windows, Tauri development requires Microsoft C++ Build Tools with the Desktop development with C++ workload and Microsoft Edge WebView2. WebView2 is already installed on Windows 10 version 1803 and later; see the [Tauri Windows prerequisites][tauri~windows-prerequisites~website]↗ for setup details.
 
 ## `dioxus` {#dioxus}
 
