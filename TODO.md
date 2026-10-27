@@ -61,7 +61,7 @@
   - [x] added behavior-specific doc comments to new example entry-point tests; a broad editorial comment review remains
 - [x] move playground\examples_wip examples to bk/ if ready; reviewed remaining examples and kept them in scratch because each needs design or portability work
 - [x] make all Cargo.toml consistent; sort workspace manifests and centralize shared dependencies where workspaces support it
-- [/] move code examples from later/ to bk/ when code + text ready
+- [/] WAIT move code examples from later/ to bk/ when code + text ready
   - [x] retain the separate LATER text and staging workspaces; no additional matching chapter paths or ready package pairs were identified in this pass
 
 ---
@@ -309,7 +309,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 - [#1179](https://github.com/john-cd/rust_howto/issues/1179) — **P3** — cryptography/certificates.md: write — **NOT STARTED**
 
-#### NOW-PROSE-07 — Foreign function interfaces
+#### NOW-PROSE-07 — Foreign function interfaces - IN PROGRESS
 
 - [#355](https://github.com/john-cd/rust_howto/issues/355) — **P4** — external-ffi-bindings/external_ffi_bindings.md: external_ffi_bindings: write — **NOT STARTED**
 - [#1070](https://github.com/john-cd/rust_howto/issues/1070) — **P4** — development-tools_ffi/erlang_elixir.md: write — **NOT STARTED**
@@ -349,7 +349,7 @@ Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references an
 
 - [#269](https://github.com/john-cd/rust_howto/issues/269) — **P3** — concurrency/_actors.md: _actors: organize — **NOT STARTED**
 
-#### NOW-PROSE-12 — Aerospace and device protocols
+#### NOW-PROSE-12 — Aerospace and device protocols - IN PROGRESS
 
 - [#190](https://github.com/john-cd/rust_howto/issues/190) — **P4** — aerospace/index.md: review — **NOT STARTED**
 - [#193](https://github.com/john-cd/rust_howto/issues/193) — **P4** — aerospace_drones/index.md: write — **NOT STARTED**
