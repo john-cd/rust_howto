@@ -13,3 +13,6 @@
 [rust-gpu~transition]: https://rust-gpu.github.io/blog/transition-announcement/
 [mwa-hyperdrive~repo]: https://github.com/MWATelescope/mwa_hyperdrive
 [locksort~repo]: https://github.com/TheZoq2/locksort
+[c~ocl~docs]: https://docs.rs/ocl
+[ex~gpu~deep-learning]: ../../categories/science/deep_learning.md
+[rust-cuda~repo]: https://github.com/Rust-GPU/Rust-CUDA
