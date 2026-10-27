@@ -4,6 +4,24 @@
 
 {{#include documentation_generation.incl.md}}
 
+## Generate Markdown with `templ` {#templ}
+
+The repository's [`templ` helper][templ~source]↗ generates Markdown fragments for the book. Build the helper with `just release` from `tools/`, then run the examples from the repository root. The help and category-badge commands use local templates and reference data; `rbe` formats a supplied Rust by Example chapter name.
+
+```bash
+bash bk/crates/cats/development_tools_documentation/examples/templ/help.sh
+```
+
+```bash
+bash bk/crates/cats/development_tools_documentation/examples/templ/category_badge.sh
+```
+
+```bash
+bash bk/crates/cats/development_tools_documentation/examples/templ/rbe.sh
+```
+
+Commands that fetch crate metadata depend on crates.io and are omitted from these offline examples.
+
 Use `just docs docall` to generate the code [[documentation]] in the [`docs.rs`][docs.rs~website]↗{{hi:docs.rs}} format.
 
 Note that [`cargo doc --open`][book~cargo~cargo-doc]↗{{hi:cargo doc}} does not seem to work when running from a Dev Container{{hi:Dev Container}} in VS Code{{hi:VS Code}}; the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML. Use `python3 -m http.server 9000` (or live server) to serve the files instead.

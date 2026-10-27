@@ -11,6 +11,7 @@
 [ex~contributing~folders-and-key-files]: repository_structure.md#folders-and-key-files
 [ex~contributing~mdbook-scrub]: mdBook_pre-processors.md#mdbook-scrub
 [ex~contributing~other-methods-to-preview-the-documentation-html]: documentation_generation.md#other-methods-to-preview-the-documentation-html
+[ex~contributing~templ]: documentation_generation.md#templ
 [ex~contributing~other]: development_environment_setup.md#other
 [ex~contributing~preprocessors]: mdBook_pre-processors.md#preprocessors
 [ex~contributing~publication-steps]: publication_to_crates.io.md#publication-steps
@@ -30,3 +31,4 @@
 [candle~repo]: https://github.com/huggingface/candle
 [bacon~repo]: https://github.com/Canop/bacon
 [kani~repo]: https://github.com/model-checking/kani
+[templ~source]: https://github.com/john-cd/rust_howto/tree/develop/tools/templ
