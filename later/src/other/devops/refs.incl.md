@@ -61,3 +61,16 @@
 [gitoxide~repo]: https://github.com/GitoxideLabs/gitoxide
 [delta~repo]: https://github.com/dandavison/delta
 [gitui~repo]: https://github.com/gitui-org/gitui
+[cargo-audit~repo]: https://github.com/rustsec/rustsec/tree/main/cargo-audit
+[cargo-deny~guide]: https://embarkstudios.github.io/cargo-deny/
+[ex~devops~rust-ci]: github_actions.md#rust-ci
+[ex~devops~supply-chain-checks]: github_actions.md#supply-chain-checks
+[ex~devops~test-matrix]: github_actions.md#test-matrix
+[github-actions~matrix~docs]: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
+[github-actions~secure-use~docs]: https://docs.github.com/en/actions/reference/security/secure-use
+[nextest~running~docs]: https://nexte.st/docs/running/
+[octocrab~api~docs]: https://docs.rs/octocrab/latest/octocrab/
+[rust-cache~action~repo]: https://github.com/Swatinem/rust-cache
+[rust-howto~windows-workflow]: https://github.com/john-cd/rust_howto/blob/develop/.github/workflows/build_book_code_and_book_on_windows.yml
+[rust-toolchain~repo]: https://github.com/dtolnay/rust-toolchain
+[zizmor~usage~docs]: https://docs.zizmor.sh/usage/

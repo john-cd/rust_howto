@@ -4,145 +4,174 @@
 
 {{#include github_actions.incl.md}}
 
-GitHub Action for installing [development tools][p~development-tools] (mainly from GitHub Releases).
+GitHub Actions runs workflows stored in `.github/workflows/*.yml`. A workflow selects events and defines jobs that execute on runners. Steps within a job share a checkout and installed tools; separate jobs start with separate environments. See [CI/CD](cd_ci.md) for the path from validation to release.
+
+## A Minimal Rust CI Workflow {#rust-ci}
+
+Save this complete workflow as `.github/workflows/ci.yml` in a crate or workspace with `Cargo.toml` and a committed `Cargo.lock` at the repository root:
+
+```yaml
+name: Rust CI
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      # dtolnay/rust-toolchain: commit from master; select Rust separately.
+      - uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: stable
+          components: clippy, rustfmt
+      # Swatinem/rust-cache v2.9.3
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
+        with:
+          save-if: ${{ github.event_name == 'push' }}
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+      - name: Run Clippy
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - name: Run tests and doctests
+        run: cargo test --workspace --locked
+```
+
+[`dtolnay/rust-toolchain`][rust-toolchain~repo]↗ installs Rust through `rustup` and adds the requested components. Its concise `dtolnay/rust-toolchain@stable` form selects stable too; the example instead pins the action implementation and selects the compiler through `toolchain: stable`. Select a numeric compiler version for reproducibility. Use the project's formatter version, including a separate pinned nightly if it requires nightly-only Rustfmt options.
+
+`cargo fmt` checks style without rewriting files. Clippy treats warnings as errors and checks examples and test targets as well as libraries and binaries. `cargo test --workspace` also runs doctests; it does not imply every feature combination is tested. Add feature-specific jobs for supported configurations. `--locked` prevents lockfile changes; projects without a committed lockfile must choose an explicit dependency-resolution policy instead.
+
+For a nested workspace, set `defaults.run.working-directory` in the job and configure the cache's `workspaces` input. A `run` working directory does not change where an action operates. This book's [Windows workflow][rust-howto~windows-workflow]↗ runs Cargo separately in its independent `bk/crates` and `tools` workspaces.
+
+## Test Across Operating Systems and Toolchains {#test-matrix}
+
+This separate workflow tests stable and beta on Linux, macOS, and Windows. `fail-fast: false` lets other matrix entries finish when one configuration fails:
+
+```yaml
+name: Rust compatibility
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }}, ${{ matrix.toolchain }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        toolchain: [stable, beta]
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      # dtolnay/rust-toolchain: commit from master
+      - uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: ${{ matrix.toolchain }}
+      # Swatinem/rust-cache v2.9.3
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
+        with:
+          key: ${{ matrix.toolchain }}
+          save-if: ${{ github.event_name == 'push' }}
+      - run: cargo test --workspace --locked
+```
+
+Add the project's declared minimum supported Rust version (MSRV) as a quoted numeric toolchain value. Its lockfile format and dependencies must also work with that compiler. Add nightly for a supported configuration or a deliberate early-warning check. Decide whether beta and nightly failures block merges; every entry in this example is required.
+
+Hosted runner labels select operating systems; they do not install project-specific native libraries. Install these explicitly or limit jobs to supported platforms. Keep formatting in one job to avoid repeating it across the matrix. See the [matrix documentation][github-actions~matrix~docs]↗ for `include`, `exclude`, and concurrency limits.
 
 ## Install Development Tools {#installation-of-development-tools}
 
-```yaml
-- uses: actions-rust-lang/setup-rust-toolchain@v1
-  with:
-    toolchain: stable
-- uses: taiki-e/install-action@v2
-  with:
-    tool: cargo-deny,cargo-outdated,cargo-udeps,cargo-audit
-- name: Check dependencies
-  run: |
-    cargo deny check
-    cargo outdated --exit-code 1
-    cargo udeps
-    cargo audit
-```
+[`taiki-e/install-action`][install_action~repo]↗{{hi:install-action}} installs utilities primarily from prebuilt releases, avoiding compilation on every fresh runner. The `tool` input accepts comma-separated names and `name@version` pins. Pin tools independently of the action revision when repeatability matters; consult its supported platforms and fallback behavior.
 
-[`install-action`][install_action~repo]↗{{hi:install-action}} is a GitHub Action for installing development tools (mainly from GitHub Releases).
+The following complete workflow assumes a committed `Cargo.lock` and a reviewed `deny.toml`. Create the latter locally with `cargo deny init`, set the project's license and dependency policies, and commit it before enabling this job:
 
 ```yaml
-- uses: taiki-e/install-action@v2
-  with:
-    tool: cargo-binstall,just,mdbook,mdbook-lintcheck
+name: Rust tests and supply chain
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      # actions/checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      # dtolnay/rust-toolchain: commit from master
+      - uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: stable
+      # taiki-e/install-action v2.87.30
+      - uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177
+        with:
+          tool: cargo-nextest,cargo-deny,cargo-audit,zizmor
+      - name: Run tests with Nextest
+        run: cargo nextest run --workspace --locked
+      - name: Run doctests separately
+        run: cargo test --workspace --doc --locked
+      - name: Check dependency policy
+        run: cargo deny --locked check
+      - name: Check the lockfile for advisories
+        run: cargo audit
+      - name: Audit workflows without GitHub API access
+        run: zizmor --offline .github/workflows
 ```
+
+[`cargo-nextest`][nextest~running~docs]↗ runs test binaries with its own scheduler and reports. Keep the separate doctest command: stable Nextest does not run doctests.
 
 ## Cache Your Compilation {#compilation-caching}
 
-[`rust-cache`][c~rust_cache~repo]↗{{hi:rust-cache}}.
+[`Swatinem/rust-cache`][rust-cache~action~repo]↗{{hi:rust-cache}} caches Cargo downloads and build artifacts. Install the compiler before restoring the cache so its version contributes to the key. The action also accounts for manifests and lockfiles and disables incremental compilation for its CI cache strategy.
 
-[![rust-cache][c~rust_cache~docs~badge]][c~rust_cache~docs]{{hi:rust-cache}}
-[![rust-cache~crates.io][c~rust_cache~crates.io~badge]][c~rust_cache~crates.io]
-[![rust-cache~repo][c~rust_cache~repo~badge]][c~rust_cache~repo]
-[![rust-cache~lib.rs][c~rust_cache~lib.rs~badge]][c~rust_cache~lib.rs]
+Use defaults for a root workspace. For a nested workspace, set `workspaces` to a mapping such as `bk/crates -> ../../target` when Cargo writes to a shared root `target` directory. Match any `CARGO_TARGET_DIR` override, and distinguish feature or build configurations with additional keys where needed. The [action's input reference][rust-cache~action~repo]↗ describes the options.
 
-`Swatinem/rust-cache` is the current recommended cache action, which handles properly optimizing cache effectiveness for a [cargo][p~cargo] build in CI. That action also automatically sets `CARGO_INCREMENTAL=0` for users of the action.
+Cache misses must still yield correct builds. These examples save caches only on pushes; pull requests can restore existing entries. Keep secrets out of caches. Use [workflow artifacts][github-actions~workflow-artifacts~docs]↗ for reports and release files that must be retained or passed between jobs.
 
-Example `.github/workflows/<name>.yml`
+## Security and Supply-Chain Checks {#supply-chain-checks}
 
-```yaml
-- uses: actions/checkout@v6
+| Tool                               | What it checks                                                                          | Preparation                                                                           |
+| ---------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [`cargo-deny`][cargo-deny~guide]↗  | Dependency advisories, licenses, duplicate or banned dependencies, and allowed sources. | Review and commit `deny.toml`; keep advisory data current.                            |
+| [`cargo-audit`][cargo-audit~repo]↗ | Resolved dependencies in `Cargo.lock` against RustSec advisories.                       | Commit the lockfile and review reports and exceptions.                                |
+| [`zizmor`][zizmor~usage~docs]↗     | Security properties of workflow and action definitions.                                 | Run against `.github/workflows`; offline mode omits checks requiring GitHub API data. |
 
-# Install a toolchain before caching so the Rust version is part of the cache key.
-- uses: actions-rust-lang/setup-rust-toolchain@v1
-  with:
-    toolchain: stable
+`cargo-deny` and `cargo-audit` overlap on advisories; decide whether both reports serve your policy. A clean scan means no matching known advisory was found, not that every dependency has been audited. Consider scheduled scans, since advisory databases change without a source commit.
 
-- uses: Swatinem/rust-cache@v2
-  with:
-    # The prefix cache key, this can be changed to start a new cache manually.
-    # default: "v0-rust"
-    prefix-key: ""
+The examples pin actions to full commit SHAs. Tags such as `@v2` and channels such as `@stable` can move; a full SHA fixes the action code being executed. For `dtolnay/rust-toolchain`, choose a commit in its `master` history and supply `toolchain` explicitly. Review upstream changes when updating pins. Pinning an installer does not pin downloaded tools, and `toolchain: stable` still advances the compiler. GitHub's [secure-use reference][github-actions~secure-use~docs]↗ explains these trust boundaries.
 
-    # A cache key that is used instead of the automatic [`job`][c~job~docs]↗{{hi:job}}-based key,
-    # and is stable over multiple jobs.
-    # Default: empty
-    shared-key: ""
+Give test jobs only `contents: read`, disable checkout credential persistence when pushes are unnecessary, and keep publishing credentials in separately controlled jobs. Do not execute untrusted pull request code in a privileged `pull_request_target` job. Pass untrusted event fields through environment variables instead of interpolating them directly into shell scripts.
 
-    # An additional cache key that is added alongside the automatic [`job`][c~job~docs]↗{{hi:job}}-based
-    # cache key and can be used to further differentiate jobs.
-    # Default: empty
-    key: ""
+## Automate GitHub from Rust {#automate-github-from-rust}
 
-    # A whitespace separated list of env-var *prefixes* who's value contributes
-    # to the environment cache key.
-    # The env-vars are matched by *prefix*, so the default `RUST` var will
-    # match all of `RUSTC`, `RUSTUP_*`, `RUSTFLAGS`, `RUSTDOC_*`, etc.
-    # default: "CARGO CC CFLAGS CXX CMAKE RUST"
-    env-vars: ""
-
-    # The [`cargo`][c~cargo~docs]↗{{hi:cargo}} workspaces and target directory configuration.
-    # These entries are separated by newlines and have the form
-    # `$workspace -> $target`. The `$target` part is treated as a directory
-    # relative to the `$workspace` and defaults to "target" if not explicitly given.
-    # default: ". -> target"
-    workspaces: ""
-
-    # Additional non workspace directories to be cached, separated by newlines.
-    cache-directories: ""
-
-    # Determines whether the workspace `target` directories are cached.
-    # If `false`, only the [`cargo`][c~cargo~docs]↗{{hi:cargo}} registry will be cached.
-    # default: "true"
-    cache-targets: ""
-
-    # Determines if the cache should be saved even when the workflow has failed.
-    # default: "false"
-    cache-on-failure: ""
-
-    # Determines which crates are cached.
-    # If `true` all crates will be cached, otherwise only dependent crates will be cached.
-    # Useful if additional crates are used for CI tooling.
-    # default: "false"
-    cache-all-crates: ""
-
-    # Determiners whether the cache should be saved.
-    # If `false`, the cache is only restored.
-    # Useful for jobs where the matrix is additive e.g. additional Cargo features,
-    # or when only runs from `master` should be saved to the cache.
-    # default: "true"
-    save-if: ""
-    # To only cache runs from `master`:
-    save-if: ${{ github.ref == 'refs/heads/master' }}
-
-    # Specifies what to use as the backend providing cache
-    # Can be set to either "github" or "buildjet"
-    # default: "github"
-    cache-provider: ""
-```
+[`octocrab`][octocrab~api~docs]↗ is an asynchronous GitHub API client for Rust. Use it for a bot or integration that reads issues, manages pull requests, or queries Actions runs when workflow YAML alone is insufficient. Provide credentials through the runtime environment or a GitHub App installation token with narrow permissions. Handle API errors, pagination, and rate limits explicitly.
 
 ## Useful GitHub Actions {#useful-github-actions}
 
-These GitHub Actions help keep Rust workflows consistent, fast, and reliable across branches:
-
-- [`actions-rust-lang/setup-rust-toolchain`][setup-rust-toolchain~repo] to install a Rust toolchain and requested components.
-- [`rust-cache`][c~rust_cache~docs]↗{{hi:rust-cache}} to cache compilation artifacts and speed up repeated CI runs.
-- `taiki-e/install-action` or `cargo-binstall-action` to install command-line tooling from GitHub Releases or crates.io.
-- [`actions/checkout`][actions-checkout~repo] to clone the repository and preserve submodules.
-- `actions/upload-artifact` to archive build artifacts for release or debugging.
-- `actions/cache` or build-system-specific cache actions for toolchain and dependency caches.
+| Task                                            | Action                                           |
+| ----------------------------------------------- | ------------------------------------------------ |
+| Check out source                                | [`actions/checkout`][actions-checkout~repo]↗     |
+| Install a compiler and components               | [`dtolnay/rust-toolchain`][rust-toolchain~repo]↗ |
+| Reuse Cargo downloads and compilation artifacts | [`Swatinem/rust-cache`][rust-cache~action~repo]↗ |
+| Install command-line tools                      | [`taiki-e/install-action`][install_action~repo]↗ |
 
 ## Related Topics {#related-topics .skip}
 
-[![gh-workflow][c~gh-workflow~docs~badge]][c~gh-workflow~docs] [![gh-workflow~crates.io][c~gh-workflow~crates.io~badge]][c~gh-workflow~crates.io] [![gh-workflow~repo][c~gh-workflow~repo~badge]][c~gh-workflow~repo] [![gh-workflow~lib.rs][c~gh-workflow~lib.rs~badge]][c~gh-workflow~lib.rs]{{hi:gh-workflow}}{{hi:Actions}}{{hi:Generator}}{{hi:Github}}{{hi:Workflow}}
-
-A type-safe GitHub Actions workflow generator: [`gh-workflow`][c~gh-workflow~docs]↗.
+- [CI/CD](cd_ci.md) for validation, artifact promotion, and deployment boundaries.
+- [Release Automation](release_automation.md) for packaging and publication.
+- [`gh-workflow`][c~gh-workflow~docs]↗, a typed GitHub Actions workflow generator in Rust.
 
 {{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[github_actions - see blessed.rs](https://github.com/john-cd/rust_howto/issues/600)
-write / review in depth
-
-`rust-toolchain`: Github action to install Rust components via `rustup`.
-`rust-cache`: Github action to cache compilation artifacts and speed up subsequent runs.
-`install-action`: GitHub Action for installing [development tools][p~development-tools] (mainly from GitHub Releases).
-
-- [Octocrab][c~octocrab~lib.rs]↗.
-
-</div>
+{{#include ../../../../bk/src/refs/link-refs.md}}
