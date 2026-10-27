@@ -2,6 +2,8 @@
 
 # Services for tests that require a database or external cache or search engines
 # Don't try to run everything at once!
+# Supply the required *_USER and *_PASSWORD variables through the environment or --env-file.
+# URL-encode credentials used in AMQP_ADDR and MONGODB_URI.
 #
 # Sources:
 # https://github.com/docker/awesome-compose
@@ -10,25 +12,25 @@
 services:
   book:
     environment:
-      - RUST_LOG=debug
-      - AMQP_ADDR=amqp://guest:guest@rust_howto-amqp-1:5672
-      - SMTP_SERVER=smtp:1025
-      - SMTP_USER=smtp_username
-      - SMTP_PASSWORD=smtp_password
-      - CASSANDRA_ADDR=cassandra:9042
-      - ELASTICSEARCH_ADDR=http://elasticsearch:9200
-      - MEILISEARCH_ADDR=http://meilisearch:7700
-      - MONGODB_URI=mongodb://mongoadmin:password@mongodb:27017
-      - MSSQL_ADDR=mssql:1433
-      - ORACLE_ADDR=oracle:1521
-      - POSTGRES_ADDR=postgres:5432
-      - REDIS_HOSTNAME=redis:6379
+      RUST_LOG: debug
+      AMQP_ADDR: "amqp://${AMQP_USER:?Set AMQP_USER}:${AMQP_PASSWORD:?Set AMQP_PASSWORD}@rust_howto-amqp-1:5672"
+      SMTP_SERVER: smtp:1025
+      SMTP_USER: ${SMTP_USER:?Set SMTP_USER}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:?Set SMTP_PASSWORD}
+      CASSANDRA_ADDR: cassandra:9042
+      ELASTICSEARCH_ADDR: http://elasticsearch:9200
+      MEILISEARCH_ADDR: http://meilisearch:7700
+      MONGODB_URI: "mongodb://${MONGODB_USER:?Set MONGODB_USER}:${MONGODB_PASSWORD:?Set MONGODB_PASSWORD}@mongodb:27017"
+      MSSQL_ADDR: mssql:1433
+      ORACLE_ADDR: oracle:1521
+      POSTGRES_ADDR: postgres:5432
+      REDIS_HOSTNAME: redis:6379
 
   amqp:
     image: rabbitmq:management
     environment:
-      - RABBITMQ_DEFAULT_USER=guest
-      - RABBITMQ_DEFAULT_PASS=guest
+      RABBITMQ_DEFAULT_USER: ${AMQP_USER:?Set AMQP_USER}
+      RABBITMQ_DEFAULT_PASS: ${AMQP_PASSWORD:?Set AMQP_PASSWORD}
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -76,15 +78,15 @@ services:
       options:
         max-size: 1g
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
-      - MONGO_INITDB_ROOT_PASSWORD=password
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER:?Set MONGODB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD:?Set MONGODB_PASSWORD}
 
   mssql:
     image: "mcr.microsoft.com/mssql/server"
     ports:
       - 1433:1433
     environment:
-      SA_PASSWORD: "password123!"
+      SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Set MSSQL_SA_PASSWORD}
       ACCEPT_EULA: "Y"
 
   oracle:
@@ -92,14 +94,14 @@ services:
     environment:
       - ORACLE_SID=ORCLCDB
       - ORACLE_PDB=ORCLPDB1
-      - ORACLE_PWD=Oracle_123
+      - ORACLE_PWD=${ORACLE_PASSWORD:?Set ORACLE_PASSWORD}
     ports:
       - 1521:1521
 
   postgres:
     image: postgres:alpine
     environment:
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
       - POSTGRES_DB=library
     restart: always
     volumes:
