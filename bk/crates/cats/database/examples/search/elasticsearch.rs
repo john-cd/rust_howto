@@ -14,7 +14,6 @@ use anyhow::Context as _;
 use anyhow::ensure;
 use elasticsearch::BulkParts;
 use elasticsearch::Elasticsearch;
-use elasticsearch::Error;
 use elasticsearch::IndexParts;
 use elasticsearch::SearchParts;
 use elasticsearch::auth::Credentials;
@@ -48,16 +47,16 @@ async fn main() -> anyhow::Result<()> {
         .unwrap_or_else(|_| "http://localhost:9200".into());
     let client = build_client(&url)?;
 
-    let response: Response = index_document(&client).await?;
+    let response = index_document(&client).await?;
     println!("Index response: {response:?}");
 
-    let search_result: serde_json::Value = search_document(&client).await?;
+    let search_result = search_document(&client).await?;
     println!("Search result: {search_result:?}");
 
-    let bulk_response: bool = bulk_documents(&client).await?;
-    println!("Bulk response: {bulk_response:?}");
+    bulk_documents(&client).await?;
 
-    cat_indices(client).await?;
+    let indices_response = cat_indices(client).await?;
+    println!("Indices response: {indices_response:?}");
 
     Ok(())
 }
@@ -133,7 +132,7 @@ fn credentials_for_endpoint(
 }
 
 /// Indexes a single document into Elasticsearch.
-async fn index_document(client: &Elasticsearch) -> Result<Response, Error> {
+async fn index_document(client: &Elasticsearch) -> anyhow::Result<Response> {
     // Define a document to index:
     let doc = MyDocument {
         id: 1,
@@ -145,13 +144,26 @@ async fn index_document(client: &Elasticsearch) -> Result<Response, Error> {
         .body(json!(doc))
         .send()
         .await?;
+    ensure_success(response, "index document")
+}
+
+/// Returns a successful response or reports the operation and HTTP status.
+fn ensure_success(
+    response: Response,
+    operation: &str,
+) -> anyhow::Result<Response> {
+    let status = response.status_code();
+    anyhow::ensure!(
+        status.is_success(),
+        "Elasticsearch {operation} request failed with HTTP status {status}"
+    );
     Ok(response)
 }
 
 /// Searches for documents in Elasticsearch based on a query.
 async fn search_document(
     client: &Elasticsearch,
-) -> Result<serde_json::Value, Error> {
+) -> anyhow::Result<serde_json::Value> {
     // Search for the document:
     let search_response = client
         .search(SearchParts::Index(&["my_index"]))
@@ -166,12 +178,13 @@ async fn search_document(
         }))
         .send()
         .await?;
+    let search_response = ensure_success(search_response, "search")?;
     let search_result = search_response.json::<serde_json::Value>().await?;
     Ok(search_result)
 }
 
 /// Performs bulk indexing of multiple documents into Elasticsearch.
-async fn bulk_documents(client: &Elasticsearch) -> anyhow::Result<bool> {
+async fn bulk_documents(client: &Elasticsearch) -> anyhow::Result<()> {
     let mut body: Vec<JsonBody<_>> = Vec::with_capacity(4);
 
     // Add the first operation and document:
@@ -204,17 +217,27 @@ async fn bulk_documents(client: &Elasticsearch) -> anyhow::Result<bool> {
         .send()
         .await?;
 
+    let response = ensure_success(response, "bulk index")?;
     let response_body = response.json::<Value>().await?;
-    let successful =
-        !(response_body["errors"].as_bool().ok_or(anyhow::anyhow!(
-            "bulk_documents: response could not be converted to bool"
-        ))?);
+    let has_errors = response_body["errors"].as_bool().ok_or_else(|| {
+        anyhow::anyhow!("bulk response omitted its `errors` flag")
+    })?;
+    ensure_bulk_success(has_errors)?;
 
-    Ok(successful)
+    Ok(())
+}
+
+/// Returns an error when Elasticsearch reports failed bulk items.
+fn ensure_bulk_success(has_errors: bool) -> anyhow::Result<()> {
+    anyhow::ensure!(
+        !has_errors,
+        "Elasticsearch reported one or more bulk item failures"
+    );
+    Ok(())
 }
 
 /// Retrieves and displays information about indices in Elasticsearch.
-async fn cat_indices(client: Elasticsearch) -> Result<Response, Error> {
+async fn cat_indices(client: Elasticsearch) -> anyhow::Result<Response> {
     // Call the `Cat` related APIs.
     let response = client
         .cat()
@@ -222,7 +245,7 @@ async fn cat_indices(client: Elasticsearch) -> Result<Response, Error> {
         .format("json")
         .send()
         .await?;
-    Ok(response)
+    ensure_success(response, "list indices")
 }
 // ANCHOR_END: example
 
@@ -281,6 +304,13 @@ mod tests {
             .is_ok()
         );
         Ok(())
+    }
+
+    /// Rejects item-level failures even when the bulk request itself succeeded.
+    #[test]
+    fn bulk_response_reports_item_failures() {
+        assert!(ensure_bulk_success(true).is_err());
+        assert!(ensure_bulk_success(false).is_ok());
     }
 
     /// Keeps the external service test out of ordinary workspace test runs.

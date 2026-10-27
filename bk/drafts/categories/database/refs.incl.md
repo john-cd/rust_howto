@@ -54,3 +54,8 @@
 [p~windows]: ../os_windows-apis/windows.md
 [c~cornucopia~migration~1.0]: https://github.com/cornucopia-rs/cornucopia/blob/main/docs/src/introduction/migration_to_1_0.md
 [c~r2d2~docs]: https://docs.rs/r2d2
+[p~rust-search-engines]: ../database-implementations/rust_search_engines.md
+[c~opensearch~docs]: https://docs.rs/opensearch
+[c~qdrant-client~docs]: https://docs.rs/qdrant-client
+[elastic~local-docker~docs]: https://www.elastic.co/search-labs/tutorials/install-elasticsearch/docker
+[postgres~full-text~docs]: https://www.postgresql.org/docs/current/textsearch.html
