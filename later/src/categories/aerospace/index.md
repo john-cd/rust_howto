@@ -8,25 +8,37 @@
 
 {{#include aerospace.incl.md}}
 
+Use these guides as starting points for aerospace software topics; check the linked standards and hardware documentation for mission-specific requirements.
+
 ## Drones
 
 See [[aerospace_drones | Drones]].
+
+This guide focuses on flight-control algorithms, sensor integration, and computer-vision software.
 
 ## Protocols
 
 See [[aerospace_protocols | Aerospace Protocols]].
 
+Compare support for aircraft and spacecraft protocols, including device and bus interfaces, in this guide.
+
 ## Simulation
 
 See [[aerospace_simulation | Aerospace Simulation]].
+
+This guide covers orbital propagation and numerical simulation techniques for aerospace problems.
 
 ## Space Protocols
 
 See [[aerospace_space-protocols | Space Protocols]].
 
+Find CCSDS packet and ECSS PUS examples, plus related on-board software support, in this guide.
+
 ## Unmanned Aerial Vehicles
 
 See [[aerospace_unmanned-aerial-vehicles | Unmanned Aerial Vehicles]].
+
+This guide focuses on vehicle communication and radio-control protocols; the Drones guide emphasizes control, sensors, and vision software.
 
 ## Related Topics
 
