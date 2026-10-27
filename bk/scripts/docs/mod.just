@@ -3,7 +3,7 @@
 #
 # TODO Reviewed ??-??-2026
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 [no-exit-message]
 _default:
@@ -40,12 +40,12 @@ book_root := clean(source_directory() + "/../..")
 
 [windows]
 @doc pkg:
-  Write-Error "Documentation preview is supported on Unix only."
+  echo "Documentation preview is supported on Unix only." >&2
   exit 1
 
 [windows]
 @docall:
-  Write-Error "Documentation preview is supported on Unix only."
+  echo "Documentation preview is supported on Unix only." >&2
   exit 1
 # cargo doc --open does not seem to work when running from a Dev Container in VS Code;
 # the script that opens URLs into an external browser (see `$ echo $BROWSER`) does not handle raw HTML.

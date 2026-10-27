@@ -3,7 +3,7 @@
 #
 # TODO Reviewed ??-??-2026
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 set tempdir := "."
 
 root := clean(source_directory() + "/../..")
@@ -15,15 +15,8 @@ _default:
 ## ---- REFERENCE DEFINITION MANAGEMENT -----------------------------------
 
 # Sort and deduplicate reference definitions in the central `*-refs.md` files; remove the last / from URLs
-[unix]
 @sort:
     ./sort_refdefs.sh {{ root }}
-
-# Sort and deduplicate reference definitions in the central `*-refs.md` files
-[windows]
-@sort:
-    $files = @({{ quote(root + "/src/refs/crate-refs.md") }}, {{ quote(root + "/src/refs/other-refs.md") }}, {{ quote(root + "/src/refs/link-refs.md") }})
-    foreach ($file in $files) { Get-Content -LiteralPath $file | Sort-Object -Unique | Set-Content -LiteralPath $file }
 
 # List links without corresponding reference definitions and vice versa
 [unix]

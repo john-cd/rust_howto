@@ -3,7 +3,7 @@
 #
 # TODO Reviewed ??-??-2026
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 root := clean(source_directory() + "/../..")
 
@@ -26,7 +26,7 @@ empty := ''
 [no-cd]
 [windows]
 @crate_indices cmd=help *subcmd=empty:
-    & {{ quote(root + "/../bin/crate-indices.exe") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
+    {{ quote(root + "/../bin/crate-indices.exe") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
 
 # or: cargo run -p crate_indices -- {{cmd}} {{subcmd}}
 
@@ -39,7 +39,7 @@ empty := ''
 [no-cd]
 [windows]
 @crate_page *crates=empty:
-    & {{ quote(root + "/../bin/crate-indices.exe") }} crate_page {{ crates }}
+    {{ quote(root + "/../bin/crate-indices.exe") }} crate_page {{ crates }}
 
 # Usage: just indices crate_page crate1 crate2 crate3
 ## ---- INDEX OF EXAMPLES --------------------------------

@@ -2,7 +2,7 @@
 
 # Windows build and test
 
-The repository's Windows recipes use PowerShell 7 at the entry point. Some imported book modules run Git Bash recipes; see [the script support table](../bk/scripts/README.md) before invoking a platform-specific recipe.
+The `rust_howto`-owned Windows recipe shells use Git Bash. A few setup and index-generation helpers are PowerShell scripts invoked explicitly with `pwsh.exe`; see [the script support table](../bk/scripts/README.md) before invoking a platform-specific recipe.
 
 ## Install prerequisites
 
@@ -12,7 +12,7 @@ From the repository root, run:
 pwsh -File .devcontainer/install_deps.ps1
 ```
 
-The script reads pinned tool versions from `.devcontainer/.env` and installs Rust components, `just`, LLVM/Clang, SQLite, NASM, Ninja, and the book tools with Winget and Cargo. It does not take command-line parameters. If Git for Windows is installed outside `C:\Program Files\Git`, set `GIT_BASH` to the full path of `bash.exe`.
+The script reads pinned tool versions from `.devcontainer/.env` and installs Rust components, `just`, LLVM/Clang, SQLite, NASM, Ninja, and the book tools with Winget and Cargo. It does not take command-line parameters or install Git for Windows. Install Git for Windows separately; Git Bash must be available at `C:\Program Files\Git\bin\bash.exe`, the path used by the repository justfiles. For a custom installation, pass the desired path with just's `--shell` and `--shell-arg` options.
 
 Use `.devcontainer/install_deps.ps1` for native Windows. `.devcontainer/install_deps.sh` is the separate Debian/Ubuntu installer; it uses `apt-get` and `sudo` and must run in Linux, WSL, or a Linux container. Do not run it through Git Bash on Windows.
 
@@ -35,7 +35,7 @@ just bb   # Build the book.
 just s    # Serve the book locally.
 ```
 
-The `quick` recipe (`just q`) runs its Bash preview through Git Bash. `just spell` uses Typos, and `just lnk <pattern>` uses the Windows `mdbook-utils` binary. `just recipes fix_recipe_tables` and `just refdefs sort` also have native Windows implementations.
+The `quick` recipe (`just q`) runs its Bash preview through Git Bash. `just spell` uses Typos, and `just lnk <pattern>` uses the Windows `mdbook-utils` binary. `just recipes fix_recipe_tables` uses Python, and `just refdefs sort` runs the shared Bash helper.
 
 Run `just --list` for root recipes and modules, then `just <module> --list` for a module's recipes. Each imported module owns its shell settings and working directory; root settings do not automatically apply to it. Recipes tagged `[unix]` are unavailable on Windows.
 

@@ -4,9 +4,8 @@ import "../scripts/build.just"
 
 set shell := ["bash", "-uc"]
 
-# Set shell for Windows OSs:
-# PowerShell Core has some of the Unix shell skills we need, such as || and &&
-set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+# Use Git Bash on Windows so recipes share one shell syntax across platforms.
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 root := source_directory()
 rustfmt_toolchain_default := trim(replace_regex(read(join(root, "..", "rustfmt-toolchain.toml")), '(?s).*channel\s*=\s*"([^"]+)".*', "$1"))

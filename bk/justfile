@@ -6,12 +6,10 @@ mod bash 'scripts/bash'
 
 set shell := ["bash", "-uc"]
 
-# Windows recipes keep native paths in PowerShell; POSIX recipes are Unix-only.
+# Use Git Bash on Windows; PowerShell scripts are invoked explicitly where needed.
 # The sole Windows-to-forward-slash normalization is for SCCACHE_BASEDIRS.
-# Set shell for Windows OSs:
-# PowerShell Core has some of the Unix shell skills we need, such as || and &&
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 [no-exit-message]
 _default:
@@ -145,12 +143,12 @@ mod wikilinks 'scripts/wikilinks'
 # Verify Windows path quoting and the SCCACHE_BASEDIRS separator/normalization.
 [windows]
 path-boundary-test:
-    & pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/scripts/tests/test-path-boundaries.ps1") }}
+    pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/scripts/tests/test-path-boundaries.ps1") }}
 
 # Internal target used by the path-boundary test to exercise just's PowerShell quoting.
 [windows]
 _path-boundary-probe value:
-    & pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/scripts/tests/path-boundary-probe.ps1") }} -Value {{ quote(value) }}
+    pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/scripts/tests/path-boundary-probe.ps1") }} -Value {{ quote(value) }}
 
 ## ---- PRE-PUSH -----------------------------------
 # Prepare for git push: spell sortrefs fmtall clean clippyall testall _builddocall buildbook

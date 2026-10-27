@@ -6,10 +6,10 @@ Status: implementation in progress (issue #2000). Keep `just` as the task runner
 
 - About 1,970 lines of `justfile` / `*.just` across 7 workspaces and 23 `bk/scripts/*` modules.
 - 39 `.sh`, 4 `.ps1` and 6 `.py` files outside the example crates.
-- Most justfiles use Bash on Unix and PowerShell on Windows. The affected `bk/scripts` modules now use Git Bash for the corresponding Windows recipes.
+- `rust_howto`-owned justfiles use Git Bash on Windows. Explicit `pwsh.exe -File` calls remain for PowerShell-only setup and index-generation helpers.
 - About 70 `[unix]` and 24 `[windows]` attributes. Recipes are duplicated per OS only in `book`, `docs`, `precommit`, `recipes`, `utils` and a few others. These modules had **only `[unix]` recipes and no Windows counterpart**: `anchors`, `chapters`, `crates`, `examples`, `gh`, `includes`, `spelling`, `titles`, `toc`, `urls`, `wikilinks`. The `quick` book-preview recipe also lacked Windows support; Windows counterparts or shared Bash recipes have now been added for these gaps.
 - The unix scripts lean on `grep -P`, `comm`, `sed -r`, `mktemp`, `realpath`, `/tmp`, `rm --recursive` and `aspell`/`lychee`.
-- The unguarded `$env:RUSTC_WRAPPER = ""` lines in `bk/scripts/code/mod.just` and `later/justfile` were split into Unix Bash and Windows PowerShell recipe variants.
+- The `RUSTC_WRAPPER` overrides in `bk/scripts/code/mod.just` and `later/justfile` use Bash assignment syntax in shared Unix and Windows recipes.
 - `scripts/build.just` already hard-codes `D:/target`, `C:/code_build` and `D:/sccache` on Windows, and `setup-build.sh` / `setup-build.ps1` are two ports of the same ~90 lines.
 - CI already runs on `ubuntu`, `windows-2025` and `macos-15`, and the repo already ships Rust helper binaries (`tools/`, `bin/clean.exe`, `mdbook-utils`) and one Python script (`refdefs.py`).
 
@@ -41,4 +41,4 @@ Keep `just`, use Bash through Git Bash for shell-based tooling, and migrate suit
 3. **Port suitable scripts to Rust tools incrementally.** Start with frequently used shared logic such as reference definitions, URLs, TOC, includes, links, and build setup. Reuse `mdbook-utils` and `book_tooling/parse_lib` where possible. Keep one-off integrations and book examples in their existing language when a Rust port has no clear benefit.
 4. **Review** remaining scripts for incremental Rust ports and record which external commands still need per-OS installation guidance.
 
-Git Bash is the supported Bash provider for Windows recipes. Most affected modules use the standard `C:/Program Files/Git/bin/bash.exe` path and allow custom installations through just's `--shell` and `--shell-arg` options. The book quick-preview recipe honors `GIT_BASH` directly. Git Bash supplies the shell and common Unix utilities, but it does not install project CLIs such as `aspell`, `lychee`, `typos`, `gh`, or `mdbook-utils`; those tools still need Windows installations and their own compatibility checks. Book-visible scripts under `bk/crates/**/examples/` are content, not repository tooling, and remain out of scope for this migration.
+Git Bash is the supported Bash provider for Windows recipes. Modules use the standard `C:/Program Files/Git/bin/bash.exe` path; custom installations can use just's `--shell` and `--shell-arg` options. Git Bash supplies the shell and common Unix utilities, but it does not install project CLIs such as `aspell`, `lychee`, `typos`, `gh`, or `mdbook-utils`; those tools still need Windows installations and their own compatibility checks. Book-visible scripts under `bk/crates/**/examples/` are content, not repository tooling, and remain out of scope for this migration.

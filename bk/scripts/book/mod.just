@@ -4,7 +4,7 @@
 # TODO Reviewed ??-??-2026
 
 set unstable
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 root := clean(source_directory() + "/../..")
 mdbook_utils_rev := env("MDBOOK_UTILS_REV", "dedddf3699e461cd418c1a044d82aabd3fec62e0")
@@ -112,7 +112,7 @@ mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
 [windows]
 @_release_mbdbook-scrub:
     echo "Build mdbook-scrub, if needed"
-    if (-not (Test-Path -LiteralPath {{ quote(root + "/../bin/mdbook-scrub.exe") }}) -or -not (Test-Path -LiteralPath {{ quote(root + "/../bin/mdbook-private.exe") }}) -or -not (Test-Path -LiteralPath {{ quote(root + "/../bin/mdbook-linkcheck-compat.exe") }})) { just -f {{ quote(root + "/../tools/justfile") }} release }
+    if [[ ! -f {{ quote(root + "/../bin/mdbook-scrub.exe") }} || ! -f {{ quote(root + "/../bin/mdbook-private.exe") }} || ! -f {{ quote(root + "/../bin/mdbook-linkcheck-compat.exe") }} ]]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
 
 ## ---- BOOK SERVING -----------------------------------
 
@@ -128,14 +128,6 @@ alias s := serve
 alias q := quick
 
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes
-[unix]
 @quick:
     echo "Serve the book (no link checking)"
-    cd {{ quote(root) }} && {{ quote(root + "/quick.sh") }} {{ quote(root) }}
-
-[windows]
-@quick:
-    echo "Serve the book (no link checking)"
-    $bash = if ($env:GIT_BASH) { $env:GIT_BASH } else { Join-Path $env:ProgramFiles "Git\bin\bash.exe" }
-    & $bash "{{ source_directory() }}/quick.sh" "{{ root }}"
-    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    bash {{ quote(root + "/quick.sh") }} {{ quote(root) }}

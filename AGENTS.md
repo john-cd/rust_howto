@@ -72,7 +72,7 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 - Embedded Rust examples usually live under `bk\crates\<section-or-category>\examples\<chapter>\`. A chapter-level `main.rs` pulls recipe files in via `mod ...;`.
 - Example files normally expose only the book-visible snippet between `// ANCHOR: example` and `// ANCHOR_END: example`, then add hidden `pub fn run() { main(); }` and `#[test] fn test() { main(); }` so the snippet is continuously exercised by workspace tests and is accessible from the root module.
 - The `bk\justfile` is the main contributor entry point. It delegates to `bk\scripts\...\mod.just` modules for code, book, links, refs, examples, indices, and related maintenance tasks; prefer those recipes over inventing new ad hoc commands.
-- On Windows, the repo's `justfile`s are already configured to use PowerShell (`pwsh.exe`). Prefer `just` recipes when available instead of assuming Bash-only command sequences.
+- On Windows, `rust_howto`-owned `just` recipes use Git Bash. PowerShell helpers are invoked explicitly with `pwsh.exe`; prefer `just` recipes over ad hoc shell commands.
 
 ## Rust design and code organization
 

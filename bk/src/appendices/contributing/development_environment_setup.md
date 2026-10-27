@@ -91,9 +91,9 @@ rustup component add rustfmt --toolchain $rustfmtToolchain
 
 ### Native Windows and book recipe support {#windows-book-recipes}
 
-The book workspaces and many `just` recipes run natively on Windows. The root `bk/justfile` uses PowerShell 7. Some imported modules use PowerShell, while others launch Git Bash explicitly; each module declares its own Windows shell. Recipes marked `[unix]` are unavailable on Windows, and a `[windows]` recipe provides the Windows implementation. The `bk/scripts/README.md` support table records the current module boundaries.
+The book workspaces and many `just` recipes run natively on Windows. Windows recipe shells use Git Bash, while setup and index-generation helpers that require PowerShell are invoked explicitly with `pwsh.exe`. Each module declares its own Windows shell. Recipes marked `[unix]` are unavailable on Windows, and a `[windows]` recipe provides the Windows implementation. The `bk/scripts/README.md` support table records the current module boundaries.
 
-The pinned `just` version is defined by `JUST_VERSION` in `.devcontainer/.env`; use the repository's setup script or install that version explicitly. From `bk/`, `just bb`, `just s`, `just spell`, and `just lnk <pattern>` are available on Windows. The faster `just q` preview also has a Windows recipe and requires Git Bash. `just indices` exposes the Windows crate-index commands; the Bash-based index generators remain Unix-only. Native Windows API examples and tests still need a Windows host, and Linux-only code paths need Linux with their system dependencies.
+The pinned `just` version is defined by `JUST_VERSION` in `.devcontainer/.env`; use the repository's setup script or install that version explicitly. From `bk/`, `just bb`, `just s`, `just spell`, and `just lnk <pattern>` are available on Windows. All Windows recipes use Git Bash; `just indices` invokes the Windows crate-index executable, while the Bash-based index generators remain Unix-only. Native Windows API examples and tests still need a Windows host, and Linux-only code paths need Linux with their system dependencies.
 
 ## Format Book Markdown {#format-book-markdown}
 

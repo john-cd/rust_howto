@@ -3,7 +3,7 @@
 #
 # TODO Reviewed ??-??-2026
 
-set windows-shell := ["pwsh.exe", "-NoLogo", "-NoProfile", "-Command"]
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 root := clean(join(source_directory(), "..", ".."))
 
@@ -29,5 +29,5 @@ empty := ''
 # Run templ from the book root for crate/category badges and reference definitions; build its binary first if missing.
 [windows]
 @templ cmd=help *subcmd=empty:
-    if (-not (Test-Path -LiteralPath {{ quote(root + "/../bin/templ.exe") }})) { just -f {{ quote(root + "/../tools/justfile") }} release }
-    Set-Location -LiteralPath {{ quote(root) }}; & {{ quote(root + "/../bin/templ.exe") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
+    if [[ ! -f {{ quote(root + "/../bin/templ.exe") }} ]]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
+    cd {{ quote(root) }}; {{ quote(root + "/../bin/templ.exe") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}

@@ -6,27 +6,21 @@ set unstable
 
 set shell := ["bash", "-uc"]
 
-# Set shell for Windows OSs:
-# PowerShell Core has some of the Unix shell skills we need, such as || and &&
-set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
+# Use Git Bash on Windows so recipes share one shell syntax across platforms.
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 [no-exit-message]
 _default:
   @just --list --unsorted --justfile {{source_file()}}
 
-[unix]
-all cmd:
+@all cmd:
   #!/usr/bin/env bash
   set -euo pipefail
   for wkspace in "bk" "later" "mdbook-utils" "playground" "publish" "tools" "xmpl"
   do
-    just ${wkspace} {{cmd}} || true
+    just "${wkspace}" {{cmd}} || true
     echo "------------------------"
   done
-
-[windows]
-@all cmd:
-  $wkspaces = @("bk", "later", "mdbook-utils", "playground", "publish", "tools", "xmpl"); foreach ($wk in $wkspaces) { just $wk {{cmd}} ; Write-Host "------------------------" }
 
 # Book
 mod bk
