@@ -19,24 +19,46 @@ use arrow::error::Result;
 use arrow::record_batch::RecordBatch;
 use arrow::util::pretty::print_batches;
 
-/// Builds the sample arrays and prints their record batch.
-pub fn run() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
+/// Creates the sample typed Arrow arrays.
+fn create_arrays() -> (Int32Array, Float64Array, StringArray) {
     let integers = Int32Array::from(vec![1, 2, 3, 4, 5]);
     let floats = Float64Array::from(vec![5.0, 4.0, 3.0, 2.0, 1.0]);
     let strings = StringArray::from(vec!["a", "b", "c", "d", "e"]);
-    let schema = Arc::new(Schema::new(vec![
+    (integers, floats, strings)
+}
+
+/// Creates the Arrow schema describing the sample arrays.
+fn create_schema() -> Arc<Schema> {
+    Arc::new(Schema::new(vec![
         Field::new("integers", DataType::Int32, false),
         Field::new("floats", DataType::Float64, false),
         Field::new("strings", DataType::Utf8, false),
-    ]));
-    let batch = RecordBatch::try_new(
-        schema.clone(),
+    ]))
+}
+
+/// Combines the sample arrays into a `RecordBatch` according to the schema.
+fn create_record_batch(
+    schema: Arc<Schema>,
+    integers: &Int32Array,
+    floats: &Float64Array,
+    strings: &StringArray,
+) -> Result<RecordBatch> {
+    RecordBatch::try_new(
+        schema,
         vec![
             Arc::new(integers.clone()) as Arc<dyn Array>,
             Arc::new(floats.clone()) as Arc<dyn Array>,
-            Arc::new(strings) as Arc<dyn Array>,
+            Arc::new(strings.clone()) as Arc<dyn Array>,
         ],
-    )?;
+    )
+}
+
+/// Builds the sample arrays and prints their record batch.
+pub fn run() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
+    let (integers, floats, strings) = create_arrays();
+    let schema = create_schema();
+    let batch =
+        create_record_batch(schema.clone(), &integers, &floats, &strings)?;
 
     assert_eq!(integers.len(), 5);
     assert_eq!(integers.value(0), 1);
