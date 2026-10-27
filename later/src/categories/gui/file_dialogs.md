@@ -18,6 +18,8 @@ For most common file dialog needs, [`rfd`][c~rfd~docs]↗{{hi:rfd}} is the recom
 {{#include ../../../crates/cats/gui/examples/file_dialogs/rfd.rs:example}}
 ```
 
+For an async application, use `rfd::AsyncFileDialog` and await its `pick_file()` future.
+
 ## GUI Framework Integration {#gui-framework-integration}
 
 Some [GUI][p~gui] frameworks, like [`iced`][c~iced~docs]↗{{hi:iced}} or [`egui`][c~egui~docs]↗{{hi:egui}}, have their own file dialog integration, but they often use the underlying [`rfd`][c~rfd~docs]↗{{hi:rfd}} crate or similar.

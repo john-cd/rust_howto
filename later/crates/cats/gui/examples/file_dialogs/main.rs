@@ -5,6 +5,6 @@
 mod rfd;
 
 /// Runs the file dialogs example.
-fn main() {
-    rfd::run();
+fn main() -> anyhow::Result<()> {
+    rfd::run()
 }
