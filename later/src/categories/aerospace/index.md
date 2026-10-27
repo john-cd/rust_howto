@@ -43,7 +43,7 @@ This guide focuses on vehicle communication and radio-control protocols; the Dro
 ## Related Topics
 
 - **Code verification:** See [[code_verification | Code Verification]] and the [`kani`][c~kani~docs] tool for proving properties of Rust code.
-- **Concurrency:** See [[concurrency | Concurrency]] for message passing and [`#![no_std]`][book~rust-reference~no_std] guidance for embedded memory constraints.
+- **Concurrency:** See [[concurrency | Concurrency]] for message passing; use [`#![no_std]`][book~rust-reference~no_std] for embedded programs and review memory-safety examples that use unsafe blocks.
 - **Telemetry data:** Parse CSV, binary, or custom formats with crates such as `serde`, `nom`, and `byteorder`.
 - **Geoscience:** See [[science_geo | Geoscience]]; [`geo`][c~geo~docs] supports distances, bearings, and geometry, while [`proj`][c~proj~docs] converts coordinate systems such as latitude/longitude to UTM.
 - **Hardware:** See [[hardware-support | Hardware Support]].
