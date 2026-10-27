@@ -20,7 +20,7 @@ The ECSS Packet Utilization Standard (PUS-C) defines packet formats and services
 {{#include ../../../crates/cats/aerospace_space_protocols/examples/space_protocols/space_protocols.rs:pus-telecommand}}
 ```
 
-The [`spacepackets`][c~spacepackets~docs] crate implements CCSDS packets and PUS-C telecommands and telemetry. The [`satrs`][c~satrs~docs] framework builds on packet support with components for on-board software, including event management, PUS support, and telemetry and telecommand routing. Check each crate's current documentation and mission requirements before choosing a framework.
+The [`spacepackets`][c~spacepackets~docs] crate implements CCSDS packets and PUS-C telecommands and telemetry. The [`satrs`][c~satrs~docs] crate is a framework for on-board software with event management, PUS support, and telemetry and telecommand routing; its latest published version is 0.2.1, so verify current maintenance and mission fit before adoption.
 
 ## COP-1
 
