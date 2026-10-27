@@ -41,7 +41,7 @@
 
 [![arrow-array][c~arrow-array~docs~badge]][c~arrow-array~docs]{{hi:arrow-array}} [![arrow-cast][c~arrow-cast~docs~badge]][c~arrow-cast~docs]{{hi:arrow-cast}}
 
-Many projects depend on the smaller `arrow-array`, `arrow-cast` and `arrow-ipc` crates instead of the umbrella `arrow` crate, which shortens compile times and reduces binary size. `RecordBatch::try_from_iter` builds a batch from named columns and infers the schema, including nullability, from the arrays.
+Projects can depend on individual crates such as `arrow-array`, `arrow-cast` and `arrow-ipc` instead of the umbrella `arrow` crate when they need only those components. Measure compile time and binary size for the actual dependency and feature set. `RecordBatch::try_from_iter` builds a batch from named columns and infers the schema, including nullability, from the arrays.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/data_processing/arrow/arrow_build.rs:example}}
@@ -78,11 +78,7 @@ The Arrow IPC _file_ format supports random access and memory mapping. The IPC _
 
 [![polars][c~polars~docs~badge]][c~polars~docs]{{hi:polars}}
 
-Polars provides eager and lazy APIs for columnar data. This example filters inline sales rows, groups and sums revenue by region, and sorts the result. From `later/crates`, run it with `cargo run -p other --example polars --features polars`.
-
-```rust,editable
-{{#include ../../../crates/other/examples/polars/polars.rs:example}}
-```
+Polars provides eager and lazy APIs for columnar data. The [DataFrames chapter](dataframes.md#polars) contains the shared example for filtering, grouping, and joining rows.
 
 ## DataFrame processing {#dataframes}
 
