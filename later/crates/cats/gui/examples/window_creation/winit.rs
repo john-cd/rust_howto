@@ -3,99 +3,65 @@
 // ANCHOR: example
 //! Creating a window with `winit`.
 
-// Trait that handles the application events:
 use winit::application::ApplicationHandler;
-// An event from a `Window`: Resized, Moved, etc.
 use winit::event::WindowEvent;
-// Allow creating new windows while Winit executes your callback:
 use winit::event_loop::ActiveEventLoop;
-// Indicates the desired behavior of the event loop after
-// `Event::AboutToWait` is emitted.
 use winit::event_loop::ControlFlow;
-// Provides a way to retrieve events from the system and from the windows
-// that were registered to the events loop:
 use winit::event_loop::EventLoop;
 use winit::window::Window;
-// Identifier, unique for each window:
 use winit::window::WindowId;
 
-/// The application state.
+/// Application state for the example window.
 #[derive(Default)]
 struct App {
-    /// The window, created when the application is resumed.
+    /// The window created after the event loop resumes.
     window: Option<Window>,
 }
 
 impl ApplicationHandler for App {
-    // The application has been resumed.
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
-        let window_attributes =
-            Window::default_attributes().with_title("Test window");
-        self.window = Some(
-            event_loop
-                .create_window(window_attributes)
-                .expect("the winit example invariant should hold"),
-        );
+        if self.window.is_none() {
+            let attributes =
+                Window::default_attributes().with_title("Winit window");
+            match event_loop.create_window(attributes) {
+                Ok(window) => self.window = Some(window),
+                Err(error) => {
+                    eprintln!("Could not create the window: {error}");
+                    event_loop.exit();
+                }
+            }
+        }
     }
 
     fn window_event(
         &mut self,
         event_loop: &ActiveEventLoop,
-        _id: WindowId,
+        _window_id: WindowId,
         event: WindowEvent,
     ) {
-        match event {
-            WindowEvent::CloseRequested => {
-                println!("The close button was pressed; stopping");
-                event_loop.exit();
-            }
-            WindowEvent::RedrawRequested => {
-                // Redraw the application.
-                //
-                // It's preferable for applications that do not render
-                // continuously to render in this event rather
-                // than in AboutToWait, since rendering in here allows
-                // the program to gracefully handle redraws requested by the
-                // OS.
-
-                // Queue a RedrawRequested event.
-                //
-                // You only need to call this if you've determined that you
-                // need to redraw in applications which do not always
-                // need to. Applications that redraw continuously
-                // can render here instead.
-                self.window
-                    .as_ref()
-                    .expect("the winit example invariant should hold")
-                    .request_redraw();
-            }
-            _ => (),
+        if should_exit(&event) {
+            event_loop.exit();
+        } else if matches!(event, WindowEvent::RedrawRequested) {
+            println!("Redraw requested");
         }
     }
+}
+
+/// Reports whether a window event requests application shutdown.
+fn should_exit(event: &WindowEvent) -> bool {
+    matches!(event, WindowEvent::CloseRequested)
 }
 
 /// Creates the event loop and runs the application.
 fn main() -> anyhow::Result<()> {
     let event_loop = EventLoop::new()?;
-
-    // `ControlFlow::Poll` continuously runs the event loop, even if the OS
-    // hasn't dispatched any events. This is ideal for games and
-    // similar applications:
-    // event_loop.set_control_flow(ControlFlow::Poll);
-
-    // ControlFlow::Wait pauses the event loop if no events are available
-    // to process. This is ideal for non-game applications that only
-    // update in response to user input, and uses significantly less
-    // power/CPU time than ControlFlow::Poll.
     event_loop.set_control_flow(ControlFlow::Wait);
-
-    let mut app = App::default();
-    // Run the application with the event loop on the calling thread.
-    event_loop.run_app(&mut app)?;
+    event_loop.run_app(&mut App::default())?;
     Ok(())
 }
 // ANCHOR_END: example
 
+/// Runs the window example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -104,25 +70,17 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Runs the winit example through its entry point.
+    /// Opens a native window for manual testing.
     #[test]
-    #[ignore = "requires interactive example runtime"]
+    #[ignore = "opens a native window"]
     fn test_winit_example_entry_point() {
-        main().expect("example entry point should succeed");
+        main().expect("the Winit example should run successfully");
     }
 
-    // TODO proper test
-    /// Checks that the event loop can be created.
+    /// Checks that only a close request asks the application to exit.
     #[test]
-    fn compile_event_loop() {
-        let mut builder = EventLoop::<()>::builder();
-        #[cfg(target_os = "windows")]
-        {
-            use winit::platform::windows::EventLoopBuilderExtWindows;
-
-            // The test harness runs this test on a worker thread.
-            builder.with_any_thread(true);
-        }
-        let _event_loop = builder.build().expect("create event loop");
+    fn close_requested_asks_the_application_to_exit() {
+        assert!(should_exit(&WindowEvent::CloseRequested));
+        assert!(!should_exit(&WindowEvent::RedrawRequested));
     }
 }
