@@ -160,7 +160,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#777](https://github.com/john-cd/rust_howto/issues/777) — **P4** — Finish the femtovg example G — **NOT STARTED**
 - [#778](https://github.com/john-cd/rust_howto/issues/778) — **P4** — Finish the Floem example G — **NOT STARTED**
 - [#780](https://github.com/john-cd/rust_howto/issues/780) — **P4** — Finish the GTK4 example G — **NOT STARTED**
-- [#781](https://github.com/john-cd/rust_howto/issues/781) — **P4** — Finish the Iced example G — **NOT STARTED**
+- [#781](https://github.com/john-cd/rust_howto/issues/781) — **P4** — Finish the Iced example G — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#782](https://github.com/john-cd/rust_howto/issues/782) — **P4** — ui_layout/morphorm.rs: finish — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#783](https://github.com/john-cd/rust_howto/issues/783) — **P4** — text_layout/parley.rs: finish — **NOT STARTED**
 - [#785](https://github.com/john-cd/rust_howto/issues/785) — **P4** — file_dialogs/rfd.rs: how to test — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**

@@ -22,7 +22,7 @@ pub fn main() -> iced::Result {
 #[derive(Default)]
 struct Counter {
     /// The current count.
-    value: i32,
+    value: i64,
 }
 
 /// The messages that the counter handles.
@@ -72,8 +72,20 @@ mod tests {
 
     /// Runs the iced example through its entry point.
     #[test]
-    #[ignore = "requires an interactive example runtime"]
+    #[ignore = "opens a window"]
     fn test_iced_example_entry_point() -> iced::Result {
         main()
+    }
+
+    /// Verifies counter updates without opening a window.
+    #[test]
+    fn update_changes_the_counter_value() {
+        let mut counter = Counter::default();
+
+        counter.update(Message::Increment);
+        assert_eq!(counter.value, 1);
+
+        counter.update(Message::Decrement);
+        assert_eq!(counter.value, 0);
     }
 }
