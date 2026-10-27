@@ -12,26 +12,26 @@ use parry2d::shape::Cuboid;
 
 /// Creates two shapes and tests whether they intersect.
 fn main() {
-    // Define shapes
+    // Define shapes.
     let ball = Ball::new(1.0);
     let cuboid = Cuboid::new(Vector::new(1.0, 1.0));
 
-    // Define positions
+    // Define positions.
     let ball_pos = Pose::from_translation(Vector::new(0.0, 0.0));
     let cuboid_pos = Pose::from_translation(Vector::new(1.5, 0.0));
 
-    // 1. Intersection test
+    // 1. Intersection test.
     let intersects =
         query::intersection_test(&ball_pos, &ball, &cuboid_pos, &cuboid)
             .expect("Intersection test failed");
     println!("Shapes intersect: {}", intersects.intersecting);
 
-    // 2. Distance computation
+    // 2. Distance computation.
     let distance = query::distance(&ball_pos, &ball, &cuboid_pos, &cuboid)
         .expect("Distance computation failed");
     println!("Distance between shapes: {}", distance.distance);
 
-    // 3. Contact points
+    // 3. Contact points.
     if let Some(contact) = query::contact(
         &ball_pos,
         &ball,
@@ -62,4 +62,3 @@ mod tests {
         main();
     }
 }
-// TODO review

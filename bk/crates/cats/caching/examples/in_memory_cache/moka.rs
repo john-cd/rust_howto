@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
@@ -51,7 +50,6 @@ fn main() {
     });
     handle.join().expect("worker thread should not panic");
 }
-
 // ANCHOR_END: example
 
 pub fn run() {

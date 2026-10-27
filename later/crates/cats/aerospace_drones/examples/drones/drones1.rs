@@ -33,6 +33,6 @@ mod tests {
     #[test]
     #[ignore = "requires real drone"]
     fn test_drones1_example_entry_point() {
-        main().expect("example entry point should succeed"); // TODO no unwrap
+        main().expect("example entry point should succeed");
     }
 }

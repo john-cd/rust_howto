@@ -1,5 +1,5 @@
-#![allow(dead_code)]
 // TODO Reviewed ??-??-2026
+// TODO fix this example
 
 // ANCHOR: example
 //! This example demonstrates basic interactions with an Ethereum-compatible
@@ -15,8 +15,6 @@ use std::error::Error;
 /// Prints the steps to query the balance of an address, without connecting to a
 /// network.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
-    // Placeholder flow to keep the example compile-safe without external RPC
-    // deps.
     let rpc_url = "https://eth.llamarpc.com";
     let target_address = "d8dA6BF26964aF9D7eEd9e03E53415D37aA96045";
 
@@ -44,4 +42,3 @@ mod tests {
         main()
     }
 }
-// TODO write
