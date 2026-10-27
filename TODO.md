@@ -649,9 +649,9 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 
 #### DEFERRED-CODE-04 — Media encoding, images and video
 
-- [#805](https://github.com/john-cd/rust_howto/issues/805) — **P4** — multimedia/multimedia1.rs: write — **NOT STARTED; DEFERRED**
+- [#805](https://github.com/john-cd/rust_howto/issues/805) — **P4** — multimedia/multimedia1.rs: write — **PARTIAL; BLOCKED — audio-device validation and device-independent source test remain; details are on the issue**
 - [#808](https://github.com/john-cd/rust_howto/issues/808) — **P4** — images/images.rs: write — **IMPLEMENTED; OPEN — gradient, resize, in-memory PNG/JPEG conversion, and blur examples; tests, lints, book validation, and linked PR remain**
-- [#809](https://github.com/john-cd/rust_howto/issues/809) — **P4** — video/video.rs: write — **NOT STARTED; DEFERRED**
+- [#809](https://github.com/john-cd/rust_howto/issues/809) — **P4** — video/video.rs: write — **IMPLEMENTED ON DEVELOP; OPEN — synthetic AV1 encoder and packet assertion present; tests, lints, book validation, issue note removal, and linked PR remain**
 
 #### DEFERRED-CODE-05 — Localization and internationalization
 
