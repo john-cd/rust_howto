@@ -4,14 +4,15 @@
 
 {{#include certificates.incl.md}}
 
-Cryptographic certificates, also known as digital certificates, are electronic credentials used to establish the identity of entities such as individuals, websites, or organizations in online communications. They are issued by trusted entities called Certificate Authorities (CAs) and contain a public key, the owner's identity, and the CA's digital signature. When a certificate is presented, it allows the recipient to verify the identity of the sender and securely exchange information using the public key. These certificates are fundamental to protocols like SSL/TLS, which ensure secure communication over the internet.
+## Create a self-signed certificate with `rcgen` {#rcgen}
 
-For more formats, see Rust Crypto Formats.
+[![rcgen][c~rcgen~docs~badge]][c~rcgen~docs]{{hi:rcgen}}{{hi:Certificate}}{{hi:X.509}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
 
-- der{{hi:der}}.
-- pem-rfc7468{{hi:pem-rfc7468}}.
-- pkcs8{{hi:pkcs8}}.
-- x509-cert{{hi:x509-cert}}.
+Use [`rcgen`][c~rcgen~docs]↗{{hi:rcgen}} to create certificates for local development and tests. The example creates a self-signed `localhost` certificate; clients will reject it unless they are deliberately configured to trust it.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/certs/rcgen.rs:example}}
+```
 
 ## DER {#der}
 
@@ -35,6 +36,16 @@ PEM (Privacy Enhanced Mail) is a text-based format (Base64 encoded DER) commonly
 {{#include ../../../crates/cats/cryptography/examples/certs/pem-rfc7468.rs:example}}
 ```
 
+## Read a PEM certificate file {#read-pem-file}
+
+[![pem-rfc7468][c~pem-rfc7468~docs~badge]][c~pem-rfc7468~docs]{{hi:pem-rfc7468}}{{hi:PEM}}{{hi:File}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
+
+Read a file as bytes, decode its RFC 7468 block, and check the label before passing the DER bytes to an X.509 parser. Decoding PEM does not verify a certificate or make it trusted.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/certs/read_pem.rs:example}}
+```
+
 ## `pkcs8` {#pkcs8}
 
 [![pkcs8~website][c~pkcs8~website~badge]][c~pkcs8~website] [![pkcs8][c~pkcs8~docs~badge]][c~pkcs8~docs] [![pkcs8~crates.io][c~pkcs8~crates.io~badge]][c~pkcs8~crates.io] [![pkcs8~repo][c~pkcs8~repo~badge]][c~pkcs8~repo] [![pkcs8~lib.rs][c~pkcs8~lib.rs~badge]][c~pkcs8~lib.rs]{{hi:pkcs8}}{{hi:Crypto}}{{hi:Key}}{{hi:Pkcs}}{{hi:Private}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
@@ -45,11 +56,21 @@ PKCS#8 ("Public-Key Cryptography Standards (PKCS) #8": Private-Key Information S
 {{#include ../../../crates/cats/cryptography/examples/certs/pkcs8.rs:example}}
 ```
 
-## `x509-cert` {#x509-cert}
+## Parse an X.509 certificate {#parse-x509}
+
+[![x509-cert][c~x509-cert~docs~badge]][c~x509-cert~docs]{{hi:x509-cert}}{{hi:X.509}}{{hi:Parser}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
+
+[`x509-cert`][c~x509-cert~docs]↗{{hi:x509-cert}} decodes DER certificate structures. Parsing checks the encoding, not the certificate signature, trust chain, dates, hostname, or revocation policy.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/certs/parse_x509.rs:example}}
+```
+
+## Build X.509 certificate fields with `x509-cert` {#x509-cert}
 
 [![x509-cert~website][c~x509-cert~website~badge]][c~x509-cert~website] [![x509-cert][c~x509-cert~docs~badge]][c~x509-cert~docs] [![x509-cert~crates.io][c~x509-cert~crates.io~badge]][c~x509-cert~crates.io] [![x509-cert~repo][c~x509-cert~repo~badge]][c~x509-cert~repo] [![x509-cert~lib.rs][c~x509-cert~lib.rs~badge]][c~x509-cert~lib.rs]{{hi:x509-cert}}{{hi:Crypto}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-An X.509 certificate is a standardized format for public key certificates used in various internet protocols, including SSL/TLS, to secure communications over networks. These certificates contain information about the certificate holder (such as a website or individual), their public key, the issuing Certificate Authority (CA), and a digital [signature][p~signature] from the CA. They help verify the identity of entities and establish encrypted connections, ensuring the confidentiality and integrity of the data being exchanged. [`x509-cert`][c~x509-cert~docs]↗{{hi:x509-cert}} is a pure Rust implementation of the X.509 Public Key Infrastructure Certificate format as described in RFC 5280.
+The existing example builds and encodes selected certificate fields; it does not create or sign a complete certificate. [`x509-cert`][c~x509-cert~docs]↗{{hi:x509-cert}} implements the X.509 Public Key Infrastructure Certificate format described in [RFC 5280][rfc~5280].
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/certs/x509_cert.rs:example}}
@@ -61,7 +82,3 @@ An X.509 certificate is a standardized format for public key certificates used i
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/1179)
-</div>

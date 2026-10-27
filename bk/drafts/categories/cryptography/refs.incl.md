@@ -2,10 +2,14 @@
 
 [rfc~2104]: https://www.rfc-editor.org/rfc/rfc2104.html
 [rfc~5116]: https://www.rfc-editor.org/rfc/rfc5116.html
+[rfc~5280]: https://www.rfc-editor.org/rfc/rfc5280.html
+[rfc~7468]: https://www.rfc-editor.org/rfc/rfc7468.html
 [rfc~8439]: https://www.rfc-editor.org/rfc/rfc8439.html
 
 [c~aws-lc-rs~docs]: https://docs.rs/aws-lc-rs
 [c~dryoc~docs]: https://docs.rs/dryoc
+[c~rustls-native-certs~docs]: https://docs.rs/rustls-native-certs
+[c~rustls-platform-verifier~docs]: https://docs.rs/rustls-platform-verifier
 
 [rustcrypto~github]: https://github.com/RustCrypto
 [rustsec~advisories]: https://rustsec.org/
@@ -27,7 +31,10 @@
 [ex~cryptography~keyring]: secrets.md#keyring
 [ex~cryptography~native-tls]: tls.md#native-tls
 [ex~cryptography~pbkdf2]: password_hashing.md#pbkdf2
+[ex~cryptography~parse-x509]: certificates.md#parse-x509
 [ex~cryptography~pem-rfc7468]: certificates.md#pem-rfc7468
+[ex~cryptography~read-pem-file]: certificates.md#read-pem-file
+[ex~cryptography~rcgen]: certificates.md#rcgen
 [ex~cryptography~pkcs8]: certificates.md#pkcs8
 [ex~cryptography~redacted-secret]: secrets.md#redacted-secret
 [ex~cryptography~rsa]: encryption.md#rsa

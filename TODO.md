@@ -271,7 +271,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-PROSE-06 — Security and cryptocurrencies
 
-- [#1179](https://github.com/john-cd/rust_howto/issues/1179) — **P3** — cryptography/certificates.md: write — **NOT STARTED**
+- [#1179](https://github.com/john-cd/rust_howto/issues/1179) — **P3** — cryptography/certificates.md: write — **IMPLEMENTED — pending final cryptography crate, draft book, reference, spelling, and diff validation**
 
 #### NOW-PROSE-07 — Foreign function interfaces - IN PROGRESS
 
