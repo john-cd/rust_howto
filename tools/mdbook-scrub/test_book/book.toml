@@ -16,6 +16,3 @@ after = ["links"]
 [output.markdown]
 
 [output.html]
-
-[output.pandoc]
-optional = true

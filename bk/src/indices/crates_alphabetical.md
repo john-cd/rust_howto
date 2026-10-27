@@ -1,16 +1,19 @@
 <!-- TODO Reviewed ??-??-2026 -->
-
 # Crates in Alphabetical Order
 
 Crates mentioned in this book, in alphabetical order. Nested links point to published recipes that use each crate.
 
 ## A
 
+- [![ahash][c~ahash~docs~badge]][c~ahash~docs]
+  - [Choose a Faster Hasher: `ahash` and `rustc-hash`][ex~data-structures~fast-hashmap]
 - [![aho-corasick][c~aho-corasick~docs~badge]][c~aho-corasick~docs]
 - [![anyhow][c~anyhow~docs~badge]][c~anyhow~docs]
 - [![approx][c~approx~docs~badge]][c~approx~docs]
 - [![arrayvec][c~arrayvec~docs~badge]][c~arrayvec~docs]
   - [Store Fixed-size Vectors and Strings on the Stack with `arrayvec`][ex~data-structures~arrayvec]
+- [![atomicwrites][c~atomicwrites~docs~badge]][c~atomicwrites~docs]
+  - [Replace a File Atomically][ex~filesystem~replace-a-file-atomically]
 - [![axum][c~axum~docs~badge]][c~axum~docs]
 
 ## B
@@ -26,6 +29,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 
 ## C
 
+- [![camino][c~camino~docs~badge]][c~camino~docs]
+  - [Ensure your Paths are UTF-8 with `camino`][ex~filesystem~camino]
 - [![cargo][c~cargo~docs~badge]][c~cargo~docs]
 - [![cargo-expand][c~cargo-expand~docs~badge]][c~cargo-expand~docs]
 - [![cargo-generate][c~cargo-generate~docs~badge]][c~cargo-generate~docs]
@@ -43,6 +48,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Locate User Directories with `directories`][ex~filesystem~directories]
 - [![dirs][c~dirs~docs~badge]][c~dirs~docs]
   - [Locate User Directories with `dirs`][ex~filesystem~dirs]
+- [![dunce][c~dunce~docs~badge]][c~dunce~docs]
+  - [Canonicalize a Path without the Windows `\\?\` Prefix][ex~filesystem~dunce]
 
 ## E
 
@@ -52,10 +59,16 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 
 - [![fastrand][c~fastrand~docs~badge]][c~fastrand~docs]
   - [Generate Random Numbers with `fastrand`][ex~algorithms~fastrand]
+- [![fixed][c~fixed~docs~badge]][c~fixed~docs]
+  - [Fixed-Point Numbers][ex~mathematics~fixed-point]
+- [![fixedbitset][c~fixedbitset~docs~badge]][c~fixedbitset~docs]
+  - [Track Visited Nodes with `fixedbitset`][ex~data-structures~fixedbitset]
 - [![flagset][c~flagset~docs~badge]][c~flagset~docs]
   - [Work with C-style Flags using `flagset`][ex~data-structures~flagset]
 - [![flate2][c~flate2~docs~badge]][c~flate2~docs]
 - [![fnv][c~fnv~docs~badge]][c~fnv~docs]
+- [![foldhash][c~foldhash~docs~badge]][c~foldhash~docs]
+  - [`foldhash`][ex~algorithms~foldhash]
 - [![fs_extra][c~fs_extra~docs~badge]][c~fs_extra~docs]
 
 ## G
@@ -72,6 +85,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 
 ## H
 
+- [![half][c~half~docs~badge]][c~half~docs]
+  - [Half-Precision Floats][ex~mathematics~half-precision]
 - [![heapless][c~heapless~docs~badge]][c~heapless~docs]
   - [Work with Heapless Data Structures with `heapless`][ex~data-structures~heapless]
 
@@ -83,6 +98,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 - [![indexmap][c~indexmap~docs~badge]][c~indexmap~docs]
   - [Store Data in an Insertion-ordered Map][ex~data-structures~indexmap]
 - [![indextree][c~indextree~docs~badge]][c~indextree~docs]
+- [![infer][c~infer~docs~badge]][c~infer~docs]
+  - [Detect a File's Type from its Content][ex~filesystem~infer]
 - [![itertools][c~itertools~docs~badge]][c~itertools~docs]
 
 ## J
@@ -133,6 +150,7 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Use Big Integers with `num-bigint`][ex~mathematics~num-bigint]
 - [![num-complex][c~num-complex~docs~badge]][c~num-complex~docs]
 - [![num-rational][c~num-rational~docs~badge]][c~num-rational~docs]
+  - [Rational Numbers][ex~mathematics~rational-numbers]
 - [![num-traits][c~num-traits~docs~badge]][c~num-traits~docs]
   - [Abstract over Different Number Types][ex~mathematics~abstracting-over-number-types]
 
@@ -150,6 +168,7 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 - [![petgraph][c~petgraph~docs~badge]][c~petgraph~docs]
   - [Create and Manipulate Graphs with `petgraph`][ex~data-structures~petgraph]
 - [![priority-queue][c~priority-queue~docs~badge]][c~priority-queue~docs]
+  - [Create a Priority Queue with `priority-queue`][ex~data-structures~priority-queue]
 
 ## R
 
@@ -169,13 +188,16 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 - [![ring][c~ring~docs~badge]][c~ring~docs]
   - [Calculate the SHA-256 Digest of a File][ex~algorithms~sha256]
 - [![roaring][c~roaring~docs~badge]][c~roaring~docs]
+  - [Store Large Sets of Integers with `roaring`][ex~data-structures~roaring]
 - [![rpds][c~rpds~docs~badge]][c~rpds~docs]
 - [![rug][c~rug~docs~badge]][c~rug~docs]
   - [Use Big Integers][ex~mathematics~big-integers]
   - [Work with Arbitrary-precision Integers, Rationals, Floats, and Complex Numbers with `rug`][ex~mathematics~rug]
 - [![rust-crypto][c~rust-crypto~docs~badge]][c~rust-crypto~docs]
 - [![rust_decimal][c~rust_decimal~docs~badge]][c~rust_decimal~docs]
-  - [Use Big Decimals][ex~mathematics~big-decimal]
+  - [Use Fixed-Precision Decimal Numbers][ex~mathematics~big-decimal]
+- [![rustc-hash][c~rustc-hash~docs~badge]][c~rustc-hash~docs]
+  - [Choose a Faster Hasher: `ahash` and `rustc-hash`][ex~data-structures~fast-hashmap]
 
 ## S
 
@@ -189,6 +211,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Hash with `sha1`][ex~algorithms~sha1]
 - [![sha2][c~sha2~docs~badge]][c~sha2~docs]
   - [Hash with `sha2`][ex~algorithms~sha2]
+- [![short-uuid][c~short-uuid~docs~badge]][c~short-uuid~docs]
+  - [Generate Compact UUIDs with `short-uuid`][ex~data-structures~short-uuid]
 - [![skiplist][c~skiplist~docs~badge]][c~skiplist~docs]
 - [![slint][c~slint~docs~badge]][c~slint~docs]
 - [![slotmap][c~slotmap~docs~badge]][c~slotmap~docs]
@@ -199,7 +223,7 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 - [![statrs][c~statrs~docs~badge]][c~statrs~docs]
 - [![std][c~std~docs~badge]][c~std~docs]
   - [Accept Arguments of Multiple Types with `AsRef`][ex~standard-library~asref]
-  - [Accept Either a Owned or Borrowed Value as the Input of a Function][ex~standard-library~accept-either-owned-or-borrowed-values]
+  - [Accept Either an Owned or Borrowed Value as the Input of a Function][ex~standard-library~accept-either-owned-or-borrowed-values]
   - [Add Function-like Behavior to a Custom Type][ex~standard-library~function-like-behavior]
   - [Calculate Measures of Central Tendency][ex~mathematics~measures-of-central-tendency]
   - [Calculate the Distance Between two Points on Earth][ex~mathematics~distance-between-two-points-on-earth]
@@ -215,6 +239,7 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Convert between Types with `From`][ex~standard-library~from]
   - [Create a Map Sorted by Key with `BTreeMap`][ex~data-structures~btreemap]
   - [Create a Sorted Set with `BTreeSet<T>`][ex~data-structures~btreeset]
+  - [Create and Manipulate Paths][ex~filesystem~create-and-manipulate-paths]
   - [Create, List Contents of, and Remove Directories][ex~filesystem~create-list-contents-remove-dirs]
   - [Decide When to Use `Box`][ex~standard-library~box-use-cases]
   - [Define Default Values for a Struct with `Default`][ex~standard-library~default]
@@ -231,7 +256,6 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Handle Recoverable Errors with `Result`][ex~standard-library~result]
   - [Implement Recursive Data Structures with `Box`][ex~standard-library~box-recursive-data-structures]
   - [Implement `Borrow` for a Custom Type][ex~standard-library~implement-borrow]
-  - [Implement a Priority Queue with `priority-queue`][ex~data-structures~priority-queue]
   - [Implement a Smart Pointer with `Deref`][ex~standard-library~deref]
   - [Implement the "Early Return" Pattern with the `?` Operator][ex~standard-library~return-early-pattern]
   - [Interior Mutability][ex~standard-library~interior-mutability]
@@ -274,19 +298,24 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Use the `Borrow` Trait to Work with Borrowed Types Synonymous with Owned Types][ex~standard-library~borrow]
   - [Verify that `tan` is Equal to `sin` Divided by `cos`][ex~mathematics~verifying-tan-is-equal-to-sin-divided-by-cos]
   - [Work with Symbolic Links][ex~filesystem~symbolic-links]
+  - [Work with a Binary Heap][ex~data-structures~binary-heap]
   - [Work with the Contents of an `Option`][ex~standard-library~option-methods]
   - [`String` and `&str`][ex~data-structures~string]
   - [`Vec` Memory Allocation][ex~data-structures~memory-allocation]
 - [![stdx][c~stdx~docs~badge]][c~stdx~docs]
 - [![strsim][c~strsim~docs~badge]][c~strsim~docs]
 - [![strum][c~strum~docs~badge]][c~strum~docs]
+  - [Attach Constant Properties to Variants with `strum`][ex~language~strum-props]
   - [Convert between Strings and Enum Variants with `strum`][ex~language~strum]
+  - [Label Variants and Build Menus with `strum`][ex~language~strum-messages]
+  - [Parse and Print Config Values with `strum`][ex~language~strum-case]
 
 ## T
 
 - [![tar][c~tar~docs~badge]][c~tar~docs]
 - [![tempfile][c~tempfile~docs~badge]][c~tempfile~docs]
   - [Create Temporary Files or Temporary Directories][ex~filesystem~temporary-files-or-directories]
+  - [Replace a File Atomically][ex~filesystem~replace-a-file-atomically]
 - [![tinyvec][c~tinyvec~docs~badge]][c~tinyvec~docs]
   - [Store Small Vectors on the Stack with Fallback to the Heap, with `tinyvec`][ex~data-structures~tinyvec]
 - [![typenum][c~typenum~docs~badge]][c~typenum~docs]
@@ -316,6 +345,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 
 ## X
 
+- [![xxhash-rust][c~xxhash-rust~docs~badge]][c~xxhash-rust~docs]
+  - [Checksum Data with `xxhash-rust`][ex~algorithms~xxh3]
 - [![xz2][c~xz2~docs~badge]][c~xz2~docs]
 
 ## Y
