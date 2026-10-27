@@ -18,11 +18,13 @@ Web-based GUI toolkits use HTML, CSS, and JavaScript, or Rust components that re
 
 [`tauri`][c~tauri~docs]↗ builds desktop and mobile applications with a Rust back end and a front end made with web technologies. The front end calls registered Rust commands over Tauri's IPC API. Tauri uses the system webview through `wry`, rather than shipping a separate browser engine with every app. The selected frontend framework, app assets, plugins, and platform runtime setup still affect the final package.
 
-Create a starter project with `npm create tauri-app@latest`, then follow the platform prerequisites and run the app with `cargo tauri dev`. The shared GUI crate includes a plain Rust greeting function and a unit test; a complete Tauri app also needs a frontend, `tauri.conf.json`, and `build.rs`:
+Create a starter project with `npm create tauri-app@latest`, then follow the platform prerequisites and run the app with `cargo tauri dev`. The shared GUI crate retains a dependency-free Rust greeting function and its unit test:
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/web/tauri/mod.rs:example}}
 ```
+
+This source does not link the Tauri runtime. A full Tauri application also needs a frontend, `tauri.conf.json`, and `build.rs`; on Linux the platform runtime uses GTK 3.
 
 In the Tauri project's Rust back end, expose the function as a command and register it with the application:
 
@@ -63,19 +65,17 @@ Use the [Dioxus desktop guide][dioxus~desktop~website]↗ or [mobile guide][diox
 
 [`wry`][c~wry~docs]↗ is a cross-platform webview library; [`tao`][c~tao~docs]↗ provides the window and event loop. Use them directly when you need a webview in a native window but do not need Tauri's application commands, permission model, bundling, or updater. Your application owns window management, event handling, and packaging.
 
-The example below needs a display, so tests do not launch it. Its tests instead cover the URL allow-list: only local `file://` URIs validated with the [`url`][c~url~docs]↗ crate reach the webview. Pass the opener as a closure so URI validation can be tested without a window; apply the same rule to addresses received from outside the application.
+The Wry/Tao source remains available, but its Cargo registration, feature, and dependencies are commented out until a compatible update removes affected `glib 0.18`:
 
-```rust,no_run,editable
+```rust,ignore
 {{#include ../../../crates/cats/gui/examples/web/wry_window.rs:example}}
 ```
-
-Run it with `cargo run --example wry_window --features wry`.
 
 - **The webview comes from the platform.** Wry uses WebView2 on Windows, WKWebView on macOS and iOS, WebKitGTK on Linux, and Android System WebView on Android. Runtime versions and capabilities vary by platform. Linux builds need WebKitGTK and GTK development packages.
 - **Rust and JavaScript communicate through IPC.** JavaScript can call `window.ipc.postMessage(text)`, handled by `WebViewBuilder::with_ipc_handler`; Rust can call `WebView::evaluate_script`. Validate messages and restrict navigation before loading untrusted content.
 - **Load content deliberately.** `with_url` loads a page and `with_html` loads inline markup. Avoid allowing an application with an IPC bridge to navigate to arbitrary sites.
 
-For a focused local-file example and its tested URL allow-list, see [show a local web page in a native window][ex~gui~wry-local-page].
+- **Choose [`tauri`][c~tauri~docs]↗{{hi:tauri}} for a full application.** It adds a command system, a permission model, bundling and installers, auto-update, and a JavaScript API.
 
 ## Related Topics {#related-topics .skip}
 
@@ -85,3 +85,9 @@ For a focused local-file example and its tested URL allow-list, see [show a loca
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+  [web_based_gui: write](https://github.com/john-cd/rust_howto/issues/394)
+  where should we put Dioxus?
+  [show a local web page in a native window](https://github.com/john-cd/rust_howto/issues/1952)
+</div>

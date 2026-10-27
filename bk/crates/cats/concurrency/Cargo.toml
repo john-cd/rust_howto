@@ -19,8 +19,10 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 publish.workspace = true
 
 [features]
-default = ["riker", "stakker"]
-riker = ["dep:riker"]
+default = ["stakker"]
+# Disabled because Riker still pulls linked-hash-map 0.3 and rand 0.7.
+# Keep the actor example source and re-enable this feature when that chain is fixed.
+# riker = ["dep:riker"]
 stakker = ["dep:stakker"]
 
 [dependencies]
@@ -50,8 +52,8 @@ parking_lot = "0.13.0"
 ractor = "0.16.5"
 rand = { version = "0.10.3", features = ["thread_rng"] }
 rayon = "1.12.0"
-# Riker actor example in the actors chapter.
-riker = { version = "0.4.2", optional = true }
+# Disabled: Riker has no compatible update for its vulnerable transitive dependencies.
+# riker = { version = "0.4.2", optional = true }
 ringbuf = "0.5.3"
 rtrb = "0.4.1"
 # Pure Rust SHA-256 for the parallel file-hashing example, without a native `cc` build.

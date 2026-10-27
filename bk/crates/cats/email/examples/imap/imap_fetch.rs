@@ -9,7 +9,11 @@
 
 use anyhow::Context;
 use anyhow::Result;
+use async_imap::Client;
+use futures::TryStreamExt;
 use mail_parser::MessageParser;
+use tokio::net::TcpStream;
+use tokio_native_tls::TlsConnector;
 
 /// A message reduced to the fields we care about.
 #[derive(Debug, PartialEq, Eq)]
@@ -29,26 +33,36 @@ pub fn summarize(raw: &[u8]) -> Option<Summary> {
 }
 
 /// Connects over TLS (port 993 by default) and summarizes unseen messages.
-pub fn run() -> Result<()> {
+pub async fn run() -> Result<()> {
     let host = std::env::var("IMAP_HOST").context("IMAP_HOST is not set")?;
     let user = std::env::var("IMAP_USER").context("IMAP_USER is not set")?;
     let password =
         std::env::var("IMAP_PASSWORD").context("IMAP_PASSWORD is not set")?;
 
-    let tls = native_tls::TlsConnector::builder().build()?;
-    let client = imap::connect((host.as_str(), 993), host.as_str(), &tls)?;
-    let mut session = client.login(&user, &password).map_err(|e| e.0)?;
-    session.select("INBOX")?;
+    let stream = TcpStream::connect((host.as_str(), 993)).await?;
+    let tls = TlsConnector::from(native_tls::TlsConnector::builder().build()?);
+    let stream = tls.connect(&host, stream).await?;
+    let mut client = Client::new(stream);
+    client
+        .read_response()
+        .await?
+        .context("IMAP server closed before sending its greeting")?;
+    let mut session = client
+        .login(&user, &password)
+        .await
+        .map_err(|(error, _client)| error)?;
+    session.select("INBOX").await?;
 
-    for id in session.search("UNSEEN")? {
-        let messages = session.fetch(id.to_string(), "RFC822")?;
+    for id in session.search("UNSEEN").await? {
+        let messages = session.fetch(id.to_string(), "RFC822").await?;
+        let messages: Vec<_> = messages.try_collect().await?;
         for message in &messages {
             if let Some(summary) = message.body().and_then(summarize) {
                 println!("{summary:?}");
             }
         }
     }
-    session.logout()?;
+    session.logout().await?;
     Ok(())
 }
 // ANCHOR_END: example

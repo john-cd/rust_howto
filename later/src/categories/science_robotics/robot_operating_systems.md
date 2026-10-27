@@ -44,15 +44,19 @@ While ROS traditionally favored [Python][p~python] and C++, Rust is gradually ga
 
 [`rosrust`][c~rosrust~docs]↗{{hi:rosrust}} is a pure Rust implementation of a ROS client library.
 
+The ROS 1 example source remains available, but its Cargo feature and example registration are commented out: `rosrust` brings vulnerable versions of `hyper`, `idna`, `time`, and the unmaintained `traitobject` crate through its XML-RPC dependency. No compatible fixed releases are available in that chain. For ROS 2, see the [`r2r` documentation][c~r2r~docs] and review its current platform and dependency requirements.
+
+The preserved example is shown below for reference; it is not compiled by this workspace while those dependencies remain affected:
+
+```rust,ignore
+{{#include ../../../crates/cats/science_robotics/examples/robot_operating_systems/robotics.rs:example}}
+```
+
 ## `r2r`: Minimal ROS2 Rust Bindings {#r2r}
 
 [![r2r][c~r2r~docs~badge]][c~r2r~docs] [![r2r~crates.io][c~r2r~crates.io~badge]][c~r2r~crates.io] [![r2r~repo][c~r2r~repo~badge]][c~r2r~repo] [![r2r~lib.rs][c~r2r~lib.rs~badge]][c~r2r~lib.rs]{{hi:r2r}}
 
 [`r2r`][c~r2r~docs]↗{{hi:r2r}} offers minimal ROS2 Rust bindings. Easy to use, runtime-agnostic, async rust bindings for ROS2.
-
-```rust,editable
-{{#include ../../../crates/cats/science_robotics/examples/robot_operating_systems/robotics.rs:example}}
-```
 
 ## `safe_drive` {#safe_drive}
 

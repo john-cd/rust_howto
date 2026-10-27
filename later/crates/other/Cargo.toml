@@ -45,13 +45,39 @@ async-trait = "0.1.92"
 augurs = { version = "0.10", features = ["ets", "mstl"] }
 
 ## Cloud
-aws-config = "1.13.0"
-aws-sdk-cloudwatch = "1.138.0"
-aws-sdk-lambda = "1.154.0"
-aws-sdk-s3 = "1.155.0"
-aws-sdk-sesv2 = "1.143.0"
-aws-sdk-sns = "1.119.0"
-aws-sdk-sqs = "1.117.0"
+aws-config = { version = "1.13.0", default-features = false, features = [
+  "credentials-process",
+  "default-https-client",
+  "rt-tokio",
+  "sso",
+] }
+aws-sdk-cloudwatch = { version = "1.138.0", default-features = false, features = [
+  "default-https-client",
+  "rt-tokio",
+] }
+aws-sdk-lambda = { version = "1.154.0", default-features = false, features = [
+  "default-https-client",
+  "rt-tokio",
+] }
+aws-sdk-s3 = { version = "1.155.0", default-features = false, features = [
+  "default-https-client",
+  "http-1x",
+  "rt-tokio",
+  "sigv4a",
+] }
+aws-sdk-sesv2 = { version = "1.143.0", default-features = false, features = [
+  "default-https-client",
+  "rt-tokio",
+  "sigv4a",
+] }
+aws-sdk-sns = { version = "1.119.0", default-features = false, features = [
+  "default-https-client",
+  "rt-tokio",
+] }
+aws-sdk-sqs = { version = "1.117.0", default-features = false, features = [
+  "default-https-client",
+  "rt-tokio",
+] }
 axum = "0.8.9"
 base64 = "0.23.1" # Binary Protobuf payloads in SQS text bodies.
 

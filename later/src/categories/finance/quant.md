@@ -36,11 +36,9 @@ Use `f64` for statistics and model inputs. For money amounts (cash balances, ord
 {{#include ../../../crates/cats/finance/examples/quant/rolling_stats.rs:example}}
 ```
 
-## Trading Calendars {#trading-days}
+## Trading Days {#trading-days}
 
-[![trading-calendar][c~trading-calendar~docs~badge]][c~trading-calendar~docs] [![trading-calendar~crates.io][c~trading-calendar~crates.io~badge]][c~trading-calendar~crates.io] [![trading-calendar~repo][c~trading-calendar~repo~badge]][c~trading-calendar~repo] [![trading-calendar~lib.rs][c~trading-calendar~lib.rs~badge]][c~trading-calendar~lib.rs]{{hi:trading-calendar}} [![cat~finance][cat~finance~badge]][cat~finance]
-
-[`trading-calendar`][c~trading-calendar~docs]↗{{hi:trading-calendar}} knows the holidays, early closes and hours of major exchanges (NYSE, NASDAQ, LSE, TSE, TSX). The recipe counts NYSE trading days across Thanksgiving and adds a number of trading days to a date. The crate supports a limited range of years: check its documentation.
+This example uses [`chrono`][c~chrono~docs]↗{{hi:chrono}} to count weekdays and an explicitly supplied holiday list. It demonstrates date arithmetic only; production trading calendars must use an authoritative exchange calendar that includes the correct holiday and early-close rules.
 
 ```rust,editable
 {{#include ../../../crates/cats/finance/examples/quant/trading_days.rs:example}}

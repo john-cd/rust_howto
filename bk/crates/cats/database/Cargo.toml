@@ -100,7 +100,10 @@ sqlx = { version = "0.8.6", features = [
   "macros",
 ], optional = true }
 tempfile = { version = "3.27.0", optional = true }
-tiberius = { version = "0.12.3", optional = true }
+tiberius = { version = "0.12.3", default-features = false, features = [
+    "native-tls",
+    "tds73",
+], optional = true }
 # Bound the connection attempt in the Cassandra client example.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time"] }
 tokio-postgres = { version = "0.7.18", optional = true }

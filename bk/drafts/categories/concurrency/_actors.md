@@ -58,9 +58,9 @@ Frameworks such as [`actix`][c~actix~docs], [`ractor`][c~ractor~docs], and `kame
 
 [![riker~website][c~riker~website~badge]][c~riker~website] [![riker][c~riker~docs~badge]][c~riker~docs] [![riker~crates.io][c~riker~crates.io~badge]][c~riker~crates.io] [![riker~repo][c~riker~repo~badge]][c~riker~repo] [![riker~lib.rs][c~riker~lib.rs~badge]][c~riker~lib.rs]{{hi:riker}}{{hi:Async}}{{hi:Actors}}{{hi:CQRS}}{{hi:Actor-model}}{{hi:Event_sourcing}}
 
-[`riker`][c~riker~docs]↗{{hi:riker}} is an actor framework inspired by Erlang/OTP and Akka. The example starts an actor system, creates a ping-pong actor, and sends it a message.
+[`riker`][c~riker~docs]↗{{hi:riker}} is an actor framework inspired by Erlang/OTP and Akka. The example starts an actor system, creates a ping-pong actor, and sends it a message. Its source remains available, but the Cargo feature and dependency are commented out because this release requires vulnerable `linked-hash-map 0.3` and `rand 0.7` versions with no compatible fixed releases.
 
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/concurrency/examples/actors/riker.rs:example}}
 ```
 

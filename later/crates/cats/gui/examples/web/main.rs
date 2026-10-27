@@ -25,7 +25,7 @@ enum Commands {
     #[command(name = "dioxus")]
     #[cfg(feature = "dioxus")]
     Dioxus,
-    /// Runs the `tauri` example.
+    /// Runs the plain Rust command example used by a Tauri backend.
     #[cfg(feature = "tauri")]
     #[command(name = "tauri")]
     Tauri,
