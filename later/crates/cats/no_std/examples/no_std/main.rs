@@ -2,9 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-mod no_std1;
+mod checksum;
 
 /// Runs the no std example.
 fn main() {
-    no_std1::run();
+    checksum::run();
 }

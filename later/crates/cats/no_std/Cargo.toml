@@ -18,8 +18,12 @@ categories = ["no-std"]
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
 
-[dependencies]
-# LATER
+[lib]
+path = "src/lib.rs"
+
+[features]
+default = ["std"]
+std = []
 
 [[example]]
 name = "no_std"

@@ -19,15 +19,19 @@ std = ["serde/std"]
 serde = { version = "1", default-features = false, features = ["derive"] }
 ```
 
-Put the conditional attribute at the crate root (`src/lib.rs`):
+Put the conditional attribute at the crate root (`src/lib.rs`), as in this workspace's `no_std` library:
 
 ```rust,ignore
 #![cfg_attr(not(feature = "std"), no_std)]
 
-/// Computes a wrapping checksum using only `core` operations.
-pub fn checksum(bytes: &[u8]) -> u8 {
-    bytes.iter().fold(0_u8, |sum, byte| sum.wrapping_add(*byte))
-}
+mod checksum;
+pub use checksum::checksum;
+```
+
+The separate module implements a wrapping byte checksum without allocation or operating-system calls:
+
+```rust,editable
+{{#include ../../../crates/cats/no_std/src/checksum.rs:example}}
 ```
 
 With these defaults, downstream users get `std` unless they disable default features. Omit `default = ["std"]` when downstream users should opt in to `std`. If the library needs a `Vec` or `String`, gate that API behind an `alloc` feature and use `alloc` types; the final application still chooses the allocator.
@@ -94,12 +98,20 @@ rustup target add thumbv7em-none-eabihf
 cargo build --no-default-features --target thumbv7em-none-eabihf
 ```
 
-Check the dependency feature tree as well: one dependency that enables `std` by default can prevent the no-std build. The `no_std1` example below demonstrates `core` formatting into a fixed-size stack buffer; it runs on the host and does not replace a target build.
+Check the dependency feature tree as well: one dependency that enables `std` by default can prevent the no-std build. The workspace's checksum library has no dependencies and a `std` feature enabled by default. From `later/crates`, compile only its library without that feature, or run its separate host example:
+
+```sh
+cargo build -p no_std --lib --no-default-features
+cargo build -p no_std --lib --no-default-features --target thumbv7em-none-eabihf
+cargo run -p no_std --example no_std
+```
+
+A consumer can select the core-only library with `no_std = { path = "../no_std", default-features = false }` in its dependencies. The host example below uses `std` for printing; the library does not supply a panic handler or entry point, because those belong to the final binary. The bare-metal target command requires the target installation described above.
 
 ## Core-only example {#no-std}
 
 ```rust,editable
-{{#include ../../../crates/cats/no_std/examples/no_std/no_std1.rs:example}}
+{{#include ../../../crates/cats/no_std/examples/no_std/checksum.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}
