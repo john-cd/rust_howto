@@ -46,7 +46,7 @@ lazy_static = "1.5.1"
 num = "0.4.3"
 num_cpus = "1.17.0"
 papaya = "0.2.5"
-parking_lot = "0.13.0"
+parking_lot = "0.12.5"
 ractor = "0.16.5"
 rand = { version = "0.10.3", features = ["thread_rng"] }
 rayon = "1.12.0"

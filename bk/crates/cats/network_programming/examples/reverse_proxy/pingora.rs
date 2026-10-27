@@ -29,9 +29,7 @@ impl ProxyHttp for LocalProxy {
     type CTX = ();
 
     /// Creates the empty request context used by this stateless proxy.
-    fn new_ctx(&self) -> Self::CTX {
-        ()
-    }
+    fn new_ctx(&self) -> Self::CTX {}
 
     /// Returns the fixed plain-HTTP upstream peer.
     async fn upstream_peer(
@@ -64,6 +62,7 @@ fn add_example_response_header(response: &mut ResponseHeader) -> Result<()> {
 }
 
 /// Starts the Pingora server and its local reverse-proxy service.
+#[allow(unreachable_code)]
 fn main() -> anyhow::Result<()> {
     let mut server = Server::new(None)?;
     server.bootstrap();

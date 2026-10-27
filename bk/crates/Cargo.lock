@@ -3488,7 +3488,7 @@ dependencies = [
  "num",
  "num_cpus",
  "papaya",
- "parking_lot 0.13.0",
+ "parking_lot 0.12.5",
  "ractor",
  "rand 0.10.3",
  "rayon",
