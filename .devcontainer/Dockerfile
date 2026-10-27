@@ -177,6 +177,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     llvm \
     m4 \
     make \
+    nasm \
     ninja-build \
     pkg-config \
     protobuf-compiler \

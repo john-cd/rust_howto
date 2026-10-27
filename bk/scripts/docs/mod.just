@@ -7,7 +7,7 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+  @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 book_root := clean(source_directory() + "/../..")
 

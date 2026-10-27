@@ -11,23 +11,21 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+  @just --list --unsorted --justfile {{ quote(source_file()) }}
 
+# Run a recipe in every workspace and report failure if any workspace fails.
 @all cmd:
-  #!/usr/bin/env bash
-  set -euo pipefail
-  for wkspace in "bk" "later" "mdbook-utils" "playground" "publish" "tools" "xmpl"
-  do
-    just "${wkspace}" {{cmd}} || true
-    echo "------------------------"
-  done
+  status=0; for wkspace in bk later mdbook-utils playground publish tools xmpl; do \
+    just "$wkspace" {{quote(cmd)}} || status=1; \
+    echo "------------------------"; \
+  done; exit "$status"
 
 # Book
 mod bk
 # Later
 mod later
 # mdBook utilities
-mod mdbook-utils
+mod? mdbook-utils
 # Playground
 mod playground
 # Placeholder crate on `crates.io`

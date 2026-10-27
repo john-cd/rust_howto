@@ -14,7 +14,7 @@ rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_def
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{source_file()}}
+  @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 alias fa := fmtall
 

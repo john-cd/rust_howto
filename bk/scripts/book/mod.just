@@ -11,7 +11,7 @@ mdbook_utils_rev := env("MDBOOK_UTILS_REV", "dedddf3699e461cd418c1a044d82aabd3fe
 
 [no-exit-message]
 _default:
-    @just --list --unsorted --justfile {{ source_file() }}
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- BOOK BUILDING -----------------------------------
 

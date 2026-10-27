@@ -39,6 +39,7 @@ sudo apt-get update \
     libglu1-mesa-dev \
     libgtk-4-dev \
     libopencv-dev \
+    libpython3-dev \
     librocksdb-dev \
     librsvg2-dev \
     libssl-dev \
@@ -55,6 +56,7 @@ sudo apt-get update \
     llvm \
     m4 \
     make \
+    nasm \
     ninja-build \
     pkg-config \
     protobuf-compiler \
@@ -63,8 +65,7 @@ sudo apt-get update \
     xorg-dev \
     jq \
     fzf \
-&& sudo apt-get clean -y \
-&& rm -rf /var/lib/apt/lists/*
+&& sudo apt-get clean -y
 
 # Install Pandoc binary
 wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -O /tmp/pandoc.deb \
@@ -96,5 +97,3 @@ cargo install --git https://github.com/john-cd/mdbook-utils --rev "$MDBOOK_UTILS
 curl -sS https://webi.sh/gh | sh
 
 cargo binstall --no-confirm --secure kani-verifier
-
-git config --global user.email "John CD" && git config --global user.name john-cd@users.noreply.github.com

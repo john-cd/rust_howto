@@ -9,7 +9,7 @@ root := clean(join(source_directory(), "..", ".."))
 
 [no-exit-message]
 _default:
-    @just --list --unsorted --justfile {{ source_file() }}
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- UTILITIES -----------------------------------
 
