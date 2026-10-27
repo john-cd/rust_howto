@@ -488,25 +488,25 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-03 — Development tools, build systems and editors
 
-- [#294](https://github.com/john-cd/rust_howto/issues/294) — **P2** — `cargo/crate_registries.md`: write; expand — **PARTIAL**
-- [#299](https://github.com/john-cd/rust_howto/issues/299) — **P2** — `documentation/mdbook.md`: mdbook: organize, expand — **PARTIAL**
-- [#305](https://github.com/john-cd/rust_howto/issues/305) — **P2** — `other/other.md`: other: expand; revise refs.incl.md — **PARTIAL**
-- [#311](https://github.com/john-cd/rust_howto/issues/311) — **P2** — `development-tools_cargo-plugins/index.md`: review in depth, reorg table — **PARTIAL**
-- [#919](https://github.com/john-cd/rust_howto/issues/919) — **P2** — `other/code_build.md`: review; dedupe this page and cargo plugins > building; move from other section — **PARTIAL**
-- [#962](https://github.com/john-cd/rust_howto/issues/962) — **P2** — `text-editors/index.md`: write; review in depth finish the table — **PARTIAL**
-- [#240](https://github.com/john-cd/rust_howto/issues/240) — **P3** — Cross-compilation chapter E — **PARTIAL**
-- [#242](https://github.com/john-cd/rust_howto/issues/242) — **P3** — Faster-linking review E — **PARTIAL**
-- [#245](https://github.com/john-cd/rust_howto/issues/245) — **P3** — Compilation-duration chapter E — **PARTIAL**
-- [#296](https://github.com/john-cd/rust_howto/issues/296) — **P3** — Expand badge documentation — **PARTIAL**
-- [#921](https://github.com/john-cd/rust_howto/issues/921) — **P3** — Review the build-time tooling chapter and its native examples D — **PARTIAL**
-- [#922](https://github.com/john-cd/rust_howto/issues/922) — **P3** — Review Cargo auditing tools — **PARTIAL**
-- [#925](https://github.com/john-cd/rust_howto/issues/925) — **P3** — Review logging configuration — **PARTIAL**
-- [#926](https://github.com/john-cd/rust_howto/issues/926) — **P3** — Review diagnostic functions — **PARTIAL**
-- [#927](https://github.com/john-cd/rust_howto/issues/927) — **P3** — Review the logging chapter — **PARTIAL**
-- [#329](https://github.com/john-cd/rust_howto/issues/329) — **P4** — Write the procedural macro tools chapter — **PARTIAL**
-- [#332](https://github.com/john-cd/rust_howto/issues/332) — **P4** — Complete the procedural-macro helper index — **PARTIAL**
-- [#604](https://github.com/john-cd/rust_howto/issues/604) — **P4** — Write the release automation chapter — **PARTIAL**
-- [#605](https://github.com/john-cd/rust_howto/issues/605) — **P4** — Write the DevOps index — **PARTIAL**
+- [#294](https://github.com/john-cd/rust_howto/issues/294) — **P2** — `cargo/crate_registries.md`: write; expand — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
+- [#299](https://github.com/john-cd/rust_howto/issues/299) — **P2** — `documentation/mdbook.md`: mdbook: organize, expand — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
+- [#305](https://github.com/john-cd/rust_howto/issues/305) — **P2** — `other/other.md`: other: expand; revise refs.incl.md — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
+- [#311](https://github.com/john-cd/rust_howto/issues/311) — **P2** — `development-tools_cargo-plugins/index.md`: review in depth, reorg table — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
+- [#919](https://github.com/john-cd/rust_howto/issues/919) — **P2** — `other/code_build.md`: review; dedupe this page and cargo plugins > building; move from other section — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
+- [#962](https://github.com/john-cd/rust_howto/issues/962) — **P2** — `text-editors/index.md`: write; review in depth finish the table — **IMPLEMENTED ON DEVELOP; BLOCKED — reference/spelling and Windows AWS-LC book gates remain; details are on the issue**
+- [#240](https://github.com/john-cd/rust_howto/issues/240) — **P3** — Cross-compilation chapter E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior spelling/refdefs checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
+- [#242](https://github.com/john-cd/rust_howto/issues/242) — **P3** — Faster-linking review E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior spelling/refdefs checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
+- [#245](https://github.com/john-cd/rust_howto/issues/245) — **P3** — Compilation-duration chapter E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior spelling/refdefs checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
+- [#296](https://github.com/john-cd/rust_howto/issues/296) — **P3** — Expand badge documentation — **IMPLEMENTED ON DEVELOP; BLOCKED — focused Markdown checks passed; repository-wide Markdown and book gates remain; details are on the issue**
+- [#921](https://github.com/john-cd/rust_howto/issues/921) — **P3** — Review the build-time tooling chapter and its native examples D — **IMPLEMENTED ON DEVELOP; BLOCKED — package check needs libgit2/pkg-config; Windows AWS-LC blocks book build; details are on the issue**
+- [#922](https://github.com/john-cd/rust_howto/issues/922) — **P3** — Review Cargo auditing tools — **IMPLEMENTED ON DEVELOP; BLOCKED — direct mdBook and documentation checks passed; Windows book wrapper remains; details are on the issue**
+- [#925](https://github.com/john-cd/rust_howto/issues/925) — **P3** — Review logging configuration — **IMPLEMENTED ON DEVELOP; BLOCKED — focused appender test/Clippy passed; full logger suite and Windows book gate remain; details are on the issue**
+- [#926](https://github.com/john-cd/rust_howto/issues/926) — **P3** — Review diagnostic functions — **IMPLEMENTED ON DEVELOP; BLOCKED — focused diagnostic test/Clippy passed; Windows book gate remains; details are on the issue**
+- [#927](https://github.com/john-cd/rust_howto/issues/927) — **P3** — Review the logging chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — focused tests/Clippy and book checks passed; full-workspace Clippy remains; details are on the issue**
+- [#329](https://github.com/john-cd/rust_howto/issues/329) — **P4** — Write the procedural macro tools chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — direct mdBook and documentation checks passed; Windows book wrapper remains; details are on the issue**
+- [#332](https://github.com/john-cd/rust_howto/issues/332) — **P4** — Complete the procedural-macro helper index — **IMPLEMENTED ON DEVELOP; BLOCKED — documentation checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
+- [#604](https://github.com/john-cd/rust_howto/issues/604) — **P4** — Write the release automation chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — direct mdBook and documentation checks passed; Windows book wrapper remains; details are on the issue**
+- [#605](https://github.com/john-cd/rust_howto/issues/605) — **P4** — Write the DevOps index — **IMPLEMENTED ON DEVELOP; BLOCKED — direct mdBook and documentation checks passed; Windows book wrapper remains; details are on the issue**
 
 #### VALIDATE-PROSE-04 — Encoding, parsing and text processing
 
