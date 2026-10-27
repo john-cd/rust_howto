@@ -51,3 +51,8 @@ Browsers support asynchronous file picking, but not folder selection or a native
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+<div class="hidden">
+  [file_dialogs: write](https://github.com/john-cd/rust_howto/issues/381)
+  review in depth.
+</div>
