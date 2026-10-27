@@ -3,36 +3,34 @@
 [workspace]
 resolver = "3"
 members = ["cats/*", "other"]
-exclude = ["cats/embedded"] # TODO remove the exclusion once embedded support is ready
 
 # Default values for packages in the workspace
 [workspace.package]
 version = "0.1.2"
 authors = ["John CD"]
+categories = [
+  "algorithms",
+  "asynchronous",
+  "concurrency",
+  "web-programming",
+  "development-tools",
+  "api-bindings",
+  "caching",
+  "command-line-interface",
+  "compilers",
+  "compression",
+]
+documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
+homepage = "https://john-cd.com/rust_howto/"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+license-file = "../../LICENSE"
+publish = false
+repository = "https://github.com/john-cd/rust_howto/"
 rust-version = "1.99"
 description = "A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem. Everything you need for day-to-day Rust coding, all in one place."
-documentation = "https://docs.rs/rust_howto/"
-homepage = "https://john-cd.com/rust_howto/"
-repository = "https://github.com/john-cd/rust_howto/"
-license-file = "../../LICENSE"
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = [
-    "algorithms",
-    "asynchronous",
-    "concurrency",
-    "web-programming",
-    "development-tools",
-    "api-bindings",
-    "caching",
-    "command-line-interface",
-    "compilers",
-    "compression",
-]
-publish = false
 
 [workspace.lints.rust]
-
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
 # Relaxed: Example crates demonstrate unsafe Rust.
 unsafe_code = "allow"
@@ -68,7 +66,7 @@ trivial_numeric_casts = "warn"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
-unexpected_cfgs = { level = "warn", check-cfg = ['cfg(coverage)'] }
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)"] }
 
 # Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
 unsafe_op_in_unsafe_fn = "warn"

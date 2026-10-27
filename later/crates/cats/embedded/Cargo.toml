@@ -1,23 +1,23 @@
 # TODO Reviewed ??-??-2026
 
 [package]
-license-file = "../../../../LICENSE"
 name = "embedded"
-version = "0.1.2"
-authors = ["John CD"]
-edition = "2024"
-rust-version = "1.99"
+version.workspace = true
+authors.workspace = true
+documentation.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license-file.workspace = true
 readme = "README.md"
+repository.workspace = true
+rust-version.workspace = true
 description = "Book code examples and their crate dependencies - embedded"
-documentation = "https://docs.rs/rust_howto/"
-homepage = "https://john-cd.com/rust_howto/"
-repository = "https://github.com/john-cd/rust_howto/"
 
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["embedded"]
-publish = false
-autolib = false
 autoexamples = false
+autolib = false
+categories = ["embedded"]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+publish = false
 
 [dev-dependencies]
 anyhow = "1.0.104" # Provides consistent fallible example entry points.
@@ -46,9 +46,3 @@ test = true
 
 [lints]
 workspace = true
-
-[workspace]
-
-[workspace.lints.rust]
-unsafe_code = "allow"
-missing_docs = "allow"

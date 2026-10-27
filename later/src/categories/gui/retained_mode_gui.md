@@ -34,10 +34,10 @@ From `later/crates`, run `cargo run -p gui --example retained_mode_gui --feature
 
 [`vizia`][c~vizia~docs]↗{{hi:vizia}} is a declarative desktop GUI framework.
 
-The Vizia 0.4 sample is a separate workspace because it uses Skia 0.93.1, while Slint in the GUI package uses Skia 0.90; Cargo cannot resolve both native `skia` links in one dependency graph. From the repository root, run `cargo run --manifest-path later/crates/gui_vizia/Cargo.toml --features vizia`.
+The Vizia 0.4 sample is a separate workspace because it uses Skia 0.93.1, while Slint in the GUI package uses Skia 0.90; Cargo cannot resolve both native `skia` links in one dependency graph. From the repository root, run `cargo run --manifest-path later/crates/cats/gui/vizia/Cargo.toml --features vizia`.
 
 ```rust,editable
-{{#include ../../../crates/gui_vizia/src/main.rs:example}}
+{{#include ../../../crates/cats/gui/vizia/src/main.rs:example}}
 ```
 
 ## Other GUI Frameworks {#other-gui-frameworks}
