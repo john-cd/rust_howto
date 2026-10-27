@@ -11,17 +11,25 @@
 use bitvec::field::BitField;
 use bitvec::prelude::*;
 
-/// Demonstrates reading and mutating individual bits in a bit vector.
+/// Demonstrates reading individual bits in a bit vector.
 ///
 /// # Arguments
 ///
-/// * `bv` - The bit vector to inspect and update.
-fn bit_indexing_and_mutation(bv: &mut BitVec<u8, Msb0>) {
-    println!("===== Bit Access and Mutation =====");
+/// * `bv` - The bit vector to inspect.
+fn bit_indexing(bv: &BitVec<u8, Msb0>) {
+    println!("===== Bit Access =====");
     // Access individual bits:
     println!("First bit: {}", bv[0]);
     println!("Second bit: {}", bv[1]);
+}
 
+/// Demonstrates mutating individual bits in a bit vector.
+///
+/// # Arguments
+///
+/// * `bv` - The bit vector to update.
+fn bit_mutation(bv: &mut BitVec<u8, Msb0>) {
+    println!("\n===== Bit Mutation =====");
     // Modify bits. The parameters are: index, value:
     bv.set(0, true);
     bv.set(5, true);
@@ -70,7 +78,8 @@ fn basic_operations() {
     let mut bv = bitvec![u8, Msb0; 0, 1, 0, 1, 1, 0, 1, 0];
     println!("Original BitVec: {bv}");
 
-    bit_indexing_and_mutation(&mut bv);
+    bit_indexing(&bv);
+    bit_mutation(&mut bv);
     bit_checking(&bv);
     bit_iteration(&bv);
 }
