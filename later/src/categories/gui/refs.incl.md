@@ -67,3 +67,8 @@
 [p~ui-layout]: ui_layout.md
 [p~wasm]: ../wasm/index.md
 [p~windows]: ../../../../bk/drafts/categories/os_windows-apis/windows.md
+[c~native-dialog~docs]: https://docs.rs/native-dialog
+[c~native-dialog~repo]: https://github.com/native-dialog-rs/native-dialog-rs
+[c~tinyfiledialogs~docs]: https://docs.rs/tinyfiledialogs
+[c~tinyfiledialogs~repo]: https://github.com/jdm/tinyfiledialogs-rs
+[tinyfiledialogs~upstream~website]: https://sourceforge.net/projects/tinyfiledialogs/
