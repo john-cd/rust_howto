@@ -148,8 +148,9 @@ mod tests {
     use super::*;
 
     /// Verifies the example entry point stores and reads its record.
+    /// Runs the embedded example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_embedded_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 

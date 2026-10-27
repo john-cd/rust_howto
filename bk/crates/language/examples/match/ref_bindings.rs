@@ -68,8 +68,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the ref bindings example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_ref_bindings_example_entry_point() {
         main();
     }
 }

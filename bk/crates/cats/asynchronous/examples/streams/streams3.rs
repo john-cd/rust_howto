@@ -93,8 +93,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the streams3 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_streams3_example_entry_point() {
         main();
     }
 }

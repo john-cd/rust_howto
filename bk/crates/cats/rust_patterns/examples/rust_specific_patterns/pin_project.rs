@@ -284,8 +284,9 @@ mod tests {
     use super::*;
 
     /// Exercises field, future, self-reference, enum, and drop projections.
+    /// Runs the pin project example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_pin_project_example_entry_point() {
         main();
     }
 }

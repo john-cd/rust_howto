@@ -29,8 +29,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the closures with type annotations example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_closures_with_type_annotations_example_entry_point() {
         main();
     }
 }

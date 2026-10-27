@@ -100,9 +100,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the gtk4 example through its entry point.
     #[test]
     #[ignore = "requires an interactive GTK session"]
-    fn test_main() {
+    fn test_gtk4_example_entry_point() {
         main();
     }
 }

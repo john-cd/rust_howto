@@ -89,8 +89,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the simple iterators example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_simple_iterators_example_entry_point() {
         main();
     }
 }

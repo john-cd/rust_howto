@@ -34,9 +34,10 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the log syslog example through its entry point.
     #[test]
     #[ignore = "requires a Unix syslog daemon"]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_log_syslog_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

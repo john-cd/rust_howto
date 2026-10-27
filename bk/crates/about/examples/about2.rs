@@ -32,9 +32,9 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the about2 example behavior.
+    /// Verifies the second about example entry point.
     #[test]
-    fn test() -> anyhow::Result<()> {
+    fn test_about_example_two() -> anyhow::Result<()> {
         example()?;
         Ok(())
     }

@@ -72,8 +72,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the sqlite example's main path succeeds.
+    /// Runs the database example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_database_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

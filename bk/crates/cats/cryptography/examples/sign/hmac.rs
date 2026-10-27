@@ -50,8 +50,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the hmac example's main path succeeds.
+    /// Runs the hmac example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_hmac_example_entry_point() -> anyhow::Result<()> {
         main().map_err(|_| anyhow::anyhow!("hmac.rs failure"))?;
         Ok(())
     }

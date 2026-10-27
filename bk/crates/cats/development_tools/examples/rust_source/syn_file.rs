@@ -71,8 +71,9 @@ pub fn run() -> syn::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the syn file example through its entry point.
     #[test]
-    fn test_main() -> syn::Result<()> {
+    fn test_syn_file_example_entry_point() -> syn::Result<()> {
         main()
     }
 }

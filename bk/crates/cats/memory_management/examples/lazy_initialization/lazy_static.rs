@@ -98,8 +98,9 @@ mod tests {
     use super::*;
 
     /// Verifies lazy values and synchronized counter access work together.
+    /// Runs the lazy static example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_lazy_static_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

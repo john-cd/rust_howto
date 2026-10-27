@@ -129,8 +129,9 @@ mod tests {
         // dhat::assert_eq!(stats.curr_bytes, 16);
     }
 
+    /// Runs the dhat example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_dhat_example_entry_point() {
         main();
     }
 }

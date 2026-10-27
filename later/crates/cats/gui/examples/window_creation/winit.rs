@@ -104,6 +104,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the winit example through its entry point.
     #[test]
     #[ignore = "requires interactive example runtime"]
     fn test_winit_example_entry_point() {

@@ -53,8 +53,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the message passing mpsc example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_message_passing_mpsc_example_entry_point() {
         main();
     }
 }

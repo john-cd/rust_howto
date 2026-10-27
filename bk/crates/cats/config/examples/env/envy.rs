@@ -47,8 +47,9 @@ mod tests {
     static ENV_LOCK: Mutex<()> = Mutex::new(());
 
     /// Verifies that the envy example's main path succeeds.
+    /// Runs the envy example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_envy_example_entry_point() {
         let _guard =
             ENV_LOCK.lock().expect("environment variable lock poisoned");
         unsafe {

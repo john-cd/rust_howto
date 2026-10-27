@@ -34,8 +34,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the streams example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_streams_example_entry_point() {
         main();
     }
 }

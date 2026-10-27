@@ -41,8 +41,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the read write lock example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_read_write_lock_example_entry_point() {
         main();
     }
 }

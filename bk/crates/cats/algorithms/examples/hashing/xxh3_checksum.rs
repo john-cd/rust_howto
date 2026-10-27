@@ -54,8 +54,9 @@ mod tests {
     use super::*;
 
     /// Checks that a corrupted checksum causes rejection.
+    /// Runs the xxh3 checksum example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_xxh3_checksum_example_entry_point() {
         main();
     }
 }

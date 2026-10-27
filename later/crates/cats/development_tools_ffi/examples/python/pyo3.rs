@@ -80,8 +80,9 @@ pub fn run() -> PyResult<()> {
 mod tests {
     use super::*;
 
+    /// Runs the pyo3 example through its entry point.
     #[test]
-    fn test_main() -> PyResult<()> {
+    fn test_pyo3_example_entry_point() -> PyResult<()> {
         main()
     }
 }

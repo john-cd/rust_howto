@@ -302,9 +302,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the morphorm example through its entry point.
     #[test]
     #[ignore = "requires an interactive example runtime"]
-    fn test_main() {
+    fn test_morphorm_example_entry_point() {
         main();
     }
 }

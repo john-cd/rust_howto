@@ -57,8 +57,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the aero example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_aero_example_entry_point() {
         main();
     }
 }

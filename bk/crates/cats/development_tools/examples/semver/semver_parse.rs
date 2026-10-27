@@ -37,8 +37,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the semver parse example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_semver_parse_example_entry_point() -> Result<()> {
         main()?;
         Ok(())
     }

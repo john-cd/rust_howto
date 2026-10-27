@@ -44,8 +44,9 @@ mod tests {
     use super::*;
 
     #[should_panic]
+    /// Runs the diverging functions example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_diverging_functions_example_entry_point() {
         main();
     }
 }

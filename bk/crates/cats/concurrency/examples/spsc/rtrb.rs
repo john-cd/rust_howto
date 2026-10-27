@@ -107,8 +107,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rtrb example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rtrb_example_entry_point() {
         main();
     }
 

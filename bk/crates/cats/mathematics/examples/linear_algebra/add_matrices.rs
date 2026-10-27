@@ -33,8 +33,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the add matrices example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_add_matrices_example_entry_point() {
         main();
     }
 }

@@ -27,8 +27,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the sort basic example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_sort_basic_example_entry_point() {
         main();
     }
 }

@@ -89,8 +89,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the hashset example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_hashset_example_entry_point() {
         main();
     }
 }

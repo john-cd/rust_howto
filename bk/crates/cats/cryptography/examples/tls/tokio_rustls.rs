@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-
 // TODO Reviewed ??-??-2026
 
 // ANCHOR: example
@@ -60,10 +59,10 @@ async fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-/// Verifies the test main behavior.
+    /// Verifies the test main behavior.
     #[tokio::test]
     #[ignore = "Requires network"]
-    async fn test_main() {
+    async fn test_tokio_rustls_example_entry_point() {
         main().await.expect("example entry point should succeed");
     }
 }

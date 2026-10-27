@@ -138,8 +138,9 @@ mod tests {
     use super::*;
 
     /// Runs the median example and its assertions.
+    /// Runs the central tendency1 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_central_tendency1_example_entry_point() {
         main();
     }
 

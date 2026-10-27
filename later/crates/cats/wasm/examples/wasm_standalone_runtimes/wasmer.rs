@@ -75,8 +75,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the wasmer example's main path succeeds.
+    /// Runs the wasmer example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_wasmer_example_entry_point() -> anyhow::Result<()> {
         main();
         Ok(())
     }

@@ -65,9 +65,10 @@ fn main() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the minifb example through its entry point.
     #[test]
     #[ignore = "requires interactive example runtime"]
-    fn test_main() -> Result<()> {
+    fn test_minifb_example_entry_point() -> Result<()> {
         main()
     }
 }

@@ -43,8 +43,9 @@ mod tests {
     use super::*;
 
     /// Verifies the example can traverse the current directory.
+    /// Runs the duplicate name example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_duplicate_name_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

@@ -102,8 +102,9 @@ pub fn run() -> PyResult<()> {
 mod tests {
     use super::*;
 
+    /// Runs the use rust from python example through its entry point.
     #[test]
-    fn test_main() -> PyResult<()> {
+    fn test_use_rust_from_python_example_entry_point() -> PyResult<()> {
         main()
     }
 

@@ -70,8 +70,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the petgraph example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_petgraph_example_entry_point() {
         main();
     }
 }

@@ -49,7 +49,7 @@ pub fn run() {
 
 /// Verifies the fixed-step solver approximates the exact exponential solution.
 #[test]
-fn test() {
+fn test_exponential_decay_solver_matches_exact_solution() {
     let final_value =
         solve().expect("the sample initial value problem should integrate");
     assert!((final_value - (-2.0_f64).exp()).abs() < 1e-5);

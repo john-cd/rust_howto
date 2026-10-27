@@ -55,8 +55,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the associated types example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_associated_types_example_entry_point() {
         main();
     }
 }

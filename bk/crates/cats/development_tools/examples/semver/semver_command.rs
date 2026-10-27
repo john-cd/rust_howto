@@ -113,8 +113,9 @@ mod tests {
     }
 
     /// Verifies that the example exits successfully with or without Git.
+    /// Runs the semver command example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_semver_command_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

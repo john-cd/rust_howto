@@ -84,8 +84,9 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the seize example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_seize_example_entry_point() {
         main();
     }
 }

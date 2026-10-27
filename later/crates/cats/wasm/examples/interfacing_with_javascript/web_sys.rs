@@ -37,8 +37,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the host-side example runner succeeds.
+    /// Runs the web sys example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_web_sys_example_entry_point() {
         main();
     }
 }

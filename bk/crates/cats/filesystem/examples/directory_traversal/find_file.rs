@@ -49,8 +49,9 @@ mod tests {
     use super::*;
 
     /// Verifies the example can traverse the current directory.
+    /// Runs the find file example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_find_file_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

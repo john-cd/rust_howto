@@ -78,8 +78,9 @@ mod tests {
 
     /// Verifies that both error conversions are exercised by the successful
     /// example path.
+    /// Runs the from2 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_from2_example_entry_point() {
         assert!(main().is_ok());
     }
 }

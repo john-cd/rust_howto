@@ -78,8 +78,9 @@ pub fn run() -> syn::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the find unwraps example through its entry point.
     #[test]
-    fn test_main() -> syn::Result<()> {
+    fn test_find_unwraps_example_entry_point() -> syn::Result<()> {
         main()
     }
 }

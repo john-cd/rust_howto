@@ -50,8 +50,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the flutter rust bridge example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_flutter_rust_bridge_example_entry_point() {
         main();
     }
 }

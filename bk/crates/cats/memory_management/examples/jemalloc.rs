@@ -69,8 +69,9 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the jemalloc example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_jemalloc_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

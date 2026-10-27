@@ -28,8 +28,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the proc macro function example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_proc_macro_function_example_entry_point() {
         main();
     }
 }

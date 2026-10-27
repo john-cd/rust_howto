@@ -110,8 +110,9 @@ mod tests {
     use super::*;
 
     /// Verifies that concurrent map updates are visible after the workers join.
+    /// Runs the flurry example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_flurry_example_entry_point() {
         main().expect("flurry recipe should pass its assertions");
     }
 }

@@ -46,8 +46,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the ulid example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_ulid_example_entry_point() {
         main();
     }
 }

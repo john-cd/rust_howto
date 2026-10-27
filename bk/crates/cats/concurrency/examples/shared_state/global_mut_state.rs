@@ -55,8 +55,9 @@ mod tests {
     use super::*;
 
     /// Verifies inserts are visible through the synchronized global list.
+    /// Runs the global mut state example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_global_mut_state_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

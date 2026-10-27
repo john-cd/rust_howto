@@ -115,7 +115,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
+    fn test_asref2_example_entry_point() {
         main();
     }
 }

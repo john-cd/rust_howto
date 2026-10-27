@@ -39,8 +39,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the labeled block expression example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_labeled_block_expression_example_entry_point() {
         main();
     }
 }

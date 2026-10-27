@@ -45,8 +45,9 @@ mod tests {
     use super::*;
 
     /// Runs the sanitizer example and verifies its assertions.
+    /// Runs the ammonia clean example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_ammonia_clean_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

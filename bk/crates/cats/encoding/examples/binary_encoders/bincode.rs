@@ -78,8 +78,9 @@ mod tests {
     }
 
     /// The example's end-to-end encode and decode path succeeds.
+    /// Runs the bincode example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_bincode_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 

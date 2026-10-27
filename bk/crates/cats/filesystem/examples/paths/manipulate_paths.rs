@@ -83,8 +83,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the manipulate paths example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_manipulate_paths_example_entry_point() {
         main();
     }
 }

@@ -36,8 +36,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the anyhow example's main path succeeds.
+    /// Runs the anyhow example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_anyhow_example_entry_point() {
         let res = main();
         println!("{res:?}");
         assert!(res.is_err());

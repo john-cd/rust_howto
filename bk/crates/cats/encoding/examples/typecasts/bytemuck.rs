@@ -106,8 +106,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the bytemuck example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_bytemuck_example_entry_point() {
         main();
     }
 }

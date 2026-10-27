@@ -49,8 +49,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the use external crate example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_use_external_crate_example_entry_point() -> Result<()> {
         main()?;
         Ok(())
     }

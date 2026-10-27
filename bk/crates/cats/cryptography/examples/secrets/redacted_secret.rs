@@ -106,8 +106,9 @@ mod tests {
         assert!(!format!("{secret:?}").contains("hunter2"));
     }
 
+    /// Runs the redacted secret example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_redacted_secret_example_entry_point() {
         run();
     }
 }

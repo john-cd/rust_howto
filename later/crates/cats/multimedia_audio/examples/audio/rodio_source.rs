@@ -110,8 +110,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rodio source example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rodio_source_example_entry_point() {
         main();
     }
 

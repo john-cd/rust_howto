@@ -58,8 +58,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the struct fields example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_struct_fields_example_entry_point() {
         main();
     }
 }

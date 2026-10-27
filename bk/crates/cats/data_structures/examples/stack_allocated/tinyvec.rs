@@ -50,8 +50,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the tinyvec example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tinyvec_example_entry_point() {
         main();
     }
 }

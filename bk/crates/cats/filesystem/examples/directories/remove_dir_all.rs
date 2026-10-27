@@ -56,8 +56,9 @@ pub fn run() -> io::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the remove dir all example through its entry point.
     #[test]
-    fn test_main() -> io::Result<()> {
+    fn test_remove_dir_all_example_entry_point() -> io::Result<()> {
         main()?;
         Ok(())
     }

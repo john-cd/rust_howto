@@ -53,8 +53,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the pub use example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_pub_use_example_entry_point() {
         main();
     }
 }

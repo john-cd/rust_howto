@@ -26,8 +26,9 @@ mod tests {
     use super::*;
 
     /// Calls the function generated from the C header.
+    /// Runs the bindgen example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_bindgen_example_entry_point() {
         main();
     }
 }

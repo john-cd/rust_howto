@@ -48,8 +48,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the ignore values example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_ignore_values_example_entry_point() {
         main();
     }
 }

@@ -34,8 +34,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the async main example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_async_main_example_entry_point() -> Result<()> {
         main()?;
         Ok(())
     }

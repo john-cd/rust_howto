@@ -200,7 +200,7 @@ mod tests {
     /// Opens the window when a developer explicitly runs the ignored GUI test.
     #[test]
     #[ignore = "requires an interactive desktop display and OpenGL context"]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_femtovg_example_entry_point() -> anyhow::Result<()> {
         super::main()
     }
 }

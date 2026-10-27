@@ -22,8 +22,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the main fn example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_main_fn_example_entry_point() {
         main();
     }
 }

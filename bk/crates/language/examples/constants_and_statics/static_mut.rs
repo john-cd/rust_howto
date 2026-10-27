@@ -136,8 +136,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the static mut example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_static_mut_example_entry_point() {
         main();
     }
 }

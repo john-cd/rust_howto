@@ -62,8 +62,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the trait default implementation example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_trait_default_implementation_example_entry_point() {
         main();
     }
 }

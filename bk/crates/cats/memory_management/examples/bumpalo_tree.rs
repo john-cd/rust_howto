@@ -110,8 +110,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the bumpalo tree example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_bumpalo_tree_example_entry_point() {
         main();
     }
 }

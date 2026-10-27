@@ -101,8 +101,9 @@ mod tests {
     use super::*;
 
     /// Checks that the quantity example formats its computed values.
+    /// Runs the newtype units example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_newtype_units_example_entry_point() {
         main();
     }
 

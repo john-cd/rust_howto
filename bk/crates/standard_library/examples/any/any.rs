@@ -61,8 +61,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the any example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_any_example_entry_point() {
         main();
     }
 }

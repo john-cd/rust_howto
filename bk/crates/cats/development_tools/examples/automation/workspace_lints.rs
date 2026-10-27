@@ -66,8 +66,9 @@ mod tests {
     use super::*;
 
     /// Confirms the current example crate opts into the workspace lint table.
+    /// Runs the workspace lints example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_workspace_lints_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 

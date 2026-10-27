@@ -30,7 +30,7 @@ pub fn run() {
 
 /// Verifies `uom` converts distance and derives speed with matching dimensions.
 #[test]
-fn test() {
+fn test_quantities_convert_distance_and_speed() {
     let (distance_in_meters, speed_in_meters_per_second) = calculate_speed();
     assert!((distance_in_meters - 1_500.0).abs() < 1e-3);
     assert!((speed_in_meters_per_second - (1_500.0 / 180.0)).abs() < 1e-4);

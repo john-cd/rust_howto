@@ -34,8 +34,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the zeroize example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_zeroize_example_entry_point() {
         main();
     }
 }

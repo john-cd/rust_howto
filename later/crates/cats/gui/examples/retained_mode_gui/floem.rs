@@ -32,9 +32,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the floem example through its entry point.
     #[test]
     #[ignore = "requires an interactive example runtime"]
-    fn test_main() {
+    fn test_floem_example_entry_point() {
         main();
     }
 }

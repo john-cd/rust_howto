@@ -134,8 +134,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the string format example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_string_format_example_entry_point() {
         main();
     }
 }

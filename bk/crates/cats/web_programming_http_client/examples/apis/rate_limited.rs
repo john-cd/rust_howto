@@ -100,8 +100,9 @@ mod tests {
         UNIX_EPOCH + Duration::from_secs(NOW)
     }
 
+    /// Runs the rate limited example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_rate_limited_example_entry_point() -> Result<()> {
         main()
     }
 

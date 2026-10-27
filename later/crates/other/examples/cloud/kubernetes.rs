@@ -194,8 +194,9 @@ mod tests {
         echo
     }
 
+    /// Runs the kubernetes example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_kubernetes_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 

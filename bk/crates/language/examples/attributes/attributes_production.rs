@@ -53,8 +53,9 @@ pub(crate) fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the attributes production example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_attributes_production_example_entry_point() {
         main();
     }
 }

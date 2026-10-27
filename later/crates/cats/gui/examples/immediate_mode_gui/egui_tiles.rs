@@ -109,8 +109,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the egui tiles example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_egui_tiles_example_entry_point() {
         main();
     }
 

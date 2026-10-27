@@ -41,8 +41,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the const generics example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_const_generics_example_entry_point() {
         main();
     }
 }

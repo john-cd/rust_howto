@@ -80,8 +80,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the fancy regex example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_fancy_regex_example_entry_point() {
         main();
     }
 }

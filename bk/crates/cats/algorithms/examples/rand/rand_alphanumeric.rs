@@ -35,8 +35,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rand alphanumeric example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rand_alphanumeric_example_entry_point() {
         main();
     }
 }

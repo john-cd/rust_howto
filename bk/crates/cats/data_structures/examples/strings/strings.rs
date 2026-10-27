@@ -126,8 +126,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the strings example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_strings_example_entry_point() {
         main();
     }
 }

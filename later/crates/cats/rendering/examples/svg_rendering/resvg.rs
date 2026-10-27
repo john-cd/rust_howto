@@ -11,6 +11,29 @@ const SVG: &str = r##"
 
 /// Renders the sample SVG to a PNG file in the system temporary directory.
 fn render_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    let pixmap = render_svg_to_pixmap()?;
+    let width = pixmap.width();
+    let height = pixmap.height();
+
+    let output_path = std::env::temp_dir().join("rust_howto_resvg_example.png");
+    pixmap.save_png(&output_path)?;
+    println!(
+        "Rendered {}x{} PNG to {}",
+        width,
+        height,
+        output_path.display()
+    );
+    Ok(())
+}
+
+/// Renders the sample SVG to an in-memory pixmap.
+///
+/// # Errors
+///
+/// Returns an error if the SVG cannot be parsed or the pixmap cannot be
+/// created.
+fn render_svg_to_pixmap()
+-> Result<resvg::tiny_skia::Pixmap, Box<dyn std::error::Error + Send + Sync>> {
     let tree =
         resvg::usvg::Tree::from_str(SVG, &resvg::usvg::Options::default())?;
     let size = tree.size().to_int_size();
@@ -28,19 +51,25 @@ fn render_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         &mut pixmap.as_mut(),
     );
 
-    let output_path = std::env::temp_dir().join("rust_howto_resvg_example.png");
-    pixmap.save_png(&output_path)?;
-    println!(
-        "Rendered {}x{} PNG to {}",
-        size.width(),
-        size.height(),
-        output_path.display()
-    );
-    Ok(())
+    Ok(pixmap)
 }
 // ANCHOR_END: example
 
 /// Runs the rendering example.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     render_svg()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies the sample scene renders to the expected in-memory size.
+    #[test]
+    fn test_resvg_renders_sample_to_expected_dimensions()
+    -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+        let pixmap = render_svg_to_pixmap()?;
+        assert_eq!((pixmap.width(), pixmap.height()), (160, 100));
+        Ok(())
+    }
 }

@@ -51,7 +51,8 @@ pub fn run() {
     main();
 }
 
+/// Runs the petgraph minimum-spanning-tree example.
 #[test]
-fn test() {
+fn test_petgraph_minimum_spanning_tree_example() {
     main();
 }

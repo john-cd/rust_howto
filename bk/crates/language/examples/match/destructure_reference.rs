@@ -38,8 +38,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the destructure reference example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_destructure_reference_example_entry_point() {
         main();
     }
 }

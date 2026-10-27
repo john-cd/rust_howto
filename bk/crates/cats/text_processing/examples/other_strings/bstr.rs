@@ -71,8 +71,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the bstr example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_bstr_example_entry_point() {
         main();
     }
 }

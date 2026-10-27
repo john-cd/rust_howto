@@ -38,8 +38,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the slice as argument example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_slice_as_argument_example_entry_point() {
         main();
     }
 }

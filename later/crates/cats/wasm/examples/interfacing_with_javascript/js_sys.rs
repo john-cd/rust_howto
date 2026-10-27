@@ -33,8 +33,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the host-side example runner succeeds.
+    /// Runs the js sys example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_js_sys_example_entry_point() {
         main();
     }
 }

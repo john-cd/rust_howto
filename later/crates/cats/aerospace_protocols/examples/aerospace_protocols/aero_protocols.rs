@@ -42,8 +42,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the aero protocols example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_aero_protocols_example_entry_point() {
         main();
     }
 }

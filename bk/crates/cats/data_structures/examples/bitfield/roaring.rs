@@ -60,8 +60,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the roaring example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_roaring_example_entry_point() {
         main();
     }
 }

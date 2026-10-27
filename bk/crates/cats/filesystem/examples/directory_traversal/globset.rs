@@ -60,8 +60,9 @@ mod tests {
 
     /// Verifies matching results against a temporary fixture from any working
     /// directory.
+    /// Runs the globset example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_globset_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

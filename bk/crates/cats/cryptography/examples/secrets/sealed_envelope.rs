@@ -221,8 +221,9 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the sealed envelope example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_sealed_envelope_example_entry_point() {
         run();
     }
 }

@@ -35,8 +35,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the macro by example metavariables example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_macro_by_example_metavariables_example_entry_point() {
         main();
     }
 }

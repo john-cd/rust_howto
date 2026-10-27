@@ -45,7 +45,7 @@ pub fn run() {
 
 /// Verifies Brent's method returns an accurate root estimate.
 #[test]
-fn test() {
+fn test_brent_method_finds_root() {
     let root = find_root();
     assert!((root.cos() - root).abs() < 1e-10);
 }

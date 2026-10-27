@@ -58,9 +58,9 @@ pub fn extend_extension<P: AsRef<Path>>(filepath: &P, insert: &str) -> PathBuf {
 mod tests {
     use super::*;
 
-    /// Verifies that the ext example's main path succeeds.
+    /// Verifies that replacing an extension preserves earlier file-name dots.
     #[test]
-    fn test_main() {
+    fn test_extend_extension_preserves_compound_suffixes() {
         assert_eq!(
             extend_extension(&Path::new("/path/to/file.md"), "new"),
             Path::new("/path/to/file.new.md")

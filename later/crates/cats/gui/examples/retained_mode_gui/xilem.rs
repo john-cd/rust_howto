@@ -59,7 +59,8 @@ mod tests {
     /// Runs the counter when an interactive desktop session is available.
     #[test]
     #[ignore = "requires an interactive example runtime"]
-    fn test_main() -> Result<(), winit::error::EventLoopError> {
+    fn test_xilem_example_entry_point()
+    -> Result<(), winit::error::EventLoopError> {
         run_app()
     }
 }

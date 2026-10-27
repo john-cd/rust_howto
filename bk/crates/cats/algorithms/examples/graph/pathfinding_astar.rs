@@ -62,7 +62,8 @@ pub fn run() {
     main();
 }
 
+/// Runs the A* pathfinding example.
 #[test]
-fn test() {
+fn test_astar_pathfinding_example() {
     main();
 }

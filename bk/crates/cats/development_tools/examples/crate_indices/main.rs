@@ -23,3 +23,14 @@ pub fn run() -> anyhow::Result<()> {
     alphabetical_page::run()
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies the crate-index examples run with their temporary fixtures.
+    #[test]
+    fn test_crate_index_examples_run_offline() -> anyhow::Result<()> {
+        run()
+    }
+}

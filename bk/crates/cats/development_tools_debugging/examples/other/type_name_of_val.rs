@@ -35,8 +35,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the type and source-location diagnostics can be evaluated.
+    /// Runs the type name of val example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_type_name_of_val_example_entry_point() {
         main();
     }
 }

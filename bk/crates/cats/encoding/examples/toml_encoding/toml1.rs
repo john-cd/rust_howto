@@ -62,8 +62,9 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Runs the toml1 example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_toml1_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

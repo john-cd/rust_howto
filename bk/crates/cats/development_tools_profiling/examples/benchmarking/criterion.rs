@@ -45,8 +45,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the criterion example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_criterion_example_entry_point() {
         main();
     }
 }

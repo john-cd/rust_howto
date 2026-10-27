@@ -38,8 +38,10 @@ mod tests {
     use super::*;
 
     /// The example runs end to end.
+    /// Runs the pem rfc7468 example through its entry point.
     #[test]
-    fn test_main() -> Result<(), Box<dyn std::error::Error>> {
+    fn test_pem_rfc7468_example_entry_point()
+    -> Result<(), Box<dyn std::error::Error>> {
         main()
     }
 

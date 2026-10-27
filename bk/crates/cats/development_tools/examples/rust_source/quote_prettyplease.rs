@@ -33,8 +33,9 @@ pub fn run() -> syn::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the quote prettyplease example through its entry point.
     #[test]
-    fn test_main() -> syn::Result<()> {
+    fn test_quote_prettyplease_example_entry_point() -> syn::Result<()> {
         main()
     }
 }

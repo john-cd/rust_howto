@@ -44,8 +44,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the tokio21 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tokio21_example_entry_point() {
         main();
     }
 }

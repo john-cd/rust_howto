@@ -71,8 +71,9 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the rsa example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rsa_example_entry_point() {
         main();
     }
 }

@@ -46,8 +46,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the generic lifetime example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_generic_lifetime_example_entry_point() {
         main();
     }
 }

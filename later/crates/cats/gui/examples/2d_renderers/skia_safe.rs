@@ -25,7 +25,8 @@ pub fn run() {
     main();
 }
 
+/// Runs the Skia Safe renderer example.
 #[test]
-fn test() {
+fn test_skia_safe_renderer_example() {
     main();
 }

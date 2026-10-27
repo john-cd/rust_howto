@@ -64,9 +64,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the yew example through its entry point.
     #[test]
     #[ignore = "requires wasm example runtime"]
-    fn test_main() {
+    fn test_yew_example_entry_point() {
         main();
     }
 }

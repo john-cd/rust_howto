@@ -37,8 +37,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the which example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_which_example_entry_point() {
         main();
     }
 }

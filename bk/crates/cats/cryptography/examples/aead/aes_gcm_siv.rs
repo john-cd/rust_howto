@@ -73,8 +73,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the aes gcm siv example's main path succeeds.
+    /// Runs the aes gcm siv example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_aes_gcm_siv_example_entry_point() -> anyhow::Result<()> {
         main()
             .map_err(|_| anyhow::anyhow!("Failed encryption or decryption"))?;
         Ok(())

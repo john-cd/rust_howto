@@ -36,8 +36,9 @@ mod tests {
     use super::*;
 
     /// Checks that the email text preserves its heading, link, and list.
+    /// Runs the html2text example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_html2text_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

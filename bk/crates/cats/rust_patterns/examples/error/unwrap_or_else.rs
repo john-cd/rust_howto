@@ -60,7 +60,7 @@ mod tests {
 
     /// Verifies that the unwrap or else example's main path succeeds.
     #[test]
-    fn test_main() {
+    fn test_unwrap_or_else_example_entry_point() {
         use std::fs;
         if !fs::exists("temp")
             .expect("the example temp directory should be accessible")

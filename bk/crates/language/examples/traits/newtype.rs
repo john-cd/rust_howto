@@ -46,8 +46,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the newtype example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_newtype_example_entry_point() {
         main();
     }
 }

@@ -95,8 +95,9 @@ mod tests {
     use super::*;
 
     /// Checks the in-memory and temporary-file compression round trips.
+    /// Runs the flate2 example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_flate2_example_entry_point() -> anyhow::Result<()> {
         run()
     }
 }

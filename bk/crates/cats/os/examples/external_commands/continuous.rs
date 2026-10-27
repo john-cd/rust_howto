@@ -62,7 +62,7 @@ mod tests {
     /// Verifies journal output can be read on Linux systems with systemd.
     #[test]
     #[ignore = "requires access to a Linux systemd journal"]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_continuous_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

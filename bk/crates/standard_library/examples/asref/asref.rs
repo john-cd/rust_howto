@@ -68,8 +68,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the asref example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_asref_example_entry_point() {
         main();
     }
 }

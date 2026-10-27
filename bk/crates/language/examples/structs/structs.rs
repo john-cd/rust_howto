@@ -49,8 +49,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the structs example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_structs_example_entry_point() {
         main();
     }
 }

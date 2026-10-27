@@ -26,8 +26,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rand range example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rand_range_example_entry_point() {
         main();
     }
 }

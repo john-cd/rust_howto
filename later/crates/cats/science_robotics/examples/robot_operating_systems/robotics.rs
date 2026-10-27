@@ -45,8 +45,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the robotics example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_robotics_example_entry_point() {
         main();
     }
 }

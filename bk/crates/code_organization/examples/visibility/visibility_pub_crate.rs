@@ -39,8 +39,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the visibility pub crate example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_visibility_pub_crate_example_entry_point() {
         main();
     }
 }

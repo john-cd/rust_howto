@@ -100,8 +100,9 @@ mod tests {
     use super::*;
 
     /// Verifies that dropping and rechecking out a guard reuses the pool slot.
+    /// Runs the deadpool example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_deadpool_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

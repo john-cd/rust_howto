@@ -52,8 +52,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the shadowing example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_shadowing_example_entry_point() {
         main();
     }
 }

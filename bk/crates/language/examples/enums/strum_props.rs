@@ -52,8 +52,9 @@ mod tests {
     use super::*;
 
     /// Checks that string, integer, and boolean properties are accessible.
+    /// Runs the strum props example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_strum_props_example_entry_point() {
         main();
     }
 }

@@ -60,8 +60,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the afl example's main path succeeds.
+    /// Runs the afl example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_afl_example_entry_point() {
         // In a real fuzzing environment, this would run indefinitely.
         // Here we just check that the function exists and can be called.
         fuzz_me(b"safe");

@@ -50,8 +50,9 @@ mod tests {
     use super::*;
 
     /// Checks that the sample CSS declaration list can be tokenized.
+    /// Runs the cssparser example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_cssparser_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

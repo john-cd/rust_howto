@@ -55,8 +55,9 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the bumpalo example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_bumpalo_example_entry_point() {
         main();
     }
 }

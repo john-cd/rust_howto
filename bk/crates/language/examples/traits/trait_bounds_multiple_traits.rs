@@ -54,8 +54,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the trait bounds multiple traits example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_trait_bounds_multiple_traits_example_entry_point() {
         main();
     }
 }

@@ -15,22 +15,46 @@ struct Args {
     fail: bool,
 }
 
-/// Prints a greeting or returns the requested demonstration error.
+/// Parses CLI arguments and prints a greeting.
 ///
 /// # Errors
 ///
-/// Returns an error when the fail option is selected.
-/// Parses CLI arguments and runs the greeting example.
+/// Returns an error when parsing fails or when the greeting action fails.
+fn main() -> anyhow::Result<()> {
+    println!("{}", greet(Args::parse())?);
+    Ok(())
+}
+
+/// Builds the greeting or returns the requested demonstration error.
 ///
 /// # Errors
 ///
 /// Returns an error when `--fail` is supplied.
-fn main() -> anyhow::Result<()> {
-    let args = Args::parse();
+fn greet(args: Args) -> anyhow::Result<String> {
     if args.fail {
         anyhow::bail!("requested failure");
     }
-    println!("Hello, {}!", args.name);
-    Ok(())
+    Ok(format!("Hello, {}!", args.name))
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies parsed arguments produce the expected greeting.
+    #[test]
+    fn test_cli_demo_greets_the_requested_name() -> anyhow::Result<()> {
+        let args = Args::try_parse_from(["cli-demo", "--name", "Ada"])?;
+        assert_eq!(greet(args)?, "Hello, Ada!");
+        Ok(())
+    }
+
+    /// Verifies the example reports its requested failure case.
+    #[test]
+    fn test_cli_demo_returns_requested_failure() -> anyhow::Result<()> {
+        let args = Args::try_parse_from(["cli-demo", "--fail"])?;
+        assert!(greet(args).is_err());
+        Ok(())
+    }
+}

@@ -87,3 +87,16 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the interactive example when a terminal and key input are
+    /// available.
+    #[test]
+    #[ignore = "requires an interactive terminal and key input"]
+    fn test_crossterm_handles_terminal_input() -> anyhow::Result<()> {
+        main()
+    }
+}

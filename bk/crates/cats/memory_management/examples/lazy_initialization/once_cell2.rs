@@ -37,8 +37,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the once cell2 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_once_cell2_example_entry_point() {
         main();
     }
 }

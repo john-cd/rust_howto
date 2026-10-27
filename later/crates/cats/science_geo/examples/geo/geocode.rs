@@ -113,8 +113,9 @@ pub fn run() -> Result<(), GeocodingError> {
 mod tests {
     use super::*;
 
+    /// Runs the geocode example through its entry point.
     #[test]
-    fn test_main() -> Result<(), GeocodingError> {
+    fn test_geocode_example_entry_point() -> Result<(), GeocodingError> {
         main()
     }
 

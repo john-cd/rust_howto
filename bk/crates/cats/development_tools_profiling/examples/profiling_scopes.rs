@@ -58,8 +58,9 @@ mod tests {
     use super::*;
 
     /// Runs the scoped work with profiling macros disabled or enabled.
+    /// Runs the profiling scopes example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_profiling_scopes_example_entry_point() {
         main();
     }
 

@@ -34,8 +34,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the resize example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_resize_example_entry_point() {
         main();
     }
 }

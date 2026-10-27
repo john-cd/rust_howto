@@ -123,8 +123,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the ractor example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_ractor_example_entry_point() {
         main();
     }
 }

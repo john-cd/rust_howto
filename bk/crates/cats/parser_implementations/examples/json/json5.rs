@@ -74,8 +74,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the json5 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_json5_example_entry_point() {
         main();
     }
 }

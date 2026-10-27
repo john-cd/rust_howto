@@ -37,8 +37,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the atomic cell example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_atomic_cell_example_entry_point() {
         main();
     }
 }

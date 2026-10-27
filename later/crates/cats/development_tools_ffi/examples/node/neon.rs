@@ -58,7 +58,7 @@ mod tests {
     /// Verifies that the neon example's main path succeeds.
     #[test]
     #[ignore = "requires Node module runtime"]
-    fn test_main() {
+    fn test_neon_example_entry_point() {
         // TODO main().unwrap();
     }
 }

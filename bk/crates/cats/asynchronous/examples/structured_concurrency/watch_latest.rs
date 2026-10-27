@@ -80,8 +80,9 @@ mod tests {
     use super::*;
 
     /// Checks watch state, broadcasts, and bounded message delivery.
+    /// Runs the watch latest example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_watch_latest_example_entry_point() {
         main();
     }
 }

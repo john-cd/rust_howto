@@ -37,8 +37,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the ranges example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_ranges_example_entry_point() {
         main();
     }
 }

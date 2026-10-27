@@ -76,8 +76,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rapier2d example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rapier2d_example_entry_point() {
         main();
     }
     // TODO review / add to a chapter on physics engines with rapier2d

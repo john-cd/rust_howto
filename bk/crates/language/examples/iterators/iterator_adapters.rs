@@ -60,8 +60,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the iterator adapters example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_iterator_adapters_example_entry_point() {
         main();
     }
 }

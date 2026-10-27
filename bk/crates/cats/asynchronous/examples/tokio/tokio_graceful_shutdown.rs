@@ -123,8 +123,10 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the tokio graceful shutdown example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_tokio_graceful_shutdown_example_entry_point() -> anyhow::Result<()>
+    {
         main()?;
         Ok(())
     }

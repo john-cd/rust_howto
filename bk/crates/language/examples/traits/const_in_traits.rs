@@ -39,8 +39,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the const in traits example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_const_in_traits_example_entry_point() {
         main();
     }
 }

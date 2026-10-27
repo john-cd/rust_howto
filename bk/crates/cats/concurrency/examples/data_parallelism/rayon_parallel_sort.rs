@@ -35,8 +35,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rayon parallel sort example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rayon_parallel_sort_example_entry_point() {
         main();
     }
 }

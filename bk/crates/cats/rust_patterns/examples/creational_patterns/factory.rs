@@ -89,8 +89,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the factory example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_factory_example_entry_point() {
         main();
     }
 }

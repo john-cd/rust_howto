@@ -61,8 +61,9 @@ mod tests {
         assert!(key.bytes.is_empty());
     }
 
+    /// Runs the zeroize example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_zeroize_example_entry_point() {
         main();
     }
 }

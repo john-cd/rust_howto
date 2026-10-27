@@ -114,8 +114,9 @@ mod tests {
     use super::*;
 
     /// Checks the bounded pool returns each completed task result.
+    /// Runs the joinset pool example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_joinset_pool_example_entry_point() {
         main();
     }
 }

@@ -119,8 +119,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the futures util example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_futures_util_example_entry_point() {
         main();
     }
 }

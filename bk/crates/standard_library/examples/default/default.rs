@@ -64,8 +64,9 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the default example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_default_example_entry_point() {
         main();
     }
 }

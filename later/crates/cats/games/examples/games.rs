@@ -64,9 +64,10 @@ async fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the games example through its entry point.
     #[test]
     #[ignore = "requires interactive example runtime"]
-    fn test_main() {
+    fn test_games_example_entry_point() {
         main();
     }
 }

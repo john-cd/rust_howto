@@ -70,8 +70,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the pbkdf2 example's main path succeeds.
+    /// Runs the pbkdf2 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_pbkdf2_example_entry_point() {
         println!("{:?}", main());
     }
 }

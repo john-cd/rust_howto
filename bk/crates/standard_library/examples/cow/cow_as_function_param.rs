@@ -39,8 +39,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the cow as function param example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_cow_as_function_param_example_entry_point() {
         main();
     }
 }

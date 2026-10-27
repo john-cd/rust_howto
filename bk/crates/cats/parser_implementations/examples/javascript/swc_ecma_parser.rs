@@ -60,8 +60,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the swc ecma parser example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_swc_ecma_parser_example_entry_point() {
         main();
     }
 }

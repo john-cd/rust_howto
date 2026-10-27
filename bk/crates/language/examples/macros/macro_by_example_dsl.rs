@@ -193,8 +193,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the macro by example dsl example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_macro_by_example_dsl_example_entry_point() {
         main();
     }
 }

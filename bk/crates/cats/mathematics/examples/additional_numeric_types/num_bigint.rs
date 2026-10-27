@@ -56,8 +56,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the num bigint example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_num_bigint_example_entry_point() {
         main();
     }
 }

@@ -63,8 +63,9 @@ mod tests {
     use super::*;
 
     /// Calls the C++ function through the generated bridge.
+    /// Runs the cxx example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_cxx_example_entry_point() {
         main();
         assert_eq!(ffi::cpp_multiply(6, 7), 42);
         assert_eq!(rust_add(40, 2), 42);

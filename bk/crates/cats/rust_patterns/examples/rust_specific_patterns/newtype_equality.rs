@@ -84,8 +84,9 @@ mod tests {
     use super::*;
 
     /// Checks that equality and hashing ignore display-only presentation.
+    /// Runs the newtype equality example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_newtype_equality_example_entry_point() {
         main();
     }
 }

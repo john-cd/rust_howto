@@ -97,8 +97,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the simd json example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_simd_json_example_entry_point() {
         main();
     }
 }

@@ -65,8 +65,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the box recursive example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_box_recursive_example_entry_point() {
         main();
     }
 }

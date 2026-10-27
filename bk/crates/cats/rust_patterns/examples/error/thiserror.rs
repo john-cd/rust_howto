@@ -64,8 +64,9 @@ mod tests {
     use super::*;
 
     /// Checks that the example returns an error.
+    /// Runs the thiserror example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_thiserror_example_entry_point() {
         let res = main();
         println!("{res:?}");
         assert!(res.is_err());

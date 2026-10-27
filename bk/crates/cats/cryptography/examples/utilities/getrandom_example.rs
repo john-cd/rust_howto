@@ -23,8 +23,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the example can fill its nonce buffer.
+    /// Runs the getrandom example example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_getrandom_example_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

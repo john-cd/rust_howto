@@ -45,3 +45,14 @@ fn main() {
 pub fn run() {
     main();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies the module path example runs through its entry point.
+    #[test]
+    fn test_module_paths_example_entry_point() {
+        main();
+    }
+}

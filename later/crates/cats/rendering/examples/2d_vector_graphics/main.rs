@@ -50,8 +50,9 @@ mod tests {
     use super::*;
 
     /// Verifies the example entry point tessellates and reports its path.
+    /// Runs the rendering example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_rendering_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 

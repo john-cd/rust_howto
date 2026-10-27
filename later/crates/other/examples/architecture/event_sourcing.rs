@@ -58,8 +58,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the event sourcing example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_event_sourcing_example_entry_point() {
         main();
     }
 }

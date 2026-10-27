@@ -45,8 +45,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the unwrap example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_unwrap_example_entry_point() {
         main();
     }
 }

@@ -78,8 +78,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the return reference example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_return_reference_example_entry_point() {
         main();
     }
 }

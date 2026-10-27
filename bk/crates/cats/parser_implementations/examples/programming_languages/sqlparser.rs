@@ -83,8 +83,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the sqlparser example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_sqlparser_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

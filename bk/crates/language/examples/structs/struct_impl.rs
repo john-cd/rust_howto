@@ -54,8 +54,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the struct impl example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_struct_impl_example_entry_point() {
         main();
     }
 }

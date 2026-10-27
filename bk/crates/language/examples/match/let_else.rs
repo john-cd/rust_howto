@@ -32,8 +32,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the let else example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_let_else_example_entry_point() {
         main();
     }
 }

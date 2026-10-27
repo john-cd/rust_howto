@@ -40,8 +40,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the multithreading rayon custom example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_multithreading_rayon_custom_example_entry_point() {
         main();
     }
 }

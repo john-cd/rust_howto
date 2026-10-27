@@ -49,8 +49,9 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
+    /// Runs the bcrypt example through its entry point.
     #[test]
-    fn test_main() -> Result<(), Box<dyn Error>> {
+    fn test_bcrypt_example_entry_point() -> Result<(), Box<dyn Error>> {
         main()?;
         Ok(())
     }

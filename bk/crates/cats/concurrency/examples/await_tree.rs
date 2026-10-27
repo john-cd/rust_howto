@@ -116,8 +116,9 @@ async fn baz(n: i32) {
 mod tests {
     use super::*;
 
+    /// Runs the await tree example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_await_tree_example_entry_point() {
         main();
     }
 }

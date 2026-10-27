@@ -32,6 +32,6 @@ pub fn run() {
 
 /// Verifies that the genetic algorithm reaches the maximum fitness.
 #[test]
-fn test() {
+fn test_genetic_algorithm_reaches_maximum_fitness() {
     assert_eq!(evolve(), BITS);
 }

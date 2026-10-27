@@ -62,8 +62,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the no std1 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_no_std1_example_entry_point() {
         main();
     }
 }

@@ -50,8 +50,9 @@ pub fn run() -> trading_calendar::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the trading days example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_trading_days_example_entry_point() {
         main().expect("calendar supports 2025");
     }
 }

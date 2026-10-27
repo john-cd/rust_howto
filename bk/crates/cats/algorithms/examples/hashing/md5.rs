@@ -36,8 +36,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the md5 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_md5_example_entry_point() {
         main();
     }
 }

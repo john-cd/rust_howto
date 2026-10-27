@@ -83,8 +83,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the sort struct example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_sort_struct_example_entry_point() {
         main();
     }
 }

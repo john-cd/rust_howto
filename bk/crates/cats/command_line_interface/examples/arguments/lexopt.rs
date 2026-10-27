@@ -79,8 +79,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the lexopt example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_lexopt_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

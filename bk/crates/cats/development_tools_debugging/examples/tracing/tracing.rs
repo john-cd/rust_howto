@@ -76,8 +76,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the tracing example's main path succeeds.
+    /// Runs the tracing example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tracing_example_entry_point() {
         tracing_subscriber::fmt()
             .with_max_level(tracing::Level::TRACE)
             .init();

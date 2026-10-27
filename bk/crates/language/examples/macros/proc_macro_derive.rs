@@ -48,8 +48,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the proc macro derive example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_proc_macro_derive_example_entry_point() {
         main();
     }
 }

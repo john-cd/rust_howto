@@ -30,8 +30,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the allow dead code example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_allow_dead_code_example_entry_point() {
         main();
     }
 }

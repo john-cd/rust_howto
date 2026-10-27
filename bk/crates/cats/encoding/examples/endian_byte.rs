@@ -61,8 +61,9 @@ fn main() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Runs the endian byte example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_endian_byte_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

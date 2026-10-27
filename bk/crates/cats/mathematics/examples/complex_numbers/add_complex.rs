@@ -27,8 +27,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the addition example runs without panicking.
+    /// Runs the add complex example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_add_complex_example_entry_point() {
         main();
     }
 }

@@ -52,8 +52,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the global allocator example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_global_allocator_example_entry_point() {
         main();
         #[cfg(not(any(feature = "use-mimalloc", feature = "use-jemalloc")))]
         assert_eq!(allocator_name(), "system");

@@ -55,8 +55,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the percent encoding example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_percent_encoding_example_entry_point() -> Result<()> {
         main()?;
         Ok(())
     }

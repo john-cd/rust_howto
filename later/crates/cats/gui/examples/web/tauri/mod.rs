@@ -71,3 +71,15 @@ pub fn run() {
     main();
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Launches the Tauri application when a desktop session is available.
+    #[test]
+    #[ignore = "requires an interactive desktop application runtime"]
+    fn test_tauri_application_entry_point() {
+        main();
+    }
+}

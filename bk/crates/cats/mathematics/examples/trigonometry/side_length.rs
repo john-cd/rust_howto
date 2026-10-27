@@ -29,8 +29,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the side length example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_side_length_example_entry_point() {
         main();
     }
 }

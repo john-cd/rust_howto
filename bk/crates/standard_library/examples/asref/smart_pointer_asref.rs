@@ -40,8 +40,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the smart pointer asref example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_smart_pointer_asref_example_entry_point() {
         main();
     }
 }

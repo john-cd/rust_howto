@@ -37,8 +37,9 @@ mod tests {
     use super::*;
 
     /// Checks that the span example runs.
+    /// Runs the tracing spans example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tracing_spans_example_entry_point() {
         tracing_subscriber::fmt()
             .with_max_level(tracing::Level::TRACE)
             .init();

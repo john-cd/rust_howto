@@ -54,8 +54,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the box basics example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_box_basics_example_entry_point() {
         main();
     }
 }

@@ -25,8 +25,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the read env variable example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_read_env_variable_example_entry_point() {
         main();
     }
 }

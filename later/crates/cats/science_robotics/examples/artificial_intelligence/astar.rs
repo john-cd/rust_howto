@@ -59,8 +59,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the astar example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_astar_example_entry_point() {
         main();
     }
 }

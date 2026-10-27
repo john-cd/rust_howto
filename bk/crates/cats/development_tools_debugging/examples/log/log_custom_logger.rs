@@ -53,6 +53,7 @@ pub fn run() -> Result<(), SetLoggerError> {
 mod tests {
     use super::*;
 
+    /// Runs the log custom logger example through its entry point.
     #[test]
     fn test_log_custom_logger_example_entry_point() {
         main().expect("example entry point should succeed");

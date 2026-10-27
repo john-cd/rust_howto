@@ -78,8 +78,9 @@ mod tests {
 
     /// Verifies concurrent inserts and atomic updates leave the expected
     /// entries.
+    /// Runs the papaya example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_papaya_example_entry_point() {
         main().expect("papaya recipe should pass its assertions");
     }
 }

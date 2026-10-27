@@ -38,7 +38,8 @@ pub fn run() {
     main();
 }
 
+/// Runs the Bevy game engine example.
 #[test]
-fn test() {
+fn test_bevy_game_engine_example() {
     main();
 }

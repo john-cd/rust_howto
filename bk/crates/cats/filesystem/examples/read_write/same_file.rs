@@ -55,8 +55,9 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Runs the same file example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_same_file_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

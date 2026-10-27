@@ -135,8 +135,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the clap example's main path succeeds.
+    /// Runs the clap example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_clap_example_entry_point() {
         println!("{:?}", main());
     }
 }

@@ -49,7 +49,8 @@ fn main() {
 // ANCHOR_END: example
 
 /// The benchmark entry point compiles when the harness is built for tests.
+/// Runs the divan example through its entry point.
 #[test]
-fn test_main() {
+fn test_divan_example_entry_point() {
     main();
 }

@@ -42,8 +42,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the clone example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_clone_example_entry_point() {
         main();
     }
 }

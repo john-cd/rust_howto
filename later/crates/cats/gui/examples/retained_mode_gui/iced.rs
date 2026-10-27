@@ -70,9 +70,10 @@ pub fn run() -> iced::Result {
 mod tests {
     use super::*;
 
+    /// Runs the iced example through its entry point.
     #[test]
     #[ignore = "requires an interactive example runtime"]
-    fn test_main() -> iced::Result {
+    fn test_iced_example_entry_point() -> iced::Result {
         main()
     }
 }

@@ -60,8 +60,9 @@ mod tests {
     use super::*;
 
     /// Verifies Ed25519 signatures reject a changed message.
+    /// Runs the ed25519 dalek example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_ed25519_dalek_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

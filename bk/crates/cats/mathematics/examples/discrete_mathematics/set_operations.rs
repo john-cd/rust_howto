@@ -49,7 +49,7 @@ pub fn run() {
 
 /// Verifies the set operations return the expected elements.
 #[test]
-fn test() {
+fn test_set_operations_return_expected_elements() {
     let results = compare_sets();
     assert_eq!(results.shared, BTreeSet::from(["logic", "proofs"]));
     assert_eq!(

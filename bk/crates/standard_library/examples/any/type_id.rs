@@ -58,8 +58,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the type id example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_type_id_example_entry_point() {
         main();
     }
 }

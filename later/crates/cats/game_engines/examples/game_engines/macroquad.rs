@@ -46,9 +46,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the macroquad example through its entry point.
     #[test]
     #[ignore = "requires a graphics device"]
-    fn test_main() {
+    fn test_macroquad_example_entry_point() {
         main();
     }
 }

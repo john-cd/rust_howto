@@ -31,8 +31,9 @@ pub fn run() -> Result<(), NormalError> {
 mod tests {
     use super::*;
 
+    /// Runs the rand distr example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_rand_distr_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

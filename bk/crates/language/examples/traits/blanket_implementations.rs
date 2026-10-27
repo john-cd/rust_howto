@@ -44,8 +44,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the blanket implementations example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_blanket_implementations_example_entry_point() {
         main();
     }
 }

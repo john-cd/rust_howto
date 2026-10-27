@@ -153,8 +153,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the regex example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_regex_example_entry_point() {
         main();
     }
 }

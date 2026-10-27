@@ -25,8 +25,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the example can encode and decode its input.
+    /// Runs the hex example example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_hex_example_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

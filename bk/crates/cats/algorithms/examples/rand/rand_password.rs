@@ -43,8 +43,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rand password example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rand_password_example_entry_point() {
         main();
     }
 }

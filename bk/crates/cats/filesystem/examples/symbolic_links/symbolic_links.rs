@@ -102,8 +102,9 @@ mod tests {
     use super::*;
 
     /// Runs the example in a clean `temp` folder.
+    /// Runs the symbolic links example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_symbolic_links_example_entry_point() -> anyhow::Result<()> {
         use anyhow::Context as _;
         let temp = Path::new("./temp");
         utils::clean_folder(temp)

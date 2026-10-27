@@ -49,6 +49,7 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Runs the magnus example through its entry point.
     #[test]
     #[ignore = "requires Ruby VM initialization"]
     fn test_magnus_example_entry_point() {

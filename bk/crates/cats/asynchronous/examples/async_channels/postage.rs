@@ -85,8 +85,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the postage example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_postage_example_entry_point() {
         main();
     }
 }

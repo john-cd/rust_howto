@@ -25,8 +25,9 @@ mod tests {
     use super::*;
 
     #[should_panic]
+    /// Runs the panic example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_panic_example_entry_point() {
         main();
     }
 }

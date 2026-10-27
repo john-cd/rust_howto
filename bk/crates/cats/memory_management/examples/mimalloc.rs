@@ -40,8 +40,9 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the mimalloc example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_mimalloc_example_entry_point() {
         main();
     }
 }

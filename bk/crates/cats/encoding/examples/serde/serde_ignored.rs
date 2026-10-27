@@ -74,8 +74,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the serde ignored example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_serde_ignored_example_entry_point() {
         main();
     }
 }

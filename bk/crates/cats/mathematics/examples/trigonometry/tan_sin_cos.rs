@@ -30,8 +30,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the tan sin cos example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tan_sin_cos_example_entry_point() {
         main();
     }
 }

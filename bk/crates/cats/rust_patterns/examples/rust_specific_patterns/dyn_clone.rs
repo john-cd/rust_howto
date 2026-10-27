@@ -50,8 +50,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the dyn clone example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_dyn_clone_example_entry_point() {
         main();
     }
 }

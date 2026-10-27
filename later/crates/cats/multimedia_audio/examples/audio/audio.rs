@@ -83,9 +83,10 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
+    /// Runs the audio example through its entry point.
     #[test]
     #[ignore = "requires audio device"]
-    fn test_main() -> Result<(), Box<dyn Error>> {
+    fn test_audio_example_entry_point() -> Result<(), Box<dyn Error>> {
         main()?;
         Ok(())
     }

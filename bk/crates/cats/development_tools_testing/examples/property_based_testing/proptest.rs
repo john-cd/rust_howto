@@ -100,8 +100,9 @@ pub fn run() {
 mod tests_of_main {
     use super::*;
 
+    /// Runs the proptest example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_proptest_example_entry_point() {
         main();
     }
 }

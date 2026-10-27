@@ -53,8 +53,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the notify example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_notify_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

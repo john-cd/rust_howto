@@ -48,9 +48,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rutie example through its entry point.
     #[test]
     #[ignore = "requires Ruby VM initialization"]
-    fn test_main() {
+    fn test_rutie_example_entry_point() {
         main();
     }
 }

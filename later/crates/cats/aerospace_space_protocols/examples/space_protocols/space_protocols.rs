@@ -40,8 +40,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the space protocols example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_space_protocols_example_entry_point() {
         main();
     }
 }

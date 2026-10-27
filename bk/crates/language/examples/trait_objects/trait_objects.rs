@@ -79,8 +79,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the trait objects example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_trait_objects_example_entry_point() {
         main();
     }
 }

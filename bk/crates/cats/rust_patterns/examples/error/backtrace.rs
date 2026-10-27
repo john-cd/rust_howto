@@ -71,8 +71,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the backtrace example's main path succeeds.
+    /// Runs the backtrace example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_backtrace_example_entry_point() {
         unsafe {
             std::env::set_var("RUST_BACKTRACE", "1");
         }

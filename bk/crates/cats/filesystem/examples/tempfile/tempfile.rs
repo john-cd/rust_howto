@@ -122,8 +122,9 @@ pub fn run() -> std::io::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the tempfile example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_tempfile_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

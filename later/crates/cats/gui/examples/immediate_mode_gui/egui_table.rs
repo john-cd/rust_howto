@@ -102,8 +102,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the egui table example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_egui_table_example_entry_point() {
         main();
     }
 

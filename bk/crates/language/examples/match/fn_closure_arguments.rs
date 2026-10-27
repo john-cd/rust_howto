@@ -37,8 +37,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the fn closure arguments example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_fn_closure_arguments_example_entry_point() {
         main();
     }
 }

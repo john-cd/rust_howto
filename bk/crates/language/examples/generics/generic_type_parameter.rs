@@ -174,8 +174,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the generic type parameter example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_generic_type_parameter_example_entry_point() {
         main();
     }
 }

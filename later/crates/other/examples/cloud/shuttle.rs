@@ -50,9 +50,10 @@ fn dummy() {
 mod tests {
     use super::*;
 
+    /// Runs the shuttle example through its entry point.
     #[test]
     #[ignore = "requires Shuttle runtime"]
-    fn test_main() {
+    fn test_shuttle_example_entry_point() {
         main();
     }
 }

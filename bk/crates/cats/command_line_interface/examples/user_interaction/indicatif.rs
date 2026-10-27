@@ -83,6 +83,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the indicatif example through its entry point.
     #[test]
     fn test_indicatif_example_entry_point() {
         main().expect("example entry point should succeed");

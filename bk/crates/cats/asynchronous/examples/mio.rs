@@ -47,8 +47,9 @@ fn main() -> std::io::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the mio example through its entry point.
     #[test]
-    fn test_main() -> std::io::Result<()> {
+    fn test_mio_example_entry_point() -> std::io::Result<()> {
         main()
     }
 }

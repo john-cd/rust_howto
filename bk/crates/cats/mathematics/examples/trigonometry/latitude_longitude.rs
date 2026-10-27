@@ -69,8 +69,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the latitude longitude example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_latitude_longitude_example_entry_point() {
         main();
     }
 

@@ -54,8 +54,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the forecast example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_forecast_example_entry_point() {
         main().expect("the model fits");
     }
 }

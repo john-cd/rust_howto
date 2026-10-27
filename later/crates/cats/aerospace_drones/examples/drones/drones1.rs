@@ -29,6 +29,7 @@ pub fn run() -> Result<(), String> {
 mod tests {
     use super::*;
 
+    /// Runs the drones1 example through its entry point.
     #[test]
     #[ignore = "requires real drone"]
     fn test_drones1_example_entry_point() {

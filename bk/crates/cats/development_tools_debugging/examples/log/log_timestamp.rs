@@ -46,8 +46,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the log timestamp example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_log_timestamp_example_entry_point() {
         main();
     }
 }

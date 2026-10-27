@@ -63,8 +63,9 @@ fn main() {
 #[cfg(test)]
 mod tests {
     /// Verifies that the leptos example's main path succeeds.
+    /// Runs the leptos example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_leptos_example_entry_point() {
         #[cfg(not(feature = "leptos-support"))]
         {
             super::main();

@@ -37,8 +37,9 @@ mod tests {
     use super::*;
 
     #[ignore = "Relies on default programs that may not be installed by default."]
+    /// Runs the open example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_open_example_entry_point() {
         main();
     }
 }

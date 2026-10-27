@@ -70,8 +70,10 @@ pub fn run() -> Result<(), Box<EvalAltResult>> {
 mod tests {
     use super::*;
 
+    /// Runs the rhai types and limits example through its entry point.
     #[test]
-    fn test_main() -> Result<(), Box<EvalAltResult>> {
+    fn test_rhai_types_and_limits_example_entry_point()
+    -> Result<(), Box<EvalAltResult>> {
         main()
     }
 }

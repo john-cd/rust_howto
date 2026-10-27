@@ -36,8 +36,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the dotenvy example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_dotenvy_example_entry_point() -> Result<()> {
         main()?;
         Ok(())
     }

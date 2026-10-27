@@ -47,8 +47,9 @@ pub fn run() -> Result<(), Utf8Error> {
 mod tests {
     use super::*;
 
+    /// Runs the percent encode example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_percent_encode_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

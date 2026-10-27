@@ -26,8 +26,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the match guards example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_match_guards_example_entry_point() {
         main();
     }
 }

@@ -73,8 +73,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the fuzzy matcher example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_fuzzy_matcher_example_entry_point() {
         main();
     }
 }

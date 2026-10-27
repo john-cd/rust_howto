@@ -70,8 +70,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the binaryheap example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_binaryheap_example_entry_point() {
         main();
     }
 }

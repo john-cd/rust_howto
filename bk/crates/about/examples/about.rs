@@ -24,9 +24,9 @@ fn main() {
 mod tests {
     use super::*;
 
-    /// Verifies the about example behavior.
+    /// Verifies the about example entry point.
     #[test]
-    fn test() {
+    fn test_about_example() {
         example();
     }
 }

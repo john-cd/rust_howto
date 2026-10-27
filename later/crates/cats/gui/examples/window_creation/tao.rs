@@ -50,9 +50,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the tao example through its entry point.
     #[test]
     #[ignore = "requires an interactive example runtime"]
-    fn test_main() {
+    fn test_tao_example_entry_point() {
         main();
     }
 }

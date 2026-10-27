@@ -72,8 +72,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the custom type as key example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_custom_type_as_key_example_entry_point() {
         main();
     }
 }

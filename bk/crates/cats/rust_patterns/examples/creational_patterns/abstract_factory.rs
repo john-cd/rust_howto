@@ -145,8 +145,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the abstract factory example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_abstract_factory_example_entry_point() {
         main();
     }
 }

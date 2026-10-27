@@ -64,8 +64,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the futures3 example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_futures3_example_entry_point() -> Result<()> {
         main()?;
         Ok(())
     }

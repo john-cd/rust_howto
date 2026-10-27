@@ -45,8 +45,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the hashtags example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_hashtags_example_entry_point() {
         main();
     }
 }

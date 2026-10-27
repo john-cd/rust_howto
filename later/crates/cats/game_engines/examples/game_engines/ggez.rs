@@ -53,3 +53,15 @@ pub fn run() -> GameResult {
     event::run(context, event_loop, state)
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the `ggez` game when a desktop window can be opened.
+    #[test]
+    #[ignore = "requires an interactive desktop window"]
+    fn test_ggez_game_entry_point() -> GameResult {
+        run()
+    }
+}

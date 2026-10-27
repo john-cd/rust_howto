@@ -55,8 +55,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the ordered float example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_ordered_float_example_entry_point() {
         main();
     }
 }

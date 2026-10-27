@@ -94,8 +94,9 @@ mod tests {
 
     /// Calculates the mean, standard deviation, and z-score for the example
     /// data.
+    /// Runs the standard deviation example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_standard_deviation_example_entry_point() {
         main();
     }
 }

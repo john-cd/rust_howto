@@ -30,8 +30,9 @@ mod tests {
     use super::*;
 
     #[should_panic]
+    /// Runs the tests custom message example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tests_custom_message_example_entry_point() {
         main();
     }
 }

@@ -64,8 +64,9 @@ mod tests {
     use super::*;
 
     /// Runs the SQL validation example as a test.
+    /// Runs the sql readonly example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_sql_readonly_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

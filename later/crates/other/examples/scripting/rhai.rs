@@ -90,8 +90,9 @@ pub fn run() -> Result<(), Box<EvalAltResult>> {
 mod tests {
     use super::*;
 
+    /// Runs the rhai example through its entry point.
     #[test]
-    fn test_main() -> Result<(), Box<EvalAltResult>> {
+    fn test_rhai_example_entry_point() -> Result<(), Box<EvalAltResult>> {
         main()?;
         Ok(())
     }

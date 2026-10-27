@@ -48,8 +48,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the semver complex example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_semver_complex_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

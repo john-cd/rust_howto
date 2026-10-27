@@ -32,8 +32,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the attributes must use example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_attributes_must_use_example_entry_point() {
         main();
     }
 }

@@ -195,8 +195,10 @@ mod tests {
     use super::*;
 
     /// Verifies that the example completes successfully.
+    /// Runs the result example through its entry point.
     #[test]
-    fn test_main() -> Result<(), Box<dyn std::error::Error>> {
+    fn test_result_example_entry_point()
+    -> Result<(), Box<dyn std::error::Error>> {
         main()
     }
 }

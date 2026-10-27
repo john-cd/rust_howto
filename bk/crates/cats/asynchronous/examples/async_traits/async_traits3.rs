@@ -70,8 +70,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the async traits3 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_async_traits3_example_entry_point() {
         main();
     }
 }

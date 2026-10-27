@@ -88,8 +88,9 @@ mod tests {
     /// # Errors
     ///
     /// Returns an error if the example fails.
+    /// Runs the async zip example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_async_zip_example_entry_point() -> Result<()> {
         main()
     }
 }

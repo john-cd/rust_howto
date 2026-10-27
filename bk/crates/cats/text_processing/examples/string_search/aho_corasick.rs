@@ -139,8 +139,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the aho corasick example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_aho_corasick_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

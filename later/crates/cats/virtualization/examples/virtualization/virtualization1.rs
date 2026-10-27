@@ -48,8 +48,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the virtualization1 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_virtualization1_example_entry_point() {
         main();
     }
 }

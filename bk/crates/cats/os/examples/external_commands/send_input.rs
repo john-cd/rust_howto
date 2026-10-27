@@ -75,8 +75,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the send input example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_send_input_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

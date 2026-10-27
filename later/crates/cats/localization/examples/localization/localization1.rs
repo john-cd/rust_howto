@@ -56,6 +56,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 mod tests {
     use super::*;
 
+    /// Runs the localization1 example through its entry point.
     #[test]
     fn test_localization1_example_entry_point() {
         main().expect("example entry point should succeed");

@@ -33,8 +33,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the measure time example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_measure_time_example_entry_point() {
         main();
     }
 }

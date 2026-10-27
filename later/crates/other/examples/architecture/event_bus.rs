@@ -68,8 +68,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the event bus example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_event_bus_example_entry_point() {
         main();
     }
 }

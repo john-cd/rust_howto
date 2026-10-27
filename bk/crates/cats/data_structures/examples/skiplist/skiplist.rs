@@ -27,8 +27,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the skiplist example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_skiplist_example_entry_point() {
         main();
     }
 }

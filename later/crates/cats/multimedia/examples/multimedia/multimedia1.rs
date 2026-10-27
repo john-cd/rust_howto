@@ -38,6 +38,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 mod tests {
     use super::*;
 
+    /// Runs the multimedia1 example through its entry point.
     #[test]
     #[ignore = "requires audio output device"]
     fn test_multimedia1_example_entry_point() {

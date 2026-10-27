@@ -110,8 +110,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the egui toasts icons example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_egui_toasts_icons_example_entry_point() {
         main();
     }
 

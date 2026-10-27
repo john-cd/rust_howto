@@ -114,8 +114,9 @@ mod tests {
     use super::*;
 
     /// Checks that the inline HTML document can be tokenized.
+    /// Runs the html5ever example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_html5ever_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

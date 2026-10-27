@@ -81,8 +81,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the linkedlist example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_linkedlist_example_entry_point() {
         main();
     }
 }

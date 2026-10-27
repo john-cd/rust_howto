@@ -40,8 +40,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the black scholes example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_black_scholes_example_entry_point() {
         main();
     }
 

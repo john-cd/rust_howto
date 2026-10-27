@@ -131,9 +131,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the webrender example through its entry point.
     #[test]
     #[ignore = "requires interactive example runtime"]
-    fn test_main() {
+    fn test_webrender_example_entry_point() {
         main();
     }
 }

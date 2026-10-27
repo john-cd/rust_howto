@@ -61,8 +61,9 @@ pub fn run() -> tantivy::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the tantivy example through its entry point.
     #[test]
-    fn test_main() -> tantivy::Result<()> {
+    fn test_tantivy_example_entry_point() -> tantivy::Result<()> {
         main()
     }
 }

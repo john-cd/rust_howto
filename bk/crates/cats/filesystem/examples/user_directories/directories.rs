@@ -56,8 +56,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the directories example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_directories_example_entry_point() {
         main();
     }
 }

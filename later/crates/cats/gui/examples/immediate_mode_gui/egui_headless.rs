@@ -52,8 +52,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the egui headless example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_egui_headless_example_entry_point() {
         main();
     }
 }

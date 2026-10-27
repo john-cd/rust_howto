@@ -46,8 +46,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the async channels mpsc example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_async_channels_mpsc_example_entry_point() {
         main();
     }
 }

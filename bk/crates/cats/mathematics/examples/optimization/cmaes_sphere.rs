@@ -46,7 +46,7 @@ pub fn run() {
 
 /// Verifies that CMA-ES finds the shifted sphere's minimum.
 #[test]
-fn test() {
+fn test_cmaes_finds_shifted_sphere_minimum() {
     let (point, value) = minimize().expect("CMA-ES should reach the target");
     assert!(value < 1e-9);
     for (found, expected) in point.iter().zip([3.0, -2.0, 1.0]) {

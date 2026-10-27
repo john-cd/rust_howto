@@ -90,9 +90,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the taffy example through its entry point.
     #[test]
     #[ignore = "requires an interactive example runtime"]
-    fn test_main() {
+    fn test_taffy_example_entry_point() {
         main();
     }
 }

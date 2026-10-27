@@ -41,8 +41,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rayon any all example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rayon_any_all_example_entry_point() {
         main();
     }
 }

@@ -189,8 +189,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the dyn compat example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_dyn_compat_example_entry_point() {
         main();
     }
 }

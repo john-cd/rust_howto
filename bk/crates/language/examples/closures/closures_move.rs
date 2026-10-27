@@ -35,8 +35,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the closures move example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_closures_move_example_entry_point() {
         main();
     }
 }

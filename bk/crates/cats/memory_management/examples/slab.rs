@@ -58,8 +58,9 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the slab example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_slab_example_entry_point() {
         main();
     }
 }

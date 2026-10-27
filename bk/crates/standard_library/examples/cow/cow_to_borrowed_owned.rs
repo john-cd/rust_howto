@@ -48,8 +48,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the cow to borrowed owned example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_cow_to_borrowed_owned_example_entry_point() {
         main();
     }
 }

@@ -60,8 +60,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the syntect html example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_syntect_html_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

@@ -102,7 +102,7 @@ pub fn run() {
 /// Verifies that the seeded swarm gets close to the global minimum and that
 /// the same seed gives the same answer.
 #[test]
-fn test() {
+fn test_particle_swarm_is_reproducible_with_seed() {
     let first = pso(rastrigin, 2, 30, 200, 42);
     assert!(first.1 < 1.0, "value = {}", first.1);
     assert_eq!(first, pso(rastrigin, 2, 30, 200, 42));

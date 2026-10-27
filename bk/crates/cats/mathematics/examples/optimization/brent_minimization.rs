@@ -48,7 +48,7 @@ pub fn run() {
 
 /// Verifies Brent's method locates the minimum of a bounded quadratic.
 #[test]
-fn test() {
+fn test_brent_method_finds_quadratic_minimum() {
     let minimum = minimize();
     assert!((minimum - 2.5).abs() < 1e-8);
     assert!(((minimum - 2.5).powi(2) + 4.0 - 4.0).abs() < 1e-12);

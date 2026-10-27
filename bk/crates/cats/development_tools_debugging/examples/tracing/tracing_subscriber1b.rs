@@ -67,8 +67,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the tracing subscriber1b example's main path succeeds.
+    /// Runs the tracing subscriber1b example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tracing_subscriber1b_example_entry_point() {
         use std::fs;
         if !std::path::Path::new("temp").exists() {
             fs::create_dir("temp").expect("example output should be writable");

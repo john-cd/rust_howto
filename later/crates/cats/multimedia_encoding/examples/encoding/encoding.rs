@@ -51,6 +51,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 mod tests {
     use super::*;
 
+    /// Runs the encoding example through its entry point.
     #[test]
     fn test_encoding_example_entry_point() {
         main().expect("example entry point should succeed");

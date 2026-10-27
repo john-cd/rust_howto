@@ -116,7 +116,7 @@ pub fn run() {
 
 /// Verifies that each ready level runs only after its prerequisites.
 #[test]
-fn test() {
+fn test_topological_levels_wait_for_prerequisites() {
     let levels =
         calculate_task_levels().expect("the sample task graph is acyclic");
     assert_eq!(levels, vec![vec![2, 5], vec![10], vec![17]]);

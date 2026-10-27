@@ -57,8 +57,9 @@ mod tests {
     use super::*;
 
     /// Verifies that pasted identifiers can be used by the example.
+    /// Runs the paste example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_paste_example_entry_point() {
         main();
     }
 }

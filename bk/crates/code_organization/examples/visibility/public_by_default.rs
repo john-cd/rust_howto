@@ -68,8 +68,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the public by default example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_public_by_default_example_entry_point() {
         main();
     }
 }

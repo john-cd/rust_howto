@@ -61,8 +61,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the shared state parking lot example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_shared_state_parking_lot_example_entry_point() {
         main();
     }
 }

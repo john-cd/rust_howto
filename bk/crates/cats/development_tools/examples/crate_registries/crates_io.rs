@@ -127,9 +127,10 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the crates io example through its entry point.
     #[test]
     #[ignore = "requires crates.io API access"]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_crates_io_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

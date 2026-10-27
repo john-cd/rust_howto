@@ -37,8 +37,9 @@ pub fn run() -> std::io::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the canonicalize example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_canonicalize_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

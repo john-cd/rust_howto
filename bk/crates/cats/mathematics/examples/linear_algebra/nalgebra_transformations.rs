@@ -50,8 +50,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the nalgebra transformations example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_nalgebra_transformations_example_entry_point() {
         main();
     }
 }

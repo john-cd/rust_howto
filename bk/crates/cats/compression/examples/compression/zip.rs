@@ -70,8 +70,9 @@ mod tests {
     /// # Errors
     ///
     /// Returns an error if archive creation fails.
+    /// Runs the zip example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_zip_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

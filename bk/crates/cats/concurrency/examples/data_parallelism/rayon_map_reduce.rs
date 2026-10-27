@@ -55,8 +55,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rayon map reduce example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rayon_map_reduce_example_entry_point() {
         main();
     }
 }

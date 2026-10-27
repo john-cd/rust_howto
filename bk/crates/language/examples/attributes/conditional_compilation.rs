@@ -46,8 +46,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the conditional compilation example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_conditional_compilation_example_entry_point() {
         main();
     }
 }

@@ -75,8 +75,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the comrak example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_comrak_example_entry_point() {
         main();
     }
 }

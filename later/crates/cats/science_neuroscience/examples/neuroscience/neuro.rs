@@ -60,8 +60,9 @@ mod tests {
     use super::*;
 
     /// Verifies the example writes a NIfTI file to the temporary directory.
+    /// Runs the neuro example through its entry point.
     #[test]
-    fn test_main() -> Result<(), Box<dyn Error>> {
+    fn test_neuro_example_entry_point() -> Result<(), Box<dyn Error>> {
         let path = output_path();
         main()?;
         assert!(path.is_file(), "expected output file at {}", path.display());

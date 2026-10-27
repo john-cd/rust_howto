@@ -29,8 +29,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the box deref example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_box_deref_example_entry_point() {
         main();
     }
 }

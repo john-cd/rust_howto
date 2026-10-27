@@ -26,8 +26,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the variable binding example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_variable_binding_example_entry_point() {
         main();
     }
 }

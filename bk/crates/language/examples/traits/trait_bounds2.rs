@@ -62,8 +62,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the trait bounds2 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_trait_bounds2_example_entry_point() {
         main();
     }
 }

@@ -30,8 +30,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the tracing subscriber1 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tracing_subscriber1_example_entry_point() {
         main();
     }
 }

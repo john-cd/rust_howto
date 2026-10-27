@@ -27,8 +27,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the while let example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_while_let_example_entry_point() {
         main();
     }
 }

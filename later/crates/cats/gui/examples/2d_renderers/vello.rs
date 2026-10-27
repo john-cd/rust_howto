@@ -139,19 +139,17 @@ fn build_scene() -> Scene {
 mod tests {
     use super::*;
 
-    /// Verifies that scene construction produces a non-empty Vello scene.
+    /// Confirms scene-building encodes drawing commands without creating a GPU.
     #[test]
-    fn test_build_scene() {
+    fn scene_building_encodes_shapes_without_a_gpu() {
         let scene = build_scene();
-        // Simply ensure the scene can be built without panicking.
-        let _encoding = scene.encoding();
+        assert!(!scene.encoding().is_empty());
     }
 
-    /// Renders the Vello scene when explicitly run in a GPU-enabled
-    /// environment.
+    /// Renders the Vello example when a compatible GPU adapter is available.
     #[test]
-    #[ignore = "requires compatible GPU adapter"]
-    fn test_run() -> Result<()> {
-        run()
+    #[ignore = "requires a compatible GPU adapter"]
+    fn vello_renderer_entry_point_renders_with_a_gpu() -> Result<()> {
+        main()
     }
 }

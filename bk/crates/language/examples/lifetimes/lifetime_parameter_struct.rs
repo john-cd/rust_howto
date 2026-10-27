@@ -66,8 +66,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the lifetime parameter struct example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_lifetime_parameter_struct_example_entry_point() {
         main();
     }
 }

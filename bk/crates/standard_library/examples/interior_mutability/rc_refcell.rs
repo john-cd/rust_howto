@@ -43,8 +43,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rc refcell example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rc_refcell_example_entry_point() {
         main();
     }
 }

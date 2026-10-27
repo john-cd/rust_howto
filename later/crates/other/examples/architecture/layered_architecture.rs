@@ -166,8 +166,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the layered architecture example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_layered_architecture_example_entry_point() -> Result<()> {
         main()?;
         Ok(())
     }

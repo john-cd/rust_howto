@@ -89,8 +89,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the self referential struct example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_self_referential_struct_example_entry_point() {
         main();
     }
 }

@@ -29,8 +29,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the sort float example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_sort_float_example_entry_point() {
         main();
     }
 }

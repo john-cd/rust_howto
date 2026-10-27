@@ -52,8 +52,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the nalgebra decomposition example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_nalgebra_decomposition_example_entry_point() {
         main();
     }
 }

@@ -86,8 +86,9 @@ mod tests {
     use super::*;
 
     /// Checks heterogeneous async stores through trait objects.
+    /// Runs the async trait dyn example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_async_trait_dyn_example_entry_point() {
         main();
     }
 }

@@ -28,8 +28,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the macro by example type checking example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_macro_by_example_type_checking_example_entry_point() {
         main();
     }
 }

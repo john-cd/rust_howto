@@ -50,7 +50,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_main() {
+    fn test_split_example_entry_point() {
         main();
     }
 }

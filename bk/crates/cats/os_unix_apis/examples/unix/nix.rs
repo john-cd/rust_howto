@@ -76,8 +76,9 @@ pub fn run() -> nix::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the nix example through its entry point.
     #[test]
-    fn test_main() -> nix::Result<()> {
+    fn test_nix_example_entry_point() -> nix::Result<()> {
         main()?;
         Ok(())
     }

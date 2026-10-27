@@ -32,8 +32,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the semver prerelease example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_semver_prerelease_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

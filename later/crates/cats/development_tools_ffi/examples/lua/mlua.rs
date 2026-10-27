@@ -34,8 +34,9 @@ mod tests {
     use super::*;
 
     /// Verifies that Rust-created values are available to the Lua runtime.
+    /// Runs the mlua example through its entry point.
     #[test]
-    fn test_main() -> LuaResult<()> {
+    fn test_mlua_example_entry_point() -> LuaResult<()> {
         main()?;
         Ok(())
     }

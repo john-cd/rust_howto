@@ -79,8 +79,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the cfg if example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_cfg_if_example_entry_point() {
         main();
     }
 }

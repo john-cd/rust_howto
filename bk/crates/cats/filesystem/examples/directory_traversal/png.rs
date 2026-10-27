@@ -29,8 +29,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the png example's main path succeeds.
+    /// Runs the png example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_png_example_entry_point() -> anyhow::Result<()> {
         use std::fs;
         use std::path::Path;
 

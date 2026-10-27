@@ -47,3 +47,14 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies the sample multipart message parses successfully.
+    #[test]
+    fn test_mailparse_example_entry_point() -> Result<()> {
+        main()
+    }
+}

@@ -50,8 +50,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the option asref example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_option_asref_example_entry_point() {
         main();
     }
 }

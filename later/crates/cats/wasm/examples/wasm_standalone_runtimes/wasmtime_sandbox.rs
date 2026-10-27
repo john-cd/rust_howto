@@ -145,8 +145,9 @@ mod tests {
     use super::*;
 
     /// Exercises the complete sandbox example.
+    /// Runs the wasmtime sandbox example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_wasmtime_sandbox_example_entry_point() -> Result<()> {
         main()
     }
 

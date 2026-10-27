@@ -42,8 +42,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the visibility external code example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_visibility_external_code_example_entry_point() {
         main();
     }
 }

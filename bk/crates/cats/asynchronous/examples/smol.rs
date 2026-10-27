@@ -37,8 +37,9 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the smol example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_smol_example_entry_point() {
         main();
     }
 }

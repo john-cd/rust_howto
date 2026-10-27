@@ -28,8 +28,9 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the rustdoc4 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rustdoc4_example_entry_point() {
         main();
     }
 }

@@ -57,8 +57,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the modified example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_modified_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

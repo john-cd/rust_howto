@@ -61,8 +61,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rust decimal example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rust_decimal_example_entry_point() {
         main();
     }
 }

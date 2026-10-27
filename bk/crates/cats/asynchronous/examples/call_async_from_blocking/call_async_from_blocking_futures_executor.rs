@@ -33,8 +33,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the call async from blocking futures executor example through its
+    /// entry point.
     #[test]
-    fn test_main() {
+    fn test_call_async_from_blocking_futures_executor_example_entry_point() {
         main();
     }
 }

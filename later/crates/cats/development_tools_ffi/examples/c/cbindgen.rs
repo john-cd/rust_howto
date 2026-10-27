@@ -51,8 +51,9 @@ mod tests {
     use super::*;
 
     /// Exposes callable C-ABI functions and generates their header.
+    /// Runs the cbindgen example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_cbindgen_example_entry_point() {
         main();
     }
 }

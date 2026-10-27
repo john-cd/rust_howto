@@ -83,8 +83,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the tracing span in scope example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tracing_span_in_scope_example_entry_point() {
         main();
     }
 }

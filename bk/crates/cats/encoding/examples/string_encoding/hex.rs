@@ -35,8 +35,9 @@ pub fn run() -> Result<(), DecodeError> {
 mod tests {
     use super::*;
 
+    /// Runs the hex example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_hex_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

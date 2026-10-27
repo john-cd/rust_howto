@@ -20,9 +20,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the graphics example through its entry point.
     #[test]
     #[ignore = "later"]
-    fn test_main() {
+    fn test_graphics_example_entry_point() {
         main();
     }
     // // [write LATER](https://github.com/john-cd/rust_howto/issues/831)

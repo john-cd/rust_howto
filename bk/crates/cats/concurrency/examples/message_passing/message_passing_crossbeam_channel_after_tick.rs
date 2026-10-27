@@ -47,8 +47,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the message passing crossbeam channel after tick example through
+    /// its entry point.
     #[test]
-    fn test_main() {
+    fn test_message_passing_crossbeam_channel_after_tick_example_entry_point() {
         main();
     }
 }

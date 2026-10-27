@@ -31,8 +31,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rayon parallel search example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rayon_parallel_search_example_entry_point() {
         main();
     }
 }

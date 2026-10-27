@@ -148,8 +148,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the repository example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_repository_example_entry_point() {
         main();
     }
 }

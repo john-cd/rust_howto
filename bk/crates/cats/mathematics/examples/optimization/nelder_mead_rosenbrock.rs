@@ -49,7 +49,7 @@ pub fn run() -> Result<(), Error> {
 
 /// Verifies that Nelder-Mead converges to the Rosenbrock minimum `(1, 1)`.
 #[test]
-fn test() -> Result<(), Error> {
+fn test_nelder_mead_finds_rosenbrock_minimum() -> Result<(), Error> {
     let (best, cost) = minimize()?;
     assert!((best[0] - 1.0).abs() < 1e-3, "x = {}", best[0]);
     assert!((best[1] - 1.0).abs() < 1e-3, "y = {}", best[1]);

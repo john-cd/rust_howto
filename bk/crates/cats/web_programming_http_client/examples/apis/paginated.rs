@@ -169,8 +169,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the paginated example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_paginated_example_entry_point() -> Result<()> {
         main()
     }
 }

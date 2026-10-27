@@ -85,8 +85,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the strum example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_strum_example_entry_point() {
         main();
     }
 }

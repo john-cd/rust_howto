@@ -89,8 +89,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the hexagonal example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_hexagonal_example_entry_point() {
         main();
     }
 }

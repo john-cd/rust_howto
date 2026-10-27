@@ -41,8 +41,9 @@ pub fn run() -> Result<(), std::io::Error> {
 mod tests {
     use super::*;
 
+    /// Runs the deserialize matrix example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_deserialize_matrix_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

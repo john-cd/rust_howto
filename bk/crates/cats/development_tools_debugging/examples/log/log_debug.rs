@@ -31,8 +31,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the log debug example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_log_debug_example_entry_point() {
         main();
     }
 }

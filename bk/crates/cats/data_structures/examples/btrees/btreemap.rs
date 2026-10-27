@@ -95,8 +95,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the btreemap example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_btreemap_example_entry_point() {
         main();
     }
 }

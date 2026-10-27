@@ -114,8 +114,9 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the kani example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_kani_example_entry_point() {
         main();
     }
 

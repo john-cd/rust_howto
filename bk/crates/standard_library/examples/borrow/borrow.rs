@@ -35,8 +35,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the borrow example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_borrow_example_entry_point() {
         main();
     }
 }

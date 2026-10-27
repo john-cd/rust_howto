@@ -52,8 +52,9 @@ mod tests {
     use super::*;
 
     /// The example runs end to end.
+    /// Runs the ecdsa example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_ecdsa_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 

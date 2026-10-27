@@ -28,3 +28,15 @@ fn inspect_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     inspect_svg()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies the sample SVG can be parsed and inspected.
+    #[test]
+    fn test_usvg_example_entry_point()
+    -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+        run()
+    }
+}

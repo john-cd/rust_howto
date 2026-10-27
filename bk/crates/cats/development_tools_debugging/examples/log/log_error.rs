@@ -33,8 +33,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the log error example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_log_error_example_entry_point() {
         main();
     }
 }

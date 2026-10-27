@@ -29,8 +29,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the ansi term basic2 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_ansi_term_basic2_example_entry_point() {
         main();
     }
 }

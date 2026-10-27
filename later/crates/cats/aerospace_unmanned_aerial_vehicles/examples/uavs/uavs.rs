@@ -48,9 +48,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the uavs example through its entry point.
     #[test]
     #[ignore = "requires real drone"]
-    fn test_main() {
+    fn test_uavs_example_entry_point() {
         main();
     }
 }

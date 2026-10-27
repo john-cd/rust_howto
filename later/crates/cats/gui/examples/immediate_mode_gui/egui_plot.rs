@@ -80,8 +80,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the egui plot example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_egui_plot_example_entry_point() {
         main();
     }
 

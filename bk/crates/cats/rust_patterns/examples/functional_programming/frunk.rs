@@ -210,8 +210,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the frunk example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_frunk_example_entry_point() {
         main();
     }
 }

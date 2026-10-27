@@ -32,8 +32,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the use3 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_use3_example_entry_point() {
         main();
     }
 }

@@ -64,8 +64,9 @@ mod tests {
     use super::*;
 
     /// Checks that the instrumented functions run.
+    /// Runs the tracing instrument example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_tracing_instrument_example_entry_point() {
         tracing_subscriber::fmt()
             .with_max_level(tracing::Level::TRACE)
             .init();

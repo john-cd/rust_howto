@@ -28,8 +28,9 @@ mod tests {
     use super::*;
 
     #[ignore = "Needs review"]
+    /// Runs the cc defines1 example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_cc_defines1_example_entry_point() {
         main();
     }
 }

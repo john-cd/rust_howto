@@ -55,6 +55,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
+    /// Runs the scrypt example through its entry point.
     #[test]
     fn test_scrypt_example_entry_point() {
         main().expect("example entry point should succeed");

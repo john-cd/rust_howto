@@ -98,8 +98,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the ustr example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_ustr_example_entry_point() {
         main();
     }
 }

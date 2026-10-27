@@ -43,8 +43,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the fuzzy search example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_fuzzy_search_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

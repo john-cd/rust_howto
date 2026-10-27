@@ -47,8 +47,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the retain example's main path succeeds.
+    /// Runs the retain example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_retain_example_entry_point() {
         use std::io::Write as _;
 
         std::fs::create_dir_all("temp")

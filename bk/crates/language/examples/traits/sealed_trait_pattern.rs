@@ -56,8 +56,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the sealed trait pattern example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_sealed_trait_pattern_example_entry_point() {
         main();
     }
 }

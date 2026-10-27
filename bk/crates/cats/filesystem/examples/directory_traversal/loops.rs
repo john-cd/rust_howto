@@ -68,8 +68,9 @@ mod tests {
     use super::*;
 
     /// Verifies that the loops example's main path succeeds.
+    /// Runs the loops example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_loops_example_entry_point() -> anyhow::Result<()> {
         // mkdir -p /tmp/foo/bar/baz
         if let Ok(exists) = std::fs::exists("/tmp/foo/bar/baz")
             && !exists

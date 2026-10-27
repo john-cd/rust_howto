@@ -39,3 +39,14 @@ fn main() -> anyhow::Result<()> {
 pub fn run() -> anyhow::Result<()> {
     main()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies the INI parsing example completes successfully.
+    #[test]
+    fn test_configparser_ini_example_entry_point() -> anyhow::Result<()> {
+        main()
+    }
+}

@@ -96,8 +96,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the onnx infer example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_onnx_infer_example_entry_point() -> Result<()> {
         main()
     }
 }

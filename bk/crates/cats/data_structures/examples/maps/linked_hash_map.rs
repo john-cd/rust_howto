@@ -27,8 +27,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the linked hash map example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_linked_hash_map_example_entry_point() {
         main();
     }
 }

@@ -43,8 +43,9 @@ mod tests {
     }
 
     /// Verifies that the example's main path runs.
+    /// Runs the option combinators example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_option_combinators_example_entry_point() {
         main();
     }
 }

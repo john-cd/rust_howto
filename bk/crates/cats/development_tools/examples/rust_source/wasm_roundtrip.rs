@@ -64,8 +64,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the wasm roundtrip example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_wasm_roundtrip_example_entry_point() -> Result<()> {
         main()
     }
 

@@ -66,8 +66,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the egui log viewer example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_egui_log_viewer_example_entry_point() {
         main();
     }
 

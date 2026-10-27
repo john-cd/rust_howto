@@ -33,8 +33,9 @@ mod tests {
 
     /// Verifies that the bounded queue accepts values up to capacity in FIFO
     /// order.
+    /// Runs the crossbeam queue example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_crossbeam_queue_example_entry_point() {
         main().expect("queue recipe should pass its assertions");
     }
 }

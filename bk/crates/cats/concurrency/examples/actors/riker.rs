@@ -99,8 +99,9 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the riker example through its entry point.
     #[test]
-    fn test_main() -> Result<()> {
+    fn test_riker_example_entry_point() -> Result<()> {
         main()
     }
 }

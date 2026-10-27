@@ -17,6 +17,18 @@ fn main() -> anyhow::Result<()> {
 
     let conn = Connection::open("temp/cats.db")?;
 
+    create_tables(&conn)?;
+
+    println!("Tables created.");
+    Ok(())
+}
+
+/// Creates the tables used by the SQLite cat example.
+///
+/// # Errors
+///
+/// Returns an error if SQLite cannot create either table.
+fn create_tables(conn: &Connection) -> anyhow::Result<()> {
     conn.execute(
         "create table if not exists cat_colors (
                  id integer primary key,
@@ -32,11 +44,30 @@ fn main() -> anyhow::Result<()> {
                  )",
         (), // Empty list of parameters.
     )?;
-    println!("Tables created.");
     Ok(())
 }
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
     main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies both example tables can be created in an in-memory database.
+    #[test]
+    fn test_sqlite_initialization_creates_both_tables() -> anyhow::Result<()> {
+        let conn = Connection::open_in_memory()?;
+        create_tables(&conn)?;
+
+        let table_count: i64 = conn.query_row(
+            "SELECT COUNT(*) FROM sqlite_master WHERE type = 'table' AND name IN ('cat_colors', 'cats')",
+            [],
+            |row| row.get(0),
+        )?;
+        assert_eq!(table_count, 2);
+        Ok(())
+    }
 }

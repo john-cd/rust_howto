@@ -41,8 +41,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the modify cow in place example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_modify_cow_in_place_example_entry_point() {
         main();
     }
 }

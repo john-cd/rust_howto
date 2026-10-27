@@ -29,8 +29,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the rayon iter mut example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_rayon_iter_mut_example_entry_point() {
         main();
     }
 }

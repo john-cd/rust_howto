@@ -82,8 +82,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the singleton example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_singleton_example_entry_point() {
         main();
     }
 }

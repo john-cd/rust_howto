@@ -53,8 +53,9 @@ mod tests {
 
     /// Runs the generic numeric-trait example with integer and floating-point
     /// types.
+    /// Runs the num traits example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_num_traits_example_entry_point() {
         main();
     }
 }

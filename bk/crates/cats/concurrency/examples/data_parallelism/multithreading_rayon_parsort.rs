@@ -23,8 +23,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the multithreading rayon parsort example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_multithreading_rayon_parsort_example_entry_point() {
         main();
     }
 }

@@ -45,8 +45,9 @@ mod tests {
     use super::*;
 
     /// Signs and verifies the original message while rejecting a changed one.
+    /// Runs the ed25519 example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_ed25519_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }

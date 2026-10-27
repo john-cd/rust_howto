@@ -41,8 +41,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the smartcore fit example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_smartcore_fit_example_entry_point() {
         main().expect("the model fits");
     }
 }

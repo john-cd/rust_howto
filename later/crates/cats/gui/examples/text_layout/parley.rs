@@ -59,9 +59,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the parley example through its entry point.
     #[test]
     #[ignore = "requires an interactive example runtime"]
-    fn test_main() {
+    fn test_parley_example_entry_point() {
         main();
     }
 }

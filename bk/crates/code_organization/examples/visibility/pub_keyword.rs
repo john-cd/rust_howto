@@ -64,8 +64,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the pub keyword example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_pub_keyword_example_entry_point() {
         main();
     }
 }

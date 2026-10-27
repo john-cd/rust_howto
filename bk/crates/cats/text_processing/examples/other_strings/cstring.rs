@@ -65,8 +65,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the cstring example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_cstring_example_entry_point() {
         main();
     }
 }

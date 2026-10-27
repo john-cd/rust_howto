@@ -45,8 +45,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the call blocking from async rayon example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_call_blocking_from_async_rayon_example_entry_point() {
         main();
     }
 }

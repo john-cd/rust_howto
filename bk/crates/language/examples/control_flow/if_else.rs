@@ -43,8 +43,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the if else example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_if_else_example_entry_point() {
         main();
     }
 }

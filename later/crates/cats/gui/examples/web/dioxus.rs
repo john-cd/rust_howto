@@ -34,3 +34,15 @@ pub fn run() {
     main();
 }
 // ANCHOR_END: example
+
+#[cfg(all(test, feature = "dioxus"))]
+mod tests {
+    use super::*;
+
+    /// Launches the Dioxus application when a browser runtime is available.
+    #[test]
+    #[ignore = "requires an interactive browser application runtime"]
+    fn test_dioxus_application_entry_point() {
+        main();
+    }
+}

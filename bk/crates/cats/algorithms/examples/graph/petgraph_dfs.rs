@@ -59,8 +59,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the petgraph dfs example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_petgraph_dfs_example_entry_point() {
         main();
     }
 }

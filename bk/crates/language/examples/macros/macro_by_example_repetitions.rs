@@ -42,8 +42,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the macro by example repetitions example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_macro_by_example_repetitions_example_entry_point() {
         main();
     }
 }

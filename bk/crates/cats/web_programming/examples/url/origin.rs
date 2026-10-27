@@ -32,8 +32,9 @@ pub fn run() -> Result<(), ParseError> {
 mod tests {
     use super::*;
 
+    /// Runs the origin example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_origin_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

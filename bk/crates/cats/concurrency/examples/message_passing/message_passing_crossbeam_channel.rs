@@ -87,8 +87,10 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the message passing crossbeam channel example through its entry
+    /// point.
     #[test]
-    fn test_main() {
+    fn test_message_passing_crossbeam_channel_example_entry_point() {
         main();
     }
 }

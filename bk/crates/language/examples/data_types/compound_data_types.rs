@@ -143,8 +143,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the compound data types example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_compound_data_types_example_entry_point() {
         main();
     }
 

@@ -28,8 +28,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the colored example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_colored_example_entry_point() {
         main();
     }
 }

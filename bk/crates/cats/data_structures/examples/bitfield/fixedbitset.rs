@@ -62,8 +62,9 @@ mod tests {
     use super::*;
 
     /// Checks graph traversal and fixed-bit-set operations.
+    /// Runs the fixedbitset example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_fixedbitset_example_entry_point() {
         main();
     }
 }

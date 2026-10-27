@@ -11,8 +11,9 @@ fn main() {} // TODO
 mod tests {
     use super::*;
 
+    /// Runs the external ffi bindings example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_external_ffi_bindings_example_entry_point() {
         main();
     }
 }

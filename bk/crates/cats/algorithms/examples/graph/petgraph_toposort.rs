@@ -69,8 +69,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the petgraph toposort example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_petgraph_toposort_example_entry_point() {
         main();
     }
 }

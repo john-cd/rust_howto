@@ -43,8 +43,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the use shortcuts example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_use_shortcuts_example_entry_point() {
         main();
     }
 }

@@ -90,8 +90,9 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the xlsxwriter example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_xlsxwriter_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

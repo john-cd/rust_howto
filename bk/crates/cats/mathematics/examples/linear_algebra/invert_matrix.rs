@@ -35,8 +35,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the invert matrix example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_invert_matrix_example_entry_point() {
         main();
     }
 }

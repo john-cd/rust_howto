@@ -123,8 +123,9 @@ mod tests {
     /// # Errors
     ///
     /// Returns an error if the round trip fails.
+    /// Runs the async compression example through its entry point.
     #[test]
-    fn test_main() -> anyhow::Result<()> {
+    fn test_async_compression_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

@@ -46,8 +46,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the closures as input parameters example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_closures_as_input_parameters_example_entry_point() {
         main();
     }
 }

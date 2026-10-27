@@ -31,8 +31,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the proc macro attribute example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_proc_macro_attribute_example_entry_point() {
         main();
     }
 }

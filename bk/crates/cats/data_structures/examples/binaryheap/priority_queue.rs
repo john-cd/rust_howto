@@ -161,8 +161,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the priority queue example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_priority_queue_example_entry_point() {
         main();
     }
 }

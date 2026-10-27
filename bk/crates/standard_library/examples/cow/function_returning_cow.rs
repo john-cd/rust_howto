@@ -51,8 +51,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the function returning cow example through its entry point.
     #[test]
-    fn test_main() {
+    fn test_function_returning_cow_example_entry_point() {
         main();
     }
 }

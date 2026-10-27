@@ -71,9 +71,10 @@ pub fn run() -> Result<(), baseview::Error> {
 mod tests {
     use super::*;
 
+    /// Runs the baseview example through its entry point.
     #[test]
     #[ignore = "requires interactive example runtime"]
-    fn test_main() -> Result<(), baseview::Error> {
+    fn test_baseview_example_entry_point() -> Result<(), baseview::Error> {
         main()
     }
 }

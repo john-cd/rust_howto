@@ -57,7 +57,7 @@ pub fn run() {
 
 /// Verifies cycle detection identifies all tasks in the cycle.
 #[test]
-fn test() {
+fn test_cycle_detection_finds_cycle_members() {
     let graph = dependency_graph();
     assert!(is_cyclic_directed(&graph));
     assert_eq!(cyclic_components(&graph), vec![vec!["parse", "validate"]]);
