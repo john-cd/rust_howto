@@ -52,20 +52,21 @@ enum Commands {
 /// Runs the example selected on the command line.
 ///
 /// # Errors
-/// Returns an error if the selected actor example cannot start.
+/// Returns an error if the selected actor example cannot complete its message
+/// exchange.
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Actix => {
-                actix::run();
+                actix::run()?;
             }
             Commands::Actors => {
                 actors::run()?;
             }
             Commands::Ractor => {
-                ractor::run();
+                ractor::run()?;
             }
             // Disabled with the `riker` Cargo feature while its dependency
             // chain is vulnerable.
@@ -76,7 +77,7 @@ fn main() -> anyhow::Result<()> {
             // }
             #[cfg(feature = "stakker")]
             Commands::Stakker => {
-                stakker::run();
+                stakker::run()?;
             }
         }
     }

@@ -304,7 +304,8 @@ Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references an
 
 #### NOW-PROSE-11 — Asynchronous programming and caching - IN PROGRESS
 
-- [#269](https://github.com/john-cd/rust_howto/issues/269) — **P3** — concurrency/_actors.md: _actors: organize — **IN PROGRESS on `codex/issue-269-actors-organize` in worktree `h`**
+- [#269](https://github.com/john-cd/rust_howto/issues/269) — **P3** — concurrency/_actors.md: _actors: organize — **IMPLEMENTED on topic branch; focused checks pass; full gates and PR pending**
+  - Focused actor Clippy, four actor tests, dprint, rumdl, chapter spelling, and direct refdefs check pass. `just ca`, `just ntt actors`, `just bb`, and `just spell` stop at the Git Bash `NtCreateDirectoryObject` access error; `just refdefs check` is not a defined recipe. Direct all-target Clippy also reports a pre-existing semicolon lint in `message_passing_crossbeam_channel.rs`.
 
 #### NOW-PROSE-12 — Aerospace and device protocols - IN PROGRESS
 

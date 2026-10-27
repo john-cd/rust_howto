@@ -4,7 +4,11 @@
 // ANCHOR: example
 //! An `actix` counter actor that replies with its updated total.
 
-use actix::prelude::*;
+use actix::Actor;
+use actix::Context as ActorContext;
+use actix::Handler;
+use actix::Message;
+use actix::System;
 use anyhow::Context;
 
 /// A message that adds an amount to the counter.
@@ -21,7 +25,7 @@ struct Counter {
 }
 
 impl Actor for Counter {
-    type Context = Context<Self>;
+    type Context = ActorContext<Self>;
 }
 
 impl Handler<Add> for Counter {
@@ -31,7 +35,7 @@ impl Handler<Add> for Counter {
     fn handle(
         &mut self,
         message: Add,
-        _context: &mut Context<Self>,
+        _context: &mut ActorContext<Self>,
     ) -> Self::Result {
         self.total += message.0;
         self.total

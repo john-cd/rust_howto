@@ -102,7 +102,7 @@ impl ractor::Actor for Greeter {
 ///
 /// # Errors
 /// Returns an error if the actor cannot start, receive its message, reply, or
-/// shut down successfully.
+/// join successfully.
 async fn run_actor() -> anyhow::Result<String> {
     let (actor, handle) = Actor::spawn(Some("Greeter".to_owned()), Greeter, ())
         .await
@@ -119,10 +119,7 @@ async fn run_actor() -> anyhow::Result<String> {
     let reply = reply_from
         .await
         .context("greeter actor stopped before replying")?;
-    handle
-        .await
-        .context("joining the greeter actor task")?
-        .context("greeter actor stopped with an error")?;
+    handle.await.context("joining the greeter actor task")?;
     Ok(reply)
 }
 
