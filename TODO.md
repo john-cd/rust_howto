@@ -24,7 +24,7 @@
 
 - [/] improve comments within examples. add context and explanations where necessary. end with a period.
   - [x] added behavior-specific doc comments to new example entry-point tests; a broad editorial comment review remains
-  - [/] clarified commentary in 11 examples; the broader editorial review remains.
+  - [/] clarified commentary in 15 examples; the broader editorial review remains.
 - [/] WAIT move code examples from later/ to bk/ when code + text ready
   - [x] retain the separate LATER text and staging workspaces; no additional matching chapter paths or ready package pairs were identified in this pass
 
