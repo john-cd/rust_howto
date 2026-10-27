@@ -6,8 +6,8 @@
 use url::Position;
 use url::Url;
 
-// If `parse` fails, `main` returns `Err` and the error message is displayed on
-// the console.
+// If URL parsing fails, `example` returns the error and `main` propagates it
+// to the runtime, which reports it on the console.
 /// Parses a URL and prints it up to the end of its path.
 ///
 /// Returns an error if the URL is invalid.

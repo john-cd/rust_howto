@@ -12,7 +12,7 @@ use clap::value_parser;
 
 // (APP-LEVEL) ARGUMENTS -------------------------------
 
-/// global "--config FILE" flag
+/// Global `--config FILE` flag.
 ///
 /// Example: `cargo r -- --conf config.toml`
 pub(super) fn arg_config() -> Arg {
@@ -28,8 +28,7 @@ pub(super) fn arg_config() -> Arg {
         // default .required(false) // The argument does not need to be present.
         // default .action(ArgAction::Set)
         .env("TOOL_CONFIG_FILE") // Read from the environment variable when the argument is not present.
-        .global(true) // The --config flag can be passed to all child
-    // subcommands.
+        .global(true) // Make the --config flag available to all subcommands.
 }
 
 /// Returns the path given with `--config`, if any.
@@ -37,7 +36,7 @@ pub(super) fn get_arg_config(matches: &ArgMatches) -> Option<PathBuf> {
     matches.get_one::<PathBuf>("config").cloned()
 }
 
-/// "filepath..." positional argument
+/// Positional argument for one or more file paths.
 ///
 /// Example: `cargo r -- file1.csv file2.csv`
 pub(super) fn arg_filepaths() -> Arg {

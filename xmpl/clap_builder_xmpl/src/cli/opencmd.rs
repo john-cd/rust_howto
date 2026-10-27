@@ -10,21 +10,18 @@ use clap::Command;
 use super::args::arg_filepaths;
 use super::args::get_arg_filepaths;
 
-/// Defines the `<exec> open file`.
+/// Defines the `open` command, which accepts one or more file paths.
 pub(super) fn cmd() -> Command {
     Command::new("open")
-        // We could also use: .short_flag('o') or .visible_alias("o")
+        // An optional short flag or visible alias could provide the `-o` shortcut.
         .about("Open one or more files")
-        .arg(arg_filepaths().required(true)) // the main program's
-    // argument is reused
-    // here, but is
-    // marked required.
+        .arg(arg_filepaths().required(true))
 }
 
 /// Returns the files given to the `open` command, if it was run.
 pub(super) fn get_args(matches: &ArgMatches) -> Option<Vec<PathBuf>> {
     let m = matches.subcommand_matches("open")?;
-    // "$ myapp open ..." was run
+    // The command line included `myapp open ...`.
     get_arg_filepaths(m)
 }
 

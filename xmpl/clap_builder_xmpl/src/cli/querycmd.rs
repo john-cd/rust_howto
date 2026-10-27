@@ -9,20 +9,22 @@ use clap::arg;
 /// Defines the `query` command, which takes the words of the query.
 pub(super) fn cmd() -> Command {
     Command::new("query")
-        // optional: .short_flag('q')
+        // An optional short flag could provide the `-q` shortcut.
         .about("Query a data source")
         .arg(
             arg!(<query> ... "query to run")
                 .required(true)
                 .value_parser(clap::builder::NonEmptyStringValueParser::new())
-                // .trailing_var_arg(true) // everything that follows `query` should be captured
+                // Optionally capture all remaining tokens as trailing arguments.
+                // .trailing_var_arg(true)
                 .allow_negative_numbers(true),
         )
 }
 // See: <https://docs.rs/clap/latest/clap/struct.Arg.html#method.trailing_var_arg>
 
-/// Returns `ArgMatches` for the `query` subcommand. Returns empty Vec
-/// if the subcommand wasn't present at runtime.
+/// Returns the words supplied to the `query` subcommand.
+///
+/// Returns an empty vector if the subcommand was not present.
 pub(super) fn get_args(matches: &ArgMatches) -> Vec<String> {
     if let Some(sub_m) = matches.subcommand_matches("query") {
         sub_m
