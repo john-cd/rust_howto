@@ -4,65 +4,20 @@
 
 [![cat~database][cat~database~badge]][cat~database]
 
-This section describes interfaces with database management systems{{hi:Database management systems}}.
+This section covers Rust libraries for connecting to database management systems and related data services. Choose a chapter by database type or by the task you need to perform.
 
-| Database                         | Rust crates                                                                                                                                                                       |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SQL Databases                    | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} (supports multiple databases)                                                                                                                   |
-| PostgreSQL                       | [`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}}, [`postgres`][c~postgres~docs]↗{{hi:postgres}}                                                                    |
-| MySQL                            | [`mysql_async`][c~mysql_async~docs]↗{{hi:mysql_async}}, [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} (with MySQL support)                                                                    |
-| SQLite                           | [`rusqlite`][c~rusqlite~docs]↗{{hi:rusqlite}}                                                                                                                                     |
-| MongoDB                          | [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}}                                                                                                                                        |
-| Redis                            | [`redis`][c~redis~docs]↗{{hi:redis}}                                                                                                                                              |
-| Object-Relational Mappers (ORMs) | [`diesel`][c~diesel~docs]↗{{hi:diesel}}, [`sea-orm`][c~sea-orm~docs]↗{{hi:sea-orm}}                                                                                               |
-| Database Migrations              | [`sea-orm-cli`][c~sea-orm-cli~docs]↗{{hi:sea-orm-cli}} (for SeaORM), [`diesel_cli`][c~diesel_cli~docs]↗{{hi:diesel_cli}} (for Diesel), [`migrate`][c~migrate~docs]↗{{hi:migrate}} |
-| Connection Pooling               | [`bb8`][c~bb8~docs]↗{{hi:bb8}}, [`deadpool`][c~deadpool~docs]↗{{hi:deadpool}}                                                                                                     |
-
-## Code Examples
-
-### SQLite
-
-{{#include sqlite.incl.md}}
-
-### Postgres
-
-{{#include postgres.incl.md}}
-
-### Microsoft SQL Server (MSSQL)
-
-{{#include mssql.incl.md}}
-
-### Oracle DB
-
-{{#include oracle.incl.md}}
-
-### Connection Pools
-
-{{#include connection_pool.incl.md}}
-
-### Query Builders and ORMs
-
-{{#include query_builders_orms.incl.md}}
-
-### NoSQL and Friends
-
-{{#include nosql.incl.md}}
-
-### Key-Value Stores
-
-{{#include key_value_stores.incl.md}}
-
-### Search
-
-{{#include search.incl.md}}
-
-### Message Queues (AMQP)
-
-{{#include amqp.incl.md}}
+| Group     | Topic                                                      | Recommended Rust crates                                                                                                                                                                                                                                      |
+| --------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| SQL       | [SQLite][ex~database~create-database-sqlite]               | [`rusqlite`][c~rusqlite~docs]↗, [`sqlx`][c~sqlx~docs]↗                                                                                                                                                                                                       |
+| SQL       | [PostgreSQL][p~postgres]                                   | [`tokio-postgres`][c~tokio-postgres~docs]↗, [`postgres`][c~postgres~docs]↗, [`sqlx`][c~sqlx~docs]↗                                                                                                                                                           |
+| SQL       | [Microsoft SQL Server][ex~database~tiberius]               | [`tiberius`][c~tiberius~docs]↗                                                                                                                                                                                                                               |
+| SQL       | [Oracle][ex~database~oracle]                               | [`oracle`][c~oracle~docs]↗, [`sibyl`][c~sibyl~docs]↗, [`diesel-oci`][c~diesel-oci~docs]↗                                                                                                                                                                     |
+| NoSQL     | [MongoDB, Redis, and Cassandra][ex~database~mongodb]       | [`mongodb`][c~mongodb~docs]↗, [`redis`][c~redis~docs]↗, [`cdrs-tokio`][c~cdrs-tokio~docs]↗, [`cassandra-protocol`][c~cassandra-protocol~docs]↗                                                                                                               |
+| NoSQL     | [Key-value stores][ex~database~heed]                       | [`heed`][c~heed~docs]↗, [`rocksdb`][c~rocksdb~docs]↗                                                                                                                                                                                                         |
+| NoSQL     | [Search][ex~database~search]                               | [`elastic`][c~elastic~docs]↗, [`tinysearch`][c~tinysearch~docs]↗                                                                                                                                                                                             |
+| Messaging | [AMQP message queues][ex~database~lapin]                   | [`lapin`][c~lapin~docs]↗                                                                                                                                                                                                                                     |
+| Tooling   | [Connection pools][ex~database~connection-pool]            | [`bb8`][c~bb8~docs]↗, [`deadpool`][c~deadpool~docs]↗, [`r2d2`][c~r2d2~docs]↗                                                                                                                                                                                 |
+| Tooling   | [Query builders and ORMs][ex~database~query-builders-orms] | [`sqlx`][c~sqlx~docs]↗ (PostgreSQL, MySQL, SQLite), [`sea-orm`][c~sea-orm~docs]↗, [`diesel`][c~diesel~docs]↗, [`toasty`][c~toasty~docs]↗; migrations: [`sea-orm-cli`][c~sea-orm-cli~docs]↗, [`diesel_cli`][c~diesel_cli~docs]↗, [`migrate`][c~migrate~docs]↗ |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [organize](https://github.com/john-cd/rust_howto/issues/1065)
-</div>
