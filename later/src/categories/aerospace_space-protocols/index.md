@@ -12,6 +12,7 @@ This category collects Rust guidance for spacecraft communication protocols. Sta
 
 - [[aerospace | Aerospace]].
 - [[aerospace_protocols | Aerospace Protocols]].
+- [[data-structures | Data Structures]].
 - [[parsing | Parsing]].
 - [[encoding | Encoding]].
 
