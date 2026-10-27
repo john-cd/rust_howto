@@ -279,7 +279,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#472](https://github.com/john-cd/rust_howto/issues/472) — **P4** — science/index.md: write — **NOT STARTED**
 - #473 — **P4** — science/classical_machine_learning.md: organize / write — **CLOSED; IMPLEMENTED AND INTEGRATED ON LOCAL DEVELOP**
 - [#474](https://github.com/john-cd/rust_howto/issues/474) — **P4** — science_geo/geo.md: geo: write — **NOT STARTED**
-- [#476](https://github.com/john-cd/rust_howto/issues/476) — **P4** — science_neuroscience/neuroscience.md: neuro: write — **NOT STARTED**
+- [#476](https://github.com/john-cd/rust_howto/issues/476) — **P4** — science_neuroscience/neuroscience.md: neuro: write — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#477](https://github.com/john-cd/rust_howto/issues/477) — **P4** — science_robotics/robot_operating_systems.md: robotics: organize — **NOT STARTED**
 - [#479](https://github.com/john-cd/rust_howto/issues/479) — **P4** — science_robotics/robotics_frameworks.md: useful_robotics_tools_and_libs: locate libs, organize, write — **NOT STARTED**
 - [#480](https://github.com/john-cd/rust_howto/issues/480) — **P4** — science_robotics/index.md: organize — **NOT STARTED**
