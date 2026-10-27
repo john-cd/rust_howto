@@ -9,16 +9,16 @@ members = ["cats/*", "other"]
 version = "0.1.2"
 authors = ["John CD"]
 categories = [
-  "algorithms",
-  "asynchronous",
-  "concurrency",
-  "web-programming",
-  "development-tools",
-  "api-bindings",
-  "caching",
-  "command-line-interface",
-  "compilers",
-  "compression",
+    "algorithms",
+    "asynchronous",
+    "concurrency",
+    "web-programming",
+    "development-tools",
+    "api-bindings",
+    "caching",
+    "command-line-interface",
+    "compilers",
+    "compression",
 ]
 documentation = "https://docs.rs/rust_howto/"
 edition = "2024"

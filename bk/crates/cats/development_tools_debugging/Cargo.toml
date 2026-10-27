@@ -21,11 +21,11 @@ publish.workspace = true
 [features]
 default = []
 opentelemetry = [
-  "dep:opentelemetry",
-  "dep:opentelemetry-otlp",
-  "dep:opentelemetry_sdk",
-  "dep:opentelemetry-stdout",
-  "dep:tracing-opentelemetry",
+    "dep:opentelemetry",
+    "dep:opentelemetry-otlp",
+    "dep:opentelemetry_sdk",
+    "dep:opentelemetry-stdout",
+    "dep:tracing-opentelemetry",
 ]
 
 [dependencies]
@@ -42,9 +42,9 @@ metrics-exporter-prometheus = { version = "0.18.3", default-features = false } #
 opentelemetry = { version = "0.33.1", optional = true }
 # Builds an OTLP/HTTP exporter for OpenObserve traces.
 opentelemetry-otlp = { version = "0.33.1", default-features = false, features = [
-  "http-proto",
-  "reqwest-blocking-client",
-  "trace",
+    "http-proto",
+    "reqwest-blocking-client",
+    "trace",
 ], optional = true }
 # Exports spans to stdout for a self-contained example.
 opentelemetry-stdout = { version = "0.33.1", optional = true }

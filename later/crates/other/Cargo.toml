@@ -33,18 +33,16 @@ polars = ["dep:polars"]
 ## General
 anyhow = "1.0.104"
 
+## Machine learning
+arc-swap = { version = "1", optional = true }
+
 ## Data processing
 arrow = { version = "58.4.0", features = ["csv", "json", "prettyprint"], optional = true }
 arrow-array = { version = "58.4.0", optional = true } # Typed columns and `RecordBatch`, without the umbrella crate.
 arrow-cast = { version = "58.4.0", features = ["prettyprint"], optional = true } # Pretty-print record batches.
 arrow-ipc = { version = "58.4.0", optional = true } # Arrow IPC file and stream formats.
 async-trait = "0.1.92"
-polars = { version = "0.51.0", default-features = false, features = ["lazy", "csv"], optional = true }
-
-## Scheduling
-chrono = "0.4.45"
-cron = "0.17.0"
-tokio-util = "0.7.20"
+augurs = { version = "0.10", features = ["ets", "mstl"] }
 
 ## Cloud
 aws-config = "1.13.0"
@@ -56,40 +54,42 @@ aws-sdk-sns = "1.119.0"
 aws-sdk-sqs = "1.117.0"
 axum = "0.8.9"
 base64 = "0.23.1" # Binary Protobuf payloads in SQS text bodies.
-clap = { version = "4.6.7", features = ["derive"] }
-futures = "0.3"
-k8s-openapi = { version = "0.28", features = ["latest"] }
-kube = { version = "4.2", features = ["derive", "runtime", "client"] }
-schemars = "1"
-serde_json = "1.0.154" # Converts Arrow JSON output back into Serde rows, and parses Lambda payloads.
-thiserror = "2"
 
-## Machine learning
-arc-swap = { version = "1", optional = true }
-augurs = { version = "0.10", features = ["ets", "mstl"] }
-ort = { version = "2.0.0-rc.15", optional = true } # Downloads ONNX Runtime binaries at build time
-smartcore = "0.5.5"
+## Scheduling
+chrono = "0.4.45"
+clap = { version = "4.6.7", features = ["derive"] }
+cron = "0.17.0"
 
 ## Cross platform
 crux_core = "0.17.0"
 datafusion = { version = "55.2.0", default-features = false, features = [
-  "sql",
+    "sql",
 ], optional = true } # Enable SQL without unused native compression codecs.
+futures = "0.3"
+k8s-openapi = { version = "0.28", features = ["latest"] }
+kube = { version = "4.2", features = ["derive", "runtime", "client"] }
 lambda_runtime = "1.5.0"
+ort = { version = "2.0.0-rc.15", optional = true } # Downloads ONNX Runtime binaries at build time
+polars = { version = "0.51.0", default-features = false, features = ["lazy", "csv"], optional = true }
 prost = "0.14.4" # Protobuf message derive.
 
 ## Scripting
 rhai = "1.27.0"
+schemars = "1"
 serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154" # Converts Arrow JSON output back into Serde rows, and parses Lambda payloads.
 
 ## Architecture
 shaku = "0.6.3"
 shuttle-axum = "0.57.0"
 shuttle-runtime = "0.57.0"
+smartcore = "0.5.5"
 
 ## GPU
 spirv-std = "0.9.0"
+thiserror = "2"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time", "test-util"] }
+tokio-util = "0.7.20"
 tracing = "0.1.44"
 tracing-subscriber = "0.3.23"
 

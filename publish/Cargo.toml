@@ -10,17 +10,17 @@ documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
 homepage = "https://john-cd.com/rust_howto/"
 keywords = [
-  "book",
-  "cookbook",
-  "howto",
-  "how-to",
-  "documentation",
-  "Rust bible",
-  "patterns",
-  "Rust ecosystem",
-  "recipes",
-  "examples",
-  "summary",
+    "book",
+    "cookbook",
+    "howto",
+    "how-to",
+    "documentation",
+    "Rust bible",
+    "patterns",
+    "Rust ecosystem",
+    "recipes",
+    "examples",
+    "summary",
 ]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
@@ -608,7 +608,6 @@ unsafe_derive_deserialize = "warn"
 
 # Checks for functions that are declared async but have no .awaits inside of them.
 unused_async = "warn"
-
 # Checks for trait method implementations that are declared async but have no .awaits inside of
 # them.
 
@@ -626,7 +625,6 @@ verbose_bit_mask = "warn"
 
 # Checks for wildcard imports use _::*.
 wildcard_imports = "warn"
-
 # Checks for calls to with_capacity(0) on standard library collections and types.
 
 # Checks for maps with zero-sized value types anywhere in the code.

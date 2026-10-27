@@ -18,12 +18,12 @@ categories = ["development-tools::ffi"]
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
 
+[package.metadata.cargo-machete]
+ignored = ["cc", "bindgen", "cbindgen"]
+
 [lib]
 path = "examples/c/cbindgen.rs"
 crate-type = ["cdylib"]
-
-[package.metadata.cargo-machete]
-ignored = ["cc", "bindgen", "cbindgen"]
 
 [features]
 cpp = ["dep:cxx", "dep:cxx-build"]

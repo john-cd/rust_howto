@@ -47,12 +47,12 @@ smallvec = "1.16.3" # alpha
 tinyvec = { version = "1.13.3", features = ["alloc"] }
 ulid = "3.0.0"
 uuid = { version = "1.28.0", features = [
-  # Lets us generate random UUIDs.
-  "v4",
-  # Use a faster (but still sufficiently random) RNG.
-  "fast-rng",
-  # Enable better diagnostics for compile-time UUIDs.
-  "macro-diagnostics",
+    # Lets us generate random UUIDs.
+    "v4",
+    # Use a faster (but still sufficiently random) RNG.
+    "fast-rng",
+    # Enable better diagnostics for compile-time UUIDs.
+    "macro-diagnostics",
 ] }
 
 [[example]]
