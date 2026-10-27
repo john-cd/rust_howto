@@ -72,3 +72,8 @@
 [ffi~frb-integration]: https://cjycode.com/flutter_rust_bridge/manual/integrate/builtin
 [ffi~dart-ffi]: https://dart.dev/interop/c-interop
 [ffi~rinf]: https://pub.dev/packages/rinf
+
+[ffi~jni-guide]: https://docs.rs/jni/0.22.4/jni/
+[ffi~jni-invocation]: https://docs.rs/jni/0.22.4/jni/#launching-jvm-from-rust
+[ffi~java-ffm]: https://docs.oracle.com/en/java/javase/22/core/foreign-function-and-memory-api.html
+[ffi~mobile]: https://github.com/rust-mobile

@@ -25,6 +25,11 @@ use jni::objects::JString;
 // com.example.NativeLibrary` so the JVM can find `mylib.dll`, `libmylib.so`, or
 // `libmylib.dylib`.
 
+/// Formats the greeting independently of the JVM.
+fn greeting(name: &str) -> String {
+    format!("Hello, {name}!")
+}
+
 /// Returns a greeting for `name`; called from Java as `NativeLibrary.greet`.
 // `no_mangle` preserves the symbol name expected by the JVM.
 #[unsafe(no_mangle)]
@@ -40,10 +45,22 @@ pub extern "system" fn Java_com_example_NativeLibrary_greet<'a>(
     unowned_env
         .with_env(|env| -> jni::errors::Result<_> {
             let name_str = name.try_to_string(env)?;
-            let hello = format!("Hello, {name_str}!");
+            let hello = greeting(&name_str);
             env.new_string(&hello)
         })
         .resolve::<ThrowRuntimeExAndDefault>()
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::greeting;
+
+    /// Checks the text returned by the native method without starting a JVM.
+    #[test]
+    fn greeting_preserves_the_java_caller_name() {
+        assert_eq!(greeting("World"), "Hello, World!");
+    }
+}
+
 // [finish](https://github.com/john-cd/rust_howto/issues/1029)
