@@ -1,6 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [ex~cryptography_cryptocurrencies~cryptocurrencies]: cryptocurrencies.md#cryptocurrencies
+[ethers-rs~repo]: https://github.com/gakonst/ethers-rs
 [c~bdk_wallet~docs]: https://docs.rs/bdk_wallet
 [c~bdk_wallet~docs~badge]: https://img.shields.io/crates/v/bdk_wallet?label=bdk_wallet
 [c~alloy~docs]: https://docs.rs/alloy

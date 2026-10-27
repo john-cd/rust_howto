@@ -18,7 +18,7 @@ Rust cryptocurrency applications combine protocol clients, wallets, smart-contra
 
 [![alloy][c~alloy~docs~badge]][c~alloy~docs]{{hi:Ethereum}}
 
-[`alloy`][c~alloy~docs]↗ provides Ethereum types, providers, signers, and network access. The older `ethers` ecosystem is deprecated in favor of Alloy; see the deprecation notice.
+[`alloy`][c~alloy~docs]↗ provides Ethereum types, providers, signers, and network access. The older `ethers` ecosystem is deprecated in favor of Alloy; see the [upstream deprecation notice][ethers-rs~repo]↗.
 
 ## Solana Programs
 
