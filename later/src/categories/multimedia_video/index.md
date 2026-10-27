@@ -22,7 +22,7 @@ The runnable example in the table above encodes synthetic frames with [`rav1e`][
 
 ## General Video Decoding, Encoding, and Manipulation
 
-FFmpeg bindings ([`ffmpeg-next`][c~ffmpeg-next~docs]↗{{hi:ffmpeg-next}}) is a very powerful and comprehensive library for working with video (and audio). It supports a wide range of formats and codecs. FFmpeg is also capable of video manipulation (resizing, cropping, filtering, etc.). However, it can be complex to use due to its extensive API. This crate is currently in maintenance mode.
+FFmpeg bindings ([`ffmpeg-next`][c~ffmpeg-next~docs]↗{{hi:ffmpeg-next}}) provide access to FFmpeg's formats, codecs, and filters. The [maintainer describes the crate as being in maintenance mode][ffmpeg-next~maintenance]↗: compatibility and bug fixes are priorities, but new FFmpeg APIs may need contributions. Check the binding and native-library versions required by your application.
 
 ## Pipelines with GStreamer {#gstreamer}
 

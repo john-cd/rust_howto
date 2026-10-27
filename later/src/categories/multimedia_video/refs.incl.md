@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[ffmpeg-next~maintenance]: https://github.com/zmwangx/rust-ffmpeg
 
 [c~gstreamer~docs]: https://docs.rs/gstreamer
 [c~av-scenechange~docs]: https://docs.rs/av-scenechange
