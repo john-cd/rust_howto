@@ -4,68 +4,37 @@
 
 [![cat~game-development][cat~game-development~badge]][cat~game-development]{{hi:Game development}}
 
-This section focuses on individual parts of game development. For high-level game engines or frameworks, review the [[game-engines | Game Engines]] category.
+This category collects building blocks for making games with Rust, from game frameworks and math libraries to graphics, audio, input, physics, and networking. Start with the recipes below, or compare complete engines and frameworks in the [[game-engines | Game Engines]] category.
 
-Game development in Rust is a vibrant area, and the crates you'll need depend on the type of game you're making:
+For a small example, open the [game development recipes][ex~game-development~game-development]. Choose a framework or engine based on your target platforms, renderer, editor and asset workflow, and the amount of control you need. You can also combine focused libraries to build a custom engine.
 
-| Game Type                            | Rust crate(s)                                                                                                                                                                                                                  |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Simple 2D Games                      | [`ggez`][c~ggez~docs]↗{{hi:ggez}}, [`macroquad`][c~macroquad~docs]↗{{hi:macroquad}}, or a combination of [`winit`][c~winit~docs]↗{{hi:winit}} , [`pixels`][c~pixels~docs]↗{{hi:pixels}}, and [`cpal`][c~cpal~docs]↗{{hi:cpal}} |
-| More Complex 2D/3D Games             | [`Bevy`][c~bevy~docs]↗{{hi:Bevy}} or [`Amethyst`][c~amethyst~docs]↗{{hi:Amethyst}}                                                                                                                                             |
-| Custom Engines or Low-Level Graphics | [`winit`][c~winit~docs]↗{{hi:winit}} , [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}                                                                                                           |
-| Data-Driven Design                   | ECS libraries like [`bevy_ecs`][c~bevy_ecs~docs]↗{{hi:bevy_ecs}}, [`specs`][c~specs~docs]↗{{hi:specs}}, or [`hecs`][c~hecs~docs]↗{{hi:hecs}}                                                                                   |
+## Game Development Recipes
 
-## Code Examples
+The table is maintained in a separate include so the recipe links stay aligned with the examples:
 
 {{#include game_development.incl.md}}
 
-## References
+## Building Blocks
 
-Are we Game yet?
+- **Game frameworks:** [`ggez`][c~ggez~docs]↗{{hi:ggez}} and [`macroquad`][c~macroquad~docs]↗{{hi:macroquad}} provide higher-level starting points for 2D games. See the [[game-engines | Game Engines]] category for more complete options such as Bevy and Fyrox.
+- **Windowing and graphics:** [`winit`][c~winit~docs]↗{{hi:winit}} handles windows and input events; [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} provides a portable graphics API. Browse the [2D rendering][are-we-game-yet?-2d-rendering~website]↗ and [3D rendering][are-we-game-yet?-3d-rendering~website]↗ catalogs for related projects.
+- **Math and physics:** [`glam`][c~glam~docs]↗{{hi:glam}} provides game-oriented vector and matrix types; [`rapier`][rapier.rs~website]↗ provides 2D and 3D physics. Browse the [math][are-we-game-yet?-math~website]↗ and [physics][are-we-game-yet?-physics~website]↗ catalogs for more options.
+- **Audio and input:** [`cpal`][c~cpal~docs]↗{{hi:cpal}} provides cross-platform audio I/O. [`winit`][c~winit~docs]↗{{hi:winit}} and [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}} can handle input; compare libraries in the [audio][are-we-game-yet?-audio~website]↗ and [input][are-we-game-yet?-input~website]↗ catalogs.
+- **Entity component systems:** [`bevy_ecs`][c~bevy_ecs~docs]↗{{hi:bevy_ecs}}, [`hecs`][c~hecs~docs]↗{{hi:hecs}}, and [`specs`][c~specs~docs]↗{{hi:specs}} help organize data-driven game logic. See the [ECS catalog][are-we-game-yet?-ecs~website]↗ for other choices.
+- **Other systems:** Find libraries for animation, assets, networking, scripting, UI, and VR in the [Are We Game Yet? catalog][are-we-game-yet?~website]↗.
 
-- [AI][are-we-game-yet?-ai~website]↗: AI libraries, steering, behaviour trees, planners, etc.
-- [Animation][are-we-game-yet?-animation~website]↗: rigging, tweening, anything related to animation.
-- [Audio][are-we-game-yet?-audio~website]↗: Wrappers for FMOD, OpenAL, MIDI and similar, and higher level APIs.
-- [ECS][are-we-game-yet?-ecs~website]↗: Entity Component System implementations.
-- [Input][are-we-game-yet?-input~website]↗: Libraries to handle controllers, gamepads, keyboards, etc.
-- [Math][are-we-game-yet?-math~website]↗: Linear algebra libraries, quaternions, color conversion and more.
-- [Mesh Tools][are-we-game-yet?-mesh~website]↗: Tools for optimising and processing meshes.
-- [Networking][are-we-game-yet?-networking~website]↗: Multiplayer, Protocols, and more.
-- [Tools][are-we-game-yet?-tools~website]↗: Tools & other game-dev related libraries.
-- [UI][are-we-game-yet?-ui~website]↗: Immediate mode UI libraries and more.
-- [VR][are-we-game-yet?-vr~website]↗: VR engines and libraries.
-- [Windowing][are-we-game-yet?-windowing~website]↗ Windowing and Context Creation crates.
+## Project Status
+
+[`Tetra`][c~tetra~docs]↗{{hi:Tetra}} is passively maintained: its upstream project plans no new features, though it may still release occasional fixes. The maintainers suggest [`macroquad`][c~macroquad~docs]↗{{hi:macroquad}} or [`ggez`][c~ggez~docs]↗{{hi:ggez}} for a more actively developed 2D framework; see the [Tetra status note][tetra~status~repo]↗.
+
+Piston is a modular engine, so activity can differ between its components. Check the [core repository's activity][piston~activity~repo] and the crates you intend to use. If you prefer an integrated engine or framework, compare Bevy, Fyrox, ggez, and Macroquad in the [[game-engines | Game Engines]] category.
 
 ## Related Topics
 
-| Topic                         | Description                                                                                                                                                                  | Relevant Rust crate(s)                                                                                                                                                                                           |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [[graphics                    | Graphics]]                                                                                                                                                                   |                                                                                                                                                                                                                  | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}: A cross-platform, safe, and portable GPU API. Often used with [`winit`][c~winit~docs]↗{{hi:winit}} or game engines. [`rend3`][c~rend3~docs]↗{{hi:rend3}}: A 3D rendering engine built on top of wgpu. [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}: A low-level graphics API abstraction layer. [`image`][c~image~docs]↗{{hi:image}} for image loading and manipulation. |
-| [[multimedia_audio            | Audio]]                                                                                                                                                                      |                                                                                                                                                                                                                  | [`cpal`][c~cpal~docs]↗{{hi:cpal}}: Cross-platform audio I/O. [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: Can also be used for audio |
-| Inputs                        | See also [[gui                                                                                                                                                               | GUI]].                                                                                                                                                                                                           | [`winit`][c~winit~docs]↗{{hi:winit}} : Handles window events, including input. [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}}: Can also be used for input. |
-| Game Logic / State Management | Often handled directly or with ECS libraries. See below.                                                                                                                     |                                                                                                                                                                                                                  |
-| Entity Component System (ECS) | For Data-Driven Design.                                                                                                                                                      | [`bevy_ecs`][c~bevy_ecs~docs]↗{{hi:bevy_ecs}} is Bevy's built-in ECS. [`specs`][c~specs~docs]↗{{hi:specs}} is a popular and mature ECS library. [`hecs`][c~hecs~docs]↗{{hi:hecs}} is another ECS implementation. |
-| Physics Engine                | See [Physics][are-we-game-yet?-physics~website]↗ for 2D and 3D physics engines, collision detection libraries.                                                               | [`rapier`][rapier.rs~website]↗: A physics engine (2D and 3D). `nphysics2d`{{hi:nphysics2d}}: Another physics engine.                                                                                             |
-| Networking                    |                                                                                                                                                                              | [`ggrs`][c~ggrs~docs]↗{{hi:ggrs}}: A P2P networking library for games. [`tokio`][c~tokio~docs]↗{{hi:tokio}}: (For asynchronous networking in general). [`mio`][c~mio~docs]↗{{hi:mio}}: Lower-level networking.   |
-| UI (User Interface)           | See [[gui                                                                                                                                                                    | GUI]].                                                                                                                                                                                                           | [`egui`][c~egui~docs]↗{{hi:egui}}: An immediate mode GUI library. [`iced`][c~iced~docs]↗{{hi:iced}}: A cross-platform GUI library focused on simplicity and type safety. [`conrod`][c~conrod~docs]↗{{hi:conrod}}: An older UI library. |
-| [[mathematics                 | Mathematics]] and [[linear_algebra                                                                                                                                           | Linear Algebra]]                                                                                                                                                                                                 | | [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}: A popular linear algebra library. [`glam`][c~glam~docs]↗{{hi:glam}}: Another linear algebra library, often used in game development. |
-| Asset Loading and Management  | See [3D Format Loaders][are-we-game-yet?~3dformatloaders~website]↗ for FBX, OBJ and more. Crates like [`image`][c~image~docs]↗{{hi:image}} are often used for image loading. |                                                                                                                                                                                                                  |
-| Serialization/Deserialization | For game state, assets, etc.                                                                                                                                                 | [`serde`][c~serde~docs]↗{{hi:serde}}: Widely used serialization framework (saving game state, loading assets, etc.).                                                                                             |
-| Scripting                     | See [Scripting Languages][are-we-game-yet?~scripting-languages]↗ for scripting languages embeddable in a Rust game.                                                          | [`rhai`][c~rhai~docs]↗{{hi:rhai}}: An embeddable scripting language. [`lua`][c~lua~docs]↗{{hi:lua}}: Lua bindings.                                                                                               |
-| Other Useful Crates           |                                                                                                                                                                              | [`rand`][c~rand~docs]↗{{hi:rand}}: For random number generation.                                                                                                                                                 |
-
-See also:
-
-- [[artificial_intelligence | Artificial Intelligence]] for Robotics.
-- [[classical_machine_learning | Classical Machine Learning]].
-- [[deep_learning | Deep Learning]].
-- [[games | Games]].
-- [[game_engines | Game Engines]].
+- [[games | Games]] written in Rust.
+- [[graphics | Graphics]] and [[rendering | Rendering]].
+- [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]].
+- [[artificial_intelligence | Artificial Intelligence]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [expand](https://github.com/john-cd/rust_howto/issues/367)
-  cover [`tetra`][c~tetra~docs]↗{{hi:tetra}}, [`piston`][c~piston~docs]↗{{hi:piston}}.
-</div>

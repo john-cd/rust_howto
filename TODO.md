@@ -248,7 +248,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-PROSE-02 — UI, accessibility, media and rendering
 
-- [#367](https://github.com/john-cd/rust_howto/issues/367) — **P4** — game-development/index.md: expand — **NOT STARTED**
+- [#367](https://github.com/john-cd/rust_howto/issues/367) — **P4** — game-development/index.md: expand — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#369](https://github.com/john-cd/rust_howto/issues/369) — **P4** — game-engines/game_engines.md: game_engines: write — **NOT STARTED**
 - [#375](https://github.com/john-cd/rust_howto/issues/375) — **P4** — rendering_graphics-api/gpu_abstraction_layers.md: webgpu: write — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#377](https://github.com/john-cd/rust_howto/issues/377) — **P4** — rendering/2d_renderers.md: 2d_renderers: write; titles — **BLOCKED — #792 Vger status/compatibility and #793 WebRender disposition unresolved**
