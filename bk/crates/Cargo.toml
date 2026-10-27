@@ -3,81 +3,68 @@
 [workspace]
 resolver = "3"
 members = [
-  "about",
-  "cats/algorithms",
-  "cats/asynchronous",
-  "cats/authentication",
-  "cats/caching",
-  "cats/command_line_interface",
-  "cats/compression",
-  "cats/concurrency",
-  "cats/config",
-  "cats/cryptography",
-  "cats/data_structures",
-  "cats/database",
-  "cats/database_implementations",
-  "cats/date_and_time",
-  "cats/development_tools",
-  "cats/development_tools_build_utils",
-  "cats/development_tools_cargo_plugins",
-  "cats/development_tools_debugging",
-  "cats/development_tools_profiling",
-  "cats/development_tools_testing",
-  "cats/email",
-  "cats/encoding",
-  "cats/filesystem",
-  "cats/graphics",
-  "cats/hardware_support",
-  "cats/mathematics",
-  "cats/memory_management",
-  "cats/network_programming",
-  "cats/os",
-  "cats/os_unix_apis",
-  "cats/os_windows_apis",
-  "cats/parser_implementations",
-  "cats/parsing",
-  "cats/rust_patterns",
-  "cats/template_engine",
-  "cats/text_editors",
-  "cats/text_processing",
-  "cats/web_programming",
-  "cats/web_programming_http_client",
-  "cats/web_programming_http_server",
-  "code_organization",
-  "language",
-  "proc_macros",
-  "standard_library",
-  "utils",
+    "about",
+    "cats/algorithms",
+    "cats/asynchronous",
+    "cats/authentication",
+    "cats/caching",
+    "cats/command_line_interface",
+    "cats/compression",
+    "cats/concurrency",
+    "cats/config",
+    "cats/cryptography",
+    "cats/data_structures",
+    "cats/database",
+    "cats/database_implementations",
+    "cats/date_and_time",
+    "cats/development_tools",
+    "cats/development_tools_build_utils",
+    "cats/development_tools_cargo_plugins",
+    "cats/development_tools_debugging",
+    "cats/development_tools_profiling",
+    "cats/development_tools_testing",
+    "cats/email",
+    "cats/encoding",
+    "cats/filesystem",
+    "cats/graphics",
+    "cats/hardware_support",
+    "cats/mathematics",
+    "cats/memory_management",
+    "cats/network_programming",
+    "cats/os",
+    "cats/os_unix_apis",
+    "cats/os_windows_apis",
+    "cats/parser_implementations",
+    "cats/parsing",
+    "cats/rust_patterns",
+    "cats/template_engine",
+    "cats/text_editors",
+    "cats/text_processing",
+    "cats/web_programming",
+    "cats/web_programming_http_client",
+    "cats/web_programming_http_server",
+    "code_organization",
+    "language",
+    "proc_macros",
+    "standard_library",
+    "utils",
 ]
 exclude = []
 
-[workspace.dependencies]
-# Async trait implementations for the async examples and Pingora proxy.
-async-trait = "0.1.92"
-# Rust syntax trees for the programming-language parser examples.
-syn = { version = "3.0.9", features = ["full"] }
-# Isolated temporary files for examples that demonstrate file-based I/O.
-tempfile = "3.27.0"
-# Tree-sitter parsers for source and JSON highlighting examples.
-tree-sitter = "0.27.1"
-# JSON grammar used by the syntax-highlighting example.
-tree-sitter-json = "0.24.8"
-
-# Default values for packages in the workspace
 [workspace.package]
 version = "0.1.2"
 authors = ["John CD"]
 categories = [
-  "algorithms",
-  "asynchronous",
-  "concurrency",
-  "web-programming",
-  "development-tools",
-  "api-bindings",
-  "caching",
-  "command-line-interface",
-  "compilers",
-  "compression",
+    "algorithms",
+    "asynchronous",
+    "concurrency",
+    "web-programming",
+    "development-tools",
+    "api-bindings",
+    "caching",
+    "command-line-interface",
+    "compilers",
+    "compression",
 ]
 documentation = "https://docs.rs/rust_howto/"
 edition = "2024"

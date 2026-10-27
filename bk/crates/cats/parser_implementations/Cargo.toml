@@ -33,12 +33,12 @@ comrak = "0.52.0"
 configparser = "3.3.0"
 cssparser = "0.38.0"
 html5ever = "0.40.1"
-json5 = "1.3.3"
+json5 = "1.3.4"
 markdown = "1.0.0"
 markup5ever = "0.40.0"
 pulldown-cmark = "0.13.5"
 quick-xml = { version = "0.42.0", features = ["serialize"] }
-roxmltree = "0.21.1"
+roxmltree = "0.21.2"
 rust-ini = "0.21.3"
 # HTML tree traversal and CSS selectors for the scraper example.
 scraper = "0.29.0"
@@ -50,7 +50,7 @@ sqlparser = { version = "0.61.0", features = ["visitor"], optional = true }
 swc_common = "21.0.2"
 swc_ecma_ast = "23.0.1"
 swc_ecma_parser = "39.1.1"
-syn = { workspace = true }
+syn = { version = "3.0.9", features = ["full"] }
 tl = "0.7.8"
 toml = "1.1.8"
 toml_edit = "0.25.17"

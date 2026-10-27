@@ -67,8 +67,7 @@ walkdir = "2.5.0"
 
 # Creates isolated JPEG fixtures for the thumbnail example test.
 [dev-dependencies]
-tempfile.workspace = true
-
+tempfile = "3.27.0"
 [[example]]
 name = "actors"
 path = "examples/actors/main.rs"

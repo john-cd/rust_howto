@@ -29,7 +29,7 @@ bcrypt = "0.19.3"
 chacha20poly1305 = "0.10.1"
 clap = { version = "4.6.7", features = ["derive"] }
 data-encoding = "2.11.1"
-der = { version = "0.8.2", features = ["derive", "alloc"] }
+der = { version = "0.8.3", features = ["derive", "alloc"] }
 digest = "0.11.3"
 dsa = "0.6.3"
 ecdsa = "0.16.9"
@@ -60,7 +60,7 @@ subtle = "2.6.1"
 tokio = { version = "1.54.1", features = ["io-util", "macros", "net", "rt-multi-thread"] }
 tokio-rustls = { version = "0.26.6", default-features = false, features = ["ring", "tls12", "logging"] }
 # Mozilla's WebPKI roots for validating public TLS server certificates.
-webpki-roots = "1.0.10"
+webpki-roots = "1.0.11"
 x509-cert = { version = "0.2.5", features = ["builder"] }
 zeroize = { version = "1.9.1", features = ["derive"] }
 

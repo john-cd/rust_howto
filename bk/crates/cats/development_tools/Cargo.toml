@@ -40,8 +40,7 @@ wat = "1.262.0"
 
 [dev-dependencies]
 # Isolated filesystem fixtures for local crate-index examples.
-tempfile = { workspace = true }
-
+tempfile = "3.27.0"
 [[example]]
 name = "cargo_metadata"
 path = "examples/rust_source/cargo_metadata.rs"

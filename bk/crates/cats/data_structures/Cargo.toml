@@ -39,20 +39,20 @@ petgraph = "0.8.3"
 priority-queue = "2.7.0"
 rangemap = "1.8.0"
 roaring = "0.11.5"
-rustc-hash = "2.1.1"
+rustc-hash = "2.1.3"
 short-uuid = "0.2.1" # Compact, URL-safe UUIDs.
 skiplist = "2.0.0"
 slotmap = "1.1.1"
-smallvec = "1.16.3" # alpha
+smallvec = "1.16.4" # alpha
 tinyvec = { version = "1.13.3", features = ["alloc"] }
 ulid = "3.0.0"
-uuid = { version = "1.28.0", features = [
-  # Lets us generate random UUIDs.
-  "v4",
-  # Use a faster (but still sufficiently random) RNG.
-  "fast-rng",
-  # Enable better diagnostics for compile-time UUIDs.
-  "macro-diagnostics",
+uuid = { version = "1.29.0", features = [
+    # Lets us generate random UUIDs.
+    "v4",
+    # Use a faster (but still sufficiently random) RNG.
+    "fast-rng",
+    # Enable better diagnostics for compile-time UUIDs.
+    "macro-diagnostics",
 ] }
 
 [[example]]

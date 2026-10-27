@@ -46,7 +46,7 @@ http-body-util = "0.1.5"
 hyper = { version = "1.12.0", features = ["full"] }
 # Adapts Tokio streams to Hyper's runtime-neutral I/O traits.
 hyper-util = "0.1.21"
-jsonschema = "0.60.1"
+jsonschema = "0.60.2"
 leptos = { version = "0.8.22", optional = true }
 # This HTTP example does not need Loco's database or queue integrations.
 loco-rs = { version = "1.2.0", optional = true, default-features = false }
@@ -61,9 +61,9 @@ serde_json = "1.0.154"
 tokio = { version = "1.54.1", features = ["io-util", "macros", "net", "rt-multi-thread", "sync", "time"] }
 # Provides a stream wrapper for the ephemeral Tokio listener in the gRPC test.
 tokio-stream = { version = "0.1.19", features = ["net"] }
-tonic = "0.14.6"
-tonic-prost = "0.14.6"
-tonic-web = "0.14.6"
+tonic = "0.14.7"
+tonic-prost = "0.14.7"
+tonic-web = "0.14.7"
 tower = { version = "0.5.3", features = ["util"] }
 tower-cookies = "0.11.0"
 tower-http = { version = "0.7.1", features = ["full", "auth"] }
@@ -75,7 +75,7 @@ utoipa-swagger-ui = { version = "10.0.2", features = ["axum", "vendored"] }
 
 [build-dependencies]
 protox = "0.10.0" # Compile .proto files without launching a protoc executable.
-tonic-prost-build = "0.14.6"
+tonic-prost-build = "0.14.7"
 
 [[example]]
 name = "actix_web"

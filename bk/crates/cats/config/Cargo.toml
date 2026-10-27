@@ -30,8 +30,7 @@ envy = "0.4.2"
 serde = { version = "1.0.229", features = ["derive"] }
 
 [dev-dependencies]
-tempfile.workspace = true
-
+tempfile = "3.27.0"
 [[example]]
 name = "configuration"
 path = "examples/configuration/main.rs"
