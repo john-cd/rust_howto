@@ -20,6 +20,20 @@ The crate's default provider is `aws-lc-rs`; this example selects `ring` explici
 
 See also: [Rustls (Wikipedia)][c~rustls~wikipedia]↗.
 
+## Mutual TLS with a Client Certificate {#mtls}
+
+[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![rustls][c~rustls~docs~badge]][c~rustls~docs]{{hi:rustls}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
+
+Ordinary HTTPS authenticates the server to the client. Mutual TLS (mTLS) also asks the client to present a certificate, which the server validates against a CA it trusts. This authenticates a workload or service; it does not sign a human user in or replace authorization checks. The pattern was inspired by [Rust Cookbook issue #826][rust-cookbook~issue~826]; this recipe and its test are original.
+
+The client trusts the supplied CA certificate and sends a PEM identity bundle containing its certificate chain followed by its private key. PEM is a text encoding of DER data; this example uses a PKCS#8 private key. Keep production private keys in a secret manager or hardware-backed key store, restrict access, rotate them, and never commit or log them. The offline loopback test uses deterministic local fixtures generated in memory from test-only keys.
+
+`tls_certs_only` replaces the client's default roots with the CA supplied here. Rustls still validates the server's certificate chain and the URL hostname; the example does not install an insecure verifier or disable either check. Redirects are disabled so the client identity is not sent to a redirect target. This crate uses reqwest's `rustls-no-provider` feature and installs `ring` only when the application has not selected a Rustls provider. Configure `MTLS_CA_CERT_PEM`, `MTLS_CLIENT_IDENTITY_PEM`, and `MTLS_URL` to make a request with the [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} client.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/tls/mtls.rs:example}}
+```
+
 ## `native-tls` {#native-tls}
 
 [![native-tls][c~native-tls~docs~badge]][c~native-tls~docs] [![native-tls~crates.io][c~native-tls~crates.io~badge]][c~native-tls~crates.io] [![native-tls~repo][c~native-tls~repo~badge]][c~native-tls~repo] [![native-tls~lib.rs][c~native-tls~lib.rs~badge]][c~native-tls~lib.rs]{{hi:native-tls}}

@@ -2,6 +2,7 @@
 
 | Recipe                                     | Crates                                                      | Categories                                                      |
 | ------------------------------------------ | ----------------------------------------------------------- | --------------------------------------------------------------- |
+| [`mTLS`][ex~cryptography~mtls]             | [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]          | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
 | [`rustls`][ex~cryptography~rustls]         | [![rustls][c~rustls~docs~badge]][c~rustls~docs]             | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
 | [`native-tls`][ex~cryptography~native-tls] | [![native-tls][c~native-tls~docs~badge]][c~native-tls~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
 

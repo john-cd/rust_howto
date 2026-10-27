@@ -6,6 +6,8 @@
 [rfc~7468]: https://www.rfc-editor.org/rfc/rfc7468.html
 [rfc~8439]: https://www.rfc-editor.org/rfc/rfc8439.html
 
+[rust-cookbook~issue~826]: https://github.com/rust-lang-nursery/rust-cookbook/issues/826
+
 [c~aws-lc-rs~docs]: https://docs.rs/aws-lc-rs
 [c~dryoc~docs]: https://docs.rs/dryoc
 [c~rustls-native-certs~docs]: https://docs.rs/rustls-native-certs
@@ -29,6 +31,7 @@
 [ex~cryptography~hmac]: hmac.md#hmac
 [ex~cryptography~hex]: cryptography_utilities.md#hex
 [ex~cryptography~keyring]: secrets.md#keyring
+[ex~cryptography~mtls]: tls.md#mtls
 [ex~cryptography~native-tls]: tls.md#native-tls
 [ex~cryptography~pbkdf2]: password_hashing.md#pbkdf2
 [ex~cryptography~parse-x509]: certificates.md#parse-x509

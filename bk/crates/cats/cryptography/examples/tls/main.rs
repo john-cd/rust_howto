@@ -5,6 +5,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+mod mtls;
 mod native_tls;
 mod rustls;
 
@@ -19,6 +20,9 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the mutual TLS example.
+    #[command(name = "mtls")]
+    Mtls,
     /// Runs the `native_tls` example.
     #[command(name = "native_tls")]
     NativeTls,
@@ -33,6 +37,9 @@ fn main() -> anyhow::Result<()> {
 
     if let Some(command) = cli.command {
         match command {
+            Commands::Mtls => {
+                mtls::run()?;
+            }
             Commands::NativeTls => {
                 native_tls::run()?;
             }
