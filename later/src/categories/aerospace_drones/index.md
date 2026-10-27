@@ -10,6 +10,8 @@ Rust's memory safety, zero-cost abstractions, and fearless concurrency make it a
 
 ## Core Flight Control & Communication
 
+Reliable flight control combines state estimation, control loops, and hardware-facing interfaces. For communication and device protocol crate support, see [[aerospace_protocols | Aerospace Protocols]]; verify timing and safety constraints for the target flight controller.
+
 - Flight Control Algorithms: PID controllers, sensor fusion (IMU, GPS, barometer), state estimation, path planning, trajectory generation.
 - Communication Protocols: MAVLink (Micro Air Vehicle Link), other custom protocols. Serial communication (UART, I2C, SPI).
 - Real-time Systems: Handling sensor data and control loops within strict timing constraints.
@@ -22,6 +24,8 @@ Consider using:
 - [`pid`][c~pid~docs]↗{{hi:pid}} for PID controller implementation.
 
 ## Sensor Integration
+
+Attitude and heading reference systems combine inertial measurements to estimate orientation; the [`ahrs`][c~ahrs~docs] crate provides algorithms for this work. Sensor drivers and calibration remain specific to the connected hardware.
 
 - IMU (Inertial Measurement Unit) Data Processing: Accelerometer, gyroscope, magnetometer data. Sensor fusion for orientation estimation.
 - GPS Integration: Receiving and processing GPS data for localization and navigation.
@@ -48,6 +52,8 @@ Consider using:
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for efficient array operations (often used in image processing).
 
 ## Related Topics
+
+The [[aerospace_unmanned-aerial-vehicles | Unmanned Aerial Vehicles]] page covers radio-control and vehicle protocol choices; this page focuses on combining flight-control, sensor, and vision software.
 
 - [[additional_numeric_types | Additional Numeric Types]].
 - [[algorithms | Algorithms]].
