@@ -322,7 +322,8 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### NOW-INFRA-01 — Preprocessors, references and recipe portability
 
-- [#248](https://github.com/john-cd/rust_howto/issues/248) — **P1** — replace current badge markdown copy-pasted text by a preprocessor command {#crate ...} {#categories... } — **PARTIAL**
+- [#248](https://github.com/john-cd/rust_howto/issues/248) — **P1** — replace current badge markdown copy-pasted text by a preprocessor command {#crate ...} {#categories... } — **BLOCKED — waiting on full-page parser fixes in external book_tooling#34/#47 and rendered publication validation**
+  - The sorting-table migration and representative rendering are integrated; broad filesystem-page conversion was reverted after raw badge directives remained in output. Resume after the parser fix is available, then verify directive expansion, rendered output parity, index anchors, and idempotence before closing.
 
 #### NOW-INFRA-02 — Dependencies, CI and containers
 
