@@ -461,7 +461,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-15 — Parsing and XML
 
-- [#1924](https://github.com/john-cd/rust_howto/issues/1924) — **P3** — Add example: write an expression parser (winnow lexer + precedence climbing), and validate SQL with sqlparser — **PARTIAL**
+- [#1924](https://github.com/john-cd/rust_howto/issues/1924) — **P3** — Add example: write an expression parser (winnow lexer + precedence climbing), and validate SQL with sqlparser — **IMPLEMENTED ON DEVELOP; OPEN — calculator/parser comparison and SQL examples are present; SQL helper/page now describe syntax classification rather than proving read-only execution, with side-effecting-function coverage; formatted; tests and final gates deferred**
 
 #### VALIDATE-CODE-16 — Filesystem and process management
 

@@ -51,11 +51,13 @@ For expression parsing in a small custom language, see [Expression Parser](../pa
 
 Refer to the [[wasm | WASM]] chapter.
 
-## Accept Only Read-only SQL {#sql_readonly}
+## Accept a Single SQL Query {#sql_readonly}
 
 [![sqlparser][c~sqlparser~docs~badge]][c~sqlparser~docs] [![sqlparser~crates.io][c~sqlparser~crates.io~badge]][c~sqlparser~crates.io]{{hi:sqlparser}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:SQL}}
 
-Parse SQL before it reaches a database and reject anything that is not exactly one `SELECT`. Checking the parsed `Statement` is more robust than searching the text for keywords, and rejects a second statement hidden after a semicolon. This is a defense in depth: also use a read-only database role and parameterized queries. This example needs the `sqlparser` feature of the examples crate.
+Parse SQL before it reaches a database and accept only exactly one top-level `Statement::Query`. Checking the parsed `Statement` avoids keyword matching and rejects a second statement hidden after a semicolon. This example needs the `sqlparser` feature of the examples crate.
+
+This is a syntax classifier, not proof that execution is read-only. A query can call a function with side effects: PostgreSQL's [`nextval`][postgresql~sequence-functions] advances a sequence even when called from `SELECT`. Use a restricted database role and [read-only transactions][postgresql~read-only-transactions] to enforce the database execution policy, and parameterized queries for separately supplied values.
 
 ```rust,editable
 {{#include ../../../crates/cats/parser_implementations/examples/programming_languages/sql_readonly.rs:example}}
