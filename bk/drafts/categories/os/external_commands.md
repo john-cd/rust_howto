@@ -32,7 +32,7 @@ Runs [`git log --oneline`][git~log~docs]↗{{hi:git}} as an external [`std::proc
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~os][cat~os~badge]][cat~os]{{hi:OS}}{{hi:External command}}
 
-Opens the `python`{{hi:python}} interpreter using an external [`std::process::Command`][c~std::process::Command~docs]↗{{hi:std::process::Command}} and passes it a python statement for execution. The [`std::process::Output`][c~std::process::Output~docs]↗{{hi:std::process::Output}} of statement is then parsed.
+Starts the Unix `rev` utility using [`std::process::Command`][c~std::process::Command~docs]↗{{hi:std::process::Command}}, writes text to its standard input, and parses the output after checking the exit status. The example requires `rev` to be available on the host.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/examples/external_commands/send_input.rs:example}}
