@@ -4,64 +4,47 @@
 
 {{#include immediate_mode_gui.incl.md}}
 
-For almost all cases where you want an immediate mode [GUI][p~gui] in Rust, [`egui`][c~egui~docs]↗{{hi:egui}} is the recommended choice. It's well-featured, performant, and has a great community.
+Immediate-mode GUI code describes the controls for the current frame from the application's current state. The application calls its UI code again on the next frame, and the GUI library computes widget layout and draw commands from that description. With [`egui`][c~egui~docs]↗, your application owns its domain data while the context retains interaction details such as widget memory between frames. This style keeps UI flow close to ordinary Rust control flow; it also means expensive work should be cached or moved out of the frame-building path.
 
-## Key Concepts {#key-concepts .skip}
+An immediate-mode interface differs from a [retained-mode GUI][ex~gui~retained-mode], where widgets are represented by a longer-lived tree that is updated as state changes. Choose based on your application's architecture and integrations, not on the name alone.
 
-- Immediate mode GUIs redraw the entire UI on every frame. This simplifies the API but can be less efficient for very complex UIs.
-- You'll manage the UI state directly in your application code. The [GUI][p~gui] library doesn't maintain an internal representation of the UI.
-- Immediate-mode GUIs are often used in a declarative style, where you describe the [UI layout][p~ui-layout] and elements in your code, and the GUI library handles the rendering.
+## When to Use Immediate Mode {#use-cases .skip}
 
-## Use Cases {#use-cases .skip}
+Immediate-mode GUIs work especially well for development tools, editors, debug panels, and game interfaces. They are quick to prototype and easy to connect to application data. They also suit applications that already own a render loop or engine integration.
 
-- Tools: Immediate mode GUIs are often used for creating tools and editors because they are easy to prototype and iterate on.
-- [Games][p~games]: The [performance][p~performance] of immediate mode GUIs makes them suitable for game UIs.
-- Prototyping: The ease of use and rapid iteration make immediate mode GUIs good for prototyping.
+If a frame builds a very large interface or performs slow work while drawing widgets, the repeated layout and UI code can become costly. Keep expensive calculations and I/O outside the frame callback, cache reusable results, and update the model in response to user actions.
 
-## `egui` {#egui}
+## Build a Desktop App with `eframe` {#eframe}
 
-[![egui][c~egui~docs~badge]][c~egui~docs]{{hi:egui}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
-[![egui~crates.io][c~egui~crates.io~badge]][c~egui~crates.io]
-[![egui~repo][c~egui~repo~badge]][c~egui~repo]
-[![egui~lib.rs][c~egui~lib.rs~badge]][c~egui~lib.rs]
-
-[`egui`][c~egui~docs]↗ is an easy-to-use immediate mode GUI that runs on both web and native. [`egui`][c~egui~docs]↗{{hi:egui}} aims to be the best choice when you want a simple way to create a GUI and you don't need to customize of the look and feel, or you want to add a GUI to a game engine. Great for tools and quick prototyping.
-
-- [egui.rs][c~egui~website]↗.
-- [`egui` demo lib][c~egui_demo_lib~repo]↗.
-- [`egui` widgets][c~egui~widgets]↗.
-- [`egui` containers][c~egui~containers]↗.
-- [`egui` main struct Ui][c~egui::Ui~docs]↗.
+For a standalone native or web app, [`eframe`][c~eframe~docs]↗ supplies the application runner around `egui`. Implement `eframe::App` and build the widgets for each frame, as in the example below. The existing [egui example][ex~gui~egui] includes editable text, a slider, a button, and a headless interaction test.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/immediate_mode_gui/egui.rs:example}}
 ```
 
-For tables, plots, docking, notifications and more, see [`egui` Add-on Crates](egui_ecosystem.md).
+## Embed `egui` in a Game or Renderer {#integration-with-rendering}
 
-## Integration with Rendering {#integration-with-rendering}
+When an application already has an event loop or renderer, integrate `egui` into it instead of starting a second application runner:
 
-Immediate mode [GUI][p~gui] libraries often need to be integrated with a [rendering][p~rendering] backend. [`egui`][c~egui~docs]↗{{hi:egui}} has its own renderers for various platforms and backends, including [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`glow`][c~glow~docs]↗{{hi:glow}}, and others.
+- For a [Bevy][c~bevy~docs]↗ game, [`bevy_egui`][c~bevy_egui~docs]↗ provides a Bevy plugin. Choose a release compatible with the Bevy version used by your project.
+- For a custom `winit` application, [`egui-winit`][c~egui-winit~docs]↗ adapts window events and input for `egui`.
+- For a custom `wgpu` renderer, [`egui-wgpu`][c~egui-wgpu~docs]↗ paints egui output with `wgpu`. These integrations can be combined when the application owns both the event loop and renderer.
 
-## Other Immediate Mode GUI Libraries {#other-immediate-mode-gui-libraries}
+The `egui` project also provides other platform and renderer integrations. Check the integration documentation for supported versions and features before selecting a combination.
 
-- `imgui` provides Rust bindings for `Dear ImGui`.
-- [`conrod`][c~conrod~docs]↗{{hi:conrod}} is an older immediate mode [GUI][p~gui] library.
+## Plot Data and Test Interfaces {#plot-and-test}
 
-## Related Topics {#related-topics .skip}
+Use [`egui_plot`][c~egui_plot~docs]↗ to display interactive 2D plots such as line series and bar charts. For interaction tests, [`egui_kittest`][c~egui_kittest~docs]↗ can exercise widgets through a test harness; the [add-on chapter][ex~gui~egui-kittest] has examples, alongside examples of plots and other extensions.
 
-- User interface design patterns.
-- High-performance GUI rendering.
-- Game development toolkits.
-- Native and web GUI backends.
+## Other Immediate-Mode Libraries {#other-immediate-mode-gui-libraries}
+
+[`imgui`][c~imgui~docs]↗ is the Rust binding for Dear ImGui maintained by the [`imgui-rs` project][c~imgui~repo]↗. An application typically chooses a platform backend to deliver input and a renderer to draw its output. This can be a good fit when an engine or tool already uses Dear ImGui or when its ecosystem fits the application.
+
+## Learn More {#learn-more .skip}
+
+- Browse the [`egui` examples][egui.info~examples~website]↗.
+- See the [egui add-on crates][ex~gui~egui-kittest] for tables, plots, docking, testing, and more.
+- Compare the [retained-mode GUI chapter][ex~gui~retained-mode].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[immediate_mode_gui: write](https://github.com/john-cd/rust_howto/issues/385)
-need in depth review.
-
-- [`egui.info` Examples][egui.info~examples~website]↗.
-
-</div>

@@ -31,6 +31,7 @@
 [ex~gui~related-gtk-crates]: gtk.md#related-gtk-crates
 [ex~gui~relm4]: gtk.md#relm4
 [ex~gui~rfd]: file_dialogs.md#rfd
+[ex~gui~retained-mode]: retained_mode_gui.md
 [ex~gui~slint]: retained_mode_gui.md#slint
 [ex~gui~taffy]: ui_layout.md#taffy
 [ex~gui~tao]: window_creation.md#tao
@@ -67,6 +68,11 @@
 [p~ui-layout]: ui_layout.md
 [p~wasm]: ../wasm/index.md
 [p~windows]: ../../../../bk/drafts/categories/os_windows-apis/windows.md
+[c~bevy_egui~docs]: https://docs.rs/bevy_egui
+[c~egui-wgpu~docs]: https://docs.rs/egui-wgpu
+[c~egui-winit~docs]: https://docs.rs/egui-winit
+[c~imgui~docs]: https://docs.rs/imgui
+[c~imgui~repo]: https://github.com/imgui-rs/imgui-rs
 [c~native-dialog~docs]: https://docs.rs/native-dialog
 [c~native-dialog~repo]: https://github.com/native-dialog-rs/native-dialog-rs
 [c~tinyfiledialogs~docs]: https://docs.rs/tinyfiledialogs
