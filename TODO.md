@@ -510,20 +510,20 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-04 — Encoding, parsing and text processing
 
-- [#354](https://github.com/john-cd/rust_howto/issues/354) — **P2** — `encoding/typecasts.md`: typecasts: write NOW; reorganize — **PARTIAL**
+- [#354](https://github.com/john-cd/rust_howto/issues/354) — **P2** — `encoding/typecasts.md`: typecasts: write NOW; reorganize — **IMPLEMENTED ON DEVELOP; BLOCKED — prior formatting, focused Clippy, refdefs, and book build passed; example/spelling checks and linked PR remain; details are on the issue**
 - [#930](https://github.com/john-cd/rust_howto/issues/930) — **P2** — `encoding/string_encoding.md`: review — **IMPLEMENTED ON DEVELOP; OPEN — chapter guidance and related links are present; reference includes are outside the topic list; formatted; example checks, spelling, and required final gates remain**
-- [#350](https://github.com/john-cd/rust_howto/issues/350) — **P3** — Clean up structured-data TOML guidance — **PARTIAL**
-- [#440](https://github.com/john-cd/rust_howto/issues/440) — **P3** — Complete the JSON guide — **PARTIAL**
-- [#442](https://github.com/john-cd/rust_howto/issues/442) — **P3** — Complete the Markdown parser guide — **PARTIAL**
-- [#444](https://github.com/john-cd/rust_howto/issues/444) — **P3** — Complete TOML parser guidance — **PARTIAL**
-- [#446](https://github.com/john-cd/rust_howto/issues/446) — **P3** — Complete the XML guide — **PARTIAL**
-- [#448](https://github.com/john-cd/rust_howto/issues/448) — **P3** — Complete parser utility guidance — **PARTIAL**
-- [#951](https://github.com/john-cd/rust_howto/issues/951) — **P3** — Add programming-language parser guidance and a syn example — **PARTIAL**
-- [#952](https://github.com/john-cd/rust_howto/issues/952) — **P3** — Review the parsing index — **PARTIAL**
-- [#1078](https://github.com/john-cd/rust_howto/issues/1078) — **P3** — `encoding/no_external_schema.md`: write — **PARTIAL**
-- [#1186](https://github.com/john-cd/rust_howto/issues/1186) — **P3** — `parser-implementations/yaml.md`: write — **PARTIAL**
-- [#1187](https://github.com/john-cd/rust_howto/issues/1187) — **P3** — `parser-implementations/html.md`: write — **PARTIAL**
-- [#1190](https://github.com/john-cd/rust_howto/issues/1190) — **P3** — `text-processing/string_manipulation.md`: write — **PARTIAL**
+- [#350](https://github.com/john-cd/rust_howto/issues/350) — **P3** — Clean up structured-data TOML guidance — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
+- [#440](https://github.com/john-cd/rust_howto/issues/440) — **P3** — Complete the JSON guide — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
+- [#442](https://github.com/john-cd/rust_howto/issues/442) — **P3** — Complete the Markdown parser guide — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
+- [#444](https://github.com/john-cd/rust_howto/issues/444) — **P3** — Complete TOML parser guidance — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
+- [#446](https://github.com/john-cd/rust_howto/issues/446) — **P3** — Complete the XML guide — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
+- [#448](https://github.com/john-cd/rust_howto/issues/448) — **P3** — Complete parser utility guidance — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
+- [#951](https://github.com/john-cd/rust_howto/issues/951) — **P3** — Add programming-language parser guidance and a syn example — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
+- [#952](https://github.com/john-cd/rust_howto/issues/952) — **P3** — Review the parsing index — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
+- [#1078](https://github.com/john-cd/rust_howto/issues/1078) — **P3** — `encoding/no_external_schema.md`: write — **PARTIAL ON DEVELOP; BLOCKED — guide is present; stale issue self-reference, full checks, Unix spelling, and linked PR remain; details are on the issue**
+- [#1186](https://github.com/john-cd/rust_howto/issues/1186) — **P3** — `parser-implementations/yaml.md`: write — **IMPLEMENTED ON DEVELOP; BLOCKED — YAML guide and example are present; focused/full gates, Unix spelling, and linked PR remain; details are on the issue**
+- [#1187](https://github.com/john-cd/rust_howto/issues/1187) — **P3** — `parser-implementations/html.md`: write — **IMPLEMENTED ON DEVELOP; BLOCKED — HTML parser guide is present; focused/full gates, Unix spelling, and linked PR remain; details are on the issue**
+- [#1190](https://github.com/john-cd/rust_howto/issues/1190) — **P3** — `text-processing/string_manipulation.md`: write — **IMPLEMENTED ON DEVELOP; BLOCKED — string manipulation recipes are present; full gates, Unix spelling, and linked PR remain; details are on the issue**
 
 #### VALIDATE-PROSE-05 — Web, networking and databases
 
