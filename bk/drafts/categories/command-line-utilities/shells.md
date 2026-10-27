@@ -75,7 +75,7 @@ atuin search cargo
 
 ## Shell Completion for Rust CLIs {#rust-cli-completions}
 
-For a Rust CLI built with [`clap`][c~clap~docs]↗, use [`clap_complete`][c~clap_complete~docs]↗ to generate shell completions for the command. See [CLI argument parsing](../command-line-interface/argument_parsing.md) for the `clap` setup and completion examples.
+For a Rust CLI built with [`clap`][c~clap~docs]↗, use [`clap_complete`][c~clap_complete~docs]↗ to generate shell completions for the command. See the [completion script example](../command-line-interface/argument_parsing.md#clap_complete) for a complete `clap` command and generator.
 
 ```bash
 cargo add clap_complete

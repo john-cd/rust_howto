@@ -543,7 +543,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 #### VALIDATE-PROSE-06 — Filesystem utilities, shells and compression
 
 - [#237](https://github.com/john-cd/rust_howto/issues/237) — **P3** — `command-line-utilities/filesystem_cli.md`: filesystem: organize — **IMPLEMENTED; OPEN — task-based tools and rename guidance; repository activity reviewed; refdefs, book, spelling, and linked PR remain**
-- [#239](https://github.com/john-cd/rust_howto/issues/239) — **P3** — `command-line-utilities/shells.md`: shells: expand — **PARTIAL**
+- [#239](https://github.com/john-cd/rust_howto/issues/239) — **P3** — `command-line-utilities/shells.md`: shells: expand — **IMPLEMENTED; OPEN — shell and completion guidance, with repository activity reviewed; refdefs, book, spelling, and linked PR remain**
 - [#253](https://github.com/john-cd/rust_howto/issues/253) — **P3** — `compression/tar.md`: tar: review — **PARTIAL**
 
 #### VALIDATE-PROSE-07 — Security and cryptocurrencies
