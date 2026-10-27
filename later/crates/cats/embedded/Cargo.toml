@@ -27,6 +27,9 @@ missing_docs = "allow"
 
 [dev-dependencies]
 anyhow = "1.0.104" # Provides consistent fallible example entry points.
+critical-section = { version = "1.2.0", features = [
+  "std",
+] } # Provides host-safe locking for the shared Embassy channel.
 embassy-executor = { version = "0.10.0", features = [
   "executor-thread",
   "platform-std",

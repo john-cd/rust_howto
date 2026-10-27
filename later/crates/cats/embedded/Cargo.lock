@@ -185,6 +185,7 @@ name = "embedded"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "critical-section",
  "embassy-executor",
  "embassy-sync",
  "embassy-time",

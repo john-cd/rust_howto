@@ -8,7 +8,7 @@ use std::sync::atomic::AtomicU32;
 use std::sync::atomic::Ordering;
 
 use embassy_executor::Spawner;
-use embassy_sync::blocking_mutex::raw::NoopRawMutex;
+use embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex;
 use embassy_sync::channel::Channel;
 use embassy_time::Timer;
 
@@ -16,7 +16,7 @@ use embassy_time::Timer;
 const MESSAGE_COUNT: usize = 3;
 
 /// Carries sample values from the producer task to the consumer task.
-static SENSOR_VALUES: Channel<NoopRawMutex, u32, MESSAGE_COUNT> =
+static SENSOR_VALUES: Channel<CriticalSectionRawMutex, u32, MESSAGE_COUNT> =
     Channel::new();
 
 /// Stores each value received by the consumer for the host test to inspect.
@@ -63,15 +63,20 @@ async fn stop_after_deadline() {
 
 /// Starts all three tasks and reports task-allocation failures.
 fn spawn_tasks(spawner: Spawner) -> anyhow::Result<()> {
-    spawner.spawn(send_sensor_values()).map_err(|error| {
+    let producer = send_sensor_values().map_err(|error| {
         anyhow::anyhow!("failed to spawn the sensor producer: {error:?}")
     })?;
-    spawner.spawn(receive_sensor_values()).map_err(|error| {
+    spawner.spawn(producer);
+
+    let consumer = receive_sensor_values().map_err(|error| {
         anyhow::anyhow!("failed to spawn the sensor consumer: {error:?}")
     })?;
-    spawner.spawn(stop_after_deadline()).map_err(|error| {
+    spawner.spawn(consumer);
+
+    let timeout = stop_after_deadline().map_err(|error| {
         anyhow::anyhow!("failed to spawn the timeout task: {error:?}")
     })?;
+    spawner.spawn(timeout);
     Ok(())
 }
 
