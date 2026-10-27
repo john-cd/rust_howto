@@ -21,6 +21,17 @@ Framework integration is available in several toolkits: `eframe` enables AccessK
 {{#include ../../../crates/cats/accessibility/examples/screen_readers/accesskit.rs:example}}
 ```
 
+In a winit resumed handler, create the adapter for an initially hidden window and the application event proxy, then forward tree changes while accessibility is active:
+
+```rust,ignore
+let adapter = accesskit_winit::Adapter::with_event_loop_proxy(
+    active_event_loop,
+    window,
+    proxy,
+);
+adapter.update_if_active(|| accessibility_tree());
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[gui | GUI]].

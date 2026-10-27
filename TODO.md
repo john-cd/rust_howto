@@ -149,7 +149,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-CODE-03 — Desktop UI, accessibility, games and GPU
 
-- [#676](https://github.com/john-cd/rust_howto/issues/676) — **P4** — Finish the AccessKit screen-reader example I — **NOT STARTED**
+- [#676](https://github.com/john-cd/rust_howto/issues/676) — **P4** — Finish the AccessKit screen-reader example I — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#767](https://github.com/john-cd/rust_howto/issues/767) — **P4** — Finish the Bevy example G — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#768](https://github.com/john-cd/rust_howto/issues/768) — **P4** — game_engines/fyrox.rs: finish — **NOT STARTED**
 - [#769](https://github.com/john-cd/rust_howto/issues/769) — **P4** — Finish or remove the ggez example G — **NOT STARTED**
