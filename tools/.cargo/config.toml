@@ -1,3 +1,6 @@
 # TODO Reviewed 10-26-2026
 
 # Shared build paths and sccache settings are inherited from the root .cargo/config.toml.
+
+[net]
+git-fetch-with-cli = true
