@@ -393,17 +393,17 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-04 — Build scripts, Cargo and procedural macros
 
-- [#897](https://github.com/john-cd/rust_howto/issues/897) — **P3** — Complete the C++ linkage example — **PARTIAL**
-- [#898](https://github.com/john-cd/rust_howto/issues/898) — **P3** — Complete the C++ Rust wrapper example — **PARTIAL**
-- [#899](https://github.com/john-cd/rust_howto/issues/899) — **P3** — Complete the C static-library example — **PARTIAL**
-- [#900](https://github.com/john-cd/rust_howto/issues/900) — **P3** — Complete the C Rust wrapper example — **PARTIAL**
-- [#1000](https://github.com/john-cd/rust_howto/issues/1000) — **P3** — `build_time_tooling/cc_defines.rs`: finish; deal wth cc — **PARTIAL**
-- [#1060](https://github.com/john-cd/rust_howto/issues/1060) — **P3** — `buildinfo/build-info.rs`: review / convert into example — **PARTIAL**
-- [#1951](https://github.com/john-cd/rust_howto/issues/1951) — **P3** — Cargo subcommand and coverage examples — **PARTIAL**
-- [#739](https://github.com/john-cd/rust_howto/issues/739) — **P4** — Finish the `darling` procedural-macro helper example J — **PARTIAL**
-- [#741](https://github.com/john-cd/rust_howto/issues/741) — **P4** — Finish the `proc_macro2` helper example J — **PARTIAL**
-- [#742](https://github.com/john-cd/rust_howto/issues/742) — **P4** — Review and expand the `quote` helper example J — **PARTIAL**
-- [#743](https://github.com/john-cd/rust_howto/issues/743) — **P4** — Finish the `syn` procedural-macro helper example J — **PARTIAL**
+- [#897](https://github.com/john-cd/rust_howto/issues/897) — **P3** — Complete the C++ linkage example — **IMPLEMENTED ON DEVELOP; BLOCKED — package linkage/test stops in vendored libgit2-sys (`LNK1114`); full Clippy/book gates remain; details are on the issue**
+- [#898](https://github.com/john-cd/rust_howto/issues/898) — **P3** — Complete the C++ Rust wrapper example — **IMPLEMENTED ON DEVELOP; BLOCKED — package linkage/test stops in vendored libgit2-sys (`LNK1114`); full Clippy/book gates remain; details are on the issue**
+- [#899](https://github.com/john-cd/rust_howto/issues/899) — **P3** — Complete the C static-library example — **IMPLEMENTED ON DEVELOP; BLOCKED — package linkage/test stops in vendored libgit2-sys (`LNK1114`); full Clippy/book gates remain; details are on the issue**
+- [#900](https://github.com/john-cd/rust_howto/issues/900) — **P3** — Complete the C Rust wrapper example — **IMPLEMENTED ON DEVELOP; BLOCKED — package linkage/test stops in vendored libgit2-sys (`LNK1114`); full Clippy/book gates remain; details are on the issue**
+- [#1000](https://github.com/john-cd/rust_howto/issues/1000) — **P3** — `build_time_tooling/cc_defines.rs`: finish; deal wth cc — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and direct mdBook build passed; required book wrapper gate and issue-linked PR remain; details are on the issue**
+- [#1060](https://github.com/john-cd/rust_howto/issues/1060) — **P3** — `buildinfo/build-info.rs`: review / convert into example — **IMPLEMENTED ON DEVELOP; BLOCKED — anchored build_info example is present; libgit2-sys/native builds block focused/full gates; issue-linked PR remains; details are on the issue**
+- [#1951](https://github.com/john-cd/rust_howto/issues/1951) — **P3** — Cargo subcommand and coverage examples — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Cargo/CLI tests, Clippy, and Markdown checks passed; full native-dependency/book gates remain; details are on the issue**
+- [#739](https://github.com/john-cd/rust_howto/issues/739) — **P4** — Finish the `darling` procedural-macro helper example J — **IMPLEMENTED ON DEVELOP; BLOCKED — prior helper-package tests/strict Clippy and Markdown checks passed; required book gate stops in Windows AWS-LC; details are on the issue**
+- [#741](https://github.com/john-cd/rust_howto/issues/741) — **P4** — Finish the `proc_macro2` helper example J — **IMPLEMENTED ON DEVELOP; BLOCKED — prior helper-package tests/strict Clippy and Markdown checks passed; required book gate stops in Windows AWS-LC; details are on the issue**
+- [#742](https://github.com/john-cd/rust_howto/issues/742) — **P4** — Review and expand the `quote` helper example J — **IMPLEMENTED ON DEVELOP; BLOCKED — prior helper-package tests/strict Clippy and Markdown checks passed; required book gate stops in Windows AWS-LC; details are on the issue**
+- [#743](https://github.com/john-cd/rust_howto/issues/743) — **P4** — Finish the `syn` procedural-macro helper example J — **IMPLEMENTED ON DEVELOP; BLOCKED — prior helper-package tests/strict Clippy and Markdown checks passed; required book gate stops in Windows AWS-LC; details are on the issue**
 
 #### VALIDATE-CODE-05 — Foreign function interfaces
 
