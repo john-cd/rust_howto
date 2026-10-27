@@ -240,7 +240,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#428](https://github.com/john-cd/rust_howto/issues/428) — **P4** — no-std_no-alloc/no_alloc.md: no_alloc: write — **IMPLEMENTED ON ISSUE BRANCH; OPEN — final validation and issue-link removal pending**
 - [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **PARTIAL ON ISSUE BRANCH; #817 sysctl example and FreeBSD CI check remain; final validation pending**
 - [#434](https://github.com/john-cd/rust_howto/issues/434) — **P4** — os_linux-apis/linux.md: linux: write — **PARTIAL ON ISSUE BRANCH; #818 inotify/statx example and final validation pending**
-- [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **NOT STARTED**
+- [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **PARTIAL ON ISSUE BRANCH; #819 legacy example and macOS CI inclusion remain; final validation pending**
 - [#496](https://github.com/john-cd/rust_howto/issues/496) — **P4** — wasm/wasm_standalone_runtimes.md: others: organize/write — **NOT STARTED**
 - [#498](https://github.com/john-cd/rust_howto/issues/498) — **P4** — wasm/yew.md: yew: write / organize — **NOT STARTED**
 - [#1217](https://github.com/john-cd/rust_howto/issues/1217) — **P4** — `wasm/wasm_development.md`: write — **NOT STARTED**

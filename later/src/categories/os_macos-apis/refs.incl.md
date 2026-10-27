@@ -4,8 +4,10 @@
 
 [c~cargo-bundle~docs]: https://docs.rs/cargo-bundle
 [c~objc2-app-kit~docs]: https://docs.rs/objc2-app-kit
+[c~objc2-core-services~docs]: https://docs.rs/objc2-core-services/latest/objc2_core_services/
 [c~objc2-core-foundation~docs]: https://docs.rs/objc2-core-foundation
 [c~objc2-foundation~docs]: https://docs.rs/objc2-foundation
 [c~objc2-security~docs]: https://docs.rs/objc2-security
+[c~security-framework~docs]: https://docs.rs/security-framework/latest/security_framework/
 
 [swift-bridge~repo]: https://github.com/chinedufn/swift-bridge
