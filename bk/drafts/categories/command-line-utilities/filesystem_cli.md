@@ -75,6 +75,15 @@ sd 'OldName' 'NewName' src/main.rs
 git diff -- src/main.rs
 ```
 
+`sd` changes file contents, not filenames. To rename a tracked file, use `git mv` and inspect the result:
+
+```bash
+git mv -- src/old_name.rs src/new_name.rs
+git status --short
+```
+
+For files outside a Git repository, use the shell's `mv` command. Check that the destination is available before renaming.
+
 ## Related Topics {#related-topics .skip}
 
 - [[command-line-interface | Command Line Interface]].
