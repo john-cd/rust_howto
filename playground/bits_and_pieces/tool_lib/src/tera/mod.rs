@@ -29,6 +29,8 @@ static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
     })
 });
 
+static EMPTY_CONTEXT: LazyLock<Context> = LazyLock::new(Context::new);
+
 /// Renders all the templates specified in the `Renderable` trait.
 ///
 /// The `Renderable` trait provides the following:
@@ -36,38 +38,33 @@ static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
 /// - the context to use for rendering
 /// - the destination file path for each rendered template
 pub fn render(r: impl Renderable) -> Result<()> {
-    let templ: &Result<Tera, tera::Error> = &TEMPLATES;
-    if let Err(e) = templ {
-        bail!("The Tera template engine failed to initialize: {e}");
-    }
+    let templ = match TEMPLATES.as_ref() {
+        Ok(t) => t,
+        Err(e) => bail!("The Tera template engine failed to initialize: {e}"),
+    };
     let context = Context::from_serialize(&r)?;
-    render_one(r, &context)?;
+    render_one(r, templ, &context)?;
     Ok(())
 }
 
 /// Renders each template of `r` and writes the result to its destination.
 #[allow(dead_code)]
-fn render_one(r: impl Renderable, context: &Context) -> Result<()> {
-    let templ = (*TEMPLATES).as_ref().unwrap();
-
+fn render_one(r: impl Renderable, templ: &Tera, context: &Context) -> Result<()> {
     for renderinfo in r.get_what_to_render() {
-        let template_name: &str = &renderinfo.template_name;
-        let rendered = templ.render(template_name, context)?;
+        let rendered = templ.render(&renderinfo.template_name, context)?;
         let where_to_write = generate_path(&renderinfo.dest_filepath_template)?;
         read_write::backup_then_write_to(where_to_write, rendered)?;
     }
     for child in r.get_children() {
-        render_one(child, context)?;
+        render_one(child, templ, context)?;
     }
     Ok(())
 }
 
 /// Replaces the placeholders in `path_template` and returns the path.
 fn generate_path(path_template: &str) -> Result<PathBuf> {
-    let context = Context::new();
-    // context.insert("product", &product);
-    // context.insert("vat_rate", &0.20);
-    Ok(PathBuf::from(Tera::one_off(path_template, &context, true)?))
+    // Reuses static empty context instead of instantiating Context::new() on every call.
+    Ok(PathBuf::from(Tera::one_off(path_template, &EMPTY_CONTEXT, true)?))
 }
 
 // TODO
