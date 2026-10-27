@@ -19,6 +19,7 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 publish.workspace = true
 
 [dependencies]
+ode_solvers = "0.6.2"
 rapier2d = "0.36.1"
 
 [[example]]

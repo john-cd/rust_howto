@@ -282,7 +282,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#477](https://github.com/john-cd/rust_howto/issues/477) — **P4** — science_robotics/robot_operating_systems.md: robotics: organize — **BLOCKED — ROS 2 client/example issue #844 pending**
 - [#479](https://github.com/john-cd/rust_howto/issues/479) — **P4** — science_robotics/robotics_frameworks.md: useful_robotics_tools_and_libs: locate libs, organize, write — **PARTIAL ON DEVELOP; IN PROGRESS — framework comparison and #843/#845 examples remain**
 - [#480](https://github.com/john-cd/rust_howto/issues/480) — **P4** — science_robotics/index.md: organize — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
-- [#481](https://github.com/john-cd/rust_howto/issues/481) — **P4** — simulation/simulation.md: simulation: write — **NOT STARTED — workspace dependencies are available; implementation pending**
+- [#481](https://github.com/john-cd/rust_howto/issues/481) — **P4** — simulation/simulation.md: simulation: write — **IMPLEMENTED; OPEN — final validation and PR link pending**
 - [#494](https://github.com/john-cd/rust_howto/issues/494) — **P4** — `visualization/visualization.md`: visualization: write — **BLOCKED — Plotters dependency required for SVG example**
 - [#587](https://github.com/john-cd/rust_howto/issues/587) — **P4** — data-processing/dataframes.md: dataframes: organize / edit — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#1207](https://github.com/john-cd/rust_howto/issues/1207) — **P4** — science_robotics/perception_and_sensors.md: write — **PARTIAL ON DEVELOP; BLOCKED — `kiddo` example dependency unavailable**

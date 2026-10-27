@@ -21090,6 +21090,7 @@ dependencies = [
 name = "simulation"
 version = "0.1.2"
 dependencies = [
+ "ode_solvers",
  "rapier2d 0.36.1",
 ]
 

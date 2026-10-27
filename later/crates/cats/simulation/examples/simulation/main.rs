@@ -2,9 +2,11 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-mod simulation1;
+mod discrete_event;
+mod ode_solver;
 
-/// Runs the Rapier 2D simulation example on every supported desktop target.
+/// Runs the discrete-event and ODE simulation examples.
 fn main() {
-    simulation1::run();
+    discrete_event::run();
+    ode_solver::run();
 }
