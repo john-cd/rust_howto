@@ -34,7 +34,7 @@ reqwest = { version = "0.13.5", features = ["blocking"] }
 semver = "1.0.28"
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.154"
-similar = "3.2.0"
+similar = "3.2.1"
 tempfile = "3.27.0"
 tinytemplate = "1.2.1"
 toml = "1.1.8"
