@@ -6,11 +6,11 @@
 
 ## Read and Write CSV Files {#read-and-write-csv-files}
 
-Reading, writing, filtering, transforming and (de)serializing CSV records with [`csv`][c~csv~docs]↗{{hi:csv}} and [`serde`][c~serde~docs]↗{{hi:serde}} are covered in the [CSV][p~csv] recipes of the Encoding chapter, so this page does not repeat them.
+Reading, writing, filtering, transforming and (de)serializing CSV records with [`csv`][c~csv~docs]↗{{hi:csv}} and [`serde`][c~serde~docs]↗{{hi:serde}} are covered in the [draft CSV recipes][p~csv]↗ in the book repository, so this page does not repeat them.
 
 For data processing, keep two points in mind:
 
-- **Stream large files.** `csv::Reader::records()` and `deserialize()` return iterators that read one record at a time, so memory use stays constant. Avoid collecting all rows into a `Vec` unless you need them.
+- **Stream large files.** `csv::Reader::records()` and `deserialize()` return iterators that process records incrementally. Memory still depends on the largest record and on anything your application retains; avoid collecting every row into a `Vec` unless needed.
 - **Load into a frame for analysis.** To filter, group or join CSV data, read it into a dataframe instead of hand-written loops: see [[dataframes | Dataframes]].
 
 ## Manipulate CSV Files from the Command Line {#manipulate-csv-files-from-the-command-line}
