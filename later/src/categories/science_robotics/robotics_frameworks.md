@@ -46,9 +46,12 @@ Framework for creating fast and reliable robots.
 
 [`copper`][c~copper~crates.io]↗{{hi:copper}} is a user-friendly robotics framework designed for creating fast and reliable robots. Copper is to robots what a game engine is to games.
 
+## Dataflow Robotics with `dora-rs` {#dora-rs}
+
+[`dora-rs`][dora~repo]↗{{hi:dora-rs}} (DORA, Dataflow-Oriented Robotic Architecture) provides middleware for robotics and AI applications. Its applications are described as directed dataflow graphs whose nodes exchange data through the runtime.
+
 ## Frameworks {#frameworks .skip}
 
-[`dora-rs`][dora~repo]↗{{hi:dora-rs}} - A fast and simple robotics frameworks for AI.
 `Peng`{{hi:Peng}} - A minimal quadrotor autonomy framework
 
 ## gRPC {#grpc .skip}

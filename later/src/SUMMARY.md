@@ -176,10 +176,13 @@
   - [Shaders](categories/rendering_graphics-api/shaders.md)
 
 - [Robotics](categories/science_robotics/index.md)
-  - [Robotics](categories/science_robotics/robot_operating_systems.md)
+  - [Robot Operating Systems](categories/science_robotics/robot_operating_systems.md)
   - [Useful robotics tools and libraries](categories/science_robotics/robotics_frameworks.md)
+  - [Hardware Integration](categories/science_robotics/hardware_integration.md)
   - [Control Systems](categories/science_robotics/control_systems.md)
+  - [Perception and Sensors](categories/science_robotics/perception_and_sensors.md)
   - [Artificial Intelligence for Robotics](categories/science_robotics/artificial_intelligence.md)
+  - [Simulation and Visualization](categories/science_robotics/simulation_visualization.md)
 
 - [Science](categories/science/index.md)
   - [Neural Networks and Deep Learning](categories/science/deep_learning.md)

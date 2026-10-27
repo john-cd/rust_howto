@@ -12,6 +12,10 @@ Sensor integration often requires specialized crates that interact with specific
 
 [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: N-dimensional tensor arithmetic
 
+## Computer Vision and Geometry
+
+[`kornia-rs`][kornia-rs~repo] is a low-level computer-vision library written in Rust. [`sophus-rs`][sophus-rs~repo] provides 2D and 3D geometry for computer vision and robotics. See also [[computer-vision | Computer Vision]].
+
 ## Handling PointCloud2 Messages in ROS {#handling-pointcloud2 .skip}
 
 `ros_pointcloud2`

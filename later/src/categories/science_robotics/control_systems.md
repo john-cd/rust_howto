@@ -41,6 +41,17 @@ General-purpose [linear algebra][p~linear-algebra] library with transformations 
 
 `k` is for kinematics.
 
+## Geometry and Numerical Libraries {#geometry-and-numerical-libraries}
+
+- `ncollide2d` and `ncollide3d` provide two- and three-dimensional collision detection.
+- [`kdtree`][c~kdtree~crates.io] provides k-dimensional trees for nearest-neighbor queries.
+- [`static-math`][c~static-math~docs] provides mathematical operations over fixed-size arrays.
+- [`ndarray`][c~ndarray~docs] provides n-dimensional tensor arithmetic.
+
+## Linear Algebra with `faer` {#faer}
+
+[`faer`][faer~docs] is a general-purpose Rust linear algebra library focused on medium and large matrices and matrix decompositions. See also [[additional_numeric_types | Additional Numeric Types]] and [[linear_algebra | Linear Algebra]].
+
 ## Path Planning {#path-planning .skip}
 
 Collision avoidance, trajectory optimization.

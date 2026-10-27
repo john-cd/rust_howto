@@ -4,6 +4,8 @@
 [ex~science_robotics~astar]: artificial_intelligence.md#astar
 [ex~science_robotics~bonsai-bt]: artificial_intelligence.md#bonsai-bt
 [ex~science_robotics~copper]: robotics_frameworks.md#copper
+[ex~science_robotics~dora]: robotics_frameworks.md#dora-rs
+[ex~science_robotics~faer]: control_systems.md#faer
 [ex~science_robotics~k]: control_systems.md#k
 [ex~science_robotics~kiss3d]: simulation_visualization.md#kiss3d
 [ex~science_robotics~nalgebra]: control_systems.md#nalgebra
@@ -21,6 +23,14 @@
 [ex~science_robotics~zenoh]: robotics_frameworks.md#zenoh
 [adskalman~repo]: https://github.com/strawlab/adskalman-rs
 [optimization-engine~repo]: https://github.com/alphaville/optimization-engine
+[dora~repo]: https://github.com/dora-rs/dora
+[ehmi~repo]: https://github.com/roboplc/ehmi
+[faer~docs]: https://docs.rs/faer/latest/faer/
+[foxglove~ros2]: https://docs.foxglove.dev/docs/getting-started/frameworks/ros2
+[kornia-rs~repo]: https://github.com/kornia/kornia-rs
+[roboplc~repo]: https://github.com/roboplc/roboplc
+[rustconf2025~robotics~talk]: https://rustfoundation.org/media/rustconf-2025-program-live/
+[sophus-rs~repo]: https://github.com/sophus-vision/sophus-rs
 [p~classical-machine-learning]: ../science/classical_machine_learning.md
 [p~computer-vision]: ../computer-vision/index.md
 [p~concurrency]: ../../../src/categories/concurrency/index.md

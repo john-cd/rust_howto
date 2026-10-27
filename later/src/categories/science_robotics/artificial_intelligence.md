@@ -36,12 +36,6 @@ Robotics AI is still maturing in Rust, but Rust's safety and performance are a g
 
 [`optimization-engine`][optimization-engine~repo]↗{{hi:optimization-engine}} (OpEn) is a pure Rust framework for fast embedded nonconvex optimization. It is used for model predictive control (MPC) and trajectory planning on microcontrollers and on-board computers, and it generates solvers that can be called from Rust, C or ROS. See [Embedded][p~embedded].
 
-## Dataflow Robotics with `dora-rs` {#dora-rs}
-
-[![dora-rs][c~dora-rs~docs~badge]][c~dora-rs~docs] [![dora-rs~crates.io][c~dora-rs~crates.io~badge]][c~dora-rs~crates.io] [![dora-rs~repo][c~dora-rs~repo~badge]][dora~repo] [![dora-rs~lib.rs][c~dora-rs~lib.rs~badge]][c~dora-rs~lib.rs]{{hi:dora-rs}}
-
-[`dora-rs`][c~dora-rs~docs]↗{{hi:dora-rs}} (Dataflow Oriented Robotic Architecture) is a framework for AI robotics applications: nodes, written in Rust or Python, exchange data through a declarative dataflow graph. Its Rust ecosystem is small, so check its maturity before you adopt it.
-
 ## Related Topics {#related-topics .skip}
 
 - [[computer-vision | Computer Vision]].

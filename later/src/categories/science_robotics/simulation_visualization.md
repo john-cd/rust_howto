@@ -37,6 +37,11 @@ Logging SDK and visualizer for robotics.
 - Simulation engines and visualization.
 - Sensor and motion planning tools.
 - [Robot operating systems](./robot_operating_systems.md).
+- [[aerospace_simulation | Aerospace Simulation]].
+
+Game engines such as [`bevy`][c~bevy~docs] can also support interactive robotics simulations.
+
+For ROS 2 data visualization outside Rust applications, [Foxglove][foxglove~ros2] supports live ROS 2 connections and recorded MCAP files.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
