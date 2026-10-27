@@ -78,12 +78,22 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that the flexible child fills the remaining row width.
+    /// Verifies that both flex-row children have the expected positions and
+    /// sizes.
     #[test]
-    fn flex_grow_uses_remaining_width() -> anyhow::Result<()> {
-        let [_, (x, _, width, _)] = compute_child_layouts()?;
-        assert_eq!(x, 100.0);
-        assert_eq!(width, 300.0);
+    fn flex_row_computes_positions_and_sizes() -> anyhow::Result<()> {
+        let [
+            (fixed_x, fixed_y, fixed_width, fixed_height),
+            (flexible_x, flexible_y, flexible_width, flexible_height),
+        ] = compute_child_layouts()?;
+        assert_eq!(
+            (fixed_x, fixed_y, fixed_width, fixed_height),
+            (0.0, 0.0, 100.0, 50.0)
+        );
+        assert_eq!(
+            (flexible_x, flexible_y, flexible_width, flexible_height),
+            (100.0, 0.0, 300.0, 50.0)
+        );
         Ok(())
     }
 

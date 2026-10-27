@@ -299,13 +299,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that a stretch child fills the parent space after a fixed
-    /// sibling.
+    /// Verifies that the root and both children have the expected bounds.
     #[test]
-    fn stretch_child_uses_remaining_width() {
-        let [_, _, stretch_child] = compute_layout();
-        assert_eq!(stretch_child.0, 100.0);
-        assert_eq!(stretch_child.2, 400.0);
+    fn computes_positions_and_sizes_for_each_node() {
+        let [root, fixed_child, stretch_child] = compute_layout();
+        assert_eq!(root, (0.0, 0.0, 500.0, 400.0));
+        assert_eq!(fixed_child, (0.0, 0.0, 100.0, 100.0));
+        assert_eq!(stretch_child, (100.0, 0.0, 400.0, 100.0));
     }
 
     /// Runs the deterministic Morphorm layout example entry point.
