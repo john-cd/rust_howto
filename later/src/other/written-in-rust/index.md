@@ -14,12 +14,12 @@ This overview highlights a small set of software projects that demonstrate where
 
 ## Web Development and Networking
 
-| Area                           | Examples and details                                                                                                                                                                                                      |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Search                         | [Tantivy][c~tantivy~docs]↗ and [Meilisearch][c~meilisearch~docs]↗.                                                                                                                                                        |
-| Web and front-end applications | [Yew][c~yew~docs]↗, [Leptos][c~leptos~docs]↗, [Perseus][perseus~website]↗, and [Cloudflare `workers-rs`][workers-rs~repo]↗, which supports writing Workers in Rust. Cloudflare also runs Rust services.                   |
-| WebAssembly and runtimes       | [Deno][c~deno~docs]↗ and [Wasmer][c~wasmer~docs]↗; see [WebAssembly](../../categories/wasm/index.md).                                                                                                                     |
-| Networking                     | [Hickory DNS][hickory-dns~repo]↗, [BoringTun][boringtun~repo]↗, [Pingora][c~pingora~docs]↗, [Linkerd][linkerd2~repo]↗, [shoes][c~shoes~repo]↗, [RustScan][rustscan~repo]↗, and [Stalwart Mail Server][mail-server~repo]↗. |
+| Area                           | Examples and details                                                                                                                                                                                                        |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Search                         | [Tantivy][c~tantivy~docs]↗ and [Meilisearch][c~meilisearch~docs]↗.                                                                                                                                                          |
+| Web and front-end applications | [Yew][c~yew~docs]↗, [Leptos][c~leptos~docs]↗, [Perseus][perseus~website]↗, and [Cloudflare `workers-rs`][workers-rs~repo]↗, which supports writing Workers in Rust. Cloudflare also runs Rust services.                     |
+| WebAssembly and runtimes       | [Deno][c~deno~docs]↗ and [Wasmer][c~wasmer~docs]↗; see [WebAssembly](../../categories/wasm/index.md).                                                                                                                       |
+| Networking                     | [Hickory DNS][hickory-dns~repo]↗, [BoringTun][boringtun~repo]↗, [Pingora][c~pingora~docs]↗, [Linkerd][linkerd2~repo]↗, [shoes][c~shoes~repo]↗, [RustScan][rustscan~repo]↗, and [mail servers](other_tools.md#mail-servers). |
 
 ## Application Software
 
@@ -28,7 +28,7 @@ This overview highlights a small set of software projects that demonstrate where
 | Browsers                | [Firefox][mozilla-firefox~website]↗ and the [Servo engine][servo~repo]↗.                                                                                                                                                   |
 | Databases and analytics | [TiKV][tikv~repo]↗, [Neon][neon~repo]↗, [ArangoDB][arangodb.com~website]↗, [Databend][databend~repo]↗, [Qdrant][qdrant~repo]↗, [InfluxDB][influxdb~repo]↗, [DataFusion][c~datafusion~docs]↗, and [Polars][c~polars~docs]↗. |
 | Distributed systems     | [Substrate][substrate~repo]↗ and [Solana][c~solana~repo]↗.                                                                                                                                                                 |
-| Desktop applications    | [Tauri][c~tauri~repo]↗, [Spacedrive][spacedrive~website]↗, [RustDesk][c~rustdesk~repo]↗, and [Sniffnet][c~sniffnet~repo]↗.                                                                                                 |
+| Desktop applications    | [Tauri][c~tauri~repo]↗, [file managers](other_tools.md#file-managers), [remote desktops](other_tools.md#remote-desktops), and [Sniffnet][c~sniffnet~repo]↗.                                                                |
 | Games and visualization | [Bevy][c~bevy~repo]↗, [Veloren][veloren~repo]↗, and [Rerun][c~rerun~docs]↗.                                                                                                                                                |
 
 ## Development Tools

@@ -4,70 +4,46 @@
 
 {{#include other_tools.incl.md}}
 
-## File Managers {#file-managers}
+This catalog groups applications and services that use Rust for all or part of their implementation. It complements the [development tools](development_tools.md) and [Python tools](python_tools.md) pages. Upstream links describe each project's architecture, installation, license, and supported platforms; inclusion here is not a maintenance guarantee.
 
-[`Spacedrive`][spacedrive~website]↗{{hi:Spacedrive}} is an open source [cross-platform][p~cross-platform] file explorer, powered by a virtual distributed [filesystem][p~filesystem] written in Rust. [spacedrive][spacedrive~repo]↗ [![spacedrive~repo][spacedrive~repo~badge]][spacedrive~repo]
+## Desktop and Communication {#desktop-and-communication}
 
-## Remote Desktops {#remote-desktops}
+Some applications pair a Rust core with a user interface written in another language. Check the linked project before choosing a deployment or installation method.
 
-[![rustdesk][c~rustdesk~docs~badge]][c~rustdesk~docs]{{hi:rustdesk}}
-[![rustdesk~crates.io][c~rustdesk~crates.io~badge]][c~rustdesk~crates.io]
-[![rustdesk~repo][c~rustdesk~repo~badge]][c~rustdesk~repo]
-[![rustdesk~lib.rs][c~rustdesk~lib.rs~badge]][c~rustdesk~lib.rs]
+| Tool                                          | What it does                                                                       | Project                              |
+| --------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------ |
+| <span id="file-managers"></span>Spacedrive    | File explorer with a Rust-based virtual distributed filesystem.                    | [Repository][spacedrive~repo]↗       |
+| <span id="remote-desktops"></span>RustDesk    | Remote desktop client with self-hosting options.                                   | [Repository][c~rustdesk~repo]↗       |
+| <span id="email-applications"></span>Postsack | Groups email by sender and domain to help identify unwanted mail.                  | [Repository][postsack~repo]↗         |
+| <span id="mail-servers"></span>Stalwart       | Mail and collaboration server supporting protocols including SMTP, IMAP, and JMAP. | [Repository][stalwart~project~repo]↗ |
+| <span id="news"></span>Headlines              | News-reading GUI application; upstream labels it a work in progress.               | [Repository][headlines~repo]↗        |
+| <span id="social-media"></span>Lemmy          | Federated community discussion and link aggregation service.                       | [Repository][lemmy~repo]↗            |
 
-[rustdesk][c~rustdesk~repo]↗{{hi:rustdesk}} is an open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
+## Payments and Observability {#services-and-observability}
 
-## Email Applications {#email-applications}
+These projects run as services or integrate into an application. An observability platform stores and queries telemetry; an instrumentation library produces and exports it.
 
-[![postsack][postsack~repo~badge]][postsack~repo]
+| Tool                                        | What it does                                                                                                                 | Project                                |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| <span id="payments"></span>Hyperswitch      | Payment orchestration platform that connects applications to payment providers.                                              | [Repository][hyperswitch~repo]↗        |
+| <span id="observability"></span>OpenObserve | Observability platform for collecting and querying logs, metrics, and traces.                                                | [Repository][openobserve~repo]↗        |
+| OpenTelemetry Rust                          | Instrumentation APIs, SDKs, and exporters for Rust applications; a library suite rather than a standalone monitoring server. | [Repository][opentelemetry-rust~repo]↗ |
 
-[postsack][postsack~repo]↗{{hi:postsack}} visually cluster your emails by sender, domain, and more to identify waste.
+## Interactive Computing, Automation, and Robotics {#other-applications}
 
-## Mail Servers {#mail-servers}
+| Tool          | What it does                                                              | Project                           |
+| ------------- | ------------------------------------------------------------------------- | --------------------------------- |
+| evcxr Jupyter | Jupyter kernel for executing Rust interactively in notebooks.             | [Repository][evcxr-jupyter~repo]↗ |
+| Goose         | Extensible AI agent with a Rust backend for automating development tasks. | [Repository][goose~project~repo]↗ |
+| DORA          | Dataflow middleware for composing and running robotics applications.      | [Repository][dora~repo]↗          |
 
-[`Stalwart Mail Server`][mail-server~repo]↗ is an all-in-one mail server project.
-
-## News {#news}
-
-[headlines][headlines~repo]↗ is a simple news reading GUI app built in Rust
-
-## Payments {#payments}
-
-[hyperswitch][hyperswitch~repo]↗{{hi:hyperswitch}} is an open source payments switch written in Rust to make payments fast, reliable and affordable.
-
-## Social Media {#social-media}
-
-[lemmy][lemmy~repo]↗{{hi:lemmy}} is a link aggregator and forum for the fediverse.
-
-## Observability {#observability}
-
-[`OpenObserve`][openobserve~repo]↗ is an observability project for logs, metrics, traces, and related telemetry.
-
-[`opentelemetry-rust`][opentelemetry-rust~repo]↗ is the Rust implementation of OpenTelemetry.
-
-## Other Applications {#other-applications}
-
-[`evcxr_jupyter`][evcxr-jupyter~repo]↗ provides a Jupyter kernel for interactive Rust code.
-
-[`Codename Goose`][doc~block-goose]↗ and [DORA][dora~repo]↗ are additional application and robotics projects.
-
-The [Ratatui app showcase][ratatui-showcase-apps~website]↗ collects terminal applications built with Ratatui.
+The [Ratatui app showcase][ratatui-showcase-apps~website]↗ collects more terminal applications. For shells, editors, file navigation, and terminal search, use the [development tools catalog](development_tools.md#utilities).
 
 ## Related Topics {#related-topics .skip}
 
-- [[development_tools | Development Tools]].
-- [[command-line-interface | Command-line Interface]].
-- [[cross-platform | Cross-platform Development]].
-- [[programming_languages | Programming Languages]].
+- [Software Built in Rust](index.md) for the overview and other application categories.
+- [Development Tools Written in Rust](development_tools.md) for editors, build systems, and command-line utilities.
+- [Python Tools Written in Rust](python_tools.md) for Python interpreters, packaging, linting, and environment management.
 
 {{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[others: review/add](https://github.com/john-cd/rust_howto/issues/615)
-
-- [ChatGPT][chatgpt~repo]↗: ChatGPT Desktop Application (Mac, Windows and Linux).
-
-content audit: Written-in-Rust tool lists trimmed by recent commits; review and restore removed entries
-
-</div>
+{{#include ../../../../bk/src/refs/link-refs.md}}

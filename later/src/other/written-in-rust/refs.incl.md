@@ -46,3 +46,6 @@
 [evcxr-jupyter~repo]: https://github.com/evcxr/evcxr/tree/main/evcxr_jupyter
 
 [c~sniffnet~repo]: https://github.com/gyulyvgc/sniffnet
+[ex~written-in-rust~other-applications]: other_tools.md#other-applications
+[goose~project~repo]: https://github.com/aaif-goose/goose
+[stalwart~project~repo]: https://github.com/stalwartlabs/stalwart
