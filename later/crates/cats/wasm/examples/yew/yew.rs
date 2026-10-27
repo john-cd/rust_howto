@@ -6,28 +6,20 @@
 
 use yew::prelude::*;
 
-/// # App Component
+/// A simple counter component built with Yew.
 ///
-/// This is a simple counter application built with Yew.
-///
-/// The `function_component` attribute creates a function component from a
-/// normal Rust function. Functions with this attribute must return `Html` and
-/// can optionally receive a reference to the props.
-#[function_component(App)]
-fn app() -> Html {
+/// The component uses state hooks and callbacks to update its rendered HTML.
+#[component]
+fn App() -> Html {
     let counter = use_state(|| 0);
     let increment = {
         let counter = counter.clone();
         Callback::from(move |_| counter.set(*counter + 1))
-        // `Callback::from` is used to create a callback that will be triggered
-        // when the button is clicked.
     };
 
     let decrement = {
         let counter = counter.clone();
         Callback::from(move |_| counter.set(*counter - 1))
-        // `Callback::from` is used to create a callback that will be triggered
-        // when the button is clicked.
     };
 
     html! {
@@ -36,10 +28,9 @@ fn app() -> Html {
             <p>{ format!("Counter: {}", *counter) }</p>
             <button onclick={increment}>{ "+" }</button>
             <button onclick={decrement}>{ "-" }</button>
-            /* Example of conditional rendering */
             {
                 if *counter > 5 {
-                  html! { <p style="color: green;">{ "Counter is greater than 5!" }</p> }
+                    html! { <p style="color: green;">{ "Counter is greater than 5!" }</p> }
                 } else if *counter < -5 {
                     html! { <p style="color: red;">{ "Counter is less than -5!" }</p> }
                 } else {
@@ -50,7 +41,7 @@ fn app() -> Html {
     }
 }
 
-/// Runs the yew example.
+/// Runs the Yew example in the browser target.
 fn main() {
     #[cfg(target_arch = "wasm32")]
     yew::Renderer::<App>::new().render();
@@ -60,6 +51,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the Yew example for the crate's example harness.
 pub fn run() {
     main();
 }

@@ -39,6 +39,11 @@
 [leptos~csr-deployment~book]: https://book.leptos.dev/deployment/csr.html
 [leptos~cargo-leptos~repo]: https://github.com/leptos-rs/cargo-leptos
 [leptos~start-axum~repo]: https://github.com/leptos-rs/start-axum
-[leptos~trunk~website]: https://trunkrs.dev/
-[trunk~website]: https://trunkrs.dev/
+[leptos~trunk~website]: https://trunk-rs.github.io/trunk/
+[trunk~website]: https://trunk-rs.github.io/trunk/
+[yew~function-components~website]: https://yew.rs/docs/concepts/function-components
+[yew~props~website]: https://yew.rs/docs/concepts/function-components/properties
+[yew~callbacks~website]: https://yew.rs/docs/concepts/function-components/callbacks
+[yew~ssr~website]: https://yew.rs/docs/advanced-topics/server-side-rendering
+[dioxus~ssr~website]: https://dioxuslabs.com/learn/0.7/essentials/fullstack/ssr/
 [ex~wasm~wasmtime-sandbox]: wasm_standalone_runtimes.md#wasmtime-sandbox

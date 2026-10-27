@@ -242,7 +242,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#434](https://github.com/john-cd/rust_howto/issues/434) — **P4** — os_linux-apis/linux.md: linux: write — **PARTIAL ON ISSUE BRANCH; #818 inotify/statx example and final validation pending**
 - [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **PARTIAL ON ISSUE BRANCH; #819 legacy example and macOS CI inclusion remain; final validation pending**
 - [#496](https://github.com/john-cd/rust_howto/issues/496) — **P4** — wasm/wasm_standalone_runtimes.md: others: organize/write — **NOT STARTED**
-- [#498](https://github.com/john-cd/rust_howto/issues/498) — **P4** — wasm/yew.md: yew: write / organize — **NOT STARTED**
+- [#498](https://github.com/john-cd/rust_howto/issues/498) — **P4** — wasm/yew.md: yew: write / organize — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
 - [#1217](https://github.com/john-cd/rust_howto/issues/1217) — **P4** — `wasm/wasm_development.md`: write — **NOT STARTED**
 - [#1218](https://github.com/john-cd/rust_howto/issues/1218) — **P4** — `wasm/interfacing_with_javascript.md`: write — **PARTIAL**
 
