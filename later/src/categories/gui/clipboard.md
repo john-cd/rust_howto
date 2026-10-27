@@ -26,7 +26,7 @@ On Linux, clipboard contents are served by the application that set them, so the
 
 ## GUI Framework Integration {#gui-framework-integration}
 
-Some [GUI][p~gui] frameworks, like [`iced`][c~iced~docs]↗{{hi:iced}} or [`egui`][c~egui~docs]↗{{hi:egui}}, have their own clipboard integration.
+Some [GUI][p~gui] frameworks, like [`iced`][c~iced~docs]↗{{hi:iced}} or [`egui`][c~egui~docs]↗{{hi:egui}}, have their own clipboard integration. Other alternatives include `copypasta` and `clipboard-rs`; compare their platform support with your application before choosing one.
 
 ## WebAssembly (WASM) Considerations {#webassembly-wasm-considerations}
 

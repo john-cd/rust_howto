@@ -174,7 +174,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 - [#794](https://github.com/john-cd/rust_howto/issues/794) — **P4** — window_creation/winit.rs: review — **IMPLEMENTED ON TOPIC BRANCH; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#880](https://github.com/john-cd/rust_howto/issues/880) — **P4** — Finish the Crux cross-platform example I — **NOT STARTED**
 - [#1047](https://github.com/john-cd/rust_howto/issues/1047) — **P4** — 2d_renderers/main.rs: review — **NOT STARTED**
-- [#1048](https://github.com/john-cd/rust_howto/issues/1048) — **P4** — clipboard/main.rs: review — **NOT STARTED**
+- [#1048](https://github.com/john-cd/rust_howto/issues/1048) — **P4** — clipboard/main.rs: review — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#1052](https://github.com/john-cd/rust_howto/issues/1052) — **P4** — retained_mode_gui/vizia.rs: finish — **NOT STARTED**
 - [#1056](https://github.com/john-cd/rust_howto/issues/1056) — **P4** — window_creation/baseview.rs: write; review — **NOT STARTED**
 
