@@ -38,6 +38,7 @@
 [rustc~wasm32-wasip1~website]: https://doc.rust-lang.org/rustc/platform-support/wasm32-wasip1.html
 [rustc~wasm32-wasip2~website]: https://doc.rust-lang.org/rustc/platform-support/wasm32-wasip2.html
 [p~wasm]: index.md
+[parity-wasm~repo]: https://github.com/paritytech/parity-wasm
 [leptos~getting-started~book]: https://book.leptos.dev/getting_started/index.html
 [leptos~csr-deployment~book]: https://book.leptos.dev/deployment/csr.html
 [leptos~cargo-leptos~repo]: https://github.com/leptos-rs/cargo-leptos

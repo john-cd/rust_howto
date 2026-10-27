@@ -6,7 +6,7 @@
 
 Tooling targeting WebAssembly or manipulating WebAssembly.
 
-WebAssembly (Wasm) is a portable binary instruction format. Rust compiles to it for the browser (with JavaScript glue) and for server-side runtimes that use the WebAssembly System Interface (WASI).
+WebAssembly (Wasm) is a portable binary instruction format. Rust can compile to Wasm for browsers and other hosts. Browser applications commonly use JavaScript bindings; outside the browser, a host may provide WASI or another set of imports.
 
 ## Pages
 
@@ -24,7 +24,7 @@ WebAssembly (Wasm) is a portable binary instruction format. Rust compiles to it 
 
 ## Reading and Writing Wasm
 
-Use [`wat`][c~wat~docs]↗{{hi:wat}} to convert text format to binary, and [`wasm-encoder`][c~wasm-encoder~docs]↗{{hi:wasm-encoder}} and [`wasmparser`][c~wasmparser~docs]↗{{hi:wasmparser}} (part of `wasm-tools`) to build and parse modules. [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}} is deprecated.
+Use [`wat`][c~wat~docs]↗{{hi:wat}} to convert text format to binary, and [`wasm-encoder`][c~wasm-encoder~docs]↗{{hi:wasm-encoder}} and [`wasmparser`][c~wasmparser~docs]↗{{hi:wasmparser}} (part of `wasm-tools`) to build and parse modules. The older [`parity-wasm`][c~parity-wasm~docs]↗{{hi:parity-wasm}} is [deprecated and unmaintained][parity-wasm~repo]↗.
 
 ## Rust Front-End Frameworks
 
