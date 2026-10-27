@@ -3,6 +3,7 @@
 [ex~virtualization~docker-compose]: virtualization.md#docker-compose
 [ex~virtualization~docker]: virtualization.md#docker
 [ex~virtualization~virt]: virtualization.md#virt
+[c~vm-memory~docs]: https://docs.rs/vm-memory
 [p~cloud]: # "../cloud/index.md"
 [p~containers]: virtualization.md#containers
 [p~linux]: # "../os_linux-apis/linux.md"
