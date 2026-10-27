@@ -28,7 +28,7 @@ async fn main() -> Result<()> {
     let temp_dir = tempfile::tempdir()?;
     let zip_path = temp_dir.path().join("archive.zip");
 
-    // Write to zip
+    // Create an archive and write one entry to it.
     let file = File::create(&zip_path).await?;
     let mut writer = ZipFileWriter::new(file.compat_write());
 
@@ -39,7 +39,7 @@ async fn main() -> Result<()> {
     writer.write_entry_whole(entry, content).await?;
     writer.close().await?;
 
-    // Read from zip
+    // Read the archive back so the example can verify the round trip.
     let mut file = File::open(&zip_path).await?;
     let mut buffer = Vec::new();
     file.read_to_end(&mut buffer).await?;

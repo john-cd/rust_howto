@@ -10,23 +10,23 @@ use std::rc::Rc;
 
 /// Shares a mutable vector between several owners with `Rc<RefCell<_>>`.
 fn main() {
-    // Create a shared mutable vector
+    // Create a vector that can be shared and mutated through `RefCell`.
     let shared_vec: Rc<RefCell<Vec<i32>>> =
         Rc::new(RefCell::new(vec![1, 2, 3]));
 
-    // Create another owner of the same data
+    // Clone the `Rc` to create another owner of the same vector.
     let owner2 = Rc::clone(&shared_vec);
 
-    // Create yet another owner
+    // Add a third owner of the same vector.
     let owner3 = Rc::clone(&shared_vec);
 
-    // Modify the data through the first owner
+    // Mutate the vector through the first owner.
     shared_vec.borrow_mut().push(4);
 
-    // Modify the data through the second owner
+    // Mutate the same vector through the second owner.
     owner2.borrow_mut().push(5);
 
-    // Read the data through the third owner
+    // Borrow the shared vector through the third owner.
     let read_data = owner3.borrow();
     println!("Shared vector contents: {:?}", *read_data);
 

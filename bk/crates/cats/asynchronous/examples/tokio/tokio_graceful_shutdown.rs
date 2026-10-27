@@ -4,16 +4,15 @@
 // ANCHOR: example
 //! Graceful shutdown of nested subsystems with `tokio_graceful_shutdown`.
 
-// The `tokio_graceful_shutdown` crate provides utility functions to perform a
-// graceful shutdown on tokio-rs based services.
+// The `tokio_graceful_shutdown` crate provides utilities for coordinating
+// graceful shutdown in Tokio services.
 //
-// - Listening for shutdown requests from within subsystems
-// - Manual shutdown initiation from within subsystems
-// - Automatic shutdown on SIGINT/SIGTERM/Ctrl+C, Subsystem failure, Subsystem
-//   panic
-// - Clean shutdown procedure with timeout and error propagation
-// - Subsystem nesting
-// - Partial shutdown of a selected subsystem tree
+// - Listen for shutdown requests from within subsystems.
+// - Initiate shutdown manually from a subsystem.
+// - Handle SIGINT/SIGTERM/Ctrl+C, subsystem failures, and panics.
+// - Apply a clean shutdown procedure with timeout and error propagation.
+// - Nest subsystems.
+// - Shut down a selected subtree.
 
 use tokio::time::Duration;
 use tokio_graceful_shutdown::ErrorAction;
@@ -71,7 +70,7 @@ async fn parent_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
     let _panic_sub =
         subsys.start(SubsystemBuilder::new("Panic", panic_subsystem));
 
-    // Demonstrate partial shutdown
+    // Shut down only the nested subsystem while the parent continues running.
     tokio::time::sleep(Duration::from_millis(100)).await;
     tracing::info!("Shutting down nested subsystem...");
     nested.change_failure_action(ErrorAction::CatchAndLocalShutdown);
@@ -88,12 +87,12 @@ async fn parent_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
 /// Starts the subsystems under a shutdown handler and waits for them.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Init logging.
+    // Initialize logging.
     tracing_subscriber::fmt()
         .with_max_level(tracing::Level::TRACE)
         .init();
 
-    // Setup and execute the subsystem tree:
+    // Set up and run the subsystem tree.
     // The `Toplevel` object represents the root object of the subsystem tree.
     let _ = Toplevel::new(async |s: &mut SubsystemHandle| {
         // Register and start a new subsystem.
@@ -103,11 +102,10 @@ async fn main() -> anyhow::Result<()> {
         s.start(SubsystemBuilder::new("Countdown", countdown_subsystem));
         s.start(SubsystemBuilder::new("Parent", parent_subsystem));
     })
-    // Signals the `Toplevel` object to listen for SIGINT / SIGTERM / Ctrl + C
-    // and and initiate a shutdown thereafter:
+    // Listen for SIGINT, SIGTERM, or Ctrl+C and start shutdown when one
+    // arrives.
     .catch_signals()
-    // Collects all the return values of the subsystems, determines the global
-    // error state:
+    // Collect subsystem results and determine the overall error state.
     .handle_shutdown_requests(Duration::from_millis(400))
     .await;
     Ok(())

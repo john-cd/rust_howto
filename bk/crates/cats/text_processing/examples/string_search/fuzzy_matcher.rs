@@ -9,21 +9,21 @@ use fuzzy_matcher::skim::SkimMatcherV2;
 
 /// Scores and ranks strings against a pattern.
 fn main() {
-    // Create a new matcher
+    // Create a matcher that scores similar strings.
     let matcher = SkimMatcherV2::default();
 
-    // Define some example strings to search through
+    // Define candidate strings for the search.
     let items = [
         "fuzzy", "hazy", "buzzy", "scuzzy", "cloudy", "fuzzily", "fuzzed",
         "fuzzé",
     ];
 
-    // The pattern to search for
+    // Search for strings similar to this pattern.
     let pattern = "fuz";
 
     println!("Searching for pattern: '{pattern}'");
 
-    // Find all matches and their scores
+    // Collect each matching string with its score.
     let mut matches: Vec<(i64, &str)> = items
         .iter()
         .filter_map(|item| {
@@ -33,20 +33,19 @@ fn main() {
         })
         .collect();
 
-    // Sort by score (highest first)
+    // Sort the matches from highest score to lowest.
     matches.sort_by_key(|entry| std::cmp::Reverse(entry.0));
 
-    // Display results
+    // Display the ranked results.
     println!("\nResults (sorted by match score):");
     for (score, item) in &matches {
         println!("Score: {score}, Item: '{item}'");
     }
 
-    // Example of highlighting matches
+    // Show each match with its matched characters highlighted.
     println!("\nHighlighted matches:");
     for (_, item) in matches {
-        // fuzzy match item with pattern, and return the score & matched indices
-        // of characters.
+        // Get the match score and the indices of matched characters.
         if let Some((score, indices)) = matcher.fuzzy_indices(item, pattern) {
             let mut highlighted = String::new();
             for (char_idx, ch) in item.chars().enumerate() {

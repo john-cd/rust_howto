@@ -52,30 +52,30 @@ struct User {
 
 /// Connects to an Oracle database and queries the users.
 fn main() -> anyhow::Result<()> {
-    // Load environment variables (for secure handling of credentials)
+    // Load credentials from the environment instead of hard-coding secrets.
     dotenv().ok();
 
-    // Fetch connection details from environment variables
+    // Read the Oracle connection details from environment variables.
     let db_url = env::var("ORACLE_DB_URL").expect("ORACLE_DB_URL not set");
     let username =
         env::var("ORACLE_DB_USERNAME").expect("ORACLE_DB_USERNAME not set");
     let password =
         env::var("ORACLE_DB_PASSWORD").expect("ORACLE_DB_PASSWORD not set");
 
-    // Set up a connection to Oracle DB using Diesel and diesel_oci
+    // Connect to Oracle through Diesel and the `diesel_oci` backend.
     let mut connection: OciConnection =
         establish_connection(&db_url, &username, &password)?;
 
-    // Query the database (fetching users as an example)
+    // Fetch a few rows to demonstrate querying the database.
     let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
         .load::<User>(&mut connection)?;
 
-    // Print the results
+    // Print the results.
     for user in results {
         println!("Username: {}, Password: {}", user.username, user.password);
     }
 
-    // Use the connection similary to any other diesel connection
+    // Use the connection as you would with any other Diesel backend.
     let _res = users::table.load::<(i32, String, String)>(&mut connection)?;
 
     Ok(())
@@ -88,11 +88,11 @@ fn establish_connection(
     password: &str,
 ) -> Result<OciConnection, ConnectionError> {
     // Example: "oracle://user:secret@127.0.0.1/MY_DB".
-    // The connection string format is:
+    // The connection string format is shown below.
     // "oracle://<username>:<password>@<db_url>"
     let connection_string = format!("oracle://{username}:{password}@{db_url}");
 
-    // Create and return the connection
+    // Open the connection with the constructed URL.
     OciConnection::establish(&connection_string)
 }
 // ANCHOR_END: example

@@ -25,10 +25,10 @@ fn main() -> std::io::Result<()> {
     let mut temp_file: File = tempfile()?;
     writeln!(temp_file, "This is temporary.")?;
 
-    // Seek to start:
+    // Move the cursor back to the beginning before reading the file.
     temp_file.seek(SeekFrom::Start(0))?;
 
-    // Read it:
+    // Read the file back to verify the contents.
     let mut buf = String::new();
     temp_file.read_to_string(&mut buf)?;
     assert_eq!(buf, "This is temporary.\n");
@@ -45,9 +45,8 @@ fn main() -> std::io::Result<()> {
     let mut file = spooled_tempfile(15);
     writeln!(file, "short")?;
     assert!(!file.is_rolled());
-    // As a result of the following write call, the size of the data will exceed
-    // `max_size` (15), so it will be written to a temporary file on disk,
-    // and the in-memory buffer will be dropped:
+    // This write exceeds the 15-byte threshold, so the buffer spills to disk
+    // and its in-memory storage is released.
     writeln!(file, "much longer than the max size")?;
     assert!(file.is_rolled());
 
@@ -103,7 +102,7 @@ fn main() -> std::io::Result<()> {
 
     drop(temp_file);
 
-    // Print the content of the named temporary file:
+    // Show the contents after reopening the named temporary file.
     println!("Content of temporary file: {content}");
 
     drop(file);
@@ -111,7 +110,7 @@ fn main() -> std::io::Result<()> {
     Ok(())
 }
 
-// Examples adapted from <https://docs.rs/tempfile>
+// Examples adapted from <https://docs.rs/tempfile>.
 // ANCHOR_END: example
 
 pub fn run() -> std::io::Result<()> {

@@ -25,7 +25,7 @@ fn main() {
     // A `for` loop operating on a collection calls `into_iter()` implicitly.
     let vec2 = vec![10, 20, 30];
     for x in vec2 {
-        // Equivalent to vec2.into_iter()
+        // This loop calls `vec2.into_iter()` implicitly.
         print!("{x:?} ");
     }
     println!();

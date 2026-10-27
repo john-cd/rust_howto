@@ -14,8 +14,8 @@ use xshell::cmd;
 /// Runs shell commands with `xshell`.
 #[tracing::instrument(err)]
 fn main() -> anyhow::Result<()> {
-    // Initialize tracing subscriber
-    // We only init it if it hasn't been initialized by a test framework
+    // Initialize tracing unless the test harness already installed a
+    // subscriber.
     let _ = tracing_subscriber::fmt::try_init();
     tracing::info!("Starting xshell example");
 
@@ -28,16 +28,15 @@ fn main() -> anyhow::Result<()> {
     // `Shell`.
     let sh = Shell::new()?;
 
-    // Basic command execution:
+    // Run a command and capture its standard output.
     // The `cmd!` macro provides a convenient syntax
     // for creating a command (a `Cmd` struct).
-    // `read` runs the command and return its `stdout` as a string.
+    // `read` runs the command and returns its `stdout` as a string.
     // You can also use `run`.
     let output = cmd!(sh, "echo Hello, xshell!").read()?;
     println!("Output: {output}");
 
-    // Run a command with arguments:
-    // You don't have to worry about escaping the arguments.
+    // Pass command arguments separately so `xshell` can handle their quoting.
     let file_paths = ["test.txt"];
     let temp_dir = "temp";
     cmd!(
@@ -49,7 +48,7 @@ fn main() -> anyhow::Result<()> {
     // iterable of arguments. This is a convenient way to pass multiple
     // or optional arguments to a command.
 
-    // Working directory manipulation:
+    // Inspect and temporarily change the shell's working directory.
     let current_dir = sh.current_dir();
     println!("Current directory: {}", current_dir.display());
 
@@ -66,7 +65,7 @@ fn main() -> anyhow::Result<()> {
     // if they don't exist.
     sh.write_file("test.txt", "Some Content")?;
 
-    // Conditional execution of a commmand:
+    // Check for a file and branch on the command's exit status.
     if cmd!(sh, "test -f test.txt").quiet().run().is_ok() {
         println!("'test.txt' exists");
     } else {
@@ -79,7 +78,7 @@ fn main() -> anyhow::Result<()> {
     let file_path = sh.current_dir().join("text.txt");
     println!("File path: {}", file_path.display());
 
-    // Check existence of the file:
+    // Check whether the generated file exists before reading or removing it.
     if sh.path_exists(&file_path) {
         // Read the entire contents of a file into a string.
         if let Ok(file_content) = sh.read_file(&file_path) {
@@ -92,30 +91,31 @@ fn main() -> anyhow::Result<()> {
     // Reverts the working directory to its old value when the guard is dropped.
     drop(guard);
 
-    // Checking command status:
+    // Inspect successful and failing command statuses.
     let status = cmd!(sh, "true").run();
     tracing::info!("Command status: {status:?}");
 
     let failed_status = cmd!(sh, "false").run();
     tracing::info!("Failed command status: {failed_status:?}");
-    // Capture `stderr` with `read_stderr`:
+    // Capture a failed command's standard error with `read_stderr`.
     let err_result = cmd!(sh, "cat nonexistent_file").read_stderr();
     tracing::info!("Standard error: {}", err_result.unwrap_err());
 
-    // Environment variables:
+    // Set and read variables in the shell's environment map.
     // `xshell` maintains its own environment map, independent of the system's.
     sh.set_var("MY_VAR", "my_value");
     println!("Set MY_VAR to {}", sh.var("MY_VAR")?);
 
     // Important: `xshell` does NOT invoke a shell, so shell variable expansion
     // does NOT happen. `$MY_VAR` is passed literally to the command.
-    // The following prints the literal string "$MY_VAR", NOT "my_value":
+    // This command prints `$MY_VAR` literally because `xshell` does not expand
+    // shell variables.
     let literal = cmd!(sh, "echo $MY_VAR").read()?;
     println!("Direct echo $MY_VAR (literal, not expanded): '{literal}'");
     assert_eq!(literal, "$MY_VAR");
 
-    // The correct `xshell` approach is to retrieve the value with `sh.var()`
-    // and then use Rust variable interpolation `{my_var}` in the `cmd!` macro:
+    // Read the value with `sh.var()` and interpolate it as a Rust variable in
+    // the `cmd!` macro.
     let my_var = sh.var("MY_VAR")?;
     let via_interpolation = cmd!(sh, "echo {my_var}").read()?;
     println!("Via Rust variable interpolation: '{via_interpolation}'");
@@ -128,7 +128,7 @@ fn main() -> anyhow::Result<()> {
     println!("Via sh -c (shell expansion): '{via_sh}'");
     assert_eq!(via_sh, "my_value");
 
-    // Change the working directory permanently:
+    // Change the working directory permanently for this shell.
     let temp_dir = tempfile::tempdir()?;
     let temp_path = temp_dir.path();
     sh.change_dir(temp_path);

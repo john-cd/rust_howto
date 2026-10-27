@@ -99,7 +99,7 @@ mod tests {
         let num_colors = 100;
         let cats_per_color = 50;
 
-        // Baseline approach: conn.execute inside loop
+        // The baseline executes each SQL statement inside the insertion loop.
         let start = std::time::Instant::now();
         for i in 0..num_colors {
             let color = format!("Color_{i}");
@@ -118,11 +118,11 @@ mod tests {
         }
         let baseline_duration = start.elapsed();
 
-        // Clear tables
+        // Clear both tables before measuring the prepared-statement approach.
         conn.execute("DELETE FROM cats", ())?;
         conn.execute("DELETE FROM cat_colors", ())?;
 
-        // Prepared statement approach
+        // Prepare each statement once and reuse it throughout the loop.
         let start = std::time::Instant::now();
         let mut color_stmt =
             conn.prepare("INSERT INTO cat_colors (name) values (?1)")?;

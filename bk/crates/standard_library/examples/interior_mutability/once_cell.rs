@@ -11,10 +11,10 @@ use std::cell::OnceCell;
 fn main() {
     let cell = OnceCell::new();
 
-    // The cell is initially empty
+    // The cell is initially empty.
     assert!(cell.get().is_none());
 
-    // Initialize the cell
+    // Initialize the cell once.
     let value = cell.get_or_init(|| {
         println!("Initializing...");
         "Hello, World!".to_owned()
@@ -22,8 +22,8 @@ fn main() {
 
     assert_eq!(value, "Hello, World!");
 
-    // Subsequent calls to `get_or_init` will not re-initialize,
-    // but return the already initialized value.
+    // Subsequent calls to `get_or_init` return the stored value without
+    // running the initializer again.
     let same_value = cell.get_or_init(|| {
         println!("This will not be printed");
         "Goodbye!".to_owned()
@@ -31,11 +31,12 @@ fn main() {
 
     assert_eq!(same_value, "Hello, World!");
 
-    // You can also use `set`, which returns an error if already initialized
+    // You can also call `set`, which returns an error if the cell is already
+    // initialized.
     let result = cell.set("New Value".to_owned());
     assert!(result.is_err());
 
-    // `get` returns an Option with a reference to the value
+    // `get` returns an `Option` containing a reference to the stored value.
     assert_eq!(
         cell.get()
             .expect("expected example value should be present"),

@@ -21,10 +21,10 @@ fn main() {
     small_vec.push(4);
 
     assert_eq!(small_vec.len(), 4);
-    // Elements are stored inline (no heap allocation yet)
+    // The first four elements fit inline, so no heap allocation is needed yet.
     assert!(!small_vec.spilled());
 
-    // We can also initialize it via a macro:
+    // The `smallvec!` macro can also initialize an inline vector.
     let mut small_vec: SmallVec<[i32; 4]> = smallvec![1, 2, 3, 4];
 
     // Print the current state of the SmallVec.
@@ -33,10 +33,10 @@ fn main() {
     // Push beyond the inline capacity, causing a heap allocation.
     small_vec.push(5);
 
-    // The vector has now spilled over to the heap
+    // The fifth element exceeds the inline capacity, so the vector spills to
+    // the heap.
     assert!(small_vec.spilled());
-    // The capacity grows upon spilling (typically doubling the original
-    // capacity)
+    // Spilling increases the capacity, typically by doubling it.
     assert!(small_vec.capacity() >= 5);
 
     // Print the state of the SmallVec after pushing beyond capacity.
