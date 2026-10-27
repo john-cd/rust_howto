@@ -388,7 +388,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-03 — Compression and archives
 
-- [#254](https://github.com/john-cd/rust_howto/issues/254) — **P3** — `tar/tar_decompress.rs`: review; tar_decompress.rs is noplayground - fix? — **PARTIAL**
+- [#254](https://github.com/john-cd/rust_howto/issues/254) — **P3** — `tar/tar_decompress.rs`: review; tar_decompress.rs is noplayground - fix? — **IMPLEMENTED ON DEVELOP; OPEN — explicit archive/destination paths, self-contained extraction test with automatic tempfile cleanup, and noplayground rationale are present; formatted; tests, Clippy, and book checks deferred to final validation**
 - [#255](https://github.com/john-cd/rust_howto/issues/255) — **P3** — `tar/tar_compress.rs`: review; tar_compress.rs is noplayground - fix? — **PARTIAL**
 
 #### VALIDATE-CODE-04 — Build scripts, Cargo and procedural macros

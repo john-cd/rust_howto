@@ -46,6 +46,11 @@ fn decompress_archive(
 }
 // ANCHOR_END: example
 
+/// Extracts the archive created by the compression example.
+///
+/// # Errors
+///
+/// Returns an I/O error if the archive cannot be read or extracted.
 pub fn run() -> Result<(), std::io::Error> {
     main()
 }
@@ -54,8 +59,6 @@ pub fn run() -> Result<(), std::io::Error> {
 mod tests {
     use std::fs;
     use std::io;
-    use std::path::PathBuf;
-    use std::time::SystemTime;
 
     use flate2::Compression;
     use flate2::write::GzEncoder;
@@ -72,7 +75,8 @@ mod tests {
     /// read back.
     #[test]
     fn extracts_archive_from_given_path() -> io::Result<()> {
-        let work_dir = create_test_directory()?;
+        let temporary = tempfile::tempdir()?;
+        let work_dir = temporary.path();
         let archive_path = work_dir.join("input.tar.gz");
         let destination = work_dir.join("output");
         let expected = b"archive contents";
@@ -95,27 +99,7 @@ mod tests {
         let extracted = fs::read(destination.join("source/message.txt"))?;
         assert_eq!(extracted, expected);
 
-        fs::remove_dir_all(&work_dir)?;
         Ok(())
-    }
-
-    /// Creates a unique temporary directory for a tar decompression test.
-    ///
-    /// # Errors
-    ///
-    /// Returns an I/O error if the directory cannot be created.
-    fn create_test_directory() -> io::Result<PathBuf> {
-        let timestamp = SystemTime::now()
-            .duration_since(std::time::UNIX_EPOCH)
-            .map_err(io::Error::other)?
-            .as_nanos();
-        let directory = std::env::temp_dir().join(format!(
-            "rust_howto_tar_decompress_{}_{}",
-            std::process::id(),
-            timestamp
-        ));
-        fs::create_dir(&directory)?;
-        Ok(directory)
     }
 }
 
