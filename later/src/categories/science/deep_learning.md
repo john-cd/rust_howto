@@ -45,7 +45,7 @@ The example trains a one-layer model on generated values entirely on `Device::Cp
 ## Bind to Existing Frameworks {#bindings .skip}
 
 - [`tch`][c~tch~repo]↗{{hi:tch}} provides Rust bindings to the C++ API of PyTorch (LibTorch).
-- [`tensorflow`][tensorflow-rust~repo]↗{{hi:tensorflow}} provides Rust bindings for TensorFlow. Its development has slowed down.
+- [`tensorflow`][tensorflow-rust~repo]↗{{hi:tensorflow}} provides Rust bindings for TensorFlow. The upstream repository is archived, so treat it as a legacy option and assess alternatives for new projects.
 - [`mistral.rs`][mistral.rs~repo]↗ is an inference engine for running large language models in Rust.
 
 ## References {#references .skip}
