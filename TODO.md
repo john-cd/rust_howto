@@ -457,7 +457,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-14 — Text processing and HTML
 
-- [#1932](https://github.com/john-cd/rust_howto/issues/1932) — **P3** — Add examples: sanitize untrusted HTML (ammonia) and convert HTML to plain text (html2text) — **PARTIAL**
+- [#1932](https://github.com/john-cd/rust_howto/issues/1932) — **P3** — Add examples: sanitize untrusted HTML (ammonia) and convert HTML to plain text (html2text) — **IMPLEMENTED ON DEVELOP; BLOCKED — sanitization/Markdown/html2text examples, template-escaping guidance, and email plain-text recipe are present; affected-package/Clippy/refdefs/book gates remain unresolved; details are on the issue**
 
 #### VALIDATE-CODE-15 — Parsing and XML
 
