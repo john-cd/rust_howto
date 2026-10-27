@@ -220,7 +220,7 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-CODE-10 — Cloud services and SDKs
 
-- [#1913](https://github.com/john-cd/rust_howto/issues/1913) — **P4** — Add examples: message bus over AWS SQS/SNS with Protobuf payloads (aws-sdk, prost) — **PARTIAL**
+- [#1913](https://github.com/john-cd/rust_howto/issues/1913) — **P4** — Add examples: message bus over AWS SQS/SNS with Protobuf payloads (aws-sdk, prost) — **BLOCKED ON FINAL VALIDATION — implementation and offline Cargo evidence are in merged PR #1971; cross-links, book refdefs/build, and optional LocalStack coverage remain**
 
 #### NOW-CODE-11 — Tabular data and finance
 
