@@ -12,7 +12,6 @@ use rustler::Env;
 use rustler::NifResult;
 
 /// The functions exposed to Erlang and Elixir.
-#[cfg(feature = "erlang")]
 mod nif {
     use super::*;
 
@@ -24,7 +23,7 @@ mod nif {
     }
 
     /// Returns a greeting for `name`.
-    #[rustler::nif]
+    #[cfg_attr(feature = "erlang", rustler::nif)]
     fn greet(name: String) -> String {
         greeting(name)
     }
@@ -35,7 +34,7 @@ mod nif {
     }
 
     /// Returns the sum of `a` and `b`.
-    #[rustler::nif]
+    #[cfg_attr(feature = "erlang", rustler::nif)]
     fn add(a: i32, b: i32) -> i32 {
         sum(a, b)
     }
@@ -58,6 +57,7 @@ mod nif {
         }
     }
 
+    #[cfg(feature = "erlang")]
     rustler::init!("Elixir.MyRustLibrary");
 }
 

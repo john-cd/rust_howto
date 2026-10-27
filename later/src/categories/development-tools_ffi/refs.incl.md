@@ -61,3 +61,8 @@
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~serde]: ../encoding/serde.md
 [p~strings]: ../data-structures/strings.md
+
+[ffi~rustler-mix]: https://rustler.hexdocs.pm/readme.html
+[ffi~rustler-nif]: https://docs.rs/rustler/latest/rustler/attr.nif.html
+[ffi~rustler-resource]: https://docs.rs/rustler/latest/rustler/struct.ResourceArc.html
+[ffi~rustler-precompiled]: https://rustler-precompiled.hexdocs.pm/RustlerPrecompiled.html
