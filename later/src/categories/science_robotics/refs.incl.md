@@ -4,7 +4,8 @@
 [ex~science_robotics~astar]: artificial_intelligence.md#astar
 [ex~science_robotics~bonsai-bt]: artificial_intelligence.md#bonsai-bt
 [ex~science_robotics~copper]: robotics_frameworks.md#copper
-[ex~science_robotics~dora]: robotics_frameworks.md#dora-rs
+[ex~science_robotics~dora]: artificial_intelligence.md#dora
+[dora~website]: https://dora-rs.ai/
 [ex~science_robotics~faer]: control_systems.md#faer
 [ex~science_robotics~k]: control_systems.md#k
 [ex~science_robotics~kiss3d]: simulation_visualization.md#kiss3d

@@ -36,6 +36,10 @@ Robotics AI is still maturing in Rust, but Rust's safety and performance are a g
 
 [`optimization-engine`][optimization-engine~repo]↗{{hi:optimization-engine}} (OpEn) is a pure Rust framework for fast embedded nonconvex optimization. It is used for model predictive control (MPC) and trajectory planning on microcontrollers and on-board computers, and it generates solvers that can be called from Rust, C or ROS. See [Embedded][p~embedded].
 
+## Connect Robotics Components with Dora {#dora}
+
+[Dora][dora~website]↗ describes robotics and AI pipelines as dataflows: nodes exchange inputs and outputs through a configured graph. Use the framework when a perception, planning, and control pipeline needs separately managed components; consult its documentation for runtime setup and integration details.
+
 ## Related Topics {#related-topics .skip}
 
 - [[computer-vision | Computer Vision]].

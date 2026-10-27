@@ -586,7 +586,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 - [#969](https://github.com/john-cd/rust_howto/issues/969) — **P4** — Review the visualization index — **PARTIAL; OPEN — GUI table and three-d backend corrected; crate review, refdefs, book, spelling, and linked PR remain**
 - [#1205](https://github.com/john-cd/rust_howto/issues/1205) — **P4** — — Deep learning chapter — **PARTIAL**
 - [#1208](https://github.com/john-cd/rust_howto/issues/1208) — **P4** — — Control systems chapter — **PARTIAL**
-- [#1209](https://github.com/john-cd/rust_howto/issues/1209) — **P4** — — Robotics AI chapter — **PARTIAL**
+- [#1209](https://github.com/john-cd/rust_howto/issues/1209) — **P4** — — Robotics AI chapter — *_IMPLEMENTED; OPEN — A_ example and dataflow guidance present; tests, Clippy, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-11 — Architecture and scripting
 
