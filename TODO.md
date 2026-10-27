@@ -625,11 +625,13 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### DEFERRED-CODE-01 — Desktop UI, accessibility, games and GPU
 
-- [#828](https://github.com/john-cd/rust_howto/issues/828) — **P4** — 2d_raster_graphics/render.rs: write — **NOT STARTED; DEFERRED**
-- [#829](https://github.com/john-cd/rust_howto/issues/829) — **P4** — data_formats/data_formats.rs: write — **NOT STARTED; DEFERRED**
-- [#830](https://github.com/john-cd/rust_howto/issues/830) — **P4** — rendering_engines/render.rs: write — **NOT STARTED; DEFERRED**
-- [#831](https://github.com/john-cd/rust_howto/issues/831) — **P4** — native_graphics_apis/graphics.rs: write — **NOT STARTED; DEFERRED**
-- [#886](https://github.com/john-cd/rust_howto/issues/886) — **P4** — gpu/rust_gpu.rs: write — **NOT STARTED; DEFERRED**
+- [#828](https://github.com/john-cd/rust_howto/issues/828) — **P4** — 2d_raster_graphics/tiny_skia.rs: draw and encode a headless scene — **IMPLEMENTED ON DEVELOP; OPEN — existing commit `8e13180f3`; tests and lints skipped in this pass by request; PR link pending**
+- [#829](https://github.com/john-cd/rust_howto/issues/829) — **P4** — data_formats/inline_gltf_triangle.rs: parse a model and report geometry counts — **IMPLEMENTED ON DEVELOP; OPEN — existing commit `3d020a6b7`; tests and lints skipped in this pass by request; PR link pending**
+- [#830](https://github.com/john-cd/rust_howto/issues/830) — **P4** — rendering_engines/render.rs: resolve the placeholder — **IMPLEMENTED ON TOPIC; OPEN — `ca6c6049a` removes the empty example crate per #955; tests and lints skipped by request; integration, book validation, and PR link pending**
+- [#831](https://github.com/john-cd/rust_howto/issues/831) — **P4** — native_graphics_apis/wgpu_adapter_info.rs: report a GPU adapter's native backend — **IMPLEMENTED ON TOPIC; OPEN — `e7841bddb` adds a feature-gated headless query with errors; tests and lints skipped by request; integration, build/GPU/book validation, and PR link pending**
+- [#886](https://github.com/john-cd/rust_howto/issues/886) — **P4** — gpu/rust_gpu.rs: resolve the shader example — **IMPLEMENTED ON TOPIC; OPEN — `111349106` documents a separate shader setup and removes the no-op host target; tests and lints skipped by request; integration, book validation, and PR link pending**
+
+DEFERRED-CODE-01 topic: `codex/issue-828-desktop-gpu-batch` in `.worktrees/c`, HEAD `111349106`. Separate commits reconcile #828 (`bdab43e7a`) and #829 (`1823a2389`), whose implementations already existed on `develop`. All five issues have delivery comments and remain open. This pass ran formatting and `git diff --check`; no builds, tests, or lints were run.
 
 #### DEFERRED-CODE-02 — Machine learning, data and robotics
 
