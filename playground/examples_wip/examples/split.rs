@@ -28,8 +28,13 @@ fn split_path(path: &str) -> (&str, &str, &str) {
     (first, second, third)
 }
 
-/// Splits a sample path and prints the parts.
+/// Runs the sample path splitting example.
 fn main() {
+    run_example();
+}
+
+/// Splits a sample path and prints the parts.
+fn run_example() {
     let path = "src/playground/examples/split.rs";
     let (first, second, third) = split_path(path);
 
@@ -42,15 +47,16 @@ fn main() {
 
 /// Runs the path splitting example for the workspace test harness.
 pub fn run() {
-    main();
+    run_example();
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that the path splitting example entry point runs.
     #[test]
     fn test_split_example_entry_point() {
-        main();
+        run_example();
     }
 }

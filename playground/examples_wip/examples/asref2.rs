@@ -73,8 +73,13 @@ fn print_media_details<M: AsRef<MediaFile>>(item: M) {
     println!("Tags: {:?}", media_ref.tags);
 }
 
-/// Creates an image file and prints the details of its media file.
+/// Runs the example.
 fn main() {
+    run_example();
+}
+
+/// Creates an image file and prints the details of its media file.
+fn run_example() {
     // Create an ImageFile.
     let photo = ImageFile {
         // Nested struct.
@@ -105,17 +110,18 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the AsRef example for the workspace test harness.
+/// Runs the `AsRef` example for the workspace test harness.
 pub fn run() {
-    main();
+    run_example();
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that the `AsRef` example entry point runs.
     #[test]
     fn test_asref2_example_entry_point() {
-        main();
+        run_example();
     }
 }
