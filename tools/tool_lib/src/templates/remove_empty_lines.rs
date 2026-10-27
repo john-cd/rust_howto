@@ -128,4 +128,30 @@ mod tests {
         assert_eq!(lines, vec!["🦀 Rust", "🚀 Fast", "✨ Safe"]);
         assert_eq!(result, "🦀 Rust\n🚀 Fast\n✨ Safe");
     }
+
+    /// Verifies that input with only newline characters produces no output lines.
+    #[test]
+    fn test_remove_empty_lines_only_newlines() {
+        let (lines, result) = remove_empty_lines("\n\n\n\r\n\r\n");
+        assert!(lines.is_empty());
+        assert_eq!(result, "");
+    }
+
+    /// Verifies that multiple trailing newlines are stripped and do not affect non-empty content.
+    #[test]
+    fn test_remove_empty_lines_trailing_newlines() {
+        let input = "Hello world\n\n\n\r\n";
+        let (lines, result) = remove_empty_lines(input);
+        assert_eq!(lines, vec!["Hello world"]);
+        assert_eq!(result, "Hello world");
+    }
+
+    /// Verifies that multiple consecutive blank and whitespace-only lines are removed.
+    #[test]
+    fn test_remove_empty_lines_consecutive_blank_lines() {
+        let input = "Header\n\n\n   \n\t\n\nFooter";
+        let (lines, result) = remove_empty_lines(input);
+        assert_eq!(lines, vec!["Header", "Footer"]);
+        assert_eq!(result, "Header\nFooter");
+    }
 }
