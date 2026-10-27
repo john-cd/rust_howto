@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
 [ex~aerospace_space-protocols~space-protocols]: space_protocols.md#space-protocols
+[p~space-protocols]: space_protocols.md
 [p~protocols]: ../aerospace_protocols/aerospace_protocols.md
