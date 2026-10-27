@@ -2,7 +2,8 @@
 
 [workspace]
 resolver = "3"
-members = ["clean", "crate_indices", "mdbook-private", "mdbook-scrub", "templ", "tool_lib"]
+members = ["clean", "crate_indices", "mdbook-private", "templ", "tool_lib"]
+exclude = ["mdbook-scrub"]
 
 # Default values for packages in the workspace
 [workspace.package]
