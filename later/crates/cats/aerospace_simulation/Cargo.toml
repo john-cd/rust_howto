@@ -18,6 +18,8 @@ rust-version.workspace = true
 description = "Book code examples and their crate dependencies - aerospace_simulation"
 
 [dependencies]
+ode_solvers = "0.6.2"
+sgp4 = "2.4.0"
 
 [[example]]
 name = "aerospace_simulation"

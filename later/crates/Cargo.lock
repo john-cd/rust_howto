@@ -536,6 +536,10 @@ dependencies = [
 [[package]]
 name = "aerospace_simulation"
 version = "0.1.2"
+dependencies = [
+ "ode_solvers",
+ "sgp4",
+]
 
 [[package]]
 name = "aerospace_space_protocols"
@@ -18154,6 +18158,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed0423ff9973dea4d6bd075934fdda86ebb8c05bdf9d6b0507067d4a1226371d"
 dependencies = [
  "serde",
+ "thiserror 2.0.21",
+]
+
+[[package]]
+name = "ode_solvers"
+version = "0.6.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "18501982e08afc982434c92e1a2968d3b696b368c6df40a210475ba447fba8d9"
+dependencies = [
+ "nalgebra 0.34.2",
+ "num-traits",
+ "serde",
+ "simba 0.9.1",
  "thiserror 2.0.21",
 ]
 

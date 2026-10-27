@@ -98,8 +98,67 @@ fn main() {
 }
 // ANCHOR_END: example
 
+// ANCHOR: sgp4-tle-propagation
+/// Propagates a fixed ISS two-line element set sixty minutes from its epoch.
+fn propagate_tle_sixty_minutes() -> [f64; 3] {
+    use sgp4::Constants;
+    use sgp4::Elements;
+    use sgp4::MinutesSinceEpoch;
+
+    let elements = Elements::from_tle(
+        Some("ISS (ZARYA)".to_owned()),
+        b"1 25544U 98067A   26113.55475666  .00008745  00000+0  16716-3 0  9994",
+        b"2 25544  51.6320 210.5007 0006819 341.8336  18.2408 15.48911267563287",
+    )
+    .expect("the fixed ISS TLE should parse");
+    let constants = Constants::from_elements(&elements)
+        .expect("the fixed ISS TLE should provide valid SGP4 constants");
+    let prediction = constants
+        .propagate(MinutesSinceEpoch(60.0))
+        .expect("the fixed ISS TLE should propagate sixty minutes from epoch");
+
+    prediction.position
+}
+// ANCHOR_END: sgp4-tle-propagation
+
+// ANCHOR: rk4-ballistic-trajectory
+use ode_solvers::Rk4;
+use ode_solvers::System;
+use ode_solvers::Vector2;
+
+/// Models vertical ballistic motion under constant gravity.
+struct ConstantGravity;
+
+impl System<f64, Vector2<f64>> for ConstantGravity {
+    fn system(&self, _time: f64, y: &Vector2<f64>, dy: &mut Vector2<f64>) {
+        dy[0] = y[1];
+        dy[1] = -9.81;
+    }
+}
+
+/// Solves a ten-second vertical trajectory with a fixed-step RK4 integrator.
+fn solve_ballistic_trajectory() -> [f64; 2] {
+    let initial_state = Vector2::new(0.0, 100.0);
+    let mut solver = Rk4::new(ConstantGravity, 0.0, initial_state, 10.0, 0.1);
+    solver
+        .integrate()
+        .expect("the constant-gravity trajectory should integrate");
+
+    let final_state = solver
+        .y_out()
+        .last()
+        .expect("the RK4 solver should return its final state");
+    [final_state[0], final_state[1]]
+}
+// ANCHOR_END: rk4-ballistic-trajectory
+
+/// Runs the aerospace simulation examples through the crate entry point.
 pub fn run() {
     main();
+    let position = propagate_tle_sixty_minutes();
+    let trajectory = solve_ballistic_trajectory();
+    println!("ISS position after 60 minutes (km, TEME): {position:?}");
+    println!("Ballistic altitude after 10 seconds (m): {}", trajectory[0]);
 }
 
 #[cfg(test)]
@@ -146,5 +205,31 @@ mod tests {
             rocket.total_mass() < initial_mass,
             "Total mass should decrease"
         );
+    }
+
+    /// Checks that a fixed ISS TLE yields a finite position near low Earth
+    /// orbit after an hour.
+    #[test]
+    fn fixed_tle_propagates_to_a_finite_low_earth_orbit_position() {
+        let position = propagate_tle_sixty_minutes();
+        assert!(position.iter().all(|coordinate| coordinate.is_finite()));
+
+        let radius = position
+            .iter()
+            .map(|coordinate| coordinate.powi(2))
+            .sum::<f64>()
+            .sqrt();
+        assert!(
+            (6_500.0..7_500.0).contains(&radius),
+            "expected a low Earth orbit radius in km, got {radius} km"
+        );
+    }
+
+    /// Checks that RK4 solves the constant-gravity trajectory within tolerance.
+    #[test]
+    fn rk4_solves_a_constant_gravity_trajectory() {
+        let final_state = solve_ballistic_trajectory();
+        assert!((final_state[0] - 509.5).abs() < 1e-6);
+        assert!((final_state[1] - 1.9).abs() < 1e-6);
     }
 }
