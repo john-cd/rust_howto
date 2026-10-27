@@ -1,37 +1,60 @@
 <!-- TODO Reviewed 10-25-2026 -->
 
-# Tasks
+# TO DO List
 
 - [ ] JOHN review tools/
 - [ ] JOHN review .github\actions
+- [ ] JOHN review / rewrite the .py scripts
+- [ ] JOHN Review .pre-commit-config.yaml vs prek.toml
+- [ ] JOHN review LICENSE
+- [ ] JOHN bookmarks.json
+
+
+## Tasks
+
+### Urgent
+
+- [/] review dirty worktrees, create commits, integrate useful branches, discard stale work, and clean up topic refs
+  - [x] review `.worktrees\d`: 890 uncommitted deletions were accidental removals under `later/`; restored them
+- [/] integrate all useful topic branches into develop and discard the rest
+- [ ] format all Markdown files with dprint, etc if not done already
+
+## Scripts, Tools
+
 - [x] add a comment section at the beginning of all mod.just files and scripts with usage and purpose (after shebang line if there is one)
 - [x] move # TODO Reviewed ??-??-2026 after a comment blank line at the end of a comment section after the shebang line in all .sh files
 - [ ] verify that all .sh files can run in git bash
-- [ ] update windows-shell to git bash
+- [ ] just files: update all windows-shell to git bash
 - [x] mod.just: deduplicate tasks for unix / windows if they are the same. see e.g. bk\scripts\anchors\mod.just
-- [/] in all files: remove markdown link to a github issue if it has been fully resolved and closed
-- [ ] JOHN rewrite the .py scripts
-- [ ] give descriptive names to test functions.
-- [ ] improve comments within examples. add context and explanations where necessary. end with a period.
+- [ ] decide between _typos.toml vs bk\scripts\spelling\spellcheck.sh . convert bk\scripts\spelling\dictionary.txt if needed
+- [/] dprint.json expand to YAML, JSON, TOML, and Dockerfile; format tracked Markdown and configuration files
+- [ ] tasks.json - do we need?
+
+## Docker
+
+- [ ] no raw passwords in compose*.yaml
+- [x] Dockerfile: fix comments; remove the unused toolchain-file rewrite
+  - [x] keep `cargo install --git --rev --locked` for the pinned, in-development `mdbook-utils` revision
+- [ ] update .devcontainer\install_deps.ps1 and .devcontainer\install_deps.sh do we need both? use of git bash?
+- [x] update .devcontainer\WINDOWS_BUILD.md
+
+## Miscellaneous
+
+- [x] in all files: remove markdown link to a GitHub issue if it has been fully resolved and closed
+- [x] review and remove playground\drafts\workflow.yml
+- [x] tools/ xmpl/ Cargo.toml - move dependencies to workspace
+
+## Code Examples
+
+- [ ] update to syn 3.x
+- [x] review playground\bits_and_pieces and determine if any content should be moved or removed
+- [x] later\crates\gui_vizia\Cargo.toml move to proper location
+- [x] integrate embedded see: exclude = ["cats/embedded"] ; see later\crates\cats\embedded\Cargo.toml
 - [ ] no unwrap() except in places where we demonstrate unwrap()
 - [ ] all examples need a test that exercise the main() function or similar entry point
+- [ ] give descriptive names to test functions.
+- [ ] improve comments within examples. add context and explanations where necessary. end with a period.
 - [ ] move playground\examples_wip examples to bk/ if ready
-- [/] review and remove playground\drafts\workflow.yml
-- [/] review playground\bits_and_pieces and determine if any content should be moved or removed
-- [ ] JOHN bookmarks.json
-- [ ] decide between _typos.toml vs bk\scripts\spelling\spellcheck.sh . convert bk\scripts\spelling\dictionary.txt if needed
-- [/] dprint.json expand to YAML, etc. (root TODO.md is included; full check reports 573 unformatted Markdown files)
-- [ ] Review .pre-commit-config.yaml vs prek.toml
-- [ ] JOHN review LICENSE
-- [ ] tasks.json - do we need?
-- [ ] no raw passwords in compose*.yaml
-- [/] Dockerfile: fix comments. also why do we have: && printf '[toolchain]\nchannel = "%s"\n' "$RUSTFMT_TOOLCHAIN" > "$RUSTFMT_TOOLCHAIN_FILE" \
-  - [ ] use cargo binstall to install mdbook-utils?
-- [ ] update .devcontainer\install_deps.ps1 and .devcontainer\install_deps.sh do we need both? use of git bash?
-- [/] update .devcontainer\WINDOWS_BUILD.md
-- [/] tools/ xmpl/ Cargo.toml - move dependencies to workspace
-- [/] later\crates\gui_vizia\Cargo.toml move to proper location
-- [/] integrate embedded see: exclude = ["cats/embedded"] ; see later\crates\cats\embedded\Cargo.toml
 - [ ] make all Cargo.toml consistent
 - [ ] move code examples from later/ to bk/ when code + text ready
 
@@ -89,8 +112,6 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### ACTIVE-INFRA-01 — Preprocessors, references and recipe portability
 
-- #1249 — **P3** — Document native Windows support and Unix-only recipe boundaries — **CLOSED**
-- #1252 — **P3** — Define and test Windows/POSIX path-conversion boundaries / Codex — Everyday examples and concrete fixes chat — **CLOSED**
 - [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **PARTIAL; OPEN — Windows just 1.59.0 verified; Linux entry-point verification unavailable**
 - #1281 — **P3** — Update category-link generation to use landing pages and preprocessor directives / Codex — Everyday examples and concrete fixes chat — **CLOSED; LOCAL CATEGORY LINKS INTEGRATED; #248 TRACKS BADGE DIRECTIVES**
 
@@ -100,23 +121,23 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-CODE-01 — Build scripts, Cargo and procedural macros
 
-- [#901](https://github.com/john-cd/rust_howto/issues/901) — **P3** — build_time_tooling/cc_defines1.rs: finish; deal with extern — **NOT STARTED**
-- [#744](https://github.com/john-cd/rust_howto/issues/744) — **P4** — Finish the Watt compile-time macro example J — **NOT STARTED**
-- [#1917](https://github.com/john-cd/rust_howto/issues/1917) — **P4** — Add examples: analyse and generate Rust source (syn, quote, prettyplease, cargo_metadata) — **PARTIAL**
+- [#901](https://github.com/john-cd/rust_howto/issues/901) — **P3** — build_time_tooling/cc_defines1.rs: finish; deal with extern — **NOT STARTED, BLOCKED**
+- [#744](https://github.com/john-cd/rust_howto/issues/744) — **P4** — Finish the Watt compile-time macro example J — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — tests, Clippy, and book build pending (skipped as requested)**
+- [#1917](https://github.com/john-cd/rust_howto/issues/1917) — **P4** — Add examples: analyse and generate Rust source (syn, quote, prettyplease, cargo_metadata) — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — required validation pending (skipped as requested)**
 
 #### NOW-CODE-02 — Foreign function interfaces
 
-- [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation — **NOT STARTED**
-- [#78](https://github.com/john-cd/rust_howto/issues/78) — **P4** — `python/pyo3.rs`: finish; fix py examples — **NOT STARTED**
-- [#996](https://github.com/john-cd/rust_howto/issues/996) — **P4** — Fix and finish the Python-to-Rust example J — **NOT STARTED**
-- [#1028](https://github.com/john-cd/rust_howto/issues/1028) — **P4** — Finish the Flutter Rust Bridge example without adding a Flutter app to the workspace J — **NOT STARTED**
-- [#1029](https://github.com/john-cd/rust_howto/issues/1029) — **P4** — Finish the Java JNI example and its Rust test path J — **NOT STARTED**
-- [#1032](https://github.com/john-cd/rust_howto/issues/1032) — **P4** — Finish the Node N-API example J — **NOT STARTED**
-- [#1033](https://github.com/john-cd/rust_howto/issues/1033) — **P4** — node/neon.rs: finish how to test — **NOT STARTED**
-- [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix — **NOT STARTED**
-- [#1035](https://github.com/john-cd/rust_howto/issues/1035) — **P4** — ruby/magnus.rs: finish — **NOT STARTED**
-- [#1036](https://github.com/john-cd/rust_howto/issues/1036) — **P4** — ruby/rutie.rs: finish — **NOT STARTED**
-- [#1037](https://github.com/john-cd/rust_howto/issues/1037) — **P4** — examples/uniffi.rs: finish — **NOT STARTED**
+- [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation — **DEFERRED — JDK, Ruby headers, and maturin unavailable; blocker recorded on the issue**
+- [#78](https://github.com/john-cd/rust_howto/issues/78) — **P4** — `python/pyo3.rs`: finish; fix py examples — **DEFERRED — maturin unavailable and PyO3 is Linux-only in this crate; blocker recorded on the issue**
+- [#996](https://github.com/john-cd/rust_howto/issues/996) — **P4** — Fix and finish the Python-to-Rust example J — **DEFERRED — maturin unavailable; blocker recorded on the issue**
+- [#1028](https://github.com/john-cd/rust_howto/issues/1028) — **P4** — Finish the Flutter Rust Bridge example without adding a Flutter app to the workspace J — **DEFERRED — Flutter and Dart SDKs unavailable; blocker recorded on the issue**
+- [#1029](https://github.com/john-cd/rust_howto/issues/1029) — **P4** — Finish the Java JNI example and its Rust test path J — **DEFERRED — JDK unavailable; blocker recorded on the issue**
+- [#1032](https://github.com/john-cd/rust_howto/issues/1032) — **P4** — Finish the Node N-API example J — **DEFERRED — requires napi-derive plus a native compiler/linker; blocker recorded on the issue**
+- [#1033](https://github.com/john-cd/rust_howto/issues/1033) — **P4** — node/neon.rs: finish how to test — **DEFERRED — native compiler/linker unavailable; blocker recorded on the issue**
+- [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix — **DEFERRED — macOS validation unavailable; blocker recorded on the issue**
+- [#1035](https://github.com/john-cd/rust_howto/issues/1035) — **P4** — ruby/magnus.rs: finish — **DEFERRED — Ruby and development headers unavailable; blocker recorded on the issue**
+- [#1036](https://github.com/john-cd/rust_howto/issues/1036) — **P4** — ruby/rutie.rs: finish — **DEFERRED — Ruby and development headers unavailable; blocker recorded on the issue**
+- [#1037](https://github.com/john-cd/rust_howto/issues/1037) — **P4** — examples/uniffi.rs: finish — **DEFERRED — native compiler/linker unavailable; blocker recorded on the issue**
 
 #### NOW-CODE-03 — Desktop UI, accessibility, games and GPU
 
@@ -335,11 +356,11 @@ Selected topic branches are integrated linearly into local `develop` through `fa
 
 #### NOW-INFRA-02 — Dependencies, CI and containers
 
-- [#1998](https://github.com/john-cd/rust_howto/issues/1998) — **Unprioritized** — Port remaining examples across major dependency upgrades — **PARTIAL** — upstream-blocked subset
+- [#1998](https://github.com/john-cd/rust_howto/issues/1998) — **P1** — Port remaining examples across major dependency upgrades — **PARTIAL** — upstream-blocked subset
 
 #### NOW-INFRA-03 — Branch integration and retained work
 
-- [#1992](https://github.com/john-cd/rust_howto/issues/1992) — **Unprioritized** — Triage and integrate unique work from retained example branches — **PARTIAL** — preserve branch ownership
+- [#1992](https://github.com/john-cd/rust_howto/issues/1992) — **P1** — Triage and integrate unique work from retained example branches — **PARTIAL** — preserve branch ownership
 
 #### NOW-INFRA-04 — Windows validation and tooling repairs
 
