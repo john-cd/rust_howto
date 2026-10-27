@@ -417,9 +417,9 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-07 — Machine learning, data and robotics
 
-- [#1079](https://github.com/john-cd/rust_howto/issues/1079) — **P4** — Review and expand the OpenCV example — **PARTIAL**
-- [#1915](https://github.com/john-cd/rust_howto/issues/1915) — **P4** — Add examples: numerical optimization (argmin, CMA-ES, particle swarm, genetic algorithms) — **PARTIAL**
-- [#1942](https://github.com/john-cd/rust_howto/issues/1942) — **P4** — Add examples: geocode addresses and compute distances (geocoding, haversine, us-state-info) — **PARTIAL**
+- [#1079](https://github.com/john-cd/rust_howto/issues/1079) — **P4** — Review and expand the OpenCV example — **IMPLEMENTED ON DEVELOP; BLOCKED — Linux/OpenCV/libclang tests and Clippy require a Linux host; WSL access and Docker Linux engine are unavailable; details are on the issue**
+- [#1915](https://github.com/john-cd/rust_howto/issues/1915) — **P4** — Add examples: numerical optimization (argmin, CMA-ES, particle swarm, genetic algorithms) — **IMPLEMENTED ON DEVELOP; OPEN — seeded solver examples and book tables/prose are present; prior cloud tests/Clippy are recorded in the issue; required workspace/refdefs/book checks deferred to final validation**
+- [#1942](https://github.com/john-cd/rust_howto/issues/1942) — **P4** — Add examples: geocode addresses and compute distances (geocoding, haversine, us-state-info) — **IMPLEMENTED ON DEVELOP; OPEN — distance/state/cache examples and fake-geocoder coverage are present; live provider access is deliberately excluded; required refdefs/book checks deferred to final validation**
 
 #### VALIDATE-CODE-08 — Concurrency
 
