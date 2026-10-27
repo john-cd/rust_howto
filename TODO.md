@@ -411,9 +411,9 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-06 — Desktop UI, accessibility, games and GPU
 
-- [#1155](https://github.com/john-cd/rust_howto/issues/1155) — **P3** — `clipboard/arboard.rs`: review — **PARTIAL**
-- [#1933](https://github.com/john-cd/rust_howto/issues/1933) — **P4** — Add examples: egui add-on crates (tables, plots, docking tiles, toasts, file dialog, graphs, Markdown, icons, log viewer) — **PARTIAL**
-- [#1952](https://github.com/john-cd/rust_howto/issues/1952) — **P4** — Add example: show a local web page in a native window (wry, tao) — **PARTIAL**
+- [#1155](https://github.com/john-cd/rust_howto/issues/1155) — **P3** — `clipboard/arboard.rs`: review — **IMPLEMENTED ON DEVELOP; BLOCKED — prior GUI package tests passed; ignored desktop clipboard run, full Clippy, and issue-linked PR remain; details are on the issue**
+- [#1933](https://github.com/john-cd/rust_howto/issues/1933) — **P4** — Add examples: egui add-on crates (tables, plots, docking tiles, toasts, file dialog, graphs, Markdown, icons, log viewer) — **IMPLEMENTED ON DEVELOP; OPEN — add-on examples, headless coverage, and book page/table are present; prior cloud tests/Clippy are recorded in the issue; refdefs/book checks deferred to final validation**
+- [#1952](https://github.com/john-cd/rust_howto/issues/1952) — **P4** — Add example: show a local web page in a native window (wry, tao) — **IMPLEMENTED ON DEVELOP; OPEN — native webview example, URL allow-list coverage, and platform prose are present; manual window run and refdefs/book checks remain; details are on the issue**
 
 #### VALIDATE-CODE-07 — Machine learning, data and robotics
 
