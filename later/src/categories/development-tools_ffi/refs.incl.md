@@ -66,3 +66,9 @@
 [ffi~rustler-nif]: https://docs.rs/rustler/latest/rustler/attr.nif.html
 [ffi~rustler-resource]: https://docs.rs/rustler/latest/rustler/struct.ResourceArc.html
 [ffi~rustler-precompiled]: https://rustler-precompiled.hexdocs.pm/RustlerPrecompiled.html
+
+[ffi~frb-types]: https://cjycode.com/flutter_rust_bridge/guides/types
+[ffi~frb-quickstart]: https://cjycode.com/flutter_rust_bridge/quickstart
+[ffi~frb-integration]: https://cjycode.com/flutter_rust_bridge/manual/integrate/builtin
+[ffi~dart-ffi]: https://dart.dev/interop/c-interop
+[ffi~rinf]: https://pub.dev/packages/rinf

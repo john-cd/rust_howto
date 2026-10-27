@@ -6,19 +6,34 @@
 
 Interfacing with Flutter/Dart from Rust is primarily done using FFI (Foreign Function Interface) and requires a bit of setup on both the Rust and Dart sides.
 
-The [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} crate is the most important crate. It significantly simplifies the process of creating and managing the FFI bridge between Rust and Flutter/Dart. It's highly recommended to use it unless you have very specific low-level FFI needs.
+The [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} crate generates Rust/Dart glue for a typed API. Use it when Rust owns application logic that a Flutter UI calls. A small existing C ABI can instead use Dart's lower-level FFI directly.
 
 ## Rust Side {#rust-side}
 
-[`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}}: This crate aims to simplify the FFI interaction between Dart and Rust. It handles a lot of the boilerplate and code generation. This is the strongly recommended approach.
+[`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} handles code generation. Keep your API in ordinary functions and structs, returning explicit results for fallible operations. An `async fn` can represent asynchronous work; continuous updates can use a generated `StreamSink<T>`. Treat sink closure as cancellation and avoid keeping a producer alive after the Dart subscriber disappears. The [v2 type guide][ffi~frb-types] covers the supported types.
 
-[`std::ffi`][c~std::ffi~docs]↗{{hi:std::ffi}}, [`libc`][c~libc~docs]↗{{hi:libc}}: These are standard library [modules][p~modules] for lower-level FFI interaction. You'll likely use these indirectly via [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}}, or if you're implementing the FFI manually.
+[`std::ffi`][c~std::ffi~docs]↗{{hi:std::ffi}} is a standard-library module, while [`libc`][c~libc~docs]↗{{hi:libc}} is a separate crate. They provide types useful for manual C ABI integration.
 
 [`cbindgen`][c~cbindgen~docs]↗{{hi:cbindgen}}: Useful if you're working with C code as an intermediary, although [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} generally handles this for you.
 
 ## Dart/Flutter Side {#dart-flutter-side}
 
-- 'ffi': (Dart's FFI package for interacting with native code.)
+- [`dart:ffi`][ffi~dart-ffi] is Dart's native C interop library. The separate `package:ffi` supplies allocation and string helpers; neither is required as a user-designed serialization layer for a generated Rust bridge.
+
+After generation, initialize the generated library before invoking it. In the standard v2 template, the greeting above can be placed in `rust/src/api/simple.rs`; regenerate and call it from Dart:
+
+```dart
+import 'package:my_app/src/rust/api/simple.dart';
+import 'package:my_app/src/rust/frb_generated.dart';
+
+Future<void> main() async {
+  await RustLib.init();
+  final message = await helloFromRust(name: 'Ada');
+  print(message);
+}
+```
+
+The import paths depend on the generated package name and configured output directory. Flutter applications should also initialize Flutter's binding before APIs that require it.
 
 ## `flutter_rust_bridge` {#flutter_rust_bridge}
 
@@ -28,18 +43,32 @@ The [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_brid
 
 [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} helps generate the necessary boilerplate code (both Rust and Dart) to bridge the FFI gap.
 
+With Rust and Flutter installed, follow the [v2 quickstart][ffi~frb-quickstart]:
+
+```bash
+cargo binstall flutter_rust_bridge_codegen
+flutter_rust_bridge_codegen create my_app
+cd my_app
+flutter_rust_bridge_codegen generate
+flutter run
+```
+
+For an existing Flutter project, run `flutter_rust_bridge_codegen integrate` from its root instead of `create`. Keep the generator and runtime versions compatible and regenerate after API changes. The book's example below tests the plain API; generated application glue belongs in your Flutter project.
+
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/flutter/flutter_rust_bridge.rs:example}}
 ```
 
 ## Communication Between Rust and Dart {#communication-between-rust-and-dart}
 
-You'll serialize data in Rust and deserialize it in Dart, or vice-versa.
+The generator converts supported Rust and Dart types at the boundary. You do not need to serialize every argument manually.
 
-- [`serde`][c~serde~docs]↗{{hi:serde}} can serialize and deserialize data passed between Rust and Dart.
-- [`bincode`][c~bincode~docs]↗{{hi:bincode}} is a compact binary format often used for efficient FFI communication.
+- [`serde`][c~serde~docs]↗{{hi:serde}} is useful when the application also needs an explicit storage or network format.
+- [`bincode`][c~bincode~docs]↗{{hi:bincode}} is one possible Rust binary format, but Dart needs a compatible decoder if you choose to send those bytes.
 
 For more complex interactions, you might use platform channels, but [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} often abstracts this away.
+
+For manual `dart:ffi`, expose an `extern "C"` API from a Rust `cdylib`, use [`cbindgen`](generate_ffi_bindings.md#cbindgen) to describe it, and generate Dart declarations from the header with `ffigen`. Specify who allocates and frees buffers, encode errors in the ABI, and never let a Rust panic cross it. This native C ABI route is not available unchanged in a browser. [`rinf`][ffi~rinf] is an alternative centered on messages between Flutter and Rust.
 
 ## Build Tools {#build-tools .skip}
 
@@ -48,9 +77,13 @@ Use:
 - [`cargo`][c~cargo~docs]↗{{hi:cargo}} for building the Rust library.
 - Flutter's build system.
 
+### Build and Test Each Platform {#flutter-platforms}
+
+Android needs the NDK and Rust targets for the device ABIs you ship. iOS needs macOS, Xcode, and distinct device/simulator targets. Desktop builds need the host C/C++ toolchain and platform packaging; one shared library does not cover all desktop operating systems. The generated integration connects these builds to Flutter; see its [integration guide][ffi~frb-integration].
+
+The web backend builds Rust to WebAssembly and uses browser integration rather than loading a native dynamic library. Audit dependencies for WebAssembly support and test the configured web backend separately. Do not assume a native filesystem or thread API works in a browser.
+
+From `later/crates`, `cargo test --locked -p development_tools_ffi --example flutter` checks the greeting logic. It does not generate bindings, run Flutter, or validate mobile/web packaging. Run `flutter test` and a device/browser smoke test in the generated application as separate integration checks.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write; review in depth](https://github.com/john-cd/rust_howto/issues/1071)
-</div>

@@ -35,9 +35,9 @@ pub fn hello_from_rust(name: &str) -> String {
     format!("Hello, {name}! This is Rust speaking.")
 }
 
-/// Does nothing yet; the function above is called from Flutter.
+/// Exercises the same plain Rust API that a generated Flutter bridge calls.
 fn main() {
-    // TODO
+    println!("{}", hello_from_rust("Flutter"));
 }
 
 // ANCHOR_END: example
@@ -54,6 +54,15 @@ mod tests {
     #[test]
     fn test_flutter_rust_bridge_example_entry_point() {
         main();
+    }
+
+    /// Checks that the bridge API preserves the supplied name.
+    #[test]
+    fn greeting_includes_the_supplied_name() {
+        assert_eq!(
+            hello_from_rust("Ada"),
+            "Hello, Ada! This is Rust speaking."
+        );
     }
 }
 // [finish; reorg as a project using flutter_rust_bridge_codegen](https://github.com/john-cd/rust_howto/issues/1028)
