@@ -7,6 +7,7 @@ exclude = ["cats/embedded"]
 
 [workspace.dependencies]
 futures = "0.3.34"
+heapless = { version = "0.9.3", default-features = false }
 libc = "0.2.191"
 r2r = "0.9.7"
 

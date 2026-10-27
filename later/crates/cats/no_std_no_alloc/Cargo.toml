@@ -20,7 +20,7 @@ publish.workspace = true
 
 [dependencies]
 # Fixed-capacity collections and strings for the no-allocation example.
-heapless = { version = "0.9.3", default-features = false }
+heapless.workspace = true
 
 [[example]]
 name = "no_alloc"

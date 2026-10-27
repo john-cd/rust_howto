@@ -5,6 +5,9 @@
 mod no_alloc;
 
 /// Runs the no alloc example.
-fn main() {
-    no_alloc::run();
+///
+/// # Errors
+/// Propagates fixed-capacity string formatting failures.
+fn main() -> core::fmt::Result {
+    no_alloc::run()
 }
