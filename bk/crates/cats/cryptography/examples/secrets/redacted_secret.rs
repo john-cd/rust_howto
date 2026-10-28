@@ -110,4 +110,11 @@ mod tests {
     fn test_redacted_secret_example_entry_point() {
         run();
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

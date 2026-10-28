@@ -147,4 +147,11 @@ mod tests {
             password_verification(b"password", "not a PHC string").is_err()
         );
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

@@ -35,3 +35,14 @@ pub fn run() {
 fn test_genetic_algorithm_reaches_maximum_fitness() {
     assert_eq!(evolve(), BITS);
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

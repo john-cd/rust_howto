@@ -49,3 +49,14 @@ fn test_brent_method_finds_root() {
     let root = find_root();
     assert!((root.cos() - root).abs() < 1e-10);
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

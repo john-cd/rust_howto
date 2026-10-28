@@ -51,4 +51,11 @@ mod tests {
 
         assert_eq!(directory.email_for("ada"), Some("ada@example.test"));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

@@ -60,4 +60,11 @@ mod tests {
         assert!(String::from_utf8(body.to_vec())?.contains("route_test_total"));
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

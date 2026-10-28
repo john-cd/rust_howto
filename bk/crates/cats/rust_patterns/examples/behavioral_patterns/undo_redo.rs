@@ -97,4 +97,9 @@ mod tests {
         editor.redo();
         assert_eq!(editor.text, "R");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

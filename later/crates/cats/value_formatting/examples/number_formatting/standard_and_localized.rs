@@ -48,4 +48,9 @@ mod tests {
         assert_eq!(1_234_567_i64.to_formatted_string(&Locale::en), "1,234,567");
         assert_eq!(1_234_567_i64.to_formatted_string(&Locale::de), "1.234.567");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

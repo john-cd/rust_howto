@@ -92,4 +92,9 @@ mod tests {
             prop_assert_eq!(Span::new(start, end).is_some(), start <= end);
         }
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

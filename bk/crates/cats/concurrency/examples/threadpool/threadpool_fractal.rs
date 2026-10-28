@@ -173,4 +173,11 @@ mod tests {
         assert_eq!(saved_image.dimensions(), (64, 64));
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

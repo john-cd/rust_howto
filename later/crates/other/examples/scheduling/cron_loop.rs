@@ -84,8 +84,6 @@ async fn demo() -> anyhow::Result<()> {
         stopper.cancel();
     });
 
-    // The first run takes 25 s (it overruns two fire times); the others are
-    // instantaneous.
     let mut first = true;
     let started = run_cron(&schedule, &clock, token, || {
         let slow = std::mem::take(&mut first);
@@ -99,8 +97,6 @@ async fn demo() -> anyhow::Result<()> {
 
     let offsets: Vec<i64> =
         started.iter().map(|t| (*t - start).num_seconds()).collect();
-    // Starts at 10 s; the run ends at 35 s; the fire times at 20 s and 30 s
-    // were skipped; then 40, 50 and 60 s.
     assert_eq!(offsets, vec![10, 40, 50, 60]);
     Ok(())
 }

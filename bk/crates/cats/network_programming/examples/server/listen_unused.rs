@@ -73,5 +73,12 @@ mod tests {
         client.join().expect("client thread should complete")?;
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }
 // finish; listens to a connection forever

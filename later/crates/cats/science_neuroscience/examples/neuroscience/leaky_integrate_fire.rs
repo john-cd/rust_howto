@@ -66,4 +66,9 @@ mod tests {
     fn subthreshold_current_produces_no_spikes() {
         assert!(simulate_spike_times(0.5, 100).is_empty());
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

@@ -100,6 +100,13 @@ mod tests {
         let response = response_for(&Method::POST, "/");
         assert_eq!(response.status(), StatusCode::METHOD_NOT_ALLOWED);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }
 
 // Update Hyper server example to 1.0 API and implement request routing

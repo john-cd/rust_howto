@@ -98,4 +98,9 @@ mod tests {
         let result = supervise(|n| flaky(n, u32::MAX), token).await;
         assert_eq!(result, (1, false));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

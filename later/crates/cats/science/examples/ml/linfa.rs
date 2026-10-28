@@ -52,4 +52,11 @@ mod tests {
         assert!((predictions[1] - 7.0).abs() < 0.2);
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

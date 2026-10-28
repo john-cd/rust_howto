@@ -81,4 +81,11 @@ mod tests {
         assert_eq!(response.message, "Hello, Ada!");
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

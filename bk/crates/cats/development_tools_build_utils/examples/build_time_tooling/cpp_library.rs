@@ -34,4 +34,9 @@ mod tests {
         // C++.
         assert_eq!(unsafe { multiply(6, 7) }, 42);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

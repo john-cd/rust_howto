@@ -44,4 +44,9 @@ mod tests {
         assert_eq!(PRIVILEGES.get("James"), Some(&vec!["user", "admin"]));
         assert_eq!(PRIVILEGES.get("Jim"), Some(&vec!["user"]));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

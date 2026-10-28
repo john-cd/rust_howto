@@ -120,4 +120,9 @@ mod tests {
     async fn join_errors_are_distinguished() {
         assert_eq!(join_errors().await, (true, true));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

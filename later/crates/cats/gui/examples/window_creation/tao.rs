@@ -77,4 +77,11 @@ mod tests {
     fn test_tao_example_entry_point() -> Result<(), Box<dyn Error>> {
         run()
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

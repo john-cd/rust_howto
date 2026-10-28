@@ -32,4 +32,9 @@ mod tests {
         assert!(blurred.get_pixel(4, 4)[0] < 255);
         assert!(blurred.get_pixel(4, 3)[0] > 0);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

@@ -56,3 +56,16 @@ fn test_nelder_mead_finds_rosenbrock_minimum() -> Result<(), Error> {
     assert!(cost < 1e-6);
     Ok(())
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
+}

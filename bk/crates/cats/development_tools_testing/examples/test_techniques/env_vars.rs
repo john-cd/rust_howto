@@ -40,5 +40,10 @@ mod tests {
             assert_eq!(log_level(), "info");
         });
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }
 // ANCHOR_END: example

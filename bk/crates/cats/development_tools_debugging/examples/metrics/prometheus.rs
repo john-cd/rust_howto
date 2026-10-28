@@ -51,4 +51,11 @@ mod tests {
         assert!(rendered.contains("test_active_requests 3"));
         assert!(rendered.contains("test_request_duration_seconds_count 1"));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

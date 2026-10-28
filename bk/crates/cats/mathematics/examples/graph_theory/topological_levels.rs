@@ -169,4 +169,9 @@ mod tests {
             )
             .expect("generated DAGs must respect topological ordering");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

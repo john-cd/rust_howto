@@ -56,4 +56,11 @@ mod tests {
         assert_eq!(get_and_print_input(input)?, "Ada\n");
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

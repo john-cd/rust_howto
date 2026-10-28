@@ -90,6 +90,7 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     use super::App;
     use super::Counter;
     use super::Effect;

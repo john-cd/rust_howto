@@ -54,3 +54,14 @@ fn test_exponential_decay_solver_matches_exact_solution() {
         solve().expect("the sample initial value problem should integrate");
     assert!((final_value - (-2.0_f64).exp()).abs() < 1e-5);
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}
