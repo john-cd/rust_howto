@@ -2,14 +2,14 @@
 
 package com.example;
 
-public class NativeLibrary {
-    private static native String greet(String name);
+public class HelloWorld {
+    private static native String hello(String input);
 
     static {
         System.loadLibrary("mylib");
     }
 
     public static void main(String[] args) {
-        System.out.println(NativeLibrary.greet("World"));
+        System.out.println(HelloWorld.hello("World"));
     }
 }
