@@ -7,5 +7,6 @@ mod jni;
 
 /// Provides the binary target required to compile the JNI example module.
 fn main() {
-    // The exported JNI function is called by a JVM, not by this binary.
+    #[cfg(feature = "java")]
+    jni::run();
 }

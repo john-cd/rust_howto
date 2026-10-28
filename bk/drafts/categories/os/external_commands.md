@@ -4,13 +4,19 @@
 
 {{#include external_commands.incl.md}}
 
-For most application code, start with [`std::process::Command`][c~std::process::Command~docs]↗ and pass each argument separately instead of building a shell command string. Use `output()` to capture output, `status()` when you only need the exit status, or `spawn()` when you need to stream input or output. Check `status.success()` before treating a child's output as valid. A missing executable makes process creation fail; checking a command's location with `which` can improve diagnostics, but the executable can still disappear before it is launched.
+Executing external commands and managing child processes are common tasks when building command-line tools, automation scripts, and system utilities in Rust. Choosing the right tool depends on your application's requirements and structure:
 
-Use a command library when it fits the task: [`duct`][c~duct~docs]↗ helps compose pipelines in application code, while [`xshell`][c~xshell~docs]↗ provides shell-like command macros suited to build and maintenance scripts.
+- **[`std::process::Command`][c~std::process::Command~docs]↗**: The standard library module suitable for most core application code. It provides fine-grained control over process spawning, arguments, environment variables, and standard I/O handles without external dependencies.
+- **[`duct`][c~duct~docs]↗**: Ideal when you need to compose shell-like pipelines (`cmd1 | cmd2`), combine stdout and stderr, or redirect stream handles cleanly and portably across operating systems.
+- **[`xshell`][c~xshell~docs]↗**: Suited for developer tools, build automation, and maintenance scripts written in Rust. Its `cmd!` macro allows concise shell-like command invocation with automatic error reporting for non-zero exit codes.
+- **[`which`][c~which~docs]↗**: Useful for checking whether a specific binary (such as `git` or `rustc`) is available on the system's `PATH` before attempting execution or providing helpful setup diagnostics.
+- **[`shlex`][c~shlex~docs]↗**: Essential for parsing POSIX shell command-line strings into individual argument vectors or escaping arguments for safe terminal logging and shell-copyable output.
+
+When invoking child processes, pass each argument individually via `.arg()` or `.args()` instead of constructing shell strings to avoid injection vulnerabilities. Check `status.success()` or inspect exit codes before handling output as valid data.
 
 ## Locate Installed Executables with `which` {#which}
 
-[![which][c~which~docs~badge]][c~which~docs] [![which~crates.io][c~which~crates.io~badge]][c~which~crates.io] [![which~repo][c~which~repo~badge]][c~which~repo] [![which~lib.rs][c~which~lib.rs~badge]][c~which~lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:which}}{{hi:Which-rs}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+[![which][c~which~docs~badge]][c~which~docs] [![which~crates.io][c~which~crates.io~badge]][c~which~crates.io] [![which~repo][c~which~repo~badge]][c~which~repo] [![which~lib.rs][c~which~lib.rs~badge]][c~which~lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:Which-rs}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
 
 [`which`][c~which~docs]↗{{hi:which}} locates executables using the platform's search path. It can help explain why an optional tool cannot be found, but still handle errors from launching the returned path.
 
@@ -28,7 +34,7 @@ Runs [`git log --oneline`][git~log~docs]↗{{hi:git}} as an external [`std::proc
 {{#include ../../../crates/cats/os/examples/external_commands/process_output.rs:example}}
 ```
 
-## Run an External command, Passing it `stdin`, then Check for an Error Code {#run-an-external-command-passing-stdin-and-check-for-error-code}
+## Run an External Command, Passing it `stdin`, then Check for an Error Code {#run-an-external-command-passing-stdin-and-check-for-error-code}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~os][cat~os~badge]][cat~os]{{hi:OS}}{{hi:External command}}
 
@@ -120,14 +126,11 @@ Quoting for display is not a reason to run a command through a shell: pass each 
 
 ## Related Topics {#related-topics .skip}
 
-- [[command-line-interface | Command Line Interface]].
-- [[command-line-utilities | Command-line Utilities Written in Rust]].
+- [[process_management | Process Management]].
+- [[command_line_interface | Command Line Interface]].
+- [[command_line_utilities | Command-line Utilities Written in Rust]].
 - [[shells | Shells]].
 - [[os | Operating Systems]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write which; review](https://github.com/john-cd/rust_howto/issues/946)
-</div>

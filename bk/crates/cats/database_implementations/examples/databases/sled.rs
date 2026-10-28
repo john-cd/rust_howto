@@ -9,9 +9,9 @@
 
 /// Opens a `sled` database, then inserts, reads and removes values.
 fn main() -> anyhow::Result<()> {
-    // Open a sled database.
-    // A directory will be created if it does not exist:
-    let db: sled::Db = sled::open("temp/my_db")?;
+    // Open a sled database in a temporary directory:
+    let dir = tempfile::tempdir()?;
+    let db: sled::Db = sled::open(dir.path())?;
 
     // Insert a key to a new value, returning the last value if it was set:
     assert_eq!(db.insert(b"key1", b"Hello, Sled!"), Ok(None));

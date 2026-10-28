@@ -12,17 +12,42 @@
 
 PyO3 lets a Rust program call Python code through the interpreter. In current PyO3, `Python::attach` provides the interpreter token used by Python APIs; older examples may call the renamed `Python::with_gil` method. Python objects tied to that scope use the `Bound<'py, T>` API, while `Py<T>` owns a reference beyond the scope.
 
-The two embedded-interpreter examples in this workspace are currently enabled only on Linux and require a compatible Python installation and development environment. The separate extension package has its own Python and Maturin setup below; platform support for PyO3 itself is broader than this workspace's example configuration.
+Both embedded PyO3 examples are enabled on Linux and Windows and require a
+compatible Python installation and development files. The separate extension
+package has its own Python and Maturin setup below.
 
-This example is an embedded Python executable. It is enabled on Linux, where the `development_tools_ffi` crate declares its PyO3 dependency. It initializes the interpreter explicitly because the crate does not enable PyO3's `auto-initialize` feature.
+This example is an embedded Python executable. On Windows, set `PYTHONHOME` to
+the base Python installation before running the executable or its test so
+CPython can locate the standard library:
+
+```powershell
+$env:PYTHONHOME = (python -c "import sys; print(sys.base_prefix)").Trim()
+cargo run --locked -p development_tools_ffi --example python -- pyo3
+```
+
+The example initializes the interpreter explicitly because the crate does not
+enable PyO3's `auto-initialize` feature. On Windows, its test is ignored during
+the default test run; from `later/crates`, run it manually with the environment
+above:
+
+```console
+cargo test --locked -p development_tools_ffi --example python test_pyo3_example_entry_point -- --ignored --test-threads=1
+```
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/python/pyo3.rs:example}}
 ```
 
-### Define a Rust Module for Embedded Python {#use-rust-from-python}
+### Define Rust Functions and Classes for Embedded Python {#use-rust-from-python}
 
-This example registers a Rust-defined module in the embedded interpreter's `sys.modules`, then imports it from Python code. It demonstrates module and function registration inside a Rust executable; the next section shows how to build a native extension that a separate Python process can import.
+This example registers a Rust function and a `Counter` class in a module inside
+the embedded interpreter's `sys.modules`, then imports and calls them from
+Python code. On Windows, use the `PYTHONHOME` setup above; the test is ignored
+by default and can be run from `later/crates` with:
+
+```console
+cargo test --locked -p development_tools_ffi --example python test_use_rust_from_python_example_entry_point -- --ignored --test-threads=1
+```
 
 ```rust,noplayground
 {{#include ../../../crates/cats/development_tools_ffi/examples/python/use_rust_from_python.rs:example}}
@@ -36,15 +61,34 @@ An embedded module is available only to the Rust process that registers it. To e
 {{#include ../../../crates/cats/development_tools_ffi/python_extension/src/lib.rs}}
 ```
 
-From `later/crates/cats/development_tools_ffi/python_extension`, activate a Python virtual environment and run:
+From `later/crates/cats/development_tools_ffi/python_extension`, create and
+activate a Python virtual environment, then install the pinned Maturin version
+and build the extension:
 
 ```console
-python -m pip install "maturin>=1.9.4,<2.0"
+python -m venv .venv
+```
+
+Activate the environment with `source .venv/bin/activate` on Linux or `.venv\\Scripts\\Activate.ps1` in PowerShell, then run:
+
+```console
+python -m pip install "maturin==1.15.0"
 maturin develop
 python python/use_rust_from_python.py
 ```
 
 Maturin builds the extension for the active Python environment. The script imports `rust_howto_python_module` and prints the result of calling its Rust `add` function.
+
+An ignored integration test builds the extension and runs the same Python script
+in a separate process. From `later/crates`, run it only after activating a
+virtual environment with Python and Maturin available:
+
+```console
+cargo test --locked -p development_tools_ffi --example python builds_and_imports_the_python_extension -- --ignored --test-threads=1
+```
+
+Do not set `PYTHONHOME` for this extension test; its active virtual environment
+selects Python for Maturin.
 
 ```python
 {{#include ../../../crates/cats/development_tools_ffi/python_extension/python/use_rust_from_python.py}}

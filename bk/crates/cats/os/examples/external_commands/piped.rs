@@ -32,7 +32,7 @@ fn main() -> anyhow::Result<()> {
         .stdout
         .take()
         .ok_or_else(|| std::io::Error::other("`du` stdout was not captured"))?;
-    let mut sort_output_child = Command::new("sort")
+    let sort_output_child = Command::new("sort")
         .arg("-hr")
         .stdin(du_output)
         .stdout(Stdio::piped())

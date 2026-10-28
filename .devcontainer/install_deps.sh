@@ -29,6 +29,7 @@ sudo apt-get update \
     clang \
     cmake \
     curl \
+    default-jdk \
     diffutils \
     file \
     gcc \
@@ -67,6 +68,9 @@ sudo apt-get update \
     pkg-config \
     protobuf-compiler \
     python3 \
+    python-is-python3 \
+    python3-venv \
+    ruby-dev \
     wget \
     xorg-dev \
     jq \
@@ -89,6 +93,7 @@ rustup toolchain install "$RUSTFMT_TOOLCHAIN" \
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
 cargo binstall --no-confirm --secure --version "$CARGO_NEXTEST_VERSION" cargo-nextest
+cargo binstall --no-confirm --secure --version "$MATURIN_VERSION" maturin
 cargo binstall --no-confirm --secure --version "$MDBOOK_VERSION" mdbook
 cargo binstall --no-confirm --secure --version "$MDBOOK_LINKCHECK_VERSION" mdbook-linkcheck
 cargo binstall --no-confirm --secure --version "$MDBOOK_PANDOC_VERSION" mdbook-pandoc
