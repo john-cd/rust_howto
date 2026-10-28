@@ -1,6 +1,9 @@
 <!-- TODO Reviewed ??-??-2026 -->
 <!-- markdownlint-disable MD057 -->
 
+[architecture~bevy-ecs]: https://docs.rs/bevy_ecs
+[architecture~libloading]: https://docs.rs/libloading
+
 [ex~architecture~actor-model]: common_architectures.md#actor-model
 [ex~architecture~choose-a-project-structure]: software_architecture_process.md#system-context-and-boundaries
 [ex~architecture~choose-key-technologies]: software_architecture_process.md#evaluate-options

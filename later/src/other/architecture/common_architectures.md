@@ -147,6 +147,14 @@ Event sourcing focuses on storing a sequence of events that represent changes to
 {{#include ../../../crates/other/examples/architecture/event_sourcing.rs:example}}
 ```
 
+## Plugin Architecture {#plugin-architecture}
+
+A plugin architecture separates a host's stable extension points from implementations that provide optional behavior. Use it when applications need to select capabilities independently, such as importers or command handlers. Rust traits and explicit registration work well for extensions compiled with the host; for separately loaded native libraries, [`libloading`][architecture~libloading]↗ can load symbols, but the host and plugin need a documented, compatible ABI and ownership rules. A plugin runs with the host process's privileges, so loading untrusted code requires a separate isolation boundary.
+
+## Entity-Component-System Architecture {#entity-component-system}
+
+An entity-component system (ECS) represents objects as entities with components, while systems query and update matching component data. It is useful when many objects share behavior in different combinations, such as games or simulations; scheduling and shared-data access must still be coordinated. [`bevy_ecs`][architecture~bevy-ecs]↗ provides an ECS independently of the full Bevy engine. See [Game Development](../../categories/game-development/index.md) for related engines and ECS libraries.
+
 ## Related Topics {#related-topics .skip}
 
 - [[cloud | Cloud]].
