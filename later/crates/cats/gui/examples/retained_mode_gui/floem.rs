@@ -30,7 +30,7 @@ fn counter_view() -> impl IntoView {
 }
 
 /// Starts the Floem counter window.
-pub fn main() {
+fn main() {
     floem::launch(counter_view);
 }
 // ANCHOR_END: example

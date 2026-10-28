@@ -14,7 +14,7 @@ use iced::widget::container;
 use iced::widget::text;
 
 /// Runs the iced example.
-pub fn main() -> iced::Result {
+fn main() -> iced::Result {
     iced::run(Counter::update, Counter::view)
 }
 

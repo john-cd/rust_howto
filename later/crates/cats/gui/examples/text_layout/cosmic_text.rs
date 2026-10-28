@@ -36,7 +36,7 @@ fn layout_text(font_system: &mut FontSystem, text: &str, width: f32) -> Buffer {
 }
 
 /// Lays out a text, prints its lines, and draws its glyphs into a buffer.
-pub fn main() {
+fn main() {
     let mut font_system = new_font_system();
     let mut buffer =
         layout_text(&mut font_system, "Hello, Cosmic Text!", 800.0);

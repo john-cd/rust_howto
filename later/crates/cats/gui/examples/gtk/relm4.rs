@@ -81,7 +81,7 @@ impl SimpleComponent for CounterModel {
 }
 
 /// Runs the application.
-pub fn main() {
+fn main() {
     let app = RelmApp::new("relm4.example.counter");
     app.run::<CounterModel>(0);
 }
