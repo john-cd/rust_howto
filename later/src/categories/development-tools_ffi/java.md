@@ -12,25 +12,23 @@ Interfacing with Java from Rust is typically done using the Java Native Interfac
 
 [`jni`][c~jni~docs]↗{{hi:jni}} provides Rust bindings to the `Java` JNI API.
 
-Declare a Java native method and load its library. The package and class must match the exported Rust symbol; the checked-in Java caller is:
+Declare a Java native method and load its library. The package and class must match the exported Rust symbol; the Java caller is:
 
 ```java
-package com.example;
-
-public class NativeLibrary {
-    private static native String greet(String name);
+public class HelloWorld {
+    private static native String hello(String input);
 
     static {
         System.loadLibrary("mylib");
     }
 
     public static void main(String[] args) {
-        System.out.println(greet("World"));
+        System.out.println(hello("World"));
     }
 }
 ```
 
-The [JNI crate guide][ffi~jni-guide] uses `extern "system"` for native entry points. With Rust 2024, export the symbol with `#[unsafe(no_mangle)]`. `Java_com_example_NativeLibrary_greet` is the name for this non-overloaded method. Generate a header with `javac -h` to check signatures and escaping when names are more complex.
+The [JNI crate guide][ffi~jni-guide] uses `extern "system"` for native entry points. With Rust 2024, export the symbol with `#[unsafe(no_mangle)]`. `Java_HelloWorld_hello` is the name for this non-overloaded method. Generate a header with `javac -h` to check signatures and escaping when names or packages are more complex.
 
 The JNI Rust API is available on Windows. From `later/crates`, compile this example with the Java feature on Windows or another desktop target:
 
@@ -51,15 +49,15 @@ The example targets `jni` 0.22: its `EnvUnowned` wraps the incoming environment,
 - [`cargo`][c~cargo~docs]↗{{hi:cargo}}: For building the Rust library.
 - Maven or Gradle: For building the Java side and integrating with the Rust library.
 
-To run the caller, create a standalone library crate named `mylib` with `jni = "0.22.4"`, `[lib] crate-type = ["cdylib"]`, and the included Rust code as `src/lib.rs`. Copy `NativeLibrary.java` into that project's root, then run:
+To run the caller, create a standalone library crate named `mylib` with `jni = "0.22.4"`, `[lib] crate-type = ["cdylib"]`, and the included Rust code as `src/lib.rs`. Copy `HelloWorld.java` into that project's root, then run:
 
 ```bash
 cargo build
-javac -h . -d . NativeLibrary.java
-java -Djava.library.path=target/debug com.example.NativeLibrary
+javac -h . HelloWorld.java
+java -Djava.library.path=target/debug HelloWorld
 ```
 
-The expected output is `Hello, World!`. `-d .` creates the package directories. Adjust the library path if Cargo uses an external target directory. The book's `java` example is a binary compile/test target; it does not produce this JNI library automatically. Run the Java smoke test separately from the pure-Rust greeting tests.
+The expected output is `Hello, World!`. Adjust the library path if Cargo uses an external target directory. The book's `java` example is a binary compile/test target; it does not produce this JNI library automatically. Run the Java smoke test separately from the pure-Rust greeting tests.
 
 ## Key Concepts and Workflow {#key-concepts-and-workflow}
 
