@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! `proc_macro2` mirrors the compiler's token API, but works in ordinary Rust

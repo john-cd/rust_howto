@@ -2,7 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-#![allow(dead_code)]
+
 
 pub mod book;
 mod crates;

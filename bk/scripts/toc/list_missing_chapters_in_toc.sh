@@ -2,7 +2,7 @@
 # Purpose: List (sub)chapters that somehow were not added in the main table of contents i.e. SUMMARY.md.
 # Usage: Run from bk/ with just toc list_missing_chapters.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -uo pipefail
 

@@ -2,7 +2,7 @@
 # Purpose: Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

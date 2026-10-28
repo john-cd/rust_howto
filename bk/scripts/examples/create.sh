@@ -2,7 +2,7 @@
 # Purpose: Create a new cat crate for a given crates.io category.
 # Usage: ./scripts/examples/create.sh <root folder> <category name>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 # Create a new cat crate for a given crates.io category.
 #

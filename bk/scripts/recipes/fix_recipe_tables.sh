@@ -2,7 +2,7 @@
 # Purpose: Run the Python tool that updates recipe tables and their titles.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

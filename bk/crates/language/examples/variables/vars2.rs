@@ -1,6 +1,5 @@
-#![allow(dead_code)]
 #![allow(unused)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Variable immutability and mutability.

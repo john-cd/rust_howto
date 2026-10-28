@@ -1,7 +1,7 @@
 # Purpose: Sort and validate reference definitions in the book source.
 # Usage: From bk/, run just refdefs <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 set tempdir := "."

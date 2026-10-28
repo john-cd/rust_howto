@@ -2,7 +2,7 @@
 # Purpose: Generate the book's HTML / JS.
 # Usage: ./scripts/build_book.sh.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

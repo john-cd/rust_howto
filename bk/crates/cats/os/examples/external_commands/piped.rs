@@ -1,10 +1,9 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to pipe the output of one external command to
 //! the input of another.
 
-#![allow(dead_code)]
 #![allow(clippy::single_match)]
 #![cfg(target_family = "unix")]
 

@@ -1,5 +1,5 @@
 #![allow(unused)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Converting custom errors from different sources.

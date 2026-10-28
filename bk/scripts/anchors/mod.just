@@ -1,7 +1,7 @@
 # Purpose: Manage book heading anchors and generate local reference definitions.
 # Usage: From bk/, run just anchors <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

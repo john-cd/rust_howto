@@ -2,7 +2,7 @@
 # Purpose: Generate a template for the book language index.
 # Usage: Run from bk/ with just indices generate_language_index.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

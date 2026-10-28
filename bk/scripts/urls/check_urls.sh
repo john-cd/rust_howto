@@ -2,7 +2,7 @@
 # Purpose: Check that URLs to external websites e.g. https://... (typically found in ref defs) are valid and working (e.g. no 404).
 # Usage: ./scripts/urls/check_urls.sh <root folder>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -uo pipefail
 

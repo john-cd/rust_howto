@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Imports a JavaScript function into Rust through `wasm-bindgen`.
 

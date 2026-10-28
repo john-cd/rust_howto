@@ -1,7 +1,7 @@
 # Purpose: Update and inspect dependencies in the repository Cargo workspaces.
 # Usage: From bk/, run just deps <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

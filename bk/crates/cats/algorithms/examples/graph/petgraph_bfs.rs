@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Breadth-First Search (BFS) traversal of a graph using `petgraph`.
@@ -84,7 +83,6 @@ fn main() {
     assert!(d_position > b_position && d_position > c_position);
     assert!(e_position > d_position);
 }
-
 // ANCHOR_END: example
 
 /// Runs the `petgraph` BFS example by calling `main()`.

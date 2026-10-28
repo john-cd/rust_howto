@@ -1,8 +1,7 @@
-#![allow(dead_code)]
 // Slint's macro emits accessibility methods whose names match framework trait
 // methods.
 #![allow(clippy::same_name_method)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A counter window defined with Slint.

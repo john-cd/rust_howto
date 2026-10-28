@@ -1,7 +1,7 @@
 # Purpose: Build, serve, and maintain the generated book, its indexes, and references.
 # Usage: From bk/, run just book <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set unstable
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]

@@ -1,5 +1,5 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO improve doc comments;
 
 // ANCHOR: example
 //! Multiple producers and consumers exchanging messages over an
@@ -11,22 +11,20 @@ use async_channel::TryRecvError;
 use async_channel::bounded;
 use rand::RngExt as _;
 use tokio::task;
-use tokio::time;
 use tokio::time::Duration;
 
-/// `producer` function:
-///
 /// This function simulates a producer that sends messages to a channel.
 ///
 /// # Arguments
 /// * `id` - The ID of the producer.
+/// * `tx` - The sender side of the channel used to send messages.
 async fn producer(id: usize, tx: Sender<String>) {
+    // Create messages in a loop, sending them to the channel.
     for i in 0..5 {
         let msg = format!("Producer {id}: Message {i}");
         // Sends messages to the channel.
-        // It creates messages in a loop, sends them to the channel.
-        // If the channel is full, this method awaits until there is space for a
-        // message.
+        // If the channel is full, this method awaits
+        // until there is space for a message.
         if let Err(err) = tx.send(msg).await {
             // The channel is closed.
             eprintln!("Failed to send message: {err}");
@@ -34,17 +32,16 @@ async fn producer(id: usize, tx: Sender<String>) {
         }
         // Simulate work:
         let sleep_duration = rand::rng().random_range(10..50);
-        time::sleep(Duration::from_millis(sleep_duration)).await;
+        tokio::time::sleep(Duration::from_millis(sleep_duration)).await;
     }
 }
 
-/// `consumer` function:
-///
 /// This function simulates a consumer that receives messages from a channel.
 ///
 /// # Arguments
 ///
 /// * `id` - The ID of the consumer.
+/// * `rx` - The receiver side of the channel used to receive messages.
 async fn consumer(id: usize, rx: Receiver<String>) {
     // Receives a message from the channel.
     // If the channel is empty, awaits until there is a message.
@@ -54,7 +51,7 @@ async fn consumer(id: usize, rx: Receiver<String>) {
         println!("Consumer {id}: Received {msg}");
         // Simulate processing:
         let sleep_duration = rand::rng().random_range(30..100);
-        time::sleep(Duration::from_millis(sleep_duration)).await;
+        tokio::time::sleep(Duration::from_millis(sleep_duration)).await;
     }
     assert_eq!(rx.try_recv(), Err(TryRecvError::Closed));
 }
@@ -65,6 +62,7 @@ async fn consumer(id: usize, rx: Receiver<String>) {
 async fn main() {
     let (tx, rx) = bounded(2); // Create a bounded channel with a capacity of 2.
     // You may also use an unbounded queue.
+
     assert_eq!(rx.try_recv(), Err(TryRecvError::Empty));
 
     // Create 3 producer tasks:
@@ -102,7 +100,6 @@ async fn main() {
     // The channel is empty:
     assert!(rx.is_empty());
 }
-
 // ANCHOR_END: example
 
 pub fn run() {

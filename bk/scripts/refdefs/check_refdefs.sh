@@ -2,7 +2,7 @@
 # Purpose: List links without corresponding reference definitions and vice versa.
 # Usage: ./scripts/refdefs/check_refdefs.sh <root folder>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

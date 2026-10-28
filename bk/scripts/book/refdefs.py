@@ -2,7 +2,7 @@
 # Purpose: Merge or check dependency references in the curated crate reference file.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 """Merge or check dependency references in the curated crate reference file."""
 

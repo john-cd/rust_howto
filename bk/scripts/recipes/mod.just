@@ -1,7 +1,7 @@
 # Purpose: Update recipe tables and synchronize their titles with book headings.
 # Usage: From bk/, run just recipes <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

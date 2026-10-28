@@ -1,7 +1,7 @@
 //! Fixture source for a book example that declares a static value.
 
 // This setup code must not be included.
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 /// Static value exposed by the book-preprocessor fixture.

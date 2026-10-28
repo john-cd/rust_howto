@@ -1,7 +1,7 @@
 # Purpose: Insert and normalize cross-links and crate or category links in book Markdown.
 # Usage: From bk/, run just links <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

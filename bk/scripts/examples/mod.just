@@ -1,7 +1,7 @@
 # Purpose: Inspect and create book code examples and check their test coverage.
 # Usage: From bk/, run just examples <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 #set shell := ["bash", "-uc"]
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]

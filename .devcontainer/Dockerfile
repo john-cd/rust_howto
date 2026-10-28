@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1-labs
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 # This multi-stage build supplies the Rust toolchains and native libraries used by the book workspace.
 # `rust-core` installs the pinned formatter toolchain. `tool-builder` installs external Rust tools,

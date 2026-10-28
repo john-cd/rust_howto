@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Initializes a shared value once with `std::sync::OnceLock`.
 

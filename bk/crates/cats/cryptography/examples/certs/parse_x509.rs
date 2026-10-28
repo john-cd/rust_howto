@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Parse a DER-encoded X.509 certificate with `x509-cert`.
 //!

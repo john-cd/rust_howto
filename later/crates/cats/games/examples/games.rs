@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A minimal game example using the `macroquad` rendering engine.
@@ -64,11 +63,11 @@ async fn main() {
 mod tests {
     use super::*;
 
-    /// Runs the games example through its entry point.
+    // TODO split main() and add tests for parts.
+
     #[test]
     #[ignore = "requires interactive example runtime"]
     fn test_games_example_entry_point() {
         main();
     }
 }
-// TODO review

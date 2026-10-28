@@ -1,13 +1,12 @@
 //! Writing tests that pass, fail, return a `Result` or are ignored.
 
-#![allow(dead_code)]
 #![allow(clippy::eq_op)]
 
 pub fn run() {
     main();
 }
 
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 // This example demonstrates how to write unit tests.

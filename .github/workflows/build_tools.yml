@@ -1,4 +1,4 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 ## Builds the `tools/` workspace inside the `local-tool-builder` Docker stage (Linux).
 ## The Windows build of the tools lives in `build_book_code_and_book_on_windows.yml`.

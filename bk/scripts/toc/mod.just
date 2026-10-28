@@ -1,7 +1,7 @@
 # Purpose: Find Markdown pages missing from the book table of contents.
 # Usage: From bk/, run just toc <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

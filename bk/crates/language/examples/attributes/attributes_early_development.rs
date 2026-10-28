@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! `allow` attributes suppress specific warnings.
@@ -12,7 +12,6 @@
 #![allow(unused_imports)]
 #![allow(unused_must_use)]
 // Or simply use: `#![allow(unused)]`.
-#![allow(dead_code)]
 #![allow(missing_docs)]
 
 // This import is not used anywhere:

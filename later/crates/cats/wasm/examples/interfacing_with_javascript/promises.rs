@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Awaits a JavaScript Promise from Rust.
 

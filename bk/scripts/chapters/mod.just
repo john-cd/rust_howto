@@ -1,7 +1,7 @@
 # Purpose: Hide and restore book pages listed in hiddenfiles.txt.
 # Usage: From bk/, run just chapters <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

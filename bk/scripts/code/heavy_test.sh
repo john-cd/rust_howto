@@ -2,7 +2,7 @@
 # Purpose: Run a test that depends on a configured external service.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -ue
 

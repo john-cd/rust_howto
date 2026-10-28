@@ -2,7 +2,7 @@
 # Purpose: List files that do not include their local references i.e. {{#include refs.incl.md}} is missing.
 # Usage: ./scripts/includes/list_missing_local_ref_includes.sh <root folder>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

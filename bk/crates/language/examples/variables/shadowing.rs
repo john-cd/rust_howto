@@ -1,6 +1,5 @@
-#![allow(dead_code)]
 #![allow(unused_assignments)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Shadowing a variable with a new binding.

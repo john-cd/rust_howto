@@ -19,7 +19,7 @@
 // exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
 // aute irure dolor in reprehenderit
 
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: component
 /// Component fixture containing the float field used by the scrubber example.

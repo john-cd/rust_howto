@@ -6,7 +6,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// #![allow(dead_code)]
+//
 // use pest::Parser;
 // use pest_derive::Parser;
 // use pest::error::Error;

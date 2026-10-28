@@ -2,7 +2,7 @@
 # Purpose: Update recipe rows from local references and keep their titles in sync with headings.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 """Update recipe rows from local references and keep their titles in sync with headings."""
 

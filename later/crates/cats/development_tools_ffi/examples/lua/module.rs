@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Exports a Rust function as a loadable Lua module with `mlua`'s `module`
 //! feature.

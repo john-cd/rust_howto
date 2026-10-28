@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 // TODO avoid Result<(), String> use anyhow?
 
 // ANCHOR: example

@@ -24,7 +24,7 @@ pub fn my_macro(input: TokenStream) -> TokenStream {
     TokenStream::from(expanded)
 }
 
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: attribute_macro
 /// This is an attribute macro example.

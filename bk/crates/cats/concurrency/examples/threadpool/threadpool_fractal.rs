@@ -1,7 +1,6 @@
 //! Renders and saves a Julia set with Rayon and the image crate.
 
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 use std::fs;
 use std::path::Path;

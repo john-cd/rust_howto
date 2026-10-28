@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Converts structured values between JavaScript and Rust with Serde.
 

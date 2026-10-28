@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: ccsds-space-packet
 /// Serializes a CCSDS packet and checks its primary header and payload.

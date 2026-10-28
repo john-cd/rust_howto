@@ -2,7 +2,7 @@
 # Purpose: List external URLs that appear repeatedly in the book references.
 # Usage: Run from bk/ with just urls list_duplicated.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

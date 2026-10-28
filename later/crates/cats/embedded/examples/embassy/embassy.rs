@@ -1,5 +1,5 @@
 //! Runs a bounded pair of Embassy tasks on the host executor.
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 use std::sync::Mutex;

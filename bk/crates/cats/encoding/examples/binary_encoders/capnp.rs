@@ -1,6 +1,5 @@
-#![allow(dead_code)]
 #![allow(clippy::needless_doctest_main)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example builds, serializes, and reads a Cap'n Proto message with code

@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Demonstrates explicit primitive casts, checked numeric conversions, and
 //! parsing.

@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Runs a bounded pool of workers with `JoinSet`.
@@ -82,7 +81,6 @@ async fn example() {
 async fn main() {
     example().await;
 }
-
 // ANCHOR_END: example
 
 /// Runs the example on a current-thread Tokio runtime.

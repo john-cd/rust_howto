@@ -2,7 +2,7 @@
 # Purpose: Create reference-style links and reference definitions, which can be used to replace bare URLs in the Markdown.
 # Usage: ./scripts/urls/<script_name>.sh <root folder> [output path].
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

@@ -1,7 +1,7 @@
 # Purpose: Build and preview Rust API documentation for the book examples.
 # Usage: From bk/, run just docs <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

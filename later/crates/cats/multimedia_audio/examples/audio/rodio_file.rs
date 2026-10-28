@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Decodes a WAV in memory and shows how to play a file with `rodio`.
 

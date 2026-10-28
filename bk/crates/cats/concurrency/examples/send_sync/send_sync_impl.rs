@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Simplified implementation of the `Arc` smart pointer.
@@ -8,8 +8,6 @@
 //! reference count.
 //!
 //! This implementation is not intended for production use.
-
-#![allow(dead_code)]
 
 /// A simplified `Arc` that implements `Send` and `Sync`.
 mod my {

@@ -1,7 +1,7 @@
 # Purpose: Run mdbook-utils and its templates for the book workspace.
 # Usage: From bk/, run just utils <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

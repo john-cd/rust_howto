@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Encodes a synthetic gray frame as an AV1 packet using `rav1e`.
@@ -13,14 +12,18 @@ use rav1e::prelude::EncoderStatus;
 
 /// Encodes one synthetic 64-by-64 frame and returns the number of packets.
 fn encode_synthetic_frame() -> Result<usize> {
+    // TODO pass as arguments instead of hardcoding
     let width = 64;
     let height = 64;
+    // TODO explain
     let mut encoder_config = EncoderConfig::with_speed_preset(10);
     encoder_config.width = width;
     encoder_config.height = height;
 
     let config = Config::default().with_encoder_config(encoder_config);
+    // TODO explain why we create the context here
     let mut context = config.new_context::<u8>()?;
+    // TODO explain why we create the frame here
     let mut frame = context.new_frame();
 
     // Fill the visible samples of each YUV plane with mid-range gray, then
@@ -31,6 +34,7 @@ fn encode_synthetic_frame() -> Result<usize> {
         for row in plane.rows_iter_mut() {
             row.fill(128);
         }
+        // TODO explain why padding is necessary for the encoder
         plane.pad(plane_width, plane_height);
     }
 
@@ -63,9 +67,10 @@ fn encode_synthetic_frame() -> Result<usize> {
 fn main() -> Result<()> {
     let packet_count = encode_synthetic_frame()?;
     println!("Encoded {packet_count} AV1 packet(s).");
+    // TODO expand to handle multiple frames and more complex encoding
+    // scenarios. also decoding.
     Ok(())
 }
-
 // ANCHOR_END: example
 
 pub fn run() -> Result<()> {
@@ -84,4 +89,3 @@ mod tests {
         assert!(packet_count > 0);
     }
 }
-// [review; TODO call main??](https://github.com/john-cd/rust_howto/issues/809)

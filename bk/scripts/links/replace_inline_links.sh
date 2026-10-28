@@ -2,7 +2,7 @@
 # Purpose: Replace inline Markdown links with reference-style links.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

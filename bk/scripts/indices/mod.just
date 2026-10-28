@@ -1,7 +1,7 @@
 # Purpose: Generate crate, language, and example indexes for the book.
 # Usage: From bk/, run just indices <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
