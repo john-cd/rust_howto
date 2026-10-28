@@ -193,7 +193,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-11 — Tabular data and finance
 
-- [#1909](https://github.com/john-cd/rust_howto/issues/1909) — **P3** — Add examples: read and write Excel files (calamine, rust_xlsxwriter) — **IMPLEMENTED ON DEVELOP; OPEN — PR #1973 examples and references are merged; #365 adds the finance index link; remaining repository gates deferred to the final pass**
+- [#1909](https://github.com/john-cd/rust_howto/issues/1909) — **P3** — Add examples: read and write Excel files (calamine, rust_xlsxwriter) — **IMPLEMENTED ON DEVELOP; OPEN — PR #1973 examples and references are merged; #365 adds the finance index link; local test/refdefs blocked by `libsqlite3-sys` conflict; book gate blocked by Git Bash failure**
 
 #### NOW-CODE-12 — Embedded systems and hardware interfaces
 
@@ -244,7 +244,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 - [#257](https://github.com/john-cd/rust_howto/issues/257) — **P4** — computer-vision/opencv.md: opencv: expand, add example — **BLOCKED — OpenCV/libclang SDKs unavailable in this environment**
 - [#364](https://github.com/john-cd/rust_howto/issues/364) — **P4** — finance/quant.md: quant: write — **DEFERRED — requested `financial`, `rand`, and `rand_distr` examples require new dependencies; skipped under the no-external-dependency constraint**
-- [#365](https://github.com/john-cd/rust_howto/issues/365) — **P4** — `finance/index.md`: write — **IMPLEMENTED ON DEVELOP; OPEN — index and provider guidance reorganized; Markdown formatted; final refdefs, book, and issue checks pending**
+- [#365](https://github.com/john-cd/rust_howto/issues/365) — **P4** — `finance/index.md`: write — **IMPLEMENTED ON DEVELOP; OPEN — dprint/rumdl/typos pass; direct refdefs blocked by `libsqlite3-sys` conflict; book/spell blocked by Git Bash failure**
 - [#472](https://github.com/john-cd/rust_howto/issues/472) — **P4** — science/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#474](https://github.com/john-cd/rust_howto/issues/474) — **P4** — science_geo/geo.md: geo: write — **BLOCKED — GeoJSON dependencies and PROJ C library required**
 - [#476](https://github.com/john-cd/rust_howto/issues/476) — **P4** — science_neuroscience/neuroscience.md: neuro: write — **IMPLEMENTED ON DEVELOP; final validation pending**
@@ -683,7 +683,7 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 
 #### DEFERRED-INFRA-01 — Dependencies, CI and containers
 
-- [#1283](https://github.com/john-cd/rust_howto/issues/1283) — **P4** — finance/Cargo.toml: RustQuant: heavy build (polars, nalgebra, etc) — **IMPLEMENTED; OPEN — keep RustQuant out, document the existing standalone example; build timing, tests, Clippy, and linked PR remain**
+- [#1283](https://github.com/john-cd/rust_howto/issues/1283) — **P4** — finance/Cargo.toml: RustQuant: heavy build (polars, nalgebra, etc) — **IMPLEMENTED; OPEN — keep RustQuant out; local test blocked by #1998's `smallvec` resolver conflict; build timing, Clippy, and linked PR remain**
 
 ### Roadmaps and epics
 
