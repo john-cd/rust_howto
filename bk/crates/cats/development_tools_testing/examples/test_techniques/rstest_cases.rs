@@ -62,4 +62,9 @@ mod tests {
     fn zero_is_zero(#[values("0s", "0m", "0h")] input: &str) {
         assert_eq!(parse_seconds(input), Some(0));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

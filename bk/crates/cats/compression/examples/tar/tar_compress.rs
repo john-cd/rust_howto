@@ -98,5 +98,12 @@ mod tests {
 
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }
 // [review; tar_compress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/255)

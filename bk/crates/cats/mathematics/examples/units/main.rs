@@ -8,3 +8,14 @@ mod quantities_and_conversions;
 fn main() {
     quantities_and_conversions::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

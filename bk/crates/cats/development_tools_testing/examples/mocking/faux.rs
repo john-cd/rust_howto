@@ -166,5 +166,10 @@ mod tests {
         // Test that an update fails for a non-existent user.
         assert!(!service.update_user_name(2, "Charlie".to_owned()));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }
 // ANCHOR_END: example

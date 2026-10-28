@@ -96,4 +96,9 @@ mod tests {
         assert_eq!(current.server_address(), "api.example.com:8443");
         assert_eq!(current.max_connections(), 200);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

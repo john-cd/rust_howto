@@ -92,5 +92,10 @@ mod tests {
     fn expensive_test() {
         // Long-running code goes here.
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }
 // ANCHOR_END: example

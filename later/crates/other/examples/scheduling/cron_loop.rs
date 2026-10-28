@@ -131,4 +131,11 @@ mod tests {
     async fn cron_loop_skips_missed_fires() -> anyhow::Result<()> {
         demo().await
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

@@ -210,4 +210,11 @@ mod tests {
     fn test_compute_doubles_storage_values() -> Result<(), Box<dyn Error>> {
         run()
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

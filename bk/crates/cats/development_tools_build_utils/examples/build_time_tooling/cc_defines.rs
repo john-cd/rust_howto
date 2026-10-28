@@ -60,4 +60,9 @@ mod tests {
             ("foo".to_owned(), env!("CARGO_PKG_VERSION").to_owned(), true)
         );
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

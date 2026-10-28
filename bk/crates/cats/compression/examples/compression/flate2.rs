@@ -100,4 +100,11 @@ mod tests {
     fn test_flate2_example_entry_point() -> anyhow::Result<()> {
         run()
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

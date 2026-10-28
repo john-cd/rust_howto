@@ -8,3 +8,14 @@ mod insta;
 fn main() {
     insta::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

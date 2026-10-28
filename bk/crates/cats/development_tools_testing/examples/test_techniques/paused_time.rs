@@ -52,4 +52,9 @@ mod tests {
         .await;
         assert_eq!(result, Ok(42));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

@@ -84,4 +84,9 @@ mod tests {
         assert_eq!(*latest, Config { level: "trace" });
         assert_eq!(first, Err(RecvError::Lagged(1)));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

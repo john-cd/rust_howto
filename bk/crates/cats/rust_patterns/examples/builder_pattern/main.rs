@@ -8,3 +8,14 @@ mod builder_pattern;
 fn main() {
     builder_pattern::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

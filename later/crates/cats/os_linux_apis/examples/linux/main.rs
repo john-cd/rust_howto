@@ -19,3 +19,16 @@ fn main() -> std::io::Result<()> {
 fn main() {
     println!("This statx example requires Linux.");
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
+}

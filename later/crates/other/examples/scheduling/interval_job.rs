@@ -109,4 +109,11 @@ mod tests {
     async fn paused_clock_runs_expected_ticks() -> anyhow::Result<()> {
         demo().await
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

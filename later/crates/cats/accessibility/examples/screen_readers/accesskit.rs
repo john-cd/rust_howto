@@ -85,4 +85,9 @@ mod tests {
             .map(|(_, node)| node)
             .expect("the accessibility tree contains each requested node")
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

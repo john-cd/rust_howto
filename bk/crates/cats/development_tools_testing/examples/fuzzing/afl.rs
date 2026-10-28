@@ -67,4 +67,9 @@ mod tests {
         // Here we just check that the function exists and can be called.
         fuzz_me(b"safe");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

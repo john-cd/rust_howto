@@ -56,4 +56,11 @@ mod tests {
     fn parse_item_names_rejects_invalid_source() {
         assert!(parse_item_names("fn broken(").is_err());
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

@@ -39,5 +39,10 @@ mod tests {
         let formatted = format_user("Alice", 30);
         assert_snapshot!(formatted, @"Name: Alice, Age: 30");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }
 // ANCHOR_END: example

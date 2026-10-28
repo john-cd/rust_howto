@@ -10,3 +10,14 @@ mod space_protocols;
 fn main() {
     space_protocols::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

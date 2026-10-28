@@ -103,4 +103,9 @@ mod tests {
         assert_eq!(refresh_in_task(Counter(0)).await, Ok(1));
         assert_eq!(get_in_task(Fixed).await.as_deref(), Some("value of k"));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

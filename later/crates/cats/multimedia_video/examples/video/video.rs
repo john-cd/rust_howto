@@ -83,5 +83,12 @@ mod tests {
             encode_synthetic_frame().expect("synthetic frame should encode");
         assert!(packet_count > 0);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }
 // [review; TODO call main??](https://github.com/john-cd/rust_howto/issues/809)

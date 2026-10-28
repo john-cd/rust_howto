@@ -104,4 +104,9 @@ mod tests {
         drop(tx);
         assert_eq!(worker(&rx), 2);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

@@ -8,3 +8,14 @@ mod swc_ecma_parser;
 fn main() {
     swc_ecma_parser::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

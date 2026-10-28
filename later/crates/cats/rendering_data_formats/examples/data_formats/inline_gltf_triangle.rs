@@ -69,4 +69,11 @@ mod tests {
         assert_eq!(parse_inline_triangle()?, (3, 3));
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

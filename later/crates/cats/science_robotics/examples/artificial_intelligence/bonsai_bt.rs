@@ -7,47 +7,40 @@
 //! This example demonstrates the use of a Behavior Tree (BT) to control a
 //! simple counter. The BT consists of a sequence of actions that increment or
 //! decrement the counter, with pauses in between.
-//!
-//! A Behavior Tree (BT) is a data structure in which we can set the rules of
-//! how certain behaviors can occur, and the order in which they would
-//! execute. BTs are a very efficient way of creating complex systems that are
-//! both modular and reactive. These properties have led to the spread of BT
-//! from computer game programming to AI and Robotics.
 
 use std::collections::HashMap;
 
-// An `Action` can either be "condition" which does not alter the system
-// and returns either `Success` or `Failure`.
-// Or it can be an "act" that can alter the system and returns either
-// `Success`, `Failure` or `Running`.
 use bonsai_bt::Action;
-// The execution state of a behavior tree, along with a "blackboard" (state
-// shared between all nodes in the tree).
 use bonsai_bt::BT;
-// An `Event`.
 use bonsai_bt::Event;
-// A sequence runs behaviors one by one.
 use bonsai_bt::Sequence;
-// The result of a behavior or action.
 use bonsai_bt::Status;
-// The behavior or action succeeded.
 use bonsai_bt::Success;
-// Update arguments, such as delta time in seconds.
-// To move the behavior tree forward in time it must be ticked on each
-// iteration of the game/application loop.
 use bonsai_bt::UpdateArgs;
-// Waits an amount of time before continuing.
 use bonsai_bt::Wait;
 
 /// The actions of the behavior tree.
 #[derive(Clone, Debug, Copy)]
 pub enum Actions {
-    // Increment accumulator.
     /// Increments the accumulator.
     Inc,
-    // Decrement accumulator.
     /// Decrements the accumulator.
     Dec,
+}
+
+/// Processes an action on the accumulator and returns status.
+fn process_action(action: Actions, acc: &mut i32) -> Status {
+    match action {
+        Actions::Inc => {
+            *acc += 1;
+            println!("Inc");
+        }
+        Actions::Dec => {
+            *acc -= 1;
+            println!("Dec");
+        }
+    }
+    Success
 }
 
 /// This function sets up a behavior tree, runs it in a loop, and prints the
@@ -56,12 +49,9 @@ fn main() -> anyhow::Result<()> {
     use Actions::Dec;
     use Actions::Inc;
 
-    // Create a `HashMap` to store the state of the counter.
     let mut blackboard = HashMap::new();
     blackboard.insert("counter".to_owned(), 0);
 
-    // Create a composite behavior.
-    // Runs behaviors one by one until all succeeded.
     let behavior = Sequence(vec![
         Wait(0.1),
         Action(Inc),
@@ -70,33 +60,18 @@ fn main() -> anyhow::Result<()> {
         Wait(0.3),
         Action(Dec),
     ]);
-    // You may use: `Sequence`, `Select`, `If`, `Invert`, `While`, `WhenAll`,
-    // `WhenAny`.
 
-    // A behavior tree forms a tree structure, where each node represents a
-    // process. When the process terminates, it signals `Success` or `Failure`.
     let mut bt = BT::new(behavior, blackboard);
-
     let dt = 0.1;
 
-    // Run the behavior tree.
     loop {
         let e: Event = UpdateArgs { dt }.into();
         let (status, _dt) = bt.tick(&e, &mut |args, blackboard| {
             let Some(acc) = blackboard.get_mut("counter") else {
                 return (Status::Failure, args.dt);
             };
-            match *args.action {
-                Actions::Inc => {
-                    *acc += 1;
-                    println!("Inc");
-                }
-                Actions::Dec => {
-                    *acc -= 1;
-                    println!("Dec");
-                }
-            }
-            (Success, args.dt)
+            let s = process_action(*args.action, acc);
+            (s, args.dt)
         })
         .ok_or_else(|| {
             anyhow::anyhow!(
@@ -109,9 +84,7 @@ fn main() -> anyhow::Result<()> {
                 println!("Behavior tree completed successfully!");
                 break;
             }
-            Status::Running => {
-                // Wait for the dt duration before the next tick, if desired.
-            }
+            Status::Running => {}
             Status::Failure => {
                 break;
             }
@@ -123,8 +96,6 @@ fn main() -> anyhow::Result<()> {
     })?;
     assert_eq!(*count, 1);
 
-    // If the behavior tree concludes (reaches a steady state),
-    // we can reset the tree back to it's initial state at t = 0.0.
     bt.reset_bt();
 
     Ok(())
@@ -145,7 +116,16 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn test_process_action() {
+        let mut val = 0;
+        let res = process_action(Actions::Inc, &mut val);
+        assert_eq!(res, Success);
+        assert_eq!(val, 1);
+
+        let res = process_action(Actions::Dec, &mut val);
+        assert_eq!(res, Success);
+        assert_eq!(val, 0);
+    }
 }
-// review / expand
-// <https://github.com/Sollimann/bonsai/blob/1aa74afcb11603e86d5c7e941a70b2533e844e16/examples/src/async_drone/main.rs>
-// <https://github.com/Sollimann/bonsai/blob/main/docs/concepts/README.md>

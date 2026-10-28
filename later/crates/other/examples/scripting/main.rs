@@ -14,3 +14,16 @@ fn main() -> Result<()> {
     rhai_types_and_limits::run().map_err(|error| anyhow!(error.to_string()))?;
     Ok(())
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
+}

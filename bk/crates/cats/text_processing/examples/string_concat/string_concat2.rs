@@ -36,4 +36,9 @@ mod tests {
     fn concatenates_constant_slices() {
         assert_eq!(DATETIME, "2024-01-15T12:00:09Z");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

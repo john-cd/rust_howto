@@ -25,4 +25,9 @@ mod tests {
     fn generated_message_is_available_to_rust_code() {
         assert_eq!(GENERATED_MESSAGE, "Generated during the Cargo build.");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

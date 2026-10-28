@@ -51,4 +51,9 @@ mod tests {
     fn write_lock_publishes_the_updated_value() {
         assert_eq!(value_after_write(), 6);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

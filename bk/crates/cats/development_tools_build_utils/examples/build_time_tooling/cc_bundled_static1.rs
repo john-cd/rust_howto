@@ -68,4 +68,11 @@ mod tests {
     fn rejects_interior_nul() {
         assert!(greet_from_c("not\0a C string").is_err());
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

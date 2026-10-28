@@ -48,4 +48,11 @@ mod tests {
         assert_eq!(joined_results()?, (42, 40));
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

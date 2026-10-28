@@ -104,4 +104,11 @@ mod tests {
         let img = build_gradient_image(1, 1);
         assert_eq!(img[(0, 0)], Rgb([0, 0, 0]));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

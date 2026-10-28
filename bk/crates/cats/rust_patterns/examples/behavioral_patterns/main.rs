@@ -8,3 +8,14 @@ mod undo_redo;
 fn main() {
     undo_redo::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

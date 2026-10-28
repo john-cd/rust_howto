@@ -48,5 +48,10 @@ mod tests {
         // The final block is still alive; nothing else leaked.
         dhat::assert_eq!(after.curr_blocks - before.curr_blocks, 1);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }
 // ANCHOR_END: example

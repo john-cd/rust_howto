@@ -108,4 +108,11 @@ mod tests {
         assert_eq!(pixel_rgba(&pixmap, 32, 32), Some([255, 255, 255, 255]));
         assert_eq!(pixel_rgba(&pixmap, 4, 4), Some([0, 0, 0, 0]));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

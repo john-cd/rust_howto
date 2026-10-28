@@ -88,4 +88,11 @@ mod tests {
         assert_eq!(process_messages()?, vec![0, 2, 4, 6]);
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

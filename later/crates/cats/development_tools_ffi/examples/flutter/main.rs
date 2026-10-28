@@ -8,3 +8,14 @@ mod flutter_rust_bridge;
 fn main() {
     flutter_rust_bridge::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

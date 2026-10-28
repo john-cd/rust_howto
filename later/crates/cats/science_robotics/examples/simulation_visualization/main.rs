@@ -8,3 +8,14 @@ mod robot_simulation;
 fn main() {
     robot_simulation::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

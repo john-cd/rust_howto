@@ -69,4 +69,9 @@ mod tests {
         assert!(day_earlier(fixed).is_some());
         assert!(fixed.checked_add_signed(TimeDelta::MAX).is_none());
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

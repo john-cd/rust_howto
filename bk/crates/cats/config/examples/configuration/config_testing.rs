@@ -49,4 +49,11 @@ mod tests {
         assert_eq!(config.get("host"), Some(&"192.0.2.1".to_owned()));
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

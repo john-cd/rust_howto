@@ -87,4 +87,11 @@ mod tests {
         assert_eq!(joined.column("target")?.i64()?.get(0), Some(300));
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

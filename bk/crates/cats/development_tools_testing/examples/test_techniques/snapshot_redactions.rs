@@ -67,6 +67,11 @@ mod tests {
         }
         "#);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }
 // ANCHOR_END: example
 

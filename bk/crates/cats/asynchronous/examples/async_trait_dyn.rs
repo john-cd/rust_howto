@@ -108,4 +108,9 @@ mod tests {
         );
         assert_eq!(first_hit(&[Box::new(Empty)], "k").await, None);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

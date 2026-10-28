@@ -90,4 +90,11 @@ mod tests {
             .expect("gRPC method failed");
         assert_eq!(response.into_inner().message, "Hello Rustacean!");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

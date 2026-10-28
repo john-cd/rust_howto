@@ -84,4 +84,9 @@ mod tests {
         assert_eq!(lookup(&store, "a").await, "1");
         assert_eq!(lookup(&store, "b").await, "<missing>");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

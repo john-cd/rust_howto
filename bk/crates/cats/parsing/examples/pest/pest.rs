@@ -79,4 +79,11 @@ mod tests {
     fn parser_rejects_an_incomplete_expression() {
         assert!(parse_expression("3 +").is_err());
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

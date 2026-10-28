@@ -62,4 +62,9 @@ mod tests {
 
         assert!((actual - expected).abs() < 1.0e-5);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

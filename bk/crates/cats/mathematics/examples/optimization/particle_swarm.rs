@@ -107,3 +107,14 @@ fn test_particle_swarm_is_reproducible_with_seed() {
     assert!(first.1 < 1.0, "value = {}", first.1);
     assert_eq!(first, pso(rastrigin, 2, 30, 200, 42));
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

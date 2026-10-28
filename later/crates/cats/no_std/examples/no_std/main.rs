@@ -8,3 +8,14 @@ mod checksum;
 fn main() {
     checksum::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

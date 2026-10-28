@@ -240,5 +240,10 @@ mod tests {
         assert_eq!(updated_user.name, "John Doe");
         assert_eq!(updated_user.email, "newemail@example.com");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }
 // ANCHOR_END: example

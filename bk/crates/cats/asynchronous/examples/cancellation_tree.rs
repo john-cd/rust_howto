@@ -103,4 +103,9 @@ mod tests {
         let ticks = handle.await.expect("worker must not panic");
         assert!(ticks >= 3);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

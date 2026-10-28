@@ -8,3 +8,14 @@ mod send_sync_impl;
 fn main() {
     send_sync_impl::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

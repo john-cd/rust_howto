@@ -137,4 +137,9 @@ mod tests {
             assert!(Rgb::from_str(input).is_err(), "accepted {input:?}");
         }
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

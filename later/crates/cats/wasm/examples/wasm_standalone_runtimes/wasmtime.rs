@@ -12,8 +12,6 @@ use anyhow::Result;
 use wasmtime::error::Context as _;
 use wasmtime::*;
 
-// Simple example written in WAT (WebAssembly Text Format).
-// Imports a host function; exports a function as well.
 /// A WebAssembly module in text format, which imports and exports a function.
 static WAT: &str = r#"(module
   (import "host" "print_char" (func $print_char (param i32)))
@@ -47,68 +45,37 @@ static WAT: &str = r#"(module
     )
 )"#;
 
-/// Runs the WebAssembly module with `wasmtime`, linking a host function.
-fn main() -> Result<()> {
-    // Create a WASM engine, which is the core of the Wasmtime runtime.
+/// Creates a Wasmtime Engine, parses WAT, links host functions, and returns an Instance.
+fn create_and_instantiate_wasm(wat_str: &str) -> Result<(Engine, Store<()>, Instance)> {
     let engine = Engine::default();
-
-    // Create a module from WAT (WebAssembly Text Format) string.
-    let module = Module::new(&engine, WAT)?;
-
-    // Alternatively, load a module from a WASM file.
-    // To do this, store the WAT into a file and compile it using
-    // `wat2wasm`. Install that tool with e.g., `sudo apt-get install wabt`,
-    // then add: ```
-    // let module = Module::from_file(&engine, "hello.wasm")
-    //     .context("Failed to create WASM module")?;
-    // ```
-
-    // Host functionality (functions defined in Rust) can be provided to the
-    // WebAssembly module through a `Linker`.
+    let module = Module::new(&engine, wat_str)?;
     let mut linker = Linker::new(&engine);
 
-    // Define the host function "print_char" that the WebAssembly module can
-    // call.
     linker.func_wrap("host", "print_char", |x: i32| {
-        // Handle invalid char codes by printing '?'
         print!("{}", char::from_u32(x as u32).unwrap_or('?'));
     })?;
 
-    // All WebAssembly objects operate within the context of a "store".
-    // `Store` can hold host-specific data, which is `()` in this case (no
-    // data).
     let mut store = Store::new(&engine, ());
-
-    // Create an instance, linking the imports:
     let instance = linker
         .instantiate(&mut store, &module)
         .context("failed to instantiate module")?;
 
-    // Without a linker, we can also directly instantiate the module:
-    // ```
-    // let instance = Instance::new(&mut store, &module, &[])
-    //     .context("Failed to create WASM instance")?;
-    // ```
+    Ok((engine, store, instance))
+}
 
-    // Get the exported function "greet" from the WebAssembly instance.
+/// Runs the WebAssembly module with `wasmtime`, linking a host function.
+fn main() -> Result<()> {
+    let (_engine, mut store, instance) = create_and_instantiate_wasm(WAT)?;
+
     let greet = instance
         .get_export(&mut store, "greet")
-        // `get_export` returns an `Extern`, which can be a function, global,
-        // memory, or table. We need to convert it to a function.
-        .and_then(|ext: Extern| {
-            ext.into_func() // Returns the underlying `Func`, if this external is a function.
-        })
+        .and_then(|ext: Extern| ext.into_func())
         .context("Failed to find `greet` function export")?;
 
-    // Or:
-    // let greet = instance.get_typed_func::<(), ()>(&mut store, "greet")?;
-
-    // Call the "greet" function with no parameters and no results.
     greet
-        .call(&mut store, &[], &mut []) // store, parameters, results.
+        .call(&mut store, &[], &mut [])
         .context("failed to call `greet` function")?;
 
-    // Example with arguments:
     let add = instance
         .get_export(&mut store, "add")
         .and_then(|ext: Extern| ext.into_func())
@@ -123,6 +90,7 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
 // ANCHOR_END: example
 
 pub fn run() -> Result<()> {
@@ -139,5 +107,14 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn test_create_and_instantiate_wasm() -> anyhow::Result<()> {
+        let res = create_and_instantiate_wasm(WAT);
+        assert!(res.is_ok());
+
+        let invalid_wat = "(module (invalid syntax))";
+        assert!(create_and_instantiate_wasm(invalid_wat).is_err());
+        Ok(())
+    }
 }
-// review; https://docs.wasmtime.dev/introduction.html https://docs.rs/wasmtime/latest/wasmtime/

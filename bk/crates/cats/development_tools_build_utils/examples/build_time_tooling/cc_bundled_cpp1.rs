@@ -42,4 +42,9 @@ mod tests {
         assert_eq!(multiply_from_cpp(i32::MIN, 0), Some(0));
         assert_eq!(multiply_from_cpp(i32::MAX, 2), None);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

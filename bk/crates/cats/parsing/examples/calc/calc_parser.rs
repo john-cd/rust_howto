@@ -252,4 +252,9 @@ mod tests {
         assert_eq!(calculate("1 2"), Err("trailing input at byte 2".into()));
         assert_eq!(calculate("y"), Err("unknown variable `y`".into()));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

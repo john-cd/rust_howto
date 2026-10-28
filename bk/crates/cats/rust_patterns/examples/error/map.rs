@@ -39,4 +39,9 @@ mod tests {
             Err("request failed: service unavailable".to_owned())
         );
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

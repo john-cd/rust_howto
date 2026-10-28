@@ -8,3 +8,14 @@ mod virtualization1;
 fn main() {
     virtualization1::run();
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

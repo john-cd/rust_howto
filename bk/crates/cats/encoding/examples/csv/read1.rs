@@ -63,4 +63,11 @@ mod tests {
         assert_eq!(records[1].description, "American car");
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

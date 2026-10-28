@@ -55,4 +55,9 @@ mod tests {
             Err("not divisible by two")
         );
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

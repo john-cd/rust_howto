@@ -45,6 +45,13 @@ mod tests {
         assert_eq!(request.uri().scheme_str(), Some("wss"));
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }
 
 // [finish; echo.websocket.org has moved permanently](https://github.com/john-cd/rust_howto/issues/1058)

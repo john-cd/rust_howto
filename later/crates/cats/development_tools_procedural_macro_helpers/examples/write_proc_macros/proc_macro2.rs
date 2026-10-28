@@ -124,3 +124,16 @@ fn rejects_malformed_input() {
 fn builds_a_token_stream() {
     assert_eq!(build_stream().to_string(), "answer = 42");
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
+}

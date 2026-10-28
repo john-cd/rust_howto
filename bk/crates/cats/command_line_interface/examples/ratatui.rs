@@ -228,4 +228,9 @@ mod tests {
         // More tests here...
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

@@ -41,4 +41,11 @@ mod tests {
     fn user_id_rejects_zero() {
         assert!(UserId::new(0).is_err());
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

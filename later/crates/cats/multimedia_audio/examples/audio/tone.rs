@@ -43,4 +43,9 @@ mod tests {
         assert!(!samples.is_empty());
         assert!(samples.iter().all(|sample| sample.is_finite()));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

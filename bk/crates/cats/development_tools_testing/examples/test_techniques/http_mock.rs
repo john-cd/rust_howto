@@ -60,6 +60,13 @@ mod tests {
         assert!(error.to_string().contains("503"));
         mock.assert_calls(1);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }
 // ANCHOR_END: example
 
