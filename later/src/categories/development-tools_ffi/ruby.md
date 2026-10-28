@@ -37,13 +37,29 @@ High level Ruby bindings. Write Ruby extension gems in Rust, or call Ruby code f
 
 ### Write a Native Extension {#ruby-native-extension}
 
-In a Magnus extension library, mark its registration function with `#[magnus::init]`. Use the supplied `&Ruby` handle to create a module, then `define_module_function` with `function!` to expose a plain Rust function. Use `Result<T, magnus::Error>` for fallible methods so conversion failures become Ruby exceptions. The [Magnus guide][ffi~magnus-guide] demonstrates registration and supported value conversions. Keep the greeting or other domain logic independent of the Ruby VM so ordinary Rust tests can exercise it.
+In a Magnus extension library built as a `cdylib`, mark its registration function with `#[magnus::init]`. Use the supplied `&Ruby` handle to expose a plain Rust function with `define_global_function` and `function!`. Use `Result<T, magnus::Error>` for fallible methods so conversion failures become Ruby exceptions. This extension-only registration example is separate from the embedded executable below:
+
+```rust,ignore
+use magnus::{Error, Ruby, function};
+
+fn hello_rust(name: String) -> String {
+    format!("Hello, {name}!")
+}
+
+#[magnus::init]
+fn init(ruby: &Ruby) -> Result<(), Error> {
+    ruby.define_global_function("hello_rust", function!(hello_rust, 1))?;
+    Ok(())
+}
+```
+
+The [Magnus guide][ffi~magnus-guide] demonstrates extension setup and supported value conversions. Keep the greeting or other domain logic independent of the Ruby VM so ordinary Rust tests can exercise it.
 
 ### Embed Ruby in an Executable {#ruby-embedding}
 
 Embedding is a different lifecycle: enable Magnus's [`embed` feature][ffi~magnus-embed] and initialize Ruby once on the thread that will use it. Keep the returned cleanup guard alive until all Ruby work finishes. Do not initialize a second VM or use Ruby values after cleanup. In an extension loaded by Ruby, the VM already exists, so do not initialize it again.
 
-The included example below demonstrates embedding and calling `puts`; it is not an extension's registration function. Native embedding tests require Ruby and run separately from the pure greeting test.
+The included example below demonstrates embedding Ruby, registering a Rust function with `function!`, evaluating a Ruby call, and converting its result back to `String`. It is not an extension's registration function. Native embedding tests require Ruby headers and `libruby`, and run separately from the pure Rust greeting test.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/ruby/magnus.rs:example}}
@@ -87,7 +103,7 @@ raise 'unexpected greeting' unless HelloRust.hello('Ada') == 'Hello, Ada!'
 From `later/crates`, `cargo test --locked -p development_tools_ffi --example ruby` checks the platform-independent greeting. On a configured non-Windows Ruby host, add `--features ruby` to compile native bindings. Run the ignored embedding tests individually in separate processes, since each initializes a VM:
 
 ```bash
-cargo test --locked -p development_tools_ffi --example ruby --features ruby test_magnus_example_entry_point -- --ignored --test-threads=1
+cargo test --locked -p development_tools_ffi --example ruby --features ruby embedded_ruby_returns_the_rust_greeting -- --ignored --test-threads=1
 cargo test --locked -p development_tools_ffi --example ruby --features ruby test_rutie_example_entry_point -- --ignored --test-threads=1
 ```
 

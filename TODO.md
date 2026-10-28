@@ -110,7 +110,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#1032](https://github.com/john-cd/rust_howto/issues/1032) — **P4** — Finish the Node N-API example J — **IN PROGRESS — napi-derive 3 and N-API async exports added; Node 24/MSVC available; package and book checks remain**
 - [#1033](https://github.com/john-cd/rust_howto/issues/1033) — **P4** — node/neon.rs: finish how to test — **DEFERRED — native compiler/linker unavailable; blocker recorded on the issue**
 - [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix — **DEFERRED — macOS validation unavailable; blocker recorded on the issue**
-- [#1035](https://github.com/john-cd/rust_howto/issues/1035) — **P4** — ruby/magnus.rs: finish — **DEFERRED — Ruby and development headers unavailable; blocker recorded on the issue**
+- [#1035](https://github.com/john-cd/rust_howto/issues/1035) — **P4** — ruby/magnus.rs: finish — **IN PROGRESS — Magnus embedding now registers a Rust function, calls it from Ruby, and checks the returned string; extension-mode guidance and ignore-test commands documented; final Ruby package/book checks remain**
 - [#1036](https://github.com/john-cd/rust_howto/issues/1036) — **P4** — ruby/rutie.rs: finish — **DEFERRED — Ruby and development headers unavailable; blocker recorded on the issue**
 - [#1037](https://github.com/john-cd/rust_howto/issues/1037) — **P4** — examples/uniffi.rs: finish — **DEFERRED — native compiler/linker unavailable; blocker recorded on the issue**
 

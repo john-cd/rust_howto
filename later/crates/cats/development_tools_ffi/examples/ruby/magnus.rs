@@ -4,41 +4,33 @@
 //! Calling Rust from Ruby with `magnus`.
 
 use magnus::Error;
-use magnus::value::ReprValue as _;
-
-/// Simple function to be called from Ruby.
-fn hello_rust() -> String {
-    super::greeting::message()
+/// Returns a greeting that can be called from Ruby or tested without Ruby.
+fn hello_rust(name: String) -> String {
+    format!("Hello, {name}!")
 }
 
-/// Calls Ruby's `puts` with a string created in Rust.
-fn main() -> Result<(), Error> {
-    // SAFETY: this standalone entry point initializes the sole VM and keeps
-    // the guard alive until all Ruby execution has finished.
+/// Registers and calls the Rust greeting through the embedded Ruby VM.
+fn embedded_greeting() -> Result<String, Error> {
+    // SAFETY: this function initializes the process's sole Ruby VM, uses it on
+    // this thread, and keeps the cleanup guard alive through all Ruby calls.
     let ruby = unsafe { magnus::embed::init() };
 
-    // Create a new Ruby string object from the given Rust string.
-    let string = ruby.str_new(&hello_rust());
+    ruby.define_global_function(
+        "hello_rust",
+        magnus::function!(hello_rust, 1),
+    )?;
 
-    // Safely call the `puts` method via the Object class without evaluating
-    // dynamic strings.
-    ruby.class_object()
-        .funcall::<_, _, magnus::Value>("puts", (string,))?;
+    ruby.eval::<String>("hello_rust('Ada')")
+}
 
-    // Define a global Ruby function that calls a Rust function.
-    // define_global_function("hello_rust", hello_rust);
-
-    // Evaluate Ruby code that calls the Rust function
-    // eval::<magnus::Value>(
-    // r#"
-    // puts hello_rust()
-    // "#,
-    // )?;
-
+/// Prints the greeting returned through the embedded Ruby VM.
+fn main() -> Result<(), Error> {
+    println!("{}", embedded_greeting()?);
     Ok(())
 }
 // ANCHOR_END: example
 
+/// Runs the Magnus embedding example.
 pub fn run() -> Result<(), Error> {
     main()
 }
@@ -47,11 +39,21 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
-    /// Runs the magnus example through its entry point.
+    /// Checks the Rust greeting without starting a Ruby VM.
     #[test]
-    #[ignore = "needs Ruby; run this test alone in its own process"]
-    fn test_magnus_example_entry_point() {
-        main().expect("example entry point should succeed");
+    fn rust_greeting_formats_the_name() {
+        assert_eq!(hello_rust("Ada".to_owned()), "Hello, Ada!");
+    }
+
+    /// Checks the value returned when embedded Ruby calls the registered Rust
+    /// function.
+    #[test]
+    #[ignore = "needs Ruby headers and libruby"]
+    fn embedded_ruby_returns_the_rust_greeting() {
+        let greeting =
+            embedded_greeting().expect("embedded Ruby should call hello_rust");
+
+        assert_eq!(greeting, "Hello, Ada!");
     }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/1035)
