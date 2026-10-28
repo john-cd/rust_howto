@@ -33,7 +33,7 @@ struct Person {
 /// Creates a person and prints it.
 fn main() {
     let john = new("John");
-    println!("{john:?}");
+    println!("{} -> {john:?}", john.name);
 }
 
 // ANCHOR_END: example

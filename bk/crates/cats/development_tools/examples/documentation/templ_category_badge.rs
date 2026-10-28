@@ -17,6 +17,10 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the category badge example.
+#[allow(
+    clippy::main_recursion,
+    reason = "the file is also a standalone example target, where the lint fires only for that build"
+)]
 pub fn run() -> Result<()> {
     main()
 }
