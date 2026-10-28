@@ -62,3 +62,14 @@ fn test_cycle_detection_finds_cycle_members() {
     assert!(is_cyclic_directed(&graph));
     assert_eq!(cyclic_components(&graph), vec![vec!["parse", "validate"]]);
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

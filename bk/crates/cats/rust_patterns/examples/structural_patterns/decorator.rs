@@ -69,4 +69,11 @@ mod tests {
         assert_eq!(text, "Rust");
         assert_eq!(reader.bytes_read(), 4);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

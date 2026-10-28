@@ -100,4 +100,11 @@ mod tests {
         assert!(select_sql.contains("LIKE '%SeaORM%'"));
     }
     // finish
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

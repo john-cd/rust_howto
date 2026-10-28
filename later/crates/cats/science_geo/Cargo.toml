@@ -3,31 +3,30 @@
 [package]
 name = "science_geo"
 version.workspace = true
+description = "Book code examples and their crate dependencies - science_geo"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - science_geo"
-
-autolib = false
-categories = ["science::geo"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["science::geo"]
+autolib = false
+
+[[example]]
+name = "geo"
+path = "examples/geo/main.rs"
+test = true
 
 [dependencies]
 geo = "0.33.1"
 geocoding = "0.4.0"
 haversine = "0.2.1"
 us-state-info = "0.2.7"
-
-[[example]]
-name = "geo"
-path = "examples/geo/main.rs"
-test = true
 
 [lints]
 workspace = true

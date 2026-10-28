@@ -3,28 +3,27 @@
 [package]
 name = "aerospace_protocols"
 version.workspace = true
+description = "Book code examples and their crate dependencies - aerospace_protocols"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - aerospace_protocols"
-
-autolib = false
-categories = ["aerospace::protocols"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-mavlink = "0.21.0"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["aerospace::protocols"]
+autolib = false
 
 [[example]]
 name = "aerospace_protocols"
 path = "examples/aerospace_protocols/main.rs"
 test = true
+
+[dependencies]
+mavlink = "0.21.0"
 
 [lints]
 workspace = true

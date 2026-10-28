@@ -105,4 +105,11 @@ mod tests {
         assert_eq!(response.errors.len(), 1);
         assert!(response.errors[0].message.contains("Unknown field"));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

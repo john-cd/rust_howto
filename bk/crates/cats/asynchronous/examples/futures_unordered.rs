@@ -54,4 +54,9 @@ mod tests {
 
         assert_eq!(results, ["cache", "configuration", "database"]);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

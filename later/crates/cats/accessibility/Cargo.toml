@@ -1,32 +1,33 @@
-# TODO Reviewed ??-??-2026.
+# Reviewed 10-27-2026.
 
 [package]
 name = "accessibility"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories = ["accessibility"]
-documentation.workspace = true
-edition = "2024"
-homepage.workspace = true
-keywords = ["accessibility", "accesskit", "winit", "gui"]
-license-file.workspace = true
-publish.workspace = true
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Book code examples for Accessibility using AccessKit and Winit."
-
-[dependencies]
-accesskit = "0.25.2"
-accesskit_winit = "0.34.2"
-winit = "0.30.13"
+authors.workspace = true
+edition = "2024"
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["accessibility", "accesskit", "winit", "gui"]
+categories = ["accessibility"]
+autolib = false
 
 [[example]]
 name = "screen_readers"
 path = "examples/screen_readers/main.rs"
 test = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+accesskit = "0.25.2"
+accesskit_winit = "0.34.2"
+winit = "0.30.13"
 
 [lints]
 workspace = true

@@ -41,4 +41,11 @@ mod tests {
         let too_large = i64::from(i32::MAX) + 1;
         assert!(narrow_to_i32(too_large).is_err());
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

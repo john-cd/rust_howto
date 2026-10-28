@@ -86,4 +86,11 @@ mod tests {
         assert_eq!(config.get::<u16>("port")?, 9000);
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

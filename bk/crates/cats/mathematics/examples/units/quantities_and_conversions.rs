@@ -35,3 +35,14 @@ fn test_quantities_convert_distance_and_speed() {
     assert!((distance_in_meters - 1_500.0).abs() < 1e-3);
     assert!((speed_in_meters_per_second - (1_500.0 / 180.0)).abs() < 1e-4);
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

@@ -3,29 +3,29 @@
 [package]
 name = "visualization"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories = ["visualization"]
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-license-file.workspace = true
-publish.workspace = true
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Book code examples and their crate dependencies - visualization"
-
-[dependencies]
-## General
-anyhow = "1.0.104"
-plotly = "0.14.1"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["visualization"]
+autolib = false
 
 [[example]]
 name = "visualization"
 path = "examples/visualization/main.rs"
 test = true
+
+[dependencies]
+## General
+anyhow = "1.0.104"
+plotly = "0.14.1"
 
 [lints]
 workspace = true

@@ -3,28 +3,27 @@
 [package]
 name = "multimedia_encoding"
 version.workspace = true
+description = "Book code examples and their crate dependencies - multimedia_encoding"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - multimedia_encoding"
-
-autolib = false
-categories = ["multimedia::encoding"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-rav1e = { version = "0.8.1", default-features = false }
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["multimedia::encoding"]
+autolib = false
 
 [[example]]
 name = "encoding"
 path = "examples/encoding/main.rs"
 test = true
+
+[dependencies]
+rav1e = { version = "0.8.1", default-features = false }
 
 [lints]
 workspace = true

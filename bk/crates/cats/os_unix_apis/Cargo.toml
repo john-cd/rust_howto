@@ -3,20 +3,24 @@
 [package]
 name = "os_unix_apis"
 version.workspace = true
+description = "Book code examples and their crate dependencies - os_unix_apis"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - os_unix_apis"
-
-autolib = false
-categories = ["os::unix-apis"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["os::unix-apis"]
+autolib = false
+
+[[example]]
+name = "unix"
+path = "examples/unix/main.rs"
+test = true
 
 [dependencies]
 anyhow = "1.0.104"
@@ -25,11 +29,6 @@ clap = { version = "4.6.7", features = ["derive"] }
 [target.'cfg(target_family = "unix")'.dependencies]
 nix = { version = "0.31.3", features = ["fs"] }
 rustix = { version = "1.1.6", features = ["fs"] }
-
-[[example]]
-name = "unix"
-path = "examples/unix/main.rs"
-test = true
 
 [lints]
 workspace = true

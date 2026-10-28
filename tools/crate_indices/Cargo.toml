@@ -3,19 +3,18 @@
 [package]
 name = "crate_indices"
 version.workspace = true
+description = "TODO "
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = ""
-
-categories = ["development-tools", "command-line-utilities", "text-processing"]
-keywords = ["markdown generation"]
 publish.workspace = true
+keywords = ["markdown generation"]
+categories = ["development-tools", "command-line-utilities", "text-processing"]
 
 [[bin]]
 name = "crate-indices"

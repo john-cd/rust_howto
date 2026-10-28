@@ -117,4 +117,11 @@ mod tests {
         assert!(error.to_string().contains("only be derived for structs"));
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

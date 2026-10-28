@@ -3,27 +3,28 @@
 [package]
 name = "external_ffi_bindings"
 version.workspace = true
+description = "Book code examples and their crate dependencies - external_ffi_bindings"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - external_ffi_bindings"
-
-categories = ["external-ffi-bindings"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-# autolib = false
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["external-ffi-bindings"]
 
-[target.'cfg(unix)'.dependencies]
-libc = "0.2.191"
 [[example]]
 name = "external_ffi_bindings"
 path = "examples/external_ffi_bindings.rs"
 test = true
+
+# autolib = false
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2.191"
 
 [lints]
 workspace = true

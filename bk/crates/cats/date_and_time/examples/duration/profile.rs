@@ -44,4 +44,9 @@ mod tests {
         let duration = start.elapsed();
         assert!(duration >= Duration::ZERO);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

@@ -46,4 +46,9 @@ mod tests {
     fn division_reports_a_zero_denominator() {
         assert_eq!(divide(12, 0), Err("division by zero"));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

@@ -3,47 +3,19 @@
 [package]
 name = "asynchronous"
 version.workspace = true
+description = "Book code examples for Asynchronous programming with Tokio, Smol, and Rayon."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples for Asynchronous programming with Tokio, Smol, and Rayon."
-
-autolib = false
-categories = ["asynchronous"]
-keywords = ["async", "tokio", "smol", "futures", "concurrency"]
 publish.workspace = true
-
-[dependencies]
-## General
-anyhow = "1.0.104"
-async-channel = "2.5.0"
-# LATER async-stream = "0.3.6"
-async-trait = "0.1.92"
-clap = { version = "4.6.7", features = ["derive"] }
-futures = "0.3.34"
-futures-executor = "0.3.34"
-futures-util = "0.3.34"
-kanal = "0.1.1" # NOTE: pre version
-# Enable readiness polling and wakers for the Mio example.
-mio = { version = "1.2.4", features = ["os-poll"] }
-postage = "0.5.0"
-rand = { version = "0.10.3", features = ["thread_rng"] }
-rayon = "1.12.0"
-reqwest = "0.13.5"
-smol = "2.0.2"
-time = "0.3.55"
-tokio = { version = "1.54.1", features = ["rt-multi-thread", "fs", "macros", "sync", "time", "test-util"] }
-tokio-graceful-shutdown = "0.20.0"
-# Cancellation tokens for coordinating task shutdown.
-tokio-util = { version = "0.7.20", features = ["rt"] }
-tracing = "0.1.44"
-tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
-trait-variant = "0.1.3"
+keywords = ["async", "tokio", "smol", "futures", "concurrency"]
+categories = ["asynchronous"]
+autolib = false
 
 [[example]]
 name = "async"
@@ -109,6 +81,33 @@ test = true
 name = "tokio"
 path = "examples/tokio/main.rs"
 test = true
+
+[dependencies]
+## General
+anyhow = "1.0.104"
+async-channel = "2.5.0"
+# LATER async-stream = "0.3.6"
+async-trait = "0.1.92"
+clap = { version = "4.6.7", features = ["derive"] }
+futures = "0.3.34"
+futures-executor = "0.3.34"
+futures-util = "0.3.34"
+kanal = "0.1.1" # NOTE: pre version
+# Enable readiness polling and wakers for the Mio example.
+mio = { version = "1.2.4", features = ["os-poll"] }
+postage = "0.5.0"
+rand = { version = "0.10.3", features = ["thread_rng"] }
+rayon = "1.12.0"
+reqwest = "0.13.5"
+smol = "2.0.2"
+time = "0.3.55"
+tokio = { version = "1.54.1", features = ["rt-multi-thread", "fs", "macros", "sync", "time", "test-util"] }
+tokio-graceful-shutdown = "0.20.0"
+# Cancellation tokens for coordinating task shutdown.
+tokio-util = { version = "0.7.20", features = ["rt"] }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+trait-variant = "0.1.3"
 
 [lints]
 workspace = true

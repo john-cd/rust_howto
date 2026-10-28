@@ -3,50 +3,19 @@
 [package]
 name = "science_robotics"
 version.workspace = true
+description = "Book code examples and their crate dependencies - science_robotics"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - science_robotics"
-
-autolib = false
-categories = ["science::robotics"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-# These optional examples are preserved in source but excluded from the workspace
-# until their dependencies have compatible security fixes:
-# - Zenoh: the current release requires vulnerable lz4_flex 0.10.
-# - OpenRR: its current graph includes affected fast-float and serde_with versions.
-# [features]
-# openrr = ["dep:openrr"]
-# zenoh = ["dep:zenoh"]
-#
-# [target.'cfg(not(target_os = "windows"))'.dependencies]
-# openrr = { version = "0.1.0", optional = true }
-# zenoh = { version = "1.10.1", optional = true }
-
-[features]
-# Requires a sourced ROS 2 installation and libclang; disabled by default.
-ros2 = ["dep:futures", "dep:r2r"]
-
-[dependencies]
-anyhow = "1.0.104"
-async-trait = "0.1.92"
-bonsai-bt = "0.14.0"
-clap = { version = "4.6.7", features = ["derive"] }
-futures = { version = "0.3.34", optional = true }
-pathfinding = "4.16.0"
-pid = "4.0.0"
-r2r = { version = "0.9.7", optional = true }
-rapier2d = "0.36.1"
-tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
-tracing = "0.1.44"
-tracing-subscriber = "0.3.23"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["science::robotics"]
+autolib = false
 
 [[example]]
 name = "robot_operating_systems"
@@ -85,6 +54,36 @@ test = true
 name = "simulation_visualization"
 path = "examples/simulation_visualization/main.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+async-trait = "0.1.92"
+bonsai-bt = "0.14.0"
+clap = { version = "4.6.7", features = ["derive"] }
+futures = { version = "0.3.34", optional = true }
+pathfinding = "4.16.0"
+pid = "4.0.0"
+r2r = { version = "0.9.7", optional = true }
+rapier2d = "0.36.1"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1.44"
+tracing-subscriber = "0.3.23"
+
+# These optional examples are preserved in source but excluded from the workspace
+# until their dependencies have compatible security fixes:
+# - Zenoh: the current release requires vulnerable lz4_flex 0.10.
+# - OpenRR: its current graph includes affected fast-float and serde_with versions.
+# [features]
+# openrr = ["dep:openrr"]
+# zenoh = ["dep:zenoh"]
+#
+# [target.'cfg(not(target_os = "windows"))'.dependencies]
+# openrr = { version = "0.1.0", optional = true }
+# zenoh = { version = "1.10.1", optional = true }
+
+[features]
+# Requires a sourced ROS 2 installation and libclang; disabled by default.
+ros2 = ["dep:futures", "dep:r2r"]
 
 [lints]
 workspace = true

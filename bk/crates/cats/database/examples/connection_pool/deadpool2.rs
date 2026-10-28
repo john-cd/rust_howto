@@ -189,5 +189,12 @@ mod tests {
         );
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }
 // [finish; need heavy test](https://github.com/john-cd/rust_howto/issues/46)

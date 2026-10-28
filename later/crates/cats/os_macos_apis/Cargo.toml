@@ -3,27 +3,27 @@
 [package]
 name = "os_macos_apis"
 version.workspace = true
+description = "Book code examples and their crate dependencies - os_macos_apis"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - os_macos_apis"
-
-autolib = false
-categories = ["os::macos-apis"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["os::macos-apis"]
+autolib = false
 
-[target.'cfg(target_os = "macos")'.dependencies]
-objc2-foundation = { version = "0.3.2", default-features = false, features = ["NSProcessInfo", "NSString", "std"] }
 [[example]]
 name = "macos"
 path = "examples/macos/main.rs"
 test = true
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2-foundation = { version = "0.3.2", default-features = false, features = ["NSProcessInfo", "NSString", "std"] }
 
 [lints]
 workspace = true

@@ -138,4 +138,9 @@ mod tests {
         assert_eq!(report.served, 5);
         assert!((report.average_wait_seconds - 1.0).abs() < f64::EPSILON);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

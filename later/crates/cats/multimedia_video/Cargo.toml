@@ -3,30 +3,29 @@
 [package]
 name = "multimedia_video"
 version.workspace = true
+description = "Book code examples and their crate dependencies - multimedia_video"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - multimedia_video"
-
-autolib = false
-categories = ["multimedia::video"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-anyhow = "1.0.104" # Return encoder setup and flush errors from the example.
-# Encode synthetic AV1 frames in the runnable book example without NASM.
-rav1e = { version = "0.8.1", default-features = false }
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["multimedia::video"]
+autolib = false
 
 [[example]]
 name = "video"
 path = "examples/video/main.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104" # Return encoder setup and flush errors from the example.
+# Encode synthetic AV1 frames in the runnable book example without NASM.
+rav1e = { version = "0.8.1", default-features = false }
 
 [lints]
 workspace = true

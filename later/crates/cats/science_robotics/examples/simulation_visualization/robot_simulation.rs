@@ -105,4 +105,9 @@ mod tests {
         assert!((state.center_height - CHASSIS_HALF_HEIGHT).abs() < 0.05);
         assert!(state.speed < 0.05);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

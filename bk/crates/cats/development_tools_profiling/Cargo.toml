@@ -3,41 +3,18 @@
 [package]
 name = "development_tools_profiling"
 version.workspace = true
+description = "Book code examples and their crate dependencies - development_tools_profiling"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - development_tools_profiling"
-
-categories = ["development-tools::profiling"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-## Config for dhat example below:
-## Profiles for the non root package are ignored.
-# [profile.release]
-# debug = 1
-
-[features]
-dhat-heap = []
-dhat-ad-hoc = []
-# Select the `profiling` backend in one place:
-profile-with-puffin = ["profiling/profile-with-puffin"]
-
-[dependencies]
-criterion = "0.8.2"
-dhat = "0.3.3"
-measure_time = "0.9.0"
-profiling = "1.0.18"
-puffin = "0.20.0"
-puffin_http = "0.17.0"
-
-[dev-dependencies]
-divan = "0.1.21"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["development-tools::profiling"]
 
 [[bench]]
 name = "divan"
@@ -63,6 +40,28 @@ test = true
 name = "puffin_server"
 path = "examples/puffin_server.rs"
 test = true
+
+[dependencies]
+criterion = "0.8.2"
+dhat = "0.3.3"
+measure_time = "0.9.0"
+profiling = "1.0.18"
+puffin = "0.20.0"
+puffin_http = "0.17.0"
+
+[dev-dependencies]
+divan = "0.1.21"
+
+## Config for dhat example below:
+## Profiles for the non root package are ignored.
+# [profile.release]
+# debug = 1
+
+[features]
+dhat-heap = []
+dhat-ad-hoc = []
+# Select the `profiling` backend in one place:
+profile-with-puffin = ["profiling/profile-with-puffin"]
 
 [lints]
 workspace = true

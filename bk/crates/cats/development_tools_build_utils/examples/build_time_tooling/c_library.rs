@@ -33,4 +33,9 @@ mod tests {
         // SAFETY: `build.rs` compiles a matching `add` implementation from C.
         assert_eq!(unsafe { add(19, 23) }, 42);
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

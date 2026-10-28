@@ -30,4 +30,9 @@ mod tests {
         let mut buffer = Buffer::new();
         assert_eq!(buffer.format(1_234_567), "1234567");
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
 }

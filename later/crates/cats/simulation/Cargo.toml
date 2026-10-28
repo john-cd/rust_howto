@@ -3,24 +3,19 @@
 [package]
 name = "simulation"
 version.workspace = true
+description = "Book code examples and their crate dependencies - simulation"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - simulation"
-
-autolib = false
-categories = ["simulation"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-ode_solvers = "0.6.2"
-rapier2d = "0.36.1"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["simulation"]
+autolib = false
 
 [[example]]
 name = "physics_engines"
@@ -31,6 +26,10 @@ test = true
 name = "simulation"
 path = "examples/simulation/main.rs"
 test = true
+
+[dependencies]
+ode_solvers = "0.6.2"
+rapier2d = "0.36.1"
 
 [lints]
 workspace = true

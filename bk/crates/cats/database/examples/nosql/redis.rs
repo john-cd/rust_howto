@@ -97,5 +97,12 @@ mod tests {
         anyhow::ensure!(value == 42, "Redis returned {value}, expected 42");
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }
 // review?

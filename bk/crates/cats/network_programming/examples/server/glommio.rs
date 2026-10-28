@@ -95,4 +95,11 @@ mod tests {
         assert!(response.contains("Content-Length: 20\r\n"));
         assert!(response.ends_with("\r\n\r\nHello from Glommio!\n"));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

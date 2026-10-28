@@ -3,19 +3,39 @@
 [package]
 name = "algorithms"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories = ["algorithms"]
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-license-file.workspace = true
-publish.workspace = true
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Book code examples and their crate dependencies - algorithms"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["algorithms"]
+autolib = false
+
+[[example]]
+name = "graph_algorithms"
+path = "examples/graph/main.rs"
+test = true
+
+[[example]]
+name = "hashing"
+path = "examples/hashing/main.rs"
+test = true
+
+[[example]]
+name = "rand"
+path = "examples/rand/main.rs"
+test = true
+
+[[example]]
+name = "sort"
+path = "examples/sort/main.rs"
+test = true
 
 [dependencies]
 anyhow = "1.0.104"
@@ -37,26 +57,6 @@ sha1 = "0.11.0"
 sha2 = "0.11.1"
 tempfile = "3.27.0"
 xxhash-rust = { version = "0.8.19", features = ["xxh3"] }
-
-[[example]]
-name = "graph_algorithms"
-path = "examples/graph/main.rs"
-test = true
-
-[[example]]
-name = "hashing"
-path = "examples/hashing/main.rs"
-test = true
-
-[[example]]
-name = "rand"
-path = "examples/rand/main.rs"
-test = true
-
-[[example]]
-name = "sort"
-path = "examples/sort/main.rs"
-test = true
 
 [lints]
 workspace = true

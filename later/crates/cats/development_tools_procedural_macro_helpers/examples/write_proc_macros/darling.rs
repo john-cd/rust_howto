@@ -96,4 +96,11 @@ mod tests {
         let diagnostic = error.write_errors().to_string();
         assert!(diagnostic.contains("unknown"));
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

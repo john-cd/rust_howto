@@ -56,4 +56,11 @@ mod tests {
         assert_eq!(results, ["0:red", "1:green", "2:blue", "3:yellow"]);
         Ok(())
     }
+
+    #[test]
+    fn test_main_entry_point() {
+        if let Err(err) = main() {
+            panic!("main failed: {err:?}");
+        }
+    }
 }

@@ -53,3 +53,14 @@ fn test_cmaes_finds_shifted_sphere_minimum() {
         assert!((found - expected).abs() < 1e-3);
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

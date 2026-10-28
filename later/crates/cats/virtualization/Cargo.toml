@@ -3,28 +3,27 @@
 [package]
 name = "virtualization"
 version.workspace = true
+description = "Book code examples and their crate dependencies - virtualization"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - virtualization"
-
-autolib = false
-categories = ["virtualization"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-wasmi = "2.0.0"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["virtualization"]
+autolib = false
 
 [[example]]
 name = "virtualization"
 path = "examples/virtualization/main.rs"
 test = true
+
+[dependencies]
+wasmi = "2.0.0"
 
 [lints]
 workspace = true

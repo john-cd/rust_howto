@@ -3,43 +3,44 @@
 [package]
 name = "computer_vision"
 version.workspace = true
+description = "Book code examples and their crate dependencies - computer_vision"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - computer_vision"
-
-autolib = false
-categories = ["computer-vision"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["computer-vision"]
+autolib = false
+
+[[example]]
+name = "opencv"
+path = "examples/opencv/main.rs"
+test = true
+
+[dependencies]
+
+[dev-dependencies]
+# Gives the image-processing test isolated input and output paths.
+tempfile = "3.27.0"
+
 # The above requires `libopencv-dev` `clang` `libclang-dev`
 
 [features]
 # default = []
 opencv = ["dep:opencv", "dep:image"]
 
-[dependencies]
 [target.'cfg(target_os = "linux")'.dependencies]
 image = { version = "0.25.10", optional = true }
 opencv = { version = "0.101.1", default-features = false, features = [
-  "clang-runtime",
-  "imgcodecs",
-  "imgproc",
+    "clang-runtime",
+    "imgcodecs",
+    "imgproc",
 ], optional = true }
-
-[dev-dependencies]
-# Gives the image-processing test isolated input and output paths.
-tempfile = "3.27.0"
-
-[[example]]
-name = "opencv"
-path = "examples/opencv/main.rs"
-test = true
 
 [lints]
 workspace = true
