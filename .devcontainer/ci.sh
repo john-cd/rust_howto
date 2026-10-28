@@ -38,7 +38,7 @@ echo "----------"
 ## Spell checks
 bk/scripts/spelling/spellcheck.sh list
 
-## Audit each independent Rust workspace with the shared policy.
+## Audit each independent Rust workspace with the shared policy (#51).
 ## cargo-deny covers advisories, licenses, bans, and sources. cargo-audit uses the
 ## same RustSec advisory database; monthly Cargo updates are handled by Dependabot.
 repo_root="$(pwd -P)"
