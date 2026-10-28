@@ -27,10 +27,8 @@ struct LocalProxy;
 impl ProxyHttp for LocalProxy {
     type CTX = ();
 
-    /// Creates the empty request context used by this stateless proxy.
-    fn new_ctx(&self) -> Self::CTX {
-        ()
-    }
+    /// Returns the empty request context used by this stateless proxy.
+    fn new_ctx(&self) -> Self::CTX {}
 
     /// Returns the fixed plain-HTTP upstream peer.
     async fn upstream_peer(
@@ -64,6 +62,14 @@ fn add_example_response_header(response: &mut ResponseHeader) -> Result<()> {
 
 /// Starts the Pingora server and its local reverse-proxy service.
 fn main() -> anyhow::Result<()> {
+    run_proxy()
+}
+
+/// Starts the Pingora server and its local reverse-proxy service.
+///
+/// # Errors
+/// Returns an error if server configuration cannot be initialized.
+fn run_proxy() -> anyhow::Result<()> {
     let mut server = Server::new(None)?;
     server.bootstrap();
 
@@ -71,14 +77,12 @@ fn main() -> anyhow::Result<()> {
     proxy.add_tcp(PROXY_LISTEN_ADDRESS);
     server.add_service(proxy);
     server.run_forever();
-
-    Ok(())
 }
 // ANCHOR_END: example
 
 /// Runs the Pingora reverse proxy and propagates setup errors.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    run_proxy()
 }
 
 #[cfg(test)]
@@ -104,6 +108,6 @@ mod tests {
     #[test]
     #[ignore = "requires a local upstream on 127.0.0.1:8000 and a proxy listener"]
     fn require_network() -> anyhow::Result<()> {
-        main()
+        run_proxy()
     }
 }

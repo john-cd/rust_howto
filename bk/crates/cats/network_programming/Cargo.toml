@@ -17,16 +17,6 @@ keywords = ["networking", "axum", "ngrok", "pingora", "load-balancer"]
 categories = ["network-programming"]
 autolib = false
 
-[[example]]
-name = "reverse_proxy"
-path = "examples/reverse_proxy/main.rs"
-test = true
-
-[[example]]
-name = "server"
-path = "examples/server/main.rs"
-test = true
-
 [dependencies]
 anyhow = "1.0.104"
 axum = { version = "0.8.9", features = ["tokio"] }
@@ -38,17 +28,28 @@ ngrok = { version = "0.19.0", default-features = false, features = [
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "signal"] }
 url = "2.5.8"
 
-[dev-dependencies]
-tower = { version = "0.5.3", features = ["util"] } # Exercise Axum routes without binding a network port.
-
 [target.'cfg(target_family = "unix")'.dependencies]
 async-trait = "0.1.92"
-pingora = { version = "0.9.0", features = ["lb"] }
+# Pin the upstream fix for Pingora 0.9.0's zero-capacity readers on Tokio 1.54.
+pingora = { git = "https://github.com/cloudflare/pingora", rev = "5b30d71d63d13c2f65eebfa9101e4e118c3194b8", features = ["lb"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 # Supplies async read and write extension traits for Glommio TCP streams.
 futures-lite = "2.6.1"
 glommio = "0.9.0"
+
+[dev-dependencies]
+tower = { version = "0.5.3", features = ["util"] } # Exercise Axum routes without binding a network port.
+
+[[example]]
+name = "reverse_proxy"
+path = "examples/reverse_proxy/main.rs"
+test = true
+
+[[example]]
+name = "server"
+path = "examples/server/main.rs"
+test = true
 
 [lints]
 workspace = true

@@ -52,7 +52,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### ACTIVE-CODE-01 — Networking, authentication and email
 
-- [#812](https://github.com/john-cd/rust_howto/issues/812) — **P2** — Finish and locally verify the Pingora reverse-proxy example — **PARTIAL; OPEN — Unix/Pingora validation and book build blocked**
+- [#812](https://github.com/john-cd/rust_howto/issues/812) — **P2** — Finish and locally verify the Pingora reverse-proxy example — **PARTIAL; OPEN — isolated test, strict Clippy, and localhost forwarding pass with the pinned Pingora Tokio 1.54 fix; workspace Cargo gates blocked by #1998; PR link remains required**
 - [#1058](https://github.com/john-cd/rust_howto/issues/1058) — **P4** — Replace the obsolete public WebSocket endpoint in the async-tungstenite example — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
 
 #### ACTIVE-CODE-02 — Databases and service clients
