@@ -20,7 +20,7 @@ The [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_brid
 
 - [`dart:ffi`][ffi~dart-ffi] is Dart's native C interop library. The separate `package:ffi` supplies allocation and string helpers; neither is required as a user-designed serialization layer for a generated Rust bridge.
 
-After generation, initialize the generated library before invoking it. In the standard v2 template, the greeting above can be placed in `rust/src/api/simple.rs`; regenerate and call it from Dart:
+After generation, initialize the generated library before invoking it. Place the example API in `rust/src/api/simple.rs`, then regenerate and call the synchronous greeting from Dart:
 
 ```dart
 import 'package:my_app/src/rust/api/simple.dart';
@@ -28,12 +28,19 @@ import 'package:my_app/src/rust/frb_generated.dart';
 
 Future<void> main() async {
   await RustLib.init();
-  final message = await helloFromRust(name: 'Ada');
+  final message = greet(name: 'Ada');
+  final asyncMessage = await greetAsync(name: 'Ada');
   print(message);
+  print(asyncMessage);
+
+  final updates = greetStream(name: 'Ada');
+  await for (final update in updates) {
+    print(update);
+  }
 }
 ```
 
-The import paths depend on the generated package name and configured output directory. Flutter applications should also initialize Flutter's binding before APIs that require it.
+The import paths depend on the generated package name and configured output directory. In the Rust API, FRB v2 exposes the generated sink type as `crate::frb_generated::StreamSink`. The `greet_async` API returns a Dart `Future`; `greet_stream` returns a Dart `Stream` that yields each value passed to its sink. If the Dart stream closes before Rust sends an update, `StreamSink::add` returns a send error, which `greet_stream` converts into an `anyhow::Error` and returns to the bridge caller. Flutter applications should also initialize Flutter's binding before APIs that require it.
 
 ## `flutter_rust_bridge` {#flutter_rust_bridge}
 
@@ -43,10 +50,10 @@ The import paths depend on the generated package name and configured output dire
 
 [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} helps generate the necessary boilerplate code (both Rust and Dart) to bridge the FFI gap.
 
-With Rust and Flutter installed, follow the [v2 quickstart][ffi~frb-quickstart]:
+Install Rust and the stable Flutter SDK (which includes Dart), then install the code generator at the same version as the Rust runtime in `Cargo.toml`. The example uses `flutter_rust_bridge` 2.13.0. Follow the [v2 quickstart][ffi~frb-quickstart]:
 
 ```bash
-cargo binstall flutter_rust_bridge_codegen
+cargo binstall --version 2.13.0 flutter_rust_bridge_codegen
 flutter_rust_bridge_codegen create my_app
 cd my_app
 flutter_rust_bridge_codegen generate
@@ -83,7 +90,7 @@ Android needs the NDK and Rust targets for the device ABIs you ship. iOS needs m
 
 The web backend builds Rust to WebAssembly and uses browser integration rather than loading a native dynamic library. Audit dependencies for WebAssembly support and test the configured web backend separately. Do not assume a native filesystem or thread API works in a browser.
 
-From `later/crates`, `cargo test --locked -p development_tools_ffi --example flutter` checks the greeting logic. It does not generate bindings, run Flutter, or validate mobile/web packaging. Run `flutter test` and a device/browser smoke test in the generated application as separate integration checks.
+From `later/crates`, `cargo test --locked -p development_tools_ffi --example flutter` checks the plain Rust API. Add `--features flutter` to compile the `StreamSink` bridge example. These commands do not generate bindings, run Flutter, or validate mobile/web packaging. Run `flutter test` and a device/browser smoke test in the generated application as separate integration checks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

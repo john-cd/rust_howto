@@ -13,41 +13,92 @@
 // - Need high-performance code for Flutter: Rust makes it easy and
 // performant to write multi-thread code, data-intensive operations.
 //
-// 1. Install Rust.
-// 2. Install [Flutter](https://flutter.dev).
-// 3. Install the flutter_rust_bridge_codegen crate and create an app.
+// 1. Install Rust and [Flutter](https://flutter.dev); Flutter includes Dart.
+// 2. Install the code generator at the same version as the Rust runtime.
 // ```sh
-// cargo install flutter_rust_bridge_codegen && flutter_rust_bridge_codegen
-// create my_app && cd my_app && flutter run
+// cargo binstall --version 2.13.0 flutter_rust_bridge_codegen
 // ```
-// You can also use: `cargo binstall flutter_rust_bridge_codegen`
-// to install the binary directly.
-// 4. Regenerate the bridge when the Rust code changes:
+// 3. Create and run a Flutter project with a Rust bridge.
+// ```sh
+// flutter_rust_bridge_codegen create my_app
+// cd my_app && flutter_rust_bridge_codegen generate && flutter run
+// ```
+// 4. Regenerate the bridge whenever the Rust API changes:
 // ```sh
 // flutter_rust_bridge_codegen generate && flutter run
 // ```
-// 5. Autoexecute the code generator whenever the Rust code is changed:
+// 5. Automatically regenerate the bridge when Rust code changes:
 // `flutter_rust_bridge_codegen generate --watch`
 
-/// This function greets the user with a personalized message.
-pub fn hello_from_rust(name: &str) -> String {
+/// Greets a user from a generated Flutter bridge.
+pub fn greet(name: String) -> String {
     format!("Hello, {name}! This is Rust speaking.")
+}
+
+/// Demonstrates an asynchronous Rust function exposed to Flutter.
+pub async fn greet_async(name: String) -> String {
+    greet(name)
+}
+
+/// Builds the values sent by the stream example so the API can be tested
+/// without Flutter.
+fn greeting_updates(name: String) -> impl Iterator<Item = String> {
+    [
+        greet(name.clone()),
+        format!("Welcome, {name}! You are receiving updates from Rust."),
+    ]
+    .into_iter()
+}
+
+/// Streams greeting updates to a Dart `Stream` and returns send failures to the
+/// caller.
+///
+/// # Errors
+///
+/// Returns an error if the bridge cannot send a value to Dart.
+#[cfg(feature = "flutter")]
+pub fn greet_stream(
+    name: String,
+    sink: crate::frb_generated::StreamSink<String>,
+) -> anyhow::Result<()> {
+    for update in greeting_updates(name) {
+        sink.add(update)
+            .map_err(|error| anyhow::anyhow!(error.to_string()))?;
+    }
+    Ok(())
 }
 
 /// Exercises the same plain Rust API that a generated Flutter bridge calls.
 fn main() {
-    println!("{}", hello_from_rust("Flutter"));
+    for update in greeting_updates("Flutter".to_owned()) {
+        println!("{update}");
+    }
 }
 
 // ANCHOR_END: example
 
+/// Runs the Flutter Rust Bridge example.
 pub fn run() {
     main();
 }
 
 #[cfg(test)]
 mod tests {
+    use std::future::Future;
+    use std::sync::Arc;
+    use std::task::Context;
+    use std::task::Poll;
+    use std::task::Wake;
+    use std::task::Waker;
+
     use super::*;
+
+    /// Provides a task waker for polling the immediately-ready greeting future.
+    struct NoopWake;
+
+    impl Wake for NoopWake {
+        fn wake(self: Arc<Self>) {}
+    }
 
     /// Runs the flutter rust bridge example through its entry point.
     #[test]
@@ -59,8 +110,33 @@ mod tests {
     #[test]
     fn greeting_includes_the_supplied_name() {
         assert_eq!(
-            hello_from_rust("Ada"),
+            greet("Ada".to_owned()),
             "Hello, Ada! This is Rust speaking."
+        );
+    }
+
+    /// Checks that the asynchronous bridge API returns the same greeting.
+    #[test]
+    fn async_greeting_includes_the_supplied_name() {
+        let waker = Waker::from(Arc::new(NoopWake));
+        let mut context = Context::from_waker(&waker);
+        let mut greeting = std::pin::pin!(greet_async("Ada".to_owned()));
+
+        assert_eq!(
+            greeting.as_mut().poll(&mut context),
+            Poll::Ready("Hello, Ada! This is Rust speaking.".to_owned())
+        );
+    }
+
+    /// Checks that the stream API sends useful updates in a stable order.
+    #[test]
+    fn greeting_updates_are_ordered_and_personalized() {
+        assert_eq!(
+            greeting_updates("Ada".to_owned()).collect::<Vec<_>>(),
+            vec![
+                "Hello, Ada! This is Rust speaking.".to_owned(),
+                "Welcome, Ada! You are receiving updates from Rust.".to_owned(),
+            ]
         );
     }
 }

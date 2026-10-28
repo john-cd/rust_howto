@@ -92,7 +92,7 @@ test = true
 anyhow = { version = "1.0.104", optional = true }
 clap = { version = "4.6.7", features = ["derive"] }
 cxx = { version = "1.0.205", optional = true }
-flutter_rust_bridge = { version = "2.13.0", optional = true }
+flutter_rust_bridge = { version = "=2.13.0", optional = true }
 jni = { version = "0.22.4", optional = true }
 mlua = { version = "0.12.2", features = ["lua54"], optional = true }
 napi = { version = "3.15.0", features = ["async"], optional = true }
@@ -112,7 +112,7 @@ uniffi = { version = "0.32.2", optional = true }
 [features]
 cpp = ["dep:cxx", "dep:cxx-build"]
 erlang = ["dep:rustler"]
-flutter = ["dep:flutter_rust_bridge"]
+flutter = ["dep:anyhow", "dep:flutter_rust_bridge"]
 java = ["dep:jni"]
 lua = ["dep:mlua", "mlua/vendored"]
 lua-module = ["dep:mlua", "mlua/module"]
