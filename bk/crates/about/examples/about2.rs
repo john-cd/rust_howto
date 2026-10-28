@@ -1,4 +1,4 @@
-// Reviewed 10-27-2026.
+// Reviewed 10-28-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to parse a URL and extract a portion of it.
@@ -28,12 +28,6 @@ fn main() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    #[test]
-    fn test_about_example_two() -> anyhow::Result<()> {
-        example()?;
-        Ok(())
-    }
 
     #[test]
     fn test_main_entry_point() {

@@ -22,9 +22,4 @@ mod tests {
     fn test_about_example() {
         main();
     }
-
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
 }

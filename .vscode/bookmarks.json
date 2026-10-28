@@ -809,6 +809,16 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "bk/crates/cats/asynchronous/examples/async/async3.rs",
+			"bookmarks": [
+				{
+					"line": 19,
+					"column": 0,
+					"label": ""
+				}
+			]
 		}
 	]
 }

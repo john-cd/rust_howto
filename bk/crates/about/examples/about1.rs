@@ -51,12 +51,6 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_about_example_one() -> anyhow::Result<()> {
-        example()?;
-        Ok(())
-    }
-
-    #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {
             panic!("main failed: {err:?}");

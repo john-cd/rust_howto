@@ -29,7 +29,7 @@ async fn main() {
 // Prints:
 // hello
 // world
-// Example from <https://tokio.rs/tokio/tutorial/hello-tokio>
+// Example from <https://tokio.rs/tokio/tutorial/hello-tokio>.
 // ANCHOR_END: example
 
 pub fn run() {
@@ -40,7 +40,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the async2 example through its entry point.
     #[test]
     fn test_async2_example_entry_point() {
         main();

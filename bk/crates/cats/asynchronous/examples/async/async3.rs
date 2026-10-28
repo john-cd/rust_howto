@@ -8,7 +8,6 @@ async fn main() {
     assert_eq!(result, 3);
     println!("The spawned task returned {result}.");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example for the parent module.
