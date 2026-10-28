@@ -22,12 +22,16 @@ _default:
 [no-cd]
 @fmtcurrent:
     echo "Formatting $(pwd)"
-    cargo +{{rustfmt_toolchain}} fmt
+    cargo +{{ rustfmt_toolchain }} fmt
 
 # Format all packages and their local path-based dependencies
 @fmtall:
     echo "Formatting all packages and their local path-based dependencies in {{ quote(code_root) }}"
-    cd {{ quote(code_root) }}; cargo +{{rustfmt_toolchain}} fmt --all
+    cd {{ quote(code_root) }}; cargo +{{ rustfmt_toolchain }} fmt --all
+
+# Sort and format Cargo manifests in the book examples workspace
+@fmt-toml:
+    cd {{ quote(code_root) }}; cargo sort --workspace
 
 # Check code in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]

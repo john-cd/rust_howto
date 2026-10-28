@@ -12,9 +12,19 @@ From the repository root, run:
 pwsh -File .devcontainer/install_deps.ps1
 ```
 
-The script reads pinned tool versions from `.devcontainer/.env` and installs Rust components, `just`, LLVM/Clang, SQLite, NASM, Ninja, and the book tools with Winget and Cargo. It does not take command-line parameters or install Git for Windows. Install Git for Windows separately; Git Bash must be available at `C:\Program Files\Git\bin\bash.exe`, the path used by the repository justfiles. For a custom installation, pass the desired path with just's `--shell` and `--shell-arg` options.
+The script reads pinned tool versions from `.devcontainer/.env` and installs Rust components, `just`, `cargo-sort`, `dprint`, `rumdl`, LLVM/Clang, SQLite, NASM, Ninja, Pandoc, Tectonic, and the book tools with Winget, verified publisher downloads, and Cargo. It adds the LLVM, NASM, Pandoc, Tectonic, and local Rust tool directories to the current and user `PATH` when those directories exist. It does not take command-line parameters or install Git for Windows. Install Git for Windows separately; Git Bash must be available at `C:\Program Files\Git\bin\bash.exe`, the path used by the repository justfiles. For a custom installation, pass the desired path with just's `--shell` and `--shell-arg` options.
 
 Use `.devcontainer/install_deps.ps1` for native Windows. `.devcontainer/install_deps.sh` is the separate Debian/Ubuntu installer; it uses `apt-get` and `sudo` and must run in Linux, WSL, or a Linux container. Do not run it through Git Bash on Windows.
+
+The dev container builds `tools/`, which depends on the private `john-cd/book_tooling` repository. Authenticate with GitHub CLI and provide its token to BuildKit for the build:
+
+```powershell
+$env:GH_TOKEN = gh auth token --hostname github.com
+docker compose --env-file .devcontainer/.env -f .devcontainer/compose.yaml build book
+Remove-Item Env:GH_TOKEN
+```
+
+The token is used as a BuildKit secret only while Cargo fetches the private dependency; it is not stored in the image or `.devcontainer/.env`.
 
 Run the repository build setup once per checkout:
 

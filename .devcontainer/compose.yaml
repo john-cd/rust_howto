@@ -17,4 +17,15 @@ services:
         CARGO_NEXTEST_VERSION: ${CARGO_NEXTEST_VERSION:?cargo-nextest version must be defined}
         JUST_VERSION: ${JUST_VERSION:?just version must be defined}
         TECTONIC_VERSION: ${TECTONIC_VERSION:?tectonic version must be defined}
+        TECTONIC_LINUX_SHA256: ${TECTONIC_LINUX_SHA256:?tectonic Linux checksum must be defined}
+        CARGO_SORT_VERSION: ${CARGO_SORT_VERSION:?cargo-sort version must be defined}
+        DPRINT_VERSION: ${DPRINT_VERSION:?dprint version must be defined}
+        RUMDL_VERSION: ${RUMDL_VERSION:?rumdl version must be defined}
         PANDOC_VERSION: ${PANDOC_VERSION:?pandoc version must be defined}
+      secrets:
+        - source: github_token
+          target: github_token
+
+secrets:
+  github_token:
+    environment: GH_TOKEN

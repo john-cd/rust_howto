@@ -25,11 +25,13 @@ The project uses several tools and techniques to optimize the Rust development e
 
 For background on when a separate Rust compiler cache helps, see [Why You Need `sccache`][blog~why_you_need_sccache]↗.
 
+The local tool workspace depends on the private `john-cd/book_tooling` repository. Provide a GitHub token with read access to that repository as `GH_TOKEN` when building the image. BuildKit mounts it only while Cargo fetches the dependency; do not store it in `.devcontainer/.env`.
+
 To run the development container manually, use Compose from `.devcontainer`. This reads the pinned tool versions from `.env` and applies the development volume configuration:
 
 ```bash
 cd ./.devcontainer
-docker compose up --build -d
+GH_TOKEN="$(gh auth token --hostname github.com)" docker compose up --build -d
 docker compose exec book bash
 ```
 

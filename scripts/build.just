@@ -26,26 +26,26 @@ export SCCACHE_BASEDIRS := if build_inherited_cache_bases == "" { replace(build_
 # Connect direct Cargo commands to the same persistent directories as just.
 [windows]
 build-setup:
-    pwsh.exe -NoLogo -NoProfile -File "{{build_repo}}/scripts/setup-build.ps1"
+    pwsh.exe -NoLogo -NoProfile -File "{{ build_repo }}/scripts/setup-build.ps1"
 
 # Refresh the shared daemon's base directories while no Rust build is running.
 [windows]
 cache-setup:
-    pwsh.exe -NoLogo -NoProfile -File "{{build_repo}}/scripts/setup-build.ps1" -RestartCache -ExistingBaseDirs "{{build_inherited_cache_bases}}"
+    pwsh.exe -NoLogo -NoProfile -File "{{ build_repo }}/scripts/setup-build.ps1" -RestartCache -ExistingBaseDirs "{{ build_inherited_cache_bases }}"
 
 # Create a named branch in a known slot; existing slots are preserved for reuse.
 [windows]
 worktree slot branch:
-    pwsh.exe -NoLogo -NoProfile -File "{{build_repo}}/scripts/setup-build.ps1" -Slot "{{slot}}" -Branch "{{branch}}" -TargetDir "{{build_inherited_target}}" -BuildDir "{{build_inherited_intermediate}}"
+    pwsh.exe -NoLogo -NoProfile -File "{{ build_repo }}/scripts/setup-build.ps1" -Slot "{{ slot }}" -Branch "{{ branch }}" -TargetDir "{{ build_inherited_target }}" -BuildDir "{{ build_inherited_intermediate }}"
 
 [unix]
 build-setup:
-    bash "{{build_repo}}/scripts/setup-build.sh"
+    bash "{{ build_repo }}/scripts/setup-build.sh"
 
 [unix]
 cache-setup:
-    bash "{{build_repo}}/scripts/setup-build.sh" --restart-cache "{{build_inherited_cache_bases}}"
+    bash "{{ build_repo }}/scripts/setup-build.sh" --restart-cache "{{ build_inherited_cache_bases }}"
 
 [unix]
 worktree slot branch:
-    bash "{{build_repo}}/scripts/setup-build.sh" --slot "{{slot}}" "{{branch}}" "{{build_inherited_target}}" "{{build_inherited_intermediate}}"
+    bash "{{ build_repo }}/scripts/setup-build.sh" --slot "{{ slot }}" "{{ branch }}" "{{ build_inherited_target }}" "{{ build_inherited_intermediate }}"

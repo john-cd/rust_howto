@@ -16,7 +16,7 @@
 
 # The build arg is passed by compose.yaml and set from the RUST_IMAGE_LABEL
 # variable in `.devcontainer/.env`.
-ARG RUST_IMAGE_LABEL
+ARG RUST_IMAGE_LABEL=1.99.1-slim-trixie
 
 FROM rust:${RUST_IMAGE_LABEL} AS rust-core
 ## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
@@ -55,7 +55,9 @@ ARG MDBOOK_PANDOC_VERSION
 ARG MDBOOK_UTILS_REV
 ARG CARGO_NEXTEST_VERSION
 ARG JUST_VERSION
-ARG TECTONIC_VERSION
+ARG CARGO_SORT_VERSION
+ARG DPRINT_VERSION
+ARG RUMDL_VERSION
 
 ## Install cargo binstall (binary install)
 ## Install nextest
@@ -73,8 +75,10 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo binstall --no-confirm --secure --version ${MDBOOK_VERSION} mdbook
     cargo binstall --no-confirm --secure --version ${MDBOOK_LINKCHECK_VERSION} mdbook-linkcheck
     cargo binstall --no-confirm --secure --version ${MDBOOK_PANDOC_VERSION} mdbook-pandoc
-    cargo binstall --no-confirm --secure --version ${TECTONIC_VERSION} tectonic
     cargo binstall --no-confirm --secure --version ${JUST_VERSION} just
+    cargo binstall --no-confirm --secure --version ${CARGO_SORT_VERSION} cargo-sort
+    cargo binstall --no-confirm --secure --version ${DPRINT_VERSION} dprint
+    cargo binstall --no-confirm --secure --version ${RUMDL_VERSION} rumdl
     cargo binstall --no-confirm --secure sccache cargo-deny lychee
     cargo install --locked --force --version ${MDBOOK_INDEXING_VERSION} mdbook-indexing
 EOF
@@ -99,7 +103,18 @@ ENV CARGO_TARGET_DIR=/code/target/tools/ \
 ## Copy only the tools source to optimize caching
 COPY tools/ /code/tools/
 
-RUN cargo fetch --locked --manifest-path /code/tools/Cargo.toml
+RUN --mount=type=secret,id=github_token,required=false \
+    if [ -s /run/secrets/github_token ]; then \
+        token="$(cat /run/secrets/github_token)"; \
+        auth_header="$(printf 'x-access-token:%s' "$token" | base64 | tr -d '\r\n')"; \
+        CARGO_NET_GIT_FETCH_WITH_CLI=true \
+            GIT_CONFIG_COUNT=1 \
+            GIT_CONFIG_KEY_0=http.https://github.com/.extraheader \
+            GIT_CONFIG_VALUE_0="AUTHORIZATION: basic ${auth_header}" \
+            cargo fetch --locked --manifest-path /code/tools/Cargo.toml; \
+    else \
+        cargo fetch --locked --manifest-path /code/tools/Cargo.toml; \
+    fi
 
 ## Build repository tools in release mode with the pinned formatter toolchain.
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
@@ -114,6 +129,9 @@ FROM rust-core AS base
 SHELL ["bash", "-c"]
 
 ARG MDBOOK_UTILS_REV
+ARG TECTONIC_VERSION
+ARG TECTONIC_LINUX_SHA256
+ARG TARGETARCH
 ENV MDBOOK_UTILS_REV=${MDBOOK_UTILS_REV}
 ENV CARGO_TARGET_DIR=/code/target/ \
     CARGO_BUILD_BUILD_DIR=/code/build/
@@ -155,9 +173,15 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libayatana-appindicator3-dev \
     libc6-dev \
     libclang-dev \
+    libfontconfig1-dev \
+    libfreetype6-dev \
     libglu1-mesa-dev \
+    libgraphite2-dev \
+    libharfbuzz-dev \
     libgtk-4-dev \
+    libicu-dev \
     libopencv-dev \
+    libpng-dev \
     libpython3-dev \
     librocksdb-dev \
     librsvg2-dev \
@@ -208,6 +232,19 @@ RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/p
 
 ## Copy only binaries from builder to keep the base image lean
 COPY --from=tool-builder /usr/local/cargo/bin/ /usr/local/cargo/bin/
+
+## Prefer the pinned Tectonic release binary on Linux x86_64; use Cargo for other architectures.
+RUN if [ "$TARGETARCH" = "amd64" ]; then \
+        archive="/tmp/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-gnu.tar.gz"; \
+        curl --fail --location --proto '=https' --tlsv1.2 \
+            "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40${TECTONIC_VERSION}/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-gnu.tar.gz" \
+            --output "$archive"; \
+        echo "${TECTONIC_LINUX_SHA256}  ${archive}" | sha256sum --check; \
+        tar -xzf "$archive" -C /usr/local/cargo/bin tectonic; \
+        rm "$archive"; \
+    else \
+        cargo binstall --no-confirm --secure --version "${TECTONIC_VERSION}" tectonic; \
+    fi
 
 ## ------------------------------------------------------------------------------------------------
 

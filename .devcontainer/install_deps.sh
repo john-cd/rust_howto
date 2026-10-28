@@ -36,9 +36,15 @@ sudo apt-get update \
     libayatana-appindicator3-dev \
     libc6-dev \
     libclang-dev \
+    libfontconfig1-dev \
+    libfreetype6-dev \
     libglu1-mesa-dev \
+    libgraphite2-dev \
+    libharfbuzz-dev \
     libgtk-4-dev \
+    libicu-dev \
     libopencv-dev \
+    libpng-dev \
     libpython3-dev \
     librocksdb-dev \
     librsvg2-dev \
@@ -86,9 +92,24 @@ cargo binstall --no-confirm --secure --version "$CARGO_NEXTEST_VERSION" cargo-ne
 cargo binstall --no-confirm --secure --version "$MDBOOK_VERSION" mdbook
 cargo binstall --no-confirm --secure --version "$MDBOOK_LINKCHECK_VERSION" mdbook-linkcheck
 cargo binstall --no-confirm --secure --version "$MDBOOK_PANDOC_VERSION" mdbook-pandoc
-cargo binstall --no-confirm --secure --version "$TECTONIC_VERSION" tectonic
 cargo binstall --no-confirm --secure --version "$JUST_VERSION" just
+cargo binstall --no-confirm --secure --version "$CARGO_SORT_VERSION" cargo-sort
+cargo binstall --no-confirm --secure --force --version "$DPRINT_VERSION" dprint
+cargo binstall --no-confirm --secure --force --version "$RUMDL_VERSION" rumdl
 cargo binstall --no-confirm --secure sccache cargo-deny lychee bacon ripgrep
+
+if [[ "$(uname -m)" == "x86_64" ]]; then
+    tectonic_archive="$(mktemp)"
+    curl --fail --location --proto '=https' --tlsv1.2 \
+        "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40${TECTONIC_VERSION}/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-gnu.tar.gz" \
+        --output "$tectonic_archive"
+    echo "${TECTONIC_LINUX_SHA256}  ${tectonic_archive}" | sha256sum --check
+    tar -xzf "$tectonic_archive" -C "$HOME/.cargo/bin" tectonic
+    chmod +x "$HOME/.cargo/bin/tectonic"
+    rm -f "$tectonic_archive"
+else
+    cargo binstall --no-confirm --secure --version "$TECTONIC_VERSION" tectonic
+fi
 
 cargo install --locked --force --version "$MDBOOK_INDEXING_VERSION" mdbook-indexing
 cargo install --git https://github.com/john-cd/mdbook-utils --rev "$MDBOOK_UTILS_REV" --locked --force mdbook-utils
@@ -97,3 +118,7 @@ cargo install --git https://github.com/john-cd/mdbook-utils --rev "$MDBOOK_UTILS
 curl -sS https://webi.sh/gh | sh
 
 cargo binstall --no-confirm --secure kani-verifier
+tectonic --version
+cargo sort --version
+dprint --version
+rumdl --version

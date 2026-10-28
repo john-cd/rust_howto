@@ -20,6 +20,10 @@ _default:
 fc:
     @just code fmtcurrent
 
+# Sort and format Cargo manifests
+fmt-toml:
+    @just code fmt-toml
+
 # Format all packages and their local path-based dependencies
 fa:
     @just code fmtall

@@ -608,7 +608,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 #### VALIDATE-INFRA-01 — Dependencies, CI and containers
 
 - [#1699](https://github.com/john-cd/rust_howto/issues/1699) — **P1** — Reconcile seven conflicted PRs against main and the local example changes — **PARTIAL**
-- [#1719](https://github.com/john-cd/rust_howto/issues/1719) — **P1** — Repair and document the dev container setup and compiler caching — **PARTIAL**
+- [#1719](https://github.com/john-cd/rust_howto/issues/1719) — **P1** — Repair and document the dev container setup and compiler caching — **PARTIAL — Windows install script and WSL tool inventory pass; Compose, Dockerfile, and prose checks pass; full image build needs a valid GH_TOKEN for private book_tooling. BuildKit secret support is documented; container startup/restart, cache persistence, contributor gates, and cold/warm sccache measurements remain.**
 - [#51](https://github.com/john-cd/rust_howto/issues/51) — **P2** — Audit dependencies during CI — **PARTIAL**
 - [#1727](https://github.com/john-cd/rust_howto/issues/1727) — **P2** — Benchmark container build storage and select persistent cache mounts — **NOT STARTED**
 - [#12](https://github.com/john-cd/rust_howto/issues/12) — **P3** — review deny.toml — **PARTIAL**
