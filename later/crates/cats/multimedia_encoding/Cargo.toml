@@ -23,7 +23,10 @@ path = "examples/encoding/main.rs"
 test = true
 
 [dependencies]
+hound = "3.5.1"
+mp4 = "0.14.0"
 rav1e = { version = "0.8.1", default-features = false }
+symphonia = { version = "0.5.5", features = ["all"] }
 
 [lints]
 workspace = true
