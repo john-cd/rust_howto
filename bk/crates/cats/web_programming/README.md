@@ -1,5 +1,24 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Web Programming
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Web Programming** category on crates.io. It demonstrates integration with key ecosystem crates including `ammonia`, `anyhow`, `bytes`, `clap`, `html2text`, `http`.
+
+## Examples Covered
+
+- **Html Text** (`examples/html_text/`): Demonstrates concepts like `ammonia_clean`, `html2text`, `markdown_to_safe_html`.
+- **HTTP Types and Interfaces** (`examples/http_types_and_interfaces/`): Demonstrates concepts like `http`.
+- **Mime** (`examples/mime/`): Demonstrates concepts like `filename`, `request`, `string`.
+- **Scraping** (`examples/scraping/`): Demonstrates concepts like `broken`, `extract_links`, `unique`.
+- **URL** (`examples/url/`): Demonstrates concepts like `base`, `fragment`, `new`, `origin`, `origin1`, `parse`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package web_programming --examples
+cargo test --package web_programming
+```
+
+Code examples correspond to chapters in `bk/src/categories/web_programming` or related book sections.

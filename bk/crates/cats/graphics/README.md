@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Graphics
 
-Code examples are found under `examples/es/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Graphics** category on crates.io.
+
+## Examples Covered
+
+- **Standalone Examples**: `graphics`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package graphics --examples
+cargo test --package graphics
+```
+
+Code examples correspond to chapters in `bk/src/categories/graphics` or related book sections.

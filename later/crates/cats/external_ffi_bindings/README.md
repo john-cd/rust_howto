@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# External FFI Bindings
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **External FFI Bindings** category on crates.io.
+
+## Examples Covered
+
+- **Standalone Examples**: `external_ffi_bindings`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package external_ffi_bindings --examples
+cargo test --package external_ffi_bindings
+```
+
+Code examples correspond to chapters in `bk/src/categories/external_ffi_bindings` or related book sections.

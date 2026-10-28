@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Web Programming Websocket
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+Book code examples for Web Programming with WebSockets using Tungstenite. It demonstrates integration with key ecosystem crates including `anyhow`, `async-tungstenite`, `futures-util`, `tokio`, `tokio-tungstenite`, `tungstenite`.
+
+## Examples Covered
+
+- **Websocket** (`examples/websocket/`): Demonstrates concepts like `async_tungstenite`, `tokio_tungstenite`, `tungstenite`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package web_programming_websocket --examples
+cargo test --package web_programming_websocket
+```
+
+Code examples correspond to chapters in `bk/src/categories/web_programming_websocket` or related book sections.

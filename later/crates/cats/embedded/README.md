@@ -1,6 +1,27 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Embedded
+
+This crate contains code examples for the **Embedded** category on crates.io.
+
+## Examples Covered
+
+- **Embassy** (`examples/embassy/`): Demonstrates concepts like `embassy`.
+- **Flash** (`examples/flash/`): Code examples covering flash.
+- **Hals** (`examples/hals/`): Code examples covering hals.
+- **RTOS** (`examples/rtos/`): Code examples covering rtos.
+- **Sensors** (`examples/sensors/`): Code examples covering sensors.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package embedded --examples
+cargo test --package embedded
+```
+
+Code examples correspond to chapters in `bk/src/categories/embedded` or related book sections.
 
 This package is a standalone workspace, kept outside the broad `later/crates` workspace so its host examples have independent package metadata and a lockfile.
 

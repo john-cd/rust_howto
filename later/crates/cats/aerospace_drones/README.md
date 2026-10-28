@@ -1,7 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# Aerospace: Drones
+# Aerospace Drones
 
-This crate contains examples for the "aerospace_drones" category on `crates.io`.
+This crate contains code examples for the **Aerospace Drones** category on crates.io. It demonstrates integration with key ecosystem crates including `tello`.
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+## Examples Covered
+
+- **Drones** (`examples/drones/`): Demonstrates concepts like `drones1`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package aerospace_drones --examples
+cargo test --package aerospace_drones
+```
+
+Code examples correspond to chapters in `bk/src/categories/aerospace_drones` or related book sections.

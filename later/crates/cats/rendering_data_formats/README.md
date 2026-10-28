@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Rendering Data Formats
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Rendering Data Formats** category on crates.io. It demonstrates integration with key ecosystem crates including `gltf`.
+
+## Examples Covered
+
+- **Data Formats** (`examples/data_formats/`): Demonstrates concepts like `inline_gltf_triangle`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package rendering_data_formats --examples
+cargo test --package rendering_data_formats
+```
+
+Code examples correspond to chapters in `bk/src/categories/rendering_data_formats` or related book sections.
