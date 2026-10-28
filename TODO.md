@@ -173,7 +173,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-07 — WebAssembly and browser applications
 
-- [#856](https://github.com/john-cd/rust_howto/issues/856) — **P4** — yew/yew.rs: review — **IMPLEMENTED ON TOPIC BRANCH; OPEN — browser renderer gated to wasm32, native SSR test added, Trunk steps documented; focused checks and PR evidence pending**
+- [#856](https://github.com/john-cd/rust_howto/issues/856) — **P4** — yew/yew.rs: review — **IMPLEMENTED ON DEVELOP; OPEN — native SSR test replaces the ignored entry-point test; focused tests, Clippy, wasm build, book validation, and PR link pending**
 - [#1944](https://github.com/john-cd/rust_howto/issues/1944) — **P4** — Add examples: Leptos web app building blocks (leptos_router, gloo-net, gloo-storage, icons, gRPC-Web client) — **BLOCKED — route/fetch/storage/gRPC examples exist; icondata example, Leptos browser dependency split tracked by #1970, and wasm/book validation remain**
 
 #### NOW-CODE-08 — Media encoding, images and video

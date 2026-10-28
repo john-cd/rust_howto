@@ -59,13 +59,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the yew example through its entry point.
-    #[test]
-    #[ignore = "requires wasm example runtime"]
-    fn yew_example_entry_point_runs() {
-        main();
-    }
-
     /// Renders the initial counter state to HTML with Yew's server renderer.
     #[tokio::test]
     async fn server_render_shows_counter() {
