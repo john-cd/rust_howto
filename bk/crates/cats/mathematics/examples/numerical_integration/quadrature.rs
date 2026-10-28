@@ -60,7 +60,7 @@ fn checked_step(
         return Err(IntegrationError::ZeroSubintervals);
     }
 
-    if require_even && subintervals % 2 != 0 {
+    if require_even && !subintervals.is_multiple_of(2) {
         return Err(IntegrationError::OddSimpsonSubintervalCount);
     }
 
