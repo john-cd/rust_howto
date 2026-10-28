@@ -18,7 +18,7 @@ pub mod public_api {
 
 // In contrast, this module is private, so an external crate cannot access it.
 // It is accessible from this module and its descendants. Its public items are
-// still limited by the private module's visibility boundary.
+// still restricted by the module's private boundary.
 /// A private module, which external crates cannot access.
 mod crate_helper_module {
     /// A function that can only be used within the crate.

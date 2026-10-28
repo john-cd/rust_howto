@@ -4,7 +4,7 @@
 
 {{#include naming_conventions.incl.md}}
 
-Rust prefers snake case for variables and functions, so a function or method would be called `read_str` instead of `readStr`. For structs, traits, and enums, UpperCamelCase is used, for example `HttpClient`.
+Rust prefers snake case for variables and functions, so a function or method would be called `read_str` instead of `readStr`. For structs, traits, and enums, `UpperCamelCase` is used, for example `HttpClient`.
 
 ## Name your Functions, Types, etc. (Naming Conventions) {#naming-conventions}
 
