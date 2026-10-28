@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A `TinyVec`, which stores a few elements inline before moving to the heap.

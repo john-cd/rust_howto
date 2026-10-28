@@ -1,6 +1,5 @@
-#![allow(dead_code)]
 #![allow(clippy::incompatible_msrv)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This function creates a gzip-compressed tar archive from a directory.

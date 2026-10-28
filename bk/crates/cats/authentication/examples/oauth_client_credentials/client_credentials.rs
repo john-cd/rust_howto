@@ -1,8 +1,16 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Obtains an OAuth 2.0 client-credentials token and calls a local mock API.
+//! TODO explain the purpose of this example and how it demonstrates the OAuth
+//! 2.0 client-credentials flow. explain OAuth 2.0 client-credentials flow.
+//!
+//! It demonstrates how to obtain an access token using the client-credentials
+//! flow and use it to access a protected resource. It uses the `oauth2` crate
+//! to perform the client-credentials flow and the `reqwest` crate to make HTTP
+//! requests. The example sets up local mock servers for both the authorization
+//! and resource servers to simulate the OAuth 2.0 flow. This allows testing the
+//! client-credentials flow without relying on external servers.
 
 use std::time::Duration;
 
@@ -99,13 +107,8 @@ fn main() -> anyhow::Result<()> {
     println!("Received the protected response: {body}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
-/// Runs the offline OAuth client-credentials example.
-///
-/// # Errors
-/// Returns an error if either local mock server exchange fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

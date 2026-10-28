@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 // TODO explain this is last resort
 
 #![expect(dead_code, reason = "scratch example with unused items")]

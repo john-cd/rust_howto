@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A reactive counter application with Floem.
@@ -30,7 +30,7 @@ fn counter_view() -> impl IntoView {
 }
 
 /// Starts the Floem counter window.
-pub fn main() {
+fn main() {
     floem::launch(counter_view);
 }
 // ANCHOR_END: example

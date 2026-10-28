@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Lazily initializes a single-threaded value with `std::cell::LazyCell`.
 

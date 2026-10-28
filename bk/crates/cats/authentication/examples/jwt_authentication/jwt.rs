@@ -1,6 +1,11 @@
-#![allow(dead_code)]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Encode and verify HS256 JSON Web Tokens for a first-party API.
+//!
+//! This module provides functions to create and verify JSON Web Tokens (JWTs)
+//! using the HS256 algorithm. It is used in the JWT authentication example to
+//! demonstrate how to handle short-lived bearer tokens in a first-party API.
 
 use jsonwebtoken::Algorithm;
 use jsonwebtoken::DecodingKey;
@@ -12,6 +17,8 @@ use jsonwebtoken::encode;
 use serde::Deserialize;
 use serde::Serialize;
 
+// TODO explain the purpose of this module and how it fits into the overall
+// example. TODO explain the field names
 /// Claims carried by the example's short-lived bearer token.
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct Claims {

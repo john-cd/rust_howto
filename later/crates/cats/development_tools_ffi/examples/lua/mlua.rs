@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Creates a Lua table in Rust and reads it from an embedded Lua 5.4 runtime.

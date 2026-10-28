@@ -1,6 +1,6 @@
 //! Runs one of the graph algorithm examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026.
+//! Reviewed 10-27-2026.
 
 use clap::Parser;
 use clap::Subcommand;

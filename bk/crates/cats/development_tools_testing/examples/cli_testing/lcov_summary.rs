@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Compute line coverage per file from an LCOV report and enforce a minimum.

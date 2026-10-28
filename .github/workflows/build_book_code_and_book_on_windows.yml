@@ -1,4 +1,4 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 ## Builds and tests the book code and the `tools/` workspace, and renders the book, natively on Windows.
 ## The Linux equivalent runs in Docker (`build_deploy_book.yml`, `build_tools.yml`).
@@ -86,11 +86,11 @@ jobs:
       - name: Protoc version (debug)
         run: protoc --version
 
-      - name: Install mdBook, mdBook linkcheck, Nextest and Just (prebuilt binaries)
+      - name: Install mdBook, mdBook linkcheck, Nextest, Just and cargo-deny (prebuilt binaries)
         # taiki-e/install-action v2.87.30
-        uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177
+        uses: taiki-e/install-action@1e29709c0ec63babbe8f266397a465f29a825f91
         with:
-          tool: mdbook@${{ env.MDBOOK_VERSION }},mdbook-linkcheck@${{ env.MDBOOK_LINKCHECK_VERSION }},cargo-nextest@${{ env.CARGO_NEXTEST_VERSION }},just@${{ env.JUST_VERSION }}
+          tool: mdbook@${{ env.MDBOOK_VERSION }},mdbook-linkcheck@${{ env.MDBOOK_LINKCHECK_VERSION }},cargo-nextest@${{ env.CARGO_NEXTEST_VERSION }},just@${{ env.JUST_VERSION }},cargo-deny
 
       ## `cargo install` skips tools already restored from the cache.
       - name: Install mdBook indexing from its locked source
@@ -98,6 +98,10 @@ jobs:
 
       - name: Install `mdbook-utils`
         run: cargo install --git https://github.com/john-cd/mdbook-utils --rev "$MDBOOK_UTILS_REV" --locked mdbook-utils
+
+      - name: Audit dependencies with cargo-deny (#51)
+        run: cargo deny --manifest-path Cargo.toml --workspace --config deny.toml check all --hide-inclusion-graph
+        working-directory: bk/crates
 
       - name: Format
         run: cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check

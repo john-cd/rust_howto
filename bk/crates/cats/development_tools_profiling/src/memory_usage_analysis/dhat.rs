@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! `dhat` provides heap profiling and ad-hoc profiling capabilities,

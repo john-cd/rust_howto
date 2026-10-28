@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Fetch daily bars from Yahoo! Finance under a rate limit.
@@ -36,14 +35,17 @@ async fn fetch(tickers: &[&str]) -> anyhow::Result<()> {
     Ok(())
 }
 
+fn main() -> anyhow::Result<()> {
+    let rt = tokio::runtime::Builder::new_current_thread()
+    .enable_all()
+    .build()?;
+    rt.block_on(fetch(&["AAPL", "MSFT"]))
+}
 // ANCHOR_END: example
 
 /// Runs the example (requires network access).
 pub fn run() -> anyhow::Result<()> {
-    let rt = tokio::runtime::Builder::new_current_thread()
-        .enable_all()
-        .build()?;
-    rt.block_on(fetch(&["AAPL", "MSFT"]))
+    main()
 }
 
 #[cfg(test)]
@@ -89,6 +91,6 @@ mod tests {
     #[test]
     #[ignore = "needs network access"]
     fn fetches_history() {
-        run().expect("network available");
+        main().expect("network available");
     }
 }

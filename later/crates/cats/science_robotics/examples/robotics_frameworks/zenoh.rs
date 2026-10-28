@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // Preserved for reference; Cargo.toml keeps Zenoh disabled while its current
 // release requires the affected lz4_flex 0.10 series.

@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Adds rational numbers without converting them to floating-point values.
 

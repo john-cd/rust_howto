@@ -2,7 +2,7 @@
 # Purpose: List subchapters that do not include a local TOC, i.e. {{#include <subchapter>.incl.md}} is missing.
 # Usage: ./scripts/includes/list_missing_subchapter_includes.sh <root folder>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -u
 

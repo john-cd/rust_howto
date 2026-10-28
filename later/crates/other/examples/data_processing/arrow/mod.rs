@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Runs six Apache Arrow examples: arrays, sub-crate arrays, IPC files, CSV,
 //! JSON, and Serde conversion.

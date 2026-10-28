@@ -1,21 +1,20 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "clean"
 version.workspace = true
+description = "A utility to clean up temporary directories and build artifacts during development and testing."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "A utility to clean up temporary directories and build artifacts during development and testing."
-
-categories = ["development-tools", "command-line-utilities"]
-keywords = ["cleanup", "testing", "filesystem", "dev-tools", "cli"]
 publish = false
+keywords = ["cleanup", "testing", "filesystem", "dev-tools", "cli"]
+categories = ["development-tools", "command-line-utilities"]
 
 [dependencies]
 anyhow = { workspace = true }

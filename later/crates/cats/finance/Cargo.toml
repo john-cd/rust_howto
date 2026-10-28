@@ -1,31 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "finance"
 version.workspace = true
+description = "Book code examples and their crate dependencies - finance"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - finance"
-
-autolib = false
-categories = ["finance"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-[dependencies]
-anyhow = "1.0.104"
-black_scholes = "0.11.1"
-chrono = "0.4.45"
-governor = "0.10.4"
-serde_json = "1.0.154"
-ta-statistics = "0.2.6"
-tokio = { version = "1.54.1", features = ["rt", "macros"] }
-yahoo_finance_api = "5.0.0"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["finance"]
+autolib = false
 
 [[example]]
 name = "market_data"
@@ -36,6 +26,16 @@ test = true
 name = "quant"
 path = "examples/quant/main.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+black_scholes = "0.11.1"
+chrono = "0.4.45"
+governor = "0.10.4"
+serde_json = "1.0.154"
+ta-statistics = "0.2.6"
+tokio = { version = "1.54.1", features = ["rt", "macros"] }
+yahoo_finance_api = "5.0.0"
 
 [lints]
 workspace = true

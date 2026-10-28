@@ -1,6 +1,6 @@
 //! Runs the OAuth 2.0 client-credentials example.
 //!
-//! TODO Reviewed ??-??-2026.
+//! TODO Reviewed 10-27-2026.
 
 mod client_credentials;
 

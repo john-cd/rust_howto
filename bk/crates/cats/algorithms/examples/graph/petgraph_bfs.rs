@@ -1,18 +1,36 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Breadth-first traversal of a `petgraph` graph.
+//! Breadth-First Search (BFS) traversal of a graph using `petgraph`.
+//!
+//! ### What is Breadth-First Search (BFS)?
+//! Breadth-First Search is an unweighted graph traversal algorithm that
+//! explores vertices layer by layer (level order) outward from a starting
+//! source node.
+//!
+//! ### How Does It Work?
+//! BFS uses a First-In, First-Out (FIFO) queue data structure to track frontier
+//! nodes. It visits all immediate 1-hop neighbors of the current node before
+//! moving on to 2-hop neighbors, 3-hop neighbors, and so on.
+//!
+//! ### Key Properties & Shortest Path Guarantee
+//! - **Unweighted Shortest Path**: On unweighted graphs (where all edge costs
+//!   are equal), BFS is guaranteed to discover the path with the minimum number
+//!   of edges from the source to any reachable destination.
+//! - **Level-Order Exploration**: Ensures systematically visiting shallower
+//!   nodes before deeper nodes.
+//!
+//! ### Typical Use Cases
+//! - Finding shortest paths in unweighted networks or mazes.
+//! - Web crawlers discovering pages level-by-level from a seed URL.
+//! - Identifying degrees of separation in social media graphs.
 
 use petgraph::Graph;
 use petgraph::visit::Bfs;
 
-/// Demonstrates Breadth-First Search (BFS) traversal using `petgraph`.
-///
-/// BFS visits all neighbors of a node before visiting neighbors of neighbors.
-/// It is useful for finding the shortest path in an unweighted graph.
+/// Demonstrates level-order graph traversal using Breadth-First Search (BFS).
 fn main() {
-    // Create a directed graph.
+    // Create a directed unweighted graph.
     let mut graph = Graph::<&str, ()>::new();
 
     // Add nodes (vertices) to the graph.
@@ -29,7 +47,7 @@ fn main() {
     graph.add_edge(c, d, ());
     graph.add_edge(d, e, ());
 
-    // Perform BFS starting from node `a`.
+    // Perform BFS traversal starting from source node `a`.
     let mut bfs = Bfs::new(&graph, a);
     let mut visited: Vec<&str> = Vec::new();
     while let Some(node) = bfs.next(&graph) {
@@ -37,34 +55,37 @@ fn main() {
     }
 
     println!("BFS traversal order: {visited:?}");
-    // BFS visits level by level: A first, then B and C (in any order), then D,
-    // then E.
+
+    // BFS explores level-by-level: Node A (level 0), then B and C (level 1),
+    // followed by D (level 2), and finally E (level 3).
     assert_eq!(visited[0], "A");
     assert!(visited.contains(&"B"));
     assert!(visited.contains(&"C"));
-    // D must appear after both B and C; E must appear last.
+
+    // Verify ordering invariants across exploration levels.
     let b_position = visited
         .iter()
         .position(|&s| s == "B")
-        .expect("expected item should appear in the traversal");
+        .expect("expected item should appear in the traversal.");
     let c_position = visited
         .iter()
         .position(|&s| s == "C")
-        .expect("expected item should appear in the traversal");
+        .expect("expected item should appear in the traversal.");
     let d_position = visited
         .iter()
         .position(|&s| s == "D")
-        .expect("expected item should appear in the traversal");
+        .expect("expected item should appear in the traversal.");
     let e_position = visited
         .iter()
         .position(|&s| s == "E")
-        .expect("expected item should appear in the traversal");
+        .expect("expected item should appear in the traversal.");
+
     assert!(d_position > b_position && d_position > c_position);
     assert!(e_position > d_position);
 }
-
 // ANCHOR_END: example
 
+/// Runs the `petgraph` BFS example by calling `main()`.
 pub fn run() {
     main();
 }
@@ -73,7 +94,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the petgraph bfs example through its entry point.
     #[test]
     fn test_petgraph_bfs_example_entry_point() {
         main();

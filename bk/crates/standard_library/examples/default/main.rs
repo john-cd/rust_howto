@@ -2,7 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-pub mod default;
+mod default;
 
-/// Does nothing; the example is in the `default` module.
-fn main() {}
+/// Runs the `default` example.
+fn main() {
+    default::run();
+}

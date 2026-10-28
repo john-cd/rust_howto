@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Lazily initializes shared global data with `std::sync::LazyLock`.
 

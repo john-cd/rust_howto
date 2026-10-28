@@ -2,7 +2,7 @@
 # Purpose: List book headings that do not have an anchor (e.g. {#some-text} after the heading).
 # Usage: ./scripts/anchors/list_missing_anchors.sh <root folder>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -eu
 

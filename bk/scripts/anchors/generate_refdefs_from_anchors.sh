@@ -2,7 +2,7 @@
 # Purpose: Generate reference definitions from book heading anchors e.g. {#some-text} and add them to the local references in `refs.incl.md`.
 # Usage: ./scripts/anchors/generate_refdefs_from_anchors.sh <root folder>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

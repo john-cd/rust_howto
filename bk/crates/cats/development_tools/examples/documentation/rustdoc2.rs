@@ -1,9 +1,7 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Documentation comments on a struct and its constructor.
-
-#![allow(dead_code)]
 
 /// Returns a `Person` struct with the given name.
 ///

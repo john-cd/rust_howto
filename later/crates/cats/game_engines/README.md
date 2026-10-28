@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Game Engines
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Game Engines** category on crates.io. It demonstrates integration with key ecosystem crates including `anyhow`, `bevy`, `version`, `default-features`, `features`, `optional`.
+
+## Examples Covered
+
+- **Game Engines** (`examples/game_engines/`): Demonstrates concepts like `bevy`, `fyrox`, `ggez`, `macroquad`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package game_engines --examples
+cargo test --package game_engines
+```
+
+Code examples correspond to chapters in `bk/src/categories/game_engines` or related book sections.

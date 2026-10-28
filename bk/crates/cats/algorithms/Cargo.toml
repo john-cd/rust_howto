@@ -1,43 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "algorithms"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories = ["algorithms"]
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-license-file.workspace = true
-publish.workspace = true
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Book code examples and their crate dependencies - algorithms"
-
-[dependencies]
-anyhow = "1.0.104"
-base16ct = { version = "1.0.0", features = ["alloc"] }
-base64ct = { version = "1.8.3", features = ["alloc"] }
-blake3 = "1.8.7"
-clap = { version = "4.6.7", features = ["derive"] }
-data-encoding = "2.11.1"
-fastrand = "2.5.0"
-foldhash = "0.2.0"
-hex-literal = "1.1.0"
-md-5 = "0.11.0"
-
-pathfinding = "4.16.0"
-petgraph = "0.8.3"
-rand = "0.10.3"
-rand_distr = "0.6.0"
-ring = "0.17.14"
-sha1 = "0.11.0"
-sha2 = "0.11.1"
-tempfile = "3.27.0"
-xxhash-rust = { version = "0.8.19", features = ["xxh3"] }
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["algorithms"]
+autolib = false
 
 [[example]]
 name = "graph_algorithms"
@@ -58,6 +36,27 @@ test = true
 name = "sort"
 path = "examples/sort/main.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+base16ct = { version = "1.0.0", features = ["alloc"] }
+base64ct = { version = "1.8.3", features = ["alloc"] }
+blake3 = "1.8.7"
+clap = { version = "4.6.7", features = ["derive"] }
+data-encoding = "2.11.1"
+fastrand = "2.5.0"
+foldhash = "0.2.0"
+hex-literal = "1.1.0"
+md-5 = "0.11.0"
+pathfinding = "4.16.0"
+petgraph = "0.8.3"
+rand = "0.10.3"
+rand_distr = "0.6.0"
+ring = "0.17.14"
+sha1 = "0.11.0"
+sha2 = "0.11.1"
+tempfile = "3.27.0"
+xxhash-rust = { version = "0.8.19", features = ["xxh3"] }
 
 [lints]
 workspace = true

@@ -1,33 +1,32 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "caching"
 version.workspace = true
+description = "Book code examples and their crate dependencies - caching"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - caching"
-
-autolib = false
-categories = ["caching"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["caching"]
+autolib = false
+
+[[example]]
+name = "in_memory_cache"
+path = "examples/in_memory_cache/main.rs"
+test = true
 
 [dependencies]
 cached = "4.0.3"
 clap = { version = "4.6.7", features = ["derive"] }
 lru = "0.19.0"
 moka = { version = "0.12.16", features = ["sync"] }
-
-[[example]]
-name = "in_memory_cache"
-path = "examples/in_memory_cache/main.rs"
-test = true
 
 [lints]
 workspace = true

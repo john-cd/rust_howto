@@ -1,7 +1,8 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A minimal native graphics example using `minifb`.
+//! TODO explain minifb usage and its purpose in this example.
 //!
 //! This example opens a native window and renders a simple animated pixel
 //! gradient by writing directly to a pixel buffer.
@@ -22,6 +23,7 @@ const HEIGHT: usize = 240;
 
 /// Opens a window and draws into a pixel buffer until the window is closed.
 fn main() -> Result<()> {
+    // TODO explain why/how we create the window and buffer here
     let mut window = Window::new(
         "minifb native graphics example",
         WIDTH,
@@ -33,9 +35,12 @@ fn main() -> Result<()> {
     let mut offset = 0u32;
     let mut last_frame = Instant::now();
 
+    // TODO explain the main rendering loop and its purpose
     while window.is_open() && !window.is_key_down(Key::Escape) {
         for y in 0..HEIGHT {
             for x in 0..WIDTH {
+                // TODO explain how the pixel color is calculated based on
+                // position and offset
                 let r = ((x as u32).wrapping_add(offset)) & 0xFF;
                 let g = ((y as u32).wrapping_add(offset)) & 0xFF;
                 let b = (((x + y) as u32).wrapping_add(offset)) & 0xFF;
@@ -43,10 +48,12 @@ fn main() -> Result<()> {
             }
         }
 
+        // TODO explain why we update the window with the buffer here
         window.update_with_buffer(&buffer, WIDTH, HEIGHT)?;
 
         offset = offset.wrapping_add(1);
 
+        // TODO explain why we increment the offset here to animate the gradient
         let elapsed = last_frame.elapsed();
         if elapsed < Duration::from_millis(16) {
             std::thread::sleep(
@@ -65,6 +72,8 @@ fn main() -> Result<()> {
 mod tests {
     use super::*;
 
+    // TODO split main() into smaller functions for easier testing and
+    // explanation Add tests for the smaller functions once main() is split.
     /// Runs the minifb example through its entry point.
     #[test]
     #[ignore = "requires interactive example runtime"]
@@ -72,4 +81,3 @@ mod tests {
         main()
     }
 }
-// TODO review

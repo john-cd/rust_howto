@@ -1,30 +1,77 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [package]
 name = "other"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories = ["development-tools"]
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-license-file.workspace = true
-publish = false
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Book code examples and their crate dependencies"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish = false
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["development-tools"]
+autolib = false
 
-[features]
-onnx = ["dep:ort", "dep:arc-swap"]
-datafusion = ["dep:datafusion"]
-arrow = ["dep:arrow", "dep:arrow-array", "dep:arrow-cast", "dep:arrow-ipc"]
-typegen = ["crux_core/typegen"] # for Crux
-polars = ["dep:polars"]
+[[example]]
+name = "architecture"
+path = "examples/architecture/main.rs"
+test = true
+
+[[example]]
+name = "cloud"
+path = "examples/cloud/main.rs"
+test = true
+
+[[example]]
+name = "cross_platform"
+path = "examples/cross_platform/main.rs"
+test = true
+
+[[example]]
+name = "data_processing"
+path = "examples/data_processing/main.rs"
+test = true
+required-features = ["arrow"]
+
+[[example]]
+name = "datafusion"
+path = "examples/datafusion/main.rs"
+test = true
+required-features = ["datafusion"]
+
+[[example]]
+name = "machine_learning"
+path = "examples/machine_learning/main.rs"
+test = true
+
+[[example]]
+name = "polars"
+path = "examples/polars/main.rs"
+test = true
+required-features = ["polars"]
+
+[[example]]
+name = "scheduling"
+path = "examples/scheduling/main.rs"
+test = true
+
+[[example]]
+name = "scripting"
+path = "examples/scripting/main.rs"
+test = true
+
+[[example]]
+name = "written_in_rust"
+path = "examples/written_in_rust/main.rs"
+test = true
+
 # `polars` and `datafusion` can be enabled together: `Cargo.lock` resolves a single `chrono`
 # (polars-arrow 0.51 and datafusion 55 both accept it). Re-check with
 # `cargo tree --locked -i chrono --features polars,datafusion` when bumping either crate.
@@ -117,58 +164,12 @@ tokio-util = "0.7.20"
 tracing = "0.1.44"
 tracing-subscriber = "0.3.23"
 
-[[example]]
-name = "architecture"
-path = "examples/architecture/main.rs"
-test = true
-
-[[example]]
-name = "cloud"
-path = "examples/cloud/main.rs"
-test = true
-
-[[example]]
-name = "cross_platform"
-path = "examples/cross_platform/main.rs"
-test = true
-
-[[example]]
-name = "data_processing"
-path = "examples/data_processing/main.rs"
-test = true
-required-features = ["arrow"]
-
-[[example]]
-name = "datafusion"
-path = "examples/datafusion/main.rs"
-test = true
-required-features = ["datafusion"]
-
-[[example]]
-name = "machine_learning"
-path = "examples/machine_learning/main.rs"
-test = true
-
-[[example]]
-name = "polars"
-path = "examples/polars/main.rs"
-test = true
-required-features = ["polars"]
-
-[[example]]
-name = "scheduling"
-path = "examples/scheduling/main.rs"
-test = true
-
-[[example]]
-name = "scripting"
-path = "examples/scripting/main.rs"
-test = true
-
-[[example]]
-name = "written_in_rust"
-path = "examples/written_in_rust/main.rs"
-test = true
+[features]
+onnx = ["dep:ort", "dep:arc-swap"]
+datafusion = ["dep:datafusion"]
+arrow = ["dep:arrow", "dep:arrow-array", "dep:arrow-cast", "dep:arrow-ipc"]
+typegen = ["crux_core/typegen"] # for Crux
+polars = ["dep:polars"]
 
 [lints]
 workspace = true

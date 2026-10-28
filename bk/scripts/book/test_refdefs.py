@@ -1,7 +1,7 @@
 # Purpose: Integration coverage for merging dependency refs into curated crate refs.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 """Integration coverage for merging dependency refs into curated crate refs."""
 

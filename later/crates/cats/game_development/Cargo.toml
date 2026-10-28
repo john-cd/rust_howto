@@ -1,32 +1,31 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "game_development"
 version.workspace = true
+description = "Book code examples and their crate dependencies - game_development"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - game_development"
-
-autolib = false
-categories = ["game-development"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-clap = { version = "4.6.7", features = ["derive"] }
-glam = "0.32.1"
-parry2d = "0.31.1"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["game-development"]
+autolib = false
 
 [[example]]
 name = "game_development"
 path = "examples/game_development/main.rs"
 test = true
+
+[dependencies]
+clap = { version = "4.6.7", features = ["derive"] }
+glam = "0.34.1"
+parry2d = "0.31.1"
 
 [lints]
 workspace = true

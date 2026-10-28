@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Emulators
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Emulators** category on crates.io. It demonstrates integration with key ecosystem crates including `ihex`, `polkavm`.
+
+## Examples Covered
+
+- **Emulators** (`examples/emulators/`): Demonstrates concepts like `intel_hex`, `polkavm_host`, `register_vm`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package emulators --examples
+cargo test --package emulators
+```
+
+Code examples correspond to chapters in `bk/src/categories/emulators` or related book sections.

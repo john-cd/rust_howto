@@ -1,6 +1,5 @@
-#![allow(dead_code)]
 #![allow(unexpected_cfgs)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to create a simple Neon module that exports

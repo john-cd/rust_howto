@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A GTK 4 application with a button and a label.
@@ -12,7 +11,7 @@ use gtk::Orientation;
 use gtk::prelude::*;
 
 /// Creates and runs the application.
-pub fn main() {
+fn main() {
     let app = Application::builder()
         .application_id("org.example.gtk4_counter")
         .build();

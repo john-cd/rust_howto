@@ -1,6 +1,6 @@
 //! Runs the basic authentication example.
 //!
-//! TODO Reviewed ??-??-2026.
+//! TODO Reviewed 10-27-2026.
 
 mod basic;
 

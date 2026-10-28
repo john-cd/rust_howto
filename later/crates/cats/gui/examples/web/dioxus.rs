@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A web application with `dioxus`.
@@ -9,7 +9,7 @@ use dioxus::prelude::*;
 // Dioxus is a cross-platform UI framework for Rust.
 
 /// Launches the application.
-pub fn main() {
+fn main() {
     // Launch the application
     #[cfg(feature = "dioxus")]
     dioxus::launch(App);

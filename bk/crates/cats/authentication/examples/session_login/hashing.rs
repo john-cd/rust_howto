@@ -1,8 +1,14 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO explain the purpose of this example and how it demonstrates password
+// hashing and verification. TODO explain Argon2id and why it is used for
+// password hashing.
 
 // ANCHOR: example
 //! Hash and verify passwords with Argon2id.
+//!
+//! This example demonstrates how to hash and verify passwords securely using
+//! Argon2id. It also shows an alternative using the `password-auth` crate for
+//! simpler usage.
 
 use argon2::Argon2;
 use argon2::password_hash::PasswordHasher;
@@ -36,6 +42,8 @@ pub fn hash_with_password_auth(password: &str) -> String {
 }
 // ANCHOR_END: example
 
+// TODO create a main() function and call it from a test and a pub fn run()
+// function.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Renders a mono tone as binaural stereo with `hrtf`.
 //!

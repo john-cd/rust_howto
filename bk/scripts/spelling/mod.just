@@ -1,7 +1,7 @@
 # Purpose: Run spelling checks across book, draft, and future Markdown.
 # Usage: From bk/, run just spelling <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

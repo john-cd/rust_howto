@@ -1,30 +1,29 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "rendering_data_formats"
 version.workspace = true
+description = "Book code examples and their crate dependencies - rendering_data_formats"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - rendering_data_formats"
-
-autolib = false
-categories = ["rendering::data-formats"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-gltf = "1.4.1"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["rendering::data-formats"]
+autolib = false
 
 [[example]]
 name = "data_formats"
 path = "examples/data_formats/main.rs"
 test = true
+
+[dependencies]
+gltf = "1.4.1"
 
 [lints]
 workspace = true

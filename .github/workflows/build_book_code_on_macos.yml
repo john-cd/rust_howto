@@ -1,4 +1,4 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 ## Build and test the book's Rust examples on a supported macOS runner.
 name: Build book code on macOS
@@ -71,11 +71,15 @@ jobs:
       - name: Install Protocol Buffers compiler
         run: brew install protobuf ninja
 
-      - name: Install Nextest
+      - name: Install Nextest and cargo-deny
         # taiki-e/install-action v2.87.30
-        uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177
+        uses: taiki-e/install-action@1e29709c0ec63babbe8f266397a465f29a825f91
         with:
-          tool: cargo-nextest@${{ env.CARGO_NEXTEST_VERSION }}
+          tool: cargo-nextest@${{ env.CARGO_NEXTEST_VERSION }},cargo-deny
+
+      - name: Audit dependencies with cargo-deny (#51)
+        run: cargo deny --manifest-path Cargo.toml --workspace --config deny.toml check all --hide-inclusion-graph
+        working-directory: bk/crates
 
       - name: Format
         run: cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check

@@ -1,25 +1,34 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "development_tools_procedural_macro_helpers"
 version.workspace = true
+description = "Book code examples and their crate dependencies - development_tools_procedural_macro_helpers"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - development_tools_procedural_macro_helpers"
-
-categories = ["development-tools::procedural-macro-helpers"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["development-tools::procedural-macro-helpers"]
 
 # See `lib.rs`
 [lib]
 proc-macro = true
+
+[[example]]
+name = "write_proc_macros"
+path = "examples/write_proc_macros/main.rs"
+test = true
+
+[[example]]
+name = "compile_macros"
+path = "examples/compile_macros/main.rs"
+test = true
 
 [dependencies]
 ## General
@@ -31,16 +40,6 @@ prettyplease = "0.3.0"
 proc-macro2 = "1.0.107"
 quote = "1.0.47"
 syn = { version = "3.0.9", features = ["full"] }
-
-[[example]]
-name = "write_proc_macros"
-path = "examples/write_proc_macros/main.rs"
-test = true
-
-[[example]]
-name = "compile_macros"
-path = "examples/compile_macros/main.rs"
-test = true
 
 [lints]
 workspace = true

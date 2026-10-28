@@ -1,31 +1,30 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "aerospace_space_protocols"
 version.workspace = true
+description = "Book code examples and their crate dependencies - aerospace_space_protocols"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - aerospace_space_protocols"
-
-autolib = false
-categories = ["aerospace::space-protocols"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-arbitrary-int = "2.2.0"
-spacepackets = "0.18.0"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["aerospace::space-protocols"]
+autolib = false
 
 [[example]]
 name = "space_protocols"
 path = "examples/space_protocols/main.rs"
 test = true
+
+[dependencies]
+arbitrary-int = "2.2.0"
+spacepackets = "0.18.0"
 
 [lints]
 workspace = true

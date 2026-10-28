@@ -1,5 +1,5 @@
 #![allow(unused)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Macro hygiene: variables in a macro do not clash with variables outside it.

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! An asynchronous WebSocket client using async-tungstenite's Tokio adapter.

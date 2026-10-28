@@ -1,75 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "development_tools_debugging"
 version.workspace = true
+description = "Examples of logging, tracing, and observability patterns using tracing, log4rs, and OpenTelemetry."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Examples of logging, tracing, and observability patterns using tracing, log4rs, and OpenTelemetry."
-
-autolib = false
-categories = ["development-tools::debugging"]
-keywords = ["debugging", "tracing", "logging", "opentelemetry", "observability"]
 publish.workspace = true
-
-[features]
-default = []
-opentelemetry = [
-  "dep:opentelemetry",
-  "dep:opentelemetry-otlp",
-  "dep:opentelemetry_sdk",
-  "dep:opentelemetry-stdout",
-  "dep:tracing-opentelemetry",
-]
-
-[dependencies]
-## General
-anyhow = "1.0.104"
-axum = { version = "0.8.9", default-features = false, features = ["http1", "tokio"] } # Serve a `/metrics` route.
-chrono = "0.4.45"
-clap = { version = "4.6.7", features = ["derive"] }
-env_logger = "0.11.11"
-log = "0.4.34"
-log4rs = "1.4.0"
-metrics = "0.24.6" # Instrumentation facade for emitting counters and histograms.
-metrics-exporter-prometheus = { version = "0.18.3", default-features = false } # In-memory recorder and Prometheus exposition format.
-opentelemetry = { version = "0.33.1", optional = true }
-# Builds an OTLP/HTTP exporter for OpenObserve traces.
-opentelemetry-otlp = { version = "0.33.1", default-features = false, features = [
-  "http-proto",
-  "reqwest-blocking-client",
-  "trace",
-], optional = true }
-# Exports spans to stdout for a self-contained example.
-opentelemetry-stdout = { version = "0.33.1", optional = true }
-# Provides tracer providers for the stdout exporter example.
-opentelemetry_sdk = { version = "0.33.1", default-features = false, features = ["rt-tokio", "trace"], optional = true }
-serde = { version = "1.0.229", features = ["derive"] }
-slog = "2.8.2"
-slog-async = "2.8.0"
-slog-scope = "4.4.1"
-slog-term = "2.9.2"
-tempfile = "3.27.0"
-tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
-tracing = "0.1.44"
-tracing-appender = "0.2.5"
-tracing-opentelemetry = { version = "0.34.0", optional = true }
-tracing-subscriber = { version = "0.3.23", features = ["env-filter", "time", "json"] }
-
-[target.'cfg(target_os = "linux")'.dependencies]
-syslog = "7.0.0"
-
-[dev-dependencies]
-anyhow = "1.0.104"
-http-body-util = "0.1.5"
-metrics-util = { version = "0.20.4", features = ["debugging"] } # In-memory recorder for metric behavior tests.
-tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
+keywords = ["debugging", "tracing", "logging", "opentelemetry", "observability"]
+categories = ["development-tools::debugging"]
+autolib = false
 
 [[example]]
 name = "metrics"
@@ -95,6 +41,59 @@ test = true
 name = "tracing"
 path = "examples/tracing/main.rs"
 test = true
+
+[dependencies]
+## General
+anyhow = "1.0.104"
+axum = { version = "0.8.9", default-features = false, features = ["http1", "tokio"] } # Serve a `/metrics` route.
+chrono = "0.4.45"
+clap = { version = "4.6.7", features = ["derive"] }
+env_logger = "0.11.11"
+log = "0.4.34"
+log4rs = "1.4.0"
+metrics = "0.24.6" # Instrumentation facade for emitting counters and histograms.
+metrics-exporter-prometheus = { version = "0.18.3", default-features = false } # In-memory recorder and Prometheus exposition format.
+opentelemetry = { version = "0.33.1", optional = true }
+# Builds an OTLP/HTTP exporter for OpenObserve traces.
+opentelemetry-otlp = { version = "0.33.1", default-features = false, features = [
+    "http-proto",
+    "reqwest-blocking-client",
+    "trace",
+], optional = true }
+# Exports spans to stdout for a self-contained example.
+opentelemetry-stdout = { version = "0.33.1", optional = true }
+# Provides tracer providers for the stdout exporter example.
+opentelemetry_sdk = { version = "0.33.1", default-features = false, features = ["rt-tokio", "trace"], optional = true }
+serde = { version = "1.0.229", features = ["derive"] }
+slog = "2.8.2"
+slog-async = "2.8.0"
+slog-scope = "4.4.1"
+slog-term = "2.9.2"
+tempfile = "3.27.0"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1.44"
+tracing-appender = "0.2.5"
+tracing-opentelemetry = { version = "0.34.0", optional = true }
+tracing-subscriber = { version = "0.3.23", features = ["env-filter", "time", "json"] }
+
+[dev-dependencies]
+anyhow = "1.0.104"
+http-body-util = "0.1.5"
+metrics-util = { version = "0.20.4", features = ["debugging"] } # In-memory recorder for metric behavior tests.
+tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
+
+[features]
+default = []
+opentelemetry = [
+    "dep:opentelemetry",
+    "dep:opentelemetry-otlp",
+    "dep:opentelemetry_sdk",
+    "dep:opentelemetry-stdout",
+    "dep:tracing-opentelemetry",
+]
+
+[target.'cfg(target_os = "linux")'.dependencies]
+syslog = "7.0.0"
 
 [lints]
 workspace = true

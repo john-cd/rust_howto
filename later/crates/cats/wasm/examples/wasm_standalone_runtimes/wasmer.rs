@@ -2,7 +2,6 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// #![allow(dead_code)]
 // // ANCHOR: example
 // //! This example demonstrates how to use the `wasmer` crate to run a
 // //! WebAssembly module.

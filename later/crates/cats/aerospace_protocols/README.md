@@ -2,6 +2,19 @@
 
 # Aerospace Protocols
 
-This crate contains examples for the "aerospace protocols" category on `crates.io`.
+This crate contains code examples for the **Aerospace Protocols** category on crates.io. It demonstrates integration with key ecosystem crates including `mavlink`.
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+## Examples Covered
+
+- **Aerospace Protocols** (`examples/aerospace_protocols/`): Demonstrates concepts like `aero_protocols`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package aerospace_protocols --examples
+cargo test --package aerospace_protocols
+```
+
+Code examples correspond to chapters in `bk/src/categories/aerospace_protocols` or related book sections.

@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example builds a Basic-authenticated request without sending it.
@@ -39,11 +38,8 @@ fn main() -> anyhow::Result<()> {
     );
     Ok(())
 }
-
 // ANCHOR_END: example
 
-/// # Errors
-/// Returns an error if the request cannot be constructed.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

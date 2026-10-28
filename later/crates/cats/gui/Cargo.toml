@@ -1,101 +1,22 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "gui"
 version.workspace = true
+description = "Comprehensive examples of Rust GUI frameworks including Slint, Egui, Iced, and Tauri."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Comprehensive examples of Rust GUI frameworks including Slint, Egui, Iced, and Tauri."
-
-autoexamples = false
-autolib = false
-categories = ["gui"]
-keywords = ["gui", "slint", "egui", "iced", "tauri", "dioxus"]
 publish.workspace = true
-
-[features]
-default = []
-dioxus = ["dep:dioxus"]
-femtovg = ["dep:femtovg", "dep:glutin", "dep:glutin-winit", "dep:raw-window-handle"]
-floem = ["dep:floem"]
-gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
-minifb = ["dep:minifb"]
-iced = ["dep:iced", "dep:naga27"]
-skia = ["dep:skia-safe", "dep:glutin", "dep:gl"]
-slint = ["dep:slint"]
-# This plain Rust command example is retained; it does not link the Tauri runtime.
-tauri = []
-# Disabled: tao/wry require GTK 3 and the affected glib 0.18 series. Keep source.
-# wry = ["dep:wry"]
-vello = ["dep:pollster", "dep:vello"]
-webrender = ["dep:webrender", "dep:glutin", "dep:gl"]
-xilem = ["dep:xilem", "dep:naga26"]
-
-[dependencies]
-anyhow = "1.0.104"
-arboard = "3.7.0"
-baseview = { git = "https://github.com/RustAudio/baseview", branch = "master" }
-clap = { version = "4.6.7", features = ["derive"] }
-cosmic-text = "0.19.0"
-dioxus = { version = "0.7.10", optional = true }
-eframe = "0.34.3"
-egui = "0.34.3" # Pinned: 0.37 needs smallvec 1.16 (see parley).
-egui-notify = "0.22"
-egui-phosphor = "0.12"
-egui_extras = "0.34.3"
-egui_plot = "0.35"
-egui_tiles = "0.15"
-egui_tracing = "0.3"
-femtovg = { version = "0.23.2", optional = true }
-floem = { version = "0.2.0", optional = true }
-gl = { version = "0.14.0", optional = true }
-glutin = { version = "0.32.3", optional = true }
-glutin-winit = { version = "0.5.0", optional = true }
-iced = { version = "0.14.0", optional = true }
-minifb = { version = "0.28.0", optional = true }
-morphorm = "0.9.0"
-# xilem 0.4 pulls naga 26, which only builds when codespan-reporting's `termcolor`
-# feature matches naga's own; enabling it here avoids a feature-unification failure.
-naga26 = { package = "naga", version = "26.0.0", features = ["termcolor"], optional = true }
-# Iced 0.14 pulls naga 27 with the same codespan-reporting `termcolor` requirement.
-naga27 = { package = "naga", version = "27.0.3", features = ["termcolor"], optional = true }
-parley = "0.9.0" # Pinned: 0.12 needs smallvec 1.16, which kube 4.2 (crate `other`) caps below 1.16.
-pollster = { version = "0.4.0", optional = true } # for the Vello example
-raw-window-handle = { version = "0.6.2", optional = true }
-rfd = "0.17.2"
-skia-safe = { version = "=0.90", features = [
-    "gl",
-], optional = true } # Matches Slint's Skia version; Vizia uses an isolated workspace.
-slint = { version = "=1.16.1", optional = true }
-taffy = "0.10.1"
-# Disabled: these versions retain the vulnerable GTK 3/glib 0.18 dependency chain.
-# tao = "0.35.3"
-tracing = "0.1.44"
-tracing-subscriber = "0.3.23"
-url = "2.5.8"
-# Disabled until a Wry release no longer requires affected glib 0.18.
-# wry = { version = "0.57.1", optional = true }
-vello = { version = "0.9.0", optional = true } # Uses wgpu 29, matching this workspace.
-webrender = { version = "0.68.0", optional = true }
-wgpu = "29.0.4"
-winit = "0.30.13" # for vello, winit examples
-xilem = { version = "0.4.0", optional = true } # Experimental retained-mode UI example.
-
-# GTK examples currently target non-Windows systems; see gtk.md for native setup.
-[target.'cfg(not(target_os = "windows"))'.dependencies]
-gtk = { package = "gtk4", version = "0.11.5", optional = true }
-relm4 = { version = "0.11.0", optional = true }
-relm4-components = { version = "0.11.0", optional = true }
-
-[dev-dependencies]
-egui_kittest = "0.34.3" # Same version as `egui`.
-i-slint-backend-testing = "=1.16.1" # Matches Slint's internal, non-semver testing API.
+keywords = ["gui", "slint", "egui", "iced", "tauri", "dioxus"]
+categories = ["gui"]
+autolib = false
+autoexamples = false
 
 [[example]]
 name = "2d_renderers"
@@ -187,6 +108,85 @@ test = true
 name = "window_creation"
 path = "examples/window_creation/main.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+arboard = "3.7.0"
+baseview = { git = "https://github.com/RustAudio/baseview", branch = "master" }
+clap = { version = "4.6.7", features = ["derive"] }
+cosmic-text = "0.19.0"
+dioxus = { version = "0.7.10", optional = true }
+eframe = "0.37.0"
+egui = "0.37.0" # Pinned: 0.37 needs smallvec 1.16 (see parley).
+egui-notify = "0.23.0"
+egui-phosphor = "0.14.0"
+egui_extras = "0.37.0"
+egui_plot = "0.38.0"
+egui_tiles = "0.18.0"
+egui_tracing = "0.3.0"
+femtovg = { version = "0.28.0", optional = true }
+floem = { version = "0.2.0", optional = true }
+gl = { version = "0.14.0", optional = true }
+glutin = { version = "0.32.3", optional = true }
+glutin-winit = { version = "0.5.0", optional = true }
+iced = { version = "0.14.0", optional = true }
+minifb = { version = "0.29.0", optional = true }
+morphorm = "0.9.0"
+# xilem 0.4 pulls naga 26, which only builds when codespan-reporting's `termcolor`
+# feature matches naga's own; enabling it here avoids a feature-unification failure.
+naga26 = { package = "naga", version = "30.0.1", features = ["termcolor"], optional = true }
+# Iced 0.14 pulls naga 27 with the same codespan-reporting `termcolor` requirement.
+naga27 = { package = "naga", version = "30.0.1", features = ["termcolor"], optional = true }
+parley = "0.12.0" # Pinned: 0.12 needs smallvec 1.16, which kube 4.2 (crate `other`) caps below 1.16.
+pollster = { version = "1.0.1", optional = true } # for the Vello example
+raw-window-handle = { version = "0.6.2", optional = true }
+rfd = "0.17.2"
+skia-safe = { version = "=0.90", features = [
+    "gl",
+], optional = true } # Matches Slint's Skia version; Vizia uses an isolated workspace.
+slint = { version = "=1.16.1", optional = true }
+taffy = "0.15.1"
+# Disabled: these versions retain the vulnerable GTK 3/glib 0.18 dependency chain.
+# tao = "0.35.3"
+tracing = "0.1.44"
+tracing-subscriber = "0.3.23"
+url = "2.5.8"
+# Disabled until a Wry release no longer requires affected glib 0.18.
+# wry = { version = "0.57.1", optional = true }
+vello = { version = "0.11.0", optional = true } # Uses wgpu 29, matching this workspace.
+webrender = { version = "0.70.0", optional = true }
+wgpu = "30.0.1"
+winit = "0.30.13" # for vello, winit examples
+xilem = { version = "0.4.0", optional = true } # Experimental retained-mode UI example.
+
+[dev-dependencies]
+egui_kittest = "0.37.0" # Same version as `egui`.
+# TODO we should not use i-slint* crates directly; consider using the public Slint API instead.
+i-slint-backend-testing = "=1.16.1" # Matches Slint's internal, non-semver testing API.
+
+[features]
+default = []
+dioxus = ["dep:dioxus"]
+femtovg = ["dep:femtovg", "dep:glutin", "dep:glutin-winit", "dep:raw-window-handle"]
+floem = ["dep:floem"]
+gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]
+minifb = ["dep:minifb"]
+iced = ["dep:iced", "dep:naga27"]
+skia = ["dep:skia-safe", "dep:glutin", "dep:gl"]
+slint = ["dep:slint"]
+# This plain Rust command example is retained; it does not link the Tauri runtime.
+tauri = []
+# Disabled: tao/wry require GTK 3 and the affected glib 0.18 series. Keep source.
+# wry = ["dep:wry"]
+vello = ["dep:pollster", "dep:vello"]
+webrender = ["dep:webrender", "dep:glutin", "dep:gl"]
+xilem = ["dep:xilem", "dep:naga26"]
+
+# GTK examples currently target non-Windows systems; see gtk.md for native setup.
+[target.'cfg(not(target_os = "windows"))'.dependencies]
+gtk = { package = "gtk4", version = "0.11.5", optional = true }
+relm4 = { version = "0.11.0", optional = true }
+relm4-components = { version = "0.11.0", optional = true }
 
 [lints]
 workspace = true

@@ -2,7 +2,7 @@
 # Purpose: Set up this checkout's external Cargo build paths and compiler-cache links.
 # Usage: Run with bash scripts/setup-build.sh from the repository root and provide any required arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

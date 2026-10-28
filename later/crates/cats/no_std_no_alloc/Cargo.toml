@@ -1,30 +1,30 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "no_std_no_alloc"
 version.workspace = true
+description = "Book code examples and their crate dependencies - no_std_no_alloc"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - no_std_no_alloc"
-
-autolib = false
-categories = ["no-std::no-alloc"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["no-std::no-alloc"]
+autolib = false
 
-[dependencies]
-# Fixed-capacity collections and strings for the no-allocation example.
-heapless = { version = "0.9.3", default-features = false }
 [[example]]
 name = "no_alloc"
 path = "examples/no_alloc/main.rs"
 test = true
+
+[dependencies]
+# Fixed-capacity collections and strings for the no-allocation example.
+heapless = { version = "0.9.3", default-features = false }
 
 [lints]
 workspace = true

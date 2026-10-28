@@ -1,31 +1,30 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "science_neuroscience"
 version.workspace = true
+description = "Book code examples and their crate dependencies - science_neuroscience"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - science_neuroscience"
-
-autolib = false
-categories = ["science::neuroscience"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-ndarray = "0.17.2" # Matches the ndarray type used by nifti's volume writer.
-nifti = { version = "0.18.0", features = ["ndarray_volumes"] }
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["science::neuroscience"]
+autolib = false
 
 [[example]]
 name = "neuroscience"
 path = "examples/neuroscience/main.rs"
 test = true
+
+[dependencies]
+ndarray = "0.17.2" # Matches the ndarray type used by nifti's volume writer.
+nifti = { version = "0.18.0", features = ["ndarray_volumes"] }
 
 [lints]
 workspace = true

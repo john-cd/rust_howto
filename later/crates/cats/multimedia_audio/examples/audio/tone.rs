@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Generates a tone with `rodio` without opening an audio device.
 

@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`),
@@ -170,7 +169,6 @@ fn main() -> anyhow::Result<()> {
     println!("{}", serde_json::to_string_pretty(&Echo::crd())?);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {

@@ -1,19 +1,18 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [package]
 name = "mdbook-scrub"
 version = "0.2.0"
+description = "A mdbook preprocessor"
 edition = "2024"
 license-file.workspace = true
-publish.workspace = true
-
-categories = ["command-line-utilities", "text-processing", "parser-implementations"]
-homepage = "https://github.com/john-cd/rust_howto/"
-keywords = ["book", "mdbook", "rustbook", "documentation"]
 readme = "README.md"
-description = "A mdbook preprocessor"
+homepage = "https://github.com/john-cd/rust_howto/"
+publish.workspace = true
+keywords = ["book", "mdbook", "rustbook", "documentation"]
+categories = ["command-line-utilities", "text-processing", "parser-implementations"]
 
 [dependencies]
 anyhow = { workspace = true } # Adds chapter and directive context to preprocessing errors.

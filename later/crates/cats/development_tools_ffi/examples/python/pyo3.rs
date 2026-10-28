@@ -1,6 +1,5 @@
-#![allow(dead_code)]
 #![cfg(target_os = "linux")]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Calling Python from Rust with `pyo3`.

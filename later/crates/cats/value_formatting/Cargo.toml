@@ -1,30 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "value_formatting"
 version.workspace = true
+description = "Book code examples and their crate dependencies - value_formatting"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - value_formatting"
-
-autolib = false
-categories = ["value-formatting"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-# Case conversion used by the identifier formatting example.
-heck = "0.5.0"
-humansize = "2.1.3" # Human-readable byte sizes.
-itoa = "1.0.18" # Fast integer-to-string conversion.
-num-format = "0.4.4" # Locale-aware grouping separators for integer output.
-ryu = "1.0.23"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["value-formatting"]
+autolib = false
 
 [[example]]
 name = "case_conversion"
@@ -35,6 +26,14 @@ test = true
 name = "number_formatting"
 path = "examples/number_formatting/main.rs"
 test = true
+
+[dependencies]
+# Case conversion used by the identifier formatting example.
+heck = "0.5.0"
+humansize = "2.1.3" # Human-readable byte sizes.
+itoa = "1.0.18" # Fast integer-to-string conversion.
+num-format = "0.4.4" # Locale-aware grouping separators for integer output.
+ryu = "1.0.23"
 
 [lints]
 workspace = true

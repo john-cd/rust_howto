@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Generates the bindings and headers used by the C FFI examples.
 

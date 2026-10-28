@@ -1,31 +1,30 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "emulators"
 version.workspace = true
+description = "Book code examples and their crate dependencies - emulators"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - emulators"
-
-autolib = false
-categories = ["emulators"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-ihex = "3.0.0"
-polkavm = "0.37.0"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["emulators"]
+autolib = false
 
 [[example]]
 name = "emulators"
 path = "examples/emulators/main.rs"
 test = true
+
+[dependencies]
+ihex = "3.0.0"
+polkavm = "0.37.0"
 
 [lints]
 workspace = true

@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Aerospace Simulation
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Aerospace Simulation** category on crates.io. It demonstrates integration with key ecosystem crates including `ode_solvers`, `sgp4`.
+
+## Examples Covered
+
+- **Aerospace Simulation** (`examples/aerospace_simulation/`): Demonstrates concepts like `aero_simulation`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package aerospace_simulation --examples
+cargo test --package aerospace_simulation
+```
+
+Code examples correspond to chapters in `bk/src/categories/aerospace_simulation` or related book sections.

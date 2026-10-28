@@ -2,7 +2,7 @@
 # Purpose: Add missing reference definitions required by the examples index.
 # Usage: Run from bk/ with just indices update_refdefs_for_examples.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 IFS=$'\n\t'

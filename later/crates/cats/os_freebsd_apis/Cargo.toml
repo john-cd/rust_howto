@@ -1,29 +1,29 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "os_freebsd_apis"
 version.workspace = true
+description = "Book code examples and their crate dependencies - os_freebsd_apis"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - os_freebsd_apis"
-
-autolib = false
-categories = ["os::freebsd-apis"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["os::freebsd-apis"]
+autolib = false
 
-[target.'cfg(target_os = "freebsd")'.dependencies]
-sysctl = "=0.6.0" # Pinned: 0.7.1 conflicts with gemm-common's `sysctl` requirement.
 [[example]]
 name = "freebsd"
 path = "examples/freebsd/main.rs"
 test = true
+
+[target.'cfg(target_os = "freebsd")'.dependencies]
+sysctl = "=0.6.0" # Pinned: 0.7.1 conflicts with gemm-common's `sysctl` requirement.
 
 [lints]
 workspace = true

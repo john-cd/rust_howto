@@ -1,22 +1,26 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "os_windows_apis"
 version.workspace = true
+description = "Book code examples and their crate dependencies - os_windows_apis"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - os_windows_apis"
-
-autolib = false
-categories = ["os::windows-apis"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["os::windows-apis"]
+autolib = false
+
+[[example]]
+name = "windows"
+path = "examples/windows/main.rs"
+test = true
 
 [dependencies]
 clap = { version = "4.6.7", features = ["derive"] }
@@ -24,11 +28,6 @@ clap = { version = "4.6.7", features = ["derive"] }
 [target.'cfg(target_os = "windows")'.dependencies]
 winapi = { version = "0.3.9", features = ["winuser", "libloaderapi", "minwindef"] }
 windows = { version = "0.62.2", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging"] }
-
-[[example]]
-name = "windows"
-path = "examples/windows/main.rs"
-test = true
 
 [lints]
 workspace = true

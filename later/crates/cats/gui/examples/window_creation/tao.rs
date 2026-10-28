@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Creates and manages a desktop window with Tao.
@@ -21,7 +21,7 @@ fn should_close(event: &WindowEvent<'_>) -> bool {
 /// # Errors
 ///
 /// Returns an error if the operating system cannot create the window.
-pub fn main() -> Result<(), Box<dyn Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new()
         .with_title("Tao Example")

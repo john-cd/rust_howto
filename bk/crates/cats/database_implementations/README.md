@@ -1,5 +1,21 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Database Implementations
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+Examples for interacting with various database backends like Sled, SurrealDB, and Meilisearch. It demonstrates integration with key ecosystem crates including `anyhow`, `clap`, `meilisearch-sdk`, `serde`, `sled`, `surrealdb`.
+
+## Examples Covered
+
+- **Databases** (`examples/databases/`): Demonstrates concepts like `sled`, `surrealdb`.
+- **Search Engines** (`examples/search_engines/`): Demonstrates concepts like `meilisearch`, `tantivy`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package database_implementations --examples
+cargo test --package database_implementations
+```
+
+Code examples correspond to chapters in `bk/src/categories/database_implementations` or related book sections.

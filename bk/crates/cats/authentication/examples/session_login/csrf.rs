@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Protect a state-changing form with a synchronizer CSRF token.
@@ -91,6 +90,8 @@ pub fn app() -> Router {
 }
 // ANCHOR_END: example
 
+// TODO create a main() function and call it from a test and a pub fn run()
+// function.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;

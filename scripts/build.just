@@ -1,7 +1,7 @@
 # Purpose: Set shared Cargo output and compiler-cache defaults for repository workspaces.
 # Usage: Imported by each workspace justfile; use that workspace's just recipes.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 build_repo := parent_directory(source_directory())
 build_slot := if file_name(parent_directory(build_repo)) == ".worktrees" { file_name(build_repo) } else { "main" }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! A host binary that calls the library's core-only checksum implementation.
 

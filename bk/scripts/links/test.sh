@@ -2,7 +2,7 @@
 # Purpose: Exercise category, crate, and bare-URL link generation in temporary books.
 # Usage: bash test.sh [--category-only]
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

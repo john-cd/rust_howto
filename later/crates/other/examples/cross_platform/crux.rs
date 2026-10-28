@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! # Crux Core Example
 //!
@@ -75,7 +75,7 @@ impl App for Counter {
 }
 
 /// Runs two increments through Crux's in-process core and prints its view.
-pub fn main() {
+fn main() {
     let core = crux_core::Core::<Counter>::new();
     core.process_event(Event::Increment);
     core.process_event(Event::Increment);
@@ -91,6 +91,12 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use super::App;
+    use super::Counter;
+    use super::Effect;
+    use super::Event;
+    use super::Model;
+    use super::main;
 
     /// Runs the crux example through its entry point.
     #[test]

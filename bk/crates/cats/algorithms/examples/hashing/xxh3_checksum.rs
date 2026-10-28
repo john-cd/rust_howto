@@ -1,20 +1,34 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! An integrity checksum with XXH3 (128-bit): append a tag to a buffer and
-//! verify it on read.
+//! Ultra-fast data integrity verification using XXH3 (128-bit) checksums.
 //!
-//! XXH3 is a fast, non-cryptographic hash. It detects accidental corruption
-//! (truncated or bit-flipped files) but is **not** a MAC: an attacker can
-//! forge a matching tag. For tamper resistance, use an HMAC or a signature.
+//! ### What is XXH3?
+//! XXH3 is a state-of-the-art non-cryptographic hash algorithm from the xxHash
+//! family designed to process data at near-memory-bandwidth speeds (tens of
+//! gigabytes per second) by leveraging SIMD vector instructions (AVX2, SSE2,
+//! NEON).
+//!
+//! ### Non-Cryptographic Checksum vs. Cryptographic MAC
+//! - **Accidental Corruption Detection**: XXH3 reliably detects accidental bit
+//!   flips, truncated files, network transmission errors, and disk corruption.
+//! - **NOT Malice-Proof**: Because XXH3 is non-cryptographic, an intentional
+//!   adversary can easily forge a valid matching XXH3 checksum for tampered
+//!   payload data. For tamper resistance against malicious attackers, use HMAC
+//!   (e.g., `HMAC-SHA256`) or digital signatures.
+//!
+//! ### Purpose & Use Cases
+//! - In-memory data frame checksums in high-throughput network streaming.
+//! - Database page integrity checking and disk block validation.
+//! - Cache validation and fast deduplication checks.
 
 use xxhash_rust::xxh3::xxh3_128;
 
-/// The size of the appended tag, in bytes.
+/// The byte length of the appended 128-bit (16-byte) XXH3 checksum tag.
 const TAG_LEN: usize = 16;
 
-/// Returns the payload followed by its 16-byte XXH3 tag.
+/// Seals a payload by appending its 16-byte XXH3 checksum tag to the buffer
+/// end.
 fn seal(payload: &[u8]) -> Vec<u8> {
     let mut out = Vec::with_capacity(payload.len() + TAG_LEN);
     out.extend_from_slice(payload);
@@ -22,7 +36,8 @@ fn seal(payload: &[u8]) -> Vec<u8> {
     out
 }
 
-/// Verifies the tag and returns the payload, or `None` if it does not match.
+/// Opens a sealed buffer, verifies its appended XXH3 checksum tag, and returns
+/// the payload slice if valid, or `None` if corrupted.
 fn open(sealed: &[u8]) -> Option<&[u8]> {
     let split = sealed.len().checked_sub(TAG_LEN)?;
     let (payload, tag) = sealed.split_at(split);
@@ -30,21 +45,25 @@ fn open(sealed: &[u8]) -> Option<&[u8]> {
     (tag == expected).then_some(payload)
 }
 
-/// Seals a buffer, reads it back, and rejects a corrupted byte.
+/// Seals a data buffer, verifies it upon re-reading, and rejects corrupted
+/// data.
 fn main() {
+    // Construct a sealed buffer containing the original message and tag.
     let mut sealed = seal(b"cache entry");
     assert_eq!(open(&sealed), Some(&b"cache entry"[..]));
 
-    // Flip one bit in the payload.
+    // Simulate accidental corruption by flipping a single bit in the payload.
     sealed[0] ^= 0x01;
     assert_eq!(open(&sealed), None);
 
-    // Too short to contain a tag.
+    // Reject input buffers that are too short to contain a valid checksum tag.
     assert_eq!(open(b"short"), None);
 }
+
 // ANCHOR_END: example
 
 #[allow(clippy::main_recursion)]
+/// Runs the XXH3 checksum example by calling `main()`.
 pub fn run() {
     main();
 }
@@ -53,8 +72,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Checks that a corrupted checksum causes rejection.
-    /// Runs the xxh3 checksum example through its entry point.
     #[test]
     fn test_xxh3_checksum_example_entry_point() {
         main();

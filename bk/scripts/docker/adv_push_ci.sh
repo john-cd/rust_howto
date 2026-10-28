@@ -2,7 +2,7 @@
 # Purpose: Build and push the CI Docker image to DockerHub.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

@@ -1,7 +1,7 @@
 # Purpose: Format, build, lint, and test the Rust example workspaces.
 # Usage: From bk/, run just code <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

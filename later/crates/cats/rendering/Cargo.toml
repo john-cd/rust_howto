@@ -1,31 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "rendering"
 version.workspace = true
+description = "Book code examples and their crate dependencies - rendering"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - rendering"
-
-autolib = false
-categories = ["rendering"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-resvg = "0.49.0" # Rasterizes normalized SVG trees into pixmaps.
-usvg = "0.49.0" # Parses and normalizes SVG documents.
-
-[dev-dependencies]
-anyhow = "1.0.104" # Provides a fallible entry point for the example runner.
-lyon = "1.0.19" # Builds and tessellates paths in the vector graphics example.
-tiny-skia = "0.12.0" # Draws CPU-backed pixmaps without a window or GPU.
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["rendering"]
+autolib = false
 
 [[example]]
 name = "2d_raster_graphics"
@@ -51,6 +41,15 @@ test = true
 name = "text_rendering"
 path = "examples/text_rendering/main.rs"
 test = true
+
+[dependencies]
+resvg = "0.49.0" # Rasterizes normalized SVG trees into pixmaps.
+usvg = "0.49.0" # Parses and normalizes SVG documents.
+
+[dev-dependencies]
+anyhow = "1.0.104" # Provides a fallible entry point for the example runner.
+lyon = "1.0.19" # Builds and tessellates paths in the vector graphics example.
+tiny-skia = "0.12.0" # Draws CPU-backed pixmaps without a window or GPU.
 
 [lints]
 workspace = true

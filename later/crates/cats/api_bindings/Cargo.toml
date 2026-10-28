@@ -1,28 +1,27 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "api_bindings"
 version.workspace = true
+description = "Book code examples and their crate dependencies - api_bindings"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - api_bindings"
-
-categories = ["api-bindings"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["api-bindings"]
 
 [[example]]
 name = "api_bindings"
 path = "examples/api_bindings/main.rs"
 test = true
+
+[dependencies]
 
 [lints]
 workspace = true

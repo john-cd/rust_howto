@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Query extended metadata through Linux's safe statx wrapper.
 

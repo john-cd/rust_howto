@@ -2,7 +2,7 @@
 # Purpose: Hide selected book pages by renaming their Markdown files.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

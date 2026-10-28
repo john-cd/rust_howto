@@ -2,7 +2,7 @@
 # Purpose: List chapters containing wiki-style links, optionally filtered by keyword.
 # Usage: Run from bk/ with just wikilinks list or just wikilinks for <keyword>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -eu
 

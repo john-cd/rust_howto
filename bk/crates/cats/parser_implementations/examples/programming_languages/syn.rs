@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Parses Rust source text into an abstract syntax tree with `syn`.
 

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This module contains an example of verifying Rust code using Kani.
@@ -6,7 +6,6 @@
 //! See <https://model-checking.github.io/kani/tutorial-first-steps.html>.
 
 #![allow(unexpected_cfgs)]
-#![allow(dead_code)]
 
 // Define a very simple function to verify:
 /// Adds two numbers, but panics when the first one is 42.
@@ -109,6 +108,10 @@ fn main() {
 }
 // Examples adapted from the tutorial: <https://model-checking.github.io/kani/tutorial-first-steps.html>
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

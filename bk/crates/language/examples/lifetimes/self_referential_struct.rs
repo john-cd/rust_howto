@@ -2,8 +2,6 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-#![allow(dead_code)]
-
 // ANCHOR: example
 
 /// 1. Avoid self-referential structs. Note how each field points to a portion

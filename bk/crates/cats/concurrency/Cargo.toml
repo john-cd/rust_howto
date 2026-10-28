@@ -1,73 +1,22 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "concurrency"
 version.workspace = true
+description = "Book code examples and their crate dependencies - concurrency"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - concurrency"
-
-autolib = false
-categories = ["concurrency"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["concurrency"]
+autolib = false
 
-[features]
-default = ["stakker"]
-# Disabled because Riker still pulls linked-hash-map 0.3 and rand 0.7.
-# Keep the actor example source and re-enable this feature when that chain is fixed.
-# riker = ["dep:riker"]
-stakker = ["dep:stakker"]
-
-[dependencies]
-actix = "0.13.5"
-
-## General
-anyhow = "1.0.104"
-await-tree = { version = "0.3.1", features = ["tokio"] }
-clap = { version = "4.6.7", features = ["derive"] }
-crossbeam = "0.8.5"
-crossbeam-channel = "0.5.17"
-crossbeam-queue = "0.3.14"
-crossbeam-utils = "0.8.23"
-dashmap = "6.2.1"
-flume = { version = "0.12.0", features = ["select"] }
-flurry = "0.5.2"
-futures = "0.3.34"
-glob = "0.3.4"
-# JPEG and PNG are the only codecs used by the thumbnail and fractal examples.
-image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
-itertools = "0.15.0"
-lazy_static = "1.5.1"
-num = "0.4.3"
-num_cpus = "1.17.0"
-papaya = "0.2.5"
-parking_lot = "0.13.0"
-ractor = "0.16.5"
-rand = { version = "0.10.3", features = ["thread_rng"] }
-rayon = "1.12.0"
-# Disabled: Riker has no compatible update for its vulnerable transitive dependencies.
-# riker = { version = "0.4.2", optional = true }
-ringbuf = "0.5.3"
-rtrb = "0.4.1"
-# Pure Rust SHA-256 for the parallel file-hashing example, without a native `cc` build.
-sha2 = "0.11.1"
-# Stakker actor example in the actors chapter.
-stakker = { version = "0.2.16", optional = true }
-threadpool = "1.8.1"
-time = "0.3.55"
-tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
-walkdir = "2.5.0"
-
-# Creates isolated JPEG fixtures for the thumbnail example test.
-[dev-dependencies]
-tempfile = "3.27.0"
 [[example]]
 name = "actors"
 path = "examples/actors/main.rs"
@@ -127,6 +76,57 @@ test = true
 name = "threadpool"
 path = "examples/threadpool/main.rs"
 test = true
+
+[dependencies]
+actix = "0.13.5"
+
+## General
+anyhow = "1.0.104"
+await-tree = { version = "0.3.1", features = ["tokio"] }
+clap = { version = "4.6.7", features = ["derive"] }
+crossbeam = "0.8.5"
+crossbeam-channel = "0.5.17"
+crossbeam-queue = "0.3.14"
+crossbeam-utils = "0.8.23"
+dashmap = "6.2.1"
+flume = { version = "0.12.0", features = ["select"] }
+flurry = "0.5.2"
+futures = "0.3.34"
+glob = "0.3.4"
+# JPEG and PNG are the only codecs used by the thumbnail and fractal examples.
+image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
+itertools = "0.15.0"
+lazy_static = "1.5.1"
+num = "0.4.3"
+num_cpus = "1.17.0"
+papaya = "0.2.5"
+parking_lot = "0.13.0"
+ractor = "0.16.5"
+rand = { version = "0.10.3", features = ["thread_rng"] }
+rayon = "1.12.0"
+# Disabled: Riker has no compatible update for its vulnerable transitive dependencies.
+# riker = { version = "0.4.2", optional = true }
+ringbuf = "0.5.3"
+rtrb = "0.4.1"
+# Pure Rust SHA-256 for the parallel file-hashing example, without a native `cc` build.
+sha2 = "0.11.1"
+# Stakker actor example in the actors chapter.
+stakker = { version = "0.2.16", optional = true }
+threadpool = "1.8.1"
+time = "0.3.55"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+walkdir = "2.5.0"
+
+# Creates isolated JPEG fixtures for the thumbnail example test.
+[dev-dependencies]
+tempfile = "3.27.0"
+
+[features]
+default = ["stakker"]
+# Disabled because Riker still pulls linked-hash-map 0.3 and rand 0.7.
+# Keep the actor example source and re-enable this feature when that chain is fixed.
+# riker = ["dep:riker"]
+stakker = ["dep:stakker"]
 
 [lints]
 workspace = true

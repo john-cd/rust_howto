@@ -1,4 +1,4 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 database:
   url: postgresql://user:password@host:port/database_name

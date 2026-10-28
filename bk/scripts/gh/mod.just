@@ -1,7 +1,7 @@
 # Purpose: Create and search GitHub issues from repository content.
 # Usage: From bk/, run just gh <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

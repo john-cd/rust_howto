@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // Preserved for reference; Cargo.toml keeps OpenRR disabled while its graph
 // resolves to affected fast-float and serde_with releases.

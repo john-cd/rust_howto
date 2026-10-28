@@ -1,38 +1,24 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "parsing"
 version.workspace = true
+description = "Book code examples and their crate dependencies - parsing"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - parsing"
-
-autolib = false
-categories = ["parsing"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["parsing"]
+autolib = false
 
 [package.metadata.cargo-machete]
 ignored = ["pest_generator"]
-
-[dependencies]
-anyhow = "1.0.104"
-clap = { version = "4.6.7", features = ["derive"] }
-nom = "8.0.0"
-pest = "2.9.5"
-pest_derive = "2.9.5"
-tree-sitter = "0.27.1"
-tree-sitter-rust = "0.24.2"
-winnow = "1.0.4"
-
-[build-dependencies]
-pest_generator = "2.9.5"
 
 [[example]]
 name = "calc_parser"
@@ -53,6 +39,19 @@ test = true
 name = "pest"
 path = "examples/pest/main.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
+nom = "8.0.0"
+pest = "2.9.5"
+pest_derive = "2.9.5"
+tree-sitter = "0.27.1"
+tree-sitter-rust = "0.24.2"
+winnow = "1.0.4"
+
+[build-dependencies]
+pest_generator = "2.9.5"
 
 [lints]
 workspace = true

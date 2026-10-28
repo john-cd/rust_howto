@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Read a PEM certificate file and decode its DER bytes.
 

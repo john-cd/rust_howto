@@ -1,5 +1,5 @@
 #![allow(unused)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A trait with an associated constant, implemented for arrays of any length.

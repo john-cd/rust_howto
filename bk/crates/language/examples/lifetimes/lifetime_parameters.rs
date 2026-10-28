@@ -1,9 +1,7 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Example of lifetime parameters in various items.
-
-#![allow(dead_code)]
 
 // Function with a lifetime parameter `'a`.
 // The parameter is used by the function parameter declaration.

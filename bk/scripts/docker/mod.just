@@ -1,7 +1,7 @@
 # Purpose: Build and inspect the repository development and CI Docker images.
 # Usage: From bk/, run just docker <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

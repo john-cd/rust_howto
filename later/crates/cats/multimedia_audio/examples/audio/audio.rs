@@ -1,14 +1,12 @@
 //! A simple example that plays a 440Hz sine wave (A4) for 1 second.
 
-#![allow(dead_code)]
-
 use std::error::Error;
 
 use cpal::traits::DeviceTrait;
 use cpal::traits::HostTrait;
 use cpal::traits::StreamTrait;
 
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 /// A simple example that plays a 440Hz sine wave (A4) for 1 second.

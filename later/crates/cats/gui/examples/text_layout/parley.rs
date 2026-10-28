@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Laying out rich text with `parley`.
@@ -51,7 +51,7 @@ fn layout_text(
 }
 
 /// Builds a layout for a text, breaks it into lines, and prints its glyph runs.
-pub fn main() {
+fn main() {
     let text = "Hello, Parley! This is a rich text layout example in Rust.";
     let mut font_cx = font_context().expect("the bundled Roboto font is valid");
     let mut layout_cx: LayoutContext<[u8; 4]> = LayoutContext::new();

@@ -1,55 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "text_processing"
 version.workspace = true
+description = "Book code examples and their crate dependencies - text_processing"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - text_processing"
-
-autolib = false
-categories = ["text-processing"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-aho-corasick = "1.1.5"
-anyhow = "1.0.104"
-bstr = "1.13.1"
-clap = { version = "4.6.7", features = ["derive"] }
-concat-string = "1.0.1"
-console = "0.16.6"
-# Concatenates constant string slices during compilation.
-constcat = "0.6.1"
-diff = "0.1.13"
-fancy-regex = "0.20.0"
-fuzzy-matcher = "0.3.7"
-heck = "0.5.0"
-hyphenation = "0.8.4"
-indoc = "2.0.8"
-joinery = "3.1.0"
-lazy_static = "1.5.1"
-libc = "0.2.191"
-memchr = "2.8.3"
-nucleo = "0.5.0"
-once_cell = "1.21.4"
-rake = "0.3.6"
-regex = "1.13.1"
-similar = "3.2.1"
-slug = "0.1.6" # Turn a title into a URL-friendly slug.
-strsim = "0.11.1"
-syntect = { version = "5.3.0", default-features = false, features = ["default-fancy"] }
-textwrap = { version = "0.16.4", features = ["hyphenation"] }
-tree-sitter = "0.27.1"
-tree-sitter-json = "0.24.8"
-unicode-segmentation = "1.13.3"
-ustr = "1.1.0"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["text-processing"]
+autolib = false
 
 [[example]]
 name = "fuzzy_search"
@@ -125,6 +91,39 @@ test = true
 name = "unicode"
 path = "examples/unicode/main.rs"
 test = true
+
+[dependencies]
+aho-corasick = "1.1.5"
+anyhow = "1.0.104"
+bstr = "1.13.1"
+clap = { version = "4.6.7", features = ["derive"] }
+concat-string = "1.0.1"
+console = "0.16.6"
+# Concatenates constant string slices during compilation.
+constcat = "0.6.1"
+diff = "0.1.13"
+fancy-regex = "0.20.0"
+fuzzy-matcher = "0.3.7"
+heck = "0.5.0"
+hyphenation = "0.8.4"
+indoc = "2.0.8"
+joinery = "3.1.0"
+lazy_static = "1.5.1"
+libc = "0.2.191"
+memchr = "2.8.3"
+nucleo = "0.5.0"
+once_cell = "1.21.4"
+rake = "0.3.6"
+regex = "1.13.1"
+similar = "3.2.1"
+slug = "0.1.6" # Turn a title into a URL-friendly slug.
+strsim = "0.11.1"
+syntect = { version = "5.3.0", default-features = false, features = ["default-fancy"] }
+textwrap = { version = "0.16.4", features = ["hyphenation"] }
+tree-sitter = "0.27.1"
+tree-sitter-json = "0.24.8"
+unicode-segmentation = "1.13.3"
+ustr = "1.1.0"
 
 [lints]
 workspace = true

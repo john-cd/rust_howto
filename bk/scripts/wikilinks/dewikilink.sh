@@ -2,7 +2,7 @@
 # Purpose: Convert wiki-style links [[...|...]] to [...][p~...] and [p~...]:.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -u
 

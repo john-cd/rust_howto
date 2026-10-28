@@ -1,9 +1,7 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Example builder pattern.
-
-#![allow(dead_code)]
 
 /// The object to build.
 #[derive(Debug)]

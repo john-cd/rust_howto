@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Resamples a mono buffer from 48 kHz to 44.1 kHz with `rubato`.
 

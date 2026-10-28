@@ -1,5 +1,4 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A typed message bus: publish Protobuf messages through a trait, with an
@@ -263,12 +262,16 @@ pub async fn demo() -> Result<()> {
     assert_eq!(handled, 1);
     Ok(())
 }
-// ANCHOR_END: example
 
-pub fn run() -> Result<()> {
+fn main() -> Result<()> {
     tokio::runtime::Builder::new_current_thread()
         .build()?
         .block_on(demo())
+}
+// ANCHOR_END: example
+
+pub fn run() -> Result<()> {
+  main()
 }
 
 #[cfg(test)]

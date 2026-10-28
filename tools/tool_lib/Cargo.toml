@@ -1,20 +1,20 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "tool_lib"
 version.workspace = true
-authors.workspace = true
-categories = ["development-tools", "command-line-utilities", "text-processing"]
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["markdown generation"]
-license-file.workspace = true
-publish = false
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Tools & templates for the rust_howto book"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish = false
+keywords = ["markdown generation"]
+categories = ["development-tools", "command-line-utilities", "text-processing"]
 
 [dependencies]
 anyhow = { workspace = true }

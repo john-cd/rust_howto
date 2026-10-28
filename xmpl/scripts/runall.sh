@@ -2,7 +2,7 @@
 # Purpose: Run additional examples (under the `crates/xmpl` folder).
 # Usage: ./scripts/runall.sh <root_folder>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 

@@ -1,7 +1,7 @@
 # Purpose: Check local table-of-contents and reference includes in book Markdown.
 # Usage: From bk/, run just includes <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

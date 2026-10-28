@@ -1,29 +1,29 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "aerospace"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories = ["aerospace"]
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-license-file.workspace = true
-publish.workspace = true
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Book code examples and their crate dependencies - aerospace"
-
-[dependencies]
-sgp4 = "2.4.0"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["aerospace"]
+autolib = false
 
 [[example]]
 name = "aerospace"
 path = "examples/aerospace/main.rs"
 test = true
+
+[dependencies]
+sgp4 = "2.4.0"
 
 [lints]
 workspace = true

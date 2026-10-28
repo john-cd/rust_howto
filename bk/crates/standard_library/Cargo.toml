@@ -1,28 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "standard_library"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories.workspace = true
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["std", "standard-library", "thiserror", "derive_more"]
-license-file.workspace = true
-publish = false
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Core examples demonstrating idiomatic use of the Rust standard library and common error handling patterns."
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-anyhow = "1.0.104"
-clap = { version = "4.6.7", features = ["derive"] }
-derive_more = { version = "2.1.1", features = ["full"] }
-thiserror = "2.0.21"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish = false
+keywords = ["std", "standard-library", "thiserror", "derive_more"]
+categories.workspace = true
+autolib = false
 
 [[example]]
 name = "any"
@@ -108,6 +101,14 @@ test = true
 name = "smart_pointers"
 path = "examples/smart_pointers/main.rs"
 test = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
+derive_more = { version = "2.1.1", features = ["full"] }
+thiserror = "2.0.21"
 
 [lints]
 workspace = true

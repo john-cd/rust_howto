@@ -1,42 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "memory_management"
 version.workspace = true
+description = "Examples of advanced memory management, allocators, and data structures like Slab and Bumpalo."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Examples of advanced memory management, allocators, and data structures like Slab and Bumpalo."
-
-autolib = false
-categories = ["memory-management"]
-keywords = ["memory", "allocators", "bumpalo", "mimalloc", "slab", "optimization"]
 publish.workspace = true
-
-[features]
-# Select the global allocator in the `global_allocator` example (at most one).
-use-mimalloc = []
-use-jemalloc = []
-
-[dependencies]
-anyhow = "1.0.104"
-bumpalo = { version = "3.20.3", features = ["boxed"] }
-clap = { version = "4.6.7", features = ["derive"] }
-lazy_static = "1.5.1"
-mimalloc = "0.1.52"
-once_cell = "1.21.4"
-seize = "0.5.1"
-slab = "0.4.12"
-ustr = "1.1.0"
-
-[target.'cfg(not(target_env = "msvc"))'.dependencies]
-tikv-jemalloc-ctl = { version = "0.7.0", features = ["stats", "use_std"] }
-tikv-jemallocator = "0.7.0"
+keywords = ["memory", "allocators", "bumpalo", "mimalloc", "slab", "optimization"]
+categories = ["memory-management"]
+autolib = false
 
 [[example]]
 name = "bumpalo"
@@ -82,6 +61,26 @@ test = true
 name = "slab"
 path = "examples/slab.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+bumpalo = { version = "3.20.3", features = ["boxed"] }
+clap = { version = "4.6.7", features = ["derive"] }
+lazy_static = "1.5.1"
+mimalloc = "0.1.52"
+once_cell = "1.21.4"
+seize = "0.5.1"
+slab = "0.4.12"
+ustr = "1.1.0"
+
+[features]
+# Select the global allocator in the `global_allocator` example (at most one).
+use-mimalloc = []
+use-jemalloc = []
+
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+tikv-jemalloc-ctl = { version = "0.7.0", features = ["stats", "use_std"] }
+tikv-jemallocator = "0.7.0"
 
 [lints]
 workspace = true

@@ -1,5 +1,8 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO create a main function that runs the example application.
+// TODO explain the purpose of this example and how it demonstrates cookie-based
+// login with `axum-login`. TODO explain cookie-based login and session
+// management.
 
 // ANCHOR: example
 //! Cookie-based login with `axum-login`, in-memory sessions and permissions.

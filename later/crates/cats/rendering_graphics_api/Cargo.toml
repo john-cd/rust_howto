@@ -1,32 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "rendering_graphics_api"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories = ["rendering::graphics-api"]
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["rendering", "graphics", "wgpu", "gpu", "api"]
-license-file.workspace = true
-publish.workspace = true
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Book code examples for low-level Rendering Graphics APIs like WGPU."
-
-[features]
-default = []
-wgpu = ["dep:pollster", "dep:wgpu"]
-
-[dependencies]
-pollster = { version = "0.4.0", optional = true } # runs the example's async GPU setup
-wgpu = { version = "29.0.4", optional = true } # was pinned for ggez
-
-[dev-dependencies]
-naga = { version = "29.0.4", features = ["wgsl-in"] } # validates the WGSL without a GPU
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["rendering", "graphics", "wgpu", "gpu", "api"]
+categories = ["rendering::graphics-api"]
+autolib = false
 
 [[example]]
 name = "gpu_abstraction_layers"
@@ -53,6 +42,17 @@ test = true
 name = "vulkan"
 path = "examples/vulkan/main.rs"
 test = true
+
+[dependencies]
+pollster = { version = "1.0.1", optional = true } # runs the example's async GPU setup
+wgpu = { version = "30.0.1", optional = true } # was pinned for ggez
+
+[dev-dependencies]
+naga = { version = "30.0.1", features = ["wgsl-in"] } # validates the WGSL without a GPU
+
+[features]
+default = []
+wgpu = ["dep:pollster", "dep:wgpu"]
 
 [lints]
 workspace = true

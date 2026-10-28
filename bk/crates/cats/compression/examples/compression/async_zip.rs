@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 //! Writing and reading a ZIP archive asynchronously with `async_zip`.
 //!
 //! TODO Reviewed ??-??-2026.

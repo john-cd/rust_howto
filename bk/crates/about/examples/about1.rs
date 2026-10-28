@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// Reviewed 10-27-2026.
 
 // ANCHOR: example
 //! This example demonstrates converting a byte slice representing an IPv6
@@ -7,18 +7,20 @@
 use std::net::IpAddr;
 use std::str;
 
-// This function includes calls that can fail.
+// The following function includes calls that can fail:
 // - Errors are caught and propagated back to the caller with the `?` operator.
 // - Note how the function returns a `Result` type.
 // - We have chosen to use the flexible `Result` type alias from the very
 //   commonly used `anyhow` library.
 // - This function does not panic.
+
 /// Converts a byte slice holding an IPv6 address into an `IpAddr`.
 ///
+/// # Errors
 /// Returns an error if the bytes are not valid UTF-8 or not a valid address.
 fn example() -> anyhow::Result<()> {
     // A byte slice representing an IPv6 address:
-    let bytes = b"2001:db8::1";
+    let bytes: &[u8] = b"2001:db8::1";
 
     // Convert the byte slice to a string slice.
     // This operation can fail if the bytes are not UTF-8. Therefore it returns
@@ -32,10 +34,12 @@ fn example() -> anyhow::Result<()> {
 
     // This only executes if `parse` returns `Ok`:
     println!("{addr:?}");
+
+    // Happy path: we return `Ok`.
+    // `Ok(())` indicates success without a value.
     Ok(())
 }
 
-/// Runs the about1 example.
 fn main() -> anyhow::Result<()> {
     example()?;
     Ok(())
@@ -46,7 +50,6 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies the first about example entry point.
     #[test]
     fn test_about_example_one() -> anyhow::Result<()> {
         example()?;

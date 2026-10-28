@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 // ANCHOR: example
 //! Converts an `f32` value to the compact IEEE 754 binary16 `f16` type.
 

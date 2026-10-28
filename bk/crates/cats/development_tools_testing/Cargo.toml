@@ -1,22 +1,21 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "development_tools_testing"
 version.workspace = true
+description = "Examples of advanced testing techniques including property-based testing, mocking, and fuzzing."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Examples of advanced testing techniques including property-based testing, mocking, and fuzzing."
-
-autolib = false
-categories = ["development-tools::testing"]
-keywords = ["testing", "proptest", "mockall", "insta", "fuzzing", "bolero"]
 publish.workspace = true
+keywords = ["testing", "proptest", "mockall", "insta", "fuzzing", "bolero"]
+categories = ["development-tools::testing"]
+autolib = false
 
 ## General
 
@@ -24,35 +23,6 @@ publish.workspace = true
 name = "cli-demo"
 path = "examples/cli_testing/cli_demo.rs"
 test = false
-
-[features]
-afl-fuzzing = ["dep:afl"]
-
-[dependencies]
-afl = { version = "0.18.2", optional = true }
-anyhow = "1.0.104"
-approx = "0.5.1" # was pinned at 0.4.0
-arbitrary = { version = "1.5.0", features = ["derive"] }
-assert_cmd = "2.2.2" # Test command-line programs.
-bolero = "=0.13.4" # Pinned: bolero-generator-derive 0.13.5+ requires indexmap =2.11.2, conflicting with indexmap 2.14 in data_structures.
-clap = { version = "4.6.7", features = ["derive"] }
-fake = { version = "5.1.0", features = ["derive"] }
-faux = "0.1.13"
-float-cmp = "0.10.0"
-httpmock = "0.9.0" # Mock an HTTP server.
-insta = { version = "1.49.0", features = ["json", "redactions"] }
-lcov = "0.8.2" # Parse LCOV coverage reports.
-mockall = "0.15.0"
-# Match command-line output and diagnostics in tests.
-predicates = "3.1.4"
-
-proptest = "1.12.0"
-rstest = "0.28.0"
-serde = { version = "1.0.229", features = ["derive"] }
-serial_test = "4.0.1"
-temp-env = "0.3.6"
-tokio = { version = "1.54.1", features = ["macros", "rt", "time", "test-util"] }
-ureq = "3.5.0"
 
 [[example]]
 name = "env_vars"
@@ -129,6 +99,35 @@ test = true
 name = "testing"
 path = "examples/testing/main.rs"
 test = true
+
+[dependencies]
+afl = { version = "0.18.2", optional = true }
+anyhow = "1.0.104"
+approx = "0.5.1" # was pinned at 0.4.0
+arbitrary = { version = "1.5.0", features = ["derive"] }
+assert_cmd = "2.2.2" # Test command-line programs.
+bolero = "=0.13.4" # Pinned: bolero-generator-derive 0.13.5+ requires indexmap =2.11.2, conflicting with indexmap 2.14 in data_structures.
+clap = { version = "4.6.7", features = ["derive"] }
+fake = { version = "5.1.0", features = ["derive"] }
+faux = "0.1.13"
+float-cmp = "0.10.0"
+httpmock = "0.9.0" # Mock an HTTP server.
+insta = { version = "1.49.0", features = ["json", "redactions"] }
+lcov = "0.8.2" # Parse LCOV coverage reports.
+mockall = "0.15.0"
+# Match command-line output and diagnostics in tests.
+predicates = "3.1.4"
+
+proptest = "1.12.0"
+rstest = "0.28.0"
+serde = { version = "1.0.229", features = ["derive"] }
+serial_test = "4.0.1"
+temp-env = "0.3.6"
+tokio = { version = "1.54.1", features = ["macros", "rt", "time", "test-util"] }
+ureq = "3.5.0"
+
+[features]
+afl-fuzzing = ["dep:afl"]
 
 [lints]
 workspace = true

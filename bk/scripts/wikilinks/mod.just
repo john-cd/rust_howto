@@ -1,7 +1,7 @@
 # Purpose: Find and convert wiki-style links in book pages.
 # Usage: From bk/, run just wikilinks <recipe>.
 #
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 

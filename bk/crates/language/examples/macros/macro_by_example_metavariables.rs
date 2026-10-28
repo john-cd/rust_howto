@@ -1,5 +1,5 @@
 #![allow(unused)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Metavariables in declarative macros.
