@@ -213,7 +213,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#496](https://github.com/john-cd/rust_howto/issues/496) — **P4** — wasm/wasm_standalone_runtimes.md: others: organize/write — **DEFERRED — current support checks for six runtimes and Wasmer/Wasmtime example builds/tests are held for the final validation pass; blocker details are on the issue**
 - [#498](https://github.com/john-cd/rust_howto/issues/498) — **P4** — wasm/yew.md: yew: write / organize — **IMPLEMENTED ON DEVELOP; OPEN — Yew 0.23 Trunk guide, comparison, current counter example, and references present; final reference/book/spelling checks and PR link pending**
 - [#1217](https://github.com/john-cd/rust_howto/issues/1217) — **P4** — `wasm/wasm_development.md`: write — **IMPLEMENTED ON DEVELOP; OPEN — all five planned topics and summary entry integrated; Rustfmt/Clippy passed; book/reference/spelling checks and PR link pending**
-- [#1218](https://github.com/john-cd/rust_howto/issues/1218) — **P4** — `wasm/interfacing_with_javascript.md`: write — **IMPLEMENTED ON ISSUE BRANCH; final validation pending**
+- [#1218](https://github.com/john-cd/rust_howto/issues/1218) — **P4** — `wasm/interfacing_with_javascript.md`: write — **IMPLEMENTED ON DEVELOP; OPEN — chapter, examples, references, and SUMMARY entry present; final wasm, book, reference, spelling checks and PR link pending**
 
 #### NOW-PROSE-02 — UI, accessibility, media and rendering
 
