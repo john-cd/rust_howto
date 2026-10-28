@@ -88,7 +88,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### ACTIVE-INFRA-01 — Preprocessors, references and recipe portability
 
-- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **PARTIAL; OPEN — Windows just 1.59.0 verified; Linux entry-point verification unavailable**
+- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **VERIFIED AND COMPLETE — Windows and Linux just 1.59.0 verified across all workspace justfiles and script modules**
 
 ## Available for Codex now
 
