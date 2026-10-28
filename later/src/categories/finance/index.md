@@ -2,105 +2,25 @@
 
 # Finance
 
-Dealing with money: accounting, trading, investments, taxes, banking and payment processing using government-backed currencies.
+Finance software covers financial records, quantitative models, and market-facing applications. Keep monetary amounts tied to an explicit currency, and check the rules and data rights of each financial institution or provider you use.
 
-Date/time handling is essential. Data access depends on your data source. Trading and accounting often require custom solutions or very specific API integrations.
+{{#include index.incl.md}}
 
-## Working with Currencies
+## Representing Money
 
-`iso_currency`
-[`iso4217`][c~iso4217~docs]↗{{hi:iso4217}} provides ISO 4217 currency codes.
-[`rust-money`][c~rust-money~docs]↗{{hi:rust-money}} for working with monetary values and currencies.
+Use [`rust_decimal`][c~rust_decimal~docs]↗ for decimal monetary amounts and [`iso_currency`][c~iso_currency~docs]↗ for ISO 4217 currency codes. Store the amount and currency separately, and define rounding at conversion and settlement boundaries; a decimal type does not choose a business rounding policy for you.
 
-## Quantitative Analysis
-
-{{#include quant.incl.md}}
-
-For advanced analysis, you'll likely need the statistics and linear algebra crates.
-
-## Financial Modeling
-
-Building models to analyze financial data.
-
-## Financial Calculations
-
-[`financial`][c~financial~docs]↗{{hi:financial}}: Provides a range of financial calculations (present value, future value, interest rates, etc.). A good starting point.
-
-- Time value of money: Present value, future value, etc.
-- Interest rates: Simple, compound, APR, APY.
-- Financial instruments: Stocks, bonds, options, etc.
-
-## Related Topics
-
-## Decimal Number Handling
+Floating-point values are common for statistical calculations and pricing models. Avoid them for ledger values that require exact decimal arithmetic.
 
 See [[additional_numeric_types | Additional Numeric Types]].
 
-### Date and Time Handling
+For `.xlsx` import and export, see [[excel | Excel Spreadsheets]] for [`calamine`][c~calamine~docs]↗ and [`rust_xlsxwriter`][c~rust_xlsxwriter~docs]↗.
 
-[`chrono`][c~chrono~docs]↗{{hi:chrono}}: A widely used crate for date and time calculations.
-[`time`][c~time~docs]↗{{hi:time}}: A newer crate, often preferred.
+## Related Topics
 
-See [[date-and-time | Date and Time]].
-
-### Data Analysis and Statistics
-
-[`statrs`][c~statrs~docs]↗{{hi:statrs}}: A comprehensive statistics library.
-[`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}: Linear algebra crate, often used in financial modeling.
-[`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}: N-dimensional arrays, useful for handling financial data.
-
-See [[mathematics | Mathematics]], [[linear_algebra | Linear Algebra]], and [[statistics | Statistics]].
-
-### Data Access
-
-There are many options depending on your data source.
-
-Examples include [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} for making HTTP requests to financial APIs,
-[`csv`][c~csv~docs]↗{{hi:csv}} for reading and writing CSV files (common for financial data), and [`serde`][c~serde~docs]↗{{hi:serde}} for serializing and deserializing financial data.
-
-Spreadsheets are the most common interchange format in accounting and reporting: see [[excel | Excel Spreadsheets]] to read and write `.xlsx` workbooks with [`calamine`][c~calamine~docs]↗{{hi:calamine}} and [`rust_xlsxwriter`][c~rust_xlsxwriter~docs]↗{{hi:rust_xlsxwriter}}.
-
-See [[encoding | Encoding]], [[serde | Serde]], [[csv | CSV]], [[json | JSON]], [[web-programming_http-client | Web Programming: HTTP Client]].
-
-## Charting and Visualization
-
-[`plotters`][c~plotters~docs]↗{{hi:plotters}} is a plotting library that can create charts and graphs of financial data.
-
-See [[visualization | Visualization]].
-
-## Trading and Market Data
-
-Often requires specific API wrappers or libraries for the exchanges or data providers you're using. There isn't a single "trading crate."
-
-## Risk Management
-
-Risk management: Volatility, diversification, etc.
-
-Often involves custom calculations and models. The statistics and linear algebra crates above can be helpful.
-
-## Accounting
-
-There aren't widely used, general-purpose accounting crates in Rust yet. This area is often handled with custom solutions.
+- [[date-and-time | Date and Time]].
+- [[statistics | Statistics]].
+- [[visualization | Visualization]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/365)
-Needs in-depth review.
-
-Review / incorporate:
-
-- [`rust_decimal`][c~rust_decimal~docs]↗{{hi:rust_decimal}} - ~2M downloads.
-- [`iso_currency`][c~iso_currency~docs]{{hi:iso_currency}} - ~19k downloads.
-- [`RustQuant`][c~RustQuant~docs]↗{{hi:RustQuant}} ~4.1k.
-- [`apca`][c~apca~docs]↗{{hi:apca}} mentioned in Awesome Rust.
-- [`stochastic-rs`][c~stochastic-rs~docs]{{hi:stochastic-rs}} mentioned in Awesome Rust.
-- Mention [`financial`][c~financial~docs]↗{{hi:financial}} a collection of finance calculations mimicking some of Excel Financial Functions interface.
-- Mention `black_scholes`.
-
-Cover yahoo finance, databento, alpaca.
-
-- [yata][c~yata~docs]: Yet Another Technical Analysis library.
-
-</div>

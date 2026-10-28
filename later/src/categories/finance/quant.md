@@ -4,6 +4,16 @@
 
 {{#include quant.incl.md}}
 
+## Time Value of Money
+
+The [`financial`][c~financial~docs]↗ crate provides Excel-like time-value-of-money functions, including net present value, internal rate of return, present value, and future value. It is not a dependency of the examples in this workspace, so there is no compiled recipe here. Check the crate's cash-flow sign and timing conventions against known cases before using a result.
+
+## Stochastic Models and Technical Indicators
+
+For advanced stochastic processes, [`stochastic-rs`][c~stochastic-rs~docs]↗ covers simulation and quantitative-finance models. It is a broad, feature-rich library; review its optional numerical backends and platform requirements before adding it to a project.
+
+For common technical-analysis indicators and custom indicator implementations, see [`yata`][c~yata~docs]↗.
+
 ## `RustQuant` {#rustquant}
 
 [![rustquant][c~RustQuant~docs~badge]][c~RustQuant~docs] [![rustquant~crates.io][c~RustQuant~crates.io~badge]][c~RustQuant~crates.io] [![rustquant~repo][c~RustQuant~repo~badge]][c~RustQuant~repo] [![rustquant~lib.rs][c~RustQuant~lib.rs~badge]][c~RustQuant~lib.rs]{{hi:rustquant}}{{hi:Finance}}{{hi:Monte-Carlo}}{{hi:Option-pricing}}{{hi:Quantitative}}{{hi:Quantlib}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~simulation][cat~simulation~badge]][cat~simulation]{{hi:Simulation}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}} [![cat~finance][cat~finance~badge]][cat~finance]
