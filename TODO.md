@@ -15,8 +15,8 @@
 
 ### Urgent
 
-- [/] meaningful, not generic, README.md - see for example bk\crates\cats\asynchronous\README.md
-- [ ] review all TODO comments in the codebase and fix
+- [x] REVIEW meaningful, not generic, README.md - see for example bk\crates\cats\asynchronous\README.md
+- [/] review all TODO comments in the codebase and fix
 - [/] fix "function xyz is never used". most book examples should have a private main() function and a pub fn run() function + a test that call main(). run() should be called by the main() function of the example.
 - [/] all book examples should have a test that calls the private main() function and verifies the expected behavior. also add tests to verify other functions / code items within the exanple. ensure coverage for edge cases and error handling.
 - [ ] review dirty worktrees, create commits, integrate useful branches, discard stale work, and clean up topic refs
@@ -147,7 +147,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-04 — Machine learning, data and robotics
 
-- [#764](https://github.com/john-cd/rust_howto/issues/764) — **P4** — quant/rustquant.rs: finish; review — **PARTIAL — #1283 decision keeps RustQuant out; complete the standalone example and its acceptance checks**
+- [#764](https://github.com/john-cd/rust_howto/issues/764) — **P4** — quant/rustquant.rs: finish; review — **DEFERRED — #1283 keeps RustQuant out, and the specified standalone rewrite requires adding the external `statrs` crate; resume when new dependency work is in scope**
 - [#835](https://github.com/john-cd/rust_howto/issues/835) — **P4** — Finish the Candle machine-learning example I — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
 - [#837](https://github.com/john-cd/rust_howto/issues/837) — **P4** — Finish the SmartCore machine-learning example I — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
 - [#839](https://github.com/john-cd/rust_howto/issues/839) — **P4** — geo/geo.rs: write — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
@@ -169,7 +169,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-CODE-06 — Examples derived from repository tools
 
 - [#41](https://github.com/john-cd/rust_howto/issues/41) — **P4** — Make additional examples out of mdbook-utils B — **IMPLEMENTED ON DEVELOP; OPEN — offline feature scripts documented; Cargo example-crate acceptance and live broken-link check omitted; focused checks, book build, and PR link pending**
-- [#43](https://github.com/john-cd/rust_howto/issues/43) — **P4** — Make additional examples out of the templ tool B — **PARTIAL — document deterministic help/category_badge/rbe commands; crates.io-backed metadata commands and final gates remain**
+- [#43](https://github.com/john-cd/rust_howto/issues/43) — **P4** — Make additional examples out of the templ tool B — **PARTIAL ON DEVELOP — offline help, Rust-by-Example, and known-category badge examples added; crates.io-backed commands and final gates remain**
 
 #### NOW-CODE-07 — WebAssembly and browser applications
 
@@ -603,7 +603,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 #### VALIDATE-PROSE-11 — Architecture and scripting
 
 - [#610](https://github.com/john-cd/rust_howto/issues/610) — **P4** — — Rhai chapter — **IMPLEMENTED; OPEN — script errors propagate and sandbox assertions added; tests, refdefs, book, spelling, and linked PR remain**
-- [#1230](https://github.com/john-cd/rust_howto/issues/1230) — **P4** — — Architecture chapters — **PARTIAL; OPEN — event, actor, and pipeline guarantees clarified; full chapter review, tests, book checks, and linked PR remain**
+- [#1230](https://github.com/john-cd/rust_howto/issues/1230) — **P4** — — Architecture chapters — **IMPLEMENTATION COMPLETE ON DEVELOP; OPEN — chapter review and formatting complete; tests, book checks, and linked PR deferred**
 
 #### VALIDATE-PROSE-12 — Foreign function interfaces
 
