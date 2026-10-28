@@ -25,7 +25,8 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::main;
+    use super::multiply;
 
     /// Verifies that the bundled C++ function is linked and callable.
     #[test]

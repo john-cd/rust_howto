@@ -18,7 +18,8 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::GENERATED_MESSAGE;
+    use super::main;
 
     /// Verifies that generated source is written to `OUT_DIR` and included.
     #[test]

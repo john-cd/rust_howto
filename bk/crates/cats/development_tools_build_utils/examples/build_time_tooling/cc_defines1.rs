@@ -30,11 +30,13 @@ fn read_app_info() -> Result<(String, String, bool)> {
     let (name_ptr, version_ptr, welcome_raw) =
         unsafe { (app_name(), app_version(), welcome_is_defined()) };
 
+    // SAFETY: `app_name` returns a non-null, NUL-terminated static string.
     let name = unsafe { CStr::from_ptr(name_ptr) }
         .to_str()
         .context("APP_NAME string is not valid UTF-8")?
         .to_owned();
 
+    // SAFETY: `app_version` returns a non-null, NUL-terminated static string.
     let version = unsafe { CStr::from_ptr(version_ptr) }
         .to_str()
         .context("VERSION string is not valid UTF-8")?
