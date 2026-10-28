@@ -10,7 +10,7 @@ use dioxus::prelude::*;
 
 /// Launches the application.
 fn main() {
-    // Launch the application
+    // Launch the application using the platform default renderer.
     #[cfg(feature = "dioxus")]
     dioxus::launch(App);
 }
@@ -22,14 +22,12 @@ fn App() -> Element {
     let mut count = use_signal(|| 0);
 
     rsx! {
-        div {
-            h1 { "Counter: {count}" }
-            button { onclick: move |_| count += 1, "+" }
-            button { onclick: move |_| count -= 1, "-" }
-        }
+        h1 { "Count: {count}" }
+        button { onclick: move |_| count += 1, "+" }
     }
 }
 
+/// Helper function to execute the example entry point.
 pub fn run() {
     main();
 }
@@ -39,10 +37,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Launches the Dioxus application when a browser runtime is available.
+    /// Verifies that the component renders the expected HTML via Server-Side
+    /// Rendering.
     #[test]
-    #[ignore = "requires an interactive browser application runtime"]
-    fn test_dioxus_application_entry_point() {
-        main();
+    fn test_dioxus_ssr_render() {
+        let mut dom = VirtualDom::new(App);
+        dom.rebuild_in_place();
+        let html = dioxus_ssr::render(&dom);
+        assert!(html.contains("Count: 0"));
     }
 }
