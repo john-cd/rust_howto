@@ -24,6 +24,11 @@ build_cache_separator := if os_family() == "windows" { ";" } else { ":" }
 # Preserve caller-supplied roots and add this checkout as a fallback.
 export SCCACHE_BASEDIRS := if build_inherited_cache_bases == "" { replace(build_repo, "\\", "/") } else { build_inherited_cache_bases + build_cache_separator + replace(build_repo, "\\", "/") }
 
+# Run an ad hoc Cargo command with this checkout's shared build environment.
+[positional-arguments]
+@cargo +args:
+    cargo "$@"
+
 # Connect direct Cargo commands to the same persistent directories as just.
 [windows]
 build-setup:
