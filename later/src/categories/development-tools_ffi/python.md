@@ -12,10 +12,9 @@
 
 PyO3 lets a Rust program call Python code through the interpreter. In current PyO3, `Python::attach` provides the interpreter token used by Python APIs; older examples may call the renamed `Python::with_gil` method. Python objects tied to that scope use the `Bound<'py, T>` API, while `Py<T>` owns a reference beyond the scope.
 
-The embedded PyO3 example is enabled on Linux and Windows and requires a
-compatible Python installation and development files. The Rust-defined module
-example remains Linux-only. The separate extension package has its own Python
-and Maturin setup below.
+Both embedded PyO3 examples are enabled on Linux and Windows and require a
+compatible Python installation and development files. The separate extension
+package has its own Python and Maturin setup below.
 
 This example is an embedded Python executable. On Windows, set `PYTHONHOME` to
 the base Python installation before running the executable or its test so
@@ -39,9 +38,16 @@ cargo test --locked -p development_tools_ffi --example python test_pyo3_example_
 {{#include ../../../crates/cats/development_tools_ffi/examples/python/pyo3.rs:example}}
 ```
 
-### Define a Rust Module for Embedded Python {#use-rust-from-python}
+### Define Rust Functions and Classes for Embedded Python {#use-rust-from-python}
 
-This example registers a Rust-defined module in the embedded interpreter's `sys.modules`, then imports it from Python code. It demonstrates module and function registration inside a Rust executable; the next section shows how to build a native extension that a separate Python process can import.
+This example registers a Rust function and a `Counter` class in a module inside
+the embedded interpreter's `sys.modules`, then imports and calls them from
+Python code. On Windows, use the `PYTHONHOME` setup above; the test is ignored
+by default and can be run from `later/crates` with:
+
+```console
+cargo test --locked -p development_tools_ffi --example python test_use_rust_from_python_example_entry_point -- --ignored --test-threads=1
+```
 
 ```rust,noplayground
 {{#include ../../../crates/cats/development_tools_ffi/examples/python/use_rust_from_python.rs:example}}

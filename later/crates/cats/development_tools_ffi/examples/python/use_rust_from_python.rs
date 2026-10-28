@@ -1,9 +1,9 @@
-#![cfg(target_os = "linux")]
+#![cfg(any(target_os = "linux", target_os = "windows"))]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Demonstrates how to define a PyO3 Python module in Rust, register it with
-//! `sys.modules`, and invoke its functions from embedded Python code.
+//! `sys.modules`, and invoke its Rust function and class from embedded Python.
 
 use pyo3::prelude::*;
 
@@ -32,9 +32,46 @@ fn my_function(a: i64, b: i64) -> PyResult<i64> {
     })
 }
 
-/// A Python module implemented in Rust. The name of this function must match
-/// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to
-/// import the module.
+/// A Python-visible counter backed by a Rust integer.
+#[pyclass]
+struct Counter {
+    /// Current counter value.
+    value: i64,
+}
+
+/// Methods exposed on Python's `Counter` class.
+#[pymethods]
+impl Counter {
+    /// Creates a counter initialized to `value`.
+    #[new]
+    fn new(value: i64) -> Self {
+        Self { value }
+    }
+
+    /// Returns the current counter value.
+    #[getter]
+    fn current_value(&self) -> i64 {
+        self.value
+    }
+
+    /// Adds `amount` and returns the updated value.
+    ///
+    /// # Errors
+    ///
+    /// Returns `PyOverflowError` when the new value does not fit in an `i64`.
+    fn increment(&mut self, amount: i64) -> PyResult<i64> {
+        let next_value = self.value.checked_add(amount).ok_or_else(|| {
+            pyo3::exceptions::PyOverflowError::new_err(
+                "counter value overflowed i64",
+            )
+        })?;
+        self.value = next_value;
+        Ok(next_value)
+    }
+}
+
+/// A Python module implemented in Rust that registers a function and class.
+/// The module name is used when adding it to `sys.modules` below.
 ///
 /// # Arguments
 ///
@@ -42,7 +79,7 @@ fn my_function(a: i64, b: i64) -> PyResult<i64> {
 ///
 /// # Errors
 ///
-/// Returns `PyResult<()>` if adding functions or initializing the module fails.
+/// Returns a Python error if registration of the function or class fails.
 ///
 /// # Example
 ///
@@ -51,11 +88,14 @@ fn my_function(a: i64, b: i64) -> PyResult<i64> {
 /// ```
 #[pymodule]
 fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
-    module.add_function(wrap_pyfunction!(my_function, module)?)
+    module.add_function(wrap_pyfunction!(my_function, module)?)?;
+    module.add_class::<Counter>()?;
+    Ok(())
 }
 
 /// Initializes the Python interpreter, registers the Rust module `my_module` in
-/// `sys.modules`, and executes Python code that imports and calls the module.
+/// `sys.modules`, and executes Python code that imports and calls its function
+/// and class.
 ///
 /// # Errors
 ///
@@ -80,7 +120,11 @@ fn main() -> PyResult<()> {
             "import my_module\n\
              result = my_module.my_function(10, 20)\n\
              assert result == 30, f'Expected 30, got {result}'\n\
-             print(f'10 + 20 = {result}')"
+             counter = my_module.Counter(5)\n\
+             assert counter.current_value == 5\n\
+             assert counter.increment(3) == 8\n\
+             assert counter.current_value == 8\n\
+             print(f'10 + 20 = {result}; counter = {counter.current_value}')"
         );
         py.run(code, None, None)?;
 
@@ -108,6 +152,10 @@ mod tests {
 
     /// Runs the use rust from python example through its entry point.
     #[test]
+    #[cfg_attr(
+        target_os = "windows",
+        ignore = "set PYTHONHOME to the Python base prefix and rerun this test"
+    )]
     fn test_use_rust_from_python_example_entry_point() -> PyResult<()> {
         main()
     }
@@ -117,6 +165,22 @@ mod tests {
     #[test]
     fn test_addition_overflow_returns_error() {
         assert!(my_function(i64::MAX, 1).is_err());
+    }
+
+    /// Verifies that the Python-visible counter updates and returns its value.
+    #[test]
+    fn counter_increment_updates_value() -> PyResult<()> {
+        let mut counter = Counter::new(5);
+        assert_eq!(counter.increment(3)?, 8);
+        assert_eq!(counter.current_value(), 8);
+        Ok(())
+    }
+
+    /// Verifies that overflowing a counter returns a Python error.
+    #[test]
+    fn counter_increment_overflow_returns_error() {
+        let mut counter = Counter::new(i64::MAX);
+        assert!(counter.increment(1).is_err());
     }
 
     /// Builds the native extension and calls it from a separate Python process.
@@ -154,4 +218,3 @@ mod tests {
         Ok(())
     }
 }
-// [finish; fix](https://github.com/john-cd/rust_howto/issues/996)

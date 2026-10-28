@@ -9,7 +9,7 @@ use clap::Subcommand;
 
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 mod pyo3;
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "windows"))]
 mod use_rust_from_python;
 
 /// Command-line arguments.
@@ -30,7 +30,7 @@ enum Commands {
     #[command(name = "pyo3")]
     Pyo3,
     /// Runs the `use_rust_from_python` example.
-    #[cfg(target_os = "linux")]
+    #[cfg(any(target_os = "linux", target_os = "windows"))]
     #[command(name = "use_rust_from_python")]
     UseRustFromPython,
 }
@@ -47,7 +47,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 Commands::Pyo3 => {
                     pyo3::run()?;
                 }
-                #[cfg(target_os = "linux")]
+                #[cfg(any(target_os = "linux", target_os = "windows"))]
                 Commands::UseRustFromPython => {
                     use_rust_from_python::run()?;
                 }
