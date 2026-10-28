@@ -6,8 +6,8 @@
 use std::sync::mpsc;
 use std::thread;
 
-/// Runs three stages (parse, square, collect) connected by channels.
-fn main() {
+/// Parses and squares input concurrently, returning the collected results.
+fn run_pipeline(input: Vec<&'static str>) -> Vec<i64> {
     let (raw_tx, raw_rx) = mpsc::sync_channel::<&str>(8);
     let (num_tx, num_rx) = mpsc::sync_channel::<i64>(8);
     let (sq_tx, sq_rx) = mpsc::sync_channel::<i64>(8);
@@ -28,22 +28,31 @@ fn main() {
         }
     });
 
-    // Feed the pipeline, then close it by dropping the sender.
-    for text in ["1", "2", "oops", "3"] {
-        raw_tx.send(text).expect("pipeline is gone");
-    }
-    drop(raw_tx);
+    // Produce input concurrently so a full output queue cannot block the
+    // producer before the main thread begins receiving results.
+    let producer = thread::spawn(move || {
+        for text in input {
+            raw_tx.send(text).expect("pipeline is gone");
+        }
+    });
 
     // Stage 3: collect the results (here on the main thread).
     let results: Vec<i64> = sq_rx.iter().collect();
+    producer.join().expect("producer stage panicked");
     parse.join().expect("parse stage panicked");
     square.join().expect("square stage panicked");
+    results
+}
 
+/// Demonstrates parsing, transformation, and collection through the pipeline.
+fn main() {
+    let results = run_pipeline(vec!["1", "2", "oops", "3"]);
     assert_eq!(results, vec![1, 4, 9]);
     println!("{results:?}");
 }
 // ANCHOR_END: example
 
+/// Runs the bounded-channel pipeline example.
 pub fn run() {
     main();
 }
@@ -56,5 +65,12 @@ mod tests {
     #[test]
     fn test_pipeline_example_entry_point() {
         main();
+    }
+
+    /// Checks that input larger than the buffers completes in order.
+    #[test]
+    fn processes_more_items_than_channel_capacity() {
+        let results = run_pipeline(vec!["2"; 100]);
+        assert_eq!(results, vec![4; 100]);
     }
 }

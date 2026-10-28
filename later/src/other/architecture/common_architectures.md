@@ -131,7 +131,7 @@ Command Query Responsibility Segregation (CQRS) is an architectural pattern that
 
 Pipeline/stream architecture is a design pattern focused on processing a continuous flow of data through a series of sequential steps. It's particularly relevant in scenarios requiring real-time or near real-time data processing.
 
-Each stage reads input, transforms data, and passes results onward. Stages may run sequentially or concurrently; bounded channels apply backpressure between independently running stages, though collected results and individual items can still grow. In Rust, a pipeline can be a chain of iterator adapters in one thread, channels between threads, or [`Stream`][c~futures~docs]↗{{hi:futures}} combinators for `async` code. The example below connects three stages with channels.
+Each stage reads input, transforms data, and passes results onward. Stages may run sequentially or concurrently; bounded channels apply backpressure between independently running stages, though collected results and individual items can still grow. In Rust, a pipeline can be a chain of iterator adapters in one thread, channels between threads, or [`Stream`][c~futures~docs]↗{{hi:futures}} combinators for `async` code. The example below feeds and drains the bounded pipeline concurrently so backpressure cannot deadlock the producer before output collection begins.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/pipeline.rs:example}}
