@@ -23,9 +23,9 @@ mod tests {
     use super::*;
 
     /// Verifies that `xshell` can run a tool and capture its output.
-    /// Runs the xshell example example through its entry point.
+    /// Runs the xshell example through its entry point.
     #[test]
-    fn test_xshell_example_example_entry_point() -> anyhow::Result<()> {
+    fn test_xshell_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 }
