@@ -8,13 +8,13 @@
 // workspace)
 // use skia_safe::{Canvas, Color, Paint, Rect, Surface};
 //
-// pub fn main() {
+// fn main() {
 // let mut surface = Surface::new_raster_n32_premul((600, 400)).expect("Failed
 // to create Skia surface"); let canvas = surface.canvas();
 // canvas.clear(Color::WHITE);
 // }
 /// Prints a message: the example is skipped.
-pub fn main() {
+fn main() {
     println!(
         "Skia-safe example updated but execution skipped in this environment."
     );

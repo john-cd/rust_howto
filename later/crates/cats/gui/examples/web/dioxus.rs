@@ -9,7 +9,7 @@ use dioxus::prelude::*;
 // Dioxus is a cross-platform UI framework for Rust.
 
 /// Launches the application.
-pub fn main() {
+fn main() {
     // Launch the application
     #[cfg(feature = "dioxus")]
     dioxus::launch(App);

@@ -12,7 +12,7 @@ use gtk::Orientation;
 use gtk::prelude::*;
 
 /// Creates and runs the application.
-pub fn main() {
+fn main() {
     let app = Application::builder()
         .application_id("org.example.gtk4_counter")
         .build();
