@@ -1,10 +1,19 @@
 // TODO Reviewed ??-??-2026.
-// TODO explain the purpose of this example and how it demonstrates password
-// hashing and verification. TODO explain Argon2id and why it is used for
-// password hashing.
 
 // ANCHOR: example
 //! Hash and verify passwords with Argon2id.
+//!
+//! ### Argon2id Password Hashing
+//! Argon2id is the winner of the Password Hashing Competition (PHC) and is
+//! recommended by OWASP for secure password storage:
+//! - **Hybrid Variant**: Argon2id combines Argon2i (resistant to side-channel
+//!   attacks) and Argon2d (resistant to GPU cracking attacks).
+//! - **Memory-Hard Algorithm**: Configurable memory, time cost, and parallelism
+//!   parameters significantly increase the resource cost for attackers
+//!   attempting brute-force dictionary attacks.
+//! - **PHC String Standard**: Output hashes are formatted as standard
+//!   self-describing PHC strings `$argon2id$v=...$m=...,t=...,p=...$salt$hash`
+//!   containing algorithm parameters, salt, and hash.
 //!
 //! This example demonstrates how to hash and verify passwords securely using
 //! Argon2id. It also shows an alternative using the `password-auth` crate for
@@ -42,8 +51,20 @@ pub fn hash_with_password_auth(password: &str) -> String {
 }
 // ANCHOR_END: example
 
-// TODO create a main() function and call it from a test and a pub fn run()
-// function.
+/// Hashes and verifies a sample password.
+fn main() -> anyhow::Result<()> {
+    let password = "correct horse battery staple";
+    let stored_hash = hash(password)?;
+    assert!(verify(password, &stored_hash));
+    println!("Successfully hashed and verified password with Argon2id.");
+    Ok(())
+}
+
+/// Runs the hashing example.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -62,5 +83,10 @@ mod tests {
     fn password_auth_alternative() {
         let stored = hash_with_password_auth("pw");
         assert!(password_auth::verify_password("pw", &stored).is_ok());
+    }
+
+    #[test]
+    fn test_hashing_example_entry_point() -> anyhow::Result<()> {
+        main()
     }
 }

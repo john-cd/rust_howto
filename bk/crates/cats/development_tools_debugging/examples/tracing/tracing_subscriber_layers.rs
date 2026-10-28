@@ -127,7 +127,8 @@ mod tests {
     /// Checks that filters can be built.
     #[test]
     fn test_filter() {
-        // TODO need a mutex?
+        // Set environment variable required for custom filter construction in
+        // tests.
         unsafe {
             std::env::set_var("MY_CUSTOM_FILTER_ENV_VAR", "info");
         }

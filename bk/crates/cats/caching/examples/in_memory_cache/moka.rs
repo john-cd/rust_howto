@@ -1,9 +1,19 @@
 // TODO Reviewed ??-??-2026.
-// TODO explain the purpose of this example and what `moka` is used for.
 
 // ANCHOR: example
-//! This example demonstrates the basic usage of the `moka` crate for creating
-//! a concurrent cache. `moka` is inspired by the 'Caffeine' library for Java.
+//! Basic usage of the `moka` crate for high-performance concurrent caching.
+//!
+//! ### Purpose and Architecture of `moka`
+//! `moka` is a fast, feature-rich, concurrent caching library for Rust inspired
+//! by Java's Caffeine:
+//! - **High Concurrency**: Provides lock-free or highly concurrent read/write
+//!   operations using lock striping and lock-free data structures.
+//! - **TinyLFU Eviction Policy**: Uses TinyLFU (Frequency-based eviction) to
+//!   achieve near-optimal hit ratios compared to basic LRU policies.
+//! - **TTL & TTI Expiration**: Supports Time-To-Live (TTL) and Time-To-Idle
+//!   (TTI) entry expiration policies.
+//! - **Synchronous & Asynchronous**: Provides both synchronous
+//!   (`moka::sync::Cache`) and async (`moka::future::Cache`) interfaces.
 //!
 //! `moka` also provides an asynchronous (futures aware) cache in its `future`
 //! module.
@@ -65,4 +75,4 @@ mod tests {
         main();
     }
 }
-// TODO review examples in <https://docs.rs/crate/moka/0.12.10> and expand?
+// Reference docs: <https://docs.rs/crate/moka/0.12.10>

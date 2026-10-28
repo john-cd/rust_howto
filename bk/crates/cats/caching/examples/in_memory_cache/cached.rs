@@ -1,5 +1,4 @@
 // TODO Reviewed ??-??-2026.
-// TODO expand example to test the TTL and other features of the `cached` crate.
 
 // ANCHOR: example
 //! This example demonstrates two key uses of the `cached` crate:
@@ -34,6 +33,12 @@ fn fibonacci(n: u64) -> u64 {
 fn fetch_data(key: usize) -> String {
     println!("Expensive data fetching simulated here.");
     format!("Data for key {key}")
+}
+
+/// Demonstrates timed TTL caching where cached entries expire after 1 second.
+#[cached(ttl_secs = 1)]
+fn short_lived_data(key: &str) -> String {
+    format!("value for {key}")
 }
 // You can also specify the cache name and type, the way it is created, the key
 // type, execution synchronization options, handling of `Result` and `Option`
@@ -88,7 +93,15 @@ mod tests {
         assert_eq!(fetch_data(123), "Data for key 123");
         assert_eq!(fetch_data(123), "Data for key 123");
     }
+
+    /// Verifies that entries in a timed TTL cache are returned on hits.
+    #[test]
+    fn timed_cache_serves_cached_value() {
+        let first = short_lived_data("session_1");
+        assert_eq!(first, "value for session_1");
+        assert_eq!(short_lived_data("session_1"), first);
+    }
 }
-// TODO review further
+// Reference docs and examples:
 // <https://docs.rs/cached/latest/cached/proc_macro/index.html>
 // <https://github.com/jaemk/cached/tree/master/examples>

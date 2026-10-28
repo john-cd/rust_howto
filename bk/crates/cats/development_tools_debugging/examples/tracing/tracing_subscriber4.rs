@@ -4,6 +4,11 @@
 //! This example demonstrates customizing the formatting of log lines for spans
 //! and events. See
 //! <https://docs.rs/tracing-subscriber/latest/tracing_subscriber/fmt/index.html#customizing-formatters>
+//!
+//! Note that the builder methods demonstrated on `Format` below (`with_file`,
+//! `with_line_number`, `with_thread_ids`, etc.) are also available directly on
+//! `tracing_subscriber::fmt()` when configuring the subscriber builder
+//! directly.
 
 use tracing_subscriber::fmt;
 use tracing_subscriber::fmt::format::Format;
@@ -57,6 +62,3 @@ mod tests {
         main();
     }
 }
-// TODO The same builder methods used here are also available on `fmt()` if
-// you prefer to configure the subscriber directly instead of providing a
-// custom `Format`.

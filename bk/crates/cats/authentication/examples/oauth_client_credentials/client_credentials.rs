@@ -2,15 +2,24 @@
 
 // ANCHOR: example
 //! Obtains an OAuth 2.0 client-credentials token and calls a local mock API.
-//! TODO explain the purpose of this example and how it demonstrates the OAuth
-//! 2.0 client-credentials flow. explain OAuth 2.0 client-credentials flow.
 //!
-//! It demonstrates how to obtain an access token using the client-credentials
-//! flow and use it to access a protected resource. It uses the `oauth2` crate
-//! to perform the client-credentials flow and the `reqwest` crate to make HTTP
-//! requests. The example sets up local mock servers for both the authorization
-//! and resource servers to simulate the OAuth 2.0 flow. This allows testing the
-//! client-credentials flow without relying on external servers.
+//! ### OAuth 2.0 Client-Credentials Flow Overview
+//! The Client Credentials grant (RFC 6749 Section 4.4) is used for
+//! machine-to-machine (M2M) authentication where a client application requests
+//! an access token using its own credentials (`client_id` and `client_secret`)
+//! rather than authenticating on behalf of an individual end-user.
+//!
+//! ### Workflow Steps
+//! 1. **Token Request**: The client authenticates with the Authorization
+//!    Server's `/token` endpoint using HTTP Basic Auth (or request body params)
+//!    and specifies `grant_type=client_credentials` alongside requested
+//!    `scope`s.
+//! 2. **Token Response**: Upon validation, the Authorization Server returns a
+//!    JSON payload containing an `access_token` (typically a Bearer token) and
+//!    expiration timeframe `expires_in`.
+//! 3. **Resource Access**: The client includes the access token in the
+//!    `Authorization: Bearer <token>` header of HTTP requests sent to protected
+//!    Resource Server endpoints.
 
 use std::time::Duration;
 
@@ -24,6 +33,36 @@ use oauth2::Scope;
 use oauth2::TokenResponse as _;
 use oauth2::TokenUrl;
 use oauth2::basic::BasicClient;
+
+/// Sends a synchronous HTTP request for the OAuth client using `reqwest`.
+fn sync_http_client(
+    request: oauth2::HttpRequest,
+) -> Result<oauth2::HttpResponse, oauth2::HttpClientError<reqwest::Error>> {
+    let client = reqwest::blocking::Client::builder()
+        .redirect(reqwest::redirect::Policy::none())
+        .build()
+        .map_err(|e| oauth2::HttpClientError::Reqwest(Box::new(e)))?;
+    let mut req =
+        client.request(request.method().clone(), request.uri().to_string());
+    for (k, v) in request.headers() {
+        req = req.header(k, v);
+    }
+    let res = req
+        .body(request.body().clone())
+        .send()
+        .map_err(|e| oauth2::HttpClientError::Reqwest(Box::new(e)))?;
+    let mut builder = oauth2::http::Response::builder().status(res.status());
+    for (k, v) in res.headers() {
+        builder = builder.header(k, v);
+    }
+    let body = res
+        .bytes()
+        .map_err(|e| oauth2::HttpClientError::Reqwest(Box::new(e)))?
+        .to_vec();
+    builder
+        .body(body)
+        .map_err(|e| oauth2::HttpClientError::Other(e.to_string()))
+}
 
 /// Requests a scoped access token and uses it to call a protected resource.
 ///
@@ -42,18 +81,13 @@ fn request_protected_resource(
             )?)
             .set_token_uri(TokenUrl::new(token_url.to_owned())?);
 
-    let oauth_http_client = oauth2::reqwest::blocking::ClientBuilder::new()
-        // Never follow redirects from a token endpoint.
-        .redirect(oauth2::reqwest::redirect::Policy::none())
-        .build()
-        .context("build the OAuth token HTTP client")?;
     let token = oauth_client
         .exchange_client_credentials()
         .add_scope(Scope::new("records:read".to_owned()))
-        .request(&oauth_http_client)
+        .request(&sync_http_client)
         .context("request a client-credentials access token")?;
 
-    let expires_in = token.expires_in().copied();
+    let expires_in = token.expires_in();
     let response = reqwest::blocking::Client::new()
         .get(resource_url)
         .bearer_auth(token.access_token().secret())
@@ -80,8 +114,8 @@ fn main() -> anyhow::Result<()> {
                 "authorization",
                 "Basic ZGVtby1jbGllbnQ6ZGVtby1zZWNyZXQ=",
             )
-            .body_contains("grant_type=client_credentials")
-            .body_contains("scope=records%3Aread");
+            .body_includes("grant_type=client_credentials")
+            .body_includes("scope=records%3Aread");
         then.status(200)
             .header("content-type", "application/json")
             .body(
