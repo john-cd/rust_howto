@@ -2,18 +2,20 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-#[cfg(any(feature = "sled", feature = "surrealdb"))]
+#[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
 use clap::Parser;
-#[cfg(any(feature = "sled", feature = "surrealdb"))]
+#[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
 use clap::Subcommand;
 
+#[cfg(feature = "redb")]
+mod redb;
 #[cfg(feature = "sled")]
 mod sled;
 #[cfg(feature = "surrealdb")]
 mod surrealdb;
 
 /// Command-line arguments.
-#[cfg(any(feature = "sled", feature = "surrealdb"))]
+#[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
 #[derive(Parser)]
 struct Cli {
     /// The example to run.
@@ -22,9 +24,13 @@ struct Cli {
 }
 
 /// The examples that can be run.
-#[cfg(any(feature = "sled", feature = "surrealdb"))]
+#[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
 #[derive(Subcommand)]
 enum Commands {
+    /// Runs the `redb` example.
+    #[cfg(feature = "redb")]
+    #[command(name = "redb")]
+    Redb,
     /// Runs the `sled` example.
     #[cfg(feature = "sled")]
     #[command(name = "sled")]
@@ -37,12 +43,16 @@ enum Commands {
 
 /// Runs the example selected on the command line.
 fn main() -> anyhow::Result<()> {
-    #[cfg(any(feature = "sled", feature = "surrealdb"))]
+    #[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
     {
         let cli = Cli::parse();
 
         if let Some(command) = cli.command {
             match command {
+                #[cfg(feature = "redb")]
+                Commands::Redb => {
+                    redb::run()?;
+                }
                 #[cfg(feature = "sled")]
                 Commands::Sled => {
                     sled::run()?;
