@@ -7,6 +7,7 @@
 [ex~science_robotics~dora]: artificial_intelligence.md#dora
 [dora~website]: https://dora-rs.ai/
 [ex~science_robotics~faer]: control_systems.md#faer
+[ex~science_robotics~i2c-driver]: hardware_integration.md#embedded-hal
 [ex~science_robotics~k]: control_systems.md#k
 [ex~science_robotics~kiss3d]: simulation_visualization.md#kiss3d
 [ex~science_robotics~nalgebra]: control_systems.md#nalgebra

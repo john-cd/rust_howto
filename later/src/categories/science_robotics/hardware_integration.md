@@ -4,41 +4,97 @@
 
 {{#include hardware_integration.incl.md}}
 
-Low-level hardware access and [embedded][p~embedded] systems.
+Robotics systems interact with physical environments through sensors, actuators, serial links, fieldbus networks, and embedded microcontrollers. Rust provides both low-level `no_std` abstractions for microcontroller firmware and Linux-based userspace drivers for single-board computers (SBCs) like the Raspberry Pi or NVIDIA Jetson.
 
-[`embedded-hal`][c~embedded-hal~docs] defines a standard trait interface for embedded hardware. [`linux-embedded-hal`][c~linux-embedded-hal~docs] provides implementations for Linux systems; see also [[embedded | Embedded Systems]] and [[hardware-support | Hardware Abstraction]].
+For microcontroller firmware setup and bare-metal environments, see [[embedded | Embedded Systems]] and [[hardware-support | Hardware Abstraction]].
 
-## Device Drivers {#device-drivers .skip}
+## Serial Communication {#serial-communication}
 
-Robotics-related sensor/motor drivers:
+[![serialport][c~serialport~docs~badge]][c~serialport~docs]{{hi:serialport}}
+[![serialport~crates.io][c~serialport~crates.io~badge]][c~serialport~crates.io]
+[![serialport~repo][c~serialport~repo~badge]][c~serialport~repo]
+[![serialport~lib.rs][c~serialport~lib.rs~badge]][c~serialport~lib.rs]
 
-- [`freenect-rs`][c~freenect-rs~docs]{{hi:freenect-rs}} - Freenect wrapper for rust.
-- Slamtec RPLIDAR public SDK for Rust.
-- [`hls_lfcd_lds_rs`][c~hls_lfcd_lds_rs~docs]{{hi:hls_lfcd_lds_rs}} - ROBOTIS HLDS HLS-LFCD-LDS SDK for RUST.
-- [`dynpick-force-torque-sensor`][c~dynpick-force-torque-sensor~docs]{{hi:dynpick-force-torque-sensor}} - Wacoh-tech 6-axis force sensor (Dynpick)↗ driver.
-- [`leptrino-force-torque-sensor`][c~leptrino-force-torque-sensor~docs]{{hi:leptrino-force-torque-sensor}} - Leptrino 6-axis force sensor driver.
-- [`realsense-rust`][c~realsense-rust~docs]{{hi:realsense-rust}} - RealSense Bindings for Rust.
+Serial ports (UART, RS-232, RS-485) are standard interfaces for communicating with motor controllers, IMUs, GPS receivers, and power distribution boards.
+
+- [`serialport`][c~serialport~docs]↗{{hi:serialport}} provides cross-platform serial port access (configuring baud rates, data bits, parity, and stop bits) on Linux, macOS, and Windows.
+
+## Linux SBC Peripherals {#linux-sbc-peripherals}
+
+[![linux-embedded-hal][c~linux-embedded-hal~docs~badge]][c~linux-embedded-hal~docs]{{hi:linux-embedded-hal}}
+[![linux-embedded-hal~crates.io][c~linux-embedded-hal~crates.io~badge]][c~linux-embedded-hal~crates.io]
+[![linux-embedded-hal~repo][c~linux-embedded-hal~repo~badge]][c~linux-embedded-hal~repo]
+[![linux-embedded-hal~lib.rs][c~linux-embedded-hal~lib.rs~badge]][c~linux-embedded-hal~lib.rs]
+
+Robots running Linux on single-board computers interface with onboard GPIO pins, I2C buses, and SPI devices using Linux kernel driver interfaces (`sysfs`, `gpio-cdev`, `/dev/i2c-*`, `/dev/spidev*`).
+
+- [`linux-embedded-hal`][c~linux-embedded-hal~docs]↗{{hi:linux-embedded-hal}} adapts Linux peripheral device nodes into standard [`embedded-hal`][c~embedded-hal~docs]↗ traits, allowing host drivers to run unchanged on Linux single-board computers.
+- [`rppal`][c~rppal~docs]↗{{hi:rppal}} provides Raspberry Pi-specific GPIO, I2C, SPI, PWM, and UART peripherals via `/dev/gpiomem`.
+
+## Portable Device Drivers with `embedded-hal` 1.0 {#embedded-hal}
+
+[![embedded-hal][c~embedded-hal~docs~badge]][c~embedded-hal~docs]{{hi:embedded-hal}}
+[![embedded-hal~crates.io][c~embedded-hal~crates.io~badge]][c~embedded-hal~crates.io]
+[![embedded-hal~repo][c~embedded-hal~repo~badge]][c~embedded-hal~repo]
+[![embedded-hal~lib.rs][c~embedded-hal~lib.rs~badge]][c~embedded-hal~lib.rs]
+[![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
+[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+
+The [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} crate defines hardware abstraction traits for I2C, SPI, digital I/O, PWM, and delay functions. Writing drivers against these traits ensures that the driver works identically on bare-metal microcontrollers (such as STM32 or RP2040) and host Linux systems (`linux-embedded-hal`).
+
+The following example implements a portable sensor driver generic over any `embedded_hal::i2c::I2c` implementation. The driver reads a device identification register and converts raw temperature bytes into degrees Celsius. Host-side tests verify driver logic using a mock I2C bus without physical hardware.
+
+```rust,editable
+{{#include ../../../crates/cats/science_robotics/examples/hardware_integration/i2c_driver.rs:example}}
+```
+
+## CAN Bus Communication {#can-bus}
+
+[![socketcan][c~socketcan~docs~badge]][c~socketcan~docs]{{hi:socketcan}}
+[![socketcan~crates.io][c~socketcan~crates.io~badge]][c~socketcan~crates.io]
+[![socketcan~repo][c~socketcan~repo~badge]][c~socketcan~repo]
+[![socketcan~lib.rs][c~socketcan~lib.rs~badge]][c~socketcan~lib.rs]
+
+Controller Area Network (CAN) bus is a real-time, fault-tolerant differential serial bus standard widely used in robotics, mobile manipulators, and automotive systems for high-speed motor controller and sensor communication.
+
+- [`socketcan`][c~socketcan~docs]↗{{hi:socketcan}} provides an interface to Linux SocketCAN subsystem, allowing applications to open raw CAN sockets (`can0`), send frames, filter incoming CAN IDs, and interface with CANopen or J1939 higher-layer protocols.
 
 ## HMI and PLC Systems {#hmi-and-plc-systems}
 
-[`ehmi`][ehmi~repo] provides human-machine interface components for [`egui`][c~egui~docs]. [`RoboPLC`][roboplc~repo] is a Rust framework and toolkit for programmable logic controllers and real-time services.
+Human-Machine Interface (HMI) dashboards and Programmable Logic Controller (PLC) runtimes enable control room operation and real-time machine execution.
+
+- [`ehmi`][ehmi~repo]↗ provides human-machine interface components and widgets for [`egui`][c~egui~docs]↗.
+- [`RoboPLC`][roboplc~repo]↗ is a Rust framework and toolkit for programmable logic controllers and real-time hard/soft control services.
 
 ## Robot Models and Logs {#robot-models-and-logs}
 
-- [`assimp-rs`][c~assimp~docs]{{hi:assimp-rs}} provides Rust bindings to the Assimp asset importer.
-- [`mcap`][c~mcap~crates.io]{{hi:mcap}} reads and writes MCAP log files.
-- [`urdf-rs`][c~urdf-rs~crates.io]{{hi:urdf-rs}} loads URDF robot descriptions. See also [[parser-implementations | Parser Implementations]].
+Robots require structural kinematic models (URDF) and standardized logging formats for telemetry playback.
+
+- [`urdf-rs`][c~urdf-rs~crates.io]↗{{hi:urdf-rs}} loads Unified Robot Description Format (URDF) XML files describing robot links, joint limits, and visual geometries.
+- [`mcap`][c~mcap~crates.io]↗{{hi:mcap}} reads and writes MCAP log container files for storing heterogeneous robotics data streams.
+- [`assimp-rs`][c~assimp~docs]↗{{hi:assimp-rs}} provides Rust bindings to the Assimp library for importing 3D mesh assets.
+
+## Device Drivers {#device-drivers}
+
+Sensor and actuator drivers wrapper crates:
+
+- [`freenect-rs`][c~freenect-rs~docs]↗{{hi:freenect-rs}} - Freenect library bindings for Kinect depth sensors.
+- [`hls_lfcd_lds_rs`][c~hls_lfcd_lds_rs~docs]↗{{hi:hls_lfcd_lds_rs}} - ROBOTIS HLDS HLS-LFCD-LDS 2D laser scanner SDK.
+- [`dynpick-force-torque-sensor`][c~dynpick-force-torque-sensor~docs]↗{{hi:dynpick-force-torque-sensor}} - Wacoh-tech 6-axis force-torque sensor driver.
+- [`leptrino-force-torque-sensor`][c~leptrino-force-torque-sensor~docs]↗{{hi:leptrino-force-torque-sensor}} - Leptrino 6-axis force sensor driver.
+- [`realsense-rust`][c~realsense-rust~docs]↗{{hi:realsense-rust}} - Intel RealSense depth camera bindings for Rust.
+
+## ROS 2 Hardware Integration {#ros2-hardware-integration}
+
+In ROS 2 architectures, hardware integration nodes interface sensor and motor drivers with ROS 2 topics and actions. Libraries such as [`r2r`][c~r2r~docs]↗ or [`safe_drive`][c~safe_drive~docs]↗ connect hardware loops to ROS 2 publish/subscribe channels. See [Robot Operating Systems](robot_operating_systems.md) for detailed ROS client usage.
 
 ## Related Topics {#related-topics .skip}
 
-- Embedded hardware interfaces.
-- Sensor and actuator drivers.
-- Robotics control loops.
-- Low-level systems integration.
+- [[embedded | Embedded Systems]].
+- [[hardware-support | Hardware Abstraction]].
+- [Perception and Sensors](perception_and_sensors.md).
+- [Control Systems](control_systems.md).
+- [Robot Operating Systems](robot_operating_systems.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/1211)
-</div>

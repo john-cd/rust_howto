@@ -1,7 +1,20 @@
-//! Placeholder for the hardware integration examples.
+//! Hardware integration example runner.
 //!
 //! TODO Reviewed ??-??-2026.
 
-// LATER
-/// Does nothing yet.
-fn main() {}
+mod i2c_driver;
+
+/// Executes all hardware integration example modules.
+fn main() {
+    i2c_driver::run();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_main() {
+        main();
+    }
+}
