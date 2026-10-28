@@ -1,18 +1,8 @@
-#![cfg(target_os = "linux")]
+#![cfg(any(target_os = "linux", target_os = "windows"))]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Calling Python from Rust with `pyo3`.
-
-// This example demonstrates how to embed Python code within a Rust
-// application using the `pyo3` crate. It showcases the ability to define
-// Python functions within Rust, call them, and pass arguments.
-// The example covers:
-// - Defining a Python function as a string.
-// - Calling the Python function from Rust with and without arguments.
-// - Passing a Python tuple as an argument from Rust.
-// - Running a simple Python script from Rust.
-// - Initializing the interpreter before attaching the current thread.
+//! Calls embedded Python code and passes it positional arguments with PyO3.
 
 use pyo3::ffi::c_str;
 use pyo3::prelude::*;
@@ -71,6 +61,12 @@ fn main() -> PyResult<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the embedded Python example.
+///
+/// # Errors
+///
+/// Returns a Python error if interpreter initialization or a Python operation
+/// fails.
 pub fn run() -> PyResult<()> {
     main()
 }
@@ -81,8 +77,11 @@ mod tests {
 
     /// Runs the pyo3 example through its entry point.
     #[test]
+    #[cfg_attr(
+        target_os = "windows",
+        ignore = "set PYTHONHOME to the Python base prefix and rerun this test"
+    )]
     fn test_pyo3_example_entry_point() -> PyResult<()> {
         main()
     }
 }
-// [finish; fix py examples](https://github.com/john-cd/rust_howto/issues/78)

@@ -2,18 +2,18 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "windows"))]
 use clap::Parser;
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "windows"))]
 use clap::Subcommand;
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "windows"))]
 mod pyo3;
 #[cfg(target_os = "linux")]
 mod use_rust_from_python;
 
 /// Command-line arguments.
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "windows"))]
 #[derive(Parser)]
 struct Cli {
     /// The example to run.
@@ -22,11 +22,11 @@ struct Cli {
 }
 
 /// The examples that can be run.
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "windows"))]
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `pyo3` example.
-    #[cfg(target_os = "linux")]
+    #[cfg(any(target_os = "linux", target_os = "windows"))]
     #[command(name = "pyo3")]
     Pyo3,
     /// Runs the `use_rust_from_python` example.
@@ -37,13 +37,13 @@ enum Commands {
 
 /// Runs the example selected on the command line.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    #[cfg(target_os = "linux")]
+    #[cfg(any(target_os = "linux", target_os = "windows"))]
     {
         let cli = Cli::parse();
 
         if let Some(command) = cli.command {
             match command {
-                #[cfg(target_os = "linux")]
+                #[cfg(any(target_os = "linux", target_os = "windows"))]
                 Commands::Pyo3 => {
                     pyo3::run()?;
                 }

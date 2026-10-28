@@ -20,10 +20,12 @@ script installs Eclipse Temurin JDK 21, Python 3.13, RubyInstaller with DevKit
   supplies Ruby, headers, and its C toolchain on Windows. This crate currently
   gates Magnus and Rutie dependencies/examples to non-Windows targets, so Windows
   runs only the platform-independent greeting example.
-- **Python:** The embedded PyO3 examples are Linux-only in this crate. The
-  separate `python_extension` workspace builds an importable module with Python,
-  an active virtual environment, and Maturin. The installed Maturin version is
-  pinned in `.devcontainer/.env`.
+- **Python:** The embedded PyO3 example supports Linux and Windows; the Rust
+  module example remains Linux-only. Windows embedded runs need `PYTHONHOME`
+  set to Python's base installation so CPython can find its standard library.
+  The separate `python_extension` workspace builds an importable module with
+  Python, an active virtual environment, and Maturin. The installed Maturin
+  version is pinned in `.devcontainer/.env`.
 
 See the Java, Ruby, and Python chapters for the commands to compile and run each
 language-side example.

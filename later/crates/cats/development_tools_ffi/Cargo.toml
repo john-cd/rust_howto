@@ -129,8 +129,8 @@ objc2-foundation = { version = "0.3.2", optional = true }
 magnus = { version = "0.9.3", features = ["embed"], optional = true }
 rutie = { version = "0.14.3", optional = true }
 
-[target.'cfg(target_os = "linux")'.dependencies]
-# Embed Python and expose Rust functions to Python.
+[target.'cfg(any(target_os = "linux", target_os = "windows"))'.dependencies]
+# Embed Python and expose Rust functions to Python on Linux and Windows.
 pyo3 = "0.30.1"
 
 [lints]

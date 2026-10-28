@@ -12,9 +12,28 @@
 
 PyO3 lets a Rust program call Python code through the interpreter. In current PyO3, `Python::attach` provides the interpreter token used by Python APIs; older examples may call the renamed `Python::with_gil` method. Python objects tied to that scope use the `Bound<'py, T>` API, while `Py<T>` owns a reference beyond the scope.
 
-The two embedded-interpreter examples in this workspace are currently enabled only on Linux and require a compatible Python installation and development environment. The separate extension package has its own Python and Maturin setup below; platform support for PyO3 itself is broader than this workspace's example configuration.
+The embedded PyO3 example is enabled on Linux and Windows and requires a
+compatible Python installation and development files. The Rust-defined module
+example remains Linux-only. The separate extension package has its own Python
+and Maturin setup below.
 
-This example is an embedded Python executable. It is enabled on Linux, where the `development_tools_ffi` crate declares its PyO3 dependency. It initializes the interpreter explicitly because the crate does not enable PyO3's `auto-initialize` feature.
+This example is an embedded Python executable. On Windows, set `PYTHONHOME` to
+the base Python installation before running the executable or its test so
+CPython can locate the standard library:
+
+```powershell
+$env:PYTHONHOME = (python -c "import sys; print(sys.base_prefix)").Trim()
+cargo run --locked -p development_tools_ffi --example python -- pyo3
+```
+
+The example initializes the interpreter explicitly because the crate does not
+enable PyO3's `auto-initialize` feature. On Windows, its test is ignored during
+the default test run; from `later/crates`, run it manually with the environment
+above:
+
+```console
+cargo test --locked -p development_tools_ffi --example python test_pyo3_example_entry_point -- --ignored --test-threads=1
+```
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/python/pyo3.rs:example}}
@@ -61,6 +80,9 @@ virtual environment with Python and Maturin available:
 ```console
 cargo test --locked -p development_tools_ffi --example python builds_and_imports_the_python_extension -- --ignored --test-threads=1
 ```
+
+Do not set `PYTHONHOME` for this extension test; its active virtual environment
+selects Python for Maturin.
 
 ```python
 {{#include ../../../crates/cats/development_tools_ffi/python_extension/python/use_rust_from_python.py}}
