@@ -97,8 +97,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-CODE-01 — Build scripts, Cargo and procedural macros
 
 - [#901](https://github.com/john-cd/rust_howto/issues/901) — **P3** — build_time_tooling/cc_defines1.rs: finish; deal with extern — **NOT STARTED, BLOCKED**
-- [#744](https://github.com/john-cd/rust_howto/issues/744) — **P4** — Finish the Watt compile-time macro example J — **IMPLEMENTED ON DEVELOP; OPEN — `later/crates` tests (12) and all-targets Clippy pass (2026-10-28); `just refdefs-check`/`just bb` blocked: `bk/crates/Cargo.lock` cannot satisfy `--locked`**
-- [#1917](https://github.com/john-cd/rust_howto/issues/1917) — **P4** — Add examples: analyse and generate Rust source (syn, quote, prettyplease, cargo_metadata) — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — required validation pending (skipped as requested)**
 
 #### NOW-CODE-02 — Foreign function interfaces
 
