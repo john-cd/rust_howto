@@ -4828,10 +4828,12 @@ dependencies = [
  "anyhow",
  "clap",
  "meilisearch-sdk",
+ "redb",
  "serde",
  "sled",
  "surrealdb",
  "tantivy",
+ "tempfile",
  "tokio",
 ]
 
@@ -15611,6 +15613,15 @@ checksum = "76009fbe0614077fc1a2ce255e3a1881a2e3a3527097d5dc6d8212c585e7e38b"
 dependencies = [
  "quote",
  "syn 2.0.119",
+]
+
+[[package]]
+name = "redb"
+version = "2.6.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3d64e07496d293ad8ed401c4d193d5b9f0f97671fbd5bf21d691a0c7d2c53dc8"
+dependencies = [
+ "libc",
 ]
 
 [[package]]
