@@ -25,7 +25,7 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
-    use super::add;
+    use super::*;
 
     /// Verifies that the bundled C library is linked and callable.
     #[test]

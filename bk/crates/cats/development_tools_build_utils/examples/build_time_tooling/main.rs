@@ -74,10 +74,10 @@ fn main() -> anyhow::Result<()> {
                 cc_bundled_static1::run()?;
             }
             Commands::CcDefines => {
-                cc_defines::run();
+                cc_defines::run()?;
             }
             Commands::CcDefines1 => {
-                cc_defines1::run();
+                cc_defines1::run()?;
             }
             Commands::CLibrary => {
                 c_library::run();

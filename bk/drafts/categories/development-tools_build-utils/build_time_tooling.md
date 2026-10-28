@@ -146,7 +146,7 @@ cc = "1"
 ### Rust code that calls the C functions {#rust-cc-defines .skip}
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines.rs:example}}
+{{#include ../../../crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines1.rs:example}}
 ```
 
 ## Generate Rust Source in `OUT_DIR` {#out-dir-codegen}
