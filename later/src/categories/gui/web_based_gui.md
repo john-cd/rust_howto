@@ -53,7 +53,13 @@ On Windows, Tauri development requires Microsoft C++ Build Tools and Microsoft E
 
 [`dioxus`][c~dioxus~docs]↗ lets you write reusable UI components in Rust with `rsx!`. Its renderer is selected for the target: the web renderer runs in the browser with WebAssembly, while desktop and mobile apps run Rust natively and render through the platform's system webview. Dioxus also has an experimental native renderer based on Blitz and WGPU. The desktop and mobile targets belong here; for the browser target, see the [WASM front-end frameworks section](../wasm/index.md#rust-front-end-frameworks).
 
-Use the [Dioxus desktop guide][dioxus~desktop~website]↗ or [mobile guide][dioxus~mobile~website]↗ for target-specific setup. The shared example demonstrates a component; enable the matching Dioxus platform feature in a project scaffolded with `dx new`, then use `dx serve` to run it:
+Use the [Dioxus desktop guide][dioxus~desktop~website]↗ or [mobile guide][dioxus~mobile~website]↗ for target-specific setup. Select the target feature (such as `desktop` or `web`) in `Cargo.toml` when scaffolding a project with `dx new`, then run the application using `dx serve`:
+
+```bash
+dx serve
+```
+
+The example demonstrates a Dioxus component:
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/web/dioxus.rs:example}}
