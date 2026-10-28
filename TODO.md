@@ -244,7 +244,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 - [#257](https://github.com/john-cd/rust_howto/issues/257) — **P4** — computer-vision/opencv.md: opencv: expand, add example — **BLOCKED — OpenCV/libclang SDKs unavailable in this environment**
 - [#364](https://github.com/john-cd/rust_howto/issues/364) — **P4** — finance/quant.md: quant: write — **DEFERRED — requested `financial`, `rand`, and `rand_distr` examples require new dependencies; skipped under the no-external-dependency constraint**
-- [#365](https://github.com/john-cd/rust_howto/issues/365) — **P4** — `finance/index.md`: write — **IMPLEMENTED ON TOPIC; OPEN — index and provider guidance reorganized; markdown formatted; final refdefs, book, and issue checks pending**
+- [#365](https://github.com/john-cd/rust_howto/issues/365) — **P4** — `finance/index.md`: write — **IMPLEMENTED ON DEVELOP; OPEN — index and provider guidance reorganized; Markdown formatted; final refdefs, book, and issue checks pending**
 - [#472](https://github.com/john-cd/rust_howto/issues/472) — **P4** — science/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#474](https://github.com/john-cd/rust_howto/issues/474) — **P4** — science_geo/geo.md: geo: write — **BLOCKED — GeoJSON dependencies and PROJ C library required**
 - [#476](https://github.com/john-cd/rust_howto/issues/476) — **P4** — science_neuroscience/neuroscience.md: neuro: write — **IMPLEMENTED ON DEVELOP; final validation pending**
