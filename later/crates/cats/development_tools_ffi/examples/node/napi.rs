@@ -2,6 +2,13 @@
 
 // ANCHOR: example
 //! Calling Rust from Node.js with `napi`.
+#![cfg_attr(
+    not(feature = "node"),
+    allow(
+        dead_code,
+        reason = "the exports are only called through the generated addon"
+    )
+)]
 
 // Framework for building pre-compiled Node.js addons in Rust.
 #[cfg(feature = "node")]
@@ -58,20 +65,11 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use std::future::Future;
-    use std::sync::Arc;
     use std::task::Context;
     use std::task::Poll;
-    use std::task::Wake;
     use std::task::Waker;
 
     use super::*;
-
-    /// Provides a task waker for the immediately-ready greeting future.
-    struct NoopWake;
-
-    impl Wake for NoopWake {
-        fn wake(self: Arc<Self>) {}
-    }
 
     /// Runs the napi example through its entry point.
     #[test]
@@ -103,8 +101,8 @@ mod tests {
     /// Checks that the async export resolves to the personalized greeting.
     #[test]
     fn async_greeting_includes_the_javascript_argument() {
-        let waker = Waker::from(Arc::new(NoopWake));
-        let mut context = Context::from_waker(&waker);
+        let waker = Waker::noop();
+        let mut context = Context::from_waker(waker);
         let mut greeting = std::pin::pin!(greet_async("Ada".to_owned()));
 
         assert_eq!(

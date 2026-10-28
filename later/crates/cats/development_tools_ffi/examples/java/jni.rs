@@ -34,8 +34,9 @@ pub fn hello(input: &str) -> String {
 #[unsafe(no_mangle)]
 // The Java Native Interface (JNI) function name follows the convention:
 // Java_<class_name>_<method_name> for default packages.
-// `unowned_env` is the FFI-safe JNI environment passed by the JVM. JClass points
-// to the Java class that owns this native method and is unused in this example.
+// `unowned_env` is the FFI-safe JNI environment passed by the JVM. JClass
+// points to the Java class that owns this native method and is unused in this
+// example.
 pub extern "system" fn Java_HelloWorld_hello<'a>(
     mut unowned_env: EnvUnowned<'a>,
     _: JClass<'a>,
@@ -62,7 +63,8 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Checks the text returned by the native greeting function without starting a JVM.
+    /// Checks the text returned by the native greeting function without
+    /// starting a JVM.
     #[test]
     fn hello_preserves_the_java_caller_name() {
         assert_eq!(hello("World"), "Hello, World!");

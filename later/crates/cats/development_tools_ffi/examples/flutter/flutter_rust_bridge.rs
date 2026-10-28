@@ -85,20 +85,11 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use std::future::Future;
-    use std::sync::Arc;
     use std::task::Context;
     use std::task::Poll;
-    use std::task::Wake;
     use std::task::Waker;
 
     use super::*;
-
-    /// Provides a task waker for polling the immediately-ready greeting future.
-    struct NoopWake;
-
-    impl Wake for NoopWake {
-        fn wake(self: Arc<Self>) {}
-    }
 
     /// Runs the flutter rust bridge example through its entry point.
     #[test]
@@ -118,8 +109,8 @@ mod tests {
     /// Checks that the asynchronous bridge API returns the same greeting.
     #[test]
     fn async_greeting_includes_the_supplied_name() {
-        let waker = Waker::from(Arc::new(NoopWake));
-        let mut context = Context::from_waker(&waker);
+        let waker = Waker::noop();
+        let mut context = Context::from_waker(waker);
         let mut greeting = std::pin::pin!(greet_async("Ada".to_owned()));
 
         assert_eq!(
