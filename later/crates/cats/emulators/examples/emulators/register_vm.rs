@@ -121,7 +121,6 @@ pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     Ok(main()?)
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

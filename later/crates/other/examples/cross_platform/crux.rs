@@ -90,13 +90,13 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use super::App;
     use super::Counter;
     use super::Effect;
     use super::Event;
     use super::Model;
     use super::main;
+    use super::*;
 
     /// Runs the crux example through its entry point.
     #[test]

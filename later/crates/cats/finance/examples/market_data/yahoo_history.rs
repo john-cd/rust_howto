@@ -37,8 +37,8 @@ async fn fetch(tickers: &[&str]) -> anyhow::Result<()> {
 
 fn main() -> anyhow::Result<()> {
     let rt = tokio::runtime::Builder::new_current_thread()
-    .enable_all()
-    .build()?;
+        .enable_all()
+        .build()?;
     rt.block_on(fetch(&["AAPL", "MSFT"]))
 }
 // ANCHOR_END: example

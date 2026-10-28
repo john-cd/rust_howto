@@ -108,7 +108,6 @@ fn test_particle_swarm_is_reproducible_with_seed() {
     assert_eq!(first, pso(rastrigin, 2, 30, 200, 42));
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

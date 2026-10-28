@@ -59,7 +59,6 @@ fn test_set_operations_return_expected_elements() {
     assert_eq!(results.math_only, BTreeSet::from(["sets"]));
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

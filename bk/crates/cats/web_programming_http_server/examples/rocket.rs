@@ -53,7 +53,6 @@ mod tests {
 }
 // Implement Rocket Hello World and route mounting
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

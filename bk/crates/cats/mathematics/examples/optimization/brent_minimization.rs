@@ -54,7 +54,6 @@ fn test_brent_method_finds_quadratic_minimum() {
     assert!(((minimum - 2.5).powi(2) + 4.0 - 4.0).abs() < 1e-12);
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

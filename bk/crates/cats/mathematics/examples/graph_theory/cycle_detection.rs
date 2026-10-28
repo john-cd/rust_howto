@@ -63,7 +63,6 @@ fn test_cycle_detection_finds_cycle_members() {
     assert_eq!(cyclic_components(&graph), vec![vec!["parse", "validate"]]);
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

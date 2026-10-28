@@ -57,7 +57,6 @@ fn test_nelder_mead_finds_rosenbrock_minimum() -> Result<(), Error> {
     Ok(())
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

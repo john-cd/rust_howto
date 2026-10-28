@@ -36,7 +36,6 @@ fn test_quantities_convert_distance_and_speed() {
     assert!((speed_in_meters_per_second - (1_500.0 / 180.0)).abs() < 1e-4);
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

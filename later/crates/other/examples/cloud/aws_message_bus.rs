@@ -271,7 +271,7 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> Result<()> {
-  main()
+    main()
 }
 
 #[cfg(test)]

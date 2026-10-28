@@ -50,7 +50,6 @@ fn test_brent_method_finds_root() {
     assert!((root.cos() - root).abs() < 1e-10);
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

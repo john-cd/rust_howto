@@ -231,7 +231,6 @@ fn integration_preserves_orientation_of_bounds() {
     assert!((forward + reverse).abs() < 1e-15);
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
