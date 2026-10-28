@@ -5,7 +5,8 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(join(source_directory(), "..", ".."))
+exe := if os_family() == "windows" { ".exe" } else { "" }
+root := replace(clean(join(source_directory(), "..", "..")), "\\", "/")
 
 [no-exit-message]
 _default:
@@ -21,13 +22,6 @@ empty := ''
     cd {{ quote(root) }} && mdbook-utils {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
 
 # Run templ from the book root for crate/category badges and reference definitions; build its binary first if missing.
-[unix]
 @templ cmd=help *subcmd=empty:
-    if [ ! -f {{ quote(root + "/../bin/templ") }} ]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
-    cd {{ quote(root) }} && {{ quote(root + "/../bin/templ") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
-
-# Run templ from the book root for crate/category badges and reference definitions; build its binary first if missing.
-[windows]
-@templ cmd=help *subcmd=empty:
-    if [[ ! -f {{ quote(root + "/../bin/templ.exe") }} ]]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
-    cd {{ quote(root) }}; {{ quote(root + "/../bin/templ.exe") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
+    if [ ! -f {{ quote(root + "/../bin/templ" + exe) }} ]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
+    cd {{ quote(root) }} && {{ quote(root + "/../bin/templ" + exe) }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}

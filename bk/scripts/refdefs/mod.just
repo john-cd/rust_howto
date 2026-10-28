@@ -6,7 +6,7 @@
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 set tempdir := "."
 
-root := clean(source_directory() + "/../..")
+root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
@@ -19,12 +19,10 @@ _default:
     ./sort_refdefs.sh {{ root }}
 
 # List links without corresponding reference definitions and vice versa
-[unix]
 @check:
     ./check_refdefs.sh {{ root }}
 
 # Collect reference definitions scattered in the Markdown files (excluding the refdefs files) and print them
-[unix]
 collect:
     #!/usr/bin/env bash
     set -uo pipefail
@@ -37,7 +35,6 @@ collect:
     echo "DONE"
 
 # Update the label of a reference-style link and its reference definition.
-[unix]
 relabel old new:
     #!/usr/bin/env bash
     set -uo pipefail

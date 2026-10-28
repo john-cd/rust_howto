@@ -6,7 +6,10 @@
 set unstable
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(source_directory() + "/../..")
+root := replace(clean(source_directory() + "/../.."), "\\", "/")
+# Executable suffix and Python launcher differ on Windows; recipes themselves run in Bash everywhere.
+exe := if os_family() == "windows" { ".exe" } else { "" }
+python := if os_family() == "windows" { "python" } else { "python3" }
 mdbook_utils_rev := env("MDBOOK_UTILS_REV", "dedddf3699e461cd418c1a044d82aabd3fec62e0")
 
 [no-exit-message]
@@ -24,22 +27,12 @@ alias bb := buildbook
     just --justfile "{{ source_directory() }}/../bash/mod.just" copystatic
 
 # Merge missing dependency references into the curated crate reference file.
-[unix]
 @refdefs-generate: _install-mdbook-utils
-    python3 "{{ source_directory() }}/refdefs.py" generate --book-root "{{ root }}"
-
-[windows]
-@refdefs-generate: _install-mdbook-utils
-    python "{{ source_directory() }}/refdefs.py" generate --book-root "{{ root }}"
+    {{ python }} "{{ source_directory() }}/refdefs.py" generate --book-root "{{ root }}"
 
 # Check for missing dependency references without rewriting authoring files.
-[unix]
 @refdefs-check: _install-mdbook-utils
-    python3 "{{ source_directory() }}/refdefs.py" check --book-root "{{ root }}"
-
-[windows]
-@refdefs-check: _install-mdbook-utils
-    python "{{ source_directory() }}/refdefs.py" check --book-root "{{ root }}"
+    {{ python }} "{{ source_directory() }}/refdefs.py" check --book-root "{{ root }}"
 
 @_install-mdbook-utils:
     cargo install --git https://github.com/john-cd/mdbook-utils --rev {{ mdbook_utils_rev }} --locked mdbook-utils
@@ -51,7 +44,6 @@ mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
     cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing
 
 # Generate the external crates.io category page from its checked-in snapshot.
-[unix]
 @_generate-index-category:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -70,15 +62,10 @@ mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
     fi
     mv "$tmp" "$index"
 
-[windows]
-@_generate-index-category:
-    pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/generate_category_index.ps1") }} -BookRoot {{ quote(root) }} -ToolsRoot {{ quote(root + "/../tools") }}
-
 # generate index of crates by category
 # link crates to published recipes
 
 # Generate the alphabetical crate index with links to published recipes.
-[unix]
 @_generate-index-alphabetical:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -97,22 +84,12 @@ mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
     fi
     mv "$tmp" "$index"
 
-[windows]
-@_generate-index-alphabetical:
-    pwsh.exe -NoLogo -NoProfile -File {{ quote(source_directory() + "/generate_alphabetical_index.ps1") }} -BookRoot {{ quote(root) }} -ToolsRoot {{ quote(root + "/../tools") }}
-
 # link crates to published recipes
 
 # Build / release the tools, incl. mdbook-scrub preprocessor, if needed
-[unix]
 @_release_mbdbook-scrub:
     echo "Build mdbook-scrub, if needed"
-    if [ ! -f {{ quote(root + "/../bin/mdbook-scrub") }} ] || [ ! -f {{ quote(root + "/../bin/mdbook-private") }} ] || [ ! -f {{ quote(root + "/../bin/mdbook-linkcheck-compat") }} ]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
-
-[windows]
-@_release_mbdbook-scrub:
-    echo "Build mdbook-scrub, if needed"
-    if [[ ! -f {{ quote(root + "/../bin/mdbook-scrub.exe") }} || ! -f {{ quote(root + "/../bin/mdbook-private.exe") }} || ! -f {{ quote(root + "/../bin/mdbook-linkcheck-compat.exe") }} ]]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
+    if [ ! -f {{ quote(root + "/../bin/mdbook-scrub" + exe) }} ] || [ ! -f {{ quote(root + "/../bin/mdbook-private" + exe) }} ] || [ ! -f {{ quote(root + "/../bin/mdbook-linkcheck-compat" + exe) }} ]; then just -f {{ quote(root + "/../tools/justfile") }} release; fi
 
 ## ---- BOOK SERVING -----------------------------------
 

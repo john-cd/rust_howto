@@ -7,7 +7,7 @@ set shell := ["bash", "-uc"]
 # Use Git Bash on Windows so recipes share one shell syntax across platforms.
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := source_directory()
+root := replace(source_directory(), "\\", "/")
 code_root := quote(clean(join(root, "crates")))
 rustfmt_toolchain_default := trim(replace_regex(read(join(root, "..", "rustfmt-toolchain.toml")), '(?s).*channel\s*=\s*"([^"]+)".*', "$1"))
 rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")

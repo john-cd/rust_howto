@@ -5,7 +5,7 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(source_directory() + "/../..")
+root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
@@ -13,7 +13,6 @@ _default:
 
 # Build the CI Docker image, then push it to DockerHub.
 [group('push')]
-[unix]
 push_ci:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -30,7 +29,6 @@ push_ci:
     docker push johncd/rust_howto_dev:latest
 
 # List containers / Docker Compose services
-[unix]
 list_services:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -40,7 +38,6 @@ list_services:
       -f ${d}compose-heavy-tests.yaml \
       ps --all
 
-#[unix]
 #down:
 #  #!/usr/bin/env bash
 #  set -euo pipefail
@@ -58,7 +55,6 @@ list_services:
 #  docker network inspect rust_howto_dev_default
 
 # Get IP addresses of containers
-#[unix]
 #get_ip:
 #  docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 

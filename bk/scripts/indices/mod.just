@@ -5,7 +5,8 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(source_directory() + "/../..")
+exe := if os_family() == "windows" { ".exe" } else { "" }
+root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
@@ -19,34 +20,21 @@ empty := ''
 
 # Create the `crates by category` and `crates (alphabetical)` pages
 [no-cd]
-[unix]
 @crate_indices cmd=help *subcmd=empty:
-    {{ quote(root + "/../bin/crate-indices") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
-
-[no-cd]
-[windows]
-@crate_indices cmd=help *subcmd=empty:
-    {{ quote(root + "/../bin/crate-indices.exe") }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
+    {{ quote(root + "/../bin/crate-indices" + exe) }} {{ quote(cmd) }}{{ if subcmd == "" { "" } else { " " + quote(subcmd) } }}
 
 # or: cargo run -p crate_indices -- {{cmd}} {{subcmd}}
 
 # Generate crate page sections for `crates_and_examples.md`, given a list of crate names
 [no-cd]
-[unix]
 @crate_page *crates=empty:
-    {{ quote(root + "/../bin/crate-indices") }} crate_page {{ crates }}
-
-[no-cd]
-[windows]
-@crate_page *crates=empty:
-    {{ quote(root + "/../bin/crate-indices.exe") }} crate_page {{ crates }}
+    {{ quote(root + "/../bin/crate-indices" + exe) }} crate_page {{ crates }}
 
 # Usage: just indices crate_page crate1 crate2 crate3
 ## ---- INDEX OF EXAMPLES --------------------------------
 
 # Outputs the contents of index of examples `src/examples_index.md` (reading the local tables of content of all subchapters)
 [group('index of examples')]
-[unix]
 generate_index_of_examples:
     ./generate_index_of_examples.sh {{ root }}
 
@@ -54,7 +42,6 @@ generate_index_of_examples:
 
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
 [group('index of examples')]
-[unix]
 update_refdefs_for_examples:
     ./update_refdefs_for_index_of_examples.sh {{ root }}
 
@@ -62,14 +49,12 @@ update_refdefs_for_examples:
 ## ---- OTHERS --------------------------------
 
 # Quick and dirty generation of language/index.md; manual editing required
-[unix]
 generate_language_index:
     ./generate_language_index.sh {{ root }}
 
 # Usage: just indices generate_language_index >> ./src/language/index.incl.md
 
 # Generate the summary references for the dev tool category
-[unix]
 generate_dev_tools_refdefs:
     #!/usr/bin/env bash
     set -euo pipefail

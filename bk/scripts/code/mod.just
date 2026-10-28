@@ -5,7 +5,8 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-root := clean(source_directory() + "/../../..")
+exe := if os_family() == "windows" { ".exe" } else { "" }
+root := replace(clean(source_directory() + "/../../.."), "\\", "/")
 book_root := clean(root + "/bk")
 code_root := clean(book_root + "/crates")
 rustfmt_toolchain_default := trim(replace_regex(read(join(root, "rustfmt-toolchain.toml")), '(?s).*channel\s*=\s*"([^"]+)".*', "$1"))
@@ -110,15 +111,9 @@ current_crate := file_name(invocation_directory())
     cd {{ quote(code_root) }}; cargo test --doc --workspace
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
-[unix]
 @_clean_temp_dir:
     echo "Clean temp folders"
-    {{ quote(root + "/bin/clean") }} {{ quote(code_root) }}
-
-[windows]
-@_clean_temp_dir:
-    echo "Clean temp folders"
-    {{ quote(root + "/bin/clean.exe") }} {{ quote(code_root) }}
+    {{ quote(root + "/bin/clean" + exe) }} {{ quote(code_root) }}
 
 # Run an example
 [no-cd]
@@ -129,14 +124,12 @@ current_crate := file_name(invocation_directory())
 
 # Run tests using an external service: amqp cassandra elasticsearch meilisearch mongodb mssql postgres redis
 [group('heavy tests')]
-[unix]
 @heavy_test feature:
     echo "Run heavy tests using {{ feature }}"
     ./heavy_test.sh {{ root }} {{ feature }}
 
 # Run all tests that require external services
 [group('heavy tests')]
-[unix]
 heavytestall:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -150,7 +143,6 @@ heavytestall:
 
 # # Test the Redis connection
 #[group('heavy tests')]
-#[unix]
 #test_redis_conn:
 #  #!/usr/bin/env bash
 #  set -euo pipefail
@@ -163,7 +155,6 @@ heavytestall:
 #  docker run -it --rm --network rust_howto_dev_default --name redis-cli redis:alpine redis-cli -h rust_howto_dev-redis-1 -p 6379
 # # Test the Mongo connection
 # [group('heavy tests')]
-# [unix]
 # test_mongo_conn:
 #   #!/usr/bin/env bash
 #   set -euo pipefail

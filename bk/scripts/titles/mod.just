@@ -14,7 +14,6 @@ _default:
 ## ---- TITLE MANAGEMENT -----------------------------------
 
 # (Manual review required) Capitalize titles in the book's Markdown.
-[unix]
 normalize:
     #! /usr/bin/env bash
     set -euo pipefail
@@ -25,19 +24,6 @@ normalize:
     do
     echo ">> ${file}"
     # Capitalize all words longer than 4 letters, except a few listed below.
-    sed -i -E 's/^(#\s*.*?\s+)([a-z]{4,}([ ,;.-]|$))/\1\u\2/g; s/^(#.*\s)(About|With|From|Into|Like|Then|That|Both|Over|Beyond)(\s)/\1\L\2\3/g; s/^(#.*\s)(use)(\s)/\1\u\2\3/g' "${file}"
-    done
-    echo "DONE"
-
-[windows]
-normalize:
-    #! /usr/bin/env bash
-    set -euo pipefail
-    IFS=$'\n\t'
-    root={{ root }}
-    for file in $(rg -N -l -t md -g '!*.incl.md' -g'!*refs.md' '^#+\s*.+$' "${root}/src" "${root}/drafts" )
-    do
-    echo ">> ${file}"
     sed -i -E 's/^(#\s*.*?\s+)([a-z]{4,}([ ,;.-]|$))/\1\u\2/g; s/^(#.*\s)(About|With|From|Into|Like|Then|That|Both|Over|Beyond)(\s)/\1\L\2\3/g; s/^(#.*\s)(use)(\s)/\1\u\2\3/g' "${file}"
     done
     echo "DONE"

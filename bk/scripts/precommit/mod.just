@@ -7,7 +7,7 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 ## ---- DEFAULT -------------------------------------
 
-root := clean(source_directory() + "/../../..")
+root := replace(clean(source_directory() + "/../../.."), "\\", "/")
 
 [no-exit-message]
 _default:
@@ -37,13 +37,8 @@ _default:
     cd {{ quote(root) }} && pre-commit run --all-files
 
 # Install or update pre-commit with pip.
-[unix]
 @install:
-    python3 -m pip install pre-commit
-
-[windows]
-@install:
-    py -3 -m pip install pre-commit
+    python3 -m pip install pre-commit || python -m pip install pre-commit
 
 #npm i -g prettier
 # [move to Dockerfile](https://github.com/john-cd/rust_howto/issues/1247)
