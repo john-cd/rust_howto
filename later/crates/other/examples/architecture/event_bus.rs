@@ -15,24 +15,28 @@ enum Event {
     OrderShipped { id: u32 },
 }
 
-/// A minimal bus that delivers each event to every subscriber.
+/// A minimal in-process bus with bounded subscriber queues.
 #[derive(Default)]
 struct EventBus {
     subscribers: Vec<SyncSender<Event>>,
 }
 
 impl EventBus {
+    /// Adds a subscriber and returns its event receiver.
     fn subscribe(&mut self) -> Receiver<Event> {
         let (tx, rx) = mpsc::sync_channel(16);
         self.subscribers.push(tx);
         rx
     }
 
-    fn publish(&self, event: &Event) {
-        for subscriber in &self.subscribers {
-            // A subscriber that has gone away is ignored.
-            let _ = subscriber.send(event.clone());
-        }
+    /// Sends an event to connected subscribers and returns disconnections.
+    ///
+    /// A full subscriber queue blocks until it has space or disconnects.
+    fn publish(&mut self, event: &Event) -> usize {
+        let before = self.subscribers.len();
+        self.subscribers
+            .retain(|subscriber| subscriber.send(event.clone()).is_ok());
+        before - self.subscribers.len()
     }
 }
 
@@ -47,18 +51,22 @@ fn main() {
         .map(|rx| thread::spawn(move || rx.iter().collect::<Vec<Event>>()))
         .collect();
 
-    bus.publish(&Event::OrderPlaced { id: 1 });
-    bus.publish(&Event::OrderShipped { id: 1 });
+    assert_eq!(bus.publish(&Event::OrderPlaced { id: 1 }), 0);
+    assert_eq!(bus.publish(&Event::OrderShipped { id: 1 }), 0);
     drop(bus); // Closes the channels, which ends the consumers.
 
     for consumer in consumers {
         let events = consumer.join().expect("consumer panicked");
-        assert_eq!(events.len(), 2);
+        assert_eq!(
+            events,
+            vec![Event::OrderPlaced { id: 1 }, Event::OrderShipped { id: 1 }]
+        );
         println!("{events:?}");
     }
 }
 // ANCHOR_END: example
 
+/// Runs the event-bus example.
 pub fn run() {
     main();
 }
@@ -71,5 +79,24 @@ mod tests {
     #[test]
     fn test_event_bus_example_entry_point() {
         main();
+    }
+
+    /// Verifies delivery to connected subscribers and removal of closed ones.
+    #[test]
+    fn reports_and_removes_disconnected_subscribers() {
+        let mut bus = EventBus::default();
+        let receiver = bus.subscribe();
+        let disconnected = bus.subscribe();
+        drop(disconnected);
+
+        let event = Event::OrderPlaced { id: 42 };
+        assert_eq!(bus.publish(&event), 1);
+        assert_eq!(
+            receiver
+                .recv()
+                .expect("connected subscriber receives the event"),
+            event
+        );
+        assert_eq!(bus.publish(&event), 0);
     }
 }

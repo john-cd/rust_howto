@@ -91,7 +91,7 @@ In an Event-driven architecture (EDA), applications communicate by producing and
 - [Asynchronous][p~asynchronous] Communication: Components operate independently and interact via events.
 - Often implemented with libraries like [`tokio`][c~tokio~docs]↗{{hi:tokio}} or [`async-std`][c~async-std~docs]↗{{hi:async-std}}.
 
-The example below builds a small in-process event bus with bounded channels. It sends each event to each connected subscriber, waits when a subscriber's channel is full, and ignores disconnected subscribers; it is not a durable message broker. [`tokio::sync::broadcast`][c~tokio~docs]↗{{hi:tokio}} supports asynchronous fan-out with different lag and delivery behavior.
+The example below builds a small in-process event bus with bounded channels. It sends each event to connected subscribers, waits when a subscriber's channel is full, and reports and removes disconnected subscribers; it is not a durable message broker. [`tokio::sync::broadcast`][c~tokio~docs]↗{{hi:tokio}} supports asynchronous fan-out with different lag and delivery behavior.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/event_bus.rs:example}}
