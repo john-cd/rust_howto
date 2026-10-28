@@ -14,7 +14,8 @@ const REG_DEVICE_ID: u8 = 0x00;
 /// Register address for the temperature measurement data.
 const REG_TEMP: u8 = 0x01;
 
-/// Driver for a hardware temperature sensor generic over an `embedded-hal` I2C bus.
+/// Driver for a hardware temperature sensor generic over an `embedded-hal` I2C
+/// bus.
 pub struct TemperatureSensor<I2C> {
     i2c: I2C,
 }
@@ -70,7 +71,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// A mock I2C bus implementation for host-side testing without physical hardware.
+/// A mock I2C bus implementation for host-side testing without physical
+/// hardware.
 struct MockI2cBus {
     device_id: u8,
     temp_raw: [u8; 2],
@@ -90,11 +92,19 @@ impl embedded_hal::i2c::ErrorType for MockI2cBus {
 }
 
 impl embedded_hal::i2c::I2c for MockI2cBus {
-    fn read(&mut self, _address: u8, _read: &mut [u8]) -> Result<(), Self::Error> {
+    fn read(
+        &mut self,
+        _address: u8,
+        _read: &mut [u8],
+    ) -> Result<(), Self::Error> {
         Ok(())
     }
 
-    fn write(&mut self, _address: u8, _write: &[u8]) -> Result<(), Self::Error> {
+    fn write(
+        &mut self,
+        _address: u8,
+        _write: &[u8],
+    ) -> Result<(), Self::Error> {
         Ok(())
     }
 
