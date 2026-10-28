@@ -2,6 +2,7 @@
 <!-- markdownlint-disable MD057 -->
 
 [architecture~bevy-ecs]: https://docs.rs/bevy_ecs
+[architecture~cqrs-es]: https://docs.rs/cqrs-es
 [architecture~libloading]: https://docs.rs/libloading
 
 [ex~architecture~actor-model]: common_architectures.md#actor-model
@@ -12,6 +13,7 @@
 [ex~architecture~dependency-injection]: architectural_patterns.md#dependency-injection
 [ex~architecture~deployment-and-operations]: software_architecture_process.md#deployment-and-operations
 [ex~architecture~design-system-components]: software_architecture_process.md#design-components-and-interfaces
+[ex~architecture~entity-component-system]: common_architectures.md#entity-component-system
 [ex~architecture~ensure-security]: software_architecture_process.md#security-and-trust
 [ex~architecture~ensure-test-coverage]: software_architecture_process.md#validate-the-design
 [ex~architecture~event-driven-architecture]: common_architectures.md#event-driven-architecture
@@ -22,6 +24,7 @@
 [ex~architecture~microservices]: common_architectures.md#microservices
 [ex~architecture~optimize-performance]: software_architecture_process.md#performance-and-resource-limits
 [ex~architecture~pipelines]: common_architectures.md#pipelines
+[ex~architecture~plugin-architecture]: common_architectures.md#plugin-architecture
 [ex~architecture~repository-pattern]: architectural_patterns.md#repository-pattern
 [ex~architecture~state-machine-pattern]: architectural_patterns.md#state-machine-pattern
 [arc42~decisions]: https://docs.arc42.org/section-9/

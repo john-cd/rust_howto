@@ -8,7 +8,7 @@
 
 A layered architecture is a traditional software design pattern that organizes an application into distinct horizontal layers, like Presentation, Business Logic, and Data Access. Each layer performs a specific role, and they are arranged in a hierarchical order. It encourages separation of concerns, modularity, and testability.
 
-Use layers when the application has distinct input, domain, and persistence responsibilities that benefit from independent tests. The example passes a repository into a service and uses an in-memory implementation, so the business layer can run without a database. Define boundaries around meaningful responsibilities: extra pass-through layers add navigation and maintenance costs without necessarily improving isolation.
+Use layers when the application has distinct input, domain, and persistence responsibilities that benefit from independent tests. The example passes a repository into a service and uses an in-memory implementation, so the business layer can run without a database. Crates such as [`axum`][c~axum~docs]↗{{hi:axum}} and [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} can support the presentation and persistence layers. Define boundaries around meaningful responsibilities: extra pass-through layers add navigation and maintenance costs without necessarily improving isolation.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/layered_architecture.rs:example}}
@@ -16,62 +16,13 @@ Use layers when the application has distinct input, domain, and persistence resp
 
 ## Microservices Architecture {#microservices}
 
-A microservices architecture structures an application as a collection of small, independent services, built around business capabilities.
-Each microservice:
-
-- is a self-contained unit that performs a specific business function;
-- can be developed, deployed, and scaled independently;
-- typically manages its own [database][p~database], promoting data independence;
-- and can use different programming languages, frameworks, and databases, allowing teams to choose the best tools for each job.
-
-Microservices communicate with each other through well-defined APIs, promoting loose coupling.
-
-For distributed dataflow programs, where several services are written as one program and compiled to separate binaries, see [Hydro][hydro~website]↗.
-
-Crates like [`axum`][c~axum~docs]↗{{hi:axum}}, [`warp`][c~warp~docs]↗{{hi:warp}} or [`tonic`][c~tonic~docs]↗{{hi:tonic}} can help build such services.
-
-### Key Technologies {#key-technologies .skip}
-
-- Communication: Microservices communicate over the network, commonly via REST or [[_grpc | gRPC]].
-- Service Discovery: Use a service registry (e.g., [`Consul`][consul~website]↗{{hi:Consul}}, [`etcd`][etcd~website]↗{{hi:etcd}}) to dynamically discover microservice locations.
-- API Gateway: Use an API gateway (e.g., [`Kong`][kong~website]↗{{hi:Kong}}) to handle routing, [authentication][p~authentication], and other cross-cutting concerns.
-- Message Queues: Use message queues (e.g., [`RabbitMQ`][rabbitmq~website]↗{{hi:RabbitMQ}}, [`Kafka`][kafka~website]↗{{hi:Kafka}}) for [asynchronous][p~asynchronous] communication.
-- [Containerization][p~containerization]: Use [`Docker`][docker~website]↗{{hi:Docker}} and [`Kubernetes`][kubernetes~website]↗{{hi:Kubernetes}} for [containerization][p~containerization] and orchestration.
-- Logging and Monitoring: Implement central logging and monitoring with [`Fluentd`][fluentd~website]↗{{hi:Fluentd}}; [`Elasticsearch`][c~elasticsearch~docs]↗{{hi:Elasticsearch}}, [`Logstash`][logstash~website]↗{{hi:Logstash}}, and [`Kibana`][kibana~website]↗{{hi:Kibana}}; [`Graylog`][graylog~website]↗{{hi:Graylog}}, [`Splunk`][splunk~website]↗{{hi:Splunk}}, [`Prometheus`][prometheus~website]↗{{hi:Prometheus}} and/or [`Grafana`](https://grafana.com/grafana/dashboards)↗{{hi:Grafana}}.
-- [Error Handling][p~error-handling] and Resilience: Implement retry mechanisms, circuit breakers, and other resilience patterns.
-- Configuration Management: externalize configuration and secrets e.g. with [`Vault`][vault~website]↗{{hi:Vault}}.
-- Authentication/Authorization: Implement security with [`JWT`][jwt~website]↗{{hi:JWT}} (JSON Web Tokens) or [`OAuth 2.0`][wikipedia~oauth-2.0]↗{{hi:OAuth 2.0}} / `OpenID Connect` (OIDC), using the aforementioned API Gateway or a sidecar proxy (e.g. [`Envoy`][envoyproxy~website]↗{{hi:Envoy}}, [`Istio`][istio~website]↗{{hi:Istio}}).
-- Tracing: Implement distributed tracing to track requests across microservices, using [`OpenTelemetry`][opentelemetry~website]↗{{hi:OpenTelemetry}}, [`Jaeger`][jaegertracing~website]↗{{hi:Jaeger}}, or [`Zipkin`][zipkin~website]↗{{hi:Zipkin}}.
+A microservices architecture divides a system into independently deployable services around business capabilities, each owning its data and communicating through network APIs. In Rust, [`axum`][c~axum~docs]↗{{hi:axum}} can build HTTP services and [`tonic`][c~tonic~docs]↗{{hi:tonic}} can build gRPC services. Use this structure when separate teams or workloads need independent deployment and scaling; account for network failures, data consistency, and operational overhead, which a modular monolith avoids. [Hydro][hydro~website]↗ is a distributed dataflow framework that generates binaries for a multi-machine program, a related but different way to build distributed systems.
 
 See [[web-programming | Web Programming]], [[web-programming_http-server | Web Programming: HTTP Server]], [[apis | APIs]], and [[amqp | AMQP]].
 
 ## Hexagonal Architecture (Ports and Adapters) {#hexagonal-architecture}
 
-The hexagonal architecture, also known as the "Ports and Adapters" architecture, is a software design pattern that emphasizes separating the core business logic of an application from its external dependencies. It enables testability, flexibility, separation of concerns, and dependency inversion.
-
-### Core Concepts {#core-concepts .skip}
-
-The "Ports and Adapters" architecture divides the system into three main layers:
-
-- Core (Business Logic): The heart of the application, independent of external systems. It contains the domain model.
-- Ports: Interfaces that define how the core interacts with external systems.
-- Adapters: Implementations of ports to connect the core with specific external systems (e.g., [databases][p~databases], APIs, UIs).
-
-This [architecture][p~architecture] enables the core application to function independently of infrastructure and technology specifics.
-
-### Advantages {#advantages .skip}
-
-- Easy to swap out external systems (e.g., changing a [database][p~database] or UI framework) without affecting core logic.
-- Promotes clean and maintainable code.
-- Ideal for systems where clear boundaries and independence from external systems are important.
-
-### Use Cases {#use-cases .skip}
-
-- Complex systems requiring flexibility.
-- Traditional enterprise applications with a focus on maintainability and modularity.
-- Systems requiring strict adherence to domain-driven design principles.
-
-In Rust, a port is a trait and an adapter is a type that implements it. The core is generic over the trait, so tests can use an in-memory adapter and production code a database adapter. The example below injects two adapters into the same service.
+Hexagonal architecture keeps domain logic independent of I/O through ports, usually Rust traits, with adapters implementing those traits for a database, HTTP client, or user interface. Use it when core behavior needs isolated tests or integrations may change; small applications may not need separate adapter layers. Crates such as [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}} and [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} can provide concrete adapters, while Rust's trait system defines the ports. The example injects an in-memory adapter for tests and a second adapter into the same service.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/hexagonal.rs:example}}
@@ -81,36 +32,13 @@ See [[cross-platform | Cross Platform]] development.
 
 ## Event-Driven Architecture {#event-driven-architecture}
 
-In an Event-driven architecture (EDA), applications communicate by producing and consuming events. Instead of direct, synchronous requests, systems react to changes in state represented by these events.
-
-- Enable loose coupling and scalability by structuring systems around events.
-- Promote responsiveness and resilience in distributed systems.
-
-### Core Concepts {#eda-core-concepts .skip}
-
-- Event Producers and Consumers: Systems or components communicate by emitting and responding to events.
-- Event Bus/Queue: Acts as a mediator for events, often using tools like [`Kafka`][kafka~website]↗{{hi:Kafka}}, [`RabbitMQ`][rabbitmq~website]↗{{hi:RabbitMQ}}, or other message brokers.
-- [Asynchronous][p~asynchronous] Communication: Components operate independently and interact via events.
-- Often implemented with libraries like [`tokio`][c~tokio~docs]↗{{hi:tokio}} or [`async-std`][c~async-std~docs]↗{{hi:async-std}}.
-
-The example below builds a small in-process event bus with bounded channels. It sends each event to connected subscribers, waits when a subscriber's channel is full, and reports and removes disconnected subscribers; it is not a durable message broker. [`tokio::sync::broadcast`][c~tokio~docs]↗{{hi:tokio}} supports asynchronous fan-out with different lag and delivery behavior.
+In event-driven architecture, producers publish events for consumers to handle independently rather than issuing direct synchronous calls. Use it for asynchronous workflows or fan-out when components need temporal decoupling, while planning for ordering, duplicate delivery, and observability. [`tokio::sync::broadcast`][c~tokio~docs]↗{{hi:tokio}} provides in-process fan-out, but a receiver that falls behind can report lagged messages; the example compares it with a custom bounded bus that applies backpressure. Neither is a durable message broker; systems commonly use Kafka or RabbitMQ for durable delivery between services.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/event_bus.rs:example}}
 ```
 
 See [[asynchronous | Asynchronous]] and [[amqp | AMQP]].
-
-### Advantages {#eda-advantages .skip}
-
-- Highly scalable and responsive, as components can work independently.
-- Naturally supports [asynchronous][p~asynchronous] workflows and real-time data processing.
-- Encourages microservices architecture by isolating components.
-
-### Use Cases {#eda-use-cases .skip}
-
-- Systems with high throughput or real-time requirements (e.g., [`financial`][c~financial~docs]↗{{hi:financial}} systems, IoT platforms, social media apps).
-- Large-scale distributed systems where scalability and availability are key.
 
 ## Actor Model {#actor-model}
 
@@ -123,7 +51,7 @@ See the [[_actors | Actors]] chapter for more details.
 
 ## Command Query Responsibility Segregation (CQRS) {#cqrs}
 
-Command Query Responsibility Segregation (CQRS) separates operations that change state from those that read it. Different models can make sense when write-side business rules and read-side query needs differ, but the separation alone does not guarantee better performance, security, or independent scaling. If read models are updated asynchronously, callers must account for the delay between a successful command and the corresponding query result. The in-memory example illustrates the separation and event flow; it is not a durable or distributed system.
+Command Query Responsibility Segregation (CQRS) separates operations that change state from those that read it. Different models can help when write-side business rules and read-side query needs differ, but the separation alone does not guarantee better performance or scaling. If read models update asynchronously, callers must account for the delay between a successful command and its query result. The [`cqrs-es`][architecture~cqrs-es] crate provides CQRS and event-sourcing building blocks; the in-memory example illustrates the pattern without a durable store.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/cqrs.rs:example}}
@@ -131,9 +59,7 @@ Command Query Responsibility Segregation (CQRS) separates operations that change
 
 ## Pipelines/Streams {#pipelines}
 
-Pipeline/stream architecture is a design pattern focused on processing a continuous flow of data through a series of sequential steps. It's particularly relevant in scenarios requiring real-time or near real-time data processing.
-
-Each stage reads input, transforms data, and passes results onward. Stages may run sequentially or concurrently; bounded channels apply backpressure between independently running stages, though collected results and individual items can still grow. In Rust, a pipeline can be a chain of iterator adapters in one thread, channels between threads, or [`Stream`][c~futures~docs]↗{{hi:futures}} combinators for `async` code. The example below feeds and drains the bounded pipeline concurrently so backpressure cannot deadlock the producer before output collection begins.
+Pipelines pass data through ordered stages that each transform or filter the input, making the flow of processing explicit. Use iterator adapters for a single-threaded transformation or [`futures`][c~futures~docs]↗{{hi:futures}} streams and [`tokio`][c~tokio~docs]↗{{hi:tokio}} channels for asynchronous or concurrent stages. Bounded channels provide backpressure between stages, but the application must still bound its inputs and collected outputs. The example feeds and drains the bounded pipeline concurrently so the producer cannot deadlock before output collection begins.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/pipeline.rs:example}}
@@ -143,9 +69,7 @@ See [[data_parallelism | Data Parallelism]], [[data-processing | Data Processing
 
 ## Event Sourcing {#event-sourcing}
 
-Event sourcing focuses on storing a sequence of events that represent changes to the state of an application, rather than storing the current state itself. In essence, it's about recording "what happened" rather than "what is." It is useful in systems requiring auditability or history reconstruction. The current state is a fold over the event log, so you can also rebuild the state at any earlier point. Event sourcing is often paired with CQRS: events feed the read models.
-
-Replaying a log depends on preserving event order and maintaining compatible event formats as the application evolves. Snapshots can reduce replay work, but they do not replace the authoritative log. Plan for duplicate delivery, concurrency, retention, and privacy requirements before adopting an event store.
+Event sourcing stores an ordered sequence of domain events as the source of truth, then rebuilds current or historical state by replaying them. It is useful when audit history or rebuilding read models matters, and is often paired with CQRS. Event versions, duplicate delivery, concurrency, retention, and privacy need deliberate handling; snapshots reduce replay work but do not replace the log. The [`cqrs-es`][architecture~cqrs-es] crate includes event-store abstractions and an in-memory store for experiments, while production use needs durable persistence.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/event_sourcing.rs:example}}
@@ -153,11 +77,11 @@ Replaying a log depends on preserving event order and maintaining compatible eve
 
 ## Plugin Architecture {#plugin-architecture}
 
-A plugin architecture separates a host's stable extension points from implementations that provide optional behavior. Use it when applications need to select capabilities independently, such as importers or command handlers. Rust traits and explicit registration work well for extensions compiled with the host; for separately loaded native libraries, [`libloading`][architecture~libloading]↗ can load symbols, but the host and plugin need a documented, compatible ABI and ownership rules. A plugin runs with the host process's privileges, so loading untrusted code requires a separate isolation boundary.
+A plugin architecture separates a host's stable extension points from implementations that provide optional behavior. Use it when applications need to select capabilities independently, such as importers or command handlers. Rust traits and explicit registration work for plugins compiled with the host; [`inventory`][c~inventory~docs]↗{{hi:inventory}} can collect registrations, while [`libloading`][architecture~libloading]↗ can load native libraries across a separately defined ABI. Plugins run with the host process's privileges, so untrusted code needs a separate isolation boundary.
 
 ## Entity-Component-System Architecture {#entity-component-system}
 
-An entity-component system (ECS) represents objects as entities with components, while systems query and update matching component data. It is useful when many objects share behavior in different combinations, such as games or simulations; scheduling and shared-data access must still be coordinated. [`bevy_ecs`][architecture~bevy-ecs]↗ provides an ECS independently of the full Bevy engine. See [Game Development](../../categories/game-development/index.md) for related engines and ECS libraries.
+An entity-component system (ECS) represents objects as entities with components, while systems query and update matching component data. Use it when many game or simulation objects combine reusable data and behavior; scheduling and shared-data access still need coordination. [`bevy_ecs`][architecture~bevy-ecs]↗ provides an ECS independently of the full Bevy engine. See [Game Development](../../categories/game-development/index.md) for related engines and ECS libraries.
 
 ## Related Topics {#related-topics .skip}
 

@@ -8,6 +8,8 @@ use std::sync::mpsc::Receiver;
 use std::sync::mpsc::SyncSender;
 use std::thread;
 
+use tokio::sync::broadcast;
+
 /// Events published on the bus.
 #[derive(Debug, Clone, PartialEq)]
 enum Event {
@@ -40,8 +42,29 @@ impl EventBus {
     }
 }
 
+/// Demonstrates fan-out with Tokio's bounded broadcast channel.
+fn demonstrate_tokio_broadcast() {
+    let (sender, mut billing) = broadcast::channel(16);
+    let mut audit = sender.subscribe();
+    let event = Event::OrderPlaced { id: 2 };
+
+    assert_eq!(
+        sender
+            .send(event.clone())
+            .expect("subscribers are connected"),
+        2
+    );
+    assert_eq!(
+        billing.try_recv().expect("billing receives the event"),
+        event
+    );
+    assert_eq!(audit.try_recv().expect("audit receives the event"), event);
+}
+
 /// Publishes events and collects them in two independent consumers.
 fn main() {
+    demonstrate_tokio_broadcast();
+
     let mut bus = EventBus::default();
     let billing = bus.subscribe();
     let audit = bus.subscribe();
