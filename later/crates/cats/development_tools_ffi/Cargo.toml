@@ -89,7 +89,7 @@ path = "examples/uniffi.rs"
 test = true
 
 [dependencies]
-anyhow = { version = "1.0.104", optional = true }
+anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive"] }
 cxx = { version = "1.0.205", optional = true }
 flutter_rust_bridge = { version = "=2.13.0", optional = true }
@@ -118,7 +118,7 @@ lua = ["dep:mlua", "mlua/vendored"]
 lua-module = ["dep:mlua", "mlua/module"]
 objc = ["dep:objc2", "dep:objc2-foundation", "dep:objc2-app-kit"]
 node = ["dep:napi", "dep:napi-derive", "dep:neon"]
-ruby = ["dep:magnus", "dep:rutie", "dep:anyhow"]
+ruby = ["dep:magnus", "dep:rutie"]
 uniffi = ["dep:uniffi"]
 
 [target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]

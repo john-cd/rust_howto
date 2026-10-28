@@ -28,7 +28,6 @@ fn hello(mut cx: FunctionContext<'_>) -> JsResult<'_, JsString> {
     Ok(cx.string(greeting()))
 }
 
-// Entry point of the Neon module.
 /// Registers the `hello` function in the exports of the Node.js module.
 #[cfg(feature = "node")]
 #[::neon::main]
@@ -38,27 +37,28 @@ fn register(mut cx: ModuleContext<'_>) -> NeonResult<()> {
     Ok(())
 }
 
-// TODO fix - should excercise the Neon module through Node.js runtime.
-/// Runs the host-independent part without pretending to load a Node addon.
-fn main() {
+/// Runs the host-independent example and reports success.
+fn main() -> anyhow::Result<()> {
     println!("{}", greeting());
+    Ok(())
 }
 // ANCHOR_END: example
 
-pub fn run() -> Result<(), Box<dyn std::error::Error>> {
-    main();
-    Ok(())
+/// Runs the Neon example without loading its Node.js module.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the neon example's main path succeeds.
+    /// Verifies that the host-independent entry point succeeds without Node.js.
     #[test]
-    #[ignore = "requires Node module runtime"]
     fn test_neon_example_entry_point() {
-        main();
+        let result = run();
+
+        assert!(result.is_ok(), "the Neon example failed: {result:?}");
     }
 
     /// Checks the string returned by the native callback without Node.js.

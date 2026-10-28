@@ -55,6 +55,44 @@ This book's included example tests the plain Rust sum, point conversion, greetin
 
 Neon uses a `FunctionContext` to access JavaScript values and `#[neon::main]` to register exports in a native module. Its [project guide][ffi~neon-start] starts with Node.js and Rust; use the generated package's npm build script and load its `.node` artifact through the package entry point. Choose between Neon and napi-rs according to their API and packaging needs; this chapter makes no comparative performance claim.
 
+The book example's ordinary Rust test checks the host-independent greeting. To test the native export, generate and build a Neon package, then add a JavaScript test that loads the generated addon. Keep the scaffold's generated `build` script and add a test script that builds the module before Node's built-in test runner:
+
+```bash
+npm init neon@latest neon-example
+cd neon-example
+npm install
+```
+
+In the generated `package.json`, set the test script while preserving its existing build command:
+
+```json
+{
+  "scripts": {
+    "test": "npm run build && node --test"
+  }
+}
+```
+
+For example, save this as `test/addon.test.cjs` after adapting the generated Rust `hello` export to return the greeting from this example:
+
+```js
+const assert = require('node:assert/strict');
+const test = require('node:test');
+const { hello } = require('..');
+
+test('the Neon addon returns its greeting', () => {
+  assert.equal(hello(), 'hello from neon!');
+});
+```
+
+Run the test with:
+
+```bash
+npm test
+```
+
+The test above exercises the compiled Node addon. The Cargo test only calls the plain Rust function and must not invoke `#[neon::main]` outside Node.js.
+
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/node/neon.rs:example}}
 ```
