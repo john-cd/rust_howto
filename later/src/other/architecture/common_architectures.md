@@ -8,6 +8,8 @@
 
 A layered architecture is a traditional software design pattern that organizes an application into distinct horizontal layers, like Presentation, Business Logic, and Data Access. Each layer performs a specific role, and they are arranged in a hierarchical order. It encourages separation of concerns, modularity, and testability.
 
+Use layers when the application has distinct input, domain, and persistence responsibilities that benefit from independent tests. The example passes a repository into a service and uses an in-memory implementation, so the business layer can run without a database. Define boundaries around meaningful responsibilities: extra pass-through layers add navigation and maintenance costs without necessarily improving isolation.
+
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/layered_architecture.rs:example}}
 ```
@@ -121,7 +123,7 @@ See the [[_actors | Actors]] chapter for more details.
 
 ## Command Query Responsibility Segregation (CQRS) {#cqrs}
 
-Command Query Responsibility Segregation (CQRS) is an architectural pattern that separates read and write operations. This separation allows for independent optimization of each operation, leading to improved performance, scalability, and security. It is useful for systems with high read/write demands or complex business rules.
+Command Query Responsibility Segregation (CQRS) separates operations that change state from those that read it. Different models can make sense when write-side business rules and read-side query needs differ, but the separation alone does not guarantee better performance, security, or independent scaling. If read models are updated asynchronously, callers must account for the delay between a successful command and the corresponding query result. The in-memory example illustrates the separation and event flow; it is not a durable or distributed system.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/cqrs.rs:example}}
@@ -142,6 +144,8 @@ See [[data_parallelism | Data Parallelism]], [[data-processing | Data Processing
 ## Event Sourcing {#event-sourcing}
 
 Event sourcing focuses on storing a sequence of events that represent changes to the state of an application, rather than storing the current state itself. In essence, it's about recording "what happened" rather than "what is." It is useful in systems requiring auditability or history reconstruction. The current state is a fold over the event log, so you can also rebuild the state at any earlier point. Event sourcing is often paired with CQRS: events feed the read models.
+
+Replaying a log depends on preserving event order and maintaining compatible event formats as the application evolves. Snapshots can reduce replay work, but they do not replace the authoritative log. Plan for duplicate delivery, concurrency, retention, and privacy requirements before adopting an event store.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/event_sourcing.rs:example}}
