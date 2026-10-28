@@ -193,7 +193,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-11 — Tabular data and finance
 
-- [#1909](https://github.com/john-cd/rust_howto/issues/1909) — **P3** — Add examples: read and write Excel files (calamine, rust_xlsxwriter) — **BLOCKED — examples and refs are in merged PR #1973; the finance index target from #365 is absent, and local Cargo/refdefs/book gates remain**
+- [#1909](https://github.com/john-cd/rust_howto/issues/1909) — **P3** — Add examples: read and write Excel files (calamine, rust_xlsxwriter) — **IMPLEMENTED ON DEVELOP; OPEN — PR #1973 examples and references are merged; #365 adds the finance index link; remaining repository gates deferred to the final pass**
 
 #### NOW-CODE-12 — Embedded systems and hardware interfaces
 
