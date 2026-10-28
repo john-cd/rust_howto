@@ -1,5 +1,5 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO expand example to test the TTL and other features of the `cached` crate.
 
 // ANCHOR: example
 //! This example demonstrates two key uses of the `cached` crate:
@@ -53,7 +53,7 @@ fn main() {
         let cache = FIBONACCI.write();
         println!("misses: {:?}", cache.cache_misses());
         assert_eq!(cache.cache_misses(), Some(11));
-        // Make sure the lock is dropped.
+        // Braces to make sure the lock is dropped.
     }
 
     // Example with customized cache:
@@ -64,7 +64,6 @@ fn main() {
     println!("User data: {first_fetch}");
     println!("Cached user data: {cached_fetch}");
 }
-
 // ANCHOR_END: example
 
 pub fn run() {
@@ -90,6 +89,6 @@ mod tests {
         assert_eq!(fetch_data(123), "Data for key 123");
     }
 }
-// review further
+// TODO review further
 // <https://docs.rs/cached/latest/cached/proc_macro/index.html>
 // <https://github.com/jaemk/cached/tree/master/examples>

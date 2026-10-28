@@ -1,5 +1,7 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO explain the purpose of this example and how `BinaryHeap` works as a
+// priority queue. explain what is a priority queue and how elements are ordered
+// within it.
 
 // ANCHOR: example
 //! A `BinaryHeap` used as a priority queue.
@@ -59,7 +61,6 @@ fn main() {
         println!("{value}");
     }
 }
-
 // ANCHOR_END: example
 
 pub fn run() {

@@ -1,5 +1,6 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO explain the graph structure, the heuristic function, and how the A*
+// algorithm is applied to find the shortest path from node A to node E.
 
 // ANCHOR: example
 //! Shortest path search on a weighted graph using the A* algorithm with
@@ -93,7 +94,6 @@ fn main() {
         println!("No path found.");
     }
 }
-
 // ANCHOR_END: example
 
 /// Runs the `petgraph` A* example by calling `main()`.

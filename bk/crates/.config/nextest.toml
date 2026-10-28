@@ -1,4 +1,5 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
+# TODO do we need to update the target dir?
 
 [store]
 # The directory under the workspace root at which nextest-related files are
@@ -11,7 +12,7 @@ dir = "../../target/bk/nextest"
 # The set of tests run by `cargo nextest run` by default.
 # default-filter = "all()"
 
-# Do not run tests that require Postgres, elasticsearch, etc... by default
+# Do not run tests that require an external service like Postgres, ElasticSearch, etc... by default
 default-filter = "not (test(require_external_svc))"
 
 # "retries" defines the number of times a test should be retried. If set to a

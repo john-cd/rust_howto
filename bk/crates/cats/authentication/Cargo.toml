@@ -1,4 +1,4 @@
-# TODO Reviewed ??-??-2026
+# Reviewed 10-27-2026
 
 [package]
 name = "authentication"
@@ -36,7 +36,7 @@ serde = "1.0.229"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] } # Run the asynchronous Axum tests.
 tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
 # Pinned: axum-login needs the tower-sessions 0.14 SessionManagerLayer.
-tower-sessions = { version = "0.14.0", features = ["memory-store"] }
+tower-sessions = { version = "0.15.0", features = ["memory-store"] }
 
 [dev-dependencies]
 httpmock = "0.9.0"

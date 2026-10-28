@@ -1,5 +1,5 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO short explaination BLAKE3
 
 // ANCHOR: example
 //! Cryptographic hashing with `blake3`: one-shot, incremental, keyed, key
@@ -92,7 +92,6 @@ fn main() {
     output_reader.fill(&mut output);
     println!("Output: {output:x?}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the BLAKE3 example by delegating to `main()`.

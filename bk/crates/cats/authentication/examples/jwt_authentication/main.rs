@@ -1,8 +1,11 @@
 //! Signs and verifies a JWT and demonstrates an Axum bearer-token extractor.
+//!
+//! TODO Reviewed ??-??-2026.
 
 mod jwt;
 mod jwt_axum_extractor;
 
+// TODO move example code to a separate module or file.
 use std::time::SystemTime;
 use std::time::UNIX_EPOCH;
 

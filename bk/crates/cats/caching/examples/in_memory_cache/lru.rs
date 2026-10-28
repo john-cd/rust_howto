@@ -1,5 +1,5 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO explain LRU (Least Recently Used) caching and its purpose.
 
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `LruCache` from the `lru`
@@ -26,9 +26,7 @@ fn main() {
     // Access some entries:
     println!("a) value for key 1: {:?}", cache.get(&1)); // Should print `Some("one")`.
     assert_eq!(
-        *cache
-            .get(&2)
-            .expect("expected example value should be present"),
+        *cache.get(&2).expect("example value should be present"),
         "two"
     );
     assert_eq!(cache.get(&3), Some(&"three"));
@@ -55,16 +53,13 @@ fn main() {
         // Returns a mutable reference to the value of the key in the cache or
         // `None`, if it is not present in the cache.
         // Moves the key to the head of the LRU list, if it exists.
-        let v = cache
-            .get_mut(&5)
-            .expect("expected example value should be present");
+        let v = cache.get_mut(&5).expect("example value should be present");
         *v = "new value";
         assert_eq!(cache.get_mut(&5), Some(&mut "new value"));
 
         assert_eq!(cache.get_mut(&6), None);
     }
 }
-
 // ANCHOR_END: example
 
 pub fn run() {

@@ -1,5 +1,5 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO explain advantages and limitations of using `fastrand` for random number generation.
 
 // ANCHOR: example
 //! BEWARE: `fastrand` is NOT cryptographically secure.
@@ -35,7 +35,6 @@ fn main() {
     rng.shuffle(&mut v);
     println!("Shuffled vector: {v:?}");
 }
-
 // ANCHOR_END: example
 
 pub fn run() {
@@ -46,7 +45,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the fastrand example through its entry point.
     #[test]
     fn test_fastrand_example_entry_point() {
         main();

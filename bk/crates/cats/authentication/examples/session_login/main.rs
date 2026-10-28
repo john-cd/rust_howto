@@ -7,5 +7,5 @@ mod csrf;
 mod hashing;
 
 fn main() {
-    println!("Run `cargo test --example session_login`.");
+    println!("Run `cargo test --example session_login`."); // TODO call the run() functions of the examples
 }

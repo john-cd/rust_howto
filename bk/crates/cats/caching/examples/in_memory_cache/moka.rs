@@ -1,15 +1,14 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
+// TODO explain the purpose of this example and what `moka` is used for.
 
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `moka` crate for creating
-//! a concurrent cache.
-//!
-//! `moka` is inspired by the 'Caffeine' library for Java.
-//!
-//! Remember to add `moka = "0.12.10"` or latest to your `Cargo.toml`.
+//! a concurrent cache. `moka` is inspired by the 'Caffeine' library for Java.
 //!
 //! `moka` also provides an asynchronous (futures aware) cache in its `future`
 //! module.
+//!
+//! Remember to add `moka = "0.12.10"` or latest to your `Cargo.toml`.
 
 use std::time::Duration;
 
@@ -66,4 +65,4 @@ mod tests {
         main();
     }
 }
-// TODO See also examples in <https://docs.rs/crate/moka/0.12.10>
+// TODO review examples in <https://docs.rs/crate/moka/0.12.10> and expand?

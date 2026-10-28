@@ -1,6 +1,6 @@
 //! Runs one of the `rand` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026.
+//! Reviewed 10-27-2026.
 
 use clap::Parser;
 use clap::Subcommand;
@@ -12,7 +12,7 @@ mod rand_custom;
 mod rand_distr;
 mod rand_password;
 mod rand_range;
-mod rand_range1;
+mod rand_range_uniform;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -29,8 +29,8 @@ enum Commands {
     #[command(name = "fastrand")]
     Fastrand,
     /// Runs the `rand1` example.
-    #[command(name = "rand1")]
-    Rand1,
+    #[command(name = "rand")]
+    Rand,
     /// Runs the `rand_alphanumeric` example.
     #[command(name = "rand_alphanumeric")]
     RandAlphanumeric,
@@ -47,8 +47,8 @@ enum Commands {
     #[command(name = "rand_range")]
     RandRange,
     /// Runs the `rand_range1` example.
-    #[command(name = "rand_range1")]
-    RandRange1,
+    #[command(name = "rand_range_uniform")]
+    RandRangeUniform,
 }
 
 /// Runs the example selected on the command line.
@@ -60,7 +60,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             Commands::Fastrand => {
                 fastrand::run();
             }
-            Commands::Rand1 => {
+            Commands::Rand => {
                 rand1::run();
             }
             Commands::RandAlphanumeric => {
@@ -78,8 +78,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             Commands::RandRange => {
                 rand_range::run();
             }
-            Commands::RandRange1 => {
-                rand_range1::run();
+            Commands::RandRangeUniform => {
+                rand_range_uniform::run();
             }
         }
     }

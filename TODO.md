@@ -8,13 +8,19 @@
 - [ ] JOHN Review .pre-commit-config.yaml vs prek.toml
 - [ ] JOHN review LICENSE
 - [ ] JOHN bookmarks.json
+- [ ] cargo husky?
+- [ ] prek or pre-commit?
 
 ## Tasks
 
 ### Urgent
 
-- [/] review dirty worktrees, create commits, integrate useful branches, discard stale work, and clean up topic refs
-- [/] integrate all useful topic branches into develop and discard the rest
+- [/] meaningful, not generic, README.md - see for example bk\crates\cats\asynchronous\README.md
+- [ ] review all TODO comments in the codebase and fix
+- [/] fix "function xyz is never used". most book examples should have a private main() function and a pub fn run() function + a test that call main(). run() should be called by the main() function of the example.
+- [/] all book examples should have a test that calls the private main() function and verifies the expected behavior. also add tests to verify other functions / code items within the exanple. ensure coverage for edge cases and error handling.
+- [ ] review dirty worktrees, create commits, integrate useful branches, discard stale work, and clean up topic refs
+- [ ] integrate all useful topic branches into develop and discard the rest
 
 ### Scripts, Tools
 
@@ -23,8 +29,7 @@
 ### Code Examples
 
 - [/] improve comments within examples. add context and explanations where necessary. end with a period.
-  - [/] clarified commentary in 15 examples; the broader editorial review remains.
-- [/] WAIT move code examples from later/ to bk/ when code + text ready
+- [ ] WAIT move code examples from later/ to bk/ when code + text ready
 
 ---
 

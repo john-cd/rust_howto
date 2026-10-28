@@ -1,10 +1,12 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Sorts a vector of structs, by their derived order and by a chosen field.
 
 /// A struct with `name` and `age` fields.
+///
+/// It derives `PartialOrd` and `Ord` for ordering comparisons,
+/// and `PartialEq` and `Eq` for equality comparisons.
 #[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Person {
     /// The person's name.
@@ -15,7 +17,7 @@ struct Person {
 
 impl Person {
     /// Constructor for creating a new `Person` instance.
-    pub fn new(name: String, age: u32) -> Self {
+    fn new(name: String, age: u32) -> Self {
         Self { name, age }
     }
 }
@@ -29,6 +31,8 @@ fn main() {
     ];
 
     // Sort people by derived natural order (in this case, name and age):
+    // TODO explain that the derived order is based on the order of the fields
+    // in the struct, with `name` being compared first, followed by `age`.
     people.sort();
 
     assert_eq!(

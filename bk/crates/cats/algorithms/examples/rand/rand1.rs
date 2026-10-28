@@ -1,10 +1,10 @@
-#![allow(dead_code)]
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! In `Cargo.toml`, add:
 //! ```toml
-//! rand = "0.10.3"
+//! [dependencies]
+//! rand = "0.10.3" or latest.
 //! ```
 
 /// Generates and prints a random `u8`, a random `u32` in a range and a random
