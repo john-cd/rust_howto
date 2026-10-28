@@ -8,7 +8,7 @@ This crate contains code examples for the **Algorithms** category on crates.io. 
 
 - **Graph** (`examples/graph/`): Demonstrates concepts like `pathfinding_astar`, `petgraph_astar`, `petgraph_bfs`, `petgraph_dfs`, `petgraph_dijkstra`, `petgraph_mst`, `petgraph_toposort`.
 - **Hashing** (`examples/hashing/`): Demonstrates concepts like `blake3`, `foldhash`, `md5`, `sha1`, `sha2`, `sha_digest`, `xxh3_checksum`.
-- **Rand** (`examples/rand/`): Demonstrates concepts like `fastrand`, `rand1`, `rand_alphanumeric`, `rand_custom`, `rand_distr`, `rand_password`, `rand_range`, `rand_range1`.
+- **Rand** (`examples/rand/`): Demonstrates concepts like `fastrand`, `rand1`, `rand_alphanumeric`, `rand_custom`, `rand_distr`, `rand_password`, `rand_range`, `rand_range_uniform`.
 - **Sort** (`examples/sort/`): Demonstrates concepts like `sort_basic`, `sort_float`, `sort_struct`.
 
 ## Usage
