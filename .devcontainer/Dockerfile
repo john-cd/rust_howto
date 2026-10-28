@@ -136,6 +136,12 @@ ARG MDBOOK_UTILS_REV
 ARG TECTONIC_VERSION
 ARG TECTONIC_LINUX_SHA256
 ARG TARGETARCH
+ARG ORACLE_CLIENT_VERSION
+ARG ORACLE_CLIENT_DOWNLOAD_ID
+ARG ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256
+ARG ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256
+ARG ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256
+ARG ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256
 ENV MDBOOK_UTILS_REV=${MDBOOK_UTILS_REV}
 ENV CARGO_TARGET_DIR=/code/target/ \
     CARGO_BUILD_BUILD_DIR=/code/build/
@@ -180,6 +186,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libasound2-dev \
     libayatana-appindicator3-dev \
     libc6-dev \
+    libaio1t64 \
     libclang-dev \
     libfontconfig1-dev \
     libfreetype6-dev \
@@ -219,12 +226,30 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     python-is-python3 \
     python3-venv \
     ruby-dev \
+    unzip \
     wget \
     xz-utils \
     zip \
     xorg-dev \
     && nasm --version \
     && apt-get clean -y
+
+## Install the hash-pinned Oracle Instant Client runtime and SDK for OCI examples.
+COPY --link --chmod=755 .devcontainer/install_oracle_client.sh /usr/local/bin/install_oracle_client.sh
+RUN ORACLE_CLIENT_ARCH="$TARGETARCH" \
+    ORACLE_CLIENT_VERSION="$ORACLE_CLIENT_VERSION" \
+    ORACLE_CLIENT_DOWNLOAD_ID="$ORACLE_CLIENT_DOWNLOAD_ID" \
+    ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256="$ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256" \
+    ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256="$ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256" \
+    ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256="$ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256" \
+    ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256="$ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256" \
+    /usr/local/bin/install_oracle_client.sh /opt/oracle \
+    && echo /opt/oracle/instantclient_23_26 > /etc/ld.so.conf.d/oracle-instantclient.conf \
+    && ldconfig
+ENV ORACLE_HOME=/opt/oracle/instantclient_23_26 \
+    OCI_LIB_DIR=/opt/oracle/instantclient_23_26 \
+    LD_LIBRARY_PATH=/opt/oracle/instantclient_23_26 \
+    LIBRARY_PATH=/opt/oracle/instantclient_23_26
 
 ## Alternatively, use `lld` instead of the `mold` linker
 ## See configuration in .cargo/config.toml

@@ -56,8 +56,10 @@ mod tests {
     use std::io::Read;
 
     use super::CountingReader;
+    use super::main;
 
     /// Verifies the decorator preserves the input and tracks bytes returned.
+    /// Runs the decorator example through its entry point.
     #[test]
     fn counts_bytes_read() {
         let mut reader = CountingReader::new(Cursor::new(b"Rust"));

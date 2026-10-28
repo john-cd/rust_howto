@@ -6,6 +6,11 @@
 
 Use symmetric authenticated encryption to protect application data. The shared key encrypts and authenticates a message; the nonce must follow the algorithm's requirements and must not be reused with the same key for AES-GCM or ChaCha20-Poly1305. Public-key algorithms are generally used to establish or wrap keys rather than encrypt large messages directly. Authentication failure must be treated as an error, and unauthenticated plaintext must not be used.
 
+The AES-GCM and ChaCha20-Poly1305 examples use pure Rust implementations, so
+compiling, testing, and linting them requires no additional native crypto
+library. Running the key-generation examples requires the operating system's
+secure random source; they do not need an external service.
+
 ## AES-256-GCM {#aes-256-gcm}
 
 [`aes-gcm`][c~aes-gcm~docs]↗ provides AES-GCM authenticated encryption. The example generates a key and nonce from the operating system's random source, encrypts and decrypts a message, and tests that modified ciphertext is rejected.

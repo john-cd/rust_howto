@@ -17,11 +17,11 @@ use base64::engine::general_purpose::STANDARD;
 use chacha20poly1305::XChaCha20Poly1305;
 use chacha20poly1305::XNonce;
 use chacha20poly1305::aead::Aead as _;
-use chacha20poly1305::aead::AeadCore as _;
+use chacha20poly1305::aead::Generate as _;
 use chacha20poly1305::aead::KeyInit as _;
-use chacha20poly1305::aead::OsRng;
 use chacha20poly1305::aead::Payload;
-use chacha20poly1305::aead::rand_core::RngCore as _;
+use rand::TryRng as _;
+use rand::rngs::SysRng;
 use serde::Deserialize;
 use serde::Serialize;
 use zeroize::Zeroizing;
@@ -92,9 +92,11 @@ fn associated_data(version: u32, context: &[u8]) -> Vec<u8> {
 impl SealedEnvelope {
     /// Encrypts `secret` under `passphrase`, bound to `context`.
     fn seal(secret: &[u8], passphrase: &[u8], context: &[u8]) -> Result<Self> {
+        let mut rng = SysRng;
         let mut salt = [0_u8; SALT_LEN];
-        OsRng.fill_bytes(&mut salt);
-        let nonce = XChaCha20Poly1305::generate_nonce(&mut OsRng);
+        rng.try_fill_bytes(&mut salt)
+            .map_err(|error| anyhow!("salt generation failed: {error}"))?;
+        let nonce: XNonce = XNonce::try_generate_from_rng(&mut rng)?;
         let key =
             derive_key(passphrase, &salt, MEMORY_KIB, ITERATIONS, PARALLELISM)?;
         let cipher = XChaCha20Poly1305::new_from_slice(key.as_ref())
@@ -133,10 +135,12 @@ impl SealedEnvelope {
             ));
         }
         let salt = STANDARD.decode(&self.salt).context("salt")?;
-        let nonce = STANDARD.decode(&self.nonce).context("nonce")?;
-        if nonce.len() != NONCE_LEN {
-            return Err(anyhow!("nonce must be {NONCE_LEN} bytes"));
-        }
+        let nonce_bytes = STANDARD.decode(&self.nonce).context("nonce")?;
+        let nonce_array: [u8; NONCE_LEN] = nonce_bytes
+            .as_slice()
+            .try_into()
+            .map_err(|_| anyhow!("nonce must be {NONCE_LEN} bytes"))?;
+        let nonce = XNonce::from(nonce_array);
         let ciphertext =
             STANDARD.decode(&self.ciphertext).context("ciphertext")?;
         let key = derive_key(
@@ -150,7 +154,7 @@ impl SealedEnvelope {
             .map_err(|e| anyhow!("invalid key: {e}"))?;
         let plaintext = cipher
             .decrypt(
-                XNonce::from_slice(&nonce),
+                &nonce,
                 Payload {
                     msg: &ciphertext,
                     aad: &associated_data(self.version, context),

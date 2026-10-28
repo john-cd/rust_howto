@@ -25,6 +25,12 @@ services:
         FLUTTER_VERSION: ${FLUTTER_VERSION:?Flutter version must be defined}
         FLUTTER_GIT_REVISION: ${FLUTTER_GIT_REVISION:?Flutter Git revision must be defined}
         FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: ${FLUTTER_RUST_BRIDGE_CODEGEN_VERSION:?Flutter Rust Bridge codegen version must be defined}
+        ORACLE_CLIENT_VERSION: ${ORACLE_CLIENT_VERSION:?Oracle Instant Client version must be defined}
+        ORACLE_CLIENT_DOWNLOAD_ID: ${ORACLE_CLIENT_DOWNLOAD_ID:?Oracle download ID must be defined}
+        ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256: ${ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256:?Linux x64 Oracle Basic Light checksum must be defined}
+        ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256: ${ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256:?Linux x64 Oracle SDK checksum must be defined}
+        ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256: ${ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256:?Linux ARM64 Oracle Basic Light checksum must be defined}
+        ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256: ${ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256:?Linux ARM64 Oracle SDK checksum must be defined}
         PANDOC_VERSION: ${PANDOC_VERSION:?pandoc version must be defined}
       secrets:
         - source: github_token

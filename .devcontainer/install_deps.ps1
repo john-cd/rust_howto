@@ -78,6 +78,101 @@ function Add-UserPath {
     }
 }
 
+# Install the pinned Oracle Instant Client runtime and SDK for OCI examples.
+function Install-OracleInstantClient {
+    $oracleVersion = $toolVersions['ORACLE_CLIENT_VERSION']
+    $downloadId = $toolVersions['ORACLE_CLIENT_DOWNLOAD_ID']
+    if ($oracleVersion -notmatch '^(?<major>\d+)\.(?<minor>\d+)\.') {
+        throw "Invalid Oracle Instant Client version: $oracleVersion"
+    }
+
+    $oracleDirectoryName = "instantclient_$($Matches.major)_$($Matches.minor)"
+    $oracleVersionDirectory = Join-Path $env:LOCALAPPDATA 'Programs'
+    $oracleVersionDirectory = Join-Path $oracleVersionDirectory 'Oracle'
+    $oracleVersionDirectory = Join-Path $oracleVersionDirectory 'InstantClient'
+    $oracleVersionDirectory = Join-Path $oracleVersionDirectory $oracleVersion
+    $oracleDirectory = Join-Path $oracleVersionDirectory $oracleDirectoryName
+    $oracleDll = Join-Path $oracleDirectory 'oci.dll'
+    $oracleSdkDirectory = Join-Path $oracleDirectory 'sdk'
+    $oracleSdkDirectory = Join-Path $oracleSdkDirectory 'lib'
+    $oracleSdkDirectory = Join-Path $oracleSdkDirectory 'msvc'
+    $oracleImportLibrary = Join-Path $oracleSdkDirectory 'oci.lib'
+    $oracleHeader = Join-Path (Join-Path $oracleDirectory 'sdk') 'include'
+    $oracleHeader = Join-Path $oracleHeader 'oci.h'
+
+    if ((Test-Path -LiteralPath $oracleDll -PathType Leaf) -and
+        (Test-Path -LiteralPath $oracleImportLibrary -PathType Leaf) -and
+        (Test-Path -LiteralPath $oracleHeader -PathType Leaf)) {
+        Write-Host "Oracle Instant Client $oracleVersion is already installed." -ForegroundColor Green
+    } else {
+        if (Test-Path -LiteralPath $oracleDirectory) {
+            throw "Oracle Instant Client directory exists without the required runtime and SDK files: $oracleDirectory"
+        }
+
+        $oracleStage = Join-Path $env:TEMP "oracle-instantclient-$oracleVersion-$PID"
+        if (Test-Path -LiteralPath $oracleStage) {
+            throw "Oracle Instant Client staging directory already exists: $oracleStage"
+        }
+
+        New-Item -ItemType Directory -Path $oracleStage | Out-Null
+        try {
+            $packages = @(
+                @{
+                    Name = "instantclient-basiclite-windows.x64-$oracleVersion.zip"
+                    Sha256 = $toolVersions['ORACLE_CLIENT_WINDOWS_BASICLITE_SHA256']
+                },
+                @{
+                    Name = "instantclient-sdk-windows.x64-$oracleVersion.zip"
+                    Sha256 = $toolVersions['ORACLE_CLIENT_WINDOWS_SDK_SHA256']
+                }
+            )
+
+            foreach ($package in $packages) {
+                $archivePath = Join-Path $oracleStage $package.Name
+                $archiveUri = "https://download.oracle.com/otn_software/nt/instantclient/$downloadId/$($package.Name)"
+                Invoke-WebRequest -Uri $archiveUri -OutFile $archivePath
+                $archiveHash = (Get-FileHash -LiteralPath $archivePath -Algorithm SHA256).Hash.ToLowerInvariant()
+                if ($archiveHash -ne $package.Sha256) {
+                    throw "Oracle Instant Client archive SHA-256 did not match for $($package.Name): $archiveHash"
+                }
+                Expand-Archive -LiteralPath $archivePath -DestinationPath $oracleStage -Force
+            }
+
+            $oracleSource = Join-Path $oracleStage $oracleDirectoryName
+            foreach ($requiredFile in @(
+                (Join-Path $oracleSource 'oci.dll'),
+                (Join-Path (Join-Path (Join-Path $oracleSource 'sdk') 'lib') 'msvc\oci.lib'),
+                (Join-Path (Join-Path $oracleSource 'sdk') 'include\oci.h')
+            )) {
+                if (-not (Test-Path -LiteralPath $requiredFile -PathType Leaf)) {
+                    throw "Oracle Instant Client package is missing a required file: $requiredFile"
+                }
+            }
+
+            New-Item -ItemType Directory -Path $oracleVersionDirectory -Force | Out-Null
+            Move-Item -LiteralPath $oracleSource -Destination $oracleDirectory
+        } finally {
+            if (Test-Path -LiteralPath $oracleStage) {
+                $tempRoot = [IO.Path]::GetFullPath($env:TEMP).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
+                $resolvedStage = [IO.Path]::GetFullPath($oracleStage)
+                if (-not $resolvedStage.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase)) {
+                    throw "Refusing to remove Oracle staging directory outside TEMP: $resolvedStage"
+                }
+                Remove-Item -LiteralPath $resolvedStage -Recurse -Force
+            }
+        }
+    }
+
+    $oracleSdkDirectory = Join-Path (Join-Path (Join-Path $oracleDirectory 'sdk') 'lib') 'msvc'
+    [Environment]::SetEnvironmentVariable('ORACLE_HOME', $oracleDirectory, 'User')
+    [Environment]::SetEnvironmentVariable('OCI_LIB_DIR', $oracleSdkDirectory, 'User')
+    $env:ORACLE_HOME = $oracleDirectory
+    $env:OCI_LIB_DIR = $oracleSdkDirectory
+    Add-UserPath -Directory $oracleDirectory
+}
+
+Install-OracleInstantClient
+
 # Refresh PATH and JAVA_HOME values installed by Winget for this PowerShell process.
 $registeredPath = @(
     [Environment]::GetEnvironmentVariable('Path', 'Machine'),
@@ -222,6 +317,10 @@ just --version
 mdbook --version
 clang --version
 nasm --version
+if (-not (Test-Path -LiteralPath (Join-Path $env:OCI_LIB_DIR 'oci.lib') -PathType Leaf)) {
+    throw "Oracle OCI import library not found in OCI_LIB_DIR: $env:OCI_LIB_DIR"
+}
+Write-Host "Oracle Instant Client SDK: $env:OCI_LIB_DIR"
 pandoc --version | Select-Object -First 1
 tectonic --version
 cargo fmt-toml --version

@@ -18,6 +18,8 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use super::main;
+
     /// Verifies that `dbg!` returns the value of its expression.
     #[test]
     fn dbg_returns_the_expression_value() {
@@ -26,6 +28,7 @@ mod tests {
         assert_eq!(dbg!(value), 4);
     }
 
+    /// Exercises the user-facing example entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

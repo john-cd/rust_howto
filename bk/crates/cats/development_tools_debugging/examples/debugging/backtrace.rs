@@ -21,6 +21,8 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use std::backtrace::Backtrace;
 
+    use super::main;
+
     /// Verifies that a forced backtrace can be formatted as text.
     #[test]
     fn forced_backtrace_has_a_display_value() {
@@ -29,6 +31,7 @@ mod tests {
         assert!(!backtrace.to_string().is_empty());
     }
 
+    /// Exercises the user-facing example entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

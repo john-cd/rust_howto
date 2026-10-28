@@ -46,7 +46,7 @@ fn main() -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::Dsa => {
-                dsa::run();
+                dsa::run()?;
             }
             Commands::Ecdsa => {
                 ecdsa::run()?;

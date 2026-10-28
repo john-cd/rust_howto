@@ -11,16 +11,18 @@ use aes_gcm_siv::Aes256GcmSiv;
 use aes_gcm_siv::Key;
 use aes_gcm_siv::Nonce;
 use aes_gcm_siv::aead::Aead as _;
+use aes_gcm_siv::aead::Generate as _;
 use aes_gcm_siv::aead::KeyInit as _;
-use aes_gcm_siv::aead::OsRng;
 use aes_gcm_siv::aead::Payload;
+use rand::rngs::SysRng;
 
 /// This example demonstrates how to use the `aes-gcm-siv` crate to encrypt and
 /// decrypt data using the AES-GCM-SIV algorithm (Misuse-Resistant Authenticated
 /// Encryption Cipher).
-fn main() -> Result<(), aes_gcm_siv::Error> {
+fn main() -> anyhow::Result<()> {
     // Generate a random 256-bit key:
-    let key: Key<Aes256GcmSiv> = Aes256GcmSiv::generate_key(&mut OsRng);
+    let key: Key<Aes256GcmSiv> =
+        Key::<Aes256GcmSiv>::try_generate_from_rng(&mut SysRng)?;
 
     // Use a fixed nonce for this one-message demonstration. A production
     // protocol should follow AES-GCM-SIV's nonce and usage limits.
@@ -63,7 +65,7 @@ fn main() -> Result<(), aes_gcm_siv::Error> {
 
 // ANCHOR_END: example
 
-pub fn run() -> Result<(), aes_gcm_siv::Error> {
+pub fn run() -> anyhow::Result<()> {
     main()
 }
 

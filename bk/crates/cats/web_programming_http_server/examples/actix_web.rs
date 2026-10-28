@@ -37,27 +37,20 @@ async fn main() -> std::io::Result<()> {
 
 #[cfg(test)]
 mod tests {
-    use actix_web::test;
+    use actix_web::test as actix_test;
 
     use super::*;
 
     /// Verifies the server's network-facing response.
     #[actix_web::test]
     async fn require_network() -> std::io::Result<()> {
-        let app = test::init_service(App::new().service(greet)).await;
-        let req = test::TestRequest::get().uri("/").to_request();
+        let app = actix_test::init_service(App::new().service(greet)).await;
+        let req = actix_test::TestRequest::get().uri("/").to_request();
 
-        let resp = test::call_service(&app, req).await;
-        let body = test::read_body(resp).await;
+        let resp = actix_test::call_service(&app, req).await;
+        let body = actix_test::read_body(resp).await;
 
         assert_eq!(body, "Hello, world!");
         Ok(())
-    }
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
     }
 }

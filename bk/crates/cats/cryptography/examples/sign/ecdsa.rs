@@ -12,11 +12,18 @@ use p256::ecdsa::SigningKey;
 use p256::ecdsa::VerifyingKey;
 use p256::ecdsa::signature::Signer as _;
 use p256::ecdsa::signature::Verifier as _;
-use p256::elliptic_curve::rand_core::OsRng;
+use p256::elliptic_curve::Generate as _;
+use rand::rngs::SysRng;
 
 /// Signs a message with a random P-256 key and verifies the signature.
+///
+/// # Errors
+///
+/// Returns an error if secure randomness is unavailable or the signature
+/// cannot be parsed or verified.
 fn main() -> anyhow::Result<()> {
-    let signing_key = SigningKey::random(&mut OsRng);
+    let mut rng = SysRng;
+    let signing_key = SigningKey::try_generate_from_rng(&mut rng)?;
     let verifying_key = VerifyingKey::from(&signing_key);
     let message = b"Hello, world!";
 
@@ -31,7 +38,7 @@ fn main() -> anyhow::Result<()> {
 
     println!(
         "Compressed public key bytes: {:?}",
-        verifying_key.to_encoded_point(true).as_bytes()
+        verifying_key.to_sec1_point(true).as_bytes()
     );
     println!(
         "Signature ({} bytes): {:02x?}",
@@ -51,37 +58,58 @@ mod tests {
     use super::*;
 
     /// The example runs end to end.
-    /// Runs the ecdsa example through its entry point.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if key generation, signature parsing, or verification
+    /// fails.
     #[test]
     fn test_ecdsa_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 
     /// A signature made with one key does not verify under another key.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if secure randomness is unavailable.
     #[test]
-    fn wrong_key_is_rejected() {
-        let signer = SigningKey::random(&mut OsRng);
-        let other = VerifyingKey::from(&SigningKey::random(&mut OsRng));
+    fn wrong_key_is_rejected() -> anyhow::Result<()> {
+        let mut rng = SysRng;
+        let signer = SigningKey::try_generate_from_rng(&mut rng)?;
+        let other =
+            VerifyingKey::from(SigningKey::try_generate_from_rng(&mut rng)?);
         let signature: Signature = signer.sign(b"message");
         assert!(other.verify(b"message", &signature).is_err());
+        Ok(())
     }
 
     /// RFC 6979 makes signing deterministic: same key and message, same
     /// signature.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if secure randomness is unavailable.
     #[test]
-    fn signing_is_deterministic() {
-        let key = SigningKey::random(&mut OsRng);
+    fn signing_is_deterministic() -> anyhow::Result<()> {
+        let key = SigningKey::try_generate_from_rng(&mut SysRng)?;
         let first: Signature = key.sign(b"message");
         let second: Signature = key.sign(b"message");
         assert_eq!(first, second);
+        Ok(())
     }
 
     /// The compressed SEC1 public key is 33 bytes and parses back.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if secure randomness is unavailable or the encoded key
+    /// cannot be parsed.
     #[test]
     fn public_key_round_trips_through_sec1_bytes() -> anyhow::Result<()> {
-        let key = SigningKey::random(&mut OsRng);
+        let key = SigningKey::try_generate_from_rng(&mut SysRng)?;
         let verifying_key = VerifyingKey::from(&key);
-        let encoded = verifying_key.to_encoded_point(true);
+        let encoded = verifying_key.to_sec1_point(true);
         assert_eq!(encoded.as_bytes().len(), 33);
         let parsed = VerifyingKey::from_sec1_bytes(encoded.as_bytes())?;
         assert_eq!(parsed, verifying_key);

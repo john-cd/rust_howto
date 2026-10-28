@@ -47,6 +47,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use ::scraper::Html;
 
+    use super::main;
     use super::select_text;
 
     /// Selects only matching headings and preserves their document order.
@@ -62,6 +63,7 @@ mod tests {
         Ok(())
     }
 
+    /// Exercises the user-facing scraper example entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

@@ -5,26 +5,26 @@
 
 // Algorithm:
 use aes_gcm::Aes256Gcm; // Use Aes128Gcm or Aes256Gcm, respectively.
-// Cryptokey:
-use aes_gcm::Key;
 // A 'nonce' is an arbitrary (often random) number
 // that must be used just once
 // in a cryptographic communication.
-// Trait that provides `generate_key`:
-use aes_gcm::aead::KeyInit as _;
-// The operating-system's random data source:
-use aes_gcm::aead::OsRng;
 // Trait that provides `encrypt` and `decrypt`:
-use aes_gcm::aead::{Aead as _, AeadCore as _};
+use aes_gcm::aead::{Aead as _, KeyInit as _};
+// Cryptographic key and nonce types:
+use aes_gcm::aead::{Generate as _, Key, Nonce};
+use rand::rngs::SysRng;
 
 /// Encrypts a message with a random key and decrypts it again.
 fn main() -> anyhow::Result<()> {
     // Generate a random 256-bit key:
-    let key: Key<Aes256Gcm> = Aes256Gcm::generate_key(&mut OsRng);
+    let mut rng = SysRng;
+    let key: Key<Aes256Gcm> =
+        Key::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
 
     // Generate a fresh nonce. A production protocol must also coordinate
     // nonce allocation across every writer that shares this key.
-    let nonce = Aes256Gcm::generate_nonce(&mut OsRng);
+    let nonce: Nonce<Aes256Gcm> =
+        Nonce::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
 
     // Create the cipher...
     let cipher = Aes256Gcm::new(&key);
@@ -66,9 +66,12 @@ mod tests {
     fn test_aes_gcm_round_trips_and_rejects_tampering() -> anyhow::Result<()> {
         main()?;
 
-        let key: Key<Aes256Gcm> = Aes256Gcm::generate_key(&mut OsRng);
+        let mut rng = SysRng;
+        let key: Key<Aes256Gcm> =
+            Key::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
         let cipher = Aes256Gcm::new(&key);
-        let nonce = Aes256Gcm::generate_nonce(&mut OsRng);
+        let nonce: Nonce<Aes256Gcm> =
+            Nonce::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
         let plaintext = b"authenticated message";
         let mut ciphertext = cipher
             .encrypt(&nonce, plaintext.as_ref())

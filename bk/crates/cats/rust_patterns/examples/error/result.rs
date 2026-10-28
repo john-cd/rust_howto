@@ -34,8 +34,10 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::divide;
+    use super::main;
 
     /// Returns the quotient for a nonzero denominator.
+    /// Runs the `Result` example through its entry point.
     #[test]
     fn division_returns_a_success_value() {
         assert_eq!(divide(12, 3), Ok(4));

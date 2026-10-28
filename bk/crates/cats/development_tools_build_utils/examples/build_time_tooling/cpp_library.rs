@@ -36,6 +36,7 @@ mod tests {
         assert_eq!(unsafe { multiply(6, 7) }, 42);
     }
 
+    /// Exercises the user-facing example entry point.
     #[test]
     fn test_main_entry_point() {
         main();

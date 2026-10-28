@@ -96,6 +96,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use anyhow::Context;
 
+    use super::main;
     use super::spawn_counter;
 
     /// Verifies that cloned handles send commands to the same stateful actor.
@@ -113,6 +114,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the Tokio actor example through its entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

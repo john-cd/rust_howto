@@ -40,6 +40,7 @@ mod tests {
     use http_body_util::BodyExt;
     use tower::ServiceExt;
 
+    use super::main;
     use super::router;
 
     /// Verifies that the `/metrics` route returns the recorded series.
@@ -61,6 +62,7 @@ mod tests {
         Ok(())
     }
 
+    /// Exercises the user-facing example entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

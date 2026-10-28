@@ -27,14 +27,17 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use super::main;
     use super::summarize_excess;
 
     /// Filters readings at the baseline and sums only their excess.
+    /// Runs the iterator example through its entry point.
     #[test]
     fn iterator_adapters_compose_to_summarize_excess_readings() {
         assert_eq!(summarize_excess(&[8, 12, 16, 20], 12), (2, 12));
     }
 
+    /// Runs the iterator example through its entry point.
     #[test]
     fn test_main_entry_point() {
         main();

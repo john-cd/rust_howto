@@ -37,6 +37,7 @@ sudo apt-get update \
     libasound2-dev \
     libayatana-appindicator3-dev \
     libc6-dev \
+    libaio1t64 \
     libclang-dev \
     libfontconfig1-dev \
     libfreetype6-dev \
@@ -73,6 +74,7 @@ sudo apt-get update \
     python-is-python3 \
     python3-venv \
     ruby-dev \
+    unzip \
     wget \
     xz-utils \
     zip \
@@ -81,6 +83,26 @@ sudo apt-get update \
     fzf \
 && nasm --version \
 && sudo apt-get clean -y
+
+# Install the pinned Oracle Instant Client Basic Light and SDK for OCI examples.
+ORACLE_CLIENT_ARCH="$(uname -m)" "$repo_root/.devcontainer/install_oracle_client.sh" "$HOME/.local/opt/oracle"
+oracle_client_major="${ORACLE_CLIENT_VERSION%%.*}"
+oracle_client_version_tail="${ORACLE_CLIENT_VERSION#*.}"
+oracle_client_minor="${oracle_client_version_tail%%.*}"
+oracle_client_dir="$HOME/.local/opt/oracle/instantclient_${oracle_client_major}_${oracle_client_minor}"
+oracle_client_env="$HOME/.local/opt/oracle/rust_howto-env.sh"
+{
+    printf 'export ORACLE_HOME="%s"\n' "$oracle_client_dir"
+    printf 'export OCI_LIB_DIR="%s"\n' "$oracle_client_dir"
+    printf 'export LD_LIBRARY_PATH="%s:${LD_LIBRARY_PATH:-}"\n' "$oracle_client_dir"
+    printf 'export LIBRARY_PATH="%s:${LIBRARY_PATH:-}"\n' "$oracle_client_dir"
+} > "$oracle_client_env"
+oracle_profile_line='source "$HOME/.local/opt/oracle/rust_howto-env.sh"'
+touch "$HOME/.profile"
+if ! grep -Fqx "$oracle_profile_line" "$HOME/.profile"; then
+    printf '%s\n' "$oracle_profile_line" >> "$HOME/.profile"
+fi
+source "$oracle_client_env"
 
 # Install Pandoc binary
 wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -O /tmp/pandoc.deb \

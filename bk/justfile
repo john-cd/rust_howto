@@ -25,8 +25,10 @@ fmt-toml:
     @just code fmt-toml
 
 # Format all packages and their local path-based dependencies
-fa:
+fmtall:
     @just code fmtall
+
+alias fa := fmtall
 
 # Check code in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]

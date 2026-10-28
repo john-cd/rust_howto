@@ -52,6 +52,7 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use super::main;
     use super::sample_person;
     use super::yaml_round_trip;
 
@@ -66,6 +67,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example entry point to verify its serialization output.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

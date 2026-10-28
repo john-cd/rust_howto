@@ -42,8 +42,10 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::UserDirectory;
+    use super::main;
 
     /// Verifies callers can register and look up a user through the facade.
+    /// Runs the facade example through its entry point.
     #[test]
     fn registration_is_visible_through_lookup() {
         let mut directory = UserDirectory::default();

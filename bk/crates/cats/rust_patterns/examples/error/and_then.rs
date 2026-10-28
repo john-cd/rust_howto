@@ -39,8 +39,10 @@ pub fn run() {
 mod tests {
     use super::divide_by_three;
     use super::divide_by_two;
+    use super::main;
 
     /// Passes the first successful value into the next operation.
+    /// Runs the `and_then` example through its entry point.
     #[test]
     fn and_then_runs_the_next_operation_after_success() {
         assert_eq!(divide_by_two(12).and_then(divide_by_three), Ok(2));

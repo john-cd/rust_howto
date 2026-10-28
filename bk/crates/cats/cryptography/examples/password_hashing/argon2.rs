@@ -5,11 +5,9 @@
 
 use argon2::Argon2;
 use argon2::password_hash::Error;
-use argon2::password_hash::PasswordHash;
 use argon2::password_hash::PasswordHasher as _;
 use argon2::password_hash::PasswordVerifier as _;
-use argon2::password_hash::SaltString;
-use argon2::password_hash::rand_core::OsRng;
+use argon2::password_hash::phc::PasswordHash;
 
 /// Hashes a password with Argon2, then verifies it and derives a key.
 fn main() -> Result<(), Error> {
@@ -42,14 +40,12 @@ fn main() -> Result<(), Error> {
 /// Hash a password to a "PHC string" suitable for the purposes of
 /// password-based authentication.
 fn password_hashing(password_to_save: &[u8]) -> Result<String, Error> {
-    // Generate a random salt:
-    let salt = SaltString::generate(&mut OsRng);
-
     // Configure `Argon2` with default params (Argon2id v19):
     let argon2 = Argon2::default();
 
-    // Hash the password to a PHC string ($argon2id$v=19$...):
-    let phc_string = argon2.hash_password(password_to_save, &salt)?.to_string();
+    // Hash the password to a PHC string ($argon2id$v=19$...). The hasher
+    // generates a random salt using the operating system's random source.
+    let phc_string = argon2.hash_password(password_to_save)?.to_string();
 
     Ok(phc_string)
 }
@@ -122,9 +118,8 @@ mod tests {
     fn argon2_verification_rejects_wrong_password() -> Result<(), Error> {
         let params = Params::new(32, 1, 1, None)?;
         let argon2 = Argon2::new(Algorithm::Argon2id, Version::V0x13, params);
-        let salt = SaltString::generate(&mut OsRng);
         let phc_string = argon2
-            .hash_password(b"correct horse battery staple", &salt)?
+            .hash_password(b"correct horse battery staple")?
             .to_string();
 
         assert!(password_verification_with(
@@ -141,6 +136,7 @@ mod tests {
     }
 
     /// Reports malformed PHC strings as errors instead of accepting them.
+    /// Runs the Argon2 example through its entry point.
     #[test]
     fn argon2_verification_rejects_malformed_hash() {
         assert!(

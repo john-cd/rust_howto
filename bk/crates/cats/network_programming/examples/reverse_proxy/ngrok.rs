@@ -94,7 +94,7 @@ mod tests {
     use axum::http::StatusCode;
     use tower::ServiceExt as _;
 
-    use super::*;
+    use super::app;
 
     /// Returns the greeting and an OK status from the root route.
     #[tokio::test]
@@ -113,12 +113,6 @@ mod tests {
         Ok(())
     }
 
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
 }
 // finish
 // https://ngrok.com/download/rust

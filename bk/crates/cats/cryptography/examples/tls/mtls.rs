@@ -107,6 +107,7 @@ mod tests {
     use tokio_rustls::TlsAcceptor;
 
     use super::build_client;
+    use super::main;
 
     /// Holds in-memory certificates and keys for a local mutual TLS exchange.
     struct LocalCertificateFixtures {

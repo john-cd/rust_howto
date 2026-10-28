@@ -31,6 +31,8 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use metrics_exporter_prometheus::PrometheusBuilder;
 
+    use super::main;
+
     /// Verifies that the in-memory handle renders measurements without an HTTP
     /// scrape.
     #[test]
@@ -52,6 +54,7 @@ mod tests {
         assert!(rendered.contains("test_request_duration_seconds_count 1"));
     }
 
+    /// Exercises the user-facing example entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

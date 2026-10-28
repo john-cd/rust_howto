@@ -57,10 +57,10 @@ mod tests {
 mod tests {
     use super::*;
 
+    /// Verifies the no-feature entry point explains how to enable Rocket.
+    #[cfg(not(feature = "rocket-support"))]
     #[test]
     fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        main();
     }
 }

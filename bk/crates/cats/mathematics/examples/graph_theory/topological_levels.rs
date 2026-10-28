@@ -132,7 +132,10 @@ mod tests {
     use proptest::prelude::*;
     use proptest::test_runner::TestRunner;
 
+    use super::main;
+
     /// Checks that every edge in a generated DAG points forward in the order.
+    /// Runs the topological-levels example through its entry point.
     #[test]
     fn generated_dag_edges_follow_topological_order() {
         let mut runner = TestRunner::default();

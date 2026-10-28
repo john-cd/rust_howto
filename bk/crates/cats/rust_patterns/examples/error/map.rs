@@ -22,7 +22,10 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use super::main;
+
     /// Transforms the success value while keeping it in `Ok`.
+    /// Runs the `map` example through its entry point.
     #[test]
     fn map_transforms_the_success_value() {
         let result: Result<i32, &str> = Ok(10);

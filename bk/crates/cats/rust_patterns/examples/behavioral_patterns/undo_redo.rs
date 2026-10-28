@@ -87,6 +87,7 @@ mod tests {
     use super::*;
 
     /// Verifies that undo removes an edit and redo restores the same text.
+    /// Runs the undo/redo example through its entry point.
     #[test]
     fn undo_and_redo_restore_the_document() {
         let mut editor = Editor::default();

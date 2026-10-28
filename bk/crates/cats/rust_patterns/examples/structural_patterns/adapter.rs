@@ -52,8 +52,10 @@ mod tests {
     use std::io::Cursor;
 
     use super::CsvRows;
+    use super::main;
 
     /// Verifies the adapter yields each input line as a row.
+    /// Runs the adapter example through its entry point.
     #[test]
     fn buffered_lines_become_rows() {
         let input = Cursor::new("name,role\nAda,engineer\n");

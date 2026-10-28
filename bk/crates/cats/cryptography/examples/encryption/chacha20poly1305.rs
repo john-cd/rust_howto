@@ -5,7 +5,6 @@
 //! data.
 
 // Trait that provides in-place stateless AEAD:
-use chacha20poly1305::AeadInPlace as _;
 // Algorithm:
 use chacha20poly1305::ChaCha20Poly1305;
 // Cryptographic key:
@@ -17,13 +16,11 @@ use chacha20poly1305::Key;
 use chacha20poly1305::Nonce;
 // A tag is used to authenticate the ciphertext:
 use chacha20poly1305::Tag;
+use chacha20poly1305::aead::AeadInOut as _;
+use chacha20poly1305::aead::Generate as _;
 // Trait that provides `generate_nonce`:
-use chacha20poly1305::aead::AeadCore as _;
-// Trait that provides `generate_key`, etc:
 use chacha20poly1305::aead::KeyInit as _;
-// A random number generator that retrieves randomness from the operating
-// system:
-use chacha20poly1305::aead::OsRng;
+use rand::rngs::SysRng;
 // Trait for securely erasing values from memory:
 use zeroize::Zeroize as _;
 
@@ -41,11 +38,12 @@ fn encrypt_then_decrypt() -> anyhow::Result<()> {
     let mut plaintext: Vec<u8> = b"This is a secret message.".to_vec();
 
     // Create a key, using a cryptographically secure Random Number Generator:
-    let mut key: Key = ChaCha20Poly1305::generate_key(&mut OsRng);
+    let mut rng = SysRng;
+    let mut key: Key = Key::try_generate_from_rng(&mut rng)?;
 
     // Generate a nonce.
     // Nonces MUST be unique for each encryption with the same key.
-    let mut nonce: Nonce = ChaCha20Poly1305::generate_nonce(&mut OsRng);
+    let mut nonce: Nonce = Nonce::try_generate_from_rng(&mut rng)?;
 
     let mut ciphertext = plaintext.clone();
     let tag: Tag;
@@ -59,7 +57,11 @@ fn encrypt_then_decrypt() -> anyhow::Result<()> {
         // and returning the authentication tag.
         // In-place encryption eliminates `alloc` requirements.
         tag = cipher
-            .encrypt_in_place_detached(&nonce, b"", &mut ciphertext)
+            .encrypt_inout_detached(
+                &nonce,
+                b"",
+                ciphertext.as_mut_slice().into(),
+            )
             .map_err(|_| {
                 anyhow::anyhow!("ChaCha20-Poly1305 encryption failed")
             })?;
@@ -76,10 +78,10 @@ fn encrypt_then_decrypt() -> anyhow::Result<()> {
         // the provided authentication tag does not match the given ciphertext
         // (i.e. ciphertext is modified/unauthentic):
         let mut decrypted_plaintext = ciphertext.clone();
-        let decrypted_result = cipher_dec.decrypt_in_place_detached(
+        let decrypted_result = cipher_dec.decrypt_inout_detached(
             &nonce,
-            b"",                      // No associated_data in this example
-            &mut decrypted_plaintext, // Buffer
+            b"", // No associated_data in this example
+            decrypted_plaintext.as_mut_slice().into(), // Buffer
             &tag,
         );
 
@@ -96,10 +98,10 @@ fn encrypt_then_decrypt() -> anyhow::Result<()> {
 
         let cipher_bad = ChaCha20Poly1305::new(&key);
         let mut decrypted_plaintext_bad_tag = ciphertext.clone();
-        let decrypted_result_bad_tag = cipher_bad.decrypt_in_place_detached(
+        let decrypted_result_bad_tag = cipher_bad.decrypt_inout_detached(
             &nonce,
             b"",
-            &mut decrypted_plaintext_bad_tag,
+            decrypted_plaintext_bad_tag.as_mut_slice().into(),
             &bad_tag,
         );
 
@@ -122,24 +124,29 @@ fn aad() -> anyhow::Result<()> {
     let aad = b"Associated Data";
 
     // Create an instance of the cipher (with a new key):
-    let mut key = ChaCha20Poly1305::generate_key(&mut OsRng);
+    let mut rng = SysRng;
+    let mut key: Key = Key::try_generate_from_rng(&mut rng)?;
     let cipher_aad = ChaCha20Poly1305::new(&key);
 
-    let mut nonce = ChaCha20Poly1305::generate_nonce(&mut OsRng);
+    let mut nonce: Nonce = Nonce::try_generate_from_rng(&mut rng)?;
 
     let mut ciphertext_aad = plaintext.clone();
     let tag_aad = cipher_aad
-        .encrypt_in_place_detached(&nonce, aad, &mut ciphertext_aad)
+        .encrypt_inout_detached(
+            &nonce,
+            aad,
+            ciphertext_aad.as_mut_slice().into(),
+        )
         .map_err(|_| anyhow::anyhow!("ChaCha20-Poly1305 encryption failed"))?;
 
     println!("Ciphertext with AAD: {ciphertext_aad:x?}");
     println!("Tag with AAD: {tag_aad:x?}");
 
     let mut decrypted_plaintext_aad = ciphertext_aad.clone();
-    let decrypted_result_aad = cipher_aad.decrypt_in_place_detached(
+    let decrypted_result_aad = cipher_aad.decrypt_inout_detached(
         &nonce,
         aad,
-        &mut decrypted_plaintext_aad,
+        decrypted_plaintext_aad.as_mut_slice().into(),
         &tag_aad,
     );
 
@@ -152,10 +159,10 @@ fn aad() -> anyhow::Result<()> {
     let mut tampered_plaintext = ciphertext_aad.clone();
     assert!(
         cipher_aad
-            .decrypt_in_place_detached(
+            .decrypt_inout_detached(
                 &nonce,
                 wrong_aad,
-                &mut tampered_plaintext,
+                tampered_plaintext.as_mut_slice().into(),
                 &tag_aad
             )
             .is_err()

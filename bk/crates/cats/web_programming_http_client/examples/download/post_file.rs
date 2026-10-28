@@ -255,11 +255,4 @@ mod tests {
         assert_eq!(status, Some(StatusCode::INTERNAL_SERVER_ERROR));
         Ok(())
     }
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
 }

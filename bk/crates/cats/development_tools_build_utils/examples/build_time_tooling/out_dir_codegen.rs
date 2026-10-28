@@ -27,6 +27,7 @@ mod tests {
         assert_eq!(GENERATED_MESSAGE, "Generated during the Cargo build.");
     }
 
+    /// Exercises the user-facing example entry point.
     #[test]
     fn test_main_entry_point() {
         main();

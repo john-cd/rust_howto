@@ -86,7 +86,7 @@ _default:
 
 # Test only tests that match a given keyword
 @nextestthis test:
-    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --locked --no-fail-fast --success-output final -E 'test(~{{ test }}) or binary_id(~{{ test }})'
+    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --locked --no-fail-fast --success-output final -E 'test(~{{ test }})'
 
 current_crate := file_name(invocation_directory())
 

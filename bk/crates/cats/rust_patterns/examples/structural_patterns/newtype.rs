@@ -35,8 +35,10 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::UserId;
+    use super::main;
 
     /// Verifies a user identifier rejects the reserved zero value.
+    /// Runs the newtype example through its entry point.
     #[test]
     fn user_id_rejects_zero() {
         assert!(UserId::new(0).is_err());

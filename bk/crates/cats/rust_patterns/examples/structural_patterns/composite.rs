@@ -39,8 +39,10 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::Expression;
+    use super::main;
 
     /// Verifies a composite sums its nested leaf values recursively.
+    /// Runs the composite example through its entry point.
     #[test]
     fn nested_expression_sums_all_values() {
         let expression = Expression::Sum(vec![

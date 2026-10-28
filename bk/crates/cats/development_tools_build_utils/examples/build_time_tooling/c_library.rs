@@ -35,6 +35,7 @@ mod tests {
         assert_eq!(unsafe { add(19, 23) }, 42);
     }
 
+    /// Exercises the user-facing example entry point.
     #[test]
     fn test_main_entry_point() {
         main();
