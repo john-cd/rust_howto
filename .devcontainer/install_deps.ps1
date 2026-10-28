@@ -185,7 +185,8 @@ $tools = @(
     @{ Name = "just"; Version = $toolVersions["JUST_VERSION"] },
     @{ Name = "cargo-fmt-toml"; Version = $toolVersions["CARGO_FMT_TOML_VERSION"] },
     @{ Name = "dprint"; Version = $toolVersions["DPRINT_VERSION"] },
-    @{ Name = "rumdl"; Version = $toolVersions["RUMDL_VERSION"] }
+    @{ Name = "rumdl"; Version = $toolVersions["RUMDL_VERSION"] },
+    @{ Name = "flutter_rust_bridge_codegen"; Version = $toolVersions["FLUTTER_RUST_BRIDGE_CODEGEN_VERSION"] },
     @{ Name = "maturin"; Version = $toolVersions["MATURIN_VERSION"] }
 )
 
@@ -198,6 +199,18 @@ foreach ($tool in $tools) {
     $binstallArgs += @("--version", $tool.Version, $tool.Name)
     cargo binstall @binstallArgs
 }
+
+$flutterVersion = $toolVersions["FLUTTER_VERSION"]
+$flutterInstallPath = Join-Path $env:LOCALAPPDATA "Programs\Flutter\$flutterVersion"
+& (Join-Path $PSScriptRoot "install_flutter_sdk.ps1") `
+    -Version $flutterVersion `
+    -GitRevision $toolVersions["FLUTTER_GIT_REVISION"] `
+    -InstallPath $flutterInstallPath
+$flutterBin = Join-Path $flutterInstallPath "bin"
+Add-UserPath -Directory $flutterBin
+$env:FLUTTER_ROOT = $flutterInstallPath
+[Environment]::SetEnvironmentVariable('FLUTTER_ROOT', $flutterInstallPath, 'User')
+$env:Path = "$flutterBin;$env:Path"
 
 cargo install --git https://github.com/john-cd/mdbook-utils --rev $toolVersions["MDBOOK_UTILS_REV"] --locked mdbook-utils
 cargo install --locked --force --version $toolVersions["MDBOOK_INDEXING_VERSION"] mdbook-indexing
@@ -219,4 +232,6 @@ java --version
 javac --version
 ruby --version
 maturin --version
+flutter --version
+flutter_rust_bridge_codegen --version
 Write-Host "Windows development environment ready!" -ForegroundColor Green

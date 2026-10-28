@@ -33,6 +33,7 @@ sudo apt-get update \
     diffutils \
     file \
     gcc \
+    git \
     libasound2-dev \
     libayatana-appindicator3-dev \
     libc6-dev \
@@ -67,11 +68,14 @@ sudo apt-get update \
     ninja-build \
     pkg-config \
     protobuf-compiler \
+    unzip \
     python3 \
     python-is-python3 \
     python3-venv \
     ruby-dev \
     wget \
+    xz-utils \
+    zip \
     xorg-dev \
     jq \
     fzf \
@@ -102,7 +106,41 @@ cargo binstall --no-confirm --secure --version "$JUST_VERSION" just
 cargo binstall --no-confirm --secure --force --version "$CARGO_FMT_TOML_VERSION" cargo-fmt-toml
 cargo binstall --no-confirm --secure --force --version "$DPRINT_VERSION" dprint
 cargo binstall --no-confirm --secure --force --version "$RUMDL_VERSION" rumdl
+cargo binstall --no-confirm --secure --version "$FLUTTER_RUST_BRIDGE_CODEGEN_VERSION" flutter_rust_bridge_codegen
 cargo binstall --no-confirm --secure sccache cargo-deny lychee bacon ripgrep
+
+flutter_install_path="$HOME/.local/share/flutter/$FLUTTER_VERSION"
+bash "$repo_root/.devcontainer/install_flutter_sdk.sh" \
+    "$FLUTTER_VERSION" "$FLUTTER_GIT_REVISION" "$flutter_install_path"
+export FLUTTER_ROOT="$flutter_install_path"
+export PATH="$FLUTTER_ROOT/bin:$PATH"
+
+profile_file="$HOME/.bashrc"
+profile_temp="$(mktemp "${profile_file}.XXXXXXXX")"
+profile_start="# >>> rust_howto Flutter SDK >>>"
+profile_end="# <<< rust_howto Flutter SDK <<<"
+if [[ -f "$profile_file" ]] && ! awk -v start="$profile_start" -v end="$profile_end" '
+    $0 == start { if (inside) exit 2; inside = 1; next }
+    $0 == end { if (!inside) exit 2; inside = 0; next }
+    !inside { print }
+    END { if (inside) exit 2 }
+' "$profile_file" > "$profile_temp"; then
+    rm -f -- "$profile_temp"
+    echo "The rust_howto Flutter SDK block is malformed in $profile_file" >&2
+    exit 1
+fi
+{
+    printf '\n%s\n' "$profile_start"
+    printf 'export FLUTTER_ROOT="%s"\n' "$flutter_install_path"
+    printf 'export PATH="${FLUTTER_ROOT}/bin:${PATH}"\n'
+    printf '%s\n' "$profile_end"
+} >> "$profile_temp"
+if [[ -f "$profile_file" ]]; then
+    chmod --reference="$profile_file" "$profile_temp"
+else
+    chmod 644 "$profile_temp"
+fi
+mv -f -- "$profile_temp" "$profile_file"
 
 if [[ "$(uname -m)" == "x86_64" ]]; then
     tectonic_archive="$(mktemp)"
@@ -126,6 +164,8 @@ curl -sS https://webi.sh/gh | sh
 cargo binstall --no-confirm --secure kani-verifier
 tectonic --version
 nasm --version
+flutter --version
+flutter_rust_bridge_codegen --version
 cargo fmt-toml --version
 dprint --version
 rumdl --version

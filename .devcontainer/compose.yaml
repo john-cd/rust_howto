@@ -22,6 +22,9 @@ services:
         DPRINT_VERSION: ${DPRINT_VERSION:?dprint version must be defined}
         RUMDL_VERSION: ${RUMDL_VERSION:?rumdl version must be defined}
         MATURIN_VERSION: ${MATURIN_VERSION:?maturin version must be defined}
+        FLUTTER_VERSION: ${FLUTTER_VERSION:?Flutter version must be defined}
+        FLUTTER_GIT_REVISION: ${FLUTTER_GIT_REVISION:?Flutter Git revision must be defined}
+        FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: ${FLUTTER_RUST_BRIDGE_CODEGEN_VERSION:?Flutter Rust Bridge codegen version must be defined}
         PANDOC_VERSION: ${PANDOC_VERSION:?pandoc version must be defined}
       secrets:
         - source: github_token

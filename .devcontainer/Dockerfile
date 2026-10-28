@@ -59,6 +59,7 @@ ARG CARGO_FMT_TOML_VERSION
 ARG DPRINT_VERSION
 ARG RUMDL_VERSION
 ARG MATURIN_VERSION
+ARG FLUTTER_RUST_BRIDGE_CODEGEN_VERSION
 
 ## Install cargo binstall (binary install)
 ## Install nextest
@@ -81,6 +82,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo binstall --no-confirm --secure --version ${CARGO_FMT_TOML_VERSION} cargo-fmt-toml
     cargo binstall --no-confirm --secure --version ${DPRINT_VERSION} dprint
     cargo binstall --no-confirm --secure --version ${RUMDL_VERSION} rumdl
+    cargo binstall --no-confirm --secure --version ${FLUTTER_RUST_BRIDGE_CODEGEN_VERSION} flutter_rust_bridge_codegen
     cargo binstall --no-confirm --secure sccache cargo-deny lychee
     cargo install --locked --force --version ${MDBOOK_INDEXING_VERSION} mdbook-indexing
 EOF
@@ -158,6 +160,7 @@ WORKDIR /code
 ## `diffutils gcc m4 make` for `gmp-mpfr-sys` / `rug`
 ## `ninja-build` for CMake-based `-sys` crates
 ## `pandoc` for `mdbook-pandoc`
+## `git unzip xz-utils zip libglu1-mesa` for Flutter's Linux SDK prerequisites
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update \
@@ -173,6 +176,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     diffutils \
     file \
     gcc \
+    git \
     libasound2-dev \
     libayatana-appindicator3-dev \
     libc6-dev \
@@ -210,11 +214,14 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     ninja-build \
     pkg-config \
     protobuf-compiler \
+    unzip \
     python3 \
     python-is-python3 \
     python3-venv \
     ruby-dev \
     wget \
+    xz-utils \
+    zip \
     xorg-dev \
     && nasm --version \
     && apt-get clean -y
@@ -259,6 +266,15 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
 
 ## Stage for development / Dev Container, with additional tools and configurations for an optimal development experience.
 FROM base AS development
+
+ARG FLUTTER_VERSION
+ARG FLUTTER_GIT_REVISION
+
+COPY --link --chmod=755 .devcontainer/install_flutter_sdk.sh /usr/local/bin/install_flutter_sdk.sh
+RUN install_flutter_sdk.sh "${FLUTTER_VERSION}" "${FLUTTER_GIT_REVISION}" /opt/flutter \
+    && FLUTTER_ROOT=/opt/flutter CI=true /opt/flutter/bin/flutter --version --machine
+ENV FLUTTER_ROOT=/opt/flutter
+ENV PATH="/opt/flutter/bin:${PATH}"
 
 ## Additional packages for development only.
 ## You can cache with
