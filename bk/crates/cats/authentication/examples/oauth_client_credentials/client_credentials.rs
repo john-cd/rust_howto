@@ -3,23 +3,12 @@
 // ANCHOR: example
 //! Obtains an OAuth 2.0 client-credentials token and calls a local mock API.
 //!
-//! ### OAuth 2.0 Client-Credentials Flow Overview
-//! The Client Credentials grant (RFC 6749 Section 4.4) is used for
-//! machine-to-machine (M2M) authentication where a client application requests
-//! an access token using its own credentials (`client_id` and `client_secret`)
-//! rather than authenticating on behalf of an individual end-user.
-//!
-//! ### Workflow Steps
-//! 1. **Token Request**: The client authenticates with the Authorization
-//!    Server's `/token` endpoint using HTTP Basic Auth (or request body params)
-//!    and specifies `grant_type=client_credentials` alongside requested
-//!    `scope`s.
-//! 2. **Token Response**: Upon validation, the Authorization Server returns a
-//!    JSON payload containing an `access_token` (typically a Bearer token) and
-//!    expiration timeframe `expires_in`.
-//! 3. **Resource Access**: The client includes the access token in the
-//!    `Authorization: Bearer <token>` header of HTTP requests sent to protected
-//!    Resource Server endpoints.
+//! The service requests a scoped token, then uses it to access a protected
+//! resource. Local mock servers exercise both requests without an external
+//! provider. The demo secret is a fixture; deployed services should load
+//! secrets securely, request least-privilege scopes, and honor the returned
+//! token expiry. This flow authorizes a service, not a human user; use OpenID
+//! Connect for sign-in.
 
 use std::time::Duration;
 
@@ -33,36 +22,6 @@ use oauth2::Scope;
 use oauth2::TokenResponse as _;
 use oauth2::TokenUrl;
 use oauth2::basic::BasicClient;
-
-/// Sends a synchronous HTTP request for the OAuth client using `reqwest`.
-fn sync_http_client(
-    request: oauth2::HttpRequest,
-) -> Result<oauth2::HttpResponse, oauth2::HttpClientError<reqwest::Error>> {
-    let client = reqwest::blocking::Client::builder()
-        .redirect(reqwest::redirect::Policy::none())
-        .build()
-        .map_err(|e| oauth2::HttpClientError::Reqwest(Box::new(e)))?;
-    let mut req =
-        client.request(request.method().clone(), request.uri().to_string());
-    for (k, v) in request.headers() {
-        req = req.header(k, v);
-    }
-    let res = req
-        .body(request.body().clone())
-        .send()
-        .map_err(|e| oauth2::HttpClientError::Reqwest(Box::new(e)))?;
-    let mut builder = oauth2::http::Response::builder().status(res.status());
-    for (k, v) in res.headers() {
-        builder = builder.header(k, v);
-    }
-    let body = res
-        .bytes()
-        .map_err(|e| oauth2::HttpClientError::Reqwest(Box::new(e)))?
-        .to_vec();
-    builder
-        .body(body)
-        .map_err(|e| oauth2::HttpClientError::Other(e.to_string()))
-}
 
 /// Requests a scoped access token and uses it to call a protected resource.
 ///
@@ -81,10 +40,15 @@ fn request_protected_resource(
             )?)
             .set_token_uri(TokenUrl::new(token_url.to_owned())?);
 
+    let oauth_http_client = oauth2::reqwest::blocking::ClientBuilder::new()
+        // Never follow redirects from a token endpoint.
+        .redirect(oauth2::reqwest::redirect::Policy::none())
+        .build()
+        .context("build the OAuth token HTTP client")?;
     let token = oauth_client
         .exchange_client_credentials()
         .add_scope(Scope::new("records:read".to_owned()))
-        .request(&sync_http_client)
+        .request(&oauth_http_client)
         .context("request a client-credentials access token")?;
 
     let expires_in = token.expires_in();
@@ -104,6 +68,14 @@ fn request_protected_resource(
 /// # Errors
 /// Returns an error if the token or resource request fails.
 fn main() -> anyhow::Result<()> {
+    run_example()
+}
+
+/// Runs the client against local authorization and resource server mocks.
+///
+/// # Errors
+/// Returns an error if the token or resource request fails.
+fn run_example() -> anyhow::Result<()> {
     let auth_server = MockServer::start();
     let resource_server = MockServer::start();
 
@@ -143,8 +115,13 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the client-credentials example with its local mock servers.
+///
+/// # Errors
+///
+/// Returns an error if the mocked token or resource request fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    run_example()
 }
 
 #[cfg(test)]
@@ -155,6 +132,6 @@ mod tests {
     /// token to the protected resource server.
     #[test]
     fn client_credentials_flow_uses_local_servers() -> anyhow::Result<()> {
-        main()
+        run_example()
     }
 }
