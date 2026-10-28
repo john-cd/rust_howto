@@ -4,7 +4,7 @@
 # TODO Reviewed ??-??-2026.
 
 build_repo := parent_directory(source_directory())
-build_slot := if file_name(parent_directory(build_repo)) == ".worktrees" { file_name(build_repo) } else { "main" }
+build_slot := if parent_directory(build_repo) == "/" { "main" } else if file_name(parent_directory(build_repo)) == ".worktrees" { file_name(build_repo) } else { "main" }
 build_cache_home := env("XDG_CACHE_HOME", join(home_directory(), ".cache"))
 build_target_base := if os_family() == "windows" { "D:/target/rust_howto" } else { join(build_cache_home, "rust_howto/target") }
 build_intermediate_base := if os_family() == "windows" { "C:/code_build/rust_howto" } else { join(build_cache_home, "rust_howto/build") }
