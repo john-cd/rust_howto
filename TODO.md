@@ -203,7 +203,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-PROSE-01 — Systems, embedded, WebAssembly and virtualization
 
-- [#348](https://github.com/john-cd/rust_howto/issues/348) — **P4** — emulators/emulators.md: write — **PARTIAL ON ISSUE BRANCH; emulator core-loop change overlaps open #752; final validation pending**
+- [#348](https://github.com/john-cd/rust_howto/issues/348) — **P4** — emulators/emulators.md: write — **IMPLEMENTED ON DEVELOP; OPEN — bounded register VM, Intel HEX Reader example, PolkaVM guidance, and references present; final Cargo/book/reference/spelling checks and PR link pending**
 - [#349](https://github.com/john-cd/rust_howto/issues/349) — **P4** — emulators/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — short landing page and recipe table integrated; reference, book, spelling checks and PR link pending**
 - [#426](https://github.com/john-cd/rust_howto/issues/426) — **P4** — no-std/no_std.md: no_std: write — **IMPLEMENTED ON DEVELOP; OPEN — allocator, panic-handler, target-build, and checksum guidance present; final reference/book/spelling checks and issue-link removal pending**
 - [#428](https://github.com/john-cd/rust_howto/issues/428) — **P4** — no-std_no-alloc/no_alloc.md: no_alloc: write — **IMPLEMENTED ON DEVELOP; OPEN — fixed-capacity collections, formatting, SPSC queues, static pools, and slice serialization documented; final reference/book/spelling checks and issue-link removal pending**
