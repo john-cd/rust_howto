@@ -5,7 +5,6 @@
 mod jwt;
 mod jwt_axum_extractor;
 
-// TODO move example code to a separate module or file.
 use std::time::SystemTime;
 use std::time::UNIX_EPOCH;
 
@@ -36,4 +35,27 @@ fn main() -> anyhow::Result<()> {
         verified.sub
     );
     Ok(())
+}
+
+/// Runs the JWT authentication example with a fallback secret for tests.
+pub fn run() -> anyhow::Result<()> {
+    unsafe {
+        if std::env::var("JWT_SECRET").is_err() {
+            std::env::set_var(
+                "JWT_SECRET",
+                "default_test_secret_key_that_is_at_least_32_bytes_long",
+            );
+        }
+    }
+    main()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_jwt_authentication_entry_point() -> anyhow::Result<()> {
+        run()
+    }
 }

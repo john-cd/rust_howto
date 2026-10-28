@@ -3,6 +3,18 @@
 // ANCHOR: example
 //! Protect a state-changing form with a synchronizer CSRF token.
 //!
+//! ### Cross-Site Request Forgery (CSRF) & Synchronizer Token Pattern
+//! CSRF attacks trick an authenticated user's browser into submitting
+//! unauthorized requests to a target website. To protect state-changing
+//! requests (like POST forms):
+//! 1. **Token Generation**: The server generates a cryptographically random,
+//!    unpredictable token per session.
+//! 2. **Form Inclusion**: The server injects this token into an `<input
+//!    type="hidden">` form field when rendering HTML.
+//! 3. **Validation**: Upon receiving a POST request, the server extracts the
+//!    submitted token and performs a constant-time comparison against the token
+//!    stored in the user's server-side session.
+//!
 //! The token is random, stored in the server-side session, embedded in the
 //! form as a hidden field, and compared when the form is posted. A forged
 //! cross-site request cannot read the token, so it cannot include it.
@@ -90,8 +102,16 @@ pub fn app() -> Router {
 }
 // ANCHOR_END: example
 
-// TODO create a main() function and call it from a test and a pub fn run()
-// function.
+/// Entry point for the CSRF protection example.
+fn main() {
+    let _app = app();
+}
+
+/// Runs the CSRF protection example.
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -178,5 +198,10 @@ mod tests {
         assert!(constant_time_eq("abc", "abc"));
         assert!(!constant_time_eq("abc", "abd"));
         assert!(!constant_time_eq("abc", "ab"));
+    }
+
+    #[test]
+    fn test_csrf_example_entry_point() {
+        main();
     }
 }

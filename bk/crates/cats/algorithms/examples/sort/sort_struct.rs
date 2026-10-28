@@ -31,8 +31,9 @@ fn main() {
     ];
 
     // Sort people by derived natural order (in this case, name and age):
-    // TODO explain that the derived order is based on the order of the fields
-    // in the struct, with `name` being compared first, followed by `age`.
+    // The derived `Ord` implementation compares struct fields in
+    // lexicographical order, matching their definition sequence (`name` is
+    // compared first, then `age` if names match).
     people.sort();
 
     assert_eq!(

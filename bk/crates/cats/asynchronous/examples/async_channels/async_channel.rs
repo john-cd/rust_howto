@@ -1,9 +1,23 @@
 // TODO Reviewed ??-??-2026.
-// TODO improve doc comments;
 
 // ANCHOR: example
-//! Multiple producers and consumers exchanging messages over an
-//! `async_channel`.
+//! Multi-producer, multi-consumer (MPMC) async channel communication.
+//!
+//! ### Overview
+//! The `async_channel` crate provides multi-producer, multi-consumer channels
+//! where multiple tasks can send messages (`Sender`) and multiple tasks can
+//! receive messages (`Receiver`).
+//!
+//! ### Key Concepts
+//! - **Bounded Channels**: Backpressure is enforced by setting a fixed capacity
+//!   limit. When the buffer is full, `send().await` suspends execution until
+//!   space becomes available.
+//! - **Multiple Producers and Consumers**: Both `Sender` and `Receiver` types
+//!   implement `Clone`. Cloning a sender or receiver creates another handle to
+//!   the same underlying channel.
+//! - **Channel Closure**: When all `Sender` instances are dropped (or
+//!   explicitly closed), receivers will process remaining buffered messages and
+//!   then return `Err(RecvError)` or `TryRecvError::Closed`.
 
 use async_channel::Receiver;
 use async_channel::Sender;

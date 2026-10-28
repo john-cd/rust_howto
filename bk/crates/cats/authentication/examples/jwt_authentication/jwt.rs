@@ -17,9 +17,15 @@ use jsonwebtoken::encode;
 use serde::Deserialize;
 use serde::Serialize;
 
-// TODO explain the purpose of this module and how it fits into the overall
-// example. TODO explain the field names
-/// Claims carried by the example's short-lived bearer token.
+/// Claims payload encoded within the short-lived JSON Web Token.
+///
+/// Standard JWT claim names are used to comply with RFC 7519:
+/// - `sub` (Subject): Identifies the principal (user ID or username) that is
+///   the subject of the JWT.
+/// - `exp` (Expiration Time): Identifies the expiration timestamp on or after
+///   which the token must not be accepted.
+/// - `roles`: Custom claim specifying access roles assigned to the user for
+///   authorization checks.
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct Claims {
     /// The subject identifier for the authenticated user.

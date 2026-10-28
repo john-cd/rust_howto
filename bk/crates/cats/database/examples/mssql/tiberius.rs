@@ -87,7 +87,6 @@ mod tests {
     #[ignore = "Requires an external Microsoft SQL Server instance"]
     fn require_external_svc() -> anyhow::Result<()> {
         if std::env::var("MSSQL_HOST").is_err() {
-            // TODO
             eprintln!(
                 "Skipping MSSQL integration test; set MSSQL_HOST to run this test."
             );

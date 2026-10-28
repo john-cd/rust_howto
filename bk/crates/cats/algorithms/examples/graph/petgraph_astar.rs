@@ -1,10 +1,26 @@
 // TODO Reviewed ??-??-2026.
-// TODO explain the graph structure, the heuristic function, and how the A*
-// algorithm is applied to find the shortest path from node A to node E.
 
 // ANCHOR: example
 //! Shortest path search on a weighted graph using the A* algorithm with
 //! `petgraph`.
+//!
+//! ### Graph Structure and Search Setup
+//! In this example, nodes are represented as 2D coordinate positions `(x, y)`
+//! on a plane, and directed edges represent valid travel segments between nodes
+//! with associated numerical costs:
+//! - Node `A` `(0, 0)` connects to `B` `(1, 0)` (cost 1) and `D` `(1, 1)` (cost
+//!   2).
+//! - Node `B` `(1, 0)` connects to `C` `(2, 0)` (cost 1).
+//! - Node `C` `(2, 0)` connects to `E` `(2, 1)` (cost 1).
+//! - Node `D` `(1, 1)` connects to `E` `(2, 1)` (cost 1).
+//!
+//! ### Heuristic Function & Path Finding
+//! The heuristic function estimates the remaining distance from any node to the
+//! target goal `E` `(2, 1)` using Manhattan distance (`|x1 - x2| + |y1 - y2|`).
+//! Because Manhattan distance never overestimates true grid movement cost, it
+//! is an admissible heuristic that guarantees finding the optimal path.
+//! A* evaluates candidate paths and computes the shortest path from `A` to `E`
+//! with total cost 3 (`A` -> `D` -> `E` or `A` -> `B` -> `C` -> `E`).
 //!
 //! ### What is the A* Search Algorithm?
 //! A* (pronounced "A-star") is an informed graph traversal and pathfinding

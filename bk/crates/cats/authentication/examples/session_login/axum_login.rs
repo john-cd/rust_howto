@@ -1,11 +1,22 @@
 // TODO Reviewed ??-??-2026.
-// TODO create a main function that runs the example application.
-// TODO explain the purpose of this example and how it demonstrates cookie-based
-// login with `axum-login`. TODO explain cookie-based login and session
-// management.
 
 // ANCHOR: example
 //! Cookie-based login with `axum-login`, in-memory sessions and permissions.
+//!
+//! ### Cookie-Based Login and Session Management
+//! Cookie-based session management maintains user authentication state across
+//! HTTP requests:
+//! 1. Upon successful authentication (verifying username and password hash),
+//!    the server creates a unique session record in a session store
+//!    (`MemoryStore`, Redis, or SQL database) and associates it with the user
+//!    ID.
+//! 2. The server sends a HTTP `Set-Cookie` header containing an
+//!    encrypted/signed session ID token back to the client browser.
+//! 3. On subsequent requests, the browser automatically includes the session
+//!    cookie in the `Cookie` header.
+//! 4. Middleware (`axum-login`) extracts the session ID, loads the session and
+//!    user permissions from the backend, and authorizes access to protected
+//!    routes.
 //!
 //! Production notes: set `Secure`, `HttpOnly` and `SameSite` on the session
 //! cookie (`SessionManagerLayer::with_secure` / `with_same_site`), keep
@@ -164,6 +175,18 @@ pub fn app(backend: Backend) -> Router {
         .layer(auth_layer)
 }
 // ANCHOR_END: example
+
+/// Demonstrates initialization of the axum_login application backend.
+pub fn run() -> anyhow::Result<()> {
+    let user = User {
+        id: 1,
+        username: "alice".to_owned(),
+        password_hash: hashing::hash("secret")?,
+        permissions: ["admin.read".to_owned()].into_iter().collect(),
+    };
+    let _backend = Backend::new(vec![user])?;
+    Ok(())
+}
 
 #[cfg(test)]
 mod tests {

@@ -6,6 +6,10 @@ mod axum_login;
 mod csrf;
 mod hashing;
 
-fn main() {
-    println!("Run `cargo test --example session_login`."); // TODO call the run() functions of the examples
+fn main() -> anyhow::Result<()> {
+    hashing::run()?;
+    csrf::run();
+    axum_login::run()?;
+    println!("Session login examples completed successfully.");
+    Ok(())
 }

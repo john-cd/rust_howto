@@ -111,7 +111,6 @@ mod tests {
         Ok(())
     }
 }
-// TODO
 // Troubleshooting "DPI-1047: Cannot locate a 64-bit Oracle Client library"
 // This error occurs when the Oracle Instant Client is not installed or not
 // in the system's library path.

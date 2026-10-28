@@ -135,7 +135,6 @@ mod tests {
         main();
     }
 }
-// TODO
 // Run the example with:
 //   cargo run --features dhat-heap
 // or:

@@ -1,12 +1,14 @@
 // TODO Reviewed ??-??-2026.
-// TODO explain that This function is optimised for the case that only a single
-// sample is made from the given range. All supported
-// types may be sampled with low..high_exclusive (Range) and low..=high
-// (RangeInclusive) syntax. Unsigned integer types also support ..high_exclusive
-// (RangeTo) and ..=high (RangeToInclusive) syntax.
 
 // ANCHOR: example
 //! Demonstrates generating random numbers within a specified range.
+//!
+//! ### `Rng::random_range` Optimization and Range Syntax
+//! The `random_range` method is optimized for single one-off samples drawn from
+//! a range. All supported numeric types can be sampled using standard Range
+//! (`low..high`) and RangeInclusive (`low..=high`) expressions. Unsigned
+//! integer types also support RangeTo (`..high`) and RangeToInclusive
+//! (`..=high`) expressions.
 
 use rand::RngExt as _;
 

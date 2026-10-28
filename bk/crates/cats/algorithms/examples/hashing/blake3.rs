@@ -1,5 +1,4 @@
 // TODO Reviewed ??-??-2026.
-// TODO short explaination BLAKE3
 
 // ANCHOR: example
 //! Cryptographic hashing with `blake3`: one-shot, incremental, keyed, key
