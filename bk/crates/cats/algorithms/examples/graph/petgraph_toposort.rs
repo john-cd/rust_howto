@@ -83,11 +83,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the `petgraph` topological sort example.
 mod tests {
     use super::*;
 
-    /// Runs the topological sort example through its `main()` entry point.
     #[test]
     fn test_petgraph_toposort_example_entry_point() {
         main();

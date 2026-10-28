@@ -86,11 +86,9 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 #[cfg(test)]
-/// Unit tests for the robotics A* pathfinding example.
 mod tests {
     use super::*;
 
-    /// Runs the A* robotics pathfinding example and validates path generation.
     #[test]
     fn test_astar_example_entry_point() {
         main();

@@ -93,11 +93,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the `petgraph` BFS traversal example.
 mod tests {
     use super::*;
 
-    /// Runs the `petgraph` BFS example through its `main()` entry point.
     #[test]
     fn test_petgraph_bfs_example_entry_point() {
         main();

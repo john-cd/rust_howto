@@ -101,11 +101,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the BLAKE3 algorithm example.
 mod tests {
     use super::*;
 
-    /// Runs the BLAKE3 example through its `main()` entry point.
     #[test]
     fn test_blake3_example_entry_point() {
         main();

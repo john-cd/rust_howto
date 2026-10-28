@@ -102,11 +102,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the `petgraph` A* example.
 mod tests {
     use super::*;
 
-    /// Runs the `petgraph` A* example through its `main()` entry point.
     #[test]
     fn test_petgraph_astar_example_entry_point() {
         main();

@@ -80,11 +80,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the `petgraph` Minimum Spanning Tree example.
 mod tests {
     use super::*;
 
-    /// Runs the Minimum Spanning Tree example through its `main()` entry point.
     #[test]
     fn test_petgraph_minimum_spanning_tree_example() {
         main();

@@ -52,12 +52,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the `foldhash` algorithm example.
 mod tests {
     use super::*;
 
-    /// Verifies that the fixed seed in `foldhash` produces repeatable hash
-    /// outputs.
     #[test]
     fn fixed_seed_repeats_the_same_hash() {
         main();

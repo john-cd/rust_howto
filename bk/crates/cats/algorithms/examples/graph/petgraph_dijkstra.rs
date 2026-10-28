@@ -86,11 +86,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the `petgraph` Dijkstra algorithm example.
 mod tests {
     use super::*;
 
-    /// Runs the `petgraph` Dijkstra example through its `main()` entry point.
     #[test]
     fn test_petgraph_dijkstra_example_entry_point() {
         main();

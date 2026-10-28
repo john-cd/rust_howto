@@ -81,11 +81,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the `petgraph` DFS traversal example.
 mod tests {
     use super::*;
 
-    /// Runs the `petgraph` DFS example through its `main()` entry point.
     #[test]
     fn test_petgraph_dfs_example_entry_point() {
         main();

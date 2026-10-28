@@ -70,11 +70,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the XXH3 checksum example.
 mod tests {
     use super::*;
 
-    /// Verifies that data corruption causes checksum verification failure.
     #[test]
     fn test_xxh3_checksum_example_entry_point() {
         main();

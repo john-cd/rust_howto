@@ -94,11 +94,9 @@ pub fn run() {
 }
 
 #[cfg(test)]
-/// Unit tests for the `pathfinding` crate A* example.
 mod tests {
     use super::*;
 
-    /// Runs the A* pathfinding example and verifies output correctness.
     #[test]
     fn test_astar_pathfinding_example() {
         main();

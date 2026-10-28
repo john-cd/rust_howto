@@ -102,11 +102,9 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 #[cfg(test)]
-/// Unit tests for the `sha2` example.
 mod tests {
     use super::*;
 
-    /// Runs the SHA-2 hashing example through its `main()` entry point.
     #[test]
     fn test_sha2_example_entry_point() -> anyhow::Result<()> {
         main()?;
