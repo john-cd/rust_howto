@@ -9,36 +9,36 @@ root := clean(source_directory() + "/../..")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{ quote(source_file()) }}
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 # Build the CI Docker image, then push it to DockerHub.
 [group('push')]
 [unix]
 push_ci:
-  #!/usr/bin/env bash
-  set -euo pipefail
-  ## Access private images in DockerHub
-  docker login
-  d="{{root}}/../.devcontainer/"
-  cd ${d}
-  docker buildx bake -f compose.yaml -f compose-ci.yaml --pull --push --allow=fs.read=..
-  ## OR: docker compose -f compose.yaml -f compose-ci.yaml build --pull --push
+    #!/usr/bin/env bash
+    set -euo pipefail
+    ## Access private images in DockerHub
+    docker login
+    d="{{ root }}/../.devcontainer/"
+    cd ${d}
+    docker buildx bake -f compose.yaml -f compose-ci.yaml --pull --push --allow=fs.read=..
+    ## OR: docker compose -f compose.yaml -f compose-ci.yaml build --pull --push
 
 # Push the development Docker image to DockerHub.
 [group('push')]
 @push_dev:
-  docker push johncd/rust_howto_dev:latest
+    docker push johncd/rust_howto_dev:latest
 
 # List containers / Docker Compose services
 [unix]
 list_services:
-  #!/usr/bin/env bash
-  set -euo pipefail
-  d="{{root}}/.devcontainer/"
-  docker compose -f ${d}compose.yaml \
-    -f ${d}compose.override.yaml \
-    -f ${d}compose-heavy-tests.yaml \
-    ps --all
+    #!/usr/bin/env bash
+    set -euo pipefail
+    d="{{ root }}/.devcontainer/"
+    docker compose -f ${d}compose.yaml \
+      -f ${d}compose.override.yaml \
+      -f ${d}compose-heavy-tests.yaml \
+      ps --all
 
 #[unix]
 #down:

@@ -15,6 +15,6 @@ _default:
 
 # List (sub)chapters that somehow were not added in `SUMMARY.md`
 @list_missing_chapters:
-    ./list_missing_chapters_in_toc.sh {{root}}
+    ./list_missing_chapters_in_toc.sh {{ root }}
 
 # Usage: just list_missing_chapters_in_toc >> ./src/SUMMARY.md

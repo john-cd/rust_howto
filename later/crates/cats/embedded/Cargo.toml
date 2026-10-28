@@ -3,41 +3,20 @@
 [package]
 name = "embedded"
 version = "0.1.2"
+description = "Book code examples and their crate dependencies - embedded"
 authors = ["John CD"]
-documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
-homepage = "https://john-cd.com/rust_howto/"
+rust-version = "1.99"
 license-file = "../../../../LICENSE"
 readme = "README.md"
+documentation = "https://docs.rs/rust_howto/"
+homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/"
-rust-version = "1.99"
-description = "Book code examples and their crate dependencies - embedded"
-
-autoexamples = false
-autolib = false
-categories = ["embedded"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish = false
-
-[workspace]
-
-[workspace.lints.rust]
-unsafe_code = "allow"
-missing_docs = "allow"
-
-[dev-dependencies]
-anyhow = "1.0.104" # Provides consistent fallible example entry points.
-critical-section = { version = "1.2.0", features = [
-    "std",
-] } # Provides host-safe locking for the shared Embassy channel.
-embassy-executor = { version = "0.10.0", features = [
-    "executor-thread",
-    "platform-std",
-] } # Runs Embassy tasks with the host executor.
-embassy-sync = "0.8.0" # Provides the bounded task-to-task message channel.
-embassy-time = { version = "0.5.1", features = ["std"] } # Provides host timers for the task example and timeout.
-embedded-hal = "1.0.0" # Portable traits used by the host-side peripheral examples.
-embedded-storage = "0.3.2" # NOR flash traits used by the in-memory flash model.
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["embedded"]
+autolib = false
+autoexamples = false
 
 [[example]]
 name = "flash"
@@ -63,6 +42,26 @@ test = true
 name = "sensors"
 path = "examples/sensors/main.rs"
 test = true
+
+[dev-dependencies]
+anyhow = "1.0.104" # Provides consistent fallible example entry points.
+critical-section = { version = "1.2.0", features = [
+    "std",
+] } # Provides host-safe locking for the shared Embassy channel.
+embassy-executor = { version = "0.10.0", features = [
+    "executor-thread",
+    "platform-std",
+] } # Runs Embassy tasks with the host executor.
+embassy-sync = "0.8.0" # Provides the bounded task-to-task message channel.
+embassy-time = { version = "0.5.1", features = ["std"] } # Provides host timers for the task example and timeout.
+embedded-hal = "1.0.0" # Portable traits used by the host-side peripheral examples.
+embedded-storage = "0.3.2" # NOR flash traits used by the in-memory flash model.
+
+[workspace]
+
+[workspace.lints.rust]
+unsafe_code = "allow"
+missing_docs = "allow"
 
 [lints]
 workspace = true

@@ -29,9 +29,13 @@ _default:
     echo "Formatting all packages and their local path-based dependencies in {{ quote(code_root) }}"
     cd {{ quote(code_root) }}; cargo +{{ rustfmt_toolchain }} fmt --all
 
-# Sort and format Cargo manifests in the book examples workspace
+# Format Cargo manifests in the book examples workspace
 @fmt-toml:
-    cd {{ quote(code_root) }}; cargo sort --workspace
+    cargo fmt-toml --workspace-path {{ quote(code_root) }}
+
+# Check Cargo manifest formatting in the book examples workspace
+@fmt-toml-check:
+    cargo fmt-toml --check --workspace-path {{ quote(code_root) }}
 
 # Check code in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]

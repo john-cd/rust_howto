@@ -2,19 +2,20 @@
 name = "gui_vizia"
 version = "0.1.0"
 edition = "2024"
-publish = false
 rust-version = "1.99"
-[workspace]
-resolver = "3"
+publish = false
 
 [[bin]]
 name = "vizia"
 path = "src/main.rs"
 required-features = ["vizia"]
 
+[dependencies]
+vizia = { version = "0.4.0", optional = true }
+
 [features]
 default = []
 vizia = ["dep:vizia"]
 
-[dependencies]
-vizia = { version = "0.4.0", optional = true }
+[workspace]
+resolver = "3"

@@ -42,6 +42,7 @@ bk/scripts/spelling/spellcheck.sh list
 ## cargo-deny covers advisories, licenses, bans, and sources. cargo-audit uses the
 ## same RustSec advisory database; monthly Cargo updates are handled by Dependabot.
 repo_root="$(pwd -P)"
+just fmt-toml-check
 for manifest in \
     "bk/crates/Cargo.toml" \
     "tools/Cargo.toml" \

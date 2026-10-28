@@ -9,7 +9,7 @@ root := clean(source_directory() + "/../..")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{ quote(source_file()) }}
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- RECIPE TABLE MANAGEMENT -----------------------------------
 
@@ -17,9 +17,9 @@ _default:
 [confirm]
 [unix]
 @fix_recipe_tables:
-  python3 "{{source_directory()}}/fix_recipe_tables.py" "{{root}}"
+    python3 "{{ source_directory() }}/fix_recipe_tables.py" "{{ root }}"
 
 [confirm]
 [windows]
 @fix_recipe_tables:
-  python "{{source_directory()}}/fix_recipe_tables.py" "{{root}}"
+    python "{{ source_directory() }}/fix_recipe_tables.py" "{{ root }}"

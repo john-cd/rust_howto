@@ -9,18 +9,18 @@ root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{ quote(source_file()) }}
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- WIKILINK MANAGEMENT -----------------------------------
 
 # Get Wikilinks for chapters (pages) containing a given keyword
 @for keyword:
-  ./list_chapters.sh {{root}} {{keyword}}
+    ./list_chapters.sh {{ root }} {{ keyword }}
 
 # List all chapters in Wikilink format
 @list:
-  ./list_chapters.sh {{root}}
+    ./list_chapters.sh {{ root }}
 
 # (BEWARE: modifies many files) Convert wiki-style links [[...|...]] to [...][p~...] and [p~...]: ...
 @dewikilink:
-  ./dewikilink.sh {{root}}
+    ./dewikilink.sh {{ root }}

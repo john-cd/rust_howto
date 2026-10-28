@@ -14,6 +14,8 @@
     "**/.worktrees/**",
     "**/node_modules/**",
     "**/target/**",
+    "**/Cargo.toml",
+    ".vscode/bookmarks.json",
     "mdbook-utils/**",
     "bk/book/**",
     "bk/src/indices/crates_alphabetical.md",

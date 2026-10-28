@@ -55,7 +55,7 @@ ARG MDBOOK_PANDOC_VERSION
 ARG MDBOOK_UTILS_REV
 ARG CARGO_NEXTEST_VERSION
 ARG JUST_VERSION
-ARG CARGO_SORT_VERSION
+ARG CARGO_FMT_TOML_VERSION
 ARG DPRINT_VERSION
 ARG RUMDL_VERSION
 
@@ -76,7 +76,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo binstall --no-confirm --secure --version ${MDBOOK_LINKCHECK_VERSION} mdbook-linkcheck
     cargo binstall --no-confirm --secure --version ${MDBOOK_PANDOC_VERSION} mdbook-pandoc
     cargo binstall --no-confirm --secure --version ${JUST_VERSION} just
-    cargo binstall --no-confirm --secure --version ${CARGO_SORT_VERSION} cargo-sort
+    cargo binstall --no-confirm --secure --version ${CARGO_FMT_TOML_VERSION} cargo-fmt-toml
     cargo binstall --no-confirm --secure --version ${DPRINT_VERSION} dprint
     cargo binstall --no-confirm --secure --version ${RUMDL_VERSION} rumdl
     cargo binstall --no-confirm --secure sccache cargo-deny lychee

@@ -93,7 +93,7 @@ cargo binstall --no-confirm --secure --version "$MDBOOK_VERSION" mdbook
 cargo binstall --no-confirm --secure --version "$MDBOOK_LINKCHECK_VERSION" mdbook-linkcheck
 cargo binstall --no-confirm --secure --version "$MDBOOK_PANDOC_VERSION" mdbook-pandoc
 cargo binstall --no-confirm --secure --version "$JUST_VERSION" just
-cargo binstall --no-confirm --secure --version "$CARGO_SORT_VERSION" cargo-sort
+cargo binstall --no-confirm --secure --force --version "$CARGO_FMT_TOML_VERSION" cargo-fmt-toml
 cargo binstall --no-confirm --secure --force --version "$DPRINT_VERSION" dprint
 cargo binstall --no-confirm --secure --force --version "$RUMDL_VERSION" rumdl
 cargo binstall --no-confirm --secure sccache cargo-deny lychee bacon ripgrep
@@ -119,6 +119,6 @@ curl -sS https://webi.sh/gh | sh
 
 cargo binstall --no-confirm --secure kani-verifier
 tectonic --version
-cargo sort --version
+cargo fmt-toml --version
 dprint --version
 rumdl --version

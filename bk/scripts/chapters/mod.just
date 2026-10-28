@@ -9,16 +9,16 @@ root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{ quote(source_file()) }}
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- CHAPTER MANAGEMENT -----------------------------------
 
 # Hides some markdown sections/ pages by adding a _ prefix to all filenames listed in `hiddenfiles.txt`
 [confirm]
 @hide:
-  ./hide.sh {{root}}
+    ./hide.sh {{ root }}
 
 # Make all markdown sections / pages visible
 [confirm]
 @unhide:
-  ./unhide.sh {{root}}
+    ./unhide.sh {{ root }}

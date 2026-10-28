@@ -20,7 +20,7 @@ _default:
 fc:
     @just code fmtcurrent
 
-# Sort and format Cargo manifests
+# Format Cargo manifests with cargo-fmt-toml
 fmt-toml:
     @just code fmt-toml
 

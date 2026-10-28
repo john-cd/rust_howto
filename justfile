@@ -11,14 +11,28 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{ quote(source_file()) }}
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
+
+# Format Cargo manifests in every independent Rust workspace.
+@fmt-toml:
+    set -e; for workspace in bk/crates bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded tools xmpl playground publish; do \
+      echo "Formatting Cargo manifests in ${workspace}"; \
+      cargo fmt-toml --workspace-path "${workspace}"; \
+    done
+
+# Check Cargo manifest formatting in every independent Rust workspace.
+@fmt-toml-check:
+    set -e; for workspace in bk/crates bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded tools xmpl playground publish; do \
+      echo "Checking Cargo manifests in ${workspace}"; \
+      cargo fmt-toml --check --workspace-path "${workspace}"; \
+    done
 
 # Run a recipe in every workspace and report failure if any workspace fails.
 @all cmd:
-  status=0; for wkspace in bk later mdbook-utils playground publish tools xmpl; do \
-    just "$wkspace" {{quote(cmd)}} || status=1; \
-    echo "------------------------"; \
-  done; exit "$status"
+    status=0; for wkspace in bk later mdbook-utils playground publish tools xmpl; do \
+      just "$wkspace" {{ quote(cmd) }} || status=1; \
+      echo "------------------------"; \
+    done; exit "$status"
 
 # Book
 mod bk

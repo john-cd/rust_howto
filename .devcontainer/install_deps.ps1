@@ -109,7 +109,7 @@ $tools = @(
     @{ Name = "mdbook-linkcheck"; Version = $toolVersions["MDBOOK_LINKCHECK_VERSION"] },
     @{ Name = "cargo-nextest"; Version = $toolVersions["CARGO_NEXTEST_VERSION"] },
     @{ Name = "just"; Version = $toolVersions["JUST_VERSION"] },
-    @{ Name = "cargo-sort"; Version = $toolVersions["CARGO_SORT_VERSION"] },
+    @{ Name = "cargo-fmt-toml"; Version = $toolVersions["CARGO_FMT_TOML_VERSION"] },
     @{ Name = "dprint"; Version = $toolVersions["DPRINT_VERSION"] },
     @{ Name = "rumdl"; Version = $toolVersions["RUMDL_VERSION"] }
 )
@@ -117,7 +117,7 @@ $tools = @(
 foreach ($tool in $tools) {
     Write-Host "Installing $($tool.Name) $($tool.Version)..." -ForegroundColor Yellow
     $binstallArgs = @("--no-confirm", "--secure")
-    if ($tool.Name -in @("dprint", "rumdl")) {
+    if ($tool.Name -in @("cargo-fmt-toml", "dprint", "rumdl")) {
         $binstallArgs += "--force"
     }
     $binstallArgs += @("--version", $tool.Version, $tool.Name)
@@ -136,7 +136,7 @@ clang --version
 nasm --version
 pandoc --version | Select-Object -First 1
 tectonic --version
-cargo sort --version
+cargo fmt-toml --version
 dprint --version
 rumdl --version
 Write-Host "Windows development environment ready!" -ForegroundColor Green

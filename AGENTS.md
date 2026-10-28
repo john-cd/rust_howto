@@ -55,7 +55,6 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 ## Worktrees and compilation caches
 
 - `develop` is the default integration branch. `main` starts with an empty root commit and has independent history. The primary checkout keeps its stable `main` cache identity so the branch rename does not invalidate compiled artifacts.
-
 - Keep the primary checkout at `D:\code\rust_howto` on `develop`. Use known reusable slots `D:\code\rust_howto\.worktrees\a`, `b`, `c`, and so on for topic branches. Inspect `git worktree list` and each slot's status before choosing one; preserve dirty or active slots.
 - Create a new slot with `just worktree a codex/topic`. Existing slots are intentionally preserved: inspect their status and branch, then switch a clean inactive slot to the next topic instead of removing and recreating it. Do not use task, issue, branch, or random names for worktree directories. Worktree slots are exactly the single-letter folders `a`, `b`, `c` ... `z` directly inside `.worktrees` (for example `.worktrees\a`, never `.worktrees\a\work`, `a-work` or `checkout`); nothing else may live in `.worktrees`.
 - On Windows, build artifacts belong in `D:\target\rust_howto\<slot>` and intermediate artifacts in `C:\code_build\rust_howto\<slot>`, where `<slot>` is `main`, `a`, `b`, etc. On Linux, the defaults are `${XDG_CACHE_HOME:-$HOME/.cache}/rust_howto/target/<slot>` and `${XDG_CACHE_HOME:-$HOME/.cache}/rust_howto/build/<slot>`. Keep these directories across branch changes to reuse compiled dependencies.
@@ -107,7 +106,7 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 - Keep README files, user guides, command examples, and configuration documentation synchronized with changed behavior.
 - Use American spelling, LF line endings, and CommonMark. Leave blank lines after headings and specify a language on fenced code blocks.
 - Prefer ASCII in tooling code and agent instructions; preserve intentional Unicode in book content, examples, and fixtures.
-- Format Rust with the repository's nightly Rustfmt recipe. Use `dprint` for Markdown/JSON when configured, and sort changed Cargo manifests with `cargo sort -w`.
+- Format Rust with the repository's nightly Rustfmt recipe. Use `dprint` for Markdown/JSON when configured. Format Cargo manifests with `just fmt-toml`; check them with `just fmt-toml-check` (both use `cargo fmt-toml`).
 - Fix lint causes instead of hiding them. Use `#[expect(lint, reason = "...")]` for intentional, documented exceptions rather than unexplained suppression.
 - Prefer Rust for new permanent processing tools. Retain established shell entrypoints and platform/build setup scripts; do not introduce permanent Python or Bash programs for application logic.
 - Prefer `cargo binstall` for supported development tools and pin CI tool versions.

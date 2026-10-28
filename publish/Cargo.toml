@@ -130,7 +130,6 @@ result_large_err = "warn"
 
 # Checks for types used in structs, parameters and let declarations above a certain complexity threshold
 type_complexity = "warn"
-
 # ==============================================================================
 # Cargo lints (Packaging and Manifest metadata)
 # ==============================================================================
@@ -150,7 +149,6 @@ redundant_feature_names = "warn"
 
 # Checks for wildcard dependencies in the Cargo.toml.
 wildcard_dependencies = "warn"
-
 # ==============================================================================
 # Pedantic lints (Strict idioms, code clarity, and potential pitfalls)
 # ==============================================================================

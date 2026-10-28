@@ -10,7 +10,7 @@ root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 [no-exit-message]
 _default:
-  @just --list --unsorted --justfile {{ quote(source_file()) }}
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- CODE EXAMPLE MANAGEMENT -----------------------------------
 
@@ -25,15 +25,15 @@ _default:
 # List examples (.rs files) in `crates/**/tests` that were not included into a module somehow and that are therefore not tested
 list_not_tested:
     #!/usr/bin/env bash
-    root="{{root}}/"
+    root="{{ root }}/"
     comm -1 -3 <(find "${root}crates" -type f \( -name "*.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
           <(find "${root}crates" -type f -wholename "*/examples/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)
     echo "DONE"
 
 # Convert {{#example <name>}} placeholders into ```rust... {#include ...}``` blocks and create the necessary code stubs (in subfolders of crates)
 @convert_example_placeholders:
-    ./convert_example_placeholders.sh {{root}}
+    ./convert_example_placeholders.sh {{ root }}
 
 # Create a new cat crate for a given crates.io category (e.g., `just create algorithms`)
 @create cat:
-    ./create.sh {{root}} {{cat}}
+    ./create.sh {{ root }} {{ cat }}
