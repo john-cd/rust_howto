@@ -58,6 +58,7 @@ ARG JUST_VERSION
 ARG CARGO_FMT_TOML_VERSION
 ARG DPRINT_VERSION
 ARG RUMDL_VERSION
+ARG MATURIN_VERSION
 
 ## Install cargo binstall (binary install)
 ## Install nextest
@@ -72,6 +73,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     set -e
     curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
     cargo binstall --no-confirm --secure --version ${CARGO_NEXTEST_VERSION} cargo-nextest
+    cargo binstall --no-confirm --secure --version ${MATURIN_VERSION} maturin
     cargo binstall --no-confirm --secure --version ${MDBOOK_VERSION} mdbook
     cargo binstall --no-confirm --secure --version ${MDBOOK_LINKCHECK_VERSION} mdbook-linkcheck
     cargo binstall --no-confirm --secure --version ${MDBOOK_PANDOC_VERSION} mdbook-pandoc
@@ -148,6 +150,8 @@ WORKDIR /code
 ## `llvm` for `llvm-config` required for `clang-sys`
 ## `libwebkit2gtk-4.1-dev` `build-essential` `curl` `wget` `file` `libxdo-dev` `libssl-dev` `libayatana-appindicator3-dev` `librsvg2-dev` for `tauri`
 ## `python3` for `pyo3`
+## `default-jdk` for Java/JNI examples; `ruby-dev` for Ruby FFI bindings
+## `python3-venv` and `python-is-python3` for building the separate Maturin extension example
 ## `libgtk-4-dev` `build-essential` for `relm4` and `gtk4`
 ## `clang` `libwayland-dev` `libxkbcommon-x11-dev` `libvulkan-dev` for `xilem`
 ## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for `openrr`
@@ -195,6 +199,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
     libz-dev \
+    default-jdk \
     locales \
     mold \
     openssl \
@@ -206,6 +211,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     pkg-config \
     protobuf-compiler \
     python3 \
+    python-is-python3 \
+    python3-venv \
+    ruby-dev \
     wget \
     xorg-dev \
     && apt-get clean -y

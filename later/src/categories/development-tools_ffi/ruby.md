@@ -14,7 +14,14 @@ The tie between Ruby and Rust.
 
 ### Windows support status {#ruby-windows-support}
 
-The `magnus` and `rutie` examples are currently excluded on Windows by this repository's platform gates. The manifest uses Magnus 0.9.3 and Rutie 0.14.3. Rutie's [current support table][ffi~rutie-support] includes 64-bit Windows and ties its release lines to particular Ruby versions; a local platform gate is not a statement that upstream lacks Windows support. This checkout has no Ruby installation, so native linking and runtime support are not verified here. Keep the gate until the compatible Ruby and C/C++ toolchain are exercised.
+The `magnus` and `rutie` examples are currently excluded on Windows by this
+repository's platform gates. The manifest uses Magnus 0.9.3 and Rutie 0.14.3.
+Rutie's [current support table][ffi~rutie-support] includes 64-bit Windows and
+ties its release lines to particular Ruby versions; a local platform gate is
+not a statement that upstream lacks Windows support. The devcontainer and
+Windows dependency script install Ruby with development headers and a C
+toolchain, but the bindings remain gated until their current feature builds and
+runtimes are verified on Windows.
 
 The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate wraps the Ruby C API. Check its exception and garbage-collection rules before retaining Ruby objects in Rust. Older guidance grouping Rutie with the legacy [Helix project][ffi~helix] as unmaintained is not a reliable description of Rutie's current documented releases.
 

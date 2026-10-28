@@ -100,6 +100,10 @@ pub fn run() -> PyResult<()> {
 
 #[cfg(test)]
 mod tests {
+    use std::error::Error;
+    use std::path::Path;
+    use std::process::Command;
+
     use super::*;
 
     /// Runs the use rust from python example through its entry point.
@@ -113,6 +117,41 @@ mod tests {
     #[test]
     fn test_addition_overflow_returns_error() {
         assert!(my_function(i64::MAX, 1).is_err());
+    }
+
+    /// Builds the native extension and calls it from a separate Python process.
+    #[test]
+    #[ignore = "needs maturin, Python, and an active Python virtual environment"]
+    fn builds_and_imports_the_python_extension() -> Result<(), Box<dyn Error>> {
+        if std::env::var_os("VIRTUAL_ENV").is_none() {
+            return Err("activate a Python virtual environment before running this test".into());
+        }
+
+        let extension_dir =
+            Path::new(env!("CARGO_MANIFEST_DIR")).join("python_extension");
+        let maturin_status = Command::new("maturin")
+            .arg("develop")
+            .current_dir(&extension_dir)
+            .status()?;
+        if !maturin_status.success() {
+            return Err(format!(
+                "maturin develop failed with {maturin_status}"
+            )
+            .into());
+        }
+
+        let python_status = Command::new("python")
+            .arg("python/use_rust_from_python.py")
+            .current_dir(&extension_dir)
+            .status()?;
+        if !python_status.success() {
+            return Err(format!(
+                "the Python extension example failed with {python_status}"
+            )
+            .into());
+        }
+
+        Ok(())
     }
 }
 // [finish; fix](https://github.com/john-cd/rust_howto/issues/996)

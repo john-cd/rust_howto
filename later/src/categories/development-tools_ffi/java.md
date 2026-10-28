@@ -38,7 +38,12 @@ The JNI Rust API is available on Windows. From `later/crates`, compile this exam
 cargo test --locked -p development_tools_ffi --example java --features java
 ```
 
-Compiling the Rust JNI code does not require a JDK because the JVM supplies `JNIEnv` when it calls the native function. Running the Java program does require a JDK and a separately built Rust `cdylib`; Windows loads the resulting `.dll` through `System.loadLibrary`.
+Compiling the Rust JNI code does not require a JDK because the JVM supplies
+`JNIEnv` when it calls the native function. Running the Java program requires a
+JDK with `java` and `javac` on `PATH`; set `JAVA_HOME` to the JDK root for build
+tools that require it. The devcontainer and Windows dependency script install
+Temurin/OpenJDK 21. The caller also needs a separately built Rust `cdylib`;
+Windows loads the resulting `.dll` through `System.loadLibrary`.
 
 The example targets `jni` 0.22: its `EnvUnowned` wraps the incoming environment, and `with_env` supplies a checked `Env` for the operation. Older tutorials using `JNIEnv` refer to a different API generation. The example converts a `JString` with `try_to_string`, creates a Java string with `new_string`, and resolves failures through `ThrowRuntimeExAndDefault`, rather than unwinding into Java.
 

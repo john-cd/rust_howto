@@ -4,6 +4,30 @@
 
 This crate contains code examples for the **Development Tools FFI** category on crates.io. It demonstrates integration with key ecosystem crates including `anyhow`, `clap`, `cxx`, `flutter_rust_bridge`, `jni`, `mlua`.
 
+## Platform Prerequisites
+
+The repository's `.devcontainer` image and install scripts provide the native SDKs
+for these examples. On Debian, they install the default JDK, Ruby headers, Python
+3 with virtual-environment support, and the pinned Maturin release. The Windows
+script installs Eclipse Temurin JDK 21, Python 3.13, RubyInstaller with DevKit
+3.3, and the same Maturin version.
+
+- **Java/JNI:** Rust code can compile without a JDK. Running the Java caller
+  requires `java` and `javac` on `PATH`; set `JAVA_HOME` to the JDK root when
+  another tool needs an explicit JDK path. The Windows setup script configures
+  it when the Temurin installer does not.
+- **Ruby:** `ruby-dev` supplies headers on Debian; RubyInstaller with DevKit
+  supplies Ruby, headers, and its C toolchain on Windows. This crate currently
+  gates Magnus and Rutie dependencies/examples to non-Windows targets, so Windows
+  runs only the platform-independent greeting example.
+- **Python:** The embedded PyO3 examples are Linux-only in this crate. The
+  separate `python_extension` workspace builds an importable module with Python,
+  an active virtual environment, and Maturin. The installed Maturin version is
+  pinned in `.devcontainer/.env`.
+
+See the Java, Ruby, and Python chapters for the commands to compile and run each
+language-side example.
+
 ## Examples Covered
 
 - **C** (`examples/c/`): Demonstrates concepts like `bindgen`, `cbindgen`.

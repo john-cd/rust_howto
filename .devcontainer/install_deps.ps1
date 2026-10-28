@@ -36,6 +36,10 @@ winget install --id SQLite.SQLite -e --source winget --accept-source-agreements 
 # NASM is required to build aws-lc-sys; Ninja is the build backend for CMake-based -sys crates.
 winget install --id NASM.NASM -e --source winget --accept-source-agreements --accept-package-agreements
 winget install --id Ninja-build.Ninja -e --source winget --accept-source-agreements --accept-package-agreements
+# Install the SDKs used by the Java, Ruby, and Python FFI examples.
+winget install --id EclipseAdoptium.Temurin.21.JDK -e --source winget --accept-source-agreements --accept-package-agreements
+winget install --id Python.Python.3.13 -e --source winget --accept-source-agreements --accept-package-agreements
+winget install --id RubyInstallerTeam.RubyWithDevKit.3.3 -e --source winget --accept-source-agreements --accept-package-agreements
 
 # Install the repository-pinned Pandoc release. Its MSI updates PATH when installed.
 $pandocVersion = $toolVersions["PANDOC_VERSION"]
@@ -75,9 +79,33 @@ function Add-UserPath {
     }
 }
 
+# Refresh PATH and JAVA_HOME values installed by Winget for this PowerShell process.
+$registeredPath = @(
+    [Environment]::GetEnvironmentVariable('Path', 'Machine'),
+    [Environment]::GetEnvironmentVariable('Path', 'User')
+) | Where-Object { $_ }
+$env:Path = (@($env:Path) + $registeredPath) -join ';'
+$javaHome = [Environment]::GetEnvironmentVariable('JAVA_HOME', 'Machine')
+if ([string]::IsNullOrWhiteSpace($javaHome)) {
+    $javaHome = [Environment]::GetEnvironmentVariable('JAVA_HOME', 'User')
+}
+if ([string]::IsNullOrWhiteSpace($javaHome)) {
+    $javaRoot = Join-Path $env:ProgramFiles 'Eclipse Adoptium'
+    $javaHome = Get-ChildItem -LiteralPath $javaRoot -Directory -Filter 'jdk-21*' -ErrorAction SilentlyContinue |
+        Sort-Object Name -Descending |
+        Select-Object -First 1 -ExpandProperty FullName
+}
+if ($javaHome) {
+    [Environment]::SetEnvironmentVariable('JAVA_HOME', $javaHome, 'User')
+    $env:JAVA_HOME = $javaHome
+    Add-UserPath -Directory (Join-Path $javaHome 'bin')
+}
+
 @(
     (Join-Path $env:ProgramFiles 'LLVM\bin'),
     (Join-Path $env:ProgramFiles 'NASM'),
+    'C:\Ruby33-x64\bin',
+    'C:\Ruby33-x64\msys64\usr\bin',
     (Join-Path $env:LOCALAPPDATA 'Pandoc'),
     (Join-Path $env:LOCALAPPDATA 'bin'),
     (Join-Path $env:LOCALAPPDATA 'bin\NASM')
@@ -112,6 +140,7 @@ $tools = @(
     @{ Name = "cargo-fmt-toml"; Version = $toolVersions["CARGO_FMT_TOML_VERSION"] },
     @{ Name = "dprint"; Version = $toolVersions["DPRINT_VERSION"] },
     @{ Name = "rumdl"; Version = $toolVersions["RUMDL_VERSION"] }
+    @{ Name = "maturin"; Version = $toolVersions["MATURIN_VERSION"] }
 )
 
 foreach ($tool in $tools) {
@@ -139,4 +168,9 @@ tectonic --version
 cargo fmt-toml --version
 dprint --version
 rumdl --version
+python --version
+java --version
+javac --version
+ruby --version
+maturin --version
 Write-Host "Windows development environment ready!" -ForegroundColor Green

@@ -102,7 +102,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-02 — Foreign function interfaces
 
-- [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation — **DEFERRED — JDK, Ruby headers, and maturin unavailable; blocker recorded on the issue**
+- [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation — **PARTIAL; OPEN — Windows JDK, Ruby DevKit, Python, and Maturin installed; docs and ignored integration test added; isolated Python extension, Java JNI, and Ruby runs pass; package checks await #1998 lock integration**
 - [#78](https://github.com/john-cd/rust_howto/issues/78) — **P4** — `python/pyo3.rs`: finish; fix py examples — **DEFERRED — maturin unavailable and PyO3 is Linux-only in this crate; blocker recorded on the issue**
 - [#996](https://github.com/john-cd/rust_howto/issues/996) — **P4** — Fix and finish the Python-to-Rust example J — **DEFERRED — maturin unavailable; blocker recorded on the issue**
 - [#1028](https://github.com/john-cd/rust_howto/issues/1028) — **P4** — Finish the Flutter Rust Bridge example without adding a Flutter app to the workspace J — **DEFERRED — Flutter and Dart SDKs unavailable; blocker recorded on the issue**
