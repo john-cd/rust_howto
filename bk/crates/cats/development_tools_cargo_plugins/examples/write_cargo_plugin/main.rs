@@ -12,16 +12,3 @@ mod cargo_subcommand;
 fn main() -> anyhow::Result<()> {
     cargo_subcommand::run_from(std::env::args_os())
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
-}

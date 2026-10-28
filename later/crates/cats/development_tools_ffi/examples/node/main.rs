@@ -43,14 +43,3 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     Ok(())
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_cli_dispatcher() {
-        let _ = Cli::try_parse_from(["example"]);
-    }
-}

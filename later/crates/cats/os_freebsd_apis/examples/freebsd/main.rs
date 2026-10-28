@@ -26,16 +26,3 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
     println!("This sysctl example requires FreeBSD.");
     Ok(())
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
-}

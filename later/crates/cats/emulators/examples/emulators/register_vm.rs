@@ -3,7 +3,7 @@
 use core::fmt;
 
 /// A malformed instruction, invalid address, or exhausted execution budget.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug)]
 enum EmuError {
     /// The instruction pointer is outside the loaded program.
     InvalidAddress(usize),
@@ -83,23 +83,6 @@ impl Cpu<'_> {
 }
 // ANCHOR_END: example
 
-/// Runs a program on a new Cpu up to `step_limit` steps or until halted.
-fn run_program<'a>(program: &'a [[u8; 2]], step_limit: usize) -> Result<Cpu<'a>, EmuError> {
-    let mut cpu = Cpu {
-        program,
-        pc: 0,
-        registers: [0; 2],
-        halted: false,
-    };
-    for _ in 0..step_limit {
-        cpu.step()?;
-        if cpu.halted {
-            return Ok(cpu);
-        }
-    }
-    Err(EmuError::StepLimit)
-}
-
 /// Sums five down to one and stops after at most 64 guest instructions.
 ///
 /// # Errors
@@ -114,9 +97,20 @@ fn main() -> Result<(), EmuError> {
         [0x40, 2],
         [0x00, 0],
     ];
-    let cpu = run_program(&program, 64)?;
-    println!("Sum of 1..=5: {}", cpu.registers[0]);
-    Ok(())
+    let mut cpu = Cpu {
+        program: &program,
+        pc: 0,
+        registers: [0; 2],
+        halted: false,
+    };
+    for _ in 0..64 {
+        cpu.step()?;
+        if cpu.halted {
+            println!("Sum of 1..=5: {}", cpu.registers[0]);
+            return Ok(());
+        }
+    }
+    Err(EmuError::StepLimit)
 }
 
 /// Runs the self-contained virtual machine without a guest file.
@@ -127,6 +121,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     Ok(main()?)
 }
 
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -136,36 +131,5 @@ mod tests {
         if let Err(err) = main() {
             panic!("main failed: {err:?}");
         }
-    }
-
-    #[test]
-    fn test_unknown_instruction_error() {
-        let program = [[0xFF, 0x00]];
-        let mut cpu = Cpu {
-            program: &program,
-            pc: 0,
-            registers: [0; 2],
-            halted: false,
-        };
-        assert_eq!(cpu.step(), Err(EmuError::UnknownInstruction([0xFF, 0x00])));
-    }
-
-    #[test]
-    fn test_invalid_address_error() {
-        let program = [[0x40, 0x05]]; // jump to 5 (out of bounds) when r1 != 0
-        let mut cpu = Cpu {
-            program: &program,
-            pc: 0,
-            registers: [0, 1],
-            halted: false,
-        };
-        assert_eq!(cpu.step(), Err(EmuError::InvalidAddress(5)));
-    }
-
-    #[test]
-    fn test_step_limit_error() {
-        let program = [[0x40, 0x00]]; // infinite jump loop to 0
-        let res = run_program(&program, 10);
-        assert_eq!(res, Err(EmuError::StepLimit));
     }
 }

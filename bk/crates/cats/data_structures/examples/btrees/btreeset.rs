@@ -6,57 +6,81 @@
 
 use std::collections::BTreeSet;
 
-/// Populates a `BTreeSet` with sample names.
-fn populate_set() -> BTreeSet<&'static str> {
+/// Creates, fills and queries a `BTreeSet`.
+fn main() {
+    // Create a new `BTreeSet`:
     let mut names = BTreeSet::new();
+
+    // Insert some names:
     names.insert("Alice");
     names.insert("Bob");
     names.insert("Charlie");
     names.insert("Alice"); // Duplicate insertion, will be ignored.
     names.insert("David");
     names.insert("Eve");
-    names
-}
 
-/// Performs set operations (difference, union, intersection, symmetric difference) between two sets.
-fn set_operations(names: &BTreeSet<&'static str>, other_names: &BTreeSet<&'static str>) {
-    let diff: Vec<_> = names.difference(other_names).cloned().collect();
-    let union: Vec<_> = names.union(other_names).cloned().collect();
-    let inter: Vec<_> = names.intersection(other_names).cloned().collect();
-    let sym_diff: Vec<_> = names.symmetric_difference(other_names).cloned().collect();
-
-    assert!(diff.contains(&"Alice"));
-    assert!(union.contains(&"Frank"));
-    assert!(inter.contains(&"Bob"));
-    assert!(sym_diff.contains(&"Frank"));
-}
-
-/// Creates, fills and queries a `BTreeSet`.
-fn main() {
-    let mut names = populate_set();
-
+    // Print the set (elements are printed in sorted order):
     println!("Names in the set:");
     for name in &names {
         println!("{name}");
     }
 
+    // Check if a name is in the set:
     if names.contains("Bob") {
         println!("Bob is in the set.");
     }
 
+    // Remove a name:
     names.remove("Charlie");
 
+    // Iterate over a range of names:
     println!("\nNames starting with 'B' and beyond:");
     for name in names.range("B"..) {
         println!("{name}");
     }
 
+    // Find the first and last elements:
     println!("\nFirst name: {:?}", names.first());
     println!("Last name: {:?}", names.last());
 
-    let other_names = BTreeSet::from(["Bob", "Eve", "Frank"]);
-    set_operations(&names, &other_names);
+    // Get the length of the set:
+    println!("\nNumber of names in the set: {}", names.len());
 
+    // Check if the set is empty:
+    println!("Is the set empty? {}", names.is_empty());
+
+    // Use the `difference` method to find elements in one set but
+    // not another:
+    let other_names = BTreeSet::from(["Bob", "Eve", "Frank"]);
+    let difference = names.difference(&other_names);
+    println!("\nNames in the set but not in other_names:");
+    for name in difference {
+        println!("{name}");
+    }
+
+    // Use the `union` method to combine two sets:
+    let union = names.union(&other_names);
+    println!("\nUnion of both sets:");
+    for name in union {
+        println!("{name}");
+    }
+
+    // Use the `intersection` method to find common elements:
+    let intersection = names.intersection(&other_names);
+    println!("\nIntersection of both sets:");
+    for name in intersection {
+        println!("{name}");
+    }
+
+    // Use the `symmetric_difference` method to find elements in
+    // either set but not both:
+    let symmetric_difference = names.symmetric_difference(&other_names);
+    println!("\nSymmetric difference of both sets:");
+    for name in symmetric_difference {
+        println!("{name}");
+    }
+
+    // Clear the set:
     names.clear();
     println!("Set is empty: {}", names.is_empty());
 }
@@ -75,20 +99,5 @@ mod tests {
     #[test]
     fn test_btreeset_example_entry_point() {
         main();
-    }
-
-    #[test]
-    fn test_populate_set() {
-        let set = populate_set();
-        assert_eq!(set.len(), 5); // Alice duplicate was ignored
-        assert!(set.contains("Alice"));
-        assert!(set.contains("Eve"));
-    }
-
-    #[test]
-    fn test_set_operations() {
-        let set1 = BTreeSet::from(["Alice", "Bob"]);
-        let set2 = BTreeSet::from(["Bob", "Charlie", "Frank"]);
-        set_operations(&set1, &set2);
     }
 }

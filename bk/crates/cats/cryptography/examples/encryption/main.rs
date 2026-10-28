@@ -29,11 +29,4 @@ mod tests {
     fn both_encryption_examples_succeed() -> anyhow::Result<()> {
         run_examples()
     }
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
 }

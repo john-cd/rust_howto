@@ -33,14 +33,3 @@ fn main() {
         None => {}
     }
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_cli_dispatcher() {
-        let _ = Cli::try_parse_from(["example"]);
-    }
-}

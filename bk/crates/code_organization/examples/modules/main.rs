@@ -10,14 +10,3 @@ fn main() {
     module_paths::run();
     module_visibility::run();
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}

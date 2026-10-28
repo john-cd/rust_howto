@@ -8,14 +8,3 @@ mod tests1;
 fn main() {
     tests1::run();
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}

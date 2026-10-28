@@ -17,41 +17,69 @@ use tempfile::spooled_tempfile;
 use tempfile::tempdir;
 use tempfile::tempfile;
 
-/// Demonstrates creating and reading an unnamed temporary file.
-fn create_unnamed_tempfile() -> std::io::Result<()> {
+/// Creates temporary files and directories.
+fn main() -> std::io::Result<()> {
+    // 1. Create a temporary file (inside of `env::temp_dir()`).
+    // Use `tempfile()` when needing a real `File` but not needing to refer to
+    // it by path.
     let mut temp_file: File = tempfile()?;
     writeln!(temp_file, "This is temporary.")?;
+
+    // Move the cursor back to the beginning before reading the file.
     temp_file.seek(SeekFrom::Start(0))?;
 
+    // Read the file back to verify the contents.
     let mut buf = String::new();
     temp_file.read_to_string(&mut buf)?;
     assert_eq!(buf, "This is temporary.\n");
-    Ok(())
-}
 
-/// Demonstrates spooled temporary files that roll to disk when exceeding a size limit.
-fn create_spooled_tempfile(threshold: usize) -> std::io::Result<bool> {
-    let mut file = spooled_tempfile(threshold);
+    // The temporary file will be automatically removed by the OS when the last
+    // handle to it is closed / goes out of scope. The above doesn't rely on
+    // Rust destructors being run, so will (almost) never fail to clean up
+    // the temporary file.
+
+    // 2. Use `spooled_tempfile()` when needing an in-memory buffer that will
+    //    ultimately be backed by a temporary file if it gets too large. This
+    //    variant is also secure/reliable in the presence of a pathological
+    //    temporary file cleaner.
+    let mut file = spooled_tempfile(15);
     writeln!(file, "short")?;
-    let initial_rolled = file.is_rolled();
+    assert!(!file.is_rolled());
+    // This write exceeds the 15-byte threshold, so the buffer spills to disk
+    // and its in-memory storage is released.
     writeln!(file, "much longer than the max size")?;
-    let final_rolled = file.is_rolled();
-    Ok(!initial_rolled && final_rolled)
-}
+    assert!(file.is_rolled());
 
-/// Demonstrates creating and closing a temporary directory.
-fn create_temp_directory() -> std::io::Result<()> {
+    // 3. Create a temporary directory (inside of `env::temp_dir()`).
+    // Use `tempdir()` when needing a temporary directory that will be
+    // recursively deleted on drop.
     let temp_dir: TempDir = tempdir()?;
     let temp_file_path = temp_dir.path().join("temporary_file.txt");
-    let mut temp_file = File::create(&temp_file_path)?;
+    let mut temp_file = File::create(temp_file_path)?;
     writeln!(temp_file, "This is also temporary.")?;
-    drop(temp_file);
-    temp_dir.close()?;
-    Ok(())
-}
 
-/// Demonstrates creating and reopening a named temporary file.
-fn create_named_tempfile() -> std::io::Result<String> {
+    // `TempDir` relies on Rust destructors for cleanup. Destructors may fail to
+    // run if the process exits through an unhandled signal interrupt, or if the
+    // instance is declared statically, among other possible reasons.
+    // a. Make sure that handles to files inside the directory are dropped
+    // before the `TempDir` goes out of scope.
+    drop(temp_file);
+    // b. By closing the `TempDir` explicitly, we can check that it has
+    // been deleted successfully. If we don't close it explicitly,
+    // the directory will still be deleted when `temp_dir` goes out
+    // of scope, but we won't know whether deleting the directory
+    // succeeded.
+    temp_dir.close()?;
+
+    // 4. Use `NamedTempFile::new()` when needing a named temporary file that
+    //    whose path can be referred to. `NamedTempFile` also relies on Rust
+    //    destructors for cleanup, which may fail. Read the documentation and
+    //    prefer `tempfile()` in most cases.
+    let temp_file0 = NamedTempFile::new()?;
+    println!("Temporary file created at: {:?}", temp_file0.path());
+
+    // Use `Builder` to create a new temporary file (or directory) with custom
+    // options.
     let mut temp_file = Builder::new()
         .prefix("my-temporary-file")
         .suffix(".txt")
@@ -60,22 +88,29 @@ fn create_named_tempfile() -> std::io::Result<String> {
 
     writeln!(temp_file, "Hello, named temporary file!")?;
 
+    // Print the path of the named temporary file.
+    println!("Temporary file created at: {:?}", temp_file.path());
+
+    // Read the content back from the named temporary file.
+    // `NamedTempFile::reopen()` guarantees that the re-opened file is the same
+    // file, even in the presence of pathological temporary file cleaners.
+    // This function is also useful when needing multiple independent handles
+    // to the same file (useful for consumer/producer patterns).
     let mut file = temp_file.reopen()?;
     let mut content = String::new();
-    file.read_to_string(&mut content)?;
-    Ok(content)
-}
+    Read::read_to_string(&mut file, &mut content)?;
 
-/// Creates temporary files and directories.
-fn main() -> std::io::Result<()> {
-    create_unnamed_tempfile()?;
-    assert!(create_spooled_tempfile(15)?);
-    create_temp_directory()?;
-    let content = create_named_tempfile()?;
-    assert!(content.contains("Hello, named temporary file!"));
+    drop(temp_file);
+
+    // Show the contents after reopening the named temporary file.
+    println!("Content of temporary file: {content}");
+
+    drop(file);
+
     Ok(())
 }
 
+// Examples adapted from <https://docs.rs/tempfile>.
 // ANCHOR_END: example
 
 pub fn run() -> std::io::Result<()> {
@@ -90,29 +125,6 @@ mod tests {
     #[test]
     fn test_tempfile_example_entry_point() -> anyhow::Result<()> {
         main()?;
-        Ok(())
-    }
-
-    #[test]
-    fn test_unnamed_tempfile() -> std::io::Result<()> {
-        create_unnamed_tempfile()
-    }
-
-    #[test]
-    fn test_spooled_tempfile() -> std::io::Result<()> {
-        assert!(create_spooled_tempfile(10)?);
-        Ok(())
-    }
-
-    #[test]
-    fn test_temp_directory() -> std::io::Result<()> {
-        create_temp_directory()
-    }
-
-    #[test]
-    fn test_named_tempfile() -> std::io::Result<()> {
-        let content = create_named_tempfile()?;
-        assert!(content.contains("Hello, named temporary file!"));
         Ok(())
     }
 }

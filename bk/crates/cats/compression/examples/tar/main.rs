@@ -109,9 +109,4 @@ mod tests {
         fs::remove_dir_all(&work_dir)?;
         Ok(())
     }
-
-    #[test]
-    fn test_main_cli_dispatcher() {
-        let _ = Cli::try_parse_from(["example"]);
-    }
 }

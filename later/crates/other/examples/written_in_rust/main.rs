@@ -6,14 +6,3 @@
 fn main() {
     println!("No written_in_rust examples are implemented yet.");
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}

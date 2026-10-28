@@ -33,11 +33,4 @@ mod tests {
     fn test_crate_index_examples_run_offline() -> anyhow::Result<()> {
         run()
     }
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
 }

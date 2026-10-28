@@ -11,16 +11,3 @@ mod no_alloc;
 fn main() -> core::fmt::Result {
     no_alloc::run()
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
-}

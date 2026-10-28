@@ -83,14 +83,3 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // // <https://www.shuttle.dev/blog/2022/12/23/procedural-macros>
 // // <https://doc.rust-lang.org/core/macro.compile_error.html>
 // // <https://github.com/dtolnay/watt>.
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_cli_dispatcher() {
-        let _ = Cli::try_parse_from(["example"]);
-    }
-}

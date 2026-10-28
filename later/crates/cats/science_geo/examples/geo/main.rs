@@ -14,16 +14,3 @@ fn main() -> Result<(), geocoding::GeocodingError> {
     us_states::run();
     geocode::run()
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
-}

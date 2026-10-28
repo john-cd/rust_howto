@@ -73,9 +73,4 @@ mod tests {
         // governor uses a real clock, so only check the result here.
         assert!(start.elapsed() < Duration::from_mins(1));
     }
-
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
 }

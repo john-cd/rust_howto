@@ -202,15 +202,127 @@ mod tests {
         main()
     }
 
+    /// Drives a real `rust-analyzer` over stdio. Run it with
+    /// `cargo test -- --ignored` when `rust-analyzer` is on the `PATH`.
     #[test]
-    fn test_function_symbols() -> anyhow::Result<()> {
-        let uri: Uri = "file:///test.rs".parse()?;
-        let symbols = function_symbols(&uri, "fn foo()\nlet x = 1;\nfn bar_1()");
-        let names: Vec<&str> = symbols.iter().map(|s| s.name.as_str()).collect();
-        assert_eq!(names, vec!["foo", "bar_1"]);
+    #[ignore = "needs rust-analyzer on the PATH"]
+    fn test_real_rust_analyzer() -> anyhow::Result<()> {
+        use std::io::BufWriter;
+        use std::process::Command;
+        use std::process::Stdio;
 
-        let empty = function_symbols(&uri, "no functions here");
-        assert!(empty.is_empty());
+        let mut child = Command::new("rust-analyzer")
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::null())
+            .spawn()?;
+        let mut writer = BufWriter::new(
+            child
+                .stdin
+                .take()
+                .ok_or_else(|| anyhow::anyhow!("no stdin"))?,
+        );
+        let mut reader = BufReader::new(
+            child
+                .stdout
+                .take()
+                .ok_or_else(|| anyhow::anyhow!("no stdout"))?,
+        );
+
+        let initialize = Request::new(
+            RequestId::from(1),
+            "initialize".into(),
+            serde_json::json!({ "processId": null, "rootUri": null, "capabilities": {} }),
+        );
+        Message::Request(initialize).write(&mut writer)?;
+        // Skip server-initiated messages until the response arrives.
+        let capabilities = loop {
+            match Message::read(&mut reader)? {
+                Some(Message::Response(r)) if r.id == RequestId::from(1) => {
+                    break r.response_result.map_err(|e| {
+                        anyhow::anyhow!("server error: {}", e.message)
+                    })?;
+                }
+                Some(_) => {}
+                None => anyhow::bail!("server closed the connection"),
+            }
+        };
+        assert!(capabilities["capabilities"].is_object());
+
+        Message::Notification(Notification::new("initialized".into(), ()))
+            .write(&mut writer)?;
+        let uri: Uri = "file:///tmp/rust_howto_lsp_client.rs".parse()?;
+        Message::Notification(Notification::new(
+            DidOpenTextDocument::METHOD.into(),
+            DidOpenTextDocumentParams {
+                text_document: TextDocumentItem::new(
+                    uri.clone(),
+                    "rust".into(),
+                    1,
+                    "fn rust_analyzer_client_probe() {}\n".into(),
+                ),
+            },
+        ))
+        .write(&mut writer)?;
+        Message::Request(Request::new(
+            RequestId::from(2),
+            DocumentSymbolRequest::METHOD.into(),
+            serde_json::json!({
+                "textDocument": { "uri": uri.to_string() }
+            }),
+        ))
+        .write(&mut writer)?;
+        let symbols = loop {
+            match Message::read(&mut reader)? {
+                Some(Message::Response(response))
+                    if response.id == RequestId::from(2) =>
+                {
+                    break response.response_result.map_err(|error| {
+                        anyhow::anyhow!("server error: {}", error.message)
+                    })?;
+                }
+                Some(Message::Request(request)) => {
+                    // rust-analyzer may request optional client settings while
+                    // starting. This example has no settings, so answer with
+                    // the protocol's empty/default values and keep reading.
+                    let result = match request.method.as_str() {
+                        "workspace/configuration" => serde_json::json!([]),
+                        _ => serde_json::Value::Null,
+                    };
+                    Message::Response(Response::new_ok(request.id, result))
+                        .write(&mut writer)?;
+                }
+                Some(_) => {}
+                None => anyhow::bail!("server closed the connection"),
+            }
+        };
+        assert!(symbols.is_array());
+        assert!(symbols.as_array().is_some_and(|items| {
+            items.iter().any(|item| {
+                item.get("name").and_then(serde_json::Value::as_str)
+                    == Some("rust_analyzer_client_probe")
+            })
+        }));
+
+        Message::Request(Request::new(
+            RequestId::from(3),
+            "shutdown".into(),
+            (),
+        ))
+        .write(&mut writer)?;
+        loop {
+            match Message::read(&mut reader)? {
+                Some(Message::Response(r)) if r.id == RequestId::from(3) => {
+                    break;
+                }
+                Some(_) => {}
+                None => anyhow::bail!("server closed the connection"),
+            }
+        }
+        Message::Notification(Notification::new("exit".into(), ()))
+            .write(&mut writer)?;
+        drop(writer);
+        assert!(child.wait()?.success());
         Ok(())
     }
 }

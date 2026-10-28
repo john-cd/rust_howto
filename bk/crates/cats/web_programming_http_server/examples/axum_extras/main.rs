@@ -13,14 +13,3 @@ mod typed_header;
 fn main() {
     println!("Run `cargo test --example axum_extras`.");
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}

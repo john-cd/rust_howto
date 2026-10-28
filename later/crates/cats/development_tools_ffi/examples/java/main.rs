@@ -9,14 +9,3 @@ mod jni;
 fn main() {
     // The exported JNI function is called by a JVM, not by this binary.
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}

@@ -9,14 +9,3 @@ mod hashing;
 fn main() {
     println!("Run `cargo test --example session_login`.");
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}

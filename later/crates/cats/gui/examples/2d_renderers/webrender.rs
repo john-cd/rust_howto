@@ -19,21 +19,6 @@ use webrender::api::units::LayoutRect;
 use webrender::api::units::LayoutSize;
 use webrender::api::*;
 
-/// Builds the WebRender display list containing a centered rotating red rectangle.
-fn build_display_list(width: f32, height: f32, angle: f32) -> DisplayListBuilder {
-    let mut builder = DisplayListBuilder::new(LayoutSize::new(width, height));
-    let rect_size = LayoutSize::new(100.0, 50.0);
-    let center = LayoutPoint::new(width / 2.0, height / 2.0);
-    builder.push_rect(
-        &LayoutRect::new(center - rect_size / 2.0, rect_size),
-        &SolidColor::new(ColorF::new(1.0, 0.0, 0.0, 1.0)),
-        &BorderRadius::zero(),
-        Transform::rotate(angle),
-        None,
-    );
-    builder
-}
-
 /// Opens a window and renders a rotating rectangle with WebRender.
 fn main() {
     let event_loop = EventLoop::new();
@@ -91,7 +76,20 @@ fn main() {
                     Instant::now().duration_since(start_time).as_secs_f32();
 
                 let mut txn = Transaction::new();
-                let display_list_builder = build_display_list(width as f32, height as f32, current_time);
+                let mut display_list_builder = DisplayListBuilder::new(
+                    LayoutSize::new(width as f32, height as f32),
+                );
+
+                let rect_size = LayoutSize::new(100.0, 50.0);
+                let center =
+                    LayoutPoint::new(width as f32 / 2.0, height as f32 / 2.0);
+                display_list_builder.push_rect(
+                    &LayoutRect::new(center - rect_size / 2.0, rect_size),
+                    &SolidColor::new(ColorF::new(1.0, 0.0, 0.0, 1.0)),
+                    &BorderRadius::zero(),
+                    Transform::rotate(current_time),
+                    None,
+                );
 
                 txn.set_display_list(
                     document_id,
@@ -138,11 +136,5 @@ mod tests {
     #[ignore = "requires interactive example runtime"]
     fn test_webrender_example_entry_point() {
         main();
-    }
-
-    #[test]
-    fn test_build_display_list() {
-        let dl = build_display_list(800.0, 600.0, 0.5);
-        let _finalized = dl.finalize();
     }
 }

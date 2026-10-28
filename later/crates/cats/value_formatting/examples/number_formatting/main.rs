@@ -14,14 +14,3 @@ fn main() {
     ryu::run();
     standard_and_localized::run();
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}

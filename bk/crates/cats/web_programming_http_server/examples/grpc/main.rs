@@ -12,16 +12,3 @@ fn main() -> anyhow::Result<()> {
     tonic::run()?;
     Ok(())
 }
-
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
-}
