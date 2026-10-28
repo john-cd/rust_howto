@@ -3,15 +3,18 @@
 // ANCHOR: example
 //! Example using the `redb` embedded key-value store.
 //!
-//! `redb` is a pure-Rust, ACID-compliant embedded key-value database with a stable file format.
+//! `redb` is a pure-Rust, ACID-compliant embedded key-value database with a
+//! stable file format.
 //!
 //! Add `redb = "2.4.0"` to `Cargo.toml`.
 
-use redb::{Database, TableDefinition};
+use redb::Database;
+use redb::TableDefinition;
 
 const TABLE: TableDefinition<&str, &str> = TableDefinition::new("my_table");
 
-/// Opens a `redb` database, inserts a key-value pair in a write transaction, and reads it back in a read transaction.
+/// Opens a `redb` database, inserts a key-value pair in a write transaction,
+/// and reads it back in a read transaction.
 fn main() -> anyhow::Result<()> {
     // Create a temporary directory for the database file:
     let dir = tempfile::tempdir()?;
