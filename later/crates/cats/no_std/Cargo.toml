@@ -3,32 +3,31 @@
 [package]
 name = "no_std"
 version.workspace = true
+description = "Book code examples and their crate dependencies - no_std"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - no_std"
-
-autolib = false
-categories = ["no-std"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["no-std"]
+autolib = false
 
 [lib]
 path = "src/lib.rs"
-
-[features]
-default = ["std"]
-std = []
 
 [[example]]
 name = "no_std"
 path = "examples/no_std/main.rs"
 test = true
+
+[features]
+default = ["std"]
+std = []
 
 [lints]
 workspace = true

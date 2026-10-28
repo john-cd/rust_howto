@@ -3,10 +3,10 @@
 [package]
 name = "mdbook-private"
 version = "0.3.0"
+description = "Repository-local mdBook 0.5 port of mdbook-private"
 edition.workspace = true
 license = "MPL-2.0"
 publish = false
-description = "Repository-local mdBook 0.5 port of mdbook-private"
 
 [dependencies]
 # Use the same book protocol and configuration API as mdbook-scrub.

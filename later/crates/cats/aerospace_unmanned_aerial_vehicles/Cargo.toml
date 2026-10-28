@@ -3,27 +3,27 @@
 [package]
 name = "aerospace_unmanned_aerial_vehicles"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories = ["aerospace::unmanned-aerial-vehicles"]
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-license-file.workspace = true
-publish.workspace = true
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Book code examples and their crate dependencies - aerospace_unmanned_aerial_vehicles"
-
-[dependencies]
-tello = "0.6.3"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["aerospace::unmanned-aerial-vehicles"]
+autolib = false
 
 [[example]]
 name = "uavs"
 path = "examples/uavs/main.rs"
 test = true
+
+[dependencies]
+tello = "0.6.3"
 
 [lints]
 workspace = true

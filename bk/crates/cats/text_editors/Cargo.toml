@@ -3,26 +3,19 @@
 [package]
 name = "text_editors"
 version.workspace = true
+description = "Book code examples and their crate dependencies - text_editors"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - text_editors"
-
-autolib = false
-categories = ["text-editors"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-anyhow = "1.0.104"
-lsp-server = "0.10.0"
-lsp-types = "0.97.0"
-serde_json = "1.0.154"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["text-editors"]
+autolib = false
 
 [[example]]
 name = "lsp_client"
@@ -33,6 +26,12 @@ test = true
 name = "lsp_server_minimal"
 path = "examples/language_server_protocol/lsp_server_minimal.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+lsp-server = "0.10.0"
+lsp-types = "0.97.0"
+serde_json = "1.0.154"
 
 [lints]
 workspace = true

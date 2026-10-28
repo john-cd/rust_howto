@@ -3,21 +3,35 @@
 [package]
 name = "development_tools_build_utils"
 version.workspace = true
+description = "Book code examples and their crate dependencies - development_tools_build_utils"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - development_tools_build_utils"
-
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["development-tools::build-utils"]
 autolib = false
 build = "build.rs"
-categories = ["development-tools::build-utils"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-publish.workspace = true
+
+[[example]]
+name = "autocfg"
+path = "examples/autocfg/main.rs"
+test = true
+
+[[example]]
+name = "build_time_tooling"
+path = "examples/build_time_tooling/main.rs"
+test = true
+
+[[example]]
+name = "build_info"
+path = "examples/build_info/main.rs"
+test = true
 
 [dependencies]
 anyhow = "1.0.104"
@@ -37,21 +51,6 @@ tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 # Collect Git, timestamp, compiler, and dependency metadata at build time.
 build-info-build = "0.0.47"
 cc = "=1.8.0"
-
-[[example]]
-name = "autocfg"
-path = "examples/autocfg/main.rs"
-test = true
-
-[[example]]
-name = "build_time_tooling"
-path = "examples/build_time_tooling/main.rs"
-test = true
-
-[[example]]
-name = "build_info"
-path = "examples/build_info/main.rs"
-test = true
 
 [lints]
 workspace = true

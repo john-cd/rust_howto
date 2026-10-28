@@ -3,20 +3,29 @@
 [package]
 name = "network_programming"
 version.workspace = true
+description = "Network programming examples covering Axum servers, ngrok tunneling, and load balancing with Pingora."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Network programming examples covering Axum servers, ngrok tunneling, and load balancing with Pingora."
-
-autolib = false
-categories = ["network-programming"]
-keywords = ["networking", "axum", "ngrok", "pingora", "load-balancer"]
 publish.workspace = true
+keywords = ["networking", "axum", "ngrok", "pingora", "load-balancer"]
+categories = ["network-programming"]
+autolib = false
+
+[[example]]
+name = "reverse_proxy"
+path = "examples/reverse_proxy/main.rs"
+test = true
+
+[[example]]
+name = "server"
+path = "examples/server/main.rs"
+test = true
 
 [dependencies]
 anyhow = "1.0.104"
@@ -29,6 +38,9 @@ ngrok = { version = "0.19.0", default-features = false, features = [
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "signal"] }
 url = "2.5.8"
 
+[dev-dependencies]
+tower = { version = "0.5.3", features = ["util"] } # Exercise Axum routes without binding a network port.
+
 [target.'cfg(target_family = "unix")'.dependencies]
 async-trait = "0.1.92"
 pingora = { version = "0.9.0", features = ["lb"] }
@@ -37,19 +49,6 @@ pingora = { version = "0.9.0", features = ["lb"] }
 # Supplies async read and write extension traits for Glommio TCP streams.
 futures-lite = "2.6.1"
 glommio = "0.9.0"
-
-[dev-dependencies]
-tower = { version = "0.5.3", features = ["util"] } # Exercise Axum routes without binding a network port.
-
-[[example]]
-name = "reverse_proxy"
-path = "examples/reverse_proxy/main.rs"
-test = true
-
-[[example]]
-name = "server"
-path = "examples/server/main.rs"
-test = true
 
 [lints]
 workspace = true

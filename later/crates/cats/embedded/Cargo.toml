@@ -28,11 +28,11 @@ missing_docs = "allow"
 [dev-dependencies]
 anyhow = "1.0.104" # Provides consistent fallible example entry points.
 critical-section = { version = "1.2.0", features = [
-  "std",
+    "std",
 ] } # Provides host-safe locking for the shared Embassy channel.
 embassy-executor = { version = "0.10.0", features = [
-  "executor-thread",
-  "platform-std",
+    "executor-thread",
+    "platform-std",
 ] } # Runs Embassy tasks with the host executor.
 embassy-sync = "0.8.0" # Provides the bounded task-to-task message channel.
 embassy-time = { version = "0.5.1", features = ["std"] } # Provides host timers for the task example and timeout.

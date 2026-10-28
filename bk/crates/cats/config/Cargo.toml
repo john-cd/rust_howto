@@ -3,20 +3,29 @@
 [package]
 name = "config"
 version.workspace = true
+description = "Book code examples and their crate dependencies - config"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - config"
-
-autolib = false
-categories = ["config"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["config"]
+autolib = false
+
+[[example]]
+name = "configuration"
+path = "examples/configuration/main.rs"
+test = true
+
+[[example]]
+name = "env"
+path = "examples/env/main.rs"
+test = true
 
 [dependencies]
 ## General
@@ -31,15 +40,6 @@ serde = { version = "1.0.229", features = ["derive"] }
 
 [dev-dependencies]
 tempfile = "3.27.0"
-[[example]]
-name = "configuration"
-path = "examples/configuration/main.rs"
-test = true
-
-[[example]]
-name = "env"
-path = "examples/env/main.rs"
-test = true
 
 [lints]
 workspace = true

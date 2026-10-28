@@ -3,43 +3,19 @@
 [package]
 name = "authentication"
 version.workspace = true
+description = "Book code examples and their crate dependencies - authentication"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - authentication"
-
-autolib = false
-categories = ["authentication"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-## General
-anyhow = "1.0.104"
-argon2 = "0.6.0"
-axum = { version = "0.8.9", features = ["form"] }
-axum-login = "0.18.0"
-getrandom = "0.4.3" # Generate random CSRF tokens.
-http-body-util = "0.1.5"
-jsonwebtoken = { version = "11.1.0", features = [
-  "rust_crypto",
-] } # Sign and validate HS256 JSON Web Tokens with RustCrypto.
-oauth2 = "5.0.0"
-password-auth = "1.0.0"
-reqwest = { version = "0.13.5", features = ["blocking"] }
-serde = "1.0.229"
-tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] } # Run the asynchronous Axum tests.
-tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
-# Pinned: axum-login needs the tower-sessions 0.14 SessionManagerLayer.
-tower-sessions = { version = "0.15.0", features = ["memory-store"] }
-
-[dev-dependencies]
-httpmock = "0.9.0"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["authentication"]
+autolib = false
 
 [[example]]
 name = "basic_authentication"
@@ -60,6 +36,29 @@ test = true
 name = "oauth_client_credentials"
 path = "examples/oauth_client_credentials/main.rs"
 test = true
+
+[dependencies]
+## General
+anyhow = "1.0.104"
+argon2 = "0.6.0"
+axum = { version = "0.8.9", features = ["form"] }
+axum-login = "0.18.0"
+getrandom = "0.4.3" # Generate random CSRF tokens.
+http-body-util = "0.1.5"
+jsonwebtoken = { version = "11.1.0", features = [
+    "rust_crypto",
+] } # Sign and validate HS256 JSON Web Tokens with RustCrypto.
+oauth2 = "5.0.0"
+password-auth = "1.0.0"
+reqwest = { version = "0.13.5", features = ["blocking"] }
+serde = "1.0.229"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] } # Run the asynchronous Axum tests.
+tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
+# Pinned: axum-login needs the tower-sessions 0.14 SessionManagerLayer.
+tower-sessions = { version = "0.15.0", features = ["memory-store"] }
+
+[dev-dependencies]
+httpmock = "0.9.0"
 
 [lints]
 workspace = true

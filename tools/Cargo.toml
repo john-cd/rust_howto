@@ -3,18 +3,18 @@
 [workspace]
 resolver = "3"
 members = [
-  "clean",
-  "crate_indices",
-  "mdbook-private",
-  "mdbook-scrub",
-  "templ",
-  "tool_lib",
+    "clean",
+    "crate_indices",
+    "mdbook-private",
+    "mdbook-scrub",
+    "templ",
+    "tool_lib",
 ]
 
 [workspace.dependencies]
 anyhow = "1.0.104"
 book_tool = { git = "https://github.com/john-cd/book_tooling", rev = "404e8fe0d4adc40517b0b40a2536cc6833b29059", default-features = false, features = [
-  "directives",
+    "directives",
 ] }
 cargo_toml = "0.22.3"
 chrono = "0.4.45"

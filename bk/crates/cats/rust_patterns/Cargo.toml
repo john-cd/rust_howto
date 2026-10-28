@@ -3,44 +3,19 @@
 [package]
 name = "rust_patterns"
 version.workspace = true
+description = "Book code examples and their crate dependencies - rust_patterns"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - rust_patterns"
-
-autolib = false
-categories = ["rust-patterns"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-anyhow = "1.0.104"
-clap = { version = "4.6.7", features = ["derive"] }
-color-eyre = "0.6.5"
-csv = "1.4.0"
-dyn-clone = "1.0.20"
-either = "1.19.0"
-frunk = "0.5.0"
-frunk_core = "0.5.0"
-# Use the maintained `imbl` fork instead of upstream `im`.
-imbl = "7.0.2"
-# eyre is outdated, see color-eyre
-itertools = "0.15.0"
-miette = { version = "7.6.0", features = ["fancy"] }
-pin-project = "1.1.13"
-# pin-project-lite = "0.2.16"
-rpds = "1.2.1"
-scopeguard = "1.2.0"
-serde = { version = "1.0.229", features = ["derive"] }
-serde_json = "1.0.154"
-thiserror = "2.0.21"
-tokio = { version = "1.54.1", features = ["rt"] }
-zen-engine = "2.1.6"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["rust-patterns"]
+autolib = false
 
 [[example]]
 name = "decision_table"
@@ -86,6 +61,30 @@ test = true
 name = "scopeguard"
 path = "examples/scopeguard.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
+color-eyre = "0.6.5"
+csv = "1.4.0"
+dyn-clone = "1.0.20"
+either = "1.19.0"
+frunk = "0.5.0"
+frunk_core = "0.5.0"
+# Use the maintained `imbl` fork instead of upstream `im`.
+imbl = "7.0.2"
+# eyre is outdated, see color-eyre
+itertools = "0.15.0"
+miette = { version = "7.6.0", features = ["fancy"] }
+pin-project = "1.1.13"
+# pin-project-lite = "0.2.16"
+rpds = "1.2.1"
+scopeguard = "1.2.0"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+thiserror = "2.0.21"
+tokio = { version = "1.54.1", features = ["rt"] }
+zen-engine = "2.1.6"
 
 [lints]
 workspace = true

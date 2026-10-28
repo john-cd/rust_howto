@@ -3,26 +3,19 @@
 [package]
 name = "template_engine"
 version.workspace = true
+description = "Code examples for popular Rust template engines including Tera and TinyTemplate."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Code examples for popular Rust template engines including Tera and TinyTemplate."
-
-autolib = false
-categories = ["template-engine"]
-keywords = ["templates", "tera", "tinytemplate", "web", "rendering"]
 publish.workspace = true
-
-[dependencies]
-anyhow = "1.0.104"
-serde = { version = "1.0.229", features = ["derive"] }
-tera = { version = "2.4.0", features = ["glob_fs"] }
-tinytemplate = "1.2.1"
+keywords = ["templates", "tera", "tinytemplate", "web", "rendering"]
+categories = ["template-engine"]
+autolib = false
 
 [[example]]
 name = "tera"
@@ -33,6 +26,12 @@ test = true
 name = "tinytemplate"
 path = "examples/tinytemplate/main.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+serde = { version = "1.0.229", features = ["derive"] }
+tera = { version = "2.4.0", features = ["glob_fs"] }
+tinytemplate = "1.2.1"
 
 [lints]
 workspace = true

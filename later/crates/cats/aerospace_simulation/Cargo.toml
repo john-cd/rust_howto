@@ -3,28 +3,28 @@
 [package]
 name = "aerospace_simulation"
 version.workspace = true
-authors.workspace = true
-autolib = false
-categories = ["aerospace::simulation"]
-documentation.workspace = true
-edition.workspace = true
-homepage.workspace = true
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-license-file.workspace = true
-publish.workspace = true
-readme = "README.md"
-repository.workspace = true
-rust-version.workspace = true
 description = "Book code examples and their crate dependencies - aerospace_simulation"
-
-[dependencies]
-ode_solvers = "0.6.2"
-sgp4 = "2.4.0"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["aerospace::simulation"]
+autolib = false
 
 [[example]]
 name = "aerospace_simulation"
 path = "examples/aerospace_simulation/main.rs"
 test = true
+
+[dependencies]
+ode_solvers = "0.6.2"
+sgp4 = "2.4.0"
 
 [lints]
 workspace = true

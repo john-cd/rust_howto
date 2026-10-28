@@ -3,40 +3,19 @@
 [package]
 name = "web_programming"
 version.workspace = true
+description = "Book code examples and their crate dependencies - web_programming"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - web_programming"
-
-autolib = false
-categories = ["web-programming"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-ammonia = "4.2.4"
-anyhow = "1.0.104"
-bytes = "1.12.1"
-clap = { version = "4.6.7", features = ["derive"] }
-html2text = "0.17.4"
-http = "1.5.0"
-http-body-util = "0.1.5"
-lazy_static = "1.5.1"
-mime = "0.3.17"
-# Guesses a MIME type from a file name's extension.
-mime_guess = "2.0.5"
-pulldown-cmark = "0.13.5"
-regex = "1.13.1"
-reqwest = "0.13.5"
-# Parses HTML documents and selects elements with CSS selectors.
-scraper = "0.29.0"
-tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
-url = "2.5.8"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["web-programming"]
+autolib = false
 
 [[example]]
 name = "ammonia_clean"
@@ -72,6 +51,26 @@ test = true
 name = "url"
 path = "examples/url/main.rs"
 test = true
+
+[dependencies]
+ammonia = "4.2.4"
+anyhow = "1.0.104"
+bytes = "1.12.1"
+clap = { version = "4.6.7", features = ["derive"] }
+html2text = "0.17.4"
+http = "1.5.0"
+http-body-util = "0.1.5"
+lazy_static = "1.5.1"
+mime = "0.3.17"
+# Guesses a MIME type from a file name's extension.
+mime_guess = "2.0.5"
+pulldown-cmark = "0.13.5"
+regex = "1.13.1"
+reqwest = "0.13.5"
+# Parses HTML documents and selects elements with CSS selectors.
+scraper = "0.29.0"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+url = "2.5.8"
 
 [lints]
 workspace = true

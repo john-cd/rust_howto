@@ -3,27 +3,29 @@
 [package]
 name = "database_implementations"
 version.workspace = true
+description = "Examples for interacting with various database backends like Sled, SurrealDB, and Meilisearch."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Examples for interacting with various database backends like Sled, SurrealDB, and Meilisearch."
-
-autolib = false
-categories = ["database-implementations"]
-keywords = ["database", "sled", "surrealdb", "meilisearch", "tantivy", "persistence"]
 publish.workspace = true
+keywords = ["database", "sled", "surrealdb", "meilisearch", "tantivy", "persistence"]
+categories = ["database-implementations"]
+autolib = false
 
-[features]
-# default = []
-meilisearch = ["dep:meilisearch-sdk"]
-sled = ["dep:sled"]
-surrealdb = ["dep:surrealdb"]
-tantivy = ["dep:tantivy"]
+[[example]]
+name = "databases"
+path = "examples/databases/main.rs"
+test = true
+
+[[example]]
+name = "search_engines"
+path = "examples/search_engines/main.rs"
+test = true
 
 [dependencies]
 ## General
@@ -37,15 +39,12 @@ surrealdb = { version = "3.3.4", default-features = false, features = ["kv-mem",
 tantivy = { version = "0.27.0", optional = true }
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 
-[[example]]
-name = "databases"
-path = "examples/databases/main.rs"
-test = true
-
-[[example]]
-name = "search_engines"
-path = "examples/search_engines/main.rs"
-test = true
+[features]
+# default = []
+meilisearch = ["dep:meilisearch-sdk"]
+sled = ["dep:sled"]
+surrealdb = ["dep:surrealdb"]
+tantivy = ["dep:tantivy"]
 
 [lints]
 workspace = true

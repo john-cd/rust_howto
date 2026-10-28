@@ -3,42 +3,19 @@
 [package]
 name = "filesystem"
 version.workspace = true
+description = "Book code examples and their crate dependencies - filesystem"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - filesystem"
-
-autolib = false
-categories = ["filesystem"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-anyhow = "1.0.104"
-atomicwrites = "0.4.4" # Atomic file replacement.
-camino = "1.2.6"
-clap = { version = "4.6.7", features = ["derive"] }
-directories = "6.0.0"
-dirs = "7.0.0"
-dunce = "1.0.5" # Canonicalize paths without the Windows `\\?\` prefix.
-glob = "0.3.4"
-globset = "0.4.20"
-ignore = "0.4.33"
-infer = "0.22.0" # Detect file types from their content.
-memmap2 = "0.9.12"
-notify = "8.2.1"
-open = "5.4.5"
-remove_dir_all = { version = "1.0.0", features = ["parallel"] }
-same-file = "1.0.6"
-# tempdir is outdated, replaced by tempfile
-tempfile = "3.27.0"
-utils = { path = "../../utils" }
-walkdir = "2.5.0"
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["filesystem"]
+autolib = false
 
 [[example]]
 name = "atomic_write"
@@ -99,6 +76,28 @@ test = true
 name = "user_directories"
 path = "examples/user_directories/main.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+atomicwrites = "0.4.4" # Atomic file replacement.
+camino = "1.2.6"
+clap = { version = "4.6.7", features = ["derive"] }
+directories = "6.0.0"
+dirs = "7.0.0"
+dunce = "1.0.5" # Canonicalize paths without the Windows `\\?\` prefix.
+glob = "0.3.4"
+globset = "0.4.21"
+ignore = "0.4.34"
+infer = "0.22.0" # Detect file types from their content.
+memmap2 = "0.9.12"
+notify = "8.2.1"
+open = "5.4.5"
+remove_dir_all = { version = "1.0.0", features = ["parallel"] }
+same-file = "1.0.6"
+# tempdir is outdated, replaced by tempfile
+tempfile = "3.27.0"
+utils = { path = "../../utils" }
+walkdir = "2.5.0"
 
 [lints]
 workspace = true

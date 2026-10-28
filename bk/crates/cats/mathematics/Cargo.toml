@@ -3,57 +3,19 @@
 [package]
 name = "mathematics"
 version.workspace = true
+description = "Book code examples and their crate dependencies - mathematics"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - mathematics"
-
-autolib = false
-categories = ["mathematics"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
-
-[dependencies]
-anyhow = "1.0.104"
-approx = "0.5.1" # was pinned at 0.4.0
-argmin = { version = "0.11.0", default-features = false } # Scalar root finding and optimization algorithms.
-argmin-math = { version = "0.5.1", default-features = false, features = [
-    "vec",
-] } # `Vec<f64>` parameters for `argmin` solvers.
-clap = { version = "4.6.7", features = ["derive"] }
-cmaes = "0.2.2" # CMA-ES evolution strategy.
-fixed = "1.31.0"
-half = "2.7.1"
-nalgebra = { version = "0.34.2", features = ["serde-serialize"] } # Pinned: ode_solvers uses nalgebra 0.34.
-ndarray = { version = "0.17.2", features = [
-    "approx",
-] } # was pinned to 0.15.6 for linfa
-num = "0.4.3"
-num-bigint = "0.5.1"
-num-rational = "0.4.2"
-num-traits = "0.2.19"
-ode_solvers = "0.6.2" # Fixed-step and adaptive solvers for ordinary differential equations.
-ordered-float = "5.5.1"
-petgraph = "0.8.3" # Directed graphs and graph algorithms.
-radiate = { version = "1.3.2", default-features = false } # Genetic algorithms.
-rand = "0.10.3" # Seeded random numbers for the particle swarm example.
-rayon = "1.12.0" # Parallel evaluation of independent graph levels.
-rust_decimal = "1.43.0"
-rust_decimal_macros = "1.40.0"
-serde_json = "1.0.154"
-typenum = "1.20.1"
-uom = "0.38.0" # Type-safe physical quantities and unit conversion.
-
-[target.'cfg(target_os = "linux")'.dependencies]
-rug = "1.30.0"
-
-[dev-dependencies]
-proptest = "1.12.0" # Generate DAGs for topological order property tests.
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["mathematics"]
+autolib = false
 
 [[example]]
 name = "additional_numeric_types"
@@ -114,6 +76,43 @@ test = true
 name = "units"
 path = "examples/units/main.rs"
 test = true
+
+[dependencies]
+anyhow = "1.0.104"
+approx = "0.5.1" # was pinned at 0.4.0
+argmin = { version = "0.11.0", default-features = false } # Scalar root finding and optimization algorithms.
+argmin-math = { version = "0.5.1", default-features = false, features = [
+    "vec",
+] } # `Vec<f64>` parameters for `argmin` solvers.
+clap = { version = "4.6.7", features = ["derive"] }
+cmaes = "0.2.2" # CMA-ES evolution strategy.
+fixed = "1.31.0"
+half = "2.7.1"
+nalgebra = { version = "0.34.2", features = ["serde-serialize"] } # Pinned: ode_solvers uses nalgebra 0.34.
+ndarray = { version = "0.17.2", features = [
+    "approx",
+] } # was pinned to 0.15.6 for linfa
+num = "0.4.3"
+num-bigint = "0.5.1"
+num-rational = "0.4.2"
+num-traits = "0.2.19"
+ode_solvers = "0.6.2" # Fixed-step and adaptive solvers for ordinary differential equations.
+ordered-float = "5.5.1"
+petgraph = "0.8.3" # Directed graphs and graph algorithms.
+radiate = { version = "1.3.2", default-features = false } # Genetic algorithms.
+rand = "0.10.3" # Seeded random numbers for the particle swarm example.
+rayon = "1.12.0" # Parallel evaluation of independent graph levels.
+rust_decimal = "1.43.0"
+rust_decimal_macros = "1.40.0"
+serde_json = "1.0.154"
+typenum = "1.20.1"
+uom = "0.38.0" # Type-safe physical quantities and unit conversion.
+
+[dev-dependencies]
+proptest = "1.12.0" # Generate DAGs for topological order property tests.
+
+[target.'cfg(target_os = "linux")'.dependencies]
+rug = "1.30.0"
 
 [lints]
 workspace = true

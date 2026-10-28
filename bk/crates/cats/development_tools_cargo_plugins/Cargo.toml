@@ -3,24 +3,28 @@
 [package]
 name = "cargo"
 version.workspace = true
+description = "Book code examples for creating and using Cargo plugins and automating tasks with xshell."
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples for creating and using Cargo plugins and automating tasks with xshell."
-
-autoexamples = false
-categories = ["development-tools::cargo-plugins"]
-keywords = ["cargo", "plugins", "xshell", "automation", "development-tools"]
 publish.workspace = true
+keywords = ["cargo", "plugins", "xshell", "automation", "development-tools"]
+categories = ["development-tools::cargo-plugins"]
+autoexamples = false
 
 [[bin]]
 name = "cargo-hello"
 path = "examples/write_cargo_plugin/main.rs"
+test = true
+
+[[example]]
+name = "building"
+path = "examples/building/main.rs"
 test = true
 
 [dependencies]
@@ -33,11 +37,6 @@ tempfile = "3.27.0"
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 xshell = "0.2.7"
-
-[[example]]
-name = "building"
-path = "examples/building/main.rs"
-test = true
 
 [lints]
 workspace = true

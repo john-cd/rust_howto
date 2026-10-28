@@ -3,28 +3,28 @@
 [package]
 name = "cryptography_cryptocurrencies"
 version.workspace = true
+description = "Book code examples and their crate dependencies - cryptography_cryptocurrencies"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples and their crate dependencies - cryptography_cryptocurrencies"
-
-autolib = false
-categories = ["cryptography::cryptocurrencies"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["cryptography::cryptocurrencies"]
+autolib = false
 
-[dependencies]
 # LATER
 
 [[example]]
 name = "cryptocurrencies"
 path = "examples/cryptocurrencies/main.rs"
 test = true
+
+[dependencies]
 
 [lints]
 workspace = true

@@ -3,20 +3,29 @@
 [package]
 name = "compression"
 version.workspace = true
+description = "Book code examples - compression"
 authors.workspace = true
-documentation.workspace = true
 edition.workspace = true
-homepage.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
 repository.workspace = true
-rust-version.workspace = true
-description = "Book code examples - compression"
-
-autolib = false
-categories = ["compression"]
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["compression"]
+autolib = false
+
+[[example]]
+name = "compression"
+path = "examples/compression/main.rs"
+test = true
+
+[[example]]
+name = "tar"
+path = "examples/tar/main.rs"
+test = true
 
 [dependencies]
 # General
@@ -36,15 +45,6 @@ zip = "9.1.2"
 [dev-dependencies]
 # Creates automatically cleaned temporary directories and files for the examples.
 tempfile = "3.27.0"
-[[example]]
-name = "compression"
-path = "examples/compression/main.rs"
-test = true
-
-[[example]]
-name = "tar"
-path = "examples/tar/main.rs"
-test = true
 
 [lints]
 workspace = true

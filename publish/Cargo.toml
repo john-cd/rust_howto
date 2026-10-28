@@ -1,38 +1,39 @@
+# This crate is a placeholder published to crates.io to make rust_howto searchable there.
+#
 # TODO Reviewed ??-??-2026.
 
-# This crate is a placeholder published to crates.io to make rust_howto searchable there.
 [package]
 name = "rust_howto"
 version = "0.1.2"
+description = "A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem. Everything you need for day-to-day Rust coding, all in one place."
 authors = ["John CD"]
-categories = ["development-tools"]
-documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
-homepage = "https://john-cd.com/rust_howto/"
-keywords = [
-  "book",
-  "cookbook",
-  "howto",
-  "how-to",
-  "documentation",
-  "Rust bible",
-  "patterns",
-  "Rust ecosystem",
-  "recipes",
-  "examples",
-  "summary",
-]
+rust-version = "1.99"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
+documentation = "https://docs.rs/rust_howto/"
+homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/"
-rust-version = "1.99"
-description = "A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem. Everything you need for day-to-day Rust coding, all in one place."
-
 publish = true
+keywords = [
+    "book",
+    "cookbook",
+    "howto",
+    "how-to",
+    "documentation",
+    "Rust bible",
+    "patterns",
+    "Rust ecosystem",
+    "recipes",
+    "examples",
+    "summary",
+]
+categories = ["development-tools"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 cargo_toml = "1.0.1"
+
 [lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
 unsafe_code = "deny"
@@ -129,6 +130,7 @@ result_large_err = "warn"
 
 # Checks for types used in structs, parameters and let declarations above a certain complexity threshold
 type_complexity = "warn"
+
 # ==============================================================================
 # Cargo lints (Packaging and Manifest metadata)
 # ==============================================================================
@@ -148,6 +150,7 @@ redundant_feature_names = "warn"
 
 # Checks for wildcard dependencies in the Cargo.toml.
 wildcard_dependencies = "warn"
+
 # ==============================================================================
 # Pedantic lints (Strict idioms, code clarity, and potential pitfalls)
 # ==============================================================================
