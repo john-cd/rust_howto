@@ -99,6 +99,7 @@ napi = { version = "3.15.0", features = ["async"], optional = true }
 napi-derive = { version = "3", optional = true }
 neon = { version = "1.1.2", optional = true }
 rustler = { version = "0.39.0", optional = true }
+rutie = { version = "0.14.3", optional = true }
 uniffi = { version = "0.32.2", optional = true }
 
 [build-dependencies]
@@ -128,7 +129,6 @@ objc2-foundation = { version = "0.3.2", optional = true }
 
 [target.'cfg(not(target_os = "windows"))'.dependencies]
 magnus = { version = "0.9.3", features = ["embed"], optional = true }
-rutie = { version = "0.14.3", optional = true }
 
 [target.'cfg(any(target_os = "linux", target_os = "windows"))'.dependencies]
 # Embed Python and expose Rust functions to Python on Linux and Windows.

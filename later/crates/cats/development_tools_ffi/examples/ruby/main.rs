@@ -9,7 +9,7 @@ mod greeting;
 #[cfg(all(not(windows), feature = "ruby"))]
 // TODO review Windows support for Ruby FFI examples
 mod magnus;
-#[cfg(all(not(windows), feature = "ruby"))]
+#[cfg(feature = "ruby")]
 mod rutie;
 
 /// Command-line arguments.
@@ -28,7 +28,7 @@ enum Commands {
     #[command(name = "magnus")]
     Magnus,
     /// Runs the `rutie` example.
-    #[cfg(all(not(windows), feature = "ruby"))]
+    #[cfg(feature = "ruby")]
     #[command(name = "rutie")]
     Rutie,
 }
@@ -44,9 +44,9 @@ fn main() {
             Commands::Magnus => {
                 magnus::run().expect("the Ruby example should run");
             }
-            #[cfg(all(not(windows), feature = "ruby"))]
+            #[cfg(feature = "ruby")]
             Commands::Rutie => {
-                rutie::run();
+                rutie::run().expect("the Rutie example should run");
             }
         }
     }

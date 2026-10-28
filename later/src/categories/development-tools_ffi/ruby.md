@@ -14,16 +14,21 @@ The tie between Ruby and Rust.
 
 ### Windows support status {#ruby-windows-support}
 
-The `magnus` and `rutie` examples are currently excluded on Windows by this
-repository's platform gates. The manifest uses Magnus 0.9.3 and Rutie 0.14.3.
-Rutie's [current support table][ffi~rutie-support] includes 64-bit Windows and
-ties its release lines to particular Ruby versions; a local platform gate is
-not a statement that upstream lacks Windows support. The devcontainer and
-Windows dependency script install Ruby with development headers and a C
-toolchain, but the bindings remain gated until their current feature builds and
-runtimes are verified on Windows.
+The `magnus` example remains excluded on Windows by this repository's platform
+gate. Rutie 0.14.3 is enabled there with the `ruby` feature. Rutie's [current
+support table][ffi~rutie-support] includes 64-bit Windows and ties each release
+line to particular Ruby versions: Rutie 0.14.x requires Ruby 4.0, while 0.13.x
+supports Ruby 3.2 through 3.4. The development environment pins Ruby 4.0.9 so
+its headers and libraries match Rutie. Building the Windows example also needs
+the Visual Studio C++ Build Tools.
 
 The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate wraps the Ruby C API. Check its exception and garbage-collection rules before retaining Ruby objects in Rust. Older guidance grouping Rutie with the legacy [Helix project][ffi~helix] as unmaintained is not a reliable description of Rutie's current documented releases.
+
+The example embeds Ruby, registers a `RustGreeter` class with `class!` and
+`methods!`, then calls the Rust method from Ruby. Run it or its ignored
+Ruby-backed test from `later/crates`; the source lists both commands. The test
+requires Ruby 4.0 headers and libraries and runs in its own process because it
+initializes the VM.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/ruby/rutie.rs:example}}
@@ -107,7 +112,10 @@ cargo test --locked -p development_tools_ffi --example ruby --features ruby embe
 cargo test --locked -p development_tools_ffi --example ruby --features ruby test_rutie_example_entry_point -- --ignored --test-threads=1
 ```
 
-An ignored test still needs Ruby headers/libraries to compile and link. A Windows pass exercises only the pure helper, not either native binding; test gem loading with the intended Ruby version before release.
+An ignored native test still needs the matching Ruby headers and libraries to
+compile and link. With the `ruby` feature enabled, Windows now includes the
+Rutie example; Magnus remains gated there. Test Ruby gem loading with the
+intended Ruby version before release.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

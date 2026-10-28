@@ -1,57 +1,65 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Calling Rust from Ruby with `rutie`.
+//! Calling Ruby from Rust with `rutie`.
+//!
+//! Install 64-bit Ruby 4.0.9 with development headers and libraries, then run
+//! the example or its ignored Ruby-backed test from `later/crates`:
+//!
+//! ```bash
+//! cargo run --locked -p development_tools_ffi --features ruby --example ruby -- rutie
+//! cargo test --locked -p development_tools_ffi --features ruby --example ruby test_rutie_example_entry_point -- --ignored --test-threads=1
+//! ```
 
-use rutie::Object as _;
+#[macro_use]
+extern crate rutie;
+
+use rutie::AnyException;
+use rutie::Class;
+use rutie::Object;
 use rutie::RString;
 use rutie::VM;
 
-/// Example
-///
-///  1. Compile the Rust code:
-/// ```bash
-/// cargo build --release
-/// ```
-///
-/// 2. Run the Ruby script using a Ruby interpreter:
-/// ```bash
-/// ruby script.rb
-/// ```
+class!(RustGreeter);
 
-/// Mark the `RustModule` function as a Ruby module.
-// Note: In a real rutie project, you'd use macros to export this.
-// This is a simplified representation for documentation.
+methods!(
+    RustGreeter,
+    _rtself,
+    fn greeting() -> RString {
+        RString::new_utf8("Hello from Rutie!")
+    }
+);
 
-/// Prints a greeting to the console.
-pub extern "C" fn hello(
-    _argc: i32,
-    _argv: *const rutie::types::Value,
-    _slf: rutie::types::Value,
-) -> rutie::types::Value {
-    RString::new_utf8("Hello from Rust!").value()
-}
-
-/// Initializes the Ruby VM.
-fn main() {
+/// Initializes Ruby, registers `RustGreeter`, and evaluates its greeting
+/// method.
+fn main() -> Result<String, AnyException> {
     VM::init();
-    // In a real application, you would define modules and classes here.
+    Class::new("RustGreeter", None).define(|class| {
+        class.def("greeting", greeting);
+    });
+
+    let greeting =
+        VM::eval("RustGreeter.new.greeting")?.try_convert_to::<RString>()?;
+    Ok(greeting.to_string())
 }
 // ANCHOR_END: example
 
-pub fn run() {
-    main();
+/// Prints the greeting produced by an embedded Ruby interpreter.
+pub fn run() -> Result<(), AnyException> {
+    println!("{}", main()?);
+    Ok(())
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::main;
 
-    /// Runs the rutie example through its entry point.
+    /// Verifies that Ruby can construct the class and call its Rust method.
     #[test]
-    #[ignore = "needs Ruby; run this test alone in its own process"]
+    #[ignore = "needs Ruby"]
     fn test_rutie_example_entry_point() {
-        main();
+        let greeting =
+            main().expect("the embedded Ruby greeting should evaluate");
+        assert_eq!(greeting, "Hello from Rutie!");
     }
 }
-// [finish](https://github.com/john-cd/rust_howto/issues/1036)
