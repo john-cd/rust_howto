@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Visualization
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Visualization** category on crates.io. It demonstrates integration with key ecosystem crates including `anyhow`, `plotly`.
+
+## Examples Covered
+
+- **Visualization** (`examples/visualization/`): Demonstrates concepts like `plotly`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package visualization --examples
+cargo test --package visualization
+```
+
+Code examples correspond to chapters in `bk/src/categories/visualization` or related book sections.

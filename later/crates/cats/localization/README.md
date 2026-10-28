@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Localization
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Localization** category on crates.io. It demonstrates integration with key ecosystem crates including `sys-locale`.
+
+## Examples Covered
+
+- **Localization** (`examples/localization/`): Demonstrates concepts like `localization1`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package localization --examples
+cargo test --package localization
+```
+
+Code examples correspond to chapters in `bk/src/categories/localization` or related book sections.

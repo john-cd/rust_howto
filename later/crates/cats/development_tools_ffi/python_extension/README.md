@@ -1,3 +1,24 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
+# Python Extension
+
+This crate contains code examples for the **Python Extension** category on crates.io. It demonstrates integration with key ecosystem crates including `pyo3`.
+
+## Examples Covered
+
+- **Core Examples**: Code modules in `src/` or `tests/` demonstrating category functionality.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package rust_howto_python_module --examples
+cargo test --package rust_howto_python_module
+```
+
+Code examples correspond to chapters in `bk/src/categories/python_extension` or related book sections.
+
 # Build and import the Rust Python extension
 
 From this directory, create and activate a virtual environment, then build and install the extension into it with Maturin:

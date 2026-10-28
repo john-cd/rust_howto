@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Game Development
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Game Development** category on crates.io. It demonstrates integration with key ecosystem crates including `clap`, `glam`, `parry2d`.
+
+## Examples Covered
+
+- **Game Development** (`examples/game_development/`): Demonstrates concepts like `game_development1`, `glam`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package game_development --examples
+cargo test --package game_development
+```
+
+Code examples correspond to chapters in `bk/src/categories/game_development` or related book sections.

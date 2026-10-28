@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Multimedia
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Multimedia** category on crates.io. It demonstrates integration with key ecosystem crates including `rodio`.
+
+## Examples Covered
+
+- **Multimedia** (`examples/multimedia/`): Demonstrates concepts like `multimedia1`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package multimedia --examples
+cargo test --package multimedia
+```
+
+Code examples correspond to chapters in `bk/src/categories/multimedia` or related book sections.

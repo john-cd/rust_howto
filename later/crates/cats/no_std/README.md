@@ -1,5 +1,20 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# No Std
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **No Std** category on crates.io.
+
+## Examples Covered
+
+- **No Std** (`examples/no_std/`): Demonstrates concepts like `checksum`.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package no_std --examples
+cargo test --package no_std
+```
+
+Code examples correspond to chapters in `bk/src/categories/no_std` or related book sections.

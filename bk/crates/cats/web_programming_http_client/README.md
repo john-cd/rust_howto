@@ -1,8 +1,29 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# README
+# Web Programming HTTP Client
 
-Code examples are found under `examples/<chapter_name>`, where `<chapter_name>` is the name of the `.md` file in `bk/<...>/categories/<category_name>` that includes these examples.
+This crate contains code examples for the **Web Programming HTTP Client** category on crates.io. It demonstrates integration with key ecosystem crates including `anyhow`, `backon`, `clap`, `futures-util`, `governor`, `http-body-util`.
+
+## Examples Covered
+
+- **APIS** (`examples/apis/`): Demonstrates concepts like `paginated`, `rate_limited`, `rest_get`, `rest_head`, `rest_post`.
+- **Download** (`examples/download/`): Demonstrates concepts like `download`, `partial`, `post_file`.
+- **HTTP Clients** (`examples/http_clients/`): Demonstrates concepts like `hyper`, `ureq`.
+- **Rate Limit** (`examples/rate_limit/`): Code examples covering rate limit.
+- **Requests** (`examples/requests/`): Demonstrates concepts like `get`, `get1`, `header`.
+- **Retry** (`examples/retry/`): Code examples covering retry.
+- **Retry After** (`examples/retry_after/`): Code examples covering retry after.
+
+## Usage
+
+To check or run examples in this crate:
+
+```console
+cargo check --package web_programming_http_client --examples
+cargo test --package web_programming_http_client
+```
+
+Code examples correspond to chapters in `bk/src/categories/web_programming_http_client` or related book sections.
 
 ## Running the File Upload Example
 
