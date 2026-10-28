@@ -36,7 +36,7 @@ pub use module1::public_function;
 pub use module2::Struct1;
 ```
 
-It is common for `lib.rs` to only contain `mod` and `pub use` statements, and nothing else.
+It is common for `lib.rs` to only contains `mod` and `pub use` statements, and nothing else.
 
 In Rust, there are no requirements to store a single [`struct`][book~rust-reference~structs]↗{{hi:struct}} or [`enum`][book~rust-reference~enum]↗{{hi:enum}} and associated code per file.
 

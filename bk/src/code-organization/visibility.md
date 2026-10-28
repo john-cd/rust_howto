@@ -36,7 +36,7 @@ Rust visibility rules are as follows:
 {{#include ../../crates/code_organization/examples/visibility/private_access.rs:example}}
 ```
 
-- An item is accessible from a module `m` when every segment of its path is visible from `m`. For code in another crate, each module between the crate root and the item must be public or re-exported.
+- An item is accessible from a module `m` if all the item's ancestor modules are visible from `m`. For code in another crate, each module between the crate root and the item must be public or re-exported.
 
 In other words,
 

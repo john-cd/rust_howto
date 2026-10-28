@@ -42,7 +42,7 @@ Write `mod module_name;` to declare a module that has its code in a separate fil
 - `module_name.rs`,
 - `module_name/mod.rs` (older style),
 
-and compile that file as the module's contents.
+and compiles that file as the module's contents. Writing `mod a_file;` in `src/main.rs` is identical to inline module contents in the same file as `src/main.rs` or `a/b/mod.rs`.
 
 You can nest (inline or external-file) modules as you wish:
 
@@ -86,7 +86,7 @@ a_module::nested_module           // Path to a nested module.
 a_module::nested_module::b_function // Path to a function in a nested module.
 
 super                             // Path to the parent module.
-super::brother_module             // Path to another module declared in the parent module.
+super::sibling_module             // Path to another module declared in the parent module.
 
 crate::first_level::second_level  // Path to a nested module, starting from the crate root.
 ```
@@ -143,14 +143,14 @@ path `f::try_that()` available:
 
 Absolute paths start from the root of your crate (the top-level module, usually defined in `src/lib.rs` or `src/main.rs`). You use the keyword `crate` followed by `::` to begin an absolute path.
 
-```rust,editable,noplayground
+```rust,editable
 // In the crate root:
 mod module_a {
-  pub mod submodule_b {
-    pub fn some_function() {
-      // ...
+    pub mod submodule_b {
+        pub fn some_function() {
+            // ...
+        }
     }
-  }
 }
 
 // Elsewhere in the crate:
