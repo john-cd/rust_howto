@@ -4,6 +4,15 @@
 
 {{#include templ.incl.md}}
 
+## Display `templ` Commands {#templ-help}
+
+Use `templ --help` to list its commands and options. This does not contact
+crates.io:
+
+```console
+{{#include ../../../../crates/cats/development_tools_documentation/examples/templ/help.sh}}
+```
+
 ## Generate a Rust by Example Badge Offline {#templ-rbe}
 
 The `rbe` subcommand formats a link and badge for a chapter in the Rust by
@@ -12,6 +21,17 @@ command is deterministic and does not contact a service:
 
 ```console
 {{#include ../../../../crates/cats/development_tools_documentation/examples/templ/rbe.sh}}
+```
+
+## Generate a Known Category Badge Offline {#templ-category-badge}
+
+The `category_badge` CLI command looks up the current crates.io category list,
+so it requires network access. When the display name and slug are already
+known, the shared template renderer can generate the same badge without
+fetching registry metadata:
+
+```rust,editable
+{{#include ../../../../crates/cats/development_tools/examples/documentation/templ_category_badge.rs:example}}
 ```
 
 ## Generate Crate and Category References {#templ-crate-references}
@@ -23,18 +43,12 @@ crate. These commands query crates.io, so their result depends on current
 registry metadata and they require network access.
 
 `category_badge` finds category names that match the supplied search term and
-creates badges for them. It retrieves the current category list from the
-crates.io repository, so it also requires network access.
+creates badges for them by retrieving the current category list from crates.io.
+It therefore requires network access, as do the other registry-backed commands.
 
-Inspect the installed tool's options before generating files:
-
-```console
-{{#include ../../../../crates/cats/development_tools_documentation/examples/templ/help.sh}}
-```
-
-The command inventory below is based on `templ --help`. Only the `rbe`
-subcommand is suitable for an offline, deterministic example without adding a
-fixture or a local-data option to the tool.
+The examples in this chapter use fixed input for reproducible output. The
+registry-backed commands are described here but are not shown as offline
+examples.
 
 ## Related Topics {#related-topics .skip}
 
@@ -45,10 +59,12 @@ fixture or a local-data option to the tool.
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
-| Recipe                                                             | Tools                            | Categories                                                                     |
-| ------------------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------------------------ |
-| [Generate a Rust by Example Badge Offline][ex~documentation~templ] | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
-| [Generate Crate and Category References][ex~documentation~templ]   | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
+| Recipe                                                                            | Tools                            | Categories                                                                     |
+| --------------------------------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------ |
+| [Display `templ` Commands][ex~documentation~templ-help]                           | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
+| [Generate a Rust by Example Badge Offline][ex~documentation~templ-rbe]            | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
+| [Generate a Known Category Badge Offline][ex~documentation~templ-category-badge]  | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
+| [Generate Crate and Category References][ex~documentation~templ-crate-references] | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
 
 <div class="hidden">
   [additional examples from templ tool](https://github.com/john-cd/rust_howto/issues/43)

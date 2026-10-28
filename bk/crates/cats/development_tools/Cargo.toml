@@ -81,6 +81,11 @@ name = "documentation_doc_comment"
 path = "examples/documentation/doc_comment.rs"
 test = true
 
+[[example]]
+name = "templ_category_badge"
+path = "examples/documentation/templ_category_badge.rs"
+test = true
+
 [dependencies]
 anyhow = "1.0.104"
 cargo_metadata = "0.23.1"

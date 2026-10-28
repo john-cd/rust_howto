@@ -4,6 +4,10 @@
 [ex~documentation~cd-ci]: mdbook.md#cd-ci
 [ex~documentation~mdbook-utils]: mdbook_utils.md#mdbook-utils
 [ex~documentation~templ]: templ.md#templ
+[ex~documentation~templ-category-badge]: templ.md#templ-category-badge
+[ex~documentation~templ-crate-references]: templ.md#templ-crate-references
+[ex~documentation~templ-help]: templ.md#templ-help
+[ex~documentation~templ-rbe]: templ.md#templ-rbe
 [ex~documentation~documenting-your-code]: documentation.md#documenting-your-code
 [ex~documentation~mdbook-plugins]: mdbook.md#mdbook-plugins
 [ex~documentation~mdbook]: mdbook.md#mdbook
