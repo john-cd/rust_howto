@@ -3,8 +3,8 @@
 
 $ErrorActionPreference = 'Stop'
 
-$rubyVersion = '4.0.9'
-$rubyInstallerVersion = '4.0.9-1'
+$rubyInstallerVersion = '4.0.7-1'
+$rubyVersionPattern = '^ruby 4\.0\.\d+\b'
 $rubyRoot = Join-Path $env:SystemDrive 'Ruby40-x64'
 $rubyBin = Join-Path $rubyRoot 'bin'
 $rubyExecutable = Join-Path $rubyBin 'ruby.exe'
@@ -38,7 +38,7 @@ $rubyVersionIsInstalled = $false
 if (Test-Path -LiteralPath $rubyExecutable -PathType Leaf) {
     $rubyVersionOutput = & $rubyExecutable --version
     $rubyVersionIsInstalled = $LASTEXITCODE -eq 0 -and
-        $rubyVersionOutput -match "ruby $([regex]::Escape($rubyVersion))\b"
+        $rubyVersionOutput -match $rubyVersionPattern
 }
 
 if (-not $rubyVersionIsInstalled) {
@@ -67,18 +67,18 @@ $env:RUBY = $rubyExecutable
 [Environment]::SetEnvironmentVariable('RUBY', $rubyExecutable, 'User')
 
 $rubyVersionOutput = & $rubyExecutable --version
-if ($LASTEXITCODE -ne 0 -or $rubyVersionOutput -notmatch "ruby $([regex]::Escape($rubyVersion))\b") {
-    throw "Expected Ruby $rubyVersion at $rubyExecutable, got: $rubyVersionOutput"
+if ($LASTEXITCODE -ne 0 -or $rubyVersionOutput -notmatch $rubyVersionPattern) {
+    throw "Expected a Ruby 4.0.x release at $rubyExecutable, got: $rubyVersionOutput"
 }
 
 $rubyHeaderDirectory = & $rubyExecutable -rrbconfig -e 'print RbConfig::CONFIG["rubyhdrdir"]'
 if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($rubyHeaderDirectory)) {
-    throw "Could not determine the Ruby $rubyVersion header directory."
+    throw 'Could not determine the Ruby 4.0 header directory.'
 }
 
 $rubyHeaderPath = Join-Path $rubyHeaderDirectory 'ruby.h'
 if (-not (Test-Path -LiteralPath $rubyHeaderPath -PathType Leaf)) {
-    throw "Ruby $rubyVersion headers were not found at: $rubyHeaderDirectory"
+    throw "Ruby 4.0 headers were not found at: $rubyHeaderDirectory"
 }
 
-Write-Host "Configured Ruby $rubyVersion at $rubyExecutable" -ForegroundColor Green
+Write-Host "Configured Ruby 4.0 at $rubyExecutable" -ForegroundColor Green

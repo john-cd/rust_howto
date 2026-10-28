@@ -18,9 +18,11 @@ The `magnus` example remains excluded on Windows by this repository's platform
 gate. Rutie 0.14.3 is enabled there with the `ruby` feature. Rutie's [current
 support table][ffi~rutie-support] includes 64-bit Windows and ties each release
 line to particular Ruby versions: Rutie 0.14.x requires Ruby 4.0, while 0.13.x
-supports Ruby 3.2 through 3.4. The development environment pins Ruby 4.0.9 so
-its headers and libraries match Rutie. Building the Windows example also needs
-the Visual Studio C++ Build Tools.
+supports Ruby 3.2 through 3.4. The provisioning helpers target Ruby 4.0.9
+from source on Linux and RubyInstaller 4.0.7-1 on Windows, reusing any
+installed Ruby 4.0.x release. Both provide headers and libraries from the Ruby
+4.0 series. Building the Windows example also needs the Visual Studio C++
+Build Tools.
 
 The [`rutie`][c~rutie~docs]↗{{hi:rutie}} crate wraps the Ruby C API. Check its exception and garbage-collection rules before retaining Ruby objects in Rust. Older guidance grouping Rutie with the legacy [Helix project][ffi~helix] as unmaintained is not a reliable description of Rutie's current documented releases.
 

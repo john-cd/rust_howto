@@ -3,7 +3,7 @@
 // ANCHOR: example
 //! Calling Ruby from Rust with `rutie`.
 //!
-//! Install 64-bit Ruby 4.0.9 with development headers and libraries, then run
+//! Install 64-bit Ruby 4.0.x with development headers and libraries, then run
 //! the example or its ignored Ruby-backed test from `later/crates`:
 //!
 //! ```bash

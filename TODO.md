@@ -111,7 +111,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#1033](https://github.com/john-cd/rust_howto/issues/1033) — **P4** — node/neon.rs: finish how to test — **IN PROGRESS — host-independent Neon path now returns anyhow::Result and has non-ignored tests; chapter documents npm init neon and an npm test JavaScript addon check; final package and book checks remain**
 - [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix — **DEFERRED — macOS validation unavailable; blocker recorded on the issue**
 - [#1035](https://github.com/john-cd/rust_howto/issues/1035) — **P4** — ruby/magnus.rs: finish — **IN PROGRESS — Magnus embedding now registers a Rust function, calls it from Ruby, and checks the returned string; extension-mode guidance and ignore-test commands documented; final Ruby package/book checks remain**
-- [#1036](https://github.com/john-cd/rust_howto/issues/1036) — **P4** — ruby/rutie.rs: finish — **IN PROGRESS — Rutie class and Ruby-backed test implemented; host Ruby 4.0.9 is installed; Linux and Windows provisioning helpers committed; installer wiring and final checks remain**
+- [#1036](https://github.com/john-cd/rust_howto/issues/1036) — **P4** — ruby/rutie.rs: finish — **IN PROGRESS — Rutie class and Ruby-backed test implemented; Linux helper pins Ruby 4.0.9; Windows helper installs available RubyInstaller 4.0.7-1 or reuses an installed Ruby 4.0.x; installer wiring and final checks remain**
 - [#1037](https://github.com/john-cd/rust_howto/issues/1037) — **P4** — examples/uniffi.rs: finish — **DEFERRED — native compiler/linker unavailable; blocker recorded on the issue**
 
 #### NOW-CODE-03 — Desktop UI, accessibility, games and GPU
