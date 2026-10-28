@@ -33,7 +33,7 @@ pub fn hello(name: String) -> String {
 }
 ```
 
-After building a CommonJS package, its generated loader can be called from a local smoke test:
+`napi build` compiles the generated Cargo `cdylib` and writes a Node-loadable `.node` library. After building a CommonJS package, its generated loader can be called from a local smoke test:
 
 ```js
 const assert = require('node:assert/strict');
@@ -41,7 +41,7 @@ const { hello } = require('./index.js');
 assert.equal(hello('Ada'), 'Hello, Ada!');
 ```
 
-This book's included example tests the plain greeting function. It is not the generated addon package; copying `#[napi]` into an executable alone does not create an npm-loadable library.
+This book's included example tests the plain Rust sum, point conversion, greeting, and async functions. Compile its N-API exports with `--features node`; this is not the generated addon package. Copying `#[napi]` into an executable alone does not create an npm-loadable library.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/node/napi.rs:example}}
@@ -90,7 +90,7 @@ For CPU work, implement `Task` and return [`AsyncTask`][ffi~napi-task] so comput
 
 Use [WebAssembly](../wasm/index.md) when sharing a portable computation with a browser is more useful than direct native integration. The [JavaScript interop chapter](../wasm/interfacing_with_javascript.md) covers that boundary. Native addons remain useful for native dependencies and OS resources; WebAssembly still needs an explicit host interface for such capabilities.
 
-From `later/crates`, run `cargo test --locked -p development_tools_ffi --example node` for the pure-Rust examples. This does not run the Node loader. Build the separate addon with `napi build` (or the scaffold's npm script), then run the JavaScript smoke test there.
+From `later/crates`, run `cargo test --locked -p development_tools_ffi --example node` for the pure-Rust examples, and add `--features node` to compile the N-API and Neon wrappers. These Rust tests do not load the Node addon. Build a separate `cdylib` package with `napi build` (or the scaffold's npm script), then run the JavaScript smoke test against its generated loader.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
