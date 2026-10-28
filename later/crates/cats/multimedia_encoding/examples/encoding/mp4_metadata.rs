@@ -35,10 +35,14 @@ fn create_sample_mp4() -> Result<Vec<u8>, Box<dyn Error + Send + Sync>> {
     let config = mp4::Mp4Config {
         major_brand: str::parse("isom").unwrap(),
         minor_version: 512,
-        compatible_brands: vec![str::parse("isom").unwrap(), str::parse("iso2").unwrap()],
+        compatible_brands: vec![
+            str::parse("isom").unwrap(),
+            str::parse("iso2").unwrap(),
+        ],
         timescale: 1000,
     };
-    let mut writer = mp4::Mp4Writer::write_start(Cursor::new(&mut buf), &config)?;
+    let mut writer =
+        mp4::Mp4Writer::write_start(Cursor::new(&mut buf), &config)?;
 
     let media_conf = mp4::TrackConfig {
         track_type: mp4::TrackType::Audio,

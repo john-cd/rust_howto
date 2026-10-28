@@ -4,7 +4,10 @@
 use std::error::Error;
 use std::io::Cursor;
 
-use hound::{SampleFormat, WavReader, WavSpec, WavWriter};
+use hound::SampleFormat;
+use hound::WavReader;
+use hound::WavSpec;
+use hound::WavWriter;
 
 /// Encodes generated PCM sine wave samples into a WAV stream in memory.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
