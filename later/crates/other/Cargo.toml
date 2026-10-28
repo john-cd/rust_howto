@@ -140,7 +140,9 @@ datafusion = { version = "55.2.0", default-features = false, features = [
 ], optional = true } # Enable SQL without unused native compression codecs.
 futures = "0.3"
 k8s-openapi = { version = "0.28", features = ["latest"] }
-kube = { version = "4.2", features = ["derive", "runtime", "client"] }
+# Kube 4.2.0 on crates.io pins serde-saphyr 0.0.29, which caps smallvec below 1.16.
+# Use the immutable revision from merged PR #2086 until a compatible Kube release is published.
+kube = { version = "4.2.0", git = "https://github.com/kube-rs/kube", rev = "237386c1b9384f4e674a48178907d9cd4f11b0a0", features = ["derive", "runtime", "client"] }
 lambda_runtime = "1.5.0"
 ort = { version = "2.0.0-rc.15", optional = true } # Downloads ONNX Runtime binaries at build time
 polars = { version = "0.51.0", default-features = false, features = ["lazy"], optional = true }

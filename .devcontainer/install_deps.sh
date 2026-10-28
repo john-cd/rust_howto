@@ -75,6 +75,7 @@ sudo apt-get update \
     xorg-dev \
     jq \
     fzf \
+&& nasm --version \
 && sudo apt-get clean -y
 
 # Install Pandoc binary
@@ -124,6 +125,7 @@ curl -sS https://webi.sh/gh | sh
 
 cargo binstall --no-confirm --secure kani-verifier
 tectonic --version
+nasm --version
 cargo fmt-toml --version
 dprint --version
 rumdl --version

@@ -216,6 +216,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     ruby-dev \
     wget \
     xorg-dev \
+    && nasm --version \
     && apt-get clean -y
 
 ## Alternatively, use `lld` instead of the `mold` linker

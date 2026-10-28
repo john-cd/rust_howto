@@ -33,8 +33,7 @@ winget install --id Casey.Just --exact --source winget --accept-source-agreement
 # Install LLVM/Clang (Required for bindgen in some crates)
 winget install --id LLVM.LLVM -e --source winget --accept-source-agreements --accept-package-agreements
 winget install --id SQLite.SQLite -e --source winget --accept-source-agreements --accept-package-agreements
-# NASM is required to build aws-lc-sys; Ninja is the build backend for CMake-based -sys crates.
-winget install --id NASM.NASM -e --source winget --accept-source-agreements --accept-package-agreements
+# NASM is installed from its pinned, checksum-verified upstream archive below; Ninja is the build backend for CMake-based -sys crates.
 winget install --id Ninja-build.Ninja -e --source winget --accept-source-agreements --accept-package-agreements
 # Install the SDKs used by the Java, Ruby, and Python FFI examples.
 winget install --id EclipseAdoptium.Temurin.21.JDK -e --source winget --accept-source-agreements --accept-package-agreements
@@ -101,6 +100,53 @@ if ($javaHome) {
     Add-UserPath -Directory (Join-Path $javaHome 'bin')
 }
 
+# Install the pinned NASM build required by aws-lc-sys.
+$nasmVersion = $toolVersions["NASM_VERSION"]
+$nasmDirectory = Join-Path $env:LOCALAPPDATA "Programs\NASM\$nasmVersion"
+$nasmExecutable = Join-Path $nasmDirectory "nasm.exe"
+if (-not (Test-Path -LiteralPath $nasmExecutable -PathType Leaf)) {
+    if (Test-Path -LiteralPath $nasmDirectory) {
+        throw "NASM install directory exists without nasm.exe: $nasmDirectory"
+    }
+
+    $nasmArchive = Join-Path $env:TEMP "nasm-$nasmVersion-win64-$PID.zip"
+    $nasmUri = "https://www.nasm.us/pub/nasm/releasebuilds/$nasmVersion/win64/nasm-$nasmVersion-win64.zip"
+    Invoke-WebRequest -Uri $nasmUri -OutFile $nasmArchive
+    $nasmHash = (Get-FileHash -LiteralPath $nasmArchive -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($nasmHash -ne $toolVersions["NASM_WINDOWS_SHA256"]) {
+        throw "NASM archive SHA-256 did not match the pinned digest: $nasmHash"
+    }
+
+    New-Item -ItemType Directory -Path $nasmDirectory | Out-Null
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $archive = [System.IO.Compression.ZipFile]::OpenRead($nasmArchive)
+    try {
+        $archivePrefix = "nasm-$nasmVersion/"
+        $installRoot = [IO.Path]::GetFullPath($nasmDirectory) + [IO.Path]::DirectorySeparatorChar
+        foreach ($entry in $archive.Entries) {
+            if (-not $entry.FullName.StartsWith($archivePrefix, [StringComparison]::Ordinal) -or [string]::IsNullOrEmpty($entry.Name)) {
+                continue
+            }
+
+            $relativePath = $entry.FullName.Substring($archivePrefix.Length)
+            $destination = [IO.Path]::GetFullPath((Join-Path $nasmDirectory $relativePath))
+            if (-not $destination.StartsWith($installRoot, [StringComparison]::OrdinalIgnoreCase)) {
+                throw "NASM archive entry escaped the install directory: $($entry.FullName)"
+            }
+
+            $parentDirectory = Split-Path -Parent $destination
+            New-Item -ItemType Directory -Path $parentDirectory -Force | Out-Null
+            [System.IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $destination, $false)
+        }
+    } finally {
+        $archive.Dispose()
+    }
+
+    Remove-Item -LiteralPath $nasmArchive
+}
+Add-UserPath -Directory $nasmDirectory
+$env:Path = "$nasmDirectory;$env:Path"
+& $nasmExecutable --version
 @(
     (Join-Path $env:ProgramFiles 'LLVM\bin'),
     (Join-Path $env:ProgramFiles 'NASM'),

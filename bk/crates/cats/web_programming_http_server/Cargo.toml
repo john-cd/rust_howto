@@ -83,8 +83,9 @@ test = true
 # the vulnerable h2 0.3 line.
 actix-web = { version = "4.18.1", default-features = false, features = ["macros"] }
 anyhow = "1.0.104"
-async-graphql = { version = "7.2.1", optional = true }
-async-graphql-axum = { version = "7.2.1", optional = true }
+# Seaography 2.0.0-rc.9 requires async-graphql ~7.0.17, so keep the web pair in 7.0.x.
+async-graphql = { version = "7.0.19", optional = true }
+async-graphql-axum = { version = "7.0.19", optional = true }
 axum = { version = "0.8.9", features = ["macros"] }
 axum-extra = { version = "0.12.6", features = ["typed-header"] }
 axum-messages = "0.8.0"

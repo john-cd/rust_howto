@@ -339,7 +339,13 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### NOW-INFRA-02 — Dependencies, CI and containers
 
-- [#1998](https://github.com/john-cd/rust_howto/issues/1998) — **P1** — Port remaining examples across major dependency upgrades — **PARTIAL** — upstream-blocked subset
+- [#1998](https://github.com/john-cd/rust_howto/issues/1998)
+  — **P1** — Port remaining examples across major dependency upgrades — **PARTIAL**
+  - Resolved the `libsqlite3-sys` links collision and `smallvec` 1.16/Kube
+    resolver conflict; corrected Naga 26/27 aliases and aligned tested SeaORM,
+    media, and Linfa examples. Windows checks pass; Ubuntu database tests pass
+    (8/8) with strict Clippy, and Kube/cloud plus GUI/Parley examples compile.
+    Remaining ports and full workspace gates still need completion.
 
 #### NOW-INFRA-03 — Branch integration and retained work
 

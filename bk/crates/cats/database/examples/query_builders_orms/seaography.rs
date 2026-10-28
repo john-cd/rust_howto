@@ -33,10 +33,12 @@ use sea_orm::EntityTrait;
 use sea_orm::Schema;
 use seaography::Builder;
 use seaography::BuilderContext;
+use seaography::RelatedEntityFilter;
 
 /// The `posts` SeaORM entity.
 mod post {
     use sea_orm::entity::prelude::*;
+    use seaography::BuilderContext;
 
     /// A blog post.
     #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
@@ -55,6 +57,29 @@ mod post {
     #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
     pub enum Relation {}
 
+    impl seaography::RelationBuilder for Relation {
+        /// Returns no relation name because this enum has no variants.
+        fn get_relation_name(&self, _: &'static BuilderContext) -> String {
+            unreachable!("the posts entity defines no relations")
+        }
+
+        /// Returns no relation field because this enum has no variants.
+        fn get_relation(
+            &self,
+            _: &'static BuilderContext,
+        ) -> seaography::async_graphql::dynamic::Field {
+            unreachable!("the posts entity defines no relations")
+        }
+
+        /// Returns no related-entity filter because this enum has no variants.
+        fn get_related_entity_filter(
+            &self,
+            _: &'static BuilderContext,
+        ) -> seaography::RelatedEntityFilterField {
+            unreachable!("the posts entity defines no relations")
+        }
+    }
+
     impl ActiveModelBehavior for ActiveModel {}
 }
 
@@ -65,10 +90,9 @@ async fn main() -> anyhow::Result<()> {
     let db = Database::connect("sqlite::memory:").await?;
 
     // 2. Create table schema from entity definition.
-    let stmt = db.get_database_backend().build(
-        &Schema::new(DbBackend::Sqlite).create_table_from_entity(post::Entity),
-    );
-    db.execute(stmt).await?;
+    let create_table =
+        Schema::new(DbBackend::Sqlite).create_table_from_entity(post::Entity);
+    db.execute(&create_table).await?;
 
     // 3. Insert sample data.
     post::Entity::insert(post::ActiveModel {
@@ -82,8 +106,15 @@ async fn main() -> anyhow::Result<()> {
     // 4. Build GraphQL schema using Seaography.
     let builder_ctx = Box::leak(Box::new(BuilderContext::default()));
     let mut builder = Builder::new(builder_ctx, db.clone());
-    builder.register_entity::<post::Entity>(vec![]);
-    let schema = builder.schema_builder().data(db).finish()?;
+    let related_entity_filter = RelatedEntityFilter::<post::Entity>::build::<
+        post::Relation,
+    >(builder_ctx);
+    builder.register_entity::<post::Entity>(vec![], &related_entity_filter);
+    let schema = builder
+        .register_related_entity_filter::<post::Entity>(related_entity_filter)
+        .schema_builder()
+        .data(db)
+        .finish()?;
 
     // 5. Query the generated GraphQL schema.
     let query = "{

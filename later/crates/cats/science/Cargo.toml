@@ -30,10 +30,10 @@ linfa = "0.8.1"
 linfa-clustering = "0.8.1"
 linfa-linear = "0.8.1"
 ndarray = "0.17.2"
-# Keep Linfa 0.8.1's dataset and fit APIs on their ndarray 0.16 array types.
-ndarray_016 = { package = "ndarray", version = "0.17.2" }
-rand = { version = "0.10.3", features = ["std"] }
-rand_08 = { package = "rand", version = "0.10.3", features = ["std", "std_rng"] }
+# Linfa 0.8.1 uses ndarray 0.16 types; keep this alias on 0.16 so arrays compose with Linfa APIs.
+ndarray_016 = { package = "ndarray", version = "0.16.1" }
+# Linfa 0.8 uses rand 0.8 traits for seeded K-means; keep its RNG on that API line.
+rand_08 = { package = "rand", version = "0.8.5", features = ["std", "std_rng"] }
 smartcore = "0.7.0"
 
 [features]

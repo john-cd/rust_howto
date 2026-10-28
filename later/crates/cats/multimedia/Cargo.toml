@@ -23,8 +23,8 @@ path = "examples/multimedia/main.rs"
 test = true
 
 [dependencies]
-# TODO review. Pinned: rodio 0.23 needs cpal 0.18 / alsa-sys 0.4, conflicting with cpal =0.17.1 (multimedia_audio) and openrr.
-rodio = "0.23.0"
+# Keep rodio on 0.22: 0.23 selects cpal 0.18 and alsa-sys 0.4, which conflict with the 0.3 line used by Bevy and Fyrox.
+rodio = "0.22.0"
 
 [lints]
 workspace = true

@@ -72,6 +72,10 @@ impl Source for Sine {
 }
 
 /// Plays a chord for one second. It needs an audio device.
+#[expect(
+    dead_code,
+    reason = "this optional playback helper requires a device; the example stays device-free"
+)]
 fn play_chord() -> Result<(), Box<dyn Error>> {
     // The sound stops when the device sink is dropped.
     let sink = DeviceSinkBuilder::open_default_sink()?;

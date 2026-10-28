@@ -39,6 +39,10 @@ fn decode_wav(bytes: Vec<u8>) -> Result<Vec<f32>, Box<dyn Error>> {
 }
 
 /// Plays an audio file through the system's default output device.
+#[expect(
+    dead_code,
+    reason = "this optional playback helper requires a device; the example stays device-free"
+)]
 fn play_file(path: &Path) -> Result<(), Box<dyn Error>> {
     let sink = DeviceSinkBuilder::open_default_sink()?;
     let player = Player::connect_new(sink.mixer());
