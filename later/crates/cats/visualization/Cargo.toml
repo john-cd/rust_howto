@@ -26,6 +26,7 @@ test = true
 ## General
 anyhow = "1.0.104"
 plotly = "0.14.1"
+plotters = { version = "0.3.7", default-features = false, features = ["svg_backend", "line_series"] }
 
 [lints]
 workspace = true
