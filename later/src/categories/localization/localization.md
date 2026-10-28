@@ -42,10 +42,10 @@ Use [`fluent-bundle`][c~fluent-bundle~docs]↗{{hi:fluent-bundle}} when the appl
 
 [`sys-locale`][c~sys-locale~docs]↗{{hi:sys-locale}} can report the locale preferences provided by the operating system. Treat those values as preferences: parse them as language identifiers, then use [`fluent-langneg`][c~fluent-langneg~docs]↗{{hi:fluent-langneg}} to match them against the locales your application actually provides. Define a fallback locale and let users choose a different language when that is appropriate for the application.
 
-The included example demonstrates reading the system locale and selecting a simple greeting. For a production interface, keep the translated messages in resources and use a localization library to format them.
+The included example uses inline resources for a fixed English/French comparison, so it runs without system-locale or network dependencies. It formats greetings and singular/plural counts with `fluent-bundle`; use [`unic-langid`][c~unic-langid~docs]↗{{hi:unic-langid}} to parse or construct locale identifiers in an application. For locale-sensitive number and date formatting with ICU4X, see [[internationalization | Internationalization]] and [issue #796](https://github.com/john-cd/rust_howto/issues/796).
 
 ```rust,editable
-{{#include ../../../crates/cats/localization/examples/localization/localization1.rs:example}}
+{{#include ../../../crates/cats/localization/examples/localization/fluent.rs:example}}
 ```
 
 ## Use Gettext Catalogs

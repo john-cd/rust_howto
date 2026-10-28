@@ -2,11 +2,11 @@
 
 # Localization
 
-This crate contains code examples for the **Localization** category on crates.io. It demonstrates integration with key ecosystem crates including `sys-locale`.
+This crate contains code examples for the **Localization** category on crates.io. It demonstrates Fluent message formatting with `fluent-bundle` and locale identifiers with `unic-langid`.
 
 ## Examples Covered
 
-- **Localization** (`examples/localization/`): Demonstrates concepts like `localization1`.
+- **Localization** (`examples/localization/`): Demonstrates Fluent translations and plural forms in `fluent`.
 
 ## Usage
 

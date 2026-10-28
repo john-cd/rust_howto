@@ -2,9 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-mod localization1;
+mod fluent;
 
 /// Runs the localization example.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    localization1::run()
+    fluent::run()
 }
