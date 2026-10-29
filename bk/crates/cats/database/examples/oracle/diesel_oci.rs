@@ -16,6 +16,7 @@
 use std::env;
 
 // Import diesel.
+use diesel::connection::SimpleConnection;
 use diesel::prelude::*;
 // Import the oracle connection type.
 use diesel_oci::OciConnection;
@@ -107,7 +108,20 @@ mod tests {
     #[test]
     #[ignore = "requires external oracle db and oracle client library"]
     fn require_external_svc() -> anyhow::Result<()> {
-        main()?;
+        dotenv().ok();
+        let db_url = env::var("ORACLE_DB_URL")?;
+        let username = env::var("ORACLE_DB_USERNAME")?;
+        let password = env::var("ORACLE_DB_PASSWORD")?;
+        let mut connection =
+            establish_connection(&db_url, &username, &password)?;
+        connection.batch_execute(
+            "CREATE TABLE users (id NUMBER(10) NOT NULL, username VARCHAR2(255), password VARCHAR2(255))",
+        )?;
+
+        let run_result = main();
+        let cleanup_result = connection.batch_execute("DROP TABLE users PURGE");
+        run_result?;
+        cleanup_result?;
         Ok(())
     }
 }

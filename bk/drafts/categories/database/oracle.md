@@ -126,8 +126,11 @@ cargo clippy -p database --example oracle --features sibyl -- -D warnings
 
 Run the examples against an Oracle service with the matching command. The
 `oracle` and `sibyl` examples read the environment variables shown in their
-sections. The Diesel example reads `ORACLE_DB_URL`, `ORACLE_DB_USERNAME`, and
-`ORACLE_DB_PASSWORD` and queries a `users` table:
+sections. The Diesel example reads `ORACLE_DB_URL` (`host:port/service`),
+`ORACLE_DB_USERNAME`, and `ORACLE_DB_PASSWORD`. Its ignored test creates the
+`users` table before querying it and drops the table afterward. These variable
+names differ from the `ORACLE_USER(NAME)` and `ORACLE_CONNECT_STRING` settings
+used by the `oracle` and `sibyl` examples:
 
 ```sh
 cargo run -p database --example oracle --features oracle -- oracle
