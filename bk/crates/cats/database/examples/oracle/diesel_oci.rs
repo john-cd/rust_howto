@@ -7,8 +7,8 @@
 //! In your `Cargo.toml`, add the following dependencies:
 //! ```toml
 //! [dependencies]
-//! diesel = { version = "2.3.3" }
-//! diesel-oci = "0.4.0"
+//! diesel = { version = "2.3.14" }
+//! diesel-oci = "0.5.1"
 //! dotenvy = "0.15.7"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

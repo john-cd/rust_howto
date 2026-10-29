@@ -2,6 +2,8 @@
 
 # Oracle DB
 
+{{#include oracle.incl.md}}
+
 Oracle [Database][p~database] is a multi-model [database][p~database] management system produced and marketed by Oracle Corporation.
 
 The `diesel-oci`, `oracle`, and `sibyl` examples use Oracle's native OCI
@@ -38,7 +40,7 @@ Oracle Free with Docker, set the connection variables, then run the ignored
 test:
 
 ```sh
-docker run --detach --name oracle-free -p 1521:1521 \
+docker run --detach --rm --name rust-howto-oracle-free -p 127.0.0.1:1521:1521 \
   -e ORACLE_PASSWORD=change-me gvenzl/oracle-free
 export ORACLE_USER=system
 export ORACLE_PASSWORD=change-me
@@ -50,7 +52,8 @@ cargo test -p database --example oracle --features oracle -- \
 Install Oracle Instant Client before running the test. On Linux, put its
 library directory on `LD_LIBRARY_PATH`; on Windows, add the directory
 containing `oci.dll` to `PATH`. The test is ignored during ordinary workspace
-test runs so they do not require a database or native client installation.
+test runs so they do not connect to a database. Compiling the enabled Oracle
+features still requires the native client and SDK described below.
 
 ## `sibyl` {#sibyl}
 
@@ -68,7 +71,7 @@ The example reads the built-in `DUAL` table so it works without Oracle's sample 
 
 </div>
 
-### Oracle Instant Client for Sibyl
+## Prerequisites: Oracle Instant Client
 
 Sibyl uses Oracle's native OCI library. The repository's Windows and Linux
 install scripts and Dev Container install Oracle Instant Client Basic Light and
@@ -104,7 +107,7 @@ The Dev Container installs the client under
 `/opt/oracle/instantclient_23_26` and configures the build and runtime library
 paths automatically. For a manual installation, download the Basic or Basic
 Light package and SDK for the matching OS and architecture from the [Oracle
-Instant Client downloads](https://www.oracle.com/database/technologies/instant-client/downloads.html),
+Instant Client downloads][oracle~instant-client],
 extract both into the same directory, and configure the library paths above.
 Keep the Instant Client architecture consistent with the Rust target.
 
@@ -135,7 +138,7 @@ cargo run -p database --example oracle --features sibyl -- sibyl
 The ignored integration tests require both the native client and a live Oracle
 service. Ordinary tests and Clippy do not run or connect to the service.
 
-For a local Oracle Free service, the official [`gvenzl/oracle-free` container](https://github.com/gvenzl/oci-oracle-free) listens on port 1521 and uses service name `FREEPDB1` by default. Create or provide a database user, then set the three environment variables documented above. The example's `DUAL` query does not require sample HR tables.
+For a local Oracle Free service, the community-maintained [`gvenzl/oracle-free` container][oracle~docker] listens on port 1521 and uses service name `FREEPDB1` by default. Create or provide a database user, then set the three environment variables documented above. The example's `DUAL` query does not require sample HR tables; the Diesel recipe separately needs its `users` table. Stop the disposable service with `docker stop rust-howto-oracle-free` after testing.
 
 ## Troubleshooting {#troubleshooting}
 

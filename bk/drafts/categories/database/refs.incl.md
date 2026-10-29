@@ -1,4 +1,6 @@
 <!-- TODO Reviewed ??-??-2026 -->
+[oracle~instant-client]: https://www.oracle.com/database/technologies/instant-client/downloads.html
+[oracle~docker]: https://github.com/gvenzl/oci-oracle-free
 
 [ex~database~aggregate-data-postgres]: postgres.md#aggregate-data-postgres
 [ex~database~cassandra-protocol]: nosql.md#cassandra-protocol
