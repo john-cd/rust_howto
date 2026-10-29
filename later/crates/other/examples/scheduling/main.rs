@@ -33,8 +33,11 @@ enum Commands {
 
 /// Runs the example selected on the command line and propagates failures.
 fn main() -> anyhow::Result<()> {
-    let cli = Cli::parse();
+    dispatch(Cli::parse())
+}
 
+/// Runs the example selected in the parsed command line.
+fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::CronLoop => {
@@ -49,4 +52,48 @@ fn main() -> anyhow::Result<()> {
         }
     }
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use clap::CommandFactory as _;
+
+    use super::*;
+
+    /// The command-line definition is internally consistent.
+    #[test]
+    fn cli_definition_is_valid() {
+        Cli::command().debug_assert();
+    }
+
+    /// Without a subcommand, nothing is run.
+    #[test]
+    fn no_subcommand_runs_nothing() {
+        let cli =
+            Cli::try_parse_from(["example"]).expect("no arguments are valid");
+        assert!(cli.command.is_none());
+        dispatch(cli).expect("the example should run successfully");
+    }
+
+    /// Every declared subcommand name is accepted.
+    #[test]
+    fn declared_subcommands_parse() {
+        let command = Cli::command();
+        let names: Vec<_> = command
+            .get_subcommands()
+            .map(clap::Command::get_name)
+            .collect();
+        for name in names {
+            assert!(
+                Cli::try_parse_from(["example", name]).is_ok(),
+                "subcommand `{name}` should parse"
+            );
+        }
+    }
+
+    /// Unknown subcommands are rejected.
+    #[test]
+    fn unknown_subcommand_is_rejected() {
+        assert!(Cli::try_parse_from(["example", "no-such-example"]).is_err());
+    }
 }

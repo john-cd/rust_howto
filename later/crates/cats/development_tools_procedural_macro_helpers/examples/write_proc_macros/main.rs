@@ -45,8 +45,11 @@ enum Commands {
 
 /// Runs the example selected on the command line.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let cli = Cli::parse();
+    dispatch(Cli::parse())
+}
 
+/// Runs the example selected in the parsed command line.
+fn dispatch(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
     match cli.command {
         Commands::Darling => {
             darling::run()?;
@@ -83,3 +86,44 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // // <https://www.shuttle.dev/blog/2022/12/23/procedural-macros>
 // // <https://doc.rust-lang.org/core/macro.compile_error.html>
 // // <https://github.com/dtolnay/watt>.
+
+#[cfg(test)]
+mod tests {
+    use clap::CommandFactory as _;
+
+    use super::*;
+
+    /// The command-line definition is internally consistent.
+    #[test]
+    fn cli_definition_is_valid() {
+        Cli::command().debug_assert();
+    }
+
+    /// A subcommand is required.
+    #[test]
+    fn missing_subcommand_is_rejected() {
+        assert!(Cli::try_parse_from(["example"]).is_err());
+    }
+
+    /// Every declared subcommand name is accepted.
+    #[test]
+    fn declared_subcommands_parse() {
+        let command = Cli::command();
+        let names: Vec<_> = command
+            .get_subcommands()
+            .map(clap::Command::get_name)
+            .collect();
+        for name in names {
+            assert!(
+                Cli::try_parse_from(["example", name]).is_ok(),
+                "subcommand `{name}` should parse"
+            );
+        }
+    }
+
+    /// Unknown subcommands are rejected.
+    #[test]
+    fn unknown_subcommand_is_rejected() {
+        assert!(Cli::try_parse_from(["example", "no-such-example"]).is_err());
+    }
+}

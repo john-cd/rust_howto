@@ -8,3 +8,15 @@ mod rusty_money;
 fn main() {
     rusty_money::run();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the example through its entry point (output-only: the module
+    /// tests its own results).
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}
