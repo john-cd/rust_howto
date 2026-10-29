@@ -73,16 +73,16 @@ You may also consult [this list][forum~fearless-rust-bloggers]↗ (somewhat outd
 
 ### Project and Organization Blogs {#project-blogs}
 
-| Project (URL)                                                                           | Description                                                                                  |
-| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| [Bevy Engine News][bevy~news~website]↗                                                  | News and updates for the [`bevy`][bevy~website]↗{{hi:bevy}} game engine.                     |
-| [Bytecode Alliance Articles][blog~bytecodealliance-wasm]↗                               | WASM-focused articles and announcements.                                                     |
-| [Kani Verifier][blog~model-checking]↗                                                   | News and updates for the [`kani`][book~model-checking]↗{{hi:kani}} formal verification tool. |
-| [`kellnr.io`][blog~kellnr]↗                                                             | A private crate registry for Rust.                                                           |
-| [Meilisearch][blog.meilisearch~website]↗                                                | Updates regarding a fast, open-source search engine.                                         |
-| [Quickwit][blog~quickwit]↗                                                              | A distributed search engine for logs and traces.                                             |
-| [`rust-analyzer`: This Week][blog~rust-analyzer-this-week]↗                             | Weekly news about the `rust-analyzer` language server.                                       |
-| `shuttle.dev` [blog][blog~shuttle.dev]↗ and [launchpad][launchpad-shuttle-dev~website]↗ | Shuttle is a service to deploy Rust applications to the Cloud.                               |
+| Project (URL)                                                                             | Description                                                                                  |
+| ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| [Bevy Engine News][bevy~news~website]↗                                                    | News and updates for the [`bevy`][bevy~website]↗{{hi:bevy}} game engine.                     |
+| [Bytecode Alliance Articles][blog~bytecodealliance-wasm]↗                                 | WASM-focused articles and announcements.                                                     |
+| [Kani Verifier][blog~model-checking]↗                                                     | News and updates for the [`kani`][book~model-checking]↗{{hi:kani}} formal verification tool. |
+| [`kellnr.io`][blog~kellnr]↗                                                               | A private crate registry for Rust.                                                           |
+| [Meilisearch][blog.meilisearch~website]↗                                                  | Updates regarding a fast, open-source search engine.                                         |
+| [Quickwit][blog~quickwit]↗                                                                | A distributed search engine for logs and traces.                                             |
+| [`rust-analyzer`: This Week][blog~rust-analyzer-this-week]↗                               | Weekly news about the `rust-analyzer` language server.                                       |
+| [Shuttle documentation archive][shuttle-dev~docs]↗ and [project source][shuttle~website]↗ | Archived references for Shuttle, the former Rust cloud deployment platform.                  |
 
 ## Related Topics {#related-topics .skip}
 

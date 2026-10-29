@@ -30,7 +30,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-// ANCHOR_END: example_start
+// ANCHOR_END: example
 
 pub fn run() -> Result<()> {
     main()

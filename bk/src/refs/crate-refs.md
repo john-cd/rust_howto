@@ -114,8 +114,6 @@
 [c~alexandrie~crates.io~badge]: https://img.shields.io/badge/crates.io-alexandrie-crimson
 [c~alexandrie~docs]: https://docs.rs/alexandrie
 [c~alexandrie~docs~badge]: https://img.shields.io/crates/v/alexandrie?label=alexandrie
-[c~alexandrie~lib.rs]: https://lib.rs/crates/alexandrie
-[c~alexandrie~lib.rs~badge]: https://img.shields.io/badge/lib.rs-alexandrie-yellow
 [c~alexandrie~repo]: https://github.com/Hirevo/alexandrie
 [c~alexandrie~repo~badge]: https://img.shields.io/badge/alexandrie-steelblue?logo=github
 [c~alga~crates.io]: https://crates.io/crates/alga
@@ -630,8 +628,6 @@
 [c~azul~website~badge]: https://img.shields.io/badge/azul-coral
 [c~azure_sdk_for_rust~crates.io]: https://crates.io/crates/azure_sdk_for_rust
 [c~azure_sdk_for_rust~crates.io~badge]: https://img.shields.io/badge/crates.io-azure__sdk__for__rust-crimson
-[c~azure_sdk_for_rust~docs]: http://mindflavor.github.io/AzureSDKForRust/azure_sdk_for_rust
-[c~azure_sdk_for_rust~docs~badge]: https://img.shields.io/crates/v/azure_sdk_for_rust?label=azure_sdk_for_rust
 [c~azure_sdk_for_rust~lib.rs]: https://lib.rs/crates/azure_sdk_for_rust
 [c~azure_sdk_for_rust~lib.rs~badge]: https://img.shields.io/badge/lib.rs-azure__sdk__for__rust-yellow
 [c~azure_sdk_for_rust~repo]: https://github.com/MindFlavor/AzureSDKForRust
@@ -824,7 +820,7 @@
 [c~bitvec~recent-downloads~badge]: https://img.shields.io/crates/dr/bitvec
 [c~bitvec~repo]: https://github.com/bitvecto-rs/bitvec
 [c~bitvec~repo~badge]: https://img.shields.io/badge/bitvec-steelblue?logo=github
-[c~bitvec~website]: https://bitvecto-rs.github.io/bitvec
+[c~bitvec~website]: https://docs.rs/bitvec/latest/bitvec/
 [c~bitvec~website~badge]: https://img.shields.io/badge/bitvec-coral
 [c~black_scholes~crates.io]: https://crates.io/crates/black_scholes
 [c~black_scholes~crates.io~badge]: https://img.shields.io/badge/crates.io-black__scholes-crimson
@@ -1558,8 +1554,6 @@
 [c~cargo-xtask~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--xtask-crimson
 [c~cargo-xtask~docs]: https://docs.rs/cargo-xtask
 [c~cargo-xtask~docs~badge]: https://img.shields.io/crates/v/cargo-xtask?label=cargo-xtask
-[c~cargo-xtask~lib.rs]: https://lib.rs/crates/cargo-xtask
-[c~cargo-xtask~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--xtask-yellow
 [c~cargo-xtask~repo]: https://github.com/matklad/cargo-xtask
 [c~cargo-xtask~repo~badge]: https://img.shields.io/badge/cargo--xtask-steelblue?logo=github
 [c~cargo-zigbuild~crates.io]: https://crates.io/crates/cargo-zigbuild
@@ -1806,8 +1800,6 @@
 [c~clear~crates.io~badge]: https://img.shields.io/badge/crates.io-clear-crimson
 [c~clear~docs]: https://docs.rs/clear
 [c~clear~docs~badge]: https://img.shields.io/crates/v/clear?label=clear
-[c~clear~lib.rs]: https://lib.rs/crates/clear
-[c~clear~lib.rs~badge]: https://img.shields.io/badge/lib.rs-clear-yellow
 [c~clear~repo]: https://github.com/qe/clear
 [c~clear~repo~badge]: https://img.shields.io/badge/clear-steelblue?logo=github
 [c~clickhouse~crates.io]: https://crates.io/crates/clickhouse
@@ -3032,7 +3024,7 @@
 [c~error-chain~matching-error]: https://docs.rs/error-chain/latest/error-chain/#matching-errors
 [c~esp-hal~crates.io]: https://crates.io/crates/esp-hal
 [c~esp-hal~crates.io~badge]: https://img.shields.io/badge/crates.io-esp--hal-crimson
-[c~esp-hal~docs]: https://docs.esp-rs.org/esp-hal
+[c~esp-hal~docs]: https://docs.rs/esp-hal/latest/esp_hal/
 [c~esp-hal~docs~badge]: https://img.shields.io/crates/v/esp-hal?label=esp-hal
 [c~esp-hal~lib.rs]: https://lib.rs/crates/esp-hal
 [c~esp-hal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-esp--hal-yellow
@@ -4516,7 +4508,7 @@
 [c~js-sys~lib.rs~badge]: https://img.shields.io/badge/lib.rs-js--sys-yellow
 [c~js-sys~repo]: https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys
 [c~js-sys~repo~badge]: https://img.shields.io/badge/js--sys-steelblue?logo=github
-[c~js-sys~website]: https://rustwasm.github.io/wasm-bindgen
+[c~js-sys~website]: https://docs.rs/js-sys/latest/js_sys/
 [c~js-sys~website~badge]: https://img.shields.io/badge/js--sys-coral
 [c~json5~crates.io]: https://crates.io/crates/json5
 [c~json5~crates.io~badge]: https://img.shields.io/badge/crates.io-json5-crimson
@@ -4575,7 +4567,7 @@
 [c~just~justfile]: https://just.systems/man/en/quick-start.html
 [c~just~lib.rs]: https://lib.rs/crates/just
 [c~just~lib.rs~badge]: https://img.shields.io/badge/lib.rs-just-yellow
-[c~just~mod.just]: https://just.systems/man/en/modules1190.html?highlight=mod.just#modules1190
+[c~just~mod.just]: https://just.systems/man/en/modules.html
 [c~just~programmer-manual]: https://just.systems/man/en
 [c~just~repo]: https://github.com/casey/just
 [c~just~repo~badge]: https://img.shields.io/badge/just-steelblue?logo=github
@@ -4885,7 +4877,7 @@
 [c~lldb~repo~badge]: https://img.shields.io/badge/lldb-steelblue?logo=github
 [c~lmdb-rs~crates.io]: https://crates.io/crates/lmdb-rs
 [c~lmdb-rs~crates.io~badge]: https://img.shields.io/badge/crates.io-lmdb--rs-crimson
-[c~lmdb-rs~docs]: https://vhbit.github.io/lmdb-rs/lmdb-rs
+[c~lmdb-rs~docs]: https://docs.rs/lmdb-rs/latest/lmdb_rs/
 [c~lmdb-rs~docs~badge]: https://img.shields.io/crates/v/lmdb-rs?label=lmdb-rs
 [c~lmdb-rs~lib.rs]: https://lib.rs/crates/lmdb-rs
 [c~lmdb-rs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-lmdb--rs-yellow
@@ -6148,7 +6140,7 @@
 [c~panamax~repo~badge]: https://img.shields.io/badge/panamax-steelblue?logo=github
 [c~panic-abort~crates.io]: https://crates.io/crates/panic-abort
 [c~panic-abort~crates.io~badge]: https://img.shields.io/badge/crates.io-panic--abort-crimson
-[c~panic-abort~docs]: https://japaric.github.io/panic-abort/panic-abort
+[c~panic-abort~docs]: https://docs.rs/panic-abort/latest/panic_abort/
 [c~panic-abort~docs~badge]: https://img.shields.io/crates/v/panic-abort?label=panic-abort
 [c~panic-abort~lib.rs]: https://lib.rs/crates/panic-abort
 [c~panic-abort~lib.rs~badge]: https://img.shields.io/badge/lib.rs-panic--abort-yellow
@@ -7288,7 +7280,7 @@
 [c~roboplc~recent-downloads~badge]: https://img.shields.io/crates/dr/roboplc
 [c~roboplc~repo]: https://github.com/roboplc/roboplc
 [c~roboplc~repo~badge]: https://img.shields.io/badge/roboplc-steelblue?logo=github
-[c~roboplc~website]: https://www.bohemia-automation.com/software/roboplc
+[c~roboplc~website]: https://github.com/roboplc/roboplc
 [c~robustmq~crates.io]: https://crates.io/crates/robustmq
 [c~robustmq~crates.io~badge]: https://img.shields.io/badge/crates.io-robustmq-crimson
 [c~robustmq~docs]: https://docs.rs/robustmq
@@ -8250,7 +8242,7 @@
 [c~similar~repo~badge]: https://img.shields.io/badge/similar-steelblue?logo=github
 [c~skia-safe~crates.io]: https://crates.io/crates/skia-safe
 [c~skia-safe~crates.io~badge]: https://img.shields.io/badge/crates.io-skia--safe-crimson
-[c~skia-safe~docs]: https://rust-skia.github.io/doc/skia-safe
+[c~skia-safe~docs]: https://docs.rs/skia-safe/latest/skia_safe/
 [c~skia-safe~docs~badge]: https://img.shields.io/crates/v/skia-safe?label=skia-safe
 [c~skia-safe~lib.rs]: https://lib.rs/crates/skia-safe
 [c~skia-safe~lib.rs~badge]: https://img.shields.io/badge/lib.rs-skia--safe-yellow
@@ -8712,7 +8704,7 @@
 [c~std::path::Path~docs]: https://doc.rust-lang.org/std/path/struct.Path.html
 [c~std::path~docs]: https://doc.rust-lang.org/std/path
 [c~std::pin::Pin~docs]: https://doc.rust-lang.org/std/pin/struct.Pin.html
-[c~std::pin::Unpin~docs]: https://doc.rust-lang.org/std/pin/trait.Unpin.html
+[c~std::pin::Unpin~docs]: https://doc.rust-lang.org/std/marker/trait.Unpin.html
 [c~std::pin~docs]: https://doc.rust-lang.org/std/pin
 [c~std::pin~projections-and-structural-pinning~docs]: https://doc.rust-lang.org/std/pin#projections-and-structural-pinning
 [c~std::prelude~docs]: https://doc.rust-lang.org/std/prelude
@@ -8771,11 +8763,11 @@
 [c~std::sync::RwLockReadGuard~docs]: https://doc.rust-lang.org/std/sync/struct.RwLockReadGuard.html
 [c~std::sync::RwLockWriteGuard~docs]: https://doc.rust-lang.org/std/sync/struct.RwLockWriteGuard.html#method.downgrade
 [c~std::sync::RwLock~docs]: https://doc.rust-lang.org/std/sync/struct.RwLock.html
-[c~std::sync::atomic::AtomicBool~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicBool.html
-[c~std::sync::atomic::AtomicI8~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicI8.html
-[c~std::sync::atomic::AtomicIsize~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicIsize.html
-[c~std::sync::atomic::AtomicU16~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicU16.html
-[c~std::sync::atomic::AtomicUsize~docs]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicUsize.html
+[c~std::sync::atomic::AtomicBool~docs]: https://doc.rust-lang.org/std/sync/atomic/type.AtomicBool.html
+[c~std::sync::atomic::AtomicI8~docs]: https://doc.rust-lang.org/std/sync/atomic/type.AtomicI8.html
+[c~std::sync::atomic::AtomicIsize~docs]: https://doc.rust-lang.org/std/sync/atomic/type.AtomicIsize.html
+[c~std::sync::atomic::AtomicU16~docs]: https://doc.rust-lang.org/std/sync/atomic/type.AtomicU16.html
+[c~std::sync::atomic::AtomicUsize~docs]: https://doc.rust-lang.org/std/sync/atomic/type.AtomicUsize.html
 [c~std::sync::atomic~docs]: https://doc.rust-lang.org/std/sync/atomic
 [c~std::sync::mpsc::Receiver::recv~docs]: https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html#method.recv
 [c~std::sync::mpsc::channel~docs]: https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html
@@ -9922,8 +9914,6 @@
 [c~valgrind~crates.io~badge]: https://img.shields.io/badge/crates.io-valgrind-crimson
 [c~valgrind~docs]: https://docs.rs/valgrind
 [c~valgrind~docs~badge]: https://img.shields.io/crates/v/valgrind?label=valgrind
-[c~valgrind~lib.rs]: https://lib.rs/crates/valgrind
-[c~valgrind~lib.rs~badge]: https://img.shields.io/badge/lib.rs-valgrind-yellow
 [c~valgrind~repo]: https://github.com/dtrebbien/valgrind-rs
 [c~valgrind~repo~badge]: https://img.shields.io/badge/valgrind-steelblue?logo=github
 [c~validator~crates.io]: https://crates.io/crates/validator
@@ -10077,7 +10067,7 @@
 [c~wasm-opt~repo~badge]: https://img.shields.io/badge/wasm--opt-steelblue?logo=github
 [c~wasm-pack~crates.io]: https://crates.io/crates/wasm-pack
 [c~wasm-pack~crates.io~badge]: https://img.shields.io/badge/crates.io-wasm--pack-crimson
-[c~wasm-pack~docs]: https://rustwasm.github.io/wasm-pack
+[c~wasm-pack~docs]: https://docs.rs/wasm-pack/latest/wasm_pack/
 [c~wasm-pack~docs~badge]: https://img.shields.io/crates/v/wasm-pack?label=wasm-pack
 [c~wasm-pack~lib.rs]: https://lib.rs/crates/wasm-pack
 [c~wasm-pack~lib.rs~badge]: https://img.shields.io/badge/lib.rs-wasm--pack-yellow
@@ -10161,13 +10151,13 @@
 [c~wav~repo~badge]: https://img.shields.io/badge/wav-steelblue?logo=github
 [c~web-sys~crates.io]: https://crates.io/crates/web-sys
 [c~web-sys~crates.io~badge]: https://img.shields.io/badge/crates.io-web--sys-crimson
-[c~web-sys~docs]: https://rustwasm.github.io/wasm-bindgen/api/web_sys
+[c~web-sys~docs]: https://docs.rs/web-sys/latest/web_sys/
 [c~web-sys~docs~badge]: https://img.shields.io/crates/v/web-sys?label=web-sys
 [c~web-sys~lib.rs]: https://lib.rs/crates/web-sys
 [c~web-sys~lib.rs~badge]: https://img.shields.io/badge/lib.rs-web--sys-yellow
 [c~web-sys~repo]: https://github.com/rustwasm/wasm-bindgen/tree/master/crates/web-sys
 [c~web-sys~repo~badge]: https://img.shields.io/badge/web--sys-steelblue?logo=github
-[c~web-sys~website]: https://rustwasm.github.io/wasm-bindgen/web-sys
+[c~web-sys~website]: https://wasm-bindgen.github.io/wasm-bindgen/web-sys/index.html
 [c~web-sys~website~badge]: https://img.shields.io/badge/web--sys-coral
 [c~web3~crates.io]: https://crates.io/crates/web3
 [c~web3~crates.io~badge]: https://img.shields.io/badge/crates.io-web3-crimson
@@ -10421,7 +10411,6 @@
 [c~xsv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-xsv-yellow
 [c~xsv~repo]: https://github.com/BurntSushi/xsv
 [c~xsv~repo~badge]: https://img.shields.io/badge/xsv-steelblue?logo=github
-[c~xsv~website]: http://burntsushi.net/rustdoc/xsv
 [c~xtask~crates.io]: https://crates.io/crates/xtask
 [c~xtask~crates.io~badge]: https://img.shields.io/badge/crates.io-xtask-crimson
 [c~xtask~docs]: https://docs.rs/xtask

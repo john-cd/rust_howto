@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
-
+[ex~web-programming~ammonia]: html_sanitization.md#ammonia
 [ex~web-programming~check-a-webpage-for-broken-links]: scraping.md#check-a-webpage-for-broken-links
 [ex~web-programming~create-a-base-url-by-removing-path-segments]: url.md#create-a-base-url-by-removing-path-segments
 [ex~web-programming~create-new-urls-from-a-base-url]: url.md#create-new-urls-from-a-base-url
@@ -8,15 +8,14 @@
 [ex~web-programming~extract-the-url-origin]: url.md#extract-the-url-origin
 [ex~web-programming~get-mime-type-from-string]: mime.md#get-mime-type-from-string
 [ex~web-programming~get-mimetype-from-filename]: mime.md#get-mimetype-from-filename
+[ex~web-programming~html2text]: html_sanitization.md#html2text
 [ex~web-programming~http-body-util]: http_types_and_interfaces.md#http-body-util
 [ex~web-programming~http-body]: http_types_and_interfaces.md#http-body
 [ex~web-programming~http]: http_types_and_interfaces.md#http
+[ex~web-programming~markdown-to-safe-html]: html_sanitization.md#markdown-to-safe-html
 [ex~web-programming~parse-a-url-from-a-string-to-a-url-type]: url.md#parse-a-url-from-a-string-to-a-url-type
 [ex~web-programming~parse-the-mime-type-of-a-http-response]: mime.md#parse-the-mime-type-of-a-http-response
 [ex~web-programming~remove-fragment-identifiers-and-query-pairs]: url.md#remove-fragment-identifiers-and-query-pairs
 [p~links]: ../../../src/links/index.md
 [p~parse]: ../date-and-time/parse.md
 [p~url]: url.md
-[ex~web-programming~ammonia]: html_sanitization.md#ammonia
-[ex~web-programming~markdown-to-safe-html]: html_sanitization.md#markdown-to-safe-html
-[ex~web-programming~html2text]: html_sanitization.md#html2text

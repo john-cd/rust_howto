@@ -1,36 +1,25 @@
 <!-- TODO Reviewed ??-??-2026 -->
 <!-- markdownlint-disable MD057 -->
-
+[arc42~decisions]: https://docs.arc42.org/section-9/
+[arc42~quality~requirements]: https://docs.arc42.org/section-10/
+[arc42~template]: https://docs.arc42.org/home/
 [architecture~bevy-ecs]: https://docs.rs/bevy_ecs
 [architecture~cqrs-es]: https://docs.rs/cqrs-es
 [architecture~libloading]: https://docs.rs/libloading
-
+[c4~model~diagrams]: https://c4model.com/diagrams
 [ex~architecture~actor-model]: common_architectures.md#actor-model
-[ex~architecture~choose-a-project-structure]: software_architecture_process.md#system-context-and-boundaries
-[ex~architecture~choose-key-technologies]: software_architecture_process.md#evaluate-options
 [ex~architecture~cqrs]: common_architectures.md#cqrs
-[ex~architecture~define-objectives-and-requirements]: software_architecture_process.md#define-objectives-and-requirements
 [ex~architecture~dependency-injection]: architectural_patterns.md#dependency-injection
-[ex~architecture~deployment-and-operations]: software_architecture_process.md#deployment-and-operations
-[ex~architecture~design-system-components]: software_architecture_process.md#design-components-and-interfaces
 [ex~architecture~entity-component-system]: common_architectures.md#entity-component-system
-[ex~architecture~ensure-security]: software_architecture_process.md#security-and-trust
-[ex~architecture~ensure-test-coverage]: software_architecture_process.md#validate-the-design
 [ex~architecture~event-driven-architecture]: common_architectures.md#event-driven-architecture
 [ex~architecture~event-sourcing]: common_architectures.md#event-sourcing
-[ex~architecture~handle-error-management]: software_architecture_process.md#error-and-failure-semantics
 [ex~architecture~hexagonal-architecture]: common_architectures.md#hexagonal-architecture
 [ex~architecture~layered-architecture]: common_architectures.md#layered-architecture
 [ex~architecture~microservices]: common_architectures.md#microservices
-[ex~architecture~optimize-performance]: software_architecture_process.md#performance-and-resource-limits
 [ex~architecture~pipelines]: common_architectures.md#pipelines
 [ex~architecture~plugin-architecture]: common_architectures.md#plugin-architecture
 [ex~architecture~repository-pattern]: architectural_patterns.md#repository-pattern
 [ex~architecture~state-machine-pattern]: architectural_patterns.md#state-machine-pattern
-[arc42~decisions]: https://docs.arc42.org/section-9/
-[arc42~quality~requirements]: https://docs.arc42.org/section-10/
-[arc42~template]: https://docs.arc42.org/home/
-[c4~model~diagrams]: https://c4model.com/diagrams
 [p~actors]: ../../../src/categories/concurrency/_actors.md
 [p~apis]: ../../../src/categories/web-programming_http-client/apis.md
 [p~architecture]: index.md

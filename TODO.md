@@ -145,18 +145,14 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-08 — Media encoding, images and video
 
-
 #### NOW-CODE-09 — Networking, authentication and email
 
 
 #### NOW-CODE-10 — Cloud services and SDKs
 
-
 #### NOW-CODE-11 — Tabular data and finance
 
-
 #### NOW-CODE-12 — Embedded systems and hardware interfaces
-
 
 ### Prose and book structure
 
@@ -203,7 +199,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-PROSE-04 — Publishing, curation and book coverage
 
 - [#1720](https://github.com/john-cd/rust_howto/issues/1720) — **P3** — Curate remaining VS Code, browser and TOREVIEW bookmarks into book content — **BLOCKED — the Chrome bookmarks export (`bookmarks.json`) is absent from this checkout; request the source before further curation**
-- [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **Unprioritized** — Audit references and links in restored book pages A — **BLOCKED — restored-page reference and wikilink audits remain; the requested `bk/drafts` and `later` book builds lack standalone book configurations, as documented in the issue comment**
+- [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **Unprioritized** — Audit references and links in restored book pages A — **PARTIAL — regenerated restored-page references and verified the wikilink targets exist; four graphics aliases match both an index and a detail page, and separate draft/later builds remain blocked by missing book configurations**
 
 #### NOW-PROSE-05 — Cloud platforms and containers
 
@@ -212,7 +208,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#1224](https://github.com/john-cd/rust_howto/issues/1224) — **P4** — virtualization/using_containers.md: write / fix — **BLOCKED — required `bollard` and `testcontainers` dependencies are absent; the integration also requires a Docker daemon, as noted in the issue comment**
 
 #### NOW-PROSE-06 — Security and cryptocurrencies
-
 
 #### NOW-PROSE-07 — Foreign function interfaces - IN PROGRESS
 
@@ -230,7 +225,6 @@ Validation (2026-10-27, NOW-PROSE-08): focused database Clippy and nextest passe
 
 #### NOW-PROSE-09 — Development tools, build systems and editors — IMPLEMENTED; FULL VALIDATION BLOCKED
 
-
 Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references and local fragments, focused mdBook rendering, rendered tables/anchors, and `git diff --check` passed. All three YAML workflows passed Zizmor's offline audit. `just bb` is blocked before rendering because `cargo tree --locked` needs to update the existing `bk/crates/Cargo.lock`; no Cargo inputs changed in this batch. `just refdefs check` is Unix-only; running its script through Git Bash reports existing unresolved global labels, while all labels used by the two completed chapters resolve. Issues remain open pending the full book gate. Commits are local; no push was requested.
 
 #### NOW-PROSE-10 — Localization and internationalization - IN PROGRESS
@@ -239,10 +233,9 @@ Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references an
 
 #### NOW-PROSE-11 — Asynchronous programming and caching - IN PROGRESS
 
-  - Focused actor Clippy, four actor tests, dprint, rumdl, chapter spelling, and direct refdefs check pass. `just ca`, `just ntt actors`, `just bb`, and `just spell` stop at the Git Bash `NtCreateDirectoryObject` access error; `just refdefs check` is not a defined recipe. Direct all-target Clippy also reports a pre-existing semicolon lint in `message_passing_crossbeam_channel.rs`.
+- Focused actor Clippy, four actor tests, dprint, rumdl, chapter spelling, and direct refdefs check pass. `just ca`, `just ntt actors`, `just bb`, and `just spell` stop at the Git Bash `NtCreateDirectoryObject` access error; `just refdefs check` is not a defined recipe. Direct all-target Clippy also reports a pre-existing semicolon lint in `message_passing_crossbeam_channel.rs`.
 
 #### NOW-PROSE-12 — Aerospace and device protocols — IMPLEMENTED; FULL VALIDATION BLOCKED
-
 
 Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace checks passed. Focused tests and all-target Clippy passed for the aerospace simulation and space-protocol examples. The complete book/reference gates remain blocked: the direct reference check reaches `bk/crates` but `cargo tree --locked` requires an existing lockfile update; Git Bash-backed `just bb` cannot start because of the `NtCreateDirectoryObject` access denial. A direct mdBook build reports repository-wide unresolved links, and optional `mdbook-pandoc` is unavailable. Issues remain open pending complete book gates and PR links.
 
@@ -313,12 +306,9 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-03 — Compression and archives
 
-
 #### VALIDATE-CODE-04 — Build scripts, Cargo and procedural macros
 
-
 #### VALIDATE-CODE-05 — Foreign function interfaces
-
 
 #### VALIDATE-CODE-06 — Desktop UI, accessibility, games and GPU
 
@@ -331,7 +321,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 - [#1942](https://github.com/john-cd/rust_howto/issues/1942) — **P4** — Add examples: geocode addresses and compute distances (geocoding, haversine, us-state-info) — **IMPLEMENTED ON DEVELOP; OPEN — distance/state/cache examples and fake-geocoder coverage are present; live provider access is deliberately excluded; required refdefs/book checks deferred to final validation**
 
 #### VALIDATE-CODE-08 — Concurrency
-
 
 #### VALIDATE-CODE-09 — Tabular data and finance
 
@@ -347,15 +336,11 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-12 — Language and domain models
 
-
 #### VALIDATE-CODE-13 — Testing and observability
-
 
 #### VALIDATE-CODE-14 — Text processing and HTML
 
-
 #### VALIDATE-CODE-15 — Parsing and XML
-
 
 #### VALIDATE-CODE-16 — Filesystem and process management
 
@@ -475,7 +460,6 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 
 #### DEFERRED-CODE-02 — Machine learning, data and robotics
 
-
 #### DEFERRED-CODE-03 — Operating-system APIs, emulation and no-std
 
 - [#818](https://github.com/john-cd/rust_howto/issues/818) — **P4** — linux/statx_metadata.rs: temporary-file size and optional birth time through rustix — **IMPLEMENTED ON DEVELOP (`090e6a956`); tests and lints skipped by request; Linux and book builds pending**
@@ -498,7 +482,6 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 ### Tools and infrastructure
 
 #### DEFERRED-INFRA-01 — Dependencies, CI and containers
-
 
 ### Roadmaps and epics
 

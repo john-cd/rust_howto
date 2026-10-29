@@ -90,7 +90,7 @@ Fuzz testing (or fuzzing) is a software [testing][p~testing] technique used to f
 
 ## Memory Testing with Valgrind {#valgrind}
 
-[![valgrind][c~valgrind~docs~badge]][c~valgrind~docs] [![valgrind~crates.io][c~valgrind~crates.io~badge]][c~valgrind~crates.io] [![valgrind~repo][c~valgrind~repo~badge]][c~valgrind~repo] [![valgrind~lib.rs][c~valgrind~lib.rs~badge]][c~valgrind~lib.rs]{{hi:valgrind}}
+[![valgrind][c~valgrind~docs~badge]][c~valgrind~docs] [![valgrind~crates.io][c~valgrind~crates.io~badge]][c~valgrind~crates.io] [![valgrind~repo][c~valgrind~repo~badge]][c~valgrind~repo]{{hi:valgrind}}
 
 While not a fuzzer itself, [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} is an instrumentation framework for building dynamic analysis tools. It is commonly used to detect memory leaks and memory management bugs, which are often what fuzzers are trying to trigger.
 

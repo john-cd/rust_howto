@@ -33,7 +33,6 @@ cargo make --version
 [![cargo-xtask][c~cargo-xtask~docs~badge]][c~cargo-xtask~docs]{{hi:cargo-xtask}}
 [![cargo-xtask~crates.io][c~cargo-xtask~crates.io~badge]][c~cargo-xtask~crates.io]
 [![cargo-xtask~repo][c~cargo-xtask~repo~badge]][c~cargo-xtask~repo]
-[![cargo-xtask~lib.rs][c~cargo-xtask~lib.rs~badge]][c~cargo-xtask~lib.rs]
 
 [cargo-xtask][c~cargo-xtask~repo]↗{{hi:cargo-xtask}} adds free-form automation to a Rust project, a-la [`make`][make~website]↗{{hi:make}}, [`npm run`][npm~website]↗{{hi:npm run}} or bespoke bash scripts.
 
