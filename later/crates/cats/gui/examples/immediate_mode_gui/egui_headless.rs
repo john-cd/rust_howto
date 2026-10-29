@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! Runs an `egui` UI for one frame without a window, a GPU or a display.
 //!
@@ -22,7 +26,9 @@ pub fn run_frame(
         screen_rect: Some(screen),
         ..Default::default()
     };
-    ctx.run_ui(input, add_contents)
+    let mut output = ctx.run_ui(input, add_contents);
+    output.textures_delta.clear();
+    output
 }
 
 /// Draws a label and a button, then looks at what was painted.
@@ -30,7 +36,7 @@ fn main() {
     let ctx = egui::Context::default();
     let mut clicked = false;
     let output = run_frame(&ctx, |ui| {
-        egui::CentralPanel::default().show_inside(ui, |ui| {
+        egui::CentralPanel::default().show(ui, |ui| {
             ui.label("Hello");
             // Without input events, the button is never clicked.
             clicked = ui.button("Click me").clicked();

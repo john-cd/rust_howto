@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! A line plot and a bar chart with `egui_plot`.
 
@@ -54,12 +58,13 @@ fn main() {
     };
     let mut line_bounds = None;
     let mut bar_bounds = None;
-    let _output = ctx.run_ui(input, |ui| {
-        egui::CentralPanel::default().show_inside(ui, |ui| {
+    let mut output = ctx.run_ui(input, |ui| {
+        egui::CentralPanel::default().show(ui, |ui| {
             line_bounds = Some(*show_line_plot(ui).transform.bounds());
             bar_bounds = Some(*show_bar_chart(ui).transform.bounds());
         });
     });
+    output.textures_delta.clear();
 
     // The plots fit their bounds to the data.
     let line = line_bounds.expect("the line plot was shown");

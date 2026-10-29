@@ -3,8 +3,6 @@
 // ANCHOR: example
 //! Moves an entity with a headless Bevy ECS app.
 
-use std::time::Duration;
-
 use bevy::prelude::*;
 
 /// Stores an entity's position in world coordinates.
@@ -17,10 +15,11 @@ struct Velocity(Vec2);
 
 /// Builds a minimal app that moves one entity.
 fn build_app() -> App {
-    App::new()
-        .add_plugins(MinimalPlugins)
+    let mut app = App::new();
+    app.add_plugins(MinimalPlugins)
         .add_systems(Startup, spawn_mover)
-        .add_systems(Update, movement)
+        .add_systems(Update, movement);
+    app
 }
 
 /// Spawns the entity that the movement system updates.
@@ -54,6 +53,10 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use std::time::Duration;
+
+    use bevy::time::TimeUpdateStrategy;
+
     use super::*;
 
     /// Runs the headless Bevy example entry point.

@@ -96,7 +96,7 @@ fn main() {
         ..Default::default()
     };
     let _output = ctx.run_ui(input, |ui| {
-        egui::CentralPanel::default().show_inside(ui, |ui| app.show(ui));
+        egui::CentralPanel::default().show(ui, |ui| app.show(ui));
     });
 }
 // ANCHOR_END: example

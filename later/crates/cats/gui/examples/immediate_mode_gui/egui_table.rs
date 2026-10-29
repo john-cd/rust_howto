@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! A virtualized data table with `egui_extras`.
 
@@ -55,7 +59,7 @@ struct TableApp;
 
 impl eframe::App for TableApp {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
-        egui::CentralPanel::default().show_inside(ui, |ui| {
+        egui::CentralPanel::default().show(ui, |ui| {
             show_table(ui, 10_000);
         });
     }
@@ -80,11 +84,12 @@ fn main() {
         screen_rect: Some(screen),
         ..Default::default()
     };
-    let _output = ctx.run_ui(input, |ui| {
-        egui::CentralPanel::default().show_inside(ui, |ui| {
+    let mut output = ctx.run_ui(input, |ui| {
+        egui::CentralPanel::default().show(ui, |ui| {
             built = show_table(ui, 10_000);
         });
     });
+    output.textures_delta.clear();
 
     // Only the visible rows were built.
     assert!(built > 0);
@@ -112,7 +117,7 @@ mod tests {
         let ctx = egui::Context::default();
         let mut built = 0;
         let _output = crate::egui_headless::run_frame(&ctx, |ui| {
-            egui::CentralPanel::default().show_inside(ui, |ui| {
+            egui::CentralPanel::default().show(ui, |ui| {
                 built = show_table(ui, 3);
             });
         });

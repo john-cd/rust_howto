@@ -36,7 +36,7 @@ impl MyApp {
     /// Draws the app's controls and returns the increment button's rectangle.
     fn show(&mut self, ui: &mut egui::Ui) -> egui::Rect {
         egui::CentralPanel::default()
-            .show_inside(ui, |ui| {
+            .show(ui, |ui| {
                 ui.heading("Hello egui!");
                 ui.text_edit_singleline(&mut self.name);
                 ui.add(
@@ -92,12 +92,13 @@ mod tests {
         let context = egui::Context::default();
         let mut button_rect = egui::Rect::NOTHING;
 
-        let _ = context.run_ui(raw_input(Vec::new()), |ui| {
+        let mut output = context.run_ui(raw_input(Vec::new()), |ui| {
             button_rect = app.show(ui);
         });
+        output.textures_delta.clear();
 
         let position = button_rect.center();
-        let _ = context.run_ui(
+        let mut output = context.run_ui(
             raw_input(vec![
                 egui::Event::PointerMoved(position),
                 egui::Event::PointerButton {
@@ -111,7 +112,8 @@ mod tests {
                 app.show(ui);
             },
         );
-        let _ = context.run_ui(
+        output.textures_delta.clear();
+        let mut output = context.run_ui(
             raw_input(vec![egui::Event::PointerButton {
                 pos: position,
                 button: egui::PointerButton::Primary,
@@ -122,6 +124,7 @@ mod tests {
                 app.show(ui);
             },
         );
+        output.textures_delta.clear();
 
         assert_eq!(app.counter, 1);
     }

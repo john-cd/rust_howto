@@ -184,19 +184,19 @@ impl Node for Entity {
     }
 
     fn left(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn right(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn top(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn bottom(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn content_size(
@@ -210,59 +210,59 @@ impl Node for Entity {
     }
 
     fn padding_left(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn padding_right(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn padding_top(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn padding_bottom(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn vertical_gap(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn min_vertical_gap(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn min_horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn max_vertical_gap(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn max_horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        Some(Units::Pixels(0.0))
     }
 
     fn min_width(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        None
     }
 
     fn min_height(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        None
     }
 
     fn max_width(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        None
     }
 
     fn max_height(&self, _: &Self::Store) -> Option<Units> {
-        Some(Units::Auto)
+        None
     }
 
     fn grid_columns(&self, _: &Self::Store) -> Option<Vec<Units>> {

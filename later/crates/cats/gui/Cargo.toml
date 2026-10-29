@@ -119,12 +119,12 @@ dioxus = { version = "0.7.10", optional = true }
 dioxus-ssr = { version = "0.7.10", optional = true }
 eframe = "0.37.0"
 egui = "0.37.0" # Needs smallvec 1.16; keep Kube on the serde-saphyr 1.3 revision.
-egui-notify = "0.23.0"
-egui-phosphor = "0.14.0"
+egui-notify = { version = "0.23.0", optional = true }
+egui-phosphor = { version = "0.14.0", optional = true }
 egui_extras = "0.37.0"
 egui_plot = "0.38.0"
-egui_tiles = "0.18.0"
-egui_tracing = "0.3.0"
+egui_tiles = { version = "0.18.0", optional = true }
+egui_tracing = { version = "0.3.0", optional = true }
 femtovg = { version = "0.28.0", optional = true }
 floem = { version = "0.2.0", optional = true }
 gl = { version = "0.14.0", optional = true }
@@ -168,6 +168,8 @@ i-slint-backend-testing = "=1.16.1" # Matches Slint's internal, non-semver testi
 [features]
 default = []
 dioxus = ["dep:dioxus", "dep:dioxus-ssr"]
+# These egui add-ons still depend on egui 0.34/0.36, not the egui 0.37 used by the other examples.
+egui_legacy = ["dep:egui-notify", "dep:egui-phosphor", "dep:egui_tiles", "dep:egui_tracing"]
 femtovg = ["dep:femtovg", "dep:glutin", "dep:glutin-winit", "dep:raw-window-handle"]
 floem = ["dep:floem"]
 gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]

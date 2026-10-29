@@ -59,7 +59,7 @@ impl MainState {
     /// # Errors
     ///
     /// Returns a graphics error if the circle mesh cannot be created.
-    fn new(context: &mut Context) -> GameResult<Self> {
+    fn new(context: &Context) -> GameResult<Self> {
         let circle = graphics::Mesh::new_circle(
             context,
             graphics::DrawMode::fill(),
@@ -107,9 +107,9 @@ impl EventHandler for MainState {
 ///
 /// Returns a ggez error if context or graphics initialization fails.
 pub fn run() -> GameResult {
-    let (mut context, event_loop) =
+    let (context, event_loop) =
         ContextBuilder::new("rust_howto_ggez", "rust_howto").build()?;
-    let state = MainState::new(&mut context)?;
+    let state = MainState::new(&context)?;
 
     event::run(context, event_loop, state)
 }
@@ -129,8 +129,8 @@ mod tests {
 
         step(&mut ball, 1.0, Vec2::new(100.0, 100.0));
 
-        assert_eq!(ball.position.x, BALL_RADIUS);
-        assert_eq!(ball.velocity.x, 10.0);
+        assert!((ball.position.x - BALL_RADIUS).abs() < f32::EPSILON);
+        assert!((ball.velocity.x - 10.0).abs() < f32::EPSILON);
     }
 
     /// Runs the ggez entry point in a native graphics window.

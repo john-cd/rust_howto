@@ -23,7 +23,7 @@ fn new_collector() -> (EventCollector, impl tracing::Subscriber) {
 fn show_log_panel(ui: &mut egui::Ui, collector: &EventCollector) {
     egui::Panel::bottom("log_panel")
         .resizable(true)
-        .show_inside(ui, |ui| {
+        .show(ui, |ui| {
             // `Logs` is a widget with a filter by level and by target.
             ui.add(Logs::new(collector.clone()));
         });
@@ -50,7 +50,7 @@ fn main() {
     };
     let _output = ctx.run_ui(input, |ui| {
         show_log_panel(ui, &collector);
-        egui::CentralPanel::default().show_inside(ui, |ui| {
+        egui::CentralPanel::default().show(ui, |ui| {
             ui.label("Main content");
         });
     });

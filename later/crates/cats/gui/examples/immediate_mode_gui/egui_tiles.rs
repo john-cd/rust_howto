@@ -93,7 +93,7 @@ fn main() {
         ..Default::default()
     };
     let _output = ctx.run_ui(input, |ui| {
-        egui::CentralPanel::default().show_inside(ui, |ui| {
+        egui::CentralPanel::default().show(ui, |ui| {
             tree.ui(&mut TreeBehavior, ui);
         });
     });
