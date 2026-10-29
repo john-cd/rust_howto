@@ -20,7 +20,7 @@ Rust cryptocurrency applications combine protocol clients, wallets, smart-contra
 
 [`alloy`][c~alloy~docs]↗ provides Ethereum types, providers, signers, and network access. The older `ethers` ecosystem is deprecated in favor of Alloy; see the [upstream deprecation notice][ethers-rs~repo]↗.
 
-The example below runs offline: it queries an account balance through a provider backed by Alloy's mocked transport, then signs a message with a local key and recovers the signer's address. To query a real node, replace `connect_mocked_client` with `connect_http` and a node URL.
+The example below runs offline: it queries an account balance through a provider backed by Alloy's mocked transport, then signs a message with a local key and recovers the signer's address. The ignored live-node test uses `connect_http` and the `ALLOY_RPC_URL` environment variable. Set it to an Ethereum JSON-RPC endpoint, then run `cargo test -p cryptography_cryptocurrencies --example cryptocurrencies -- --ignored live_node_balance_works` from `later/crates`.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography_cryptocurrencies/examples/cryptocurrencies/cryptocurrencies.rs:example}}

@@ -8,6 +8,8 @@
 //! responses. Replace `connect_mocked_client` with
 //! `connect_http("https://...".parse()?)` to query a real node.
 
+use std::env;
+
 use alloy::primitives::Address;
 use alloy::primitives::address;
 use alloy::primitives::utils::format_ether;
@@ -38,6 +40,16 @@ async fn sign_and_recover(message: &str) -> anyhow::Result<Address> {
     let recovered = signature.recover_address_from_msg(message)?;
     assert_eq!(recovered, signer.address());
     Ok(recovered)
+}
+
+/// Queries the same balance from a live node selected with `ALLOY_RPC_URL`.
+async fn live_node_balance() -> anyhow::Result<()> {
+    let url = env::var("ALLOY_RPC_URL")?;
+    let url = url.parse()?;
+    let provider = ProviderBuilder::new().connect_http(url);
+    let balance = balance_in_ether(&provider, ACCOUNT).await?;
+    println!("Balance of {ACCOUNT}: {balance} ETH");
+    Ok(())
 }
 
 /// Runs the example against a mocked node.
@@ -101,5 +113,12 @@ mod tests {
         let second = sign_and_recover("one").await?;
         assert_ne!(first, second, "each call uses a fresh random key");
         Ok(())
+    }
+
+    /// Queries a live Ethereum node when explicitly enabled by the developer.
+    #[tokio::test]
+    #[ignore = "requires ALLOY_RPC_URL for an Ethereum JSON-RPC endpoint"]
+    async fn live_node_balance_works() -> anyhow::Result<()> {
+        live_node_balance().await
     }
 }
