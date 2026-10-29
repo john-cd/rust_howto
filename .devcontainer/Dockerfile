@@ -158,7 +158,7 @@ WORKDIR /code
 ## `llvm` for `llvm-config` required for `clang-sys`
 ## `libwebkit2gtk-4.1-dev` `build-essential` `curl` `wget` `file` `libxdo-dev` `libssl-dev` `libayatana-appindicator3-dev` `librsvg2-dev` for `tauri`
 ## `python3` for `pyo3`
-## `default-jdk` for Java/JNI examples; `ruby-dev` for Ruby FFI bindings
+## `default-jdk` for Java/JNI examples; `ruby-dev` for system Ruby bindings and the pinned Ruby 4.0 build for Rutie
 ## `python3-venv` and `python-is-python3` for building the separate Maturin extension example
 ## `libgtk-4-dev` `build-essential` for `relm4` and `gtk4`
 ## `clang` `libwayland-dev` `libxkbcommon-x11-dev` `libvulkan-dev` for `xilem`
@@ -174,6 +174,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     && apt-get install -y --no-install-recommends \
     aspell \
     aspell-en \
+    autoconf \
+    bison \
     build-essential \
     capnproto \
     clang \
@@ -188,16 +190,22 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libc6-dev \
     libaio1t64 \
     libclang-dev \
+    libffi-dev \
     libfontconfig1-dev \
     libfreetype6-dev \
+    libgdbm-compat-dev \
+    libgdbm-dev \
+    libgmp-dev \
     libglu1-mesa-dev \
     libgraphite2-dev \
     libharfbuzz-dev \
     libgtk-4-dev \
     libicu-dev \
+    libncurses-dev \
     libopencv-dev \
     libpng-dev \
     libpython3-dev \
+    libreadline-dev \
     librocksdb-dev \
     librsvg2-dev \
     libssl-dev \
@@ -210,6 +218,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
     libz-dev \
+    libyaml-dev \
     default-jdk \
     locales \
     mold \
@@ -231,6 +240,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     xz-utils \
     zip \
     xorg-dev \
+    zlib1g-dev \
     && nasm --version \
     && apt-get clean -y
 
@@ -250,6 +260,11 @@ ENV ORACLE_HOME=/opt/oracle/instantclient_23_26 \
     OCI_LIB_DIR=/opt/oracle/instantclient_23_26 \
     LD_LIBRARY_PATH=/opt/oracle/instantclient_23_26 \
     LIBRARY_PATH=/opt/oracle/instantclient_23_26
+
+## Install the Ruby 4.0 runtime, headers, and shared library required by Rutie.
+COPY --link --chmod=755 .devcontainer/install_ruby_4_0.sh /usr/local/bin/install_ruby_4_0.sh
+RUN /usr/local/bin/install_ruby_4_0.sh
+ENV RUBY=/usr/local/bin/ruby
 
 ## Alternatively, use `lld` instead of the `mold` linker
 ## See configuration in .cargo/config.toml

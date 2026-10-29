@@ -39,6 +39,7 @@ winget install --id Ninja-build.Ninja -e --source winget --accept-source-agreeme
 winget install --id EclipseAdoptium.Temurin.21.JDK -e --source winget --accept-source-agreements --accept-package-agreements
 winget install --id Python.Python.3.13 -e --source winget --accept-source-agreements --accept-package-agreements
 winget install --id RubyInstallerTeam.RubyWithDevKit.3.3 -e --source winget --accept-source-agreements --accept-package-agreements
+& (Join-Path $PSScriptRoot 'install_ruby_4_0.ps1')
 
 # Install the repository-pinned Pandoc release. Its MSI updates PATH when installed.
 $pandocVersion = $toolVersions["PANDOC_VERSION"]
@@ -330,6 +331,7 @@ python --version
 java --version
 javac --version
 ruby --version
+& $env:RUBY --version
 maturin --version
 flutter --version
 flutter_rust_bridge_codegen --version

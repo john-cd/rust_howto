@@ -24,6 +24,8 @@ sudo apt-get update \
 && sudo apt-get install -y --no-install-recommends \
     aspell \
     aspell-en \
+    autoconf \
+    bison \
     build-essential \
     capnproto \
     clang \
@@ -39,16 +41,22 @@ sudo apt-get update \
     libc6-dev \
     libaio1t64 \
     libclang-dev \
+    libffi-dev \
     libfontconfig1-dev \
     libfreetype6-dev \
+    libgdbm-compat-dev \
+    libgdbm-dev \
+    libgmp-dev \
     libglu1-mesa-dev \
     libgraphite2-dev \
     libharfbuzz-dev \
     libgtk-4-dev \
     libicu-dev \
+    libncurses-dev \
     libopencv-dev \
     libpng-dev \
     libpython3-dev \
+    libreadline-dev \
     librocksdb-dev \
     librsvg2-dev \
     libssl-dev \
@@ -61,6 +69,7 @@ sudo apt-get update \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
     libz-dev \
+    libyaml-dev \
     mold \
     llvm \
     m4 \
@@ -81,6 +90,7 @@ sudo apt-get update \
     xorg-dev \
     jq \
     fzf \
+    zlib1g-dev \
 && nasm --version \
 && sudo apt-get clean -y
 
@@ -103,6 +113,15 @@ if ! grep -Fqx "$oracle_profile_line" "$HOME/.profile"; then
     printf '%s\n' "$oracle_profile_line" >> "$HOME/.profile"
 fi
 source "$oracle_client_env"
+
+# Install the pinned Ruby 4.0 runtime, headers, and shared library for Rutie.
+"$repo_root/.devcontainer/install_ruby_4_0.sh"
+export RUBY=/usr/local/bin/ruby
+ruby_profile_line='export RUBY=/usr/local/bin/ruby'
+touch "$HOME/.profile"
+if ! grep -Fqx "$ruby_profile_line" "$HOME/.profile"; then
+    printf '%s\n' "$ruby_profile_line" >> "$HOME/.profile"
+fi
 
 # Install Pandoc binary
 wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -O /tmp/pandoc.deb \

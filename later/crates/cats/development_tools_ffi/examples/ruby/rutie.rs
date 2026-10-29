@@ -11,14 +11,13 @@
 //! cargo test --locked -p development_tools_ffi --features ruby --example ruby test_rutie_example_entry_point -- --ignored --test-threads=1
 //! ```
 
-#[macro_use]
-extern crate rutie;
-
 use rutie::AnyException;
 use rutie::Class;
 use rutie::Object;
 use rutie::RString;
 use rutie::VM;
+use rutie::class;
+use rutie::methods;
 
 class!(RustGreeter);
 
