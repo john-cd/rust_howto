@@ -10,6 +10,8 @@ use std::fs;
 use std::fs::DirEntry;
 use std::path::Path;
 use std::path::PathBuf;
+#[cfg(unix)]
+use std::os::unix::fs::symlink;
 
 use anyhow::Context as _;
 use clap::Parser;
@@ -305,8 +307,7 @@ mod tests {
         let dir = tempdir().expect("a temporary directory should be created");
         let temp_dir = dir.path().join("temp");
         fs::create_dir(&temp_dir).expect("dir should be created");
-        symlink(outside.path(), temp_dir.join("link"))
-            .expect("symlink should be created");
+        create_directory_link(outside.path(), &temp_dir.join("link"));
         clean_folder(&temp_dir).expect("cleaning should succeed");
         assert!(!temp_dir.join("link").exists());
         assert!(outside.path().join("keep.txt").exists());

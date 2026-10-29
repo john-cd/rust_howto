@@ -53,6 +53,15 @@ fn matching_categories<'a>(all_categories: &'a [Category], word: &str) -> Vec<&'
 
 /// Runs the selected command and writes its output to `out`.
 fn dispatch(cmd: Cmd, out: &mut impl Write) -> anyhow::Result<()> {
+    dispatch_with_categories(cmd, out, tool_lib::get_all_categories)
+}
+
+/// Runs a command with an injected category catalog loader.
+fn dispatch_with_categories(
+    cmd: Cmd,
+    out: &mut impl Write,
+    load_categories: impl FnOnce() -> anyhow::Result<Vec<Category>>,
+) -> anyhow::Result<()> {
     match cmd {
         // Generate badges for one or more crates.
         //
@@ -88,7 +97,7 @@ fn dispatch(cmd: Cmd, out: &mut impl Write) -> anyhow::Result<()> {
         }
         // Generate possible category badges for one or more input strings.
         Cmd::CategoryBadges(cb) => {
-            let all_categories = tool_lib::get_all_categories()?;
+            let all_categories = load_categories()?;
             for cat in cb.args {
                 let matches = matching_categories(&all_categories, &cat);
                 if matches.is_empty() {
@@ -181,6 +190,26 @@ mod tests {
         let error = dispatch(Cmd::None, &mut out).expect_err("no command");
         assert!(error.to_string().contains("did not enter a command"));
         assert!(out.is_empty());
+    }
+
+    /// Category dispatch accepts an injected catalog and does not fetch it in the test.
+    #[test]
+    fn category_dispatch_uses_injected_catalog() {
+        let categories = vec![category(
+            "Text Processing",
+            "text-processing",
+            "Transform words",
+        )];
+        let command = Cmd::CategoryBadges(CmdArgs {
+            args: vec!["text".to_owned()],
+        });
+        let mut out = Vec::new();
+
+        dispatch_with_categories(command, &mut out, || Ok(categories))
+            .expect("category dispatch should succeed with the injected catalog");
+
+        let output = String::from_utf8(out).expect("the generated badge should be UTF-8");
+        assert!(output.contains("text-processing"));
     }
 
     /// Runs `main`, which parses the real process arguments (not valid for this CLI under the test harness).
