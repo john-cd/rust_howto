@@ -6,7 +6,6 @@
 use std::fs::File;
 use std::io::BufRead as _;
 use std::io::BufReader;
-use std::io::Write as _;
 use std::path::Path;
 
 use anyhow::Result;
@@ -16,7 +15,7 @@ use itertools_014::Itertools as _;
 ///
 /// - Create a backup copy of the source text file.
 /// - Sort and deduplicate the merged lines.
-/// - Write back to the same file.
+/// - Write back to the same file by atomic replacement.
 pub fn merge<P: AsRef<Path>>(filepath: P, new_lines: Vec<String>) -> Result<()> {
     let filepath = filepath.as_ref();
 
@@ -43,26 +42,17 @@ pub fn merge<P: AsRef<Path>>(filepath: P, new_lines: Vec<String>) -> Result<()> 
     Ok(())
 }
 
-/// Write each item to a file.
+/// Write each item to a file, replacing it atomically.
 ///
-/// This function takes a path and an iterator of items that can be converted to byte slices.
-/// It creates a file at the given path and writes each item to the file, followed by a newline.
-/// It then ensures that all data is written to the underlying storage.
+/// The items are written back to back (callers include the newlines) to a
+/// temporary sibling that replaces `path` only after a complete, synced write.
 ///
 /// `Vec<String>` and `&Vec<String>` are both `AsRef<[u8]>`.
 fn write_each(
     path: impl AsRef<Path>,
     items: impl IntoIterator<Item = impl AsRef<[u8]>>,
 ) -> Result<()> {
-    // Overwrites or creates the file.
-    let mut file = File::create(path)?;
-    for i in items {
-        file.write_all(i.as_ref())?;
-    }
-    // Surface any I/O errors that could otherwise be swallowed when
-    // the file is closed implicitly by being dropped.
-    file.sync_all()?;
-    Ok(())
+    super::atomic::write_atomic(path, items)
 }
 
 #[cfg(test)]
@@ -144,7 +134,7 @@ mod tests {
         assert_eq!(content, "a\nb\nc\n");
 
         // Check backup (should not exist as original file didn't exist).
-        let backup_path = file_path.with_extension("bak");
+        let backup_path = super::super::backup::backup_path(&file_path);
         assert!(!backup_path.exists());
 
         Ok(())
@@ -165,7 +155,7 @@ mod tests {
         assert_eq!(content, "x\ny\nz\n"); // Should sort and dedup existing
 
         // Check backup.
-        let backup_path = file_path.with_extension("bak");
+        let backup_path = super::super::backup::backup_path(&file_path);
         assert!(backup_path.exists());
         let backup_content = read_file_content(&backup_path)?;
         assert_eq!(backup_content, initial_content);
@@ -188,7 +178,7 @@ mod tests {
         assert_eq!(content, "a\nb\nc\nd\ne\n"); // Merged, sorted, deduped.
 
         // Check backup
-        let backup_path = file_path.with_extension("bak");
+        let backup_path = super::super::backup::backup_path(&file_path);
         assert!(backup_path.exists());
         let backup_content = read_file_content(&backup_path)?;
         assert_eq!(backup_content, initial_content);
@@ -215,7 +205,7 @@ mod tests {
         assert_eq!(content, "x\ny\nz\n"); // Sorted and deduped new lines
 
         // Check backup
-        let backup_path = file_path.with_extension("bak");
+        let backup_path = super::super::backup::backup_path(&file_path);
         assert!(backup_path.exists());
         let backup_content = read_file_content(&backup_path)?;
         assert_eq!(backup_content, ""); // Backup of empty file

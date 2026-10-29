@@ -26,6 +26,7 @@ regex = { workspace = true }
 reqwest = { workspace = true }
 serde = { workspace = true }
 similar = { workspace = true }
+tempfile = { workspace = true }
 tinytemplate = { workspace = true }
 toml = { workspace = true }
 tracing = { workspace = true }
@@ -36,7 +37,6 @@ walkdir = { workspace = true }
 chrono = { workspace = true }
 mockito = { workspace = true }
 serde_json = { workspace = true }
-tempfile = { workspace = true }
 url = { workspace = true }
 
 [lints]

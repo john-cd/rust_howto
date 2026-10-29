@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+mod atomic;
 mod backup;
 mod diff;
 mod ext;
