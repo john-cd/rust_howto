@@ -1,8 +1,8 @@
 //! Removes build artifacts and other generated files from the repository.
 //!
-//! Deletion boundary: only the direct children of directories named `temp`
-//! below the given root are removed. Symbolic links and reparse points are never
-//! followed, so nothing outside the root tree is modified.
+//! Deletion boundary: the supplied root must be a real directory. Direct
+//! children of directories named `temp` below that root are removed. Symbolic
+//! links and reparse points are not followed during traversal.
 //!
 //! TODO Reviewed ??-??-2026.
 
@@ -11,6 +11,7 @@ use std::fs::DirEntry;
 use std::path::Path;
 use std::path::PathBuf;
 
+use anyhow::Context as _;
 use clap::Parser;
 use tracing::info;
 use walkdir::WalkDir;
@@ -38,12 +39,40 @@ fn main() -> anyhow::Result<()> {
     let root = args.directory;
     println!("Cleaning {}", root.display());
 
-    // Symbolic links and reparse points are not followed during traversal.
-    let walker = WalkDir::new(&root).follow_links(false).into_iter();
-    for dir in find_temp_dirs(walker)? {
+    for dir in find_temp_dirs_under(&root)? {
         clean_folder(&dir)?;
     }
     Ok(())
+}
+
+/// Finds cleanup directories below a normal, non-link root directory.
+///
+/// Walkdir follows a link supplied as its root by default, even with ordinary
+/// link following disabled. Reject linked roots and disable root-link following
+/// explicitly so cleanup remains confined to the directory the caller names.
+///
+/// # Errors
+///
+/// Returns an error if the root cannot be inspected, is not a directory, is a
+/// symbolic link or reparse point, or a descendant cannot be traversed.
+fn find_temp_dirs_under(root: &Path) -> anyhow::Result<Vec<PathBuf>> {
+    let metadata = fs::symlink_metadata(root)
+        .with_context(|| format!("cannot inspect cleanup root {}", root.display()))?;
+    if metadata.file_type().is_symlink() {
+        anyhow::bail!(
+            "cleanup root {} is a symbolic link or reparse point; pass the directory path directly",
+            root.display()
+        );
+    }
+    if !metadata.is_dir() {
+        anyhow::bail!("cleanup root {} is not a directory", root.display());
+    }
+
+    let entries = WalkDir::new(root)
+        .follow_links(false)
+        .follow_root_links(false)
+        .into_iter();
+    find_temp_dirs(entries)
 }
 
 /// Collects the `temp` directories found by a directory walk.
@@ -217,6 +246,52 @@ mod tests {
         let found =
             find_temp_dirs(WalkDir::new(dir.path()).into_iter()).expect("traversal should succeed");
         assert_eq!(found, vec![dir.path().join("a").join("temp")]);
+    }
+
+    /// Checks that a linked root is rejected without touching its target.
+    #[cfg(any(unix, windows))]
+    #[test]
+    fn test_find_temp_dirs_rejects_linked_root() {
+        let target = tempdir().expect("a target directory should be created");
+        let marker = target.path().join("temp").join("keep.txt");
+        fs::create_dir(marker.parent().expect("the marker should have a parent"))
+            .expect("the target temp directory should be created");
+        fs::write(&marker, "preserve").expect("the target marker should be written");
+
+        let parent = tempdir().expect("a link parent should be created");
+        let link = parent.path().join("linked-root");
+        create_directory_link(target.path(), &link);
+
+        let error = find_temp_dirs_under(&link).expect_err("linked roots must be rejected");
+        assert!(format!("{error:#}").contains("symbolic link or reparse point"));
+        assert_eq!(
+            fs::read_to_string(marker).expect("the target marker should remain readable"),
+            "preserve"
+        );
+    }
+
+    /// Creates a directory link using the native Unix filesystem API.
+    #[cfg(unix)]
+    fn create_directory_link(target: &Path, link: &Path) {
+        std::os::unix::fs::symlink(target, link).expect("a directory symlink should be created");
+    }
+
+    /// Creates a directory junction without requiring Windows symlink privileges.
+    #[cfg(windows)]
+    fn create_directory_link(target: &Path, link: &Path) {
+        use std::process::Command;
+
+        let output = Command::new("cmd")
+            .args(["/C", "mklink", "/J"])
+            .arg(link)
+            .arg(target)
+            .output()
+            .expect("the Windows command processor should start");
+        assert!(
+            output.status.success(),
+            "junction creation failed: {}",
+            String::from_utf8_lossy(&output.stderr)
+        );
     }
 
     /// Checks that a symbolic link inside `temp` is removed without touching its target.
