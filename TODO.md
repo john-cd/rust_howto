@@ -50,7 +50,6 @@
 - [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation
 - [#854](https://github.com/john-cd/rust_howto/issues/854) — **P1** — Replace the empty Wasmer runtime example
 - [#707](https://github.com/john-cd/rust_howto/issues/707) — **Unprioritized** — Implement or accurately scope the Alloy blockchain example
-- [#1052](https://github.com/john-cd/rust_howto/issues/1052) — **P4** — retained_mode_gui/vizia.rs: finish
 - **P1** — Port remaining examples across major dependency upgrades (no issue number yet)
 
 ### Truly blocked (install)
