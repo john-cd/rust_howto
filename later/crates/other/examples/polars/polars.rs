@@ -74,6 +74,7 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use super::main;
     use super::summarize_and_join_sales;
 
     /// Verifies the aggregation values and joined row count for inline data.
