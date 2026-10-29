@@ -36,8 +36,8 @@ fn main() -> anyhow::Result<()> {
     let table = read_txn.open_table(TABLE)?;
     let value = table.get("key1")?;
     assert_eq!(
-        value.map(|v| v.value().to_string()),
-        Some("value1".to_string())
+        value.map(|v| v.value().to_owned()),
+        Some("value1".to_owned())
     );
 
     print!("`redb` example ran successfully.");
