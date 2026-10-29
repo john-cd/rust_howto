@@ -1,8 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
+#![allow(
     dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+    reason = "the file is built as a module of a dispatcher and as a standalone example"
 )]
 // ANCHOR: example
 //! Finds a button by its label and clicks it with `egui_kittest`.

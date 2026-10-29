@@ -155,6 +155,8 @@ fn remove_non_dir(path: &Path, file_type: fs::FileType) -> std::io::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    #[cfg(unix)]
+    use std::os::unix::fs::symlink;
     use std::path::Path;
 
     use tempfile::tempdir;
@@ -273,7 +275,7 @@ mod tests {
     /// Creates a directory link using the native Unix filesystem API.
     #[cfg(unix)]
     fn create_directory_link(target: &Path, link: &Path) {
-        std::os::unix::fs::symlink(target, link).expect("a directory symlink should be created");
+        symlink(target, link).expect("a directory symlink should be created");
     }
 
     /// Creates a directory junction without requiring Windows symlink privileges.
@@ -303,7 +305,7 @@ mod tests {
         let dir = tempdir().expect("a temporary directory should be created");
         let temp_dir = dir.path().join("temp");
         fs::create_dir(&temp_dir).expect("dir should be created");
-        std::os::unix::fs::symlink(outside.path(), temp_dir.join("link"))
+        symlink(outside.path(), temp_dir.join("link"))
             .expect("symlink should be created");
         clean_folder(&temp_dir).expect("cleaning should succeed");
         assert!(!temp_dir.join("link").exists());
