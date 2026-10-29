@@ -70,7 +70,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### ACTIVE-CODE-07 — Scheduling and sandboxed runtimes
 
-
 #### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
 
 - [#864](https://github.com/john-cd/rust_howto/issues/864) — **P3** — Finish Async-GraphQL with deterministic schema/query tests — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — HUMAN REVIEW MARKER PRESERVED**
@@ -78,7 +77,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 ### Prose and book structure
 
 #### ACTIVE-PROSE-01 — Foreign function interfaces
-
 
 ### Tools and infrastructure
 
@@ -146,7 +144,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-CODE-08 — Media encoding, images and video
 
 #### NOW-CODE-09 — Networking, authentication and email
-
 
 #### NOW-CODE-10 — Cloud services and SDKs
 
@@ -248,12 +245,13 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### NOW-INFRA-02 — Dependencies, CI and containers
 
-  — **P1** — Port remaining examples across major dependency upgrades — **PARTIAL**
-  - Resolved the `libsqlite3-sys` links collision and `smallvec` 1.16/Kube
-    resolver conflict; corrected Naga 26/27 aliases and aligned tested SeaORM,
-    media, and Linfa examples. Windows checks pass; Ubuntu database tests pass
-    (8/8) with strict Clippy, and Kube/cloud plus GUI/Parley examples compile.
-    Remaining ports and full workspace gates still need completion.
+— **P1** — Port remaining examples across major dependency upgrades — **PARTIAL**
+
+- Resolved the `libsqlite3-sys` links collision and `smallvec` 1.16/Kube
+  resolver conflict; corrected Naga 26/27 aliases and aligned tested SeaORM,
+  media, and Linfa examples. Windows checks pass; Ubuntu database tests pass
+  (8/8) with strict Clippy, and Kube/cloud plus GUI/Parley examples compile.
+  Remaining ports and full workspace gates still need completion.
 
 #### NOW-INFRA-03 — Branch integration and retained work
 
