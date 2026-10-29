@@ -77,14 +77,14 @@ SurrealDB is a scalable, distributed, multi-model document-graph [database][p~da
 
 Selecting the right embedded database depends on data structure requirements, concurrency demands, and storage engine architecture.
 
-| Engine | Kind | Storage Engine | Best For |
-| --- | --- | --- | --- |
-| [`redb`][c~redb~repo]↗ | Key-Value Store | Copy-on-Write B-Tree | Production embedded KV storage needing ACID transactions and a stable file format |
-| [`fjall`][c~fjall~repo]↗ | Key-Value Store | Log-Structured Merge Tree (LSM) | Write-heavy workloads, range scans, and high insertion throughput |
-| [`sled`][c~sled~repo]↗ | Key-Value Store | Lock-Free B-Tree | High-concurrency key-value workloads (note long-standing beta status) |
-| [GlueSQL][c~gluesql~repo]↗ | SQL Engine | Pluggable Backends | Executing SQL queries over in-memory or custom embedded key-value backends |
-| [Turso][c~turso~repo]↗ | SQL Engine | SQLite-Compatible Engine | In-process SQLite-compatible SQL database engine written in Rust (formerly Limbo) |
-| [SurrealDB][c~surrealdb~repo]↗ | Multi-Model Engine | KV / Document / Graph | Embedded document and graph database with rich query language capabilities |
+| Engine                         | Kind               | Storage Engine                  | Best For                                                                          |
+| ------------------------------ | ------------------ | ------------------------------- | --------------------------------------------------------------------------------- |
+| [`redb`][c~redb~repo]↗         | Key-Value Store    | Copy-on-Write B-Tree            | Production embedded KV storage needing ACID transactions and a stable file format |
+| [`fjall`][c~fjall~repo]↗       | Key-Value Store    | Log-Structured Merge Tree (LSM) | Write-heavy workloads, range scans, and high insertion throughput                 |
+| [`sled`][c~sled~repo]↗         | Key-Value Store    | Lock-Free B-Tree                | High-concurrency key-value workloads (note long-standing beta status)             |
+| [GlueSQL][c~gluesql~repo]↗     | SQL Engine         | Pluggable Backends              | Executing SQL queries over in-memory or custom embedded key-value backends        |
+| [Turso][c~turso~repo]↗         | SQL Engine         | SQLite-Compatible Engine        | In-process SQLite-compatible SQL database engine written in Rust (formerly Limbo) |
+| [SurrealDB][c~surrealdb~repo]↗ | Multi-Model Engine | KV / Document / Graph           | Embedded document and graph database with rich query language capabilities        |
 
 ### Key-Value vs SQL Engines
 
@@ -93,12 +93,12 @@ Selecting the right embedded database depends on data structure requirements, co
 
 ## Related Topics {#related-topics .skip}
 
-| Topic | Chapter / Links | Description |
-| --- | --- | --- |
-| Database Implementations | [Database Implementations Index][ex~database-implementations~databases] | Overview of databases, query engines, search systems, and messaging written in Rust. |
-| Search Engines | [Search Engines Written in Rust][ex~database-implementations~search-engines] | Full-text, vector, and indexing engines implemented in Rust. |
-| Database Clients | [Database Interfaces][p~database] | Client libraries and ORMs connecting to external database servers (PostgreSQL, MySQL, Redis, etc.). |
-| SQLite Integration | [SQLite via `rusqlite`][p~sqlite] | Embedded SQLite database interactions using native C bindings. |
+| Topic                    | Chapter / Links                                                              | Description                                                                                         |
+| ------------------------ | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Database Implementations | [Database Implementations Index][ex~database-implementations~databases]      | Overview of databases, query engines, search systems, and messaging written in Rust.                |
+| Search Engines           | [Search Engines Written in Rust][ex~database-implementations~search-engines] | Full-text, vector, and indexing engines implemented in Rust.                                        |
+| Database Clients         | [Database Interfaces][p~database]                                            | Client libraries and ORMs connecting to external database servers (PostgreSQL, MySQL, Redis, etc.). |
+| SQLite Integration       | [SQLite via `rusqlite`][p~sqlite]                                            | Embedded SQLite database interactions using native C bindings.                                      |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
