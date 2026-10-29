@@ -6,6 +6,7 @@
 mod gloo_fetch;
 mod gloo_storage;
 mod grpc_web_client;
+mod icons;
 mod leptos_router;
 
 fn main() {

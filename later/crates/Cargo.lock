@@ -12627,6 +12627,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "icondata"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "412c95f764f89aad1a8505aa4273d931b66d5a26d1e6609a37243784a9128ad9"
+dependencies = [
+ "icondata_core",
+ "icondata_lu",
+]
+
+[[package]]
+name = "icondata_core"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c97be924215abd5e630d84e95a47c710138a6559b4c55039f4f33aa897fa859"
+
+[[package]]
+name = "icondata_lu"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f25663a6cc5371e9e33c98bab870f4aa2fd68c88853f1467c8fccfaf112782b1"
+dependencies = [
+ "icondata_core",
+]
+
+[[package]]
 name = "icrate"
 version = "0.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -20172,7 +20197,7 @@ checksum = "9bc10200af9f8297cb52df7e0e1db8d9ad3e8782981d69b25eedf858f5455ca2"
 dependencies = [
  "bitflags 2.13.2",
  "libc",
- "mach2 0.6.0",
+ "mach2 0.7.0",
  "windows-sys 0.61.2",
 ]
 
@@ -25416,6 +25441,7 @@ dependencies = [
  "clap",
  "gloo-net 0.7.0",
  "gloo-storage 0.4.0",
+ "icondata",
  "js-sys",
  "leptos",
  "leptos_router",

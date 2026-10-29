@@ -68,6 +68,16 @@ The test renders the application to HTML for several URLs as a server would, by 
 {{#include ../../../crates/cats/wasm/examples/leptos_client/leptos_router.rs:example}}
 ```
 
+### Inline Icons with `icondata` {#icondata}
+
+[![icondata][c~icondata~docs~badge]][c~icondata~docs]{{hi:icondata}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+
+[`icondata`][c~icondata~docs]↗{{hi:icondata}} ships the SVG data of many icon sets as constants. Enable only the set you need through its Cargo features, then render the data inside an inline `<svg>` so the icon follows the text color. The test renders a toolbar to HTML as a server would.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/wasm/examples/leptos_client/icons.rs:example}}
+```
+
 ### Call an API with `gloo-net` {#gloo-net}
 
 [![gloo-net][c~gloo-net~docs~badge]][c~gloo-net~docs]{{hi:gloo-net}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}

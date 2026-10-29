@@ -4221,6 +4221,14 @@
 [c~iced~repo~badge]: https://img.shields.io/badge/iced-steelblue?logo=github
 [c~iced~website]: https://iced.rs
 [c~iced~website~badge]: https://img.shields.io/badge/iced-coral
+[c~icondata~crates.io]: https://crates.io/crates/icondata
+[c~icondata~crates.io~badge]: https://img.shields.io/badge/crates.io-icondata-crimson
+[c~icondata~docs]: https://docs.rs/icondata
+[c~icondata~docs~badge]: https://img.shields.io/crates/v/icondata?label=icondata
+[c~icondata~lib.rs]: https://lib.rs/crates/icondata
+[c~icondata~lib.rs~badge]: https://img.shields.io/badge/lib.rs-icondata-yellow
+[c~icondata~repo]: https://github.com/carloskiki/icondata
+[c~icondata~repo~badge]: https://img.shields.io/badge/icondata-steelblue?logo=github
 [c~iconv~crates.io]: https://crates.io/crates/iconv
 [c~iconv~crates.io~badge]: https://img.shields.io/badge/crates.io-iconv-crimson
 [c~iconv~docs]: https://docs.rs/iconv
