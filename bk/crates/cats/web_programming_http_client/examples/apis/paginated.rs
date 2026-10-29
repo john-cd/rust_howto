@@ -177,4 +177,49 @@ mod tests {
     fn test_paginated_example_entry_point() -> Result<()> {
         main()
     }
+
+    /// All pages are walked, in order, and the walk stops at the total.
+    #[test]
+    fn walks_every_page() -> Result<()> {
+        let mut requested = Vec::new();
+        let names = ReverseDependencies::new(|page| {
+            requested.push(page);
+            let json = match page {
+                1 => {
+                    r#"{"dependencies":[{"version_id":1},{"version_id":2}],
+                       "versions":[{"id":1,"crate":"a"},{"id":2,"crate":"b"}],
+                       "meta":{"total":3}}"#
+                }
+                _ => {
+                    r#"{"dependencies":[{"version_id":3}],
+                       "versions":[{"id":3,"crate":"c"}],
+                       "meta":{"total":3}}"#
+                }
+            };
+            Ok(serde_json::from_str(json)?)
+        })
+        .collect::<Result<Vec<_>>>()?;
+        assert_eq!(names, ["a", "b", "c"]);
+        assert_eq!(requested, [1, 2]);
+        Ok(())
+    }
+
+    /// A failing fetch is yielded once, then iteration ends.
+    #[test]
+    fn fetch_error_ends_iteration() {
+        let mut iterator =
+            ReverseDependencies::new(|_| anyhow::bail!("network down"));
+        assert!(iterator.next().is_some_and(|item| item.is_err()));
+        assert!(iterator.next().is_none());
+    }
+
+    /// Dependencies whose version is unknown are skipped.
+    #[test]
+    fn unknown_versions_are_skipped() {
+        let page: Page = serde_json::from_str(
+            r#"{"dependencies":[{"version_id":9}],"versions":[],"meta":{"total":1}}"#,
+        )
+        .unwrap();
+        assert!(page.dependent_names().is_empty());
+    }
 }

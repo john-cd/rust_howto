@@ -95,11 +95,37 @@ mod tests {
     use super::*;
 
     #[test]
+    #[ignore = "needs network"]
     fn require_network() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
+
+    /// The response of a local server is fetched.
+    #[tokio::test]
+    async fn fetches_from_a_local_server() -> anyhow::Result<()> {
+        use tokio::io::AsyncReadExt as _;
+        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await?;
+        let port = listener.local_addr()?.port();
+        let server = tokio::spawn(async move {
+            let (mut stream, _) = listener.accept().await?;
+            let mut buffer = [0; 1024];
+            let n = stream.read(&mut buffer).await?;
+            stream
+                .write_all(b"HTTP/1.1 200 OK\r\nContent-Length: 2\r\nConnection: close\r\n\r\nok")
+                .await?;
+            anyhow::Ok(String::from_utf8_lossy(&buffer[..n]).into_owned())
+        });
+        fetch_url(format!("http://127.0.0.1:{port}/ip").parse()?).await?;
+        let request = server.await??;
+        assert!(request.starts_with("GET /ip HTTP/1.1"), "{request}");
+        assert!(request.to_lowercase().contains("host: 127.0.0.1"));
+        Ok(())
+    }
+
+    /// A URI without a host is rejected.
+    #[tokio::test]
+    async fn uri_without_host_is_rejected() {
+        assert!(fetch_url("/just/a/path".parse().unwrap()).await.is_err());
+    }
 }
-// review
-// review <https://hyper.rs/>
-// reference <https://github.com/hyperium/hyper/blob/master/examples/client.rs>

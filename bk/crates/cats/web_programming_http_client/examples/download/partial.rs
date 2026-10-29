@@ -455,4 +455,11 @@ mod tests {
         assert!(output.is_empty());
         Ok(())
     }
+
+    /// Runs the example against the live service.
+    #[test]
+    #[ignore = "needs network"]
+    fn main_downloads_live() -> Result<()> {
+        super::main()
+    }
 }

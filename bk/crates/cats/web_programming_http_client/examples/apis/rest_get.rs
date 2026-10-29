@@ -93,4 +93,26 @@ mod tests {
         );
         Ok(())
     }
+
+    /// Queries the live GitHub API.
+    #[test]
+    #[ignore = "needs network"]
+    fn main_fetches_stargazers() -> Result<(), Error> {
+        main()
+    }
+
+    /// An HTTP error status is reported as an error.
+    #[tokio::test]
+    async fn error_status_is_an_error() -> anyhow::Result<()> {
+        let mut server = mockito::Server::new_async().await;
+        let _mock = server
+            .mock("GET", "/x")
+            .with_status(500)
+            .create_async()
+            .await;
+        let client = Client::builder().user_agent("Rust-test").build()?;
+        let result = get_users(&client, &format!("{}/x", server.url())).await;
+        assert!(result.is_err());
+        Ok(())
+    }
 }

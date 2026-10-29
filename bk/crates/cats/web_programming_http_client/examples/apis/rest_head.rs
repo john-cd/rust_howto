@@ -36,9 +36,12 @@ pub fn run() -> reqwest::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    // output-only: the example only calls the live GitHub API (ignored
+    // offline); see the other tests for its logic.
     use super::*;
 
     #[test]
+    #[ignore = "needs network"]
     fn require_network() -> anyhow::Result<()> {
         main()?;
         Ok(())

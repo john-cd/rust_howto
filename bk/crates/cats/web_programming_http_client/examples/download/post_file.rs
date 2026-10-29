@@ -255,4 +255,11 @@ mod tests {
         assert_eq!(status, Some(StatusCode::INTERNAL_SERVER_ERROR));
         Ok(())
     }
+
+    /// Runs the example against the live service.
+    #[test]
+    #[ignore = "needs network"]
+    fn main_posts_live() -> Result<()> {
+        super::main()
+    }
 }

@@ -31,9 +31,12 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    // output-only: the example fetches a live URL (ignored offline); see the
+    // other tests for its logic.
     use super::*;
 
     #[test]
+    #[ignore = "needs network"]
     fn require_network() -> anyhow::Result<()> {
         main()?;
         Ok(())

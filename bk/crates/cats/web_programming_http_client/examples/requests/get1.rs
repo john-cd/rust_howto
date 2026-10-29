@@ -29,6 +29,8 @@ pub fn run() -> Result<()> {
 
 #[cfg(test)]
 mod tests {
+    // output-only: the example fetches a live URL (ignored offline); see the
+    // other tests for its logic.
     use super::*;
 
     /// Marks this live-service demonstration as an opt-in network test.
