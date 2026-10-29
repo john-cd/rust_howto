@@ -36,49 +36,58 @@
 
 ## In progress
 
-NOW-PROSE delivery (2026-10-29): [PR #2055](https://github.com/john-cd/rust_howto/pull/2055) completes 40 of the 43 issues in this batch. The remaining three native-platform issues are listed below. The Chrome bookmark export was excluded at the user's request and moved to [#2054](https://github.com/john-cd/rust_howto/issues/2054).
+### Partial; needs review or work
 
-Validation: complete `cd bk && just bb`; draft/future HTML rendering; scoped reference audit (168 pages, no unresolved labels); Markdown/configuration and Cargo formatting; Markdown lint; spelling; strict focused/all-target Clippy and tests for the affected portable, GUI, GPU, robotics, finance, geo, media, Wasm, cloud and database packages. Native Linux checks cover GTK/Slint, OpenCV, Linux APIs, Wasmer/Wasmtime, cloud and Oracle; Windows Oracle/Sibyl and the separate Diesel/SQLite feature both pass. External-service and interactive tests remain explicitly ignored where documented. GPU hardware tests and the model-dependent OpenCV test ran successfully. Docker's API became unresponsive, so the two new Docker tests compiled but were not executed. The native macOS and FreeBSD workflow is present; no passing native run is claimed. These results supersede the older book/tooling environment blockers recorded below. Global reference diagnostics and book rendering still report existing unrelated warnings.
+- [#812](https://github.com/john-cd/rust_howto/issues/812) — **P2** — Finish and locally verify the Pingora reverse-proxy example
+- [#1699](https://github.com/john-cd/rust_howto/issues/1699) — **P1** — Reconcile seven conflicted PRs against main and the local example changes
+- [#1719](https://github.com/john-cd/rust_howto/issues/1719) — **P1** — Repair and document the dev container setup and compiler caching
+- [#51](https://github.com/john-cd/rust_howto/issues/51) — **P2** — Audit dependencies during CI
+- [#12](https://github.com/john-cd/rust_howto/issues/12) — **P3** — review deny.toml
+- [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment D
+- [#1876](https://github.com/john-cd/rust_howto/issues/1876) — **P2** — Validate development-tool, encoding, and HTTP documentation changes A
+- [#1877](https://github.com/john-cd/rust_howto/issues/1877) — **P2** — Validate networking, CLI, and tar changes A
+- [#1886](https://github.com/john-cd/rust_howto/issues/1886) — **P2** — Complete remaining published-chapter accuracy validation
+- [#1900](https://github.com/john-cd/rust_howto/issues/1900) — **P3** — Validate actors, build scripts, and web documentation changes A
+- [#1978](https://github.com/john-cd/rust_howto/issues/1978) — **P3** — Validate the remaining book and example batch
 
-Linux tooling validation (2026-10-27): the previously unavailable `book_tooling` revision `404e8fe0d4adc40517b0b40a2536cc6833b29059` is published on `codex/rust-howto-pin-404e8fe`. In native Linux slot `a`, `tools` all-features Clippy passed and `just nta` passed 159 tests and doctests after isolating the mdBook fixture from the optional Pandoc renderer, surfacing doctest failures, and refreshing the alphabetical index. Full repository and container gates remain outstanding.
+### Truly blocked (install)
 
-Windows tooling validation (2026-10-27): `tools` all-features Clippy and `just nta` passed 159 tests and doctests with `RUSTC_WRAPPER=''` and `CARGO_INCREMENTAL=1`. The first test attempt failed because the sccache server could not exchange data; the shared cache still needs investigation.
+- [#1021](https://github.com/john-cd/rust_howto/issues/1021) — **P3** — Finish the Oracle example and document its optional Instant Client test
+- [#1022](https://github.com/john-cd/rust_howto/issues/1022) — **P2** — Finish the Sibyl example and review installation steps
+- [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Finish the Python example and validate its platform requirements D
+- [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter and example F
 
-Tooling validation (2026-10-27), issue [#1997](https://github.com/john-cd/rust_howto/issues/1997): slot `e` contains in-progress fixes for optional submodule parsing, aggregate recipe failure reporting, Windows recipe-list path quoting, and Linux native prerequisites. Windows and WSL workspace listings run except for the uninitialized `mdbook-utils` submodule, and deliberately failing aggregate runs return nonzero on both platforms. NASM was installed on Windows; NASM and Ninja were installed in Ubuntu. Windows Docker Compose and Dockerfile checks pass; Bash syntax checks pass on Windows and WSL. Docker Desktop does not expose a Docker CLI in this WSL distro. Windows `just bb` passed with NASM on PATH; linkcheck produced warnings, indexing reported a version mismatch, and the optional Pandoc backend was unavailable. Today, cargo-fmt-toml 1.0.5 is installed on Windows and Ubuntu; `just fmt-toml` and `just fmt-toml-check` cover 11 independent workspaces and pass on both platforms. Root `just fmt-toml-check` runs in devcontainer CI; dprint excludes Cargo manifests and passes, and rumdl passes all 1,123 book/staging Markdown files on both platforms. All repository justfiles parse, list, and pass format checks on both platforms; PowerShell and Bash syntax checks pass on Windows, and Bash syntax checks pass in WSL. The full container build remains blocked by invalid GitHub authentication for private `book_tooling`; broader runtime/full-workspace validation remains.
+### Blocked on a live service
 
-B1 implementation commits are integrated into local `develop` through `7761c5e6c` (not pushed). Seven B1 issues are closed: #1941, #1940, #939, #1252, #1281, #1912, and #1950. #912 and #1058 remain open because their done criteria require PR links; #864 remains open because its human-review marker is preserved. Formatting, focused tests/Clippy, reference checks, Markdown lint, mdBook build/linkcheck, sitemap generation, static asset copy, and `git diff --check` passed. `just bb` passed in the elevated run; mdBook reported an indexing-plugin version warning and the optional Pandoc backend was unavailable.
+- [#1162](https://github.com/john-cd/rust_howto/issues/1162) — **P2** — Review the PostgreSQL aggregate_data example
+- [#291](https://github.com/john-cd/rust_howto/issues/291) — **P3** — Search engines chapter
+- [#1064](https://github.com/john-cd/rust_howto/issues/1064) — **P3** — `database/amqp.md`: finish
+- [#1946](https://github.com/john-cd/rust_howto/issues/1946) — **P3** — Add examples: read mail over IMAP and filter disposable addresses before sending (imap, mailchecker)
 
-Selected topic branches are integrated linearly into local `develop` through `fa58e2dba` (not pushed). This includes the async/concurrency examples and the science changes for #835, #837, #473, #839, and #840; the existing NIfTI example was retained alongside the new neuron simulation. GitHub marks #473 closed. Issues #835, #837, #839, and #840 remain open because their done criteria require PR links. Focused Clippy and tests passed for the changed science packages (including Candle), async/concurrency packages, MIME and GraphQL examples, and link-generation fixture. The full all-features Clippy gate is blocked by the missing Oracle `OCI_LIB_DIR`; the broad `development_tools_debugging` test run still fails in existing log examples that initialize the process-wide logger together.
+### Blocked on a desktop or manual run
 
-Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`, and `later/src` pass. All-features Clippy passes for `tools`, `xmpl`, `playground`, `publish`, the isolated WASM, Vizia, Python-extension, and embedded workspaces; the embedded all-target tests pass. The PostgreSQL-feature database package also passes Clippy with the Cornucopia client pinned to 0.4.0. GUI all-target Clippy passes with default features after disabling the stale Tauri build hook, keeping the disabled Tao source out of auto-discovered targets, and fixing Taffy `f32` literals. Full all-features Clippy for `bk` and the main `later` workspace remains blocked by the Windows `aws-lc-sys` 0.46.0 MSVC archive failure (LNK1114, error 5). The `just` entry point cannot start Git Bash in this session because MSYS cannot create its `BaseNamedObjects` directory.
+- [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Complete the screen-reader and AccessKit chapter D
+- [#1155](https://github.com/john-cd/rust_howto/issues/1155) — **P3** — `clipboard/arboard.rs`: review
+- [#1952](https://github.com/john-cd/rust_howto/issues/1952) — **P4** — Add example: show a local web page in a native window (wry, tao)
 
-### Code examples
+### Done; awaiting full validation gates
 
-#### ACTIVE-CODE-01 — Networking, authentication and email
+- [#708](https://github.com/john-cd/rust_howto/issues/708) — **P3** — Finish the Cornucopia example B
+- [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples B
+- [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance B
+- [#1922](https://github.com/john-cd/rust_howto/issues/1922) — **P3** — Add examples: manage child processes (kill a process tree, resource limits, sandboxed workers)
 
-- [#812](https://github.com/john-cd/rust_howto/issues/812) — **P2** — Finish and locally verify the Pingora reverse-proxy example — **PARTIAL; OPEN — isolated test, strict Clippy, and localhost forwarding pass with the pinned Pingora Tokio 1.54 fix; workspace Cargo gates blocked by #1998; PR link remains required**
+### Done; needs human review
 
-#### ACTIVE-CODE-02 — Databases and service clients
+- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior
+- [#1727](https://github.com/john-cd/rust_howto/issues/1727) — **P2** — Benchmark container build storage and select persistent cache mounts
+- [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters and Cap'n Proto regeneration B
+- [#1979](https://github.com/john-cd/rust_howto/issues/1979) — **P3** — Validate concurrency, memory, hashing, and enumeration recipe pages
 
-- [#1021](https://github.com/john-cd/rust_howto/issues/1021) — **P3** — Finish the Oracle example and document its optional Instant Client test — **PARTIAL; OPEN — Oracle test cannot link; live service validation pending**
+### Trackers and not started
 
-#### ACTIVE-CODE-04 — Cryptography and Windows APIs
-
-#### ACTIVE-CODE-05 — Parsing and XML
-
-#### ACTIVE-CODE-07 — Scheduling and sandboxed runtimes
-
-#### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
-
-### Prose and book structure
-
-#### ACTIVE-PROSE-01 — Foreign function interfaces
-
-### Tools and infrastructure
-
-#### ACTIVE-INFRA-01 — Preprocessors, references and recipe portability
-
-- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior — **VERIFIED AND COMPLETE — Windows and Linux just 1.59.0 verified across all workspace justfiles and script modules**
+- [#1996](https://github.com/john-cd/rust_howto/issues/1996) — **P2** — Coordinate validation gates and verification passes
+- [#53](https://github.com/john-cd/rust_howto/issues/53) — **P4** — Evaluate whether a slim or Alpine CI image improves the supported builds I
 
 ## Available for Codex now
 
@@ -229,128 +238,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 #### NOW-EPIC-05 — First-edition roadmap
 
 - [#1698](https://github.com/john-cd/rust_howto/issues/1698) — **P1** — Complete the first edition and integrate the companion tools — **OPEN TRACKER**
-
-## Validation prerequisites not ready
-
-### Code examples
-
-#### VALIDATE-CODE-01 — Networking, authentication and email
-
-- [#1946](https://github.com/john-cd/rust_howto/issues/1946) — **P3** — Add examples: read mail over IMAP and filter disposable addresses before sending (imap, mailchecker) — **IMPLEMENTED ON DEVELOP; OPEN — IMAP/parser and mailchecker examples, pages, tables, and refdefs are present; live IMAP requires a server and credentials; offline tests, Clippy, refdefs, and book build deferred to final validation; details are on the issue**
-
-#### VALIDATE-CODE-02 — Databases and service clients
-
-- [#1022](https://github.com/john-cd/rust_howto/issues/1022) — **P2** — Finish the Sibyl example and review installation steps — **IMPLEMENTED ON DEVELOP; BLOCKED — Oracle Instant Client is unavailable (`OCI_LIB_DIR` required); Linux/Windows installation and Oracle service checks remain; details are on the issue**
-- [#1162](https://github.com/john-cd/rust_howto/issues/1162) — **P2** — Review the PostgreSQL aggregate_data example — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused target tests/Clippy passed; the aggregate query test needs configured PostgreSQL; full book/native-dependency gates remain; details are on the issue**
-- [#708](https://github.com/john-cd/rust_howto/issues/708) — **P3** — Finish the Cornucopia example B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused build/tests/Clippy and live PostgreSQL checks passed; full Clippy/book gates remain unresolved; details are on the issue**
-
-#### VALIDATE-CODE-03 — Compression and archives
-
-#### VALIDATE-CODE-04 — Build scripts, Cargo and procedural macros
-
-#### VALIDATE-CODE-05 — Foreign function interfaces
-
-#### VALIDATE-CODE-06 — Desktop UI, accessibility, games and GPU
-
-- [#1155](https://github.com/john-cd/rust_howto/issues/1155) — **P3** — `clipboard/arboard.rs`: review — **IMPLEMENTED ON DEVELOP; BLOCKED — prior GUI package tests passed; ignored desktop clipboard run, full Clippy, and issue-linked PR remain; details are on the issue**
-- [#1952](https://github.com/john-cd/rust_howto/issues/1952) — **P4** — Add example: show a local web page in a native window (wry, tao) — **IMPLEMENTED ON DEVELOP; OPEN — native webview example, URL allow-list coverage, and platform prose are present; manual window run and refdefs/book checks remain; details are on the issue**
-
-#### VALIDATE-CODE-07 — Machine learning, data and robotics
-
-
-#### VALIDATE-CODE-08 — Concurrency
-
-#### VALIDATE-CODE-09 — Tabular data and finance
-
-#### VALIDATE-CODE-10 — Cloud services and SDKs
-
-
-#### VALIDATE-CODE-11 — Algorithms, data structures and memory
-
-
-#### VALIDATE-CODE-12 — Language and domain models
-
-#### VALIDATE-CODE-13 — Testing and observability
-
-#### VALIDATE-CODE-14 — Text processing and HTML
-
-#### VALIDATE-CODE-15 — Parsing and XML
-
-#### VALIDATE-CODE-16 — Filesystem and process management
-
-- [#1922](https://github.com/john-cd/rust_howto/issues/1922) — **P3** — Add examples: manage child processes (kill a process tree, resource limits, sandboxed workers) — **IMPLEMENTED ON DEVELOP; BLOCKED — process groups, Windows Job Objects, timeout and kill guard examples, confinement guidance, and book page are present; Linux/Windows and required full gates remain; details are on the issue**
-
-### Prose and book structure
-
-#### VALIDATE-PROSE-01 — Language, mathematics, date and time
-
-
-#### VALIDATE-PROSE-02 — Asynchronous programming and caching
-
-
-#### VALIDATE-PROSE-03 — Development tools, build systems and editors
-
-
-#### VALIDATE-PROSE-04 — Encoding, parsing and text processing
-
-
-#### VALIDATE-PROSE-05 — Web, networking and databases
-
-- [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused and live PostgreSQL checks passed; nextest selector and full gates remain; details are on the issue**
-- [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Clippy and live PostgreSQL checks passed; nextest selector, full gates, and repository-wide refdefs remain; details are on the issue**
-- [#291](https://github.com/john-cd/rust_howto/issues/291) — **P3** — — Search engines chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — search overview and comparison are present; Meilisearch service verification and refdefs/book/spelling gates remain; details are on the issue**
-- [#1064](https://github.com/john-cd/rust_howto/issues/1064) — **P3** — `database/amqp.md`: finish — **IMPLEMENTED ON DEVELOP; BLOCKED — AMQP guide and example are present; RabbitMQ service and native-build/full gates remain; details are on the issue**
-
-#### VALIDATE-PROSE-06 — Filesystem utilities, shells and compression
-
-#### VALIDATE-PROSE-07 — Security and cryptocurrencies
-
-
-#### VALIDATE-PROSE-08 — Systems, embedded, WebAssembly and virtualization
-
-
-#### VALIDATE-PROSE-09 — UI, accessibility, media and rendering
-
-- [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Complete the screen-reader and AccessKit chapter D — **PARTIAL; BLOCKED — desktop accessibility verification and deferred checks remain; details are on the issue**
-- [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter and example F — **PARTIAL; BLOCKED — native media environment and deferred checks remain; details are on the issue**
-
-#### VALIDATE-PROSE-10 — Science, finance, data processing and visualization
-
-
-#### VALIDATE-PROSE-11 — Architecture and scripting
-
-
-#### VALIDATE-PROSE-12 — Foreign function interfaces
-
-- [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Finish the Python example and validate its platform requirements D — **PARTIAL; BLOCKED — Linux Python and extension environment verification, full checks, and linked PR remain**
-
-### Tools and infrastructure
-
-#### VALIDATE-INFRA-01 — Dependencies, CI and containers
-
-- [#1699](https://github.com/john-cd/rust_howto/issues/1699) — **P1** — Reconcile seven conflicted PRs against main and the local example changes — **PARTIAL**
-- [#1719](https://github.com/john-cd/rust_howto/issues/1719) — **P1** — Repair and document the dev container setup and compiler caching — **PARTIAL — Windows install script and WSL tool inventory pass; Compose, Dockerfile, and prose checks pass; full image build needs a valid GH_TOKEN for private book_tooling. BuildKit secret support is documented; container startup/restart, cache persistence, contributor gates, and cold/warm sccache measurements remain.**
-- [#51](https://github.com/john-cd/rust_howto/issues/51) — **P2** — Audit dependencies during CI — **PARTIAL**
-- [#1727](https://github.com/john-cd/rust_howto/issues/1727) — **P2** — Benchmark container build storage and select persistent cache mounts — **IMPLEMENTED** — Task 1 done: persistent named volumes (`cargo_home_cache`, `cargo_target_cache`, `cargo_build_cache`) implemented in `compose.override.yaml` for Dev, and `tmpfs` (5G in-RAM mount for `/code/target/`) implemented in `compose-ci.yaml` for CI. Task 2 & 3 done: Linux container benchmarks (`dd if=/dev/zero ... bs=1024 count=100000 conv=fsync`) measured 218 MB/s on bind mount (`/code`), 190 MB/s on container overlay FS (`/tmp`), and 399 MB/s on `tmpfs` (`/dev/shm`), confirming bind mounts on Linux have no virtualization bottleneck (unlike Windows host bind mounts), while named persistent volumes and tmpfs provide optimal cache isolation and compilation speeds. Dev and CI compose files pass `docker compose config --quiet`.
-- [#12](https://github.com/john-cd/rust_howto/issues/12) — **P3** — review deny.toml — **PARTIAL**
-- [#53](https://github.com/john-cd/rust_howto/issues/53) — **P4** — Evaluate whether a slim or Alpine CI image improves the supported builds I — **NOT STARTED**
-
-#### VALIDATE-INFRA-02 — Book and workspace validation trackers
-
-- [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment D — **PARTIAL**
-- [#1876](https://github.com/john-cd/rust_howto/issues/1876) — **P2** — Validate development-tool, encoding, and HTTP documentation changes A — **PARTIAL**
-- [#1877](https://github.com/john-cd/rust_howto/issues/1877) — **P2** — Validate networking, CLI, and tar changes A — **PARTIAL**
-- [#1886](https://github.com/john-cd/rust_howto/issues/1886) — **P2** — Complete remaining published-chapter accuracy validation — **PARTIAL**
-- [#1900](https://github.com/john-cd/rust_howto/issues/1900) — **P3** — Validate actors, build scripts, and web documentation changes A — **PARTIAL**
-- [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters and Cap'n Proto regeneration B — **PARTIAL** — human editorial review also required
-- [#1978](https://github.com/john-cd/rust_howto/issues/1978) — **P3** — Validate the remaining book and example batch — **PARTIAL**
-- [#1979](https://github.com/john-cd/rust_howto/issues/1979) — **P3** — Validate concurrency, memory, hashing, and enumeration recipe pages — **PARTIAL** — human editorial review also required
-
-### Roadmaps and epics
-
-#### VALIDATE-EPIC-01 — Validation and acceptance tracking
-
-- [#1996](https://github.com/john-cd/rust_howto/issues/1996) — **P2** — Coordinate validation gates and verification passes — **OPEN TRACKER**
 
 ## Deferred scope and dependencies
 
