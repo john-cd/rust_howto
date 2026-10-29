@@ -123,7 +123,3 @@ A consumer can select the core-only library with `no_std = { path = "../no_std",
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [no_std: write](https://github.com/john-cd/rust_howto/issues/426)
-</div>
