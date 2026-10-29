@@ -65,4 +65,53 @@ mod tests {
     fn test_tinytemplate_example_entry_point() {
         main();
     }
+
+    const TEMPLATE: &str = "Hello, {name}! {{ if flag }}Welcome to {place}.{{ else }}Welcome home!{{ endif }}";
+
+    #[derive(serde::Serialize)]
+    struct Context {
+        name: &'static str,
+        place: &'static str,
+        flag: bool,
+    }
+
+    fn render(flag: bool) -> String {
+        let mut tt = TinyTemplate::new();
+        tt.add_template("greeting", TEMPLATE).unwrap();
+        tt.render(
+            "greeting",
+            &Context {
+                name: "Alice",
+                place: "Rustland",
+                flag,
+            },
+        )
+        .unwrap()
+    }
+
+    /// The true branch is rendered.
+    #[test]
+    fn renders_the_true_branch() {
+        assert_eq!(render(true), "Hello, Alice! Welcome to Rustland.");
+    }
+
+    /// The false branch is rendered.
+    #[test]
+    fn renders_the_false_branch() {
+        assert_eq!(render(false), "Hello, Alice! Welcome home!");
+    }
+
+    /// A template with unbalanced tags is rejected.
+    #[test]
+    fn invalid_template_is_rejected() {
+        let mut tt = TinyTemplate::new();
+        assert!(tt.add_template("bad", "{{ if flag }}never closed").is_err());
+    }
+
+    /// Rendering an unknown template is an error.
+    #[test]
+    fn unknown_template_is_an_error() {
+        let tt = TinyTemplate::new();
+        assert!(tt.render("nope", &()).is_err());
+    }
 }

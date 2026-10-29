@@ -108,4 +108,50 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// The `underscored` filter replaces dashes.
+    #[test]
+    fn underscored_replaces_dashes() {
+        let context = tera::Context::new();
+        let state = tera::State::new(&context);
+        assert_eq!(
+            underscored("a-b-c", tera::Kwargs::default(), &state),
+            "a_b_c"
+        );
+        assert_eq!(underscored("abc", tera::Kwargs::default(), &state), "abc");
+    }
+
+    /// The page template contains the context values.
+    #[test]
+    fn page_is_rendered() -> anyhow::Result<()> {
+        let tera = (*TEMPLATES).as_ref()?;
+        let context = tera::Context::from_serialize(&Page {
+            title: "T".to_owned(),
+            heading: "H".to_owned(),
+            content: "C".to_owned(),
+        })?;
+        let html = tera.render("index.html", &context)?;
+        assert!(html.contains('T') && html.contains('H') && html.contains('C'));
+        Ok(())
+    }
+
+    /// The badge template links the crate on docs.rs.
+    #[test]
+    fn badge_is_rendered() -> anyhow::Result<()> {
+        let tera = (*TEMPLATES).as_ref()?;
+        let context = tera::Context::from_serialize(&CrateBadge {
+            crate_name: "serde".to_owned(),
+        })?;
+        let md = tera.render("crate_badge.md", &context)?;
+        assert!(md.contains("https://docs.rs/serde"), "{md}");
+        Ok(())
+    }
+
+    /// An unknown template is an error.
+    #[test]
+    fn unknown_template_is_an_error() -> anyhow::Result<()> {
+        let tera = (*TEMPLATES).as_ref()?;
+        assert!(tera.render("missing.html", &tera::Context::new()).is_err());
+        Ok(())
+    }
 }
