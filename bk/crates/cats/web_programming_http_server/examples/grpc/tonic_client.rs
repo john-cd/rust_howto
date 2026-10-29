@@ -97,6 +97,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "needs the tonic server example listening on [::1]:50051"]
     fn test_main_entry_point() {
         if let Err(err) = main() {
             panic!("main failed: {err:?}");

@@ -83,6 +83,7 @@ mod tests {
     use serde_json::json;
 
     use super::build_schema;
+    use super::main;
 
     /// Returns the greeting JSON for a valid GraphQL query.
     #[tokio::test]
@@ -107,6 +108,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "starts a long-running GraphQL server"]
     fn test_main_entry_point() {
         if let Err(err) = main() {
             panic!("main failed: {err:?}");

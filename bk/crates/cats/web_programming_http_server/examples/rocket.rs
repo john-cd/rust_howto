@@ -54,13 +54,11 @@ mod tests {
 // Implement Rocket Hello World and route mounting
 
 #[cfg(test)]
-mod tests {
-    use super::*;
-
+mod entry_point_tests {
     /// Verifies the no-feature entry point explains how to enable Rocket.
     #[cfg(not(feature = "rocket-support"))]
     #[test]
     fn test_main_entry_point() {
-        main();
+        super::main();
     }
 }
