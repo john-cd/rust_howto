@@ -42,7 +42,3 @@ The [`kube` project][cloud~kube] supplies Kubernetes clients and controller-runt
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [Finish historical runtime validation or replace the Shuttle adapter](https://github.com/john-cd/rust_howto/issues/576).
-</div>
