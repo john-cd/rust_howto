@@ -48,7 +48,7 @@ Use `f64` for statistics and model inputs. For money amounts (cash balances, ord
 
 ## Trading Days {#trading-days}
 
-This example uses [`chrono`][c~chrono~docs]↗{{hi:chrono}} to count weekdays and an explicitly supplied holiday list. It demonstrates date arithmetic only; production trading calendars must use an authoritative exchange calendar that includes the correct holiday and early-close rules.
+This example uses [`trading-calendar`][c~trading-calendar~docs]↗{{hi:trading-calendar}} for the NYSE holiday schedule and [`chrono`][c~chrono~docs]↗{{hi:chrono}} for the date arithmetic: it counts trading days in a range and steps forward by a number of trading days. Verify the crate's holiday and early-close data against the exchange's published calendar before relying on it in production.
 
 ```rust,editable
 {{#include ../../../crates/cats/finance/examples/quant/trading_days.rs:example}}

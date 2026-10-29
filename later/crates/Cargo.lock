@@ -8452,6 +8452,7 @@ dependencies = [
  "serde_json",
  "ta-statistics",
  "tokio",
+ "trading-calendar",
  "yahoo_finance_api",
 ]
 
@@ -14346,6 +14347,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0fae87c125b03c1d2c0150c90365d7d6bcc53fb73a9acaef207d2d065860f062"
 dependencies = [
  "imgref",
+]
+
+[[package]]
+name = "lru"
+version = "0.12.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "234cf4f4a04dc1f57e24b96cc0cd600cf2af460d4161ac5ecdd0af8e1f3b2a38"
+dependencies = [
+ "hashbrown 0.15.5",
 ]
 
 [[package]]
@@ -23369,6 +23379,19 @@ name = "tracy-rs"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ce607aae8ab0ab3abf3a2723a9ab6f09bb8639ed83fdd888d857b8e556c868d8"
+
+[[package]]
+name = "trading-calendar"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b00be17abec776ab1167900c408f046673bc32b006998d349e2d12e9b7550769"
+dependencies = [
+ "chrono",
+ "chrono-tz",
+ "dashmap 6.2.1",
+ "lru 0.12.5",
+ "thiserror 2.0.21",
+]
 
 [[package]]
 name = "transpose"
