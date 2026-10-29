@@ -157,9 +157,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-09 — Networking, authentication and email
 
-- [#1939](https://github.com/john-cd/rust_howto/issues/1939) — **P3** — Add examples: axum add-ons (axum-extra Host and TypedHeader, axum-server TLS, flash messages, #[debug_handler], tower-cookies) — **BLOCKED ON FINAL VALIDATION — examples, recipe page, and compile-fail tip exist in the checkout; Cargo, Clippy, format, refdefs, and book gates remain**
 - [#2017](https://github.com/john-cd/rust_howto/issues/2017) — **P3** — Add an offline-testable OAuth 2.0 client-credentials example — **IMPLEMENTED ON DEVELOP; BLOCKED — Windows auth test fails building aws-lc-sys 0.46.0 (NASM absent; cl.exe alignment probe/LNK1114); retry on a supported host**
-- [#2018](https://github.com/john-cd/rust_howto/issues/2018) — **P3** — Demonstrate mutual TLS with a client certificate — **IMPLEMENTED ON DEVELOP; BLOCKED ON BOOK BUILD — TLS tests/Clippy and Markdown/refdefs pass; just bb cannot start Git Bash (NtCreateDirectoryObject 0xC0000022)**
 
 #### NOW-CODE-10 — Cloud services and SDKs
 
