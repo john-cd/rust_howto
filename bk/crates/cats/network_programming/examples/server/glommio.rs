@@ -48,7 +48,11 @@ async fn serve() -> anyhow::Result<()> {
     let listener = TcpListener::bind("127.0.0.1:8080")
         .map_err(|e| anyhow::anyhow!("failed to bind: {e}"))?;
     println!("Glommio server listening on http://127.0.0.1:8080");
+    accept_loop(listener).await
+}
 
+/// Accepts connections forever, handling each one in its own local task.
+async fn accept_loop(listener: TcpListener) -> anyhow::Result<()> {
     loop {
         let stream = listener
             .accept()
@@ -96,10 +100,38 @@ mod tests {
         assert!(response.ends_with("\r\n\r\nHello from Glommio!\n"));
     }
 
+    /// Serves one real request over loopback on an ephemeral port.
     #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    fn serves_a_request_over_loopback() {
+        let executor = LocalExecutorBuilder::default()
+            .spawn(|| async {
+                let listener = TcpListener::bind("127.0.0.1:0")
+                    .map_err(|e| anyhow::anyhow!("{e}"))?;
+                let addr = listener
+                    .local_addr()
+                    .map_err(|e| anyhow::anyhow!("{e}"))?;
+                glommio::spawn_local(accept_loop(listener)).detach();
+
+                let mut client = TcpStream::connect(addr)
+                    .await
+                    .map_err(|e| anyhow::anyhow!("{e}"))?;
+                client
+                    .write_all(
+                        b"GET / HTTP/1.1
+
+",
+                    )
+                    .await?;
+                let mut response = String::new();
+                client.read_to_string(&mut response).await?;
+                anyhow::Ok(response)
+            })
+            .expect("executor starts");
+        let response = executor
+            .join()
+            .expect("executor thread joins")
+            .expect("request succeeds");
+
+        assert_eq!(response, http_response());
     }
 }

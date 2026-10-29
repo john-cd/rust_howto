@@ -82,7 +82,7 @@ fn run_proxy() -> anyhow::Result<()> {
 
 /// Runs the Pingora reverse proxy and propagates setup errors.
 pub fn run() -> anyhow::Result<()> {
-    run_proxy()
+    main()
 }
 
 #[cfg(test)]
