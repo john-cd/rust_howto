@@ -38,9 +38,22 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the borrow2 example through its entry point.
     #[test]
     fn test_borrow2_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_find_score_accepts_str_and_string() {
+        let scores = HashMap::from([("eve".to_owned(), 30)]);
+        assert_eq!(find_score(&scores, "eve"), Some(30));
+        assert_eq!(find_score(&scores, "eve".to_owned()), Some(30));
+    }
+
+    #[test]
+    fn test_find_score_missing_key() {
+        let scores = HashMap::from([("eve".to_owned(), 30)]);
+        assert_eq!(find_score(&scores, "mallory"), None);
+        assert_eq!(find_score(&HashMap::new(), "eve"), None);
     }
 }

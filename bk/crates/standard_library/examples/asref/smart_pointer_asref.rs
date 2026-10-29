@@ -39,9 +39,18 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the smart pointer asref example through its entry point.
     #[test]
     fn test_smart_pointer_asref_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_box_as_ref_and_deref_give_the_same_content() {
+        let my_box: Box<String> = Box::new("hello from box".to_owned());
+        let via_as_ref: &String = my_box.as_ref();
+        let via_deref: &str = via_as_ref.as_str();
+        assert_eq!(via_as_ref, "hello from box");
+        assert_eq!(via_deref, "hello from box");
+        assert!(std::ptr::eq(via_as_ref, &*my_box));
     }
 }

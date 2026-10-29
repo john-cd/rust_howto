@@ -60,9 +60,34 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the any example through its entry point.
     #[test]
     fn test_any_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_is_string() {
+        assert!(is_string(&String::from("text")));
+        assert!(!is_string(&42));
+        // A `&str` is not a `String`.
+        assert!(!is_string(&"text"));
+    }
+
+    #[test]
+    fn test_downcast_ref_and_mut() {
+        let mut value: Box<dyn Any> = Box::new(5_i32);
+        assert_eq!(value.downcast_ref::<i32>(), Some(&5));
+        assert_eq!(value.downcast_ref::<u32>(), None);
+        *value.downcast_mut::<i32>().unwrap() += 1;
+        assert_eq!(value.downcast_ref::<i32>(), Some(&6));
+    }
+
+    #[test]
+    fn test_downcast_returns_the_box_on_failure() {
+        let boxed: Box<dyn Any> = Box::new("text".to_owned());
+        let back = boxed.downcast::<i32>().unwrap_err();
+        assert_eq!(*back.downcast::<String>().unwrap(), "text");
+        print_if_string(Box::new(1_u8)); // Not a `String`: prints nothing.
+        print_if_string(Box::new("s".to_owned()));
     }
 }

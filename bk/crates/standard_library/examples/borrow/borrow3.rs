@@ -87,9 +87,31 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the borrow3 example through its entry point.
     #[test]
     fn test_borrow3_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_case_insensitive_equality() {
+        let a = cis::CaseInsensitiveString::from("Rust".to_owned());
+        let b = cis::CaseInsensitiveString::from("rUST".to_owned());
+        assert_eq!(a, b);
+        assert_ne!(a, cis::CaseInsensitiveString::from("Go".to_owned()));
+    }
+
+    #[test]
+    fn test_hash_matches_between_owned_and_borrowed() {
+        use std::borrow::Borrow as _;
+        let a = cis::CaseInsensitiveString::from("Rust".to_owned());
+        let s: &str = a.borrow();
+        assert_eq!(s, "rust");
+        assert_eq!(calculate_hash(&a), calculate_hash(&s));
+    }
+
+    #[test]
+    fn test_hash_differs_for_different_values() {
+        assert_ne!(calculate_hash(&"a"), calculate_hash(&"b"));
+        assert_eq!(calculate_hash(&"a"), calculate_hash(&"a"));
     }
 }

@@ -64,9 +64,31 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the refcell example through its entry point.
     #[test]
     fn test_refcell_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_many_immutable_borrows_are_allowed() {
+        let data = RefCell::new(vec![1, 2, 3]);
+        let a = data.borrow();
+        let b = data.borrow();
+        assert_eq!(*a, *b);
+        assert!(data.try_borrow_mut().is_err());
+    }
+
+    #[test]
+    fn test_mutable_borrow_is_exclusive() {
+        let data = RefCell::new(vec![1, 2, 3]);
+        {
+            let mut w = data.borrow_mut();
+            w.push(4);
+            assert!(data.try_borrow().is_err());
+            assert!(data.try_borrow_mut().is_err());
+        }
+        // After the guard is dropped, borrowing works again.
+        assert_eq!(*data.borrow(), vec![1, 2, 3, 4]);
+        assert_eq!(data.into_inner(), vec![1, 2, 3, 4]);
     }
 }

@@ -52,9 +52,29 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the into cow example through its entry point.
     #[test]
     fn test_into_cow_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_static_descriptions_are_borrowed() {
+        let ok = describe_status(&HttpStatus::Ok);
+        assert!(matches!(ok, Cow::Borrowed(_)));
+        assert_eq!(ok, "Status: 200 OK");
+        assert_eq!(
+            describe_status(&HttpStatus::NotFound),
+            "Status: 404 Not Found"
+        );
+    }
+
+    #[test]
+    fn test_custom_description_is_owned() {
+        let custom = describe_status(&HttpStatus::Custom(
+            500,
+            "Internal Server Error".to_owned(),
+        ));
+        assert!(matches!(custom, Cow::Owned(_)));
+        assert_eq!(custom, "Status: 500 Internal Server Error");
     }
 }

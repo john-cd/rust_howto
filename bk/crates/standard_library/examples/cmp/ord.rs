@@ -122,9 +122,43 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the ord example through its entry point.
     #[test]
     fn test_ord_example_entry_point() {
         main();
+    }
+
+    fn v(major: u32, minor: u32, patch: u32) -> Version {
+        Version {
+            major,
+            minor,
+            patch,
+        }
+    }
+
+    #[test]
+    fn test_cmp_compares_fields_in_order() {
+        assert_eq!(v(1, 0, 0).cmp(&v(2, 0, 0)), Ordering::Less);
+        assert_eq!(v(1, 5, 0).cmp(&v(1, 4, 9)), Ordering::Greater);
+        assert_eq!(v(1, 2, 3).cmp(&v(1, 2, 4)), Ordering::Less);
+        assert_eq!(v(1, 2, 3).cmp(&v(1, 2, 3)), Ordering::Equal);
+    }
+
+    #[test]
+    fn test_partial_cmp_and_operators() {
+        assert_eq!(v(1, 0, 0).partial_cmp(&v(1, 0, 1)), Some(Ordering::Less));
+        assert!(v(1, 0, 0) < v(1, 0, 1));
+        assert!(v(2, 0, 0) > v(1, 9, 9));
+        assert!(v(1, 0, 0) <= v(1, 0, 0));
+    }
+
+    #[test]
+    fn test_max_min_and_sort() {
+        let mut versions = vec![v(2, 0, 0), v(1, 2, 3), v(1, 3, 0)];
+        assert_eq!(versions.iter().max(), Some(&v(2, 0, 0)));
+        assert_eq!(versions.iter().min(), Some(&v(1, 2, 3)));
+        versions.sort();
+        assert_eq!(versions, vec![v(1, 2, 3), v(1, 3, 0), v(2, 0, 0)]);
+        versions.sort_by(|a, b| b.cmp(a));
+        assert_eq!(versions[0], v(2, 0, 0));
     }
 }

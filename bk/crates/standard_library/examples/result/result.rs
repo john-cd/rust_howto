@@ -191,13 +191,72 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 
 #[cfg(test)]
 mod tests {
+    use std::path::PathBuf;
+
     use super::*;
 
-    /// Verifies that the example completes successfully.
-    /// Runs the result example through its entry point.
     #[test]
-    fn test_result_example_entry_point()
-    -> Result<(), Box<dyn std::error::Error>> {
-        main()
+    fn test_result_example_entry_point() {
+        // `example.txt` does not exist: every function reports an error, but
+        // `main` itself succeeds.
+        main().unwrap();
+    }
+
+    /// Writes `contents` to a unique file in the temp directory.
+    fn temp_file(name: &str, contents: &str) -> PathBuf {
+        let path = std::env::temp_dir()
+            .join(format!("result_example_{}_{name}", std::process::id()));
+        std::fs::write(&path, contents).unwrap();
+        path
+    }
+
+    fn missing_path() -> String {
+        let path = std::env::temp_dir()
+            .join(format!("result_example_{}_missing", std::process::id()));
+        path.to_str().unwrap().to_owned()
+    }
+
+    #[test]
+    fn test_read_file_variants_return_the_contents() {
+        let path = temp_file("contents", "42\n");
+        let p = path.to_str().unwrap();
+        assert_eq!(read_file(p).unwrap(), "42\n");
+        assert_eq!(read_file2(p).unwrap(), "42\n");
+        std::fs::remove_file(path).unwrap();
+    }
+
+    #[test]
+    fn test_read_file_variants_fail_on_missing_file() {
+        let p = missing_path();
+        assert_eq!(read_file(&p).unwrap_err().kind(), io::ErrorKind::NotFound);
+        assert_eq!(read_file2(&p).unwrap_err().kind(), io::ErrorKind::NotFound);
+        open_file(&p); // Reports the error and returns.
+    }
+
+    #[test]
+    fn test_read_and_parse_file_variants_parse_a_number() {
+        let path = temp_file("number", " 42 \n");
+        let p = path.to_str().unwrap();
+        assert_eq!(read_and_parse_file(p).unwrap(), 42);
+        assert_eq!(read_and_parse_file2(p).unwrap(), 42);
+        assert_eq!(read_and_parse_file3(p).unwrap(), 42);
+        unit_return_value(p).unwrap();
+        std::fs::remove_file(path).unwrap();
+    }
+
+    #[test]
+    fn test_parse_errors_are_reported() {
+        let path = temp_file("not_a_number", "abc");
+        let p = path.to_str().unwrap();
+        assert!(read_and_parse_file(p).is_err());
+        assert!(read_and_parse_file2(p).is_err());
+        assert!(read_and_parse_file3(p).is_err());
+        assert!(unit_return_value(p).is_err());
+        std::fs::remove_file(path).unwrap();
+    }
+
+    #[test]
+    fn test_io_errors_are_converted_with_from() {
+        assert!(read_and_parse_file(&missing_path()).is_err());
     }
 }

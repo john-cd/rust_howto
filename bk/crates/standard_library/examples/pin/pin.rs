@@ -129,11 +129,47 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use std::future::Future as _;
+    use std::task::Context;
+    use std::task::Poll;
+    use std::task::Waker;
+
     use super::*;
 
-    /// Runs the pin example through its entry point.
     #[test]
     fn test_pin_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_pin_new_for_unpin_types() {
+        let mut x = 42;
+        let mut pinned: Pin<&mut i32> = Pin::new(&mut x);
+        *pinned = 43;
+        pinned.set(44);
+        assert_eq!(*Pin::into_inner(pinned), 44);
+    }
+
+    #[test]
+    fn test_pinned_parent_projects_to_its_field() {
+        let mut parent = Box::pin(PinnedParent {
+            field: PinnedField {
+                _pin: PhantomPinned,
+            },
+            _pin: PhantomPinned,
+        });
+        let field_ptr: *const PinnedField = &raw const parent.field;
+        let projected = parent.as_mut().field();
+        assert!(std::ptr::eq(&raw const *projected, field_ptr));
+    }
+
+    #[test]
+    fn test_pinned_future_can_be_polled() {
+        async fn add_one(x: u32) -> u32 {
+            x + 1
+        }
+        let mut fut = Box::pin(add_one(42));
+        let mut cx = Context::from_waker(Waker::noop());
+        assert_eq!(fut.as_mut().poll(&mut cx), Poll::Ready(43));
     }
 }

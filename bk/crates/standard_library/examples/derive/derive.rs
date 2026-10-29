@@ -62,9 +62,37 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the derive example through its entry point.
     #[test]
     fn test_derive_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_default_debug_clone_copy() {
+        assert_eq!(S::default(), S(0));
+        assert_eq!(format!("{:?}", S(3)), "S(3)");
+        let one = S(1);
+        let also_one = one;
+        assert_eq!(one, also_one); // `one` is still usable: `Copy`.
+    }
+
+    #[test]
+    fn test_ordering() {
+        assert!(S(1) < S(2));
+        assert!(S(-1) < S(0));
+        assert_eq!(S(1).cmp(&S(1)), std::cmp::Ordering::Equal);
+        assert_eq!([S(3), S(1), S(2)].iter().max(), Some(&S(3)));
+    }
+
+    #[test]
+    fn test_hash_as_map_key() {
+        let mut map = HashMap::new();
+        map.insert(S(10), "Value for S(10)");
+        map.insert(S(20), "Value for S(20)");
+        assert_eq!(map.get(&S(10)), Some(&"Value for S(10)"));
+        assert_eq!(map.get(&S(30)), None);
+        // Equal keys overwrite.
+        map.insert(S(10), "new");
+        assert_eq!(map.len(), 2);
     }
 }

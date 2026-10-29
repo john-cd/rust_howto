@@ -34,9 +34,19 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the borrow example through its entry point.
     #[test]
     fn test_borrow_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_lookup_with_borrowed_key() {
+        let mut scores: HashMap<String, u32> = HashMap::new();
+        scores.insert("alice".to_owned(), 10);
+        // `&str` can be used to look up a `String` key.
+        assert_eq!(scores.get("alice"), Some(&10));
+        assert_eq!(scores.get("Alice"), None);
+        let owned_key = String::from("alice");
+        assert_eq!(scores.get(&owned_key), Some(&10));
     }
 }

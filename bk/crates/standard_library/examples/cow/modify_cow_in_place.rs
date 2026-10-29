@@ -40,9 +40,30 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the modify cow in place example through its entry point.
     #[test]
     fn test_modify_cow_in_place_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_unmatched_input_stays_borrowed() {
+        let mut c = Cow::Borrowed("Hello");
+        modify_string(&mut c);
+        assert!(matches!(c, Cow::Borrowed("Hello")));
+    }
+
+    #[test]
+    fn test_matching_input_is_cloned_on_write() {
+        let mut c = Cow::Borrowed("Rust");
+        modify_string(&mut c);
+        assert!(matches!(c, Cow::Owned(_)));
+        assert_eq!(c, "Rust is awesome!");
+    }
+
+    #[test]
+    fn test_already_owned_input_is_modified_in_place() {
+        let mut c: Cow<str> = Cow::Owned("Rust".to_owned());
+        modify_string(&mut c);
+        assert_eq!(c, "Rust is awesome!");
     }
 }

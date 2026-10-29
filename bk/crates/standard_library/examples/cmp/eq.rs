@@ -77,9 +77,36 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the eq example through its entry point.
     #[test]
     fn test_eq_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_derived_equality_compares_all_fields() {
+        let p1 = Point { x: 1, y: 2 };
+        assert_eq!(p1, Point { x: 1, y: 2 });
+        assert_ne!(p1, Point { x: 3, y: 4 });
+        assert_ne!(p1, Point { x: 1, y: 3 });
+    }
+
+    #[test]
+    fn test_custom_equality_compares_ids_only() {
+        let smith = Person {
+            id: 1,
+            last_name: "Smith".to_owned(),
+        };
+        let jones = Person {
+            id: 1,
+            last_name: "Jones".to_owned(),
+        };
+        let other = Person {
+            id: 2,
+            last_name: "Smith".to_owned(),
+        };
+        assert_eq!(smith, jones);
+        assert_ne!(smith, other);
+        // Reflexive.
+        assert_eq!(smith, smith);
     }
 }

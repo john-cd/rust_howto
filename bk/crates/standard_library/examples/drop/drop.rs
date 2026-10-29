@@ -52,11 +52,63 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use std::cell::RefCell;
+    use std::rc::Rc;
+
     use super::*;
 
-    /// Runs the drop example through its entry point.
     #[test]
     fn test_drop_example_entry_point() {
         main();
+    }
+
+    /// Same shape as `CustomStruct`, but records when it is dropped.
+    struct Recorder {
+        name: &'static str,
+        log: Rc<RefCell<Vec<&'static str>>>,
+    }
+
+    impl Drop for Recorder {
+        fn drop(&mut self) {
+            self.log.borrow_mut().push(self.name);
+        }
+    }
+
+    #[test]
+    fn test_values_are_dropped_in_reverse_order_of_declaration() {
+        let log = Rc::new(RefCell::new(Vec::new()));
+        {
+            let _c = Recorder {
+                name: "c",
+                log: Rc::clone(&log),
+            };
+            let _d = Recorder {
+                name: "d",
+                log: Rc::clone(&log),
+            };
+            assert!(log.borrow().is_empty());
+        }
+        assert_eq!(*log.borrow(), vec!["d", "c"]);
+    }
+
+    #[test]
+    fn test_explicit_drop_runs_destructor_immediately() {
+        let log = Rc::new(RefCell::new(Vec::new()));
+        let e = Recorder {
+            name: "e",
+            log: Rc::clone(&log),
+        };
+        assert!(log.borrow().is_empty());
+        drop(e);
+        assert_eq!(*log.borrow(), vec!["e"]);
+    }
+
+    #[test]
+    fn test_custom_struct_can_be_created_and_dropped() {
+        let c = CustomStruct {
+            data: String::from("data"),
+        };
+        assert_eq!(c.data, "data");
+        drop(c);
     }
 }

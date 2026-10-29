@@ -25,9 +25,18 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the options1 example through its entry point.
     #[test]
     fn test_options1_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_some_and_none() {
+        let some_number = Some(5);
+        let absent_number: Option<i32> = None;
+        assert!(some_number.is_some());
+        assert!(absent_number.is_none());
+        assert_eq!(format!("{some_number:?}"), "Some(5)");
+        assert_eq!(format!("{absent_number:?}"), "None");
     }
 }

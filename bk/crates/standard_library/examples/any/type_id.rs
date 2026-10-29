@@ -57,9 +57,28 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the type id example through its entry point.
     #[test]
     fn test_type_id_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_is_same_type() {
+        assert!(is_same_type::<i32, i32>());
+        assert!(!is_same_type::<i32, u32>());
+        assert!(!is_same_type::<String, &str>());
+        assert!(is_same_type::<Vec<u8>, Vec<u8>>());
+    }
+
+    #[test]
+    fn test_type_id_of_trait_object_is_the_concrete_type() {
+        let value: &dyn Any = &"hello";
+        assert_eq!(value.type_id(), TypeId::of::<&str>());
+        assert_ne!(value.type_id(), TypeId::of::<String>());
+    }
+
+    #[test]
+    fn test_type_name() {
+        assert_eq!(std::any::type_name::<String>(), "alloc::string::String");
     }
 }

@@ -54,9 +54,30 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the option question mark example through its entry point.
     #[test]
     fn test_option_question_mark_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_first_char_is_uppercased() {
+        assert_eq!(
+            get_first_char_uppercase(Some("hello".to_owned())),
+            Some('H')
+        );
+        assert_eq!(
+            get_first_char_uppercase(Some("Hello".to_owned())),
+            Some('H')
+        );
+        assert_eq!(
+            get_first_char_uppercase(Some("1abc".to_owned())),
+            Some('1')
+        );
+    }
+
+    #[test]
+    fn test_none_and_empty_string_give_none() {
+        assert_eq!(get_first_char_uppercase(None), None);
+        assert_eq!(get_first_char_uppercase(Some(String::new())), None);
     }
 }

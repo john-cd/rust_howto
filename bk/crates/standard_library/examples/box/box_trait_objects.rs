@@ -68,9 +68,32 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the box trait objects example through its entry point.
     #[test]
     fn test_box_trait_objects_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_areas_through_trait_objects() {
+        let shapes: Vec<Box<dyn Shape>> = vec![
+            Box::new(Circle { radius: 5.0 }),
+            Box::new(Rectangle {
+                width: 3.0,
+                height: 4.0,
+            }),
+        ];
+        let areas: Vec<f64> = shapes.iter().map(|s| s.area()).collect();
+        assert!((areas[0] - 78.539_816_339_744_83).abs() < 1e-9);
+        assert!((areas[1] - 12.0).abs() < f64::EPSILON);
+    }
+
+    #[test]
+    fn test_degenerate_shapes_have_zero_area() {
+        assert!(Circle { radius: 0.0 }.area().abs() < f64::EPSILON);
+        let flat = Rectangle {
+            width: 5.0,
+            height: 0.0,
+        };
+        assert!(flat.area().abs() < f64::EPSILON);
     }
 }

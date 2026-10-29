@@ -1,5 +1,3 @@
-
-
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -48,12 +46,41 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[cfg(test)]
-mod tests { use super::*;
+pub fn run() {
+    main();
+}
 
-    /// Runs the callable example through its entry point.
+#[cfg(test)]
+mod tests {
+    use super::*;
+
     #[test]
     fn test_callable_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_adder_is_callable_like_a_function() {
+        let add_five = Adder { offset: 5 };
+        assert_eq!(add_five(3), 8);
+        assert_eq!(add_five(-5), 0);
+        // `Fn` can be called repeatedly.
+        assert_eq!(add_five(3), add_five(3));
+    }
+
+    #[test]
+    fn test_adder_as_fn_trait_bounds() {
+        fn call_fn(f: impl Fn(i32) -> i32) -> i32 {
+            f(1)
+        }
+        fn call_fn_mut(mut f: impl FnMut(i32) -> i32) -> i32 {
+            f(1)
+        }
+        fn call_fn_once(f: impl FnOnce(i32) -> i32) -> i32 {
+            f(1)
+        }
+        assert_eq!(call_fn(Adder { offset: 2 }), 3);
+        assert_eq!(call_fn_mut(Adder { offset: 2 }), 3);
+        assert_eq!(call_fn_once(Adder { offset: 2 }), 3);
     }
 }

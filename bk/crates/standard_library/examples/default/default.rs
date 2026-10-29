@@ -71,9 +71,37 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the default example through its entry point.
     #[test]
     fn test_default_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_derived_default_uses_type_defaults() {
+        let c = Config::default();
+        assert_eq!(c.timeout, 0);
+        assert_eq!(c.retries, 0);
+        assert_eq!(c.endpoint, "");
+        assert!(!c.logging_enabled);
+    }
+
+    #[test]
+    fn test_custom_default() {
+        let c = Config2::default();
+        assert_eq!(c.timeout, 5000);
+        assert_eq!(c.retries, 3);
+        assert_eq!(c.endpoint, "https://api.example.com");
+        assert!(c.logging_enabled);
+    }
+
+    #[test]
+    fn test_struct_update_syntax() {
+        let c = Config {
+            timeout: 10000,
+            ..Config::default()
+        };
+        assert_eq!(c.timeout, 10000);
+        assert_eq!(c.retries, 0);
+        assert_eq!(c.endpoint, String::new());
     }
 }

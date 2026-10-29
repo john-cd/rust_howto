@@ -50,9 +50,33 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the function returning cow example through its entry point.
     #[test]
     fn test_function_returning_cow_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_spaces_are_removed_with_an_allocation() {
+        let result = remove_whitespaces("Hello world!  ");
+        assert!(matches!(result, Cow::Owned(_)));
+        assert_eq!(result, "Helloworld!");
+    }
+
+    #[test]
+    fn test_no_spaces_means_no_allocation() {
+        let input = "HelloWorld!";
+        let result = remove_whitespaces(input);
+        assert!(matches!(result, Cow::Borrowed(_)));
+        // The result points into the input.
+        assert!(std::ptr::eq(result.as_ref(), input));
+    }
+
+    #[test]
+    fn test_edge_cases() {
+        assert_eq!(remove_whitespaces(""), "");
+        assert!(matches!(remove_whitespaces(""), Cow::Borrowed(_)));
+        assert_eq!(remove_whitespaces("   "), "");
+        // Only the ASCII space is removed.
+        assert_eq!(remove_whitespaces("a\tb"), "a\tb");
     }
 }

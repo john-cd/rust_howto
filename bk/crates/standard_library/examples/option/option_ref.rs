@@ -44,9 +44,28 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the option ref example through its entry point.
     #[test]
     fn test_option_ref_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_as_ref_keeps_the_original() {
+        let text = Some("Hello, world!".to_owned());
+        let len = text.as_ref().map(String::len);
+        assert_eq!(len, Some(13));
+        assert_eq!(text.as_deref(), Some("Hello, world!"));
+        assert_eq!(None::<String>.as_ref().map(String::len), None);
+    }
+
+    #[test]
+    fn test_as_mut_modifies_in_place() {
+        let mut x = Some(2);
+        if let Some(v) = x.as_mut() {
+            *v += 40;
+        }
+        assert_eq!(x, Some(42));
+        let mut none: Option<i32> = None;
+        assert!(none.as_mut().is_none());
     }
 }

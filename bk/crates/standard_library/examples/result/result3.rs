@@ -47,9 +47,39 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the result3 example through its entry point.
     #[test]
     fn test_result3_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_get_message() {
+        assert_eq!(get_message(true), Ok("Rust".to_owned()));
+        assert_eq!(get_message(false), Err("Failed to get message"));
+    }
+
+    #[test]
+    fn test_as_ref_and_as_deref() {
+        let result = get_message(true);
+        assert_eq!(result.as_ref().map(String::len), Ok(4));
+        assert_eq!(result.as_deref(), Ok("Rust"));
+        // The original is still usable.
+        assert_eq!(result.unwrap(), "Rust");
+    }
+
+    #[test]
+    fn test_as_mut_modifies_in_place() {
+        let mut result = get_message(true);
+        if let Ok(s) = result.as_mut() {
+            s.push_str(" is awesome!");
+        }
+        assert_eq!(result, Ok("Rust is awesome!".to_owned()));
+    }
+
+    #[test]
+    fn test_as_mut_on_err_does_nothing() {
+        let mut result = get_message(false);
+        assert!(result.as_mut().is_err());
+        assert_eq!(result, Err("Failed to get message"));
     }
 }

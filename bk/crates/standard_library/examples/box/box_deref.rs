@@ -28,9 +28,25 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the box deref example through its entry point.
     #[test]
     fn test_box_deref_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_explicit_and_auto_deref() {
+        let boxed: Box<u8> = Box::new(1);
+        assert_eq!(*boxed, 1);
+        let boxed = Box::new("example");
+        // Auto-deref lets us call `str` methods directly.
+        assert_eq!(boxed.len(), 7);
+        assert_eq!(boxed.to_uppercase(), "EXAMPLE");
+    }
+
+    #[test]
+    fn test_deref_mut() {
+        let mut boxed = Box::new(1_u8);
+        *boxed += 1;
+        assert_eq!(*boxed, 2);
     }
 }

@@ -64,9 +64,44 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the box recursive example through its entry point.
     #[test]
     fn test_box_recursive_example_entry_point() {
         main();
+    }
+
+    fn values(head: &Node) -> Vec<i32> {
+        let mut out = vec![head.value];
+        let mut current = &head.next;
+        while let Some(node) = current {
+            out.push(node.value);
+            current = &node.next;
+        }
+        out
+    }
+
+    #[test]
+    fn test_new_node_has_no_successor() {
+        let node = Node::new(1);
+        assert_eq!(node.value, 1);
+        assert!(node.next.is_none());
+    }
+
+    #[test]
+    fn test_append_adds_nodes_at_the_end() {
+        let mut head = Node::new(1);
+        head.append(2);
+        head.append(3);
+        head.append(4);
+        assert_eq!(values(&head), vec![1, 2, 3, 4]);
+    }
+
+    #[test]
+    fn test_print_does_not_panic_on_long_lists() {
+        let mut head = Node::new(0);
+        for i in 1..100 {
+            head.append(i);
+        }
+        assert_eq!(values(&head).len(), 100);
+        head.print();
     }
 }

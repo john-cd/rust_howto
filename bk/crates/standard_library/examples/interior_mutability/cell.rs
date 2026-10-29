@@ -88,9 +88,31 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the cell example through its entry point.
     #[test]
     fn test_cell_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_set_through_a_shared_reference() {
+        let s = MyStruct::new(42);
+        let r = &s;
+        assert_eq!(r.get_value(), 42);
+        r.set_value(100);
+        assert_eq!(s.get_value(), 100);
+    }
+
+    #[test]
+    fn test_take_leaves_the_default_value() {
+        let s = MyStruct::new("example".to_owned());
+        assert_eq!(s.take_value(), "example");
+        assert_eq!(s.take_value(), "");
+    }
+
+    #[test]
+    fn test_replace_and_into_inner() {
+        let s = MyStruct::new(String::from("a"));
+        assert_eq!(s.value.replace("b".into()), "a");
+        assert_eq!(s.value.into_inner(), "b");
     }
 }

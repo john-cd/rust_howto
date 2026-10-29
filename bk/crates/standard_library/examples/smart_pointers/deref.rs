@@ -40,9 +40,34 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the deref example through its entry point.
     #[test]
     fn test_deref_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_auto_deref_calls_methods_of_the_target() {
+        let wrapped = MyBox(String::from("Hello, Deref!"));
+        assert_eq!(wrapped.len(), 13);
+        assert_eq!((*wrapped).to_uppercase(), "HELLO, DEREF!");
+    }
+
+    #[test]
+    fn test_deref_coercion_to_str() {
+        fn takes_str(s: &str) -> usize {
+            s.len()
+        }
+        let wrapped = MyBox(String::from("abc"));
+        // `&MyBox<String>` -> `&String` -> `&str`.
+        assert_eq!(takes_str(&wrapped), 3);
+        assert_eq!(takes_str(&MyBox(String::new())), 0);
+    }
+
+    #[test]
+    fn test_explicit_deref() {
+        let b = MyBox(5);
+        assert_eq!(*b, 5);
+        let as_ref: &i32 = &b;
+        assert_eq!(as_ref, &5);
     }
 }

@@ -57,9 +57,24 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the box basics example through its entry point.
     #[test]
     fn test_box_basics_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_move_value_to_heap_and_back() {
+        let in_heap: Box<MyStruct> = Box::new(MyStruct(5));
+        assert_eq!(format!("{in_heap:?}"), "MyStruct(5)");
+        // Dereferencing the box moves the value back to the stack.
+        let in_stack = *in_heap;
+        assert_eq!(format!("{in_stack:?}"), "MyStruct(5)");
+    }
+
+    #[test]
+    fn test_box_of_copy_type_does_not_move_original() {
+        let x: u32 = 7;
+        let y = Box::new(x);
+        assert_eq!(*y, x);
     }
 }

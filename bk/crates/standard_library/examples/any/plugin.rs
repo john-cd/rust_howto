@@ -167,9 +167,60 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the plugin example through its entry point.
     #[test]
     fn test_plugin_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_context_register_get_and_get_mut() {
+        let mut ctx = Context::default();
+        assert!(ctx.get::<i32>().is_none());
+        ctx.register(7_i32);
+        assert_eq!(ctx.get::<i32>(), Some(&7));
+        *ctx.get_mut::<i32>().unwrap() += 1;
+        assert_eq!(ctx.get::<i32>(), Some(&8));
+        // Services are keyed by type.
+        assert!(ctx.get::<u32>().is_none());
+        // Registering again replaces the previous value.
+        ctx.register(1_i32);
+        assert_eq!(ctx.get::<i32>(), Some(&1));
+    }
+
+    #[test]
+    fn test_plugins_cooperate_through_the_context() {
+        let mut manager = PluginManager::default();
+        manager.context.register(AppState { counter: 0 });
+        manager.context.register(100i32);
+        manager.context.register("Host Greeting".to_owned());
+        manager.add_plugin(Box::new(MyCounterPlugin));
+        manager.add_plugin(Box::new(MyStringPlugin));
+        manager.add_plugin(Box::new(MyServiceConsumerPlugin));
+        manager.initialize();
+
+        assert_eq!(manager.context.get::<AppState>().unwrap().counter, 10);
+        // `MyStringPlugin` replaced the host's greeting.
+        assert_eq!(
+            manager.context.get::<String>().map(String::as_str),
+            Some("Plugin Says Hello!")
+        );
+        assert_eq!(
+            manager.context.get::<CustomPluginService>().unwrap().value,
+            12345
+        );
+    }
+
+    #[test]
+    fn test_plugin_names() {
+        assert_eq!(MyCounterPlugin.name(), "MyCounterPlugin");
+        assert_eq!(MyStringPlugin.name(), "MyStringPlugin");
+        assert_eq!(MyServiceConsumerPlugin.name(), "MyServiceConsumerPlugin");
+    }
+
+    #[test]
+    fn test_plugin_without_its_state_does_nothing() {
+        let mut ctx = Context::default();
+        MyCounterPlugin.execute(&mut ctx);
+        assert!(ctx.get::<AppState>().is_none());
     }
 }

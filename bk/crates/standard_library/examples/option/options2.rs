@@ -47,9 +47,32 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the options2 example through its entry point.
     #[test]
     fn test_options2_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_cake_with_sprinkles() {
+        assert_eq!(
+            bake_cake(Some("rainbow nonpareils")),
+            "A delicious cake... with a sprinkle of rainbow nonpareils"
+        );
+    }
+
+    #[test]
+    fn test_cake_without_sprinkles() {
+        assert_eq!(
+            bake_cake(None),
+            "A delicious cake... ready for your decorating touch!"
+        );
+    }
+
+    #[test]
+    fn test_cake_with_empty_sprinkle_name() {
+        assert_eq!(
+            bake_cake(Some("")),
+            "A delicious cake... with a sprinkle of "
+        );
     }
 }

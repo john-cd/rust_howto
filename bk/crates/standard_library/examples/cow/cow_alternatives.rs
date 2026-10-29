@@ -66,9 +66,41 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the cow alternatives example through its entry point.
     #[test]
     fn test_cow_alternatives_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_arc_str_is_shared_not_copied() {
+        let s: Arc<str> = Arc::from("Slice.");
+        let clone = Arc::clone(&s);
+        assert_eq!(Arc::strong_count(&s), 2);
+        assert!(std::ptr::eq(&*s, &*clone));
+    }
+
+    #[test]
+    fn test_rwlock_string_is_mutated_by_all_threads() {
+        let shared = Arc::new(RwLock::new("String".to_owned()));
+        let handles: Vec<_> = (0..2)
+            .map(|_| {
+                let shared = Arc::clone(&shared);
+                thread::spawn(move || shared.write().unwrap().push('!'))
+            })
+            .collect();
+        for handle in handles {
+            handle.join().unwrap();
+        }
+        assert_eq!(*shared.read().unwrap(), "String!!");
+    }
+
+    #[test]
+    fn test_rc_str_and_box_str() {
+        let rc: Rc<str> = Rc::from("Hello, Rust!");
+        let rc2 = Rc::clone(&rc);
+        assert_eq!(Rc::strong_count(&rc), 2);
+        assert_eq!(&*rc2, "Hello, Rust!");
+        let b: Box<str> = "Hello, Rust!".into();
+        assert_eq!(&*b, &*rc);
     }
 }

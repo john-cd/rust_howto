@@ -53,9 +53,47 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the rc example through its entry point.
     #[test]
     fn test_rc_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_strong_count_follows_clones_and_drops() {
+        let a = Rc::new(vec![1.0, 2.0, 3.0]);
+        assert_eq!(Rc::strong_count(&a), 1);
+        let b = Rc::clone(&a);
+        assert_eq!(Rc::strong_count(&a), 2);
+        assert!(Rc::ptr_eq(&a, &b));
+        drop(b);
+        assert_eq!(Rc::strong_count(&a), 1);
+    }
+
+    #[test]
+    fn test_get_mut_requires_unique_ownership() {
+        let mut y = Rc::new(4);
+        *Rc::get_mut(&mut y).unwrap() = 5;
+        assert_eq!(*y, 5);
+        let _other = Rc::clone(&y);
+        assert!(Rc::get_mut(&mut y).is_none());
+    }
+
+    #[test]
+    fn test_try_unwrap() {
+        assert_eq!(Rc::try_unwrap(Rc::new(6)), Ok(6));
+        let shared = Rc::new(6);
+        let other = Rc::clone(&shared);
+        let err = Rc::try_unwrap(shared).unwrap_err();
+        assert_eq!(*err, 6);
+        drop(other);
+    }
+
+    #[test]
+    fn test_weak_does_not_keep_the_value_alive() {
+        let a = Rc::new(1);
+        let weak = Rc::downgrade(&a);
+        assert_eq!(weak.upgrade().as_deref(), Some(&1));
+        drop(a);
+        assert!(weak.upgrade().is_none());
     }
 }

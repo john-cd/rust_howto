@@ -53,9 +53,39 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the once cell example through its entry point.
     #[test]
     fn test_once_cell_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_get_or_init_runs_the_closure_once() {
+        let cell = OnceCell::new();
+        let mut calls = 0;
+        assert_eq!(cell.get(), None);
+        assert_eq!(
+            *cell.get_or_init(|| {
+                calls += 1;
+                1
+            }),
+            1
+        );
+        assert_eq!(
+            *cell.get_or_init(|| {
+                calls += 1;
+                2
+            }),
+            1
+        );
+        assert_eq!(calls, 1);
+    }
+
+    #[test]
+    fn test_set_fails_once_initialized() {
+        let cell = OnceCell::new();
+        assert_eq!(cell.set(1), Ok(()));
+        assert_eq!(cell.set(2), Err(2));
+        assert_eq!(cell.get(), Some(&1));
+        assert_eq!(cell.into_inner(), Some(1));
     }
 }

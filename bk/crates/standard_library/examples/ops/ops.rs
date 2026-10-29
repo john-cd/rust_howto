@@ -57,9 +57,29 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the ops example through its entry point.
     #[test]
     fn test_ops_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_add() {
+        let p = Point { x: 1, y: 5 } + Point { x: 2, y: 3 };
+        assert_eq!(p, Point { x: 3, y: 8 });
+    }
+
+    #[test]
+    fn test_add_with_negatives_and_zero() {
+        let zero = Point { x: 0, y: 0 };
+        let p = Point { x: -1, y: 4 };
+        assert_eq!(p + zero, p);
+        assert_eq!(p + Point { x: 1, y: -4 }, zero);
+    }
+
+    #[test]
+    #[should_panic(expected = "overflow")]
+    fn test_add_overflow_panics_in_debug_builds() {
+        // Overflow checks are enabled in the test profile.
+        let _ = Point { x: i32::MAX, y: 0 } + Point { x: 1, y: 0 };
     }
 }

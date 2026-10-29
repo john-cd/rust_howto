@@ -47,9 +47,29 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the cow to borrowed owned example through its entry point.
     #[test]
     fn test_cow_to_borrowed_owned_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_borrowing_from_a_cow() {
+        let example: Cow<str> = Cow::from("Example ");
+        let mut s = String::new();
+        s.push_str(&example);
+        s.push_str(example.borrow());
+        s.push_str(example.as_ref());
+        assert_eq!(s, "Example Example Example ");
+        // The `Cow` is untouched, and still borrowed.
+        assert!(matches!(example, Cow::Borrowed(_)));
+    }
+
+    #[test]
+    fn test_converting_to_owned() {
+        let example: Cow<str> = Cow::from("Example ");
+        assert_eq!(example.to_string(), "Example ");
+        assert_eq!(example.as_ref().to_owned(), "Example ");
+        let owned: String = example.into_owned();
+        assert_eq!(owned, "Example ");
     }
 }

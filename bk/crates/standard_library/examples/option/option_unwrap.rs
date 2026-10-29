@@ -65,9 +65,43 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the option unwrap example through its entry point.
     #[test]
     fn test_option_unwrap_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_unwrap_on_some() {
+        assert_eq!(Some(10).unwrap(), 10);
+        assert_eq!(Some("A string").expect("is Some"), "A string");
+    }
+
+    #[test]
+    #[should_panic(expected = "called `Option::unwrap()` on a `None` value")]
+    fn test_unwrap_on_none_panics() {
+        let x: Option<i32> = None;
+        x.unwrap();
+    }
+
+    #[test]
+    #[should_panic(expected = "it was None")]
+    fn test_expect_on_none_panics_with_message() {
+        let x: Option<i32> = None;
+        x.expect("it was None");
+    }
+
+    #[test]
+    fn test_unwrap_or_variants() {
+        assert_eq!(Some(100).unwrap_or(50), 100);
+        assert_eq!(None::<u32>.unwrap_or(50), 50);
+        assert_eq!(None::<u32>.unwrap_or_default(), 0);
+        let calls = std::cell::Cell::new(0);
+        let value = None::<u32>.unwrap_or_else(|| {
+            calls.set(calls.get() + 1);
+            75
+        });
+        assert_eq!((value, calls.get()), (75, 1));
+        // The closure is not evaluated when the value is present.
+        assert_eq!(Some(1).unwrap_or_else(|| unreachable!()), 1);
     }
 }

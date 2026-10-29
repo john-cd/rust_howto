@@ -38,9 +38,23 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the cow as function param example through its entry point.
     #[test]
     fn test_cow_as_function_param_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_process_text_accepts_every_kind_of_input() {
+        // Each of these compiles because `&str` and `String` convert to `Cow`.
+        process_text(Cow::Borrowed("Hello, Rust!"));
+        process_text(Cow::Owned(String::from("Hello, world!")));
+        process_text("literal".into());
+        process_text(String::from("owned").into());
+    }
+
+    #[test]
+    fn test_conversions_pick_the_right_variant() {
+        assert!(matches!(Cow::from("a"), Cow::Borrowed("a")));
+        assert!(matches!(Cow::from(String::from("a")), Cow::Owned(_)));
     }
 }

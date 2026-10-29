@@ -42,9 +42,36 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the rc refcell example through its entry point.
     #[test]
     fn test_rc_refcell_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_mutation_is_visible_to_all_owners() {
+        let shared: Rc<RefCell<Vec<i32>>> = Rc::new(RefCell::new(vec![1]));
+        let other = Rc::clone(&shared);
+        assert_eq!(Rc::strong_count(&shared), 2);
+        other.borrow_mut().push(2);
+        shared.borrow_mut().push(3);
+        assert_eq!(*shared.borrow(), vec![1, 2, 3]);
+        assert_eq!(*other.borrow(), vec![1, 2, 3]);
+    }
+
+    #[test]
+    fn test_overlapping_borrows_are_detected_at_runtime() {
+        let shared = Rc::new(RefCell::new(0));
+        let reader = shared.borrow();
+        assert!(shared.try_borrow_mut().is_err());
+        drop(reader);
+        assert!(shared.try_borrow_mut().is_ok());
+    }
+
+    #[test]
+    #[should_panic(expected = "already borrowed")]
+    fn test_borrow_mut_while_borrowed_panics() {
+        let shared = Rc::new(RefCell::new(0));
+        let _reader = shared.borrow();
+        let _writer = shared.borrow_mut();
     }
 }

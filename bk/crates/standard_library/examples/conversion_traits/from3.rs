@@ -35,9 +35,26 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the from3 example through its entry point.
     #[test]
     fn test_from3_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_from_valid_utf8_bytes() {
+        let msg: Message = b"Hello world".as_slice().into();
+        assert_eq!(format!("{msg:?}"), r#"Message("Hello world")"#);
+    }
+
+    #[test]
+    fn test_from_empty_bytes() {
+        let msg = Message::from(&b""[..]);
+        assert_eq!(format!("{msg:?}"), r#"Message("")"#);
+    }
+
+    #[test]
+    fn test_invalid_utf8_is_replaced_not_rejected() {
+        let msg = Message::from(&[b'a', 0xff, b'b'][..]);
+        assert_eq!(format!("{msg:?}"), "Message(\"a\u{fffd}b\")");
     }
 }

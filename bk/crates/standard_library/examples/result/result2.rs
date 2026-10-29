@@ -54,9 +54,36 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the result2 example through its entry point.
     #[test]
     fn test_result2_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_divide() {
+        assert_eq!(divide(10, 2), Ok(5));
+        assert_eq!(divide(-9, 3), Ok(-3));
+        assert_eq!(divide(10, 0), Err("Cannot divide by zero."));
+    }
+
+    #[test]
+    fn test_combinators_on_ok() {
+        let result = divide(10, 2).map(|x| x * 2 + 1);
+        assert_eq!(result, Ok(11));
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap_or(-1), 11);
+    }
+
+    #[test]
+    fn test_combinators_short_circuit_on_err() {
+        let result = divide(10, 0).map(|x| x * 2);
+        assert_eq!(result, Err("Cannot divide by zero."));
+        assert_eq!(result.unwrap_or(-1), -1);
+    }
+
+    #[test]
+    #[should_panic(expected = "Computation failed.")]
+    fn test_expect_on_err_panics() {
+        divide(1, 0).expect("Computation failed.");
     }
 }

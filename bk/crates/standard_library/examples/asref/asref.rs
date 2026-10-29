@@ -8,12 +8,13 @@
 /// `as_ref()`.
 ///
 /// `s` is a value of type `T` that can be converted to a string slice.
-fn print_length<T: AsRef<str>>(s: T) {
+fn print_length<T: AsRef<str>>(s: T) -> usize {
     // The first line of a function accepting an `AsRef` is usually a call to
     // `as_ref`.
     let s_ref: &str = s.as_ref();
     // Print the string slice and its length.
     println!("The length of '{s_ref}' is {}", s_ref.len());
+    s_ref.len()
 }
 
 /// Let's call `print_length` with arguments of various types.
@@ -30,9 +31,10 @@ fn string_slice() {
 
 /// `AsRef<[T]>` can also be used with slices, arrays, and vectors,
 ///  although it is more common to use `&[T]` than `AsRef<T>`.
-fn print_vec<T: AsRef<[i32]>>(input: T) {
+fn print_vec<T: AsRef<[i32]>>(input: T) -> usize {
     let input = input.as_ref(); // Convert to a slice.
     println!("{input:?}");
+    input.len()
 }
 
 // `Vec<T>` and `[T; N]` implement `AsRef<[T]>`.
@@ -67,9 +69,25 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the asref example through its entry point.
     #[test]
     fn test_asref_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_print_length_accepts_string_and_str() {
+        assert_eq!(print_length(String::from("Hello, world!")), 13);
+        assert_eq!(print_length("Hello, Rust!"), 12);
+        assert_eq!(print_length(""), 0);
+    }
+
+    #[test]
+    fn test_print_vec_accepts_vec_array_and_slice() {
+        let vec = vec![1, 2, 3];
+        assert_eq!(print_vec(&vec), 3);
+        assert_eq!(print_vec(vec), 3);
+        assert_eq!(print_vec([1, 2, 3]), 3);
+        let slice: &[i32] = &[];
+        assert_eq!(print_vec(slice), 0);
     }
 }

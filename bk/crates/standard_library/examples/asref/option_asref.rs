@@ -49,9 +49,27 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the option asref example through its entry point.
     #[test]
     fn test_option_asref_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_as_ref_and_as_deref_do_not_consume_the_option() {
+        let name = Some("Alice".to_owned());
+        let r: Option<&String> = name.as_ref();
+        assert_eq!(r.map(String::len), Some(5));
+        let d: Option<&str> = name.as_deref();
+        assert_eq!(d, Some("Alice"));
+        // The original option is still usable.
+        assert_eq!(name, Some("Alice".to_owned()));
+    }
+
+    #[test]
+    fn test_none_stays_none() {
+        let none: Option<String> = None;
+        assert_eq!(none.as_ref(), None);
+        assert_eq!(none.as_deref(), None);
+        process_optional_string(none);
     }
 }

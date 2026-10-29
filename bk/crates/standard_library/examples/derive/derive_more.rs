@@ -156,9 +156,69 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the derive more example through its entry point.
     #[test]
     fn test_derive_more_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn test_point_add_and_add_assign() {
+        let sum = Point { x: 1, y: 2 } + Point { x: 3, y: 4 };
+        assert_eq!(sum, Point { x: 4, y: 6 });
+        let mut p = Point { x: 5, y: 6 };
+        p += Point { x: 1, y: 1 };
+        assert_eq!(p, Point { x: 6, y: 7 });
+    }
+
+    #[test]
+    fn test_user_id_conversions_and_display() {
+        let id = UserId::from(12345);
+        assert_eq!(u64::from(id), 12345);
+        assert_eq!(UserId(67890).to_string(), "67890");
+    }
+
+    #[test]
+    fn test_constructor() {
+        let user = User::new(UserId(1), "Alice".to_owned(), true);
+        assert_eq!(user.name, "Alice");
+        assert!(user.active);
+        assert_eq!(
+            format!("{user:?}"),
+            r#"User { id: UserId(1), name: "Alice", active: true }"#
+        );
+    }
+
+    #[test]
+    fn test_deref_and_deref_mut_expose_vec_methods() {
+        let mut stack = Stack { items: vec![1, 2] };
+        stack.push(3);
+        assert_eq!(stack.len(), 3);
+        assert_eq!(stack.pop(), Some(3));
+        assert!(!stack.is_empty());
+    }
+
+    #[test]
+    fn test_transfer_amount() {
+        let mut from = Amount(10.0);
+        let mut to = Amount(2.0);
+        transfer_amount(&mut from, &mut to, Amount(3.0)).unwrap();
+        assert!((from.0 - 7.0).abs() < f64::EPSILON);
+        assert!((to.0 - 5.0).abs() < f64::EPSILON);
+    }
+
+    #[test]
+    fn test_transfer_amount_with_insufficient_funds_changes_nothing() {
+        let mut from = Amount(1.0);
+        let mut to = Amount(2.0);
+        let err = transfer_amount(&mut from, &mut to, Amount(3.0)).unwrap_err();
+        assert!(matches!(err, AppError::InsufficientFundsError));
+        assert_eq!(err.to_string(), "Insufficient funds");
+        assert!((from.0 - 1.0).abs() < f64::EPSILON);
+        assert!((to.0 - 2.0).abs() < f64::EPSILON);
+    }
+
+    #[test]
+    fn test_error_display() {
+        assert_eq!(AppError::DatabaseError.to_string(), "Database error");
     }
 }
