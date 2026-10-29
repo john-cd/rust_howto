@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! The `derive_more` crate extends Rust's built-in derive functionality to
 //! provide more automatic implementations for common traits.

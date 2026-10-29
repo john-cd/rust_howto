@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! A bounded `flume` channel for commands sent to a loop that handles them
 //! once per "tick" (a UI frame, a game loop iteration, a control cycle).

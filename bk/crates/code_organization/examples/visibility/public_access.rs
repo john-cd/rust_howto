@@ -1,6 +1,9 @@
 #![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
-
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! Which items are accessible through nested public and private modules.
 

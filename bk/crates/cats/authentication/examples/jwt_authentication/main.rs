@@ -38,6 +38,10 @@ fn main() -> anyhow::Result<()> {
 }
 
 /// Runs the JWT authentication example with a fallback secret for tests.
+#[allow(
+    clippy::main_recursion,
+    reason = "run() is the shared example runner; main() is the book snippet"
+)]
 pub fn run() -> anyhow::Result<()> {
     unsafe {
         if std::env::var("JWT_SECRET").is_err() {

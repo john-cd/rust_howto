@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! This example shows how to create a simple gRPC client using the `tonic`
 //! crate to interact with the `Greeter` server.

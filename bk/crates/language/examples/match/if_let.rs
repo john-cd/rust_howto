@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! The `if let` syntax allows you to combine `if` and `let`
 //! to handle values that match a specific pattern, while ignoring others.

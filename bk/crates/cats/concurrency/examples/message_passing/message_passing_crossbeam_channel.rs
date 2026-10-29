@@ -29,7 +29,7 @@ fn main() {
     // Spawn a new thread to send a message into the channel.
     // Note that the cloned sender is moved into the thread.
     let producer = thread::spawn(move || {
-        s2.send("Hi!").expect("the message passing crossbeam channel example invariant should hold")
+        s2.send("Hi!").expect("the message passing crossbeam channel example invariant should hold");
     });
 
     // Blocks until receiving the message from the channel.

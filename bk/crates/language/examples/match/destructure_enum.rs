@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! Destructuring an enum in a `match`.
 

@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! Keeps a secret out of logs with a newtype whose `Debug` and `Display`
 //! implementations redact the value, then does the same with `secrecy`.

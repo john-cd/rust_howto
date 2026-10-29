@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! This example defines different types of US coins using an `enum` and then
 //! uses a `match` expression to determine the value of a given coin in cents,

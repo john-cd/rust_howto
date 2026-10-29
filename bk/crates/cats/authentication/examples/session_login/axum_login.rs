@@ -1,5 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! Cookie-based login with `axum-login`, in-memory sessions and permissions.
 //!
@@ -182,7 +186,7 @@ pub fn run() -> anyhow::Result<()> {
         id: 1,
         username: "alice".to_owned(),
         password_hash: hashing::hash("secret")?,
-        permissions: ["admin.read".to_owned()].into_iter().collect(),
+        permissions: std::iter::once("admin.read".to_owned()).collect(),
     };
     let _backend = Backend::new(vec![user])?;
     Ok(())
