@@ -131,7 +131,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#764](https://github.com/john-cd/rust_howto/issues/764) — **P4** — quant/rustquant.rs: finish; review — **DEFERRED — #1283 keeps RustQuant out, and the specified standalone rewrite requires adding the external `statrs` crate; resume when new dependency work is in scope**
 - [#843](https://github.com/john-cd/rust_howto/issues/843) — **P4** — robotics_frameworks/openrr.rs: write — **BLOCKED — upstream describes OpenRR as heavily under development and ROS 2 support as experimental; the current dependency graph includes affected `fast-float` and `serde_with` releases; confirm a portable feature path and native prerequisites**
 - [#845](https://github.com/john-cd/rust_howto/issues/845) — **P4** — Add the Zenoh robotics example I — **BLOCKED — the current workspace dependency graph includes affected `lz4_flex 0.10`; feature/example registration is disabled until the advisory is resolved**
-- [#885](https://github.com/john-cd/rust_howto/issues/885) — **P4** — Finish the Polars example I — **IMPLEMENTED ON DEVELOP; OPEN — focused tests, Clippy, book build, and PR link pending**
 - [#1929](https://github.com/john-cd/rust_howto/issues/1929) — **P4** — Validate the ONNX inference example with ort A — **BLOCKED — ONNX Runtime binary download prerequisite and multi-example chapter work remain**
 
 #### NOW-CODE-05 — Recipe batches with accompanying prose
