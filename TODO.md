@@ -36,6 +36,10 @@
 
 ## In progress
 
+NOW-PROSE delivery (2026-10-29): [PR #2055](https://github.com/john-cd/rust_howto/pull/2055) completes 40 of the 43 issues in this batch. The remaining three native-platform issues are listed below. The Chrome bookmark export was excluded at the user's request and moved to [#2054](https://github.com/john-cd/rust_howto/issues/2054).
+
+Validation: complete `cd bk && just bb`; draft/future HTML rendering; scoped reference audit (168 pages, no unresolved labels); Markdown/configuration and Cargo formatting; Markdown lint; spelling; strict focused/all-target Clippy and tests for the affected portable, GUI, GPU, robotics, finance, geo, media, Wasm, cloud and database packages. Native Linux checks cover GTK/Slint, OpenCV, Linux APIs, Wasmer/Wasmtime, cloud and Oracle; Windows Oracle/Sibyl and the separate Diesel/SQLite feature both pass. External-service and interactive tests remain explicitly ignored where documented. GPU hardware tests and the model-dependent OpenCV test ran successfully. Docker's API became unresponsive, so the two new Docker tests compiled but were not executed. The native macOS and FreeBSD workflow is present; no passing native run is claimed. These results supersede the older book/tooling environment blockers recorded below. Global reference diagnostics and book rendering still report existing unrelated warnings.
+
 Linux tooling validation (2026-10-27): the previously unavailable `book_tooling` revision `404e8fe0d4adc40517b0b40a2536cc6833b29059` is published on `codex/rust-howto-pin-404e8fe`. In native Linux slot `a`, `tools` all-features Clippy passed and `just nta` passed 159 tests and doctests after isolating the mdBook fixture from the optional Pandoc renderer, surfacing doctest failures, and refreshing the alphabetical index. Full repository and container gates remain outstanding.
 
 Windows tooling validation (2026-10-27): `tools` all-features Clippy and `just nta` passed 159 tests and doctests with `RUSTC_WRAPPER=''` and `CARGO_INCREMENTAL=1`. The first test attempt failed because the sccache server could not exchange data; the shared cache still needs investigation.
@@ -149,58 +153,24 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-PROSE-01 — Systems, embedded, WebAssembly and virtualization
 
-- [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **PARTIAL ON DEVELOP; OPEN — chapter and #817 sysctl example present; FreeBSD CI, final target/book/reference/spelling validation, and PR link remain**
-- [#434](https://github.com/john-cd/rust_howto/issues/434) — **P4** — os_linux-apis/linux.md: linux: write — **IMPLEMENTED ON DEVELOP; OPEN — chapter and #818 statx example present; Linux test, final book/reference/spelling checks, and PR link pending**
-- [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **PARTIAL ON DEVELOP; OPEN — chapter and safe #819 objc2 example present; later/crates macOS CI inclusion, final native/book/reference/spelling validation, and PR link remain**
-- [#496](https://github.com/john-cd/rust_howto/issues/496) — **P4** — wasm/wasm_standalone_runtimes.md: others: organize/write — **DEFERRED — current support checks for six runtimes and Wasmer/Wasmtime example builds/tests are held for the final validation pass; blocker details are on the issue**
+- [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **IMPLEMENTED; OPEN — native FreeBSD 14.4 CI added; successful FreeBSD Clippy/tests still required**
+- [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **IMPLEMENTED; OPEN — native macOS CI added; successful native API Clippy/tests still required**
 
 #### NOW-PROSE-02 — UI, accessibility, media and rendering
 
-- [#375](https://github.com/john-cd/rust_howto/issues/375) — **P4** — rendering_graphics-api/gpu_abstraction_layers.md: webgpu: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
-- [#377](https://github.com/john-cd/rust_howto/issues/377) — **P4** — rendering/2d_renderers.md: 2d_renderers: write; titles — **BLOCKED — #792 Vger status/compatibility and #793 WebRender disposition unresolved**
-- [#383](https://github.com/john-cd/rust_howto/issues/383) — **P4** — gui/gtk.md: gtk: write — **BLOCKED — GTK 4 development SDK and pkg-config metadata unavailable**
-- [#396](https://github.com/john-cd/rust_howto/issues/396) — **P4** — Write the window creation chapter G — **BLOCKED — #1056 baseview disposition and new softbuffer dependency review pending**
-- [#413](https://github.com/john-cd/rust_howto/issues/413) — **P4** — multimedia/multimedia.md: multimedia: write — **BLOCKED — #805 playback example is unfinished; a distinct cross-media scope remains**
-- [#417](https://github.com/john-cd/rust_howto/issues/417) — **P4** — multimedia_encoding/encoding.md: encoding: write — **BLOCKED — symphonia, hound, and mp4 dependencies are not in the workspace**
-- [#420](https://github.com/john-cd/rust_howto/issues/420) — **P4** — multimedia_images/images.md: images: write — **BLOCKED — required example split and EXIF/oxipng dependency review in #808 are incomplete**
-- [#455](https://github.com/john-cd/rust_howto/issues/455) — **P4** — rendering_engine/rendering_engines.md: rendering_engines: write — **BLOCKED — #955 category pointer decision and #830 example disposition remain unresolved**
-- [#457](https://github.com/john-cd/rust_howto/issues/457) — **P4** — rendering_graphics-api/native_graphics_apis.md: graphics_apis: write — **BLOCKED — required wgpu adapter-info example in #831 remains a stub**
-- [#608](https://github.com/john-cd/rust_howto/issues/608) — **P4** — gpu/index.md: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
-
 #### NOW-PROSE-03 — Science, finance, data processing and visualization
-
-- [#257](https://github.com/john-cd/rust_howto/issues/257) — **P4** — computer-vision/opencv.md: opencv: expand, add example — **BLOCKED — OpenCV/libclang SDKs unavailable in this environment**
-- [#364](https://github.com/john-cd/rust_howto/issues/364) — **P4** — finance/quant.md: quant: write — **DEFERRED — requested `financial`, `rand`, and `rand_distr` examples require new dependencies; skipped under the no-external-dependency constraint**
-- [#474](https://github.com/john-cd/rust_howto/issues/474) — **P4** — science_geo/geo.md: geo: write — **BLOCKED — GeoJSON dependencies and PROJ C library required**
-- [#477](https://github.com/john-cd/rust_howto/issues/477) — **P4** — science_robotics/robot_operating_systems.md: robotics: organize — **BLOCKED — ROS 2 client/example issue #844 pending**
-- [#494](https://github.com/john-cd/rust_howto/issues/494) — **P4** — `visualization/visualization.md`: visualization: write — **BLOCKED — Plotters dependency required for SVG example**
-- [#1207](https://github.com/john-cd/rust_howto/issues/1207) — **P4** — science_robotics/perception_and_sensors.md: write — **PARTIAL ON DEVELOP; BLOCKED — `kiddo` example dependency unavailable**
-- [#1211](https://github.com/john-cd/rust_howto/issues/1211) — **P4** — science_robotics/hardware_integration.md: write — **PARTIAL ON DEVELOP; BLOCKED — `embedded-hal-mock` example dependency unavailable**
 
 #### NOW-PROSE-04 — Publishing, curation and book coverage
 
-- [#1720](https://github.com/john-cd/rust_howto/issues/1720) — **P3** — Curate remaining VS Code, browser and TOREVIEW bookmarks into book content — **BLOCKED — the Chrome bookmarks export (`bookmarks.json`) is absent from this checkout; request the source before further curation**
-- [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **Unprioritized** — Audit references and links in restored book pages A — **OPEN — restored references and the origin1 anchor are fixed; the full URL scan remains; mdbook-scrub strips wikilinks to plain text, and gpu/multimedia/visualization/simulation aliases still need a rendered-link decision; bk/drafts and later lack standalone book configurations**
-
 #### NOW-PROSE-05 — Cloud platforms and containers
-
-- [#576](https://github.com/john-cd/rust_howto/issues/576) — **P4** — cloud/rust_native_cloud_development.md: write — **BLOCKED — Shuttle's official notice says hosted operations are ceasing and its old pricing is stale; the Shuttle-specific example needs a replacement target decision**
-- [#988](https://github.com/john-cd/rust_howto/issues/988) — **P4** — virtualization/containers.md: review/write — **PARTIAL — `containerization.md` is nested under Containers; blocked on #1224's missing Docker client/test dependencies before adding the thin `using_containers.md` sibling and finalizing the section structure**
-- [#1224](https://github.com/john-cd/rust_howto/issues/1224) — **P4** — virtualization/using_containers.md: write / fix — **BLOCKED — required `bollard` and `testcontainers` dependencies are absent; the integration also requires a Docker daemon, as noted in the issue comment**
 
 #### NOW-PROSE-06 — Security and cryptocurrencies
 
 #### NOW-PROSE-07 — Foreign function interfaces - IN PROGRESS
 
-- [#1071](https://github.com/john-cd/rust_howto/issues/1071) — **P4** — development-tools_ffi/flutter.md: write; review in depth — **IMPLEMENTED AND REVIEWED; OPEN — focused checks passed; full book gate and PR link pending**
-- [#1075](https://github.com/john-cd/rust_howto/issues/1075) — **P4** — development-tools_ffi/objc.md: write — **IMPLEMENTED; OPEN — Windows checks passed; native runtime, full book gate and PR link pending**
+- [#1075](https://github.com/john-cd/rust_howto/issues/1075) — **P4** — development-tools_ffi/objc.md: write — **IMPLEMENTED; OPEN — Objective-C CI added; successful macOS Foundation Clippy/runtime tests still required**
 
 #### NOW-PROSE-08 — Web, networking and databases
-
-- [#290](https://github.com/john-cd/rust_howto/issues/290) — **P3** — database-implementations/databases.md: databases: expand / write — **BLOCKED — requires adding and validating a new `redb` or `fjall` dependency and tempfile-backed example; deferred per request**
-- [#1067](https://github.com/john-cd/rust_howto/issues/1067) — **P3** — database/mssql.md: organize / write — **BLOCKED — Docker CLI is installed, but Docker API access fails with `permission denied`; SQL Server service validation is unavailable**
-- [#1068](https://github.com/john-cd/rust_howto/issues/1068) — **P3** — database/nosql.md: review — **IMPLEMENTED ON LOCAL DEVELOP — focused database Clippy and 9/9 portable tests passed (4 external-service tests skipped); draft lint/spelling and generated crate refs passed; full book gate and PR link pending**
-- [#1069](https://github.com/john-cd/rust_howto/issues/1069) — **P3** — database/oracle.md: write — **BLOCKED — Oracle Instant Client is unavailable (`OCI_LIB_DIR` unset and `sqlplus` absent); Docker API access is denied, so the required local Oracle service cannot be validated**
 
 Validation (2026-10-27, NOW-PROSE-08): focused database Clippy and nextest passed; the test run passed 9 tests and skipped four ignored external-service tests. `dprint check`, `rumdl` across `bk/drafts`, `typos` across the book and future content, and the generated dependency-reference check passed. The local draft book gate remains blocked: Git Bash cannot create its MSYS `BaseNamedObjects` directory, the direct tools release build fails in `aws-lc-sys` with MSVC LNK1114/error 5, and Docker API access is denied. The Windows `just refdefs check` recipe is unavailable; its Linux-only script could not run. Issues remain open because full book/reference gates and PR links are not complete.
 
