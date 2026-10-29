@@ -53,7 +53,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### ACTIVE-CODE-01 — Networking, authentication and email
 
 - [#812](https://github.com/john-cd/rust_howto/issues/812) — **P2** — Finish and locally verify the Pingora reverse-proxy example — **PARTIAL; OPEN — isolated test, strict Clippy, and localhost forwarding pass with the pinned Pingora Tokio 1.54 fix; workspace Cargo gates blocked by #1998; PR link remains required**
-- [#1058](https://github.com/john-cd/rust_howto/issues/1058) — **P4** — Replace the obsolete public WebSocket endpoint in the async-tungstenite example — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
 
 #### ACTIVE-CODE-02 — Databases and service clients
 
@@ -71,7 +70,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### ACTIVE-CODE-07 — Scheduling and sandboxed runtimes
 
-- [#1926](https://github.com/john-cd/rust_howto/issues/1926) — **P4** — Add Wasmtime fuel, memory-limit, and host-function tests — Text processing, automation, and local runtimes chat — **PARTIAL; OPEN — exact-source harness 5/5; Windows workspace test blocked by Wasmer Cranelift compilation**
 
 #### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
 
@@ -152,7 +150,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-09 — Networking, authentication and email
 
-- [#2017](https://github.com/john-cd/rust_howto/issues/2017) — **P3** — Add an offline-testable OAuth 2.0 client-credentials example — **IMPLEMENTED ON DEVELOP; BLOCKED — Windows auth test fails building aws-lc-sys 0.46.0 (NASM absent; cl.exe alignment probe/LNK1114); retry on a supported host**
 
 #### NOW-CODE-10 — Cloud services and SDKs
 
