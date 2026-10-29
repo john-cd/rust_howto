@@ -23,7 +23,7 @@ Choose a streaming parser when documents may be large or should be processed inc
 [`quick-xml`][c~quick-xml~docs]↗{{hi:quick-xml}} is a high-performance XML reader and writer. [`quick-xml`][c~quick-xml~docs]↗{{hi:quick-xml}} is fast for streaming.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/examples/xml/quick-xml.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/xml/quick_xml.rs:example}}
 ```
 
 ## `xmlparser` {#xmlparser}

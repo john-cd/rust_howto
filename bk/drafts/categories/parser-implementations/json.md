@@ -35,7 +35,7 @@ Use `serde_json` for the usual Serde-based typed or dynamic JSON data model. Cho
 [`simd-json`][c~simd-json~docs]↗{{hi:simd-json}} is a high-performance JSON parser based on a port of [`simdjson`][simdjson~repo]↗{{hi:simdjson}}.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/examples/json/simd-json.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/json/simd_json.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}

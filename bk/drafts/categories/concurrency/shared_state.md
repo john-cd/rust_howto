@@ -25,7 +25,7 @@ Use `Arc::make_mut` when updates are infrequent and readers can keep an older sn
 [`Rc::make_mut`][c~std::rc::Rc::make_mut~docs]↗{{hi:std::rc::Rc::make_mut}} and [`Arc::make_mut`][c~std::sync::Arc::make_mut~docs]↗{{hi:std::rc::Arc::make_mut}} can provide clone-on-write functionality.
 
 ```rust,editable
-{{#include ../../crates/cats/concurrency/examples/shared_state/arc_make_mut.rs:example}}
+{{#include ../../../crates/cats/concurrency/examples/shared_state/arc_make_mut.rs:example}}
 ```
 
 ## Maintain Global Mutable State {#global-mutable-state}

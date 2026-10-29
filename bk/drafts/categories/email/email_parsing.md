@@ -10,7 +10,9 @@ An Internet email message has headers, a blank line, and a body. [RFC 5322][rfc~
 
 [`mailparse`][c~mailparse~docs]↗{{hi:mailparse}} parses raw message bytes into a `ParsedMail` tree. The parsed value borrows the input bytes, so keep the input alive while reading headers and bodies. It does not connect to a mailbox or establish who sent the message.
 
-{{#example mailparse}}
+```rust,editable
+{{#include ../../../crates/cats/email/examples/mailparse.rs:example}}
+```
 
 The example reads an optional `Subject` header and walks the MIME tree to find a `text/plain` leaf. `get_body()` decodes the part's transfer encoding and character set into a Rust `String`. For binary attachments, work with the decoded bytes instead of treating them as text.
 

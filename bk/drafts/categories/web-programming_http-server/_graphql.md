@@ -2,7 +2,7 @@
 
 # GraphQL
 
-{{#include graphql.incl.md}}
+{{#include _graphql.incl.md}}
 
 GraphQL is a query language and execution model for APIs. A schema defines the available types and fields; a client selects the fields it needs in each request. Servers commonly expose a GraphQL schema at one HTTP endpoint, though GraphQL can also be transported over other protocols.
 

@@ -44,10 +44,10 @@ Keep chapter paths relative to the summary file and add new chapters there as pa
 
 ## Include Shared Content and Anchored Examples {#includes-and-anchors}
 
-Use `{{#include path/to/file.md}}` to share Markdown and `{{#include path/to/example.rs:example}}` to insert a named region from a source file. Include paths are relative to the Markdown file containing the directive. In the source file, mark the region with matching anchors, for example `// ANCHOR: example` and `// ANCHOR_END: example` in Rust. This keeps the example in the book synchronized with compilable code.
+Use `{{#{{#include}} path/to/file.md}}` to share Markdown and `{{#{{#include}} path/to/example.rs:example}}` to insert a named region from a source file. Include paths are relative to the Markdown file containing the directive. In the source file, mark the region with matching anchors, for example `// ANCHOR: example` and `// ANCHOR_END: example` in Rust. This keeps the example in the book synchronized with compilable code.
 
 ```rust
-{{#include path/to/example.rs:example}}
+{{#{{#include}} path/to/example.rs:example}}
 ```
 
 mdBook also supports numeric line ranges and `rustdoc_include`, which hides setup code initially while keeping it available to Rustdoc. See [including files][book~mdbook~including-files]↗ and [Rust code block attributes][book~mdbook~code-block-attributes]↗.

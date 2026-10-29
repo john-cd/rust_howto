@@ -2,7 +2,7 @@
 
 # Aerospace Simulation
 
-{{#include simulation.incl.md}}
+{{#include aerospace_simulation.incl.md}}
 
 ## Simulate a Rocket Launch {#rocket-launch-simulation}
 

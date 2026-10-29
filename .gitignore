@@ -11,6 +11,10 @@ mdbook-scrub.log
 
 /build/
 
+# Local previews of unpublished books.
+/later/book/
+/bk/drafts/book/
+
 /.sccache/
 
 # Local snapshot of registered worktrees and build-cache usage.

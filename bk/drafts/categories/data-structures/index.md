@@ -22,51 +22,51 @@ Refer to the [[language | Language]] and [[standard-library | Standard Library]]
 
 ## Strings
 
-{{#include strings.incl.md}}
+{{#include ../../../src/categories/data-structures/strings.incl.md}}
 
 ## Vectors
 
-{{#include vectors.incl.md}}
+{{#include ../../../src/categories/data-structures/vectors.incl.md}}
 
 ## Stacks and Queues
 
-{{#include stacks_and_queues.incl.md}}
+{{#include ../../../src/categories/data-structures/stacks_and_queues.incl.md}}
 
 ## Stack-allocated Data Structures
 
-{{#include stack-allocated.incl.md}}
+{{#include ../../../src/categories/data-structures/stack-allocated.incl.md}}
 
 ## Hashmaps
 
-{{#include hashmaps.incl.md}}
+{{#include ../../../src/categories/data-structures/hashmaps.incl.md}}
 
 ## B-Trees
 
-{{#include b-trees.incl.md}}
+{{#include ../../../src/categories/data-structures/b-trees.incl.md}}
 
 ## HashMap's Friends: `IndexMap`, `MultiMap`, and `SlotMap`
 
-{{#include other_maps.incl.md}}
+{{#include ../../../src/categories/data-structures/other_maps.incl.md}}
 
 ## Binary Heaps / Priority Queues
 
-{{#include binary_heaps.incl.md}}
+{{#include ../../../src/categories/data-structures/binary_heaps.incl.md}}
 
 ## Graphs
 
-{{#include graphs.incl.md}}
+{{#include ../../../src/categories/data-structures/graphs.incl.md}}
 
 ## Linked Lists
 
-{{#include linked_lists.incl.md}}
+{{#include ../../../src/categories/data-structures/linked_lists.incl.md}}
 
 ## Bit Arrays
 
-{{#include bit_arrays.incl.md}}
+{{#include ../../../src/categories/data-structures/bit_arrays.incl.md}}
 
 ## Unique Identifiers
 
-{{#include unique_identifiers.incl.md}}
+{{#include ../../../src/categories/data-structures/unique_identifiers.incl.md}}
 
 ## Perfect Hash Functions
 
@@ -185,7 +185,7 @@ See [[functional_programming | Functional Programming]].
 - [[algorithms | Algorithms]].
 - [[rust-patterns | Rust Patterns]].
 
-{{#include refs.incl.md}}
+{{#include ../../../src/categories/data-structures/refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">

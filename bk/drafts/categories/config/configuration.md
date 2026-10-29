@@ -14,7 +14,7 @@
 - Environment variables, string sources, and programmatic overrides.
 
 ```rust,editable
-{{#include ../../../crates/cats/config/examples/configuration/config_hierarchical.rs:example}}
+{{#include ../../../crates/cats/config/examples/configuration/config_hierarchical/mod.rs:example}}
 ```
 
 ### Load Configuration Settings into a Singleton {#load_configuration_into_a_singleton}

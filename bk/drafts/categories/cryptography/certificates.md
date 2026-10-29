@@ -33,7 +33,7 @@ PEM (Privacy Enhanced Mail) is a text-based format (Base64 encoded DER) commonly
 [`pem-rfc7468`][c~pem-rfc7468~docs]↗{{hi:pem-rfc7468}} implements PEM Encoding (RFC 7468) for PKIX, PKCS, and CMS Structures, implementing a strict subset of the original Privacy-Enhanced Mail encoding intended specifically for use with cryptographic keys, certificates, and other messages. It provides a [`#![no_std]`][book~rust-reference~no_std]-friendly, constant-time implementation suitable for use with cryptographic private keys.
 
 ```rust,editable
-{{#include ../../../crates/cats/cryptography/examples/certs/pem-rfc7468.rs:example}}
+{{#include ../../../crates/cats/cryptography/examples/certs/pem_rfc7468.rs:example}}
 ```
 
 ## Read a PEM certificate file {#read-pem-file}

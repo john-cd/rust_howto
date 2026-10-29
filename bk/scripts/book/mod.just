@@ -20,6 +20,14 @@ _default:
 
 alias bb := buildbook
 
+# Render unpublished draft chapters without adding them to the published book.
+@drafts: _release_mbdbook-scrub
+    mdbook build {{ quote(root + "/drafts") }} --dest-dir {{ quote(root + "/book/drafts") }}
+
+# Render future chapters with their own summary and the shared reference definitions.
+@future: _release_mbdbook-scrub
+    mdbook build {{ quote(root + "/../later") }} --dest-dir {{ quote(root + "/book/future") }}
+
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
 @buildbook: _release_mbdbook-scrub _install-mdbook-indexing refdefs-check _generate-index-category
     just --justfile "{{ source_directory() }}/../bash/mod.just" mdbook-build

@@ -34,13 +34,13 @@ Set up tasks, timers, and I/O on Tokio, the runtime used by many Rust services, 
 
 Choose bounded or unbounded channels for communication between asynchronous tasks in [Async Channels](async_channels.md).
 
-{{#include async-channels.incl.md}}
+{{#include async_channels.incl.md}}
 
 ## Async Traits {#async-traits}
 
 Expose asynchronous behavior through traits and choose an approach that fits the API's compatibility needs in [Async Traits](async_traits.md).
 
-{{#include async-traits.incl.md}}
+{{#include async_traits.incl.md}}
 
 ## Streams {#streams}
 

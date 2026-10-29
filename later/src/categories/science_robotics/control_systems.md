@@ -64,7 +64,9 @@ Collision avoidance, trajectory optimization.
 
 [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} offers pathfinding, flow, and graph algorithms.
 
-{{#example pathfinding}}
+```rust,editable
+{{#include ../../../../bk/crates/cats/algorithms/examples/graph/pathfinding_astar.rs:example}}
+```
 
 ## `rrt` {#rrt}
 

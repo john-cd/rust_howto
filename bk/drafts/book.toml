@@ -1,0 +1,24 @@
+[book]
+title = "The Rust How-to Book: Draft Chapters"
+language = "en"
+src = "."
+
+[build]
+create-missing = false
+
+[rust]
+edition = "2024"
+
+[preprocessor.scrub]
+do-not-include-hidden-chapters = false
+command = "../../bin/mdbook-scrub"
+before = ["links"]
+
+[preprocessor.links]
+after = ["scrub"]
+
+[preprocessor.directives]
+command = "../../bin/mdbook-scrub --stage directives"
+after = ["links"]
+
+[output.html]

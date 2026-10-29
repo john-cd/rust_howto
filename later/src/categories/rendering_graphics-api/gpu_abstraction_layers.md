@@ -2,7 +2,7 @@
 
 # GPU Abstraction Layers
 
-{{#include webgpu.incl.md}}
+{{#include gpu_abstraction_layers.incl.md}}
 
 Libraries that provide a [cross-platform][p~cross-platform] abstraction over native graphics APIs.
 

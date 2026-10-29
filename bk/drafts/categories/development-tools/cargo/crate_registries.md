@@ -78,7 +78,7 @@ See the [Cargo registry reference][book~cargo~registries]↗, [configuration ref
 The `crates-io` crate provides helpers for querying crates.io metadata through its web API. It is an API client, not a way to configure Cargo's package source.
 
 ```rust,editable
-{{#include ../../../../crates/cats/development_tools/examples/crate_registries/crates-io.rs:example}}
+{{#include ../../../../crates/cats/development_tools/examples/crate_registries/crates_io.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}

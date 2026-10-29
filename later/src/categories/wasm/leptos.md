@@ -33,7 +33,7 @@ trunk build --release
 The example uses a signal for the counter state and `view!` to declare the interface. Event handlers update the signal; reactive expressions read it to update the displayed count and whether it is even or odd.
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming_http_server/examples/leptos.rs:example}}
+{{#include ../../../../bk/crates/cats/web_programming_http_server/examples/leptos.rs:example}}
 ```
 
 ### Server-side rendering and hydration {#server-side-rendering}

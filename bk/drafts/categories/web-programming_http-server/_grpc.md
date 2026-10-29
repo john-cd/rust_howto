@@ -2,7 +2,7 @@
 
 # gRPC
 
-{{#include grpc.incl.md}}
+{{#include _grpc.incl.md}}
 
 ## Implement gRPC {#tonic}
 

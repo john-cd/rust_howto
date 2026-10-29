@@ -2,7 +2,7 @@
 
 # Hyper
 
-{{#include hyper.incl.md}}
+{{#include _hyper.incl.md}}
 
 ## Implement an HTTP API with `hyper` {#hyper}
 

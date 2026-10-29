@@ -66,7 +66,7 @@ fn main() {
 - [[b-trees | B-Trees]].
 - [[algorithms | Algorithms]].
 
-{{#include refs.incl.md}}
+{{#include ../../../src/categories/data-structures/refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">

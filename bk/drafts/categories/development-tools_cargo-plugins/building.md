@@ -73,7 +73,7 @@ The following example executes shell commands and interacts with the file system
 - File removal.
 
 ```rust,editable
-{{#include ../../../crates/cats/development_tools_cargo-plugins/examples/building/xshell.rs}}
+{{#include ../../../crates/cats/development_tools_cargo_plugins/examples/building/xshell.rs}}
 ```
 
 ## Related Topics {#related-topics .skip}

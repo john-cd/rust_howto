@@ -15,7 +15,7 @@
 Use its event stream when processing Markdown without retaining a full syntax tree.
 
 ```rust,editable
-{{#include ../../../crates/cats/parser_implementations/examples/markdown/pulldown-cmark.rs:example}}
+{{#include ../../../crates/cats/parser_implementations/examples/markdown/pulldown_cmark.rs:example}}
 ```
 
 ## `markdown` {#markdown}

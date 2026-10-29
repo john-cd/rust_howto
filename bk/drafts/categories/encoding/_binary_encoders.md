@@ -2,7 +2,7 @@
 
 # Binary Encoders
 
-{{#include binary_encoders.incl.md}}
+{{#include _binary_encoders.incl.md}}
 
 ## `bincode` {#bincode}
 

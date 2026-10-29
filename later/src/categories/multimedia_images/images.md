@@ -58,7 +58,7 @@ Image Processing Fundamentals:
 
 Image Analysis:
 
-{{#example imageproc}}
+For additional image-analysis operations, see the [`imageproc` API documentation][c~imageproc~docs].
 
 ## GPU-accelerated Image Processing {#gpu_accelerated_image_processing}
 

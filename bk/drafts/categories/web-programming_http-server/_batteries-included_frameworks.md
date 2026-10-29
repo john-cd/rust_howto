@@ -4,7 +4,7 @@
 
 Choose a batteries-included framework or architecture when you want common application components and conventions provided up front. Loco and Cot are application frameworks; Rust on Nails is a full-stack architecture and project template, not a framework crate. Compare their current releases, Rust version requirements, generated structure, and included services before adopting one.
 
-{{#include batteries-included_frameworks.incl.md}}
+{{#include _batteries-included_frameworks.incl.md}}
 
 ## Loco {#loco}
 
