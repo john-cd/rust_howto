@@ -25,7 +25,7 @@
 ### Scripts, Tools
 
 - [x] add just command for cargo fmt-toml; update Dockerfile and install scripts
-- [/] verify that all .sh files can run in Git Bash (all 60 passed `bash -n`; runtime-dependent commands are deferred).
+- [x] verify that all .sh files can run in Git Bash (#2071; follow-ups in #2072)
 
 ### Code Examples
 
