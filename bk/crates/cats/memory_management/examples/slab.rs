@@ -63,4 +63,21 @@ mod tests {
     fn test_slab_example_entry_point() {
         main();
     }
+
+    /// Keys are reused after removal, and lookups of stale keys fail.
+    #[test]
+    fn keys_are_reused_after_removal() {
+        let mut slab: Slab<String> = Slab::new();
+        let a = slab.insert("hello".to_owned());
+        let b = slab.insert("world".to_owned());
+        assert_eq!(slab.remove(a), "hello");
+        assert!(slab.get(a).is_none());
+        assert!(!slab.contains(a));
+        assert_eq!(slab.len(), 1);
+        let c = slab.insert("new entry".to_owned());
+        assert_eq!(c, a);
+        assert_eq!(slab[b], "world");
+        assert_eq!(slab.iter().count(), 2);
+        assert!(Slab::<i32>::with_capacity(10).capacity() >= 10);
+    }
 }

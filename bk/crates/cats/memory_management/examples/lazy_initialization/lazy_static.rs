@@ -103,4 +103,19 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// The configuration and derived count are consistent, and the counter
+    /// can be locked.
+    #[test]
+    fn config_and_counter_are_consistent() -> anyhow::Result<()> {
+        assert_eq!(CONFIG.get("host").map(String::as_str), Some("localhost"));
+        assert_eq!(CONFIG.get("port").map(String::as_str), Some("8080"));
+        assert_eq!(CONFIG.get("missing"), None);
+        assert_eq!(*COUNT, CONFIG.len());
+        let counter = COUNTER
+            .lock()
+            .map_err(|_| anyhow!("counter mutex poisoned"))?;
+        assert!(*counter >= 0);
+        Ok(())
+    }
 }

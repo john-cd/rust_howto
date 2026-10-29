@@ -24,4 +24,18 @@ mod tests {
     fn initializes_on_first_access() {
         main();
     }
+
+    /// The initializer runs only on first access, and only once.
+    #[test]
+    fn initializer_runs_once_and_lazily() {
+        let calls = std::cell::Cell::new(0);
+        let cell = LazyCell::new(|| {
+            calls.set(calls.get() + 1);
+            7
+        });
+        assert_eq!(calls.get(), 0);
+        assert_eq!(*cell, 7);
+        assert_eq!(*cell, 7);
+        assert_eq!(calls.get(), 1);
+    }
 }

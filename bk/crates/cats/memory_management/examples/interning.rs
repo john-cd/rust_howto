@@ -78,4 +78,16 @@ mod tests {
     fn test_interning_example_entry_point() {
         main();
     }
+
+    /// Symbols are stable, distinct per string, and resolve back.
+    #[test]
+    fn interner_deduplicates_and_resolves() {
+        let mut interner = Interner::default();
+        let a = interner.intern("a");
+        let b = interner.intern("b");
+        assert_ne!(a, b);
+        assert_eq!(interner.intern("a"), a);
+        assert_eq!(interner.resolve(b), Some("b"));
+        assert_eq!(interner.resolve(Symbol(99)), None);
+    }
 }

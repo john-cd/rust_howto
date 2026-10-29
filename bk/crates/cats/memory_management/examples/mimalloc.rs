@@ -44,4 +44,12 @@ mod tests {
     fn test_mimalloc_example_entry_point() {
         main();
     }
+
+    /// Allocations through the global allocator behave normally.
+    #[test]
+    fn allocator_serves_large_vectors() {
+        let v = vec![7_u8; 1024 * 1024];
+        assert_eq!(v.len(), 1024 * 1024);
+        assert!(v.iter().all(|&b| b == 7));
+    }
 }

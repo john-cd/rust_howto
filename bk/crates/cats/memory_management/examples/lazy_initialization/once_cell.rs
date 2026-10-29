@@ -33,4 +33,13 @@ mod tests {
     fn test_once_cell_example_entry_point() {
         main();
     }
+
+    /// `get_or_init` keeps the first value and ignores later initializers.
+    #[test]
+    fn first_initialization_wins() {
+        let cell = OnceCell::new();
+        assert_eq!(cell.get_or_init(|| 1), &1);
+        assert_eq!(cell.get_or_init(|| 2), &1);
+        assert_eq!(cell.set(3), Err(3));
+    }
 }

@@ -27,4 +27,14 @@ mod tests {
     fn initializes_shared_value() {
         main();
     }
+
+    /// A second initialization attempt is rejected.
+    #[test]
+    fn rejects_second_initialization() {
+        let lock = OnceLock::new();
+        assert!(lock.get().is_none());
+        assert_eq!(lock.set(1), Ok(()));
+        assert_eq!(lock.set(2), Err(2));
+        assert_eq!(lock.get(), Some(&1));
+    }
 }

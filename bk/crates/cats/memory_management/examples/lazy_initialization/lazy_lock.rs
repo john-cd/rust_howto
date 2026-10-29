@@ -28,4 +28,12 @@ mod tests {
     fn initializes_shared_global_data() {
         main();
     }
+
+    /// The global map holds exactly the configured entries.
+    #[test]
+    fn config_holds_expected_entries() {
+        assert_eq!(CONFIG.get("port"), Some(&"8080"));
+        assert_eq!(CONFIG.get("missing"), None);
+        assert_eq!(CONFIG.len(), 2);
+    }
 }

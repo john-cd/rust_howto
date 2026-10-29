@@ -60,4 +60,21 @@ mod tests {
     fn test_bumpalo_example_entry_point() {
         main();
     }
+
+    /// Arena allocations are readable, contiguous and tracked in the byte
+    /// count.
+    #[test]
+    fn arena_allocations_hold_their_values() {
+        let bump = Bump::new();
+        let before = bump.allocated_bytes();
+        let x = bump.alloc(42_i32);
+        let s = bump.alloc_str("Hello, bumpalo!");
+        let nums = bump.alloc_slice_copy(&[1_u32, 2, 3, 4, 5]);
+        *x += 1;
+        assert_eq!(*x, 43);
+        assert_eq!(s, "Hello, bumpalo!");
+        assert_eq!(nums, &[1, 2, 3, 4, 5]);
+        assert!(bump.allocated_bytes() >= before);
+        assert!(bump.allocated_bytes() > 0);
+    }
 }

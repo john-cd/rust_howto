@@ -74,4 +74,16 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Allocator statistics are readable after the example has run.
+    #[cfg(not(target_env = "msvc"))]
+    #[test]
+    fn reports_allocated_memory() -> anyhow::Result<()> {
+        use tikv_jemalloc_ctl::epoch;
+        use tikv_jemalloc_ctl::stats;
+        let v: Vec<u8> = vec![1; 4 << 20];
+        epoch::advance()?;
+        assert!(stats::allocated::read()? >= v.len());
+        Ok(())
+    }
 }

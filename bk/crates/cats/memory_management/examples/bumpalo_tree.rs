@@ -114,4 +114,28 @@ mod tests {
     fn test_bumpalo_tree_example_entry_point() {
         main();
     }
+
+    /// Inserting keeps the keys ordered, ignores duplicates, and shares old
+    /// nodes so the original tree is unchanged.
+    #[test]
+    fn insert_is_persistent_and_ordered() {
+        let bump = Bump::new();
+        let mut root = None;
+        for key in [5, 2, 8] {
+            root = Some(insert(&bump, root, key));
+        }
+        let old = root;
+        let new = Some(insert(&bump, old, 1));
+        let again = Some(insert(&bump, new, 1));
+
+        let mut keys = Vec::new();
+        in_order(old, &mut keys);
+        assert_eq!(keys, vec![2, 5, 8]);
+        keys.clear();
+        in_order(again, &mut keys);
+        assert_eq!(keys, vec![1, 2, 5, 8]);
+        keys.clear();
+        in_order(None, &mut keys);
+        assert!(keys.is_empty());
+    }
 }

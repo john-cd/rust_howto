@@ -89,4 +89,32 @@ mod tests {
     fn test_seize_example_entry_point() {
         main();
     }
+
+    /// A retired value is dropped when the collector is dropped.
+    #[test]
+    fn retired_value_is_reclaimed() {
+        use std::sync::atomic::AtomicUsize;
+
+        static DROPPED: AtomicUsize = AtomicUsize::new(0);
+        struct Tracked(i32);
+        impl Drop for Tracked {
+            fn drop(&mut self) {
+                DROPPED.fetch_add(1, Ordering::SeqCst);
+            }
+        }
+
+        let collector = Collector::new();
+        let ptr = Box::into_raw(Box::new(Tracked(5)));
+        let shared = AtomicPtr::new(ptr);
+        {
+            let guard = collector.enter();
+            let raw = guard.protect(&shared, Ordering::Acquire);
+            // SAFETY: `raw` is non-null and protected by `guard`.
+            assert_eq!(unsafe { (*raw).0 }, 5);
+        }
+        // SAFETY: no other thread can reach `ptr`.
+        unsafe { collector.retire(ptr, seize::reclaim::boxed::<Tracked>) };
+        drop(collector);
+        assert_eq!(DROPPED.load(Ordering::SeqCst), 1);
+    }
 }

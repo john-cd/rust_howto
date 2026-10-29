@@ -49,4 +49,11 @@ mod tests {
     fn test_main_entry_point() {
         main();
     }
+
+    /// Unknown users have no privileges.
+    #[test]
+    fn unknown_user_has_no_access() {
+        assert_eq!(PRIVILEGES.get("Nobody"), None);
+        assert_eq!(PRIVILEGES.len(), 2);
+    }
 }
