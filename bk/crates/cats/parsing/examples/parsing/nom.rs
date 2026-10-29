@@ -63,4 +63,36 @@ mod tests {
     fn test_nom_example_entry_point() {
         main();
     }
+
+    /// A single number is parsed.
+    #[test]
+    fn parses_one_number() {
+        assert_eq!(parse_number("42abc"), Ok(("abc", 42)));
+    }
+
+    /// Non-digits are rejected, and so is an out-of-range number.
+    #[test]
+    fn rejects_non_numbers() {
+        assert!(parse_number("abc").is_err());
+        assert!(parse_number("99999999999").is_err());
+    }
+
+    /// Comma-separated numbers are parsed, leaving the unparsed rest.
+    #[test]
+    fn parses_a_list() {
+        assert_eq!(
+            parse_comma_separated_numbers("1,2,3,4,5"),
+            Ok(("", vec![1, 2, 3, 4, 5]))
+        );
+        assert_eq!(
+            parse_comma_separated_numbers("1,2,x"),
+            Ok((",x", vec![1, 2]))
+        );
+    }
+
+    /// An empty input yields an empty list.
+    #[test]
+    fn empty_input_gives_an_empty_list() {
+        assert_eq!(parse_comma_separated_numbers(""), Ok(("", vec![])));
+    }
 }
