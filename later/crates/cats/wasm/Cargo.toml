@@ -62,12 +62,14 @@ tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 tonic = "0.14.7"
 tonic-prost = "0.14.7"
 wasm-bindgen = "0.2.129"
+wasmer = { workspace = true, optional = true }
 wasmtime = { version = "50.0.0", optional = true } # Heavy compile
 wat = { version = "1.262.0", optional = true }
 web-sys = { version = "0.3.106", features = ["Window"] }
 yew = { version = "0.23.0", features = ["csr", "ssr"] }
 
 [features]
+wasmer = ["dep:wasmer"]
 wasmtime = ["dep:wasmtime", "dep:wat", "dep:blake3"]
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]

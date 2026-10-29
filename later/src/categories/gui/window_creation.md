@@ -4,6 +4,8 @@
 
 {{#include window_creation.incl.md}}
 
+Window libraries create native windows and deliver input and lifecycle events. They do not draw your interface. Pair them with `wgpu`, `softbuffer`, `pixels`, or an OpenGL context from `glutin`, or choose a GUI toolkit that manages both jobs.
+
 ## `winit` {#winit}
 
 [![winit][c~winit~docs~badge]][c~winit~docs] [![winit~crates.io][c~winit~crates.io~badge]][c~winit~crates.io] [![winit~repo][c~winit~repo~badge]][c~winit~repo] [![winit~lib.rs][c~winit~lib.rs~badge]][c~winit~lib.rs]{{hi:winit}}{{hi:Windowing}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
@@ -22,7 +24,7 @@
 
 "A fork of [`winit`][c~winit~docs]↗{{hi:winit}} by the Tauri project, which adds support for things like system menus that desktop apps need." ([blessed.rs][blessed-rs~website]↗).
 
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/gui/examples/window_creation/tao.rs:example}}
 ```
 
@@ -38,6 +40,18 @@ The `winit` and `baseview` examples are compiled on Windows as well as other sup
 {{#include ../../../crates/cats/gui/examples/window_creation/baseview.rs:example}}
 ```
 
+## Draw Pixels with `softbuffer`
+
+[![softbuffer][c~softbuffer~docs~badge]][c~softbuffer~docs]
+
+`softbuffer` presents CPU-written pixels without requiring a GPU renderer. Create the Winit window after the event loop resumes, retain its surface, resize that surface for the current physical window dimensions, and present a buffer on `RedrawRequested`. Skip zero-sized windows while minimized. Pixels use `0x00RRGGBB`, with an unused high byte.
+
+```rust,noplayground
+{{#include ../../../crates/cats/gui/examples/window_creation/software_pixels.rs:example}}
+```
+
+From `later/crates`, run `cargo run -p gui --example window_creation --features softbuffer -- software-pixels`. This opens a solid blue window; close it to finish. The interactive test is ignored by default, while the example is compiled and linted with the feature enabled.
+
 ## See Also {#see-also .skip}
 
 - [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}} can also be used for windowing and input, but [`winit`][c~winit~docs]↗{{hi:winit}} is often preferred in the Rust ecosystem.
@@ -52,7 +66,3 @@ The `winit` and `baseview` examples are compiled on Windows as well as other sup
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [window_creation: write](https://github.com/john-cd/rust_howto/issues/396)
-</div>

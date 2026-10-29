@@ -7,6 +7,8 @@ use clap::Subcommand;
 
 #[cfg(feature = "baseview")]
 mod baseview;
+#[cfg(feature = "softbuffer")]
+mod software_pixels;
 // Tao's dependency is disabled because its current GTK 3 / glib 0.18 chain is
 // incompatible with the workspace. Keep tao.rs and the book example for a
 // compatible dependency update.
@@ -23,6 +25,9 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+    /// Draws a software pixel buffer in a Winit window.
+    #[cfg(feature = "softbuffer")]
+    SoftwarePixels,
     /// Runs the `baseview` example.
     #[cfg(feature = "baseview")]
     #[command(name = "baseview")]
@@ -38,6 +43,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     if let Some(command) = cli.command {
         match command {
+            #[cfg(feature = "softbuffer")]
+            Commands::SoftwarePixels => software_pixels::run()?,
             #[cfg(feature = "baseview")]
             Commands::Baseview => {
                 baseview::run()?;

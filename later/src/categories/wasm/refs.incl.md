@@ -63,3 +63,10 @@
 [rustc~wasm-simd~docs]: https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html#enabled-webassembly-features
 [rust~core-arch-wasm32~docs]: https://doc.rust-lang.org/core/arch/wasm32/
 [tracing-wasm~docs]: https://docs.rs/tracing-wasm/latest/tracing_wasm/
+[runtime~wasmtime]: https://github.com/bytecodealliance/wasmtime
+[runtime~wasmer]: https://github.com/wasmerio/wasmer
+[runtime~wasmi]: https://github.com/wasmi-labs/wasmi
+[runtime~wasm3]: https://github.com/wasm3/wasm3
+[runtime~wasmedge]: https://github.com/WasmEdge/WasmEdge
+[runtime~wamr]: https://github.com/wasm-micro-runtime/wasm-micro-runtime
+[runtime~component]: https://docs.rs/wasmtime/50.0.0/wasmtime/component/index.html

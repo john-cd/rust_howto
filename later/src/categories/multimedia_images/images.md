@@ -4,77 +4,63 @@
 
 {{#include images.incl.md}}
 
-[`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} are essential for working with image data.
+Use `image` for buffers and common codecs, `kamadak-exif` to inspect camera metadata, and `oxipng` to recompress PNGs. These recipes generate their own data and do not need downloaded photographs. For parallel processing of a directory of files, use the published [Rayon thumbnail recipe][images~parallel-thumbnails] instead of duplicating its traversal and worker setup here.
 
-## Image Loading and Saving {#image_loading_and_saving}
+## Resize and Crop
 
-[![image][c~image~docs~badge]][c~image~docs] [![image~crates.io][c~image~crates.io~badge]][c~image~crates.io] [![image~repo][c~image~repo~badge]][c~image~repo] [![image~lib.rs][c~image~lib.rs~badge]][c~image~lib.rs]{{hi:image}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~multimedia::encoding][cat~multimedia::encoding~badge]][cat~multimedia::encoding]{{hi:Encoding}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}}
+[![image][c~image~docs~badge]][c~image~docs]
 
-Imaging library. Provides basic image processing and encoders/decoders for common image formats.
-
-- Image Decoding and Encoding.
-- Image Compression.
-
-```rust,editable
-{{#include ../../../crates/cats/multimedia_images/examples/images/images.rs:example}}
-```
-
-Encode an image to PNG and JPEG in memory without writing files:
-
-```rust,editable
-{{#include ../../../crates/cats/multimedia_images/examples/images/convert.rs:example}}
-```
-
-## Image Manipulation {#image_manipulation}
-
-[![image][c~image~docs~badge]][c~image~docs] [![image~crates.io][c~image~crates.io~badge]][c~image~crates.io] [![image~repo][c~image~repo~badge]][c~image~repo] [![image~lib.rs][c~image~lib.rs~badge]][c~image~lib.rs]{{hi:image}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~multimedia::encoding][cat~multimedia::encoding~badge]][cat~multimedia::encoding]{{hi:Encoding}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}}
-
-- Image Filters and Transformations.
-
-Resize and convert an image to grayscale:
+Resize a generated gradient and convert it to grayscale. Choose an interpolation filter for the desired quality and cost; `crop_imm` selects a rectangular region without resizing it.
 
 ```rust,editable
 {{#include ../../../crates/cats/multimedia_images/examples/images/resize.rs:example}}
 ```
 
-Apply a Gaussian blur:
+## Convert Formats
+
+[![image][c~image~docs~badge]][c~image~docs]
+
+Encode an image to PNG and JPEG in memory. JPEG is lossy and does not retain an alpha channel; format conversion can also discard metadata, so preserve metadata explicitly when the application needs it.
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_images/examples/images/convert.rs:example}}
+```
+
+## Apply Filters
+
+[![image][c~image~docs~badge]][c~image~docs]
+
+Apply Gaussian blur to an in-memory image. `imageproc` supplies additional analysis and filtering operations; OpenCV recipes are covered in the [computer vision chapter](../computer-vision/opencv.md).
 
 ```rust,editable
 {{#include ../../../crates/cats/multimedia_images/examples/images/blur.rs:example}}
 ```
 
-## Image Processing {#image_processing}
+## Read EXIF Metadata
 
-[![imageproc~website][c~imageproc~website~badge]][c~imageproc~website] [![imageproc][c~imageproc~docs~badge]][c~imageproc~docs] [![imageproc~crates.io][c~imageproc~crates.io~badge]][c~imageproc~crates.io] [![imageproc~repo][c~imageproc~repo~badge]][c~imageproc~repo] [![imageproc~lib.rs][c~imageproc~lib.rs~badge]][c~imageproc~lib.rs]{{hi:imageproc}}
+[![kamadak-exif][c~kamadak-exif~docs~badge]][c~kamadak-exif~docs]
 
-Image processing operations.
+The Cargo package `kamadak-exif` exposes the Rust crate `exif`. Use `Reader::read_from_container` with a buffered file reader for JPEG/TIFF input. This self-contained example uses `read_raw` on a tiny generated TIFF record and checks the Orientation tag. Reading the tag does not rotate the pixels; orientation-aware display or conversion must apply that transformation separately.
 
-Image Processing Fundamentals:
+```rust,editable
+{{#include ../../../crates/cats/multimedia_images/examples/images/exif_metadata.rs:example}}
+```
 
-- Image Filtering (Blur, Sharpen, Edge Detection).
-- Image Transformations (Resizing, Rotation).
-- Image Compression.
-- Color Space Conversion.
+## Optimize PNGs
 
-Image Analysis:
+[![oxipng][c~oxipng~docs~badge]][c~oxipng~docs]
 
-For additional image-analysis operations, see the [`imageproc` API documentation][c~imageproc~docs].
+`oxipng::optimize_from_memory` changes PNG encoding choices while retaining the image. The test compares every decoded pixel before and after optimization; it does not assume every small input becomes smaller. Metadata stripping is a separate policy choice and is not requested here.
 
-## GPU-accelerated Image Processing {#gpu_accelerated_image_processing}
-
-Low-level [graphics][p~graphics] APIs like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} are often used for displaying images or performing GPU-accelerated image processing.
-See [[rendering_graphics-api | Rendering: Graphics API]].
+```rust,editable
+{{#include ../../../crates/cats/multimedia_images/examples/images/optimize_png.rs:example}}
+```
 
 ## Related Topics {#related-topics .skip}
 
-- Image decoding and encoding.
-- Graphics rendering.
-- Multimedia file formats.
-- GPU and CPU image processing.
+- [Multimedia encoding](../multimedia_encoding/encoding.md).
+- [Computer vision](../computer-vision/index.md).
+- [Graphics APIs](../rendering_graphics-api/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [images: write](https://github.com/john-cd/rust_howto/issues/420)
-</div>

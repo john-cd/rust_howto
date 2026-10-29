@@ -23,7 +23,21 @@ path = "examples/virtualization/main.rs"
 test = true
 
 [dependencies]
+anyhow = { workspace = true, optional = true }
+bollard = { workspace = true, optional = true }
+futures-util = { workspace = true, optional = true }
+testcontainers = { workspace = true, optional = true }
+tokio = { workspace = true, optional = true }
 wasmi = "2.0.0"
+
+[[example]]
+name = "using_containers"
+path = "examples/using_containers/main.rs"
+required-features = ["containers"]
+test = true
+
+[features]
+containers = ["dep:anyhow", "dep:bollard", "dep:futures-util", "dep:testcontainers", "dep:tokio"]
 
 [lints]
 workspace = true

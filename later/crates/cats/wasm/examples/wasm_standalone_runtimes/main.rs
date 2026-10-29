@@ -6,6 +6,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+#[cfg(feature = "wasmer")]
 mod wasmer;
 #[cfg(feature = "wasmtime")]
 mod wasmtime;
@@ -24,6 +25,7 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `wasmer` example.
+    #[cfg(feature = "wasmer")]
     #[command(name = "wasmer")]
     Wasmer,
     /// Runs the `wasmtime` example.
@@ -42,8 +44,9 @@ fn main() -> anyhow::Result<()> {
 
     if let Some(command) = cli.command {
         match command {
+            #[cfg(feature = "wasmer")]
             Commands::Wasmer => {
-                wasmer::run();
+                wasmer::run()?;
             }
             #[cfg(feature = "wasmtime")]
             Commands::Wasmtime => {

@@ -4,81 +4,44 @@
 
 {{#include wasm_runtimes.incl.md}}
 
-## WASM Runtimes {#wasm-runtimes .skip}
+Standalone runtimes execute WebAssembly outside a browser. Wasmtime and Wasmer offer both embedding APIs and command-line tools; smaller interpreters serve different footprint and deployment needs. Choose the required instruction proposals, WASI interfaces, host platforms, and resource limits before selecting a runtime. A compiler backend such as Cranelift is not a complete runtime.
 
-This table focuses on Rust crates that can be used as WebAssembly (WASM) runtimes, meaning they can execute [WASM][p~wasm] bytecode. This is distinct from tools used to _compile_ to [WASM][p~wasm].
+## Compare Runtimes
 
-| Runtime Crate                                                                                            | Description                                                                                 | Key Features                                                    | WASI Support                                                | Embeddable | Notes                                                                                           |
-| -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------- |
-| [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}                                                                     | WASM interpreter written in Rust.                                                           | Interprets WASM bytecode, good for sandboxing and portability.  | Yes (via [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}})           | Yes        | A popular and actively maintained WASM interpreter.                                             |
-| [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}                                                            | A fast and secure runtime for WebAssembly, developed by Mozilla.                            | Ahead-of-time (AOT) compilation for performance, supports WASI. | Yes                                                         | Yes        | Focuses on speed and security.                                                                  |
-| [`cranelift`][c~cranelift~docs]↗{{hi:cranelift}} (used by [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}) | A code generator used by [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} for AOT compilation. | Generates optimized machine code from WASM.                     | N/A (part of [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}) | N/A        | Not a runtime itself, but a crucial component of [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}. |
-| [`rwasm`][c~rwasm~docs]↗{{hi:rwasm}}                                                                     | A lightweight WASM runtime.                                                                 | Small footprint, suitable for embedded systems.                 | Yes                                                         | Yes        | Designed for resource-constrained environments.                                                 |
+This support snapshot was reviewed on October 29, 2026. Core Wasm execution, WASI host imports, and the component model are separate capabilities; support for one does not imply the others.
 
-## Choosing a Runtime {#choosing-a-runtime .skip}
+| Runtime                      | Implementation and embedding API                                | WASI and components                                                                                                                                         | Maintenance and fit                                                                            |
+| ---------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [Wasmtime][runtime~wasmtime] | Rust; Rust and C embedding APIs, JIT/AOT compilation            | `wasmtime-wasi` implements host interfaces; native component-model API with WIT bindings                                                                    | Active Bytecode Alliance project; configurable server/plugin runtime.                          |
+| [Wasmer][runtime~wasmer]     | Rust; Rust and C APIs with selectable compiler backends         | WASI support is provided separately through Wasmer's WASIX integration; check required interfaces rather than assuming Wasmtime component API compatibility | Active project; compiler and host target choices affect portability.                           |
+| [Wasmi][runtime~wasmi]       | Rust interpreter; Rust/C APIs, `no_std` configurations          | WASI Preview 1 through `wasmi_wasi`; do not assume a core module is a component                                                                             | Active interpreter focused on deterministic execution and embedded/plugin use.                 |
+| [Wasm3][runtime~wasm3]       | C interpreter; C API and language bindings including Rust       | WASI subset; check the supported API list and proposals for the selected build                                                                              | Upstream explicitly reports minimal maintenance; evaluate that constraint for new deployments. |
+| [WasmEdge][runtime~wasmedge] | C++; C API and Rust SDK, interpreter/AOT options                | WASI plus optional extensions/plugins; consult the current proposal matrix for component requirements                                                       | Active cloud/edge runtime; native installation and selected plugins matter.                    |
+| [WAMR][runtime~wamr]         | C; C embedding API and Rust bindings; interpreter/AOT/JIT modes | Configurable WASI libc, threads, and other extensions; select interfaces explicitly                                                                         | Active small-footprint runtime; build configuration controls features and size.                |
 
-The [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} runtime, backed by Mozilla, has become very popular and is a strong default choice for many projects.
+## Embed Wasmer {#wasmer}
 
-| Purpose                        | Recommendation                                                                          |
-| ------------------------------ | --------------------------------------------------------------------------------------- |
-| Performance                    | [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} is highly recommended.                    |
-| Sandboxing                     | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} is a good choice.                                  |
-| Cloud/Serverless               | [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} is the most common choice.                |
-| [Embedded][p~embedded] Systems | [`rwasm`][c~rwasm~docs]↗{{hi:rwasm}} is designed for resource-constrained environments. |
+[![wasmer][c~wasmer~docs~badge]][c~wasmer~docs]
 
-Notes:
-
-- [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} is an interpreter, while [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} uses AOT compilation. AOT compilation generally leads to faster execution but may have a longer startup time.
-- WASI support is crucial for running [WASM][p~wasm] outside of the browser, and all the listed runtimes support it.
-- Most of these runtimes are designed to be embeddable into other applications.
-- [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} is generally considered to be very performant due to its AOT compilation.
-- WASM runtimes often prioritize security, as [WASM][p~wasm] is often used to execute untrusted code.
-
-## Code Examples {#code-examples .skip}
-
-### `wasmer` {#wasmer}
-
-[![wasmer][c~wasmer~docs~badge]][c~wasmer~docs]{{hi:wasmer}}
-[![wasmer~crates.io][c~wasmer~crates.io~badge]][c~wasmer~crates.io]
-[![wasmer~repo][c~wasmer~repo~badge]][c~wasmer~repo]
-[![wasmer~lib.rs][c~wasmer~lib.rs~badge]][c~wasmer~lib.rs]
-[![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
-
-[`wasmer`][wasmer~website]↗{{hi:wasmer.io}} is a runtime for executing WebAssembly on the server-side. It supports JIT (Just In Time), AOT (Ahead Of Time) compilation, an experimental interpreter, as well as pluggable compilers. Install with:
-
-```sh
-curl https://get.wasmer.io -sSfL | sh
-```
-
-Test with:
-
-```sh
-wasmer run cowsay "hello world"
-```
-
-You can embed the Wasmer runtime in your code with the Wasmer SDK:
+The optional `wasmer` feature uses Wasmer 7.5's single-pass compiler. This example compiles inline WAT, instantiates a module with no imports, and calls a typed export. Its assertion checks the guest result rather than merely reporting successful instantiation.
 
 ```rust,editable
 {{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmer.rs:example}}
 ```
 
-### `wasmtime` {#wasmtime}
+From `later/crates`, run `cargo test -p wasm --example wasm_standalone_runtimes --features wasmer`. It needs no files, network access, or WASI host implementation.
 
-[![wasmtime][c~wasmtime~docs~badge]][c~wasmtime~docs]{{hi:wasmtime}}
-[![wasmtime~crates.io][c~wasmtime~crates.io~badge]][c~wasmtime~crates.io]
-[![wasmtime~repo][c~wasmtime~repo~badge]][c~wasmtime~repo]
-[![wasmtime~lib.rs][c~wasmtime~lib.rs~badge]][c~wasmtime~lib.rs]
-[![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+## Embed Wasmtime {#wasmtime}
 
-[`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} is a lightweight WebAssembly runtime that is fast, secure, and standards-compliant. Wasmtime runs WebAssembly code outside of the Web, and can be used both as a command-line utility or as a library embedded in a larger application.
+[![wasmtime][c~wasmtime~docs~badge]][c~wasmtime~docs]
 
-Install the [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} CLI with:
+Wasmtime's `Engine` owns compilation configuration, `Module` holds compiled core Wasm, `Linker` supplies host imports, and `Store` holds execution state. The recipe uses inline WAT and checks the result of an exported addition function. Its explicit host callback is the only capability imported by that module.
 
-```sh
-curl https://wasmtime.dev/install.sh -sSf | bash
+```rust,editable
+{{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmtime.rs:example}}
 ```
 
-Compile your Rust source code (here, `hello.rs`) to [WASM][p~wasm], then execute it with [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}:
+Enable the optional `wasmtime` feature to compile and test this recipe. To execute a Rust command with Wasmtime's CLI, install the `wasm32-wasip1` target and compile the command for that target; a browser-targeted `wasm32-unknown-unknown` artifact does not automatically gain WASI imports.
 
 ```sh
 rustup target add wasm32-wasip1
@@ -86,58 +49,31 @@ rustc hello.rs --target wasm32-wasip1
 wasmtime hello.wasm
 ```
 
-[docs.wasmtime.dev][c~wasmtime~docs]↗.
+## Bound Guest Resources {#wasmtime-sandbox}
 
-The [`wasmtime`][c~wasmtime~repo]↗ crate is a high-level API to expose the Wasmtime runtime. It is useful for embedding WebAssembly into your code and interacting with WebAssembly modules or WebAssembly components. For example, you can compile WebAssembly, create instances, and call functions.
-
-```rust,editable
-{{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmtime.rs:example}}
-```
-
-### Sandbox Untrusted Code {#wasmtime-sandbox}
-
-[![wasmtime][c~wasmtime~docs~badge]][c~wasmtime~docs]{{hi:wasmtime}}
-[![wasmtime~crates.io][c~wasmtime~crates.io~badge]][c~wasmtime~crates.io]
-[![wasmtime~repo][c~wasmtime~repo~badge]][c~wasmtime~repo]
-[![wasmtime~lib.rs][c~wasmtime~lib.rs~badge]][c~wasmtime~lib.rs]
-[![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
-
-[`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} can run plugins or generated code inside your process with strict limits:
-
-- **Fuel** (`Config::consume_fuel`, `Store::set_fuel`) bounds CPU use deterministically: an infinite loop traps with `Trap::OutOfFuel`. _Epoch interruption_ is the cheaper, wall-clock alternative, but is not deterministic.
-- **`StoreLimits`** bound the linear memory (and tables, instances): a `memory.grow` past the limit returns -1.
-- **Host functions** registered on a `Linker` are the only capabilities the guest has. This example links no WASI, hence no filesystem or network.
-- **Compiled modules** can be cached by a content hash ([`blake3`][c~blake3~docs]↗{{hi:blake3}}). A `Module` is only valid for an `Engine` with a compatible `Config`; `Module::serialize` supports ahead-of-time (AOT) compilation.
-
-Wasm isolation protects the host's memory, but it does not stop a guest from using all the CPU and memory you allow, nor does it protect against bugs in the runtime. For defense in depth, also isolate at the process level.
+Enable fuel accounting to trap bounded computations that exhaust their budget. Configure `StoreLimits` for linear memory, tables, and instance counts. Epoch interruption offers a different, externally advanced interruption mechanism. No WASI imports are linked by the following sandbox, so it exposes no filesystem or network access.
 
 ```rust,editable
 {{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmtime_sandbox.rs:example}}
 ```
 
-## WebAssembly System Interface (WASI) {#wasi.skip}
+These controls complement runtime updates and process isolation. A guest can consume whatever resources the host permits; never treat basic memory isolation as a complete resource policy.
 
-[`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} provides bindings for the WASI API, enabling your WASM code to interact with the host environment (file system, networking, etc.). In particular, WASI allows you to run WASM code on servers or other environments outside the browser. Used by [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} and [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}.
+## WASI and the Component Model {#wasi}
 
-[`cargo-wasi`][c~cargo-wasi~docs]↗{{hi:cargo-wasi}} is used for compiling to WASI (WebAssembly System Interface), which is useful for running WASM outside of the browser (e.g., on servers or embedded devices).
+WASI defines interfaces that a host implements for its guests. The `wasi` crate describes guest-side bindings; it is not by itself a universal host implementation for every runtime. Match the guest's target and interface versions to the embedding runtime and its host library.
 
-## See Also {#see-also .skip}
-
-- [rustwasm.github.io][rustwasm~website]↗{{hi:rustwasm}}.
+The [Wasmtime component API][runtime~component] uses `Component`, a component-specific `Linker`, and `wasmtime::component::bindgen!` to generate Rust bindings from a WIT world. This API differs from the core `Module` and `Linker` used above. Use it when the application needs typed component interfaces rather than inventing a core-Wasm function ABI.
 
 ## Related Topics {#related-topics .skip}
 
-- [[wasm | WASM]].
-- [[wasm_development | WASM Development]].
-- [[wasm_basics | WASM Basics]].
-- [[cloud | Cloud]].
-- [[embedded | Embedded Systems]].
+- [WebAssembly overview](index.md) and [development tools](wasm_development.md).
+- [Cloud development](../../other/cloud/rust_native_cloud_development.md).
+- [Virtualization](../virtualization/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [sandbox example](https://github.com/john-cd/rust_howto/issues/1926)
-  [others: organize/write](https://github.com/john-cd/rust_howto/issues/496) need full review
-  cover [`wasmer`][c~wasmer~docs]↗{{hi:wasmer}} in intro
+  [Sandbox example follow-up](https://github.com/john-cd/rust_howto/issues/1926).
 </div>

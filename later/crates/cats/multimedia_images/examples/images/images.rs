@@ -104,7 +104,8 @@ mod tests {
         assert_eq!(img[(0, 0)], Rgb([0, 0, 0]));
     }
 
-    /// Writes the gradient to a temporary file instead of parsing the test harness arguments.
+    /// Writes the gradient to a temporary file instead of parsing the test
+    /// harness arguments.
     #[test]
     fn test_main_entry_point() -> Result<(), Box<dyn Error + Send + Sync>> {
         let path = std::env::temp_dir().join("rust_howto_gradient.png");

@@ -24,3 +24,11 @@
 [netavark~repo~badge]: https://img.shields.io/badge/netavark-steelblue?logo=github
 [buildkit~repo]: https://github.com/moby/buildkit
 [buildkit~repo~badge]: https://img.shields.io/badge/buildkit-steelblue?logo=github
+[containers~cargo-chef]: https://github.com/LukeMathWalker/cargo-chef
+[containers~distroless]: https://github.com/GoogleContainerTools/distroless
+[containers~cross-compilation]: https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cross-compilation/cross_compilation.md
+[containers~mocking]: https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_testing/mocking.md
+[c~bollard~docs]: https://docs.rs/bollard
+[c~bollard~docs~badge]: https://img.shields.io/crates/v/bollard?label=bollard
+[c~testcontainers~docs]: https://docs.rs/testcontainers
+[c~testcontainers~docs~badge]: https://img.shields.io/crates/v/testcontainers?label=testcontainers

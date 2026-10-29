@@ -19,12 +19,16 @@ fn main() {
     let small = imageops::resize(&image, 32, 16, FilterType::Lanczos3);
     assert_eq!(small.dimensions(), (32, 16));
 
+    let cropped = imageops::crop_imm(&small, 8, 0, 16, 16).to_image();
+    assert_eq!(cropped.dimensions(), (16, 16));
+
     let gray = DynamicImage::ImageRgb8(small).into_luma8();
     assert_eq!(gray.dimensions(), (32, 16));
     println!("{:?}", gray.dimensions());
 }
 // ANCHOR_END: example
 
+/// Runs the in-memory resize, crop, and grayscale recipe.
 pub fn run() {
     main();
 }

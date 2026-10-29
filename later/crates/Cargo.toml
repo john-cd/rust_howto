@@ -6,13 +6,22 @@ members = ["cats/*", "other"]
 exclude = ["cats/embedded"]
 
 [workspace.dependencies]
+anyhow = "1.0.104"
+bollard = "0.21.1"
 embedded-hal-mock = { version = "0.11.1", default-features = false, features = ["eh1"] }
 financial = "1.1.5"
+futures-util = "0.3.32"
 geojson = { version = "1.0.0", features = ["geo-types"] }
+kamadak-exif = "0.6.1"
 kiddo = { version = "6.3.0", default-features = false }
+oxipng = { version = "10.2.1", default-features = false }
 rand = "0.10.1"
 rand_distr = "0.6.0"
 rstar = "0.13.0"
+softbuffer = "0.4.8"
+testcontainers = "0.28.0"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net", "io-util", "time"] }
+wasmer = { version = "7.5.0", default-features = false, features = ["sys", "singlepass", "wat"] }
 
 [workspace.package]
 version = "0.1.2"

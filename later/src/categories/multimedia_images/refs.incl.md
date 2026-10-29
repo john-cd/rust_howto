@@ -11,3 +11,8 @@
 [kamadak-exif~repo]: https://github.com/kamadak/exif-rs
 [oxipng~repo]: https://github.com/oxipng/oxipng
 [zune-image~repo]: https://github.com/etemesi254/zune-image
+[c~kamadak-exif~docs]: https://docs.rs/kamadak-exif
+[c~kamadak-exif~docs~badge]: https://img.shields.io/crates/v/kamadak-exif?label=kamadak-exif
+[c~oxipng~docs]: https://docs.rs/oxipng
+[c~oxipng~docs~badge]: https://img.shields.io/crates/v/oxipng?label=oxipng
+[images~parallel-thumbnails]: https://github.com/john-cd/rust_howto/blob/develop/bk/crates/cats/concurrency/examples/data_parallelism/rayon_thumbnails.rs

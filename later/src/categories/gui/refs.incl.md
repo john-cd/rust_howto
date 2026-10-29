@@ -87,3 +87,5 @@
 [c~tinyfiledialogs~docs]: https://docs.rs/tinyfiledialogs
 [c~tinyfiledialogs~repo]: https://github.com/jdm/tinyfiledialogs-rs
 [tinyfiledialogs~upstream~website]: https://sourceforge.net/projects/tinyfiledialogs/
+[c~softbuffer~docs]: https://docs.rs/softbuffer
+[c~softbuffer~docs~badge]: https://img.shields.io/crates/v/softbuffer?label=softbuffer
