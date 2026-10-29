@@ -49,7 +49,7 @@ fn main() -> anyhow::Result<()> {
             }
             #[cfg(feature = "skia")]
             Commands::SkiaSafe => {
-                skia_safe::run();
+                skia_safe::run()?;
             }
             // #[cfg(all(feature = "vello", not(windows)))]
             // Commands::Vello => {

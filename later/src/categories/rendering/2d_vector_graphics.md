@@ -54,6 +54,8 @@ This book does not ship a runnable `vger` example. The current `vger` API expect
 
 [`skia-safe`][c~skia-safe~docs]↗{{hi:skia-safe}} offers "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile." ([blessed.rs][blessed.rs-graphics~website]↗).
 
+The build script of `skia-safe` downloads prebuilt Skia binaries for common targets, or compiles Skia from source (which needs Python, a C++ toolchain and `ninja`) when none is available. Plan for this in CI and offline builds, and pin the crate version to match other crates that embed Skia. The example below renders on the CPU into an in-memory surface, so it needs no GPU or window. From `later/crates`, run it with `cargo run -p gui --example 2d_renderers --features skia,femtovg -- skia_safe`.
+
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/skia_safe.rs:example}}
 ```
