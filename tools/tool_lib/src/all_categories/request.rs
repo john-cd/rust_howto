@@ -8,13 +8,19 @@ use anyhow::Result;
 /// URL of the categories TOML file.
 static CATEGORIES_URL: &str = "https://raw.githubusercontent.com/rust-lang/crates.io/refs/heads/main/src/boot/categories.toml";
 
-/// Downloads the categories TOML file, or the mock URL in
-/// `MOCK_CATEGORIES_URL`.
+/// Downloads the categories TOML file from the canonical upstream URL.
 pub(super) fn get_categories_toml_string() -> Result<String> {
-    // Allows tests to override the URL.
-    let url_str =
-        std::env::var("MOCK_CATEGORIES_URL").unwrap_or_else(|_| CATEGORIES_URL.to_owned());
-    let url = reqwest::Url::parse(&url_str)?;
+    get_categories_toml_string_from_url(CATEGORIES_URL)
+}
+
+/// Downloads and validates the response from the supplied URL.
+///
+/// # Errors
+///
+/// Returns an error if the URL is invalid, the request fails, or the response
+/// has a non-success status.
+pub(super) fn get_categories_toml_string_from_url(url_str: &str) -> Result<String> {
+    let url = reqwest::Url::parse(url_str)?;
 
     let is_localhost = url.host_str() == Some("127.0.0.1") || url.host_str() == Some("localhost");
     let builder = reqwest::blocking::Client::builder().https_only(!is_localhost);
@@ -35,20 +41,14 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
 }
 
 #[cfg(test)]
-#[expect(unsafe_code, reason = "tests call the unsafe EnvGuard under ENV_MUTEX")]
 mod tests {
     use anyhow::Result;
 
     use super::*;
-    use crate::ENV_MUTEX;
-    use crate::utils::EnvGuard;
 
     /// Verifies that the category TOML request returns the server response.
     #[test]
     fn test_get_categories_toml_string_success() -> Result<()> {
-        let _lock = ENV_MUTEX
-            .lock()
-            .unwrap_or_else(std::sync::PoisonError::into_inner);
         let mut server = mockito::Server::new();
         let expected_toml = "[category1]\nname = \"Category One\"\ndescription = \"First category\"\n\n[category2]\nname = \"Category Two\"\n";
 
@@ -61,10 +61,7 @@ mod tests {
             .create();
 
         let mock_url = format!("{}/", server.url());
-        // SAFETY: serialized by `ENV_MUTEX`; no other thread uses the environment.
-        let _url_guard = unsafe { EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url) };
-
-        let result = get_categories_toml_string()?;
+        let result = get_categories_toml_string_from_url(&mock_url)?;
 
         mock_endpoint.assert();
         assert_eq!(result, expected_toml);
@@ -75,9 +72,6 @@ mod tests {
     /// Verifies that an unsuccessful category TOML request returns an error.
     #[test]
     fn test_get_categories_toml_string_error() -> Result<()> {
-        let _lock = ENV_MUTEX
-            .lock()
-            .unwrap_or_else(std::sync::PoisonError::into_inner);
         let mut server = mockito::Server::new();
 
         // Mock the GET request to return a 404 error.
@@ -88,11 +82,8 @@ mod tests {
             .create();
 
         let mock_url = format!("{}/", server.url());
-        // SAFETY: serialized by `ENV_MUTEX`; no other thread uses the environment.
-        let _url_guard = unsafe { EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url) };
-
-        let error =
-            get_categories_toml_string().expect_err("a 404 response should fail the request");
+        let error = get_categories_toml_string_from_url(&mock_url)
+            .expect_err("a 404 response should fail the request");
         mock_endpoint.assert();
 
         let err_string = error.to_string();
