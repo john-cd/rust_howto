@@ -48,6 +48,30 @@ The companion example creates a window and OpenGL context with `winit` and `glut
 
 This book does not ship a runnable `vger` example. The current `vger` API expects the application to provide its WGPU device, queue, texture format, and render-pass integration, and the crate targets a different WGPU version from this workspace. See the [vger API documentation][c~vger~docs] for the version-specific integration contract before adding it to an application.
 
+## `skia-safe` {#skia-safe}
+
+[![skia-safe][c~skia-safe~docs~badge]][c~skia-safe~docs] [![skia-safe~crates.io][c~skia-safe~crates.io~badge]][c~skia-safe~crates.io] [![skia-safe~repo][c~skia-safe~repo~badge]][c~skia-safe~repo] [![skia-safe~lib.rs][c~skia-safe~lib.rs~badge]][c~skia-safe~lib.rs]{{hi:skia-safe}}{{hi:OpenGL}}{{hi:Pdf}}{{hi:Rust-bindings}}{{hi:Skia}}{{hi:Vulkan}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}} [![cat~rendering::graphics-api][cat~rendering::graphics-api~badge]][cat~rendering::graphics-api]{{hi:Graphics APIs}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
+
+[`skia-safe`][c~skia-safe~docs]↗{{hi:skia-safe}} offers "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile." ([blessed.rs][blessed.rs-graphics~website]↗).
+
+```rust,editable
+{{#include ../../../crates/cats/gui/examples/2d_renderers/skia_safe.rs:example}}
+```
+
+## `vello` {#vello}
+
+[![vello][c~vello~docs~badge]][c~vello~docs] [![vello~crates.io][c~vello~crates.io~badge]][c~vello~crates.io] [![vello~repo][c~vello~repo~badge]][c~vello~repo] [![vello~lib.rs][c~vello~lib.rs~badge]][c~vello~lib.rs]{{hi:vello}}{{hi:2d}}{{hi:Vector-graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}}
+
+[`vello`][c~vello~docs]↗{{hi:vello}} is a GPU compute-centric 2D renderer built on `wgpu`. Build and test its scene independently of a device, then render it when a compatible GPU adapter is available. From `later/crates`, run the off-screen example with `cargo run -p gui --example vello_renderer --features vello`; it requires a compatible GPU adapter.
+
+```rust,editable
+{{#include ../../../crates/cats/gui/examples/2d_renderers/vello.rs:example}}
+```
+
+## WebRender {#webrender}
+
+[`webrender`][c~webrender~docs] is the rendering component used by Gecko. Its integration is oriented toward a browser engine, so this book treats it as background rather than a standalone application recipe. For a new canvas or UI renderer, compare the alternatives above instead of assuming the retained experimental WebRender source is a supported integration.
+
 ## Choose the Rendering Boundary
 
 Use Lyon when your application needs path geometry and wants to select its own backend. Use a canvas renderer such as `femtovg` when you prefer drawing commands and the renderer's built-in path handling. Use a GPU renderer such as `vger` when its scene model and backend fit the rest of the application. For static vector assets, rendering SVG through an SVG-focused pipeline may be simpler than building paths by hand; see [SVG Rendering](svg_rendering.md).
