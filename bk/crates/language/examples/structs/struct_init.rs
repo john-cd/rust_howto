@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Creating instances of a struct.
 
@@ -60,6 +53,12 @@ fn main() {
     let user2: User = User::new("user@example.com".into(), "user".to_owned());
 
     println!("user2: {user2:?}");
+
+    // Access the fields with the dot notation:
+    println!(
+        "{} <{}> is active: {}",
+        user2.username, user2.email, user2.active
+    );
 }
 
 // ANCHOR_END: example

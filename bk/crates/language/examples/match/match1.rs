@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! This example defines different types of US coins using an `enum` and then
 //! uses a `match` expression to determine the value of a given coin in cents,
@@ -54,9 +47,12 @@ fn value_in_cents(coin: Coin) -> u8 {
     }
 } // `match` is an expression. In this case, it is the last expression in the function's body, thus its value is returned by the function.
 
-/// Prints the value in cents of a penny.
+/// Prints the value in cents of each coin.
 fn main() {
     println!("{}", value_in_cents(Coin::Penny));
+    println!("{}", value_in_cents(Coin::Nickel));
+    println!("{}", value_in_cents(Coin::Dime));
+    println!("{}", value_in_cents(Coin::Quarter(String::from("Alaska"))));
 }
 
 // ANCHOR_END: example

@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Generic functions with trait bounds.
 
@@ -52,13 +48,17 @@ fn main() {
 
     // Call the generic function with a custom struct that implements `Debug`.
     /// Holds a value of any type to demonstrate generic struct implementations.
-    #[expect(dead_code, reason = "declared to illustrate it; never used")]
     #[derive(Debug)]
     struct MyStruct {
         /// The value stored by this wrapper.
         value: i32,
     }
-    print_value(MyStruct { value: 42 });
+    let my_struct = MyStruct { value: 42 };
+    print_value(&my_struct);
+    println!("value = {}", my_struct.value);
+
+    // Call a function with several trait bounds.
+    print_value2("hello");
 
     let s = String::from("hello");
     generic(&*s);

@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Creating a struct from another instance with the struct update syntax.
 
@@ -38,6 +31,7 @@ fn main() {
         ..user1
     };
     println!("{user2:?}");
+    println!("{} is active: {}", user2.username, user2.active);
 }
 
 // ANCHOR_END: example

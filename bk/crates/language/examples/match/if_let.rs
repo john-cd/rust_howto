@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! The `if let` syntax allows you to combine `if` and `let`
 //! to handle values that match a specific pattern, while ignoring others.
@@ -32,15 +28,16 @@ fn main() {
         Right,
     }
 
-    let left = Direction::Left;
-
-    // `matches!` can test a pattern against a non-parameterized, unit-like
-    // enum variant, even if the enum does not implement `PartialEq`.
-    if matches!(left, Direction::Left) {
-        println!("Going left.");
-    } else {
-        // The `else` branch handles the case where the pattern does not match.
-        println!("Going right.");
+    for direction in [Direction::Left, Direction::Right] {
+        // `matches!` can test a pattern against a non-parameterized, unit-like
+        // enum variant, even if the enum does not implement `PartialEq`.
+        if matches!(direction, Direction::Left) {
+            println!("Going left.");
+        } else {
+            // The `else` branch handles the case where the pattern does not
+            // match.
+            println!("Going right.");
+        }
     }
 }
 

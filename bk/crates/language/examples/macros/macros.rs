@@ -66,10 +66,11 @@ macro_rules! const_maker {
 }
 
 /// A trait whose associated constant is created by a macro.
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
 trait T {
     const_maker! {i32, 7}
 }
+
+impl T for () {}
 
 // 7. It is possible to call macros within a macro definition.
 //
@@ -89,6 +90,7 @@ fn main() {
     examples();
     print_tuple((1, 3));
     use_thread_local();
+    println!("Associated constant: {}", <() as T>::CONST);
 }
 
 // ANCHOR_END: example

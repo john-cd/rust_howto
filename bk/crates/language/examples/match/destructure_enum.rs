@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Destructuring an enum in a `match`.
 
@@ -27,13 +20,19 @@ enum Message {
 
 /// Matches a message and extracts its data.
 fn main() {
-    let msg = Message::Write(String::from("hello"));
+    let messages = [
+        Message::Write(String::from("hello")),
+        Message::Move { x: 1, y: 2 },
+        Message::Quit,
+    ];
 
-    match msg {
-        Message::Write(text) => println!("Text message: {text}"),
-        Message::Move { x, y } => println!("Move to x: {x}, y: {y}"),
-        Message::Quit => println!("Quit"),
-        // Must be exhaustive.
+    for msg in messages {
+        match msg {
+            Message::Write(text) => println!("Text message: {text}"),
+            Message::Move { x, y } => println!("Move to x: {x}, y: {y}"),
+            Message::Quit => println!("Quit"),
+            // Must be exhaustive.
+        }
     }
 }
 

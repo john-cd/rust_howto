@@ -1,9 +1,5 @@
 #![allow(unused_variables)]
 // TODO Reviewed ??-??-2026.
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Example of (non-)dyn-compatible traits.
 
@@ -150,6 +146,52 @@ impl TraitMethods for Circle {
     }
 }
 
+// The traits that are not dyn compatible can still be implemented and used
+// with static dispatch (generics):
+impl NotObjectSafe for Circle {}
+
+impl NotObjectSafe2 for Circle {
+    type Item<T> = Vec<T>;
+}
+
+impl NotObjectSafe3 for Circle {}
+
+impl NotObjectSafe4 for Circle {
+    fn do_stuff<T>(&self, _t: T) {}
+}
+
+impl NotObjectSafe5 for Circle {
+    fn clone_me(&self) -> Self {
+        Self {
+            radius: self.radius,
+        }
+    }
+}
+
+impl NotObjectSafe6 for Circle {
+    fn clone_boxed(&self) -> Box<Self> {
+        Box::new(Self {
+            radius: self.radius,
+        })
+    }
+}
+
+/// Calls the traits that are not dyn compatible on a concrete type.
+fn static_dispatch<T>(t: T) -> usize
+where
+    T: NotObjectSafe
+        + NotObjectSafe2
+        + NotObjectSafe3
+        + NotObjectSafe4
+        + NotObjectSafe5
+        + NotObjectSafe6,
+{
+    t.do_stuff("anything");
+    let _cloned = t.clone_me();
+    let _boxed = NotObjectSafe6::clone_boxed(&t);
+    T::CONST
+}
+
 /// Shows which traits can be used as trait objects.
 fn main() {
     // These cause a compile error:
@@ -168,7 +210,12 @@ fn main() {
     let mut obj: Box<dyn TraitMethods> = Box::new(Circle { radius: 1.0 });
     obj.by_ref();
     obj.by_ref_mut();
+    obj.with_lifetime();
     obj.by_box();
+    let rc: Rc<dyn TraitMethods> = Rc::new(Circle { radius: 1.0 });
+    rc.by_rc();
+    let arc: Arc<dyn TraitMethods> = Arc::new(Circle { radius: 1.0 });
+    arc.by_arc();
 
     // Functions with a `where Self: Sized` constraints cannot be called on a
     // trait object...
@@ -178,6 +225,13 @@ fn main() {
     let c = Circle { radius: 1.0 };
     let _ = c.returns();
     <Circle as TraitMethods>::associated_function();
+    c.param(Circle { radius: 2.0 });
+    c.typed("anything");
+    Pin::new(&c).by_pin();
+    Arc::pin(Circle { radius: 3.0 }).nested_pin();
+
+    // The traits that are not dyn compatible work with generics:
+    println!("CONST = {}", static_dispatch(Circle { radius: 1.0 }));
     println!("dyn compatibility examples: dyn-compatible traits demonstrated");
 }
 

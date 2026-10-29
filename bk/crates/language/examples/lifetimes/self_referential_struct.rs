@@ -2,11 +2,6 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
-
 // ANCHOR: example
 
 /// 1. Avoid self-referential structs. Note how each field points to a portion
@@ -73,11 +68,21 @@ impl SelfRefRc {
 /// Builds and prints a [`SelfRefRc`].
 fn rc() {
     let self_ref = SelfRefRc::new("Hello, Rust!".to_owned());
-    println!("Data: {}", self_ref.reference);
+    println!("Data: {} and {}", self_ref.data, self_ref.reference);
+}
+
+/// Builds the anti-pattern, which can only be created with empty `fields`.
+fn tricky() {
+    let record = CsvRecordTricky {
+        line: "Joe,Doe".to_owned(),
+        fields: Vec::new(),
+    };
+    println!("{} ({} fields)", record.line, record.fields.len());
 }
 
 /// Runs both alternatives.
 fn main() {
+    tricky();
     outside();
     rc();
 }

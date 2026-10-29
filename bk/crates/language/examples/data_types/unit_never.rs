@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! The unit type `()` and the never type `!`.
 
@@ -37,6 +33,14 @@ fn diverge() -> ! {
 fn main() {
     a_func();
     b_func();
+
+    // `!` coerces to any type, so a diverging branch fits anywhere:
+    let result: Result<u32, ()> = Ok(1);
+    let n = match result {
+        Ok(n) => n,
+        Err(()) => diverge(),
+    };
+    println!("n = {n}");
 }
 
 // ANCHOR_END: example

@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! `static` Example.
 
@@ -22,6 +18,7 @@ fn main() {
     // Statics do not `Drop`.
     /// Static value whose `Drop` implementation is not run at program exit.
     static POD: PrintOnDrop = PrintOnDrop("This message does not appear.");
+    println!("The static holds: {}", POD.0);
 }
 
 // A struct that implements a `Drop` destructor.

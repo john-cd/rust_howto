@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Types that can implement a trait.
 
@@ -61,6 +57,7 @@ impl Tr for &u32 {}
 fn main() {
     let e = MyEnum::A;
     e.foo();
+    MyEnum::B.foo();
     let u = MyUnion { f1: 42 };
     u.foo();
     let s: &[u32] = &[1, 2, 3, 4];

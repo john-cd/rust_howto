@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! A struct with fields of many types.
 
@@ -49,6 +45,18 @@ fn main() {
     };
 
     println!("{complex:?}");
+
+    // Access the fields individually:
+    println!("primitive: {}", complex.primitive);
+    println!("tuple_field: {:?}", complex.tuple_field);
+    println!("array_field: {:?}", complex.array_field);
+    println!("struct_field: {}", complex.struct_field.0);
+    println!("reference_field: {}", complex.reference_field);
+    match complex.enum_field {
+        Status::Active => println!("The item is active."),
+        Status::Inactive => println!("The item is inactive."),
+    }
+    println!("{:?}", Status::Inactive);
 }
 
 // ANCHOR_END: example

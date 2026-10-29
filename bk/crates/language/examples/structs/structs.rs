@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! The `main` function creates an instance of the `User` struct.
 //! It then prints the struct to the console.
@@ -39,7 +35,10 @@ fn main() {
     println!("{user1:?}");
 
     // Access fields with the `.` operator:
-    let _ = user1.active;
+    println!(
+        "{} <{}> is active: {}, signed in {} time(s)",
+        user1.username, user1.email, user1.active, user1.sign_in_count
+    );
 }
 
 // ANCHOR_END: example

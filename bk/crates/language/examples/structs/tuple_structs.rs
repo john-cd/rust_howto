@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Tuple structs and unit-like structs.
 
@@ -33,6 +26,7 @@ fn main() {
     // Access the inner field with .0, .1, etc.:
     let _red_value = black.0;
     println!("{black:?}");
+    println!("{}, {}, {}", black.0, black.1, black.2);
 
     let s = UnitLike;
     println!("{s:?}");

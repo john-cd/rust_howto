@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Types that implement `Copy` are copied instead of moved.
 
@@ -34,6 +30,7 @@ fn main() {
     let b = a; // `b` is a copy of `a`.
     // Both `a` and `b` remain valid:
     println!("a = {a:?}, b = {b:?}");
+    println!("a.0 = {}, b.0 = {}", a.0, b.0);
 }
 
 // ANCHOR_END: example

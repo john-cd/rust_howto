@@ -11,7 +11,6 @@ fn foo() -> ! {
 
 // This function never returns control.
 /// Exits the process with an error code.
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
 fn exit_program() -> ! {
     println!("Exiting the process...");
     std::process::exit(1);
@@ -19,7 +18,6 @@ fn exit_program() -> ! {
 
 // This function loops forever.
 /// Loops forever.
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
 fn forever() -> ! {
     loop {
         println!("and ever...");
@@ -29,6 +27,14 @@ fn forever() -> ! {
 
 /// Calls a function that panics.
 fn main() {
+    // Diverging functions can be referenced as function pointers, even if
+    // calling them would end the process or never finish:
+    let diverging: [fn() -> !; 2] = [exit_program, forever];
+    println!(
+        "{} diverging functions that are not called.",
+        diverging.len()
+    );
+
     foo(); // This will panic.
 }
 

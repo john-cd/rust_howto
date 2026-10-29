@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Deriving traits with `#[derive]`.
 
@@ -26,6 +22,7 @@ fn main() {
     // format specifier. Without `#[derive(Debug)]`, this line would cause a
     // compile-time error.
     println!("The point is: {p1:?}");
+    println!("x = {}, y = {}", p1.x, p1.y);
 }
 
 // ANCHOR_END: example

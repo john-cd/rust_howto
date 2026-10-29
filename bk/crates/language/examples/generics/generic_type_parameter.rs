@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Generic type parameters on functions, structs, traits and type aliases.
 
@@ -23,10 +19,10 @@ fn print_type<T>(t: T) {
 /// - Type parameters can be used to define the types of function arguments; or
 ///   the return type; or within the function.
 /// - They may be used one or more times.
-fn func<K, V, R>(key: K, value: V) -> R {
+fn func<K, V, R: Default>(key: K, value: V) -> R {
     let _k: K = key;
     let _v: V = value;
-    unimplemented!();
+    R::default()
 }
 
 /// Generic function with a type parameter that has a trait bound.
@@ -107,7 +103,7 @@ struct S;
 // parameter of the trait.
 impl<T> Processor<T> for S {
     fn process(&self, _item: T) -> String {
-        unimplemented!();
+        String::from("processed by S")
     }
 }
 
@@ -119,7 +115,7 @@ struct TupleStruct<T>(T, T);
 // Generic implementation of a generic trait for a generic struct.
 impl<T> Processor<T> for TupleStruct<T> {
     fn process(&self, _item: T) -> String {
-        unimplemented!();
+        String::from("processed by TupleStruct")
     }
 }
 
@@ -147,16 +143,27 @@ fn main() {
     // Use generic types with trait bounds.
     // `T` is inferred to be `i32`, which implements the `Debug` trait:
     print_debug(42);
+    print_debug2("hello");
+
+    // Several type parameters; `R` is inferred from the annotation:
+    let r: u8 = func("key", 1.5);
+    println!("{r}");
     // ERROR: print_debug(S); // `S` does not implement the `Debug` trait.
 
     // Use generic structs:
     // `T` is inferred to be `bool` from the value passed to the field.
     let s = MyStruct { data: false };
-    print_type(s);
+    print_type(&s);
+    // Type parameters can constrain generic types:
+    println!("{}", func2(s));
 
     // `T` is `f64`.
     let tuple = TupleStruct(10.0, 20.0);
-    print_type(tuple);
+    print_type(&tuple);
+
+    // Use generic traits:
+    println!("{}", S.process(1));
+    println!("{}", tuple.process(30.0));
 
     // Use a generic type alias:
     // The turbofish notation `::<String>` is used to specify the type parameter
@@ -165,6 +172,10 @@ fn main() {
 
     // We could also write:
     let _map2: StringMap<String> = StringMap::new();
+
+    // A type parameter with a default type:
+    let my_map: MyHashMap<&str, i32> = MyHashMap::new(RandomState::new());
+    println!("{} entries", my_map.inner.len());
 }
 
 // ANCHOR_END: example

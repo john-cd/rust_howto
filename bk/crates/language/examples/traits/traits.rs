@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Trait example.
 
@@ -43,6 +39,7 @@ fn main() {
     };
     // Since the type implements the trait, we can call its method.
     println!("Summary: {}", na.summarize());
+    println!("Content: {}", na.content);
 
     // The method call above is equivalent to:
     NewsArticle::summarize(&na);

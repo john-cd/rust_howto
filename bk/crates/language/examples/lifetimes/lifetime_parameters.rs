@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Example of lifetime parameters in various items.
 
@@ -91,8 +87,29 @@ fn main() {
     println!("Longest: {}", longest(s1, s2));
 
     let num = 42;
-    let holder = RefHolder { reference: &num };
+    let holder = RefHolder::new(&num);
     println!("{}", holder.describe());
+    println!("{holder}");
+
+    let alias: StrRef<'_> = s1;
+    println!("{alias}");
+
+    let float = 1.5_f32;
+    match Either::<i32, f32>::Left(&num) {
+        Either::Left(l) => println!("Left: {l}"),
+        Either::Right(r) => println!("Right: {r}"),
+    }
+    match Either::<i32, f32>::Right(&float) {
+        Either::Left(l) => println!("Left: {l}"),
+        Either::Right(r) => println!("Right: {r}"),
+    }
+
+    let u = MyUnion { int_ref: &num };
+    // Reading a union field is `unsafe`.
+    println!("{}", unsafe { u.int_ref });
+    let _ = MyUnion { float_ref: &float };
+
+    println!("{}", String::new().describe());
 }
 
 // ANCHOR_END: example

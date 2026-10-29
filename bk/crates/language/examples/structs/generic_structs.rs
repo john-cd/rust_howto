@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! A generic struct and its `impl` blocks.
 
@@ -71,6 +64,11 @@ fn main() {
         "Distance from origin: {}",
         float_point.distance_from_origin()
     );
+
+    // Methods of the generic implementation blocks:
+    println!("x() = {}", integer_point.x());
+    integer_point.cmp_display();
+    float_point.cmp_display();
 
     // This would cause a compile-time error because x and y must be the same
     // type `T`: let wont_compile = Point { x: 5, y: 4.0 };

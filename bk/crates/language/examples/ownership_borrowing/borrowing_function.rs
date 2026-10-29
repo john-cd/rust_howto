@@ -1,4 +1,4 @@
-#![allow(unused_assignments, dead_code)]
+#![allow(unused_assignments)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -34,6 +34,7 @@ fn main() {
 
     // Immutable references are `Copy`, thus `ref_s1` is also still valid:
     println!("{ref_s1:?}");
+    println!("{}", ref_s1.0);
 }
 
 // ANCHOR_END: example
