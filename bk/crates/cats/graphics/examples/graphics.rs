@@ -2,7 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// LATER
+// Deferred (#1748): no graphics example yet.
 /// Does nothing yet.
 fn main() {}
 

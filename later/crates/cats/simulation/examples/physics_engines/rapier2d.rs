@@ -80,5 +80,5 @@ mod tests {
     fn test_rapier2d_example_entry_point() {
         main();
     }
-    // TODO review / add to a chapter on physics engines with rapier2d
+    // Deferred (#1206): add to the physics engines chapter.
 }

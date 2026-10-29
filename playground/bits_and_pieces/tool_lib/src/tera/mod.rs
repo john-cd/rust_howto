@@ -67,7 +67,8 @@ fn generate_path(path_template: &str) -> Result<PathBuf> {
     Ok(PathBuf::from(Tera::one_off(path_template, &EMPTY_CONTEXT, true)?))
 }
 
-// TODO
+// Deferred (#1734): scratch proposal for rendering a template directory; decide in the
+// playground cleanup whether it moves into tool_lib.
 // use walkdir::DirEntry;
 // use walkdir::WalkDir;
 // fn build_table(templ: Tera) -> anyhow::Result<()> {

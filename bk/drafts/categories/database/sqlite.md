@@ -44,7 +44,8 @@ In the following example, colors add to a table having a unique constraint on th
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[connection_pool | Connection Pool]].
+- [[query_builders_orms | Query Builders and ORMs]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

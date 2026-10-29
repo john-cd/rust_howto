@@ -2,8 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// LATER: fn_traits is not available on the stable channel at this point
-// #![feature(unboxed_closures, fn_traits)]
+// Limitation: implementing `Fn*` traits for custom types needs the unstable
+// `fn_traits` feature, so the `callable` module stays disabled on the stable
+// channel. #![feature(unboxed_closures, fn_traits)]
 // mod callable;
 
 mod ops;

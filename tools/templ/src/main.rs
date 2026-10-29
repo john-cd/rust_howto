@@ -35,8 +35,9 @@ fn main() -> anyhow::Result<()> {
     match cmd {
         // Generate badges for one or more crates.
         //
-        // Include keywords, categories, description, refdefs.
-        // TODO
+        // `create_crate_block` returns the badges and description (printed) and the reference
+        // definitions (merged into the file given with `-a`). Category badges come from the
+        // separate category command, so keywords and categories are not repeated here.
         Cmd::Badges(b) => {
             for name in b.args {
                 let (badges, refdefs) = create_crate_block(name.trim())?;

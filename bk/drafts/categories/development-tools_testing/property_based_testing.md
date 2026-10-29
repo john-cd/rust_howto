@@ -42,7 +42,8 @@ Often done with custom [functions][p~functions] or data structures, but crates l
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[fuzzing | Fuzzing]].
+- [[testing | Testing]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

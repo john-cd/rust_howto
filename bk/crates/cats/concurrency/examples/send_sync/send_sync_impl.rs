@@ -233,4 +233,9 @@ mod tests {
         main();
     }
 }
-// LATER miri
+// Miri: the `unsafe` code above relies on two invariants: the raw `ArcInner`
+// pointer stays valid until the strong count reaches zero, and `data` is
+// dropped exactly once. The example is pure Rust (no FFI or I/O), so it can run
+// under Miri on a nightly toolchain with the `miri` component: `cargo +nightly
+// miri test --example send_sync_impl` from `bk/crates`. Miri is not part of the
+// required checks: it is not installed in CI.

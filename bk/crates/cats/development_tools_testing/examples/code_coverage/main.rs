@@ -2,7 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// LATER
+// Deferred (#1748): no coverage example yet; see the code coverage chapter.
 
 /// Does nothing yet.
 fn main() {}

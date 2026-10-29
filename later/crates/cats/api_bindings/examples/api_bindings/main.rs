@@ -2,6 +2,6 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// LATER
+// Deferred (#1748): no API bindings example yet.
 /// Does nothing yet.
 fn main() {}

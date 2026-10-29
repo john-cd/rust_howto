@@ -566,7 +566,8 @@ mod tests {
         );
     }
 }
-// TODO
+// Deferred (#1748): event store snapshots and read-model reconstruction need a scope decision
+// before any code is added.
 // Notes:
 // - This example can be extended with event store snapshots and more advanced
 //   read-model reconstruction.

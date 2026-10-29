@@ -2,7 +2,7 @@
 
 # README
 
-TODO
+Deferred (#1725): the Pandoc and Typst export plan decides the following questions.
 
 - Need to convert book to typst?? or keep as markdown?
 - Select the proper mdbook backend to convert Markdown to Typst, then PDF.

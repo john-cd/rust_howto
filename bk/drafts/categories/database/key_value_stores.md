@@ -43,7 +43,8 @@ Advantages include speed, minimal memory footprint, [embedded][p~embedded] use, 
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[nosql | NoSQL and Friends]].
+- [[connection_pool | Connection Pool]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

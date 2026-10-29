@@ -91,7 +91,7 @@ See the [Rustfmt documentation for formatting attributes][rustfmt~attributes] fo
 
 ## Related Topics {#related-topics .skip}
 
-FIXME
+- [[code_coverage | Code Coverage]] and [[testing | Testing]] for the other checks run alongside formatting in CI.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

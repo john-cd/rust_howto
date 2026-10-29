@@ -43,7 +43,6 @@ _default:
 @replace_inline_links:
     ./replace_inline_links.sh {{ root }}
 
-# FIXME
 ## .... GET LINK (MANUAL) ....
 
 # Search the references using a crate name or label fragment and return the refdefs / URLs and reference-style links

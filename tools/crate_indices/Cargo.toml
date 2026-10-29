@@ -3,7 +3,7 @@
 [package]
 name = "crate_indices"
 version.workspace = true
-description = "TODO "
+description = "Generates the crate index pages of the book and updates its crate reference definitions."
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true

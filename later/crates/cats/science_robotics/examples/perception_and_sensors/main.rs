@@ -2,6 +2,6 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// LATER
+// Deferred (#1207): written with the perception and sensors chapter.
 /// Does nothing yet.
 fn main() {}
