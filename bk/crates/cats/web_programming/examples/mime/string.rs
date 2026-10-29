@@ -39,4 +39,23 @@ mod tests {
     fn test_string_example_entry_point() {
         main();
     }
+
+    /// A valid MIME type is parsed, case-insensitively.
+    #[test]
+    fn parses_a_valid_mime_type() {
+        let parsed = "TEXT/PLAIN".parse::<Mime>().unwrap();
+        assert_eq!(parsed, mime::TEXT_PLAIN);
+        assert_eq!(parsed.type_(), mime::TEXT);
+        assert_eq!(parsed.subtype(), mime::PLAIN);
+    }
+
+    /// An invalid MIME type falls back to the default.
+    #[test]
+    fn invalid_mime_type_uses_the_default() {
+        assert!("i n v a l i d".parse::<Mime>().is_err());
+        let fallback = "i n v a l i d"
+            .parse::<Mime>()
+            .unwrap_or(APPLICATION_OCTET_STREAM);
+        assert_eq!(fallback, APPLICATION_OCTET_STREAM);
+    }
 }
