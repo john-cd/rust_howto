@@ -1,135 +1,39 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# TO REVIEW
+# Curation Record
 
-## Curation Record (2026-10-22)
+This inventory was reviewed for [issue #1720](https://github.com/john-cd/rust_howto/issues/1720) on October 28, 2026. The unavailable Chrome export is tracked separately in [#2054](https://github.com/john-cd/rust_howto/issues/2054), as requested by the owner.
 
-- The VS Code debugger note was added to [Development Environment Setup](../src/appendices/contributing/development_environment_setup.md).
-- The `sccache` background article was added to [Dev Container and Docker](../src/appendices/contributing/dev_container_and_docker.md).
-- The Firefox WebDriver and Pake bookmarks were added to [Example Code and Templates](../src/links/example_code.md#browser-desktop-tools).
+## Integrated Material
 
-The other entries remain in this draft because they lack a current chapter context or need a more specific editorial purpose than a standalone link. Revisit them when a related chapter can explain why readers should follow them.
+| Original notes                                                                                                            | Disposition                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| VS Code debugger, sccache background, Firefox WebDriver, Pake                                                             | Already integrated on October 22 into development-environment, dev-container, and example-code chapters.                                                                          |
+| Foundations and its two articles; bye; rust-shed; reactive_graph; reactive_stores; optics; want; Samoyed                  | Added contextual links to [Example Code](../src/links/example_code.md#focused-library-implementations-to-study). Samoyed's repository redirect was resolved to `espiria/samoyed`. |
+| Playground dependency list; Cargo unstable features; Coroutine; Rustonomicon representations                              | Added to [Playground and Experimental APIs](../src/links/example_code.md#explore-the-playground-and-experimental-apis), with stable/unstable and platform distinctions.           |
+| Hands-On Microservices with Rust, especially Chapter 8's chat service                                                     | Added to [Learning Rust](../src/links/learning_rust.md#learn-from-historical-application-examples) as historical 2018 source, with an upgrade caveat.                             |
+| crates.io February 2025 update; March 2025 language-interop essay; Rust 2024 review; startup infrastructure retrospective | Added to [Dated Ecosystem Discussions](../src/links/blogs_and_forums.md#dated-ecosystem-discussions). These are dated context rather than current API claims.                     |
+| Talent Plan                                                                                                               | Already linked in [Learning Rust](../src/links/learning_rust.md); no duplicate added.                                                                                             |
+| cargo-semver-checks                                                                                                       | Already covered in [Maintaining Crates](categories/development-tools_cargo-plugins/maintaining.md); its 2025 GSoC background article was added there.                             |
 
-## AI {#ai .skip}
+## Entries Not Promoted
 
-- [foreverVM][forevervm~website]↗: The sessionless code interpreter. ForeverVM is a code execution API to securely run arbitrary Python code in a remote sandbox and get back results.
+These are explicit editorial dispositions, not an unfinished curation queue:
 
-## CD / CI {#cd-ci .skip}
+| Original entry                                                                       | Reason                                                                                                                   |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| ForeverVM (`forevervm.com`)                                                          | A language-independent hosted execution service; the notes supplied no Rust integration or recipe.                       |
+| GitHub Actions as a public database (`wesql.io/blog/use-github-actions-as-database`) | An infrastructure experiment, without a reproducible Rust example or a supported database workflow for this book.        |
+| Fractalide (`github.com/fractalide/fractalide`)                                      | The note supplies a project slogan but no concrete Rust learning task; not added as an unexplained link.                 |
+| Sonatype secure-Rust press release                                                   | Product announcement and marketing, rather than a Rust API or implementation guide.                                      |
+| Six Rust programming mistakes article                                                | Generic historical advice; current language and error-handling chapters provide the maintained teaching context.         |
+| Rust as an AI contender article                                                      | General industry commentary without a concrete Rust technique to teach.                                                  |
+| Two identical Zed `unsupportedversion` notes (upstream issue #14126)                 | Duplicate editor-incident pointers without a reproducible Rust recipe; troubleshooting belongs with the upstream report. |
+| `hello-world.rs` satire                                                              | Intentionally humorous dependency inflation; not a practical recipe.                                                     |
+| Empty "To Sort" section                                                              | Contained no source material.                                                                                            |
 
-- [Run a Database in GitHub Actions, Persisting Data to S3, and Access it Publicly][blog~use-github-actions-as-database]↗.
+## VS Code Bookmark Review
 
-## Crates.io {#crates-io .skip}
+The checked-in `.vscode/bookmarks.json` contains 105 locations in 59 files, all with empty labels. They are navigation positions in existing book/source files, not a separate set of external bookmarks or written instructions. The referenced content was reviewed; no additional prose was supplied by these entries. The bookmark file is preserved.
 
-- [`crates.io`: development update][blog~crates-io-development-update]↗.
-
-## Dataflow Graphs {#dataflow-graphs .skip}
-
-- [`fractalide`][fractalide~repo]↗: Reusable Reproducible Composable Software.
-
-## Data Structures {#data-structures .skip}
-
-- [reactive_stores][c~reactive_stores~lib.rs]↗ - data structures in Rust.
-- [reactive_graph][c~reactive_graph~lib.rs]↗.
-
----
-
-[![optics][c~optics~docs~badge]][c~optics~docs] [![optics~crates.io][c~optics~crates.io~badge]][c~optics~crates.io] [![optics~repo][c~optics~repo~badge]][c~optics~repo] [![optics~lib.rs][c~optics~lib.rs~badge]][c~optics~lib.rs]{{hi:optics}}{{hi:No_std}}{{hi:Iso}}{{hi:Lens}}{{hi:Prism}}{{hi:optics}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
-
-A `no_std`-compatible optics library providing composable lenses, prisms, isomorphisms, and fallible isomorphisms.
-
-## Distributed Systems {#distributed-systems .skip}
-
-[Open-source training courses about distributed database and distributed systems][talent-plan~repo]↗.
-
-## Enterprise Backend {#enterprise-backend .skip}
-
-### Foundations {#foundations .skip}
-
-[![foundations][c~foundations~docs~badge]][c~foundations~docs] [![foundations~crates.io][c~foundations~crates.io~badge]][c~foundations~crates.io] [![foundations~repo][c~foundations~repo~badge]][c~foundations~repo] [![foundations~lib.rs][c~foundations~lib.rs~badge]][c~foundations~lib.rs]{{hi:foundations}}{{hi:Settings}}{{hi:Service}}{{hi:Metrics}}{{hi:Telemetry}}{{hi:Seccomp}} [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
-
-A Rust service foundations library.
-
-- [Introducing Foundations - our open source Rust service foundation library][c~foundations~blog]↗.
-- [Trying Out Cloudflare's `foundations` Library for Rust][blog~trying-out-cloudflare-foundations-library]↗.
-
-### Graceful Upgrades {#graceful-upgrades .skip}
-
-[![bye][c~bye~docs~badge]][c~bye~docs] [![bye~crates.io][c~bye~crates.io~badge]][c~bye~crates.io] [![bye~repo][c~bye~repo~badge]][c~bye~repo] [![bye~lib.rs][c~bye~lib.rs~badge]][c~bye~lib.rs]{{hi:bye}}
-
-A library for graceful shutdown with no downtime.
-
-A system for graceful upgrades: it's a fork+exec mechanism with a Linux pipe for passing data between the original process and the "upgraded" process. It's designed to work well with `systemd` for zero-downtime upgrades. In production I use it alongside systemd's socket activation, but it should be tweakable to work with alternatives. It mostly follows systemd conventions, so it can be dropped into a typical service setup without too much fuss.
-
-## Example Code {#example-code .skip}
-
-- [`rust-shed`][rust-shed~repo]↗: Repository containing Rust crates common between other Facebook open source projects (like Mononoke or Eden).
-
-## Futures {#futures .skip}
-
-[![want][c~want~docs~badge]][c~want~docs] [![want~crates.io][c~want~crates.io~badge]][c~want~crates.io] [![want~repo][c~want~repo~badge]][c~want~repo] [![want~lib.rs][c~want~lib.rs~badge]][c~want~lib.rs]{{hi:want}}{{hi:Channel}}{{hi:Async}}{{hi:Futures}}
-
-Detect when another Future wants a result.
-
-## Infra / Dev {#infra-dev .skip}
-
-- [Sonatype supports secure development in Rust][blog~sonatype-supports-secure-development-in-rust]↗.
-
----
-
-[![samoyed][c~samoyed~docs~badge]][c~samoyed~docs] [![samoyed~crates.io][c~samoyed~crates.io~badge]][c~samoyed~crates.io] [![samoyed~repo][c~samoyed~repo~badge]][c~samoyed~repo] [![samoyed~lib.rs][c~samoyed~lib.rs~badge]][c~samoyed~lib.rs]{{hi:samoyed}}{{hi:Git}}{{hi:Git-hooks}}{{hi:Husky}}{{hi:Git-hooks-manager}}
-
-A single-binary Git hooks manager.
-
----
-
-- [Every infrastructure decision I endorse or regret after 4 years running infrastructure at a startup][blog~every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup]↗.
-
-## Language Features {#language-features .skip}
-
-review
-[6 Rust programming mistakes to watch out for][blog~6-rust-programming-mistakes-to-watch-out-for]↗.
-
-## Layouts {#layouts .skip}
-
-- [Other reprs][book~nomicon~other-reprs] - The Rustonomicon.
-
-## List of Crates Available in the Rust Playground {#crates-in-playground .skip}
-
-- [rust-lang/rust-playground][rust-playground-cargo.toml~repo]↗.
-
-## Reviews / Evolution of Rust {#rust-reviews .skip}
-
-- [A Review of Rust in 2024][blog~rust-review-2024]↗: What Next?.
-
-- [Why Rust is Becoming a Contender in AI Development][blog~why-rust-is-becoming-a-contender-in-ai-development]↗.
-
-- [Rust in 2025][blog~lang-interop-extensibility]↗: Language interop and the extensible compiler.
-
-## Semver Checks {#semver-checks .skip}
-
-[![cargo-semver-checks][c~cargo-semver-checks~docs~badge]][c~cargo-semver-checks~docs] [![cargo-semver-checks~crates.io][c~cargo-semver-checks~crates.io~badge]][c~cargo-semver-checks~crates.io] [![cargo-semver-checks~repo][c~cargo-semver-checks~repo~badge]][c~cargo-semver-checks~repo] [![cargo-semver-checks~lib.rs][c~cargo-semver-checks~lib.rs~badge]][c~cargo-semver-checks~lib.rs]{{hi:cargo-semver-checks}}{{hi:Cargo}}{{hi:Crate}}{{hi:Linter}}{{hi:Check}}{{hi:Semver}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
-
-Scan your Rust crate for semver violations.
-
----
-
-- [Making SemVer Breakage Obvious – GSoC 2025][blog~making-semver-breakage-obvious]↗.
-
-## Unstable Features {#unstable-features .skip}
-
-- [Coroutine in `std::ops`][c~std::ops::Coroutine~docs]↗.
-- [Unstable Features][book~cargo~unstable]↗ - The Cargo Book.
-
-cover [Hands-On Microservices with Rust 2018 (GitHub)][book~Hands-On-Microservices-with-Rust~repo]↗.
-review in particular https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust/blob/master/Chapter08/chat/src/lib.rs
-
-## Zed {#zed .skip}
-
-- zed hanging on startup because of 'unsupportedversion' Issue #14126.
-- zed hanging on startup because of 'unsupportedversion' Issue #14126.
-
-## Satire {#satire .skip}
-
-- [hello-world.rs][hello-world.rs~repo]↗: Memory safe, blazing fast, configurable, minimal hello world written in Rust, in a few lines of code with few(1092) dependencies.
-
-## To Sort {#tosort .skip}
+Three pointers are stale: a line beyond the current trigonometry chapter, a companion-project container override absent from this checkout, and the old `later/src_crates/cats/science/Cargo.toml` path (the workspace is now under `later/crates`). They do not identify missing text to import. Human review markers and source TODOs at bookmarked locations remain governed by their existing issues.

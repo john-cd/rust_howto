@@ -90,6 +90,10 @@ The resources below cover different learning styles, from structured courses and
 - The [Rustonomicon][book~rustonomicon]↗: A high-level companion to the reference and a guide to correctly writing unsafe code in Rust.
 - The [Ferrocene Language Specification (FLS)][spec~rust-lang]↗ is a formal specification of Rust initially developed by Ferrous Systems. The Rust Project adopted it in 2025 ([announcement][rust-lang~blog~adopting-the-fls]).
 
+## Learn from Historical Application Examples
+
+The [Hands-On Microservices with Rust repository][book~Hands-On-Microservices-with-Rust~repo] accompanies a 2018 book. Its Chapter 8 chat service is useful for studying application decomposition and message flow. Treat its dependency versions and framework APIs as historical examples; compare them with the current networking and web-server chapters before porting code.
+
 ## Related Topics {#related-topics .skip}
 
 - [[blogs | Blogs]].

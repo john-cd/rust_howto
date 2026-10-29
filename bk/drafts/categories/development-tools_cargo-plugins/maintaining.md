@@ -38,6 +38,10 @@ Use Cargo's built-in commands for routine build, test, and publish tasks. These 
 {{#include ../../../crates/cats/development_tools/examples/cargo_plugins/cargo_hack.sh:example}}
 ```
 
+## Background on SemVer Diagnostics
+
+[Making SemVer Breakage Obvious (GSoC 2025)][blog~making-semver-breakage-obvious] discusses work on explaining API compatibility changes. Use it as background for the `cargo-semver-checks` recipe above; the tool's current documentation remains the reference for supported checks and command options.
+
 ## Related Topics {#related-topics .skip}
 
 - [[dependency_management | Manage Dependencies]]

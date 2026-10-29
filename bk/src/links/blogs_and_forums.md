@@ -84,6 +84,15 @@ You may also consult [this list][forum~fearless-rust-bloggers]↗ (somewhat outd
 | [`rust-analyzer`: This Week][blog~rust-analyzer-this-week]↗                               | Weekly news about the `rust-analyzer` language server.                                       |
 | [Shuttle documentation archive][shuttle-dev~docs]↗ and [project source][shuttle~website]↗ | Archived references for Shuttle, the former Rust cloud deployment platform.                  |
 
+## Dated Ecosystem Discussions
+
+These articles describe a particular point in Rust's development. Read their dates and distinguish observations or proposals from current stable behavior:
+
+- [The crates.io development update (February 2025)][blog~crates-io-development-update] records work on Rust's package registry.
+- [Language interop and the extensible compiler (March 2025)][blog~lang-interop-extensibility] discusses possible language and compiler directions.
+- [A Review of Rust in 2024][blog~rust-review-2024] offers one author's retrospective, rather than a support or compatibility reference.
+- [Infrastructure decisions after four years at a startup][blog~every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup] is an operational case study. Its tradeoffs depend on that organization's constraints.
+
 ## Related Topics {#related-topics .skip}
 
 - [[books | Books]].

@@ -7780,7 +7780,7 @@
 [c~samoyed~docs~badge]: https://img.shields.io/crates/v/samoyed?label=samoyed
 [c~samoyed~lib.rs]: https://lib.rs/crates/samoyed
 [c~samoyed~lib.rs~badge]: https://img.shields.io/badge/lib.rs-samoyed-yellow
-[c~samoyed~repo]: https://github.com/nutthead/samoyed
+[c~samoyed~repo]: https://github.com/espiria/samoyed
 [c~samoyed~repo~badge]: https://img.shields.io/badge/samoyed-steelblue?logo=github
 [c~samply~crates.io]: https://crates.io/crates/samply
 [c~samply~crates.io~badge]: https://img.shields.io/badge/crates.io-samply-crimson

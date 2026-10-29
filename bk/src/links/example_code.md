@@ -70,6 +70,23 @@ You will find `cargo-generate`-ready templates in [this list][cargo-generate~rep
 
 For example, you will find a full template for a REST API written in Rust, engineered for maximum testability in the [`rust-rest`][rust_rest~repo]↗ repo.
 
+## Focused Library Implementations to Study
+
+When studying a library, read its examples alongside its current API and platform requirements. These projects illustrate different design boundaries rather than interchangeable application templates:
+
+- [Cloudflare Foundations][c~foundations~repo] groups service configuration, telemetry, and runtime building blocks. Its [introductory article][c~foundations~blog] explains the original motivation; [an independent walkthrough][blog~trying-out-cloudflare-foundations-library] provides another worked example.
+- [`bye`][c~bye~repo] explores process handover for graceful upgrades. Study its descriptor and process-lifecycle assumptions before applying the technique to a different service.
+- [`rust-shed`][rust-shed~repo] collects reusable crates from Meta projects; inspect an individual crate's examples and dependencies rather than treating the repository as a single framework.
+- [`reactive_graph`][c~reactive_graph~lib.rs] and [`reactive_stores`][c~reactive_stores~lib.rs] illustrate reactive state and store APIs. [`optics`][c~optics~repo] is another approach to composing access to nested values with lenses and related abstractions.
+- [`want`][c~want~repo] demonstrates signaling demand between asynchronous producers and consumers. Its focused scope makes it useful when studying backpressure and task coordination.
+- [Samoyed][c~samoyed~repo] provides an example of a Git hook manager. Compare its workflow with your repository's existing hook policy before adopting another tool.
+
+## Explore the Playground and Experimental APIs
+
+The [Rust Playground dependency manifest][rust-playground-cargo.toml~repo] identifies crates configured for the hosted playground. Availability there does not imply that every feature or native system dependency is available; use a local Cargo project when a recipe needs a custom configuration.
+
+For experiments with unstable APIs, consult the [Cargo unstable-feature reference][book~cargo~unstable] and the [`Coroutine` documentation][c~std::ops::Coroutine~docs]. These are separate from stable Rust recipes. For representation and ABI experiments, the Rustonomicon's [other representations chapter][book~nomicon~other-reprs] explains the relevant layout attributes and limitations.
+
 ## Related Topics {#related-topics .skip}
 
 - [[blogs_and_forums | Blogs and Forums]].
