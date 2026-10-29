@@ -4,17 +4,28 @@
 //! This example demonstrates how to use the `glob` crate
 //! to find all PNG files in a directory tree.
 
+use std::path::PathBuf;
+
 use anyhow::Result;
 use glob::glob;
 
 /// Prints the paths of all the PNG files in the current directory tree.
 fn main() -> Result<()> {
     // Find all PNG files in the current directory and its subdirectories.
-    for entry in glob("**/*.png")? {
-        println!("{}", entry?.display());
+    for path in find_pngs("**/*.png")? {
+        println!("{}", path.display());
     }
 
     Ok(())
+}
+
+/// Returns the paths that match the glob `pattern`.
+fn find_pngs(pattern: &str) -> Result<Vec<PathBuf>> {
+    let mut paths = Vec::new();
+    for entry in glob(pattern)? {
+        paths.push(entry?);
+    }
+    Ok(paths)
 }
 
 // ANCHOR_END: example
@@ -27,31 +38,28 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that the png example's main path succeeds.
-    /// Runs the png example through its entry point.
+    /// The example runs against the current tree.
     #[test]
-    fn test_png_example_entry_point() -> anyhow::Result<()> {
-        use std::fs;
-        use std::path::Path;
+    fn test_png_example_entry_point() -> Result<()> {
+        main()
+    }
 
-        // Create a temporary directory.
-        let temp_dir = Path::new("temp_png_test");
-        if !temp_dir.exists() {
-            fs::create_dir_all(temp_dir)?;
-        }
-
-        // Create a dummy PNG file.
-        let png_file = temp_dir.join("test_image.png");
-        fs::write(&png_file, b"\x89PNG\r\n\x1a\n")?;
-
-        // Run main and check if it finds the file.
-        // Note: main searches in the current directory tree using
-        // glob("**/*.png").
-        main()?;
-
-        // Clean up.
-        fs::remove_dir_all(temp_dir)?;
-
+    /// Only PNG files at any depth match; an invalid pattern is an error.
+    #[test]
+    fn finds_png_files_recursively() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        std::fs::create_dir(dir.path().join("sub"))?;
+        std::fs::write(dir.path().join("a.png"), "")?;
+        std::fs::write(dir.path().join("sub/b.png"), "")?;
+        std::fs::write(dir.path().join("c.txt"), "")?;
+        let pattern = format!("{}/**/*.png", dir.path().display());
+        let mut found = find_pngs(&pattern)?;
+        found.sort();
+        assert_eq!(
+            found,
+            vec![dir.path().join("a.png"), dir.path().join("sub/b.png")]
+        );
+        assert!(find_pngs("[").is_err());
         Ok(())
     }
 }

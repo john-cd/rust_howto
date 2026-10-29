@@ -31,4 +31,14 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// The reported directory is absolute, exists, and matches the process
+    /// state.
+    #[test]
+    fn current_dir_is_an_existing_absolute_path() -> Result<()> {
+        let cwd = env::current_dir()?;
+        assert!(cwd.is_absolute());
+        assert!(cwd.is_dir());
+        Ok(())
+    }
 }

@@ -6,14 +6,19 @@
 use std::fs;
 use std::path::Path;
 
-/// Creates, lists and removes directories.
+/// Creates, lists and removes directories under the current directory.
 fn main() -> std::io::Result<()> {
+    manipulate_dirs(Path::new("."))
+}
+
+/// Creates, lists and removes directories under `base`.
+fn manipulate_dirs(base: &Path) -> std::io::Result<()> {
     // 1. Create a directory:
-    let path = Path::new("./example_dir");
+    let path = base.join("example_dir");
     if path.exists() {
         println!("Directory 'example_dir' already exists.");
     } else {
-        fs::create_dir(path)?;
+        fs::create_dir(&path)?;
         // This function will return an error e.g. if the parent directory
         // doesn't exist, if the directory already exists, or if
         // permissions are lacking.
@@ -21,12 +26,12 @@ fn main() -> std::io::Result<()> {
     }
 
     // 2. Remove it. The directory must be empty:
-    fs::remove_dir(path)?;
+    fs::remove_dir(&path)?;
     println!("'{}' successfully removed.", path.display());
 
     // 3. Create a directory and any of its missing parents:
-    let path = "./temp/my_files/subfolder";
-    fs::create_dir_all(path)?; // Creates 'temp', 'temp/my_files', and 'temp/my_files/subfolder' if they don't exist.
+    let path = base.join("temp/my_files/subfolder");
+    fs::create_dir_all(&path)?; // Creates 'temp', 'temp/my_files', and 'temp/my_files/subfolder' if they don't exist.
     // You can also use `DirBuilder`:
     // std::fs::DirBuilder::new()
     //     .recursive(true)
@@ -35,8 +40,8 @@ fn main() -> std::io::Result<()> {
     // 4. Create a few files for the next step.
     // `write` creates a file if it does not exist, and will entirely replace
     // its contents if it does.
-    fs::write("./temp/my_files/file1.txt", "Hello")?;
-    fs::write("./temp/my_files/subfolder/file2.log", "World")?;
+    fs::write(base.join("temp/my_files/file1.txt"), "Hello")?;
+    fs::write(base.join("temp/my_files/subfolder/file2.log"), "World")?;
 
     // 5. List the contents of a directory:
     println!("Reading contents of 'my_files':");
@@ -44,7 +49,7 @@ fn main() -> std::io::Result<()> {
     // Note that the order in which `read_dir` returns entries is not
     // guaranteed.
     // Use recursion to list the contents of all (sub)directories.
-    for entry in fs::read_dir("./temp/my_files")? {
+    for entry in fs::read_dir(base.join("temp/my_files"))? {
         let entry = entry?; // Handle potential error for each entry.
         let path = entry.path();
 
@@ -61,7 +66,7 @@ fn main() -> std::io::Result<()> {
     // not exist or removing any of its contents fails. This function does not
     // follow symbolic links and
     // will simply remove the symbolic link itself.
-    fs::remove_dir_all("./temp/my_files")?;
+    fs::remove_dir_all(base.join("temp/my_files"))?;
     Ok(())
 }
 
@@ -79,6 +84,30 @@ mod tests {
     #[test]
     fn test_manipulate_dirs_example_entry_point() -> anyhow::Result<()> {
         main()?;
+        Ok(())
+    }
+
+    /// Everything is created and cleaned up under the given base directory.
+    #[test]
+    fn creates_and_removes_directories_in_base() -> std::io::Result<()> {
+        let base = tempfile::tempdir()?;
+        manipulate_dirs(base.path())?;
+        assert!(!base.path().join("example_dir").exists());
+        assert!(!base.path().join("temp/my_files").exists());
+        assert!(base.path().join("temp").is_dir());
+        Ok(())
+    }
+
+    /// A pre-existing `example_dir` is reused; a non-empty one cannot be
+    /// removed.
+    #[test]
+    fn non_empty_example_dir_is_an_error() -> std::io::Result<()> {
+        let base = tempfile::tempdir()?;
+        fs::create_dir(base.path().join("example_dir"))?;
+        manipulate_dirs(base.path())?;
+        fs::create_dir(base.path().join("example_dir"))?;
+        fs::write(base.path().join("example_dir/f"), "x")?;
+        assert!(manipulate_dirs(base.path()).is_err());
         Ok(())
     }
 }
