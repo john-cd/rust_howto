@@ -55,3 +55,13 @@ fn main() {
 fn main() {
     println!("This example requires Windows.");
 }
+
+#[cfg(test)]
+mod tests {
+    /// Explains that the example requires Windows on other platforms.
+    #[cfg(not(target_os = "windows"))]
+    #[test]
+    fn main_explains_the_requirement() {
+        assert!(std::panic::catch_unwind(super::main).is_ok());
+    }
+}

@@ -28,6 +28,8 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    // output-only: the example displays a message box and is ignored by
+    // default; see the other tests for its logic.
     use super::*;
 
     /// Displays a message box when explicitly run on a Windows desktop.
