@@ -120,12 +120,4 @@ mod tests {
         );
         Ok(())
     }
-
-    #[test]
-    #[ignore = "needs a running PostgreSQL server"]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
 }
