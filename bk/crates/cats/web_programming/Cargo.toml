@@ -23,11 +23,6 @@ path = "examples/html_text/ammonia_clean.rs"
 test = true
 
 [[example]]
-name = "html2text"
-path = "examples/html_text/html2text.rs"
-test = true
-
-[[example]]
 name = "markdown_to_safe_html"
 path = "examples/html_text/markdown_to_safe_html.rs"
 test = true
@@ -57,7 +52,6 @@ ammonia = "4.2.4"
 anyhow = "1.0.104"
 bytes = "1.12.1"
 clap = { version = "4.6.7", features = ["derive"] }
-html2text = "0.17.4"
 http = "1.5.0"
 http-body-util = "0.1.5"
 lazy_static = "1.5.1"

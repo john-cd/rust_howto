@@ -2,12 +2,12 @@
 
 # Email
 
-This crate contains code examples for the **Email** category on crates.io. It demonstrates integration with key ecosystem crates including `anyhow`, `async-imap`, `futures`, `lettre`, `mail-parser`, `mailchecker`.
+This crate contains code examples for the **Email** category on crates.io. It demonstrates integration with key ecosystem crates including `anyhow`, `async-imap`, `futures`, `html2text`, `lettre`, `mail-parser`, `mailchecker`.
 
 ## Examples Covered
 
 - **Imap** (`examples/imap/`): Demonstrates concepts like `imap_fetch`, `mailchecker`.
-- **Standalone Examples**: `lettre`, `mailparse`.
+- **Standalone Examples**: `html2text`, `lettre`, `mailparse`.
 
 ## Usage
 

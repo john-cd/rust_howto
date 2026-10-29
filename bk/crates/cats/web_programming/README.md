@@ -2,11 +2,11 @@
 
 # Web Programming
 
-This crate contains code examples for the **Web Programming** category on crates.io. It demonstrates integration with key ecosystem crates including `ammonia`, `anyhow`, `bytes`, `clap`, `html2text`, `http`.
+This crate contains code examples for the **Web Programming** category on crates.io. It demonstrates integration with key ecosystem crates including `ammonia`, `anyhow`, `bytes`, `clap`, `http`.
 
 ## Examples Covered
 
-- **Html Text** (`examples/html_text/`): Demonstrates concepts like `ammonia_clean`, `html2text`, `markdown_to_safe_html`.
+- **Html Text** (`examples/html_text/`): Demonstrates concepts like `ammonia_clean`, `markdown_to_safe_html`.
 - **HTTP Types and Interfaces** (`examples/http_types_and_interfaces/`): Demonstrates concepts like `http`.
 - **Mime** (`examples/mime/`): Demonstrates concepts like `filename`, `request`, `string`.
 - **Scraping** (`examples/scraping/`): Demonstrates concepts like `broken`, `extract_links`, `unique`.

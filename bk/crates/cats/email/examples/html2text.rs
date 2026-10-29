@@ -1,8 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Converts an HTML email body to wrapped plain text with `html2text`, e.g.
-//! for the `text/plain` part of a multipart message.
+//! Converts an HTML email body to wrapped plain text with `html2text`.
 
 /// Converts the sample HTML email and checks its text alternative.
 fn main() -> anyhow::Result<()> {
@@ -36,9 +35,8 @@ mod tests {
     use super::*;
 
     /// Checks that the email text preserves its heading, link, and list.
-    /// Runs the html2text example through its entry point.
     #[test]
-    fn test_html2text_example_entry_point() -> anyhow::Result<()> {
+    fn html2text_example_runs() -> anyhow::Result<()> {
         main()
     }
 }

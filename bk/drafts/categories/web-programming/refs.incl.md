@@ -8,7 +8,6 @@
 [ex~web-programming~extract-the-url-origin]: url.md#extract-the-url-origin
 [ex~web-programming~get-mime-type-from-string]: mime.md#get-mime-type-from-string
 [ex~web-programming~get-mimetype-from-filename]: mime.md#get-mimetype-from-filename
-[ex~web-programming~html2text]: html_sanitization.md#html2text
 [ex~web-programming~http-body-util]: http_types_and_interfaces.md#http-body-util
 [ex~web-programming~http-body]: http_types_and_interfaces.md#http-body
 [ex~web-programming~http]: http_types_and_interfaces.md#http

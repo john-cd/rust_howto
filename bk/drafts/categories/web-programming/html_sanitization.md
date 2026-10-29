@@ -4,7 +4,7 @@
 
 {{#include html_sanitization.incl.md}}
 
-Strip dangerous markup from user-supplied or scraped HTML before showing or storing it, and produce a plain-text version of HTML.
+Strip dangerous markup from user-supplied or scraped HTML before showing or storing it. For an email's plain-text alternative, see [[send_emails | Send Emails]].
 
 ## Sanitize Untrusted HTML (`ammonia`) {#ammonia}
 
@@ -24,16 +24,6 @@ Markdown allows raw HTML, so cleaning the Markdown source is not enough. Render 
 
 ```rust,editable
 {{#include ../../../crates/cats/web_programming/examples/html_text/markdown_to_safe_html.rs:example}}
-```
-
-## Convert HTML to Plain Text (`html2text`) {#html2text}
-
-[![html2text][c~html2text~docs~badge]][c~html2text~docs] [![html2text~crates.io][c~html2text~crates.io~badge]][c~html2text~crates.io]{{hi:html2text}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Email}}
-
-[`html2text`][c~html2text~docs]↗{{hi:html2text}} renders HTML as wrapped plain text, keeping headings, list items and link targets. It is handy for the `text/plain` alternative of an HTML email or for a terminal preview.
-
-```rust,editable
-{{#include ../../../crates/cats/web_programming/examples/html_text/html2text.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}

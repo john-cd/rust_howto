@@ -23,6 +23,11 @@ path = "examples/imap/main.rs"
 test = true
 
 [[example]]
+name = "html2text"
+path = "examples/html2text.rs"
+test = true
+
+[[example]]
 name = "lettre"
 path = "examples/lettre.rs"
 test = true
@@ -38,6 +43,7 @@ async-imap = { version = "0.12.0", default-features = false, features = [
     "runtime-tokio",
 ] }
 futures = "0.3.34"
+html2text = "0.17.4"
 lettre = { version = "0.11.23", features = ["tokio1-native-tls"] }
 mail-parser = "1.0.0"
 mailchecker = "6.0.21"

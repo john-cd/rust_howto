@@ -61,7 +61,7 @@ A syntax-and-domain-list check cannot tell whether a mailbox exists. For syntax 
 A multipart email should carry a `text/plain` part next to the HTML one, for clients that cannot show HTML and for spam filters. Instead of writing the text version by hand, generate it from the HTML body with [`html2text`][c~html2text~docs]↗{{hi:html2text}}, then pass both strings to the `lettre` message builder (`MultiPart::alternative_plain_html`). See also [[html_sanitization | Sanitize HTML]].
 
 ```rust,editable
-{{#include ../../../crates/cats/web_programming/examples/html_text/html2text.rs:example}}
+{{#include ../../../crates/cats/email/examples/html2text.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}
