@@ -60,7 +60,8 @@ mod tests {
         let waker = Waker::new(poll.registry(), WAKE_TOKEN)?;
         waker.wake()?;
         poll.poll(&mut events, Some(Duration::from_millis(500)))?;
-        let tokens: Vec<Token> = events.iter().map(|e| e.token()).collect();
+        let tokens: Vec<Token> =
+            events.iter().map(mio::event::Event::token).collect();
         assert_eq!(tokens, [WAKE_TOKEN]);
         Ok(())
     }
