@@ -1,8 +1,8 @@
 # TODO Reviewed ??-??-2026.
 
 [graph]
-# Match the feature set used by the workspace's ordinary builds. Optional
-# framework integrations are not enabled implicitly by the audit.
+# Audit optional example stacks in the advisory workflow with
+# `cargo deny --all-features check advisories`.
 all-features = false
 
 [advisories]
@@ -19,6 +19,8 @@ ignore = [
   { id = "RUSTSEC-2026-0391", reason = "zstd 0.13.3 is pinned by pingora-core (git rev in network_programming); pingora HEAD still uses 0.13.3 as of 2026-10-28. The network_programming sources do not call zstd directly." },
   { id = "RUSTSEC-2026-0398", reason = "zstd-safe 7.3.0 is pinned through zstd 0.13.3 by pingora; the Seekable API is not used." },
   { id = "RUSTSEC-2026-0403", reason = "zstd-safe 7.3.0 is pinned through zstd 0.13.3 by pingora; legacy-frame streaming decompression is not used by the examples." },
+  { id = "RUSTSEC-2026-0194", reason = "quick-xml 0.39.4 is pinned by object_store 0.13.2 in the optional SurrealDB 3.3.4 stack. The example instantiates only the in-memory Mem engine and does not parse user-supplied XML; object_store requires quick-xml ^0.39.0, so updating the lockfile to the fixed 0.41.0 was rejected by Cargo. Revisit when SurrealDB releases an object_store dependency that accepts a fixed quick-xml." },
+  { id = "RUSTSEC-2026-0195", reason = "quick-xml 0.39.4 is pinned by object_store 0.13.2 in the optional SurrealDB 3.3.4 stack. The example instantiates only the in-memory Mem engine and does not parse user-supplied XML; object_store requires quick-xml ^0.39.0, so updating the lockfile to the fixed 0.41.0 was rejected by Cargo. Revisit when SurrealDB releases an object_store dependency that accepts a fixed quick-xml." },
 ]
 unmaintained = "workspace"
 unsound = "workspace"

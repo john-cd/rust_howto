@@ -46,4 +46,7 @@ jobs:
         with:
           manifest-path: bk/crates/Cargo.toml
           command: check ${{ matrix.checks }}
-          arguments: --workspace --config bk/crates/deny.toml --hide-inclusion-graph
+          arguments: >-
+            --workspace --config bk/crates/deny.toml
+            ${{ matrix.checks == 'advisories' && '--all-features' || '' }}
+          command-arguments: --hide-inclusion-graph

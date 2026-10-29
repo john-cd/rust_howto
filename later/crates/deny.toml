@@ -7,9 +7,13 @@
 # `cargo update` finds no compatible fix (2026-10-28): each vulnerable crate is
 # pinned by a third-party dependency. Revisit when promoting a crate to `bk/crates`.
 #
+# The default gate follows ordinary workspace features. Audit optional
+# integrations separately with `cargo deny --all-features check advisories`;
+# the full lockfile is also inspected with `cargo audit`.
+#
 # Unmaintained and unsound warnings (anymap2, bincode, im, paste, rustybuzz,
-# ttf-parser, zvariant, zstd-safe, ...) all come from transitive dependencies of
-# the GUI, graphics, data-frame and ML stacks; they are accepted as teaching
+# ttf-parser, zvariant, zstd-safe, ...) come from transitive dependencies of the
+# GUI, graphics, data-frame, ML, and WebAssembly stacks. They remain teaching
 # exceptions while the chapters stay in staging. `unmaintained`/`unsound` below
 # only consider direct workspace dependencies, which are listed individually.
 
@@ -18,15 +22,15 @@ all-features = false
 
 [advisories]
 ignore = [
-  { id = "RUSTSEC-2026-0258", reason = "h2 0.3.27 is pinned by hyper 0.14 through geocoding 0.4 (science_geo); no newer geocoding exists. Example exposure not audited; staging only." },
-  { id = "RUSTSEC-2026-0300", reason = "skiplist 0.6.0 is pinned by polars-compute 0.51 (other); fixed only in skiplist 1.x." },
-  { id = "RUSTSEC-2026-0409", reason = "skiplist 0.6.0 is pinned by polars-compute 0.51 (other); fixed only in skiplist 1.x." },
-  { id = "RUSTSEC-2026-0367", reason = "zip 8.6.0 is pinned by candle-core and ggez; example exposure not audited; staging only." },
-  { id = "RUSTSEC-2026-0368", reason = "zip 8.6.0 is pinned by candle-core and ggez; example exposure not audited; staging only." },
-  { id = "RUSTSEC-2026-0369", reason = "zip 8.6.0 is pinned by candle-core and ggez; example exposure not audited; staging only." },
-  { id = "RUSTSEC-2026-0391", reason = "zstd 0.13.3 is pinned by arrow-ipc and datafusion; fixed only in zstd 0.14." },
-  { id = "RUSTSEC-2026-0398", reason = "zstd-safe 7.3.0 is pinned through zstd 0.13.3 by arrow and datafusion; exposure not audited; staging only." },
-  { id = "RUSTSEC-2026-0403", reason = "zstd-safe 7.3.0 is pinned through zstd 0.13.3 by arrow and datafusion; exposure not audited; staging only." },
+  { id = "RUSTSEC-2026-0258", reason = "h2 0.3.27 is pinned by hyper 0.14 through geocoding 0.4 in science_geo. Only the optional locate_online helper reaches the fixed OpenStreetMap provider; the example entry point and tests use a fake provider, and users cannot select an endpoint. A malicious peer could still send hostile HTTP/2 frames if that helper is used. No compatible geocoding update exists; keep staging-only." },
+  { id = "RUSTSEC-2026-0300", reason = "skiplist 0.6.0 is pinned by polars-compute 0.51 in other. The Polars example sorts and groups inline strings and integers; it supplies neither user-defined comparators nor values with a panicking Drop implementation, so the vulnerable clear/retain trigger is absent from the fixture. No compatible Polars update reaches skiplist 1.x; recheck before promotion." },
+  { id = "RUSTSEC-2026-0409", reason = "skiplist 0.6.0 is pinned by polars-compute 0.51 in other. The Polars example sorts and groups inline strings and integers; it uses built-in ordering and supplies no inconsistent comparator. No compatible Polars update reaches skiplist 1.x; recheck before promotion." },
+  { id = "RUSTSEC-2026-0367", reason = "zip 8.6.0 is pinned by candle-core (science/candle) and ggez (game_engines/ggez). Candle trains on synthetic tensors and ggez draws generated geometry; neither example opens or extracts ZIP archives, so SUID/SGID preservation is not reached. No compatible upstream release is available; keep these examples in staging." },
+  { id = "RUSTSEC-2026-0368", reason = "zip 8.6.0 is pinned by candle-core (science/candle) and ggez (game_engines/ggez). Neither example calls ZipArchive::extract or accepts an archive, so attacker-controlled symlink targets are not exercised. No compatible upstream release is available; isolate or update the stacks before promotion." },
+  { id = "RUSTSEC-2026-0369", reason = "zip 8.6.0 is pinned by candle-core (science/candle) and ggez (game_engines/ggez). Neither example extracts archives or applies archive permissions through symlinks. No compatible upstream release is available; isolate or update the stacks before promotion." },
+  { id = "RUSTSEC-2026-0391", reason = "zstd 0.13.3 is pinned by arrow-ipc/datafusion and the optional Wasmtime cache stack; fixed only in zstd 0.14. Arrow IPC and DataFusion examples use in-memory buffers/tables, and the Wasmtime example compiles inline WAT without configuring a file cache; no example reuses a compression context or decompresses user-controlled data. Recheck the dependency stack before promotion." },
+  { id = "RUSTSEC-2026-0398", reason = "zstd-safe 7.3.0 is pulled by zstd 0.13.3 through Arrow, DataFusion, and the optional Wasmtime cache stack. No example calls Seekable::decompress; the affected transitive APIs are not exposed by the in-memory fixtures. Keep staging-only and recheck before promotion." },
+  { id = "RUSTSEC-2026-0403", reason = "zstd-safe 7.3.0 is pulled by zstd 0.13.3 through Arrow, DataFusion, and the optional Wasmtime cache stack. No example uses legacy-frame streaming decompression; the affected transitive APIs are not exposed by the in-memory fixtures. Keep staging-only and recheck before promotion." },
   { id = "RUSTSEC-2025-0035", reason = "macroquad is a direct dependency of a staging crate; no fixed release exists. Replace or isolate it before the chapter leaves staging." },
   { id = "RUSTSEC-2024-0436", reason = "paste is a direct dependency of a staging crate. Replace it (for example with pastey) before promotion." },
 ]
