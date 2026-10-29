@@ -43,10 +43,10 @@ TLS support for Hyper through OpenSSL.
 
 ## Related Topics {#related-topics .skip}
 
-- [[network-programming/server | TCP Listener Servers]] for lower-level networking.
-- [[asynchronous | Asynchronous Programming]] for Tokio and async I/O concepts.
-- [[web-programming_http-server | Higher-Level HTTP Server Frameworks]] for Axum, Actix Web, middleware, and routing.
-- [[web-programming_http-client | HTTP Clients]] for client-side requests and convenient HTTP APIs.
+- [TCP Listener Servers](../network-programming/server.md) for lower-level networking.
+- [Asynchronous Programming](../asynchronous/index.md) for Tokio and async I/O concepts.
+- [Higher-Level HTTP Server Frameworks](index.md) for Axum, Actix Web, middleware, and routing.
+- [HTTP Clients](../web-programming_http-client/index.md) for client-side requests and convenient HTTP APIs.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

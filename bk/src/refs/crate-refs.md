@@ -10598,7 +10598,7 @@
 [c~zip~repo~badge]: https://img.shields.io/badge/zip-steelblue?logo=github
 [c~zola~crates.io]: https://crates.io/crates/zola
 [c~zola~crates.io~badge]: https://img.shields.io/badge/crates.io-zola-crimson
-[c~zola~docs]: https://docs.rs/zola
+[c~zola~docs]: https://www.getzola.org/documentation/getting-started/overview/
 [c~zola~docs~badge]: https://img.shields.io/crates/v/zola?label=zola
 [c~zola~lib.rs]: https://lib.rs/crates/zola
 [c~zola~lib.rs~badge]: https://img.shields.io/badge/lib.rs-zola-yellow

@@ -8,11 +8,11 @@ support; a folder layout alone does not define an architecture.
 
 ## Choose a starting point
 
-| If you want to...                                                                         | Start here                      |
-| ----------------------------------------------------------------------------------------- | ------------------------------- |
-| Clarify goals, boundaries, quality requirements, alternatives, and decisions              | [[software_architecture_process | Software Architecture Process]] |
-| Compare system-level structures such as layered, event-driven, or microservices           | [[common_architectures          | Common Architectures]] |
-| Organize component responsibilities with repository, state-machine, or injection patterns | [[architectural_patterns        | Architectural Patterns]] |
+| If you want to...                                                                         | Start here                                                        |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Clarify goals, boundaries, quality requirements, alternatives, and decisions              | [Software Architecture Process](software_architecture_process.md) |
+| Compare system-level structures such as layered, event-driven, or microservices           | [Common Architectures](common_architectures.md)                   |
+| Organize component responsibilities with repository, state-machine, or injection patterns | [Architectural Patterns](architectural_patterns.md)               |
 
 Read the process first when beginning a system or reviewing a major change. Use the
 architecture styles to compare broad structures, then choose component patterns only
@@ -31,8 +31,8 @@ or engineering question.
 
 ## Related topics
 
-- [[cloud | Cloud]] and deployment environments.
-- [[concurrency | Concurrency]] and asynchronous behavior.
-- [[data-processing | Data Processing]] and storage choices.
-- [[web-programming | Web Programming]] and service interfaces.
-- [[written-in-rust | Written in Rust]] for examples of complete Rust applications.
+- [Cloud](../cloud/index.md) and deployment environments.
+- Concurrency<!-- Cross-book topic: bk/drafts/categories/concurrency/index.md; not included in this preview. --> and asynchronous behavior.
+- [Data Processing](../data-processing/index.md) and storage choices.
+- Web Programming<!-- Cross-book topic: bk/drafts/categories/web-programming/index.md; not included in this preview. --> and service interfaces.
+- [Written in Rust](../written-in-rust/index.md) for examples of complete Rust applications.

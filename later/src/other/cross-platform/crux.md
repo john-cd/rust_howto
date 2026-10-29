@@ -34,11 +34,11 @@ Crux is a good fit when several clients need the same business rules but need di
 
 ## Related Topics {#related-topics .skip}
 
-- [[cross-platform | Cross-platform Development]].
-- [[architecture | Architecture]].
+- [Cross-platform Development](index.md).
+- [Architecture](../architecture/index.md).
 - [Software Architecture Process][p~architecture-process].
-- [[wasm | WebAssembly]].
-- [[programming_languages | Programming Languages]].
+- [WebAssembly](../../categories/wasm/index.md).
+- Programming Languages<!-- Cross-book topic: bk/drafts/categories/parser-implementations/programming_languages.md; not included in this preview. -->.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

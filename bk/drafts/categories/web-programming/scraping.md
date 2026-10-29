@@ -20,7 +20,7 @@ Uses [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} to fetch the pa
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![scraper][c~scraper~docs~badge]][c~scraper~docs]{{hi:scraper}} [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
-The example resolves the first HTML `<base href>` against the page URL. If there is no base element, relative links resolve against the full document URL. It follows the URL rules in [[url | Uniform Resource Locator]] and checks only HTTP(S) links; `mailto:` and other schemes are skipped.
+The example resolves the first HTML `<base href>` against the page URL. If there is no base element, relative links resolve against the full document URL. It follows the URL rules in [Uniform Resource Locator](url.md) and checks only HTTP(S) links; `mailto:` and other schemes are skipped.
 
 The checker makes requests sequentially with a finite per-request timeout, so a page cannot create an unbounded number of concurrent tasks. It reports `404 Not Found` and `410 Gone` as broken links; other unexpected HTTP statuses and transport errors are returned as errors.
 
@@ -42,8 +42,8 @@ MediaWiki link syntax is described in the [MediaWiki links guide][mediawiki~link
 
 ## Related Topics {#related-topics .skip}
 
-- [[url | Uniform Resource Locator]].
-- [[requests | Make HTTP Requests]].
+- [Uniform Resource Locator](url.md).
+- [Make HTTP Requests](../web-programming_http-client/requests.md).
 
 HTML parsing does not execute page JavaScript. For pages that need browser rendering or interaction, consider [headless_chrome](https://github.com/rust-headless-chrome/rust-headless-chrome) (Chrome DevTools Protocol), [chromiumoxide](https://github.com/mattsse/chromiumoxide) (Chrome DevTools Protocol), or [fantoccini](https://github.com/jonhoo/fantoccini) (WebDriver).
 

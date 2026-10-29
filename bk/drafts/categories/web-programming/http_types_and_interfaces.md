@@ -43,8 +43,8 @@ The `Body` trait yields frames asynchronously. Data frames carry byte buffers, a
 
 ## Related Topics {#related-topics .skip}
 
-- HTTP clients: [[web-programming_http-client | HTTP Client]].
-- HTTP servers: [[web-programming_http-server | HTTP Server]].
+- HTTP clients: [HTTP Client](../web-programming_http-client/index.md).
+- HTTP servers: [HTTP Server](../web-programming_http-server/index.md).
 - Middleware often uses the `tower::Service` interface to wrap request and response handling.
 
 {{#include refs.incl.md}}

@@ -6,7 +6,7 @@
 
 Continuous integration (CI) runs automated checks against proposed changes. Continuous delivery keeps accepted changes ready to release, while continuous deployment promotes them to production automatically after the required checks pass. Since teams use CD for either practice, document where a human approval or operational decision sits in your pipeline.
 
-A pipeline should make a change traceable from its source commit through validation and a built artifact to each deployment. The same ideas apply across CI services; the [[github_actions | GitHub Actions]] chapter covers one provider in more detail.
+A pipeline should make a change traceable from its source commit through validation and a built artifact to each deployment. The same ideas apply across CI services; the [GitHub Actions](github_actions.md) chapter covers one provider in more detail.
 
 ## Continuous integration for Rust {#continuous-integration}
 
@@ -36,7 +36,7 @@ Give each workflow or job only the permissions it needs. Do not expose deploymen
 
 In a GitHub Actions pipeline, pull requests can run formatting, linting, and tests without release credentials. A merge to the protected default branch can build and retain a candidate artifact. A version tag can publish that artifact, and a separate deploy job can promote it through protected environments. Define the exact triggers and approval points to match the project's release policy.
 
-For an example of a mature Rust release workflow, see [ripgrep's release workflow][ripgrep~release-workflow]. For workflow syntax, tool installation, and caching examples, see [[github_actions | GitHub Actions]].
+For an example of a mature Rust release workflow, see [ripgrep's release workflow][ripgrep~release-workflow]. For workflow syntax, tool installation, and caching examples, see [GitHub Actions](github_actions.md).
 
 ## Related resources {#related-resources .skip}
 
@@ -63,12 +63,12 @@ For an example of a mature Rust release workflow, see [ripgrep's release workflo
 
 ## Related topics {#related-topics .skip}
 
-- [[github_actions | GitHub Actions]].
-- [[release_automation | Release Automation]].
-- [[version_control | Version Control]].
-- [[testing | Testing]].
-- [[code_formatting_linting | Code Formatting and Linting]].
-- [[cloud | Cloud]].
+- [GitHub Actions](github_actions.md).
+- [Release Automation](release_automation.md).
+- [Version Control](version_control.md).
+- Testing<!-- Cross-book topic: bk/drafts/categories/development-tools_testing/testing.md; not included in this preview. -->.
+- Code Formatting and Linting<!-- Cross-book topic: bk/drafts/categories/development-tools_cargo-plugins/code_formatting_linting.md; not included in this preview. -->.
+- [Cloud](../cloud/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

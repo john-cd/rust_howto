@@ -38,8 +38,8 @@ Markdown allows raw HTML, so cleaning the Markdown source is not enough. Render 
 
 ## Related Topics {#related-topics .skip}
 
-- [[scraping | Web Scraping]].
-- [[template-engine | Template Engine]].
+- [Web Scraping](scraping.md).
+- [Template Engine](../template-engine/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

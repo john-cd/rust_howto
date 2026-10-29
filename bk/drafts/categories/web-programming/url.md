@@ -66,8 +66,8 @@ Parses [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} and slices it at [`url::P
 
 ## Related Topics {#related-topics .skip}
 
-- [[requests | Make HTTP Requests]].
-- [[scraping | Extracting Links]].
+- [Make HTTP Requests](../web-programming_http-client/requests.md).
+- [Extracting Links](scraping.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

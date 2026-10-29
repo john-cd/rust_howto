@@ -14,7 +14,7 @@ Use native HTML elements for their intended purpose, preserve heading and landma
 
 When generating or inspecting HTML in Rust, [`html5ever`][c~html5ever~docs]↗{{hi:html5ever}} and [`tl`][c~tl~docs]↗{{hi:tl}} parse HTML, [`css`][c~css~docs]↗{{hi:css}} parses CSS, and [`url`][c~url~docs]↗{{hi:url}} handles URLs. Use these to check generated markup, for example to confirm that images have `alt` text and form controls have labels.
 
-See [[web-programming | Web Programming]], [[web-programming_http-server | HTTP Server]] and [[html | HTML]].
+See Web Programming<!-- Cross-book topic: bk/drafts/categories/web-programming/index.md; not included in this preview. -->, HTTP Server<!-- Cross-book topic: bk/drafts/categories/web-programming_http-server/index.md; not included in this preview. --> and HTML<!-- Cross-book topic: bk/drafts/categories/parser-implementations/html.md; not included in this preview. -->.
 
 ## Desktop, Mobile, and Embedded GUIs
 
@@ -26,19 +26,19 @@ GUI crates such as [`iced`][c~iced~docs]↗{{hi:iced}} and [`egui`][c~egui~docs]
 
 {{#include screen_readers.incl.md}}
 
-See [[gui | GUI]], [[gtk | GTK]], [[immediate_mode_gui | Immediate Mode GUI]], [[retained_mode_gui | Retained Mode GUI]], [[text_layout | Text Layout]], [[ui_layout | UI Layout]], and [[web_based_gui | Web-based GUI]].
+See [GUI](../gui/index.md), [GTK](../gui/gtk.md), [Immediate Mode GUI](../gui/immediate_mode_gui.md), [Retained Mode GUI](../gui/retained_mode_gui.md), [Text Layout](../gui/text_layout.md), [UI Layout](../gui/ui_layout.md), and [Web-based GUI](../gui/web_based_gui.md).
 
 ## Command-line Interfaces
 
 Make output understandable when read aloud or redirected: use clear labels and stable ordering, keep errors distinct from normal output, and avoid relying on color, cursor position, or decorative characters to communicate meaning. Provide a way to disable color and ensure prompts can be answered without a mouse. Terminal styling crates such as [`termcolor`][c~termcolor~docs]↗{{hi:termcolor}} and [`crossterm`][c~crossterm~docs]↗{{hi:crossterm}} help control presentation, but do not replace accessible wording and behavior.
 
-See [[command-line-interface | Command Line Interface]].
+See Command Line Interface<!-- Cross-book topic: bk/drafts/categories/command-line-interface/index.md; not included in this preview. -->.
 
 ## Testing and Review
 
 Automated checks can catch some structural problems, but they do not establish that a complete workflow is accessible. Test important flows with a keyboard alone, inspect focus and text scaling, and use a screen reader on each supported platform. Include people who use assistive technology in usability reviews when possible, and repeat checks after changing navigation or controls.
 
-See [[development-tools_testing | Testing]]. For language and locale support, see [[internationalization | Internationalization]].
+See Testing<!-- Cross-book topic: bk/drafts/categories/development-tools_testing/index.md; not included in this preview. -->. For language and locale support, see [Internationalization](../internationalization/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -18,7 +18,7 @@ When the business rules should match but the interfaces should feel native, put 
 
 ### Target a browser or embedded device
 
-For browser applications, compile Rust to WebAssembly and integrate with browser APIs as needed; see [[wasm | WebAssembly]]. Embedded projects also target specific chips and often use `no_std` libraries and hardware abstraction layers; see [[embedded | Embedded Systems]] and [[no-std | no_std]]. Crates such as [`cortex-m`][c~cortex-m~docs]↗{{hi:cortex-m}}, [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and [`rtic`][c~rtic~docs]↗{{hi:rtic}} are common starting points.
+For browser applications, compile Rust to WebAssembly and integrate with browser APIs as needed; see [WebAssembly](../../categories/wasm/index.md). Embedded projects also target specific chips and often use `no_std` libraries and hardware abstraction layers; see [Embedded Systems](../../categories/embedded/index.md) and [no_std](../../categories/no-std/index.md). Crates such as [`cortex-m`][c~cortex-m~docs]↗{{hi:cortex-m}}, [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and [`rtic`][c~rtic~docs]↗{{hi:rtic}} are common starting points.
 
 ## Cross-compile for another target
 
@@ -66,7 +66,7 @@ Prefer portable APIs and dependencies that support all your targets. Isolate una
 
 ### Web applications
 
-WebAssembly can run Rust code in browsers, but a web app still uses browser APIs for tasks such as the DOM, storage, and networking. See the [[wasm | WebAssembly]] chapter for browser integration and framework examples.
+WebAssembly can run Rust code in browsers, but a web app still uses browser APIs for tasks such as the DOM, storage, and networking. See the [WebAssembly](../../categories/wasm/index.md) chapter for browser integration and framework examples.
 
 ### Desktop and mobile applications
 
@@ -78,15 +78,15 @@ Native mobile development with Rust is still maturing. Rust is most compelling o
 
 ## Keep operating-system APIs local
 
-For system-specific APIs, use the smallest platform-specific layer possible. The book has guides for [[os_freebsd-apis | FreeBSD]], [[os_linux-apis | Linux]], and [[os_macos-apis | macOS]].
+For system-specific APIs, use the smallest platform-specific layer possible. The book has guides for [FreeBSD](../../categories/os_freebsd-apis/index.md), [Linux](../../categories/os_linux-apis/index.md), and [macOS](../../categories/os_macos-apis/index.md).
 
 ## Related Topics
 
-- [[cross-platform | Cross-platform Development]].
-- [[gui | GUI]].
-- [[embedded | Embedded Systems]].
-- [[wasm | WebAssembly]].
-- [[architecture | Software Architecture]].
+- [Cross-platform Development](index.md).
+- [GUI](../../categories/gui/index.md).
+- [Embedded Systems](../../categories/embedded/index.md).
+- [WebAssembly](../../categories/wasm/index.md).
+- [Software Architecture](../architecture/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

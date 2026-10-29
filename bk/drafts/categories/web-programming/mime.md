@@ -40,8 +40,8 @@ Note that the [`reqwest::header`][c~reqwest::header~docs]↗{{hi:reqwest::header
 
 ## Related Topics {#related-topics .skip}
 
-- [[requests | Make HTTP Requests]].
-- [[filesystem | Filesystem]].
+- [Make HTTP Requests](../web-programming_http-client/requests.md).
+- Filesystem<!-- Cross-book topic: bk/src/categories/filesystem/index.md; not included in this preview. -->.
 
 To identify a file from its contents instead of its extension, use a content-sniffing crate such as [`infer`][c~infer~docs]↗.
 
