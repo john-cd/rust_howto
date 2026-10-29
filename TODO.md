@@ -339,7 +339,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-10 — Cloud services and SDKs
 
-- [#1928](https://github.com/john-cd/rust_howto/issues/1928) — **P4** — Add example: write a Kubernetes operator with kube-rs (CRD, reconcile, error policy, status patch) — **PARTIAL ON DEVELOP; BLOCKED — CRD/resource-builder/reconcile examples and page are present; requested CRD YAML snapshot is absent; controller validation needs a cluster; final checks deferred; remaining work is on the issue**
 - [#1938](https://github.com/john-cd/rust_howto/issues/1938) — **P4** — Add examples: AWS SDK for Rust basics (shared config, SES v2 email, CloudWatch metrics, invoke Lambda, S3-compatible endpoints) — **PARTIAL ON DEVELOP; BLOCKED — SDK examples/pages are present; noted CloudWatch/Prometheus comparison and custom TLS guidance remain; live AWS/S3-compatible checks need credentials/services; final checks deferred; remaining work is on the issue**
 
 #### VALIDATE-CODE-11 — Algorithms, data structures and memory
