@@ -43,11 +43,8 @@ fn inspect_path<P: AsRef<Path>>(path: P) {
     println!();
 }
 
-/// Builds paths and inspects their components.
-fn main() {
-    // Create a `Path` from a string literal:
-    let _path = Path::new("./temp/documents/report.txt");
-
+/// Builds `./temp/downloads/archive.tar.gz` step by step.
+fn build_archive_path() -> PathBuf {
     // Create an owned `PathBuf` to build a new path:
     let mut path_buffer = PathBuf::from("./temp");
 
@@ -60,6 +57,15 @@ fn main() {
     // You can change the extension:
     path_buffer.set_extension("tar.gz");
     println!("Changed extension: {}", path_buffer.display());
+    path_buffer
+}
+
+/// Builds paths and inspects their components.
+fn main() {
+    // Create a `Path` from a string literal:
+    let _path = Path::new("./temp/documents/report.txt");
+
+    let mut path_buffer = build_archive_path();
 
     // You can remove the last component:
     path_buffer.pop(); // Removes "archive.tar.gz"
@@ -86,5 +92,33 @@ mod tests {
     #[test]
     fn test_manipulate_paths_example_entry_point() {
         main();
+    }
+
+    /// The built path has the expected components and extension.
+    #[test]
+    fn builds_archive_path() {
+        let path = build_archive_path();
+        assert_eq!(path, Path::new("./temp/downloads/archive.tar.gz"));
+        assert_eq!(path.extension(), Some(std::ffi::OsStr::new("gz")));
+        assert_eq!(path.file_stem(), Some(std::ffi::OsStr::new("archive.tar")));
+        assert_eq!(path.parent(), Some(Path::new("./temp/downloads")));
+    }
+
+    /// Pushing an absolute path replaces the buffer; popping the root fails.
+    #[test]
+    fn push_absolute_replaces_and_pop_root_fails() {
+        let mut path = PathBuf::from("a/b");
+        #[expect(
+            clippy::path_buf_push_overwrite,
+            reason = "demonstrates that pushing an absolute path replaces the buffer"
+        )]
+        path.push("/etc");
+        assert_eq!(path, Path::new("/etc"));
+        let mut root = PathBuf::from("/");
+        assert!(!root.pop());
+        let collected: PathBuf = ["/", "home", "user"].iter().collect();
+        assert_eq!(collected, Path::new("/home/user"));
+        inspect_path("");
+        inspect_path("/");
     }
 }

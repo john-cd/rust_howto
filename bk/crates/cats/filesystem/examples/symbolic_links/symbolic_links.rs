@@ -72,10 +72,16 @@ where
 
 /// Creates a file and a link to it, then inspects both.
 fn main() -> anyhow::Result<()> {
-    fs::create_dir_all("temp")?;
-    let original = Path::new("temp/source.txt");
-    fs::write(original, "Hello, world!")?;
-    let link = Path::new("temp/my_link.txt");
+    demo(Path::new("temp"))
+}
+
+/// Creates `source.txt` and `my_link.txt` in `dir`, then inspects both.
+fn demo(dir: &Path) -> anyhow::Result<()> {
+    fs::create_dir_all(dir)?;
+    let original = dir.join("source.txt");
+    fs::write(&original, "Hello, world!")?;
+    let link = dir.join("my_link.txt");
+    let (original, link) = (original.as_path(), link.as_path());
 
     match fs::remove_file(link) {
         Ok(()) => {}
@@ -113,6 +119,38 @@ mod tests {
                 .context("Failed to create the temp directory.")?;
         }
         main()?;
+        Ok(())
+    }
+
+    /// The link points at the canonical source, reads through to its content,
+    /// and rerunning replaces the old link.
+    #[cfg(any(unix, windows))]
+    #[test]
+    fn creates_a_link_to_the_source() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
+        demo(dir.path())?;
+        demo(dir.path())?;
+        let link = dir.path().join("my_link.txt");
+        assert!(fs::symlink_metadata(&link)?.file_type().is_symlink());
+        assert_eq!(
+            fs::read_link(&link)?,
+            fs::canonicalize(dir.path().join("source.txt"))?
+        );
+        assert_eq!(fs::read_to_string(&link)?, "Hello, world!");
+        Ok(())
+    }
+
+    /// Linking to a path that already exists is an error.
+    #[cfg(any(unix, windows))]
+    #[test]
+    fn existing_link_path_is_an_error() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
+        let source = dir.path().join("s");
+        fs::write(&source, "")?;
+        let link = dir.path().join("l");
+        create_symlink(&source, &link)?;
+        assert!(create_symlink(&source, &link).is_err());
+        assert!(inspect_path(dir.path().join("missing")).is_err());
         Ok(())
     }
 }

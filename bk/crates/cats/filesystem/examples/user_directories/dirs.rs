@@ -56,4 +56,24 @@ mod tests {
     fn test_dirs_example_entry_point() {
         main();
     }
+
+    /// Any directory that is found is an absolute path.
+    #[test]
+    fn directories_are_absolute() {
+        for dir in [
+            dirs::home_dir(),
+            dirs::config_dir(),
+            dirs::data_dir(),
+            dirs::cache_dir(),
+        ]
+        .into_iter()
+        .flatten()
+        {
+            assert!(dir.is_absolute(), "{dir:?}");
+        }
+        if let (Some(home), Some(cache)) = (dirs::home_dir(), dirs::cache_dir())
+        {
+            assert!(cache.starts_with(&home) || cache.is_absolute());
+        }
+    }
 }

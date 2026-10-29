@@ -41,4 +41,6 @@ mod tests {
     fn test_open_example_entry_point() {
         main();
     }
+    // output-only: the example launches external programs; see the ignored
+    // test above.
 }

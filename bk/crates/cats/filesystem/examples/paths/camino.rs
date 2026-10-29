@@ -7,6 +7,19 @@ use std::path::PathBuf;
 
 use camino::Utf8PathBuf;
 
+/// Builds a UTF-8 path by pushing a component onto an initial path.
+fn utf8_path() -> Utf8PathBuf {
+    // Create a new Utf8PathBuf. The `from` method works like the standard one.
+    let mut path = Utf8PathBuf::from("data/files/résumé");
+    println!("Initial path: {path}");
+
+    // Push a new component onto the path.
+    // This is guaranteed to be UTF-8.
+    path.push("résumé-2025.txt");
+    println!("Final path: {path}");
+    path
+}
+
 /// Compares standard paths with UTF-8 paths.
 fn main() {
     // The standard `PathBuf` can contain non-UTF-8 data:
@@ -24,13 +37,7 @@ fn main() {
     // the need to check.
 
     // Create a new Utf8PathBuf. The `from` method works like the standard one.
-    let mut path = Utf8PathBuf::from("data/files/résumé");
-    println!("Initial path: {path}");
-
-    // Push a new component onto the path.
-    // This is guaranteed to be UTF-8.
-    path.push("résumé-2025.txt");
-    println!("Final path: {path}");
+    let path = utf8_path();
 
     // You can directly use the path as a `&str` without any `to_str()` call.
     if path.as_str().ends_with(".txt") {
@@ -57,5 +64,30 @@ mod tests {
     #[test]
     fn test_camino_example_entry_point() {
         main();
+    }
+
+    /// The built path has the expected components.
+    #[test]
+    fn builds_utf8_path() {
+        let path = utf8_path();
+        assert_eq!(path.as_str(), "data/files/résumé/résumé-2025.txt");
+        assert_eq!(path.file_name(), Some("résumé-2025.txt"));
+        assert_eq!(path.extension(), Some("txt"));
+        assert_eq!(
+            path.parent(),
+            Some(camino::Utf8Path::new("data/files/résumé"))
+        );
+    }
+
+    /// Non-UTF-8 paths cannot be converted.
+    #[cfg(unix)]
+    #[test]
+    fn rejects_non_utf8_paths() {
+        use std::ffi::OsString;
+        use std::os::unix::ffi::OsStringExt as _;
+
+        let invalid = PathBuf::from(OsString::from_vec(vec![b'a', 0xFF]));
+        assert!(invalid.to_str().is_none());
+        assert!(Utf8PathBuf::from_path_buf(invalid).is_err());
     }
 }

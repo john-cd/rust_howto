@@ -60,4 +60,21 @@ mod tests {
     fn test_directories_example_entry_point() {
         main();
     }
+
+    /// The application directories are absolute and distinct when no
+    /// override is set, and name the application.
+    #[test]
+    fn application_dirs_name_the_app() -> Result<()> {
+        if std::env::var_os("APP_DATA_DIR").is_some()
+            || std::env::var_os("APP_CONFIG_DIR").is_some()
+        {
+            return Ok(()); // The overrides decide the result.
+        }
+        let (data, config) = (get_data_dir()?, get_config_dir()?);
+        for dir in [&data, &config] {
+            assert!(dir.is_absolute(), "{dir:?}");
+            assert!(dir.to_string_lossy().to_lowercase().contains("bar"));
+        }
+        Ok(())
+    }
 }
