@@ -27,3 +27,6 @@
 [p~requests]: requests.md
 [p~server]: ../network-programming/server.md
 [p~url]: ../web-programming/url.md
+[gist-api]: https://docs.github.com/en/rest/gists/gists
+[c~reqwest::Response::bytes_stream~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Response.html#method.bytes_stream
+[c~reqwest::Response::error_for_status~docs]: https://docs.rs/reqwest/latest/reqwest/struct.Response.html#method.error_for_status

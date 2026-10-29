@@ -17,7 +17,7 @@ Embedded databases written natively in Rust run inside your application process,
 - Strongly typed tables with compile-time checked key and value types.
 - Zero-copy reads via byte slice references.
 - Concurrent reader support without blocking writers.
-- Stable, crash-safe, multi-process compatible storage format.
+- Stable, crash-safe storage format. A database file has one owning process; use its shared database handle for concurrent transactions.
 
 ```rust,editable
 {{#include ../../../crates/cats/database_implementations/examples/databases/redb.rs:example}}
@@ -88,7 +88,7 @@ Selecting the right embedded database depends on data structure requirements, co
 
 ### Key-Value vs SQL Engines
 
-- **B-Tree vs LSM-Tree**: B-Tree stores like `redb` provide predictable read latency and low write amplification for balanced workloads. LSM-Tree engines like `fjall` buffer writes in memory (memtables) and flush append-only files (SSTables) to disk, providing superior write speed at the expense of periodic background compactions.
+- **B-Tree vs LSM-Tree**: Copy-on-write B-tree stores such as `redb` and LSM-tree engines such as `fjall` organize updates differently. LSM engines buffer writes in memory and compact sorted files in the background. Read latency, write amplification, and throughput depend on the workload and durability settings; benchmark representative data rather than choosing from the storage architecture alone.
 - **Embedded SQL**: If your application requires relational tables, indexes, and complex JOIN queries, embedded SQL engines like `GlueSQL` or `Turso` provide SQL query parsing and execution. For traditional C-based SQLite bindings in Rust, see [SQLite][p~sqlite].
 
 ## Related Topics {#related-topics .skip}

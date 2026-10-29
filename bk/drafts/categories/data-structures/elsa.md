@@ -82,6 +82,7 @@ fn main() {
 - [[concurrent_data_structures | Concurrent Data Structures]].
 
 {{#include ../../../src/categories/data-structures/refs.incl.md}}
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">

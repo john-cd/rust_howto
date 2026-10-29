@@ -90,7 +90,7 @@ Android needs the NDK and Rust targets for the device ABIs you ship. iOS needs m
 
 The web backend builds Rust to WebAssembly and uses browser integration rather than loading a native dynamic library. Audit dependencies for WebAssembly support and test the configured web backend separately. Do not assume a native filesystem or thread API works in a browser.
 
-From `later/crates`, `cargo test --locked -p development_tools_ffi --example flutter` checks the plain Rust API. Add `--features flutter` to compile the `StreamSink` bridge example. These commands do not generate bindings, run Flutter, or validate mobile/web packaging. Run `flutter test` and a device/browser smoke test in the generated application as separate integration checks.
+From `later/crates`, `cargo test --locked -p development_tools_ffi --example flutter` checks the plain Rust API. The `StreamSink` fragment is illustrative because its type is generated inside the Flutter application; enabling `flutter` alone does not generate that glue. These commands do not generate bindings, run Flutter, or validate mobile/web packaging. Run `flutter test` and a device/browser smoke test in the generated application as separate integration checks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

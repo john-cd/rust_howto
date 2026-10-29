@@ -30,3 +30,4 @@
 [p~search]: ../database/search.md
 [p~sqlite]: ../database/sqlite.md
 [lancedb~repo]: https://github.com/lancedb/lancedb
+[ex~database-implementations~lapin]: ../database/amqp.md

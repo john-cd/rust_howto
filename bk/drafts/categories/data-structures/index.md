@@ -186,6 +186,7 @@ See [[functional_programming | Functional Programming]].
 - [[rust-patterns | Rust Patterns]].
 
 {{#include ../../../src/categories/data-structures/refs.incl.md}}
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">

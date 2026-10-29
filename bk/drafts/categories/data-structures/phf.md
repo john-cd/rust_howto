@@ -67,6 +67,7 @@ fn main() {
 - [[algorithms | Algorithms]].
 
 {{#include ../../../src/categories/data-structures/refs.incl.md}}
+{{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">

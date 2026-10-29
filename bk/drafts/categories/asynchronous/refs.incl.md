@@ -57,3 +57,4 @@
 [p~tokio]: tokio.md
 [p~traits]: ../../../src/language/traits.md
 [p~writing]: ../development-tools_cargo-plugins/code_writing.md
+[c~async-io~docs]: https://docs.rs/async-io

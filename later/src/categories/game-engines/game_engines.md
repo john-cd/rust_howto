@@ -76,7 +76,3 @@ Macroquad is an immediate-mode framework designed to make a simple 2D game loop 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [game_engines: write](https://github.com/john-cd/rust_howto/issues/369)
-</div>

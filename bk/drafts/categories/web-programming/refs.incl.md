@@ -19,3 +19,6 @@
 [p~links]: ../../../src/links/index.md
 [p~parse]: ../date-and-time/parse.md
 [p~url]: url.md
+[c~scraper::html::parse_document~docs]: https://docs.rs/scraper/latest/scraper/html/struct.Html.html#method.parse_document
+[c~scraper::Selector~docs]: https://docs.rs/scraper/latest/scraper/struct.Selector.html
+[c~url::Position::AfterPath~docs]: https://docs.rs/url/latest/url/enum.Position.html#variant.AfterPath
