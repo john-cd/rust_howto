@@ -61,19 +61,8 @@ fn process_image(
         .into());
     }
 
-    let mut grayscale = Mat::default();
-    imgproc::cvt_color(&input, &mut grayscale, imgproc::COLOR_BGR2GRAY, 0)?;
-    let mut blurred = Mat::default();
-    imgproc::gaussian_blur(
-        &grayscale,
-        &mut blurred,
-        Size::new(5, 5),
-        0.0,
-        0.0,
-        opencv::core::BORDER_DEFAULT,
-    )?;
-    let mut edges = Mat::default();
-    imgproc::canny(&blurred, &mut edges, 50.0, 150.0, 3, false)?;
+    let grayscale = to_grayscale(&input)?;
+    let edges = detect_edges(&grayscale)?;
 
     if !imgcodecs::imwrite(output_path, &edges, &Vector::new())? {
         return Err(std::io::Error::other(
@@ -83,15 +72,74 @@ fn process_image(
     }
     Ok(edges)
 }
+
+// ANCHOR: grayscale
+/// Converts a BGR image to one channel while retaining its dimensions.
+fn to_grayscale(input: &Mat) -> opencv::Result<Mat> {
+    let mut grayscale = Mat::default();
+    imgproc::cvt_color(input, &mut grayscale, imgproc::COLOR_BGR2GRAY, 0)?;
+    Ok(grayscale)
+}
+// ANCHOR_END: grayscale
+
+// ANCHOR: canny
+/// Smooths a grayscale frame and computes its Canny edge mask.
+fn detect_edges(grayscale: &Mat) -> opencv::Result<Mat> {
+    let mut blurred = Mat::default();
+    imgproc::gaussian_blur(
+        grayscale,
+        &mut blurred,
+        Size::new(5, 5),
+        0.0,
+        0.0,
+        opencv::core::BORDER_DEFAULT,
+    )?;
+    let mut edges = Mat::default();
+    imgproc::canny(&blurred, &mut edges, 50.0, 150.0, 3, false)?;
+
+    Ok(edges)
+}
+// ANCHOR_END: canny
 // ANCHOR_END: example
 
+/// Runs the generated-image grayscale and edge-detection workflow.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
 }
 
 #[cfg(test)]
 mod tests {
+    use opencv::core::CV_8UC1;
+    use opencv::core::CV_8UC3;
+    use opencv::core::Scalar;
+
     use super::*;
+
+    /// Converts a generated BGR frame without changing its dimensions.
+    #[test]
+    fn grayscale_preserves_generated_frame_dimensions() -> opencv::Result<()> {
+        let input = Mat::new_rows_cols_with_default(
+            24,
+            32,
+            CV_8UC3,
+            Scalar::all(80.0),
+        )?;
+        let grayscale = to_grayscale(&input)?;
+        assert_eq!((grayscale.rows(), grayscale.cols()), (24, 32));
+        assert_eq!(grayscale.channels(), 1);
+        Ok(())
+    }
+
+    /// Computes an empty edge mask for a generated constant grayscale frame.
+    #[test]
+    fn canny_preserves_dimensions_of_a_constant_frame() -> opencv::Result<()> {
+        let input =
+            Mat::new_rows_cols_with_default(24, 32, CV_8UC1, Scalar::all(0.0))?;
+        let edges = detect_edges(&input)?;
+        assert_eq!((edges.rows(), edges.cols()), (24, 32));
+        assert_eq!(count_non_zero(&edges)?, 0);
+        Ok(())
+    }
 
     /// Verifies that Canny processing writes a nonempty edge image.
     #[test]
