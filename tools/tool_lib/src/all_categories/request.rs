@@ -35,12 +35,13 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
 }
 
 #[cfg(test)]
+#[expect(unsafe_code, reason = "tests call the unsafe EnvGuard under ENV_MUTEX")]
 mod tests {
     use anyhow::Result;
 
     use super::*;
     use crate::ENV_MUTEX;
-    use crate::EnvGuard;
+    use crate::utils::EnvGuard;
 
     /// Verifies that the category TOML request returns the server response.
     #[test]
@@ -60,7 +61,8 @@ mod tests {
             .create();
 
         let mock_url = format!("{}/", server.url());
-        let _url_guard = EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url);
+        // SAFETY: serialized by `ENV_MUTEX`; no other thread uses the environment.
+        let _url_guard = unsafe { EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url) };
 
         let result = get_categories_toml_string()?;
 
@@ -86,7 +88,8 @@ mod tests {
             .create();
 
         let mock_url = format!("{}/", server.url());
-        let _url_guard = EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url);
+        // SAFETY: serialized by `ENV_MUTEX`; no other thread uses the environment.
+        let _url_guard = unsafe { EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url) };
 
         let error =
             get_categories_toml_string().expect_err("a 404 response should fail the request");

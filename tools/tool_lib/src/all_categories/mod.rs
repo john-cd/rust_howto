@@ -30,12 +30,13 @@ pub fn get_all_categories() -> Result<Vec<Category>> {
 }
 
 #[cfg(test)]
+#[expect(unsafe_code, reason = "tests call the unsafe EnvGuard under ENV_MUTEX")]
 mod tests {
     use anyhow::Result;
 
     use super::*;
     use crate::ENV_MUTEX;
-    use crate::EnvGuard;
+    use crate::utils::EnvGuard;
 
     /// Verifies that all categories are fetched and parsed from a successful response.
     #[test]
@@ -63,7 +64,8 @@ description = "Sorting algorithms"
             .create();
 
         let mock_url = format!("{}/", server.url());
-        let _url_guard = EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url);
+        // SAFETY: serialized by `ENV_MUTEX`; no other thread uses the environment.
+        let _url_guard = unsafe { EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url) };
 
         let categories = get_all_categories()?;
         mock_endpoint.assert();
@@ -101,7 +103,8 @@ description = "Sorting algorithms"
             .create();
 
         let mock_url = format!("{}/", server.url());
-        let _url_guard = EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url);
+        // SAFETY: serialized by `ENV_MUTEX`; no other thread uses the environment.
+        let _url_guard = unsafe { EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url) };
 
         let error = get_all_categories().expect_err("a 500 response should fail the request");
         mock_endpoint.assert();
@@ -130,7 +133,8 @@ description = "Sorting algorithms"
             .create();
 
         let mock_url = format!("{}/", server.url());
-        let _url_guard = EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url);
+        // SAFETY: serialized by `ENV_MUTEX`; no other thread uses the environment.
+        let _url_guard = unsafe { EnvGuard::set("MOCK_CATEGORIES_URL", &mock_url) };
 
         let error = get_all_categories().expect_err("malformed TOML should fail to parse");
         mock_endpoint.assert();

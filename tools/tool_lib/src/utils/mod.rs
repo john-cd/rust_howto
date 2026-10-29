@@ -1,11 +1,13 @@
-//! Utilities: a guard for environment variables and a macro for lazily compiled
-//! regular expressions.
+//! Utilities: a test-only guard for environment variables and a macro for lazily
+//! compiled regular expressions.
 //!
 //! TODO Reviewed ??-??-2026.
 
+#[cfg(test)]
 mod envguard;
 
-pub use envguard::EnvGuard;
+#[cfg(test)]
+pub(crate) use envguard::EnvGuard;
 
 // By default, a macro has no path-based scope.
 // However, if it has the #[macro_export] attribute, then it is declared in the crate root scope.
