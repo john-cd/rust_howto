@@ -357,64 +357,36 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 - [#225](https://github.com/john-cd/rust_howto/issues/225) — **P3** — Offline Basic authentication example F — **IMPLEMENTED ON DEVELOP; BLOCKED ON FULL GATES — focused offline tests, Clippy, and formatting passed; `just ca` needs a Cargo.lock update and `just bb` is blocked by the Windows AWS-LC/NASM build; details are on the issue**
 - [#810](https://github.com/john-cd/rust_howto/issues/810) — **P3** — Run native Linux tests and strict Clippy for the Glommio example — **IMPLEMENTED ON DEVELOP; BLOCKED — Linux-only tests/Clippy cannot run here; WSL startup returns `Wsl/E_ACCESSDENIED`; the issue comment records the native Linux follow-up**
-- [#1145](https://github.com/john-cd/rust_howto/issues/1145) — **P3** — `websocket/tokio_tungstenite.rs`: review [the upstream examples](https://github.com/snapview/tokio-tungstenite/tree/master/examples) — **IMPLEMENTED ON DEVELOP; OPEN — local echo client/server and loopback test are present (`8c757a2c0`); prior focused tests/format passed; full Clippy blocked by Windows `aws-lc-sys`/`naga`; PR link pending**
-- [#1910](https://github.com/john-cd/rust_howto/issues/1910) — **P3** — Add examples: web login with axum-login, tower-sessions and Argon2 password hashing — **IMPLEMENTED ON DEVELOP; OPEN — login/hash/CSRF and permission examples, HTTPS redirect recipe, and session-fixation guidance are present; formatted; focused tests, Clippy, refdefs, and book build deferred to final validation**
-- [#1911](https://github.com/john-cd/rust_howto/issues/1911) — **P3** — Add examples: client-side rate limiting and retries (governor, backon/backoff) — **IMPLEMENTED ON DEVELOP; OPEN — governor/backon examples, fake-clock and mock HTTP coverage, Retry-After handling, combined quota/retry guidance, page rows, and refdefs are present; formatted; focused tests, Clippy, refdefs, and book build deferred to final validation**
-- [#1945](https://github.com/john-cd/rust_howto/issues/1945) — **P3** — Add examples: gRPC-Web with tonic and protobuf codegen without a system protoc (tonic-web, tonic-prost-build, protobuf-src) — **IMPLEMENTED ON DEVELOP; OPEN — gRPC-Web example, protox codegen, protocol comparison, page rows, and refdefs are present; corrected browser streaming and Envoy guidance; formatted; focused tests, Clippy, refdefs, and book build deferred to final validation**
 - [#1946](https://github.com/john-cd/rust_howto/issues/1946) — **P3** — Add examples: read mail over IMAP and filter disposable addresses before sending (imap, mailchecker) — **IMPLEMENTED ON DEVELOP; OPEN — IMAP/parser and mailchecker examples, pages, tables, and refdefs are present; live IMAP requires a server and credentials; offline tests, Clippy, refdefs, and book build deferred to final validation; details are on the issue**
-- [#1916](https://github.com/john-cd/rust_howto/issues/1916) — **P4** — Add examples: OpenAPI docs with utoipa and JSON Schema generation with schemars — **IMPLEMENTED ON DEVELOP; OPEN — Swagger UI/spec routes, schema validation, book page/table/refdefs, and CI/versioning prose are present; schema errors propagate instead of silently defaulting; formatted; focused tests, Clippy, refdefs, and book build deferred to final validation**
 
 #### VALIDATE-CODE-02 — Databases and service clients
 
 - [#1017](https://github.com/john-cd/rust_howto/issues/1017) — **P2** — Finish the cdrs_tokio example — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy passed; ignored CRUD test needs Cassandra; full native-dependency/book gates remain; details are on the issue**
 - [#1022](https://github.com/john-cd/rust_howto/issues/1022) — **P2** — Finish the Sibyl example and review installation steps — **IMPLEMENTED ON DEVELOP; BLOCKED — Oracle Instant Client is unavailable (`OCI_LIB_DIR` required); Linux/Windows installation and Oracle service checks remain; details are on the issue**
-- [#1148](https://github.com/john-cd/rust_howto/issues/1148) — **P2** — Review the SurrealDB example — **IMPLEMENTED ON DEVELOP; BLOCKED — prior embedded-Mem test and focused Clippy passed; full book/native-dependency gates remain unresolved; details are on the issue**
 - [#1162](https://github.com/john-cd/rust_howto/issues/1162) — **P2** — Review the PostgreSQL aggregate_data example — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused target tests/Clippy passed; the aggregate query test needs configured PostgreSQL; full book/native-dependency gates remain; details are on the issue**
 - [#708](https://github.com/john-cd/rust_howto/issues/708) — **P3** — Finish the Cornucopia example B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused build/tests/Clippy and live PostgreSQL checks passed; full Clippy/book gates remain unresolved; details are on the issue**
 
 #### VALIDATE-CODE-03 — Compression and archives
 
-- [#254](https://github.com/john-cd/rust_howto/issues/254) — **P3** — `tar/tar_decompress.rs`: review; tar_decompress.rs is noplayground - fix? — **IMPLEMENTED ON DEVELOP; OPEN — explicit archive/destination paths, self-contained extraction test with automatic tempfile cleanup, and noplayground rationale are present; formatted; tests, Clippy, and book checks deferred to final validation**
-- [#255](https://github.com/john-cd/rust_howto/issues/255) — **P3** — `tar/tar_compress.rs`: review; tar_compress.rs is noplayground - fix? — **IMPLEMENTED ON DEVELOP; OPEN — explicit paths, finished gzip stream, archive-content test with automatic tempfile cleanup, and noplayground rationale are present; formatted; tests, Clippy, and book checks deferred to final validation**
 
 #### VALIDATE-CODE-04 — Build scripts, Cargo and procedural macros
 
-- [#897](https://github.com/john-cd/rust_howto/issues/897) — **P3** — Complete the C++ linkage example — **IMPLEMENTED ON DEVELOP; BLOCKED — package linkage/test stops in vendored libgit2-sys (`LNK1114`); full Clippy/book gates remain; details are on the issue**
-- [#898](https://github.com/john-cd/rust_howto/issues/898) — **P3** — Complete the C++ Rust wrapper example — **IMPLEMENTED ON DEVELOP; BLOCKED — package linkage/test stops in vendored libgit2-sys (`LNK1114`); full Clippy/book gates remain; details are on the issue**
-- [#899](https://github.com/john-cd/rust_howto/issues/899) — **P3** — Complete the C static-library example — **IMPLEMENTED ON DEVELOP; BLOCKED — package linkage/test stops in vendored libgit2-sys (`LNK1114`); full Clippy/book gates remain; details are on the issue**
-- [#900](https://github.com/john-cd/rust_howto/issues/900) — **P3** — Complete the C Rust wrapper example — **IMPLEMENTED ON DEVELOP; BLOCKED — package linkage/test stops in vendored libgit2-sys (`LNK1114`); full Clippy/book gates remain; details are on the issue**
-- [#1000](https://github.com/john-cd/rust_howto/issues/1000) — **P3** — `build_time_tooling/cc_defines.rs`: finish; deal wth cc — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and direct mdBook build passed; required book wrapper gate and issue-linked PR remain; details are on the issue**
-- [#1060](https://github.com/john-cd/rust_howto/issues/1060) — **P3** — `buildinfo/build-info.rs`: review / convert into example — **IMPLEMENTED ON DEVELOP; BLOCKED — anchored build_info example is present; libgit2-sys/native builds block focused/full gates; issue-linked PR remains; details are on the issue**
-- [#1951](https://github.com/john-cd/rust_howto/issues/1951) — **P3** — Cargo subcommand and coverage examples — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Cargo/CLI tests, Clippy, and Markdown checks passed; full native-dependency/book gates remain; details are on the issue**
-- [#739](https://github.com/john-cd/rust_howto/issues/739) — **P4** — Finish the `darling` procedural-macro helper example J — **IMPLEMENTED ON DEVELOP; BLOCKED — prior helper-package tests/strict Clippy and Markdown checks passed; required book gate stops in Windows AWS-LC; details are on the issue**
-- [#741](https://github.com/john-cd/rust_howto/issues/741) — **P4** — Finish the `proc_macro2` helper example J — **IMPLEMENTED ON DEVELOP; BLOCKED — prior helper-package tests/strict Clippy and Markdown checks passed; required book gate stops in Windows AWS-LC; details are on the issue**
-- [#742](https://github.com/john-cd/rust_howto/issues/742) — **P4** — Review and expand the `quote` helper example J — **IMPLEMENTED ON DEVELOP; BLOCKED — prior helper-package tests/strict Clippy and Markdown checks passed; required book gate stops in Windows AWS-LC; details are on the issue**
-- [#743](https://github.com/john-cd/rust_howto/issues/743) — **P4** — Finish the `syn` procedural-macro helper example J — **IMPLEMENTED ON DEVELOP; BLOCKED — prior helper-package tests/strict Clippy and Markdown checks passed; required book gate stops in Windows AWS-LC; details are on the issue**
 
 #### VALIDATE-CODE-05 — Foreign function interfaces
 
-- [#738](https://github.com/john-cd/rust_howto/issues/738) — **P4** — CXX bridge F — **IMPLEMENTED ON DEVELOP; BLOCKED — prior CXX example tests and strict Clippy passed; required book gate stops in Windows AWS-LC/NASM/MSVC; details are on the issue**
 
 #### VALIDATE-CODE-06 — Desktop UI, accessibility, games and GPU
 
 - [#1155](https://github.com/john-cd/rust_howto/issues/1155) — **P3** — `clipboard/arboard.rs`: review — **IMPLEMENTED ON DEVELOP; BLOCKED — prior GUI package tests passed; ignored desktop clipboard run, full Clippy, and issue-linked PR remain; details are on the issue**
-- [#1933](https://github.com/john-cd/rust_howto/issues/1933) — **P4** — Add examples: egui add-on crates (tables, plots, docking tiles, toasts, file dialog, graphs, Markdown, icons, log viewer) — **IMPLEMENTED ON DEVELOP; OPEN — add-on examples, headless coverage, and book page/table are present; prior cloud tests/Clippy are recorded in the issue; refdefs/book checks deferred to final validation**
 - [#1952](https://github.com/john-cd/rust_howto/issues/1952) — **P4** — Add example: show a local web page in a native window (wry, tao) — **IMPLEMENTED ON DEVELOP; OPEN — native webview example, URL allow-list coverage, and platform prose are present; manual window run and refdefs/book checks remain; details are on the issue**
 
 #### VALIDATE-CODE-07 — Machine learning, data and robotics
 
 - [#1079](https://github.com/john-cd/rust_howto/issues/1079) — **P4** — Review and expand the OpenCV example — **IMPLEMENTED ON DEVELOP; BLOCKED — Linux/OpenCV/libclang tests and Clippy require a Linux host; WSL access and Docker Linux engine are unavailable; details are on the issue**
-- [#1915](https://github.com/john-cd/rust_howto/issues/1915) — **P4** — Add examples: numerical optimization (argmin, CMA-ES, particle swarm, genetic algorithms) — **IMPLEMENTED ON DEVELOP; OPEN — seeded solver examples and book tables/prose are present; prior cloud tests/Clippy are recorded in the issue; required workspace/refdefs/book checks deferred to final validation**
 - [#1942](https://github.com/john-cd/rust_howto/issues/1942) — **P4** — Add examples: geocode addresses and compute distances (geocoding, haversine, us-state-info) — **IMPLEMENTED ON DEVELOP; OPEN — distance/state/cache examples and fake-geocoder coverage are present; live provider access is deliberately excluded; required refdefs/book checks deferred to final validation**
 
 #### VALIDATE-CODE-08 — Concurrency
 
-- [#268](https://github.com/john-cd/rust_howto/issues/268) — **P3** — Fractal/threadpool example E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused nextest/Clippy passed and the concurrency dependency graph excludes ring/cc; required full Clippy/book gates remain; details are on the issue**
-- [#1011](https://github.com/john-cd/rust_howto/issues/1011) — **P3** — `actors/actors.rs`: finish — **IMPLEMENTED ON DEVELOP; BLOCKED — task-owned actor state, bounded messages, replies, shutdown, and chapter are present; prior focused tests/Clippy passed; required repository gates and issue-linked PR remain; details are on the issue**
-- [#1907](https://github.com/john-cd/rust_howto/issues/1907) — **P3** — Add example: graceful shutdown on Ctrl-C (ctrlc, tokio::signal) — **IMPLEMENTED ON DEVELOP; OPEN — synchronous/async signal examples and shutdown fixtures, OS page/table, and refdefs are present; required tests/Clippy/refdefs/book checks deferred to final validation**
-- [#1919](https://github.com/john-cd/rust_howto/issues/1919) — **P3** — Add examples: async functions in traits (native AFIT/RPITIT with Send bounds, trait_variant, async_trait for dyn) — **IMPLEMENTED ON DEVELOP; BLOCKED — examples and source docs are integrated; affected-package tests and full gates remain unresolved after Windows native-build/private-tooling failures; details are on the issue**
-- [#1920](https://github.com/john-cd/rust_howto/issues/1920) — **P3** — Add a "Cancellation and Structured Concurrency" topic: JoinSet worker pools, CancellationToken trees, watch/broadcast state — **IMPLEMENTED ON DEVELOP; BLOCKED — pool, cancellation tree, watch state, supervisor, and source docs are integrated; affected-package tests and full gates remain unresolved; details are on the issue**
-- [#1908](https://github.com/john-cd/rust_howto/issues/1908) — **P4** — Add examples: real-time-safe communication between threads (rtrb, ringbuf, flume) — **IMPLEMENTED ON DEVELOP; OPEN — bounded allocation-free SPSC drain with silence on underrun, command-channel examples, worker error propagation, and callback guidance are present; formatted; tests, Clippy, refdefs, and book checks deferred to final validation**
 
 #### VALIDATE-CODE-09 — Tabular data and finance
 
@@ -427,27 +399,19 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-11 — Algorithms, data structures and memory
 
-- [#1936](https://github.com/john-cd/rust_howto/issues/1936) — **P3** — Add examples: fast non-cryptographic hashing (ahash, rustc-hash, xxhash-rust) and bit sets (fixedbitset) — **IMPLEMENTED ON DEVELOP; BLOCKED — examples, visited-set flow, and source docs are integrated; affected-package tests and required full gates remain unresolved; details are on the issue**
-- [#1914](https://github.com/john-cd/rust_howto/issues/1914) — **P4** — Add examples: SIMD vector math with std::arch (and portable alternatives) — **IMPLEMENTED ON DEVELOP; OPEN — runtime-dispatched intrinsics, scalar/wide alternatives, and page are present; portable dot product now shares scalar common-prefix semantics with unequal-length coverage; formatted; tests and final gates deferred**
 - [#1925](https://github.com/john-cd/rust_howto/issues/1925) — **P4** — Add examples: memory techniques: arena allocation (bumpalo), string interning (ustr), feature-selected global allocator — **PARTIAL ON DEVELOP; BLOCKED — arena/interner/allocator examples and pages are present; allocation measurement and strict mutually exclusive feature selection remain; selection conflicts with the current all-features gate, and jemalloc needs a non-MSVC host; details are on the issue**
 
 #### VALIDATE-CODE-12 — Language and domain models
 
-- [#1923](https://github.com/john-cd/rust_howto/issues/1923) — **P3** — Add a "Domain Newtypes" recipe: validated value types with operator overloading, Display/FromStr and serde — **IMPLEMENTED ON DEVELOP; BLOCKED — examples, book coverage, and source docs are integrated; affected-package tests and full Clippy/refdefs/book gates remain unresolved; details are on the issue**
-- [#1935](https://github.com/john-cd/rust_howto/issues/1935) — **P3** — Add examples: more strum derives (EnumMessage, EnumProperty, serialize_all, case-insensitive parsing, variant lists for UIs) — **IMPLEMENTED ON DEVELOP; BLOCKED — enum message/property/case examples, book coverage, and source docs are integrated; affected-package tests and full Clippy/refdefs/book gates remain unresolved; details are on the issue**
 
 #### VALIDATE-CODE-13 — Testing and observability
 
-- [#1918](https://github.com/john-cd/rust_howto/issues/1918) — **P3** — Add testing recipes: snapshots, parameterized cases, env-var isolation, HTTP mocks, paused time, heap assertions — **IMPLEMENTED ON DEVELOP; BLOCKED — recipes and source docs are integrated; prior testing-package run passed 44 with 1 ignored; affected-package/Clippy/refdefs/book gates remain unresolved; details are on the issue**
-- [#1934](https://github.com/john-cd/rust_howto/issues/1934) — **P3** — Add examples: instrument code for frame profiling (profiling, puffin, puffin_http) — **IMPLEMENTED ON DEVELOP; BLOCKED — profiling facade/Puffin server examples, prose, and source docs are integrated; affected-package/Clippy/refdefs/book gates remain unresolved; details are on the issue**
 
 #### VALIDATE-CODE-14 — Text processing and HTML
 
-- [#1932](https://github.com/john-cd/rust_howto/issues/1932) — **P3** — Add examples: sanitize untrusted HTML (ammonia) and convert HTML to plain text (html2text) — **IMPLEMENTED ON DEVELOP; BLOCKED — sanitization/Markdown/html2text examples, template-escaping guidance, and email plain-text recipe are present; affected-package/Clippy/refdefs/book gates remain unresolved; details are on the issue**
 
 #### VALIDATE-CODE-15 — Parsing and XML
 
-- [#1924](https://github.com/john-cd/rust_howto/issues/1924) — **P3** — Add example: write an expression parser (winnow lexer + precedence climbing), and validate SQL with sqlparser — **IMPLEMENTED ON DEVELOP; OPEN — calculator/parser comparison and SQL examples are present; SQL helper/page now describe syntax classification rather than proving read-only execution, with side-effecting-function coverage; formatted; tests and final gates deferred**
 
 #### VALIDATE-CODE-16 — Filesystem and process management
 
