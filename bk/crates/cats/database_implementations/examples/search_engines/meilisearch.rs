@@ -91,6 +91,11 @@ async fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the Meilisearch example.
+///
+/// # Errors
+///
+/// Returns an error if the Meilisearch server is unreachable or rejects a request.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -102,12 +107,15 @@ mod tests {
     /// Runs the example against its required external service.
     #[test]
     fn require_external_svc() -> anyhow::Result<()> {
-        unsafe {
-            // Refer to the compose*.yaml files.
-            std::env::set_var(
-                "MEILISEARCH_URL",
-                "http://rust_howto_dev-meilisearch-1:7700",
-            );
+        // Default to the compose service (refer to the compose*.yaml files);
+        // set `MEILISEARCH_URL` (and `MEILI_MASTER_KEY`) to use another server.
+        if std::env::var_os("MEILISEARCH_URL").is_none() {
+            unsafe {
+                std::env::set_var(
+                    "MEILISEARCH_URL",
+                    "http://rust_howto_dev-meilisearch-1:7700",
+                );
+            }
         }
         main()?;
         Ok(())

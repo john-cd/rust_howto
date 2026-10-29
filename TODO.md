@@ -59,7 +59,6 @@
 
 ### Blocked on a live service
 
-- [#1162](https://github.com/john-cd/rust_howto/issues/1162) — **P2** — Review the PostgreSQL aggregate_data example
 
 ### Blocked on a desktop, hardware or manual run
 
