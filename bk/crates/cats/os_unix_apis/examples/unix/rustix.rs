@@ -86,4 +86,25 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// A missing file cannot be opened.
+    #[test]
+    fn opening_a_missing_file_fails() {
+        let result = openat(
+            rustix::fs::CWD,
+            c"/this/path/does/not/exist",
+            OFlags::RDONLY,
+            Mode::empty(),
+        );
+        assert_eq!(result.unwrap_err(), rustix::io::Errno::NOENT);
+    }
+
+    /// The example leaves no file behind.
+    #[test]
+    fn main_cleans_up_after_itself() -> anyhow::Result<()> {
+        main()?;
+        assert!(!std::path::Path::new("my_renamed_file").exists());
+        assert!(!std::path::Path::new("example2.txt").exists());
+        Ok(())
+    }
 }

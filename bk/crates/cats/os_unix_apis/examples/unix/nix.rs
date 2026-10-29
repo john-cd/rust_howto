@@ -81,4 +81,32 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// The data written to the file is read back.
+    #[test]
+    fn writes_then_reads_a_file() -> nix::Result<()> {
+        let path = std::env::temp_dir().join("rust_howto_nix_test.txt");
+        let data = b"Hello, nix!";
+        let fd = open(
+            &path,
+            OFlag::O_CREAT | OFlag::O_WRONLY,
+            Mode::S_IRUSR | Mode::S_IWUSR,
+        )?;
+        write(fd.as_fd(), data)?;
+        close(fd)?;
+        let fd = open(&path, OFlag::O_RDONLY, Mode::empty())?;
+        let mut buffer = vec![0; data.len()];
+        read(fd, &mut buffer)?;
+        assert_eq!(buffer, data);
+        unlink(&path)?;
+        Ok(())
+    }
+
+    /// Opening a missing file fails with `ENOENT`.
+    #[test]
+    fn opening_a_missing_file_fails() {
+        let result =
+            open("/this/path/does/not/exist", OFlag::O_RDONLY, Mode::empty());
+        assert_eq!(result.unwrap_err(), nix::errno::Errno::ENOENT);
+    }
 }
