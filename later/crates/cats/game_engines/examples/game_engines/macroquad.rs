@@ -76,8 +76,8 @@ mod tests {
 
         step(&mut ball, 1.0, (100.0, 100.0));
 
-        assert_eq!(ball.position.x, BALL_RADIUS);
-        assert_eq!(ball.velocity.x, 10.0);
+        assert!((ball.position.x - BALL_RADIUS).abs() < f32::EPSILON);
+        assert!((ball.velocity.x - 10.0).abs() < f32::EPSILON);
     }
 
     /// Runs the Macroquad example entry point in a native graphics window.

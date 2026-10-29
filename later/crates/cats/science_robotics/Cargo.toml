@@ -85,6 +85,8 @@ tracing-subscriber = "0.3.23"
 [features]
 # Requires a sourced ROS 2 installation and libclang; disabled by default.
 ros2 = ["dep:futures", "dep:r2r"]
+# Placeholder: the Zenoh example is disabled until its dependency chain is fixed (#845).
+zenoh = []
 
 [lints]
 workspace = true

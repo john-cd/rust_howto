@@ -18,6 +18,10 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         "MP4 container contains {track_count} track(s) with duration {duration:?}."
     );
 
+    #[allow(
+        clippy::iter_over_hash_type,
+        reason = "the track order does not matter for this report"
+    )]
     for (track_id, track) in mp4.tracks() {
         println!(
             "Track #{track_id}: type={:?}, media_duration={:?}",
@@ -47,7 +51,7 @@ fn create_sample_mp4() -> Result<Vec<u8>, Box<dyn Error + Send + Sync>> {
     let media_conf = mp4::TrackConfig {
         track_type: mp4::TrackType::Audio,
         timescale: 1000,
-        language: "und".to_string(),
+        language: "und".to_owned(),
         media_conf: mp4::MediaConfig::AacConfig(mp4::AacConfig {
             bitrate: 128_000,
             profile: mp4::AudioObjectType::AacLowComplexity,

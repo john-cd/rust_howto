@@ -96,7 +96,6 @@ mod tests {
     use super::Event;
     use super::Model;
     use super::main;
-    use super::*;
 
     /// Runs the crux example through its entry point.
     #[test]

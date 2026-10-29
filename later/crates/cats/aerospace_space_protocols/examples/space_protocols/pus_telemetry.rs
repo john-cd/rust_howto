@@ -2,9 +2,7 @@
 //! Create and read a PUS-C connection-test telemetry packet.
 
 use arbitrary_int::u11;
-use spacepackets::CcsdsPacket as _;
 use spacepackets::SpHeader;
-use spacepackets::ecss::PusPacket as _;
 use spacepackets::ecss::tm::CreatorConfig;
 use spacepackets::ecss::tm::MessageTypeId;
 use spacepackets::ecss::tm::PusTmCreator;

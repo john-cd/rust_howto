@@ -97,6 +97,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 #[cfg(test)]
 mod tests {
     use super::draw_scene;
+    use super::main;
     use super::pixel_rgba;
 
     /// Verifies circle fill, line stroke, and the transparent pixmap corner.

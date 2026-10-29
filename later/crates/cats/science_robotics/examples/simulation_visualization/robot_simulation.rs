@@ -73,7 +73,7 @@ fn simulate_chassis_landing() -> ChassisState {
     let chassis = &bodies[chassis_handle];
     ChassisState {
         center_height: chassis.position().translation.y,
-        speed: chassis.linvel().norm(),
+        speed: chassis.linvel().length(),
     }
 }
 
@@ -95,6 +95,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::CHASSIS_HALF_HEIGHT;
+    use super::main;
     use super::simulate_chassis_landing;
 
     /// Verifies that the chassis settles on the floor with negligible speed.

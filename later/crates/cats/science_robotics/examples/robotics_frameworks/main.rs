@@ -9,6 +9,7 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod openrr;
+#[cfg(feature = "zenoh")]
 mod zenoh;
 
 /// Command-line arguments.
@@ -26,6 +27,7 @@ enum Commands {
     #[command(name = "openrr")]
     Openrr,
     /// Runs the `zenoh` example.
+    #[cfg(feature = "zenoh")]
     #[command(name = "zenoh")]
     Zenoh,
 }

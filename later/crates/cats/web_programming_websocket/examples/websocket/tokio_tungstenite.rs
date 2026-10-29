@@ -71,6 +71,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::ECHO_TEXT;
     use super::echo_round_trip;
+    use super::main;
 
     /// Verifies that the loopback echo server returns the client's text.
     #[tokio::test]

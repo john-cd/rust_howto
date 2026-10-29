@@ -51,6 +51,7 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use super::main;
     use super::simulate_spike_times;
 
     /// Verifies that a fixed suprathreshold current produces a repeatable spike

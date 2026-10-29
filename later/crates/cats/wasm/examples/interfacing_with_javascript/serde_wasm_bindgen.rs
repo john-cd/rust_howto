@@ -1,3 +1,7 @@
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
 // ANCHOR: example
 //! Converts structured values between JavaScript and Rust with Serde.
 

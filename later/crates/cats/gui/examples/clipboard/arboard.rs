@@ -42,6 +42,8 @@ mod tests {
     use anyhow::Context;
     use arboard::Clipboard;
 
+    use super::main;
+
     /// Verifies writing and reading text through the system clipboard.
     ///
     /// Run manually on a desktop to replace its current clipboard text:

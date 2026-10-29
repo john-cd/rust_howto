@@ -43,6 +43,10 @@ where
         self.i2c.write_read(SENSOR_ADDR, &[REG_TEMP], &mut buffer)?;
 
         // Convert big-endian 16-bit raw integer to degrees Celsius.
+        #[allow(
+            clippy::big_endian_bytes,
+            reason = "the sensor register is big-endian"
+        )]
         let raw = i16::from_be_bytes(buffer);
         Ok(f32::from(raw) / 256.0)
     }

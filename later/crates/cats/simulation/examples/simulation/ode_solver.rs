@@ -11,13 +11,8 @@ struct ExponentialDecay;
 
 impl System<f64, Vector1<f64>> for ExponentialDecay {
     /// Computes the derivative of the exponential-decay state.
-    fn system(
-        &self,
-        _time: f64,
-        state: &Vector1<f64>,
-        derivative: &mut Vector1<f64>,
-    ) {
-        derivative[0] = -state[0];
+    fn system(&self, _x: f64, y: &Vector1<f64>, dy: &mut Vector1<f64>) {
+        dy[0] = -y[0];
     }
 }
 
@@ -47,11 +42,12 @@ fn main() {
 
 /// Runs the ODE solver example through its entry point.
 pub fn run() {
-    main()
+    main();
 }
 
 #[cfg(test)]
 mod tests {
+    use super::main;
     use super::solve_exponential_decay;
 
     /// Verifies that RK4 agrees with the analytic exponential-decay solution.

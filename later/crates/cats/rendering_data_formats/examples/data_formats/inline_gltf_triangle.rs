@@ -34,6 +34,10 @@ fn parse_inline_triangle() -> Result<(usize, usize), ::gltf::Error> {
         .filter_map(|primitive| primitive.get(&::gltf::Semantic::Positions))
         .map(|accessor| accessor.count())
         .sum();
+    #[allow(
+        clippy::redundant_closure_for_method_calls,
+        reason = "the method path does not accept the iterator's lifetime"
+    )]
     let index_count = primitives
         .iter()
         .filter_map(|primitive| primitive.indices())
@@ -60,6 +64,7 @@ pub fn run() -> Result<(), ::gltf::Error> {
 
 #[cfg(test)]
 mod tests {
+    use super::main;
     use super::parse_inline_triangle;
 
     /// Verifies the inline triangle has three vertices and three indices.

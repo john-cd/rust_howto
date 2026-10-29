@@ -64,7 +64,7 @@ impl Cpu<'_> {
             [0x11, value] => self.registers[1] = value,
             [0x20, 0] => {
                 self.registers[0] =
-                    self.registers[0].wrapping_add(self.registers[1])
+                    self.registers[0].wrapping_add(self.registers[1]);
             }
             [0x30, 0] => self.registers[1] = self.registers[1].wrapping_sub(1),
             [0x40, address] => {

@@ -127,6 +127,7 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use super::main;
     use super::simulate_single_server_queue;
 
     /// Verifies that all customers are served with the expected mean queue
