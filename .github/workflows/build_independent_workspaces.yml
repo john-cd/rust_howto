@@ -1,0 +1,109 @@
+# TODO Reviewed ??-??-2026.
+
+## Formats, lints and tests the independent example workspaces (`xmpl`, `playground`, `publish`) on Linux.
+## Each is its own Cargo workspace, so the book and tools workflows do not compile them.
+## The staging workspace `later/crates` is deliberately excluded here: see `check_staging_workspace.yml`.
+name: Build independent workspaces on Linux
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - "xmpl/**"
+      - "playground/**"
+      - "publish/**"
+      - ".github/workflows/build_independent_workspaces.yml"
+      - ".github/actions/**"
+      - "scripts/**"
+      - ".cargo/**"
+      - "justfile"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rustfmt-toolchain.toml"
+      - ".devcontainer/.env"
+  pull_request:
+    branches: [develop]
+    paths:
+      - "xmpl/**"
+      - "playground/**"
+      - "publish/**"
+      - ".github/workflows/build_independent_workspaces.yml"
+      - ".github/actions/**"
+      - "scripts/**"
+      - ".cargo/**"
+      - "justfile"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rustfmt-toolchain.toml"
+      - ".devcontainer/.env"
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  ## CI uses rust-cache instead of the local sccache wrapper.
+  RUSTC_WRAPPER: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: independent-workspaces-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  independent-workspace:
+    name: ${{ matrix.workspace }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        workspace: [xmpl, playground, publish]
+        ## Doctests need a library target: only `xmpl` has any.
+        include:
+          - workspace: xmpl
+            doctests: true
+    env:
+      CARGO_TARGET_DIR: ${{ github.workspace }}/target/${{ matrix.workspace }}
+      CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/${{ matrix.workspace }}/build
+    steps:
+      - name: Code checkout
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Load pinned tool versions
+        uses: ./.github/actions/load-pinned-versions
+
+      ## The toolchain input is the pinned stable version, which satisfies the declared MSRV (`rust-version`).
+      - name: Set up Rust toolchains and cache
+        uses: ./.github/actions/setup-rust
+        with:
+          toolchain: ${{ env.RUST_VERSION }}
+          cache-workspaces: |
+            ${{ matrix.workspace }} -> ../target/${{ matrix.workspace }}
+          cache-key: ${{ matrix.workspace }}
+
+      - name: Format
+        run: cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
+        working-directory: ${{ matrix.workspace }}
+
+      - name: Fetch
+        run: cargo fetch --locked
+        working-directory: ${{ matrix.workspace }}
+
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets --locked -- --deny warnings
+        working-directory: ${{ matrix.workspace }}
+
+      - name: Tests
+        run: cargo test --workspace --all-targets --locked
+        working-directory: ${{ matrix.workspace }}
+
+      - name: Doctests
+        if: ${{ matrix.doctests }}
+        run: cargo test --workspace --doc --locked
+        working-directory: ${{ matrix.workspace }}

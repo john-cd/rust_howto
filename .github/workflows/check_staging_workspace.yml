@@ -1,0 +1,59 @@
+# TODO Reviewed ??-??-2026.
+
+## Advisory compile check of the staging workspace `later/crates`.
+##
+## Policy: `later/crates` is work-in-progress content that is not built or published by this
+## repository, so it must never block a release or a pull request. This workflow is isolated from
+## the required ones: it runs weekly and on demand, and the job is `continue-on-error`.
+## Promote a crate to `bk/crates` once it should be a required check.
+name: Check staging workspace (advisory)
+
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTC_WRAPPER: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: staging-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  staging-check:
+    name: later/crates (advisory)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    continue-on-error: true
+    env:
+      CARGO_TARGET_DIR: ${{ github.workspace }}/target/later
+      CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/later/build
+    steps:
+      - name: Code checkout
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Load pinned tool versions
+        uses: ./.github/actions/load-pinned-versions
+
+      - name: Set up Rust toolchains and cache
+        uses: ./.github/actions/setup-rust
+        with:
+          toolchain: ${{ env.RUST_VERSION }}
+          nightly: skip
+          cache-workspaces: |
+            later/crates -> ../../target/later
+          cache-key: staging
+
+      - name: Check
+        run: cargo check --workspace --all-targets --locked
+        working-directory: later/crates
