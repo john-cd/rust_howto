@@ -127,12 +127,9 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-06 — Examples derived from repository tools
 
-- [#41](https://github.com/john-cd/rust_howto/issues/41) — **P4** — Make additional examples out of mdbook-utils B — **IMPLEMENTED ON DEVELOP; OPEN — offline feature scripts documented; Cargo example-crate acceptance and live broken-link check omitted; focused checks, book build, and PR link pending**
-- [#43](https://github.com/john-cd/rust_howto/issues/43) — **P4** — Make additional examples out of the templ tool B — **PARTIAL ON DEVELOP — offline help, Rust-by-Example, and known-category badge examples added; crates.io-backed commands and final gates remain**
 
 #### NOW-CODE-07 — WebAssembly and browser applications
 
-- [#1944](https://github.com/john-cd/rust_howto/issues/1944) — **P4** — Add examples: Leptos web app building blocks (leptos_router, gloo-net, gloo-storage, icons, gRPC-Web client) — **BLOCKED — route/fetch/storage/gRPC examples exist; icondata example, Leptos browser dependency split tracked by #1970, and wasm/book validation remain**
 - [#854](https://github.com/john-cd/rust_howto/issues/854) — **P1** — Replace the empty Wasmer runtime example — **OPEN — the previous example was commented out and the active test was vacuous; reopened after source audit**
 
 #### NOW-CODE-08 — Media encoding, images and video
@@ -266,7 +263,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-07 — Machine learning, data and robotics
 
-- [#1942](https://github.com/john-cd/rust_howto/issues/1942) — **P4** — Add examples: geocode addresses and compute distances (geocoding, haversine, us-state-info) — **IMPLEMENTED ON DEVELOP; OPEN — distance/state/cache examples and fake-geocoder coverage are present; live provider access is deliberately excluded; required refdefs/book checks deferred to final validation**
 
 #### VALIDATE-CODE-08 — Concurrency
 
@@ -306,7 +302,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 - [#311](https://github.com/john-cd/rust_howto/issues/311) — **P2** — `development-tools_cargo-plugins/index.md`: review in depth, reorg table — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
 - [#962](https://github.com/john-cd/rust_howto/issues/962) — **P2** — `text-editors/index.md`: write; review in depth finish the table — **IMPLEMENTED ON DEVELOP; BLOCKED — reference/spelling and Windows AWS-LC book gates remain; details are on the issue**
-- [#604](https://github.com/john-cd/rust_howto/issues/604) — **P4** — Write the release automation chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — direct mdBook and documentation checks passed; Windows book wrapper remains; details are on the issue**
 
 #### VALIDATE-PROSE-04 — Encoding, parsing and text processing
 
@@ -314,8 +309,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-05 — Web, networking and databases
 
-- [#944](https://github.com/john-cd/rust_howto/issues/944) — **P2** — `network-programming/index.md`: write; add cross-links; review; review `email_address`, `fast_chemail` — **IMPLEMENTED ON DEVELOP; BLOCKED — network index and cross-links are present; crate release and repository activity reviewed on 2026-10-27; refdefs/spelling/book gates and linked PR remain; details are on the issue**
-- [#974](https://github.com/john-cd/rust_howto/issues/974) — **P2** — `web-programming_http-client/apis.md`: review / fix — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Clippy, refdefs, and book build passed; example/spelling and all-features checks remain; details are on the issue**
 - [#977](https://github.com/john-cd/rust_howto/issues/977) — **P2** — `web-programming_http-server/index.md`: write / review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
 - [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused and live PostgreSQL checks passed; nextest selector and full gates remain; details are on the issue**
 - [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Clippy and live PostgreSQL checks passed; nextest selector, full gates, and repository-wide refdefs remain; details are on the issue**
@@ -326,7 +319,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-07 — Security and cryptocurrencies
 
-- [#278](https://github.com/john-cd/rust_howto/issues/278) — **P4** — Complete the cryptocurrency category overview D — **IMPLEMENTED; OPEN — crate release activity reviewed and deprecation linked; refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-08 — Systems, embedded, WebAssembly and virtualization
 
