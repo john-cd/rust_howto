@@ -10,8 +10,8 @@ mod a {
     /// We prefix `mod b` with `pub` to make it public.
     pub mod b {
         /// Public function.
-        pub fn fn_in_b() {
-            println!("in b!");
+        pub fn fn_in_b() -> &'static str {
+            "in b!"
         }
 
         /// A struct in the nested module.
@@ -35,10 +35,10 @@ use a::b;
 /// Refers to items with full and shortened paths and with `use` declarations.
 fn main() {
     // Call the function using its full path.
-    a::b::fn_in_b();
+    println!("{}", a::b::fn_in_b());
 
     // Call the function using its shortened path.
-    b::fn_in_b();
+    println!("{}", b::fn_in_b());
 
     // Use declarations can exist inside of functions.
     // Bring the `StructInB` struct in scope, then refer to it via its short
@@ -65,9 +65,23 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the use1 example through its entry point.
     #[test]
-    fn test_use1_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_full_and_shortened_paths_agree() {
+        assert_eq!(a::b::fn_in_b(), "in b!");
+        assert_eq!(b::fn_in_b(), a::b::fn_in_b());
+    }
+
+    #[test]
+    fn test_use_for_constants_and_type_aliases() {
+        use a::CONST_IN_A;
+        use a::Point;
+        let p: Point = (1, 2);
+        assert_eq!(CONST_IN_A, 1);
+        assert_eq!(p.0 + p.1, 3);
     }
 }

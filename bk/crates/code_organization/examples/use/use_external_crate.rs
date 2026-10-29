@@ -48,10 +48,17 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Runs the use external crate example through its entry point.
     #[test]
-    fn test_use_external_crate_example_entry_point() -> Result<()> {
-        main()?;
-        Ok(())
+    fn test_main() -> Result<()> {
+        main()
+    }
+
+    #[test]
+    fn test_items_from_external_crates() {
+        assert_eq!(array::from_ref(&1), &[1]);
+        let mut h: HashMap<String, String> = HashMap::new();
+        assert!(h.is_empty());
+        h.insert("k".into(), "v".into());
+        assert_eq!(h.len(), 1);
     }
 }

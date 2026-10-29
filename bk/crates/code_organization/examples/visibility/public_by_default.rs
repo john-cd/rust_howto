@@ -71,9 +71,34 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the public by default example through its entry point.
     #[test]
-    fn test_public_by_default_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_enum_variants_and_pub_fields_are_public() {
+        let e = a_module::Enum::Variant;
+        assert!(matches!(e, a_module::Enum::Variant));
+        let s = a_module::PublicStructPublicField { public_val: true };
+        assert!(s.public_val);
+    }
+
+    #[test]
+    fn test_trait_items_are_public() {
+        struct Doubler;
+        impl a_module::Trait for Doubler {
+            type Out = u8;
+
+            fn method(&self) -> u8 {
+                2
+            }
+        }
+        assert_eq!(a_module::Trait::method(&Doubler), 2);
+    }
+
+    #[test]
+    fn test_constructor_with_private_field() {
+        let _ = a_module::PublicStruct::new(true);
     }
 }

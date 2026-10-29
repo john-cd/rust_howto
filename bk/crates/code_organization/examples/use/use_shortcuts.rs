@@ -42,9 +42,21 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the use shortcuts example through its entry point.
     #[test]
-    fn test_use_shortcuts_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_glob_import_of_default() {
+        let v: Vec<u8> = Default::default();
+        assert!(v.is_empty());
+        destruct(v);
+    }
+
+    #[test]
+    fn test_self_import_and_group() {
+        assert_eq!(iter::empty::<u8>().count(), 0);
+        assert_eq!(empty::<u8>().count(), 0);
     }
 }

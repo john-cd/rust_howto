@@ -11,13 +11,19 @@ use std::collections::HashMap;
 // `HashMap` is declared in the standard library (`std`), which is an external
 // crate. We therefore prefix the path with the crate's name.
 
-/// Uses an imported `HashMap`.
-fn main() {
+/// Builds a map with the imported `HashMap`.
+fn build_map() -> HashMap<u32, String> {
     // We now refer to `HashMap` by its name.
     let mut mymap: HashMap<u32, String> = HashMap::new();
 
-    // Let's add something to it then print...
+    // Let's add something to it...
     mymap.entry(42).or_insert("my favorite number".into());
+    mymap
+}
+
+/// Uses an imported `HashMap`.
+fn main() {
+    let mymap = build_map();
     println!("{mymap:?}");
 }
 
@@ -31,9 +37,26 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the use3 example through its entry point.
     #[test]
-    fn test_use3_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_build_map() {
+        let map = build_map();
+        assert_eq!(map.len(), 1);
+        assert_eq!(
+            map.get(&42).map(String::as_str),
+            Some("my favorite number")
+        );
+        assert_eq!(map.get(&0), None);
+    }
+
+    #[test]
+    fn test_entry_or_insert_keeps_existing_value() {
+        let mut map = build_map();
+        map.entry(42).or_insert("other".into());
+        assert_eq!(map[&42], "my favorite number");
     }
 }

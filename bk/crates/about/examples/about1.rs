@@ -18,7 +18,7 @@ use std::str;
 ///
 /// # Errors
 /// Returns an error if the bytes are not valid UTF-8 or not a valid address.
-fn example() -> anyhow::Result<()> {
+fn example() -> anyhow::Result<IpAddr> {
     // A byte slice representing an IPv6 address:
     let bytes: &[u8] = b"2001:db8::1";
 
@@ -36,8 +36,7 @@ fn example() -> anyhow::Result<()> {
     println!("{addr:?}");
 
     // Happy path: we return `Ok`.
-    // `Ok(())` indicates success without a value.
-    Ok(())
+    Ok(addr)
 }
 
 fn main() -> anyhow::Result<()> {
@@ -52,8 +51,24 @@ mod tests {
 
     #[test]
     fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        main().expect("main failed");
+    }
+
+    #[test]
+    fn test_example_parses_ipv6_address() {
+        let addr = example().unwrap();
+        assert_eq!(addr, "2001:db8::1".parse::<IpAddr>().unwrap());
+        assert!(addr.is_ipv6());
+    }
+
+    #[test]
+    fn test_invalid_utf8_is_an_error() {
+        let bytes = vec![0xff, 0xfe];
+        assert!(str::from_utf8(&bytes).is_err());
+    }
+
+    #[test]
+    fn test_invalid_address_is_an_error() {
+        assert!("not an address".parse::<IpAddr>().is_err());
     }
 }

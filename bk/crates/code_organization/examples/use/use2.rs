@@ -8,8 +8,8 @@ mod front_of_house {
     /// This module handles hosting duties within the front of the house.
     pub mod hosting {
         /// Adds a customer to the waitlist.
-        pub fn add_to_waitlist() {
-            println!("Add to waitlist.");
+        pub fn add_to_waitlist() -> &'static str {
+            "Add to waitlist."
         }
     }
 }
@@ -18,18 +18,18 @@ mod front_of_house {
 use front_of_house::hosting;
 
 /// Calls a function through a shortened path.
-fn eat_at_restaurant() {
+fn eat_at_restaurant() -> &'static str {
     // We can now access the function within the `hosting` module,
     // without writing the whole path e.g.
     // `front_of_house::hosting::add_to_waitlist()`.
     //
     // IDIOM: import the module, not the function itself.
-    hosting::add_to_waitlist();
+    hosting::add_to_waitlist()
 }
 
 /// Runs the use2 example.
 fn main() {
-    eat_at_restaurant();
+    println!("{}", eat_at_restaurant());
 }
 
 // ANCHOR_END: example
@@ -42,9 +42,17 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the use2 example through its entry point.
     #[test]
-    fn test_use2_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_shortened_path_calls_same_function() {
+        assert_eq!(eat_at_restaurant(), "Add to waitlist.");
+        assert_eq!(
+            eat_at_restaurant(),
+            front_of_house::hosting::add_to_waitlist()
+        );
     }
 }

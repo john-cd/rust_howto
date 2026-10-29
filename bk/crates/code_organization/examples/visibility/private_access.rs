@@ -8,7 +8,9 @@
 //! Accessing private items from the same module and its children.
 
 /// A function private to the parent module.
-fn private_in_parent() {}
+fn private_in_parent() -> &'static str {
+    "private_in_parent"
+}
 
 /// A private module.
 mod private_module {
@@ -27,7 +29,7 @@ mod private_module {
 fn main() {
     // `private_in_parent` is accessible, since it is
     // in the same module as `main`.
-    private_in_parent();
+    println!("{}", private_in_parent());
 
     // `private_module` is accessible as well,
     // because it is also in the same module...
@@ -52,9 +54,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the private access example through its entry point.
     #[test]
-    fn test_private_access_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_private_item_reachable_from_same_module() {
+        assert_eq!(private_in_parent(), "private_in_parent");
     }
 }

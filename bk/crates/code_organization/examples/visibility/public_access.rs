@@ -13,7 +13,9 @@ mod a_module {
     fn private() {}
 
     /// A public function.
-    pub fn public() {}
+    pub fn public() -> &'static str {
+        "a_module::public"
+    }
 
     /// A public nested module.
     pub mod public_nested_module {
@@ -21,7 +23,9 @@ mod a_module {
         fn private() {}
 
         /// A public function.
-        pub fn public() {}
+        pub fn public() -> &'static str {
+            "public_nested_module::public"
+        }
     }
 
     /// A private nested module.
@@ -38,7 +42,7 @@ mod a_module {
 fn main() {
     // For an item to be accessible, all elements in the paths
     // must be accessible from the current module.
-    a_module::public();
+    println!("{}", a_module::public());
 
     // Here, `a_module` is accessible, despite being private,
     // because it is in the same module as `main`.
@@ -47,7 +51,7 @@ fn main() {
     // Here, `private` can't be reached from a parent.
     // ERROR: a_module::private();
 
-    a_module::public_nested_module::public();
+    println!("{}", a_module::public_nested_module::public());
     // ERROR: a_module::public_nested_module::private();
     // ERROR: a_module::private_nested_module::private();
     // ERROR: a_module::private_nested_module::public();
@@ -79,9 +83,17 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the public access example through its entry point.
     #[test]
-    fn test_public_access_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_public_items_in_public_modules() {
+        assert_eq!(a_module::public(), "a_module::public");
+        assert_eq!(
+            a_module::public_nested_module::public(),
+            "public_nested_module::public"
+        );
     }
 }

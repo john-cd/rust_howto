@@ -10,7 +10,9 @@ mod a_module {
     mod private_module {
         /// A public function in a private module; reachable through the
         /// re-export.
-        pub fn public_function() {}
+        pub fn public_function() -> &'static str {
+            "public_function"
+        }
     }
 
     // The following `use` declaration brings `private_module::public_function`
@@ -28,10 +30,10 @@ fn main() {
     // ERROR: a_module::private_module::public_function();
 
     // However, the re-exported name is accessible.
-    a_module::public_function();
+    println!("{}", a_module::public_function());
 
     // Access the re-exported item via its alternate name.
-    a_module::another_name();
+    println!("{}", a_module::another_name());
 
     println!("pub use example: functions re-exported and called successfully");
     // Notes:
@@ -52,9 +54,14 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the pub use example through its entry point.
     #[test]
-    fn test_pub_use_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_reexported_names_call_same_function() {
+        assert_eq!(a_module::public_function(), "public_function");
+        assert_eq!(a_module::another_name(), a_module::public_function());
     }
 }

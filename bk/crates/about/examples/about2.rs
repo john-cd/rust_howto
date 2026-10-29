@@ -9,7 +9,7 @@ use url::Url;
 /// Parses a URL and prints it up to the end of its path.
 ///
 /// Returns an error if the URL is invalid.
-fn example() -> anyhow::Result<()> {
+fn example() -> anyhow::Result<String> {
     // Parse a URL. This call can fail if the URL is invalid.
     // It early returns via `?`:
     let parsed = Url::parse("https://httpbin.org/cookies/set?k2=v2&k1=v1")?;
@@ -17,11 +17,11 @@ fn example() -> anyhow::Result<()> {
     // Extract the portion of the URL, up to the end of the path.
     let cleaned: &str = &parsed[..Position::AfterPath];
     println!("cleaned: {cleaned}");
-    Ok(())
+    Ok(cleaned.to_owned())
 }
 
 fn main() -> anyhow::Result<()> {
-    example()
+    example().map(|_| ())
 }
 // ANCHOR_END: example
 
@@ -31,8 +31,16 @@ mod tests {
 
     #[test]
     fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        main().expect("main failed");
+    }
+
+    #[test]
+    fn test_example_strips_the_query() {
+        assert_eq!(example().unwrap(), "https://httpbin.org/cookies/set");
+    }
+
+    #[test]
+    fn test_invalid_url_is_an_error() {
+        assert!(Url::parse("not a url").is_err());
     }
 }

@@ -13,14 +13,18 @@ mod m {
     fn private_function() {}
 
     /// Public function.
-    pub fn public_function() {}
+    pub fn public_function() -> &'static str {
+        "public_function"
+    }
 
     /// Public unit-like struct.
     pub struct Struct;
 
     impl Struct {
         /// Public method.
-        pub fn method(&self) {}
+        pub fn method(&self) -> &'static str {
+            "method"
+        }
     }
 
     /// Public trait.
@@ -40,14 +44,14 @@ mod m {
 /// Uses the public items of the module `m`.
 fn main() {
     // Access the public function within module `m`:
-    m::public_function();
+    println!("{}", m::public_function());
     // ERROR: m::private_function();
 
     // Access the public struct and trait.
     let _t: &dyn m::Trait = &m::Struct;
 
     // Access the public method.
-    m::Struct.method();
+    println!("{}", m::Struct.method());
     // Equivalent to `m::Struct::method(&m::Struct);`.
 
     // Bring the public submodule into scope.
@@ -66,9 +70,16 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the pub keyword example through its entry point.
     #[test]
-    fn test_pub_keyword_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_public_items_accessible() {
+        assert_eq!(m::public_function(), "public_function");
+        assert_eq!(m::Struct.method(), "method");
+        // The trait is implemented for the public struct.
+        let _t: &dyn m::Trait = &m::Struct;
     }
 }

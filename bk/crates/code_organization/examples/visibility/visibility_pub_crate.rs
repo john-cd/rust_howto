@@ -10,20 +10,24 @@ mod a_module {
     // Even if `a_module` is accidentally made fully public,
     // this function will remain visible only to this crate.
     /// A function visible only in the current crate.
-    pub(crate) fn visible_in_crate_only() {}
+    pub(crate) fn visible_in_crate_only() -> &'static str {
+        "a_module"
+    }
 }
 
 // We can also explicitly mark the top module as `pub(crate)`:
 /// A `pub(crate)` module.
 pub(crate) mod b_module {
     /// A function visible only in the current crate, since its module is.
-    pub fn visible_in_crate_only() {}
+    pub fn visible_in_crate_only() -> &'static str {
+        "b_module"
+    }
 }
 
 /// Calls the functions that are visible in the crate.
 fn main() {
-    a_module::visible_in_crate_only();
-    b_module::visible_in_crate_only();
+    println!("{}", a_module::visible_in_crate_only());
+    println!("{}", b_module::visible_in_crate_only());
     println!(
         "visibility_pub_crate example: pub(crate) restricts visibility to the current crate"
     );
@@ -38,9 +42,14 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the visibility pub crate example through its entry point.
     #[test]
-    fn test_visibility_pub_crate_example_entry_point() {
+    fn test_main() {
         main();
+    }
+
+    #[test]
+    fn test_pub_crate_items_visible_in_crate() {
+        assert_eq!(a_module::visible_in_crate_only(), "a_module");
+        assert_eq!(b_module::visible_in_crate_only(), "b_module");
     }
 }
