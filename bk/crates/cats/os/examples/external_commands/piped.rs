@@ -66,6 +66,8 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    // output-only: the example pipes `du` into `sort` and prints the largest
+    // entries; see the other tests for its logic.
     use super::*;
 
     /// Runs the piped example through its entry point.

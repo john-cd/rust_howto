@@ -80,4 +80,29 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// `rev` reverses the text written to its standard input.
+    #[test]
+    fn rev_reverses_the_input() -> Result<()> {
+        let mut child = Command::new("rev")
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .spawn()?;
+        child
+            .stdin
+            .as_mut()
+            .ok_or(anyhow!("stdin not captured"))?
+            .write_all(b"1234 56789")?;
+        let output = child.wait_with_output()?;
+        assert!(output.status.success());
+        let words = String::from_utf8(output.stdout)?
+            .split_whitespace()
+            .map(str::to_owned)
+            .collect::<HashSet<_>>();
+        assert_eq!(
+            words,
+            HashSet::from(["4321".to_owned(), "98765".to_owned()])
+        );
+        Ok(())
+    }
 }

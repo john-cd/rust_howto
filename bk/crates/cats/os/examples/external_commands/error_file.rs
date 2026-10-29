@@ -73,4 +73,22 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Both standard output and standard error end up in the same file.
+    #[test]
+    fn output_and_error_share_the_file() -> anyhow::Result<()> {
+        let path = std::env::temp_dir().join("rust_howto_error_file.txt");
+        let outputs = File::create(&path)?;
+        let errors = outputs.try_clone()?;
+        let status = Command::new("ls")
+            .args([".", "oops"])
+            .stdout(Stdio::from(outputs))
+            .stderr(Stdio::from(errors))
+            .status()?;
+        assert!(!status.success());
+        let contents = std::fs::read_to_string(&path)?;
+        assert!(contents.contains("oops"), "{contents}");
+        std::fs::remove_file(&path)?;
+        Ok(())
+    }
 }

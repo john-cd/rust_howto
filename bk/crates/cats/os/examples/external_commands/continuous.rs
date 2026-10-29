@@ -56,6 +56,8 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(target_os = "linux")]
 #[cfg(test)]
 mod tests {
+    // output-only: the example streams the system journal and is ignored
+    // without systemd; see the other tests for its logic.
     use super::*;
 
     /// Verifies journal output can be read on Linux systems with systemd.

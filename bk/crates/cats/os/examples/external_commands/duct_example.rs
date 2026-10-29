@@ -26,4 +26,23 @@ mod tests {
     fn test_duct_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
+    /// `duct` captures the standard output of a command.
+    #[test]
+    fn duct_captures_output() -> anyhow::Result<()> {
+        let output = cmd!("git", "--version").read()?;
+        assert!(output.starts_with("git version"), "{output}");
+        Ok(())
+    }
+
+    /// A failing command is reported as an error.
+    #[test]
+    fn duct_reports_failure() {
+        assert!(
+            cmd!("git", "no-such-subcommand")
+                .stderr_null()
+                .read()
+                .is_err()
+        );
+    }
 }

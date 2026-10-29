@@ -41,4 +41,16 @@ mod tests {
     fn test_which_example_entry_point() {
         main();
     }
+
+    /// `rustc` is found on the `PATH`.
+    #[test]
+    fn finds_rustc() {
+        assert!(which("rustc").is_ok());
+    }
+
+    /// An unknown command is not found.
+    #[test]
+    fn does_not_find_unknown_command() {
+        assert!(which("some-command-that-probably-doesnt-exist").is_err());
+    }
 }

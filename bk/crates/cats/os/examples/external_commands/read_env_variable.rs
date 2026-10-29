@@ -29,4 +29,19 @@ mod tests {
     fn test_read_env_variable_example_entry_point() {
         main();
     }
+
+    /// `PATH` is set and not empty in the test environment.
+    #[test]
+    fn path_is_set() {
+        let path = env::var("PATH").unwrap_or("".to_owned());
+        assert!(!path.is_empty());
+    }
+
+    /// A variable that is not set falls back to the default value.
+    #[test]
+    fn unset_variable_uses_default() {
+        let value =
+            env::var("RUST_HOWTO_SURELY_UNSET").unwrap_or("".to_owned());
+        assert_eq!(value, "");
+    }
 }

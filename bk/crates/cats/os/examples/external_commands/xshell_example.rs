@@ -28,4 +28,26 @@ mod tests {
     fn test_xshell_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
+    /// The captured output is the compiler version.
+    #[test]
+    fn captures_the_compiler_version() -> anyhow::Result<()> {
+        let shell = Shell::new()?;
+        let version = cmd!(shell, "rustc --version").read()?;
+        assert!(version.starts_with("rustc "), "{version}");
+        Ok(())
+    }
+
+    /// A failing command is reported as an error.
+    #[test]
+    fn reports_a_failing_command() -> anyhow::Result<()> {
+        let shell = Shell::new()?;
+        assert!(
+            cmd!(shell, "rustc --no-such-flag")
+                .ignore_stderr()
+                .read()
+                .is_err()
+        );
+        Ok(())
+    }
 }

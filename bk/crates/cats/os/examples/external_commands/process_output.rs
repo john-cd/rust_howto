@@ -67,4 +67,34 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// The commit pattern captures the hash and the message.
+    #[test]
+    fn commit_pattern_parses_a_line() -> Result<()> {
+        let pattern = Regex::new("([0-9a-fA-F]+) (.*)")?;
+        let captures = pattern
+            .captures("1a2b3c4 fix: a message")
+            .expect("the line should match");
+        let commit = Commit {
+            hash: captures[1].to_string(),
+            message: captures[2].trim().to_owned(),
+        };
+        assert_eq!(
+            commit,
+            Commit {
+                hash: "1a2b3c4".to_owned(),
+                message: "fix: a message".to_owned(),
+            }
+        );
+        assert_ne!(commit, Commit::default());
+        Ok(())
+    }
+
+    /// Lines that do not start with a hexadecimal hash do not match.
+    #[test]
+    fn commit_pattern_rejects_non_hex_lines() -> Result<()> {
+        let pattern = Regex::new("^([0-9a-fA-F]+) (.*)")?;
+        assert!(pattern.captures("zzz message").is_none());
+        Ok(())
+    }
 }
