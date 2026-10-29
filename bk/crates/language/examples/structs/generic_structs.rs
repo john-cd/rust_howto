@@ -1,8 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "the snippet declares items to illustrate them, not to call them"
+    )
 )]
 // ANCHOR: example
 //! A generic struct and its `impl` blocks.
@@ -87,5 +90,29 @@ mod tests {
     #[test]
     fn test_generic_structs_example_entry_point() {
         main();
+    }
+
+    /// The accessor returns the stored value.
+    #[test]
+    fn test_x() {
+        assert_eq!(*Point { x: 5, y: 10 }.x(), 5);
+        assert_eq!(*Point { x: "a", y: "b" }.x(), "a");
+    }
+
+    /// The Euclidean distance is only defined for `f32` points.
+    #[test]
+    fn test_distance_from_origin() {
+        let p: Point<f32> = Point { x: 3.0, y: 4.0 };
+        assert!((p.distance_from_origin() - 5.0).abs() < f32::EPSILON);
+        let origin: Point<f32> = Point { x: 0.0, y: 0.0 };
+        assert!(origin.distance_from_origin().abs() < f32::EPSILON);
+    }
+
+    /// Comparison works for any `Display + PartialOrd` type.
+    #[test]
+    fn test_cmp_display() {
+        Point { x: 1, y: 2 }.cmp_display();
+        Point { x: 2.5, y: 1.5 }.cmp_display();
+        Point { x: "b", y: "a" }.cmp_display();
     }
 }

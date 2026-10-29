@@ -43,4 +43,12 @@ mod tests {
     fn test_attributes_derive_example_entry_point() {
         main();
     }
+
+    /// The derived `Debug` implementation lists the fields.
+    #[test]
+    fn test_point_debug_output() {
+        let p = Point { x: 10, y: 20 };
+        assert_eq!(format!("{p:?}"), "Point { x: 10, y: 20 }");
+        assert_eq!(format!("{p:#?}"), "Point {\n    x: 10,\n    y: 20,\n}");
+    }
 }

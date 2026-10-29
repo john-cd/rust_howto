@@ -36,4 +36,12 @@ mod tests {
     fn test_proc_macro_attribute_example_entry_point() {
         main();
     }
+
+    /// The attribute leaves the function's behavior intact.
+    #[test]
+    fn test_logged_function_still_adds() {
+        assert_eq!(add(5, 7), 12);
+        assert_eq!(add(-1, 1), 0);
+        assert_eq!(add(0, 0), 0);
+    }
 }

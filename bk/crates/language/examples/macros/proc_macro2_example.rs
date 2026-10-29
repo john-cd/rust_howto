@@ -33,4 +33,6 @@ mod tests {
     fn test_proc_macro2_example_example_entry_point() {
         main();
     }
+
+    // Output-only example: `main` asserts inside the macro-generated code.
 }

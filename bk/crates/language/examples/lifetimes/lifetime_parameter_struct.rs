@@ -70,4 +70,24 @@ mod tests {
     fn test_lifetime_parameter_struct_example_entry_point() {
         main();
     }
+
+    /// The excerpt keeps its part and reports its level.
+    #[test]
+    fn test_excerpt() {
+        let e: Excerpt<'static> = Excerpt { part: "a part" };
+        assert_eq!(e.part(), "a part");
+        assert_eq!(e.level(), 3);
+        e.only_if_static();
+    }
+
+    /// The returned part outlives the excerpt itself.
+    #[test]
+    fn test_part_outlives_excerpt() {
+        let text = String::from("another part");
+        let part = {
+            let e = Excerpt { part: &text };
+            e.part()
+        };
+        assert_eq!(part, "another part");
+    }
 }

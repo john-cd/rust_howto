@@ -38,4 +38,6 @@ mod tests {
     fn test_allow_dead_code_example_entry_point() {
         main();
     }
+
+    // Output-only example: the unused function is deliberately never called.
 }

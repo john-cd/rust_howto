@@ -88,4 +88,6 @@ mod tests {
     fn test_for1_example_entry_point() {
         main();
     }
+
+    // Output-only example: the loops only print.
 }

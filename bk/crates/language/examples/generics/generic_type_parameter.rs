@@ -182,4 +182,36 @@ mod tests {
     fn test_generic_type_parameter_example_entry_point() {
         main();
     }
+
+    /// `func2` unwraps the generic payload, whatever its type.
+    #[test]
+    fn test_func2() {
+        assert_eq!(func2(MyStruct { data: 42 }), 42);
+        assert_eq!(func2(MyStruct { data: "text" }), "text");
+        assert!(!func2(MyStruct { data: false }));
+    }
+
+    /// The generic hash map wrapper starts empty.
+    #[test]
+    fn test_my_hash_map_new() {
+        let map: MyHashMap<String, i32, ()> = MyHashMap::new(());
+        assert!(map.inner.is_empty());
+    }
+
+    /// The type alias fixes the value type to `String`.
+    #[test]
+    fn test_string_map_alias() {
+        let mut map = StringMap::<u8>::new();
+        map.insert(1, "one".to_owned());
+        assert_eq!(map.get(&1).map(String::as_str), Some("one"));
+        assert_eq!(map.get(&2), None);
+    }
+
+    /// The `Debug` helpers accept anything `Debug`.
+    #[test]
+    fn test_print_helpers() {
+        print_debug(vec![1, 2]);
+        print_debug2("x");
+        print_type(1.5_f32);
+    }
 }

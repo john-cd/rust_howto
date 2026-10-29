@@ -89,4 +89,35 @@ mod tests {
     fn test_strum_example_entry_point() {
         main();
     }
+
+    /// `Display` uses the custom serialization.
+    #[test]
+    fn test_display() {
+        assert_eq!(Direction::North.to_string(), "N");
+        assert_eq!(Direction::West.to_string(), "W");
+    }
+
+    /// Parsing accepts the serialized name and rejects unknown strings.
+    #[test]
+    fn test_parse() {
+        assert_eq!("E".parse::<Direction>(), Ok(Direction::East));
+        assert!("Up".parse::<Direction>().is_err());
+        assert!("".parse::<Direction>().is_err());
+        assert!("n".parse::<Direction>().is_err());
+    }
+
+    /// Iteration yields every variant, in declaration order.
+    #[test]
+    fn test_iter() {
+        let all: Vec<_> = Direction::iter().collect();
+        assert_eq!(
+            all,
+            vec![
+                Direction::North,
+                Direction::East,
+                Direction::South,
+                Direction::West
+            ]
+        );
+    }
 }

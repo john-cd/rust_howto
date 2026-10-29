@@ -36,4 +36,18 @@ mod tests {
     fn test_closures_example_entry_point() {
         main();
     }
+
+    /// Only strings containing `@` are kept, in order.
+    #[test]
+    fn test_find_emails() {
+        let emails = find_emails(vec![
+            "example".to_owned(),
+            "a@b.com".to_owned(),
+            "no-at".to_owned(),
+            "c@d.org".to_owned(),
+        ]);
+        assert_eq!(emails, vec!["a@b.com", "c@d.org"]);
+        assert!(find_emails(vec![]).is_empty());
+        assert!(find_emails(vec!["plain".to_owned()]).is_empty());
+    }
 }

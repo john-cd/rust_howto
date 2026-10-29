@@ -32,4 +32,13 @@ mod tests {
     fn test_rpit_example_entry_point() {
         main();
     }
+
+    /// The returned closure adds one.
+    #[test]
+    fn test_returns_closure() {
+        let f = returns_closure();
+        assert_eq!(f(1), 2);
+        assert_eq!(f(-1), 0);
+        assert_eq!(f(i32::MAX - 1), i32::MAX);
+    }
 }

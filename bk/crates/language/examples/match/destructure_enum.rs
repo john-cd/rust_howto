@@ -1,8 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "the snippet declares items to illustrate them, not to call them"
+    )
 )]
 // ANCHOR: example
 //! Destructuring an enum in a `match`.
@@ -48,5 +51,18 @@ mod tests {
     #[test]
     fn test_destructure_enum_example_entry_point() {
         main();
+    }
+
+    /// Every variant can be destructured.
+    #[test]
+    fn test_destructure_variants() {
+        let describe = |m: Message| match m {
+            Message::Write(text) => format!("write {text}"),
+            Message::Move { x, y } => format!("move {x},{y}"),
+            Message::Quit => "quit".to_owned(),
+        };
+        assert_eq!(describe(Message::Write("hi".into())), "write hi");
+        assert_eq!(describe(Message::Move { x: 1, y: -2 }), "move 1,-2");
+        assert_eq!(describe(Message::Quit), "quit");
     }
 }

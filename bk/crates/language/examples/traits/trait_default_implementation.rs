@@ -66,4 +66,20 @@ mod tests {
     fn test_trait_default_implementation_example_entry_point() {
         main();
     }
+
+    /// The default `summarize` builds on `summarize_author`.
+    #[test]
+    fn test_default_summarize() {
+        let blog = Blog {
+            author: "ferris".into(),
+        };
+        assert_eq!(blog.summarize(), "(Read more from ferris...)");
+        assert_eq!(
+            Blog {
+                author: String::new()
+            }
+            .summarize(),
+            "(Read more from ...)"
+        );
+    }
 }

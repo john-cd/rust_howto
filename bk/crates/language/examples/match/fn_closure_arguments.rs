@@ -41,4 +41,18 @@ mod tests {
     fn test_fn_closure_arguments_example_entry_point() {
         main();
     }
+
+    /// The closure destructures a `&mut` argument and returns its incremented
+    /// copy.
+    #[test]
+    fn test_closure_pattern_arguments() {
+        let add_one = |&mut mut x| -> i32 {
+            x += 1;
+            x
+        };
+        let a: &mut i32 = &mut 3;
+        assert_eq!(add_one(a), 4);
+        assert_eq!(*a, 3); // The original is copied, not modified.
+        print_coordinates((-1, 0));
+    }
 }

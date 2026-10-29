@@ -85,4 +85,12 @@ mod tests {
     fn test_impl_trait_example_entry_point() {
         main();
     }
+
+    /// Each animal speaks its own sound, also through `impl Trait`.
+    #[test]
+    fn test_speak() {
+        assert_eq!(Dog.speak(), "Woof!");
+        assert_eq!(Cat.speak(), "Meow!");
+        assert_eq!(get_animal().speak(), "Woof!");
+    }
 }

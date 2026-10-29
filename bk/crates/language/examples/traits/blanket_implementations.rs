@@ -48,4 +48,15 @@ mod tests {
     fn test_blanket_implementations_example_entry_point() {
         main();
     }
+
+    /// Every `Display` type gets the method.
+    #[test]
+    fn test_blanket_impl() {
+        use my::VeryUsefulTrait as _;
+        assert_eq!("Hello".my_method(), "Hello");
+        assert_eq!(42.my_method(), "42");
+        assert_eq!(1.5_f64.my_method(), "1.5");
+        assert_eq!('c'.my_method(), "c");
+        assert_eq!(String::new().my_method(), "");
+    }
 }

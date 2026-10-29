@@ -52,4 +52,14 @@ mod tests {
     fn test_borrowing_function_mutable_example_entry_point() {
         main();
     }
+
+    /// The function appends in place.
+    #[test]
+    fn test_change_appends() {
+        let mut s = String::from("hello");
+        change(&mut s);
+        assert_eq!(s, "hello, world");
+        change(&mut s);
+        assert_eq!(s, "hello, world, world");
+    }
 }

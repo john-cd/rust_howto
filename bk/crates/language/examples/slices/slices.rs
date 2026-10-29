@@ -55,4 +55,29 @@ mod tests {
     fn test_slices_example_entry_point() {
         main();
     }
+
+    /// Both functions run, and slicing out of range panics.
+    #[test]
+    fn test_slice_functions_run() {
+        slice_from_array();
+        slice_from_vector();
+    }
+
+    /// Mutating a slice modifies the original vector.
+    #[test]
+    fn test_mutable_slice_writes_through() {
+        let mut vector = vec![1, 2, 3, 4, 5];
+        let mutable_slice = &mut vector[2..];
+        mutable_slice[0] = 10;
+        assert_eq!(vector, vec![1, 2, 10, 4, 5]);
+    }
+
+    /// Out-of-range slicing panics.
+    #[test]
+    #[should_panic(expected = "range end index 6 out of range")]
+    fn test_slice_out_of_range() {
+        let array = [1, 2, 3, 4, 5];
+        let end = array.len() + 1;
+        let _ = &array[1..end];
+    }
 }

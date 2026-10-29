@@ -38,4 +38,6 @@ mod tests {
     fn test_loop1_example_entry_point() {
         main();
     }
+
+    // Output-only example: the loop result is only printed.
 }

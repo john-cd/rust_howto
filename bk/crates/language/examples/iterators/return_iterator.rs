@@ -38,4 +38,12 @@ mod tests {
     fn test_return_iterator_example_entry_point() {
         main();
     }
+
+    /// The iterator counts from 1 to `max` inclusive.
+    #[test]
+    fn test_count_up_to() {
+        assert_eq!(count_up_to(5).collect::<Vec<_>>(), vec![1, 2, 3, 4, 5]);
+        assert_eq!(count_up_to(0).count(), 0);
+        assert_eq!(count_up_to(-3).count(), 0);
+    }
 }

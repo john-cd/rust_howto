@@ -45,4 +45,6 @@ mod tests {
     fn test_borrowing_immutable_example_entry_point() {
         main();
     }
+
+    // Output-only example: `main` only dereferences a borrow and prints it.
 }

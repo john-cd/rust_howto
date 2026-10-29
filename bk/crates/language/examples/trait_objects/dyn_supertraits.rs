@@ -75,4 +75,16 @@ mod tests {
     fn test_dyn_supertraits_example_entry_point() {
         main();
     }
+
+    /// The default `greet` uses the supertrait method.
+    #[test]
+    fn test_greet_and_message() {
+        let person = Person {
+            name: "Alice".to_owned(),
+        };
+        let entity: &dyn Greet = &person;
+        assert_eq!(entity.greet(), "Alice: Hello.");
+        assert_eq!(entity.message("Goodbye."), "Alice: Goodbye.");
+        say_hello_and_goodbye(entity);
+    }
 }

@@ -36,4 +36,25 @@ mod tests {
     fn test_let_else_example_entry_point() {
         main();
     }
+
+    /// A valid number is parsed.
+    #[test]
+    fn test_parse_number() {
+        assert_eq!(parse_number("42"), 42);
+        assert_eq!(parse_number("0"), 0);
+    }
+
+    /// An invalid number hits the `else` branch, which diverges.
+    #[test]
+    #[should_panic(expected = "Failed to parse number: abc")]
+    fn test_parse_number_invalid() {
+        parse_number("abc");
+    }
+
+    /// Negative numbers do not fit in a `u32`.
+    #[test]
+    #[should_panic(expected = "Failed to parse number: -1")]
+    fn test_parse_number_negative() {
+        parse_number("-1");
+    }
 }

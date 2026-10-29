@@ -119,4 +119,16 @@ mod tests {
     fn test_macro_by_example_type_checking2_example_entry_point() {
         main();
     }
+
+    /// The checking macros accept valid arguments.
+    #[test]
+    fn test_checking_macros() {
+        ensure_numeric_expression!(1.0 + 0.5);
+        ensure_numeric_literal!(7);
+        must_be_string!("ok");
+        integer_only!(1_u8 + 1);
+        integer_only!(-5_i64);
+    }
+
+    // Output-only example: the macros check types at compile time.
 }

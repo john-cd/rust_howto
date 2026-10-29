@@ -90,4 +90,21 @@ mod tests {
     fn test_implement_intoiterator_example_entry_point() {
         main();
     }
+
+    /// The custom collection yields its items in insertion order.
+    #[test]
+    fn test_my_vec_into_iter() {
+        let mut my_vec = MyVec::new();
+        my_vec.push(1);
+        my_vec.push(2);
+        my_vec.push(3);
+        assert_eq!(my_vec.into_iter().collect::<Vec<_>>(), vec![1, 2, 3]);
+    }
+
+    /// An empty collection yields nothing.
+    #[test]
+    fn test_empty_my_vec() {
+        let my_vec: MyVec<String> = MyVec::new();
+        assert_eq!(my_vec.into_iter().next(), None);
+    }
 }

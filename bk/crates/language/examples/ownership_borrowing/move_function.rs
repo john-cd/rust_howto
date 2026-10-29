@@ -51,4 +51,12 @@ mod tests {
     fn test_move_function_example_entry_point() {
         main();
     }
+
+    /// Ownership comes back from `consume_and_return` unchanged.
+    #[test]
+    fn test_consume_and_return() {
+        assert_eq!(consume_and_return("Rust".to_owned()), "Rust");
+        assert_eq!(consume_and_return(String::new()), "");
+        consume("moved".to_owned());
+    }
 }

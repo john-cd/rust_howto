@@ -37,4 +37,12 @@ mod tests {
     fn test_attributes_deprecated_example_entry_point() {
         main();
     }
+
+    /// The deprecated function still works.
+    #[test]
+    fn test_deprecated_function_is_callable() {
+        foo();
+    }
+
+    // Output-only example: `foo` only prints.
 }

@@ -51,4 +51,6 @@ mod tests {
     fn test_copy_example_entry_point() {
         main();
     }
+
+    // Output-only example: `main` only prints the copies.
 }

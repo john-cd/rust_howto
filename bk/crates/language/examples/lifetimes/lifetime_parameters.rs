@@ -110,4 +110,44 @@ mod tests {
     fn test_lifetime_parameters_example_entry_point() {
         main();
     }
+
+    /// The longer string is returned.
+    #[test]
+    fn test_longest() {
+        assert_eq!(longest("Hello", "World!"), "World!");
+        assert_eq!(longest("abc", "de"), "abc");
+    }
+
+    /// `RefHolder` displays and describes the referenced value.
+    #[test]
+    fn test_ref_holder() {
+        let num = 42;
+        let holder = RefHolder::new(&num);
+        assert_eq!(holder.to_string(), "RefHolder: 42");
+        assert_eq!(holder.describe(), "This is a reference holder.");
+        assert_eq!(String::new().describe(), "This is a string.");
+    }
+
+    /// The alias, enum and union are usable with references.
+    #[test]
+    fn test_other_items() {
+        let s: StrRef<'_> = "alias";
+        assert_eq!(s, "alias");
+        let (a, b) = (1, 2.5_f64);
+        match Either::Left::<i32, f64>(&a) {
+            Either::Left(l) => assert_eq!(*l, 1),
+            Either::Right(_) => panic!("expected left"),
+        }
+        match Either::Right::<i32, f64>(&b) {
+            Either::Right(r) => assert_eq!(*r, 2.5),
+            Either::Left(_) => panic!("expected right"),
+        }
+        let value = 7_i32;
+        let u = MyUnion { int_ref: &value };
+        // SAFETY: `int_ref` was the field written.
+        assert_eq!(unsafe { *u.int_ref }, 7);
+        let f = MyUnion { float_ref: &1.5 };
+        // SAFETY: `float_ref` was the field written.
+        assert_eq!(unsafe { *f.float_ref }, 1.5);
+    }
 }

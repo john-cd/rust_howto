@@ -9,7 +9,8 @@ Convention (see the tracking issue for "Test all book examples"):
   directory's `main.rs`;
 * every file with a `main()` has a `#[cfg(test)]` module with a test that
   calls `main()` and asserts on observable behavior (the script can only
-  flag tests with no assert/unwrap/expect at all; review the rest by hand).
+  flag files with no assert/unwrap/expect at all; review the rest by hand). A test module may state
+  `output-only` in a comment when the example has nothing but printing to check.
 
 Usage: scripts/check_example_tests.py [--summary] [--csv] [ROOT ...]
 Default roots: bk/crates later/crates xmpl playground tools.
@@ -47,7 +48,10 @@ def classify(path: Path):
     has_cfg_test = bool(CFG_TEST.search(text)) or bool(TEST_ATTR.search(text))
     tail = text[CFG_TEST.search(text).start():] if CFG_TEST.search(text) else ""
     calls_main = bool(MAIN_CALL.search(tail)) if tail else False
-    asserts = bool(re.search(r"assert|should_panic|\.expect\(|\.unwrap\(", tail))
+    asserts = bool(
+        re.search(r"assert|should_panic|output-only", text, re.I)
+        or re.search(r"\.expect\(|\.unwrap\(", tail)
+    )
     return has_main, has_run, has_cfg_test, calls_main, asserts
 
 

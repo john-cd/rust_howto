@@ -40,4 +40,12 @@ mod tests {
     fn test_macro_by_example_metavariables_example_entry_point() {
         main();
     }
+
+    // Output-only example: the macro arms only print their arguments.
+    /// Both arms of the macro accept expressions.
+    #[test]
+    fn test_print_args_accepts_expressions() {
+        print_args!(1 + 2);
+        print_args!(vec![1], Some("x"));
+    }
 }

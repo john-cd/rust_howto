@@ -198,4 +198,38 @@ mod tests {
     fn test_macro_by_example_dsl_example_entry_point() {
         main();
     }
+
+    /// The empty configuration is an empty map.
+    #[test]
+    fn test_config_empty() {
+        let c: HashMap<String, ConfigValue> = config!();
+        assert!(c.is_empty());
+    }
+
+    /// Single-entry forms for each value kind.
+    #[test]
+    fn test_config_single_entries() {
+        let t: HashMap<String, ConfigValue> = config!(a: true);
+        assert_eq!(t.get("a"), Some(&ConfigValue::Boolean(true)));
+        let f: HashMap<String, ConfigValue> = config!(a: false);
+        assert_eq!(f.get("a"), Some(&ConfigValue::Boolean(false)));
+        let s: HashMap<String, ConfigValue> = config!(a: "x");
+        assert_eq!(s.get("a"), Some(&ConfigValue::String("x".to_owned())));
+    }
+
+    /// Nested blocks produce nested maps.
+    #[test]
+    fn test_config_nested() {
+        let c: HashMap<String, ConfigValue> = config! {
+            outer { inner: "v", flag: true },
+            last: false
+        };
+        assert_eq!(c.len(), 2);
+        assert_eq!(c.get("last"), Some(&ConfigValue::Boolean(false)));
+        let Some(ConfigValue::Map(outer)) = c.get("outer") else {
+            panic!("`outer` should be a map");
+        };
+        assert_eq!(outer.get("inner"), Some(&ConfigValue::String("v".into())));
+        assert_eq!(outer.get("flag"), Some(&ConfigValue::Boolean(true)));
+    }
 }

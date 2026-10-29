@@ -39,4 +39,12 @@ mod tests {
     fn test_extend_external_type_example_entry_point() {
         main();
     }
+
+    /// The extension method casts `i64` to `u64`.
+    #[test]
+    fn test_myhash() {
+        assert_eq!(1_i64.myhash(), 1);
+        assert_eq!(0_i64.myhash(), 0);
+        assert_eq!((-1_i64).myhash(), u64::MAX);
+    }
 }

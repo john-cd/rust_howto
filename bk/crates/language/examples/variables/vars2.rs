@@ -59,4 +59,13 @@ mod tests {
     fn test_vars2_example_entry_point() {
         main();
     }
+
+    /// The struct derives `Debug`.
+    #[test]
+    fn test_my_struct_debug() {
+        assert_eq!(
+            format!("{:?}", MyStruct { flag: true }),
+            "MyStruct { flag: true }"
+        );
+    }
 }

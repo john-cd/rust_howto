@@ -48,4 +48,18 @@ mod tests {
     fn test_destructure_struct_example_entry_point() {
         main();
     }
+
+    /// The arms select axes correctly.
+    #[test]
+    fn test_axis_arms() {
+        let which = |p: Point| match p {
+            Point { y: 0, .. } => "x axis",
+            Point { x: 0, .. } => "y axis",
+            Point { .. } => "neither",
+        };
+        assert_eq!(which(Point { x: 3, y: 0 }), "x axis");
+        assert_eq!(which(Point { x: 0, y: 7 }), "y axis");
+        assert_eq!(which(Point { x: 1, y: 1 }), "neither");
+        assert_eq!(which(Point { x: 0, y: 0 }), "x axis");
+    }
 }

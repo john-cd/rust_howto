@@ -56,4 +56,6 @@ mod tests {
     fn test_let1_example_entry_point() {
         main();
     }
+
+    // Output-only example: `let` destructuring is only printed.
 }

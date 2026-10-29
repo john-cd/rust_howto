@@ -97,4 +97,21 @@ mod tests {
     fn test_trait_types_example_entry_point() {
         main();
     }
+
+    /// Every kind of type got the default method.
+    #[test]
+    fn test_default_method_on_each_type() {
+        MyEnum::A.foo();
+        MyUnion { f1: 1 }.foo();
+        42_u32.foo();
+        let s: &[u32] = &[1];
+        s.foo();
+        [1_u32, 2, 3].foo();
+        (1_u32, 2.0_f64).foo();
+        let f: fn() = || {};
+        f.foo();
+        let r = &7_u32;
+        r.foo();
+    }
+    // Output-only example: the default method only prints.
 }

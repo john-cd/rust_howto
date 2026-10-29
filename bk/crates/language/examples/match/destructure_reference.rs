@@ -42,4 +42,6 @@ mod tests {
     fn test_destructure_reference_example_entry_point() {
         main();
     }
+
+    // Output-only example: the assertions live in `main`.
 }

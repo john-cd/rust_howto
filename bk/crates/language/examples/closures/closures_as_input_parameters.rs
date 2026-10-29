@@ -50,4 +50,20 @@ mod tests {
     fn test_closures_as_input_parameters_example_entry_point() {
         main();
     }
+
+    /// `apply` calls a `FnOnce` closure exactly once.
+    #[test]
+    fn test_apply_calls_closure() {
+        let mut called = 0;
+        apply(|| called += 1);
+        assert_eq!(called, 1);
+    }
+
+    /// `apply_to_3` passes 3 to the closure and returns its result.
+    #[test]
+    fn test_apply_to_3() {
+        let var = 39;
+        assert_eq!(apply_to_3(|x| x + var), 42);
+        assert_eq!(apply_to_3(|x| x * x), 9);
+    }
 }

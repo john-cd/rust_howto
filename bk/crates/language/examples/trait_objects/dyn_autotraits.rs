@@ -68,4 +68,16 @@ mod tests {
     fn test_dyn_autotraits_example_entry_point() {
         main();
     }
+
+    /// A `Send` trait object can cross thread boundaries.
+    #[test]
+    fn test_send_trait_object_across_threads() {
+        let messenger: Box<dyn Message + Send> = Box::new(Worker {
+            id: 2,
+            msg: "Hi".to_owned(),
+        });
+        std::thread::spawn(move || process_message(messenger))
+            .join()
+            .expect("worker thread should not panic");
+    }
 }

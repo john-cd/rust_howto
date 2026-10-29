@@ -35,4 +35,13 @@ mod tests {
     fn test_generic_functions3_example_entry_point() {
         main();
     }
+
+    /// The longer string is returned; ties return the second.
+    #[test]
+    fn test_longest() {
+        assert_eq!(longest("abcd", "xyz"), "abcd");
+        assert_eq!(longest("a", "xyz"), "xyz");
+        assert_eq!(longest("ab", "cd"), "cd");
+        assert_eq!(longest("", ""), "");
+    }
 }

@@ -99,4 +99,37 @@ mod tests {
     fn test_struct_trait_example_entry_point() {
         main();
     }
+
+    /// The implementation overrides the trait's default method and constant.
+    #[test]
+    fn test_implementation() {
+        let m = MyStruct {
+            data: 7,
+            name: "Bob".to_owned(),
+        };
+        assert_eq!(m.do_something(), "Bob is doing something with data: 7");
+        m.another_action(1);
+        assert_eq!(MyStruct::assoc_func(), "Associated function output");
+        assert_eq!(MyStruct::CONSTANT, 43);
+        assert_eq!(MyStruct::ANOTHER_CONST, "Another constant value");
+    }
+
+    /// A type that keeps the defaults gets the trait's default constant.
+    #[test]
+    fn test_default_constant() {
+        struct Defaults;
+        impl SomeBehavior for Defaults {
+            type Output = ();
+
+            const ANOTHER_CONST: &str = "x";
+
+            fn do_something(&self) -> String {
+                String::new()
+            }
+
+            fn assoc_func() -> Self::Output {}
+        }
+        assert_eq!(Defaults::CONSTANT, 42);
+        Defaults.another_action(0);
+    }
 }

@@ -64,4 +64,7 @@ mod tests {
     fn test_iterator_adapters_example_entry_point() {
         main();
     }
+
+    // Output-only example: `main` only prints values; there is nothing else to
+    // check.
 }

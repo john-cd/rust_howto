@@ -65,4 +65,21 @@ mod tests {
     fn test_traits_example_entry_point() {
         main();
     }
+
+    /// The summary combines headline, author and location.
+    #[test]
+    fn test_summarize() {
+        let na = NewsArticle {
+            headline: "headline".to_owned(),
+            location: "location".to_owned(),
+            author: "author".to_owned(),
+            content: "...".to_owned(),
+        };
+        assert_eq!(na.summarize(), "headline, by author (location)");
+        assert_eq!(
+            NewsArticle::summarize(&na),
+            <NewsArticle as Summary>::summarize(&na)
+        );
+        assert_eq!(na.content, "...");
+    }
 }

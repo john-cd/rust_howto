@@ -55,4 +55,13 @@ mod tests {
     fn test_const_generics2_example_entry_point() {
         main();
     }
+
+    /// The capacity is the array length and the buffer is the array itself.
+    #[test]
+    fn test_fixed_size_buffer() {
+        assert_eq!(<[u8; 3] as FixedSizeBuffer>::CAPACITY, 3);
+        assert_eq!(<[u8; 0] as FixedSizeBuffer>::CAPACITY, 0);
+        let buf = [10_u8, 20, 30];
+        assert_eq!(buf.get_buffer(), &[10, 20, 30]);
+    }
 }

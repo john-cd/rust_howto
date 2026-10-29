@@ -53,4 +53,19 @@ mod tests {
     fn test_proc_macro_derive_example_entry_point() {
         main();
     }
+
+    /// The derived method can be called on a `User` that also derives `Debug`.
+    #[test]
+    fn test_derived_debug_print() {
+        let u = User {
+            id: 2,
+            name: "Bob".to_owned(),
+            active: false,
+        };
+        u.debug_print();
+        assert_eq!(
+            format!("{u:?}"),
+            "User { id: 2, name: \"Bob\", active: false }"
+        );
+    }
 }

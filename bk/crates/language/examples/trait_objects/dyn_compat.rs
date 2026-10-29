@@ -196,4 +196,36 @@ mod tests {
     fn test_dyn_compat_example_entry_point() {
         main();
     }
+
+    /// A boxed clone is an independent object.
+    #[test]
+    fn test_clone_boxed() {
+        let obj: &dyn ObjectSafeClone = &Circle { radius: 1.5 };
+        let _cloned: Box<dyn ObjectSafeClone> = obj.clone_boxed();
+        let c = Circle { radius: 2.0 };
+        assert!((c.returns().radius - 2.0).abs() < f64::EPSILON);
+    }
+
+    /// Every receiver kind is callable on a dyn-compatible trait object.
+    #[test]
+    fn test_trait_method_receivers() {
+        let mut obj: Box<dyn TraitMethods> = Box::new(Circle { radius: 1.0 });
+        obj.by_ref();
+        obj.by_ref_mut();
+        obj.with_lifetime();
+        obj.by_box();
+        let rc: Rc<dyn TraitMethods> = Rc::new(Circle { radius: 1.0 });
+        rc.by_rc();
+        let arc: Arc<dyn TraitMethods> = Arc::new(Circle { radius: 1.0 });
+        arc.clone().by_arc();
+        <Circle as TraitMethods>::associated_function();
+    }
+
+    /// The associated constant has its default.
+    #[test]
+    fn test_const_default() {
+        struct S;
+        impl NotObjectSafe for S {}
+        assert_eq!(S::CONST, 10);
+    }
 }

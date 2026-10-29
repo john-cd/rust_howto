@@ -45,4 +45,20 @@ mod tests {
     fn test_at_bindings_example_entry_point() {
         main();
     }
+
+    /// Each range selects the matching arm.
+    #[test]
+    fn test_at_binding_arms() {
+        fn classify(id: i32) -> &'static str {
+            match (Message::Hello { id }) {
+                Message::Hello { id: 3..=7 } => "in range",
+                Message::Hello { id: 10..=12 } => "other range",
+                Message::Hello { .. } => "other",
+            }
+        }
+        assert_eq!(classify(5), "in range");
+        assert_eq!(classify(11), "other range");
+        assert_eq!(classify(8), "other");
+        assert_eq!(classify(2), "other");
+    }
 }

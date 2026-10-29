@@ -46,4 +46,14 @@ mod tests {
     fn test_consume_intoiterator_example_entry_point() {
         main();
     }
+
+    /// `sum_all` accepts any `IntoIterator` of `i32`.
+    #[test]
+    fn test_sum_all() {
+        assert_eq!(sum_all(vec![1, 2, 3, 4, 5]), 15);
+        assert_eq!(sum_all([10, 20, 30]), 60);
+        assert_eq!(sum_all(0..5), 10);
+        assert_eq!(sum_all(std::iter::repeat_n(5, 2)), 10);
+        assert_eq!(sum_all(Vec::new()), 0);
+    }
 }

@@ -63,4 +63,36 @@ mod tests {
     fn test_trait_bounds_example_entry_point() {
         main();
     }
+
+    /// Equal values hash equally; different values (almost surely) do not.
+    #[test]
+    fn test_pair_hash() {
+        fn hash_of<T: Hash>(t: &T) -> u64 {
+            let mut hasher = DefaultHasher::new();
+            t.hash(&mut hasher);
+            hasher.finish()
+        }
+        let p = Pair {
+            first: 1,
+            second: "2",
+        };
+        let same = Pair {
+            first: 1,
+            second: "2",
+        };
+        let other = Pair {
+            first: 2,
+            second: "2",
+        };
+        assert_eq!(hash_of(&p), hash_of(&same));
+        assert_ne!(hash_of(&p), hash_of(&other));
+        // The pair hashes like its fields in sequence.
+        assert_eq!(hash_of(&p), {
+            let mut hasher = DefaultHasher::new();
+            1.hash(&mut hasher);
+            "2".hash(&mut hasher);
+            hasher.finish()
+        });
+        print_hash(&p);
+    }
 }

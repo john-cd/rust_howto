@@ -58,4 +58,21 @@ mod tests {
     fn test_struct_impl_example_entry_point() {
         main();
     }
+
+    /// A square has equal sides and its area is the side squared.
+    #[test]
+    fn test_square_and_area() {
+        let sq = Rectangle::square(5);
+        assert_eq!((sq.width, sq.height), (5, 5));
+        assert_eq!(sq.area(), 25);
+        assert_eq!(Rectangle::square(0).area(), 0);
+        assert_eq!(
+            Rectangle {
+                width: 2,
+                height: 3
+            }
+            .area(),
+            6
+        );
+    }
 }

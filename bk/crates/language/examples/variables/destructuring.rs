@@ -53,4 +53,6 @@ mod tests {
     fn test_destructuring_example_entry_point() {
         main();
     }
+
+    // Output-only example: the destructured values are only printed.
 }

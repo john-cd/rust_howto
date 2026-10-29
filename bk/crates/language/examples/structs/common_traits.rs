@@ -102,4 +102,27 @@ mod tests {
     fn test_common_traits_example_entry_point() {
         main();
     }
+
+    /// The derived and manual trait implementations behave as documented.
+    #[test]
+    fn test_point2d_traits() {
+        let p = Point2D { x: 1, y: 2 };
+        assert_eq!(format!("{p:?}"), "Point2D { x: 1, y: 2 }");
+        assert_eq!(p.to_string(), "Point2D: (1, 2)");
+        assert_eq!(p, p.clone());
+        assert_eq!(Point2D::default(), Point2D { x: 0, y: 0 });
+        assert!(Point2D { x: 1, y: 9 } < Point2D { x: 2, y: 0 });
+        assert!(Point2D { x: 1, y: 1 } < Point2D { x: 1, y: 2 });
+    }
+
+    /// Equal points hash equally and can be used as map keys.
+    #[test]
+    fn test_point2d_hash() {
+        use std::collections::HashSet;
+        let mut set = HashSet::new();
+        assert!(set.insert(Point2D { x: 1, y: 1 }));
+        assert!(!set.insert(Point2D { x: 1, y: 1 }));
+        assert!(set.insert(Point2D { x: 1, y: 2 }));
+        assert_eq!(set.len(), 2);
+    }
 }

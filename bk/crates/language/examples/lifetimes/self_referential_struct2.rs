@@ -210,4 +210,26 @@ mod tests {
     fn test_self_referential_struct2_example_entry_point() {
         main();
     }
+
+    /// The pointer refers to the struct's own data.
+    #[test]
+    fn test_self_ref_points_to_own_data() {
+        let pinned = selfref::SelfRef::new("hello");
+        assert_eq!(pinned.data, "hello");
+        assert!(std::ptr::eq(&pinned.data, pinned.ptr));
+    }
+
+    /// The pin-projected fields can be updated independently.
+    #[test]
+    fn test_structural_pinning() {
+        use structural_pinning::Struct;
+        let mut s = std::pin::pin!(Struct {
+            structural_field: 1,
+            unpinned_field: 2,
+        });
+        *s.as_mut().structural_field() += 1;
+        *s.as_mut().unpinned_field() += 1;
+        assert_eq!(*s.as_mut().structural_field(), 2);
+        assert_eq!(*s.as_mut().unpinned_field(), 3);
+    }
 }

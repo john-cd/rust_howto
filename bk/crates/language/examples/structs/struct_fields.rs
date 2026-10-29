@@ -66,4 +66,21 @@ mod tests {
     fn test_struct_fields_example_entry_point() {
         main();
     }
+
+    /// The derived `Debug` output lists every field.
+    #[test]
+    fn test_complex_struct_debug() {
+        let complex = ComplexStruct {
+            primitive: 10,
+            tuple_field: (5, 3.5),
+            array_field: [1, 2, 3],
+            enum_field: Status::Inactive,
+            struct_field: InnerStruct(42),
+            reference_field: "hi",
+        };
+        assert_eq!(
+            format!("{complex:?}"),
+            "ComplexStruct { primitive: 10, tuple_field: (5, 3.5), array_field: [1, 2, 3], enum_field: Inactive, struct_field: InnerStruct(42), reference_field: \"hi\" }"
+        );
+    }
 }

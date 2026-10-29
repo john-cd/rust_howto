@@ -58,4 +58,14 @@ mod tests {
     fn test_macro_by_example_hygiene_example_entry_point() {
         main();
     }
+
+    /// The macro-defined `x` is invisible, but the caller-named binding works.
+    #[test]
+    fn test_hygiene() {
+        foo!();
+        bar!(y);
+        assert_eq!(y, 3);
+        baz!(); // Items are not hygienic: `f` is visible.
+        f();
+    }
 }

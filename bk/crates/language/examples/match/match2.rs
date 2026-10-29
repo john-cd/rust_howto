@@ -55,4 +55,17 @@ mod tests {
     fn test_match2_example_entry_point() {
         main();
     }
+
+    /// The arms are tried in order.
+    #[test]
+    fn test_point_arms() {
+        let describe = |p: Point| match p {
+            Point { x: 0, y: 0, z: 0 } => "origin".to_owned(),
+            Point { x: 0, y: b, z: c } => format!("x0 {b} {c}"),
+            Point { x, .. } => format!("x {x}"),
+        };
+        assert_eq!(describe(Point { x: 0, y: 0, z: 0 }), "origin");
+        assert_eq!(describe(Point { x: 0, y: 2, z: 3 }), "x0 2 3");
+        assert_eq!(describe(Point { x: 5, y: 2, z: 3 }), "x 5");
+    }
 }

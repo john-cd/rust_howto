@@ -46,4 +46,13 @@ mod tests {
     fn test_lifetime_parameter_function_example_entry_point() {
         main();
     }
+
+    /// The longer string wins; ties return the second.
+    #[test]
+    fn test_longest() {
+        assert_eq!(longest("looooooong", "short"), "looooooong");
+        assert_eq!(longest("a", "bb"), "bb");
+        assert_eq!(longest("aa", "bb"), "bb");
+        assert_eq!(longest("", ""), "");
+    }
 }

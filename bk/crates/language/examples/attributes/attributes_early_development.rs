@@ -61,4 +61,10 @@ mod tests {
     fn test_attributes_early_development_example_entry_point() {
         main();
     }
+
+    /// The `#[must_use]` function returns its value.
+    #[test]
+    fn test_required() {
+        assert_eq!(required(), 42);
+    }
 }

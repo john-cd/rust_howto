@@ -106,4 +106,19 @@ mod tests {
     fn test_macros_example_entry_point() {
         main();
     }
+
+    /// The type-position macro expands to a tuple type.
+    #[test]
+    fn test_tuple_macro() {
+        let t: T2 = (1, 3);
+        assert_eq!(t, (1, 3));
+        print_tuple(t);
+    }
+
+    /// The `examples` function checks its own macro internally.
+    #[test]
+    fn test_examples_and_thread_local() {
+        examples();
+        use_thread_local();
+    }
 }

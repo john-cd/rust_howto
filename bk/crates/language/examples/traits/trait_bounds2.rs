@@ -66,4 +66,17 @@ mod tests {
     fn test_trait_bounds2_example_entry_point() {
         main();
     }
+
+    /// The summary is the article text; all bound styles accept it.
+    #[test]
+    fn test_summary() {
+        let a = Article {
+            txt: String::from("Some text"),
+        };
+        assert_eq!(a.summarize(), "Some text");
+        notify(&a);
+        notify2(&a);
+        notify3(&a);
+        assert_eq!(Article { txt: String::new() }.summarize(), "");
+    }
 }

@@ -33,4 +33,10 @@ mod tests {
     fn test_struct_constant_example_entry_point() {
         main();
     }
+
+    /// The associated constant has its declared value.
+    #[test]
+    fn test_id() {
+        assert_eq!(MyToken::ID, 1);
+    }
 }

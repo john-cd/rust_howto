@@ -83,4 +83,27 @@ mod tests {
     fn test_functions_example_entry_point() {
         main();
     }
+
+    /// Multiplication returns the product.
+    #[test]
+    fn test_multiply() {
+        assert_eq!(multiply(2, 3), 6);
+        assert_eq!(multiply(-4, 5), -20);
+        assert_eq!(multiply(0, 99), 0);
+    }
+
+    /// The block expression adds three to its argument.
+    #[test]
+    fn test_foo_adds_three() {
+        assert_eq!(foo(1), 4);
+        assert_eq!(foo(-3), 0);
+    }
+
+    /// The first even number is found, or `None` is returned.
+    #[test]
+    fn test_find_first_even() {
+        assert_eq!(find_first_even(&[1, 2, 3, 4]), Some(2));
+        assert_eq!(find_first_even(&[1, 3, 5]), None);
+        assert_eq!(find_first_even(&[]), None);
+    }
 }

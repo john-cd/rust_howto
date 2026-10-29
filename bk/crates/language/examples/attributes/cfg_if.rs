@@ -83,4 +83,6 @@ mod tests {
     fn test_cfg_if_example_entry_point() {
         main();
     }
+
+    // Output-only example: the branches taken depend on the build target.
 }

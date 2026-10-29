@@ -39,4 +39,7 @@ mod tests {
     fn test_closures_move_example_entry_point() {
         main();
     }
+
+    // Output-only example: `main` only prints values; there is nothing else to
+    // check.
 }

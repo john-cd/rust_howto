@@ -159,4 +159,6 @@ mod tests {
     fn test_demo_arrays() {
         demo_arrays();
     }
+
+    // Output-only example: the demos only print tuples and arrays.
 }

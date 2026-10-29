@@ -58,4 +58,13 @@ mod tests {
     fn test_trait_bounds_multiple_traits_example_entry_point() {
         main();
     }
+
+    // Output-only example: the functions only print a clone.
+    /// The functions accept any `Debug + Clone` type.
+    #[test]
+    fn test_other_types() {
+        func(&1);
+        func2(&"x");
+        func3(&vec![1, 2]);
+    }
 }

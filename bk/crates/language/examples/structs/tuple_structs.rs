@@ -1,8 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "the snippet declares items to illustrate them, not to call them"
+    )
 )]
 // ANCHOR: example
 //! Tuple structs and unit-like structs.
@@ -49,5 +52,14 @@ mod tests {
     #[test]
     fn test_tuple_structs_example_entry_point() {
         main();
+    }
+
+    /// Tuple fields are accessed by index; unit-like structs print their name.
+    #[test]
+    fn test_tuple_structs() {
+        let c = Color(1, 2, 3);
+        assert_eq!((c.0, c.1, c.2), (1, 2, 3));
+        assert_eq!(format!("{c:?}"), "Color(1, 2, 3)");
+        assert_eq!(format!("{UnitLike:?}"), "UnitLike");
     }
 }

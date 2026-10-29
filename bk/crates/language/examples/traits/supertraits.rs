@@ -52,4 +52,12 @@ mod tests {
     fn test_supertraits_example_entry_point() {
         main();
     }
+
+    /// The supertrait `Display` is available in the default method.
+    #[test]
+    fn test_supertrait_display() {
+        let s = String::from("test");
+        assert_eq!(format!("* {s} *"), "* test *");
+        s.outline_print();
+    }
 }

@@ -1,8 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "the snippet declares items to illustrate them, not to call them"
+    )
 )]
 // ANCHOR: example
 //! Creating instances of a struct.
@@ -73,5 +76,18 @@ mod tests {
     #[test]
     fn test_struct_init_example_entry_point() {
         main();
+    }
+
+    /// Both constructors produce an active user with the given fields.
+    #[test]
+    fn test_constructors() {
+        let a = build_user("a@b.c".into(), "alice".into());
+        let b = User::new("a@b.c".into(), "alice".into());
+        for u in [&a, &b] {
+            assert!(u.active);
+            assert_eq!(u.username, "alice");
+            assert_eq!(u.email, "a@b.c");
+        }
+        assert_eq!(format!("{a:?}"), format!("{b:?}"));
     }
 }

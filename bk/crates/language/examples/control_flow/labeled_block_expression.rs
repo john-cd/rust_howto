@@ -43,4 +43,10 @@ mod tests {
     fn test_labeled_block_expression_example_entry_point() {
         main();
     }
+
+    /// The condition is always false, so the second `break` is taken.
+    #[test]
+    fn test_condition_is_false() {
+        assert!(!condition());
+    }
 }

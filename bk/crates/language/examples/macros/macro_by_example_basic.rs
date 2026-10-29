@@ -34,4 +34,13 @@ mod tests {
     fn test_macro_by_example_basic_example_entry_point() {
         main();
     }
+
+    /// The macro expands to statements that bind a local variable.
+    #[test]
+    fn test_say_hello_expands_to_statements() {
+        say_hello!();
+        say_hello!(); // Hygiene: expanding twice does not clash.
+    }
+
+    // Output-only example: the macro expansion only prints.
 }

@@ -51,4 +51,13 @@ mod tests {
     fn test_borrowing_function_example_entry_point() {
         main();
     }
+
+    /// Borrowing leaves the value usable.
+    #[test]
+    fn test_borrow_keeps_ownership() {
+        let s = MyStruct(true);
+        calculate(&s);
+        calculate(&s);
+        assert!(s.0);
+    }
 }

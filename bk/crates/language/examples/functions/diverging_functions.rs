@@ -48,4 +48,11 @@ mod tests {
     fn test_diverging_functions_example_entry_point() {
         main();
     }
+
+    /// `foo` never returns: it panics with its message.
+    #[test]
+    #[should_panic(expected = "This call never returns.")]
+    fn test_foo_panics() {
+        foo();
+    }
 }

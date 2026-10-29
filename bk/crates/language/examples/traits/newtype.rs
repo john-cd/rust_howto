@@ -50,4 +50,13 @@ mod tests {
     fn test_newtype_example_entry_point() {
         main();
     }
+
+    /// The wrapper displays its items between brackets.
+    #[test]
+    fn test_wrapper_display() {
+        let w = Wrapper(vec!["example".to_owned(), "example 2".to_owned()]);
+        assert_eq!(w.to_string(), "[example, example 2]");
+        assert_eq!(Wrapper(vec![]).to_string(), "[]");
+        assert_eq!(Wrapper(vec!["a".to_owned()]).to_string(), "[a]");
+    }
 }

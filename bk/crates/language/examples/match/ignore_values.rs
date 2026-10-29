@@ -52,4 +52,6 @@ mod tests {
     fn test_ignore_values_example_entry_point() {
         main();
     }
+
+    // Output-only example: the assertions live in `main`.
 }

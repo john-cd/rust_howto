@@ -51,4 +51,6 @@ mod tests {
     fn test_token_tree_example_entry_point() {
         main();
     }
+
+    // Output-only example: the macros expand to nothing; compiling is the test.
 }

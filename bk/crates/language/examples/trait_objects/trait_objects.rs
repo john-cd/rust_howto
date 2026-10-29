@@ -83,4 +83,13 @@ mod tests {
     fn test_trait_objects_example_entry_point() {
         main();
     }
+
+    /// The screen holds a heterogeneous collection.
+    #[test]
+    fn test_screen_components() {
+        let s = Screen::new();
+        assert_eq!(s.components.len(), 3);
+        s.run();
+        assert!(Screen { components: vec![] }.components.is_empty());
+    }
 }

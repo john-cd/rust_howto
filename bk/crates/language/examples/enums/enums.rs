@@ -78,4 +78,31 @@ mod tests {
     fn test_enums_example_entry_point() {
         main();
     }
+
+    /// The derived `Debug` output names each variant and its fields.
+    #[test]
+    fn test_message_debug() {
+        assert_eq!(format!("{:?}", Message::Quit), "Quit");
+        assert_eq!(
+            format!("{:?}", Message::Move { x: 10, y: 15 }),
+            "Move { x: 10, y: 15 }"
+        );
+        assert_eq!(
+            format!("{:?}", Message::Write("hi".into())),
+            "Write(\"hi\")"
+        );
+        assert_eq!(
+            format!("{:?}", Message::ChangeColor(1, 2, 3)),
+            "ChangeColor(1, 2, 3)"
+        );
+    }
+
+    /// `call` handles every variant.
+    #[test]
+    fn test_call_every_variant() {
+        Message::Quit.call();
+        Message::Move { x: 0, y: 0 }.call();
+        Message::Write(String::new()).call();
+        Message::ChangeColor(0, 0, 0).call();
+    }
 }

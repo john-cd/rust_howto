@@ -50,4 +50,10 @@ mod tests {
     fn test_conditional_compilation_example_entry_point() {
         main();
     }
+
+    /// The `cfg!` macro agrees with the compilation target.
+    #[test]
+    fn test_cfg_matches_target_os() {
+        assert_eq!(cfg!(target_os = "linux"), std::env::consts::OS == "linux");
+    }
 }

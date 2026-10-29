@@ -1,8 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "the snippet declares items to illustrate them, not to call them"
+    )
 )]
 // ANCHOR: example
 //! Creating a struct from another instance with the struct update syntax.
@@ -51,5 +54,21 @@ mod tests {
     #[test]
     fn test_struct_update_example_entry_point() {
         main();
+    }
+
+    /// Struct update syntax takes the remaining fields from the base value.
+    #[test]
+    fn test_struct_update() {
+        let user1 = User {
+            active: false,
+            username: "first".to_owned(),
+        };
+        let user2 = User {
+            username: "Bob".to_owned(),
+            ..user1
+        };
+        assert!(!user2.active);
+        assert_eq!(user2.username, "Bob");
+        assert_eq!(user1.username, "first"); // `active` is `Copy`: `user1` is still usable.
     }
 }

@@ -97,4 +97,24 @@ mod tests {
     fn test_self_referential_struct_example_entry_point() {
         main();
     }
+
+    /// The record splits its line into comma-separated fields.
+    #[test]
+    fn test_load_record() {
+        let line = "Joe,Doe,1994-01-01";
+        let record = load_record(line);
+        assert_eq!(record.line, line);
+        assert_eq!(record.fields, vec!["Joe", "Doe", "1994-01-01"]);
+        assert_eq!(load_record("").fields, vec![""]);
+        assert_eq!(load_record("a,,b").fields, vec!["a", "", "b"]);
+    }
+
+    /// Both `Rc` handles point to the same allocation.
+    #[test]
+    fn test_self_ref_rc() {
+        let s = SelfRefRc::new("Hello, Rust!".to_owned());
+        assert!(Rc::ptr_eq(&s.data, &s.reference));
+        assert_eq!(*s.reference, "Hello, Rust!");
+        assert_eq!(Rc::strong_count(&s.data), 2);
+    }
 }

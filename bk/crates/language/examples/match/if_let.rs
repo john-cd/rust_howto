@@ -59,4 +59,6 @@ mod tests {
     fn test_if_let_example_entry_point() {
         main();
     }
+
+    // Output-only example: `if let` and `match` only print.
 }

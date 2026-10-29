@@ -80,4 +80,6 @@ mod tests {
     fn test_generic_functions2_example_entry_point() {
         main();
     }
+
+    // Output-only example: the generic functions only print their argument.
 }

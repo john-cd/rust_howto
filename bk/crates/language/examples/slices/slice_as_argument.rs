@@ -42,4 +42,13 @@ mod tests {
     fn test_slice_as_argument_example_entry_point() {
         main();
     }
+
+    /// `sum` works on vectors, arrays and sub-slices, including empty ones.
+    #[test]
+    fn test_sum() {
+        assert_eq!(sum(&[1, 2, 3, 4, 5]), 15);
+        assert_eq!(sum(&[10, -10]), 0);
+        assert_eq!(sum(&[1, 2, 3][1..]), 5);
+        assert_eq!(sum(&[]), 0);
+    }
 }

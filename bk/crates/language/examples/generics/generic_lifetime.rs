@@ -50,4 +50,13 @@ mod tests {
     fn test_generic_lifetime_example_entry_point() {
         main();
     }
+
+    /// The holder returns the reference it was given, even for unsized types.
+    #[test]
+    fn test_data_holder() {
+        let value = 10_u8;
+        let holder = DataHolder { data: &value };
+        assert_eq!(*holder.get_data(), 10);
+        assert!(std::ptr::eq(holder.get_data(), &value));
+    }
 }

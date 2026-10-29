@@ -57,4 +57,21 @@ mod tests {
     fn test_structs_example_entry_point() {
         main();
     }
+
+    /// The fields hold the initial values.
+    #[test]
+    fn test_user_fields() {
+        let user = User {
+            active: true,
+            username: "u".to_owned(),
+            email: "e@x.com".to_owned(),
+            sign_in_count: 1,
+        };
+        assert!(user.active);
+        assert_eq!(user.sign_in_count, 1);
+        assert_eq!(
+            format!("{user:?}"),
+            "User { active: true, username: \"u\", email: \"e@x.com\", sign_in_count: 1 }"
+        );
+    }
 }

@@ -31,4 +31,11 @@ mod tests {
     fn test_static_lifetime_example_entry_point() {
         main();
     }
+
+    /// The function returns a `'static` string.
+    #[test]
+    fn test_my_string() {
+        let s: &'static str = my_string();
+        assert_eq!(s, "I have a static lifetime.");
+    }
 }

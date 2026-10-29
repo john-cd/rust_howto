@@ -59,4 +59,13 @@ mod tests {
     fn test_associated_types_example_entry_point() {
         main();
     }
+
+    /// The associated type is `u32`, and `next` keeps returning the value.
+    #[test]
+    fn test_associated_type() {
+        let mut it = MyIterator(42);
+        assert_eq!(use_iterator(&mut it), Some(42));
+        assert_eq!(use_iterator(&mut it), Some(42));
+        assert_eq!(MyIterator(0).next(), Some(0));
+    }
 }

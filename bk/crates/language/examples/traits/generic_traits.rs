@@ -44,4 +44,6 @@ mod tests {
     fn test_generic_traits_example_entry_point() {
         main();
     }
+
+    // Output-only example: `test` only prints for every `T`.
 }

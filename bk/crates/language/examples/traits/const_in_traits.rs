@@ -43,4 +43,11 @@ mod tests {
     fn test_const_in_traits_example_entry_point() {
         main();
     }
+
+    /// The default constant is used unless overridden.
+    #[test]
+    fn test_constants() {
+        assert_eq!(S::CONST_NO_DEFAULT, 0);
+        assert_eq!(S::CONST_WITH_DEFAULT, 99);
+    }
 }

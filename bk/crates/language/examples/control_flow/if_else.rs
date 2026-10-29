@@ -47,4 +47,6 @@ mod tests {
     fn test_if_else_example_entry_point() {
         main();
     }
+
+    // Output-only example: the branches only print.
 }

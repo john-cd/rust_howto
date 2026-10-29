@@ -112,4 +112,12 @@ mod tests {
     fn test_constants_example_entry_point() {
         main();
     }
+
+    /// The constant is inlined wherever it is used.
+    #[test]
+    fn test_const_length() {
+        assert_eq!(LEN, 5);
+        let arr: [i32; LEN] = [0; LEN];
+        assert_eq!(arr.len(), LEN);
+    }
 }

@@ -45,4 +45,16 @@ mod tests {
     fn test_read_write_lock_example_entry_point() {
         main();
     }
+
+    /// Shared borrows end, then the value can be reassigned and mutated.
+    #[test]
+    fn test_reassign_after_borrows() {
+        let mut s1 = MyStruct(true);
+        let (a, b) = (&s1, &s1);
+        assert!(a.0 && b.0);
+        s1 = MyStruct(false);
+        assert!(!s1.0);
+        s1.0 = true;
+        assert!(s1.0);
+    }
 }

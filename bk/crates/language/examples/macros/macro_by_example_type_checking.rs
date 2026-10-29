@@ -32,4 +32,12 @@ mod tests {
     fn test_macro_by_example_type_checking_example_entry_point() {
         main();
     }
+
+    /// The parentheses make `double!` safe with low-precedence expressions.
+    #[test]
+    fn test_double_precedence() {
+        assert_eq!(double!(5), 10);
+        assert_eq!(double!(1 + 2), 6); // Would be 5 without the parentheses.
+        assert_eq!(double!(-3), -6);
+    }
 }

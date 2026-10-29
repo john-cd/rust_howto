@@ -48,4 +48,12 @@ mod tests {
     fn test_statics_example_entry_point() {
         main();
     }
+
+    /// The statics hold their initial values.
+    #[test]
+    fn test_statics() {
+        assert_eq!(APPLICATION_NAME, "My Awesome App");
+        assert_eq!(VERSION, 1);
+        assert_eq!(PrintOnDrop("x").0, "x");
+    }
 }

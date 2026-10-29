@@ -36,4 +36,12 @@ mod tests {
     fn test_attributes_must_use_example_entry_point() {
         main();
     }
+
+    /// `add` returns the sum, including with negative numbers.
+    #[test]
+    fn test_add() {
+        assert_eq!(add(1, 2), 3);
+        assert_eq!(add(-5, 5), 0);
+        assert_eq!(add(i32::MAX - 1, 1), i32::MAX);
+    }
 }

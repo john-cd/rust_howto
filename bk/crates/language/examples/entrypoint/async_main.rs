@@ -39,4 +39,6 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    // Output-only example: `main` only prints a message.
 }

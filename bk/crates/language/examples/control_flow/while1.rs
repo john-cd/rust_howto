@@ -31,4 +31,6 @@ mod tests {
     fn test_while1_example_entry_point() {
         main();
     }
+
+    // Output-only example: the countdown is only printed.
 }

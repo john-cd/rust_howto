@@ -26,4 +26,6 @@ mod tests {
     fn test_main_fn_example_entry_point() {
         main();
     }
+
+    // Output-only example: `main` only prints a greeting.
 }

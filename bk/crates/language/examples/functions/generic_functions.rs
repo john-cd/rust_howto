@@ -52,4 +52,6 @@ mod tests {
     fn test_generic_functions_example_entry_point() {
         main();
     }
+
+    // Output-only example: `generic` and `take_two` only print type names.
 }

@@ -39,4 +39,22 @@ mod tests {
     fn test_string_slices_example_entry_point() {
         main();
     }
+
+    /// The slices cover the expected parts of the string.
+    #[test]
+    fn test_string_slices() {
+        let s = String::from("hello world");
+        assert_eq!(&s[0..5], "hello");
+        assert_eq!(&s[6..], "world");
+        assert_eq!(&s[..5], &s[0..5]);
+    }
+
+    /// Slicing in the middle of a multi-byte character panics.
+    #[test]
+    #[should_panic(expected = "is not a char boundary")]
+    fn test_slice_not_on_char_boundary() {
+        let s = String::from("héllo");
+        let end = 2;
+        let _ = &s[0..end];
+    }
 }

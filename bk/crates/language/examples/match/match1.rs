@@ -1,8 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "the snippet declares items to illustrate them, not to call them"
+    )
 )]
 // ANCHOR: example
 //! This example defines different types of US coins using an `enum` and then
@@ -70,5 +73,14 @@ mod tests {
     #[test]
     fn test_match1_example_entry_point() {
         main();
+    }
+
+    /// Each coin has its value.
+    #[test]
+    fn test_value_in_cents() {
+        assert_eq!(value_in_cents(Coin::Penny), 1);
+        assert_eq!(value_in_cents(Coin::Nickel), 5);
+        assert_eq!(value_in_cents(Coin::Dime), 10);
+        assert_eq!(value_in_cents(Coin::Quarter("Alaska".to_owned())), 25);
     }
 }

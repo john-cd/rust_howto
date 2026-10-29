@@ -61,4 +61,14 @@ mod tests {
     fn test_sealed_trait_pattern_example_entry_point() {
         main();
     }
+
+    /// Only the sealed implementors can use the method.
+    #[test]
+    fn test_sealed_trait_method() {
+        use a_module::MySealedTrait as _;
+        42_usize.some_public_method();
+        0_usize.some_public_method();
+    }
+
+    // Output-only example: the sealed method has an empty body.
 }

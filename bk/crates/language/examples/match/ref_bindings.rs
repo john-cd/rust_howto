@@ -72,4 +72,6 @@ mod tests {
     fn test_ref_bindings_example_entry_point() {
         main();
     }
+
+    // Output-only example: reference bindings are only printed.
 }
