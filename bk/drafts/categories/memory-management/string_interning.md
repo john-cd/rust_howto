@@ -19,6 +19,14 @@ The example shows two interners:
 {{#include ../../../crates/cats/memory_management/examples/interning.rs:example}}
 ```
 
+## Count Allocations for Repeated Interning
+
+The separate `interner_allocations` executable wraps the system allocator and counts successful allocation and reallocation calls. Run it with `just cargo run --manifest-path crates/Cargo.toml -p memory_management --example interner_allocations` from `bk/`. It measures the hand-written interner above: a first insertion allocates storage, while repeated lookups of the same borrowed string require no additional allocations. The counter is process-wide, so the example takes its measurements on the main thread without printing inside the measured intervals. Counts are allocator calls, not bytes, peak memory, or a performance benchmark; measure representative workloads before drawing broader conclusions.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/memory_management/examples/interner_allocations.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[arena_allocation | Arena Allocation]].

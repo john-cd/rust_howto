@@ -38,6 +38,11 @@ path = "examples/interning.rs"
 test = true
 
 [[example]]
+name = "interner_allocations"
+path = "examples/interner_allocations.rs"
+test = false
+
+[[example]]
 name = "jemalloc"
 path = "examples/jemalloc.rs"
 test = true

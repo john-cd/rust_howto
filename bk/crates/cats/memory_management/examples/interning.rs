@@ -15,18 +15,18 @@ use ustr::Ustr;
 
 /// A handle to an interned string.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
-struct Symbol(u32);
+pub(crate) struct Symbol(u32);
 
 /// Owns the interned strings.
 #[derive(Default)]
-struct Interner {
+pub(crate) struct Interner {
     ids: HashMap<String, u32>,
     strings: Vec<String>,
 }
 
 impl Interner {
     /// Returns the symbol for `s`, adding it on first use.
-    fn intern(&mut self, s: &str) -> Symbol {
+    pub(crate) fn intern(&mut self, s: &str) -> Symbol {
         if let Some(&id) = self.ids.get(s) {
             return Symbol(id);
         }
