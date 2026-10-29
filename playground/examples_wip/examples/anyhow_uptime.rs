@@ -55,6 +55,14 @@ mod tests {
     /// Verifies that the uptime example entry point reports its result.
     #[test]
     fn test_anyhow_uptime_example_entry_point() {
-        run_example().expect("the uptime example should read its source data");
+        main().expect("the uptime example should not fail");
+        run_example().expect("the uptime example should not fail");
+    }
+
+    /// Verifies that the uptime is read where `/proc/uptime` exists.
+    #[test]
+    #[cfg(target_os = "linux")]
+    fn reads_uptime_on_linux() {
+        assert!(read_uptime().expect("/proc/uptime should be readable") > 0);
     }
 }

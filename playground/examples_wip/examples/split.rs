@@ -57,6 +57,24 @@ mod tests {
     /// Verifies that the path splitting example entry point runs.
     #[test]
     fn test_split_example_entry_point() {
-        run_example();
+        main();
+    }
+
+    /// Verifies the split of a path with at least three separators.
+    #[test]
+    fn splits_sample_path() {
+        assert_eq!(
+            split_path("src/playground/examples/split.rs"),
+            ("src", "playground", "split.rs")
+        );
+    }
+
+    /// Verifies the partial results for short paths.
+    #[test]
+    fn short_paths_leave_trailing_parts_empty() {
+        assert_eq!(split_path(""), ("", "", ""));
+        assert_eq!(split_path("file.rs"), ("", "", ""));
+        assert_eq!(split_path("a/b"), ("a", "", ""));
+        assert_eq!(split_path("a/b/c"), ("a", "b", ""));
     }
 }

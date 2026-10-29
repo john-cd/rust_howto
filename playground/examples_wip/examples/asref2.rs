@@ -136,6 +136,33 @@ mod tests {
     /// Verifies that the `AsRef` example entry point runs.
     #[test]
     fn test_asref2_example_entry_point() {
-        run_example();
+        main();
+    }
+
+    /// Builds a media file for the tests.
+    fn media() -> MediaFile {
+        MediaFile {
+            id: "ID".to_owned(),
+            filename: "f.jpg".to_owned(),
+            file_size_bytes: 42,
+            tags: vec![],
+        }
+    }
+
+    /// Verifies that both types lend the same `MediaFile` through `AsRef`.
+    #[test]
+    fn as_ref_lends_the_embedded_media_file() {
+        let image = ImageFile {
+            media: media(),
+            width: 1,
+            height: 2,
+            camera_model: None,
+        };
+        let lent: &MediaFile = image.as_ref();
+        assert_eq!(lent.id, "ID");
+        assert_eq!(image.get_file_size_bytes(), 42);
+        let bare = media();
+        let lent: &MediaFile = bare.as_ref();
+        assert_eq!(lent.filename, "f.jpg");
     }
 }
