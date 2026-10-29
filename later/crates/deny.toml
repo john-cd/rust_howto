@@ -1,0 +1,34 @@
+# TODO Reviewed ??-??-2026.
+
+# Advisory policy for the staging workspace `later/crates`. It is not built or
+# published by the book, so these entries document triage instead of blocking CI.
+# Run: `cargo deny --manifest-path Cargo.toml check advisories` from this folder.
+#
+# `cargo update` finds no compatible fix (2026-10-28): each vulnerable crate is
+# pinned by a third-party dependency. Revisit when promoting a crate to `bk/crates`.
+#
+# Unmaintained and unsound warnings (anymap2, bincode, im, paste, rustybuzz,
+# ttf-parser, zvariant, zstd-safe, ...) all come from transitive dependencies of
+# the GUI, graphics, data-frame and ML stacks; they are accepted as teaching
+# exceptions while the chapters stay in staging. `unmaintained`/`unsound` below
+# only consider direct workspace dependencies, which are listed individually.
+
+[graph]
+all-features = false
+
+[advisories]
+ignore = [
+  { id = "RUSTSEC-2026-0258", reason = "h2 0.3.27 is pinned by hyper 0.14 through geocoding 0.4 (science_geo); no newer geocoding exists. Example exposure not audited; staging only." },
+  { id = "RUSTSEC-2026-0300", reason = "skiplist 0.6.0 is pinned by polars-compute 0.51 (other); fixed only in skiplist 1.x." },
+  { id = "RUSTSEC-2026-0409", reason = "skiplist 0.6.0 is pinned by polars-compute 0.51 (other); fixed only in skiplist 1.x." },
+  { id = "RUSTSEC-2026-0367", reason = "zip 8.6.0 is pinned by candle-core and ggez; example exposure not audited; staging only." },
+  { id = "RUSTSEC-2026-0368", reason = "zip 8.6.0 is pinned by candle-core and ggez; example exposure not audited; staging only." },
+  { id = "RUSTSEC-2026-0369", reason = "zip 8.6.0 is pinned by candle-core and ggez; example exposure not audited; staging only." },
+  { id = "RUSTSEC-2026-0391", reason = "zstd 0.13.3 is pinned by arrow-ipc and datafusion; fixed only in zstd 0.14." },
+  { id = "RUSTSEC-2026-0398", reason = "zstd-safe 7.3.0 is pinned through zstd 0.13.3 by arrow and datafusion; exposure not audited; staging only." },
+  { id = "RUSTSEC-2026-0403", reason = "zstd-safe 7.3.0 is pinned through zstd 0.13.3 by arrow and datafusion; exposure not audited; staging only." },
+  { id = "RUSTSEC-2025-0035", reason = "macroquad is a direct dependency of a staging crate; no fixed release exists. Replace or isolate it before the chapter leaves staging." },
+  { id = "RUSTSEC-2024-0436", reason = "paste is a direct dependency of a staging crate. Replace it (for example with pastey) before promotion." },
+]
+unmaintained = "workspace"
+unsound = "workspace"
