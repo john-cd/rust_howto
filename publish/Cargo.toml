@@ -15,9 +15,9 @@ documentation = "https://docs.rs/rust_howto/"
 homepage = "https://john-cd.com/rust_howto/"
 repository = "https://github.com/john-cd/rust_howto/"
 publish = true
-exclude = [".cargo/", "justfile", "clippy.toml"]
 keywords = ["rust", "cookbook", "howto", "recipes", "examples"]
 categories = ["development-tools"]
+exclude = [".cargo/", "justfile", "clippy.toml"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
