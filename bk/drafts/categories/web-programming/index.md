@@ -8,15 +8,15 @@ Web applications combine HTTP, asynchronous I/O, serialization, and user-interfa
 
 ## Services, APIs, and Network I/O
 
-| Goal                                | Start here                    |
-| ----------------------------------- | ----------------------------- |
-| Build an HTTP server or REST API    | [[web-programming_http-server | HTTP Servers]]. The guide covers Axum, Actix Web, Hyper, middleware, GraphQL, and gRPC. |
-| Send requests to an HTTP service    | [[web-programming_http-client | HTTP Clients]]. The guide compares `reqwest`, `ureq`, and Hyper, and includes request and download examples. |
-| Implement a GraphQL endpoint        | [[_graphql                    | GraphQL]]. |
-| Implement a gRPC service            | [[_grpc                       | gRPC]]. |
-| Use TCP or UDP without HTTP         | [[network-programming         | Network Programming]]. |
-| Add WebSocket communication         | [[web-programming_websocket   | Web Programming: WebSocket]], [[asynchronous | Asynchronous Programming]] and [[network-programming | Network Programming]]; see [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} and [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}}. |
-| Add authentication or authorization | [[authentication              | Authentication]]. |
+| Goal                                | Start here                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Build an HTTP server or REST API    | [HTTP Servers](../web-programming_http-server/index.md). The guide covers Axum, Actix Web, Hyper, middleware, GraphQL, and gRPC.                                                                                                                                                                                                                                                                                      |
+| Send requests to an HTTP service    | [HTTP Clients](../web-programming_http-client/index.md). The guide compares `reqwest`, `ureq`, and Hyper, and includes request and download examples.                                                                                                                                                                                                                                                                 |
+| Implement a GraphQL endpoint        | [GraphQL](../web-programming_http-server/_graphql.md).                                                                                                                                                                                                                                                                                                                                                                |
+| Implement a gRPC service            | [gRPC](../web-programming_http-server/_grpc.md).                                                                                                                                                                                                                                                                                                                                                                      |
+| Use TCP or UDP without HTTP         | [Network Programming](../network-programming/index.md).                                                                                                                                                                                                                                                                                                                                                               |
+| Add WebSocket communication         | [Web Programming: WebSocket](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/web-programming_websocket/index.md), [Asynchronous Programming](../asynchronous/index.md) and [Network Programming](../network-programming/index.md); see [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} and [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}}. |
+| Add authentication or authorization | [Authentication](../authentication/index.md).                                                                                                                                                                                                                                                                                                                                                                         |
 
 ## Crates by Task
 
@@ -32,7 +32,7 @@ Web applications combine HTTP, asynchronous I/O, serialization, and user-interfa
 
 ## Browser Interfaces and Generated Pages
 
-For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{hi:yew}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}, [`seed`][c~seed~docs]↗{{hi:seed}}, and [`dominator`][c~dominator~docs]↗{{hi:dominator}}. For HTML templates, see [[template-engine | Template Engines]]. The HTTP server guide also covers [[web-programming_http-server/static_website_generators | Static Site Generators]], including Zola.
+For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{hi:yew}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}, [`seed`][c~seed~docs]↗{{hi:seed}}, and [`dominator`][c~dominator~docs]↗{{hi:dominator}}. For HTML templates, see [Template Engines](../template-engine/index.md). The HTTP server guide also covers [Static Site Generators](../web-programming_http-server/static_website_generators.md), including Zola.
 
 ## Code Examples
 
@@ -54,10 +54,10 @@ For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{
 
 ## Related Topics
 
-- [[asynchronous | Asynchronous Programming]] for async runtimes and task coordination.
-- [[database | Databases]] for database drivers, connection pools, and query tools.
-- [[serde | Serialization and Deserialization]] for JSON and other data formats.
-- [[development-tools_testing | Testing]] for unit, integration, and end-to-end checks.
+- [Asynchronous Programming](../asynchronous/index.md) for async runtimes and task coordination.
+- [Databases](../database/index.md) for database drivers, connection pools, and query tools.
+- [Serialization and Deserialization](../encoding/serde.md) for JSON and other data formats.
+- [Testing](../development-tools_testing/index.md) for unit, integration, and end-to-end checks.
 
 ## References
 

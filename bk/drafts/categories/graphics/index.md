@@ -32,30 +32,30 @@ Image processing, computer vision, simulation, and physics use some of the same 
 
 ## Subtopics
 
-- [[rendering | Rendering]].
-  - [[2d_renderers | 2D Renderers]]: [[2d_raster_graphics | 2D Raster Graphics]] and [[2d_vector_graphics | 2D Vector Graphics]].
-  - [[3d_renderers | 3D Renderers]].
-  - [[rendering_engine | Rendering Engine]].
-  - [[rendering_data-formats | Rendering Data Formats]].
-  - [[svg_rendering | SVG Rendering]].
-  - [[text_rendering | Text Rendering]] and [[text_layout | Text Layout]].
-- Low-level graphics APIs: [[rendering_graphics-api | Rendering: Graphics API]].
-  - [[gpu_abstraction_layers | GPU Abstraction Layers]].
-  - [[opengl | OpenGL]].
-  - [[vulkan | Vulkan]].
-  - [[native_graphics_apis | Native Graphics APIs]].
-  - [[shaders | Shaders]].
-- [[gpu | GPU]].
-- [[multimedia | Multimedia]]: [[multimedia_encoding | Encoding]], [[multimedia_images | Images]] and [[multimedia_video | Video]].
-- [[visualization | Visualization]]: data visualization, plotting and charting.
-- [[games | Games]], [[game-development | Game Development]] and [[game-engines | Game Engines]].
-- [[simulation | Simulation]] and [[physics_engines | Physics Engines]].
-- [[computer-vision | Computer Vision]].
-- [[gui | GUI]].
+- [Rendering](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/index.md).
+  - [2D Renderers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/2d_renderers.md): [2D Raster Graphics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/2d_raster_graphics.md) and [2D Vector Graphics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/2d_vector_graphics.md).
+  - [3D Renderers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/3d_renderers.md).
+  - [Rendering Engine](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_engine/index.md).
+  - [Rendering Data Formats](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_data-formats/index.md).
+  - [SVG Rendering](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/svg_rendering.md).
+  - [Text Rendering](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/text_rendering.md) and [Text Layout](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/text_layout.md).
+- Low-level graphics APIs: [Rendering: Graphics API](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_graphics-api/index.md).
+  - [GPU Abstraction Layers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_graphics-api/gpu_abstraction_layers.md).
+  - [OpenGL](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_graphics-api/opengl.md).
+  - [Vulkan](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_graphics-api/vulkan.md).
+  - [Native Graphics APIs](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_graphics-api/native_graphics_apis.md).
+  - [Shaders](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_graphics-api/shaders.md).
+- [GPU](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/gpu/index.md).
+- [Multimedia](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/multimedia/index.md): [Encoding](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/multimedia_encoding/index.md), [Images](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/multimedia_images/index.md) and [Video](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/multimedia_video/index.md).
+- [Visualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/visualization/index.md): data visualization, plotting and charting.
+- [Games](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/games/index.md), [Game Development](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/game-development/index.md) and [Game Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/game-engines/index.md).
+- [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md) and [Physics Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/physics_engines.md).
+- [Computer Vision](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/computer-vision/index.md).
+- [GUI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/index.md).
 
 ## Application Areas
 
-- Ray tracing, often with specialized libraries or custom code using compute [[shaders | shaders]].
+- Ray tracing, often with specialized libraries or custom code using compute [shaders](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_graphics-api/shaders.md).
 - Real-time rendering and character animation (games).
 - Computer-aided design (CAD), 3D modeling, visualization and simulation.
 - Visual effects: compositing, particle systems, film and television rendering.
@@ -65,7 +65,7 @@ Image processing, computer vision, simulation, and physics use some of the same 
 
 ## Related Topics
 
-Graphics code relies on [linear algebra][p~linear-algebra] for vectors, matrices, and transforms. [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} and [`glam`][c~glam~docs]↗{{hi:glam}} are widely used for vector and matrix math; also consider [`cgmath`][c~cgmath~docs]↗{{hi:cgmath}} and [`euclid`][c~euclid~docs]↗{{hi:euclid}} for geometry. See also [[mathematics | Mathematics]] and [[linear_algebra | Linear Algebra]]. Higher-level GUI and game frameworks can provide the windowing and rendering layers for complete applications.
+Graphics code relies on [linear algebra][p~linear-algebra] for vectors, matrices, and transforms. [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} and [`glam`][c~glam~docs]↗{{hi:glam}} are widely used for vector and matrix math; also consider [`cgmath`][c~cgmath~docs]↗{{hi:cgmath}} and [`euclid`][c~euclid~docs]↗{{hi:euclid}} for geometry. See also [Mathematics](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/mathematics/index.md) and [Linear Algebra](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/mathematics/linear_algebra.md). Higher-level GUI and game frameworks can provide the windowing and rendering layers for complete applications.
 
 Further reading: [gfx-rs.github.io][blog~gfx-rs]↗.
 
