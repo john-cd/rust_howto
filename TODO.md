@@ -102,7 +102,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#772](https://github.com/john-cd/rust_howto/issues/772) — **P4** — Finish the wgpu compute example G — **BLOCKED — GPU adapter or configured software adapter and Naga validation dependency needed**
 - [#775](https://github.com/john-cd/rust_howto/issues/775) — **P4** — Finish the Dioxus example G — **BLOCKED — SSR test requires the undeclared `dioxus-ssr` crate and feature validation**
 - [#777](https://github.com/john-cd/rust_howto/issues/777) — **P4** — Finish the femtovg example G — **BLOCKED — OpenGL context and GPU/window validation needed**
-- [#780](https://github.com/john-cd/rust_howto/issues/780) — **P4** — Finish the GTK4 example G — **BLOCKED — GTK4 development SDK is unavailable on the current Windows host**
 - [#786](https://github.com/john-cd/rust_howto/issues/786) — **P4** — 2d_renderers/skia_safe.rs: finish — **BLOCKED — Skia requires external binary downloads or a C++ source build**
 - [#792](https://github.com/john-cd/rust_howto/issues/792) — **P4** — 2d_renderers/vger.rs: finish — **BLOCKED — upstream maintenance and WGPU API compatibility review needed**
 - [#1048](https://github.com/john-cd/rust_howto/issues/1048) — **P4** — clipboard/main.rs: review — **CLIPPY CLEAN; OPEN — entry-point test ignored without a desktop clipboard; run it in a desktop session**
@@ -148,10 +147,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-PROSE-01 — Systems, embedded, WebAssembly and virtualization
 
-- [#348](https://github.com/john-cd/rust_howto/issues/348) — **P4** — emulators/emulators.md: write — **IMPLEMENTED ON DEVELOP; OPEN — bounded register VM, Intel HEX Reader example, PolkaVM guidance, and references present; final Cargo/book/reference/spelling checks and PR link pending**
-- [#349](https://github.com/john-cd/rust_howto/issues/349) — **P4** — emulators/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — short landing page and recipe table integrated; reference, book, spelling checks and PR link pending**
-- [#426](https://github.com/john-cd/rust_howto/issues/426) — **P4** — no-std/no_std.md: no_std: write — **IMPLEMENTED ON DEVELOP; OPEN — allocator, panic-handler, target-build, and checksum guidance present; final reference/book/spelling checks and issue-link removal pending**
-- [#428](https://github.com/john-cd/rust_howto/issues/428) — **P4** — no-std_no-alloc/no_alloc.md: no_alloc: write — **IMPLEMENTED ON DEVELOP; OPEN — fixed-capacity collections, formatting, SPSC queues, static pools, and slice serialization documented; final reference/book/spelling checks and issue-link removal pending**
 - [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **PARTIAL ON DEVELOP; OPEN — chapter and #817 sysctl example present; FreeBSD CI, final target/book/reference/spelling validation, and PR link remain**
 - [#434](https://github.com/john-cd/rust_howto/issues/434) — **P4** — os_linux-apis/linux.md: linux: write — **IMPLEMENTED ON DEVELOP; OPEN — chapter and #818 statx example present; Linux test, final book/reference/spelling checks, and PR link pending**
 - [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **PARTIAL ON DEVELOP; OPEN — chapter and safe #819 objc2 example present; later/crates macOS CI inclusion, final native/book/reference/spelling validation, and PR link remain**
@@ -159,14 +154,9 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-PROSE-02 — UI, accessibility, media and rendering
 
-- [#369](https://github.com/john-cd/rust_howto/issues/369) — **P4** — game-engines/game_engines.md: game_engines: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#375](https://github.com/john-cd/rust_howto/issues/375) — **P4** — rendering_graphics-api/gpu_abstraction_layers.md: webgpu: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#377](https://github.com/john-cd/rust_howto/issues/377) — **P4** — rendering/2d_renderers.md: 2d_renderers: write; titles — **BLOCKED — #792 Vger status/compatibility and #793 WebRender disposition unresolved**
-- [#381](https://github.com/john-cd/rust_howto/issues/381) — **P4** — gui/file_dialogs.md: file_dialogs: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#383](https://github.com/john-cd/rust_howto/issues/383) — **P4** — gui/gtk.md: gtk: write — **BLOCKED — GTK 4 development SDK and pkg-config metadata unavailable**
-- [#385](https://github.com/john-cd/rust_howto/issues/385) — **P4** — gui/immediate_mode_gui.md: immediate_mode_gui: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
-- [#389](https://github.com/john-cd/rust_howto/issues/389) — **P4** — gui/retained_mode_gui.md: retained_mode_gui: organize/write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — book and reference checks and the Slint-feature check remain; stale undeclared Tauri build-hook reference removed**
-- [#394](https://github.com/john-cd/rust_howto/issues/394) — **P4** — gui/web_based_gui.md: web_based_gui: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#396](https://github.com/john-cd/rust_howto/issues/396) — **P4** — Write the window creation chapter G — **BLOCKED — #1056 baseview disposition and new softbuffer dependency review pending**
 - [#413](https://github.com/john-cd/rust_howto/issues/413) — **P4** — multimedia/multimedia.md: multimedia: write — **BLOCKED — #805 playback example is unfinished; a distinct cross-media scope remains**
 - [#417](https://github.com/john-cd/rust_howto/issues/417) — **P4** — multimedia_encoding/encoding.md: encoding: write — **BLOCKED — symphonia, hound, and mp4 dependencies are not in the workspace**
@@ -174,7 +164,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#455](https://github.com/john-cd/rust_howto/issues/455) — **P4** — rendering_engine/rendering_engines.md: rendering_engines: write — **BLOCKED — #955 category pointer decision and #830 example disposition remain unresolved**
 - [#457](https://github.com/john-cd/rust_howto/issues/457) — **P4** — rendering_graphics-api/native_graphics_apis.md: graphics_apis: write — **BLOCKED — required wgpu adapter-info example in #831 remains a stub**
 - [#608](https://github.com/john-cd/rust_howto/issues/608) — **P4** — gpu/index.md: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
-- [#934](https://github.com/john-cd/rust_howto/issues/934) — **P4** — gui/ui_layout.md: review — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — focused GUI all-target Clippy passes; book and reference checks remain**
 
 #### NOW-PROSE-03 — Science, finance, data processing and visualization
 
@@ -219,7 +208,6 @@ Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references an
 
 #### NOW-PROSE-10 — Localization and internationalization - IN PROGRESS
 
-- [#404](https://github.com/john-cd/rust_howto/issues/404) — **P4** — localization/localization.md: localization: write — **IMPLEMENTED ON DEVELOP; OPEN — PR link pending**
 
 #### NOW-PROSE-11 — Asynchronous programming and caching - IN PROGRESS
 
@@ -286,7 +274,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-01 — Networking, authentication and email
 
-- [#810](https://github.com/john-cd/rust_howto/issues/810) — **P3** — Run native Linux tests and strict Clippy for the Glommio example — **IMPLEMENTED ON DEVELOP; BLOCKED — Linux-only tests/Clippy cannot run here; WSL startup returns `Wsl/E_ACCESSDENIED`; the issue comment records the native Linux follow-up**
 - [#1946](https://github.com/john-cd/rust_howto/issues/1946) — **P3** — Add examples: read mail over IMAP and filter disposable addresses before sending (imap, mailchecker) — **IMPLEMENTED ON DEVELOP; OPEN — IMAP/parser and mailchecker examples, pages, tables, and refdefs are present; live IMAP requires a server and credentials; offline tests, Clippy, refdefs, and book build deferred to final validation; details are on the issue**
 
 #### VALIDATE-CODE-02 — Databases and service clients
@@ -308,7 +295,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-07 — Machine learning, data and robotics
 
-- [#1079](https://github.com/john-cd/rust_howto/issues/1079) — **P4** — Review and expand the OpenCV example — **IMPLEMENTED ON DEVELOP; BLOCKED — Linux/OpenCV/libclang tests and Clippy require a Linux host; WSL access and Docker Linux engine are unavailable; details are on the issue**
 - [#1942](https://github.com/john-cd/rust_howto/issues/1942) — **P4** — Add examples: geocode addresses and compute distances (geocoding, haversine, us-state-info) — **IMPLEMENTED ON DEVELOP; OPEN — distance/state/cache examples and fake-geocoder coverage are present; live provider access is deliberately excluded; required refdefs/book checks deferred to final validation**
 
 #### VALIDATE-CODE-08 — Concurrency
@@ -341,7 +327,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 #### VALIDATE-PROSE-01 — Language, mathematics, date and time
 
 - [#1188](https://github.com/john-cd/rust_howto/issues/1188) — **P2** — `date-and-time/index.md`: review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — humantime and guidance are present; book validation and human review/promotion remain; details are on the issue**
-- [#490](https://github.com/john-cd/rust_howto/issues/490) — **P4** — Write the number-formatting chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and documentation checks passed; full book build remains; details are on the issue**
 
 #### VALIDATE-PROSE-02 — Asynchronous programming and caching
 
@@ -355,7 +340,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-04 — Encoding, parsing and text processing
 
-- [#930](https://github.com/john-cd/rust_howto/issues/930) — **P2** — `encoding/string_encoding.md`: review — **IMPLEMENTED ON DEVELOP; OPEN — chapter guidance and related links are present; reference includes are outside the topic list; formatted; example checks, spelling, and required final gates remain**
 - [#1078](https://github.com/john-cd/rust_howto/issues/1078) — **P3** — `encoding/no_external_schema.md`: write — **PARTIAL ON DEVELOP; BLOCKED — guide is present; stale issue self-reference, full checks, Unix spelling, and linked PR remain; details are on the issue**
 
 #### VALIDATE-PROSE-05 — Web, networking and databases
@@ -370,8 +354,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-06 — Filesystem utilities, shells and compression
 
-- [#239](https://github.com/john-cd/rust_howto/issues/239) — **P3** — `command-line-utilities/shells.md`: shells: expand — **IMPLEMENTED; OPEN — shell and completion guidance, with repository activity reviewed; refdefs, book, spelling, and linked PR remain**
-- [#253](https://github.com/john-cd/rust_howto/issues/253) — **P3** — `compression/tar.md`: tar: review — **IMPLEMENTED; OPEN — archive and compression guidance reviewed; #254/#255 acceptance, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-07 — Security and cryptocurrencies
 
@@ -461,8 +443,6 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 
 #### DEFERRED-CODE-05 — Localization and internationalization
 
-- [#796](https://github.com/john-cd/rust_howto/issues/796) — **P4** — internationalization/internationalization1.rs: write — **IMPLEMENTED; OPEN — ICU number and date formatting in two locales; tests, lints, book validation, and linked PR remain**
-- [#797](https://github.com/john-cd/rust_howto/issues/797) — **P4** — localization/fluent.rs: write — **IMPLEMENTED; BLOCKED — English/French Fluent example, tests, and chapter updates are drafted; later workspace lock resolution is blocked by #1998's `smallvec` conflict; tests, Clippy, book build, and PR link remain**
 
 #### DEFERRED-CODE-06 — Aerospace and device protocols
 
