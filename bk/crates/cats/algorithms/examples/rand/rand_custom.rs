@@ -10,7 +10,10 @@ use rand::distr::StandardUniform;
 
 /// A simple struct representing a point in 2D space.
 #[derive(Debug)]
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
+#[cfg_attr(
+    not(test),
+    expect(dead_code, reason = "declared to illustrate it; never used")
+)]
 struct Point {
     /// The horizontal coordinate.
     x: i32,
@@ -48,11 +51,34 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use rand::SeedableRng as _;
+    use rand::rngs::StdRng;
+
     use super::*;
 
-    /// Runs the rand custom example through its entry point.
     #[test]
     fn test_rand_custom_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn custom_distribution_is_reproducible_with_a_seeded_rng() {
+        let mut a = StdRng::seed_from_u64(1);
+        let mut b = StdRng::seed_from_u64(1);
+        let p: Point = a.random();
+        let q: Point = b.random();
+        assert_eq!((p.x, p.y), (q.x, q.y));
+    }
+
+    #[test]
+    fn custom_distribution_samples_vary() {
+        let mut rng = StdRng::seed_from_u64(2);
+        let points: Vec<(i32, i32)> = (0..10)
+            .map(|_| {
+                let p: Point = rng.random();
+                (p.x, p.y)
+            })
+            .collect();
+        assert!(points.iter().any(|p| *p != points[0]));
     }
 }

@@ -105,8 +105,34 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_sha2_example_entry_point() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
+    fn test_sha2_example_entry_point() {
+        main().expect("the example should succeed");
+    }
+
+    #[test]
+    fn sha256_of_abc_is_the_known_digest() {
+        assert_eq!(
+            base16ct::lower::encode_string(&Sha256::digest(b"abc")),
+            "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
+        );
+    }
+
+    #[test]
+    fn incremental_updates_match_one_shot_digest() {
+        let mut hasher = Sha256::new();
+        hasher.update(b"hello ");
+        hasher.update(b"world");
+        assert_eq!(hasher.finalize(), Sha256::digest(b"hello world"));
+    }
+
+    #[test]
+    fn sha512_digest_is_64_bytes_and_base64_roundtrips() {
+        let digest = Sha512::new().chain_update(b"abc").finalize();
+        assert_eq!(digest.len(), 64);
+        let encoded = Base64::encode_string(&digest);
+        assert_eq!(
+            Base64::decode_vec(&encoded).expect("valid base64"),
+            digest.to_vec()
+        );
     }
 }

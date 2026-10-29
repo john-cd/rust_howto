@@ -64,4 +64,43 @@ mod tests {
     fn test_fastrand_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn same_seed_gives_the_same_sequence() {
+        let mut a = Rng::with_seed(42);
+        let mut b = Rng::with_seed(42);
+        let xs: Vec<i32> = repeat_with(|| a.i32(..)).take(5).collect();
+        let ys: Vec<i32> = repeat_with(|| b.i32(..)).take(5).collect();
+        assert_eq!(xs, ys);
+    }
+
+    #[test]
+    fn values_stay_in_the_requested_range() {
+        let mut rng = Rng::with_seed(42);
+        for _ in 0..1000 {
+            assert!(rng.u32(..100) < 100);
+        }
+    }
+
+    #[test]
+    fn alphanumeric_yields_only_ascii_alphanumerics() {
+        let mut rng = Rng::with_seed(1);
+        let s: String = repeat_with(|| rng.alphanumeric()).take(100).collect();
+        assert_eq!(s.len(), 100);
+        assert!(s.chars().all(|c| c.is_ascii_alphanumeric()));
+    }
+
+    #[test]
+    fn shuffle_is_a_permutation_and_choose_multiple_is_distinct() {
+        let mut rng = Rng::with_seed(7);
+        let mut v: Vec<i32> = (0..20).collect();
+        rng.shuffle(&mut v);
+        let mut sorted = v.clone();
+        sorted.sort_unstable();
+        assert_eq!(sorted, (0..20).collect::<Vec<_>>());
+
+        let picked = rng.choose_multiple(0..20, 2);
+        assert_eq!(picked.len(), 2);
+        assert_ne!(picked[0], picked[1]);
+    }
 }

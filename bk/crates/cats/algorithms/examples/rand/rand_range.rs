@@ -37,4 +37,14 @@ mod tests {
     fn test_rand_range_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn samples_stay_within_the_requested_ranges() {
+        let mut rng = rand::rng();
+        for _ in 0..1000 {
+            assert!((0..10).contains(&rng.random_range(0..10)));
+            assert!((0.0..10.0).contains(&rng.random_range(0.0..10.0)));
+            assert!((1..=3).contains(&rng.random_range(1..=3)));
+        }
+    }
 }

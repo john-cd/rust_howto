@@ -30,10 +30,23 @@ pub fn run() -> Result<(), NormalError> {
 mod tests {
     use super::*;
 
-    /// Runs the rand distr example through its entry point.
     #[test]
-    fn test_rand_distr_example_entry_point() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
+    fn test_rand_distr_example_entry_point() {
+        main().expect("the example should succeed");
+    }
+
+    #[test]
+    fn infinite_standard_deviation_is_rejected() {
+        assert!(Normal::new(2.0, f64::INFINITY).is_err());
+    }
+
+    #[test]
+    fn sample_mean_is_close_to_the_distribution_mean() {
+        let mut rng = rand::rng();
+        let normal = Normal::new(2.0, 3.0).expect("valid parameters");
+        let n = 20_000;
+        let mean = (0..n).map(|_| normal.sample(&mut rng)).sum::<f64>()
+            / f64::from(n);
+        assert!((mean - 2.0).abs() < 0.5, "mean was {mean}");
     }
 }

@@ -44,4 +44,20 @@ mod tests {
     fn test_rand_range_uniform_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn uniform_die_rolls_stay_in_range_and_cover_all_faces() {
+        let mut rng = rand::rng();
+        let die = Uniform::try_from(1..7).expect("valid range");
+        let rolls: Vec<i32> = (0..2000).map(|_| die.sample(&mut rng)).collect();
+        assert!(rolls.iter().all(|r| (1..=6).contains(r)));
+        for face in 1..=6 {
+            assert!(rolls.contains(&face), "face {face} never rolled");
+        }
+    }
+
+    #[test]
+    fn empty_range_is_rejected() {
+        assert!(Uniform::try_from(5..5).is_err());
+    }
 }

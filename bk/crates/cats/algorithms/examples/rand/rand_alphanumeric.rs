@@ -34,9 +34,27 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the rand alphanumeric example through its entry point.
     #[test]
     fn test_rand_alphanumeric_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn sample_iter_yields_alphanumeric_strings_of_the_requested_length() {
+        let s: String = rand::rng()
+            .sample_iter(&Alphanumeric)
+            .take(20)
+            .map(char::from)
+            .collect();
+        assert_eq!(s.len(), 20);
+        assert!(s.chars().all(|c| c.is_ascii_alphanumeric()));
+    }
+
+    #[test]
+    fn sample_string_yields_alphanumeric_strings_of_the_requested_length() {
+        let s = Alphanumeric.sample_string(&mut rand::rng(), 20);
+        assert_eq!(s.len(), 20);
+        assert!(s.chars().all(|c| c.is_ascii_alphanumeric()));
+        assert!(Alphanumeric.sample_string(&mut rand::rng(), 0).is_empty());
     }
 }

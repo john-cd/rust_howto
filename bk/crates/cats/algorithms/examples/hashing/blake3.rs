@@ -106,4 +106,47 @@ mod tests {
     fn test_blake3_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn incremental_hash_matches_one_shot_hash() {
+        let mut hasher = Hasher::new();
+        hasher.update(b"The quick brown ");
+        hasher.update(b"fox jumps over ");
+        hasher.update(b"the lazy dog.");
+        assert_eq!(
+            hasher.finalize(),
+            blake3::hash(b"The quick brown fox jumps over the lazy dog.")
+        );
+    }
+
+    #[test]
+    fn keyed_hash_differs_from_unkeyed_hash() {
+        let key = [7u8; 32];
+        let keyed = blake3::keyed_hash(&key, b"message");
+        assert_ne!(keyed, blake3::hash(b"message"));
+        assert_eq!(keyed, blake3::keyed_hash(&key, b"message"));
+        assert_ne!(keyed, blake3::keyed_hash(&[8u8; 32], b"message"));
+    }
+
+    #[test]
+    fn hash_of_empty_input_is_the_known_value() {
+        assert_eq!(
+            blake3::hash(b"").to_hex().as_str(),
+            "af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262"
+        );
+    }
+
+    #[test]
+    fn extendable_output_starts_with_the_regular_hash() {
+        let mut output = [0u8; 64];
+        Hasher::new().finalize_xof().fill(&mut output);
+        assert_eq!(&output[..32], blake3::hash(b"").as_bytes());
+    }
+
+    #[test]
+    fn derived_key_depends_on_the_context() {
+        let a = blake3::derive_key("context a", b"material");
+        assert_eq!(a, blake3::derive_key("context a", b"material"));
+        assert_ne!(a, blake3::derive_key("context b", b"material"));
+    }
 }

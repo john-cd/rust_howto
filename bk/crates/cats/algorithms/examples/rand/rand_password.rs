@@ -42,9 +42,16 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the rand password example through its entry point.
     #[test]
     fn test_rand_password_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn random_range_indexes_stay_inside_the_charset() {
+        let mut rng = rand::rng();
+        for _ in 0..1000 {
+            assert!(rng.random_range(0..21usize) < 21);
+        }
     }
 }

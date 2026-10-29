@@ -42,9 +42,23 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the rand1 example through its entry point.
     #[test]
     fn test_rand1_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn random_floats_are_in_the_unit_interval() {
+        for _ in 0..1000 {
+            let x = rand::random::<f64>();
+            assert!((0.0..1.0).contains(&x));
+        }
+    }
+
+    #[test]
+    fn random_bools_take_both_values() {
+        let samples: Vec<bool> = (0..1000).map(|_| rand::random()).collect();
+        assert!(samples.contains(&true));
+        assert!(samples.contains(&false));
     }
 }
