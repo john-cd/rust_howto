@@ -18,14 +18,26 @@ struct Counter {
     num: i32,
 }
 
+impl Counter {
+    /// Adds one to the count.
+    fn increment(&mut self) {
+        self.num += 1;
+    }
+
+    /// Subtracts one from the count.
+    fn decrement(&mut self) {
+        self.num -= 1;
+    }
+}
+
 /// Returns the view of the application for the current state.
 fn app_logic(data: &mut Counter) -> impl xilem::WidgetView<Counter> + use<> {
     flex(
         Axis::Vertical,
         (
             label(format!("Count: {}", data.num)),
-            text_button("Increment", |data: &mut Counter| data.num += 1),
-            text_button("Decrement", |data: &mut Counter| data.num -= 1),
+            text_button("Increment", Counter::increment),
+            text_button("Decrement", Counter::decrement),
         ),
     )
 }
@@ -64,9 +76,21 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "opens a native window; close it to finish"]
     fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        main().expect("the event loop should run");
+    }
+
+    /// Checks the counter logic behind the buttons.
+    #[test]
+    fn counter_increments_and_decrements() {
+        let mut counter = Counter::default();
+        counter.increment();
+        counter.increment();
+        assert_eq!(counter.num, 2);
+        counter.decrement();
+        counter.decrement();
+        counter.decrement();
+        assert_eq!(counter.num, -1);
     }
 }

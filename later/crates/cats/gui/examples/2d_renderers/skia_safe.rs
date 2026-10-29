@@ -14,18 +14,31 @@
 // }
 /// Prints a message: the example is skipped.
 fn main() {
-    println!(
-        "Skia-safe example updated but execution skipped in this environment."
-    );
+    println!("{MESSAGE}");
 }
+
+/// The message printed instead of rendering.
+const MESSAGE: &str =
+    "Skia-safe example updated but execution skipped in this environment.";
 // ANCHOR_END: example
 
 pub fn run() {
     main();
 }
 
-/// Runs the Skia Safe renderer example.
-#[test]
-fn test_skia_safe_renderer_example() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the Skia Safe renderer example.
+    #[test]
+    fn test_skia_safe_renderer_example() {
+        main();
+    }
+
+    /// The placeholder says that the rendering is skipped.
+    #[test]
+    fn message_says_execution_is_skipped() {
+        assert!(MESSAGE.contains("skipped"));
+    }
 }

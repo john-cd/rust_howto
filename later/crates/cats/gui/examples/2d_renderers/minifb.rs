@@ -21,6 +21,25 @@ const WIDTH: usize = 320;
 /// The height of the window in pixels.
 const HEIGHT: usize = 240;
 
+/// Returns the `0xAARRGGBB` color of the pixel at (`x`, `y`) for the
+/// animation `offset`: each channel is a position plus the offset, wrapped to
+/// one byte.
+fn pixel(x: usize, y: usize, offset: u32) -> u32 {
+    let r = (x as u32).wrapping_add(offset) & 0xFF;
+    let g = (y as u32).wrapping_add(offset) & 0xFF;
+    let b = ((x + y) as u32).wrapping_add(offset) & 0xFF;
+    (0xFF << 24) | (r << 16) | (g << 8) | b
+}
+
+/// Fills the buffer (`WIDTH` x `HEIGHT` pixels) with the gradient.
+fn fill_gradient(buffer: &mut [u32], offset: u32) {
+    for y in 0..HEIGHT {
+        for x in 0..WIDTH {
+            buffer[y * WIDTH + x] = pixel(x, y, offset);
+        }
+    }
+}
+
 /// Opens a window and draws into a pixel buffer until the window is closed.
 fn main() -> Result<()> {
     // TODO explain why/how we create the window and buffer here
@@ -37,16 +56,7 @@ fn main() -> Result<()> {
 
     // TODO explain the main rendering loop and its purpose
     while window.is_open() && !window.is_key_down(Key::Escape) {
-        for y in 0..HEIGHT {
-            for x in 0..WIDTH {
-                // TODO explain how the pixel color is calculated based on
-                // position and offset
-                let r = ((x as u32).wrapping_add(offset)) & 0xFF;
-                let g = ((y as u32).wrapping_add(offset)) & 0xFF;
-                let b = (((x + y) as u32).wrapping_add(offset)) & 0xFF;
-                buffer[y * WIDTH + x] = (0xFF << 24) | (r << 16) | (g << 8) | b;
-            }
-        }
+        fill_gradient(&mut buffer, offset);
 
         // TODO explain why we update the window with the buffer here
         window.update_with_buffer(&buffer, WIDTH, HEIGHT)?;
@@ -72,8 +82,27 @@ fn main() -> Result<()> {
 mod tests {
     use super::*;
 
-    // TODO split main() into smaller functions for easier testing and
-    // explanation Add tests for the smaller functions once main() is split.
+    /// Checks the color of a few pixels.
+    #[test]
+    fn pixel_colors() {
+        assert_eq!(pixel(0, 0, 0), 0xFF00_0000);
+        assert_eq!(pixel(1, 2, 0), 0xFF01_0203);
+        // Channels wrap around at 256.
+        assert_eq!(pixel(255, 0, 1), 0xFF00_0100);
+    }
+
+    /// Checks that the gradient fills the whole buffer and animates.
+    #[test]
+    fn gradient_fills_and_animates() {
+        let mut buffer = vec![0_u32; WIDTH * HEIGHT];
+        fill_gradient(&mut buffer, 0);
+        assert!(buffer.iter().all(|p| p >> 24 == 0xFF));
+        assert_eq!(buffer[WIDTH + 1], pixel(1, 1, 0));
+        let first = buffer.clone();
+        fill_gradient(&mut buffer, 1);
+        assert_ne!(first, buffer);
+    }
+
     /// Runs the minifb example through its entry point.
     #[test]
     #[ignore = "requires interactive example runtime"]

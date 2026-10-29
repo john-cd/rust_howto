@@ -33,13 +33,22 @@ pub fn run() {
 }
 // ANCHOR_END: example
 
-#[cfg(all(test, feature = "dioxus"))]
+#[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Launches the app: with the `dioxus` feature this opens a window, so it
+    /// is skipped; without it `main` does nothing.
+    #[test]
+    #[cfg_attr(feature = "dioxus", ignore = "launches the Dioxus renderer")]
+    fn test_main_entry_point() {
+        main();
+    }
 
     /// Verifies that the component renders the expected HTML via Server-Side
     /// Rendering.
     #[test]
+    #[cfg(feature = "dioxus")]
     fn test_dioxus_ssr_render() {
         let mut dom = VirtualDom::new(App);
         dom.rebuild_in_place();

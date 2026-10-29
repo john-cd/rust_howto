@@ -72,6 +72,13 @@ impl SimpleComponent for CounterModel {
     }
 
     fn update(&mut self, message: Self::Input, _sender: ComponentSender<Self>) {
+        self.apply(message);
+    }
+}
+
+impl CounterModel {
+    /// Updates the count for a message.
+    fn apply(&mut self, message: CounterInput) {
         match message {
             CounterInput::Increment => self.value += 1,
             CounterInput::Decrement => self.value -= 1,
@@ -100,5 +107,18 @@ mod tests {
     #[ignore = "requires an interactive GTK session"]
     fn test_relm4_example_entry_point() {
         main();
+    }
+
+    /// Checks that the messages change the count.
+    #[test]
+    fn messages_update_the_count() {
+        let mut model = CounterModel { value: 0 };
+        model.apply(CounterInput::Increment);
+        model.apply(CounterInput::Increment);
+        assert_eq!(model.value, 2);
+        model.apply(CounterInput::Decrement);
+        model.apply(CounterInput::Decrement);
+        model.apply(CounterInput::Decrement);
+        assert_eq!(model.value, -1);
     }
 }
