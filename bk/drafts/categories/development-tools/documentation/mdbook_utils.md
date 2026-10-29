@@ -25,6 +25,15 @@ reports to explicit files:
 `--link-format reference`, `inline`, or `autolink`; it does not change the
 source files. Link-like text in code is preserved.
 
+The same command can be driven from Rust, for example in a build or test
+helper. This example writes a one-page book to a temporary directory and
+reports its undefined reference; its test is ignored unless `mdbook-utils` is
+installed.
+
+```rust,editable
+{{#include ../../../../crates/cats/development_tools/examples/documentation/mdbook_utils_broken_links.rs:example}}
+```
+
 ## Keep Code Examples in Separate Files {#separate-code-examples}
 
 `markdown extract-code-examples` copies fenced Rust blocks to files under a
