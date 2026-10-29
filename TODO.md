@@ -79,7 +79,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### ACTIVE-PROSE-01 — Foreign function interfaces
 
-- [#1073](https://github.com/john-cd/rust_howto/issues/1073) — **P4** — Complete Lua integration recipes and tested includes — Text processing, automation, and local runtimes chat — **PARTIAL; OPEN — sandbox guidance is documented, but a hostile-script sandbox and external module runtime test remain**
 
 ### Tools and infrastructure
 
@@ -102,7 +101,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#1033](https://github.com/john-cd/rust_howto/issues/1033) — **P4** — node/neon.rs: finish how to test — **IN PROGRESS — host-independent Neon path now returns anyhow::Result and has non-ignored tests; chapter documents npm init neon and an npm test JavaScript addon check; book-gate pending**
 - [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix — **DEFERRED — macOS validation unavailable; blocker recorded on the issue**
 - [#1035](https://github.com/john-cd/rust_howto/issues/1035) — **P4** — ruby/magnus.rs: finish — **IN PROGRESS — Magnus embedding now registers a Rust function, calls it from Ruby, and checks the returned string; extension-mode guidance and ignore-test commands documented; final Ruby package/book-gate pending**
-- [#1036](https://github.com/john-cd/rust_howto/issues/1036) — **P4** — ruby/rutie.rs: finish — **DONE — Rutie class example, Ruby 4.0 installers and devcontainer wiring landed; Ruby-backed test, clippy -D warnings and fmt pass**
 - [#1037](https://github.com/john-cd/rust_howto/issues/1037) — **P4** — examples/uniffi.rs: finish — **DEFERRED — native compiler/linker unavailable; blocker recorded on the issue**
 
 #### NOW-CODE-03 — Desktop UI, accessibility, games and GPU
@@ -257,7 +255,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### NOW-INFRA-02 — Dependencies, CI and containers
 
-- [#1998](https://github.com/john-cd/rust_howto/issues/1998)
   — **P1** — Port remaining examples across major dependency upgrades — **PARTIAL**
   - Resolved the `libsqlite3-sys` links collision and `smallvec` 1.16/Kube
     resolver conflict; corrected Naga 26/27 aliases and aligned tested SeaORM,
@@ -370,7 +367,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 #### VALIDATE-PROSE-01 — Language, mathematics, date and time
 
 - [#1188](https://github.com/john-cd/rust_howto/issues/1188) — **P2** — `date-and-time/index.md`: review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — humantime and guidance are present; book validation and human review/promotion remain; details are on the issue**
-- [#1890](https://github.com/john-cd/rust_howto/issues/1890) — **P3** — Fix Code Organization chapters and visibility examples — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy, refdefs, and book build passed; full-workspace Clippy remains; details are on the issue**
 - [#490](https://github.com/john-cd/rust_howto/issues/490) — **P4** — Write the number-formatting chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and documentation checks passed; full book build remains; details are on the issue**
 
 #### VALIDATE-PROSE-02 — Asynchronous programming and caching
