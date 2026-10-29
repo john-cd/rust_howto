@@ -114,3 +114,52 @@ fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> ! {
     }
     process::exit(1);
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Checks that the clap definition is internally consistent.
+    #[test]
+    fn cli_is_valid() {
+        make_app().debug_assert();
+    }
+
+    /// Checks that `scrub` is the default stage.
+    #[test]
+    fn default_stage_is_scrub() {
+        let matches = make_app().get_matches_from(["mdbook-scrub"]);
+        assert_eq!(
+            matches.get_one::<String>("stage").map(String::as_str),
+            Some("scrub")
+        );
+    }
+
+    /// Checks the `directives` stage and the `supports` subcommand.
+    #[test]
+    fn parses_stage_and_supports() {
+        let matches = make_app().get_matches_from(["mdbook-scrub", "--stage", "directives"]);
+        assert_eq!(
+            matches.get_one::<String>("stage").map(String::as_str),
+            Some("directives")
+        );
+        let matches = make_app().get_matches_from(["mdbook-scrub", "supports", "html"]);
+        let sub = matches.subcommand_matches("supports")
+            .expect("supports subcommand");
+        assert_eq!(
+            sub.get_one::<String>("renderer").map(String::as_str),
+            Some("html")
+        );
+    }
+
+    /// Checks that an unknown stage and a missing renderer are rejected.
+    #[test]
+    fn rejects_bad_arguments() {
+        make_app()
+            .try_get_matches_from(["mdbook-scrub", "--stage", "bogus"])
+            .expect_err("unknown stage");
+        make_app()
+            .try_get_matches_from(["mdbook-scrub", "supports"])
+            .expect_err("missing renderer");
+    }
+}
