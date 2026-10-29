@@ -53,4 +53,9 @@ mod tests {
     fn run_succeeds() -> Result<(), Box<dyn std::error::Error>> {
         run()
     }
+
+    #[test]
+    fn test_main_entry_point() -> Result<(), Box<dyn std::error::Error>> {
+        main()
+    }
 }
