@@ -118,12 +118,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-05 — Recipe batches with accompanying prose
 
-- [#1970](https://github.com/john-cd/rust_howto/issues/1970) — **P4** — Follow up on the web examples and pages — **BLOCKED — dedicated localization crate, Leptos wasm32 dependency split, and full book/toolchain gates remain**
-- [#1972](https://github.com/john-cd/rust_howto/issues/1972) — **P4** — Validate the Arrow IPC, optimization, and AWS SDK examples — **BLOCKED — MinIO/LocalStack, Windows NASM, full validation, and human review remain**
-- [#1974](https://github.com/john-cd/rust_howto/issues/1974) — **P4** — Follow up on Excel, profiling, geo, audio, wry, and egui examples — **PARTIAL — egui_kittest example already exists; HRTF fixture, native audio alignment, Wry display validation, and full gates remain**
-- [#1977](https://github.com/john-cd/rust_howto/issues/1977) — **P4** — Finish the remaining dev-tools, parsing, text, and testing examples — **BLOCKED — external crate integrations, rust-analyzer, and full book/toolchain validation remain; unclaimed subtasks only**
-- [#1986](https://github.com/john-cd/rust_howto/issues/1986) — **P4** — Finish remaining cloud recipe batches — **BLOCKED — external services, native GUI validation, dependency work, and parent-issue coordination remain; unclaimed subtasks only**
-- [#1991](https://github.com/john-cd/rust_howto/issues/1991) — **Unprioritized** — Resolve local recipe-batch follow-ups — **BLOCKED — crypto dependency mismatch, external databases, Linux, Cap'n Proto tooling, and native compilers remain**
 
 #### NOW-CODE-06 — Examples derived from repository tools
 
@@ -270,11 +264,9 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-10 — Cloud services and SDKs
 
-- [#1938](https://github.com/john-cd/rust_howto/issues/1938) — **P4** — Add examples: AWS SDK for Rust basics (shared config, SES v2 email, CloudWatch metrics, invoke Lambda, S3-compatible endpoints) — **PARTIAL ON DEVELOP; BLOCKED — SDK examples/pages are present; noted CloudWatch/Prometheus comparison and custom TLS guidance remain; live AWS/S3-compatible checks need credentials/services; final checks deferred; remaining work is on the issue**
 
 #### VALIDATE-CODE-11 — Algorithms, data structures and memory
 
-- [#1925](https://github.com/john-cd/rust_howto/issues/1925) — **P4** — Add examples: memory techniques: arena allocation (bumpalo), string interning (ustr), feature-selected global allocator — **PARTIAL ON DEVELOP; BLOCKED — arena/interner/allocator examples and pages are present; allocation measurement and strict mutually exclusive feature selection remain; selection conflicts with the current all-features gate, and jemalloc needs a non-MSVC host; details are on the issue**
 
 #### VALIDATE-CODE-12 — Language and domain models
 
