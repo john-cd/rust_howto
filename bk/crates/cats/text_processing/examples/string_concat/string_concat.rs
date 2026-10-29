@@ -164,6 +164,8 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    // output-only: the example prints the result of each concatenation
+    // technique; see the other tests for its logic.
     use super::*;
 
     /// Runs the string concat example through its entry point.

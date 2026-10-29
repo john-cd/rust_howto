@@ -157,4 +157,56 @@ mod tests {
     fn test_regex_example_entry_point() {
         main();
     }
+
+    /// Inline links are captured with their text and target.
+    #[test]
+    fn captures_inline_links() {
+        let re = &GLOBAL_REGEX["[text](http...)"].0;
+        let caps: Vec<_> = re
+            .captures_iter("x [a](u1) and [b](u2)")
+            .map(|c| (c["text"].to_owned(), c["link"].to_owned()))
+            .collect();
+        assert_eq!(
+            caps,
+            [
+                ("a".to_owned(), "u1".to_owned()),
+                ("b".to_owned(), "u2".to_owned())
+            ]
+        );
+    }
+
+    /// Autolinks and reference definitions are captured.
+    #[test]
+    fn captures_autolinks_and_definitions() {
+        let autolink = &GLOBAL_REGEX["<http...>"].0;
+        assert_eq!(
+            &autolink.captures("<http://x/>").unwrap()["link"],
+            "http://x/"
+        );
+        let def = &GLOBAL_REGEX["[label]: url \"title\""].0;
+        let caps = def.captures("[lbl]: url2 \"t\"").unwrap();
+        assert_eq!(&caps["label"], "lbl");
+        assert_eq!(&caps["url"], "url2");
+        assert_eq!(&caps["title"], "t");
+    }
+
+    /// Images are not matched as links.
+    #[test]
+    fn images_are_not_inline_links() {
+        let re = &GLOBAL_REGEX["[text](http...)"].0;
+        assert!(!re.is_match("![alt](img)"));
+    }
+
+    /// Each registered regex lists the groups it defines.
+    #[test]
+    fn group_names_exist_in_each_regex() {
+        for (key, re) in GLOBAL_REGEX.iter() {
+            for group in &re.1 {
+                assert!(
+                    re.0.capture_names().flatten().any(|n| n == *group),
+                    "{key} lacks {group}"
+                );
+            }
+        }
+    }
 }

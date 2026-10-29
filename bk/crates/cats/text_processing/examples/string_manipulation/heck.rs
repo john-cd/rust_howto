@@ -46,4 +46,21 @@ mod tests {
     fn test_heck_example_entry_point() {
         main();
     }
+
+    /// Each case conversion produces the documented result.
+    #[test]
+    fn converts_cases() {
+        let input = "hello_world example-string";
+        assert_eq!(input.to_snake_case(), "hello_world_example_string");
+        assert_eq!(input.to_kebab_case(), "hello-world-example-string");
+        assert_eq!(input.to_pascal_case(), "HelloWorldExampleString");
+        assert_eq!(input.to_lower_camel_case(), "helloWorldExampleString");
+        assert_eq!(input.to_title_case(), "Hello World Example String");
+    }
+
+    /// Empty input stays empty.
+    #[test]
+    fn empty_input_stays_empty() {
+        assert_eq!("".to_snake_case(), "");
+    }
 }

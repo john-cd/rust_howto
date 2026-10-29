@@ -76,4 +76,48 @@ mod tests {
     fn test_strsim_example_entry_point() {
         main();
     }
+
+    /// Edit distances match known values.
+    #[test]
+    fn edit_distances() {
+        assert_eq!(levenshtein("kitten", "sitting"), 3);
+        assert_eq!(levenshtein("same", "same"), 0);
+        assert_eq!(levenshtein("", "abc"), 3);
+        assert_eq!(damerau_levenshtein("ab", "ba"), 1);
+        assert_eq!(levenshtein("ab", "ba"), 2);
+    }
+
+    /// Hamming distance requires equal lengths.
+    #[test]
+    fn hamming_distance() {
+        assert_eq!(hamming("karolin", "kathrin"), Ok(3));
+        assert!(hamming("short", "longer").is_err());
+    }
+
+    /// Similarity scores are in range, and equal strings score 1.
+    #[test]
+    fn similarity_scores() {
+        assert!((jaro_winkler("rusty", "rusty") - 1.0).abs() < f64::EPSILON);
+        assert!(
+            (normalized_levenshtein("abc", "abc") - 1.0).abs() < f64::EPSILON
+        );
+        let score = sorensen_dice("aleksandr", "alexander");
+        assert!((0.0..=1.0).contains(&score));
+        assert!(jaro("abc", "xyz") < 0.01);
+    }
+
+    /// "rust" is the closest to "rusty" among the candidates.
+    #[test]
+    fn closest_candidate() {
+        let candidates = ["dusty", "rust", "trust", "crusty"];
+        let closest = candidates
+            .iter()
+            .max_by(|a, b| {
+                jaro_winkler("rusty", a)
+                    .partial_cmp(&jaro_winkler("rusty", b))
+                    .unwrap()
+            })
+            .unwrap();
+        assert_eq!(*closest, "rust");
+    }
 }

@@ -64,4 +64,29 @@ quis nostrud exercitation ullamco
         main()?;
         Ok(())
     }
+
+    /// The set matches the version, address and timeout lines only.
+    #[test]
+    fn set_selects_interesting_lines() -> Result<()> {
+        let set = RegexSetBuilder::new([
+            r#"version "\d\.\d\.\d""#,
+            r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:443",
+            "warning.*timeout expired",
+        ])
+        .case_insensitive(true)
+        .build()?;
+        let matching = EXAMPLE_TEXT
+            .lines()
+            .filter(|line| set.is_match(line))
+            .count();
+        assert_eq!(matching, 3);
+        assert!(!set.is_match("quis nostrud exercitation ullamco"));
+        Ok(())
+    }
+
+    /// A missing log file is an error.
+    #[test]
+    fn missing_file_is_an_error() {
+        assert!(File::open("temp/no-such-file.log").is_err());
+    }
 }

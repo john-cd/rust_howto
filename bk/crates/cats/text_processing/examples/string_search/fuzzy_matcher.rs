@@ -76,4 +76,33 @@ mod tests {
     fn test_fuzzy_matcher_example_entry_point() {
         main();
     }
+
+    /// Only candidates containing the pattern characters in order match.
+    #[test]
+    fn matches_subsequences_only() {
+        let matcher = SkimMatcherV2::default();
+        for item in ["fuzzy", "fuzzily", "fuzzed", "fuzzé"] {
+            assert!(matcher.fuzzy_match(item, "fuz").is_some(), "{item}");
+        }
+        for item in ["hazy", "buzzy", "cloudy"] {
+            assert!(matcher.fuzzy_match(item, "fuz").is_none(), "{item}");
+        }
+    }
+
+    /// The matched character indices are returned.
+    #[test]
+    fn indices_point_at_matched_characters() {
+        let matcher = SkimMatcherV2::default();
+        let (_, indices) = matcher.fuzzy_indices("fuzzy", "fuz").unwrap();
+        assert_eq!(indices, [0, 1, 2]);
+    }
+
+    /// An exact match scores at least as well as a partial one.
+    #[test]
+    fn exact_match_scores_higher() {
+        let matcher = SkimMatcherV2::default();
+        let exact = matcher.fuzzy_match("fuz", "fuz").unwrap();
+        let partial = matcher.fuzzy_match("a_f_u_z", "fuz").unwrap();
+        assert!(exact > partial);
+    }
 }

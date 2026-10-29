@@ -38,4 +38,20 @@ mod tests {
     fn test_memchr_example_entry_point() {
         main();
     }
+
+    /// The first and all occurrences of a byte are found.
+    #[test]
+    fn finds_bytes() {
+        let haystack = b"hello world";
+        assert_eq!(memchr(b'o', haystack), Some(4));
+        assert_eq!(memchr_iter(b'l', haystack).collect::<Vec<_>>(), [2, 3, 9]);
+    }
+
+    /// A missing byte and an empty haystack give no matches.
+    #[test]
+    fn missing_byte_is_not_found() {
+        assert_eq!(memchr(b'z', b"hello"), None);
+        assert_eq!(memchr(b'a', b""), None);
+        assert_eq!(memchr_iter(b'z', b"hello").count(), 0);
+    }
 }

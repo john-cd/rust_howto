@@ -69,4 +69,29 @@ mod tests {
     fn test_cstring_example_entry_point() {
         main();
     }
+
+    /// C's `strlen` agrees with Rust on the length of a `CString`.
+    #[test]
+    fn strlen_matches_rust_length() {
+        let c_string = CString::new("Hello, C world!").unwrap();
+        // SAFETY: `c_string` is a valid NUL-terminated string.
+        assert_eq!(unsafe { strlen(c_string.as_ptr()) }, 15);
+        assert_eq!(c_string.as_bytes_with_nul().len(), 16);
+    }
+
+    /// An interior NUL byte is rejected.
+    #[test]
+    fn interior_nul_is_rejected() {
+        let err = CString::new("a\0b").unwrap_err();
+        assert_eq!(err.nul_position(), 1);
+    }
+
+    /// A borrowed C string converts to `&str` and to an owned `CString`.
+    #[test]
+    fn borrowed_cstr_round_trips() {
+        let borrowed = c"Hello";
+        assert_eq!(borrowed.to_str().unwrap(), "Hello");
+        let owned = CString::from(borrowed);
+        assert_eq!(owned.as_c_str(), borrowed);
+    }
 }

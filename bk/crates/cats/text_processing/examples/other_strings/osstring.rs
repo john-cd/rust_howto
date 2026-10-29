@@ -77,4 +77,42 @@ mod tests {
     fn test_osstring_example_entry_point() {
         main();
     }
+
+    /// `OsString` supports pushing and converts to `&str` when valid.
+    #[test]
+    fn builds_and_converts() {
+        let mut s = OsString::new();
+        s.push("Hello");
+        s.push(" ");
+        s.push("world");
+        assert_eq!(s.as_os_str().to_str(), Some("Hello world"));
+        assert_eq!(OsString::from("example.txt"), OsStr::new("example.txt"));
+    }
+
+    /// Paths join and expose their file name.
+    #[test]
+    fn path_components() {
+        let p = Path::new("config").join("settings.json");
+        assert_eq!(p.file_name(), Some(OsStr::new("settings.json")));
+        assert_eq!(
+            PathBuf::from("/usr/local/bin").into_os_string(),
+            OsString::from("/usr/local/bin")
+        );
+    }
+
+    /// `PATH` entries can be split.
+    #[test]
+    fn path_variable_is_split() {
+        let joined = env::join_paths(["/a", "/b"]).unwrap();
+        let parts: Vec<_> = env::split_paths(&joined).collect();
+        assert_eq!(parts, [PathBuf::from("/a"), PathBuf::from("/b")]);
+    }
+
+    /// Invalid UTF-8 is not convertible to `&str`.
+    #[cfg(unix)]
+    #[test]
+    fn invalid_utf8_is_detected() {
+        use std::os::unix::ffi::OsStrExt as _;
+        assert!(OsStr::from_bytes(&[0xFF, 0xFE]).to_str().is_none());
+    }
 }

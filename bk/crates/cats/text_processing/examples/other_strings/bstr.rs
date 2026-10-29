@@ -75,4 +75,36 @@ mod tests {
     fn test_bstr_example_entry_point() {
         main();
     }
+
+    /// Invalid UTF-8 is kept in the byte string and shown lossily.
+    #[test]
+    fn keeps_invalid_utf8() {
+        let s = BString::from(vec![72, 101, 0xFF, 33]);
+        assert_eq!(s.len(), 4);
+        assert!(std::str::from_utf8(s.as_bytes()).is_err());
+        assert_eq!(s.to_str_lossy(), "He\u{FFFD}!");
+    }
+
+    /// Splitting, searching and line iteration work on bytes.
+    #[test]
+    fn splits_finds_and_iterates_lines() {
+        let text: &BStr = b"apple,banana,cherry".as_bstr();
+        let items: Vec<_> = text.split_str(",").collect();
+        assert_eq!(
+            items,
+            [b"apple".as_bstr(), b"banana".as_bstr(), b"cherry".as_bstr()]
+        );
+        assert_eq!(b"a needle here".as_bstr().find("needle"), Some(2));
+        assert_eq!(b"a haystack".as_bstr().find("needle"), None);
+        let lines: Vec<_> = b"one\ntwo\r\n".as_bstr().lines().collect();
+        assert_eq!(lines, [b"one".as_bstr(), b"two".as_bstr()]);
+    }
+
+    /// Strings can be appended to.
+    #[test]
+    fn push_str_appends() {
+        let mut s = BString::from("Growing ");
+        s.push_str("string");
+        assert_eq!(s, "Growing string");
+    }
 }

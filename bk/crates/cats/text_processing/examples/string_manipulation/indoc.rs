@@ -65,4 +65,25 @@ mod tests {
     fn test_indoc_example_entry_point() {
         main();
     }
+
+    /// `indoc!` removes the common indentation and keeps extra indentation.
+    #[test]
+    fn removes_common_indentation() {
+        let s = indoc! {"
+            first
+              second
+
+            third
+        "};
+        assert_eq!(s, "first\n  second\n\nthird\n");
+    }
+
+    /// Raw strings keep their escapes.
+    #[test]
+    fn raw_strings_are_not_unescaped() {
+        let s = indoc! {r#"
+            a "quote" and \n
+        "#};
+        assert_eq!(s, "a \"quote\" and \\n\n");
+    }
 }

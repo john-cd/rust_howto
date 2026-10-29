@@ -47,4 +47,31 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Unchanged, removed and added lines are classified.
+    #[test]
+    fn classifies_lines() {
+        let changes = diff::lines("a\nb\nc", "a\nB\nc\nd");
+        assert_eq!(
+            changes,
+            [
+                Result::Both("a", "a"),
+                Result::Left("b"),
+                Result::Right("B"),
+                Result::Both("c", "c"),
+                Result::Right("d"),
+            ]
+        );
+    }
+
+    /// Identical texts have only unchanged lines; empty texts have none.
+    #[test]
+    fn identical_and_empty_inputs() {
+        assert!(
+            diff::lines("x\ny", "x\ny")
+                .iter()
+                .all(|c| matches!(c, Result::Both(..)))
+        );
+        assert!(diff::lines("", "").is_empty());
+    }
 }

@@ -83,4 +83,51 @@ mod tests {
     fn test_textwrap_example_entry_point() {
         main();
     }
+
+    /// No wrapped line exceeds the width.
+    #[test]
+    fn lines_fit_the_width() {
+        let text =
+            "The quick brown fox jumps over the lazy dog and keeps running.";
+        let lines = wrap(text, 20);
+        assert!(lines.len() > 1);
+        assert!(lines.iter().all(|l| l.len() <= 20), "{lines:?}");
+        assert_eq!(lines.join(" "), text);
+    }
+
+    /// Indentation options are applied to each line.
+    #[test]
+    fn indents_are_applied() {
+        let options = Options::new(20)
+            .initial_indent("> ")
+            .subsequent_indent("  ");
+        let filled = fill("alpha beta gamma delta epsilon", &options);
+        let mut lines = filled.lines();
+        assert!(lines.next().unwrap().starts_with("> "));
+        assert!(lines.all(|l| l.starts_with("  ")));
+    }
+
+    /// A word longer than the width is broken.
+    #[test]
+    fn long_words_are_broken() {
+        let lines = wrap("supercalifragilisticexpialidocious", 10);
+        assert!(lines.len() > 1);
+        assert!(lines.iter().all(|l| l.len() <= 10));
+    }
+
+    /// Hyphenation allows narrower lines.
+    #[test]
+    fn hyphenation_splits_words() {
+        let dictionary = Standard::from_embedded(Language::EnglishUS).unwrap();
+        let options = Options::new(10)
+            .word_splitter(WordSplitter::Hyphenation(dictionary));
+        let lines = wrap("extraordinary circumstances", &options);
+        assert!(lines.iter().any(|l| l.ends_with('-')), "{lines:?}");
+    }
+
+    /// Empty input has no content lines.
+    #[test]
+    fn empty_text_wraps_to_empty() {
+        assert_eq!(fill("", 10), "");
+    }
 }
