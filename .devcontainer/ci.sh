@@ -60,7 +60,11 @@ done
 ## `later/crates` is staging content with its own policy (`later/crates/deny.toml`:
 ## triaged advisories, the pinned Kube Git source, and the egui font licenses).
 echo "Auditing later/crates/Cargo.toml"
-cargo deny \n    --manifest-path "${repo_root}/later/crates/Cargo.toml" \n    --workspace \n    --config "${repo_root}/later/crates/deny.toml" \n    check all --hide-inclusion-graph
+cargo deny \
+    --manifest-path "${repo_root}/later/crates/Cargo.toml" \
+    --workspace \
+    --config "${repo_root}/later/crates/deny.toml" \
+    check all --hide-inclusion-graph
 
 cd bk/crates
 
