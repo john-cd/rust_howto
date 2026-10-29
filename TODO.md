@@ -91,7 +91,6 @@
 
 - [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters and Cap'n Proto regeneration B
 - [#1979](https://github.com/john-cd/rust_howto/issues/1979) — **P3** — Validate concurrency, memory, hashing, and enumeration recipe pages
-- [#1858](https://github.com/john-cd/rust_howto/issues/1858) — **P3** — Review the earlier additions and Linux Relm4 evidence
 - [#1875](https://github.com/john-cd/rust_howto/issues/1875) — **Unprioritized** — Review the flate2 file-I/O example
 - [#346](https://github.com/john-cd/rust_howto/issues/346) — **P4** — Review the staged embedded promotion scope C
 - [#1850](https://github.com/john-cd/rust_howto/issues/1850) — **P1** — Re-enable GitHub Actions CI and verify the refactored workflows (review)
