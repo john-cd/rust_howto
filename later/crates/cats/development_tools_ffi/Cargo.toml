@@ -87,6 +87,7 @@ test = true
 name = "uniffi"
 path = "examples/uniffi.rs"
 test = true
+required-features = ["uniffi"]
 
 [dependencies]
 anyhow = "1.0.104"

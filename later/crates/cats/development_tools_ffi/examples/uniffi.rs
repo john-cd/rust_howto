@@ -1,30 +1,48 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Generating bindings to other languages with `uniffi`.
+//! Exporting a Rust API to other languages with `uniffi`.
+//!
+//! In a real project, this code lives in the `lib.rs` of a crate with
+//! `crate-type = ["cdylib"]`; `uniffi-bindgen` then reads the compiled library
+//! to generate Kotlin, Swift or Python bindings.
 
-// #![allow(non_snake_case)]
+// Generates the C ABI scaffolding for every item marked `#[uniffi::export]`.
+uniffi::setup_scaffolding!();
 
-// This example demonstrates how to use UniFFI to create a Rust library that
-// can be called from other languages.
+/// An error that crosses the language boundary as a native exception.
+#[derive(Debug, PartialEq, Eq, uniffi::Error)]
+#[uniffi(flat_error)]
+pub enum ArithmeticError {
+    /// The result does not fit in a `u64`.
+    IntegerOverflow,
+}
 
-// uniffi::setup_scaffolding!();
+impl std::fmt::Display for ArithmeticError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::IntegerOverflow => write!(f, "integer overflow"),
+        }
+    }
+}
 
-// #[uniffi::export]
 /// Returns a greeting for `name`.
+#[uniffi::export]
 pub fn greet(name: String) -> String {
     format!("Hello, {name}!")
 }
 
-// #[uniffi::export] // marks as available for FFI.
-/// Adds two numbers.
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b
+/// Adds two numbers, failing instead of wrapping on overflow.
+#[uniffi::export]
+pub fn add(a: u64, b: u64) -> Result<u64, ArithmeticError> {
+    a.checked_add(b).ok_or(ArithmeticError::IntegerOverflow)
 }
 
-/// Prints the sum of two numbers.
-fn main() {
-    println!("{}", add(2, 3));
+/// Prints a greeting and the sum of two numbers.
+fn main() -> Result<(), ArithmeticError> {
+    println!("{}", greet("UniFFI".to_owned()));
+    println!("{}", add(2, 3)?);
+    Ok(())
 }
 // ANCHOR_END: example
 
@@ -32,10 +50,22 @@ fn main() {
 mod tests {
     use super::*;
 
-    /// Runs the uniffi example through its entry point.
+    /// The exported functions can be called directly from Rust.
     #[test]
-    fn test_uniffi_example_entry_point() {
-        main();
+    fn exported_functions_work_from_rust() {
+        assert_eq!(greet("World".to_owned()), "Hello, World!");
+        assert_eq!(add(2, 3), Ok(5));
+    }
+
+    /// Overflow is reported as an error rather than wrapping.
+    #[test]
+    fn add_reports_overflow() {
+        assert_eq!(add(u64::MAX, 1), Err(ArithmeticError::IntegerOverflow));
+    }
+
+    /// Runs the example through its entry point.
+    #[test]
+    fn test_uniffi_example_entry_point() -> Result<(), ArithmeticError> {
+        main()
     }
 }
-// [finish; https://github.com/mozilla/uniffi-rs/blob/main/examples/arithmetic/Cargo.toml](https://github.com/john-cd/rust_howto/issues/1037)

@@ -69,11 +69,37 @@ For a large existing C++ API, the [Rust ❤️ Existing C++ guide][book~autocxx]
 
 [![uniffi~website][c~uniffi~website~badge]][c~uniffi~website] [![uniffi][c~uniffi~docs~badge]][c~uniffi~docs] [![uniffi~crates.io][c~uniffi~crates.io~badge]][c~uniffi~crates.io] [![uniffi~repo][c~uniffi~repo~badge]][c~uniffi~repo] [![uniffi~lib.rs][c~uniffi~lib.rs~badge]][c~uniffi~lib.rs]{{hi:uniffi}}{{hi:Ffi}}{{hi:Bindgen}}
 
-[`uniffi`][c~uniffi~docs]↗{{hi:uniffi}} is a multi-language bindings generator for Rust.
+[`uniffi`][c~uniffi~docs]↗{{hi:uniffi}} is a multi-language bindings generator for Rust. Mark functions, structs and errors with attributes (`#[uniffi::export]`, `#[derive(uniffi::Record)]`, `#[derive(uniffi::Error)]`) instead of writing a separate interface definition file, and call `uniffi::setup_scaffolding!()` once per crate.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_ffi/examples/uniffi.rs:example}}
 ```
+
+The example is a single file so that it can be tested here. In a real project, put this code in the `lib.rs` of a library crate that builds a `cdylib`, depend on `uniffi` with its `cli` feature, and add a small `uniffi-bindgen` binary that calls `uniffi::uniffi_bindgen_main()`:
+
+```toml
+[lib]
+crate-type = ["cdylib"]
+name = "arithmetic"
+
+[dependencies]
+uniffi = { version = "0.32", features = ["cli"] }
+
+[[bin]]
+name = "uniffi-bindgen"
+path = "uniffi-bindgen.rs"
+```
+
+Build the library, then generate bindings from the compiled library for each target language:
+
+```bash
+cargo build
+cargo run --bin uniffi-bindgen generate --library target/debug/libarithmetic.so --language python --out-dir out
+cargo run --bin uniffi-bindgen generate --library target/debug/libarithmetic.so --language kotlin --out-dir out
+cargo run --bin uniffi-bindgen generate --library target/debug/libarithmetic.so --language swift --out-dir out
+```
+
+The library file is `libarithmetic.dylib` on macOS and `arithmetic.dll` on Windows. The generated code loads the library at run time, so ship both together. Run the tests of the Rust crate with `cargo test --features uniffi`; the exported functions are ordinary Rust functions and can be called directly.
 
 ## FFI Caveats {#ffi-caveats}
 
