@@ -90,6 +90,7 @@ fn update_conditional_label(label: &Label, value: i32) {
 }
 // ANCHOR_END: example
 
+/// Opens the GTK 4 counter application.
 pub fn run() {
     main();
 }

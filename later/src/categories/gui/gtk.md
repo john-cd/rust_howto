@@ -4,7 +4,7 @@
 
 {{#include gtk.incl.md}}
 
-For GTK development in Rust, use the [`gtk4`][c~gtk4~docs]↗{{hi:gtk4}} crate. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The [`gdk`][c~gdk~docs]↗{{hi:gdk}}, [`gio`][c~gio~docs]↗{{hi:gio}}, and [`glib`][c~glib~docs]↗{{hi:glib}} crates are used indirectly through `gtk`. You will need to understand GTK concepts and consult the official GTK documentation for effective development.
+For GTK development in Rust, use the [`gtk4`][c~gtk4~docs]↗{{hi:gtk4}} crate. You'll use it to create widgets, handle events, manage layouts, and interact with the GTK library. The [`gdk4`][c~gdk~docs]↗{{hi:gdk}}, [`gio`][c~gio~docs]↗{{hi:gio}}, and [`glib`][c~glib~docs]↗{{hi:glib}} crates are used indirectly through `gtk`. You will need to understand GTK concepts and consult the official GTK documentation for effective development.
 
 The examples in this staging workspace use native GTK 4 libraries and `pkg-config` and currently compile on non-Windows targets only. On Debian and Ubuntu, install them with `sudo apt install build-essential libgtk-4-dev pkg-config`. The repository's `.devcontainer/install_deps.sh` installs these packages for Linux development. For other distributions and Windows toolchain options, follow the [gtk-rs installation guide for Linux][gtk-rs~installation-linux] or [Windows][gtk-rs~installation-windows]. These GTK examples are not part of the Windows build.
 
@@ -42,7 +42,7 @@ From `later/crates`, run `cargo run -p gui --example gtk --features gtk -- relm4
 
 ## Related GTK Crates {#related-gtk-crates}
 
-- [`gdk`][c~gdk~docs]↗{{hi:gdk}} provides bindings to the GDK (Graphics Device Kit) library, which is used by GTK for low-level [graphics][p~graphics] and windowing. You'll often use this indirectly through `gtk`.
+- [`gdk4`][c~gdk~docs]↗{{hi:gdk}} provides bindings to the GDK (Graphics Device Kit) library, which is used by GTK for low-level [graphics][p~graphics] and windowing. You'll often use this indirectly through `gtk`.
 - [`gio`][c~gio~docs]↗{{hi:gio}} offers bindings to the GIO (GNOME Input/Output) library, used for [asynchronous][p~asynchronous] operations, file I/O, and other system-related tasks in GTK applications.
 - [`glib`][c~glib~docs]↗{{hi:glib}} provides bindings to the GLib library, which is the foundation for GTK and GIO. You'll often use this indirectly.
 
@@ -55,8 +55,3 @@ From `later/crates`, run `cargo run -p gui --example gtk --features gtk -- relm4
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [gtk: write](https://github.com/john-cd/rust_howto/issues/383)
-  review in depth.
-</div>

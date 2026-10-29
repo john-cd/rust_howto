@@ -86,6 +86,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Opens the Relm4 counter application.
 pub fn run() {
     main();
 }

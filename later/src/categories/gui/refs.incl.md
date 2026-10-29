@@ -45,6 +45,7 @@
 [ex~gui~wry-local-page]: https://github.com/john-cd/rust_howto/issues/1952
 [ex~gui~xilem]: retained_mode_gui.md#xilem
 [gtk-rs~installation-linux]: https://gtk-rs.org/gtk4-rs/stable/latest/book/installation_linux.html
+[c~gdk~docs]: https://docs.rs/gdk4
 [gtk-rs~installation-windows]: https://gtk-rs.org/gtk4-rs/git/book/installation_windows.html
 [dioxus~desktop~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/desktop/
 [dioxus~mobile~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/mobile/
