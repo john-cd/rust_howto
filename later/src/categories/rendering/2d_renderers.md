@@ -53,13 +53,7 @@ See [[gpu_abstraction_layers | Gpu Abstraction Layers]].
 
 ## `webrender` {#webrender}
 
-[![webrender][c~webrender~docs~badge]][c~webrender~docs] [![webrender~crates.io][c~webrender~crates.io~badge]][c~webrender~crates.io] [![webrender~repo][c~webrender~repo~badge]][c~webrender~repo] [![webrender~lib.rs][c~webrender~lib.rs~badge]][c~webrender~lib.rs]{{hi:webrender}}
-
-[`webrender`][c~webrender~docs]↗{{hi:webrender}} is a GPU-accelerated 2D renderer for web content. "OpenGL-based. Mature with production usage in `Firefox` but documentation and OSS maintenance are lacking." ([blessed.rs][[blessed.rs-graphics~website]]↗).
-
-```rust,editable
-{{#include ../../../crates/cats/gui/examples/2d_renderers/webrender.rs:example}}
-```
+[`webrender`][c~webrender~docs]↗{{hi:webrender}} is developed inside Firefox and Servo; its crates.io releases are old and it is not meant as a general-purpose library, so this book does not include an example for it.
 
 ## Other Renderers {#other-renderers}
 

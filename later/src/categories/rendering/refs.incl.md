@@ -27,7 +27,6 @@
 [ex~rendering~vector-based-2d-rendering]: 2d_renderers.md#vector-based-2d-rendering
 [ex~rendering~vello]: 2d_renderers.md#vello
 [ex~rendering~vger]: 2d_vector_graphics.md#vger
-[ex~rendering~webrender]: 2d_renderers.md#webrender
 [p~algorithms]: ../algorithms/index.md
 [p~apis]: ../web-programming_http-client/apis.md
 [p~cross-platform]: ../../other/cross-platform/index.md

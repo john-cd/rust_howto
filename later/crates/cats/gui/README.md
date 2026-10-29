@@ -6,7 +6,7 @@ Comprehensive examples of Rust GUI frameworks including Slint, Egui, Iced, and T
 
 ## Examples Covered
 
-- **2d Renderers** (`examples/2d_renderers/`): Demonstrates concepts like `femtovg`, `minifb`, `skia_safe`, `vello`, `webrender`.
+- **2d Renderers** (`examples/2d_renderers/`): Demonstrates concepts like `femtovg`, `minifb`, `skia_safe`, `vello`.
 - **Clipboard** (`examples/clipboard/`): Demonstrates concepts like `arboard`.
 - **File Dialogs** (`examples/file_dialogs/`): Demonstrates concepts like `rfd`.
 - **Gtk** (`examples/gtk/`): Demonstrates concepts like `gtk4`, `relm4`.

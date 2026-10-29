@@ -21,7 +21,7 @@ autoexamples = false
 [[example]]
 name = "2d_renderers"
 path = "examples/2d_renderers/main.rs"
-required-features = ["femtovg", "skia", "webrender"]
+required-features = ["femtovg", "skia"]
 test = true
 
 [[example]]
@@ -157,7 +157,6 @@ url = "2.5.8"
 # Disabled until a Wry release no longer requires affected glib 0.18.
 # wry = { version = "0.57.1", optional = true }
 vello = { version = "0.11.0", optional = true } # Uses wgpu 29, matching this workspace.
-webrender = { version = "0.70.0", optional = true }
 wgpu = "30.0.1"
 winit = "0.30.13" # for vello, winit examples
 xilem = { version = "0.4.0", optional = true } # Experimental retained-mode UI example.
@@ -185,7 +184,6 @@ tauri = []
 # Disabled: tao/wry require GTK 3 and the affected glib 0.18 series. Keep source.
 # wry = ["dep:wry"]
 vello = ["dep:pollster", "dep:vello"]
-webrender = ["dep:webrender", "dep:glutin", "dep:gl"]
 xilem = ["dep:xilem", "dep:naga26"]
 
 # GTK examples currently target non-Windows systems; see gtk.md for native setup.

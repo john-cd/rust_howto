@@ -12,9 +12,6 @@ mod skia_safe;
 // #[cfg(all(feature = "vello", not(windows)))]
 // // TODO review Vello support for Windows
 // mod vello;
-#[cfg(all(feature = "webrender", not(windows)))]
-// TODO review Webrender support for Windows
-mod webrender;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -38,10 +35,6 @@ enum Commands {
     // #[cfg(all(feature = "vello", not(windows)))]
     // #[command(name = "vello")]
     // Vello,
-    /// Runs the `webrender` example.
-    #[cfg(all(feature = "webrender", not(windows)))]
-    #[command(name = "webrender")]
-    Webrender,
 }
 
 /// Runs the example selected on the command line.
@@ -62,10 +55,6 @@ fn main() -> anyhow::Result<()> {
             // Commands::Vello => {
             //     vello::run();
             // }
-            #[cfg(all(feature = "webrender", not(windows)))]
-            Commands::Webrender => {
-                webrender::run();
-            }
         }
     }
 
