@@ -48,4 +48,18 @@ mod tests {
     fn test_tokio21_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn local_set_runs_non_send_tasks_to_completion() {
+        let data = Rc::new(std::cell::Cell::new(0));
+        let local = task::LocalSet::new();
+        for i in 1..=3 {
+            let data = Rc::clone(&data);
+            local.spawn_local(async move {
+                data.set(data.get() + i);
+            });
+        }
+        local.await;
+        assert_eq!(data.get(), 6);
+    }
 }

@@ -29,4 +29,14 @@ mod tests {
     fn test_tokio2_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn current_thread_runtime_returns_the_block_on_value() {
+        let value = tokio::runtime::Builder::new_current_thread()
+            .enable_all()
+            .build()
+            .unwrap()
+            .block_on(async { "Hello world".len() });
+        assert_eq!(value, 11);
+    }
 }

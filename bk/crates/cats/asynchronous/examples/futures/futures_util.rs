@@ -123,4 +123,49 @@ mod tests {
     fn test_futures_util_example_entry_point() {
         main();
     }
+
+    #[tokio::test(start_paused = true)]
+    async fn fetch_data_fails_for_multiples_of_three() {
+        assert_eq!(fetch_data(1).await, Ok("Data for id 1".to_owned()));
+        assert_eq!(
+            fetch_data(3).await,
+            Err("Error fetching data for id 3".to_owned())
+        );
+        assert!(fetch_data(0).await.is_err());
+    }
+
+    #[tokio::test(start_paused = true)]
+    async fn combinators_transform_and_recover() {
+        let mapped =
+            fetch_data(1).map(|r| r.map(|d| format!("Processed: {d}")));
+        assert_eq!(mapped.await.unwrap(), "Processed: Data for id 1");
+
+        let recovered = fetch_data(3)
+            .or_else(|_| async { Ok::<_, String>("Fallback data".to_owned()) });
+        assert_eq!(recovered.await.unwrap(), "Fallback data");
+
+        let both = future::try_join(fetch_data(1), fetch_data(4)).await;
+        assert_eq!(
+            both.unwrap(),
+            ("Data for id 1".to_owned(), "Data for id 4".to_owned())
+        );
+        assert!(
+            future::try_join(fetch_data(1), fetch_data(3))
+                .await
+                .is_err()
+        );
+    }
+
+    #[tokio::test(start_paused = true)]
+    async fn select_returns_the_shorter_sleep_first() {
+        let slow =
+            time::sleep(Duration::from_millis(100)).then(|()| future::ready(1));
+        let fast =
+            time::sleep(Duration::from_millis(50)).then(|()| future::ready(2));
+        pin_mut!(slow, fast);
+        match future::select(slow, fast).await {
+            future::Either::Right((val, _)) => assert_eq!(val, 2),
+            future::Either::Left(_) => panic!("the shorter sleep should win"),
+        }
+    }
 }

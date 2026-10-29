@@ -72,4 +72,24 @@ mod tests {
     fn test_async_channels_oneshot2_example_entry_point() {
         main();
     }
+
+    #[tokio::test(start_paused = true)]
+    async fn download_file_returns_the_file_name_after_two_seconds() {
+        let start = tokio::time::Instant::now();
+        let name = download_file().await.expect("the download succeeds");
+        assert_eq!(name, "data.txt");
+        assert_eq!(start.elapsed(), Duration::from_secs(2));
+    }
+
+    #[tokio::test(start_paused = true)]
+    async fn process_file_takes_one_second() {
+        let start = tokio::time::Instant::now();
+        process_file("data.txt".to_owned()).await;
+        assert_eq!(start.elapsed(), Duration::from_secs(1));
+    }
+
+    #[tokio::test(start_paused = true)]
+    async fn async_main_succeeds() {
+        async_main().await.expect("the pipeline should succeed");
+    }
 }

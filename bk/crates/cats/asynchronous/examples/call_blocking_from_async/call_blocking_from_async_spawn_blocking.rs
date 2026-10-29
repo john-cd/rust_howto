@@ -41,4 +41,18 @@ mod tests {
     fn test_call_blocking_from_async_spawn_blocking_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn spawn_blocking_returns_the_closure_result() {
+        let value = tokio::task::spawn_blocking(|| 6 * 7).await.unwrap();
+        assert_eq!(value, 42);
+    }
+
+    #[tokio::test]
+    async fn panic_in_blocking_task_is_reported_as_join_error() {
+        let err = tokio::task::spawn_blocking(|| panic!("boom"))
+            .await
+            .expect_err("the task panicked");
+        assert!(err.is_panic());
+    }
 }

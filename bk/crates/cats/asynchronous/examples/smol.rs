@@ -42,4 +42,24 @@ mod tests {
     fn test_smol_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn spawned_tasks_return_their_values() {
+        let total = smol::block_on(async {
+            let a = smol::spawn(async {
+                Timer::after(Duration::from_millis(5)).await;
+                1
+            });
+            let b = smol::spawn(async { 2 });
+            a.await + b.await
+        });
+        assert_eq!(total, 3);
+    }
+
+    #[test]
+    fn timer_waits_at_least_the_requested_duration() {
+        let start = std::time::Instant::now();
+        smol::block_on(Timer::after(Duration::from_millis(20)));
+        assert!(start.elapsed() >= Duration::from_millis(20));
+    }
 }

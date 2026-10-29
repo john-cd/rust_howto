@@ -38,4 +38,15 @@ mod tests {
     fn test_streams_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn stream_yields_one_to_five_then_ends() {
+        let mut s = count_to_five().await;
+        let mut got = Vec::new();
+        while let Some(n) = s.next().await {
+            got.push(n);
+        }
+        assert_eq!(got, [1, 2, 3, 4, 5]);
+        assert!(s.next().await.is_none());
+    }
 }

@@ -58,4 +58,17 @@ mod tests {
     fn test_futures1_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn select_completes_when_a_task_is_ready() {
+        race_tasks().await;
+        let a = std::future::ready(1).fuse();
+        let b = std::future::pending::<i32>().fuse();
+        pin_mut!(a, b);
+        let winner = select! {
+            x = a => x,
+            y = b => y,
+        };
+        assert_eq!(winner, 1);
+    }
 }

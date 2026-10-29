@@ -49,4 +49,11 @@ mod tests {
     fn test_call_blocking_from_async_rayon_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn parallel_sum_adds_all_numbers() {
+        assert_eq!(parallel_sum(vec![1; 1024 * 1024]).await, 1024 * 1024);
+        assert_eq!(parallel_sum(vec![]).await, 0);
+        assert_eq!(parallel_sum(vec![-3, 3, 10]).await, 10);
+    }
 }

@@ -97,4 +97,35 @@ mod tests {
     fn test_streams3_example_entry_point() {
         main();
     }
+
+    #[tokio::test(start_paused = true)]
+    async fn fetch_data_fails_for_multiples_of_three() {
+        assert_eq!(fetch_data(2).await, Ok("Data for id 2".to_owned()));
+        assert!(fetch_data(6).await.is_err());
+    }
+
+    #[tokio::test(start_paused = true)]
+    async fn concurrent_processing_handles_every_item() {
+        let results = std::sync::Mutex::new(Vec::new());
+        stream::iter(vec![1, 2, 3, 4, 5])
+            .map(fetch_data)
+            .for_each_concurrent(2, |f| async {
+                let result = f.await;
+                results.lock().unwrap().push(result);
+            })
+            .await;
+        let results = results.into_inner().unwrap();
+        assert_eq!(results.len(), 5);
+        assert_eq!(results.iter().filter(|r| r.is_err()).count(), 1);
+    }
+
+    #[tokio::test]
+    async fn filter_map_drops_the_errors() {
+        let items = stream::iter(vec![Ok("a"), Err("e".to_owned()), Ok("b")]);
+        let kept: Vec<String> = items
+            .filter_map(|r| async move { r.ok().map(str::to_uppercase) })
+            .collect()
+            .await;
+        assert_eq!(kept, ["A", "B"]);
+    }
 }

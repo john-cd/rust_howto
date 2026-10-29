@@ -127,4 +127,11 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[tokio::test(start_paused = true)]
+    async fn countdown_takes_three_ticks() {
+        let start = tokio::time::Instant::now();
+        countdown().await;
+        assert_eq!(start.elapsed(), Duration::from_millis(300));
+    }
 }

@@ -70,4 +70,38 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[tokio::test]
+    async fn every_produced_value_is_consumed() {
+        let (tx, rx) = kanal::bounded_async::<i32>(0);
+        let p1 = tokio::spawn(producer(tx.clone(), 1));
+        let p2 = tokio::spawn(producer(tx, 2));
+        let collector = tokio::spawn(async move {
+            let mut got = Vec::new();
+            while let Ok(v) = rx.recv().await {
+                got.push(v);
+            }
+            got
+        });
+        p1.await.unwrap().unwrap();
+        p2.await.unwrap().unwrap();
+        let mut got = collector.await.unwrap();
+        got.sort_unstable();
+        assert_eq!(got, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]);
+    }
+
+    #[tokio::test]
+    async fn producer_fails_when_the_receiver_is_gone() {
+        let (tx, rx) = kanal::bounded_async::<i32>(0);
+        drop(rx);
+        assert!(producer(tx, 1).await.is_err());
+    }
+
+    #[tokio::test]
+    async fn consumer_ends_when_the_sender_is_gone() {
+        let (tx, rx) = kanal::bounded_async::<i32>(1);
+        tx.send(1).await.unwrap();
+        drop(tx);
+        consumer(rx).await.expect("the consumer drains and stops");
+    }
 }

@@ -62,4 +62,25 @@ mod tests {
     fn test_call_async_from_blocking_tokio_runtime_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn background_task_runs_on_the_runtime() {
+        let runtime = tokio::runtime::Builder::new_current_thread()
+            .enable_all()
+            .start_paused(true)
+            .build()
+            .unwrap();
+        runtime.block_on(my_bg_task(9));
+    }
+
+    #[test]
+    fn spawned_tasks_finish_even_with_one_worker() {
+        let runtime = tokio::runtime::Builder::new_multi_thread()
+            .worker_threads(1)
+            .enable_all()
+            .build()
+            .unwrap();
+        let handle = runtime.spawn(async { 7 });
+        assert_eq!(runtime.block_on(handle).unwrap(), 7);
+    }
 }

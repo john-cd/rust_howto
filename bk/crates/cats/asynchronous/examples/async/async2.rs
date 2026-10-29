@@ -44,4 +44,17 @@ mod tests {
     fn test_async2_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn a_future_does_nothing_until_it_is_awaited() {
+        use std::future::Future as _;
+        use std::task::Context;
+        use std::task::Poll;
+
+        let mut op = Box::pin(say_world());
+        // Creating the future ran nothing; polling it once runs it to the end.
+        let waker = futures::task::noop_waker();
+        let mut cx = Context::from_waker(&waker);
+        assert_eq!(op.as_mut().poll(&mut cx), Poll::Ready(()));
+    }
 }

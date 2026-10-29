@@ -74,4 +74,13 @@ mod tests {
     fn test_async_traits3_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn modal_advertisement_runs_to_completion() {
+        let ad: &dyn Advertisement = &Modal;
+        ad.run().await;
+        Modal.render_fullscreen().await;
+        Modal.hide_for_now().await;
+        remind_user_to_join_mailing_list().await;
+    }
 }

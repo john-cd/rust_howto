@@ -83,4 +83,18 @@ mod tests {
     fn test_async1_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn second_task_futures_complete() {
+        let s = first_task().await;
+        second_task_1(&s).await;
+        second_task_2().await;
+        do_something().await;
+    }
+
+    #[tokio::test]
+    async fn joined_futures_run_to_completion() {
+        let (a, b) = futures::join!(async { 1 }, async { 2 });
+        assert_eq!((a, b), (1, 2));
+    }
 }

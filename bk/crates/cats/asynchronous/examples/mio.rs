@@ -52,4 +52,25 @@ mod tests {
     fn test_mio_example_entry_point() -> std::io::Result<()> {
         main()
     }
+
+    #[test]
+    fn waker_produces_a_readable_event() -> std::io::Result<()> {
+        let mut poll = Poll::new()?;
+        let mut events = Events::with_capacity(8);
+        let waker = Waker::new(poll.registry(), WAKE_TOKEN)?;
+        waker.wake()?;
+        poll.poll(&mut events, Some(Duration::from_millis(500)))?;
+        let tokens: Vec<Token> = events.iter().map(|e| e.token()).collect();
+        assert_eq!(tokens, [WAKE_TOKEN]);
+        Ok(())
+    }
+
+    #[test]
+    fn poll_times_out_without_events() -> std::io::Result<()> {
+        let mut poll = Poll::new()?;
+        let mut events = Events::with_capacity(8);
+        poll.poll(&mut events, Some(Duration::from_millis(10)))?;
+        assert!(events.is_empty());
+        Ok(())
+    }
 }

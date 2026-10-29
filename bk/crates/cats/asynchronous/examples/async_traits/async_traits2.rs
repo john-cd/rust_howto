@@ -9,7 +9,10 @@
 /// an iterator over `u8` values. The specific type of the iterator is not
 /// specified in the trait definition, but is instead left to the implementor
 /// to decide.
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
+#[cfg_attr(
+    not(test),
+    expect(dead_code, reason = "declared to illustrate it; never used")
+)]
 trait Container {
     /// Returns an iterator over the items in the container.
     fn items(&self) -> impl Iterator<Item = u8>;
@@ -52,5 +55,15 @@ mod tests {
     #[test]
     fn test_async_traits2_example_entry_point() {
         main();
+    }
+
+    #[test]
+    fn container_items_iterate_in_order() {
+        let c = MyContainer {
+            items: vec![1, 2, 3],
+        };
+        assert_eq!(c.items().collect::<Vec<_>>(), [1, 2, 3]);
+        let empty = MyContainer { items: vec![] };
+        assert_eq!(empty.items().count(), 0);
     }
 }

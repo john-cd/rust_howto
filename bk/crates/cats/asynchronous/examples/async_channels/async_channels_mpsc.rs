@@ -50,4 +50,40 @@ mod tests {
     fn test_async_channels_mpsc_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn some_computation_formats_the_input() {
+        assert_eq!(some_computation(7).await, "The result of computation is 7");
+    }
+
+    #[tokio::test]
+    async fn channel_delivers_messages_in_order_and_closes() {
+        let (tx, mut rx) = mpsc::channel(4);
+        tokio::spawn(async move {
+            for i in 1..=3 {
+                tx.send(some_computation(i).await)
+                    .await
+                    .expect("receiver open");
+            }
+        });
+        let mut got = Vec::new();
+        while let Some(res) = rx.recv().await {
+            got.push(res);
+        }
+        assert_eq!(
+            got,
+            [
+                "The result of computation is 1",
+                "The result of computation is 2",
+                "The result of computation is 3"
+            ]
+        );
+    }
+
+    #[tokio::test]
+    async fn send_fails_once_the_receiver_is_dropped() {
+        let (tx, rx) = mpsc::channel::<u32>(1);
+        drop(rx);
+        assert!(tx.send(1).await.is_err());
+    }
 }

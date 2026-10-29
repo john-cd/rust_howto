@@ -62,4 +62,22 @@ mod tests {
     fn test_async_traits_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn health_checker_reports_healthy() {
+        assert!(MyHealthChecker.check().await);
+    }
+
+    #[tokio::test]
+    async fn health_check_runs_with_a_failing_checker() {
+        struct Failing;
+        impl HealthCheck for Failing {
+            async fn check(&mut self) -> bool {
+                false
+            }
+        }
+        assert!(!Failing.check().await);
+        do_health_check(Failing).await;
+        do_health_check(MyHealthChecker).await;
+    }
 }

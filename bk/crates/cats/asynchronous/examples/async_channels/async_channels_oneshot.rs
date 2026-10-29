@@ -64,4 +64,20 @@ mod tests {
     fn test_async_channels_oneshot_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn oneshot_carries_the_computation_result() {
+        let (tx, rx) = oneshot::channel();
+        tokio::spawn(async move {
+            tx.send(some_computation(5).await).expect("receiver open");
+        });
+        assert_eq!(rx.await.unwrap(), "The result of computation is 5");
+    }
+
+    #[tokio::test]
+    async fn receiving_fails_if_the_sender_is_dropped() {
+        let (tx, rx) = oneshot::channel::<String>();
+        drop(tx);
+        assert!(rx.await.is_err());
+    }
 }

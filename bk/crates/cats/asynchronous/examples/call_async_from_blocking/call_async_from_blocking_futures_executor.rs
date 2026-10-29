@@ -38,4 +38,10 @@ mod tests {
     fn test_call_async_from_blocking_futures_executor_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn block_on_returns_the_future_output() {
+        assert_eq!(futures::executor::block_on(async { 40 + 2 }), 42);
+        futures::executor::block_on(do_something());
+    }
 }
