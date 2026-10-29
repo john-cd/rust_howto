@@ -36,3 +36,58 @@ ignore = [
 ]
 unmaintained = "workspace"
 unsound = "workspace"
+
+# License, ban and source policy for the staging workspace; mirrors bk/crates/deny.toml.
+[licenses]
+allow = [
+  "0BSD",
+  "Apache-2.0",
+  "Apache-2.0 WITH LLVM-exception",
+  "BSD-1-Clause",
+  "BSD-2-Clause",
+  "BSD-2-Clause-Patent",
+  "BSD-3-Clause",
+  "BSL-1.0",
+  "BlueOak-1.0.0",
+  "CC0-1.0",
+  "CDLA-Permissive-2.0",
+  "ISC",
+  "MIT",
+  "MIT-0",
+  "MITNFA",
+  "MPL-2.0",
+  "NCSA",
+  "Unicode-3.0",
+  "Unicode-DFS-2016",
+  "Unlicense",
+  "X11",
+  "Zlib",
+  "bzip2-1.0.6",
+]
+confidence-threshold = 0.8
+exceptions = [
+  # egui bundles the Ubuntu and Hack fonts (SIL OFL 1.1 and the Ubuntu Font License) in this crate.
+  { crate = "epaint_default_fonts", allow = ["OFL-1.1", "Ubuntu-font-1.0"] },
+]
+
+[licenses.private]
+# Workspace examples are not published packages; the root LICENSE is not an
+# SPDX license grant for these private workspace members.
+ignore = true
+
+[bans]
+# Keep duplicate and wildcard dependency debt visible without hiding crates.
+multiple-versions = "warn"
+wildcards = "warn"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+allow-git = [
+  "https://github.com/john-cd/book_tooling",
+  # Pingora is pinned to a git revision (see the `pingora` workspace dependency).
+  "https://github.com/cloudflare/pingora",
+  # Kube is pinned to the merged PR #2086 revision (see `other/Cargo.toml`).
+  "https://github.com/kube-rs/kube",
+]

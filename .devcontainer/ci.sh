@@ -57,9 +57,10 @@ for manifest in \
         check all --hide-inclusion-graph
 done
 
-## `later/crates` is staging content, not built or published by this repository.
-## Its current graph has multiple advisories, an unapproved Git source, and a font
-## license that need review before promotion; keep it out of the blocking gate.
+## `later/crates` is staging content with its own policy (`later/crates/deny.toml`:
+## triaged advisories, the pinned Kube Git source, and the egui font licenses).
+echo "Auditing later/crates/Cargo.toml"
+cargo deny \n    --manifest-path "${repo_root}/later/crates/Cargo.toml" \n    --workspace \n    --config "${repo_root}/later/crates/deny.toml" \n    check all --hide-inclusion-graph
 
 cd bk/crates
 

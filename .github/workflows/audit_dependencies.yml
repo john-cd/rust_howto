@@ -8,6 +8,8 @@ on:
   push:
     branches: [develop]
     paths:
+      - "later/crates/Cargo.lock"
+      - "later/crates/deny.toml"
       - "bk/crates/Cargo.lock"
       - "bk/crates/**/Cargo.toml"
       - "bk/crates/deny.toml"
@@ -49,4 +51,29 @@ jobs:
           arguments: >-
             --workspace --config bk/crates/deny.toml
             ${{ matrix.checks == 'advisories' && '--all-features' || '' }}
+          command-arguments: --hide-inclusion-graph
+
+  ## The other workspaces: `later/crates` has its own policy (`later/crates/deny.toml`);
+  ## `tools` and `xmpl` reuse the book's policy. Advisories stay non-blocking.
+  cargo-deny-other:
+    name: cargo deny (${{ matrix.workspace }})
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - workspace: later/crates
+            config: later/crates/deny.toml
+          - workspace: tools
+            config: bk/crates/deny.toml
+          - workspace: xmpl
+            config: bk/crates/deny.toml
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: EmbarkStudios/cargo-deny-action@3c6349835b2b7b196a839186cb8b78e02f7b5f25 # v2.1.1
+        with:
+          manifest-path: ${{ matrix.workspace }}/Cargo.toml
+          command: check
+          arguments: --workspace --config ${{ matrix.config }}
           command-arguments: --hide-inclusion-graph
