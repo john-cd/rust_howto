@@ -28,7 +28,7 @@ FreeBSD jails provide operating-system-level isolation for process, filesystem, 
 
 ## Build and test platform-specific code
 
-The `freebsd` module is gated with `#[cfg(target_os = "freebsd")]`, and its `sysctl` dependency uses a matching Cargo target section. Other targets run a message-only fallback without loading the module or dependency. That fallback does not exercise the FreeBSD path. The repository's CI does not run this example on FreeBSD, so native validation remains necessary.
+The `freebsd` module is gated with `#[cfg(target_os = "freebsd")]`, and its `sysctl` dependency uses a matching Cargo target section. Other targets run a message-only fallback without loading the module or dependency. That fallback does not exercise the FreeBSD path. The advisory `native_platform_examples.yml` workflow runs this package's Clippy and tests inside a FreeBSD VM; inspect its native step results rather than treating a passing fallback on another operating system as validation.
 
 From `later/crates` on FreeBSD, run `cargo run -p os_freebsd_apis --example freebsd`. The expected output includes `Kernel operating-system type: FreeBSD`.
 

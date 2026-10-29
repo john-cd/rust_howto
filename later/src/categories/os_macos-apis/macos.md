@@ -28,7 +28,7 @@ For a cross-platform watcher, [`notify`][c~notify~docs] uses native backends, in
 
 ## Build and test on macOS
 
-Put macOS-only dependencies in `[target.'cfg(target_os = "macos")'.dependencies]` and gate the native module with `#[cfg(target_os = "macos")]`. A non-macOS fallback can keep other workspace builds working, but it does not exercise AppKit, Keychain, or FSEvents. The repository's macOS workflow runs on a Mac runner, but currently builds `bk/crates`, not this `later/crates` example; add the staging package to that workflow before treating it as covered by CI.
+Put macOS-only dependencies in `[target.'cfg(target_os = "macos")'.dependencies]` and gate the native module with `#[cfg(target_os = "macos")]`. A non-macOS fallback can keep other workspace builds working, but it does not exercise Apple frameworks. The advisory `native_platform_examples.yml` workflow runs this staging package and the Objective-C FFI example on a Mac runner. Inspect those native step results before treating the platform-specific paths as validated; the example does not test every framework discussed here.
 
 ## Example {#macos}
 

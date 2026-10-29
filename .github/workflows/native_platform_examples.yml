@@ -1,0 +1,91 @@
+name: Check native platform examples (advisory)
+
+on:
+  pull_request:
+    branches: [develop]
+    paths:
+      - "later/crates/Cargo.*"
+      - "later/crates/cats/os_*/**"
+      - "later/crates/cats/development_tools_ffi/**"
+      - ".github/workflows/native_platform_examples.yml"
+      - ".github/actions/**"
+      - ".devcontainer/.env"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-platform-examples-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTC_WRAPPER: ""
+
+jobs:
+  macos:
+    name: macOS APIs and Objective-C (advisory)
+    runs-on: macos-15
+    timeout-minutes: 45
+    continue-on-error: true
+    env:
+      CARGO_TARGET_DIR: ${{ github.workspace }}/target/later-native
+      CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/later-native/build
+    steps:
+      - name: Check out source
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Load pinned tool versions
+        uses: ./.github/actions/load-pinned-versions
+      - name: Set up Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          toolchain: ${{ env.RUST_VERSION }}
+          nightly: skip
+          cache-workspaces: |
+            later/crates -> ../../target/later-native
+          cache-key: native-macos
+      - name: Lint native macOS APIs
+        run: cargo clippy -p os_macos_apis --all-targets --locked -- --deny warnings
+        working-directory: later/crates
+      - name: Test native macOS APIs
+        run: cargo test -p os_macos_apis --all-targets --locked
+        working-directory: later/crates
+      - name: Lint Objective-C integration
+        run: cargo clippy -p development_tools_ffi --example objc --features objc --locked -- --deny warnings
+        working-directory: later/crates
+      - name: Test Objective-C integration
+        run: cargo test -p development_tools_ffi --example objc --features objc --locked
+        working-directory: later/crates
+
+  freebsd:
+    name: FreeBSD APIs (advisory)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    continue-on-error: true
+    steps:
+      - name: Check out source
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Load pinned tool versions
+        uses: ./.github/actions/load-pinned-versions
+      - name: Lint and test inside FreeBSD
+        # vmactions/freebsd-vm v1.5.9
+        uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc
+        with:
+          release: "14.4"
+          envs: "RUST_VERSION"
+          copyback: false
+          prepare: pkg install -y curl git
+          run: |
+            set -eu
+            curl --proto '=https' --tlsv1.2 --fail --silent --show-error https://sh.rustup.rs -o /tmp/rustup-init.sh
+            sh /tmp/rustup-init.sh -y --profile minimal --default-toolchain "$RUST_VERSION"
+            . "$HOME/.cargo/env"
+            export CARGO_TARGET_DIR="$PWD/target/freebsd"
+            export CARGO_BUILD_BUILD_DIR="$PWD/build/freebsd"
+            export RUSTC_WRAPPER=""
+            cd later/crates
+            cargo clippy -p os_freebsd_apis --all-targets --locked -- --deny warnings
+            cargo test -p os_freebsd_apis --all-targets --locked
