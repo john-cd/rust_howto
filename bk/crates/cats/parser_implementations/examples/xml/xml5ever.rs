@@ -441,4 +441,24 @@ mod tests {
     fn test_xml5ever_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
+    /// Parsing well-formed XML builds the expected tree without errors.
+    #[test]
+    fn builds_the_tree() {
+        let dom = parse_document(XmlTree::default(), Default::default())
+            .one(r#"<a><b k="v">t</b></a>"#);
+        assert!(dom.errors.borrow().is_empty());
+        let a = children(&dom.document).unwrap().borrow()[0].clone();
+        assert_eq!(&*a.name.local, "a");
+        let b = children(&a).unwrap().borrow()[0].clone();
+        assert_eq!(&*b.name.local, "b");
+    }
+
+    /// Malformed XML is reported through the error list.
+    #[test]
+    fn malformed_xml_reports_errors() {
+        let dom = parse_document(XmlTree::default(), Default::default())
+            .one("<a><b></a>");
+        assert!(!dom.errors.borrow().is_empty());
+    }
 }

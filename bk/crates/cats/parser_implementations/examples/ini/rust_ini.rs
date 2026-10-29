@@ -84,4 +84,34 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Sections and keys are readable after loading from a string.
+    #[test]
+    fn loads_sections_and_keys() -> anyhow::Result<()> {
+        let ini = Ini::load_from_str("[a]\nk = v\n[b]\nx = y\n")?;
+        assert_eq!(ini.get_from(Some("a"), "k"), Some("v"));
+        assert_eq!(ini.get_from(Some("b"), "x"), Some("y"));
+        assert_eq!(ini.get_from(Some("a"), "x"), None);
+        assert!(ini.section(Some("c")).is_none());
+        Ok(())
+    }
+
+    /// A written file can be loaded again.
+    #[test]
+    fn written_file_round_trips() -> anyhow::Result<()> {
+        let path = std::env::temp_dir().join("rust_howto_rust_ini.ini");
+        let mut conf = Ini::new();
+        conf.with_section(Some("Section3")).set("key5", "value5");
+        conf.write_to_file(&path)?;
+        let loaded = Ini::load_from_file(&path)?;
+        assert_eq!(loaded.get_from(Some("Section3"), "key5"), Some("value5"));
+        std::fs::remove_file(&path)?;
+        Ok(())
+    }
+
+    /// Malformed input is rejected.
+    #[test]
+    fn malformed_section_is_rejected() {
+        assert!(Ini::load_from_str("[unclosed\nk = v\n").is_err());
+    }
 }

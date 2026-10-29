@@ -118,4 +118,61 @@ mod tests {
     fn test_html5ever_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
+    /// A sink that records the names of the tags it sees.
+    struct TagRecorder(std::cell::RefCell<Vec<String>>);
+
+    impl TokenSink for TagRecorder {
+        type Handle = ();
+
+        fn process_token(
+            &self,
+            token: Token,
+            _line: u64,
+        ) -> TokenSinkResult<()> {
+            if let TagToken(tag) = token {
+                self.0
+                    .borrow_mut()
+                    .push(format!("{:?} {}", tag.kind, tag.name));
+            }
+            TokenSinkResult::Continue
+        }
+    }
+
+    /// The tokenizer reports every start and end tag, in order.
+    #[test]
+    fn tokenizer_reports_tags() {
+        let html = "<html><body><p>Hello, world!</p></body></html>";
+        let mut chunk = ByteTendril::new();
+        chunk.extend(html.as_bytes());
+        let input = BufferQueue::default();
+        input.push_back(chunk.try_reinterpret().expect("valid UTF-8"));
+        let tokenizer =
+            Tokenizer::new(TagRecorder(Default::default()), Default::default());
+        let _ = tokenizer.feed(&input);
+        tokenizer.end();
+        assert_eq!(
+            tokenizer.sink.0.borrow().as_slice(),
+            [
+                "StartTag html",
+                "StartTag body",
+                "StartTag p",
+                "EndTag p",
+                "EndTag body",
+                "EndTag html"
+            ]
+        );
+    }
+
+    /// The printer tracks whether it is inside a run of characters.
+    #[test]
+    fn printer_tracks_character_runs() {
+        let printer = TokenPrinter {
+            in_char_run: Cell::new(false),
+        };
+        printer.is_char(true);
+        assert!(printer.in_char_run.get());
+        printer.is_char(false);
+        assert!(!printer.in_char_run.get());
+    }
 }

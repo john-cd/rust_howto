@@ -8,3 +8,14 @@ mod serde_saphyr;
 fn main() -> anyhow::Result<()> {
     serde_saphyr::run()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the example through its entry point.
+    #[test]
+    fn main_runs() {
+        main().expect("the example should run");
+    }
+}

@@ -49,4 +49,41 @@ mod tests {
     fn test_configparser_ini_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
+    /// Keys are case-insensitive and typed getters parse the value.
+    #[test]
+    fn reads_typed_values() -> anyhow::Result<()> {
+        let mut config = Ini::new();
+        config
+            .read("[server]\nhost = 127.0.0.1\nport = 8080\n".to_owned())
+            .map_err(anyhow::Error::msg)?;
+        assert_eq!(config.get("SERVER", "HOST").as_deref(), Some("127.0.0.1"));
+        assert_eq!(
+            config
+                .getuint("server", "port")
+                .map_err(anyhow::Error::msg)?,
+            Some(8080)
+        );
+        assert_eq!(config.get("server", "missing"), None);
+        Ok(())
+    }
+
+    /// A non-numeric port is an error, not a silent default.
+    #[test]
+    fn invalid_number_is_an_error() {
+        let mut config = Ini::new();
+        config.read("[server]\nport = abc\n".to_owned()).unwrap();
+        assert!(config.getuint("server", "port").is_err());
+    }
+
+    /// Updated values show up in the serialized configuration.
+    #[test]
+    fn updated_value_is_written() {
+        let mut config = Ini::new();
+        config
+            .read("[server]\nhost = 127.0.0.1\n".to_owned())
+            .unwrap();
+        config.setstr("server", "host", Some("0.0.0.0"));
+        assert!(config.writes().contains("host=0.0.0.0"));
+    }
 }

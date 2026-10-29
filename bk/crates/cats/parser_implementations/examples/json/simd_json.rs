@@ -101,4 +101,36 @@ mod tests {
     fn test_simd_json_example_entry_point() {
         main();
     }
+
+    /// Typed accessors read the parsed values.
+    #[test]
+    fn reads_values() {
+        let mut data =
+            br#"{"name": "Alice", "age": 30, "nested": {"value": true}}"#
+                .to_vec();
+        let json = simd_json::to_borrowed_value(&mut data).expect("valid JSON");
+        assert_eq!(json.get_str("name"), Some("Alice"));
+        assert_eq!(json.get_u64("age"), Some(30));
+        assert_eq!(
+            json.get("nested").and_then(|n| n.get_bool("value")),
+            Some(true)
+        );
+        assert_eq!(json.get_str("missing"), None);
+    }
+
+    /// The owned value can be modified.
+    #[test]
+    fn owned_value_can_be_modified() {
+        let mut data = br#"{"name": "Alice"}"#.to_vec();
+        let mut owned = simd_json::to_owned_value(&mut data).unwrap();
+        *owned.get_mut("name").unwrap() = OwnedValue::from("Bob");
+        assert_eq!(owned.get_str("name"), Some("Bob"));
+    }
+
+    /// Invalid JSON is an error.
+    #[test]
+    fn invalid_json_is_rejected() {
+        let mut data = b"{\"name\": ".to_vec();
+        assert!(simd_json::to_borrowed_value(&mut data).is_err());
+    }
 }

@@ -81,4 +81,26 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Elements and attributes can be navigated.
+    #[test]
+    fn navigates_the_tree() -> anyhow::Result<()> {
+        let doc = Document::parse(r#"<a id="1"><b>x</b><b>y</b></a>"#)?;
+        let root = doc.root_element();
+        assert_eq!(root.tag_name().name(), "a");
+        assert_eq!(root.attribute("id"), Some("1"));
+        let texts: Vec<_> = root
+            .children()
+            .filter(|n| n.has_tag_name("b"))
+            .filter_map(|n| n.text())
+            .collect();
+        assert_eq!(texts, ["x", "y"]);
+        Ok(())
+    }
+
+    /// Mismatched tags are a parse error.
+    #[test]
+    fn malformed_xml_is_rejected() {
+        assert!(Document::parse("<a><b></a>").is_err());
+    }
 }

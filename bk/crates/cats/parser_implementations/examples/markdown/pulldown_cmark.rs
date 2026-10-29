@@ -69,4 +69,35 @@ mod tests {
     fn test_pulldown_cmark_example_entry_point() {
         main();
     }
+
+    /// Renders markdown with all extensions enabled.
+    fn render(input: &str) -> String {
+        let mut html_output = String::new();
+        html::push_html(
+            &mut html_output,
+            Parser::new_ext(input, Options::all()),
+        );
+        html_output
+    }
+
+    /// Headings, lists and fenced code blocks are rendered.
+    #[test]
+    fn renders_blocks() {
+        let html = render("# Hi\n\n* a\n* b\n\n```rust\nfn x() {}\n```\n");
+        assert!(html.contains("<h1>Hi</h1>"), "{html}");
+        assert!(html.contains("<li>b</li>"), "{html}");
+        assert!(html.contains("<code class=\"language-rust\">"), "{html}");
+    }
+
+    /// Enabled extensions such as strikethrough are applied.
+    #[test]
+    fn extensions_are_enabled() {
+        assert!(render("~~gone~~").contains("<del>gone</del>"));
+    }
+
+    /// Empty input renders nothing.
+    #[test]
+    fn empty_input_renders_nothing() {
+        assert_eq!(render(""), "");
+    }
 }

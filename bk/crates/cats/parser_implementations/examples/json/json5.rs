@@ -78,4 +78,29 @@ mod tests {
     fn test_json5_example_entry_point() {
         main();
     }
+
+    /// JSON5 extensions are accepted.
+    #[test]
+    fn parses_json5_extensions() {
+        let value: Value = json5::from_str(
+            "{unquoted: 'x', list: [1, 2,], 'quoted key': true}",
+        )
+        .expect("valid JSON5");
+        assert_eq!(value["unquoted"], "x");
+        assert_eq!(value["list"], serde_json::json!([1, 2]));
+        assert_eq!(value["quoted key"], true);
+    }
+
+    /// Hexadecimal numbers are converted.
+    #[test]
+    fn parses_hexadecimal() {
+        let value: Value = json5::from_str("{hex: 0xDEADbeef}").unwrap();
+        assert_eq!(value["hex"], 0xDEAD_BEEF_u64);
+    }
+
+    /// Malformed input is an error.
+    #[test]
+    fn rejects_malformed_input() {
+        assert!(json5::from_str::<Value>("{unterminated: ").is_err());
+    }
 }

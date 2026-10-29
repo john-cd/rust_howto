@@ -86,4 +86,43 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    const SAMPLE: &str =
+        r#"{"name": "John Doe", "age": 42, "phones": ["+1 123", "+1 234"]}"#;
+
+    /// The typed and untyped parses agree.
+    #[test]
+    fn typed_and_untyped_parsing_agree() -> Result<()> {
+        let value: Value = serde_json::from_str(SAMPLE)?;
+        let user: User = serde_json::from_str(SAMPLE)?;
+        assert_eq!(value["name"], user.name.as_str());
+        assert_eq!(user.age, 42);
+        assert_eq!(user.phones, ["+1 123", "+1 234"]);
+        Ok(())
+    }
+
+    /// Serialization round-trips.
+    #[test]
+    fn serialization_round_trips() -> Result<()> {
+        let user: User = serde_json::from_str(SAMPLE)?;
+        let text = serde_json::to_string(&user)?;
+        assert_eq!(
+            serde_json::from_str::<Value>(&text)?,
+            serde_json::from_str::<Value>(SAMPLE)?
+        );
+        Ok(())
+    }
+
+    /// A value out of range for `u8` is rejected.
+    #[test]
+    fn out_of_range_age_is_rejected() {
+        let text = r#"{"name": "x", "age": 300, "phones": []}"#;
+        assert!(serde_json::from_str::<User>(text).is_err());
+    }
+
+    /// Truncated input is an error.
+    #[test]
+    fn truncated_input_is_rejected() {
+        assert!(serde_json::from_str::<Value>(r#"{"name": "#).is_err());
+    }
 }

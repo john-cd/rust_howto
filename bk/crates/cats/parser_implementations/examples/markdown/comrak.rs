@@ -79,4 +79,31 @@ mod tests {
     fn test_comrak_example_entry_point() {
         main();
     }
+
+    /// Text nodes are replaced, markup is kept.
+    #[test]
+    fn replaces_text_in_the_document() {
+        let html = replace_text(
+            "This is my input.\n\n1. Also [my](#) input.\n",
+            "my",
+            "your",
+        );
+        assert!(html.contains("<p>This is your input.</p>"), "{html}");
+        assert!(html.contains("<a href=\"#\">your</a>"), "{html}");
+    }
+
+    /// A document without the text is unchanged.
+    #[test]
+    fn no_match_leaves_text_unchanged() {
+        let html = replace_text("plain *text*", "absent", "x");
+        assert_eq!(html.trim(), "<p>plain <em>text</em></p>");
+    }
+
+    /// Markdown is converted to HTML.
+    #[test]
+    fn converts_markdown_to_html() {
+        let html = markdown_to_html("# Hi\n\n**b**", &Options::default());
+        assert!(html.contains("<h1>Hi</h1>"));
+        assert!(html.contains("<strong>b</strong>"));
+    }
 }

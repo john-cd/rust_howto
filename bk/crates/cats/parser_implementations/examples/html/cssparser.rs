@@ -54,4 +54,30 @@ mod tests {
     fn test_cssparser_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
+    /// Collects the tokens of a CSS snippet as strings.
+    fn tokens(css: &str) -> Vec<String> {
+        let mut parser = Parser::new(css);
+        let mut out = Vec::new();
+        while let Ok(token) = parser.next() {
+            out.push(token.to_css_string());
+        }
+        out
+    }
+
+    /// The declaration list is split into identifiers, colons and dimensions.
+    #[test]
+    fn tokenizes_a_declaration_list() {
+        let tokens = tokens("color: red; font-size: 16px;");
+        assert_eq!(
+            tokens,
+            ["color", ":", "red", ";", "font-size", ":", "16px", ";"]
+        );
+    }
+
+    /// An empty input yields no tokens.
+    #[test]
+    fn empty_input_has_no_tokens() {
+        assert!(tokens("").is_empty());
+    }
 }

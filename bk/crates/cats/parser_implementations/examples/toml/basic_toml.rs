@@ -116,4 +116,46 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    const SAMPLE: &str = r#"
+        [server]
+        host = "127.0.0.1"
+        port = 8080
+        reset_datetime = 1431684000
+        features = ["auth"]
+
+        [limits]
+        requests_per_minute = 60
+    "#;
+
+    /// The document is deserialized into the typed configuration.
+    #[test]
+    fn parses_the_configuration() -> anyhow::Result<()> {
+        let config: Config = toml::from_str(SAMPLE)?;
+        assert_eq!(config.server.host, "127.0.0.1");
+        assert_eq!(config.server.port, 8080);
+        assert_eq!(config.server.debug, None);
+        assert_eq!(config.server.features, ["auth"]);
+        assert_eq!(config.server.reset_datetime.timestamp(), 1_431_684_000);
+        assert_eq!(config.limits["requests_per_minute"], 60);
+        Ok(())
+    }
+
+    /// Serialization and parsing round-trip.
+    #[test]
+    fn round_trips() -> anyhow::Result<()> {
+        let config: Config = toml::from_str(SAMPLE)?;
+        let again: Config = toml::from_str(&toml::to_string(&config)?)?;
+        assert_eq!(again.server.port, config.server.port);
+        assert_eq!(again.limits, config.limits);
+        Ok(())
+    }
+
+    /// Wrong types and missing fields are errors.
+    #[test]
+    fn invalid_document_is_rejected() {
+        let invalid = "[server]\nhost = \"h\"\nport = \"8080\"\n";
+        assert!(toml::from_str::<Config>(invalid).is_err());
+        assert!(toml::from_str::<Config>("").is_err());
+    }
 }

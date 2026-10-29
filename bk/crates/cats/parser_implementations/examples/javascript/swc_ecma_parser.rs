@@ -64,4 +64,36 @@ mod tests {
     fn test_swc_ecma_parser_example_entry_point() {
         main();
     }
+
+    /// Parses a snippet into a program, or returns the parse error.
+    fn parse(source: &'static str) -> Result<Program, String> {
+        let cm: Lrc<swc_common::SourceMap> = Default::default();
+        let fm = cm
+            .new_source_file(FileName::Custom("test.js".into()).into(), source);
+        let lexer = Lexer::new(
+            Syntax::Es(EsSyntax::default()),
+            EsVersion::latest(),
+            StringInput::from(&*fm),
+            None,
+        );
+        Parser::new_from(lexer)
+            .parse_program()
+            .map_err(|e| format!("{e:?}"))
+    }
+
+    /// A `const` declaration is parsed as a script with one statement.
+    #[test]
+    fn parses_a_const_declaration() {
+        let program = parse("const a = 1;").expect("valid JavaScript");
+        let Program::Script(script) = program else {
+            panic!("expected a script");
+        };
+        assert_eq!(script.body.len(), 1);
+    }
+
+    /// Invalid JavaScript is reported as an error.
+    #[test]
+    fn rejects_invalid_syntax() {
+        assert!(parse("const = ;").is_err());
+    }
 }

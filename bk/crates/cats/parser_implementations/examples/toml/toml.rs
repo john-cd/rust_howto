@@ -73,4 +73,24 @@ mod tests {
     fn test_toml_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
+    /// The sample document is parsed into the typed structure.
+    #[test]
+    fn parses_the_sample() {
+        let config: Config = toml::from_str(
+            "title = \"T\"\n[database]\nserver = \"s\"\nports = [1, 2]\n\
+             connection_max = 5\nenabled = true\ndate = 1979-05-27T07:32:00Z\n",
+        )
+        .expect("valid TOML");
+        assert_eq!(config.title, "T");
+        assert_eq!(config.database.ports, [1, 2]);
+        assert!(config.database.enabled);
+        assert_eq!(config.database.date.to_string(), "1979-05-27T07:32:00Z");
+    }
+
+    /// A missing table is an error.
+    #[test]
+    fn missing_table_is_an_error() {
+        assert!(toml::from_str::<Config>("title = \"T\"").is_err());
+    }
 }
