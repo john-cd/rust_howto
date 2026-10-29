@@ -1,3 +1,10 @@
 # TODO Reviewed 10-26-2026
 
 # Shared build paths and sccache settings are inherited from the root .cargo/config.toml.
+
+# Lean debug info: halves build time and target size; panics keep readable backtraces.
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+debug = 0
