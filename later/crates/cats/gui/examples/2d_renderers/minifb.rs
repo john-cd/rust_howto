@@ -78,6 +78,11 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Opens the minifb window.
+pub fn run() -> Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
