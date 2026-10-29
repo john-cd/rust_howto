@@ -1,80 +1,62 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Connects to a Microsoft SQL Server database, executes a query, and prints
-//! the result.
+//! Connects to SQL Server with explicit credentials and runs a parameterized
+//! query.
 
-// This example demonstrates connecting to and querying Microsoft SQL Server
-// using the `tiberius` crate.
-use futures::stream::TryStreamExt as _;
+use anyhow::Context;
+use anyhow::Result;
 use tiberius::AuthMethod;
 use tiberius::Client;
 use tiberius::Config;
-use tiberius::QueryItem;
-use tiberius::QueryStream;
+use tiberius::EncryptionLevel;
 use tokio_util::compat::TokioAsyncWriteCompatExt as _;
 
-// Example of connecting to a Microsoft SQL Server database using the `tiberius`
-// crate.
-//
-// In your `Cargo.toml`, add the following dependencies:
-// [dependencies]
-// tiberius = "0.12.3"
-// tokio-util = { version = "0.7.13", features = [ "compat" ] }
-
-/// Connects to a Microsoft SQL Server database, executes a query, and prints
-/// the result.
+/// Connects with TLS, binds a query parameter, and checks the returned value.
 #[tokio::main]
-async fn main() -> anyhow::Result<()> {
-    let host =
-        std::env::var("MSSQL_HOST").unwrap_or_else(|_| "localhost".into());
-    // Configure connection to SQL Server.
+async fn main() -> Result<()> {
+    // ANCHOR: connect
+    let host = std::env::var("MSSQL_HOST")
+        .context("set MSSQL_HOST to the SQL Server host")?;
+    let user = std::env::var("MSSQL_USER")
+        .context("set MSSQL_USER to the SQL login")?;
+    let password = std::env::var("MSSQL_PASSWORD")
+        .context("set MSSQL_PASSWORD to the SQL login password")?;
     let mut config = Config::new();
     config.host(host);
     config.port(1433);
-    config.authentication(AuthMethod::sql_server("sa", "password123!"));
-    config.database("master"); // You can change this to your database name
-
-    // Open a connection to SQL Server.
-    let tcp_stream = tokio::net::TcpStream::connect(config.get_addr()).await?;
-    // Sets the value of the TCP_NODELAY option on this socket.
-    // If set, segments are always sent as soon as possible,
-    // even if there is only a small amount of data.
-    // When not set, data is buffered until there is a sufficient amount to send
-    // out, thereby avoiding the frequent sending of small packets.
-    tcp_stream.set_nodelay(true)?;
-    let mut client = Client::connect(config, tcp_stream.compat_write()).await?;
-
-    // Run a simple query to check the connection.
-    let q = "SELECT TOP 1 name FROM sys.databases";
-    let mut query_stream: QueryStream = client.query(q, &[]).await?;
-
-    // Process the result.
-    while let Some(item) = query_stream.try_next().await? {
-        match item {
-            QueryItem::Metadata(_meta) => {
-                // ...
-            }
-            QueryItem::Row(row) => {
-                // Retrieve a column value for a given column index, which can
-                // either be the zero-indexed position or the
-                // name of the column.
-                let db_name: &str = row
-                    .get(0)
-                    .ok_or_else(|| anyhow::anyhow!("row.get error"))?;
-                println!("Database name: {db_name}");
-            }
-        }
-        // Or use `into_row_stream(self)` to get a stream of rows directly.
+    config.database("master");
+    config.authentication(AuthMethod::sql_server(user, password));
+    config.encryption(EncryptionLevel::Required);
+    // Local development only: opt in for a self-signed test server.
+    if std::env::var("MSSQL_TRUST_CERT").as_deref() == Ok("1") {
+        config.trust_cert();
     }
+    let socket = tokio::net::TcpStream::connect(config.get_addr()).await?;
+    socket.set_nodelay(true)?;
+    let mut client = Client::connect(config, socket.compat_write()).await?;
+    // ANCHOR_END: connect
 
-    // Close the connection.
+    // ANCHOR: query
+    let value = 41_i32;
+    let row = client
+        .query("SELECT @P1 + 1 AS answer", &[&value])
+        .await?
+        .into_row()
+        .await?
+        .context("SQL Server returned no row")?;
+    let answer: i32 = row
+        .try_get("answer")?
+        .context("the answer column was NULL")?;
+    anyhow::ensure!(answer == 42, "unexpected query result: {answer}");
+    println!("Query result: {answer}");
+    // ANCHOR_END: query
     Ok(())
 }
-
 // ANCHOR_END: example
 
-pub fn run() -> anyhow::Result<()> {
+/// Runs the SQL Server connection and query workflow.
+pub fn run() -> Result<()> {
     main()
 }
 
@@ -82,22 +64,10 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Runs the example against its required external service.
+    /// Verifies an actual parameterized query against a configured SQL Server.
     #[test]
-    #[ignore = "Requires an external Microsoft SQL Server instance"]
-    fn require_external_svc() -> anyhow::Result<()> {
-        if std::env::var("MSSQL_HOST").is_err() {
-            eprintln!(
-                "Skipping MSSQL integration test; set MSSQL_HOST to run this test."
-            );
-            return Ok(());
-        }
-        main()?;
-        Ok(())
+    #[ignore = "needs SQL Server"]
+    fn parameterized_query_returns_the_expected_value() -> Result<()> {
+        main()
     }
 }
-// fix heavy test
-// unsafe {
-//     // Refer to the `compose*.yaml` files.
-//     std::env::set_var("MSSQL_HOST", "rust_howto_dev-mssql-1");
-// }

@@ -143,7 +143,7 @@ tiberius = { version = "0.13.0", default-features = false, features = [
     "tds73",
 ], optional = true }
 # Bound the connection attempt in the Cassandra client example.
-tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time"] }
+tokio = { version = "1.54.1", features = ["macros", "net", "rt-multi-thread", "time"] }
 tokio-postgres = { version = "0.7.18", optional = true }
 tokio-util = { version = "0.7.20", features = ["compat"] }
 url = "2.5.8" # Validate Elasticsearch endpoints and their security policy.
