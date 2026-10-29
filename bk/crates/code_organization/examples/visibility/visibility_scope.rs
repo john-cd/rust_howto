@@ -24,8 +24,7 @@ mod a {
     }
 
     /// Calls the functions visible in `a`.
-    #[expect(dead_code, reason = "declared to illustrate it; never used")]
-    fn use_in_a() {
+    pub fn use_in_a() {
         b::visible_in_crate();
         b::visible_in_parent_module();
         b::c::visible_in_a();
@@ -35,8 +34,7 @@ mod a {
 /// A module that is not related to `a`.
 mod d {
     /// Calls the functions visible in `d`.
-    #[expect(dead_code, reason = "declared to illustrate it; never used")]
-    fn use_in_d() {
+    pub fn use_in_d() {
         super::a::b::visible_in_crate();
         // ERROR: super::a::b::visible_in_parent_module();
         // ERROR: super::a::b::c::visible_in_a();
@@ -46,6 +44,8 @@ mod d {
 /// Calls the functions that are visible from here.
 fn main() {
     println!("{}", a::b::visible_in_crate());
+    a::use_in_a();
+    d::use_in_d();
     // ERROR: a::b::visible_in_parent_module();
     // ERROR: a::b::c::visible_in_a();
     println!(

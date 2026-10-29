@@ -1,9 +1,5 @@
 #![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Accessing private items from the same module and its children.
 
@@ -19,6 +15,11 @@ mod private_module {
         // `private_in_parent` is accessible,
         // since it is in a parent module.
         super::private_in_parent();
+    }
+
+    /// A public function, which can use the private items of its module.
+    pub fn not_private() {
+        also_private();
     }
 
     /// A private submodule.
@@ -39,6 +40,9 @@ fn main() {
     // ERROR: private_module::also_private();
     // ERROR: alias::also_private();
     // ERROR: use private_module::submodule;
+
+    // A public function may expose the behavior of private ones:
+    alias::not_private();
     println!(
         "private_access example: private items accessed only from parent/same module"
     );

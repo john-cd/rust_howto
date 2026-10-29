@@ -1,9 +1,5 @@
 #![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Which items are accessible through nested public and private modules.
 
@@ -14,6 +10,8 @@ mod a_module {
 
     /// A public function.
     pub fn public() -> &'static str {
+        private();
+        private_nested_module::public();
         "a_module::public"
     }
 
@@ -24,6 +22,7 @@ mod a_module {
 
         /// A public function.
         pub fn public() -> &'static str {
+            private();
             "public_nested_module::public"
         }
     }
@@ -34,7 +33,9 @@ mod a_module {
         fn private() {}
 
         /// A public function.
-        pub fn public() {}
+        pub fn public() {
+            private();
+        }
     }
 }
 
@@ -55,6 +56,7 @@ fn main() {
     // ERROR: a_module::public_nested_module::private();
     // ERROR: a_module::private_nested_module::private();
     // ERROR: a_module::private_nested_module::public();
+    call_sibling();
     println!(
         "public_access example: public items in public modules are accessible"
     );
@@ -64,7 +66,7 @@ fn main() {
 /// A module that is a sibling of `a_module`.
 mod another_module {
     /// Calls the items accessible from this module.
-    fn call() {
+    pub fn call() {
         // `super` refers to the parent and is therefore accessible
         // from the child.
         super::a_module::public();
@@ -72,6 +74,11 @@ mod another_module {
         super::a_module::public_nested_module::public();
         // ERROR: super::a_module::private_nested_module::public();
     }
+}
+
+/// Calls the function of the sibling module.
+fn call_sibling() {
+    another_module::call();
 }
 // ANCHOR_END: example
 

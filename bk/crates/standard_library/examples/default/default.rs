@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! The `Default` trait provides a way to create a default value for a type.
 //! It initializes a struct without manually specifying every field.
@@ -51,15 +47,27 @@ impl Default for Config2 {
 fn main() {
     let config = Config::default();
     println!("{config:?}");
+    println!(
+        "{} {} {:?} {}",
+        config.timeout, config.retries, config.endpoint, config.logging_enabled
+    );
 
     let config2 = Config2::default();
     println!("{config2:?}");
+    println!(
+        "{} {} {} {}",
+        config2.timeout,
+        config2.retries,
+        config2.endpoint,
+        config2.logging_enabled
+    );
 
     // We can also use struct update syntax to override specific fields:
-    let _custom_config = Config {
+    let custom_config = Config {
         timeout: 10000,
         ..Config::default()
     };
+    println!("{}", custom_config.timeout);
 }
 // ANCHOR_END: example
 

@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Basic `Box` usage.
 
@@ -27,7 +23,7 @@ fn main() {
     // Dereference the `Box` to get the value,
     // moving the value from the heap to the stack:
     let in_stack = *in_heap;
-    println!("{in_stack:?}");
+    println!("{in_stack:?} holds {}", in_stack.0);
     // ERROR: println!("{in_heap:?}"); // `in_heap` has been moved.
 
     // If the inner value is `Copy`:

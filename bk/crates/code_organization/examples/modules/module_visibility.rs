@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Visibility of items in modules.
 
@@ -46,14 +42,18 @@ mod my_module {
     mod nested_private_module {
         /// A public function of a private module; not reachable from outside
         /// it.
-        #[expect(dead_code, reason = "declared to illustrate it; never used")]
-        pub fn nested_public_in_private_module() {}
+        pub fn nested_public_in_private_module() {
+            println!("Called nested_public_in_private_module.");
+        }
     }
 
     // This function calls another in its parent module.
     // This is always allowed, even if private.
     /// Calls a private function of the parent module.
     pub fn call_func_in_parent_module() -> &'static str {
+        // Private items are usable from the module itself and its children:
+        private_function();
+        nested_private_module::nested_public_in_private_module();
         // `super` in a path refers to the parent module.
         super::private_in_top_module()
     }

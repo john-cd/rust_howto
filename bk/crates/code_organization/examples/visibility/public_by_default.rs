@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Enum variants and trait items are public by default; struct fields are not.
 
@@ -28,6 +24,11 @@ mod a_module {
         pub fn new(val: bool) -> Self {
             Self { private_val: val }
         }
+
+        /// Public method, which can read the private field.
+        pub fn val(&self) -> bool {
+            self.private_val
+        }
     }
 
     /// Public struct with a public field.
@@ -45,17 +46,31 @@ mod a_module {
         /// A method, public like the trait.
         fn method(&self) -> Self::Out;
     }
+
+    impl Trait for PublicStruct {
+        type Out = bool;
+
+        fn method(&self) -> bool {
+            self.private_val
+        }
+    }
 }
 
 /// Uses the public items of the module.
 fn main() {
     let _ = a_module::Enum::Variant;
-    let _ = a_module::PublicStructPublicField { public_val: true };
+    let s = a_module::PublicStructPublicField { public_val: true };
+    println!("public_val = {}", s.public_val);
 
     // We can't access `private_val`,
     // but we can use the public associated function to create the struct:
     // ERROR: let _ = a_module::PublicStruct { private_val: true };
-    let _ = a_module::PublicStruct::new(false);
+    let p = a_module::PublicStruct::new(false);
+    println!("private_val = {}", p.val());
+
+    // Use the public trait:
+    use a_module::Trait;
+    println!("method = {}", p.method());
     println!(
         "public_by_default example: enum variants and trait items are public by default"
     );

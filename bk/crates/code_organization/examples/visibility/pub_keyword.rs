@@ -1,9 +1,5 @@
 #![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! The `pub` keyword on functions, types, traits and modules.
 
@@ -14,6 +10,7 @@ mod m {
 
     /// Public function.
     pub fn public_function() -> &'static str {
+        private_function(); // A private function is callable from the same module.
         "public_function"
     }
 

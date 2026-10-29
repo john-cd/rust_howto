@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! The `derive_more` crate extends Rust's built-in derive functionality to
 //! provide more automatic implementations for common traits.
@@ -85,6 +81,7 @@ fn main() {
 
     // Using `Constructor`.
     let user = User::new(UserId(12345), "Alice".to_owned(), true);
+    println!("{} {} {}", user.id, user.name, user.active);
     println!("{user:?}"); // User { id: UserId(12345), name: "Alice", active: true }.
 
     // Using `Deref` and `DerefMut`.

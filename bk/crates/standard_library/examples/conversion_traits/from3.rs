@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Parsing from raw bytes.
 
@@ -23,6 +19,7 @@ fn main() {
     let raw: &[u8] = b"Hello world";
     let msg: Message = raw.into(); // Use `From<&[u8]>`.
     println!("{msg:?}");
+    println!("{}", msg.0);
 }
 
 // ANCHOR_END: example

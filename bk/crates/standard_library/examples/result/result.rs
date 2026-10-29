@@ -74,7 +74,6 @@ fn read_and_parse_file(file_path: &str) -> Result<i32, MyError> {
 }
 
 /// An error that wraps I/O and parsing errors.
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
 #[derive(Debug)]
 enum MyError {
     /// An I/O error.
@@ -115,7 +114,6 @@ impl From<ParseIntError> for MyError {
 // Use it when writing libraries, in which case custom error types are
 // recommended.
 /// An error that wraps I/O and parsing errors, defined with `thiserror`.
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
 #[derive(thiserror::Error, Debug)]
 enum MyError2 {
     /// An I/O error.
@@ -124,6 +122,15 @@ enum MyError2 {
     /// A parsing error.
     #[error("Parse error")]
     Parse(#[from] ParseIntError),
+}
+
+/// Reads a number from a file, with the `thiserror` error type.
+fn read_and_parse_file_thiserror(file_path: &str) -> Result<i32, MyError2> {
+    let mut file = File::open(file_path)?;
+    let mut contents = String::new();
+    file.read_to_string(&mut contents)?;
+    let number = contents.trim().parse()?;
+    Ok(number)
 }
 
 // A simpler method than returning a custom error type
@@ -177,6 +184,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _ = read_file(file_path);
     let _ = read_file2(file_path);
     let _ = read_and_parse_file(file_path);
+    let _ = read_and_parse_file_thiserror(file_path);
     let _ = read_and_parse_file2(file_path);
     let _ = read_and_parse_file3(file_path);
     let _ = unit_return_value(file_path);

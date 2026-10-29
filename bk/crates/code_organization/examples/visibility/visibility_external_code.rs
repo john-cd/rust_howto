@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! In the crate root:
 
@@ -36,6 +32,8 @@ mod crate_helper_module {
 
 /// Calls the function of the private module.
 fn main() {
+    println!("{}", public_to_external_crates());
+    println!("{}", public_api::also_public_to_external_crates());
     println!("{}", crate_helper_module::crate_helper());
     println!(
         "visibility_external_code example: public and private visibility in a crate"
