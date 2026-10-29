@@ -72,3 +72,16 @@
 [p~unix]: ../os_unix-apis/unix.md
 [p~visualization]: ../visualization/visualization.md
 [p~physics-engines]: ../simulation/physics_engines.md
+
+[c~embedded-hal-mock~docs]: https://docs.rs/embedded-hal-mock/0.11.1/embedded_hal_mock/eh1/i2c/
+[c~kiddo~docs]: https://docs.rs/kiddo/6.3.0/kiddo/
+[c~nokhwa~docs]: https://docs.rs/nokhwa
+[c~dynpick-force-torque-sensor~docs]: https://docs.rs/dynpick-force-torque-sensor
+[c~freenect-rs~docs]: https://docs.rs/freenect-rs
+[c~hls_lfcd_lds_rs~docs]: https://docs.rs/hls_lfcd_lds_rs
+[c~leptrino-force-torque-sensor~docs]: https://docs.rs/leptrino-force-torque-sensor
+[c~realsense-rust~docs]: https://docs.rs/realsense-rust
+[c~safe_drive~docs]: https://docs.rs/safe_drive
+[c~safe_drive~docs~badge]: https://img.shields.io/crates/v/safe_drive?label=safe_drive
+[c~optimization-engine~docs]: https://docs.rs/optimization_engine
+[c~ros_pointcloud2~docs]: https://docs.rs/ros_pointcloud2

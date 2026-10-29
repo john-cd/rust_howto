@@ -779,6 +779,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "array-init"
+version = "2.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3d62b7694a562cdf5a74227903507c56ab2cc8bdd1f781ed5cb4cf9c9f810bfc"
+
+[[package]]
 name = "arraydeque"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2597,6 +2603,12 @@ dependencies = [
  "tower-service",
  "tracing",
 ]
+
+[[package]]
+name = "az"
+version = "1.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "be5eb007b7cacc6c660343e96f650fedf4b5a77512399eb952ca6642cf8d13f7"
 
 [[package]]
 name = "backon"
@@ -7748,6 +7760,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "361a90feb7004eca4019fb28352a9465666b24f840f5c3cddf0ff13920590b89"
 
 [[package]]
+name = "embedded-hal-mock"
+version = "0.11.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f9a0f04f8886106faf281c47b6a0e4054a369baedaf63591fdb8da9761f3f379"
+dependencies = [
+ "embedded-hal",
+ "embedded-hal-nb",
+]
+
+[[package]]
+name = "embedded-hal-nb"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fba4268c14288c828995299e59b12babdbe170f6c6d73731af1b4648142e8605"
+dependencies = [
+ "embedded-hal",
+ "nb",
+]
+
+[[package]]
 name = "embedded-io"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -9725,6 +9757,21 @@ checksum = "b8b2dc9b873cd1a8adb80aa5dcef9a8205f781a8a313d5ffb867248cb3bcb764"
 dependencies = [
  "parking_lot",
  "tracing",
+]
+
+[[package]]
+name = "generator"
+version = "0.8.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1be81b31c9ce4caf7f3178eeb90662bb1864d3ad363ec6bdada3201adff19c37"
+dependencies = [
+ "cc",
+ "cfg-if",
+ "libc",
+ "log",
+ "rustversion",
+ "windows-link 0.2.1",
+ "windows-result 0.4.1",
 ]
 
 [[package]]
@@ -13395,6 +13442,24 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2db585e1d738fc771bf08a151420d3ed193d9d895a36df7f6f8a9456b911ddc"
 
 [[package]]
+name = "kiddo"
+version = "6.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "032f79d801e9c4308f7aa16456bdd1b05deb43eb96f07d08c0a4f70db3b393b9"
+dependencies = [
+ "aligned-vec",
+ "array-init",
+ "az",
+ "cmov",
+ "generator",
+ "nonmax",
+ "num-traits",
+ "sorted-vec",
+ "tracing",
+ "yep-cache-line-size",
+]
+
+[[package]]
 name = "kittest"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -15396,6 +15461,12 @@ dependencies = [
  "security-framework-sys",
  "tempfile",
 ]
+
+[[package]]
+name = "nb"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8d5439c4ad607c3c23abf66de8c8bf57ba8adcd1f129e699851a6e43935d339d"
 
 [[package]]
 name = "ndarray"
@@ -20288,7 +20359,9 @@ dependencies = [
  "bonsai-bt",
  "clap",
  "embedded-hal",
+ "embedded-hal-mock",
  "futures",
+ "kiddo",
  "pathfinding",
  "pid",
  "r2r",
@@ -21525,6 +21598,12 @@ dependencies = [
  "windows-sys 0.61.2",
  "x11rb",
 ]
+
+[[package]]
+name = "sorted-vec"
+version = "0.8.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "238653bedf881fede50103cb7838b029e2b73d3d3d8e70d36f0a96be32a65c7b"
 
 [[package]]
 name = "space"
@@ -27042,6 +27121,16 @@ name = "yazi"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e01738255b5a16e78bbb83e7fbba0a1e7dd506905cfc53f4622d89015a03fbb5"
+
+[[package]]
+name = "yep-cache-line-size"
+version = "0.9.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "59dea97e5518f64cbb9468f2cd1ac59c9d0186eeb5ee6198d4bb8adfa1465499"
+dependencies = [
+ "libc",
+ "raw-cpuid",
+]
 
 [[package]]
 name = "yeslogic-fontconfig-sys"

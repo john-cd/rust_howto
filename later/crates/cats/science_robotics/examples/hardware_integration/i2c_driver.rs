@@ -142,10 +142,68 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use embedded_hal::i2c::ErrorKind;
+    use embedded_hal_mock::eh1::i2c::Mock;
+    use embedded_hal_mock::eh1::i2c::Transaction;
+
     use super::*;
 
+    /// Verifies the host runner's demonstration measurements.
     #[test]
     fn test_i2c_driver() {
         main();
+    }
+
+    /// Checks the exact address, register bytes, transaction order, and
+    /// readings.
+    #[test]
+    fn reads_registers_through_the_expected_transactions() {
+        let expectations = [
+            Transaction::write_read(
+                SENSOR_ADDR,
+                vec![REG_DEVICE_ID],
+                vec![0xA5],
+            ),
+            Transaction::write_read(
+                SENSOR_ADDR,
+                vec![REG_TEMP],
+                vec![0xF6, 0x80],
+            ),
+        ];
+        let bus = Mock::new(&expectations);
+        let mut completion = bus.clone();
+        let mut sensor = TemperatureSensor::new(bus);
+        assert_eq!(
+            sensor.read_device_id().expect("device ID read succeeds"),
+            0xA5
+        );
+        assert!(
+            (sensor
+                .read_temperature()
+                .expect("temperature read succeeds")
+                + 9.5)
+                .abs()
+                < f32::EPSILON
+        );
+        completion.done();
+    }
+
+    /// Propagates a failed I2C transaction instead of returning a measurement.
+    #[test]
+    fn propagates_bus_errors() {
+        let expectations =
+            [
+                Transaction::write_read(
+                    SENSOR_ADDR,
+                    vec![REG_TEMP],
+                    vec![0, 0],
+                )
+                .with_error(ErrorKind::Other),
+            ];
+        let bus = Mock::new(&expectations);
+        let mut completion = bus.clone();
+        let mut sensor = TemperatureSensor::new(bus);
+        assert_eq!(sensor.read_temperature(), Err(ErrorKind::Other));
+        completion.done();
     }
 }

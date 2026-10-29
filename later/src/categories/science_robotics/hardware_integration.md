@@ -42,7 +42,7 @@ Robots running Linux on single-board computers interface with onboard GPIO pins,
 
 The [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} crate defines hardware abstraction traits for I2C, SPI, digital I/O, PWM, and delay functions. Writing drivers against these traits ensures that the driver works identically on bare-metal microcontrollers (such as STM32 or RP2040) and host Linux systems (`linux-embedded-hal`).
 
-The following example implements a portable sensor driver generic over any `embedded_hal::i2c::I2c` implementation. The driver reads a device identification register and converts raw temperature bytes into degrees Celsius. Host-side tests verify driver logic using a mock I2C bus without physical hardware.
+The following example implements a portable sensor driver generic over any `embedded_hal::i2c::I2c` implementation. The driver reads a device identification register and converts raw temperature bytes into degrees Celsius. Host-side tests use [`embedded-hal-mock`][c~embedded-hal-mock~docs] to assert the exact address, register bytes, transaction order, negative-temperature decoding, and error propagation without physical hardware. The runner's illustrative mock is separate from these strict transaction expectations.
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/examples/hardware_integration/i2c_driver.rs:example}}

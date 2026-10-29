@@ -62,6 +62,7 @@ bonsai-bt = "0.14.0"
 clap = { version = "4.6.7", features = ["derive"] }
 embedded-hal = "1.0.0"
 futures = { version = "0.3.34", optional = true }
+kiddo.workspace = true
 pathfinding = "4.16.0"
 pid = "4.0.0"
 r2r = { version = "0.9.7", optional = true }
@@ -81,6 +82,9 @@ tracing-subscriber = "0.3.23"
 # [target.'cfg(not(target_os = "windows"))'.dependencies]
 # openrr = { version = "0.1.0", optional = true }
 # zenoh = { version = "1.10.1", optional = true }
+
+[dev-dependencies]
+embedded-hal-mock.workspace = true
 
 [features]
 # Requires a sourced ROS 2 installation and libclang; disabled by default.
