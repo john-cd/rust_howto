@@ -99,6 +99,35 @@ mod tests {
         Ok(())
     }
 
+    /// The message carries the expected headers and body.
+    #[test]
+    fn message_has_expected_headers_and_body() -> anyhow::Result<()> {
+        let message = build_message(
+            "Sender <sender@example.invalid>",
+            "recipient@example.invalid",
+        )?;
+        let raw = String::from_utf8(message.formatted())?;
+        assert!(raw.contains("Subject: Subject here"));
+        assert!(raw.contains("From: Sender <sender@example.invalid>"));
+        assert!(raw.contains("To: recipient@example.invalid"));
+        assert!(raw.contains("Content-Type: text/plain"));
+        assert!(raw.contains("Body text here"));
+        Ok(())
+    }
+
+    /// Malformed addresses are reported with context naming the variable.
+    #[test]
+    fn rejects_invalid_addresses() {
+        let error =
+            build_message("not an address", "recipient@example.invalid")
+                .expect_err("invalid sender must be rejected");
+        assert!(format!("{error:#}").contains("SMTP_FROM"));
+
+        let error = build_message("sender@example.invalid", "")
+            .expect_err("empty recipient must be rejected");
+        assert!(format!("{error:#}").contains("SMTP_TO"));
+    }
+
     /// Runs the example against its required external service.
     #[test]
     #[ignore = "needs SMTP credentials and a reachable SMTP relay"]
