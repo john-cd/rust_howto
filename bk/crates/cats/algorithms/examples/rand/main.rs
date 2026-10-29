@@ -46,7 +46,7 @@ enum Commands {
     /// Runs the `rand_range` example.
     #[command(name = "rand_range")]
     RandRange,
-    /// Runs the `rand_range1` example.
+    /// Runs the `rand_range_uniform` example.
     #[command(name = "rand_range_uniform")]
     RandRangeUniform,
 }

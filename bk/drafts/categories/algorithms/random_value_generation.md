@@ -29,7 +29,7 @@ This example generates a random value{{hi:Random value}} within the half-open `[
 Using `rand::distr::Uniform` has the same effect but may be faster than `rand::Rng::random_range` when repeatedly generating numbers in the same range:
 
 ```rust,editable
-{{#include ../../../crates/cats/algorithms/examples/rand/rand_range1.rs:example}}
+{{#include ../../../crates/cats/algorithms/examples/rand/rand_range_uniform.rs:example}}
 ```
 
 ## Generate Random Numbers Within a Given Distribution {#generate-random-numbers-within-a-given-distribution}

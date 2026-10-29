@@ -41,7 +41,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_rand_range1_example_entry_point() {
+    fn test_rand_range_uniform_example_entry_point() {
         main();
     }
 }
