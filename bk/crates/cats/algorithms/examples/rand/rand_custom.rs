@@ -10,10 +10,6 @@ use rand::distr::StandardUniform;
 
 /// A simple struct representing a point in 2D space.
 #[derive(Debug)]
-#[cfg_attr(
-    not(test),
-    expect(dead_code, reason = "declared to illustrate it; never used")
-)]
 struct Point {
     /// The horizontal coordinate.
     x: i32,
@@ -41,6 +37,7 @@ fn main() {
     // Generate a random `Point` using the custom implementation:
     let rand_point: Point = rng.random();
     println!("Random Point: {rand_point:?}");
+    println!("x = {}, y = {}", rand_point.x, rand_point.y);
 }
 
 // ANCHOR_END: example
