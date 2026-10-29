@@ -13,9 +13,17 @@ _default:
 
 ## ---- URL MANAGEMENT -----------------------------------
 
-# Check that URLs (to external websites) are valid and working.
+# Check that URLs (to external websites) are valid and working; exit nonzero on any failure.
 @check:
     ./check_urls.sh {{ root }}
+
+# Same as check, but report failures without failing (advisory).
+@check_advisory:
+    ./check_urls.sh --advisory {{ root }}
+
+# Run the check_urls.sh fixtures (no network access).
+@test:
+    bash ./test_check_urls.sh
 
 # List duplicated URLs (noting that they can't always be avoided).
 @list_duplicated:
