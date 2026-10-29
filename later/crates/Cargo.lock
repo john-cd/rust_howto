@@ -2692,7 +2692,7 @@ checksum = "2af50177e190e07a26ab74f8b1efbfe2ef87da2116221318cb1c2e82baf7de06"
 [[package]]
 name = "baseview"
 version = "0.4.2"
-source = "git+https://github.com/RustAudio/baseview?branch=master#4fe59b368f50573127fa1285767208781bc03cdf"
+source = "git+https://github.com/RustAudio/baseview?rev=4fe59b368f50573127fa1285767208781bc03cdf#4fe59b368f50573127fa1285767208781bc03cdf"
 dependencies = [
  "block2 0.6.2",
  "bytemuck",

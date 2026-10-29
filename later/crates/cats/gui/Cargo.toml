@@ -112,7 +112,9 @@ test = true
 [dependencies]
 anyhow = "1.0.104"
 arboard = "3.7.0"
-baseview = { git = "https://github.com/RustAudio/baseview", branch = "master" }
+# Git-only crate: pinned to a revision (it was the tip of `master` when last reviewed)
+# and optional so default builds do not fetch it. See issue #1056.
+baseview = { git = "https://github.com/RustAudio/baseview", rev = "4fe59b368f50573127fa1285767208781bc03cdf", optional = true }
 clap = { version = "4.6.7", features = ["derive"] }
 cosmic-text = "0.19.0"
 dioxus = { version = "0.7.10", optional = true }
@@ -167,6 +169,7 @@ i-slint-backend-testing = "=1.16.1" # Matches Slint's internal, non-semver testi
 
 [features]
 default = []
+baseview = ["dep:baseview"]
 dioxus = ["dep:dioxus", "dep:dioxus-ssr"]
 # These egui add-ons still depend on egui 0.34/0.36, not the egui 0.37 used by the other examples.
 egui_legacy = ["dep:egui-notify", "dep:egui-phosphor", "dep:egui_tiles", "dep:egui_tracing"]

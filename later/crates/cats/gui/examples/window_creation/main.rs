@@ -5,6 +5,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
+#[cfg(feature = "baseview")]
 mod baseview;
 // Tao's dependency is disabled because its current GTK 3 / glib 0.18 chain is
 // incompatible with the workspace. Keep tao.rs and the book example for a
@@ -23,6 +24,7 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `baseview` example.
+    #[cfg(feature = "baseview")]
     #[command(name = "baseview")]
     Baseview,
     /// Runs the `winit` example.
@@ -36,6 +38,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     if let Some(command) = cli.command {
         match command {
+            #[cfg(feature = "baseview")]
             Commands::Baseview => {
                 baseview::run()?;
             }

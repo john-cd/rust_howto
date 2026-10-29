@@ -11,6 +11,11 @@ book_root := clean(root + "/bk")
 code_root := clean(book_root + "/crates")
 rustfmt_toolchain_default := trim(replace_regex(read(join(root, "rustfmt-toolchain.toml")), '(?s).*channel\s*=\s*"([^"]+)".*', "$1"))
 rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
+# Features of the `database` package that build without Oracle's native OCI SDK.
+# `oracle` and `sibyl` need OCI_LIB_DIR (see bk/drafts/categories/database/oracle.md),
+# so workspace-wide recipes add them only when it is set.
+database_features := "cassandra,diesel,elasticsearch,lapin,lmdb,mongodb,mssql,postgres,redis,rocksdb,sea_orm,sqlx,sqlite"
+
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 
 [no-exit-message]
@@ -47,7 +52,8 @@ _default:
 # Check all code (all features)
 @checkall:
     echo "Check all code (all features) in {{ code_root }}"
-    cd {{ quote(code_root) }}; cargo check --workspace --all-targets --locked --all-features
+    cd {{ quote(code_root) }}; cargo check --workspace --exclude database --all-targets --locked --all-features
+    db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo check --package database --all-targets --locked --features "$db_features"
 
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
@@ -86,14 +92,16 @@ _default:
 # Build all code (all features)
 @buildall:
     echo "Build all code (all features) in {{ quote(code_root) }}"
-    cd {{ quote(code_root) }}; cargo build --workspace --all-targets --locked --all-features --timings
+    cd {{ quote(code_root) }}; cargo build --workspace --exclude database --all-targets --locked --all-features --timings
+    db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo build --package database --all-targets --locked --features "$db_features" --timings
 
 # Scan all code for common mistakes (all features)
 @clippyall:
     echo "Scan all code for common mistakes (all features) in {{ quote(code_root) }}"
     # sccache 0.18.0 expands the Leptos web-sys rustc arguments past Windows'
     # process command-line limit, so lint this package directly and separately.
-    cd {{ quote(code_root) }}; cargo clippy --workspace --exclude web_programming_http_server --all-targets --locked --all-features -- -D warnings
+    cd {{ quote(code_root) }}; cargo clippy --workspace --exclude web_programming_http_server --exclude database --all-targets --locked --all-features -- -D warnings
+    db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo clippy --package database --all-targets --locked --features "$db_features" -- -D warnings
     cd {{ quote(code_root) }}; RUSTC_WRAPPER= cargo clippy --package web_programming_http_server --all-targets --locked --all-features -- -D warnings
 
 # Test any doctests in the workspace
@@ -122,7 +130,8 @@ current_crate := file_name(invocation_directory())
 @nextestall: _clean_temp_dir && _clean_temp_dir
     echo "Test all code in {{ quote(code_root) }} (incl. doctests) (all features)"
     # sccache 0.18.0 expands web-sys rustc arguments past Windows' process command-line limit.
-    cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --exclude web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --exclude web_programming_http_server --exclude database --all-targets --locked --no-fail-fast --status-level all --all-features
+    db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package database --all-targets --locked --no-fail-fast --status-level all --features "$db_features"
     cd {{ quote(code_root) }}; RUSTC_WRAPPER= cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
     cd {{ quote(code_root) }}; cargo test --doc --workspace
 

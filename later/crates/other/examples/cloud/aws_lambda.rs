@@ -82,7 +82,10 @@ mod tests {
         Ok(())
     }
 
+    /// Starts the real Lambda runtime, which needs `AWS_LAMBDA_RUNTIME_API`
+    /// and the other variables that AWS Lambda (or `cargo lambda watch`) sets.
     #[test]
+    #[ignore = "requires the AWS Lambda runtime environment (AWS_LAMBDA_RUNTIME_API)"]
     fn test_main_entry_point() {
         if let Err(err) = main() {
             panic!("main failed: {err:?}");
