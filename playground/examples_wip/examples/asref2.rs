@@ -1,9 +1,23 @@
 // TODO Reviewed ??-??-2026.
-// TODO explain this is last resort
 
 #![expect(dead_code, reason = "scratch example with unused items")]
 // ANCHOR: example
-//! Implement `AsRef` to "emulate inheritance".
+//! Implement `AsRef` for a composed type, as a last resort.
+//!
+//! Rust has no inheritance or subtyping: `ImageFile` is not a `MediaFile`.
+//! `AsRef<MediaFile>` is only an explicit, cheap reference conversion, and a
+//! generic `M: AsRef<MediaFile>` bound accepts any type that can lend one.
+//!
+//! Prefer the simpler options first:
+//! - A narrow accessor (`fn get_file_size_bytes(&self)`) when callers need one
+//!   or two fields: it exposes only what is needed and hides the layout.
+//! - A domain-specific trait (for example `trait Media { fn id(&self) -> &str; }`)
+//!   when functions must work with several unrelated types: it names the
+//!   capability instead of the storage layout.
+//! - Taking `&MediaFile` directly and letting the caller pass `&image.media`.
+//!
+//! Reach for `AsRef` only when many functions already take `&MediaFile` and
+//! the projection boilerplate has become a real burden.
 
 // "Base type".
 /// A "base type" that stores the common data of media files.
@@ -45,8 +59,8 @@ impl ImageFile {
 }
 
 // In the (rare) cases where composition leads to writing a lot of boilerplate,
-// consider implementing `AsRef` to allow `ImageFile` to be treated as a
-// `&MediaFile`.
+// consider implementing `AsRef` to let `ImageFile` lend a `&MediaFile`.
+// This is a reference conversion, not an 'is-a' relationship.
 impl AsRef<MediaFile> for ImageFile {
     fn as_ref(&self) -> &MediaFile {
         &self.media
