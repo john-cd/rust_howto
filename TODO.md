@@ -60,19 +60,14 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### ACTIVE-CODE-04 — Cryptography and Windows APIs
 
-- [#705](https://github.com/john-cd/rust_howto/issues/705) — **P3** — Finish the X.509 certificate example — **PARTIAL; OPEN — book build blocked; human review pending**
-- [#822](https://github.com/john-cd/rust_howto/issues/822) — **P3** — Review and test the Windows API example — **PARTIAL; OPEN — book build blocked; human review pending**
 
 #### ACTIVE-CODE-05 — Parsing and XML
 
-- [#826](https://github.com/john-cd/rust_howto/issues/826) — **P3** — Finish and test the Pest arithmetic example — **PARTIAL; OPEN — book build blocked; human review pending**
-- [#1102](https://github.com/john-cd/rust_howto/issues/1102) — **P3** — Finish the XML parser example — **PARTIAL; OPEN — XML test blocked by onig_sys LNK1114; human review pending**
 
 #### ACTIVE-CODE-07 — Scheduling and sandboxed runtimes
 
 #### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
 
-- [#864](https://github.com/john-cd/rust_howto/issues/864) — **P3** — Finish Async-GraphQL with deterministic schema/query tests — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — HUMAN REVIEW MARKER PRESERVED**
 
 ### Prose and book structure
 
@@ -110,8 +105,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#780](https://github.com/john-cd/rust_howto/issues/780) — **P4** — Finish the GTK4 example G — **BLOCKED — GTK4 development SDK is unavailable on the current Windows host**
 - [#786](https://github.com/john-cd/rust_howto/issues/786) — **P4** — 2d_renderers/skia_safe.rs: finish — **BLOCKED — Skia requires external binary downloads or a C++ source build**
 - [#792](https://github.com/john-cd/rust_howto/issues/792) — **P4** — 2d_renderers/vger.rs: finish — **BLOCKED — upstream maintenance and WGPU API compatibility review needed**
-- [#793](https://github.com/john-cd/rust_howto/issues/793) — **P4** — 2d_renderers/webrender.rs: finish — **BLOCKED — required file deletion would remove its human-only TODO Reviewed marker**
-- [#1047](https://github.com/john-cd/rust_howto/issues/1047) — **P4** — 2d_renderers/main.rs: review — **BLOCKED — WebRender removal is held by the human-only marker constraint in #793**
 - [#1048](https://github.com/john-cd/rust_howto/issues/1048) — **P4** — clipboard/main.rs: review — **CLIPPY CLEAN; OPEN — entry-point test ignored without a desktop clipboard; run it in a desktop session**
 - [#1052](https://github.com/john-cd/rust_howto/issues/1052) — **P4** — retained_mode_gui/vizia.rs: finish — **BLOCKED — current Vizia API differs from the requested model/lens design; feature validation needed**
 - [#1056](https://github.com/john-cd/rust_howto/issues/1056) — **P4** — window_creation/baseview.rs: write; review — **BLOCKED — unpinned external Git dependency needs upstream review and feature-build validation**
