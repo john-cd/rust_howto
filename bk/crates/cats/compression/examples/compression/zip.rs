@@ -74,4 +74,30 @@ mod tests {
     fn test_zip_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
+    #[test]
+    fn archive_roundtrip_preserves_names_and_contents() -> anyhow::Result<()> {
+        use std::io::Read as _;
+
+        let dir = tempfile::tempdir()?;
+        let path = dir.path().join("a.zip");
+        let mut zip = ZipWriter::new(File::create(&path)?);
+        let options = SimpleFileOptions::default()
+            .compression_method(zip::CompressionMethod::Deflated);
+        zip.start_file("hello.txt", options)?;
+        zip.write_all(b"Test")?;
+        zip.add_directory("empty_folder", options)?;
+        zip.finish()?;
+
+        let mut archive = zip::ZipArchive::new(File::open(&path)?)?;
+        assert_eq!(archive.len(), 2);
+        let mut contents = String::new();
+        archive
+            .by_name("hello.txt")?
+            .read_to_string(&mut contents)?;
+        assert_eq!(contents, "Test");
+        assert!(archive.by_name("empty_folder/")?.is_dir());
+        assert!(archive.by_name("missing.txt").is_err());
+        Ok(())
+    }
 }

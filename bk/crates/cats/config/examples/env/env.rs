@@ -46,4 +46,10 @@ mod tests {
     fn test_env_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn env_extract_returns_the_compile_time_shell_or_the_default() {
+        let expected = option_env!("SHELL").unwrap_or("no shell set");
+        assert_eq!(env_extract(), expected);
+    }
 }

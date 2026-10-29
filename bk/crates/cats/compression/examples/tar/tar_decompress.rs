@@ -102,10 +102,29 @@ mod tests {
     }
 
     #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    fn test_main_entry_point() -> io::Result<()> {
+        let _guard = crate::tar_compress::SAMPLE_ARCHIVE_LOCK
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
+        // `main` unpacks the archive that the compression example creates.
+        crate::tar_compress::run()?;
+        main()?;
+        let unpacked = std::env::temp_dir().join(
+            "rust_howto_tar_compress_example/unpacked/backup/logs/example.txt",
+        );
+        assert_eq!(fs::read(unpacked)?, b"A file in the sample archive.\n");
+        Ok(())
+    }
+
+    #[test]
+    fn missing_archive_is_an_error() {
+        let dir = tempfile::tempdir().unwrap();
+        let err = decompress_archive(
+            &dir.path().join("missing.tar.gz"),
+            &dir.path().join("out"),
+        )
+        .expect_err("the archive does not exist");
+        assert_eq!(err.kind(), io::ErrorKind::NotFound);
     }
 }
 

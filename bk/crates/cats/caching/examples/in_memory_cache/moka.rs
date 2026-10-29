@@ -74,5 +74,38 @@ mod tests {
     fn test_moka_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn insert_get_and_invalidate() {
+        let cache = Cache::builder()
+            .max_capacity(100)
+            .time_to_idle(Duration::from_secs(600))
+            .build();
+        assert_eq!(cache.get("key1"), None);
+        cache.insert("key1", "value1");
+        assert_eq!(cache.get("key1"), Some("value1"));
+        cache.invalidate("key1");
+        assert_eq!(cache.get("key1"), None);
+    }
+
+    #[test]
+    fn clones_share_the_same_cache_across_threads() {
+        let cache: Cache<&str, &str> = Cache::new(10);
+        let clone = cache.clone();
+        std::thread::spawn(move || clone.insert("key2", "value2"))
+            .join()
+            .expect("worker thread should not panic");
+        assert_eq!(cache.get("key2"), Some("value2"));
+    }
+
+    #[test]
+    fn capacity_is_bounded() {
+        let cache: Cache<u32, u32> = Cache::new(5);
+        for i in 0..100 {
+            cache.insert(i, i);
+        }
+        cache.run_pending_tasks();
+        assert!(cache.entry_count() <= 5);
+    }
 }
 // Reference docs: <https://docs.rs/crate/moka/0.12.10>

@@ -189,4 +189,27 @@ mod tests {
         assert!(!outside_path.exists());
         Ok(())
     }
+
+    #[test]
+    fn main_extracts_the_sample_archive() -> anyhow::Result<()> {
+        fs::create_dir_all("temp")?;
+        create_archive(
+            Path::new("temp/archive.tar.gz"),
+            "bundle/logs/example.txt",
+        )?;
+        super::main()?;
+        assert_eq!(fs::read("temp/extracted/example.txt")?, b"hello world");
+        fs::remove_dir_all("temp/extracted")?;
+        fs::remove_file("temp/archive.tar.gz")?;
+        Ok(())
+    }
+
+    #[test]
+    fn missing_archive_is_an_error() {
+        let result = extract_archive(
+            "temp/does_not_exist.tar.gz",
+            "temp/does_not_exist_out",
+        );
+        assert!(result.is_err());
+    }
 }

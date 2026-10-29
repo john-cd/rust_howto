@@ -92,4 +92,35 @@ mod tests {
     fn test_async_zip_example_entry_point() -> Result<()> {
         main()
     }
+
+    #[tokio::test]
+    async fn archive_with_several_entries_lists_them_in_order() -> Result<()> {
+        let mut writer = ZipFileWriter::new(Vec::new().compat_write());
+        for (name, data) in [("a.txt", "first"), ("dir/b.txt", "second")] {
+            let entry =
+                ZipEntryBuilder::new(name.into(), Compression::Stored).build();
+            writer.write_entry_whole(entry, data.as_bytes()).await?;
+        }
+        let bytes = writer.close().await?.into_inner();
+
+        let mut reader = ZipArchiveReader::open(Cursor::new(bytes)).await?;
+        let names: Vec<String> = reader
+            .cdrs()
+            .iter()
+            .map(|c| c.insecure_file_name.as_str().unwrap().to_owned())
+            .collect();
+        assert_eq!(names, ["a.txt", "dir/b.txt"]);
+
+        let mut content = String::new();
+        reader.file(1).await?.read_to_string(&mut content).await?;
+        assert_eq!(content, "second");
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn opening_garbage_is_an_error() {
+        let result =
+            ZipArchiveReader::open(Cursor::new(b"not a zip".to_vec())).await;
+        assert!(result.is_err());
+    }
 }

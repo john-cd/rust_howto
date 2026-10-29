@@ -59,6 +59,12 @@ pub fn run() -> Result<(), std::io::Error> {
     main()
 }
 
+/// Serializes the tests that use the shared sample archive in the system
+/// temporary directory.
+#[cfg(test)]
+pub(crate) static SAMPLE_ARCHIVE_LOCK: std::sync::Mutex<()> =
+    std::sync::Mutex::new(());
+
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -100,6 +106,9 @@ mod tests {
 
     #[test]
     fn test_main_entry_point() {
+        let _guard = SAMPLE_ARCHIVE_LOCK
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         if let Err(err) = main() {
             panic!("main failed: {err:?}");
         }

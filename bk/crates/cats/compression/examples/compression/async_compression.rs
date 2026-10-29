@@ -128,4 +128,44 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[tokio::test]
+    async fn compress_then_decompress_roundtrips_the_file() -> anyhow::Result<()>
+    {
+        let dir = tempdir()?;
+        let input = dir.path().join("in.txt");
+        let gz = dir.path().join("in.gz");
+        let output = dir.path().join("out.txt");
+        let data = "line\n".repeat(1000);
+        tokio::fs::write(&input, &data).await?;
+
+        compress_file_async(&input, &gz).await?;
+        let compressed = tokio::fs::read(&gz).await?;
+        assert_eq!(&compressed[..2], &[0x1f, 0x8b], "gzip magic number");
+        assert!(compressed.len() < data.len());
+
+        decompress_file_async(&gz, &output).await?;
+        assert_eq!(tokio::fs::read_to_string(&output).await?, data);
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn missing_source_is_an_error() -> anyhow::Result<()> {
+        let dir = tempdir()?;
+        let missing = dir.path().join("missing");
+        let dest = dir.path().join("dest");
+        assert!(compress_file_async(&missing, &dest).await.is_err());
+        assert!(decompress_file_async(&missing, &dest).await.is_err());
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn decompressing_non_gzip_data_fails() -> anyhow::Result<()> {
+        let dir = tempdir()?;
+        let bad = dir.path().join("bad.gz");
+        tokio::fs::write(&bad, b"not gzip data").await?;
+        let out = dir.path().join("out");
+        assert!(decompress_file_async(&bad, &out).await.is_err());
+        Ok(())
+    }
 }

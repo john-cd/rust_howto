@@ -132,10 +132,83 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Checks that the example requests a scoped token and sends it as a bearer
-    /// token to the protected resource server.
     #[test]
     fn client_credentials_flow_uses_local_servers() -> anyhow::Result<()> {
-        run_example()
+        main()
+    }
+
+    #[test]
+    fn token_endpoint_error_is_reported() {
+        let auth_server = MockServer::start();
+        let token_mock = auth_server.mock(|when, then| {
+            when.method(Method::POST).path("/token");
+            then.status(400)
+                .header("content-type", "application/json")
+                .body(r#"{"error":"invalid_client"}"#);
+        });
+
+        let err = request_protected_resource(
+            &auth_server.url("/token"),
+            "http://127.0.0.1:1/unused",
+        )
+        .expect_err("the token request is rejected");
+
+        token_mock.assert();
+        assert!(
+            format!("{err:#}").contains("client-credentials access token"),
+            "{err:#}"
+        );
+    }
+
+    #[test]
+    fn unauthorized_resource_response_is_an_error() {
+        let auth_server = MockServer::start();
+        let resource_server = MockServer::start();
+        auth_server.mock(|when, then| {
+            when.method(Method::POST).path("/token");
+            then.status(200)
+                .header("content-type", "application/json")
+                .body(r#"{"access_token":"t","token_type":"Bearer"}"#);
+        });
+        let resource_mock = resource_server.mock(|when, then| {
+            when.method(Method::GET).path("/records");
+            then.status(401);
+        });
+
+        let err = request_protected_resource(
+            &auth_server.url("/token"),
+            &resource_server.url("/records"),
+        )
+        .expect_err("the resource server answers 401");
+
+        resource_mock.assert();
+        assert!(
+            format!("{err:#}").contains("unsuccessful status"),
+            "{err:#}"
+        );
+    }
+
+    #[test]
+    fn missing_expiry_is_reported_as_none() -> anyhow::Result<()> {
+        let auth_server = MockServer::start();
+        let resource_server = MockServer::start();
+        auth_server.mock(|when, then| {
+            when.method(Method::POST).path("/token");
+            then.status(200)
+                .header("content-type", "application/json")
+                .body(r#"{"access_token":"t","token_type":"Bearer"}"#);
+        });
+        resource_server.mock(|when, then| {
+            when.method(Method::GET).path("/records");
+            then.status(200).body("ok");
+        });
+
+        let (body, expires_in) = request_protected_resource(
+            &auth_server.url("/token"),
+            &resource_server.url("/records"),
+        )?;
+        assert_eq!(body, "ok");
+        assert_eq!(expires_in, None);
+        Ok(())
     }
 }
