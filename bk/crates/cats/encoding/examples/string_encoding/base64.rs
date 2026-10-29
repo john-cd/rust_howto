@@ -37,4 +37,17 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Known vectors encode as expected; invalid input is rejected.
+    #[test]
+    fn encodes_known_vectors_and_rejects_invalid_input() -> Result<()> {
+        assert_eq!(
+            BASE64_STANDARD.encode(b"hello rustaceans"),
+            "aGVsbG8gcnVzdGFjZWFucw=="
+        );
+        assert_eq!(BASE64_STANDARD.encode(b""), "");
+        assert_eq!(BASE64_STANDARD.decode("aGk=")?, b"hi");
+        assert!(BASE64_STANDARD.decode("not base64!").is_err());
+        Ok(())
+    }
 }

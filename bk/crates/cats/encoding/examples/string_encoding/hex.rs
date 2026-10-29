@@ -40,4 +40,13 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Lowercase and odd-length input is rejected by the uppercase decoder.
+    #[test]
+    fn rejects_invalid_hex() {
+        assert_eq!(HEXUPPER.encode(b"\x00\xff"), "00FF");
+        assert!(HEXUPPER.decode(b"abc").is_err());
+        assert!(HEXUPPER.decode(b"zz").is_err());
+        assert_eq!(HEXUPPER.decode(b"").unwrap(), Vec::<u8>::new());
+    }
 }

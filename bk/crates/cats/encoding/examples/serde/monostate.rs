@@ -81,4 +81,21 @@ mod tests {
     fn test_monostate_example_entry_point() {
         main();
     }
+
+    /// The `MustBe!` marker only accepts its exact value.
+    #[test]
+    fn must_be_rejects_mismatched_values() {
+        let ok: ApiResponse =
+            serde_json::from_str(r#"{"success":true}"#).unwrap();
+        assert!(matches!(ok, ApiResponse::Success { .. }));
+        // `success: false` without `_message` matches neither variant.
+        assert!(
+            serde_json::from_str::<ApiResponse>(r#"{"success":false}"#)
+                .is_err()
+        );
+        assert!(
+            serde_json::from_str::<ApiResponse>(r#"{"success":"yes"}"#)
+                .is_err()
+        );
+    }
 }

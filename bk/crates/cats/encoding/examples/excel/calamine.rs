@@ -81,4 +81,14 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// A file that is not a workbook is rejected.
+    #[test]
+    fn rejects_non_workbook_file() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
+        let path = dir.path().join("bad.xlsx");
+        std::fs::write(&path, b"not a workbook")?;
+        assert!(open_workbook::<Xlsx<_>, _>(&path).is_err());
+        Ok(())
+    }
 }

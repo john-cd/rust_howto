@@ -51,4 +51,14 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Invalid JSON is an error; missing keys read as `Null`.
+    #[test]
+    fn parses_values_and_rejects_invalid_json() -> Result<(), Error> {
+        assert!(serde_json::from_str::<Value>("{\"userid\": ").is_err());
+        let value: Value = serde_json::from_str(r#"{"userid": 1}"#)?;
+        assert_eq!(value["userid"], json!(1));
+        assert_eq!(value["missing"], Value::Null);
+        Ok(())
+    }
 }

@@ -95,4 +95,16 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Values keep their TOML types; malformed documents are rejected.
+    #[test]
+    fn parses_types_and_rejects_malformed_toml() {
+        let value: Value =
+            toml::from_str("a = 1\nb = 'x'\n[t]\nc = [1, 2]").unwrap();
+        assert_eq!(value["a"].as_integer(), Some(1));
+        assert_eq!(value["b"].as_str(), Some("x"));
+        assert_eq!(value["t"]["c"].as_array().map(Vec::len), Some(2));
+        assert!(toml::from_str::<Value>("a = ").is_err());
+        assert!(toml::from_str::<Value>("a = 1\na = 2").is_err());
+    }
 }

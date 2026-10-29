@@ -67,4 +67,20 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Encodes little-endian, round-trips, and rejects short input.
+    #[test]
+    fn encodes_little_endian_and_rejects_short_input() -> Result<(), Error> {
+        let payload = Payload {
+            kind: 7,
+            value: 0x0102,
+        };
+        let bytes = encode(&payload)?;
+        assert_eq!(bytes, vec![7, 0x02, 0x01]);
+        assert_eq!(decode(&bytes)?, payload);
+
+        assert!(decode(&[]).is_err());
+        assert!(decode(&[7, 0x02]).is_err());
+        Ok(())
+    }
 }

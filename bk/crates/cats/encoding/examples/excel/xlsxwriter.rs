@@ -95,4 +95,17 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// The report is a zip file; an unwritable path is an error.
+    #[test]
+    fn writes_report_and_reports_io_errors() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
+        let path = dir.path().join("report.xlsx");
+        write_report(&path)?;
+        assert!(std::fs::read(&path)?.starts_with(b"PK"));
+
+        let missing = dir.path().join("no_such_dir").join("report.xlsx");
+        assert!(write_report(&missing).is_err());
+        Ok(())
+    }
 }

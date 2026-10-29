@@ -239,4 +239,17 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// The individual sections each succeed, and a too-short buffer is
+    /// rejected.
+    #[test]
+    fn sections_succeed_and_short_buffers_fail() -> anyhow::Result<()> {
+        manipulate_zero_bytes();
+        into_bytes()?;
+        from_bytes()?;
+        enums_also_work();
+        transmute();
+        assert!(Packet::ref_from_bytes(&[0_u8; 7][..]).is_err());
+        Ok(())
+    }
 }

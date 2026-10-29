@@ -10,7 +10,7 @@ use serde::Serialize;
 // The `Serialize` and `Deserialize` derive macros automatically implement the
 // `Serialize` and `Deserialize` traits for `Person`.
 /// A person, serialized to and from JSON.
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 struct Person {
     /// Name of the person.
     name: String,
@@ -54,5 +54,19 @@ mod tests {
     #[test]
     fn test_serde_json_example_entry_point() {
         main();
+    }
+
+    /// Round trips preserve data; out-of-range numbers are rejected.
+    #[test]
+    fn roundtrips_and_rejects_out_of_range_age() {
+        let person = Person {
+            name: "Bob".to_owned(),
+            age: 255,
+            email: "bob@example.com".to_owned(),
+        };
+        let json = serde_json::to_string(&person).unwrap();
+        assert_eq!(serde_json::from_str::<Person>(&json).unwrap(), person);
+        let too_old = r#"{"name":"x","age":256,"email":"e"}"#;
+        assert!(serde_json::from_str::<Person>(too_old).is_err());
     }
 }

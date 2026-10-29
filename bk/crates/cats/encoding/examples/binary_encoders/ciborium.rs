@@ -20,7 +20,7 @@ use serde::Deserialize;
 use serde::Serialize;
 
 /// A struct that is serialized to and deserialized from CBOR.
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 struct MyData {
     /// The name.
     name: String,
@@ -69,6 +69,24 @@ mod tests {
     #[test]
     fn test_ciborium_example_entry_point() -> anyhow::Result<()> {
         main()?;
+        Ok(())
+    }
+
+    /// Values round-trip, and truncated input is rejected.
+    #[test]
+    fn roundtrips_and_rejects_truncated_input() -> anyhow::Result<()> {
+        let data = MyData {
+            name: "Bob".to_owned(),
+            age: 0,
+            is_active: false,
+        };
+        let mut buf = Vec::new();
+        into_writer(&data, &mut buf)?;
+        let back: MyData = from_reader(Cursor::new(&buf))?;
+        assert_eq!(back, data);
+
+        let truncated = &buf[..buf.len() / 2];
+        assert!(from_reader::<MyData, _>(Cursor::new(truncated)).is_err());
         Ok(())
     }
 }

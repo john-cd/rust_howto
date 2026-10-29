@@ -110,4 +110,27 @@ mod tests {
     fn test_bytemuck_example_entry_point() {
         main();
     }
+
+    /// Casting preserves bytes in native order; misaligned or mis-sized
+    /// casts fail.
+    #[test]
+    fn casts_preserve_bytes_and_reject_bad_sizes() {
+        let eights: [u8; 8] = bytemuck::cast([1_u16, 2, 3, 4]);
+        assert_eq!(eights, [1_u16, 2, 3, 4].map(u16::to_ne_bytes).concat()[..]);
+
+        let s = MyStruct {
+            x: 42,
+            y: [1, 2, 3, 4],
+        };
+        let bytes = bytemuck::bytes_of(&s);
+        assert_eq!(bytes.len(), 8);
+        assert_eq!(bytes[..4], 42_i32.to_ne_bytes());
+        assert_eq!(bytes[4..], [1, 2, 3, 4]);
+        let back: MyStruct = bytemuck::pod_read_unaligned(bytes);
+        assert_eq!((back.x, back.y), (42, [1, 2, 3, 4]));
+
+        assert!(bytemuck::try_from_bytes::<MyStruct>(&bytes[..7]).is_err());
+        let r: Result<&[i32; 2], _> = bytemuck::try_cast_ref(&s);
+        assert!(r.is_ok());
+    }
 }

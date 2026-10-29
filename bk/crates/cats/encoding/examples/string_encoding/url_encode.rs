@@ -37,4 +37,19 @@ mod tests {
     fn test_url_encode_example_entry_point() {
         main();
     }
+
+    /// Multiple pairs are joined with `&`, and special characters escaped.
+    #[test]
+    fn serializes_and_parses_multiple_pairs() {
+        let encoded = Serializer::new(String::new())
+            .append_pair("a", "1 2")
+            .append_pair("b&c", "d=e")
+            .finish();
+        assert_eq!(encoded, "a=1+2&b%26c=d%3De");
+        let pairs: Vec<_> = parse(encoded.as_bytes()).into_owned().collect();
+        assert_eq!(
+            pairs,
+            [("a".into(), "1 2".into()), ("b&c".into(), "d=e".into())]
+        );
+    }
 }

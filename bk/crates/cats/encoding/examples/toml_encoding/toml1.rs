@@ -67,4 +67,12 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// Missing required tables are reported as errors.
+    #[test]
+    fn missing_package_table_is_an_error() {
+        let error = toml::from_str::<Config>("[dependencies]\nserde = \"1\"")
+            .expect_err("package table is required");
+        assert!(error.to_string().contains("package"));
+    }
 }

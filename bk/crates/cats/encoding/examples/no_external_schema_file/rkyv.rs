@@ -14,7 +14,7 @@ use rkyv::Serialize;
 use rkyv::rancor::Error;
 
 /// A struct that can be archived.
-#[derive(Archive, Deserialize, Serialize, Debug)]
+#[derive(Archive, Deserialize, Serialize, Debug, PartialEq, Eq)]
 struct MyStruct {
     /// A string.
     field1: String,
@@ -58,6 +58,21 @@ mod tests {
     #[test]
     fn test_rkyv_example_entry_point() -> anyhow::Result<()> {
         main()?;
+        Ok(())
+    }
+
+    /// Values round-trip, and malformed bytes are rejected by validation.
+    #[test]
+    fn roundtrips_and_rejects_invalid_bytes() -> anyhow::Result<()> {
+        let data = MyStruct {
+            field1: "x".to_owned(),
+            field2: -7,
+        };
+        let buffer = rkyv::to_bytes::<Error>(&data)?;
+        let back = rkyv::from_bytes::<MyStruct, Error>(&buffer)?;
+        assert_eq!(back, data);
+
+        assert!(rkyv::from_bytes::<MyStruct, Error>(&[1, 2, 3]).is_err());
         Ok(())
     }
 }

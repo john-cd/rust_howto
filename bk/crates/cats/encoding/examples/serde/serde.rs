@@ -8,7 +8,7 @@ use serde::Serialize;
 
 // Define a struct and derive the `Serialize` and `Deserialize` traits.
 /// A person, serialized to and deserialized from JSON.
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 struct Person {
     // Rename the fields during serialization and deserialization.
     /// The first name.
@@ -57,5 +57,22 @@ mod tests {
     #[test]
     fn test_serde_example_entry_point() {
         main();
+    }
+
+    /// Fields are renamed, `None` is skipped, and round trips preserve data.
+    #[test]
+    fn renames_fields_and_skips_none() {
+        let person = Person {
+            first: "Jane".to_owned(),
+            last: "Roe".to_owned(),
+            age: None,
+        };
+        let json = serde_json::to_string(&person).unwrap();
+        assert_eq!(json, r#"{"first_name":"Jane","last_name":"Roe"}"#);
+        let back: Person = serde_json::from_str(&json).unwrap();
+        assert_eq!(back, person);
+        assert!(
+            serde_json::from_str::<Person>(r#"{"first_name":"x"}"#).is_err()
+        );
     }
 }
