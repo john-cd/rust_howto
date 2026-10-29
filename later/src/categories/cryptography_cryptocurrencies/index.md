@@ -20,6 +20,12 @@ Rust cryptocurrency applications combine protocol clients, wallets, smart-contra
 
 [`alloy`][c~alloy~docs]↗ provides Ethereum types, providers, signers, and network access. The older `ethers` ecosystem is deprecated in favor of Alloy; see the [upstream deprecation notice][ethers-rs~repo]↗.
 
+The example below runs offline: it queries an account balance through a provider backed by Alloy's mocked transport, then signs a message with a local key and recovers the signer's address. To query a real node, replace `connect_mocked_client` with `connect_http` and a node URL.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography_cryptocurrencies/examples/cryptocurrencies/cryptocurrencies.rs:example}}
+```
+
 ## Solana Programs
 
 [![solana-sdk][c~solana-sdk~docs~badge]][c~solana-sdk~docs] [![anchor-lang][c~anchor-lang~docs~badge]][c~anchor-lang~docs]{{hi:Solana}}

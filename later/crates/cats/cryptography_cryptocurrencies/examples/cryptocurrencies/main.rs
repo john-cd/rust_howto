@@ -5,6 +5,7 @@
 mod cryptocurrencies;
 
 /// Runs the cryptocurrencies example.
-fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    cryptocurrencies::run()
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    cryptocurrencies::run().await
 }

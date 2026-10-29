@@ -43,7 +43,6 @@
 - [#1719](https://github.com/john-cd/rust_howto/issues/1719) — **P1** — Repair and document the dev container setup and compiler caching
 - [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment D
 - [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation
-- [#707](https://github.com/john-cd/rust_howto/issues/707) — **Unprioritized** — Implement or accurately scope the Alloy blockchain example
 - **P1** — Port remaining examples across major dependency upgrades (no issue number yet)
 
 ### Truly blocked (install)

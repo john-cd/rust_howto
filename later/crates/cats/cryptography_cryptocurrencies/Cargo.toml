@@ -25,6 +25,9 @@ path = "examples/cryptocurrencies/main.rs"
 test = true
 
 [dependencies]
+alloy = { version = "2.5.0", default-features = false, features = ["std", "provider-http", "signer-local"] }
+anyhow = { workspace = true }
+tokio = { workspace = true }
 
 [lints]
 workspace = true
