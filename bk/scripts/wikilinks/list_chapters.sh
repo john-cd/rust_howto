@@ -6,18 +6,57 @@
 
 set -eu
 
-root="$(realpath $1)"
+root="$(realpath "$1")"
+root="${root//\\//}"
+if [[ "$root" =~ ^/([a-zA-Z])/(.*)$ ]]; then
+  root="${BASH_REMATCH[1]^^}:/${BASH_REMATCH[2]}"
+fi
 keyword="${2:-""}"
 
-if [ "$keyword" == "" ]; then
-  files=$( find "${root}/src" "${root}/drafts" "${root}/../later/src" -type f -name "*.md" -not -name "*.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" )
-else
-  files=$( rg -F -i --files-with-matches -g "*.md" -g "!*.incl.md" -g "!SUMMARY.md" -g "!*refs.md" "${keyword}" "${root}/src" "${root}/drafts" "${root}/../later/src" )
-fi
+format_chapters() {
+  while IFS= read -r -d '' file; do
+    file="${file//\\//}"
+    filename="${file##*/}"
+    case "$filename" in
+      index.md) parent="${file%/index.md}"; base="${parent##*/}" ;;
+      *_index.md) base="${filename%_index.md}" ;;
+      *.md) base="${filename%.md}" ;;
+    esac
 
-for file in ${files}
-do
-    base=$(echo "$file" | sed -E 's/[_]?index.md$//' | xargs basename -s ".md")
-    clean=$(echo "${base}" | tr '_-' ' ' | sed -E 's/\w+/\u&/g; s/\b(api|uav|orm)(.?)\b/\U\1\E\2/gI; s/\b(aead|amqp|aws|cd|ci|cli|cow|csv|ffi|gtk|http|html|hmac|ini|json|lru|mime|miri|mssql|os|toml|tls|tui|ui|url|uuid|xml|yaml|gui|wasm|2d)\b/\U&/I; s/\b(in|of|and|for)\b/\L&/gI' )
-    printf "%-50s %s\n" "[[${base} | ${clean}]]" "$(realpath --relative-to=${root}/src ${file})"
-done | sort -u
+    case "$file" in
+      "${root}/src/"*) relative="${file#"${root}/src/"}" ;;
+      "${root}/drafts/"*) relative="../drafts/${file#"${root}/drafts/"}" ;;
+      "${root}/../later/src/"*) relative="../../later/src/${file#"${root}/../later/src/"}" ;;
+      *) printf 'Unexpected chapter path: %s\n' "$file" >&2; return 1 ;;
+    esac
+
+    printf '%s\t%s\n' "$base" "$relative"
+  done | awk -F '\t' '
+    BEGIN {
+      split("aead amqp api aws cd ci cli cow csv ffi gui gtk hmac html http ini json lru mime miri mssql orm os tls toml tui uav ui url uuid wasm xml yaml 2d", words, " ")
+      for (i in words) uppercase[words[i]] = 1
+      lowercase["in"] = lowercase["of"] = lowercase["and"] = lowercase["for"] = 1
+    }
+    function title(value, parts, count, i, word, result) {
+      gsub(/[_-]/, " ", value)
+      count = split(value, parts, / +/)
+      for (i = 1; i <= count; i++) {
+        word = tolower(parts[i])
+        if (word in uppercase) word = toupper(word)
+        else word = toupper(substr(word, 1, 1)) substr(word, 2)
+        if (tolower(parts[i]) in lowercase) word = tolower(word)
+        result = result (i == 1 ? "" : " ") word
+      }
+      return result
+    }
+    { printf "%-50s %s\n", "[[" $1 " | " title($1) "]]", $2 }
+  '
+}
+
+if [ "$keyword" == "" ]; then
+  find "${root}/src" "${root}/drafts" "${root}/../later/src" -type f -name "*.md" -not -name "*.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" -print0 |
+    format_chapters | sort -u
+else
+  rg --null -F -i --files-with-matches -g "*.md" -g "!*.incl.md" -g "!SUMMARY.md" -g "!*refs.md" "${keyword}" "${root}/src" "${root}/drafts" "${root}/../later/src" |
+    format_chapters | sort -u
+fi
