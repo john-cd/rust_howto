@@ -47,6 +47,11 @@
 - [#1886](https://github.com/john-cd/rust_howto/issues/1886) — **P2** — Complete remaining published-chapter accuracy validation
 - [#1900](https://github.com/john-cd/rust_howto/issues/1900) — **P3** — Validate actors, build scripts, and web documentation changes A
 - [#1978](https://github.com/john-cd/rust_howto/issues/1978) — **P3** — Validate the remaining book and example batch
+- [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation
+- [#854](https://github.com/john-cd/rust_howto/issues/854) — **P1** — Replace the empty Wasmer runtime example
+- [#707](https://github.com/john-cd/rust_howto/issues/707) — **Unprioritized** — Implement or accurately scope the Alloy blockchain example
+- [#1052](https://github.com/john-cd/rust_howto/issues/1052) — **P4** — retained_mode_gui/vizia.rs: finish
+- **P1** — Port remaining examples across major dependency upgrades (no issue number yet)
 
 ### Truly blocked (install)
 
@@ -54,6 +59,12 @@
 - [#1022](https://github.com/john-cd/rust_howto/issues/1022) — **P2** — Finish the Sibyl example and review installation steps
 - [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Finish the Python example and validate its platform requirements D
 - [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter and example F
+- [#1929](https://github.com/john-cd/rust_howto/issues/1929) — **P4** — Validate the ONNX inference example with ort A
+- [#768](https://github.com/john-cd/rust_howto/issues/768) — **P4** — game_engines/fyrox.rs: finish
+- [#786](https://github.com/john-cd/rust_howto/issues/786) — **P4** — 2d_renderers/skia_safe.rs: finish
+- [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix
+- [#1037](https://github.com/john-cd/rust_howto/issues/1037) — **P4** — examples/uniffi.rs: finish
+- [#1983](https://github.com/john-cd/rust_howto/issues/1983) — **P3** — Finish Windows validation and reference-generator repairs
 
 ### Blocked on a live service
 
@@ -62,11 +73,31 @@
 - [#1064](https://github.com/john-cd/rust_howto/issues/1064) — **P3** — `database/amqp.md`: finish
 - [#1946](https://github.com/john-cd/rust_howto/issues/1946) — **P3** — Add examples: read mail over IMAP and filter disposable addresses before sending (imap, mailchecker)
 
-### Blocked on a desktop or manual run
+### Blocked on a desktop, hardware or manual run
 
 - [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Complete the screen-reader and AccessKit chapter D
 - [#1155](https://github.com/john-cd/rust_howto/issues/1155) — **P3** — `clipboard/arboard.rs`: review
 - [#1952](https://github.com/john-cd/rust_howto/issues/1952) — **P4** — Add example: show a local web page in a native window (wry, tao)
+- [#1048](https://github.com/john-cd/rust_howto/issues/1048) — **P4** — clipboard/main.rs: review
+- [#772](https://github.com/john-cd/rust_howto/issues/772) — **P4** — Finish the wgpu compute example G
+- [#777](https://github.com/john-cd/rust_howto/issues/777) — **P4** — Finish the femtovg example G
+- [#805](https://github.com/john-cd/rust_howto/issues/805) — **P4** — multimedia/multimedia1.rs: write
+- [#61](https://github.com/john-cd/rust_howto/issues/61) — **P4** — drones/drones1.rs: write
+- [#65](https://github.com/john-cd/rust_howto/issues/65) — **P4** — uavs/uavs.rs: write
+
+### Blocked on an upstream or advisory-held dependency
+
+- [#843](https://github.com/john-cd/rust_howto/issues/843) — **P4** — robotics_frameworks/openrr.rs: write
+- [#845](https://github.com/john-cd/rust_howto/issues/845) — **P4** — Add the Zenoh robotics example I
+- [#792](https://github.com/john-cd/rust_howto/issues/792) — **P4** — 2d_renderers/vger.rs: finish
+- [#1056](https://github.com/john-cd/rust_howto/issues/1056) — **P4** — window_creation/baseview.rs: write; review
+- [#775](https://github.com/john-cd/rust_howto/issues/775) — **P4** — Finish the Dioxus example G
+- [#248](https://github.com/john-cd/rust_howto/issues/248) — **P1** — replace current badge markdown copy-pasted text by a preprocessor command {#crate ...} {#categories... }
+
+### Blocked on an owner or human decision
+
+- [#1992](https://github.com/john-cd/rust_howto/issues/1992) — **P1** — Triage and integrate unique work from retained example branches
+- [#1247](https://github.com/john-cd/rust_howto/issues/1247) — **P3** — precommit/mod.just: move to Dockerfile
 
 ### Done; awaiting full validation gates
 
@@ -74,6 +105,13 @@
 - [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples B
 - [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance B
 - [#1922](https://github.com/john-cd/rust_howto/issues/1922) — **P3** — Add examples: manage child processes (kill a process tree, resource limits, sandboxed workers)
+- [#1032](https://github.com/john-cd/rust_howto/issues/1032) — **P4** — Finish the Node N-API example J
+- [#1033](https://github.com/john-cd/rust_howto/issues/1033) — **P4** — node/neon.rs: finish how to test
+- [#1035](https://github.com/john-cd/rust_howto/issues/1035) — **P4** — ruby/magnus.rs: finish
+- [#831](https://github.com/john-cd/rust_howto/issues/831) — **P4** — native_graphics_apis/wgpu_adapter_info.rs: report a GPU adapter's native backend
+- [#886](https://github.com/john-cd/rust_howto/issues/886) — **P4** — gpu/rust_gpu.rs: resolve the shader example
+- [#818](https://github.com/john-cd/rust_howto/issues/818) — **P4** — linux/statx_metadata.rs: temporary-file size and optional birth time through rustix
+- [#819](https://github.com/john-cd/rust_howto/issues/819) — **P4** — macos/macos.rs: safe objc2 Foundation system-version query and target gating
 
 ### Done; needs human review
 
@@ -81,71 +119,61 @@
 - [#1727](https://github.com/john-cd/rust_howto/issues/1727) — **P2** — Benchmark container build storage and select persistent cache mounts
 - [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters and Cap'n Proto regeneration B
 - [#1979](https://github.com/john-cd/rust_howto/issues/1979) — **P3** — Validate concurrency, memory, hashing, and enumeration recipe pages
+- [#1144](https://github.com/john-cd/rust_howto/issues/1144) — **P2** — `examples/lettre.rs`: review; Requires valid SMTP credentials to run
+- [#46](https://github.com/john-cd/rust_howto/issues/46) — **P2** — Finish the deadpool2 example; human review remains required
+- [#1752](https://github.com/john-cd/rust_howto/issues/1752) — **P3** — Verify game engine examples on Windows (review)
+- [#1753](https://github.com/john-cd/rust_howto/issues/1753) — **P3** — Review and complete the staging games example (review)
+- [#1755](https://github.com/john-cd/rust_howto/issues/1755) — **P3** — Review the minifb renderer example (review)
+- [#1858](https://github.com/john-cd/rust_howto/issues/1858) — **P3** — Review the earlier additions and Linux Relm4 evidence
+- [#1875](https://github.com/john-cd/rust_howto/issues/1875) — **Unprioritized** — Review the flate2 file-I/O example
+- [#1750](https://github.com/john-cd/rust_howto/issues/1750) — **P1** — Review the dynamic typing chapter (review)
+- [#935](https://github.com/john-cd/rust_howto/issues/935) — **P2** — `mathematics/complex_numbers.md`: final review
+- [#346](https://github.com/john-cd/rust_howto/issues/346) — **P4** — Review the staged embedded promotion scope C
+- [#1850](https://github.com/john-cd/rust_howto/issues/1850) — **P1** — Re-enable GitHub Actions CI and verify the refactored workflows (review)
+- [#1740](https://github.com/john-cd/rust_howto/issues/1740) — **P2** — Review remaining published-example dependency pins and upgrade notes (review)
+- [#1872](https://github.com/john-cd/rust_howto/issues/1872) — **P3** — Document the issue label and priority scheme (review)
+- [#1862](https://github.com/john-cd/rust_howto/issues/1862) — **P3** — Add CSpell for cross-platform Markdown spell checking
+- [#1863](https://github.com/john-cd/rust_howto/issues/1863) — **P3** — Add markdownlint-cli2 for Markdown linting
+- [#1725](https://github.com/john-cd/rust_howto/issues/1725) — **P2** — Review the Pandoc and Typst export plan (review)
+- [#1748](https://github.com/john-cd/rust_howto/issues/1748) — **P2** — Review draft and staging crate inventory for book coverage (review)
+
+### Needs a human decision or write-up
+
+- [#1158](https://github.com/john-cd/rust_howto/issues/1158) — **P3** — `write_proc_macros/main.rs`: finish; review the following; decide what examples are needed
+- [#639](https://github.com/john-cd/rust_howto/issues/639) — **P3** — os/rust_os.md: write; move to written-in-rust?
+- [#366](https://github.com/john-cd/rust_howto/issues/366) — **P4** — game-development/game_development.md: game_development: identify crates; write
+- [#1212](https://github.com/john-cd/rust_howto/issues/1212) — **P4** — rendering/text_rendering.md: write / decide what to cover
+- [#1213](https://github.com/john-cd/rust_howto/issues/1213) — **P4** — rendering/3d_renderers.md: write. decide what to cover
+- [#1215](https://github.com/john-cd/rust_howto/issues/1215) — **P4** — rendering/2d_raster_graphics.md: write. decide what to cover.
+- [#1227](https://github.com/john-cd/rust_howto/issues/1227) — **P4** — rendering_graphics-api/vulkan.md: decide what to cover / write
+- [#1228](https://github.com/john-cd/rust_howto/issues/1228) — **P4** — rendering_graphics-api/shaders.md: decide what to cover, write
+- [#963](https://github.com/john-cd/rust_howto/issues/963) — **P4** — Review natural-language-processing coverage
+- [#1206](https://github.com/john-cd/rust_howto/issues/1206) — **P4** — simulation/physics_engines.md: write / decide what to cover
+- [#251](https://github.com/john-cd/rust_howto/issues/251) — **P4** — cover DSLs in Rust
+- [#1245](https://github.com/john-cd/rust_howto/issues/1245) — **P3** — precommit/mod.just: finish - install pre-commit or use cargo-husky?
+- [#19](https://github.com/john-cd/rust_howto/issues/19) — **P3** — review Google Analytics setup
+- [#16](https://github.com/john-cd/rust_howto/issues/16) — **P3** — review license
+- [#17](https://github.com/john-cd/rust_howto/issues/17) — **P4** — send a pull request to little book of rust books
+- [#18](https://github.com/john-cd/rust_howto/issues/18) — **P4** — Consider adding project to goodfirstissue.dev
+
+### Deferred
+
+- [#764](https://github.com/john-cd/rust_howto/issues/764) — **P4** — quant/rustquant.rs: finish; review
 
 ### Trackers and not started
 
 - [#1996](https://github.com/john-cd/rust_howto/issues/1996) — **P2** — Coordinate validation gates and verification passes
+- [#1997](https://github.com/john-cd/rust_howto/issues/1997) — **P3** — Coordinate tooling, CI, and repository maintenance
+- [#1995](https://github.com/john-cd/rust_howto/issues/1995) — **P4** — Coordinate unfinished-example completion
+- [#1993](https://github.com/john-cd/rust_howto/issues/1993) — **P4** — Coordinate draft-chapter completion
+- [#1955](https://github.com/john-cd/rust_howto/issues/1955) — **P3** — Coordinate new recipes from the local-project review
+- [#1698](https://github.com/john-cd/rust_howto/issues/1698) — **P1** — Complete the first edition and integrate the companion tools
+- [#1994](https://github.com/john-cd/rust_howto/issues/1994) — **P4** — Plan later-edition chapters and example stubs
+- [#1849](https://github.com/john-cd/rust_howto/issues/1849) — **Unprioritized** — Coordinate tasks requiring human decisions
+- [#901](https://github.com/john-cd/rust_howto/issues/901) — **P3** — build_time_tooling/cc_defines1.rs: finish; deal with extern
 - [#53](https://github.com/john-cd/rust_howto/issues/53) — **P4** — Evaluate whether a slim or Alpine CI image improves the supported builds I
 
 ## Available for Codex now
-
-### Code examples
-
-#### NOW-CODE-01 — Build scripts, Cargo and procedural macros
-
-- [#901](https://github.com/john-cd/rust_howto/issues/901) — **P3** — build_time_tooling/cc_defines1.rs: finish; deal with extern — **NOT STARTED, BLOCKED**
-
-#### NOW-CODE-02 — Foreign function interfaces
-
-- [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation — **PARTIAL; OPEN — Windows JDK, Ruby DevKit, Python, and Maturin installed; docs and ignored integration test added; isolated Python extension, Java JNI, and Ruby runs pass; package checks await #1998 lock integration**
-- [#1032](https://github.com/john-cd/rust_howto/issues/1032) — **P4** — Finish the Node N-API example J — **IN PROGRESS — napi-derive 3 and N-API async exports added; Node 24/MSVC available;book-gate pending**
-- [#1033](https://github.com/john-cd/rust_howto/issues/1033) — **P4** — node/neon.rs: finish how to test — **IN PROGRESS — host-independent Neon path now returns anyhow::Result and has non-ignored tests; chapter documents npm init neon and an npm test JavaScript addon check; book-gate pending**
-- [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix — **DEFERRED — macOS validation unavailable; blocker recorded on the issue**
-- [#1035](https://github.com/john-cd/rust_howto/issues/1035) — **P4** — ruby/magnus.rs: finish — **IN PROGRESS — Magnus embedding now registers a Rust function, calls it from Ruby, and checks the returned string; extension-mode guidance and ignore-test commands documented; final Ruby package/book-gate pending**
-- [#1037](https://github.com/john-cd/rust_howto/issues/1037) — **P4** — examples/uniffi.rs: finish — **DEFERRED — native compiler/linker unavailable; blocker recorded on the issue**
-
-#### NOW-CODE-03 — Desktop UI, accessibility, games and GPU
-
-- [#768](https://github.com/john-cd/rust_howto/issues/768) — **P4** — game_engines/fyrox.rs: finish — **BLOCKED — feature build cost and native platform dependencies need verification**
-- [#772](https://github.com/john-cd/rust_howto/issues/772) — **P4** — Finish the wgpu compute example G — **BLOCKED — GPU adapter or configured software adapter and Naga validation dependency needed**
-- [#775](https://github.com/john-cd/rust_howto/issues/775) — **P4** — Finish the Dioxus example G — **BLOCKED — SSR test requires the undeclared `dioxus-ssr` crate and feature validation**
-- [#777](https://github.com/john-cd/rust_howto/issues/777) — **P4** — Finish the femtovg example G — **BLOCKED — OpenGL context and GPU/window validation needed**
-- [#786](https://github.com/john-cd/rust_howto/issues/786) — **P4** — 2d_renderers/skia_safe.rs: finish — **BLOCKED — Skia requires external binary downloads or a C++ source build**
-- [#792](https://github.com/john-cd/rust_howto/issues/792) — **P4** — 2d_renderers/vger.rs: finish — **BLOCKED — upstream maintenance and WGPU API compatibility review needed**
-- [#1048](https://github.com/john-cd/rust_howto/issues/1048) — **P4** — clipboard/main.rs: review — **CLIPPY CLEAN; OPEN — entry-point test ignored without a desktop clipboard; run it in a desktop session**
-- [#1052](https://github.com/john-cd/rust_howto/issues/1052) — **P4** — retained_mode_gui/vizia.rs: finish — **BLOCKED — current Vizia API differs from the requested model/lens design; feature validation needed**
-- [#1056](https://github.com/john-cd/rust_howto/issues/1056) — **P4** — window_creation/baseview.rs: write; review — **BLOCKED — unpinned external Git dependency needs upstream review and feature-build validation**
-
-#### NOW-CODE-04 — Machine learning, data and robotics
-
-- [#764](https://github.com/john-cd/rust_howto/issues/764) — **P4** — quant/rustquant.rs: finish; review — **DEFERRED — #1283 keeps RustQuant out, and the specified standalone rewrite requires adding the external `statrs` crate; resume when new dependency work is in scope**
-- [#843](https://github.com/john-cd/rust_howto/issues/843) — **P4** — robotics_frameworks/openrr.rs: write — **BLOCKED — upstream describes OpenRR as heavily under development and ROS 2 support as experimental; the current dependency graph includes affected `fast-float` and `serde_with` releases; confirm a portable feature path and native prerequisites**
-- [#845](https://github.com/john-cd/rust_howto/issues/845) — **P4** — Add the Zenoh robotics example I — **BLOCKED — the current workspace dependency graph includes affected `lz4_flex 0.10`; feature/example registration is disabled until the advisory is resolved**
-- [#1929](https://github.com/john-cd/rust_howto/issues/1929) — **P4** — Validate the ONNX inference example with ort A — **BLOCKED — ONNX Runtime binary download prerequisite and multi-example chapter work remain**
-
-#### NOW-CODE-05 — Recipe batches with accompanying prose
-
-
-#### NOW-CODE-06 — Examples derived from repository tools
-
-
-#### NOW-CODE-07 — WebAssembly and browser applications
-
-- [#854](https://github.com/john-cd/rust_howto/issues/854) — **P1** — Replace the empty Wasmer runtime example — **OPEN — the previous example was commented out and the active test was vacuous; reopened after source audit**
-
-#### NOW-CODE-08 — Media encoding, images and video
-
-#### NOW-CODE-09 — Networking, authentication and email
-
-#### NOW-CODE-10 — Cloud services and SDKs
-
-#### NOW-CODE-11 — Tabular data and finance
-
-#### NOW-CODE-12 — Embedded systems and hardware interfaces
-
-#### NOW-CODE-13 — Cryptography and blockchain clients
-
-- [#707](https://github.com/john-cd/rust_howto/issues/707) — **Unprioritized** — Implement or accurately scope the Alloy blockchain example — **OPEN — current code prints hypothetical steps and makes no Alloy calls; reopened after source audit**
 
 ### Prose and book structure
 
@@ -154,17 +182,7 @@
 - [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **IMPLEMENTED; OPEN — native FreeBSD 14.4 CI added; successful FreeBSD Clippy/tests still required**
 - [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **IMPLEMENTED; OPEN — native macOS CI added; successful native API Clippy/tests still required**
 
-#### NOW-PROSE-02 — UI, accessibility, media and rendering
-
-#### NOW-PROSE-03 — Science, finance, data processing and visualization
-
-#### NOW-PROSE-04 — Publishing, curation and book coverage
-
-#### NOW-PROSE-05 — Cloud platforms and containers
-
-#### NOW-PROSE-06 — Security and cryptocurrencies
-
-#### NOW-PROSE-07 — Foreign function interfaces - IN PROGRESS
+#### NOW-PROSE-07 — Foreign function interfaces
 
 - [#1075](https://github.com/john-cd/rust_howto/issues/1075) — **P4** — development-tools_ffi/objc.md: write — **IMPLEMENTED; OPEN — Objective-C CI added; successful macOS Foundation Clippy/runtime tests still required**
 
@@ -176,200 +194,13 @@ Validation (2026-10-27, NOW-PROSE-08): focused database Clippy and nextest passe
 
 Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references and local fragments, focused mdBook rendering, rendered tables/anchors, and `git diff --check` passed. All three YAML workflows passed Zizmor's offline audit. `just bb` is blocked before rendering because `cargo tree --locked` needs to update the existing `bk/crates/Cargo.lock`; no Cargo inputs changed in this batch. `just refdefs check` is Unix-only; running its script through Git Bash reports existing unresolved global labels, while all labels used by the two completed chapters resolve. Issues remain open pending the full book gate. Commits are local; no push was requested.
 
-#### NOW-PROSE-10 — Localization and internationalization - IN PROGRESS
-
-#### NOW-PROSE-11 — Asynchronous programming and caching - IN PROGRESS
+#### NOW-PROSE-11 — Asynchronous programming and caching
 
 - Focused actor Clippy, four actor tests, dprint, rumdl, chapter spelling, and direct refdefs check pass. `just ca`, `just ntt actors`, `just bb`, and `just spell` stop at the Git Bash `NtCreateDirectoryObject` access error; `just refdefs check` is not a defined recipe. Direct all-target Clippy also reports a pre-existing semicolon lint in `message_passing_crossbeam_channel.rs`.
 
 #### NOW-PROSE-12 — Aerospace and device protocols — IMPLEMENTED; FULL VALIDATION BLOCKED
 
 Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace checks passed. Focused tests and all-target Clippy passed for the aerospace simulation and space-protocol examples. The complete book/reference gates remain blocked: the direct reference check reaches `bk/crates` but `cargo tree --locked` requires an existing lockfile update; Git Bash-backed `just bb` cannot start because of the `NtCreateDirectoryObject` access denial. A direct mdBook build reports repository-wide unresolved links, and optional `mdbook-pandoc` is unavailable. Issues remain open pending complete book gates and PR links.
-
-### Tools and infrastructure
-
-#### NOW-INFRA-01 — Preprocessors, references and recipe portability
-
-- [#248](https://github.com/john-cd/rust_howto/issues/248) — **P1** — replace current badge markdown copy-pasted text by a preprocessor command {#crate ...} {#categories... } — **BLOCKED — waiting on full-page parser fixes in external book_tooling#34/#47 and rendered publication validation**
-  - The sorting-table migration and representative rendering are integrated; broad filesystem-page conversion was reverted after raw badge directives remained in output. Resume after the parser fix is available, then verify directive expansion, rendered output parity, index anchors, and idempotence before closing.
-
-#### NOW-INFRA-02 — Dependencies, CI and containers
-
-— **P1** — Port remaining examples across major dependency upgrades — **PARTIAL**
-
-- Resolved the `libsqlite3-sys` links collision and `smallvec` 1.16/Kube
-  resolver conflict; corrected Naga 26/27 aliases and aligned tested SeaORM,
-  media, and Linfa examples. Windows checks pass; Ubuntu database tests pass
-  (8/8) with strict Clippy, and Kube/cloud plus GUI/Parley examples compile.
-  Remaining ports and full workspace gates still need completion.
-
-#### NOW-INFRA-03 — Branch integration and retained work
-
-- [#1992](https://github.com/john-cd/rust_howto/issues/1992) — **P1** — Triage and integrate unique work from retained example branches — **BLOCKED — the three `claude/examples-*` refs are absent locally and from current GitHub/remote branch listings; owner confirmation or commit IDs are needed before diffing or integrating**
-
-#### NOW-INFRA-04 — Windows validation and tooling repairs
-
-- [#1983](https://github.com/john-cd/rust_howto/issues/1983) — **P3** — Finish Windows validation and reference-generator repairs — **BLOCKED FOR COMPLETION — Windows full-suite/linker failures remain; Oracle Instant Client and a compatible OpenTelemetry release are unavailable; reference generation and book-link checks are unfinished**
-
-#### NOW-INFRA-05 — Contributor hooks and container setup
-
-- [#1247](https://github.com/john-cd/rust_howto/issues/1247) — **P3** — precommit/mod.just: move to Dockerfile — **BLOCKED — waiting for the human tool choice in prerequisite issue #1245 (pre-commit vs. cargo-husky)**
-
-### Roadmaps and epics
-
-#### NOW-EPIC-01 — Build and repository maintenance
-
-- [#1997](https://github.com/john-cd/rust_howto/issues/1997) — **P3** — Coordinate tooling, CI, and repository maintenance — **OPEN TRACKER**
-
-#### NOW-EPIC-02 — Unfinished example coverage
-
-- [#1995](https://github.com/john-cd/rust_howto/issues/1995) — **P4** — Coordinate unfinished-example completion — **OPEN TRACKER**
-
-#### NOW-EPIC-03 — Draft chapter coverage
-
-- [#1993](https://github.com/john-cd/rust_howto/issues/1993) — **P4** — Coordinate draft-chapter completion — **OPEN TRACKER**
-
-#### NOW-EPIC-04 — New recipe coordination
-
-- [#1955](https://github.com/john-cd/rust_howto/issues/1955) — **P3** — Coordinate new recipes from the local-project review — **OPEN TRACKER**
-
-#### NOW-EPIC-05 — First-edition roadmap
-
-- [#1698](https://github.com/john-cd/rust_howto/issues/1698) — **P1** — Complete the first edition and integrate the companion tools — **OPEN TRACKER**
-
-## Deferred scope and dependencies
-
-### Code examples
-
-#### DEFERRED-CODE-01 — Desktop UI, accessibility, games and GPU
-
-- [#831](https://github.com/john-cd/rust_howto/issues/831) — **P4** — native_graphics_apis/wgpu_adapter_info.rs: report a GPU adapter's native backend — **IMPLEMENTED ON DEVELOP; OPEN — `1896f5110` adds a feature-gated headless query with errors; tests and lints skipped by request; build/GPU/book validation and PR link pending**
-- [#886](https://github.com/john-cd/rust_howto/issues/886) — **P4** — gpu/rust_gpu.rs: resolve the shader example — **IMPLEMENTED ON DEVELOP; OPEN — `2e0fbca70` documents a separate shader setup and removes the no-op host target; tests and lints skipped by request; book validation and PR link pending**
-
-DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementations were already present; #830, #831, and #886 were rebased and integrated as focused commits. All five issues have delivery comments and remain open. Formatting and `git diff --check` passed; no builds, tests, or lints were run for this batch.
-
-#### DEFERRED-CODE-02 — Machine learning, data and robotics
-
-#### DEFERRED-CODE-03 — Operating-system APIs, emulation and no-std
-
-- [#818](https://github.com/john-cd/rust_howto/issues/818) — **P4** — linux/statx_metadata.rs: temporary-file size and optional birth time through rustix — **IMPLEMENTED ON DEVELOP (`090e6a956`); tests and lints skipped by request; Linux and book builds pending**
-- [#819](https://github.com/john-cd/rust_howto/issues/819) — **P4** — macos/macos.rs: safe objc2 Foundation system-version query and target gating — **IMPLEMENTED ON DEVELOP (`6677bdc9f`); tests and lints skipped by request; macOS and book builds pending**
-
-#### DEFERRED-CODE-04 — Media encoding, images and video
-
-- [#805](https://github.com/john-cd/rust_howto/issues/805) — **P4** — multimedia/multimedia1.rs: write — **PARTIAL; BLOCKED — audio-device validation and device-independent source test remain; details are on the issue**
-
-#### DEFERRED-CODE-05 — Localization and internationalization
-
-#### DEFERRED-CODE-06 — Aerospace and device protocols
-
-- [#61](https://github.com/john-cd/rust_howto/issues/61) — **P4** — drones/drones1.rs: write — **BLOCKED — flight-plan work and real-drone validation remain; details are on the issue**
-- [#65](https://github.com/john-cd/rust_howto/issues/65) — **P4** — uavs/uavs.rs: write — **BLOCKED — telemetry decoding and real-drone validation remain; details are on the issue**
-
-### Tools and infrastructure
-
-#### DEFERRED-INFRA-01 — Dependencies, CI and containers
-
-### Roadmaps and epics
-
-#### DEFERRED-EPIC-01 — Later-edition chapters and examples
-
-- [#1994](https://github.com/john-cd/rust_howto/issues/1994) — **P4** — Plan later-edition chapters and example stubs — **OPEN TRACKER; DEFERRED**
-
-## Human review required
-
-### Code examples
-
-#### HUMAN-CODE-01 — Networking, authentication and email
-
-- [#1144](https://github.com/john-cd/rust_howto/issues/1144) — **P2** — `examples/lettre.rs`: review; Requires valid SMTP credentials to run — **HUMAN REVIEW**
-
-#### HUMAN-CODE-02 — Databases and service clients
-
-- [#46](https://github.com/john-cd/rust_howto/issues/46) — **P2** — Finish the deadpool2 example; human review remains required — **HUMAN REVIEW**
-
-#### HUMAN-CODE-03 — Build scripts, Cargo and procedural macros
-
-- [#1158](https://github.com/john-cd/rust_howto/issues/1158) — **P3** — `write_proc_macros/main.rs`: finish; review the following; decide what examples are needed — **HUMAN REVIEW**
-
-#### HUMAN-CODE-04 — Desktop UI, accessibility, games and GPU
-
-- [#1752](https://github.com/john-cd/rust_howto/issues/1752) — **P3** — Verify game engine examples on Windows (review) — **HUMAN REVIEW**
-- [#1753](https://github.com/john-cd/rust_howto/issues/1753) — **P3** — Review and complete the staging games example (review) — **HUMAN REVIEW**
-- [#1755](https://github.com/john-cd/rust_howto/issues/1755) — **P3** — Review the minifb renderer example (review) — **HUMAN REVIEW**
-- [#1858](https://github.com/john-cd/rust_howto/issues/1858) — **P3** — Review the earlier additions and Linux Relm4 evidence — **HUMAN REVIEW**
-
-#### HUMAN-CODE-05 — Compression and archives
-
-- [#1875](https://github.com/john-cd/rust_howto/issues/1875) — **Unprioritized** — Review the flate2 file-I/O example — **HUMAN REVIEW**
-
-### Prose and book structure
-
-#### HUMAN-PROSE-01 — Language, mathematics, date and time
-
-- [#1750](https://github.com/john-cd/rust_howto/issues/1750) — **P1** — Review the dynamic typing chapter (review) — **PARTIAL; HUMAN REVIEW**
-- [#935](https://github.com/john-cd/rust_howto/issues/935) — **P2** — `mathematics/complex_numbers.md`: final review — **PARTIAL; HUMAN REVIEW**
-
-#### HUMAN-PROSE-02 — Systems, embedded, WebAssembly and virtualization
-
-- [#639](https://github.com/john-cd/rust_howto/issues/639) — **P3** — os/rust_os.md: write; move to written-in-rust? — **HUMAN REVIEW**
-- [#346](https://github.com/john-cd/rust_howto/issues/346) — **P4** — Review the staged embedded promotion scope C — **PARTIAL; HUMAN REVIEW** — Reviewer: john-cd
-
-#### HUMAN-PROSE-03 — Publishing, curation and book coverage
-
-- [#1725](https://github.com/john-cd/rust_howto/issues/1725) — **P2** — Review the Pandoc and Typst export plan (review) — **HUMAN REVIEW**
-- [#1748](https://github.com/john-cd/rust_howto/issues/1748) — **P2** — Review draft and staging crate inventory for book coverage (review) — **HUMAN REVIEW**
-
-#### HUMAN-PROSE-04 — UI, accessibility, media and rendering
-
-- [#366](https://github.com/john-cd/rust_howto/issues/366) — **P4** — game-development/game_development.md: game_development: identify crates; write — **HUMAN REVIEW**
-- [#1212](https://github.com/john-cd/rust_howto/issues/1212) — **P4** — rendering/text_rendering.md: write / decide what to cover — **HUMAN REVIEW**
-- [#1213](https://github.com/john-cd/rust_howto/issues/1213) — **P4** — rendering/3d_renderers.md: write. decide what to cover — **HUMAN REVIEW**
-- [#1215](https://github.com/john-cd/rust_howto/issues/1215) — **P4** — rendering/2d_raster_graphics.md: write. decide what to cover. — **HUMAN REVIEW**
-- [#1227](https://github.com/john-cd/rust_howto/issues/1227) — **P4** — rendering_graphics-api/vulkan.md: decide what to cover / write — **HUMAN REVIEW**
-- [#1228](https://github.com/john-cd/rust_howto/issues/1228) — **P4** — rendering_graphics-api/shaders.md: decide what to cover, write — **HUMAN REVIEW**
-
-#### HUMAN-PROSE-05 — Science, finance, data processing and visualization
-
-- [#963](https://github.com/john-cd/rust_howto/issues/963) — **P4** — Review natural-language-processing coverage — **HUMAN REVIEW**
-- [#1206](https://github.com/john-cd/rust_howto/issues/1206) — **P4** — simulation/physics_engines.md: write / decide what to cover — **HUMAN REVIEW**
-
-#### HUMAN-PROSE-06 — Language and domain-specific languages
-
-- [#251](https://github.com/john-cd/rust_howto/issues/251) — **P4** — cover DSLs in Rust — **HUMAN REVIEW**
-
-### Tools and infrastructure
-
-#### HUMAN-INFRA-01 — Dependencies, CI and containers
-
-- [#1850](https://github.com/john-cd/rust_howto/issues/1850) — **P1** — Re-enable GitHub Actions CI and verify the refactored workflows (review) — **HUMAN REVIEW**
-- [#1740](https://github.com/john-cd/rust_howto/issues/1740) — **P2** — Review remaining published-example dependency pins and upgrade notes (review) — **PARTIAL; HUMAN REVIEW**
-
-#### HUMAN-INFRA-02 — Repository metadata and analytics
-
-- [#19](https://github.com/john-cd/rust_howto/issues/19) — **P3** — review Google Analytics setup — **HUMAN REVIEW**
-- [#1872](https://github.com/john-cd/rust_howto/issues/1872) — **P3** — Document the issue label and priority scheme (review) — **PARTIAL; HUMAN REVIEW**
-
-#### HUMAN-INFRA-03 — Markdown linting and spelling
-
-- [#1862](https://github.com/john-cd/rust_howto/issues/1862) — **P3** — Add CSpell for cross-platform Markdown spell checking — **HUMAN REVIEW**
-- [#1863](https://github.com/john-cd/rust_howto/issues/1863) — **P3** — Add markdownlint-cli2 for Markdown linting — **HUMAN REVIEW**
-
-#### HUMAN-INFRA-04 — Contributor hooks and container setup
-
-- [#1245](https://github.com/john-cd/rust_howto/issues/1245) — **P3** — precommit/mod.just: finish - install pre-commit or use cargo-husky? — **HUMAN REVIEW**
-
-#### HUMAN-INFRA-05 — Project policy, publication and outreach
-
-- [#16](https://github.com/john-cd/rust_howto/issues/16) — **P3** — review license — **HUMAN REVIEW**
-- [#17](https://github.com/john-cd/rust_howto/issues/17) — **P4** — send a pull request to little book of rust books — **HUMAN REVIEW**
-- [#18](https://github.com/john-cd/rust_howto/issues/18) — **P4** — Consider adding project to goodfirstissue.dev — **HUMAN REVIEW**
-
-### Roadmaps and epics
-
-#### HUMAN-EPIC-01 — Human decisions and review
-
-- [#1849](https://github.com/john-cd/rust_howto/issues/1849) — **Unprioritized** — Coordinate tasks requiring human decisions — **OPEN TRACKER; HUMAN REVIEW**
 
 ## Review: `dead_code` allowances and ignored tests
 
