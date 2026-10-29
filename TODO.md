@@ -42,11 +42,6 @@
 - [#1699](https://github.com/john-cd/rust_howto/issues/1699) — **P1** — Reconcile seven conflicted PRs against main and the local example changes
 - [#1719](https://github.com/john-cd/rust_howto/issues/1719) — **P1** — Repair and document the dev container setup and compiler caching
 - [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment D
-- [#1876](https://github.com/john-cd/rust_howto/issues/1876) — **P2** — Validate development-tool, encoding, and HTTP documentation changes A
-- [#1877](https://github.com/john-cd/rust_howto/issues/1877) — **P2** — Validate networking, CLI, and tar changes A
-- [#1886](https://github.com/john-cd/rust_howto/issues/1886) — **P2** — Complete remaining published-chapter accuracy validation
-- [#1900](https://github.com/john-cd/rust_howto/issues/1900) — **P3** — Validate actors, build scripts, and web documentation changes A
-- [#1978](https://github.com/john-cd/rust_howto/issues/1978) — **P3** — Validate the remaining book and example batch
 - [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation
 - [#854](https://github.com/john-cd/rust_howto/issues/854) — **P1** — Replace the empty Wasmer runtime example
 - [#707](https://github.com/john-cd/rust_howto/issues/707) — **Unprioritized** — Implement or accurately scope the Alloy blockchain example
@@ -54,7 +49,6 @@
 
 ### Truly blocked (install)
 
-- [#1021](https://github.com/john-cd/rust_howto/issues/1021) — **P3** — Finish the Oracle example and document its optional Instant Client test
 - [#1022](https://github.com/john-cd/rust_howto/issues/1022) — **P2** — Finish the Sibyl example and review installation steps
 - [#210](https://github.com/john-cd/rust_howto/issues/210) — **P4** — Finish the Python example and validate its platform requirements D
 - [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter and example F
@@ -68,16 +62,9 @@
 ### Blocked on a live service
 
 - [#1162](https://github.com/john-cd/rust_howto/issues/1162) — **P2** — Review the PostgreSQL aggregate_data example
-- [#291](https://github.com/john-cd/rust_howto/issues/291) — **P3** — Search engines chapter
-- [#1064](https://github.com/john-cd/rust_howto/issues/1064) — **P3** — `database/amqp.md`: finish
-- [#1946](https://github.com/john-cd/rust_howto/issues/1946) — **P3** — Add examples: read mail over IMAP and filter disposable addresses before sending (imap, mailchecker)
 
 ### Blocked on a desktop, hardware or manual run
 
-- [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Complete the screen-reader and AccessKit chapter D
-- [#1155](https://github.com/john-cd/rust_howto/issues/1155) — **P3** — `clipboard/arboard.rs`: review
-- [#1952](https://github.com/john-cd/rust_howto/issues/1952) — **P4** — Add example: show a local web page in a native window (wry, tao)
-- [#1048](https://github.com/john-cd/rust_howto/issues/1048) — **P4** — clipboard/main.rs: review
 - [#772](https://github.com/john-cd/rust_howto/issues/772) — **P4** — Finish the wgpu compute example G
 - [#777](https://github.com/john-cd/rust_howto/issues/777) — **P4** — Finish the femtovg example G
 - [#805](https://github.com/john-cd/rust_howto/issues/805) — **P4** — multimedia/multimedia1.rs: write
@@ -100,20 +87,7 @@
 
 ### Done; awaiting full validation gates
 
-- [#708](https://github.com/john-cd/rust_howto/issues/708) — **P3** — Finish the Cornucopia example B
-- [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples B
-- [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance B
-- [#1922](https://github.com/john-cd/rust_howto/issues/1922) — **P3** — Add examples: manage child processes (kill a process tree, resource limits, sandboxed workers)
-- [#1032](https://github.com/john-cd/rust_howto/issues/1032) — **P4** — Finish the Node N-API example J
-- [#1033](https://github.com/john-cd/rust_howto/issues/1033) — **P4** — node/neon.rs: finish how to test
-- [#1035](https://github.com/john-cd/rust_howto/issues/1035) — **P4** — ruby/magnus.rs: finish
-- [#831](https://github.com/john-cd/rust_howto/issues/831) — **P4** — native_graphics_apis/wgpu_adapter_info.rs: report a GPU adapter's native backend
-- [#886](https://github.com/john-cd/rust_howto/issues/886) — **P4** — gpu/rust_gpu.rs: resolve the shader example
 - [#818](https://github.com/john-cd/rust_howto/issues/818) — **P4** — linux/statx_metadata.rs: temporary-file size and optional birth time through rustix
-- [#819](https://github.com/john-cd/rust_howto/issues/819) — **P4** — macos/macos.rs: safe objc2 Foundation system-version query and target gating
-- [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write
-- [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write
-- [#1075](https://github.com/john-cd/rust_howto/issues/1075) — **P4** — development-tools_ffi/objc.md: write
 
 ### Done; needs human review
 
@@ -140,7 +114,6 @@
 - [#963](https://github.com/john-cd/rust_howto/issues/963) — **P4** — Review natural-language-processing coverage
 - [#1206](https://github.com/john-cd/rust_howto/issues/1206) — **P4** — simulation/physics_engines.md: write / decide what to cover
 - [#251](https://github.com/john-cd/rust_howto/issues/251) — **P4** — cover DSLs in Rust
-- [#1245](https://github.com/john-cd/rust_howto/issues/1245) — **P3** — precommit/mod.just: finish - install pre-commit or use cargo-husky?
 - [#19](https://github.com/john-cd/rust_howto/issues/19) — **P3** — review Google Analytics setup
 - [#16](https://github.com/john-cd/rust_howto/issues/16) — **P3** — review license
 - [#17](https://github.com/john-cd/rust_howto/issues/17) — **P4** — send a pull request to little book of rust books
