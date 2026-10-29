@@ -53,6 +53,11 @@ path = "examples/explicit_threads/main.rs"
 test = true
 
 [[example]]
+name = "loom_model"
+path = "examples/loom_model.rs"
+test = true
+
+[[example]]
 name = "message_passing"
 path = "examples/message_passing/main.rs"
 test = true
@@ -119,6 +124,8 @@ walkdir = "2.5.0"
 
 # Creates isolated JPEG fixtures for the thumbnail example test.
 [dev-dependencies]
+# Model checker used by the `loom_model` example.
+loom = "0.7.2"
 tempfile = "3.27.0"
 
 [features]

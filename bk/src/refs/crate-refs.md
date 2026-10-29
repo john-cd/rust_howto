@@ -4970,6 +4970,7 @@
 [c~loom~crates.io~badge]: https://img.shields.io/badge/crates.io-loom-crimson
 [c~loom~docs]: https://docs.rs/loom
 [c~loom~docs~badge]: https://img.shields.io/crates/v/loom?label=loom
+[c~loom::model~docs]: https://docs.rs/loom/latest/loom/fn.model.html
 [c~loom~lib.rs]: https://lib.rs/crates/loom
 [c~loom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-loom-yellow
 [c~loom~repo]: https://github.com/tokio-rs/loom

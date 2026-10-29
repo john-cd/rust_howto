@@ -76,6 +76,7 @@ Use a mutex when one thread at a time may read or mutate a value. Keep the criti
 - [Message passing](message_passing.md) when ownership can move through a channel.
 - [Concurrent data structures](concurrent_data_structures.md) for maps, queues, and atomic shared pointers.
 - [Data parallelism][p~data-parallelism] for collection-oriented parallel work.
+- [Model-checking with Loom][ex~concurrency~loom] to explore the interleavings of a small shared-state protocol.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

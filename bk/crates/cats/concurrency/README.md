@@ -8,6 +8,7 @@ This crate contains code examples for the **Concurrency** category on crates.io.
 
 - **Actors** (`examples/actors/`): Demonstrates concepts like `actix`, `actors`, `ractor`, `riker`, `stakker`.
 - **Atomics** (`examples/atomics/`): Demonstrates concepts like `atomic_cell`, `atomics`, `spinlock`.
+- **Loom model** (`examples/loom_model.rs`): Model-checks a publication and cancellation protocol with `loom`.
 - **Concurrent Data Structures** (`examples/concurrent_data_structures/`): Demonstrates concepts like `crossbeam_queue`, `dashmap`, `flurry`, `papaya`.
 - **Crossbeam** (`examples/crossbeam/`): Demonstrates concepts like `crossbeam_complex`, `crossbeam_select`.
 - **Data Parallelism** (`examples/data_parallelism/`): Demonstrates concepts like `multithreading_rayon`, `multithreading_rayon_custom`, `multithreading_rayon_parsort`, `rayon_any_all`, `rayon_iter_mut`, `rayon_map_reduce`, `rayon_parallel_search`, `rayon_parallel_sort`, `rayon_thumbnails`.

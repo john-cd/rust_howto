@@ -50,6 +50,7 @@ The following example implements a spinlock using [`std::sync::atomic::AtomicBoo
 
 - [[shared_state | Shared-State Concurrency]].
 - [[send_sync | `Send` and `Sync`]].
+- [[loom | Model-Checking with Loom]] to check atomic orderings against the memory model.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

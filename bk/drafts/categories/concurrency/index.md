@@ -14,6 +14,7 @@ Concurrency{{hi:Concurrency}} is about coordinating tasks whose lifetimes overla
 | [Message Passing](message_passing.md)                       | Send owned values between threads                    | `std::sync::mpsc`, `crossbeam-channel`, `flume` |
 | [Shared State](shared_state.md)                             | Coordinate access to shared values                   | `Mutex`, `RwLock`                               |
 | [Atomics](atomics.md)                                       | Coordinate simple shared values without a mutex      | `std::sync::atomic`, `arc-swap`                 |
+| [Model-Checking with Loom](loom.md)                         | Explore thread interleavings of a small protocol     | `loom`                                          |
 | [`crossbeam`](crossbeam.md)                                 | Use scoped threads and lower-level concurrency tools | `crossbeam`                                     |
 | [Concurrent Data Structures](concurrent_data_structures.md) | Share maps and queues across threads                 | `dashmap`, `papaya`, `crossbeam-queue`          |
 | [`Send` and `Sync`](send_sync.md)                           | Understand safe transfer and sharing between threads | `std::marker`                                   |
@@ -48,6 +49,12 @@ Transfer messages between producers and consumers with standard-library or third
 Protect shared state with locks or atomics when ownership transfer through a channel is not a fit.
 
 {{#include shared_state.incl.md}}
+
+## Model-Checking with Loom
+
+Explore the thread interleavings of a small publication and cancellation protocol with [`loom`][c~loom~docs]↗.
+
+{{#include loom.incl.md}}
 
 ## Concurrent Data Structures
 

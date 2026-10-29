@@ -44,6 +44,7 @@
   - [Message Passing and Channels](categories/concurrency/message_passing.md)
   - [Shared-state Concurrency](categories/concurrency/shared_state.md)
   - [Atomics](categories/concurrency/atomics.md)
+  - [Model-Checking with Loom](categories/concurrency/loom.md)
   - [Concurrent Data Structures](categories/concurrency/concurrent_data_structures.md)
   - [Send and Sync](categories/concurrency/send_sync.md)
   - [Actors](categories/concurrency/_actors.md)
