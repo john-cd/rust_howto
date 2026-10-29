@@ -35,7 +35,6 @@ impl Span {
         self.start <= other.end && other.start <= self.end
     }
 }
-// ANCHOR_END: example
 
 /// Combines two spans; the property tests below check the invariants.
 fn main() {
@@ -108,3 +107,4 @@ mod tests {
         main();
     }
 }
+// ANCHOR_END: example

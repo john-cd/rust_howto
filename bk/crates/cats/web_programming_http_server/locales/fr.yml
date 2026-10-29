@@ -1,0 +1,2 @@
+errors:
+  user_not_found: "Utilisateur %{id} introuvable."

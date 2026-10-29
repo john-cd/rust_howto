@@ -50,6 +50,10 @@ This guidance has no standalone code example because framework selection depends
 
 Middleware is a powerful way to add functionality to your web server.
 
+## Internationalized API Errors
+
+{{#include i18n.incl.md}}
+
 {{#include middleware.incl.md}}
 
 ### Cross-origin Resource Sharing

@@ -264,6 +264,7 @@
   - [Downloads](categories/web-programming_http-client/download.md)
 
 - [Web Programming - HTTP Servers](categories/web-programming_http-server/index.md)
+  - [Internationalized API Errors](categories/web-programming_http-server/i18n.md)
   - [Axum](categories/web-programming_http-server/_axum.md)
   - [Actix](categories/web-programming_http-server/_actix.md)
   - [Other Web Frameworks](categories/web-programming_http-server/other_frameworks.md)

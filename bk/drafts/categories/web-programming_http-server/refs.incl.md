@@ -1,5 +1,10 @@
 <!-- TODO Reviewed ??-??-2026 -->
 [connectrpc~protocol]: https://connectrpc.com/docs/protocol/
+[c~accept-language~docs]: https://docs.rs/accept-language
+[c~accept-language~docs~badge]: https://img.shields.io/crates/v/accept-language?label=accept-language
+[c~rust-i18n~docs]: https://docs.rs/rust-i18n
+[c~rust-i18n~docs~badge]: https://img.shields.io/crates/v/rust-i18n?label=rust-i18n
+[ex~web-programming_http-server~rust-i18n]: i18n.md#rust-i18n
 [connectrpc~web]: https://connectrpc.com/docs/web/getting-started/
 [cot~guide]: https://cot.rs/guide/latest/
 [c~cot~crates.io]: https://crates.io/crates/cot
