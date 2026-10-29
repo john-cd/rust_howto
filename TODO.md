@@ -112,6 +112,9 @@
 - [#886](https://github.com/john-cd/rust_howto/issues/886) — **P4** — gpu/rust_gpu.rs: resolve the shader example
 - [#818](https://github.com/john-cd/rust_howto/issues/818) — **P4** — linux/statx_metadata.rs: temporary-file size and optional birth time through rustix
 - [#819](https://github.com/john-cd/rust_howto/issues/819) — **P4** — macos/macos.rs: safe objc2 Foundation system-version query and target gating
+- [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write
+- [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write
+- [#1075](https://github.com/john-cd/rust_howto/issues/1075) — **P4** — development-tools_ffi/objc.md: write
 
 ### Done; needs human review
 
@@ -172,35 +175,6 @@
 - [#1849](https://github.com/john-cd/rust_howto/issues/1849) — **Unprioritized** — Coordinate tasks requiring human decisions
 - [#901](https://github.com/john-cd/rust_howto/issues/901) — **P3** — build_time_tooling/cc_defines1.rs: finish; deal with extern
 - [#53](https://github.com/john-cd/rust_howto/issues/53) — **P4** — Evaluate whether a slim or Alpine CI image improves the supported builds I
-
-## Available for Codex now
-
-### Prose and book structure
-
-#### NOW-PROSE-01 — Systems, embedded, WebAssembly and virtualization
-
-- [#433](https://github.com/john-cd/rust_howto/issues/433) — **P4** — os_freebsd-apis/freebsd.md: freebsd: write — **IMPLEMENTED; OPEN — native FreeBSD 14.4 CI added; successful FreeBSD Clippy/tests still required**
-- [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **IMPLEMENTED; OPEN — native macOS CI added; successful native API Clippy/tests still required**
-
-#### NOW-PROSE-07 — Foreign function interfaces
-
-- [#1075](https://github.com/john-cd/rust_howto/issues/1075) — **P4** — development-tools_ffi/objc.md: write — **IMPLEMENTED; OPEN — Objective-C CI added; successful macOS Foundation Clippy/runtime tests still required**
-
-#### NOW-PROSE-08 — Web, networking and databases
-
-Validation (2026-10-27, NOW-PROSE-08): focused database Clippy and nextest passed; the test run passed 9 tests and skipped four ignored external-service tests. `dprint check`, `rumdl` across `bk/drafts`, `typos` across the book and future content, and the generated dependency-reference check passed. The local draft book gate remains blocked: Git Bash cannot create its MSYS `BaseNamedObjects` directory, the direct tools release build fails in `aws-lc-sys` with MSVC LNK1114/error 5, and Docker API access is denied. The Windows `just refdefs check` recipe is unavailable; its Linux-only script could not run. Issues remain open because full book/reference gates and PR links are not complete.
-
-#### NOW-PROSE-09 — Development tools, build systems and editors — IMPLEMENTED; FULL VALIDATION BLOCKED
-
-Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references and local fragments, focused mdBook rendering, rendered tables/anchors, and `git diff --check` passed. All three YAML workflows passed Zizmor's offline audit. `just bb` is blocked before rendering because `cargo tree --locked` needs to update the existing `bk/crates/Cargo.lock`; no Cargo inputs changed in this batch. `just refdefs check` is Unix-only; running its script through Git Bash reports existing unresolved global labels, while all labels used by the two completed chapters resolve. Issues remain open pending the full book gate. Commits are local; no push was requested.
-
-#### NOW-PROSE-11 — Asynchronous programming and caching
-
-- Focused actor Clippy, four actor tests, dprint, rumdl, chapter spelling, and direct refdefs check pass. `just ca`, `just ntt actors`, `just bb`, and `just spell` stop at the Git Bash `NtCreateDirectoryObject` access error; `just refdefs check` is not a defined recipe. Direct all-target Clippy also reports a pre-existing semicolon lint in `message_passing_crossbeam_channel.rs`.
-
-#### NOW-PROSE-12 — Aerospace and device protocols — IMPLEMENTED; FULL VALIDATION BLOCKED
-
-Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace checks passed. Focused tests and all-target Clippy passed for the aerospace simulation and space-protocol examples. The complete book/reference gates remain blocked: the direct reference check reaches `bk/crates` but `cargo tree --locked` requires an existing lockfile update; Git Bash-backed `just bb` cannot start because of the `NtCreateDirectoryObject` access denial. A direct mdBook build reports repository-wide unresolved links, and optional `mdbook-pandoc` is unavailable. Issues remain open pending complete book gates and PR links.
 
 ## Review: `dead_code` allowances and ignored tests
 
