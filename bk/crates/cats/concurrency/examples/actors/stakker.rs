@@ -99,17 +99,15 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that Stakker replies with each updated counter total.
+    /// Verifies that Stakker replies with each updated counter total, and that
+    /// the example's entry point succeeds.
+    ///
+    /// Stakker allows a single instance per thread by default, and the test
+    /// harness runs each test on its own thread, so both checks share a test
+    /// (and so a thread) instead of racing to create the instance.
     #[test]
     fn actor_replies_with_updated_totals() -> anyhow::Result<()> {
         assert_eq!(run_actor()?, (5, 15));
-        Ok(())
-    }
-
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        main()
     }
 }

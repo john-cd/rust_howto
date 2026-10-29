@@ -40,4 +40,25 @@ mod tests {
     fn test_multithreading_rayon_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn increment_then_sum_of_squares() {
+        let mut v = [1, 2, 3];
+        increment_all(&mut v);
+        assert_eq!(v, [2, 3, 4]);
+        assert_eq!(sum_of_squares(&v), 4 + 9 + 16);
+    }
+
+    #[test]
+    fn empty_input_gives_zero() {
+        assert_eq!(sum_of_squares(&[]), 0);
+        increment_all(&mut []);
+    }
+
+    #[test]
+    fn large_inputs_match_the_sequential_result() {
+        let v: Vec<i32> = (0..10_000).map(|i| i % 100).collect();
+        let expected: i32 = v.iter().map(|i| i * i).sum();
+        assert_eq!(sum_of_squares(&v), expected);
+    }
 }

@@ -44,4 +44,23 @@ mod tests {
     fn test_multithreading_rayon_custom_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn fib_matches_known_values() {
+        let known = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55];
+        for (n, expected) in known.into_iter().enumerate() {
+            assert_eq!(fib(n), expected);
+        }
+        assert_eq!(fib(20), 6765);
+    }
+
+    #[test]
+    fn custom_pool_has_the_requested_number_of_threads() {
+        let pool = rayon::ThreadPoolBuilder::new()
+            .num_threads(3)
+            .build()
+            .unwrap();
+        assert_eq!(pool.current_num_threads(), 3);
+        assert_eq!(pool.install(|| fib(10)), 55);
+    }
 }

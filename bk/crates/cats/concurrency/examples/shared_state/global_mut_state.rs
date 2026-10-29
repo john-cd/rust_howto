@@ -60,4 +60,32 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn insert_appends_to_the_shared_list() -> Result<()> {
+        main()?;
+        let before = FRUIT.lock().unwrap().len();
+        insert("kiwi")?;
+        let db = FRUIT.lock().unwrap();
+        assert_eq!(db.len(), before + 1);
+        assert_eq!(db.last().map(String::as_str), Some("kiwi"));
+        assert!(
+            ["apple", "orange", "peach", "grape"]
+                .iter()
+                .all(|f| db.iter().any(|x| x == f))
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn concurrent_inserts_are_all_recorded() {
+        let before = FRUIT.lock().unwrap().len();
+        std::thread::scope(|s| {
+            for _ in 0..8 {
+                s.spawn(|| insert("fig").unwrap());
+            }
+        });
+        let db = FRUIT.lock().unwrap();
+        assert!(db.len() >= before + 8);
+    }
 }

@@ -144,4 +144,9 @@ mod tests {
     fn loom_relaxed_publication_is_rejected() {
         check_protocol(Ordering::Relaxed, Ordering::Relaxed);
     }
+
+    #[test]
+    fn test_loom_model_example_entry_point() {
+        main();
+    }
 }

@@ -33,4 +33,11 @@ mod tests {
     fn test_rayon_iter_mut_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn every_element_is_decremented() {
+        let mut arr = [0, 7, 9, 11];
+        arr.par_iter_mut().for_each(|p| *p -= 1);
+        assert_eq!(arr, [-1, 6, 8, 10]);
+    }
 }

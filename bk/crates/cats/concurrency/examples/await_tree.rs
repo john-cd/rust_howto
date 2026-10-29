@@ -121,4 +121,33 @@ mod tests {
     fn test_await_tree_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn registry_collects_the_registered_trees() {
+        let registry = Registry::new(
+            ConfigBuilder::default().verbose(true).build().unwrap(),
+        );
+        for i in 0_i32..2 {
+            let root = registry.register(i, format!("foo {i}"));
+            tokio::spawn(root.instrument(foo(i)));
+        }
+        sleep(Duration::from_millis(100)).await;
+
+        let trees: Vec<(i32, String)> = registry
+            .collect::<i32>()
+            .into_iter()
+            .sorted_by_key(|(i, _)| *i)
+            .map(|(i, tree)| (i, tree.to_string()))
+            .collect();
+        assert_eq!(trees.len(), 2);
+        for (i, tree) in &trees {
+            assert!(tree.contains(&format!("foo {i}")), "{tree}");
+            assert!(tree.contains(&format!("bar {i}")), "{tree}");
+            assert!(
+                tree.contains(&format!("pending inside bar {i}")),
+                "{tree}"
+            );
+        }
+        assert_eq!(registry.collect_anonymous().len(), 2);
+    }
 }

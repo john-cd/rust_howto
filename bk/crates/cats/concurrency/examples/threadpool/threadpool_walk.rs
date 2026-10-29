@@ -99,4 +99,29 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn is_iso_matches_the_extension_case_insensitively() {
+        assert!(is_iso(Path::new("disk.iso")));
+        assert!(is_iso(Path::new("/a/b/DISK.ISO")));
+        assert!(!is_iso(Path::new("disk.img")));
+        assert!(!is_iso(Path::new("iso")));
+    }
+
+    #[test]
+    fn compute_digest_matches_the_known_sha256() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("a.iso");
+        std::fs::write(&path, b"abc").unwrap();
+        let (digest, returned) = compute_digest(&path).unwrap();
+        assert_eq!(returned, &path);
+        assert_eq!(digest[..4], [0xba, 0x78, 0x16, 0xbf]);
+        assert_eq!(digest[28..], [0xf2, 0x00, 0x15, 0xad]);
+    }
+
+    #[test]
+    fn compute_digest_of_a_missing_file_is_an_error() {
+        let err = compute_digest("/definitely/not/here.iso").unwrap_err();
+        assert_eq!(err.kind(), std::io::ErrorKind::NotFound);
+    }
 }

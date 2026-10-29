@@ -116,4 +116,32 @@ mod tests {
         }
         Ok(())
     }
+
+    #[test]
+    fn main_fails_cleanly_without_an_images_directory() {
+        if !Path::new("images").exists() {
+            let err = main().expect_err("there is no `images` directory");
+            assert!(err.to_string().contains("no JPEG files"), "{err}");
+        }
+    }
+
+    #[test]
+    fn empty_input_directory_is_an_error() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
+        let err = create_thumbnails(dir.path(), &dir.path().join("out"), 16)
+            .expect_err("no JPEG files");
+        assert!(err.to_string().contains("no JPEG files"));
+        assert!(!dir.path().join("out").exists());
+        Ok(())
+    }
+
+    #[test]
+    fn corrupt_image_reports_its_path() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
+        fs::write(dir.path().join("bad.jpg"), b"not a jpeg")?;
+        let err = create_thumbnails(dir.path(), &dir.path().join("out"), 16)
+            .expect_err("the image cannot be decoded");
+        assert!(format!("{err:#}").contains("bad.jpg"), "{err:#}");
+        Ok(())
+    }
 }
