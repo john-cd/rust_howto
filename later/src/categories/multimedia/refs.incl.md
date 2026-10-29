@@ -7,3 +7,5 @@
 [gstreamer~rust~docs]: https://gstreamer.freedesktop.org/documentation/rust/stable/latest/docs/gstreamer/index.html
 [rfc~3550]: https://www.rfc-editor.org/rfc/rfc3550
 [rfc~7826]: https://www.rfc-editor.org/rfc/rfc7826
+
+[ffmpeg~manual]: https://ffmpeg.org/ffmpeg.html
