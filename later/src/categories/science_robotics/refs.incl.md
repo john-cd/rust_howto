@@ -85,3 +85,9 @@
 [c~safe_drive~docs~badge]: https://img.shields.io/crates/v/safe_drive?label=safe_drive
 [c~optimization-engine~docs]: https://docs.rs/optimization_engine
 [c~ros_pointcloud2~docs]: https://docs.rs/ros_pointcloud2
+[c~parry3d~docs]: https://docs.rs/parry3d
+[ros2-rust~repo]: https://github.com/ros2-rust/ros2_rust
+[ros2-client~repo]: https://github.com/Atostek/ros2-client
+[roslibrust~repo]: https://github.com/roslibrust/roslibrust
+[ros1~eol]: https://discourse.ros.org/t/ros-noetic-end-of-life-may-31-2025/43160
+[c~static-math~docs]: https://docs.rs/static-math

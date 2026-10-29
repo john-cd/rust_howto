@@ -4,7 +4,19 @@
 
 {{#include robot_operating_systems.incl.md}}
 
-Topics: Middleware, communication protocols, distributed systems.
+ROS connects robot nodes through topics, services, and actions. Choose a ROS 2 client for new systems; [ROS 1 Noetic reached end of life on May 31, 2025][ros1~eol]. Rust clients differ in their dependence on the native ROS libraries and in the message types and middleware features they support.
+
+## Pick a ROS Client
+
+The release snapshot below was checked on October 29, 2026. A recent release shows activity, but does not guarantee compatibility with every ROS distribution or DDS implementation.
+
+| Client                            | ROS version and approach                                                   | Latest stable release checked | Integration and status                                                                                            |
+| --------------------------------- | -------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| [`r2r`][r2r~setup]                | ROS 2; bindings to installed `rcl` libraries and generated message support | 0.9.7, September 13, 2026     | Used by the recipe below; source a compatible ROS installation and install libclang.                              |
+| [`rclrs`][ros2-rust~repo]         | ROS 2; Rust client built on `rcl` in the ros2-rust project                 | 0.8.0, September 23, 2026     | Integrates with ROS workspaces, `colcon`, and `cargo-ament-build`; follow its distribution-specific guide.        |
+| [`ros2-client`][ros2-client~repo] | ROS 2; native Rust client over RustDDS                                     | 0.12.1, October 26, 2026      | Avoids the native `rcl` client stack; check supported message generation, QoS, and ROS interoperability features. |
+| [`rosrust`][c~rosrust~repo]       | ROS 1; native Rust client                                                  | 0.9.12, February 3, 2025      | For existing ROS 1 deployments; the ROS 1 ecosystem is end of life.                                               |
+| [`roslibrust`][roslibrust~repo]   | Async Rust abstraction with ROS 1, ROS 2, rosbridge, and Zenoh backends    | 0.26.0, September 25, 2026    | Select the backend and its prerequisites explicitly; rosbridge also needs a bridge server.                        |
 
 A Robot Operating System (ROS) is a middleware framework designed to help build and manage robot software systems. Its primary purpose is to simplify the complexities of robotic development by providing tools and libraries that support tasks like hardware abstraction, communication between different parts of the robot (such as sensors and actuators), and software reuse.
 
@@ -79,14 +91,18 @@ cargo test -p science_robotics --example robot_operating_systems --features ros2
 
 If the example times out, check the selected ROS domain, middleware configuration, and local discovery/firewall settings.
 
-## `safe_drive` {#safe_drive}
+## Call Services and Integrate Builds
 
-Formally specified Rust bindings for ROS2.
+A topic broadcasts a stream; a service pairs one request with one response. Use the selected client's generated service types and keep its executor or spin loop running while waiting for the response. Use bounded waits so an absent server cannot hang application shutdown. For long-running, cancelable work, evaluate ROS actions and the client's action support rather than holding a service request open.
+
+For `rclrs`, follow the [ros2-rust workspace guide][ros2-rust~repo]: source the ROS environment, install the documented `colcon` extensions including `cargo-ament-build`, and build the workspace with `colcon build`. Source the resulting `install` setup before running nodes. A standalone Cargo command does not replace ROS message generation and environment setup. The `r2r` example instead uses its own Cargo build-time generation from the installed message packages.
+
+[`safe_drive`][c~safe_drive~docs] offers another ROS 2 binding approach. Check its supported distribution and message-generation workflow before mixing it with a different client's generated types.
 
 ## Other Crates {#other-crates .skip}
 
 - [`ros2_rust`][ros2_rust~repo]↗{{hi:ros2_rust}} - Rust bindings for ROS2.
-- [`roslibrust`][c~roslibrust~crates.io]↗{{hi:roslibrust}} - Pure Rust implementation of a rosbridge client.
+- [`roslibrust`][c~roslibrust~crates.io]↗{{hi:roslibrust}} - Multiple async ROS backends, including rosbridge.
 - [`rclrust`][c~rclrust~crates.io]↗{{hi:rclrust}} - Yet another ROS2 Rust client.
 - [`RustDDS`][c~rustdds~crates.io]↗{{hi:RustDDS}} - Rust implementation of Data Distribution Service.
 - [`rosbag`][c~rosbag~crates.io]↗{{hi:rosbag}} - Reading rosbag files in pure Rust.
@@ -106,9 +122,3 @@ Formally specified Rust bindings for ROS2.
 {{#include ../../refs/link-refs.md}}
 
 [r2r~setup]: https://github.com/sequenceplanner/r2r#how-to-use
-
-<div class="hidden">
-  [robotics: organize](https://github.com/john-cd/rust_howto/issues/477)
-  review in depth.
-  review ROS related libraries.
-</div>
