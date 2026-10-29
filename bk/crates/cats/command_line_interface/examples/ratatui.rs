@@ -228,4 +228,55 @@ mod tests {
         // More tests here...
         Ok(())
     }
+
+    fn render(app: &App) -> String {
+        let area = Rect::new(0, 0, 40, 12);
+        let mut buf = Buffer::empty(area);
+        app.render(area, &mut buf);
+        buf.content().iter().map(|c| c.symbol()).collect()
+    }
+
+    #[test]
+    fn running_ui_shows_the_title_and_quit_hint() {
+        let text = render(&App::default());
+        assert!(text.contains("Ratatui example"));
+        assert!(text.contains("Press 'q' to quit"));
+    }
+
+    #[test]
+    fn exiting_ui_asks_for_confirmation() {
+        let app = App {
+            mode: Mode::Exiting,
+        };
+        assert!(render(&app).contains("Press 'y' to confirm"));
+    }
+
+    #[test]
+    fn quit_confirmation_flow() {
+        let mut app = App::default();
+        app.handle_key_event(KeyCode::Char('x').into());
+        assert_eq!(app.mode, Mode::Running);
+        app.handle_key_event(KeyCode::Char('q').into());
+        app.handle_key_event(KeyCode::Char('n').into());
+        assert_eq!(app.mode, Mode::Running);
+        app.handle_key_event(KeyCode::Char('q').into());
+        app.handle_key_event(KeyCode::Char('y').into());
+        assert_eq!(app.mode, Mode::Done);
+    }
+
+    #[test]
+    fn middle_widget_renders_its_text() {
+        let area = Rect::new(0, 0, 20, 3);
+        let mut buf = Buffer::empty(area);
+        MiddleWidget::new("hello").render(area, &mut buf);
+        let text: String = buf.content().iter().map(|c| c.symbol()).collect();
+        assert!(text.contains("hello"));
+        assert!(text.contains("Text"));
+    }
+
+    #[test]
+    #[ignore = "requires an interactive terminal and key input"]
+    fn test_ratatui_example_entry_point() {
+        main();
+    }
 }

@@ -68,4 +68,42 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn options_flags_and_free_arguments_are_extracted() {
+        let mut args = Arguments::from_vec(
+            ["--name", "Ann", "--age", "7", "--verbose", "f.txt"]
+                .map(Into::into)
+                .to_vec(),
+        );
+        assert_eq!(
+            args.opt_value_from_str::<_, String>("--name")
+                .unwrap()
+                .as_deref(),
+            Some("Ann")
+        );
+        assert_eq!(
+            args.opt_value_from_str::<_, u32>("--age").unwrap(),
+            Some(7)
+        );
+        assert!(args.contains("--verbose"));
+        assert_eq!(
+            args.opt_free_from_str::<String>().unwrap().as_deref(),
+            Some("f.txt")
+        );
+        assert!(args.finish().is_empty());
+    }
+
+    #[test]
+    fn invalid_numbers_and_leftovers_are_reported() {
+        let mut args = Arguments::from_vec(
+            ["--age", "x", "--extra"].map(Into::into).to_vec(),
+        );
+        assert!(args.opt_value_from_str::<_, u32>("--age").is_err());
+        assert_eq!(
+            args.finish().len(),
+            3,
+            "a failed parse leaves its arguments unconsumed"
+        );
+    }
 }

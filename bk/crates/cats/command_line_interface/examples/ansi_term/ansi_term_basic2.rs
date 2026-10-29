@@ -33,4 +33,20 @@ mod tests {
     fn test_ansi_term_basic2_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn color_and_bold_combine_into_one_escape_sequence() {
+        assert_eq!(
+            Color::Yellow.bold().paint("x").to_string(),
+            "\u{1b}[1;33mx\u{1b}[0m"
+        );
+        assert_eq!(
+            Color::Yellow.paint("x").to_string(),
+            "\u{1b}[33mx\u{1b}[0m"
+        );
+        assert_eq!(
+            Style::new().bold().paint("x").to_string(),
+            "\u{1b}[1mx\u{1b}[0m"
+        );
+    }
 }

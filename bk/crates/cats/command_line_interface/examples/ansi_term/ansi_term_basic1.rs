@@ -28,4 +28,17 @@ mod tests {
     fn test_ansi_term_basic1_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn bold_style_wraps_text_in_the_bold_code() {
+        assert_eq!(
+            Style::new().bold().paint("This is Bold").to_string(),
+            "\u{1b}[1mThis is Bold\u{1b}[0m"
+        );
+    }
+
+    #[test]
+    fn plain_style_leaves_text_unchanged() {
+        assert_eq!(Style::new().paint("plain").to_string(), "plain");
+    }
 }

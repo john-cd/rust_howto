@@ -45,6 +45,8 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    // output-only: the example only prompts the user, so there is nothing to
+    // assert without an interactive terminal.
     #[test]
     #[ignore = "Requires user input"]
     fn require_user_input() {

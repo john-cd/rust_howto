@@ -99,4 +99,25 @@ mod tests {
     fn test_crossterm_handles_terminal_input() -> anyhow::Result<()> {
         main()
     }
+
+    #[test]
+    fn terminal_commands_produce_the_expected_escape_sequences()
+    -> anyhow::Result<()> {
+        let mut out: Vec<u8> = Vec::new();
+        queue!(out, Clear(ClearType::All), cursor::MoveTo(0, 0))?;
+        assert_eq!(String::from_utf8(out.clone())?, "\u{1b}[2J\u{1b}[1;1H");
+
+        out.clear();
+        execute!(
+            out,
+            SetForegroundColor(Color::Blue),
+            Print("hi"),
+            style::ResetColor
+        )?;
+        let text = String::from_utf8(out)?;
+        assert!(text.contains("hi"));
+        assert!(text.starts_with("\u{1b}[38;5;12m"), "{text:?}");
+        assert!(text.ends_with("\u{1b}[0m"));
+        Ok(())
+    }
 }

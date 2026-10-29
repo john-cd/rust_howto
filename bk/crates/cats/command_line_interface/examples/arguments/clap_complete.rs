@@ -61,4 +61,22 @@ mod tests {
     fn test_clap_complete_example_entry_point() -> std::io::Result<()> {
         main()
     }
+
+    #[test]
+    fn generated_bash_script_mentions_the_command_and_option()
+    -> std::io::Result<()> {
+        let dir = std::env::temp_dir().join("myapp-completions-test");
+        std::fs::create_dir_all(&dir)?;
+        let path = generate_to(Bash, &mut build_cli(), "myapp", &dir)?;
+        assert_eq!(path.file_name().unwrap(), "myapp.bash");
+        let script = std::fs::read_to_string(&path)?;
+        assert!(script.contains("myapp"));
+        assert!(script.contains("--config"));
+        Ok(())
+    }
+
+    #[test]
+    fn cli_definition_is_valid() {
+        build_cli().debug_assert();
+    }
 }

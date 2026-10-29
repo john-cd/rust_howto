@@ -84,4 +84,20 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn get_args_parses_the_embedded_argument_list() {
+        let args = get_args().unwrap();
+        assert_eq!(args.name, "John");
+        assert_eq!(args.age, 30);
+    }
+
+    #[test]
+    fn lexopt_rejects_a_non_numeric_age_value() {
+        use lexopt::ValueExt as _;
+        let mut parser = lexopt::Parser::from_iter(["myapp", "--age", "abc"]);
+        let _ = parser.next().unwrap();
+        let value = parser.value().unwrap();
+        assert!(value.parse::<u32>().is_err());
+    }
 }

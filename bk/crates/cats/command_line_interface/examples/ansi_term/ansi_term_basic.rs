@@ -30,4 +30,20 @@ mod tests {
     fn test_ansi_term_basic_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn painted_text_is_wrapped_in_ansi_color_codes() {
+        assert_eq!(
+            Color::Red.paint("red").to_string(),
+            "\u{1b}[31mred\u{1b}[0m"
+        );
+        assert_eq!(
+            Color::Blue.paint("blue").to_string(),
+            "\u{1b}[34mblue\u{1b}[0m"
+        );
+        assert_eq!(
+            Color::Green.paint("green").to_string(),
+            "\u{1b}[32mgreen\u{1b}[0m"
+        );
+    }
 }

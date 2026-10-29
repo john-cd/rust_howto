@@ -139,4 +139,57 @@ mod tests {
     fn test_clap_example_entry_point() {
         println!("{:?}", main());
     }
+
+    #[test]
+    fn defaults_apply_when_only_a_pattern_is_given() {
+        let cli = Cli::try_parse_from(["app", "needle"]).unwrap();
+        assert_eq!(cli.pattern.as_deref(), Some("needle"));
+        assert_eq!(cli.port, 8080);
+        assert_eq!(cli.debug, 0);
+        assert!(cli.path.is_none());
+        assert!(cli.command.is_none());
+    }
+
+    #[test]
+    fn repeated_debug_flags_are_counted_and_options_parsed() {
+        let cli = Cli::try_parse_from(["app", "-dd", "-p", "a/b", "p", "9000"])
+            .unwrap();
+        assert_eq!(cli.debug, 2);
+        assert_eq!(cli.path, Some(PathBuf::from("a/b")));
+        assert_eq!(cli.port, 9000);
+    }
+
+    #[test]
+    fn port_zero_and_non_numbers_are_rejected() {
+        assert!(Cli::try_parse_from(["app", "p", "0"]).is_err());
+        assert!(Cli::try_parse_from(["app", "p", "http"]).is_err());
+        assert!(Cli::try_parse_from(["app", "p", "70000"]).is_err());
+    }
+
+    #[test]
+    fn read_subcommand_requires_files() {
+        let cli =
+            Cli::try_parse_from(["app", "read", "-a", "f1", "f2"]).unwrap();
+        match cli.command {
+            Some(Commands::Read { all, file }) => {
+                assert!(all);
+                assert_eq!(file, [PathBuf::from("f1"), PathBuf::from("f2")]);
+            }
+            other => panic!("unexpected command: {other:?}"),
+        }
+        assert!(Cli::try_parse_from(["app", "read"]).is_err());
+        assert!(matches!(
+            Cli::try_parse_from(["app", "tell"]).unwrap().command,
+            Some(Commands::Tell)
+        ));
+    }
+
+    #[test]
+    fn no_arguments_shows_help_instead_of_running() {
+        let err = Cli::try_parse_from(["app"]).unwrap_err();
+        assert_eq!(
+            err.kind(),
+            clap::error::ErrorKind::DisplayHelpOnMissingArgumentOrSubcommand
+        );
+    }
 }

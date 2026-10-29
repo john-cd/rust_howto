@@ -70,4 +70,38 @@ mod tests {
     fn test_clap_basic_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn short_and_long_options_are_parsed() {
+        let m = cli().get_matches_from([
+            "test_app",
+            "-n",
+            "42",
+            "--file",
+            "README.md",
+        ]);
+        assert_eq!(m.get_one::<String>("num").map(String::as_str), Some("42"));
+        assert_eq!(
+            m.get_one::<PathBuf>("file"),
+            Some(&PathBuf::from("README.md"))
+        );
+    }
+
+    #[test]
+    fn options_are_optional_and_unknown_flags_rejected() {
+        let m = cli().get_matches_from(["test_app"]);
+        assert!(m.get_one::<String>("num").is_none());
+        assert!(m.get_one::<PathBuf>("file").is_none());
+        assert!(cli().try_get_matches_from(["test_app", "--bogus"]).is_err());
+        assert!(cli().try_get_matches_from(["test_app", "-n"]).is_err());
+    }
+
+    #[test]
+    fn version_flag_prints_the_version() {
+        let err = cli()
+            .try_get_matches_from(["test_app", "--version"])
+            .unwrap_err();
+        assert_eq!(err.kind(), clap::error::ErrorKind::DisplayVersion);
+        assert!(err.to_string().contains("0.1.0"));
+    }
 }
