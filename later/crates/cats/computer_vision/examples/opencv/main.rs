@@ -6,9 +6,10 @@
 mod opencv;
 
 /// Runs the example if it is supported.
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     #[cfg(all(target_os = "linux", feature = "opencv"))]
     {
-        opencv::run();
+        opencv::run()?;
     }
+    Ok(())
 }

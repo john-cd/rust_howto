@@ -12,7 +12,6 @@ use std::path::Path;
 use image::Rgb;
 use image::RgbImage;
 use opencv::core::Mat;
-use opencv::core::Scalar;
 use opencv::core::Size;
 use opencv::core::Vector;
 use opencv::core::count_non_zero;
@@ -54,8 +53,7 @@ fn process_image(
     input_path: &Path,
     output_path: &Path,
 ) -> Result<Mat, Box<dyn std::error::Error>> {
-    let input_path = input_path.to_string_lossy();
-    let input = imgcodecs::imread(&input_path, imgcodecs::IMREAD_COLOR)?;
+    let input = imgcodecs::imread(input_path, imgcodecs::IMREAD_COLOR)?;
     if input.empty() {
         return Err(std::io::Error::other(
             "OpenCV could not load the input image",
@@ -77,8 +75,7 @@ fn process_image(
     let mut edges = Mat::default();
     imgproc::canny(&blurred, &mut edges, 50.0, 150.0, 3, false)?;
 
-    let output_path = output_path.to_string_lossy();
-    if !imgcodecs::imwrite(&output_path, &edges, &Vector::new())? {
+    if !imgcodecs::imwrite(output_path, &edges, &Vector::new())? {
         return Err(std::io::Error::other(
             "OpenCV could not write the edge image",
         )
