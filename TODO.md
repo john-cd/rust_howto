@@ -76,7 +76,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
 
 - [#864](https://github.com/john-cd/rust_howto/issues/864) — **P3** — Finish Async-GraphQL with deterministic schema/query tests — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — HUMAN REVIEW MARKER PRESERVED**
-- [#912](https://github.com/john-cd/rust_howto/issues/912) — **P3** — Extract the Toasty example and finish ORM guidance using in-memory SQLite — Everyday examples and concrete fixes chat — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — PR LINK REQUIRED**
 
 ### Prose and book structure
 
@@ -179,13 +178,9 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#434](https://github.com/john-cd/rust_howto/issues/434) — **P4** — os_linux-apis/linux.md: linux: write — **IMPLEMENTED ON DEVELOP; OPEN — chapter and #818 statx example present; Linux test, final book/reference/spelling checks, and PR link pending**
 - [#435](https://github.com/john-cd/rust_howto/issues/435) — **P4** — os_macos-apis/macos.md: macos: write — **PARTIAL ON DEVELOP; OPEN — chapter and safe #819 objc2 example present; later/crates macOS CI inclusion, final native/book/reference/spelling validation, and PR link remain**
 - [#496](https://github.com/john-cd/rust_howto/issues/496) — **P4** — wasm/wasm_standalone_runtimes.md: others: organize/write — **DEFERRED — current support checks for six runtimes and Wasmer/Wasmtime example builds/tests are held for the final validation pass; blocker details are on the issue**
-- [#498](https://github.com/john-cd/rust_howto/issues/498) — **P4** — wasm/yew.md: yew: write / organize — **IMPLEMENTED ON DEVELOP; OPEN — Yew 0.23 Trunk guide, comparison, current counter example, and references present; final reference/book/spelling checks and PR link pending**
-- [#1217](https://github.com/john-cd/rust_howto/issues/1217) — **P4** — `wasm/wasm_development.md`: write — **IMPLEMENTED ON DEVELOP; OPEN — all five planned topics and summary entry integrated; Rustfmt/Clippy passed; book/reference/spelling checks and PR link pending**
-- [#1218](https://github.com/john-cd/rust_howto/issues/1218) — **P4** — `wasm/interfacing_with_javascript.md`: write — **IMPLEMENTED ON DEVELOP; OPEN — chapter, examples, references, and SUMMARY entry present; final wasm, book, reference, spelling checks and PR link pending**
 
 #### NOW-PROSE-02 — UI, accessibility, media and rendering
 
-- [#367](https://github.com/john-cd/rust_howto/issues/367) — **P4** — game-development/index.md: expand — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#369](https://github.com/john-cd/rust_howto/issues/369) — **P4** — game-engines/game_engines.md: game_engines: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#375](https://github.com/john-cd/rust_howto/issues/375) — **P4** — rendering_graphics-api/gpu_abstraction_layers.md: webgpu: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#377](https://github.com/john-cd/rust_howto/issues/377) — **P4** — rendering/2d_renderers.md: 2d_renderers: write; titles — **BLOCKED — #792 Vger status/compatibility and #793 WebRender disposition unresolved**
@@ -193,38 +188,24 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 - [#383](https://github.com/john-cd/rust_howto/issues/383) — **P4** — gui/gtk.md: gtk: write — **BLOCKED — GTK 4 development SDK and pkg-config metadata unavailable**
 - [#385](https://github.com/john-cd/rust_howto/issues/385) — **P4** — gui/immediate_mode_gui.md: immediate_mode_gui: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#389](https://github.com/john-cd/rust_howto/issues/389) — **P4** — gui/retained_mode_gui.md: retained_mode_gui: organize/write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — book and reference checks and the Slint-feature check remain; stale undeclared Tauri build-hook reference removed**
-- [#391](https://github.com/john-cd/rust_howto/issues/391) — **P4** — gui/text_layout.md: text_layout: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#394](https://github.com/john-cd/rust_howto/issues/394) — **P4** — gui/web_based_gui.md: web_based_gui: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#396](https://github.com/john-cd/rust_howto/issues/396) — **P4** — Write the window creation chapter G — **BLOCKED — #1056 baseview disposition and new softbuffer dependency review pending**
 - [#413](https://github.com/john-cd/rust_howto/issues/413) — **P4** — multimedia/multimedia.md: multimedia: write — **BLOCKED — #805 playback example is unfinished; a distinct cross-media scope remains**
 - [#417](https://github.com/john-cd/rust_howto/issues/417) — **P4** — multimedia_encoding/encoding.md: encoding: write — **BLOCKED — symphonia, hound, and mp4 dependencies are not in the workspace**
-- [#418](https://github.com/john-cd/rust_howto/issues/418) — **P4** — multimedia_encoding/index.md: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#420](https://github.com/john-cd/rust_howto/issues/420) — **P4** — multimedia_images/images.md: images: write — **BLOCKED — required example split and EXIF/oxipng dependency review in #808 are incomplete**
 - [#455](https://github.com/john-cd/rust_howto/issues/455) — **P4** — rendering_engine/rendering_engines.md: rendering_engines: write — **BLOCKED — #955 category pointer decision and #830 example disposition remain unresolved**
 - [#457](https://github.com/john-cd/rust_howto/issues/457) — **P4** — rendering_graphics-api/native_graphics_apis.md: graphics_apis: write — **BLOCKED — required wgpu adapter-info example in #831 remains a stub**
 - [#608](https://github.com/john-cd/rust_howto/issues/608) — **P4** — gpu/index.md: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 - [#934](https://github.com/john-cd/rust_howto/issues/934) — **P4** — gui/ui_layout.md: review — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — focused GUI all-target Clippy passes; book and reference checks remain**
-- [#954](https://github.com/john-cd/rust_howto/issues/954) — **P4** — rendering_data-formats/index.md: review — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
-- [#1229](https://github.com/john-cd/rust_howto/issues/1229) — **P4** — rendering_graphics-api/opengl.md: write — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
-- [#1999](https://github.com/john-cd/rust_howto/issues/1999) — **Unprioritized** — categories/multimedia: write a streaming media page (RTSP, WebRTC, RTP) — **IMPLEMENTED ON DEVELOP; VALIDATION PENDING — Cargo lockfile reconciled; book and reference checks pending**
 
 #### NOW-PROSE-03 — Science, finance, data processing and visualization
 
 - [#257](https://github.com/john-cd/rust_howto/issues/257) — **P4** — computer-vision/opencv.md: opencv: expand, add example — **BLOCKED — OpenCV/libclang SDKs unavailable in this environment**
 - [#364](https://github.com/john-cd/rust_howto/issues/364) — **P4** — finance/quant.md: quant: write — **DEFERRED — requested `financial`, `rand`, and `rand_distr` examples require new dependencies; skipped under the no-external-dependency constraint**
-- [#365](https://github.com/john-cd/rust_howto/issues/365) — **P4** — `finance/index.md`: write — **IMPLEMENTED ON DEVELOP; OPEN — dprint/rumdl/typos pass; direct refdefs blocked by `libsqlite3-sys` conflict; book/spell blocked by Git Bash failure**
-- [#472](https://github.com/john-cd/rust_howto/issues/472) — **P4** — science/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#474](https://github.com/john-cd/rust_howto/issues/474) — **P4** — science_geo/geo.md: geo: write — **BLOCKED — GeoJSON dependencies and PROJ C library required**
-- [#476](https://github.com/john-cd/rust_howto/issues/476) — **P4** — science_neuroscience/neuroscience.md: neuro: write — **IMPLEMENTED ON DEVELOP; final validation pending**
 - [#477](https://github.com/john-cd/rust_howto/issues/477) — **P4** — science_robotics/robot_operating_systems.md: robotics: organize — **BLOCKED — ROS 2 client/example issue #844 pending**
-- [#479](https://github.com/john-cd/rust_howto/issues/479) — **P4** — science_robotics/robotics_frameworks.md: useful_robotics_tools_and_libs: locate libs, organize, write — **IMPLEMENTED ON DEVELOP; OPEN — comparison page and references complete; final validation and PR link pending; Zenoh/OpenRR examples remain blocked under #845/#843**
-- [#480](https://github.com/john-cd/rust_howto/issues/480) — **P4** — science_robotics/index.md: organize — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
-- [#481](https://github.com/john-cd/rust_howto/issues/481) — **P4** — simulation/simulation.md: simulation: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#494](https://github.com/john-cd/rust_howto/issues/494) — **P4** — `visualization/visualization.md`: visualization: write — **BLOCKED — Plotters dependency required for SVG example**
-- [#2019](https://github.com/john-cd/rust_howto/issues/2019) — **P4** — Add dependency-free numerical integration recipes — **IMPLEMENTED ON DEVELOP; OPEN — focused tests, Clippy, reference checks, and book validation deferred to the final pass**
-- [#587](https://github.com/john-cd/rust_howto/issues/587) — **P4** — data-processing/dataframes.md: dataframes: organize / edit — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#1207](https://github.com/john-cd/rust_howto/issues/1207) — **P4** — science_robotics/perception_and_sensors.md: write — **PARTIAL ON DEVELOP; BLOCKED — `kiddo` example dependency unavailable**
-- [#1210](https://github.com/john-cd/rust_howto/issues/1210) — **P4** — science_robotics/simulation_visualization.md: write — **IMPLEMENTED ON DEVELOP; OPEN — final validation and PR link pending**
 - [#1211](https://github.com/john-cd/rust_howto/issues/1211) — **P4** — science_robotics/hardware_integration.md: write — **PARTIAL ON DEVELOP; BLOCKED — `embedded-hal-mock` example dependency unavailable**
 
 #### NOW-PROSE-04 — Publishing, curation and book coverage
@@ -234,36 +215,21 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-PROSE-05 — Cloud platforms and containers
 
-- [#574](https://github.com/john-cd/rust_howto/issues/574) — **P4** — cloud/aws.md: aws: write — **IMPLEMENTED — pending final crate and book validation**
 - [#576](https://github.com/john-cd/rust_howto/issues/576) — **P4** — cloud/rust_native_cloud_development.md: write — **BLOCKED — Shuttle's official notice says hosted operations are ceasing and its old pricing is stale; the Shuttle-specific example needs a replacement target decision**
 - [#988](https://github.com/john-cd/rust_howto/issues/988) — **P4** — virtualization/containers.md: review/write — **PARTIAL — `containerization.md` is nested under Containers; blocked on #1224's missing Docker client/test dependencies before adding the thin `using_containers.md` sibling and finalizing the section structure**
 - [#1224](https://github.com/john-cd/rust_howto/issues/1224) — **P4** — virtualization/using_containers.md: write / fix — **BLOCKED — required `bollard` and `testcontainers` dependencies are absent; the integration also requires a Docker daemon, as noted in the issue comment**
-- [#1225](https://github.com/john-cd/rust_howto/issues/1225) — **P4** — virtualization/containerization.md: write — **IMPLEMENTED — pending final Markdown/book validation**
 
 #### NOW-PROSE-06 — Security and cryptocurrencies
 
-- [#1179](https://github.com/john-cd/rust_howto/issues/1179) — **P3** — cryptography/certificates.md: write — **IMPLEMENTED — pending final cryptography crate, draft book, reference, spelling, and diff validation**
 
 #### NOW-PROSE-07 — Foreign function interfaces - IN PROGRESS
 
-- [#355](https://github.com/john-cd/rust_howto/issues/355) — **P4** — external-ffi-bindings/external_ffi_bindings.md: external_ffi_bindings: write — **IMPLEMENTED; OPEN — Windows checks passed; Unix run, full book gate and PR link pending**
-- [#1070](https://github.com/john-cd/rust_howto/issues/1070) — **P4** — development-tools_ffi/erlang_elixir.md: write — **IMPLEMENTED; OPEN — focused checks passed; full book gate and PR link pending**
 - [#1071](https://github.com/john-cd/rust_howto/issues/1071) — **P4** — development-tools_ffi/flutter.md: write; review in depth — **IMPLEMENTED AND REVIEWED; OPEN — focused checks passed; full book gate and PR link pending**
-- [#1072](https://github.com/john-cd/rust_howto/issues/1072) — **P4** — development-tools_ffi/java.md: write — **IMPLEMENTED; OPEN — focused checks passed; full book gate and PR link pending**
-- [#1074](https://github.com/john-cd/rust_howto/issues/1074) — **P4** — development-tools_ffi/node.md: write — **IMPLEMENTED; OPEN — focused checks passed; full book gate and PR link pending**
 - [#1075](https://github.com/john-cd/rust_howto/issues/1075) — **P4** — development-tools_ffi/objc.md: write — **IMPLEMENTED; OPEN — Windows checks passed; native runtime, full book gate and PR link pending**
-- [#1076](https://github.com/john-cd/rust_howto/issues/1076) — **P4** — development-tools_ffi/ruby.md: write — **IMPLEMENTED; OPEN — Windows checks passed; native runtime, full book gate and PR link pending**
 
 #### NOW-PROSE-08 — Web, networking and databases
 
-- [#288](https://github.com/john-cd/rust_howto/issues/288) — **P3** — database/search.md: expand database search guidance — **IMPLEMENTED ON LOCAL DEVELOP — focused database Clippy/nextest passed; full book rendering blocked by MSYS/AWS-LC; PR link required**
 - [#290](https://github.com/john-cd/rust_howto/issues/290) — **P3** — database-implementations/databases.md: databases: expand / write — **BLOCKED — requires adding and validating a new `redb` or `fjall` dependency and tempfile-backed example; deferred per request**
-- [#292](https://github.com/john-cd/rust_howto/issues/292) — **P3** — database-implementations/index.md: database-implementations: expand — **IMPLEMENTED ON LOCAL DEVELOP — draft lint/spelling passed; full book rendering blocked by MSYS/AWS-LC; PR link required**
-- [#342](https://github.com/john-cd/rust_howto/issues/342) — **P3** — email/send_emails.md: send_emails: write — **IMPLEMENTED ON LOCAL DEVELOP — draft lint/spelling and generated crate references passed; full book rendering blocked by MSYS/AWS-LC; PR link required**
-- [#343](https://github.com/john-cd/rust_howto/issues/343) — **P3** — email/index.md: write — **IMPLEMENTED ON LOCAL DEVELOP — draft lint/spelling passed; full book rendering blocked by MSYS/AWS-LC; PR link required**
-- [#509](https://github.com/john-cd/rust_howto/issues/509) — **P3** — web-programming_http-server/_batteries-included_frameworks.md: batteries-included_frameworks: write — **IMPLEMENTED ON LOCAL DEVELOP — draft lint/spelling passed; full book rendering blocked by MSYS/AWS-LC; PR link required**
-- [#518](https://github.com/john-cd/rust_howto/issues/518) — **P3** — web-programming_http-server/other_frameworks.md: other_frameworks: organize — **IMPLEMENTED ON LOCAL DEVELOP — draft lint/spelling passed; full book rendering blocked by MSYS/AWS-LC; PR link required**
-- [#1065](https://github.com/john-cd/rust_howto/issues/1065) — **P3** — database/index.md: organize — **IMPLEMENTED ON LOCAL DEVELOP — draft lint/spelling passed; full book rendering blocked by MSYS/AWS-LC; PR link required**
 - [#1067](https://github.com/john-cd/rust_howto/issues/1067) — **P3** — database/mssql.md: organize / write — **BLOCKED — Docker CLI is installed, but Docker API access fails with `permission denied`; SQL Server service validation is unavailable**
 - [#1068](https://github.com/john-cd/rust_howto/issues/1068) — **P3** — database/nosql.md: review — **IMPLEMENTED ON LOCAL DEVELOP — focused database Clippy and 9/9 portable tests passed (4 external-service tests skipped); draft lint/spelling and generated crate refs passed; full book gate and PR link pending**
 - [#1069](https://github.com/john-cd/rust_howto/issues/1069) — **P3** — database/oracle.md: write — **BLOCKED — Oracle Instant Client is unavailable (`OCI_LIB_DIR` unset and `sqlplus` absent); Docker API access is denied, so the required local Oracle service cannot be validated**
@@ -272,29 +238,19 @@ Validation (2026-10-27, NOW-PROSE-08): focused database Clippy and nextest passe
 
 #### NOW-PROSE-09 — Development tools, build systems and editors — IMPLEMENTED; FULL VALIDATION BLOCKED
 
-- [#600](https://github.com/john-cd/rust_howto/issues/600) — **P4** — devops/github_actions.md: complete Rust CI, test matrices, tool installation, caching, and security guidance — **IMPLEMENTED; INTEGRATED LOCALLY** (`a499e04d7`).
-- [#615](https://github.com/john-cd/rust_howto/issues/615) — **P4** — written-in-rust/other_tools.md: group tools into tables, preserve anchors, remove duplicate entries and the ChatGPT bookmark — **IMPLEMENTED; INTEGRATED LOCALLY** (`2a62690df`).
 
 Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references and local fragments, focused mdBook rendering, rendered tables/anchors, and `git diff --check` passed. All three YAML workflows passed Zizmor's offline audit. `just bb` is blocked before rendering because `cargo tree --locked` needs to update the existing `bk/crates/Cargo.lock`; no Cargo inputs changed in this batch. `just refdefs check` is Unix-only; running its script through Git Bash reports existing unresolved global labels, while all labels used by the two completed chapters resolve. Issues remain open pending the full book gate. Commits are local; no push was requested.
 
 #### NOW-PROSE-10 — Localization and internationalization - IN PROGRESS
 
 - [#404](https://github.com/john-cd/rust_howto/issues/404) — **P4** — localization/localization.md: localization: write — **IMPLEMENTED ON DEVELOP; OPEN — PR link pending**
-- [#405](https://github.com/john-cd/rust_howto/issues/405) — **P4** — localization/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — PR link pending**
 
 #### NOW-PROSE-11 — Asynchronous programming and caching - IN PROGRESS
 
-- [#269](https://github.com/john-cd/rust_howto/issues/269) — **P3** — concurrency/_actors.md: _actors: organize — **IMPLEMENTED ON DEVELOP; OPEN — full gates and PR pending**
   - Focused actor Clippy, four actor tests, dprint, rumdl, chapter spelling, and direct refdefs check pass. `just ca`, `just ntt actors`, `just bb`, and `just spell` stop at the Git Bash `NtCreateDirectoryObject` access error; `just refdefs check` is not a defined recipe. Direct all-target Clippy also reports a pre-existing semicolon lint in `message_passing_crossbeam_channel.rs`.
 
 #### NOW-PROSE-12 — Aerospace and device protocols — IMPLEMENTED; FULL VALIDATION BLOCKED
 
-- [#190](https://github.com/john-cd/rust_howto/issues/190) — **P4** — aerospace/index.md: review — **IMPLEMENTED ON DEVELOP; OPEN — required book gates and PR link pending**
-- [#193](https://github.com/john-cd/rust_howto/issues/193) — **P4** — aerospace_drones/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — required book gates and PR link pending**
-- [#196](https://github.com/john-cd/rust_howto/issues/196) — **P4** — aerospace_protocols/index.md: aerospace protocols: write — **IMPLEMENTED ON DEVELOP; OPEN — required book gates and PR link pending**
-- [#199](https://github.com/john-cd/rust_howto/issues/199) — **P4** — aerospace_simulation/aerospace_simulation.md: aerospace_simulation: write — **IMPLEMENTED ON DEVELOP; OPEN — required book gates and PR link pending**
-- [#201](https://github.com/john-cd/rust_howto/issues/201) — **P4** — aerospace_space-protocols/space_protocols.md: space_protocols: write — **IMPLEMENTED ON DEVELOP; OPEN — required book gates and PR link pending**
-- [#202](https://github.com/john-cd/rust_howto/issues/202) — **P4** — aerospace_space-protocols/index.md: write — **IMPLEMENTED ON DEVELOP; OPEN — required book gates and PR link pending**
 
 Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace checks passed. Focused tests and all-target Clippy passed for the aerospace simulation and space-protocol examples. The complete book/reference gates remain blocked: the direct reference check reaches `bk/crates` but `cargo tree --locked` requires an existing lockfile update; Git Bash-backed `just bb` cannot start because of the `NtCreateDirectoryObject` access denial. A direct mdBook build reports repository-wide unresolved links, and optional `mdbook-pandoc` is unavailable. Issues remain open pending complete book gates and PR links.
 
@@ -355,13 +311,11 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-01 — Networking, authentication and email
 
-- [#225](https://github.com/john-cd/rust_howto/issues/225) — **P3** — Offline Basic authentication example F — **IMPLEMENTED ON DEVELOP; BLOCKED ON FULL GATES — focused offline tests, Clippy, and formatting passed; `just ca` needs a Cargo.lock update and `just bb` is blocked by the Windows AWS-LC/NASM build; details are on the issue**
 - [#810](https://github.com/john-cd/rust_howto/issues/810) — **P3** — Run native Linux tests and strict Clippy for the Glommio example — **IMPLEMENTED ON DEVELOP; BLOCKED — Linux-only tests/Clippy cannot run here; WSL startup returns `Wsl/E_ACCESSDENIED`; the issue comment records the native Linux follow-up**
 - [#1946](https://github.com/john-cd/rust_howto/issues/1946) — **P3** — Add examples: read mail over IMAP and filter disposable addresses before sending (imap, mailchecker) — **IMPLEMENTED ON DEVELOP; OPEN — IMAP/parser and mailchecker examples, pages, tables, and refdefs are present; live IMAP requires a server and credentials; offline tests, Clippy, refdefs, and book build deferred to final validation; details are on the issue**
 
 #### VALIDATE-CODE-02 — Databases and service clients
 
-- [#1017](https://github.com/john-cd/rust_howto/issues/1017) — **P2** — Finish the cdrs_tokio example — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy passed; ignored CRUD test needs Cassandra; full native-dependency/book gates remain; details are on the issue**
 - [#1022](https://github.com/john-cd/rust_howto/issues/1022) — **P2** — Finish the Sibyl example and review installation steps — **IMPLEMENTED ON DEVELOP; BLOCKED — Oracle Instant Client is unavailable (`OCI_LIB_DIR` required); Linux/Windows installation and Oracle service checks remain; details are on the issue**
 - [#1162](https://github.com/john-cd/rust_howto/issues/1162) — **P2** — Review the PostgreSQL aggregate_data example — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused target tests/Clippy passed; the aggregate query test needs configured PostgreSQL; full book/native-dependency gates remain; details are on the issue**
 - [#708](https://github.com/john-cd/rust_howto/issues/708) — **P3** — Finish the Cornucopia example B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused build/tests/Clippy and live PostgreSQL checks passed; full Clippy/book gates remain unresolved; details are on the issue**
@@ -415,126 +369,76 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-16 — Filesystem and process management
 
-- [#1906](https://github.com/john-cd/rust_howto/issues/1906) — **P3** — Add example: crash-safe atomic file replacement (temp file + fsync + rename) — **IMPLEMENTED ON DEVELOP; OPEN — tempfile/atomicwrites variants and replacement tests are present; Unix parent-directory sync and post-replacement error reporting added; Windows durability limits documented; formatted; tests and required gates deferred**
 - [#1922](https://github.com/john-cd/rust_howto/issues/1922) — **P3** — Add examples: manage child processes (kill a process tree, resource limits, sandboxed workers) — **IMPLEMENTED ON DEVELOP; BLOCKED — process groups, Windows Job Objects, timeout and kill guard examples, confinement guidance, and book page are present; Linux/Windows and required full gates remain; details are on the issue**
 
 ### Prose and book structure
 
 #### VALIDATE-PROSE-01 — Language, mathematics, date and time
 
-- [#407](https://github.com/john-cd/rust_howto/issues/407) — **P2** — `mathematics/additional_numeric_types.md`: additional_numeric_types: write — **IMPLEMENTED ON DEVELOP; BLOCKED — numeric choices and examples are present; prior focused checks passed; full Clippy/reference gates remain; details are on the issue**
-- [#938](https://github.com/john-cd/rust_howto/issues/938) — **P2** — Final review of trigonometry — **IMPLEMENTED ON DEVELOP; BLOCKED — prior example suite passed; full book validation remains; details are on the issue**
 - [#1188](https://github.com/john-cd/rust_howto/issues/1188) — **P2** — `date-and-time/index.md`: review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — humantime and guidance are present; book validation and human review/promotion remain; details are on the issue**
-- [#293](https://github.com/john-cd/rust_howto/issues/293) — **P3** — Write the time-crate chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and documentation checks passed; full book build remains; details are on the issue**
-- [#913](https://github.com/john-cd/rust_howto/issues/913) — **P3** — Review the duration chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and documentation checks passed; full book build remains; details are on the issue**
 - [#1890](https://github.com/john-cd/rust_howto/issues/1890) — **P3** — Fix Code Organization chapters and visibility examples — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy, refdefs, and book build passed; full-workspace Clippy remains; details are on the issue**
-- [#401](https://github.com/john-cd/rust_howto/issues/401) — **P4** — Complete the internationalization chapter D — **IMPLEMENTED ON DEVELOP; BLOCKED — prior ICU4X tests/Clippy and targeted documentation checks passed; full book/reference gates remain; details are on the issue**
 - [#490](https://github.com/john-cd/rust_howto/issues/490) — **P4** — Write the number-formatting chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused tests/Clippy and documentation checks passed; full book build remains; details are on the issue**
 
 #### VALIDATE-PROSE-02 — Asynchronous programming and caching
 
 - [#633](https://github.com/john-cd/rust_howto/issues/633) — **P2** — `asynchronous/async.md`: write; review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — async fundamentals and runtime guidance are present; prior focused tests/Clippy and book build passed; full Clippy and Windows spelling gate remain; details are on the issue**
-- [#1173](https://github.com/john-cd/rust_howto/issues/1173) — **P3** — `caching/index.md`: write — **IMPLEMENTED ON DEVELOP; BLOCKED — caching overview, crate table, and child links are present; book/spelling gates and issue-linked PR remain; details are on the issue**
 
 #### VALIDATE-PROSE-03 — Development tools, build systems and editors
 
-- [#294](https://github.com/john-cd/rust_howto/issues/294) — **P2** — `cargo/crate_registries.md`: write; expand — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
-- [#299](https://github.com/john-cd/rust_howto/issues/299) — **P2** — `documentation/mdbook.md`: mdbook: organize, expand — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
-- [#305](https://github.com/john-cd/rust_howto/issues/305) — **P2** — `other/other.md`: other: expand; revise refs.incl.md — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
 - [#311](https://github.com/john-cd/rust_howto/issues/311) — **P2** — `development-tools_cargo-plugins/index.md`: review in depth, reorg table — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
-- [#919](https://github.com/john-cd/rust_howto/issues/919) — **P2** — `other/code_build.md`: review; dedupe this page and cargo plugins > building; move from other section — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
 - [#962](https://github.com/john-cd/rust_howto/issues/962) — **P2** — `text-editors/index.md`: write; review in depth finish the table — **IMPLEMENTED ON DEVELOP; BLOCKED — reference/spelling and Windows AWS-LC book gates remain; details are on the issue**
-- [#240](https://github.com/john-cd/rust_howto/issues/240) — **P3** — Cross-compilation chapter E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior spelling/refdefs checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
-- [#242](https://github.com/john-cd/rust_howto/issues/242) — **P3** — Faster-linking review E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior spelling/refdefs checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
-- [#245](https://github.com/john-cd/rust_howto/issues/245) — **P3** — Compilation-duration chapter E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior spelling/refdefs checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
-- [#296](https://github.com/john-cd/rust_howto/issues/296) — **P3** — Expand badge documentation — **IMPLEMENTED ON DEVELOP; BLOCKED — focused Markdown checks passed; repository-wide Markdown and book gates remain; details are on the issue**
-- [#921](https://github.com/john-cd/rust_howto/issues/921) — **P3** — Review the build-time tooling chapter and its native examples D — **IMPLEMENTED ON DEVELOP; BLOCKED — package check needs libgit2/pkg-config; Windows AWS-LC blocks book build; details are on the issue**
-- [#922](https://github.com/john-cd/rust_howto/issues/922) — **P3** — Review Cargo auditing tools — **IMPLEMENTED ON DEVELOP; BLOCKED — direct mdBook and documentation checks passed; Windows book wrapper remains; details are on the issue**
-- [#925](https://github.com/john-cd/rust_howto/issues/925) — **P3** — Review logging configuration — **IMPLEMENTED ON DEVELOP; BLOCKED — focused appender test/Clippy passed; full logger suite and Windows book gate remain; details are on the issue**
-- [#926](https://github.com/john-cd/rust_howto/issues/926) — **P3** — Review diagnostic functions — **IMPLEMENTED ON DEVELOP; BLOCKED — focused diagnostic test/Clippy passed; Windows book gate remains; details are on the issue**
-- [#927](https://github.com/john-cd/rust_howto/issues/927) — **P3** — Review the logging chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — focused tests/Clippy and book checks passed; full-workspace Clippy remains; details are on the issue**
-- [#329](https://github.com/john-cd/rust_howto/issues/329) — **P4** — Write the procedural macro tools chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — direct mdBook and documentation checks passed; Windows book wrapper remains; details are on the issue**
-- [#332](https://github.com/john-cd/rust_howto/issues/332) — **P4** — Complete the procedural-macro helper index — **IMPLEMENTED ON DEVELOP; BLOCKED — documentation checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
 - [#604](https://github.com/john-cd/rust_howto/issues/604) — **P4** — Write the release automation chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — direct mdBook and documentation checks passed; Windows book wrapper remains; details are on the issue**
-- [#605](https://github.com/john-cd/rust_howto/issues/605) — **P4** — Write the DevOps index — **IMPLEMENTED ON DEVELOP; BLOCKED — direct mdBook and documentation checks passed; Windows book wrapper remains; details are on the issue**
 
 #### VALIDATE-PROSE-04 — Encoding, parsing and text processing
 
-- [#354](https://github.com/john-cd/rust_howto/issues/354) — **P2** — `encoding/typecasts.md`: typecasts: write NOW; reorganize — **IMPLEMENTED ON DEVELOP; BLOCKED — prior formatting, focused Clippy, refdefs, and book build passed; example/spelling checks and linked PR remain; details are on the issue**
 - [#930](https://github.com/john-cd/rust_howto/issues/930) — **P2** — `encoding/string_encoding.md`: review — **IMPLEMENTED ON DEVELOP; OPEN — chapter guidance and related links are present; reference includes are outside the topic list; formatted; example checks, spelling, and required final gates remain**
-- [#350](https://github.com/john-cd/rust_howto/issues/350) — **P3** — Clean up structured-data TOML guidance — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
-- [#440](https://github.com/john-cd/rust_howto/issues/440) — **P3** — Complete the JSON guide — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
-- [#442](https://github.com/john-cd/rust_howto/issues/442) — **P3** — Complete the Markdown parser guide — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
-- [#444](https://github.com/john-cd/rust_howto/issues/444) — **P3** — Complete TOML parser guidance — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
-- [#446](https://github.com/john-cd/rust_howto/issues/446) — **P3** — Complete the XML guide — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
-- [#448](https://github.com/john-cd/rust_howto/issues/448) — **P3** — Complete parser utility guidance — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
-- [#951](https://github.com/john-cd/rust_howto/issues/951) — **P3** — Add programming-language parser guidance and a syn example — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
-- [#952](https://github.com/john-cd/rust_howto/issues/952) — **P3** — Review the parsing index — **IMPLEMENTED ON DEVELOP; BLOCKED — parser all-target checks stop in Windows onig_sys; strict Clippy and book build remain; details are on the issue**
 - [#1078](https://github.com/john-cd/rust_howto/issues/1078) — **P3** — `encoding/no_external_schema.md`: write — **PARTIAL ON DEVELOP; BLOCKED — guide is present; stale issue self-reference, full checks, Unix spelling, and linked PR remain; details are on the issue**
-- [#1186](https://github.com/john-cd/rust_howto/issues/1186) — **P3** — `parser-implementations/yaml.md`: write — **IMPLEMENTED ON DEVELOP; BLOCKED — YAML guide and example are present; focused/full gates, Unix spelling, and linked PR remain; details are on the issue**
-- [#1187](https://github.com/john-cd/rust_howto/issues/1187) — **P3** — `parser-implementations/html.md`: write — **IMPLEMENTED ON DEVELOP; BLOCKED — HTML parser guide is present; focused/full gates, Unix spelling, and linked PR remain; details are on the issue**
-- [#1190](https://github.com/john-cd/rust_howto/issues/1190) — **P3** — `text-processing/string_manipulation.md`: write — **IMPLEMENTED ON DEVELOP; BLOCKED — string manipulation recipes are present; full gates, Unix spelling, and linked PR remain; details are on the issue**
 
 #### VALIDATE-PROSE-05 — Web, networking and databases
 
 - [#944](https://github.com/john-cd/rust_howto/issues/944) — **P2** — `network-programming/index.md`: write; add cross-links; review; review `email_address`, `fast_chemail` — **IMPLEMENTED ON DEVELOP; BLOCKED — network index and cross-links are present; crate release and repository activity reviewed on 2026-10-27; refdefs/spelling/book gates and linked PR remain; details are on the issue**
 - [#974](https://github.com/john-cd/rust_howto/issues/974) — **P2** — `web-programming_http-client/apis.md`: review / fix — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Clippy, refdefs, and book build passed; example/spelling and all-features checks remain; details are on the issue**
 - [#977](https://github.com/john-cd/rust_howto/issues/977) — **P2** — `web-programming_http-server/index.md`: write / review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
-- [#238](https://github.com/john-cd/rust_howto/issues/238) — **P3** — Networking CLI chapter E — **IMPLEMENTED ON DEVELOP; BLOCKED — prior spelling/refdefs/Markdown checks passed; Windows AWS-LC book wrapper remains; details are on the issue**
 - [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused and live PostgreSQL checks passed; nextest selector and full gates remain; details are on the issue**
 - [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Clippy and live PostgreSQL checks passed; nextest selector, full gates, and repository-wide refdefs remain; details are on the issue**
 - [#291](https://github.com/john-cd/rust_howto/issues/291) — **P3** — — Search engines chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — search overview and comparison are present; Meilisearch service verification and refdefs/book/spelling gates remain; details are on the issue**
-- [#971](https://github.com/john-cd/rust_howto/issues/971) — **P3** — `web-programming/mime.md`: review — **IMPLEMENTED ON DEVELOP; BLOCKED — MIME guidance and examples are present; native-build, focused tests, full gates, and linked PR remain; details are on the issue**
-- [#972](https://github.com/john-cd/rust_howto/issues/972) — **P3** — `web-programming/scraping.md`: review — **IMPLEMENTED ON DEVELOP; BLOCKED — scraping guidance and offline fixtures are present; native-build, focused tests, full gates, and linked PR remain; details are on the issue**
-- [#978](https://github.com/john-cd/rust_howto/issues/978) — **P3** — `web-programming_http-server/middleware.md`: review — **IMPLEMENTED ON DEVELOP; BLOCKED — prior middleware tests/Clippy and direct mdBook build passed; book wrapper, Unix spelling, and linked PR remain; details are on the issue**
 - [#1064](https://github.com/john-cd/rust_howto/issues/1064) — **P3** — `database/amqp.md`: finish — **IMPLEMENTED ON DEVELOP; BLOCKED — AMQP guide and example are present; RabbitMQ service and native-build/full gates remain; details are on the issue**
-- [#979](https://github.com/john-cd/rust_howto/issues/979) — **P4** — Review the WebSocket index — **IMPLEMENTED ON DEVELOP; BLOCKED — WebSocket index and direct reference checks are present; book/refdefs/spelling gates remain; details are on the issue**
 
 #### VALIDATE-PROSE-06 — Filesystem utilities, shells and compression
 
-- [#237](https://github.com/john-cd/rust_howto/issues/237) — **P3** — `command-line-utilities/filesystem_cli.md`: filesystem: organize — **IMPLEMENTED; OPEN — task-based tools and rename guidance; repository activity reviewed; refdefs, book, spelling, and linked PR remain**
 - [#239](https://github.com/john-cd/rust_howto/issues/239) — **P3** — `command-line-utilities/shells.md`: shells: expand — **IMPLEMENTED; OPEN — shell and completion guidance, with repository activity reviewed; refdefs, book, spelling, and linked PR remain**
 - [#253](https://github.com/john-cd/rust_howto/issues/253) — **P3** — `compression/tar.md`: tar: review — **IMPLEMENTED; OPEN — archive and compression guidance reviewed; #254/#255 acceptance, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-07 — Security and cryptocurrencies
 
-- [#1180](https://github.com/john-cd/rust_howto/issues/1180) — **P3** — Write the cryptography utilities chapter — **IMPLEMENTED; OPEN — helper recipes and security limitations documented; tests, Clippy, refdefs, book, spelling, and linked PR remain**
 - [#278](https://github.com/john-cd/rust_howto/issues/278) — **P4** — Complete the cryptocurrency category overview D — **IMPLEMENTED; OPEN — crate release activity reviewed and deprecation linked; refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-08 — Systems, embedded, WebAssembly and virtualization
 
 - [#946](https://github.com/john-cd/rust_howto/issues/946) — **P3** — Write and review the external commands chapter — **PARTIAL; OPEN — stdin description corrected; platform-dependent examples, full checks, and linked PR remain**
 - [#1177](https://github.com/john-cd/rust_howto/issues/1177) — **P3** — `hardware-support/peripherals.md`: write — **IMPLEMENTED; OPEN — peripheral guide and overview table present; refdefs, book, spelling, and linked PR remain**
-- [#427](https://github.com/john-cd/rust_howto/issues/427) — **P4** — Complete the no-std index — **IMPLEMENTED; OPEN — index and crate table clarified; crate review, refdefs, book, spelling, and linked PR remain**
 - [#968](https://github.com/john-cd/rust_howto/issues/968) — **P4** — Complete the virtualization index — **PARTIAL; OPEN — table links repaired and vm-memory added; remaining review, refdefs, book, spelling, and linked PR remain**
-- [#970](https://github.com/john-cd/rust_howto/issues/970) — **P4** — Complete the WebAssembly index — **IMPLEMENTED; OPEN — host guidance and tooling index present; refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-09 — UI, accessibility, media and rendering
 
 - [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Complete the screen-reader and AccessKit chapter D — **PARTIAL; BLOCKED — desktop accessibility verification and deferred checks remain; details are on the issue**
 - [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter and example F — **PARTIAL; BLOCKED — native media environment and deferred checks remain; details are on the issue**
-- [#453](https://github.com/john-cd/rust_howto/issues/453) — **P4** — Finish and validate the glTF example D — **IMPLEMENTED; OPEN — model-format chapter and metadata-count example present; tests, Clippy, refdefs, book, spelling, and linked PR remain**
 - [#638](https://github.com/john-cd/rust_howto/issues/638) — **P4** — Clipboard chapter F — **IMPLEMENTED; OPEN — text/image and platform guidance present; desktop checks, refdefs, book, spelling, and linked PR remain**
-- [#940](https://github.com/john-cd/rust_howto/issues/940) — **P4** — Complete the multimedia index — **IMPLEMENTED; OPEN — subcategory and streaming links present; refdefs, book, spelling, and linked PR remain**
 - [#942](https://github.com/john-cd/rust_howto/issues/942) — **P4** — Complete the images index — **PARTIAL; OPEN — task table links repaired and image recipes present; example checks, refdefs, book, spelling, and linked PR remain**
 - [#943](https://github.com/john-cd/rust_howto/issues/943) — **P4** — Complete the video index — **PARTIAL; OPEN — GStreamer and FFmpeg release status reviewed; external media setup, refdefs, book, spelling, and linked PR remain**
 - [#953](https://github.com/john-cd/rust_howto/issues/953) — **P4** — Complete the rendering index — **PARTIAL; OPEN — subpages nested and recipe tables grouped; content review, refdefs, book, spelling, and linked PR remain**
-- [#955](https://github.com/john-cd/rust_howto/issues/955) — **P4** — Complete the rendering-engine index — **IMPLEMENTED; OPEN — pointer and generated table retained; refdefs, book, spelling, and linked PR remain**
 - [#956](https://github.com/john-cd/rust_howto/issues/956) — **P4** — Complete the graphics-API index — **PARTIAL; OPEN — related-topic table repaired; platform review, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-10 — Science, finance, data processing and visualization
 
-- [#585](https://github.com/john-cd/rust_howto/issues/585) — **P4** — — CSV chapter — **IMPLEMENTED; OPEN — existing encoding draft linked and streaming guidance corrected; refdefs, book, spelling, and linked PR remain**
 - [#589](https://github.com/john-cd/rust_howto/issues/589) — **P4** — Organize the data-engineering chapter D — **PARTIAL; OPEN — shared Polars recipe deduplicated; external runtime review, refdefs, book, spelling, and linked PR remain**
 - [#961](https://github.com/john-cd/rust_howto/issues/961) — **P4** — Complete the simulation index — **PARTIAL; OPEN — malformed domain and related-topic tables repaired; crate review, refdefs, book, spelling, and linked PR remain**
 - [#969](https://github.com/john-cd/rust_howto/issues/969) — **P4** — Review the visualization index — **PARTIAL; OPEN — GUI table and three-d backend corrected; crate review, refdefs, book, spelling, and linked PR remain**
 - [#1205](https://github.com/john-cd/rust_howto/issues/1205) — **P4** — — Deep learning chapter — **PARTIAL; OPEN — CPU example and framework guidance present; feature build, tests, Clippy, refdefs, book, spelling, and linked PR remain**
 - [#1208](https://github.com/john-cd/rust_howto/issues/1208) — **P4** — — Control systems chapter — **PARTIAL; OPEN — PID simulation and sample-period guidance present; crate review, tests, Clippy, refdefs, book, spelling, and linked PR remain**
-- [#1209](https://github.com/john-cd/rust_howto/issues/1209) — **P4** — — Robotics AI chapter — **IMPLEMENTED; OPEN — A-star example and dataflow guidance present; tests, Clippy, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-11 — Architecture and scripting
 
-- [#610](https://github.com/john-cd/rust_howto/issues/610) — **P4** — — Rhai chapter — **IMPLEMENTED; OPEN — script errors propagate and sandbox assertions added; tests, refdefs, book, spelling, and linked PR remain**
 - [#1230](https://github.com/john-cd/rust_howto/issues/1230) — **P4** — — Architecture chapters — **IMPLEMENTATION COMPLETE ON DEVELOP; OPEN — chapter review and formatting complete; tests, book checks, and linked PR deferred**
 
 #### VALIDATE-PROSE-12 — Foreign function interfaces
@@ -575,9 +479,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### DEFERRED-CODE-01 — Desktop UI, accessibility, games and GPU
 
-- [#828](https://github.com/john-cd/rust_howto/issues/828) — **P4** — 2d_raster_graphics/tiny_skia.rs: draw and encode a headless scene — **IMPLEMENTED ON DEVELOP; OPEN — existing commit `8e13180f3`; tests and lints skipped in this pass by request; PR link pending**
-- [#829](https://github.com/john-cd/rust_howto/issues/829) — **P4** — data_formats/inline_gltf_triangle.rs: parse a model and report geometry counts — **IMPLEMENTED ON DEVELOP; OPEN — existing commit `3d020a6b7`; tests and lints skipped in this pass by request; PR link pending**
-- [#830](https://github.com/john-cd/rust_howto/issues/830) — **P4** — rendering_engines/render.rs: resolve the placeholder — **IMPLEMENTED ON DEVELOP; OPEN — `00f43662a` removes the empty example crate per #955; tests and lints skipped by request; book validation and PR link pending**
 - [#831](https://github.com/john-cd/rust_howto/issues/831) — **P4** — native_graphics_apis/wgpu_adapter_info.rs: report a GPU adapter's native backend — **IMPLEMENTED ON DEVELOP; OPEN — `1896f5110` adds a feature-gated headless query with errors; tests and lints skipped by request; build/GPU/book validation and PR link pending**
 - [#886](https://github.com/john-cd/rust_howto/issues/886) — **P4** — gpu/rust_gpu.rs: resolve the shader example — **IMPLEMENTED ON DEVELOP; OPEN — `2e0fbca70` documents a separate shader setup and removes the no-op host target; tests and lints skipped by request; book validation and PR link pending**
 
@@ -585,23 +486,15 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 
 #### DEFERRED-CODE-02 — Machine learning, data and robotics
 
-- [#844](https://github.com/john-cd/rust_howto/issues/844) — **P4** — robot_operating_systems/ros2_pubsub.rs: write — **IMPLEMENTED ON DEVELOP; OPEN — ROS 2 publisher/subscriber and optional feature complete; tests and lints skipped by request; ROS environment, book validation, and PR link pending**
-- [#846](https://github.com/john-cd/rust_howto/issues/846) — **P4** — simulation/discrete_event.rs: write — **IMPLEMENTED ON DEVELOP (`c4ae5379a`); OPEN — named deterministic queue example, runner, chapter include, and assertions already present; tests and lints skipped by request; book validation and PR link pending**
 
 #### DEFERRED-CODE-03 — Operating-system APIs, emulation and no-std
 
-- [#752](https://github.com/john-cd/rust_howto/issues/752) — **P4** — emulators/register_vm.rs: bounded fetch/decode/execute VM; preserved PolkaVM host — **IMPLEMENTED ON DEVELOP (`b389cb8f1`); tests and lints skipped by request; book build pending**
-- [#814](https://github.com/john-cd/rust_howto/issues/814) — **P4** — no_std/checksum.rs: core-only library and host runner; feature and bare-metal guidance — **IMPLEMENTED ON DEVELOP (`e8d37d62e`); tests and lints skipped by request; target and book builds pending**
-- [#815](https://github.com/john-cd/rust_howto/issues/815) — **P4** — no_alloc/no_alloc.rs: heapless capacity handling, core-only snippet, and fallible formatting — **IMPLEMENTED ON DEVELOP (`99f8a11f3`); tests and lints skipped by request; book build pending**
-- [#817](https://github.com/john-cd/rust_howto/issues/817) — **P4** — freebsd/freebsd.rs: read-only sysctl query and target-gated dependency — **IMPLEMENTED ON DEVELOP (`23f5eeebb`); tests and lints skipped by request; FreeBSD and book builds pending**
 - [#818](https://github.com/john-cd/rust_howto/issues/818) — **P4** — linux/statx_metadata.rs: temporary-file size and optional birth time through rustix — **IMPLEMENTED ON DEVELOP (`090e6a956`); tests and lints skipped by request; Linux and book builds pending**
 - [#819](https://github.com/john-cd/rust_howto/issues/819) — **P4** — macos/macos.rs: safe objc2 Foundation system-version query and target gating — **IMPLEMENTED ON DEVELOP (`6677bdc9f`); tests and lints skipped by request; macOS and book builds pending**
 
 #### DEFERRED-CODE-04 — Media encoding, images and video
 
 - [#805](https://github.com/john-cd/rust_howto/issues/805) — **P4** — multimedia/multimedia1.rs: write — **PARTIAL; BLOCKED — audio-device validation and device-independent source test remain; details are on the issue**
-- [#808](https://github.com/john-cd/rust_howto/issues/808) — **P4** — images/images.rs: write — **IMPLEMENTED; OPEN — gradient, resize, in-memory PNG/JPEG conversion, and blur examples; tests, lints, book validation, and linked PR remain**
-- [#809](https://github.com/john-cd/rust_howto/issues/809) — **P4** — video/video.rs: write — **IMPLEMENTED ON DEVELOP; OPEN — synthetic AV1 encoder and packet assertion present; tests, lints, book validation, issue note removal, and linked PR remain**
 
 #### DEFERRED-CODE-05 — Localization and internationalization
 
@@ -610,18 +503,13 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 
 #### DEFERRED-CODE-06 — Aerospace and device protocols
 
-- [#60](https://github.com/john-cd/rust_howto/issues/60) — **P4** — aerospace/aero.rs: write — **IMPLEMENTED; OPEN — sample an ISS orbit and assert orbital radii; tests, Clippy, book validation, and linked PR remain**
 - [#61](https://github.com/john-cd/rust_howto/issues/61) — **P4** — drones/drones1.rs: write — **BLOCKED — flight-plan work and real-drone validation remain; details are on the issue**
-- [#62](https://github.com/john-cd/rust_howto/issues/62) — **P4** — aerospace_protocols/aero_protocols.rs: write — **IMPLEMENTED; OPEN — in-memory MAVLink heartbeat round trip and field assertions; tests, Clippy, book validation, and linked PR remain**
-- [#63](https://github.com/john-cd/rust_howto/issues/63) — **P4** — aerospace_simulation/aero_simulation.rs: write — **IMPLEMENTED; OPEN — simplify launch output and assert ascent, burnout, descent, and ground boundary; tests, Clippy, book validation, and linked PR remain**
-- [#64](https://github.com/john-cd/rust_howto/issues/64) — **P4** — space_protocols/space_protocols.rs: write — **IMPLEMENTED; OPEN — CCSDS and PUS telecommand/telemetry examples; tests, Clippy, book validation, and linked PR remain**
 - [#65](https://github.com/john-cd/rust_howto/issues/65) — **P4** — uavs/uavs.rs: write — **BLOCKED — telemetry decoding and real-drone validation remain; details are on the issue**
 
 ### Tools and infrastructure
 
 #### DEFERRED-INFRA-01 — Dependencies, CI and containers
 
-- [#1283](https://github.com/john-cd/rust_howto/issues/1283) — **P4** — finance/Cargo.toml: RustQuant: heavy build (polars, nalgebra, etc) — **IMPLEMENTED; OPEN — keep RustQuant out; local test blocked by #1998's `smallvec` resolver conflict; build timing, Clippy, and linked PR remain**
 
 ### Roadmaps and epics
 
