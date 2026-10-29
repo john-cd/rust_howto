@@ -1,0 +1,49 @@
+# TODO Reviewed ??-??-2026.
+
+## Audits the book workspace's dependencies with `cargo deny` (RustSec advisories, licenses, bans and sources).
+## Configuration: `bk/crates/deny.toml`. Also runs weekly because new advisories appear without code changes.
+name: Audit dependencies
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - "bk/crates/Cargo.lock"
+      - "bk/crates/**/Cargo.toml"
+      - "bk/crates/deny.toml"
+      - ".github/workflows/audit_dependencies.yml"
+  pull_request:
+    branches: [develop]
+    paths:
+      - "bk/crates/Cargo.lock"
+      - "bk/crates/**/Cargo.toml"
+      - "bk/crates/deny.toml"
+      - ".github/workflows/audit_dependencies.yml"
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: audit-dependencies-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cargo-deny:
+    name: cargo deny (${{ matrix.checks }})
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        ## Advisories change independently of the code, so they do not block merges.
+        checks: [advisories, "bans licenses sources"]
+    continue-on-error: ${{ matrix.checks == 'advisories' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: EmbarkStudios/cargo-deny-action@v2
+        with:
+          manifest-path: bk/crates/Cargo.toml
+          command: check ${{ matrix.checks }}
+          arguments: --workspace --config bk/crates/deny.toml --hide-inclusion-graph
