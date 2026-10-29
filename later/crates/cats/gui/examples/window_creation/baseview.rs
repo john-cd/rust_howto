@@ -51,11 +51,17 @@ impl WindowHandler for BaseviewExample {
     }
 }
 
+/// The title of the window.
+const TITLE: &str = "Baseview Example";
+
+/// The initial size of the window in logical pixels.
+const SIZE: (f64, f64) = (640.0, 480.0);
+
 /// Opens a window.
 fn main() -> Result<(), baseview::Error> {
     let settings = WindowSettings::new()
-        .with_title("Baseview Example")
-        .with_size(LogicalSize::new(640.0, 480.0));
+        .with_title(TITLE)
+        .with_size(LogicalSize::new(SIZE.0, SIZE.1));
     let window = Window::create(settings, |_context: WindowContext| {
         Ok(BaseviewExample)
     })?;
@@ -70,6 +76,19 @@ pub fn run() -> Result<(), baseview::Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Checks the window defaults.
+    #[test]
+    fn window_defaults() {
+        assert_eq!(TITLE, "Baseview Example");
+        assert!(SIZE.0 > 0.0 && SIZE.1 > 0.0);
+    }
+
+    /// Checks that the handler accepts the draw call without a window.
+    #[test]
+    fn draw_succeeds() {
+        assert!(BaseviewExample.draw().is_ok());
+    }
 
     /// Runs the baseview example through its entry point.
     #[test]

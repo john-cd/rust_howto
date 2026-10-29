@@ -20,20 +20,27 @@ struct App {
     error: Option<Box<dyn std::error::Error>>,
 }
 
+/// The solid color of the frame, in the 0x00RRGGBB format.
+const BLUE: u32 = 0x0020_60C0;
+
+/// Returns the size as non-zero numbers, or `None` for a zero-sized
+/// (minimized) window.
+fn non_zero_size(width: u32, height: u32) -> Option<(NonZeroU32, NonZeroU32)> {
+    Some((NonZeroU32::new(width)?, NonZeroU32::new(height)?))
+}
+
 /// Presents a solid blue frame, skipping zero-sized minimized windows.
 fn draw(
     surface: &mut Surface<Rc<Window>, Rc<Window>>,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let size = surface.window().inner_size();
-    let (Some(width), Some(height)) =
-        (NonZeroU32::new(size.width), NonZeroU32::new(size.height))
-    else {
+    let Some((width, height)) = non_zero_size(size.width, size.height) else {
         return Ok(());
     };
     surface.resize(width, height)?;
     let mut buffer = surface.buffer_mut()?;
     // Softbuffer pixels use 0x00RRGGBB; the high byte is unused.
-    buffer.fill(0x0020_60C0);
+    buffer.fill(BLUE);
     buffer.present()?;
     Ok(())
 }
@@ -106,6 +113,23 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+
+    /// Checks that a zero-sized window is skipped.
+    #[test]
+    fn zero_sized_windows_are_skipped() {
+        assert_eq!(non_zero_size(0, 10), None);
+        assert_eq!(non_zero_size(10, 0), None);
+        let (width, height) = non_zero_size(640, 480).expect("non-zero size");
+        assert_eq!((width.get(), height.get()), (640, 480));
+    }
+
+    /// Checks that the unused high byte of the color is zero.
+    #[test]
+    fn blue_has_no_alpha_byte() {
+        assert_eq!(BLUE >> 24, 0);
+    }
+
     /// Exercises native presentation in an interactive desktop session.
     #[test]
     #[ignore = "opens a native window; close it to finish"]
