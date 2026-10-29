@@ -149,7 +149,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-07 — WebAssembly and browser applications
 
-- [#856](https://github.com/john-cd/rust_howto/issues/856) — **P4** — yew/yew.rs: review — **IMPLEMENTED ON DEVELOP; OPEN — native SSR test replaces the ignored entry-point test; focused tests, Clippy, wasm build, book validation, and PR link pending**
 - [#1944](https://github.com/john-cd/rust_howto/issues/1944) — **P4** — Add examples: Leptos web app building blocks (leptos_router, gloo-net, gloo-storage, icons, gRPC-Web client) — **BLOCKED — route/fetch/storage/gRPC examples exist; icondata example, Leptos browser dependency split tracked by #1970, and wasm/book validation remain**
 
 #### NOW-CODE-08 — Media encoding, images and video
@@ -158,7 +157,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-09 — Networking, authentication and email
 
-- [#867](https://github.com/john-cd/rust_howto/issues/867) — **P3** — examples/leptos.rs: finish — **IMPLEMENTED ON DEVELOP; OPEN — optional feature enables Leptos CSR; feature build/test, Clippy, and book validation pending**
 - [#1939](https://github.com/john-cd/rust_howto/issues/1939) — **P3** — Add examples: axum add-ons (axum-extra Host and TypedHeader, axum-server TLS, flash messages, #[debug_handler], tower-cookies) — **BLOCKED ON FINAL VALIDATION — examples, recipe page, and compile-fail tip exist in the checkout; Cargo, Clippy, format, refdefs, and book gates remain**
 - [#2017](https://github.com/john-cd/rust_howto/issues/2017) — **P3** — Add an offline-testable OAuth 2.0 client-credentials example — **IMPLEMENTED ON DEVELOP; BLOCKED — Windows auth test fails building aws-lc-sys 0.46.0 (NASM absent; cl.exe alignment probe/LNK1114); retry on a supported host**
 - [#2018](https://github.com/john-cd/rust_howto/issues/2018) — **P3** — Demonstrate mutual TLS with a client certificate — **IMPLEMENTED ON DEVELOP; BLOCKED ON BOOK BUILD — TLS tests/Clippy and Markdown/refdefs pass; just bb cannot start Git Bash (NtCreateDirectoryObject 0xC0000022)**
@@ -169,11 +167,9 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-11 — Tabular data and finance
 
-- [#1909](https://github.com/john-cd/rust_howto/issues/1909) — **P3** — Add examples: read and write Excel files (calamine, rust_xlsxwriter) — **IMPLEMENTED ON DEVELOP; OPEN — PR #1973 examples and references are merged; #365 adds the finance index link; local test/refdefs blocked by `libsqlite3-sys` conflict; book gate blocked by Git Bash failure**
 
 #### NOW-CODE-12 — Embedded systems and hardware interfaces
 
-- [#751](https://github.com/john-cd/rust_howto/issues/751) — **P4** — embassy/embassy.rs: finish — **IMPLEMENTED ON LOCAL DEVELOP; OPEN — embedded all-target Clippy and tests pass; book gate pending**
 
 ### Prose and book structure
 
