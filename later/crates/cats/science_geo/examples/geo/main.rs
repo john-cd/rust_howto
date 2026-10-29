@@ -4,13 +4,18 @@
 
 mod geo;
 mod geocode;
+mod geojson_polygon;
 mod haversine;
+mod spatial_index;
 mod us_states;
 
 /// Runs the geo examples. The online geocoding query is not run.
-fn main() -> Result<(), geocoding::GeocodingError> {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     geo::run();
     haversine::run();
     us_states::run();
-    geocode::run()
+    geocode::run()?;
+    geojson_polygon::run()?;
+    spatial_index::run();
+    Ok(())
 }

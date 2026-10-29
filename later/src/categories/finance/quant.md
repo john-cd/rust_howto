@@ -6,7 +6,23 @@
 
 ## Time Value of Money
 
-The [`financial`][c~financial~docs]↗ crate provides Excel-like time-value-of-money functions, including net present value, internal rate of return, present value, and future value. It is not a dependency of the examples in this workspace, so there is no compiled recipe here. Check the crate's cash-flow sign and timing conventions against known cases before using a result.
+The [`financial`][c~financial~docs]↗ crate provides time-value-of-money functions, including net present value, internal rate of return, present value, and future value. Its `npv` function discounts the first entry by one period, like Excel's `NPV`. Keep a time-zero initial investment separate from the future cash flows. The example checks this convention against direct discounting:
+
+```rust,editable
+{{#include ../../../crates/cats/finance/examples/quant/net_present_value.rs:example}}
+```
+
+The crate does not currently provide every Excel financial function; for example, its documentation lists PMT as future work. Check the implemented function set rather than assuming complete spreadsheet compatibility.
+
+## Simulate an Option Payoff
+
+Use [`rand`][c~rand~docs] for a random generator and [`rand_distr`][c~rand_distr~docs] for a specified probability distribution. This fixed-seed example draws standard-normal shocks for a one-year geometric Brownian motion model, averages European call payoffs, and discounts that average. The tests check the zero-volatility limit and compare a seeded estimate with the analytic Black-Scholes price.
+
+```rust,editable
+{{#include ../../../crates/cats/finance/examples/quant/monte_carlo.rs:example}}
+```
+
+The seed makes this example reproducible with its pinned dependency versions; `StdRng` does not promise identical output across releases. A finite Monte Carlo estimate has sampling error, and a model's assumptions still need separate validation. Use `f64` for model calculations; use decimal arithmetic for exact account balances and settled money amounts.
 
 ## Stochastic Models and Technical Indicators
 
@@ -64,6 +80,5 @@ This example uses [`trading-calendar`][c~trading-calendar~docs]↗{{hi:trading-c
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [quant: write](https://github.com/john-cd/rust_howto/issues/364)
   [examples](https://github.com/john-cd/rust_howto/issues/1949)
 </div>

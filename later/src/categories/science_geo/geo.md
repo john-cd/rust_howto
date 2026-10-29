@@ -14,6 +14,30 @@
 {{#include ../../../crates/cats/science_geo/examples/geo/geo.rs:example}}
 ```
 
+## Read GeoJSON Features {#geojson}
+
+[`geojson`][c~geojson~docs] reads and writes GeoJSON objects. Enable its `geo-types` feature to convert a geometry into the types used by `geo`. The following inline feature collection contains one polygon; the example checks its area, centroid, and containment of an interior point without files or network access:
+
+```rust,editable
+{{#include ../../../crates/cats/science_geo/examples/geo/geojson_polygon.rs:example}}
+```
+
+The area here is planar and expressed in square coordinate units. GeoJSON coordinates normally use longitude and latitude, so a planar calculation over them does not produce square meters. Choose a suitable projection or geodesic algorithm for a real geographic measurement.
+
+## Index Nearby Geometry {#spatial-index}
+
+[`rstar`][c~rstar~docs] indexes spatial objects in an R-tree. Bulk-load a fixed dataset when all objects are available at once, then query a nearby point:
+
+```rust,editable
+{{#include ../../../crates/cats/science_geo/examples/geo/spatial_index.rs:example}}
+```
+
+The example uses planar Euclidean coordinates. Longitude/latitude distances need a suitable metric and treatment of wraparound; do not interpret this nearest-neighbor result as an Earth-surface distance.
+
+## Transform Coordinate Systems {#projections}
+
+[`proj`][c~proj~docs] wraps the native PROJ library for coordinate transformations. Install PROJ and its development metadata, and ensure required grid files are available for the chosen transformation. Specify the source and destination reference systems explicitly and check axis ordering, units, and the region where the transformation is valid. PROJ is optional context here; the compiled GeoJSON and R-tree examples do not depend on its C library.
+
 ## Compute the Distance Between Two Places {#haversine}
 
 [![haversine][c~haversine~docs~badge]][c~haversine~docs]{{hi:haversine}} [![geo][c~geo~docs~badge]][c~geo~docs]{{hi:geo}} [![cat~science::geo][cat~science::geo~badge]][cat~science::geo]{{hi:Distance}}{{hi:Great-circle distance}}
@@ -66,6 +90,5 @@ Before geocoding at scale:
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [geo: write](https://github.com/john-cd/rust_howto/issues/474)
   [geocode addresses and compute distances](https://github.com/john-cd/rust_howto/issues/1942)
 </div>

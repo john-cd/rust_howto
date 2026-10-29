@@ -7,7 +7,12 @@ exclude = ["cats/embedded"]
 
 [workspace.dependencies]
 embedded-hal-mock = { version = "0.11.1", default-features = false, features = ["eh1"] }
+financial = "1.1.5"
+geojson = { version = "1.0.0", features = ["geo-types"] }
 kiddo = { version = "6.3.0", default-features = false }
+rand = "0.10.1"
+rand_distr = "0.6.0"
+rstar = "0.13.0"
 
 [workspace.package]
 version = "0.1.2"

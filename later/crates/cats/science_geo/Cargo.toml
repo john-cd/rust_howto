@@ -25,7 +25,9 @@ test = true
 [dependencies]
 geo = "0.33.1"
 geocoding = "0.4.0"
+geojson.workspace = true
 haversine = "0.2.1"
+rstar.workspace = true
 us-state-info = "0.2.7"
 
 [lints]

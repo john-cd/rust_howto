@@ -12,4 +12,5 @@
 [c~geozero~docs]: https://docs.rs/geozero
 [c~h3o~docs]: https://docs.rs/h3o
 [c~rstar~docs]: https://docs.rs/rstar
+[c~proj~docs]: https://docs.rs/proj
 [c~shapefile~docs]: https://docs.rs/shapefile
