@@ -136,4 +136,11 @@ mod tests {
         );
         Ok(())
     }
+
+    /// Serves the example until it is stopped.
+    #[test]
+    #[ignore = "binds 127.0.0.1:3000 and serves until stopped"]
+    fn main_serves() -> anyhow::Result<()> {
+        main()
+    }
 }

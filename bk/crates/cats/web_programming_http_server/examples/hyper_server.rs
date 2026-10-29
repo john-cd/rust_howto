@@ -100,10 +100,11 @@ mod tests {
         let response = response_for(&Method::POST, "/");
         assert_eq!(response.status(), StatusCode::METHOD_NOT_ALLOWED);
     }
-}
 
-// Update Hyper server example to 1.0 API and implement request routing
-// <https://hyper.rs/>
-// <https://hyper.rs/guides/1/server/hello-world/>
-// <https://github.com/hyperium/hyper/tree/master/examples>
-// <https://github.com/hyperium/hyper/blob/master/examples/README.md>
+    /// Serves the example until it is stopped.
+    #[test]
+    #[ignore = "binds 127.0.0.1:3000 and serves until stopped"]
+    fn main_serves() -> anyhow::Result<()> {
+        super::main()
+    }
+}

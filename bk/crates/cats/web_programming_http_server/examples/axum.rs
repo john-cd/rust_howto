@@ -133,13 +133,99 @@ async fn main() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
-    // use super::*;
+    use axum::body::Body;
+    use axum::http::Method;
+    use axum::http::Request;
+    use http_body_util::BodyExt as _;
+    use tower::ServiceExt as _;
 
-    /// Runs the example when its network dependency is available.
+    use super::*;
+
+    /// Sends a request to the router and returns the status and body.
+    async fn send(request: Request<Body>) -> (StatusCode, String) {
+        let response = app().oneshot(request).await.expect("infallible");
+        let status = response.status();
+        let body = response.into_body().collect().await.unwrap().to_bytes();
+        (status, String::from_utf8(body.to_vec()).unwrap())
+    }
+
+    /// Sends a request with no body.
+    async fn get_uri(method: Method, uri: &str) -> (StatusCode, String) {
+        send(
+            Request::builder()
+                .method(method)
+                .uri(uri)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+    }
+
+    /// Serves the example until it is stopped.
     #[test]
-    fn require_network() -> anyhow::Result<()> {
-        // main()?;
-        Ok(())
+    #[ignore = "binds 127.0.0.1:3000 and serves until stopped"]
+    fn main_serves() -> anyhow::Result<()> {
+        main()
+    }
+
+    #[tokio::test]
+    async fn root_greets() {
+        assert_eq!(
+            get_uri(Method::GET, "/").await,
+            (StatusCode::OK, "Hello, world!".to_owned())
+        );
+    }
+
+    #[tokio::test]
+    async fn path_parameters_are_extracted() {
+        assert_eq!(get_uri(Method::GET, "/users/7").await.1, "User 7");
+        assert_eq!(
+            get_uri(Method::POST, "/users/7").await,
+            (StatusCode::CREATED, "User 7 created".to_owned())
+        );
+        assert_eq!(get_uri(Method::GET, "/assets/a/b.css").await.1, "a/b.css");
+    }
+
+    /// A non-numeric id is rejected by the extractor.
+    #[tokio::test]
+    async fn invalid_user_id_is_rejected() {
+        let (status, _) = get_uri(Method::GET, "/users/abc").await;
+        assert_eq!(status, StatusCode::BAD_REQUEST);
+    }
+
+    #[tokio::test]
+    async fn query_and_state_are_read() {
+        assert!(
+            get_uri(Method::GET, "/query?a=1")
+                .await
+                .1
+                .contains("\"a\": \"1\"")
+        );
+        assert_eq!(
+            get_uri(Method::GET, "/state").await.1,
+            "Application: Axum example"
+        );
+    }
+
+    #[tokio::test]
+    async fn json_is_echoed() {
+        let request = Request::builder()
+            .method(Method::POST)
+            .uri("/json")
+            .header("content-type", "application/json")
+            .body(Body::from(r#"{"k":1}"#))
+            .unwrap();
+        let (status, body) = send(request).await;
+        assert_eq!(status, StatusCode::OK);
+        assert_eq!(body, r#"{"k":1}"#);
+    }
+
+    #[tokio::test]
+    async fn unknown_route_uses_the_fallback() {
+        assert_eq!(
+            get_uri(Method::GET, "/nope").await,
+            (StatusCode::NOT_FOUND, "No route for /nope".to_owned())
+        );
     }
 }
 // // review time limit

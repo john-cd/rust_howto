@@ -89,4 +89,11 @@ mod tests {
             .expect("gRPC method failed");
         assert_eq!(response.into_inner().message, "Hello Rustacean!");
     }
+
+    /// Serves the example until it is stopped.
+    #[test]
+    #[ignore = "binds [::1]:50051 and serves until stopped"]
+    fn main_serves() -> anyhow::Result<()> {
+        main()
+    }
 }

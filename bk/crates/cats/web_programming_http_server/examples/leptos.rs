@@ -62,6 +62,8 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
+    // output-only: the example only mounts a view or prints a message; see the
+    // other tests for its logic.
     /// Verifies that the leptos example's main path succeeds.
     /// Runs the leptos example through its entry point.
     #[test]
