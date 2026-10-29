@@ -233,7 +233,10 @@ mod tests {
         let area = Rect::new(0, 0, 40, 12);
         let mut buf = Buffer::empty(area);
         app.render(area, &mut buf);
-        buf.content().iter().map(|c| c.symbol()).collect()
+        buf.content()
+            .iter()
+            .map(ratatui::buffer::Cell::symbol)
+            .collect()
     }
 
     #[test]
@@ -269,7 +272,11 @@ mod tests {
         let area = Rect::new(0, 0, 20, 3);
         let mut buf = Buffer::empty(area);
         MiddleWidget::new("hello").render(area, &mut buf);
-        let text: String = buf.content().iter().map(|c| c.symbol()).collect();
+        let text: String = buf
+            .content()
+            .iter()
+            .map(ratatui::buffer::Cell::symbol)
+            .collect();
         assert!(text.contains("hello"));
         assert!(text.contains("Text"));
     }
