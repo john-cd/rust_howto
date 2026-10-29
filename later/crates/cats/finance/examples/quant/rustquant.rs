@@ -7,7 +7,7 @@
 //! crate.
 
 /// The type of an option.
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 #[derive(Clone, Copy)]
 enum OptionType {
     /// A call option.
@@ -31,7 +31,7 @@ struct BlackScholesMerton {
     /// The cost of carry.
     cost_of_carry: f64,
     /// The type of the option.
-    #[allow(dead_code)]
+    #[expect(dead_code, reason = "declared to illustrate it; never used")]
     option_type: OptionType,
 }
 

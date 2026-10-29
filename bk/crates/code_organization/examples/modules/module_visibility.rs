@@ -1,6 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
-#![allow(
+#![expect(
     dead_code,
     reason = "the snippet declares items to illustrate them, not to call them"
 )]
@@ -46,7 +46,7 @@ mod my_module {
     mod nested_private_module {
         /// A public function of a private module; not reachable from outside
         /// it.
-        #[allow(dead_code)]
+        #[expect(dead_code, reason = "declared to illustrate it; never used")]
         pub fn nested_public_in_private_module() {}
     }
 

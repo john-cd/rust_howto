@@ -1,6 +1,6 @@
 #![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
-#![allow(
+#![expect(
     dead_code,
     reason = "the snippet declares items to illustrate them, not to call them"
 )]

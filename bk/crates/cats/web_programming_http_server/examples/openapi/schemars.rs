@@ -1,6 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
-#![allow(
+#![expect(
     dead_code,
     reason = "the snippet declares items to illustrate them, not to call them"
 )]
@@ -13,7 +13,7 @@ use schemars::schema_for;
 use serde::Deserialize;
 
 /// Application configuration.
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 #[derive(Debug, Deserialize, JsonSchema)]
 pub struct Config {
     /// The port to listen on.

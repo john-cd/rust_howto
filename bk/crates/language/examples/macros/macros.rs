@@ -66,7 +66,7 @@ macro_rules! const_maker {
 }
 
 /// A trait whose associated constant is created by a macro.
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 trait T {
     const_maker! {i32, 7}
 }

@@ -47,7 +47,7 @@ where
 /// `#[pin_project]` also implements the following methods on the original type:
 /// `fn project(self: Pin<&mut Self>) -> Projection<'_>;`
 /// `fn project_ref(self: Pin<&Self>) -> ProjectionRef<'_>;`
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 impl<T: Debug, U: Clone> BasicPinned<T, U> {
     /// Projects the pinned value to references to its fields.
     fn method(self: Pin<&mut Self>) {

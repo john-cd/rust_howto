@@ -41,7 +41,7 @@ pub fn run() {
 
 // Workaround for unused code warnings when not compiled by shuttle:
 /// Calls the handler, so that it is not reported as unused.
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 fn dummy() {
     std::mem::drop(hello_world());
 }

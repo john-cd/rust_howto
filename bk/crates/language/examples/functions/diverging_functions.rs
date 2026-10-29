@@ -11,7 +11,7 @@ fn foo() -> ! {
 
 // This function never returns control.
 /// Exits the process with an error code.
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 fn exit_program() -> ! {
     println!("Exiting the process...");
     std::process::exit(1);
@@ -19,7 +19,7 @@ fn exit_program() -> ! {
 
 // This function loops forever.
 /// Loops forever.
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 fn forever() -> ! {
     loop {
         println!("and ever...");

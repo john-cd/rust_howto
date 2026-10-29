@@ -22,7 +22,7 @@ mod a {
     }
 
     /// Calls the functions visible in `a`.
-    #[allow(dead_code)]
+    #[expect(dead_code, reason = "declared to illustrate it; never used")]
     fn use_in_a() {
         b::visible_in_crate();
         b::visible_in_parent_module();
@@ -33,7 +33,7 @@ mod a {
 /// A module that is not related to `a`.
 mod d {
     /// Calls the functions visible in `d`.
-    #[allow(dead_code)]
+    #[expect(dead_code, reason = "declared to illustrate it; never used")]
     fn use_in_d() {
         super::a::b::visible_in_crate();
         // ERROR: super::a::b::visible_in_parent_module();

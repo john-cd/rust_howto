@@ -13,7 +13,7 @@ use rusqlite::Result;
 
 /// A cat.
 #[derive(Debug)]
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 struct Cat {
     /// The name of the cat.
     name: String,

@@ -74,7 +74,7 @@ fn read_and_parse_file(file_path: &str) -> Result<i32, MyError> {
 }
 
 /// An error that wraps I/O and parsing errors.
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 #[derive(Debug)]
 enum MyError {
     /// An I/O error.
@@ -115,7 +115,7 @@ impl From<ParseIntError> for MyError {
 // Use it when writing libraries, in which case custom error types are
 // recommended.
 /// An error that wraps I/O and parsing errors, defined with `thiserror`.
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 #[derive(thiserror::Error, Debug)]
 enum MyError2 {
     /// An I/O error.

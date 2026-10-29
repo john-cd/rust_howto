@@ -1,6 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
-#![allow(
+#![expect(
     dead_code,
     reason = "the snippet declares items to illustrate them, not to call them"
 )]
@@ -52,7 +52,7 @@ fn main() {
 
     // Call the generic function with a custom struct that implements `Debug`.
     /// Holds a value of any type to demonstrate generic struct implementations.
-    #[allow(dead_code)]
+    #[expect(dead_code, reason = "declared to illustrate it; never used")]
     #[derive(Debug)]
     struct MyStruct {
         /// The value stored by this wrapper.

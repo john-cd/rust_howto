@@ -9,7 +9,7 @@
 /// an iterator over `u8` values. The specific type of the iterator is not
 /// specified in the trait definition, but is instead left to the implementor
 /// to decide.
-#[allow(dead_code)]
+#[expect(dead_code, reason = "declared to illustrate it; never used")]
 trait Container {
     /// Returns an iterator over the items in the container.
     fn items(&self) -> impl Iterator<Item = u8>;

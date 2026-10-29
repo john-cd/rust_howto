@@ -140,6 +140,8 @@
 
 Added by the repo-wide Clippy pass (declaration-only snippets) and the blocked-issue isolation pass. For human review: each entry should either gain real use in the example, be removed, or keep a documented reason. Regenerate by searching for `dead_code` and `#[ignore`.
 
+> Update 2026-10-29: file-level `#![allow(dead_code)]` and item-level `#[allow(dead_code)]` were converted to `#[expect(dead_code, reason = ...)]` (verified with clippy `--all-targets`), so any that stops being needed now warns. Not converted (build errors with the container toolchain, or generated/intentional): `cats/encoding`, `cats/data_structures`, `cats/database/.../cornucopia/generated.rs`, `attributes/allow_dead_code.rs`, `ownership_borrowing/borrowing_function.rs`, and `later` crates not built (multimedia_audio, development_tools_ffi napi, wasm interfacing). Giving the declaration-only snippets real uses remains optional.
+
 ### `dead_code` allowances (121)
 
 #### `algorithms`
