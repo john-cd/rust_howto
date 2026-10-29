@@ -100,7 +100,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-CODE-02 — Foreign function interfaces
 
 - [#1751](https://github.com/john-cd/rust_howto/issues/1751) — **P3** — Verify FFI platform prerequisites and demonstrate Python module invocation — **PARTIAL; OPEN — Windows JDK, Ruby DevKit, Python, and Maturin installed; docs and ignored integration test added; isolated Python extension, Java JNI, and Ruby runs pass; package checks await #1998 lock integration**
-- [#1029](https://github.com/john-cd/rust_howto/issues/1029) — **P4** — Finish the Java JNI example and its Rust test path J — **DEFERRED — JDK unavailable; blocker recorded on the issue**
 - [#1032](https://github.com/john-cd/rust_howto/issues/1032) — **P4** — Finish the Node N-API example J — **IN PROGRESS — napi-derive 3 and N-API async exports added; Node 24/MSVC available;book-gate pending**
 - [#1033](https://github.com/john-cd/rust_howto/issues/1033) — **P4** — node/neon.rs: finish how to test — **IN PROGRESS — host-independent Neon path now returns anyhow::Result and has non-ignored tests; chapter documents npm init neon and an npm test JavaScript addon check; book-gate pending**
 - [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix — **DEFERRED — macOS validation unavailable; blocker recorded on the issue**
