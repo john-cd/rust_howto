@@ -50,23 +50,18 @@ fn greeting_updates(name: String) -> impl Iterator<Item = String> {
     .into_iter()
 }
 
-/// Streams greeting updates to a Dart `Stream` and returns send failures to the
-/// caller.
-///
-/// # Errors
-///
-/// Returns an error if the bridge cannot send a value to Dart.
-#[cfg(feature = "flutter")]
-pub fn greet_stream(
-    name: String,
-    sink: crate::frb_generated::StreamSink<String>,
-) -> anyhow::Result<()> {
-    for update in greeting_updates(name) {
-        sink.add(update)
-            .map_err(|error| anyhow::anyhow!(error.to_string()))?;
-    }
-    Ok(())
-}
+// A function that takes a generated `StreamSink` becomes a Dart `Stream`. The
+// sink type exists only after `flutter_rust_bridge_codegen generate`, so the
+// stream API is shown here instead of being compiled in this crate:
+//
+// ```rust,ignore
+// pub fn greet_stream(name: String, sink: StreamSink<String>) -> anyhow::Result<()> {
+//     for update in greeting_updates(name) {
+//         sink.add(update).map_err(|e| anyhow::anyhow!(e.to_string()))?;
+//     }
+//     Ok(())
+// }
+// ```
 
 /// Exercises the same plain Rust API that a generated Flutter bridge calls.
 fn main() {
@@ -85,20 +80,11 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use std::future::Future;
-    use std::sync::Arc;
     use std::task::Context;
     use std::task::Poll;
-    use std::task::Wake;
     use std::task::Waker;
 
     use super::*;
-
-    /// Provides a task waker for polling the immediately-ready greeting future.
-    struct NoopWake;
-
-    impl Wake for NoopWake {
-        fn wake(self: Arc<Self>) {}
-    }
 
     /// Runs the flutter rust bridge example through its entry point.
     #[test]
@@ -118,8 +104,8 @@ mod tests {
     /// Checks that the asynchronous bridge API returns the same greeting.
     #[test]
     fn async_greeting_includes_the_supplied_name() {
-        let waker = Waker::from(Arc::new(NoopWake));
-        let mut context = Context::from_waker(&waker);
+        let waker = Waker::noop();
+        let mut context = Context::from_waker(waker);
         let mut greeting = std::pin::pin!(greet_async("Ada".to_owned()));
 
         assert_eq!(
@@ -140,4 +126,3 @@ mod tests {
         );
     }
 }
-// [finish; reorg as a project using flutter_rust_bridge_codegen](https://github.com/john-cd/rust_howto/issues/1028)
