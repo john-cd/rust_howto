@@ -60,14 +60,11 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### ACTIVE-CODE-04 — Cryptography and Windows APIs
 
-
 #### ACTIVE-CODE-05 — Parsing and XML
-
 
 #### ACTIVE-CODE-07 — Scheduling and sandboxed runtimes
 
 #### ACTIVE-CODE-09 — ORMs, GraphQL, metrics and decision tables
-
 
 ### Prose and book structure
 
@@ -132,6 +129,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-CODE-07 — WebAssembly and browser applications
 
 - [#1944](https://github.com/john-cd/rust_howto/issues/1944) — **P4** — Add examples: Leptos web app building blocks (leptos_router, gloo-net, gloo-storage, icons, gRPC-Web client) — **BLOCKED — route/fetch/storage/gRPC examples exist; icondata example, Leptos browser dependency split tracked by #1970, and wasm/book validation remain**
+- [#854](https://github.com/john-cd/rust_howto/issues/854) — **P1** — Replace the empty Wasmer runtime example — **OPEN — the previous example was commented out and the active test was vacuous; reopened after source audit**
 
 #### NOW-CODE-08 — Media encoding, images and video
 
@@ -142,6 +140,10 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-CODE-11 — Tabular data and finance
 
 #### NOW-CODE-12 — Embedded systems and hardware interfaces
+
+#### NOW-CODE-13 — Cryptography and blockchain clients
+
+- [#707](https://github.com/john-cd/rust_howto/issues/707) — **Unprioritized** — Implement or accurately scope the Alloy blockchain example — **OPEN — current code prints hypothetical steps and makes no Alloy calls; reopened after source audit**
 
 ### Prose and book structure
 
@@ -178,7 +180,7 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 #### NOW-PROSE-04 — Publishing, curation and book coverage
 
 - [#1720](https://github.com/john-cd/rust_howto/issues/1720) — **P3** — Curate remaining VS Code, browser and TOREVIEW bookmarks into book content — **BLOCKED — the Chrome bookmarks export (`bookmarks.json`) is absent from this checkout; request the source before further curation**
-- [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **Unprioritized** — Audit references and links in restored book pages A — **PARTIAL — regenerated restored-page references and verified the wikilink targets exist; four graphics aliases match both an index and a detail page, and separate draft/later builds remain blocked by missing book configurations**
+- [#1957](https://github.com/john-cd/rust_howto/issues/1957) — **Unprioritized** — Audit references and links in restored book pages A — **OPEN — restored references and the origin1 anchor are fixed; the full URL scan remains; mdbook-scrub strips wikilinks to plain text, and gpu/multimedia/visualization/simulation aliases still need a rendered-link decision; bk/drafts and later lack standalone book configurations**
 
 #### NOW-PROSE-05 — Cloud platforms and containers
 
@@ -207,7 +209,6 @@ Validation (2026-10-27, NOW-PROSE-08): focused database Clippy and nextest passe
 Validation (2026-10-26): dprint, rumdl, `just spell`, changed-page references and local fragments, focused mdBook rendering, rendered tables/anchors, and `git diff --check` passed. All three YAML workflows passed Zizmor's offline audit. `just bb` is blocked before rendering because `cargo tree --locked` needs to update the existing `bk/crates/Cargo.lock`; no Cargo inputs changed in this batch. `just refdefs check` is Unix-only; running its script through Git Bash reports existing unresolved global labels, while all labels used by the two completed chapters resolve. Issues remain open pending the full book gate. Commits are local; no push was requested.
 
 #### NOW-PROSE-10 — Localization and internationalization - IN PROGRESS
-
 
 #### NOW-PROSE-11 — Asynchronous programming and caching - IN PROGRESS
 
@@ -301,7 +302,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-09 — Tabular data and finance
 
-
 #### VALIDATE-CODE-10 — Cloud services and SDKs
 
 - [#1938](https://github.com/john-cd/rust_howto/issues/1938) — **P4** — Add examples: AWS SDK for Rust basics (shared config, SES v2 email, CloudWatch metrics, invoke Lambda, S3-compatible endpoints) — **PARTIAL ON DEVELOP; BLOCKED — SDK examples/pages are present; noted CloudWatch/Prometheus comparison and custom TLS guidance remain; live AWS/S3-compatible checks need credentials/services; final checks deferred; remaining work is on the issue**
@@ -354,7 +354,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-06 — Filesystem utilities, shells and compression
 
-
 #### VALIDATE-PROSE-07 — Security and cryptocurrencies
 
 - [#278](https://github.com/john-cd/rust_howto/issues/278) — **P4** — Complete the cryptocurrency category overview D — **IMPLEMENTED; OPEN — crate release activity reviewed and deprecation linked; refdefs, book, spelling, and linked PR remain**
@@ -380,6 +379,7 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 - [#589](https://github.com/john-cd/rust_howto/issues/589) — **P4** — Organize the data-engineering chapter D — **PARTIAL; OPEN — shared Polars recipe deduplicated; external runtime review, refdefs, book, spelling, and linked PR remain**
 - [#961](https://github.com/john-cd/rust_howto/issues/961) — **P4** — Complete the simulation index — **PARTIAL; OPEN — malformed domain and related-topic tables repaired; crate review, refdefs, book, spelling, and linked PR remain**
 - [#969](https://github.com/john-cd/rust_howto/issues/969) — **P4** — Review the visualization index — **PARTIAL; OPEN — GUI table and three-d backend corrected; crate review, refdefs, book, spelling, and linked PR remain**
+- [#2056](https://github.com/john-cd/rust_howto/issues/2056) — **P3** — Replace the unmaintained xsv recommendation in the CSV tools overview — **OPEN — upstream marks xsv unmaintained and recommends qsv or xan; compare fit before changing the prose**
 - [#1205](https://github.com/john-cd/rust_howto/issues/1205) — **P4** — — Deep learning chapter — **PARTIAL; OPEN — CPU example and framework guidance present; feature build, tests, Clippy, refdefs, book, spelling, and linked PR remain**
 - [#1208](https://github.com/john-cd/rust_howto/issues/1208) — **P4** — — Control systems chapter — **PARTIAL; OPEN — PID simulation and sample-period guidance present; crate review, tests, Clippy, refdefs, book, spelling, and linked PR remain**
 
@@ -442,7 +442,6 @@ DEFERRED-CODE-01 is integrated on local `develop`. The #828 and #829 implementat
 - [#805](https://github.com/john-cd/rust_howto/issues/805) — **P4** — multimedia/multimedia1.rs: write — **PARTIAL; BLOCKED — audio-device validation and device-independent source test remain; details are on the issue**
 
 #### DEFERRED-CODE-05 — Localization and internationalization
-
 
 #### DEFERRED-CODE-06 — Aerospace and device protocols
 

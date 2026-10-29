@@ -1,5 +1,5 @@
 // TODO Reviewed ??-??-2026.
-// TODO fix this example
+// TODO (#707): implement real Alloy interactions or revise this conceptual walkthrough.
 
 // ANCHOR: example
 //! This example demonstrates basic interactions with an Ethereum-compatible

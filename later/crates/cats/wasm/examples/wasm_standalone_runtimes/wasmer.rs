@@ -60,7 +60,7 @@
 //
 /// Compiles a module, instantiates it and calls an exported function.
 fn main() {
-    // TODO
+    // TODO (#854): replace this no-op with a deterministic Wasmer example.
 }
 
 // ANCHOR_END: example
