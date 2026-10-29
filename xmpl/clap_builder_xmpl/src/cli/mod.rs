@@ -16,6 +16,7 @@ mod querycmd;
 mod testcmd;
 
 pub(crate) use cmd::Cmd;
+pub(crate) use config::Config;
 
 /// Define the command tree and arguments that the command-line
 /// interface will accept.
@@ -54,6 +55,16 @@ pub(crate) fn get_args() -> (config::Config, Vec<Cmd>) {
     // Parse [env::args_os], exiting on failure.
     let matches = cli().get_matches();
     parse_args(matches)
+}
+
+#[cfg(test)]
+/// Parses the given arguments (the first one is the program name), exiting on failure.
+pub(crate) fn get_args_from<I, T>(args: I) -> (config::Config, Vec<Cmd>)
+where
+    I: IntoIterator<Item = T>,
+    T: Into<std::ffi::OsString> + Clone,
+{
+    parse_args(cli().get_matches_from(args))
 }
 
 /// Converts the matches into a configuration and a list of commands.
