@@ -47,7 +47,3 @@ From `later/crates` on Linux, run `cargo run -p os_linux_apis --example linux`. 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [linux: write](https://github.com/john-cd/rust_howto/issues/434)
-</div>
