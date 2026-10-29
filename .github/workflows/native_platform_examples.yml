@@ -1,6 +1,15 @@
 name: Check native platform examples (advisory)
 
 on:
+  push:
+    branches: [develop]
+    paths:
+      - "later/crates/Cargo.*"
+      - "later/crates/cats/os_*/**"
+      - "later/crates/cats/development_tools_ffi/**"
+      - ".github/workflows/native_platform_examples.yml"
+      - ".github/actions/**"
+      - ".devcontainer/.env"
   pull_request:
     branches: [develop]
     paths:
@@ -36,10 +45,12 @@ jobs:
       - name: Check out source
         # actions/checkout v7.0.1
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
       - name: Load pinned tool versions
-        uses: ./.github/actions/load-pinned-versions
+        uses: $/.github/actions/load-pinned-versions
       - name: Set up Rust
-        uses: ./.github/actions/setup-rust
+        uses: $/.github/actions/setup-rust
         with:
           toolchain: ${{ env.RUST_VERSION }}
           nightly: skip
@@ -68,8 +79,10 @@ jobs:
       - name: Check out source
         # actions/checkout v7.0.1
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
       - name: Load pinned tool versions
-        uses: ./.github/actions/load-pinned-versions
+        uses: $/.github/actions/load-pinned-versions
       - name: Lint and test inside FreeBSD
         # vmactions/freebsd-vm v1.5.9
         uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc
