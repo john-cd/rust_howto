@@ -47,6 +47,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "needs network access to the public echo service"]
     fn test_main_entry_point() {
         if let Err(err) = main() {
             panic!("main failed: {err:?}");

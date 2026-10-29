@@ -52,11 +52,13 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Runs the plotly example through its entry point.
+    /// Runs the plotly example and checks the HTML that it writes.
     #[test]
     fn test_plotly_example_entry_point() -> anyhow::Result<()> {
         main()?;
+        let html = fs::read_to_string("temp/plot.html")?;
+        assert!(html.contains("Sample Data"));
+        assert!(html.contains("Scatter Plot"));
         Ok(())
     }
 }
-// review how to test

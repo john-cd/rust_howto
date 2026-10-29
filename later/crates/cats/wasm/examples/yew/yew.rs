@@ -55,7 +55,8 @@ pub fn run() {
     main();
 }
 
-#[cfg(all(test, not(target_arch = "wasm32")))]
+#[cfg(test)]
+#[cfg(not(target_arch = "wasm32"))]
 mod tests {
     use super::*;
 
@@ -65,5 +66,11 @@ mod tests {
         let html = yew::ServerRenderer::<App>::new().render().await;
         assert!(html.contains("Yew Counter Example"));
         assert!(html.contains("Counter: 0"));
+    }
+
+    // output-only: on the host, the entry point only prints a hint.
+    #[test]
+    fn test_main_entry_point() {
+        main();
     }
 }

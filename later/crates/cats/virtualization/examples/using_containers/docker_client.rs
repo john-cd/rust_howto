@@ -87,6 +87,8 @@ mod tests {
     #[tokio::test]
     #[ignore = "needs a Docker daemon"]
     async fn runs_and_removes_a_container() -> anyhow::Result<()> {
-        super::main().await
+        let result = super::main().await;
+        assert!(result.is_ok(), "container run failed: {result:?}");
+        result
     }
 }

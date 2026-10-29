@@ -61,4 +61,11 @@ mod tests {
     fn test_paste_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn generated_structs_keep_their_values() {
+        assert_eq!(FooStruct::new(10).get_value(), 10);
+        assert_eq!(BarStruct::new(20).get_value(), 20);
+        assert_eq!(BazStruct::new(-30).get_value(), -30);
+    }
 }

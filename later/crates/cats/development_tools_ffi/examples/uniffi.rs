@@ -68,4 +68,16 @@ mod tests {
     fn test_uniffi_example_entry_point() -> Result<(), ArithmeticError> {
         main()
     }
+
+    #[test]
+    fn greet_formats_the_name() {
+        assert_eq!(greet("Ada".to_owned()), "Hello, Ada!");
+        assert_eq!(greet(String::new()), "Hello, !");
+    }
+
+    #[test]
+    fn add_sums_signed_integers() {
+        assert_eq!(add(2, 3), 5);
+        assert_eq!(add(-2, 2), 0);
+    }
 }

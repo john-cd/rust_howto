@@ -154,59 +154,57 @@ mod tests {
     use super::*;
 
     /// Runs the rustquant example through its entry point.
+    fn example_option() -> BlackScholesMerton {
+        BlackScholesMerton::new(
+            100.0,
+            105.0,
+            0.5,
+            0.2,
+            0.05,
+            0.0,
+            OptionType::Call,
+        )
+    }
+
+    /// Runs the example through its entry point.
     #[test]
     fn test_rustquant_example_entry_point() {
         main();
     }
 
-    // //! This example demonstrates how to use the `RustQuant` library to price
-    // //! European call and put options using the Black-Scholes-Merton model.
-    // //!
-    // //! ## Prerequisites
-    // //!
-    // //! Ensure that the `RustQuant` library is added as a dependency in your
-    // //! `Cargo.toml` file.
+    #[test]
+    fn put_call_parity_holds() {
+        let option = example_option();
+        let parity = option.spot_price
+            * f64::exp(-option.cost_of_carry * option.time_to_maturity)
+            - option.strike_price
+                * f64::exp(-option.risk_free_rate * option.time_to_maturity);
+        assert!(
+            (option.call_price() - option.put_price() - parity).abs() < 1e-9
+        );
+    }
 
-    // use RustQuant::prelude::*;
+    #[test]
+    fn prices_are_positive_and_respect_intrinsic_bounds() {
+        let option = example_option();
+        assert!(option.call_price() > 0.0);
+        assert!(option.put_price() > 0.0);
+        // The put is in the money at the strike of 105.
+        assert!(
+            option.put_price()
+                > option.strike_price * f64::exp(-0.05 * 0.5) - 100.0
+        );
+    }
 
-    // fn main() {
-    //     // Parameters for the Black-Scholes model
-    //     let spot_price = 100.0; // Current price of the underlying asset
-    //     let strike_price = 105.0; // Strike price of the option
-    //     let time_to_maturity = 0.5; // Time to maturity in years
-    //     let volatility = 0.2; // Volatility of the underlying asset
-    //     let risk_free_rate = 0.05; // Risk-free interest rate
-
-    //     let cost_of_carry = 0.0; // Cost of carry (e.g., dividend yield)
-    //     let underlying_price = spot_price;
-    //     let evaluation_date = 0.0; // Assuming today is time 0
-    //     let expiration_date = time_to_maturity;
-    //     let option_type = OptionType::Call; // Example: Call option
-
-    //     // Create a Black-Scholes-Merton model instance
-    //     let bs = BlackScholesMerton::new(
-    //         cost_of_carry,
-    //         underlying_price,
-    //         strike_price,
-    //         volatility,
-    //         risk_free_rate,
-    //         evaluation_date,
-    //         expiration_date,
-    //         option_type,
-    //     );
-
-    //     // Calculate the price of a European call option
-    //     let call_price = bs.call_price();
-    //     println!("European Call Option Price: {:.2}", call_price);
-
-    //     // Calculate the price of a European put option
-    //     let put_price = bs.put_price();
-    //     println!("European Put Option Price: {:.2}", put_price);
-    // }
-
-    // #[test]
-    // fn test_main() {
-    //     main();
-    // }
-    // // [finish; review](https://github.com/john-cd/rust_howto/issues/764)
+    #[test]
+    fn normal_cdf_is_symmetric_and_centered() {
+        assert!((BlackScholesMerton::norm_cdf(0.0) - 0.5).abs() < 1e-6);
+        assert!(
+            (BlackScholesMerton::norm_cdf(1.3)
+                + BlackScholesMerton::norm_cdf(-1.3)
+                - 1.0)
+                .abs()
+                < 1e-12
+        );
+    }
 }

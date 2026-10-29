@@ -19,3 +19,18 @@ fn main() -> std::io::Result<()> {
 fn main() {
     println!("This statx example requires Linux.");
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the example through its entry point.
+    #[test]
+    fn test_main_entry_point() {
+        #[cfg(target_os = "linux")]
+        main().expect("the statx example should run successfully");
+        // output-only: other platforms only print a notice.
+        #[cfg(not(target_os = "linux"))]
+        main();
+    }
+}

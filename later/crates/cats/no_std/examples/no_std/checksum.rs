@@ -28,4 +28,11 @@ mod tests {
     fn test_no_std1_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn checksum_wraps_modulo_256() {
+        assert_eq!(checksum(&[255, 1]), 0);
+        assert_eq!(checksum(&[1, 2, 3]), 6);
+        assert_eq!(checksum(b"Rust"), 174);
+    }
 }

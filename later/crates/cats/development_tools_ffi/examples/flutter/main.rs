@@ -9,3 +9,15 @@ pub mod flutter_rust_bridge;
 fn main() {
     flutter_rust_bridge::run();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the example through its entry point (output-only: the modules
+    /// test their own results).
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+}

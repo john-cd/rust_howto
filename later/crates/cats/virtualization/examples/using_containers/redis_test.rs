@@ -52,6 +52,8 @@ mod tests {
     #[tokio::test]
     #[ignore = "needs a Docker daemon"]
     async fn isolated_redis_answers_ping() -> anyhow::Result<()> {
-        super::main().await
+        let result = super::main().await;
+        assert!(result.is_ok(), "Redis PING failed: {result:?}");
+        result
     }
 }

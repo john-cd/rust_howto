@@ -53,4 +53,20 @@ mod tests {
     fn sampled_price_approximates_the_analytic_price() {
         assert!((estimate_call(0.20, 7) - 10.450_583_572_185_565).abs() < 0.25);
     }
+
+    /// Runs the example through its entry point.
+    #[test]
+    fn test_main_entry_point() {
+        main();
+    }
+
+    #[test]
+    fn same_seed_gives_the_same_estimate() {
+        assert_eq!(estimate_call(0.20, 7), estimate_call(0.20, 7));
+    }
+
+    #[test]
+    fn higher_volatility_raises_the_call_value() {
+        assert!(estimate_call(0.40, 7) > estimate_call(0.20, 7));
+    }
 }

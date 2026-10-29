@@ -26,3 +26,14 @@ fn run() -> std::io::Result<()> {
     println!("This Foundation example requires macOS.");
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the example through its entry point.
+    #[test]
+    fn test_main_entry_point() {
+        main().expect("the example should run successfully");
+    }
+}

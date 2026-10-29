@@ -60,4 +60,44 @@ mod tests {
     fn test_game_development1_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn overlapping_ball_and_cuboid_are_in_contact() {
+        let ball = Ball::new(1.0);
+        let cuboid = Cuboid::new(Vector::new(1.0, 1.0));
+        let ball_pos = Pose::from_translation(Vector::new(0.0, 0.0));
+        let near = Pose::from_translation(Vector::new(1.5, 0.0));
+
+        assert!(
+            query::intersection_test(&ball_pos, &ball, &near, &cuboid)
+                .expect("supported shape pair")
+                .intersecting
+        );
+        let contact = query::contact(&ball_pos, &ball, &near, &cuboid, 0.1)
+            .expect("supported shape pair")
+            .expect("overlapping shapes touch");
+        assert!(contact.dist < 0.0, "overlap means a negative distance");
+    }
+
+    #[test]
+    fn distant_shapes_do_not_intersect() {
+        let ball = Ball::new(1.0);
+        let cuboid = Cuboid::new(Vector::new(1.0, 1.0));
+        let ball_pos = Pose::from_translation(Vector::new(0.0, 0.0));
+        let far = Pose::from_translation(Vector::new(10.0, 0.0));
+
+        assert!(
+            !query::intersection_test(&ball_pos, &ball, &far, &cuboid)
+                .expect("supported shape pair")
+                .intersecting
+        );
+        let distance = query::distance(&ball_pos, &ball, &far, &cuboid)
+            .expect("supported shape pair");
+        assert!((distance.distance - 8.0).abs() < 1e-4);
+        assert!(
+            query::contact(&ball_pos, &ball, &far, &cuboid, 0.1)
+                .expect("supported shape pair")
+                .is_none()
+        );
+    }
 }

@@ -167,6 +167,7 @@ mod tests {
     use super::*;
 
     /// Runs the openrr example through its entry point.
+    // output-only: this example is a placeholder and has nothing to check.
     #[test]
     #[ignore = "requires interactive example runtime"]
     fn test_openrr_example_entry_point() {

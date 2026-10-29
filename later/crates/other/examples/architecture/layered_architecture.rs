@@ -175,4 +175,40 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[tokio::test]
+    async fn created_users_can_be_found_and_others_cannot() -> Result<()> {
+        use business::UserService as _;
+
+        let service = business::SimpleUserService::new(Arc::new(
+            data::InMemoryUserRepository::new(),
+        ));
+        service
+            .create_user(User {
+                id: 1,
+                name: "Alice".to_owned(),
+            })
+            .await?;
+        let found = service.get_user(1).await?.expect("user 1 was created");
+        assert_eq!(found.name, "Alice");
+        assert!(service.get_user(2).await?.is_none());
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn creating_a_user_twice_replaces_it() -> Result<()> {
+        use data::UserRepository as _;
+
+        let repo = data::InMemoryUserRepository::new();
+        for name in ["Alice", "Alicia"] {
+            repo.create_user(User {
+                id: 1,
+                name: name.to_owned(),
+            })
+            .await?;
+        }
+        let user = repo.get_user(1).await?.expect("user 1 exists");
+        assert_eq!(user.name, "Alicia");
+        Ok(())
+    }
 }

@@ -55,5 +55,32 @@ mod tests {
     fn test_glam_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn vector_arithmetic_matches_hand_computation() {
+        assert_eq!(
+            Vec2::new(1.0, 2.0) + Vec2::new(3.0, 4.0),
+            Vec2::new(4.0, 6.0)
+        );
+        assert_eq!(Vec2::new(1.0, 2.0).dot(Vec2::new(3.0, 4.0)), 11.0);
+        assert_eq!(
+            Vec3::new(1.0, 2.0, 3.0).cross(Vec3::new(4.0, 5.0, 6.0)),
+            Vec3::new(-3.0, 6.0, -3.0)
+        );
+    }
+
+    #[test]
+    fn transform_scales_rotates_then_translates() {
+        let mat = Mat4::from_scale_rotation_translation(
+            Vec3::new(1.0, 2.0, 3.0),
+            glam::Quat::from_rotation_y(45.0_f32.to_radians()),
+            Vec3::new(4.0, 5.0, 6.0),
+        );
+        let point = mat.transform_point3(Vec3::new(1.0, 0.0, 0.0));
+        let half_diagonal = std::f32::consts::FRAC_1_SQRT_2;
+        assert!((point.x - (4.0 + half_diagonal)).abs() < 1e-5);
+        assert!((point.y - 5.0).abs() < 1e-5);
+        assert!((point.z - (6.0 - half_diagonal)).abs() < 1e-5);
+    }
 }
 // finish

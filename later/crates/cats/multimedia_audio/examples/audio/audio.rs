@@ -67,7 +67,7 @@ where
     stream.play()?;
 
     // Play for 1 second.
-    std::thread::sleep(std::time::Duration::from_millis(1000));
+    std::thread::sleep(std::time::Duration::from_secs(1));
 
     Ok(())
 }
@@ -82,6 +82,7 @@ mod tests {
     use super::*;
 
     /// Runs the audio example through its entry point.
+    // output-only: the example plays a tone on the default output device.
     #[test]
     #[ignore = "requires audio device"]
     fn test_audio_example_entry_point() -> Result<(), Box<dyn Error>> {

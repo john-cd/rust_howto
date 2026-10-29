@@ -122,4 +122,31 @@ mod tests {
     fn test_di_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn greeter_is_resolved_from_the_module() {
+        let module = MyModule::builder().build();
+        let greeter: &dyn Greeter = module.resolve_ref();
+        assert_eq!(greeter.greet("World"), "Hello, World!");
+    }
+
+    #[test]
+    fn conversation_uses_the_injected_greeter_and_parameters() {
+        let module = MyModule::builder()
+            .with_component_parameters::<EnglishConversation>(
+                EnglishConversationParameters {
+                    person: "John".to_owned(),
+                },
+            )
+            .build();
+        let conversation: Arc<dyn Conversation> = module.resolve();
+        assert_eq!(conversation.start(), "Hello, John!");
+    }
+
+    #[test]
+    fn conversation_defaults_to_an_empty_name() {
+        let module = MyModule::builder().build();
+        let conversation: Arc<dyn Conversation> = module.resolve();
+        assert_eq!(conversation.start(), "Hello, !");
+    }
 }

@@ -52,4 +52,26 @@ mod tests {
     fn test_virtualization1_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn invalid_bytes_are_rejected() {
+        let engine = Engine::default();
+        assert!(Module::new(&engine, [0x00, 0x01, 0x02]).is_err());
+    }
+
+    #[test]
+    fn unknown_export_cannot_be_resolved() {
+        let engine = Engine::default();
+        // An empty (header-only) module has no exports.
+        let module = Module::new(
+            &engine,
+            [0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00],
+        )
+        .expect("the header alone is a valid module");
+        let mut store = Store::new(&engine, ());
+        let instance = Linker::new(&engine)
+            .instantiate_and_start(&mut store, &module)
+            .expect("an empty module instantiates");
+        assert!(instance.get_typed_func::<(), i32>(&store, "run").is_err());
+    }
 }

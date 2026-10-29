@@ -337,4 +337,16 @@ mod tests {
     fn demo_runs() -> Result<()> {
         run()
     }
+
+    #[test]
+    fn test_main_entry_point() -> Result<()> {
+        main()
+    }
+
+    #[test]
+    fn garbage_bodies_are_rejected_when_decoding() {
+        assert!(decode_body::<OrderPlaced>("***not base64***").is_err());
+        // Valid base64 that is not a valid message.
+        assert!(decode_body::<OrderPlaced>("/////w==").is_err());
+    }
 }

@@ -39,4 +39,25 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn globals_round_trip_through_lua() -> LuaResult<()> {
+        let lua = Lua::new();
+        let table = lua.create_table()?;
+        table.set(1, "one")?;
+        table.set("two", 2)?;
+        lua.globals().set("map_table", table)?;
+
+        let one: String = lua.load("return map_table[1]").eval()?;
+        let two: i64 = lua.load("return map_table.two").eval()?;
+        assert_eq!(one, "one");
+        assert_eq!(two, 2);
+        Ok(())
+    }
+
+    #[test]
+    fn lua_syntax_errors_are_reported() {
+        let lua = Lua::new();
+        assert!(lua.load("this is not lua").exec().is_err());
+    }
 }

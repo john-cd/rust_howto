@@ -5,8 +5,17 @@
 
 use rapier2d::prelude::*;
 
-/// Simulates the ball and prints its position at each step.
-fn main() {
+/// The position and velocity of the ball after one simulation step.
+struct Snapshot {
+    /// The ball's position.
+    position: (f32, f32),
+    /// The ball's linear velocity.
+    velocity: (f32, f32),
+}
+
+/// Simulates the falling ball and returns its state after every step.
+fn simulate(steps: u32) -> Vec<Snapshot> {
+    let mut trace = Vec::new();
     // A small simulation: one dynamic ball falling onto a static ground.
     let gravity = Vector::new(0.0, -9.81);
     let integration_parameters = IntegrationParameters::default();
@@ -36,7 +45,7 @@ fn main() {
     let ball_collider = ColliderBuilder::ball(0.5).restitution(0.7).build();
     colliders.insert_with_parent(ball_collider, ball_handle, &mut bodies);
 
-    for step in 0..120 {
+    for _ in 0..steps {
         physics_pipeline.step(
             gravity,
             &integration_parameters,
@@ -55,13 +64,24 @@ fn main() {
 
         let ball = &bodies[ball_handle];
         let position = ball.position();
+        trace.push(Snapshot {
+            position: (position.translation.x, position.translation.y),
+            velocity: (ball.linvel().x, ball.linvel().y),
+        });
+    }
+    trace
+}
+
+/// Simulates the ball and prints its position at each step.
+fn main() {
+    for (step, snapshot) in simulate(120).iter().enumerate() {
         println!(
             "step {:>3}: ball position = ({:.2}, {:.2}), velocity = ({:.2}, {:.2})",
             step,
-            position.translation.x,
-            position.translation.y,
-            ball.linvel().x,
-            ball.linvel().y,
+            snapshot.position.0,
+            snapshot.position.1,
+            snapshot.velocity.0,
+            snapshot.velocity.1,
         );
     }
 }
@@ -81,4 +101,27 @@ mod tests {
         main();
     }
     // Deferred (#1206): add to the physics engines chapter.
+
+    #[test]
+    fn ball_falls_under_gravity() {
+        let trace = simulate(10);
+        assert_eq!(trace.len(), 10);
+        assert!(trace[9].position.1 < 3.0, "the ball has dropped");
+        assert!(trace[9].velocity.1 < trace[0].velocity.1);
+        assert!(trace.iter().all(|s| s.position.0.abs() < 1e-3));
+    }
+
+    #[test]
+    fn ball_comes_to_rest_above_the_ground() {
+        let trace = simulate(600);
+        let last = trace.last().expect("the simulation ran");
+        // The ground top is at y = -0.4 and the ball has radius 0.5.
+        assert!(last.position.1 > 0.0 && last.position.1 < 0.5);
+        assert!(last.velocity.1.abs() < 0.5);
+    }
+
+    #[test]
+    fn zero_steps_produce_an_empty_trace() {
+        assert!(simulate(0).is_empty());
+    }
 }

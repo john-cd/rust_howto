@@ -63,6 +63,11 @@ mod tests {
 
     /// Checks the string returned by the native callback without Node.js.
     #[test]
+    fn test_main_entry_point() {
+        main().expect("the Neon example should run successfully");
+    }
+
+    #[test]
     fn greeting_matches_the_native_callback_message() {
         assert_eq!(super::greeting(), "hello from neon!");
     }

@@ -131,4 +131,80 @@ mod tests {
             panic!("main failed: {err:?}");
         }
     }
+
+    fn cpu(program: &[[u8; 2]]) -> Cpu<'_> {
+        Cpu {
+            program,
+            pc: 0,
+            registers: [0; 2],
+            halted: false,
+        }
+    }
+
+    #[test]
+    fn loads_and_adds_registers() {
+        let program = [[0x10, 3], [0x11, 4], [0x20, 0], [0x00, 0]];
+        let mut cpu = cpu(&program);
+        while !cpu.halted {
+            cpu.step().expect("the program is valid");
+        }
+        assert_eq!(cpu.registers, [7, 4]);
+    }
+
+    #[test]
+    fn addition_wraps_around() {
+        let program = [[0x10, 200], [0x11, 100], [0x20, 0], [0x00, 0]];
+        let mut cpu = cpu(&program);
+        while !cpu.halted {
+            cpu.step().expect("the program is valid");
+        }
+        assert_eq!(cpu.registers[0], 44);
+    }
+
+    #[test]
+    fn stepping_a_halted_cpu_does_nothing() {
+        let program = [[0x00, 0]];
+        let mut cpu = cpu(&program);
+        cpu.step().expect("halt is valid");
+        assert!(cpu.halted);
+        cpu.step().expect("a halted CPU ignores further steps");
+        assert_eq!(cpu.pc, 1);
+    }
+
+    #[test]
+    fn unknown_instruction_is_an_error() {
+        let program = [[0xFF, 1]];
+        let error = cpu(&program).step().expect_err("opcode 0xFF is undefined");
+        assert!(matches!(error, EmuError::UnknownInstruction([0xFF, 1])));
+        assert_eq!(error.to_string(), "unknown instruction [ff, 01]");
+    }
+
+    #[test]
+    fn running_off_the_program_is_an_error() {
+        let program = [[0x10, 1]];
+        let mut cpu = cpu(&program);
+        cpu.step().expect("the first instruction is valid");
+        let error = cpu.step().expect_err("pc is past the end");
+        assert!(matches!(error, EmuError::InvalidAddress(1)));
+    }
+
+    #[test]
+    fn jump_target_must_exist() {
+        let program = [[0x11, 1], [0x40, 9]];
+        let mut cpu = cpu(&program);
+        cpu.step().expect("load is valid");
+        let error = cpu.step().expect_err("address 9 is outside the program");
+        assert!(matches!(error, EmuError::InvalidAddress(9)));
+    }
+
+    #[test]
+    fn infinite_loop_is_cut_off_by_the_example_budget() {
+        // `main` gives up after 64 steps; a loop that never halts reaches it.
+        let program = [[0x11, 1], [0x40, 1]];
+        let mut cpu = cpu(&program);
+        for _ in 0..64 {
+            cpu.step().expect("the loop is valid");
+        }
+        assert!(!cpu.halted);
+    }
 }

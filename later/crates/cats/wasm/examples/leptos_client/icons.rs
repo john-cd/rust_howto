@@ -1,8 +1,11 @@
 #![allow(clippy::same_name_method)]
 // TODO Reviewed ??-??-2026.
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "the snippet declares items to illustrate them, not to call them"
+    )
 )]
 // ANCHOR: example
 //! Use [`icondata`] icon data as inline SVG in a Leptos view.

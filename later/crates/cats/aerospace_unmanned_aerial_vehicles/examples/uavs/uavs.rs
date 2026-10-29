@@ -48,6 +48,7 @@ mod tests {
     use super::*;
 
     /// Runs the uavs example through its entry point.
+    // output-only: the example talks to a real drone.
     #[test]
     #[ignore = "requires real drone"]
     fn test_uavs_example_entry_point() {

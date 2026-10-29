@@ -55,5 +55,13 @@ mod tests {
 
         assert_eq!(greeting, "Hello, Ada!");
     }
+
+    // output-only: prints the greeting that embedded Ruby returns, which needs
+    // Ruby headers and libruby.
+    #[test]
+    #[ignore = "needs Ruby headers and libruby"]
+    fn test_main_entry_point() {
+        main().expect("the Ruby example should run");
+    }
 }
 // [finish](https://github.com/john-cd/rust_howto/issues/1035)

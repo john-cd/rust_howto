@@ -1,8 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+#![cfg_attr(
+    not(test),
+    expect(dead_code, reason = "`parse_bars` is only used by the tests")
 )]
 // ANCHOR: example
 //! Fetch daily bars from Yahoo! Finance under a rate limit.

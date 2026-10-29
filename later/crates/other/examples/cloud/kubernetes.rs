@@ -136,7 +136,7 @@ async fn reconcile(
             )
             .await?;
     }
-    Ok(Action::requeue(Duration::from_secs(300)))
+    Ok(Action::requeue(Duration::from_mins(5)))
 }
 
 /// Decides what to do after a failed reconciliation: retry later.

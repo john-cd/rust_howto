@@ -112,4 +112,23 @@ mod tests {
         main();
         Ok(())
     }
+
+    #[test]
+    fn queries_are_recomputed_after_the_input_changes() {
+        let mut db = MyDatabase::default();
+        let input = SourceInput::new(&db, "Hello Salsa world".to_owned());
+        assert_eq!(*word_count(&db, input), 3);
+        assert_eq!(summary(&db, input), "\"Hello Salsa world\" — 3 word(s)");
+
+        input.set_content(&mut db).to("one two".to_owned());
+        assert_eq!(*word_count(&db, input), 2);
+        assert_eq!(summary(&db, input), "\"one two\" — 2 word(s)");
+    }
+
+    #[test]
+    fn empty_input_has_no_words() {
+        let db = MyDatabase::default();
+        let input = SourceInput::new(&db, String::new());
+        assert_eq!(*word_count(&db, input), 0);
+    }
 }

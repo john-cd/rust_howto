@@ -1,3 +1,4 @@
 temp/*
 !temp/.gitkeep
 target/
+generated_image.png

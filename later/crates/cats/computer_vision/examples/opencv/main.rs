@@ -18,3 +18,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the example through its entry point.
+    #[test]
+    #[cfg_attr(
+        all(target_os = "linux", feature = "opencv"),
+        ignore = "needs OpenCV and its sample data"
+    )]
+    fn test_main_entry_point() {
+        main().expect("the example should run successfully");
+    }
+}

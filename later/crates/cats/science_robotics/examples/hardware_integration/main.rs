@@ -13,6 +13,8 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point (output-only: the driver
+    /// module tests its own results).
     #[test]
     fn test_main() {
         main();

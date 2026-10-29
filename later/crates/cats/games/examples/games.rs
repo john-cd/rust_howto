@@ -65,6 +65,7 @@ mod tests {
 
     // TODO split main() and add tests for parts.
 
+    // output-only: the example draws into a window until it is closed.
     #[test]
     #[ignore = "requires interactive example runtime"]
     fn test_games_example_entry_point() {

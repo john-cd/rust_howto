@@ -59,8 +59,14 @@ pub fn run() {
     main();
 }
 
-/// Runs the Fyrox game engine example.
-#[test]
-fn test_fyrox_game_engine_example() {
-    main();
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // output-only: the example is disabled and only prints a notice.
+    /// Runs the Fyrox game engine example.
+    #[test]
+    fn test_fyrox_game_engine_example() {
+        main();
+    }
 }

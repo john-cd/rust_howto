@@ -186,4 +186,23 @@ mod tests {
     fn test_main_entry_point() -> ExampleResult<()> {
         run_guest(None)
     }
+
+    // `main` reads the guest path from the process arguments, which belong to
+    // the test harness here, so the entry point is exercised via `run_guest`.
+    #[test]
+    fn missing_guest_file_is_an_error() {
+        let path =
+            std::env::temp_dir().join("rust_howto_no_such_guest.polkavm");
+        assert!(run_guest(Some(path)).is_err());
+    }
+
+    #[test]
+    fn invalid_guest_blob_is_an_error() {
+        let path =
+            std::env::temp_dir().join("rust_howto_invalid_guest.polkavm");
+        fs::write(&path, b"not a polkavm blob").expect("temp dir is writable");
+        let result = run_guest(Some(path.clone()));
+        fs::remove_file(&path).expect("the file was just created");
+        assert!(result.is_err());
+    }
 }

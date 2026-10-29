@@ -34,6 +34,8 @@ mod tests {
 
     /// Verifies that the host-side example runner succeeds.
     /// Runs the js sys example through its entry point.
+    // output-only: on the host, the example only prints a hint; the wasm32 code
+    // needs a browser.
     #[test]
     fn test_js_sys_example_entry_point() {
         main();

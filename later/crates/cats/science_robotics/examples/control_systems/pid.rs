@@ -61,4 +61,21 @@ mod tests {
     fn test_pid_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn controller_tracks_the_setpoint() {
+        assert!(simulate() < 0.05);
+    }
+
+    #[test]
+    fn plant_is_a_first_order_lag() {
+        let mut plant = Plant {
+            output: 0.0,
+            tau: 1.0,
+        };
+        let first = plant.step(1.0, 0.1);
+        assert!((first - 0.1).abs() < 1e-6);
+        let second = plant.step(1.0, 0.1);
+        assert!(second > first && second < 1.0);
+    }
 }

@@ -126,4 +126,25 @@ mod tests {
     async fn cron_loop_skips_missed_fires() -> anyhow::Result<()> {
         demo().await
     }
+
+    #[test]
+    fn test_main_entry_point() -> anyhow::Result<()> {
+        main()
+    }
+
+    #[tokio::test(start_paused = true)]
+    async fn cancelled_token_stops_the_loop_immediately() -> anyhow::Result<()>
+    {
+        let schedule = Schedule::from_str("*/10 * * * * *")?;
+        let start = Utc
+            .with_ymd_and_hms(2026, 10, 25, 12, 0, 0)
+            .single()
+            .expect("a valid date");
+        let token = CancellationToken::new();
+        token.cancel();
+        let started =
+            run_cron(&schedule, &Clock::new(start), token, || async {}).await?;
+        assert!(started.is_empty());
+        Ok(())
+    }
 }

@@ -77,6 +77,11 @@ mod tests {
     #[test]
     #[ignore = "needs a ROS 2 environment"]
     fn test_robotics_example_entry_point() -> anyhow::Result<()> {
-        super::main()
+        let result = super::main();
+        assert!(
+            result.is_ok(),
+            "greetings were not received back: {result:?}"
+        );
+        result
     }
 }

@@ -48,6 +48,7 @@ mod tests {
     use super::*;
 
     /// Queries the graphics backend when a compatible GPU adapter is present.
+    // output-only: prints the adapter that the machine provides.
     #[test]
     #[ignore = "needs a GPU adapter"]
     fn test_graphics_example_entry_point() -> Result<(), Box<dyn Error>> {

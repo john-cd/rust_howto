@@ -152,4 +152,48 @@ mod tests {
     fn test_repository_example_entry_point() {
         main();
     }
+
+    fn user(id: i32, name: &str) -> User {
+        User {
+            id,
+            name: name.to_owned(),
+            email: format!("{name}@example.com"),
+        }
+    }
+
+    #[test]
+    fn add_get_update_and_delete() {
+        let repo = InMemoryUserRepository::new();
+        assert_eq!(repo.get_user(1), None);
+
+        repo.add_user(user(1, "alice"));
+        assert_eq!(repo.get_user(1), Some(user(1, "alice")));
+
+        repo.update_user(User {
+            name: "alice2".to_owned(),
+            ..user(1, "alice")
+        });
+        assert_eq!(repo.get_user(1).expect("user 1 exists").name, "alice2");
+
+        repo.delete_user(1);
+        assert_eq!(repo.get_user(1), None);
+    }
+
+    #[test]
+    fn get_all_users_returns_every_user() {
+        let repo = InMemoryUserRepository::new();
+        repo.add_user(user(1, "alice"));
+        repo.add_user(user(2, "bob"));
+        let mut all = repo.get_all_users();
+        all.sort_by_key(|u| u.id);
+        assert_eq!(all, [user(1, "alice"), user(2, "bob")]);
+    }
+
+    #[test]
+    fn deleting_a_missing_user_is_a_no_op() {
+        let repo = InMemoryUserRepository::new();
+        repo.add_user(user(1, "alice"));
+        repo.delete_user(99);
+        assert_eq!(repo.get_all_users().len(), 1);
+    }
 }

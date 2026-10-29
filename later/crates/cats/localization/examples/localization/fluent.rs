@@ -151,4 +151,34 @@ mod tests {
         );
         run()
     }
+
+    #[test]
+    fn test_main_entry_point() -> ExampleResult<()> {
+        main()
+    }
+
+    #[test]
+    fn unknown_message_is_a_not_found_error() -> ExampleResult<()> {
+        let english = new_bundle("en-US", EN_US)?;
+        let error = format_message(&english, "missing", None)
+            .expect_err("the bundle has no such message");
+        let io_error = error
+            .downcast_ref::<io::Error>()
+            .expect("the error comes from the example");
+        assert_eq!(io_error.kind(), io::ErrorKind::NotFound);
+        Ok(())
+    }
+
+    #[test]
+    fn missing_argument_is_reported() -> ExampleResult<()> {
+        let english = new_bundle("en-US", EN_US)?;
+        assert!(format_message(&english, "greeting", None).is_err());
+        Ok(())
+    }
+
+    #[test]
+    fn invalid_resource_and_locale_are_rejected() {
+        assert!(new_bundle("en-US", "greeting = { $name").is_err());
+        assert!(new_bundle("not a locale!", EN_US).is_err());
+    }
 }

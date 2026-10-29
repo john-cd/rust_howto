@@ -109,4 +109,22 @@ mod tests {
         main();
         Ok(())
     }
+
+    #[test]
+    fn derived_value_depends_only_on_the_tracked_value() {
+        let config = Config {
+            value: 5,
+            a_bool: false,
+        };
+        assert_eq!(compute_derived_value(config.track()), 20);
+
+        let flipped = Config {
+            a_bool: true,
+            ..config
+        };
+        assert_eq!(compute_derived_value(flipped.track()), 20);
+
+        let changed = Config { value: 6, ..config };
+        assert_eq!(compute_derived_value(changed.track()), 22);
+    }
 }

@@ -56,4 +56,9 @@ mod tests {
     fn test_shuttle_example_entry_point() {
         main();
     }
+
+    #[tokio::test]
+    async fn handler_says_hello() {
+        assert_eq!(hello_world().await, "Hello, Shuttle!");
+    }
 }
