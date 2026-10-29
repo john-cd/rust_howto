@@ -181,10 +181,9 @@ mod tests {
             .expect("host callback should register");
     }
 
+    /// Runs the entry point without a guest path, which prints the usage.
     #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    fn test_main_entry_point() -> ExampleResult<()> {
+        run_guest(None)
     }
 }
