@@ -1154,8 +1154,9 @@ unused_trait_names = "allow"
 unwrap_in_result = "allow"
 
 # Checks for .unwrap() or .unwrap_err() calls on Results and .unwrap() call on Options.
-# Relaxed: Example crates demonstrate unwrap() and the Option and Result APIs.
-unwrap_used = "allow"
+# Rule: no `unwrap()` outside the examples that demonstrate it; those opt out
+# locally with `#![allow(clippy::unwrap_used, reason = "...")]`.
+unwrap_used = "warn"
 
 # Checks for usage of Debug formatting. The purpose of this lint is to catch debugging remnants.
 use_debug = "allow"

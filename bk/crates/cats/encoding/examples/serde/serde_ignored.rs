@@ -81,17 +81,17 @@ mod tests {
 
     /// Unknown fields are reported through the callback.
     #[test]
-    fn reports_unknown_fields() {
+    fn reports_unknown_fields() -> Result<(), Box<dyn std::error::Error>> {
         let mut ignored = Vec::new();
         let parsed: MyStruct = serde_ignored::deserialize(
             &mut serde_json::Deserializer::from_str(
                 r#"{"field1": 1, "field2": "a", "extra": true}"#,
             ),
             |path| ignored.push(path.to_string()),
-        )
-        .unwrap();
+        )?;
         assert_eq!(parsed.field1, 1);
         assert_eq!(parsed.field2, "a");
         assert_eq!(ignored, vec!["extra".to_owned()]);
+        Ok(())
     }
 }

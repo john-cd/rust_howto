@@ -173,22 +173,25 @@ mod tests {
     }
 
     #[test]
-    fn test_context_register_get_and_get_mut() {
+    fn test_context_register_get_and_get_mut()
+    -> Result<(), Box<dyn std::error::Error>> {
         let mut ctx = Context::default();
         assert!(ctx.get::<i32>().is_none());
         ctx.register(7_i32);
         assert_eq!(ctx.get::<i32>(), Some(&7));
-        *ctx.get_mut::<i32>().unwrap() += 1;
+        *ctx.get_mut::<i32>().ok_or("no i32 registered")? += 1;
         assert_eq!(ctx.get::<i32>(), Some(&8));
         // Services are keyed by type.
         assert!(ctx.get::<u32>().is_none());
         // Registering again replaces the previous value.
         ctx.register(1_i32);
         assert_eq!(ctx.get::<i32>(), Some(&1));
+        Ok(())
     }
 
     #[test]
-    fn test_plugins_cooperate_through_the_context() {
+    fn test_plugins_cooperate_through_the_context()
+    -> Result<(), Box<dyn std::error::Error>> {
         let mut manager = PluginManager::default();
         manager.context.register(AppState { counter: 0 });
         manager.context.register(100i32);
@@ -198,16 +201,19 @@ mod tests {
         manager.add_plugin(Box::new(MyServiceConsumerPlugin));
         manager.initialize();
 
-        assert_eq!(manager.context.get::<AppState>().unwrap().counter, 10);
+        let state = manager.context.get::<AppState>().ok_or("no AppState")?;
+        assert_eq!(state.counter, 10);
         // `MyStringPlugin` replaced the host's greeting.
         assert_eq!(
             manager.context.get::<String>().map(String::as_str),
             Some("Plugin Says Hello!")
         );
-        assert_eq!(
-            manager.context.get::<CustomPluginService>().unwrap().value,
-            12345
-        );
+        let service = manager
+            .context
+            .get::<CustomPluginService>()
+            .ok_or("no CustomPluginService")?;
+        assert_eq!(service.value, 12345);
+        Ok(())
     }
 
     #[test]

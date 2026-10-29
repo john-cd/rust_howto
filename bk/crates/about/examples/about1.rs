@@ -55,10 +55,12 @@ mod tests {
     }
 
     #[test]
-    fn test_example_parses_ipv6_address() {
-        let addr = example().unwrap();
-        assert_eq!(addr, "2001:db8::1".parse::<IpAddr>().unwrap());
+    fn test_example_parses_ipv6_address()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let addr = example()?;
+        assert_eq!(addr, "2001:db8::1".parse::<IpAddr>()?);
         assert!(addr.is_ipv6());
+        Ok(())
     }
 
     #[test]

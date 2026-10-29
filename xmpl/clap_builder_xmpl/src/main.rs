@@ -92,12 +92,12 @@ mod tests {
     #[test]
     fn query_and_test() {
         assert_eq!(
-            describe_args(&["demo", "query", "a", "b"]).last().unwrap(),
-            r#"Command: query ["a", "b"]"#
+            describe_args(&["demo", "query", "a", "b"]).last(),
+            Some(&r#"Command: query ["a", "b"]"#.to_string())
         );
         assert_eq!(
-            describe_args(&["demo", "test"]).last().unwrap(),
-            "Command: test"
+            describe_args(&["demo", "test"]).last(),
+            Some(&"Command: test".to_string())
         );
     }
 }

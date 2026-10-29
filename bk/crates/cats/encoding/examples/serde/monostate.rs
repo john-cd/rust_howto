@@ -84,9 +84,9 @@ mod tests {
 
     /// The `MustBe!` marker only accepts its exact value.
     #[test]
-    fn must_be_rejects_mismatched_values() {
-        let ok: ApiResponse =
-            serde_json::from_str(r#"{"success":true}"#).unwrap();
+    fn must_be_rejects_mismatched_values()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let ok: ApiResponse = serde_json::from_str(r#"{"success":true}"#)?;
         assert!(matches!(ok, ApiResponse::Success { .. }));
         // `success: false` without `_message` matches neither variant.
         assert!(
@@ -97,5 +97,6 @@ mod tests {
             serde_json::from_str::<ApiResponse>(r#"{"success":"yes"}"#)
                 .is_err()
         );
+        Ok(())
     }
 }

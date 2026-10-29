@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Example of `Result` methods for value transformation and control flow.
 
+#![allow(
+    clippy::unwrap_used,
+    reason = "this example demonstrates `unwrap` and `expect`"
+)]
+
 // A contrived example of a function returning a `Result`:
 /// Divides `a` by `b`, or returns an error if `b` is zero.
 fn divide(a: i32, b: i32) -> Result<i32, &'static str> {

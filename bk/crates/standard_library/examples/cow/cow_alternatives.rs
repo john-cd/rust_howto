@@ -80,18 +80,25 @@ mod tests {
     }
 
     #[test]
-    fn test_rwlock_string_is_mutated_by_all_threads() {
+    fn test_rwlock_string_is_mutated_by_all_threads()
+    -> Result<(), Box<dyn std::error::Error>> {
         let shared = Arc::new(RwLock::new("String".to_owned()));
         let handles: Vec<_> = (0..2)
             .map(|_| {
                 let shared = Arc::clone(&shared);
-                thread::spawn(move || shared.write().unwrap().push('!'))
+                thread::spawn(move || {
+                    shared
+                        .write()
+                        .map(|mut s| s.push('!'))
+                        .map_err(|e| e.to_string())
+                })
             })
             .collect();
         for handle in handles {
-            handle.join().unwrap();
+            handle.join().map_err(|_| "thread panicked")??;
         }
-        assert_eq!(*shared.read().unwrap(), "String!!");
+        assert_eq!(*shared.read().map_err(|e| e.to_string())?, "String!!");
+        Ok(())
     }
 
     #[test]

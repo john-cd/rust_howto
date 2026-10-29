@@ -40,6 +40,7 @@ use capnp::serialize;
     clippy::all,
     clippy::pedantic,
     clippy::nursery,
+    clippy::unwrap_used,
     reason = "generated code"
 )]
 pub mod foo_capnp {

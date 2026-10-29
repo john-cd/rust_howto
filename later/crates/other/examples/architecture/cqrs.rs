@@ -522,13 +522,10 @@ mod tests {
                 quantity_change: -11,
             });
 
-        assert!(result.is_err());
-        assert!(
-            result
-                .unwrap_err()
-                .to_string()
+        assert!(result.err().is_some_and(|e| {
+            e.to_string()
                 .contains("Update would result in negative quantity")
-        );
+        }));
 
         Ok(())
     }

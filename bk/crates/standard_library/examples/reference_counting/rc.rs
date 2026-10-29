@@ -70,12 +70,14 @@ mod tests {
     }
 
     #[test]
-    fn test_get_mut_requires_unique_ownership() {
+    fn test_get_mut_requires_unique_ownership()
+    -> Result<(), Box<dyn std::error::Error>> {
         let mut y = Rc::new(4);
-        *Rc::get_mut(&mut y).unwrap() = 5;
+        *Rc::get_mut(&mut y).ok_or("`y` is shared")? = 5;
         assert_eq!(*y, 5);
         let _other = Rc::clone(&y);
         assert!(Rc::get_mut(&mut y).is_none());
+        Ok(())
     }
 
     #[test]
@@ -83,7 +85,9 @@ mod tests {
         assert_eq!(Rc::try_unwrap(Rc::new(6)), Ok(6));
         let shared = Rc::new(6);
         let other = Rc::clone(&shared);
-        let err = Rc::try_unwrap(shared).unwrap_err();
+        let Err(err) = Rc::try_unwrap(shared) else {
+            panic!("the `Rc` is shared");
+        };
         assert_eq!(*err, 6);
         drop(other);
     }

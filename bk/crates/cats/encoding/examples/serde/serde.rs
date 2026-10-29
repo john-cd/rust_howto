@@ -61,18 +61,20 @@ mod tests {
 
     /// Fields are renamed, `None` is skipped, and round trips preserve data.
     #[test]
-    fn renames_fields_and_skips_none() {
+    fn renames_fields_and_skips_none() -> Result<(), Box<dyn std::error::Error>>
+    {
         let person = Person {
             first: "Jane".to_owned(),
             last: "Roe".to_owned(),
             age: None,
         };
-        let json = serde_json::to_string(&person).unwrap();
+        let json = serde_json::to_string(&person)?;
         assert_eq!(json, r#"{"first_name":"Jane","last_name":"Roe"}"#);
-        let back: Person = serde_json::from_str(&json).unwrap();
+        let back: Person = serde_json::from_str(&json)?;
         assert_eq!(back, person);
         assert!(
             serde_json::from_str::<Person>(r#"{"first_name":"x"}"#).is_err()
         );
+        Ok(())
     }
 }

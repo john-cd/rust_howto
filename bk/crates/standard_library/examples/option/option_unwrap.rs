@@ -4,7 +4,11 @@
 //! Demonstrates the use of `unwrap`, `expect`, `unwrap_or`, and
 //! `unwrap_or_else` with `Option`.
 
-#![allow(clippy::unnecessary_literal_unwrap)]
+#![allow(
+    clippy::unnecessary_literal_unwrap,
+    clippy::unwrap_used,
+    reason = "this example demonstrates `unwrap`"
+)]
 
 /// `unwrap()` and `expect()` retrieve the inner value of a `Option`.
 /// BEWARE: if the `Option` is `None`, they will cause your program to panic.

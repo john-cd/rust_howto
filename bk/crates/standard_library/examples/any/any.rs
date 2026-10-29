@@ -74,20 +74,24 @@ mod tests {
     }
 
     #[test]
-    fn test_downcast_ref_and_mut() {
+    fn test_downcast_ref_and_mut() -> Result<(), Box<dyn std::error::Error>> {
         let mut value: Box<dyn Any> = Box::new(5_i32);
         assert_eq!(value.downcast_ref::<i32>(), Some(&5));
         assert_eq!(value.downcast_ref::<u32>(), None);
-        *value.downcast_mut::<i32>().unwrap() += 1;
+        *value.downcast_mut::<i32>().ok_or("not an i32")? += 1;
         assert_eq!(value.downcast_ref::<i32>(), Some(&6));
+        Ok(())
     }
 
     #[test]
-    fn test_downcast_returns_the_box_on_failure() {
+    fn test_downcast_returns_the_box_on_failure()
+    -> Result<(), Box<dyn std::error::Error>> {
         let boxed: Box<dyn Any> = Box::new("text".to_owned());
-        let back = boxed.downcast::<i32>().unwrap_err();
-        assert_eq!(*back.downcast::<String>().unwrap(), "text");
+        let back = boxed.downcast::<i32>().err().ok_or("unexpected i32")?;
+        let text = back.downcast::<String>().map_err(|_| "not a String")?;
+        assert_eq!(*text, "text");
         print_if_string(Box::new(1_u8)); // Not a `String`: prints nothing.
         print_if_string(Box::new("s".to_owned()));
+        Ok(())
     }
 }

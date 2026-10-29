@@ -4,7 +4,11 @@
 //! Demonstrates the use of `unwrap()` and `expect()` for handling `Result`
 //! types.
 
-#![allow(clippy::unnecessary_literal_unwrap)]
+#![allow(
+    clippy::unnecessary_literal_unwrap,
+    clippy::unwrap_used,
+    reason = "this example demonstrates `unwrap`"
+)]
 
 /// Extracts a value with `unwrap` and `expect`, which panic on failure.
 fn main() {

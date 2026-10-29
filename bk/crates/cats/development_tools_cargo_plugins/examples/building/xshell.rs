@@ -98,7 +98,9 @@ fn main() -> anyhow::Result<()> {
     tracing::info!("Failed command status: {failed_status:?}");
     // Capture a failed command's standard error with `read_stderr`.
     let err_result = cmd!(sh, "cat nonexistent_file").read_stderr();
-    tracing::info!("Standard error: {}", err_result.unwrap_err());
+    if let Err(err) = err_result {
+        tracing::info!("Standard error: {err}");
+    }
 
     // Set and read variables in the shell's environment map.
     // `xshell` maintains its own environment map, independent of the system's.

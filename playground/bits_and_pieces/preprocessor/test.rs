@@ -46,11 +46,10 @@ mod tests {
         ]"##;
         let input_json = input_json.as_bytes();
 
-        let (ctx, book) = mdbook::preprocess::CmdPreprocessor::parse_input(input_json).unwrap();
+        let (ctx, book) = mdbook::preprocess::CmdPreprocessor::parse_input(input_json).expect("valid input JSON");
 
         let result = Preproc::new().run(&ctx, book);
-        assert!(result.is_ok());
-        let actual_book = result.unwrap();
+        let actual_book = result.expect("preprocessor failed");
         while let Some(mdbook::BookItem::Chapter(chapter)) = actual_book.iter().next() {
             assert!(!chapter.content.contains(r#"<div class="hidden">"#));
             assert!(!chapter.content.contains("{#include"));

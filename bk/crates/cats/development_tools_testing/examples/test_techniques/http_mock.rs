@@ -54,9 +54,9 @@ mod tests {
             then.status(503).body("try later");
         });
 
-        let error = fetch_greeting(&server.base_url(), "Ferris").unwrap_err();
+        let result = fetch_greeting(&server.base_url(), "Ferris");
 
-        assert!(error.to_string().contains("503"));
+        assert!(result.err().is_some_and(|e| e.to_string().contains("503")));
         mock.assert_calls(1);
     }
 }

@@ -35,8 +35,10 @@ mod tests {
     }
 
     #[test]
-    fn test_example_strips_the_query() {
-        assert_eq!(example().unwrap(), "https://httpbin.org/cookies/set");
+    fn test_example_strips_the_query() -> Result<(), Box<dyn std::error::Error>>
+    {
+        assert_eq!(example()?, "https://httpbin.org/cookies/set");
+        Ok(())
     }
 
     #[test]

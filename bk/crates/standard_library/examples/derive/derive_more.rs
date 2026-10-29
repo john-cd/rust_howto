@@ -195,19 +195,22 @@ mod tests {
     }
 
     #[test]
-    fn test_transfer_amount() {
+    fn test_transfer_amount() -> Result<(), Box<dyn std::error::Error>> {
         let mut from = Amount(10.0);
         let mut to = Amount(2.0);
-        transfer_amount(&mut from, &mut to, Amount(3.0)).unwrap();
+        transfer_amount(&mut from, &mut to, Amount(3.0))?;
         assert!((from.0 - 7.0).abs() < f64::EPSILON);
         assert!((to.0 - 5.0).abs() < f64::EPSILON);
+        Ok(())
     }
 
     #[test]
     fn test_transfer_amount_with_insufficient_funds_changes_nothing() {
         let mut from = Amount(1.0);
         let mut to = Amount(2.0);
-        let err = transfer_amount(&mut from, &mut to, Amount(3.0)).unwrap_err();
+        let Err(err) = transfer_amount(&mut from, &mut to, Amount(3.0)) else {
+            panic!("the transfer should fail");
+        };
         assert!(matches!(err, AppError::InsufficientFundsError));
         assert_eq!(err.to_string(), "Insufficient funds");
         assert!((from.0 - 1.0).abs() < f64::EPSILON);

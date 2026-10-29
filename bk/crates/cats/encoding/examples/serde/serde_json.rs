@@ -58,15 +58,17 @@ mod tests {
 
     /// Round trips preserve data; out-of-range numbers are rejected.
     #[test]
-    fn roundtrips_and_rejects_out_of_range_age() {
+    fn roundtrips_and_rejects_out_of_range_age()
+    -> Result<(), Box<dyn std::error::Error>> {
         let person = Person {
             name: "Bob".to_owned(),
             age: 255,
             email: "bob@example.com".to_owned(),
         };
-        let json = serde_json::to_string(&person).unwrap();
-        assert_eq!(serde_json::from_str::<Person>(&json).unwrap(), person);
+        let json = serde_json::to_string(&person)?;
+        assert_eq!(serde_json::from_str::<Person>(&json)?, person);
         let too_old = r#"{"name":"x","age":256,"email":"e"}"#;
         assert!(serde_json::from_str::<Person>(too_old).is_err());
+        Ok(())
     }
 }

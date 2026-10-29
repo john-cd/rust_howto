@@ -83,8 +83,10 @@ mod tests {
 
     /// Removing a missing directory is an error from the crate.
     #[test]
-    fn removing_missing_directory_fails() {
-        let base = tempfile::tempdir().unwrap();
+    fn removing_missing_directory_fails()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let base = tempfile::tempdir()?;
         assert!(remove_dir_all(base.path().join("missing")).is_err());
+        Ok(())
     }
 }

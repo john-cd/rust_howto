@@ -64,7 +64,7 @@ mod tests {
         assert_eq!(result.as_ref().map(String::len), Ok(4));
         assert_eq!(result.as_deref(), Ok("Rust"));
         // The original is still usable.
-        assert_eq!(result.unwrap(), "Rust");
+        assert_eq!(result, Ok("Rust".to_owned()));
     }
 
     #[test]

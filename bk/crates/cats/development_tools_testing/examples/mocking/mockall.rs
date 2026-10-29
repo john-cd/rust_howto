@@ -186,8 +186,7 @@ mod tests {
         let result = service.get_user(999);
 
         // Assert the result:
-        assert!(result.is_err());
-        assert_eq!(result.unwrap_err(), "User with id 999 not found");
+        assert_eq!(result.err().as_deref(), Some("User with id 999 not found"));
     }
 
     /// Verifies that `update_user_email` saves the new address to the

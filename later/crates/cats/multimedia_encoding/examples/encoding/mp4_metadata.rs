@@ -37,12 +37,9 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 fn create_sample_mp4() -> Result<Vec<u8>, Box<dyn Error + Send + Sync>> {
     let mut buf = Vec::new();
     let config = mp4::Mp4Config {
-        major_brand: str::parse("isom").unwrap(),
+        major_brand: str::parse("isom")?,
         minor_version: 512,
-        compatible_brands: vec![
-            str::parse("isom").unwrap(),
-            str::parse("iso2").unwrap(),
-        ],
+        compatible_brands: vec![str::parse("isom")?, str::parse("iso2")?],
         timescale: 1000,
     };
     let mut writer =

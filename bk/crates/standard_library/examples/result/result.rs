@@ -204,63 +204,72 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_result_example_entry_point() {
+    fn test_result_example_entry_point()
+    -> Result<(), Box<dyn std::error::Error>> {
         // `example.txt` does not exist: every function reports an error, but
         // `main` itself succeeds.
-        main().unwrap();
+        main()?;
+        Ok(())
     }
 
     /// Writes `contents` to a unique file in the temp directory.
-    fn temp_file(name: &str, contents: &str) -> PathBuf {
+    fn temp_file(name: &str, contents: &str) -> io::Result<PathBuf> {
         let path = std::env::temp_dir()
             .join(format!("result_example_{}_{name}", std::process::id()));
-        std::fs::write(&path, contents).unwrap();
-        path
+        std::fs::write(&path, contents)?;
+        Ok(path)
     }
 
     fn missing_path() -> String {
         let path = std::env::temp_dir()
             .join(format!("result_example_{}_missing", std::process::id()));
-        path.to_str().unwrap().to_owned()
+        path.to_string_lossy().into_owned()
     }
 
     #[test]
-    fn test_read_file_variants_return_the_contents() {
-        let path = temp_file("contents", "42\n");
-        let p = path.to_str().unwrap();
-        assert_eq!(read_file(p).unwrap(), "42\n");
-        assert_eq!(read_file2(p).unwrap(), "42\n");
-        std::fs::remove_file(path).unwrap();
+    fn test_read_file_variants_return_the_contents()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let path = temp_file("contents", "42\n")?;
+        let p = path.to_str().ok_or("non-UTF-8 path")?;
+        assert_eq!(read_file(p)?, "42\n");
+        assert_eq!(read_file2(p)?, "42\n");
+        std::fs::remove_file(path)?;
+        Ok(())
     }
 
     #[test]
     fn test_read_file_variants_fail_on_missing_file() {
         let p = missing_path();
-        assert_eq!(read_file(&p).unwrap_err().kind(), io::ErrorKind::NotFound);
-        assert_eq!(read_file2(&p).unwrap_err().kind(), io::ErrorKind::NotFound);
+        let kind = |r: io::Result<String>| r.err().map(|e| e.kind());
+        assert_eq!(kind(read_file(&p)), Some(io::ErrorKind::NotFound));
+        assert_eq!(kind(read_file2(&p)), Some(io::ErrorKind::NotFound));
         open_file(&p); // Reports the error and returns.
     }
 
     #[test]
-    fn test_read_and_parse_file_variants_parse_a_number() {
-        let path = temp_file("number", " 42 \n");
-        let p = path.to_str().unwrap();
-        assert_eq!(read_and_parse_file(p).unwrap(), 42);
-        assert_eq!(read_and_parse_file2(p).unwrap(), 42);
-        assert_eq!(read_and_parse_file3(p).unwrap(), 42);
-        unit_return_value(p).unwrap();
-        std::fs::remove_file(path).unwrap();
+    fn test_read_and_parse_file_variants_parse_a_number()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let path = temp_file("number", " 42 \n")?;
+        let p = path.to_str().ok_or("non-UTF-8 path")?;
+        assert_eq!(read_and_parse_file(p)?, 42);
+        assert_eq!(read_and_parse_file2(p)?, 42);
+        assert_eq!(read_and_parse_file3(p)?, 42);
+        unit_return_value(p)?;
+        std::fs::remove_file(path)?;
+        Ok(())
     }
 
     #[test]
-    fn test_parse_errors_are_reported() {
-        let path = temp_file("not_a_number", "abc");
-        let p = path.to_str().unwrap();
+    fn test_parse_errors_are_reported() -> Result<(), Box<dyn std::error::Error>>
+    {
+        let path = temp_file("not_a_number", "abc")?;
+        let p = path.to_str().ok_or("non-UTF-8 path")?;
         assert!(read_and_parse_file(p).is_err());
         assert!(read_and_parse_file2(p).is_err());
         assert!(read_and_parse_file3(p).is_err());
         assert!(unit_return_value(p).is_err());
-        std::fs::remove_file(path).unwrap();
+        std::fs::remove_file(path)?;
+        Ok(())
     }
 
     #[test]
