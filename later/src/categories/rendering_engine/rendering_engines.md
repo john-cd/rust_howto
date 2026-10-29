@@ -19,7 +19,3 @@ For the graphics APIs that engines build on, see [[rendering_graphics-api | Rend
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [rendering_engines: write](https://github.com/john-cd/rust_howto/issues/455)
-</div>
