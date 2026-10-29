@@ -153,7 +153,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-08 — Media encoding, images and video
 
-- [#1943](https://github.com/john-cd/rust_howto/issues/1943) — **P4** — Add examples: audio files, playback and MIDI (hound, rodio with a custom Source, midir, hrtf) — **BLOCKED ON FINAL VALIDATION — WAV, Rodio, MIDI, and HRTF examples exist; book refdefs and build checks remain (Cargo test/Clippy evidence is Linux-only and requires ALSA development files)**
 
 #### NOW-CODE-09 — Networking, authentication and email
 
@@ -161,7 +160,6 @@ Validation (2026-10-27): `dprint check` and `rumdl` across `bk/src`, `bk/drafts`
 
 #### NOW-CODE-10 — Cloud services and SDKs
 
-- [#1913](https://github.com/john-cd/rust_howto/issues/1913) — **P4** — Add examples: message bus over AWS SQS/SNS with Protobuf payloads (aws-sdk, prost) — **BLOCKED ON FINAL VALIDATION — implementation and offline Cargo evidence are in merged PR #1971; cross-links, book refdefs/build, and optional LocalStack coverage remain**
 
 #### NOW-CODE-11 — Tabular data and finance
 
