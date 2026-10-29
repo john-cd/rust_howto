@@ -19,7 +19,3 @@ Use the [Emulators chapter][ex~emulators~emulators] for the instruction interpre
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/348)
-</div>
