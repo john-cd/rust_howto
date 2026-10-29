@@ -29,7 +29,7 @@ The optional `wasmer` feature uses Wasmer 7.5's single-pass compiler. This examp
 {{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmer.rs:example}}
 ```
 
-From `later/crates`, run `cargo test -p wasm --example wasm_standalone_runtimes --features wasmer`. It needs no files, network access, or WASI host implementation.
+From `later/crates`, run `cargo test -p wasm --example wasm_standalone_runtimes --features wasmer`. It needs no files, network access, or WASI host implementation. Wasmer's single-pass backend does not build on Windows, so run the example on Linux or macOS (or in WSL), or select another backend such as V8.
 
 ## Embed Wasmtime {#wasmtime}
 
