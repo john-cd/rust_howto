@@ -284,24 +284,18 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-01 — Language, mathematics, date and time
 
-- [#1188](https://github.com/john-cd/rust_howto/issues/1188) — **P2** — `date-and-time/index.md`: review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — humantime and guidance are present; book validation and human review/promotion remain; details are on the issue**
 
 #### VALIDATE-PROSE-02 — Asynchronous programming and caching
 
-- [#633](https://github.com/john-cd/rust_howto/issues/633) — **P2** — `asynchronous/async.md`: write; review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — async fundamentals and runtime guidance are present; prior focused tests/Clippy and book build passed; full Clippy and Windows spelling gate remain; details are on the issue**
 
 #### VALIDATE-PROSE-03 — Development tools, build systems and editors
 
-- [#311](https://github.com/john-cd/rust_howto/issues/311) — **P2** — `development-tools_cargo-plugins/index.md`: review in depth, reorg table — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
-- [#962](https://github.com/john-cd/rust_howto/issues/962) — **P2** — `text-editors/index.md`: write; review in depth finish the table — **IMPLEMENTED ON DEVELOP; BLOCKED — reference/spelling and Windows AWS-LC book gates remain; details are on the issue**
 
 #### VALIDATE-PROSE-04 — Encoding, parsing and text processing
 
-- [#1078](https://github.com/john-cd/rust_howto/issues/1078) — **P3** — `encoding/no_external_schema.md`: write — **PARTIAL ON DEVELOP; BLOCKED — guide is present; stale issue self-reference, full checks, Unix spelling, and linked PR remain; details are on the issue**
 
 #### VALIDATE-PROSE-05 — Web, networking and databases
 
-- [#977](https://github.com/john-cd/rust_howto/issues/977) — **P2** — `web-programming_http-server/index.md`: write / review in depth — **IMPLEMENTED ON DEVELOP; BLOCKED — prior Markdown/refdefs/book checks passed; Unix spelling and linked PR remain; details are on the issue**
 - [#284](https://github.com/john-cd/rust_howto/issues/284) — **P3** — Expand and verify the connection-pool examples B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused and live PostgreSQL checks passed; nextest selector and full gates remain; details are on the issue**
 - [#286](https://github.com/john-cd/rust_howto/issues/286) — **P3** — Expand PostgreSQL and Cornucopia guidance B — **IMPLEMENTED ON DEVELOP; BLOCKED — prior focused Clippy and live PostgreSQL checks passed; nextest selector, full gates, and repository-wide refdefs remain; details are on the issue**
 - [#291](https://github.com/john-cd/rust_howto/issues/291) — **P3** — — Search engines chapter — **IMPLEMENTED ON DEVELOP; BLOCKED — search overview and comparison are present; Meilisearch service verification and refdefs/book/spelling gates remain; details are on the issue**
@@ -314,31 +308,17 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-PROSE-08 — Systems, embedded, WebAssembly and virtualization
 
-- [#946](https://github.com/john-cd/rust_howto/issues/946) — **P3** — Write and review the external commands chapter — **PARTIAL; OPEN — stdin description corrected; platform-dependent examples, full checks, and linked PR remain**
-- [#1177](https://github.com/john-cd/rust_howto/issues/1177) — **P3** — `hardware-support/peripherals.md`: write — **IMPLEMENTED; OPEN — peripheral guide and overview table present; refdefs, book, spelling, and linked PR remain**
-- [#968](https://github.com/john-cd/rust_howto/issues/968) — **P4** — Complete the virtualization index — **PARTIAL; OPEN — table links repaired and vm-memory added; remaining review, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-09 — UI, accessibility, media and rendering
 
 - [#187](https://github.com/john-cd/rust_howto/issues/187) — **P4** — Complete the screen-reader and AccessKit chapter D — **PARTIAL; BLOCKED — desktop accessibility verification and deferred checks remain; details are on the issue**
 - [#422](https://github.com/john-cd/rust_howto/issues/422) — **P4** — Video chapter and example F — **PARTIAL; BLOCKED — native media environment and deferred checks remain; details are on the issue**
-- [#638](https://github.com/john-cd/rust_howto/issues/638) — **P4** — Clipboard chapter F — **IMPLEMENTED; OPEN — text/image and platform guidance present; desktop checks, refdefs, book, spelling, and linked PR remain**
-- [#942](https://github.com/john-cd/rust_howto/issues/942) — **P4** — Complete the images index — **PARTIAL; OPEN — task table links repaired and image recipes present; example checks, refdefs, book, spelling, and linked PR remain**
-- [#943](https://github.com/john-cd/rust_howto/issues/943) — **P4** — Complete the video index — **PARTIAL; OPEN — GStreamer and FFmpeg release status reviewed; external media setup, refdefs, book, spelling, and linked PR remain**
-- [#953](https://github.com/john-cd/rust_howto/issues/953) — **P4** — Complete the rendering index — **PARTIAL; OPEN — subpages nested and recipe tables grouped; content review, refdefs, book, spelling, and linked PR remain**
-- [#956](https://github.com/john-cd/rust_howto/issues/956) — **P4** — Complete the graphics-API index — **PARTIAL; OPEN — related-topic table repaired; platform review, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-10 — Science, finance, data processing and visualization
 
-- [#589](https://github.com/john-cd/rust_howto/issues/589) — **P4** — Organize the data-engineering chapter D — **PARTIAL; OPEN — shared Polars recipe deduplicated; external runtime review, refdefs, book, spelling, and linked PR remain**
-- [#961](https://github.com/john-cd/rust_howto/issues/961) — **P4** — Complete the simulation index — **PARTIAL; OPEN — malformed domain and related-topic tables repaired; crate review, refdefs, book, spelling, and linked PR remain**
-- [#969](https://github.com/john-cd/rust_howto/issues/969) — **P4** — Review the visualization index — **PARTIAL; OPEN — GUI table and three-d backend corrected; crate review, refdefs, book, spelling, and linked PR remain**
-- [#1205](https://github.com/john-cd/rust_howto/issues/1205) — **P4** — — Deep learning chapter — **PARTIAL; OPEN — CPU example and framework guidance present; feature build, tests, Clippy, refdefs, book, spelling, and linked PR remain**
-- [#1208](https://github.com/john-cd/rust_howto/issues/1208) — **P4** — — Control systems chapter — **PARTIAL; OPEN — PID simulation and sample-period guidance present; crate review, tests, Clippy, refdefs, book, spelling, and linked PR remain**
 
 #### VALIDATE-PROSE-11 — Architecture and scripting
 
-- [#1230](https://github.com/john-cd/rust_howto/issues/1230) — **P4** — — Architecture chapters — **IMPLEMENTATION COMPLETE ON DEVELOP; OPEN — chapter review and formatting complete; tests, book checks, and linked PR deferred**
 
 #### VALIDATE-PROSE-12 — Foreign function interfaces
 
