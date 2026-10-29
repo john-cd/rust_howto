@@ -44,6 +44,7 @@ fn connect_counter_increment(app: &App) {
 }
 // ANCHOR_END: example
 
+/// Opens the counter window and processes GUI events.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -67,10 +68,10 @@ mod tests {
         Ok(())
     }
 
+    /// Opens the application only when an interactive display is available.
     #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    #[ignore = "requires an interactive Slint session"]
+    fn test_main_entry_point() -> anyhow::Result<()> {
+        main()
     }
 }
