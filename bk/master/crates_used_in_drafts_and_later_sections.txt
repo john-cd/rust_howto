@@ -1,4 +1,6 @@
-TODO cover the following crates in the book?
+# Crates used in `bk/drafts` and `later/` but not in the published book (the list below is maintained by hand;
+# regenerate candidates with `cd bk && just indices crate_indices list_crates -d .`).
+# The 2026-10-29 coverage shortlist is in https://github.com/john-cd/rust_howto/issues/1748 .
 
 cargo-quickinstall
 cargo-tree
