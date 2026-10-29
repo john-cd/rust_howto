@@ -1,0 +1,5 @@
+error: `String` consumes the request body and thus must be the last argument to the handler function
+  --> tests/ui/debug_handler_body_not_last.rs:12:20
+   |
+12 | async fn bad(body: String, State(state): State<AppState>) -> String {
+   |                    ^^^^^^
