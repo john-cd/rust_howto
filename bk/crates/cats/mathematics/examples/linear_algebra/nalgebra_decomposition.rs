@@ -56,4 +56,23 @@ mod tests {
     fn test_nalgebra_decomposition_example_entry_point() {
         main();
     }
+
+    /// `U * Sigma * V^T` reconstructs the matrix; the singular values are
+    /// sorted and the determinant/trace are known.
+    #[test]
+    fn svd_reconstructs_matrix() {
+        let m = Matrix3::new(3.0_f64, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 3.0);
+        let svd = m.svd(true, true);
+        let (u, v_t) =
+            (svd.u.expect("u requested"), svd.v_t.expect("v_t requested"));
+        let reconstructed =
+            u * Matrix3::from_diagonal(&svd.singular_values) * v_t;
+        assert!((reconstructed - m).norm() < 1e-12);
+        // Eigenvalues are 5, 2, 2.
+        let sv = svd.singular_values;
+        assert!((sv.max() - 5.0).abs() < 1e-12);
+        assert!((sv.min() - 2.0).abs() < 1e-12);
+        assert!((m.determinant() - 20.0).abs() < 1e-12);
+        assert!((m.trace() - 9.0).abs() < 1e-12);
+    }
 }

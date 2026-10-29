@@ -53,4 +53,23 @@ mod tests {
     fn test_vector_norm_example_entry_point() {
         main();
     }
+
+    /// Norms of a known vector; normalized vectors have unit L2 norm.
+    #[test]
+    fn computes_norms_and_normalizes() {
+        let x = array![3., 4.];
+        assert!((l2_norm(x.view()) - 5.0).abs() < 1e-12);
+        assert!((l1_norm(array![1., -2., 3.].view()) - 6.0).abs() < 1e-12);
+        let n = normalize(x);
+        assert!((l2_norm(n.view()) - 1.0).abs() < 1e-12);
+        assert!((n[0] - 0.6).abs() < 1e-12);
+        assert_eq!(l1_norm(Array1::<f64>::zeros(0).view()), 0.0);
+    }
+
+    /// Normalizing a zero vector yields NaN, not a panic.
+    #[test]
+    fn normalizing_zero_vector_gives_nan() {
+        let n = normalize(array![0., 0.]);
+        assert!(n.iter().all(|e| e.is_nan()));
+    }
 }

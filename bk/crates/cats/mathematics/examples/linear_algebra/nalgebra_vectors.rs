@@ -49,4 +49,19 @@ mod tests {
     fn test_nalgebra_vectors_example_entry_point() {
         main();
     }
+
+    /// Dot, cross and norm of the example vectors; normalizing yields a unit
+    /// vector, but a zero vector cannot be normalized.
+    #[test]
+    fn vector_operations() {
+        let v1 = Vector3::new(1.0_f64, 2.0, 3.0);
+        let v2 = Vector3::new(4.0_f64, 5.0, 6.0);
+        assert!((v1.dot(&v2) - 32.0).abs() < 1e-12);
+        assert_eq!(v1.cross(&v2), Vector3::new(-3.0, 6.0, -3.0));
+        assert!((v1.norm() - 14.0_f64.sqrt()).abs() < 1e-12);
+        assert!((v1.normalize().norm() - 1.0).abs() < 1e-12);
+        // The cross product is orthogonal to both inputs.
+        assert!(v1.cross(&v2).dot(&v1).abs() < 1e-12);
+        assert!(Vector3::<f64>::zeros().try_normalize(1e-12).is_none());
+    }
 }

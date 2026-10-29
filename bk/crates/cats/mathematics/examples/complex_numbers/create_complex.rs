@@ -31,4 +31,20 @@ mod tests {
     fn test_create_complex_example_entry_point() {
         main();
     }
+
+    /// Components are stored as given and displayed as `re+imi`.
+    #[test]
+    fn stores_and_displays_components() {
+        let c = num::complex::Complex::new(10, 20);
+        assert_eq!((c.re, c.im), (10, 20));
+        assert_eq!(c.to_string(), "10+20i");
+        assert_eq!(
+            num::complex::Complex::new(10.1, -20.1).to_string(),
+            "10.1-20.1i"
+        );
+        assert_eq!(
+            num::complex::Complex::new(0, 0),
+            num::complex::Complex::default()
+        );
+    }
 }

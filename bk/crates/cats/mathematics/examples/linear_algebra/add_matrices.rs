@@ -37,4 +37,22 @@ mod tests {
     fn test_add_matrices_example_entry_point() {
         main();
     }
+
+    /// Element-wise addition gives the expected sums; mismatched shapes panic.
+    #[test]
+    fn adds_elementwise() {
+        let a = arr2(&[[1, 2, 3], [4, 5, 6]]);
+        let b = arr2(&[[6, 5, 4], [3, 2, 1]]);
+        assert_eq!(&a + &b, arr2(&[[7, 7, 7], [7, 7, 7]]));
+        assert_eq!(&b + &a, &a + &b);
+    }
+
+    /// Adding matrices of different shapes is a programming error.
+    #[test]
+    #[should_panic(expected = "incompatible shapes")]
+    fn mismatched_shapes_panic() {
+        let a = arr2(&[[1, 2, 3], [4, 5, 6]]);
+        let b = arr2(&[[1, 2], [3, 4]]);
+        let _ = &a + &b;
+    }
 }

@@ -54,4 +54,23 @@ mod tests {
     fn test_nalgebra_transformations_example_entry_point() {
         main();
     }
+
+    /// A quarter turn maps x to y; the isometry then translates by (0, 1, 2).
+    #[test]
+    fn rotates_then_translates() {
+        let axis = Unit::new_normalize(Vector3::z());
+        let rotation = Rotation3::from_axis_angle(&axis, PI / 2.0);
+        let point = Point3::new(1.0_f64, 0.0, 0.0);
+        let rotated = rotation * point;
+        assert!((rotated - Point3::new(0.0, 1.0, 0.0)).norm() < 1e-12);
+
+        let isometry = Isometry3::from_parts(
+            Translation3::new(0.0, 1.0, 2.0),
+            rotation.into(),
+        );
+        let transformed = isometry * point;
+        assert!((transformed - Point3::new(0.0, 2.0, 2.0)).norm() < 1e-12);
+        // The inverse undoes the transformation.
+        assert!((isometry.inverse() * transformed - point).norm() < 1e-12);
+    }
 }

@@ -38,4 +38,16 @@ mod tests {
     fn test_multiply_scalar_vector_matrix_example_entry_point() {
         main();
     }
+
+    /// Scaling then multiplying gives the expected vector.
+    #[test]
+    fn scales_and_multiplies() {
+        let vector = arr1(&[1, 2, 3]);
+        let matrix = arr2(&[[4, 5, 6], [7, 8, 9]]);
+        let scaled: Array1<_> = 4 * vector;
+        assert_eq!(scaled, arr1(&[4, 8, 12]));
+        assert_eq!(matrix.dot(&scaled), arr1(&[4 * 32, 4 * 50]));
+        let negated: Array1<i32> = -1 * scaled;
+        assert_eq!(negated, arr1(&[-4, -8, -12]));
+    }
 }
