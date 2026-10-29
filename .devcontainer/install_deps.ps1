@@ -174,6 +174,59 @@ function Install-OracleInstantClient {
 
 Install-OracleInstantClient
 
+# Install the pinned ONNX Runtime CPU build for the `ort` examples (load-dynamic).
+function Install-OnnxRuntime {
+    $version = $toolVersions['ONNXRUNTIME_VERSION']
+    $archiveName = "onnxruntime-win-x64-$version"
+    $installRoot = Join-Path (Join-Path $env:LOCALAPPDATA 'Programs') 'onnxruntime'
+    $runtimeDirectory = Join-Path $installRoot $archiveName
+    $runtimeDll = Join-Path (Join-Path $runtimeDirectory 'lib') 'onnxruntime.dll'
+
+    if (Test-Path -LiteralPath $runtimeDll -PathType Leaf) {
+        Write-Host "ONNX Runtime $version is already installed." -ForegroundColor Green
+    } else {
+        if (Test-Path -LiteralPath $runtimeDirectory) {
+            throw "ONNX Runtime directory exists without onnxruntime.dll: $runtimeDirectory"
+        }
+
+        $stage = Join-Path $env:TEMP "onnxruntime-$version-$PID"
+        if (Test-Path -LiteralPath $stage) {
+            throw "ONNX Runtime staging directory already exists: $stage"
+        }
+
+        New-Item -ItemType Directory -Path $stage | Out-Null
+        try {
+            $archive = Join-Path $stage "$archiveName.zip"
+            Invoke-WebRequest -Uri "https://github.com/microsoft/onnxruntime/releases/download/v$version/$archiveName.zip" -OutFile $archive
+            $hash = (Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant()
+            if ($hash -ne $toolVersions['ONNXRUNTIME_WINDOWS_X64_SHA256']) {
+                throw "ONNX Runtime archive SHA-256 did not match: $hash"
+            }
+            Expand-Archive -LiteralPath $archive -DestinationPath $stage -Force
+            $source = Join-Path $stage $archiveName
+            if (-not (Test-Path -LiteralPath (Join-Path (Join-Path $source 'lib') 'onnxruntime.dll') -PathType Leaf)) {
+                throw 'ONNX Runtime package is missing lib\onnxruntime.dll.'
+            }
+            New-Item -ItemType Directory -Path $installRoot -Force | Out-Null
+            Move-Item -LiteralPath $source -Destination $runtimeDirectory
+        } finally {
+            if (Test-Path -LiteralPath $stage) {
+                $tempRoot = [IO.Path]::GetFullPath($env:TEMP).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
+                $resolvedStage = [IO.Path]::GetFullPath($stage)
+                if (-not $resolvedStage.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase)) {
+                    throw "Refusing to remove ONNX Runtime staging directory outside TEMP: $resolvedStage"
+                }
+                Remove-Item -LiteralPath $resolvedStage -Recurse -Force
+            }
+        }
+    }
+
+    [Environment]::SetEnvironmentVariable('ORT_DYLIB_PATH', $runtimeDll, 'User')
+    $env:ORT_DYLIB_PATH = $runtimeDll
+}
+
+Install-OnnxRuntime
+
 # Refresh PATH and JAVA_HOME values installed by Winget for this PowerShell process.
 $registeredPath = @(
     [Environment]::GetEnvironmentVariable('Path', 'Machine'),

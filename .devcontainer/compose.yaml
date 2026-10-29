@@ -31,6 +31,9 @@ services:
         ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256: ${ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256:?Linux x64 Oracle SDK checksum must be defined}
         ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256: ${ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256:?Linux ARM64 Oracle Basic Light checksum must be defined}
         ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256: ${ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256:?Linux ARM64 Oracle SDK checksum must be defined}
+        ONNXRUNTIME_VERSION: ${ONNXRUNTIME_VERSION:?ONNX Runtime version must be defined}
+        ONNXRUNTIME_LINUX_X64_SHA256: ${ONNXRUNTIME_LINUX_X64_SHA256:?Linux x64 ONNX Runtime checksum must be defined}
+        ONNXRUNTIME_LINUX_AARCH64_SHA256: ${ONNXRUNTIME_LINUX_AARCH64_SHA256:?Linux ARM64 ONNX Runtime checksum must be defined}
         PANDOC_VERSION: ${PANDOC_VERSION:?pandoc version must be defined}
       secrets:
         - source: github_token

@@ -142,6 +142,9 @@ ARG ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256
 ARG ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256
 ARG ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256
 ARG ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256
+ARG ONNXRUNTIME_VERSION
+ARG ONNXRUNTIME_LINUX_X64_SHA256
+ARG ONNXRUNTIME_LINUX_AARCH64_SHA256
 ENV MDBOOK_UTILS_REV=${MDBOOK_UTILS_REV}
 ENV CARGO_TARGET_DIR=/code/target/ \
     CARGO_BUILD_BUILD_DIR=/code/build/
@@ -260,6 +263,15 @@ ENV ORACLE_HOME=/opt/oracle/instantclient_23_26 \
     OCI_LIB_DIR=/opt/oracle/instantclient_23_26 \
     LD_LIBRARY_PATH=/opt/oracle/instantclient_23_26 \
     LIBRARY_PATH=/opt/oracle/instantclient_23_26
+
+## Install the hash-pinned ONNX Runtime CPU build for the `ort` examples (load-dynamic).
+COPY --link --chmod=755 .devcontainer/install_onnxruntime.sh /usr/local/bin/install_onnxruntime.sh
+RUN ONNXRUNTIME_ARCH="$TARGETARCH" \
+    ONNXRUNTIME_VERSION="$ONNXRUNTIME_VERSION" \
+    ONNXRUNTIME_LINUX_X64_SHA256="$ONNXRUNTIME_LINUX_X64_SHA256" \
+    ONNXRUNTIME_LINUX_AARCH64_SHA256="$ONNXRUNTIME_LINUX_AARCH64_SHA256" \
+    /usr/local/bin/install_onnxruntime.sh /opt/onnxruntime
+ENV ORT_DYLIB_PATH=/opt/onnxruntime/current/lib/libonnxruntime.so
 
 ## Install the Ruby 4.0 runtime, headers, and shared library required by Rutie.
 COPY --link --chmod=755 .devcontainer/install_ruby_4_0.sh /usr/local/bin/install_ruby_4_0.sh
