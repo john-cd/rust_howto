@@ -47,7 +47,3 @@ From `later/crates`, run `cargo run -p no_std_no_alloc --example no_alloc`. The 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [no_alloc: write](https://github.com/john-cd/rust_howto/issues/428)
-</div>
