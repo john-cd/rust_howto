@@ -4,9 +4,12 @@
 //! Selecting the global allocator with Cargo features.
 //!
 //! Enable one of `use-mimalloc` and `use-jemalloc`; with neither, the system
-//! allocator is used. If both are enabled (for example by `--all-features`),
-//! `mimalloc` wins. Measure before switching: the best allocator
-//! depends on the workload (see the benchmarking pages).
+//! allocator is used. Enabling both is a compile error. Measure before
+//! switching: the best allocator depends on the workload (see the
+//! benchmarking pages).
+
+#[cfg(all(feature = "use-mimalloc", feature = "use-jemalloc"))]
+compile_error!("select only one global allocator feature");
 
 #[cfg(feature = "use-mimalloc")]
 #[global_allocator]
@@ -55,7 +58,14 @@ mod tests {
     #[test]
     fn test_global_allocator_example_entry_point() {
         main();
-        #[cfg(not(any(feature = "use-mimalloc", feature = "use-jemalloc")))]
+        #[cfg(feature = "use-mimalloc")]
+        assert_eq!(allocator_name(), "mimalloc");
+        #[cfg(all(feature = "use-jemalloc", not(target_env = "msvc")))]
+        assert_eq!(allocator_name(), "jemalloc");
+        #[cfg(any(
+            not(any(feature = "use-mimalloc", feature = "use-jemalloc")),
+            all(feature = "use-jemalloc", target_env = "msvc")
+        ))]
         assert_eq!(allocator_name(), "system");
     }
 }

@@ -1,0 +1,19 @@
+[package]
+name = "allocator_selection"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+publish = false
+
+[dependencies]
+mimalloc = { version = "0.1.52", optional = true }
+
+[features]
+use-mimalloc = ["dep:mimalloc"]
+use-jemalloc = ["dep:tikv-jemallocator"]
+
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+tikv-jemallocator = { version = "0.7.0", optional = true }
+
+# This package is separate because its features must not be enabled together.
+[workspace]

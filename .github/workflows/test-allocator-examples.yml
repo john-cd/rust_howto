@@ -1,0 +1,55 @@
+name: Test allocator examples
+
+on:
+  pull_request:
+    branches: [develop]
+    paths:
+      - "bk/crates/cats/memory_management/**"
+      - ".github/workflows/test-allocator-examples.yml"
+      - ".github/actions/**"
+  push:
+    branches: [develop, "codex/**"]
+    paths:
+      - "bk/crates/cats/memory_management/**"
+      - ".github/workflows/test-allocator-examples.yml"
+      - ".github/actions/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  allocator-examples:
+    runs-on: ubuntu-24.04
+    env:
+      CARGO_TARGET_DIR: ${{ github.workspace }}/target
+      CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/build
+      RUSTC_WRAPPER: ""
+    steps:
+      - name: Checkout
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Load pinned tool versions
+        uses: ./.github/actions/load-pinned-versions
+      - name: Set up Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          toolchain: ${{ env.RUST_VERSION }}
+          nightly: "skip"
+          components: ""
+          cache-workspaces: bk/crates -> ../../target
+      - name: Test jemalloc on Linux
+        run: cargo test --locked -p memory_management --example jemalloc
+        working-directory: bk/crates
+      - name: Test allocator feature choices
+        working-directory: bk/crates/cats/memory_management/allocator_selection
+        run: |
+          cargo test --locked
+          cargo test --locked --features use-mimalloc
+          cargo test --locked --features use-jemalloc
+          if cargo check --locked --all-features > conflict.log 2>&1; then
+            echo "Both allocator features unexpectedly compiled"
+            exit 1
+          fi
+          cat conflict.log
+          grep -F "select only one global allocator feature" conflict.log

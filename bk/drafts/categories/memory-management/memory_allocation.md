@@ -36,10 +36,10 @@ Mimalloc is a general purpose, performance-oriented allocator built by Microsoft
 
 [![mimalloc][c~mimalloc~docs~badge]][c~mimalloc~docs]{{hi:mimalloc}} [![tikv-jemallocator][c~tikv-jemallocator~docs~badge]][c~tikv-jemallocator~docs]{{hi:tikv-jemallocator}}{{hi:Global allocator}}{{hi:Cargo features}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
 
-A library or an application can let the build choose the [`#[global_allocator]`][c~std::alloc::GlobalAlloc~docs]↗{{hi:GlobalAlloc}}. The example defines the features `use-mimalloc` and `use-jemalloc`, prefers `mimalloc` if both are enabled (so `--all-features` still builds), and falls back to the system allocator when neither is. Run it with `cargo run --example global_allocator --features use-mimalloc`.
+A library or an application can let the build choose the [`#[global_allocator]`][c~std::alloc::GlobalAlloc~docs]↗{{hi:GlobalAlloc}}. The example defines the features `use-mimalloc` and `use-jemalloc`, rejects builds that enable both features, and falls back to the system allocator when neither is. It lives in a separate package so its mutually exclusive features do not conflict with the main workspace's `--all-features` checks. From `bk/`, run `just cargo run --manifest-path crates/cats/memory_management/allocator_selection/Cargo.toml --features use-mimalloc`. On MSVC, selecting jemalloc falls back to the system allocator.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/memory_management/examples/global_allocator.rs:example}}
+{{#include ../../../crates/cats/memory_management/allocator_selection/src/main.rs:example}}
 ```
 
 Measure before switching: the best allocator depends on the workload and the platform. `tikv-jemallocator` does not support the MSVC target.

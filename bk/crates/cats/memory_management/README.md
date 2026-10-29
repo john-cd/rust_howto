@@ -7,7 +7,9 @@ Examples of advanced memory management, allocators, and data structures like Sla
 ## Examples Covered
 
 - **Lazy Initialization** (`examples/lazy_initialization/`): Demonstrates concepts like `lazy_cell`, `lazy_constant`, `lazy_lock`, `lazy_static`, `once_cell`, `once_cell2`, `once_lock`.
-- **Standalone Examples**: `bumpalo`, `bumpalo_tree`, `global_allocator`, `interning`, `interner_allocations`, `jemalloc`, `mimalloc`, `seize`, `slab`.
+- **Standalone Examples**: `bumpalo`, `bumpalo_tree`, `interning`, `interner_allocations`, `jemalloc`, `mimalloc`, `seize`, `slab`.
+
+- **Allocator selection** (`allocator_selection/`): An isolated package for mutually exclusive allocator features.
 
 ## Usage
 
