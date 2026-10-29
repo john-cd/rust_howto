@@ -202,6 +202,26 @@ mod tests {
         main()
     }
 
+    /// Compares the generated CRD with the committed snapshot.
+    ///
+    /// Set `UPDATE_SNAPSHOTS=1` to rewrite `kubernetes_crd.snapshot.json`
+    /// after an intentional change to the `Echo` resource.
+    #[test]
+    fn crd_matches_the_committed_snapshot() -> anyhow::Result<()> {
+        let snapshot_path = concat!(
+            env!("CARGO_MANIFEST_DIR"),
+            "/examples/cloud/kubernetes_crd.snapshot.json"
+        );
+        let mut generated = serde_json::to_string_pretty(&Echo::crd())?;
+        generated.push('\n');
+        if std::env::var_os("UPDATE_SNAPSHOTS").is_some() {
+            std::fs::write(snapshot_path, &generated)?;
+        }
+        let expected = std::fs::read_to_string(snapshot_path)?;
+        assert_eq!(generated, expected.replace("\r\n", "\n"));
+        Ok(())
+    }
+
     #[test]
     fn crd_has_expected_identity() {
         let crd = Echo::crd();
