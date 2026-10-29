@@ -23,6 +23,7 @@
 [p~fragment]: ../../other/cloud/_fragment.md
 [p~gpu]: ../../other/gpu/gpu.md
 [p~graphics]: ../graphics/index.md
+[p~images]: ../multimedia_images/images.md
 [p~html]: ../../../src/categories/parser-implementations/html.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~rendering]: ../rendering/index.md

@@ -28,23 +28,21 @@ cargo run --locked -p rendering_graphics_api --example native_graphics_apis --fe
 
 ## Vulkan {#vulkan .skip}
 
-See [[vulkan | Vulkan]].
+[`ash`][c~ash~docs] provides low-level Vulkan bindings. Choose native Vulkan for Vulkan-specific extensions or direct control over synchronization and resource management. See [Vulkan](vulkan.md) for API setup and examples.
 
 ## OpenGL {#opengl .skip}
 
-See [[opengl | OpenGL]].
+[`glow`][c~glow~docs] wraps OpenGL and OpenGL ES function loading and also supports WebGL. It is useful when integrating with an existing OpenGL renderer or context. See [OpenGL](opengl.md) for context creation and rendering.
 
 ## Low-Level Graphics (Direct3D 12 - Windows) {#d3d12}
 
-Direct3D 12 access is usually through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}}'s backend or lower level bindings like [`d3d12`][c~d3d12~crates.io]↗{{hi:d3d12}}. Windows-specific.
-
-[`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} (with a D3D12 backend), `d3d12` (more raw bindings)
+The [`windows`][c~windows~docs] crate exposes Direct3D 12 through `Win32::Graphics::Direct3D12`; enable the corresponding Cargo features for the interfaces your application uses. Native Direct3D 12 is appropriate for Windows-specific integration and extensions. The [`d3d12`][c~d3d12~crates.io] crate offers another low-level binding. `gfx-hal` is unmaintained and should not be the starting point for a new application.
 
 ## Low-Level Graphics (Metal) {#metal}
 
-Metal access is provided by the [`metal`][c~metal~docs]↗{{hi:metal}} crate or through [`gfx-hal`][c~gfx-hal~docs]↗{{hi:gfx-hal}} (with a Metal backend). macOS/iOS specific.
+[`objc2-metal`][c~objc2-metal~docs] provides generated bindings to Apple's Metal framework on macOS and iOS. The older `metal` crate is deprecated in its favor. Choose native Metal for Apple-only features or integration with an existing Metal application.
 
-See also [`metal-rs`][c~metal~docs]↗{{hi:metal-rs}}: 'Metal' bindings.
+Use [`wgpu`][c~wgpu~docs] for a portable API unless these platform-specific requirements justify managing native resources and synchronization yourself. See [GPU Abstraction Layers](gpu_abstraction_layers.md) and [Shaders](shaders.md).
 
 ## Related Topics {#related-topics .skip}
 
@@ -54,7 +52,3 @@ See also [`metal-rs`][c~metal~docs]↗{{hi:metal-rs}}: 'Metal' bindings.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [graphics_apis: write](https://github.com/john-cd/rust_howto/issues/457)
-</div>

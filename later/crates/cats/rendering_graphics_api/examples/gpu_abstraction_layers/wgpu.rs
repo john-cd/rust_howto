@@ -46,6 +46,7 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
             power_preference: wgpu::PowerPreference::HighPerformance,
             compatible_surface: None,
             force_fallback_adapter: false,
+            ..Default::default()
         })
         .await?;
 
@@ -164,7 +165,7 @@ fn read_u32_values(
     receiver.recv()??;
 
     let values = {
-        let mapped = buffer.slice(..).get_mapped_range();
+        let mapped = buffer.slice(..).get_mapped_range()?;
         let (words, remainder) =
             mapped.as_chunks::<{ std::mem::size_of::<u32>() }>();
         if !remainder.is_empty() {
@@ -210,10 +211,10 @@ mod tests {
         run()
     }
 
+    /// Exercises the complete compute workflow on an available GPU adapter.
     #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    #[ignore = "requires a compatible GPU adapter"]
+    fn test_main_entry_point() -> Result<(), Box<dyn Error>> {
+        main()
     }
 }
