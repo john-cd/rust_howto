@@ -8,7 +8,7 @@
 
 [![plotters~website][c~plotters~website~badge]][c~plotters~website] [![plotters][c~plotters~docs~badge]][c~plotters~docs] [![plotters~crates.io][c~plotters~crates.io~badge]][c~plotters~crates.io] [![plotters~repo][c~plotters~repo~badge]][c~plotters~repo] [![plotters~lib.rs][c~plotters~lib.rs~badge]][c~plotters~lib.rs]{{hi:plotters}}{{hi:Drawing}}{{hi:Plotting}}{{hi:Visualization}}{{hi:Webassembly}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
 
-[`plotters`][c~plotters~docs]↗{{hi:plotters}} is a hardware-accelerated drawing library focused on data plotting for native applications and WebAssembly. It supports multiple rendering backends, including bitmap image formats (PNG, BMP), vector graphics (SVG), and canvas/HTML5 backends.
+[`plotters`][c~plotters~docs]↗{{hi:plotters}} is a drawing library focused on data plotting for native applications and WebAssembly. It supports bitmap images, SVG, and browser canvas backends. The SVG example below builds its output in memory and needs no GPU, display, or output file.
 
 The following example constructs a Cartesian 2D chart and renders a line series into an in-memory SVG string buffer using `plotters::backend::SVGBackend`:
 
@@ -38,7 +38,7 @@ Interactive web charts render data inside WebAssembly applications or export int
 
 ### WebAssembly Canvas Plotting with `plotters` {#plotters-wasm}
 
-For WebAssembly applications, `plotters` can render directly to an HTML `<canvas>` element using the `CanvasBackend`. See the [`plotters-wasm-demo`][plotters-wasm-demo~repo]↗ repository for complete examples of embedding live, reactive charts into WebAssembly frontend applications.
+For WebAssembly applications, `plotters-canvas` supplies `CanvasBackend` to draw onto an HTML `<canvas>` element. See the [`plotters-wasm-demo`][plotters-wasm-demo~repo]↗ repository for examples of embedding charts into WebAssembly frontend applications.
 
 ## Plots in a Desktop GUI with `egui_plot` {#egui-plot}
 

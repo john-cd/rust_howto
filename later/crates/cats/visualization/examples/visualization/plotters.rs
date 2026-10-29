@@ -38,6 +38,7 @@ fn generate_line_chart_svg()
     Ok(buffer)
 }
 
+/// Renders the chart without opening a window or writing an output file.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let svg_content = generate_line_chart_svg()?;
     println!("Generated SVG length: {} bytes.", svg_content.len());
@@ -45,6 +46,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 }
 // ANCHOR_END: example
 
+/// Runs the in-memory SVG rendering example.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()
 }
@@ -66,6 +68,10 @@ mod tests {
         assert!(
             svg.contains("Y = X^2"),
             "Generated SVG should contain caption title text."
+        );
+        assert!(
+            svg.contains("<polyline"),
+            "the SVG must contain the plotted series"
         );
     }
 
