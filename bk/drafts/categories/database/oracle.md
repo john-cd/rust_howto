@@ -171,9 +171,9 @@ directory to `PATH` before running the Oracle example or its integration test.
 
 ## Related Topics {#related-topics .skip}
 
-- [[database/sqlite | SQLite]]
-- [[database/postgres | Postgres]]
-- [[database/mssql | MSSQL]]
+- [SQLite](sqlite.md)
+- [Postgres](postgres.md)
+- [Microsoft SQL Server](mssql.md)
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
