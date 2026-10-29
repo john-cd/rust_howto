@@ -1,44 +1,48 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-# Rust-native Cloud Platforms that Offer First-class Support for Rust
+# Rust-native Cloud Development
 
 {{#include rust_native_cloud_development.incl.md}}
 
-While it is common to deploy Rust applications to Cloud services like [AWS][p~aws], Azure and GCP, a new breed of [Cloud][p~cloud] services specific tailored to the needs of Rust developers is emerging.
+Rust-native cloud development uses Rust APIs, build tools, or WebAssembly components to describe application behavior and integrate it with a hosting environment. A Rust service can also run on an ordinary VM or container platform; a Rust-first SDK does not remove the need to manage configuration, credentials, resource limits, and deployment lifecycle.
 
-## Deploy Rust Code on `shuttle.dev` {#shuttle}
+## Evaluate a Rust-first Platform {#shuttle}
 
-[shuttle.rs][shuttle-rs~website]↗{{hi:shuttle.rs}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+Shuttle historically combined Rust framework integrations with resource provisioning. Its [official shutdown notice][shuttle~shutdown] says hosted operations are ceasing: the Community migration deadline was the beginning of 2026 and Pro projects stopped on January 16, 2026. The old free-tier claim and deployment recommendation are therefore obsolete. Do not choose the historical hosted service for a new application.
 
-`Shuttle.dev` is a Rust-native cloud development platform that simplifies backend development and deployment using Rust. Here's a summary of its key capabilities:
+The retained source illustrates how the former Shuttle runtime wrapped an Axum router. It is a historical integration example, not a currently verified deployment recipe. Its runtime test is ignored because it needs the provider runtime; the ordinary Axum handler should be tested independently when migrating an application.
 
-- Infrastructure-as-Code: You can define your infrastructure directly within your Rust code using annotations (no infrastructure files). [`Shuttle`][shuttle~website]↗{{hi:Shuttle}} handles provisioning resources like [databases][p~databases], secrets, and storage.
-- Rapid Deployment: your Rust applications `can` be deployed quickly and easily to the [cloud][p~cloud] with minimal configuration.
-- Framework Support: Shuttle is compatible with popular Rust frameworks ([`Axum`][c~axum~docs]↗{{hi:Axum}}, [`Actix Web`][c~actix-web~docs]↗{{hi:Actix Web}}, [`Rocket`][c~rocket~docs]↗{{hi:Rocket}}, [`Warp`][c~warp~docs]↗{{hi:Warp}}, [`Tower`][c~tower~docs]↗{{hi:Tower}} and more). The Discord Bot building frameworks [`Serenity`][serenity~repo]↗{{hi:Serenity}} and `Poise` are also officially supported.
-- Out-of-the-box logging support.
-
-It offers a free tier with access to essential features for individual developers and small projects.
-
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/other/examples/cloud/shuttle.rs:example}}
 ```
 
-## References {#references .skip}
+Keep business logic and request handlers independent of a provider entry point. For a new service, start with the [Axum chapter][cloud~axum], then package it for a supported container or serverless target. Select that target from its current runtime, region, persistence, pricing, and operational requirements.
 
-- [`shuttle.dev`][shuttle-dev~website]↗{{hi:shuttle}}
-- [`docs.shuttle.dev`][shuttle-dev~docs]{{hi:shuttle.dev}}
-- [Shuttle Examples][shuttle~examples~repo]↗.
+## Run WebAssembly in the Cloud
+
+[Spin][cloud~spin] provides an application model for WebAssembly components, including Rust SDK support and local development commands. [wasmCloud][cloud~wasmcloud] combines components with host capabilities and distributed application operation. Their component interfaces and deployment models differ; test the exact capability providers and host configuration the application needs.
+
+See [standalone Wasm runtimes](../../categories/wasm/wasm_standalone_runtimes.md) for embedding and WASI, and distinguish a core Wasm module from a component with WIT-defined interfaces.
+
+## Write Serverless Functions
+
+Use the [AWS Lambda examples](aws.md) for AWS's Rust runtime and event handling. [Cloudflare Workers' Rust guide][cloud~workers-rust] uses the `workers-rs` SDK and compiles Rust to WebAssembly for the Workers environment. Audit filesystem, networking, async, and dependency assumptions for that runtime rather than treating it as a native Linux process.
+
+Keep credentials in the hosting environment's supported secret mechanism. Verify local handler behavior separately from deployment permissions and remote service access.
+
+## Build Kubernetes Operators
+
+The [`kube` project][cloud~kube] supplies Kubernetes clients and controller-runtime facilities in Rust. Controllers reconcile desired and observed state, so their operations need to tolerate retries and partial progress. See the [Kubernetes example](kubernetes.md) for custom resource definitions and controller integration.
 
 ## Related Topics {#related-topics .skip}
 
-- [[cloud | Cloud]].
-- [[development_tools | Development Tools]].
-- [[aws | AWS]].
-- [[wasm | WebAssembly]].
+- [Cloud overview](index.md) and [AWS](aws.md).
+- [Containers](../../categories/virtualization/containers.md).
+- [WebAssembly runtimes](../../categories/wasm/wasm_standalone_runtimes.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [write](https://github.com/john-cd/rust_howto/issues/576)
+  [Finish historical runtime validation or replace the Shuttle adapter](https://github.com/john-cd/rust_howto/issues/576).
 </div>

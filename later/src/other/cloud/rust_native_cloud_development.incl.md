@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                                | Links                               |
-| ----------------------------------------------------- | ----------------------------------- |
-| [Deploy Rust Code on `shuttle.dev`][ex~cloud~shuttle] | [docs.shuttle.rs][docs-shuttle-rs]↗ |
+| Recipe                                                   | Links                                |
+| -------------------------------------------------------- | ------------------------------------ |
+| [Evaluate Rust-native cloud platforms][ex~cloud~shuttle] | [Shuttle shutdown][shuttle~shutdown] |

@@ -26,9 +26,7 @@ an SDK.
 
 ## Deploy Rust applications
 
-The [Rust-native cloud development chapter][ex~cloud~shuttle]↗ includes a Shuttle
-deployment example. See the [Shuttle examples][shuttle-examples~repo]↗ for additional
-starting points. [Fly.io's Rust hosting guide][fly~rust~hosting~guide]↗ describes a
+The [Rust-native cloud development chapter][ex~cloud~shuttle] explains portable services, WebAssembly platforms, serverless functions, and Shuttle's shutdown. [Fly.io's Rust hosting guide][fly~rust~hosting~guide]↗ describes a
 separate deployment option.
 
 {{#include rust_native_cloud_development.incl.md}}
