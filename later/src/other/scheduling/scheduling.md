@@ -14,7 +14,7 @@
 
 ### Cron Syntax {#cron-syntax}
 
-`cron` expects 6 or 7 fields: `sec min hour day-of-month month day-of-week [year]`. The traditional 5-field form (no seconds) must be normalized first, for example by prefixing `0 `. Expressions are evaluated in the time zone of the `DateTime` you pass in; use [`chrono-tz`](https://docs.rs/chrono-tz)↗ for a named zone, and be careful around daylight-saving transitions.
+`cron` expects 6 or 7 fields: `sec min hour day-of-month month day-of-week [year]`. The traditional 5-field form (no seconds) must be normalized first, for example by prefixing the string `"0 "`. Expressions are evaluated in the time zone of the `DateTime` you pass in; use [`chrono-tz`](https://docs.rs/chrono-tz)↗ for a named zone, and be careful around daylight-saving transitions.
 
 ## Run a Periodic Job at a Fixed Interval {#interval-job}
 

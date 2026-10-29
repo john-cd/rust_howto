@@ -118,25 +118,13 @@
 
 ### Done; needs human review
 
-- [#1253](https://github.com/john-cd/rust_howto/issues/1253) — **P3** — Verify the supported `just` version and modular recipe behavior
-- [#1727](https://github.com/john-cd/rust_howto/issues/1727) — **P2** — Benchmark container build storage and select persistent cache mounts
 - [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters and Cap'n Proto regeneration B
 - [#1979](https://github.com/john-cd/rust_howto/issues/1979) — **P3** — Validate concurrency, memory, hashing, and enumeration recipe pages
-- [#1144](https://github.com/john-cd/rust_howto/issues/1144) — **P2** — `examples/lettre.rs`: review; Requires valid SMTP credentials to run
-- [#46](https://github.com/john-cd/rust_howto/issues/46) — **P2** — Finish the deadpool2 example; human review remains required
-- [#1752](https://github.com/john-cd/rust_howto/issues/1752) — **P3** — Verify game engine examples on Windows (review)
-- [#1753](https://github.com/john-cd/rust_howto/issues/1753) — **P3** — Review and complete the staging games example (review)
-- [#1755](https://github.com/john-cd/rust_howto/issues/1755) — **P3** — Review the minifb renderer example (review)
 - [#1858](https://github.com/john-cd/rust_howto/issues/1858) — **P3** — Review the earlier additions and Linux Relm4 evidence
 - [#1875](https://github.com/john-cd/rust_howto/issues/1875) — **Unprioritized** — Review the flate2 file-I/O example
-- [#1750](https://github.com/john-cd/rust_howto/issues/1750) — **P1** — Review the dynamic typing chapter (review)
-- [#935](https://github.com/john-cd/rust_howto/issues/935) — **P2** — `mathematics/complex_numbers.md`: final review
 - [#346](https://github.com/john-cd/rust_howto/issues/346) — **P4** — Review the staged embedded promotion scope C
 - [#1850](https://github.com/john-cd/rust_howto/issues/1850) — **P1** — Re-enable GitHub Actions CI and verify the refactored workflows (review)
 - [#1740](https://github.com/john-cd/rust_howto/issues/1740) — **P2** — Review remaining published-example dependency pins and upgrade notes (review)
-- [#1872](https://github.com/john-cd/rust_howto/issues/1872) — **P3** — Document the issue label and priority scheme (review)
-- [#1862](https://github.com/john-cd/rust_howto/issues/1862) — **P3** — Add CSpell for cross-platform Markdown spell checking
-- [#1863](https://github.com/john-cd/rust_howto/issues/1863) — **P3** — Add markdownlint-cli2 for Markdown linting
 - [#1725](https://github.com/john-cd/rust_howto/issues/1725) — **P2** — Review the Pandoc and Typst export plan (review)
 - [#1748](https://github.com/john-cd/rust_howto/issues/1748) — **P2** — Review draft and staging crate inventory for book coverage (review)
 

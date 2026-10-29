@@ -142,6 +142,10 @@ mod spelling 'scripts/spelling'
 spell extra_param='':
     @just spelling spell {{ extra_param }}
 
+# Lint Markdown (book, drafts, later) with the pinned markdownlint-cli2; works on Windows and Unix (needs Node.js).
+mdlint *args='':
+    cd .. && npx --yes markdownlint-cli2@0.24.0 {{ args }}
+
 lnk pattern:
     @just utils make_link {{ pattern }}
 

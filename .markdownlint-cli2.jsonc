@@ -1,0 +1,18 @@
+// markdownlint-cli2 configuration for the book content.
+// Run `just mdlint` from bk/.
+{
+  "config": { "extends": "bk/.markdownlint.yaml" },
+  "globs": [
+    "bk/src/**/*.md",
+    "bk/drafts/**/*.md",
+    "later/src/**/*.md"
+  ],
+  "ignores": [
+    "**/node_modules/**",
+    "**/target/**",
+    "bk/src/indices/crates_by_category.md"
+  ],
+  "gitignore": true,
+  "noBanner": true,
+  "noProgress": true
+}

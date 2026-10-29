@@ -113,6 +113,10 @@ Install [`rumdl`][rumdl~repo] version 0.3.0 with `cargo install rumdl --version 
 
 The Markdownlint MD040 `language_only: false` setting is omitted because it is markdownlint's default and rumdl's compatibility loader does not support that redundant option.
 
+## Lint Markdown {#lint-markdown}
+
+With Node.js installed, run `just mdlint` from `bk/` to lint `bk/src`, `bk/drafts`, and `later/src` with the pinned `markdownlint-cli2` 0.24.0 on Windows, Linux, or macOS. The rules live in `bk/.markdownlint.yaml`; `.markdownlint-cli2.jsonc` at the repository root selects the files and skips the generated `crates_by_category.md` index. The recorded baseline is zero errors; fix new findings or tune the rule set rather than adding inline suppressions.
+
 ## Check spelling {#check-spelling}
 
 Install [`typos-cli`][typos~repo] version 1.51.1 with `cargo install typos-cli --version 1.51.1 --locked`. From `bk/`, run `just spell` to check the published book, drafts, and future chapters on Windows, Linux, or macOS. The root `_typos.toml` records reviewed project names and excludes generated reference lists.

@@ -52,7 +52,7 @@ Topological sort{{hi:Topological sort}} produces a linear ordering of the nodes 
 
 [![petgraph][c~petgraph~docs~badge]][c~petgraph~docs] [![petgraph~crates.io][c~petgraph~crates.io~badge]][c~petgraph~crates.io] [![petgraph~repo][c~petgraph~repo~badge]][c~petgraph~repo] [![petgraph~lib.rs][c~petgraph~lib.rs~badge]][c~petgraph~lib.rs]{{hi:petgraph}}{{hi:A* Search}}{{hi:Shortest path}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
 
-A* Search{{hi:A* Search}} is a pathfinding algorithm that computes the shortest path by utilizing a heuristic to guide the search towards the target.
+A\* Search{{hi:A* Search}} is a pathfinding algorithm that computes the shortest path by utilizing a heuristic to guide the search towards the target.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/algorithms/examples/graph/petgraph_astar.rs:example}}

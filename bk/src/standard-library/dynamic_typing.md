@@ -33,6 +33,12 @@ Keep these limits in mind when using `Any`:
 - Storing values behind `dyn Any` erases their concrete type from the static interface. Code must handle a failed check or downcast, and the runtime type check has a cost.
 - Prefer a generic bound, enum, or domain-specific trait when it expresses the required behavior. Use `Any` when a heterogeneous collection or registry must recover a concrete type at runtime.
 
+Typical uses of `dyn Any` include:
+
+- Plugin or component registries that store user-defined types and later recover their concrete type.
+- Event systems where one handler receives events of several types.
+- A limited form of reflection-like runtime type inspection, with the limits described above.
+
 ## Compile-time Type Inspection in Procedural Macros {#compile-type-reflection}
 
 [![reflect][c~reflect~docs~badge]][c~reflect~docs] [![reflect~crates.io][c~reflect~crates.io~badge]][c~reflect~crates.io] [![reflect~repo][c~reflect~repo~badge]][c~reflect~repo] [![reflect~lib.rs][c~reflect~lib.rs~badge]][c~reflect~lib.rs]{{hi:reflect}}{{hi:Reflection}} [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
@@ -47,8 +53,3 @@ The [`reflect`][c~reflect~docs]↗ crate explores a reflection-like API for writ
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  [dynamic typing: rewrite and review](https://github.com/john-cd/rust_howto/issues/1750)
-  [content audit: use cases for Any (plugins, event systems) removed in ca0aa3ab; consider restoring](https://github.com/john-cd/rust_howto/issues/1750)
-</div>
