@@ -5,10 +5,11 @@
 [build]
 target-dir = "target"
 build-dir = "build"
-rustc-wrapper = "sccache"
-incremental = false
+# No `rustc-wrapper`: local builds use Cargo's incremental compilation in a warm slot.
+# `sccache` is opt-in (`RUSTC_WRAPPER=sccache CARGO_INCREMENTAL=0`); see AGENTS.md for the measurements.
 
 [env]
+# Used only when sccache is enabled explicitly.
 SCCACHE_DIR = { value = ".sccache", relative = true }
 # Keep a caller's shared worktree list; fall back to this checkout when unset.
 SCCACHE_BASEDIRS = { value = ".", relative = true }

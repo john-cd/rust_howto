@@ -62,6 +62,22 @@ _default:
     echo "Building {{ pkg }} (all features)"
     cargo build --all-targets --locked --all-features --package {{ pkg }}
 
+# Check one package: all targets, all features. Fastest feedback loop while editing.
+@checkpkg pkg:
+    echo "Check {{ pkg }} (all features)"
+    cd {{ quote(code_root) }}; cargo check --package {{ pkg }} --all-targets --locked --all-features
+
+# Scan one package for common mistakes (all features)
+@clippypkg pkg:
+    echo "Clippy {{ pkg }} (all features)"
+    cd {{ quote(code_root) }}; cargo clippy --package {{ pkg }} --all-targets --locked --all-features -- -D warnings
+
+# Test one package, including its doctests (all features)
+@nextestpkg pkg:
+    echo "Test {{ pkg }} (all features)"
+    cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package {{ pkg }} --all-targets --locked --no-fail-fast --all-features
+    cd {{ quote(code_root) }}; cargo test --package {{ pkg }} --doc --locked --all-features
+
 # Build all code (default features)
 @build:
     echo "Build all code (default features) in {{ quote(code_root) }}"

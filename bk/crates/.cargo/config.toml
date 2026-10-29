@@ -106,12 +106,13 @@ CLANG_SYS_STATIC = "1"
 
 ## Defaults for profile.dev
 [profile.dev]
-# opt-level = 0
-opt-level = "s"
-# debug = true
+# Workspace code (the book examples) compiles fastest unoptimized; dependencies
+# below stay size-optimized so heavy test workloads (hashing, compression) keep their speed.
+opt-level = 0
+# Line tables keep backtraces readable at a fraction of the full debug-info cost.
+debug = "line-tables-only"
 # split-debuginfo = '...'  # Platform-specific.
-# strip = "none"
-strip = true
+# strip = "none"  # Keep symbols and line tables so panics and test failures show readable backtraces.
 # debug-assertions = true
 # overflow-checks = true
 # lto = false
@@ -120,6 +121,10 @@ lto = "off"
 # incremental = true
 # codegen-units = 256
 # rpath = false
+
+[profile.dev.package."*"]
+opt-level = "s"
+debug = 0
 
 # Example: enable a small amount of optimization in debug mode
 # [profile.dev]

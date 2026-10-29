@@ -49,6 +49,18 @@ bc:
 bp pkg:
     @just code buildpkg {{ pkg }}
 
+# Check one package: all targets, all features (fastest feedback loop)
+ckp pkg:
+    @just code checkpkg {{ pkg }}
+
+# Scan one package for common mistakes (all features)
+cap pkg:
+    @just code clippypkg {{ pkg }}
+
+# Test one package, including doctests (all features)
+ntp pkg:
+    @just code nextestpkg {{ pkg }}
+
 # Build all code (default features)
 b:
     @just code build
