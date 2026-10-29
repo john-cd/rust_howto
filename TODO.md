@@ -322,7 +322,6 @@ Validation (2026-10-26): Markdown formatting, lint, spelling, and whitespace che
 
 #### VALIDATE-CODE-09 — Tabular data and finance
 
-- [#1949](https://github.com/john-cd/rust_howto/issues/1949) — **P4** — Add examples: finance building blocks (option pricing, rolling statistics, trading calendars, market-data and broker clients) — **PARTIAL ON DEVELOP; BLOCKED — pricing, statistics, Yahoo fixture, and pages are present; calendar code uses supplied holidays rather than the requested exchange-calendar integration; provider access and final checks deferred; remaining work is on the issue**
 
 #### VALIDATE-CODE-10 — Cloud services and SDKs
 
