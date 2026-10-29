@@ -56,9 +56,7 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
-fn main() -> anyhow::Result<()> {
-    let cli = Cli::parse();
-
+fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::MultithreadingRayon => {
@@ -91,4 +89,58 @@ fn main() -> anyhow::Result<()> {
         }
     }
     Ok(())
+}
+
+/// Parses the command line and runs the selected example.
+fn main() -> anyhow::Result<()> {
+    dispatch(Cli::parse())
+}
+
+#[cfg(test)]
+mod tests {
+    use clap::CommandFactory;
+
+    use super::*;
+
+    /// Every example is exposed as a subcommand.
+    const SUBCOMMANDS: &[&str] = &["multithreading_rayon", "multithreading_rayon_custom", "multithreading_rayon_parsort", "rayon_any_all", "rayon_iter_mut", "rayon_map_reduce", "rayon_parallel_search", "rayon_parallel_sort", "rayon_thumbnails"];
+
+    /// The command-line definition is internally consistent.
+    #[test]
+    fn test_cli_definition_is_valid() {
+        Cli::command().debug_assert();
+    }
+
+    /// Each example is reachable through its own subcommand.
+    #[test]
+    fn test_every_subcommand_parses() {
+        for name in SUBCOMMANDS {
+            let cli = Cli::try_parse_from(["example", name])
+                .unwrap_or_else(|e| panic!("`{name}` should parse: {e}"));
+            assert!(cli.command.is_some(), "`{name}` selected no command");
+        }
+    }
+
+    /// Subcommand names are unique.
+    #[test]
+    fn test_subcommand_names_are_unique() {
+        let mut sorted = SUBCOMMANDS.to_vec();
+        sorted.sort_unstable();
+        sorted.dedup();
+        assert_eq!(sorted.len(), SUBCOMMANDS.len());
+    }
+
+    /// Unknown subcommands are rejected.
+    #[test]
+    fn test_unknown_subcommand_is_rejected() {
+        assert!(Cli::try_parse_from(["example", "no-such-example"]).is_err());
+    }
+
+    /// Running without a subcommand selects nothing and succeeds.
+    #[test]
+    fn test_no_subcommand_runs_nothing() {
+        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        assert!(cli.command.is_none());
+        dispatch(cli).expect("dispatching should succeed");
+    }
 }
