@@ -73,5 +73,24 @@ mod tests {
         client.join().expect("client thread should complete")?;
         Ok(())
     }
+
+    /// Runs the example, which waits for a client on an unknown port.
+    #[test]
+    #[ignore = "blocks until a client connects to the printed port"]
+    fn require_external_client() -> Result<(), Error> {
+        main()
+    }
+
+    /// A client that sends nothing yields an empty string.
+    #[test]
+    fn empty_connection_yields_empty_input() -> Result<(), Error> {
+        let listener = TcpListener::bind((Ipv4Addr::LOCALHOST, 0))?;
+        let address = listener.local_addr()?;
+        let client = std::thread::spawn(move || {
+            std::net::TcpStream::connect(address).map(drop)
+        });
+        assert_eq!(read_one_connection(listener)?, "");
+        client.join().expect("client thread should complete")?;
+        Ok(())
+    }
 }
-// finish; listens to a connection forever

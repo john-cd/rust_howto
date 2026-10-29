@@ -112,6 +112,21 @@ mod tests {
         );
         Ok(())
     }
+
+    /// Unknown routes return 404.
+    #[tokio::test]
+    async fn unknown_route_is_not_found() -> anyhow::Result<()> {
+        let response = app()
+            .oneshot(Request::builder().uri("/missing").body(Body::empty())?)
+            .await?;
+        assert_eq!(response.status(), StatusCode::NOT_FOUND);
+        Ok(())
+    }
+
+    /// Runs the example against the ngrok service.
+    #[test]
+    #[ignore = "needs NGROK_AUTHTOKEN and access to the ngrok service"]
+    fn require_external_svc() -> anyhow::Result<()> {
+        super::main()
+    }
 }
-// finish
-// https://ngrok.com/download/rust

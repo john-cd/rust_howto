@@ -134,4 +134,11 @@ mod tests {
 
         assert_eq!(response, http_response());
     }
+
+    /// Runs the example server, which listens on a fixed port until stopped.
+    #[test]
+    #[ignore = "serves on 127.0.0.1:8080 until the process is stopped"]
+    fn require_external_svc() -> anyhow::Result<()> {
+        main()
+    }
 }
