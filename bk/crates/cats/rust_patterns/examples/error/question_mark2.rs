@@ -58,4 +58,23 @@ mod tests {
     fn test_question_mark2_example_entry_point() {
         main();
     }
+
+    /// A valid port is returned.
+    #[test]
+    fn parses_a_valid_port() {
+        assert_eq!(parse_port("123").unwrap(), 123);
+    }
+
+    /// A non-numeric or out-of-range port is an error.
+    #[test]
+    fn rejects_invalid_ports() {
+        assert!(parse_port("abc").is_err());
+        assert!(parse_port("70000").is_err());
+    }
+
+    /// Port zero is rejected with a message.
+    #[test]
+    fn rejects_port_zero() {
+        assert_eq!(parse_port("0").unwrap_err().to_string(), "Invalid port: 0");
+    }
 }

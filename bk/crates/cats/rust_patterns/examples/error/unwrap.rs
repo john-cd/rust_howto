@@ -49,4 +49,22 @@ mod tests {
     fn test_unwrap_example_entry_point() {
         main();
     }
+
+    /// `unwrap` returns the value of an `Ok`.
+    #[test]
+    fn unwrap_returns_the_ok_value() {
+        let result: Result<u32, std::num::ParseIntError> = "42".parse();
+        assert_eq!(result.unwrap(), 42);
+    }
+
+    /// `unwrap` panics on an `Err`, and `expect` adds its message.
+    #[test]
+    fn unwrap_panics_on_error() {
+        let result = std::panic::catch_unwind(|| "x".parse::<u32>().unwrap());
+        assert!(result.is_err());
+        let result = std::panic::catch_unwind(|| {
+            Err::<i32, &str>("boom").expect("Failed to do something.")
+        });
+        assert!(result.is_err());
+    }
 }

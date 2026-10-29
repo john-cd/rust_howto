@@ -61,4 +61,31 @@ mod tests {
     fn test_rpds_example_entry_point() {
         main();
     }
+
+    /// Updating a persistent vector leaves the original unchanged.
+    #[test]
+    fn vector_is_persistent() {
+        let v1: Vector<i32> =
+            Vector::new().push_back(1).push_back(2).push_back(3);
+        let v2 = v1.set(1, 20).expect("index in range");
+        assert_eq!(v1.iter().copied().collect::<Vec<_>>(), [1, 2, 3]);
+        assert_eq!(v2.iter().copied().collect::<Vec<_>>(), [1, 20, 3]);
+        assert!(v1.set(3, 0).is_none());
+    }
+
+    /// Inserting and removing in a persistent map leaves earlier versions
+    /// unchanged.
+    #[test]
+    fn map_is_persistent() {
+        let m2 = HashTrieMap::<String, i32>::new()
+            .insert("one".to_owned(), 1)
+            .insert("two".to_owned(), 2);
+        let m3 = m2.insert("three".to_owned(), 3);
+        assert_eq!((m2.size(), m3.size()), (2, 3));
+        assert_eq!(m3.get("two"), Some(&2));
+        let m4 = m3.remove("one");
+        assert_eq!(m4.size(), 2);
+        assert_eq!(m3.get("one"), Some(&1));
+        assert_eq!(m4.get("one"), None);
+    }
 }

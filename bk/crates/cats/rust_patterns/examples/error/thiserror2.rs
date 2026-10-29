@@ -73,4 +73,12 @@ mod tests {
     fn test_thiserror2_example_entry_point() {
         main();
     }
+
+    /// The error displays its message and exposes the source.
+    #[test]
+    fn error_has_message_and_source() {
+        let err = example().unwrap_err();
+        assert_eq!(err.to_string(), "Error message");
+        assert_eq!(err.source().unwrap().to_string(), "oh no!");
+    }
 }

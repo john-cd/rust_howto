@@ -68,4 +68,39 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    /// The guard runs its closure when it goes out of scope, even on early
+    /// return.
+    #[test]
+    fn guard_runs_on_drop() {
+        let ran = std::cell::Cell::new(false);
+        {
+            let _guard = scopeguard::guard((), |()| ran.set(true));
+            assert!(!ran.get());
+        }
+        assert!(ran.get());
+    }
+
+    /// `defer!` runs after the rest of the scope.
+    #[test]
+    fn defer_runs_last() {
+        let order = std::cell::RefCell::new(Vec::new());
+        {
+            defer! { order.borrow_mut().push("deferred"); }
+            order.borrow_mut().push("body");
+        }
+        assert_eq!(*order.borrow(), ["body", "deferred"]);
+    }
+
+    /// The file is written, and an unwritable path is an error.
+    #[test]
+    fn process_file_writes_and_reports_errors() -> Result<(), Error> {
+        let path = std::env::temp_dir().join("rust_howto_scopeguard.txt");
+        let name = path.to_str().expect("UTF-8 path");
+        process_file(name)?;
+        assert_eq!(std::fs::read_to_string(&path)?, "test");
+        std::fs::remove_file(&path)?;
+        assert!(process_file("/this/dir/does/not/exist/file.txt").is_err());
+        Ok(())
+    }
 }

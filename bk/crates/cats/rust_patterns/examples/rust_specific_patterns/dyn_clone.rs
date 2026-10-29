@@ -54,4 +54,37 @@ mod tests {
     fn test_dyn_clone_example_entry_point() {
         main();
     }
+
+    /// A trait object that counts how many times it recited.
+    #[derive(Clone)]
+    struct Counter(std::rc::Rc<std::cell::Cell<u32>>);
+
+    impl MyTrait for Counter {
+        fn recite(&self) {
+            self.0.set(self.0.get() + 1);
+        }
+    }
+
+    /// A boxed trait object can be cloned, and the clone is usable after the
+    /// original is dropped.
+    #[test]
+    fn boxed_trait_objects_can_be_cloned() {
+        let count = std::rc::Rc::new(std::cell::Cell::new(0));
+        let original: Box<dyn MyTrait> = Box::new(Counter(count.clone()));
+        let cloned = dyn_clone::clone_box(&*original);
+        original.recite();
+        cloned.recite();
+        drop(original);
+        cloned.recite();
+        assert_eq!(count.get(), 3);
+    }
+
+    /// The `String` implementation can be cloned too.
+    #[test]
+    fn strings_can_be_recited_after_cloning() {
+        let original: Box<dyn MyTrait> = Box::new(String::from("line"));
+        let cloned = dyn_clone::clone_box(&*original);
+        original.recite();
+        cloned.recite();
+    }
 }

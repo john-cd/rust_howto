@@ -86,6 +86,8 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    // output-only: the example only prints what each shape does; see the other
+    // tests for its logic.
     use super::*;
 
     /// Runs the factory example through its entry point.

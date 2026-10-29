@@ -74,4 +74,35 @@ mod tests {
     fn test_either_example_entry_point() {
         main();
     }
+
+    /// Positive input is doubled on the right.
+    #[test]
+    fn positive_input_is_processed() {
+        assert_eq!(process_positive_integer(5), Either::Right(10));
+    }
+
+    /// Non-positive input is an error on the left.
+    #[test]
+    fn non_positive_input_is_an_error() {
+        assert_eq!(
+            process_positive_integer(-3),
+            Either::Left("Invalid input: -3".to_owned())
+        );
+        assert!(process_positive_integer(0).is_left());
+    }
+
+    /// `map_left` and `map_right` only affect their own side.
+    #[test]
+    fn mapping_affects_one_side() {
+        let right = process_positive_integer(5);
+        assert_eq!(
+            right.map_left(|s| s.to_uppercase()).map_right(|n| n + 10),
+            Either::Right(20)
+        );
+        let left = process_positive_integer(-1);
+        assert_eq!(
+            left.map_left(|s| s.to_uppercase()).map_right(|n| n + 10),
+            Either::Left("INVALID INPUT: -1".to_owned())
+        );
+    }
 }
