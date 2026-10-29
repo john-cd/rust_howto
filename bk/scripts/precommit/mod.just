@@ -1,4 +1,4 @@
-# Purpose: Install and run the repository pre-commit hooks.
+# Purpose: Install and run the repository git hooks with prek.
 # Usage: From bk/, run just precommit <recipe>.
 #
 # TODO Reviewed ??-??-2026.
@@ -14,38 +14,32 @@ _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- GIT -----------------------------------------
-## Commit, skipping pre-commit hooks
+## Commit, skipping git hooks
 #@commit m:
 #    git commit --no-verify -m "{{m}}"
-## Amend the last commit, skipping pre-commit hooks
+## Amend the last commit, skipping git hooks
 #@amend:
 #    git commit --amend --no-verify
-## ---- PRE-COMMIT -----------------------------------
-# [finish - install pre-commit or use cargo-husky](https://github.com/john-cd/rust_howto/issues/1245)?
-# Combining just + pre-commit
-# pre-commit: https://pre-commit.com/
-# based on https://github.com/casey/just/blob/master/examples/pre-commit.just
-# review
-# The repository's configured hooks run on staged files by default.
+## ---- PREK -----------------------------------------
+# Hooks are managed by prek (https://prek.j178.dev) and configured in the
+# root prek.toml, the single source of truth (see issue #1245).
+# The configured hooks run on staged files by default.
 
 # Run configured hooks on staged files.
 @fix:
-    cd {{ quote(root) }} && pre-commit run
+    cd {{ quote(root) }} && prek run
 
 # Run configured hooks on all tracked files.
 @fix_all:
-    cd {{ quote(root) }} && pre-commit run --all-files
+    cd {{ quote(root) }} && prek run --all-files
 
-# Install or update pre-commit with pip.
+# Install or update prek (https://prek.j178.dev/installation/).
 @install:
-    python3 -m pip install pre-commit || python -m pip install pre-commit
+    cargo binstall --no-confirm prek || cargo install --locked prek
 
-#npm i -g prettier
-# [move to Dockerfile](https://github.com/john-cd/rust_howto/issues/1247)
-
-# FIXME Setup/update pre-commit hooks (optional)
+# Install the git hooks (idempotent). Uninstall with `prek uninstall`.
 @setup:
-    pre-commit install --install-hooks # uninstall: `pre-commit uninstall`
+    cd {{ quote(root) }} && prek install --install-hooks
 
 ## ---- GIT TOWN -----------------------------------------
 # review Git Town configuration

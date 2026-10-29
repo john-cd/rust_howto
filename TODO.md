@@ -5,11 +5,11 @@
 - [ ] JOHN review tools/
 - [ ] JOHN review .github\actions
 - [ ] JOHN review / rewrite the .py scripts
-- [ ] JOHN Review .pre-commit-config.yaml vs prek.toml
+- [x] JOHN Review .pre-commit-config.yaml vs prek.toml (prek is now the single source; #1245)
 - [ ] JOHN review LICENSE
 - [ ] JOHN bookmarks.json
 - [ ] cargo husky?
-- [ ] prek or pre-commit?
+- [x] prek or pre-commit? prek (#1245)
 
 ## Tasks
 
