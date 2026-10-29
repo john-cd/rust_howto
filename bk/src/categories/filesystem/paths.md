@@ -49,6 +49,18 @@ On Windows, `std::fs::canonicalize` returns a "verbatim" path that starts with `
 {{#include ../../../crates/cats/filesystem/examples/paths/dunce.rs:example}}
 ```
 
+## Compute a Relative Path {#pathdiff}
+
+[![pathdiff][c~pathdiff~docs~badge]][c~pathdiff~docs]{{hi:pathdiff}} [![pathdiff~crates.io][c~pathdiff~crates.io~badge]][c~pathdiff~crates.io] [![pathdiff~repo][c~pathdiff~repo~badge]][c~pathdiff~repo] [![pathdiff~lib.rs][c~pathdiff~lib.rs~badge]][c~pathdiff~lib.rs] [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+
+The standard library can join paths, but it cannot express one path relative to another. [`pathdiff::diff_paths`][c~pathdiff~docs]↗{{hi:pathdiff}} returns the path that leads from a base directory to a target, for example to write a relative link from one generated file to another. The comparison is purely lexical: neither path has to exist, and symbolic links and `..` components in the inputs are not resolved. Canonicalize the paths first (see [above](#canonicalize)) if you need that.
+
+The result is `None` when `path` is relative and `base` is absolute, because the working directory would be needed. When `path` is absolute and `base` is relative, `path` is returned unchanged.
+
+```rust,editable
+{{#include ../../../crates/cats/filesystem/examples/paths/pathdiff.rs:example}}
+```
+
 ## References {#references .skip}
 
 - [Rust `Path` vs `PathBuf`][blog~rust-path-vs-pathbuf]↗.

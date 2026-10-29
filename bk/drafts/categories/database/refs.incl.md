@@ -25,6 +25,7 @@
 [ex~database~sea-orm]: query_builders_orms.md#sea-orm
 [ex~database~sibyl]: oracle.md#sibyl
 [ex~database~sqlx]: query_builders_orms.md#sqlx
+[ex~database~mysql_async]: mysql.md#mysql_async
 [ex~database~tiberius]: mssql.md#tiberius
 [ex~database~tinysearch]: search.md#tinysearch
 [ex~database~toasty]: query_builders_orms.md#toasty

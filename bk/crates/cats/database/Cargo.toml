@@ -44,6 +44,11 @@ path = "examples/mssql/main.rs"
 test = true
 
 [[example]]
+name = "mysql"
+path = "examples/mysql/main.rs"
+test = true
+
+[[example]]
 name = "nosql"
 path = "examples/nosql/main.rs"
 test = true
@@ -138,6 +143,7 @@ sqlx = { version = "0.9.0", features = [
     "macros",
 ], optional = true }
 tempfile = { version = "3.27.0", optional = true }
+mysql_async = { version = "0.37.1", default-features = false, features = ["default-rustls"], optional = true } # Asynchronous MySQL and MariaDB driver.
 tiberius = { version = "0.13.0", default-features = false, features = [
     "native-tls",
     "tds73",
@@ -158,6 +164,7 @@ lapin = ["dep:lapin"]
 lmdb = ["dep:heed", "dep:tempfile"]
 mongodb = ["dep:mongodb"]
 mssql = ["dep:tiberius"]
+mysql = ["dep:mysql_async"]
 oracle = ["dep:diesel", "dep:diesel-oci", "dep:oracle"]
 "sibyl" = ["dep:sibyl"]
 postgres = [

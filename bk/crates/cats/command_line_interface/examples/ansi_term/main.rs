@@ -9,6 +9,7 @@ mod ansi_term_basic;
 mod ansi_term_basic1;
 mod ansi_term_basic2;
 mod colored;
+mod comfy_table;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -33,6 +34,9 @@ enum Commands {
     /// Runs the `colored` example.
     #[command(name = "colored")]
     Colored,
+    /// Runs the `comfy_table` example.
+    #[command(name = "comfy_table")]
+    ComfyTable,
 }
 
 /// Runs the example selected on the command line.
@@ -51,6 +55,9 @@ fn dispatch(cli: Cli) {
             Commands::Colored => {
                 colored::run();
             }
+            Commands::ComfyTable => {
+                comfy_table::run();
+            }
         }
     }
 }
@@ -67,7 +74,7 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["ansi_term_basic", "ansi_term_basic1", "ansi_term_basic2", "colored"];
+    const SUBCOMMANDS: &[&str] = &["ansi_term_basic", "ansi_term_basic1", "ansi_term_basic2", "colored", "comfy_table"];
 
     /// The command-line definition is internally consistent.
     #[test]

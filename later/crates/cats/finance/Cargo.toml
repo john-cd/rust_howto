@@ -23,6 +23,11 @@ path = "examples/market_data/main.rs"
 test = true
 
 [[example]]
+name = "money"
+path = "examples/money/main.rs"
+test = true
+
+[[example]]
 name = "quant"
 path = "examples/quant/main.rs"
 test = true
@@ -35,6 +40,7 @@ financial.workspace = true
 governor = "0.10.4"
 rand.workspace = true
 rand_distr.workspace = true
+rusty-money = "0.5.1" # Money with currency, ISO 4217 data and formatting.
 serde_json = "1.0.154"
 ta-statistics = "0.2.6"
 tokio = { version = "1.54.1", features = ["rt", "macros"] }

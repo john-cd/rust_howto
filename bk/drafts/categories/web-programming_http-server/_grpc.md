@@ -64,7 +64,7 @@ The test sends a hand-framed gRPC-Web request (a five-byte length prefix followe
 
 [![tonic-prost-build][c~tonic-prost-build~docs~badge]][c~tonic-prost-build~docs]{{hi:tonic-prost-build}} [![protox][c~protox~docs~badge]][c~protox~docs]{{hi:protox}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
-[`tonic-prost-build`][c~tonic-prost-build~docs]↗{{hi:tonic-prost-build}} normally runs the `protoc` compiler from a build script, which fails on machines that do not have it. There are three ways to avoid a system install:
+[`tonic-prost-build`][c~tonic-prost-build~docs]↗{{hi:tonic-prost-build}} normally runs the `protoc` compiler from a build script, which fails on machines that do not have it. It is the Prost front end to [`tonic-build`][c~tonic-build~docs]↗{{hi:tonic-build}}, the code generator that turns a service definition into Rust client and server traits; since Tonic 0.14 you add `tonic-prost-build` (not `tonic-build`) to `[build-dependencies]` for Protocol Buffers, and use `tonic-build` directly only to write a codec for another encoding. There are three ways to avoid a system install:
 
 - **A pure-Rust compiler.** [`protox`][c~protox~docs]↗{{hi:protox}} parses `.proto` files in Rust. This book's build script uses it for both gRPC schemas: `protox::compile([proto], ["proto"])` returns a file descriptor set, and `tonic_prost_build` generates the Rust code from it.
 - **A prebuilt `protoc`.** [`protoc-bin-vendored`][c~protoc-bin-vendored~docs]↗{{hi:protoc-bin-vendored}} ships `protoc` binaries for common platforms. Point `PROTOC` at `protoc_bin_vendored::protoc_bin_path()` before compiling. It is fast to build, but it downloads binaries with the crate.

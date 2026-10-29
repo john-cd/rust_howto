@@ -78,7 +78,7 @@ For a framework-based front end, use the tool supported by that framework. For e
 
 ## Test Wasm and JavaScript integration
 
-Keep logic that does not call host APIs testable on the host with `cargo test`. Use [`wasm-bindgen-test`][wasm-bindgen-test~guide]↗ for behavior that needs JavaScript imports, browser globals, or DOM APIs. Mark those tests with `#[wasm_bindgen_test]` and choose the JavaScript runtime or browser that matches the feature under test:
+Keep logic that does not call host APIs testable on the host with `cargo test`. Use [`wasm-bindgen-test`][c~wasm-bindgen-test~docs]↗{{hi:wasm-bindgen-test}} ([guide][wasm-bindgen-test~guide]↗) for behavior that needs JavaScript imports, browser globals, or DOM APIs. Mark those tests with `#[wasm_bindgen_test]` and choose the JavaScript runtime or browser that matches the feature under test:
 
 ```bash
 wasm-pack test --node

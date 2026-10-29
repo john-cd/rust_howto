@@ -18,6 +18,10 @@ Enable ICU4X's `compiled_data` feature to use the locale data bundled with the c
 
 ## Dates, Sorting, and Text Boundaries
 
+[![icu_datetime][c~icu_datetime~docs~badge]][c~icu_datetime~docs]{{hi:icu_datetime}} [![icu_datetime~crates.io][c~icu_datetime~crates.io~badge]][c~icu_datetime~crates.io] [![icu_datetime~repo][c~icu_datetime~repo~badge]][c~icu_datetime~repo] [![icu_datetime~lib.rs][c~icu_datetime~lib.rs~badge]][c~icu_datetime~lib.rs]
+
+The `icu` crate re-exports the ICU4X component crates; [`icu_datetime`][c~icu_datetime~docs]↗ is the one behind the date formatting in the example above. Depend on it directly when you only need date and time formatting and want to avoid compiling the other components.
+
 Use `icu::datetime` to format dates and times with locale-aware field order, calendar, and presentation. Keep the underlying date/time value independent of its formatted display.
 
 Use `icu::collator` for locale-sensitive sorting, `icu::plurals` to select grammatical plural categories, and `icu::segmenter` to find word, line, sentence, or grapheme boundaries. These operations depend on locale data and should not be approximated with byte or character comparisons.

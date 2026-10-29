@@ -9,6 +9,7 @@ mod camino;
 mod canonicalize;
 mod dunce;
 mod manipulate_paths;
+mod pathdiff;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -33,6 +34,9 @@ enum Commands {
     /// Runs the `manipulate_paths` example.
     #[command(name = "manipulate_paths")]
     ManipulatePaths,
+    /// Runs the `pathdiff` example.
+    #[command(name = "pathdiff")]
+    Pathdiff,
 }
 
 /// Runs the example selected on the command line.
@@ -50,6 +54,9 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
             }
             Commands::ManipulatePaths => {
                 manipulate_paths::run();
+            }
+            Commands::Pathdiff => {
+                pathdiff::run();
             }
         }
     }
@@ -69,7 +76,7 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["camino", "canonicalize", "dunce", "manipulate_paths"];
+    const SUBCOMMANDS: &[&str] = &["camino", "canonicalize", "dunce", "manipulate_paths", "pathdiff"];
 
     /// The command-line definition is internally consistent.
     #[test]

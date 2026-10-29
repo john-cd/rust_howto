@@ -126,6 +126,16 @@ Termion is a pure Rust library that provides a [cross-platform][p~cross-platform
 {{#include ../../../crates/cats/command_line_interface/examples/ansi_term/colored.rs:example}}
 ```
 
+## Print Tables with `comfy-table` {#comfy-table}
+
+[![comfy-table][c~comfy-table~docs~badge]][c~comfy-table~docs]{{hi:comfy-table}} [![comfy-table~crates.io][c~comfy-table~crates.io~badge]][c~comfy-table~crates.io] [![comfy-table~repo][c~comfy-table~repo~badge]][c~comfy-table~repo] [![comfy-table~lib.rs][c~comfy-table~lib.rs~badge]][c~comfy-table~lib.rs] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+
+[`comfy-table`][c~comfy-table~docs]↗{{hi:comfy-table}} renders rows and columns as aligned text. With `ContentArrangement::Dynamic`, long cells wrap to fit the table width, which defaults to the width of the attached terminal; the example sets an explicit width so its output is the same everywhere. A style preset, loaded with `load_style`, selects the border characters: the plain-ASCII `ASCII_FULL` below, or `UTF8_FULL` for box-drawing characters. Table output is for people: for scripts, print JSON or one record per line instead. `prettytable-rs` has not been updated since 2022, and `term-table` is smaller and simpler, so this book shows `comfy-table`; `tabled` is a popular alternative that builds tables from your structs.
+
+```rust,editable
+{{#include ../../../crates/cats/command_line_interface/examples/ansi_term/comfy_table.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[user_interaction | User Interaction]].

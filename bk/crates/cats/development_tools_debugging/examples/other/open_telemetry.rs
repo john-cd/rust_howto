@@ -13,6 +13,8 @@ use opentelemetry::trace::Span as _;
 use opentelemetry::trace::Tracer as _;
 #[cfg(feature = "opentelemetry")]
 use opentelemetry_sdk::trace::SdkTracerProvider;
+#[cfg(feature = "opentelemetry")]
+use opentelemetry_semantic_conventions::attribute::HTTP_ROUTE;
 
 /// Creates a span and logs an event.
 #[cfg(feature = "opentelemetry")]
@@ -31,7 +33,9 @@ fn main() -> anyhow::Result<()> {
 
     let tracer = global::tracer("rust_howto");
     let mut span = tracer.start("example-request");
-    span.set_attribute(KeyValue::new("http.route", "/health"));
+    // `HTTP_ROUTE` is the constant `"http.route"`: using the shared name keeps
+    // attributes consistent across services and backends.
+    span.set_attribute(KeyValue::new(HTTP_ROUTE, "/health"));
     span.add_event("request handled", Vec::new());
     tracing::info!(path = "/health", "handling request");
     span.end();

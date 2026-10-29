@@ -16,6 +16,16 @@ See [[additional_numeric_types | Additional Numeric Types]].
 
 For `.xlsx` import and export, see [[excel | Excel Spreadsheets]] for [`calamine`][c~calamine~docs]↗ and [`rust_xlsxwriter`][c~rust_xlsxwriter~docs]↗.
 
+### Money with a Currency Attached {#rusty-money}
+
+[![rusty-money][c~rusty-money~docs~badge]][c~rusty-money~docs]{{hi:rusty-money}} [![rusty-money~crates.io][c~rusty-money~crates.io~badge]][c~rusty-money~crates.io] [![rusty-money~repo][c~rusty-money~repo~badge]][c~rusty-money~repo] [![rusty-money~lib.rs][c~rusty-money~lib.rs~badge]][c~rusty-money~lib.rs]{{hi:Money}}{{hi:Currency}}
+
+[`rusty-money`][c~rusty-money~docs]↗ builds on `rust_decimal`: a `Money` value holds a decimal amount and a reference to its currency, so the two cannot drift apart. It includes the ISO 4217 currency table and formats amounts by the currency's conventions. `Money::add` and the other checked operations return an error when the currencies differ or the result overflows, instead of silently producing a number. Display rounds to the currency's minor unit (half-even) without changing the stored amount; round explicitly where your accounting rules require it.
+
+```rust,editable
+{{#include ../../../crates/cats/finance/examples/money/rusty_money.rs:example}}
+```
+
 ## Related Topics
 
 - [[date-and-time | Date and Time]].

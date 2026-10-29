@@ -5,6 +5,7 @@
 mod geo;
 mod geocode;
 mod geojson_polygon;
+mod geos;
 mod haversine;
 mod spatial_index;
 mod us_states;
@@ -16,6 +17,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     us_states::run();
     geocode::run()?;
     geojson_polygon::run()?;
+    geos::run()?;
     spatial_index::run();
     Ok(())
 }

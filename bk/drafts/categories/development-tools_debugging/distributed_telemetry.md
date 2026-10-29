@@ -7,10 +7,13 @@
 ## Export Traces with OpenTelemetry and OTLP {#open-telemetry}
 
 [![opentelemetry][c~opentelemetry~docs~badge]][c~opentelemetry~docs] [![opentelemetry~crates.io][c~opentelemetry~crates.io~badge]][c~opentelemetry~crates.io] [![opentelemetry~repo][c~opentelemetry~repo~badge]][c~opentelemetry~repo] [![opentelemetry~lib.rs][c~opentelemetry~lib.rs~badge]][c~opentelemetry~lib.rs]{{hi:opentelemetry}}{{hi:Logging}}{{hi:Metrics}}{{hi:opentelemetry}}{{hi:Tracing}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}} [![cat~development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling]{{hi:Profiling}}
+[![opentelemetry-semantic-conventions][c~opentelemetry-semantic-conventions~docs~badge]][c~opentelemetry-semantic-conventions~docs]{{hi:opentelemetry-semantic-conventions}} [![opentelemetry-semantic-conventions~crates.io][c~opentelemetry-semantic-conventions~crates.io~badge]][c~opentelemetry-semantic-conventions~crates.io]
 
 [OpenTelemetry][opentelemetry~website]↗ is a vendor-neutral API, SDK, and tooling ecosystem for generating and exporting telemetry. For distributed traces, instrument application code with `tracing` and connect it to the OpenTelemetry SDK through [`tracing-opentelemetry`][tracing-opentelemetry~docs]. The [`opentelemetry-otlp`][opentelemetry-otlp~docs] exporter sends spans in OTLP over gRPC or HTTP to a collector or backend. Set a stable `service.name` resource attribute, batch exports, and shut down the provider cleanly so buffered spans can be flushed. See the [official Rust OTLP example][opentelemetry-otlp-example] for a complete exporter setup.
 
 The example below installs an SDK tracer provider with a stdout exporter, records a span, and shuts the provider down so the span is flushed. For an OTLP exporter to a collector or backend, follow the [official Rust OTLP example][opentelemetry-otlp-example].
+
+The span attribute key comes from [`opentelemetry-semantic-conventions`][c~opentelemetry-semantic-conventions~docs]↗{{hi:opentelemetry-semantic-conventions}}, which provides constants such as `HTTP_ROUTE` for the standard attribute names. Using them, rather than retyping strings like `"http.route"`, keeps your telemetry consistent with other services and lets backends recognize the attributes. Only the stable conventions are available by default; the crate's `semconv_experimental` feature adds the rest.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/open_telemetry.rs:example}}

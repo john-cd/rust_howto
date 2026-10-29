@@ -9821,6 +9821,7 @@ dependencies = [
  "governor",
  "rand 0.10.3",
  "rand_distr 0.6.0",
+ "rusty-money",
  "serde_json",
  "ta-statistics",
  "tokio",
@@ -11315,6 +11316,27 @@ dependencies = [
  "serde_json",
  "thiserror 2.0.21",
  "tinyvec",
+]
+
+[[package]]
+name = "geos"
+version = "11.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7b131d80ad838c8e5b9e0d31482f893961267fbd29903ea1b6a1565d814b07e5"
+dependencies = [
+ "geos-sys",
+ "libc",
+]
+
+[[package]]
+name = "geos-sys"
+version = "2.0.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1bd0fc1bcdc69e16138f10ea038a3ef9f83931eb0d75a903543ca683e8b75d56"
+dependencies = [
+ "libc",
+ "pkg-config",
+ "semver 1.0.28",
 ]
 
 [[package]]
@@ -22221,6 +22243,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a157657054ffe556d8858504af8a672a054a6e0bd9e8ee531059100c0fa11bb2"
 
 [[package]]
+name = "rust_decimal"
+version = "1.43.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7653272e75dcac41dc199fbea6f5797633994fafd339943c06c9af16bf29cd3a"
+dependencies = [
+ "arrayvec",
+ "num-traits",
+]
+
+[[package]]
 name = "rustc-demangle"
 version = "0.1.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -22417,6 +22449,16 @@ name = "rustversion"
 version = "1.0.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf54715a573b99ac80df0bc206da022bcd442c974952c7b9720069370852e21f"
+
+[[package]]
+name = "rusty-money"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e9826983e8a9a2f301a3810bb98618948ae7e7f2ba073eaaa16ab19104b33f2c"
+dependencies = [
+ "arrayvec",
+ "rust_decimal",
+]
 
 [[package]]
 name = "rustybuzz"
@@ -22648,6 +22690,7 @@ dependencies = [
  "geo",
  "geocoding",
  "geojson",
+ "geos",
  "haversine",
  "rstar 0.13.0",
  "us-state-info",

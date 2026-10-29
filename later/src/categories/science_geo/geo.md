@@ -24,6 +24,16 @@
 
 The area here is planar and expressed in square coordinate units. GeoJSON coordinates normally use longitude and latitude, so a planar calculation over them does not produce square meters. Choose a suitable projection or geodesic algorithm for a real geographic measurement.
 
+## Use the GEOS Library for Robust Overlay Operations {#geos}
+
+[![geos][c~geos~docs~badge]][c~geos~docs]{{hi:geos}} [![geos~crates.io][c~geos~crates.io~badge]][c~geos~crates.io] [![geos~repo][c~geos~repo~badge]][c~geos~repo] [![geos~lib.rs][c~geos~lib.rs~badge]][c~geos~lib.rs]{{hi:GIS}}
+
+[`geos`][c~geos~docs]↗{{hi:geos}} wraps the GEOS C++ library, the geometry engine behind PostGIS and Shapely. Reach for it when you need GEOS's predicates, buffering, or overlay operations on a dataset that must match those tools exactly; pure-Rust [`geo`][c~geo~docs]↗ avoids the native dependency. GEOS must be installed on the build machine (for example `libgeos-dev` on Debian and Ubuntu), so this book's example is behind a `geos` Cargo feature: run it with `cargo test -p science_geo --features geos --example geo`. As elsewhere on this page, results are planar, in the units of the input coordinates.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/science_geo/examples/geo/geos.rs:example}}
+```
+
 ## Index Nearby Geometry {#spatial-index}
 
 [`rstar`][c~rstar~docs] indexes spatial objects in an R-tree. Bulk-load a fixed dataset when all objects are available at once, then query a nearby point:
