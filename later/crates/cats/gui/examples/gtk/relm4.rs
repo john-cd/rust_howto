@@ -61,18 +61,18 @@ impl SimpleComponent for CounterModel {
     }
 
     fn init(
-        value: Self::Init,
-        _root: Self::Root,
-        _sender: ComponentSender<Self>,
+        init: Self::Init,
+        root: Self::Root,
+        sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
-        let model = CounterModel { value };
+        let model = Self { value: init };
         let widgets = view_output!();
 
         ComponentParts { model, widgets }
     }
 
-    fn update(&mut self, msg: Self::Input, _sender: ComponentSender<Self>) {
-        match msg {
+    fn update(&mut self, message: Self::Input, _sender: ComponentSender<Self>) {
+        match message {
             CounterInput::Increment => self.value += 1,
             CounterInput::Decrement => self.value -= 1,
         }

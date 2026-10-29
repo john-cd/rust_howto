@@ -60,7 +60,6 @@ fn build_ui(app: &Application) {
     });
 
     button_dec.connect_clicked({
-        let counter_value = counter_value.clone();
         let label = label.clone();
         let conditional_label = conditional_label.clone();
         move |_| {
@@ -99,10 +98,50 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the gtk4 example through its entry point.
+    /// Activates the application on a display and clicks both buttons.
+    ///
+    /// Run with a display, for example `xvfb-run -a cargo test --features gtk
+    /// --example gtk -- --ignored --test-threads=1`: GTK must be used from the
+    /// main thread.
     #[test]
-    #[ignore = "requires an interactive GTK session"]
-    fn test_gtk4_example_entry_point() {
-        main();
+    #[ignore = "requires a GTK display, e.g. xvfb-run"]
+    fn buttons_update_the_label() {
+        let app = Application::builder()
+            .application_id("org.example.gtk4_counter_test")
+            .build();
+        app.connect_activate(build_ui);
+        app.register(None::<&gtk::gio::Cancellable>)
+            .expect("application registers");
+        app.activate();
+
+        let window = app.windows().pop().expect("window was created");
+        let vbox = window
+            .child()
+            .and_downcast::<gtk::Box>()
+            .expect("window child is a box");
+        let label = vbox
+            .first_child()
+            .and_downcast::<Label>()
+            .expect("first child is the counter label");
+        let increment = label
+            .next_sibling()
+            .and_downcast::<Button>()
+            .expect("second child is the increment button");
+        let decrement = increment
+            .next_sibling()
+            .and_downcast::<Button>()
+            .expect("third child is the decrement button");
+        let parity = decrement
+            .next_sibling()
+            .and_downcast::<Label>()
+            .expect("fourth child is the parity label");
+
+        increment.emit_clicked();
+        assert_eq!(label.text(), "Counter: 1");
+        assert_eq!(parity.text(), "Counter is odd!");
+        decrement.emit_clicked();
+        decrement.emit_clicked();
+        assert_eq!(label.text(), "Counter: -1");
+        assert_eq!(parity.text(), "Counter is odd!");
     }
 }
