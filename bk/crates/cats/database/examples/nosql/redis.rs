@@ -99,6 +99,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "needs a running Redis server"]
     fn test_main_entry_point() {
         if let Err(err) = main() {
             panic!("main failed: {err:?}");

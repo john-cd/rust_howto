@@ -1,5 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
+#![allow(
+    dead_code,
+    reason = "the snippet declares items to illustrate them, not to call them"
+)]
+
 // ANCHOR: example
 //! Connecting to Cassandra with the `cdrs-tokio` async client.
 
@@ -219,6 +224,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "needs a running Cassandra server"]
     fn test_main_entry_point() {
         if let Err(err) = main() {
             panic!("main failed: {err:?}");

@@ -4020,9 +4020,25 @@ dependencies = [
 
 [[package]]
 name = "cornucopia_async"
-version = "0.6.1"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3b3da2d4e8db30d71fa2860242f9d7c097843ba426d29b73a4aec515aa5c4d9e"
+checksum = "38063b8553edf452cccc674f07b3b5e3144a24712e46647bfc357040f25fdc12"
+dependencies = [
+ "async-trait",
+ "cornucopia_client_core",
+ "tokio-postgres",
+]
+
+[[package]]
+name = "cornucopia_client_core"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "95a087271917ca54f32499539f3f44c8dc112ffea0f39f47d6cde075df8d2f18"
+dependencies = [
+ "fallible-iterator 0.2.0",
+ "postgres-protocol",
+ "postgres-types",
+]
 
 [[package]]
 name = "cpubits"
@@ -8548,9 +8564,6 @@ name = "hashbrown"
 version = "0.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8a9ee70c43aaf417c914396645a0fa852624801b24ebb7ae78fe8272889ac888"
-dependencies = [
- "ahash 0.7.8",
-]
 
 [[package]]
 name = "hashbrown"
@@ -13911,7 +13924,7 @@ dependencies = [
  "serde",
  "serde_yaml",
  "sfv",
- "socket2 0.4.10",
+ "socket2 0.6.5",
  "strum 0.26.3",
  "strum_macros 0.26.4",
  "tokio",
@@ -13919,7 +13932,7 @@ dependencies = [
  "tokio-test",
  "unicase",
  "windows-sys 0.59.0",
- "zstd 0.13.3",
+ "zstd 0.14.3",
 ]
 
 [[package]]
@@ -13995,13 +14008,13 @@ name = "pingora-lru"
 version = "0.9.0"
 source = "git+https://github.com/cloudflare/pingora?rev=5b30d71d63d13c2f65eebfa9101e4e118c3194b8#5b30d71d63d13c2f65eebfa9101e4e118c3194b8"
 dependencies = [
- "ahash 0.7.8",
+ "ahash 0.8.12",
  "arrayvec",
  "async-channel 2.5.0",
  "flurry",
- "hashbrown 0.12.3",
+ "hashbrown 0.17.1",
  "log",
- "parking_lot 0.11.2",
+ "parking_lot 0.13.0",
  "rand 0.8.8",
  "tokio",
 ]
