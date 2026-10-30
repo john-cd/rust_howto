@@ -35,6 +35,18 @@ This headless example uses MinimalPlugins and no renderer. A full game typically
 
 Fyrox is a 2D and 3D engine built around scenes, plugins, and scripts rather than an ECS. Its project manager generates a project structure with an editor and platform-specific executors; see the [Fyrox project workflow][fyrox~project~book]↗.
 
+To start a project, install and run the template generator; it creates the game crate, an editor binary and an executor, plus the glue that registers your plugin:
+
+```bash
+cargo install fyrox-template
+fyrox-template init --name my_game --style 3d
+cd my_game
+cargo run --package editor    # open the scene editor
+cargo run --package executor  # run the game without the editor
+```
+
+The snippet below shows only the plugin, the part you write. The engine calls `update` at a fixed rate with a `PluginContext` that gives access to scenes, the resource manager and the window. Keep game rules in plain methods so they can be unit-tested without a window or a GPU. Fyrox is a heavy dependency, so the book crate builds this example only with the `fyrox` Cargo feature, and on Linux it needs the ALSA, udev and windowing development packages (for example `libasound2-dev libudev-dev libx11-dev libxcursor-dev libxi-dev libxrandr-dev libgl1-mesa-dev libwayland-dev libxkbcommon-dev`).
+
 ```rust,editable
 {{#include ../../../crates/cats/game_engines/examples/game_engines/fyrox.rs:example}}
 ```

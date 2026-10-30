@@ -1,60 +1,56 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Placeholder for a `fyrox` game engine example.
+//! A minimal `fyrox` plugin: game logic that the engine calls every frame.
+//!
+//! Projects are normally generated with `fyrox-template`, which creates a
+//! game crate that wires a plugin like this one to the editor and to a
+//! standalone executor. The plugin below contains only the game logic.
 
-// fyrox example (commented out due to complex system dependencies like ALSA in
-// the workspace)
-// use fyrox::{
-// core::pool::Handle,
-// engine::{Engine, EngineInitParams},
-// event::{Event, WindowEvent},
-// event_loop::{ControlFlow, EventLoop},
-// gui::{
-// message::UiMessage,
-// text::TextBuilder,
-// widget::WidgetBuilder,
-// window::{WindowBuilder, WindowTitle},
-// },
-// };
-//
-// fn main() {
-// let event_loop = EventLoop::new().unwrap();
-// let mut engine = Engine::new(EngineInitParams::default()).unwrap();
-//
-// let _window: Handle<fyrox::gui::node::UiNode> =
-// WindowBuilder::new(WidgetBuilder::new()) .with_title(WindowTitle::text("
-// Hello, Fyrox!")) .with_content(
-// TextBuilder::new(WidgetBuilder::new())
-// .with_text("Welcome to Fyrox!")
-// .build(&mut engine.user_interface.build_ctx()),
-// )
-// .build(&mut engine.user_interface.build_ctx());
-//
-// event_loop.run(move |event, window_target| {
-// window_target.set_control_flow(ControlFlow::Poll);
-//
-// match event {
-// Event::WindowEvent {
-// event: WindowEvent::CloseRequested,
-// ..
-// } => window_target.exit(),
-// _ => (),
-// }
-//
-// if let Event::AboutToWait = event {
-// engine.update(1.0 / 60.0, window_target);
-// }
-// }).unwrap();
-// }
-/// Prints a message: the example is disabled.
+use fyrox::core::reflect::prelude::*;
+use fyrox::core::visitor::prelude::*;
+use fyrox::plugin::Plugin;
+use fyrox::plugin::PluginContext;
+use fyrox::plugin::error::GameResult;
+
+/// The game state. `Visit` saves and loads it; `Reflect` exposes its fields to
+/// the editor.
+#[derive(Default, Visit, Reflect, Debug)]
+#[reflect(non_cloneable)]
+pub struct Game {
+    /// Number of updates so far.
+    ticks: u32,
+}
+
+impl Game {
+    /// Advances the game by one fixed time step.
+    fn tick(&mut self) {
+        self.ticks = self.ticks.saturating_add(1);
+    }
+
+    /// Returns the number of updates so far.
+    fn ticks(&self) -> u32 {
+        self.ticks
+    }
+}
+
+impl Plugin for Game {
+    /// The engine calls `update` at a fixed rate (`context.dt` seconds).
+    fn update(&mut self, _context: &mut PluginContext<'_, '_>) -> GameResult {
+        self.tick();
+        Ok(())
+    }
+}
+
+/// Creates the plugin the way a game executor would.
 fn main() {
-    println!(
-        "Fyrox example code updated to 1.0 API, but disabled due to workspace build issues."
-    );
+    let mut game = Game::default();
+    game.tick();
+    println!("The plugin ran {} update(s).", game.ticks());
 }
 // ANCHOR_END: example
 
+/// Runs the Fyrox game engine example.
 pub fn run() {
     main();
 }
@@ -63,10 +59,26 @@ pub fn run() {
 mod tests {
     use super::*;
 
+<<<<<<< HEAD
     // output-only: the example is disabled and only prints a notice.
     /// Runs the Fyrox game engine example.
     #[test]
     fn test_fyrox_game_engine_example() {
         main();
+=======
+    /// The game logic is plain Rust: no window or GPU is needed to test it.
+    #[test]
+    fn tick_counts_updates() {
+        let mut game = Game::default();
+        game.tick();
+        game.tick();
+        assert_eq!(game.ticks(), 2);
+    }
+
+    /// Runs the Fyrox game engine example.
+    #[test]
+    fn test_fyrox_game_engine_example() {
+        run();
+>>>>>>> e722215 (feat(game_engines): finish the Fyrox plugin example and template workflow)
     }
 }
