@@ -31,15 +31,15 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    #[test]
     /// Runs the generated-input loop with Bolero's default test iterations.
+    #[test]
     fn test_bolero() {
         // When running as a test, it uses a default number of iterations.
         main();
     }
 
-    #[test]
     /// Detects the marker while safely rejecting short or unrelated inputs.
+    #[test]
     fn process_data_recognizes_only_the_marker_prefix() {
         assert!(!process_data(b""));
         assert!(!process_data(b"bol"));
