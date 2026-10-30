@@ -115,7 +115,7 @@ The `midir` callback also runs on a thread of the library: apply the real-time r
 
 ## Binaural Audio with `hrtf` {#hrtf}
 
-[`hrtf`][c~hrtf~docs]↗{{hi:hrtf}} renders a mono source as binaural stereo from a head-related impulse response (HRIR) sphere file, which gives the impression of a position in 3D space over headphones. The crate does not ship HRIR data: download a sphere in the format that `HrirSphere` loads. The example below builds a tiny sphere in memory in that file format (four directions, one impulse per ear), so it runs without a download and shows the data layout.
+[`hrtf`][c~hrtf~docs]↗{{hi:hrtf}} renders a mono source as binaural stereo from a head-related impulse response (HRIR) sphere file, which gives the impression of a position in 3D space over headphones. The crate does not ship HRIR data: download a sphere in the format that `HrirSphere` loads or bundle a fixture file. The example below loads a small HRIR sphere fixture shipped as a binary file via `include_bytes!` (four directions, one impulse per ear) to spatialise a mono buffer.
 
 ```rust,editable
 {{#include ../../../crates/cats/multimedia_audio/examples/audio/hrtf.rs:example}}
