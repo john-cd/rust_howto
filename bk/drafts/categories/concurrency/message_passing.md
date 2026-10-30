@@ -85,7 +85,15 @@ Use an ordinary channel for commands and telemetry, and a ring buffer only for t
 {{#include ../../../crates/cats/concurrency/examples/spsc/ringbuf.rs:example}}
 ```
 
-A real-time thread often also needs a higher scheduling priority. [`thread-priority`][c~thread-priority~docs]↗{{hi:thread-priority}} sets it (`ThreadPriority::Max.set_for_current()`); the call is platform-dependent and may require privileges.
+### `thread-priority` {#thread-priority}
+
+[![thread-priority][c~thread-priority~docs~badge]][c~thread-priority~docs] [![thread-priority~crates.io][c~thread-priority~crates.io~badge]][c~thread-priority~crates.io] [![thread-priority~repo][c~thread-priority~repo~badge]][c~thread-priority~repo] [![thread-priority~lib.rs][c~thread-priority~lib.rs~badge]][c~thread-priority~lib.rs]{{hi:thread-priority}}{{hi:Scheduling}}{{hi:Real-time}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+
+A real-time thread often also needs a higher scheduling priority. [`thread-priority`][c~thread-priority~docs]↗{{hi:thread-priority}} sets it, either on the current thread (`ThreadPriority::Max.set_for_current()`) or when spawning with `ThreadBuilder`. The call is platform-dependent and may require privileges, so the example reports whether the request was granted and carries on at the normal priority otherwise.
+
+```rust,editable
+{{#include ../../../crates/cats/concurrency/examples/spsc/thread_priority.rs:example}}
+```
 
 ## Choosing a Channel {#choosing-a-channel}
 

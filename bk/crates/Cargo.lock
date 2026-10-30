@@ -3790,6 +3790,7 @@ dependencies = [
  "stakker",
  "static_assertions",
  "tempfile",
+ "thread-priority",
  "threadpool",
  "time",
  "tokio",
@@ -21048,6 +21049,20 @@ checksum = "2010d27add3f3240c1fef7959f46c814487b216baee662af53be645ba7831c07"
 dependencies = [
  "libc",
  "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "thread-priority"
+version = "3.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8d2e834949be5111506bb252643498af1514f600d9e1dceedaa42afae155b67f"
+dependencies = [
+ "bitflags 2.13.2",
+ "cfg-if",
+ "libc",
+ "log",
+ "rustversion",
+ "windows 0.62.2",
 ]
 
 [[package]]
