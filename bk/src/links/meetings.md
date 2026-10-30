@@ -48,7 +48,7 @@ See also [Rust Community Talks][talks~repo]↗.
 
 ## Related Topics {#related-topics .skip}
 
-- [[videos | Videos and Podcasts]].
+- [[videos_and_podcasts | Videos and Podcasts]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

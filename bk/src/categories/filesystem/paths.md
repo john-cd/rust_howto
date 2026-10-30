@@ -69,7 +69,7 @@ The result is `None` when `path` is relative and `base` is absolute, because the
 
 - [[directories | Directories]].
 - [[directory_traversal | Directory Traversal]].
-- [[read_write | Reading and Writing Files]].
+- [[reading_and_writing_files | Reading and Writing Files]].
 - [[symbolic_links | Symbolic Links]].
 
 {{#include refs.incl.md}}

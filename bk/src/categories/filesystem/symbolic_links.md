@@ -16,7 +16,7 @@ Symbolic links are handled primarily through the standard library's `std::fs` mo
 
 ## Related Topics {#related-topics .skip}
 
-- [[read_write | Reading and Writing Files]].
+- [[reading_and_writing_files | Reading and Writing Files]].
 - [[paths | Paths]].
 
 {{#include refs.incl.md}}

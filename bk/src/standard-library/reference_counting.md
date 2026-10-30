@@ -38,12 +38,12 @@ See [[interior_mutability | Interior Mutability]] for more details.
 
 ## Related Topics {#related-topics .skip}
 
-- [[box | Box]].
-- [[cow | Clone on Write]].
+- [[heap_storage | Box]].
+- [[clone-on-write | Clone on Write]].
 - [[data-structures | Data Structures]].
 - [[interior_mutability | Interior Mutability]].
 - [[lifetimes | Lifetimes]].
-- [[ownership_borrowing | Ownership and Borrowing]].
+- [[ownership_and_borrowing | Ownership and Borrowing]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

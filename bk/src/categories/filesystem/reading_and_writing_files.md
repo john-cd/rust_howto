@@ -72,8 +72,8 @@ Atomic visibility and durability after power loss are different guarantees. The 
 
 - [[file_watching | File Watching]].
 - [[paths | Paths]].
-- [[stdin_stdout | Standard Input and Output]].
-- [[tempfile | Temporary Files]].
+- [[working_with_the_standard_input_and_output | Standard Input and Output]].
+- [[temporary_files_and_directories | Temporary Files]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

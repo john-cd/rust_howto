@@ -43,3 +43,4 @@
 [p~use_declarations]: use_declarations.md
 [p~variables]: ../language/variables.md
 [p~visibility]: visibility.md
+[ex~code-organization~monorepos-and-git-submodules]: code_organization_by_project_type.md#monorepos-and-git-submodules

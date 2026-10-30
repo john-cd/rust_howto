@@ -28,7 +28,7 @@ The path may include one or more modules as needed e.g., `<crate_name>::<module_
 
 You may start the path with `::` followed by the name of the crate if a crate name is the same as a module in your crate.
 
-Once adding an external crate as a dependency, you will very often bring items from external crates into scope with the `use` keyword. See the [[use_keyword | `use` Keyword]] chapter for details.
+Once adding an external crate as a dependency, you will very often bring items from external crates into scope with the `use` keyword. See the [[use_declarations | `use` Keyword]] chapter for details.
 
 ```rust,noplayground
 // Bring the following items into scope:

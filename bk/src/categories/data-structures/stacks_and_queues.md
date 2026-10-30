@@ -29,7 +29,7 @@ A queue is a FIFO (First-In, First-Out) data structure. [`VecDeque`][c~std::coll
 ## Related Topics {#related-topics .skip}
 
 - [[binary_heaps | Binary Heaps]].
-- [[linkedlist | Linked Lists]].
+- [[linked_lists | Linked Lists]].
 - [[vectors | Vectors]].
 
 {{#include refs.incl.md}}

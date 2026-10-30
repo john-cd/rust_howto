@@ -54,7 +54,7 @@ Playlists and screencasts:
 
 ## Related Topics {#related-topics .skip}
 
-- [[blogs | Blogs]].
+- [[blogs_and_forums | Blogs]].
 - [[books | Books]].
 - [[example_code | Example Code and Templates]].
 

@@ -32,7 +32,7 @@ The `std::ops` module also provides traits for function-like / closure-like beha
 ## Related Topics {#related-topics .skip}
 
 - [[data_structures | Data Structures]].
-- [[drop | `Drop`]].
+- [[resource_cleanup | `Drop`]].
 - [[traits | Traits]].
 
 {{#include refs.incl.md}}

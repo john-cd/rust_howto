@@ -16,7 +16,7 @@ The [`std::cmp`][c~std::cmp~docs]↗{{hi:std::cmp}} module provides traits for c
 - [`Eq`][c~std::cmp::Eq~docs]↗{{hi:std::cmp::Eq}} is a marker trait that indicates a type has a reflexive equality relation, meaning `a == a` is always true. It requires `PartialEq` to be implemented first.
 - Floats (like [`f32`][primitive~f32]↗{{hi:f32}} and [`f64`][primitive~f64]↗{{hi:f64}}) do not implement `Eq`, because [`NaN`][f64::NAN~docs]↗{{hi:NaN}} != `NaN`. Beware when implementing equality on structs with a field of float type.
 
-`PartialEq` and `Eq` are most often automatically derived using `#[derive(PartialEq, Eq)]` - see [[derive | Derive]]. You can however provide a custom implementation, if so desired:
+`PartialEq` and `Eq` are most often automatically derived using `#[derive(PartialEq, Eq)]` - see [[automatic_trait_derivation | Derive]]. You can however provide a custom implementation, if so desired:
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/cmp/eq.rs:example}}
@@ -44,7 +44,7 @@ The following example implements a custom order for software versions:
 
 - [[algorithms | Algorithms]].
 - [[data_structures | Data Structures]].
-- [[derive | Derive]].
+- [[automatic_trait_derivation | Derive]].
 - [[generics | Generics]].
 - [[sorting | Sorting]].
 - [[traits | Traits]].

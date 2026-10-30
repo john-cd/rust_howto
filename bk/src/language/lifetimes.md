@@ -126,9 +126,9 @@ A method returning `&T` from `&mut self` has the same rule. The returned referen
 
 ## Related Topics {#related-topics .skip}
 
-- [[cow | COW]].
+- [[clone-on-write | COW]].
 - [[memory-management | Memory Management]].
-- [[ownership_borrowing | Ownership & Borrowing]].
+- [[ownership_and_borrowing | Ownership & Borrowing]].
 - [[rust-patterns | Rust Patterns]].
 - [[typecasts | Typecasts]].
 

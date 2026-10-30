@@ -22,7 +22,7 @@ Macros come in three forms:
 
 ### Use Function-like Macros {#function-like-macros}
 
-"Function-like" macros are called most frequently, well, like a [[function | function]] would be, with a list of parameters and within a parent function's body:
+"Function-like" macros are called most frequently, well, like a [[functions | function]] would be, with a list of parameters and within a parent function's body:
 
 ```rust,editable
 fn main() {
@@ -65,7 +65,7 @@ Read the [procedural macros](#procedural-macros) sections below for more details
 
 ### Use Custom Derive Macros {#custom-derive-macros}
 
-Custom [[derive]] macros automatically generate [[trait]] implementations for structs and enums.
+Custom [[automatic_trait_derivation | derive]] macros automatically generate [[traits | trait]] implementations for structs and enums.
 
 ```rust,noplayground
 // Automatically implement `MyCustomTrait` for the `User` struct:
@@ -98,7 +98,7 @@ See [[string_concat | String Concatenation]] for more details.
 
 [`vec!`][c~std::vec!~docs]↗ allows for convenient creation and initialization of vectors (`Vec<T>`). For example, `vec![1, 2, 3]` creates a vector with integers `1`, `2`, and `3`.
 
-See [[vector | Vector]] for more details.
+See [[vectors | Vector]] for more details.
 
 ### Immediately Terminate the Current Thread with `panic!` {#panic-macro}
 

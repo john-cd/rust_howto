@@ -39,3 +39,7 @@
 [p~file_watching]: file_watching.md
 [p~paths]: paths.md
 [p~symbolic_links]: symbolic_links.md
+[p~reading_and_writing_files]: reading_and_writing_files.md
+[p~temporary_files_and_directories]: temporary_files_and_directories.md
+[p~user_directories_and_preferred_applications]: user_directories_and_preferred_applications.md
+[p~working_with_the_standard_input_and_output]: working_with_the_standard_input_and_output.md

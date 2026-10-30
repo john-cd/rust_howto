@@ -882,6 +882,7 @@
 [github~website]: https://github.com
 [gitoxidelabs~repo]: https://github.com/GitoxideLabs
 [git~log~docs]: https://git-scm.com/docs/git-log
+[git~submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 [git~website]: https://git-scm.com
 [godotengine~website]: https://godotengine.org
 [gog~website]: https://gog.com

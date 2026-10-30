@@ -12,9 +12,9 @@ The standard library provides these common collections. `Vec` is defined in `std
 - [[hashmaps | `HashMap<K, V>`]] (Hash Map) stores key-value pairs, allowing for efficient lookup of values based on their keys. It uses a hash function for fast average-case access.
 - [[b-trees | `BTreeMap<K, V>`]] (B-Tree Map) is similar to `HashMap`, but it keeps the keys sorted. It provides ordered access to key-value pairs.
 - [[hashmaps | `HashSet<T>`]] (Hash Set) stores a collection of unique elements. Used for efficiently checking membership and ensuring uniqueness.
-- [[btrees | `BTreeSet<T>`]] (B-Tree Set) is similar to `HashSet`, but it keeps the elements sorted.
-- [[linkedlist | `LinkedList<T>`]] is a doubly linked list with efficient operations at either end. Stable Rust does not provide the cursor API needed for efficient insertions and deletions at arbitrary positions; indexed access also takes O(n) time.
-- [[stack_and_queue | `VecDeque<T>`]] (Vector Deque) is a double-ended queue. Allows efficient insertion and deletion at both ends.
+- [[b-trees | `BTreeSet<T>`]] (B-Tree Set) is similar to `HashSet`, but it keeps the elements sorted.
+- [[linked_lists | `LinkedList<T>`]] is a doubly linked list with efficient operations at either end. Stable Rust does not provide the cursor API needed for efficient insertions and deletions at arbitrary positions; indexed access also takes O(n) time.
+- [[stacks_and_queues | `VecDeque<T>`]] (Vector Deque) is a double-ended queue. Allows efficient insertion and deletion at both ends.
 - [[binary_heaps | `BinaryHeap<T>`]] is a binary heap, often used to implement a priority queue.
 - [[strings | `String`]] is a growable, UTF-8 encoded string. It's a fundamental data structure for working with text.
 

@@ -65,13 +65,13 @@ The [`Borrow`][c~std::borrow::Borrow~docs]↗{{hi:std::borrow::Borrow}} and [`As
 - Use `AsRef` when you want to convert something to a reference directly or you're writing generic code.
 - [`Deref`][c~std::ops::Deref~docs]↗ should be implemented by smart pointers only.
 
-See [[asref | AsRef]], [[conversion_traits | Conversion Traits]] and [[smart_pointers | Smart Pointers]] for more details.
+See [[reference-to-reference_conversions | AsRef]], [[conversion_traits | Conversion Traits]] and [[smart_pointers | Smart Pointers]] for more details.
 
 ## Related Topics {#related-topics .skip}
 
-- [[asref | AsRef]].
+- [[reference-to-reference_conversions | AsRef]].
 - [[conversion_traits | Conversion Traits]].
-- [[ownership_borrowing | Ownership and Borrowing]].
+- [[ownership_and_borrowing | Ownership and Borrowing]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

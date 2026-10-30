@@ -78,7 +78,7 @@ For example, in the following, we define a linked list that has an unknown numbe
 ## Related Topics {#related-topics .skip}
 
 - [[memory-management | Memory Management]].
-- [[ownership_borrowing | Ownership & Borrowing]].
+- [[ownership_and_borrowing | Ownership & Borrowing]].
 - [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}

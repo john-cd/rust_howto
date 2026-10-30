@@ -57,13 +57,13 @@ Read [Implementing Vec][book~rustonomicon~implementing-vec]↗ for more details 
 
 ## Other Data Structures {#other-data-structures .skip}
 
-- [[btrees | B-trees]].
-- [[binaryheap | Binary Heaps]].
+- [[b-trees | B-trees]].
+- [[binary_heaps | Binary Heaps]].
 - [[hashmaps | Hashmaps]].
 - [[maps | Other Maps]].
 - [[slices | Slices]].
 - [[stack-allocated | Stack-allocated data structures]].
-- [[stack_and_queue | Stacks and Queues]].
+- [[stacks_and_queues | Stacks and Queues]].
 - [[strings | Strings]].
 
 ## Related Topics {#related-topics .skip}

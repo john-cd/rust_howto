@@ -8,7 +8,7 @@
 
 This book's [GitHub repository][rust-howto~repo]↗ is structured as follows:
 
-- The Dev Container and Docker (Compose) configuration files are found in [`.devcontainer`][dev-containers-devcontainer.json]↗{{hi:.devcontainer}}. Review the [[dev_container_docker | Dev Container and Docker]] page for usage.
+- The Dev Container and Docker (Compose) configuration files are found in [`.devcontainer`][dev-containers-devcontainer.json]↗{{hi:.devcontainer}}. Review the [[dev_container_and_docker | Dev Container and Docker]] page for usage.
 - The [`.github`][rust-howto~.github~repo]↗ folder contains the GitHub configuration, including the CD/CI workflows that build the code & book and deploy the book to Github Pages.
 - The [`.vscode`][rust-howto~.vscode~repo]↗ folder contains the VS Code configuration (other editors can be used).
 - The [`bin`][rust-howto~bin~repo]↗ folder stores executables used to generate parts of the book or used by the book building process. Generate these tools using `just tools release` or `just scrub release`. These commands build the code and copy the compiled executables into `bin`.

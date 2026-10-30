@@ -24,7 +24,7 @@ A file extension can be missing or wrong. [`infer`][c~infer~docs]↗{{hi:infer}}
 
 ## Related Topics {#related-topics .skip}
 
-- [[read_write | Reading and Writing Files]].
+- [[reading_and_writing_files | Reading and Writing Files]].
 - [[paths | Paths]].
 - [[symbolic_links | Symbolic Links]].
 

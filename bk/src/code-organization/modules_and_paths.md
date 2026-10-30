@@ -91,7 +91,7 @@ super::sibling_module             // Path to another module declared in the pare
 crate::first_level::second_level  // Path to a nested module, starting from the crate root.
 ```
 
-Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in the [[use_keyword | `use` keyword]] chapter.{{hi:use}}
+Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in the [[use_declarations | `use` keyword]] chapter.{{hi:use}}
 
 Going into more details, there are two main kinds of paths: relative and absolute paths. Relative paths start from the current module you are writing code in:
 
@@ -180,7 +180,7 @@ TypeName::CONSTANT_NAME           // Path to an associated constant within a typ
 - Items cannot be accessed from their parent, unless they are public.
 - Items cannot be accessed from another module, unless all items in the path from that module to the item are accessible (public, if traversed in the parent -> child direction; private or public, if traversed in the child -> parent direction or in the same module).
 
-The following example summarizes the visibility rules when it comes to modules. See the [[visibility | Visibility]] and [[use_keyword | `use` keyword]] chapters for complete details.
+The following example summarizes the visibility rules when it comes to modules. See the [[visibility | Visibility]] and [[use_declarations | `use` keyword]] chapters for complete details.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/modules/module_visibility.rs:example}}

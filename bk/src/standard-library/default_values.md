@@ -20,7 +20,7 @@ The `Default` trait has a single method, `default()`, which returns the default 
 
 ## Related Topics {#related-topics .skip}
 
-- [[derive | Derive]].
+- [[automatic_trait_derivation | Derive]].
 - [[traits | Traits]].
 
 {{#include refs.incl.md}}

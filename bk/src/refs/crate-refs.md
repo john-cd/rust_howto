@@ -4286,6 +4286,7 @@
 [c~icu~repo~badge]: https://img.shields.io/badge/icu-steelblue?logo=github
 [c~icu~website]: https://icu4x.unicode.org
 [c~icu~website~badge]: https://img.shields.io/badge/icu-coral
+[c~ignore::WalkBuilder::new~docs]: https://docs.rs/ignore/latest/ignore/struct.WalkBuilder.html#method.new
 [c~ignore~crates.io]: https://crates.io/crates/ignore
 [c~ignore~crates.io~badge]: https://img.shields.io/badge/crates.io-ignore-crimson
 [c~ignore~docs]: https://docs.rs/ignore
@@ -8626,6 +8627,7 @@
 [c~std::cell::Cell~docs]: https://doc.rust-lang.org/std/cell/struct.Cell.html
 [c~std::cell::LazyCell~docs]: https://doc.rust-lang.org/std/cell/struct.LazyCell.html
 [c~std::cell::OnceCell~docs]: https://doc.rust-lang.org/std/cell/struct.OnceCell.html
+[c~std::cell::RefCell::borrow_mut~docs]: https://doc.rust-lang.org/std/cell/struct.RefCell.html#method.borrow_mut
 [c~std::cell::RefCell::try_borrow~docs]: https://doc.rust-lang.org/std/cell/struct.RefCell.html#method.try_borrow
 [c~std::cell::RefCell~docs]: https://doc.rust-lang.org/std/cell/struct.RefCell.html
 [c~std::cell::UnsafeCell~docs]: https://doc.rust-lang.org/std/cell/struct.UnsafeCell.html
@@ -8695,6 +8697,7 @@
 [c~std::io::BufRead::lines~docs]: https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines
 [c~std::io::BufReader~docs]: https://doc.rust-lang.org/std/io/struct.BufReader.html
 [c~std::io::BufRead~docs]: https://doc.rust-lang.org/std/io/trait.BufRead.html
+[c~std::io::BufWriter~docs]: https://doc.rust-lang.org/std/io/struct.BufWriter.html
 [c~std::io::Error~docs]: https://doc.rust-lang.org/std/io/struct.Error.html
 [c~std::io::Lines~docs]: https://doc.rust-lang.org/std/io/struct.Lines.html
 [c~std::io::Read::read_to_string~docs]: https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string
@@ -8864,6 +8867,7 @@
 [c~std::time::Instant::now~docs]: https://doc.rust-lang.org/std/time/struct.Instant.html#method.now
 [c~std::time::Instant~docs]: https://doc.rust-lang.org/std/time/struct.Instant.html
 [c~std::time::SystemTime::elapsed~docs]: https://doc.rust-lang.org/std/time/struct.SystemTime.html#method.elapsed
+[c~std::time::SystemTime~docs]: https://doc.rust-lang.org/std/time/struct.SystemTime.html
 [c~std::time~docs]: https://doc.rust-lang.org/std/time
 [c~std::vec::Vec::sort_by~docs]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_by
 [c~std::vec::Vec::sort_unstable~docs]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_unstable

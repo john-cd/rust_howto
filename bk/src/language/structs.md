@@ -119,7 +119,7 @@ Rather than forcing you to implement very common traits repeatedly, Rust provide
 {{#include ../../crates/language/examples/structs/common_traits.rs:example}}
 ```
 
-See the [[derive | Derive]] chapter for more details.
+See the [[automatic_trait_derivation | Derive]] chapter for more details.
 
 ## Define Generic Structs {#define-generic-structs}
 

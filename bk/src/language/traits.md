@@ -178,7 +178,7 @@ This topic is covered in the [[asynchronous | Async]] chapter.
 - [[generics | Generics]].
 - [[impl_trait | impl Trait]].
 - [[structs | Structs]].
-- [[trait_objects | Trait Objects]].
+- [[trait_objects_and_dynamic_dispatch | Trait Objects]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

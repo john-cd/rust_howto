@@ -86,3 +86,11 @@
 [p~smart_pointers]: smart_pointers.md
 [p~strings]: ../categories/data-structures/strings.md
 [p~vectors]: ../categories/data-structures/vectors.md
+[p~automatic_trait_derivation]: automatic_trait_derivation.md
+[p~hashmaps]: ../categories/data-structures/hashmaps.md
+[p~memory_address_pinning]: memory_address_pinning.md
+[p~operators]: operators.md
+[p~reading_and_writing_files]: ../categories/filesystem/reading_and_writing_files.md
+[p~recoverable_error_handling]: recoverable_error_handling.md
+[p~reference-to-reference_conversions]: reference-to-reference_conversions.md
+[p~value_comparison]: value_comparison.md
