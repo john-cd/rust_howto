@@ -2,8 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// This dispatcher remains as source but is disabled in Cargo.toml until Zenoh
-// and OpenRR have compatible fixes for their affected dependency chains.
+// This dispatcher is built only with the `zenoh` Cargo feature (see Cargo.toml).
 
 use clap::Parser;
 use clap::Subcommand;

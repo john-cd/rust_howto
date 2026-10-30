@@ -23,12 +23,11 @@ path = "examples/robot_operating_systems/main.rs"
 required-features = ["ros2"]
 test = true
 
-# Disabled until the dependency chains above are updated. Source remains under
-# examples/robotics_frameworks for reference.
-# [[example]]
-# name = "robotics_frameworks"
-# path = "examples/robotics_frameworks/main.rs"
-# test = true
+[[example]]
+name = "robotics_frameworks"
+path = "examples/robotics_frameworks/main.rs"
+required-features = ["zenoh"]
+test = true
 
 [[example]]
 name = "artificial_intelligence"
@@ -71,17 +70,10 @@ tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 tracing = "0.1.44"
 tracing-subscriber = "0.3.23"
 
-# These optional examples are preserved in source but excluded from the workspace
-# until their dependencies have compatible security fixes:
-# - Zenoh: the current release requires vulnerable lz4_flex 0.10.
-# - OpenRR: its current graph includes affected fast-float and serde_with versions.
-# [features]
-# openrr = ["dep:openrr"]
-# zenoh = ["dep:zenoh"]
-#
-# [target.'cfg(not(target_os = "windows"))'.dependencies]
-# openrr = { version = "0.1.0", optional = true }
-# zenoh = { version = "1.10.1", optional = true }
+# Zenoh's transport crate requires lz4_flex 0.10 (RUSTSEC advisory, no fix
+# for that series); the exception is documented in ../../deny.toml.
+zenoh = { version = "1.10.2", default-features = false, features = ["transport_tcp"], optional = true } # No compression, auth or shared memory: the local example needs only TCP.
+lz4_flex = { version = "0.10.0", default-features = false, features = ["safe-decode"], optional = true } # Mitigates RUSTSEC-2026-0041 for the lz4_flex pulled in by zenoh-transport.
 
 [dev-dependencies]
 embedded-hal-mock.workspace = true
@@ -89,8 +81,8 @@ embedded-hal-mock.workspace = true
 [features]
 # Requires a sourced ROS 2 installation and libclang; disabled by default.
 ros2 = ["dep:futures", "dep:r2r"]
-# Placeholder: the Zenoh example is disabled until its dependency chain is fixed (#845).
-zenoh = []
+# Pulls in the Zenoh pub/sub stack; see the lz4_flex note in deny.toml.
+zenoh = ["dep:zenoh", "dep:lz4_flex"]
 
 [lints]
 workspace = true

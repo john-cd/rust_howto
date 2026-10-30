@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
-// Preserved for reference; Cargo.toml keeps Zenoh disabled while its current
-// release requires the affected lz4_flex 0.10 series.
+// Enabled by the `zenoh` Cargo feature. The advisory exception for the
+// `lz4_flex` 0.10 series that Zenoh requires is documented in deny.toml.
 
 // ANCHOR: example
 //! Publishes and receives several local telemetry values with `zenoh`.
@@ -22,7 +22,7 @@ const TELEMETRY: [&str; 3] =
 /// Returns an error if the session cannot open or any telemetry message fails.
 #[tokio::main]
 async fn main() -> Result<()> {
-    for payload in publish_and_receive(Config::default()).await? {
+    for payload in publish_and_receive(local_config()?).await? {
         println!("Received telemetry: {payload}");
     }
 
@@ -36,7 +36,7 @@ async fn main() -> Result<()> {
 /// Returns an error if Zenoh setup, publication, reception, or cleanup fails.
 async fn publish_and_receive(config: Config) -> Result<Vec<String>> {
     let session = zenoh::open(config).await.map_err(zenoh_error)?;
-    let mut subscriber = session
+    let subscriber = session
         .declare_subscriber(KEY_EXPR)
         .await
         .map_err(zenoh_error)?;
@@ -74,6 +74,23 @@ async fn publish_and_receive(config: Config) -> Result<Vec<String>> {
     Ok(received)
 }
 
+/// Returns a configuration that keeps the session on this machine: no
+/// multicast scouting, and a listener on the IPv4 loopback address only.
+///
+/// # Errors
+///
+/// Returns an error if a configuration key is rejected.
+fn local_config() -> Result<Config> {
+    let mut config = Config::default();
+    config
+        .insert_json5("scouting/multicast/enabled", "false")
+        .map_err(zenoh_error)?;
+    config
+        .insert_json5("listen/endpoints", r#"["tcp/127.0.0.1:0"]"#)
+        .map_err(zenoh_error)?;
+    Ok(config)
+}
+
 /// Converts a Zenoh error to the example's `anyhow` error type.
 fn zenoh_error(error: impl std::fmt::Display) -> anyhow::Error {
     anyhow::anyhow!("{error}")
@@ -100,14 +117,10 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies all telemetry messages are received with multicast scouting
-    /// off.
-    #[tokio::test]
+    /// Verifies all telemetry messages are received by a local-only session.
+    #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
     async fn receives_all_local_telemetry_messages() -> Result<()> {
-        let mut config = Config::default();
-        config
-            .insert_json5("scouting/multicast/enabled", "false")
-            .map_err(zenoh_error)?;
+        let config = local_config()?;
 
         let mut expected = TELEMETRY.map(str::to_owned).to_vec();
         expected.sort();
