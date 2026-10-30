@@ -63,7 +63,7 @@ For a minimal CPU-rendered desktop window, [`minifb`][c~minifb~docs]↗{{hi:mini
 {{#include ../../../crates/cats/gui/examples/2d_renderers/minifb.rs:example}}
 ```
 
-The [Vello vector scene example](../rendering/2d_renderers.md#vello) builds shapes separately from GPU rendering.
+The [Vello vector scene example](../rendering/2d_vector_graphics.md#vello) builds shapes separately from GPU rendering.
 
 ### UI Layout
 

@@ -75,7 +75,7 @@ The generator converts supported Rust and Dart types at the boundary. You do not
 
 For more complex interactions, you might use platform channels, but [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} often abstracts this away.
 
-For manual `dart:ffi`, expose an `extern "C"` API from a Rust `cdylib`, use [`cbindgen`](generate_ffi_bindings.md#cbindgen) to describe it, and generate Dart declarations from the header with `ffigen`. Specify who allocates and frees buffers, encode errors in the ABI, and never let a Rust panic cross it. This native C ABI route is not available unchanged in a browser. [`rinf`][ffi~rinf] is an alternative centered on messages between Flutter and Rust.
+For manual `dart:ffi`, expose an `extern "C"` API from a Rust `cdylib`, use [`cbindgen`](generate_ffi_bindings.md#cbindgen) to describe it, and generate Dart declarations from the header with `ffigen`. Specify who allocates and frees buffers, encode errors in the ABI, and never let a Rust panic cross it. This native C ABI route is not available unchanged in a browser. [`rinf`][ffi~rinf~repo] is an alternative centered on messages between Flutter and Rust; check its current maintenance and supported platform status before adopting it.
 
 ## Build Tools {#build-tools .skip}
 

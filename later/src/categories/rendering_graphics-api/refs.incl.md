@@ -2,6 +2,7 @@
 <!-- markdownlint-disable MD057 -->
 
 [ex~rendering_graphics-api~ash]: vulkan.md#ash
+[ex~rendering_graphics-api~adapter-info]: native_graphics_apis.md#adapter-info
 [ex~rendering_graphics-api~cubecl]: shaders.md#cubecl
 [ex~rendering_graphics-api~d3d12]: native_graphics_apis.md#d3d12
 [ex~rendering_graphics-api~gl]: opengl.md#gl
@@ -14,6 +15,8 @@
 [ex~rendering_graphics-api~shaderc]: shaders.md#shaderc
 [ex~rendering_graphics-api~spirv-reflect]: shaders.md#spirv-reflect
 [ex~rendering_graphics-api~vulkano]: vulkan.md#vulkano
+[ex~rendering_graphics-api~vulkan]: native_graphics_apis.md#vulkan
+[ex~rendering_graphics-api~opengl]: native_graphics_apis.md#opengl
 [ex~rendering_graphics-api~wgpu]: gpu_abstraction_layers.md#wgpu
 [p~apis]: ../../../src/categories/web-programming_http-client/apis.md
 [p~attributes]: ../../../src/language/attributes.md

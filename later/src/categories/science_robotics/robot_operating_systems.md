@@ -10,43 +10,15 @@ ROS connects robot nodes through topics, services, and actions. Choose a ROS 2 c
 
 The release snapshot below was checked on October 29, 2026. A recent release shows activity, but does not guarantee compatibility with every ROS distribution or DDS implementation.
 
-| Client                            | ROS version and approach                                                   | Latest stable release checked | Integration and status                                                                                            |
-| --------------------------------- | -------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| [`r2r`][r2r~setup]                | ROS 2; bindings to installed `rcl` libraries and generated message support | 0.9.7, September 13, 2026     | Used by the recipe below; source a compatible ROS installation and install libclang.                              |
-| [`rclrs`][ros2-rust~repo]         | ROS 2; Rust client built on `rcl` in the ros2-rust project                 | 0.8.0, September 23, 2026     | Integrates with ROS workspaces, `colcon`, and `cargo-ament-build`; follow its distribution-specific guide.        |
-| [`ros2-client`][ros2-client~repo] | ROS 2; native Rust client over RustDDS                                     | 0.12.1, October 26, 2026      | Avoids the native `rcl` client stack; check supported message generation, QoS, and ROS interoperability features. |
-| [`rosrust`][c~rosrust~repo]       | ROS 1; native Rust client                                                  | 0.9.12, February 3, 2025      | For existing ROS 1 deployments; the ROS 1 ecosystem is end of life.                                               |
-| [`roslibrust`][roslibrust~repo]   | Async Rust abstraction with ROS 1, ROS 2, rosbridge, and Zenoh backends    | 0.26.0, September 25, 2026    | Select the backend and its prerequisites explicitly; rosbridge also needs a bridge server.                        |
+| Client                            | ROS version and approach                                                        | Latest stable release checked | Integration and status                                                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| [`r2r`][r2r~setup]                | ROS 2; bindings to installed `rcl` libraries and generated message support      | 0.9.7, September 13, 2026     | Used by the recipe below; source a compatible ROS installation and install libclang.                                    |
+| [`rclrs`][ros2-rust~repo]         | ROS 2; Rust client built on `rcl` in the ros2-rust project                      | 0.8.0, September 23, 2026     | Integrates with ROS workspaces, `colcon`, and `cargo-ament-build`; its API and distribution support are still evolving. |
+| [`ros2-client`][ros2-client~repo] | ROS 2; native Rust client with RustDDS by default and an optional Zenoh backend | 0.12.1, October 26, 2026      | Avoids the native `rcl` client stack; check message generation, QoS, security, and ROS interoperability support.        |
+| [`rosrust`][c~rosrust~repo]       | ROS 1; native Rust client                                                       | 0.9.12, February 3, 2025      | For existing ROS 1 deployments; the ROS 1 ecosystem is end of life.                                                     |
+| [`roslibrust`][roslibrust~repo]   | Async Rust abstraction with ROS 1, ROS 2, rosbridge, and Zenoh backends         | 0.26.0, September 25, 2026    | Select the backend and its prerequisites explicitly; rosbridge needs a bridge server and adds a protocol hop.           |
 
-A Robot Operating System (ROS) is a middleware framework designed to help build and manage robot software systems. Its primary purpose is to simplify the complexities of robotic development by providing tools and libraries that support tasks like hardware abstraction, communication between different parts of the robot (such as sensors and actuators), and software reuse.
-
-Here are some key aspects of Robot Operating Systems:
-
-- Core Functionality:
-
-Message Passing: ROS facilitates communication between various components (nodes) of a robot system using a publish-subscribe messaging paradigm. For example, a sensor might publish data that a motion planner subscribes to.
-
-Hardware Abstraction: It enables developers to write code that works across different hardware platforms, like [sensors][p~sensors], cameras, and motors.
-
-- Modular Design:
-
-ROS systems are composed of small, independent units called nodes, each performing a specific task. For instance, one node could be responsible for navigation, another for path planning, and another for sensor integration. This modularity promotes flexibility and scalability.
-
-- Development Tools:
-
-Tools like [`rviz`][c~rviz~crates.io]↗{{hi:rviz}} (for [visualization][p~visualization]) and `Gazebo`{{hi:Gazebo}} (for simulation) help developers test and debug their robotic systems without needing the actual hardware.
-
-- Supported Platforms:
-
-ROS supports various programming languages, such as Python, C++, and now Rust. Developers can choose the language that best fits their project.
-
-- Versioning:
-
-ROS 1 was the original system, widely used in academia and industry. ROS 2 is the newer version designed to address its limitations. It emphasizes performance, security, and support for multi-robot systems. New examples in this chapter target ROS 2.
-
-- Rust in ROS:
-
-While ROS traditionally favored [Python][p~python] and C++, Rust offers strong memory safety, [concurrency][p~concurrency] features, and [performance][p~performance] benefits. [`r2r`][c~r2r~docs] provides bindings to the ROS 2 client libraries.
+ROS applications are composed of nodes that exchange messages on topics, make request-response calls through services, or run long-lived actions. Select a client based on whether the project already uses a ROS installation and `rcl`, needs a pure-Rust middleware stack, or communicates through a bridge. The table's release dates are a snapshot; verify current package and distribution support before choosing.
 
 ## `rosrust`: Pure Rust Implementation of a ROS Client Library {#rosrust}
 

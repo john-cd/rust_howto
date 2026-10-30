@@ -72,6 +72,7 @@
 [ffi~frb-integration]: https://cjycode.com/flutter_rust_bridge/manual/integrate/builtin
 [ffi~dart-ffi]: https://dart.dev/interop/c-interop
 [ffi~rinf]: https://pub.dev/packages/rinf
+[ffi~rinf~repo]: https://github.com/cunarist/rinf
 
 [ffi~jni-guide]: https://docs.rs/jni/0.22.4/jni/
 [ffi~jni-invocation]: https://docs.rs/jni/0.22.4/jni/#launching-jvm-from-rust

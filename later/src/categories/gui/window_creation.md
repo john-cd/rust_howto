@@ -10,7 +10,7 @@ Window libraries create native windows and deliver input and lifecycle events. T
 
 [![winit][c~winit~docs~badge]][c~winit~docs] [![winit~crates.io][c~winit~crates.io~badge]][c~winit~crates.io] [![winit~repo][c~winit~repo~badge]][c~winit~repo] [![winit~lib.rs][c~winit~lib.rs~badge]][c~winit~lib.rs]{{hi:winit}}{{hi:Windowing}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
 
-[`winit`][c~winit~docs]↗{{hi:winit}} is a cross-platform window creation and event handling library. "The defacto standard option. Uses an event loop based architecture. Widely used and should probably be the default choice." ([blessed.rs][blessed-rs~website]↗).
+[`winit`][c~winit~docs]↗{{hi:winit}} is the usual starting point for a cross-platform native window and input event loop. Its current application model uses `ApplicationHandler`; pair it with a renderer or pixel presentation layer because Winit does not draw the interface.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/window_creation/winit.rs:example}}
@@ -20,9 +20,7 @@ Window libraries create native windows and deliver input and lifecycle events. T
 
 [![tao][c~tao~docs~badge]][c~tao~docs] [![tao~crates.io][c~tao~crates.io~badge]][c~tao~crates.io] [![tao~repo][c~tao~repo~badge]][c~tao~repo] [![tao~lib.rs][c~tao~lib.rs~badge]][c~tao~lib.rs]{{hi:tao}}{{hi:Windowing}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
 
-[`tao`][c~tao~docs]↗{{hi:tao}} is a cross-platform window manager library. The TAO of cross-platform windowing. A library in Rust built for [`tauri`][c~tauri~docs]↗{{hi:tauri}}.
-
-"A fork of [`winit`][c~winit~docs]↗{{hi:winit}} by the Tauri project, which adds support for things like system menus that desktop apps need." ([blessed.rs][blessed-rs~website]↗).
+[`tao`][c~tao~docs]↗{{hi:tao}} is Tauri's cross-platform fork of Winit. Its supported platforms include Windows, macOS, Linux, iOS, and Android; on Linux it uses GTK 3. Tao does not itself provide Tauri's system menus or tray icons: use the separate [`muda`][muda~repo] and [`tray-icon`][tray-icon~repo] crates when needed. This workspace disables its Tao example because the current GTK 3 / `glib 0.18` dependency chain conflicts with its GTK 4 dependencies.
 
 ```rust,ignore
 {{#include ../../../crates/cats/gui/examples/window_creation/tao.rs:example}}
@@ -52,9 +50,12 @@ The `winit` and `baseview` examples are compiled on Windows as well as other sup
 
 From `later/crates`, run `cargo run -p gui --example window_creation --features softbuffer -- software-pixels`. This opens a solid blue window; close it to finish. The interactive test is ignored by default, while the example is compiled and linted with the feature enabled.
 
+## SDL2 and SDL3 {#sdl}
+
+[`sdl2`][c~sdl2~docs] and [`sdl3`][c~sdl3~docs] are bindings to the SDL C library. Consider them when a project already depends on SDL or needs its audio, input, and windowing features; follow the binding's instructions for installing the native library or building it from source.
+
 ## See Also {#see-also .skip}
 
-- [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}} can also be used for windowing and input, but [`winit`][c~winit~docs]↗{{hi:winit}} is often preferred in the Rust ecosystem.
 - [`glfw`][c~glfw~docs]↗{{hi:glfw}} provides bindings to the GLFW library.
 
 ## Related Topics {#related-topics .skip}

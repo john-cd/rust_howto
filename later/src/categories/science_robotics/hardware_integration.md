@@ -17,7 +17,7 @@ For microcontroller firmware setup and bare-metal environments, see [[embedded |
 
 Serial ports (UART, RS-232, RS-485) are standard interfaces for communicating with motor controllers, IMUs, GPS receivers, and power distribution boards.
 
-- [`serialport`][c~serialport~docs]↗{{hi:serialport}} provides cross-platform serial port access (configuring baud rates, data bits, parity, and stop bits) on Linux, macOS, and Windows.
+- [`serialport`][c~serialport~docs]↗{{hi:serialport}} provides cross-platform serial port access (configuring baud rates, data bits, parity, and stop bits) on Linux, macOS, and Windows. Check its current maintenance status and platform-specific device permissions before adopting it.
 
 ## Linux SBC Peripherals {#linux-sbc-peripherals}
 
@@ -28,8 +28,8 @@ Serial ports (UART, RS-232, RS-485) are standard interfaces for communicating wi
 
 Robots running Linux on single-board computers interface with onboard GPIO pins, I2C buses, and SPI devices using Linux kernel driver interfaces (`sysfs`, `gpio-cdev`, `/dev/i2c-*`, `/dev/spidev*`).
 
-- [`linux-embedded-hal`][c~linux-embedded-hal~docs]↗{{hi:linux-embedded-hal}} adapts Linux peripheral device nodes into standard [`embedded-hal`][c~embedded-hal~docs]↗ traits, allowing host drivers to run unchanged on Linux single-board computers.
-- [`rppal`][c~rppal~docs]↗{{hi:rppal}} provides Raspberry Pi-specific GPIO, I2C, SPI, PWM, and UART peripherals via `/dev/gpiomem`.
+- [`linux-embedded-hal`][c~linux-embedded-hal~docs]↗{{hi:linux-embedded-hal}} adapts Linux peripheral device nodes into standard [`embedded-hal`][c~embedded-hal~docs]↗ traits. Drivers can share code across compatible implementations, but permissions, device configuration, timing, and hardware behavior still need platform-specific checks.
+- [`rppal`][c~rppal~docs]↗{{hi:rppal}} provides Raspberry Pi-specific GPIO, I2C, SPI, PWM, and UART peripherals. Its support targets Raspberry Pi boards; do not assume the same peripherals are available on other Linux SBCs.
 
 ## Portable Device Drivers with `embedded-hal` 1.0 {#embedded-hal}
 
@@ -40,9 +40,9 @@ Robots running Linux on single-board computers interface with onboard GPIO pins,
 [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
 [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
-The [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} crate defines hardware abstraction traits for I2C, SPI, digital I/O, PWM, and delay functions. Writing drivers against these traits ensures that the driver works identically on bare-metal microcontrollers (such as STM32 or RP2040) and host Linux systems (`linux-embedded-hal`).
+The [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} crate defines hardware abstraction traits for I2C, SPI, digital I/O, PWM, and delay functions. A driver generic over these traits can be reused with compatible bare-metal or Linux implementations and host-side mocks. The traits do not guarantee identical hardware, timing, or configuration behavior; test on each target.
 
-The following example implements a portable sensor driver generic over any `embedded_hal::i2c::I2c` implementation. The driver reads a device identification register and converts raw temperature bytes into degrees Celsius. Host-side tests use [`embedded-hal-mock`][c~embedded-hal-mock~docs] to assert the exact address, register bytes, transaction order, negative-temperature decoding, and error propagation without physical hardware. The runner's illustrative mock is separate from these strict transaction expectations.
+The following example implements a sensor driver generic over any `embedded_hal::i2c::I2c` implementation. Its address, registers, device ID, and signed temperature scale describe a fictional teaching sensor; replace them with values from the actual device datasheet. Host-side tests use [`embedded-hal-mock`][c~embedded-hal-mock~docs] to assert the exact address, register bytes, transaction order, negative-temperature decoding, and error propagation without physical hardware.
 
 ```rust,editable
 {{#include ../../../crates/cats/science_robotics/examples/hardware_integration/i2c_driver.rs:example}}

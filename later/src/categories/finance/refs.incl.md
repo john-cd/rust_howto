@@ -2,6 +2,8 @@
 
 [ex~finance~rustquant]: quant.md#rustquant
 [p~finance]: index.md
+[ex~finance~time-value-of-money]: quant.md#time-value-of-money
+[ex~finance~monte-carlo]: quant.md#simulate-an-option-payoff
 [ex~finance~black-scholes]: quant.md#black-scholes
 [ex~finance~rolling-stats]: quant.md#rolling-stats
 [ex~finance~trading-days]: quant.md#trading-days
