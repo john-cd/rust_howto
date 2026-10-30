@@ -50,7 +50,7 @@ The companion example creates a window and OpenGL context with `winit` and `glut
 
 [`vger`][c~vger~docs]↗{{hi:vger}} is a GPU renderer aimed at dynamic 2D interfaces. It provides a rendering layer for applications that need frequently changing shapes and UI elements; check its current backend and platform requirements before choosing it.
 
-This book does not ship a runnable `vger` example. The current `vger` API expects the application to provide its WGPU device, queue, texture format, and render-pass integration, and the crate targets a different WGPU version from this workspace. See the [vger API documentation][c~vger~docs] for the version-specific integration contract before adding it to an application.
+The latest `vger` release (0.4.0) dates from September 2024, so treat the crate as inactive. This book does not ship a runnable `vger` example. The current `vger` API expects the application to provide its WGPU device, queue, texture format, and render-pass integration, and the crate targets a different WGPU version from this workspace. See the [vger API documentation][c~vger~docs] for the version-specific integration contract before adding it to an application.
 
 ## `skia-safe` {#skia-safe}
 
