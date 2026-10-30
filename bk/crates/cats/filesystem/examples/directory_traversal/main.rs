@@ -120,6 +120,7 @@ mod tests {
         "globset",
         "ignore",
         "ignore_case",
+        #[cfg(target_os = "linux")]
         "loops",
         "modified",
         "png",

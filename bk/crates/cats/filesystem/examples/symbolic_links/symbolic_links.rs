@@ -133,7 +133,7 @@ mod tests {
         let link = dir.path().join("my_link.txt");
         assert!(fs::symlink_metadata(&link)?.file_type().is_symlink());
         assert_eq!(
-            fs::read_link(&link)?,
+            fs::canonicalize(fs::read_link(&link)?)?,
             fs::canonicalize(dir.path().join("source.txt"))?
         );
         assert_eq!(fs::read_to_string(&link)?, "Hello, world!");

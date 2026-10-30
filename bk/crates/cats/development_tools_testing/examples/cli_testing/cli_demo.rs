@@ -1,6 +1,8 @@
 // ANCHOR: example
 //! A small executable used by the command-line integration tests.
 
+use std::ffi::OsString;
+
 use clap::Parser;
 
 /// Arguments accepted by the test executable.
@@ -21,7 +23,26 @@ struct Args {
 ///
 /// Returns an error when parsing fails or when the greeting action fails.
 fn main() -> anyhow::Result<()> {
-    println!("{}", greet(Args::parse())?);
+    run_from(std::env::args_os())
+}
+
+/// Parses `args` and prints the resulting greeting.
+///
+/// Help, version, and usage errors are reported by clap, which exits with the
+/// conventional status (0 for `--help`, 2 for invalid usage).
+///
+/// # Errors
+///
+/// Returns an error if greeting creation fails.
+fn run_from<I, S>(args: I) -> anyhow::Result<()>
+where
+    I: IntoIterator<Item = S>,
+    S: Into<OsString> + Clone,
+{
+    println!(
+        "{}",
+        greet(Args::try_parse_from(args).unwrap_or_else(|e| e.exit()))?
+    );
     Ok(())
 }
 
@@ -58,10 +79,10 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the entry-point argument path with deterministic arguments.
     #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    fn test_main_entry_point() -> anyhow::Result<()> {
+        run_from(["cli-demo"])?;
+        Ok(())
     }
 }

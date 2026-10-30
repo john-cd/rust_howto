@@ -94,6 +94,7 @@ mod tests {
     async fn create_select_update_and_delete_in_memory() -> Result<()> {
         let db = Surreal::new::<Mem>(()).await?;
         db.use_ns("ns").use_db("db").await?;
+        db.query("DEFINE TABLE person SCHEMALESS").await?;
 
         let before: Vec<Person> = db.select("person").await?;
         assert!(before.is_empty());

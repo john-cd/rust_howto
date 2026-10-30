@@ -58,7 +58,11 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["ngrok", "pingora"];
+    const SUBCOMMANDS: &[&str] = &[
+        "ngrok",
+        #[cfg(target_family = "unix")]
+        "pingora",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]

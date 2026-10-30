@@ -181,15 +181,6 @@ KEY, name TEXT, age INT);",
     Ok(())
 }
 
-/// Runs the cdrs-tokio example.
-///
-/// # Errors
-///
-/// Returns an error if connecting to Cassandra or any CRUD operation fails.
-#[tokio::main]
-async fn main() -> anyhow::Result<()> {
-    example().await
-}
 // ANCHOR_END: example
 
 /// Runs the cdrs-tokio CRUD example.
@@ -216,13 +207,5 @@ mod tests {
     async fn require_external_svc() -> anyhow::Result<()> {
         run().await?;
         Ok(())
-    }
-
-    #[test]
-    #[ignore = "needs a running Cassandra server"]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
     }
 }

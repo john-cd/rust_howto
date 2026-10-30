@@ -52,7 +52,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
-#[cfg(test)]
+#[cfg(all(test, unix))]
 mod tests {
     use clap::CommandFactory;
 

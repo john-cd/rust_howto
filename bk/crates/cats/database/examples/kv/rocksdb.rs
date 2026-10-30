@@ -111,12 +111,13 @@ mod tests {
     }
 
     #[test]
-    fn read_only_open_of_a_missing_database_fails() {
-        let dir = tempfile::tempdir().unwrap();
+    fn read_only_open_of_a_missing_database_fails() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
         let missing = dir.path().join("missing");
         assert!(
             DB::open_for_read_only(&Options::default(), missing, false)
                 .is_err()
         );
+        Ok(())
     }
 }

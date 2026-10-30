@@ -19,25 +19,32 @@ fn relative_to(path: &Path, base: &Path) -> Option<PathBuf> {
 
 /// Prints a few relative paths.
 pub fn run() {
-    let target = Path::new("/srv/site/assets/logo.png");
-    let page_dir = Path::new("/srv/site/blog/2026");
+    let site = PathBuf::from(if cfg!(windows) {
+        r"C:\srv\site"
+    } else {
+        "/srv/site"
+    });
+    let target = site.join("assets").join("logo.png");
+    let page_dir = site.join("blog").join("2026");
 
     // Walks up out of `base`, then down to `path`.
-    let link = relative_to(target, page_dir);
+    let link = relative_to(&target, &page_dir);
     println!("{link:?}");
-    assert_eq!(link, Some(PathBuf::from("../../assets/logo.png")));
+    let expected = PathBuf::from("..")
+        .join("..")
+        .join("assets")
+        .join("logo.png");
+    assert_eq!(link, Some(expected));
 
     // A path below `base` needs no `..`.
-    let below = relative_to(Path::new("/srv/site/blog/2026/post.md"), page_dir);
+    let below = relative_to(&page_dir.join("post.md"), &page_dir);
     assert_eq!(below, Some(PathBuf::from("post.md")));
 
     // A relative path cannot be expressed relative to an absolute base.
-    assert_eq!(relative_to(Path::new("assets/logo.png"), page_dir), None);
+    let relative_target = PathBuf::from("assets").join("logo.png");
+    assert_eq!(relative_to(&relative_target, &page_dir), None);
     // An absolute path is returned unchanged when the base is relative.
-    assert_eq!(
-        relative_to(target, Path::new("blog")),
-        Some(target.to_path_buf())
-    );
+    assert_eq!(relative_to(&target, Path::new("blog")), Some(target));
 }
 // ANCHOR_END: example
 
@@ -45,18 +52,25 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Computes a relative path between paths on the current platform.
     #[test]
     fn walks_up_and_down() {
-        let relative = relative_to(Path::new("/a/b/c"), Path::new("/a/d/e"));
-        assert_eq!(relative, Some(PathBuf::from("../../b/c")));
+        let root = PathBuf::from(if cfg!(windows) { r"C:\a" } else { "/a" });
+        let target = root.join("b").join("c");
+        let base = root.join("d").join("e");
+        let expected = PathBuf::from("..").join("..").join("b").join("c");
+        assert_eq!(relative_to(&target, &base), Some(expected));
     }
 
+    /// Returns an empty path when both paths identify the same location.
     #[test]
     fn identical_paths_give_an_empty_path() {
-        let relative = relative_to(Path::new("/a/b"), Path::new("/a/b"));
-        assert_eq!(relative, Some(PathBuf::new()));
+        let path =
+            PathBuf::from(if cfg!(windows) { r"C:\a\b" } else { "/a/b" });
+        assert_eq!(relative_to(&path, &path), Some(PathBuf::new()));
     }
 
+    /// Verifies the example's relative paths on the current platform.
     #[test]
     fn run_succeeds() {
         run();

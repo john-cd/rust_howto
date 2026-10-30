@@ -113,12 +113,17 @@ mod tests {
 
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &[
+        #[cfg(target_os = "linux")]
         "continuous",
         "duct",
+        #[cfg(target_family = "unix")]
         "error_file",
+        #[cfg(target_family = "unix")]
         "piped",
         "process_output",
+        #[cfg(target_family = "unix")]
         "read_env_variable",
+        #[cfg(target_family = "unix")]
         "send_input",
         "shlex",
         "which",

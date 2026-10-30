@@ -115,6 +115,7 @@ mod tests {
         "log_error",
         "log_mod",
         "log_stdout",
+        #[cfg(unix)]
         "log_syslog",
         "log_timestamp",
     ];

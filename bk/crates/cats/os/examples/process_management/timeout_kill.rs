@@ -27,8 +27,13 @@ fn wait_or_kill(
 /// Returns a command that sleeps for roughly `seconds` seconds.
 fn sleep_command(seconds: u32) -> Command {
     if cfg!(windows) {
-        let mut command = Command::new("ping");
-        command.args(["-n", &(seconds + 1).to_string(), "127.0.0.1"]);
+        let mut command = Command::new("powershell.exe");
+        command.args(["-NoLogo", "-NoProfile", "-NonInteractive", "-Command"]);
+        if seconds == 0 {
+            command.arg("exit 0");
+        } else {
+            command.arg(format!("Start-Sleep -Seconds {seconds}"));
+        }
         command.stdout(std::process::Stdio::null());
         command
     } else {

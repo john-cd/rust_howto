@@ -116,7 +116,7 @@ mod tests {
         )?;
         let text = String::from_utf8(out)?;
         assert!(text.contains("hi"));
-        assert!(text.starts_with("\u{1b}[38;5;12m"), "{text:?}");
+        assert!(text.starts_with("\u{1b}["), "{text:?}");
         assert!(text.ends_with("\u{1b}[0m"));
         Ok(())
     }

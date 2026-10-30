@@ -10,7 +10,9 @@ use camino::Utf8PathBuf;
 /// Builds a UTF-8 path by pushing a component onto an initial path.
 fn utf8_path() -> Utf8PathBuf {
     // Create a new Utf8PathBuf. The `from` method works like the standard one.
-    let mut path = Utf8PathBuf::from("data/files/résumé");
+    let mut path = Utf8PathBuf::from("data");
+    path.push("files");
+    path.push("résumé");
     println!("Initial path: {path}");
 
     // Push a new component onto the path.
@@ -70,13 +72,14 @@ mod tests {
     #[test]
     fn builds_utf8_path() {
         let path = utf8_path();
-        assert_eq!(path.as_str(), "data/files/résumé/résumé-2025.txt");
+        let mut parent = Utf8PathBuf::from("data");
+        parent.push("files");
+        parent.push("résumé");
+        let expected = parent.join("résumé-2025.txt");
+        assert_eq!(path, expected);
         assert_eq!(path.file_name(), Some("résumé-2025.txt"));
         assert_eq!(path.extension(), Some("txt"));
-        assert_eq!(
-            path.parent(),
-            Some(camino::Utf8Path::new("data/files/résumé"))
-        );
+        assert_eq!(path.parent(), Some(parent.as_path()));
     }
 
     /// Non-UTF-8 paths cannot be converted.

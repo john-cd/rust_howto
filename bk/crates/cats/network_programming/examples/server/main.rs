@@ -58,7 +58,11 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["glommio", "listen_unused"];
+    const SUBCOMMANDS: &[&str] = &[
+        #[cfg(target_os = "linux")]
+        "glommio",
+        "listen_unused",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]

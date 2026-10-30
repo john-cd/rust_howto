@@ -124,6 +124,7 @@ mod tests {
         "num_traits",
         "ordered_float",
         "rational_numbers",
+        #[cfg(target_os = "linux")]
         "rug",
         "rust_decimal",
         "typenum",
