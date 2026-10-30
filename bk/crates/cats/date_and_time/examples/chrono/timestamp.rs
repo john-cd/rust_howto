@@ -59,15 +59,17 @@ mod tests {
     #[test]
     fn known_timestamps_convert_in_both_directions() {
         let dt = NaiveDate::from_ymd_opt(2017, 11, 12)
-            .unwrap()
+            .expect("the documented date is valid")
             .and_hms_opt(17, 33, 44)
-            .unwrap();
+            .expect("the documented time is valid");
         assert_eq!(dt.and_utc().timestamp(), 1_510_508_024);
-        let billion =
-            DateTime::<Utc>::from_timestamp(1_000_000_000, 0).unwrap();
+        let billion = DateTime::<Utc>::from_timestamp(1_000_000_000, 0)
+            .expect("one billion seconds after the epoch is in range");
         assert_eq!(billion.to_string(), "2001-09-09 01:46:40 UTC");
         assert_eq!(
-            DateTime::<Utc>::from_timestamp(0, 0).unwrap().to_rfc3339(),
+            DateTime::<Utc>::from_timestamp(0, 0)
+                .expect("the Unix epoch is in range")
+                .to_rfc3339(),
             "1970-01-01T00:00:00+00:00"
         );
     }
