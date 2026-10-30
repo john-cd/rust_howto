@@ -9,10 +9,6 @@
 /// an iterator over `u8` values. The specific type of the iterator is not
 /// specified in the trait definition, but is instead left to the implementor
 /// to decide.
-#[cfg_attr(
-    not(test),
-    expect(dead_code, reason = "declared to illustrate it; never used")
-)]
 trait Container {
     /// Returns an iterator over the items in the container.
     fn items(&self) -> impl Iterator<Item = u8>;
@@ -36,7 +32,7 @@ fn main() {
     let c = MyContainer {
         items: vec![1, 2, 3],
     };
-    for i in c.items {
+    for i in c.items() {
         println!("{i}");
     }
 }

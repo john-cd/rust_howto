@@ -47,7 +47,6 @@ where
 /// `#[pin_project]` also implements the following methods on the original type:
 /// `fn project(self: Pin<&mut Self>) -> Projection<'_>;`
 /// `fn project_ref(self: Pin<&Self>) -> ProjectionRef<'_>;`
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
 impl<T: Debug, U: Clone> BasicPinned<T, U> {
     /// Projects the pinned value to references to its fields.
     fn method(self: Pin<&mut Self>) {
@@ -73,6 +72,9 @@ fn example1() {
     // `projection.unpinned` is `&mut i32`.
     *projection.unpinned += 1;
     println!("Updated unpinned value: {}", projection.unpinned);
+
+    // The method projects the fields internally:
+    pinned_basic.as_mut().method();
 }
 
 /// ## Self-Referential Struct

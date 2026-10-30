@@ -13,7 +13,6 @@ use rusqlite::Result;
 
 /// A cat.
 #[derive(Debug)]
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
 struct Cat {
     /// The name of the cat.
     name: String,
@@ -67,7 +66,8 @@ fn main() -> Result<()> {
     })?;
 
     for cat in cats {
-        println!("Found cat {cat:?}");
+        let cat = cat?;
+        println!("Found cat {cat:?}: {} is {}", cat.name, cat.color);
     }
 
     Ok(())

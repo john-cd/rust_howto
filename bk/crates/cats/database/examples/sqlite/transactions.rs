@@ -35,7 +35,10 @@ fn main() -> Result<()> {
     initialize_schema(&connection)?;
 
     successful_tx(&mut connection)?;
-    println!("Successful transaction committed.");
+    println!(
+        "Successful transaction committed: {:?}",
+        color_names(&connection)?
+    );
 
     match rolled_back_tx(&mut connection) {
         Err(Error::SqliteFailure(code, _))
@@ -98,7 +101,6 @@ fn rolled_back_tx(connection: &mut Connection) -> rusqlite::Result<()> {
 /// # Errors
 ///
 /// Returns a SQLite error if the query cannot be prepared or read.
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
 fn color_names(connection: &Connection) -> rusqlite::Result<Vec<String>> {
     let mut statement =
         connection.prepare("SELECT name FROM cat_colors ORDER BY id")?;
