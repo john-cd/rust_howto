@@ -41,6 +41,7 @@ alias bb := buildbook
 # Check for missing dependency references without rewriting authoring files.
 @refdefs-check: _install-mdbook-utils
     {{ python }} "{{ source_directory() }}/refdefs.py" check --book-root "{{ root }}"
+    {{ python }} "{{ source_directory() }}/../indices/update_refdefs_for_examples.py" check --book-root "{{ root }}"
 
 @_install-mdbook-utils:
     cargo install --git https://github.com/john-cd/mdbook-utils --rev {{ mdbook_utils_rev }} --locked mdbook-utils
