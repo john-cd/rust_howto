@@ -23,7 +23,7 @@ FROM rust:${RUST_IMAGE_LABEL} AS rust-core
 ## The full Rust image depends on https://github.com/docker-library/buildpack-deps
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends ca-certificates curl \
+    && apt-get install -y --no-install-recommends ca-certificates curl git \
     && rm -rf /var/lib/apt/lists/*
 
 ## Install stable rustfmt for editor integration and Clippy for linting.
