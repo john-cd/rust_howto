@@ -4,8 +4,6 @@
 
 {{#include mssql.incl.md}}
 
-[`tiberius`][c~tiberius~docs] implements SQL Server's TDS protocol for asynchronous Rust applications. This workspace uses it with Tokio and native TLS. SQLx removed its experimental MSSQL driver in 0.7; do not assume a current SQLx installation can connect to SQL Server. SQL logins are demonstrated here; integrated authentication has separate platform, feature, and domain requirements.
-
 ## Connect to SQL Server {#tiberius}
 
 [![tiberius][c~tiberius~docs~badge]][c~tiberius~docs]
