@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "needs a display and a window; the snippet is not run headlessly"
-)]
 // ANCHOR: example
 //! A virtualized data table with `egui_extras`.
 
@@ -66,6 +62,7 @@ impl eframe::App for TableApp {
 }
 
 /// Opens a window that shows the table. It needs a display.
+#[expect(dead_code, reason = "requires a GUI window and display")]
 fn run_in_window() -> eframe::Result {
     eframe::run_native(
         "Table",
