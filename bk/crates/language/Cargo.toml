@@ -126,6 +126,9 @@ proc_macros = { path = "../proc_macros" }
 strum = { version = "0.28.0", features = ["derive"] }
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 
+[dev-dependencies]
+trybuild = "1.0.122"
+
 [features]
 full = []
 

@@ -80,10 +80,10 @@ fn run_actor() -> anyhow::Result<(u32, u32)> {
 ///
 /// # Errors
 /// Returns an error if the actor does not reply to either increment.
-fn main() -> anyhow::Result<()> {
+fn main() -> anyhow::Result<(u32, u32)> {
     let (first, second) = run_actor()?;
     println!("Totals: {first}, {second}");
-    Ok(())
+    Ok((first, second))
 }
 // ANCHOR_END: example
 
@@ -92,22 +92,18 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the actor does not reply to either increment.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    main()?;
+    Ok(())
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that Stakker replies with each updated counter total, and that
-    /// the example's entry point succeeds.
-    ///
-    /// Stakker allows a single instance per thread by default, and the test
-    /// harness runs each test on its own thread, so both checks share a test
-    /// (and so a thread) instead of racing to create the instance.
+    /// Verifies that the entry point receives both expected counter replies.
     #[test]
-    fn actor_replies_with_updated_totals() -> anyhow::Result<()> {
-        assert_eq!(run_actor()?, (5, 15));
-        main()
+    fn test_main_entry_point() -> anyhow::Result<()> {
+        assert_eq!(main()?, (5, 15));
+        Ok(())
     }
 }

@@ -80,27 +80,40 @@ pub(super) fn get_arg_verbose(matches: &ArgMatches) -> u8 {
 
 #[cfg(test)]
 mod tests {
+    use std::process::Command;
+
     use super::*;
-    use std::sync::Mutex;
-    use std::sync::MutexGuard;
-    use std::sync::PoisonError;
 
     use crate::cli::cli;
 
-    /// Tests run in parallel, but environment variables are process-wide.
-    /// Tests that set or depend on `TOOL_CONFIG_FILE` / `TOOL_VERBOSE` hold this lock.
-    static ENV_LOCK: Mutex<()> = Mutex::new(());
+    /// Checks Clap's environment-backed arguments in a child with explicit values.
+    fn check_environment(config: Option<&str>, verbose: Option<&str>) -> std::io::Result<()> {
+        let mut command = Command::new(std::env::current_exe()?);
+        command
+            .args(["child_checks_controlled_environment", "--ignored"])
+            .env_remove("TOOL_CONFIG_FILE")
+            .env_remove("TOOL_VERBOSE")
+            .env("EXPECTED_CONFIG", config.unwrap_or("<unset>"))
+            .env("EXPECTED_VERBOSE", verbose.unwrap_or("0"));
+        if let Some(config) = config {
+            command.env("TOOL_CONFIG_FILE", config);
+        }
+        if let Some(verbose) = verbose {
+            command.env("TOOL_VERBOSE", verbose);
+        }
 
-    /// Acquires the shared environment-variable lock for a test.
-    fn lock_env() -> MutexGuard<'static, ()> {
-        // A failed test poisons the lock; the guarded data is `()`, so ignore that.
-        ENV_LOCK.lock().unwrap_or_else(PoisonError::into_inner)
+        let output = command.output()?;
+        assert!(
+            output.status.success(),
+            "child environment check failed: {}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        Ok(())
     }
 
     /// Verify that the global argument "config" requires a value.
     #[test]
     fn test_arg_config_malformed() {
-        let _guard = lock_env();
         let m = cli().try_get_matches_from(vec!["prog", "--config"]); // no value provided.
         assert!(m.is_err());
     }
@@ -108,7 +121,6 @@ mod tests {
     /// Test the global argument "config".
     #[test]
     fn test_arg_config_short() {
-        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "-c", "config.toml"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
@@ -119,7 +131,6 @@ mod tests {
     /// Test the global argument "config", long form.
     #[test]
     fn test_arg_config_long() {
-        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "--config", "config.toml"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
@@ -130,7 +141,6 @@ mod tests {
     /// Test the global argument "config", alias form.
     #[test]
     fn test_arg_config_alias() {
-        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "--configuration", "config.toml"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
@@ -140,29 +150,35 @@ mod tests {
 
     /// Test passing the "config" argument via an enviroment variable.
     #[test]
-    fn test_arg_config_env() {
-        let _guard = lock_env();
-        let key = "TOOL_CONFIG_FILE";
-        unsafe {
-            std::env::set_var(key, "config.toml");
-        }
-        let m = cli().try_get_matches_from(vec!["prog"]);
-        // Clean up the env variable.
-        unsafe {
-            std::env::remove_var(key);
-        }
-        assert!(std::env::var(key).is_err());
+    fn test_arg_config_env() -> std::io::Result<()> {
+        check_environment(Some("config.toml"), None)
+    }
+
+    /// Verifies the child reads the environment values supplied by its parent.
+    #[test]
+    #[ignore = "needs a parent-controlled CLI environment"]
+    fn child_checks_controlled_environment() {
+        let expected_config = std::env::var("EXPECTED_CONFIG")
+            .expect("the parent supplies the expected config value");
+        let expected_verbose =
+            std::env::var("EXPECTED_VERBOSE").expect("the parent supplies the expected verbosity");
+        let matches = cli()
+            .try_get_matches_from(["prog"])
+            .expect("the controlled child environment should parse");
+        let config = get_arg_config(&matches).map(|path| path.display().to_string());
+        let expected_config = (expected_config != "<unset>").then_some(expected_config);
+        assert_eq!(config, expected_config);
         assert_eq!(
-            get_arg_config(&m.expect("valid --configuration arguments should parse"))
-                .map(|pb| format!("{}", pb.display())),
-            Some("config.toml".into())
+            get_arg_verbose(&matches),
+            expected_verbose
+                .parse::<u8>()
+                .expect("the parent supplies a numeric verbosity")
         );
     }
 
     /// Verifies that `--config` works globally, including after a subcommand.
     #[test]
     fn test_arg_config_global() {
-        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "open", "--config", "config.toml", "abc.csv"]);
         assert_eq!(
             get_arg_config(&m).map(|pb| format!("{}", pb.display())),
@@ -181,7 +197,6 @@ mod tests {
     /// Test the app-level "filepaths" argument.
     #[test]
     fn test_arg_filepaths_empty() {
-        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog"]);
         assert_eq!(get_arg_filepaths(&m), None);
     }
@@ -189,7 +204,6 @@ mod tests {
     /// Checks that several file paths are collected.
     #[test]
     fn test_arg_filepaths_multiple() {
-        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "a.csv", "b.csv"]);
         assert_eq!(
             get_arg_filepaths(&m),
@@ -199,16 +213,13 @@ mod tests {
 
     /// Checks that the verbosity is 0 by default.
     #[test]
-    fn test_arg_verbose_none() {
-        let _guard = lock_env();
-        let m = cli().get_matches_from(vec!["prog"]);
-        assert_eq!(get_arg_verbose(&m), 0);
+    fn test_arg_verbose_none() -> std::io::Result<()> {
+        check_environment(None, None)
     }
 
     /// Checks that repeated `-v` flags raise the verbosity.
     #[test]
     fn test_arg_verbose_multiple() {
-        let _guard = lock_env();
         let m = cli().get_matches_from(vec!["prog", "-vvv"]);
         assert_eq!(get_arg_verbose(&m), 3);
 
@@ -218,21 +229,7 @@ mod tests {
 
     /// Checks that the verbosity can be set with an environment variable.
     #[test]
-    fn test_arg_verbose_env() {
-        let _guard = lock_env();
-        let key = "TOOL_VERBOSE";
-        unsafe {
-            std::env::set_var(key, "1");
-        }
-        let m = cli().try_get_matches_from(vec!["prog"]);
-        // clean up the env variable.
-        unsafe {
-            std::env::remove_var(key);
-        }
-        assert!(std::env::var(key).is_err());
-        assert_eq!(
-            get_arg_verbose(&m.expect("valid --verbose environment value should parse")),
-            1
-        );
+    fn test_arg_verbose_env() -> std::io::Result<()> {
+        check_environment(None, Some("1"))
     }
 }

@@ -1,0 +1,9 @@
+error[E0502]: cannot borrow `*exclusive` as mutable because it is also borrowed as immutable
+ --> tests/ui/incompatible_shared_reborrow.rs:5:29
+  |
+4 |     let first = &*exclusive;
+  |                 ----------- immutable borrow occurs here
+5 |     let _mutable_reborrow = &mut *exclusive;
+  |                             ^^^^^^^^^^^^^^^ mutable borrow occurs here
+6 |     println!("{first}");
+  |                ----- immutable borrow later used here

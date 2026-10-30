@@ -69,18 +69,11 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that the backtrace example's main path succeeds.
-    /// Runs the backtrace example through its entry point.
+    /// Verifies that invalid CSV data returns an error from the example.
     #[test]
     fn test_backtrace_example_entry_point() {
-        unsafe {
-            std::env::set_var("RUST_BACKTRACE", "1");
-        }
         let res = main();
         println!("{res:?}");
-        unsafe {
-            std::env::set_var("RUST_BACKTRACE", "");
-        }
         assert!(res.is_err());
     }
 }

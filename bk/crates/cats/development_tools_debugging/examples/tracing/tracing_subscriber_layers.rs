@@ -130,6 +130,8 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 
 #[cfg(test)]
 mod tests {
+    use std::process::Command;
+
     use super::*;
 
     /// Exercises the tracing layer configuration.
@@ -140,12 +142,24 @@ mod tests {
 
     /// Checks that filters can be built.
     #[test]
-    fn test_filter() {
-        // Set environment variable required for custom filter construction in
-        // tests.
-        unsafe {
-            std::env::set_var("MY_CUSTOM_FILTER_ENV_VAR", "info");
-        }
+    fn test_filter() -> std::io::Result<()> {
+        let output = Command::new(std::env::current_exe()?)
+            .args(["child_checks_custom_filter", "--ignored"])
+            .env("MY_CUSTOM_FILTER_ENV_VAR", "info")
+            .output()?;
+        assert!(
+            output.status.success(),
+            "child filter test failed: {}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        Ok(())
+    }
+
+    /// Builds the filter in a fresh process with the environment from its
+    /// parent.
+    #[test]
+    #[ignore = "needs a parent-controlled filter environment"]
+    fn child_checks_custom_filter() {
         filter().expect(
             "the tracing subscriber layers example invariant should hold",
         );

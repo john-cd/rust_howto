@@ -46,6 +46,8 @@ The following example implements a spinlock using [`std::sync::atomic::AtomicBoo
 {{#include ../../../crates/cats/concurrency/examples/atomics/spinlock.rs:example}}
 ```
 
+`Spinlock<T>` is `Sync` when `T: Send`, because access to its protected value goes through the lock. Its guard carries an exclusive-access marker, so a guard is `Send` when `T: Send` but is `Sync` only when `T: Sync`. This prevents two threads from sharing one guard to access a non-`Sync` value such as `Cell<T>` concurrently.
+
 ## Related Topics {#related-topics .skip}
 
 - [[shared_state | Shared-State Concurrency]].

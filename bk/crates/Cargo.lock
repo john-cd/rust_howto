@@ -3706,6 +3706,7 @@ dependencies = [
  "rtrb",
  "sha2 0.11.1",
  "stakker",
+ "static_assertions",
  "tempfile",
  "threadpool",
  "time",
@@ -5319,8 +5320,6 @@ dependencies = [
  "proptest",
  "rstest",
  "serde",
- "serial_test",
- "temp-env",
  "tokio",
  "ureq",
 ]
@@ -10413,6 +10412,7 @@ dependencies = [
  "proc_macros",
  "strum 0.28.0",
  "tokio",
+ "trybuild",
 ]
 
 [[package]]
@@ -17937,31 +17937,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "serial_test"
-version = "4.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a6df5ed973ad8d834e09f824f9e9f449af6b9a3745f78dec7cc752770bd3bf11"
-dependencies = [
- "futures-executor",
- "futures-util",
- "log",
- "once_cell",
- "parking_lot 0.12.5",
- "serial_test_derive",
-]
-
-[[package]]
-name = "serial_test_derive"
-version = "4.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a22144e767da4ddd8416dbf383700542ffd8a5dc493dfecedfe1fe3ad03c98ae"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 3.0.9",
-]
-
-[[package]]
 name = "serialport"
 version = "4.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -20562,15 +20537,6 @@ dependencies = [
  "futures-io",
  "p12-keystore",
  "rustls-connector",
-]
-
-[[package]]
-name = "temp-env"
-version = "0.3.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "96374855068f47402c3121c6eed88d29cb1de8f3ab27090e273e420bdabcf050"
-dependencies = [
- "parking_lot 0.12.5",
 ]
 
 [[package]]

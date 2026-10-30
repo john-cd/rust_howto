@@ -93,11 +93,11 @@ mod tests {
     fn query_and_test() {
         assert_eq!(
             describe_args(&["demo", "query", "a", "b"]).last(),
-            Some(&r#"Command: query ["a", "b"]"#.to_string())
+            Some(&r#"Command: query ["a", "b"]"#.to_owned())
         );
         assert_eq!(
             describe_args(&["demo", "test"]).last(),
-            Some(&"Command: test".to_string())
+            Some(&"Command: test".to_owned())
         );
     }
 }

@@ -7,7 +7,8 @@
 //! same allocation on the heap as the source `Arc`, while increasing a
 //! reference count.
 //!
-//! This implementation is not intended for production use.
+//! This implementation is not intended for production use. Cloning panics
+//! rather than allowing the strong count to overflow.
 
 /// A simplified `Arc` that implements `Send` and `Sync`.
 mod my {
@@ -15,11 +16,9 @@ mod my {
     use std::marker::PhantomData;
     use std::marker::Send;
     use std::marker::Sync;
-    use std::mem::ManuallyDrop;
     use std::ops::Deref;
     use std::sync::atomic::AtomicUsize;
-    use std::sync::atomic::Ordering::Relaxed;
-    use std::sync::atomic::Ordering::Release;
+    use std::sync::atomic::Ordering;
 
     /// Private inner data structure.
     /// It holds the actual data and the reference count.
@@ -30,11 +29,6 @@ mod my {
         /// The shared data.
         data: T,
     }
-
-    // `ArcInner` should be `Send` and `Sync` if the underlying data is.
-    unsafe impl<T: Sync + Send> Send for ArcInner<T> {}
-
-    unsafe impl<T: Sync + Send> Sync for ArcInner<T> {}
 
     /// A simplified implementation of `Arc`.
     /// The fields are private and unreachable outside of the module.
@@ -49,9 +43,8 @@ mod my {
         phantom: PhantomData<ArcInner<T>>,
     }
 
-    // SAFETY: By implementing `Send` for `Arc`, we declare it can be sent
-    // across threads safely. By implementing `Sync`, we declare it can be
-    // shared across threads safely.
+    // SAFETY: Every instance owns one strong count on a valid allocation.
+    // The count uses atomics, and sharing `T` requires both `Send` and `Sync`.
     unsafe impl<T: Sync + Send> Send for Arc<T> {}
 
     unsafe impl<T: Sync + Send> Sync for Arc<T> {}
@@ -63,23 +56,13 @@ mod my {
         ///
         /// * `data` - The data to be shared.
         pub fn new(data: T) -> Self {
-            // Create the inner data structure on the heap.
-            // We also inhibit the compiler from automatically calling its
-            // destructor using `ManuallyDrop`.
-            let mut inner = ManuallyDrop::new(Box::new(ArcInner {
+            // Store the allocation's ownership in the raw pointer. The final
+            // Arc drop reconstructs this Box and frees the allocation.
+            let inner = Box::new(ArcInner {
                 count: AtomicUsize::new(1),
                 data,
-            }));
-
-            // We store a reference to the data as a raw pointer
-            // (which is `!Sync` and `!Send` by itself).
-            let ptr: *mut ArcInner<T> = std::ptr::from_mut(&mut **inner);
-            // A reference is just a pointer that is assumed to be aligned, not
-            // null, and pointing to memory containing a valid value
-            // of `T` in this case. Thus the pointer made from it
-            // is as well.
-            assert!(!ptr.is_null());
-            assert!(ptr.is_aligned());
+            });
+            let ptr = Box::into_raw(inner);
             println!("Created `Arc` with reference count 1.");
             // SAFETY: `ptr` points to the `ArcInner` we just allocated.
             unsafe { Self::from_inner(ptr) }
@@ -87,12 +70,10 @@ mod my {
 
         /// Returns a reference to the inner data.
         ///
-        /// SAFETY: this function dereferences a raw pointer.
-        /// This said, `new()` guarantees that the inner pointer is valid.
+        /// The allocation stays live while this `Arc` owns one strong count.
         fn inner(&self) -> &ArcInner<T> {
-            assert!(!self.ptr.is_null());
-            assert!(self.ptr.is_aligned());
-
+            // SAFETY: `Arc::new` creates a valid allocation, and cloning only
+            // copies the pointer while incrementing its strong count.
             unsafe {
                 self.ptr
                     .as_ref()
@@ -102,13 +83,11 @@ mod my {
 
         /// Creates a new `Arc` from a raw pointer to an `ArcInner`.
         ///
-        /// SAFETY: This function is unsafe because it takes a raw pointer as
-        /// input. The caller must ensure that the pointer is valid and
-        /// points to a properly initialized `ArcInner` instance.
+        /// # Safety
+        ///
+        /// `ptr` must be non-null, aligned, point to a valid `ArcInner<T>`,
+        /// and represent one strong reference that this value will release.
         unsafe fn from_inner(ptr: *mut ArcInner<T>) -> Self {
-            assert!(!ptr.is_null());
-            assert!(ptr.is_aligned());
-
             Self {
                 ptr,
                 phantom: PhantomData,
@@ -121,9 +100,18 @@ mod my {
     /// This increments the reference count.
     impl<T> Clone for Arc<T> {
         fn clone(&self) -> Self {
-            // Increment the reference count.
-            // `count` is atomic, so this is thread-safe.
-            let previous_count = self.inner().count.fetch_add(1, Relaxed);
+            // Increase the count only if it will not wrap and invalidate the
+            // ownership guarantee. `fetch_update` leaves the count unchanged
+            // when `checked_add` fails.
+            let previous_count = self
+                .inner()
+                .count
+                .try_update(Ordering::Relaxed, Ordering::Relaxed, |count| {
+                    count.checked_add(1)
+                })
+                .unwrap_or_else(|_| {
+                    panic!("Arc strong reference count overflow")
+                });
             println!(
                 "Increased the reference count; previous value: {previous_count}"
             );
@@ -139,7 +127,8 @@ mod my {
         type Target = T;
 
         fn deref(&self) -> &Self::Target {
-            // Dereference the pointer and create a reference to the data.
+            // SAFETY: this `Arc` owns a live strong count, so its allocation
+            // and initialized data remain valid for the returned borrow.
             unsafe { &(*self.ptr).data }
         }
     }
@@ -152,18 +141,74 @@ mod my {
         fn drop(&mut self) {
             // Subtracts from the current value, returning the previous value.
             // `count` is atomic, so this is thread-safe.
-            let previous_count = self.inner().count.fetch_sub(1, Release);
+            let previous_count =
+                self.inner().count.fetch_sub(1, Ordering::Release);
             if previous_count != 1 {
                 println!(
                     "Decreased reference count; previous count: {previous_count}"
                 );
                 return;
             }
-            // When the reference count is zero, we drop the underlying data.
-            unsafe { std::ptr::drop_in_place(&mut (*self.ptr).data) };
-            // We could also use `ManuallyDrop::drop(&mut (*self.ptr))`;
+            // Pair this acquire fence with every Release decrement so the
+            // final owner observes accesses made before other owners dropped.
+            std::sync::atomic::fence(Ordering::Acquire);
+
+            // SAFETY: the count reached zero, so this is the unique final
+            // owner. `Box::from_raw` drops `T` once and frees the allocation.
+            unsafe { drop(Box::from_raw(self.ptr)) };
 
             println!("`Arc` data fully dropped!");
+        }
+    }
+
+    #[cfg(test)]
+    mod tests {
+        use std::panic::AssertUnwindSafe;
+        use std::panic::catch_unwind;
+        use std::sync::Arc as StdArc;
+        use std::sync::atomic::AtomicUsize;
+        use std::sync::atomic::Ordering;
+
+        use super::Arc;
+
+        /// Tracks whether the shared value is destroyed.
+        struct DropCounter(StdArc<AtomicUsize>);
+
+        impl Drop for DropCounter {
+            fn drop(&mut self) {
+                self.0.fetch_add(1, Ordering::Relaxed);
+            }
+        }
+
+        /// Verifies the last owner can drop the value on another thread once.
+        #[test]
+        fn final_owner_drops_value_once_on_another_thread() {
+            let drops = StdArc::new(AtomicUsize::new(0));
+            let value = Arc::new(DropCounter(StdArc::clone(&drops)));
+            let worker_value = value.clone();
+            drop(value);
+
+            std::thread::spawn(move || drop(worker_value))
+                .join()
+                .expect("the final owner thread should finish");
+
+            assert_eq!(drops.load(Ordering::Relaxed), 1);
+        }
+
+        /// Verifies that a failed clone leaves an overflowing count unchanged.
+        #[test]
+        fn clone_panics_before_strong_count_overflow() {
+            let value = Arc::new(());
+            value.inner().count.store(usize::MAX, Ordering::Relaxed);
+
+            let clone_result = catch_unwind(AssertUnwindSafe(|| value.clone()));
+
+            assert!(clone_result.is_err());
+            assert_eq!(value.inner().count.load(Ordering::Relaxed), usize::MAX);
+
+            // Restore the private test fixture's count so its own drop frees
+            // the allocation instead of modeling an impossible live state.
+            value.inner().count.store(1, Ordering::Relaxed);
         }
     }
 }
@@ -227,9 +272,9 @@ mod tests {
         main();
     }
 }
-// Miri: the `unsafe` code above relies on two invariants: the raw `ArcInner`
-// pointer stays valid until the strong count reaches zero, and `data` is
-// dropped exactly once. The example is pure Rust (no FFI or I/O), so it can run
-// under Miri on a nightly toolchain with the `miri` component: `cargo +nightly
-// miri test --example send_sync_impl` from `bk/crates`. Miri is not part of the
-// required checks: it is not installed in CI.
+// Miri: the `unsafe` code above relies on the raw `ArcInner` pointer staying
+// valid until the strong count reaches zero, then being reclaimed exactly
+// once. From `bk/crates`, run `cargo +nightly miri test -p concurrency
+// --example send_sync final_owner_drops_value_once_on_another_thread`. Miri can
+// catch invalid pointer use and report the leaked allocation; it does not model
+// weak-memory reorderings, which need a faithful Loom model.

@@ -10,11 +10,27 @@ use std::time::UNIX_EPOCH;
 
 use anyhow::Context as _;
 
+const TEST_JWT_SECRET: &str =
+    "default_test_secret_key_that_is_at_least_32_bytes_long";
+
 /// Signs and verifies an in-memory token using the `JWT_SECRET` environment
 /// variable.
+///
+/// # Errors
+/// Returns an error if `JWT_SECRET` is missing, too short, or token creation
+/// or verification fails.
 fn main() -> anyhow::Result<()> {
     let secret = std::env::var("JWT_SECRET")
         .context("set JWT_SECRET to at least 32 random bytes")?;
+    run_with_secret(&secret)
+}
+
+/// Signs and verifies a short-lived token with `secret`.
+///
+/// # Errors
+/// Returns an error if the secret is invalid or token creation or verification
+/// fails.
+fn run_with_secret(secret: &str) -> anyhow::Result<()> {
     let jwt_secret = jwt_axum_extractor::JwtSecret::new(secret.as_bytes())?;
     let exp = SystemTime::now()
         .duration_since(UNIX_EPOCH)
@@ -37,27 +53,21 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Runs the JWT authentication example with a fallback secret for tests.
+/// Runs the example with a deterministic test secret without changing the
+/// process environment.
 #[allow(
     clippy::main_recursion,
     reason = "run() is the shared example runner; main() is the book snippet"
 )]
 pub fn run() -> anyhow::Result<()> {
-    unsafe {
-        if std::env::var("JWT_SECRET").is_err() {
-            std::env::set_var(
-                "JWT_SECRET",
-                "default_test_secret_key_that_is_at_least_32_bytes_long",
-            );
-        }
-    }
-    main()
+    run_with_secret(TEST_JWT_SECRET)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Verifies that the example succeeds with its injected test secret.
     #[test]
     fn test_jwt_authentication_entry_point() -> anyhow::Result<()> {
         run()

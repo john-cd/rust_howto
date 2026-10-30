@@ -6,6 +6,8 @@
 //!
 //! To run this example, ensure the `Greeter` server is already running.
 
+use std::net::SocketAddr;
+
 use helloworld::HelloRequest;
 use helloworld::greeter_client::GreeterClient;
 
@@ -14,22 +16,26 @@ pub mod helloworld {
     tonic::include_proto!("helloworld");
 }
 
+/// Sends a greeting request to `address` and returns the reply.
+///
+/// # Errors
+/// Returns an error if the server cannot be reached or the request fails.
+async fn greet(address: SocketAddr, name: &str) -> anyhow::Result<String> {
+    let mut client =
+        GreeterClient::connect(format!("http://{address}")).await?;
+    let request = tonic::Request::new(HelloRequest {
+        name: name.to_owned(),
+    });
+    let response = client.say_hello(request).await?;
+    Ok(response.into_inner().message)
+}
+
 /// Sends a request to the gRPC server and prints the reply.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Connect to the gRPC server using the address defined in the server
-    // example.
-    let mut client = GreeterClient::connect("http://[::1]:50051").await?;
-
-    // Prepare a request containing the name to be greeted.
-    let request = tonic::Request::new(HelloRequest {
-        name: "Rustacean".into(),
-    });
-
-    // Execute the `say_hello` remote procedure call.
-    let response = client.say_hello(request).await?;
-
-    println!("Greeting from server: {}", response.into_inner().message);
+    let address = "[::1]:50051".parse()?;
+    let message = greet(address, "Rustacean").await?;
+    println!("Greeting from server: {message}");
 
     Ok(())
 }
@@ -45,7 +51,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies a client can call the sibling gRPC server on an ephemeral port.
+    /// Verifies the client helper can call a server on a loopback socket.
     #[tokio::test]
     async fn grpc_client_receives_greeting_and_shuts_down_server()
     -> anyhow::Result<()> {
@@ -55,7 +61,6 @@ mod tests {
 
         let listener = TcpListener::bind("127.0.0.1:0").await?;
         let address = listener.local_addr()?;
-        let client_url = format!("http://{address}");
         let (shutdown_sender, shutdown_receiver) = oneshot::channel();
         let server = tokio::spawn(async move {
             tonic::transport::Server::builder()
@@ -73,15 +78,7 @@ mod tests {
                 .await
         });
 
-        let call_result = async {
-            let mut client = GreeterClient::connect(client_url).await?;
-            let request = tonic::Request::new(HelloRequest {
-                name: "Integration".into(),
-            });
-            let response = client.say_hello(request).await?;
-            anyhow::Result::<String>::Ok(response.into_inner().message)
-        }
-        .await;
+        let call_result = greet(address, "Integration").await;
         let shutdown_result = shutdown_sender.send(());
         let server_result = server.await;
 
@@ -93,11 +90,10 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example against the separately started demo server.
     #[test]
     #[ignore = "needs the tonic server example listening on [::1]:50051"]
     fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        main().expect("the example should succeed when the server is running");
     }
 }

@@ -104,8 +104,18 @@ Instead, you may:
 - **`T` only contains owned types**: In generic code, the type parameter `T` contains all types, including references (e.g., `&i32` or `&mut i32`). Therefore, `T` is a superset of `&T` and `&mut T`.
 - **`T: 'static` means the type must be valid for the entire program**: `T: 'static` actually means that `T` _can_ live at least as long as a `'static` lifetime. Owned types (like `String` or `Vec`) satisfy this bound because their owner can hold them indefinitely. It does not mean the value _has_ to live for the entire program, or that it is created at compile time.
 - **`&'a T` and `T: 'a` are the same**: `T: 'a` means type `T` must be valid for lifetime `'a`. This accepts owned types, types containing references, and references. `&'a T` only accepts references.
-- **Downgrading mutable references to shared references is always safe**: When you re-borrow a mutable reference as a shared reference (for example, returning `&T` from a method that takes `&mut self`), it extends the mutable reference's exclusive borrow for the duration of the re-borrow. This means you cannot have other overlapping shared references, keeping the restrictiveness of an exclusive borrow while only providing read-only access.
+- **Shared reborrows cannot overlap**: Multiple shared reborrows of the same mutable reference may overlap. While any such shared borrow remains live, the original mutable reference cannot be used for incompatible mutable access.
 - **Lifetimes can grow and shrink at run-time**: Lifetimes are statically verified at compile-time. The borrow checker assumes every code path can be taken and chooses the shortest possible lifetime. Lifetimes cannot grow or shrink dynamically at run-time.
+
+## Overlap Shared Reborrows {#shared-reborrows}
+
+Reborrowing an `&mut T` as `&T` permits other shared reborrows of that same value to overlap. The original mutable reference stays unavailable for mutation until the shared references' last use has passed:
+
+```rust,editable
+{{#include ../../crates/language/examples/lifetimes/shared_reborrows.rs:example}}
+```
+
+A method returning `&T` from `&mut self` has the same rule. The returned reference keeps the receiver borrowed for as long as the result is live, so code cannot mutate through the receiver during that time. This does not prevent other shared references from overlapping. The borrow-checker failure for attempting that mutation is kept as a compile-fail fixture in the `language` crate.
 
 ## References {#references .skip}
 

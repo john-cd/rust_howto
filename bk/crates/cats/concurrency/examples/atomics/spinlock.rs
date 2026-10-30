@@ -4,6 +4,7 @@
 //! A spinlock built on an atomic flag, with a guard that unlocks it on drop.
 
 use std::cell::UnsafeCell;
+use std::marker::PhantomData;
 use std::ops::Deref;
 use std::ops::DerefMut;
 use std::ops::Drop;
@@ -53,7 +54,10 @@ impl<T> Spinlock<T> {
             std::hint::spin_loop();
         }
         // We successfully acquired the lock, return the guard:
-        SpinlockGuard { lock: self }
+        SpinlockGuard {
+            lock: self,
+            exclusive: PhantomData,
+        }
     }
 
     // Internal unlock method used by the guard.
@@ -67,6 +71,9 @@ impl<T> Spinlock<T> {
 // SAFETY: `lock` serializes access to the `UnsafeCell`, and its guard keeps
 // the flag held until all references to the protected value are dropped. The
 // `Send` bound allows the protected value to move between threads.
+// SAFETY: `lock` grants exclusive access through its guard, and `T: Send`
+// allows the protected value to move between threads. The guard's exclusive
+// marker prevents sharing a guard unless `T: Sync`.
 unsafe impl<T: Send> Sync for Spinlock<T> {}
 
 // --- SpinlockGuard Implementation ---
@@ -79,6 +86,8 @@ unsafe impl<T: Send> Sync for Spinlock<T> {}
 pub struct SpinlockGuard<'a, T> {
     /// The spinlock that this guard holds.
     lock: &'a Spinlock<T>,
+    /// Keeps the guard's auto-traits aligned with exclusive access to `T`.
+    exclusive: PhantomData<&'a mut T>,
 }
 
 impl<T> Drop for SpinlockGuard<'_, T> {
@@ -155,7 +164,42 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use std::cell::Cell;
+    use std::panic::AssertUnwindSafe;
+    use std::panic::catch_unwind;
+
+    use static_assertions::assert_not_impl_any;
+
     use super::*;
+
+    assert_not_impl_any!(SpinlockGuard<'static, Cell<u8>>: Sync);
+
+    /// Requires a type to implement `Send` at compile time.
+    fn assert_send<T: Send>() {}
+
+    /// Requires a type to implement `Sync` at compile time.
+    fn assert_sync<T: Sync>() {}
+
+    /// Checks that the guard is shareable only when its payload is `Sync`.
+    #[test]
+    fn guard_auto_traits_follow_payload_bounds() {
+        assert_send::<SpinlockGuard<'static, Cell<u8>>>();
+        assert_send::<SpinlockGuard<'static, u8>>();
+        assert_sync::<SpinlockGuard<'static, u8>>();
+    }
+
+    /// Verifies unwinding drops the guard and releases the lock.
+    #[test]
+    fn guard_unlocks_during_unwind() {
+        let lock = Spinlock::new(0);
+        let result = catch_unwind(AssertUnwindSafe(|| {
+            let _guard = lock.lock();
+            panic!("test unwind while holding the guard");
+        }));
+
+        assert!(result.is_err());
+        assert_eq!(*lock.lock(), 0);
+    }
 
     /// Runs the spinlock example through its entry point.
     #[test]

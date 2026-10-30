@@ -10,6 +10,7 @@ mod lifetime_parameter_struct;
 mod lifetime_parameters;
 mod self_referential_struct;
 mod self_referential_struct2;
+mod shared_reborrows;
 mod static_lifetime;
 
 /// Command-line arguments.
@@ -32,6 +33,9 @@ enum Commands {
     /// Runs the `lifetime_parameters` example.
     #[command(name = "lifetime_parameters")]
     LifetimeParameters,
+    /// Runs the `shared_reborrows` example.
+    #[command(name = "shared_reborrows")]
+    SharedReborrows,
     /// Runs the `self_referential_struct` example.
     #[command(name = "self_referential_struct")]
     SelfReferentialStruct,
@@ -55,6 +59,9 @@ fn dispatch(cli: Cli) {
             }
             Commands::LifetimeParameters => {
                 lifetime_parameters::run();
+            }
+            Commands::SharedReborrows => {
+                shared_reborrows::run();
             }
             Commands::SelfReferentialStruct => {
                 self_referential_struct::run();
@@ -81,7 +88,15 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["lifetime_parameter_function", "lifetime_parameter_struct", "lifetime_parameters", "self_referential_struct", "self_referential_struct2", "static_lifetime"];
+    const SUBCOMMANDS: &[&str] = &[
+        "lifetime_parameter_function",
+        "lifetime_parameter_struct",
+        "lifetime_parameters",
+        "shared_reborrows",
+        "self_referential_struct",
+        "self_referential_struct2",
+        "static_lifetime",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -117,7 +132,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

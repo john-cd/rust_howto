@@ -39,23 +39,31 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
-    use std::sync::Mutex;
+    use std::process::Command;
 
     use super::*;
 
-    /// Serializes tests that change process environment variables.
-    static ENV_LOCK: Mutex<()> = Mutex::new(());
-
-    /// Verifies that the envy example's main path succeeds.
-    /// Runs the envy example through its entry point.
+    /// Verifies the example with environment values isolated in a child
+    /// process.
     #[test]
-    fn test_envy_example_entry_point() {
-        let _guard =
-            ENV_LOCK.lock().expect("environment variable lock poisoned");
-        unsafe {
-            std::env::set_var("PORT", "80");
-            std::env::set_var("MY_APP__PORT", "8080");
-        }
+    fn test_envy_example_entry_point() -> std::io::Result<()> {
+        let output = Command::new(std::env::current_exe()?)
+            .args(["child_reads_controlled_environment", "--ignored"])
+            .env("PORT", "80")
+            .env("MY_APP__PORT", "8080")
+            .output()?;
+        assert!(
+            output.status.success(),
+            "child environment test failed: {}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        Ok(())
+    }
+
+    /// Runs the example in the child with values supplied by its parent.
+    #[test]
+    #[ignore = "needs a parent-controlled environment"]
+    fn child_reads_controlled_environment() {
         main();
     }
 }

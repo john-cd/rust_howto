@@ -8,8 +8,10 @@
 //! lets pages from other origins call the service. gRPC-Web does not support
 //! client streaming; put Envoy in front instead if you need it.
 
-use std::net::SocketAddr;
+use std::future::Future;
 
+use tokio::net::TcpListener;
+use tokio_stream::wrappers::TcpListenerStream;
 use tonic::transport::Server;
 use tonic_web::GrpcWebLayer;
 use tower_http::cors::AllowOrigin;
@@ -30,16 +32,28 @@ pub fn cors() -> CorsLayer {
         ])
 }
 
-/// Serves the `Greeter` service over gRPC and gRPC-Web on the same port.
-#[expect(dead_code, reason = "binds a port and serves until stopped")]
-pub async fn serve(addr: SocketAddr) -> anyhow::Result<()> {
+/// Serves the `Greeter` service over gRPC and gRPC-Web on a bound listener.
+///
+/// # Errors
+/// Returns an error if the server cannot serve the listener.
+#[cfg_attr(
+    not(test),
+    expect(dead_code, reason = "serves until its shutdown signal is received")
+)]
+pub async fn serve<F>(listener: TcpListener, shutdown: F) -> anyhow::Result<()>
+where
+    F: Future<Output = ()> + Send + 'static,
+{
     Server::builder()
         // Required: gRPC-Web may arrive over HTTP/1.1.
         .accept_http1(true)
         .layer(cors())
         .layer(GrpcWebLayer::new())
         .add_service(GreeterServer::new(MyGreeter::default()))
-        .serve(addr)
+        .serve_with_incoming_shutdown(
+            TcpListenerStream::new(listener),
+            shutdown,
+        )
         .await?;
     Ok(())
 }
@@ -49,43 +63,69 @@ pub async fn serve(addr: SocketAddr) -> anyhow::Result<()> {
 mod tests {
     use bytes::Bytes;
     use bytes::BytesMut;
-    use http_body_util::BodyExt;
-    use http_body_util::Full;
-    use tower::Layer as _;
-    use tower::ServiceExt as _;
 
     use super::*;
 
     /// Encodes `HelloRequest { name }` in a gRPC length-prefixed frame.
     fn frame(name: &str) -> Bytes {
         // Protobuf: field 1, wire type 2 (length-delimited).
-        let mut message = vec![0x0a, u8::try_from(name.len()).unwrap_or(0)];
+        let name_length = u8::try_from(name.len())
+            .expect("test greeting names fit in a one-byte protobuf length");
+        let mut message = vec![0x0a, name_length];
         message.extend_from_slice(name.as_bytes());
         let mut out = BytesMut::new();
         out.extend_from_slice(&[0]); // Not compressed.
-        out.extend_from_slice(&(message.len() as u32).to_be_bytes());
+        let message_length = u32::try_from(message.len())
+            .expect("test protobuf messages fit in a four-byte frame length");
+        out.extend_from_slice(&message_length.to_be_bytes());
         out.extend_from_slice(&message);
         out.freeze()
     }
 
+    /// Verifies the service handles a gRPC-Web request over a loopback socket.
     #[tokio::test]
-    async fn grpc_web_request_round_trip() -> anyhow::Result<()> {
-        let service =
-            GrpcWebLayer::new().layer(GreeterServer::new(MyGreeter::default()));
-        let request = http::Request::post("/helloworld.Greeter/SayHello")
-            .header("content-type", "application/grpc-web")
-            .header("x-grpc-web", "1")
-            .body(tonic::body::Body::new(Full::new(frame("Rust"))))?;
+    async fn grpc_web_request_round_trip_over_loopback() -> anyhow::Result<()> {
+        let listener = TcpListener::bind("127.0.0.1:0").await?;
+        let address = listener.local_addr()?;
+        let (shutdown_sender, shutdown_receiver) =
+            tokio::sync::oneshot::channel();
+        let server = tokio::spawn(serve(listener, async move {
+            let _ = shutdown_receiver.await;
+        }));
+        tokio::task::yield_now().await;
 
-        let response = service.oneshot(request).await?;
-        assert_eq!(response.status(), http::StatusCode::OK);
-        assert_eq!(
-            response.headers()["content-type"],
-            "application/grpc-web+proto"
-        );
-        let body = response.into_body().collect().await?.to_bytes();
-        let text = String::from_utf8_lossy(&body);
-        assert!(text.contains("Hello Rust!"), "unexpected body: {text:?}");
+        let request_result = async {
+            let response = reqwest::Client::builder()
+                .http1_only()
+                .build()?
+                .post(format!("http://{address}/helloworld.Greeter/SayHello"))
+                .header("content-type", "application/grpc-web")
+                .header("x-grpc-web", "1")
+                .body(frame("Rust"))
+                .send()
+                .await?;
+            assert_eq!(response.status().as_u16(), 200);
+            assert_eq!(
+                response.headers()["content-type"],
+                "application/grpc-web+proto"
+            );
+            let body = response.bytes().await?;
+            assert!(
+                body.windows(b"Hello Rust!".len())
+                    .any(|window| window == b"Hello Rust!"),
+                "unexpected gRPC-Web body: {body:?}"
+            );
+            anyhow::Result::<()>::Ok(())
+        }
+        .await;
+
+        let shutdown_result = shutdown_sender.send(());
+        let server_result = server.await;
+        request_result?;
+        shutdown_result.map_err(|()| {
+            anyhow::anyhow!("gRPC-Web server exited before shutdown")
+        })?;
+        server_result??;
         Ok(())
     }
 }

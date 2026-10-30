@@ -69,8 +69,9 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Entries can be created without touching the store.
+    /// Checks that an entry can be created when a store is available.
     #[test]
+    #[ignore = "requires an OS credential store"]
     fn entry_can_be_opened() -> Result<(), Error> {
         let _vault = Vault::new("unit-test")?;
         Ok(())

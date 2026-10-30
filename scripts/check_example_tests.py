@@ -13,6 +13,8 @@ Convention (see the tracking issue for "Test all book examples"):
   process arguments belong to the test harness, test the parameterized entry
   helper instead. A test module may state `output-only` when the example only
   prints output to check.
+  An ignored test with a reason beginning `requires` or `needs` is also accepted
+  because the test depends on an external service or resource.
 
 Usage: scripts/check_example_tests.py [--summary] [--csv] [ROOT ...]
 Default roots: bk/crates later/crates xmpl playground tools.
@@ -34,6 +36,10 @@ FN_RUN = re.compile(r"^\s*pub(?:\([^)]*\))?\s+(?:async\s+)?fn\s+run\s*\(", re.M)
 CFG_TEST = re.compile(r"#\[cfg\(test\)\]")
 TEST_ATTR = re.compile(r"#\[(?:\w+::)*test\b")
 MAIN_CALL = re.compile(r"(?<![\w:])(?:super::)?main\s*\(\s*\)")
+IGNORED_EXTERNAL_TEST = re.compile(
+    r'#\[\s*ignore\s*=\s*"(?:requires?|needs?)\b[^\"]*"\s*\]',
+    re.I,
+)
 
 
 def crate_root(path: Path) -> str:
@@ -48,7 +54,7 @@ def classify(path: Path):
     has_main = bool(FN_MAIN.search(text))
     has_run = bool(FN_RUN.search(text))
     has_cfg_test = bool(CFG_TEST.search(text)) or bool(TEST_ATTR.search(text))
-    tail = text[CFG_TEST.search(text).start():] if CFG_TEST.search(text) else ""
+    tail = text[CFG_TEST.search(text).start() :] if CFG_TEST.search(text) else ""
     calls_main = bool(MAIN_CALL.search(tail)) if tail else False
     calls_injected_entry = bool(
         re.search(r"\b(?:run_with_args|run_with_output_path)\s*\(", tail)
@@ -56,6 +62,7 @@ def classify(path: Path):
     asserts = bool(
         re.search(r"assert|should_panic|output-only", text, re.I)
         or re.search(r"\.expect\(|\.unwrap\(", tail)
+        or (tail and IGNORED_EXTERNAL_TEST.search(tail))
     )
     return has_main, has_run, has_cfg_test, calls_main or calls_injected_entry, asserts
 

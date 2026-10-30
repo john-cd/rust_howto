@@ -34,7 +34,18 @@ async fn main() -> anyhow::Result<()> {
     let meilisearch_url =
         env::var("MEILISEARCH_URL").unwrap_or("http://localhost:7700".into());
     let meilisearch_api_key: Option<String> = env::var("MEILI_MASTER_KEY").ok();
+    run_with_config(meilisearch_url, meilisearch_api_key).await
+}
 
+/// Indexes and searches the example documents using the supplied connection
+/// settings.
+///
+/// # Errors
+/// Returns an error if the server cannot be reached or rejects an operation.
+async fn run_with_config(
+    meilisearch_url: String,
+    meilisearch_api_key: Option<String>,
+) -> anyhow::Result<()> {
     // Create a client and connect to MeiliSearch.
     let client = Client::new(meilisearch_url, meilisearch_api_key)
         .expect("the meilisearch example invariant should hold");
@@ -95,7 +106,8 @@ async fn main() -> anyhow::Result<()> {
 ///
 /// # Errors
 ///
-/// Returns an error if the Meilisearch server is unreachable or rejects a request.
+/// Returns an error if the Meilisearch server is unreachable or rejects a
+/// request.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -105,19 +117,15 @@ mod tests {
     use super::*;
 
     /// Runs the example against its required external service.
-    #[test]
-    fn require_external_svc() -> anyhow::Result<()> {
+    #[ignore = "requires a running Meilisearch service"]
+    #[tokio::test]
+    async fn require_external_svc() -> anyhow::Result<()> {
         // Default to the compose service (refer to the compose*.yaml files);
         // set `MEILISEARCH_URL` (and `MEILI_MASTER_KEY`) to use another server.
-        if std::env::var_os("MEILISEARCH_URL").is_none() {
-            unsafe {
-                std::env::set_var(
-                    "MEILISEARCH_URL",
-                    "http://rust_howto_dev-meilisearch-1:7700",
-                );
-            }
-        }
-        main()?;
-        Ok(())
+        let meilisearch_url = env::var("MEILISEARCH_URL")
+            .unwrap_or("http://rust_howto_dev-meilisearch-1:7700".into());
+        let meilisearch_api_key: Option<String> =
+            env::var("MEILI_MASTER_KEY").ok();
+        run_with_config(meilisearch_url, meilisearch_api_key).await
     }
 }

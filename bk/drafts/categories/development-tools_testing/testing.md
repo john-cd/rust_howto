@@ -71,9 +71,9 @@ Often involves using [`tokio::test`][c~tokio::test~docs]↗{{hi:tokio::test}} or
 
 ## Test Code that Reads Environment Variables {#env-vars}
 
-[![serial_test][c~serial_test~docs~badge]][c~serial_test~docs] [![serial_test~crates.io][c~serial_test~crates.io~badge]][c~serial_test~crates.io] [![temp-env][c~temp-env~docs~badge]][c~temp-env~docs] [![temp-env~crates.io][c~temp-env~crates.io~badge]][c~temp-env~crates.io]{{hi:serial_test}}{{hi:temp-env}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Environment variables}}
+[![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Environment variables}}
 
-Environment variables are process-global, but tests run in parallel threads. [`serial_test`][c~serial_test~docs]↗{{hi:serial_test}} runs the tests that share a key one at a time, and [`temp-env`][c~temp-env~docs]↗{{hi:temp-env}} sets or unsets a variable for the duration of a closure, then restores it. In edition 2024, `std::env::set_var` is `unsafe` for the same reason.
+Parse configuration from an injected value in unit tests. For integration tests of process environment behavior, set or remove variables on a child `std::process::Command`; this isolates the values from the test runner. A `serial_test` lock coordinates only tests that use the same lock, and a restoring wrapper does not protect against unrelated threads, libraries, or DNS code reading the process environment. In edition 2024, `std::env::set_var` and `remove_var` are unsafe on every target, but the safety precondition differs: on Windows they are sound even in multithreaded programs; on Unix they must not be called in a multithreaded program where other threads may read or write the environment.
 
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_testing/examples/test_techniques/env_vars.rs:example}}
