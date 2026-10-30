@@ -11,6 +11,10 @@
   `rust` fences are listed separately. Index pages, reference lists, `.incl.md`
   tables and pages named in the exceptions file are skipped.
 * A *broken include* names a `.rs` file that does not exist.
+* An *unfenced include* is a `{{#include x.rs[:anchor]}}` line outside a code
+  fence (in a page or an `.incl.md` fragment). mdBook pastes the raw Rust into
+  the Markdown, so generic types turn into HTML tags and the code loses its
+  formatting. Wrap it in a ```` ```rust ```` fence.
 * A page that is not linked from its `SUMMARY.md` is listed too.
 
 Exceptions: `scripts/example_chapter_exceptions.txt`, one path per line
@@ -37,6 +41,8 @@ EXCEPTIONS_FILE = REPO / "scripts" / "example_chapter_exceptions.txt"
 
 INCLUDE = re.compile(r"\{\{#(?:rustdoc_)?include\s+([^}\s:]+\.rs)(?::[^}\s]*)?\s*\}\}")
 MD_INCLUDE = re.compile(r"\{\{#include\s+([^}\s:]+\.md)\s*\}\}")
+INCLUDE_LINE = re.compile(r"^\s*\{\{#(?:rustdoc_)?include\s+\S+\.rs(?::\S*)?\s*\}\}\s*$")
+FENCE = re.compile(r"^\s*(`{3,}|~{3,})")
 RUST_FENCE = re.compile(r"^\s*```+\s*rust\b", re.M)
 SUMMARY_LINK = re.compile(r"\]\(([^)\s#]+\.md)")
 
@@ -60,6 +66,22 @@ def excepted(path: str, exceptions: list[str]) -> bool:
     return any(path == e or (e.endswith("/") and path.startswith(e)) for e in exceptions)
 
 
+def unfenced_includes(text: str) -> list[int]:
+    """Return the 1-based line numbers of `.rs` includes outside a code fence."""
+    lines, fence = [], None
+    for number, line in enumerate(text.splitlines(), 1):
+        match = FENCE.match(line)
+        if match:
+            marker = match.group(1)
+            if fence is None:
+                fence = marker
+            elif marker[0] == fence[0] and len(marker) >= len(fence):
+                fence = None
+        elif fence is None and INCLUDE_LINE.match(line):
+            lines.append(number)
+    return lines
+
+
 def walk(root: str, suffix: str):
     for path in sorted((REPO / root).rglob(f"*{suffix}")):
         if not SKIP_PARTS.intersection(path.relative_to(REPO).parts):
@@ -78,8 +100,10 @@ def main() -> int:
     with_example: set[str] = set()
     inline_only: set[str] = set()
     broken: list[str] = []
+    unfenced: list[str] = []
     for page in pages:
         text = page.read_text(encoding="utf-8", errors="replace")
+        unfenced += [f"{rel(page)}:{n}" for n in unfenced_includes(text)]
         # Fragments the page includes (for example `page.incl.md`) count too.
         for fragment in MD_INCLUDE.findall(text):
             fragment_path = page.parent / fragment
@@ -152,6 +176,7 @@ def main() -> int:
         ("chapter-without-example", "Chapters with no example (no .rs include, no rust fence)", no_example),
         ("chapter-inline-only", "Chapters whose only code is inline `rust` fences", inline),
         ("broken-include", "Includes that point to a missing file", broken),
+        ("unfenced-include", "Rust includes outside a code fence (rendered as prose/HTML)", unfenced),
         ("not-in-summary", "Pages not linked from their SUMMARY.md", unlinked),
     ]
     if args.csv:
@@ -163,7 +188,7 @@ def main() -> int:
             print(f"== {title}: {len(items)}")
             for item in items:
                 print(f"  {item}")
-    gaps = len(orphan_examples) + len(no_example) + len(unlinked) + len(broken)
+    gaps = len(orphan_examples) + len(no_example) + len(unlinked) + len(broken) + len(unfenced)
     return 1 if args.fail and gaps else 0
 
 

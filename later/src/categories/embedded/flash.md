@@ -20,7 +20,9 @@ The [`embedded-storage`][c~embedded-storage~docs]↗ traits describe common oper
 
 The following example implements those traits over a small in-memory NOR model. It runs on the host without a flash device and demonstrates erase-block alignment and the one-to-zero programming rule; the model is not a substitute for validating a driver's geometry on the target.
 
+```rust,noplayground
 {{#include ../../../crates/cats/embedded/examples/flash/main.rs:example}}
+```
 
 For persistent records, define a format with versioning and integrity checks. Design updates so power loss cannot leave the only copy unusable; common approaches include append-only records, two-slot updates, checksums, and a bootloader-managed update state. Avoid frequently erasing a single block for counters or logs, since flash endurance is finite.
 

@@ -10,7 +10,9 @@ Vector graphics describe shapes and paths with coordinates, lines, and curves in
 
 A path is an ordered set of subpaths. A subpath starts at a point, adds straight or curved segments, and ends open or closed. This host-buildable example creates a closed path and tessellates it into vertices and indices:
 
+```rust,editable
 {{#include ../../../crates/cats/rendering/examples/2d_vector_graphics/main.rs:example}}
+```
 
 The path is geometry, not a colored image. A drawing operation also needs a fill or stroke style, a transform, and a renderer that turns the geometry into pixels.
 
@@ -38,7 +40,9 @@ Run the example from `later/crates` with `cargo run -p rendering --example 2d_ve
 
 The companion example creates a window and OpenGL context with `winit` and `glutin`, then draws a path. Run it from `later/crates` with `cargo run -p gui --example femtovg --features femtovg`. It needs a desktop display and a working OpenGL driver; automated headless tests compile it but skip opening the window.
 
+```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/femtovg.rs:example}}
+```
 
 ## `vger` {#vger}
 

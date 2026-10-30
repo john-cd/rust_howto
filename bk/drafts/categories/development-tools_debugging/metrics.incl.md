@@ -6,13 +6,17 @@ Metrics summarize numeric measurements over time. Use counters for totals, gauge
 
 Record a counter for each completed request and a histogram observation for its elapsed time. Add bounded labels such as the HTTP method or route template; avoid user IDs and other unbounded values.
 
+```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/metrics/record_metrics.rs:example}}
+```
 
 ## Expose Prometheus Metrics {#expose-prometheus-metrics}
 
 `metrics-exporter-prometheus` provides an HTTP scrape listener for applications. This example renders the same exposition payload through an in-memory handle, which is useful for tests and for applications that serve the payload through their own HTTP stack.
 
+```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/metrics/prometheus.rs:example}}
+```
 
 | Recipe                                                                           | Crates                                                               | Categories                                                                                                      |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
