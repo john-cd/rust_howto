@@ -63,3 +63,11 @@
 [p~crates]: ../crate-selection/index.md
 [p~generics]: ../language/generics.md
 [p~language]: ../language/index.md
+[p~blogs_and_forums]: blogs_and_forums.md
+[p~books]: books.md
+[p~crate_selection]: ../crate-selection/index.md
+[p~example_code]: example_code.md
+[p~examples_index]: ../indices/examples_index.md
+[p~meetings]: meetings.md
+[p~rust_cheatsheets]: rust_cheatsheets.md
+[p~videos_and_podcasts]: videos_and_podcasts.md

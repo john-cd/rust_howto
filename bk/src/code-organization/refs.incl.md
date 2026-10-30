@@ -33,3 +33,13 @@
 [p~standard-library]: ../standard-library/index.md
 [p~structs]: ../language/structs.md
 [p~traits]: ../language/traits.md
+[p~code_organization_by_project_type]: code_organization_by_project_type.md
+[p~constants_and_statics]: ../language/constants_and_statics.md
+[p~crate-selection]: ../crate-selection/index.md
+[p~dependencies]: dependencies.md
+[p~language]: ../language/index.md
+[p~macros]: ../language/macros.md
+[p~modules_and_paths]: modules_and_paths.md
+[p~use_declarations]: use_declarations.md
+[p~variables]: ../language/variables.md
+[p~visibility]: visibility.md

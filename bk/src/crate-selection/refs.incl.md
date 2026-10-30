@@ -6,3 +6,8 @@
 
 [crate-indices~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools/crate_indices
 [crate-indices~repo~badge]: https://img.shields.io/badge/crate_indices-steelblue?logo=github
+[p~books]: ../links/books.md
+[p~crate_selection]: index.md
+[p~example_code]: ../links/example_code.md
+[p~links]: ../links/index.md
+[p~word_index]: ../word_index.md

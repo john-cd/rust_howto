@@ -71,3 +71,13 @@
 [ex~mathematics~maximize-fitness-with-a-genetic-algorithm]: optimization.md#maximize-fitness-with-a-genetic-algorithm
 [p~category-algorithms]: ../algorithms/index.md
 [rust-cookbook~numerical-integration-issue]: https://github.com/rust-lang-nursery/rust-cookbook/issues/699
+[p~additional_numeric_types]: additional_numeric_types.md
+[p~algorithms]: ../algorithms/index.md
+[p~complex_numbers]: complex_numbers.md
+[p~data_structures]: ../data-structures/index.md
+[p~differential_equations]: differential_equations.md
+[p~graphs]: ../data-structures/graphs.md
+[p~linear_algebra]: linear_algebra.md
+[p~numerical_analysis]: numerical_analysis.md
+[p~sorting]: ../algorithms/sorting.md
+[p~trigonometry]: trigonometry.md

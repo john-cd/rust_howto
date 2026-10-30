@@ -33,3 +33,14 @@
 [p~hashmaps]: ../data-structures/hashmaps.md
 [p~category-data-structures]: ../data-structures/index.md
 [p~category-algorithms]: index.md
+[p~additional_numeric_types]: ../mathematics/additional_numeric_types.md
+[p~algorithms]: index.md
+[p~complex_numbers]: ../mathematics/complex_numbers.md
+[p~data-structures]: ../data-structures/index.md
+[p~graphs]: ../data-structures/graphs.md
+[p~linear_algebra]: ../mathematics/linear_algebra.md
+[p~mathematics]: ../mathematics/index.md
+[p~stack-allocated]: ../data-structures/stack-allocated.md
+[p~statistics]: ../mathematics/statistics.md
+[p~strings]: ../data-structures/strings.md
+[p~trigonometry]: ../mathematics/trigonometry.md

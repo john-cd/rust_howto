@@ -36,8 +36,8 @@ Every remaining open task lives in one of six epics. Status notes go in the epic
 - [#2114](https://github.com/john-cd/rust_howto/issues/2114) — **Epic** — Manual and live-service validation runs (Oracle, Meilisearch, S3, NATS, desktop GUI)
 - [#2115](https://github.com/john-cd/rust_howto/issues/2115) — **Epic** — Work that needs macOS, FreeBSD, Windows or hardware
 - [#2116](https://github.com/john-cd/rust_howto/issues/2116) — **Epic** — Waiting on an upstream release or advisory fix (zip, zenoh, urdf-rs, cpal, egui)
-- [#2117](https://github.com/john-cd/rust_howto/issues/2117) — **Epic** — Deferred recipes (passkeys, WIT components, video), example cleanup (`unwrap`, `dead_code`, tests) and book quality
-- [#2118](https://github.com/john-cd/rust_howto/issues/2118) — **Epic** — Tooling, CI and repository infrastructure (dev container, CI image, dependency workflow triggers)
+- [#2117](https://github.com/john-cd/rust_howto/issues/2117) — **Epic** — Deferred recipes (rustls `TrustStore`, `thread-priority`, prose follow-ups, badge directives), example cleanup (test gaps, `TODO` comments) and book quality
+- [#2118](https://github.com/john-cd/rust_howto/issues/2118) — **Epic** — Tooling, CI and repository infrastructure (dev container and CI image measurements, macOS and FreeBSD jobs)
 
 ---
 
