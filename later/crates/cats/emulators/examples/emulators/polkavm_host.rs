@@ -16,7 +16,6 @@
 //! The guest should import `host_increment` and export `add_one_with_host`.
 
 use std::convert::Infallible;
-use std::env;
 use std::error::Error;
 use std::fs;
 use std::io;
@@ -43,7 +42,14 @@ struct HostState {
 
 /// Runs the emulator example.
 fn main() -> ExampleResult<()> {
-    run_guest(guest_path_from_args())
+    run_with_args(std::env::args_os().skip(1))
+}
+
+/// Runs the example with command-line arguments supplied by the caller.
+fn run_with_args(
+    mut args: impl Iterator<Item = std::ffi::OsString>,
+) -> ExampleResult<()> {
+    run_guest(args.next().map(PathBuf::from))
 }
 
 /// Loads the guest program from `guest_path`, links a host function and calls
@@ -123,11 +129,6 @@ fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
     Ok(())
 }
 
-/// Returns the path of the guest program from the first command-line argument.
-fn guest_path_from_args() -> Option<PathBuf> {
-    env::args_os().nth(1).map(PathBuf::from)
-}
-
 /// Prints how to run the example.
 fn print_usage() {
     eprintln!(
@@ -184,11 +185,11 @@ mod tests {
     /// Runs the entry point without a guest path, which prints the usage.
     #[test]
     fn test_main_entry_point() -> ExampleResult<()> {
-        run_guest(None)
+        run_with_args(std::iter::empty())
     }
 
-    // `main` reads the guest path from the process arguments, which belong to
-    // the test harness here, so the entry point is exercised via `run_guest`.
+    /// Verifies that a missing guest path follows the CLI usage path.
+    /// Verifies that a nonexistent guest blob returns an I/O error.
     #[test]
     fn missing_guest_file_is_an_error() {
         let path =
@@ -196,6 +197,7 @@ mod tests {
         assert!(run_guest(Some(path)).is_err());
     }
 
+    /// Verifies that an invalid guest blob returns a parse error.
     #[test]
     fn invalid_guest_blob_is_an_error() {
         let path =

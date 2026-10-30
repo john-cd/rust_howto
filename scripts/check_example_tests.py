@@ -9,8 +9,10 @@ Convention (see the tracking issue for "Test all book examples"):
   directory's `main.rs`;
 * every file with a `main()` has a `#[cfg(test)]` module with a test that
   calls `main()` and asserts on observable behavior (the script can only
-  flag files with no assert/unwrap/expect at all; review the rest by hand). A test module may state
-  `output-only` in a comment when the example has nothing but printing to check.
+  flag files with no assert/unwrap/expect at all; review the rest by hand). If
+  process arguments belong to the test harness, test the parameterized entry
+  helper instead. A test module may state `output-only` when the example only
+  prints output to check.
 
 Usage: scripts/check_example_tests.py [--summary] [--csv] [ROOT ...]
 Default roots: bk/crates later/crates xmpl playground tools.
@@ -48,11 +50,14 @@ def classify(path: Path):
     has_cfg_test = bool(CFG_TEST.search(text)) or bool(TEST_ATTR.search(text))
     tail = text[CFG_TEST.search(text).start():] if CFG_TEST.search(text) else ""
     calls_main = bool(MAIN_CALL.search(tail)) if tail else False
+    calls_injected_entry = bool(
+        re.search(r"\b(?:run_with_args|run_with_output_path)\s*\(", tail)
+    )
     asserts = bool(
         re.search(r"assert|should_panic|output-only", text, re.I)
         or re.search(r"\.expect\(|\.unwrap\(", tail)
     )
-    return has_main, has_run, has_cfg_test, calls_main, asserts
+    return has_main, has_run, has_cfg_test, calls_main or calls_injected_entry, asserts
 
 
 def is_multi_file_member(path: Path) -> bool:

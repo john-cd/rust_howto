@@ -71,6 +71,6 @@ mod tests {
     /// Runs the Fyrox game engine example.
     #[test]
     fn test_fyrox_game_engine_example() {
-        run();
+        main();
     }
 }

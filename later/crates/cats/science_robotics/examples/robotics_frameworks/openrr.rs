@@ -160,6 +160,6 @@ mod tests {
     /// Runs the example through its entry point.
     #[test]
     fn test_openrr_example_entry_point() -> anyhow::Result<()> {
-        run()
+        main()
     }
 }

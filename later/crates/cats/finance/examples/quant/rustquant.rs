@@ -93,6 +93,6 @@ mod tests {
     /// Runs the example through its entry point.
     #[test]
     fn test_rustquant_example_entry_point() {
-        run();
+        main();
     }
 }

@@ -15,7 +15,14 @@ use image::Rgb;
 /// Generates a gradient image and saves it to the path given on the command
 /// line.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
-    let output_path = image_output_path_from_args().unwrap_or_else(|| {
+    run_with_output_path(image_output_path_from_args())
+}
+
+/// Chooses a default output path when none is supplied, then writes the image.
+fn run_with_output_path(
+    output_path: Option<PathBuf>,
+) -> Result<(), Box<dyn Error + Send + Sync>> {
+    let output_path = output_path.unwrap_or_else(|| {
         let default = PathBuf::from("generated_image.png");
         eprintln!("No output path provided, writing to {}", default.display());
         default
@@ -104,13 +111,13 @@ mod tests {
         assert_eq!(img[(0, 0)], Rgb([0, 0, 0]));
     }
 
-    /// Writes the gradient to a temporary file instead of parsing the test
-    /// harness arguments.
+    /// Writes the gradient to a temporary path without parsing test arguments.
     #[test]
     fn test_main_entry_point() -> Result<(), Box<dyn Error + Send + Sync>> {
-        let path = std::env::temp_dir().join("rust_howto_gradient.png");
-        save_gradient_image(&path, 64, 32)?;
-        std::fs::remove_file(&path)?;
+        let temp_dir = tempfile::tempdir()?;
+        let path = temp_dir.path().join("gradient.png");
+        run_with_output_path(Some(path.clone()))?;
+        assert!(path.is_file());
         Ok(())
     }
 }
