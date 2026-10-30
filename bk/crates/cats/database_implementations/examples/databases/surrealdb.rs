@@ -89,4 +89,52 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[tokio::test]
+    async fn create_select_update_and_delete_in_memory() -> Result<()> {
+        let db = Surreal::new::<Mem>(()).await?;
+        db.use_ns("ns").use_db("db").await?;
+
+        let before: Vec<Person> = db.select("person").await?;
+        assert!(before.is_empty());
+
+        let created: Option<Person> = db
+            .create(("person", "jd"))
+            .content(Person {
+                name: "J. Doe".to_owned(),
+                age: 42,
+            })
+            .await?;
+        assert_eq!(created.as_ref().map(|p| p.age), Some(42));
+
+        let mut result = db
+            .query("SELECT * FROM person WHERE name = $name")
+            .bind(("name", "J. Doe"))
+            .await?;
+        let found: Vec<Person> = result.take(0)?;
+        assert_eq!(found.len(), 1);
+        assert_eq!(found[0].name, "J. Doe");
+
+        let mut none = db
+            .query("SELECT * FROM person WHERE name = $name")
+            .bind(("name", "nobody"))
+            .await?;
+        let missing: Vec<Person> = none.take(0)?;
+        assert!(missing.is_empty());
+
+        let updated: Option<Person> = db
+            .update(("person", "jd"))
+            .content(Person {
+                name: "J. Doe".to_owned(),
+                age: 43,
+            })
+            .await?;
+        assert_eq!(updated.map(|p| p.age), Some(43));
+
+        let deleted: Option<Person> = db.delete(("person", "jd")).await?;
+        assert!(deleted.is_some());
+        let after: Vec<Person> = db.select("person").await?;
+        assert!(after.is_empty());
+        Ok(())
+    }
 }

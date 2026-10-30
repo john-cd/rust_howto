@@ -33,4 +33,14 @@ mod tests {
     fn probe_runs_outside_build_script() {
         main();
     }
+
+    #[test]
+    fn probing_reports_which_types_the_compiler_supports() {
+        let dir = std::env::temp_dir();
+        let ac = autocfg::AutoCfg::with_dir(dir).expect("temp dir is writable");
+        assert!(ac.probe_type("i128"));
+        assert!(!ac.probe_type("this_type_does_not_exist"));
+        assert!(ac.probe_path("std::collections::HashMap"));
+        assert!(!ac.probe_path("std::collections::NoSuchMap"));
+    }
 }

@@ -81,4 +81,42 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn put_get_and_delete_round_trip() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
+        let db = DB::open_default(dir.path())?;
+        assert_eq!(db.get(b"key1")?, None);
+        db.put(b"key1", b"value1")?;
+        assert_eq!(db.get(b"key1")?.as_deref(), Some(&b"value1"[..]));
+        db.put(b"key1", b"value2")?;
+        assert_eq!(db.get(b"key1")?.as_deref(), Some(&b"value2"[..]));
+        db.delete(b"key1")?;
+        assert_eq!(db.get(b"key1")?, None);
+        // Deleting a missing key is not an error.
+        db.delete(b"never-written")?;
+        Ok(())
+    }
+
+    #[test]
+    fn data_survives_reopening_the_database() -> anyhow::Result<()> {
+        let dir = tempfile::tempdir()?;
+        {
+            let db = DB::open_default(dir.path())?;
+            db.put(b"k", b"v")?;
+        }
+        let db = DB::open_default(dir.path())?;
+        assert_eq!(db.get(b"k")?.as_deref(), Some(&b"v"[..]));
+        Ok(())
+    }
+
+    #[test]
+    fn read_only_open_of_a_missing_database_fails() {
+        let dir = tempfile::tempdir().unwrap();
+        let missing = dir.path().join("missing");
+        assert!(
+            DB::open_for_read_only(&Options::default(), missing, false)
+                .is_err()
+        );
+    }
 }

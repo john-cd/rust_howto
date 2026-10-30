@@ -38,4 +38,11 @@ mod tests {
     fn test_rustdoc_example_entry_point() {
         main();
     }
+
+    // output-only: the functions only print or carry documentation.
+    #[test]
+    fn documented_functions_are_callable() {
+        documented_function();
+        function_including_external_file_as_documentation();
+    }
 }

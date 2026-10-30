@@ -32,4 +32,6 @@ mod tests {
     fn test_rustdoc3_example_entry_point() {
         main();
     }
+
+    // output-only: the example only prints a fixed explanatory sentence.
 }

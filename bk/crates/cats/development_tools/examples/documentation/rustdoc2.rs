@@ -51,4 +51,12 @@ mod tests {
     fn test_rustdoc2_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn new_builds_a_person_with_the_given_name() {
+        let john = new("John");
+        assert_eq!(john.name, "John");
+        assert_eq!(format!("{john:?}"), "Person { name: \"John\" }");
+        assert_eq!(new("").name, "");
+    }
 }

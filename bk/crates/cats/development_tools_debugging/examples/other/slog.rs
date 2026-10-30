@@ -85,4 +85,7 @@ mod tests {
     fn test_slog_example_entry_point() {
         main();
     }
+
+    // output-only: the example only logs to the terminal through the global
+    // slog logger.
 }

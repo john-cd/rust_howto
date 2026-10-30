@@ -57,4 +57,62 @@ mod tests {
             .init();
         main();
     }
+
+    #[derive(Clone, Default)]
+    struct Buf(std::sync::Arc<std::sync::Mutex<Vec<u8>>>);
+
+    impl std::io::Write for Buf {
+        fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
+            self.0.lock().unwrap().extend_from_slice(data);
+            Ok(data.len())
+        }
+
+        fn flush(&mut self) -> std::io::Result<()> {
+            Ok(())
+        }
+    }
+
+    impl<'a> tracing_subscriber::fmt::MakeWriter<'a> for Buf {
+        type Writer = Self;
+
+        fn make_writer(&'a self) -> Self {
+            self.clone()
+        }
+    }
+
+    /// Runs `f` with a thread-local subscriber and returns what it logged.
+    fn capture(f: impl FnOnce()) -> String {
+        let buf = Buf::default();
+        let subscriber = tracing_subscriber::fmt()
+            .with_max_level(tracing::Level::TRACE)
+            .with_writer(buf.clone())
+            .with_ansi(false)
+            .finish();
+        tracing::subscriber::with_default(subscriber, f);
+        String::from_utf8(buf.0.lock().unwrap().clone()).unwrap()
+    }
+
+    #[test]
+    fn events_are_inside_the_span_only_while_it_is_entered() {
+        let out = capture(main);
+        let line = |needle: &str| {
+            out.lines()
+                .find(|l| l.contains(needle))
+                .unwrap_or_else(|| panic!("{needle} in {out}"))
+        };
+        assert!(line("Code here is within the span.").contains("Some span"));
+        assert!(
+            !line("Code here is no longer within the span.")
+                .contains("Some span")
+        );
+        assert!(!line("No longer within the span.").contains("Another span"));
+        assert!(
+            out.lines()
+                .filter(|l| l.contains("Within the span.")
+                    && l.contains("Another span"))
+                .count()
+                == 2,
+            "{out}"
+        );
+    }
 }

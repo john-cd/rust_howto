@@ -55,4 +55,27 @@ mod tests {
     fn chrono_timestamp_conversion_runs() -> Result<(), &'static str> {
         main()
     }
+
+    #[test]
+    fn known_timestamps_convert_in_both_directions() {
+        let dt = NaiveDate::from_ymd_opt(2017, 11, 12)
+            .unwrap()
+            .and_hms_opt(17, 33, 44)
+            .unwrap();
+        assert_eq!(dt.and_utc().timestamp(), 1_510_508_024);
+        let billion =
+            DateTime::<Utc>::from_timestamp(1_000_000_000, 0).unwrap();
+        assert_eq!(billion.to_string(), "2001-09-09 01:46:40 UTC");
+        assert_eq!(
+            DateTime::<Utc>::from_timestamp(0, 0).unwrap().to_rfc3339(),
+            "1970-01-01T00:00:00+00:00"
+        );
+    }
+
+    #[test]
+    fn out_of_range_inputs_are_rejected() {
+        assert!(NaiveDate::from_ymd_opt(2017, 13, 1).is_none());
+        assert!(NaiveDate::from_ymd_opt(2017, 2, 29).is_none());
+        assert!(DateTime::<Utc>::from_timestamp(i64::MAX, 0).is_none());
+    }
 }

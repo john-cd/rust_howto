@@ -61,4 +61,7 @@ mod tests {
     fn test_tracing_subscriber_example_entry_point() {
         main();
     }
+
+    // output-only: the example installs the process-wide subscriber, which can
+    // be set once per process, so its output cannot be captured here.
 }

@@ -39,4 +39,13 @@ mod tests {
     fn test_type_name_of_val_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn iterator_sums_and_type_names_are_reported() {
+        assert_eq!(get_iter().sum::<i32>(), 6);
+        assert_eq!(get_iter().count(), 3);
+        let name = std::any::type_name_of_val(&get_iter());
+        assert!(name.contains("IntoIter"), "{name}");
+        assert_eq!(std::any::type_name::<Vec<u8>>(), "alloc::vec::Vec<u8>");
+    }
 }

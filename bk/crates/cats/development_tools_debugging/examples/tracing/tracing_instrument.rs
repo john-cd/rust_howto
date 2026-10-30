@@ -71,4 +71,59 @@ mod tests {
             .init();
         main();
     }
+
+    #[derive(Clone, Default)]
+    struct Buf(std::sync::Arc<std::sync::Mutex<Vec<u8>>>);
+
+    impl std::io::Write for Buf {
+        fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
+            self.0.lock().unwrap().extend_from_slice(data);
+            Ok(data.len())
+        }
+
+        fn flush(&mut self) -> std::io::Result<()> {
+            Ok(())
+        }
+    }
+
+    impl<'a> tracing_subscriber::fmt::MakeWriter<'a> for Buf {
+        type Writer = Self;
+
+        fn make_writer(&'a self) -> Self {
+            self.clone()
+        }
+    }
+
+    /// Runs `f` with a thread-local subscriber and returns what it logged.
+    fn capture(f: impl FnOnce()) -> String {
+        let buf = Buf::default();
+        let subscriber = tracing_subscriber::fmt()
+            .with_max_level(tracing::Level::TRACE)
+            .with_writer(buf.clone())
+            .with_ansi(false)
+            .finish();
+        tracing::subscriber::with_default(subscriber, f);
+        String::from_utf8(buf.0.lock().unwrap().clone()).unwrap()
+    }
+
+    #[test]
+    fn instrumented_function_records_its_argument_in_a_span() {
+        let out = capture(|| my_function(42));
+        assert!(out.contains("my_function"), "{out}");
+        assert!(out.contains("my_arg=42"), "{out}");
+        assert!(out.contains("inside my_function!"), "{out}");
+    }
+
+    #[test]
+    fn async_function_uses_the_custom_span_name() {
+        let out = capture(|| {
+            tokio::runtime::Builder::new_current_thread()
+                .build()
+                .unwrap()
+                .block_on(my_async_function());
+        });
+        assert!(out.contains("my_async_span"), "{out}");
+        assert!(out.contains("I'm in my_async_span."), "{out}");
+        assert!(out.contains("I'm in some_other_async_function."), "{out}");
+    }
 }

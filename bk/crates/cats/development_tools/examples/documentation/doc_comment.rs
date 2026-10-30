@@ -33,4 +33,12 @@ mod tests {
     fn test_doc_comment_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn documented_function_is_callable() {
+        // The macro only attaches documentation; the body is left unchanged.
+        documented_function();
+    }
+
+    // output-only: the function only prints a message.
 }

@@ -38,4 +38,11 @@ mod tests {
     fn test_measure_time_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn measured_function_takes_at_least_the_sleep_time() {
+        let start = std::time::Instant::now();
+        measure_execution_time();
+        assert!(start.elapsed() >= Duration::from_millis(100));
+    }
 }

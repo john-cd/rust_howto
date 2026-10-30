@@ -36,4 +36,26 @@ mod tests {
     fn test_format_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn a_fixed_instant_formats_in_every_documented_style() {
+        use chrono::TimeZone as _;
+
+        let t: DateTime<Utc> =
+            Utc.with_ymd_and_hms(2017, 11, 12, 17, 33, 44).unwrap();
+        assert_eq!(t.to_string(), "2017-11-12 17:33:44 UTC");
+        assert_eq!(t.to_rfc2822(), "Sun, 12 Nov 2017 17:33:44 +0000");
+        assert_eq!(t.to_rfc3339(), "2017-11-12T17:33:44+00:00");
+        assert_eq!(
+            t.format("%a %b %e %T %Y").to_string(),
+            "Sun Nov 12 17:33:44 2017"
+        );
+    }
+
+    #[test]
+    fn rfc3339_output_parses_back_to_the_same_instant() {
+        let now = Utc::now();
+        let parsed = DateTime::parse_from_rfc3339(&now.to_rfc3339()).unwrap();
+        assert_eq!(parsed.timestamp(), now.timestamp());
+    }
 }

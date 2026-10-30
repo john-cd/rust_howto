@@ -37,4 +37,13 @@ mod tests {
     fn test_log_error_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn execute_query_always_fails_with_the_documented_message() {
+        assert_eq!(
+            execute_query("DROP TABLE students"),
+            Err("I'm afraid I can't do that")
+        );
+        assert!(execute_query("").is_err());
+    }
 }

@@ -81,5 +81,8 @@ mod tests {
     fn test_log_env_variable_example_entry_point() {
         main();
     }
+
+    // output-only: the example only emits log records, and the process-wide
+    // logger can be installed once, so the records cannot be captured here.
 }
 // review; test fully and review vs text

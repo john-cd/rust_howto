@@ -57,4 +57,45 @@ mod tests {
     fn chrono_parses_the_documented_date_formats() -> Result<(), ParseError> {
         main()
     }
+
+    #[test]
+    fn parsed_values_have_the_expected_components() -> Result<(), ParseError> {
+        let rfc2822 =
+            DateTime::parse_from_rfc2822("Tue, 1 Jul 2003 10:52:37 +0200")?;
+        assert_eq!(rfc2822.to_rfc3339(), "2003-07-01T10:52:37+02:00");
+        let rfc3339 =
+            DateTime::parse_from_rfc3339("1996-12-19T16:39:57-08:00")?;
+        assert_eq!(rfc3339.timestamp(), 851_042_397);
+        let custom = DateTime::parse_from_str(
+            "5.8.1994 8:00 am +0000",
+            "%d.%m.%Y %H:%M %P %z",
+        )?;
+        assert_eq!(custom.to_rfc3339(), "1994-08-05T08:00:00+00:00");
+        assert_eq!(
+            NaiveTime::parse_from_str("23:56:04", "%H:%M:%S")?.to_string(),
+            "23:56:04"
+        );
+        assert_eq!(
+            NaiveDate::parse_from_str("2015-09-05", "%Y-%m-%d")?.to_string(),
+            "2015-09-05"
+        );
+        assert_eq!(
+            NaiveDateTime::parse_from_str(
+                "2015-09-05 23:56:04",
+                "%Y-%m-%d %H:%M:%S"
+            )?
+            .to_string(),
+            "2015-09-05 23:56:04"
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn malformed_input_is_a_parse_error() {
+        assert!(DateTime::parse_from_rfc3339("not a date").is_err());
+        assert!(DateTime::parse_from_rfc2822("1996-12-19").is_err());
+        assert!(NaiveDate::parse_from_str("2015-13-45", "%Y-%m-%d").is_err());
+        assert!(NaiveTime::parse_from_str("25:00:00", "%H:%M:%S").is_err());
+        assert!(NaiveDate::parse_from_str("2015-09-05", "%d/%m/%Y").is_err());
+    }
 }

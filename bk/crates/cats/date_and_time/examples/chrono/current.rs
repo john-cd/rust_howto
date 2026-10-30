@@ -56,4 +56,28 @@ mod tests {
     fn test_current_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn current_time_components_are_consistent() {
+        let now = Utc::now();
+        let (is_pm, hour) = now.hour12();
+        assert!((1..=12).contains(&hour));
+        assert_eq!(is_pm, now.hour() >= 12);
+        assert_eq!(
+            now.num_seconds_from_midnight(),
+            now.hour() * 3600 + now.minute() * 60 + now.second()
+        );
+        let (is_common_era, year) = now.year_ce();
+        assert!(is_common_era);
+        assert!(year >= 2026);
+        assert!(now.num_days_from_ce() > 739_000);
+    }
+
+    #[test]
+    fn hour12_maps_midnight_and_noon() {
+        let midnight = chrono::NaiveTime::from_hms_opt(0, 0, 0).unwrap();
+        let noon = chrono::NaiveTime::from_hms_opt(12, 0, 0).unwrap();
+        assert_eq!(midnight.hour12(), (false, 12));
+        assert_eq!(noon.hour12(), (true, 12));
+    }
 }

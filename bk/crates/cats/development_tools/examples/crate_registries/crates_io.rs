@@ -133,4 +133,18 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn client_is_built_without_network_access() -> Result<()> {
+        // Constructing the client does not contact crates.io.
+        get_client()?;
+        Ok(())
+    }
+
+    #[test]
+    fn client_rejects_an_invalid_user_agent() {
+        let result =
+            SyncClient::new("bad\nagent", std::time::Duration::from_millis(1));
+        assert!(result.is_err());
+    }
 }

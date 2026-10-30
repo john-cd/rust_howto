@@ -53,4 +53,7 @@ mod tests {
     fn test_log_mod_example_entry_point() {
         main();
     }
+
+    // output-only: the example only emits log records, and the process-wide
+    // logger can be installed once, so the records cannot be captured here.
 }

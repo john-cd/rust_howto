@@ -81,4 +81,19 @@ mod tests {
         assert!(!report.contains("Reference: known"));
         Ok(())
     }
+
+    #[test]
+    #[ignore = "needs `mdbook-utils` on the PATH (cargo install mdbook-utils)"]
+    fn test_main_entry_point() -> Result<()> {
+        main()
+    }
+
+    #[test]
+    fn missing_tool_or_directory_is_reported_as_an_error() {
+        let dir = tempfile::tempdir().unwrap();
+        let nested = dir.path().join("does-not-exist");
+        // Either `mdbook-utils` is absent, or it fails on the missing
+        // directory.
+        assert!(find_broken_links(&nested).is_err());
+    }
 }

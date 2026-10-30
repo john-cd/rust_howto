@@ -33,4 +33,9 @@ mod tests {
     fn test_rustdoc4_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn returns_the_documented_string() {
+        assert_eq!(return_a_string(), "This will be printed.");
+    }
 }

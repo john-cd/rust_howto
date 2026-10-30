@@ -47,4 +47,13 @@ mod tests {
         // When running as a test, it uses a default number of iterations.
         main();
     }
+
+    #[test]
+    fn process_data_accepts_edge_case_inputs() {
+        process_data(b"");
+        process_data(b"bol");
+        process_data(b"bolero");
+        process_data(b"bolerox");
+        process_data(&[0xff; 1024]);
+    }
 }

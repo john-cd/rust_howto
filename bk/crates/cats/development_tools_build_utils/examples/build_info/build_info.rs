@@ -70,4 +70,24 @@ mod tests {
     fn build_info_contains_git_time_and_compiler() -> anyhow::Result<()> {
         main()
     }
+
+    #[test]
+    fn dependencies_include_the_crate_itself_and_are_sorted_and_unique() {
+        let info = build_info();
+        let deps = get_dependencies(&info.crate_info);
+        assert!(deps.iter().any(|(name, v)| {
+            *name == info.crate_info.name && *v == info.crate_info.version
+        }));
+        assert!(deps.len() > 1, "the crate has dependencies");
+        let names: Vec<_> = deps.iter().collect();
+        assert!(names.windows(2).all(|w| w[0] < w[1]));
+    }
+
+    #[test]
+    fn collecting_a_single_crate_adds_exactly_one_entry() {
+        let mut crate_info = build_info().crate_info.clone();
+        crate_info.dependencies.clear();
+        let deps = get_dependencies(&crate_info);
+        assert_eq!(deps.len(), 1);
+    }
 }
