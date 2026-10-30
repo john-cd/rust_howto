@@ -55,4 +55,26 @@ mod tests {
         main().map_err(|_| anyhow::anyhow!("hmac.rs failure"))?;
         Ok(())
     }
+
+    #[test]
+    fn verification_fails_for_other_messages_and_keys() {
+        let key = hmac::Key::new(hmac::HMAC_SHA256, &[1u8; 48]);
+        let tag = hmac::sign(&key, b"message");
+        assert_eq!(tag.as_ref().len(), 32);
+        assert!(hmac::verify(&key, b"message", tag.as_ref()).is_ok());
+        assert!(hmac::verify(&key, b"messagE", tag.as_ref()).is_err());
+        let other = hmac::Key::new(hmac::HMAC_SHA256, &[2u8; 48]);
+        assert!(hmac::verify(&other, b"message", tag.as_ref()).is_err());
+    }
+
+    #[test]
+    fn matches_the_rfc_4231_test_vector() {
+        let key = hmac::Key::new(hmac::HMAC_SHA256, &[0x0b; 20]);
+        let tag = hmac::sign(&key, b"Hi There");
+        assert_eq!(
+            tag.as_ref()[..4],
+            [0xb0, 0x34, 0x4c, 0x61],
+            "RFC 4231 case 1 starts with b0344c61"
+        );
+    }
 }

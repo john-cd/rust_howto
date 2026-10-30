@@ -49,4 +49,25 @@ mod tests {
     fn test_ed25519_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
+    #[test]
+    fn signature_verifies_only_for_the_signed_message() {
+        let signing_key = SigningKey::from_bytes(&[7u8; 32]);
+        let verifying_key = signing_key.verifying_key();
+        let signature: ed25519::Signature = signing_key.sign(b"msg");
+        assert!(verifying_key.verify(b"msg", &signature).is_ok());
+        assert!(verifying_key.verify(b"other", &signature).is_err());
+    }
+
+    #[test]
+    fn signing_is_deterministic_and_keys_are_distinct() {
+        let a = SigningKey::from_bytes(&[1u8; 32]);
+        let b = SigningKey::from_bytes(&[2u8; 32]);
+        assert_eq!(a.sign(b"m").to_bytes(), a.sign(b"m").to_bytes());
+        assert_ne!(a.sign(b"m").to_bytes(), b.sign(b"m").to_bytes());
+        let sig = a.sign(b"m");
+        assert!(b.verifying_key().verify(b"m", &sig).is_err());
+        assert_eq!(sig.to_bytes().len(), 64);
+        assert_eq!(a.verifying_key().to_bytes().len(), 32);
+    }
 }

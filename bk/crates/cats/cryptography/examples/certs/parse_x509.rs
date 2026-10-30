@@ -34,4 +34,25 @@ mod tests {
     fn parses_der_certificate() -> anyhow::Result<()> {
         main()
     }
+
+    #[test]
+    fn parsed_certificate_reencodes_to_the_same_der() -> anyhow::Result<()> {
+        use x509_cert::der::Encode as _;
+
+        let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
+        let der = key.cert.der().as_ref().to_vec();
+        let certificate = Certificate::from_der(&der)?;
+        assert_eq!(certificate.to_der()?, der);
+        assert_eq!(
+            certificate.tbs_certificate().version(),
+            x509_cert::certificate::Version::V3
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn garbage_is_not_a_certificate() {
+        assert!(Certificate::from_der(b"not a certificate").is_err());
+        assert!(Certificate::from_der(&[]).is_err());
+    }
 }

@@ -65,4 +65,24 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn tampered_signature_is_rejected() {
+        let signing_key = SigningKey::from_bytes(&[9u8; 32]);
+        let verifying_key = signing_key.verifying_key();
+        let signature: Signature = signing_key.sign(b"Hello, world!");
+        assert!(verifying_key.verify(b"Hello, world!", &signature).is_ok());
+
+        let mut bytes = signature.to_bytes();
+        bytes[0] ^= 0xff;
+        let tampered = Signature::from_bytes(&bytes);
+        assert!(verifying_key.verify(b"Hello, world!", &tampered).is_err());
+    }
+
+    #[test]
+    fn verifying_key_roundtrips_through_bytes() -> anyhow::Result<()> {
+        let key = SigningKey::from_bytes(&[3u8; 32]).verifying_key();
+        assert_eq!(VerifyingKey::from_bytes(&key.to_bytes())?, key);
+        Ok(())
+    }
 }

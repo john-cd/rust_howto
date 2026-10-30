@@ -77,4 +77,20 @@ mod tests {
             panic!("main failed: {err:?}");
         }
     }
+
+    #[test]
+    fn connecting_to_a_host_without_tls_port_fails_with_context()
+    -> anyhow::Result<()> {
+        let connector = build_connector()?;
+        // Nothing listens on port 443 of the loopback address in the tests.
+        if TcpStream::connect(("127.0.0.1", 443)).is_err() {
+            let err =
+                connect_tls(&connector, "127.0.0.1").expect_err("no server");
+            assert!(
+                err.to_string()
+                    .contains("could not connect to 127.0.0.1:443")
+            );
+        }
+        Ok(())
+    }
 }

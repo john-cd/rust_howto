@@ -90,4 +90,29 @@ mod tests {
     fn test_subtle_example_entry_point() {
         main();
     }
+
+    #[test]
+    fn constant_time_equality_and_selection() {
+        assert_eq!(10u8.ct_eq(&10u8).unwrap_u8(), 1);
+        assert_eq!(10u8.ct_eq(&20u8).unwrap_u8(), 0);
+        assert_eq!(u32::conditional_select(&5, &10, Choice::from(1)), 10);
+        assert_eq!(u32::conditional_select(&5, &10, Choice::from(0)), 5);
+    }
+
+    #[test]
+    fn ct_option_unwraps_or_falls_back() {
+        let some: CtOption<u8> = CtOption::new(10, Choice::from(1));
+        let none: CtOption<u8> = CtOption::new(5, Choice::from(0));
+        assert_eq!(some.is_some().unwrap_u8(), 1);
+        assert_eq!(none.is_none().unwrap_u8(), 1);
+        assert_eq!(some.unwrap_or(0), 10);
+        assert_eq!(none.unwrap_or(0), 0);
+    }
+
+    #[test]
+    fn byte_slices_compare_in_constant_time() {
+        assert_eq!(b"abc".ct_eq(b"abc").unwrap_u8(), 1);
+        assert_eq!(b"abc".ct_eq(b"abd").unwrap_u8(), 0);
+        assert_eq!(b"abc"[..].ct_eq(&b"ab"[..]).unwrap_u8(), 0);
+    }
 }

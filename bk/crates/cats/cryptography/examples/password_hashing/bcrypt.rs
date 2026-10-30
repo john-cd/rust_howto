@@ -54,4 +54,27 @@ mod tests {
         main()?;
         Ok(())
     }
+
+    #[test]
+    fn hash_verifies_only_the_original_password() -> Result<(), Box<dyn Error>>
+    {
+        let hashed = hash("correct horse", 4)?;
+        assert!(hashed.starts_with("$2b$04$"));
+        assert!(verify("correct horse", &hashed)?);
+        assert!(!verify("wrong horse", &hashed)?);
+        Ok(())
+    }
+
+    #[test]
+    fn hashing_is_salted() -> Result<(), Box<dyn Error>> {
+        assert_ne!(hash("same", 4)?, hash("same", 4)?);
+        Ok(())
+    }
+
+    #[test]
+    fn malformed_hashes_and_costs_are_errors() {
+        assert!(verify("pw", "not a bcrypt hash").is_err());
+        assert!(hash("pw", 3).is_err());
+        assert_eq!(DEFAULT_COST, 12);
+    }
 }

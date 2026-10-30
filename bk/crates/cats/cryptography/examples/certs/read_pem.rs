@@ -70,4 +70,45 @@ mod tests {
     fn reads_certificate_file() -> anyhow::Result<()> {
         main()
     }
+
+    #[test]
+    fn reads_the_der_bytes_of_a_certificate_file() -> anyhow::Result<()> {
+        let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
+        let dir = std::env::temp_dir()
+            .join(format!("read_pem_test_{}", std::process::id()));
+        fs::create_dir_all(&dir)?;
+        let path = dir.join("cert.pem");
+        fs::write(&path, key.cert.pem())?;
+        let der = read_pem_certificate(&path)?;
+        assert_eq!(der, key.cert.der().as_ref());
+        fs::remove_dir_all(&dir)?;
+        Ok(())
+    }
+
+    #[test]
+    fn other_pem_labels_are_rejected() -> anyhow::Result<()> {
+        let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
+        let dir = std::env::temp_dir()
+            .join(format!("read_pem_label_{}", std::process::id()));
+        fs::create_dir_all(&dir)?;
+        let path = dir.join("key.pem");
+        fs::write(&path, key.signing_key.serialize_pem())?;
+        let err = read_pem_certificate(&path).unwrap_err();
+        assert!(err.to_string().contains("expected a CERTIFICATE"), "{err}");
+        fs::remove_dir_all(&dir)?;
+        Ok(())
+    }
+
+    #[test]
+    fn missing_and_malformed_files_are_errors() -> anyhow::Result<()> {
+        assert!(read_pem_certificate("/definitely/not/here.pem").is_err());
+        let dir = std::env::temp_dir()
+            .join(format!("read_pem_bad_{}", std::process::id()));
+        fs::create_dir_all(&dir)?;
+        let path = dir.join("bad.pem");
+        fs::write(&path, "not pem")?;
+        assert!(read_pem_certificate(&path).is_err());
+        fs::remove_dir_all(&dir)?;
+        Ok(())
+    }
 }
