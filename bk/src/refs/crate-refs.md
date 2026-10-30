@@ -24,6 +24,9 @@
 [c~abnf_to_pest~lib.rs~badge]: https://img.shields.io/badge/lib.rs-abnf__to__pest-yellow
 [c~abnf_to_pest~repo]: https://github.com/Nadrieril/dhall-rust
 [c~abnf_to_pest~repo~badge]: https://img.shields.io/badge/abnf__to__pest-steelblue?logo=github
+[c~accept-language~crates.io]: https://crates.io/crates/accept-language
+[c~accept-language~docs]: https://docs.rs/accept-language
+[c~accept-language~repo]: https://github.com/mike-engel/accept-language-rs
 [c~accesskit_winit~crates.io]: https://crates.io/crates/accesskit_winit
 [c~accesskit_winit~crates.io~badge]: https://img.shields.io/badge/crates.io-accesskit__winit-crimson
 [c~accesskit_winit~docs]: https://docs.rs/accesskit_winit
@@ -4976,11 +4979,11 @@
 [c~log~lib.rs~badge]: https://img.shields.io/badge/lib.rs-log-yellow
 [c~log~repo]: https://github.com/rust-lang/log
 [c~log~repo~badge]: https://img.shields.io/badge/log-steelblue?logo=github
+[c~loom::model~docs]: https://docs.rs/loom/latest/loom/fn.model.html
 [c~loom~crates.io]: https://crates.io/crates/loom
 [c~loom~crates.io~badge]: https://img.shields.io/badge/crates.io-loom-crimson
 [c~loom~docs]: https://docs.rs/loom
 [c~loom~docs~badge]: https://img.shields.io/crates/v/loom?label=loom
-[c~loom::model~docs]: https://docs.rs/loom/latest/loom/fn.model.html
 [c~loom~lib.rs]: https://lib.rs/crates/loom
 [c~loom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-loom-yellow
 [c~loom~repo]: https://github.com/tokio-rs/loom
@@ -7575,6 +7578,9 @@
 [c~rust-gpu~lib.rs]: https://lib.rs/crates/rust-gpu
 [c~rust-gpu~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rust--gpu-yellow
 [c~rust-gpu~repo~badge]: https://img.shields.io/badge/rust--gpu-steelblue?logo=github
+[c~rust-i18n~crates.io]: https://crates.io/crates/rust-i18n
+[c~rust-i18n~docs]: https://docs.rs/rust-i18n
+[c~rust-i18n~repo]: https://github.com/longbridge/rust-i18n
 [c~rust-ini~crates.io]: https://crates.io/crates/rust-ini
 [c~rust-ini~crates.io~badge]: https://img.shields.io/badge/crates.io-rust--ini-crimson
 [c~rust-ini~docs]: https://docs.rs/rust-ini
