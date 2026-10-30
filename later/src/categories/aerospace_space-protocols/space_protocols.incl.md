@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                                          | Crates                                            | Categories                                                                                                |
-| --------------------------------------------------------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [Space Protocols][ex~aerospace_space-protocols~space-protocols] | {{!crate spacepackets}}, {{!crate arbitrary-int}} | [![cat~aerospace::space-protocols][cat~aerospace::space-protocols~badge]][cat~aerospace::space-protocols] |
+| Recipe                                                          | Crates                                            | Categories                                                   |
+| --------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
+| [Space Protocols][ex~aerospace_space-protocols~space-protocols] | {{!crate spacepackets}}, {{!crate arbitrary-int}} | {{#categories aerospace::space-protocols="Space protocols"}} |

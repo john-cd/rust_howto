@@ -1,10 +1,10 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                                | Crates                                                         | Categories                                          |
-| ----------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------- |
-| [`bincode`][ex~encoding~bincode]                      | [![bincode][c~bincode~docs~badge]][c~bincode~docs]             | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-| [CBOR with `ciborium`][ex~encoding~ciborium]          | [![ciborium][c~ciborium~docs~badge]][c~ciborium~docs]          | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-| [`prost`][ex~encoding~prost]                          | [![prost][c~prost~docs~badge]][c~prost~docs]                   | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-| [MessagePack with `rmp-serde`][ex~encoding~rmp-serde] | [![rmp-serde][c~rmp-serde~docs~badge]][c~rmp-serde~docs]       | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-| [Cap'n Proto][ex~encoding~capnp]                      | [![capnp][c~capnp~docs~badge]][c~capnp~docs]                   | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-| [Flatbuffers][ex~encoding~flatbuffers]                | [![flatbuffers][c~flatbuffers~docs~badge]][c~flatbuffers~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
+| Recipe                                                | Crates                 | Categories                        |
+| ----------------------------------------------------- | ---------------------- | --------------------------------- |
+| [`bincode`][ex~encoding~bincode]                      | {{#crate bincode}}     | {{#categories encoding=Encoding}} |
+| [CBOR with `ciborium`][ex~encoding~ciborium]          | {{#crate ciborium}}    | {{#categories encoding=Encoding}} |
+| [`prost`][ex~encoding~prost]                          | {{#crate prost}}       | {{#categories encoding=Encoding}} |
+| [MessagePack with `rmp-serde`][ex~encoding~rmp-serde] | {{#crate rmp-serde}}   | {{#categories encoding=Encoding}} |
+| [Cap'n Proto][ex~encoding~capnp]                      | {{#crate capnp}}       | {{#categories encoding=Encoding}} |
+| [Flatbuffers][ex~encoding~flatbuffers]                | {{#crate flatbuffers}} | {{#categories encoding=Encoding}} |

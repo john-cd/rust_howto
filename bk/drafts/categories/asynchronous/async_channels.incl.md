@@ -1,10 +1,10 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                                                                        | Crates                                                               | Categories                                                      |
-| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------- |
-| [OneShot][ex~asynchronous~oneshot]                                                            | [![oneshot][c~oneshot~docs~badge]][c~oneshot~docs]                   | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
-| [Send Messages from Multiple Producers to a Single Consumer][ex~asynchronous~mpsc]            | [![tokio][c~tokio~docs~badge]][c~tokio~docs]                         | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
-| [Broadcast Messages from Multiple Producers to Multiple Consumers][ex~asynchronous~broadcast] | [![postage][c~postage~docs~badge]][c~postage~docs]                   | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
-| [`kanal`][ex~asynchronous~kanal]                                                              | [![kanal][c~kanal~docs~badge]][c~kanal~docs]                         | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
-| [Send Messages from Multiple Producers to One of Multiple Consumers][ex~asynchronous~mpmc]    | [![async-channel][c~async-channel~docs~badge]][c~async-channel~docs] | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
-| [`tokio`'s Async Channels][ex~asynchronous~tokio]                                             | [![tokio][c~tokio~docs~badge]][c~tokio~docs]                         | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
+| Recipe                                                                                        | Crates                   | Categories                                |
+| --------------------------------------------------------------------------------------------- | ------------------------ | ----------------------------------------- |
+| [OneShot][ex~asynchronous~oneshot]                                                            | {{#crate oneshot}}       | {{#categories asynchronous=Asynchronous}} |
+| [Send Messages from Multiple Producers to a Single Consumer][ex~asynchronous~mpsc]            | {{#crate tokio}}         | {{#categories asynchronous=Asynchronous}} |
+| [Broadcast Messages from Multiple Producers to Multiple Consumers][ex~asynchronous~broadcast] | {{#crate postage}}       | {{#categories asynchronous=Asynchronous}} |
+| [`kanal`][ex~asynchronous~kanal]                                                              | {{#crate kanal}}         | {{#categories asynchronous=Asynchronous}} |
+| [Send Messages from Multiple Producers to One of Multiple Consumers][ex~asynchronous~mpmc]    | {{#crate async-channel}} | {{#categories asynchronous=Asynchronous}} |
+| [`tokio`'s Async Channels][ex~asynchronous~tokio]                                             | {{#crate tokio}}         | {{#categories asynchronous=Asynchronous}} |

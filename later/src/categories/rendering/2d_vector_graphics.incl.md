@@ -1,7 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                           | Crates                                               | Categories                                             |
-| ------------------------------------------------ | ---------------------------------------------------- | ------------------------------------------------------ |
-| [`femtovg`][ex~rendering~femtovg]                | [![femtovg][c~femtovg~docs~badge]][c~femtovg~docs]   | [![cat~rendering][cat~rendering~badge]][cat~rendering] |
-| [`lyon`][ex~rendering~lyon]                      | [![lyon][c~lyon~docs~badge]][c~lyon~docs]{{hi:lyon}} | [![cat~rendering][cat~rendering~badge]][cat~rendering] |
-| [`vger` (no runnable sample)][ex~rendering~vger] | [![vger][c~vger~docs~badge]][c~vger~docs]            | [![cat~rendering][cat~rendering~badge]][cat~rendering] |
+| Recipe                                           | Crates                                               | Categories                          |
+| ------------------------------------------------ | ---------------------------------------------------- | ----------------------------------- |
+| [`femtovg`][ex~rendering~femtovg]                | {{#crate femtovg}}                                   | {{#categories rendering=Rendering}} |
+| [`lyon`][ex~rendering~lyon]                      | [![lyon][c~lyon~docs~badge]][c~lyon~docs]{{hi:lyon}} | {{#categories rendering=Rendering}} |
+| [`vger` (no runnable sample)][ex~rendering~vger] | {{#crate vger}}                                      | {{#categories rendering=Rendering}} |

@@ -11,6 +11,6 @@ A transpiler translates source code into source code while retaining much of its
 
 See [[development-tools_ffi | Development Tools: FFI]] for native interfaces and [[wasm | WebAssembly]] for compiling and running Rust modules in a web environment.
 
-| Recipe                                              | Crates                | Categories                                             |
-| --------------------------------------------------- | --------------------- | ------------------------------------------------------ |
-| [C to Rust Translation][ex~transcompilation~c2rust] | [C2Rust][c2rust~repo] | [![cat~compilers][cat~compilers~badge]][cat~compilers] |
+| Recipe                                              | Crates                | Categories                          |
+| --------------------------------------------------- | --------------------- | ----------------------------------- |
+| [C to Rust Translation][ex~transcompilation~c2rust] | [C2Rust][c2rust~repo] | {{#categories compilers=Compilers}} |

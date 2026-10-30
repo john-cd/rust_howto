@@ -1,8 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                                            | Crates                                                               | Categories                                       |
-| ----------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------ |
-| [`RustQuant`][ex~finance~rustquant]                               | [![rustquant][c~RustQuant~docs~badge]][c~RustQuant~docs]             | [![cat~finance][cat~finance~badge]][cat~finance] |
-| [Option Pricing and Implied Volatility][ex~finance~black-scholes] | [![black_scholes][c~black_scholes~docs~badge]][c~black_scholes~docs] | [![cat~finance][cat~finance~badge]][cat~finance] |
-| [Rolling Statistics][ex~finance~rolling-stats]                    | [![ta-statistics][c~ta-statistics~docs~badge]][c~ta-statistics~docs] | [![cat~finance][cat~finance~badge]][cat~finance] |
-| [Trading Days][ex~finance~trading-days]                           | [![chrono][c~chrono~docs~badge]][c~chrono~docs]                      | [![cat~finance][cat~finance~badge]][cat~finance] |
+| Recipe                                                            | Crates                                                   | Categories                      |
+| ----------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------- |
+| [`RustQuant`][ex~finance~rustquant]                               | [![rustquant][c~RustQuant~docs~badge]][c~RustQuant~docs] | {{#categories finance=Finance}} |
+| [Option Pricing and Implied Volatility][ex~finance~black-scholes] | {{#crate black_scholes}}                                 | {{#categories finance=Finance}} |
+| [Rolling Statistics][ex~finance~rolling-stats]                    | {{#crate ta-statistics}}                                 | {{#categories finance=Finance}} |
+| [Trading Days][ex~finance~trading-days]                           | {{#crate chrono}}                                        | {{#categories finance=Finance}} |

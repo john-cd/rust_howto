@@ -1,7 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                                                    | Crates                                             | Categories                                                                                                      |
-| ------------------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| [`reqwest`][ex~web-programming_http-client~reqwest]                       | [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs] | [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client] |
-| [`ureq`][ex~web-programming_http-client~ureq]                             | [![ureq][c~ureq~docs~badge]][c~ureq~docs]          | [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client] |
-| [Build an HTTP Client with `hyper`][ex~web-programming_http-client~hyper] | [![hyper][c~hyper~docs~badge]][c~hyper~docs]       | [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client] |
+| Recipe                                                                    | Crates             | Categories                                                 |
+| ------------------------------------------------------------------------- | ------------------ | ---------------------------------------------------------- |
+| [`reqwest`][ex~web-programming_http-client~reqwest]                       | {{#crate reqwest}} | {{#categories web-programming::http-client="HTTP client"}} |
+| [`ureq`][ex~web-programming_http-client~ureq]                             | {{#crate ureq}}    | {{#categories web-programming::http-client="HTTP client"}} |
+| [Build an HTTP Client with `hyper`][ex~web-programming_http-client~hyper] | {{#crate hyper}}   | {{#categories web-programming::http-client="HTTP client"}} |

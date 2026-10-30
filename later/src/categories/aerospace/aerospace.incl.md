@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                         | Crates      | Categories                                             |
-| ------------------------------ | ----------- | ------------------------------------------------------ |
-| [Aerospace][ex~aerospace~aero] | {{!crate }} | [![cat~aerospace][cat~aerospace~badge]][cat~aerospace] |
+| Recipe                         | Crates      | Categories                          |
+| ------------------------------ | ----------- | ----------------------------------- |
+| [Aerospace][ex~aerospace~aero] | {{!crate }} | {{#categories aerospace=Aerospace}} |

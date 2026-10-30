@@ -1,8 +1,8 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                                                                                     | Crates                                                | Categories                                                               |
-| ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------ |
-| [Store Fixed-size Vectors and Strings on the Stack with `arrayvec`][ex~data-structures~arrayvec]           | [![arrayvec][c~arrayvec~docs~badge]][c~arrayvec~docs] | [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |
-| [Store Small Vectors on the Stack with Fallback to the Heap, with `smallvec`][ex~data-structures~smallvec] | [![smallvec][c~smallvec~docs~badge]][c~smallvec~docs] | [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |
-| [Store Small Vectors on the Stack with Fallback to the Heap, with `tinyvec`][ex~data-structures~tinyvec]   | [![tinyvec][c~tinyvec~docs~badge]][c~tinyvec~docs]    | [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |
-| [Work with Heapless Data Structures with `heapless`][ex~data-structures~heapless]                          | [![heapless][c~heapless~docs~badge]][c~heapless~docs] | [![cat~data-structures][cat~data-structures~badge]][cat~data-structures] |
+| Recipe                                                                                                     | Crates              | Categories                                        |
+| ---------------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------- |
+| [Store Fixed-size Vectors and Strings on the Stack with `arrayvec`][ex~data-structures~arrayvec]           | {{#crate arrayvec}} | {{#categories data-structures="Data structures"}} |
+| [Store Small Vectors on the Stack with Fallback to the Heap, with `smallvec`][ex~data-structures~smallvec] | {{#crate smallvec}} | {{#categories data-structures="Data structures"}} |
+| [Store Small Vectors on the Stack with Fallback to the Heap, with `tinyvec`][ex~data-structures~tinyvec]   | {{#crate tinyvec}}  | {{#categories data-structures="Data structures"}} |
+| [Work with Heapless Data Structures with `heapless`][ex~data-structures~heapless]                          | {{#crate heapless}} | {{#categories data-structures="Data structures"}} |

@@ -1,7 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                           | Crates                                                           | Categories                           |
-| -------------------------------- | ---------------------------------------------------------------- | ------------------------------------ |
-| [`kiss3d`][ex~rendering~kiss3d]  | [![kiss3d][c~kiss3d~docs~badge]][c~kiss3d~docs]{{hi:kiss3d}}     | [![cat~gui][cat~gui~badge]][cat~gui] |
-| [`rend3`][ex~rendering~rend3]    | [![rend3][c~rend3~docs~badge]][c~rend3~docs]{{hi:rend3}}         | {{#categories rendering}}            |
-| [`three-d`][ex~rendering~threed] | [![three-d][c~three-d~docs~badge]][c~three-d~docs]{{hi:three-d}} | {{#categories rendering}}            |
+| Recipe                           | Crates                                                           | Categories                |
+| -------------------------------- | ---------------------------------------------------------------- | ------------------------- |
+| [`kiss3d`][ex~rendering~kiss3d]  | [![kiss3d][c~kiss3d~docs~badge]][c~kiss3d~docs]{{hi:kiss3d}}     | {{#categories gui=GUI}}   |
+| [`rend3`][ex~rendering~rend3]    | [![rend3][c~rend3~docs~badge]][c~rend3~docs]{{hi:rend3}}         | {{#categories rendering}} |
+| [`three-d`][ex~rendering~threed] | [![three-d][c~three-d~docs~badge]][c~three-d~docs]{{hi:three-d}} | {{#categories rendering}} |

@@ -59,12 +59,12 @@ examples.
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
-| Recipe                                                                            | Tools                            | Categories                                                                     |
-| --------------------------------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------ |
-| [Display `templ` Commands][ex~documentation~templ-help]                           | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
-| [Generate a Rust by Example Badge Offline][ex~documentation~templ-rbe]            | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
-| [Generate a Known Category Badge Offline][ex~documentation~templ-category-badge]  | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
-| [Generate Crate and Category References][ex~documentation~templ-crate-references] | [`templ`][rust-howto~templ~repo] | [![cat~development-tools][cat~development-tools~badge]][cat~development-tools] |
+| Recipe                                                                            | Tools                            | Categories                                            |
+| --------------------------------------------------------------------------------- | -------------------------------- | ----------------------------------------------------- |
+| [Display `templ` Commands][ex~documentation~templ-help]                           | [`templ`][rust-howto~templ~repo] | {{#categories development-tools="Development tools"}} |
+| [Generate a Rust by Example Badge Offline][ex~documentation~templ-rbe]            | [`templ`][rust-howto~templ~repo] | {{#categories development-tools="Development tools"}} |
+| [Generate a Known Category Badge Offline][ex~documentation~templ-category-badge]  | [`templ`][rust-howto~templ~repo] | {{#categories development-tools="Development tools"}} |
+| [Generate Crate and Category References][ex~documentation~templ-crate-references] | [`templ`][rust-howto~templ~repo] | {{#categories development-tools="Development tools"}} |
 
 <div class="hidden">
   [additional examples from templ tool](https://github.com/john-cd/rust_howto/issues/43)

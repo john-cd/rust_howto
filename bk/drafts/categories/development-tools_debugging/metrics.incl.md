@@ -18,8 +18,8 @@ Record a counter for each completed request and a histogram observation for its 
 {{#include ../../../crates/cats/development_tools_debugging/examples/metrics/prometheus.rs:example}}
 ```
 
-| Recipe                                                                           | Crates                                                               | Categories                                                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| [Record Counters and Histograms][ex~development-tools_debugging~record-metrics]  | [`metrics`][metrics~website]                                         | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
-| [Metrics with Prometheus][ex~development-tools_debugging~prometheus]             | [`metrics-exporter-prometheus`][metrics-exporter-prometheus~website] | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
-| [Serve Metrics from an Axum Route][ex~development-tools_debugging~metrics-route] | [`metrics-exporter-prometheus`][metrics-exporter-prometheus~website] | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
+| Recipe                                                                           | Crates                                                               | Categories                                             |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------ |
+| [Record Counters and Histograms][ex~development-tools_debugging~record-metrics]  | [`metrics`][metrics~website]                                         | {{#categories development-tools::debugging=Debugging}} |
+| [Metrics with Prometheus][ex~development-tools_debugging~prometheus]             | [`metrics-exporter-prometheus`][metrics-exporter-prometheus~website] | {{#categories development-tools::debugging=Debugging}} |
+| [Serve Metrics from an Axum Route][ex~development-tools_debugging~metrics-route] | [`metrics-exporter-prometheus`][metrics-exporter-prometheus~website] | {{#categories development-tools::debugging=Debugging}} |

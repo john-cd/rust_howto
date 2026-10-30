@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                             | Crates                                             | Categories                                                      |
-| ---------------------------------- | -------------------------------------------------- | --------------------------------------------------------------- |
-| [Streams][ex~asynchronous~streams] | [![futures][c~futures~docs~badge]][c~futures~docs] | [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous] |
+| Recipe                             | Crates             | Categories                                |
+| ---------------------------------- | ------------------ | ----------------------------------------- |
+| [Streams][ex~asynchronous~streams] | {{#crate futures}} | {{#categories asynchronous=Asynchronous}} |

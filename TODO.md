@@ -59,7 +59,6 @@
 
 ### Blocked on an upstream or advisory-held dependency
 
-- [#248](https://github.com/john-cd/rust_howto/issues/248) — **P1** — replace current badge markdown copy-pasted text by a preprocessor command {#crate ...} {#categories... }
 
 ### Blocked on an owner or human decision
 

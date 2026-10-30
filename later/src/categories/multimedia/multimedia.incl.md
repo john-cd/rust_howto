@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                 | Crates      | Categories                                                |
-| -------------------------------------- | ----------- | --------------------------------------------------------- |
-| [Multimedia][ex~multimedia~multimedia] | {{!crate }} | [![cat~multimedia][cat~multimedia~badge]][cat~multimedia] |
+| Recipe                                 | Crates      | Categories                            |
+| -------------------------------------- | ----------- | ------------------------------------- |
+| [Multimedia][ex~multimedia~multimedia] | {{!crate }} | {{#categories multimedia=Multimedia}} |

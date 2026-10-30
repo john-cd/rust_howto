@@ -1,7 +1,7 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                               | Crates                                                      | Categories                                                                                    |
-| ---------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`basic-toml`][ex~parser-implementations~basic-toml] | [![basic-toml][c~basic-toml~docs~badge]][c~basic-toml~docs] | [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] |
-| [`toml_edit`][ex~parser-implementations~toml-edit]   | [![toml_edit][c~toml_edit~docs~badge]][c~toml_edit~docs]    | [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] |
-| [`toml`][ex~parser-implementations~toml]             | [![toml][c~toml~docs~badge]][c~toml~docs]                   | [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] |
+| Recipe                                               | Crates                | Categories                                                      |
+| ---------------------------------------------------- | --------------------- | --------------------------------------------------------------- |
+| [`basic-toml`][ex~parser-implementations~basic-toml] | {{#crate basic-toml}} | {{#categories parser-implementations="Parser implementations"}} |
+| [`toml_edit`][ex~parser-implementations~toml-edit]   | {{#crate toml_edit}}  | {{#categories parser-implementations="Parser implementations"}} |
+| [`toml`][ex~parser-implementations~toml]             | {{#crate toml}}       | {{#categories parser-implementations="Parser implementations"}} |

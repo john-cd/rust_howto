@@ -23,12 +23,12 @@ from the certificate, protect it, and use self-signed certificates only for
 local development or tests unless you have deliberately configured a private
 trust anchor.
 
-| Recipe                                                       | Crates                                                         | Categories                                                      |
-| ------------------------------------------------------------ | -------------------------------------------------------------- | --------------------------------------------------------------- |
-| [Create a self-signed certificate][ex~cryptography~rcgen]    | [![rcgen][c~rcgen~docs~badge]][c~rcgen~docs]                   | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
-| [DER][ex~cryptography~der]                                   | [![der][c~der~docs~badge]][c~der~docs]                         | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
-| [Read a PEM certificate file][ex~cryptography~read-pem-file] | [![pem-rfc7468][c~pem-rfc7468~docs~badge]][c~pem-rfc7468~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
-| [`pem-rfc7468`][ex~cryptography~pem-rfc7468]                 | [![pem-rfc7468][c~pem-rfc7468~docs~badge]][c~pem-rfc7468~docs] | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
-| [Parse an X.509 certificate][ex~cryptography~parse-x509]     | [![x509-cert][c~x509-cert~docs~badge]][c~x509-cert~docs]       | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
-| [`pkcs8`][ex~cryptography~pkcs8]                             | [![pkcs8][c~pkcs8~docs~badge]][c~pkcs8~docs]                   | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
-| [`x509-cert`][ex~cryptography~x509-cert]                     | [![x509-cert][c~x509-cert~docs~badge]][c~x509-cert~docs]       | [![cat~cryptography][cat~cryptography~badge]][cat~cryptography] |
+| Recipe                                                       | Crates                 | Categories                                |
+| ------------------------------------------------------------ | ---------------------- | ----------------------------------------- |
+| [Create a self-signed certificate][ex~cryptography~rcgen]    | {{#crate rcgen}}       | {{#categories cryptography=Cryptography}} |
+| [DER][ex~cryptography~der]                                   | {{#crate der}}         | {{#categories cryptography=Cryptography}} |
+| [Read a PEM certificate file][ex~cryptography~read-pem-file] | {{#crate pem-rfc7468}} | {{#categories cryptography=Cryptography}} |
+| [`pem-rfc7468`][ex~cryptography~pem-rfc7468]                 | {{#crate pem-rfc7468}} | {{#categories cryptography=Cryptography}} |
+| [Parse an X.509 certificate][ex~cryptography~parse-x509]     | {{#crate x509-cert}}   | {{#categories cryptography=Cryptography}} |
+| [`pkcs8`][ex~cryptography~pkcs8]                             | {{#crate pkcs8}}       | {{#categories cryptography=Cryptography}} |
+| [`x509-cert`][ex~cryptography~x509-cert]                     | {{#crate x509-cert}}   | {{#categories cryptography=Cryptography}} |

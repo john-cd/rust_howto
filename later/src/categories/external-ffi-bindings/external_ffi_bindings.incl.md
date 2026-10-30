@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                     | Crates      | Categories                                                                                 |
-| ------------------------------------------ | ----------- | ------------------------------------------------------------------------------------------ |
-| [C Bindings][ex~external-ffi-bindings~ffi] | {{!crate }} | [![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings] |
+| Recipe                                     | Crates      | Categories                                                    |
+| ------------------------------------------ | ----------- | ------------------------------------------------------------- |
+| [C Bindings][ex~external-ffi-bindings~ffi] | {{!crate }} | {{#categories external-ffi-bindings="External FFI bindings"}} |

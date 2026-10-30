@@ -22,6 +22,6 @@ Set `RUST_BACKTRACE=1` before launching a program to capture a panic backtrace. 
 {{#include ../../../crates/cats/development_tools_debugging/examples/debugging/backtrace.rs:example}}
 ```
 
-| Recipe | Crates | Categories                                                                                                      |
-| ------ | ------ | --------------------------------------------------------------------------------------------------------------- |
-|        |        | [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging] |
+| Recipe | Crates | Categories                                             |
+| ------ | ------ | ------------------------------------------------------ |
+|        |        | {{#categories development-tools::debugging=Debugging}} |

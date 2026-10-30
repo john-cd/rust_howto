@@ -1,5 +1,5 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                      | Crates                                             | Categories                           |
-| --------------------------- | -------------------------------------------------- | ------------------------------------ |
-| [`arboard`][ex~gui~arboard] | [![arboard][c~arboard~docs~badge]][c~arboard~docs] | [![cat~gui][cat~gui~badge]][cat~gui] |
+| Recipe                      | Crates             | Categories              |
+| --------------------------- | ------------------ | ----------------------- |
+| [`arboard`][ex~gui~arboard] | {{#crate arboard}} | {{#categories gui=GUI}} |

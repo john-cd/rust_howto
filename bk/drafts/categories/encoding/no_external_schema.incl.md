@@ -13,10 +13,10 @@ Here, _self-describing_ means the format carries enough type information to deco
 
 These formats contrast with [schema-first binary encoders][p~binary-encoders], which define a separate contract such as a `.proto`, `.fbs`, or `.capnp` file and generate types from it.
 
-| Recipe                               | Crates                                                   | Categories                                          |
-| ------------------------------------ | -------------------------------------------------------- | --------------------------------------------------- |
-| [`bincode`][ex~encoding~bincode]     | [![bincode][c~bincode~docs~badge]][c~bincode~docs]       | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-| [`ciborium`][ex~encoding~ciborium]   | [![ciborium][c~ciborium~docs~badge]][c~ciborium~docs]    | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-| [`postcard`][ex~encoding~postcard]   | [![postcard][c~postcard~docs~badge]][c~postcard~docs]    | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-| [`rmp-serde`][ex~encoding~rmp-serde] | [![rmp-serde][c~rmp-serde~docs~badge]][c~rmp-serde~docs] | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
-| [`rkyv`][ex~encoding~rkyv]           | [![rkyv][c~rkyv~docs~badge]][c~rkyv~docs]                | [![cat~encoding][cat~encoding~badge]][cat~encoding] |
+| Recipe                               | Crates               | Categories                        |
+| ------------------------------------ | -------------------- | --------------------------------- |
+| [`bincode`][ex~encoding~bincode]     | {{#crate bincode}}   | {{#categories encoding=Encoding}} |
+| [`ciborium`][ex~encoding~ciborium]   | {{#crate ciborium}}  | {{#categories encoding=Encoding}} |
+| [`postcard`][ex~encoding~postcard]   | {{#crate postcard}}  | {{#categories encoding=Encoding}} |
+| [`rmp-serde`][ex~encoding~rmp-serde] | {{#crate rmp-serde}} | {{#categories encoding=Encoding}} |
+| [`rkyv`][ex~encoding~rkyv]           | {{#crate rkyv}}      | {{#categories encoding=Encoding}} |
