@@ -43,9 +43,11 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn spawn_blocking_returns_the_closure_result() {
-        let value = tokio::task::spawn_blocking(|| 6 * 7).await.unwrap();
+    async fn spawn_blocking_returns_the_closure_result()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let value = tokio::task::spawn_blocking(|| 6 * 7).await?;
         assert_eq!(value, 42);
+        Ok(())
     }
 
     #[tokio::test]

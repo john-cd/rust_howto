@@ -96,7 +96,7 @@ mod tests {
             OFlags::RDONLY,
             Mode::empty(),
         );
-        assert_eq!(result.unwrap_err(), rustix::io::Errno::NOENT);
+        assert_eq!(result.err(), Some(rustix::io::Errno::NOENT));
     }
 
     /// The example leaves no file behind.

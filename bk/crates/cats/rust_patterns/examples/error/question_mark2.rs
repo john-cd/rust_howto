@@ -61,8 +61,9 @@ mod tests {
 
     /// A valid port is returned.
     #[test]
-    fn parses_a_valid_port() {
-        assert_eq!(parse_port("123").unwrap(), 123);
+    fn parses_a_valid_port() -> Result<(), Box<dyn std::error::Error>> {
+        assert_eq!(parse_port("123")?, 123);
+        Ok(())
     }
 
     /// A non-numeric or out-of-range port is an error.
@@ -75,6 +76,9 @@ mod tests {
     /// Port zero is rejected with a message.
     #[test]
     fn rejects_port_zero() {
-        assert_eq!(parse_port("0").unwrap_err().to_string(), "Invalid port: 0");
+        assert_eq!(
+            parse_port("0").err().map(|e| e.to_string()).as_deref(),
+            Some("Invalid port: 0")
+        );
     }
 }

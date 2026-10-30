@@ -31,12 +31,13 @@ mod tests {
     }
 
     #[test]
-    fn current_thread_runtime_returns_the_block_on_value() {
+    fn current_thread_runtime_returns_the_block_on_value()
+    -> Result<(), Box<dyn std::error::Error>> {
         let value = tokio::runtime::Builder::new_current_thread()
             .enable_all()
-            .build()
-            .unwrap()
+            .build()?
             .block_on(async { "Hello world".len() });
         assert_eq!(value, 11);
+        Ok(())
     }
 }

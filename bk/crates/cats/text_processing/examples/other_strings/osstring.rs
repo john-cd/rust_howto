@@ -102,10 +102,11 @@ mod tests {
 
     /// `PATH` entries can be split.
     #[test]
-    fn path_variable_is_split() {
-        let joined = env::join_paths(["/a", "/b"]).unwrap();
+    fn path_variable_is_split() -> Result<(), Box<dyn std::error::Error>> {
+        let joined = env::join_paths(["/a", "/b"])?;
         let parts: Vec<_> = env::split_paths(&joined).collect();
         assert_eq!(parts, [PathBuf::from("/a"), PathBuf::from("/b")]);
+        Ok(())
     }
 
     /// Invalid UTF-8 is not convertible to `&str`.

@@ -42,11 +42,12 @@ mod tests {
 
     /// A valid MIME type is parsed, case-insensitively.
     #[test]
-    fn parses_a_valid_mime_type() {
-        let parsed = "TEXT/PLAIN".parse::<Mime>().unwrap();
+    fn parses_a_valid_mime_type() -> Result<(), Box<dyn std::error::Error>> {
+        let parsed = "TEXT/PLAIN".parse::<Mime>()?;
         assert_eq!(parsed, mime::TEXT_PLAIN);
         assert_eq!(parsed.type_(), mime::TEXT);
         assert_eq!(parsed.subtype(), mime::PLAIN);
+        Ok(())
     }
 
     /// An invalid MIME type falls back to the default.

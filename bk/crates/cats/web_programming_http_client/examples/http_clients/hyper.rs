@@ -125,7 +125,9 @@ mod tests {
 
     /// A URI without a host is rejected.
     #[tokio::test]
-    async fn uri_without_host_is_rejected() {
-        assert!(fetch_url("/just/a/path".parse().unwrap()).await.is_err());
+    async fn uri_without_host_is_rejected()
+    -> Result<(), Box<dyn std::error::Error>> {
+        assert!(fetch_url("/just/a/path".parse()?).await.is_err());
+        Ok(())
     }
 }

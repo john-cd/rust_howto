@@ -76,9 +76,13 @@ mod tests {
 
     /// The error displays its message and exposes the source.
     #[test]
-    fn error_has_message_and_source() {
-        let err = example().unwrap_err();
+    fn error_has_message_and_source() -> Result<(), Box<dyn std::error::Error>>
+    {
+        let Err(err) = example() else {
+            panic!("`example` should fail");
+        };
         assert_eq!(err.to_string(), "Error message");
-        assert_eq!(err.source().unwrap().to_string(), "oh no!");
+        assert_eq!(err.source().ok_or("missing value")?.to_string(), "oh no!");
+        Ok(())
     }
 }

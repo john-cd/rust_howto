@@ -91,18 +91,25 @@ mod tests {
 
     /// The matched character indices are returned.
     #[test]
-    fn indices_point_at_matched_characters() {
+    fn indices_point_at_matched_characters()
+    -> Result<(), Box<dyn std::error::Error>> {
         let matcher = SkimMatcherV2::default();
-        let (_, indices) = matcher.fuzzy_indices("fuzzy", "fuz").unwrap();
+        let (_, indices) = matcher
+            .fuzzy_indices("fuzzy", "fuz")
+            .ok_or("missing value")?;
         assert_eq!(indices, [0, 1, 2]);
+        Ok(())
     }
 
     /// An exact match scores at least as well as a partial one.
     #[test]
-    fn exact_match_scores_higher() {
+    fn exact_match_scores_higher() -> Result<(), Box<dyn std::error::Error>> {
         let matcher = SkimMatcherV2::default();
-        let exact = matcher.fuzzy_match("fuz", "fuz").unwrap();
-        let partial = matcher.fuzzy_match("a_f_u_z", "fuz").unwrap();
+        let exact = matcher.fuzzy_match("fuz", "fuz").ok_or("missing value")?;
+        let partial = matcher
+            .fuzzy_match("a_f_u_z", "fuz")
+            .ok_or("missing value")?;
         assert!(exact > partial);
+        Ok(())
     }
 }

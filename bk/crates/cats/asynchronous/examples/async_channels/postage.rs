@@ -91,24 +91,28 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn every_subscriber_receives_the_broadcast_messages() {
+    async fn every_subscriber_receives_the_broadcast_messages()
+    -> Result<(), Box<dyn std::error::Error>> {
         let (tx, mut rx1) = broadcast::channel(10);
         let mut rx2 = rx1.clone();
         let mut tx = tx;
-        tx.send("one".to_owned()).await.unwrap();
-        tx.send("two".to_owned()).await.unwrap();
+        tx.send("one".to_owned()).await?;
+        tx.send("two".to_owned()).await?;
         for rx in [&mut rx1, &mut rx2] {
             assert_eq!(rx.recv().await.as_deref(), Some("one"));
             assert_eq!(rx.recv().await.as_deref(), Some("two"));
         }
+        Ok(())
     }
 
     #[tokio::test]
-    async fn receiver_stream_ends_when_all_senders_are_dropped() {
+    async fn receiver_stream_ends_when_all_senders_are_dropped()
+    -> Result<(), Box<dyn std::error::Error>> {
         let (mut tx, mut rx) = broadcast::channel(2);
-        tx.send("only".to_owned()).await.unwrap();
+        tx.send("only".to_owned()).await?;
         drop(tx);
         assert_eq!(rx.recv().await.as_deref(), Some("only"));
         assert_eq!(rx.recv().await, None);
+        Ok(())
     }
 }

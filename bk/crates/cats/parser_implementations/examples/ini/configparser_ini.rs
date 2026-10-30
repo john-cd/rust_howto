@@ -70,20 +70,20 @@ mod tests {
 
     /// A non-numeric port is an error, not a silent default.
     #[test]
-    fn invalid_number_is_an_error() {
+    fn invalid_number_is_an_error() -> Result<(), Box<dyn std::error::Error>> {
         let mut config = Ini::new();
-        config.read("[server]\nport = abc\n".to_owned()).unwrap();
+        config.read("[server]\nport = abc\n".to_owned())?;
         assert!(config.getuint("server", "port").is_err());
+        Ok(())
     }
 
     /// Updated values show up in the serialized configuration.
     #[test]
-    fn updated_value_is_written() {
+    fn updated_value_is_written() -> Result<(), Box<dyn std::error::Error>> {
         let mut config = Ini::new();
-        config
-            .read("[server]\nhost = 127.0.0.1\n".to_owned())
-            .unwrap();
+        config.read("[server]\nhost = 127.0.0.1\n".to_owned())?;
         config.setstr("server", "host", Some("0.0.0.0"));
         assert!(config.writes().contains("host=0.0.0.0"));
+        Ok(())
     }
 }

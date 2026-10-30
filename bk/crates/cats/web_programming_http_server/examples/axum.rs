@@ -145,8 +145,16 @@ mod tests {
     async fn send(request: Request<Body>) -> (StatusCode, String) {
         let response = app().oneshot(request).await.expect("infallible");
         let status = response.status();
-        let body = response.into_body().collect().await.unwrap().to_bytes();
-        (status, String::from_utf8(body.to_vec()).unwrap())
+        let body = response
+            .into_body()
+            .collect()
+            .await
+            .expect("body")
+            .to_bytes();
+        (
+            status,
+            String::from_utf8(body.to_vec()).expect("UTF-8 body"),
+        )
     }
 
     /// Sends a request with no body.
@@ -156,7 +164,7 @@ mod tests {
                 .method(method)
                 .uri(uri)
                 .body(Body::empty())
-                .unwrap(),
+                .expect("valid request"),
         )
         .await
     }
@@ -208,16 +216,16 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn json_is_echoed() {
+    async fn json_is_echoed() -> Result<(), Box<dyn std::error::Error>> {
         let request = Request::builder()
             .method(Method::POST)
             .uri("/json")
             .header("content-type", "application/json")
-            .body(Body::from(r#"{"k":1}"#))
-            .unwrap();
+            .body(Body::from(r#"{"k":1}"#))?;
         let (status, body) = send(request).await;
         assert_eq!(status, StatusCode::OK);
         assert_eq!(body, r#"{"k":1}"#);
+        Ok(())
     }
 
     #[tokio::test]

@@ -97,14 +97,15 @@ mod tests {
 
     /// Indentation options are applied to each line.
     #[test]
-    fn indents_are_applied() {
+    fn indents_are_applied() -> Result<(), Box<dyn std::error::Error>> {
         let options = Options::new(20)
             .initial_indent("> ")
             .subsequent_indent("  ");
         let filled = fill("alpha beta gamma delta epsilon", &options);
         let mut lines = filled.lines();
-        assert!(lines.next().unwrap().starts_with("> "));
+        assert!(lines.next().ok_or("missing value")?.starts_with("> "));
         assert!(lines.all(|l| l.starts_with("  ")));
+        Ok(())
     }
 
     /// A word longer than the width is broken.
@@ -117,12 +118,13 @@ mod tests {
 
     /// Hyphenation allows narrower lines.
     #[test]
-    fn hyphenation_splits_words() {
-        let dictionary = Standard::from_embedded(Language::EnglishUS).unwrap();
+    fn hyphenation_splits_words() -> Result<(), Box<dyn std::error::Error>> {
+        let dictionary = Standard::from_embedded(Language::EnglishUS)?;
         let options = Options::new(10)
             .word_splitter(WordSplitter::Hyphenation(dictionary));
         let lines = wrap("extraordinary circumstances", &options);
         assert!(lines.iter().any(|l| l.ends_with('-')), "{lines:?}");
+        Ok(())
     }
 
     /// Empty input has no content lines.

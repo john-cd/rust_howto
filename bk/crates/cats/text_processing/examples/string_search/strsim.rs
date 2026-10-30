@@ -108,16 +108,17 @@ mod tests {
 
     /// "rust" is the closest to "rusty" among the candidates.
     #[test]
-    fn closest_candidate() {
+    fn closest_candidate() -> Result<(), Box<dyn std::error::Error>> {
         let candidates = ["dusty", "rust", "trust", "crusty"];
         let closest = candidates
             .iter()
             .max_by(|a, b| {
                 jaro_winkler("rusty", a)
                     .partial_cmp(&jaro_winkler("rusty", b))
-                    .unwrap()
+                    .unwrap_or(std::cmp::Ordering::Equal)
             })
-            .unwrap();
+            .ok_or("no candidates")?;
         assert_eq!(*closest, "rust");
+        Ok(())
     }
 }

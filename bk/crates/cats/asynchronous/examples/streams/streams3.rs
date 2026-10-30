@@ -105,18 +105,22 @@ mod tests {
     }
 
     #[tokio::test(start_paused = true)]
-    async fn concurrent_processing_handles_every_item() {
+    async fn concurrent_processing_handles_every_item()
+    -> Result<(), Box<dyn std::error::Error>> {
         let results = std::sync::Mutex::new(Vec::new());
         stream::iter(vec![1, 2, 3, 4, 5])
             .map(fetch_data)
             .for_each_concurrent(2, |f| async {
                 let result = f.await;
-                results.lock().unwrap().push(result);
+                if let Ok(mut r) = results.lock() {
+                    r.push(result);
+                }
             })
             .await;
-        let results = results.into_inner().unwrap();
+        let results = results.into_inner().map_err(|e| e.to_string())?;
         assert_eq!(results.len(), 5);
         assert_eq!(results.iter().filter(|r| r.is_err()).count(), 1);
+        Ok(())
     }
 
     #[tokio::test]

@@ -141,22 +141,26 @@ mod tests {
     }
 
     #[test]
-    fn defaults_apply_when_only_a_pattern_is_given() {
-        let cli = Cli::try_parse_from(["app", "needle"]).unwrap();
+    fn defaults_apply_when_only_a_pattern_is_given()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let cli = Cli::try_parse_from(["app", "needle"])?;
         assert_eq!(cli.pattern.as_deref(), Some("needle"));
         assert_eq!(cli.port, 8080);
         assert_eq!(cli.debug, 0);
         assert!(cli.path.is_none());
         assert!(cli.command.is_none());
+        Ok(())
     }
 
     #[test]
-    fn repeated_debug_flags_are_counted_and_options_parsed() {
-        let cli = Cli::try_parse_from(["app", "-dd", "-p", "a/b", "p", "9000"])
-            .unwrap();
+    fn repeated_debug_flags_are_counted_and_options_parsed()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let cli =
+            Cli::try_parse_from(["app", "-dd", "-p", "a/b", "p", "9000"])?;
         assert_eq!(cli.debug, 2);
         assert_eq!(cli.path, Some(PathBuf::from("a/b")));
         assert_eq!(cli.port, 9000);
+        Ok(())
     }
 
     #[test]
@@ -167,9 +171,9 @@ mod tests {
     }
 
     #[test]
-    fn read_subcommand_requires_files() {
-        let cli =
-            Cli::try_parse_from(["app", "read", "-a", "f1", "f2"]).unwrap();
+    fn read_subcommand_requires_files() -> Result<(), Box<dyn std::error::Error>>
+    {
+        let cli = Cli::try_parse_from(["app", "read", "-a", "f1", "f2"])?;
         match cli.command {
             Some(Commands::Read { all, file }) => {
                 assert!(all);
@@ -179,14 +183,17 @@ mod tests {
         }
         assert!(Cli::try_parse_from(["app", "read"]).is_err());
         assert!(matches!(
-            Cli::try_parse_from(["app", "tell"]).unwrap().command,
+            Cli::try_parse_from(["app", "tell"])?.command,
             Some(Commands::Tell)
         ));
+        Ok(())
     }
 
     #[test]
     fn no_arguments_shows_help_instead_of_running() {
-        let err = Cli::try_parse_from(["app"]).unwrap_err();
+        let Err(err) = Cli::try_parse_from(["app"]) else {
+            panic!("parsing without arguments should fail");
+        };
         assert_eq!(
             err.kind(),
             clap::error::ErrorKind::DisplayHelpOnMissingArgumentOrSubcommand

@@ -43,20 +43,21 @@ mod tests {
     }
 
     #[test]
-    fn dotenv_returns_an_error_when_no_env_file_is_found() {
-        let dir = tempfile::tempdir().unwrap();
+    fn dotenv_returns_an_error_when_no_env_file_is_found()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let dir = tempfile::tempdir()?;
         let missing = dir.path().join("nope.env");
         assert!(dotenvy::from_path(&missing).is_err());
+        Ok(())
     }
 
     #[test]
-    fn variables_from_an_env_file_are_parsed() {
-        let dir = tempfile::tempdir().unwrap();
+    fn variables_from_an_env_file_are_parsed()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let dir = tempfile::tempdir()?;
         let file = dir.path().join("test.env");
-        std::fs::write(&file, "A_KEY=value\n# comment\nB_KEY=\"two words\"\n")
-            .unwrap();
-        let vars: Vec<(String, String)> = dotenvy::from_path_iter(&file)
-            .unwrap()
+        std::fs::write(&file, "A_KEY=value\n# comment\nB_KEY=\"two words\"\n")?;
+        let vars: Vec<(String, String)> = dotenvy::from_path_iter(&file)?
             .map(Result::unwrap)
             .collect();
         assert_eq!(
@@ -66,5 +67,6 @@ mod tests {
                 ("B_KEY".to_owned(), "two words".to_owned()),
             ]
         );
+        Ok(())
     }
 }

@@ -135,18 +135,19 @@ mod tests {
     }
 
     #[tokio::test(start_paused = true)]
-    async fn combinators_transform_and_recover() {
+    async fn combinators_transform_and_recover()
+    -> Result<(), Box<dyn std::error::Error>> {
         let mapped =
             fetch_data(1).map(|r| r.map(|d| format!("Processed: {d}")));
-        assert_eq!(mapped.await.unwrap(), "Processed: Data for id 1");
+        assert_eq!(mapped.await?, "Processed: Data for id 1");
 
         let recovered = fetch_data(3)
             .or_else(|_| async { Ok::<_, String>("Fallback data".to_owned()) });
-        assert_eq!(recovered.await.unwrap(), "Fallback data");
+        assert_eq!(recovered.await?, "Fallback data");
 
         let both = future::try_join(fetch_data(1), fetch_data(4)).await;
         assert_eq!(
-            both.unwrap(),
+            both?,
             ("Data for id 1".to_owned(), "Data for id 4".to_owned())
         );
         assert!(
@@ -154,6 +155,7 @@ mod tests {
                 .await
                 .is_err()
         );
+        Ok(())
     }
 
     #[tokio::test(start_paused = true)]

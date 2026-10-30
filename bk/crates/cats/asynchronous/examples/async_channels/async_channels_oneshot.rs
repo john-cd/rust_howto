@@ -66,12 +66,14 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn oneshot_carries_the_computation_result() {
+    async fn oneshot_carries_the_computation_result()
+    -> Result<(), Box<dyn std::error::Error>> {
         let (tx, rx) = oneshot::channel();
         tokio::spawn(async move {
             tx.send(some_computation(5).await).expect("receiver open");
         });
-        assert_eq!(rx.await.unwrap(), "The result of computation is 5");
+        assert_eq!(rx.await?, "The result of computation is 5");
+        Ok(())
     }
 
     #[tokio::test]

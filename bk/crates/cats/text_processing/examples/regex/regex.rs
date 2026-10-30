@@ -177,17 +177,19 @@ mod tests {
 
     /// Autolinks and reference definitions are captured.
     #[test]
-    fn captures_autolinks_and_definitions() {
+    fn captures_autolinks_and_definitions()
+    -> Result<(), Box<dyn std::error::Error>> {
         let autolink = &GLOBAL_REGEX["<http...>"].0;
         assert_eq!(
-            &autolink.captures("<http://x/>").unwrap()["link"],
+            &autolink.captures("<http://x/>").ok_or("missing value")?["link"],
             "http://x/"
         );
         let def = &GLOBAL_REGEX["[label]: url \"title\""].0;
-        let caps = def.captures("[lbl]: url2 \"t\"").unwrap();
+        let caps = def.captures("[lbl]: url2 \"t\"").ok_or("missing value")?;
         assert_eq!(&caps["label"], "lbl");
         assert_eq!(&caps["url"], "url2");
         assert_eq!(&caps["title"], "t");
+        Ok(())
     }
 
     /// Images are not matched as links.

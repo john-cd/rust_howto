@@ -215,11 +215,12 @@ mod tests {
 
     /// Dependencies whose version is unknown are skipped.
     #[test]
-    fn unknown_versions_are_skipped() {
+    fn unknown_versions_are_skipped() -> Result<(), Box<dyn std::error::Error>>
+    {
         let page: Page = serde_json::from_str(
             r#"{"dependencies":[{"version_id":9}],"versions":[],"meta":{"total":1}}"#,
-        )
-        .unwrap();
+        )?;
         assert!(page.dependent_names().is_empty());
+        Ok(())
     }
 }

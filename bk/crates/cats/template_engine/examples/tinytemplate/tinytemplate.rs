@@ -77,7 +77,8 @@ mod tests {
 
     fn render(flag: bool) -> String {
         let mut tt = TinyTemplate::new();
-        tt.add_template("greeting", TEMPLATE).unwrap();
+        tt.add_template("greeting", TEMPLATE)
+            .expect("valid template");
         tt.render(
             "greeting",
             &Context {
@@ -86,7 +87,7 @@ mod tests {
                 flag,
             },
         )
-        .unwrap()
+        .expect("rendering succeeds")
     }
 
     /// The true branch is rendered.

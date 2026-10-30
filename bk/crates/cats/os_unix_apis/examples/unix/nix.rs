@@ -107,6 +107,6 @@ mod tests {
     fn opening_a_missing_file_fails() {
         let result =
             open("/this/path/does/not/exist", OFlag::O_RDONLY, Mode::empty());
-        assert_eq!(result.unwrap_err(), nix::errno::Errno::ENOENT);
+        assert_eq!(result.err(), Some(nix::errno::Errno::ENOENT));
     }
 }

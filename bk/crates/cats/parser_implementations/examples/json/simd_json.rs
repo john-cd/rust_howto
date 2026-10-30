@@ -120,11 +120,13 @@ mod tests {
 
     /// The owned value can be modified.
     #[test]
-    fn owned_value_can_be_modified() {
+    fn owned_value_can_be_modified() -> Result<(), Box<dyn std::error::Error>> {
         let mut data = br#"{"name": "Alice"}"#.to_vec();
-        let mut owned = simd_json::to_owned_value(&mut data).unwrap();
-        *owned.get_mut("name").unwrap() = OwnedValue::from("Bob");
+        let mut owned = simd_json::to_owned_value(&mut data)?;
+        *owned.get_mut("name").ok_or("missing value")? =
+            OwnedValue::from("Bob");
         assert_eq!(owned.get_str("name"), Some("Bob"));
+        Ok(())
     }
 
     /// Invalid JSON is an error.

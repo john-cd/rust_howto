@@ -98,9 +98,10 @@ mod tests {
 
     #[test]
     fn version_flag_prints_the_version() {
-        let err = cli()
-            .try_get_matches_from(["test_app", "--version"])
-            .unwrap_err();
+        let Err(err) = cli().try_get_matches_from(["test_app", "--version"])
+        else {
+            panic!("`--version` should stop parsing");
+        };
         assert_eq!(err.kind(), clap::error::ErrorKind::DisplayVersion);
         assert!(err.to_string().contains("0.1.0"));
     }

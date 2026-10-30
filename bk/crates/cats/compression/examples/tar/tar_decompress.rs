@@ -117,14 +117,15 @@ mod tests {
     }
 
     #[test]
-    fn missing_archive_is_an_error() {
-        let dir = tempfile::tempdir().unwrap();
+    fn missing_archive_is_an_error() -> Result<(), Box<dyn std::error::Error>> {
+        let dir = tempfile::tempdir()?;
         let err = decompress_archive(
             &dir.path().join("missing.tar.gz"),
             &dir.path().join("out"),
         )
         .expect_err("the archive does not exist");
         assert_eq!(err.kind(), io::ErrorKind::NotFound);
+        Ok(())
     }
 }
 

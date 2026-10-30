@@ -444,14 +444,16 @@ mod tests {
 
     /// Parsing well-formed XML builds the expected tree without errors.
     #[test]
-    fn builds_the_tree() {
+    fn builds_the_tree() -> Result<(), Box<dyn std::error::Error>> {
         let dom = parse_document(XmlTree::default(), Default::default())
             .one(r#"<a><b k="v">t</b></a>"#);
         assert!(dom.errors.borrow().is_empty());
-        let a = children(&dom.document).unwrap().borrow()[0].clone();
+        let a =
+            children(&dom.document).ok_or("missing value")?.borrow()[0].clone();
         assert_eq!(&*a.name.local, "a");
-        let b = children(&a).unwrap().borrow()[0].clone();
+        let b = children(&a).ok_or("missing value")?.borrow()[0].clone();
         assert_eq!(&*b.name.local, "b");
+        Ok(())
     }
 
     /// Malformed XML is reported through the error list.

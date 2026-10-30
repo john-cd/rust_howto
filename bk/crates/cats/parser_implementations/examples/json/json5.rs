@@ -93,9 +93,10 @@ mod tests {
 
     /// Hexadecimal numbers are converted.
     #[test]
-    fn parses_hexadecimal() {
-        let value: Value = json5::from_str("{hex: 0xDEADbeef}").unwrap();
+    fn parses_hexadecimal() -> Result<(), Box<dyn std::error::Error>> {
+        let value: Value = json5::from_str("{hex: 0xDEADbeef}")?;
         assert_eq!(value["hex"], 0xDEAD_BEEF_u64);
+        Ok(())
     }
 
     /// Malformed input is an error.

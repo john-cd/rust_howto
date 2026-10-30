@@ -107,8 +107,9 @@ mod tests {
         let names: Vec<String> = reader
             .cdrs()
             .iter()
-            .map(|c| c.insecure_file_name.as_str().unwrap().to_owned())
-            .collect();
+            .map(|c| c.insecure_file_name.as_str().map(str::to_owned))
+            .collect::<Option<_>>()
+            .ok_or_else(|| anyhow::anyhow!("non-UTF-8 file name"))?;
         assert_eq!(names, ["a.txt", "dir/b.txt"]);
 
         let mut content = String::new();

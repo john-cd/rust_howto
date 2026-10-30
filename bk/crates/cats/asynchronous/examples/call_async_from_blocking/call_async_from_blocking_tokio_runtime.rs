@@ -64,23 +64,25 @@ mod tests {
     }
 
     #[test]
-    fn background_task_runs_on_the_runtime() {
+    fn background_task_runs_on_the_runtime()
+    -> Result<(), Box<dyn std::error::Error>> {
         let runtime = tokio::runtime::Builder::new_current_thread()
             .enable_all()
             .start_paused(true)
-            .build()
-            .unwrap();
+            .build()?;
         runtime.block_on(my_bg_task(9));
+        Ok(())
     }
 
     #[test]
-    fn spawned_tasks_finish_even_with_one_worker() {
+    fn spawned_tasks_finish_even_with_one_worker()
+    -> Result<(), Box<dyn std::error::Error>> {
         let runtime = tokio::runtime::Builder::new_multi_thread()
             .worker_threads(1)
             .enable_all()
-            .build()
-            .unwrap();
+            .build()?;
         let handle = runtime.spawn(async { 7 });
-        assert_eq!(runtime.block_on(handle).unwrap(), 7);
+        assert_eq!(runtime.block_on(handle)?, 7);
+        Ok(())
     }
 }
