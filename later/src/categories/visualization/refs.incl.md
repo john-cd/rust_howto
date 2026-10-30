@@ -4,12 +4,14 @@
 [ex~visualization~charming]: visualization.md#charming
 [ex~visualization~egui-plot]: visualization.md#egui-plot
 [ex~visualization~graph-data]: visualization.md#graph-data
+[ex~visualization~leptos-chartistry]: visualization.md#leptos-chartistry
 [ex~visualization~plotters]: visualization.md#plotters
 [ex~visualization~plotters-wasm]: visualization.md#plotters-wasm
 [p~egui-add-ons]: ../gui/egui_ecosystem.md#egui-plot
 [p~wasm]: ../wasm/index.md
 [plotters-wasm-demo~repo]: https://github.com/plotters-rs/plotters-wasm-demo
 [c~layout-rs~docs]: https://docs.rs/layout-rs
+[c~leptos-chartistry~docs]: https://docs.rs/leptos-chartistry
 [c~charming~crates.io]: https://crates.io/crates/charming
 [c~charming~crates.io~badge]: https://img.shields.io/badge/crates.io-charming-crimson
 [c~charming~docs]: https://github.com/yuankunzhang/charming

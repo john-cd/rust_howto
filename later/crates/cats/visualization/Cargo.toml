@@ -25,6 +25,8 @@ test = true
 [dependencies]
 ## General
 anyhow = "1.0.104"
+leptos = { version = "0.8.22", features = ["ssr"] }
+leptos-chartistry = "0.2.3"
 plotly = "0.14.1"
 plotters = { version = "0.3.7", default-features = false, features = ["svg_backend", "line_series"] }
 

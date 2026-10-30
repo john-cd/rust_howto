@@ -30,6 +30,14 @@ Interactive web charts render data inside WebAssembly applications or export int
 {{#include ../../../crates/cats/visualization/examples/visualization/plotly.rs:example}}
 ```
 
+### Reactive Leptos Charts with `leptos-chartistry` {#leptos-chartistry}
+
+[`leptos-chartistry`][c~leptos-chartistry~docs]↗{{hi:leptos-chartistry}} provides an SVG chart component for Leptos applications. This example defines a reactive line chart component; mount it from a Leptos application to render it in a browser.
+
+```rust,editable
+{{#include ../../../crates/cats/visualization/examples/visualization/leptos_chartistry.rs:example}}
+```
+
 ### Declarative ECharts with `charming` {#charming}
 
 [![charming][c~charming~docs~badge]][c~charming~docs]{{hi:charming}} [![charming~crates.io][c~charming~crates.io~badge]][c~charming~crates.io] [![charming~repo][c~charming~repo~badge]][c~charming~repo] [![charming~lib.rs][c~charming~lib.rs~badge]][c~charming~lib.rs]{{hi:charming}}{{hi:Visualization}}

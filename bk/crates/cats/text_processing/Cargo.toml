@@ -122,6 +122,7 @@ syntect = { version = "5.3.0", default-features = false, features = ["default-fa
 textwrap = { version = "0.16.4", features = ["hyphenation"] }
 tree-sitter = "0.27.1"
 tree-sitter-json = "0.24.8"
+unicode-normalization = "0.1.26"
 unicode-segmentation = "1.13.3"
 ustr = "1.1.0"
 

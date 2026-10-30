@@ -62,6 +62,8 @@ Building the automaton is the expensive step, so build it once and reuse it for 
 
 [`strsim`][c~strsim~docs]↗{{hi:strsim}} implements string distance and similarity metrics, including Hamming, Levenshtein, optimal string alignment, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice. These formulas have different input requirements and score meanings. For example, Hamming distance requires equal-length inputs; read each metric's contract before interpreting or comparing its result.
 
+The example also shows one accent-insensitive comparison policy: apply canonical decomposition, lowercase the text, then remove combining marks before scoring. This makes `Crème brûlée` compare like `creme brulee`; it is not locale-aware collation and does not equate every spelling variant.
+
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/string_search/strsim.rs:example}}
 ```

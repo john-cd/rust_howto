@@ -1,0 +1,74 @@
+// TODO Reviewed ??-??-2026.
+
+// ANCHOR: example
+//! Demonstrates a Leptos component that renders a chart with
+//! `leptos-chartistry`.
+
+#![expect(
+    clippy::same_name_method,
+    reason = "Leptos generates a builder method with the component's name."
+)]
+
+use leptos::prelude::*;
+use leptos_chartistry::AspectRatio;
+use leptos_chartistry::Chart;
+use leptos_chartistry::Line;
+use leptos_chartistry::Series;
+use leptos_chartistry::TickLabels;
+use leptos_chartistry::Tooltip;
+
+/// One timestamp-free sample for the response-time chart.
+#[derive(Clone, Copy, Debug)]
+struct Measurement {
+    request: f64,
+    response_ms: f64,
+}
+
+/// Builds a responsive SVG chart for sample request response times.
+#[component]
+fn ResponseTimeChart() -> impl IntoView {
+    let data: Signal<Vec<Measurement>> = Signal::derive(|| {
+        vec![
+            Measurement {
+                request: 1.0,
+                response_ms: 42.0,
+            },
+            Measurement {
+                request: 2.0,
+                response_ms: 55.0,
+            },
+            Measurement {
+                request: 3.0,
+                response_ms: 47.0,
+            },
+            Measurement {
+                request: 4.0,
+                response_ms: 36.0,
+            },
+        ]
+    });
+
+    view! {
+        <Chart
+            aspect_ratio=AspectRatio::from_outer_ratio(600.0, 300.0)
+            bottom=TickLabels::aligned_floats()
+            left=TickLabels::aligned_floats()
+            tooltip=Tooltip::left_cursor()
+            series=Series::new(|measurement: &Measurement| measurement.request)
+                .line(Line::new(|measurement: &Measurement| measurement.response_ms)
+                    .with_name("Response time"))
+            data=data
+        />
+    }
+}
+
+/// Keeps the chart component available for mounting in a Leptos application.
+fn main() {
+    std::hint::black_box(ResponseTimeChart);
+}
+// ANCHOR_END: example
+
+/// References the component from the visualization example entry point.
+pub fn run() {
+    main();
+}

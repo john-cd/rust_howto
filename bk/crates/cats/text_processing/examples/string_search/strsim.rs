@@ -10,6 +10,16 @@ use strsim::jaro_winkler;
 use strsim::levenshtein;
 use strsim::normalized_levenshtein;
 use strsim::sorensen_dice;
+use unicode_normalization::UnicodeNormalization;
+use unicode_normalization::char::is_combining_mark;
+
+/// Returns a lowercase NFD key with combining marks removed.
+fn accent_insensitive_key(text: &str) -> String {
+    text.nfd()
+        .filter(|character| !is_combining_mark(*character))
+        .flat_map(char::to_lowercase)
+        .collect()
+}
 
 /// Prints several string distances and similarities.
 fn main() {
@@ -58,6 +68,14 @@ fn main() {
     println!(
         "Closest match to '{target}' is '{}' with score {}",
         closest.0, closest.1
+    );
+
+    // Canonical decomposition removes common accents after filtering marks.
+    let accented = accent_insensitive_key("Crème brûlée");
+    let plain = accent_insensitive_key("creme brulee");
+    println!(
+        "Accent-insensitive similarity: {}",
+        normalized_levenshtein(&accented, &plain)
     );
 }
 

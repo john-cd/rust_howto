@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+mod leptos_chartistry;
 mod plotly;
 mod plotters;
 
@@ -9,6 +10,7 @@ mod plotters;
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     plotly::run()?;
     plotters::run()?;
+    leptos_chartistry::run();
     Ok(())
 }
 

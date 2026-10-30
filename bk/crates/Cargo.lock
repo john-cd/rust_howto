@@ -20790,6 +20790,7 @@ dependencies = [
  "textwrap",
  "tree-sitter",
  "tree-sitter-json",
+ "unicode-normalization",
  "unicode-segmentation",
  "ustr",
 ]
