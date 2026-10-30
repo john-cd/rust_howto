@@ -9,6 +9,13 @@
         reason = "the exports are only called through the generated addon"
     )
 )]
+#![cfg_attr(
+    feature = "node",
+    expect(
+        clippy::trailing_empty_array,
+        reason = "the napi attribute macro emits a zero-sized callback array"
+    )
+)]
 
 // Framework for building pre-compiled Node.js addons in Rust.
 #[cfg(feature = "node")]

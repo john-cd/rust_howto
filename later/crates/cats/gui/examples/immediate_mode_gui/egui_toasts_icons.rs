@@ -5,7 +5,7 @@
 
 use std::time::Duration;
 
-use eframe::egui;
+use eframe_036::egui;
 use egui_notify::Toasts;
 
 /// Registers the Phosphor icon font as a fallback of the default font.
@@ -75,7 +75,7 @@ impl App {
 }
 
 /// Exercises the app without a window.
-fn main() {
+fn run_example() {
     let ctx = egui::Context::default();
     install_icons(&ctx);
 
@@ -99,10 +99,13 @@ fn main() {
         egui::CentralPanel::default().show(ui, |ui| app.show(ui));
     });
 }
+fn main() {
+    run_example();
+}
 // ANCHOR_END: example
 
 pub fn run() {
-    main();
+    run_example();
 }
 
 #[cfg(test)]
@@ -112,7 +115,7 @@ mod tests {
     /// Runs the egui toasts icons example through its entry point.
     #[test]
     fn test_egui_toasts_icons_example_entry_point() {
-        main();
+        run_example();
     }
 
     #[test]

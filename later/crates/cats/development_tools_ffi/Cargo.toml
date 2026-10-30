@@ -64,8 +64,15 @@ crate-type = ["cdylib"]
 test = false
 
 [[example]]
-name = "node"
-path = "examples/node/main.rs"
+name = "node_napi"
+path = "examples/node/napi_main.rs"
+required-features = ["node"]
+test = true
+
+[[example]]
+name = "node_neon"
+path = "examples/node/neon_main.rs"
+required-features = ["node"]
 test = true
 
 [[example]]
@@ -91,6 +98,7 @@ required-features = ["uniffi"]
 
 [dependencies]
 anyhow = "1.0.104"
+byteorder = { version = "1.5.0", optional = true }
 clap = { version = "4.6.7", features = ["derive"] }
 cxx = { version = "1.0.205", optional = true }
 flutter_rust_bridge = { version = "=2.13.0", optional = true }
@@ -114,7 +122,7 @@ uniffi = { version = "0.32.2", optional = true }
 [features]
 cpp = ["dep:cxx", "dep:cxx-build"]
 erlang = ["dep:rustler"]
-flutter = ["dep:flutter_rust_bridge"]
+flutter = ["dep:byteorder", "dep:flutter_rust_bridge"]
 java = ["dep:jni"]
 lua = ["dep:mlua", "mlua/vendored"]
 lua-module = ["dep:mlua", "mlua/module"]

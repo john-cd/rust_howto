@@ -128,7 +128,7 @@ For CPU work, implement `Task` and return [`AsyncTask`][ffi~napi-task] so comput
 
 Use [WebAssembly](../wasm/index.md) when sharing a portable computation with a browser is more useful than direct native integration. The [JavaScript interop chapter](../wasm/interfacing_with_javascript.md) covers that boundary. Native addons remain useful for native dependencies and OS resources; WebAssembly still needs an explicit host interface for such capabilities.
 
-From `later/crates`, run `cargo test --locked -p development_tools_ffi --example node` for the pure-Rust examples, and add `--features node` to compile the N-API and Neon wrappers. These Rust tests do not load the Node addon. Build a separate `cdylib` package with `napi build` (or the scaffold's npm script), then run the JavaScript smoke test against its generated loader.
+From `later/crates`, run `cargo test --locked -p development_tools_ffi --features node --example node_napi` and `cargo test --locked -p development_tools_ffi --features node --example node_neon` to check the pure-Rust paths. The N-API and Neon examples are separate Cargo targets because each addon exports its own Node.js module entry point. These Rust tests do not load the Node addon. Build the matching `cdylib` package with `napi build` or the Neon scaffold's npm script, then run its JavaScript smoke test against the generated loader.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

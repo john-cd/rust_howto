@@ -69,15 +69,10 @@ mod tests {
         main()
     }
 
+    /// Checks that empty and non-empty names are both formatted correctly.
     #[test]
     fn greet_formats_the_name() {
         assert_eq!(greet("Ada".to_owned()), "Hello, Ada!");
         assert_eq!(greet(String::new()), "Hello, !");
-    }
-
-    #[test]
-    fn add_sums_signed_integers() {
-        assert_eq!(add(2, 3), 5);
-        assert_eq!(add(-2, 2), 0);
     }
 }

@@ -41,7 +41,7 @@ fn fill_gradient(buffer: &mut [u32], offset: u32) {
 }
 
 /// Opens a window and draws into a pixel buffer until the window is closed.
-fn main() -> Result<()> {
+fn run_window() -> Result<()> {
     // TODO explain why/how we create the window and buffer here
     let mut window = Window::new(
         "minifb native graphics example",
@@ -76,11 +76,16 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+/// Starts the standalone minifb example target.
+fn main() -> Result<()> {
+    run_window()
+}
+
 // ANCHOR_END: example
 
 /// Opens the minifb window.
 pub fn run() -> Result<()> {
-    main()
+    run_window()
 }
 
 #[cfg(test)]
@@ -112,6 +117,6 @@ mod tests {
     #[test]
     #[ignore = "requires interactive example runtime"]
     fn test_minifb_example_entry_point() -> Result<()> {
-        main()
+        run_window()
     }
 }

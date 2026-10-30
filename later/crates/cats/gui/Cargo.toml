@@ -50,7 +50,7 @@ test = true
 
 [[example]]
 name = "xilem"
-path = "examples/retained_mode_gui/xilem.rs"
+path = "examples/retained_mode_gui/xilem_main.rs"
 required-features = ["xilem"]
 test = true
 
@@ -95,6 +95,24 @@ path = "examples/immediate_mode_gui/main.rs"
 test = true
 
 [[example]]
+name = "egui_log_viewer"
+path = "examples/immediate_mode_gui/egui_log_viewer.rs"
+required-features = ["egui_legacy"]
+test = true
+
+[[example]]
+name = "egui_tiles"
+path = "examples/immediate_mode_gui/egui_tiles.rs"
+required-features = ["egui_legacy"]
+test = true
+
+[[example]]
+name = "egui_toasts_icons"
+path = "examples/immediate_mode_gui/egui_toasts_icons.rs"
+required-features = ["egui_legacy"]
+test = true
+
+[[example]]
 name = "text_layout"
 path = "examples/text_layout/main.rs"
 test = true
@@ -118,6 +136,8 @@ cosmic-text = "0.19.0"
 dioxus = { version = "0.7.10", optional = true }
 dioxus-ssr = { version = "0.7.10", optional = true }
 eframe = "0.37.0"
+eframe_036 = { package = "eframe", version = "0.36.2", optional = true }
+eframe_034 = { package = "eframe", version = "0.34.3", optional = true }
 egui = "0.37.0" # Needs smallvec 1.16; keep Kube on the serde-saphyr 1.3 revision.
 egui-notify = { version = "0.23.0", optional = true }
 egui-phosphor = { version = "0.14.0", optional = true }
@@ -163,8 +183,9 @@ default = []
 softbuffer = ["dep:softbuffer"]
 baseview = ["dep:baseview"]
 dioxus = ["dep:dioxus", "dep:dioxus-ssr"]
-# These egui add-ons still depend on egui 0.34/0.36, not the egui 0.37 used by the other examples.
-egui_legacy = ["dep:egui-notify", "dep:egui-phosphor", "dep:egui_tiles", "dep:egui_tracing"]
+# These add-ons use egui 0.34, 0.36, and 0.37. Separate example targets keep
+# each add-on on the egui version it supports.
+egui_legacy = ["dep:eframe_034", "dep:eframe_036", "dep:egui-notify", "dep:egui-phosphor", "dep:egui_tiles", "dep:egui_tracing"]
 femtovg = ["dep:femtovg", "dep:glutin", "dep:glutin-winit", "dep:raw-window-handle"]
 floem = ["dep:floem"]
 gtk = ["dep:gtk", "dep:relm4", "dep:relm4-components"]

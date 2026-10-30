@@ -66,7 +66,10 @@ fn render_png() -> anyhow::Result<Vec<u8>> {
 /// Renders the image and reports the size of the PNG.
 fn main() -> anyhow::Result<()> {
     let png = render_png()?;
-    println!("Rendered a {SIZE}x{SIZE} image: {} bytes of PNG.", png.len());
+    println!(
+        "Rendered a {SIZE}x{SIZE} image: {} bytes of PNG.",
+        png.len()
+    );
     // `std::fs::write("skia.png", &png)?;` saves it to disk.
     Ok(())
 }

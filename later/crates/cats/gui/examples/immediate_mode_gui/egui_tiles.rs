@@ -50,7 +50,10 @@ impl Behavior<Pane> for TreeBehavior {
 
 /// Creates a tab container with two panes.
 fn new_tree() -> Tree<Pane> {
-    Tree::new_tabs("main", vec![Pane::new("Editor"), Pane::new("Console")])
+    Tree::new_tabs(
+        egui::Id::unique("main"),
+        vec![Pane::new("Editor"), Pane::new("Console")],
+    )
 }
 
 /// Adds a pane next to the existing tabs and makes it the active one.
@@ -64,7 +67,7 @@ fn add_pane(tree: &mut Tree<Pane>, title: &str) -> Option<TileId> {
 }
 
 /// Manipulates the layout without a window, then draws it for one frame.
-fn main() {
+fn run_example() {
     let mut tree = new_tree();
     // Two panes and the container that holds them.
     assert_eq!(tree.tiles.len(), 3);
@@ -98,10 +101,13 @@ fn main() {
         });
     });
 }
+fn main() {
+    run_example();
+}
 // ANCHOR_END: example
 
 pub fn run() {
-    main();
+    run_example();
 }
 
 #[cfg(test)]
@@ -116,7 +122,7 @@ mod tests {
 
     #[test]
     fn empty_tree_has_no_root() {
-        let mut tree: Tree<Pane> = Tree::empty("empty");
+        let mut tree: Tree<Pane> = Tree::empty(egui::Id::unique("empty"));
         assert!(tree.is_empty());
         assert_eq!(add_pane(&mut tree, "x"), None);
     }

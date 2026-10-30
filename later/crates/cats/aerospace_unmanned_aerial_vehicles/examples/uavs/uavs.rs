@@ -39,9 +39,9 @@ fn connect_drone() -> Result<()> {
             println!("{text}");
         }
         if matches!(message, Message::Response(ResponseMsg::Connected(_))) {
-            drone
-                .throw_and_go()
-                .map_err(|()| anyhow::anyhow!("the drone rejected the command"))?;
+            drone.throw_and_go().map_err(|()| {
+                anyhow::anyhow!("the drone rejected the command")
+            })?;
         }
     }
     Ok(())

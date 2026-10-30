@@ -53,12 +53,9 @@ fn run_app() -> Result<(), winit::error::EventLoopError> {
     Ok(())
 }
 
-/// Starts the example as a standalone Cargo target.
-fn main() -> Result<(), winit::error::EventLoopError> {
-    run_app()
-}
 // ANCHOR_END: example
 
+/// Runs the counter example as a standalone Cargo target or book test.
 pub fn run() -> Result<(), winit::error::EventLoopError> {
     run_app()
 }
@@ -73,12 +70,6 @@ mod tests {
     fn test_xilem_example_entry_point()
     -> Result<(), winit::error::EventLoopError> {
         run_app()
-    }
-
-    #[test]
-    #[ignore = "opens a native window; close it to finish"]
-    fn test_main_entry_point() {
-        main().expect("the event loop should run");
     }
 
     /// Checks the counter logic behind the buttons.

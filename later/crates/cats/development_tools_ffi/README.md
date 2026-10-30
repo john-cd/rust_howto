@@ -38,7 +38,7 @@ language-side example.
 - **Flutter** (`examples/flutter/`): Demonstrates concepts like `flutter_rust_bridge`.
 - **Java** (`examples/java/`): Demonstrates concepts like `jni`.
 - **Lua** (`examples/lua/`): Demonstrates concepts like `mlua`, `mlua_scripting`, `mlua_userdata`, `module`.
-- **Node** (`examples/node/`): Demonstrates concepts like `napi`, `neon`.
+- **Node** (`examples/node/`): Demonstrates `napi` and `neon` in separate addon targets.
 - **Objc** (`examples/objc/`): Demonstrates concepts like `objc2`.
 - **Python** (`examples/python/`): Demonstrates concepts like `pyo3`, `use_rust_from_python`.
 - **Ruby** (`examples/ruby/`): Demonstrates concepts like `greeting`, `magnus`, `rutie`.

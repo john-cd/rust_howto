@@ -3,7 +3,7 @@
 // ANCHOR: example
 //! Shows the `tracing` events of an application in a panel with `egui_tracing`.
 
-use eframe::egui;
+use eframe_034::egui;
 use egui_tracing::EventCollector;
 use egui_tracing::Logs;
 use tracing_subscriber::prelude::*;
@@ -19,18 +19,8 @@ fn new_collector() -> (EventCollector, impl tracing::Subscriber) {
     (collector, subscriber)
 }
 
-/// Draws the log panel at the bottom of the window.
-fn show_log_panel(ui: &mut egui::Ui, collector: &EventCollector) {
-    egui::Panel::bottom("log_panel")
-        .resizable(true)
-        .show(ui, |ui| {
-            // `Logs` is a widget with a filter by level and by target.
-            ui.add(Logs::new(collector.clone()));
-        });
-}
-
 /// Logs a few events and draws the panel for one frame without a window.
-fn main() {
+fn run_example() {
     let (collector, subscriber) = new_collector();
 
     tracing::subscriber::with_default(subscriber, || {
@@ -49,16 +39,24 @@ fn main() {
         ..Default::default()
     };
     let _output = ctx.run_ui(input, |ui| {
-        show_log_panel(ui, &collector);
-        egui::CentralPanel::default().show(ui, |ui| {
+        egui::Panel::bottom("log_panel")
+            .resizable(true)
+            .show_inside(ui, |ui| {
+                // `Logs` is a widget with a filter by level and by target.
+                ui.add(Logs::new(collector.clone()));
+            });
+        egui::CentralPanel::default().show_inside(ui, |ui| {
             ui.label("Main content");
         });
     });
 }
+fn main() {
+    run_example();
+}
 // ANCHOR_END: example
 
 pub fn run() {
-    main();
+    run_example();
 }
 
 #[cfg(test)]
@@ -68,7 +66,7 @@ mod tests {
     /// Runs the egui log viewer example through its entry point.
     #[test]
     fn test_egui_log_viewer_example_entry_point() {
-        main();
+        run_example();
     }
 
     #[test]

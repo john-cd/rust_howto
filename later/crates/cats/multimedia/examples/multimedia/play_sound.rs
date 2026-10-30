@@ -75,7 +75,8 @@ mod tests {
     /// Opening the default sink succeeds when an output device exists.
     #[test]
     #[ignore = "needs an audio output device"]
-    fn default_sink_can_be_opened() -> Result<(), Box<dyn Error + Send + Sync>> {
+    fn default_sink_can_be_opened() -> Result<(), Box<dyn Error + Send + Sync>>
+    {
         let _sink = DeviceSinkBuilder::open_default_sink()?;
         Ok(())
     }

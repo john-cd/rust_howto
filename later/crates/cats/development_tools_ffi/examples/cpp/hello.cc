@@ -22,4 +22,6 @@ std::int32_t cpp_multiply(std::int32_t left, std::int32_t right) {
 std::int32_t cpp_add_via_rust(std::int32_t left, std::int32_t right) {
     return rust_add(left, right);
 }
+
+extern "C" void cxx_link_anchor() {}
 // ANCHOR_END: example

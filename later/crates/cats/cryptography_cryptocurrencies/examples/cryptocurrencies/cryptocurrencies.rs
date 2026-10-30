@@ -8,6 +8,7 @@
 //! responses. Replace `connect_mocked_client` with
 //! `connect_http("https://...".parse()?)` to query a real node.
 
+#[cfg(test)]
 use std::env;
 
 use alloy::primitives::Address;
@@ -43,6 +44,7 @@ async fn sign_and_recover(message: &str) -> anyhow::Result<Address> {
 }
 
 /// Queries the same balance from a live node selected with `ALLOY_RPC_URL`.
+#[cfg(test)]
 async fn live_node_balance() -> anyhow::Result<()> {
     let url = env::var("ALLOY_RPC_URL")?;
     let url = url.parse()?;

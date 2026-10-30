@@ -115,7 +115,8 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies media sequence numbers and timestamps wrap at their field widths.
+    /// Verifies media sequence numbers and timestamps wrap at their field
+    /// widths.
     #[test]
     fn frame_metadata_advances_and_wraps() {
         let frames = timestamped_frames(

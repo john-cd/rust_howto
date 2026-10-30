@@ -47,9 +47,10 @@ fn rasterize(mesh: &VertexBuffers<[f32; 2], u16>) -> anyhow::Result<Pixmap> {
     let mut paint = Paint::default();
     paint.set_color_rgba8(30, 110, 200, 255);
 
-    for triangle in mesh.indices.chunks_exact(3) {
-        let [a, b, c] = [triangle[0], triangle[1], triangle[2]]
-            .map(|index| mesh.vertices[usize::from(index)]);
+    let (triangles, _) = mesh.indices.as_chunks::<3>();
+    for [a, b, c] in triangles {
+        let [a, b, c] =
+            [*a, *b, *c].map(|index| mesh.vertices[usize::from(index)]);
         let mut path = PathBuilder::new();
         path.move_to(a[0], a[1]);
         path.line_to(b[0], b[1]);
