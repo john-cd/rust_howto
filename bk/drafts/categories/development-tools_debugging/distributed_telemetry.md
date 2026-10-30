@@ -28,6 +28,12 @@ The span attribute key comes from [`opentelemetry-semantic-conventions`][c~opent
 
 Distributed traces need context propagation to connect spans across process boundaries. The W3C Trace Context format carries trace and parent span identifiers in `traceparent` (and optional vendor state in `tracestate`) HTTP headers. Framework instrumentation often injects and extracts these headers for you; when adapting an HTTP stack directly, [`opentelemetry-http`][opentelemetry-http~docs] provides `HeaderInjector` and `HeaderExtractor` adapters for an `http::HeaderMap` and OpenTelemetry's propagator API. Use the [context propagation guide][otel-context-propagation] to understand the request flow.
 
+The example below injects the current span's context into a header map on the client side, extracts it in the handler, and parents the handler span on it. An in-memory span exporter lets the tests assert that both spans share a trace ID, that the handler is the client's child, and that a missing or malformed `traceparent` starts a new, independent trace. Treat incoming headers as untrusted: use only the `TraceContextPropagator` (no baggage propagator), never log header values, and attach the extracted context to the handler's own span rather than to the thread so concurrent requests cannot leak context into each other. Run the `trace_context` example with the `opentelemetry` feature enabled.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_debugging/examples/other/trace_context.rs:example}}
+```
+
 ## Prometheus Metrics {#prometheus}
 
 Prometheus is commonly used for metrics collection. See [[metrics | Metrics]] for Rust counters, histograms, and a Prometheus exporter example; this chapter focuses on distributed traces.

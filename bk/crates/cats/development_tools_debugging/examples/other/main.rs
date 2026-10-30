@@ -8,6 +8,7 @@ use clap::Subcommand;
 mod open_observe;
 mod open_telemetry;
 mod slog;
+mod trace_context;
 mod type_name_of_val;
 
 /// Command-line arguments.
@@ -30,6 +31,9 @@ enum Commands {
     /// Runs the `slog` example.
     #[command(name = "slog")]
     Slog,
+    /// Runs the `trace_context` example.
+    #[command(name = "trace_context")]
+    TraceContext,
     /// Runs the `type_name_of_val` example.
     #[command(name = "type_name_of_val")]
     TypeNameOfVal,
@@ -47,6 +51,9 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
             }
             Commands::Slog => {
                 slog::run();
+            }
+            Commands::TraceContext => {
+                trace_context::run()?;
             }
             Commands::TypeNameOfVal => {
                 type_name_of_val::run();
@@ -68,8 +75,13 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] =
-        &["open_observe", "open_telemetry", "slog", "type_name_of_val"];
+    const SUBCOMMANDS: &[&str] = &[
+        "open_observe",
+        "open_telemetry",
+        "slog",
+        "trace_context",
+        "type_name_of_val",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]

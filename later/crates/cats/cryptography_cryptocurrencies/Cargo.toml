@@ -25,7 +25,7 @@ path = "examples/cryptocurrencies/main.rs"
 test = true
 
 [dependencies]
-alloy = { version = "2.5.0", default-features = false, features = ["std", "provider-http", "reqwest", "reqwest-rustls-tls", "signer-local"] }
+alloy = { version = "2.5.0", default-features = false, features = ["std", "contract", "sol-types", "provider-http", "reqwest", "reqwest-rustls-tls", "signer-local"] }
 anyhow = { workspace = true }
 tokio = { workspace = true }
 
