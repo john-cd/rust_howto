@@ -63,7 +63,6 @@
 - [#845](https://github.com/john-cd/rust_howto/issues/845) — **P4** — Add the Zenoh robotics example I
 - [#792](https://github.com/john-cd/rust_howto/issues/792) — **P4** — 2d_renderers/vger.rs: finish
 - [#1056](https://github.com/john-cd/rust_howto/issues/1056) — **P4** — window_creation/baseview.rs: write; review
-- [#775](https://github.com/john-cd/rust_howto/issues/775) — **P4** — Finish the Dioxus example G
 - [#248](https://github.com/john-cd/rust_howto/issues/248) — **P1** — replace current badge markdown copy-pasted text by a preprocessor command {#crate ...} {#categories... }
 
 ### Blocked on an owner or human decision
