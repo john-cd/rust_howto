@@ -178,7 +178,7 @@ pub fn run() -> Result<()> {
 }
 
 /// Starts the interactive window example as a Cargo example target.
-fn main() -> Result<()> {
+pub fn main() -> Result<()> {
     run()
 }
 

@@ -38,7 +38,7 @@ Run the example from `later/crates` with `cargo run -p rendering --example 2d_ve
 
 [`femtovg`][c~femtovg~docs]↗{{hi:femtovg}} provides a canvas-style API for antialiased 2D paths, images, and text. Its OpenGL renderer needs a compatible graphics context supplied by the application. Use it when you want a higher-level drawing canvas and already have, or can create, the required window and context.
 
-The companion example creates a window and OpenGL context with `winit` and `glutin`, then draws a path. Run it from `later/crates` with `cargo run -p gui --example femtovg --features femtovg`. It needs a desktop display and a working OpenGL driver; automated headless tests compile it but skip opening the window.
+The companion example creates a window and OpenGL context with `winit` and `glutin`, then draws a path. Run it from `later/crates` with `cargo run -p gui --example femtovg --features femtovg`. It needs a desktop display and a working OpenGL driver; automated headless tests compile it but skip opening the window. On a machine without a display or GPU, run it under a virtual X server with software OpenGL: on Debian or Ubuntu, install `xvfb libgl1-mesa-dri libxkbcommon-x11-0` and use `xvfb-run -a cargo run -p gui --example femtovg --features femtovg`; the window stays open until you close it, so stop it with a timeout.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/2d_renderers/femtovg.rs:example}}
