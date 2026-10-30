@@ -25,6 +25,7 @@ itertools = "0.15.0"
 # `tool_lib` still uses 0.14 while `crate_indices` uses 0.15.
 itertools_014 = { package = "itertools", version = "0.14.0" }
 mdbook-driver = "0.5.4"
+mdbook-markdown = "0.5.4"
 mdbook-preprocessor = "0.5.4"
 mockito = "1.7.2"
 once_cell = "1.21.4"

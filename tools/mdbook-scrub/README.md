@@ -22,6 +22,10 @@ unset config defaults for mdbook-linkcheck 0.7.7's older protocol (advertised
 as 0.4.43 to its version gate), and forwards
 the checker's exit status. Only the checker's copy of Rust edition metadata
 is mapped from 2024 to 2021; rendered examples keep edition 2024.
+It also resolves fragments on local Markdown links using the book's heading
+IDs and explicit HTML `id` and anchor `name` attributes. Missing local
+fragments follow the configured linkcheck warning policy. The adapter suppresses
+the checker's placeholder notices that say fragment resolution is unimplemented.
 Build the local helpers with `just release` from `tools/`.
 
 Make sure that:

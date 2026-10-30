@@ -1377,6 +1377,7 @@ dependencies = [
  "book_tool",
  "clap",
  "mdbook-driver",
+ "mdbook-markdown",
  "mdbook-preprocessor",
  "parse_lib",
  "regex",

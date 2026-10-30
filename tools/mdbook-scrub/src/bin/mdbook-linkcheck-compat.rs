@@ -3,6 +3,7 @@
 //! TODO Reviewed ??-??-2026.
 
 use std::io;
+use std::io::Write as _;
 use std::process::Command;
 use std::process::Stdio;
 use std::process::{self};
@@ -10,6 +11,8 @@ use std::process::{self};
 use mdbook_preprocessor::errors::Error;
 use mdbook_preprocessor::errors::Result;
 use serde_json::Value;
+
+mod fragment_resolution;
 
 /// Translates an mdBook 0.5 render context to the 0.4 protocol.
 fn legacy_context(mut context: Value) -> Result<Value> {
@@ -61,15 +64,47 @@ fn remove_unset_defaults(value: &mut Value) {
 /// Passes the translated context to `mdbook-linkcheck` and returns its exit
 /// code.
 fn run() -> Result<i32> {
-    let context = legacy_context(serde_json::from_reader(io::stdin().lock())?)?;
+    let context: Value = serde_json::from_reader(io::stdin().lock())?;
+    let invalid_fragments = fragment_resolution::find_invalid_fragments(&context)?;
+    let warning_policy = context
+        .pointer("/config/output/linkcheck/warning-policy")
+        .and_then(Value::as_str)
+        .unwrap_or("warn")
+        .to_owned();
+    if warning_policy != "ignore" {
+        for fragment in &invalid_fragments {
+            eprintln!(
+                "warning: local link in {} targets missing fragment `#{}` in {}",
+                fragment.source.display(),
+                fragment.fragment,
+                fragment.target.display()
+            );
+        }
+    }
+
+    let context = legacy_context(context)?;
     let mut child = Command::new("mdbook-linkcheck")
         .stdin(Stdio::piped())
+        .stderr(Stdio::piped())
         .spawn()?;
     // Closing stdin signals EOF; always reap the checker, even after a write error.
     let write_result = serde_json::to_writer(child.stdin.take().expect("piped stdin"), &context);
-    let status = child.wait()?;
+    let output = child.wait_with_output()?;
     write_result?;
-    Ok(status.code().unwrap_or(1))
+    let stderr = String::from_utf8_lossy(&output.stderr);
+    let mut stderr_output = io::stderr().lock();
+    for line in stderr.lines() {
+        if !line.contains("because fragment resolution isn't implemented") {
+            writeln!(stderr_output, "{line}")?;
+        }
+    }
+    if !output.status.success() {
+        return Ok(output.status.code().unwrap_or(1));
+    }
+    if !invalid_fragments.is_empty() && warning_policy == "error" {
+        return Ok(1);
+    }
+    Ok(0)
 }
 
 /// Runs the wrapper and exits with the checker's status code.
