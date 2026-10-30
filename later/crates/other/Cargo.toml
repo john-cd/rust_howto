@@ -89,10 +89,10 @@ anyhow = "1.0.104"
 arc-swap = { version = "1", optional = true }
 
 ## Data processing
-arrow = { version = "58.4.1", features = ["csv", "json", "prettyprint"], optional = true }
-arrow-array = { version = "58.4.1", optional = true } # Typed columns and `RecordBatch`, without the umbrella crate.
-arrow-cast = { version = "58.4.1", features = ["prettyprint"], optional = true } # Pretty-print record batches.
-arrow-ipc = { version = "58.4.1", optional = true } # Arrow IPC file and stream formats.
+arrow = { version = "60.1.0", features = ["csv", "json", "prettyprint"], optional = true }
+arrow-array = { version = "60.1.0", optional = true } # Typed columns and `RecordBatch`, without the umbrella crate.
+arrow-cast = { version = "60.1.0", features = ["prettyprint"], optional = true } # Pretty-print record batches.
+arrow-ipc = { version = "60.1.0", optional = true } # Arrow IPC file and stream formats.
 async-trait = "0.1.92"
 augurs = { version = "0.10", features = ["ets", "mstl"] }
 
@@ -155,7 +155,7 @@ k8s-openapi = { version = "0.28", features = ["latest"] }
 kube = { version = "4.2.0", git = "https://github.com/kube-rs/kube", rev = "237386c1b9384f4e674a48178907d9cd4f11b0a0", features = ["derive", "runtime", "client"] }
 lambda_runtime = "1.5.0"
 ort = { version = "2.0.0-rc.15", optional = true } # Downloads ONNX Runtime binaries at build time
-polars = { version = "0.51.0", default-features = false, features = ["lazy"], optional = true }
+polars = { version = "0.55.2", default-features = false, features = ["lazy"], optional = true }
 prost = "0.14.4" # Protobuf message derive.
 
 ## Scripting
@@ -170,7 +170,7 @@ shell-words = "1.1.1"
 shellexpand = "3.1.2"
 shuttle-axum = "0.57.0"
 shuttle-runtime = "0.57.0"
-smartcore = "0.5.5"
+smartcore = "0.7.0"
 
 thiserror = "2"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time", "test-util"] }

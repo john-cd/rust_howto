@@ -111,7 +111,7 @@ rand = { version = "0.10.3", features = ["thread_rng"] }
 rayon = "1.12.0"
 # Disabled: Riker has no compatible update for its vulnerable transitive dependencies.
 # riker = { version = "0.4.2", optional = true }
-ringbuf = "0.5.3"
+ringbuf = "0.6.0"
 rtrb = "0.4.1"
 # Pure Rust SHA-256 for the parallel file-hashing example, without a native `cc` build.
 sha2 = "0.11.1"
