@@ -18,6 +18,9 @@ fn main() {
     // Push elements onto the back of the list:
     list.push_back(4);
     list.push_back(5);
+    assert_eq!(list.front(), Some(&1));
+    assert_eq!(list.back(), Some(&5));
+    assert_eq!(list.len(), 5);
 
     // Print the current list order, from front to back:
     println!("List elements:");
@@ -34,6 +37,7 @@ fn main() {
     while let Some(element) = list.pop_front() {
         println!("Popped: {element}");
     }
+    assert!(list.is_empty());
 
     // Add some more elements:
     list.push_front(10);
@@ -58,6 +62,7 @@ fn main() {
     for element in &list {
         println!("{element}");
     }
+    assert_eq!(list.iter().copied().collect::<Vec<_>>(), vec![60, 80]);
 
     // Get the length of the list:
     println!("\nNumber of elements in the list: {}", list.len());
@@ -68,6 +73,7 @@ fn main() {
     // Clear the list:
     list.clear();
     println!("List is empty: {}", list.is_empty());
+    assert!(list.is_empty());
 }
 
 // ANCHOR_END: example

@@ -113,6 +113,10 @@ mod tests {
 
     /// Casting preserves bytes in native order; misaligned or mis-sized
     /// casts fail.
+    #[expect(
+        clippy::host_endian_bytes,
+        reason = "bytemuck copies the native-endian in-memory representation"
+    )]
     #[test]
     fn casts_preserve_bytes_and_reject_bad_sizes() {
         let eights: [u8; 8] = bytemuck::cast([1_u16, 2, 3, 4]);

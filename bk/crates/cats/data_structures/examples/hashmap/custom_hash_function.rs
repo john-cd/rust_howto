@@ -17,6 +17,8 @@ fn main() {
     let mut fnv_map = HashMap::with_hasher(fnv::FnvBuildHasher::default());
     fnv_map.insert("key1", "value1");
     fnv_map.insert("key2", "value2");
+    assert_eq!(fnv_map.get("key1"), Some(&"value1"));
+    assert_eq!(fnv_map.len(), 2);
 
     // Or simpler:
     let mut _map: fnv::FnvHashMap<&str, &str> = fnv::FnvHashMap::default();
@@ -36,6 +38,7 @@ fn main() {
         fnv::FnvHashMap::with_capacity_and_hasher(10, Default::default());
     map.insert(1, "one");
     map.insert(2, "two");
+    assert_eq!(map.get(&2), Some(&"two"));
     println!(
         "fnv_map: key1={:?}, key2={:?}",
         fnv_map.get("key1"),

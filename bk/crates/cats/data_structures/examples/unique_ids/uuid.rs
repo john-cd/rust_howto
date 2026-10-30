@@ -11,11 +11,15 @@ fn main() {
     // Generate a new UUID (version 4) randomly:
     let my_uuid = Uuid::new_v4();
     println!("Generated UUID: {my_uuid}");
+    assert_eq!(my_uuid.to_string().len(), 36);
 
     // Parse a UUID from a string:
     let uuid_str = "550e8400-e29b-41d4-a716-446655440000";
     match Uuid::parse_str(uuid_str) {
-        Ok(parsed_uuid) => println!("Parsed UUID: {parsed_uuid}"),
+        Ok(parsed_uuid) => {
+            assert_eq!(parsed_uuid.to_string(), uuid_str);
+            println!("Parsed UUID: {parsed_uuid}");
+        }
         Err(e) => println!("Failed to parse UUID: {e}"),
     }
     // Use a macro to create a UUID from a string literal at compile time.

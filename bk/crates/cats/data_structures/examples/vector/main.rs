@@ -8,3 +8,14 @@ mod vectors;
 fn main() {
     vectors::run();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies that the vector entry point runs its checked example.
+    #[test]
+    fn vector_dispatcher_runs() {
+        assert!(std::panic::catch_unwind(main).is_ok());
+    }
+}

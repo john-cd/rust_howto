@@ -12,6 +12,8 @@ fn main() {
     map.insert(3, "three");
     map.insert(1, "one");
     map.insert(2, "two");
+    assert_eq!(map.len(), 3);
+    assert_eq!(map.get(&2), Some(&"two"));
 
     for (k, v) in &map {
         println!("{k}: {v}");

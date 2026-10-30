@@ -8,11 +8,10 @@ Convention (see the tracking issue for "Test all book examples"):
   that is not the file itself) also defines `pub fn run()`, called by the
   directory's `main.rs`;
 * every file with a `main()` has a `#[cfg(test)]` module with a test that
-  calls `main()` and asserts on observable behavior (the script can only
-  flag files with no assert/unwrap/expect at all; review the rest by hand). If
-  process arguments belong to the test harness, test the parameterized entry
-  helper instead. A test module may state `output-only` when the example only
-  prints output to check.
+  calls `main()`; the survey counts `assert!` and `ensure!` checks in the
+  example source, including inside `main()`. If process arguments belong to
+  the test harness, test the parameterized entry helper instead. A test module
+  may state `output-only` when the example only prints output to check.
   An ignored test with a reason beginning `requires` or `needs` is also accepted
   because the test depends on an external service or resource.
 
@@ -59,12 +58,15 @@ def classify(path: Path):
     calls_injected_entry = bool(
         re.search(r"\b(?:run_with_args|run_with_output_path)\s*\(", tail)
     )
+    ignored_external_test = bool(tail and IGNORED_EXTERNAL_TEST.search(tail))
     asserts = bool(
         re.search(r"assert|should_panic|output-only", text, re.I)
+        or re.search(r"\bensure!\s*\(", text)
         or re.search(r"\.expect\(|\.unwrap\(", tail)
-        or (tail and IGNORED_EXTERNAL_TEST.search(tail))
+        or ignored_external_test
     )
-    return has_main, has_run, has_cfg_test, calls_main or calls_injected_entry, asserts
+    calls_example = calls_main or calls_injected_entry or ignored_external_test
+    return has_main, has_run, has_cfg_test, calls_example, asserts
 
 
 def is_multi_file_member(path: Path) -> bool:

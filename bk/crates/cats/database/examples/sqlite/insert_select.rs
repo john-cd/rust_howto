@@ -22,8 +22,12 @@ struct Cat {
 
 /// This function demonstrates inserting data into a SQLite database and then
 /// selecting it back.
-fn main() -> Result<()> {
-    let conn = Connection::open("temp/cats.db")?;
+fn main() -> Result<Vec<Cat>> {
+    let conn = Connection::open_in_memory()?;
+    conn.execute_batch(
+        "CREATE TABLE cat_colors (id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE);
+         CREATE TABLE cats (id INTEGER PRIMARY KEY, name TEXT NOT NULL, color_id INTEGER NOT NULL);",
+    )?;
 
     // Create a HashMap to store cat colors and their corresponding names.
     let mut cat_colors = HashMap::new();
@@ -65,21 +69,23 @@ fn main() -> Result<()> {
         })
     })?;
 
-    for cat in cats {
-        let cat = cat?;
+    let cats: Vec<Cat> = cats.collect::<Result<_>>()?;
+    for cat in &cats {
         println!("Found cat {cat:?}: {} is {}", cat.name, cat.color);
     }
 
-    Ok(())
+    Ok(cats)
 }
 // ANCHOR_END: example
 
 pub fn run() -> Result<()> {
-    main()
+    main().map(|_| ())
 }
 
 #[cfg(test)]
 mod tests {
+    use std::collections::BTreeSet;
+
     use super::*;
 
     /// Verifies that bench insert performance.
@@ -150,9 +156,22 @@ mod tests {
     }
 
     #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    fn test_main_entry_point() -> Result<()> {
+        let cats = main()?;
+        assert_eq!(cats.len(), 4);
+        let actual = cats
+            .into_iter()
+            .map(|cat| (cat.name, cat.color))
+            .collect::<BTreeSet<_>>();
+        assert_eq!(
+            actual,
+            BTreeSet::from([
+                ("Biscuit".to_owned(), "Black".to_owned()),
+                ("Oreo".to_owned(), "Black".to_owned()),
+                ("Sammy".to_owned(), "Blue".to_owned()),
+                ("Tigger".to_owned(), "Blue".to_owned()),
+            ])
+        );
+        Ok(())
     }
 }

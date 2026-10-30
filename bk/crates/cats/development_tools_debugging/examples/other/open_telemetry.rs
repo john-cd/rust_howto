@@ -62,7 +62,7 @@ mod tests {
 
     /// Verifies the example installs an exporter and flushes its span.
     #[test]
-    fn installs_exporter_and_flushes_span() -> anyhow::Result<()> {
-        main()
+    fn installs_exporter_and_flushes_span() {
+        main().expect("the in-process stdout exporter should flush");
     }
 }

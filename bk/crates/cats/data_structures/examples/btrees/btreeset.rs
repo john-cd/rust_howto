@@ -14,9 +14,11 @@ fn main() {
     names.insert("Alice");
     names.insert("Bob");
     names.insert("Charlie");
-    names.insert("Alice"); // Duplicate insertion, will be ignored.
+    assert!(!names.insert("Alice")); // Duplicate insertion is ignored.
     names.insert("David");
     names.insert("Eve");
+    assert_eq!(names.len(), 5);
+    assert!(names.contains("Bob"));
 
     // Print the set (elements are printed in sorted order):
     println!("Names in the set:");
@@ -31,6 +33,7 @@ fn main() {
 
     // Remove a name:
     names.remove("Charlie");
+    assert!(!names.contains("Charlie"));
 
     // Iterate over a range of names:
     println!("\nNames starting with 'B' and beyond:");
@@ -56,6 +59,13 @@ fn main() {
     for name in difference {
         println!("{name}");
     }
+    assert_eq!(
+        names
+            .difference(&other_names)
+            .copied()
+            .collect::<BTreeSet<_>>(),
+        BTreeSet::from(["Alice", "David"])
+    );
 
     // Use the `union` method to combine two sets:
     let union = names.union(&other_names);
@@ -63,6 +73,7 @@ fn main() {
     for name in union {
         println!("{name}");
     }
+    assert_eq!(names.union(&other_names).count(), 5);
 
     // Use the `intersection` method to find common elements:
     let intersection = names.intersection(&other_names);
@@ -70,6 +81,13 @@ fn main() {
     for name in intersection {
         println!("{name}");
     }
+    assert_eq!(
+        names
+            .intersection(&other_names)
+            .copied()
+            .collect::<BTreeSet<_>>(),
+        BTreeSet::from(["Bob", "Eve"])
+    );
 
     // Use the `symmetric_difference` method to find elements in
     // either set but not both:
@@ -78,10 +96,12 @@ fn main() {
     for name in symmetric_difference {
         println!("{name}");
     }
+    assert_eq!(names.symmetric_difference(&other_names).count(), 3);
 
     // Clear the set:
     names.clear();
     println!("Set is empty: {}", names.is_empty());
+    assert!(names.is_empty());
 }
 
 // ANCHOR_END: example

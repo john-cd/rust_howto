@@ -88,9 +88,9 @@ mod tests {
     #[test]
     fn missing_endpoint_does_not_send_a_request() -> anyhow::Result<()> {
         #[cfg(feature = "opentelemetry")]
-        run_with_endpoint(None)?;
+        assert!(run_with_endpoint(None).is_ok());
         #[cfg(not(feature = "opentelemetry"))]
-        main()?;
+        assert!(main().is_ok());
         Ok(())
     }
 }

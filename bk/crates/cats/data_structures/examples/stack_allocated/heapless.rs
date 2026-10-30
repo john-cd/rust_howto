@@ -13,15 +13,19 @@ fn main() {
     // Here we define a fixed-size vector with capacity of 3.
     let mut vec: Vec<u32, 3> = Vec::new();
 
-    vec.push(1).expect("the heapless example invariant should hold");
-    vec.push(2).expect("the heapless example invariant should hold");
-    vec.push(3).expect("the heapless example invariant should hold");
+    vec.push(1)
+        .expect("the heapless example invariant should hold");
+    vec.push(2)
+        .expect("the heapless example invariant should hold");
+    vec.push(3)
+        .expect("the heapless example invariant should hold");
     // Because they have a fixed size, operations like `push` or `insert` can
     // fail if the collection is full. In that case, `push` returns back the
     // item.
     if let Err(err) = vec.push(4) {
         println!("Error pushing to vector: {err:?}");
     };
+    assert_eq!(vec.as_slice(), &[1, 2, 3]);
 
     println!("Vector: {vec:?}");
     println!("Vector length: {}", vec.len());
@@ -29,6 +33,7 @@ fn main() {
 
     if let Some(last) = vec.pop() {
         println!("Popped: {last}");
+        assert_eq!(last, 3);
     }
 
     // Declare a fixed-size string with capacity of 16:
@@ -45,14 +50,19 @@ fn main() {
     if let Err(err) = result {
         println!("Error pushing to string: {err:?}"); // `err` is simply `()`.
     }
+    assert_eq!(string.as_str(), "Hello, world!");
 
     // Define a fixed-size map (using the `Fnv` hash for performance):
     let mut map: FnvIndexMap<&str, u32, 4> = FnvIndexMap::new();
 
-    map.insert("one", 1).expect("the heapless example invariant should hold");
-    map.insert("two", 2).expect("the heapless example invariant should hold");
-    map.insert("three", 3).expect("the heapless example invariant should hold");
-    map.insert("four", 4).expect("the heapless example invariant should hold");
+    map.insert("one", 1)
+        .expect("the heapless example invariant should hold");
+    map.insert("two", 2)
+        .expect("the heapless example invariant should hold");
+    map.insert("three", 3)
+        .expect("the heapless example invariant should hold");
+    map.insert("four", 4)
+        .expect("the heapless example invariant should hold");
     // When a key already exists, its position in iteration order stays the
     // same, its value is updated, and the old value is returned in `Some(_)`.
     assert_eq!(map.insert("three", 33), Ok(Some(3)));
@@ -61,6 +71,7 @@ fn main() {
 
     if let Some(value) = map.get("two") {
         println!("Value for 'two': {value}");
+        assert_eq!(*value, 2);
     }
 
     let result = map.insert("five", 5);
@@ -76,11 +87,18 @@ fn main() {
     // Clear the map:
     map.clear();
     println!("Map is empty: {}", map.is_empty());
+    assert!(map.is_empty());
 }
 // ANCHOR_END: example
 
+/// Runs the `heapless` collection example.
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
-mod tests { use super::*;
+mod tests {
+    use super::*;
 
     /// Runs the heapless example through its entry point.
     #[test]

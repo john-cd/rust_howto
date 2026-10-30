@@ -15,12 +15,14 @@ fn main() {
     tiny_vec.push(2);
     tiny_vec.push(3);
     tiny_vec.push(4);
+    assert_eq!(tiny_vec.as_slice(), &[1, 2, 3, 4]);
 
     // Print the current state of the `TinyVec`:
     println!("TinyVec (inline): {tiny_vec:?}");
 
     // Push beyond the inline capacity, which will cause a heap allocation:
     tiny_vec.push(5);
+    assert_eq!(tiny_vec.as_slice(), &[1, 2, 3, 4, 5]);
 
     // Print the state of the `TinyVec` after pushing beyond capacity:
     println!("TinyVec (heap-allocated): {tiny_vec:?}");
@@ -33,10 +35,12 @@ fn main() {
     // Pop an element from the `TinyVec`:
     if let Some(value) = tiny_vec.pop() {
         println!("Popped value: {value}");
+        assert_eq!(value, 5);
     }
 
     // Print the state of the `TinyVec` after popping:
     println!("TinyVec after popping: {tiny_vec:?}");
+    assert_eq!(tiny_vec.as_slice(), &[1, 2, 3, 4]);
 }
 
 // ANCHOR_END: example

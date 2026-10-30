@@ -21,11 +21,13 @@ fn main() {
     // Insert duplicate values (which are ignored).
     let added = languages.insert("Rust");
     println!("Was 'Rust' added? {added}"); // false - it already exists.
+    assert!(!added);
 
     // Create a `HashSet` from iterators:
     let numbers = vec![1, 2, 3, 4, 5, 1, 2, 3];
     let unique_numbers: HashSet<_> = numbers.into_iter().collect();
     println!("Unique numbers: {unique_numbers:?}"); // 1, 2, 3, 4, 5 (order may vary).
+    assert_eq!(unique_numbers.len(), 5);
 
     // Check if an element exists:
     if languages.contains("Rust") {
@@ -49,19 +51,23 @@ fn main() {
     // Union.
     let union: HashSet<_> = set1.union(&set2).copied().collect();
     println!("Union: {union:?}"); // 1, 2, 3, 4, 5.
+    assert_eq!(union.len(), 5);
 
     // Intersection.
     let intersection: HashSet<_> = set1.intersection(&set2).copied().collect();
     println!("Intersection: {intersection:?}"); // 3.
+    assert_eq!(intersection, HashSet::from([3]));
 
     // Difference.
     let difference: HashSet<_> = set1.difference(&set2).copied().collect();
     println!("Difference (set1 - set2): {difference:?}"); // 1, 2.
+    assert_eq!(difference, HashSet::from([1, 2]));
 
     // Symmetric difference (elements in either set but not both).
     let symmetric_difference: HashSet<_> =
         set1.symmetric_difference(&set2).copied().collect();
     println!("Symmetric Difference: {symmetric_difference:?}"); // 1, 2, 4, 5.
+    assert_eq!(symmetric_difference.len(), 4);
 
     // Check if a set is a subset of another:
     let subset: HashSet<_> = [1, 2].iter().copied().collect();
@@ -72,10 +78,12 @@ fn main() {
 
     // Get the length:
     println!("Number of languages: {}", languages.len());
+    assert_eq!(languages.len(), 2);
 
     // Clear the set:
     languages.clear();
     println!("After clearing, languages: {languages:?}"); // {}
+    assert!(languages.is_empty());
 }
 
 // ANCHOR_END: example

@@ -14,6 +14,7 @@ fn main() {
     // portion and fills the rest with cryptographically secure random data:
     let new_ulid = Ulid::generate();
     println!("Generated ULID: {new_ulid}");
+    assert!(new_ulid.timestamp_ms() > 0);
 
     // You can also get its components:
     println!("Timestamp: {}", new_ulid.timestamp_ms());
@@ -26,6 +27,7 @@ fn main() {
     match Ulid::from_str(ulid_str) {
         // Or use `parse()`.
         Ok(parsed_ulid) => {
+            assert_eq!(parsed_ulid.to_string(), ulid_str);
             println!("Successfully parsed ULID: {parsed_ulid}");
             println!("Parsed timestamp: {} ms", parsed_ulid.timestamp_ms());
         }

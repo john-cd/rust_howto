@@ -8,3 +8,14 @@ mod skiplist;
 fn main() {
     skiplist::run();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies that the skip-list entry point runs without panicking.
+    #[test]
+    fn skiplist_dispatcher_runs() {
+        assert!(std::panic::catch_unwind(main).is_ok());
+    }
+}

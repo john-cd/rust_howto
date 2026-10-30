@@ -31,6 +31,7 @@ fn variants() {
     // `format` creates a `String`:
     let info = format!("{0}-{1}", "First", "Second");
     println!("{info}");
+    assert_eq!(info, "First-Second");
 
     // `write` and `writeln` write formatted data into a writer.
     // The writer may be any value with a `write_fmt` method,
@@ -41,6 +42,7 @@ fn variants() {
     let z = "Rust";
     write!(&mut output, "Hello {z}!")
         .expect("Error occurred while trying to write to a String.");
+    assert_eq!(output, "Hello Rust!");
 }
 
 /// `print` and friends call `format_args` under the covers.
@@ -68,10 +70,12 @@ fn format() {
     let pi = std::f32::consts::PI;
     println!("Pi to two decimal places: {pi:.2}");
     // Output: Pi to two decimal places: `3.14`.
+    assert_eq!(format!("{pi:.2}"), "3.14");
 
     let number = 123;
     println!("Right aligned with width 10: {number:>10}");
     // Output: Right aligned with width 10:        123.
+    assert_eq!(format!("{number:>10}"), "       123");
 
     // Print binary, hexadecimal...
     println!("Binary representation: {number:b}");
@@ -79,6 +83,7 @@ fn format() {
 
     println!("Hexadecimal representation: {:x}", 255);
     // Output: Hexadecimal representation: `ff`.
+    assert_eq!(format!("{:x}", 255), "ff");
 
     println!("Uppercase Hexadecimal: {:X}", 255);
     // Output: Uppercase Hexadecimal: FF.
@@ -97,6 +102,8 @@ fn format() {
         y: i32,
     }
     let p = Point { x: 10, y: 20 };
+    assert_eq!((p.x, p.y), (10, 20));
+    assert_eq!(format!("{p:?}"), "Point { x: 10, y: 20 }");
     println!("x = {}, y = {}", p.x, p.y);
     println!("Debug output of Point: {p:?}"); // `p` must implement `Debug`.
     // Output: Debug output of Point: Point { x: 10, y: 20 }
@@ -131,11 +138,26 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use std::fmt::Write as _;
+
     use super::*;
 
     /// Runs the string format example through its entry point.
     #[test]
     fn test_string_format_example_entry_point() {
         main();
+    }
+
+    /// Verifies the exact strings produced by `format!` and `write!`.
+    #[test]
+    fn formatting_macros_produce_expected_text() {
+        let formatted = format!("{0} {1} {0}", "+", "-");
+        assert_eq!(formatted, "+ - +");
+
+        let mut output = String::new();
+        let language = "Rust";
+        write!(&mut output, "Hello {language}!")
+            .expect("writing to a String succeeds");
+        assert_eq!(output, "Hello Rust!");
     }
 }

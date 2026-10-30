@@ -26,7 +26,7 @@ mod tests {
 
     /// Verifies both encryption examples complete successfully.
     #[test]
-    fn both_encryption_examples_succeed() -> anyhow::Result<()> {
-        run_examples()
+    fn both_encryption_examples_succeed() {
+        run_examples().expect("both authenticated-encryption examples succeed");
     }
 }

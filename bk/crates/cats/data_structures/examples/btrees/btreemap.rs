@@ -28,6 +28,7 @@ fn main() {
     if let Some(rating) = book_ratings.get("1984") {
         println!("Rating for 1984: {rating}");
     }
+    assert_eq!(book_ratings.get("1984"), Some(&5));
 
     // Check if a book is in the map:
     if book_ratings.contains_key("Pride and Prejudice") {
@@ -38,6 +39,7 @@ fn main() {
     if let Some(rating) = book_ratings.remove("Dune") {
         println!("Removed Dune, rating was {rating}");
     }
+    assert!(!book_ratings.contains_key("Dune"));
 
     // Iterate over a range of books (lexicographically between "P" and "R"):
     println!("\nRatings for books between 'P' and 'R':");
@@ -67,6 +69,7 @@ fn main() {
             println!("Inserted '{book_title}' with rating {new_rating}");
         }
     }
+    assert_eq!(book_ratings.get(book_title), Some(&new_rating));
     // Most commonly you will use `or_insert` and related methods:
     book_ratings
         .entry("The Hitchhiker's Guide to the Galaxy")
@@ -74,6 +77,10 @@ fn main() {
         // Ensures a value is in the entry by inserting the default if empty,
         // and returns a mutable reference to the value in the entry.
         .or_insert(5);
+    assert_eq!(
+        book_ratings.get("The Hitchhiker's Guide to the Galaxy"),
+        Some(&4)
+    );
     println!("Updated book ratings:");
     for (book, rating) in &book_ratings {
         println!("{book}: {rating}");
@@ -82,6 +89,7 @@ fn main() {
     // Clear the map:
     book_ratings.clear();
     println!("Map is empty: {}", book_ratings.is_empty());
+    assert!(book_ratings.is_empty());
 }
 
 // ANCHOR_END: example

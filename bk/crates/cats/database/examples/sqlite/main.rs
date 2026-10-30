@@ -75,7 +75,9 @@ mod tests {
     /// Runs the database example through its entry point.
     #[test]
     fn test_database_example_entry_point() -> anyhow::Result<()> {
-        main()?;
+        main().expect(
+            "running the sqlite dispatcher without a subcommand succeeds",
+        );
         Ok(())
     }
 }

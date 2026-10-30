@@ -14,6 +14,11 @@ fn main() {
     map.insert("a", 1);
     map.insert("b", 2);
     map.insert("c", 3);
+    assert_eq!(map.len(), 3);
+    assert_eq!(
+        map.get_index(1).map(|(key, value)| (*key, *value)),
+        Some(("b", 2))
+    );
 
     // Iterate in insertion order:
     println!("Iterating over `IndexMap` in insertion order:");
@@ -29,6 +34,12 @@ fn main() {
     // Use the `entry` API:
     map.entry("d").or_insert(4);
     map.entry("a").or_insert(10); // This won't change "a" because it already exists.
+    assert_eq!(map.get("a"), Some(&1));
+    assert_eq!(map.get("d"), Some(&4));
+    assert_eq!(
+        map.get_index(3).map(|(key, value)| (*key, *value)),
+        Some(("d", 4))
+    );
     println!("IndexMap after using entry API:");
     for (key, value) in &map {
         println!("{key}: {value}");

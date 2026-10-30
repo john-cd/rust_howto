@@ -11,6 +11,13 @@ fn main() {
     map.insert("one", 1);
     map.insert("two", 2);
     map.insert("three", 3);
+    assert_eq!(map.len(), 3);
+    assert_eq!(
+        map.iter()
+            .map(|(key, value)| (*key, *value))
+            .collect::<Vec<_>>(),
+        vec![("one", 1), ("two", 2), ("three", 3)]
+    );
 
     // Iteration respects insertion order
     for (k, v) in &map {

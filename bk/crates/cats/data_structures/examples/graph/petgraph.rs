@@ -26,9 +26,12 @@ fn main() {
     graph.add_edge(b, c, "Edge BC");
     graph.add_edge(c, d, "Edge CD");
     graph.add_edge(d, a, "Edge DA");
+    assert_eq!(graph.node_count(), 4);
+    assert_eq!(graph.edge_count(), 4);
 
     // Find the shortest path from `b` using `1` as the cost for all edges:
     let node_map = dijkstra(&graph, b, Some(d), |_| 1);
+    assert_eq!(node_map.get(&d), Some(&2));
     println!("{node_map:?}");
 
     // Print the graph in DOT format:
@@ -55,6 +58,8 @@ fn main() {
     // Add edges to the undirected graph:
     undirected_graph.add_edge(e, f, "Edge EF");
     undirected_graph.add_edge(e, g, "Edge EG");
+    assert_eq!(undirected_graph.node_count(), 3);
+    assert_eq!(undirected_graph.edge_count(), 2);
 
     let _undirected_graph = undirected_graph;
 }

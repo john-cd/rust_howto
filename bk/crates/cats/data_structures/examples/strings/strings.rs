@@ -25,6 +25,7 @@ fn string() {
     // Alternative initialization from string literals:
     // `to_owned()` creates an owned `String` from a string slice.
     s1 = "contents".to_owned();
+    assert_eq!(s1, "contents");
 
     println!("String: {s1}");
 }
@@ -50,6 +51,7 @@ fn string_slices() {
     // Create a string slice pointing to a part of the `String`:
     let slice4: &str = &my_string[0..4]; // "Rust"
     println!("Slice of part of a `String`: '{slice4}'");
+    assert_eq!(slice4, "Rust");
     // Caution: If you were to try to slice only part of a unicode
     // character's bytes, Rust would panic at runtime.
     // String slices must always be valid UTF-8!
@@ -88,6 +90,7 @@ fn common_operations() {
 
     // Concatenation:
     let _s = s1 + &s2;
+    assert_eq!(_s, "hello Rust");
     // Note: s1 is moved and can no longer be used afterwards.
     // The `+` operator takes ownership of the first string and appends
     // a string slice to it.
@@ -95,6 +98,7 @@ fn common_operations() {
     // Formatting:
     let s1 = String::from("hello");
     let _s = format!("{s1}{s2}");
+    assert_eq!(_s, "hello Rust");
 
     // Iteration:
     // Character by character:

@@ -32,6 +32,8 @@ fn bit_mutation(bv: &mut BitVec<u8, Msb0>) {
     // Modify bits. The parameters are: index, value:
     bv.set(0, true);
     bv.set(5, true);
+    assert!(bv[0]);
+    assert!(bv[5]);
     println!("Modified BitVec: {bv}");
 }
 
@@ -53,6 +55,10 @@ fn bit_checking(bv: &BitVec<u8, Msb0>) {
 
     // Count set bits:
     println!("Number of set bits: {}", bv.count_ones());
+    assert_eq!(bv.len(), 8);
+    assert_eq!(bv.count_ones(), 6);
+    assert!(bv.any());
+    assert!(!bv.all());
 }
 
 /// Prints each bit in the supplied vector in order.
@@ -109,22 +115,27 @@ fn bit_manipulation() {
     // Bitwise AND:
     let c = a.clone() & b.clone();
     println!("a & b: {c}");
+    assert_eq!(c, bitvec![u8, Msb0; 0, 1, 0, 0, 0, 0, 1, 0]);
 
     // Bitwise OR:
     let d = a.clone() | b.clone();
     println!("a | b: {d}");
+    assert_eq!(d, bitvec![u8, Msb0; 1, 1, 1, 0, 1, 1, 1, 1]);
 
     // Bitwise XOR:
     let e = a.clone() ^ b.clone();
     println!("a ^ b: {e}");
+    assert_eq!(e, bitvec![u8, Msb0; 1, 0, 1, 0, 1, 1, 0, 1]);
 
     // Bitwise NOT:
     let f = !a.clone();
     println!("!a: {f}");
+    assert_eq!(f, bitvec![u8, Msb0; 0, 0, 1, 1, 0, 1, 0, 1]);
 
     // In-place operations:
     a &= &b;
     println!("a &= b: {a}");
+    assert_eq!(a, c);
 }
 
 /// Demonstrates reading and mutating ranges within a bit vector.
@@ -137,10 +148,12 @@ fn slicing_and_ranges() {
     // Get a slice:
     let slice = &bv_slice[2..6];
     println!("Slice [2..6]: {slice}");
+    assert_eq!(slice.count_ones(), 2);
 
     // Modify a slice:
     bv_slice[4..8].fill(true);
     println!("After filling [4..8] with `1`s: {bv_slice}");
+    assert!(bv_slice[4..8].all());
 }
 
 /// Demonstrates flags, boolean packing, and storing values in bit ranges.
@@ -159,6 +172,9 @@ fn practical_applications() {
     println!("Can read: {}", flags[0]);
     println!("Can write: {}", flags[1]);
     println!("Can execute: {}", flags[2]);
+    assert!(flags[0]);
+    assert!(flags[1]);
+    assert!(!flags[2]);
 
     // Example 2: Bit packing - pack multiple boolean values efficiently.
     let mut packed = BitVec::<u8, Msb0>::new();
@@ -170,6 +186,8 @@ fn practical_applications() {
     packed.push(false); // is_premium.
 
     println!("Packed bits: {packed}");
+    assert_eq!(packed.len(), 4);
+    assert_eq!(packed.count_ones(), 2);
 
     // Example 3: Bit-packed struct.
     let mut data = bitvec![u16, Lsb0; 0; 16];
@@ -187,6 +205,7 @@ fn practical_applications() {
     let value3: u8 = data[8..16].load();
 
     println!("Extracted values: {value1}, {value2}, {value3}");
+    assert_eq!((value1, value2, value3), (0b101, 0b10011, 0b11001010));
 }
 
 /// Runs each bit-vector demonstration in sequence.
