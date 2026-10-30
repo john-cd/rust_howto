@@ -31,9 +31,10 @@ fn main() {
 }
 // ANCHOR_END: example
 
-#[allow(clippy::main_recursion)]
 pub fn run() {
-    main();
+    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    let entry = main;
+    entry();
 }
 
 #[cfg(test)]

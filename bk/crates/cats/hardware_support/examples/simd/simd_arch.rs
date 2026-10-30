@@ -124,9 +124,10 @@ fn main() {
 // ANCHOR_END: example
 
 /// Compares scalar, runtime-dispatched, and portable SIMD on fixed inputs.
-#[allow(clippy::main_recursion)]
 pub fn run() {
-    main();
+    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    let entry = main;
+    entry();
 }
 
 #[cfg(test)]

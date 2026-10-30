@@ -55,10 +55,6 @@ fn run_with_secret(secret: &str) -> anyhow::Result<()> {
 
 /// Runs the example with a deterministic test secret without changing the
 /// process environment.
-#[allow(
-    clippy::main_recursion,
-    reason = "run() is the shared example runner; main() is the book snippet"
-)]
 pub fn run() -> anyhow::Result<()> {
     run_with_secret(TEST_JWT_SECRET)
 }
