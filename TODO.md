@@ -30,91 +30,14 @@ WAIT move code examples from later/ to bk/ when code + text ready
 
 ## In progress
 
-### Partial; needs review or work
+Every remaining open task lives in one of six epics. Status notes go in the epic, rows stay terse. Closed issues linked from an epic hold the details.
 
-- [#1719](https://github.com/john-cd/rust_howto/issues/1719) — **P1** — Repair and document the dev container setup and compiler caching
-- [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment D
-- **P1** — Port remaining examples across major dependency upgrades (no issue number yet)
-- [#1247](https://github.com/john-cd/rust_howto/issues/1247) — **P3** — precommit/mod.just: move to Dockerfile
-- [#2078](https://github.com/john-cd/rust_howto/issues/2078) — **Unprioritized** — Remove `unwrap()` outside unwrap demos and enforce with `clippy::unwrap_used`
-- [#2079](https://github.com/john-cd/rust_howto/issues/2079) — **Unprioritized** — Eliminate `dead_code` allow/expect attributes in examples
-- [#2080](https://github.com/john-cd/rust_howto/issues/2080) — **Unprioritized** — later/crates: remaining example-test gaps (feature-gated dispatchers, argv mains, `--all-features`, macOS/FreeBSD)
-
-### Truly blocked (install)
-
-- [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix
-
-### Blocked on a desktop, hardware or manual run
-
-- [#2066](https://github.com/john-cd/rust_howto/issues/2066) — **P2** — Native macOS and FreeBSD validation of target-gated examples
-- [#2074](https://github.com/john-cd/rust_howto/issues/2074) — **P3** — Collect CI and manual-run evidence deferred from #1699 (PostgreSQL workflow, Tauri, interactive GUI tests)
-- [#2068](https://github.com/john-cd/rust_howto/issues/2068) — **P4** — Live-service and desktop validation runs for completed examples
-- [#2065](https://github.com/john-cd/rust_howto/issues/2065) — **P4** — Manual and live-service runs for examples closed from the review list (review)
-- [#2058](https://github.com/john-cd/rust_howto/issues/2058) — **P4** — Deferred cloud validation from #1972 (LocalStack/MinIO, TLS, review)
-- [#2059](https://github.com/john-cd/rust_howto/issues/2059) — **P4** — Deferred audio, egui and wry follow-ups from #1974
-- [#2063](https://github.com/john-cd/rust_howto/issues/2063) — **P4** — Deferred live-service checks and prose from #1938
-- [#2098](https://github.com/john-cd/rust_howto/issues/2098) — **Unprioritized** — Windows-only remainder of #2096: rocksdb link failure and `main_recursion` wrappers
-
-### Blocked on an upstream or advisory-held dependency
-
-- [#2082](https://github.com/john-cd/rust_howto/issues/2082) — **Unprioritized** — Upgrade transitive zip dependencies past security advisories
-- [#2100](https://github.com/john-cd/rust_howto/issues/2100) — **Unprioritized** — science_robotics: add an OpenRR client example and drop the zenoh/urdf-rs advisory exceptions when fixed
-
-### Blocked on an owner or human decision
-
-- [#1850](https://github.com/john-cd/rust_howto/issues/1850) — **P1** — Re-enable GitHub Actions CI and verify the refactored workflows (review)
-- [#2054](https://github.com/john-cd/rust_howto/issues/2054) — **P3** — Curate the Chrome bookmarks export when the source is available
-
-### Done; awaiting full validation gates
-
-
-### Done; needs human review
-
-- [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters and Cap'n Proto regeneration B
-- [#1979](https://github.com/john-cd/rust_howto/issues/1979) — **P3** — Validate concurrency, memory, hashing, and enumeration recipe pages
-- [#1875](https://github.com/john-cd/rust_howto/issues/1875) — **Unprioritized** — Review the flate2 file-I/O example
-- [#1733](https://github.com/john-cd/rust_howto/issues/1733) — **P2** — Review the standalone cancelable example (review)
-- [#2064](https://github.com/john-cd/rust_howto/issues/2064) — **P4** — Editorial in-depth reviews of five written chapters (#1188, #633, #311, #962, #977) (review)
-
-### Needs a human decision or write-up
-
-- [#963](https://github.com/john-cd/rust_howto/issues/963) — **P4** — Review natural-language-processing coverage
-- [#251](https://github.com/john-cd/rust_howto/issues/251) — **P4** — cover DSLs in Rust
-- [#19](https://github.com/john-cd/rust_howto/issues/19) — **P3** — review Google Analytics setup
-- [#16](https://github.com/john-cd/rust_howto/issues/16) — **P3** — review license
-- [#17](https://github.com/john-cd/rust_howto/issues/17) — **P4** — send a pull request to little book of rust books
-- [#18](https://github.com/john-cd/rust_howto/issues/18) — **P4** — Consider adding project to goodfirstissue.dev
-
-### Deferred
-
-- [#1725](https://github.com/john-cd/rust_howto/issues/1725) — **P2** — Review the Pandoc and Typst export plan (review)
-- [#53](https://github.com/john-cd/rust_howto/issues/53) — **P4** — Evaluate whether a slim or Alpine CI image improves the supported builds
-- [#2070](https://github.com/john-cd/rust_howto/issues/2070) — **P4** — Add an optional live-node Alloy example (`connect_http`, ignored test)
-- [#2061](https://github.com/john-cd/rust_howto/issues/2061) — **P4** — Deferred follow-ups from #1991 and #1986 (capnp, services, worktrees)
-- [#2067](https://github.com/john-cd/rust_howto/issues/2067) — **P4** — Book quality follow-ups: linkcheck warnings, Pandoc decision, page review
-- [#2073](https://github.com/john-cd/rust_howto/issues/2073) — **P4** — Run clean all-feature Clippy on example crates
-
-### Trackers and not started
-
-- [#1996](https://github.com/john-cd/rust_howto/issues/1996) — **P2** — Coordinate validation gates and verification passes
-- [#1997](https://github.com/john-cd/rust_howto/issues/1997) — **P3** — Coordinate tooling, CI, and repository maintenance
-- [#1995](https://github.com/john-cd/rust_howto/issues/1995) — **P4** — Coordinate unfinished-example completion
-- [#1993](https://github.com/john-cd/rust_howto/issues/1993) — **P4** — Coordinate draft-chapter completion
-- [#1955](https://github.com/john-cd/rust_howto/issues/1955) — **P3** — Coordinate new recipes from the local-project review
-- [#1698](https://github.com/john-cd/rust_howto/issues/1698) — **P1** — Complete the first edition and integrate the companion tools
-- [#1994](https://github.com/john-cd/rust_howto/issues/1994) — **P4** — Plan later-edition chapters and example stubs
-- [#1849](https://github.com/john-cd/rust_howto/issues/1849) — **Unprioritized** — Coordinate tasks requiring human decisions
-- [#2069](https://github.com/john-cd/rust_howto/issues/2069) — **Unprioritized** — Test all book examples (tracking issue)
-- [#2108](https://github.com/john-cd/rust_howto/issues/2108) — **P2** — Repository audit: correctness, chapter/example integrity, tests, ecosystem gaps
-- [#1720](https://github.com/john-cd/rust_howto/issues/1720) — **P3** — Curate remaining VS Code, browser and TOREVIEW bookmarks into book content
-- [#2103](https://github.com/john-cd/rust_howto/issues/2103) — **P3** — Offline-tested interactive OIDC authorization-code and PKCE recipe
-- [#2105](https://github.com/john-cd/rust_howto/issues/2105) — **P3** — Typed WIT component guest/host example alongside core Wasm recipes
-- [#2106](https://github.com/john-cd/rust_howto/issues/2106) — **P3** — Tested HTTP trace-context propagation recipe with correlated OpenTelemetry spans
-- [#2109](https://github.com/john-cd/rust_howto/issues/2109) — **P3** — Align Argon2 snippet comments with the password chapter threat model
-- [#2104](https://github.com/john-cd/rust_howto/issues/2104) — **P4** — Passkey and WebAuthn registration/authentication coverage
-- [#2107](https://github.com/john-cd/rust_howto/issues/2107) — **P4** — Durable NATS JetStream consumer recipe
-- [#809](https://github.com/john-cd/rust_howto/issues/809) — **P4** — multimedia_video/video.rs: write LATER
-- [#2110](https://github.com/john-cd/rust_howto/issues/2110) — **Unprioritized** — Directives for chapter-level badge sets (docs, crates.io, repo, lib.rs, categories)
+- [#2113](https://github.com/john-cd/rust_howto/issues/2113) — **Epic** — Human decisions, reviews and manual steps (CI billing, license, analytics, editorial reviews)
+- [#2114](https://github.com/john-cd/rust_howto/issues/2114) — **Epic** — Manual and live-service validation runs (Oracle, Meilisearch, S3, NATS, desktop GUI)
+- [#2115](https://github.com/john-cd/rust_howto/issues/2115) — **Epic** — Work that needs macOS, FreeBSD, Windows or hardware
+- [#2116](https://github.com/john-cd/rust_howto/issues/2116) — **Epic** — Waiting on an upstream release or advisory fix (zip, zenoh, urdf-rs, cpal, egui)
+- [#2117](https://github.com/john-cd/rust_howto/issues/2117) — **Epic** — Deferred recipes (passkeys, WIT components, video), example cleanup (`unwrap`, `dead_code`, tests) and book quality
+- [#2118](https://github.com/john-cd/rust_howto/issues/2118) — **Epic** — Tooling, CI and repository infrastructure (dev container, CI image, dependency workflow triggers)
 
 ---
 
