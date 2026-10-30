@@ -21,7 +21,7 @@ rstar = "0.13.0"
 softbuffer = "0.4.8"
 testcontainers = "0.28.0"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net", "io-util", "time"] }
-wasmer = { version = "7.5.0", default-features = false, features = ["sys", "singlepass", "wat"] }
+wasmer = { version = "7.5.0", default-features = false, features = ["wat"] }
 
 [workspace.package]
 version = "0.1.2"

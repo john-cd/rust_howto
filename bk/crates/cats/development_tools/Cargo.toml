@@ -103,7 +103,7 @@ proc-macro2 = { version = "1.0.107", features = ["span-locations"] }
 quote = "1.0.47"
 semver = "1.0.28"
 syn = { version = "3.0.9", features = ["full", "visit"] }
-toml_edit = "0.25.17+spec-1.1.0"
+toml_edit = "0.25.17"
 # Local Cargo, metadata, and book-index operations reused from the helper tools.
 tool_lib = { path = "../../../../tools/tool_lib" }
 tracing = "0.1.44"

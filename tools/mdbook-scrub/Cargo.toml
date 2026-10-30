@@ -18,8 +18,8 @@ categories = ["command-line-utilities", "text-processing", "parser-implementatio
 anyhow = { workspace = true } # Adds chapter and directive context to preprocessing errors.
 book_tool = { workspace = true } # Reuses directives without the CLI's HTTP stack.
 clap = { workspace = true }
-mdbook-preprocessor = { workspace = true }
 mdbook-markdown = { workspace = true }
+mdbook-preprocessor = { workspace = true }
 parse_lib = { workspace = true } # Protects code and comments during legacy cleanup.
 regex = { workspace = true }
 semver = { workspace = true }

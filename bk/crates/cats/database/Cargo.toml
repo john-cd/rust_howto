@@ -86,18 +86,12 @@ cdrs-tokio = { version = "9.0.2", features = ["derive"], optional = true }
 clap = { version = "4.6.7", features = ["derive"] }
 config = "0.15.27"
 cornucopia = { version = "1.0.1", optional = true }
-# Runtime for executing the generated asynchronous query functions.
-# Pinned: the generated queries target the cornucopia_async 0.4 API (GenericClient, private::Stmt); 0.5+ removed them.
 cornucopia_async = { version = "0.4.0", optional = true, default-features = false }
 deadpool = "0.13.1"
 deadpool-postgres = { version = "0.14.2", features = [
     "serde",
 ], optional = true }
 diesel = { version = "2.3.14", optional = true }
-# The `oracle` feature requires 64-bit Oracle Instant Client Basic Light and SDK
-# packages to compile or lint. Those checks do not need a database service;
-# running either example needs a reachable service and its documented settings.
-# See bk/drafts/categories/database/oracle.md for setup steps and commands.
 diesel-oci = { version = "0.5.1", optional = true }
 diesel_migrations = { version = "2.3.2", features = [
     "sqlite",
@@ -107,35 +101,22 @@ elasticsearch = { version = "9.1.0-alpha.1", optional = true } # NOTE: alpha ver
 futures = "0.3.34"
 heed = { version = "0.23.1", optional = true }
 lapin = { version = "4.12.3", optional = true }
-# Keep one SQLite FFI version across Diesel, SQLx, SeaORM, and rusqlite: SQLx 0.9
-# requires libsqlite3-sys <0.38 and Diesel 2.3 requires it <0.39. Bundle SQLite
-# so compile, lint, and tests do not require host SQLite development libraries.
 libsqlite3-sys = { version = "0.37.0", features = ["bundled"], optional = true }
 mongodb = { version = "3.9.1", optional = true }
+mysql_async = { version = "0.37.1", default-features = false, features = ["default-rustls"], optional = true } # Asynchronous MySQL and MariaDB driver.
 once_cell = "1.21.4"
-# Compile and Clippy need Oracle Instant Client Basic Light and SDK, with
-# ORACLE_HOME and OCI_LIB_DIR configured. Running the example also needs a
-# reachable Oracle service and credentials; see the chapter for exact commands.
 oracle = { version = "0.6.3", optional = true }
 postgres = { version = "0.19.14", optional = true }
-# Exposes `ToSql` for the generated Cornucopia query bindings.
 postgres-types = { version = "0.2.14", optional = true }
 redis = { version = "1.8.0", optional = true }
-# RocksDB's native build needs a C++ toolchain, CMake, and libclang. Linux also
-# needs its RocksDB development package; Windows needs LLVM on PATH for bindgen.
 rocksdb = { version = "0.25.0", optional = true, default-features = false, features = [
     "bindgen-runtime",
 ] }
-# rusqlite 0.39 uses libsqlite3-sys 0.37, which satisfies the shared links bounds.
 rusqlite = { version = "0.39.0", optional = true }
 sea-orm = { version = "2.0.4", optional = true }
-# Seaography 2.0 is still a release candidate; keep the tested version aligned with SeaORM 2.
 seaography = { version = "=2.0.0-rc.9", optional = true }
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = { version = "1.0.154", optional = true }
-# Compile and Clippy need Oracle Instant Client Basic Light and SDK, with
-# ORACLE_HOME and OCI_LIB_DIR configured. Running the example's ignored test
-# additionally needs an Oracle service and credentials; see the chapter.
 sibyl = { version = "0.7.1", features = ["blocking"], optional = true }
 sqlx = { version = "0.9.0", features = [
     "runtime-tokio",
@@ -143,12 +124,10 @@ sqlx = { version = "0.9.0", features = [
     "macros",
 ], optional = true }
 tempfile = { version = "3.27.0", optional = true }
-mysql_async = { version = "0.37.1", default-features = false, features = ["default-rustls"], optional = true } # Asynchronous MySQL and MariaDB driver.
 tiberius = { version = "0.13.0", default-features = false, features = [
     "native-tls",
     "tds73",
 ], optional = true }
-# Bound the connection attempt in the Cassandra client example.
 tokio = { version = "1.54.1", features = ["macros", "net", "rt-multi-thread", "time"] }
 tokio-postgres = { version = "0.7.18", optional = true }
 tokio-util = { version = "0.7.20", features = ["compat"] }
