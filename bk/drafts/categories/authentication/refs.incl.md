@@ -6,6 +6,7 @@
 [ex~authentication~csrf]: session_login.md#csrf
 [ex~authentication~oauth-client-credentials]: oauth_client_credentials.md#oauth-client-credentials
 [ex~authentication~oidc-authorization-code]: oidc_authorization_code.md#oidc-authorization-code
+[ex~authentication~passkeys]: passkeys.md#passkeys
 [rust-cookbook~oauth2-827]: https://github.com/rust-lang-nursery/rust-cookbook/issues/827
 
 [c~openidconnect~docs]: https://docs.rs/openidconnect

@@ -62,6 +62,7 @@ The [Copenhagen Book][book~copenhagen]↗ provides a general guideline on implem
 - **JWT (JSON Web Tokens):** [`jsonwebtoken`][c~jsonwebtoken~docs]↗{{hi:jsonwebtoken}}.
 - **OAuth 2.0:** [![oauth2][c~oauth2~docs~badge]][c~oauth2~docs]↗{{hi:oauth2}} for delegated API authorization.
 - **OpenID Connect:** [![openidconnect][c~openidconnect~docs~badge]][c~openidconnect~docs]↗{{hi:openidconnect}} for federated user authentication built on OAuth 2.0.
+- **Passkeys (WebAuthn):** [![webauthn-rs][c~webauthn-rs~docs~badge]][c~webauthn-rs~docs]↗{{hi:webauthn-rs}} for phishing-resistant, passwordless sign-in. See the [passkey recipe][ex~authentication~passkeys].
 - **Web Authentication:** Often tied to web frameworks such as [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} and [`warp`][c~warp~docs]↗{{hi:warp}}. See [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming HTTP Server]].
 - **[[cryptography | Cryptographic Primitives]]:** [`ring`][c~ring~docs]↗{{hi:ring}} and [`rust-crypto`][c~rust-crypto~docs]↗{{hi:rust-crypto}} are often used through higher-level crates. See [[encryption | Encryption]], [[signature | Signatures]], [[certificates | Certificates]], and [[cryptography_utilities | Cryptography Utilities]].
 
