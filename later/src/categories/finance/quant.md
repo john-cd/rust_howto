@@ -34,7 +34,7 @@ For common technical-analysis indicators and custom indicator implementations, s
 
 [![rustquant][c~RustQuant~docs~badge]][c~RustQuant~docs] [![rustquant~crates.io][c~RustQuant~crates.io~badge]][c~RustQuant~crates.io] [![rustquant~repo][c~RustQuant~repo~badge]][c~RustQuant~repo] [![rustquant~lib.rs][c~RustQuant~lib.rs~badge]][c~RustQuant~lib.rs]{{hi:rustquant}}{{hi:Finance}}{{hi:Monte-Carlo}}{{hi:Option-pricing}}{{hi:Quantitative}}{{hi:Quantlib}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~simulation][cat~simulation~badge]][cat~simulation]{{hi:Simulation}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}} [![cat~finance][cat~finance~badge]][cat~finance]
 
-[`RustQuant`][c~RustQuant~lib.rs]↗ is a Rust library for quantitative [finance][p~finance]. Its umbrella crate brings in a substantial dependency tree, so this workspace does not compile it. The following standalone Black-Scholes example uses no RustQuant APIs; the next section shows a smaller dedicated option-pricing crate.
+[`RustQuant`][c~RustQuant~lib.rs]↗ is a Rust library for quantitative [finance][p~finance]. Its umbrella crate brings in a substantial dependency tree, so this workspace does not compile it. The following standalone Black-Scholes example uses no RustQuant APIs; it relies on [`statrs`][c~statrs~docs]↗ for the normal distribution; the next section shows a smaller dedicated option-pricing crate.
 
 ```rust,editable
 {{#include ../../../crates/cats/finance/examples/quant/rustquant.rs:example}}

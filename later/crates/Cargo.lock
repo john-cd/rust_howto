@@ -9874,6 +9874,7 @@ dependencies = [
  "rand_distr 0.6.0",
  "rusty-money",
  "serde_json",
+ "statrs",
  "ta-statistics",
  "tokio",
  "trading-calendar",
@@ -17316,6 +17317,7 @@ dependencies = [
  "num-complex 0.4.6",
  "num-rational 0.4.2",
  "num-traits",
+ "rand 0.10.3",
  "simba 0.10.2",
  "typenum",
 ]
@@ -24373,6 +24375,19 @@ name = "static_assertions"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
+
+[[package]]
+name = "statrs"
+version = "0.19.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c1837f9a1bd13dabbdbb04489c39451482d3cdd35a6e1a0d0f3570dea2b8c8be"
+dependencies = [
+ "approx",
+ "nalgebra 0.35.0",
+ "num-traits",
+ "rand 0.10.3",
+ "thiserror 2.0.21",
+]
 
 [[package]]
 name = "stlrs"

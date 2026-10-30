@@ -42,6 +42,7 @@ rand.workspace = true
 rand_distr.workspace = true
 rusty-money = "0.5.1" # Money with currency, ISO 4217 data and formatting.
 serde_json = "1.0.154"
+statrs = "0.19.1" # Normal distribution for the Black-Scholes example.
 ta-statistics = "0.2.6"
 tokio = { version = "1.54.1", features = ["rt", "macros"] }
 trading-calendar = "0.2.3"
