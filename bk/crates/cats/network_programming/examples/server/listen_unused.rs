@@ -14,6 +14,12 @@
 //! To test this, run the server and then use a tool like `telnet` or `netcat`
 //! to connect to the printed port. For example: `telnet 127.0.0.1 <port>` or
 //! `nc 127.0.0.1 <port>`.
+//!
+//! A port is a number that tells the operating system which program on a
+//! machine should receive incoming network data. The loopback address
+//! (127.0.0.1) only accepts connections from the same machine, which keeps the
+//! demo private. Asking for port 0 lets the operating system pick any free
+//! port, which avoids clashes with other programs.
 
 use std::io::Error;
 use std::io::Read as _;

@@ -2,6 +2,13 @@
 
 // ANCHOR: example
 //! RSA encryption and decryption with PKCS#1 v1.5 padding.
+//!
+//! RSA is a public-key scheme: anyone can encrypt with the public key, but only
+//! the holder of the private key can decrypt. Because it is slow and can only
+//! encrypt short messages, real systems use it to protect a small symmetric key
+//! (such as an AES key) rather than the data itself. Modern designs prefer OAEP
+//! padding to the older PKCS#1 v1.5 shown here, so treat this as a
+//! compatibility example.
 
 // Security: `rsa` has no fix for RUSTSEC-2023-0071. This example performs a
 // local round trip only; do not expose decryption timing to attackers or use

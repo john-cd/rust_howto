@@ -2,11 +2,22 @@
 
 // ANCHOR: example
 //! Checks IPv4 addresses against a configured subnet with `smoltcp`.
+//!
+//! `smoltcp` is a TCP/IP network stack that needs neither an operating system
+//! nor heap allocation, so it fits on microcontrollers (small chips that run
+//! one program, such as in sensors or appliances). A subnet is a block of
+//! addresses on the same local network. It is written in CIDR notation:
+//! `192.0.2.0/24` means the first 24 bits (`192.0.2`) are fixed and the last 8
+//! bits identify the device, giving 256 addresses. A device uses this check to
+//! decide whether to send a packet directly or via a router.
 
 use smoltcp::wire::Ipv4Address;
 use smoltcp::wire::Ipv4Cidr;
 
 /// Returns the documentation subnet used by the example.
+///
+/// `192.0.2.0/24` is reserved for examples and documentation (RFC 5737), so
+/// it never collides with a real network.
 fn documentation_subnet() -> Ipv4Cidr {
     Ipv4Cidr::new(Ipv4Address::new(192, 0, 2, 0), 24)
 }

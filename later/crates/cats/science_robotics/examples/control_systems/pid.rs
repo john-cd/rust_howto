@@ -2,6 +2,15 @@
 
 // ANCHOR: example
 //! Drive a simulated first-order plant to a setpoint with a PI controller.
+//!
+//! A PID controller keeps a measured value, such as a motor speed, a drone's
+//! altitude or an oven temperature, close to a target (the setpoint). Each
+//! cycle it compares the measurement to the target and computes a control
+//! output from three terms: the proportional term reacts to the current error,
+//! the integral term accumulates past error to remove a lasting offset, and
+//! the derivative term reacts to how fast the error is changing (unused here,
+//! which makes this a PI controller). In robotics, "plant" means the system
+//! being controlled.
 
 use pid::Pid;
 
@@ -31,6 +40,8 @@ fn simulate() -> f32 {
         output: 0.0,
         tau: 1.0,
     };
+    // Control loop: measure, compute the output, apply it, repeat. 200 steps
+    // of 0.1 s simulate 20 seconds.
     let dt = 0.1;
     let mut measurement = plant.output;
     for _ in 0..200 {

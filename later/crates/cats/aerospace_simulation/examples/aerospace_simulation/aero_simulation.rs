@@ -2,6 +2,13 @@
 
 // ANCHOR: example
 //! A basic one-dimensional rocket launch simulation.
+//!
+//! Simulations like this one let engineers test a design before building it.
+//! The approach is to compute the forces on the vehicle, derive its
+//! acceleration (Newton's second law: force = mass x acceleration), and then
+//! advance velocity and altitude in small time steps. This simple stepping
+//! method is called Euler integration; it is easy to follow, but it is only
+//! accurate for small steps.
 
 /// A basic 1D rocket launch simulation.
 struct Rocket {
@@ -32,9 +39,13 @@ impl Rocket {
     /// Advances the simulation by `dt` seconds.
     fn update(&mut self, dt: f64) {
         let g = 9.81; // Gravity (m/s^2)
-        // Exponential atmosphere model
+        // Air gets thinner with height. This exponential model starts from the
+        // sea-level density (1.225 kg/m^3) and shrinks by a factor of e every
+        // 8 km.
         let air_density = 1.225 * (-self.altitude / 8000.0).exp();
 
+        // Drag is the air resistance that opposes motion; it grows with the
+        // square of the speed. `signum` makes it point against the velocity.
         let drag = 0.5
             * air_density
             * self.velocity.powi(2)
@@ -42,6 +53,7 @@ impl Rocket {
             * self.area
             * self.velocity.signum();
 
+        // The engine only pushes while fuel remains.
         let current_thrust = if self.fuel_mass > 0.0 {
             self.thrust
         } else {
@@ -49,6 +61,9 @@ impl Rocket {
         };
 
         let mass = self.total_mass();
+        // Net force = thrust - drag - weight; dividing by the mass gives the
+        // acceleration. The mass shrinks as fuel burns, so it is recomputed
+        // on every step.
         let acceleration = (current_thrust - drag - mass * g) / mass;
 
         self.velocity += acceleration * dt;
@@ -82,6 +97,7 @@ fn main() {
         altitude: 0.0,
     };
 
+    // 100 steps of 0.1 s simulate 10 seconds of flight.
     for _ in 0..100 {
         rocket.update(0.1);
     }
@@ -91,6 +107,9 @@ fn main() {
 
 // ANCHOR: sgp4-tle-propagation
 /// Propagates a fixed ISS two-line element set sixty minutes from its epoch.
+///
+/// A two-line element set (TLE) describes a satellite's orbit; SGP4 predicts
+/// where the satellite will be. The result is the position in kilometers.
 fn propagate_tle_sixty_minutes() -> [f64; 3] {
     use sgp4::Constants;
     use sgp4::Elements;
@@ -118,6 +137,11 @@ use ode_solvers::System;
 use ode_solvers::Vector2;
 
 /// Models vertical ballistic motion under constant gravity.
+///
+/// The state is `[height, velocity]`. A solver repeatedly asks for the
+/// derivative of the state: the height changes at the velocity, and the
+/// velocity changes at `-g`. RK4 (fourth-order Runge-Kutta) is a more accurate
+/// stepping method than the Euler method used above.
 struct ConstantGravity;
 
 impl System<f64, Vector2<f64>> for ConstantGravity {

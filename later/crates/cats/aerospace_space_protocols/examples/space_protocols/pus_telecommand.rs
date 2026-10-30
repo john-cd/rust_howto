@@ -1,6 +1,12 @@
 // ANCHOR: pus-telecommand
 //! Create and parse a PUS-C telecommand.
 /// Creates, serializes, and parses a PUS-C connection-test telecommand.
+///
+/// A telecommand is an instruction sent from the ground to a spacecraft.
+/// PUS (Packet Utilization Standard, from ECSS) layers named services on top
+/// of CCSDS packets. Service 17 is the "test" service: subtype 1 asks the
+/// spacecraft "are you alive?" and the spacecraft answers with a telemetry
+/// packet (subtype 2), like a ping.
 pub fn pus_telecommand() {
     use arbitrary_int::u11;
     use arbitrary_int::u14;
@@ -12,6 +18,7 @@ pub fn pus_telecommand() {
     use spacepackets::ecss::tc::PusTcCreator;
     use spacepackets::ecss::tc::PusTcReader;
 
+    // Optional application data; a plain connection test does not need any.
     let app_data = [0xCA, 0xFE];
     let telecommand = PusTcCreator::new_simple(
         SpHeader::new_for_unseg_tc(u11::new(0x42), u14::new(12), 0),

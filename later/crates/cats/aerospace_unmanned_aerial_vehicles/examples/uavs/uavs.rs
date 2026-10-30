@@ -5,6 +5,11 @@
 //!
 //! Decoding a message into text is a pure function, so it can be tested
 //! without a drone; only [`connect_drone`] talks to the network.
+//!
+//! A UAV (unmanned aerial vehicle) is the formal name for a drone. Besides
+//! accepting commands, a drone continuously reports telemetry, meaning
+//! measurements such as battery charge and height. Ground software uses them
+//! to display status and to decide when to land.
 
 use anyhow::Result;
 use tello::Drone;
@@ -32,13 +37,17 @@ fn describe(message: &Message) -> Option<String> {
 
 /// Connects to a drone and prints the first flight-data message.
 fn connect_drone() -> Result<()> {
+    // The drone's fixed address and command port on its own Wi-Fi network.
     let mut drone = Drone::new("192.168.10.1:8889");
+    // The drone sends its replies and video to this local UDP port.
     drone.connect(11111);
     if let Some(message) = drone.poll() {
         if let Some(text) = describe(&message) {
             println!("{text}");
         }
         if matches!(message, Message::Response(ResponseMsg::Connected(_))) {
+            // `throw_and_go` starts the motors when the drone is thrown into
+            // the air by hand; it is a quick way to launch without a button.
             drone.throw_and_go().map_err(|()| {
                 anyhow::anyhow!("the drone rejected the command")
             })?;
