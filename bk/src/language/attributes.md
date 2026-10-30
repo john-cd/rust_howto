@@ -138,7 +138,7 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 
 ## Related Topics {#related-topics .skip}
 
-- [[derive | Derive]] for the `#[derive(...)]` attribute used to automatically derive common traits.
+- [[automatic_trait_derivation | Derive]] for the `#[derive(...)]` attribute used to automatically derive common traits.
 - [[rust-patterns | Rust Patterns]].
 - [[testing | Testing]] for the `#[test]` attribute.
 - [[documentation | Documentation]] for the `#[doc(...)]` attribute.

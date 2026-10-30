@@ -168,3 +168,9 @@
 [p~variables]: variables.md
 [p~vectors]: ../categories/data-structures/vectors.md
 [p~visibility]: ../code-organization/visibility.md
+[p~automatic_trait_derivation]: ../standard-library/automatic_trait_derivation.md
+[p~clone-on-write]: ../standard-library/clone-on-write.md
+[p~optional_values]: ../standard-library/optional_values.md
+[p~ownership_and_borrowing]: ownership_and_borrowing.md
+[p~recoverable_error_handling]: ../standard-library/recoverable_error_handling.md
+[p~trait_objects_and_dynamic_dispatch]: trait_objects_and_dynamic_dispatch.md

@@ -68,7 +68,7 @@ See:
 
 - [[slices | Slices]].
 - [[vectors | Vectors]].
-- [[cow | COW]].
+- [[clone-on-write | COW]].
 
 ## Related Topics {#related-topics .skip}
 

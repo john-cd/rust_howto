@@ -22,7 +22,7 @@ The following example demonstrates creating a graph, adding nodes and edges, tra
 
 ## Related Topics {#related-topics .skip}
 
-- [[linkedlist | Linked Lists]].
+- [[linked_lists | Linked Lists]].
 - [[maps | Maps]].
 
 {{#include refs.incl.md}}

@@ -96,8 +96,8 @@ Bounds in a type alias's `where` clause are not enforced at use sites and can be
 See also:
 
 - [[enums | Enums]].
-  - [[option | Option]].
-  - [[result | Result]].
+  - [[optional_values | Option]].
+  - [[recoverable_error_handling | Result]].
 - [[generics | Generics]].
 - [[slices | Slices]].
 - [[strings | Strings]].

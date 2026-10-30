@@ -44,3 +44,6 @@
 [p~statistics]: ../mathematics/statistics.md
 [p~strings]: ../data-structures/strings.md
 [p~trigonometry]: ../mathematics/trigonometry.md
+[p~b-trees]: ../data-structures/b-trees.md
+[p~binary_heaps]: ../data-structures/binary_heaps.md
+[p~vectors]: ../data-structures/vectors.md

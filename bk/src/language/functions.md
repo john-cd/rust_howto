@@ -87,7 +87,7 @@ Instead, you should typically:
 {{#include ../../crates/language/examples/functions/return_reference.rs:example}}
 ```
 
-You can also use `std::borrow::Cow` to generalize over owned data and unowned references. See the [[cow | COW]] chapter.
+You can also use `std::borrow::Cow` to generalize over owned data and unowned references. See the [[clone-on-write | COW]] chapter.
 
 ## Related Topics {#related-topics .skip}
 

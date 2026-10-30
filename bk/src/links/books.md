@@ -202,7 +202,7 @@ For convenience, this page includes a number of links to the websites of publish
 
 ## Related Topics {#related-topics .skip}
 
-- [[blogs | Blogs]].
+- [[blogs_and_forums | Blogs]].
 - [[example_code | Example Code and Templates]].
 
 {{#include refs.incl.md}}

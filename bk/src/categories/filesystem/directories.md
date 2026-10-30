@@ -43,7 +43,7 @@ In particular, its optional 'parallel' feature parallelizes the deletion. This i
 - [[directory_traversal | Directory Traversal]].
 - [[paths | Paths]].
 - [[symbolic_links | Symbolic Links]].
-- [[user_directories | User Directories]].
+- [[user_directories_and_preferred_applications | User Directories]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

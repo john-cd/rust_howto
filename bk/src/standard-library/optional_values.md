@@ -124,7 +124,7 @@ When working with references to `Option`, use:
 - [`std::option::Option::as_deref`][c~std::option::Option::as_deref~docs]↗{{hi:std::option::Option::as_deref}} to convert from `&Option<T>` to `Option<&T::Target>`.
 - [`std::option::Option::as_deref_mut`][c~std::option::Option::as_deref_mut~docs]↗{{hi:std::option::Option::as_deref_mut}} to convert from `&mut Option<T>` to `Option<&mut T::Target>`.
 
-See also the [[asref | AsRef]] chapter.
+See also the [[reference-to-reference_conversions | AsRef]] chapter.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/option/option_ref.rs:example}}
@@ -138,7 +138,7 @@ See also the [[asref | AsRef]] chapter.
 
 - [[iterators | Iterators]].
 - [[match | Match]].
-- [[result | Result]].
+- [[recoverable_error_handling | Result]].
 - [[rust-patterns | Rust Patterns]].
 
 {{#include refs.incl.md}}

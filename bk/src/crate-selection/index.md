@@ -47,7 +47,7 @@ You may also use the following sites for crate recommendations:
   - [`crates.io`'s Most (Recent) Downloads][crates.io~most-recent-downloads]↗.
   - You should search for crates by [category][crates.io-categories~website]↗ and by [keywords][crates.io-keywords~website]↗.
 
-You can also search or post on Rust chat servers and forums - see [[blogs | Blogs and Forums]].
+You can also search or post on Rust chat servers and forums - see [[blogs_and_forums | Blogs and Forums]].
 
 ### Consult Dated Lists and Reviews
 
@@ -64,7 +64,7 @@ You may also consult older resources, such as:
 
 ## Related Topics
 
-- [[state_of_the_art | State of the Rust Ecosystem]].
+- [[current_state_of_the_art | State of the Rust Ecosystem]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

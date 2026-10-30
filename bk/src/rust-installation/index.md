@@ -85,7 +85,7 @@ Review the [git][git~website]↗ manual for more commands.
 ## Related Topics
 
 - [[cargo |`cargo`]].
-- [[entrypoint | Entrypoints]].
+- [[entry_points | Entrypoints]].
 - [[language | Language]].
 - [[package_layout | Package layout]].
 - [[rustup | `rustup`]].

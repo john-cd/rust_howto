@@ -64,7 +64,7 @@ The example counts words with three maps: the standard library's [`HashMap`][c~s
 
 ## Related Data Structures {#related-data-structures .skip}
 
-- [[btrees | B-trees]].
+- [[b-trees | B-trees]].
 - [[maps | Other Maps]].
 
 ## Related Topics {#related-topics .skip}

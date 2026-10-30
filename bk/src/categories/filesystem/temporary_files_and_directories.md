@@ -22,7 +22,7 @@ Note that temporary files and directories have subtle security and resource leak
 
 ## Related Topics {#related-topics .skip}
 
-- [[read_write | Reading and Writing Files]].
+- [[reading_and_writing_files | Reading and Writing Files]].
 - [[paths | Paths]].
 
 {{#include refs.incl.md}}

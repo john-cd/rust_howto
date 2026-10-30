@@ -96,13 +96,13 @@ The [Hands-On Microservices with Rust repository][book~Hands-On-Microservices-wi
 
 ## Related Topics {#related-topics .skip}
 
-- [[blogs | Blogs]].
+- [[blogs_and_forums | Blogs]].
 - [[books | Books]].
 - [[example_code | Example Code and Templates]].
 - [[language | Language]].
 - [[meetings | Meetings]].
 - [[rust_cheatsheets | Rust Cheatsheets]].
-- [[videos | Videos and Podcasts]].
+- [[videos_and_podcasts | Videos and Podcasts]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -56,8 +56,8 @@ If you need to do a _costly_ conversion, it is better to implement [`From`][c~st
 
 ## Related Topics {#related-topics .skip}
 
-- [[box | `Box`]].
-- [[borrow | `Borrow`]].
+- [[heap_storage | `Box`]].
+- [[reference-to-reference_conversions | `Borrow`]].
 - [[conversion_traits | Conversion Traits]].
 - [[reference_counting | `Rc` and `Arc`]].
 - [[smart_pointers | Smart Pointers]].

@@ -16,7 +16,7 @@ Use the [`pub`][keyword~pub]↗{{hi:pub}} keyword before an item's definition to
 {{#include ../../crates/code_organization/examples/visibility/pub_keyword.rs:example}}
 ```
 
-There are two exceptions to the "privacy by default" rule: Enum variants in a [`pub enum`][keyword~enum]↗{{hi:pub enum}} are public by default. Associated items (incl. functions and methods) in a `pub` [[trait]] are also public by default.
+There are two exceptions to the "privacy by default" rule: Enum variants in a [`pub enum`][keyword~enum]↗{{hi:pub enum}} are public by default. Associated items (incl. functions and methods) in a `pub` [[traits | trait]] are also public by default.
 
 Also note that, if we use [`pub`][keyword~pub]↗{{hi:pub}} before a struct definition, we make the struct public, but the fields of the struct will still be private. Mark relevant fields with `pub`:
 
@@ -48,7 +48,7 @@ In other words,
 {{#include ../../crates/code_organization/examples/visibility/public_access.rs:example}}
 ```
 
-More precisely, _an item is accessible if all segments in its path are accessible_. When a path goes from a parent module to a child, each enclosing module must have a visibility scope that includes the caller (see below). If an enclosing module is private, a suitable re-export can expose the item; see the [`pub use`][book~rust-reference~use-declarations-visibility]↗ section of the [[use_keyword | `use` keyword]] chapter for details.
+More precisely, _an item is accessible if all segments in its path are accessible_. When a path goes from a parent module to a child, each enclosing module must have a visibility scope that includes the caller (see below). If an enclosing module is private, a suitable re-export can expose the item; see the [`pub use`][book~rust-reference~use-declarations-visibility]↗ section of the [[use_declarations | `use` keyword]] chapter for details.
 
 ### Make your Code Items Visible to your Library's Clients {#visible-to-library-clients}
 

@@ -54,8 +54,8 @@ Distinguish the above traits from the following:
 
 ## Related Topics {#related-topics .skip}
 
-- [[asref | AsRef]].
-- [[borrow | Borrow]].
+- [[reference-to-reference_conversions | AsRef]].
+- [[reference-to-reference_conversions | Borrow]].
 - [[smart_pointers | Smart Pointers]].
 - [[string_parsing | String Parsing]].
 - [[traits | Traits]].

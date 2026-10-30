@@ -63,7 +63,7 @@ To sort in a different way, provide a custom comparator function to the [`std::v
 ## Related Topics {#related-topics .skip}
 
 - [[data-structures | Data Structures]].
-- [[btrees | B-trees]].
+- [[b-trees | B-trees]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

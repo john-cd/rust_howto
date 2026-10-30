@@ -11,3 +11,6 @@
 [p~example_code]: ../links/example_code.md
 [p~links]: ../links/index.md
 [p~word_index]: ../word_index.md
+[p~blogs_and_forums]: ../links/blogs_and_forums.md
+[p~current_state_of_the_art]: current_state_of_the_art.md
+[ex~code-organization~dependencies]: ../code-organization/dependencies.md#dependencies

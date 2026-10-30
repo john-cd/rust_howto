@@ -146,7 +146,7 @@ use module1::public_function;
 use module1::Struct1;
 ```
 
-See the [[use_keyword | `use` keyword]] chapter.
+See the [[use_declarations | `use` keyword]] chapter.
 
 ## Create a Prelude for Commonly Used Items of Your Library {#prelude}
 

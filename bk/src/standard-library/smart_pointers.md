@@ -93,7 +93,7 @@ BEWARE: The compiler will silently insert calls to `Deref::deref`. For this reas
 
 In mutable contexts, [`DerefMut`][c~std::ops::DerefMut~docs]↗{{hi:std::ops::DerefMut}} is used and mutable deref coercion similarly occurs.
 
-The [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::convert::AsRef}} and `Borrow` traits have very similar signatures to `Deref`. It may be desirable to implement either or both of these, whether in addition to or rather than `Deref` traits. See [[asref | AsRef]] and [[borrow | Borrow]].
+The [`AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::convert::AsRef}} and `Borrow` traits have very similar signatures to `Deref`. It may be desirable to implement either or both of these, whether in addition to or rather than `Deref` traits. See [[reference-to-reference_conversions | AsRef]] and [[reference-to-reference_conversions | Borrow]].
 
 Read the [Treating Smart Pointers Like Regular References with Deref][book~rust~ch15-02-deref]↗ and the [dereference operator][book~rust-reference~dereference-operator]↗ for more details.
 

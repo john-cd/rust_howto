@@ -16,7 +16,7 @@
 {{#include ../../crates/language/examples/impl_trait/impl_trait.rs:example}}
 ```
 
-Do not confuse `impl Trait` with `dyn Trait`. The [[trait_objects | Trait Objects]] chapter explains the difference.
+Do not confuse `impl Trait` with `dyn Trait`. The [[trait_objects_and_dynamic_dispatch | Trait Objects]] chapter explains the difference.
 
 ## Return Opaque Types (esp. Closures and Iterators) with Return-position `impl Trait` {#return-position-impl-trait}
 
@@ -34,7 +34,7 @@ This is useful when the exact type is complex, not relevant to the caller, or im
 - [[generics | Generics]].
 - [[iterators | Iterators]].
 - [[traits | Traits]].
-- [[trait_objects | Trait Objects]].
+- [[trait_objects_and_dynamic_dispatch | Trait Objects]].
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

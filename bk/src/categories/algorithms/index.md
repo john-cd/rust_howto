@@ -48,14 +48,14 @@ For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]�
 - [`im`][c~im~docs]↗{{hi:im}} for immutable data structures,
 - `indexmap` for [[maps | maps]] that keep track of insertion order,
 - `arrayvec`, `smallvec`, `tinyvec` and `heapless` for [[stack-allocated | stack-allocated data structures]],
-- [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} for [[graph | graphs]],
+- [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} for [[graphs | graphs]],
 - `dashmap` and `papaya` for [[concurrent_data_structures | concurrent data structures]],
 - `parking_lot` for mutexes,
 - `crossbeam-channel`, `flume`, `tokio`, and `postage` for channels.
 
 Worth a mention: `fst` provides fast, memory-efficient, immutable set and map data structures for storing and searching (very) large collections of strings and associated values. It is based on finite state transducers (FSTs). The capabilities of ordered sets and maps mirror that of `BTreeSet` and `BTreeMap` found in the standard library. The key difference is that sets and maps in `fst` are immutable, keys are byte sequences, and values, in the case of maps, are always unsigned 64 bit integers.
 
-See [[vector | vector]], [[hashmap | hash maps]], [[maps | other maps]], and [[binaryheap | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
+See [[vectors | vector]], [[hashmaps | hash maps]], [[maps | other maps]], and [[binary_heaps | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
 
 See [[data-structures | Data Structures]] and [[concurrent_data_structures | Concurrent Data Structures]].
 

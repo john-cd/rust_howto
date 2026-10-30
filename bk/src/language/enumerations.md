@@ -32,8 +32,8 @@ enum Result<T, E> {
 
 See:
 
-- [[option | Option]].
-- [[result | Result]].
+- [[optional_values | Option]].
+- [[recoverable_error_handling | Result]].
 
 ## Convert between Strings and Enum Variants with `strum` {#strum}
 

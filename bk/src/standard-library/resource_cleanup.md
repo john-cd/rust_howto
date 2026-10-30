@@ -39,7 +39,7 @@ To implement `Drop` for a custom type, you would do something like this:
 
 - [[data_structures | Data Structures]].
 - [[generics | Generics]].
-- [[ownership_borrowing | Ownership & Borrowing]].
+- [[ownership_and_borrowing | Ownership & Borrowing]].
 - [[reference_counting | Reference Counting]].
 - [[smart_pointers | Smart Pointers]].
 - [[traits | Traits]].
