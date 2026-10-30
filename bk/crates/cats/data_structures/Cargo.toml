@@ -17,6 +17,10 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 categories = ["data-structures"]
 autolib = false
 
+[[bench]]
+name = "hashmap"
+harness = false
+
 [[example]]
 name = "binaryheap"
 path = "examples/binaryheap/main.rs"
@@ -128,6 +132,9 @@ uuid = { version = "1.29.0", features = [
     # Enable better diagnostics for compile-time UUIDs.
     "macro-diagnostics",
 ] }
+
+[dev-dependencies]
+criterion = "0.8.2"
 
 [lints]
 workspace = true

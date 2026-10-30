@@ -17,6 +17,10 @@ keywords = ["memory", "allocators", "bumpalo", "mimalloc", "slab", "optimization
 categories = ["memory-management"]
 autolib = false
 
+[[bench]]
+name = "arena"
+harness = false
+
 [[example]]
 name = "bumpalo"
 path = "examples/bumpalo.rs"
@@ -76,6 +80,9 @@ ustr = "1.1.0"
 [target.'cfg(not(target_env = "msvc"))'.dependencies]
 tikv-jemalloc-ctl = { version = "0.7.0", features = ["stats", "use_std"] }
 tikv-jemallocator = "0.7.0"
+
+[dev-dependencies]
+criterion = "0.8.2"
 
 [lints]
 workspace = true
