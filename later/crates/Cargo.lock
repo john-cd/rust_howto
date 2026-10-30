@@ -4,6 +4,12 @@
 version = 4
 
 [[package]]
+name = "RustyXML"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8b5ace29ee3216de37c0546865ad08edef58b0f9e76838ed8959a84a990e58c5"
+
+[[package]]
 name = "ab_glyph"
 version = "0.2.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -15181,6 +15187,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "k"
+version = "0.32.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5dce11312d00e40c13f5c5fac13056a134f77944ab87086460ef386eed68ca08"
+dependencies = [
+ "nalgebra 0.30.1",
+ "simba 0.7.3",
+ "thiserror 1.0.69",
+ "tracing",
+ "urdf-rs",
+]
+
+[[package]]
 name = "k256"
 version = "0.13.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -16745,7 +16764,7 @@ checksum = "695fe1dff0efebde67fde50fb800f4703e8188e0447ab6332f48cb3066bcf982"
 dependencies = [
  "crc-any",
  "proc-macro2",
- "quick-xml",
+ "quick-xml 0.41.0",
  "quote",
  "regex",
  "thiserror 2.0.21",
@@ -17370,6 +17389,22 @@ dependencies = [
 
 [[package]]
 name = "nalgebra"
+version = "0.30.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4fb2d0de08694bed883320212c18ee3008576bfe8c306f4c3c4a58b4876998be"
+dependencies = [
+ "approx",
+ "matrixmultiply",
+ "nalgebra-macros 0.1.0",
+ "num-complex 0.4.6",
+ "num-rational 0.4.2",
+ "num-traits",
+ "simba 0.7.3",
+ "typenum",
+]
+
+[[package]]
+name = "nalgebra"
 version = "0.32.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7b5c17de023a86f59ed79891b2e5d5a94c705dbe904a5b5c9c952ea6221b03e4"
@@ -17410,7 +17445,7 @@ dependencies = [
  "glam 0.31.1",
  "glam 0.32.1",
  "matrixmultiply",
- "nalgebra-macros",
+ "nalgebra-macros 0.3.0",
  "num-complex 0.4.6",
  "num-rational 0.4.2",
  "num-traits",
@@ -17431,13 +17466,24 @@ dependencies = [
  "glam 0.32.1",
  "glam 0.33.12",
  "matrixmultiply",
- "nalgebra-macros",
+ "nalgebra-macros 0.3.0",
  "num-complex 0.4.6",
  "num-rational 0.4.2",
  "num-traits",
  "rand 0.10.3",
  "simba 0.10.2",
  "typenum",
+]
+
+[[package]]
+name = "nalgebra-macros"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "01fcc0b8149b4632adc89ac3b7b31a12fb6099a0317a4eb2ebff574ef7de7218"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
 ]
 
 [[package]]
@@ -20942,6 +20988,16 @@ checksum = "a993555f31e5a609f617c12db6250dedcac1b0a85076912c436e6fc9b2c8e6a3"
 
 [[package]]
 name = "quick-xml"
+version = "0.39.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cdcc8dd4e2f670d309a5f0e83fe36dfdc05af317008fea29144da1a2ac858e5e"
+dependencies = [
+ "memchr",
+ "serde",
+]
+
+[[package]]
+name = "quick-xml"
 version = "0.41.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e660451e55124f798a69a5af3f49ccfbefbd41910eefd25caf2393e1f3473ec1"
@@ -22996,6 +23052,7 @@ dependencies = [
  "embedded-hal",
  "embedded-hal-mock",
  "futures",
+ "k",
  "kiddo",
  "lz4_flex 0.10.0",
  "pathfinding",
@@ -23005,6 +23062,7 @@ dependencies = [
  "tokio",
  "tracing",
  "tracing-subscriber",
+ "urdf-rs",
  "zenoh",
 ]
 
@@ -23345,6 +23403,18 @@ dependencies = [
  "js-sys",
  "serde",
  "wasm-bindgen",
+]
+
+[[package]]
+name = "serde-xml-rs"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb3aa78ecda1ebc9ec9847d5d3aba7d618823446a049ba2491940506da6e2782"
+dependencies = [
+ "log",
+ "serde",
+ "thiserror 1.0.69",
+ "xml-rs",
 ]
 
 [[package]]
@@ -23943,6 +24013,19 @@ checksum = "28d567dcbaf0049cb8ac2608a76cd95ff9e4412e1899d389ee400918ca7537f5"
 dependencies = [
  "digest 0.11.3",
  "rand_core 0.10.1",
+]
+
+[[package]]
+name = "simba"
+version = "0.7.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2f3fd720c48c53cace224ae62bef1bbff363a70c68c4802a78b5cc6159618176"
+dependencies = [
+ "approx",
+ "num-complex 0.4.6",
+ "num-traits",
+ "paste",
+ "wide 0.7.33",
 ]
 
 [[package]]
@@ -26915,6 +26998,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "urdf-rs"
+version = "0.9.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8b4113a15747d43814d57a486b42a85c8387800d3c0d76cf4fc807dd239b0249"
+dependencies = [
+ "RustyXML",
+ "quick-xml 0.39.4",
+ "regex",
+ "serde",
+ "serde-xml-rs",
+ "thiserror 2.0.21",
+]
+
+[[package]]
 name = "ureq"
 version = "3.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -28393,7 +28490,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "338e30461b3a2b67d70eb30a6d89f8e0c93a833e07d2ae89085cd070c4a00ac0"
 dependencies = [
  "proc-macro2",
- "quick-xml",
+ "quick-xml 0.41.0",
  "quote",
 ]
 

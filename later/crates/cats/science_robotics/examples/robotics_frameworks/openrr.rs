@@ -1,178 +1,165 @@
 // TODO Reviewed ??-??-2026.
 
-// Preserved for reference; Cargo.toml keeps OpenRR disabled while its graph
-// resolves to affected fast-float and serde_with releases.
-
 // ANCHOR: example
-//! Placeholder for a robotics example with `openrr`.
+//! Forward and inverse kinematics of a planar arm with `k`, the kinematics
+//! library underneath OpenRR. No robot, simulator or GUI is needed.
+//!
+//! The `openrr` umbrella crate adds robot clients, planners and tools, but it
+//! is experimental and pulls in native libraries and affected dependencies.
+//! `k` covers the hardware-free core: load a URDF description, compute where
+//! the end of the arm is, and solve for joint angles that reach a target.
 
-// // COMING SOON
+use k::prelude::*;
+
+/// A planar arm with two revolute joints and a fixed tip: 1.0 m to the elbow
+/// and 0.5 m beyond it.
+const URDF: &str = r#"
+<robot name="planar_arm">
+  <link name="base"/>
+  <link name="upper"/>
+  <link name="tip_base"/>
+  <link name="tip"/>
+  <joint name="shoulder" type="revolute">
+    <parent link="base"/>
+    <child link="upper"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+  </joint>
+  <joint name="elbow" type="revolute">
+    <parent link="upper"/>
+    <child link="tip_base"/>
+    <origin xyz="1.0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+  </joint>
+  <joint name="tip_mount" type="fixed">
+    <parent link="tip_base"/>
+    <child link="tip"/>
+    <origin xyz="0.5 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>
+"#;
+
+/// Returns the world position `[x, y, z]` of the `tip` link after moving the
+/// joints to `angles` (forward kinematics). The tip is 0.5 m past the elbow.
+///
+/// # Errors
+///
+/// Returns an error if the URDF is invalid or the number of angles is wrong.
+fn tip_position(angles: &[f64]) -> anyhow::Result<[f64; 3]> {
+    let robot = urdf_rs::read_from_string(URDF)?;
+    let chain = k::Chain::<f64>::from(&robot);
+    chain.set_joint_positions(angles)?;
+    chain.update_transforms();
+    let tip = chain
+        .find_link("tip")
+        .ok_or_else(|| anyhow::anyhow!("no link named `tip`"))?;
+    let position = tip.world_transform().ok_or_else(|| {
+        anyhow::anyhow!("the transform of `tip` is not computed")
+    })?;
+    let t = position.translation.vector;
+    Ok([t.x, t.y, t.z])
+}
+
+/// Solves for joint angles that move the end of the arm to a target (inverse
+/// kinematics) and returns the position it reaches.
+///
+/// # Errors
+///
+/// Returns an error if the URDF is invalid or the solver does not converge.
+fn reach(target_xy: [f64; 2]) -> anyhow::Result<[f64; 3]> {
+    let robot = urdf_rs::read_from_string(URDF)?;
+    let chain = k::Chain::<f64>::from(&robot);
+    // Start from a bent elbow: a fully stretched arm is a singular pose, where
+    // the Jacobian cannot be inverted.
+    chain.set_joint_positions(&[0.3, 0.6])?;
+    chain.update_transforms();
+    let tip = chain
+        .find_link("tip")
+        .ok_or_else(|| anyhow::anyhow!("no link named `tip`"))?;
+    // Choose the joints from the base to the tip, then move the target.
+    let arm = k::SerialChain::from_end(tip);
+    let mut target = tip.world_transform().ok_or_else(|| {
+        anyhow::anyhow!("the transform of `tip` is not computed")
+    })?;
+    target.translation.vector.x = target_xy[0];
+    target.translation.vector.y = target_xy[1];
+    // The arm has two joints, so only the position can be constrained.
+    let mut solver = k::JacobianIkSolver::default();
+    solver.allowable_target_distance = 1e-3;
+    let constraints = k::Constraints {
+        rotation_x: false,
+        rotation_y: false,
+        rotation_z: false,
+        position_z: false,
+        ..Default::default()
+    };
+    solver.solve_with_constraints(&arm, &target, &constraints)?;
+    chain.update_transforms();
+    let reached = tip.world_transform().ok_or_else(|| {
+        anyhow::anyhow!("the transform of `tip` is not computed")
+    })?;
+    let t = reached.translation.vector;
+    Ok([t.x, t.y, t.z])
+}
+
+/// Prints the tip position for a pose, then solves for a new target.
+fn main() -> anyhow::Result<()> {
+    let [x, y, _] = tip_position(&[0.0, std::f64::consts::FRAC_PI_2])?;
+    println!("Forward kinematics: tip at ({x:.3}, {y:.3})");
+    let [x, y, _] = reach([0.8, 0.9])?;
+    println!("Inverse kinematics: tip reached ({x:.3}, {y:.3})");
+    Ok(())
+}
 // ANCHOR_END: example
 
-// //! # OpenRR Example
-// //!
-// //! This example demonstrates how to use the `openrr` crate to control a
-// //! robot.
-// //!
-// //! OpenRR contains..
-// //!
-// //! - Abstract robot interfaces (`arci`),
-// //! - Concrete implementation of the interfaces (`arci-ros`, `arci-urdf-viz`)
-// //! - Library which uses the interfaces (`openrr-client`, ...),
-// //! - Tools (`openrr-apps`),
-// //! - Libraries that have nothing to do with `arci` (`openrr-planner`, ...).
-// //!
-// //! Ubuntu is supported for Linux. Partial functionality is available under
-// //! macOS and Windows.
-// //!
-// //! ## Prerequisites
-// //!
-// //! As described in the `openrr` documentation,
-// //! - Install the required system libraries (see below).
-// //! - Install `urdf-viz` and `openrr-apps`,
-// //! - Have a URDF file for your robot.
-// //!
-// //! Install the following libraries:
-// //! - `cmake`, `build-essential` (for openrr-planner (assimp-sys)),
-// //! - `libudev-dev` (arci-gamepad-gilrs),
-// //! - `xorg-dev`, `libglu1-mesa-dev`, `libxkbcommon-dev` (openrr-gui (egui)),
-// //! - `libasound2-dev` (arci-speak-audio).
-// //!
-// //! On Ubuntu, run:
-// //! ```sh
-// //! sudo apt install cmake build-essential libudev-dev xorg-dev \
-// //! libglu1-mesa-dev libasound2-dev libxkbcommon-dev
-// //! ```
-// //!
-// //! `urdf-viz` is a URDF visualization application.
-// //!
-// //! ```sh
-// //! cargo install urdf-viz
-// //! ```
-// //!
-// //! `openrr-apps` is an application that implements GUI, gamepad-based
-// //! operations, etc. It can send commands, topics to ROS. Robots and real
-// //! machines visualized by `urdf-viz` and `gazebo` can be operated in the
-// //! same way.
-// //!
-// //! ```sh
-// //! git clone https://!github.com/openrr/openrr
-// //! cd openrr
-// //! cargo install --path openrr-apps # For Linux and macOS users.
-// //! cargo install --path openrr-apps --no-default-features --features
-// //! gui,assimp
-// //! ```
-// use std::sync::Arc;
-
-// use openrr::JointTrajectoryClient;
-// use openrr::RobotClient;
-// use openrr::UrdfRobot;
-// use tracing::info;
-
-// #[tokio::main]
-// async fn main() -> Result<(), Box<dyn std::error::Error>> {
-//     tracing_subscriber::fmt::init();
-
-//     // Load the robot model from a URDF file.
-//     let urdf_path = "path/to/your/robot.urdf"; // Replace with your URDF path
-//     let urdf_robot = UrdfRobot::from_path(urdf_path)?;
-
-//     // Create a `RobotClient``. This example uses a dummy client.
-//     // In a real application, use a client that connects to your
-//     // robot.
-//     let robot_client = Arc::new(DummyRobotClient::new(urdf_robot.clone()));
-
-//     // Create a JointTrajectoryClient.
-//     let joint_trajectory_client =
-//         JointTrajectoryClient::new(robot_client.clone(), urdf_robot);
-
-//     // Example trajectory:
-//     let joint_names = vec!["joint1".to_string(), "joint2".to_string()];
-//     // Replace with your joint names.
-//     let positions = vec![0.5, 1.0];
-//     let duration = std::time::Duration::from_secs(5);
-
-//     info!("Sending trajectory");
-//     joint_trajectory_client
-//         .send_joint_positions(joint_names.clone(), positions, duration)
-//         .await?;
-//     info!("Trajectory sent");
-
-//     tokio::time::sleep(duration).await;
-
-//     // Example trajectory back to initial position:
-//     let positions = vec![0.0, 0.0];
-//     let duration = std::time::Duration::from_secs(5);
-
-//     info!("Sending trajectory back to initial position");
-//     joint_trajectory_client
-//         .send_joint_positions(joint_names, positions, duration)
-//         .await?;
-//     info!("Trajectory sent");
-
-//     tokio::time::sleep(duration).await;
-
-//     Ok(())
-// }
-
-// /// Dummy Robot Client for testing:
-// struct DummyRobotClient {
-//     urdf_robot: UrdfRobot,
-// }
-
-// impl DummyRobotClient {
-//     pub fn new(urdf_robot: UrdfRobot) -> Self {
-//         Self { urdf_robot }
-//     }
-// }
-
-// #[async_trait::async_trait]
-// impl openrr::RobotClient for DummyRobotClient {
-//     async fn current_joint_positions(
-//         &self,
-//         joint_names: &[String],
-//     ) -> Result<Vec<f64>, openrr::Error> {
-//         // In a real implementation, we would get the current joint
-//         // positions from the robot.
-//         // This dummy implementation just returns zeros.
-//         Ok(vec![0.0; joint_names.len()])
-//     }
-
-//     async fn send_joint_positions(
-//         &self,
-//         _joint_names: Vec<String>,
-//         _positions: Vec<f64>,
-//         _duration: std::time::Duration,
-//     ) -> Result<(), openrr::Error> {
-//         // In a real implementation, we would send the joint positions to
-//         // the robot. This dummy implementation does nothing.
-//         info!("DummyRobotClient: send_joint_positions called");
-//         Ok(())
-//     }
-
-//     fn urdf_robot(&self) -> &UrdfRobot {
-//         &self.urdf_robot
-//     }
-// }
-
-/// Does nothing yet.
-fn main() {}
-
-pub fn run() {
-    main();
+/// Runs the kinematics example.
+///
+/// # Errors
+///
+/// Returns an error if the kinematics computation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the openrr example through its entry point.
-    // output-only: this example is a placeholder and has nothing to check.
+    /// With both joints at zero the arm is stretched along the x axis.
     #[test]
-    #[ignore = "requires interactive example runtime"]
-    fn test_openrr_example_entry_point() {
-        main();
+    fn straight_arm_reaches_one_and_a_half_meters() -> anyhow::Result<()> {
+        let [x, y, _] = tip_position(&[0.0, 0.0])?;
+        assert!((x - 1.5).abs() < 1e-9 && y.abs() < 1e-9);
+        Ok(())
+    }
+
+    /// Bending the elbow by 90 degrees puts the tip 0.5 m to the side.
+    #[test]
+    fn elbow_bend_moves_the_tip_sideways() -> anyhow::Result<()> {
+        let [x, y, _] = tip_position(&[0.0, std::f64::consts::FRAC_PI_2])?;
+        assert!((x - 1.0).abs() < 1e-9 && (y - 0.5).abs() < 1e-9);
+        Ok(())
+    }
+
+    /// The solver finds joint angles that bring the tip close to the target.
+    #[test]
+    fn inverse_kinematics_reaches_a_reachable_target() -> anyhow::Result<()> {
+        let [x, y, _] = reach([0.8, 0.9])?;
+        assert!((x - 0.8).abs() < 5e-3 && (y - 0.9).abs() < 5e-3);
+        Ok(())
+    }
+
+    /// A wrong number of angles is an error.
+    #[test]
+    fn wrong_joint_count_is_rejected() {
+        assert!(tip_position(&[0.0]).is_err());
+    }
+
+    /// Runs the example through its entry point.
+    #[test]
+    fn test_openrr_example_entry_point() -> anyhow::Result<()> {
+        run()
     }
 }
-// // [write](https://github.com/john-cd/rust_howto/issues/843)
-// // <https://openrr.github.io/openrr-tutorial/en/html/index.html>

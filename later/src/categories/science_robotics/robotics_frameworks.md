@@ -26,5 +26,15 @@ Rust robotics libraries cover several layers: communication, runtime orchestrati
 {{#include ../../../crates/cats/science_robotics/examples/robotics_frameworks/zenoh.rs:example}}
 ```
 
+## Kinematics with `k`, the Library Underneath OpenRR {#openrr}
+
+[![k][c~k~repo~badge]][c~k~repo] [![openrr][c~openrr~repo~badge]][c~openrr~repo]{{hi:openrr}}{{hi:k}}
+
+[OpenRR][c~openrr~repo]↗{{hi:openrr}} bundles robot abstractions, planners, GUI tools, and hardware clients. Its umbrella crate is experimental upstream and needs native libraries, so this example uses [`k`][c~k~repo]↗{{hi:k}}, the kinematics library that OpenRR builds on. It loads a URDF description of a two-joint planar arm, computes where the tip is (forward kinematics), and solves for joint angles that reach a target (inverse kinematics). No robot, simulator, or GUI is required. Start the solver away from a fully stretched pose, where the Jacobian is singular. `k` parses URDF with `urdf-rs`, which depends on a `quick-xml` release with open advisories; the example parses only an embedded string, and the exceptions are recorded in `deny.toml`. Parse only trusted URDF files.
+
+```rust,editable
+{{#include ../../../crates/cats/science_robotics/examples/robotics_frameworks/openrr.rs:example}}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

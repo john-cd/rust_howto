@@ -26,7 +26,6 @@ test = true
 [[example]]
 name = "robotics_frameworks"
 path = "examples/robotics_frameworks/main.rs"
-required-features = ["zenoh"]
 test = true
 
 [[example]]
@@ -61,6 +60,8 @@ bonsai-bt = "0.14.0"
 clap = { version = "4.6.7", features = ["derive"] }
 embedded-hal = "1.0.0"
 futures = { version = "0.3.34", optional = true }
+k = "0.32.0" # Kinematics (the library underneath OpenRR).
+urdf-rs = "0.9.1" # Parses the URDF robot description used by `k`.
 kiddo.workspace = true
 pathfinding = "4.16.0"
 pid = "4.0.0"

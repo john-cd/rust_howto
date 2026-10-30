@@ -2,7 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-// This dispatcher is built only with the `zenoh` Cargo feature (see Cargo.toml).
+// The `zenoh` subcommand is available only with the `zenoh` Cargo feature.
 
 use clap::Parser;
 use clap::Subcommand;
@@ -41,7 +41,7 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
             Commands::Openrr => {
-                openrr::run();
+                openrr::run()?;
             }
             #[cfg(feature = "zenoh")]
             Commands::Zenoh => {
