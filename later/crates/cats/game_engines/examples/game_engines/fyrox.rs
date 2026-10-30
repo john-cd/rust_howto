@@ -59,13 +59,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-<<<<<<< HEAD
-    // output-only: the example is disabled and only prints a notice.
-    /// Runs the Fyrox game engine example.
-    #[test]
-    fn test_fyrox_game_engine_example() {
-        main();
-=======
     /// The game logic is plain Rust: no window or GPU is needed to test it.
     #[test]
     fn tick_counts_updates() {
@@ -79,6 +72,5 @@ mod tests {
     #[test]
     fn test_fyrox_game_engine_example() {
         run();
->>>>>>> e722215 (feat(game_engines): finish the Fyrox plugin example and template workflow)
     }
 }
