@@ -95,9 +95,11 @@ fn run_example() {
         screen_rect: Some(screen),
         ..Default::default()
     };
-    let _output = ctx.run_ui(input, |ui| {
+    let mut output = ctx.run_ui(input, |ui| {
         egui::CentralPanel::default().show(ui, |ui| app.show(ui));
     });
+    // A renderer would upload the textures; drop them on purpose.
+    output.textures_delta.clear();
 }
 fn main() {
     run_example();
@@ -115,7 +117,7 @@ mod tests {
     /// Runs the egui toasts icons example through its entry point.
     #[test]
     fn test_egui_toasts_icons_example_entry_point() {
-        run_example();
+        main();
     }
 
     #[test]
