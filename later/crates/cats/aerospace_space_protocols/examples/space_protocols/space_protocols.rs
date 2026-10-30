@@ -29,10 +29,10 @@ fn ccsds_space_packet() -> [u8; 8] {
         payload.len() as u16 - 1,
     );
     let mut packet = [0_u8; 8];
-    let payload_start = header
-        .write_to_be_bytes(&mut packet)
+    let header_len = header
+        .write_to_slice(&mut packet)
         .expect("CCSDS header should fit in the packet buffer");
-    payload_start[..payload.len()].copy_from_slice(&payload);
+    packet[header_len..header_len + payload.len()].copy_from_slice(&payload);
 
     let (parsed_header, parsed_payload) = SpHeader::from_be_bytes(&packet)
         .expect("serialized CCSDS header should parse");

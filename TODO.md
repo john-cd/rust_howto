@@ -85,9 +85,7 @@ General rules for every brief: work from a clean checkout of `develop` on a topi
 
 ### Brief F — port remaining dependency upgrades (#2117)
 
-- **Goal:** try the major upgrades listed as "not tried yet": `slint` 1.18, `eframe`/`egui-notify`, `symphonia` 0.6, `crux_core` 0.20, `spacepackets`, `sprs`.
-- **Steps:** per crate edit the version in the owning `Cargo.toml` (`grep -rn '<crate> =' --include=Cargo.toml bk/crates later/crates`), run `cargo update -p <crate>` (add `--ignore-rust-version` if the resolver holds back a release), fix the examples, keep the tests passing. If another crate pins an incompatible version, stop and record the blocker in #2116 instead of forcing it. Run `cargo deny check advisories` in the affected workspace.
-- **Checks:** `just ca` and `just nta` in the affected workspace.
+- **Done** in PR #2139: `slint` 1.18, `symphonia` 0.6, `crux_core` 0.20, `spacepackets` 0.19. `egui`/`eframe` 0.37 was already current and no example uses `sprs`. `egui-notify`, `egui-phosphor` and `egui_tracing` wait on egui releases (notes in `later/crates/cats/gui/Cargo.toml`, tracked in #2116).
 
 ### Not for Jules
 

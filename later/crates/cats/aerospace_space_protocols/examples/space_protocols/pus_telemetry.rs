@@ -25,7 +25,7 @@ pub fn pus_telemetry() {
     );
     let mut bytes = [0_u8; 32];
     let length = telemetry
-        .write_to_bytes(&mut bytes)
+        .write_to_slice(&mut bytes)
         .expect("the telemetry packet should fit in the buffer");
     let decoded = PusTmReader::new(&bytes[..length], timestamp.len())
         .expect("the serialized telemetry packet should parse");

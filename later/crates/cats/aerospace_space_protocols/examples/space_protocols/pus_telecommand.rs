@@ -28,7 +28,7 @@ pub fn pus_telecommand() {
     );
     let mut packet = [0_u8; 32];
     let packet_len = telecommand
-        .write_to_bytes(&mut packet)
+        .write_to_slice(&mut packet)
         .expect("PUS telecommand should fit in the packet buffer");
     let parsed = PusTcReader::new(&packet[..packet_len])
         .expect("serialized PUS telecommand should parse");

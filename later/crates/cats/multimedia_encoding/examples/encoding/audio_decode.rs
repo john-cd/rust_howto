@@ -4,12 +4,12 @@
 use std::error::Error;
 use std::io::Cursor;
 
-use symphonia::core::codecs::DecoderOptions;
-use symphonia::core::errors::Error as SymphoniaError;
+use symphonia::core::codecs::audio::AudioDecoderOptions;
 use symphonia::core::formats::FormatOptions;
+use symphonia::core::formats::TrackType;
+use symphonia::core::formats::probe::Hint;
 use symphonia::core::io::MediaSourceStream;
 use symphonia::core::meta::MetadataOptions;
-use symphonia::core::probe::Hint;
 
 /// Probes an in-memory WAV byte buffer and decodes audio frames into PCM
 /// samples.
@@ -24,32 +24,27 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let mut hint = Hint::new();
     hint.with_extension("wav");
 
-    let probed = symphonia::default::get_probe().format(
+    let mut format = symphonia::default::get_probe().probe(
         &hint,
         mss,
-        &FormatOptions::default(),
-        &MetadataOptions::default(),
+        FormatOptions::default(),
+        MetadataOptions::default(),
     )?;
 
-    let mut format = probed.format;
     let track = format
-        .default_track()
+        .default_track(TrackType::Audio)
         .ok_or("no default audio track found")?;
+    let codec_params = track
+        .codec_params
+        .as_ref()
+        .and_then(|params| params.audio())
+        .ok_or("the default track has no audio codec parameters")?;
     let mut decoder = symphonia::default::get_codecs()
-        .make(&track.codec_params, &DecoderOptions::default())?;
+        .make_audio_decoder(codec_params, &AudioDecoderOptions::default())?;
 
     let mut total_frames = 0;
-    loop {
-        let packet = match format.next_packet() {
-            Ok(packet) => packet,
-            Err(SymphoniaError::IoError(err))
-                if err.kind() == std::io::ErrorKind::UnexpectedEof =>
-            {
-                break;
-            }
-            Err(err) => return Err(err.into()),
-        };
-
+    // `next_packet` returns `Ok(None)` at the end of the stream.
+    while let Some(packet) = format.next_packet()? {
         let decoded = decoder.decode(&packet)?;
         total_frames += decoded.frames();
     }
