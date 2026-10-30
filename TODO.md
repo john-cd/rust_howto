@@ -102,7 +102,6 @@
 
 ### Deferred
 
-- [#764](https://github.com/john-cd/rust_howto/issues/764) — **P4** — quant/rustquant.rs: finish; review
 - [#1725](https://github.com/john-cd/rust_howto/issues/1725) — **P2** — Review the Pandoc and Typst export plan (review)
 
 ### Trackers and not started
