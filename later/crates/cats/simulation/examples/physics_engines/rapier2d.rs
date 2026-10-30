@@ -100,8 +100,6 @@ mod tests {
     fn test_rapier2d_example_entry_point() {
         main();
     }
-    // Deferred (#1206): add to the physics engines chapter.
-
     #[test]
     fn ball_falls_under_gravity() {
         let trace = simulate(10);

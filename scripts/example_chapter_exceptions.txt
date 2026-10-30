@@ -20,9 +20,6 @@ bk/crates/standard_library/examples/ops/callable.rs
 # GTK 3 and the affected glib 0.18 dependency chain currently keep these native GUI targets disabled.
 later/crates/cats/gui/examples/web/wry_window.rs
 later/crates/cats/gui/examples/window_creation/tao.rs
-# The owning draft chapter is deferred under #1206 until its scope and examples are reviewed.
-later/crates/cats/simulation/examples/physics_engines/rapier2d.rs
-
 # --- Chapters without an example ------------------------------------------
 # Meta pages: contribution guides, link lists, indices and credits.
 bk/src/appendices/
