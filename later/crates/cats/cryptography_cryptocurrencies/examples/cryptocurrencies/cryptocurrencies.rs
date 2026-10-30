@@ -6,12 +6,16 @@
 //!
 //! The provider talks to a mocked transport that returns canned JSON-RPC
 //! responses. Replace `connect_mocked_client` with
-//! `connect_http("https://...".parse()?)` to query a real node.
+//! `connect_http("https://...".parse()?)` to query a real node. The ignored
+//! test `live_node_balance_works` does exactly that: run it with
+//! `ALLOY_RPC_URL=https://... cargo test --example cryptocurrencies -- --ignored`.
 
 #[cfg(test)]
 use std::env;
 
 use alloy::primitives::Address;
+use alloy::primitives::Bytes;
+use alloy::primitives::U256;
 use alloy::primitives::address;
 use alloy::primitives::utils::format_ether;
 use alloy::primitives::utils::parse_ether;
@@ -20,9 +24,31 @@ use alloy::providers::ProviderBuilder;
 use alloy::providers::mock::Asserter;
 use alloy::signers::Signer;
 use alloy::signers::local::PrivateKeySigner;
+use alloy::sol;
 
 /// An example account (`vitalik.eth`).
 const ACCOUNT: Address = address!("d8dA6BF26964aF9D7eEd9e03E53415D37aA96045");
+
+sol! {
+    /// The part of the ERC-20 token interface used by this example.
+    #[sol(rpc)]
+    interface IERC20 {
+        function balanceOf(address owner) external view returns (uint256);
+    }
+}
+
+/// An example ERC-20 token contract (USDC on Ethereum mainnet).
+const TOKEN: Address = address!("A0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48");
+
+/// Returns the ERC-20 token balance of `account` in the token's smallest unit.
+async fn token_balance(
+    provider: &impl Provider,
+    token: Address,
+    account: Address,
+) -> anyhow::Result<U256> {
+    let contract = IERC20::new(token, provider);
+    Ok(contract.balanceOf(account).call().await?)
+}
 
 /// Returns the balance of `account`, formatted in ether.
 async fn balance_in_ether(
@@ -56,14 +82,21 @@ async fn live_node_balance() -> anyhow::Result<()> {
 
 /// Runs the example against a mocked node.
 async fn main() -> anyhow::Result<()> {
-    // Queue the response to the one JSON-RPC call made below
-    // (`eth_getBalance`): 1.5 ether, expressed in wei.
+    // Queue the responses to the two JSON-RPC calls made below, in order:
+    // `eth_getBalance` (1.5 ether, expressed in wei), then the `eth_call`
+    // behind `balanceOf` (a 32-byte big-endian integer).
     let asserter = Asserter::new();
     asserter.push_success(&parse_ether("1.5")?);
+    asserter.push_success(&Bytes::from(
+        U256::from(42_000_000_u64).to_be_bytes::<32>(),
+    ));
     let provider = ProviderBuilder::new().connect_mocked_client(asserter);
 
     let balance = balance_in_ether(&provider, ACCOUNT).await?;
     println!("Balance of {ACCOUNT}: {balance} ETH");
+
+    let tokens = token_balance(&provider, TOKEN, ACCOUNT).await?;
+    println!("Token balance of {ACCOUNT}: {tokens}");
 
     let signer_address = sign_and_recover("hello, Ethereum").await?;
     println!("Recovered signer: {signer_address}");
@@ -78,8 +111,6 @@ pub async fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
-    use alloy::primitives::U256;
-
     use super::*;
 
     /// The recipe runs end to end against the mocked node.
@@ -96,6 +127,19 @@ mod tests {
         let provider = ProviderBuilder::new().connect_mocked_client(asserter);
         let balance = balance_in_ether(&provider, ACCOUNT).await?;
         assert_eq!(balance, "2.500000000000000000");
+        Ok(())
+    }
+
+    /// The ERC-20 `balanceOf` call is ABI-encoded by `sol!` and its
+    /// `eth_call` result is decoded from the mocked response.
+    #[tokio::test]
+    async fn erc20_balance_is_decoded() -> anyhow::Result<()> {
+        let asserter = Asserter::new();
+        let raw = U256::from(42_000_000_u64).to_be_bytes::<32>();
+        asserter.push_success(&Bytes::from(raw));
+        let provider = ProviderBuilder::new().connect_mocked_client(asserter);
+        let balance = token_balance(&provider, TOKEN, ACCOUNT).await?;
+        assert_eq!(balance, U256::from(42_000_000_u64));
         Ok(())
     }
 
