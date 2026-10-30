@@ -43,9 +43,9 @@ generate_index_of_examples:
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
 [group('index of examples')]
 update_refdefs_for_examples:
-    ./update_refdefs_for_index_of_examples.sh {{ root }}
+    {{ if os_family() == "windows" { "python" } else { "python3" } }} "{{ source_directory() }}/update_refdefs_for_examples.py" generate --book-root "{{ root }}"
 
-# Usage: just indices update_refdefs_for_index_of_examples
+# Usage: just indices update_refdefs_for_examples (cross-platform; `just book refdefs-check` runs the matching check)
 ## ---- OTHERS --------------------------------
 
 # Quick and dirty generation of language/index.md; manual editing required
