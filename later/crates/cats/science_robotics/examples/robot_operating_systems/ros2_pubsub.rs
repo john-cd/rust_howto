@@ -3,6 +3,14 @@
 
 // ANCHOR: example
 //! Publish and receive `std_msgs/String` messages with a ROS 2 node.
+//!
+//! ROS 2 (Robot Operating System) is a middleware: it lets the separate
+//! programs of a robot, such as camera, planner and motor driver, exchange
+//! data. Each program is a "node". Nodes communicate over named "topics"
+//! using publish/subscribe: a publisher sends messages to a topic, and every
+//! subscriber to that topic receives them without knowing who sent them. The
+//! transport underneath is DDS, which discovers peers automatically. Running
+//! this example needs a ROS 2 installation.
 
 use std::time::Duration;
 use std::time::Instant;
@@ -26,6 +34,8 @@ fn main() -> Result<()> {
     let context = Context::create().context("initialize ROS 2")?;
     let mut node = Node::create(context, "rust_howto_pubsub", "")
         .context("create the ROS 2 node")?;
+    // The QoS (quality of service) profile controls delivery guarantees such
+    // as reliability and queue depth; the default is fine for a demo.
     let topic = "/rust_howto/hello";
     let mut subscriber = node
         .subscribe::<StringMessage>(topic, QosProfile::default())

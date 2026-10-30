@@ -18,6 +18,13 @@
 //! 1. Set `NGROK_AUTHTOKEN` in the environment.
 //! 2. Run `cargo run -p network_programming --example reverse_proxy -- ngrok`.
 //! 3. Open the public URL printed by the example and stop it with Ctrl-C.
+//!
+//! ngrok gives a service running on your computer a public URL by opening an
+//! outbound tunnel to the ngrok cloud, which forwards incoming requests through
+//! it. That lets you demo a local server or receive webhooks from other
+//! services without opening a port on your router. Treat the URL as public:
+//! anyone who knows it can reach your server. It needs an ngrok account and an
+//! auth token.
 
 use anyhow::Context as _;
 use axum::Router;

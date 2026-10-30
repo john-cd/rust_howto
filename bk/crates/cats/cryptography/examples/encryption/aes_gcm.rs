@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Authenticated encryption and decryption with AES-256-GCM.
+//!
+//! AES is the standard symmetric cipher, meaning one secret key both encrypts
+//! and decrypts. GCM mode adds authentication: decryption fails if the data was
+//! tampered with. Each message needs a unique nonce (a number used once);
+//! reusing a nonce with the same key breaks the security. Use it to protect
+//! files, database fields or messages between systems that share a key.
 
 // Algorithm:
 use aes_gcm::Aes256Gcm; // Use Aes128Gcm or Aes256Gcm, respectively.

@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates the usage of the `subtle` crate for
 //! constant-time cryptographic operations.
+//!
+//! A normal comparison stops at the first differing byte, so how long it takes
+//! can reveal how much of a secret guess was correct (a timing attack). A
+//! constant-time comparison always takes the same time. Use it whenever you
+//! compare secrets such as tokens, MACs or password hashes.
 
 use subtle::Choice;
 use subtle::ConditionallySelectable as _;

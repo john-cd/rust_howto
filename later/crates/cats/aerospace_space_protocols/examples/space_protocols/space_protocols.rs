@@ -2,6 +2,14 @@
 
 // ANCHOR: ccsds-space-packet
 /// Serializes a CCSDS packet and checks its primary header and payload.
+///
+/// CCSDS (Consultative Committee for Space Data Systems) is the standards
+/// body that defines how spacecraft and ground stations exchange data. Its
+/// "space packet" is a small binary container: a six-byte header followed by
+/// the payload. The header holds an application identifier (APID), which says
+/// which on-board application produced or should receive the packet, and a
+/// sequence count, which lets the receiver detect missing packets on a noisy
+/// radio link.
 fn ccsds_space_packet() -> [u8; 8] {
     use arbitrary_int::u11;
     use arbitrary_int::u14;
@@ -11,6 +19,9 @@ fn ccsds_space_packet() -> [u8; 8] {
     use spacepackets::SpHeader;
 
     let payload = [0xCA, 0xFE];
+    // `new_for_tm` builds a telemetry packet (spacecraft to ground). The data
+    // length field stores the payload length minus one, as the standard
+    // requires.
     let header = SpHeader::new_for_tm(
         u11::new(0x10),
         SequenceFlags::Unsegmented,

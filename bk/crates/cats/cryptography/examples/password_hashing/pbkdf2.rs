@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Demonstrates the use of PBKDF2 for password hashing and verification.
+//!
+//! Servers must never store passwords directly. They store a salted,
+//! deliberately slow hash instead, so a stolen database is expensive to crack.
+//! The salt is a random value stored with the hash that makes equal passwords
+//! hash differently. PBKDF2 slows hashing by repeating it many times; it is
+//! widely supported, but Argon2 resists GPU cracking better.
 
 // This example demonstrates how to hash and verify passwords using PBKDF2.
 use std::num::NonZeroU32;

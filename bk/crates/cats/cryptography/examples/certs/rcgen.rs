@@ -1,5 +1,11 @@
 // ANCHOR: example
 //! Generate a self-signed certificate for local development with `rcgen`.
+//!
+//! A certificate binds a public key to a name, such as a host name, and is
+//! normally signed by a certificate authority (CA) that clients trust. A
+//! self-signed certificate vouches for itself, so clients must be told to trust
+//! it explicitly. It is handy for local development and tests, but never for
+//! production.
 
 use rcgen::generate_simple_self_signed;
 

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Encoding a struct to DER and decoding it back with the `der` crate.
+//!
+//! DER (Distinguished Encoding Rules) is the binary format X.509 certificates
+//! and many other cryptographic structures use. It is defined by ASN.1, a
+//! notation for describing data layouts. The format is canonical: one value has
+//! exactly one encoding, which signatures depend on.
 
 // This example demonstrates DER encoding and decoding with the `der` crate.
 use der::Decode as _;

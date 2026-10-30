@@ -9,6 +9,12 @@
 //! the upstream, and adds an `X-Rust-Howto` response header. For example, start
 //! the upstream with `python3 -m http.server 8000`, then request
 //! `http://127.0.0.1:6188/` with `curl -i`.
+//!
+//! A reverse proxy sits in front of one or more servers and forwards each
+//! client request to them. Typical uses are load balancing across several
+//! servers, terminating TLS in one place, caching, and adding or removing
+//! headers, as this example does. The server behind the proxy is called the
+//! upstream. Pingora is a Rust framework for building such proxies.
 
 use async_trait::async_trait;
 use pingora::prelude::*;

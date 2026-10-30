@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! A Tokio WebSocket client and one-connection echo server.
+//!
+//! A WebSocket is a long-lived, two-way connection that starts as an HTTP
+//! request and is then upgraded, so either side can send messages at any
+//! time. This asynchronous version, built on Tokio, can serve many
+//! connections on few threads. The example runs both ends in one process so
+//! it needs no internet access.
 
 use anyhow::Context;
 use futures_util::SinkExt;

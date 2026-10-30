@@ -12,6 +12,12 @@
 //! Glommio is a thread-per-core asynchronous runtime based on Linux `io_uring`.
 //! It requires a Linux kernel with `io_uring` support (5.8 or newer
 //! recommended).
+//!
+//! `io_uring` is a Linux interface where the program submits many I/O requests
+//! to the kernel in batches and collects the results later, which reduces
+//! system calls. A thread-per-core design pins one thread to each CPU core and
+//! avoids sharing data between threads, so no locks are needed. Together they
+//! target high-throughput network servers.
 
 #![cfg(target_os = "linux")]
 

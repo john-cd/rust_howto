@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Sample a satellite's orbit from a fixed two-line element set using `sgp4`.
+//!
+//! A two-line element set (TLE) is a compact text format that space agencies
+//! publish to describe a satellite's orbit at a given moment (the "epoch").
+//! SGP4 is the standard algorithm that turns a TLE into the satellite's
+//! position and velocity at any later time. Typical uses are pass prediction
+//! for ground stations, satellite tracking apps and collision screening.
 
 use sgp4::Constants;
 use sgp4::Elements;
@@ -9,6 +15,9 @@ use sgp4::MinutesSinceEpoch;
 use sgp4::Prediction;
 
 /// Builds propagation constants from a fixed historical ISS element set.
+///
+/// The constants hold the values SGP4 precomputes once per TLE, so they can be
+/// reused for many predictions.
 fn iss_constants() -> Constants {
     let elements = Elements::from_tle(
         Some("ISS (ZARYA)".to_owned()),
@@ -21,6 +30,9 @@ fn iss_constants() -> Constants {
 }
 
 /// Predicts position and velocity at a number of minutes from the TLE epoch.
+///
+/// Positions are in kilometers and velocities in kilometers per second, in the
+/// TEME frame (an Earth-centered frame that does not rotate with the Earth).
 fn predict(constants: &Constants, minutes: f64) -> Prediction {
     constants
         .propagate(MinutesSinceEpoch(minutes))
@@ -30,6 +42,8 @@ fn predict(constants: &Constants, minutes: f64) -> Prediction {
 /// Samples roughly one orbit at ten-minute intervals.
 fn main() {
     let constants = iss_constants();
+    // The ISS circles the Earth in about 92 minutes, so 0 to 90 covers
+    // roughly one orbit.
     for minute in (0..=90).step_by(10) {
         let prediction = predict(&constants, f64::from(minute));
         println!("{minute:>2} min: {:?} km", prediction.position);
@@ -53,6 +67,9 @@ mod tests {
         let constants = iss_constants();
         for minutes in [0.0, 90.0] {
             let position = predict(&constants, minutes).position;
+            // The ISS flies about 400 km above the 6,371 km Earth radius, so
+            // its distance from the Earth's center stays near 6,800
+            // km.
             let radius = position
                 .iter()
                 .map(|coordinate| coordinate * coordinate)

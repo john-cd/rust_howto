@@ -6,6 +6,13 @@
 //! The plan is checked before any command is sent. The `tello` crate is bound
 //! to the drone through the [`Flyer`] trait, so the plan can also run against
 //! a test double.
+//!
+//! The Tello is a small consumer quadcopter. It creates its own Wi-Fi network
+//! and accepts short text commands as UDP datagrams (UDP is a connectionless
+//! network protocol: each message is sent without a handshake or delivery
+//! guarantee). Checking the plan first matters because a drone cannot be
+//! "undone": a plan with no landing would leave it hovering until the battery
+//! runs out.
 
 use std::time::Duration;
 
@@ -14,6 +21,7 @@ use anyhow::bail;
 use tello::Drone;
 
 /// The longest total hover time the plan may contain.
+// Safety limit: a small drone has only a few minutes of battery.
 const MAX_HOVER: Duration = Duration::from_secs(30);
 
 /// One step of a flight plan.
@@ -89,7 +97,11 @@ fn fly(flyer: &mut impl Flyer, plan: &[Step]) -> Result<()> {
 
 /// Connects to a drone and flies a short plan.
 fn main() -> Result<()> {
+    // 192.168.10.1 is the drone's fixed address on its own Wi-Fi network and
+    // 8889 is the UDP port that receives commands. The computer must be joined
+    // to that Wi-Fi network first.
     let mut drone = Drone::new("192.168.10.1:8889");
+    // The drone sends its video stream back to this local UDP port.
     drone.connect(11111);
     println!("Drone connected.");
 

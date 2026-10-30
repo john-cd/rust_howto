@@ -1,5 +1,13 @@
 //! Generic I2C driver example using `embedded-hal` 1.0 traits.
 //!
+//! I2C is a two-wire bus that connects a controller (such as a robot's
+//! microcontroller) to many small chips, such as temperature sensors. Each chip
+//! has a seven-bit address, and its data lives in numbered registers: the
+//! controller writes the register number, then reads the value. `embedded-hal`
+//! defines traits for such buses, so a driver written against them works on
+//! any board. Here a mock bus replaces real hardware, so the example runs on a
+//! normal computer.
+//!
 //! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example

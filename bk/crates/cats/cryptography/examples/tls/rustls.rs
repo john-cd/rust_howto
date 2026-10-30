@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Connect to a TLS server with `rustls` and verify its certificate.
+//!
+//! TLS encrypts a connection and lets the client verify the server's identity
+//! using its certificate; HTTPS is HTTP over TLS. `rustls` is a TLS library
+//! written in Rust. The client checks that the certificate chains to a trusted
+//! root certificate authority and matches the host name.
 
 use std::net::SocketAddr;
 use std::sync::Arc;

@@ -4,6 +4,12 @@
 //! This example demonstrates the use of the ECDSA (Elliptic Curve Digital
 //! Signature Algorithm) with the P-256 curve for signing and verifying a
 //! message. It uses the `p256` crate for cryptographic operations.
+//!
+//! A digital signature proves who wrote a message and that it was not altered:
+//! the signer uses a private key, and anyone can check the result with the
+//! public key. ECDSA bases this on elliptic curves, which give small keys and
+//! signatures. P-256 is a standard curve used in TLS certificates and WebAuthn
+//! passkeys.
 
 use p256::ecdsa::Signature;
 use p256::ecdsa::SigningKey;

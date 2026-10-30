@@ -10,8 +10,13 @@ use spacepackets::ecss::tm::PusTmReader;
 use spacepackets::ecss::tm::PusTmSecondaryHeader;
 
 /// Serializes a service 17 telemetry response and checks the decoded fields.
+///
+/// Telemetry is data flowing from the spacecraft to the ground. This packet is
+/// the spacecraft's answer to the connection-test telecommand (service 17,
+/// subtype 1): service 17, subtype 2 means "connection test report".
 pub fn pus_telemetry() {
-    // This fixed seven-byte timestamp makes the example deterministic.
+    // Telemetry carries the time it was generated. This fixed seven-byte
+    // timestamp makes the example deterministic.
     let timestamp = [0_u8; 7];
     let telemetry = PusTmCreator::new_no_source_data(
         SpHeader::new_from_apid(u11::new(0x42)),

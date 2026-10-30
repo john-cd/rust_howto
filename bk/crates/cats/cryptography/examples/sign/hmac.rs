@@ -4,6 +4,12 @@
 //! This example demonstrates how to use the `ring` crate to generate an HMAC
 //! (Hash-based Message Authentication Code) signature for a message and then
 //! verify the signature. It uses SHA256 as the underlying hash function.
+//!
+//! An HMAC proves that a message was not changed and came from someone who
+//! knows a shared secret key. Both sides hold the same key, so unlike a
+//! public-key signature it cannot prove which of the two sent the message. It
+//! is widely used to sign API requests and webhooks, and to protect cookies and
+//! tokens.
 
 // An error with absolutely no details (on purpose):
 use ring::error::Unspecified;

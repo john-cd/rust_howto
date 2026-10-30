@@ -6,6 +6,12 @@
 //! The example generates a new keypair, signs a message, and verifies it.
 //! Keep the signing key private; only the verifying key and signature are
 //! printed.
+//!
+//! A digital signature proves who wrote a message and that it was not altered.
+//! The signer keeps a private signing key; anyone with the matching public
+//! verifying key can check the signature, but cannot forge one. Ed25519 is a
+//! fast modern signature scheme used for SSH keys, software updates and signed
+//! tokens.
 
 use ed25519_dalek::Signer as _;
 use ed25519_dalek::SigningKey;
