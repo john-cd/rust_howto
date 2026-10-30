@@ -23,6 +23,11 @@ path = "examples/2d_raster_graphics/main.rs"
 test = true
 
 [[example]]
+name = "2d_renderers"
+path = "examples/2d_renderers/main.rs"
+test = true
+
+[[example]]
 name = "2d_vector_graphics"
 path = "examples/2d_vector_graphics/main.rs"
 test = true
@@ -48,8 +53,11 @@ usvg = "0.49.0" # Parses and normalizes SVG documents.
 
 [dev-dependencies]
 anyhow = "1.0.104" # Provides a fallible entry point for the example runner.
+fontdue = "0.9.3" # Rasterizes a glyph without a window or GPU.
+glam = "0.34.1" # Computes the 3D projection in the renderer example.
 lyon = "1.0.19" # Builds and tessellates paths in the vector graphics example.
 tiny-skia = "0.12.0" # Draws CPU-backed pixmaps without a window or GPU.
+ttf-parser = "0.25.1" # Reads font metrics without rasterizing.
 
 [lints]
 workspace = true

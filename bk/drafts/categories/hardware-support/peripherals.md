@@ -16,6 +16,14 @@ On Windows, `nusb` uses WinUSB, so the device or interface must be associated wi
 
 [`serialport`][c~serialport~docs]↗{{hi:serialport}} provides a cross-platform API for enumerating and opening serial ports, configuring line settings, and reading or writing bytes. Serial device names and permissions differ by operating system; on Linux, a user may need membership in the device's configured group or a `udev` rule. For devices that expose a standard USB serial interface, use the system driver rather than talking to USB endpoints directly.
 
+### List Serial Ports {#list-serial-ports .skip}
+
+This example lists the ports that the operating system reports without opening any of them. An empty list and an enumeration error are normal outcomes on machines without serial hardware or permissions.
+
+```rust,editable
+{{#include ../../../crates/cats/hardware_support/examples/peripherals/main.rs:example}}
+```
+
 ## Human Interface Devices {#human-interface-devices .skip}
 
 [`hidapi`][c~hidapi~docs]↗{{hi:hidapi}} offers access to USB and Bluetooth HID devices such as keyboards, controllers, and sensors. The operating system may reserve some devices or restrict which reports an application can send; consult the device and platform documentation before relying on a particular report or permission model.

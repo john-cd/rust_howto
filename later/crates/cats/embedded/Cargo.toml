@@ -34,6 +34,11 @@ path = "examples/hals/main.rs"
 test = true
 
 [[example]]
+name = "pacs"
+path = "examples/pacs/main.rs"
+test = true
+
+[[example]]
 name = "rtos"
 path = "examples/rtos/main.rs"
 test = true
@@ -41,6 +46,11 @@ test = true
 [[example]]
 name = "sensors"
 path = "examples/sensors/main.rs"
+test = true
+
+[[example]]
+name = "useful_crates_embedded"
+path = "examples/useful_crates_embedded/main.rs"
 test = true
 
 [dev-dependencies]
@@ -56,6 +66,9 @@ embassy-sync = "0.8.0" # Provides the bounded task-to-task message channel.
 embassy-time = { version = "0.5.1", features = ["std"] } # Provides host timers for the task example and timeout.
 embedded-hal = "1.0.0" # Portable traits used by the host-side peripheral examples.
 embedded-storage = "0.3.2" # NOR flash traits used by the in-memory flash model.
+heapless = "0.9.3" # Provides the bounded queue and vector.
+postcard = "1.1.3" # Encodes messages compactly without an allocator.
+serde = { version = "1.0.229", features = ["derive"] } # Derives the message encoding.
 
 [workspace]
 

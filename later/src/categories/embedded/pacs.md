@@ -12,6 +12,12 @@ The PAC gives low-level code typed access to register blocks. Many device PACs e
 
 A PAC is not a complete board configuration. It may describe register fields and interrupt names, but application code still has to configure clocks, pin multiplexing, reset state, and electrical connections. A chip HAL normally builds on the PAC and provides safer, higher-level operations for common peripherals.
 
+The example models a register block and the ownership token that a generated PAC provides, using host memory in place of device registers. A real PAC defines the register addresses from the vendor's SVD file; the `take` pattern and the volatile read-modify-write operations are the same.
+
+```rust,editable
+{{#include ../../../crates/cats/embedded/examples/pacs/main.rs:example}}
+```
+
 ## PAC or HAL?
 
 | Use a PAC when                                                                                               | Use a HAL when                                                                            |

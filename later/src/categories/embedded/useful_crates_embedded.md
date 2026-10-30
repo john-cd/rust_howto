@@ -12,6 +12,12 @@ Embedded projects have different constraints from desktop programs: some targets
 
 Use a bounded queue between an interrupt or producer and a worker only after choosing its capacity from the maximum burst and service rate. Do not treat a fixed capacity as proof that data can never be lost.
 
+The example below combines `heapless` with `postcard`: it encodes messages into fixed-size buffers, queues them in a four-slot `Deque`, and rejects new messages when the queue is full. It runs on the host; the same code compiles for `no_std` targets.
+
+```rust,editable
+{{#include ../../../crates/cats/embedded/examples/useful_crates_embedded/main.rs:example}}
+```
+
 ## `postcard` {#postcard}
 
 [![postcard][c~postcard~docs~badge]][c~postcard~docs] [![postcard~crates.io][c~postcard~crates.io~badge]][c~postcard~crates.io] [![postcard~repo][c~postcard~repo~badge]][c~postcard~repo] [![postcard~lib.rs][c~postcard~lib.rs~badge]][c~postcard~lib.rs]{{hi:postcard}}{{hi:Cobs}}{{hi:Framing}}{{hi:Serde}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}

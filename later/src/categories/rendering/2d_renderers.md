@@ -17,6 +17,14 @@ A 2D renderer turns paths, shapes, text, or a pixel buffer into an image. Use th
 
 A crate's GPU backend must be compatible with the versions used elsewhere in an application. In particular, [Vger](2d_vector_graphics.md#vger) expects a WGPU integration different from this workspace; it remains documented without a runnable book recipe. [WebRender](2d_vector_graphics.md#webrender) is background coverage rather than a recommended standalone example. These dispositions avoid presenting unfinished adapters as working recipes.
 
+## Tessellate, Then Rasterize {#tessellate-then-rasterize}
+
+`lyon` produces vertices and indices, and the application chooses what draws them. This example feeds the mesh to `tiny-skia`'s CPU rasterizer; a GPU renderer would upload the same buffers. It needs no window or GPU.
+
+```rust,editable
+{{#include ../../../crates/cats/rendering/examples/2d_renderers/main.rs:example}}
+```
+
 ## CPU Pixel Buffers {#pixel-based-2d-rendering}
 
 See [2D Raster Graphics](2d_raster_graphics.md) for CPU drawing and pixel presentation. Raster images have a fixed resolution; account for scaling, color representation, and alpha when combining buffers.

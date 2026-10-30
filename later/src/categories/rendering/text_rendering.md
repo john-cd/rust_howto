@@ -8,6 +8,14 @@ Libraries and tools for loading and [rendering][p~rendering] fonts.
 
 [`fontdue`][c~fontdue~docs]↗{{hi:fontdue}} is a fast font rasterizer. [`ttf-parser`][c~ttf-parser~docs]↗{{hi:ttf-parser}} and [`opentype`][c~opentype~docs]↗{{hi:opentype}} provide lower-level font parsing capabilities. [`ab_glyph`][c~ab_glyph~docs]↗{{hi:ab_glyph}} is another font rendering option.
 
+## Rasterize a Glyph {#rasterize-a-glyph}
+
+This example loads a TrueType font from memory, rasterizes one glyph into a coverage bitmap with `fontdue`, and reads design metrics with `ttf-parser`. The bundled font is Roboto, under the Apache License 2.0. Coverage values are alpha: composite them with a text color to draw. Shaping, bidirectional text, and fallback fonts need a layout library; see [[text_layout | Text Layout]].
+
+```rust,editable
+{{#include ../../../crates/cats/rendering/examples/text_rendering/main.rs:example}}
+```
+
 ## `ab_glyph` {#ab_glyph}
 
 API for loading, scaling, positioning and rasterizing OpenType font glyphs.

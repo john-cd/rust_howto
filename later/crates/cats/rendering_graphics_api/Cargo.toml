@@ -48,7 +48,9 @@ pollster = { version = "1.0.1", optional = true } # runs the example's async GPU
 wgpu = { version = "30.0.1", optional = true } # was pinned for ggez
 
 [dev-dependencies]
-naga = { version = "30.0.1", features = ["wgsl-in"] } # validates the WGSL without a GPU
+anyhow = "1.0.104" # Provides consistent fallible example entry points.
+ash = "0.38.0" # Loads the Vulkan library at runtime; the example runs without one.
+naga = { version = "30.0.1", features = ["wgsl-in", "spv-out"] } # validates the WGSL without a GPU
 
 [features]
 default = []
