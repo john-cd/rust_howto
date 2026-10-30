@@ -24,6 +24,8 @@ For most Rust graphics applications, start with [`wgpu`][c~wgpu~docs]↗{{hi:wgp
 
 The same API covers graphics and compute workloads while leaving resource creation, pipelines, command submission, and shader dispatch explicit. This makes `wgpu` a practical default: it handles backend differences while preserving a consistent Rust interface, and it can target browser builds as well as native applications.
 
+The example is headless: it needs a compatible adapter but no window. Run it with `cargo test -p rendering_graphics_api --features wgpu --example gpu_abstraction_layers -- --include-ignored wgpu` from `later/crates`. On a machine without a GPU, install a software Vulkan driver (on Debian or Ubuntu, `sudo apt install mesa-vulkan-drivers`) and set `VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/lvp_icd.json`. The WGSL shader is also validated with `naga` in a test that needs no adapter.
+
 ```rust,editable
 {{#include ../../../crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
 ```
