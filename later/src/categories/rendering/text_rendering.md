@@ -52,7 +52,3 @@ A simple [`#![no_std]`][book~rust-reference~no_std]{{hi:no_std}} font parser and
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write / decide what to cover](https://github.com/john-cd/rust_howto/issues/1212)
-</div>

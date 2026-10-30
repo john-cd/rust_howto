@@ -32,7 +32,3 @@
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write. decide what to cover.](https://github.com/john-cd/rust_howto/issues/1215)
-</div>
