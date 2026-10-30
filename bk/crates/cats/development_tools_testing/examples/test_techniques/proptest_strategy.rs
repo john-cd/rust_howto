@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! A custom `proptest` strategy that only generates valid values.
 
@@ -44,8 +37,18 @@ impl Span {
 }
 // ANCHOR_END: example
 
-/// The example runs under `cargo test`.
-fn main() {}
+/// Combines two spans; the property tests below check the invariants.
+fn main() {
+    let a = Span::new(1, 5).expect("ordered endpoints");
+    let b = Span::new(4, 9).expect("ordered endpoints");
+    assert!(Span::new(5, 1).is_none());
+    println!(
+        "{a:?} has {} integers; union: {:?}; overlaps {b:?}: {}",
+        a.len(),
+        a.union(&b),
+        a.overlaps(&b)
+    );
+}
 
 #[cfg(test)]
 mod tests {

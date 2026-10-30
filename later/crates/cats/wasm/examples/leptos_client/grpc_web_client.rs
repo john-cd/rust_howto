@@ -4,7 +4,7 @@
     not(test),
     expect(
         dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
+        reason = "targets the browser (wasm32); native builds cannot call it"
     )
 )]
 // ANCHOR: example

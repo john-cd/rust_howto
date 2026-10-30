@@ -1,8 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "needs a Kubernetes cluster; the tests use mocks"
+    )
 )]
 // ANCHOR: example
 //! A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`),

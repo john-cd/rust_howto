@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Hash and verify passwords with Argon2id.
 //!
@@ -61,6 +57,10 @@ fn main() -> anyhow::Result<()> {
     let stored_hash = hash(password)?;
     assert!(verify(password, &stored_hash));
     println!("Successfully hashed and verified password with Argon2id.");
+
+    // The one-line alternative:
+    let stored_hash2 = hash_with_password_auth(password);
+    assert!(password_auth::verify_password(password, &stored_hash2).is_ok());
     Ok(())
 }
 

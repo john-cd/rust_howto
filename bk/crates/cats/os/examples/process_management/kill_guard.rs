@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Kill a child process automatically when its owner goes out of scope.
 
@@ -70,6 +63,13 @@ fn fallible_work() -> anyhow::Result<()> {
 /// Runs the failing function; the child does not outlive it.
 pub fn run() -> anyhow::Result<()> {
     assert!(fallible_work().is_err());
+
+    // A released child is no longer guarded; the caller must clean it up.
+    let guard = KillOnDrop::new(sleep_command(30).spawn()?);
+    if let Some(mut child) = guard.release() {
+        child.kill()?;
+        child.wait()?;
+    }
     Ok(())
 }
 // ANCHOR_END: example

@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Type-level numbers with `typenum`.
 
@@ -66,6 +62,7 @@ fn main() {
     let buf2: FixedBuffer<f64, U6> = FixedBuffer::new();
     println!("buf1 capacity: {}", buf1.capacity());
     println!("buf2 capacity: {}", buf2.capacity());
+    println!("buf1 holds {} elements", buf1.data.len());
 
     assert_eq!(Five::USIZE, 5);
     assert_eq!(Six::USIZE, 6);

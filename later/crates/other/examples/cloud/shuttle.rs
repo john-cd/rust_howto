@@ -39,13 +39,6 @@ pub fn run() {
 // Local tests are omitted since shuttle depends on a specific runtime.
 // The code itself is type-checked during compilation.
 
-// Workaround for unused code warnings when not compiled by shuttle:
-/// Calls the handler, so that it is not reported as unused.
-#[expect(dead_code, reason = "declared to illustrate it; never used")]
-fn dummy() {
-    std::mem::drop(hello_world());
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! This example demonstrates a layered architecture in Rust,
 //! separating concerns into data access, business logic, and presentation
@@ -138,7 +134,10 @@ mod presentation {
         user_service.create_user(new_user).await?;
 
         match user_service.get_user(1).await? {
-            Some(user) => println!("Found user: {user:?}"),
+            Some(user) => {
+                println!("Found user: {user:?}");
+                println!("User #{} is named {}.", user.id, user.name);
+            }
             None => println!("User not found"),
         }
 

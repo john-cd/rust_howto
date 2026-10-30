@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Parameterized tests and fixtures with `rstest`.
 
@@ -24,8 +17,12 @@ fn parse_seconds(text: &str) -> Option<u64> {
 }
 // ANCHOR_END: example
 
-/// The example runs under `cargo test`.
-fn main() {}
+/// Parses a few durations; the tests below are parameterized.
+fn main() {
+    for text in ["90s", "5m", "2h", "5x"] {
+        println!("{text:?} -> {:?}", parse_seconds(text));
+    }
+}
 
 #[cfg(test)]
 mod tests {

@@ -2,7 +2,7 @@
 
 #![expect(
     dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+    reason = "needs AWS credentials (Lambda); the tests use mocks"
 )]
 // ANCHOR: example
 //! Invoke an AWS Lambda function synchronously and asynchronously.

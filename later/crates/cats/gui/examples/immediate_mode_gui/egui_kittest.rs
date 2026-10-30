@@ -1,8 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
-#![allow(
-    dead_code,
-    reason = "the file is built as a module of a dispatcher and as a standalone example"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "the `immediate_mode_gui` entry point does not call this module"
+    )
 )]
 // ANCHOR: example
 //! Finds a button by its label and clicks it with `egui_kittest`.

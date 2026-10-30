@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Example builder pattern.
 
@@ -106,15 +102,26 @@ impl DatabaseConfigBuilder {
 /// Builds a configuration with the builder and prints it.
 fn main() {
     // Create a builder struct.
-    let config = DatabaseConfigBuilder::new("localhost".to_owned(), 5432)
+    // `DatabaseConfig::build` is a shortcut for `DatabaseConfigBuilder::new`.
+    let config = DatabaseConfig::build("localhost".to_owned(), 5432)
         // Call (some of) the builder's methods to initialize or update the
         // fields.
         .username("admin".to_owned())
         .password("secret".to_owned())
         .pool_size(20)
+        .connection_timeout_seconds(60)
         .build();
 
     println!("Database Configuration: {config:?}");
+    println!(
+        "{}:{} as {:?} (password set: {}), pool of {}, timeout {}s",
+        config.host,
+        config.port,
+        config.username,
+        config.password.is_some(),
+        config.pool_size,
+        config.connection_timeout_seconds
+    );
 }
 
 // ANCHOR_END: example

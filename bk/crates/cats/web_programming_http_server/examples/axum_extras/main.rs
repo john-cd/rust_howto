@@ -11,7 +11,20 @@ mod https_redirect;
 mod typed_header;
 
 fn main() {
-    println!("Run `cargo test --example axum_extras`.");
+    // Build the routers; serving them is shown in the tests.
+    let routers = [
+        cookies::app(),
+        debug_handler::app(),
+        flash_messages::app(),
+        typed_header::app(),
+        axum_server_tls::app(),
+        https_redirect::app(https_redirect::Ports {
+            http: 8080,
+            https: 8443,
+        }),
+    ];
+    println!("Built {} routers.", routers.len());
+    println!("Run `cargo test --example axum_extras` to call them.");
 }
 
 #[cfg(test)]

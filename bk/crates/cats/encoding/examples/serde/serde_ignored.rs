@@ -19,7 +19,6 @@
 use serde::Deserialize;
 
 /// A struct, whose JSON representation may contain unknown fields.
-#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 struct MyStruct {
     /// A number.
@@ -55,6 +54,7 @@ fn main() {
     match result {
         Ok(my_struct) => {
             println!("Deserialized struct: {my_struct:?}");
+            println!("{}: {}", my_struct.field1, my_struct.field2);
             println!("All ignored fields: {ignored_fields:?}");
         }
         Err(e) => {

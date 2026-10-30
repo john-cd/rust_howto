@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Testing code that reads environment variables.
 //!
@@ -20,8 +13,10 @@ fn log_level() -> String {
     std::env::var("APP_LOG").unwrap_or_else(|_| "info".to_owned())
 }
 
-/// The example runs under `cargo test`.
-fn main() {}
+/// Prints the log level; the tests below show how to change it.
+fn main() {
+    println!("Log level: {}", log_level());
+}
 
 #[cfg(test)]
 mod tests {

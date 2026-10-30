@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Examples for working with `.env` files and `envy`.
 
@@ -32,6 +28,7 @@ fn main() {
         .expect("Please provide MY_APP__PORT env variable");
 
     println!("c: {c:?} c2: {c2:?}");
+    println!("ports: {} and {}", c.port, c2.port);
 }
 
 // ANCHOR_END: example

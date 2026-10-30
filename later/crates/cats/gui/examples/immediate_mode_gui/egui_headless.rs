@@ -2,7 +2,7 @@
 
 #![expect(
     dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+    reason = "needs a display and a window; the snippet is not run headlessly"
 )]
 // ANCHOR: example
 //! Runs an `egui` UI for one frame without a window, a GPU or a display.

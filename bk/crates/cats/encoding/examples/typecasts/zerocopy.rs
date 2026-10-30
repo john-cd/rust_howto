@@ -189,7 +189,6 @@ fn from_bytes() -> anyhow::Result<()> {
 #[derive(IntoBytes, Immutable)]
 enum MyEnum {
     /// The first variant, stored as 0.
-    #[allow(dead_code)]
     A,
     /// The second variant, stored as 1.
     B,
@@ -202,6 +201,7 @@ fn enums_also_work() {
     let my_enum = MyEnum::B;
     let bytes = my_enum.as_bytes();
     assert_eq!(bytes, [1]);
+    assert_eq!(MyEnum::A.as_bytes(), [0]);
 }
 
 /// 4. Safely transmutes a value of one type to a value of another type of the

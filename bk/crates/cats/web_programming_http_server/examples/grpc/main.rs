@@ -9,6 +9,8 @@ mod tonic_client;
 
 /// Runs the grpc example.
 fn main() -> anyhow::Result<()> {
+    // The CORS settings that `grpc_web::serve` applies for browser clients:
+    let _cors = grpc_web::cors();
     tonic::run()?;
     Ok(())
 }

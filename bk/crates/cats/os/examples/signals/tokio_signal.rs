@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Shut an async service down on Ctrl-C or SIGTERM with Tokio.
 
@@ -55,6 +51,11 @@ async fn serve_until(shutdown: impl Future<Output = ()>) -> u32 {
 pub fn run() -> anyhow::Result<()> {
     let runtime = tokio::runtime::Runtime::new()?;
     runtime.block_on(async {
+        // Without a signal, waiting for shutdown simply times out:
+        let waited =
+            time::timeout(Duration::from_millis(10), shutdown_signal()).await;
+        assert!(waited.is_err());
+
         // In a real program, pass `async { let _ = shutdown_signal().await; }`
         // instead of the timeout.
         let ticks = serve_until(time::sleep(Duration::from_millis(50))).await;

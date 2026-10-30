@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Serve a tonic service to browsers with gRPC-Web.
 //!
@@ -35,6 +31,7 @@ pub fn cors() -> CorsLayer {
 }
 
 /// Serves the `Greeter` service over gRPC and gRPC-Web on the same port.
+#[expect(dead_code, reason = "binds a port and serves until stopped")]
 pub async fn serve(addr: SocketAddr) -> anyhow::Result<()> {
     Server::builder()
         // Required: gRPC-Web may arrive over HTTP/1.1.

@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Defining an error type with `thiserror`.
 
@@ -50,6 +46,19 @@ pub enum DataStoreError {
 /// Returns a `DataStoreError` on purpose.
 #[expect(unreachable_code, reason = "the example returns an error on purpose")]
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // Each variant has its own message:
+    let errors = [
+        DataStoreError::Redaction("secret".to_owned()),
+        DataStoreError::InvalidHeader {
+            expected: "v1".to_owned(),
+            found: "v2".to_owned(),
+        },
+        DataStoreError::Unknown,
+    ];
+    for error in &errors {
+        println!("{error}");
+    }
+
     // For demonstration purposes, return an error of type
     // `DataStoreError::Unknown`.
     return Err(DataStoreError::Unknown.into());

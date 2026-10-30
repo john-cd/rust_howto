@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Serve an `axum` router over HTTPS with `axum-server` and `rustls`.
 
@@ -27,6 +20,10 @@ pub fn app() -> Router {
 ///
 /// In production, load the certificate and key with
 /// `RustlsConfig::from_pem_file("cert.pem", "key.pem")` instead.
+#[cfg_attr(
+    not(test),
+    expect(dead_code, reason = "binds a TLS socket; exercised by the test")
+)]
 pub async fn serve_https(
     addr: SocketAddr,
     config: RustlsConfig,
@@ -40,6 +37,10 @@ pub async fn serve_https(
 
 /// Stops accepting connections and waits up to `grace` for in-flight
 /// requests to finish.
+#[cfg_attr(
+    not(test),
+    expect(dead_code, reason = "stops the TLS server; exercised by the test")
+)]
 pub fn shutdown(handle: &Handle<SocketAddr>, grace: Duration) {
     handle.graceful_shutdown(Some(grace));
 }

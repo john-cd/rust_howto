@@ -48,7 +48,6 @@ pub fn render(r: impl Renderable) -> Result<()> {
 }
 
 /// Renders each template of `r` and writes the result to its destination.
-#[allow(dead_code)]
 fn render_one(r: impl Renderable, templ: &Tera, context: &Context) -> Result<()> {
     for renderinfo in r.get_what_to_render() {
         let rendered = templ.render(&renderinfo.template_name, context)?;
@@ -64,7 +63,11 @@ fn render_one(r: impl Renderable, templ: &Tera, context: &Context) -> Result<()>
 /// Replaces the placeholders in `path_template` and returns the path.
 fn generate_path(path_template: &str) -> Result<PathBuf> {
     // Reuses static empty context instead of instantiating Context::new() on every call.
-    Ok(PathBuf::from(Tera::one_off(path_template, &EMPTY_CONTEXT, true)?))
+    Ok(PathBuf::from(Tera::one_off(
+        path_template,
+        &EMPTY_CONTEXT,
+        true,
+    )?))
 }
 
 // Deferred (#1734): scratch proposal for rendering a template directory; decide in the

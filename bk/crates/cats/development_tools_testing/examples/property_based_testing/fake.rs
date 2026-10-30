@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! This example demonstrates how to use the `fake` crate to generate fake data
 //! for testing. It covers basic usage, generating data for custom structs, and
@@ -142,6 +138,25 @@ fn main() {
         ),
     };
     println!("Generated Order: {order:#?}");
+
+    // Read the generated fields:
+    println!(
+        "{} {} <{}>, age {}, active: {}",
+        user.first_name, user.last_name, user.email, user.age, user.active
+    );
+    println!(
+        "Order {} of user {}: {} items, total {:.2}, created {}",
+        order.id,
+        order.user_id,
+        order.items.len(),
+        order.total,
+        order.created_at
+    );
+    let address = &order.shipping_address;
+    println!(
+        "Ships to {}, {} {}",
+        address.street, address.city, address.zip
+    );
 
     // Generate random sentences:
     let sentences: Vec<String> =

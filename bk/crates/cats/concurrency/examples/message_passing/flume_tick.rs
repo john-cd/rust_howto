@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! A bounded `flume` channel for commands sent to a loop that handles them
 //! once per "tick" (a UI frame, a game loop iteration, a control cycle).
@@ -78,6 +71,7 @@ fn main() -> Result<()> {
 
     assert_eq!(total, 55);
     println!("Total: {total}");
+    timeout_on_empty();
     Ok(())
 }
 

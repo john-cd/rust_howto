@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Example demonstrating TOML parsing and deserialization.
 
@@ -53,6 +49,17 @@ fn main() -> anyhow::Result<()> {
 
     let parsed_toml: Config = toml::from_str(toml_string)?;
     println!("{parsed_toml:#?}");
+
+    let db = &parsed_toml.database;
+    println!(
+        "{}: {} on ports {:?} (max {} connections, enabled: {}, updated {})",
+        parsed_toml.title,
+        db.server,
+        db.ports,
+        db.connection_max,
+        db.enabled,
+        db.date
+    );
 
     Ok(())
 }

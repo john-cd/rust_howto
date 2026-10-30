@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Hashing and verifying a password with `scrypt`.
 
@@ -54,7 +47,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: example
 
 pub fn run() -> Result<(), Box<dyn Error>> {
-    example()
+    main()
 }
 
 #[cfg(test)]

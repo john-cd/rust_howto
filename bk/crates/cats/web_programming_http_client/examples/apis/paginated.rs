@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Wrap a paginated API (crates.io reverse dependencies) in an iterator.
 
@@ -69,6 +65,10 @@ impl Page {
 }
 
 /// Fetches one page (1-based) from crates.io.
+#[expect(
+    dead_code,
+    reason = "makes real network requests; `main` uses canned pages instead"
+)]
 fn fetch_page(client: &Client, name: &str, page: u64) -> Result<Page> {
     let url = format!(
         "https://crates.io/api/v1/crates/{name}/reverse_dependencies?page={page}&per_page=100"

@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Configures and initializes the logging system using log4rs.
 
@@ -25,9 +18,7 @@ use tempfile::tempdir;
 fn main() -> Result<()> {
     let output_directory = tempdir()?;
     let output_path = output_directory.path().join("output.log");
-    let logfile = FileAppender::builder()
-        .encoder(Box::new(PatternEncoder::new("{l} - {m}\n")))
-        .build(&output_path)?;
+    let logfile = file_appender(&output_path)?;
 
     let config = Config::builder()
         .appender(Appender::builder().build("logfile", Box::new(logfile)))

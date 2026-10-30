@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Keeps a secret out of logs with a newtype whose `Debug` and `Display`
 //! implementations redact the value, then does the same with `secrecy`.
@@ -68,7 +64,7 @@ fn main() -> Result<(), Infallible> {
         api_key: key,
     };
     println!("{config:?}");
-    println!("{}", config.api_key);
+    println!("{} at {}", config.api_key, config.endpoint);
     assert_eq!(config.api_key.expose_secret(), "sk-live-1234");
 
     // The same idea with the `secrecy` crate: the value is zeroized on drop

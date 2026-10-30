@@ -4,7 +4,7 @@
     not(test),
     expect(
         dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
+        reason = "needs an S3-compatible service; the tests use mocks"
     )
 )]
 // ANCHOR: example

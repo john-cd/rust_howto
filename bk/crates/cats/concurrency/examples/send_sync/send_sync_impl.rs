@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Simplified implementation of the `Arc` smart pointer.
 //!
@@ -85,10 +81,8 @@ mod my {
             assert!(!ptr.is_null());
             assert!(ptr.is_aligned());
             println!("Created `Arc` with reference count 1.");
-            Self {
-                ptr,
-                phantom: PhantomData,
-            }
+            // SAFETY: `ptr` points to the `ArcInner` we just allocated.
+            unsafe { Self::from_inner(ptr) }
         }
 
         /// Returns a reference to the inner data.

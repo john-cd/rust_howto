@@ -89,7 +89,6 @@ fn format() {
     // `:?` and friends use the `Debug` trait.
 
     /// An example struct that implements the `Debug` trait.
-    #[allow(dead_code)]
     #[derive(Debug)]
     struct Point {
         /// The horizontal coordinate.
@@ -98,6 +97,7 @@ fn format() {
         y: i32,
     }
     let p = Point { x: 10, y: 20 };
+    println!("x = {}, y = {}", p.x, p.y);
     println!("Debug output of Point: {p:?}"); // `p` must implement `Debug`.
     // Output: Debug output of Point: Point { x: 10, y: 20 }
 

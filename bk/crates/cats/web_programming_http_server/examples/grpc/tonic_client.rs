@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! This example shows how to create a simple gRPC client using the `tonic`
 //! crate to interact with the `Greeter` server.
@@ -40,6 +36,7 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Boilerplate to expose the example logic to the crate's main harness.
+#[expect(dead_code, reason = "needs a running `Greeter` server")]
 pub fn run() -> anyhow::Result<()> {
     main()
 }

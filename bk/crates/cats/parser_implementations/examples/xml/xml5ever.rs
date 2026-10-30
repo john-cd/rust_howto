@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Parse a small XML document with `xml5ever` and inspect its DOM tree.
 
@@ -366,6 +362,31 @@ impl TreeSink for XmlTree {
     }
 }
 
+/// Describes a node in one line, whatever its kind.
+fn describe(node: &Node) -> String {
+    match &node.kind {
+        NodeKind::Document(children) | NodeKind::Fragment(children) => {
+            format!("container with {} children", children.borrow().len())
+        }
+        NodeKind::Element { children, .. } => {
+            format!(
+                "element <{}> with {} children",
+                node.name.local,
+                children.borrow().len()
+            )
+        }
+        NodeKind::Text(text) => format!("text {:?}", text.borrow()),
+        NodeKind::Comment(text) => format!("comment {text:?}"),
+        NodeKind::ProcessingInstruction { target, data } => {
+            format!("processing instruction {target} {data:?}")
+        }
+        NodeKind::Doctype {
+            public_id,
+            system_id,
+        } => format!("doctype {public_id:?} {system_id:?}"),
+    }
+}
+
 /// Parses a small XML document and prints the library and book nodes.
 ///
 /// # Errors
@@ -415,6 +436,7 @@ fn main() -> anyhow::Result<()> {
     };
     anyhow::ensure!(contents == "Rust", "unexpected book text: {contents}");
 
+    println!("{}; {}", describe(&library), describe(&text));
     println!(
         "root: {library_name}; child: {book_name} id={book_id}; text: {contents}"
     );

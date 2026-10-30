@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Testing timeouts and retries instantly with Tokio's paused clock.
 
@@ -21,8 +14,15 @@ async fn slow_answer(delay: Duration) -> u32 {
 }
 // ANCHOR_END: example
 
-/// The example runs under `cargo test`.
-fn main() {}
+/// Waits briefly in real time; the tests below use a paused clock instead.
+fn main() -> std::io::Result<()> {
+    let runtime = tokio::runtime::Builder::new_current_thread()
+        .enable_time()
+        .build()?;
+    let answer = runtime.block_on(slow_answer(Duration::from_millis(10)));
+    println!("The answer is {answer}");
+    Ok(())
+}
 
 #[cfg(test)]
 mod tests {
@@ -60,7 +60,7 @@ mod tests {
     }
 
     #[test]
-    fn test_main_entry_point() {
-        main();
+    fn test_main_entry_point() -> std::io::Result<()> {
+        main()
     }
 }

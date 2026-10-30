@@ -2,7 +2,7 @@
 
 #![expect(
     dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+    reason = "needs an AWS account (SQS and SNS); the tests use mocks"
 )]
 // ANCHOR: example
 //! A typed message bus: publish Protobuf messages through a trait, with an

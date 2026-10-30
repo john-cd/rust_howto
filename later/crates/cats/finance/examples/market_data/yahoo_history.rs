@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(dead_code, reason = "`parse_bars` is only used by the tests")
-)]
 // ANCHOR: example
 //! Fetch daily bars from Yahoo! Finance under a rate limit.
 //!
@@ -19,6 +15,13 @@ use yahoo_finance_api::YResponse;
 use yahoo_finance_api::YahooConnector;
 
 /// Converts a Yahoo! chart response into daily bars.
+#[cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "`main` needs the network; the tests parse a saved response"
+    )
+)]
 fn parse_bars(json: serde_json::Value) -> anyhow::Result<Vec<Quote>> {
     Ok(YResponse::from_json(json)?.quotes()?)
 }

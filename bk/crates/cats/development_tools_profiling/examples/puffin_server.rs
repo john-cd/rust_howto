@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Records frames with `puffin` and serves them to `puffin_viewer`.
 //!
@@ -19,7 +15,10 @@ const ADDRESS: &str = "127.0.0.1:8585";
 /// The state of the profiler.
 enum ProfilerStatus {
     /// The server is listening. Dropping it stops the server.
-    Active(Server),
+    Active(
+        #[expect(dead_code, reason = "held only to keep the server running")]
+        Server,
+    ),
     /// The server could not start. The application can continue without it.
     Failed(String),
 }

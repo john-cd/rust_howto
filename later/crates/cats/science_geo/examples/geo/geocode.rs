@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Turns an address into coordinates with the `geocoding` crate.
 //!
@@ -62,6 +58,10 @@ fn normalize(query: &str) -> String {
 ///
 /// This function is not called by the tests: it needs the network and is
 /// subject to the Nominatim usage policy (at most one request per second).
+#[expect(
+    dead_code,
+    reason = "needs the network and is subject to the Nominatim usage policy"
+)]
 fn locate_online(address: &str) -> Result<Option<Point<f64>>, GeocodingError> {
     let mut geocoder = CachedGeocoder::new(Openstreetmap::new());
     geocoder.locate(address)

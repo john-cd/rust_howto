@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Composing a `tracing` subscriber from layers and filters.
 
@@ -47,6 +40,13 @@ fn layers() {
 // it may be used for both global filtering and per-layer filtering,
 // respectively.
 /// Shows several ways to build an `EnvFilter`.
+#[cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "an alternative global-subscriber setup; only one subscriber can be installed per process"
+    )
+)]
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
     //    variable, ignoring any invalid filter directives.
@@ -82,6 +82,13 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 ///
 /// This example demonstrates how to add a filter to a specific layer.
 /// This allows different layers to have different filtering rules.
+#[cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "an alternative global-subscriber setup; only one subscriber can be installed per process"
+    )
+)]
 fn per_layer_filtering() {
     use tracing_subscriber::filter;
 

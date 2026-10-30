@@ -1,6 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(dead_code, reason = "scratch example with unused items")]
 // ANCHOR: example
 //! Implement `AsRef` for a composed type, as a last resort.
 //!
@@ -111,6 +110,13 @@ fn run_example() {
     println!("Printing details for a photo:");
     // `&ImageFile` becomes `&MediaFile` via `AsRef`.
     print_media_details(&photo);
+
+    // The simple projection function and the other fields:
+    println!("Size via projection: {} bytes", photo.get_file_size_bytes());
+    println!(
+        "{}x{} pixels, camera: {:?}",
+        photo.width, photo.height, photo.camera_model
+    );
 
     // We can also pass a bare `MediaFile`:
     let bare_file = MediaFile {

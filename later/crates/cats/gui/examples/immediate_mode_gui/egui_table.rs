@@ -2,7 +2,7 @@
 
 #![expect(
     dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
+    reason = "needs a display and a window; the snippet is not run headlessly"
 )]
 // ANCHOR: example
 //! A virtualized data table with `egui_extras`.

@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! This example demonstrates how to use the `deadpool` crate to manage a pool
 //! of connections.
@@ -36,7 +32,10 @@ impl Server {
 }
 
 /// Creates and recycles the `Server` connections of the pool.
-struct Manager;
+struct Manager {
+    /// Whether `create` should fail, to show how errors surface.
+    fail: bool,
+}
 
 // The `Manager` is responsible for creating and recycling `Server` instances.
 impl managed::Manager for Manager {
@@ -45,6 +44,9 @@ impl managed::Manager for Manager {
 
     /// Creates a new `Server` instance.
     async fn create(&self) -> Result<Server, Error> {
+        if self.fail {
+            return Err(Error::Fail);
+        }
         Ok(Server) // In a real-world scenario, this would establish a connection.
     }
 
@@ -64,7 +66,11 @@ type Pool = managed::Pool<Manager>;
 /// Builds a pool, gets a connection from it and queries the server.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let mgr = Manager;
+    // A manager that cannot create connections reports its error:
+    let failing_pool = Pool::builder(Manager { fail: true }).build()?;
+    assert!(failing_pool.get().await.is_err());
+
+    let mgr = Manager { fail: false };
     // Create a new connection pool with the given manager.
     let pool = Pool::builder(mgr).max_size(1).build()?;
 

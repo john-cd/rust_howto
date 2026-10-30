@@ -1,12 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![cfg_attr(
-    not(test),
-    expect(
-        dead_code,
-        reason = "the snippet declares items to illustrate them, not to call them"
-    )
-)]
 // ANCHOR: example
 //! Reject syntactically invalid and disposable addresses with [`mailchecker`].
 
@@ -18,11 +11,26 @@ pub fn deliverable<'a>(addresses: &[&'a str]) -> Vec<&'a str> {
         .filter(|a| mailchecker::is_valid(a))
         .collect()
 }
+
+/// Prints which sample addresses are worth sending to.
+fn main() {
+    let candidates = ["a@gmail.com", "b@mailinator.com", "not an address"];
+    println!("Deliverable: {:?}", deliverable(&candidates));
+}
 // ANCHOR_END: example
+
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_mailchecker_example_entry_point() {
+        main();
+    }
 
     #[test]
     fn filters_disposable_addresses() {

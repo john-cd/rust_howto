@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Obtains an OAuth 2.0 client-credentials token and calls a local mock API.
 //!
@@ -72,14 +68,6 @@ fn request_protected_resource(
 /// # Errors
 /// Returns an error if the token or resource request fails.
 fn main() -> anyhow::Result<()> {
-    run_example()
-}
-
-/// Runs the client against local authorization and resource server mocks.
-///
-/// # Errors
-/// Returns an error if the token or resource request fails.
-fn run_example() -> anyhow::Result<()> {
     let auth_server = MockServer::start();
     let resource_server = MockServer::start();
 
@@ -125,7 +113,7 @@ fn run_example() -> anyhow::Result<()> {
 ///
 /// Returns an error if the mocked token or resource request fails.
 pub fn run() -> anyhow::Result<()> {
-    run_example()
+    main()
 }
 
 #[cfg(test)]

@@ -12,6 +12,7 @@ async fn main() -> anyhow::Result<()> {
 
 /// Fetches unread mail from the configured IMAP server.
 async fn run() -> anyhow::Result<()> {
+    mailchecker::run();
     imap_fetch::run().await
 }
 

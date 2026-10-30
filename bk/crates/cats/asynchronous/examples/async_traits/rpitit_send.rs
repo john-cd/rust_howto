@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Making the futures of a trait method `Send` so the trait can be used with
 //! `tokio::spawn`: either declare `-> impl Future<Output = T> + Send`, or let
@@ -79,12 +75,23 @@ async fn roundtrip_in_task<S: SendStore + Send + 'static>(
     .flatten()
 }
 
+/// Uses the non-`Send` trait on the current task: a blanket implementation
+/// makes every `SendStore` a `LocalStore`.
+async fn roundtrip_local<S: LocalStore>(mut store: S) -> Option<String> {
+    store.put("k", "v".to_owned()).await;
+    store.get("k").await
+}
+
 /// Spawns both kinds of trait on the multi-threaded runtime.
 #[tokio::main(flavor = "multi_thread", worker_threads = 2)]
 async fn main() {
     assert_eq!(refresh_in_task(Counter(0)).await, Ok(1));
     assert_eq!(
         roundtrip_in_task(MemoryStore::default()).await.as_deref(),
+        Some("v")
+    );
+    assert_eq!(
+        roundtrip_local(MemoryStore::default()).await.as_deref(),
         Some("v")
     );
 }
