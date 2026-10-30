@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Examples for working with standard environment variables.
+//!
+//! Environment variables are named text values that the operating system hands
+//! to each program. They are a common way to pass settings such as a port or a
+//! database URL, and secrets, without changing the code, so one build can run
+//! in development and production.
 
 use std::env;
 

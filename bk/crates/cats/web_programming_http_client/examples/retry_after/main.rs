@@ -1,6 +1,11 @@
 //! Honour `429 Too Many Requests` and `Retry-After`.
 //!
 //! TODO Reviewed ??-??-2026.
+//!
+//! A server that is overloaded or rate limiting you answers `429 Too Many
+//! Requests`, often with a `Retry-After` header that says how long to wait.
+//! Honouring it, instead of retrying at once, avoids being blocked and gives
+//! the server time to recover.
 
 // ANCHOR: example
 //! Retry after the delay the server asks for, when it asks for one.

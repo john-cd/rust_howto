@@ -7,6 +7,11 @@
 //! It defines an `expensive_function` that simulates a time-consuming operation
 //! by sleeping for 1 second. The `main` function measures the time taken by
 //! `expensive_function` and prints the duration.
+//!
+//! `Instant` is a monotonic clock: it only moves forward and is not affected
+//! by changes of the system clock, which makes it the right tool for measuring
+//! elapsed time. (Use `SystemTime` for calendar time.) For serious benchmarks,
+//! prefer a tool such as `criterion`, which repeats the measurement.
 
 use std::thread;
 use std::time::Duration;
