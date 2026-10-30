@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Encodes a synthetic gray frame as an AV1 packet using `rav1e`.
+//! Encodes synthetic YUV video frames into AV1 packets using `rav1e`.
 
 use anyhow::Result;
 use anyhow::bail;
@@ -10,35 +10,59 @@ use rav1e::prelude::Config;
 use rav1e::prelude::EncoderConfig;
 use rav1e::prelude::EncoderStatus;
 
-/// Encodes one synthetic 64-by-64 frame and returns the number of packets.
-fn encode_synthetic_frame() -> Result<usize> {
-    // TODO pass as arguments instead of hardcoding
-    let width = 64;
-    let height = 64;
-    // TODO explain
+/// Encodes a sequence of synthetic YUV frames of the given dimensions.
+///
+/// Returns the total number of encoded AV1 packets produced by the encoder
+/// context.
+fn encode_synthetic_frames(
+    width: usize,
+    height: usize,
+    frame_count: usize,
+) -> Result<usize> {
+    // Configure speed preset 10 for rapid, low-complexity encoding in real-time
+    // or test scenarios.
     let mut encoder_config = EncoderConfig::with_speed_preset(10);
     encoder_config.width = width;
     encoder_config.height = height;
 
     let config = Config::default().with_encoder_config(encoder_config);
-    // TODO explain why we create the context here
-    let mut context = config.new_context::<u8>()?;
-    // TODO explain why we create the frame here
-    let mut frame = context.new_frame();
 
-    // Fill the visible samples of each YUV plane with mid-range gray, then
-    // extend the edges into the padding required by the encoder.
-    for plane in &mut frame.planes {
-        let plane_width = plane.cfg.width;
-        let plane_height = plane.cfg.height;
-        for row in plane.rows_iter_mut() {
-            row.fill(128);
+    // Initializing the context allocates internal memory pools, rate control
+    // metadata, and thread state for 8-bit YUV color depth based on the encoder
+    // configuration.
+    let mut context = config.new_context::<u8>()?;
+
+    for frame_idx in 0..frame_count {
+        // Allocating a frame buffer from the context ensures plane strides and
+        // memory alignment match encoder needs.
+        let mut frame = context.new_frame();
+
+        // Fill Y, U, and V color planes with animated synthetic pixel values.
+        // The Y (luminance) plane varies over time, while U and V (chrominance)
+        // remain neutral gray.
+        let luma_value = u8::try_from((128 + frame_idx * 20) % 256)
+            .expect("frame index math produces a valid u8");
+
+        for (plane_idx, plane) in frame.planes.iter_mut().enumerate() {
+            let plane_width = plane.cfg.width;
+            let plane_height = plane.cfg.height;
+            let fill_val = if plane_idx == 0 { luma_value } else { 128 };
+
+            for row in plane.rows_iter_mut() {
+                row.fill(fill_val);
+            }
+
+            // Video encoders process pixel blocks in fixed tiles (e.g., 64x64
+            // superblock boundaries). Padding duplicates border pixels into
+            // boundary areas to prevent edge artifact read overflows.
+            plane.pad(plane_width, plane_height);
         }
-        // TODO explain why padding is necessary for the encoder
-        plane.pad(plane_width, plane_height);
+
+        context.send_frame(frame)?;
     }
 
-    context.send_frame(frame)?;
+    // Flush signals the encoder that no further frames will be sent, allowing
+    // remaining queued packets to be produced.
     context.flush();
 
     let mut packet_count = 0;
@@ -47,8 +71,9 @@ fn encode_synthetic_frame() -> Result<usize> {
             Ok(packet) => {
                 packet_count += 1;
                 println!(
-                    "Encoded an AV1 packet ({} bytes).",
-                    packet.data.len()
+                    "Encoded AV1 packet #{packet_count} ({} bytes, keyframe: {}).",
+                    packet.data.len(),
+                    packet.frame_type
                 );
             }
             Err(EncoderStatus::Encoded) => {}
@@ -59,16 +84,23 @@ fn encode_synthetic_frame() -> Result<usize> {
         }
     }
 
-    ensure!(packet_count > 0, "the frame did not produce an AV1 packet");
+    ensure!(
+        packet_count > 0,
+        "encoding {frame_count} frames did not produce any AV1 packets"
+    );
     Ok(packet_count)
 }
 
-/// Runs the deterministic encoder example.
+/// Runs the deterministic AV1 video encoder example.
 fn main() -> Result<()> {
-    let packet_count = encode_synthetic_frame()?;
-    println!("Encoded {packet_count} AV1 packet(s).");
-    // TODO expand to handle multiple frames and more complex encoding
-    // scenarios. also decoding.
+    let width = 64;
+    let height = 64;
+    let frame_count = 3;
+
+    let packet_count = encode_synthetic_frames(width, height, frame_count)?;
+    println!(
+        "Successfully encoded {frame_count} frame(s) into {packet_count} AV1 packet(s)."
+    );
     Ok(())
 }
 // ANCHOR_END: example
@@ -81,11 +113,10 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that a synthetic frame produces encoded AV1 output offline.
     #[test]
-    fn encodes_synthetic_frame() {
-        let packet_count =
-            encode_synthetic_frame().expect("synthetic frame should encode");
+    fn encodes_synthetic_frames() {
+        let packet_count = encode_synthetic_frames(64, 64, 3)
+            .expect("synthetic frames should encode successfully");
         assert!(packet_count > 0);
     }
 
