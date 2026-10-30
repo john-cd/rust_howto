@@ -2,6 +2,12 @@
 //! messages, cookies and `#[debug_handler]`.
 //!
 //! TODO Reviewed ??-??-2026.
+//!
+//! Some terms used here: a redirect from HTTP to HTTPS sends visitors of the
+//! unencrypted address to the encrypted one; TLS is the encryption behind
+//! HTTPS; a cookie is a small value the server asks the browser to send back on
+//! later requests; a flash message is a one-time notice, such as "saved",
+//! stored in a cookie and shown on the next page.
 
 mod axum_server_tls;
 mod cookies;

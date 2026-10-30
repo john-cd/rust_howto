@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates how to work with timezones in Chrono.
+//!
+//! UTC is the world reference time. Local times are UTC plus an offset, and
+//! that offset can change with daylight saving time. A good practice is to
+//! store and compute in UTC and convert to a local time zone only for display.
 
 use chrono::FixedOffset;
 use chrono::TimeZone as _;

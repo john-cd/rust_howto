@@ -6,6 +6,11 @@
 //! `flate2` is a stream compression library that supports DEFLATE, zlib,
 //! and gzip formats. This example compresses bytes into a Zlib buffer,
 //! then decompresses them back to text.
+//!
+//! Compression stores data in fewer bytes by removing redundancy, which saves
+//! disk space and network time at the cost of some CPU. The three formats named
+//! above all use the same DEFLATE algorithm with different wrappers; gzip is
+//! the one web servers and `.gz` files use.
 
 use std::io::Read as _;
 use std::io::Write as _;
