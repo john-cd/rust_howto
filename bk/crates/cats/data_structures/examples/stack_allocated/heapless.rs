@@ -3,9 +3,9 @@
 // ANCHOR: example
 //! Fixed-capacity collections from the `heapless` crate.
 
-use heapless::index_map::FnvIndexMap;
 use heapless::String;
 use heapless::Vec;
+use heapless::index_map::FnvIndexMap;
 
 /// Fills a fixed-capacity vector and handles the error when it is full.
 fn main() {
@@ -37,8 +37,8 @@ fn main() {
     }
 
     // Declare a fixed-size string with capacity of 16:
-    let mut string: String<16> =
-        String::try_from("Hello").expect("the initial text fits the fixed capacity");
+    let mut string: String<16> = String::try_from("Hello")
+        .expect("the initial text fits the fixed capacity");
 
     assert!(string.push_str(", world!").is_ok());
 
