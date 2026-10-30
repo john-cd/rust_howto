@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 mod ringbuf;
 mod rtrb;
+mod thread_priority;
 
 /// Command-line arguments.
 #[derive(Parser)]
@@ -25,6 +26,9 @@ enum Commands {
     /// Runs the `rtrb` example.
     #[command(name = "rtrb")]
     Rtrb,
+    /// Runs the `thread_priority` example.
+    #[command(name = "thread_priority")]
+    ThreadPriority,
 }
 
 /// Runs the example selected on the command line.
@@ -36,6 +40,9 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
             }
             Commands::Rtrb => {
                 rtrb::run()?;
+            }
+            Commands::ThreadPriority => {
+                thread_priority::run()?;
             }
         }
     }
@@ -54,7 +61,7 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["ringbuf", "rtrb"];
+    const SUBCOMMANDS: &[&str] = &["ringbuf", "rtrb", "thread_priority"];
 
     /// The command-line definition is internally consistent.
     #[test]
