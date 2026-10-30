@@ -39,7 +39,6 @@ fn main() {
     println!("Random Point: {rand_point:?}");
     println!("x = {}, y = {}", rand_point.x, rand_point.y);
 }
-
 // ANCHOR_END: example
 
 pub fn run() {
