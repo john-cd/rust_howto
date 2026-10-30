@@ -143,4 +143,4 @@ impl Car {
 - [[dynamic_typing | Dynamic Typing]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}
