@@ -43,6 +43,12 @@ To connect to the (host OS) docker [engine][cat~rendering::engine]↗{{hi:render
 --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker-host.sock
 ```
 
+## Base Image and Compiler Cache Decisions {#base-image-and-cache-decisions}
+
+- **Base image:** the images start from the official `rust:<version>-slim-trixie` image, which is already the slim Debian variant, and install only the native libraries the examples need. Alpine (musl) is not used: prebuilt dependencies such as ONNX Runtime and Oracle Instant Client, and the GTK, WebKitGTK and audio libraries, target glibc, and some crates behave differently on musl. Switch only if a measurement shows a benefit in size, build time or caching that outweighs those costs; none has been shown.
+- **`sccache`:** the compiler cache is installed in the image but opt-in: set `RUSTC_WRAPPER=sccache`. Measurements on a 20-core Windows machine showed that edit-and-rebuild in a warm target directory takes 5-8 s without it, and that `sccache` reaches a 96 % hit rate only when the same directories are rebuilt after `cargo clean` (about 58 % in fresh target directories, because proc-macro dependents miss). The larger wins came from `debug = "line-tables-only"` with `debug = 0` for dependencies, which halved a cold build (196 s to 90 s) and the size of the target directory. In the container, keep the Cargo registry and `/root/.cache` in named volumes (see above) and enable `sccache` only for throwaway checkouts or CI jobs that start from empty target directories.
+- **Pre-commit hooks:** `prek` is installed in the image; the hooks themselves are installed per checkout with `just precommit setup`, so nothing else belongs in the Dockerfile.
+
 ## Docker Compose {#docker-compose}
 
 Test the docker compose{{hi:docker compose}} setup used during development (which Dev Container runs) with:
