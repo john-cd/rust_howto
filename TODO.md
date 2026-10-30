@@ -36,6 +36,9 @@ WAIT move code examples from later/ to bk/ when code + text ready
 - [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment D
 - **P1** — Port remaining examples across major dependency upgrades (no issue number yet)
 - [#1247](https://github.com/john-cd/rust_howto/issues/1247) — **P3** — precommit/mod.just: move to Dockerfile
+- [#2078](https://github.com/john-cd/rust_howto/issues/2078) — **Unprioritized** — Remove `unwrap()` outside unwrap demos and enforce with `clippy::unwrap_used`
+- [#2079](https://github.com/john-cd/rust_howto/issues/2079) — **Unprioritized** — Eliminate `dead_code` allow/expect attributes in examples
+- [#2080](https://github.com/john-cd/rust_howto/issues/2080) — **Unprioritized** — later/crates: remaining example-test gaps (feature-gated dispatchers, argv mains, `--all-features`, macOS/FreeBSD)
 
 ### Truly blocked (install)
 
@@ -43,34 +46,38 @@ WAIT move code examples from later/ to bk/ when code + text ready
 
 ### Blocked on a desktop, hardware or manual run
 
+- [#2066](https://github.com/john-cd/rust_howto/issues/2066) — **P2** — Native macOS and FreeBSD validation of target-gated examples
+- [#2074](https://github.com/john-cd/rust_howto/issues/2074) — **P3** — Collect CI and manual-run evidence deferred from #1699 (PostgreSQL workflow, Tauri, interactive GUI tests)
+- [#2068](https://github.com/john-cd/rust_howto/issues/2068) — **P4** — Live-service and desktop validation runs for completed examples
+- [#2065](https://github.com/john-cd/rust_howto/issues/2065) — **P4** — Manual and live-service runs for examples closed from the review list (review)
+- [#2058](https://github.com/john-cd/rust_howto/issues/2058) — **P4** — Deferred cloud validation from #1972 (LocalStack/MinIO, TLS, review)
+- [#2059](https://github.com/john-cd/rust_howto/issues/2059) — **P4** — Deferred audio, egui and wry follow-ups from #1974
+- [#2063](https://github.com/john-cd/rust_howto/issues/2063) — **P4** — Deferred live-service checks and prose from #1938
+- [#2098](https://github.com/john-cd/rust_howto/issues/2098) — **Unprioritized** — Windows-only remainder of #2096: rocksdb link failure and `main_recursion` wrappers
+
 ### Blocked on an upstream or advisory-held dependency
+
+- [#2082](https://github.com/john-cd/rust_howto/issues/2082) — **Unprioritized** — Upgrade transitive zip dependencies past security advisories
+- [#2100](https://github.com/john-cd/rust_howto/issues/2100) — **Unprioritized** — science_robotics: add an OpenRR client example and drop the zenoh/urdf-rs advisory exceptions when fixed
 
 ### Blocked on an owner or human decision
 
-- [#1992](https://github.com/john-cd/rust_howto/issues/1992) — **P1** — Triage and integrate unique work from retained example branches
-- [#1247](https://github.com/john-cd/rust_howto/issues/1247) — **P3** — precommit/mod.just: move to Dockerfile
 - [#1850](https://github.com/john-cd/rust_howto/issues/1850) — **P1** — Re-enable GitHub Actions CI and verify the refactored workflows (review)
+- [#2054](https://github.com/john-cd/rust_howto/issues/2054) — **P3** — Curate the Chrome bookmarks export when the source is available
 
 ### Done; awaiting full validation gates
 
-- [#818](https://github.com/john-cd/rust_howto/issues/818) — **P4** — linux/statx_metadata.rs: temporary-file size and optional birth time through rustix
 
 ### Done; needs human review
 
 - [#1959](https://github.com/john-cd/rust_howto/issues/1959) — **P3** — Verify the encoding chapters and Cap'n Proto regeneration B
 - [#1979](https://github.com/john-cd/rust_howto/issues/1979) — **P3** — Validate concurrency, memory, hashing, and enumeration recipe pages
 - [#1875](https://github.com/john-cd/rust_howto/issues/1875) — **Unprioritized** — Review the flate2 file-I/O example
+- [#1733](https://github.com/john-cd/rust_howto/issues/1733) — **P2** — Review the standalone cancelable example (review)
+- [#2064](https://github.com/john-cd/rust_howto/issues/2064) — **P4** — Editorial in-depth reviews of five written chapters (#1188, #633, #311, #962, #977) (review)
 
 ### Needs a human decision or write-up
 
-- [#1158](https://github.com/john-cd/rust_howto/issues/1158) — **P3** — `write_proc_macros/main.rs`: finish; review the following; decide what examples are needed
-- [#639](https://github.com/john-cd/rust_howto/issues/639) — **P3** — os/rust_os.md: write; move to written-in-rust?
-- [#366](https://github.com/john-cd/rust_howto/issues/366) — **P4** — game-development/game_development.md: game_development: identify crates; write
-- [#1212](https://github.com/john-cd/rust_howto/issues/1212) — **P4** — rendering/text_rendering.md: write / decide what to cover
-- [#1213](https://github.com/john-cd/rust_howto/issues/1213) — **P4** — rendering/3d_renderers.md: write. decide what to cover
-- [#1215](https://github.com/john-cd/rust_howto/issues/1215) — **P4** — rendering/2d_raster_graphics.md: write. decide what to cover.
-- [#1227](https://github.com/john-cd/rust_howto/issues/1227) — **P4** — rendering_graphics-api/vulkan.md: decide what to cover / write
-- [#1228](https://github.com/john-cd/rust_howto/issues/1228) — **P4** — rendering_graphics-api/shaders.md: decide what to cover, write
 - [#963](https://github.com/john-cd/rust_howto/issues/963) — **P4** — Review natural-language-processing coverage
 - [#251](https://github.com/john-cd/rust_howto/issues/251) — **P4** — cover DSLs in Rust
 - [#19](https://github.com/john-cd/rust_howto/issues/19) — **P3** — review Google Analytics setup
@@ -82,6 +89,10 @@ WAIT move code examples from later/ to bk/ when code + text ready
 
 - [#1725](https://github.com/john-cd/rust_howto/issues/1725) — **P2** — Review the Pandoc and Typst export plan (review)
 - [#53](https://github.com/john-cd/rust_howto/issues/53) — **P4** — Evaluate whether a slim or Alpine CI image improves the supported builds
+- [#2070](https://github.com/john-cd/rust_howto/issues/2070) — **P4** — Add an optional live-node Alloy example (`connect_http`, ignored test)
+- [#2061](https://github.com/john-cd/rust_howto/issues/2061) — **P4** — Deferred follow-ups from #1991 and #1986 (capnp, services, worktrees)
+- [#2067](https://github.com/john-cd/rust_howto/issues/2067) — **P4** — Book quality follow-ups: linkcheck warnings, Pandoc decision, page review
+- [#2073](https://github.com/john-cd/rust_howto/issues/2073) — **P4** — Run clean all-feature Clippy on example crates
 
 ### Trackers and not started
 
@@ -93,7 +104,17 @@ WAIT move code examples from later/ to bk/ when code + text ready
 - [#1698](https://github.com/john-cd/rust_howto/issues/1698) — **P1** — Complete the first edition and integrate the companion tools
 - [#1994](https://github.com/john-cd/rust_howto/issues/1994) — **P4** — Plan later-edition chapters and example stubs
 - [#1849](https://github.com/john-cd/rust_howto/issues/1849) — **Unprioritized** — Coordinate tasks requiring human decisions
-- [#901](https://github.com/john-cd/rust_howto/issues/901) — **P3** — build_time_tooling/cc_defines1.rs: finish; deal with extern
+- [#2069](https://github.com/john-cd/rust_howto/issues/2069) — **Unprioritized** — Test all book examples (tracking issue)
+- [#2108](https://github.com/john-cd/rust_howto/issues/2108) — **P2** — Repository audit: correctness, chapter/example integrity, tests, ecosystem gaps
+- [#1720](https://github.com/john-cd/rust_howto/issues/1720) — **P3** — Curate remaining VS Code, browser and TOREVIEW bookmarks into book content
+- [#2103](https://github.com/john-cd/rust_howto/issues/2103) — **P3** — Offline-tested interactive OIDC authorization-code and PKCE recipe
+- [#2105](https://github.com/john-cd/rust_howto/issues/2105) — **P3** — Typed WIT component guest/host example alongside core Wasm recipes
+- [#2106](https://github.com/john-cd/rust_howto/issues/2106) — **P3** — Tested HTTP trace-context propagation recipe with correlated OpenTelemetry spans
+- [#2109](https://github.com/john-cd/rust_howto/issues/2109) — **P3** — Align Argon2 snippet comments with the password chapter threat model
+- [#2104](https://github.com/john-cd/rust_howto/issues/2104) — **P4** — Passkey and WebAuthn registration/authentication coverage
+- [#2107](https://github.com/john-cd/rust_howto/issues/2107) — **P4** — Durable NATS JetStream consumer recipe
+- [#809](https://github.com/john-cd/rust_howto/issues/809) — **P4** — multimedia_video/video.rs: write LATER
+- [#2110](https://github.com/john-cd/rust_howto/issues/2110) — **Unprioritized** — Directives for chapter-level badge sets (docs, crates.io, repo, lib.rs, categories)
 
 ---
 
