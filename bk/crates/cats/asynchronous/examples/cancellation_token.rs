@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Cancels a group of asynchronous tasks with `CancellationToken`.
+//!
+//! A cancellation token is a shared signal for asking tasks to stop, for
+//! example on shutdown or timeout. Cancellation is cooperative: each task
+//! checks or awaits the token and cleans up on its own, which is safer than
+//! killing it abruptly.
 
 use tokio_util::sync::CancellationToken;
 

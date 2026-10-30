@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Reject syntactically invalid and disposable addresses with [`mailchecker`].
+//!
+//! Disposable addresses come from throwaway-mail services and are often used
+//! to abuse sign-up forms. Checking an address at registration, before sending
+//! mail, cuts bounces and fake accounts. The check is syntactic: it cannot
+//! prove that a mailbox exists.
 
 /// Returns the addresses worth sending to.
 pub fn deliverable<'a>(addresses: &[&'a str]) -> Vec<&'a str> {

@@ -2,6 +2,13 @@
 
 // ANCHOR: example
 //! Create an in-memory Tantivy index and run a simple full-text search.
+//!
+//! Full-text search finds documents by the words they contain, not by exact
+//! field values. The engine builds an inverted index, which maps each word to
+//! the documents that contain it (like the index at the back of a book), and
+//! ranks matches by relevance. Tantivy is a Rust search library, similar to
+//! Apache Lucene, that you embed in your own program; an in-memory index needs
+//! no files.
 
 use tantivy::Index;
 use tantivy::TantivyDocument;

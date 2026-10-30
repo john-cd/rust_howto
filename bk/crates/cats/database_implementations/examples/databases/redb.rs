@@ -7,6 +7,11 @@
 //! stable file format.
 //!
 //! Add `redb = "4.4.0"` to `Cargo.toml`.
+//!
+//! ACID means that a group of changes (a transaction) is applied entirely or
+//! not at all, stays consistent, is isolated from concurrent readers and
+//! survives a crash once committed. A key-value store is the simplest kind of
+//! database: it maps a key to a value, like a persistent hash map.
 
 use redb::Database;
 use redb::ReadableDatabase;
