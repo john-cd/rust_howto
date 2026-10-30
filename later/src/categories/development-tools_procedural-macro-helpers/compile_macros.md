@@ -16,7 +16,9 @@
 
 The following compiled helper demonstrates the token transformation that a Wasm implementation could call. It uses `proc_macro2` so the transformation can run and be tested outside the compiler; the example does not build the Wasm artifact or the Watt shim.
 
+```rust,editable
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/compile_macros/watt.rs:example}}
+```
 
 1. Implement and test the macro normally. For the WebAssembly crate, expose each macro as an `extern "C"` function taking and returning `proc_macro2::TokenStream`, set `[lib] crate-type = ["cdylib"]`, and apply Watt's documented `proc-macro2` patch.
 2. Build the implementation for the Wasm target:

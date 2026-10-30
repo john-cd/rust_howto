@@ -10,13 +10,17 @@ Logging and tracing are better when a problem needs to be observed repeatedly, i
 
 Use `dbg!` temporarily to see a value and the source location that produced it. The macro returns the expression unchanged, but it moves the value; borrow non-`Copy` values when you need to use them afterward.
 
+```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/debugging/dbg_macro.rs:example}}
+```
 
 ## Capture a Backtrace {#capture-a-backtrace}
 
 Set `RUST_BACKTRACE=1` before launching a program to capture a panic backtrace. Use `RUST_BACKTRACE=full` for more verbose panic output. In PowerShell, set it with `$env:RUST_BACKTRACE = "1"`; `Backtrace::capture()` is disabled unless `RUST_BACKTRACE` or `RUST_LIB_BACKTRACE` enables it.
 
+```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/debugging/backtrace.rs:example}}
+```
 
 | Recipe | Crates | Categories                                                                                                      |
 | ------ | ------ | --------------------------------------------------------------------------------------------------------------- |

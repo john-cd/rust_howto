@@ -8,7 +8,9 @@ An RTOS or embedded concurrency framework coordinates work that must respond to 
 
 This small host-side simulation illustrates fixed-priority scheduling and preemption. It does not start an RTOS or model interrupts, locks, or real execution time; use the framework's target-specific examples and measure on the intended board for those behaviors.
 
+```rust,noplayground
 {{#include ../../../crates/cats/embedded/examples/rtos/main.rs:example}}
+```
 
 ## Execution Models {#execution-models}
 

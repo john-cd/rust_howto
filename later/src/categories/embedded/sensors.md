@@ -20,7 +20,9 @@ The bus wiring and the software configuration must agree with the sensor data sh
 
 The example uses `embedded-hal`'s combined write/read operation with a host-side mock sensor. Its address, register, byte order, and conversion formula are illustrative; use the device data sheet and replace the mock bus with the target HAL's I2C implementation. It builds without an I2C controller or attached sensor.
 
+```rust,noplayground
 {{#include ../../../crates/cats/embedded/examples/sensors/main.rs:example}}
+```
 
 `write_read` sends the register selection and reads the response as one logical transaction. Some devices require a delay, a separate stop condition, or a different byte order; follow the device protocol rather than assuming every register map behaves alike. The [`embedded-hal`][c~embedded-hal~docs]↗ traits let a driver use an I2C implementation supplied by the target HAL.
 
