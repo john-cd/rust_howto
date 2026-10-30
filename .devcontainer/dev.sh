@@ -34,6 +34,9 @@ cargo +"$RUSTFMT_TOOLCHAIN" fmt --all
 echo "Fetch the dependencies"
 cargo fetch
 
+echo "Install the git hooks (prek)"
+(cd /code && prek install --install-hooks)
+
 echo "Toolchain info:"
 rustup check
 echo "-------------------------------------------"

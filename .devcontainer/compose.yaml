@@ -21,6 +21,7 @@ services:
         CARGO_FMT_TOML_VERSION: ${CARGO_FMT_TOML_VERSION:?cargo-fmt-toml version must be defined}
         DPRINT_VERSION: ${DPRINT_VERSION:?dprint version must be defined}
         RUMDL_VERSION: ${RUMDL_VERSION:?rumdl version must be defined}
+        PREK_VERSION: ${PREK_VERSION:?prek version must be defined}
         MATURIN_VERSION: ${MATURIN_VERSION:?maturin version must be defined}
         FLUTTER_VERSION: ${FLUTTER_VERSION:?Flutter version must be defined}
         FLUTTER_GIT_REVISION: ${FLUTTER_GIT_REVISION:?Flutter Git revision must be defined}

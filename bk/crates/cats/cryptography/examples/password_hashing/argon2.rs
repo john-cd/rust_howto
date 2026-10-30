@@ -17,9 +17,11 @@ fn main() -> Result<(), Error> {
     println!("Hashed password: {phc_string}");
 
     // In a real application, save the PHC string to a secure database or file.
-    // The PHC string contains the (one-way) hashed password and the salt, not
-    // the password. Should an attacker gain access to the database or file,
-    // they won't be able to retrieve the password.
+    // The PHC string contains the (one-way) hash, the salt and the parameters,
+    // not the password. Hashing prevents reading the password back directly,
+    // but an attacker who steals the PHC string can still test guesses offline.
+    // Strong passwords, a random salt per password and costly Argon2id
+    // parameters make each guess expensive.
 
     // When a user logs in, the password they provide is checked against the
     // saved PHC string: The correct password passes the verification
@@ -82,7 +84,10 @@ fn password_verification_with(
 /// encryption.
 fn key_derivation() -> Result<(), Error> {
     let password = b"passwd"; // Bad password; don't use!
-    let salt = b"example salt, etc, etc"; // Salt should be unique per password
+    // Illustrative fixed salt, so that the derived key is reproducible. Do not
+    // reuse it: independently stored password verifiers need a fresh random
+    // salt each (`hash_password` above generates one).
+    let salt = b"example salt, etc, etc";
 
     let mut output_key_material = [0u8; 128]; // Can be any desired size
 
@@ -135,8 +140,30 @@ mod tests {
         Ok(())
     }
 
+    /// Hashing the same password twice yields different PHC strings (random
+    /// salts), and both verify.
+    #[test]
+    fn argon2_same_password_gets_different_hashes() -> Result<(), Error> {
+        let params = Params::new(32, 1, 1, None)?;
+        let argon2 = Argon2::new(Algorithm::Argon2id, Version::V0x13, params);
+        let first = argon2.hash_password(b"same password")?.to_string();
+        let second = argon2.hash_password(b"same password")?.to_string();
+
+        assert_ne!(first, second);
+        assert!(password_verification_with(
+            &argon2,
+            b"same password",
+            &first
+        )?);
+        assert!(password_verification_with(
+            &argon2,
+            b"same password",
+            &second
+        )?);
+        Ok(())
+    }
+
     /// Reports malformed PHC strings as errors instead of accepting them.
-    /// Runs the Argon2 example through its entry point.
     #[test]
     fn argon2_verification_rejects_malformed_hash() {
         assert!(

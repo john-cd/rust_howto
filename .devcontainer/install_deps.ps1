@@ -335,6 +335,7 @@ $tools = @(
     @{ Name = "cargo-fmt-toml"; Version = $toolVersions["CARGO_FMT_TOML_VERSION"] },
     @{ Name = "dprint"; Version = $toolVersions["DPRINT_VERSION"] },
     @{ Name = "rumdl"; Version = $toolVersions["RUMDL_VERSION"] },
+    @{ Name = "prek"; Version = $toolVersions["PREK_VERSION"] },
     @{ Name = "flutter_rust_bridge_codegen"; Version = $toolVersions["FLUTTER_RUST_BRIDGE_CODEGEN_VERSION"] },
     @{ Name = "maturin"; Version = $toolVersions["MATURIN_VERSION"] }
 )
