@@ -103,6 +103,9 @@ aws-config = { version = "1.13.0", default-features = false, features = [
     "rt-tokio",
     "sso",
 ] }
+aws-smithy-http-client = { version = "1.5.2", default-features = false, features = [
+    "rustls-aws-lc",
+] } # Custom TLS trust store for S3-compatible stores.
 aws-sdk-cloudwatch = { version = "1.138.0", default-features = false, features = [
     "default-https-client",
     "rt-tokio",
@@ -131,6 +134,7 @@ aws-sdk-sqs = { version = "1.117.0", default-features = false, features = [
     "rt-tokio",
 ] }
 axum = "0.8.9"
+rcgen = "0.14.10" # Test certificates for the TLS trust store example.
 base64 = "0.23.1" # Binary Protobuf payloads in SQS text bodies.
 
 ## Scheduling
@@ -170,6 +174,7 @@ smartcore = "0.5.5"
 
 thiserror = "2"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time", "test-util"] }
+tokio-rustls = "0.26.6" # Local HTTPS server for the trust store test.
 tokio-util = "0.7.20"
 tracing = "0.1.44"
 tracing-subscriber = "0.3.23"
