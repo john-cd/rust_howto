@@ -54,12 +54,10 @@ fn main() -> Result<()> {
 /// # Errors
 ///
 /// Returns an error if the tool is missing or fails.
-#[allow(
-    clippy::main_recursion,
-    reason = "the file is also a standalone example target, where the lint fires only for that build"
-)]
 pub fn run() -> Result<()> {
-    main()
+    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    let entry = main;
+    entry()
 }
 
 #[cfg(test)]

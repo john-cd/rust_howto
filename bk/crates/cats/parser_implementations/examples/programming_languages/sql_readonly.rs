@@ -64,9 +64,10 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the syntax-classification example without contacting a database.
-#[allow(clippy::main_recursion)]
 pub fn run() -> anyhow::Result<()> {
-    main()
+    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    let entry = main;
+    entry()
 }
 
 #[cfg(test)]

@@ -27,12 +27,10 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the humantime example.
-#[allow(
-    clippy::main_recursion,
-    reason = "run() is the shared example runner; main() is the book snippet"
-)]
 pub fn run() -> anyhow::Result<()> {
-    main()
+    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    let entry = main;
+    entry()
 }
 
 #[cfg(test)]

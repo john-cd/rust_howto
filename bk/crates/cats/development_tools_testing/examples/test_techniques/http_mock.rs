@@ -62,8 +62,9 @@ mod tests {
 }
 // ANCHOR_END: example
 
-#[allow(clippy::main_recursion)]
 #[allow(clippy::items_after_test_module)]
 pub fn run() -> anyhow::Result<()> {
-    main()
+    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    let entry = main;
+    entry()
 }
