@@ -480,7 +480,9 @@ impl ScanState {
             }
             for path in markdown_files(&self.repo_root.join(book_root))? {
                 let relative = self.relative_path(&path)?;
-                if is_chapter_candidate(&relative) {
+                if is_chapter_candidate(&relative)
+                    || (listed_pages.contains(&relative) && is_hidden_chapter(&relative))
+                {
                     pages.push((relative, (*edition).to_owned()));
                 }
             }
@@ -494,7 +496,7 @@ impl ScanState {
             let disposition = self
                 .exception_for(&page_path)
                 .map(|exception| exception.reason.clone());
-            let hidden = !visible;
+            let hidden = !visible || is_hidden_chapter(&page_path);
             self.report.chapters.push(ChapterRecord {
                 path: page_path.clone(),
                 edition,
@@ -1224,6 +1226,14 @@ fn is_chapter_candidate(path: &str) -> bool {
         && !path.ends_with("/refs.md")
 }
 
+/// Identifies chapters hidden by the repository's underscore filename prefix.
+fn is_hidden_chapter(path: &str) -> bool {
+    Path::new(path)
+        .file_name()
+        .and_then(|name| name.to_str())
+        .is_some_and(|name| name.starts_with('_'))
+}
+
 /// Converts absolute or relative paths into normalized slash-separated repository paths.
 fn path_to_slashes(path: &Path) -> String {
     path.components()
@@ -1309,10 +1319,18 @@ fn visible_lines(text: &str) -> Vec<(usize, String, bool)> {
 
 /// Splits an mdBook include target into its file path and optional anchor or line selection.
 fn split_selection(target: &str) -> (&str, Option<&str>) {
-    match target.rsplit_once(':') {
-        Some((path, selection)) if Path::new(path).extension().is_some() => (path, Some(selection)),
-        _ => (target, None),
-    }
+    target
+        .char_indices()
+        .filter(|(_, character)| *character == ':')
+        .find_map(|(index, _)| {
+            let path = target.get(..index)?;
+            let selection = target.get(index + 1..)?;
+            Path::new(path)
+                .extension()
+                .is_some()
+                .then_some((path, Some(selection)))
+        })
+        .unwrap_or((target, None))
 }
 
 /// Checks that a Rust source declares a matching mdBook anchor block.
@@ -1322,8 +1340,14 @@ fn anchor_exists(path: &Path, anchor: &str) -> bool {
     };
     let start = format!("ANCHOR: {anchor}");
     let end = format!("ANCHOR_END: {anchor}");
-    source.lines().any(|line| line.contains(&start))
-        && source.lines().any(|line| line.contains(&end))
+    let mut found_start = false;
+    for line in source.lines() {
+        found_start |= line.contains(&start);
+        if found_start && line.contains(&end) {
+            return true;
+        }
+    }
+    false
 }
 
 /// Checks whether a Rust file contains at least one complete named anchor block.
@@ -1354,21 +1378,35 @@ fn selection_exists(path: &Path, selection: &str) -> bool {
     let Ok(source) = fs::read_to_string(path) else {
         return false;
     };
-    if selection
-        .split(':')
-        .all(|part| part.parse::<usize>().is_ok())
-    {
-        let mut lines = selection
-            .split(':')
-            .filter_map(|part| part.parse::<usize>().ok());
-        let start = lines.next().unwrap_or_default();
-        let end = lines.next().unwrap_or(start);
-        return start > 0 && end >= start && end <= source.lines().count();
+    let line_count = source.lines().count();
+    let parts = selection.split(':').collect::<Vec<_>>();
+    let numeric_selection = parts.len() <= 2
+        && parts
+            .iter()
+            .all(|part| part.is_empty() || part.parse::<usize>().is_ok());
+    if numeric_selection {
+        let range = match parts.as_slice() {
+            [line] if !line.is_empty() => line.parse::<usize>().ok().map(|line| (line, line)),
+            [start, end] if !start.is_empty() || !end.is_empty() => {
+                let start = if start.is_empty() {
+                    Some(1)
+                } else {
+                    start.parse::<usize>().ok()
+                };
+                let end = if end.is_empty() {
+                    Some(line_count)
+                } else {
+                    end.parse::<usize>().ok()
+                };
+                start.zip(end)
+            }
+            _ => None,
+        };
+        if let Some((start, end)) = range {
+            return start > 0 && end >= start && end <= line_count;
+        }
     }
-    let start = format!("ANCHOR: {selection}");
-    let end = format!("ANCHOR_END: {selection}");
-    source.lines().any(|line| line.contains(&start))
-        && source.lines().any(|line| line.contains(&end))
+    anchor_exists(path, selection)
 }
 
 /// Returns the default child-module directory for a Rust source file.
@@ -1476,8 +1514,25 @@ mod tests {
         .expect("fixture source is written");
         assert!(selection_exists(&source_path, "example"));
         assert!(selection_exists(&source_path, "1:3"));
+        assert!(selection_exists(&source_path, "2:"));
+        assert!(selection_exists(&source_path, ":2"));
         assert!(!selection_exists(&source_path, "2:4"));
         assert!(!selection_exists(&source_path, "missing"));
+        let reversed_path = directory.path().join("reversed.rs");
+        fs::write(
+            &reversed_path,
+            "// ANCHOR_END: reversed\nfn main() {}\n// ANCHOR: reversed\n",
+        )
+        .expect("reversed anchor fixture is written");
+        assert!(!selection_exists(&reversed_path, "reversed"));
+        assert_eq!(
+            split_selection("examples/demo/main.rs:2:10"),
+            ("examples/demo/main.rs", Some("2:10"))
+        );
+        assert_eq!(
+            split_selection("examples/demo/main.rs::10"),
+            ("examples/demo/main.rs", Some(":10"))
+        );
     }
 
     /// Exception reasons apply to grouped paths and reset for the next explanation.
@@ -1552,6 +1607,16 @@ mod tests {
             "```rust\n{{#include ../../crates/one/examples/first/main.rs:example}}\n```\n",
         );
         write_fixture(root, "bk/src/unlisted.md", "# Unlisted\n\nPlain prose.\n");
+        write_fixture(
+            root,
+            "bk/drafts/SUMMARY.md",
+            "# Summary\n\n- [Hidden](_hidden.md)\n",
+        );
+        write_fixture(
+            root,
+            "bk/drafts/_hidden.md",
+            "# Hidden\n\n```rust\n{{#include ../crates/one/examples/first/main.rs:example}}\n```\n",
+        );
         write_fixture(root, "later/src/SUMMARY.md", "# Summary\n");
         write_fixture(
             root,
@@ -1587,6 +1652,14 @@ mod tests {
                     .iter()
                     .any(|condition| condition.contains("target_os"))
         }));
+        let hidden_chapter = report
+            .chapters
+            .iter()
+            .find(|chapter| chapter.path == "bk/drafts/_hidden.md")
+            .expect("Summary-listed hidden chapter is inventoried");
+        assert!(hidden_chapter.listed);
+        assert!(hidden_chapter.hidden);
+        assert!(hidden_chapter.has_tested_example);
         assert!(
             report
                 .example_sources
