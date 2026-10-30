@@ -13,6 +13,10 @@ bk/crates/cats/graphics/examples/graphics.rs
 # Support modules for examples whose entry point is included under another name.
 bk/crates/cats/development_tools/examples/crate_indices/fixtures.rs
 later/crates/cats/development_tools_ffi/examples/ruby/greeting.rs
+# Cargo entry points that only `mod` the chapter-included napi.rs, neon.rs and xilem.rs.
+later/crates/cats/development_tools_ffi/examples/node/napi_main.rs
+later/crates/cats/development_tools_ffi/examples/node/neon_main.rs
+later/crates/cats/gui/examples/retained_mode_gui/xilem_main.rs
 # The gRPC page describes this generated-code check in prose.
 bk/crates/cats/web_programming_http_server/examples/grpc/echo.rs
 # This `Fn` implementation requires nightly-only `fn_traits` and is shown as an ignored snippet.
