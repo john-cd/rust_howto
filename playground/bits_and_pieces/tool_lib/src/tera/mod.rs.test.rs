@@ -10,7 +10,6 @@ use walkdir::WalkDir;
 
 // fn build_table(templ: Tera) -> anyhow::Result<()> {
 /// Walks the templates folder, ignoring hidden entries.
-#[allow(dead_code)]
 fn build_table() -> anyhow::Result<()> {
     let walker = WalkDir::new("./templates").into_iter()
         .filter_entry(|e| !is_hidden(e)) // no files / directories starting with `.`

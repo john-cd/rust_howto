@@ -1,21 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
-#![allow(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! Silencing the warning about unused code with `#[allow(dead_code)]`.
 
-// Disables the `dead_code` lint for the entire file.
-
 /// This function is defined but never called.
 ///
-/// The attribute above disables the `dead_code` lint,
-/// which would otherwise warn about this unused function.
-///
-/// You could also add a `#[allow(dead_code)]` attribute here
-/// to disable the lint for this function only.
+/// The attribute below disables the `dead_code` lint for this function.
+#[allow(dead_code)]
 fn unused_function() {}
 
 /// Does not call `unused_function`.

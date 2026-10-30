@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "needs a display and a window; the snippet is not run headlessly"
-)]
 // ANCHOR: example
 //! A line plot and a bar chart with `egui_plot`.
 

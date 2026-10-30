@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "needs a display and a window; the snippet is not run headlessly"
-)]
 // ANCHOR: example
 //! Runs an `egui` UI for one frame without a window, a GPU or a display.
 //!

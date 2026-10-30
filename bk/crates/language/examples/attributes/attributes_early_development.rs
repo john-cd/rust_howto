@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![allow(
-    dead_code,
-    reason = "the snippet declares items to illustrate them, not to call them"
-)]
 // ANCHOR: example
 //! `allow` attributes suppress specific warnings.
 //!
@@ -36,6 +32,8 @@ fn required() -> u32 {
 
 /// Defines variables that are not used, to show the effect of lint attributes.
 fn main() {
+    dead_code();
+    let _s = S;
     // This variable is defined but not used.
     let x = 1;
     // This mutable variable is defined but not used.

@@ -44,7 +44,7 @@ fn layers() {
     not(test),
     expect(
         dead_code,
-        reason = "an alternative global-subscriber setup; only one subscriber can be installed per process"
+        reason = "alternative global-subscriber setup; only one subscriber can be installed per process"
     )
 )]
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
@@ -86,7 +86,7 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     not(test),
     expect(
         dead_code,
-        reason = "an alternative global-subscriber setup; only one subscriber can be installed per process"
+        reason = "alternative global-subscriber setup; only one subscriber can be installed per process"
     )
 )]
 fn per_layer_filtering() {

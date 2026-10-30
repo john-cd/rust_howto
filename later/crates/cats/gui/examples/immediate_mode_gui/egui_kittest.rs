@@ -1,9 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-#![allow(
-    dead_code,
-    reason = "the file is built as a module of a dispatcher and as a standalone example"
-)]
 // ANCHOR: example
 //! Finds a button by its label and clicks it with `egui_kittest`.
 //!
