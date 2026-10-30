@@ -23,6 +23,11 @@ path = "examples/amqp/main.rs"
 test = true
 
 [[example]]
+name = "nats"
+path = "examples/nats/main.rs"
+test = true
+
+[[example]]
 name = "cassandra"
 path = "examples/cassandra/main.rs"
 test = true
@@ -80,6 +85,7 @@ test = true
 
 [dependencies]
 anyhow = "1.0.104"
+async-nats = { version = "0.51.0", optional = true }
 byteorder = "1.5.0"
 cassandra-protocol = { version = "4.0.1", optional = true }
 cdrs-tokio = { version = "9.0.2", features = ["derive"], optional = true }
@@ -140,6 +146,7 @@ cassandra = ["dep:cassandra-protocol", "dep:cdrs-tokio"]
 diesel = ["dep:diesel", "diesel/sqlite", "dep:diesel_migrations", "dep:libsqlite3-sys"]
 elasticsearch = ["dep:elasticsearch", "dep:serde_json"]
 lapin = ["dep:lapin"]
+nats = ["dep:async-nats", "dep:serde_json", "tokio/signal"]
 lmdb = ["dep:heed", "dep:tempfile"]
 mongodb = ["dep:mongodb"]
 mssql = ["dep:tiberius"]

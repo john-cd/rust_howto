@@ -17,6 +17,7 @@
   - [Basic Authentication](categories/authentication/basic_authentication.md)
   - [Session Login](categories/authentication/session_login.md)
   - [OAuth 2.0 Client Credentials](categories/authentication/oauth_client_credentials.md)
+  - [OpenID Connect Authorization Code with PKCE](categories/authentication/oidc_authorization_code.md)
 
 - [Caching](categories/caching/index.md)
   - [In-memory Caching](categories/caching/in_memory_cache.md)

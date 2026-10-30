@@ -18,6 +18,7 @@
 [ex~database~insert-query-data-postgres]: postgres.md#insert-query-data-postgres
 [ex~database~insert-select-data]: sqlite.md#insert-select-data
 [ex~database~lapin]: amqp.md#lapin
+[ex~database~nats-jetstream]: amqp.md#nats-jetstream
 [ex~database~mongodb]: nosql.md#mongodb
 [ex~database~oracle]: oracle.md#oracle
 [ex~database~redis]: nosql.md#redis

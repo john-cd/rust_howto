@@ -1082,6 +1082,7 @@
 [must_know_rust_crates~website]: https://gitlab.com/samuel_schuepbach/must_know_rust_crates
 [nagios~website]: https://nagios.org
 [near~website]: https://near.org
+[nats~website]: https://nats.io
 [neon~repo]: https://github.com/neondatabase/neon
 [neon~website]: https://neon.tech
 [newrelic~website]: https://newrelic.com

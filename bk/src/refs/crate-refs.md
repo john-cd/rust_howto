@@ -414,6 +414,14 @@
 [c~async-imap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--imap-yellow
 [c~async-imap~repo]: https://github.com/async-email/async-imap
 [c~async-imap~repo~badge]: https://img.shields.io/badge/async--imap-steelblue?logo=github
+[c~async-nats~crates.io]: https://crates.io/crates/async-nats
+[c~async-nats~crates.io~badge]: https://img.shields.io/badge/crates.io-async--nats-crimson
+[c~async-nats~docs]: https://docs.rs/async-nats
+[c~async-nats~docs~badge]: https://img.shields.io/crates/v/async-nats?label=async-nats
+[c~async-nats~lib.rs]: https://lib.rs/crates/async-nats
+[c~async-nats~lib.rs~badge]: https://img.shields.io/badge/lib.rs-async--nats-yellow
+[c~async-nats~repo]: https://github.com/nats-io/nats.rs
+[c~async-nats~repo~badge]: https://img.shields.io/badge/async--nats-steelblue?logo=github
 [c~async-std~crates.io]: https://crates.io/crates/async-std
 [c~async-std~crates.io~badge]: https://img.shields.io/badge/crates.io-async--std-crimson
 [c~async-std~docs]: https://docs.rs/async-std
@@ -5985,6 +5993,12 @@
 [c~opencv~repo~badge]: https://img.shields.io/badge/opencv-steelblue?logo=github
 [c~opencv~website]: https://opencv.org
 [c~opencv~website~badge]: https://img.shields.io/badge/opencv-coral
+[c~openidconnect~crates.io]: https://crates.io/crates/openidconnect
+[c~openidconnect~crates.io~badge]: https://img.shields.io/badge/crates.io-openidconnect-crimson
+[c~openidconnect~lib.rs]: https://lib.rs/crates/openidconnect
+[c~openidconnect~lib.rs~badge]: https://img.shields.io/badge/lib.rs-openidconnect-yellow
+[c~openidconnect~repo]: https://github.com/ramosbugs/openidconnect-rs
+[c~openidconnect~repo~badge]: https://img.shields.io/badge/openidconnect-steelblue?logo=github
 [c~openrr-planner~crates.io]: https://crates.io/crates/openrr-planner
 [c~openrr-planner~crates.io~badge]: https://img.shields.io/badge/crates.io-openrr--planner-crimson
 [c~openrr-planner~docs]: https://docs.rs/openrr-planner

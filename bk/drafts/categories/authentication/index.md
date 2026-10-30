@@ -26,6 +26,8 @@ For interactive clients, use the authorization-code flow with Proof Key for Code
 
 The [`oauth2` crate][c~oauth2~docs]↗ provides typed OAuth client protocol primitives, including authorization-code and PKCE support; it is not an identity provider or a complete web login system. The [`openidconnect` crate][c~openidconnect~docs]↗ provides OIDC relying-party types and flows. Use your provider's discovery metadata and validate issuer, audience, signature, expiration, and nonce as required by the chosen protocol flow. See the [OpenID Connect Core specification][openid~core] for the identity layer.
 
+For interactive sign-in with a federated identity provider, see the [offline OpenID Connect authorization-code recipe][ex~authentication~oidc-authorization-code]: it shows `state`, `nonce` and PKCE handling and ID-token validation with deterministic fixtures.
+
 For service-to-service access, the client-credentials grant obtains a scoped token for the service itself. See the [offline client-credentials recipe][ex~authentication~oauth-client-credentials] for a `reqwest` request against local mock servers; this grant does not sign in a user.
 
 ## JWT Bearer Authentication {#jwt-bearer-authentication}
