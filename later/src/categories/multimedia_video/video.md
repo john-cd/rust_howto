@@ -26,6 +26,39 @@ The `ffmpeg-next` bindings need FFmpeg development libraries and headers, not on
 
 A transcoding pipeline demuxes the input container, decodes frames, applies any transforms, encodes output streams, then muxes them into a destination container. Re-encoding can reduce quality and use substantial CPU time. If only the container needs to change and the codecs are compatible, stream-copying avoids decoding and re-encoding.
 
+## Build Pipelines with GStreamer {#gstreamer}
+
+[`gstreamer`][c~gstreamer~docs]↗{{hi:gstreamer}} binds the GStreamer framework, which connects sources, filters, encoders, and sinks into a pipeline. It needs the GStreamer development packages and the plugins your pipeline uses; see the [installation guide][gstreamer~installing~website]↗. On Debian or Ubuntu, install `libgstreamer1.0-dev`, `gstreamer1.0-plugins-base`, and `gstreamer1.0-plugins-good`. The following pipeline generates 30 test frames, converts them, and discards them. Replace `fakesink` with `autovideosink` to display the frames, or `videotestsrc` with `filesrc ! decodebin` to read a file. The snippet is not compiled as part of the book because it needs system libraries.
+
+```rust,ignore
+use gstreamer as gst;
+use gst::prelude::*;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    gst::init()?;
+    let pipeline = gst::parse::launch(
+        "videotestsrc num-buffers=30 ! videoconvert ! fakesink",
+    )?;
+    pipeline.set_state(gst::State::Playing)?;
+
+    // Wait until the stream ends or an error is reported on the bus.
+    let bus = pipeline.bus().ok_or("pipeline has no bus")?;
+    for msg in bus.iter_timed(gst::ClockTime::NONE) {
+        use gst::MessageView;
+        match msg.view() {
+            MessageView::Eos(..) => break,
+            MessageView::Error(err) => {
+                pipeline.set_state(gst::State::Null)?;
+                return Err(err.error().into());
+            }
+            _ => {}
+        }
+    }
+    pipeline.set_state(gst::State::Null)?;
+    Ok(())
+}
+```
+
 ## Playback and Streaming
 
 A video player also needs audio and video synchronization, a clock, buffering, seeking, and a display surface. Applications often combine a decoder with a GUI or graphics framework and an audio output library. For network delivery, add a streaming protocol and account for latency, congestion, and media timing; an encoder alone does not provide streaming.
