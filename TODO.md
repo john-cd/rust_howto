@@ -51,8 +51,6 @@
 
 ### Blocked on a desktop, hardware or manual run
 
-- [#61](https://github.com/john-cd/rust_howto/issues/61) — **P4** — drones/drones1.rs: write
-- [#65](https://github.com/john-cd/rust_howto/issues/65) — **P4** — uavs/uavs.rs: write
 
 ### Blocked on an upstream or advisory-held dependency
 
