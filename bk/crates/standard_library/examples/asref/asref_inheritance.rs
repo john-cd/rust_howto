@@ -10,8 +10,8 @@
 //! Prefer the simpler options first:
 //! - A narrow accessor (`fn get_file_size_bytes(&self)`) when callers need one
 //!   or two fields: it exposes only what is needed and hides the layout.
-//! - A domain-specific trait (for example `trait Media { fn id(&self) -> &str; }`)
-//!   when functions must work with several unrelated types: it names the
+//! - A domain-specific trait (for example `trait Media { fn id(&self) -> &str;
+//!   }`) when functions must work with several unrelated types: it names the
 //!   capability instead of the storage layout.
 //! - Taking `&MediaFile` directly and letting the caller pass `&image.media`.
 //!
@@ -55,6 +55,16 @@ impl ImageFile {
     fn get_file_size_bytes(&self) -> u64 {
         self.media.file_size_bytes
     }
+
+    /// Returns a one-line description of the picture.
+    fn describe(&self) -> String {
+        format!(
+            "{}x{} pixels, camera: {}",
+            self.width,
+            self.height,
+            self.camera_model.as_deref().unwrap_or("unknown")
+        )
+    }
 }
 
 // In the (rare) cases where composition leads to writing a lot of boilerplate,
@@ -86,13 +96,8 @@ fn print_media_details<M: AsRef<MediaFile>>(item: M) {
     println!("Tags: {:?}", media_ref.tags);
 }
 
-/// Runs the example.
-fn main() {
-    run_example();
-}
-
 /// Creates an image file and prints the details of its media file.
-fn run_example() {
+fn main() {
     // Create an ImageFile.
     let photo = ImageFile {
         // Nested struct.
@@ -110,6 +115,8 @@ fn run_example() {
     println!("Printing details for a photo:");
     // `&ImageFile` becomes `&MediaFile` via `AsRef`.
     print_media_details(&photo);
+    println!("{}", photo.describe());
+    println!("Size via accessor: {}", photo.get_file_size_bytes());
 
     // The simple projection function and the other fields:
     println!("Size via projection: {} bytes", photo.get_file_size_bytes());
@@ -132,7 +139,7 @@ fn run_example() {
 
 /// Runs the `AsRef` example for the workspace test harness.
 pub fn run() {
-    run_example();
+    main();
 }
 
 #[cfg(test)]
@@ -141,7 +148,7 @@ mod tests {
 
     /// Verifies that the `AsRef` example entry point runs.
     #[test]
-    fn test_asref2_example_entry_point() {
+    fn test_asref_inheritance_example_entry_point() {
         main();
     }
 

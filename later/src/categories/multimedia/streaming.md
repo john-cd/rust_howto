@@ -22,5 +22,13 @@ RTSP 2.0 is specified separately from the widely deployed RTSP 1.0, and the vers
 
 Prefer a WebRTC or media pipeline library over implementing RTP packetization directly. A custom RTP endpoint also needs to handle codec payload formats, timing, loss, and RTCP feedback. For one-to-many live delivery, plan for a media server or forwarding service so each publisher does not have to upload a separate copy to every viewer.
 
+## Negotiate a WebRTC Session with `str0m` {#str0m}
+
+[`str0m`][c~str0m~docs]↗{{hi:str0m}} does no network I/O of its own, so the offer and answer can be exchanged in a single process. This example negotiates a send-only audio stream between two peers; a real application would carry the SDP over its signaling service and then move UDP packets between the peers.
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia/examples/streaming/main.rs:example}}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -4,6 +4,7 @@
 [ex~development-tools_procedural-macro-helpers~cargo-expand]: macro_tools.md#cargo-expand
 [ex~development-tools_procedural-macro-helpers~trybuild]: macro_tools.md#trybuild
 [ex~development-tools_procedural-macro-helpers~macrotest]: macro_tools.md#macrotest
+[ex~development-tools_procedural-macro-helpers~snapshot-generated-code]: macro_tools.md#snapshot-generated-code
 [ex~development-tools_procedural-macro-helpers~rust-analyzer-expand]: macro_tools.md#rust-analyzer-expand
 [ex~development-tools_procedural-macro-helpers~darling]: write_proc_macros.md#darling
 [ex~development-tools_procedural-macro-helpers~documentation]: write_proc_macros.md#documentation

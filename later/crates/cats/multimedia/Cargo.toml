@@ -22,9 +22,16 @@ name = "multimedia"
 path = "examples/multimedia/main.rs"
 test = true
 
+[[example]]
+name = "streaming"
+path = "examples/streaming/main.rs"
+test = true
+
 [dependencies]
+anyhow.workspace = true
 # Keep rodio on 0.22: 0.23 selects cpal 0.18 and alsa-sys 0.4, which conflict with the 0.3 line used by Bevy and Fyrox.
 rodio = "0.22.0"
+str0m = { version = "0.24.1", default-features = false, features = ["rust-crypto"] }
 
 [lints]
 workspace = true

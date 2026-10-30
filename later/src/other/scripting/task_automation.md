@@ -24,6 +24,14 @@ See [[external_commands | External Commands]].
 
 See also [[shells | Shells]].
 
+## Example: a Scheduled Task {#scheduled-task}
+
+This example describes a task as data: [`cron`][c~cron~docs]↗ finds the next run, [`shellexpand`][c~shellexpand~docs]↗ expands `$WHAT` from an explicit lookup, [`shell-words`][c~shell-words~docs]↗ splits the line without a shell, and [`duct`][c~duct~docs]↗ runs the program and fails on a non-zero exit status.
+
+```rust,editable
+{{#include ../../../crates/other/examples/task_automation/main.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[command-line-interface | Command Line Interface]].

@@ -128,6 +128,8 @@
 
 - [Images](categories/multimedia_images/index.md)
   - [Images](categories/multimedia_images/images.md)
+  - [Color Handling](categories/multimedia_images/color_handling.md)
+  - [Pixel Buffers](categories/multimedia_images/pixel_buffers.md)
 
 - [Internationalization](categories/internationalization/index.md)
   - [Internationalization](categories/internationalization/internationalization.md)
@@ -162,6 +164,7 @@
 - [Rendering](categories/rendering/index.md)
   - [2D Renderers](categories/rendering/2d_renderers.md)
     - [2D Raster Graphics](categories/rendering/2d_raster_graphics.md)
+    - [2D Vector Graphics](categories/rendering/2d_vector_graphics.md)
   - [3D Renderers](categories/rendering/3d_renderers.md)
   - [Text Rendering](categories/rendering/text_rendering.md)
   - [SVG Rendering](categories/rendering/svg_rendering.md)
@@ -204,9 +207,11 @@
 
 - [Scripting](other/scripting/index.md)
   - [Rhai](other/scripting/rhai.md)
+  - [Task Automation](other/scripting/task_automation.md)
 
 - [Simulation](categories/simulation/index.md)
   - [Simulation](categories/simulation/simulation.md)
+  - [Physics Engines](categories/simulation/physics_engines.md)
 
 - [Value formatting](categories/value-formatting/index.md)
   - [Value formatting](categories/value-formatting/number_formatting.md)

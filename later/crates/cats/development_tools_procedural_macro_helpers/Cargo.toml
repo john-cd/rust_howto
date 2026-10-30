@@ -26,6 +26,11 @@ path = "examples/write_proc_macros/main.rs"
 test = true
 
 [[example]]
+name = "macro_tools"
+path = "examples/macro_tools/main.rs"
+test = true
+
+[[example]]
 name = "compile_macros"
 path = "examples/compile_macros/main.rs"
 test = true

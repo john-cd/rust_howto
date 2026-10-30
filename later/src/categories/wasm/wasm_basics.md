@@ -24,6 +24,14 @@ Outside browsers, Wasm can provide a portable module format for plugins, server-
 
 Rust game libraries such as [`winit`][c~winit~docs]↗{{hi:winit}}, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, and [`bevy`][c~bevy~docs]↗{{hi:bevy}} can be used for browser-targeted projects when their selected features and graphics backend support the target.
 
+## Inspect a Module's Imports and Exports {#inspect-module}
+
+[`wat`][c~wat~docs]↗{{hi:wat}} assembles the text format into a binary module, and [`wasmparser`][c~wasmparser~docs]↗{{hi:wasmparser}} reads a binary without running it. The example lists the functions the module expects the host to provide (imports) and the functions the host can call (exports).
+
+```rust,editable
+{{#include ../../../crates/cats/wasm/examples/wasm_basics/main.rs:example}}
+```
+
 ## Related topics {#related-topics .skip}
 
 - [[wasm_development | WASM Development]]

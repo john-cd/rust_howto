@@ -21,11 +21,6 @@ path = "examples/anyhow_uptime.rs"
 test = true
 
 [[example]]
-name = "asref2"
-path = "examples/asref2.rs"
-test = true
-
-[[example]]
 name = "split"
 path = "examples/split.rs"
 test = true

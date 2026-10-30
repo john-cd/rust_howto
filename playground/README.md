@@ -7,8 +7,6 @@ examples are scratch material, with these review dispositions:
 
 - `anyhow_uptime.rs` is Linux-only because it reads `/proc/uptime`; it needs a portable
   source and exit-status behavior before publication.
-- `asref2.rs` frames `AsRef` as a last-resort reference conversion rather than
-  inheritance and explains when a narrow accessor or domain trait is clearer.
 - `split.rs` implements a narrow slash parser whose behavior does not match its claim
   to return a directory, file name, and extension. Use `std::path` before promoting it.
 

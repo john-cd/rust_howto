@@ -46,6 +46,14 @@ cargo add --dev macrotest
 cargo test
 ```
 
+## Snapshot Generated Code in a Unit Test {#snapshot-generated-code}
+
+`macrotest` needs the compiler's expansion interface. When a macro's logic lives in an ordinary function from `proc_macro2::TokenStream` to `TokenStream`, a plain unit test can do the same job: format the output with [`prettyplease`][c~prettyplease~docs]↗{{hi:prettyplease}} and compare it with the expected source.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/macro_tools/main.rs:example}}
+```
+
 ## Expand Macros in Rust Analyzer {#rust-analyzer-expand}
 
 In Rust Analyzer, place the caret on a macro invocation and run **Expand macro recursively** from the command palette or editor context menu. The editor shows the expansion without changing the source file; see the [Rust Analyzer feature documentation][rust-analyzer~macro-expansion~docs].

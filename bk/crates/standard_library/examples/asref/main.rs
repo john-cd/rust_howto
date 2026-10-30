@@ -6,6 +6,7 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod asref;
+mod asref_inheritance;
 mod option_asref;
 mod smart_pointer_asref;
 
@@ -23,6 +24,9 @@ enum Commands {
     /// Runs the `asref` example.
     #[command(name = "asref")]
     Asref,
+    /// Runs the `asref_inheritance` example.
+    #[command(name = "asref_inheritance")]
+    AsrefInheritance,
     /// Runs the `option_asref` example.
     #[command(name = "option_asref")]
     OptionAsref,
@@ -37,6 +41,9 @@ fn dispatch(cli: Cli) {
         match command {
             Commands::Asref => {
                 asref::run();
+            }
+            Commands::AsrefInheritance => {
+                asref_inheritance::run();
             }
             Commands::OptionAsref => {
                 option_asref::run();
@@ -60,7 +67,12 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["asref", "option_asref", "smart_pointer_asref"];
+    const SUBCOMMANDS: &[&str] = &[
+        "asref",
+        "asref_inheritance",
+        "option_asref",
+        "smart_pointer_asref",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -96,7 +108,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

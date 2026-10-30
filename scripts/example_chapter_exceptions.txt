@@ -15,12 +15,6 @@ bk/crates/cats/development_tools/examples/crate_indices/fixtures.rs
 later/crates/cats/development_tools_ffi/examples/ruby/greeting.rs
 # The gRPC page describes this generated-code check in prose.
 bk/crates/cats/web_programming_http_server/examples/grpc/echo.rs
-# Legacy command names kept by the dispatcher; the chapter includes the *1 variants (cleanup tracked in the audit issue).
-bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/c_library.rs
-bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cpp_library.rs
-bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_cpp.rs
-bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_static.rs
-bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines.rs
 
 # --- Chapters without an example ------------------------------------------
 # Meta pages: contribution guides, link lists, indices and credits.
