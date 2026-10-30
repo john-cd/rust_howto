@@ -32,7 +32,7 @@ Window libraries create native windows and deliver input and lifecycle events. T
 
 [![baseview~repo][baseview~repo~badge]][baseview~repo]
 
-`baseview` is a low-level window system interface for [audio][p~audio] plugin UIs.
+`baseview` is a low-level window system interface for [audio][p~audio] plugin UIs. Pick it over `winit` when your window must be embedded in, or parented to, a window owned by a plugin host (a DAW), which `winit` does not support. For an ordinary application window, use `winit`. `baseview` is not published on crates.io, so the workspace depends on a pinned Git revision behind the optional `baseview` feature (`cargo test -p gui --features baseview --example window_creation`). On Linux, install `libx11-dev libxcb1-dev libx11-xcb-dev libgl1-mesa-dev` first; the window-opening test is ignored because it needs a display.
 
 The `winit` and `baseview` examples are compiled on Windows as well as other supported desktop platforms. `baseview` selects its Windows backend for Windows builds. The Tao source remains in this chapter, but its Cargo dependency and command are disabled because the current GTK 3 / `glib 0.18` dependency chain is incompatible with the workspace.
 
