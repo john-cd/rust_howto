@@ -2,11 +2,11 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-mod multimedia1;
+mod play_sound;
 
 /// Runs the multimedia example.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    multimedia1::run()
+    play_sound::run()
 }
 
 #[cfg(test)]

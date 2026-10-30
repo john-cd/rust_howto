@@ -6,7 +6,7 @@ This crate contains code examples for the **Multimedia** category on crates.io. 
 
 ## Examples Covered
 
-- **Multimedia** (`examples/multimedia/`): Demonstrates concepts like `multimedia1`.
+- **Multimedia** (`examples/multimedia/`): Plays a generated tone with `rodio` (`play_sound`).
 
 ## Usage
 

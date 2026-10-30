@@ -10,8 +10,10 @@ This chapter connects media types: play a generated sound, extract audio from a 
 
 The `rodio` example generates a 440 Hz sine wave and plays it for two seconds through the default output device. No input file or network service is needed. Its test is ignored because opening a real audio device is unsuitable for a headless test runner; errors from device initialization are propagated.
 
+The tone is built by a separate function, so a unit test can check its format without a device. The tests that open the default output are ignored; run them with `cargo test -p multimedia --example multimedia -- --include-ignored` from `later/crates`. On Linux without sound hardware (for example in CI), install `libasound2-plugins` and route the default device to ALSA's `null` sink with a `~/.asoundrc` containing `pcm.!default { type null }` and `ctl.!default { type null }`.
+
 ```rust,editable
-{{#include ../../../crates/cats/multimedia/examples/multimedia/multimedia1.rs:example}}
+{{#include ../../../crates/cats/multimedia/examples/multimedia/play_sound.rs:example}}
 ```
 
 From `later/crates`, run `cargo run -p multimedia --example multimedia` on a machine with an audio output device.
