@@ -1,6 +1,9 @@
-#![expect(
-    dead_code,
-    reason = "targets the browser (wasm32); native builds cannot call it"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "targets the browser (wasm32); native builds cannot call it"
+    )
 )]
 // ANCHOR: example
 //! Awaits a JavaScript Promise from Rust.
