@@ -19,8 +19,8 @@
 [ex~gui~floem]: retained_mode_gui.md#floem
 [ex~gui~gpui]: retained_mode_gui.md#gpui
 [ex~gui~gtk4]: gtk.md#gtk4
-[ex~gui~gui-framework-integration]: clipboard.md#gui-framework-integration
-[ex~gui~gui-framework-integration]: file_dialogs.md#gui-framework-integration
+[ex~gui~gui-framework-integration-clipboard]: clipboard.md#gui-framework-integration
+[ex~gui~gui-framework-integration-file-dialogs]: file_dialogs.md#gui-framework-integration
 [ex~gui~iced]: retained_mode_gui.md#iced
 [ex~gui~integration-with-rendering]: immediate_mode_gui.md#integration-with-rendering
 [ex~gui~key-concepts]: gtk.md#key-concepts
@@ -38,8 +38,8 @@
 [ex~gui~tauri]: web_based_gui.md#tauri
 [ex~gui~text-rendering]: ../rendering/text_rendering.md
 [ex~gui~vizia]: retained_mode_gui.md#vizia
-[ex~gui~webassembly-wasm-considerations]: clipboard.md#webassembly-wasm-considerations
-[ex~gui~webassembly-wasm-considerations]: file_dialogs.md#webassembly-wasm-considerations
+[ex~gui~webassembly-wasm-considerations-clipboard]: clipboard.md#webassembly-wasm-considerations
+[ex~gui~webassembly-wasm-considerations-file-dialogs]: file_dialogs.md#webassembly-wasm-considerations
 [ex~gui~winit]: window_creation.md#winit
 [ex~gui~software-pixels]: window_creation.md#draw-pixels-with-softbuffer
 [ex~gui~wry]: web_based_gui.md#wry

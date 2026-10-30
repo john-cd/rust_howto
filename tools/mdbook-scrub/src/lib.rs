@@ -91,10 +91,12 @@ impl Preproc {
 
     /// Expands the directives in the book.
     fn run_directives(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
-        let conf = ctx
+        let mut conf = ctx
             .config
             .get::<DirectivePreprocConfig>(self.config_key())?
             .unwrap_or_default();
+        let process_wikilinks = conf.directives.process_wikilinks;
+        conf.directives.process_wikilinks = false;
         let book_root = resolve_book_root(&ctx.root)?;
         let source_root = book_root.join(&ctx.config.book.src);
         let mut errors = Vec::new();
@@ -116,13 +118,17 @@ impl Preproc {
                 |example| resolve_example(&book_root, chapter_source.as_deref(), example),
             )
             .and_then(|content| {
-                let content =
+                let content = if process_wikilinks {
                     replace_outside_protected_spans(&content, &wikilink_regex(), |captures| {
-                        captures
-                            .get(1)
-                            .map_or("", |matched| matched.as_str().trim())
-                            .to_owned()
-                    })?;
+                        let target = captures[1].trim();
+                        let title = captures
+                            .get(2)
+                            .map_or(target, |matched| matched.as_str().trim());
+                        format!("[{title}][p~{}]", target.replace(' ', "-"))
+                    })?
+                } else {
+                    content
+                };
                 book_tool::directives::validate_no_unexpanded_directives(&content)?;
                 Ok(content)
             });

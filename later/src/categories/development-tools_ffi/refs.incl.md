@@ -3,8 +3,8 @@
 
 [ex~development-tools_ffi~bindgen]: generate_ffi_bindings.md#bindgen
 [ex~development-tools_ffi~build-tools-for-rust-ruby]: ruby.md#build-tools-for-rust-ruby
-[ex~development-tools_ffi~build-tools]: java.md#build-tools
-[ex~development-tools_ffi~build-tools]: lua.md#build-tools
+[ex~development-tools_ffi~build-tools-java]: java.md#build-tools
+[ex~development-tools_ffi~build-tools-lua]: lua.md#build-tools
 [ex~development-tools_ffi~c-cpp-build-integration]: generate_ffi_bindings.md#c-cpp-build-integration
 [ex~development-tools_ffi~calling-python-from-rust]: python.md#calling-python-from-rust
 [ex~development-tools_ffi~calling-rust-from-python]: python.md#calling-rust-from-python
@@ -22,8 +22,8 @@
 [ex~development-tools_ffi~jni-bindings]: java.md#jni-bindings
 [ex~development-tools_ffi~jni-rs]: java.md#jni-rs
 [ex~development-tools_ffi~jni]: java.md#jni
-[ex~development-tools_ffi~key-concepts-and-workflow]: java.md#key-concepts-and-workflow
-[ex~development-tools_ffi~key-concepts-and-workflow]: objc.md#key-concepts-and-workflow
+[ex~development-tools_ffi~key-concepts-and-workflow-java]: java.md#key-concepts-and-workflow
+[ex~development-tools_ffi~key-concepts-and-workflow-objc]: objc.md#key-concepts-and-workflow
 [ex~development-tools_ffi~key-concepts]: lua.md#key-concepts
 [ex~development-tools_ffi~lua-bindings]: lua.md#lua-bindings
 [ex~development-tools_ffi~magnus]: ruby.md#magnus

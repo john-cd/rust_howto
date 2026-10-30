@@ -750,7 +750,7 @@
 [c~tracing::Event~docs]: https://docs.rs/tracing/latest/tracing/struct.Event.html
 [c~tracing::debug~docs]: https://docs.rs/tracing/latest/tracing/macro.debug.html
 [c~tracing::error~docs]: https://docs.rs/tracing/latest/tracing/macro.error.html
-[c~tracing::event~docs]: https://docs.rs/tracing/latest/tracing/macro.event.html
+[c~tracing::event_macro~docs]: https://docs.rs/tracing/latest/tracing/macro.event.html
 [c~tracing::info~docs]: https://docs.rs/tracing/latest/tracing/macro.info.html
 [c~tracing::warn~docs]: https://docs.rs/tracing/latest/tracing/macro.warn.html
 [dapr-rust-sdk~repo]: https://github.com/dapr/rust-sdk

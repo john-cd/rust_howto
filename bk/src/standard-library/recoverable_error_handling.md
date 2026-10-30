@@ -79,10 +79,10 @@ These methods are useful for working with references to the values inside a `Res
 
 The following table lists common methods that convert `Result<T, E>` to `Option`:
 
-| Method                                                                     | Description                                                             | Use Case                                        |
-| -------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------- |
-| [`ok()`][c~std::result::Result::ok~docs]↗{{hi:std::result::Result::ok}}    | Converts `Result<T, E>` into `Option<T>`, discarding the error.         | Use when you only care about the success value. |
-| [`err()`][c~std::result::Result::err~docs]↗{{hi:std::result::Result::err}} | Converts `Result<T, E>` into `Option<E>`, discarding the success value. | Use when you only care about the error.         |
+| Method                                                                            | Description                                                             | Use Case                                        |
+| --------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------- |
+| [`ok()`][c~std::result::Result::ok_method~docs]↗{{hi:std::result::Result::ok}}    | Converts `Result<T, E>` into `Option<T>`, discarding the error.         | Use when you only care about the success value. |
+| [`err()`][c~std::result::Result::err_method~docs]↗{{hi:std::result::Result::err}} | Converts `Result<T, E>` into `Option<E>`, discarding the success value. | Use when you only care about the error.         |
 
 See also the [[option | Option]] chapter.
 

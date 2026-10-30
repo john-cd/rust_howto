@@ -8785,14 +8785,14 @@
 [c~std::result::Result::as_deref~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.as_deref
 [c~std::result::Result::as_mut~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.as_mut
 [c~std::result::Result::as_ref~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.as_ref
-[c~std::result::Result::err~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.err
+[c~std::result::Result::err_method~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.err
 [c~std::result::Result::is_err~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.is_err
 [c~std::result::Result::is_ok~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.is_ok
 [c~std::result::Result::map_err~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err
 [c~std::result::Result::map_or_else~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.map_or_else
 [c~std::result::Result::map_or~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.map_or
 [c~std::result::Result::map~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.map
-[c~std::result::Result::ok~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.ok
+[c~std::result::Result::ok_method~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.ok
 [c~std::result::Result::or_else~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.or_else
 [c~std::result::Result::unwrap_or_default~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_default
 [c~std::result::Result::unwrap_or_else~docs]: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap_or_else

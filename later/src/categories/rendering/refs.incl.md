@@ -2,8 +2,8 @@
 <!-- markdownlint-disable MD057 -->
 
 [ex~rendering~ab_glyph]: text_rendering.md#ab_glyph
-[ex~rendering~applications]: 2d_renderers.md#applications
-[ex~rendering~applications]: 3d_renderers.md#applications
+[ex~rendering~applications-2d-renderers]: 2d_renderers.md#applications
+[ex~rendering~applications-3d-renderers]: 3d_renderers.md#applications
 [ex~rendering~choosing-the-right-library]: 2d_renderers.md#choosing-the-right-library
 [ex~rendering~femtovg]: 2d_vector_graphics.md#femtovg
 [ex~rendering~fontdue]: text_rendering.md#fontdue

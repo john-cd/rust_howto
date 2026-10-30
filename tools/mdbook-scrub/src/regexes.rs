@@ -46,7 +46,7 @@ pub(crate) fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
 
 /// Builds the pattern used to recognize mdBook wikilinks.
 pub(crate) fn wikilink_regex() -> Regex {
-    Regex::new(r"\[\[ *[^|\]]*?(?:\| *([^\]]+)?)?\]\]").expect("Invalid wikilink regex")
+    Regex::new(r"\[\[\s*([^|\]]+?)\s*(?:\|\s*([^\]]+?)\s*)?\]\]").expect("Invalid wikilink regex")
 }
 
 /// Apply a replacement outside code spans, fenced code blocks and HTML comments.
@@ -209,18 +209,35 @@ mod tests {
         assert!(result.contains("[[hidden-comment]]"));
     }
 
-    /// Verifies that legacy wikilink cleanup keeps the displayed title.
+    /// Verifies that wikilinks use the book's page-reference namespace and keep their title.
     #[test]
-    fn legacy_wikilink_cleanup_keeps_its_title() {
+    fn wikilinks_use_page_references_and_keep_their_title() {
         let regex = wikilink_regex();
         let result = replace_outside_protected_spans("[[file | title]]", &regex, |captures| {
-            captures
-                .get(1)
-                .map_or("", |matched| matched.as_str().trim())
-                .to_owned()
+            let target = captures[1].trim();
+            let title = captures
+                .get(2)
+                .map_or(target, |matched| matched.as_str().trim());
+            format!("[{title}][p~{}]", target.replace(' ', "-"))
         })
         .expect("the Markdown fragment should parse");
 
-        assert_eq!(result, "title");
+        assert_eq!(result, "[title][p~file]");
+    }
+
+    /// Verifies that an untitled wikilink uses its target as its display text.
+    #[test]
+    fn wikilinks_without_a_title_keep_the_target_as_display_text() {
+        let regex = wikilink_regex();
+        let result = replace_outside_protected_spans("[[file-name]]", &regex, |captures| {
+            let target = captures[1].trim();
+            let title = captures
+                .get(2)
+                .map_or(target, |matched| matched.as_str().trim());
+            format!("[{title}][p~{}]", target.replace(' ', "-"))
+        })
+        .expect("the Markdown fragment should parse");
+
+        assert_eq!(result, "[file-name][p~file-name]");
     }
 }
