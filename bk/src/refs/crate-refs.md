@@ -1060,6 +1060,7 @@
 [c~callgrind~website~badge]: https://img.shields.io/badge/callgrind-coral
 [c~camino~crates.io]: https://crates.io/crates/camino
 [c~camino~docs]: https://docs.rs/camino
+[c~camino~docs~badge]: https://img.shields.io/crates/v/camino?label=camino
 [c~camino~repo]: https://github.com/camino-rs/camino
 [c~candle-core~crates.io]: https://crates.io/crates/candle-core
 [c~candle-core~crates.io~badge]: https://img.shields.io/badge/crates.io-candle--core-crimson
@@ -3229,6 +3230,7 @@
 [c~fixedbitset~repo~badge]: https://img.shields.io/badge/fixedbitset-steelblue?logo=github
 [c~fixed~crates.io]: https://crates.io/crates/fixed
 [c~fixed~docs]: https://docs.rs/fixed
+[c~fixed~docs~badge]: https://img.shields.io/crates/v/fixed?label=fixed
 [c~fixed~repo]: https://gitlab.com/tspiteri/fixed
 [c~flac~crates.io]: https://crates.io/crates/flac
 [c~flac~crates.io~badge]: https://img.shields.io/badge/crates.io-flac-crimson
