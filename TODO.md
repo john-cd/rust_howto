@@ -51,7 +51,6 @@
 
 ### Blocked on a desktop, hardware or manual run
 
-- [#805](https://github.com/john-cd/rust_howto/issues/805) — **P4** — multimedia/multimedia1.rs: write
 - [#61](https://github.com/john-cd/rust_howto/issues/61) — **P4** — drones/drones1.rs: write
 - [#65](https://github.com/john-cd/rust_howto/issues/65) — **P4** — uavs/uavs.rs: write
 
