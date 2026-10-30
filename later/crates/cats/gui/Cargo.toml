@@ -175,7 +175,7 @@ xilem = { version = "0.4.0", optional = true } # Experimental retained-mode UI e
 
 [dev-dependencies]
 egui_kittest = "0.37.0" # Same version as `egui`.
-# TODO we should not use i-slint* crates directly; consider using the public Slint API instead.
+# Slint exposes its headless testing backend only through this internal crate; the public API has no equivalent.
 i-slint-backend-testing = "=1.16.1" # Matches Slint's internal, non-semver testing API.
 
 [features]

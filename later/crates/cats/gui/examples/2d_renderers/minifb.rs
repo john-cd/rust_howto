@@ -2,10 +2,14 @@
 
 // ANCHOR: example
 //! A minimal native graphics example using `minifb`.
-//! TODO explain minifb usage and its purpose in this example.
 //!
-//! This example opens a native window and renders a simple animated pixel
-//! gradient by writing directly to a pixel buffer.
+//! `minifb` opens a native window and gives you a plain `u32` pixel buffer to
+//! present, with no GPU API or scene graph in between. That makes it a good fit
+//! for small software renderers, emulators and demos, and for seeing what
+//! the higher-level renderers do underneath.
+//!
+//! This example renders a simple animated pixel gradient by writing directly to
+//! the pixel buffer.
 
 use std::time::Duration;
 use std::time::Instant;
@@ -42,7 +46,8 @@ fn fill_gradient(buffer: &mut [u32], offset: u32) {
 
 /// Opens a window and draws into a pixel buffer until the window is closed.
 fn run_window() -> Result<()> {
-    // TODO explain why/how we create the window and buffer here
+    // The window owns the OS surface; the buffer is our own CPU-side
+    // framebuffer with one `0xAARRGGBB` value per pixel.
     let mut window = Window::new(
         "minifb native graphics example",
         WIDTH,
@@ -54,16 +59,17 @@ fn run_window() -> Result<()> {
     let mut offset = 0u32;
     let mut last_frame = Instant::now();
 
-    // TODO explain the main rendering loop and its purpose
+    // Redraw every frame until the user closes the window or presses Escape.
     while window.is_open() && !window.is_key_down(Key::Escape) {
         fill_gradient(&mut buffer, offset);
 
-        // TODO explain why we update the window with the buffer here
+        // Copy the finished frame to the window; this also processes input events.
         window.update_with_buffer(&buffer, WIDTH, HEIGHT)?;
 
         offset = offset.wrapping_add(1);
 
-        // TODO explain why we increment the offset here to animate the gradient
+        // Shifting every channel by one each frame makes the gradient scroll.
+        // The sleep below caps the loop at roughly 60 frames per second.
         let elapsed = last_frame.elapsed();
         if elapsed < Duration::from_millis(16) {
             std::thread::sleep(
