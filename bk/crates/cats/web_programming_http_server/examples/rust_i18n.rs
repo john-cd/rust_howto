@@ -10,9 +10,13 @@ rust_i18n::i18n!("locales", fallback = "en");
 /// Chooses a supported locale from an HTTP `Accept-Language` header.
 fn locale_for(header: &str) -> &'static str {
     let supported = ["en", "fr"];
-    accept_language::intersection(header, supported)
+    match accept_language::intersection(header, &supported)
         .first()
-        .unwrap_or("en")
+        .map(String::as_str)
+    {
+        Some("fr") => "fr",
+        _ => "en",
+    }
 }
 
 /// Returns a localized API error for a missing user.

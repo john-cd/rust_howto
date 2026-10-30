@@ -16,7 +16,6 @@
 use std::env;
 
 // Import diesel.
-use diesel::connection::SimpleConnection;
 use diesel::prelude::*;
 // Import the oracle connection type.
 use diesel_oci::OciConnection;
@@ -103,6 +102,8 @@ pub fn run() -> anyhow::Result<()> {
 
 #[cfg(test)]
 mod tests {
+    use diesel::connection::SimpleConnection;
+
     use super::*;
 
     #[test]

@@ -90,7 +90,8 @@ mod tests {
 
     #[test]
     fn missing_tool_or_directory_is_reported_as_an_error() {
-        let dir = tempfile::tempdir().unwrap();
+        let dir =
+            tempfile::tempdir().expect("temporary directory should be created");
         let nested = dir.path().join("does-not-exist");
         // Either `mdbook-utils` is absent, or it fails on the missing
         // directory.
