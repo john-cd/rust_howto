@@ -144,7 +144,8 @@ mod tests {
             Some("directives")
         );
         let matches = make_app().get_matches_from(["mdbook-scrub", "supports", "html"]);
-        let sub = matches.subcommand_matches("supports")
+        let sub = matches
+            .subcommand_matches("supports")
             .expect("supports subcommand");
         assert_eq!(
             sub.get_one::<String>("renderer").map(String::as_str),
