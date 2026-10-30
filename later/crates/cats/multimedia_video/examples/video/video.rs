@@ -40,8 +40,7 @@ fn encode_synthetic_frames(
         // Fill Y, U, and V color planes with animated synthetic pixel values.
         // The Y (luminance) plane varies over time, while U and V (chrominance)
         // remain neutral gray.
-        let luma_value = u8::try_from((128 + frame_idx * 20) % 256)
-            .expect("frame index math produces a valid u8");
+        let luma_value = u8::try_from((128 + frame_idx * 20) % 256)?;
 
         for (plane_idx, plane) in frame.planes.iter_mut().enumerate() {
             let plane_width = plane.cfg.width;
@@ -71,7 +70,7 @@ fn encode_synthetic_frames(
             Ok(packet) => {
                 packet_count += 1;
                 println!(
-                    "Encoded AV1 packet #{packet_count} ({} bytes, keyframe: {}).",
+                    "Encoded AV1 packet #{packet_count} ({} bytes, frame type: {}).",
                     packet.data.len(),
                     packet.frame_type
                 );
