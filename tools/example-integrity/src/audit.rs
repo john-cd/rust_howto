@@ -462,21 +462,50 @@ impl ScanState {
         let mut pages = Vec::new();
         let mut listed_pages = HashSet::new();
         for (book_root, edition) in BOOK_ROOTS {
-            let summary_path = self.repo_root.join(book_root).join("SUMMARY.md");
+            let summary_relative_path = format!("{book_root}/SUMMARY.md");
+            let summary_path = self.repo_root.join(&summary_relative_path);
             if summary_path.is_file() {
                 let summary = fs::read_to_string(&summary_path)
                     .with_context(|| format!("could not read {}", summary_path.display()))?;
-                for capture in SUMMARY_LINK.captures_iter(&summary) {
-                    let link = capture
-                        .name("path")
-                        .expect("the path capture exists")
-                        .as_str();
-                    if let Some(path) =
-                        self.resolve_relative(&format!("{book_root}/SUMMARY.md"), link)
-                    {
-                        listed_pages.insert(path);
+                for (line_index, line) in summary.lines().enumerate() {
+                    for capture in SUMMARY_LINK.captures_iter(line) {
+                        let link = capture
+                            .name("path")
+                            .expect("the path capture exists")
+                            .as_str();
+                        if link.contains("://") || link.starts_with("//") {
+                            continue;
+                        }
+                        let line_number = line_index + 1;
+                        match self.resolve_relative(&summary_relative_path, link) {
+                            Some(path) if self.repo_root.join(&path).is_file() => {
+                                listed_pages.insert(path);
+                            }
+                            Some(_) => self.diagnostic(
+                                "error",
+                                "summary-target-missing",
+                                &summary_relative_path,
+                                Some(line_number),
+                                format!("Summary link `{link}` does not point to a file"),
+                            ),
+                            None => self.diagnostic(
+                                "error",
+                                "summary-link-outside-repository",
+                                &summary_relative_path,
+                                Some(line_number),
+                                format!("Summary link `{link}` resolves outside the repository"),
+                            ),
+                        }
                     }
                 }
+            } else {
+                self.diagnostic(
+                    "error",
+                    "summary-missing",
+                    &summary_relative_path,
+                    None,
+                    "book root has no SUMMARY.md",
+                );
             }
             for path in markdown_files(&self.repo_root.join(book_root))? {
                 let relative = self.relative_path(&path)?;
@@ -1594,12 +1623,12 @@ mod tests {
         write_fixture(
             root,
             "bk/src/SUMMARY.md",
-            "# Summary\n\n- [Chapter](chapter.md)\n",
+            "# Summary\n\n- [Chapter](chapter.md)\n- [Missing](missing.md)\n",
         );
         write_fixture(
             root,
             "bk/src/chapter.md",
-            "# Chapter\n\n{{#include fragments/one.md}}\n\n{{#include ../crates/one/examples/first/main.rs:example}}\n\n```rust\n{{#include ../crates/one/examples/first/main.rs:missing}}\n{{#include ../crates/one/examples/first/missing.rs:example}}\n```\n\n```rust\nlet value = 1;\n```\n\n<div class=\"hidden\">\n{{#include missing-hidden.rs}}\n</div>\n",
+            "# Chapter\n\n{{#include fragments/one.md}}\n\n{{#example demo}}\n\n{{#include ../crates/one/examples/first/main.rs:example}}\n\n```rust\n{{#include ../crates/one/examples/first/main.rs:missing}}\n{{#include ../crates/one/examples/first/missing.rs:example}}\n```\n\n```rust\nlet value = 1;\n```\n\n<div class=\"hidden\">\n{{#include missing-hidden.rs}}\n</div>\n",
         );
         write_fixture(
             root,
@@ -1634,6 +1663,20 @@ mod tests {
         assert!(codes.contains(&"include-missing"));
         assert!(codes.contains(&"chapter-unlisted"));
         assert!(codes.contains(&"include-unfenced"));
+        assert!(report.diagnostics.iter().any(|diagnostic| {
+            diagnostic.code == "summary-target-missing"
+                && diagnostic.path == "bk/src/SUMMARY.md"
+                && diagnostic.line == Some(4)
+        }));
+        let custom_example = report
+            .includes
+            .iter()
+            .find(|include| {
+                include.kind == "example" && include.custom_name.as_deref() == Some("demo")
+            })
+            .expect("the custom example directive is inventoried");
+        assert!(custom_example.resolved);
+        assert_eq!(custom_example.cargo_targets.len(), 2);
         let hidden_include = report
             .includes
             .iter()
@@ -1691,6 +1734,7 @@ mod tests {
             .expect("chapter is inventoried");
         assert!(chapter.has_example);
         assert!(chapter.has_tested_example);
+        assert!(chapter.listed);
         assert!(
             report.has_errors(),
             "visible integrity gaps fail the report"
