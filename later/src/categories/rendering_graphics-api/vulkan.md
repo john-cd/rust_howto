@@ -33,7 +33,3 @@ Safe wrapper for the Vulkan graphics API.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [decide what to cover / write](https://github.com/john-cd/rust_howto/issues/1227)
-</div>
