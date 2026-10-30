@@ -46,7 +46,7 @@ pub(crate) fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
 
 /// Builds the pattern used to recognize mdBook wikilinks.
 pub(crate) fn wikilink_regex() -> Regex {
-    Regex::new(r"\[\[\s*([^|\]]+?)\s*(?:\|\s*([^\]]+?)\s*)?\]\]").expect("Invalid wikilink regex")
+    Regex::new(r"\[\[\s*([^|\]]*?)\s*(?:\|\s*([^\]]*?)\s*)?\]\]").expect("Invalid wikilink regex")
 }
 
 /// Apply a replacement outside code spans, fenced code blocks and HTML comments.
@@ -239,5 +239,25 @@ mod tests {
         .expect("the Markdown fragment should parse");
 
         assert_eq!(result, "[file-name][p~file-name]");
+    }
+
+    /// Verifies malformed wikilinks with no target are reduced to their title.
+    #[test]
+    fn wikilinks_without_a_target_are_scrubbed() {
+        let regex = wikilink_regex();
+        let result = replace_outside_protected_spans("[[| title ]]", &regex, |captures| {
+            let target = captures[1].trim();
+            let title = captures
+                .get(2)
+                .map_or(target, |matched| matched.as_str().trim());
+            if target.is_empty() {
+                title.to_owned()
+            } else {
+                format!("[{title}][p~{}]", target.replace(' ', "-"))
+            }
+        })
+        .expect("the malformed Markdown fragment should parse");
+
+        assert_eq!(result, "title");
     }
 }

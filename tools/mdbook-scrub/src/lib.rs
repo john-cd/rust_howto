@@ -124,7 +124,11 @@ impl Preproc {
                         let title = captures
                             .get(2)
                             .map_or(target, |matched| matched.as_str().trim());
-                        format!("[{title}][p~{}]", target.replace(' ', "-"))
+                        if target.is_empty() {
+                            title.to_owned()
+                        } else {
+                            format!("[{title}][p~{}]", target.replace(' ', "-"))
+                        }
                     })?
                 } else {
                     content
