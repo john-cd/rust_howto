@@ -11,6 +11,8 @@ mod wasmer;
 #[cfg(feature = "wasmtime")]
 mod wasmtime;
 #[cfg(feature = "wasmtime")]
+mod wasmtime_component;
+#[cfg(feature = "wasmtime")]
 mod wasmtime_sandbox;
 
 /// Command-line arguments.
@@ -32,6 +34,10 @@ enum Commands {
     #[cfg(feature = "wasmtime")]
     #[command(name = "wasmtime")]
     Wasmtime,
+    /// Runs the `wasmtime_component` example.
+    #[cfg(feature = "wasmtime")]
+    #[command(name = "wasmtime_component")]
+    WasmtimeComponent,
     /// Runs the `wasmtime_sandbox` example.
     #[cfg(feature = "wasmtime")]
     #[command(name = "wasmtime_sandbox")]
@@ -54,6 +60,10 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
             #[cfg(feature = "wasmtime")]
             Commands::Wasmtime => {
                 wasmtime::run()?;
+            }
+            #[cfg(feature = "wasmtime")]
+            Commands::WasmtimeComponent => {
+                wasmtime_component::run()?;
             }
             #[cfg(feature = "wasmtime")]
             Commands::WasmtimeSandbox => {
