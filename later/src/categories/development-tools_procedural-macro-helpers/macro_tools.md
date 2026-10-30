@@ -4,6 +4,12 @@
 
 {{#include macro_tools.incl.md}}
 
+When authoring a derive macro, parse the input into a syntax tree before inspecting its fields or generating tokens. This tested example uses `syn` to parse a struct and generate an implementation:
+
+```rust,noplayground
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/syn.rs:example}}
+```
+
 ## `cargo expand` {#cargo-expand}
 
 [![cargo-expand][c~cargo-expand~docs~badge]][c~cargo-expand~docs]{{hi:cargo-expand}}

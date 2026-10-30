@@ -1,4 +1,4 @@
-# Entries that the example/chapter audit (check_example_chapter_links.py) skips.
+# Entries that the Rust example-integrity inventory accepts as reasoned exceptions.
 # Paths are repository-relative; a trailing "/" matches a directory prefix.
 # Every entry needs a reason. Keep this list short.
 
@@ -15,6 +15,13 @@ bk/crates/cats/development_tools/examples/crate_indices/fixtures.rs
 later/crates/cats/development_tools_ffi/examples/ruby/greeting.rs
 # The gRPC page describes this generated-code check in prose.
 bk/crates/cats/web_programming_http_server/examples/grpc/echo.rs
+# This `Fn` implementation requires nightly-only `fn_traits` and is shown as an ignored snippet.
+bk/crates/standard_library/examples/ops/callable.rs
+# GTK 3 and the affected glib 0.18 dependency chain currently keep these native GUI targets disabled.
+later/crates/cats/gui/examples/web/wry_window.rs
+later/crates/cats/gui/examples/window_creation/tao.rs
+# The owning draft chapter is deferred under #1206 until its scope and examples are reviewed.
+later/crates/cats/simulation/examples/physics_engines/rapier2d.rs
 
 # --- Chapters without an example ------------------------------------------
 # Meta pages: contribution guides, link lists, indices and credits.

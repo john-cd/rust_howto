@@ -18,6 +18,39 @@ use str0m::Rtc;
 use str0m::media::Direction;
 use str0m::media::MediaKind;
 
+/// A media payload with transport-oriented ordering and timing metadata.
+#[derive(Debug, PartialEq, Eq)]
+struct MediaFrame {
+    /// The wrapping sequence number assigned to this frame.
+    sequence_number: u16,
+    /// The wrapping media timestamp for the first sample in this frame.
+    timestamp: u32,
+    /// The encoded media payload.
+    payload: Vec<u8>,
+}
+
+/// Assigns consecutive sequence numbers and timestamps to media payloads.
+fn timestamped_frames(
+    first_sequence_number: u16,
+    first_timestamp: u32,
+    samples_per_frame: u32,
+    payloads: impl IntoIterator<Item = Vec<u8>>,
+) -> impl Iterator<Item = MediaFrame> {
+    let mut sequence_number = first_sequence_number;
+    let mut timestamp = first_timestamp;
+
+    payloads.into_iter().map(move |payload| {
+        let frame = MediaFrame {
+            sequence_number,
+            timestamp,
+            payload,
+        };
+        sequence_number = sequence_number.wrapping_add(1);
+        timestamp = timestamp.wrapping_add(samples_per_frame);
+        frame
+    })
+}
+
 /// Creates a peer that advertises a local UDP address as an ICE candidate.
 fn new_peer(address: &str) -> Result<Rtc> {
     let mut rtc = Rtc::new(Instant::now());
@@ -50,10 +83,14 @@ fn negotiate() -> Result<String> {
     Ok(offer_sdp)
 }
 
-/// Prints the offer that a signaling server would forward.
+/// Prints the offer and timing metadata that a signaling service would forward.
 fn main() -> Result<()> {
     let offer_sdp = negotiate()?;
     println!("{offer_sdp}");
+    let payloads = [vec![0x10, 0x20], vec![0x30, 0x40]];
+    for frame in timestamped_frames(u16::MAX, u32::MAX - 3, 4, payloads) {
+        println!("{frame:?}");
+    }
     Ok(())
 }
 // ANCHOR_END: example
@@ -62,6 +99,7 @@ fn main() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the offer and timing metadata demonstration.
     #[test]
     fn test_main_entry_point() {
         main().expect("the example should run successfully");
@@ -75,5 +113,33 @@ mod tests {
         assert!(sdp.contains("a=sendonly"));
         assert!(sdp.contains("192.0.2.1"));
         Ok(())
+    }
+
+    /// Verifies media sequence numbers and timestamps wrap at their field widths.
+    #[test]
+    fn frame_metadata_advances_and_wraps() {
+        let frames = timestamped_frames(
+            u16::MAX,
+            u32::MAX - 3,
+            4,
+            [vec![0x10], vec![0x20]],
+        )
+        .collect::<Vec<_>>();
+
+        assert_eq!(
+            frames,
+            [
+                MediaFrame {
+                    sequence_number: u16::MAX,
+                    timestamp: u32::MAX - 3,
+                    payload: vec![0x10],
+                },
+                MediaFrame {
+                    sequence_number: 0,
+                    timestamp: 0,
+                    payload: vec![0x20],
+                },
+            ]
+        );
     }
 }

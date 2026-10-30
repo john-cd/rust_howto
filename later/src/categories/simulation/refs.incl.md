@@ -1,7 +1,6 @@
 <!-- TODO Reviewed ??-??-2026 -->
 <!-- markdownlint-disable MD057 -->
 
-[ex~simulation~rapier]: physics_engines.md#rapier
 [ex~simulation~simul]: simulation.md#simul
 [ex~simulation~ode]: simulation.md#ode-solving
 [p~asynchronous]: ../asynchronous/index.md

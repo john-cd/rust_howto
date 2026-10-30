@@ -8,7 +8,7 @@ This crate contains code examples for the **Development Tools Build Utils** cate
 
 - **Autocfg** (`examples/autocfg/`): Demonstrates concepts like `autocfg`.
 - **Build Info** (`examples/build_info/`): Demonstrates concepts like `build_info`.
-- **Build Time Tooling** (`examples/build_time_tooling/`): Demonstrates concepts like `c_library`, `cc_bundled_cpp`, `cc_bundled_cpp1`, `cc_bundled_static`, `cc_bundled_static1`, `cc_defines`, `cc_defines1`, `cpp_library`, `out_dir_codegen`.
+- **Build Time Tooling** (`examples/build_time_tooling/`): Demonstrates bundled C and C++ libraries, C preprocessor definitions, and generated Rust source.
 
 ## Usage
 

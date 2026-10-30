@@ -24,6 +24,12 @@ This formula assumes rows have no padding. General image and GPU APIs may use a 
 
 Keep the pixel format alongside the buffer. Four bytes might mean RGBA, BGRA, or another channel order, and a 16-bit or floating-point format has different component sizes. Likewise, an alpha channel can be straight or premultiplied; blending code must match the convention expected by the renderer.
 
+The tested buffer example below uses two tightly packed RGBA pixels and verifies channel order and alpha:
+
+```rust
+{{#include ../../../crates/cats/multimedia_images/examples/pixel_buffers/main.rs:example}}
+```
+
 ## Update a Frame
 
 With a configured `pixels::Pixels` value named `pixels`, fill the RGBA8 frame as a byte slice:

@@ -49,6 +49,11 @@ path = "examples/sensors/main.rs"
 test = true
 
 [[example]]
+name = "smoltcp"
+path = "examples/smoltcp/main.rs"
+test = true
+
+[[example]]
 name = "useful_crates_embedded"
 path = "examples/useful_crates_embedded/main.rs"
 test = true
@@ -69,6 +74,7 @@ embedded-storage = "0.3.2" # NOR flash traits used by the in-memory flash model.
 heapless = "0.9.3" # Provides the bounded queue and vector.
 postcard = "1.1.3" # Encodes messages compactly without an allocator.
 serde = { version = "1.0.229", features = ["derive"] } # Derives the message encoding.
+smoltcp = { version = "0.14.0", default-features = false, features = ["proto-ipv4"] }
 
 [workspace]
 

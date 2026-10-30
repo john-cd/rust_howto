@@ -2,8 +2,6 @@
 
 # Predicates
 
-{{#include predicates.incl.md}}
-
 - [predicates][c~predicates~lib.rs]↗: Boolean-valued predicate functions.
 
 A predicate is a function that returns `true` or `false`. In Rust, predicates are useful for building reusable, composable filters, validation checks, and runtime-configurable business logic.
@@ -97,4 +95,4 @@ The `predicates` crate provides a wide range of built-in predicates:
 - [[development-tools_testing | Testing]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}

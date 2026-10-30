@@ -1,0 +1,27 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "example-integrity"
+version.workspace = true
+description = "Read-only chapter, include, and Cargo target inventory for the Rust How-to book"
+edition.workspace = true
+license-file.workspace = true
+readme = "README.md"
+publish.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+quote = "1.0.45"
+regex.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+syn = { version = "2", features = ["full"] }
+toml.workspace = true
+walkdir.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

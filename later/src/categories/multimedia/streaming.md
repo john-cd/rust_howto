@@ -32,3 +32,9 @@ Prefer a WebRTC or media pipeline library over implementing RTP packetization di
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
+
+The example advances frame sequence numbers and media timestamps before a protocol-specific packetizer sends them. It illustrates timing metadata only; it is not an RTP implementation.
+
+```rust,noplayground
+{{#include ../../../crates/cats/multimedia/examples/streaming/main.rs:example}}
+```

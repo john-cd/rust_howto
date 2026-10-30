@@ -82,7 +82,7 @@ Macroquad is an immediate-mode framework designed to make a simple 2D game loop 
 ## Related Topics {#related-topics .skip}
 
 - [Game development libraries][p~game-development].
-- [[rendering | Rendering]] and [physics engines](../simulation/physics_engines.md).
+- [[rendering | Rendering]] and [physics engines](../simulation/index.md#physics-engines).
 - [[multimedia_audio | Audio]] and [window creation](../gui/window_creation.md).
 - [[games | Games]] made with Rust.
 

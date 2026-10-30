@@ -37,7 +37,7 @@ A tool for building movable self-referential types.
 - [[ownership_borrowing | Ownership and Borrowing]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}
 
 <div class="hidden">
 </div>

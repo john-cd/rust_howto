@@ -86,4 +86,4 @@ On Windows, the user-level `settings.json` is under `%APPDATA%\Code\User` (typic
 - [[text-editors | Text Editors]].
 
 {{#include refs.incl.md}}
-{{#include ../../refs/link-refs.md}}
+{{#include ../refs/link-refs.md}}

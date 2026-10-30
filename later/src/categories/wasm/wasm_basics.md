@@ -4,6 +4,12 @@
 
 {{#include wasm_basics.incl.md}}
 
+This host-testable example exports an addition function to JavaScript when compiled for the browser target:
+
+```rust,noplayground
+{{#include ../../../crates/cats/wasm/examples/wasm_development/wasm.rs:example}}
+```
+
 ## What is WebAssembly? {#What-is-wasm .skip}
 
 WebAssembly (Wasm) is a portable binary instruction format and execution environment designed primarily as a compiler target. Developers usually write Rust, C, C++, or another source language, then compile it to a `.wasm` module. The human-readable text representation uses the `.wat` extension. See [WebAssembly concepts on MDN][mozilla~webassembly-concepts~website]↗.

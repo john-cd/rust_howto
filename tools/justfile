@@ -45,6 +45,9 @@ alias ca := clippyall
     echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
     cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
+@audit-examples:
+    cargo run --locked -p example-integrity -- --fail
+
 alias nta := nextestall
 
 # Test all code in the workspace (incl. doctests) (all features)

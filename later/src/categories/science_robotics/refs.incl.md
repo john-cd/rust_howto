@@ -71,7 +71,7 @@
 [p~simulation]: ../simulation/simulation.md
 [p~unix]: ../os_unix-apis/unix.md
 [p~visualization]: ../visualization/visualization.md
-[p~physics-engines]: ../simulation/physics_engines.md
+[p~physics-engines]: ../simulation/index.md#physics-engines
 
 [c~embedded-hal-mock~docs]: https://docs.rs/embedded-hal-mock/0.11.1/embedded_hal_mock/eh1/i2c/
 [c~kiddo~docs]: https://docs.rs/kiddo/6.3.0/kiddo/

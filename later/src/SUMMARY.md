@@ -207,7 +207,7 @@
 
 - [Scripting](other/scripting/index.md)
   - [Rhai](other/scripting/rhai.md)
-  - [Task Automation](other/scripting/task_automation.md)
+  - [Task Automation with Rust](other/scripting/task_automation.md)
 
 - [Simulation](categories/simulation/index.md)
   - [Simulation](categories/simulation/simulation.md)

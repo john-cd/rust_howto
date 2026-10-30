@@ -18,14 +18,25 @@ categories = ["multimedia::images"]
 autolib = false
 
 [[example]]
+name = "color_handling"
+path = "examples/color_handling/main.rs"
+test = true
+
+[[example]]
 name = "images"
 path = "examples/images/main.rs"
+test = true
+
+[[example]]
+name = "pixel_buffers"
+path = "examples/pixel_buffers/main.rs"
 test = true
 
 [dependencies]
 image = "0.25.10"
 kamadak-exif.workspace = true
 oxipng.workspace = true
+palette = "0.7.7"
 
 [dev-dependencies]
 # Isolate generated image files during tests.

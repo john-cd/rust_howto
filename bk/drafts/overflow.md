@@ -61,4 +61,4 @@ Because the behavior changes between build profiles, you should use explicit ove
 - [[mathematics | Mathematics]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}

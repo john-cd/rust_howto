@@ -42,4 +42,4 @@ Crates like [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}} or [`wasmer`][c~wasm
 - [[wasm | WebAssembly]].
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include refs/link-refs.md}}

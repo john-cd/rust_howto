@@ -12,15 +12,10 @@ Most common image files and displays use sRGB-encoded channel values. Those enco
 
 [`palette`][c~palette~docs]↗{{hi:palette}} makes the distinction explicit in its types. For example, convert an 8-bit sRGB color to linear sRGB for processing, then encode it for display:
 
-```rust
-use palette::{LinSrgb, Srgb};
+The tested example decodes an 8-bit sRGB color to linear light for processing, then converts it back for display.
 
-let stored = Srgb::<u8>::new(128, 64, 32);
-let linear: LinSrgb<f32> = stored.into_linear();
-
-// Perform color calculations on `linear` values here.
-
-let display: Srgb<u8> = Srgb::from_linear(linear);
+```rust,noplayground
+{{#include ../../../crates/cats/multimedia_images/examples/color_handling/main.rs:example}}
 ```
 
 Do not interpret `Srgb<u8>` components as linear values in the range 0.0 to 1.0 without decoding the transfer function. Likewise, do not apply the RGB transfer function to alpha; alpha describes coverage or opacity, not light intensity.
@@ -45,8 +40,6 @@ When blending colors, decode RGB into a linear space first. Keep alpha linear, c
 [![palette][c~palette~docs~badge]][c~palette~docs] [![palette~crates.io][c~palette~crates.io~badge]][c~palette~crates.io] [![palette~repo][c~palette~repo~badge]][c~palette~repo] [![palette~lib.rs][c~palette~lib.rs~badge]][c~palette~lib.rs]{{hi:palette}}{{hi:Linear}}{{hi:Pixel}}{{hi:Rgb}}{{hi:Color}}{{hi:Conversion}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
 
 Convert and manage colors with a focus on correctness, flexibility and ease of use.
-
-<!-- TODO: add the palette example here (was {{#example palette}}) -->
 
 ## Related Topics {#related-topics .skip}
 

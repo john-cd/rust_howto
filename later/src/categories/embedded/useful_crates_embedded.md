@@ -32,7 +32,11 @@ It is useful for compact messages in constrained systems. Define a stable messag
 
 [`smoltcp`][c~smoltcp~docs]↗{{hi:smoltcp}} is a TCP/IP stack designed for bare-metal, real-time systems without a heap.
 
-<!-- TODO: add the smoltcp example here (was {{#example smoltcp}}) -->
+The following host-side example checks whether IPv4 addresses belong to a configured subnet. It exercises `smoltcp`'s address primitives without opening a socket or requiring a network device.
+
+```rust,noplayground
+{{#include ../../../crates/cats/embedded/examples/smoltcp/main.rs:example}}
+```
 
 ## `portable-atomic` {#portable-atomic}
 

@@ -6,6 +6,7 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod arrayvec;
+mod heapless;
 mod smallvec;
 mod tinyvec;
 
@@ -27,6 +28,9 @@ enum Commands {
     /// Runs the `smallvec` example.
     #[command(name = "smallvec")]
     Smallvec,
+    /// Runs the `heapless` example.
+    #[command(name = "heapless")]
+    Heapless,
     /// Runs the `tinyvec` example.
     #[command(name = "tinyvec")]
     Tinyvec,
@@ -41,6 +45,9 @@ fn dispatch(cli: Cli) {
             }
             Commands::Smallvec => {
                 smallvec::run();
+            }
+            Commands::Heapless => {
+                heapless::run();
             }
             Commands::Tinyvec => {
                 tinyvec::run();
@@ -61,7 +68,8 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["arrayvec", "smallvec", "tinyvec"];
+    const SUBCOMMANDS: &[&str] =
+        &["arrayvec", "heapless", "smallvec", "tinyvec"];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -97,7 +105,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

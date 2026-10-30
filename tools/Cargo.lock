@@ -565,6 +565,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "example-integrity"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "clap",
+ "quote",
+ "regex",
+ "serde",
+ "serde_json",
+ "syn 2.0.119",
+ "tempfile",
+ "toml 1.1.8+spec-1.1.0",
+ "walkdir",
+]
+
+[[package]]
 name = "fastrand"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

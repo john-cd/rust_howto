@@ -4,6 +4,12 @@
 
 {{#include task_automation.incl.md}}
 
+The following tested example parses a cron schedule and calculates its next occurrence without waiting or starting a background task:
+
+```rust,noplayground
+{{#include ../../../crates/other/examples/scheduling/cron_next.rs:example}}
+```
+
 You can build simple Rust applications to automate repetitive tasks. The following tools may help:
 
 ## Scheduling {#scheduling}

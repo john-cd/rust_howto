@@ -24,7 +24,7 @@ fn main() {
     // item.
     if let Err(err) = vec.push(4) {
         println!("Error pushing to vector: {err:?}");
-    };
+    }
     assert_eq!(vec.as_slice(), &[1, 2, 3]);
 
     println!("Vector: {vec:?}");

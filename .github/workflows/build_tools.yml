@@ -81,4 +81,5 @@ jobs:
             cargo clippy --workspace --all-targets --locked --all-features -- --deny warnings
             cargo test --workspace --all-targets --locked --all-features
             cargo test --workspace --doc --locked --all-features
+            cargo run --locked -p example-integrity -- --fail
           '

@@ -5,6 +5,7 @@ resolver = "3"
 members = [
     "clean",
     "crate_indices",
+    "example-integrity",
     "mdbook-private",
     "mdbook-scrub",
     "templ",

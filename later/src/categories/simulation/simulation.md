@@ -42,14 +42,14 @@ Monte Carlo methods use repeated random samples to estimate a distribution or ex
 
 ## Physics Simulation {#physics-simulation}
 
-For rigid-body simulation and physics engines, see the [Rapier example][ex~simulation~rapier] and [[physics_engines | Physics Engines]].
+For rigid-body simulation and physics engines, see the [Physics Engines overview](index.md#physics-engines).
 
 ## Related Topics {#related-topics .skip}
 
 - [[science_robotics | Robotics]].
 - [[game-development | Game Development]].
 - [[visualization | Visualization]].
-- [[physics_engines | Physics Engines]].
+- [Physics Engines](index.md#physics-engines).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
