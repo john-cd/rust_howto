@@ -43,9 +43,7 @@ WAIT move code examples from later/ to bk/ when code + text ready
 
 ### Blocked on a desktop, hardware or manual run
 
-
 ### Blocked on an upstream or advisory-held dependency
-
 
 ### Blocked on an owner or human decision
 
@@ -74,7 +72,6 @@ WAIT move code examples from later/ to bk/ when code + text ready
 - [#1227](https://github.com/john-cd/rust_howto/issues/1227) — **P4** — rendering_graphics-api/vulkan.md: decide what to cover / write
 - [#1228](https://github.com/john-cd/rust_howto/issues/1228) — **P4** — rendering_graphics-api/shaders.md: decide what to cover, write
 - [#963](https://github.com/john-cd/rust_howto/issues/963) — **P4** — Review natural-language-processing coverage
-- [#1206](https://github.com/john-cd/rust_howto/issues/1206) — **P4** — simulation/physics_engines.md: write / decide what to cover
 - [#251](https://github.com/john-cd/rust_howto/issues/251) — **P4** — cover DSLs in Rust
 - [#19](https://github.com/john-cd/rust_howto/issues/19) — **P3** — review Google Analytics setup
 - [#16](https://github.com/john-cd/rust_howto/issues/16) — **P3** — review license
