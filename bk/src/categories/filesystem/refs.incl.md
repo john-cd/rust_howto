@@ -34,3 +34,8 @@
 [ex~filesystem~walk-the-filesystem-while-respecting-ignore-files]: directory_traversal.md#walk-the-filesystem-while-respecting-ignore-files
 [ex~filesystem~watch-files-or-dirs]: file_watching.md#watch-files-or-dirs
 [p~filesystem]: index.md
+[p~directories]: directories.md
+[p~directory_traversal]: directory_traversal.md
+[p~file_watching]: file_watching.md
+[p~paths]: paths.md
+[p~symbolic_links]: symbolic_links.md

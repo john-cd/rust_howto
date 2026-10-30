@@ -38,3 +38,15 @@
 [mdbook-utils~repo]: https://github.com/john-cd/mdbook-utils
 [mdbook-utils~repo~badge]: https://img.shields.io/badge/mdbook--utils-GitHub-steelblue?logo=github
 [mdbook-utils~user-guide]: https://john-cd.github.io/mdbook-utils
+[p~algorithms]: ../../categories/algorithms/index.md
+[p~book_editing_and_example_code_development]: book_editing_and_example_code_development.md
+[p~data-structures]: ../../categories/data-structures/index.md
+[p~dev_container_and_docker]: dev_container_and_docker.md
+[p~development_environment_setup]: development_environment_setup.md
+[p~documentation_generation]: documentation_generation.md
+[p~macros]: ../../language/macros.md
+[p~modules_and_paths]: ../../code-organization/modules_and_paths.md
+[p~repository_structure]: repository_structure.md
+[p~rust-installation]: ../../rust-installation/index.md
+[p~statistics]: ../../categories/mathematics/statistics.md
+[p~topics_of_interest]: topics_of_interest.md

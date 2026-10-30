@@ -5995,6 +5995,7 @@
 [c~opencv~website~badge]: https://img.shields.io/badge/opencv-coral
 [c~openidconnect~crates.io]: https://crates.io/crates/openidconnect
 [c~openidconnect~crates.io~badge]: https://img.shields.io/badge/crates.io-openidconnect-crimson
+[c~openidconnect~docs]: https://docs.rs/openidconnect
 [c~openidconnect~lib.rs]: https://lib.rs/crates/openidconnect
 [c~openidconnect~lib.rs~badge]: https://img.shields.io/badge/lib.rs-openidconnect-yellow
 [c~openidconnect~repo]: https://github.com/ramosbugs/openidconnect-rs
