@@ -66,9 +66,9 @@ mod tests {
     /// Runs the tracing instrument example through its entry point.
     #[test]
     fn test_tracing_instrument_example_entry_point() {
-        tracing_subscriber::fmt()
+        let _ = tracing_subscriber::fmt()
             .with_max_level(tracing::Level::TRACE)
-            .init();
+            .try_init();
         main();
     }
 
@@ -77,7 +77,12 @@ mod tests {
 
     impl std::io::Write for Buf {
         fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
-            self.0.lock().unwrap().extend_from_slice(data);
+            self.0
+                .lock()
+                .map_err(|_| {
+                    std::io::Error::other("tracing output mutex is poisoned")
+                })?
+                .extend_from_slice(data);
             Ok(data.len())
         }
 
@@ -103,7 +108,12 @@ mod tests {
             .with_ansi(false)
             .finish();
         tracing::subscriber::with_default(subscriber, f);
-        String::from_utf8(buf.0.lock().unwrap().clone()).unwrap()
+        let output = buf
+            .0
+            .lock()
+            .expect("tracing output mutex should not be poisoned")
+            .clone();
+        String::from_utf8(output).expect("tracing output should be valid UTF-8")
     }
 
     #[test]
@@ -119,7 +129,7 @@ mod tests {
         let out = capture(|| {
             tokio::runtime::Builder::new_current_thread()
                 .build()
-                .unwrap()
+                .expect("current-thread Tokio runtime should build")
                 .block_on(my_async_function());
         });
         assert!(out.contains("my_async_span"), "{out}");
