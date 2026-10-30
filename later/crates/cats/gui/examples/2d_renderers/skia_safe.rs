@@ -122,9 +122,11 @@ mod tests {
         Ok(())
     }
 
-    /// Runs the Skia Safe renderer example.
+    /// Runs the Skia Safe renderer example through its entry point.
     #[test]
     fn test_skia_safe_renderer_example() -> anyhow::Result<()> {
-        run()
+        main()?;
+        assert!(!render_png()?.is_empty());
+        Ok(())
     }
 }

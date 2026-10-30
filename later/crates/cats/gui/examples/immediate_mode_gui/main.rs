@@ -13,3 +13,15 @@ fn main() -> Result<(), eframe::Error> {
     egui::run()?;
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the dispatcher through its entry point.
+    #[test]
+    #[ignore = "needs a desktop session that can open an egui window"]
+    fn test_main_entry_point() {
+        assert!(main().is_ok());
+    }
+}

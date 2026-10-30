@@ -72,3 +72,26 @@ fn main() {
 pub fn run() {
     main();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the example through its entry point.
+    #[test]
+    fn test_main_entry_point() {
+        main();
+        run();
+    }
+
+    /// The sample data points to a response time in milliseconds.
+    #[test]
+    fn measurement_holds_request_and_response_time() {
+        let measurement = Measurement {
+            request: 1.0,
+            response_ms: 42.0,
+        };
+        assert!((measurement.response_ms - 42.0).abs() < f64::EPSILON);
+        assert!((measurement.request - 1.0).abs() < f64::EPSILON);
+    }
+}

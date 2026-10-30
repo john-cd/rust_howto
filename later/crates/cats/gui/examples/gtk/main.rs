@@ -35,24 +35,72 @@ enum Commands {
 
 /// Runs the example selected on the command line.
 fn main() {
-    #[cfg(all(feature = "gtk", not(target_os = "windows")))]
-    {
-        let cli = Cli::parse();
+    run_with_args(std::env::args_os());
+}
 
-        if let Some(command) = cli.command {
-            match command {
-                Commands::Gtk4 => {
-                    gtk4::run();
-                }
-                Commands::Relm4 => {
-                    relm4::run();
-                }
+/// Runs the example selected by `args`, the first item being the program name.
+#[cfg(all(feature = "gtk", not(target_os = "windows")))]
+fn run_with_args<I, T>(args: I)
+where
+    I: IntoIterator<Item = T>,
+    T: Into<std::ffi::OsString> + Clone,
+{
+    let cli = Cli::parse_from(args);
+
+    if let Some(command) = cli.command {
+        match command {
+            Commands::Gtk4 => {
+                gtk4::run();
+            }
+            Commands::Relm4 => {
+                relm4::run();
             }
         }
     }
+}
 
-    #[cfg(all(feature = "gtk", target_os = "windows"))]
-    {
-        eprintln!("GTK examples are disabled on Windows.");
+/// Reports that the GTK examples are not available on Windows.
+#[cfg(all(feature = "gtk", target_os = "windows"))]
+fn run_with_args<I, T>(_args: I)
+where
+    I: IntoIterator<Item = T>,
+    T: Into<std::ffi::OsString> + Clone,
+{
+    eprintln!("GTK examples are disabled on Windows.");
+}
+
+#[cfg(all(test, feature = "gtk", not(target_os = "windows")))]
+mod tests {
+    use clap::CommandFactory as _;
+
+    use super::*;
+
+    /// The command-line definition is internally consistent.
+    #[test]
+    fn cli_definition_is_valid() {
+        Cli::command().debug_assert();
+    }
+
+    /// Running without a subcommand is accepted and runs nothing.
+    #[test]
+    fn missing_subcommand_runs_nothing() {
+        run_with_args(["example"]);
+    }
+
+    /// Every declared subcommand name is accepted.
+    #[test]
+    fn declared_subcommands_parse() {
+        for name in ["gtk4", "relm4"] {
+            assert!(
+                Cli::try_parse_from(["example", name]).is_ok(),
+                "subcommand `{name}` should parse"
+            );
+        }
+    }
+
+    /// Unknown subcommands are rejected.
+    #[test]
+    fn unknown_subcommand_is_rejected() {
+        assert!(Cli::try_parse_from(["example", "no-such-example"]).is_err());
     }
 }

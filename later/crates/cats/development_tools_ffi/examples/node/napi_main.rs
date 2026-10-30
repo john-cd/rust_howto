@@ -17,5 +17,6 @@ mod tests {
     #[test]
     fn test_main_entry_point() {
         main();
+        assert_eq!(napi::sum(20, 22), 42);
     }
 }

@@ -66,7 +66,7 @@ mod tests {
     /// Runs the egui log viewer example through its entry point.
     #[test]
     fn test_egui_log_viewer_example_entry_point() {
-        run_example();
+        main();
     }
 
     #[test]
