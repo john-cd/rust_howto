@@ -15,7 +15,7 @@
 
 ### Urgent
 
-- [ ] review all TODO comments in the codebase and fix. ignore TODO Reviewed markers
+- [-] review all TODO comments in the codebase and fix. ignore TODO Reviewed markers (only the Windows reviews for Vello, Ruby FFI and ggez remain, see #2115)
 - [-] most book examples should have a private main() function and a pub fn run() function + a test that call main(). run() should be called by the main() function of the example.
 - [-] all book examples should have a test that calls the private main() function and verifies the expected behavior. also add tests to verify other functions / code items within the exanple. ensure coverage for edge cases and error handling.
 - [ ] improve comments within examples. add context and explanations where necessary. end with a period.
