@@ -5,6 +5,11 @@
 //!
 //! Needs a server: set `IMAP_HOST`, `IMAP_USER` and `IMAP_PASSWORD`
 //! (use an app password, and never log credentials).
+//!
+//! IMAP is the protocol mail clients use to read messages that stay stored on
+//! the mail server, so several devices see the same mailbox. (Sending mail uses
+//! a different protocol, SMTP.) Use an app password, a separate credential you
+//! can revoke, rather than your main account password.
 
 use anyhow::Context;
 use anyhow::Result;

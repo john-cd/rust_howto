@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Collects the results of multiple futures with `FuturesUnordered`.
+//!
+//! Futures are asynchronous operations that may not have finished yet.
+//! `FuturesUnordered` runs a growing set of them at once and yields each result
+//! as soon as it is ready, in completion order rather than the order you added
+//! them. It is useful for fetching many URLs or querying several services
+//! concurrently.
 
 use futures::stream::FuturesUnordered;
 use futures::stream::StreamExt;

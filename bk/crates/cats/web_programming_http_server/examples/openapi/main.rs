@@ -1,6 +1,11 @@
 //! Describe an HTTP API and its data types.
 //!
 //! TODO Reviewed ??-??-2026.
+//!
+//! OpenAPI is a standard, machine-readable description of an HTTP API: its
+//! paths, parameters and data types. Tools use it to generate documentation
+//! pages, client libraries and request validators, which keeps the server and
+//! its callers in agreement.
 
 mod schemars;
 mod utoipa;

@@ -6,6 +6,11 @@
 //! `sled` is a pure-Rust high-performance embedded database.
 //!
 //! Add `sled = "0.34.7"` (or latest) to `Cargo.toml`.
+//!
+//! An embedded database runs inside your program as a library, so there is no
+//! separate server to install or connect to. It stores keys and values on disk.
+//! This suits desktop apps, command-line tools and edge devices that need to
+//! keep data between runs.
 
 /// Opens a `sled` database, then inserts, reads and removes values.
 fn main() -> anyhow::Result<()> {

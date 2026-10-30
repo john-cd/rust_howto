@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Converts an HTML email body to wrapped plain text with `html2text`.
+//!
+//! Most emails ship an HTML body. Converting it to text is useful for search
+//! indexing, previews, notifications and for readers who cannot display HTML.
 
 /// Converts the sample HTML email and checks its text alternative.
 fn main() -> anyhow::Result<()> {
@@ -26,7 +29,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

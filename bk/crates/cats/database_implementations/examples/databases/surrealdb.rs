@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Use SurrealDB's embedded in-memory engine for a self-contained CRUD example.
+//!
+//! SurrealDB is a multi-model database: one engine offers documents, tables
+//! and graph relations through the SurrealQL query language. Here it runs
+//! embedded and in memory, so the example needs no server and keeps no data
+//! after it exits. CRUD stands for create, read, update and delete, the four
+//! basic operations on stored records.
 
 #![allow(
     clippy::result_large_err,

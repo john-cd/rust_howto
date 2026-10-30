@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creating and consuming a `Stream` of numbers.
+//!
+//! A stream is the asynchronous version of an iterator: it yields many values
+//! over time, awaiting between them. Examples are lines arriving on a socket,
+//! events from a message queue, or the pages of a paginated API.
 
 use futures::Stream;
 use futures::stream;

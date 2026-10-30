@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Parse a multipart email and print its subject and plain-text part.
+//!
+//! A multipart email carries several versions of the body, for example plain
+//! text and HTML, plus attachments, each as a separate part. Mail clients show
+//! the richest part they support, and programs usually read the plain-text
+//! part.
 
 use anyhow::Context as _;
 use anyhow::Result;
