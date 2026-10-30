@@ -382,11 +382,13 @@ dependencies = [
 name = "algorithms"
 version = "0.1.2"
 dependencies = [
+ "ahash 0.8.12",
  "anyhow",
  "base16ct 1.0.0",
  "base64ct",
  "blake3",
  "clap",
+ "criterion",
  "data-encoding",
  "fastrand 2.5.0",
  "foldhash 0.2.0",
@@ -397,6 +399,7 @@ dependencies = [
  "rand 0.10.3",
  "rand_distr 0.6.0",
  "ring",
+ "rustc-hash 2.1.3",
  "sha1 0.11.0",
  "sha2 0.11.1",
  "tempfile",
@@ -4843,6 +4846,7 @@ dependencies = [
  "bytes",
  "clap",
  "crates_io_api",
+ "criterion",
  "fixedbitset 0.5.7",
  "flagset",
  "fnv",
@@ -11636,6 +11640,7 @@ dependencies = [
  "anyhow",
  "bumpalo",
  "clap",
+ "criterion",
  "lazy_static",
  "mimalloc",
  "once_cell",
