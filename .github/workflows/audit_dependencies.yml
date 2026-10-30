@@ -8,18 +8,38 @@ on:
   push:
     branches: [develop]
     paths:
-      - "later/crates/Cargo.lock"
-      - "later/crates/deny.toml"
       - "bk/crates/Cargo.lock"
+      - "bk/crates/Cargo.toml"
       - "bk/crates/**/Cargo.toml"
+      - "later/crates/Cargo.lock"
+      - "later/crates/Cargo.toml"
+      - "later/crates/**/Cargo.toml"
+      - "tools/Cargo.lock"
+      - "tools/Cargo.toml"
+      - "tools/**/Cargo.toml"
+      - "xmpl/Cargo.lock"
+      - "xmpl/Cargo.toml"
+      - "xmpl/**/Cargo.toml"
       - "bk/crates/deny.toml"
+      - "later/crates/deny.toml"
       - ".github/workflows/audit_dependencies.yml"
   pull_request:
     branches: [develop]
     paths:
       - "bk/crates/Cargo.lock"
+      - "bk/crates/Cargo.toml"
       - "bk/crates/**/Cargo.toml"
+      - "later/crates/Cargo.lock"
+      - "later/crates/Cargo.toml"
+      - "later/crates/**/Cargo.toml"
+      - "tools/Cargo.lock"
+      - "tools/Cargo.toml"
+      - "tools/**/Cargo.toml"
+      - "xmpl/Cargo.lock"
+      - "xmpl/Cargo.toml"
+      - "xmpl/**/Cargo.toml"
       - "bk/crates/deny.toml"
+      - "later/crates/deny.toml"
       - ".github/workflows/audit_dependencies.yml"
   schedule:
     - cron: "17 5 * * 1"
@@ -33,6 +53,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  ## Regression check: the trigger paths must cover every audited workspace.
+  check-trigger-paths:
+    name: audit workflow trigger paths
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: python3 scripts/check_audit_workflow_paths.py
+      - run: python3 -m unittest scripts.tests.test_check_audit_workflow_paths
+
   cargo-deny:
     name: cargo deny (${{ matrix.checks }})
     runs-on: ubuntu-24.04
