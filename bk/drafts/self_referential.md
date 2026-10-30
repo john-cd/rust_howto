@@ -13,7 +13,7 @@ Self-referential types hold references to memory owned by the same struct. This 
 This is an advanced topic. A self-referential struct must be pinned after construction to guarantee that it never moves again.
 
 ```rust,editable
-{{#include ../../crates/language/examples/lifetimes/self_referential_struct2.rs:example}}
+{{#include ../crates/language/examples/lifetimes/self_referential_struct2.rs:example}}
 ```
 
 ### Why this is hard

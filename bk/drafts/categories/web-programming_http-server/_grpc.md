@@ -39,6 +39,12 @@ tonic-prost-build = "0.14.6"
 
 The integration test binds a Tokio listener to an available local port, sends a generated client request, checks the greeting, and stops the server with a one-shot shutdown signal. It does not depend on a fixed port or a timing delay.
 
+The matching client connects to the running `Greeter` server through the generated client type and prints the reply. Start the server example first.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/web_programming_http_server/examples/grpc/tonic_client.rs:example}}
+```
+
 ## Serve gRPC to Browsers with gRPC-Web {#grpc-web}
 
 [![tonic-web][c~tonic-web~docs~badge]][c~tonic-web~docs]{{hi:tonic-web}} [![tonic][c~tonic~docs~badge]][c~tonic~docs]{{hi:tonic}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}

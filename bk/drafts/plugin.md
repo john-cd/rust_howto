@@ -9,7 +9,7 @@ A plugin architecture lets a host application support extensions that are develo
 [![std][c~std~docs~badge]][c~std~docs]
 
 ```rust,editable
-{{#include ../../crates/standard_library/examples/any/plugin.rs:example}}
+{{#include ../crates/standard_library/examples/any/plugin.rs:example}}
 ```
 
 For a true plugin architecture where plugins are compiled as separate shared libraries (`.so` on Linux, `.dll` on Windows, `.dylib` on macOS) and loaded at runtime, you would typically:

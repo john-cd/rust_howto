@@ -6,6 +6,14 @@
 
 Use `image` for buffers and common codecs, `kamadak-exif` to inspect camera metadata, and `oxipng` to recompress PNGs. These recipes generate their own data and do not need downloaded photographs. For parallel processing of a directory of files, use the published [Rayon thumbnail recipe][images~parallel-thumbnails] instead of duplicating its traversal and worker setup here.
 
+## Create and Save an Image {#create-image}
+
+An `ImageBuffer` holds pixels in memory; `save` chooses the file format from the extension. The example builds an RGB gradient in memory and writes it to the PNG path given on the command line (or `generated_image.png` by default).
+
+```rust,editable
+{{#include ../../../crates/cats/multimedia_images/examples/images/images.rs:example}}
+```
+
 ## Resize and Crop
 
 [![image][c~image~docs~badge]][c~image~docs]

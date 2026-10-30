@@ -1,0 +1,54 @@
+# Entries that the example/chapter audit (check_example_chapter_links.py) skips.
+# Paths are repository-relative; a trailing "/" matches a directory prefix.
+# Every entry needs a reason. Keep this list short.
+
+# --- Examples without a chapter -------------------------------------------
+# Disabled on purpose: the dependency is affected by an advisory (see the table in the chapter).
+later/crates/cats/science_robotics/examples/robotics_frameworks/openrr.rs
+later/crates/cats/science_robotics/examples/robotics_frameworks/zenoh.rs
+# riker is unmaintained; its source is kept for reference and the dependency stays disabled.
+bk/crates/cats/concurrency/examples/actors/riker.rs
+# Placeholder entry point; the chapter is deferred (#1748).
+bk/crates/cats/graphics/examples/graphics.rs
+# Support modules for examples whose entry point is included under another name.
+bk/crates/cats/development_tools/examples/crate_indices/fixtures.rs
+later/crates/cats/development_tools_ffi/examples/ruby/greeting.rs
+# The gRPC page describes this generated-code check in prose.
+bk/crates/cats/web_programming_http_server/examples/grpc/echo.rs
+# Legacy command names kept by the dispatcher; the chapter includes the *1 variants (cleanup tracked in the audit issue).
+bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/c_library.rs
+bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cpp_library.rs
+bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_cpp.rs
+bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_bundled_static.rs
+bk/crates/cats/development_tools_build_utils/examples/build_time_tooling/cc_defines.rs
+
+# --- Chapters without an example ------------------------------------------
+# Meta pages: contribution guides, link lists, indices and credits.
+bk/src/appendices/
+bk/src/links/
+bk/src/indices/
+bk/src/word_index.md
+bk/src/crate-selection/current_state_of_the_art.md
+bk/drafts/indices/
+bk/drafts/FRAGMENTS.md
+bk/drafts/TOREVIEW.md
+bk/drafts/contributing/
+# Tooling and command-line pages: they describe programs run from the shell
+# (Cargo, rustup, linkers, CI services), so there is no Rust code to show.
+bk/drafts/categories/development-tools/
+bk/drafts/categories/development-tools_cargo-plugins/
+bk/drafts/categories/command-line-utilities/
+bk/drafts/categories/development-tools_build-utils/build_cache.md
+bk/drafts/categories/development-tools_debugging/debugging.md
+bk/drafts/categories/development-tools_profiling/assembly.md
+bk/drafts/categories/text-editors/
+bk/drafts/categories/web-programming_http-server/static_website_generators.md
+later/src/categories/virtualization/
+later/src/other/devops/
+later/src/other/written-in-rust/
+later/src/other/architecture/
+later/src/other/cloud/
+# Delegates to the draft CSV recipes on purpose (see the page).
+later/src/other/data-processing/csv.md
+# Example disabled until its dependency advisory is resolved.
+later/src/categories/science_robotics/robotics_frameworks.md

@@ -18,7 +18,11 @@ The hidden host runner loads a six-instruction program that sums 5 down to 1, pr
 
 [`PolkaVM`][polkavm~repo]{{hi:polkavm}} is a general-purpose, user-level virtual machine based on RISC-V. Its maintainers list sandboxing among its design goals and describe the project as unfinished, so check the upstream documentation for its current status before choosing it.
 
-The separate `polkavm_host.rs` example preserves the typed host-callback demonstration. Supply a compatible guest with `cargo run -p emulators --example emulators -- path/to/guest.polkavm`; without a guest path it prints usage after the register VM runs.
+The host below registers a typed callback, instantiates a guest module, and calls an exported guest function. The guest must import `host_increment` and export `add_one_with_host`. Supply a compatible guest with `cargo run -p emulators --example emulators -- path/to/guest.polkavm`; without a guest path it prints usage after the register VM runs.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/emulators/examples/emulators/polkavm_host.rs:example}}
+```
 
 ## ROM Loading {#rom-loading}
 

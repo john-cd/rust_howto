@@ -363,6 +363,14 @@ Then, in your main crate, use the macro like this:
 {{#include ../../crates/language/examples/macros/proc_macro_function.rs:example}}
 ```
 
+### Test Macro Logic with `proc-macro2`
+
+[`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} wraps the compiler's `proc_macro::TokenStream` in a type that also works outside a macro invocation, so the token-processing logic can be unit-tested as ordinary code. `replace_ident!` converts its input to a `proc_macro2::TokenStream`, renames the identifier in a plain function, and converts the result back.
+
+```rust,editable
+{{#include ../../crates/language/examples/macros/proc_macro2_example.rs:example}}
+```
+
 ### Avoid Common Pitfalls with Macros {#macro-pitfalls}
 
 Watch out for the following common macro pitfalls:

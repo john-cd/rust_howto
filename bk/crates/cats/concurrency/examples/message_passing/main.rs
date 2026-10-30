@@ -6,7 +6,6 @@ use clap::Parser;
 use clap::Subcommand;
 
 mod flume;
-mod flume_commands;
 mod flume_tick;
 mod message_passing_crossbeam_channel;
 mod message_passing_crossbeam_channel_after_tick;
@@ -38,9 +37,6 @@ enum Commands {
     /// Runs the `flume_tick` example.
     #[command(name = "flume_tick")]
     FlumeTick,
-    /// Runs the bounded command-channel `flume` example.
-    #[command(name = "flume_commands")]
-    FlumeCommand,
 }
 
 /// Runs the example selected on the command line.
@@ -62,9 +58,6 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
             Commands::FlumeTick => {
                 flume_tick::run()?;
             }
-            Commands::FlumeCommand => {
-                flume_commands::run();
-            }
         }
     }
     Ok(())
@@ -82,7 +75,7 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["flume", "message_passing_crossbeam_channel", "message_passing_crossbeam_channel_after_tick", "message_passing_mpsc", "flume_tick", "flume_commands"];
+    const SUBCOMMANDS: &[&str] = &["flume", "message_passing_crossbeam_channel", "message_passing_crossbeam_channel_after_tick", "message_passing_mpsc", "flume_tick"];
 
     /// The command-line definition is internally consistent.
     #[test]

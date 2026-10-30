@@ -54,6 +54,16 @@ See:
 - [[text-processing | Text Processing]].
 - [[string_parsing | String Parsing]].
 
+## Build Byte Buffers with `bytes` {#bytes}
+
+[![bytes][c~bytes~docs~badge]][c~bytes~docs]{{hi:bytes}} [![bytes~crates.io][c~bytes~crates.io~badge]][c~bytes~crates.io] [![bytes~repo][c~bytes~repo~badge]][c~bytes~repo] [![bytes~lib.rs][c~bytes~lib.rs~badge]][c~bytes~lib.rs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
+
+[`bytes`][c~bytes~docs]↗{{hi:bytes}} provides `BytesMut`, a growable byte buffer, and `Bytes`, a cheaply cloneable, immutable view of shared bytes. Append to a `BytesMut` with the `BufMut` methods, then call `freeze` to turn it into `Bytes` that can be shared without copying. Network libraries such as Tokio use these types for protocol buffers; a `String` or `Vec<u8>` is enough for ordinary text handling.
+
+```rust,editable
+{{#include ../../../crates/cats/data_structures/examples/strings/bytes.rs:example}}
+```
+
 ## Related Data Structures {#related-data-structures .skip}
 
 - [[slices | Slices]].
