@@ -69,7 +69,7 @@ Send a multipart message with an HTML body and a plain-text fallback. The sender
 
 [![aws-sdk-cloudwatch][c~aws-sdk-cloudwatch~docs~badge]][c~aws-sdk-cloudwatch~docs]{{hi:aws-sdk-cloudwatch}}
 
-Send custom metrics with dimensions. Every unique combination of dimension values is billed as a separate metric, so avoid unbounded values such as user identifiers.
+Send custom metrics with dimensions. Every unique combination of dimension values is billed as a separate metric, so avoid unbounded values such as user identifiers. Compare CloudWatch's push model and dimension pricing with Prometheus's pull-based scraping and PromQL querying when designing observability for cross-cloud or AWS-native workloads.
 
 ```rust,no_run
 {{#include ../../../crates/other/examples/cloud/aws_cloudwatch.rs:example}}
