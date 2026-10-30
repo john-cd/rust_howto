@@ -54,8 +54,6 @@ The application supplies an I2C implementation from its HAL. A sensor driver can
 
 [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} is the blocking trait set for portable peripheral drivers. Its I2C, SPI, digital I/O, PWM, and delay traits describe operations; the chip HAL supplies their concrete implementations. Async and polling interfaces live in companion crates.
 
-{{#example embedded-hal}}
-
 The following host-side example implements `embedded-hal`'s output-pin trait for a fake pin. It builds and runs without a board; replace the mock with the pin type provided by the target's HAL in firmware.
 
 ```rust,noplayground

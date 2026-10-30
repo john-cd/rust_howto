@@ -46,7 +46,7 @@ When blending colors, decode RGB into a linear space first. Keep alpha linear, c
 
 Convert and manage colors with a focus on correctness, flexibility and ease of use.
 
-{{#example palette}}
+<!-- TODO: add the palette example here (was {{#example palette}}) -->
 
 ## Related Topics {#related-topics .skip}
 

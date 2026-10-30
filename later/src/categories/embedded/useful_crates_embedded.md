@@ -32,7 +32,7 @@ It is useful for compact messages in constrained systems. Define a stable messag
 
 [`smoltcp`][c~smoltcp~docs]↗{{hi:smoltcp}} is a TCP/IP stack designed for bare-metal, real-time systems without a heap.
 
-{{#example smoltcp}}
+<!-- TODO: add the smoltcp example here (was {{#example smoltcp}}) -->
 
 ## `portable-atomic` {#portable-atomic}
 
