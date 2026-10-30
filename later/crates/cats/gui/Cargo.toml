@@ -139,12 +139,12 @@ eframe = "0.37.0"
 eframe_034 = { package = "eframe", version = "0.34.3", optional = true }
 eframe_036 = { package = "eframe", version = "0.36.2", optional = true }
 egui = "0.37.0" # Needs smallvec 1.16; keep Kube on the serde-saphyr 1.3 revision.
-egui-notify = { version = "0.23.0", optional = true }
-egui-phosphor = { version = "0.14.0", optional = true }
+egui-notify = { version = "0.23.0", optional = true } # Blocked: 0.24 needs egui 0.37, but egui-phosphor 0.14 (used with it in egui_toasts_icons) needs egui 0.36.
+egui-phosphor = { version = "0.14.0", optional = true } # Latest release; depends on egui 0.36, one release behind egui 0.37.
 egui_extras = "0.37.0"
 egui_plot = "0.38.0"
 egui_tiles = { version = "0.18.0", optional = true }
-egui_tracing = { version = "0.3.0", optional = true }
+egui_tracing = { version = "0.3.0", optional = true } # Latest release; depends on egui 0.34, so it is paired with eframe_034 (egui_log_viewer).
 femtovg = { version = "0.28.0", optional = true }
 floem = { version = "0.2.0", optional = true }
 gl = { version = "0.14.0", optional = true }
@@ -159,10 +159,10 @@ parley = "0.12.0" # Also requires smallvec 1.16.
 pollster = { version = "1.0.1", optional = true } # for the Vello example
 raw-window-handle = { version = "0.6.2", optional = true }
 rfd = "0.17.2"
-skia-safe = { version = "=0.90", features = [
+skia-safe = { version = "=0.153.3", features = [
     "gl",
 ], optional = true } # Matches Slint's Skia version; Vizia uses an isolated workspace.
-slint = { version = "=1.16.1", optional = true }
+slint = { version = "=1.18.1", optional = true }
 softbuffer = { workspace = true, optional = true }
 taffy = "0.15.1"
 tracing = "0.1.44"
@@ -176,7 +176,7 @@ xilem = { version = "0.4.0", optional = true } # Experimental retained-mode UI e
 [dev-dependencies]
 egui_kittest = "0.37.0" # Same version as `egui`.
 # Slint exposes its headless testing backend only through this internal crate; the public API has no equivalent.
-i-slint-backend-testing = "=1.16.1" # Matches Slint's internal, non-semver testing API.
+i-slint-backend-testing = "=1.18.1" # Matches Slint's internal, non-semver testing API.
 
 [features]
 default = []
@@ -206,7 +206,7 @@ gtk = { package = "gtk4", version = "0.11.5", optional = true }
 relm4 = { version = "0.11.0", optional = true }
 relm4-components = { version = "0.11.0", optional = true }
 
-# eframe enables Fontconfig dlopen for fontique 0.11; Slint 1.16 and Parley 0.12
+# eframe enables Fontconfig dlopen for fontique 0.11; Slint 1.18 and Parley 0.12
 # use fontique 0.8 and 0.12, which share yeslogic-fontconfig-sys 6. Enable the
 # same mode on both versions so Cargo feature unification does not hide their FFI.
 [target.'cfg(target_os = "linux")'.dependencies]
