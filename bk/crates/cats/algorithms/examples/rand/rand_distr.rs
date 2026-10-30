@@ -45,8 +45,8 @@ mod tests {
         let mut rng = rand::rng();
         let normal = Normal::new(2.0, 3.0).expect("valid parameters");
         let n = 20_000;
-        let mean = (0..n).map(|_| normal.sample(&mut rng)).sum::<f64>()
-            / f64::from(n);
+        let mean =
+            (0..n).map(|_| normal.sample(&mut rng)).sum::<f64>() / f64::from(n);
         assert!((mean - 2.0).abs() < 0.5, "mean was {mean}");
     }
 }

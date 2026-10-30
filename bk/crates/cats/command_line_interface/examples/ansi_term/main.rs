@@ -74,7 +74,13 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["ansi_term_basic", "ansi_term_basic1", "ansi_term_basic2", "colored", "comfy_table"];
+    const SUBCOMMANDS: &[&str] = &[
+        "ansi_term_basic",
+        "ansi_term_basic1",
+        "ansi_term_basic2",
+        "colored",
+        "comfy_table",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -110,7 +116,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

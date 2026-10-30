@@ -179,7 +179,28 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["at_bindings", "destructure_enum", "destructure_reference", "destructure_struct", "destructure_tuple", "fn_closure_arguments", "for1", "if_let", "ignore_values", "let1", "let_else", "literals", "match1", "match2", "match_guards", "or_patterns", "ranges", "ref_bindings", "variable_binding", "while_let"];
+    const SUBCOMMANDS: &[&str] = &[
+        "at_bindings",
+        "destructure_enum",
+        "destructure_reference",
+        "destructure_struct",
+        "destructure_tuple",
+        "fn_closure_arguments",
+        "for1",
+        "if_let",
+        "ignore_values",
+        "let1",
+        "let_else",
+        "literals",
+        "match1",
+        "match2",
+        "match_guards",
+        "or_patterns",
+        "ranges",
+        "ref_bindings",
+        "variable_binding",
+        "while_let",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -215,7 +236,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

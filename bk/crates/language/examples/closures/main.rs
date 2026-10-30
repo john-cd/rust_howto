@@ -74,7 +74,13 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["closures", "closures_as_input_parameters", "closures_capture", "closures_move", "closures_with_type_annotations"];
+    const SUBCOMMANDS: &[&str] = &[
+        "closures",
+        "closures_as_input_parameters",
+        "closures_capture",
+        "closures_move",
+        "closures_with_type_annotations",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -110,7 +116,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

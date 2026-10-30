@@ -102,7 +102,17 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["borrowing_function", "borrowing_function_mutable", "borrowing_immutable", "clone", "copy", "move1", "move_function", "read_write_lock", "scope"];
+    const SUBCOMMANDS: &[&str] = &[
+        "borrowing_function",
+        "borrowing_function_mutable",
+        "borrowing_immutable",
+        "clone",
+        "copy",
+        "move1",
+        "move_function",
+        "read_write_lock",
+        "scope",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -138,7 +148,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

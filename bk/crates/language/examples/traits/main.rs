@@ -137,7 +137,22 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["associated_types", "blanket_implementations", "const_in_traits", "extend_external_type", "generic_traits", "newtype", "sealed_trait_pattern", "supertraits", "trait_bounds", "trait_bounds2", "trait_bounds_multiple_traits", "trait_default_implementation", "trait_types", "traits"];
+    const SUBCOMMANDS: &[&str] = &[
+        "associated_types",
+        "blanket_implementations",
+        "const_in_traits",
+        "extend_external_type",
+        "generic_traits",
+        "newtype",
+        "sealed_trait_pattern",
+        "supertraits",
+        "trait_bounds",
+        "trait_bounds2",
+        "trait_bounds_multiple_traits",
+        "trait_default_implementation",
+        "trait_types",
+        "traits",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -173,7 +188,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

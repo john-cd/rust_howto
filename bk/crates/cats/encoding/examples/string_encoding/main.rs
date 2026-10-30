@@ -89,7 +89,15 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["base64", "form_urlencoded", "hex", "hex_crate", "percent_encode", "percent_encoding", "url_encode"];
+    const SUBCOMMANDS: &[&str] = &[
+        "base64",
+        "form_urlencoded",
+        "hex",
+        "hex_crate",
+        "percent_encode",
+        "percent_encoding",
+        "url_encode",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -125,7 +133,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli).expect("dispatching should succeed");
     }

@@ -81,7 +81,14 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["async_traits", "async_traits2", "async_traits3", "afit", "rpitit_send", "async_trait_dyn"];
+    const SUBCOMMANDS: &[&str] = &[
+        "async_traits",
+        "async_traits2",
+        "async_traits3",
+        "afit",
+        "rpitit_send",
+        "async_trait_dyn",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -117,7 +124,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

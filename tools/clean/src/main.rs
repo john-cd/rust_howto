@@ -8,10 +8,10 @@
 
 use std::fs;
 use std::fs::DirEntry;
-use std::path::Path;
-use std::path::PathBuf;
 #[cfg(unix)]
 use std::os::unix::fs::symlink;
+use std::path::Path;
+use std::path::PathBuf;
 
 use anyhow::Context as _;
 use clap::Parser;

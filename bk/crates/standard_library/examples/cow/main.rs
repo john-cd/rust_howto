@@ -81,7 +81,14 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["cow_alternatives", "cow_as_function_param", "cow_to_borrowed_owned", "function_returning_cow", "into_cow", "modify_cow_in_place"];
+    const SUBCOMMANDS: &[&str] = &[
+        "cow_alternatives",
+        "cow_as_function_param",
+        "cow_to_borrowed_owned",
+        "function_returning_cow",
+        "into_cow",
+        "modify_cow_in_place",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -117,7 +124,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

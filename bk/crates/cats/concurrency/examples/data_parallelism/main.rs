@@ -103,7 +103,17 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["multithreading_rayon", "multithreading_rayon_custom", "multithreading_rayon_parsort", "rayon_any_all", "rayon_iter_mut", "rayon_map_reduce", "rayon_parallel_search", "rayon_parallel_sort", "rayon_thumbnails"];
+    const SUBCOMMANDS: &[&str] = &[
+        "multithreading_rayon",
+        "multithreading_rayon_custom",
+        "multithreading_rayon_parsort",
+        "rayon_any_all",
+        "rayon_iter_mut",
+        "rayon_map_reduce",
+        "rayon_parallel_search",
+        "rayon_parallel_sort",
+        "rayon_thumbnails",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -139,7 +149,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli).expect("dispatching should succeed");
     }

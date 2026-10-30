@@ -135,7 +135,20 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["tracing", "tracing_instrument", "tracing_span_entered", "tracing_span_in_scope", "tracing_spans", "tracing_subscriber", "tracing_subscriber1", "tracing_subscriber1b", "tracing_subscriber2b", "tracing_subscriber3", "tracing_subscriber3b", "tracing_subscriber4"];
+    const SUBCOMMANDS: &[&str] = &[
+        "tracing",
+        "tracing_instrument",
+        "tracing_span_entered",
+        "tracing_span_in_scope",
+        "tracing_spans",
+        "tracing_subscriber",
+        "tracing_subscriber1",
+        "tracing_subscriber1b",
+        "tracing_subscriber2b",
+        "tracing_subscriber3",
+        "tracing_subscriber3b",
+        "tracing_subscriber4",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -171,7 +184,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli).expect("dispatching should succeed");
     }

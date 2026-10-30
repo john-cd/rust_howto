@@ -130,7 +130,21 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["macro_by_example_basic", "macro_by_example_dsl", "macro_by_example_hygiene", "macro_by_example_metavariables", "macro_by_example_repetitions", "macro_by_example_type_checking", "macro_by_example_type_checking2", "macros", "proc_macro2_example", "proc_macro_attribute", "proc_macro_derive", "proc_macro_function", "token_tree"];
+    const SUBCOMMANDS: &[&str] = &[
+        "macro_by_example_basic",
+        "macro_by_example_dsl",
+        "macro_by_example_hygiene",
+        "macro_by_example_metavariables",
+        "macro_by_example_repetitions",
+        "macro_by_example_type_checking",
+        "macro_by_example_type_checking2",
+        "macros",
+        "proc_macro2_example",
+        "proc_macro_attribute",
+        "proc_macro_derive",
+        "proc_macro_function",
+        "token_tree",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -166,7 +180,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

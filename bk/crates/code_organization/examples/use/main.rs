@@ -82,7 +82,14 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] = &["pub_use", "use1", "use2", "use3", "use_external_crate", "use_shortcuts"];
+    const SUBCOMMANDS: &[&str] = &[
+        "pub_use",
+        "use1",
+        "use2",
+        "use3",
+        "use_external_crate",
+        "use_shortcuts",
+    ];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -118,7 +125,8 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"])
+            .expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli).expect("dispatching should succeed");
     }
