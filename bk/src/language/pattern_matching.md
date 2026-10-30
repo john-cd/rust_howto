@@ -219,7 +219,7 @@ In the Rust 2024 edition, explicit `ref`, `ref mut`, or `mut` binding modifiers 
 ## Related Topics {#related-topics .skip}
 
 - [[control_flow | Control Flow]].
-- [[error_handling | Error Handling]].
+- [Error Handling](../standard-library/recoverable_error_handling.md).
 - [[option | Option]].
 - [[result | Result]].
 
