@@ -18,6 +18,11 @@ categories = ["hardware-support"]
 autolib = false
 
 [[example]]
+name = "peripherals"
+path = "examples/peripherals/main.rs"
+test = true
+
+[[example]]
 name = "processor"
 path = "examples/processor/main.rs"
 test = true
@@ -30,6 +35,7 @@ test = true
 [dependencies]
 clap = { version = "4.6.7", features = ["derive"] }
 num_cpus = "1.17.0"
+serialport = { version = "4.10.1", default-features = false } # Enumerates serial ports; no libudev needed.
 wide = "1.7.1"
 
 [lints]

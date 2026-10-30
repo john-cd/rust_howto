@@ -81,6 +81,12 @@
 
 - [Embedded development](categories/embedded/index.md)
   - [`embassy`](categories/embedded/embassy.md)
+  - [Flash programming](categories/embedded/flash.md)
+  - [Hardware abstraction layers](categories/embedded/hals.md)
+  - [Peripheral access crates](categories/embedded/pacs.md)
+  - [Real-time operating systems](categories/embedded/rtos.md)
+  - [Sensors](categories/embedded/sensors.md)
+  - [Useful crates](categories/embedded/useful_crates_embedded.md)
 
 - [Emulators](categories/emulators/index.md)
   - [Emulators](categories/emulators/emulators.md)

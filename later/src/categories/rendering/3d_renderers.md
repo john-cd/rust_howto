@@ -21,6 +21,14 @@ Graphics APIs, wrappers for and backends to [Vulkan][p~vulkan] and OpenGL.
 
 Many algorithms are implemented within engines like [`rend3`][c~rend3~docs]↗{{hi:rend3}} or game engines like [`bevy`][c~bevy~docs]↗{{hi:bevy}}.
 
+## Project a Vertex to the Screen {#project-a-vertex}
+
+Every 3D renderer transforms model-space vertices by a model, view, and projection matrix, divides by `w`, and maps the result to pixels. This example performs that vertex stage on the CPU with [`glam`][c~glam~docs]↗{{hi:glam}}. It needs no window or GPU, and the same matrices are what you would upload to a shader. The camera helpers live in `glam::camera`; pick the module that matches your graphics API's handedness and depth range.
+
+```rust,editable
+{{#include ../../../crates/cats/rendering/examples/3d_renderers/main.rs:example}}
+```
+
 ## `rend3` {#rend3}
 
 [`rend3`][c~rend3~docs]↗{{hi:rend3}} is a 3D rendering engine built on top of [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}.

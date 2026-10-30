@@ -22,8 +22,25 @@ name = "data_formats"
 path = "examples/data_formats/main.rs"
 test = true
 
+[[example]]
+name = "texture_formats"
+path = "examples/texture_formats/main.rs"
+test = true
+
+[[example]]
+name = "vector_formats"
+path = "examples/vector_formats/main.rs"
+test = true
+
 [dependencies]
 gltf = "1.4.1"
+
+[dev-dependencies]
+anyhow.workspace = true # Provides consistent fallible example entry points.
+ddsfile = "0.6.0" # Reads and writes DDS texture containers.
+ktx2 = "0.5.0" # Parses KTX2 texture containers.
+resvg = "0.49.0" # Rasterizes the parsed SVG tree.
+usvg = "0.49.0" # Parses SVG documents.
 
 [lints]
 workspace = true

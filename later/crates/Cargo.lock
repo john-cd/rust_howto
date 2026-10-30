@@ -7796,7 +7796,19 @@ checksum = "479dfe1e6737aa9e96c6ac7b69689dc4c32da8383f2c12744739d76afa8b66c4"
 dependencies = [
  "bitflags 2.13.2",
  "byteorder",
- "enum-primitive-derive",
+ "enum-primitive-derive 0.2.2",
+ "num-traits",
+]
+
+[[package]]
+name = "ddsfile"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8be425797f9962624aba78dee473dad28c15999e6ee6feb28ad3ee7928a3bc5b"
+dependencies = [
+ "bitflags 2.13.2",
+ "byteorder",
+ "enum-primitive-derive 0.3.0",
  "num-traits",
 ]
 
@@ -9359,6 +9371,17 @@ dependencies = [
  "num-traits",
  "quote",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "enum-primitive-derive"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ba7795da175654fe16979af73f81f26a8ea27638d8d9823d317016888a63dc4c"
+dependencies = [
+ "num-traits",
+ "quote",
+ "syn 2.0.119",
 ]
 
 [[package]]
@@ -11015,7 +11038,7 @@ version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "41c358087701b5a05187256644853ef8bb6ade73760570a14f1af65acdbc7be6"
 dependencies = [
- "ddsfile",
+ "ddsfile 0.5.2",
  "fast_image_resize",
  "fxhash",
  "fyrox-core",
@@ -15363,6 +15386,15 @@ checksum = "07293a4e297ac234359b510362495713f75ea345d5307140414f20c69ffeb087"
 dependencies = [
  "bitflags 2.13.2",
  "libc",
+]
+
+[[package]]
+name = "ktx2"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1d50be8a24c37debdf3170be6ca396d5b5b165f37f94837891adac735ca416b8"
+dependencies = [
+ "bitflags 2.13.2",
 ]
 
 [[package]]
@@ -21907,9 +21939,12 @@ name = "rendering"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "fontdue 0.9.5",
+ "glam 0.34.1",
  "lyon",
  "resvg 0.49.0",
  "tiny-skia 0.12.0",
+ "ttf-parser 0.25.1",
  "usvg 0.49.0",
 ]
 
@@ -21917,13 +21952,20 @@ dependencies = [
 name = "rendering_data_formats"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
+ "ddsfile 0.6.0",
  "gltf",
+ "ktx2",
+ "resvg 0.49.0",
+ "usvg 0.49.0",
 ]
 
 [[package]]
 name = "rendering_graphics_api"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
+ "ash",
  "naga 30.0.1",
  "pollster 1.0.1",
  "wgpu 30.0.1",

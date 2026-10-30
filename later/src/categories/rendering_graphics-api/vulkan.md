@@ -12,6 +12,12 @@
 
 [`ash`][c~ash~docs]↗{{hi:ash}} is a lower-level, direct binding to Vulkan.
 
+`ash` loads the Vulkan library at runtime, so a program can detect a missing driver instead of failing to start. This example reports the instance version when a Vulkan loader is installed and degrades gracefully otherwise. Creating an instance and a device is the next step; it needs a driver and, to present images, a window system.
+
+```rust,editable
+{{#include ../../../crates/cats/rendering_graphics_api/examples/vulkan/main.rs:example}}
+```
+
 ## `vulkano` {#vulkano}
 
 Safe wrapper for the Vulkan graphics API.
