@@ -279,7 +279,11 @@
   - [`hyper`](categories/web-programming_http-server/_hyper.md)
 
 - [Plugin Architecture](plugin.md)
+
 - [Self-Referential Types](self_referential.md)
+
 - [Integer Overflow](overflow.md)
+
 - [Inheritance](inheritance.md)
+
 - [Predicates](predicates.md)

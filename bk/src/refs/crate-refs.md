@@ -9831,6 +9831,9 @@
 [c~unic-langid~lib.rs~badge]: https://img.shields.io/badge/lib.rs-unic--langid-yellow
 [c~unic-langid~repo]: https://github.com/zbraniecki/unic-locale
 [c~unic-langid~repo~badge]: https://img.shields.io/badge/unic--langid-steelblue?logo=github
+[c~unicode-normalization~crates.io]: https://crates.io/crates/unicode-normalization
+[c~unicode-normalization~docs]: https://docs.rs/unicode-normalization
+[c~unicode-normalization~repo]: https://github.com/unicode-rs/unicode-normalization
 [c~unicode-segmentation::UnicodeSegmentation::graphemes~docs]: https://docs.rs/unicode-segmentation/latest/unicode-segmentation/trait.UnicodeSegmentation.html#tymethod.graphemes
 [c~unicode-segmentation~crates.io]: https://crates.io/crates/unicode-segmentation
 [c~unicode-segmentation~crates.io~badge]: https://img.shields.io/badge/crates.io-unicode--segmentation-crimson
