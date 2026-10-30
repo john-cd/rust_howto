@@ -95,6 +95,12 @@ MinIO, RustFS and LocalStack speak the S3 protocol. Point the client at the stor
 {{#include ../../../crates/other/examples/cloud/aws_s3_compatible.rs:example}}
 ```
 
+### Trust a Private Certificate Authority {#aws-s3-tls}
+
+[![aws-smithy-http-client][c~aws-smithy-http-client~docs~badge]][c~aws-smithy-http-client~docs]{{hi:aws-smithy-http-client}} [![rustls][c~rustls~docs~badge]][c~rustls~docs]{{hi:rustls}}
+
+A store reached over HTTPS with a certificate from an internal CA fails with a certificate error, because the SDK trusts only the platform roots. Do not turn verification off. Give the SDK an HTTP client whose `TrustStore` holds your CA: `TrustStore::empty().with_pem_certificate(...)` trusts only that CA, while `TrustStore::default().with_pem_certificate(...)` trusts it in addition to the platform roots. The test starts a local `rustls` server with a generated certificate and checks that a client trusting another CA is rejected.
+
 ## Exchange Typed Messages over AWS SQS and SNS {#aws-message-bus}
 
 [![aws-sdk-sqs][c~aws-sdk-sqs~docs~badge]][c~aws-sdk-sqs~docs]{{hi:aws-sdk-sqs}} [![aws-sdk-sns][c~aws-sdk-sns~docs~badge]][c~aws-sdk-sns~docs]{{hi:aws-sdk-sns}} [![prost][c~prost~docs~badge]][c~prost~docs]{{hi:prost}}

@@ -568,6 +568,14 @@
 [c~aws-sdk-sqs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-aws--sdk--sqs-yellow
 [c~aws-sdk-sqs~repo]: https://github.com/awslabs/aws-sdk-rust
 [c~aws-sdk-sqs~repo~badge]: https://img.shields.io/badge/aws--sdk--sqs-steelblue?logo=github
+[c~aws-smithy-http-client~crates.io]: https://crates.io/crates/aws-smithy-http-client
+[c~aws-smithy-http-client~crates.io~badge]: https://img.shields.io/badge/crates.io-aws--smithy--http--client-crimson
+[c~aws-smithy-http-client~docs]: https://docs.rs/aws-smithy-http-client
+[c~aws-smithy-http-client~docs~badge]: https://img.shields.io/crates/v/aws-smithy-http-client?label=aws-smithy-http-client
+[c~aws-smithy-http-client~lib.rs]: https://lib.rs/crates/aws-smithy-http-client
+[c~aws-smithy-http-client~lib.rs~badge]: https://img.shields.io/badge/lib.rs-aws--smithy--http--client-yellow
+[c~aws-smithy-http-client~repo]: https://github.com/smithy-lang/smithy-rs
+[c~aws-smithy-http-client~repo~badge]: https://img.shields.io/badge/aws--smithy--http--client-steelblue?logo=github
 [c~aws~crates.io]: https://crates.io/crates/aws
 [c~aws~crates.io~badge]: https://img.shields.io/badge/crates.io-aws-crimson
 [c~aws~docs]: https://docs.rs/aws

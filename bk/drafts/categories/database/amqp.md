@@ -50,6 +50,7 @@ NATS_URL=nats://127.0.0.1:4222 cargo test -p database --example nats --features 
 
 - [Asynchronous programming][p~async] and [Tokio][p~tokio].
 - [Async streams][p~streams].
+- [Exchange typed messages over AWS SQS and SNS][p~aws]: a managed queue behind the same publisher and subscriber traits.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
