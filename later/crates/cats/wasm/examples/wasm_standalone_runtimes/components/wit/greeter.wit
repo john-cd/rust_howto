@@ -1,0 +1,29 @@
+// A minimal, versioned WIT package: the contract between guest and host.
+
+package howto:greeter@0.1.0;
+
+/// Functionality the host provides to the guest.
+interface logger {
+    /// Records a message on the host side.
+    log: func(message: string);
+}
+
+/// Functionality the guest exports to the host.
+interface greeting {
+    /// Why a greeting could not be produced.
+    variant greet-error {
+        /// The name is empty.
+        empty-name,
+        /// The name is longer than the given maximum number of bytes.
+        too-long(u32),
+    }
+
+    /// Greets `name`; fails with a typed error for invalid names.
+    greet: func(name: string) -> result<string, greet-error>;
+}
+
+/// The component: imports a logger and exports greetings.
+world greeter {
+    import logger;
+    export greeting;
+}

@@ -1,0 +1,22 @@
+# TODO Reviewed ??-??-2026.
+
+# The guest is built for `wasm32-wasip2`, so it is its own workspace
+# rather than a member of the host's.
+[workspace]
+
+[package]
+name = "greeter_guest"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wit-bindgen = "0.46.0"
+
+[profile.release]
+opt-level = "s"
+lto = true
+strip = true
