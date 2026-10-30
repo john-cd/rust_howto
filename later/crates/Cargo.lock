@@ -388,6 +388,7 @@ dependencies = [
 name = "aerospace_drones"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
  "tello",
 ]
 
@@ -418,6 +419,7 @@ dependencies = [
 name = "aerospace_unmanned_aerial_vehicles"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
  "tello",
 ]
 

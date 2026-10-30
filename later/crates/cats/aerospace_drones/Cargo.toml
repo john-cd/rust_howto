@@ -23,6 +23,7 @@ path = "examples/drones/main.rs"
 test = true
 
 [dependencies]
+anyhow = "1.0.104"
 tello = "0.6.3"
 
 [lints]

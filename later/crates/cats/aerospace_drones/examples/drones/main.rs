@@ -6,7 +6,7 @@ mod drones1;
 
 /// Runs the drones example.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    drones1::run().map_err(std::convert::Into::into)
+    drones1::run().map_err(Into::into)
 }
 
 #[cfg(test)]
