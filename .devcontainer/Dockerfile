@@ -58,6 +58,7 @@ ARG JUST_VERSION
 ARG CARGO_FMT_TOML_VERSION
 ARG DPRINT_VERSION
 ARG RUMDL_VERSION
+ARG PREK_VERSION
 ARG MATURIN_VERSION
 ARG FLUTTER_RUST_BRIDGE_CODEGEN_VERSION
 
@@ -82,6 +83,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo binstall --no-confirm --secure --version ${CARGO_FMT_TOML_VERSION} cargo-fmt-toml
     cargo binstall --no-confirm --secure --version ${DPRINT_VERSION} dprint
     cargo binstall --no-confirm --secure --version ${RUMDL_VERSION} rumdl
+    cargo binstall --no-confirm --secure --version ${PREK_VERSION} prek
     cargo binstall --no-confirm --secure --version ${FLUTTER_RUST_BRIDGE_CODEGEN_VERSION} flutter_rust_bridge_codegen
     cargo binstall --no-confirm --secure sccache cargo-deny lychee
     cargo install --locked --force --version ${MDBOOK_INDEXING_VERSION} mdbook-indexing

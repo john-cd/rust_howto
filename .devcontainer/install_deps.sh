@@ -147,6 +147,7 @@ cargo binstall --no-confirm --secure --version "$JUST_VERSION" just
 cargo binstall --no-confirm --secure --force --version "$CARGO_FMT_TOML_VERSION" cargo-fmt-toml
 cargo binstall --no-confirm --secure --force --version "$DPRINT_VERSION" dprint
 cargo binstall --no-confirm --secure --force --version "$RUMDL_VERSION" rumdl
+cargo binstall --no-confirm --secure --force --version "$PREK_VERSION" prek
 cargo binstall --no-confirm --secure --version "$FLUTTER_RUST_BRIDGE_CODEGEN_VERSION" flutter_rust_bridge_codegen
 cargo binstall --no-confirm --secure sccache cargo-deny lychee bacon ripgrep
 
