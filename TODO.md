@@ -2,35 +2,29 @@
 
 # TO DO List
 
+## Tasks
+
 - [ ] JOHN review tools/
 - [ ] JOHN review .github\actions
 - [ ] JOHN review / rewrite the .py scripts
-- [x] JOHN Review .pre-commit-config.yaml vs prek.toml (prek is now the single source; #1245)
 - [ ] JOHN review LICENSE
 - [ ] JOHN bookmarks.json
 - [ ] cargo husky?
-- [x] prek or pre-commit? prek (#1245)
-
-## Tasks
+- [ ] blank line before ANCHOR_END?
+- [ ] {{!crate }}
 
 ### Urgent
 
-- [x] REVIEW meaningful, not generic, README.md - see for example bk\crates\cats\asynchronous\README.md
-- [/] review all TODO comments in the codebase and fix
-- [/] fix "function xyz is never used". most book examples should have a private main() function and a pub fn run() function + a test that call main(). run() should be called by the main() function of the example.
-- [/] all book examples should have a test that calls the private main() function and verifies the expected behavior. also add tests to verify other functions / code items within the exanple. ensure coverage for edge cases and error handling.
-- [ ] review dirty worktrees, create commits, integrate useful branches, discard stale work, and clean up topic refs
-- [ ] integrate all useful topic branches into develop and discard the rest
-
-### Scripts, Tools
-
-- [x] add just command for cargo fmt-toml; update Dockerfile and install scripts
-- [x] verify that all .sh files can run in Git Bash (#2071; follow-ups in #2072)
+- [ ] review all TODO comments in the codebase and fix. ignore TODO Reviewed markers
+- [-] most book examples should have a private main() function and a pub fn run() function + a test that call main(). run() should be called by the main() function of the example.
+- [-] all book examples should have a test that calls the private main() function and verifies the expected behavior. also add tests to verify other functions / code items within the exanple. ensure coverage for edge cases and error handling.
+- [ ] improve comments within examples. add context and explanations where necessary. end with a period.
 
 ### Code Examples
 
 - [/] improve comments within examples. add context and explanations where necessary. end with a period.
-- [ ] WAIT move code examples from later/ to bk/ when code + text ready
+
+WAIT move code examples from later/ to bk/ when code + text ready
 
 ---
 
@@ -41,13 +35,11 @@
 - [#1719](https://github.com/john-cd/rust_howto/issues/1719) — **P1** — Repair and document the dev container setup and compiler caching
 - [#1871](https://github.com/john-cd/rust_howto/issues/1871) — **P2** — Run Windows-blocked validation in a Linux environment D
 - **P1** — Port remaining examples across major dependency upgrades (no issue number yet)
+- [#1247](https://github.com/john-cd/rust_howto/issues/1247) — **P3** — precommit/mod.just: move to Dockerfile
 
 ### Truly blocked (install)
 
 - [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix
-
-### Blocked on a live service
-
 
 ### Blocked on a desktop, hardware or manual run
 
@@ -92,6 +84,7 @@
 ### Deferred
 
 - [#1725](https://github.com/john-cd/rust_howto/issues/1725) — **P2** — Review the Pandoc and Typst export plan (review)
+- [#53](https://github.com/john-cd/rust_howto/issues/53) — **P4** — Evaluate whether a slim or Alpine CI image improves the supported builds
 
 ### Trackers and not started
 
@@ -104,7 +97,8 @@
 - [#1994](https://github.com/john-cd/rust_howto/issues/1994) — **P4** — Plan later-edition chapters and example stubs
 - [#1849](https://github.com/john-cd/rust_howto/issues/1849) — **Unprioritized** — Coordinate tasks requiring human decisions
 - [#901](https://github.com/john-cd/rust_howto/issues/901) — **P3** — build_time_tooling/cc_defines1.rs: finish; deal with extern
-- [#53](https://github.com/john-cd/rust_howto/issues/53) — **P4** — Evaluate whether a slim or Alpine CI image improves the supported builds I
+
+---
 
 ## Review: `dead_code` allowances and ignored tests
 
