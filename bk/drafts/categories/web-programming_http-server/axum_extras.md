@@ -28,7 +28,7 @@ Run a second, tiny server on the plain HTTP port whose only job is to send brows
 {{#include ../../../crates/cats/web_programming_http_server/examples/axum_extras/https_redirect.rs:example}}
 ```
 
-`axum_extra::extract::Host` is deprecated and will be replaced; if you prefer, read the `Host` header (or `X-Forwarded-Host` behind a trusted proxy) yourself. Only redirect to hosts you serve: never build the target from untrusted input without validating it.
+The example reads the `Host` header with `TypedHeader<headers::Host>`. This is the direct request header; it does not resolve `Forwarded`, `X-Forwarded-Host`, or the request URI authority as the deprecated `axum_extra::extract::Host` extractor did. Behind a trusted proxy, parse forwarding headers only after configuring which proxy headers to trust. Only redirect to hosts you serve: validate the host before building a redirect target.
 
 ## Serve over HTTPS with `axum-server` {#axum-server-tls}
 

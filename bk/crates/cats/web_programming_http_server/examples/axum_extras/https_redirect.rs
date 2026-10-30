@@ -11,8 +11,8 @@ use axum::http::uri::Authority;
 use axum::http::uri::Scheme;
 use axum::response::Redirect;
 use axum::routing::get;
-#[allow(deprecated)]
-use axum_extra::extract::Host;
+use axum_extra::TypedHeader;
+use axum_extra::headers::Host as HostHeader;
 
 /// Ports of the plain HTTP and HTTPS listeners.
 #[derive(Clone, Copy, Debug)]
@@ -43,15 +43,15 @@ pub fn make_https(host: &str, uri: &Uri, ports: Ports) -> anyhow::Result<Uri> {
 }
 
 /// Builds a router that redirects every request to HTTPS.
-// `Host` is deprecated in favour of a future extractor; see axum#3442.
-#[allow(deprecated)]
 pub fn app(ports: Ports) -> Router {
-    Router::new().fallback(get(move |Host(host): Host, uri: Uri| async move {
-        match make_https(&host, &uri, ports) {
-            Ok(uri) => Ok(Redirect::permanent(&uri.to_string())),
-            Err(_) => Err(axum::http::StatusCode::BAD_REQUEST),
-        }
-    }))
+    Router::new().fallback(get(
+        move |TypedHeader(host): TypedHeader<HostHeader>, uri: Uri| async move {
+            match make_https(&host.to_string(), &uri, ports) {
+                Ok(uri) => Ok(Redirect::permanent(&uri.to_string())),
+                Err(_) => Err(axum::http::StatusCode::BAD_REQUEST),
+            }
+        },
+    ))
 }
 // ANCHOR_END: example
 
