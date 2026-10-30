@@ -45,7 +45,6 @@
 ### Truly blocked (install)
 
 - [#1034](https://github.com/john-cd/rust_howto/issues/1034) — **P4** — objc/objc2.rs: finish; fix
-- [#1983](https://github.com/john-cd/rust_howto/issues/1983) — **P3** — Finish Windows validation and reference-generator repairs
 
 ### Blocked on a live service
 
