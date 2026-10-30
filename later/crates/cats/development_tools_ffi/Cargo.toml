@@ -114,7 +114,7 @@ uniffi = { version = "0.32.2", optional = true }
 [features]
 cpp = ["dep:cxx", "dep:cxx-build"]
 erlang = ["dep:rustler"]
-flutter = ["dep:anyhow", "dep:flutter_rust_bridge"]
+flutter = ["dep:flutter_rust_bridge"]
 java = ["dep:jni"]
 lua = ["dep:mlua", "mlua/vendored"]
 lua-module = ["dep:mlua", "mlua/module"]
