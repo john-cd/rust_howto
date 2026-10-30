@@ -26,3 +26,8 @@
 [p~log]: ../development-tools_debugging/log.md
 [p~unix]: # "../os_unix-apis/unix.md"
 [p~written-in-rust]: # "../../other/written-in-rust/index.md"
+[blog_os~guide]: https://os.phil-opp.com/
+[bootloader~repo]: https://github.com/rust-osdev/bootloader
+[linux~rust-docs]: https://docs.kernel.org/rust/index.html
+[uefi~repo]: https://github.com/rust-osdev/uefi-rs
+[x86_64~repo]: https://github.com/rust-osdev/x86_64
