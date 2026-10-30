@@ -4899,7 +4899,7 @@ dependencies = [
  "petgraph 0.8.3",
  "priority-queue",
  "rangemap",
- "roaring",
+ "roaring 0.12.0",
  "rustc-hash 2.1.3",
  "short-uuid",
  "skiplist",
@@ -6622,6 +6622,9 @@ name = "fearless_simd"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "629c9d6b6f30b5604089e0980f4d924a013aacb1654a6cdf5d3d852224f68651"
+dependencies = [
+ "libm",
+]
 
 [[package]]
 name = "fearless_simd_macros"
@@ -16014,9 +16017,9 @@ dependencies = [
 
 [[package]]
 name = "redb"
-version = "2.6.4"
+version = "4.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3d64e07496d293ad8ed401c4d193d5b9f0f97671fbd5bf21d691a0c7d2c53dc8"
+checksum = "39178e0a867f9e3eaa6292a4ab1dd3613f2519c5b564341e1e7b29b270736cc4"
 dependencies = [
  "libc",
 ]
@@ -16471,7 +16474,7 @@ dependencies = [
  "geo",
  "regex",
  "revision-derive",
- "roaring",
+ "roaring 0.11.5",
  "rust_decimal",
  "uuid",
 ]
@@ -16523,9 +16526,9 @@ dependencies = [
 
 [[package]]
 name = "ringbuf"
-version = "0.5.3"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b58b631e416dd7d84549d7e6a50f767e111f9b03e30d04f40072f6618f386aaf"
+checksum = "33d5f59e4145df5f29e84b6389394a8a3fedf7bd8c12570560ae67a917e6eae3"
 dependencies = [
  "crossbeam-utils",
  "portable-atomic",
@@ -16599,6 +16602,18 @@ dependencies = [
  "bytemuck",
  "byteorder",
  "serde",
+]
+
+[[package]]
+name = "roaring"
+version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eccfaa25083dbde9444486adda410c9cd23565d7f54a2df916c0bdf4bee44931"
+dependencies = [
+ "bytemuck",
+ "byteorder",
+ "fearless_simd",
+ "fearless_simd_macros",
 ]
 
 [[package]]
@@ -17106,9 +17121,9 @@ dependencies = [
 
 [[package]]
 name = "rust_xlsxwriter"
-version = "0.101.0"
+version = "0.102.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "49aa1d1558e9465f5053bf9fb5361fe75db827c6a4423d5e5fe72096622f8908"
+checksum = "6ca3d0e879a578c1313c2800ab0c6c029d38eed18098675e50341a30d32372ed"
 dependencies = [
  "zip 9.1.2",
 ]
@@ -19458,7 +19473,7 @@ dependencies = [
  "regex",
  "revision",
  "ring",
- "roaring",
+ "roaring 0.11.5",
  "rust_decimal",
  "scrypt 0.11.0",
  "semver",
@@ -19512,7 +19527,7 @@ dependencies = [
  "quick_cache",
  "rand 0.9.5",
  "revision",
- "roaring",
+ "roaring 0.11.5",
  "semver",
  "serde",
  "storekey",
@@ -19660,7 +19675,7 @@ dependencies = [
  "quick_cache",
  "rand 0.9.5",
  "reblessive",
- "roaring",
+ "roaring 0.11.5",
  "rust-stemmers",
  "storekey",
  "surrealdb-catalog",
@@ -19701,7 +19716,7 @@ dependencies = [
  "chrono",
  "num_cpus",
  "revision",
- "roaring",
+ "roaring 0.11.5",
  "surrealdb-cnf",
  "surrealdb-common",
  "surrealdb-types",

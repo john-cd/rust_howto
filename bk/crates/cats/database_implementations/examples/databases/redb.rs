@@ -6,9 +6,10 @@
 //! `redb` is a pure-Rust, ACID-compliant embedded key-value database with a
 //! stable file format.
 //!
-//! Add `redb = "2.4.0"` to `Cargo.toml`.
+//! Add `redb = "4.4.0"` to `Cargo.toml`.
 
 use redb::Database;
+use redb::ReadableDatabase;
 use redb::TableDefinition;
 
 const TABLE: TableDefinition<&str, &str> = TableDefinition::new("my_table");
