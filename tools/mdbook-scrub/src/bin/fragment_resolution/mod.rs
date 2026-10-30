@@ -54,9 +54,9 @@ pub(super) fn find_invalid_fragments(context: &Value) -> Result<Vec<InvalidFragm
 
     let mut identifiers_by_path = HashMap::new();
     for (index, chapter) in chapters.iter().enumerate() {
-        identifiers_by_path.insert(path_key(&chapter.path), index);
+        insert_chapter_path_aliases(&chapter.path, index, &mut identifiers_by_path);
         if let Some(source_path) = &chapter.source_path {
-            identifiers_by_path.insert(path_key(source_path), index);
+            insert_chapter_path_aliases(source_path, index, &mut identifiers_by_path);
         }
     }
 
@@ -73,13 +73,35 @@ pub(super) fn find_invalid_fragments(context: &Value) -> Result<Vec<InvalidFragm
             if !chapters[*index].identifiers.contains(&fragment) {
                 invalid.push(InvalidFragment {
                     source: chapter.path.clone(),
-                    target,
+                    target: chapters[*index].path.clone(),
                     fragment,
                 });
             }
         }
     }
     Ok(invalid)
+}
+
+/// Registers Markdown, rendered HTML, and directory aliases for a chapter.
+fn insert_chapter_path_aliases(
+    path: &Path,
+    index: usize,
+    identifiers_by_path: &mut HashMap<String, usize>,
+) {
+    identifiers_by_path.insert(path_key(path), index);
+
+    let mut html_path = path.to_path_buf();
+    html_path.set_extension("html");
+    identifiers_by_path.insert(path_key(&html_path), index);
+
+    if matches!(
+        path.file_stem().and_then(|stem| stem.to_str()),
+        Some("index" | "README")
+    ) && let Some(parent) = path.parent()
+    {
+        identifiers_by_path.insert(path_key(parent), index);
+        identifiers_by_path.insert(path_key(&parent.join("index.html")), index);
+    }
 }
 
 /// Returns the book's absolute Markdown source directory.
@@ -162,15 +184,7 @@ fn identifiers(content: &str) -> HashSet<String> {
             }
             Event::HardBreak => {}
             Event::Html(html) | Event::InlineHtml(html) => {
-                for capture in html_id_regex().captures_iter(&html) {
-                    if let Some(id) = capture
-                        .get(1)
-                        .or_else(|| capture.get(2))
-                        .or_else(|| capture.get(3))
-                    {
-                        ids.insert(id.as_str().to_owned());
-                    }
-                }
+                ids.extend(html_identifiers(&html));
             }
             _ => {}
         }
@@ -178,12 +192,85 @@ fn identifiers(content: &str) -> HashSet<String> {
     ids
 }
 
-/// Returns the compiled expression used to read HTML `id` and anchor `name` attributes.
-fn html_id_regex() -> &'static Regex {
-    static HTML_ID: OnceLock<Regex> = OnceLock::new();
-    HTML_ID.get_or_init(|| {
-        Regex::new(r#"(?is)\b(?:id|name)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))"#)
-            .expect("the fixed HTML identifier expression is valid")
+/// Extracts exact `id` and anchor `name` attributes from HTML start tags.
+fn html_identifiers(html: &str) -> Vec<String> {
+    let mut identifiers = Vec::new();
+    for tag in html_tag_regex().find_iter(html).map(|tag| tag.as_str()) {
+        if tag.starts_with("<!--") {
+            continue;
+        }
+        identifiers.extend(tag_identifiers(tag));
+    }
+    identifiers
+}
+
+/// Reads `id` and `name` values while skipping quoted attribute contents.
+fn tag_identifiers(tag: &str) -> Vec<String> {
+    let bytes = tag.as_bytes();
+    let mut identifiers = Vec::new();
+    let mut index = 1;
+    while index < bytes.len() && !bytes[index].is_ascii_whitespace() {
+        index += 1;
+    }
+
+    while index < bytes.len() {
+        while index < bytes.len() && (bytes[index].is_ascii_whitespace() || bytes[index] == b'/') {
+            index += 1;
+        }
+        let name_start = index;
+        while index < bytes.len()
+            && !bytes[index].is_ascii_whitespace()
+            && !matches!(bytes[index], b'=' | b'>' | b'/')
+        {
+            index += 1;
+        }
+        if name_start == index {
+            index += 1;
+            continue;
+        }
+        let is_identifier = bytes[name_start..index].eq_ignore_ascii_case(b"id")
+            || bytes[name_start..index].eq_ignore_ascii_case(b"name");
+        while index < bytes.len() && bytes[index].is_ascii_whitespace() {
+            index += 1;
+        }
+        if index >= bytes.len() || bytes[index] != b'=' {
+            continue;
+        }
+        index += 1;
+        while index < bytes.len() && bytes[index].is_ascii_whitespace() {
+            index += 1;
+        }
+        let value = if index < bytes.len() && matches!(bytes[index], b'"' | b'\'') {
+            let quote = bytes[index];
+            index += 1;
+            let value_start = index;
+            while index < bytes.len() && bytes[index] != quote {
+                index += 1;
+            }
+            let value = String::from_utf8_lossy(&bytes[value_start..index]).into_owned();
+            index = index.saturating_add(1);
+            value
+        } else {
+            let value_start = index;
+            while index < bytes.len() && !bytes[index].is_ascii_whitespace() && bytes[index] != b'>'
+            {
+                index += 1;
+            }
+            String::from_utf8_lossy(&bytes[value_start..index]).into_owned()
+        };
+
+        if is_identifier {
+            identifiers.push(value);
+        }
+    }
+    identifiers
+}
+
+/// Returns an expression matching HTML comments and start tags.
+fn html_tag_regex() -> &'static Regex {
+    static HTML_TAG: OnceLock<Regex> = OnceLock::new();
+    HTML_TAG.get_or_init(|| {
+        Regex::new("(?is)<!--.*?-->|<[a-z][^>]*>").expect("the fixed HTML tag expression is valid")
     })
 }
 
@@ -349,12 +436,61 @@ mod tests {
     #[test]
     fn extracts_mdbook_heading_and_html_identifiers() {
         let ids = identifiers(
-            "# First heading\n\n## First heading\n\n### Explicit {#caseSensitive}\n\n<a id=\"raw-anchor\"></a>\n",
+            "# First heading\n\n## First heading\n\n### Explicit {#caseSensitive}\n\n<a data-id=\"not-an-id\" title=\"id='quoted-id'\" id=\"raw-anchor\"></a>\n<!-- <a id=\"comment-id\"></a> -->\n<a name='legacy-anchor'></a>\n",
         );
         assert!(ids.contains("first-heading"));
         assert!(ids.contains("first-heading-1"));
         assert!(ids.contains("caseSensitive"));
         assert!(ids.contains("raw-anchor"));
+        assert!(ids.contains("legacy-anchor"));
+        assert!(!ids.contains("not-an-id"));
+        assert!(!ids.contains("comment-id"));
+    }
+
+    /// Verifies heading IDs against output rendered by mdBook 0.5.4.
+    #[test]
+    fn heading_ids_match_mdbook_html_output() {
+        let ids = identifiers(
+            "# Shared {#shared}\n\n# Shared\n\n# Shared\n\n# Crème &amp; Rust\n\n# Crème & Rust\n\n# Crème and Rust {#given-id}\n\n# Crème &amp; Rust\n\n## Escaped \\*heading\\*\n",
+        );
+        for id in [
+            "shared",
+            "shared-1",
+            "crème--rust",
+            "crème--rust-1",
+            "given-id",
+            "crème--rust-2",
+            "escaped-heading",
+        ] {
+            assert!(
+                ids.contains(id),
+                "mdBook's rendered heading id `{id}` was missing"
+            );
+        }
+    }
+
+    /// Verifies rendered `.html` and directory links resolve to index chapters.
+    #[test]
+    fn resolves_rendered_html_and_directory_index_aliases() {
+        let context = json!({
+            "root": "/book",
+            "config": {"book": {"src": "src"}},
+            "book": {"items": [
+                {"Chapter": {
+                    "path": "links.md",
+                    "content": "[html](guide/index.html#start) [directory](guide/#start) [missing](guide/#absent)"
+                }},
+                {"Chapter": {
+                    "path": "guide/index.md",
+                    "content": "# Start"
+                }}
+            ]}
+        });
+
+        let invalid = find_invalid_fragments(&context).expect("book structure should be valid");
+        assert_eq!(invalid.len(), 1);
+        assert_eq!(invalid[0].fragment, "absent");
+        assert!(invalid[0].target.ends_with("guide/index.md"));
     }
 
     /// Verifies local links resolve while unknown, encoded, and external fragments are handled.
