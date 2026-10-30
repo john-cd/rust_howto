@@ -123,10 +123,10 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn registry_collects_the_registered_trees() {
-        let registry = Registry::new(
-            ConfigBuilder::default().verbose(true).build().unwrap(),
-        );
+    async fn registry_collects_the_registered_trees()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let registry =
+            Registry::new(ConfigBuilder::default().verbose(true).build()?);
         for i in 0_i32..2 {
             let root = registry.register(i, format!("foo {i}"));
             tokio::spawn(root.instrument(foo(i)));
@@ -149,5 +149,6 @@ mod tests {
             );
         }
         assert_eq!(registry.collect_anonymous().len(), 2);
+        Ok(())
     }
 }

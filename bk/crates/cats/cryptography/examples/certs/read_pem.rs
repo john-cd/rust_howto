@@ -93,7 +93,9 @@ mod tests {
         fs::create_dir_all(&dir)?;
         let path = dir.join("key.pem");
         fs::write(&path, key.signing_key.serialize_pem())?;
-        let err = read_pem_certificate(&path).unwrap_err();
+        let Err(err) = read_pem_certificate(&path) else {
+            panic!("a private key is not a certificate");
+        };
         assert!(err.to_string().contains("expected a CERTIFICATE"), "{err}");
         fs::remove_dir_all(&dir)?;
         Ok(())

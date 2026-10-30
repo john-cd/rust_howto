@@ -64,9 +64,14 @@ mod tests {
     #[test]
     fn insert_appends_to_the_shared_list() -> Result<()> {
         main()?;
-        let before = FRUIT.lock().unwrap().len();
+        let before = FRUIT
+            .lock()
+            .map_err(|_| anyhow!("Failed to acquire MutexGuard"))?
+            .len();
         insert("kiwi")?;
-        let db = FRUIT.lock().unwrap();
+        let db = FRUIT
+            .lock()
+            .map_err(|_| anyhow!("Failed to acquire MutexGuard"))?;
         assert_eq!(db.len(), before + 1);
         assert_eq!(db.last().map(String::as_str), Some("kiwi"));
         assert!(
@@ -78,14 +83,25 @@ mod tests {
     }
 
     #[test]
-    fn concurrent_inserts_are_all_recorded() {
-        let before = FRUIT.lock().unwrap().len();
+    fn concurrent_inserts_are_all_recorded() -> Result<()> {
+        let before = FRUIT
+            .lock()
+            .map_err(|_| anyhow!("Failed to acquire MutexGuard"))?
+            .len();
         std::thread::scope(|s| {
-            for _ in 0..8 {
-                s.spawn(|| insert("fig").unwrap());
+            let handles: Vec<_> =
+                (0..8).map(|_| s.spawn(|| insert("fig"))).collect();
+            for handle in handles {
+                handle
+                    .join()
+                    .map_err(|_| anyhow!("insert thread panicked"))??;
             }
-        });
-        let db = FRUIT.lock().unwrap();
+            Ok::<(), anyhow::Error>(())
+        })?;
+        let db = FRUIT
+            .lock()
+            .map_err(|_| anyhow!("Failed to acquire MutexGuard"))?;
         assert!(db.len() >= before + 8);
+        Ok(())
     }
 }

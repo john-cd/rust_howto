@@ -109,19 +109,23 @@ mod tests {
     }
 
     #[test]
-    fn compute_digest_matches_the_known_sha256() {
-        let dir = tempfile::tempdir().unwrap();
+    fn compute_digest_matches_the_known_sha256()
+    -> Result<(), Box<dyn std::error::Error>> {
+        let dir = tempfile::tempdir()?;
         let path = dir.path().join("a.iso");
-        std::fs::write(&path, b"abc").unwrap();
-        let (digest, returned) = compute_digest(&path).unwrap();
+        std::fs::write(&path, b"abc")?;
+        let (digest, returned) = compute_digest(&path)?;
         assert_eq!(returned, &path);
         assert_eq!(digest[..4], [0xba, 0x78, 0x16, 0xbf]);
         assert_eq!(digest[28..], [0xf2, 0x00, 0x15, 0xad]);
+        Ok(())
     }
 
     #[test]
     fn compute_digest_of_a_missing_file_is_an_error() {
-        let err = compute_digest("/definitely/not/here.iso").unwrap_err();
+        let Err(err) = compute_digest("/definitely/not/here.iso") else {
+            panic!("a missing file must be an error");
+        };
         assert_eq!(err.kind(), std::io::ErrorKind::NotFound);
     }
 }
