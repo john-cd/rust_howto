@@ -39,7 +39,7 @@ test = true
 [[example]]
 name = "interner_allocations"
 path = "examples/interner_allocations.rs"
-test = false
+test = true
 
 [[example]]
 name = "jemalloc"

@@ -8,14 +8,26 @@
 use std::alloc::GlobalAlloc;
 use std::alloc::Layout;
 use std::alloc::System;
-use std::sync::atomic::AtomicUsize;
-use std::sync::atomic::Ordering;
+use std::cell::Cell;
 
 // This module is the same implementation used in the interning example.
 mod interning;
 
 struct CountingAllocator;
-static ALLOCATIONS: AtomicUsize = AtomicUsize::new(0);
+
+thread_local! {
+    // Counts per thread, so that other threads (such as a test harness) do
+    // not disturb the measurement. A `const` initializer never allocates.
+    static ALLOCATIONS: Cell<usize> = const { Cell::new(0) };
+}
+
+fn allocations() -> usize {
+    ALLOCATIONS.with(Cell::get)
+}
+
+fn count_allocation() {
+    ALLOCATIONS.with(|count| count.set(count.get() + 1));
+}
 
 // SAFETY: Each operation forwards the original pointer and layout to System;
 // the counter uses only atomics and never allocates.
@@ -24,7 +36,7 @@ unsafe impl GlobalAlloc for CountingAllocator {
         // SAFETY: The caller supplies the layout required by GlobalAlloc.
         let ptr = unsafe { System.alloc(layout) };
         if !ptr.is_null() {
-            ALLOCATIONS.fetch_add(1, Ordering::Relaxed);
+            count_allocation();
         }
         ptr
     }
@@ -44,7 +56,7 @@ unsafe impl GlobalAlloc for CountingAllocator {
         // size.
         let result = unsafe { System.realloc(ptr, layout, new_size) };
         if !result.is_null() {
-            ALLOCATIONS.fetch_add(1, Ordering::Relaxed);
+            count_allocation();
         }
         result
     }
@@ -57,16 +69,16 @@ static GLOBAL: CountingAllocator = CountingAllocator;
 fn main() {
     interning::run();
     let mut interner = interning::Interner::default();
-    let before = ALLOCATIONS.load(Ordering::Relaxed);
+    let before = allocations();
     let symbol = interner.intern(std::hint::black_box("repeated identifier"));
-    let after_insert = ALLOCATIONS.load(Ordering::Relaxed);
+    let after_insert = allocations();
     for _ in 0..1_000 {
         assert_eq!(
             interner.intern(std::hint::black_box("repeated identifier")),
             symbol
         );
     }
-    let after_lookups = ALLOCATIONS.load(Ordering::Relaxed);
+    let after_lookups = allocations();
     let insertion_calls = after_insert - before;
     let lookup_calls = after_lookups - after_insert;
     assert!(insertion_calls > 0);
@@ -76,3 +88,19 @@ fn main() {
     );
 }
 // ANCHOR_END: example
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the measurement; `main` asserts that the first insertion
+    /// allocates and that repeated lookups do not. The counting allocator is
+    /// per thread, so the test harness does not affect the counts.
+    #[test]
+    fn test_main_measures_allocations() {
+        main();
+        let before = allocations();
+        drop(Box::new(0_u8));
+        assert!(allocations() > before);
+    }
+}
