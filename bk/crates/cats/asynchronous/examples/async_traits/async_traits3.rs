@@ -74,6 +74,8 @@ mod tests {
     use super::*;
 
     /// Runs the async traits3 example through its entry point.
+    // output-only: the example only prints its steps; the other tests
+    // check that each step completes.
     #[test]
     fn test_async_traits3_example_entry_point() {
         main();
