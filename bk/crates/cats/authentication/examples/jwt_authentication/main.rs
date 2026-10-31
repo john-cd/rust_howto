@@ -66,6 +66,8 @@ mod tests {
     /// Verifies that the example succeeds with its injected test secret.
     #[test]
     fn test_jwt_authentication_entry_point() -> anyhow::Result<()> {
-        run()
+        run()?;
+        assert!(run_with_secret("too-short").is_err());
+        Ok(())
     }
 }

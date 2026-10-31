@@ -13,3 +13,14 @@ fn main() -> anyhow::Result<()> {
     println!("Session login examples completed successfully.");
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the example end to end and asserts that it succeeds.
+    #[test]
+    fn test_main_runs() {
+        assert!(main().is_ok());
+    }
+}

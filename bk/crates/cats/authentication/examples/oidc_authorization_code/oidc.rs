@@ -330,6 +330,11 @@ mod tests {
 
     /// The authorization URL carries state, nonce and an S256 challenge.
     #[test]
+    fn main_completes_a_simulated_login() {
+        assert!(main().is_ok());
+    }
+
+    #[test]
     fn authorization_url_has_state_nonce_and_pkce() {
         let client = build_client(ISSUER).expect("valid metadata");
         let (url, pending) = start_login(&client);
