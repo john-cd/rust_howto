@@ -52,8 +52,8 @@ fn main() {
 /// Prints a message when the `leptos-support` feature is not enabled.
 #[cfg(not(feature = "leptos-support"))]
 fn main() {
-    //     // FIXME
-    //     mount_to_body(App);
+    // Mounting the application requires browser DOM support or the
+    // `leptos-support` feature.
     println!(
         "leptos example: a reactive web framework for building web UIs (see full implementation in the book)"
     );
