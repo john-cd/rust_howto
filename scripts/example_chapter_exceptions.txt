@@ -11,6 +11,8 @@ bk/crates/cats/concurrency/examples/actors/riker.rs
 # Placeholder entry point; the chapter is deferred (#1748).
 bk/crates/cats/graphics/examples/graphics.rs
 # Support modules for examples whose entry point is included under another name.
+# Test helper that re-runs a test in a child process; not an example.
+bk/crates/cats/development_tools_debugging/examples/support/isolated.rs
 bk/crates/cats/development_tools/examples/crate_indices/fixtures.rs
 later/crates/cats/development_tools_ffi/examples/ruby/greeting.rs
 # Cargo entry points that only `mod` the chapter-included napi.rs, neon.rs and xilem.rs.
