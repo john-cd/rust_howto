@@ -26,10 +26,44 @@ enum Commands {
 }
 
 /// Runs the selected graph theory example.
-fn main() {
-    match Cli::parse().command {
+fn dispatch(cli: Cli) {
+    match cli.command {
         Some(Commands::CycleDetection) => cycle_detection::run(),
         Some(Commands::TopologicalLevels) => topological_levels::run(),
         None => {}
+    }
+}
+
+fn main() {
+    dispatch(Cli::parse());
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Each example is reachable through its own subcommand and runs.
+    #[test]
+    fn test_every_subcommand_parses_and_runs() {
+        for name in ["cycle-detection", "topological-levels"] {
+            let cli = Cli::try_parse_from(["example", name])
+                .unwrap_or_else(|e| panic!("`{name}` should parse: {e}"));
+            assert!(cli.command.is_some(), "`{name}` selected no command");
+            dispatch(cli);
+        }
+    }
+
+    /// Unknown subcommands are rejected.
+    #[test]
+    fn test_unknown_subcommand_is_rejected() {
+        assert!(Cli::try_parse_from(["example", "no-such-example"]).is_err());
+    }
+
+    /// Running without a subcommand selects nothing and succeeds.
+    #[test]
+    fn test_no_subcommand_runs_nothing() {
+        let cli = Cli::try_parse_from(["example"]).expect("should parse");
+        assert!(cli.command.is_none());
+        dispatch(cli);
     }
 }
