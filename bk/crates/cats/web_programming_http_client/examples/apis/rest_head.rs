@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to use the `HEAD` method to check if a
 //! resource exists.
+//!
+//! `HEAD` works like `GET` but the server returns only the status line and
+//! headers, not the body. It is a cheap way to check that a URL exists, or to
+//! read its size and type, before downloading it.
 
 use std::time::Duration;
 

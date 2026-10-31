@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates a simple HTTP GET request using the `ureq` crate.
 //! It fetches data from a public API endpoint and prints the response.
+//!
+//! `ureq` is a small blocking HTTP client: each call waits for the response, so
+//! no async runtime is needed. It suits scripts and command-line tools; use an
+//! async client such as `reqwest` when you make many concurrent requests.
 
 /// This example demonstrates a simple HTTP GET request using the `ureq` crate.
 /// It fetches data from a public API endpoint and prints the response.

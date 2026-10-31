@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Examples for working with `.env` files using `dotenvy`.
+//!
+//! A `.env` file lists `NAME=value` pairs for local development. `dotenvy`
+//! loads them into the process environment. Never commit a `.env` file that
+//! holds secrets, and do not rely on it in production, where the platform sets
+//! the variables.
 
 use std::env;
 
