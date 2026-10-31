@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parse a small XML document with `xml5ever` and inspect its DOM tree.
+//!
+//! XML is a text format of nested tags. A DOM (document object model) is the
+//! tree of elements built from it, which you can walk. `xml5ever` is the XML
+//! sibling of the HTML parser used in Servo.
 
 use std::borrow::Cow;
 use std::cell::Cell;

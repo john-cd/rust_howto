@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Run an ONNX model trained elsewhere (here, a scikit-learn logistic
 //! regression) with `ort`, and hot-swap the model without a restart.
+//!
+//! ONNX is an open format for trained machine-learning models, so a model built
+//! in Python (scikit-learn, PyTorch) can run in Rust. Inference means using a
+//! trained model to predict from new data, as opposed to training it. It needs
+//! the ONNX Runtime library.
 
 use std::sync::Arc;
 use std::sync::Mutex;

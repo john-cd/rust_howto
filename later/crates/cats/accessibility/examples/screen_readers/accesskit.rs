@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Describes a small interface to screen readers with AccessKit.
+//!
+//! A screen reader is software that reads the screen aloud or shows it in
+//! braille for people with visual impairments. Programs describe their
+//! interface elements (role, label, state) in an accessibility tree. AccessKit
+//! provides that tree to each platform's accessibility API.
 
 use accesskit::Node;
 use accesskit::NodeId;

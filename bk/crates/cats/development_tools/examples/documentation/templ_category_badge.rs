@@ -1,4 +1,8 @@
 //! Generate a category badge with the shared `templ` renderer.
+//!
+//! A badge is a small label, here showing a category, rendered from a template.
+//! Rendering through one shared function keeps every badge in the book
+//! identical.
 
 // ANCHOR: example
 use anyhow::Result;
@@ -18,7 +22,8 @@ fn main() -> Result<()> {
 
 /// Runs the category badge example.
 pub fn run() -> Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

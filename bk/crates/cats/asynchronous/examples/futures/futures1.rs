@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Races two futures with `select!` from the `futures` crate.
+//!
+//! `select!` waits for several futures and returns when the first one
+//! completes, dropping the others. Typical uses are racing a request against a
+//! timeout, or listening for work and a shutdown signal at once.
 
 use futures::{
     future::FutureExt as _, // Provides the `.fuse()` method for futures.

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to call a blocking function from an
 //! asynchronous context using `tokio::task::spawn_blocking`.
+//!
+//! Blocking calls (file reads, a long computation) inside an async task would
+//! stall the runtime's worker threads. `spawn_blocking` moves them to a
+//! separate pool meant for that, and you await the result.
 
 /// This example demonstrates how to call a blocking function from an
 /// asynchronous context using `tokio::task::spawn_blocking`.

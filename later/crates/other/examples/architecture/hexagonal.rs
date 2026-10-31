@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Hexagonal architecture: a port (trait) with two adapters.
+//!
+//! Hexagonal (ports and adapters) architecture keeps the business logic
+//! independent of technology. The logic talks to a port (a trait); adapters
+//! implement it for a database, a web service or a test double, so you can swap
+//! them or test without infrastructure.
 
 use std::collections::HashMap;
 

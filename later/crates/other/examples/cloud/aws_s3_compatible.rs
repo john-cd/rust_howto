@@ -10,6 +10,11 @@
 // ANCHOR: example
 //! Point the S3 client at an S3-compatible store (MinIO, RustFS, LocalStack),
 //! optionally over HTTPS with a private certificate authority.
+//!
+//! Amazon S3 is object storage: it holds files (objects) in buckets, addressed
+//! by key. Many other stores speak the same API, such as MinIO, so the same
+//! client works if you point it at their endpoint. They commonly need
+//! path-style addressing instead of bucket names in the host.
 
 use anyhow::Context;
 use anyhow::Result;

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Newtypes that carry a unit: only the operations that make sense are
 //! implemented, so the compiler rejects mixing units by mistake.
+//!
+//! A newtype wraps a primitive in a struct so the compiler distinguishes meters
+//! from feet. Mixing units has crashed spacecraft; here only operations that
+//! make sense, such as adding two lengths, are implemented.
 
 use std::fmt;
 use std::ops::Add;

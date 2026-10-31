@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Event-driven architecture: producers publish events to subscribers.
+//!
+//! In an event bus, producers publish events without knowing who listens, and
+//! subscribers receive the ones they registered for. This decouples the parts
+//! of a program, at the cost of making the flow of control harder to trace.
 
 use std::sync::mpsc;
 use std::sync::mpsc::Receiver;

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! `comrak` is a `CommonMark` and GitHub-flavored Markdown compatible parser.
+//!
+//! CommonMark is a precise specification of Markdown, which has many ambiguous
+//! dialects. GitHub-flavored Markdown (GFM) adds tables, task lists and
+//! strikethrough. `comrak` parses and renders both, for example to convert
+//! Markdown to HTML.
 
 use comrak::Arena;
 use comrak::Options;

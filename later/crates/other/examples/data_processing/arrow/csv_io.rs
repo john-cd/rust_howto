@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Write an Arrow record batch to CSV and read it back.
+//!
+//! CSV is a plain-text format with no types, while Arrow columns are typed.
+//! Converting between them needs a schema, or inference from the data.
 
 use std::io::Cursor;
 use std::sync::Arc;

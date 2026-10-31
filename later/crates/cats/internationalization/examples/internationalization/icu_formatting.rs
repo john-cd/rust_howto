@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Formats numbers and dates with ICU4X using two different locales.
+//!
+//! Numbers and dates are written differently around the world (1,234.5 or
+//! 1.234,5; month/day or day/month). ICU4X, from the Unicode Consortium, holds
+//! locale data and formatting rules, and is designed to run in small, portable
+//! programs.
 
 use std::error::Error;
 

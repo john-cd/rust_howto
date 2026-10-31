@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Convert Serde-compatible rows to an Arrow batch and back to Rust structs.
+//!
+//! Serde can convert Rust structs to Arrow columns and back, which saves
+//! writing the column code by hand. It is convenient but slower than building
+//! the columns directly for large data.
 
 use std::sync::Arc;
 

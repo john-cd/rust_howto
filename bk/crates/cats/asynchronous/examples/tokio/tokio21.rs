@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates using `tokio::task::LocalSet` to run non-`Send` tasks.
+//!
+//! Tasks spawned with `tokio::spawn` may move between threads, so their data
+//! must be `Send`. A `LocalSet` keeps tasks on the current thread, which allows
+//! types such as `Rc` that are not `Send`.
 
 use std::rc::Rc;
 

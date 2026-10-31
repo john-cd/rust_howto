@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Build typed Arrow arrays, a schema, and a record batch.
+//!
+//! Apache Arrow is a columnar in-memory format: each column of a table is
+//! stored contiguously, which makes scans and analytics fast and lets different
+//! tools (Python, Rust, databases) share data without copying. A record batch
+//! is a set of equally long columns plus a schema.
 
 use std::sync::Arc;
 

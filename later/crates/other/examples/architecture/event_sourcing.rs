@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Event sourcing: store events, rebuild the state by replaying them.
+//!
+//! Event sourcing stores every change as an immutable event instead of
+//! overwriting the current state. The state is rebuilt by replaying the events.
+//! This gives a complete audit trail and the ability to rebuild past states, as
+//! in banking ledgers.
 
 /// Facts that happened to an account. Events are never modified.
 #[derive(Debug, Clone)]

@@ -1,6 +1,10 @@
 // ANCHOR: example
 //! Uses a newtype so user identifiers cannot be confused with arbitrary
 //! integers.
+//!
+//! A newtype wraps a primitive in a struct, so a user ID and an order ID are
+//! different types. The compiler then stops you passing one where the other is
+//! expected, at no run-time cost.
 
 /// A nonzero identifier for a user.
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]

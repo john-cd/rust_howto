@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates basic error handling in Rust using the `Result`
 //! type.
+//!
+//! Rust has no exceptions. A function that can fail returns `Result<T, E>`:
+//! `Ok(value)` or `Err(error)`. The compiler forces you to handle the error,
+//! which prevents forgotten checks.
 
 use std::io;
 use std::io::BufRead as _;

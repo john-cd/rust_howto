@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Hides a hash map behind a user-directory API.
+//!
+//! The facade pattern hides a complicated or changeable component behind a
+//! small, simple interface. Callers use the user-directory API and do not need
+//! to know a hash map sits behind it.
 
 use std::collections::HashMap;
 

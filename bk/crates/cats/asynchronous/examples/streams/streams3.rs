@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
+//!
+//! A stream of fallible fetches yields `Result` items. You decide what an error
+//! means: stop at the first failure, skip it, or collect all results and
+//! failures to report later.
 
 use std::time::Duration;
 

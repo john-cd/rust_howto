@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parse the arguments of a `cargo hello` subcommand and select packages.
+//!
+//! Cargo runs any executable named `cargo-<name>` on your `PATH` when you type
+//! `cargo <name>`, passing `<name>` as the first argument. That is how plugins
+//! like `cargo-audit` work, with no registration needed.
 
 use clap::Args;
 use clap::Parser;

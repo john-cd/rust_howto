@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! This example demonstrates basic `mio` event polling with a `Waker`.
+//!
+//! `mio` is the low-level layer under Tokio: it asks the operating system (via
+//! epoll, kqueue or IOCP) to say which sockets are ready, so one thread can
+//! watch thousands of connections. A `Waker` lets another thread interrupt the
+//! wait.
 
 use std::time::Duration;
 

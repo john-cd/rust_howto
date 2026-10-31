@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Detecting the collision of two shapes with `parry2d`.
+//!
+//! Collision detection decides whether shapes overlap, which games use for
+//! hits, walls and triggers. `parry2d` offers shapes and queries such as
+//! intersection tests and distance, in 2D.
 
 use parry2d::math::Pose;
 use parry2d::math::Vector;

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A state machine whose transitions are triggered by events.
+//!
+//! A state machine has a finite set of states and rules for moving between them
+//! when events occur, for example an order that goes from created to paid to
+//! shipped. Modelling states as an enum makes invalid transitions impossible to
+//! write.
 
 /// Represents the possible states of the state machine.
 #[derive(Debug, PartialEq, Clone, Copy)]

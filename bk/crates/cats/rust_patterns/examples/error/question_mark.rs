@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates the use of `?`.
+//!
+//! The `?` operator returns the error to the caller if a `Result` is an `Err`,
+//! and otherwise unwraps the value. It replaces long chains of `match` and
+//! keeps the happy path readable.
 
 use std::fs::File;
 use std::io;

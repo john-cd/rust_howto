@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generates a random `f64` with the `rand` crate.
+//!
+//! Random numbers come from a generator. `rand` seeds it from the operating
+//! system, so each run differs; use a fixed seed in tests to make results
+//! reproducible.
 
 use rand::RngExt as _;
 

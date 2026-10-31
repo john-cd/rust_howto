@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Combinators from `futures_util`, applied to asynchronous fetches that may
 //! fail.
+//!
+//! Combinators transform futures and streams without writing state machines by
+//! hand, much as iterator adapters do for iterators. Here fetches that can fail
+//! are mapped, filtered and collected.
 
 use std::time::Duration;
 

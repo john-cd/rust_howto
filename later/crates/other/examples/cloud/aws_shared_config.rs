@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Load the AWS configuration once and share it across service clients.
+//!
+//! The SDK's configuration (credentials, region, retry policy) is loaded once,
+//! which involves reading files and the environment, and then shared by every
+//! service client, so the program does not repeat that work.
 
 use std::time::Duration;
 

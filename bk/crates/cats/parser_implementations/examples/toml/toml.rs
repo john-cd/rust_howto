@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example demonstrating TOML parsing and deserialization.
+//!
+//! TOML is a configuration file format designed to be easy for people to read
+//! and edit. Cargo uses it for `Cargo.toml`. Deserializing maps its tables to
+//! Rust structs.
 
 use serde::Deserialize;
 use toml::value::Datetime;

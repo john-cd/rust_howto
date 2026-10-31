@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to use the AWS SDK for Rust to list Amazon S3
 //! buckets visible to the configured AWS identity.
+//!
+//! Amazon S3 is object storage: it holds files (objects) in buckets, addressed
+//! by key. The AWS SDK for Rust reads credentials and region from the
+//! environment, as the AWS command line does. Running this needs AWS
+//! credentials.
 
 use aws_config::BehaviorVersion;
 use aws_sdk_s3::Client;
