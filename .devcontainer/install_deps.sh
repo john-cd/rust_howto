@@ -130,18 +130,22 @@ fi
 
 # Install Pandoc binary
 wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -O /tmp/pandoc.deb \
+    && echo "${PANDOC_LINUX_AMD64_DEB_SHA256}  /tmp/pandoc.deb" | sha256sum --check \
     && sudo dpkg -i /tmp/pandoc.deb \
     && rm /tmp/pandoc.deb
 
 # Rust install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
-rustup update && rustup component add clippy rustfmt
-rustup toolchain install "$RUSTFMT_TOOLCHAIN" \
-    && rustup component add rustfmt clippy --toolchain "$RUSTFMT_TOOLCHAIN"
+rustup toolchain install "$RUST_VERSION" --profile minimal
+rustup default "$RUST_VERSION"
+rustup component add clippy rustfmt --toolchain "$RUST_VERSION"
+rustup toolchain install "$RUSTFMT_TOOLCHAIN" --profile minimal --component rustfmt
 
 ## binstall
-curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+curl -L --proto '=https' --tlsv1.2 -sSf \
+    "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/v${CARGO_BINSTALL_VERSION}/install-from-binstall-release.sh" \
+    | BINSTALL_VERSION="$CARGO_BINSTALL_VERSION" bash
 
 cargo binstall --no-confirm --secure --version "$CARGO_NEXTEST_VERSION" cargo-nextest
 cargo binstall --no-confirm --secure --version "$MATURIN_VERSION" maturin
@@ -154,7 +158,11 @@ cargo binstall --no-confirm --secure --force --version "$DPRINT_VERSION" dprint
 cargo binstall --no-confirm --secure --force --version "$RUMDL_VERSION" rumdl
 cargo binstall --no-confirm --secure --force --version "$PREK_VERSION" prek
 cargo binstall --no-confirm --secure --version "$FLUTTER_RUST_BRIDGE_CODEGEN_VERSION" flutter_rust_bridge_codegen
-cargo binstall --no-confirm --secure sccache cargo-deny lychee bacon ripgrep
+cargo binstall --no-confirm --secure --version "$SCCACHE_VERSION" sccache
+cargo binstall --no-confirm --secure --version "$CARGO_DENY_VERSION" cargo-deny
+cargo binstall --no-confirm --secure --version "$LYCHEE_VERSION" lychee
+cargo binstall --no-confirm --secure --version "$BACON_VERSION" bacon
+cargo binstall --no-confirm --secure --version "$RIPGREP_VERSION" ripgrep
 
 flutter_install_path="$HOME/.local/share/flutter/$FLUTTER_VERSION"
 bash "$repo_root/.devcontainer/install_flutter_sdk.sh" \
@@ -205,10 +213,16 @@ fi
 cargo install --locked --force --version "$MDBOOK_INDEXING_VERSION" mdbook-indexing
 cargo install --git https://github.com/john-cd/mdbook-utils --rev "$MDBOOK_UTILS_REV" --locked --force mdbook-utils
 
-# GitHub
-curl -sS https://webi.sh/gh | sh
+cargo binstall --no-confirm --secure --version "$KANI_VERIFIER_VERSION" kani-verifier
 
-cargo binstall --no-confirm --secure kani-verifier
+# Install the GitHub CLI from its versioned, checksum-verified upstream archive.
+bash "$repo_root/.devcontainer/install_gh_cli.sh" "$HOME/.local"
+export PATH="$HOME/.local/bin:$PATH"
+gh_profile_line='export PATH="$HOME/.local/bin:$PATH"'
+touch "$HOME/.profile"
+if ! grep -Fqx "$gh_profile_line" "$HOME/.profile"; then
+    printf '%s\n' "$gh_profile_line" >> "$HOME/.profile"
+fi
 tectonic --version
 nasm --version
 flutter --version

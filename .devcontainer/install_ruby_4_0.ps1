@@ -3,7 +3,7 @@
 
 $ErrorActionPreference = 'Stop'
 
-$rubyInstallerVersion = '4.0.7-1'
+$rubyInstallerVersion = '4.0.9-1'
 $rubyVersionPattern = '^ruby 4\.0\.\d+\b'
 $rubyRoot = Join-Path $env:SystemDrive 'Ruby40-x64'
 $rubyBin = Join-Path $rubyRoot 'bin'

@@ -8,19 +8,6 @@
     Installs development dependencies for Windows.
 #>
 
-Write-Host "Installing Rust components..." -ForegroundColor Cyan
-$rustfmtToolchain = if ($env:RUSTFMT_TOOLCHAIN) {
-    $env:RUSTFMT_TOOLCHAIN
-} else {
-    (Select-String -Path (Join-Path $PSScriptRoot "..\rustfmt-toolchain.toml") -Pattern '^channel\s*=\s*"([^"]+)"').Matches[0].Groups[1].Value
-}
-rustup default stable
-rustup toolchain install $rustfmtToolchain
-rustup component add clippy
-rustup component add rustfmt --toolchain $rustfmtToolchain
-
-Write-Host "Installing system tools via Winget..." -ForegroundColor Cyan
-
 $toolVersions = @{}
 Get-Content (Join-Path $PSScriptRoot ".env") | ForEach-Object {
     if ($_ -match '^(?<name>[A-Z0-9_]+)="(?<version>[^"]+)"$') {
@@ -28,8 +15,20 @@ Get-Content (Join-Path $PSScriptRoot ".env") | ForEach-Object {
     }
 }
 
-# Install Just (Task Runner)
-winget install --id Casey.Just --exact --source winget --accept-source-agreements --accept-package-agreements
+Write-Host "Installing Rust components..." -ForegroundColor Cyan
+$rustVersion = $toolVersions["RUST_VERSION"]
+$rustfmtToolchain = if ($env:RUSTFMT_TOOLCHAIN) {
+    $env:RUSTFMT_TOOLCHAIN
+} else {
+    (Select-String -Path (Join-Path $PSScriptRoot "..\rustfmt-toolchain.toml") -Pattern '^channel\s*=\s*"([^"]+)"').Matches[0].Groups[1].Value
+}
+rustup toolchain install $rustVersion --profile minimal
+rustup default $rustVersion
+rustup component add clippy rustfmt --toolchain $rustVersion
+rustup toolchain install $rustfmtToolchain --profile minimal --component rustfmt
+
+Write-Host "Installing system tools via Winget..." -ForegroundColor Cyan
+
 # Install LLVM/Clang (Required for bindgen in some crates)
 winget install --id LLVM.LLVM -e --source winget --accept-source-agreements --accept-package-agreements
 winget install --id SQLite.SQLite -e --source winget --accept-source-agreements --accept-package-agreements
@@ -383,12 +382,16 @@ Add-UserPath -Directory $tectonicDirectory
 # The GTK 4 and Relm4 examples are Linux-only in later/crates/cats/gui.
 
 # Install cargo-binstall for Rust-based tools
-Set-ExecutionPolicy Unrestricted -Scope Process; iex (iwr "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.ps1").Content
+$binstallVersion = $toolVersions["CARGO_BINSTALL_VERSION"]
+$env:BINSTALL_VERSION = $binstallVersion
+Set-ExecutionPolicy Unrestricted -Scope Process; iex (iwr "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/v$binstallVersion/install-from-binstall-release.ps1").Content
+Remove-Item Env:BINSTALL_VERSION -ErrorAction SilentlyContinue
 
 Write-Host "Installing Rust-based tools..." -ForegroundColor Cyan
 $tools = @(
     @{ Name = "mdbook"; Version = $toolVersions["MDBOOK_VERSION"] },
     @{ Name = "mdbook-linkcheck"; Version = $toolVersions["MDBOOK_LINKCHECK_VERSION"] },
+    @{ Name = "mdbook-admonish"; Version = $toolVersions["MDBOOK_ADMONISH_VERSION"] },
     @{ Name = "cargo-nextest"; Version = $toolVersions["CARGO_NEXTEST_VERSION"] },
     @{ Name = "just"; Version = $toolVersions["JUST_VERSION"] },
     @{ Name = "cargo-fmt-toml"; Version = $toolVersions["CARGO_FMT_TOML_VERSION"] },
@@ -424,7 +427,6 @@ $env:Path = "$flutterBin;$env:Path"
 cargo install --git https://github.com/john-cd/mdbook-utils --rev $toolVersions["MDBOOK_UTILS_REV"] --locked mdbook-utils
 cargo install --locked --force --version $toolVersions["MDBOOK_INDEXING_VERSION"] mdbook-indexing
 cargo binstall --no-confirm --secure --version $toolVersions["MDBOOK_PANDOC_VERSION"] mdbook-pandoc
-cargo binstall --no-confirm --secure mdbook-admonish
 
 Write-Host "Environment check:" -ForegroundColor Cyan
 just --version

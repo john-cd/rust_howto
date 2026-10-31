@@ -53,6 +53,7 @@ ARG MDBOOK_LINKCHECK_VERSION
 ARG MDBOOK_INDEXING_VERSION
 ARG MDBOOK_PANDOC_VERSION
 ARG MDBOOK_UTILS_REV
+ARG CARGO_BINSTALL_VERSION
 ARG CARGO_NEXTEST_VERSION
 ARG JUST_VERSION
 ARG CARGO_FMT_TOML_VERSION
@@ -61,6 +62,9 @@ ARG RUMDL_VERSION
 ARG PREK_VERSION
 ARG MATURIN_VERSION
 ARG FLUTTER_RUST_BRIDGE_CODEGEN_VERSION
+ARG SCCACHE_VERSION
+ARG CARGO_DENY_VERSION
+ARG LYCHEE_VERSION
 
 ## Install cargo binstall (binary install)
 ## Install nextest
@@ -73,7 +77,11 @@ ARG FLUTTER_RUST_BRIDGE_CODEGEN_VERSION
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     <<EOF
     set -e
-    curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+    curl --fail --location --proto '=https' --tlsv1.2 --retry 3 \
+        "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/v${CARGO_BINSTALL_VERSION}/install-from-binstall-release.sh" \
+        --output /tmp/install-from-binstall-release.sh
+    BINSTALL_VERSION="${CARGO_BINSTALL_VERSION}" bash /tmp/install-from-binstall-release.sh
+    rm /tmp/install-from-binstall-release.sh
     cargo binstall --no-confirm --secure --version ${CARGO_NEXTEST_VERSION} cargo-nextest
     cargo binstall --no-confirm --secure --version ${MATURIN_VERSION} maturin
     cargo binstall --no-confirm --secure --version ${MDBOOK_VERSION} mdbook
@@ -85,7 +93,9 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
     cargo binstall --no-confirm --secure --version ${RUMDL_VERSION} rumdl
     cargo binstall --no-confirm --secure --version ${PREK_VERSION} prek
     cargo binstall --no-confirm --secure --version ${FLUTTER_RUST_BRIDGE_CODEGEN_VERSION} flutter_rust_bridge_codegen
-    cargo binstall --no-confirm --secure sccache cargo-deny lychee
+    cargo binstall --no-confirm --secure --version ${SCCACHE_VERSION} sccache
+    cargo binstall --no-confirm --secure --version ${CARGO_DENY_VERSION} cargo-deny
+    cargo binstall --no-confirm --secure --version ${LYCHEE_VERSION} lychee
     cargo install --locked --force --version ${MDBOOK_INDEXING_VERSION} mdbook-indexing
 EOF
 
@@ -295,8 +305,10 @@ ENV LANG=en_US.UTF-8 \
 ## Using a direct binary download instead of `apt install pandoc` avoids pulling in large Haskell dependencies.
 ## Pandoc is required by the `mdbook-pandoc` backend to generate the PDF version of the book.
 ARG PANDOC_VERSION
+ARG PANDOC_LINUX_AMD64_DEB_SHA256
 RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" \
     -O /tmp/pandoc.deb \
+    && echo "${PANDOC_LINUX_AMD64_DEB_SHA256}  /tmp/pandoc.deb" | sha256sum --check \
     && dpkg -i /tmp/pandoc.deb \
     && rm /tmp/pandoc.deb
 
@@ -323,6 +335,12 @@ FROM base AS development
 
 ARG FLUTTER_VERSION
 ARG FLUTTER_GIT_REVISION
+ARG GH_CLI_VERSION
+ARG GH_CLI_LINUX_AMD64_SHA256
+ARG GH_CLI_LINUX_ARM64_SHA256
+ARG BACON_VERSION
+ARG RIPGREP_VERSION
+ARG KANI_VERIFIER_VERSION
 
 COPY --link --chmod=755 .devcontainer/install_flutter_sdk.sh /usr/local/bin/install_flutter_sdk.sh
 RUN install_flutter_sdk.sh "${FLUTTER_VERSION}" "${FLUTTER_GIT_REVISION}" /opt/flutter \
@@ -346,10 +364,16 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # pipx \
 
 ## Install the GitHub CLI
-RUN curl -sS https://webi.sh/gh | sh
+COPY --link --chmod=755 .devcontainer/install_gh_cli.sh /usr/local/bin/install_gh_cli.sh
+RUN GH_CLI_VERSION="${GH_CLI_VERSION}" \
+    GH_CLI_LINUX_AMD64_SHA256="${GH_CLI_LINUX_AMD64_SHA256}" \
+    GH_CLI_LINUX_ARM64_SHA256="${GH_CLI_LINUX_ARM64_SHA256}" \
+    /usr/local/bin/install_gh_cli.sh /usr/local
 
 ## Install additional dev tools
-RUN cargo binstall --no-confirm --secure kani-verifier bacon ripgrep
+RUN cargo binstall --no-confirm --secure --version "${KANI_VERIFIER_VERSION}" kani-verifier \
+    && cargo binstall --no-confirm --secure --version "${BACON_VERSION}" bacon \
+    && cargo binstall --no-confirm --secure --version "${RIPGREP_VERSION}" ripgrep
 ## Install optional cargo plugins:
 # cargo install --locked cargo-outdated || true
 # cargo-udeps
