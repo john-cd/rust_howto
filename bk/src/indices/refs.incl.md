@@ -374,6 +374,7 @@
 [ex~mathematics~multiply-a-scalar-with-a-vector-and-a-matrix]: ../categories/mathematics/linear_algebra.md#multiply-a-scalar-with-a-vector-and-a-matrix
 [ex~mathematics~multiplying-matrices]: ../categories/mathematics/linear_algebra.md#multiplying-matrices
 [ex~mathematics~nalgebra-svd]: ../categories/mathematics/linear_algebra.md#nalgebra-svd
+[ex~mathematics~sparse-matrices]: ../categories/mathematics/linear_algebra.md#sparse-matrices
 [ex~mathematics~nalgebra-transformations]: ../categories/mathematics/linear_algebra.md#nalgebra-transformations
 [ex~mathematics~nalgebra-vectors]: ../categories/mathematics/linear_algebra.md#nalgebra-vectors
 [ex~mathematics~num-bigint]: ../categories/mathematics/additional_numeric_types.md#num-bigint
