@@ -9,7 +9,7 @@ This crate contains code examples for the **Development Tools FFI** category on 
 The repository's `.devcontainer` image and install scripts provide the native SDKs
 for these examples. On Debian, they install the default JDK, Ruby headers, Python
 3 with virtual-environment support, and the pinned Maturin release. The Windows
-script installs Eclipse Temurin JDK 21, Python 3.13, RubyInstaller with DevKit
+script installs Eclipse Temurin JDK 21, Python 3.15, RubyInstaller with DevKit
 3.3, and the same Maturin version.
 
 - **Java/JNI:** Rust code can compile without a JDK. Running the Java caller

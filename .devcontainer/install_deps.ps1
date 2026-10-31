@@ -37,7 +37,8 @@ winget install --id SQLite.SQLite -e --source winget --accept-source-agreements 
 winget install --id Ninja-build.Ninja -e --source winget --accept-source-agreements --accept-package-agreements
 # Install the SDKs used by the Java, Ruby, and Python FFI examples.
 winget install --id EclipseAdoptium.Temurin.21.JDK -e --source winget --accept-source-agreements --accept-package-agreements
-winget install --id Python.Python.3.13 -e --source winget --accept-source-agreements --accept-package-agreements
+winget install 9NQ7512CXL7T -e --accept-package-agreements --disable-interactivity
+pymanager install 3.15
 winget install --id RubyInstallerTeam.RubyWithDevKit.3.3 -e --source winget --accept-source-agreements --accept-package-agreements
 & (Join-Path $PSScriptRoot 'install_ruby_4_0.ps1')
 
