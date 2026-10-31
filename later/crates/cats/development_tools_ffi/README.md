@@ -17,9 +17,10 @@ script installs Eclipse Temurin JDK 21, Python 3.13, RubyInstaller with DevKit
   another tool needs an explicit JDK path. The Windows setup script configures
   it when the Temurin installer does not.
 - **Ruby:** `ruby-dev` supplies headers on Debian; RubyInstaller with DevKit
-  supplies Ruby, headers, and its C toolchain on Windows. This crate currently
-  gates Magnus and Rutie dependencies/examples to non-Windows targets, so Windows
-  runs only the platform-independent greeting example.
+  supplies Ruby, headers, and its C toolchain on Windows. The Rutie embedding
+  example builds and runs on Windows with the installed Ruby 4.0 runtime. Magnus
+  stays gated to non-Windows targets because Windows RubyInstaller uses the
+  MinGW ABI while this workspace targets MSVC; `rb-sys` rejects that ABI mismatch.
 - **Python:** Both embedded PyO3 examples support Linux and Windows. Windows
   embedded runs need `PYTHONHOME`
   set to Python's base installation so CPython can find its standard library.

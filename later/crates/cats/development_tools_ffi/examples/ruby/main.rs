@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 mod greeting;
 #[cfg(all(not(windows), feature = "ruby"))]
-// TODO review Windows support for Ruby FFI examples
 mod magnus;
 #[cfg(feature = "ruby")]
 mod rutie;

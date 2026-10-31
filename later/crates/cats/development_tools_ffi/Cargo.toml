@@ -137,6 +137,7 @@ objc2-app-kit = { version = "0.3.2", optional = true }
 objc2-foundation = { version = "0.3.2", optional = true }
 
 [target.'cfg(not(target_os = "windows"))'.dependencies]
+# Windows RubyInstaller uses the MinGW ABI, which does not match this MSVC target.
 magnus = { version = "0.9.3", features = ["embed"], optional = true }
 
 [target.'cfg(any(target_os = "linux", target_os = "windows"))'.dependencies]
