@@ -4,7 +4,7 @@
 # TODO Reviewed ??-??-2026.
 
 param(
-    [ValidatePattern('^[a-z]$')][string]$Slot,
+    [ValidatePattern('^[ab]$')][string]$Slot,
     [string]$Branch,
     [switch]$RestartCache,
     [string]$ExistingBaseDirs = $env:SCCACHE_BASEDIRS,
@@ -26,7 +26,7 @@ function Get-CacheBaseDirs {
     ) -join ';'
     $bases = @($configuredBases -split ';' | Where-Object { $_ })
     $bases += $mainRepo.Replace('\', '/')
-    $bases += 'a'..'z' | ForEach-Object { (Join-Path $mainRepo ".worktrees/$_").Replace('\', '/') }
+    $bases += 'a'..'b' | ForEach-Object { (Join-Path $mainRepo ".worktrees/$_").Replace('\', '/') }
     $worktreePaths = @(& git -C $mainRepo worktree list --porcelain | ForEach-Object {
         if ($_ -match '^worktree (.+)$') { $Matches[1].Replace('\', '/') }
     })
@@ -73,11 +73,11 @@ if ($Slot) {
 $identity = if ((Split-Path -Leaf (Split-Path -Parent $repo)) -eq '.worktrees') {
     Split-Path -Leaf $repo
 } else { 'main' }
-if ($identity -notmatch '^(main|[a-z])$') { throw 'Use a named .worktrees/a through .worktrees/z slot.' }
+if ($identity -notmatch '^(main|[abc])$') { throw 'Use a named .worktrees/a or .worktrees/b slot; existing c is retained as a legacy checkout.' }
 
 foreach ($entry in @(
-    @{ Link = 'target'; Destination = $(if ($env:CARGO_TARGET_DIR) { $env:CARGO_TARGET_DIR } else { "D:/target/rust_howto/$identity" }) },
-    @{ Link = 'build'; Destination = $(if ($env:CARGO_BUILD_BUILD_DIR) { $env:CARGO_BUILD_BUILD_DIR } else { "C:/code_build/rust_howto/$identity" }) },
+    @{ Link = 'target'; Destination = $(if ($TargetDir) { $TargetDir } else { "D:/target/rust_howto/$identity" }) },
+    @{ Link = 'build'; Destination = $(if ($BuildDir) { $BuildDir } else { "C:/code_build/rust_howto/$identity" }) },
     @{ Link = '.sccache'; Destination = $(if ($env:SCCACHE_DIR) { $env:SCCACHE_DIR } else { 'D:/sccache' }) }
 )) {
     $link = Join-Path $repo $entry.Link

@@ -43,3 +43,12 @@ Please refer to the LICENSE file.
 [rust-howto~contributing~website]: https://john-cd.com/rust_howto/appendices/contributing/index.html
 [rust-howto~tools~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools
 [rust-howto~repo]: https://github.com/john-cd/rust_howto
+## Central build outputs and worktrees
+
+- Keep auxiliary Git worktrees under .worktrees/ and name them with one lowercase letter from a through j. Only use slots a and b for new tasks.
+- Preserve the pre-existing `.worktrees/c` checkout as a legacy exception; do not create additional slots beyond a or b. Its `just` paths route outputs under slot c while it remains registered.
+- Windows: target outputs go to D:/target/rust_howto/slot and intermediate build outputs go to C:/code_build/rust_howto/slot. C: is NTFS; D: is ReFS.
+- Linux/macOS: target outputs go to the XDG cache folder (or ~/.cache) under cargo-target/rust_howto/<slot>; intermediate outputs go under cargo-build/rust_howto/<slot>.
+- Run ad hoc commands as just cargo <subcommand> [args...]; existing cargo-make tasks also receive the configured paths.
+- The workspace justfiles use no compiler wrapper with incremental compilation enabled; direct Cargo uses sccache with incremental compilation disabled by `.cargo/config.toml`. Both paths keep Cargo outputs in the external directories above. Prefer the justfiles for ad hoc Cargo commands.
+- SCCACHE_BASEDIRS adds the common repository root, which covers the main checkout and every auxiliary worktree, while preserving inherited project bases.

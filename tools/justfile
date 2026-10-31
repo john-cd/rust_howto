@@ -65,4 +65,4 @@ alias nta := nextestall
 
 @release:
     echo "Build the tools in $(pwd) in release mode and copy to {{ root }}/../bin"
-    cargo +{{ rustfmt_toolchain }} build --bins --locked --all-features --release -Z unstable-options --artifact-dir "{{ root }}/../bin"
+    cargo +{{ rustfmt_toolchain }} build --bins --locked --all-features --release -Z unstable-options --artifact-dir "{{ join(build_intermediate_base, build_slot, "artifacts") }}"
