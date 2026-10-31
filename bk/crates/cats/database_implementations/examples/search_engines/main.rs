@@ -58,3 +58,34 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Without any example feature, `main` has nothing to run and succeeds.
+    #[cfg(not(any(feature = "meilisearch", feature = "tantivy")))]
+    #[test]
+    fn test_main_is_a_no_op_without_features() {
+        assert!(main().is_ok());
+    }
+
+    #[cfg(feature = "meilisearch")]
+    #[test]
+    fn test_meilisearch_subcommand_parses() {
+        assert!(Cli::try_parse_from(["example", "meilisearch"]).is_ok());
+    }
+
+    #[cfg(feature = "tantivy")]
+    #[test]
+    fn test_tantivy_subcommand_parses() {
+        assert!(Cli::try_parse_from(["example", "tantivy"]).is_ok());
+    }
+
+    /// Unknown subcommands are rejected.
+    #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
+    #[test]
+    fn test_unknown_subcommand_is_rejected() {
+        assert!(Cli::try_parse_from(["example", "no-such-example"]).is_err());
+    }
+}
