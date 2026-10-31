@@ -82,7 +82,7 @@ mod tests {
 
     /// Returns a mock OpenGL version and extension string.
     unsafe extern "system" fn stub_get_string(_: u32) -> *const u8 {
-        b"2.1 Mock\0".as_ptr()
+        c"2.1 Mock".as_ptr().cast::<u8>()
     }
 
     /// Mock OpenGL clear-color function used to load a test context.
@@ -113,11 +113,13 @@ mod tests {
     fn test_context_loader_and_clear_helpers() {
         let gl = unsafe {
             super::load_context(|name| match name.to_bytes() {
-                b"glGetString" => stub_get_string as *const () as *const c_void,
-                b"glClearColor" => {
-                    stub_clear_color as *const () as *const c_void
+                b"glGetString" => {
+                    (stub_get_string as *const ()).cast::<c_void>()
                 }
-                b"glClear" => stub_clear as *const () as *const c_void,
+                b"glClearColor" => {
+                    (stub_clear_color as *const ()).cast::<c_void>()
+                }
+                b"glClear" => (stub_clear as *const ()).cast::<c_void>(),
                 _ => ptr::null(),
             })
         };
