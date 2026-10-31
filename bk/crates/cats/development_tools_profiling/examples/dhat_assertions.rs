@@ -44,7 +44,9 @@ mod tests {
     /// Verifies the optimized string builder performs one allocation.
     #[test]
     fn allocation_counts() {
-        let _guard = SERIAL.lock().unwrap_or_else(|e| e.into_inner());
+        let _guard = SERIAL
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         let _profiler = dhat::Profiler::builder().testing().build();
         let parts = ["alpha", "beta", "gamma"];
 
@@ -62,7 +64,9 @@ mod tests {
 
     #[test]
     fn test_main_entry_point() {
-        let _guard = SERIAL.lock().unwrap_or_else(|e| e.into_inner());
+        let _guard = SERIAL
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         main();
     }
 }

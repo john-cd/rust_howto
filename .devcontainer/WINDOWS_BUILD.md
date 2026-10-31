@@ -19,13 +19,19 @@ The script reads pinned tool versions from `.devcontainer/.env` and installs
 Rust components, `just`, `cargo-fmt-toml`, `dprint`, `rumdl`, LLVM/Clang,
 SQLite, Ninja, Pandoc, Tectonic, and the book tools with Winget, verified
 publisher downloads, and Cargo. It installs the pinned NASM release from the
-official upstream archive after checking its SHA-256 digest. It adds the LLVM,
-NASM, Pandoc, Tectonic, and local Rust tool directories to the current and user
-`PATH` when those directories exist. It does not take command-line parameters
-or install Git for Windows. Install Git for Windows separately; Git Bash must
-be available at `C:\Program Files\Git\bin\bash.exe`, the path used by the
-repository justfiles. For a custom installation, pass the desired path with
-just's `--shell` and `--shell-arg` options.
+official upstream archive after checking its SHA-256 digest. It also installs
+OpenSSL for Rust builds with the pinned vcpkg release and sets
+`VCPKGRS_TRIPLET=x64-windows-static-md`. If `VCPKG_ROOT` is unset, vcpkg is
+installed under `%LOCALAPPDATA%\Programs\vcpkg`; set `VCPKG_ROOT` before
+running the script to use another location, such as a drive with more free
+space. The Debian/Ubuntu installer already installs `libssl-dev`. The script
+adds the LLVM, NASM, Pandoc, Tectonic, vcpkg, and local Rust tool directories
+to the current and user `PATH` when those directories exist. It does not take
+command-line parameters or install Git for Windows. Install Git for Windows
+separately; Git Bash must be available at
+`C:\Program Files\Git\bin\bash.exe`, the path used by the repository
+justfiles. For a custom installation, pass the desired path with just's
+`--shell` and `--shell-arg` options.
 
 Use `.devcontainer/install_deps.ps1` for native Windows.
 `.devcontainer/install_deps.sh` is the separate Debian/Ubuntu installer; it

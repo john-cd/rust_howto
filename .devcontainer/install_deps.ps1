@@ -79,6 +79,66 @@ function Add-UserPath {
     }
 }
 
+# Install OpenSSL through the pinned vcpkg release so openssl-sys can discover
+# the x64 libraries using its default Rust/MSVC triplet.
+function Install-VcpkgOpenSsl {
+    $vcpkgVersion = $toolVersions['VCPKG_VERSION']
+    $vcpkgRoot = if ($env:VCPKG_ROOT) {
+        [IO.Path]::GetFullPath($env:VCPKG_ROOT)
+    } else {
+        Join-Path $env:LOCALAPPDATA "Programs\vcpkg\$vcpkgVersion"
+    }
+    $vcpkgExecutable = Join-Path $vcpkgRoot 'vcpkg.exe'
+    $bootstrapScript = Join-Path $vcpkgRoot 'bootstrap-vcpkg.bat'
+
+    if (-not (Test-Path -LiteralPath $vcpkgExecutable -PathType Leaf)) {
+        if (-not (Test-Path -LiteralPath $bootstrapScript -PathType Leaf)) {
+            if (Test-Path -LiteralPath $vcpkgRoot) {
+                throw "VCPKG_ROOT exists but is not a vcpkg checkout: $vcpkgRoot"
+            }
+
+            $vcpkgParent = Split-Path -Parent $vcpkgRoot
+            New-Item -ItemType Directory -Path $vcpkgParent -Force | Out-Null
+            & git clone --branch $vcpkgVersion --depth 1 --single-branch https://github.com/microsoft/vcpkg.git $vcpkgRoot
+            if ($LASTEXITCODE -ne 0) {
+                throw "Could not clone vcpkg release $vcpkgVersion (exit code $LASTEXITCODE)."
+            }
+        }
+
+        & $bootstrapScript -disableMetrics
+        if ($LASTEXITCODE -ne 0) {
+            throw "vcpkg bootstrap failed with exit code $LASTEXITCODE."
+        }
+    }
+
+    $triplet = 'x64-windows-static-md'
+    [Environment]::SetEnvironmentVariable('VCPKG_ROOT', $vcpkgRoot, 'User')
+    [Environment]::SetEnvironmentVariable('VCPKGRS_TRIPLET', $triplet, 'User')
+    $env:VCPKG_ROOT = $vcpkgRoot
+    $env:VCPKGRS_TRIPLET = $triplet
+    Add-UserPath -Directory $vcpkgRoot
+
+    & $vcpkgExecutable install "openssl:$triplet" --disable-metrics
+    if ($LASTEXITCODE -ne 0) {
+        throw "vcpkg OpenSSL installation failed with exit code $LASTEXITCODE."
+    }
+
+    $opensslInstall = Join-Path $vcpkgRoot "installed\$triplet"
+    foreach ($requiredFile in @(
+        (Join-Path (Join-Path $opensslInstall 'include') 'openssl\opensslv.h'),
+        (Join-Path (Join-Path $opensslInstall 'lib') 'libcrypto.lib'),
+        (Join-Path (Join-Path $opensslInstall 'lib') 'libssl.lib')
+    )) {
+        if (-not (Test-Path -LiteralPath $requiredFile -PathType Leaf)) {
+            throw "vcpkg OpenSSL installation is missing a required SDK file: $requiredFile"
+        }
+    }
+
+    Write-Host "OpenSSL SDK installed for $triplet in $vcpkgRoot" -ForegroundColor Green
+}
+
+Install-VcpkgOpenSsl
+
 # Install the pinned Oracle Instant Client runtime and SDK for OCI examples.
 function Install-OracleInstantClient {
     $oracleVersion = $toolVersions['ORACLE_CLIENT_VERSION']
