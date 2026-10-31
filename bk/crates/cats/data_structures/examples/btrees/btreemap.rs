@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A `BTreeMap`, an ordered map, storing book ratings.
+//!
+//! A `BTreeMap` keeps its keys sorted, so iteration is in order and you can
+//! query ranges (all keys between a and b). Lookups take O(log n) time, against
+//! O(1) on average for a `HashMap`, which does not keep order.
 
 use std::collections::BTreeMap;
 use std::collections::btree_map::Entry;

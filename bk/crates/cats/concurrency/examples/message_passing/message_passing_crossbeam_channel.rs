@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Demonstrates the use of crossbeam channels for message passing between
 //! threads.
+//!
+//! A channel lets threads pass values to each other instead of sharing memory.
+//! Crossbeam channels can have many producers and many consumers, and can be
+//! bounded so that senders wait when the queue is full (backpressure).
 
 use std::thread;
 

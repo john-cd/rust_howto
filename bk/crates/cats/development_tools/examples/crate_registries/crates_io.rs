@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Examples of use of the 'crates.io' API.
+//!
+//! crates.io is the public registry of Rust packages. Its API reports versions,
+//! downloads and dependencies. Be polite: send a descriptive `User-Agent` and
+//! keep requests infrequent.
 
 use anyhow::Result;
 use crates_io_api::CrateResponse;

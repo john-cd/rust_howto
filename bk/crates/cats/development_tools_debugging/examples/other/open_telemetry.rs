@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Create a manual OpenTelemetry span and pair it with regular tracing output.
+//!
+//! OpenTelemetry is a vendor-neutral standard for traces, metrics and logs. A
+//! trace follows one request across services, as a tree of timed spans. Data
+//! goes to a collector and then to a backend such as Jaeger or Grafana.
 
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::KeyValue;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates the use of the `same_file` crate.
+//!
+//! Symbolic links can point back to a parent directory, so naively following
+//! them walks forever. Traversal libraries detect these loops and report them
+//! instead of hanging.
 
 #![cfg(target_os = "linux")]
 

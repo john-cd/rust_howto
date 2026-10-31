@@ -1,4 +1,8 @@
 //! Mocking a struct's methods with `faux`.
+//!
+//! A mock replaces a real dependency (a database or a web service) in a test,
+//! with controlled answers, so the test is fast and deterministic. `faux` mocks
+//! the methods of a struct without requiring a trait.
 
 pub fn run() {
     main();

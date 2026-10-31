@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Scoped threads borrow a local string and return values through their
 //! handles.
+//!
+//! A scoped thread may borrow local variables, because the scope guarantees
+//! that all its threads finish before it returns. Plain `thread::spawn` cannot
+//! do that: its closure must own its data.
 
 use std::thread;
 

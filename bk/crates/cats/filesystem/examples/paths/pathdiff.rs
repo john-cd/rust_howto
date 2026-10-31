@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Compute a relative path between two paths.
+//!
+//! A relative path describes how to get from one directory to another, for
+//! example `../docs/readme.md`. It is useful in generated links and
+//! configuration that must keep working when a project folder is moved.
 
 use std::path::Path;
 use std::path::PathBuf;

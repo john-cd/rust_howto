@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A small actor built from a Tokio task and message channels.
+//!
+//! The actor model structures a program as independent actors that own their
+//! state and communicate only by sending messages. Because no state is shared,
+//! there are no locks, and each actor handles one message at a time. This
+//! version builds the idea from channels and tasks, to show how it works.
 
 use anyhow::Context;
 use tokio::sync::mpsc;

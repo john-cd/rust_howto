@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Formatting strings with `print!`, `format!` and `write!`.
+//!
+//! Format strings describe how to print values: `{}` uses `Display` (for
+//! users), `{:?}` uses `Debug` (for programmers), and specifiers control width,
+//! precision and alignment.
 
 use std::io::Write as _;
 

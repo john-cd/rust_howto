@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates a simple `riker` actor that receives a message.
+//!
+//! The actor model structures a program as independent actors that own their
+//! state and communicate only by sending messages. Because no state is shared,
+//! there are no locks, and each actor handles one message at a time.
 
 use anyhow::Context as AnyhowContext;
 use anyhow::Result;

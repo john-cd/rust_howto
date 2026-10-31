@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! An `actix` counter actor that replies with its updated total.
+//!
+//! The actor model structures a program as independent actors that own their
+//! state and communicate only by sending messages. Because no state is shared,
+//! there are no locks, and each actor handles one message at a time. Actix is a
+//! popular Rust actor framework.
 
 use actix::Actor;
 use actix::Context as ActorContext;

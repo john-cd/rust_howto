@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Compressed bitmaps with the `roaring` crate.
+//!
+//! A roaring bitmap stores a set of integers compactly and supports fast union
+//! and intersection. Search engines and databases use it to hold the IDs of
+//! documents or rows that match a condition.
 
 use roaring::RoaringBitmap;
 

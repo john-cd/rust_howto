@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creating and inspecting symbolic links.
+//!
+//! A symbolic link is a file that points to another path. Following it gives
+//! the target; removing the link does not remove the target. On Windows
+//! creating them may require special privileges.
 
 use std::fs;
 use std::path::Path;

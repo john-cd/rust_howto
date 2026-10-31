@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Replace a file so that readers never see a half-written file.
+//!
+//! Writing a file in place can leave it half-written if the program or the
+//! machine crashes. The safe pattern is to write a temporary file in the same
+//! directory and then rename it over the target, because a rename is atomic.
 
 use std::fs;
 use std::io::Write as _;

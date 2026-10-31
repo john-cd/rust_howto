@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Parallel iterators with `rayon`: a sum of squares and an in-place update.
+//!
+//! Rayon turns a sequential iterator into a parallel one by changing `iter()`
+//! to `par_iter()`. It splits the work across a pool of threads, one per CPU
+//! core, and balances the load by letting idle threads steal work. It pays off
+//! for CPU-bound work on large collections.
 
 use rayon::prelude::*;
 

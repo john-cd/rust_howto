@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Configures and initializes the logging system using log4rs.
+//!
+//! The `log` crate is a facade: libraries call `info!`, `warn!` and so on, and
+//! the application picks the logger that decides where the messages go.
+//! Implementing the `Log` trait gives a custom destination, such as a file or a
+//! service.
 
 use std::path::Path;
 

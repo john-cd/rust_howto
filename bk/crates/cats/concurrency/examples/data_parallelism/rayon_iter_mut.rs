@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Mutating the elements of an array in parallel with `rayon`.
+//!
+//! A mutable parallel iterator hands each thread its own disjoint part of the
+//! data, so no locking is needed. Rust's borrow rules guarantee the parts do
+//! not overlap.
 
 use rayon::prelude::*;
 

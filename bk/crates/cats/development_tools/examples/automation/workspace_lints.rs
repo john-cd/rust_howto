@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Checks that every workspace member opts in to the shared
 //! `[workspace.lints]` table, and can fix a manifest with `toml_edit`.
+//!
+//! A Cargo workspace groups several crates. Shared `[workspace.lints]` set
+//! Clippy and compiler lint levels once for every member, so rules stay
+//! consistent. This example checks that every crate opts in.
 
 use std::path::Path;
 
@@ -57,7 +61,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

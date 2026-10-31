@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! A small executable used by the command-line integration tests.
+//!
+//! A command-line program can be tested end to end by running the real binary
+//! and checking its exit code, output and error text. This catches problems
+//! that unit tests of functions miss, such as argument parsing.
 
 use std::ffi::OsString;
 

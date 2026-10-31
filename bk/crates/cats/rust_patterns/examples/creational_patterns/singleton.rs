@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! The singleton pattern with a global `OnceLock`.
+//!
+//! A singleton is a value that exists exactly once and is shared globally, such
+//! as configuration. In Rust it is built with `OnceLock` or `LazyLock`. Prefer
+//! passing values explicitly where you can, since globals make testing harder.
 
 use std::sync::Mutex;
 use std::sync::OnceLock;

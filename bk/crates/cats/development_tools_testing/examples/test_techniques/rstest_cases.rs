@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parameterized tests and fixtures with `rstest`.
+//!
+//! Table-driven tests run one test body with many input/expected pairs.
+//! `rstest` generates a separate test per case, so a failure names exactly
+//! which case broke.
 
 /// Parses a duration such as `"90s"`, `"5m"` or `"2h"` into seconds.
 fn parse_seconds(text: &str) -> Option<u64> {

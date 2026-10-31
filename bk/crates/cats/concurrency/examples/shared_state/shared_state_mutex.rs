@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates using a `Mutex` to safely share mutable state between threads.
+//!
+//! A `Mutex` allows one thread at a time to access the data it protects, which
+//! prevents data races. `Arc` lets several threads own the mutex. Hold the lock
+//! for as short a time as possible, and never wait on something else while
+//! holding it.
 
 use std::sync::Arc;
 use std::sync::Mutex;

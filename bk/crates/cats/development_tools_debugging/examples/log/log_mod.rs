@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Initializes the logger and logs warning, info, and debug messages from the
 //! root module, then calls `foo::run()`.
+//!
+//! Log messages carry the module path where they were produced, so levels can
+//! be set per module, for example verbose for one module and quiet for the
+//! rest.
 
 /// A module that logs messages and has a nested module.
 mod foo {

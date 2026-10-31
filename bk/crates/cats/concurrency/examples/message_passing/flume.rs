@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Channels from the `flume` crate: bounded and unbounded, sync and async, and
 //! `select`.
+//!
+//! A channel lets threads (or tasks) pass values to each other instead of
+//! sharing memory. Flume is a fast channel that works from both blocking and
+//! async code.
 
 use std::thread;
 

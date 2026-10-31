@@ -6,6 +6,10 @@
 // ANCHOR: example
 //! This example demonstrates vector creation, manipulation, iteration, and
 //! slices in Rust.
+//!
+//! A `Vec` is a growable array stored contiguously in memory. Access by index
+//! is O(1) and pushing at the end is amortized O(1), but inserting or removing
+//! in the middle shifts the following elements.
 
 /// Runs the vector creation, manipulation, iteration, and slice demonstrations.
 fn main() {

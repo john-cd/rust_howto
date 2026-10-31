@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Locating the standard directories of the current user with `dirs`.
+//!
+//! The `dirs` crate finds the user's well-known folders (home, documents,
+//! downloads, config) on each operating system, so programs don't need to
+//! hard-code paths.
 
 /// Prints the home, configuration, data, cache and executable directories.
 fn main() {

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates the use of `AtomicCell` from the `crossbeam-utils` crate.
+//!
+//! An atomic value can be read and changed by several threads without a lock,
+//! because the CPU performs the operation indivisibly. `AtomicCell` from
+//! crossbeam offers this for any small `Copy` type, not only integers.
 
 use crossbeam_utils::atomic::AtomicCell;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creating and entering spans with `tracing`.
+//!
+//! A span marks a period of work with a name and fields, and spans can nest, so
+//! a log shows which operation produced each event. It is the basis of tracing
+//! a request through a service.
 
 use tracing::Level;
 use tracing::span;

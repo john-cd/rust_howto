@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates parallel sorting of a vector of strings using
 //! Rayon.
+//!
+//! A parallel sort splits the data, sorts the parts on different cores, and
+//! merges them. It beats a sequential sort on large inputs. The unstable
+//! variant is faster but may reorder equal elements.
 
 use rand::RngExt as _;
 use rand::distr::Alphanumeric;

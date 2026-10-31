@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Records request counts and durations with the `metrics` facade.
+//!
+//! The `metrics` crate is a facade like `log`: code records counters, gauges
+//! and histograms, and the application chooses an exporter that publishes them.
+//! Keep label values bounded (for example the route, not the user ID) so the
+//! number of series stays small.
 
 use metrics::counter;
 use metrics::histogram;

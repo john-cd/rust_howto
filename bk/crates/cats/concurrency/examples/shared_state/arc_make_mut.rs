@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Sharing a configuration between threads with `Arc`, and cloning it on write
 //! with `Arc::make_mut`.
+//!
+//! `Arc` shares ownership of a value between threads. `Arc::make_mut`
+//! implements copy-on-write: if you are the only owner it mutates in place,
+//! otherwise it clones first, so other holders keep seeing the old value.
 
 use std::sync::Arc;
 

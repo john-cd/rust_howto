@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A bounded MPMC pipeline distributes messages to worker threads.
+//!
+//! Crossbeam channels pass messages between threads. Scoped threads let workers
+//! borrow local data safely, since the scope ends only when they have all
+//! finished.
 
 use std::thread;
 

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to traverse a directory and check the last
 //! modified time of each file.
+//!
+//! Every file has a modification time stored by the file system. Comparing it
+//! with the current time finds recently changed files, as used by build tools
+//! and backup programs.
 
 use std::env;
 use std::fs;

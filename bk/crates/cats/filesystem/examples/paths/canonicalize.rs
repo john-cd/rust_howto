@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Canonicalizing paths.
+//!
+//! Canonicalizing turns a path into an absolute one with `.`, `..` and symbolic
+//! links resolved. The file must exist, because the file system is consulted.
+//! On Windows the result has a `\\?\` prefix.
 
 use std::fs;
 use std::path::PathBuf;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generating thumbnails of images in parallel with `rayon` and `image`.
+//!
+//! Creating thumbnails is CPU-bound and every image is independent, which makes
+//! it ideal for data parallelism: each core resizes different images at the
+//! same time.
 
 use std::fs;
 use std::path::Path;

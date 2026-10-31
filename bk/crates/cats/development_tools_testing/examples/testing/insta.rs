@@ -1,4 +1,9 @@
 //! Snapshot testing with `insta`.
+//!
+//! A snapshot test compares the output with a reference file stored in the
+//! repository. When the output changes on purpose, `cargo insta review` shows
+//! the difference and lets you accept it. It is convenient for large outputs
+//! such as generated text or JSON.
 
 pub fn run() {
     main();

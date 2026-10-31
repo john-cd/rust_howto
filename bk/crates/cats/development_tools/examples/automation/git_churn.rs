@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Counts how often each file changed in the last commits with `gix`,
 //! a pure-Rust implementation of Git (no `git` executable or `libgit2`).
+//!
+//! Code churn is how often files change. Files that change very often tend to
+//! be where bugs concentrate, so counting commits per file from Git history
+//! helps decide what to refactor or test.
 
 use std::collections::BTreeMap;
 use std::path::Path;
@@ -59,7 +63,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

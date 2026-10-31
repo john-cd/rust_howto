@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Configuring `env_logger` with an environment variable.
+//!
+//! `env_logger` reads the `RUST_LOG` environment variable to choose log levels,
+//! so you can turn on debug output without recompiling, for example
+//! `RUST_LOG=my_crate=debug`.
 
 /// Initializes the logger and emits a message at each level.
 fn main() {

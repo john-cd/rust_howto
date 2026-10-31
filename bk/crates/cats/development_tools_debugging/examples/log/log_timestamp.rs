@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! This example demonstrates how to use `env_logger` to format log messages
 //! with timestamps.
+//!
+//! Timestamps in logs show when things happened and let you correlate events
+//! across machines. Prefer UTC and a standard layout such as RFC 3339.
 
 use std::io::Write as _;
 

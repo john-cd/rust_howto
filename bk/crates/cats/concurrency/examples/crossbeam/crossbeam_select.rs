@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Receives from whichever Crossbeam channel is ready first.
+//!
+//! `select!` waits on several channels and runs the branch of whichever has a
+//! message first, like `select` in Go. It lets one thread listen for work, a
+//! shutdown signal and a timeout at the same time.
 
 use anyhow::Result;
 use crossbeam_channel::bounded;

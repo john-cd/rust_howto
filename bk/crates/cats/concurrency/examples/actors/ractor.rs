@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! An actor with the `ractor` crate: a greeter that counts the greetings it
 //! handles.
+//!
+//! The actor model structures a program as independent actors that own their
+//! state and communicate only by sending messages. Ractor, inspired by Erlang's
+//! OTP, adds supervision: a parent actor can restart a child that fails.
 
 #![allow(unexpected_cfgs)]
 

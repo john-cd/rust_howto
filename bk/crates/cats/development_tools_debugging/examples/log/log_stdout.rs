@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to configure the `env_logger` to output logs
 //! to `Stdout`.
+//!
+//! By convention, programs write logs to standard error and keep standard
+//! output for results, so output can be piped to other programs. `env_logger`
+//! logs to standard error by default.
 
 use env_logger::Target;
 
