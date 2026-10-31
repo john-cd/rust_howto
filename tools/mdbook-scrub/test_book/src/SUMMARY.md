@@ -6,16 +6,6 @@
 
 - [Example Directives](./language/examples.md)
 
-### Category Directives (TODO NOT IMPLEMENTED)
-
-- [Scrub category link directives](./category_links.md)
-- [Scrub category badge directives](./category_badges.md)
-
-### Crate Directives (TODO NOT IMPLEMENTED)
-
-- [Scrub crate link directives](./crate_links.md)
-- [Scrub crate badge directives](./crate_badges.md)
-
 ## Crate Block Directive
 
 - [Scrub crate blocks](./crate_blocks.md)

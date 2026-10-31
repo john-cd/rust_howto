@@ -117,8 +117,6 @@ Random inputs that violate a type's invariants waste test cases. [`prop_compose!
 
 - [[loom | Model-Checking Concurrent Code with Loom]] explores thread interleavings that ordinary tests miss.
 
-FIXME
-
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
