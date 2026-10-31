@@ -8,9 +8,9 @@
 
 Which tool fits? An in-process channel (`std::sync::mpsc`, `tokio::sync::mpsc`, `flume`) moves messages between tasks of one process and loses them when it exits. RabbitMQ routes messages through exchanges to durable queues with per-message acknowledgements. NATS Core is a very fast fire-and-forget publish-subscribe system with at-most-once delivery; NATS JetStream adds persistent streams and durable consumers with explicit acknowledgements (at-least-once delivery). Apache Kafka, with a partitioned replayable log and a different client ecosystem, is the usual choice for very high-throughput event streams. None of these gives exactly-once processing on its own: make handlers idempotent.
 
-| Recipe                                                                          | Crates                 | Categories                                     |
-| ------------------------------------------------------------------------------- | ---------------------- | ---------------------------------------------- |
-| [Connect to RabbitMQ with `lapin`][ex~database~lapin]                           | {{#crate lapin}}       | {{#categories database="Database interfaces"}} |
+| Recipe                                                                                | Crates                | Categories                                     |
+| ------------------------------------------------------------------------------------- | --------------------- | ---------------------------------------------- |
+| [Connect to RabbitMQ with `lapin`][ex~database~lapin]                                 | {{#crate lapin}}      | {{#categories database="Database interfaces"}} |
 | [Process messages with a durable NATS JetStream consumer][ex~database~nats-jetstream] | {{#crate async-nats}} | {{#categories database="Database interfaces"}} |
 
 <div class="hidden">

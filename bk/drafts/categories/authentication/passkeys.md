@@ -4,7 +4,7 @@
 
 {{#include passkeys.incl.md}}
 
-A passkey is a public-key credential that lives on the user's device or in a credential manager. The site stores only the public key; signing in means proving possession of the private key by signing a fresh challenge. There is no shared secret to phish or leak. WebAuthn is the W3C browser API behind passkeys. This recipe is the server side (the *relying party*), using [`webauthn-rs`][c~webauthn-rs~docs]↗ for all protocol verification.
+A passkey is a public-key credential that lives on the user's device or in a credential manager. The site stores only the public key; signing in means proving possession of the private key by signing a fresh challenge. There is no shared secret to phish or leak. WebAuthn is the W3C browser API behind passkeys. This recipe is the server side (the _relying party_), using [`webauthn-rs`][c~webauthn-rs~docs]↗ for all protocol verification.
 
 ## Register and sign in with passkeys {#passkeys}
 

@@ -45,13 +45,13 @@ Some checks cannot run on every machine. Run each check where it works and say i
 
 The shared Linux environment for checks that Windows cannot complete is the dev container (`.devcontainer/`, built from `.devcontainer/Dockerfile`; `.devcontainer/ci.sh` is the same sequence CI uses). The GitHub Actions workflows are the lasting gate; a plain Ubuntu 24.04 host with `.devcontainer/install_deps.sh` also works, and was used on 2026-10-30 to validate the service-backed and GUI examples.
 
-| Check | Where it runs |
-| --- | --- |
-| `just fa`, `just ba`, `just nta` for pure-Rust examples | Windows, Linux, macOS |
-| Strict Clippy (`just ca`) with `aws-lc-sys`, `zstd-sys`, `liblzma-sys` | Linux or macOS (MSVC fails with `LNK1114` on archive replacement) |
-| `just refdefs check`, `just spell` | Unix shell (Linux, macOS, Git Bash) |
+| Check                                                                     | Where it runs                                                                                              |
+| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `just fa`, `just ba`, `just nta` for pure-Rust examples                   | Windows, Linux, macOS                                                                                      |
+| Strict Clippy (`just ca`) with `aws-lc-sys`, `zstd-sys`, `liblzma-sys`    | Linux or macOS (MSVC fails with `LNK1114` on archive replacement)                                          |
+| `just refdefs check`, `just spell`                                        | Unix shell (Linux, macOS, Git Bash)                                                                        |
 | Examples that need PostgreSQL, RabbitMQ, Meilisearch, Cassandra or Oracle | Linux with Docker or `apt`; see `.devcontainer/compose*.yaml` and `.devcontainer/install_oracle_client.sh` |
-| ONNX Runtime examples | Linux after `.devcontainer/install_onnxruntime.sh` |
-| `wgpu`, `glutin`, `femtovg` and other GUI examples | Linux with `mesa-vulkan-drivers` (lavapipe) and `xvfb-run` |
-| Audio examples | Linux with an ALSA null device |
-| Windows-only APIs, macOS-only crates (`objc2`), real hardware | The matching native host |
+| ONNX Runtime examples                                                     | Linux after `.devcontainer/install_onnxruntime.sh`                                                         |
+| `wgpu`, `glutin`, `femtovg` and other GUI examples                        | Linux with `mesa-vulkan-drivers` (lavapipe) and `xvfb-run`                                                 |
+| Audio examples                                                            | Linux with an ALSA null device                                                                             |
+| Windows-only APIs, macOS-only crates (`objc2`), real hardware             | The matching native host                                                                                   |
