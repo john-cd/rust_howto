@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creates complex numbers with integer and floating-point components.
+//!
+//! A complex number has a real part and an imaginary part, written a + bi,
+//! where i is the square root of -1. They appear in signal processing,
+//! electronics and graphics.
 
 /// Creates complex numbers with integer and floating-point components.
 fn main() {

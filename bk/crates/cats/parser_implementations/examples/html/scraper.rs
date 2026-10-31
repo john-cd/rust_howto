@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Selects HTML elements and extracts their text with CSS selectors.
+//!
+//! Web scraping extracts data from HTML pages. CSS selectors, such as
+//! `div.price > span`, pick elements the same way style sheets do. Check a
+//! site's terms and `robots.txt` before scraping it.
 
 use ::scraper::Html;
 use ::scraper::Selector;

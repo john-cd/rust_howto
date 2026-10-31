@@ -1,4 +1,8 @@
 //! Counts allocation calls made by the hand-written string interner.
+//!
+//! A string interner stores each distinct string once and hands out a small ID.
+//! Comparing IDs is faster than comparing strings, and memory use falls when
+//! the same text repeats, as in compilers and parsers.
 
 // ANCHOR: example
 use std::alloc::GlobalAlloc;

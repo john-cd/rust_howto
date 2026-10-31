@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Setting and getting a value in Redis.
+//!
+//! Redis is an in-memory key-value store, very fast and often used as a cache,
+//! a session store or a message queue. Data can disappear on restart unless
+//! persistence is enabled, so do not treat it as your only copy.
 
 // This example demonstrates connecting to Redis and executing commands using
 // the `redis` crate.

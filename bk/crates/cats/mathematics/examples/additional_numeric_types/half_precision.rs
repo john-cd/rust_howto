@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Converts an `f32` value to the compact IEEE 754 binary16 `f16` type.
+//!
+//! `f16` uses 16 bits instead of 32 for a floating-point number. It has less
+//! range and precision but halves memory and bandwidth, which is why machine
+//! learning models and graphics often store data in it.
 
 use half::f16;
 

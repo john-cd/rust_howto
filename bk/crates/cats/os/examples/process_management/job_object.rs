@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Make a Windows child die with its parent by using a Job Object.
+//!
+//! A Windows Job Object groups processes so the system can manage them
+//! together. Setting the "kill on close" flag makes Windows end every child
+//! when your program exits, so no orphan processes are left behind. It runs on
+//! Windows only.
 
 use std::mem;
 use std::os::windows::io::AsRawHandle as _;

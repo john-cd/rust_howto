@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! This example demonstrates how to serialize and deserialize a `DMatrix` using
 //! `serde_json`.
+//!
+//! Saving a matrix as JSON lets you store it or send it between programs. With
+//! `serde` support, the matrix library converts to and from the text form.
 
 use nalgebra::DMatrix;
 

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates basic serialization and deserialization using `serde`.
+//!
+//! Serialization turns a Rust value into a format such as JSON, and
+//! deserialization turns it back. `serde` does this for many formats through
+//! derive macros, so the same struct works with JSON, TOML, YAML and binary
+//! formats.
 
 use serde::Deserialize;
 use serde::Serialize;

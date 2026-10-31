@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! Group tasks into levels that can run in parallel.
+//!
+//! A topological order lists the nodes of a directed acyclic graph so every
+//! node comes after those it depends on. Grouping them into levels shows which
+//! tasks can run in parallel. Build systems and task schedulers use it.
+
 use std::collections::HashMap;
 
 use petgraph::Direction::Incoming;

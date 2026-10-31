@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Connects to MySQL or MariaDB through a pool and runs parameterized queries.
+//!
+//! A connection pool keeps a few database connections open and lends them out,
+//! because opening a connection for each request is slow. Parameterized queries
+//! send values separately from the SQL text, which prevents SQL injection.
 
 use anyhow::Context;
 use anyhow::Result;

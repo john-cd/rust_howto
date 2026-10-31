@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Run a Rust tool with `xshell` and capture its output.
+//!
+//! `xshell` makes it easy to write script-like Rust: a macro builds a command
+//! with interpolated arguments, which are not interpreted by a shell. It is
+//! popular for build scripts and project automation.
 
 use xshell::Shell;
 use xshell::cmd;

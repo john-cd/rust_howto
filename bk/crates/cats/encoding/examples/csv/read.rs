@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example shows how to read a CSV file.
+//!
+//! CSV (comma-separated values) is a plain-text table format, with one record
+//! per line, exported by spreadsheets and databases. The reader streams
+//! records, so a file larger than memory can be processed.
 
 use csv::Error;
 

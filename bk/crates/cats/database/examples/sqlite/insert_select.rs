@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This function demonstrates inserting data into a SQLite database and then
 //! selecting it back.
+//!
+//! SQLite is a database in a single file, with no server to install. Use `?`
+//! placeholders for values instead of building SQL by concatenation; it
+//! prevents SQL injection, the attack where user input is interpreted as SQL.
 
 // This example demonstrates inserting and selecting SQLite data using
 // `rusqlite`.

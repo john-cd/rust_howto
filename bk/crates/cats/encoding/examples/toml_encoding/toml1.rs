@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates how to deserialize TOML data into Rust structs.
+//!
+//! TOML is a configuration file format designed to be easy for people to read
+//! and edit. Cargo uses it for `Cargo.toml`. Deserializing maps its tables to
+//! Rust structs.
 
 use std::collections::HashMap;
 

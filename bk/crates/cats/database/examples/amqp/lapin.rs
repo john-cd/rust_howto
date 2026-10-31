@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Publishing and consuming a message with the `lapin` AMQP client.
+//!
+//! AMQP is a protocol for message brokers such as RabbitMQ. A producer
+//! publishes messages to a queue and a consumer receives them, so the two
+//! programs are decoupled and work at their own pace. Consumers acknowledge
+//! messages so the broker can redeliver them if the consumer crashes.
 
 // This example demonstrates how to publish and consume messages with the
 // `lapin` AMQP client.

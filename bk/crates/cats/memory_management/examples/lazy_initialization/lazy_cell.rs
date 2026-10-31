@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Lazily initializes a single-threaded value with `std::cell::LazyCell`.
+//!
+//! Lazy initialization delays an expensive computation until the value is first
+//! used, and then caches it. `LazyCell` is for a single thread; the thread-safe
+//! version is `LazyLock`.
 
 use std::cell::LazyCell;
 

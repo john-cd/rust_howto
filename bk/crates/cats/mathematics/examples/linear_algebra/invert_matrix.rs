@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to invert a 3x3 matrix using the `nalgebra`
 //! crate.
+//!
+//! The inverse of a matrix undoes what the matrix does: A multiplied by its
+//! inverse is the identity matrix. Only square matrices with a non-zero
+//! determinant have one. Inverting is used to solve systems of linear
+//! equations, although solving them directly is more accurate.
 
 use nalgebra::Matrix3;
 

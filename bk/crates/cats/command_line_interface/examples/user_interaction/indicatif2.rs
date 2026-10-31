@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A progress bar with `indicatif`.
+//!
+//! A progress bar shows how much of a task is done and estimates the time left.
+//! It needs the total amount of work up front, then you advance it as items
+//! finish. It writes to the terminal and hides itself when output is not a
+//! terminal.
 
 use std::thread;
 use std::time::Duration;

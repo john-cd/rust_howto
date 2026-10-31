@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates invalid data handling when reading a CSV file.
+//!
+//! Real-world CSV files contain rows with missing or malformed values. Reading
+//! records one at a time lets you report the row that failed (or skip it)
+//! instead of failing the whole file.
 
 use csv::Error;
 use serde::Deserialize;

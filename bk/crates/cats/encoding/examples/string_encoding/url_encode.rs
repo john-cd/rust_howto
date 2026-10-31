@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to URL-encode and decode strings using the
 //! `url` crate.
+//!
+//! URLs can only contain a limited set of characters. URL encoding
+//! (percent-encoding) replaces the others with `%` followed by their hex value.
+//! Encode user-supplied values before putting them in a URL, or special
+//! characters such as `&` can change its meaning.
 
 use url::form_urlencoded::Serializer;
 use url::form_urlencoded::parse;

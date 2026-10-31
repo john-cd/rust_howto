@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates parsing and serializing JSON data using the `serde_json` crate.
+//!
+//! JSON is the most common text format for web APIs. `serde_json` parses it
+//! into typed Rust values and writes them back, with helpful errors that
+//! include the line and column.
 
 use serde::Deserialize;
 use serde::Serialize;

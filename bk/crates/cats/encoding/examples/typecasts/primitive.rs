@@ -1,6 +1,10 @@
 // ANCHOR: example
 //! Demonstrates explicit primitive casts, checked numeric conversions, and
 //! parsing.
+//!
+//! An `as` cast silently truncates or wraps when the value does not fit (for
+//! example 300 as `u8` gives 44). Checked conversions such as `try_from` return
+//! an error instead, which is safer for values from outside the program.
 
 use anyhow::Result;
 

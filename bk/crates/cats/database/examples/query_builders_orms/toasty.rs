@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Create and query a model with Toasty and in-memory SQLite.
+//!
+//! An ORM (object-relational mapper) maps database rows to Rust structs, so you
+//! create and query models instead of writing SQL by hand. An in-memory SQLite
+//! database lives only while the program runs, which suits tests.
 
 /// A user stored by the example database.
 #[derive(Debug, toasty::Model)]

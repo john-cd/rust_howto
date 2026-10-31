@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Serializing and deserializing a struct to and from JSON with `serde_json`.
+//!
+//! JSON is the most common text format for web APIs. With `serde`, a struct
+//! that derives `Serialize` and `Deserialize` is converted to and from JSON,
+//! and missing or mistyped fields produce an error instead of a bad value.
 
 use serde::Deserialize;
 use serde::Serialize;

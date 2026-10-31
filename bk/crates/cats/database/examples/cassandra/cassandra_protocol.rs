@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Talking to Cassandra over its native protocol with `cassandra-protocol`.
+//!
+//! Cassandra is a distributed NoSQL database built for huge data volumes and
+//! high write rates across many servers, with no single point of failure. It is
+//! queried with CQL, which looks like SQL. This example speaks its binary
+//! protocol directly.
 
 // This example demonstrates how to build and serialize Cassandra protocol
 // frames using the `cassandra_protocol` crate.

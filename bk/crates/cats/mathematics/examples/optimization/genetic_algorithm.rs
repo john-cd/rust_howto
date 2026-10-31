@@ -1,4 +1,11 @@
 // ANCHOR: example
+//! Evolve a solution with a genetic algorithm.
+//!
+//! A genetic algorithm imitates evolution: it keeps a population of candidate
+//! solutions, selects the best, combines and randomly mutates them, and
+//! repeats. It suits problems where you can score a solution but cannot
+//! differentiate the score.
+
 use radiate::prelude::*;
 
 /// Number of bits in each candidate bit string.

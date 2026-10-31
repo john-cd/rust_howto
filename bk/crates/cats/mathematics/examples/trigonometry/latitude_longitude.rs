@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Prints the great-circle distance between Paris and London.
+//!
+//! Latitude and longitude locate a point on the Earth in degrees. The
+//! great-circle (shortest) distance between two points comes from the haversine
+//! formula, which treats the Earth as a sphere.
 
 /// Calculates the distance between two points on the Earth's surface using the
 /// Haversine formula.

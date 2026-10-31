@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates how to use the `tl` crate to parse HTML.
+//!
+//! `tl` is a fast HTML parser that builds a tree of tags you can search by ID,
+//! class or tag name. It is lenient and does not follow the full HTML5
+//! error-recovery rules, so it suits well-formed pages.
 
 use tl::Node;
 use tl::Parser;

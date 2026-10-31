@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Adds rational numbers without converting them to floating-point values.
+//!
+//! A rational number is a fraction of two integers. Adding 1/3 and 1/6 exactly
+//! gives 1/2, whereas floating point can only approximate 1/3. Use it when
+//! exactness matters more than speed.
 
 use num_rational::Ratio;
 

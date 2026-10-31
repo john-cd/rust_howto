@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates generating shell completions with `clap_complete`.
+//!
+//! Shell completion lets users press Tab to complete command names and options.
+//! `clap_complete` generates the completion scripts for shells such as bash,
+//! zsh, fish and PowerShell from the same definition as the parser.
 
 use clap::Arg;
 use clap::Command;

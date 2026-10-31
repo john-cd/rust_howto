@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! This example shows how to transform CSV data from one format to
 //! another.
+//!
+//! A streaming transformation reads a record, changes it and writes it out
+//! right away, so memory use stays constant however large the file is.
 
 use std::str::FromStr;
 

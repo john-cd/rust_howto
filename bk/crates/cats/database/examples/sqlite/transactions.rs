@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates successful and rolled-back SQLite transactions.
+//!
+//! A transaction groups several statements so that they either all take effect
+//! (commit) or none do (rollback). Transferring money between two accounts is
+//! the classic case: you never want the withdrawal without the deposit.
 
 use anyhow::Result;
 use rusqlite::Connection;

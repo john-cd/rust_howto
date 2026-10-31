@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Kill a child process automatically when its owner goes out of scope.
+//!
+//! A guard is a value whose `Drop` runs when it leaves scope. Wrapping a child
+//! process in one means the child is killed even if the function returns early
+//! or panics, which prevents orphan processes.
 
 use std::process::Child;
 use std::process::Command;

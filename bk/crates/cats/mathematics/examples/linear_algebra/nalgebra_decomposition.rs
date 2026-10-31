@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates matrix decompositions using the `nalgebra` crate.
+//!
+//! A decomposition splits a matrix into simpler ones (such as LU, QR or SVD).
+//! It is the practical way to solve equations, fit curves and compute inverses
+//! with good numerical accuracy.
 
 use nalgebra::Matrix3;
 
