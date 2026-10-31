@@ -2349,6 +2349,8 @@
 [c~data-encoding~lib.rs~badge]: https://img.shields.io/badge/lib.rs-data--encoding-yellow
 [c~data-encoding~repo]: https://github.com/ia0/data-encoding
 [c~data-encoding~repo~badge]: https://img.shields.io/badge/data--encoding-steelblue?logo=github
+[c~database-cornucopia-queries~crates.io]: https://crates.io/crates/database-cornucopia-queries
+[c~database-cornucopia-queries~docs]: https://docs.rs/database-cornucopia-queries
 [c~dataframe~crates.io]: https://crates.io/crates/dataframe
 [c~dataframe~crates.io~badge]: https://img.shields.io/badge/crates.io-dataframe-crimson
 [c~dataframe~docs]: https://docs.rs/dataframe
@@ -6574,6 +6576,12 @@
 [c~postcard~lib.rs~badge]: https://img.shields.io/badge/lib.rs-postcard-yellow
 [c~postcard~repo]: https://github.com/jamesmunns/postcard
 [c~postcard~repo~badge]: https://img.shields.io/badge/postcard-steelblue?logo=github
+[c~postgres-protocol~crates.io]: https://crates.io/crates/postgres-protocol
+[c~postgres-protocol~docs]: https://docs.rs/postgres-protocol
+[c~postgres-protocol~repo]: https://github.com/rust-postgres/rust-postgres
+[c~postgres-types~crates.io]: https://crates.io/crates/postgres-types
+[c~postgres-types~docs]: https://docs.rs/postgres-types
+[c~postgres-types~repo]: https://github.com/rust-postgres/rust-postgres
 [c~postgres::Client::connect~docs]: https://docs.rs/postgres/latest/postgres/struct.Client.html#method.connect
 [c~postgres::Client::execute~docs]: https://docs.rs/postgres/latest/postgres/struct.Client.html#method.execute
 [c~postgres::Client::query~docs]: https://docs.rs/postgres/latest/postgres/struct.Client.html#method.query
