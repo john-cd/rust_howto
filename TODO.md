@@ -24,26 +24,10 @@ WAIT move code examples from `later/` to `bk/` when code and text are ready.
 - [#2117](https://github.com/john-cd/rust_howto/issues/2117) — **Epic** — Deferred recipes, example cleanup and book quality.
 - [#2118](https://github.com/john-cd/rust_howto/issues/2118) — **Epic** — Tooling, CI and repository infrastructure.
 - [#2145](https://github.com/john-cd/rust_howto/issues/2145) — Migrate the remaining crate badge lines to `{{#badges}}` (P4).
-- [#2133](https://github.com/john-cd/rust_howto/issues/2133) — Close the last 59 example-test convention gaps (P3).
 
 ## Briefs for Jules
 
 General rules for every brief: work from a clean checkout of `develop` on a topic branch; keep history linear; never delete or reword `TODO`, `TODO Reviewed` or human review comments; every example has a private `main()`, a `pub fn run()` (multi-file examples) and a test that calls `main()` with real assertions; no `unwrap()` outside unwrap demos; no `allow(dead_code)`; comments end with a period. Commit as `type(scope): summary` with the issue number. Format with `just fmtall` (nightly rustfmt is pinned in `rustfmt-toolchain.toml`). Run commands from the workspace directory (`bk/`, `later/`, `tools/`), not the repo root.
-
-### Brief A — #2133 example-test convention gaps (P3)
-
-- **Goal:** `python3 scripts/check_example_tests.py` (run from the repo root) reports no non-compliant files outside justified exceptions (today 59 of 1372).
-- **Files:** the list printed by the script without `--summary`. Types: 51 `no tests` (mostly `main.rs` dispatchers such as `bk/crates/cats/filesystem/examples/tempfile/main.rs`), 4 `tests make no assertions` (`async_traits3.rs`, `jwt_authentication/main.rs`, `riker.rs`, `crate_indices/main.rs`), 2 `no test calls main()` (`oidc.rs`, `http_mock.rs`), 2 `missing pub fn run()` (`doc_comment.rs`, `cli_demo.rs`), plus `memory_management/examples/interner_allocations.rs` and `tools/example-integrity/src/main.rs`.
-- **Steps:**
-  1. For a dispatcher, add a `#[cfg(test)]` test that calls `main()` (adapt to its return type) and assert an observable effect where the modules expose one.
-  2. If a module needs a service, network or display, mark its own test `#[ignore = "requires ..."]` (the reason must start with `requires` or `needs`) and keep the dispatcher test off that path.
-  3. For files without `pub fn run()`, add it and call it from the directory's `main.rs`.
-  4. For tests without assertions, assert on returned values, not just "does not panic".
-  5. `interner_allocations.rs` uses a special harness (`test = false`): add a short rationale comment instead of forcing a test.
-  6. One commit per crate.
-- **Checks:** `python3 scripts/check_example_tests.py --summary`; in `bk/` and `tools/`: `just ca`, `just nta`; `python3 -m unittest discover scripts/tests`.
-- **Done when:** the TOTAL line shows every file compliant, or each remaining file is listed with a reason in the issue.
-
 
 ### Brief E — improve example comments (#2117)
 
