@@ -4,3 +4,6 @@
 name = "database-cornucopia-queries"
 version = "0.0.0"
 publish = false
+
+[manifest.lints]
+workspace = true
