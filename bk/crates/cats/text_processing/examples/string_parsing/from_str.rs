@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parsing a color from a string by implementing `FromStr`.
+//!
+//! The `FromStr` trait defines how a type is created from text, which also
+//! makes `"...".parse::<T>()` work. Implement it for your own types and return
+//! an error type that explains what was wrong.
 
 use std::error::Error;
 use std::fmt::Display;

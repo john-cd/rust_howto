@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Finding the MIME type of a file from its name.
+//!
+//! A MIME type (media type) such as `image/png` or `text/html` tells software
+//! what kind of data a file or HTTP response contains. Guessing it from the
+//! file extension is quick but can be wrong, because the extension is only a
+//! naming convention.
 
 use http::header::CONTENT_TYPE;
 use http::header::HeaderMap;

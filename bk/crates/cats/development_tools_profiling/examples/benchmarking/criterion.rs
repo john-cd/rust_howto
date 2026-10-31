@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Run the benchmarks with `cargo bench`:
+//!
+//! Benchmarks measure how fast code runs. Criterion runs the code many times,
+//! discards warm-up, and reports statistics and whether performance changed
+//! since the last run, which filters out noise from the computer. Run
+//! benchmarks in release mode.
 
 use std::hint::black_box;
 

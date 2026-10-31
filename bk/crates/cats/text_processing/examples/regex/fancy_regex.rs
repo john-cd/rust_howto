@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Backreferences, capture groups and splitting with `fancy_regex`.
+//!
+//! The standard `regex` crate guarantees linear-time matching and therefore
+//! omits features such as backreferences (a pattern that must repeat what an
+//! earlier group matched). `fancy_regex` supports them, but patterns can then
+//! be slow on adversarial input.
 
 use fancy_regex::Regex;
 

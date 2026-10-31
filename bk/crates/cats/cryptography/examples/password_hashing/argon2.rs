@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Examples of password hashing and key derivation with Argon2.
+//!
+//! Servers must never store passwords directly; they store a salted,
+//! deliberately slow hash. Argon2 won the Password Hashing Competition and is
+//! the recommended choice: it needs a lot of memory as well as time, which
+//! makes cracking with GPUs expensive. The salt is random data stored with the
+//! hash.
 
 use argon2::Argon2;
 use argon2::password_hash::Error;

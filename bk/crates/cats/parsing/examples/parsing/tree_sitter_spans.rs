@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Classifies source text into highlight spans with Tree-sitter, then updates
 //! the syntax tree incrementally after an edit.
+//!
+//! A span is a byte range with a label, such as "keyword" or "string". Syntax
+//! highlighting assigns spans from the tree, and an incremental update
+//! re-parses only the changed region, which keeps editors responsive.
 
 use anyhow::anyhow;
 use tree_sitter::InputEdit;
@@ -82,7 +86,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! An asynchronous WebSocket client using async-tungstenite's Tokio adapter.
+//!
+//! A WebSocket is a long-lived, two-way connection that starts as an HTTP
+//! request and is then upgraded, so either side can send messages at any time.
+//! The async version waits for messages without blocking a thread, so one
+//! thread can serve many connections.
 
 use async_tungstenite::tokio::accept_async;
 use async_tungstenite::tokio::connect_async;

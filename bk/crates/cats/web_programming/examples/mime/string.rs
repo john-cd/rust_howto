@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates parsing MIME types from strings and handling invalid input.
+//!
+//! A MIME type has the form `type/subtype`, optionally with parameters such as
+//! `charset=utf-8`. Parsing returns an error for malformed values, which
+//! matters because they come from outside the program.
 
 use mime::APPLICATION_OCTET_STREAM;
 use mime::Mime;

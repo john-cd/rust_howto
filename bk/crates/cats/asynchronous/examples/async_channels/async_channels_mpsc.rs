@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A Tokio multi-producer, single-consumer (`mpsc`) channel.
+//!
+//! A channel passes values between tasks so that they need not share memory.
+//! `mpsc` means multi-producer, single-consumer: many senders, one receiver. A
+//! bounded channel makes senders wait when it is full (backpressure), so a fast
+//! producer cannot overwhelm a slow consumer.
 
 use tokio::sync::mpsc;
 

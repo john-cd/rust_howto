@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! One-time "flash" messages with `axum-messages` and `tower-sessions`.
+//!
+//! A flash message is a one-time notice, such as "Saved", stored in the user's
+//! session and shown on the next page. It lets a handler redirect after a form
+//! post (the post/redirect/get pattern) and still report the result.
 
 use axum::Router;
 use axum::response::IntoResponse;

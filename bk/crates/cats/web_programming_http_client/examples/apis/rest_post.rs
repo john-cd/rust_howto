@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of using the `reqwest` crate to create and delete a GitHub Gist.
+//!
+//! REST APIs use HTTP verbs on URLs: `POST` creates a resource and `DELETE`
+//! removes it. Authenticated calls send a token in the `Authorization` header;
+//! keep tokens out of source code, for example in an environment variable.
 
 use std::collections::HashMap;
 use std::env;

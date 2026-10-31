@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Extracts anchor links from an HTML document with CSS selectors.
+//!
+//! Web scraping extracts data from HTML pages. Links are `<a href>` elements,
+//! found here with a CSS selector. Check a site's terms and `robots.txt` before
+//! scraping it.
 
 use anyhow::Result;
 use scraper::Html;

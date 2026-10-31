@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Wrapping, filling and indenting text with `textwrap`.
+//!
+//! Wrapping breaks text into lines of a given width, which command-line help,
+//! emails and logs often need. `textwrap` can also fill (reflow paragraphs) and
+//! indent, and it handles wide Unicode characters correctly.
 
 use std::borrow::Cow;
 

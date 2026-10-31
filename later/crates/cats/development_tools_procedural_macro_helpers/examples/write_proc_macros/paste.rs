@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Concatenating identifiers in macros with `paste`.
+//!
+//! Declarative macros cannot create new identifiers such as `get_` + a field
+//! name. `paste` joins and re-cases identifier pieces inside `macro_rules!`.
 
 use paste::paste;
 

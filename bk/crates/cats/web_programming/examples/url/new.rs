@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates how to build a URL by joining a base URL with a path.
+//!
+//! A relative link such as `../docs/page.html` only makes sense with a base
+//! URL. Joining resolves it the way a browser does, handling `..` and absolute
+//! paths.
 
 use url::ParseError;
 use url::Url;

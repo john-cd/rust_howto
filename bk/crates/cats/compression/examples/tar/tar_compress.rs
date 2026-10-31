@@ -3,6 +3,10 @@
 
 // ANCHOR: example
 //! This function creates a gzip-compressed tar archive from a directory.
+//!
+//! A tar archive bundles many files into one, keeping paths and permissions;
+//! gzip then compresses it, giving `.tar.gz`. Build the archive while streaming
+//! to the output so that large directories need little memory.
 
 use std::fs;
 use std::fs::File;

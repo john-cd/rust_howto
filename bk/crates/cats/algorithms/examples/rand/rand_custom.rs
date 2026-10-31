@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates how to implement a custom distribution for the `rand` crate.
+//!
+//! A distribution describes how random values are spread, for example uniformly
+//! or in a bell curve. Implementing the `Distribution` trait lets your own type
+//! be sampled with any random number generator.
 
 use rand::Rng;
 use rand::RngExt as _;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Calling a C++ function compiled by a build script with the `cc` crate.
+//!
+//! A build script (`build.rs`) runs before your crate compiles. The `cc` crate
+//! drives the system C or C++ compiler from it, so a bundled native source file
+//! is built and linked into your program. A C++ toolchain must be installed.
 
 // Declare a C-compatible symbol that can be implemented in bundled C++ code.
 unsafe extern "C" {

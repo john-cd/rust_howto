@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Calls `async` code from blocking code with `futures::executor::block_on`.
+//!
+//! A normal function cannot `.await`. A small executor can run a future to
+//! completion by blocking the current thread, which suits tests or a one-off
+//! call. Never use it inside code that already runs on an async runtime: it can
+//! freeze the runtime.
 
 /// Prints a greeting.
 async fn do_something() {

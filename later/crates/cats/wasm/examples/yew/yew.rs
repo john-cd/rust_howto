@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! The main function to render the App component.
+//!
+//! Yew is a Rust framework for web front ends, compiled to WebAssembly. A
+//! component is a struct or function that describes part of the page; when its
+//! state changes, the framework updates only the changed elements.
 
 use yew::prelude::*;
 

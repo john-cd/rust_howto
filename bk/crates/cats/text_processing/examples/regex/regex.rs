@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Extracting links from Markdown with several regular expressions.
+//!
+//! A regular expression (regex) describes a text pattern. Compile it once and
+//! reuse it, because compilation is costly. This example extracts links from
+//! Markdown text, where links look like `[text](url)`.
 
 use std::collections::BTreeMap;
 

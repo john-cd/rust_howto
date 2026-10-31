@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Encoding and decoding private keys in PKCS#8 format.
+//!
+//! PKCS#8 is the standard container for private keys, which records the key
+//! algorithm along with the key bytes. It can be DER (binary) or PEM (Base64
+//! text with `-----BEGIN PRIVATE KEY-----` lines). Treat private keys as
+//! secrets.
 
 // This example demonstrates how to encode and decode PKCS#8 private keys.
 // Security: `rsa` has no fix for RUSTSEC-2023-0071. This local key-format

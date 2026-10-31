@@ -1,6 +1,10 @@
 // ANCHOR: example
 //! Converts words to common naming conventions and uppercases a Unicode
 //! character.
+//!
+//! Naming styles: `snake_case`, `camelCase`, `PascalCase` and `kebab-case`.
+//! Uppercasing Unicode text is not a simple per-character rule: in German `ß`
+//! becomes `SS`, so the result may be longer.
 
 use heck::ToSnakeCase as _;
 use heck::ToTitleCase as _;
@@ -29,7 +33,8 @@ fn capitalize_first_char(input: &str) -> String {
 
 /// Runs the example for the command-line dispatcher and unit tests.
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

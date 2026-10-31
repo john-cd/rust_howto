@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to make a GET request to a REST API and
 //! deserialize the JSON response.
+//!
+//! REST APIs use HTTP verbs on URLs: `GET` reads a resource, `POST` creates
+//! one, `PUT`/`PATCH` update it and `DELETE` removes it. Responses usually
+//! carry JSON and a status code: 2xx means success, 4xx a client error and 5xx
+//! a server error.
 
 use reqwest::Client;
 use reqwest::Error;

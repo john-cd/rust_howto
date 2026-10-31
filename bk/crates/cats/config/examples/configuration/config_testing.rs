@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Tests a config source without changing the process environment.
+//!
+//! Tests that change environment variables affect other tests running in
+//! parallel in the same process. Reading from an injected source (a map)
+//! instead keeps tests independent and deterministic.
 
 use std::collections::HashMap;
 

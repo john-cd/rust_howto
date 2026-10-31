@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Set and read cookies with `tower-cookies`.
+//!
+//! A cookie is a small value the server asks the browser to store and send back
+//! with each request to the same site. Cookies carry session IDs and
+//! preferences. Mark them `HttpOnly` (hidden from scripts) and `Secure` (HTTPS
+//! only) when they hold anything sensitive.
 
 use axum::Router;
 use axum::routing::get;

@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Keeps a secret out of logs with a newtype whose `Debug` and `Display`
 //! implementations redact the value, then does the same with `secrecy`.
+//!
+//! Secrets leak most often through logs and error messages. A newtype that
+//! prints `[REDACTED]` for `Debug` and `Display` makes an accidental `println!`
+//! or `tracing` call harmless, and the compiler makes sure every use goes
+//! through the wrapper.
 
 use std::convert::Infallible;
 use std::fmt;

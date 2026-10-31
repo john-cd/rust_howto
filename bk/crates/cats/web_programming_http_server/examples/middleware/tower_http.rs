@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Serves an Axum route with common `tower-http` middleware.
+//!
+//! Middleware wraps a handler to add behaviour for every request, such as
+//! logging, compression or timeouts, without changing the handler. `tower-http`
+//! supplies common layers.
 
 use std::time::Duration;
 

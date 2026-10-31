@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Checks HTTP links from an HTML page against their resolved URLs.
+//!
+//! A link checker finds broken links, which hurt users and search ranking. It
+//! resolves relative links against the page URL, requests each, and reports
+//! failures. Be considerate of the server: limit the rate and honour
+//! `robots.txt`.
 
 use std::collections::HashSet;
 use std::time::Duration;

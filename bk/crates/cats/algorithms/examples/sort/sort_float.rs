@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Sort floats using their IEEE 754 total ordering, including NaN.
+//!
+//! Floating-point numbers cannot be sorted with `sort` because `NaN` (not a
+//! number) is not equal to or ordered against anything. IEEE 754 defines a
+//! total order that places NaN consistently, which `f64::total_cmp` follows.
 
 /// Sort a vector of floats.
 fn main() {

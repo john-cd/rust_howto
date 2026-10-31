@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Compressing and decompressing a file asynchronously with
 //! `async_compression`.
+//!
+//! Compression stores data in fewer bytes, which saves disk space and network
+//! time at the cost of some CPU. The asynchronous version compresses while
+//! reading and writing without blocking a thread.
 
 use std::io::Result as IoResult;
 use std::path::Path;

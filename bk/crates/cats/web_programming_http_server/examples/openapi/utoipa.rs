@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generate an OpenAPI document from code with [`utoipa`].
+//!
+//! OpenAPI is a machine-readable description of an HTTP API. Generating it from
+//! the code means the documentation cannot drift from the handlers. Tools such
+//! as Swagger UI turn it into an interactive page.
 
 use axum::Json;
 use axum::Router;

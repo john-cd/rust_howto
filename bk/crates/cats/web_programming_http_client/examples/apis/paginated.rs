@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Wrap a paginated API (crates.io reverse dependencies) in an iterator.
+//!
+//! APIs return large result sets in pages, to bound response size. A client
+//! requests a page, reads the cursor or next-page number from the response, and
+//! asks for the next one. Wrapping this in an iterator hides the paging from
+//! the caller.
 
 use std::collections::HashMap;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Asynchronous trait methods with the `async_trait` crate.
+//!
+//! Before native `async fn` in traits, the `async_trait` crate boxed each
+//! returned future. It is still needed for trait objects (`dyn Trait`), which
+//! the native feature does not support.
 
 use async_trait::async_trait;
 

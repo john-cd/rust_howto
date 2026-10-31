@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Examples for working with `.env` files and `envy`.
+//!
+//! `envy` reads environment variables into a typed struct with Serde, so a
+//! missing or malformed variable becomes one clear error at startup instead of
+//! a failure deep in the program.
 
 use serde::Deserialize;
 

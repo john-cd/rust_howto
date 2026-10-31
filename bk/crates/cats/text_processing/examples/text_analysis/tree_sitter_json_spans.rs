@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Classifies JSON keys, strings, numbers, and literals into byte spans with
 //! the Tree-sitter JSON grammar.
+//!
+//! A span is a byte range with a label, such as "key" or "string". Tree-sitter
+//! parses the JSON into a syntax tree, and walking the tree classifies each
+//! piece, which is the basis of syntax highlighting.
 
 use anyhow::anyhow;
 use tree_sitter::Node;
@@ -74,7 +78,8 @@ fn main() -> anyhow::Result<()> {
 
 /// Runs the example.
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

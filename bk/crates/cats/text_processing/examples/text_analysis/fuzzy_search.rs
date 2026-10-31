@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Ranks candidates against a partial query with `nucleo`, the matcher used
 //! by the Helix editor.
+//!
+//! Fuzzy search finds approximate matches and ranks them as you type. `nucleo`
+//! is the matcher used by the Helix editor; it is fast and scores contiguous
+//! matches and word starts higher.
 
 use nucleo::Config;
 use nucleo::Matcher;
@@ -35,7 +39,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

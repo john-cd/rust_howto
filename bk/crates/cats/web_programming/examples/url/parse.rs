@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates URL parsing.
+//!
+//! A URL has parts: scheme (`https`), host (`example.com`), optional port,
+//! path, query and fragment. Parsing splits them, normalizes the text
+//! (lowercase host, percent-encoding) and reports an error if the URL is
+//! invalid.
 
 use url::ParseError;
 use url::Url;

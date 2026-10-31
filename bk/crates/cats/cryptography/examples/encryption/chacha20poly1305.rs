@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Authenticated encryption with ChaCha20-Poly1305, with and without associated
 //! data.
+//!
+//! ChaCha20-Poly1305 is a modern authenticated cipher, fast even without
+//! hardware AES support. Authenticated means decryption fails if the data was
+//! tampered with. Associated data is extra information, such as a header, that
+//! is authenticated but not encrypted. Never reuse a nonce with the same key.
 
 // Trait that provides in-place stateless AEAD:
 // Algorithm:

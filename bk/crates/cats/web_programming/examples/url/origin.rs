@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates parsing a URL and extracting its origin components.
+//!
+//! A web origin is the scheme, host and port of a URL. Browsers use it for the
+//! same-origin policy, which stops a script on one site from reading data from
+//! another unless that site allows it (see CORS).
 
 use url::Host;
 use url::ParseError;

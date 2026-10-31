@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! This example demonstrates signing and verifying messages with ed25519-dalek.
+//!
+//! A digital signature proves who wrote a message and that it was not altered:
+//! the signer uses a private key and anyone can check the result with the
+//! public key. Ed25519 is a fast modern scheme used for SSH keys and signed
+//! software updates.
 
 use ed25519_dalek::Signature;
 use ed25519_dalek::Signer as _;
