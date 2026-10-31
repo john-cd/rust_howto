@@ -17,7 +17,7 @@ Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench~repo
 
 ## `dashmap` {#dashmap}
 
-[![dashmap][c~dashmap~docs~badge]][c~dashmap~docs] [![dashmap~crates.io][c~dashmap~crates.io~badge]][c~dashmap~crates.io] [![dashmap~repo][c~dashmap~repo~badge]][c~dashmap~repo] [![dashmap~lib.rs][c~dashmap~lib.rs~badge]][c~dashmap~lib.rs]{{hi:dashmap}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Atomic}}[![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges dashmap algorithms=Algorithms concurrency=Concurrency data-structures="Data structures"}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Atomic}}
 
 [`dashmap`][c~dashmap~docs]↗{{hi:dashmap}} is a fast concurrent `HashMap` i.e. a concurrent associative array.{{hi:Concurrent associative array}}
 
@@ -43,7 +43,7 @@ An entry guard returned by `get` or `get_mut` holds a shard lock. Drop guards pr
 
 ## `flurry` {#flurry}
 
-[![flurry][c~flurry~docs~badge]][c~flurry~docs] [![flurry~crates.io][c~flurry~crates.io~badge]][c~flurry~crates.io] [![flurry~repo][c~flurry~repo~badge]][c~flurry~repo] [![flurry~lib.rs][c~flurry~lib.rs~badge]][c~flurry~lib.rs]{{hi:flurry}}{{hi:Map}}{{hi:Concurrent}}{{hi:Hashmap}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges flurry concurrency=Concurrency data-structures="Data structures"}}{{hi:Map}}{{hi:Concurrent}}{{hi:Hashmap}}
 
 [`flurry`][c~flurry~docs]↗{{hi:flurry}} is a concurrent hash table designed for high performance. It allows fully concurrent reads and highly concurrent updates. Its main type is functionally very similar to [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}. Its implementation is closely based on Java's `java.util.concurrent.ConcurrentHashMap`. Even though all operations on the map are thread-safe and operate on shared references, retrieval operations do not entail locking, and there is not any support for locking the entire table in a way that prevents all access ([doc][c~flurry~docs]↗).
 
@@ -53,7 +53,7 @@ An entry guard returned by `get` or `get_mut` holds a shard lock. Drop guards pr
 
 ## `papaya` {#papaya}
 
-[![papaya][c~papaya~docs~badge]][c~papaya~docs] [![papaya~crates.io][c~papaya~crates.io~badge]][c~papaya~crates.io] [![papaya~repo][c~papaya~repo~badge]][c~papaya~repo] [![papaya~lib.rs][c~papaya~lib.rs~badge]][c~papaya~lib.rs]{{hi:papaya}}{{hi:Atomic}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Lock-free}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges papaya algorithms=Algorithms concurrency=Concurrency data-structures="Data structures"}}{{hi:Atomic}}{{hi:Concurrent}}{{hi:Hashmap}}{{hi:Lock-free}}
 
 [`papaya`][c~papaya~docs]↗{{hi:papaya}} offers a fast and ergonomic concurrent hash-table for read-heavy workloads.
 

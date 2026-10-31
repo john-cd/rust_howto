@@ -15,12 +15,7 @@ Choose a binding generator for the direction and languages involved; these tools
 
 ## Generate Rust code that Calls into C Libraries with `bindgen` {#bindgen}
 
-[![bindgen][c~bindgen~docs~badge]][c~bindgen~docs]{{hi:bindgen}}
-[![bindgen~crates.io][c~bindgen~crates.io~badge]][c~bindgen~crates.io]
-[![bindgen~repo][c~bindgen~repo~badge]][c~bindgen~repo]
-[![bindgen~lib.rs][c~bindgen~lib.rs~badge]][c~bindgen~lib.rs]
-[![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
-[![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
+{{#badges bindgen development-tools::ffi=FFI external-ffi-bindings="External FFI bindings"}}
 
 [`bindgen`][c~bindgen~docs]↗{{hi:bindgen}} automatically generates Rust FFI bindings to C and C++ libraries. It creates Rust code allowing you to call into a C library's functions and use its types.
 
@@ -30,12 +25,7 @@ Choose a binding generator for the direction and languages involved; these tools
 
 ## Generate C Header Files from Rust Code with `cbindgen` {#cbindgen}
 
-[![cbindgen][c~cbindgen~docs~badge]][c~cbindgen~docs]{{hi:cbindgen}}
-[![cbindgen~crates.io][c~cbindgen~crates.io~badge]][c~cbindgen~crates.io]
-[![cbindgen~repo][c~cbindgen~repo~badge]][c~cbindgen~repo]
-[![cbindgen~lib.rs][c~cbindgen~lib.rs~badge]][c~cbindgen~lib.rs]
-[![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
-[![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
+{{#badges cbindgen development-tools::ffi=FFI external-ffi-bindings="External FFI bindings"}}
 
 [`cbindgen`][c~cbindgen~docs]↗{{hi:cbindgen}} generates C bindings to Rust libraries, making Rust [functions][p~functions] callable from C/C++.
 
@@ -45,13 +35,7 @@ Choose a binding generator for the direction and languages involved; these tools
 
 ## Interop Between C++ and Rust {#cxx}
 
-[![cxx][c~cxx~docs~badge]][c~cxx~docs]{{hi:cxx}}
-[![cxx~crates.io][c~cxx~crates.io~badge]][c~cxx~crates.io]
-[![cxx~repo][c~cxx~repo~badge]][c~cxx~repo]
-[![cxx~lib.rs][c~cxx~lib.rs~badge]][c~cxx~lib.rs]
-[![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
-[![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges cxx api-bindings="API bindings" development-tools::ffi=FFI no-std="No standard library"}}
 
 [`cxx`][c~cxx~docs]↗{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides. [`cxx`][c~cxx~docs]↗{{hi:cxx}} handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
 

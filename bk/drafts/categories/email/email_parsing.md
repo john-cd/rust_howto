@@ -18,7 +18,7 @@ The example reads an optional `Subject` header and walks the MIME tree to find a
 
 ## MIME (Multipurpose Internet Mail Extensions) {#mime}
 
-[![mime][c~mime~docs~badge]][c~mime~docs] [![mime~crates.io][c~mime~crates.io~badge]][c~mime~crates.io] [![mime~repo][c~mime~repo~badge]][c~mime~repo] [![mime~lib.rs][c~mime~lib.rs~badge]][c~mime~lib.rs]{{hi:mime}}{{hi:mime}}{{hi:Media-extensions}}{{hi:Media-types}}
+{{#badges mime}}{{hi:mime}}{{hi:Media-extensions}}{{hi:Media-types}}
 
 The [`mime`][c~mime~docs]↗ crate represents and compares media types such as `text/plain` and `image/png`. It does not parse an email message or walk its MIME parts; use a message parser such as `mailparse` for that job.
 

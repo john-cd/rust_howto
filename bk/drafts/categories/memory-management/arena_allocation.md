@@ -8,7 +8,7 @@ An _arena_{{hi:Arena}}{{hi:Bump allocation}} allocates many small objects that s
 
 ## Build a Tree in a `bumpalo` Arena {#bumpalo-tree}
 
-[![bumpalo][c~bumpalo~docs~badge]][c~bumpalo~docs] [![bumpalo~crates.io][c~bumpalo~crates.io~badge]][c~bumpalo~crates.io] [![bumpalo~repo][c~bumpalo~repo~badge]][c~bumpalo~repo] [![bumpalo~lib.rs][c~bumpalo~lib.rs~badge]][c~bumpalo~lib.rs]{{hi:bumpalo}}{{hi:Arena}}{{hi:Tree}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges bumpalo memory-management="Memory management" no-std="No standard library"}}{{hi:Arena}}{{hi:Tree}}
 
 The nodes of this binary search tree live in a [`bumpalo`][c~bumpalo~docs]↗{{hi:bumpalo}} arena. They refer to each other with plain `&'bump` references: no `Box`, no `Rc`, one pointer bump per node. Dropping the arena frees the whole tree at once.
 

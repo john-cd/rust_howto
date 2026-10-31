@@ -6,7 +6,7 @@
 
 ## Score with `ort`, and Hot-swap the Model {#onnx}
 
-[![ort][c~ort~docs~badge]][c~ort~docs] [![ort~crates.io][c~ort~crates.io~badge]][c~ort~crates.io] [![ort~repo][c~ort~repo~badge]][c~ort~repo] [![ort~lib.rs][c~ort~lib.rs~badge]][c~ort~lib.rs]{{hi:ort}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+{{#badges ort science=Science}}
 
 [`ort`][c~ort~docs]↗{{hi:ort}} wraps [ONNX Runtime](https://onnxruntime.ai/)↗. The usual workflow is to train in Python (scikit-learn, PyTorch...), export to ONNX, and serve from Rust. The recipe loads a tiny logistic regression exported with `skl2onnx` (the generator script is in the examples' `models` folder), scores a feature vector, then swaps in a new model version without a restart using [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}}.
 

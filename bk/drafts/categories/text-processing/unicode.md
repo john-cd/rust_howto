@@ -12,7 +12,7 @@ Grapheme segmentation does not normalize text. For example, a precomposed `é` a
 
 ## Collect Unicode Graphemes {#collect-unicode-graphemes}
 
-[![unicode-segmentation][c~unicode-segmentation~docs~badge]][c~unicode-segmentation~docs] [![unicode-segmentation~crates.io][c~unicode-segmentation~crates.io~badge]][c~unicode-segmentation~crates.io] [![unicode-segmentation~repo][c~unicode-segmentation~repo~badge]][c~unicode-segmentation~repo] [![unicode-segmentation~lib.rs][c~unicode-segmentation~lib.rs~badge]][c~unicode-segmentation~lib.rs]{{hi:unicode-segmentation}}{{hi:Boundary}}{{hi:Grapheme}}{{hi:Text}}{{hi:Unicode}}{{hi:Word}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+{{#badges unicode-segmentation text-processing="Text processing"}}{{hi:Boundary}}{{hi:Grapheme}}{{hi:Text}}{{hi:Unicode}}{{hi:Word}}
 
 [`unicode-segmentation`][c~unicode-segmentation~docs]↗{{hi:unicode-segmentation}} collects individual Unicode graphemes{{hi:Graphemes}} from UTF-8{{hi:UTF-8}} strings. See in particular the [`unicode-segmentation::UnicodeSegmentation::graphemes`][c~unicode-segmentation::UnicodeSegmentation::graphemes~docs]↗{{hi:unicode-segmentation::UnicodeSegmentation::graphemes}} function.
 

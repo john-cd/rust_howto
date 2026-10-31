@@ -6,7 +6,7 @@
 
 ## Process Spatial Information, Maps, Navigation Data, and Geographic Information Systems {#geo}
 
-[![geo][c~geo~docs~badge]][c~geo~docs] [![geo~crates.io][c~geo~crates.io~badge]][c~geo~crates.io] [![geo~repo][c~geo~repo~badge]][c~geo~repo] [![geo~lib.rs][c~geo~lib.rs~badge]][c~geo~lib.rs]{{hi:geo}}{{hi:GIS}}{{hi:Geography}}{{hi:geo}}{{hi:Geospatial}} [![cat~science::geo][cat~science::geo~badge]][cat~science::geo]{{hi:Geospatial}}
+{{#badges geo science::geo=Geospatial}}{{hi:GIS}}{{hi:Geography}}{{hi:geo}}{{hi:Geospatial}}
 
 [`geo`][c~geo~docs]↗{{hi:geo}} provides geospatial primitives and algorithms.
 
@@ -26,7 +26,7 @@ The area here is planar and expressed in square coordinate units. GeoJSON coordi
 
 ## Use the GEOS Library for Robust Overlay Operations {#geos}
 
-[![geos][c~geos~docs~badge]][c~geos~docs]{{hi:geos}} [![geos~crates.io][c~geos~crates.io~badge]][c~geos~crates.io] [![geos~repo][c~geos~repo~badge]][c~geos~repo] [![geos~lib.rs][c~geos~lib.rs~badge]][c~geos~lib.rs]{{hi:GIS}}
+{{#badges geos}}{{hi:GIS}}
 
 [`geos`][c~geos~docs]↗{{hi:geos}} wraps the GEOS C++ library, the geometry engine behind PostGIS and Shapely. Reach for it when you need GEOS's predicates, buffering, or overlay operations on a dataset that must match those tools exactly; pure-Rust [`geo`][c~geo~docs]↗ avoids the native dependency. GEOS must be installed on the build machine (for example `libgeos-dev` on Debian and Ubuntu), so this book's example is behind a `geos` Cargo feature: run it with `cargo test -p science_geo --features geos --example geo`. As elsewhere on this page, results are planar, in the units of the input coordinates.
 

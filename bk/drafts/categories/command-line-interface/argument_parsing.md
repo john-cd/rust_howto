@@ -63,7 +63,7 @@ Use field types to express the interface: `Option<T>` makes an argument optional
 
 ## Generate Shell Completion Scripts with `clap_complete` {#clap_complete}
 
-[![clap_complete][c~clap_complete~docs~badge]][c~clap_complete~docs] [![clap_complete~crates.io][c~clap_complete~crates.io~badge]][c~clap_complete~crates.io] [![clap_complete~repo][c~clap_complete~repo~badge]][c~clap_complete~repo] [![clap_complete~lib.rs][c~clap_complete~lib.rs~badge]][c~clap_complete~lib.rs]{{hi:clap_complete}}{{hi:Bash}}{{hi:Clap}}{{hi:Cli}}{{hi:Completion}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+{{#badges clap_complete command-line-interface="Command-line interface"}}{{hi:Bash}}{{hi:Clap}}{{hi:Cli}}{{hi:Completion}}
 
 `clap_complete` generates shell completion scripts for your `clap::Command`.
 
@@ -77,10 +77,7 @@ This example defines a `clap::Command`, writes a Bash completion script to a tem
 
 ### Parse Command-line Arguments with `lexopt` {#lexopt}
 
-[![lexopt][c~lexopt~docs~badge]][c~lexopt~docs]{{hi:lexopt}}
-[![lexopt~crates.io][c~lexopt~crates.io~badge]][c~lexopt~crates.io]
-[![lexopt~repo][c~lexopt~repo~badge]][c~lexopt~repo]
-[![lexopt~lib.rs][c~lexopt~lib.rs~badge]][c~lexopt~lib.rs]
+{{#badges lexopt}}
 
 lexopt is a small, low-level parser for applications that need to control the parsing loop. It leaves help generation and much of the interface design to the application.
 
@@ -90,10 +87,7 @@ lexopt is a small, low-level parser for applications that need to control the pa
 
 ### Parse Command-line Arguments with `pico-args` {#pico-args}
 
-[![pico-args][c~pico-args~docs~badge]][c~pico-args~docs]{{hi:pico-args}}
-[![pico-args~crates.io][c~pico-args~crates.io~badge]][c~pico-args~crates.io]
-[![pico-args~repo][c~pico-args~repo~badge]][c~pico-args~repo]
-[![pico-args~lib.rs][c~pico-args~lib.rs~badge]][c~pico-args~lib.rs]
+{{#badges pico-args}}
 
 The [`pico-args`][c~pico-args~docs]↗{{hi:pico-args}} crate is a small and fast library for parsing command-line arguments in Rust.
 

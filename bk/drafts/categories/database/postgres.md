@@ -62,10 +62,7 @@ This recipe counts artist rows by nationality in an existing PostgreSQL `artists
 
 ## Connect to and Query Postgres Asynchronously with `tokio-postgres` {#tokio-postgres}
 
-[![tokio-postgres][c~tokio-postgres~docs~badge]][c~tokio-postgres~docs]{{hi:tokio-postgres}}
-[![tokio-postgres~crates.io][c~tokio-postgres~crates.io~badge]][c~tokio-postgres~crates.io]
-[![tokio-postgres~repo][c~tokio-postgres~repo~badge]][c~tokio-postgres~repo]
-[![tokio-postgres~lib.rs][c~tokio-postgres~lib.rs~badge]][c~tokio-postgres~lib.rs]
+{{#badges tokio-postgres}}
 
 [`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}} is an asynchronous PostgreSQL client for the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime. The example starts the connection driver on a separate task, then uses parameterized statements inside a temporary table. `tokio-postgres` does not provide a pool; see [Connection Pools][ex~database~connection_pool] for pooling options. [`sqlx`][c~sqlx~docs]↗{{hi:SQLx}} is another async client with compile-time query checking when its offline or live metadata is configured.
 

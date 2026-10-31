@@ -30,7 +30,7 @@ The most common way to share an atomic variable is to put it into an [`std::sync
 
 ## `arc-swap` {#arc-swap}
 
-[![arc-swap][c~arc-swap~docs~badge]][c~arc-swap~docs] [![arc-swap~crates.io][c~arc-swap~crates.io~badge]][c~arc-swap~crates.io] [![arc-swap~repo][c~arc-swap~repo~badge]][c~arc-swap~repo] [![arc-swap~lib.rs][c~arc-swap~lib.rs~badge]][c~arc-swap~lib.rs]{{hi:arc-swap}}{{hi:Arc}}{{hi:Atomic}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
+{{#badges arc-swap data-structures="Data structures" memory-management="Memory management"}}{{hi:Arc}}{{hi:Atomic}}
 
 The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} stores an `Arc` that can be replaced atomically. Its lock-free reads let a writer publish a new immutable value while readers continue using their existing snapshot. It is designed for read-mostly shared state; use a mutex when callers need to mutate the value in place.
 

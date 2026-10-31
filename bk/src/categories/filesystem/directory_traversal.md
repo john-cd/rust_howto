@@ -22,7 +22,7 @@ The following example gets the current working directory{{hi:Current working dir
 
 ## Find Loops in a Given Path {#find-loop-in-path}
 
-[![same-file][c~same-file~docs~badge]][c~same-file~docs] [![same-file~crates.io][c~same-file~crates.io~badge]][c~same-file~crates.io] [![same-file~repo][c~same-file~repo~badge]][c~same-file~repo] [![same-file~lib.rs][c~same-file~lib.rs~badge]][c~same-file~lib.rs]{{hi:same-file}}{{hi:Same}}{{hi:Equal}}{{hi:Inode}}{{hi:File}}
+{{#badges same-file}}{{hi:Same}}{{hi:Equal}}{{hi:Inode}}{{hi:File}}
 
 [`same-file`][c~same-file~docs]↗{{hi:same-file}} is a simple crate for determining whether two file paths point to the same file.
 
@@ -41,7 +41,7 @@ The following would assert that a loop exists:
 
 ## Recursively Find Duplicate File Names {#recursively-find-duplicate-file-names}
 
-[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+{{#badges walkdir filesystem=Filesystem}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}}
 
 The following example uses [`walkdir::WalkDir`][c~walkdir~docs]↗{{hi:walkdir::WalkDir}} to traverse the current directory and its subdirectories. It skips directories, counts each remaining entry's file name in a [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}, and prints a name once when its count reaches `2`. The iterator's errors are propagated, so the example reports an unreadable entry instead of presenting a partial result as complete.
 
@@ -51,7 +51,7 @@ The following example uses [`walkdir::WalkDir`][c~walkdir~docs]↗{{hi:walkdir::
 
 ## Recursively Find All Files with a Given Predicate {#recursively-find-all-files-with-given-predicate}
 
-[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+{{#badges walkdir filesystem=Filesystem}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}}
 
 The following example finds files modified within the last day in the current directory and prints their paths. It propagates traversal and metadata errors. By default, `WalkDir` does not follow symbolic links to directories; enabling [`walkdir::WalkDir::follow_links`][c~walkdir::WalkDir::follow_links~docs]↗{{hi:walkdir::WalkDir::follow_links}} can expose additional permission and symlink-loop errors.
 
@@ -61,7 +61,7 @@ The following example finds files modified within the last day in the current di
 
 ## Traverse Directories While Skipping Dotfiles {#traverse-directories-while-skipping-dotfiles}
 
-[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+{{#badges walkdir filesystem=Filesystem}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}}
 
 The following example uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIter::filter_entry~docs]↗{{hi:walkdir::IntoIter::filter_entry}} to skip hidden files and directories. Unlike a plain iterator filter, this method also prunes a hidden directory so the walker does not descend into it. The depth-zero root entry is retained, and traversal errors are propagated.
 
@@ -71,7 +71,7 @@ The following example uses [`walkdir::IntoIter::filter_entry`][c~walkdir::IntoIt
 
 ## Walk the Filesystem While Respecting Ignore Files {#walk-the-filesystem-while-respecting-ignore-files}
 
-[![ignore][c~ignore~docs~badge]][c~ignore~docs] [![ignore~crates.io][c~ignore~crates.io~badge]][c~ignore~crates.io] [![ignore~repo][c~ignore~repo~badge]][c~ignore~repo] [![ignore~lib.rs][c~ignore~lib.rs~badge]][c~ignore~lib.rs]{{hi:ignore}}{{hi:File}}{{hi:Gitignore}}{{hi:Glob}}{{hi:ignore}}{{hi:Pattern}}
+{{#badges ignore}}{{hi:File}}{{hi:Gitignore}}{{hi:Glob}}{{hi:ignore}}{{hi:Pattern}}
 
 [`ignore`][c~ignore~docs]↗{{hi:ignore}} is a library for efficiently matching ignore files such as [`.gitignore`][git-gitignore~website]↗{{hi:.gitignore}} against file paths.
 
@@ -95,7 +95,7 @@ Recursion depth can be set with [`walkdir::WalkDir::min_depth`][c~walkdir::WalkD
 
 ## Find All Files with a Given Extension Recursively {#find-all-png-files-recursively}
 
-[![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~repo][c~glob~repo~badge]][c~glob~repo] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+{{#badges glob filesystem=Filesystem}}
 
 The following example recursively finds all PNG files in the current directory. In this case, the `**` pattern matches the current directory and all subdirectories.
 
@@ -107,7 +107,7 @@ Use the `**` pattern in any path portion. For example, `/media/**/*.png` matches
 
 ## Find All Files with Given Pattern, Ignoring Filename Case {#find-all-files-with-given-pattern-ignoring-filename-case}
 
-[![glob][c~glob~docs~badge]][c~glob~docs] [![glob~crates.io][c~glob~crates.io~badge]][c~glob~crates.io] [![glob~repo][c~glob~repo~badge]][c~glob~repo] [![glob~lib.rs][c~glob~lib.rs~badge]][c~glob~lib.rs]{{hi:glob}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+{{#badges glob filesystem=Filesystem}}
 
 The following example finds all image files in the `/media/` directory matching the `img_[0-9]*.png` pattern.
 
@@ -119,7 +119,7 @@ A custom [`glob::MatchOptions`][c~glob::MatchOptions~docs]↗{{hi:glob::MatchOpt
 
 ## Evaluate Multiple Globs with `globset` {#globset}
 
-[![globset][c~globset~docs~badge]][c~globset~docs] [![globset~crates.io][c~globset~crates.io~badge]][c~globset~crates.io] [![globset~repo][c~globset~repo~badge]][c~globset~repo] [![globset~lib.rs][c~globset~lib.rs~badge]][c~globset~lib.rs]{{hi:globset}}{{hi:Glob}}{{hi:Multiple}}{{hi:Pattern}}{{hi:Regex}}{{hi:Set}}
+{{#badges globset}}{{hi:Glob}}{{hi:Multiple}}{{hi:Pattern}}{{hi:Regex}}{{hi:Set}}
 
 The following example uses [`globset`][c~globset~docs]↗{{hi:globset}} which allows multiple globs to be evaluated at once. Glob set matching is the process of matching one or more [`glob`][c~glob~docs]↗{{hi:glob}} patterns against a single candidate path simultaneously, and returning all of the globs that matched.
 

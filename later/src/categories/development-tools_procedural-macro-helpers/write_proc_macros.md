@@ -22,7 +22,7 @@ Use [`proc-macro2`][c~proc-macro2~docs] types in reusable parsing and generation
 
 ## Parse Input with `syn` {#syn}
 
-[![syn][c~syn~docs~badge]][c~syn~docs] [![syn~crates.io][c~syn~crates.io~badge]][c~syn~crates.io] [![syn~repo][c~syn~repo~badge]][c~syn~repo] [![syn~lib.rs][c~syn~lib.rs~badge]][c~syn~lib.rs]{{hi:syn}}{{hi:Macros}}[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}[![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
+{{#badges syn development-tools::procedural-macro-helpers="Procedural macro helpers" parser-implementations="Parser implementations"}}{{hi:Macros}}
 
 [`syn`][c~syn~docs] parses Rust tokens into syntax-tree types such as `DeriveInput`, `Item`, and `Expr`. Parse only the syntax your macro needs, then validate its shape before generating code.
 

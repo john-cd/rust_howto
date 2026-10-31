@@ -10,7 +10,7 @@ Use `toml` with Serde to map data to Rust types, or parse into `toml::Value` whe
 
 ## `toml` {#toml}
 
-[![toml][c~toml~docs~badge]][c~toml~docs] [![toml~crates.io][c~toml~crates.io~badge]][c~toml~crates.io] [![toml~repo][c~toml~repo~badge]][c~toml~repo] [![toml~lib.rs][c~toml~lib.rs~badge]][c~toml~lib.rs]{{hi:toml}}{{hi:Encoding}}{{hi:toml}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+{{#badges toml config=Configuration encoding=Encoding parser-implementations="Parser implementations" parsing="Parsing tools"}}{{hi:Encoding}}{{hi:toml}}
 
 [`toml`][c~toml~docs]↗{{hi:toml}} is a native Rust encoder and decoder of TOML-formatted files and [streams][p~streams]. Provides implementations of the standard Serialize/Deserialize [traits][p~traits] for TOML data to facilitate deserializing and serializing Rust structures.
 
@@ -20,7 +20,7 @@ Use `toml` with Serde to map data to Rust types, or parse into `toml::Value` whe
 
 ## `toml_edit` {#toml-edit}
 
-[![toml_edit][c~toml_edit~docs~badge]][c~toml_edit~docs] [![toml_edit~crates.io][c~toml_edit~crates.io~badge]][c~toml_edit~crates.io] [![toml_edit~repo][c~toml_edit~repo~badge]][c~toml_edit~repo] [![toml_edit~lib.rs][c~toml_edit~lib.rs~badge]][c~toml_edit~lib.rs]{{hi:toml_edit}}{{hi:Encoding}}{{hi:Toml}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+{{#badges toml_edit config=Configuration encoding=Encoding parser-implementations="Parser implementations" parsing="Parsing tools"}}{{hi:Encoding}}{{hi:Toml}}
 
 [`toml_edit`][c~toml_edit~docs]↗{{hi:toml_edit}} is a format-preserving TOML parser.
 
@@ -30,7 +30,7 @@ Use `toml` with Serde to map data to Rust types, or parse into `toml::Value` whe
 
 ## `basic-toml` {#basic-toml}
 
-[![basic-toml][c~basic-toml~docs~badge]][c~basic-toml~docs] [![basic-toml~crates.io][c~basic-toml~crates.io~badge]][c~basic-toml~crates.io] [![basic-toml~repo][c~basic-toml~repo~badge]][c~basic-toml~repo] [![basic-toml~lib.rs][c~basic-toml~lib.rs~badge]][c~basic-toml~lib.rs]{{hi:basic-toml}}{{hi:Toml}}{{hi:Serde}} [![cat~config][cat~config~badge]][cat~config]{{hi:Configuration}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
+{{#badges basic-toml config=Configuration parser-implementations="Parser implementations" encoding=Encoding}}{{hi:Toml}}{{hi:Serde}}
 
 [`basic-toml`][c~basic-toml~docs]↗{{hi:basic-toml}} is a minimal TOML library with few dependencies
 

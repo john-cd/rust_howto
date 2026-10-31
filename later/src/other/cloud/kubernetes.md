@@ -8,7 +8,7 @@ An operator is a program that watches custom resources and keeps the cluster in 
 
 ## Write an Operator with `kube-rs` {#kubernetes}
 
-[![kube][c~kube~docs~badge]][c~kube~docs] [![kube~crates.io][c~kube~crates.io~badge]][c~kube~crates.io] [![kube~repo][c~kube~repo~badge]][c~kube~repo] [![kube~lib.rs][c~kube~lib.rs~badge]][c~kube~lib.rs]{{hi:kube}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+{{#badges kube development-tools="Development tools"}}
 
 [`kube`][c~kube~docs]↗{{hi:kube}} provides a Kubernetes client, a derive macro for custom resources (the CRD is generated from the Rust types, using [`schemars`][c~schemars~docs]↗{{hi:schemars}}), and a controller runtime. [`k8s-openapi`][c~k8s-openapi~docs]↗{{hi:k8s-openapi}} supplies the built-in types such as `Deployment`.
 

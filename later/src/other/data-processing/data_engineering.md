@@ -6,10 +6,7 @@
 
 ## Process Columnar Data with `arrow` {#arrow}
 
-[![arrow][c~arrow~docs~badge]][c~arrow~docs]{{hi:arrow}}
-[![arrow~crates.io][c~arrow~crates.io~badge]][c~arrow~crates.io]
-[![arrow~repo][c~arrow~repo~badge]][c~arrow~repo]
-[![arrow~lib.rs][c~arrow~lib.rs~badge]][c~arrow~lib.rs]
+{{#badges arrow}}
 
 [`arrow`][c~arrow~docs]↗{{hi:arrow}} is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}. These examples build typed arrays and record batches, read and write CSV and newline-delimited JSON, and convert Serde-compatible Rust rows to and from Arrow.
 
@@ -59,10 +56,7 @@ The Arrow IPC _file_ format supports random access and memory mapping. The IPC _
 
 ## Query In-memory Data with `datafusion` {#datafusion}
 
-[![datafusion][c~datafusion~docs~badge]][c~datafusion~docs]{{hi:datafusion}}
-[![datafusion~crates.io][c~datafusion~crates.io~badge]][c~datafusion~crates.io]
-[![datafusion~repo][c~datafusion~repo~badge]][c~datafusion~repo]
-[![datafusion~lib.rs][c~datafusion~lib.rs~badge]][c~datafusion~lib.rs]
+{{#badges datafusion}}
 
 [`datafusion`][c~datafusion~docs]↗{{hi:datafusion}} is an extensible in-process SQL query engine built on Apache Arrow. It can query CSV, Parquet, JSON, and Avro data and can serve as the query layer for a database, data pipeline, or domain-specific engine.
 

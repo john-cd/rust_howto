@@ -15,7 +15,7 @@ These approaches can be combined: a library can expose a `thiserror` type while 
 
 ## Simplify Error Handling and Attach Context to Errors with `anyhow` {#anyhow}
 
-[![anyhow][c~anyhow~docs~badge]][c~anyhow~docs] [![anyhow~crates.io][c~anyhow~crates.io~badge]][c~anyhow~crates.io] [![anyhow~repo][c~anyhow~repo~badge]][c~anyhow~repo] [![anyhow~lib.rs][c~anyhow~lib.rs~badge]][c~anyhow~lib.rs]{{hi:anyhow}}{{hi:Error}}{{hi:Error-handling}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+{{#badges anyhow no-std="No standard library" rust-patterns="Rust patterns"}}{{hi:Error}}{{hi:Error-handling}}
 
 [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} provides `anyhow::Error`, a flexible concrete Error type built on [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}}.
 
@@ -35,7 +35,7 @@ You can use [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} to:
 
 ## Create Custom Error Types Declaratively with `thisError` {#thiserror}
 
-[![thiserror][c~thiserror~docs~badge]][c~thiserror~docs] [![thiserror~crates.io][c~thiserror~crates.io~badge]][c~thiserror~crates.io] [![thiserror~repo][c~thiserror~repo~badge]][c~thiserror~repo] [![thiserror~lib.rs][c~thiserror~lib.rs~badge]][c~thiserror~lib.rs]{{hi:thiserror}}{{hi:Derive}}{{hi:Error}}{{hi:Error-handling}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+{{#badges thiserror rust-patterns="Rust patterns"}}{{hi:Derive}}{{hi:Error}}{{hi:Error-handling}}
 
 [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} provides a convenient [`derive`][book~rust-reference~derive]↗{{hi:derive}} macro for the standard library's [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
 
@@ -51,7 +51,7 @@ Use `#[error("...")]` to define a `Display` message. Named fields can be interpo
 
 ## Provide Human-readable Diagnostics with `miette` {#miette}
 
-[![miette][c~miette~docs~badge]][c~miette~docs] [![miette~crates.io][c~miette~crates.io~badge]][c~miette~crates.io] [![miette~repo][c~miette~repo~badge]][c~miette~repo] [![miette~lib.rs][c~miette~lib.rs~badge]][c~miette~lib.rs]{{hi:miette}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+{{#badges miette rust-patterns="Rust patterns"}}
 
 [`miette`][c~miette~docs]↗{{hi:miette}} is a fancy diagnostic reporting library and protocol.
 
@@ -61,7 +61,7 @@ Use `#[error("...")]` to define a `Display` message. Named fields can be interpo
 
 ## Create Colorful and User-friendly Error Reports with `color-eyre` {#color-eyre}
 
-[![color-eyre][c~color-eyre~docs~badge]][c~color-eyre~docs] [![color-eyre~crates.io][c~color-eyre~crates.io~badge]][c~color-eyre~crates.io] [![color-eyre~repo][c~color-eyre~repo~badge]][c~color-eyre~repo] [![color-eyre~lib.rs][c~color-eyre~lib.rs~badge]][c~color-eyre~lib.rs]{{hi:color-eyre}}
+{{#badges color-eyre}}
 
 [`color-eyre`][c~color-eyre~docs]↗{{hi:color-eyre}} installs panic and report hooks for [`eyre`][c~eyre~docs]↗{{hi:eyre}}. It captures diagnostic context and formats error chains for terminal applications. Choose it when the application owns top-level error presentation; use `anyhow` when contextual propagation is enough and a custom report handler is not needed.
 

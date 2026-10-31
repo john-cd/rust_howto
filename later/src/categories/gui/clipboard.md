@@ -8,7 +8,7 @@ Choose a clipboard API for the target environment and formats. [`arboard`][c~arb
 
 ## `arboard` {#arboard}
 
-[![arboard][c~arboard~docs~badge]][c~arboard~docs] [![arboard~crates.io][c~arboard~crates.io~badge]][c~arboard~crates.io] [![arboard~repo][c~arboard~repo~badge]][c~arboard~repo] [![arboard~lib.rs][c~arboard~lib.rs~badge]][c~arboard~lib.rs]{{hi:arboard}}{{hi:Clipboard}}{{hi:Image}}
+{{#badges arboard}}{{hi:Clipboard}}{{hi:Image}}
 
 [`arboard`][c~arboard~docs]↗{{hi:arboard}} helps with image and text handling for the OS clipboard. Supports copy and pasting of both text and images on Linux (X11/Wayland), MacOS and Windows.
 

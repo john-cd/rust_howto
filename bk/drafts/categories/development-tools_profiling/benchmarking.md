@@ -27,11 +27,7 @@ From the `bk/crates` workspace, pass the package and target you want to profile:
 
 ## `criterion` {#criterion}
 
-[![criterion][c~criterion~docs~badge]][c~criterion~docs]{{hi:criterion}}
-[![criterion~crates.io][c~criterion~crates.io~badge]][c~criterion~crates.io]
-[![criterion~repo][c~criterion~repo~badge]][c~criterion~repo]
-[![criterion~lib.rs][c~criterion~lib.rs~badge]][c~criterion~lib.rs]
-[![cat~development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling]{{hi:Profiling}}
+{{#badges criterion development-tools::profiling=Profiling}}
 
 [`criterion`][c~criterion~docs]↗{{hi:criterion}} measures a Rust function over
 repeated samples and reports statistical comparisons with prior runs. Keep
@@ -49,11 +45,7 @@ mode with:
 
 ## `divan` {#divan}
 
-[![divan][c~divan~docs~badge]][c~divan~docs]{{hi:divan}}
-[![divan~crates.io][c~divan~crates.io~badge]][c~divan~crates.io]
-[![divan~repo][c~divan~repo~badge]][c~divan~repo]
-[![divan~lib.rs][c~divan~lib.rs~badge]][c~divan~lib.rs]
-[![cat~development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling]{{hi:Profiling}}
+{{#badges divan development-tools::profiling=Profiling}}
 
 [`divan`][c~divan~docs]↗{{hi:divan}} is a simple yet powerful benchmarking library with allocation profiling.
 
@@ -70,11 +62,7 @@ with:
 
 ## `hyperfine` {#hyperfine}
 
-[![hyperfine][c~hyperfine~docs~badge]][c~hyperfine~docs]{{hi:hyperfine}}
-[![hyperfine~crates.io][c~hyperfine~crates.io~badge]][c~hyperfine~crates.io]
-[![hyperfine~repo][c~hyperfine~repo~badge]][c~hyperfine~repo]
-[![hyperfine~lib.rs][c~hyperfine~lib.rs~badge]][c~hyperfine~lib.rs]
-[![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
+{{#badges hyperfine command-line-utilities="Command line utilities"}}
 
 [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}} measures whole commands and
 reports run-to-run variation. It is useful for comparing end-to-end behavior;

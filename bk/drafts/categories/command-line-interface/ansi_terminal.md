@@ -40,10 +40,7 @@ For more than a foreground color, construct a `nu_ansi_term::Style` and chain th
 
 ## Manipulate the Cursor, Style the Output, Handle Input Events {#crossterm}
 
-[![crossterm][c~crossterm~docs~badge]][c~crossterm~docs]{{hi:crossterm}}
-[![crossterm~crates.io][c~crossterm~crates.io~badge]][c~crossterm~crates.io]
-[![crossterm~repo][c~crossterm~repo~badge]][c~crossterm~repo]
-[![crossterm~lib.rs][c~crossterm~lib.rs~badge]][c~crossterm~lib.rs]
+{{#badges crossterm}}
 
 [`crossterm`][c~crossterm~docs]↗ is a cross-platform, low-level library for terminal control and event handling. It is useful when an application needs cursor movement, screen modes, styled output, or keyboard and mouse events.
 
@@ -60,7 +57,7 @@ For more than a foreground color, construct a `nu_ansi_term::Style` and chain th
 
 ## `termcolor` {#termcolor}
 
-[![termcolor][c~termcolor~docs~badge]][c~termcolor~docs] [![termcolor~crates.io][c~termcolor~crates.io~badge]][c~termcolor~crates.io] [![termcolor~repo][c~termcolor~repo~badge]][c~termcolor~repo] [![termcolor~lib.rs][c~termcolor~lib.rs~badge]][c~termcolor~lib.rs]{{hi:termcolor}}{{hi:Color}}{{hi:Win}}{{hi:Windows}}{{hi:Ansi}}{{hi:Console}}
+{{#badges termcolor}}{{hi:Color}}{{hi:Win}}{{hi:Windows}}{{hi:Ansi}}{{hi:Console}}
 
 [`termcolor`][c~termcolor~docs]↗ is a simple cross platform library for writing colored text to a terminal. It offers a straightforward way to add colored output to your terminal applications in Rust, working consistently across different operating systems. It supports various color choices, text styling, and provides options for controlling where the colored output is directed, such as standard output or standard error.
 
@@ -78,37 +75,37 @@ For more than a foreground color, construct a `nu_ansi_term::Style` and chain th
 
 ## `ansiterm` {#ansiterm}
 
-[![ansiterm][c~ansiterm~docs~badge]][c~ansiterm~docs] [![ansiterm~crates.io][c~ansiterm~crates.io~badge]][c~ansiterm~crates.io] [![ansiterm~repo][c~ansiterm~repo~badge]][c~ansiterm~repo] [![ansiterm~lib.rs][c~ansiterm~lib.rs~badge]][c~ansiterm~lib.rs]{{hi:ansiterm}}
+{{#badges ansiterm}}
 
 [`ansiterm`][c~ansiterm~docs]↗ is a library for ANSI terminal colors and styles (bold, underline). It provides ANSI escape code manipulation for terminal styling, offering a more direct and lower-level approach compared to some higher-level crates.
 
 ## `console` {#console}
 
-[![console][c~console~docs~badge]][c~console~docs] [![console~crates.io][c~console~crates.io~badge]][c~console~crates.io] [![console~repo][c~console~repo~badge]][c~console~repo] [![console~lib.rs][c~console~lib.rs~badge]][c~console~lib.rs]{{hi:console}}{{hi:Ansi}}{{hi:Colors}}{{hi:console}}{{hi:Terminal}}{{hi:Cli}}
+{{#badges console}}{{hi:Ansi}}{{hi:Colors}}{{hi:console}}{{hi:Terminal}}{{hi:Cli}}
 
 [`console`][c~console~docs]↗ is a terminal and console abstraction for Rust. The [`console`][c~console~docs]↗{{hi:console}} crate provides a comprehensive set of tools for building interactive console applications. It offers features such as styled text output with ANSI escape code support, progress bar rendering, user input handling (including password prompting and line editing), and terminal manipulation. console aims to simplify the development of rich command-line interfaces by abstracting away platform-specific terminal complexities and providing a consistent API for common console interactions.
 
 ## `owo-colors` {#owo-colors}
 
-[![owo-colors][c~owo-colors~docs~badge]][c~owo-colors~docs] [![owo-colors~crates.io][c~owo-colors~crates.io~badge]][c~owo-colors~crates.io] [![owo-colors~repo][c~owo-colors~repo~badge]][c~owo-colors~repo] [![owo-colors~lib.rs][c~owo-colors~lib.rs~badge]][c~owo-colors~lib.rs]{{hi:owo-colors}}{{hi:Ansi_term}}{{hi:Cli}}{{hi:Color}}{{hi:No-std}}{{hi:Terminal}}[![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+{{#badges owo-colors command-line-interface="Command-line interface"}}{{hi:Ansi_term}}{{hi:Cli}}{{hi:Color}}{{hi:No-std}}{{hi:Terminal}}
 
 [`owo-colors`][c~owo-colors~docs]↗ is a zero-allocation terminal colors that will make people go 'owo'. It provides a simple and fast way to add color to terminal output. It leverages ANSI escape codes for styling and focuses on a concise API for common use cases, prioritizing speed and ease of use over more complex styling features. It's designed to be lightweight and efficient, minimizing overhead for applications where basic terminal coloring is sufficient.
 
 ## `stylish` {#stylish}
 
-[![stylish][c~stylish~docs~badge]][c~stylish~docs] [![stylish~crates.io][c~stylish~crates.io~badge]][c~stylish~crates.io] [![stylish~repo][c~stylish~repo~badge]][c~stylish~repo] [![stylish~lib.rs][c~stylish~lib.rs~badge]][c~stylish~lib.rs]{{hi:stylish}}
+{{#badges stylish}}
 
 [`stylish`][c~stylish~docs]↗ is another crate implementing colorized text.
 
 ## `yansi` {#yansi}
 
-[![yansi][c~yansi~docs~badge]][c~yansi~docs] [![yansi~crates.io][c~yansi~crates.io~badge]][c~yansi~crates.io] [![yansi~repo][c~yansi~repo~badge]][c~yansi~repo] [![yansi~lib.rs][c~yansi~lib.rs~badge]][c~yansi~lib.rs]{{hi:yansi}}{{hi:Paint}}{{hi:Format}}{{hi:Color}}{{hi:Ansi}}{{hi:Terminal}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+{{#badges yansi command-line-interface="Command-line interface"}}{{hi:Paint}}{{hi:Format}}{{hi:Color}}{{hi:Ansi}}{{hi:Terminal}}
 
 [`yansi`][c~yansi~docs]↗ is a simple ANSI terminal color painting library. It provides an ergonomic and composable API for styling terminal output with ANSI escape codes. It emphasizes ease of use through its builder-like interface, allowing developers to chain styling methods and construct complex formatted strings.
 
 ## `termion` {#termion}
 
-[![termion][c~termion~docs~badge]][c~termion~docs] [![termion~crates.io][c~termion~crates.io~badge]][c~termion~crates.io] [![termion~repo][c~termion~repo~badge]][c~termion~repo] [![termion~lib.rs][c~termion~lib.rs~badge]][c~termion~lib.rs]{{hi:termion}}{{hi:Color}}{{hi:Password}}{{hi:Terminal}}{{hi:Tty}}{{hi:Tui}}
+{{#badges termion}}{{hi:Color}}{{hi:Password}}{{hi:Terminal}}{{hi:Tty}}{{hi:Tui}}
 
 [`termion`][c~termion~docs]↗ is a pure Rust, bindless library for low-level handling, manipulating and reading information about terminals. This provides a full-featured alternative to Termbox.
 
@@ -118,7 +115,7 @@ Termion is a pure Rust library that provides a [cross-platform][p~cross-platform
 
 ## `colored` {#colored}
 
-[![colored][c~colored~docs~badge]][c~colored~docs] [![colored~crates.io][c~colored~crates.io~badge]][c~colored~crates.io] [![colored~repo][c~colored~repo~badge]][c~colored~repo] [![colored~lib.rs][c~colored~lib.rs~badge]][c~colored~lib.rs]{{hi:colored}}{{hi:Color}}{{hi:String}}{{hi:Term}}{{hi:Ansi_term}}{{hi:Term-painter}}
+{{#badges colored}}{{hi:Color}}{{hi:String}}{{hi:Term}}{{hi:Ansi_term}}{{hi:Term-painter}}
 
 [`colored`][c~colored~docs]↗{{hi:colored}} adds color and style methods to strings through its `Colorize` trait. This example prints success, warning, and error messages with different styles:
 
@@ -128,7 +125,7 @@ Termion is a pure Rust library that provides a [cross-platform][p~cross-platform
 
 ## Print Tables with `comfy-table` {#comfy-table}
 
-[![comfy-table][c~comfy-table~docs~badge]][c~comfy-table~docs]{{hi:comfy-table}} [![comfy-table~crates.io][c~comfy-table~crates.io~badge]][c~comfy-table~crates.io] [![comfy-table~repo][c~comfy-table~repo~badge]][c~comfy-table~repo] [![comfy-table~lib.rs][c~comfy-table~lib.rs~badge]][c~comfy-table~lib.rs] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+{{#badges comfy-table command-line-interface="Command-line interface"}}
 
 [`comfy-table`][c~comfy-table~docs]↗{{hi:comfy-table}} renders rows and columns as aligned text. With `ContentArrangement::Dynamic`, long cells wrap to fit the table width, which defaults to the width of the attached terminal; the example sets an explicit width so its output is the same everywhere. A style preset, loaded with `load_style`, selects the border characters: the plain-ASCII `ASCII_FULL` below, or `UTF8_FULL` for box-drawing characters. Table output is for people: for scripts, print JSON or one record per line instead. `prettytable-rs` has not been updated since 2022, and `term-table` is smaller and simpler, so this book shows `comfy-table`; `tabled` is a popular alternative that builds tables from your structs.
 

@@ -6,13 +6,7 @@
 
 ## Bind to Unix-specific APIs with `rustix` {#rustix}
 
-[![rustix][c~rustix~docs~badge]][c~rustix~docs]{{hi:rustix}}
-[![rustix~crates.io][c~rustix~crates.io~badge]][c~rustix~crates.io]
-[![rustix~repo][c~rustix~repo~badge]][c~rustix~repo]
-[![rustix~lib.rs][c~rustix~lib.rs~badge]][c~rustix~lib.rs]
-[![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
-[![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
-[![cat~os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis]{{hi:Unix APIs}}
+{{#badges rustix external-ffi-bindings="External FFI bindings" os="Operating systems" os::unix-apis="Unix APIs"}}
 
 Unix-like systems expose APIs through several overlapping layers: portable Rust standard-library APIs, POSIX interfaces, and operating-system-specific extensions. Prefer `std` for portable file, process, and networking work. When an OS interface is required, use a maintained safe wrapper such as `rustix` or `nix` where it covers the operation. These wrappers use Rust types and return errors as `Result`, reducing pointer and file-descriptor handling in application code.
 
@@ -26,11 +20,7 @@ Check the crate's target support and feature flags because Unix does not mean ev
 
 ## Bind to Unix-specific APIs with `nix` {#nix}
 
-[![nix][c~nix~docs~badge]][c~nix~docs]{{hi:nix}}
-[![nix~crates.io][c~nix~crates.io~badge]][c~nix~crates.io]
-[![nix~repo][c~nix~repo~badge]][c~nix~repo]
-[![nix~lib.rs][c~nix~lib.rs~badge]][c~nix~lib.rs]
-[![cat~os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis]{{hi:Unix APIs}}
+{{#badges nix os::unix-apis="Unix APIs"}}
 
 [`nix`][c~nix~docs]↗{{hi:nix}} provides bindings to the various *nix system [functions][p~functions] (Unix, Linux, MacOS, etc.).
 

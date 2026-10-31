@@ -43,7 +43,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Floem {#floem}
 
-[![floem][c~floem~docs~badge]][c~floem~docs] [![floem~crates.io][c~floem~crates.io~badge]][c~floem~crates.io] [![floem~repo][c~floem~repo~badge]][c~floem~repo] [![floem~lib.rs][c~floem~lib.rs~badge]][c~floem~lib.rs]{{hi:floem}}
+{{#badges floem}}
 
 [`floem`][c~floem~docs] is a declarative native UI library built around fine-grained reactive signals. Its project lists Windows, macOS, and Linux support, several GPU renderers, and a CPU fallback; it is pre-1.0, so APIs may change.
 
@@ -53,7 +53,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Vizia {#vizia}
 
-[![vizia][c~vizia~docs~badge]][c~vizia~docs] [![vizia~crates.io][c~vizia~crates.io~badge]][c~vizia~crates.io] [![vizia~repo][c~vizia~repo~badge]][c~vizia~repo] [![vizia~lib.rs][c~vizia~lib.rs~badge]][c~vizia~lib.rs]{{hi:vizia}}
+{{#badges vizia}}
 
 [`vizia`][c~vizia~docs] binds views to application models and routes events back to update them. The example uses Vizia 0.4's signal-based API and lives in a separate package because its Skia dependency conflicts with the GUI workspace's Slint version.
 
@@ -75,7 +75,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ### GPUI {#gpui}
 
-[![gpui][c~gpui~docs~badge]][c~gpui~docs] [![gpui~crates.io][c~gpui~crates.io~badge]][c~gpui~crates.io] [![gpui~repo][c~gpui~repo~badge]][c~gpui~repo] [![gpui~lib.rs][c~gpui~lib.rs~badge]][c~gpui~lib.rs]{{hi:gpui}}
+{{#badges gpui}}
 
 [GPUI][c~gpui~repo] is the hybrid immediate- and retained-mode GPU-accelerated framework used to build Zed. It targets macOS, Windows, and Linux and remains in active pre-1.0 development.
 
@@ -87,7 +87,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ### Druid {#druid}
 
-[![druid][c~druid~docs~badge]][c~druid~docs] [![druid~crates.io][c~druid~crates.io~badge]][c~druid~crates.io] [![druid~repo][c~druid~repo~badge]][c~druid~repo] [![druid~lib.rs][c~druid~lib.rs~badge]][c~druid~lib.rs]{{hi:druid}}{{hi:Toolkit}}{{hi:Gui}}{{hi:Ui}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+{{#badges druid gui=GUI}}{{hi:Toolkit}}{{hi:Gui}}{{hi:Ui}}
 
 [`druid`][c~druid~docs] was a data-first native toolkit. Its maintainers discontinued the project and recommend Xilem for new applications; use Druid only when its existing feature set and lack of future fixes are acceptable.
 

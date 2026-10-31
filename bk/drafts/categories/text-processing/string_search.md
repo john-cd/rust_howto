@@ -18,7 +18,7 @@ Exact search, fuzzy ranking, and similarity scores answer different questions. A
 
 ## `aho-corasick` {#aho-corasick}
 
-[![aho-corasick][c~aho-corasick~docs~badge]][c~aho-corasick~docs] [![aho-corasick~crates.io][c~aho-corasick~crates.io~badge]][c~aho-corasick~crates.io] [![aho-corasick~repo][c~aho-corasick~repo~badge]][c~aho-corasick~repo] [![aho-corasick~lib.rs][c~aho-corasick~lib.rs~badge]][c~aho-corasick~lib.rs]{{hi:aho-corasick}}{{hi:Multi}}{{hi:Text}}{{hi:String}}{{hi:Pattern}}{{hi:Search}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+{{#badges aho-corasick text-processing="Text processing"}}{{hi:Multi}}{{hi:Text}}{{hi:String}}{{hi:Pattern}}{{hi:Search}}
 
 [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} searches for multiple fixed string patterns in one haystack. A match reports the pattern and a half-open byte range. `find_iter` returns non-overlapping matches; use `find_overlapping_iter` to enumerate overlapping matches. Configure the match kind to choose how the search resolves multiple overlapping candidates.
 
@@ -38,7 +38,7 @@ Building the automaton is the expensive step, so build it once and reuse it for 
 
 ## `memchr` {#memchr}
 
-[![memchr][c~memchr~docs~badge]][c~memchr~docs] [![memchr~crates.io][c~memchr~crates.io~badge]][c~memchr~crates.io] [![memchr~repo][c~memchr~repo~badge]][c~memchr~repo] [![memchr~lib.rs][c~memchr~lib.rs~badge]][c~memchr~lib.rs]{{hi:memchr}}{{hi:Search}}{{hi:Find}}{{hi:memchr}}{{hi:Substring}}{{hi:Memmem}}
+{{#badges memchr}}{{hi:Search}}{{hi:Find}}{{hi:memchr}}{{hi:Substring}}{{hi:Memmem}}
 
 [`memchr`][c~memchr~docs]↗{{hi:memchr}} provides routines for searching one, two, or three bytes and for finding byte substrings. The search operates on bytes without interpreting their encoding, so results are byte offsets and can fall inside a multi-byte UTF-8 character when searching arbitrary byte values. Use the standard string methods when their semantics fit; benchmark representative data before choosing a specialized routine for speed.
 
@@ -48,7 +48,7 @@ Building the automaton is the expensive step, so build it once and reuse it for 
 
 ## `fuzzy-matcher` {#fuzzy-matcher}
 
-[![fuzzy-matcher][c~fuzzy-matcher~docs~badge]][c~fuzzy-matcher~docs] [![fuzzy-matcher~crates.io][c~fuzzy-matcher~crates.io~badge]][c~fuzzy-matcher~crates.io] [![fuzzy-matcher~repo][c~fuzzy-matcher~repo~badge]][c~fuzzy-matcher~repo] [![fuzzy-matcher~lib.rs][c~fuzzy-matcher~lib.rs~badge]][c~fuzzy-matcher~lib.rs]{{hi:fuzzy-matcher}}{{hi:Match}}{{hi:Search}}{{hi:Fuzzy}}{{hi:Text}}
+{{#badges fuzzy-matcher}}{{hi:Match}}{{hi:Search}}{{hi:Fuzzy}}{{hi:Text}}
 
 [`fuzzy-matcher`][c~fuzzy-matcher~docs]↗{{hi:fuzzy-matcher}} scores candidates that contain a query's characters in order, even when those characters are separated. Use it for ranking choices such as filenames or commands. `fuzzy_indices` can also return matched character positions for highlighting; map them as character indices rather than using them as byte offsets.
 
@@ -58,7 +58,7 @@ Building the automaton is the expensive step, so build it once and reuse it for 
 
 ## `strsim` {#strsim}
 
-[![strsim][c~strsim~docs~badge]][c~strsim~docs] [![strsim~crates.io][c~strsim~crates.io~badge]][c~strsim~crates.io] [![strsim~repo][c~strsim~repo~badge]][c~strsim~repo] [![strsim~lib.rs][c~strsim~lib.rs~badge]][c~strsim~lib.rs]{{hi:strsim}}{{hi:String}}{{hi:Similarity}}{{hi:Jaro}}{{hi:Hamming}}{{hi:Levenshtein}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+{{#badges strsim text-processing="Text processing"}}{{hi:String}}{{hi:Similarity}}{{hi:Jaro}}{{hi:Hamming}}{{hi:Levenshtein}}
 
 [`strsim`][c~strsim~docs]↗{{hi:strsim}} implements string distance and similarity metrics, including Hamming, Levenshtein, optimal string alignment, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice. These formulas have different input requirements and score meanings. For example, Hamming distance requires equal-length inputs; read each metric's contract before interpreting or comparing its result.
 

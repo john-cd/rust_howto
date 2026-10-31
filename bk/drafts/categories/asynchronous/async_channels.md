@@ -55,7 +55,7 @@ Another example:
 
 ## Send Messages from Multiple Producers to One of Multiple Consumers {#mpmc}
 
-[![async-channel][c~async-channel~docs~badge]][c~async-channel~docs] [![async-channel~crates.io][c~async-channel~crates.io~badge]][c~async-channel~crates.io] [![async-channel~repo][c~async-channel~repo~badge]][c~async-channel~repo] [![async-channel~lib.rs][c~async-channel~lib.rs~badge]][c~async-channel~lib.rs]{{hi:async-channel}}{{hi:Chan}}{{hi:Futures}}{{hi:Mpsc}}{{hi:Spmc}}{{hi:Mpmc}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+{{#badges async-channel asynchronous=Asynchronous concurrency=Concurrency}}{{hi:Chan}}{{hi:Futures}}{{hi:Mpsc}}{{hi:Spmc}}{{hi:Mpmc}}
 
 [`async-channel`][c~async-channel~docs]↗{{hi:async-channel}} provides bounded and unbounded multi-producer, multi-consumer channels. Each message is received by one consumer, which makes a bounded channel useful as a shared work queue. Use `bounded(capacity)` to limit queued messages; `unbounded()` has no capacity limit and needs an explicit memory-growth policy.
 
@@ -69,10 +69,7 @@ When all senders or all receivers are dropped, the channel becomes closed. A clo
 
 ## Broadcast Messages from Multiple Producers to Multiple Consumers {#broadcast}
 
-[![postage][c~postage~docs~badge]][c~postage~docs]{{hi:postage}}
-[![postage~crates.io][c~postage~crates.io~badge]][c~postage~crates.io]
-[![postage~repo][c~postage~repo~badge]][c~postage~repo]
-[![postage~lib.rs][c~postage~lib.rs~badge]][c~postage~lib.rs]
+{{#badges postage}}
 
 [`postage`][c~postage~docs]↗ includes async channel types such as [`postage::broadcast`][c~postage::broadcast~docs]↗{{hi:postage::broadcast}}. Consult its documentation for the buffer, backpressure, and receiver-lifecycle guarantees that apply to the selected channel.
 
@@ -82,10 +79,7 @@ When all senders or all receivers are dropped, the channel becomes closed. A clo
 
 ## `kanal` {#kanal}
 
-[![kanal][c~kanal~docs~badge]][c~kanal~docs]{{hi:kanal}}
-[![kanal~crates.io][c~kanal~crates.io~badge]][c~kanal~crates.io]
-[![kanal~repo][c~kanal~repo~badge]][c~kanal~repo]
-[![kanal~lib.rs][c~kanal~lib.rs~badge]][c~kanal~lib.rs]
+{{#badges kanal}}
 
 [`kanal`][c~kanal~docs]↗{{hi:kanal}} offers fast sync and async channels:
 

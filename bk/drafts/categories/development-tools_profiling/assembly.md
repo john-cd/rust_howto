@@ -6,10 +6,7 @@
 
 ## Inspect the Generated Assembly {#cargo-show-asm}
 
-[![cargo-show-asm][c~cargo-show-asm~docs~badge]][c~cargo-show-asm~docs]{{hi:cargo-show-asm}}
-[![cargo-show-asm~crates.io][c~cargo-show-asm~crates.io~badge]][c~cargo-show-asm~crates.io]
-[![cargo-show-asm~repo][c~cargo-show-asm~repo~badge]][c~cargo-show-asm~repo]
-[![cargo-show-asm~lib.rs][c~cargo-show-asm~lib.rs~badge]][c~cargo-show-asm~lib.rs]
+{{#badges cargo-show-asm}}
 
 [`cargo-show-asm`][c~cargo-show-asm~repo]↗{{hi:cargo-show-asm}} lets you inspect the compiler output for a Rust function without hand-writing assembly. Install it with `cargo install --locked cargo-show-asm`, then run `cargo asm --help` for the options supported by your installed version. Start with `cargo asm --lib` to list functions from a library crate, or pass a function path such as `cargo asm my_crate::module::function` to inspect a specific item. Use `--bin <name>` or `--example <name>` when the function belongs to a binary or example target.
 

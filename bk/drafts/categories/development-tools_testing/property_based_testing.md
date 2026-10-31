@@ -30,7 +30,7 @@ proptest = "1.0.0"
 
 ## Test Data Generation with `fake` {#test_data_generation}
 
-[![fake][c~fake~docs~badge]][c~fake~docs] [![fake~crates.io][c~fake~crates.io~badge]][c~fake~crates.io] [![fake~repo][c~fake~repo~badge]][c~fake~repo] [![fake~lib.rs][c~fake~lib.rs~badge]][c~fake~lib.rs]{{hi:fake}}{{hi:Random}}{{hi:Generator}}{{hi:Data}}{{hi:Faker}}
+{{#badges fake}}{{hi:Random}}{{hi:Generator}}{{hi:Data}}{{hi:Faker}}
 
 An easy to use library and command line for generating fake data like name, number, address, lorem, dates, etc.
 

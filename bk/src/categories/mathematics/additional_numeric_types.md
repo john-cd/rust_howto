@@ -38,7 +38,7 @@
 
 ### Work with Arbitrary-precision Integers, Rationals, Floats, and Complex Numbers with `rug` {#rug}
 
-[![rug][c~rug~docs~badge]][c~rug~docs] [![rug~crates.io][c~rug~crates.io~badge]][c~rug~crates.io] [![rug~repo][c~rug~repo~badge]][c~rug~repo] [![rug~lib.rs][c~rug~lib.rs~badge]][c~rug~lib.rs]{{hi:rug}}{{hi:Bignum}}{{hi:GMP}}{{hi:Mathematics}}{{hi:Numerics}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
+{{#badges rug api-bindings="API bindings" mathematics=Mathematics}}{{hi:Bignum}}{{hi:GMP}}{{hi:Mathematics}}{{hi:Numerics}}
 
 [`rug`][c~rug~docs] provides arbitrary-precision integers, rationals, floating-point values, and [complex numbers][p~complex-numbers] through GMP, MPFR, and MPC. Choose it when those arbitrary-precision types or their numerical behavior fit your application and its native-library build requirements.
 
@@ -68,7 +68,7 @@
 
 ## `typenum` {#typenum}
 
-[![typenum][c~typenum~docs~badge]][c~typenum~docs] [![typenum~crates.io][c~typenum~crates.io~badge]][c~typenum~crates.io] [![typenum~repo][c~typenum~repo~badge]][c~typenum~repo] [![typenum~lib.rs][c~typenum~lib.rs~badge]][c~typenum~lib.rs]{{hi:typenum}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges typenum no-std="No standard library"}}
 
 [`typenum`][c~typenum~docs] provides type-level numbers and operators evaluated at compile time, including signed and unsigned integers. The example computes a capacity at the type level and uses it in a fixed-size buffer's type.
 

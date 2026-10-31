@@ -53,7 +53,7 @@ Choose the smallest tool that fits the task: use Cargo profiles and build script
 
 ## Write cross-platform `bash`-like scripts in Rust with `xshell` {#xshell}
 
-[![xshell][c~xshell~docs~badge]][c~xshell~docs] [![xshell~crates.io][c~xshell~crates.io~badge]][c~xshell~crates.io] [![xshell~repo][c~xshell~repo~badge]][c~xshell~repo] [![xshell~lib.rs][c~xshell~lib.rs~badge]][c~xshell~lib.rs]{{hi:xshell}} [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build Utils}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+{{#badges xshell development-tools::build-utils="Build Utils" filesystem=Filesystem}}
 
 "[`xshell`][c~xshell~repo]↗{{hi:xshell}} is a swiss-army knife for writing cross-platform 'bash' scripts in Rust.
 

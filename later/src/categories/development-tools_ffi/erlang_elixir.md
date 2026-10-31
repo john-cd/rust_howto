@@ -18,7 +18,7 @@ Native Implemented Functions (NIFs) allow you to write functions in Rust that ar
 
 ## `rustler` {#rustler}
 
-[![rustler][c~rustler~docs~badge]][c~rustler~docs] [![rustler~crates.io][c~rustler~crates.io~badge]][c~rustler~crates.io] [![rustler~repo][c~rustler~repo~badge]][c~rustler~repo] [![rustler~lib.rs][c~rustler~lib.rs~badge]][c~rustler~lib.rs]{{hi:rustler}}
+{{#badges rustler}}
 
 [`rustler`][c~rustler~docs]↗{{hi:rustler}} provides safe Rust wrappers for creating Erlang NIF functions.
 

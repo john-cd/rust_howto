@@ -28,15 +28,7 @@ In this example, the port{{hi:Port}} is displayed on the console, and the progra
 
 ### High-performance Asynchronous I/O with `glommio` {#high-performance-asynchronous-io .skip}
 
-[![glommio][c~glommio~docs~badge]][c~glommio~docs]{{hi:glommio}}
-[![glommio~crates.io][c~glommio~crates.io~badge]][c~glommio~crates.io]
-[![glommio~repo][c~glommio~repo~badge]][c~glommio~repo]
-[![glommio~lib.rs][c~glommio~lib.rs~badge]][c~glommio~lib.rs]
-[![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
-[![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
-[![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
-[![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
-[![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+{{#badges glommio asynchronous=Asynchronous concurrency=Concurrency filesystem=Filesystem network-programming="Network programming" os="Operating systems"}}
 
 Use [`glommio`][c~glommio~docs]↗{{hi:glommio}} for Linux `io_uring` networking. This example binds to `127.0.0.1:8080`, accepts connections on a local executor, and returns a fixed HTTP response. Glommio requires a Linux kernel with `io_uring` support (5.8 or newer is recommended); the example is not available on other operating systems. The current Glommio dependency also includes a transitive security advisory, so keep this sample isolated from production services until that dependency is fixed.
 

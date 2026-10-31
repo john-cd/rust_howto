@@ -28,7 +28,7 @@ Consider these questions when designing a cache:
 
 ## `moka` {#moka}
 
-[![moka][c~moka~docs~badge]][c~moka~docs] [![moka~crates.io][c~moka~crates.io~badge]][c~moka~crates.io] [![moka~repo][c~moka~repo~badge]][c~moka~repo] [![moka~lib.rs][c~moka~lib.rs~badge]][c~moka~lib.rs]{{hi:moka}}{{hi:Cache}}{{hi:Concurrent}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+{{#badges moka caching=Caching concurrency=Concurrency}}{{hi:Cache}}{{hi:Concurrent}}
 
 [`moka`][c~moka~docs]↗{{hi:moka}} provides synchronous and asynchronous concurrent caches. Its policies include maximum capacity, expiration by time-to-live or time-to-idle, and size-aware weighting. Select the `sync` or `future` cache to match the surrounding code, and remember that maintenance and eviction are cache-policy behavior rather than durable storage.
 
@@ -38,7 +38,7 @@ Consider these questions when designing a cache:
 
 ## `cached` {#cached}
 
-[![cached][c~cached~docs~badge]][c~cached~docs] [![cached~crates.io][c~cached~crates.io~badge]][c~cached~crates.io] [![cached~repo][c~cached~repo~badge]][c~cached~repo] [![cached~lib.rs][c~cached~lib.rs~badge]][c~cached~lib.rs]{{hi:cached}}{{hi:Cache}}{{hi:Disk}}{{hi:Lru}}{{hi:Memoize}}{{hi:Redis}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges cached caching=Caching data-structures="Data structures"}}{{hi:Cache}}{{hi:Disk}}{{hi:Lru}}{{hi:Memoize}}{{hi:Redis}}
 
 [`cached`][c~cached~docs]↗{{hi:cached}} provides cache types and procedural macros for memoizing function results. A memoization key is derived from the function's inputs, so only use it when equal keys reliably produce interchangeable results. Configure a size or time bound for long-running processes, and avoid caching values that depend on hidden mutable state or secrets.
 

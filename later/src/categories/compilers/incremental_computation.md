@@ -29,7 +29,7 @@ Rust offers several frameworks and libraries to facilitate incremental computati
 
 ## Implementing Incremental Computation with `comemo` {#comemo}
 
-[![comemo][c~comemo~docs~badge]][c~comemo~docs] [![comemo~crates.io][c~comemo~crates.io~badge]][c~comemo~crates.io] [![comemo~repo][c~comemo~repo~badge]][c~comemo~repo] [![comemo~lib.rs][c~comemo~lib.rs~badge]][c~comemo~lib.rs]{{hi:comemo}}{{hi:Tracked}}{{hi:Incremental}}{{hi:Constraints}}{{hi:Memoization}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}}
+{{#badges comemo caching=Caching}}{{hi:Tracked}}{{hi:Incremental}}{{hi:Constraints}}{{hi:Memoization}}
 
 [`comemo`][c~comemo~docs]↗{{hi:comemo}} offers incremental computation through constrained memoization.
 

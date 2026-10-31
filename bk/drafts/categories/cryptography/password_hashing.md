@@ -20,13 +20,7 @@ For new applications, prefer Argon2id and tune its memory, iteration, and parall
 
 ## Hash a Password, then Verify a Password Against the Hash {#argon2}
 
-[![argon2][c~argon2~docs~badge]][c~argon2~docs]{{hi:argon2}}
-[![argon2~crates.io][c~argon2~crates.io~badge]][c~argon2~crates.io]
-[![argon2~repo][c~argon2~repo~badge]][c~argon2~repo]
-[![argon2~lib.rs][c~argon2~lib.rs~badge]][c~argon2~lib.rs]
-[![cat~authentication][cat~authentication~badge]][cat~authentication]{{hi:Authentication}}
-[![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges argon2 authentication=Authentication cryptography=Cryptography no-std="No standard library"}}
 
 [`argon2`][c~argon2~docs]↗{{hi:argon2}} is a pure-Rust implementation of the ['Argon2'][argon2~wikipedia]↗ key derivation function, which is commonly used for secure password hashing.
 
@@ -36,13 +30,7 @@ For new applications, prefer Argon2id and tune its memory, iteration, and parall
 
 ## `scrypt` {#scrypt}
 
-[![scrypt][c~scrypt~docs~badge]][c~scrypt~docs]{{hi:scrypt}}
-[![scrypt~crates.io][c~scrypt~crates.io~badge]][c~scrypt~crates.io]
-[![scrypt~repo][c~scrypt~repo~badge]][c~scrypt~repo]
-[![scrypt~lib.rs][c~scrypt~lib.rs~badge]][c~scrypt~lib.rs]
-[![cat~authentication][cat~authentication~badge]][cat~authentication]{{hi:Authentication}}
-[![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges scrypt authentication=Authentication cryptography=Cryptography no-std="No standard library"}}
 
 The [`scrypt`][c~scrypt~docs]↗{{hi:scrypt}} key derivation function is designed to be far more secure against hardware brute-force attacks than alternative functions such as [`PBKDF2`][c~ring::pbkdf2~docs]↗{{hi:PBKDF2}} or ['bcrypt'](#bcrypt).
 
@@ -52,10 +40,7 @@ The [`scrypt`][c~scrypt~docs]↗{{hi:scrypt}} key derivation function is designe
 
 ## `bcrypt` {#bcrypt}
 
-[![bcrypt][c~bcrypt~docs~badge]][c~bcrypt~docs]{{hi:bcrypt}}
-[![bcrypt~crates.io][c~bcrypt~crates.io~badge]][c~bcrypt~crates.io]
-[![bcrypt~repo][c~bcrypt~repo~badge]][c~bcrypt~repo]
-[![bcrypt~lib.rs][c~bcrypt~lib.rs~badge]][c~bcrypt~lib.rs]
+{{#badges bcrypt}}
 
 ['bcrypt'][bcrypt~wikipedia]↗ is a password-hashing function. Besides incorporating a salt to protect against rainbow table attacks, ['bcrypt'][bcrypt~wikipedia]↗ is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force [search][p~search] attacks even with increasing computation power. ['bcrypt'][bcrypt~wikipedia]↗ is not a key derivation function (KDF). For example, [`bcrypt`][c~bcrypt~docs]↗{{hi:bcrypt}} cannot be used to [derive][p~derive] a 512-bit key from a password.
 

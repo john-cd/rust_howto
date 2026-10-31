@@ -33,7 +33,7 @@ Cargo can also install from a Git repository, a local path, or a named registry.
 
 ## Install a Rust Binary with `cargo binstall` {#cargo-binstall}
 
-[![cargo-binstall][c~cargo-binstall~docs~badge]][c~cargo-binstall~docs] [![cargo-binstall~crates.io][c~cargo-binstall~crates.io~badge]][c~cargo-binstall~crates.io] [![cargo-binstall~repo][c~cargo-binstall~repo~badge]][c~cargo-binstall~repo] [![cargo-binstall~lib.rs][c~cargo-binstall~lib.rs~badge]][c~cargo-binstall~lib.rs]{{hi:cargo-binstall}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+{{#badges cargo-binstall development-tools="Development tools"}}
 
 `cargo binstall` is an optional tool for installing Rust binaries. It can use compatible prebuilt release artifacts instead of compiling the package locally, and can fall back to a source build when an artifact is unavailable, depending on its configuration.
 

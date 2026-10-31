@@ -38,7 +38,7 @@ The [`hex`][c~hex~docs]↗ crate encodes bytes as pairs of hexadecimal digits an
 
 ## `zeroize` {#zeroize}
 
-[![zeroize][c~zeroize~docs~badge]][c~zeroize~docs] [![zeroize~crates.io][c~zeroize~crates.io~badge]][c~zeroize~crates.io] [![zeroize~repo][c~zeroize~repo~badge]][c~zeroize~repo] [![zeroize~lib.rs][c~zeroize~lib.rs~badge]][c~zeroize~lib.rs]{{hi:zeroize}}{{hi:Memory}}{{hi:Volatile}}{{hi:Secure}}{{hi:Memset}}{{hi:Zero}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges zeroize cryptography=Cryptography memory-management="Memory management" os="Operating systems" no-std="No standard library"}}{{hi:Memory}}{{hi:Volatile}}{{hi:Secure}}{{hi:Memset}}{{hi:Zero}}
 
 The [`zeroize`][c~zeroize~docs]↗{{hi:zeroize}} crate clears the value's memory using writes intended not to be optimized away. It cannot erase copies made elsewhere, values in registers, or data already written to logs, swap, or storage. Minimize copies and avoid logging secrets; consider the crate's zeroize-on-drop wrappers for owned secret values.
 

@@ -8,7 +8,7 @@ Embedded databases written natively in Rust run inside your application process,
 
 ## `redb` {#redb}
 
-[![redb][c~redb~docs~badge]][c~redb~docs] [![redb~crates.io][c~redb~crates.io~badge]][c~redb~crates.io] [![redb~repo][c~redb~repo~badge]][c~redb~repo] [![redb~lib.rs][c~redb~lib.rs~badge]][c~redb~lib.rs]{{hi:redb}} [![cat~database-implementations][cat~database-implementations~badge]][cat~database-implementations]{{hi:Database implementations}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
+{{#badges redb database-implementations="Database implementations" embedded="Embedded development"}}
 
 [`redb`][c~redb~repo]↗ is a simple, portable, high-performance ACID-compliant embedded key-value store inspired by LMDB.
 
@@ -25,7 +25,7 @@ Embedded databases written natively in Rust run inside your application process,
 
 ## `sled` {#sled}
 
-[![sled][c~sled~docs~badge]][c~sled~docs] [![sled~crates.io][c~sled~crates.io~badge]][c~sled~crates.io] [![sled~repo][c~sled~repo~badge]][c~sled~repo] [![sled~lib.rs][c~sled~lib.rs~badge]][c~sled~lib.rs]{{hi:sled}}{{hi:Sqlite}}{{hi:Redis}}{{hi:LMDB}}{{hi:Mongo}}{{hi:Rocksdb}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~database-implementations][cat~database-implementations~badge]][cat~database-implementations]{{hi:Database implementations}}
+{{#badges sled algorithms=Algorithms caching=Caching concurrency=Concurrency data-structures="Data structures" database-implementations="Database implementations"}}{{hi:Sqlite}}{{hi:Redis}}{{hi:LMDB}}{{hi:Mongo}}{{hi:Rocksdb}}
 
 [`sled`][c~sled~repo]↗ is a high-performance, embedded key-value [database][p~database]. It presents an API similar to a thread-safe [`BTreeMap<[u8], [u8]>`][c~std~collections~BTreeMap~docs]↗ that stores its data on disk.
 
@@ -55,13 +55,7 @@ Embedded databases written natively in Rust run inside your application process,
 
 ## SurrealDB {#surrealdb}
 
-[![surrealdb][c~surrealdb~docs~badge]][c~surrealdb~docs]{{hi:surrealdb}}
-[![surrealdb~crates.io][c~surrealdb~crates.io~badge]][c~surrealdb~crates.io]
-[![surrealdb~repo][c~surrealdb~repo~badge]][c~surrealdb~repo]
-[![surrealdb~lib.rs][c~surrealdb~lib.rs~badge]][c~surrealdb~lib.rs]
-[![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
-[![cat~database-implementations][cat~database-implementations~badge]][cat~database-implementations]{{hi:Database implementations}}
-[![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
+{{#badges surrealdb data-structures="Data structures" database-implementations="Database implementations" embedded="Embedded development"}}
 
 SurrealDB is a scalable, distributed, multi-model document-graph [database][p~database] that can run either in-process or as a standalone server.
 

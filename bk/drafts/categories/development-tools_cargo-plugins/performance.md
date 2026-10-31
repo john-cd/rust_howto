@@ -14,7 +14,7 @@
 
 ## Choose a starting profile with `cargo-wizard` {#cargo-wizard}
 
-[![cargo-wizard][c~cargo-wizard~docs~badge]][c~cargo-wizard~docs] [![cargo-wizard~crates.io][c~cargo-wizard~crates.io~badge]][c~cargo-wizard~crates.io] [![cargo-wizard~repo][c~cargo-wizard~repo~badge]][c~cargo-wizard~repo] [![cargo-wizard~lib.rs][c~cargo-wizard~lib.rs~badge]][c~cargo-wizard~lib.rs]{{hi:cargo-wizard}}{{hi:Profile}}{{hi:Cargo}}{{hi:Template}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+{{#badges cargo-wizard development-tools::cargo-plugins="Cargo plugins"}}{{hi:Profile}}{{hi:Cargo}}{{hi:Template}}
 
 [`cargo wizard`][c~cargo-wizard~repo]↗{{hi:cargo-wizard}} is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand that interactively selects or applies profile and configuration templates. Its `fast-compile`, `fast-runtime`, and `min-size` templates adjust Cargo profiles and, in some cases, `.cargo/config.toml` flags. Run `cargo wizard` to review the interactive choices or `cargo wizard apply fast-compile dev` to apply a template to a profile.
 
@@ -22,7 +22,7 @@ The templates are starting points, not universal settings. They can change optim
 
 ## Unify workspace dependency features with `cargo-hakari` {#cargo-hakari}
 
-[![cargo-hakari][c~cargo-hakari~docs~badge]][c~cargo-hakari~docs] [![cargo-hakari~crates.io][c~cargo-hakari~crates.io~badge]][c~cargo-hakari~crates.io] [![cargo-hakari~repo][c~cargo-hakari~repo~badge]][c~cargo-hakari~repo] [![cargo-hakari~lib.rs][c~cargo-hakari~lib.rs~badge]][c~cargo-hakari~lib.rs]{{hi:cargo-hakari}}{{hi:Cargo}}{{hi:Dependencies}}{{hi:Feature-unification}}{{hi:Guppy}}{{hi:Workspace-hack}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+{{#badges cargo-hakari development-tools::cargo-plugins="Cargo plugins"}}{{hi:Cargo}}{{hi:Dependencies}}{{hi:Feature-unification}}{{hi:Guppy}}{{hi:Workspace-hack}}
 
 [`cargo-hakari`][c~cargo-hakari~repo]↗{{hi:cargo-hakari}} manages a generated `workspace-hack` package that unifies dependency features across workspace members. When several crates compile the same dependency with different feature sets, Cargo may compile multiple variants. A workspace-hack can make those feature sets consistent and reduce duplicate dependency work in large workspaces.
 

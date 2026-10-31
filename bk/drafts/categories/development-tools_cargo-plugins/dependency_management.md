@@ -10,7 +10,7 @@ See [[cargo | Cargo]] for Cargo basics and [[development-tools_cargo-plugins | C
 
 ## Add or Remove Dependencies {#cargo-edit}
 
-[![cargo-edit][c~cargo-edit~docs~badge]][c~cargo-edit~docs] [![cargo-edit~crates.io][c~cargo-edit~crates.io~badge]][c~cargo-edit~crates.io] [![cargo-edit~repo][c~cargo-edit~repo~badge]][c~cargo-edit~repo] [![cargo-edit~lib.rs][c~cargo-edit~lib.rs~badge]][c~cargo-edit~lib.rs]{{hi:cargo-edit}}{{hi:Cargo}}{{hi:Dependencies}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+{{#badges cargo-edit development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}}{{hi:Cargo}}{{hi:Dependencies}}
 
 Use Cargo's built-in `cargo add` and `cargo remove` to edit a manifest. `cargo add <crate>` can also select features or a renamed dependency; review the resulting `Cargo.toml` and lockfile before committing. The [`cargo-edit`][c~cargo-edit~docs]↗{{hi:cargo-edit}} project provides additional commands such as `cargo upgrade` for changing version requirements and `cargo set-version` for package versions.
 

@@ -41,7 +41,7 @@ Typical uses of `dyn Any` include:
 
 ## Compile-time Type Inspection in Procedural Macros {#compile-type-reflection}
 
-[![reflect][c~reflect~docs~badge]][c~reflect~docs] [![reflect~crates.io][c~reflect~crates.io~badge]][c~reflect~crates.io] [![reflect~repo][c~reflect~repo~badge]][c~reflect~repo] [![reflect~lib.rs][c~reflect~lib.rs~badge]][c~reflect~lib.rs]{{hi:reflect}}{{hi:Reflection}} [![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]{{hi:Procedural macro helpers}}
+{{#badges reflect development-tools::procedural-macro-helpers="Procedural macro helpers"}}{{hi:Reflection}}
 
 The [`reflect`][c~reflect~docs]↗ crate explores a reflection-like API for writing derive macros. Procedural macros operate on Rust syntax during compilation and generate Rust code; the generated program does not gain general runtime reflection automatically ([Rust Reference][book~rust-reference~procedural-macros]). This crate is an experiment, not a standard-library facility or a replacement for runtime reflection in other languages.
 

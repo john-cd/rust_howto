@@ -39,17 +39,13 @@ The standard macros also accept a custom panic message. Use `debug_assert!`, `de
 
 ## Check a Pattern with `matches!` or `assert_matches` {#assertion_libraries}
 
-[![assert_matches][c~assert_matches~docs~badge]][c~assert_matches~docs] [![assert_matches~crates.io][c~assert_matches~crates.io~badge]][c~assert_matches~crates.io] [![assert_matches~repo][c~assert_matches~repo~badge]][c~assert_matches~repo] [![assert_matches~lib.rs][c~assert_matches~lib.rs~badge]][c~assert_matches~lib.rs]{{hi:assert_matches}}{{hi:Pattern}}{{hi:Assert}}{{hi:Match}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges assert_matches no-std="No standard library"}}{{hi:Pattern}}{{hi:Assert}}{{hi:Match}}
 
 The built-in `matches!` macro returns a boolean, so `assert!(matches!(value, Pattern))` is a stable way to assert a variant or a pattern with a guard. The third-party [`assert_matches`][c~assert_matches~docs]↗{{hi:assert_matches}} crate offers a dedicated assertion macro when that syntax is preferred.
 
 ## `approx` {#approx}
 
-[![approx][c~approx~docs~badge]][c~approx~docs]{{hi:approx}}
-[![approx~crates.io][c~approx~crates.io~badge]][c~approx~crates.io]
-[![approx~repo][c~approx~repo~badge]][c~approx~repo]
-[![approx~lib.rs][c~approx~lib.rs~badge]][c~approx~lib.rs]
-[![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+{{#badges approx development-tools::testing=Testing}}
 
 [`approx`][c~approx~docs]↗{{hi:approx}} allows approximate floating point equality comparisons and assertions.
 

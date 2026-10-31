@@ -15,10 +15,7 @@ For data processing, keep two points in mind:
 
 ## Manipulate CSV Files from the Command Line {#manipulate-csv-files-from-the-command-line}
 
-[![qsv][c~qsv~docs~badge]][c~qsv~docs]{{hi:qsv}}
-[![qsv~crates.io][c~qsv~crates.io~badge]][c~qsv~crates.io]
-[![qsv~repo][c~qsv~repo~badge]][c~qsv~repo]
-[![qsv~lib.rs][c~qsv~lib.rs~badge]][c~qsv~lib.rs]
+{{#badges qsv}}
 
 [qsv][c~qsv~repo]↗{{hi:qsv}} is a fast, actively maintained {{i:CSV}} command line toolkit written in Rust. It started as a fork of `xsv` and keeps its command names, so it is the closest drop-in replacement.
 

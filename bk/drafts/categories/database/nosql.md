@@ -6,13 +6,7 @@
 
 ## Connect to MongoDB {#mongodb}
 
-[![mongodb][c~mongodb~docs~badge]][c~mongodb~docs]{{hi:mongodb}}
-[![mongodb~crates.io][c~mongodb~crates.io~badge]][c~mongodb~crates.io]
-[![mongodb~repo][c~mongodb~repo~badge]][c~mongodb~repo]
-[![mongodb~lib.rs][c~mongodb~lib.rs~badge]][c~mongodb~lib.rs]
-[![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
-[![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
-[![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+{{#badges mongodb asynchronous=Asynchronous database="Database interfaces" web-programming="Web programming"}}
 
 The official MongoDB Rust driver is an asynchronous client for MongoDB deployments. It uses the `bson` crate for BSON support and Tokio for its async API; a synchronous API is available through a feature flag. See the [MongoDB Rust driver docs][c~mongodb~docs]↗ for server compatibility and driver features.
 
@@ -44,10 +38,7 @@ cargo test -p database --example nosql --features mongodb -- \
 
 ## Connect to Redis {#redis}
 
-[![redis][c~redis~docs~badge]][c~redis~docs]{{hi:redis}}
-[![redis~crates.io][c~redis~crates.io~badge]][c~redis~crates.io]
-[![redis~repo][c~redis~repo~badge]][c~redis~repo]
-[![redis~lib.rs][c~redis~lib.rs~badge]][c~redis~lib.rs]
+{{#badges redis}}
 
 The [`redis`][c~redis~docs]↗ crate is the Rust client for Redis and other
 RESP-compatible servers. It provides typed command traits as well as a
@@ -77,7 +68,7 @@ cargo test -p database --example nosql --features redis -- \
 
 ## Connect to Cassandra Using `cdrs-tokio` {#cdrs-tokio}
 
-[![cdrs-tokio][c~cdrs-tokio~docs~badge]][c~cdrs-tokio~docs] [![cdrs-tokio~crates.io][c~cdrs-tokio~crates.io~badge]][c~cdrs-tokio~crates.io] [![cdrs-tokio~repo][c~cdrs-tokio~repo~badge]][c~cdrs-tokio~repo] [![cdrs-tokio~lib.rs][c~cdrs-tokio~lib.rs~badge]][c~cdrs-tokio~lib.rs]{{hi:cdrs-tokio}}{{hi:Cassandra}}{{hi:Driver}}{{hi:Client}}{{hi:Async}}{{hi:CassandraDB}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+{{#badges cdrs-tokio asynchronous=Asynchronous database="Database interfaces"}}{{hi:Cassandra}}{{hi:Driver}}{{hi:Client}}{{hi:Async}}{{hi:CassandraDB}}
 
 [`cdrs-tokio`][c~cdrs-tokio~docs]↗{{hi:cdrs-tokio}} is an async driver for Apache Cassandra and uses the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime. ScyllaDB maintains its own Rust driver, which also supports Apache Cassandra; see the [Scylla Rust driver docs][scylla~docs]↗.
 
@@ -106,7 +97,7 @@ example creates a keyspace and table, then deletes the row it inserts.
 
 ## Encode a Cassandra Protocol Frame {#cassandra-protocol}
 
-[![cassandra-protocol][c~cassandra-protocol~docs~badge]][c~cassandra-protocol~docs] [![cassandra-protocol~crates.io][c~cassandra-protocol~crates.io~badge]][c~cassandra-protocol~crates.io] [![cassandra-protocol~repo][c~cassandra-protocol~repo~badge]][c~cassandra-protocol~repo] [![cassandra-protocol~lib.rs][c~cassandra-protocol~lib.rs~badge]][c~cassandra-protocol~lib.rs]{{hi:cassandra-protocol}}{{hi:Cassandra}}{{hi:Client}}{{hi:CassandraDB}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+{{#badges cassandra-protocol database="Database interfaces"}}{{hi:Cassandra}}{{hi:Client}}{{hi:CassandraDB}}
 
 [`cassandra-protocol`][c~cassandra-protocol~docs]↗{{hi:Cassandra}} provides a low-level Cassandra protocol implementation in Rust. This example encodes and decodes a STARTUP frame entirely in memory, so it does not need a running database. Prefer the higher-level [`cdrs-tokio`][c~cdrs-tokio~docs]↗{{hi:cdrs-tokio}} driver when connecting to Cassandra.
 

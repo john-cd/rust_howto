@@ -13,11 +13,7 @@ A control system measures a quantity (speed, position, temperature), compares it
 
 ## Feedback Control with `pid` {#pid}
 
-[![pid][c~pid~docs~badge]][c~pid~docs]{{hi:pid}}
-[![pid~crates.io][c~pid~crates.io~badge]][c~pid~crates.io]
-[![pid~repo][c~pid~repo~badge]][c~pid~repo]
-[![pid~lib.rs][c~pid~lib.rs~badge]][c~pid~lib.rs]
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges pid no-std="No standard library"}}
 
 [`pid`][c~pid~docs]↗{{hi:pid}} is a small, generic, `no_std` PID (proportional, integral, derivative) controller. Set a target with `Pid::new(setpoint, output_limit)`, configure each term with `p`, `i` and `d` (a gain and a limit), then call `next_control_output(measurement)` once per control period. The limits keep the output, and the integral term, bounded (anti-windup).
 
@@ -39,7 +35,7 @@ General-purpose [linear algebra][p~linear-algebra] library with transformations 
 
 ## `k`: Kinematics Library for Robotics {#k}
 
-[![k][c~k~docs~badge]][c~k~docs] [![k~crates.io][c~k~crates.io~badge]][c~k~crates.io] [![k~repo][c~k~repo~badge]][c~k~repo] [![k~lib.rs][c~k~lib.rs~badge]][c~k~lib.rs]{{hi:k}}{{hi:Robotics}}{{hi:Kinematics}}{{hi:Ik}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges k algorithms=Algorithms}}{{hi:Robotics}}{{hi:Kinematics}}{{hi:Ik}}
 
 `k` is for kinematics.
 
@@ -70,19 +66,19 @@ Collision avoidance, trajectory optimization.
 
 ## `rrt` {#rrt}
 
-[![rrt][c~rrt~docs~badge]][c~rrt~docs] [![rrt~crates.io][c~rrt~crates.io~badge]][c~rrt~crates.io] [![rrt~repo][c~rrt~repo~badge]][c~rrt~repo] [![rrt~lib.rs][c~rrt~lib.rs~badge]][c~rrt~lib.rs]{{hi:rrt}}{{hi:Search}}{{hi:Path-finding}}{{hi:Robotics}}{{hi:rrt}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges rrt algorithms=Algorithms}}{{hi:Search}}{{hi:Path-finding}}{{hi:Robotics}}{{hi:rrt}}
 
 [`rrt`][c~rrt~docs]↗{{hi:rrt}} stands for Rapidly-exploring Random Tree library. Path finding using dual-RRT connect.
 
 ## `openrr-planner` {#openrr-planner}
 
-[![openrr-planner][c~openrr-planner~docs~badge]][c~openrr-planner~docs] [![openrr-planner~crates.io][c~openrr-planner~crates.io~badge]][c~openrr-planner~crates.io] [![openrr-planner~repo][c~openrr-planner~repo~badge]][c~openrr-planner~repo] [![openrr-planner~lib.rs][c~openrr-planner~lib.rs~badge]][c~openrr-planner~lib.rs]{{hi:openrr-planner}}{{hi:Robot}}{{hi:Robotics}}{{hi:Pathplanning}} [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges openrr-planner science::robotics=Robotics algorithms=Algorithms}}{{hi:Robot}}{{hi:Robotics}}{{hi:Pathplanning}}
 
 Collision avoidance path planning for robotics.
 
 ## `rs-opw-kinematics` {#rs-opw-kinematics}
 
-[![rs-opw-kinematics][c~rs-opw-kinematics~docs~badge]][c~rs-opw-kinematics~docs] [![rs-opw-kinematics~crates.io][c~rs-opw-kinematics~crates.io~badge]][c~rs-opw-kinematics~crates.io] [![rs-opw-kinematics~repo][c~rs-opw-kinematics~repo~badge]][c~rs-opw-kinematics~repo] [![rs-opw-kinematics~lib.rs][c~rs-opw-kinematics~lib.rs~badge]][c~rs-opw-kinematics~lib.rs]{{hi:rs-opw-kinematics}}{{hi:Collisions}}{{hi:Robotics}}{{hi:Kinematics}}{{hi:Path-planning}}{{hi:Opw}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~science::robotics][cat~science::robotics~badge]][cat~science::robotics]{{hi:Robotics}}
+{{#badges rs-opw-kinematics algorithms=Algorithms science::robotics=Robotics}}{{hi:Collisions}}{{hi:Robotics}}{{hi:Kinematics}}{{hi:Path-planning}}{{hi:Opw}}
 
 Inverse and forward kinematics for 6-axis robots with a parallel base and spherical wrist.
 

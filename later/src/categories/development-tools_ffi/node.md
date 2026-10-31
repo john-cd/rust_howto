@@ -8,7 +8,7 @@ Interfacing with Node.js from Rust is typically done using Node-API (N-API), whi
 
 ## `napi` {#napi}
 
-[![napi][c~napi~docs~badge]][c~napi~docs] [![napi~crates.io][c~napi~crates.io~badge]][c~napi~crates.io] [![napi~repo][c~napi~repo~badge]][c~napi~repo] [![napi~lib.rs][c~napi~lib.rs~badge]][c~napi~lib.rs]{{hi:napi}}{{hi:Ffi}}{{hi:Node}}{{hi:NodeJS}}{{hi:N-api}}{{hi:napi}}
+{{#badges napi}}{{hi:Ffi}}{{hi:Node}}{{hi:NodeJS}}{{hi:N-api}}{{hi:napi}}
 
 [`napi`][c~napi~docs]↗{{hi:napi}} provides N-API bindings for `Node.js`.
 

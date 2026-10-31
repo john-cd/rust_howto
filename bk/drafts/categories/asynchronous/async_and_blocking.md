@@ -57,10 +57,7 @@ In other cases, it may be easier to structure the application as largely synchro
 
 ### Use the `futures` Executor {#futures-executor}
 
-[![futures-executor][c~futures-executor~docs~badge]][c~futures-executor~docs]{{hi:futures-executor}}
-[![futures-executor~crates.io][c~futures-executor~crates.io~badge]][c~futures-executor~crates.io]
-[![futures-executor~repo][c~futures-executor~repo~badge]][c~futures-executor~repo]
-[![futures-executor~lib.rs][c~futures-executor~lib.rs~badge]][c~futures-executor~lib.rs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+{{#badges futures-executor asynchronous=Asynchronous}}
 
 [`futures-executor`][c~futures-executor~docs]↗{{hi:futures-executor}} includes a minimal executor. The [`futures::executor::block_on`][c~futures_executor::block_on~docs]↗{{hi:futures::executor::block_on}} function can run a self-contained future from synchronous code. It does not provide a Tokio runtime, so use Tokio's runtime when the future needs Tokio I/O, timers, or other runtime services.
 

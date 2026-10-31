@@ -8,11 +8,7 @@ Use parser combinators to compose reusable parsing functions, or choose a parser
 
 ## Create a Parser with `nom` {#nom}
 
-[![nom][c~nom~docs~badge]][c~nom~docs]{{hi:nom}}
-[![nom~crates.io][c~nom~crates.io~badge]][c~nom~crates.io]
-[![nom~repo][c~nom~repo~badge]][c~nom~repo]
-[![nom~lib.rs][c~nom~lib.rs~badge]][c~nom~lib.rs]
-[![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+{{#badges nom parsing="Parsing tools"}}
 
 [nom][c~nom~repo]↗{{hi:nom}} is a byte-oriented, zero-copy, parser combinators library.
 
@@ -24,11 +20,7 @@ See also: the [nominomicon][c~nom~nominomicon]↗ book.
 
 ## Create a Parser with `pest` {#pest}
 
-[![pest][c~pest~docs~badge]][c~pest~docs]{{hi:pest}}
-[![pest~crates.io][c~pest~crates.io~badge]][c~pest~crates.io]
-[![pest~repo][c~pest~repo~badge]][c~pest~repo]
-[![pest~lib.rs][c~pest~lib.rs~badge]][c~pest~lib.rs]
-[![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+{{#badges pest parsing="Parsing tools"}}
 
 [`pest`][c~pest~website]↗{{hi:pest}} is a general-purpose parser written in Rust, with a focus on accessibility, correctness, and performance. It uses [parsing expression grammars (or PEG)][wikipedia~parsing-expression-grammars]↗ as input, which are similar in spirit to regular expressions, but which offer the enhanced expressivity needed to parse complex languages.
 
@@ -40,10 +32,7 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 
 ## Create a Parser with `tree-sitter` {#tree-sitter}
 
-[![tree-sitter][c~tree-sitter~docs~badge]][c~tree-sitter~docs]{{hi:tree-sitter}}
-[![tree-sitter~crates.io][c~tree-sitter~crates.io~badge]][c~tree-sitter~crates.io]
-[![tree-sitter~repo][c~tree-sitter~repo~badge]][c~tree-sitter~repo]
-[![tree-sitter~lib.rs][c~tree-sitter~lib.rs~badge]][c~tree-sitter~lib.rs]
+{{#badges tree-sitter}}
 
 [`tree-sitter`][c~tree-sitter~docs]↗{{hi:tree-sitter}} provides Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter~website]↗ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
 

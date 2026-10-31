@@ -6,7 +6,7 @@
 
 ## Use `sccache` {#sccache}
 
-[![sccache][c~sccache~docs~badge]][c~sccache~docs] [![sccache~crates.io][c~sccache~crates.io~badge]][c~sccache~crates.io] [![sccache~repo][c~sccache~repo~badge]][c~sccache~repo] [![sccache~lib.rs][c~sccache~lib.rs~badge]][c~sccache~lib.rs]{{hi:sccache}}{{hi:Ccache}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build Utils}}
+{{#badges sccache command-line-utilities="Command line utilities" development-tools::build-utils="Build Utils"}}{{hi:Ccache}}
 
 Cargo creates build output that can be reused between invocations, but cache paths and wrapper settings determine what is retained. Cargo's `target` directory holds final build outputs; the separate `build` directory stores intermediate artifacts. A compiler cache can reuse compatible compiler outputs across workspaces or machines.
 

@@ -15,7 +15,7 @@ Do not use these techniques to isolate untrusted code on their own: a process gr
 
 ## Kill a Process Tree with a Unix Process Group {#kill-a-process-group}
 
-[![nix][c~nix~docs~badge]][c~nix~docs]{{hi:nix}} [![nix~crates.io][c~nix~crates.io~badge]][c~nix~crates.io] [![nix~repo][c~nix~repo~badge]][c~nix~repo] [![nix~lib.rs][c~nix~lib.rs~badge]][c~nix~lib.rs] [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+{{#badges nix os="Operating systems"}}
 
 `CommandExt::process_group(0)` makes the child the leader of a new group whose id equals the child's pid. [`nix::sys::signal::killpg`][c~nix::sys::signal::killpg~docs]↗{{hi:killpg}} then signals every member of the group, including grandchildren. Send `SIGTERM` first if the processes should get a chance to clean up, and `SIGKILL` as a last resort. The test spawns a shell that starts a background `sleep`, and checks that the `sleep` is gone after the group is killed.
 
@@ -25,7 +25,7 @@ Do not use these techniques to isolate untrusted code on their own: a process gr
 
 ## Tie a Windows Child's Lifetime to a Job Object {#job-object}
 
-[![windows-sys][c~windows-sys~docs~badge]][c~windows-sys~docs]{{hi:windows-sys}} [![windows-sys~crates.io][c~windows-sys~crates.io~badge]][c~windows-sys~crates.io] [![windows-sys~repo][c~windows-sys~repo~badge]][c~windows-sys~repo] [![windows-sys~lib.rs][c~windows-sys~lib.rs~badge]][c~windows-sys~lib.rs] [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+{{#badges windows-sys os="Operating systems"}}
 
 A Windows Job Object configured with `JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE` terminates every process assigned to it when the last handle to the job is closed. The example wraps the job handle in a type that implements `Drop`, so the tree dies with the parent. It is compiled only on Windows (`#[cfg(windows)]`), and is shown here as a snippet.
 
@@ -35,7 +35,7 @@ A Windows Job Object configured with `JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE` termin
 
 ## Run a Command with a Timeout, then Kill it {#timeout-kill}
 
-[![wait-timeout][c~wait-timeout~docs~badge]][c~wait-timeout~docs]{{hi:wait-timeout}} [![wait-timeout~crates.io][c~wait-timeout~crates.io~badge]][c~wait-timeout~crates.io] [![wait-timeout~repo][c~wait-timeout~repo~badge]][c~wait-timeout~repo] [![wait-timeout~lib.rs][c~wait-timeout~lib.rs~badge]][c~wait-timeout~lib.rs] [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+{{#badges wait-timeout os="Operating systems"}}
 
 `std::process::Child` has no wait with a timeout. The [`wait-timeout`][c~wait-timeout~docs]↗ crate adds `ChildExt::wait_timeout`. If it returns `None`, kill the child and `wait` for it to reap it. With `tokio`, use `tokio::time::timeout` around `Child::wait`, or `Child::kill` in an async task.
 

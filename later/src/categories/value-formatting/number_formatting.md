@@ -20,7 +20,7 @@ For locale-aware decimal formatting with ICU4X, see [Internationalization](../in
 
 ## Convert Floating Point to String Quickly with `ryu` {#ryu}
 
-[![ryu][c~ryu~docs~badge]][c~ryu~docs] [![ryu~crates.io][c~ryu~crates.io~badge]][c~ryu~crates.io] [![ryu~repo][c~ryu~repo~badge]][c~ryu~repo] [![ryu~lib.rs][c~ryu~lib.rs~badge]][c~ryu~lib.rs]{{hi:ryu}}{{hi:Float}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
+{{#badges ryu no-std="No standard library" no-std::no-alloc="No dynamic allocation" value-formatting="Value formatting"}}{{hi:Float}}
 
 Fast floating point to string conversion.
 
@@ -38,7 +38,7 @@ Fast floating point to string conversion.
 
 ## Convert Integers to String Quickly with `itoa` {#itoa}
 
-[![itoa][c~itoa~docs~badge]][c~itoa~docs] [![itoa~crates.io][c~itoa~crates.io~badge]][c~itoa~crates.io] [![itoa~repo][c~itoa~repo~badge]][c~itoa~repo] [![itoa~lib.rs][c~itoa~lib.rs~badge]][c~itoa~lib.rs]{{hi:itoa}}{{hi:Integer}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
+{{#badges itoa no-std="No standard library" no-std::no-alloc="No dynamic allocation" value-formatting="Value formatting"}}{{hi:Integer}}
 
 Fast integer primitive to string conversion.
 

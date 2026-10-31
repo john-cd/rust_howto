@@ -6,13 +6,7 @@
 
 ## Implement gRPC {#tonic}
 
-[![tonic][c~tonic~docs~badge]][c~tonic~docs]{{hi:tonic}}
-[![tonic~crates.io][c~tonic~crates.io~badge]][c~tonic~crates.io]
-[![tonic~repo][c~tonic~repo~badge]][c~tonic~repo]
-[![tonic~lib.rs][c~tonic~lib.rs~badge]][c~tonic~lib.rs]
-[![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
-[![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
-[![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+{{#badges tonic asynchronous=Asynchronous network-programming="Network programming" web-programming="Web programming"}}
 
 gRPC defines remote methods and their request and response messages in a service contract. This example uses Protocol Buffers for that contract and [`tonic`][c~tonic~docs]↗{{hi:tonic}} to serve the RPCs over HTTP/2 with [`tokio`][c~tokio~docs]↗{{hi:tokio}}.
 

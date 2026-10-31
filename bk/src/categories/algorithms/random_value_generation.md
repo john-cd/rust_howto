@@ -80,7 +80,7 @@ Alternatively, the [`passwords`][c~passwords~docs]↗{{hi:passwords}} crate prov
 
 ## Generate Non-cryptographically Secure Random Numbers Quickly {#fastrand}
 
-[![fastrand][c~fastrand~docs~badge]][c~fastrand~docs] [![fastrand~crates.io][c~fastrand~crates.io~badge]][c~fastrand~crates.io] [![fastrand~repo][c~fastrand~repo~badge]][c~fastrand~repo] [![fastrand~lib.rs][c~fastrand~lib.rs~badge]][c~fastrand~lib.rs]{{hi:fastrand}}{{hi:Rand}}{{hi:Random}}{{hi:Wyrand}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges fastrand algorithms=Algorithms}}{{hi:Rand}}{{hi:Random}}{{hi:Wyrand}}
 
 [`fastrand`][c~fastrand~docs]↗{{hi:fastrand}} is a simple and fast random number generator. It has no dependencies and lower complexity than [`rand`][c~rand~docs]↗{{hi:rand}} but is NOT cryptographically secure:
 

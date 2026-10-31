@@ -8,12 +8,7 @@ GraphQL is a query language and execution model for APIs. A schema defines the a
 
 ## Create a GraphQL Endpoint {#async-graphql}
 
-[![async-graphql][c~async-graphql~docs~badge]][c~async-graphql~docs]{{hi:async-graphql}}
-[![async-graphql~crates.io][c~async-graphql~crates.io~badge]][c~async-graphql~crates.io]
-[![async-graphql~repo][c~async-graphql~repo~badge]][c~async-graphql~repo]
-[![async-graphql~lib.rs][c~async-graphql~lib.rs~badge]][c~async-graphql~lib.rs]
-[![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
-[![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+{{#badges async-graphql asynchronous=Asynchronous network-programming="Network programming"}}
 
 [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}} defines the schema and resolvers. The `async-graphql-axum` adapter extracts GraphQL requests and converts execution results into HTTP responses. In this example the schema has one `hello` field and Axum serves it at `POST /graphql` on the loopback interface. The example is enabled with the `async-graphql-support` Cargo feature.
 

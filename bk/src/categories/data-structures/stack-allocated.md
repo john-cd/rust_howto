@@ -17,7 +17,7 @@ Fixed-capacity collections are useful when a maximum size is known or dynamic al
 
 ## Store Fixed-size Vectors and Strings on the Stack with `arrayvec` {#arrayvec}
 
-[![arrayvec][c~arrayvec~docs~badge]][c~arrayvec~docs] [![arrayvec~crates.io][c~arrayvec~crates.io~badge]][c~arrayvec~crates.io] [![arrayvec~repo][c~arrayvec~repo~badge]][c~arrayvec~repo] [![arrayvec~lib.rs][c~arrayvec~lib.rs~badge]][c~arrayvec~lib.rs]{{hi:arrayvec}}{{hi:Array}}{{hi:Data-structure}}{{hi:No_std}}{{hi:Stack}}{{hi:Vector}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges arrayvec data-structures="Data structures" no-std="No standard library"}}{{hi:Array}}{{hi:Data-structure}}{{hi:No_std}}{{hi:Stack}}{{hi:Vector}}
 
 [`arrayvec`][c~arrayvec~docs]↗{{hi:arrayvec}} provides the types `ArrayVec` and `ArrayString`, which are stack-allocated, fixed-capacity array-backed vector and string types.
 
@@ -29,9 +29,9 @@ Fixed-capacity collections are useful when a maximum size is known or dynamic al
 
 ## Store Small Vectors on the Stack with Fallback to the Heap {#smallvec-tinyvec}
 
-[![smallvec][c~smallvec~docs~badge]][c~smallvec~docs] [![smallvec~crates.io][c~smallvec~crates.io~badge]][c~smallvec~crates.io] [![smallvec~repo][c~smallvec~repo~badge]][c~smallvec~repo] [![smallvec~lib.rs][c~smallvec~lib.rs~badge]][c~smallvec~lib.rs]{{hi:smallvec}}{{hi:No_std}}{{hi:Small}}{{hi:Stack}}{{hi:Vec}}{{hi:Vector}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges smallvec data-structures="Data structures"}}{{hi:No_std}}{{hi:Small}}{{hi:Stack}}{{hi:Vec}}{{hi:Vector}}
 
-[![tinyvec][c~tinyvec~docs~badge]][c~tinyvec~docs] [![tinyvec~crates.io][c~tinyvec~crates.io~badge]][c~tinyvec~crates.io] [![tinyvec~repo][c~tinyvec~repo~badge]][c~tinyvec~repo] [![tinyvec~lib.rs][c~tinyvec~lib.rs~badge]][c~tinyvec~lib.rs]{{hi:tinyvec}}{{hi:No-std}}{{hi:No_std}}{{hi:Vec}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges tinyvec no-std="No standard library" data-structures="Data structures"}}{{hi:No-std}}{{hi:No_std}}{{hi:Vec}}
 
 This example demonstrates the usage of the `SmallVec` data structure from the [`smallvec`][c~smallvec~docs]↗{{hi:smallvec}} crate. `SmallVec` is a vector-like data structure that stores elements inline when the number of elements is small, and switches to heap allocation when the number of elements exceeds its inline capacity:
 
@@ -49,7 +49,7 @@ The following demonstrates the usage of `TinyVec`:
 
 ## Work with Data Structures without Dynamic Memory Allocation {#heapless}
 
-[![heapless][c~heapless~docs~badge]][c~heapless~docs] [![heapless~crates.io][c~heapless~crates.io~badge]][c~heapless~crates.io] [![heapless~repo][c~heapless~repo~badge]][c~heapless~repo] [![heapless~lib.rs][c~heapless~lib.rs~badge]][c~heapless~lib.rs]{{hi:heapless}}{{hi:No heap}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges heapless data-structures="Data structures" no-std="No standard library"}}{{hi:No heap}}
 
 The [`heapless`][c~heapless~docs]↗{{hi:heapless}} crate provides fixed-size data structures that don't require dynamic memory allocation. This means they are backed by _static memory allocation_ (on the stack, in a static variable, or even in the heap, despite the name) and have _fixed_ capacities determined at compile time. They don't implicitly and unpredictably re-allocate at runtime.
 

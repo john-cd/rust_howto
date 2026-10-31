@@ -71,7 +71,7 @@ cargo run --locked -p game_engines --example game_engines --features ggez -- gge
 
 ## Develop 2D Games with `macroquad` {#macroquad}
 
-[![macroquad][c~macroquad~docs~badge]][c~macroquad~docs] [![macroquad~crates.io][c~macroquad~crates.io~badge]][c~macroquad~crates.io] [![macroquad~repo][c~macroquad~repo~badge]][c~macroquad~repo] [![macroquad~lib.rs][c~macroquad~lib.rs~badge]][c~macroquad~lib.rs]{{hi:macroquad}}
+{{#badges macroquad}}
 
 Macroquad is an immediate-mode framework designed to make a simple 2D game loop easy to write. It supports desktop, browser, Android, and iOS builds, and also provides basic 3D drawing ([platform details][macroquad~platforms~repo]↗).
 

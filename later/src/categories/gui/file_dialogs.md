@@ -8,7 +8,7 @@ Use [`rfd`][c~rfd~docs]↗{{hi:rfd}} for native file and folder pickers, save di
 
 ## `rfd` {#rfd}
 
-[![rfd][c~rfd~docs~badge]][c~rfd~docs] [![rfd~crates.io][c~rfd~crates.io~badge]][c~rfd~crates.io] [![rfd~repo][c~rfd~repo~badge]][c~rfd~repo] [![rfd~lib.rs][c~rfd~lib.rs~badge]][c~rfd~lib.rs]{{hi:rfd}}{{hi:Dialog}}{{hi:File}}{{hi:Ui}}
+{{#badges rfd}}{{hi:Dialog}}{{hi:File}}{{hi:Ui}}
 
 [`rfd`][c~rfd~docs]↗{{hi:rfd}} (Rusty File Dialogs) exposes a consistent API for common native dialog tasks. Use `FileDialog` when blocking the current thread is acceptable, or `AsyncFileDialog` when the dialog should fit an async application.
 

@@ -6,7 +6,7 @@
 
 ## Store Data in an Insertion-ordered Map {#indexmap}
 
-[![indexmap][c~indexmap~docs~badge]][c~indexmap~docs] [![indexmap~crates.io][c~indexmap~crates.io~badge]][c~indexmap~crates.io] [![indexmap~repo][c~indexmap~repo~badge]][c~indexmap~repo] [![indexmap~lib.rs][c~indexmap~lib.rs~badge]][c~indexmap~lib.rs]{{hi:indexmap}}{{hi:Hashmap}}{{hi:No_std}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges indexmap data-structures="Data structures" no-std="No standard library"}}{{hi:Hashmap}}{{hi:No_std}}
 
 [`indexmap`][c~indexmap~docs]↗{{hi:indexmap}} offers the `IndexMap` data structure that combines the features of a hashmap and a vector.
 It is a hash table that keeps track of insertion order and allows efficient iteration over its elements in that order.
@@ -19,7 +19,7 @@ This example demonstrates the usage of `IndexMap`, including methods for accessi
 
 ## Store Multiple Values for a Single Key with `multimap` {#multimap}
 
-[![multimap][c~multimap~docs~badge]][c~multimap~docs] [![multimap~crates.io][c~multimap~crates.io~badge]][c~multimap~crates.io] [![multimap~repo][c~multimap~repo~badge]][c~multimap~repo] [![multimap~lib.rs][c~multimap~lib.rs~badge]][c~multimap~lib.rs]{{hi:multimap}}
+{{#badges multimap}}
 
 A `MultiMap` allows storing multiple values for a single key, which can be useful to associate several items with the same identifier. [`multimap`][c~multimap~docs]↗ is implemented as a thin wrapper around [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}.
 
@@ -33,7 +33,7 @@ The following example demonstrates how to use a `MultiMap`:
 
 ## Store Collections of Objects that Need Unique, Stable, Safe Identifiers {#slotmap}
 
-[![slotmap][c~slotmap~docs~badge]][c~slotmap~docs] [![slotmap~crates.io][c~slotmap~crates.io~badge]][c~slotmap~crates.io] [![slotmap~repo][c~slotmap~repo~badge]][c~slotmap~repo] [![slotmap~lib.rs][c~slotmap~lib.rs~badge]][c~slotmap~lib.rs]{{hi:slotmap}}{{hi:Arena}}{{hi:Allocator}}{{hi:Reference}}{{hi:slotmap}}{{hi:Storage}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
+{{#badges slotmap caching=Caching data-structures="Data structures" memory-management="Memory management"}}{{hi:Arena}}{{hi:Allocator}}{{hi:Reference}}{{hi:slotmap}}{{hi:Storage}}
 
 Use [`slotmap`][c~slotmap~docs]↗ to store collections of objects that need generated, unique, persistent identifiers ("keys"), but have no clear ownership otherwise, such as game entities or graph nodes.
 

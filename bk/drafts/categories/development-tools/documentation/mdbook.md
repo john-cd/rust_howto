@@ -93,13 +93,13 @@ The repository builds this preprocessor and renders the book in CI. Reuse it onl
 
 ### Check Links with `mdbook-linkcheck` {#mdbook-linkcheck}
 
-[![mdbook-linkcheck][c~mdbook-linkcheck~docs~badge]][c~mdbook-linkcheck~docs] [![mdbook-linkcheck~crates.io][c~mdbook-linkcheck~crates.io~badge]][c~mdbook-linkcheck~crates.io] [![mdbook-linkcheck~repo][c~mdbook-linkcheck~repo~badge]][c~mdbook-linkcheck~repo] [![mdbook-linkcheck~lib.rs][c~mdbook-linkcheck~lib.rs~badge]][c~mdbook-linkcheck~lib.rs]{{hi:mdbook-linkcheck}}
+{{#badges mdbook-linkcheck}}
 
 [`mdbook-linkcheck`][c~mdbook-linkcheck~docs]↗{{hi:mdbook-linkcheck}} is a backend for [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}}, which will check your links for you.
 
 ### Hide Entire Chapters with `mdbook-private` {#mdbook-private}
 
-[![mdbook-private][c~mdbook-private~docs~badge]][c~mdbook-private~docs] [![mdbook-private~crates.io][c~mdbook-private~crates.io~badge]][c~mdbook-private~crates.io] [![mdbook-private~repo][c~mdbook-private~repo~badge]][c~mdbook-private~repo] [![mdbook-private~lib.rs][c~mdbook-private~lib.rs~badge]][c~mdbook-private~lib.rs]{{hi:mdbook-private}}
+{{#badges mdbook-private}}
 
 [`mdbook-private`][c~mdbook-private~docs]↗{{hi:mdbook-private}} is a [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} pre-processor that controls visibility of private chapters and sections within them.
 
@@ -142,19 +142,19 @@ This repository pins version 0.5.4 in `.devcontainer/.env`; its Windows workflow
 
 ### `mdbook-toc` {#mdbook-toc}
 
-[![mdbook-toc][c~mdbook-toc~docs~badge]][c~mdbook-toc~docs] [![mdbook-toc~crates.io][c~mdbook-toc~crates.io~badge]][c~mdbook-toc~crates.io] [![mdbook-toc~repo][c~mdbook-toc~repo~badge]][c~mdbook-toc~repo] [![mdbook-toc~lib.rs][c~mdbook-toc~lib.rs~badge]][c~mdbook-toc~lib.rs]{{hi:mdbook-toc}}
+{{#badges mdbook-toc}}
 
 [`mdbook-toc`][c~mdbook-toc~docs]↗{{hi:mdbook-toc}} is a pre-processor for [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} to add inline Table of Contents support.
 
 ### `mdbook-theme` {#mdbook-theme}
 
-[![mdbook-theme][c~mdbook-theme~docs~badge]][c~mdbook-theme~docs] [![mdbook-theme~crates.io][c~mdbook-theme~crates.io~badge]][c~mdbook-theme~crates.io] [![mdbook-theme~repo][c~mdbook-theme~repo~badge]][c~mdbook-theme~repo] [![mdbook-theme~lib.rs][c~mdbook-theme~lib.rs~badge]][c~mdbook-theme~lib.rs]{{hi:mdbook-theme}}{{hi:Ace}}{{hi:Book}}{{hi:Markdown}}{{hi:Rustbook}}{{hi:Theme}}
+{{#badges mdbook-theme}}{{hi:Ace}}{{hi:Book}}{{hi:Markdown}}{{hi:Rustbook}}{{hi:Theme}}
 
 [`mdbook-theme`][c~mdbook-theme~docs]↗{{hi:mdbook-theme}} is a pre-processor and a backend to config theme for mdbook, especially creating a pagetoc on the right and setting full color themes from the official ace editor.
 
 ### `mdbook-pagetoc` {#mdbook-pagetoc}
 
-[![mdbook-pagetoc][c~mdbook-pagetoc~docs~badge]][c~mdbook-pagetoc~docs] [![mdbook-pagetoc~crates.io][c~mdbook-pagetoc~crates.io~badge]][c~mdbook-pagetoc~crates.io] [![mdbook-pagetoc~repo][c~mdbook-pagetoc~repo~badge]][c~mdbook-pagetoc~repo] [![mdbook-pagetoc~lib.rs][c~mdbook-pagetoc~lib.rs~badge]][c~mdbook-pagetoc~lib.rs]{{hi:mdbook-pagetoc}}{{hi:Toc}}{{hi:Table}}{{hi:Pagetoc}}{{hi:Mdbook}}{{hi:Contents}}
+{{#badges mdbook-pagetoc}}{{hi:Toc}}{{hi:Table}}{{hi:Pagetoc}}{{hi:Mdbook}}{{hi:Contents}}
 
 [`mdbook-pagetoc`][c~mdbook-pagetoc~docs]↗{{hi:mdbook-pagetoc}} is a [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} plugin that provides a table of contents for each page.
 
@@ -162,13 +162,13 @@ This repository pins version 0.5.4 in `.devcontainer/.env`; its Windows workflow
 
 ### Create Pages from a Template with `mdbook-tera` {#mdbook-tera}
 
-[![mdbook-tera][c~mdbook-tera~docs~badge]][c~mdbook-tera~docs] [![mdbook-tera~crates.io][c~mdbook-tera~crates.io~badge]][c~mdbook-tera~crates.io] [![mdbook-tera~repo][c~mdbook-tera~repo~badge]][c~mdbook-tera~repo] [![mdbook-tera~lib.rs][c~mdbook-tera~lib.rs~badge]][c~mdbook-tera~lib.rs]{{hi:mdbook-tera}}{{hi:Pre-processor}}{{hi:Tera}}{{hi:Mdbook}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~template-engine][cat~template-engine~badge]][cat~template-engine]{{hi:Template engine}}
+{{#badges mdbook-tera command-line-utilities="Command line utilities" template-engine="Template engine"}}{{hi:Pre-processor}}{{hi:Tera}}{{hi:Mdbook}}
 
 [`mdbook-tera`][c~mdbook-tera~docs]↗{{hi:mdbook-tera}} is a Tera pre-processor for mdBook.
 
 ### Replace Text in Chapters with `yapp` {#yapp}
 
-[![mdbook-yapp][c~mdbook-yapp~docs~badge]][c~mdbook-yapp~docs] [![mdbook-yapp~crates.io][c~mdbook-yapp~crates.io~badge]][c~mdbook-yapp~crates.io] [![mdbook-yapp~repo][c~mdbook-yapp~repo~badge]][c~mdbook-yapp~repo] [![mdbook-yapp~lib.rs][c~mdbook-yapp~lib.rs~badge]][c~mdbook-yapp~lib.rs]{{hi:mdbook-yapp}}{{hi:Text}}{{hi:Pre-processor}}{{hi:Mdbook}}{{hi:Replace}}{{hi:Pattern}}[![cat~template-engine][cat~template-engine~badge]][cat~template-engine]{{hi:Template engine}}[![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+{{#badges mdbook-yapp template-engine="Template engine" text-processing="Text processing"}}{{hi:Text}}{{hi:Pre-processor}}{{hi:Mdbook}}{{hi:Replace}}{{hi:Pattern}}
 
 [`yapp`][c~yapp~docs]↗{{hi:yapp}} is a [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} pre-processor that simply replaces text in chapters. Phrases to be replaced with specified content are defined in plain-text configuration file.
 
@@ -182,7 +182,7 @@ This repository pins version 0.5.4 in `.devcontainer/.env`; its Windows workflow
 
 ### Preprocess your Book via Arbitrary Commands with `mdbook-cmdrun` {#mdbook-cmdrun}
 
-[![mdbook-cmdrun][c~mdbook-cmdrun~docs~badge]][c~mdbook-cmdrun~docs] [![mdbook-cmdrun~crates.io][c~mdbook-cmdrun~crates.io~badge]][c~mdbook-cmdrun~crates.io] [![mdbook-cmdrun~repo][c~mdbook-cmdrun~repo~badge]][c~mdbook-cmdrun~repo] [![mdbook-cmdrun~lib.rs][c~mdbook-cmdrun~lib.rs~badge]][c~mdbook-cmdrun~lib.rs]{{hi:mdbook-cmdrun}}{{hi:Mdbook}}{{hi:Pre-processor}}{{hi:Runcmd}}
+{{#badges mdbook-cmdrun}}{{hi:Mdbook}}{{hi:Pre-processor}}{{hi:Runcmd}}
 
 [`mdbook-cmdrun`][c~mdbook-cmdrun~docs]↗{{hi:mdbook-cmdrun}} is a [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} pre-processor to run arbitrary commands.
 

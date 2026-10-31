@@ -8,13 +8,13 @@
 
 ## Use the `log` Facade {#log}
 
-[![log][c~log~docs~badge]][c~log~docs] [![log~crates.io][c~log~crates.io~badge]][c~log~crates.io] [![log~repo][c~log~repo~badge]][c~log~repo] [![log~lib.rs][c~log~lib.rs~badge]][c~log~lib.rs]{{hi:log}}{{hi:Logging}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}
+{{#badges log development-tools::debugging=Debugging}}{{hi:Logging}}
 
 [`log`][c~log~docs]↗{{hi:log}} defines a small facade for level-based records. The application selects one logging implementation, such as [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} for environment-configured console output or [`log4rs`][c~log4rs~docs]↗{{hi:log4rs}} for configurable appenders and formats. See [[log | Log Messages]] for tested recipes.
 
 ## Keep an Existing `slog` Integration {#slog}
 
-[![slog][c~slog~docs~badge]][c~slog~docs] [![slog~crates.io][c~slog~crates.io~badge]][c~slog~crates.io] [![slog~repo][c~slog~repo~badge]][c~slog~repo] [![slog~lib.rs][c~slog~lib.rs~badge]][c~slog~lib.rs]{{hi:slog}}{{hi:Structured}}{{hi:Logging}} [![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}
+{{#badges slog development-tools::debugging=Debugging}}{{hi:Structured}}{{hi:Logging}}
 
 [`slog`][c~slog~docs]↗{{hi:slog}} provides structured, composable logging. It can be a reasonable choice when it is already established in a project; evaluate its ecosystem and maintenance needs before choosing it for new work. Its current example is included from the book's tested example crate.
 

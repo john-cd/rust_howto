@@ -63,13 +63,13 @@ Concurrency testing tools explore schedules through a model of the program. [`lo
 
 ### `shuttle` {#shuttle}
 
-[![shuttle][c~shuttle~docs~badge]][c~shuttle~docs] [![shuttle~crates.io][c~shuttle~crates.io~badge]][c~shuttle~crates.io] [![shuttle~repo][c~shuttle~repo~badge]][c~shuttle~repo] [![shuttle~lib.rs][c~shuttle~lib.rs~badge]][c~shuttle~lib.rs]{{hi:shuttle}}{{hi:Async}}{{hi:Concurrency}}{{hi:Lock}}{{hi:Thread}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+{{#badges shuttle development-tools::testing=Testing asynchronous=Asynchronous concurrency=Concurrency}}{{hi:Async}}{{hi:Concurrency}}{{hi:Lock}}{{hi:Thread}}
 
 [`shuttle`][c~shuttle~docs]↗{{hi:shuttle}} is a library for testing concurrent Rust code.
 
 ### `loom` {#loom}
 
-[![loom][c~loom~docs~badge]][c~loom~docs] [![loom~crates.io][c~loom~crates.io~badge]][c~loom~crates.io] [![loom~repo][c~loom~repo~badge]][c~loom~repo] [![loom~lib.rs][c~loom~lib.rs~badge]][c~loom~lib.rs]{{hi:loom}}{{hi:Lock-free}}{{hi:Atomic}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges loom concurrency=Concurrency data-structures="Data structures"}}{{hi:Lock-free}}{{hi:Atomic}}
 
 [`loom`][c~loom~docs]↗{{hi:loom}} allows permutation testing for concurrent code.
 

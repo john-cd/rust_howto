@@ -6,7 +6,7 @@
 
 ## Detect Compiler Features with `autocfg` {#autocfg}
 
-[![autocfg][c~autocfg~docs~badge]][c~autocfg~docs] [![autocfg~crates.io][c~autocfg~crates.io~badge]][c~autocfg~crates.io] [![autocfg~repo][c~autocfg~repo~badge]][c~autocfg~repo] [![autocfg~lib.rs][c~autocfg~lib.rs~badge]][c~autocfg~lib.rs]{{hi:autocfg}}{{hi:Autoconf}}{{hi:Build}}{{hi:Rustc}} [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build Utils}}
+{{#badges autocfg development-tools::build-utils="Build Utils"}}{{hi:Autoconf}}{{hi:Build}}{{hi:Rustc}}
 
 [`autocfg`][c~autocfg~docs] is a library for Cargo build scripts. It compiles small probes with the compiler Cargo is using, then reports which probes succeed as custom [`cfg` settings][book~rust-reference~conditional-compilation]. This lets a crate choose a compatible implementation based on the APIs the compiler actually accepts.
 

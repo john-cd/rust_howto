@@ -35,7 +35,7 @@ Coverage of documentation tests may require explicit options and toolchain suppo
 
 ## Collect Coverage with grcov {#coverage_testing}
 
-[![grcov][c~grcov~docs~badge]][c~grcov~docs] [![grcov~crates.io][c~grcov~crates.io~badge]][c~grcov~crates.io] [![grcov~repo][c~grcov~repo~badge]][c~grcov~repo] [![grcov~lib.rs][c~grcov~lib.rs~badge]][c~grcov~lib.rs]{{hi:grcov}}{{hi:Coverage}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+{{#badges grcov command-line-utilities="Command line utilities" development-tools="Development tools" development-tools::testing=Testing}}{{hi:Coverage}}
 
 grcov collects and combines Rust coverage data and can emit formats such as HTML and LCOV. It is useful when a project already has an LLVM instrumentation workflow or needs its supported report formats. Follow its documentation for the compiler flags and profile-data handling required by your setup.
 

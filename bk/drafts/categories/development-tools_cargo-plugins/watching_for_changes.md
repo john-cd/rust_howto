@@ -29,10 +29,7 @@ The [`cargo-watch`][c~cargo-watch~repo] repository is archived and read-only; it
 
 ## `cargo limit` {#cargo-limit}
 
-[![cargo-limit][c~cargo-limit~docs~badge]][c~cargo-limit~docs]{{hi:cargo-limit}}
-[![cargo-limit~crates.io][c~cargo-limit~crates.io~badge]][c~cargo-limit~crates.io]
-[![cargo-limit~repo][c~cargo-limit~repo~badge]][c~cargo-limit~repo]
-[![cargo-limit~lib.rs][c~cargo-limit~lib.rs~badge]][c~cargo-limit~lib.rs]
+{{#badges cargo-limit}}
 
 [cargo-limit][c~cargo-limit~crates.io]↗ is [Cargo][p~cargo] with less noise: warnings are skipped until errors are fixed, Neovim integration, etc.
 

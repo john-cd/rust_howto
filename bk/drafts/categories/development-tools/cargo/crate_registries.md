@@ -73,7 +73,7 @@ See the [Cargo registry reference][book~cargo~registries]↗, [configuration ref
 
 ## Access crates.io Metadata with `crates-io` {#crates-io}
 
-[![crates-io][c~crates-io~docs~badge]][c~crates-io~docs] [![crates-io~crates.io][c~crates-io~crates.io~badge]][c~crates-io~crates.io] [![crates-io~repo][c~crates-io~repo~badge]][c~crates-io~repo] [![crates-io~lib.rs][c~crates-io~lib.rs~badge]][c~crates-io~lib.rs]{{hi:crates-io}}
+{{#badges crates-io}}
 
 The `crates-io` crate provides helpers for querying crates.io metadata through its web API. It is an API client, not a way to configure Cargo's package source.
 

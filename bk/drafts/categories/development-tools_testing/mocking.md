@@ -18,7 +18,7 @@ Consider these libraries:
 
 ## Mock with `mockall` {#mocking}
 
-[![mockall][c~mockall~docs~badge]][c~mockall~docs] [![mockall~crates.io][c~mockall~crates.io~badge]][c~mockall~crates.io] [![mockall~repo][c~mockall~repo~badge]][c~mockall~repo] [![mockall~lib.rs][c~mockall~lib.rs~badge]][c~mockall~lib.rs]{{hi:mockall}}{{hi:Mock}}{{hi:Mocking}}{{hi:Testing}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+{{#badges mockall development-tools::testing=Testing}}{{hi:Mock}}{{hi:Mocking}}{{hi:Testing}}
 
 `mockall` can generate mocks for traits and set expectations for arguments, call counts, and return values. The example injects a repository into a service and verifies a persistence interaction as well as the returned behavior.
 
@@ -28,7 +28,7 @@ Consider these libraries:
 
 ## Mock Structs with `faux` {#faux}
 
-[![faux][c~faux~docs~badge]][c~faux~docs] [![faux~crates.io][c~faux~crates.io~badge]][c~faux~crates.io] [![faux~repo][c~faux~repo~badge]][c~faux~repo] [![faux~lib.rs][c~faux~lib.rs~badge]][c~faux~lib.rs]{{hi:faux}}{{hi:faux}}{{hi:Mock}}{{hi:Mocking}}{{hi:Test}}{{hi:Testing}}
+{{#badges faux}}{{hi:faux}}{{hi:Mock}}{{hi:Mocking}}{{hi:Test}}{{hi:Testing}}
 
 `faux` provides a way to mock methods on structs when introducing a trait boundary is not practical. Keep this choice local to tests: a trait is usually a clearer seam when callers should depend on behavior rather than a concrete type.
 

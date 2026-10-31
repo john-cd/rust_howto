@@ -36,10 +36,7 @@ This example also uses `tick` and `after` to schedule periodic work and a timeou
 
 ### `flume` {#flume}
 
-[![flume][c~flume~docs~badge]][c~flume~docs]{{hi:flume}}
-[![flume~crates.io][c~flume~crates.io~badge]][c~flume~crates.io]
-[![flume~repo][c~flume~repo~badge]][c~flume~repo]
-[![flume~lib.rs][c~flume~lib.rs~badge]][c~flume~lib.rs]
+{{#badges flume}}
 
 The [`flume`][c~flume~docs]↗{{hi:flume}} crate is a library that provides multiple-producer, multiple-consumer (MPMC) channels. It is similar to the [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]↗{{hi:std::sync::mpsc}} module, but with additional features and improved performance. It is smaller and simpler than [`crossbeam-channel`][c~crossbeam-channel~docs]↗{{hi:crossbeam-channel}} and almost as fast.
 
@@ -65,7 +62,7 @@ Use an ordinary channel for commands and telemetry, and a ring buffer only for t
 
 ### `rtrb` {#rtrb}
 
-[![rtrb][c~rtrb~docs~badge]][c~rtrb~docs] [![rtrb~crates.io][c~rtrb~crates.io~badge]][c~rtrb~crates.io] [![rtrb~repo][c~rtrb~repo~badge]][c~rtrb~repo] [![rtrb~lib.rs][c~rtrb~lib.rs~badge]][c~rtrb~lib.rs]{{hi:rtrb}}{{hi:Ring buffer}}{{hi:Wait-free}}{{hi:Real-time}}{{hi:Audio}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges rtrb concurrency=Concurrency data-structures="Data structures"}}{{hi:Ring buffer}}{{hi:Wait-free}}{{hi:Real-time}}{{hi:Audio}}
 
 [`rtrb`][c~rtrb~docs]↗{{hi:rtrb}} (real-time ring buffer) is a wait-free SPSC queue. The example sends samples from a producer thread and drains them in fixed-size blocks on the consumer side. It also shows what `push` and `pop` return when the buffer is full or empty.
 
@@ -77,7 +74,7 @@ Use an ordinary channel for commands and telemetry, and a ring buffer only for t
 
 ### `ringbuf` {#ringbuf}
 
-[![ringbuf][c~ringbuf~docs~badge]][c~ringbuf~docs] [![ringbuf~crates.io][c~ringbuf~crates.io~badge]][c~ringbuf~crates.io] [![ringbuf~repo][c~ringbuf~repo~badge]][c~ringbuf~repo] [![ringbuf~lib.rs][c~ringbuf~lib.rs~badge]][c~ringbuf~lib.rs]{{hi:ringbuf}}{{hi:Ring buffer}}{{hi:Lock-free}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges ringbuf concurrency=Concurrency data-structures="Data structures"}}{{hi:Ring buffer}}{{hi:Lock-free}}
 
 [`ringbuf`][c~ringbuf~docs]↗{{hi:ringbuf}} is a lock-free SPSC ring buffer with a trait-based API (`Producer`, `Consumer`, `Split`).
 
@@ -87,7 +84,7 @@ Use an ordinary channel for commands and telemetry, and a ring buffer only for t
 
 ### `thread-priority` {#thread-priority}
 
-[![thread-priority][c~thread-priority~docs~badge]][c~thread-priority~docs] [![thread-priority~crates.io][c~thread-priority~crates.io~badge]][c~thread-priority~crates.io] [![thread-priority~repo][c~thread-priority~repo~badge]][c~thread-priority~repo] [![thread-priority~lib.rs][c~thread-priority~lib.rs~badge]][c~thread-priority~lib.rs]{{hi:thread-priority}}{{hi:Scheduling}}{{hi:Real-time}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+{{#badges thread-priority concurrency=Concurrency os="Operating systems"}}{{hi:Scheduling}}{{hi:Real-time}}
 
 A real-time thread often also needs a higher scheduling priority. [`thread-priority`][c~thread-priority~docs]↗{{hi:thread-priority}} sets it, either on the current thread (`ThreadPriority::Max.set_for_current()`) or when spawning with `ThreadBuilder`. The call is platform-dependent and may require privileges, so the example reports whether the request was granted and carries on at the normal priority otherwise.
 

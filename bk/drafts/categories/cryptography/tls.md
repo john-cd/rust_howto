@@ -8,7 +8,7 @@ Transport Layer Security (TLS) protects the confidentiality and integrity of net
 
 ## Connect to a Server over TLS {#rustls}
 
-[![rustls][c~rustls~docs~badge]][c~rustls~docs] [![rustls~crates.io][c~rustls~crates.io~badge]][c~rustls~crates.io] [![rustls~repo][c~rustls~repo~badge]][c~rustls~repo] [![rustls~lib.rs][c~rustls~lib.rs~badge]][c~rustls~lib.rs]{{hi:rustls}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+{{#badges rustls cryptography=Cryptography network-programming="Network programming"}}
 
 [`rustls`][c~rustls~docs]↗{{hi:rustls}} is a portable, pure-Rust TLS implementation for clients and servers. The client below loads Mozilla's WebPKI roots, verifies the server certificate and name, and connects to the host in `TLS_SERVER` (port 443 by default). Set `TLS_SERVER` to run a live connection; without it, the example exits without network access. Its test uses a local loopback server and a temporary certificate.
 
@@ -36,7 +36,7 @@ The client trusts the supplied CA certificate and sends a PEM identity bundle co
 
 ## `native-tls` {#native-tls}
 
-[![native-tls][c~native-tls~docs~badge]][c~native-tls~docs] [![native-tls~crates.io][c~native-tls~crates.io~badge]][c~native-tls~crates.io] [![native-tls~repo][c~native-tls~repo~badge]][c~native-tls~repo] [![native-tls~lib.rs][c~native-tls~lib.rs~badge]][c~native-tls~lib.rs]{{hi:native-tls}}
+{{#badges native-tls}}
 
 [`native-tls`][c~native-tls~docs]↗{{hi:native-tls}} provides a cross-platform API over the platform's TLS implementation. It uses SChannel on Windows, Secure Transport on macOS, and OpenSSL on most other platforms.
 

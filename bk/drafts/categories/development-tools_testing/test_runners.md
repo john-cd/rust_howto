@@ -6,10 +6,7 @@
 
 ## Test your code with `cargo test` {#cargo-test}
 
-[![cargo][c~cargo~docs~badge]][c~cargo~docs]{{hi:cargo}}
-[![cargo~crates.io][c~cargo~crates.io~badge]][c~cargo~crates.io]
-[![cargo~repo][c~cargo~repo~badge]][c~cargo~repo]
-[![cargo~lib.rs][c~cargo~lib.rs~badge]][c~cargo~lib.rs]
+{{#badges cargo}}
 
 [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} to run all tests.
 `cargo test test_prefix` to run all tests that start with the provided prefix.

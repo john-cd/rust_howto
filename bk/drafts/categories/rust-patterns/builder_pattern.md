@@ -18,13 +18,13 @@ Use a builder when construction has many optional settings, needs validation, or
 
 ## `typed-builder` {#typed-builder}
 
-[![typed-builder][c~typed-builder~docs~badge]][c~typed-builder~docs] [![typed-builder~crates.io][c~typed-builder~crates.io~badge]][c~typed-builder~crates.io] [![typed-builder~repo][c~typed-builder~repo~badge]][c~typed-builder~repo] [![typed-builder~lib.rs][c~typed-builder~lib.rs~badge]][c~typed-builder~lib.rs]{{hi:typed-builder}}{{hi:Builder}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+{{#badges typed-builder rust-patterns="Rust patterns"}}{{hi:Builder}}
 
 [`typed-builder`][c~typed-builder~docs]↗{{hi:typed-builder}} derives compile-time type-checked builders. It uses a 'derive' macro and leverages Rust's type system to ensure that all required fields are set. If you forget a required field, your code won't even compile.
 
 ## `derive_builder` {#derive_builder}
 
-[![derive_builder][c~derive_builder~docs~badge]][c~derive_builder~docs] [![derive_builder~crates.io][c~derive_builder~crates.io~badge]][c~derive_builder~crates.io] [![derive_builder~repo][c~derive_builder~repo~badge]][c~derive_builder~repo] [![derive_builder~lib.rs][c~derive_builder~lib.rs~badge]][c~derive_builder~lib.rs]{{hi:derive_builder}}{{hi:Builder}}{{hi:Derive}}{{hi:Macro}}{{hi:Setter}}{{hi:Struct}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+{{#badges derive_builder development-tools="Development tools" rust-patterns="Rust patterns"}}{{hi:Builder}}{{hi:Derive}}{{hi:Macro}}{{hi:Setter}}{{hi:Struct}}
 
 [`derive_builder`][c~derive_builder~docs]↗{{hi:derive_builder}} provides a `#[derive(Builder)]` macro to automatically implement the builder pattern for arbitrary structs. It performs checks at runtime within the `.build()` method.
 

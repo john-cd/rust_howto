@@ -28,7 +28,7 @@ Only use this pattern when you truly need a stable reference to data owned by th
 
 ## See Also {#see-also .skip}
 
-[![movable-ref][c~movable-ref~docs~badge]][c~movable-ref~docs] [![movable-ref~crates.io][c~movable-ref~crates.io~badge]][c~movable-ref~crates.io] [![movable-ref~repo][c~movable-ref~repo~badge]][c~movable-ref~repo] [![movable-ref~lib.rs][c~movable-ref~lib.rs~badge]][c~movable-ref~lib.rs]{{hi:movable-ref}}{{hi:Offset}}{{hi:Pointer}}{{hi:No-std}}{{hi:Self-referential}}{{hi:Movable}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges movable-ref no-std="No standard library"}}{{hi:Offset}}{{hi:Pointer}}{{hi:No-std}}{{hi:Self-referential}}{{hi:Movable}}
 
 A tool for building movable self-referential types.
 

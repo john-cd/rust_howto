@@ -14,7 +14,7 @@ Run formatting and lint checks locally and in continuous integration. Formatting
 
 ## Find Common Mistakes with Clippy {#cargo-clippy}
 
-[![clippy][c~clippy~docs~badge]][c~clippy~docs]{{hi:clippy}} [![clippy~crates.io][c~clippy~crates.io~badge]][c~clippy~crates.io] [![clippy~repo][c~clippy~repo~badge]][c~clippy~repo] [![clippy~lib.rs][c~clippy~lib.rs~badge]][c~clippy~lib.rs] [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+{{#badges clippy development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}}
 
 `cargo clippy` runs the Clippy lints for the selected packages and targets. For a workspace-wide CI check, use `cargo clippy --workspace --all-targets --all-features -- -D warnings` when those feature combinations are supported on the CI host. If the project supports only a subset of targets or features on that host, list the combinations that CI can actually build.
 

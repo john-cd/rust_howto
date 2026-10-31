@@ -28,13 +28,7 @@ Enable only the API features used by the project. These examples need Windows an
 
 ## Bind to Windows APIs with `winapi` {#winapi}
 
-[![winapi][c~winapi~docs~badge]][c~winapi~docs]{{hi:winapi}}
-[![winapi~crates.io][c~winapi~crates.io~badge]][c~winapi~crates.io]
-[![winapi~repo][c~winapi~repo~badge]][c~winapi~repo]
-[![winapi~lib.rs][c~winapi~lib.rs~badge]][c~winapi~lib.rs]
-[![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
-[![cat~os::windows-apis][cat~os::windows-apis~badge]][cat~os::windows-apis]{{hi:Windows APIs}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges winapi external-ffi-bindings="External FFI bindings" os::windows-apis="Windows APIs" no-std="No standard library"}}
 
 [`winapi`][c~winapi~docs]↗{{hi:winapi}} exposes raw Windows FFI declarations. Its example is included to help maintain existing code; new projects should consider `windows` or `windows-sys` first.
 

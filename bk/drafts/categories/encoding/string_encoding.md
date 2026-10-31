@@ -32,7 +32,7 @@ The [`percent-encoding`][c~percent-encoding~docs]↗ crate also provides common 
 
 ## Encode Form Data as `application/x-www-form-urlencoded` {#url}
 
-[![url][c~url~docs~badge]][c~url~docs] [![url~crates.io][c~url~crates.io~badge]][c~url~crates.io] [![url~repo][c~url~repo~badge]][c~url~repo] [![url~lib.rs][c~url~lib.rs~badge]][c~url~lib.rs]{{hi:url}}
+{{#badges url}}
 
 Form encoding uses `+` for spaces and percent-escapes other bytes as required by `application/x-www-form-urlencoded`. This is a distinct format from percent-encoding an arbitrary URL component. The `url` crate provides iterators for encoding and parsing form data.
 

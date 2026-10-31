@@ -6,7 +6,7 @@
 
 ## `bincode` {#bincode}
 
-[![bincode][c~bincode~docs~badge]][c~bincode~docs] [![bincode~crates.io][c~bincode~crates.io~badge]][c~bincode~crates.io] [![bincode~repo][c~bincode~repo~badge]][c~bincode~repo] [![bincode~lib.rs][c~bincode~lib.rs~badge]][c~bincode~lib.rs]{{hi:bincode}}{{hi:Deserialize}}{{hi:Serialize}}{{hi:Binary}}{{hi:Encode}}{{hi:Decode}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+{{#badges bincode encoding=Encoding network-programming="Network programming"}}{{hi:Deserialize}}{{hi:Serialize}}{{hi:Binary}}{{hi:Encode}}{{hi:Decode}}
 
 [`bincode`][c~bincode~docs]↗{{hi:bincode}} is a binary serialization / deserialization strategy for transforming structs into bytes and vice versa.
 
@@ -18,7 +18,7 @@
 
 ### `prost` {#prost}
 
-[![prost][c~prost~docs~badge]][c~prost~docs] [![prost~crates.io][c~prost~crates.io~badge]][c~prost~crates.io] [![prost~repo][c~prost~repo~badge]][c~prost~repo] [![prost~lib.rs][c~prost~lib.rs~badge]][c~prost~lib.rs]{{hi:prost}}{{hi:Protobuf}}{{hi:Serialization}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
+{{#badges prost encoding=Encoding}}{{hi:Protobuf}}{{hi:Serialization}}
 
 [`prost`][c~prost~docs]↗{{hi:prost}} is a Rust implementation of Protocol Buffers. This example uses `protox` and `prost-build` to generate Rust types from a `.proto` schema, then demonstrates a message round trip. The build script parses the schema without requiring an external `protoc` executable.
 
@@ -42,7 +42,7 @@ In `build.rs`:
 
 ## CBOR with `ciborium` {#ciborium}
 
-[![ciborium][c~ciborium~docs~badge]][c~ciborium~docs] [![ciborium~crates.io][c~ciborium~crates.io~badge]][c~ciborium~crates.io] [![ciborium~repo][c~ciborium~repo~badge]][c~ciborium~repo] [![ciborium~lib.rs][c~ciborium~lib.rs~badge]][c~ciborium~lib.rs]{{hi:ciborium}}{{hi:CBOR}}{{hi:Serde}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+{{#badges ciborium data-structures="Data structures" no-std="No standard library" embedded="Embedded development" encoding=Encoding parsing="Parsing tools"}}{{hi:CBOR}}{{hi:Serde}}
 
 Concise Binary Object Representation is a binary data serialization format loosely based on [JSON][p~json]. [`ciborium`][c~ciborium~docs]↗{{hi:ciborium}} is a [`serde`][c~serde~docs]↗{{hi:serde}} implementation of CBOR using ciborium-basic.
 

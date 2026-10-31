@@ -4,11 +4,7 @@
 
 {{#include leptos.incl.md}}
 
-[![leptos][c~leptos~docs~badge]][c~leptos~docs]{{hi:leptos}}
-[![leptos~crates.io][c~leptos~crates.io~badge]][c~leptos~crates.io]
-[![leptos~repo][c~leptos~repo~badge]][c~leptos~repo]
-[![leptos~lib.rs][c~leptos~lib.rs~badge]][c~leptos~lib.rs]
-[![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+{{#badges leptos wasm=WebAssembly}}
 
 [Leptos][c~leptos~website]↗{{hi:Leptos}} is a reactive Rust framework for web interfaces. A Leptos app can render in the browser from WebAssembly, or render HTML on a server and hydrate it in the browser. The rendering mode determines the build tools, app structure, and hosting requirements.
 

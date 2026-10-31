@@ -23,7 +23,7 @@ WAIT move code examples from `later/` to `bk/` when code and text are ready.
 - [#2116](https://github.com/john-cd/rust_howto/issues/2116) — **Epic** — Waiting on an upstream release or advisory fix (zip, zenoh, urdf-rs, cpal, egui).
 - [#2117](https://github.com/john-cd/rust_howto/issues/2117) — **Epic** — Deferred recipes, example cleanup and book quality.
 - [#2118](https://github.com/john-cd/rust_howto/issues/2118) — **Epic** — Tooling, CI and repository infrastructure.
-- [#2132](https://github.com/john-cd/rust_howto/issues/2132) — Migrate section-header badge lines to `{{#badges}}` (P4).
+- [#2145](https://github.com/john-cd/rust_howto/issues/2145) — Migrate the remaining crate badge lines to `{{#badges}}` (P4).
 - [#2133](https://github.com/john-cd/rust_howto/issues/2133) — Close the last 59 example-test convention gaps (P3).
 
 ## Briefs for Jules
@@ -44,15 +44,6 @@ General rules for every brief: work from a clean checkout of `develop` on a topi
 - **Checks:** `python3 scripts/check_example_tests.py --summary`; in `bk/` and `tools/`: `just ca`, `just nta`; `python3 -m unittest discover scripts/tests`.
 - **Done when:** the TOTAL line shows every file compliant, or each remaining file is listed with a reason in the issue.
 
-
-### Brief D — #2132 migrate badge lines to `{{#badges}}` (P4)
-
-- **Goal:** long badge lines in section headers use `{{#badges name cat1 cat2=Title}}` (merged in book_tooling#74) with identical rendered output.
-- **Steps:**
-  1. In `tools/Cargo.toml` bump the pinned `book_tooling` git revision used by `mdbook-scrub` to a commit that contains the directive; `just ba` and `just release` in `tools/`.
-  2. Write an idempotent Python migration in `bk/scripts/` (with a `--check` mode) that rewrites the badge lines in `bk/src`, `bk/drafts` and `later/src` (about 28 files in `bk/src`). Skip lines that carry extra `{{hi:...}}` terms and print them.
-  3. Compare rendered text, hrefs and anchors before and after with `just bb`.
-- **Checks:** `just ca` and `just nta` in `tools/`; `just bb` in `bk/` shows no new warnings; a second run of the script changes nothing.
 
 ### Brief E — improve example comments (#2117)
 

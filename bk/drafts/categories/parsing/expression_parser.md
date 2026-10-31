@@ -6,11 +6,7 @@
 
 ## Write an Expression Parser with a `winnow` Lexer {#expression-parser}
 
-[![winnow][c~winnow~docs~badge]][c~winnow~docs]{{hi:winnow}}
-[![winnow~crates.io][c~winnow~crates.io~badge]][c~winnow~crates.io]
-[![winnow~repo][c~winnow~repo~badge]][c~winnow~repo]
-[![winnow~lib.rs][c~winnow~lib.rs~badge]][c~winnow~lib.rs]
-[![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+{{#badges winnow parsing="Parsing tools"}}
 
 A small calculator shows the two stages found in most language front ends:
 

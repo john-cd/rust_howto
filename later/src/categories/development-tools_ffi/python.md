@@ -6,7 +6,7 @@
 
 ## Call Python from Rust {#calling-python-from-rust}
 
-[![pyo3][c~pyo3~docs~badge]][c~pyo3~docs] [![pyo3~crates.io][c~pyo3~crates.io~badge]][c~pyo3~crates.io] [![pyo3~repo][c~pyo3~repo~badge]][c~pyo3~repo] [![pyo3~lib.rs][c~pyo3~lib.rs~badge]][c~pyo3~lib.rs]{{hi:pyo3}}{{hi:Cpython}}{{hi:Ffi}}{{hi:pyo3}}{{hi:Python}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
+{{#badges pyo3 api-bindings="API bindings" development-tools::ffi=FFI}}{{hi:Cpython}}{{hi:Ffi}}{{hi:pyo3}}{{hi:Python}}
 
 [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} is a Rust crate that enables seamless integration between Rust and Python. It allows developers to write Python extensions in Rust, leveraging Rust's performance and safety benefits, or to embed Python within Rust applications. Pyo3 provides tools for managing Python objects, handling data exchange, and defining Python classes and modules in Rust.
 

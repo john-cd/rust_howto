@@ -10,7 +10,7 @@ It is a way to represent a set of boolean flags or values with a limited range i
 
 ## Work with C-style Flags using `bitflags` {#bitflags}
 
-[![bitflags][c~bitflags~docs~badge]][c~bitflags~docs] [![bitflags~crates.io][c~bitflags~crates.io~badge]][c~bitflags~crates.io] [![bitflags~repo][c~bitflags~repo~badge]][c~bitflags~repo] [![bitflags~lib.rs][c~bitflags~lib.rs~badge]][c~bitflags~lib.rs]{{hi:bitflags}}{{hi:Bit}}{{hi:bitflags}}{{hi:Bitmask}}{{hi:Flags}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges bitflags no-std="No standard library"}}{{hi:Bit}}{{hi:bitflags}}{{hi:Bitmask}}{{hi:Flags}}
 
 [`bitflags`][c~bitflags~docs]↗{{hi:bitflags}} generates ergonomic types for C-style flags. You can use `bitflags` to provide user-friendly bindings to C APIs, where flags may or may not be fully known in advance, with string parsing and formatting support.
 
@@ -24,7 +24,7 @@ The following example creates a type `MyFlags` with the help of the [`bitflags::
 
 ## Work with C-style Flags using `flagset` {#flagset}
 
-[![flagset][c~flagset~docs~badge]][c~flagset~docs] [![flagset~crates.io][c~flagset~crates.io~badge]][c~flagset~crates.io] [![flagset~repo][c~flagset~repo~badge]][c~flagset~repo] [![flagset~lib.rs][c~flagset~lib.rs~badge]][c~flagset~lib.rs]{{hi:flagset}}{{hi:Bitflags}}{{hi:Enum}}{{hi:Enumflags}}{{hi:Flags}}
+{{#badges flagset}}{{hi:Bitflags}}{{hi:Enum}}{{hi:Enumflags}}{{hi:Flags}}
 
 [`flagset`][c~flagset~docs]↗{{hi:flagset}} is an alternative to crates like [`bitflags`][c~bitflags~docs]↗{{hi:bitflags}} and [`enumflags`][c~enumflags~docs]↗{{hi:enumflags}}. A `flagset` flag definition looks just like a regular enumeration, with the addition of the field-size type:
 
@@ -44,7 +44,7 @@ The following example creates a type `MyFlags` with the help of the [`bitflags::
 
 ## Track Visited Nodes with `fixedbitset` {#fixedbitset}
 
-[![fixedbitset][c~fixedbitset~docs~badge]][c~fixedbitset~docs] [![fixedbitset~crates.io][c~fixedbitset~crates.io~badge]][c~fixedbitset~crates.io] [![fixedbitset~repo][c~fixedbitset~repo~badge]][c~fixedbitset~repo] [![fixedbitset~lib.rs][c~fixedbitset~lib.rs~badge]][c~fixedbitset~lib.rs]{{hi:fixedbitset}}{{hi:Bit set}}{{hi:Visited set}}{{hi:Graph}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges fixedbitset data-structures="Data structures"}}{{hi:Bit set}}{{hi:Visited set}}{{hi:Graph}}
 
 [`fixedbitset`][c~fixedbitset~docs]↗{{hi:fixedbitset}} is a bit set with a size fixed at creation. It uses one bit per element, where a `Vec<bool>` uses a byte, and offers fast set operations such as `union_with`. The example uses it as the visited set of a graph walk. Choose [`bitvec`][c~bitvec~docs]↗{{hi:bitvec}} instead for arbitrary bit-level views or a growable vector.
 
@@ -54,7 +54,7 @@ The following example creates a type `MyFlags` with the help of the [`bitflags::
 
 ## Store Large Sets of Integers with `roaring` {#roaring}
 
-[![roaring][c~roaring~docs~badge]][c~roaring~docs] [![roaring~crates.io][c~roaring~crates.io~badge]][c~roaring~crates.io] [![roaring~repo][c~roaring~repo~badge]][c~roaring~repo] [![roaring~lib.rs][c~roaring~lib.rs~badge]][c~roaring~lib.rs]{{hi:roaring}}{{hi:Bitmap}}{{hi:Data-structure}}{{hi:roaring}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges roaring data-structures="Data structures"}}{{hi:Bitmap}}{{hi:Data-structure}}{{hi:roaring}}
 
 Bitmaps are commonly used as fast [data structures][p~category-data-structures]{{hi:data-structures}}, for example as indices for databases, search engines, and big data processing systems.
 

@@ -20,7 +20,7 @@ The example below combines `heapless` with `postcard`: it encodes messages into 
 
 ## `postcard` {#postcard}
 
-[![postcard][c~postcard~docs~badge]][c~postcard~docs] [![postcard~crates.io][c~postcard~crates.io~badge]][c~postcard~crates.io] [![postcard~repo][c~postcard~repo~badge]][c~postcard~repo] [![postcard~lib.rs][c~postcard~lib.rs~badge]][c~postcard~lib.rs]{{hi:postcard}}{{hi:Cobs}}{{hi:Framing}}{{hi:Serde}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges postcard embedded="Embedded development" no-std="No standard library"}}{{hi:Cobs}}{{hi:Framing}}{{hi:Serde}}
 
 [`postcard`][c~postcard~docs]↗{{hi:postcard}} is a [`#![no_std]`][book~rust-reference~no_std] and [`serde`][c~serde~docs]↗{{hi:serde}} compatible message library for Rust.
 
@@ -40,7 +40,7 @@ The following host-side example checks whether IPv4 addresses belong to a config
 
 ## `portable-atomic` {#portable-atomic}
 
-[![portable-atomic][c~portable-atomic~docs~badge]][c~portable-atomic~docs] [![portable-atomic~crates.io][c~portable-atomic~crates.io~badge]][c~portable-atomic~crates.io] [![portable-atomic~repo][c~portable-atomic~repo~badge]][c~portable-atomic~repo] [![portable-atomic~lib.rs][c~portable-atomic~lib.rs~badge]][c~portable-atomic~lib.rs]{{hi:portable-atomic}}{{hi:Atomic}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
+{{#badges portable-atomic concurrency=Concurrency hardware-support="Hardware support" embedded="Embedded development" no-std="No standard library" no-std::no-alloc="No dynamic allocation"}}{{hi:Atomic}}
 
 [`portable-atomic`][c~portable-atomic~docs]↗{{hi:portable-atomic}} provides atomic types for targets with limited native atomic support. Available widths and optional types depend on the target and enabled features.
 

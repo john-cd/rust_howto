@@ -65,7 +65,7 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]↗{{h
 
 ## Use Regular Expressions with Back-references and Lookarounds {#fancy-regex}
 
-[![fancy-regex][c~fancy-regex~docs~badge]][c~fancy-regex~docs] [![fancy-regex~crates.io][c~fancy-regex~crates.io~badge]][c~fancy-regex~crates.io] [![fancy-regex~repo][c~fancy-regex~repo~badge]][c~fancy-regex~repo] [![fancy-regex~lib.rs][c~fancy-regex~lib.rs~badge]][c~fancy-regex~lib.rs]{{hi:fancy-regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+{{#badges fancy-regex text-processing="Text processing"}}
 
 [`regex`][c~regex~docs]↗{{hi:regex}} is the de facto standard regex library. It is very fast, but does not support fancier features such as backtracking, backreferences, and look-arounds. Use [`fancy-regex`][c~fancy-regex~docs]↗{{hi:fancy-regex}} if you need features that [`regex`][c~regex~docs]↗{{hi:regex}} doesn't support.
 

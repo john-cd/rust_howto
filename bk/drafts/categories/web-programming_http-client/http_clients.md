@@ -6,10 +6,7 @@
 
 ## `reqwest` {#reqwest}
 
-[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}}
-[![reqwest~crates.io][c~reqwest~crates.io~badge]][c~reqwest~crates.io]
-[![reqwest~repo][c~reqwest~repo~badge]][c~reqwest~repo]
-[![reqwest~lib.rs][c~reqwest~lib.rs~badge]][c~reqwest~lib.rs]
+{{#badges reqwest}}
 
 [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} is a high-level HTTP client with asynchronous and blocking APIs. The asynchronous `Client` runs on an async runtime; this package uses [`tokio`][c~tokio~docs]↗{{hi:tokio}}. The blocking API is enabled by the `blocking` feature and should not be called from inside an async runtime.
 
@@ -33,11 +30,7 @@ Use the blocking API in synchronous code. Keep it off async runtime worker threa
 
 ## `ureq` {#ureq}
 
-[![ureq][c~ureq~docs~badge]][c~ureq~docs]{{hi:ureq}}
-[![ureq~crates.io][c~ureq~crates.io~badge]][c~ureq~crates.io]
-[![ureq~repo][c~ureq~repo~badge]][c~ureq~repo]
-[![ureq~lib.rs][c~ureq~lib.rs~badge]][c~ureq~lib.rs]
-[![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:HTTP client}}
+{{#badges ureq web-programming::http-client="HTTP client"}}
 
 [`ureq`][c~ureq~docs]↗{{hi:ureq}} is a synchronous HTTP client for code that does not need to await requests. `ureq::get` is convenient for one-off calls. For repeated calls or shared settings such as timeouts, create and reuse a `ureq::Agent`; it owns reusable client configuration and connections. It does not require an async runtime.
 

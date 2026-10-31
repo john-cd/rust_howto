@@ -19,13 +19,7 @@ Check the documented safety requirements, pointer lifetimes, ownership rules, er
 
 ## Call `libc` Functions {#call-libc}
 
-[![libc][c~libc~docs~badge]][c~libc~docs]{{hi:libc}}
-[![libc~crates.io][c~libc~crates.io~badge]][c~libc~crates.io]
-[![libc~repo][c~libc~repo~badge]][c~libc~repo]
-[![libc~lib.rs][c~libc~lib.rs~badge]][c~libc~lib.rs]
-[![cat~external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings]{{hi:External FFI bindings}}
-[![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges libc external-ffi-bindings="External FFI bindings" os="Operating systems" no-std="No standard library"}}
 
 The [`libc`][c~libc~docs]↗{{hi:libc}} crate exposes platform C-library functions and types to Rust. The example converts C strings explicitly, checks null pointers, and calls a few C functions. Use the Rust standard library for ordinary output and environment access; these calls are included to show the FFI boundary.
 

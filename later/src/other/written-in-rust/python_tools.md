@@ -8,10 +8,7 @@ Rust is used to build tools across the Python workflow: an interpreter, an appli
 
 ## `rustpython` {#rustpython}
 
-[![rustpython][c~rustpython~docs~badge]][c~rustpython~docs]{{hi:rustpython}}
-[![rustpython~crates.io][c~rustpython~crates.io~badge]][c~rustpython~crates.io]
-[![rustpython~repo][c~rustpython~repo~badge]][c~rustpython~repo]
-[![rustpython~lib.rs][c~rustpython~lib.rs~badge]][c~rustpython~lib.rs]
+{{#badges rustpython}}
 
 [`RustPython`][rustpython~repo]↗{{hi:RustPython}} is a Python interpreter implemented in Rust. It is a separate implementation of the language, rather than a way to compile arbitrary Python programs to native Rust.
 

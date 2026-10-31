@@ -6,7 +6,7 @@
 
 ## Change the Case of a String with `heck` {#heck}
 
-[![heck][c~heck~docs~badge]][c~heck~docs] [![heck~crates.io][c~heck~crates.io~badge]][c~heck~crates.io] [![heck~repo][c~heck~repo~badge]][c~heck~repo] [![heck~lib.rs][c~heck~lib.rs~badge]][c~heck~lib.rs]{{hi:heck}}{{hi:Unicode}}{{hi:String}}{{hi:Case}}{{hi:Snake}}{{hi:Camel}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges heck no-std="No standard library"}}{{hi:Unicode}}{{hi:String}}{{hi:Case}}{{hi:Snake}}{{hi:Camel}}
 
 [`heck`][c~heck~docs]↗{{hi:heck}} is a case conversion library. This library exists to provide case conversion between common cases like `CamelCase` and `snake_case`.
 
@@ -26,7 +26,7 @@ This helper uses `char::to_uppercase`, which can produce more than one character
 
 ## `textwrap` {#textwrap}
 
-[![textwrap][c~textwrap~docs~badge]][c~textwrap~docs] [![textwrap~crates.io][c~textwrap~crates.io~badge]][c~textwrap~crates.io] [![textwrap~repo][c~textwrap~repo~badge]][c~textwrap~repo] [![textwrap~lib.rs][c~textwrap~lib.rs~badge]][c~textwrap~lib.rs]{{hi:textwrap}}{{hi:Text}}{{hi:Typesetting}}{{hi:Wrap}}{{hi:Formatting}}{{hi:Hyphenation}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+{{#badges textwrap command-line-interface="Command-line interface" text-processing="Text processing"}}{{hi:Text}}{{hi:Typesetting}}{{hi:Wrap}}{{hi:Formatting}}{{hi:Hyphenation}}
 
 [`textwrap`][c~textwrap~docs]↗{{hi:textwrap}} provides word wrapping, indenting, and dedenting strings. It has optional support for Unicode and emojis, as well as machine hyphenation.
 
@@ -36,7 +36,7 @@ This helper uses `char::to_uppercase`, which can produce more than one character
 
 ## `indoc` {#indoc}
 
-[![indoc][c~indoc~docs~badge]][c~indoc~docs] [![indoc~crates.io][c~indoc~crates.io~badge]][c~indoc~crates.io] [![indoc~repo][c~indoc~repo~badge]][c~indoc~repo] [![indoc~lib.rs][c~indoc~lib.rs~badge]][c~indoc~lib.rs]{{hi:indoc}}{{hi:String}}{{hi:Literal}}{{hi:Heredoc}}{{hi:Nowdoc}}{{hi:Multiline}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+{{#badges indoc no-std="No standard library" no-std::no-alloc="No dynamic allocation" rust-patterns="Rust patterns" text-processing="Text processing"}}{{hi:String}}{{hi:Literal}}{{hi:Heredoc}}{{hi:Nowdoc}}{{hi:Multiline}}
 
 The [`indoc!()`][c~indoc::indoc~docs]↗{{hi:indoc::indoc!}} macro takes a multiline string literal and un-indents it at compile time so the leftmost non-space character is in the first column.
 The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros to substitute conveniently for the standard library's formatting macros:

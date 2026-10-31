@@ -41,7 +41,7 @@ The `camino` crate provides an alternative to the standard `Path` and `PathBuf` 
 
 ## Canonicalize a Path without the Windows `\\?\` Prefix {#dunce}
 
-[![dunce][c~dunce~docs~badge]][c~dunce~docs]{{hi:dunce}} [![dunce~crates.io][c~dunce~crates.io~badge]][c~dunce~crates.io] [![dunce~repo][c~dunce~repo~badge]][c~dunce~repo] [![dunce~lib.rs][c~dunce~lib.rs~badge]][c~dunce~lib.rs] [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+{{#badges dunce filesystem=Filesystem}}
 
 On Windows, `std::fs::canonicalize` returns a "verbatim" path that starts with `\\?\`. Many tools, and some other programs that receive the path as an argument, do not understand it. [`dunce::canonicalize`][c~dunce~docs]↗{{hi:dunce::canonicalize}} returns the same path in its usual form when the shorter form is equivalent, and [`dunce::simplified`][c~dunce~docs]↗ removes the prefix from a path you already have. On other platforms, both behave like the standard library.
 
@@ -51,7 +51,7 @@ On Windows, `std::fs::canonicalize` returns a "verbatim" path that starts with `
 
 ## Compute a Relative Path {#pathdiff}
 
-[![pathdiff][c~pathdiff~docs~badge]][c~pathdiff~docs]{{hi:pathdiff}} [![pathdiff~crates.io][c~pathdiff~crates.io~badge]][c~pathdiff~crates.io] [![pathdiff~repo][c~pathdiff~repo~badge]][c~pathdiff~repo] [![pathdiff~lib.rs][c~pathdiff~lib.rs~badge]][c~pathdiff~lib.rs] [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+{{#badges pathdiff filesystem=Filesystem}}
 
 The standard library can join paths, but it cannot express one path relative to another. [`pathdiff::diff_paths`][c~pathdiff~docs]↗{{hi:pathdiff}} returns the path that leads from a base directory to a target, for example to write a relative link from one generated file to another. The comparison is purely lexical: neither path has to exist, and symbolic links and `..` components in the inputs are not resolved. Canonicalize the paths first (see [above](#canonicalize)) if you need that.
 

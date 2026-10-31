@@ -40,7 +40,7 @@ The [`futures`][c~futures~docs]↗{{hi:futures}} crate provides an extension tra
 
 ## `futures-util` {#futures-util}
 
-[![future-utils][c~future-utils~docs~badge]][c~future-utils~docs] [![future-utils~crates.io][c~future-utils~crates.io~badge]][c~future-utils~crates.io] [![future-utils~repo][c~future-utils~repo~badge]][c~future-utils~repo] [![future-utils~lib.rs][c~future-utils~lib.rs~badge]][c~future-utils~lib.rs]{{hi:future-utils}}{{hi:Async}}{{hi:Futures}}{{hi:Tokio}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+{{#badges future-utils asynchronous=Asynchronous network-programming="Network programming"}}{{hi:Async}}{{hi:Futures}}{{hi:Tokio}}
 
 Common utilities and extension [traits][p~traits] for the [`futures-rs`][c~futures~docs]↗{{hi:futures-rs}} library. Extensions to Rust's [`Future`][c~std::future::Future~docs]↗{{hi:std::future::Future}} and [`Stream`][c~futures::prelude::Stream~docs]↗{{hi:futures::prelude::Stream}} traits. Combinators and utilities for working with [`Future`][c~futures~docs]↗{{hi:Futures}}, `Stream`, [`Sink`][c~futures::prelude::Sink~docs]↗{{hi:futures::prelude::Sink}}, and the [`AsyncRead`][c~futures::prelude::AsyncRead~docs]:↗ and [`AsyncWrite`][c~futures::prelude::AsyncWrite~docs]↗ traits.
 
