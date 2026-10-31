@@ -1,4 +1,3 @@
-#![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
 // ANCHOR: example
 //! The `pub` keyword on functions, types, traits and modules.
@@ -35,7 +34,12 @@ mod m {
     mod private_module {}
 
     /// Public submodule.
-    pub mod public_module {}
+    pub mod public_module {
+        /// A function in the public submodule.
+        pub fn answer() -> u32 {
+            42
+        }
+    }
 }
 
 /// Uses the public items of the module `m`.
@@ -53,6 +57,7 @@ fn main() {
 
     // Bring the public submodule into scope.
     use m::public_module;
+    let _ = public_module::answer();
     // ERROR: use m::private_module;
     println!("pub_keyword example: public items accessible, private items not");
 }

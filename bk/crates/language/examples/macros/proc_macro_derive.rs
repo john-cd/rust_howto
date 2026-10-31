@@ -1,4 +1,3 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -36,6 +35,7 @@ fn main() {
         active: true,
     };
     u.debug_print();
+    println!("id: {}, name: {}, active: {}", u.id, u.name, u.active);
 }
 
 // ANCHOR_END: example

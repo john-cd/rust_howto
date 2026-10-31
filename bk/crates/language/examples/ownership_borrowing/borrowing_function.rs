@@ -1,4 +1,3 @@
-#![allow(unused_assignments)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example

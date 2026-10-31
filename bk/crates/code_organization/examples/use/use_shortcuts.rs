@@ -3,8 +3,6 @@
 // ANCHOR: example
 //! Shortcuts for `use`: globs, grouped imports, `self` and aliases.
 
-#![allow(unused_imports)]
-
 // Use a glob (the `*`) to bring all public objects within a module
 // (here `default`) in scope. Use sparingly.
 use std::default::*;
@@ -27,6 +25,14 @@ fn main() {
 
     // Use the alias defined above:
     destruct(v);
+
+    // The `self` import lets us write `iter::...` and `empty()` directly.
+    let count = iter::once(1).chain(empty()).count();
+
+    // `Write` comes from the `std::io::prelude::*` glob import.
+    let mut out = Vec::new();
+    writeln!(out, "{count} item").expect("writing to a `Vec` cannot fail");
+
     println!(
         "use_shortcuts example: glob imports, combined imports, and aliases"
     );

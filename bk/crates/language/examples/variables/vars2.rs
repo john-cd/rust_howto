@@ -1,4 +1,3 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -20,7 +19,7 @@ fn main() {
     let s = MyStruct { flag: true };
     // s.flag = false; // ERROR: cannot assign to `s.flag`, as `s` is not
     // declared as mutable.
-    println!("s: {s:?}");
+    println!("s: {s:?}, flag: {}", s.flag);
     let t = (2, 2);
     // ERROR: t.0 = 1;
     println!("t: {t:?}");
