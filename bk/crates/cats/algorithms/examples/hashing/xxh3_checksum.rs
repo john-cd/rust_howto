@@ -64,7 +64,8 @@ fn main() {
 
 /// Runs the XXH3 checksum example by calling `main()`.
 pub fn run() {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry();
 }

@@ -18,7 +18,8 @@ mod utils;
 pub use array_iterator::ArrayIterator;
 #[cfg(feature = "deadpool")]
 pub use deadpool_postgres;
-pub use domain::{Domain, DomainArray};
+pub use domain::Domain;
+pub use domain::DomainArray;
 #[cfg(not(any(feature = "deadpool", feature = "wasm-async")))]
 pub use postgres;
 #[cfg(not(any(feature = "deadpool", feature = "wasm-async")))]
@@ -27,5 +28,8 @@ pub use postgres::fallible_iterator;
 pub use tokio_postgres;
 #[cfg(any(feature = "deadpool", feature = "wasm-async"))]
 pub use tokio_postgres::fallible_iterator;
-pub use type_traits::{ArraySql, BytesSql, IterSql, StringSql};
+pub use type_traits::ArraySql;
+pub use type_traits::BytesSql;
+pub use type_traits::IterSql;
+pub use type_traits::StringSql;
 pub(crate) use utils::slice_iter;

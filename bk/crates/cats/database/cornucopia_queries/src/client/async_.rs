@@ -4,10 +4,12 @@ pub use generic_client::GenericClient;
 #[cfg(feature = "deadpool")]
 mod deadpool;
 mod generic_client;
-use tokio_postgres::{
-    Error, Row, RowStream, Statement,
-    types::{BorrowToSql, ToSql},
-};
+use tokio_postgres::Error;
+use tokio_postgres::Row;
+use tokio_postgres::RowStream;
+use tokio_postgres::Statement;
+use tokio_postgres::types::BorrowToSql;
+use tokio_postgres::types::ToSql;
 /// This trait allows you to bind parameters to a query using a single
 /// struct, rather than passing each bind parameter as a function parameter.
 pub trait Params<'c, 'a, 's, P, O, C> {

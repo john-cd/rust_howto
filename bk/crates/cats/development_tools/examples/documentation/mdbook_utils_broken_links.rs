@@ -55,7 +55,8 @@ fn main() -> Result<()> {
 ///
 /// Returns an error if the tool is missing or fails.
 pub fn run() -> Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

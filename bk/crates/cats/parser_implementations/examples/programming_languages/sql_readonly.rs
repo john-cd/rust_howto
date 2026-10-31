@@ -65,7 +65,8 @@ fn main() -> anyhow::Result<()> {
 
 /// Runs the syntax-classification example without contacting a database.
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

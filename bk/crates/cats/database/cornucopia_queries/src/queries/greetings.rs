@@ -1,7 +1,10 @@
 // This file was generated with `cornucopia`. Do not modify.
 
+use futures::StreamExt;
+use futures::TryStreamExt;
+use futures::{self};
+
 use crate::client::async_::GenericClient;
-use futures::{self, StreamExt, TryStreamExt};
 pub struct StringQuery<'c, 'a, 's, C: GenericClient, T, const N: usize> {
     client: &'c C,
     params: [&'a (dyn postgres_types::ToSql + Sync); N],
@@ -14,7 +17,10 @@ impl<'c, 'a, 's, C, T: 'c, const N: usize> StringQuery<'c, 'a, 's, C, T, N>
 where
     C: GenericClient,
 {
-    pub fn map<R>(self, mapper: fn(&str) -> R) -> StringQuery<'c, 'a, 's, C, R, N> {
+    pub fn map<R>(
+        self,
+        mapper: fn(&str) -> R,
+    ) -> StringQuery<'c, 'a, 's, C, R, N> {
         StringQuery {
             client: self.client,
             params: self.params,
@@ -24,17 +30,30 @@ where
             mapper,
         }
     }
+
     pub async fn one(self) -> Result<T, tokio_postgres::Error> {
-        let row =
-            crate::client::async_::one(self.client, self.query, &self.params, self.cached).await?;
+        let row = crate::client::async_::one(
+            self.client,
+            self.query,
+            &self.params,
+            self.cached,
+        )
+        .await?;
         Ok((self.mapper)((self.extractor)(&row)?))
     }
+
     pub async fn all(self) -> Result<Vec<T>, tokio_postgres::Error> {
         self.iter().await?.try_collect().await
     }
+
     pub async fn opt(self) -> Result<Option<T>, tokio_postgres::Error> {
-        let opt_row =
-            crate::client::async_::opt(self.client, self.query, &self.params, self.cached).await?;
+        let opt_row = crate::client::async_::opt(
+            self.client,
+            self.query,
+            &self.params,
+            self.cached,
+        )
+        .await?;
         Ok(opt_row
             .map(|row| {
                 let extracted = (self.extractor)(&row)?;
@@ -42,6 +61,7 @@ where
             })
             .transpose()?)
     }
+
     pub async fn iter(
         self,
     ) -> Result<
@@ -81,6 +101,7 @@ impl AddGreetingStmt {
         self.1 = Some(client.prepare(self.0).await?);
         Ok(self)
     }
+
     pub async fn bind<'c, 'a, 's, C: GenericClient, T1: crate::StringSql>(
         &'s self,
         client: &'c C,
@@ -104,6 +125,7 @@ impl ListGreetingsStmt {
         self.1 = Some(client.prepare(self.0).await?);
         Ok(self)
     }
+
     pub fn bind<'c, 'a, 's, C: GenericClient>(
         &'s self,
         client: &'c C,

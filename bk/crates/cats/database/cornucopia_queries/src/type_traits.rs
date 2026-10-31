@@ -1,9 +1,17 @@
 // This file was generated with `cornucopia`. Do not modify.
 
-use super::domain::escape_domain_to_sql;
-use postgres_protocol::types::{self, ArrayDimension};
-use postgres_types::{IsNull, Kind, ToSql, Type, private::BytesMut, to_sql_checked};
 use std::borrow::Cow;
+
+use postgres_protocol::types::ArrayDimension;
+use postgres_protocol::types::{self};
+use postgres_types::IsNull;
+use postgres_types::Kind;
+use postgres_types::ToSql;
+use postgres_types::Type;
+use postgres_types::private::BytesMut;
+use postgres_types::to_sql_checked;
+
+use super::domain::escape_domain_to_sql;
 pub trait StringSql: std::fmt::Debug + ToSql + Sync {}
 impl<T: StringSql> StringSql for &T {}
 impl StringSql for String {}
@@ -24,6 +32,7 @@ pub trait ArraySql: std::fmt::Debug + ToSql + Send + Sync {
 }
 impl<T: std::fmt::Debug + ToSql + Sync, A: ArraySql<Item = T>> ArraySql for &A {
     type Item = T;
+
     fn escape_domain_to_sql(
         &self,
         ty: &Type,
@@ -34,6 +43,7 @@ impl<T: std::fmt::Debug + ToSql + Sync, A: ArraySql<Item = T>> ArraySql for &A {
 }
 impl<T: std::fmt::Debug + ToSql + Send + Sync> ArraySql for Vec<T> {
     type Item = T;
+
     fn escape_domain_to_sql(
         &self,
         ty: &Type,
@@ -44,6 +54,7 @@ impl<T: std::fmt::Debug + ToSql + Send + Sync> ArraySql for Vec<T> {
 }
 impl<T: std::fmt::Debug + ToSql + Sync> ArraySql for &[T] {
     type Item = T;
+
     fn escape_domain_to_sql(
         &self,
         ty: &Type,
@@ -59,6 +70,7 @@ impl<
 > ArraySql for IterSql<T, I, F>
 {
     type Item = T;
+
     fn escape_domain_to_sql(
         &self,
         ty: &Type,
@@ -67,17 +79,23 @@ impl<
         escape_domain_to_sql(ty, w, (self.0)())
     }
 }
-pub struct IterSql<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>(pub F);
-impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> std::fmt::Debug
-    for IterSql<T, I, F>
+pub struct IterSql<
+    T: ToSql,
+    I: Iterator<Item = T> + ExactSizeIterator,
+    F: Fn() -> I + Sync,
+>(pub F);
+impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>
+    std::fmt::Debug for IterSql<T, I, F>
 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_tuple("ArrayFn").finish()
     }
 }
-impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> ToSql
-    for IterSql<T, I, F>
+impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>
+    ToSql for IterSql<T, I, F>
 {
+    to_sql_checked!();
+
     fn to_sql(
         &self,
         ty: &Type,
@@ -104,15 +122,17 @@ impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> T
         )?;
         Ok(IsNull::No)
     }
+
     fn accepts(ty: &Type) -> bool {
         match *ty.kind() {
             Kind::Array(ref member) => T::accepts(member),
             _ => false,
         }
     }
-    to_sql_checked!();
 }
-fn downcast(len: usize) -> Result<i32, Box<dyn std::error::Error + Sync + Send>> {
+fn downcast(
+    len: usize,
+) -> Result<i32, Box<dyn std::error::Error + Sync + Send>> {
     if len > i32::MAX as usize {
         Err("value too large to transmit".into())
     } else {

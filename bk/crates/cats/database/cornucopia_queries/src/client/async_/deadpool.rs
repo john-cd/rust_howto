@@ -1,20 +1,26 @@
 // This file was generated with `cornucopia`. Do not modify.
 
+use deadpool_postgres::Client as DeadpoolClient;
+use deadpool_postgres::ClientWrapper;
+use deadpool_postgres::Transaction as DeadpoolTransaction;
+use tokio_postgres::Client as PgClient;
+use tokio_postgres::Error;
+use tokio_postgres::RowStream;
+use tokio_postgres::Statement;
+use tokio_postgres::ToStatement;
+use tokio_postgres::Transaction as PgTransaction;
+use tokio_postgres::types::BorrowToSql;
+
 use super::generic_client::GenericClient;
-use deadpool_postgres::{
-    Client as DeadpoolClient, ClientWrapper, Transaction as DeadpoolTransaction,
-};
-use tokio_postgres::{
-    Client as PgClient, Error, RowStream, Statement, ToStatement, Transaction as PgTransaction,
-    types::BorrowToSql,
-};
 impl GenericClient for DeadpoolClient {
     fn stmt_cache() -> bool {
         true
     }
+
     async fn prepare(&self, query: &str) -> Result<Statement, Error> {
         ClientWrapper::prepare_cached(self, query).await
     }
+
     async fn execute<T>(
         &self,
         query: &T,
@@ -25,6 +31,7 @@ impl GenericClient for DeadpoolClient {
     {
         PgClient::execute(self, query, params).await
     }
+
     async fn query_one<T>(
         &self,
         statement: &T,
@@ -35,6 +42,7 @@ impl GenericClient for DeadpoolClient {
     {
         PgClient::query_one(self, statement, params).await
     }
+
     async fn query_opt<T>(
         &self,
         statement: &T,
@@ -45,6 +53,7 @@ impl GenericClient for DeadpoolClient {
     {
         PgClient::query_opt(self, statement, params).await
     }
+
     async fn query<T>(
         &self,
         query: &T,
@@ -55,7 +64,12 @@ impl GenericClient for DeadpoolClient {
     {
         PgClient::query(self, query, params).await
     }
-    async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
+
+    async fn query_raw<T, I>(
+        &self,
+        statement: &T,
+        params: I,
+    ) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
         I: IntoIterator + Sync + Send,
@@ -69,9 +83,11 @@ impl GenericClient for DeadpoolTransaction<'_> {
     fn stmt_cache() -> bool {
         false
     }
+
     async fn prepare(&self, query: &str) -> Result<Statement, Error> {
         DeadpoolTransaction::prepare_cached(self, query).await
     }
+
     async fn execute<T>(
         &self,
         query: &T,
@@ -82,6 +98,7 @@ impl GenericClient for DeadpoolTransaction<'_> {
     {
         PgTransaction::execute(self, query, params).await
     }
+
     async fn query_one<T>(
         &self,
         statement: &T,
@@ -92,6 +109,7 @@ impl GenericClient for DeadpoolTransaction<'_> {
     {
         PgTransaction::query_one(self, statement, params).await
     }
+
     async fn query_opt<T>(
         &self,
         statement: &T,
@@ -102,6 +120,7 @@ impl GenericClient for DeadpoolTransaction<'_> {
     {
         PgTransaction::query_opt(self, statement, params).await
     }
+
     async fn query<T>(
         &self,
         query: &T,
@@ -112,7 +131,12 @@ impl GenericClient for DeadpoolTransaction<'_> {
     {
         PgTransaction::query(self, query, params).await
     }
-    async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
+
+    async fn query_raw<T, I>(
+        &self,
+        statement: &T,
+        params: I,
+    ) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
         I: IntoIterator + Sync + Send,

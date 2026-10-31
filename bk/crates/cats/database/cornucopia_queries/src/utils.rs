@@ -1,6 +1,8 @@
 // This file was generated with `cornucopia`. Do not modify.
 
-use postgres_types::{Kind, ToSql, Type};
+use postgres_types::Kind;
+use postgres_types::ToSql;
+use postgres_types::Type;
 pub fn escape_domain(ty: &Type) -> &Type {
     match ty.kind() {
         Kind::Domain(ty) => ty,
