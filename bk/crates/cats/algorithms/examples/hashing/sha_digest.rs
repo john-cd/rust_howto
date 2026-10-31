@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! SHA-256 digest of a file's contents with `ring`, printed as hexadecimal.
+//!
+//! A hash function turns any data into a short fixed-size fingerprint (a
+//! digest). Changing one byte of the input changes the digest completely, so
+//! comparing digests checks that a download or file is intact. SHA-256 is the
+//! standard choice. Hashing in chunks keeps memory use small for large files.
 
 use std::fs;
 use std::fs::File;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A Tokio `oneshot` channel that carries a single value between tasks.
+//!
+//! A oneshot channel carries exactly one value from a sender to a receiver. It
+//! suits replying to a request: the requester keeps the receiver and awaits the
+//! answer.
 
 use tokio::sync::oneshot;
 

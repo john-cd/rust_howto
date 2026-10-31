@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Fill a byte array with randomness from the operating system.
+//!
+//! Cryptographic keys, nonces and tokens must be unpredictable. `getrandom`
+//! asks the operating system for randomness from its secure generator (for
+//! example `/dev/urandom` or `BCryptGenRandom`), which is the right source for
+//! secrets.
 
 /// Generates and displays a sample nonce using the OS random source.
 fn main() -> anyhow::Result<()> {

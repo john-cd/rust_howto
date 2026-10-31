@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates a simple HTTP GET request using the `reqwest`
 //! crate.
+//!
+//! An HTTP `GET` asks a server for a resource. The response has a status code
+//! (200 means success), headers and a body. Always check the status before
+//! using the body.
 
 use anyhow::Result;
 

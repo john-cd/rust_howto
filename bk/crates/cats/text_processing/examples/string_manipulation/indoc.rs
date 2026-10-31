@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Removing the common indentation of multi-line strings with `indoc`.
+//!
+//! Multi-line string literals keep the indentation of the source code. `indoc`
+//! removes the common leading whitespace, so you can indent text for
+//! readability yet get clean output, for example SQL or help text.
 
 use indoc::indoc;
 

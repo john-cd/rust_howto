@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Unpacking a gzip-compressed tar archive with `flate2` and `tar`.
+//!
+//! Unpacking an archive from an untrusted source can overwrite files outside
+//! the target directory if an entry has a path such as `../../etc/passwd` (a
+//! "zip slip" attack). Check paths before extracting.
 
 use std::fs::File;
 use std::io;

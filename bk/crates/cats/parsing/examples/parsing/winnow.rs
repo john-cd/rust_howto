@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! This example demonstrates basic usage of the `winnow` crate.
+//!
+//! A parser combinator library builds parsers from small functions that are
+//! combined, for example "a number, then a comma, then another number". Each
+//! parser consumes part of the input and returns the rest, so you can build
+//! formats such as configuration files or protocols from small, testable
+//! pieces.
 
 use winnow::ascii::digit1;
 use winnow::combinator::separated;

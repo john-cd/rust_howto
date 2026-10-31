@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Fuzzy matching of strings with `fuzzy-matcher`.
+//!
+//! Fuzzy matching finds approximate matches and ranks them, like the Ctrl-P
+//! file picker in editors: typing `mrs` can find `main_result.rs`. Each match
+//! gets a score so the best come first.
 
 use fuzzy_matcher::FuzzyMatcher as _;
 use fuzzy_matcher::skim::SkimMatcherV2;

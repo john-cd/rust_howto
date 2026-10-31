@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of using the Tera template engine.
+//!
+//! A template engine fills placeholders in a text file with data, to generate
+//! HTML pages, emails or configuration. Tera uses syntax similar to Jinja2 and
+//! Django: `{{ name }}` inserts a value and `{% for %}` loops.
 
 use std::sync::LazyLock;
 

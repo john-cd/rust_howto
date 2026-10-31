@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Serve an `axum` router over HTTPS with `axum-server` and `rustls`.
+//!
+//! TLS encrypts HTTP so that traffic cannot be read or changed on the network
+//! (HTTPS). The server needs a certificate and private key; for local
+//! development a self-signed certificate works, while the public internet needs
+//! one from a certificate authority such as Let's Encrypt.
 
 use std::net::SocketAddr;
 use std::time::Duration;

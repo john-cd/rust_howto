@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Filtering the lines of a log file with a set of regular expressions.
+//!
+//! A regular expression (regex) describes a text pattern. Log files can be
+//! huge, so process them line by line and combine patterns in a `RegexSet`,
+//! which tests all of them in a single pass.
 
 use std::fs::File;
 use std::io::BufRead as _;

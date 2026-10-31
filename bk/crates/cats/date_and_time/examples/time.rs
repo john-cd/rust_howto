@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrate various functionalities of the `time` crate.
+//!
+//! The `time` crate is a lighter alternative to `chrono` for dates, times and
+//! durations. UTC is the world reference time; local times are UTC plus an
+//! offset that can change with daylight saving.
 
 use time::Date;
 use time::Duration;
@@ -56,7 +60,8 @@ fn main() -> anyhow::Result<()> {
 
 /// Runs the `time` crate example.
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

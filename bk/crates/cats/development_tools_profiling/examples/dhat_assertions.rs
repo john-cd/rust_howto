@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Asserts on heap allocations in a test with `dhat`.
+//!
+//! A heap profiler such as DHAT records every allocation. Asserting on the
+//! counts in a test turns "this function should not allocate" into a regression
+//! check.
 
 #[global_allocator]
 static ALLOC: dhat::Alloc = dhat::Alloc;

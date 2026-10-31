@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Downloads a file in verified byte ranges.
+//!
+//! HTTP range requests (the `Range: bytes=0-99` header) ask the server for part
+//! of a file. They allow resuming interrupted downloads and fetching in
+//! parallel. Servers that support them answer with status 206 (Partial
+//! Content).
 
 use std::fs::File;
 use std::io;

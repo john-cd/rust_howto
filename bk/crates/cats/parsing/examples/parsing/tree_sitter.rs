@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Parse Rust source code and query its syntax tree with Tree-sitter.
+//!
+//! Tree-sitter builds a concrete syntax tree from source code, quickly and
+//! tolerating errors, and can update it as the text changes. Editors use it for
+//! syntax highlighting, code folding and navigation. Queries match patterns in
+//! the tree.
 
 use anyhow::anyhow;
 use tree_sitter::Language;

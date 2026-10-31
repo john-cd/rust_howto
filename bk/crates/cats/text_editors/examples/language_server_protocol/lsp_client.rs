@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Opens a document and asks for its symbols with `lsp-server` and
 //! `lsp-types`, and shows the `Content-Length` framing that real servers use.
+//!
+//! The Language Server Protocol (LSP) lets one language tool, such as
+//! rust-analyzer, serve completions, errors and navigation to any editor, over
+//! JSON-RPC messages on a pipe. Here a client opens a document and asks the
+//! server for its symbols (functions, types and so on).
 
 use std::io::BufReader;
 use std::thread;
@@ -188,7 +193,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

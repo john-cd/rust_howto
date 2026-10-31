@@ -1,6 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 //! Builds typed settings from files, environment variables, and CLI overrides.
+//!
+//! Layered configuration merges several sources, from lowest to highest
+//! priority: built-in defaults, a file, environment variables, and command-line
+//! flags. This lets one build run in development and production with only the
+//! differences overridden.
 
 use std::collections::HashMap;
 use std::path::Path;

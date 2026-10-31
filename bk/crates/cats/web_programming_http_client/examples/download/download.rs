@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Downloads a file as binary response chunks into a temporary directory.
+//!
+//! Large files should be saved in chunks as they arrive instead of being loaded
+//! into memory first, so a multi-gigabyte download needs only a small buffer.
+//! Writing to a temporary directory keeps the example from touching your files.
 
 use std::path::Path;
 

@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Read a PEM certificate file and decode its DER bytes.
+//!
+//! PEM is a text wrapper for binary cryptographic data: Base64 between
+//! `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines.
+//! Decoding the Base64 gives the DER bytes, which parsers for certificates and
+//! keys expect.
 
 use std::fs::OpenOptions;
 use std::fs::{self};

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Calls `async` code from blocking code by building a Tokio runtime by hand.
+//!
+//! To call async code from a plain `main` or a thread, build a Tokio runtime
+//! and `block_on` a future. Create the runtime once and reuse it: building one
+//! per call is expensive. Never call `block_on` from inside an async task.
 
 /// Spawns background tasks on a one-thread runtime, works on the main thread
 /// meanwhile, then waits for the tasks.

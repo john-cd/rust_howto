@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Encode and decode bytes as hexadecimal with the `hex` crate.
+//!
+//! Hexadecimal writes each byte as two characters from 0-9 and a-f. It is the
+//! usual way to display hashes, keys and binary data. It doubles the size of
+//! the data and is not encryption.
 
 /// Encodes a byte string as hexadecimal and decodes it again.
 fn main() -> anyhow::Result<()> {

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Extract strongly typed headers with [`axum_extra::TypedHeader`].
+//!
+//! HTTP headers are text. A typed header is parsed into a Rust type for you,
+//! such as an `Authorization: Bearer` token or a `User-Agent`, and an invalid
+//! or missing header turns into an error response.
 
 use axum::Router;
 use axum::routing::get;

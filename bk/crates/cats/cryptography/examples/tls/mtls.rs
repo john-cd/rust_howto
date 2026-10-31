@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Send an HTTPS request with a client certificate and private key.
+//!
+//! In mutual TLS (mTLS) both sides prove who they are with certificates, not
+//! just the server. It is common between internal services (a service mesh) and
+//! for devices that call APIs, as the certificate acts as a strong credential.
 
 use std::time::Duration;
 

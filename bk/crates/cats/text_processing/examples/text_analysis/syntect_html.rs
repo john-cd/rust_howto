@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Highlights source code with `syntect` (TextMate grammars and themes), as
 //! HTML and as terminal escape codes.
+//!
+//! Syntax highlighting colours code by the role of each token. `syntect` uses
+//! the same grammars and themes as Sublime Text and TextMate, and here emits
+//! HTML for web pages or documentation.
 
 use std::sync::LazyLock;
 
@@ -52,7 +56,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

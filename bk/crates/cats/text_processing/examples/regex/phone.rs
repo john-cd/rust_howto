@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to extract and format phone numbers from a
 //! text using regular expressions.
+//!
+//! Phone numbers come in many layouts, so a regex extracts the digits and the
+//! formatter writes them in one style. For international numbers use a
+//! dedicated library that knows each country's rules.
 
 use std::fmt;
 

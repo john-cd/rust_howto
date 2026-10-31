@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Searching bytes quickly with `memchr`.
+//!
+//! `memchr` finds a byte in a slice using vector (SIMD) CPU instructions that
+//! compare many bytes at once. It is much faster than a simple loop, and the
+//! standard library and the `regex` crate use it internally.
 
 use memchr::memchr;
 use memchr::memchr_iter;

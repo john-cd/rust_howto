@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates checked arithmetic with `DateTime` and `Duration`.
+//!
+//! Date arithmetic can overflow or produce an invalid date. The checked methods
+//! return `None` instead of panicking, which matters when the input comes from
+//! users or files.
 
 use chrono::DateTime;
 use chrono::Duration;

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This is an example of how to use the MeiliSearch Rust SDK to index and
 //! search documents.
+//!
+//! Meilisearch is a search server with typo tolerance and instant results,
+//! suited to "search as you type". Documents are sent to an index, and searches
+//! go through its HTTP API. The example needs a running server.
 
 use std::env;
 

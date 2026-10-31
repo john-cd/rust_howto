@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Concatenates constant string slices at compile time with `constcat`.
+//!
+//! Constants are computed at compile time, so a combined message costs nothing
+//! at run time. The standard `concat!` macro handles literals; the `constcat`
+//! crate also combines constants.
 
 use constcat::concat;
 

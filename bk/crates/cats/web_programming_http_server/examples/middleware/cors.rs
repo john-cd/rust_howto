@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Example showing how to add CORS headers to responses.
+//!
+//! Browsers block a web page from calling an API on another origin (domain)
+//! unless the API allows it with CORS (cross-origin resource sharing) headers.
+//! Allow only the origins and methods you need; allowing everything is risky
+//! for APIs that use cookies.
 
 use std::convert::Infallible;
 

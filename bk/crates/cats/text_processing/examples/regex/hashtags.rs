@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Extracting hashtags from a text with a regular expression.
+//!
+//! A regular expression (regex) describes a text pattern. Capture groups pick
+//! out parts of a match; here the word after the `#`. Compile a regex once and
+//! reuse it, because compilation is costly.
 
 use std::collections::HashSet;
 

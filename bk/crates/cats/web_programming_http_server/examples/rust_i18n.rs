@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Localizes an API error using the request's `Accept-Language` header.
+//!
+//! Internationalization (i18n) adapts software to different languages. The
+//! `Accept-Language` header tells the server which languages the user prefers,
+//! in order, so error messages can come back in the right one.
 
 // This macro must be declared at the crate root. Keeping this example in its
 // own binary target gives it that root and loads `locales/*.yml`.

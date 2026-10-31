@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates parsing various date and time strings into `chrono` types.
+//!
+//! Dates arrive as text in many layouts: RFC 2822 (emails), RFC 3339 / ISO 8601
+//! (APIs) and custom ones. Parsing requires you to know the format, and an
+//! error means the text did not match it.
 
 use chrono::DateTime;
 use chrono::NaiveDate;

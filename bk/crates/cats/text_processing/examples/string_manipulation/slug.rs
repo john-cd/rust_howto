@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Turn a title into a URL-friendly slug.
+//!
+//! A slug is the readable part of a URL derived from a title: lowercase, words
+//! joined by hyphens, accents removed (for example `my-first-post`). It makes
+//! addresses friendly to people and search engines.
 
 use slug::slugify;
 

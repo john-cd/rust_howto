@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Measuring the similarity of strings with `strsim`.
+//!
+//! String similarity metrics measure how close two strings are. Levenshtein
+//! distance counts the single-character edits (insert, delete, replace) needed
+//! to turn one into the other. It powers spell-checking and "did you mean"
+//! suggestions.
 
 use strsim::damerau_levenshtein;
 use strsim::hamming;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Passing preprocessor definitions to C code compiled with the `cc` crate.
+//!
+//! Preprocessor definitions (`-DNAME=value`) switch parts of C code on or off
+//! at compile time. The `cc` crate passes them from a build script, so Rust can
+//! configure the native code it builds.
 
 use std::ffi::CStr;
 use std::ffi::c_char;

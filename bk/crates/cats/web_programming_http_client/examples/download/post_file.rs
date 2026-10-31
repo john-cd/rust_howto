@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example shows how to POST a file to a server.
+//!
+//! A file can be uploaded as the body of a `POST` request. The `Content-Type`
+//! header tells the server how to interpret it; browsers use
+//! `multipart/form-data` for forms with files.
 
 use std::path::Path;
 

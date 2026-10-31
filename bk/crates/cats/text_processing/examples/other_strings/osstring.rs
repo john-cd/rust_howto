@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Working with `OsString` and `OsStr`, the platform-native strings.
+//!
+//! File names and environment variables are not always valid UTF-8, especially
+//! on Linux and Windows. `OsString` can hold any such text, while `String` must
+//! be valid UTF-8, so converting can fail.
 
 use std::env;
 use std::ffi::OsStr;
