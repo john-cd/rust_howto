@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! An attribute procedural macro that logs function calls.
+//!
+//! An attribute macro is a procedural macro, a Rust function that runs at
+//! compile time and rewrites the item it is attached to. This one wraps a
+//! function to log its calls. It must be defined in a crate of its own.
 
 // Import our custom attribute macro.
 use proc_macros::log_calls;

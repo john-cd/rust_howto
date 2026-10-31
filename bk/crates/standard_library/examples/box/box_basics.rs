@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Basic `Box` usage.
+//!
+//! `Box<T>` stores a value on the heap and owns it. Use it for large values you
+//! do not want to copy, for trait objects, and for recursive types whose size
+//! must be known.
 
 /// An example struct, which does not implement the `Copy` trait.
 /// This means that when an instance of `MyStruct` is moved, the original

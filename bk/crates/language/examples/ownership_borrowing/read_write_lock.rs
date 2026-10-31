@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Many shared references or one mutable reference.
+//!
+//! The borrow rules allow many shared references or exactly one mutable
+//! reference at a time, never both. This prevents data races and iterator
+//! invalidation at compile time. A `RwLock` applies the same rule at run time
+//! across threads.
 
 /// A struct holding a flag.
 #[derive(Debug)]

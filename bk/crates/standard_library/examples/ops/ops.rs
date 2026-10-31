@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Overloading the `+` operator with `Add`.
+//!
+//! Operator overloading means implementing the traits in `std::ops`, such as
+//! `Add` for `+`. It suits types with a mathematical meaning (vectors, money,
+//! durations); avoid it where the operator would surprise readers.
 
 use std::ops::Add;
 

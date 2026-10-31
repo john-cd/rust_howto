@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of a sealed trait, preventing external implementations.
+//!
+//! A sealed trait cannot be implemented outside its crate, because it requires
+//! a private supertrait. Library authors use it to add methods later without
+//! breaking users' code.
 
 /// A module that exposes a trait that cannot be implemented outside of it.
 mod a_module {

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A trait with an associated type.
+//!
+//! An associated type is a type placeholder inside a trait that each
+//! implementation fills in, such as `Item` in `Iterator`. It is clearer than a
+//! generic parameter when there is exactly one sensible choice per implementer.
 
 /// A trait that represents an iterator (similar to what is in the standard
 /// library).

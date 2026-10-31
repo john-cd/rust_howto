@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A lifetime parameter on a struct and on its `impl` blocks.
+//!
+//! A struct that holds a reference needs a lifetime parameter, which says the
+//! struct cannot outlive the data it borrows. The compiler then rejects code
+//! that would leave a dangling reference.
 
 /// A struct that holds a reference to a string slice.
 struct Excerpt<'a> {

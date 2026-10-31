@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A plugin system that stores shared services by their `TypeId`.
+//!
+//! A service registry stores one object per type, keyed by `TypeId`, and
+//! plugins look up the services they need. It is the idea behind
+//! dependency-injection containers. Downcasting back to the real type checks
+//! the type at run time.
 
 use std::any::Any;
 use std::any::TypeId;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Functions that never return.
+//!
+//! A diverging function never returns, for example because it exits the program
+//! or loops forever. Its return type is `!` (the never type), which coerces to
+//! any other type.
 
 /// This function diverges, meaning it never returns.
 /// It uses the `!` (Never) return type to indicate this.

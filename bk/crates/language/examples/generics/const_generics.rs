@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A struct generic over a constant, the length of an array.
+//!
+//! Const generics parameterize a type by a value, here an array length, so
+//! `Buffer<8>` and `Buffer<16>` are different types, checked at compile time
+//! and without heap allocation.
 
 /// Struct with a const parameter.
 ///

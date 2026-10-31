@@ -1,4 +1,10 @@
 // TODO Reviewed ??-??-2026.
+//! Draw a vector shape in an OpenGL window with FemtoVG.
+//!
+//! FemtoVG is a 2D vector graphics library (paths, fills, strokes, text) that
+//! draws with OpenGL, so the GPU does the work. `winit` creates the window and
+//! `glutin` the OpenGL context. It needs a desktop session with a GPU or a
+//! software OpenGL driver.
 
 use std::num::NonZeroU32;
 

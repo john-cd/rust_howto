@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates the use of the `clone` method
 //! to create a deep copy of a `String`.
+//!
+//! Every value has one owner; assigning it moves ownership. `clone()` makes an
+//! independent deep copy, which can be expensive, so clone only when you really
+//! need two owners.
 
 /// This example demonstrates the use of the `clone` method
 /// to create a deep copy of a `String`.

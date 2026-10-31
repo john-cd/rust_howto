@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Trait objects with auto traits such as `Send`.
+//!
+//! A `Box<dyn Trait>` is not `Send` unless you say so: `Box<dyn Trait + Send>`.
+//! Spawning threads and async tasks needs the `Send` form.
 
 // Define a trait with a method:
 /// A thing that can send a message.

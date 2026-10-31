@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A blanket implementation of a trait for all types that implement another.
+//!
+//! A blanket implementation implements a trait for every type that meets a
+//! bound, for example `impl<T: Display> MyTrait for T`. The standard library
+//! does this: `ToString` exists for everything that implements `Display`.
 
 /// A module that defines a trait and its blanket implementation.
 mod my {

@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Lifetime parameters on a function.
+//!
+//! A lifetime describes how long a reference stays valid. When a function
+//! returns a reference, the compiler must know which input it borrows from, so
+//! you name the relationship with a lifetime parameter such as `'a`. It adds no
+//! run-time cost; it only lets the compiler prove that a reference never
+//! outlives its data.
 
 /// This function has a lifetime parameter `'a`.
 /// The lifetime parameter can be used by references within the function

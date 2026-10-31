@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Accepting several types through `AsRef`.
+//!
+//! `AsRef<T>` is a cheap conversion to a reference. A function that takes `impl
+//! AsRef<str>` accepts `&str`, `String` and more, without the caller converting
+//! first; `AsRef<Path>` is why file functions take strings and paths alike.
 
 /// This function takes a generic type `T` that implements the `AsRef<str>`
 /// trait. It converts the input `s` to a string slice (`&str`) using

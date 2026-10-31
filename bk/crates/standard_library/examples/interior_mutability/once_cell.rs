@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! `OnceCell<T>` allows for single assignment, interior mutability.
 //! It's typically used for lazy initialization of a value.
+//!
+//! Interior mutability changes data behind a shared reference (`&T`), moving
+//! the borrow check from compile time to run time. `OnceCell` can be set once,
+//! and later reads are free.
 
 use std::cell::OnceCell;
 

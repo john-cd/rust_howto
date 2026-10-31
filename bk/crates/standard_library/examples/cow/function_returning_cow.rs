@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of a function returning a `Cow`.
+//!
+//! Returning `Cow` lets a function return its input untouched (no allocation)
+//! when nothing needs changing, and a new `String` only when it does, as in
+//! escaping or normalizing text.
 
 use std::borrow::Cow;
 
