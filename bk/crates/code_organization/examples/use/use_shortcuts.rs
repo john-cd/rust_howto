@@ -3,13 +3,15 @@
 // ANCHOR: example
 //! Shortcuts for `use`: globs, grouped imports, `self` and aliases.
 
-#![allow(unused_imports)]
-
 // Use a glob (the `*`) to bring all public objects within a module
 // (here `default`) in scope. Use sparingly.
 use std::default::*;
 // The most common use of globs is to import a "prelude", a group of items
 // commonly used together. See the "code organization" chapter.
+#[expect(
+    unused_imports,
+    reason = "Illustrates importing traits via standard prelude."
+)]
 use std::io::prelude::*;
 // The `std::io::prelude::*` import above includes the common `Read` and
 // `Write` traits, so they do not need a second explicit import here.
@@ -27,6 +29,11 @@ fn main() {
 
     // Use the alias defined above:
     destruct(v);
+
+    // Use items from grouped imports:
+    let _ = iter::empty::<u8>();
+    let _ = empty::<u8>();
+
     println!(
         "use_shortcuts example: glob imports, combined imports, and aliases"
     );

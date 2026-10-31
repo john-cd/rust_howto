@@ -1,4 +1,3 @@
-#![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
 // ANCHOR: example
 //! The `pub` keyword on functions, types, traits and modules.
@@ -52,6 +51,10 @@ fn main() {
     // Equivalent to `m::Struct::method(&m::Struct);`.
 
     // Bring the public submodule into scope.
+    #[expect(
+        unused_imports,
+        reason = "Demonstrates that public submodules can be imported."
+    )]
     use m::public_module;
     // ERROR: use m::private_module;
     println!("pub_keyword example: public items accessible, private items not");

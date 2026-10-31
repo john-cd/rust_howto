@@ -1,4 +1,3 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -7,6 +6,10 @@
 /// Declares a variable `x`, which is not visible where the macro is called.
 macro_rules! foo {
     () => {
+        #[expect(
+            unused_variables,
+            reason = "Demonstrates local variable hygiene inside macro."
+        )]
         let x = 3; // `x` is local to the macro.
     };
 }

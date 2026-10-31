@@ -64,11 +64,11 @@ fn func2<U>(value: MyStruct<U>) -> U {
 /// type of the hasher. `S` has a default type of `RandomState`, which is a
 /// common hasher type in Rust. This means that if you don't specify a hasher
 /// type when creating a `HashMap`, it will use `RandomState` by default.
-#[allow(unused)]
 struct MyHashMap<K, V, S = RandomState> {
     /// The key-value pairs.
     inner: Vec<(K, V)>,
     /// The hasher.
+    #[expect(dead_code, reason = "Demonstrates storing a hasher state.")]
     hasher: S,
 }
 

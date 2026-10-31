@@ -49,22 +49,8 @@ When a type wraps a single value to associate it with higher-level semantics, ac
 
 With a few exceptions, the `get_` prefix is not used for getters in Rust code.{{hi:Getters}} Follow the field name by `_mut` for mutating getters.
 
-```rust,noplayground
-pub struct S {
-    first: First,
-}
-
-impl S {
-    // Not `get_first`.
-    pub fn first(&self) -> &First {
-        &self.first
-    }
-
-    // Not `get_first_mut`, `get_mut_first`, or `mut_first`.
-    pub fn first_mut(&mut self) -> &mut First {
-        &mut self.first
-    }
-}
+```rust,editable
+{{#include ../../crates/code_organization/examples/naming_conventions/main.rs:example}}
 ```
 
 For getters that do runtime validation such as bounds checking, consider adding unsafe `_unchecked` variants.

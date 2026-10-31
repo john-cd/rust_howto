@@ -30,17 +30,8 @@ You may start the path with `::` followed by the name of the crate if a crate na
 
 Once adding an external crate as a dependency, you will very often bring items from external crates into scope with the `use` keyword. See the [[use_declarations | `use` Keyword]] chapter for details.
 
-```rust,noplayground
-// Bring the following items into scope:
-use anyhow::Result; // A type alias.
-use anyhow::anyhow; // The `anyhow!` macro.
-use anyhow::Error;  // A struct.
-
-// Refer to `Result` without having to write its full path every time:
-fn main() -> Result<()> {
-  // ...
-  Ok(())
-}
+```rust,editable
+{{#include ../../crates/code_organization/examples/dependencies/main.rs:example}}
 ```
 
 ## References {#references .skip}

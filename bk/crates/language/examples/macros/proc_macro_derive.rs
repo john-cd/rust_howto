@@ -1,4 +1,3 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -18,6 +17,10 @@ pub trait DebugPrint {
 // We also derive the standard `Debug` trait.
 /// A user, with a derived [`DebugPrint`] implementation.
 #[derive(DebugPrint, Debug)]
+#[expect(
+    dead_code,
+    reason = "Fields are formatted via derived Debug implementation."
+)]
 struct User {
     /// Unique identifier of the user.
     id: u64,

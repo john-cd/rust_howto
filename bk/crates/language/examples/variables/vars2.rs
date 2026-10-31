@@ -1,4 +1,3 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -18,6 +17,7 @@ fn main() {
     // Rust's immutability is deep, not shallow:
     // it applies to the inner fields of a struct, tuple, array, etc.
     let s = MyStruct { flag: true };
+    assert!(s.flag);
     // s.flag = false; // ERROR: cannot assign to `s.flag`, as `s` is not
     // declared as mutable.
     println!("s: {s:?}");

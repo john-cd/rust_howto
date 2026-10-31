@@ -3,15 +3,18 @@
 // ANCHOR: example
 //! Native implemented functions for Erlang and Elixir with `rustler`.
 
-#![allow(unused)]
-
 #[cfg(feature = "erlang")]
 use rustler::Env;
 #[cfg(feature = "erlang")]
 use rustler::NifResult;
 
 /// The functions exposed to Erlang and Elixir.
+#[expect(
+    dead_code,
+    reason = "These functions are exported as NIFs for the Erlang runtime."
+)]
 mod nif {
+    #[cfg(feature = "erlang")]
     use super::*;
 
     /// The `rustler` crate provides macros and functions for creating NIFs
