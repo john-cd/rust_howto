@@ -25,7 +25,6 @@ WAIT move code examples from `later/` to `bk/` when code and text are ready.
 - [#2118](https://github.com/john-cd/rust_howto/issues/2118) — **Epic** — Tooling, CI and repository infrastructure.
 - [#2132](https://github.com/john-cd/rust_howto/issues/2132) — Migrate section-header badge lines to `{{#badges}}` (P4).
 - [#2133](https://github.com/john-cd/rust_howto/issues/2133) — Close the last 59 example-test convention gaps (P3).
-- [#2134](https://github.com/john-cd/rust_howto/issues/2134) — Update workflows README; resolve leftover FIXME/TODO placeholders (P4).
 - [#2135](https://github.com/john-cd/rust_howto/issues/2135) — Replace blanket `#![allow(unused)]`; add examples to three chapters (P4).
 
 ## Briefs for Jules
@@ -45,18 +44,6 @@ General rules for every brief: work from a clean checkout of `develop` on a topi
   6. One commit per crate.
 - **Checks:** `python3 scripts/check_example_tests.py --summary`; in `bk/` and `tools/`: `just ca`, `just nta`; `python3 -m unittest discover scripts/tests`.
 - **Done when:** the TOTAL line shows every file compliant, or each remaining file is listed with a reason in the issue.
-
-### Brief B — #2134 workflows README and placeholders (P4)
-
-- **Goal:** documentation matches `.github/workflows/`; no stray `FIXME` or placeholder text.
-- **Files:**
-  - `.github/workflows/README.md`: add rows for `audit_dependencies.yml`, `build_book_code_on_macos.yml`, `native_platform_examples.yml`, `test-allocator-examples.yml`; remove the `deploy_book.yaml` sentence.
-  - `bk/crates/cats/web_programming_http_server/examples/leptos.rs:55`: remove the commented `// FIXME mount_to_body(App);` or turn it into an explanation.
-  - `later/crates/cats/game_engines/Cargo.toml:35`: bare `# FIXME`.
-  - `bk/drafts/categories/development-tools_testing/testing.md:120`: bare `FIXME`.
-  - `tools/mdbook-scrub/test_book/src/{crate_links,crate_badges,category_links,category_badges}.md` and `SUMMARY.md`: "NOT IMPLEMENTED" stubs.
-- **Steps:** read each workflow's `on:` block and job names to write the README rows (file, trigger, purpose). Delete the stub pages and their SUMMARY entries unless a test references them (`grep -rn crate_badges tools/mdbook-scrub`). Do not touch the Windows review `TODO` comments in `later/crates/cats/gui/examples/2d_renderers/main.rs`, `development_tools_ffi/examples/ruby/main.rs` and `game_engines/Cargo.toml:31` (tracked in #2115).
-- **Checks:** `python3 bk/scripts/check_visible_todos.py`; `python3 scripts/check_audit_workflow_paths.py`; in `tools/` and `bk/`: `just ca`, `just nta`.
 
 ### Brief C — #2135 blanket `allow(unused)` and inline-only chapters (P4)
 
