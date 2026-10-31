@@ -105,6 +105,8 @@ mod tests {
     /// Runs the riker example through its entry point.
     #[test]
     fn test_riker_example_entry_point() -> Result<()> {
-        main()
+        main()?;
+        assert!(run().is_ok());
+        Ok(())
     }
 }
