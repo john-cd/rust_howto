@@ -1,4 +1,3 @@
-#![allow(unused_variables)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -51,6 +50,7 @@ fn main() {
     let e2: Excerpt<'_> = Excerpt {
         part: &another_part,
     };
+    println!("{} level {}", e2.part(), e2.level());
     // e2.only_if_static(); // ERROR: argument requires that `another_part` is
     // borrowed for `'static`
 }

@@ -1,4 +1,3 @@
-#![allow(unused_variables)]
 // TODO Reviewed ??-??-2026.
 // ANCHOR: example
 //! Example of (non-)dyn-compatible traits.
@@ -121,14 +120,14 @@ trait TraitMethods {
         Self: Sized;
 
     /// Takes another `Self`, so it is excluded from trait objects.
-    fn param(&self, other: Self)
+    fn param(&self, _other: Self)
     where
         Self: Sized,
     {
     }
 
     /// Has a type parameter, so it is excluded from trait objects.
-    fn typed<T>(&self, x: T)
+    fn typed<T>(&self, _x: T)
     where
         Self: Sized,
     {

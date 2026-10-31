@@ -127,24 +127,13 @@ Instead of working with deeply-nested modules, it is convenient to keep submodul
 
 For example, you may write in `module1`:
 
-```rust,noplayground
-// Private submodules.
-mod submodule1;
-mod submodule2;
-
-// Reexport a public function and struct.
-pub use submodule1::public_function;
-pub use submodule2::Struct1;
+```rust
+{{#include ../../crates/code_organization/examples/project_layout/main.rs:reexports}}
 ```
 
 This flattens the module hierarchy and hides implementation details.
 Code in a parent module then refers to:
 
-```rust,noplayground
-// The function and struct appear as if they were defined in `module1`.
-use module1::public_function;
-use module1::Struct1;
-```
 
 See the [[use_declarations | `use` keyword]] chapter.
 
@@ -154,28 +143,11 @@ Library crates with complex public APIs or deeply nested modules often define a 
 
 A single glob import e.g., `use crate_name::prelude::*;` brings all these common items into scope in one fell swoop and removes the need for repetitive `use` declarations:
 
-```rust,noplayground
-// `src/lib.rs`:
-pub mod prelude {
-    // Reexport commonly used types, traits, or functions:
-    pub use super::a_module::SuperCommonType;
-    pub use super::a_module::super_common_function;
-
-    // You may also reexport commonly used items from a dependency of your library:
-    pub use my_dependency::some_module::CommonType;
-}
-
-pub mod a_module {
-    pub fn super_common_function() { /* ... */ }
-    pub struct SuperCommonType {
-      // ...
-    }
-}
-
-// In the client:
-use crate_name::prelude::*;
-// No need to import common items individually.
+```rust
+{{#include ../../crates/code_organization/examples/project_layout/main.rs:prelude}}
 ```
+
+You may also reexport commonly used items from a dependency of your library, e.g. `pub use my_dependency::some_module::CommonType;`.
 
 The standard library includes a number of preludes. For example, adding [`use std::io::prelude::*;`][c~std::io::prelude~docs]↗{{hi:std::io::prelude}} at the top of I/O heavy modules imports common I/O traits in one line.
 

@@ -49,22 +49,8 @@ When a type wraps a single value to associate it with higher-level semantics, ac
 
 With a few exceptions, the `get_` prefix is not used for getters in Rust code.{{hi:Getters}} Follow the field name by `_mut` for mutating getters.
 
-```rust,noplayground
-pub struct S {
-    first: First,
-}
-
-impl S {
-    // Not `get_first`.
-    pub fn first(&self) -> &First {
-        &self.first
-    }
-
-    // Not `get_first_mut`, `get_mut_first`, or `mut_first`.
-    pub fn first_mut(&mut self) -> &mut First {
-        &mut self.first
-    }
-}
+```rust
+{{#include ../../crates/code_organization/examples/naming_conventions/main.rs:getters}}
 ```
 
 For getters that do runtime validation such as bounds checking, consider adding unsafe `_unchecked` variants.
@@ -73,10 +59,8 @@ For getters that do runtime validation such as bounds checking, consider adding 
 
 For a container with elements of type `U`, iterator methods should be named:{{hi:Iterator methods}}
 
-```rust,noplayground
-fn iter(&self) -> Iter             // The `Iter` struct implements `Iterator<Item = &U>`.
-fn iter_mut(&mut self) -> IterMut  // `IterMut` implements `Iterator<Item = &mut U>`.
-fn into_iter(self) -> IntoIter     // `IntoIter` implements `Iterator<Item = U>`.
+```rust
+{{#include ../../crates/code_organization/examples/naming_conventions/main.rs:iterators}}
 ```
 
 ## References {#references .skip}

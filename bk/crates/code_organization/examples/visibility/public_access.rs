@@ -1,4 +1,3 @@
-#![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
 // ANCHOR: example
 //! Which items are accessible through nested public and private modules.

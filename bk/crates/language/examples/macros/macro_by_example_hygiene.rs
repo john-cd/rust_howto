@@ -1,4 +1,3 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -7,7 +6,7 @@
 /// Declares a variable `x`, which is not visible where the macro is called.
 macro_rules! foo {
     () => {
-        let x = 3; // `x` is local to the macro.
+        let _x = 3; // `_x` is local to the macro.
     };
 }
 

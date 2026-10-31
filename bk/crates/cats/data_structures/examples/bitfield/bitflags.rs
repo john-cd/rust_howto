@@ -1,4 +1,3 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -78,6 +77,7 @@ fn main() {
         "MyFlags(FLAG_A | FLAG_B)"
     );
     println!("{flags:?}");
+    assert_eq!(flags.as_u64(), 0b111);
 
     // Bitwise pattern matching:
     bitflags::bitflags_match!(flags, {

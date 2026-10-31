@@ -3,14 +3,13 @@
 // ANCHOR: example
 //! This example demonstrates common string types in Rust.
 
-#![allow(unused_assignments)]
-
 // `String` stores UTF-8 bytes and can represent Unicode text; ASCII is a subset
 // of UTF-8.
 /// Creates and mutates a `String`.
 fn string() {
     // Create an empty string:
     let mut s1 = String::new();
+    assert!(s1.is_empty());
 
     // Create a `String` from a string literal via the `From` trait.
     s1 = String::from("hello");
