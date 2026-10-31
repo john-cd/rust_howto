@@ -8,37 +8,30 @@
 //! function) is native code the VM calls directly. A crash in a NIF takes down
 //! the whole VM, so Rustler's safety matters.
 
-#![allow(unused)]
-
-#[cfg(feature = "erlang")]
-use rustler::Env;
-#[cfg(feature = "erlang")]
-use rustler::NifResult;
-
 /// The functions exposed to Erlang and Elixir.
 mod nif {
-    use super::*;
-
     /// The `rustler` crate provides macros and functions for creating NIFs
     /// (Native Implemented Functions). NIFs are functions written in Rust that
     /// can be called directly from Erlang or Elixir code.
-    fn greeting(name: String) -> String {
+    pub fn greeting(name: String) -> String {
         format!("Hello, {name}!")
     }
 
     /// Returns a greeting for `name`.
-    #[cfg_attr(feature = "erlang", rustler::nif)]
+    #[cfg(feature = "erlang")]
+    #[rustler::nif]
     fn greet(name: String) -> String {
         greeting(name)
     }
 
     /// `add` is a NIF that takes two integers and returns their sum.
-    fn sum(a: i32, b: i32) -> i32 {
+    pub fn sum(a: i32, b: i32) -> i32 {
         a + b
     }
 
     /// Returns the sum of `a` and `b`.
-    #[cfg_attr(feature = "erlang", rustler::nif)]
+    #[cfg(feature = "erlang")]
+    #[rustler::nif]
     fn add(a: i32, b: i32) -> i32 {
         sum(a, b)
     }
@@ -65,8 +58,11 @@ mod nif {
     rustler::init!("Elixir.MyRustLibrary");
 }
 
-/// Prints a message: the functions are meant to be loaded by Erlang or Elixir.
+/// Calls the plain Rust helpers behind the NIFs. The NIFs themselves are meant
+/// to be loaded by Erlang or Elixir.
 fn main() {
+    println!("{}", nif::greeting("Rust".to_owned()));
+    println!("20 + 22 = {}", nif::sum(20, 22));
     #[cfg(not(feature = "erlang"))]
     println!("Rustler example requires the `erlang` feature.");
     #[cfg(feature = "erlang")]
