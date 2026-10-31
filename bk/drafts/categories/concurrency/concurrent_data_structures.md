@@ -33,7 +33,7 @@ An entry guard returned by `get` or `get_mut` holds a shard lock. Drop guards pr
 
 ## Bounded Multi-producer Multi-consumer Queue {#crossbeam-queue}
 
-[![crossbeam-queue~website][c~crossbeam-queue~website~badge]][c~crossbeam-queue~website] [![crossbeam-queue][c~crossbeam-queue~docs~badge]][c~crossbeam-queue~docs] [![crossbeam-queue~crates.io][c~crossbeam-queue~crates.io~badge]][c~crossbeam-queue~crates.io] [![crossbeam-queue~repo][c~crossbeam-queue~repo~badge]][c~crossbeam-queue~repo] [![crossbeam-queue~lib.rs][c~crossbeam-queue~lib.rs~badge]][c~crossbeam-queue~lib.rs]{{hi:crossbeam-queue}}{{hi:Queue}}{{hi:Mpmc}}{{hi:Lock-free}}{{hi:Producer}}{{hi:Consumer}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![crossbeam-queue~website][c~crossbeam-queue~website~badge]][c~crossbeam-queue~website] {{#badges crossbeam-queue}} {{hi:Queue}} {{hi:Mpmc}} {{hi:Lock-free}} {{hi:Producer}} {{hi:Consumer}} {{#categories concurrency=Concurrency,data-structures="Data structures",no-std="No standard library"}}
 
 [`crossbeam-queue`][c~crossbeam-queue~docs]↗{{hi:crossbeam-queue}} provides various concurrent queue implementations in Rust, designed for efficient and safe communication between threads. It offers different queue types optimized for various use cases, including single-producer/single-consumer, multi-producer/multi-consumer, and bounded/unbounded queues. These queues are essential for building concurrent data structures and message-passing systems, enabling threads to exchange data without race conditions or memory safety issues.
 

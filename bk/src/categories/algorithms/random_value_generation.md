@@ -8,7 +8,7 @@
 
 ## Generate Random Numbers or Boolean Values {#generate-random-numbers}
 
-[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] {{#badges rand}} {{hi:Random}} {{hi:Rng}} {{#categories algorithms=Algorithms,no-std="No standard library"}}
 
 This example demonstrates the basic usage of the `rand` crate for generating random numbers {{hi:Random numbers}}:
 
@@ -18,7 +18,7 @@ This example demonstrates the basic usage of the `rand` crate for generating ran
 
 ## Generate Random Numbers Within a Range {#generate-random-numbers-within-a-range}
 
-[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] {{#badges rand}} {{hi:Random}} {{hi:Rng}} {{#categories algorithms=Algorithms,no-std="No standard library"}}
 
 This example generates a random value{{hi:Random value}} within the half-open `[0, 10)` range (not including `10`):
 
@@ -34,9 +34,9 @@ Using `rand::distr::Uniform` has the same effect but may be faster than `rand::R
 
 ## Generate Random Numbers Within a Given Distribution {#generate-random-numbers-within-a-given-distribution}
 
-[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] {{#badges rand}} {{hi:Random}} {{hi:Rng}} {{#categories algorithms=Algorithms,no-std="No standard library"}}
 
-[![rand_distr~website][c~rand_distr~website~badge]][c~rand_distr~website] [![rand_distr][c~rand_distr~docs~badge]][c~rand_distr~docs] [![rand_distr~crates.io][c~rand_distr~crates.io~badge]][c~rand_distr~crates.io] [![rand_distr~repo][c~rand_distr~repo~badge]][c~rand_distr~repo] [![rand_distr~lib.rs][c~rand_distr~lib.rs~badge]][c~rand_distr~lib.rs]{{hi:rand_distr}}{{hi:Random}}{{hi:Probability}}{{hi:Distribution}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand_distr~website][c~rand_distr~website~badge]][c~rand_distr~website] {{#badges rand_distr}} {{hi:Random}} {{hi:Probability}} {{hi:Distribution}} {{hi:Rng}} {{#categories algorithms=Algorithms,no-std="No standard library"}}
 
 By default, random numbers{{hi:Random numbers}} in the [`rand`][c~rand~docs]↗{{hi:rand}} crate have [uniform distribution][wikipedia~uniform-distribution]↗{{hi:Uniform distribution}}. The [`rand_distr`][c~rand_distr~docs]↗{{hi:rand_distr}} crate is a super-set of the `rand::distr` module and provides other kinds of statistical distributions{{hi:Distributions}}. Sample from a distribution using the `rand::distr::Distribution::sample` function, passing a random-number generator (implementing [`rand::Rng`][c~rand::Rng~docs]↗{{hi:rand::Rng}}).
 
@@ -48,7 +48,7 @@ An example using the [`rand_distr::Normal`][c~rand_distr::Normal~docs]↗{{hi:ra
 
 ## Generate Random Values of a Custom Type {#generate-random-values-custom-type}
 
-[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] {{#badges rand}} {{hi:Random}} {{hi:Rng}} {{#categories algorithms=Algorithms,no-std="No standard library"}}
 
 The following randomly generates a tuple `(i32, bool, f64)` and variable of user defined type `Point`, by implementing the `Distribution` trait:
 
@@ -58,7 +58,7 @@ The following randomly generates a tuple `(i32, bool, f64)` and variable of user
 
 ## Create Random Passwords from a Set of Alphanumeric Characters {#generate-random-values-from-set-alphanumeric}
 
-[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} {{hi:Algorithms}}{{hi:Random passwords}}
+[![rand~website][c~rand~website~badge]][c~rand~website] {{#badges rand}} {{hi:Random}} {{hi:Rng}} {{#categories algorithms=Algorithms,no-std="No standard library"}} {{hi:Algorithms}} {{hi:Random passwords}}
 
 This example randomly generates strings of given length from ASCII characters in the range `A-Z, a-z, 0-9`, using the `Alphanumeric` distribution:
 
@@ -68,7 +68,7 @@ This example randomly generates strings of given length from ASCII characters in
 
 ## Create Random Passwords from a Set of User-defined Characters {#create-random-passwords-from-a-set-of-user-defined-characters}
 
-[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![rand~website][c~rand~website~badge]][c~rand~website] {{#badges rand}} {{hi:Random}} {{hi:Rng}} {{#categories algorithms=Algorithms,no-std="No standard library"}}
 
 The following randomly generates a string of given length (e.g. a password) using a predefined character set:
 

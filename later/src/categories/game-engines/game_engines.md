@@ -19,7 +19,7 @@ These options differ in scope and platform support. For individual game-developm
 
 ## Develop Games with `bevy` {#bevy}
 
-[![bevy~website][c~bevy~website~badge]][c~bevy~website] [![bevy][c~bevy~docs~badge]][c~bevy~docs] [![bevy~crates.io][c~bevy~crates.io~badge]][c~bevy~crates.io] [![bevy~repo][c~bevy~repo~badge]][c~bevy~repo] [![bevy~lib.rs][c~bevy~lib.rs~badge]][c~bevy~lib.rs]{{hi:bevy}}{{hi:bevy}}{{hi:Engine}}{{hi:Game}}{{hi:Gamedev}}{{hi:Graphics}} [![cat~game-engines][cat~game-engines~badge]][cat~game-engines]{{hi:Game engines}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
+[![bevy~website][c~bevy~website~badge]][c~bevy~website] {{#badges bevy}} {{hi:bevy}} {{hi:Engine}} {{hi:Game}} {{hi:Gamedev}} {{hi:Graphics}} {{#categories game-engines="Game engines",gui=GUI,rendering=Rendering,graphics=Graphics}}
 
 Bevy is a data-driven engine and app framework with an integrated entity-component-system (ECS). It supports both 2D and 3D games, and its modular plugins let an app choose which engine services to include.
 
@@ -31,7 +31,7 @@ This headless example uses MinimalPlugins and no renderer. A full game typically
 
 ## Develop Games with `fyrox` {#fyrox}
 
-[![fyrox~website][c~fyrox~website~badge]][c~fyrox~website] [![fyrox][c~fyrox~docs~badge]][c~fyrox~docs] [![fyrox~crates.io][c~fyrox~crates.io~badge]][c~fyrox~crates.io] [![fyrox~repo][c~fyrox~repo~badge]][c~fyrox~repo] [![fyrox~lib.rs][c~fyrox~lib.rs~badge]][c~fyrox~lib.rs]{{hi:fyrox}}{{hi:3d}}{{hi:Engine}}{{hi:Game}}{{hi:Gui}}{{hi:Sound}} [![cat~game-engines][cat~game-engines~badge]][cat~game-engines]{{hi:Game engines}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
+[![fyrox~website][c~fyrox~website~badge]][c~fyrox~website] {{#badges fyrox}} {{hi:3d}} {{hi:Engine}} {{hi:Game}} {{hi:Gui}} {{hi:Sound}} {{#categories game-engines="Game engines",gui=GUI,rendering=Rendering,wasm=WebAssembly,graphics=Graphics}}
 
 Fyrox is a 2D and 3D engine built around scenes, plugins, and scripts rather than an ECS. Its project manager generates a project structure with an editor and platform-specific executors; see the [Fyrox project workflow][fyrox~project~book]↗.
 
@@ -53,7 +53,7 @@ The snippet below shows only the plugin, the part you write. The engine calls `u
 
 ## Develop 2D Games with `ggez` {#ggez}
 
-[![ggez~website][c~ggez~website~badge]][c~ggez~website] [![ggez][c~ggez~docs~badge]][c~ggez~docs] [![ggez~crates.io][c~ggez~crates.io~badge]][c~ggez~crates.io] [![ggez~repo][c~ggez~repo~badge]][c~ggez~repo] [![ggez~lib.rs][c~ggez~lib.rs~badge]][c~ggez~lib.rs]{{hi:ggez}}{{hi:Game}}{{hi:Graphics}}{{hi:2d}}{{hi:ggez}}{{hi:Engine}} [![cat~game-engines][cat~game-engines~badge]][cat~game-engines]{{hi:Game engines}}
+[![ggez~website][c~ggez~website~badge]][c~ggez~website] {{#badges ggez}} {{hi:Game}} {{hi:Graphics}} {{hi:2d}} {{hi:ggez}} {{hi:Engine}} {{#categories game-engines="Game engines"}}
 
 ggez is a lightweight framework for 2D games with an event-handler model, drawing, audio, and resource loading. It also offers basic 3D drawing, but does not prescribe physics or an ECS. Its maintainers list Windows, Linux, and macOS as supported platforms; web and mobile targets are not officially supported ([platform details][ggez~platforms~repo]↗).
 

@@ -29,7 +29,7 @@ For more demanding designs, estimate the hidden state of the system with a Kalma
 
 ## `nalgebra`: Linear Algebra Library for Control Algorithms {#nalgebra}
 
-[![nalgebra~website][c~nalgebra~website~badge]][c~nalgebra~website] [![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs] [![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io] [![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo] [![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]{{hi:nalgebra}}{{hi:Math}}{{hi:Algebra}}{{hi:Linear}}{{hi:Matrix}}{{hi:Vector}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+[![nalgebra~website][c~nalgebra~website~badge]][c~nalgebra~website] {{#badges nalgebra}} {{hi:Math}} {{hi:Algebra}} {{hi:Linear}} {{hi:Matrix}} {{hi:Vector}} {{#categories mathematics=Mathematics,no-std="No standard library",science=Science,wasm=WebAssembly}}
 
 General-purpose [linear algebra][p~linear-algebra] library with transformations and statically-sized or dynamically-sized matrices. Use it for state-space models (`x' = Ax + Bu`), coordinate transforms and the matrices of estimators.
 
@@ -56,7 +56,7 @@ Collision avoidance, trajectory optimization.
 
 ## Pathfinding Algorithms for Navigation with `pathfinding` {#pathfinding}
 
-[![pathfinding~website][c~pathfinding~website~badge]][c~pathfinding~website] [![pathfinding][c~pathfinding~docs~badge]][c~pathfinding~docs] [![pathfinding~crates.io][c~pathfinding~crates.io~badge]][c~pathfinding~crates.io] [![pathfinding~repo][c~pathfinding~repo~badge]][c~pathfinding~repo] [![pathfinding~lib.rs][c~pathfinding~lib.rs~badge]][c~pathfinding~lib.rs]{{hi:pathfinding}}{{hi:Astar}}{{hi:Graph}}{{hi:Flow}}{{hi:Dijkstra}}{{hi:Shortest-path}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+[![pathfinding~website][c~pathfinding~website~badge]][c~pathfinding~website] {{#badges pathfinding}} {{hi:Astar}} {{hi:Graph}} {{hi:Flow}} {{hi:Dijkstra}} {{hi:Shortest-path}} {{#categories algorithms=Algorithms}}
 
 [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} offers pathfinding, flow, and graph algorithms.
 

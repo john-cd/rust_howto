@@ -32,7 +32,7 @@ Many recipes are self-contained programs that you can copy into your own project
 
 Consider the following example for generating a random number:
 
-[![rand~website][c~rand~website~badge]][c~rand~website] [![rand][c~rand~docs~badge]][c~rand~docs] [![rand~crates.io][c~rand~crates.io~badge]][c~rand~crates.io] [![rand~repo][c~rand~repo~badge]][c~rand~repo] [![rand~lib.rs][c~rand~lib.rs~badge]][c~rand~lib.rs]{{hi:rand}}{{hi:Random}}{{hi:Rng}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+[![rand~website][c~rand~website~badge]][c~rand~website] {{#badges rand}} {{hi:Random}} {{hi:Rng}} {{#categories no-std="No standard library",algorithms=Algorithms}}
 
 ```rust,editable
 {{#include ../../crates/about/examples/about.rs:example}}

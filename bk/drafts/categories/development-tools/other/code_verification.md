@@ -23,7 +23,7 @@ Rust's type system and compiler reject many invalid programs, but passing compil
 
 ## Verify Your Rust Code with `kani` {#code-verifiers}
 
-[![kani][c~kani~docs~badge]][c~kani~docs] [![kani~crates.io][c~kani~crates.io~badge]][c~kani~crates.io] [![kani~repo][c~kani~repo~badge]][c~kani~repo] [![kani~lib.rs][c~kani~lib.rs~badge]][c~kani~lib.rs]{{hi:kani}}{{hi:Model-checking}}{{hi:Verification}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}{{hi:kani}}
+{{#badges kani}} {{hi:Model-checking}} {{hi:Verification}} {{#categories development-tools="Development tools"}} {{hi:kani}}
 
 [kani][c~kani~repo]↗ is a Rust verifier / model checker. A model checker formally verifies that a system like a software program meets a given specification, using mathematical techniques (automated reasoning) to prove that a system satisfies a property for all possible states and behaviors. Model checkers explore the entire state space of the system, as opposed to approaches like [fuzzing][p~fuzzing] and property [testing][p~testing].
 

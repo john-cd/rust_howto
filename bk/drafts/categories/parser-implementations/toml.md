@@ -40,7 +40,7 @@ Use `toml` with Serde to map data to Rust types, or parse into `toml::Value` whe
 
 ## Analyze and Format TOML with Taplo {#taplo}
 
-[![taplo~website][c~taplo~website~badge]][c~taplo~website] [![taplo][c~taplo~docs~badge]][c~taplo~docs] [![taplo~crates.io][c~taplo~crates.io~badge]][c~taplo~crates.io] [![taplo~repo][c~taplo~repo~badge]][c~taplo~repo] [![taplo~lib.rs][c~taplo~lib.rs~badge]][c~taplo~lib.rs]{{hi:taplo}}{{hi:Parser}}{{hi:Toml}}{{hi:Linter}}{{hi:Formatter}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
+[![taplo~website][c~taplo~website~badge]][c~taplo~website] {{#badges taplo}} {{hi:Parser}} {{hi:Toml}} {{hi:Linter}} {{hi:Formatter}} {{#categories parser-implementations="Parser implementations"}}
 
 [`Taplo`][c~taplo~website]↗{{hi:Taplo}} is a TOML parser, analyzer, formatter, and language server. Use its editor tooling to validate and format configuration files; use the Rust libraries above when TOML parsing is part of an application.
 

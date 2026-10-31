@@ -72,7 +72,7 @@ This recipe counts artist rows by nationality in an existing PostgreSQL `artists
 
 ## `cornucopia` for Postgres {#cornucopia}
 
-[![cornucopia~website][c~cornucopia~website~badge]][c~cornucopia~website] [![cornucopia][c~cornucopia~docs~badge]][c~cornucopia~docs] [![cornucopia~crates.io][c~cornucopia~crates.io~badge]][c~cornucopia~crates.io] [![cornucopia~repo][c~cornucopia~repo~badge]][c~cornucopia~repo] [![cornucopia~lib.rs][c~cornucopia~lib.rs~badge]][c~cornucopia~lib.rs]{{hi:cornucopia}}{{hi:Query}}{{hi:Generator}}{{hi:Tokio-postgres}}{{hi:Postgresql}}{{hi:Sql}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+[![cornucopia~website][c~cornucopia~website~badge]][c~cornucopia~website] {{#badges cornucopia}} {{hi:Query}} {{hi:Generator}} {{hi:Tokio-postgres}} {{hi:Postgresql}} {{hi:Sql}} {{#categories database="Database interfaces"}}
 
 Cornucopia is a command-line generator that prepares annotated SQL against a PostgreSQL database and writes a Rust crate of query bindings. The example uses the Cornucopia 1.0 CLI; the generated crate `cornucopia_queries` is a path dependency that re-exports the PostgreSQL driver, so no separate runtime crate is needed. Keep the generator, SQL, and checked-in generated crate in sync.
 

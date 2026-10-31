@@ -6,7 +6,7 @@ An Internet email message has headers, a blank line, and a body. [RFC 5322][rfc~
 
 ## Parse Messages with `mailparse` {#mailparse}
 
-[![mailparse~website][c~mailparse~website~badge]][c~mailparse~website] [![mailparse][c~mailparse~docs~badge]][c~mailparse~docs] [![mailparse~crates.io][c~mailparse~crates.io~badge]][c~mailparse~crates.io] [![mailparse~repo][c~mailparse~repo~badge]][c~mailparse~repo] [![mailparse~lib.rs][c~mailparse~lib.rs~badge]][c~mailparse~lib.rs]{{hi:mailparse}}{{hi:Email}}{{hi:Maildir}}{{hi:Mime}}{{hi:Parser}}{{hi:Rfc822}} [![cat~email][cat~email~badge]][cat~email]{{hi:Email}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}}
+[![mailparse~website][c~mailparse~website~badge]][c~mailparse~website] {{#badges mailparse}} {{hi:Email}} {{hi:Maildir}} {{hi:Mime}} {{hi:Parser}} {{hi:Rfc822}} {{#categories email=Email,parsing="Parsing tools"}}
 
 [`mailparse`][c~mailparse~docs]↗{{hi:mailparse}} parses raw message bytes into a `ParsedMail` tree. The parsed value borrows the input bytes, so keep the input alive while reading headers and bodies. It does not connect to a mailbox or establish who sent the message.
 

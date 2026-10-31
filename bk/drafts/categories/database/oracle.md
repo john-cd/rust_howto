@@ -57,7 +57,7 @@ features still requires the native client and SDK described below.
 
 ## `sibyl` {#sibyl}
 
-[![sibyl~website][c~sibyl~website~badge]][c~sibyl~website] [![sibyl][c~sibyl~docs~badge]][c~sibyl~docs] [![sibyl~crates.io][c~sibyl~crates.io~badge]][c~sibyl~crates.io] [![sibyl~repo][c~sibyl~repo~badge]][c~sibyl~repo] [![sibyl~lib.rs][c~sibyl~lib.rs~badge]][c~sibyl~lib.rs]{{hi:sibyl}}{{hi:Database}}{{hi:Sql}}{{hi:Ffi}}{{hi:Async}}{{hi:Oracle}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+[![sibyl~website][c~sibyl~website~badge]][c~sibyl~website] {{#badges sibyl}} {{hi:Database}} {{hi:Sql}} {{hi:Ffi}} {{hi:Async}} {{hi:Oracle}} {{#categories database="Database interfaces"}}
 
 [`sibyl`][c~sibyl~docs]↗{{hi:sibyl}} offers an OCI-based (synchronous or asynchronous) interface between Rust applications and Oracle databases.
 

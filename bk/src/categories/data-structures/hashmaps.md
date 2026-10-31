@@ -48,7 +48,7 @@ You can use a custom hash function with [`HashMap`][c~std::collections::HashMap~
 
 ## Choose a Faster Hasher: `ahash` and `rustc-hash` {#fast-hashmap}
 
-[![ahash][c~ahash~docs~badge]][c~ahash~docs] [![ahash~crates.io][c~ahash~crates.io~badge]][c~ahash~crates.io] [![ahash~repo][c~ahash~repo~badge]][c~ahash~repo] [![ahash~lib.rs][c~ahash~lib.rs~badge]][c~ahash~lib.rs]{{hi:ahash}}{{hi:AHashMap}}{{hi:Performance}} [![rustc-hash][c~rustc-hash~docs~badge]][c~rustc-hash~docs] [![rustc-hash~crates.io][c~rustc-hash~crates.io~badge]][c~rustc-hash~crates.io] [![rustc-hash~repo][c~rustc-hash~repo~badge]][c~rustc-hash~repo] [![rustc-hash~lib.rs][c~rustc-hash~lib.rs~badge]][c~rustc-hash~lib.rs]{{hi:rustc-hash}}{{hi:FxHashMap}}{{hi:Hash}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges ahash}} {{hi:AHashMap}} {{hi:Performance}} {{#badges rustc-hash}} {{hi:FxHashMap}} {{hi:Hash}} {{#categories data-structures="Data structures"}}
 
 The example counts words with three maps: the standard library's [`HashMap`][c~std::collections::HashMap~docs]↗, [`ahash::AHashMap`][c~ahash~docs]↗{{hi:AHashMap}} and [`rustc_hash::FxHashMap`][c~rustc-hash~docs]↗{{hi:FxHashMap}}. The trade-offs:
 

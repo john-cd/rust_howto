@@ -14,7 +14,7 @@ Web-based GUI toolkits use HTML, CSS, and JavaScript, or Rust components that re
 
 ## `tauri` {#tauri}
 
-[![tauri~website][c~tauri~website~badge]][c~tauri~website] [![tauri][c~tauri~docs~badge]][c~tauri~docs] [![tauri~crates.io][c~tauri~crates.io~badge]][c~tauri~crates.io] [![tauri~repo][c~tauri~repo~badge]][c~tauri~repo] [![tauri~lib.rs][c~tauri~lib.rs~badge]][c~tauri~lib.rs]{{hi:tauri}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+[![tauri~website][c~tauri~website~badge]][c~tauri~website] {{#badges tauri}} {{#categories gui=GUI,web-programming="Web programming"}}
 
 [`tauri`][c~tauri~docs]↗ builds desktop and mobile applications with a Rust back end and a front end made with web technologies. The front end calls registered Rust commands over Tauri's IPC API. Tauri uses the system webview through `wry`, rather than shipping a separate browser engine with every app. The selected frontend framework, app assets, plugins, and platform runtime setup still affect the final package.
 
@@ -49,7 +49,7 @@ On Windows, Tauri development requires Microsoft C++ Build Tools and Microsoft E
 
 ## `dioxus` {#dioxus}
 
-[![dioxus~website][c~dioxus~website~badge]][c~dioxus~website] [![dioxus][c~dioxus~docs~badge]][c~dioxus~docs] [![dioxus~crates.io][c~dioxus~crates.io~badge]][c~dioxus~crates.io] [![dioxus~repo][c~dioxus~repo~badge]][c~dioxus~repo] [![dioxus~lib.rs][c~dioxus~lib.rs~badge]][c~dioxus~lib.rs]{{hi:dioxus}}{{hi:Dom}}{{hi:Gui}}{{hi:React}}{{hi:Ui}}{{hi:Wasm}}
+[![dioxus~website][c~dioxus~website~badge]][c~dioxus~website] {{#badges dioxus}} {{hi:Dom}} {{hi:Gui}} {{hi:React}} {{hi:Ui}} {{hi:Wasm}}
 
 [`dioxus`][c~dioxus~docs]↗ lets you write reusable UI components in Rust with `rsx!`. Its renderer is selected for the target: the web renderer runs in the browser with WebAssembly, while desktop and mobile apps run Rust natively and render through the platform's system webview. Dioxus also has an experimental native renderer based on Blitz and WGPU. The desktop and mobile targets belong here; for the browser target, see the [WASM front-end frameworks section](../wasm/index.md#rust-front-end-frameworks).
 

@@ -8,7 +8,7 @@ Choose a streaming parser when documents may be large or should be processed inc
 
 ## `xml-rs` {#xml-rs}
 
-[![xml~website][c~xml~website~badge]][c~xml~website] [![xml][c~xml~docs~badge]][c~xml~docs] [![xml~crates.io][c~xml~crates.io~badge]][c~xml~crates.io] [![xml~repo][c~xml~repo~badge]][c~xml~repo] [![xml~lib.rs][c~xml~lib.rs~badge]][c~xml~lib.rs]{{hi:xml}}{{hi:Sax}}{{hi:Parsing}}{{hi:Writer}}{{hi:xml}}{{hi:Parser}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
+[![xml~website][c~xml~website~badge]][c~xml~website] {{#badges xml}} {{hi:Sax}} {{hi:Parsing}} {{hi:Writer}} {{hi:xml}} {{hi:Parser}} {{#categories parser-implementations="Parser implementations"}}
 
 [`xml`][c~xml~docs]↗{{hi:xml}} is an XML library written in pure Rust.
 
@@ -38,7 +38,7 @@ Choose a streaming parser when documents may be large or should be processed inc
 
 ## `xml5ever` {#xml5ever}
 
-[![xml5ever~website][c~xml5ever~website~badge]][c~xml5ever~website] [![xml5ever][c~xml5ever~docs~badge]][c~xml5ever~docs] [![xml5ever~crates.io][c~xml5ever~crates.io~badge]][c~xml5ever~crates.io] [![xml5ever~repo][c~xml5ever~repo~badge]][c~xml5ever~repo] [![xml5ever~lib.rs][c~xml5ever~lib.rs~badge]][c~xml5ever~lib.rs]{{hi:xml5ever}}{{hi:Parser}}{{hi:Parsing}}{{hi:Xml}}{{hi:Xml5}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+[![xml5ever~website][c~xml5ever~website~badge]][c~xml5ever~website] {{#badges xml5ever}} {{hi:Parser}} {{hi:Parsing}} {{hi:Xml}} {{hi:Xml5}} {{#categories parser-implementations="Parser implementations",web-programming="Web programming"}}
 
 [`xml5ever`][c~xml5ever~docs]↗{{hi:xml5ever}} is a push-based streaming parser for XML.
 

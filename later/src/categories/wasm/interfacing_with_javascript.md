@@ -35,7 +35,7 @@ An `extern "C"` block annotated with `#[wasm_bindgen]` declares JavaScript funct
 
 ## Use JavaScript built-ins with `js-sys` {#js-sys}
 
-[![js-sys~website][c~js-sys~website~badge]][c~js-sys~website] [![js-sys][c~js-sys~docs~badge]][c~js-sys~docs] [![js-sys~crates.io][c~js-sys~crates.io~badge]][c~js-sys~crates.io] [![js-sys~repo][c~js-sys~repo~badge]][c~js-sys~repo] [![js-sys~lib.rs][c~js-sys~lib.rs~badge]][c~js-sys~lib.rs]{{hi:js-sys}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+[![js-sys~website][c~js-sys~website~badge]][c~js-sys~website] {{#badges js-sys}} {{#categories wasm=WebAssembly}}
 
 [`js-sys`][c~js-sys~docs]↗{{hi:js-sys}} provides bindings to standard ECMAScript objects and functions, such as `Date`, `Array`, and `Promise`. It does not include browser DOM or Node.js APIs. The example exports a Rust function that reads the current time through JavaScript's `Date` object.
 

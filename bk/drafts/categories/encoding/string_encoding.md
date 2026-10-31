@@ -72,7 +72,7 @@ The [`hex`][c~hex~docs]↗{{hi:hex}} crate offers `hex::encode`, which produces 
 
 ## Encode Forms and Path Segments with `serde_urlencoded` and `urlencoding` {#form-urlencoded}
 
-[![serde_urlencoded][c~serde_urlencoded~docs~badge]][c~serde_urlencoded~docs]{{hi:serde_urlencoded}} [![serde_urlencoded~crates.io][c~serde_urlencoded~crates.io~badge]][c~serde_urlencoded~crates.io] [![serde_urlencoded~repo][c~serde_urlencoded~repo~badge]][c~serde_urlencoded~repo] [![serde_urlencoded~lib.rs][c~serde_urlencoded~lib.rs~badge]][c~serde_urlencoded~lib.rs] [![urlencoding][c~urlencoding~docs~badge]][c~urlencoding~docs]{{hi:urlencoding}} [![cat~encoding][cat~encoding~badge]][cat~encoding]
+{{#badges serde_urlencoded}} [![urlencoding][c~urlencoding~docs~badge]][c~urlencoding~docs]{{hi:urlencoding}} [![cat~encoding][cat~encoding~badge]][cat~encoding]
 
 [`serde_urlencoded`][c~serde_urlencoded~docs]↗{{hi:serde_urlencoded}} serializes a struct to an `application/x-www-form-urlencoded` string (a query string or form body) and parses it back, into a struct or a map. Spaces become `+`. [`urlencoding`][c~urlencoding~docs]↗{{hi:urlencoding}} escapes a single path or query segment; a space becomes `%20`.
 

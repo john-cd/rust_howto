@@ -6,7 +6,7 @@
 
 ## Plot a Chart to an Image or Vector File with `plotters` {#plotters}
 
-[![plotters~website][c~plotters~website~badge]][c~plotters~website] [![plotters][c~plotters~docs~badge]][c~plotters~docs] [![plotters~crates.io][c~plotters~crates.io~badge]][c~plotters~crates.io] [![plotters~repo][c~plotters~repo~badge]][c~plotters~repo] [![plotters~lib.rs][c~plotters~lib.rs~badge]][c~plotters~lib.rs]{{hi:plotters}}{{hi:Drawing}}{{hi:Plotting}}{{hi:Visualization}}{{hi:Webassembly}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
+[![plotters~website][c~plotters~website~badge]][c~plotters~website] {{#badges plotters}} {{hi:Drawing}} {{hi:Plotting}} {{hi:Visualization}} {{hi:Webassembly}} {{#categories visualization=Visualization}}
 
 [`plotters`][c~plotters~docs]↗{{hi:plotters}} is a drawing library focused on data plotting for native applications and WebAssembly. It supports bitmap images, SVG, and browser canvas backends. The SVG example below builds its output in memory and needs no GPU, display, or output file.
 

@@ -30,7 +30,7 @@ Use a builder when construction has many optional settings, needs validation, or
 
 ## `bon` {#bon}
 
-[![bon~website][c~bon~website~badge]][c~bon~website] [![bon][c~bon~docs~badge]][c~bon~docs] [![bon~crates.io][c~bon~crates.io~badge]][c~bon~crates.io] [![bon~repo][c~bon~repo~badge]][c~bon~repo] [![bon~lib.rs][c~bon~lib.rs~badge]][c~bon~lib.rs]{{hi:bon}}{{hi:Builder}}{{hi:Constructor}}{{hi:Derive}}{{hi:Macro}}{{hi:Setter}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![bon~website][c~bon~website~badge]][c~bon~website] {{#badges bon}} {{hi:Builder}} {{hi:Constructor}} {{hi:Derive}} {{hi:Macro}} {{hi:Setter}} {{#categories asynchronous=Asynchronous,data-structures="Data structures",no-std="No standard library",no-std::no-alloc="No dynamic allocation",rust-patterns="Rust patterns"}}
 
 [`bon`][c~bon~docs]↗{{hi:bon}} is a compile-time-checked builder generator with additional features like support for fallible/async builders and named function arguments via the builder pattern.
 

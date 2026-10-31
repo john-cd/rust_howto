@@ -10,7 +10,7 @@ For runtime data, choose a method that fits the ownership and allocation needs. 
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
 
-[![concat-string][c~concat-string~docs~badge]][c~concat-string~docs]{{hi:concat-string}} [![joinery][c~joinery~docs~badge]][c~joinery~docs] [![joinery~crates.io][c~joinery~crates.io~badge]][c~joinery~crates.io] [![joinery~repo][c~joinery~repo~badge]][c~joinery~repo] [![joinery~lib.rs][c~joinery~lib.rs~badge]][c~joinery~lib.rs]{{hi:joinery}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}} [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
+[![concat-string][c~concat-string~docs~badge]][c~concat-string~docs]{{hi:concat-string}} {{#badges joinery}} {{#categories no-std="No standard library",rust-patterns="Rust patterns",value-formatting="Value formatting"}}
 
 The example compares `+`, `format!`, `push_str`, capacity reservation, slice `concat` and `join`, and the `concat_string!` and `joinery` crate APIs.
 

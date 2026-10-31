@@ -18,7 +18,7 @@ For most Rust graphics applications, start with [`wgpu`][c~wgpu~docs]↗{{hi:wgp
 
 ## `wgpu` {#wgpu}
 
-[![wgpu~website][c~wgpu~website~badge]][c~wgpu~website] [![wgpu][c~wgpu~docs~badge]][c~wgpu~docs] [![wgpu~crates.io][c~wgpu~crates.io~badge]][c~wgpu~crates.io] [![wgpu~repo][c~wgpu~repo~badge]][c~wgpu~repo] [![wgpu~lib.rs][c~wgpu~lib.rs~badge]][c~wgpu~lib.rs]{{hi:wgpu}}{{hi:Graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
+[![wgpu~website][c~wgpu~website~badge]][c~wgpu~website] {{#badges wgpu}} {{hi:Graphics}} {{#categories graphics=Graphics}}
 
 [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a safe, portable Rust API based on the [WebGPU standard][webgpu~website]↗{{hi:WebGPU}}. On native targets it can use Vulkan, Metal, Direct3D 12, or OpenGL; in browsers, WebAssembly applications can use WebGPU or WebGL2. Backend availability depends on the target platform and device.
 

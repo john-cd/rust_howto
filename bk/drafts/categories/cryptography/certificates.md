@@ -16,7 +16,7 @@ Use [`rcgen`][c~rcgen~docs]↗{{hi:rcgen}} to create certificates for local deve
 
 ## DER {#der}
 
-[![der~website][c~der~website~badge]][c~der~website] [![der][c~der~docs~badge]][c~der~docs] [![der~crates.io][c~der~crates.io~badge]][c~der~crates.io] [![der~repo][c~der~repo~badge]][c~der~repo] [![der~lib.rs][c~der~lib.rs~badge]][c~der~lib.rs]{{hi:der}}{{hi:Crypto}}{{hi:Asn1}}{{hi:Pkcs}}{{hi:Itu}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![der~website][c~der~website~badge]][c~der~website] {{#badges der}} {{hi:Crypto}} {{hi:Asn1}} {{hi:Pkcs}} {{hi:Itu}} {{#categories cryptography=Cryptography,data-structures="Data structures",encoding=Encoding,parser-implementations="Parser implementations",no-std="No standard library"}}
 
 [`der`][c~der~docs]↗{{hi:der}} is a pure Rust embedded-friendly implementation of the Distinguished [Encoding][p~encoding] Rules (DER) for Abstract Syntax Notation One (ASN.1) as described in ITU X.690 with full support for heapless [`#![no_std]`][book~rust-reference~no_std] targets. DER (Distinguished Encoding Rules) certificates are a binary format for X.509 digital certificates, commonly used for representing cryptographic keys and identities. X.509 certificates bind a public key to an identity (e.g., a name, an email address, or a domain name). This binding is validated by a trusted third party, known as a Certificate Authority (CA).
 
@@ -26,7 +26,7 @@ Use [`rcgen`][c~rcgen~docs]↗{{hi:rcgen}} to create certificates for local deve
 
 ## `pem-rfc7468` {#pem-rfc7468}
 
-[![pem-rfc7468~website][c~pem-rfc7468~website~badge]][c~pem-rfc7468~website] [![pem-rfc7468][c~pem-rfc7468~docs~badge]][c~pem-rfc7468~docs] [![pem-rfc7468~crates.io][c~pem-rfc7468~crates.io~badge]][c~pem-rfc7468~crates.io] [![pem-rfc7468~repo][c~pem-rfc7468~repo~badge]][c~pem-rfc7468~repo] [![pem-rfc7468~lib.rs][c~pem-rfc7468~lib.rs~badge]][c~pem-rfc7468~lib.rs]{{hi:pem-rfc7468}}{{hi:Crypto}}{{hi:Key}}{{hi:Rsa}}{{hi:Pem}}{{hi:Pkcs}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![pem-rfc7468~website][c~pem-rfc7468~website~badge]][c~pem-rfc7468~website] {{#badges pem-rfc7468}} {{hi:Crypto}} {{hi:Key}} {{hi:Rsa}} {{hi:Pem}} {{hi:Pkcs}} {{#categories cryptography=Cryptography,data-structures="Data structures",encoding=Encoding,parser-implementations="Parser implementations",no-std="No standard library"}}
 
 PEM (Privacy Enhanced Mail) is a text-based format (Base64 encoded DER) commonly used for cryptographic keys, certificates, and other data structures.
 
@@ -48,7 +48,7 @@ Read a file as bytes, decode its RFC 7468 block, and check the label before pass
 
 ## `pkcs8` {#pkcs8}
 
-[![pkcs8~website][c~pkcs8~website~badge]][c~pkcs8~website] [![pkcs8][c~pkcs8~docs~badge]][c~pkcs8~docs] [![pkcs8~crates.io][c~pkcs8~crates.io~badge]][c~pkcs8~crates.io] [![pkcs8~repo][c~pkcs8~repo~badge]][c~pkcs8~repo] [![pkcs8~lib.rs][c~pkcs8~lib.rs~badge]][c~pkcs8~lib.rs]{{hi:pkcs8}}{{hi:Crypto}}{{hi:Key}}{{hi:Pkcs}}{{hi:Private}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![pkcs8~website][c~pkcs8~website~badge]][c~pkcs8~website] {{#badges pkcs8}} {{hi:Crypto}} {{hi:Key}} {{hi:Pkcs}} {{hi:Private}} {{#categories cryptography=Cryptography,data-structures="Data structures",encoding=Encoding,parser-implementations="Parser implementations",no-std="No standard library"}}
 
 PKCS#8 ("Public-Key Cryptography Standards (PKCS) #8": Private-Key Information Syntax Specification - RFC 5208) is a standard syntax for storing private key information, including both private keys and optional attributes, in a secure format. [`pkcs8`][c~pkcs8~docs]↗{{hi:pkcs8}} is a pure Rust implementation thereof, with additional support for PKCS#8v2 asymmetric key packages (RFC 5958).
 
@@ -68,7 +68,7 @@ PKCS#8 ("Public-Key Cryptography Standards (PKCS) #8": Private-Key Information S
 
 ## Build X.509 certificate fields with `x509-cert` {#x509-cert}
 
-[![x509-cert~website][c~x509-cert~website~badge]][c~x509-cert~website] [![x509-cert][c~x509-cert~docs~badge]][c~x509-cert~docs] [![x509-cert~crates.io][c~x509-cert~crates.io~badge]][c~x509-cert~crates.io] [![x509-cert~repo][c~x509-cert~repo~badge]][c~x509-cert~repo] [![x509-cert~lib.rs][c~x509-cert~lib.rs~badge]][c~x509-cert~lib.rs]{{hi:x509-cert}}{{hi:Crypto}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![x509-cert~website][c~x509-cert~website~badge]][c~x509-cert~website] {{#badges x509-cert}} {{hi:Crypto}} {{#categories cryptography=Cryptography,data-structures="Data structures",encoding=Encoding,no-std="No standard library"}}
 
 The existing example builds and encodes selected certificate fields; it does not create or sign a complete certificate. [`x509-cert`][c~x509-cert~docs]↗{{hi:x509-cert}} implements the X.509 Public Key Infrastructure Certificate format described in [RFC 5280][rfc~5280].
 

@@ -20,7 +20,7 @@ Message passing in [`async`][book~rust-reference~async]↗{{hi:async}} programmi
 
 ## `crossbeam-channel` {#crossbeam-channel}
 
-[![crossbeam-channel~website][c~crossbeam-channel~website~badge]][c~crossbeam-channel~website] [![crossbeam-channel][c~crossbeam-channel~docs~badge]][c~crossbeam-channel~docs] [![crossbeam-channel~crates.io][c~crossbeam-channel~crates.io~badge]][c~crossbeam-channel~crates.io] [![crossbeam-channel~repo][c~crossbeam-channel~repo~badge]][c~crossbeam-channel~repo] [![crossbeam-channel~lib.rs][c~crossbeam-channel~lib.rs~badge]][c~crossbeam-channel~lib.rs]{{hi:crossbeam-channel}}{{hi:Channel}}{{hi:Select}}{{hi:Mpmc}}{{hi:Golang}}{{hi:Message}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+[![crossbeam-channel~website][c~crossbeam-channel~website~badge]][c~crossbeam-channel~website] {{#badges crossbeam-channel}} {{hi:Channel}} {{hi:Select}} {{hi:Mpmc}} {{hi:Golang}} {{hi:Message}} {{#categories algorithms=Algorithms,concurrency=Concurrency,data-structures="Data structures"}}
 
 [`crossbeam-channel`][c~crossbeam-channel~docs]↗{{hi:crossbeam-channel}} offers bounded and unbounded multi-producer, multi-consumer channels{{hi:Multi-consumer channels}} for message passing. Its `select!` macro waits for one of several channel operations to become ready.
 

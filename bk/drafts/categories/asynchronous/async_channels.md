@@ -16,7 +16,7 @@ Do not call a blocking receive operation from an async task. A blocking call occ
 
 ## `tokio`'s Async Channels {#tokio}
 
-[![tokio~website][c~tokio~website~badge]][c~tokio~website] [![tokio][c~tokio~docs~badge]][c~tokio~docs] [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io] [![tokio~repo][c~tokio~repo~badge]][c~tokio~repo] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs]{{hi:tokio}}{{hi:Io}}{{hi:Async}}{{hi:Non-blocking}}{{hi:Futures}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+[![tokio~website][c~tokio~website~badge]][c~tokio~website] {{#badges tokio}} {{hi:Io}} {{hi:Async}} {{hi:Non-blocking}} {{hi:Futures}} {{#categories asynchronous=Asynchronous,network-programming="Network programming"}}
 
 Tokio's [`sync`][c~tokio::sync~docs]↗ module provides channels{{hi:Channels}} designed to work with async tasks. Its main channel types have distinct semantics:
 

@@ -6,8 +6,7 @@
 
 ## Call Blocking Code from Async Code {#calling-blocking-from-async}
 
-[![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io]
-[![tokio~repo][c~tokio~repo~badge]][c~tokio~repo] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}{{hi:Blocking code}}
+{{#badges tokio}} {{#categories asynchronous=Asynchronous,network-programming="Network programming"}} {{hi:Blocking code}}
 
 - [Async][p~async] code should avoid long stretches of synchronous work. An [`.await`][book~rust-reference~await]↗{{hi:.await}} is a point where a future may yield to the executor; it does not move a blocking call to another thread.
 - Don't carelessly mix [async][p~async]{{hi:async}} code and synchronous, blocking calls like `std::thread::sleep(Duration::from_secs(N));`.
@@ -17,8 +16,7 @@ See the [Async: What is blocking?][blog~async-what-is-blocking]↗ blog post.
 
 ## Use `spawn_blocking` {#spawn-blocking}
 
-[![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io]
-[![tokio~repo][c~tokio~repo~badge]][c~tokio~repo] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}
+{{#badges tokio}} {{#categories asynchronous=Asynchronous,network-programming="Network programming"}} {{hi:spawn_blocking}}
 
 Use [`tokio::task::spawn_blocking`][c~tokio::task::spawn_blocking~docs]↗{{hi:tokio::task::spawn_blocking}} for finite synchronous work that cannot use an async API. Await its join handle to observe the result and any task panic. Started blocking closures cannot be stopped by aborting their handle, so keep them bounded and make cancellation behavior explicit. Do not use this pool for unlimited CPU work or a loop that is intended to run forever.
 
@@ -28,9 +26,7 @@ Use [`tokio::task::spawn_blocking`][c~tokio::task::spawn_blocking~docs]↗{{hi:t
 
 ## Use the `rayon` Crate {#rayon}
 
-[![rayon][c~rayon~docs~badge]][c~rayon~docs]{{hi:rayon}} [![rayon~crates.io][c~rayon~crates.io~badge]][c~rayon~crates.io]
-[![rayon~repo][c~rayon~repo~badge]][c~rayon~repo] [![rayon~lib.rs][c~rayon~lib.rs~badge]][c~rayon~lib.rs]
-[![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}{{hi:rayon}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+{{#badges rayon}} {{#categories asynchronous=Asynchronous}} {{hi:rayon}} {{#categories concurrency=Concurrency}}
 
 [`rayon`][c~rayon~docs]↗{{hi:rayon}}
 
@@ -67,8 +63,7 @@ In other cases, it may be easier to structure the application as largely synchro
 
 ### Use the Tokio Runtime Directly {#tokio-runtime}
 
-[![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io]
-[![tokio~repo][c~tokio~repo~badge]][c~tokio~repo] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs] [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}{{hi:spawn_blocking}}
+{{#badges tokio}} {{#categories asynchronous=Asynchronous,network-programming="Network programming"}} {{hi:spawn_blocking}}
 
 When a mostly synchronous application needs async work, create or own a Tokio runtime at the boundary and call its `block_on` from a synchronous thread. Do not call `block_on` from inside an async task; await the future there instead.
 

@@ -6,7 +6,7 @@
 
 ## Create Efficient Web Applications with `yew` {#yew}
 
-[![yew~website][c~yew~website~badge]][c~yew~website] [![yew][c~yew~docs~badge]][c~yew~docs] [![yew~crates.io][c~yew~crates.io~badge]][c~yew~crates.io] [![yew~repo][c~yew~repo~badge]][c~yew~repo] [![yew~lib.rs][c~yew~lib.rs~badge]][c~yew~lib.rs]{{hi:yew}}{{hi:JavaScript}}{{hi:WebAssembly}}{{hi:Web}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
+[![yew~website][c~yew~website~badge]][c~yew~website] {{#badges yew}} {{hi:JavaScript}} {{hi:WebAssembly}} {{hi:Web}} {{#categories wasm=WebAssembly,gui=GUI,web-programming="Web programming"}}
 
 [Yew][c~yew~docs]↗{{hi:Yew}} is a component-based Rust framework for interactive browser applications. Its function components, properties, hooks, and HTML-like `html!` macro will feel familiar to React developers. Yew compiles to WebAssembly; in the browser, it builds a virtual DOM and updates the page when component state or properties change.
 

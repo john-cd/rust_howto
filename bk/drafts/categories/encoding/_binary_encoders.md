@@ -52,7 +52,7 @@ Concise Binary Object Representation is a binary data serialization format loose
 
 ## Flatbuffers {#flatbuffers}
 
-[![flatbuffers~website][c~flatbuffers~website~badge]][c~flatbuffers~website] [![flatbuffers][c~flatbuffers~docs~badge]][c~flatbuffers~docs] [![flatbuffers~crates.io][c~flatbuffers~crates.io~badge]][c~flatbuffers~crates.io] [![flatbuffers~repo][c~flatbuffers~repo~badge]][c~flatbuffers~repo] [![flatbuffers~lib.rs][c~flatbuffers~lib.rs~badge]][c~flatbuffers~lib.rs]{{hi:flatbuffers}}{{hi:flatbuffers}}{{hi:Serialization}}{{hi:Zero-copy}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
+[![flatbuffers~website][c~flatbuffers~website~badge]][c~flatbuffers~website] {{#badges flatbuffers}} {{hi:flatbuffers}} {{hi:Serialization}} {{hi:Zero-copy}} {{#categories data-structures="Data structures",encoding=Encoding,memory-management="Memory management"}}
 
 [`flatbuffers`][c~flatbuffers~docs]↗{{hi:flatbuffers}} is the official FlatBuffers Rust runtime library. FlatBuffers is a free software library implementing a serialization format similar to Protocol Buffers, Thrift, Apache Avro, SBE, and Cap'n Proto, open-sourced by Google. It supports "zero-copy" deserialization, so that accessing the serialized data does not require first copying it into a separate part of memory.
 
@@ -70,7 +70,7 @@ In `my_game.fbs`:
 
 ## Cap'n Proto {#capnp}
 
-[![capnp][c~capnp~docs~badge]][c~capnp~docs] [![capnp~crates.io][c~capnp~crates.io~badge]][c~capnp~crates.io] [![capnp~repo][c~capnp~repo~badge]][c~capnp~repo] [![capnp~lib.rs][c~capnp~lib.rs~badge]][c~capnp~lib.rs]{{hi:capnp}} [![capnpc][c~capnpc~docs~badge]][c~capnpc~docs] [![capnpc~crates.io][c~capnpc~crates.io~badge]][c~capnpc~crates.io] [![capnpc~repo][c~capnpc~repo~badge]][c~capnpc~repo] [![capnpc~lib.rs][c~capnpc~lib.rs~badge]][c~capnpc~lib.rs]{{hi:capnpc}}{{hi:Encoding}}{{hi:Protocol}}{{hi:Serialization}}
+{{#badges capnp}} {{#badges capnpc}} {{hi:Encoding}} {{hi:Protocol}} {{hi:Serialization}}
 
 [`capnp`][c~capnp~docs]↗{{hi:capnp}} is the runtime library for Cap'n Proto data encoding. [`capnpc`][c~capnpc~docs]↗{{hi:capnpc}} is used for Cap'n Proto code generation.
 

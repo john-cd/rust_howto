@@ -34,7 +34,7 @@ The following example creates a type `MyFlags` with the help of the [`bitflags::
 
 ## Create and Manipulate Bit Vectors with `bitvec` {#bitvec}
 
-[![bitvec~website][c~bitvec~website~badge]][c~bitvec~website] [![bitvec][c~bitvec~docs~badge]][c~bitvec~docs] [![bitvec~crates.io][c~bitvec~crates.io~badge]][c~bitvec~crates.io] [![bitvec~repo][c~bitvec~repo~badge]][c~bitvec~repo] [![bitvec~lib.rs][c~bitvec~lib.rs~badge]][c~bitvec~lib.rs]{{hi:bitvec}}{{hi:Bitstream}}{{hi:Bitvector}}{{hi:Bitmap}}{{hi:Bitfields}}{{hi:bitvec}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+[![bitvec~website][c~bitvec~website~badge]][c~bitvec~website] {{#badges bitvec}} {{hi:Bitstream}} {{hi:Bitvector}} {{hi:Bitmap}} {{hi:Bitfields}} {{hi:bitvec}} {{#categories data-structures="Data structures",embedded="Embedded development",no-std="No standard library",rust-patterns="Rust patterns"}}
 
 [`bitvec`][c~bitvec~docs]↗{{hi:bitvec}} provides efficient storage and manipulation of bit vectors. It addresses memory by bits, for packed collections and bitfields. This example demonstrates the usage of the `bitvec` crate:
 

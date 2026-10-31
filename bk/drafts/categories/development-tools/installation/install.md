@@ -16,7 +16,7 @@ This page covers installing Rust command-line applications. To install the Rust 
 
 ## Install a Rust Binary with `cargo install` {#cargo-install}
 
-[![cargo~website][c~cargo~website~badge]][c~cargo~website] [![cargo][c~cargo~docs~badge]][c~cargo~docs] [![cargo~crates.io][c~cargo~crates.io~badge]][c~cargo~crates.io] [![cargo~repo][c~cargo~repo~badge]][c~cargo~repo] [![cargo~lib.rs][c~cargo~lib.rs~badge]][c~cargo~lib.rs]{{hi:cargo}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+[![cargo~website][c~cargo~website~badge]][c~cargo~website] {{#badges cargo}} {{#categories development-tools="Development tools"}}
 
 [`cargo install`][book~cargo~cargo-install]↗{{hi:cargo install}} builds and installs executable targets from a package. It is for tools you want available from a shell; it does not add a dependency to the current project's `Cargo.toml`. By default Cargo installs binaries from [`crates.io`][crates.io~website]↗{{hi:crates.io}} into the Cargo installation root's `bin` directory (usually `~/.cargo/bin` on Unix-like systems or `%USERPROFILE%\.cargo\bin` on Windows). Make sure that directory is on `PATH`.
 

@@ -23,7 +23,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Iced {#iced}
 
-[![iced~website][c~iced~website~badge]][c~iced~website] [![iced][c~iced~docs~badge]][c~iced~docs] [![iced~crates.io][c~iced~crates.io~badge]][c~iced~crates.io] [![iced~repo][c~iced~repo~badge]][c~iced~repo] [![iced~lib.rs][c~iced~lib.rs~badge]][c~iced~lib.rs]{{hi:iced}}{{hi:Graphics}}{{hi:Gui}}{{hi:Interface}}{{hi:Ui}}{{hi:Widgets}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+[![iced~website][c~iced~website~badge]][c~iced~website] {{#badges iced}} {{hi:Graphics}} {{hi:Gui}} {{hi:Interface}} {{hi:Ui}} {{hi:Widgets}} {{#categories gui=GUI}}
 
 [`iced`][c~iced~docs] follows the Elm Architecture: model application state, represent user actions as messages, update the state, and describe the view from it. Its current documentation lists Windows, macOS, Linux, and Web targets; the project still calls the library experimental.
 
@@ -33,7 +33,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Slint {#slint}
 
-[![slint~website][c~slint~website~badge]][c~slint~website] [![slint][c~slint~docs~badge]][c~slint~docs] [![slint~crates.io][c~slint~crates.io~badge]][c~slint~crates.io] [![slint~repo][c~slint~repo~badge]][c~slint~repo] [![slint~lib.rs][c~slint~lib.rs~badge]][c~slint~lib.rs]{{hi:slint}}{{hi:Design}}{{hi:Graphics}}{{hi:Gui}}{{hi:Toolkit}}{{hi:Ui}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rendering::engine][cat~rendering::engine~badge]][cat~rendering::engine]{{hi:Rendering engine}}
+[![slint~website][c~slint~website~badge]][c~slint~website] {{#badges slint}} {{hi:Design}} {{hi:Graphics}} {{hi:Gui}} {{hi:Toolkit}} {{hi:Ui}} {{#categories gui=GUI,no-std="No standard library",rendering::engine="Rendering engine"}}
 
 [`slint`][c~slint~docs] separates declarative `.slint` UI from Rust application logic and supports desktop, embedded, and mobile apps. Rust applications can also target WebAssembly, where Slint draws to a canvas rather than using normal HTML controls; its documentation describes limitations such as unavailable screen-reader accessibility. The example's `App::run()` opens a window, so launch it from `later/crates` with `cargo run -p gui --example retained_mode_gui --features slint -- slint`; its component test uses the headless testing backend.
 
@@ -63,7 +63,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Xilem and Masonry {#xilem}
 
-[![xilem~website][c~xilem~website~badge]][c~xilem~website] [![xilem][c~xilem~docs~badge]][c~xilem~docs] [![xilem~crates.io][c~xilem~crates.io~badge]][c~xilem~crates.io] [![xilem~repo][c~xilem~repo~badge]][c~xilem~repo] [![xilem~lib.rs][c~xilem~lib.rs~badge]][c~xilem~lib.rs]{{hi:xilem}}{{hi:Gui}}{{hi:Ui}}{{hi:Native}}{{hi:Gpu}}{{hi:Performance}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~accessibility][cat~accessibility~badge]][cat~accessibility]{{hi:Accessibility}}
+[![xilem~website][c~xilem~website~badge]][c~xilem~website] {{#badges xilem}} {{hi:Gui}} {{hi:Ui}} {{hi:Native}} {{hi:Gpu}} {{hi:Performance}} {{#categories gui=GUI,graphics=Graphics,accessibility=Accessibility}}
 
 [`xilem`][c~xilem~docs] is an experimental reactive application framework. Its native backend uses Masonry, which owns a retained widget tree; the project also maintains a separate Web backend.
 
@@ -81,7 +81,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ### Azul {#azul}
 
-[![azul~website][c~azul~website~badge]][c~azul~website] [![azul][c~azul~docs~badge]][c~azul~docs] [![azul~crates.io][c~azul~crates.io~badge]][c~azul~crates.io] [![azul~repo][c~azul~repo~badge]][c~azul~repo] [![azul~lib.rs][c~azul~lib.rs~badge]][c~azul~lib.rs]{{hi:azul}}{{hi:User-interface}}{{hi:Gui}}{{hi:Svg}}{{hi:Graphics}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+[![azul~website][c~azul~website~badge]][c~azul~website] {{#badges azul}} {{hi:User-interface}} {{hi:Gui}} {{hi:Svg}} {{hi:Graphics}} {{#categories gui=GUI}}
 
 [Azul][c~azul~website] offers a data-driven tree, CSS-like styling, and CPU or GPU rendering. Its 0.2.0 release covers desktop and mobile, with Web apps marked experimental; the project identifies its Rust binding as its mature language binding.
 

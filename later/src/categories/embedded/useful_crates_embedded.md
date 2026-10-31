@@ -28,7 +28,7 @@ It is useful for compact messages in constrained systems. Define a stable messag
 
 ## `smoltcp` {#smoltcp}
 
-[![smoltcp~website][c~smoltcp~website~badge]][c~smoltcp~website] [![smoltcp][c~smoltcp~docs~badge]][c~smoltcp~docs] [![smoltcp~crates.io][c~smoltcp~crates.io~badge]][c~smoltcp~crates.io] [![smoltcp~repo][c~smoltcp~repo~badge]][c~smoltcp~repo] [![smoltcp~lib.rs][c~smoltcp~lib.rs~badge]][c~smoltcp~lib.rs]{{hi:smoltcp}}{{hi:Ethernet}}{{hi:Ip}}{{hi:Network}}{{hi:Tcp}}{{hi:Udp}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
+[![smoltcp~website][c~smoltcp~website~badge]][c~smoltcp~website] {{#badges smoltcp}} {{hi:Ethernet}} {{hi:Ip}} {{hi:Network}} {{hi:Tcp}} {{hi:Udp}} {{#categories network-programming="Network programming",embedded="Embedded development"}}
 
 [`smoltcp`][c~smoltcp~docs]↗{{hi:smoltcp}} is a TCP/IP stack designed for bare-metal, real-time systems without a heap.
 

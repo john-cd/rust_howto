@@ -8,7 +8,7 @@ Tokio is an asynchronous runtime for Rust. It schedules tasks and provides async
 
 ## Runtime Basics {#basics}
 
-[![tokio~website][c~tokio~website~badge]][c~tokio~website] [![tokio][c~tokio~docs~badge]][c~tokio~docs] [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io] [![tokio~repo][c~tokio~repo~badge]][c~tokio~repo] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs]{{hi:tokio}}{{hi:Async}}{{hi:Futures}}{{hi:Io}}{{hi:Non-blocking}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+[![tokio~website][c~tokio~website~badge]][c~tokio~website] {{#badges tokio}} {{hi:Async}} {{hi:Futures}} {{hi:Io}} {{hi:Non-blocking}} {{#categories asynchronous=Asynchronous,network-programming="Network programming"}}
 
 For an application whose entry point can be asynchronous, use `#[tokio::main]` to create and run a runtime. For a synchronous application, create or own a runtime at the boundary and call `Runtime::block_on` there. Avoid creating a runtime for each operation, and do not call `block_on` from inside an async task.
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Rewrite crate badge sets in section headers to the `{{#badges}}` directive (#2132).
+"""Rewrite compatible crate badge sets in Markdown blocks to `{{#badges}}` (#2132, #2145).
 
-Idempotent: a badge block is rewritten only if it consists of the four crate badges
-(docs.rs, crates.io, repository, lib.rs) with one `{{hi:<crate>}}`, optional extra
-`{{hi:...}}` terms, then category badges. A category without `{{hi:<Title>}}` uses `slug=`
-to omit its index term. Anything else is left untouched.
+Idempotent: complete standard crate badge groups (docs.rs, crates.io, repository, lib.rs)
+and their category badges are replaced while unsupported groups are left untouched. Website
+badges and standalone `{{hi:...}}` terms retain their original positions. A category without
+`{{hi:<Title>}}` uses `slug=` to omit its index term.
 
 Usage (from the repository root): migrate_badge_sets.py [--check] [ROOT ...]   (default roots: bk/src later/src bk/drafts)
 """
@@ -20,6 +20,7 @@ TOKEN = re.compile(
 
 
 def tokenize(block: str):
+    """Parse a badge block into badge and index-term tokens, or reject mixed text."""
     pos, out = 0, []
     for m in TOKEN.finditer(block):
         if block[pos : m.start()].strip():
@@ -36,58 +37,170 @@ def tokenize(block: str):
     return out
 
 
-def convert(block: str):
-    toks = tokenize(block)
-    if not toks or toks[0][0] != "badge":
+def crate_badge_name(token, suffix: str):
+    """Return the canonical crate name for a standard crate badge token."""
+    if token[0] != "badge":
         return None
-    m = re.fullmatch(r"c~(.+)~docs", toks[0][2])
-    if not m or toks[0][1] != m[1]:
+    match = re.fullmatch(r"c~(.+)~" + re.escape(suffix), token[2])
+    if not match:
         return None
-    name = m[1]
-    i = 1
+    name = match[1]
+    alt = name if suffix == "docs" else f"{name}~{suffix}"
+    return name if token[1] == alt else None
+
+
+def category_badge_name(token):
+    """Return the category slug for a canonical category badge token."""
+    if token[0] != "badge":
+        return None
+    match = re.fullmatch(r"cat~(.+)", token[2])
+    if not match or token[1] != f"cat~{match[1]}":
+        return None
+    return match[1]
+
+
+def convert_group(tokens):
+    """Convert one complete crate badge set and its following category badges."""
+    i = 0
+    website = None
+    if crate_badge_name(tokens[0], "website"):
+        website = tokens[0]
+        i += 1
+
+    name = crate_badge_name(tokens[i], "docs") if i < len(tokens) else None
+    if not name:
+        return None
+    i += 1
+
     hi_seen = False
-    if toks[i : i + 1] == [("hi", name)]:
+    if tokens[i : i + 1] == [("hi", name)]:
         hi_seen, i = True, i + 1
     for suffix in ("crates.io", "repo", "lib.rs"):
-        if toks[i : i + 1] != [("badge", f"{name}~{suffix}", f"c~{name}~{suffix}")]:
+        if i >= len(tokens) or crate_badge_name(tokens[i], suffix) != name:
             return None
         i += 1
     if not hi_seen:
-        if toks[i : i + 1] != [("hi", name)]:
+        if tokens[i : i + 1] != [("hi", name)]:
             return None
         i += 1
+
     extras = []
-    while i < len(toks) and toks[i][0] == "hi":
-        extras.append(toks[i][1])
+    while i < len(tokens) and tokens[i][0] == "hi":
+        extras.append(tokens[i][1])
         i += 1
-    cats = []
-    while i < len(toks):
-        t = toks[i]
-        c = re.fullmatch(r"cat~(.+)", t[2]) if t[0] == "badge" else None
-        if not c or t[1] != f"cat~{c[1]}":
-            return None
-        if i + 1 < len(toks) and toks[i + 1][0] == "hi":
-            title = toks[i + 1][1]
-            cats.append(
-                f'{c[1]}="{title}"'
-                if title and re.search(r"[\s,]", title)
-                else f"{c[1]}={title}"
-            )
-            i += 2
-        else:
-            cats.append(f"{c[1]}=")
+    parts = ["{{#badges " + name + "}}"]
+    parts.extend(f"{{{{hi:{extra}}}}}" for extra in extras)
+    categories = []
+
+    def flush_categories():
+        """Emit any collected category badges and their title index terms."""
+        if categories:
+            parts.append("{{#categories " + ",".join(categories) + "}}")
+            categories.clear()
+
+    while i < len(tokens):
+        category = category_badge_name(tokens[i])
+        if category:
+            if i + 1 < len(tokens) and tokens[i + 1][0] == "hi":
+                title = tokens[i + 1][1]
+                categories.append(
+                    f'{category}="{title}"'
+                    if title and re.search(r"[\s,]", title)
+                    else f"{category}={title}"
+                )
+                i += 2
+            else:
+                categories.append(f"{category}=")
+                i += 1
+        elif tokens[i][0] == "hi":
+            flush_categories()
+            parts.append(f"{{{{hi:{tokens[i][1]}}}}}")
             i += 1
+        else:
+            return None
+    flush_categories()
+
     if re.search(r"[\s}]", name):
         return None
-    return (
-        "{{#badges "
-        + " ".join([name, *cats])
-        + "}}"
-        + "".join(f"{{{{hi:{e}}}}}" for e in extras)
-    )
+    if website:
+        # Keep this badge as Markdown: the standalone badge directive adds its own index term.
+        website_markdown = f"[![{website[1]}][{website[2]}~badge]][{website[2]}]"
+        parts.insert(0, website_markdown)
+    return " ".join(parts)
+
+
+def convert(block: str):
+    """Convert complete crate badge sets while retaining unsupported groups verbatim."""
+    tokens = tokenize(block)
+    if not tokens:
+        return None
+
+    spans = [(match.start(), match.end()) for match in TOKEN.finditer(block)]
+    starts = []
+    i = 0
+    while i < len(tokens):
+        website_name = crate_badge_name(tokens[i], "website")
+        if website_name:
+            if i + 1 < len(tokens) and crate_badge_name(tokens[i + 1], "docs") == website_name:
+                starts.append(i)
+                i += 2
+                continue
+        if crate_badge_name(tokens[i], "docs"):
+            starts.append(i)
+        i += 1
+
+    replacements = []
+    for index, start in enumerate(starts):
+        end = starts[index + 1] if index + 1 < len(starts) else len(tokens)
+        name = crate_badge_name(tokens[start], "website") or crate_badge_name(
+            tokens[start], "docs"
+        )
+        for position in range(start + 1, end):
+            token = tokens[position]
+            if token[0] == "badge" and not category_badge_name(token) and not any(
+                crate_badge_name(token, suffix) == name
+                for suffix in ("docs", "crates.io", "repo", "lib.rs")
+            ):
+                end = position
+                break
+
+        group = convert_group(tokens[start:end])
+        if group is not None:
+            replacements.append((spans[start][0], spans[end - 1][1], group))
+
+    if not replacements:
+        return None
+
+    converted = block
+    for start, end, replacement in reversed(replacements):
+        converted = converted[:start] + replacement + converted[end:]
+    return converted
+
+
+def convert_table_row(line: str):
+    """Convert complete badge sets contained in individual Markdown table cells."""
+    stripped = line.strip()
+    if not stripped.startswith("|") or not stripped.endswith("|"):
+        return line, 0
+
+    cells = line.split("|")
+    changed = 0
+    for index in range(1, len(cells) - 1):
+        cell = cells[index]
+        value = cell.strip()
+        if "~lib.rs~badge" not in value:
+            continue
+        converted = convert(value)
+        if converted:
+            leading = cell[: len(cell) - len(cell.lstrip())]
+            trailing = cell[len(cell.rstrip()) :]
+            cells[index] = leading + converted + trailing
+            changed += 1
+    return "|".join(cells), changed
 
 
 def migrate(text: str):
+    """Rewrite compatible badge blocks in Markdown text and return the count."""
     blocks = re.split(r"(\n[ \t]*\n)", text)
     changed = 0
     for k in range(0, len(blocks), 2):
@@ -101,13 +214,21 @@ def migrate(text: str):
             for j, line in enumerate(lines)
             if line.startswith("[![") and "~badge]" in line
         ]
-        if not idx or idx != list(range(idx[0], idx[-1] + 1)):
-            continue
-        new = convert("\n".join(lines[idx[0] : idx[-1] + 1]))
-        if new:
-            lines[idx[0] : idx[-1] + 1] = [new]
-            blocks[k] = "\n".join(lines)
-            changed += 1
+        if idx and idx == list(range(idx[0], idx[-1] + 1)):
+            new = convert("\n".join(lines[idx[0] : idx[-1] + 1]))
+            if new:
+                lines[idx[0] : idx[-1] + 1] = [new]
+                blocks[k] = "\n".join(lines)
+                changed += 1
+                continue
+        for line_index, line in enumerate(lines):
+            if "~lib.rs~badge" not in line:
+                continue
+            new, count = convert_table_row(line)
+            if count:
+                lines[line_index] = new
+                changed += count
+        blocks[k] = "\n".join(lines)
     return "".join(blocks), changed
 
 
@@ -116,6 +237,7 @@ EXCLUDE = {"bk/drafts/categories/development-tools_testing/testing.md"}
 
 
 def main(argv):
+    """Migrate the selected Markdown roots, or report pending changes in check mode."""
     check = "--check" in argv
     roots = [a for a in argv if not a.startswith("--")] or [
         "bk/src",

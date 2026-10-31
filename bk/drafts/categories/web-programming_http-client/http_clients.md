@@ -40,7 +40,7 @@ Use the blocking API in synchronous code. Keep it off async runtime worker threa
 
 ## Build an HTTP Client with `hyper` {#hyper}
 
-[![hyper~website][c~hyper~website~badge]][c~hyper~website] [![hyper][c~hyper~docs~badge]][c~hyper~docs] [![hyper~crates.io][c~hyper~crates.io~badge]][c~hyper~crates.io] [![hyper~repo][c~hyper~repo~badge]][c~hyper~repo] [![hyper~lib.rs][c~hyper~lib.rs~badge]][c~hyper~lib.rs]{{hi:hyper}}{{hi:Http}}{{hi:hyper}}{{hi:Hyperium}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:HTTP client}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
+[![hyper~website][c~hyper~website~badge]][c~hyper~website] {{#badges hyper}} {{hi:Http}} {{hi:hyper}} {{hi:Hyperium}} {{#categories network-programming="Network programming",web-programming::http-client="HTTP client",web-programming::http-server="HTTP server"}}
 
 [`hyper`][c~hyper~docs]↗{{hi:hyper}} implements HTTP/1 and HTTP/2 and exposes low-level client and server connection APIs. Hyper 1 moved the higher-level pooled client to [`hyper-util`][c~hyper-util~docs]↗{{hi:hyper-util}}. Choose that lower-level stack when you need to control the connection and protocol integration; choose a higher-level client such as `reqwest` for common application requests. The example below opens one HTTP/1 connection with Tokio. It uses plain HTTP and does not configure TLS for HTTPS.
 

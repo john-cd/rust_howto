@@ -83,7 +83,7 @@ The following example recursively walks the file system respecting ignore files 
 
 ## Recursively Calculate File Sizes at a Given Depth {#recursively-calculate-file-sizes-at-given-depth}
 
-[![walkdir][c~walkdir~docs~badge]][c~walkdir~docs] [![walkdir~crates.io][c~walkdir~crates.io~badge]][c~walkdir~crates.io] [![walkdir~repo][c~walkdir~repo~badge]][c~walkdir~repo] [![walkdir~lib.rs][c~walkdir~lib.rs~badge]][c~walkdir~lib.rs]{{hi:walkdir}}{{hi:Directory}}{{hi:Walk}}{{hi:Recursive}}{{hi:Iterator}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}{{hi:File sizes}}
+{{#badges walkdir}} {{hi:Directory}} {{hi:Walk}} {{hi:Recursive}} {{hi:Iterator}} {{#categories filesystem=Filesystem}} {{hi:File sizes}}
 
 The following example uses [`walkdir::WalkDir`][c~walkdir~docs]↗{{hi:walkdir::WalkDir}} to sum regular-file sizes at depths 1 through 3, excluding entries in the root directory. Traversal and metadata errors are propagated, and the example reports if the total cannot fit in a `u64`.
 

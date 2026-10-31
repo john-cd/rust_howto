@@ -49,7 +49,7 @@ For a complete AES-GCM round trip and tampering test, see the [AES-256-GCM recip
 
 ## ChaCha20Poly1305 {#chacha20poly1305}
 
-[![chacha20poly1305~website][c~chacha20poly1305~website~badge]][c~chacha20poly1305~website] [![chacha20poly1305][c~chacha20poly1305~docs~badge]][c~chacha20poly1305~docs] [![chacha20poly1305~crates.io][c~chacha20poly1305~crates.io~badge]][c~chacha20poly1305~crates.io] [![chacha20poly1305~repo][c~chacha20poly1305~repo~badge]][c~chacha20poly1305~repo] [![chacha20poly1305~lib.rs][c~chacha20poly1305~lib.rs~badge]][c~chacha20poly1305~lib.rs]{{hi:chacha20poly1305}}{{hi:Chacha20}}{{hi:Poly1305}}{{hi:AEAD}}{{hi:Xchacha20}}{{hi:Xchacha20poly1305}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![chacha20poly1305~website][c~chacha20poly1305~website~badge]][c~chacha20poly1305~website] {{#badges chacha20poly1305}} {{hi:Chacha20}} {{hi:Poly1305}} {{hi:AEAD}} {{hi:Xchacha20}} {{hi:Xchacha20poly1305}} {{#categories cryptography=Cryptography,no-std="No standard library"}}
 
 [`chacha20poly1305`][c~chacha20poly1305~docs]↗{{hi:chacha20poly1305}} is a pure Rust implementation of the ChaCha20Poly1305 Authenticated Encryption with Additional Data Cipher (RFC 8439) with optional architecture-specific hardware acceleration. Also contains implementations of the XChaCha20Poly1305 extended nonce variant of ChaCha20Poly1305, and the reduced-round ChaCha8Poly1305 and ChaCha12Poly1305 lightweight variants.
 

@@ -15,7 +15,7 @@ Consider the following crates for property-based testing:
 
 ## `proptest` {#proptesting}
 
-[![proptest~website][c~proptest~website~badge]][c~proptest~website] [![proptest][c~proptest~docs~badge]][c~proptest~docs] [![proptest~crates.io][c~proptest~crates.io~badge]][c~proptest~crates.io] [![proptest~repo][c~proptest~repo~badge]][c~proptest~repo] [![proptest~lib.rs][c~proptest~lib.rs~badge]][c~proptest~lib.rs]{{hi:proptest}}{{hi:Fuzz}}{{hi:Hypothesis}}{{hi:Property}}{{hi:Quickcheck}}{{hi:Testing}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+[![proptest~website][c~proptest~website~badge]][c~proptest~website] {{#badges proptest}} {{hi:Fuzz}} {{hi:Hypothesis}} {{hi:Property}} {{hi:Quickcheck}} {{hi:Testing}} {{#categories development-tools::testing=Testing}}
 
 Hypothesis-like property-based [testing][p~testing] and shrinking.
 

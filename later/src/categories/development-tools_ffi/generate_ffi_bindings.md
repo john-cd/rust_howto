@@ -51,7 +51,7 @@ For a large existing C++ API, the [Rust ❤️ Existing C++ guide][book~autocxx]
 
 ## `uniffi` {#uniffi}
 
-[![uniffi~website][c~uniffi~website~badge]][c~uniffi~website] [![uniffi][c~uniffi~docs~badge]][c~uniffi~docs] [![uniffi~crates.io][c~uniffi~crates.io~badge]][c~uniffi~crates.io] [![uniffi~repo][c~uniffi~repo~badge]][c~uniffi~repo] [![uniffi~lib.rs][c~uniffi~lib.rs~badge]][c~uniffi~lib.rs]{{hi:uniffi}}{{hi:Ffi}}{{hi:Bindgen}}
+[![uniffi~website][c~uniffi~website~badge]][c~uniffi~website] {{#badges uniffi}} {{hi:Ffi}} {{hi:Bindgen}}
 
 [`uniffi`][c~uniffi~docs]↗{{hi:uniffi}} is a multi-language bindings generator for Rust. Mark functions, structs and errors with attributes (`#[uniffi::export]`, `#[derive(uniffi::Record)]`, `#[derive(uniffi::Error)]`) instead of writing a separate interface definition file, and call `uniffi::setup_scaffolding!()` once per crate.
 

@@ -63,13 +63,13 @@ For more than a foreground color, construct a `nu_ansi_term::Style` and chain th
 
 ## `anstyle` {#anstyle}
 
-[![anstyle~website][c~anstyle~website~badge]][c~anstyle~website] [![anstyle][c~anstyle~docs~badge]][c~anstyle~docs] [![anstyle~crates.io][c~anstyle~crates.io~badge]][c~anstyle~crates.io] [![anstyle~repo][c~anstyle~repo~badge]][c~anstyle~repo] [![anstyle~lib.rs][c~anstyle~lib.rs~badge]][c~anstyle~lib.rs]{{hi:anstyle}}{{hi:Ansi}}{{hi:Color}}{{hi:No_std}}{{hi:Terminal}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![anstyle~website][c~anstyle~website~badge]][c~anstyle~website] {{#badges anstyle}} {{hi:Ansi}} {{hi:Color}} {{hi:No_std}} {{hi:Terminal}} {{#categories command-line-interface="Command-line interface"}}
 
 [`anstyle`][c~anstyle~docs]↗ provides composable and spec-compliant ANSI escape code manipulation for styling terminal output.
 
 ## `anstream` {#anstream}
 
-[![anstream~website][c~anstream~website~badge]][c~anstream~website] [![anstream][c~anstream~docs~badge]][c~anstream~docs] [![anstream~crates.io][c~anstream~crates.io~badge]][c~anstream~crates.io] [![anstream~repo][c~anstream~repo~badge]][c~anstream~repo] [![anstream~lib.rs][c~anstream~lib.rs~badge]][c~anstream~lib.rs]{{hi:anstream}}{{hi:Ansi}}{{hi:Color}}{{hi:Strip}}{{hi:Terminal}}{{hi:Wincon}} [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+[![anstream~website][c~anstream~website~badge]][c~anstream~website] {{#badges anstream}} {{hi:Ansi}} {{hi:Color}} {{hi:Strip}} {{hi:Terminal}} {{hi:Wincon}} {{#categories command-line-interface="Command-line interface"}}
 
 [`anstream`][c~anstream~docs]↗ is a cross-platform library for writing colored text to a terminal. It offers a streaming API for composing and writing styled ANSI output to terminals. It facilitates efficient construction of complex styled strings via chaining, minimizing allocations and optimizing write operations. [`anstream`][c~anstream~docs]↗{{hi:anstream}} supports configurable output destinations (stdout, stderr, or custom writers) and guarantees correct ANSI escape code handling for cross-platform compatibility.
 

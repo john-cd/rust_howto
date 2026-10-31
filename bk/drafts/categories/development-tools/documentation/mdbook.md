@@ -174,7 +174,7 @@ This repository pins version 0.5.4 in `.devcontainer/.env`; its Windows workflow
 
 ### Create a Journal with `mdbook-journal` {#mdbook-journal}
 
-[![mdbook-journal~website][c~mdbook-journal~website~badge]][c~mdbook-journal~website] [![mdbook-journal][c~mdbook-journal~docs~badge]][c~mdbook-journal~docs] [![mdbook-journal~crates.io][c~mdbook-journal~crates.io~badge]][c~mdbook-journal~crates.io] [![mdbook-journal~repo][c~mdbook-journal~repo~badge]][c~mdbook-journal~repo] [![mdbook-journal~lib.rs][c~mdbook-journal~lib.rs~badge]][c~mdbook-journal~lib.rs]{{hi:mdbook-journal}}{{hi:Book}}{{hi:Gitbook}}{{hi:Markdown}}{{hi:Mdbook}}{{hi:Plugin}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~template-engine][cat~template-engine~badge]][cat~template-engine]{{hi:Template engine}}
+[![mdbook-journal~website][c~mdbook-journal~website~badge]][c~mdbook-journal~website] {{#badges mdbook-journal}} {{hi:Book}} {{hi:Gitbook}} {{hi:Markdown}} {{hi:Mdbook}} {{hi:Plugin}} {{#categories command-line-utilities="Command line utilities",template-engine="Template engine"}}
 
 [`mdbook-journal`][c~mdbook-journal~docs]↗{{hi:mdbook-journal}} is a journal plugin for [`mdBook`][c~mdbook~docs]↗{{hi:mdBook}}.
 

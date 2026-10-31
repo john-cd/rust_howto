@@ -6,7 +6,7 @@
 
 ## Create a web Server with Actix Web {#actix}
 
-[![actix-web~website][c~actix-web~website~badge]][c~actix-web~website] [![actix-web][c~actix-web~docs~badge]][c~actix-web~docs] [![actix-web~crates.io][c~actix-web~crates.io~badge]][c~actix-web~crates.io] [![actix-web~repo][c~actix-web~repo~badge]][c~actix-web~repo] [![actix-web~lib.rs][c~actix-web~lib.rs~badge]][c~actix-web~lib.rs]{{hi:actix-web}}{{hi:Actix}}{{hi:Async}}{{hi:Framework}}{{hi:Http}}{{hi:Web}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}} [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket]{{hi:WebSocket}}
+[![actix-web~website][c~actix-web~website~badge]][c~actix-web~website] {{#badges actix-web}} {{hi:Actix}} {{hi:Async}} {{hi:Framework}} {{hi:Http}} {{hi:Web}} {{#categories asynchronous=Asynchronous,network-programming="Network programming",web-programming::http-server="HTTP server",web-programming::websocket=WebSocket}}
 
 [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} is an asynchronous HTTP framework. A handler is an async function that returns a response or another value implementing `Responder`; the `#[get]` macro in this example registers a handler for `GET /`. `HttpServer::new` takes an application factory, `.bind` selects the listening socket, and `.run().await` starts serving requests. Actix Web creates an application instance for each worker, so use the application factory to configure per-worker services and state.
 

@@ -52,7 +52,7 @@ The [`scrypt`][c~scrypt~docs]↗{{hi:scrypt}} key derivation function is designe
 
 ## Salt and Hash a Password with PBKDF2 {#pbkdf2}
 
-[![ring][c~ring~docs~badge]][c~ring~docs] [![ring~crates.io][c~ring~crates.io~badge]][c~ring~crates.io] [![ring~repo][c~ring~repo~badge]][c~ring~repo] [![ring~lib.rs][c~ring~lib.rs~badge]][c~ring~lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}} [![data-encoding][c~data-encoding~docs~badge]][c~data-encoding~docs] [![data-encoding~crates.io][c~data-encoding~crates.io~badge]][c~data-encoding~crates.io] [![data-encoding~repo][c~data-encoding~repo~badge]][c~data-encoding~repo] [![data-encoding~lib.rs][c~data-encoding~lib.rs~badge]][c~data-encoding~lib.rs]{{hi:data-encoding}}{{hi:Hex}}{{hi:No_std}}{{hi:Base64}}{{hi:Base32}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges ring}} {{hi:Crypto}} {{hi:Cryptography}} {{hi:Rand}} {{hi:Rsa}} {{hi:ECC}} {{#badges data-encoding}} {{hi:Hex}} {{hi:No_std}} {{hi:Base64}} {{hi:Base32}} {{#categories cryptography=Cryptography,encoding=Encoding,no-std="No standard library"}}
 
 Uses [`ring::pbkdf2`][c~ring::pbkdf2~docs]↗{{hi:ring::pbkdf2}} to hash a salted password{{hi:Salted passwords}} using the PBKDF2{{hi:PBKDF2}} key derivation function [`ring::pbkdf2::derive`][c~ring::pbkdf2::derive~docs]↗{{hi:ring::pbkdf2::derive}}.
 Verifies the hash{{hi:Hashing}} is correct with [`ring::pbkdf2::verify`][c~ring::pbkdf2::verify~docs]↗{{hi:ring::pbkdf2::verify}}.

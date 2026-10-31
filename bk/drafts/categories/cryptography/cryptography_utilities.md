@@ -48,7 +48,7 @@ The [`zeroize`][c~zeroize~docs]↗{{hi:zeroize}} crate clears the value's memory
 
 ## `subtle` {#subtle}
 
-[![subtle~website][c~subtle~website~badge]][c~subtle~website] [![subtle][c~subtle~docs~badge]][c~subtle~docs] [![subtle~crates.io][c~subtle~crates.io~badge]][c~subtle~crates.io] [![subtle~repo][c~subtle~repo~badge]][c~subtle~repo] [![subtle~lib.rs][c~subtle~lib.rs~badge]][c~subtle~lib.rs]{{hi:subtle}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Utilities}}{{hi:Constant-time}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![subtle~website][c~subtle~website~badge]][c~subtle~website] {{#badges subtle}} {{hi:Crypto}} {{hi:Cryptography}} {{hi:Utilities}} {{hi:Constant-time}} {{#categories cryptography=Cryptography,no-std="No standard library"}}
 
 [`subtle`][c~subtle~docs]↗{{hi:subtle}} provides pure-Rust traits and utilities for writing constant-time cryptographic code. In cryptography, timing attacks exploit variations in execution time to infer secret information. Constant-time code aims to eliminate these variations, ensuring that the execution time of an operation is independent of the secret data.
 

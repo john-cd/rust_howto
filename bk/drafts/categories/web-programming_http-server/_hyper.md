@@ -25,7 +25,7 @@ The server below binds to loopback port 3000, accepts connections, adapts each T
 
 ## `hyper` TLS Support {#hyper-tls-support .skip}
 
-[![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] [![hyper-tls][c~hyper-tls~docs~badge]][c~hyper-tls~docs] [![hyper-tls~crates.io][c~hyper-tls~crates.io~badge]][c~hyper-tls~crates.io] [![hyper-tls~repo][c~hyper-tls~repo~badge]][c~hyper-tls~repo] [![hyper-tls~lib.rs][c~hyper-tls~lib.rs~badge]][c~hyper-tls~lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
+[![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] {{#badges hyper-tls}} {{hi:Http}} {{hi:Https}} {{hi:Hyper}} {{hi:Ssl}} {{hi:Tls}}
 
 [`hyper-tls`][c~hyper-tls~crates.io]↗ is the default TLS implementation for use with Hyper (native TLS). Hyper does not configure TLS itself. TLS adapters such as `hyper-rustls`, `hyper-tls`, and `hyper-openssl` are separate crates; check that an adapter supports the same Hyper major version as your application.
 

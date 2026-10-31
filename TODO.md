@@ -23,17 +23,17 @@ WAIT move code examples from `later/` to `bk/` when code and text are ready.
 - [#2116](https://github.com/john-cd/rust_howto/issues/2116) — **Epic** — Waiting on an upstream release or advisory fix (zip, zenoh, urdf-rs, cpal, egui).
 - [#2117](https://github.com/john-cd/rust_howto/issues/2117) — **Epic** — Deferred recipes, example cleanup and book quality.
 - [#2118](https://github.com/john-cd/rust_howto/issues/2118) — **Epic** — Tooling, CI and repository infrastructure.
-- [#2145](https://github.com/john-cd/rust_howto/issues/2145) — Optional migration of remaining badge blocks; preserve exact rendered links and index terms (P4).
+- [#2145](https://github.com/john-cd/rust_howto/issues/2145) — Optional support for complete badge groups that omit the crate index term (P4).
 
 ## Briefs for Jules
 
 General rules for every brief: work from a clean checkout of `develop` on a topic branch; keep history linear; never delete or reword `TODO`, `TODO Reviewed` or human review comments; every example has a private `main()`, a `pub fn run()` (multi-file examples) and a test that calls `main()` with real assertions; no `unwrap()` outside unwrap demos; no `allow(dead_code)`; comments end with a period. Commit as `type(scope): summary` with the issue number. Format with `just fmtall` (nightly rustfmt is pinned in `rustfmt-toolchain.toml`). Run commands from the workspace directory (`bk/`, `later/`, `tools/`), not the repo root.
 
-### Brief E — finish the remaining badge migration (#2145; optional)
+### Brief E — support unindexed crate badge groups (#2145; optional)
 
-- **State:** `tools/Cargo.toml` already pins `book_tooling` commit `c625472`, which supports empty category titles. `python bk/scripts/migrate_badge_sets.py --check` reports no remaining blocks that the current script can convert.
-- **Goal:** migrate only the remaining badge blocks that `{{#badges}}` can represent without changing their meaning.
-- **Steps:** review the mixed-badge, multiple-crate, and table cases listed in #2145. If needed, add the smallest `{{#badges}}` syntax that preserves destinations, labels, order, and `{{hi:...}}` terms; add renderer tests in `book_tooling`, pin the resulting revision in `tools/Cargo.toml` and `tools/Cargo.lock`, and extend the idempotent migration script and its tests. Leave unrepresentable blocks unchanged and record those patterns in #2145. Keep the excluded inline-code draft unchanged unless directive expansion can safely handle it.
+- **State:** all badge groups representable by the current syntax have been migrated. The migration check reports zero convertible blocks. `book_tooling` commit `c625472` supports empty category titles, but `{{#badges}}` always adds the crate's index term.
+- **Goal:** add a `crate=` omission form for `{{#badges}}` in `book_tooling`, then migrate complete standard groups that omit `{{hi:<crate>}}` without adding an index term.
+- **Steps:** add parser and renderer tests for the no-index form, pin the `book_tooling` revision in `tools/Cargo.toml` and `tools/Cargo.lock`, and extend the idempotent migration script and tests. Preserve the existing destinations and visible labels. Leave standalone badges, incomplete or nonstandard groups, and the excluded inline-code draft unchanged; document the remaining patterns in #2145.
 - **Checks:** run `cargo test -p book_tool` from `book_tooling/`, `python bk/scripts/test_migrate_badge_sets.py`, `python bk/scripts/migrate_badge_sets.py --check`, and `just bb` from `bk/`.
 
 ### Not for Jules
@@ -44,6 +44,4 @@ General rules for every brief: work from a clean checkout of `develop` on a topi
 
 ## Review: `dead_code` allowances and ignored tests
 
-- No blanket `dead_code` cleanup remains. Keep the intentional allowances for generated code, Node addon exports, and the `allow_dead_code` teaching example. Remaining expectations document intentionally uncalled paths or examples gated on services, devices, displays, contexts, or targets.
-- Run the remaining prerequisite-gated ignored checks tracked in #2114 and #2115 (services, desktop, macOS/FreeBSD, and hardware). The NATS JetStream and Windows checks are complete.
-- No separate follow-up is indicated by this inventory.
+- No `dead_code` allowance cleanup remains. Run the outstanding prerequisite-gated ignored checks in #2114 and #2115 when their services, desktop, operating systems, or hardware are available; NATS JetStream and Windows checks have passed.

@@ -8,7 +8,7 @@ A passkey is a public-key credential that lives on the user's device or in a cre
 
 ## Register and sign in with passkeys {#passkeys}
 
-[![webauthn-rs][c~webauthn-rs~docs~badge]][c~webauthn-rs~docs] [![webauthn-rs~crates.io][c~webauthn-rs~crates.io~badge]][c~webauthn-rs~crates.io] [![webauthn-rs~repo][c~webauthn-rs~repo~badge]][c~webauthn-rs~repo] [![webauthn-rs~lib.rs][c~webauthn-rs~lib.rs~badge]][c~webauthn-rs~lib.rs]{{hi:webauthn-rs}}{{hi:WebAuthn}}{{hi:passkeys}}{{hi:FIDO2}} [![webauthn-authenticator-rs][c~webauthn-authenticator-rs~docs~badge]][c~webauthn-authenticator-rs~docs]{{hi:webauthn-authenticator-rs}} [![cat~authentication][cat~authentication~badge]][cat~authentication]{{hi:Authentication}}
+{{#badges webauthn-rs}} {{hi:WebAuthn}} {{hi:passkeys}} {{hi:FIDO2}} [![webauthn-authenticator-rs][c~webauthn-authenticator-rs~docs~badge]][c~webauthn-authenticator-rs~docs]{{hi:webauthn-authenticator-rs}} [![cat~authentication][cat~authentication~badge]][cat~authentication]{{hi:Authentication}}
 
 The vocabulary is small:
 

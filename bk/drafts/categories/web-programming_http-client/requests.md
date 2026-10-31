@@ -16,7 +16,7 @@ Parses the supplied [URL][p~url] and makes a synchronous HTTP GET request with [
 
 ## Make a HTTP GET Request Asynchronously {#async}
 
-[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![tokio~website][c~tokio~website~badge]][c~tokio~website] [![tokio][c~tokio~docs~badge]][c~tokio~docs] [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io] [![tokio~repo][c~tokio~repo~badge]][c~tokio~repo] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs]{{hi:tokio}}{{hi:Async}}{{hi:Futures}}{{hi:Io}}{{hi:Non-blocking}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![tokio~website][c~tokio~website~badge]][c~tokio~website] {{#badges tokio}} {{hi:Async}} {{hi:Futures}} {{hi:Io}} {{hi:Non-blocking}} {{#categories network-programming="Network programming",web-programming="Web programming",asynchronous=Asynchronous}}
 
 A similar approach can be used by including the [`tokio`][c~tokio~docs]↗{{hi:tokio}} executor to make the main function asynchronous, retrieving the same information.
 
