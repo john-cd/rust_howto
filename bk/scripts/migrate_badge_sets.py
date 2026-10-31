@@ -3,11 +3,12 @@
 
 Idempotent: a badge block is rewritten only if it consists of the four crate badges
 (docs.rs, crates.io, repository, lib.rs) with one `{{hi:<crate>}}`, optional extra
-`{{hi:...}}` terms, then category badges that each carry a `{{hi:<Title>}}` (the directive
-always emits one). Anything else is left untouched.
+`{{hi:...}}` terms, then category badges. A category without `{{hi:<Title>}}` uses `slug=`
+to omit its index term. Anything else is left untouched.
 
 Usage (from the repository root): migrate_badge_sets.py [--check] [ROOT ...]   (default roots: bk/src later/src bk/drafts)
 """
+
 import re
 import sys
 from pathlib import Path
@@ -21,7 +22,7 @@ TOKEN = re.compile(
 def tokenize(block: str):
     pos, out = 0, []
     for m in TOKEN.finditer(block):
-        if block[pos:m.start()].strip():
+        if block[pos : m.start()].strip():
             return None
         pos = m.end()
         if m["hi"] is not None:
@@ -45,14 +46,14 @@ def convert(block: str):
     name = m[1]
     i = 1
     hi_seen = False
-    if toks[i:i + 1] == [("hi", name)]:
+    if toks[i : i + 1] == [("hi", name)]:
         hi_seen, i = True, i + 1
     for suffix in ("crates.io", "repo", "lib.rs"):
-        if toks[i:i + 1] != [("badge", f"{name}~{suffix}", f"c~{name}~{suffix}")]:
+        if toks[i : i + 1] != [("badge", f"{name}~{suffix}", f"c~{name}~{suffix}")]:
             return None
         i += 1
     if not hi_seen:
-        if toks[i:i + 1] != [("hi", name)]:
+        if toks[i : i + 1] != [("hi", name)]:
             return None
         i += 1
     extras = []
@@ -65,14 +66,25 @@ def convert(block: str):
         c = re.fullmatch(r"cat~(.+)", t[2]) if t[0] == "badge" else None
         if not c or t[1] != f"cat~{c[1]}":
             return None
-        if i + 1 >= len(toks) or toks[i + 1][0] != "hi":
-            return None  # directive always adds a title index entry
-        title = toks[i + 1][1]
-        cats.append(f'{c[1]}="{title}"' if re.search(r"[\s,]", title) else f"{c[1]}={title}")
-        i += 2
+        if i + 1 < len(toks) and toks[i + 1][0] == "hi":
+            title = toks[i + 1][1]
+            cats.append(
+                f'{c[1]}="{title}"'
+                if title and re.search(r"[\s,]", title)
+                else f"{c[1]}={title}"
+            )
+            i += 2
+        else:
+            cats.append(f"{c[1]}=")
+            i += 1
     if re.search(r"[\s}]", name):
         return None
-    return "{{#badges " + " ".join([name, *cats]) + "}}" + "".join(f"{{{{hi:{e}}}}}" for e in extras)
+    return (
+        "{{#badges "
+        + " ".join([name, *cats])
+        + "}}"
+        + "".join(f"{{{{hi:{e}}}}}" for e in extras)
+    )
 
 
 def migrate(text: str):
@@ -84,12 +96,16 @@ def migrate(text: str):
             continue
         # keep leading/trailing context lines (e.g. headings) outside the badge lines
         lines = b.split("\n")
-        idx = [j for j, l in enumerate(lines) if l.startswith("[![") and "~badge]" in l]
+        idx = [
+            j
+            for j, line in enumerate(lines)
+            if line.startswith("[![") and "~badge]" in line
+        ]
         if not idx or idx != list(range(idx[0], idx[-1] + 1)):
             continue
-        new = convert("\n".join(lines[idx[0]:idx[-1] + 1]))
+        new = convert("\n".join(lines[idx[0] : idx[-1] + 1]))
         if new:
-            lines[idx[0]:idx[-1] + 1] = [new]
+            lines[idx[0] : idx[-1] + 1] = [new]
             blocks[k] = "\n".join(lines)
             changed += 1
     return "".join(blocks), changed
@@ -101,7 +117,11 @@ EXCLUDE = {"bk/drafts/categories/development-tools_testing/testing.md"}
 
 def main(argv):
     check = "--check" in argv
-    roots = [a for a in argv if not a.startswith("--")] or ["bk/src", "later/src", "bk/drafts"]
+    roots = [a for a in argv if not a.startswith("--")] or [
+        "bk/src",
+        "later/src",
+        "bk/drafts",
+    ]
     total = 0
     for root in roots:
         for p in sorted(Path(root).rglob("*.md")):

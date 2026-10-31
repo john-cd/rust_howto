@@ -17,7 +17,7 @@ Rust offers several frameworks and libraries to facilitate incremental computati
 
 ## Implementing Incremental Computation with `salsa` {#salsa}
 
-[![salsa][c~salsa~docs~badge]][c~salsa~docs] [![salsa~crates.io][c~salsa~crates.io~badge]][c~salsa~crates.io] [![salsa~repo][c~salsa~repo~badge]][c~salsa~repo] [![salsa~lib.rs][c~salsa~lib.rs~badge]][c~salsa~lib.rs]{{hi:salsa}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
+{{#badges salsa development-tools=}}
 
 [Salsa][c~salsa~website]↗{{hi:salsa}} is a Rust framework for writing incremental, on-demand programs - these are programs that want to adapt to changes in their inputs, continuously producing a new output that is up-to-date.
 

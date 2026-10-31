@@ -54,12 +54,7 @@ These crates provide checked, trait-constrained operations for viewing compatibl
 
 ### `bytemuck` {#bytemuck}
 
-[![bytemuck][c~bytemuck~docs~badge]][c~bytemuck~docs]{{hi:bytemuck}}
-[![bytemuck~crates.io][c~bytemuck~crates.io~badge]][c~bytemuck~crates.io]
-[![bytemuck~repo][c~bytemuck~repo~badge]][c~bytemuck~repo]
-[![bytemuck~lib.rs][c~bytemuck~lib.rs~badge]][c~bytemuck~lib.rs]
-[![cat~encoding][cat~encoding~badge]][cat~encoding]
-[![cat~no-std][cat~no-std~badge]][cat~no-std]
+{{#badges bytemuck encoding= no-std=}}
 
 The `bytemuck` example demonstrates casts guarded by its plain-data marker traits:
 
@@ -69,15 +64,7 @@ The `bytemuck` example demonstrates casts guarded by its plain-data marker trait
 
 ### `zerocopy` {#zerocopy}
 
-[![zerocopy][c~zerocopy~docs~badge]][c~zerocopy~docs]{{hi:zerocopy}}
-[![zerocopy~crates.io][c~zerocopy~crates.io~badge]][c~zerocopy~crates.io]
-[![zerocopy~repo][c~zerocopy~repo~badge]][c~zerocopy~repo]
-[![zerocopy~lib.rs][c~zerocopy~lib.rs~badge]][c~zerocopy~lib.rs]
-[![cat~encoding][cat~encoding~badge]][cat~encoding]
-[![cat~parsing][cat~parsing~badge]][cat~parsing]
-[![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]
-[![cat~embedded][cat~embedded~badge]][cat~embedded]
-[![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]
+{{#badges zerocopy encoding= parsing= rust-patterns= embedded= no-std::no-alloc=}}
 
 Use the crate's derived traits and conversion methods to make layout and byte-validity requirements explicit:
 

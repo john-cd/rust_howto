@@ -49,7 +49,7 @@ This example showcases how to create, insert, access, and remove elements from a
 
 ## Remember Insertion Order with `linked-hash-map` {#linked-hash-map}
 
-[![linked-hash-map][c~linked-hash-map~docs~badge]][c~linked-hash-map~docs]{{hi:linked-hash-map}} [![linked-hash-map~crates.io][c~linked-hash-map~crates.io~badge]][c~linked-hash-map~crates.io] [![linked-hash-map~repo][c~linked-hash-map~repo~badge]][c~linked-hash-map~repo] [![linked-hash-map~lib.rs][c~linked-hash-map~lib.rs~badge]][c~linked-hash-map~lib.rs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
+{{#badges linked-hash-map data-structures=}}
 
 [`linked-hash-map`][c~linked-hash-map~docs]↗{{hi:linked-hash-map}} is a hash map that iterates in insertion order. It is older than [`indexmap`](#indexmap) and has not changed much recently: prefer `indexmap` for new code, and use `linked-hash-map` when you need its `LinkedHashMap` API, for example to move an entry to the end when it is used again.
 
@@ -59,7 +59,7 @@ This example showcases how to create, insert, access, and remove elements from a
 
 ## Map Ranges of Keys to Values with `rangemap` {#rangemap}
 
-[![rangemap][c~rangemap~docs~badge]][c~rangemap~docs]{{hi:rangemap}} [![rangemap~crates.io][c~rangemap~crates.io~badge]][c~rangemap~crates.io] [![rangemap~repo][c~rangemap~repo~badge]][c~rangemap~repo] [![rangemap~lib.rs][c~rangemap~lib.rs~badge]][c~rangemap~lib.rs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
+{{#badges rangemap data-structures=}}
 
 [`rangemap`][c~rangemap~docs]↗{{hi:rangemap}} stores values against ranges of keys instead of single keys, and merges or splits ranges as you insert. Range ends are exclusive, so `0..50` and `50..100` are adjacent and `100` is not covered. It suits address spaces, schedules and version ranges.
 
@@ -69,7 +69,7 @@ This example showcases how to create, insert, access, and remove elements from a
 
 ## Keep a Sorted Map in a Skip List with `skiplist` {#skiplist}
 
-[![skiplist][c~skiplist~docs~badge]][c~skiplist~docs]{{hi:skiplist}} [![skiplist~crates.io][c~skiplist~crates.io~badge]][c~skiplist~crates.io] [![skiplist~repo][c~skiplist~repo~badge]][c~skiplist~repo] [![skiplist~lib.rs][c~skiplist~lib.rs~badge]][c~skiplist~lib.rs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
+{{#badges skiplist data-structures=}}
 
 [`skiplist`][c~skiplist~docs]↗{{hi:skiplist}} provides `SkipMap`, an ordered map built on a skip list. Iteration visits the keys in sorted order regardless of insertion order. For most programs, [`BTreeMap`][c~std::collections::BTreeMap~docs]↗ from the standard library is the simpler choice; a skip list is mainly of interest for its structure and for `skiplist`'s ordered-collection API.
 
@@ -79,7 +79,7 @@ This example showcases how to create, insert, access, and remove elements from a
 
 ## Test Membership Probabilistically with `bloomfilter` {#bloomfilter}
 
-[![bloomfilter][c~bloomfilter~docs~badge]][c~bloomfilter~docs]{{hi:bloomfilter}} [![bloomfilter~crates.io][c~bloomfilter~crates.io~badge]][c~bloomfilter~crates.io] [![bloomfilter~repo][c~bloomfilter~repo~badge]][c~bloomfilter~repo] [![bloomfilter~lib.rs][c~bloomfilter~lib.rs~badge]][c~bloomfilter~lib.rs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
+{{#badges bloomfilter data-structures=}}
 
 A Bloom filter is a compact set that can say "possibly present" or "definitely absent": it may report false positives but never false negatives. [`bloomfilter`][c~bloomfilter~docs]↗{{hi:bloomfilter}} sizes the filter from the number of items you expect and the false-positive rate you accept. Use it to skip expensive lookups for keys that are certainly not in a store.
 

@@ -16,7 +16,7 @@ These clients connect to different providers and do not make their data intercha
 
 ## Daily Price History {#yahoo-history}
 
-[![yahoo_finance_api][c~yahoo_finance_api~docs~badge]][c~yahoo_finance_api~docs] [![yahoo_finance_api~crates.io][c~yahoo_finance_api~crates.io~badge]][c~yahoo_finance_api~crates.io] [![yahoo_finance_api~repo][c~yahoo_finance_api~repo~badge]][c~yahoo_finance_api~repo] [![yahoo_finance_api~lib.rs][c~yahoo_finance_api~lib.rs~badge]][c~yahoo_finance_api~lib.rs]{{hi:yahoo_finance_api}} [![cat~finance][cat~finance~badge]][cat~finance]
+{{#badges yahoo_finance_api finance=}}
 
 [`yahoo_finance_api`][c~yahoo_finance_api~docs]↗{{hi:yahoo_finance_api}} fetches OHLCV history. [`governor`][c~governor~docs]↗{{hi:governor}} limits the request rate. The test parses a saved JSON response, so it runs offline; the live fetch is `#[ignore]`d.
 

@@ -48,7 +48,7 @@ Fast integer primitive to string conversion.
 
 ## Format a Byte Count for Display with `humansize` {#humansize}
 
-[![humansize][c~humansize~docs~badge]][c~humansize~docs]{{hi:humansize}} [![humansize~crates.io][c~humansize~crates.io~badge]][c~humansize~crates.io] [![humansize~repo][c~humansize~repo~badge]][c~humansize~repo] [![humansize~lib.rs][c~humansize~lib.rs~badge]][c~humansize~lib.rs] [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]
+{{#badges humansize value-formatting=}}
 
 [`humansize::format_size`][c~humansize~docs]↗{{hi:humansize}} formats a number of bytes as text. `DECIMAL` uses powers of 1000 (`kB`, `MB`), and `BINARY` uses powers of 1024 (`KiB`, `MiB`). `format_size_i` accepts signed values, such as a change in memory use.
 

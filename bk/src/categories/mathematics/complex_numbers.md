@@ -6,14 +6,7 @@
 
 ## Create Complex Numbers {#creating-complex-numbers}
 
-[![num][c~num~docs~badge]][c~num~docs]{{hi:num}}
-[![num~crates.io][c~num~crates.io~badge]][c~num~crates.io]
-[![num~repo][c~num~repo~badge]][c~num~repo]
-[![num~lib.rs][c~num~lib.rs~badge]][c~num~lib.rs]
-[![cat~science][cat~science~badge]][cat~science]
-[![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
-[![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges num science= algorithms=Algorithms no-std="No standard library" data-structures="Data structures"}}
 
 The following example creates complex numbers of type [`num::complex::Complex`][c~num::complex::Complex~docs]↗{{hi:num::complex::Complex}}. The real and imaginary components of a complex number must have the same type:
 

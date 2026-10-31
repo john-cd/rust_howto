@@ -44,7 +44,7 @@ For editor-style token colors, see [[syntax_highlighting | Syntax Highlighting]]
 
 ## Create a Parser with `winnow` {#winnow}
 
-[![winnow][c~winnow~docs~badge]][c~winnow~docs]{{hi:winnow}} [![winnow~crates.io][c~winnow~crates.io~badge]][c~winnow~crates.io] [![winnow~repo][c~winnow~repo~badge]][c~winnow~repo] [![winnow~lib.rs][c~winnow~lib.rs~badge]][c~winnow~lib.rs] [![cat~parsing][cat~parsing~badge]][cat~parsing]
+{{#badges winnow parsing=}}
 
 [`winnow`][c~winnow~docs]↗{{hi:winnow}} is a parser-combinator library derived from `nom`, with a focus on ergonomics and error reporting. A parser is a function that takes `&mut &str` and consumes the input it matches. The example combines `digit1` with `separated` to parse a comma-separated list of integers.
 
@@ -54,7 +54,7 @@ For editor-style token colors, see [[syntax_highlighting | Syntax Highlighting]]
 
 ## Highlight Source with `tree-sitter` Spans {#tree-sitter-spans}
 
-[![tree-sitter][c~tree-sitter~docs~badge]][c~tree-sitter~docs]{{hi:tree-sitter}} [![tree-sitter~crates.io][c~tree-sitter~crates.io~badge]][c~tree-sitter~crates.io] [![tree-sitter~repo][c~tree-sitter~repo~badge]][c~tree-sitter~repo] [![tree-sitter~lib.rs][c~tree-sitter~lib.rs~badge]][c~tree-sitter~lib.rs] [![cat~parsing][cat~parsing~badge]][cat~parsing]
+{{#badges tree-sitter parsing=}}
 
 Tree-sitter builds a concrete syntax tree that can be updated incrementally after an edit. The example walks the tree to collect the byte range of every node a highlighter would color, then edits the source and re-parses with the previous tree so only the changed region is re-analyzed. See also the basic `tree-sitter` example above.
 

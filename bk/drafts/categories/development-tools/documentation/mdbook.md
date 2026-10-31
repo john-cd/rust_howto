@@ -105,7 +105,7 @@ The repository builds this preprocessor and renders the book in CI. Reuse it onl
 
 ### Hide Pages with `mdbook-hide` {#mdbook-hide}
 
-[![mdbook-hide][c~mdbook-hide~docs~badge]][c~mdbook-hide~docs] [![mdbook-hide~crates.io][c~mdbook-hide~crates.io~badge]][c~mdbook-hide~crates.io] [![mdbook-hide~repo][c~mdbook-hide~repo~badge]][c~mdbook-hide~repo] [![mdbook-hide~lib.rs][c~mdbook-hide~lib.rs~badge]][c~mdbook-hide~lib.rs]{{hi:mdbook-hide}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
+{{#badges mdbook-hide development-tools=}}
 
 [`mdbook-hide`][c~mdbook-hide~docs]↗{{hi:mdbook-hide}} is a pre-processor for [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} that adds support for hidden chapters.
 

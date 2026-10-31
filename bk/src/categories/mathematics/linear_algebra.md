@@ -12,7 +12,7 @@ We will use three key crates:
 
 ## Add Matrices {#adding-matrices}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+{{#badges ndarray data-structures="Data structures" science=}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}}
 
 This example creates two 2-D matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and sums them element-wise.
 
@@ -24,7 +24,7 @@ Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used t
 
 ## Multiply Matrices {#multiplying-matrices}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+{{#badges ndarray data-structures="Data structures" science=}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}}
 
 This code example creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}} and performs matrix multiplication on them with [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}}.
 
@@ -34,7 +34,7 @@ This code example creates two matrices with [`ndarray::arr2`][c~ndarray::arr2~do
 
 ## Multiply a Scalar with a Vector and a Matrix {#multiply-a-scalar-with-a-vector-and-a-matrix}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+{{#badges ndarray data-structures="Data structures" science=}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}}
 
 The following example creates a 1-D array (vector) with [`ndarray::arr1`][c~ndarray::arr1~docs]↗{{hi:ndarray::arr1}} and a 2-D array (matrix) with [`ndarray::arr2`][c~ndarray::arr2~docs]↗{{hi:ndarray::arr2}}.
 
@@ -48,7 +48,7 @@ In [`ndarray`][c~ndarray~docs]↗, 1-D arrays can be interpreted as either row o
 
 ## Compare Vectors {#vector-comparison}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+{{#badges ndarray data-structures="Data structures" science=}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}}
 
 The [`ndarray`][c~ndarray~docs]↗ crate supports a number of ways to create arrays. This recipe creates an [`ndarray::Array`][c~ndarray::Array~docs]↗{{hi:ndarray::Array}} from a [`std::vec::Vec`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} using [`std::convert::From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}, then sums arrays element-wise.
 
@@ -63,7 +63,7 @@ This recipe also contains additional ownership examples. Here, `let z = a + b` c
 
 ## Calculate Vector Norms {#vector-norm}
 
-[![ndarray][c~ndarray~docs~badge]][c~ndarray~docs] [![ndarray~crates.io][c~ndarray~crates.io~badge]][c~ndarray~crates.io] [![ndarray~repo][c~ndarray~repo~badge]][c~ndarray~repo] [![ndarray~lib.rs][c~ndarray~lib.rs~badge]][c~ndarray~lib.rs]{{hi:ndarray}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+{{#badges ndarray data-structures="Data structures" science=}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}}
 
 This recipe demonstrates the [`ndarray::ArrayView1`][c~ndarray::ArrayView1~docs]↗{{hi:ndarray::ArrayView1}} type, the [`ndarray::ArrayBase::fold`][c~ndarray::ArrayBase::fold~docs]↗{{hi:ndarray::ArrayBase::fold}} method, and the [`ndarray::ArrayBase::dot`][c~ndarray::ArrayBase::dot~docs]↗{{hi:ndarray::ArrayBase::dot}} method to compute the [`l1`][wolfram~l1-norm]↗{{hi:L1 norm}} and [`l2`][wolfram~l2-norm]↗{{hi:L2 norm}} norms of a vector.
 
@@ -79,14 +79,7 @@ Note that both [`l1_norm`][wolfram~l1-norm]↗ and [`l2_norm`][wolfram~l2-norm]�
 
 ## Invert a Matrix {#invert-matrix}
 
-[![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}}
-[![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io]
-[![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo]
-[![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]
-[![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
-[![cat~science][cat~science~badge]][cat~science]
-[![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+{{#badges nalgebra mathematics=Mathematics no-std="No standard library" science= wasm=WebAssembly}}
 
 This code snippet creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi:nalgebra::Matrix3}} and inverts it, if possible.
 
@@ -96,12 +89,7 @@ This code snippet creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Ma
 
 ## Use nalgebra Vectors {#nalgebra-vectors}
 
-[![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}}
-[![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io]
-[![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo]
-[![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]
-[![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
-[![cat~science][cat~science~badge]][cat~science]
+{{#badges nalgebra mathematics=Mathematics science=}}
 
 [`nalgebra`][c~nalgebra~docs]↗ provides fixed-size and dynamically-sized vectors and matrices. This example creates two [`nalgebra::Vector3`][c~nalgebra::Vector3~docs]↗{{hi:nalgebra::Vector3}} values and demonstrates:
 
@@ -116,12 +104,7 @@ This code snippet creates a 3x3 matrix with [`nalgebra::Matrix3`][c~nalgebra::Ma
 
 ## Apply Transformations {#nalgebra-transformations}
 
-[![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}}
-[![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io]
-[![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo]
-[![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]
-[![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
-[![cat~science][cat~science~badge]][cat~science]
+{{#badges nalgebra mathematics=Mathematics science=}}
 
 [`nalgebra`][c~nalgebra~docs]↗ provides types for geometric transformations. This example demonstrates:
 
@@ -137,12 +120,7 @@ The `*` operator applies the transformation to a [`nalgebra::Point3`][c~nalgebra
 
 ## Decompose a Matrix with SVD {#nalgebra-svd}
 
-[![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}}
-[![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io]
-[![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo]
-[![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs]
-[![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}}
-[![cat~science][cat~science~badge]][cat~science]
+{{#badges nalgebra mathematics=Mathematics science=}}
 
 [Singular Value Decomposition (SVD)][wikipedia~singular-value-decomposition]↗{{hi:SVD}} factorizes a matrix `M` into `U * Σ * Vᵀ`, where `U` and `V` are orthogonal matrices and `Σ` is a diagonal matrix of singular values. SVD is widely used in dimensionality reduction, pseudoinverse computation, and solving least-squares problems.
 
@@ -154,9 +132,9 @@ This example uses [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi:nalgebr
 
 ## Work with Sparse Matrices {#sparse-matrices}
 
-[![sprs][c~sprs~docs~badge]][c~sprs~docs] [![sprs~crates.io][c~sprs~crates.io~badge]][c~sprs~crates.io] [![sprs~repo][c~sprs~repo~badge]][c~sprs~repo] [![sprs~lib.rs][c~sprs~lib.rs~badge]][c~sprs~lib.rs]{{hi:sprs}}{{hi:Sparse matrix}}{{hi:CSR}}{{hi:Matrix}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}} [![cat~science][cat~science~badge]][cat~science]
+{{#badges sprs mathematics=Mathematics science=}}{{hi:Sparse matrix}}{{hi:CSR}}{{hi:Matrix}}
 
-A matrix is *sparse* when almost all of its entries are zero, as in graphs, physics simulations and text-search indexes. Instead of storing every zero, the [`sprs`][c~sprs~docs]↗{{hi:sprs}} crate keeps only the non-zero values and their positions, which saves memory and time on large matrices.
+A matrix is _sparse_ when almost all of its entries are zero, as in graphs, physics simulations and text-search indexes. Instead of storing every zero, the [`sprs`][c~sprs~docs]↗{{hi:sprs}} crate keeps only the non-zero values and their positions, which saves memory and time on large matrices.
 
 This example collects `(row, column, value)` entries in a [`sprs::TriMat`][c~sprs::TriMat~docs]↗{{hi:sprs::TriMat}}, then converts it to the compressed sparse row (CSR) format, [`sprs::CsMat`][c~sprs::CsMat~docs]↗{{hi:sprs::CsMat}}, which supports fast arithmetic. It reads individual entries, iterates over the non-zero entries of each row, multiplies the matrix by a dense vector and by itself, and transposes it.
 
@@ -166,7 +144,7 @@ This example collects `(row, column, value)` entries in a [`sprs::TriMat`][c~spr
 
 ## (De)serialize a Matrix {#deserialize-a-matrix}
 
-[![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}} [![nalgebra~crates.io][c~nalgebra~crates.io~badge]][c~nalgebra~crates.io] [![nalgebra~repo][c~nalgebra~repo~badge]][c~nalgebra~repo] [![nalgebra~lib.rs][c~nalgebra~lib.rs~badge]][c~nalgebra~lib.rs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~science][cat~science~badge]][cat~science]
+{{#badges nalgebra data-structures="Data structures" science=}}
 
 You can serialize and deserialize a matrix to and from [[JSON]] using [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and `serde_json::from_str`{{hi:serde_json::from_str}}.
 

@@ -62,7 +62,7 @@ Base64 represents arbitrary bytes as ASCII text; it is not encryption or compres
 
 ## Encode and Decode Hexadecimal with `hex` {#hex}
 
-[![hex][c~hex~docs~badge]][c~hex~docs]{{hi:hex}} [![hex~crates.io][c~hex~crates.io~badge]][c~hex~crates.io] [![hex~repo][c~hex~repo~badge]][c~hex~repo] [![hex~lib.rs][c~hex~lib.rs~badge]][c~hex~lib.rs] [![cat~encoding][cat~encoding~badge]][cat~encoding]
+{{#badges hex encoding=}}
 
 The [`hex`][c~hex~docs]↗{{hi:hex}} crate offers `hex::encode`, which produces lowercase hexadecimal, `hex::decode`, and `hex::decode_to_slice` for fixed-size buffers. Invalid input returns a `FromHexError`, for example for an odd length or a character that is not a hex digit. [`data-encoding`][c~data-encoding~docs]↗ (shown above) and `const-hex` are alternatives.
 

@@ -18,11 +18,7 @@
 
 ## Test your code Faster with `cargo nextest` {#cargo-nextest}
 
-[![cargo-nextest][c~cargo-nextest~docs~badge]][c~cargo-nextest~docs]{{hi:cargo-nextest}}
-[![cargo-nextest~crates.io][c~cargo-nextest~crates.io~badge]][c~cargo-nextest~crates.io]
-[![cargo-nextest~repo][c~cargo-nextest~repo~badge]][c~cargo-nextest~repo]
-[![cargo-nextest~lib.rs][c~cargo-nextest~lib.rs~badge]][c~cargo-nextest~lib.rs]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
+{{#badges cargo-nextest development-tools=}}
 
 [`cargo-nextest`][c~cargo-nextest~website]↗ is a new, faster test runner for Rust.
 

@@ -14,7 +14,7 @@ members = [
 
 [workspace.dependencies]
 anyhow = "1.0.104"
-book_tool = { git = "https://github.com/john-cd/book_tooling", rev = "fe5143e0c752c1c8a6b109ef2b450d9849c21808", default-features = false, features = [
+book_tool = { git = "https://github.com/john-cd/book_tooling", rev = "c625472a0832fa033880c7da82e4d9537bf7055c", default-features = false, features = [
     "directives",
 ] }
 cargo_toml = "0.22.3"
@@ -30,7 +30,7 @@ mdbook-markdown = "0.5.4"
 mdbook-preprocessor = "0.5.4"
 mockito = "1.7.2"
 once_cell = "1.21.4"
-parse_lib = { git = "https://github.com/john-cd/book_tooling", rev = "fe5143e0c752c1c8a6b109ef2b450d9849c21808" }
+parse_lib = { git = "https://github.com/john-cd/book_tooling", rev = "c625472a0832fa033880c7da82e4d9537bf7055c" }
 regex = "1.13.1"
 reqwest = { version = "0.13.5", features = ["blocking"] }
 semver = "1.0.28"

@@ -42,7 +42,7 @@ For common technical-analysis indicators and custom indicator implementations, s
 
 ## Option Pricing and Implied Volatility {#black-scholes}
 
-[![black_scholes][c~black_scholes~docs~badge]][c~black_scholes~docs] [![black_scholes~crates.io][c~black_scholes~crates.io~badge]][c~black_scholes~crates.io] [![black_scholes~repo][c~black_scholes~repo~badge]][c~black_scholes~repo] [![black_scholes~lib.rs][c~black_scholes~lib.rs~badge]][c~black_scholes~lib.rs]{{hi:black_scholes}} [![cat~finance][cat~finance~badge]][cat~finance]
+{{#badges black_scholes finance=}}
 
 [`black_scholes`][c~black_scholes~docs]↗{{hi:black_scholes}} prices European options and computes the Greeks. `call_iv` and `put_iv` solve for the implied volatility of an observed price. The recipe checks put-call parity and that price -> volatility -> price round-trips.
 
@@ -54,7 +54,7 @@ Use `f64` for statistics and model inputs. For money amounts (cash balances, ord
 
 ## Rolling Statistics {#rolling-stats}
 
-[![ta-statistics][c~ta-statistics~docs~badge]][c~ta-statistics~docs] [![ta-statistics~crates.io][c~ta-statistics~crates.io~badge]][c~ta-statistics~crates.io] [![ta-statistics~repo][c~ta-statistics~repo~badge]][c~ta-statistics~repo] [![ta-statistics~lib.rs][c~ta-statistics~lib.rs~badge]][c~ta-statistics~lib.rs]{{hi:ta-statistics}} [![cat~finance][cat~finance~badge]][cat~finance]
+{{#badges ta-statistics finance=}}
 
 [`ta-statistics`][c~ta-statistics~docs]↗{{hi:ta-statistics}} computes rolling-window statistics (mean, standard deviation, z-score, drawdown, correlation, beta...) without allocating per update. The recipe computes daily returns and a 20-day rolling standard deviation, annualizes it with the square root of 252, and checks it against a hand-written version.
 
