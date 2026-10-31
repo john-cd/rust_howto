@@ -22,7 +22,7 @@ autolib = false
 [[bin]]
 name = "cli-demo"
 path = "examples/cli_testing/cli_demo.rs"
-test = false
+test = true
 
 [[example]]
 name = "env_vars"
