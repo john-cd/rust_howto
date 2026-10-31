@@ -30,6 +30,8 @@ mod tests {
     /// Verifies the crate-index examples run with their temporary fixtures.
     #[test]
     fn test_crate_index_examples_run_offline() -> anyhow::Result<()> {
-        run()
+        run()?;
+        assert!(main().is_ok());
+        Ok(())
     }
 }

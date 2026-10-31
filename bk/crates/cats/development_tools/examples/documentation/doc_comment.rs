@@ -28,6 +28,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
+pub fn run() {
+    // Same body as `main`; calling `main` trips `clippy::main_recursion`.
+    documented_function();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
