@@ -8548,6 +8548,16 @@
 [c~spidev~lib.rs~badge]: https://img.shields.io/badge/lib.rs-spidev-yellow
 [c~spidev~repo]: https://github.com/rust-embedded/rust-spidev
 [c~spidev~repo~badge]: https://img.shields.io/badge/spidev-steelblue?logo=github
+[c~sprs::CsMat~docs]: https://docs.rs/sprs/latest/sprs/struct.CsMatBase.html
+[c~sprs::TriMat~docs]: https://docs.rs/sprs/latest/sprs/struct.TriMatBase.html
+[c~sprs~crates.io]: https://crates.io/crates/sprs
+[c~sprs~crates.io~badge]: https://img.shields.io/badge/crates.io-sprs-crimson
+[c~sprs~docs]: https://docs.rs/sprs
+[c~sprs~docs~badge]: https://img.shields.io/crates/v/sprs?label=sprs
+[c~sprs~lib.rs]: https://lib.rs/crates/sprs
+[c~sprs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sprs-yellow
+[c~sprs~repo]: https://github.com/vbarrielle/sprs
+[c~sprs~repo~badge]: https://img.shields.io/badge/sprs-steelblue?logo=github
 [c~sqlite~crates.io]: https://crates.io/crates/sqlite
 [c~sqlite~crates.io~badge]: https://img.shields.io/badge/crates.io-sqlite-crimson
 [c~sqlite~docs]: https://docs.rs/sqlite

@@ -4,10 +4,11 @@
 
 {{#include linear_algebra.incl.md}}
 
-We will use two key crates:
+We will use three key crates:
 
 - [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}, a general-purpose linear algebra library with transformations and statically-sized or dynamically-sized matrices. However it supports only vectors (1d) and matrices (2d) and not higher-dimensional tensors.
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} is less featureful than [`nalgebra`][c~nalgebra~docs]↗ but supports arbitrarily dimensioned arrays.
+- [`sprs`][c~sprs~docs]↗{{hi:sprs}} stores sparse matrices, which are mostly zeros, compactly.
 
 ## Add Matrices {#adding-matrices}
 
@@ -149,6 +150,18 @@ This example uses [`nalgebra::Matrix3`][c~nalgebra::Matrix3~docs]↗{{hi:nalgebr
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/nalgebra_decomposition.rs:example}}
+```
+
+## Work with Sparse Matrices {#sparse-matrices}
+
+[![sprs][c~sprs~docs~badge]][c~sprs~docs] [![sprs~crates.io][c~sprs~crates.io~badge]][c~sprs~crates.io] [![sprs~repo][c~sprs~repo~badge]][c~sprs~repo] [![sprs~lib.rs][c~sprs~lib.rs~badge]][c~sprs~lib.rs]{{hi:sprs}}{{hi:Sparse matrix}}{{hi:CSR}}{{hi:Matrix}} [![cat~mathematics][cat~mathematics~badge]][cat~mathematics]{{hi:Mathematics}} [![cat~science][cat~science~badge]][cat~science]
+
+A matrix is *sparse* when almost all of its entries are zero, as in graphs, physics simulations and text-search indexes. Instead of storing every zero, the [`sprs`][c~sprs~docs]↗{{hi:sprs}} crate keeps only the non-zero values and their positions, which saves memory and time on large matrices.
+
+This example collects `(row, column, value)` entries in a [`sprs::TriMat`][c~sprs::TriMat~docs]↗{{hi:sprs::TriMat}}, then converts it to the compressed sparse row (CSR) format, [`sprs::CsMat`][c~sprs::CsMat~docs]↗{{hi:sprs::CsMat}}, which supports fast arithmetic. It reads individual entries, iterates over the non-zero entries of each row, multiplies the matrix by a dense vector and by itself, and transposes it.
+
+```rust,editable
+{{#include ../../../crates/cats/mathematics/examples/linear_algebra/sparse_matrices.rs:example}}
 ```
 
 ## (De)serialize a Matrix {#deserialize-a-matrix}

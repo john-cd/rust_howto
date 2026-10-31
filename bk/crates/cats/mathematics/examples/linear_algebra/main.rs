@@ -13,6 +13,7 @@ mod multiply_scalar_vector_matrix;
 mod nalgebra_decomposition;
 mod nalgebra_transformations;
 mod nalgebra_vectors;
+mod sparse_matrices;
 mod vector_comparison;
 mod vector_norm;
 
@@ -51,6 +52,9 @@ enum Commands {
     /// Runs the `nalgebra_vectors` example.
     #[command(name = "nalgebra_vectors")]
     NalgebraVectors,
+    /// Runs the `sparse_matrices` example.
+    #[command(name = "sparse_matrices")]
+    SparseMatrices,
     /// Runs the `vector_comparison` example.
     #[command(name = "vector_comparison")]
     VectorComparison,
@@ -87,6 +91,9 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
             Commands::NalgebraVectors => {
                 nalgebra_vectors::run();
             }
+            Commands::SparseMatrices => {
+                sparse_matrices::run();
+            }
             Commands::VectorComparison => {
                 vector_comparison::run();
             }
@@ -120,6 +127,7 @@ mod tests {
         "nalgebra_decomposition",
         "nalgebra_transformations",
         "nalgebra_vectors",
+        "sparse_matrices",
         "vector_comparison",
         "vector_norm",
     ];

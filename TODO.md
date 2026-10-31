@@ -37,7 +37,7 @@ General rules for every brief: work from a clean checkout of `develop` on a topi
 
 ### Brief F — port remaining dependency upgrades (#2117)
 
-- **Done:** `slint` 1.18, `symphonia` 0.6, `crux_core` 0.20, `spacepackets` 0.19 (PR #2139); `cornucopia` 1.0 (generated `cornucopia_queries` crate replaces `cornucopia_async`) and `k8s-openapi` 0.29 with a newer `kube` git revision (2026-10-31). `egui`/`eframe` 0.37 was already current and no example uses `sprs`.
+- **Done:** `slint` 1.18, `symphonia` 0.6, `crux_core` 0.20, `spacepackets` 0.19 (PR #2139); `cornucopia` 1.0 (generated `cornucopia_queries` crate replaces `cornucopia_async`) and `k8s-openapi` 0.29 with a newer `kube` git revision (2026-10-31). `egui`/`eframe` 0.37 was already current. `sprs` 0.11.6 (latest) now has a sparse matrix example in the mathematics chapter (2026-10-31).
 - **Still waiting upstream (#2116, re-checked 2026-10-31):** `rusqlite` 0.40+ (`sqlx-sqlite` 0.9 caps `libsqlite3-sys` below 0.38), `nalgebra` 0.35 (`ode_solvers` 0.6.2 needs 0.34), `tower-sessions` 0.15 (`axum-login` 0.18 and `axum-messages` 0.8 need 0.14), and `egui-notify`, `egui-phosphor`, `egui_tracing` (egui releases). Each pin has a comment in its `Cargo.toml`.
 
 ### Not for Jules

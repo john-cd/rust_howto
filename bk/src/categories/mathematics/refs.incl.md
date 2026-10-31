@@ -30,6 +30,7 @@
 [ex~mathematics~multiply-a-scalar-with-a-vector-and-a-matrix]: linear_algebra.md#multiply-a-scalar-with-a-vector-and-a-matrix
 [ex~mathematics~multiplying-matrices]: linear_algebra.md#multiplying-matrices
 [ex~mathematics~nalgebra-svd]: linear_algebra.md#nalgebra-svd
+[ex~mathematics~sparse-matrices]: linear_algebra.md#sparse-matrices
 [ex~mathematics~nalgebra-transformations]: linear_algebra.md#nalgebra-transformations
 [ex~mathematics~nalgebra-vectors]: linear_algebra.md#nalgebra-vectors
 [ex~mathematics~find-a-root-with-brents-method]: numerical_analysis.md#find-a-root-with-brents-method
