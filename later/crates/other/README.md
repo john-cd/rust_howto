@@ -7,7 +7,7 @@ This crate contains standalone code examples and snippets that do not fit direct
 ## Examples Covered
 
 - **Data Processing & Apache Arrow**: Manipulating in-memory tabular data using `arrow` arrays, CSV/JSON I/O, and record batches.
-- **Applications Written in Rust**: Showcase integrations and architectural references.
+- **Applications Written in Rust**: Curated project references; the current executable example is an explicit placeholder.
 
 ## Usage
 

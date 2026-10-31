@@ -10,10 +10,12 @@ This crate contains code examples for the **Data Structures** category on crates
 - **Bitfield** (`examples/bitfield/`): Demonstrates concepts like `bitflags`, `bitvec`, `fixedbitset`, `flagset`, `roaring`.
 - **Bloomfilter** (`examples/bloomfilter/`): Demonstrates concepts like `bloomfilter`.
 - **Btrees** (`examples/btrees/`): Demonstrates concepts like `btreemap`, `btreeset`.
+- **Elsa** (`examples/elsa/`): Demonstrates stable references in append-only `FrozenVec` and `FrozenMap` collections.
 - **Graph** (`examples/graph/`): Demonstrates concepts like `petgraph`.
 - **Hashmap** (`examples/hashmap/`): Demonstrates concepts like `custom_hash_function`, `custom_type_as_key`, `fast_hashmap`, `hashmap`, `hashset`.
 - **Linkedlist** (`examples/linkedlist/`): Demonstrates concepts like `linkedlist`.
 - **Maps** (`examples/maps/`): Demonstrates concepts like `indexmap`, `linked_hash_map`, `multimap`, `slotmap`.
+- **PHF** (`examples/phf/`): Demonstrates compile-time perfect hash maps with `phf`.
 - **Rangemap** (`examples/rangemap/`): Demonstrates concepts like `rangemap`.
 - **Skiplist** (`examples/skiplist/`): Demonstrates concepts like `skiplist`.
 - **Stack Allocated** (`examples/stack_allocated/`): Demonstrates concepts like `arrayvec`, `heapless`, `smallvec`, `tinyvec`.
@@ -29,6 +31,7 @@ To check or run examples in this crate:
 ```console
 cargo check --package data_structures --examples
 cargo test --package data_structures
+cargo bench --package data_structures --bench hashmap
 ```
 
 Code examples correspond to chapters in `bk/src/categories/data_structures` or related book sections.

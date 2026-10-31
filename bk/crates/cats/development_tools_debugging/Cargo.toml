@@ -28,6 +28,11 @@ path = "examples/debugging/main.rs"
 test = true
 
 [[example]]
+name = "debugger"
+path = "examples/debugger/main.rs"
+test = true
+
+[[example]]
 name = "log"
 path = "examples/log/main.rs"
 test = true

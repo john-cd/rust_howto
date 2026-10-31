@@ -6,7 +6,7 @@ This crate contains code examples for the **API Bindings** category on crates.io
 
 ## Examples Covered
 
-- **API Bindings** (`examples/api_bindings/`): Code examples covering api bindings.
+- **API Bindings** (`examples/api_bindings/`): Tested placeholder; no API binding example is implemented yet.
 
 ## Usage
 

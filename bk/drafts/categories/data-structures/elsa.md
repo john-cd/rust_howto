@@ -26,52 +26,13 @@ This is particularly useful for:
 The following example demonstrates how `FrozenVec` allows inserting elements and holding onto references to them at the same time:
 
 ```rust,editable,noplayground
-// Add to Cargo.toml:
-// [dependencies]
-// elsa = "1.11"
-
-use elsa::FrozenVec;
-
-fn main() {
-    let frozen: FrozenVec<Box<String>> = FrozenVec::new();
-
-    // `push_get` inserts an element and returns a reference to it.
-    // This reference remains valid even after further insertions.
-    let first: &String = frozen.push_get(Box::new("first".to_string()));
-    let second: &String = frozen.push_get(Box::new("second".to_string()));
-    let third: &String = frozen.push_get(Box::new("third".to_string()));
-
-    // Importantly, `first` and `second` are still valid even though we added `third`:
-    println!("first:  {first}");
-    println!("second: {second}");
-    println!("third:  {third}");
-    println!("total:  {}", frozen.len());
-
-    // `FrozenVec` also supports indexing:
-    println!("index 0: {}", frozen[0]);
-}
+{{#include ../../../crates/cats/data_structures/examples/elsa/frozen_vec.rs:example}}
 ```
 
 A `FrozenMap<K, Box<V>>` works similarly for key-value pairs:
 
-```rust,noplayground
-// Add to Cargo.toml:
-// [dependencies]
-// elsa = "1.11"
-
-use elsa::FrozenMap;
-
-fn main() {
-    let map: FrozenMap<&str, Box<u32>> = FrozenMap::new();
-
-    map.insert("one", Box::new(1));
-    map.insert("two", Box::new(2));
-
-    // References remain stable after further insertions:
-    let one: &u32 = map.get("one").unwrap();
-    map.insert("three", Box::new(3));
-    println!("one is still: {one}");
-}
+```rust,editable,noplayground
+{{#include ../../../crates/cats/data_structures/examples/elsa/frozen_map.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}

@@ -7,6 +7,7 @@ Examples of logging, tracing, and observability patterns using tracing, log4rs, 
 ## Examples Covered
 
 - **Debugging** (`examples/debugging/`): Demonstrates concepts like `backtrace`, `dbg_macro`.
+- **Debugger** (`examples/debugger/`): Provides a small program for stepping through in a debugger.
 - **Log** (`examples/log/`): Demonstrates concepts like `log_custom`, `log_custom_logger`, `log_debug`, `log_env_variable`, `log_error`, `log_mod`, `log_stdout`, `log_syslog`, `log_timestamp`.
 - **Metrics** (`examples/metrics/`): Demonstrates concepts like `metrics_route`, `prometheus`, `record_metrics`.
 - **Other** (`examples/other/`): Demonstrates concepts like `open_observe`, `open_telemetry`, `slog`, `type_name_of_val`.

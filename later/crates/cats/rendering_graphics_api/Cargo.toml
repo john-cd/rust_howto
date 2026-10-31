@@ -44,6 +44,7 @@ path = "examples/vulkan/main.rs"
 test = true
 
 [dependencies]
+glow = "0.18.0" # Cross-platform OpenGL, OpenGL ES, and WebGL bindings.
 pollster = { version = "1.0.1", optional = true } # runs the example's async GPU setup
 wgpu = { version = "30.0.1", optional = true } # was pinned for ggez
 

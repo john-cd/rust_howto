@@ -76,6 +76,49 @@ run the same representative input for each command. Install it with:
 {{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/hyperfine.sh}}
 ```
 
+## Criterion Benchmarks from the Book {#book-benchmarks}
+
+These Criterion targets compare real implementations from the book's example
+crates. Run them from `bk/crates`; results depend on the machine and build
+configuration, so use them to compare changes on the same system.
+
+### Hash Functions {#hashing-benchmark}
+
+Compare hash functions over small and medium byte buffers:
+
+```console
+cargo bench --package algorithms --bench hashing
+```
+
+```rust,editable
+{{#include ../../../crates/cats/algorithms/benches/hashing.rs:example}}
+```
+
+### Arena and Heap Allocation {#arena-benchmark}
+
+Compare `bumpalo` arena allocation with `Box` allocation:
+
+```console
+cargo bench --package memory_management --bench arena
+```
+
+```rust,editable
+{{#include ../../../crates/cats/memory_management/benches/arena.rs:example}}
+```
+
+### Hash Map Implementations {#hashmap-benchmark}
+
+Compare the standard library, `ahash`, and `rustc-hash` for string and integer
+keys:
+
+```console
+cargo bench --package data_structures --bench hashmap
+```
+
+```rust,editable
+{{#include ../../../crates/cats/data_structures/benches/hashmap.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Debugging](../development-tools_debugging/index.md)

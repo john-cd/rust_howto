@@ -23026,6 +23026,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "ash",
+ "glow 0.18.0",
  "naga 30.0.1",
  "pollster 1.0.1",
  "wgpu 30.0.1",

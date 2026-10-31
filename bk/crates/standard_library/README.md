@@ -10,6 +10,7 @@ This crate contains comprehensive code examples demonstrating idiomatic usage of
 - **Collections & Iterators**: `Vec`, `HashMap`, `BTreeMap`, custom iterators, adapters (`map`, `filter`, `fold`), and collecting items.
 - **Text & Strings**: String manipulation, `&str` slicing, UTF-8 handling, and formatting.
 - **Error Handling & I/O**: Working with `Result`, `Option`, `std::io`, and `std::fs`.
+- **Overflow** (`examples/overflow/`): Demonstrates checked, wrapping, overflowing, and saturating arithmetic.
 - **Interior Mutability & Concurrency**: `Cell`, `RefCell`, `Atomic*` types, and standard thread primitives (`std::thread`).
 
 ## Usage
