@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Parses an SVG and rasterizes it to a PNG with `resvg`.
+//!
+//! SVG is an XML format that describes drawings as shapes and paths instead of
+//! pixels, so it scales without blurring. Rasterizing turns it into a pixel
+//! image, such as a PNG, for places that cannot display SVG.
 
 const SVG: &str = r##"
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="100" viewBox="0 0 160 100">

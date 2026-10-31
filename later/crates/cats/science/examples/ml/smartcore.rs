@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Train a SmartCore decision-tree classifier on synthetic data and measure its
 //! accuracy on a seeded holdout split.
+//!
+//! A decision tree classifier predicts a label by asking a series of yes/no
+//! questions about the features. It is trained on labelled examples and
+//! measured by accuracy on data it predicts. Trees are easy to read but can
+//! overfit, which means memorizing the training data instead of generalizing.
 
 use std::error::Error;
 

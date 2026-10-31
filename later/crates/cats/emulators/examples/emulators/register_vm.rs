@@ -1,4 +1,10 @@
 //! A two-register virtual machine with a bounded fetch/decode/execute loop.
+//!
+//! A virtual machine runs programs written for an imaginary processor. Each
+//! cycle it fetches an instruction, decodes it and executes it, changing
+//! registers (small, fast storage slots). Emulators and scripting languages are
+//! built on this loop. The loop is bounded here so a faulty program cannot run
+//! forever.
 
 use core::fmt;
 

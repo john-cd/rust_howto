@@ -1,4 +1,9 @@
 //! Tests a Redis service on a randomly mapped host port.
+//!
+//! Integration tests are more realistic against a real service than against a
+//! mock. A container starts Redis (an in-memory key-value store) for the test,
+//! and mapping its port to a random free host port avoids clashes with a Redis
+//! already running or with parallel tests. It needs a running Docker daemon.
 
 // ANCHOR: example
 use std::time::Duration;

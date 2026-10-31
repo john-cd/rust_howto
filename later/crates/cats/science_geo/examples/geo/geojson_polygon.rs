@@ -1,4 +1,8 @@
 //! Reads a GeoJSON feature and checks its planar geometry.
+//!
+//! GeoJSON is a JSON format for geographic features such as points and
+//! polygons. Web maps and many APIs exchange it. Coordinates are listed as
+//! [longitude, latitude], in that order, which is easy to get backwards.
 
 // ANCHOR: example
 use std::error::Error;

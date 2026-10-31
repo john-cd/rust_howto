@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Encode an image to PNG and JPEG in memory.
+//!
+//! PNG is lossless and suits graphics and screenshots; JPEG is lossy,
+//! discarding detail the eye barely notices, which gives much smaller photo
+//! files. Encoding in memory returns the bytes without writing a file, for
+//! example to send in an HTTP response.
 
 use std::io::Cursor;
 

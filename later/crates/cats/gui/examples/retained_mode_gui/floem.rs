@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A reactive counter application with Floem.
+//!
+//! Floem uses reactive signals: a signal holds a value, and the parts of the
+//! interface that read it update automatically when it changes. This avoids
+//! writing code that manually refreshes the view.
 
 use floem::prelude::*;
 

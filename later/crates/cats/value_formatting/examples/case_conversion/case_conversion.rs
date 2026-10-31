@@ -1,4 +1,8 @@
 //! Demonstrates identifier case conversion with heck.
+//!
+//! Naming styles: `snake_case`, `camelCase`, `PascalCase` and `kebab-case`.
+//! Converting between them helps when mapping names between languages or file
+//! formats, for example a JSON API that uses camelCase to Rust fields.
 
 use heck::ToUpperCamelCase as _;
 

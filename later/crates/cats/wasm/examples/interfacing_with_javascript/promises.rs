@@ -7,6 +7,10 @@
 )]
 // ANCHOR: example
 //! Awaits a JavaScript Promise from Rust.
+//!
+//! A JavaScript Promise stands for a value that arrives later, like a Rust
+//! future. `wasm-bindgen-futures` converts between the two, so Rust code
+//! compiled to WebAssembly can use `.await` on browser APIs such as `fetch`.
 
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use js_sys::Promise;

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Measure a unit square and compare two city coordinates with `geo`.
+//!
+//! Geospatial code works with points, lines and polygons given as coordinates.
+//! Planar functions treat the world as flat, which is fine for small areas;
+//! coordinates on the Earth are usually longitude and latitude in degrees (WGS
+//! 84), where distances need a spherical formula.
 
 use geo::Area as _;
 use geo::Centroid as _;

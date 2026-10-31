@@ -1,4 +1,9 @@
 //! Runs a short-lived container with explicit cleanup using Bollard.
+//!
+//! A container runs a program in an isolated process with its own file system,
+//! built from an image. Docker is the common runtime. Programs use its API to
+//! start throwaway services in tests. Always remove the container afterwards,
+//! or stopped containers pile up on the machine.
 
 // ANCHOR: example
 use anyhow::Context;

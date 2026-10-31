@@ -3,6 +3,14 @@
 // ANCHOR: example
 //! Price European options with the `black_scholes` crate, then recover the
 //! volatility from a price (implied volatility).
+//!
+//! An option gives its holder the right, not the obligation, to buy (a call) or
+//! sell (a put) an asset at a fixed strike price on a fixed date. A "European"
+//! option can only be exercised at expiry. The Black-Scholes formula estimates
+//! its fair price from the current asset price, strike, time to expiry,
+//! interest rate and volatility (how much the price fluctuates). Implied
+//! volatility runs the formula backwards: it finds the volatility that matches
+//! an observed market price.
 
 /// Prices a call and a put, then solves for the volatility that reproduces
 /// the call price.

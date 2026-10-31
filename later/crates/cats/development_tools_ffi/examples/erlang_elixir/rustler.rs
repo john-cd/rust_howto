@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Native implemented functions for Erlang and Elixir with `rustler`.
+//!
+//! Erlang and Elixir run on the BEAM virtual machine, which is great at
+//! concurrency but slow at number crunching. A NIF (native implemented
+//! function) is native code the VM calls directly. A crash in a NIF takes down
+//! the whole VM, so Rustler's safety matters.
 
 #![allow(unused)]
 

@@ -1,4 +1,9 @@
 //! A simple example that plays a 440Hz sine wave (A4) for 1 second.
+//!
+//! Sound is stored as samples, numbers that describe the air pressure many
+//! times per second (the sample rate). A 440 Hz sine wave is the musical note
+//! A4, the pitch orchestras tune to. The audio library streams samples to the
+//! sound card through the operating system.
 
 use std::error::Error;
 

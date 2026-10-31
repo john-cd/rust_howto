@@ -1,6 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
 //! Read-only queries of FreeBSD kernel state.
+//!
+//! FreeBSD is a Unix-like operating system used in servers and network
+//! appliances. `sysctl` is its interface for reading kernel state, such as the
+//! hostname or memory size. It runs on FreeBSD only.
 
 // ANCHOR: example
 use sysctl::Ctl;

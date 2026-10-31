@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Writes one second of a 440 Hz sine wave to an in-memory WAV file with
 //! `hound`, then reads it back.
+//!
+//! WAV is an uncompressed audio container: a header describing the sample rate,
+//! channels and bit depth, followed by the raw samples. 16-bit samples range
+//! from -32768 to 32767. Writing to memory instead of a file keeps the example
+//! self-contained.
 
 use std::error::Error;
 use std::f32::consts::TAU;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Toast notifications with `egui-notify` and icons with `egui-phosphor`.
+//!
+//! A toast is a short notification that appears over the interface and fades
+//! away, like "File saved". Icon fonts draw symbols as text characters. `egui`
+//! is an immediate-mode GUI: the interface is rebuilt by code on every frame.
 
 use std::time::Duration;
 

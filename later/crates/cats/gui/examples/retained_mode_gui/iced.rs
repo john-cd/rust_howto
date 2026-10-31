@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A counter application with `iced`.
+//!
+//! Iced follows the Elm architecture: the state is a struct, user actions
+//! become messages, an update function applies them, and a view function builds
+//! the interface from the state. Data flows one way, which makes behaviour easy
+//! to follow and test.
 
 use iced::Alignment;
 use iced::Element;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Computing a layout with `morphorm`.
+//!
+//! A layout engine computes the size and position of every element from rules
+//! such as "fill the width" or "stack vertically", so you do not place each
+//! pixel by hand and the interface adapts to the window size.
 
 use morphorm::*;
 

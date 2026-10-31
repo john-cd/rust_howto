@@ -3,6 +3,12 @@
 // ANCHOR: example
 //! Daily returns and a 20-day rolling standard deviation, annualized with
 //! the square root of 252 trading days.
+//!
+//! A return is the percentage change of a price from one day to the next. The
+//! standard deviation of returns measures volatility, a common measure of risk.
+//! A rolling window recomputes it over the most recent N days, and annualizing
+//! scales it to a yearly figure (daily values times the square root of roughly
+//! 252 trading days).
 
 use ta_statistics::SingleStatistics;
 

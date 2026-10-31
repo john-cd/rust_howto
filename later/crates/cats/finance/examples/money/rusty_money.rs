@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Represent, add, and format money with an explicit currency.
+//!
+//! Never store money as `f64`: binary floating point cannot represent values
+//! such as 0.10 exactly, so errors creep into totals. Libraries like this keep
+//! an exact amount together with its currency, and refuse to add dollars to
+//! euros.
 
 use rusty_money::Money;
 use rusty_money::iso;

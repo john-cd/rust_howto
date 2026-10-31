@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Moves and draws a bouncing ball with ggez.
+//!
+//! A game loop repeats: handle input, update the game state, draw a frame. The
+//! update step usually advances by the time elapsed since the last frame, so
+//! the game runs at the same speed on slow and fast computers.
 
 use ggez::Context;
 use ggez::ContextBuilder;

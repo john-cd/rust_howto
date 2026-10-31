@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Calls a browser API from Rust through `web-sys`.
+//!
+//! `web-sys` provides bindings to the browser's APIs, such as the document, the
+//! DOM (the tree of page elements) and the console, for Rust code compiled to
+//! WebAssembly. The code must run in a browser, not as a normal program.
 
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;

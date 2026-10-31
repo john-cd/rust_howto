@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Uses a JavaScript built-in from Rust through `js-sys`.
+//!
+//! `js-sys` exposes JavaScript's built-in objects, such as `Date`, `Array` and
+//! `Math`, to Rust code compiled to WebAssembly (a binary format that browsers
+//! run at near-native speed).
 
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use js_sys::Date;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates rendering a 2D line plot into an SVG string using `plotters`.
+//!
+//! Plotters draws charts into many backends; SVG is a text format for vector
+//! graphics that scales without blurring and can be embedded in web pages.
+//! Drawing into a string avoids files.
 
 use plotters::prelude::*;
 

@@ -5,6 +5,11 @@
 
 // ANCHOR: example
 //! A counter window defined with Slint.
+//!
+//! Slint describes the interface in its own markup language (`.slint`), which
+//! is compiled with the program. Properties declared there are bound to Rust
+//! code through callbacks and setters. It targets desktops and embedded
+//! devices.
 
 slint::slint! {
     import { Button, VerticalBox } from "std-widgets.slint";

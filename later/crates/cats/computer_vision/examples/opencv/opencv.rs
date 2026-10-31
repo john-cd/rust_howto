@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to load an image, convert it to grayscale, and
 //! save the result using the `opencv` crate.
+//!
+//! OpenCV is the standard computer-vision library. Many algorithms work on
+//! grayscale images, which keep one brightness value per pixel and are cheaper
+//! to process than three colour channels. It must be installed on the system.
 
 #![cfg(all(target_os = "linux", feature = "opencv"))]
 

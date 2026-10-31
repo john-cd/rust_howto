@@ -1,4 +1,8 @@
 //! Draws software pixels in a native Winit window.
+//!
+//! Software rendering means the CPU computes every pixel into a buffer that is
+//! then shown in the window, with no GPU programming. It is slower, but simple,
+//! portable and enough for tools and retro-style games.
 
 // ANCHOR: example
 use std::num::NonZeroU32;

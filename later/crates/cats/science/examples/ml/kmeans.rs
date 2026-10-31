@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Cluster two groups of synthetic points with seeded Linfa K-means.
+//!
+//! Machine learning learns patterns from data. K-means is unsupervised
+//! clustering: it groups points into K clusters without labels, by repeatedly
+//! moving K centres to the mean of their nearest points. Uses include customer
+//! segmentation and image colour reduction.
 
 use std::collections::BTreeSet;
 use std::error::Error;

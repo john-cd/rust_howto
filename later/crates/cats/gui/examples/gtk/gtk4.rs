@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A GTK 4 application with a button and a label.
+//!
+//! GTK is a widely used toolkit for desktop interfaces on Linux (the base of
+//! GNOME), also available on Windows and macOS. A GUI program creates widgets
+//! such as buttons and labels, then connects signal handlers that run when the
+//! user acts. It needs the GTK 4 libraries installed.
 
 use gtk::Application;
 use gtk::ApplicationWindow;

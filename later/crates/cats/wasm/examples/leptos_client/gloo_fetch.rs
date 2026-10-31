@@ -9,6 +9,10 @@
 )]
 // ANCHOR: example
 //! Call an HTTP API from WebAssembly with [`gloo_net`].
+//!
+//! In the browser, programs cannot use the usual networking libraries; they
+//! must call `fetch`. `gloo_net` wraps it in a Rust async API. The server must
+//! allow the request with CORS headers if it is on a different origin (domain).
 
 /// Describes a GET request independently of the platform, so it can be tested
 /// natively.

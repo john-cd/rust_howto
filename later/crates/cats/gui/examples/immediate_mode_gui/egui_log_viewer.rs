@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Shows the `tracing` events of an application in a panel with `egui_tracing`.
+//!
+//! `tracing` records structured log events from a program. A subscriber layer
+//! can collect them, so a debugging panel inside the app can show them live.
+//! `egui` is an immediate-mode GUI: the interface is rebuilt by code on every
+//! frame.
 
 use eframe_034::egui;
 use egui_tracing::EventCollector;

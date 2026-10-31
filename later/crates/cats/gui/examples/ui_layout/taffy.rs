@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Computes and inspects a flexbox layout with taffy.
+//!
+//! Flexbox is the CSS layout model: children are arranged in a row or column,
+//! and they grow, shrink and align according to rules. Taffy implements it (and
+//! CSS Grid) without a browser, for use in native UI toolkits and game engines.
 
 use taffy::prelude::*;
 

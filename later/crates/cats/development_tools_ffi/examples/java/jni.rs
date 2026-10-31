@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Calling Rust from Java with the Java Native Interface.
+//!
+//! JNI (Java Native Interface) is how Java calls native code. A Rust function
+//! is exported with a name derived from its Java class and method, and receives
+//! a handle to the JVM. It lets you reuse Rust libraries from Java and Android
+//! apps.
 
 use jni::EnvUnowned;
 use jni::errors::ThrowRuntimeExAndDefault;

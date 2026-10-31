@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates standard Rust format syntax and locale-aware integer grouping.
+//!
+//! Different countries write numbers differently: 1,234.5 in the US but 1.234,5
+//! in Germany. Localized formatting follows the user's locale, which matters
+//! for anything shown to people (not for machine-read data).
 
 use num_format::Locale;
 use num_format::ToFormattedString;
@@ -30,7 +34,8 @@ fn main() {
 // ANCHOR_END: example
 
 pub fn run() {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry();
 }

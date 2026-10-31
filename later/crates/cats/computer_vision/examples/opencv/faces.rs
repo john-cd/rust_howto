@@ -1,4 +1,9 @@
 //! Loads a Haar cascade and applies it to a generated grayscale frame.
+//!
+//! A Haar cascade is a classic face-detection method: a trained list of simple
+//! brightness patterns, tested over the image at many positions and scales. It
+//! is fast but less accurate than modern neural networks. OpenCV is the
+//! standard computer-vision library; it must be installed on the system.
 
 // ANCHOR: example
 use std::error::Error;

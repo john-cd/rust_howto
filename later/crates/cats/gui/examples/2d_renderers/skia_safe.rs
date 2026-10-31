@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Draw shapes into an in-memory image with `skia-safe` (CPU raster, no GPU or
 //! window) and encode it as PNG.
+//!
+//! Skia is the 2D graphics library behind Chrome and Android. A canvas receives
+//! drawing commands; a surface holds the pixels. Rendering on the CPU into an
+//! image needs no window or GPU, which makes the example easy to run and test.
 
 use anyhow::Context as _;
 use skia_safe::Color;

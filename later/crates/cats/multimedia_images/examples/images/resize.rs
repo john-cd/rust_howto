@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Create an image in memory, resize it and convert it to grayscale.
+//!
+//! Resizing creates thumbnails and fits images to a screen. The filter decides
+//! the quality: nearest-neighbour is fast but blocky, while Lanczos is slower
+//! and sharper. Grayscale conversion keeps one brightness value per pixel,
+//! which many algorithms such as edge detection need.
 
 use image::DynamicImage;
 use image::RgbImage;

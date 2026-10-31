@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Simulate a single-server bank queue with a timestamp-ordered event heap.
+//!
+//! In a discrete-event simulation the model state changes only at events, such
+//! as a customer arriving or finishing service, so the simulator jumps from one
+//! event to the next instead of ticking through every second. A priority queue
+//! ordered by timestamp supplies the next event. It models queues in banks,
+//! call centres, factories and networks.
 
 use std::cmp::Reverse;
 use std::collections::BinaryHeap;

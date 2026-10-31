@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creating a window with `winit`.
+//!
+//! A window is how a program receives input and shows pixels. `winit` creates
+//! windows on all platforms and delivers events, such as key presses and
+//! resizes, through an event loop that runs until the program exits.
 
 use winit::application::ApplicationHandler;
 use winit::event::WindowEvent;
