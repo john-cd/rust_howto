@@ -236,7 +236,7 @@ mod tests {
     #[test]
     fn desired_deployment_follows_the_spec() -> Result<(), ReconcileError> {
         let deployment = desired_deployment(&echo())?;
-        let spec = deployment.spec.expect("spec");
+        let spec = deployment.spec;
         assert_eq!(spec.replicas, Some(2));
         let owners = deployment.metadata.owner_references.expect("owner");
         assert_eq!(owners[0].kind, "Echo");

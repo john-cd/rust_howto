@@ -6,27 +6,23 @@
 //!
 //! Cornucopia is a command-line generator. Annotated SQL lives in
 //! `cornucopia/queries/greetings.sql`, and its schema is in
-//! `cornucopia/schema.sql`. The generated module is included below.
+//! `cornucopia/schema.sql`. The generated `cornucopia_queries` crate is a path
+//! dependency.
 //!
-//! Install Cornucopia 0.9 and `psql`, prepare a local database, and generate
-//! the module from the repository root with:
+//! Install Cornucopia 1.0 and `psql`, prepare a local database, and generate
+//! the crate from the repository root with:
 //! ```text
-//! cargo install --locked --version 0.9.0 cornucopia
+//! cargo install --locked --version 1.0.1 cornucopia
 //! $env:DATABASE_URL = "postgres://postgres:postgres@localhost/rust_howto"
 //! psql $env:DATABASE_URL -f bk/crates/cats/database/examples/postgres/cornucopia/schema.sql
-//! cornucopia -q bk/crates/cats/database/examples/postgres/cornucopia/queries -d bk/crates/cats/database/examples/postgres/cornucopia/generated.rs live $env:DATABASE_URL
-//! rustup run nightly rustfmt --edition 2021 bk/crates/cats/database/examples/postgres/cornucopia/generated.rs
+//! cornucopia live -c bk/crates/cats/database/examples/postgres/cornucopia/cornucopia.toml -q bk/crates/cats/database/examples/postgres/cornucopia/queries -d bk/crates/cats/database/cornucopia_queries --async true --sync false $env:DATABASE_URL
 //! ```
 //! Set `DATABASE_URL` to that database before running the example. The book
 //! chapter describes how to start the local PostgreSQL service.
 
-mod generated {
-    include!("cornucopia/generated.rs");
-}
-
 use anyhow::Context;
-use generated::queries::greetings::add_greeting;
-use generated::queries::greetings::list_greetings;
+use cornucopia_queries::queries::greetings::add_greeting;
+use cornucopia_queries::queries::greetings::list_greetings;
 use tokio_postgres::NoTls;
 
 /// Connects to PostgreSQL, prepares the sample schema, and runs generated

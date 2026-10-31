@@ -74,9 +74,9 @@ This recipe counts artist rows by nationality in an existing PostgreSQL `artists
 
 [![cornucopia~website][c~cornucopia~website~badge]][c~cornucopia~website] [![cornucopia][c~cornucopia~docs~badge]][c~cornucopia~docs] [![cornucopia~crates.io][c~cornucopia~crates.io~badge]][c~cornucopia~crates.io] [![cornucopia~repo][c~cornucopia~repo~badge]][c~cornucopia~repo] [![cornucopia~lib.rs][c~cornucopia~lib.rs~badge]][c~cornucopia~lib.rs]{{hi:cornucopia}}{{hi:Query}}{{hi:Generator}}{{hi:Tokio-postgres}}{{hi:Postgresql}}{{hi:Sql}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
 
-Cornucopia is a command-line generator that prepares annotated SQL against a PostgreSQL database and writes Rust query bindings. The example uses the workspace's Cornucopia 0.9 CLI and `cornucopia_async` 0.4 runtime. Keep the generator, runtime, SQL, and checked-in generated module in sync.
+Cornucopia is a command-line generator that prepares annotated SQL against a PostgreSQL database and writes a Rust crate of query bindings. The example uses the Cornucopia 1.0 CLI; the generated crate `cornucopia_queries` is a path dependency that re-exports the PostgreSQL driver, so no separate runtime crate is needed. Keep the generator, SQL, and checked-in generated crate in sync.
 
-The sample's annotated queries are in `bk/crates/cats/database/examples/postgres/cornucopia/queries/greetings.sql`; its schema is in `schema.sql`. Apply the schema to the database from `DATABASE_URL`, then run `cornucopia -q <queries-dir> -d <generated-file> live <DATABASE_URL>` from the repository root. Format the generated Rust with the pinned nightly rustfmt. Generation requires a live database so Cornucopia can validate the SQL and infer the result types.
+The sample's annotated queries are in `bk/crates/cats/database/examples/postgres/cornucopia/queries/greetings.sql`; its schema is in `schema.sql`; `cornucopia.toml` names the generated package. Apply the schema to the database from `DATABASE_URL`, then run `cornucopia live -c <cornucopia.toml> -q <queries-dir> -d <generated-crate-dir> --async true --sync false <DATABASE_URL>` from the repository root. Generation requires a live database so Cornucopia can validate the SQL and infer the result types.
 
 The workflow is:
 
@@ -88,7 +88,7 @@ The workflow is:
 {{#include ../../../crates/cats/database/examples/postgres/cornucopia.rs:example}}
 ```
 
-Cornucopia 1.0 incorporated the Clorinde fork's rewritten code generator. This example intentionally follows the older 0.9 API used by the workspace dependencies; do not mix its generated code with the 1.0 runtime. See the [Cornucopia migration guide][c~cornucopia~migration~1.0] when upgrading.
+Cornucopia 1.0 incorporated the Clorinde fork's rewritten code generator, so projects upgrading from 0.9 must regenerate their bindings. See the [Cornucopia migration guide][c~cornucopia~migration~1.0].
 
 ## Related Topics {#related-topics .skip}
 
