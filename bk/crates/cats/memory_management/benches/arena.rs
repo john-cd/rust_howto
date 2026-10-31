@@ -21,15 +21,15 @@ use criterion::criterion_main;
 /// A binary tree node living in a `bumpalo` arena with reference pointers.
 struct ArenaNode<'bump> {
     val: i32,
-    left: Option<&'bump ArenaNode<'bump>>,
-    right: Option<&'bump ArenaNode<'bump>>,
+    left: Option<&'bump Self>,
+    right: Option<&'bump Self>,
 }
 
 /// A binary tree node living on the standard heap using `Box`.
 struct BoxNode {
     val: i32,
-    left: Option<Box<BoxNode>>,
-    right: Option<Box<BoxNode>>,
+    left: Option<Box<Self>>,
+    right: Option<Box<Self>>,
 }
 
 /// Inserts a value into an arena-backed binary search tree.

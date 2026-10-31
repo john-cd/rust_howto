@@ -137,11 +137,14 @@ mod tests {
     use std::process::Command;
 
     use super::*;
+    use crate::isolated;
 
     /// Exercises the tracing layer configuration.
     #[test]
     fn test_layers() {
-        layers();
+        isolated::run(module_path!(), "test_layers", || {
+            layers();
+        });
     }
 
     /// Checks that filters can be built.
@@ -172,13 +175,17 @@ mod tests {
     /// Verifies that per layer filtering.
     #[test]
     fn test_per_layer_filtering() {
-        per_layer_filtering();
+        isolated::run(module_path!(), "test_per_layer_filtering", || {
+            per_layer_filtering();
+        });
     }
 
     #[test]
     fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        isolated::run(module_path!(), "test_main_entry_point", || {
+            if let Err(err) = main() {
+                panic!("main failed: {err:?}");
+            }
+        });
     }
 }

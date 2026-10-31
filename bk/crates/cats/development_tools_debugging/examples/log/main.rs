@@ -16,6 +16,10 @@ mod log_stdout;
 mod log_syslog;
 mod log_timestamp;
 
+#[cfg(test)]
+#[path = "../support/isolated.rs"]
+mod isolated;
+
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {

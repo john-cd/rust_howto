@@ -54,6 +54,7 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Verifies that the log custom example's main path succeeds.
     #[test]
@@ -68,8 +69,10 @@ mod tests {
 
     #[test]
     fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        isolated::run(module_path!(), "test_main_entry_point", || {
+            if let Err(err) = main() {
+                panic!("main failed: {err:?}");
+            }
+        });
     }
 }

@@ -55,11 +55,18 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Runs the tracing subscriber example through its entry point.
     #[test]
     fn test_tracing_subscriber_example_entry_point() {
-        main();
+        isolated::run(
+            module_path!(),
+            "test_tracing_subscriber_example_entry_point",
+            || {
+                main();
+            },
+        );
     }
 
     // output-only: the example installs the process-wide subscriber, which can

@@ -19,7 +19,7 @@ use crates_io_api::SyncClient;
 fn get_client() -> Result<SyncClient> {
     let client = SyncClient::new(
         "my-user-agent (my-contact@domain.com)",
-        std::time::Duration::from_millis(1000),
+        std::time::Duration::from_secs(1),
     )?;
     Ok(client)
 }

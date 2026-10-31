@@ -51,10 +51,17 @@ pub fn run() -> Result<(), SetLoggerError> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Runs the log custom logger example through its entry point.
     #[test]
     fn test_log_custom_logger_example_entry_point() {
-        main().expect("example entry point should succeed");
+        isolated::run(
+            module_path!(),
+            "test_log_custom_logger_example_entry_point",
+            || {
+                main().expect("example entry point should succeed");
+            },
+        );
     }
 }

@@ -51,11 +51,18 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Runs the log mod example through its entry point.
     #[test]
     fn test_log_mod_example_entry_point() {
-        main();
+        isolated::run(
+            module_path!(),
+            "test_log_mod_example_entry_point",
+            || {
+                main();
+            },
+        );
     }
 
     // output-only: the example only emits log records, and the process-wide

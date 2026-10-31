@@ -93,15 +93,23 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Verifies that the tracing subscriber3b example's main path succeeds.
     /// Runs the tracing subscriber3b example through its entry point.
     #[test]
     fn test_tracing_subscriber3b_example_entry_point() {
-        use std::fs;
-        if !std::path::Path::new("temp").exists() {
-            fs::create_dir("temp").expect("example output should be writable");
-        }
-        main().expect("example entry point should succeed");
+        isolated::run(
+            module_path!(),
+            "test_tracing_subscriber3b_example_entry_point",
+            || {
+                use std::fs;
+                if !std::path::Path::new("temp").exists() {
+                    fs::create_dir("temp")
+                        .expect("example output should be writable");
+                }
+                main().expect("example entry point should succeed");
+            },
+        );
     }
 }
