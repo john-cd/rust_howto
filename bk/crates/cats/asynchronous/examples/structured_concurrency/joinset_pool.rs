@@ -67,7 +67,7 @@ async fn run_pool(inputs: Vec<u64>) -> Outcome {
 async fn abort_demo() -> usize {
     let mut set = JoinSet::new();
     for _ in 0..3 {
-        set.spawn(sleep(Duration::from_secs(3600)));
+        set.spawn(sleep(Duration::from_hours(1)));
     }
     set.abort_all();
     let mut cancelled = 0;

@@ -81,11 +81,18 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Runs the tracing span in scope example through its entry point.
     #[test]
     fn test_tracing_span_in_scope_example_entry_point() {
-        main();
+        isolated::run(
+            module_path!(),
+            "test_tracing_span_in_scope_example_entry_point",
+            || {
+                main();
+            },
+        );
     }
 
     #[derive(Clone, Default)]

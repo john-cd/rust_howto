@@ -101,7 +101,7 @@ fn main() -> anyhow::Result<()> {
     token_mock.assert();
     resource_mock.assert();
     assert_eq!(body, "mock records");
-    assert_eq!(expires_in, Some(Duration::from_secs(3_600)));
+    assert_eq!(expires_in, Some(Duration::from_hours(1)));
     println!("Received the protected response: {body}");
     Ok(())
 }

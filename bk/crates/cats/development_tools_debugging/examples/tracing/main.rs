@@ -19,6 +19,10 @@ mod tracing_subscriber3b;
 mod tracing_subscriber4;
 mod tracing_subscriber_layers;
 
+#[cfg(test)]
+#[path = "../support/isolated.rs"]
+mod isolated;
+
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {

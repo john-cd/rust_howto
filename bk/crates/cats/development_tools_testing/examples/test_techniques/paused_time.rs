@@ -44,7 +44,7 @@ mod tests {
         let started = Instant::now();
         let result = timeout(
             Duration::from_secs(5),
-            slow_answer(Duration::from_secs(60)),
+            slow_answer(Duration::from_mins(1)),
         )
         .await;
         assert!(result.is_err());

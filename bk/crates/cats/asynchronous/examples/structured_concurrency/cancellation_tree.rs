@@ -21,7 +21,7 @@ use tokio_util::task::TaskTracker;
 async fn worker(token: CancellationToken) -> &'static str {
     select! {
         () = token.cancelled() => "cancelled",
-        () = sleep(Duration::from_secs(3600)) => "finished",
+        () = sleep(Duration::from_hours(1)) => "finished",
     }
 }
 

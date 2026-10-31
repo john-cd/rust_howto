@@ -47,11 +47,18 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Runs the log timestamp example through its entry point.
     #[test]
     fn test_log_timestamp_example_entry_point() {
-        main();
+        isolated::run(
+            module_path!(),
+            "test_log_timestamp_example_entry_point",
+            || {
+                main();
+            },
+        );
     }
 
     // output-only: the example only emits log records, and the process-wide
