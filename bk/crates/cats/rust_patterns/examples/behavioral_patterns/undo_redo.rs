@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Implements an undo and redo history with reversible insert commands.
+//!
+//! Undo/redo is the command pattern: each action is stored as an object that
+//! can be applied and reversed. Two stacks hold the history, and a new action
+//! clears the redo stack.
 
 /// A reversible insertion at a character index.
 #[derive(Clone, Copy, Debug)]
@@ -78,7 +82,8 @@ fn main() {
 // ANCHOR_END: example
 
 pub fn run() {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry();
 }

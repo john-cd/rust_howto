@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Running `rayon` work on a custom thread pool.
+//!
+//! Rayon runs parallel iterators on a global thread pool, which defaults to one
+//! thread per CPU core. Building a custom pool lets you choose the thread count
+//! or isolate a workload.
 
 /// Computes a Fibonacci number on a pool of eight threads.
 fn main() {

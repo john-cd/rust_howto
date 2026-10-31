@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Renders metrics in Prometheus exposition format without opening a port.
+//!
+//! Prometheus is a monitoring system that scrapes numbers from services over
+//! HTTP and stores them as time series. A counter only increases (requests
+//! served), a gauge goes up and down (memory in use) and a histogram buckets
+//! values (latency).
 
 use metrics::counter;
 use metrics::histogram;

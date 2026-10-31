@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates basic usage of the `bytes` crate.
+//!
+//! `Bytes` is a cheaply cloneable, immutable buffer of bytes: cloning shares
+//! the same memory instead of copying. Network libraries use it to pass packet
+//! data around without copies.
 
 use bytes::BufMut as _;
 use bytes::BytesMut;

@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Serves the Prometheus payload from an Axum `/metrics` route.
+//!
+//! Metrics are numbers that describe a running service, such as request counts
+//! and latencies. A monitoring system such as Prometheus scrapes them
+//! periodically from an HTTP endpoint, conventionally `/metrics`.
 
 use axum::Router;
 use axum::routing::get;

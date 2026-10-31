@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parallel `filter`, `map` and `reduce` over a vector with `rayon`.
+//!
+//! Map/reduce first transforms every element independently (map), then combines
+//! the results with an associative operation (reduce). Because the combine step
+//! does not depend on order, the work splits across threads.
 
 use rayon::prelude::*;
 

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to skip hidden files and directories during
 //! directory traversal.
+//!
+//! Names starting with a dot (`.git`, `.env`) are hidden by convention on Unix.
+//! Traversal often skips them, which avoids walking huge directories such as
+//! `.git`.
 
 use std::path::Path;
 use std::path::PathBuf;

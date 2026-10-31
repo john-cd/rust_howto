@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrate using a custom type as the key in a `HashMap`.
+//!
+//! A `HashMap` key must implement `Hash` and `Eq`, and equal keys must have
+//! equal hashes. Deriving both gives your type that property. Do not use floats
+//! as keys, since `NaN` is not equal to itself.
 
 use std::collections::HashMap;
 use std::hash::DefaultHasher;

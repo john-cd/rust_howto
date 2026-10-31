@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Assembles WebAssembly text (`wat`) into a binary module, lists its exports
 //! with `wasmparser` and prints it back as text with `wasmprinter`.
+//!
+//! The example translates between WebAssembly's text format (WAT, readable) and
+//! its binary format (Wasm), which browsers and runtimes load. Round-tripping
+//! checks that nothing is lost.
 
 use anyhow::Result;
 use wasmparser::Parser;
@@ -56,7 +60,8 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

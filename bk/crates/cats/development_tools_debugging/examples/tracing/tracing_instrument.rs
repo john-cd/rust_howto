@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Instrumenting sync and async functions with `tracing` spans.
+//!
+//! `tracing` records structured events and spans (timed regions of work),
+//! unlike plain text logs. The `#[instrument]` attribute wraps a function in a
+//! span automatically and records its arguments as fields.
 
 use tracing::Level;
 use tracing::event;

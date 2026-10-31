@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Building and traversing a directed graph with `petgraph`.
+//!
+//! A graph is a set of nodes connected by edges, for example cities and roads,
+//! or tasks and dependencies. `petgraph` stores graphs and provides algorithms
+//! such as shortest path and topological sort.
 
 use petgraph::Directed;
 use petgraph::Undirected;

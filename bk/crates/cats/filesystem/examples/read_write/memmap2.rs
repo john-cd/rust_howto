@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates reading from a memory-mapped file.
+//!
+//! Memory mapping makes the operating system expose a file as if it were part
+//! of memory, loading pages on demand. It is efficient for large files, but if
+//! another process changes the file while mapped, the behaviour is undefined,
+//! which is why it needs `unsafe`.
 
 use std::fs::File;
 use std::io::Error;

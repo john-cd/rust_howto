@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creating temporary files and directories with `tempfile`.
+//!
+//! Temporary files are for scratch data. The `tempfile` crate creates them with
+//! unpredictable names in a safe way (avoiding race conditions an attacker
+//! could exploit) and deletes them when the handle is dropped.
 
 use std::fs::File;
 use std::io::Read;

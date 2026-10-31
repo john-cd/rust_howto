@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Lists the packages and targets of a Cargo workspace with `cargo_metadata`.
+//!
+//! `cargo metadata` prints, as JSON, what Cargo knows about a project: its
+//! packages, dependencies, features and targets. Build tools and IDEs use it
+//! instead of parsing `Cargo.toml` themselves.
 
 use std::path::Path;
 
@@ -34,7 +38,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates the basic usage of `ArrayQueue`.
+//!
+//! A lock-free queue lets many threads push and pop without taking a mutex, so
+//! a stalled thread never blocks the others. Work queues, schedulers and
+//! logging pipelines use them.
 
 use crossbeam_queue::ArrayQueue;
 

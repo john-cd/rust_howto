@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Keeps business rules as data: a decision table in the JSON Decision Model
 //! (JDM) format, evaluated with `zen-engine`.
+//!
+//! A decision table lists conditions and the outcome for each combination, as a
+//! data table instead of nested `if`s. Business rules such as pricing or
+//! eligibility are easier to review and change when they are data.
 
 use serde_json::json;
 use zen_engine::DecisionEngine;
@@ -109,7 +113,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

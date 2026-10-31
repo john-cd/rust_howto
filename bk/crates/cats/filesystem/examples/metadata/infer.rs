@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Detect a file's type from its first bytes.
+//!
+//! File type detection by content looks at the first bytes of a file, the
+//! "magic numbers" (a PNG starts with `\x89PNG`), which is more reliable than
+//! trusting the file extension.
 
 use std::fs;
 use std::path::Path;

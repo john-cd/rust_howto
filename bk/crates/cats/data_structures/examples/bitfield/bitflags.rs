@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! `bitflags` generate types for C-style flags with ergonomic APIs.
+//!
+//! Bit flags pack several yes/no options into one integer, one bit each, and
+//! combine them with `|`. File permissions and many operating system and
+//! protocol fields work like this. The `bitflags` crate gives them names and
+//! type safety.
 
 use std::fmt;
 

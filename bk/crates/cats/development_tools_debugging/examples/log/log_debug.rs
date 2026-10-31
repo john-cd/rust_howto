@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Emitting a debug message with the `log` crate.
+//!
+//! Log levels rank messages: `error`, `warn`, `info`, `debug` and `trace`, from
+//! most to least important. A logger filters out levels below its threshold, so
+//! debug output costs almost nothing when it is off.
 
 /// Executes a database query and logs it at the debug level.
 fn execute_query(query: &str) {

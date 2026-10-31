@@ -1,4 +1,8 @@
 //! Renders and saves a Julia set with Rayon and the image crate.
+//!
+//! A thread pool starts a fixed number of worker threads and feeds them jobs,
+//! so you do not pay for starting a thread for each job. Each pixel of a
+//! fractal image can be computed independently, which makes it a good fit.
 
 // TODO Reviewed ??-??-2026.
 

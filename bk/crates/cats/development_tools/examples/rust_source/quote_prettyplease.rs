@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generates Rust source with `quote` and formats it with `prettyplease`.
+//!
+//! Code generators build Rust code as token streams with `quote` and then
+//! format it with `prettyplease`, so the output is readable. Generated bindings
+//! and macros use this approach.
 
 use quote::format_ident;
 use quote::quote;
@@ -25,7 +29,8 @@ fn main() -> syn::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> syn::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

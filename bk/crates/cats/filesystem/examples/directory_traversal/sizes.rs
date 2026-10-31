@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! Calculates the total size of all files within a directory tree
 //! (within a given depth).
+//!
+//! A directory has no size of its own: its total is the sum of the sizes of all
+//! files below it, found by walking the tree. This is what `du` does.
 
 use std::path::Path;
 

@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! This example demonstrates the use of `any` and `all` methods on a parallel
 //! iterator.
+//!
+//! `any` and `all` check whether some or every element matches a condition. In
+//! parallel, they stop early as soon as the answer is known.
 
 use rayon::prelude::*;
 

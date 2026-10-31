@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! This example demonstrates how to traverse a directory and find files that
 //! have been modified within the last 24 hours.
+//!
+//! Walking a directory tree visits every file below a path, and a filter
+//! selects the ones you want by name or extension, like the `find` command.
 
 use std::path::Path;
 use std::path::PathBuf;

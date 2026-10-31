@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Property-based testing with `proptest`.
+//!
+//! Property-based testing checks a rule that must hold for all inputs, such as
+//! "reversing twice gives the original". The tool generates many random inputs
+//! and, when one fails, shrinks it to a minimal failing case.
 
 /// A simple function to test - finds the maximum of two integers:
 fn max_of_two(a: i32, b: i32) -> i32 {
@@ -91,7 +95,8 @@ fn main() {
 
 #[allow(clippy::items_after_test_module)]
 pub fn run() {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry();
 }

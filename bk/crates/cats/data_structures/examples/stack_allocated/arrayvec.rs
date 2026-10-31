@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates basic usage of `ArrayVec`.
+//!
+//! `ArrayVec` is a vector with a fixed maximum capacity stored on the stack, so
+//! it never allocates. Pushing beyond the capacity returns an error instead of
+//! growing. It suits embedded code and hot paths.
 
 use arrayvec::ArrayVec;
 

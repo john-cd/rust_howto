@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Logging an error with the `log` crate.
+//!
+//! Logging an error with `error!` records that something failed, with enough
+//! context to find it later. Log an error where it is handled, not at every
+//! layer it passes through, or the same failure appears many times.
 
 /// Simulates executing a database query.
 /// This function always returns an error for demonstration purposes.

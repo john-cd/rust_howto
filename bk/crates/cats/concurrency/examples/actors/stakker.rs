@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! An actor with the `stakker` crate: a counter that processes messages.
+//!
+//! The actor model structures a program as independent actors that own their
+//! state and communicate only by sending messages. Stakker is single-threaded,
+//! which avoids locking and suits embedded and real-time use.
 
 use std::sync::mpsc;
 use std::time::Instant;

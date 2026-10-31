@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Building and inspecting paths with `Path` and `PathBuf`.
+//!
+//! `Path` and `PathBuf` handle path parts portably: `join` appends a component
+//! with the correct separator (`/` or `\`), and `file_name`, `extension` and
+//! `parent` take it apart. Never build paths by gluing strings together.
 
 use std::path::Path;
 use std::path::PathBuf;

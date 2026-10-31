@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A `LinkedList`, a doubly linked list.
+//!
+//! A linked list stores each element in a separate node pointing to the next,
+//! so inserting in the middle is cheap but reading is slow and
+//! cache-unfriendly. In Rust a `Vec` or `VecDeque` is nearly always faster; use
+//! a list only when you need cheap splitting and joining.
 
 use std::collections::LinkedList;
 

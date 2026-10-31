@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates parallel searching using Rayon's `par_iter().find_any()`.
+//!
+//! Searching a large collection can be split into parts that threads search
+//! independently. `find_any` returns whichever match a thread finds first, not
+//! necessarily the first in order.
 
 use rayon::prelude::*;
 

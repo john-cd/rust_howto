@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generate compact, URL-safe identifiers with `short-uuid`.
+//!
+//! A UUID is a 128-bit identifier that is unique for practical purposes without
+//! any central coordination. Its usual form is long (36 characters); a short
+//! form, using a bigger alphabet, is friendlier in URLs.
 
 use short_uuid::ShortUuid;
 

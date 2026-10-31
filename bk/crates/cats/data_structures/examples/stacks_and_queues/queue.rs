@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! A queue implemented with `VecDeque`.
+//!
+//! A queue is first in, first out (FIFO), like a line at a shop. `VecDeque` is
+//! the standard double-ended queue, with O(1) pushes and pops at both ends.
 
 use std::collections::VecDeque;
 

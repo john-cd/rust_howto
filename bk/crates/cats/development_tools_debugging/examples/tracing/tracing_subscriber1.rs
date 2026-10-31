@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Demonstrates how to configure the tracing subscriber
 //! to change the logging level.
+//!
+//! In `tracing`, a subscriber decides what happens to the events and spans.
+//! `tracing_subscriber::fmt` prints them as text, with level filtering from an
+//! environment variable.
 
 /// Demonstrates how to configure the tracing subscriber
 /// to change the logging level.

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Snapshots of structured data with `insta`: JSON, redactions and
 //! `Debug` output.
+//!
+//! A snapshot test compares output with a stored reference. Values that change
+//! on every run, such as timestamps and IDs, are replaced by placeholders
+//! (redactions) first, so the snapshot stays stable.
 
 use serde::Serialize;
 
@@ -76,7 +80,8 @@ mod tests {
 
 #[allow(clippy::items_after_test_module)]
 pub fn run() {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry();
 }

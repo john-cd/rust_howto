@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates entering and exiting a span using `entered()` and `exit()`.
+//!
+//! A span marks a period of work, such as handling one request. Events logged
+//! while the span is entered carry its context. Holding the entered guard
+//! across an `.await` is a mistake in async code; use `instrument` on the
+//! future instead.
 
 use tracing::Level;
 use tracing::span;

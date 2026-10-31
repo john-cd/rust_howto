@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Captures and prints a stack trace using the standard library.
+//!
+//! A backtrace lists the chain of function calls that led to a point in the
+//! program, most recent first. It tells you how an error or panic was reached.
+//! Set `RUST_BACKTRACE=1` to see one on a panic; building with debug info adds
+//! file names and line numbers.
 
 use std::backtrace::Backtrace;
 

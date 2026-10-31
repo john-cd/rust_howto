@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Check whether an external command reports a version that meets a
 //! requirement.
+//!
+//! Semantic versioning writes versions as MAJOR.MINOR.PATCH. A patch release
+//! fixes bugs, a minor adds features compatibly, and a major may break things.
+//! Version requirements such as `^1.2` say which releases a dependency accepts.
 
 use std::ffi::OsStr;
 use std::process::Command;

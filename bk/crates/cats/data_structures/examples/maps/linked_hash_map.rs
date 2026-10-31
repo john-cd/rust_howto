@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A `LinkedHashMap`, a hash map that remembers insertion order.
+//!
+//! A linked hash map keeps entries in insertion (or access) order, which makes
+//! it the basis of an LRU cache: the oldest entry is at the front, ready to be
+//! evicted.
 
 use linked_hash_map::LinkedHashMap;
 

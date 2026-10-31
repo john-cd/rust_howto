@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! Demonstrates how to write logs to multiple destinations (in this instance,
 //! stdout and a file) simultaneously.
+//!
+//! A subscriber can print events as JSON, so that log systems such as
+//! Elasticsearch or Loki can index each field instead of parsing text.
 
 use std::io;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Initializes syslog and logs debug and error messages.
+//!
+//! Syslog is the Unix logging service: programs send messages to it and the
+//! system stores them in a central place, with levels and rotation. It is how
+//! daemons and servers log on Linux and macOS.
 
 #![cfg(unix)]
 

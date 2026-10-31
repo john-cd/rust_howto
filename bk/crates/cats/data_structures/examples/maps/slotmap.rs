@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A `SlotMap`, which hands out stable keys on insertion.
+//!
+//! A slot map hands out stable keys when you insert, and detects stale keys: a
+//! key to a removed item will not accidentally find a new item in the same
+//! slot. It is a safe alternative to raw indices or pointers in games and graph
+//! structures.
 
 use slotmap::SecondaryMap;
 use slotmap::SlotMap;

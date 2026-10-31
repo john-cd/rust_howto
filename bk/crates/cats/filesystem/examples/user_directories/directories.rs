@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to use the `directories` crate to find the
 //! user's data and config directories for a specific application.
+//!
+//! Operating systems have standard places for user data: configuration, cache
+//! and data directories (for example `~/.config` on Linux, `Library` on macOS,
+//! `AppData` on Windows). The `directories` crate returns the right one
+//! following each platform's convention.
 
 use std::path::PathBuf;
 

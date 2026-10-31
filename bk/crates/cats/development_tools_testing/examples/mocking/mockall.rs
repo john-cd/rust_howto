@@ -1,4 +1,8 @@
 //! Mocking a trait with `mockall`.
+//!
+//! A mock replaces a real dependency (a database or a web service) in a test.
+//! `mockall` generates a mock from a trait, lets you set the expected calls and
+//! return values, and fails the test when the expectations are not met.
 
 pub fn run() {
     main();

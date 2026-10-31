@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Walk a directory and computes the SHA256 digest of all iso files.
+//!
+//! A thread pool starts a fixed number of worker threads and feeds them jobs.
+//! Here directory entries are processed in parallel; results come back through
+//! a channel.
 
 use std::fs::File;
 use std::io::BufReader;
