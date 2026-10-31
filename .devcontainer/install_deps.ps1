@@ -39,7 +39,7 @@ winget install --id Ninja-build.Ninja -e --source winget --accept-source-agreeme
 winget install --id EclipseAdoptium.Temurin.21.JDK -e --source winget --accept-source-agreements --accept-package-agreements
 winget install 9NQ7512CXL7T -e --accept-package-agreements --disable-interactivity
 pymanager install 3.15
-winget install --id RubyInstallerTeam.RubyWithDevKit.3.3 -e --source winget --accept-source-agreements --accept-package-agreements
+# Install the Ruby 4.0 runtime, headers, and libraries required by Rutie.
 & (Join-Path $PSScriptRoot 'install_ruby_4_0.ps1')
 
 # Install the repository-pinned Pandoc release. Its MSI updates PATH when installed.
@@ -360,8 +360,6 @@ $env:Path = "$nasmDirectory;$env:Path"
 @(
     (Join-Path $env:ProgramFiles 'LLVM\bin'),
     (Join-Path $env:ProgramFiles 'NASM'),
-    'C:\Ruby33-x64\bin',
-    'C:\Ruby33-x64\msys64\usr\bin',
     (Join-Path $env:LOCALAPPDATA 'Pandoc'),
     (Join-Path $env:LOCALAPPDATA 'bin'),
     (Join-Path $env:LOCALAPPDATA 'bin\NASM')
@@ -445,7 +443,11 @@ rumdl --version
 python --version
 java --version
 javac --version
-ruby --version
+$rubyVersionOutput = ruby --version
+if ($LASTEXITCODE -ne 0 -or $rubyVersionOutput -notmatch '^ruby 4\.0\.\d+\b') {
+    throw "Expected ruby on PATH to resolve to Ruby 4.0.x, got: $rubyVersionOutput"
+}
+$rubyVersionOutput
 & $env:RUBY --version
 maturin --version
 flutter --version

@@ -9,18 +9,18 @@ This crate contains code examples for the **Development Tools FFI** category on 
 The repository's `.devcontainer` image and install scripts provide the native SDKs
 for these examples. On Debian, they install the default JDK, Ruby headers, Python
 3 with virtual-environment support, and the pinned Maturin release. The Windows
-script installs Eclipse Temurin JDK 21, Python 3.15, RubyInstaller with DevKit
-3.3, and the same Maturin version.
+script installs Eclipse Temurin JDK 21, Python 3.15, RubyInstaller 4.0, and the
+same Maturin version.
 
 - **Java/JNI:** Rust code can compile without a JDK. Running the Java caller
   requires `java` and `javac` on `PATH`; set `JAVA_HOME` to the JDK root when
   another tool needs an explicit JDK path. The Windows setup script configures
   it when the Temurin installer does not.
-- **Ruby:** `ruby-dev` supplies headers on Debian; RubyInstaller with DevKit
-  supplies Ruby, headers, and its C toolchain on Windows. The Rutie embedding
-  example builds and runs on Windows with the installed Ruby 4.0 runtime. Magnus
-  stays gated to non-Windows targets because Windows RubyInstaller uses the
-  MinGW ABI while this workspace targets MSVC; `rb-sys` rejects that ABI mismatch.
+- **Ruby:** `ruby-dev` supplies headers on Debian; RubyInstaller 4.0 supplies the
+  Ruby runtime, headers, and libraries on Windows. The Rutie embedding example
+  builds and runs on Windows with Ruby 4.0. Magnus stays gated to non-Windows
+  targets because Windows RubyInstaller uses the MinGW ABI while this workspace
+  targets MSVC; `rb-sys` rejects that ABI mismatch.
 - **Python:** Both embedded PyO3 examples support Linux and Windows. Windows
   embedded runs need `PYTHONHOME`
   set to Python's base installation so CPython can find its standard library.

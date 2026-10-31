@@ -122,6 +122,11 @@ touch "$HOME/.profile"
 if ! grep -Fqx "$ruby_profile_line" "$HOME/.profile"; then
     printf '%s\n' "$ruby_profile_line" >> "$HOME/.profile"
 fi
+ruby_version_output="$(ruby --version)"
+if [[ ! "${ruby_version_output}" =~ ^ruby\ 4\.0\.[0-9]+ ]]; then
+    printf 'Expected ruby on PATH to resolve to Ruby 4.0.x, got: %s\n' "${ruby_version_output}" >&2
+    exit 1
+fi
 
 # Install Pandoc binary
 wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -O /tmp/pandoc.deb \
