@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Represents and evaluates a tree with leaf and group nodes.
+//!
+//! The composite pattern treats single objects and groups of them uniformly, as
+//! a tree. A file system, a user interface, or an arithmetic expression works
+//! this way: a group node contains leaves and other groups.
 
 /// A tree whose leaves are values and whose groups sum child expressions.
 enum Expression {

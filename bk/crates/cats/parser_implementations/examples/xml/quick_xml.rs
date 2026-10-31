@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Parse, deserialize, and write XML with `quick-xml`.
+//!
+//! XML is a text format of nested tags, used in older web services (SOAP),
+//! Office documents and many configuration files. `quick-xml` reads it as a
+//! stream of events, which needs little memory, and can also deserialize it
+//! with `serde`.
 
 use std::io::Cursor;
 

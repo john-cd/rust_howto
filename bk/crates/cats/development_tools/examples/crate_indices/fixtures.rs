@@ -2,6 +2,10 @@
 
 // ANCHOR: fixture_support
 //! Shared local files for the crate-index examples.
+//!
+//! Test fixtures are small, fixed input files. Shared fixtures keep the tests
+//! of the index generators short and deterministic, since they do not depend on
+//! the real book contents.
 
 use std::fs;
 use std::path::Path;

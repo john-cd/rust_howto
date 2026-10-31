@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! List dependencies declared in local Cargo manifests.
+//!
+//! A `Cargo.toml` manifest lists a crate's dependencies. Reading manifests as
+//! data lets a script report which crates the book's examples use.
 
 use anyhow::Result;
 

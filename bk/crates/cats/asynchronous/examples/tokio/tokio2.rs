@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of using a single-threaded Tokio runtime.
+//!
+//! Tokio can run on a single thread (the `current_thread` runtime) or on a pool
+//! of worker threads. A single thread is simpler and enough for programs that
+//! mostly wait on I/O,.
 
 /// Example of using a single-threaded Tokio runtime.
 fn main() {

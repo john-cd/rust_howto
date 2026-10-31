@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates composing standard iterator adapters with closures.
+//!
+//! Iterators process a sequence one item at a time. Adapters such as `map` and
+//! `filter` are lazy: nothing happens until a consumer such as `collect` or
+//! `sum` runs. The compiler usually optimizes the chain to a loop as fast as a
+//! hand-written one.
 
 /// Counts readings above `baseline` and sums their excess.
 fn summarize_excess(readings: &[i32], baseline: i32) -> (usize, i32) {

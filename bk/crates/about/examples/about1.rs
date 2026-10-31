@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates converting a byte slice representing an IPv6
 //! address to an `IpAddr` type.
+//!
+//! An IPv6 address is 128 bits, written as eight groups of hexadecimal digits.
+//! Converting between its byte form and a typed address makes network code
+//! clear and safe.
 
 use std::net::IpAddr;
 use std::str;

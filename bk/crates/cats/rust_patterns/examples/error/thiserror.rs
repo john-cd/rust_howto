@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Defining an error type with `thiserror`.
+//!
+//! `thiserror` derives the boilerplate of an error type: `Display` messages and
+//! `From` conversions. It is meant for libraries, whose callers want to match
+//! on specific error variants.
 
 // Import the `Error` derive macro from the `thiserror` crate.
 use thiserror::Error;

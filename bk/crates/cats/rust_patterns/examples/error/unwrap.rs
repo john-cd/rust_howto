@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Demonstrates the use of `unwrap()` and `expect()` for handling `Result`
 //! types.
+//!
+//! `unwrap()` returns the value or panics, and `expect("why")` panics with your
+//! message. They are fine in tests and quick prototypes, or where failure is
+//! impossible; in other code prefer `?` or explicit handling.
 
 #![allow(
     clippy::unnecessary_literal_unwrap,

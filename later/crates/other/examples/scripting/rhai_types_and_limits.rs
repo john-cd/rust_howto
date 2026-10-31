@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Expose a Rust type to Rhai, keep state in a `Scope` and sandbox scripts.
+//!
+//! Rhai is a small scripting language embedded in Rust programs, so users can
+//! write rules and plugins without recompiling. Untrusted scripts must be
+//! sandboxed: limiting operations, memory and call depth stops an infinite loop
+//! or a memory bomb from hanging your program.
 
 use rhai::Engine;
 use rhai::EvalAltResult;

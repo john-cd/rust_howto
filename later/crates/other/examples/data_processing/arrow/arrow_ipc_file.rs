@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Save a `RecordBatch` in the Arrow IPC file and stream formats with the
 //! `arrow-ipc` crate, then read it back.
+//!
+//! The Arrow IPC (inter-process communication) format saves record batches
+//! exactly as they are in memory, so other programs can read them with almost
+//! no parsing. The file format supports random access; the stream format suits
+//! pipes and sockets.
 
 use std::io::Cursor;
 

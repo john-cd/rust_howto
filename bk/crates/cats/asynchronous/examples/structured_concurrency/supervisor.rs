@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! A supervisor that restarts a failing task with capped exponential backoff
 //! and stops when it is cancelled.
+//!
+//! A supervisor restarts a task that fails, as in Erlang. Exponential backoff
+//! doubles the wait after each failure up to a cap, so a service that is down
+//! is not hammered with restarts while it recovers.
 
 use std::time::Duration;
 

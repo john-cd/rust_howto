@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Write an Arrow record batch to newline-delimited JSON and read it back.
+//!
+//! Newline-delimited JSON (NDJSON) holds one JSON object per line, so files can
+//! be streamed and split. It is common for logs and data exports.
 
 use std::io::Cursor;
 use std::sync::Arc;

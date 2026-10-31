@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Basic example of using `nu-ansi-term` to print bold text.
+//!
+//! ANSI escape sequences are special characters that terminals interpret as
+//! styling instead of text. `nu-ansi-term` generates them, so you can print
+//! bold, coloured text.
 
 use nu_ansi_term::Style;
 

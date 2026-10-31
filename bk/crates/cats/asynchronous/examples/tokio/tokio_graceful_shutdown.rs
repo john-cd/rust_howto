@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Graceful shutdown of nested subsystems with `tokio_graceful_shutdown`.
+//!
+//! A graceful shutdown stops accepting new work, lets in-flight work finish and
+//! releases resources, instead of killing the process. Subsystems are started
+//! as a tree and stopped together on Ctrl-C or SIGTERM, with a timeout in case
+//! one hangs.
 
 // The `tokio_graceful_shutdown` crate provides utilities for coordinating
 // graceful shutdown in Tokio services.

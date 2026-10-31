@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates chaining fallible operations with `Result::and_then`.
+//!
+//! `and_then` chains fallible steps: if the first succeeded, its value feeds
+//! the next step, and the first error short-circuits the rest. It is the same
+//! idea as `?`, written as a method.
 
 /// Divides `value` by two when it is even.
 fn divide_by_two(value: i32) -> Result<i32, &'static str> {

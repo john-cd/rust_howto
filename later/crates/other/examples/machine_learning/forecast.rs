@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Forecast a seasonal time series with `augurs`: MSTL removes the seasonal
 //! component, and an exponential smoothing (ETS) model forecasts the trend.
+//!
+//! A time series is a sequence of values measured over time, such as daily
+//! sales. Seasonality is a pattern that repeats at a fixed period, for example
+//! weekly. MSTL splits a series into trend, seasonal parts and a remainder, so
+//! the forecast can model each part.
 
 use augurs::Fit as _;
 use augurs::Predict as _;

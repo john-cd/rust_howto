@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example usage of the `InMemoryUserRepository`.
+//!
+//! The repository pattern hides data storage behind an interface with methods
+//! such as `find` and `save`. The business code does not care whether users
+//! live in a database, a file or memory, which makes tests simple.
 
 use std::collections::HashMap;
 use std::sync::Arc;

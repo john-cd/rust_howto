@@ -6,6 +6,11 @@
 )]
 // ANCHOR: example
 //! Send an HTML and plain-text email with Amazon SES v2.
+//!
+//! Amazon SES is a service for sending email at scale. A message has a
+//! plain-text and an HTML part, and mail clients choose the one they can show.
+//! You must verify the sender address or domain before it will send. Running
+//! this needs AWS credentials.
 
 use anyhow::Context;
 use anyhow::Result;

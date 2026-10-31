@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Train a logistic regression classifier in Rust with `smartcore`.
+//!
+//! Logistic regression is a classifier, despite the name: it predicts the
+//! probability that an item belongs to a class (spam or not) from its features.
+//! Training fits the weights; the quality is measured on data the model has not
+//! seen.
 
 use smartcore::linalg::basic::matrix::DenseMatrix;
 use smartcore::linear::logistic_regression::LogisticRegression;

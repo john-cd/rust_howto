@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generate a category page from local TOML metadata and recipe links.
+//!
+//! This book lists crates in generated index pages. A script reads local TOML
+//! metadata for each category and writes the Markdown page, so the pages stay
+//! consistent and can be regenerated.
 
 use anyhow::Result;
 

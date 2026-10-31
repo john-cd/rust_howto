@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to read and write XML data using the
 //! `xml-rs` crate.
+//!
+//! XML is a text format of nested tags, used in older web services, Office
+//! documents and many configuration files. A reader walks through the document
+//! tag by tag, and a writer produces well-formed output with the right
+//! escaping.
 
 use std::fmt::Write as _;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! The `main` function, the entry point of a binary crate.
+//!
+//! `main` is where a binary crate starts. It takes no arguments (read them with
+//! `std::env::args`) and returns `()` or a `Result`. Library crates have no
+//! `main`.
 
 // `main` takes no parameters and, in this case,
 // implicitly returns the "unit type" (),

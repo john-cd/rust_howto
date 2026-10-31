@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Wraps a reader to add byte-counting behavior.
+//!
+//! The decorator pattern wraps an object to add behaviour while keeping the
+//! same interface. Here a reader that counts the bytes passing through wraps
+//! any other reader.
 
 use std::io::Cursor;
 use std::io::Read;
