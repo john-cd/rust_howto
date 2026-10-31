@@ -15,6 +15,7 @@
 [ex~development-tools_profiling~tracing]: memory_usage_analysis.md#tracing
 [ex~development-tools_profiling~profiling-scopes]: instrumentation_profiling.md#profiling-scopes
 [ex~development-tools_profiling~puffin-server]: instrumentation_profiling.md#puffin-server
+[ex~development-tools_profiling~measure-time]: instrumentation_profiling.md#measure-time
 [p~benchmarking]: benchmarking.md
 [p~caching]: ../caching/index.md
 [p~csv]: # "../encoding/csv.md"
