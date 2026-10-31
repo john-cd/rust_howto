@@ -1,5 +1,15 @@
 // This file was generated with `cornucopia`. Do not modify.
 
+#![expect(
+    clippy::as_underscore,
+    clippy::cast_possible_wrap,
+    clippy::return_and_then,
+    clippy::self_named_module_files,
+    clippy::unwrap_used,
+    clippy::use_self,
+    reason = "Cornucopia 1.0 emits these patterns in its checked-in generated output."
+)]
+
 mod array_iterator;
 pub mod client;
 mod domain;

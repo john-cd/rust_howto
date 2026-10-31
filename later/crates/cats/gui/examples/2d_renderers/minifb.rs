@@ -63,7 +63,8 @@ fn run_window() -> Result<()> {
     while window.is_open() && !window.is_key_down(Key::Escape) {
         fill_gradient(&mut buffer, offset);
 
-        // Copy the finished frame to the window; this also processes input events.
+        // Copy the finished frame to the window; this also processes input
+        // events.
         window.update_with_buffer(&buffer, WIDTH, HEIGHT)?;
 
         offset = offset.wrapping_add(1);

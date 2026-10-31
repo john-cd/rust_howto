@@ -82,30 +82,20 @@ test = true
 # `cargo tree --locked -i chrono --features polars,datafusion` when bumping either crate.
 
 [dependencies]
-## General
 anyhow = "1.0.104"
-
-## Machine learning
 arc-swap = { version = "1", optional = true }
-
-## Data processing
 arrow = { version = "60.1.0", features = ["csv", "json", "prettyprint"], optional = true }
 arrow-array = { version = "60.1.0", optional = true } # Typed columns and `RecordBatch`, without the umbrella crate.
 arrow-cast = { version = "60.1.0", features = ["prettyprint"], optional = true } # Pretty-print record batches.
 arrow-ipc = { version = "60.1.0", optional = true } # Arrow IPC file and stream formats.
 async-trait = "0.1.92"
 augurs = { version = "0.10", features = ["ets", "mstl"] }
-
-## Cloud
 aws-config = { version = "1.13.0", default-features = false, features = [
     "credentials-process",
     "default-https-client",
     "rt-tokio",
     "sso",
 ] }
-aws-smithy-http-client = { version = "1.5.2", default-features = false, features = [
-    "rustls-aws-lc",
-] } # Custom TLS trust store for S3-compatible stores.
 aws-sdk-cloudwatch = { version = "1.138.0", default-features = false, features = [
     "default-https-client",
     "rt-tokio",
@@ -133,16 +123,14 @@ aws-sdk-sqs = { version = "1.117.0", default-features = false, features = [
     "default-https-client",
     "rt-tokio",
 ] }
+aws-smithy-http-client = { version = "1.5.2", default-features = false, features = [
+    "rustls-aws-lc",
+] } # Custom TLS trust store for S3-compatible stores.
 axum = "0.8.9"
-rcgen = "0.14.10" # Test certificates for the TLS trust store example.
 base64 = "0.23.1" # Binary Protobuf payloads in SQS text bodies.
-
-## Scheduling
 chrono = "0.4.45"
 clap = { version = "4.6.7", features = ["derive"] }
 cron = "0.17.0"
-
-## Cross platform
 crux_core = "0.20.0"
 datafusion = { version = "55.2.0", default-features = false, features = [
     "sql",
@@ -150,28 +138,22 @@ datafusion = { version = "55.2.0", default-features = false, features = [
 duct = "1.1.2"
 futures = "0.3"
 k8s-openapi = { version = "0.29", features = ["latest"] }
-# Kube 4.2.0 on crates.io pins serde-saphyr 0.0.29, which caps smallvec below 1.16.
-# Use an immutable revision of kube main (k8s-openapi 0.29, #2120) until a compatible Kube release is published.
-kube = { version = "4.2.0", git = "https://github.com/kube-rs/kube", rev = "28e3d13a7290ade6204666580fc98df1a556c6f6", features = ["derive", "runtime", "client"] }
+kube = { version = "4.2.0", git = "https://github.com/kube-rs/kube", rev = "28e3d13a7290ade6204666580fc98df1a556c6f6", features = ["derive", "runtime", "client"] } # Use this revision until crates.io's serde-saphyr allows smallvec 1.16 (issue #2120).
 lambda_runtime = "1.5.0"
 ort = { version = "2.0.0-rc.15", optional = true } # Downloads ONNX Runtime binaries at build time
 polars = { version = "0.55.2", default-features = false, features = ["lazy"], optional = true }
 prost = "0.14.4" # Protobuf message derive.
-
-## Scripting
+rcgen = "0.14.10" # Test certificates for the TLS trust store example.
 rhai = "1.27.0"
 schemars = "1"
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.154" # Converts Arrow JSON output back into Serde rows, and parses Lambda payloads.
-
-## Architecture
 shaku = "0.6.3"
 shell-words = "1.1.1"
 shellexpand = "3.1.2"
 shuttle-axum = "0.57.0"
 shuttle-runtime = "0.57.0"
 smartcore = "0.7.0"
-
 thiserror = "2"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time", "test-util"] }
 tokio-rustls = "0.26.6" # Local HTTPS server for the trust store test.

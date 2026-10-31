@@ -47,7 +47,7 @@ fn draw() -> anyhow::Result<Surface> {
     paint.set_color(Color::BLUE);
     paint.set_style(PaintStyle::Stroke);
     paint.set_stroke_width(4.0);
-    canvas.draw_path(&builder.detach(None), &paint);
+    canvas.draw_path(&builder.detach(), &paint);
 
     Ok(surface)
 }

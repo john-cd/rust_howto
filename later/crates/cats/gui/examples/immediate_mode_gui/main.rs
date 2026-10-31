@@ -10,6 +10,11 @@ mod egui_table;
 
 /// Runs the immediate mode gui example.
 fn main() -> Result<(), eframe::Error> {
+    // Exercise the headless examples before opening the desktop window.
+    egui_headless::run();
+    egui_kittest::run();
+    egui_plot::run();
+    egui_table::run();
     egui::run()?;
     Ok(())
 }

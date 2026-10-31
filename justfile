@@ -30,6 +30,10 @@ _default:
 # Run a recipe in every workspace and report failure if any workspace fails.
 @all cmd:
     status=0; for wkspace in bk later mdbook-utils playground publish tools xmpl; do \
+      if [ "$wkspace" = "mdbook-utils" ] && [ ! -f "$wkspace/justfile" ]; then \
+        echo "Skipping optional workspace ${wkspace} (submodule not initialized)"; \
+        continue; \
+      fi; \
       just "$wkspace" {{ quote(cmd) }} || status=1; \
       echo "------------------------"; \
     done; exit "$status"

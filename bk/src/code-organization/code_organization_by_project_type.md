@@ -134,7 +134,6 @@ For example, you may write in `module1`:
 This flattens the module hierarchy and hides implementation details.
 Code in a parent module then refers to:
 
-
 See the [[use_declarations | `use` keyword]] chapter.
 
 ## Create a Prelude for Commonly Used Items of Your Library {#prelude}
