@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Price European options with the Black-Scholes formula, using `statrs` for
 //! the normal distribution. No finance crate is needed.
+//!
+//! The Black-Scholes formula prices a European option (a right to buy or sell
+//! an asset at a fixed strike price on a fixed date) from the asset price,
+//! strike, time to expiry, interest rate and volatility. `statrs` provides the
+//! normal distribution that the formula needs.
 
 use statrs::distribution::ContinuousCDF;
 use statrs::distribution::Normal;

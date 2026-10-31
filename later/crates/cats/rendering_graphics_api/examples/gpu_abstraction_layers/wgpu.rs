@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Runs a headless `wgpu` compute shader that doubles each storage-buffer
 //! value.
+//!
+//! A GPU runs thousands of small programs in parallel. A compute shader is a
+//! program for the GPU that does general calculations instead of drawing.
+//! `wgpu` is one Rust API over Vulkan, Metal, DirectX and WebGPU. Data is
+//! copied to GPU buffers, processed, then read back.
 
 use std::error::Error;
 

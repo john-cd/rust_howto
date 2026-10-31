@@ -1,6 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
 //! Builds and renders a simple Vello 2D scene.
+//!
+//! Vello is a 2D renderer that does most of its work on the GPU, using compute
+//! shaders. You build a scene of paths and fills, then render it to a texture.
+//! It needs a GPU (or a software Vulkan driver).
 
 use std::num::NonZeroUsize;
 

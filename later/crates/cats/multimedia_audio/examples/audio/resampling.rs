@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Resamples a mono buffer from 48 kHz to 44.1 kHz with `rubato`.
+//!
+//! The sample rate is how many sound measurements are taken per second: 48 kHz
+//! is typical for video and 44.1 kHz for CDs. When a device wants a different
+//! rate than the source, you must resample. Doing it with a proper filter
+//! avoids audible distortion called aliasing.
 
 use std::error::Error;
 

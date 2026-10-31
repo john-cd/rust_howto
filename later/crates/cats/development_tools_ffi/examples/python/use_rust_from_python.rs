@@ -4,6 +4,10 @@
 // ANCHOR: example
 //! Demonstrates how to define a PyO3 Python module in Rust, register it with
 //! `sys.modules`, and invoke its Rust function and class from embedded Python.
+//!
+//! PyO3 lets you write Python extension modules in Rust, which are fast and can
+//! use threads. Tools such as `maturin` build the module into a wheel that
+//! Python installs with `pip`.
 
 use pyo3::prelude::*;
 

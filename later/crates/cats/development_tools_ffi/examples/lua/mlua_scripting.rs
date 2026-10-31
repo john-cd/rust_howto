@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Calls an embedded Lua chunk and a Rust function while exposing only a
 //! selected subset of Lua's standard libraries.
+//!
+//! Embedding a scripting language lets users extend an application without
+//! recompiling it. Scripts from untrusted sources should only see the functions
+//! you choose to expose, which is why the example limits what Lua can reach.
 
 use mlua::prelude::*;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parses an inline glTF triangle and reports its vertex and index counts.
+//!
+//! glTF is the "JPEG of 3D": an open format for 3D models used by engines and
+//! web viewers. A mesh is stored as vertices (points in space) and indices
+//! (which vertices form each triangle).
 
 const INLINE_GLTF_TRIANGLE: &[u8] = br#"{
   "asset": {"version": "2.0"},

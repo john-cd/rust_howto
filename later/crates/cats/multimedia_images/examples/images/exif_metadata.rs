@@ -1,4 +1,9 @@
 //! Reads an orientation tag from a generated TIFF/EXIF record.
+//!
+//! EXIF is metadata stored inside photos: camera model, time, GPS position and
+//! orientation. Cameras record the orientation tag because the sensor is always
+//! read the same way up, so viewers must rotate the image. Photos you publish
+//! can leak location data, so strip EXIF when privacy matters.
 
 // ANCHOR: example
 use exif::In;

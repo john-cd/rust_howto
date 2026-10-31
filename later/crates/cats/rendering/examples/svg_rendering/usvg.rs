@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Parses and inspects the normalized SVG tree produced by `usvg`.
+//!
+//! SVG files allow many shortcuts, such as styles, `use` references and
+//! relative units. `usvg` simplifies them into a normalized tree of plain
+//! paths, which makes it easier to render or analyse the drawing.
 
 const SVG: &str = r##"
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="100" viewBox="0 0 160 100">

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Simple Rust example using the `nix` crate to handle Unix-like operating
 //! system tasks: create a file, write to it, read from it, and delete it.
+//!
+//! `nix` provides safe wrappers around Unix system calls (the requests a
+//! program makes to the kernel), such as processes, signals and file
+//! descriptors. It works on Linux, macOS and the BSDs, but not on Windows.
 
 #![cfg(target_family = "unix")]
 

@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Probe and decode audio formats to linear PCM samples using `symphonia`.
+//!
+//! Audio files come in many formats (MP3, FLAC, Ogg, WAV). A decoder first
+//! probes the container to detect the format, then converts the compressed data
+//! to PCM (pulse-code modulation), the plain list of samples that sound
+//! hardware and audio processing use.
 
 use std::error::Error;
 use std::io::Cursor;

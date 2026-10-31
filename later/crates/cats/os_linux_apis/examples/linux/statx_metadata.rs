@@ -1,6 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
 //! Query extended metadata through Linux's safe statx wrapper.
+//!
+//! `statx` is the Linux system call that returns file metadata (size, owner,
+//! times, and the creation time that older `stat` calls cannot give). It runs
+//! on Linux only.
 
 // ANCHOR: example
 use std::io;

@@ -1,4 +1,9 @@
 //! Discounts a fixed sequence of cash flows with `financial`.
+//!
+//! Money today is worth more than the same money later, because it can earn
+//! interest. Net present value (NPV) discounts each future cash flow by a rate
+//! and sums them, so an investment can be judged in today's money: a positive
+//! NPV means it earns more than the discount rate.
 
 // ANCHOR: example
 /// Keeps the time-zero investment separate from discounted future payments.

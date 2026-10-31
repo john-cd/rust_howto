@@ -7,6 +7,10 @@
 )]
 // ANCHOR: example
 //! Converts structured values between JavaScript and Rust with Serde.
+//!
+//! JavaScript values and Rust structs have different representations. Serde
+//! converts between them, so Rust code compiled to WebAssembly can receive a
+//! JavaScript object as a typed struct and return one back.
 
 use serde::Deserialize;
 use serde::Serialize;

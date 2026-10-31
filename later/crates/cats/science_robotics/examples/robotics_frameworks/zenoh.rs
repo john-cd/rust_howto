@@ -5,6 +5,12 @@
 
 // ANCHOR: example
 //! Publishes and receives several local telemetry values with `zenoh`.
+//!
+//! Zenoh is a publish/subscribe protocol for robots and edge devices. Data is
+//! published to hierarchical key expressions such as `robot/battery`, and
+//! subscribers receive values for the keys they match, with no central broker
+//! needed. It also supports queries, so one program can ask another for the
+//! latest value.
 
 use std::time::Duration;
 

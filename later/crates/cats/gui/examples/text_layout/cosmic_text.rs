@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Laying out and rasterizing text with `cosmic-text`.
+//!
+//! Text layout is harder than it looks: the library picks fonts, shapes
+//! characters (a letter can have several forms depending on its neighbours, as
+//! in Arabic), breaks lines and then draws glyphs. Any app that draws its own
+//! text, such as a game or a GUI toolkit, needs this step.
 
 use std::sync::Arc;
 

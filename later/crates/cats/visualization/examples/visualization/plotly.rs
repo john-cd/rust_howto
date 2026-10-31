@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to create a simple scatter plot using the
 //! `plotly` crate.
+//!
+//! Plotly produces interactive charts (zoom, hover) as HTML with JavaScript.
+//! The Rust crate builds the chart description, which the browser then renders.
+//! A scatter plot shows the relationship between two variables as points.
 
 use std::fs;
 

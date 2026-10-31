@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates opening a file dialog using the rfd crate.
+//!
+//! A file dialog is the operating system's own "open" or "save" window. Using
+//! the native dialog gives users the interface they know, with their bookmarks
+//! and recent folders. It needs a desktop session.
 
 use std::fs;
 use std::path::Path;

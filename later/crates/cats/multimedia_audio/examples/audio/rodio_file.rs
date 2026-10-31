@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Decodes a WAV in memory and shows how to play a file with `rodio`.
+//!
+//! WAV is an uncompressed audio container that stores samples directly; MP3 and
+//! Ogg are compressed. A player decodes the file to samples and streams them to
+//! the sound card. Decoding in memory, as here, lets the example run without an
+//! audio device.
 
 use std::error::Error;
 use std::fs::File;

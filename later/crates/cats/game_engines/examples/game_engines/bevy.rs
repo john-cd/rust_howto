@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Moves an entity with a headless Bevy ECS app.
+//!
+//! Bevy uses an entity component system (ECS). Entities are plain IDs,
+//! components are data attached to them (such as a position), and systems are
+//! functions that run over all entities having certain components. This
+//! separates data from behaviour and lets the engine run systems in parallel.
 
 use bevy::prelude::*;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Laying out rich text with `parley`.
+//!
+//! Rich text mixes fonts, sizes and colours within one paragraph. Layout turns
+//! the text into positioned lines and glyphs, handling shaping, line breaks and
+//! bidirectional text (left-to-right and right-to-left mixed).
 
 use std::sync::Arc;
 

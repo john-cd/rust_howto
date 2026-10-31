@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Displays a message box through the raw `winapi` bindings.
+//!
+//! The Windows API (Win32) is how programs ask Windows to create windows, read
+//! files and so on. `winapi` exposes the raw functions, so calls are `unsafe`
+//! and strings are UTF-16. Higher-level crates such as `windows` add type
+//! safety. It runs on Windows only.
 
 #![cfg(target_os = "windows")]
 

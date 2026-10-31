@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Calling Rust from Flutter with `flutter_rust_bridge`.
+//!
+//! Flutter builds mobile and desktop interfaces in Dart. `flutter_rust_bridge`
+//! generates the glue so Dart can call Rust functions with ordinary types,
+//! which is useful for heavy computation or sharing code with other platforms.
 
 // Integrate a Rust function into a Flutter project using
 // `flutter_rust_bridge`.

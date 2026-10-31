@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Imports a JavaScript function into Rust through `wasm-bindgen`.
+//!
+//! WebAssembly (Wasm) is a compact binary format that browsers run at
+//! near-native speed. Wasm code cannot touch the page directly, so
+//! `wasm-bindgen` generates the glue that lets Rust call JavaScript functions
+//! and the other way round.
 
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;

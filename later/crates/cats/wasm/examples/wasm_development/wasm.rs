@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Exports a simple Rust function to JavaScript when built for the browser
 //! target.
+//!
+//! WebAssembly (Wasm) is a compact binary format that browsers run at
+//! near-native speed. Functions marked for export become callable from
+//! JavaScript after building the crate with a tool such as `wasm-pack`.
 
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;

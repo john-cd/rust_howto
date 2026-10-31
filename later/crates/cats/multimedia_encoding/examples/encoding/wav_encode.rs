@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Encode PCM audio samples to a WAV buffer using `hound`.
+//!
+//! PCM (pulse-code modulation) samples are plain numbers that describe a sound
+//! wave. Encoding to WAV wraps them in a header so other programs can play the
+//! file. Writing into a memory buffer avoids touching the disk.
 
 use std::error::Error;
 use std::io::Cursor;

@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Inspect MP4 container metadata including tracks and duration using `mp4`.
+//!
+//! MP4 is a container: it holds separate tracks (video, audio, subtitles) plus
+//! metadata such as duration and codecs. Reading the metadata is cheap because
+//! the index is stored apart from the media data, so you need not decode the
+//! video.
 
 use std::error::Error;
 use std::io::Cursor;

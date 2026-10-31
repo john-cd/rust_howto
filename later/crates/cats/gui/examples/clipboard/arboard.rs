@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example copies text to and reads text from the system clipboard with
 //! the current `arboard` builder API.
+//!
+//! The clipboard is storage the operating system provides for copy and paste
+//! between programs. Access needs a desktop session (it fails on a headless
+//! server), and on Linux the contents can vanish when the copying program
+//! exits.
 
 use anyhow::Context;
 use arboard::Clipboard;

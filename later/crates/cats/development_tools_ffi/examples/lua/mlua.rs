@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creates a Lua table in Rust and reads it from an embedded Lua 5.4 runtime.
+//!
+//! Lua is a small scripting language that applications embed so that users can
+//! write plugins and configuration. `mlua` runs a Lua interpreter inside a Rust
+//! program and converts values between the two.
 
 use mlua::prelude::*;
 

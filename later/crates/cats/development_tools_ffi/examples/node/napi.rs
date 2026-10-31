@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Calling Rust from Node.js with `napi`.
+//!
+//! N-API is Node.js's stable interface for native add-ons. The `napi` crate
+//! lets Rust functions be called from JavaScript, for example to speed up heavy
+//! computation. The compiled library is a `.node` file that Node loads with
+//! `require`.
 #![cfg_attr(
     not(feature = "node"),
     allow(

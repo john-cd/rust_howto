@@ -1,4 +1,8 @@
 //! Uses an R-tree to find a nearby point without a network lookup.
+//!
+//! Finding the nearest point by checking every point is slow for large data
+//! sets. An R-tree groups nearby points into bounding boxes, so a search skips
+//! whole groups at once. Databases use the same idea for map queries.
 
 // ANCHOR: example
 use rstar::RTree;

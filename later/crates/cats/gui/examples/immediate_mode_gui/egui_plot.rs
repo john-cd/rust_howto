@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A line plot and a bar chart with `egui_plot`.
+//!
+//! In an immediate-mode GUI the interface is rebuilt by code on every frame,
+//! rather than created once as a tree of widgets. This makes simple tools and
+//! dashboards quick to write. `egui_plot` draws charts inside such an
+//! interface.
 
 use eframe::egui;
 use egui_plot::Bar;

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Lists MIDI input ports with `midir` and decodes raw MIDI messages.
+//!
+//! MIDI is a protocol that sends musical events, such as "note on, key 60,
+//! velocity 90", between keyboards, synthesizers and software, rather than
+//! sound itself. A port is a connection to a device. Messages are one to three
+//! bytes: a status byte (the command and channel) followed by data bytes.
 
 use midir::MidiInput;
 

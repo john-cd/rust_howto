@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A virtualized data table with `egui_extras`.
+//!
+//! A virtualized table only draws the rows currently visible, so it stays fast
+//! with millions of rows. `egui` is an immediate-mode GUI: the interface is
+//! rebuilt by code on every frame.
 
 use eframe::egui;
 use egui_extras::Column;

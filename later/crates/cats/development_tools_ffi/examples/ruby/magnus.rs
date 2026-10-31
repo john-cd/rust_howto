@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Calling Rust from Ruby with `magnus`.
+//!
+//! Magnus lets Rust define Ruby classes and methods. Ruby native extensions are
+//! usually written in C; a Rust extension offers memory safety and speed for
+//! hot paths. It is built into a shared library that Ruby loads with `require`.
 
 use magnus::Error;
 /// Returns a greeting that can be called from Ruby or tested without Ruby.

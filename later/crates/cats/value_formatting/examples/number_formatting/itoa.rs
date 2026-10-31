@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Formats an integer with the `itoa` crate.
+//!
+//! `itoa` formats integers into text faster than the standard `format!`,
+//! because it writes into a small stack buffer without allocating. It pays off
+//! in code that prints millions of numbers, such as serializers.
 
 use itoa::Buffer;
 
@@ -16,7 +20,8 @@ fn main() {
 // ANCHOR_END: example
 
 pub fn run() {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry();
 }

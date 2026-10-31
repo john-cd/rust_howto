@@ -1,4 +1,8 @@
 //! Optimizes a generated PNG and verifies its decoded pixels.
+//!
+//! PNG optimizers try many compression settings and filters to produce a
+//! smaller file with exactly the same pixels, which saves bandwidth on web
+//! pages. The check at the end proves the result is lossless.
 
 // ANCHOR: example
 use std::io::Cursor;
