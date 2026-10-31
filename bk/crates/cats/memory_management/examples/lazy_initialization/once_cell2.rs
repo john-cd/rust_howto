@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Lazily initializes a shared value with the `once_cell` crate.
+//!
+//! The `once_cell` crate pioneered lazy values that the standard library later
+//! adopted as `LazyLock` and `OnceLock`. New code can use the standard types.
 
 use std::collections::HashMap;
 use std::sync::Mutex;

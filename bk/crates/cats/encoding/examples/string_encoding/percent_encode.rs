@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Example of percent encoding and decoding strings.
+//!
+//! Percent-encoding makes text safe for URLs by replacing unsafe characters
+//! with `%` and their hex value (a space becomes `%20`). Which characters need
+//! encoding depends on the part of the URL: a path, a query string or a
+//! fragment.
 
 use std::str::Utf8Error;
 

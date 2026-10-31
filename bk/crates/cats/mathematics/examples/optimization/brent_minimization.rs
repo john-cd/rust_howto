@@ -1,4 +1,11 @@
 // ANCHOR: example
+//! Minimize a one-variable function with Brent's method.
+//!
+//! Optimization looks for the input that makes a function as small as possible,
+//! for example the cheapest design or the lowest error of a model. Brent's
+//! method finds the minimum of a one-variable function inside a bracket,
+//! without needing derivatives.
+
 use argmin::core::CostFunction;
 use argmin::core::Error;
 use argmin::core::Executor;

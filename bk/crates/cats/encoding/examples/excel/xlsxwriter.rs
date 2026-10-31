@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Writes an `.xlsx` workbook with `rust_xlsxwriter`: a bold header,
 //! numbers, dates, a formula and a column width.
+//!
+//! An `.xlsx` file is a zip archive of XML documents. The crate writes it
+//! without Excel installed. Reports and data exports commonly use it because
+//! business users open it directly.
 
 use std::path::Path;
 

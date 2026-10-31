@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parsing command-line arguments with `pico-args`.
+//!
+//! `pico-args` is a tiny command-line parser with no derive macros and no
+//! generated help. It trades convenience for fast compile times and a small
+//! binary.
 
 use pico_args::Arguments;
 

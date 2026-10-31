@@ -4,6 +4,11 @@
 // ANCHOR: example
 //! This example demonstrates how to read an environment variable.
 //! If the environment variable is not set, a default value is used.
+//!
+//! Environment variables are named text values the operating system passes to
+//! each program, for settings such as a home directory or a path list. A
+//! variable may be missing or contain invalid text, so reading it returns a
+//! `Result`.
 
 use std::env;
 

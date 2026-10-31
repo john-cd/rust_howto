@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Shut an async service down on Ctrl-C or SIGTERM with Tokio.
+//!
+//! Services should shut down gracefully: stop accepting new work, finish what
+//! is in flight, then exit. Orchestrators such as Kubernetes ask for this with
+//! SIGTERM, and a user at a terminal with Ctrl-C (SIGINT).
 
 use std::future::Future;
 use std::time::Duration;

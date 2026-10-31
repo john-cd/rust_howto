@@ -1,4 +1,12 @@
 // ANCHOR: example
+//! Solve an exponential decay equation numerically and compare with the exact
+//! solution.
+//!
+//! Exponential decay describes a quantity that shrinks at a rate proportional
+//! to its size, such as radioactive material or a cooling object. Its
+//! differential equation is dy/dt = -k * y, with the exact solution y(t) = y0 *
+//! e^(-k t). Comparing a numeric solver with this formula measures its error.
+
 use anyhow::Context;
 use anyhow::Result;
 use nalgebra::Vector1;

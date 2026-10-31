@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Applies an embedded Diesel migration and round-trips a user in SQLite.
+//!
+//! An ORM (object-relational mapper) maps database rows to Rust structs, and a
+//! query builder checks queries at compile time. A migration is a versioned
+//! script that changes the schema, so every environment's database evolves the
+//! same way. SQLite is a database in a single file.
 
 use anyhow::Context as _;
 use diesel::prelude::*;

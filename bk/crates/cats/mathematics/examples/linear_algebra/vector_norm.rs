@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Computing the L1 and L2 norms of a vector, and normalizing it, with
 //! `ndarray`.
+//!
+//! A norm measures the size of a vector. L1 sums the absolute values ("taxicab"
+//! distance); L2 is the ordinary Euclidean length. Normalizing divides by the
+//! length to get a unit vector, which keeps only the direction.
 
 use ndarray::Array1;
 use ndarray::ArrayView1;

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to use the `lexopt` crate to parse command
 //! line arguments.
+//!
+//! `lexopt` is a minimal command-line parser: it only splits arguments into
+//! options and values, and you write the logic yourself. It compiles quickly
+//! and adds little to the binary, which suits small tools.
 
 /// The parsed command-line arguments.
 struct Args {

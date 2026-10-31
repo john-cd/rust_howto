@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! The `num_traits` crate provides numeric traits for generic mathematics.
+//!
+//! A trait describes behaviour that several types share. The numeric traits let
+//! you write one generic function that works for integers and floats alike,
+//! instead of repeating it for each type.
 
 use num_traits::Num;
 use num_traits::NumCast;

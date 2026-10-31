@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Connects to Oracle with Sibyl's blocking API and reads a value from `DUAL`.
+//!
+//! Oracle Database is a commercial relational database. `DUAL` is a built-in
+//! one-row table used to evaluate expressions such as `SELECT 1 FROM DUAL`. It
+//! needs the Oracle Instant Client libraries installed.
 
 /// Connects to Oracle with Sibyl's blocking API and reads a value from `DUAL`.
 ///

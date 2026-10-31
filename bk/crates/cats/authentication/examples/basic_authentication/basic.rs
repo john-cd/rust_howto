@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! This example builds a Basic-authenticated request without sending it.
+//!
+//! HTTP Basic authentication sends `username:password` in the `Authorization`
+//! header, encoded with Base64. Base64 is only an encoding, not encryption, so
+//! anyone who sees the request can read the password: use Basic authentication
+//! over HTTPS only, and prefer tokens where you can.
 
 use reqwest::blocking::Client;
 use reqwest::blocking::RequestBuilder;

@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! Combine sets with union, intersection and difference.
+//!
+//! A set holds distinct elements. Union combines two sets, intersection keeps
+//! what both share and difference removes the elements of one from the other.
+//! They are useful for tags, permissions and comparing lists.
+
 use std::collections::BTreeSet;
 
 /// The set operation results for the two topic sets.

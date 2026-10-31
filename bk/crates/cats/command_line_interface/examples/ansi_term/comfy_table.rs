@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Print a table whose columns adapt to their content.
+//!
+//! Tables make command-line output readable. This crate measures the content
+//! and wraps or sizes columns to fit the terminal width.
 
 use comfy_table::CellAlignment;
 use comfy_table::ContentArrangement;

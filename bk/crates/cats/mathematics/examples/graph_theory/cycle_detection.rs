@@ -1,4 +1,11 @@
 // ANCHOR: example
+//! Detect dependency cycles in a directed graph.
+//!
+//! A graph is a set of nodes connected by edges. A directed graph's edges have
+//! a direction, like "task A must finish before task B". A cycle means you can
+//! follow edges back to the start; that is a problem for dependencies, since no
+//! task in the loop can run first.
+
 use petgraph::algo::is_cyclic_directed;
 use petgraph::algo::tarjan_scc;
 use petgraph::graph::DiGraph;

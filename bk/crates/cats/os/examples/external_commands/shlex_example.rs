@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Split and quote command lines with `shlex`.
+//!
+//! Shells split a command line into words using quoting rules. `shlex` applies
+//! the same rules, so you can parse a command typed by a user, or quote a value
+//! safely when you build a command line.
 
 use std::process::Command;
 

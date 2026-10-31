@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! Compute with quantities that carry units.
+//!
+//! Mixing units, such as metres and feet, has crashed spacecraft (the Mars
+//! Climate Orbiter was lost in 1999). A units library attaches the unit to the
+//! number so the compiler rejects invalid operations and converts correctly.
+
 use uom::si::f32::Length;
 use uom::si::f32::Time;
 use uom::si::length::kilometer;

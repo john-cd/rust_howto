@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates creating database tables in PostgreSQL using the
 //! `postgres` crate.
+//!
+//! A table has typed columns and constraints such as `PRIMARY KEY` (unique row
+//! identity) and `REFERENCES` (a foreign key linking to another table). `CREATE
+//! TABLE` defines the schema before any row can be stored. PostgreSQL is a
+//! popular open-source relational database.
 
 use anyhow::Context as _;
 use postgres::Client;

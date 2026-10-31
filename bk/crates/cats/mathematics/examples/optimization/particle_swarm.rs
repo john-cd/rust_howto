@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! Minimize a function with particle swarm optimization.
+//!
+//! Particle swarm optimization moves many candidate points through the search
+//! space; each one is pulled towards its own best position and the swarm's
+//! best. It needs no gradients and works on difficult functions.
+
 use rand::RngExt;
 use rand::SeedableRng;
 use rand::rngs::StdRng;

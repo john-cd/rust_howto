@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Computing the median of a list of integers with quickselect.
+//!
+//! The median is the middle value of the sorted data, so unlike the mean it is
+//! not distorted by outliers. Quickselect finds it without sorting everything.
 
 use std::cmp::Ordering;
 

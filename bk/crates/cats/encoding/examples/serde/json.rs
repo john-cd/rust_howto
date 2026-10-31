@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates parsing a JSON string into a `serde_json::Value`
 //! and comparing it to a `serde_json::Value` created using the `json!` macro.
+//!
+//! JSON is the most common text format for web APIs. Parsing into a dynamic
+//! `serde_json::Value` is handy when the shape of the data is not known up
+//! front, at the cost of checking types at run time.
 
 use serde_json::Error;
 use serde_json::Value;

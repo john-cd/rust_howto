@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Connects to SQL Server with explicit credentials and runs a parameterized
 //! query.
+//!
+//! SQL Server is Microsoft's relational database; Tiberius speaks its TDS
+//! protocol. Parameterized queries send values separately from the SQL text,
+//! which prevents SQL injection, the attack where user input is interpreted as
+//! SQL.
 
 use anyhow::Context;
 use anyhow::Result;

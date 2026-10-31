@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates serializing structs to CSV using `serde`.
+//!
+//! Serializing writes each struct as one CSV row, with a header line taken from
+//! the field names. Fields that contain commas or quotes are quoted
+//! automatically.
 
 use std::io;
 use std::io::Write as _;

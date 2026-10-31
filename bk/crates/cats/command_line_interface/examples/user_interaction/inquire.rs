@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! The `inquire` crate is used for creating interactive CLI prompts.
+//!
+//! Interactive prompts ask the user questions: text input, yes/no, a list to
+//! pick from. They need a real terminal, so provide command-line flags too for
+//! scripts and continuous integration.
 
 use inquire::Confirm;
 use inquire::Select;

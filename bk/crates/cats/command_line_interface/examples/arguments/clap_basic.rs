@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Main function that parses command line arguments and prints their values:
+//!
+//! Command-line arguments are the words typed after a program name. A parser
+//! reads flags (`--verbose`), options (`--output file`) and positional values,
+//! generates `--help` text and reports mistakes. `clap` is the most widely used
+//! Rust parser, and it can derive everything from a struct.
 
 use std::path::PathBuf;
 

@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Run a child command with `duct` and capture its output.
+//!
+//! A child process is another program started by yours. `duct` builds commands
+//! and pipelines with a short syntax and captures their output. Always treat
+//! the output as text from an outside program that can fail.
 
 use duct::cmd;
 

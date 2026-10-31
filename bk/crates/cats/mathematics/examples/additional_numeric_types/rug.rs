@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates the use of the `rug` crate for arbitrary precision
 //! arithmetic.
+//!
+//! Arbitrary-precision arithmetic computes with as many digits as you ask for,
+//! so there is no overflow and no rounding error until you choose it. `rug`
+//! wraps the GMP library, which must be installed or built.
 
 #![cfg(target_os = "linux")]
 #![allow(clippy::approx_constant)]

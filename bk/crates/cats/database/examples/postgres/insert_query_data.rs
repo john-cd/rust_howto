@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates inserting rows into PostgreSQL and querying the
 //! inserted data back.
+//!
+//! Parameterized queries pass values separately from the SQL text, which
+//! prevents SQL injection, the attack where user input is interpreted as SQL.
+//! Never build SQL by concatenating strings. PostgreSQL is a popular
+//! open-source relational database.
 
 use std::collections::BTreeMap;
 use std::fmt::Write as _;

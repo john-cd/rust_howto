@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Encode and decode forms and path segments.
+//!
+//! Web forms and URLs can only carry a limited set of characters.
+//! Percent-encoding replaces the others with `%` followed by their hex value (a
+//! space becomes `%20`, or `+` in form data). Encode values before putting them
+//! in a URL.
 
 use std::collections::HashMap;
 

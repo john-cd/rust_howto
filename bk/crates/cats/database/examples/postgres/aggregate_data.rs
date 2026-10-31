@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Group PostgreSQL rows by artist nationality and count each group.
+//!
+//! An aggregate query combines rows. `GROUP BY` puts rows with the same value
+//! into one group, and `COUNT` (or `SUM`, `AVG`) is computed per group. The
+//! database does the work, so only the summary travels over the network.
 
 use anyhow::Context as _;
 use postgres::Client;

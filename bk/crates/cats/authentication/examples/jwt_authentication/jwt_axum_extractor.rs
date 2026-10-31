@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Extract a JWT from the HTTP `Authorization` header and check a role in Axum.
+//!
+//! A JWT (JSON Web Token) is a signed token that carries claims such as the
+//! user ID and role. The client sends it in the `Authorization: Bearer ...`
+//! header; the server checks the signature and expiry instead of looking up a
+//! session. An axum extractor is a type that handlers list as an argument, so
+//! the check happens before the handler runs.
 
 use std::sync::Arc;
 

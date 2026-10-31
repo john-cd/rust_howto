@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Connecting to Cassandra with the `cdrs-tokio` async client.
+//!
+//! Cassandra is a distributed NoSQL database built for huge data volumes and
+//! high write rates across many servers. It is queried with CQL, which looks
+//! like SQL. The driver is asynchronous and keeps a pool of connections to the
+//! cluster.
 
 // This example demonstrates asynchronous Cassandra access using `cdrs-tokio`.
 

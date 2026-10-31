@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example shows how to serialize data to a CSV file.
+//!
+//! CSV (comma-separated values) is a plain-text table format that spreadsheets
+//! open directly. The writer takes care of quoting fields that contain commas,
+//! quotes or line breaks.
 
 use std::io;
 use std::io::Write as _;

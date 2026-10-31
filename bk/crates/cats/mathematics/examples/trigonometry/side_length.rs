@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Calculates the hypotenuse of a right triangle given an angle and the length
 //! of the side opposite to it.
+//!
+//! In a right triangle, sine, cosine and tangent relate an angle to the ratios
+//! of the sides. Given an angle and one side you can compute the others. Angles
+//! in Rust's `f64` methods are in radians, not degrees.
 
 /// Calculates the hypotenuse of a right triangle given an angle and the length
 /// of the side opposite to it.

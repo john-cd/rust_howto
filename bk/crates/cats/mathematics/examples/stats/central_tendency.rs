@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Calculates the mean of a set of numbers.
+//!
+//! The mean is the sum divided by the count. It is sensitive to outliers
+//! (extreme values), so a few huge values pull it up.
 
 /// Calculates the mean of a set of numbers.
 fn main() {

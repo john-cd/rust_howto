@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates that the tangent of a number is equal to the sine
 //! of the number divided by the cosine of the number.
+//!
+//! Tangent is sine divided by cosine. Trigonometric functions take angles in
+//! radians (a full circle is 2 pi); convert from degrees with `to_radians`.
+//! Floating-point results match only approximately, so tests compare with a
+//! tolerance.
 
 /// This example demonstrates that the tangent of a number is equal to the sine
 /// of the number divided by the cosine of the number.

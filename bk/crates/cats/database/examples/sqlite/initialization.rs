@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates how to initialize a SQLite database with tables.
+//!
+//! SQLite is a database in a single file, with no server to install; it is
+//! built into phones, browsers and many applications. `CREATE TABLE IF NOT
+//! EXISTS` makes setup safe to run more than once.
 
 use std::fs;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Encode and decode hexadecimal with the `hex` crate.
+//!
+//! Hexadecimal writes each byte as two characters from 0-9 and a-f. It is the
+//! usual way to display hashes, keys and binary data, and decoding fails if the
+//! text is not valid hex.
 
 /// Encodes bytes as lowercase hexadecimal and decodes them back.
 pub fn run() -> Result<(), hex::FromHexError> {

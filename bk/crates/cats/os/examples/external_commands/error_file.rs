@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to capture both standard output and standard
 //! error from an external command and redirect them to the same file.
+//!
+//! Programs write normal output to standard output (stdout) and diagnostics to
+//! standard error (stderr). Capturing them separately lets you show errors or
+//! save them to a file without mixing them with results.
 
 #![cfg(target_family = "unix")]
 

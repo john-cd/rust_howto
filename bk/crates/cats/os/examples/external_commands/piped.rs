@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to pipe the output of one external command to
 //! the input of another.
+//!
+//! A pipe connects the standard output of one program to the standard input of
+//! the next, as in `ls | wc -l` in a shell. Running the pipeline from Rust
+//! avoids a shell, which also avoids shell-injection problems.
 
 #![allow(clippy::single_match)]
 #![cfg(target_family = "unix")]

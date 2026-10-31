@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Tokenize HTML with `html5ever` and print the parsed tokens.
+//!
+//! HTML5 defines exactly how a browser must read even broken markup.
+//! `html5ever` follows that specification, as used in Servo. Tokenizing is the
+//! first stage: it turns the text into tags, text and comments before a tree is
+//! built.
 
 use std::cell::Cell;
 

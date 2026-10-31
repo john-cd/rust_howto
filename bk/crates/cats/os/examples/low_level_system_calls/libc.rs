@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to use `libc` to call into the C standard
 //! library from Rust.
+//!
+//! A system call is a request from a program to the operating system kernel.
+//! `libc` exposes the C standard library functions, so calls are `unsafe`: the
+//! compiler cannot check pointers or error codes. Prefer a safe wrapper such as
+//! `nix` when one exists.
 
 use std::ffi::CStr;
 use std::ffi::CString;

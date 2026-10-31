@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Inserting and querying documents in MongoDB.
+//!
+//! MongoDB is a document database: it stores flexible JSON-like documents in
+//! collections instead of rows in tables, so records need not share the same
+//! fields. Queries are documents as well.
 
 // This example demonstrates connecting to MongoDB and performing basic CRUD
 // operations with the `mongodb` crate.

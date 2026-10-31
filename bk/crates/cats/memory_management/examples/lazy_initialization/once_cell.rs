@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Lazy initialization of a value with `OnceCell`.
+//!
+//! A `OnceCell` starts empty and can be set exactly once; later reads return
+//! the stored value. It is for single-threaded code, and the thread-safe
+//! version is `OnceLock`.
 
 use std::cell::OnceCell;
 

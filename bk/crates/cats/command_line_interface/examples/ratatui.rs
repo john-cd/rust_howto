@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! The main function initializes the terminal, runs the application, and
 //! restores the terminal to its original state.
+//!
+//! Ratatui draws text user interfaces (TUIs): full-screen programs inside a
+//! terminal, like `htop`. Each frame you describe widgets and layout; the
+//! library draws only what changed. A backend such as `crossterm` handles the
+//! terminal.
 
 use std::io;
 

@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! Minimize the Rosenbrock function with Nelder-Mead.
+//!
+//! Nelder-Mead minimizes a function without derivatives by moving a simplex (a
+//! triangle in 2D) across the surface. The Rosenbrock function is a standard
+//! test: it has a narrow curved valley that is hard to follow.
+
 use argmin::core::CostFunction;
 use argmin::core::Error;
 use argmin::core::Executor;

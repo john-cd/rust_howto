@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Computing the mean and the standard deviation of a list of integers.
+//!
+//! The standard deviation measures how spread out the values are around the
+//! mean: about two thirds of normally distributed data lies within one standard
+//! deviation of the mean. The sample version divides by n-1 and the population
+//! version by n.
 
 /// Calculates the mean (average) of a slice of i32 integers.
 ///

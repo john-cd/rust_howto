@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Shut a worker thread down cleanly when the user presses Ctrl-C.
+//!
+//! A signal is a notification the operating system sends to a process. Ctrl-C
+//! sends SIGINT, which kills the program by default. Handling it lets threads
+//! finish their work and release resources first (a graceful shutdown).
 
 use std::sync::Arc;
 use std::sync::atomic::AtomicBool;
