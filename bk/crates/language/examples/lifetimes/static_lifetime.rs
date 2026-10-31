@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! The `'static` lifetime.
+//!
+//! `'static` means a reference can live for the whole program, like a string
+//! literal baked into the binary. A `T: 'static` bound only says that the type
+//! owns its data or holds `'static` references; it does not mean the value
+//! lives forever.
 
 /// Returns a string literal, which lives for the whole program.
 fn my_string() -> &'static str {

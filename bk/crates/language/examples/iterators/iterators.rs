@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates the difference between `iter()`, `iter_mut()` and
 //! `into_iter()`.
+//!
+//! `iter()` borrows the items, `iter_mut()` borrows them mutably and
+//! `into_iter()` takes ownership. Pick by whether you need the collection
+//! afterwards or must change its items.
 
 #![allow(clippy::useless_vec)]
 #![allow(clippy::manual_contains)]

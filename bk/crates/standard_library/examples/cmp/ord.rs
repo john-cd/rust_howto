@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Implementing ordering with `PartialOrd` and `Ord`.
+//!
+//! `PartialOrd` defines `<` and `>`; `Ord` says every pair of values can be
+//! ordered, which sorting and `BTreeMap` need. They must agree with `Eq`: two
+//! values that compare equal must be equal.
 
 use std::cmp::Ordering;
 

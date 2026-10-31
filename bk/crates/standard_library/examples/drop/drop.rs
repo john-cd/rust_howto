@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Running code when a value is dropped, with the `Drop` trait.
+//!
+//! `Drop` runs code when a value goes out of scope, which is how Rust releases
+//! files, locks and memory without a garbage collector. This idea is called
+//! RAII (resource acquisition is initialization). Values are dropped in reverse
+//! order of creation.
 
 /// A struct that prints a message when it is dropped.
 struct CustomStruct {

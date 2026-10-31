@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! The `Default` trait provides a way to create a default value for a type.
 //! It initializes a struct without manually specifying every field.
+//!
+//! `Default` gives a type a sensible starting value. Deriving it, or using
+//! `..Default::default()` in a struct literal, lets you set only the fields you
+//! care about.
 
 // `derive` implements it automatically:
 /// A configuration, with the default values of each type.

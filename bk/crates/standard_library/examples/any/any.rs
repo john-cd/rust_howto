@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Dynamic typing with the `Any` trait.
+//!
+//! Rust is statically typed, but `Any` lets you hold a value of unknown type
+//! and ask at run time whether it is a given type (`downcast_ref`). It is used
+//! for plugin systems and heterogeneous containers; prefer enums or generics
+//! when the set of types is known.
 
 use std::any::Any;
 

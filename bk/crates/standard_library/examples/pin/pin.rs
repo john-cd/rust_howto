@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Pinning values with `Pin` and `PhantomPinned`.
+//!
+//! `Pin` promises that a value will not be moved in memory. Futures made by
+//! `async` blocks can hold references into themselves, so they must stay put
+//! while polled. `PhantomPinned` marks a type that must not be moved.
 
 use std::marker::PhantomPinned;
 use std::pin::Pin;

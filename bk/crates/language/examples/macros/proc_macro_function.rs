@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A function-like procedural macro that processes a SQL query.
+//!
+//! A function-like procedural macro, written as `name!(...)`, runs Rust code at
+//! compile time on its input tokens. This one processes a SQL query, as crates
+//! that check queries at compile time do. It must be defined in a crate of its
+//! own.
 
 // Import our custom function-like macro.
 use proc_macros::sql;

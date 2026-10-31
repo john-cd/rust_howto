@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Alternatives to `Cow`.
+//!
+//! `Cow` (clone on write) holds either a borrowed or an owned value and clones
+//! only when you need to modify it. It saves allocations when most inputs pass
+//! through unchanged. These alternatives trade it for simplicity or for other
+//! kinds of sharing.
 
 use std::rc::Rc;
 use std::sync::Arc;

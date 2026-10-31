@@ -1,4 +1,10 @@
 // TODO Reviewed ??-??-2026.
+//! Draw shapes into a pixel buffer with `tiny-skia`.
+//!
+//! Rasterizing turns shapes (paths, fills, strokes) into the grid of coloured
+//! pixels that a screen or a PNG file holds. `tiny-skia` does it on the CPU in
+//! safe Rust, a small port of part of Google's Skia library, so no window or
+//! GPU is needed. It is what `resvg` uses to render SVG.
 
 // ANCHOR: example
 use ::tiny_skia::FillRule;

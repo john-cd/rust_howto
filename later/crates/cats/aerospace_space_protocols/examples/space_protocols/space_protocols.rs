@@ -1,4 +1,11 @@
 // TODO Reviewed ??-??-2026.
+//! Build and parse CCSDS space packets and ECSS PUS packets.
+//!
+//! Spacecraft and ground stations exchange small binary packets over radio
+//! links. CCSDS defines the basic space packet, and the ECSS PUS standard
+//! defines named services, such as a connection test, on top of it. This
+//! example creates each kind of packet, serializes it to bytes and parses it
+//! back.
 
 // ANCHOR: ccsds-space-packet
 /// Serializes a CCSDS packet and checks its primary header and payload.

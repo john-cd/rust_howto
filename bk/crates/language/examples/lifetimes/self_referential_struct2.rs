@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of a self-referential struct using pinning.
+//!
+//! A self-referential struct holds a pointer to its own data. Moving the struct
+//! would invalidate that pointer, so the value must be pinned in place with
+//! `Pin`. This is the problem that `async` blocks solve internally.
 
 /// A self-referential struct, which is pinned.
 mod selfref {

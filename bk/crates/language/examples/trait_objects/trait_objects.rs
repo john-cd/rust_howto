@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Trait object example: a highly simplified GUI.
+//!
+//! A trait object lets you store values of different types behind one interface
+//! and call their methods at run time (dynamic dispatch), in contrast with
+//! generics, which are resolved at compile time. A GUI's list of widgets is the
+//! classic case.
 
 /// A trait for types that can be drawn.
 trait Draw {

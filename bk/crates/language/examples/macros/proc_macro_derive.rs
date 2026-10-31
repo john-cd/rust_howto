@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A derive procedural macro that implements a trait.
+//!
+//! A derive macro is a procedural macro: a Rust function that runs at compile
+//! time, receives the struct as tokens and generates an `impl`. This is how
+//! `#[derive(Debug)]` and `serde`'s `Serialize` work. It must be defined in a
+//! crate of its own.
 
 use proc_macros::DebugPrint;
 

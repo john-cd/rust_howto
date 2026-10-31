@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Implementing equality with `PartialEq` and `Eq`.
+//!
+//! `PartialEq` defines `==`. `Eq` is a marker that equality is reflexive (a
+//! value equals itself), which floats violate because `NaN != NaN`. Types used
+//! as `HashMap` keys must be `Eq`.
 
 // `#[derive(PartialEq, Eq)]` automatically implements equality traits.
 // When derived on structs, two instances are equal if all fields are equal,

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Returning a borrowed or an owned string with `Cow`.
+//!
+//! `Cow` (clone on write) holds either a borrowed or an owned value. Both
+//! `&str` and `String` convert into it with `into()`, so a function can return
+//! whichever is cheaper.
 
 use std::borrow::Cow;
 

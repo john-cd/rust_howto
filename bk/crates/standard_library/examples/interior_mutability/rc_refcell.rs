@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! A common pattern in Rust is using `Rc<RefCell<T>>` to allow multiple
 //! owners of mutable data in a single-threaded scenario.
+//!
+//! `Rc` shares ownership of a value among several owners in one thread;
+//! `RefCell` allows mutation through a shared reference by checking the borrow
+//! rules at run time, and panics on a violation. Together they allow shared,
+//! mutable data, as in graphs, but prefer simpler designs first.
 
 use std::cell::RefCell;
 use std::rc::Rc;
