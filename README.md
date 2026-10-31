@@ -17,6 +17,12 @@ This book is going through _heavy edits_. Pardon the dust.
 
 Contributions are most welcome! Please review the [contributing][rust-howto~contributing~website]↗ section of the book and peruse the book's [GitHub repo][rust-howto~repo]↗.
 
+## Build outputs and worktrees
+
+The primary checkout stays on `develop`. Use `.worktrees/a` and `.worktrees/b` for new auxiliary checkouts; the existing `.worktrees/c` is a detached legacy checkout. Build artifacts and Cargo intermediate files stay outside the repository: Windows uses `D:/target/rust_howto/<slot>` and `C:/code_build/rust_howto/<slot>`; Linux uses `$XDG_CACHE_HOME/rust_howto/target/<slot>` and `$XDG_CACHE_HOME/rust_howto/build/<slot>` when set, or the matching paths under `~/.cache` otherwise.
+
+Run `just build-setup` once in each checkout. Use `just cargo <subcommand> ...` to run Cargo with the checkout's paths. Workspace just recipes disable sccache and enable incremental compilation; direct Cargo uses sccache with incremental compilation disabled. The shared sccache cache defaults to 20 GiB, and `just cache-setup` refreshes base directories while no Rust build is running.
+
 ## Companion Tools
 
 Unpublished chapters have separate authoring previews. From `bk/`, run `just book drafts`
