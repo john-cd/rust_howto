@@ -1,7 +1,11 @@
+# Purpose: Expose the Rust book build, example-validation, and maintenance commands.
+# Usage: Run just --list from this directory to inspect the available recipes.
+
 # TODO Reviewed ??-??-2026.
 
 import "../scripts/build.just"
 
+# Build and maintain generated book assets with the Bash helper scripts.
 mod bash 'scripts/bash'
 
 set shell := ["bash", "-uc"]
@@ -11,6 +15,7 @@ set shell := ["bash", "-uc"]
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
@@ -28,6 +33,7 @@ fmt-toml:
 fmtall:
     @just code fmtall
 
+# Format all Rust packages and their local path dependencies. Alias: fa.
 alias fa := fmtall
 
 # Check code in the current crate (or the default packages of the workspace if in the root) (all features)
@@ -90,7 +96,9 @@ nt:
 nta:
     @just code nextestall
 
+# Format, build, lint, and test the Rust book examples.
 mod code 'scripts/code'
+# Build and open Rust API documentation for the book examples.
 mod docs 'scripts/docs'
 
 # Alias for book
@@ -117,28 +125,45 @@ lint-md:
 s:
     @just book serve
 
+# Build, preview, and install the pinned tools for the Rust book.
 mod book 'scripts/book'
+# Find missing anchors and generate their Markdown reference definitions.
 mod anchors 'scripts/anchors'
+# Normalize recipe tables in book chapters.
 mod recipes 'scripts/recipes'
+# Inspect and update the book example dependencies.
 mod deps 'scripts/deps'
+# Normalize book chapter titles.
 mod titles 'scripts/titles'
+# Find missing Markdown includes and local reference definitions.
 mod includes 'scripts/includes'
+# Find, create, and maintain Rust examples used by the book.
 mod examples 'scripts/examples'
+# Collect, check, sort, and rename Markdown reference definitions.
 mod refdefs 'scripts/refdefs'
+# Maintain crate links, category links, and cross-references in the book.
 mod links 'scripts/links'
+# Check external URLs and list duplicate URL references.
 mod urls 'scripts/urls'
+# Generate crate, language, and example indexes for the book.
 mod indices 'scripts/indices'
+# Hide and restore book chapters in the table of contents.
 mod chapters 'scripts/chapters'
+# Find book chapters that are missing from the table of contents.
 mod toc 'scripts/toc'
+# Check crate names and synchronize crate references in book content.
 mod crates 'scripts/crates'
 
 # Alias for utils
 u *args='':
     @just utils {{ args }}
 
+# Expose the shared book-maintenance utility task module.
 mod utils 'scripts/utils'
+# Check book spelling and maintain the project word list.
 mod spelling 'scripts/spelling'
 
+# Check book spelling with the supplied command options.
 spell extra_param='':
     @just spelling spell {{ extra_param }}
 
@@ -146,12 +171,16 @@ spell extra_param='':
 mdlint *args='':
     cd .. && npx --yes markdownlint-cli2@0.24.0 {{ args }}
 
+# Generate a Markdown link for paths matching the supplied pattern.
 lnk pattern:
     @just utils make_link {{ pattern }}
 
+# Build and publish development images and inspect Compose services.
 mod docker 'scripts/docker'
+# Manage GitHub issues and validate the issue-refresh helpers.
 mod gh 'scripts/gh'
 mod? hooks 'scripts/hooks'
+# Find and replace wiki-style links in book content.
 mod wikilinks 'scripts/wikilinks'
 
 ## ---- CLEAN ------------------------------------------

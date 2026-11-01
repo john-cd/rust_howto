@@ -9,6 +9,7 @@ book_root := replace(clean(join(source_directory(), "../..")), "\\", "/")
 
 set tempdir := "."
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}

@@ -1,3 +1,6 @@
+# Purpose: Coordinate validation and maintenance across the Rust book workspaces.
+# Usage: Run just --list from this directory to inspect the available recipes.
+
 # TODO Reviewed ??-??-2026.
 
 import "scripts/build.just"
@@ -9,6 +12,7 @@ set shell := ["bash", "-uc"]
 # Use Git Bash on Windows so recipes share one shell syntax across platforms.
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}

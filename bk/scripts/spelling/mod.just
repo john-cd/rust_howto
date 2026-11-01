@@ -7,6 +7,7 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
@@ -21,6 +22,7 @@ spell:
 spell-aspell mode='list':
     ./spellcheck.sh {{ mode }}
 
+# Add a word to the book spelling dictionary and sort the word list.
 aspell-add-word word:
     #!/usr/bin/env bash
     dic="{{ replace(join(source_directory(), "dictionary.txt"), "\\", "/") }}"

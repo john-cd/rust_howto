@@ -9,10 +9,12 @@ root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 set tempdir := "."
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
 
+# Sign in to GitHub with the GitHub CLI.
 @login:
     gh auth login
 

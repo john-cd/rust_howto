@@ -7,6 +7,7 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 python := if os_family() == "windows" { "python" } else { "python3" }
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}

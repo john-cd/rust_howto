@@ -1,7 +1,11 @@
+# Purpose: Demonstrate Just recipes, arguments, and working-directory behavior.
+# Usage: Run just --list from this directory to inspect the available recipes.
+
 # TODO Reviewed ??-??-2026.
 
 set fallback
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
@@ -25,9 +29,11 @@ _default:
 
 set windows-shell := ["C:\\cygwin64\\bin\\bash.exe", "-uc"]
 
+# Print the absolute working-directory path for this Just example.
 @pwd:
     echo '{{ absolute_path(".") }}'
 
+# Print the Just executable and directory paths used by this example.
 @test:
     echo '{{ just_executable() }}'
     echo '{{ justfile() }}'
@@ -41,6 +47,7 @@ set unstable
 
 set script-interpreter := ["C:\\cygwin64\\bin\\bash.exe", "-u"]
 
+# Demonstrate Windows script recipes and print the Just executable and directory paths.
 [script]
 [windows]
 @test2:

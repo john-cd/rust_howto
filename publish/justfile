@@ -1,3 +1,6 @@
+# Purpose: Build, validate, and maintain this Rust workspace with its configured tooling environment.
+# Usage: Run just --list from this directory to inspect the available recipes.
+
 # TODO Reviewed ??-??-2026.
 
 import "../scripts/build.just"
@@ -12,10 +15,12 @@ rustfmt_toolchain_default := trim(replace_regex(read(join(root, "..", "rustfmt-t
 rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
 
+# Format all Rust packages and their local path dependencies. Alias: fa.
 alias fa := fmtall
 
 # Format all packages and their local path-based dependencies
@@ -23,6 +28,7 @@ alias fa := fmtall
     echo "Formatting all packages and their local path-based dependencies in $(pwd)"
     cargo +{{ rustfmt_toolchain }} fmt --all
 
+# Check all Rust targets with every configured feature. Alias: cka.
 alias cka := checkall
 
 # Check all code (all packages, all features)
@@ -31,6 +37,7 @@ alias cka := checkall
     cargo check --workspace --all-targets --locked --all-features
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
+# Build all Rust targets with every configured feature. Alias: ba.
 alias ba := buildall
 
 # Build all packages (all features)
@@ -38,6 +45,7 @@ alias ba := buildall
     echo "Build all packages, all features in $(pwd)"
     cargo build --workspace --all-targets --locked --all-features --timings
 
+# Lint all Rust targets and features with Clippy. Alias: ca.
 alias ca := clippyall
 
 # Scan all code for common mistakes (all packages, all features)
@@ -45,6 +53,7 @@ alias ca := clippyall
     echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
     cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
+# Run the configured workspace tests and doctests. Alias: nta.
 alias nta := nextestall
 
 # Test the placeholder binary (an empty test set is expected).

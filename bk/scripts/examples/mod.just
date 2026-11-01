@@ -8,6 +8,7 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}

@@ -75,14 +75,17 @@ cache-setup:
 worktree slot branch:
     pwsh.exe -NoLogo -NoProfile -File "{{ build_repo }}/scripts/setup-build.ps1" -Slot "{{ slot }}" -Branch "{{ branch }}" -TargetDir "{{ build_inherited_target }}" -BuildDir "{{ build_inherited_intermediate }}"
 
+# Connect this checkout to its external Cargo output and compiler-cache directories.
 [unix]
 build-setup:
     bash "{{ build_repo }}/scripts/setup-build.sh"
 
+# Restart the shared sccache daemon with the registered worktree base directories.
 [unix]
 cache-setup:
     bash "{{ build_repo }}/scripts/setup-build.sh" --restart-cache
 
+# Create a named worktree slot and configure its external build directories.
 [unix]
 worktree slot branch:
     bash "{{ build_repo }}/scripts/setup-build.sh" --slot "{{ slot }}" "{{ branch }}" "{{ build_inherited_target }}" "{{ build_inherited_intermediate }}"

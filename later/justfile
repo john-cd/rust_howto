@@ -1,3 +1,6 @@
+# Purpose: Build, validate, and maintain this Rust workspace with its configured tooling environment.
+# Usage: Run just --list from this directory to inspect the available recipes.
+
 # TODO Reviewed ??-??-2026.
 
 import "../scripts/build.just"
@@ -15,10 +18,12 @@ rustfmt_toolchain_default := trim(replace_regex(read(join(root, "..", "rustfmt-t
 rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
 
+# Format all Rust packages and their local path dependencies. Alias: fa.
 alias fa := fmtall
 
 # Format all packages and their local path-based dependencies
@@ -28,6 +33,7 @@ alias fa := fmtall
     cd {{ code_root }}/cats/gui/vizia; cargo +{{ rustfmt_toolchain }} fmt --all
     cd {{ code_root }}/cats/development_tools_ffi/python_extension; cargo +{{ rustfmt_toolchain }} fmt --all
 
+# Check all Rust targets with every configured feature. Alias: cka.
 alias cka := checkall
 
 # Check all code (all packages, all features)
@@ -42,6 +48,7 @@ alias cka := checkall
     cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --workspace --all-targets --locked --all-features
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
+# Build all Rust targets with every configured feature. Alias: ba.
 alias ba := buildall
 
 # Build all packages (all features)
@@ -56,6 +63,7 @@ alias ba := buildall
     cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --workspace --all-targets --locked --all-features
     cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --workspace --all-targets --locked --all-features
 
+# Lint all Rust targets and features with Clippy. Alias: ca.
 alias ca := clippyall
 
 # Scan all code for common mistakes (all packages, all features)
@@ -71,6 +79,7 @@ alias ca := clippyall
     cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
     cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
+# Run the configured workspace tests and doctests. Alias: nta.
 alias nta := nextestall
 
 # Test all code in the workspace (incl. doctests) (all features)

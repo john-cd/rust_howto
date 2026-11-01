@@ -18,6 +18,7 @@ database_features := "cassandra,diesel,elasticsearch,lapin,lmdb,mongodb,mssql,po
 
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
