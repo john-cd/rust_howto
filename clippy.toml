@@ -1,0 +1,29 @@
+# Shared Clippy configuration. Workspace lint levels live in Cargo.toml.
+
+# Test-only exceptions
+allow-indexing-slicing-in-tests = true
+allow-panic-in-tests = true
+allow-unwrap-in-tests = false
+allow-expect-in-tests = true
+allow-dbg-in-tests = true
+
+# Const expressions may use expect for documented invariants.
+allow-expect-in-consts = true
+
+# Keep paths, identifiers, and nesting readable.
+absolute-paths-max-segments = 3
+disallowed-names = ["cmds", ".."]
+excessive-nesting-threshold = 5
+allowed-idents-below-min-chars = ["..", "c", "e", "f", "s"]
+
+# Keep channel capacity explicit.
+disallowed-methods = [
+  { path = "std::sync::mpsc::channel", reason = "Use a bounded channel or the repository event wrapper." },
+  { path = "crossbeam_channel::unbounded", reason = "Use crossbeam_channel::bounded." },
+  { path = "flume::unbounded", reason = "Use flume::bounded." },
+  { path = "tokio::sync::mpsc::unbounded_channel", reason = "Use tokio::sync::mpsc::channel." },
+]
+
+# Dependency and public-API policy.
+allowed-duplicate-crates = []
+avoid-breaking-exported-api = false
