@@ -55,3 +55,8 @@ The shared Linux environment for checks that Windows cannot complete is the dev 
 | `wgpu`, `glutin`, `femtovg` and other GUI examples                        | Linux with `mesa-vulkan-drivers` (lavapipe) and `xvfb-run`                                                 |
 | Audio examples                                                            | Linux with an ALSA null device                                                                             |
 | Windows-only APIs, macOS-only crates (`objc2`), real hardware             | The matching native host                                                                                   |
+
+## Configuration consistency
+
+See [CONFIGURATION.md](CONFIGURATION.md) for profile selection, checkout-local output setup,
+formatting and lint rules, CI caches, and dependency-update coverage.

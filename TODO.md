@@ -46,3 +46,14 @@ General rules for every brief: work from a clean checkout of `develop` on a topi
 ## Review: `dead_code` allowances and ignored tests
 
 - No `dead_code` allowance cleanup remains. Run the outstanding prerequisite-gated ignored checks in #2114 and #2115 when their services, desktop, operating systems, or hardware are available; NATS JetStream and Windows checks have passed.
+## Configuration alignment (2026-11-01)
+
+Implementation is paused. Focused editor/ignore and applicable formatting commits are on
+`codex/config-homogeneity`; build/profile, CI, and documentation edits remain under review.
+See `WORKTREES.md` for the checkout slot. No branch has been pushed.
+
+Remaining work is tracked in GitHub:
+
+- [ ] [[P2] Finish shared formatting, lint, and hook policy validation](https://github.com/john-cd/rust_howto/issues/2163)
+- [ ] [[P2] Validate and finalize Cargo profiles, output paths, and linker policy](https://github.com/john-cd/rust_howto/issues/2164)
+- [ ] [[P2] Complete dependency-update coverage and consistent CI caching](https://github.com/john-cd/rust_howto/issues/2165)
