@@ -2,6 +2,8 @@
 
 # TO DO List
 
+The two remaining unlinked marker-syntax questions are tracked in [GitHub issue #2166](https://github.com/john-cd/rust_howto/issues/2166).
+
 Every open task is tracked in a GitHub issue. This file lists what is left and, for each implementable item, a self-contained brief for Jules (which has no GitHub access). Status notes go in the issue; rows stay terse.
 
 ## Notes from John (unclear; clarify before work)
