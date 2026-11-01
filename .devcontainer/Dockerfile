@@ -145,6 +145,8 @@ FROM rust-core AS base
 SHELL ["bash", "-c"]
 
 ARG MDBOOK_UTILS_REV
+ARG PYTHON_VERSION
+ARG PYTHON_LINUX_SOURCE_SHA256
 ARG TECTONIC_VERSION
 ARG TECTONIC_LINUX_SHA256
 ARG TARGETARCH
@@ -172,9 +174,9 @@ WORKDIR /code
 ## `libopencv-dev` `clang` `libclang-dev` for `opencv`
 ## `llvm` for `llvm-config` required for `clang-sys`
 ## `libwebkit2gtk-4.1-dev` `build-essential` `curl` `wget` `file` `libxdo-dev` `libssl-dev` `libayatana-appindicator3-dev` `librsvg2-dev` for `tauri`
-## `python3` for `pyo3`
+## Pinned CPython 3.15.2 for the Python FFI and Maturin examples; `python3` keeps Debian tooling available.
 ## `default-jdk` for Java/JNI examples; `ruby-dev` for system Ruby bindings and the pinned Ruby 4.0 build for Rutie
-## `python3-venv` and `python-is-python3` for building the separate Maturin extension example
+## The pinned CPython installation also supplies `venv` for the separate Maturin extension example.
 ## `libgtk-4-dev` `build-essential` for `relm4` and `gtk4`
 ## `clang` `libwayland-dev` `libxkbcommon-x11-dev` `libvulkan-dev` for `xilem`
 ## `cmake build-essential libudev-dev xorg-dev libglu1-mesa-dev libasound2-dev libxkbcommon-dev` for `openrr`
@@ -208,6 +210,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libffi-dev \
     libfontconfig1-dev \
     libfreetype6-dev \
+    libbz2-dev \
+    libexpat1-dev \
     libgdbm-compat-dev \
     libgdbm-dev \
     libgmp-dev \
@@ -219,10 +223,11 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     libncurses-dev \
     libopencv-dev \
     libpng-dev \
-    libpython3-dev \
+    liblzma-dev \
     libreadline-dev \
     librocksdb-dev \
     librsvg2-dev \
+    libsqlite3-dev \
     libssl-dev \
     libsystemd-dev \
     libudev-dev \
@@ -245,19 +250,27 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     ninja-build \
     pkg-config \
     protobuf-compiler \
+    tk-dev \
     unzip \
     python3 \
-    python-is-python3 \
-    python3-venv \
     ruby-dev \
     unzip \
     wget \
     xz-utils \
     zip \
     xorg-dev \
+    uuid-dev \
     zlib1g-dev \
     && nasm --version \
     && apt-get clean -y
+
+## Keep Python used by extension examples aligned with the Windows install script.
+COPY --link --chmod=755 .devcontainer/install_python_3_15.sh /usr/local/bin/install_python_3_15.sh
+RUN PYTHON_VERSION="$PYTHON_VERSION" \
+    PYTHON_LINUX_SOURCE_SHA256="$PYTHON_LINUX_SOURCE_SHA256" \
+    /usr/local/bin/install_python_3_15.sh
+ENV PYTHON=/usr/local/bin/python \
+    PYTHON_VERSION=${PYTHON_VERSION}
 
 ## Install the hash-pinned Oracle Instant Client runtime and SDK for OCI examples.
 COPY --link --chmod=755 .devcontainer/install_oracle_client.sh /usr/local/bin/install_oracle_client.sh

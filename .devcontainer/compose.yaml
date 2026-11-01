@@ -8,6 +8,8 @@ services:
       dockerfile: .devcontainer/Dockerfile # path relative to context
       args:
         RUST_IMAGE_LABEL: ${RUST_IMAGE_LABEL:?rust image label must be defined}
+        PYTHON_VERSION: ${PYTHON_VERSION:?Python version must be defined}
+        PYTHON_LINUX_SOURCE_SHA256: ${PYTHON_LINUX_SOURCE_SHA256:?Python source checksum must be defined}
         RUSTFMT_TOOLCHAIN: ${RUSTFMT_TOOLCHAIN:-}
         MDBOOK_VERSION: ${MDBOOK_VERSION:?mdbook version must be defined}
         MDBOOK_LINKCHECK_VERSION: ${MDBOOK_LINKCHECK_VERSION:?mdbook-linkcheck version must be defined}

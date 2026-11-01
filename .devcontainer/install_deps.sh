@@ -44,6 +44,8 @@ sudo apt-get update \
     libffi-dev \
     libfontconfig1-dev \
     libfreetype6-dev \
+    libbz2-dev \
+    libexpat1-dev \
     libgdbm-compat-dev \
     libgdbm-dev \
     libgmp-dev \
@@ -55,10 +57,11 @@ sudo apt-get update \
     libncurses-dev \
     libopencv-dev \
     libpng-dev \
-    libpython3-dev \
+    liblzma-dev \
     libreadline-dev \
     librocksdb-dev \
     librsvg2-dev \
+    libsqlite3-dev \
     libssl-dev \
     libsystemd-dev \
     libudev-dev \
@@ -78,21 +81,29 @@ sudo apt-get update \
     ninja-build \
     pkg-config \
     protobuf-compiler \
+    tk-dev \
     unzip \
     python3 \
-    python-is-python3 \
-    python3-venv \
     ruby-dev \
     unzip \
     wget \
     xz-utils \
     zip \
     xorg-dev \
+    uuid-dev \
     jq \
     fzf \
     zlib1g-dev \
 && nasm --version \
 && sudo apt-get clean -y
+
+# Install the same checksum-pinned CPython used by the Windows setup.
+bash "$repo_root/.devcontainer/install_python_3_15.sh"
+python_version_output="$(python3 --version)"
+if [[ "${python_version_output}" != "Python ${PYTHON_VERSION}" ]]; then
+    printf 'Expected Python %s on PATH, got: %s\n' "${PYTHON_VERSION}" "${python_version_output}" >&2
+    exit 1
+fi
 
 # Install the pinned Oracle Instant Client Basic Light and SDK for OCI examples.
 ORACLE_CLIENT_ARCH="$(uname -m)" "$repo_root/.devcontainer/install_oracle_client.sh" "$HOME/.local/opt/oracle"

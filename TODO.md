@@ -24,6 +24,7 @@ WAIT move code examples from `later/` to `bk/` when code and text are ready.
 - [#2117](https://github.com/john-cd/rust_howto/issues/2117) — **Epic** — Deferred recipes, example cleanup and book quality.
 - [#2118](https://github.com/john-cd/rust_howto/issues/2118) — **Epic** — Tooling, CI and repository infrastructure.
 - [#2145](https://github.com/john-cd/rust_howto/issues/2145) — Optional support for complete badge groups that omit the crate index term (P4).
+- [#2160](https://github.com/john-cd/rust_howto/issues/2160) — Validate pinned Python and heavy-test service versions (P2).
 
 ## Briefs for Jules
 

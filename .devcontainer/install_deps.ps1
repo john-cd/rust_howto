@@ -37,7 +37,8 @@ winget install --id Ninja-build.Ninja -e --source winget --accept-source-agreeme
 # Install the SDKs used by the Java, Ruby, and Python FFI examples.
 winget install --id EclipseAdoptium.Temurin.21.JDK -e --source winget --accept-source-agreements --accept-package-agreements
 winget install 9NQ7512CXL7T -e --accept-package-agreements --disable-interactivity
-pymanager install 3.15
+$pythonVersion = $toolVersions["PYTHON_VERSION"]
+pymanager install $pythonVersion
 # Install the Ruby 4.0 runtime, headers, and libraries required by Rutie.
 & (Join-Path $PSScriptRoot 'install_ruby_4_0.ps1')
 
@@ -442,7 +443,11 @@ tectonic --version
 cargo fmt-toml --version
 dprint --version
 rumdl --version
-python --version
+$pythonVersionOutput = python --version
+if ($LASTEXITCODE -ne 0 -or $pythonVersionOutput -notmatch ("^Python {0}$" -f [regex]::Escape($pythonVersion))) {
+    throw "Expected Python $pythonVersion on PATH, got: $pythonVersionOutput"
+}
+$pythonVersionOutput
 java --version
 javac --version
 $rubyVersionOutput = ruby --version

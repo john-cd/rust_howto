@@ -27,7 +27,7 @@ services:
       REDIS_HOSTNAME: redis:6379
 
   amqp:
-    image: rabbitmq:management
+    image: ${RABBITMQ_IMAGE:?RabbitMQ image must be defined}
     environment:
       RABBITMQ_DEFAULT_USER: ${AMQP_USER:?Set AMQP_USER}
       RABBITMQ_DEFAULT_PASS: ${AMQP_PASSWORD:?Set AMQP_PASSWORD}
@@ -36,16 +36,18 @@ services:
       - "15672:15672"
 
   cassandra:
-    image: cassandra
+    image: ${CASSANDRA_IMAGE:?Cassandra image must be defined}
     ports:
       - 9042:9042
     environment:
       - CASSANDRA_CLUSTER_NAME=cassandra_infra
 
   elasticsearch:
-    image: elasticsearch:7.16.1
+    image: ${ELASTICSEARCH_IMAGE:?Elasticsearch image must be defined}
     environment:
       discovery.type: single-node
+      xpack.security.enabled: "false"
+      xpack.security.enrollment.enabled: "false"
       ES_JAVA_OPTS: "-Xms512m -Xmx512m"
     ports:
       - "9200:9200"
@@ -61,7 +63,7 @@ services:
       retries: 3
 
   meilisearch:
-    image: getmeili/meilisearch:v1.12.0
+    image: ${MEILISEARCH_IMAGE:?Meilisearch image must be defined}
     ports:
       - 7700:7700
     volumes:
@@ -70,7 +72,7 @@ services:
 
   # https://hub.docker.com/_/mongo
   mongodb:
-    image: mongo
+    image: ${MONGODB_IMAGE:?MongoDB image must be defined}
     ports:
       - "27017:27017"
     restart: always
@@ -82,15 +84,15 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD:?Set MONGODB_PASSWORD}
 
   mssql:
-    image: "mcr.microsoft.com/mssql/server"
+    image: ${MSSQL_IMAGE:?SQL Server image must be defined}
     ports:
       - 1433:1433
     environment:
-      SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Set MSSQL_SA_PASSWORD}
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Set MSSQL_SA_PASSWORD}
       ACCEPT_EULA: "Y"
 
   oracle:
-    image: container-registry.oracle.com/database/enterprise:latest
+    image: ${ORACLE_IMAGE:?Oracle image must be defined}
     environment:
       - ORACLE_SID=ORCLCDB
       - ORACLE_PDB=ORCLPDB1
@@ -99,7 +101,7 @@ services:
       - 1521:1521
 
   postgres:
-    image: postgres:alpine
+    image: ${POSTGRES_IMAGE:?PostgreSQL image must be defined}
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
       - POSTGRES_DB=library
@@ -110,7 +112,7 @@ services:
       - 5432
 
   smtp:
-    image: mailhog/mailhog
+    image: ${SMTP_IMAGE:?SMTP image must be defined}
     ports:
       - "1025:1025"
       - "8025:8025"
@@ -118,7 +120,7 @@ services:
 
   # https://hub.docker.com/_/redis
   redis:
-    image: redis:alpine
+    image: ${REDIS_IMAGE:?Redis image must be defined}
     restart: always
     # command: redis-server --requirepass yourpassword # or edit redis.conf
     expose:
