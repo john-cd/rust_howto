@@ -151,7 +151,7 @@ lnk pattern:
 
 mod docker 'scripts/docker'
 mod gh 'scripts/gh'
-mod? precommit 'scripts/precommit'
+mod? hooks 'scripts/hooks'
 mod wikilinks 'scripts/wikilinks'
 
 ## ---- CLEAN ------------------------------------------

@@ -1,3 +1,5 @@
+# Run configure-cargo-host through this repo's runner once per host for direct Cargo defaults.
+# Use the runner's cargo command for isolated per-checkout outputs and cache base directories.
 # TODO Reviewed ??-??-2026.
 
 # Paths are relative to the repository root. `just build-setup` creates junctions
@@ -5,14 +7,12 @@
 [build]
 rustc-wrapper = "sccache"
 incremental = false
-target-dir = "target"
-build-dir = "build"
-# Direct Cargo uses sccache with incrementals disabled; workspace justfiles override to no sccache and incrementals enabled.
+# Direct Cargo and workspace justfiles use sccache with incremental compilation disabled.
 
-# Use just cargo or cargo-make for external per-checkout output roots.
+# The justfile/Makefile.toml reads CODE_*_ROOT overrides (with Windows and XDG defaults) and exports per-checkout Cargo output paths; use its cargo command for these roots.
 [env]
-# The workspace justfiles can override these cache settings when they disable sccache.
+# The workspace justfiles replace the per-checkout base with the registered worktree list.
 SCCACHE_DIR = { value = ".sccache", relative = true }
-# Keep a caller's shared worktree list; fall back to this checkout when unset.
+# Direct Cargo defaults to this checkout; the just runner supplies the registered worktree list.
 SCCACHE_BASEDIRS = { value = ".", relative = true }
-SCCACHE_CACHE_SIZE = { value = "20G", force = true }
+SCCACHE_CACHE_SIZE = { value = "35G", force = true }

@@ -52,3 +52,11 @@ mod publish
 mod tools
 # Additional examples
 mod xmpl
+
+# Install the repository Git hook shim using prek.
+hooks-install:
+    prek install
+
+# Run prek against the staged files.
+hooks-run:
+    prek run

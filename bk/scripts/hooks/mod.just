@@ -1,5 +1,5 @@
 # Purpose: Install and run the repository git hooks with prek.
-# Usage: From bk/, run just precommit <recipe>.
+# Usage: From bk/, run just hooks <recipe>.
 #
 # TODO Reviewed ??-??-2026.
 
@@ -20,7 +20,7 @@ _default:
 ## Amend the last commit, skipping git hooks
 #@amend:
 #    git commit --amend --no-verify
-## ---- PREK -----------------------------------------
+## ---- HOOKS ----------------------------------------
 # Hooks are managed by prek (https://prek.j178.dev) and configured in the
 # root prek.toml, the single source of truth (see issue #1245).
 # The configured hooks run on staged files by default.

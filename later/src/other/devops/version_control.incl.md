@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026 -->
 
-| Recipe                                                                              | Crates                                  |
-| ----------------------------------------------------------------------------------- | --------------------------------------- |
-| [Check Your Code Before Committing it][ex~devops~check-your-code-before-committing] | {{#crate cargo-husky}}                  |
-| [`pre-commit`][ex~devops~pre-commit]                                                | [`pre-commit`][pre-commit.com~website]↗ |
+| Recipe                                                                              | Tool                    |
+| ----------------------------------------------------------------------------------- | ----------------------- |
+| [Check Your Code Before Committing it][ex~devops~check-your-code-before-committing] | [`prek`][prek~repo]↗    |
+| [Install Git Hook Checks][ex~devops~install-git-hooks-with-prek]                    | [`prek`][prek~repo]↗    |

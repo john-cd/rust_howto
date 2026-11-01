@@ -5,6 +5,7 @@
 # TODO Reviewed ??-??-2026.
 
 set -euo pipefail
+export SCCACHE_CACHE_SIZE=35G
 
 repo=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)
 common_git_dir=$(git -C "$repo" rev-parse --path-format=absolute --git-common-dir)
@@ -12,32 +13,12 @@ main_repo=$(dirname -- "$common_git_dir")
 target_override=
 build_override=
 
-get_cache_bases() {
-    local bases=${1:-${SCCACHE_BASEDIRS:-}}
-    append_base() {
-        case ":$bases:" in
-            *":$1:"*) ;;
-            *) bases=${bases:+$bases:}$1 ;;
-        esac
-    }
-    append_base "$main_repo"
-    for slot in {a..b}; do
-        append_base "$main_repo/.worktrees/$slot"
-    done
-    local worktrees
-    worktrees=$(git -C "$main_repo" worktree list --porcelain)
-    while IFS= read -r line; do
-        [[ $line == 'worktree '* ]] && append_base "${line#worktree }"
-    done <<< "$worktrees"
-    printf '%s' "$bases"
-}
-
 if [[ ${1:-} == --restart-cache ]]; then
     if pgrep -x 'cargo|rustc' >/dev/null; then
         echo 'Wait for running Cargo/rustc processes before restarting sccache.' >&2
         exit 1
     fi
-    export SCCACHE_BASEDIRS=$(get_cache_bases "${2:-${SCCACHE_BASEDIRS:-}}")
+    export SCCACHE_BASEDIRS="$(just --justfile "$repo/justfile" --evaluate build_sccache_basedirs)"
     sccache --stop-server || true # An already stopped daemon needs no action.
     sccache --start-server
     sccache --show-stats
@@ -72,12 +53,15 @@ identity=main
 if [[ $(basename -- "$(dirname -- "$repo")") == .worktrees ]]; then
     identity=$(basename -- "$repo")
 fi
-if [[ ! $identity =~ ^(main|[abc])$ ]]; then
-    echo 'Use a named .worktrees/a or .worktrees/b slot; existing c is retained as a legacy checkout.' >&2
+if [[ ! $identity =~ ^(main|[ab])$ ]]; then
+    echo 'Use only .worktrees/a or .worktrees/b.' >&2
     exit 1
 fi
 
 cache_home=${XDG_CACHE_HOME:-$HOME/.cache}
+code_target_root=${CODE_TARGET_ROOT:-$cache_home/cargo-target}
+code_build_root=${CODE_BUILD_ROOT:-$cache_home/cargo-build}
+code_sccache_root=${CODE_SCCACHE_ROOT:-${SCCACHE_DIR:-$cache_home/sccache}}
 link_directory() {
     local link=$1 destination=$2
     if [[ $destination != /* ]]; then
@@ -96,6 +80,6 @@ link_directory() {
     printf '%s -> %s\n' "$link" "$destination"
 }
 
-link_directory "$repo/target" "${target_override:-$cache_home/cargo-target/rust_howto/$identity}"
-link_directory "$repo/build" "${build_override:-$cache_home/cargo-build/rust_howto/$identity}"
-link_directory "$repo/.sccache" "${SCCACHE_DIR:-$cache_home/sccache}"
+link_directory "$repo/target" "${target_override:-$code_target_root/rust_howto/$identity}"
+link_directory "$repo/build" "${build_override:-$code_build_root/rust_howto/$identity}"
+link_directory "$repo/.sccache" "$code_sccache_root"

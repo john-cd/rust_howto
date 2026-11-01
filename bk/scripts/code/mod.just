@@ -102,7 +102,7 @@ _default:
     # process command-line limit, so lint this package directly and separately.
     cd {{ quote(code_root) }}; cargo clippy --workspace --exclude web_programming_http_server --exclude database --all-targets --locked --all-features -- -D warnings
     db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo clippy --package database --all-targets --locked --features "$db_features" -- -D warnings
-    cd {{ quote(code_root) }}; RUSTC_WRAPPER= cargo clippy --package web_programming_http_server --all-targets --locked --all-features -- -D warnings
+    cd {{ quote(code_root) }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --package web_programming_http_server --all-targets --locked --all-features -- -D warnings
 
 # Test any doctests in the workspace
 @doctest:
@@ -132,7 +132,7 @@ current_crate := file_name(invocation_directory())
     # sccache 0.18.0 expands web-sys rustc arguments past Windows' process command-line limit.
     cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --exclude web_programming_http_server --exclude database --all-targets --locked --no-fail-fast --status-level all --all-features
     db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package database --all-targets --locked --no-fail-fast --status-level all --features "$db_features"
-    cd {{ quote(code_root) }}; RUSTC_WRAPPER= cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ quote(code_root) }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
     cd {{ quote(code_root) }}; cargo test --doc --workspace
 
 # Clean the `crates/**/temp` folders of most files prior / after testing

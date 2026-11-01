@@ -57,21 +57,21 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 
 - `develop` is the default integration branch. `main` starts with an empty root commit and has independent history. The primary checkout keeps its stable `main` cache identity so the branch rename does not invalidate compiled artifacts.
 - Keep the primary checkout at `D:\code\rust_howto` on `develop`, using cache slot `main`. The only permitted topic worktrees are `D:\code\rust_howto\.worktrees\a` and `D:\code\rust_howto\.worktrees\b`. Inspect `git worktree list` and each slot's status before choosing one; preserve dirty or active slots. Do not create additional worktrees. `main` is the primary checkout's cache identity, not a folder under `.worktrees`.
-- Reuse an existing clean, inactive slot for each new topic so its Cargo target and intermediate build directories stay warm. Inspect its status, branch, ownership, and unintegrated work before switching branches; never disturb a dirty or active slot. Use only slots `a` and `b`; do not create another worktree. Preserve these slots and their caches instead of removing and recreating them between tasks. Do not create additional slots. The existing `.worktrees\c` checkout is retained as a legacy checkout; keep it detached and do not reuse it for new work.
-- On Windows, build artifacts belong in D:\target\rust_howto\slot and intermediate artifacts in C:\code_build\rust_howto\slot, where slot is main, a, or b. On Linux/macOS, use the XDG cache folder (or ~/.cache) under rust_howto/target/slot and rust_howto/build/slot. Keep these directories across branch changes to reuse compiled dependencies.
+- Reuse an existing clean, inactive slot for each new topic so its Cargo target and intermediate build directories stay warm. Inspect its status, branch, ownership, and unintegrated work before switching branches; never disturb a dirty or active slot. Use only slots `a` and `b`; do not create another worktree. Preserve these slots and their caches instead of removing and recreating them between tasks. Do not create additional slots.
+- On Windows, build artifacts belong in CODE_TARGET_ROOT\rust_howto\slot and intermediate artifacts in CODE_BUILD_ROOT\rust_howto\slot, where slot is main, a, or b. On Linux/macOS, use the XDG cache folder (or ~/.cache) under rust_howto/target/slot and rust_howto/build/slot. Keep these directories across branch changes to reuse compiled dependencies.
 - Every workspace justfile imports scripts/build.just, which detects the slot automatically and sets external per-checkout target/build paths. No RUST_HOWTO_WORKTREE_NAME variable is needed.
 - Use `just cargo <subcommand> <args...>` from the owning workspace's justfile for ad hoc Cargo commands; the shared recipe forwards arguments while retaining its configured build environment. The repository root, `bk`, and `later` are not Cargo workspace roots themselves, so pass `--manifest-path` for the intended workspace when invoking from those justfile directories.
 - Run `just build-setup` once per checkout before direct Cargo commands. On Windows it creates ignored `target` and `build` junctions to that checkout's external directories and on Linux it creates symlinks to the Linux cache directories. An ignored `.sccache` link points at the shared compiler cache. Setup refuses to replace existing files or directories. Use separate native Windows and Linux checkouts rather than sharing their platform-specific links. The root `.cargo/config.toml` supplies these paths to all independent workspaces; their local configs retain workspace-specific options. The existing `a` and `b` slots were set up by `just worktree`.
 - On Windows, set `CARGO_TARGET_DIR` and `CARGO_BUILD_BUILD_DIR` to the absolute external paths above for direct Cargo commands. A direct Cargo build through the checkout junctions failed with Windows device error 650 in this environment; using the external paths succeeded.
 - Build speed rules, measured on Windows (20 cores, tools workspace, `sccache` 0.18):
   - Keep a small number of worktree slots and reuse them. A warm slot rebuilds after an edit in 5-8 s; a cold or reset slot rebuilds everything (about 90-200 s for `tools`, far longer for `bk/crates`). Do not open a new slot when a clean, merged one exists; retire clean, merged slots promptly so build directories do not pile up on `C:` and `D:`.
-  - Workspace justfiles force `RUSTC_WRAPPER=""` and `CARGO_INCREMENTAL=1`. Direct Cargo uses the configured sccache wrapper with incremental compilation disabled. Both modes obey the cache/incremental pairing; use the workspace justfiles for known central output paths.
-  - Previous local measurements found cold builds slower with sccache, while warm incremental builds benefit from Cargo incremental compilation. The repository keeps sccache disabled to avoid its Windows argument-length issue and use incremental compilation instead.
-  - The shared sccache limit is 20G. `SCCACHE_BASEDIRS` includes the common RustHowto repository root for main and auxiliary checkouts; the daemon uses that value when started.
+  - Direct Cargo and workspace `just cargo` both use sccache with incremental compilation disabled. Both modes obey the same cache/incremental pairing; use the workspace justfiles for known central output paths.
+  - Previous local measurements found cold builds slower with sccache, while warm incremental builds benefit from Cargo incremental compilation. Keep the configured sccache/incremental pairing consistent across direct Cargo and the runner unless new measurements justify changing both.
+  - The shared sccache limit is 35G. Just sets `SCCACHE_BASEDIRS` to the main checkout and registered `.worktrees/a` and `.worktrees/b` slots only. `just cache-setup` supplies the same list to the daemon and discards inherited paths.
   - Dev profiles use `debug = "line-tables-only"` (and `debug = 0` for dependencies): this halved a cold build (196 s to 90 s) and the target directory size (1955 MB to 980 MB). `bk/crates` compiles workspace code at `opt-level = 0` and dependencies at `opt-level = "s"`. Linking with `rust-lld` on `x86_64-pc-windows-msvc` showed no gain; keep the default linker.
   - Day to day, check, lint, and test the package you are editing instead of the whole workspace: `just bk ckp <pkg>`, `just bk cap <pkg>`, `just bk ntp <pkg>` (or `ckc`/`ntc` from inside the crate). Reserve `cka`, `ca`, and `nta` (all packages, all features) for delivery.
-  - `SCCACHE_DIR` defaults to `D:/sccache` on Windows and `${XDG_CACHE_HOME:-$HOME/.cache}/sccache` on Linux, while respecting an existing environment override. Preserve the shared cache directory when cleaning. See [sccache's Rust guidance](https://github.com/mozilla/sccache#rust).
-- Before cleaning `D:\target`, inspect registered worktrees and running Cargo/rustc processes. Preserve active outputs, reusable slot caches, and the shared sccache directory. Remove obsolete task-named outputs only after establishing that no worktree uses them. Never run a recursive cleanup through the checkout's junctions.
+  - `SCCACHE_DIR` defaults to `CODE_SCCACHE_ROOT` on Windows and `${XDG_CACHE_HOME:-$HOME/.cache}/sccache` on Linux, while respecting an existing environment override. Preserve the shared cache directory when cleaning. See [sccache's Rust guidance](https://github.com/mozilla/sccache#rust).
+- Before cleaning `CODE_TARGET_ROOT`, inspect registered worktrees and running Cargo/rustc processes. Preserve active outputs, reusable slot caches, and the shared sccache directory. Remove obsolete task-named outputs only after establishing that no worktree uses them. Never run a recursive cleanup through the checkout's junctions.
 
 ## Key conventions
 
@@ -130,17 +130,66 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 - Record commands, configurations, results, and remaining failures. Use read-only validation; apply fixes deliberately, inspect their diff, and preserve unrelated work.
 - Run builds for a checkout sequentially. Independent checkouts may build concurrently when CPU, memory, and disk capacity permit; avoid changing inputs during a build.
 - Inspect running Cargo/rustc processes before starting expensive builds or cleaning artifacts. Do not stop another task's processes or restart the shared sccache server while builds are active.
-- Use `D:\temp` for Windows temporary files where an override is needed. Keep temporary files separate from persistent target, intermediate-build, Cargo, and sccache caches.
+- Use `CODE_TEMP_ROOT` for Windows temporary files where an override is needed. Keep temporary files separate from persistent target, intermediate-build, Cargo, and sccache caches.
 - Finish with `git diff --check`. Report unavailable checks and pre-existing failures without attributing them to the current change.
 
 These Rust design and error-handling rules govern maintained tools and reusable libraries. Book-visible snippets may intentionally demonstrate `unwrap`, panics, Unicode, or a different module shape when that is the lesson; keep the example's behavior explicit and preserve the documented anchor and runner structure.
+
 ## Central build outputs and worktrees
 
 - Keep auxiliary Git worktrees under .worktrees/ and name them with one lowercase letter from a through j. Only use slots a and b for new tasks.
-- Preserve the pre-existing `.worktrees/c` checkout as a legacy exception; do not create additional slots beyond a or b. Its `just` paths route outputs under slot c while it remains registered.
-- Keep the main worktree on this repository’s configured integration branch (usually `develop`; use `main` or `master` when that is the configured integration branch). Keep topic branches in auxiliary worktrees.
-- Windows: target outputs go to D:/target/rust_howto/slot and intermediate build outputs go to C:/code_build/rust_howto/slot. C: is NTFS; D: is ReFS.
+- Keep the main worktree on `develop`. Keep topic branches in auxiliary worktrees.
+- Windows: target outputs go to CODE_TARGET_ROOT/rust_howto/<slot> and intermediate build outputs go to CODE_BUILD_ROOT/rust_howto/slot. Keep CODE_BUILD_ROOT on an NTFS volume; do not use a ReFS volume for builds.
 - Linux/macOS: target outputs go to the XDG cache folder (or ~/.cache) under cargo-target/rust_howto/<slot>; intermediate outputs go under cargo-build/rust_howto/<slot>.
 - Run ad hoc commands as just cargo <subcommand> [args...]; existing cargo-make tasks also receive the configured paths.
-- The workspace justfiles use no compiler wrapper with incremental compilation enabled; direct Cargo uses sccache with incremental compilation disabled by `.cargo/config.toml`. Both paths keep Cargo outputs in the external directories above. Prefer the justfiles for ad hoc Cargo commands.
-- SCCACHE_BASEDIRS adds the common repository root, which covers the main checkout and every auxiliary worktree, while preserving inherited project bases.
+- Direct Cargo and workspace justfiles use sccache with incremental compilation disabled by `.cargo/config.toml`. Both paths keep Cargo outputs in the external directories above. Prefer the justfiles for ad hoc Cargo commands so they select the worktree's external paths.
+- The Just runner sets `SCCACHE_BASEDIRS` to the main checkout and registered `.worktrees/a` and `.worktrees/b` slots only. The cache setup command supplies the same list to the daemon and discards inherited paths. Use the runner's Cargo command to select external per-worktree paths.
+
+## Machine storage roots
+
+- On Windows, use `CODE_TEMP_ROOT` for temporary and staging files, setting `TEMP`, `TMP`, and `TMPDIR` as needed. Use `C:\temp` only when `CODE_TEMP_ROOT` is unavailable.
+- Keep package-manager data, library caches, and package installations under `CODE_PACKAGES_ROOT`, including Cargo, npm, NuGet, pip/uv, vcpkg, and similar data. Do not store standalone tool distributions there.
+- Keep portable developer tools and SDKs under `CODE_TOOLS_ROOT`, in a named subdirectory per tool (for example NASM, Oracle Instant Client, Cap'n Proto, Flutter, Pandoc, Tectonic, and repository tool bundles). Update PATH and installer/config references when relocating a tool. Leave package-manager-managed tools in their managed roots unless replacing them with a portable installation.
+- In WSL, keep temporary files on the distribution's configured temp paths. Keep package data in `CODE_PACKAGES_ROOT` (default `~/.local/share`) and portable tools in `CODE_TOOLS_ROOT` (default `~/.local/tools`); avoid Windows drive mounts for these roots unless a tool requires them.
+
+## Portable storage-root configuration
+
+The current Windows defaults below can be overridden per machine or shell with environment variables. The per-repository Rust Justfile or Cargo Make helper, when present, reads these variables. Non-Rust repositories do not need a Cargo build runner; use the environment roots only for tools or scripts that consume them.
+
+- CODE_REPOS_ROOT: D:/code on Windows; ~/code by default on Unix.
+- CODE_BUILD_ROOT: C:/code_build on Windows; XDG cache or ~/.cache/cargo-build by default on Unix. Keep Windows build output on NTFS.
+- CODE_TARGET_ROOT: D:/target on Windows; XDG cache or ~/.cache/cargo-target by default on Unix.
+- CODE_SCCACHE_ROOT: D:/sccache on Windows; XDG cache or ~/.cache/sccache by default on Unix.
+- CODE_TEMP_ROOT: D:/temp on Windows, with C:/temp as a fallback where a script needs one; Unix uses the existing TMPDIR or /tmp.
+- CODE_PACKAGES_ROOT: D:/packages on Windows; ~/.local/share by default on Unix.
+- CODE_TOOLS_ROOT: C:/tools on Windows; ~/.local/tools by default on Unix.
+
+Windows drive paths elsewhere in this file are defaults. Set a root variable to relocate the corresponding directory. WSL must keep its distribution temp behavior and must not redirect temp variables to a Windows drive mount.
+
+## Git Hooks
+
+- Use prek with this repository's prek.toml; install Git hook shims with hooks-install (or prek install directly).
+- Use `prek` and the repository `prek.toml` for Git hooks.
+
+## Python projects and uv
+
+Python project directories in this repository:
+
+- `later/crates/cats/development_tools_ffi/python_extension`
+
+- Keep each standalone Python project on a committed `uv.lock` and `.python-version`. Workspace members share the workspace root lock and Python pin.
+- Run commands from the repository root through `just --justfile <path>/justfile`: append `env`, `uv sync --locked`, or `uv run <command>`. Install the hook tool with `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile uv tool install prek`; install and run hooks with `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile hooks-install` and `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile hooks`.
+- The Justfile assigns project/worktree-specific environments under `CODE_PYTHON_ENV_ROOT`, Python caches under `CODE_PYTHON_BUILD_ROOT`, generated outputs under `CODE_PYTHON_OUTPUT_ROOT`, package-manager data under `CODE_PACKAGES_ROOT`, and tool executables under `CODE_TOOLS_ROOT`. Override these roots through environment variables.
+- On Windows the defaults are `D:/packages/uv/environments`, `D:/temp/python-build`, `D:/temp/python-output`, `D:/packages`, `C:/tools`, and `D:/temp` (with `C:/temp` fallback). Unix-like defaults use native home directories and `TMPDIR` or `/tmp`.
+- `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and `CODE_SCCACHE_ROOT` are Rust/Cargo-specific; the Python Justfile does not read or set them. Use the repo's Cargo runner for Rust builds.
+
+## Required repository storage and Git policy
+
+- Keep the primary checkout on `develop`. Keep `main` as an independent empty root commit; do not merge development history into it.
+- Auxiliary worktrees must be direct children of the repo's `.worktrees/` directory, named a and b only. Never create task-named or external worktree directories.
+- Preserve unique commits on named branches before moving a detached checkout. Keep history linear, squash unpublished related changes, and never rewrite published history without explicit authorization.
+- Use `CODE_TEMP_ROOT` for Windows temp files: `D:/temp` when available, otherwise `C:/temp`. Unix uses its native `TMPDIR` or `/tmp`.
+- Use `CODE_PACKAGES_ROOT` for package data (Windows `D:/packages`) and `CODE_TOOLS_ROOT` for portable tools (Windows `C:/tools`). Existing tool-specific environment overrides take precedence; changing a root does not move installed packages.
+- Run Cargo through `just cargo`. The runner must export central per-repo/per-slot target and build paths, sccache with incremental disabled, and only registered allowed sccache base directories.
+- Windows intermediate builds must use NTFS. The runner validates `CODE_BUILD_ROOT` before Cargo starts; a ReFS override is an error. Defaults are `C:/code_build/<repo>/<slot>` and `D:/target/<repo>/<slot>`.
+- Run `just configure-cargo-host` once per host and after changing roots to configure direct Cargo's central fallback. Direct Cargo shares the host target folder and isolates intermediates by workspace-path hash; use the runner for stable named checkout slots.

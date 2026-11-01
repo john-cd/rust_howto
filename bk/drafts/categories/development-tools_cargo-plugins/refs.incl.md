@@ -22,7 +22,6 @@
 [ex~development-tools_cargo-plugins~cargo-flamegraph]: performance.md#cargo-flamegraph
 [ex~development-tools_cargo-plugins~cargo-nextest]: performance.md#cargo-nextest
 [ex~development-tools_cargo-plugins~cargo-chef]: performance.md#cargo-chef
-[ex~development-tools_cargo-plugins~cargo-husky]: code_formatting_linting.md#cargo-husky
 [ex~development-tools_cargo-plugins~cargo-license]: auditing.md#cargo-license
 [ex~development-tools_cargo-plugins~cargo-limit]: watching_for_changes.md#cargo-limit
 [ex~development-tools_cargo-plugins~bacon]: watching_for_changes.md#bacon

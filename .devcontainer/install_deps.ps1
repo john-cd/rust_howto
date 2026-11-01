@@ -8,6 +8,24 @@
     Installs development dependencies for Windows.
 #>
 
+$defaultTempRoot = if (Test-Path -LiteralPath 'D:\temp' -PathType Container) {
+    'D:\temp'
+} else {
+    'C:\temp'
+}
+$temporaryRoot = if ($env:CODE_TEMP_ROOT) { $env:CODE_TEMP_ROOT } else { $defaultTempRoot }
+if (-not (Test-Path -LiteralPath $temporaryRoot -PathType Container)) {
+    New-Item -ItemType Directory -Path $temporaryRoot -Force | Out-Null
+}
+$env:TEMP = $temporaryRoot
+$env:TMP = $temporaryRoot
+$env:TMPDIR = $temporaryRoot
+$toolsRoot = if ($env:CODE_TOOLS_ROOT) { $env:CODE_TOOLS_ROOT } else { 'C:\tools' }
+$packagesRoot = if ($env:CODE_PACKAGES_ROOT) { $env:CODE_PACKAGES_ROOT } else { 'D:\packages' }
+if (-not (Test-Path -LiteralPath $toolsRoot -PathType Container)) {
+    New-Item -ItemType Directory -Path $toolsRoot -Force | Out-Null
+}
+
 $toolVersions = @{}
 Get-Content (Join-Path $PSScriptRoot ".env") | ForEach-Object {
     if ($_ -match '^(?<name>[A-Z0-9_]+)="(?<version>[^"]+)"$') {
@@ -42,20 +60,49 @@ pymanager install $pythonVersion
 # Install the Ruby 4.0 runtime, headers, and libraries required by Rutie.
 & (Join-Path $PSScriptRoot 'install_ruby_4_0.ps1')
 
-# Install the repository-pinned Pandoc release. Its MSI updates PATH when installed.
+# Install the repository-pinned portable Pandoc release under the shared tool root.
 $pandocVersion = $toolVersions["PANDOC_VERSION"]
-$pandocInstaller = Join-Path $env:TEMP "pandoc-$pandocVersion-windows-x86_64.msi"
-$pandocUri = "https://github.com/jgm/pandoc/releases/download/$pandocVersion/pandoc-$pandocVersion-windows-x86_64.msi"
-Invoke-WebRequest -Uri $pandocUri -OutFile $pandocInstaller
-$pandocHash = (Get-FileHash -LiteralPath $pandocInstaller -Algorithm SHA256).Hash.ToLowerInvariant()
-if ($pandocHash -ne $toolVersions["PANDOC_WINDOWS_MSI_SHA256"]) {
-    throw "Pandoc MSI SHA-256 did not match the pinned digest: $pandocHash"
-}
-$quotedPandocInstaller = '"{0}"' -f $pandocInstaller
-$pandocInstall = Start-Process -FilePath msiexec.exe -ArgumentList @('/i', $quotedPandocInstaller, '/qn', '/norestart') -Wait -PassThru
-Remove-Item -LiteralPath $pandocInstaller -ErrorAction SilentlyContinue
-if ($pandocInstall.ExitCode -notin @(0, 3010)) {
-    throw "Pandoc installer failed with exit code $($pandocInstall.ExitCode)."
+$pandocDirectory = Join-Path (Join-Path $toolsRoot 'pandoc') $pandocVersion
+$pandocExecutable = Join-Path $pandocDirectory 'pandoc.exe'
+if (-not (Test-Path -LiteralPath $pandocExecutable -PathType Leaf)) {
+    if (Test-Path -LiteralPath $pandocDirectory) {
+        throw "Pandoc install directory exists without pandoc.exe: $pandocDirectory"
+    }
+
+    $pandocArchive = Join-Path $env:TEMP "pandoc-$pandocVersion-windows-x86_64.zip"
+    $pandocStage = Join-Path $env:TEMP "pandoc-$pandocVersion-$PID"
+    if (Test-Path -LiteralPath $pandocStage) {
+        throw "Pandoc staging directory already exists: $pandocStage"
+    }
+
+    Invoke-WebRequest -Uri "https://github.com/jgm/pandoc/releases/download/$pandocVersion/pandoc-$pandocVersion-windows-x86_64.zip" -OutFile $pandocArchive
+    $pandocHash = (Get-FileHash -LiteralPath $pandocArchive -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($pandocHash -ne $toolVersions['PANDOC_WINDOWS_ZIP_SHA256']) {
+        Remove-Item -LiteralPath $pandocArchive -ErrorAction SilentlyContinue
+        throw "Pandoc ZIP SHA-256 did not match the pinned digest: $pandocHash"
+    }
+
+    New-Item -ItemType Directory -Path $pandocStage | Out-Null
+    try {
+        Expand-Archive -LiteralPath $pandocArchive -DestinationPath $pandocStage -Force
+        $pandocSource = Get-ChildItem -LiteralPath $pandocStage -Filter 'pandoc.exe' -File -Recurse | Select-Object -First 1
+        if (-not $pandocSource) {
+            throw 'Pandoc ZIP is missing pandoc.exe.'
+        }
+        $pandocSourceDirectory = $pandocSource.Directory.FullName
+        New-Item -ItemType Directory -Path (Split-Path -Parent $pandocDirectory) -Force | Out-Null
+        Move-Item -LiteralPath $pandocSourceDirectory -Destination $pandocDirectory
+    } finally {
+        if (Test-Path -LiteralPath $pandocStage) {
+            $tempRoot = [IO.Path]::GetFullPath($env:TEMP).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
+            $resolvedStage = [IO.Path]::GetFullPath($pandocStage)
+            if (-not $resolvedStage.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase)) {
+                throw "Refusing to remove Pandoc staging directory outside TEMP: $resolvedStage"
+            }
+            Remove-Item -LiteralPath $resolvedStage -Recurse -Force
+        }
+        Remove-Item -LiteralPath $pandocArchive -ErrorAction SilentlyContinue
+    }
 }
 
 # Winget installs these tools outside the current shell's inherited PATH on some hosts.
@@ -69,16 +116,18 @@ function Add-UserPath {
     $resolvedDirectory = (Resolve-Path -LiteralPath $Directory).Path.TrimEnd('\')
     $processEntries = @($env:Path -split ';' | Where-Object { $_ })
     if (-not ($processEntries | Where-Object { $_.TrimEnd('\') -ieq $resolvedDirectory })) {
-        $env:Path = "$env:Path;$resolvedDirectory"
+        $env:Path = "$resolvedDirectory;$env:Path"
     }
 
     $userPath = [Environment]::GetEnvironmentVariable('Path', 'User')
     $userEntries = @($userPath -split ';' | Where-Object { $_ })
     if (-not ($userEntries | Where-Object { $_.TrimEnd('\') -ieq $resolvedDirectory })) {
-        $newUserPath = if ([string]::IsNullOrWhiteSpace($userPath)) { $resolvedDirectory } else { "$userPath;$resolvedDirectory" }
+        $newUserPath = if ([string]::IsNullOrWhiteSpace($userPath)) { $resolvedDirectory } else { "$resolvedDirectory;$userPath" }
         [Environment]::SetEnvironmentVariable('Path', $newUserPath, 'User')
     }
 }
+
+Add-UserPath -Directory $pandocDirectory
 
 # Install OpenSSL through the pinned vcpkg release so openssl-sys can discover
 # the x64 libraries using its default Rust/MSVC triplet.
@@ -87,7 +136,7 @@ function Install-VcpkgOpenSsl {
     $vcpkgRoot = if ($env:VCPKG_ROOT) {
         [IO.Path]::GetFullPath($env:VCPKG_ROOT)
     } else {
-        Join-Path $env:LOCALAPPDATA "Programs\vcpkg\$vcpkgVersion"
+        Join-Path (Join-Path $packagesRoot 'vcpkg') $vcpkgVersion
     }
     $vcpkgExecutable = Join-Path $vcpkgRoot 'vcpkg.exe'
     $bootstrapScript = Join-Path $vcpkgRoot 'bootstrap-vcpkg.bat'
@@ -149,10 +198,7 @@ function Install-OracleInstantClient {
     }
 
     $oracleDirectoryName = "instantclient_$($Matches.major)_$($Matches.minor)"
-    $oracleVersionDirectory = Join-Path $env:LOCALAPPDATA 'Programs'
-    $oracleVersionDirectory = Join-Path $oracleVersionDirectory 'Oracle'
-    $oracleVersionDirectory = Join-Path $oracleVersionDirectory 'InstantClient'
-    $oracleVersionDirectory = Join-Path $oracleVersionDirectory $oracleVersion
+    $oracleVersionDirectory = Join-Path (Join-Path $toolsRoot 'oracle') $oracleVersion
     $oracleDirectory = Join-Path $oracleVersionDirectory $oracleDirectoryName
     $oracleDll = Join-Path $oracleDirectory 'oci.dll'
     $oracleSdkDirectory = Join-Path $oracleDirectory 'sdk'
@@ -239,7 +285,7 @@ Install-OracleInstantClient
 function Install-OnnxRuntime {
     $version = $toolVersions['ONNXRUNTIME_VERSION']
     $archiveName = "onnxruntime-win-x64-$version"
-    $installRoot = Join-Path (Join-Path $env:LOCALAPPDATA 'Programs') 'onnxruntime'
+    $installRoot = Join-Path  'onnxruntime'
     $runtimeDirectory = Join-Path $installRoot $archiveName
     $runtimeDll = Join-Path (Join-Path $runtimeDirectory 'lib') 'onnxruntime.dll'
 
@@ -312,7 +358,7 @@ if ($javaHome) {
 
 # Install the pinned NASM build required by aws-lc-sys.
 $nasmVersion = $toolVersions["NASM_VERSION"]
-$nasmDirectory = Join-Path $env:LOCALAPPDATA "Programs\NASM\$nasmVersion"
+$nasmDirectory = Join-Path (Join-Path $toolsRoot 'nasm') $nasmVersion
 $nasmExecutable = Join-Path $nasmDirectory "nasm.exe"
 if (-not (Test-Path -LiteralPath $nasmExecutable -PathType Leaf)) {
     if (Test-Path -LiteralPath $nasmDirectory) {
@@ -361,8 +407,7 @@ $env:Path = "$nasmDirectory;$env:Path"
     (Join-Path $env:ProgramFiles 'LLVM\bin'),
     (Join-Path $env:ProgramFiles 'NASM'),
     (Join-Path $env:LOCALAPPDATA 'Pandoc'),
-    (Join-Path $env:LOCALAPPDATA 'bin'),
-    (Join-Path $env:LOCALAPPDATA 'bin\NASM')
+    (Join-Path $env:LOCALAPPDATA 'bin')
 ) | ForEach-Object { Add-UserPath -Directory $_ }
 
 # Use the publisher's pinned prebuilt binary instead of compiling Tectonic's native libraries.
@@ -374,7 +419,7 @@ $tectonicHash = (Get-FileHash -LiteralPath $tectonicArchive -Algorithm SHA256).H
 if ($tectonicHash -ne $toolVersions["TECTONIC_WINDOWS_SHA256"]) {
     throw "Tectonic archive SHA-256 did not match the pinned digest: $tectonicHash"
 }
-$tectonicDirectory = Join-Path $env:LOCALAPPDATA "Programs\Tectonic\$tectonicVersion"
+$tectonicDirectory = Join-Path (Join-Path $toolsRoot 'tectonic') $tectonicVersion
 New-Item -ItemType Directory -Force -Path $tectonicDirectory | Out-Null
 Expand-Archive -LiteralPath $tectonicArchive -DestinationPath $tectonicDirectory -Force
 Remove-Item -LiteralPath $tectonicArchive -ErrorAction SilentlyContinue
@@ -414,7 +459,7 @@ foreach ($tool in $tools) {
 }
 
 $flutterVersion = $toolVersions["FLUTTER_VERSION"]
-$flutterInstallPath = Join-Path $env:LOCALAPPDATA "Programs\Flutter\$flutterVersion"
+$flutterInstallPath = Join-Path $toolsRoot "flutter-sdk-$flutterVersion"
 & (Join-Path $PSScriptRoot "install_flutter_sdk.ps1") `
     -Version $flutterVersion `
     -GitRevision $toolVersions["FLUTTER_GIT_REVISION"] `

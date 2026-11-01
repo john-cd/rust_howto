@@ -35,11 +35,11 @@ alias cka := checkall
     echo "Check all code (all packages, all features) in $(pwd)"
     # science_robotics needs a sourced ROS installation; science_geo needs GEOS.
     # mlua-sys requires `vendored` and `module` in separate feature sets.
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo check --workspace --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features
-    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= cargo check --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_without_module) }}
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo check --package development_tools_ffi --all-targets --locked --features lua-module
-    cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= cargo check --workspace --all-targets --locked --all-features
-    cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= cargo check --workspace --all-targets --locked --all-features
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --workspace --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features
+    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_without_module) }}
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --package development_tools_ffi --all-targets --locked --features lua-module
+    cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --workspace --all-targets --locked --all-features
+    cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --workspace --all-targets --locked --all-features
 # `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
 alias ba := buildall
@@ -50,11 +50,11 @@ alias ba := buildall
     # science_robotics requires ROS, science_geo requires GEOS, and the FFI
     # Ruby example requires Ruby development libraries for linking.
     # mlua-sys requires `vendored` and `module` in separate feature sets.
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo build --workspace --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features --timings
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo build --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_for_linking) }}
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo build --package development_tools_ffi --all-targets --locked --features lua-module
-    cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= cargo build --workspace --all-targets --locked --all-features
-    cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= cargo build --workspace --all-targets --locked --all-features
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --workspace --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features --timings
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_for_linking) }}
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --package development_tools_ffi --all-targets --locked --features lua-module
+    cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --workspace --all-targets --locked --all-features
+    cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --workspace --all-targets --locked --all-features
 
 alias ca := clippyall
 
@@ -64,12 +64,12 @@ alias ca := clippyall
     # sccache 0.18.0 expands web-sys rustc arguments past Windows' process limit.
     # science_robotics needs ROS; science_geo needs GEOS and pkg-config.
     # mlua-sys requires `vendored` and `module` in separate feature sets.
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo clippy --workspace --exclude wasm --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features -- -D warnings
-    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= cargo clippy --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_without_module) }} -- -D warnings
-    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= cargo clippy --package development_tools_ffi --all-targets --locked --features lua-module -- -D warnings
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo clippy --package wasm --all-targets --locked --all-features -- -D warnings
-    cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
-    cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --workspace --exclude wasm --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features -- -D warnings
+    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_without_module) }} -- -D warnings
+    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --package development_tools_ffi --all-targets --locked --features lua-module -- -D warnings
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --package wasm --all-targets --locked --all-features -- -D warnings
+    cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
+    cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
 alias nta := nextestall
 
@@ -78,13 +78,13 @@ alias nta := nextestall
     echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
     # sccache expands wasm's web-sys rustc arguments past Windows' process command-line limit.
     # mlua-sys requires `vendored` and `module` in separate feature sets.
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo test --doc --workspace --exclude wasm --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-features --locked
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo test --doc --package development_tools_ffi --locked --features {{ quote(ffi_features_for_linking) }}
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo test --doc --package development_tools_ffi --locked --features lua-module
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo nextest run --workspace --exclude wasm --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --no-fail-fast --status-level all --all-features
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo nextest run --package development_tools_ffi --all-targets --locked --no-fail-fast --status-level all --features {{ quote(ffi_features_for_linking) }}
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo test --package development_tools_ffi --all-targets --locked --features lua-module
-    cd {{ code_root }}; RUSTC_WRAPPER= cargo nextest run --package wasm --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo test --doc --workspace --exclude wasm --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-features --locked
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo test --doc --package development_tools_ffi --locked --features {{ quote(ffi_features_for_linking) }}
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo test --doc --package development_tools_ffi --locked --features lua-module
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo nextest run --workspace --exclude wasm --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo nextest run --package development_tools_ffi --all-targets --locked --no-fail-fast --status-level all --features {{ quote(ffi_features_for_linking) }}
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo test --package development_tools_ffi --all-targets --locked --features lua-module
+    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo nextest run --package wasm --all-targets --locked --no-fail-fast --status-level all --all-features
 
 # Build and display the `cargo doc` documentation
 @docall:

@@ -45,11 +45,11 @@ Choose the smallest tool that fits the task: use Cargo profiles and build script
 
 ### Use `devx` {#devx}
 
-{{#badges devx-cmd}} {{hi:Cmd}} {{hi:Bash}} {{hi:Shell}} {{hi:Process}} {{#badges devx-pre-commit}} {{hi:Formatter}} {{hi:Hook}} {{hi:Pre-commit}} {{hi:Rustfmt}} {{hi:Git}} {{#categories development-tools="Development tools"}}
+{{#badges devx-cmd}} {{hi:Cmd}} {{hi:Bash}} {{hi:Shell}} {{hi:Process}} {{#categories development-tools="Development tools"}}
 
 [`devx`][devx~repo]↗{{hi:devx}} is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask`][c~cargo-xtask~repo]↗ idioms.
 
-[`devx-cmd`][c~devx-cmd~docs]↗{{hi:devx-cmd}} provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts. [`devx-pre-commit`][c~devx-pre-commit~docs]↗{{hi:devx-pre-commit}} creates git pre-commit hooks that enforce good practices.
+[`devx-cmd`][c~devx-cmd~docs]↗{{hi:devx-cmd}} provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts.
 
 ## Write cross-platform `bash`-like scripts in Rust with `xshell` {#xshell}
 

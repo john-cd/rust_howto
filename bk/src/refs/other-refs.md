@@ -665,7 +665,6 @@
 [code-maven~website]: https://rust.code-maven.com
 [codeday~website]: https://codeday.org
 [codevoweb~website]: https://codevoweb.com
-[commitlint-pre-commit-hook~repo]: https://github.com/alessandrojcm/commitlint-pre-commit-hook
 [common-rust-lifetime-misconceptions~repo]: https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md
 [commonmark~link-reference-definitions~website]: https://spec.commonmark.org/0.31.2/#link-reference-definitions
 [communicating-between-sync-and-async-code~website]: https://docs.rs/tokio/latest/tokio/sync/mpsc#communicating-between-sync-and-async-code
@@ -1152,9 +1151,6 @@
 [postsack~repo~badge]: https://img.shields.io/badge/postsack-steelblue?logo=github
 [practical-rust-web-projects~repo]: https://github.com/Apress/practical-rust-web-projects
 [practice.course.rs~website]: https://practice.course.rs/why-exercise.html
-[pre-commit-rust~repo]: https://github.com/doublify/pre-commit-rust
-[pre-commit.com~hooks~website]: https://pre-commit.com/hooks.html
-[pre-commit.com~website]: https://pre-commit.com
 [primitive~array]: https://doc.rust-lang.org/std/primitive.array.html
 [primitive~bool]: https://doc.rust-lang.org/std/primitive.bool.html
 [primitive~char]: https://doc.rust-lang.org/std/primitive.char.html

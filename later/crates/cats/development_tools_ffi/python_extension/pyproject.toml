@@ -10,3 +10,6 @@ description = "A small Python extension implemented in Rust with PyO3."
 
 [tool.maturin]
 module-name = "rust_howto_python_module"
+
+[dependency-groups]
+dev = ["maturin>=1.9.4,<2.0", "ruff>=0.15.10"]
