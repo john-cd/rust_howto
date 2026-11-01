@@ -65,11 +65,7 @@ impl GenericClient for DeadpoolClient {
         PgClient::query(self, query, params).await
     }
 
-    async fn query_raw<T, I>(
-        &self,
-        statement: &T,
-        params: I,
-    ) -> Result<RowStream, Error>
+    async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
         I: IntoIterator + Sync + Send,
@@ -132,11 +128,7 @@ impl GenericClient for DeadpoolTransaction<'_> {
         PgTransaction::query(self, query, params).await
     }
 
-    async fn query_raw<T, I>(
-        &self,
-        statement: &T,
-        params: I,
-    ) -> Result<RowStream, Error>
+    async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
         I: IntoIterator + Sync + Send,

@@ -64,10 +64,9 @@ async fn main() -> anyhow::Result<()> {
         .await?;
 
     // Retrieve all users:
-    let users: Vec<User> =
-        sqlx::query_as::<_, User>("SELECT id, name, email FROM users")
-            .fetch_all(&pool)
-            .await?;
+    let users: Vec<User> = sqlx::query_as::<_, User>("SELECT id, name, email FROM users")
+        .fetch_all(&pool)
+        .await?;
 
     assert_eq!(
         users,

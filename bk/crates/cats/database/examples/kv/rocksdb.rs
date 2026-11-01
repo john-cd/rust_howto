@@ -25,9 +25,7 @@ fn main() -> anyhow::Result<()> {
     let tempdir = tempfile::Builder::new()
         .prefix("rocksdb_storage")
         .tempdir()
-        .expect(
-            "Failed to create the temporary directory for `rocksdb` storage",
-        );
+        .expect("Failed to create the temporary directory for `rocksdb` storage");
     let path = tempdir.path();
     // In real life, use e.g.: `let path = "my_rocksdb_path";`.
     {
@@ -41,10 +39,7 @@ fn main() -> anyhow::Result<()> {
 
         // Retrieve a value by its key:
         match db.get(b"key1")? {
-            Some(value) => println!(
-                "Found key1 with value: {}",
-                String::from_utf8_lossy(&value)
-            ),
+            Some(value) => println!("Found key1 with value: {}", String::from_utf8_lossy(&value)),
             None => println!("key1 not found"),
         }
 
@@ -53,10 +48,7 @@ fn main() -> anyhow::Result<()> {
 
         // Try to get the deleted key:
         match db.get(b"key1")? {
-            Some(value) => println!(
-                "Found key1 with value: {}",
-                String::from_utf8_lossy(&value)
-            ),
+            Some(value) => println!("Found key1 with value: {}", String::from_utf8_lossy(&value)),
             None => println!("key1 not found after deletion"),
         }
     }
@@ -114,10 +106,7 @@ mod tests {
     fn read_only_open_of_a_missing_database_fails() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
         let missing = dir.path().join("missing");
-        assert!(
-            DB::open_for_read_only(&Options::default(), missing, false)
-                .is_err()
-        );
+        assert!(DB::open_for_read_only(&Options::default(), missing, false).is_err());
         Ok(())
     }
 }

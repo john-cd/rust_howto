@@ -47,12 +47,9 @@ fn main() -> Result<()> {
     match rolled_back_tx(&mut connection) {
         Err(Error::SqliteFailure(code, _))
             if code.code == ErrorCode::ConstraintViolation
-                && code.extended_code
-                    == rusqlite::ffi::SQLITE_CONSTRAINT_UNIQUE =>
+                && code.extended_code == rusqlite::ffi::SQLITE_CONSTRAINT_UNIQUE =>
         {
-            println!(
-                "Duplicate color rejected; the transaction was rolled back."
-            );
+            println!("Duplicate color rejected; the transaction was rolled back.");
         }
         Err(error) => return Err(error.into()),
         Ok(()) => {
@@ -72,10 +69,8 @@ fn successful_tx(connection: &mut Connection) -> rusqlite::Result<()> {
     let transaction = connection.transaction()?;
     transaction.execute("DELETE FROM cats", ())?;
     transaction.execute("DELETE FROM cat_colors", ())?;
-    transaction
-        .execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"lavender"])?;
-    transaction
-        .execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"blue"])?;
+    transaction.execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"lavender"])?;
+    transaction.execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"blue"])?;
     transaction.commit()
 }
 
@@ -90,12 +85,9 @@ fn rolled_back_tx(connection: &mut Connection) -> rusqlite::Result<()> {
     let transaction = connection.transaction()?;
     transaction.execute("DELETE FROM cats", ())?;
     transaction.execute("DELETE FROM cat_colors", ())?;
-    transaction
-        .execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"lavender"])?;
-    transaction
-        .execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"blue"])?;
-    transaction
-        .execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"lavender"])?;
+    transaction.execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"lavender"])?;
+    transaction.execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"blue"])?;
+    transaction.execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"lavender"])?;
     transaction.commit()
 }
 
@@ -106,8 +98,7 @@ fn rolled_back_tx(connection: &mut Connection) -> rusqlite::Result<()> {
 ///
 /// Returns a SQLite error if the query cannot be prepared or read.
 fn color_names(connection: &Connection) -> rusqlite::Result<Vec<String>> {
-    let mut statement =
-        connection.prepare("SELECT name FROM cat_colors ORDER BY id")?;
+    let mut statement = connection.prepare("SELECT name FROM cat_colors ORDER BY id")?;
     let rows = statement.query_map([], |row| row.get(0))?;
     rows.collect()
 }

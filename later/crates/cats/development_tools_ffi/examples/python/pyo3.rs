@@ -57,9 +57,7 @@ fn main() -> PyResult<()> {
     Python::initialize();
 
     // Run a Python script:
-    Python::attach(|py| {
-        py.run(pyo3::ffi::c_str!("print('Hello World')"), None, None)
-    })?;
+    Python::attach(|py| py.run(pyo3::ffi::c_str!("print('Hello World')"), None, None))?;
 
     test_my_function()
 }

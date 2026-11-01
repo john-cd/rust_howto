@@ -18,8 +18,7 @@ fn main() -> std::io::Result<()> {
 
     // Canonicalize a path.
     // The path must exist.
-    let normalized_path: PathBuf =
-        fs::canonicalize("./temp/examples/../examples")?;
+    let normalized_path: PathBuf = fs::canonicalize("./temp/examples/../examples")?;
     println!("Canonical path: {}", normalized_path.display());
 
     // You may also use `Path::canonicalize`:

@@ -16,63 +16,64 @@ struct Re(Regex, Vec<&'static str>);
 
 /// Regexes take a while to compile.
 /// It is reasonable to store them in a global static.
-static GLOBAL_REGEX: std::sync::LazyLock<BTreeMap<&str, Re>> =
-    std::sync::LazyLock::new(|| {
-        println!("Initializing Regexes...\n");
-        // A sorted map:
-        let mut m = BTreeMap::new();
-        // A Markdown inline link - see <https://spec.commonmark.org/>.
-        // (?<name>  ) is a named capture group.
-        // \s is a whitespace. \S is a not-whitespace.
-        // [^!] excludes ! before [.
-        m.insert(
-            "[text](http...)",
-            Re(
-                Regex::new(r"[^!]\[(?<text>.*?)\]\s?\(\s*?(?<link>\S*?)\s*?\)")
-                    .expect("the regex example invariant should hold"),
-                vec!["text", "link"],
-            ),
-        );
-        // A Markdown autolink.
-        m.insert(
-            "<http...>",
-            Re(
-                Regex::new("<(?<link>http.*?)>")
-                    .expect("regular expression should be valid"),
-                vec!["link"],
-            ),
-        );
-        // A Markdown shortcut link.
-        // [text] not preceded by ! or ], not followed by <optional spaces>[ or
-        // ( or :
-        m.insert(
-            "[text] ...",
-            Re(
-                Regex::new(r"[^!\]]\[(?<text>[^\[\]]+?)\]\s*?[^\[\(:]")
-                    .expect("the regex example invariant should hold"),
-                vec!["text"],
-            ),
-        );
-        // A Markdown reference-style link.
-        m.insert(
-            "[text][label]",
-            Re(
-                Regex::new(r"[^!\]]\[(?<text>.*?)\]\s?\[(?<label>.+?)\]")
-                    .expect("the regex example invariant should hold"),
-                vec!["text", "label"],
-            ),
-        );
-        // A Markdown reference definition (with optional title):
-        // (?:  ) is a non-capturing group.
-        // (?m) flags the multi-line mode.
-        // ^ and $ are the beginning and end of a line, respectively.
-        m.insert(
-        "[label]: url \"title\"",
-        Re(Regex::new(r#"(?m)^\s*?\[(?<label>.*?)\]:\s*?(?<url>\S+)\s*?(?:"(?<title>.*)")?\s*$"#).expect("regular expression should be valid"),
-        vec!["label", "url", "title"])
+static GLOBAL_REGEX: std::sync::LazyLock<BTreeMap<&str, Re>> = std::sync::LazyLock::new(|| {
+    println!("Initializing Regexes...\n");
+    // A sorted map:
+    let mut m = BTreeMap::new();
+    // A Markdown inline link - see <https://spec.commonmark.org/>.
+    // (?<name>  ) is a named capture group.
+    // \s is a whitespace. \S is a not-whitespace.
+    // [^!] excludes ! before [.
+    m.insert(
+        "[text](http...)",
+        Re(
+            Regex::new(r"[^!]\[(?<text>.*?)\]\s?\(\s*?(?<link>\S*?)\s*?\)")
+                .expect("the regex example invariant should hold"),
+            vec!["text", "link"],
+        ),
     );
-        m
-    });
+    // A Markdown autolink.
+    m.insert(
+        "<http...>",
+        Re(
+            Regex::new("<(?<link>http.*?)>").expect("regular expression should be valid"),
+            vec!["link"],
+        ),
+    );
+    // A Markdown shortcut link.
+    // [text] not preceded by ! or ], not followed by <optional spaces>[ or
+    // ( or :
+    m.insert(
+        "[text] ...",
+        Re(
+            Regex::new(r"[^!\]]\[(?<text>[^\[\]]+?)\]\s*?[^\[\(:]")
+                .expect("the regex example invariant should hold"),
+            vec!["text"],
+        ),
+    );
+    // A Markdown reference-style link.
+    m.insert(
+        "[text][label]",
+        Re(
+            Regex::new(r"[^!\]]\[(?<text>.*?)\]\s?\[(?<label>.+?)\]")
+                .expect("the regex example invariant should hold"),
+            vec!["text", "label"],
+        ),
+    );
+    // A Markdown reference definition (with optional title):
+    // (?:  ) is a non-capturing group.
+    // (?m) flags the multi-line mode.
+    // ^ and $ are the beginning and end of a line, respectively.
+    m.insert(
+        "[label]: url \"title\"",
+        Re(
+            Regex::new(r#"(?m)^\s*?\[(?<label>.*?)\]:\s*?(?<url>\S+)\s*?(?:"(?<title>.*)")?\s*$"#)
+                .expect("regular expression should be valid"),
+            vec!["label", "url", "title"],
+        ),
+    );
+    m
+});
 
 /// Extract and print Markdown inline links e.g. [text](http...).
 fn extract_inline_links(contents: &str) {
@@ -181,8 +182,7 @@ mod tests {
 
     /// Autolinks and reference definitions are captured.
     #[test]
-    fn captures_autolinks_and_definitions()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn captures_autolinks_and_definitions() -> Result<(), Box<dyn std::error::Error>> {
         let autolink = &GLOBAL_REGEX["<http...>"].0;
         assert_eq!(
             &autolink.captures("<http://x/>").ok_or("missing value")?["link"],

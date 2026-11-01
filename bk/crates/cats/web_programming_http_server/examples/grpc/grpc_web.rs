@@ -50,10 +50,7 @@ where
         .layer(cors())
         .layer(GrpcWebLayer::new())
         .add_service(GreeterServer::new(MyGreeter::default()))
-        .serve_with_incoming_shutdown(
-            TcpListenerStream::new(listener),
-            shutdown,
-        )
+        .serve_with_incoming_shutdown(TcpListenerStream::new(listener), shutdown)
         .await?;
     Ok(())
 }
@@ -87,8 +84,7 @@ mod tests {
     async fn grpc_web_request_round_trip_over_loopback() -> anyhow::Result<()> {
         let listener = TcpListener::bind("127.0.0.1:0").await?;
         let address = listener.local_addr()?;
-        let (shutdown_sender, shutdown_receiver) =
-            tokio::sync::oneshot::channel();
+        let (shutdown_sender, shutdown_receiver) = tokio::sync::oneshot::channel();
         let server = tokio::spawn(serve(listener, async move {
             let _ = shutdown_receiver.await;
         }));
@@ -122,9 +118,7 @@ mod tests {
         let shutdown_result = shutdown_sender.send(());
         let server_result = server.await;
         request_result?;
-        shutdown_result.map_err(|()| {
-            anyhow::anyhow!("gRPC-Web server exited before shutdown")
-        })?;
+        shutdown_result.map_err(|()| anyhow::anyhow!("gRPC-Web server exited before shutdown"))?;
         server_result??;
         Ok(())
     }

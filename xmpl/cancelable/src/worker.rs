@@ -134,7 +134,8 @@ impl Worker {
     ///
     /// # Errors
     ///
-    /// Returns an error if the task is not queued or running, or if the cancellation registry is poisoned.
+    /// Returns an error if the task is not queued or running, or if the cancellation registry is
+    /// poisoned.
     pub fn cancel_task(&self, task_id: u64) -> anyhow::Result<()> {
         self.cancel_source.cancel_task(task_id)
     }

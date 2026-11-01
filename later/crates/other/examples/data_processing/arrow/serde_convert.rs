@@ -45,15 +45,14 @@ pub fn run() -> Result<()> {
 
     let mut decoder = json::ReaderBuilder::new(schema).build_decoder()?;
     decoder.serialize(&people)?;
-    let batch = decoder.flush()?.ok_or_else(|| {
-        arrow::error::ArrowError::ParseError("no rows to convert".to_owned())
-    })?;
+    let batch = decoder
+        .flush()?
+        .ok_or_else(|| arrow::error::ArrowError::ParseError("no rows to convert".to_owned()))?;
 
     let mut writer = json::ArrayWriter::new(Vec::new());
     writer.write(&batch)?;
     writer.finish()?;
-    let decoded_people: Vec<Person> =
-        serde_json::from_slice(&writer.into_inner())?;
+    let decoded_people: Vec<Person> = serde_json::from_slice(&writer.into_inner())?;
     assert_eq!(decoded_people, people);
     Ok(())
 }

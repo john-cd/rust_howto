@@ -24,13 +24,11 @@ use rand::rngs::SysRng;
 fn main() -> anyhow::Result<()> {
     // Generate a random 256-bit key:
     let mut rng = SysRng;
-    let key: Key<Aes256Gcm> =
-        Key::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
+    let key: Key<Aes256Gcm> = Key::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
 
     // Generate a fresh nonce. A production protocol must also coordinate
     // nonce allocation across every writer that shares this key.
-    let nonce: Nonce<Aes256Gcm> =
-        Nonce::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
+    let nonce: Nonce<Aes256Gcm> = Nonce::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
 
     // Create the cipher...
     let cipher = Aes256Gcm::new(&key);
@@ -73,11 +71,9 @@ mod tests {
         main()?;
 
         let mut rng = SysRng;
-        let key: Key<Aes256Gcm> =
-            Key::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
+        let key: Key<Aes256Gcm> = Key::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
         let cipher = Aes256Gcm::new(&key);
-        let nonce: Nonce<Aes256Gcm> =
-            Nonce::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
+        let nonce: Nonce<Aes256Gcm> = Nonce::<Aes256Gcm>::try_generate_from_rng(&mut rng)?;
         let plaintext = b"authenticated message";
         let mut ciphertext = cipher
             .encrypt(&nonce, plaintext.as_ref())

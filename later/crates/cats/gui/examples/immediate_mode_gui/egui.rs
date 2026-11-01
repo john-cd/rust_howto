@@ -39,10 +39,7 @@ impl MyApp {
             .show(ui, |ui| {
                 ui.heading("Hello egui!");
                 ui.text_edit_singleline(&mut self.name);
-                ui.add(
-                    egui::Slider::new(&mut self.amount, 0.0..=1.0)
-                        .text("Amount"),
-                );
+                ui.add(egui::Slider::new(&mut self.amount, 0.0..=1.0).text("Amount"));
                 let button = ui.button("Increment counter");
                 if button.clicked() {
                     self.counter += 1;

@@ -111,8 +111,7 @@ impl EventHandler for MainState {
 ///
 /// Returns a ggez error if context or graphics initialization fails.
 pub fn run() -> GameResult {
-    let (context, event_loop) =
-        ContextBuilder::new("rust_howto_ggez", "rust_howto").build()?;
+    let (context, event_loop) = ContextBuilder::new("rust_howto_ggez", "rust_howto").build()?;
     let state = MainState::new(&context)?;
 
     event::run(context, event_loop, state)

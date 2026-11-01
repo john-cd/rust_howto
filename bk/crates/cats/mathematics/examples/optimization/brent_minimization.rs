@@ -26,8 +26,7 @@ impl CostFunction for Quadratic {
 
 /// Finds the minimum of the quadratic function within `[-5, 8]`.
 fn minimize() -> f64 {
-    let solver =
-        BrentOpt::new(-5.0, 8.0).set_tolerance(f64::EPSILON.sqrt(), 1e-10);
+    let solver = BrentOpt::new(-5.0, 8.0).set_tolerance(f64::EPSILON.sqrt(), 1e-10);
     let result = Executor::new(Quadratic, solver)
         .configure(|state| state.param(0.0).max_iters(100))
         .run()

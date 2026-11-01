@@ -14,8 +14,7 @@ use tracing_subscriber::fmt::format::FmtSpan;
 /// This is intended for production use with systems where structured logs are
 /// consumed as JSON by analysis and viewing tools.
 fn main() {
-    let file = File::create("temp/my_log.json")
-        .expect("example output should be writable");
+    let file = File::create("temp/my_log.json").expect("example output should be writable");
 
     // Build a custom subscriber.
     let json_subscriber = tracing_subscriber::fmt()
@@ -45,9 +44,7 @@ fn main() {
     // Calling this instrumented function will log span events, since
     // `with_span_events` is enabled above.
     a_function();
-    println!(
-        "tracing_subscriber1b example: logs written to temp/my_log.json in JSON format"
-    );
+    println!("tracing_subscriber1b example: logs written to temp/my_log.json in JSON format");
 }
 
 /// A function instrumented with a span, which logs a debug event.
@@ -76,8 +73,7 @@ mod tests {
             || {
                 use std::fs;
                 if !std::path::Path::new("temp").exists() {
-                    fs::create_dir("temp")
-                        .expect("example output should be writable");
+                    fs::create_dir("temp").expect("example output should be writable");
                 }
                 main();
             },

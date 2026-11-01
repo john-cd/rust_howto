@@ -28,9 +28,8 @@ fn extract_archive(
     archive_path: impl AsRef<Path>,
     destination: impl AsRef<Path>,
 ) -> Result<Vec<PathBuf>> {
-    let file = File::open(archive_path.as_ref()).with_context(|| {
-        format!("opening {}", archive_path.as_ref().display())
-    })?;
+    let file = File::open(archive_path.as_ref())
+        .with_context(|| format!("opening {}", archive_path.as_ref().display()))?;
     let mut archive = Archive::new(GzDecoder::new(file));
     let prefix = Path::new("bundle/logs");
     let destination = destination.as_ref();
@@ -40,13 +39,12 @@ fn extract_archive(
     for entry_result in archive.entries()? {
         let mut entry = entry_result?;
         let archive_path = entry.path()?.into_owned();
-        let relative_path =
-            archive_path.strip_prefix(prefix).map_err(|_| {
-                anyhow!(
-                    "archive entry path does not start with prefix: {}",
-                    archive_path.display()
-                )
-            })?;
+        let relative_path = archive_path.strip_prefix(prefix).map_err(|_| {
+            anyhow!(
+                "archive entry path does not start with prefix: {}",
+                archive_path.display()
+            )
+        })?;
 
         if relative_path.as_os_str().is_empty() {
             continue;
@@ -80,8 +78,7 @@ fn extract_archive(
 
 /// Extracts the example archive into a local output directory.
 fn main() -> Result<()> {
-    let extracted_paths =
-        extract_archive("temp/archive.tar.gz", "temp/extracted")?;
+    let extracted_paths = extract_archive("temp/archive.tar.gz", "temp/extracted")?;
     println!("Extracted the following files:");
     for path in extracted_paths {
         println!("> {}", path.display());
@@ -106,10 +103,7 @@ mod tests {
     use super::extract_archive;
 
     /// Creates a gzip-compressed tar archive containing one regular file.
-    fn create_archive(
-        archive_path: &Path,
-        entry_path: &str,
-    ) -> anyhow::Result<()> {
+    fn create_archive(archive_path: &Path, entry_path: &str) -> anyhow::Result<()> {
         let archive_file = File::create(archive_path)?;
         let encoder = GzEncoder::new(archive_file, Compression::default());
         let mut builder = tar::Builder::new(encoder);
@@ -124,17 +118,13 @@ mod tests {
     }
 
     /// Writes a raw path header so tests can represent a hostile archive entry.
-    fn create_archive_with_raw_path(
-        archive_path: &Path,
-        entry_path: &str,
-    ) -> anyhow::Result<()> {
+    fn create_archive_with_raw_path(archive_path: &Path, entry_path: &str) -> anyhow::Result<()> {
         let archive_file = File::create(archive_path)?;
         let encoder = GzEncoder::new(archive_file, Compression::default());
         let mut builder = tar::Builder::new(encoder);
         let contents = b"hello world";
         let mut header = tar::Header::new_gnu();
-        header.as_mut_bytes()[..entry_path.len()]
-            .copy_from_slice(entry_path.as_bytes());
+        header.as_mut_bytes()[..entry_path.len()].copy_from_slice(entry_path.as_bytes());
         header.set_size(contents.len() as u64);
         header.set_mode(0o644);
         header.set_cksum();
@@ -178,10 +168,7 @@ mod tests {
     fn extraction_rejects_parent_components() -> anyhow::Result<()> {
         let temp_dir = tempfile::tempdir()?;
         let archive_path = temp_dir.path().join("archive.tar.gz");
-        create_archive_with_raw_path(
-            &archive_path,
-            "bundle/logs/../../outside.txt",
-        )?;
+        create_archive_with_raw_path(&archive_path, "bundle/logs/../../outside.txt")?;
         let destination = temp_dir.path().join("output");
         let outside_path = temp_dir.path().join("outside.txt");
 
@@ -193,10 +180,7 @@ mod tests {
     #[test]
     fn main_extracts_the_sample_archive() -> anyhow::Result<()> {
         fs::create_dir_all("temp")?;
-        create_archive(
-            Path::new("temp/archive.tar.gz"),
-            "bundle/logs/example.txt",
-        )?;
+        create_archive(Path::new("temp/archive.tar.gz"), "bundle/logs/example.txt")?;
         super::main()?;
         assert_eq!(fs::read("temp/extracted/example.txt")?, b"hello world");
         fs::remove_dir_all("temp/extracted")?;
@@ -206,10 +190,7 @@ mod tests {
 
     #[test]
     fn missing_archive_is_an_error() {
-        let result = extract_archive(
-            "temp/does_not_exist.tar.gz",
-            "temp/does_not_exist_out",
-        );
+        let result = extract_archive("temp/does_not_exist.tar.gz", "temp/does_not_exist_out");
         assert!(result.is_err());
     }
 }

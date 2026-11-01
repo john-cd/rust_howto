@@ -30,11 +30,11 @@ fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
     writer.write(batch)?;
     writer.finish()?;
 
-    let mut reader =
-        json::ReaderBuilder::new(schema).build(Cursor::new(json_bytes))?;
-    reader.next().transpose()?.ok_or_else(|| {
-        ArrowError::ParseError("JSON input contained no rows".to_owned())
-    })
+    let mut reader = json::ReaderBuilder::new(schema).build(Cursor::new(json_bytes))?;
+    reader
+        .next()
+        .transpose()?
+        .ok_or_else(|| ArrowError::ParseError("JSON input contained no rows".to_owned()))
 }
 // ANCHOR_END: example
 

@@ -73,9 +73,7 @@ fn run_window() -> Result<()> {
         // The sleep below caps the loop at roughly 60 frames per second.
         let elapsed = last_frame.elapsed();
         if elapsed < Duration::from_millis(16) {
-            std::thread::sleep(
-                Duration::from_millis(16).saturating_sub(elapsed),
-            );
+            std::thread::sleep(Duration::from_millis(16).saturating_sub(elapsed));
         }
         last_frame = Instant::now();
     }

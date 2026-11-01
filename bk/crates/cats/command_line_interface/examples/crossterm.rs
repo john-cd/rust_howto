@@ -106,8 +106,7 @@ mod tests {
     }
 
     #[test]
-    fn terminal_commands_produce_the_expected_escape_sequences()
-    -> anyhow::Result<()> {
+    fn terminal_commands_produce_the_expected_escape_sequences() -> anyhow::Result<()> {
         let mut out: Vec<u8> = Vec::new();
         queue!(out, Clear(ClearType::All), cursor::MoveTo(0, 0))?;
         assert_eq!(String::from_utf8(out.clone())?, "\u{1b}[2J\u{1b}[1;1H");

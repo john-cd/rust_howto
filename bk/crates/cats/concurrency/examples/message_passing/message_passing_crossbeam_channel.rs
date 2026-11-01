@@ -33,7 +33,8 @@ fn main() {
     // Spawn a new thread to send a message into the channel.
     // Note that the cloned sender is moved into the thread.
     let producer = thread::spawn(move || {
-        s2.send("Hi!").expect("the message passing crossbeam channel example invariant should hold");
+        s2.send("Hi!")
+            .expect("the message passing crossbeam channel example invariant should hold");
     });
 
     // Blocks until receiving the message from the channel.
@@ -45,9 +46,8 @@ fn main() {
     // The channel is now empty:
     assert_eq!(r1.try_recv(), Err(TryRecvError::Empty));
 
-    s1.send("0").expect(
-        "the message passing crossbeam channel example invariant should hold",
-    );
+    s1.send("0")
+        .expect("the message passing crossbeam channel example invariant should hold");
     // Receive all remaining messages currently in the channel
     // (non-blocking).
     let v: Vec<_> = r1.try_iter().collect();
@@ -56,9 +56,8 @@ fn main() {
 
     // When all senders or all receivers associated with a channel get
     // dropped, the channel becomes disconnected.
-    s1.send("1").expect(
-        "the message passing crossbeam channel example invariant should hold",
-    );
+    s1.send("1")
+        .expect("the message passing crossbeam channel example invariant should hold");
     drop(s1);
 
     // No more messages can be sent...

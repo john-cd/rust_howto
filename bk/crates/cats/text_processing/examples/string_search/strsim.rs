@@ -121,9 +121,7 @@ mod tests {
     #[test]
     fn similarity_scores() {
         assert!((jaro_winkler("rusty", "rusty") - 1.0).abs() < f64::EPSILON);
-        assert!(
-            (normalized_levenshtein("abc", "abc") - 1.0).abs() < f64::EPSILON
-        );
+        assert!((normalized_levenshtein("abc", "abc") - 1.0).abs() < f64::EPSILON);
         let score = sorensen_dice("aleksandr", "alexander");
         assert!((0.0..=1.0).contains(&score));
         assert!(jaro("abc", "xyz") < 0.01);

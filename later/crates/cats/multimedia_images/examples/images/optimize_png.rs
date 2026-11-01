@@ -18,12 +18,8 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let original = DynamicImage::ImageRgb8(pixels.clone());
     let mut input = Cursor::new(Vec::new());
     original.write_to(&mut input, ImageFormat::Png)?;
-    let optimized = oxipng::optimize_from_memory(
-        input.get_ref(),
-        &oxipng::Options::default(),
-    )?;
-    let decoded =
-        image::load_from_memory_with_format(&optimized, ImageFormat::Png)?;
+    let optimized = oxipng::optimize_from_memory(input.get_ref(), &oxipng::Options::default())?;
+    let decoded = image::load_from_memory_with_format(&optimized, ImageFormat::Png)?;
     assert_eq!(decoded.to_rgb8(), pixels);
     println!(
         "PNG bytes: {} -> {}",

@@ -52,13 +52,12 @@ fn layers() {
     )
 )]
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
-    // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
-    //    variable, ignoring any invalid filter directives.
+    // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment variable, ignoring
+    //    any invalid filter directives.
     let _filter_layer1 = EnvFilter::from_default_env();
 
-    // 2. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
-    //    variable, or "info" if the environment variable is unset or contains
-    //    any invalid filter directives.
+    // 2. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment variable, or "info"
+    //    if the environment variable is unset or contains any invalid filter directives.
     let _filter_layer2 = EnvFilter::try_from_default_env()
         .or_else(|_| EnvFilter::try_new("info"))
         .expect("the tracing subscriber layers example invariant should hold");
@@ -167,9 +166,7 @@ mod tests {
     #[test]
     #[ignore = "needs a parent-controlled filter environment"]
     fn child_checks_custom_filter() {
-        filter().expect(
-            "the tracing subscriber layers example invariant should hold",
-        );
+        filter().expect("the tracing subscriber layers example invariant should hold");
     }
 
     /// Verifies that per layer filtering.

@@ -79,8 +79,7 @@ impl ractor::Actor for Greeter {
         state: &mut Self::State,
     ) -> Result<(), ActorProcessingErr> {
         state.count += 1;
-        let reply =
-            format!("Hello, {}! (greeting #{})", message.name, state.count);
+        let reply = format!("Hello, {}! (greeting #{})", message.name, state.count);
         // A caller may cancel a request after sending it; the actor can still
         // process the message and stop normally.
         let _ = message.reply_to.send(reply);

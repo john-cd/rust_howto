@@ -105,10 +105,7 @@ async fn baz(n: i32) {
     // spawn new tasks with `await_tree::spawn` or `spawn_anonymous`
     // to register them in the same registry. Anonymous tasks don't belong to a
     // specific tree but can be printed via `collect_anonymous`.
-    await_tree::spawn_anonymous(
-        format!("anonymous background task {n}"),
-        pending::<()>(),
-    );
+    await_tree::spawn_anonymous(format!("anonymous background task {n}"), pending::<()>());
 }
 // ANCHOR_END: example
 
@@ -123,10 +120,8 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn registry_collects_the_registered_trees()
-    -> Result<(), Box<dyn std::error::Error>> {
-        let registry =
-            Registry::new(ConfigBuilder::default().verbose(true).build()?);
+    async fn registry_collects_the_registered_trees() -> Result<(), Box<dyn std::error::Error>> {
+        let registry = Registry::new(ConfigBuilder::default().verbose(true).build()?);
         for i in 0_i32..2 {
             let root = registry.register(i, format!("foo {i}"));
             tokio::spawn(root.instrument(foo(i)));
@@ -143,10 +138,7 @@ mod tests {
         for (i, tree) in &trees {
             assert!(tree.contains(&format!("foo {i}")), "{tree}");
             assert!(tree.contains(&format!("bar {i}")), "{tree}");
-            assert!(
-                tree.contains(&format!("pending inside bar {i}")),
-                "{tree}"
-            );
+            assert!(tree.contains(&format!("pending inside bar {i}")), "{tree}");
         }
         assert_eq!(registry.collect_anonymous().len(), 2);
         Ok(())

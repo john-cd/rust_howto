@@ -91,8 +91,7 @@ mod tests {
         Ok(())
     }
 
-    const SAMPLE: &str =
-        r#"{"name": "John Doe", "age": 42, "phones": ["+1 123", "+1 234"]}"#;
+    const SAMPLE: &str = r#"{"name": "John Doe", "age": 42, "phones": ["+1 123", "+1 234"]}"#;
 
     /// The typed and untyped parses agree.
     #[test]

@@ -73,10 +73,7 @@ mod tests {
     /// Renders markdown with all extensions enabled.
     fn render(input: &str) -> String {
         let mut html_output = String::new();
-        html::push_html(
-            &mut html_output,
-            Parser::new_ext(input, Options::all()),
-        );
+        html::push_html(&mut html_output, Parser::new_ext(input, Options::all()));
         html_output
     }
 

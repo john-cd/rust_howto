@@ -75,10 +75,9 @@ mod tests {
 
     #[test]
     fn hour12_maps_midnight_and_noon() {
-        let midnight = chrono::NaiveTime::from_hms_opt(0, 0, 0)
-            .expect("midnight is a valid time of day");
-        let noon = chrono::NaiveTime::from_hms_opt(12, 0, 0)
-            .expect("noon is a valid time of day");
+        let midnight =
+            chrono::NaiveTime::from_hms_opt(0, 0, 0).expect("midnight is a valid time of day");
+        let noon = chrono::NaiveTime::from_hms_opt(12, 0, 0).expect("noon is a valid time of day");
         assert_eq!(midnight.hour12(), (false, 12));
         assert_eq!(noon.hour12(), (true, 12));
     }

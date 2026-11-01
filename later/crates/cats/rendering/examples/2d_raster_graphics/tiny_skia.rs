@@ -25,13 +25,9 @@ fn draw_scene() -> Result<Pixmap, Box<dyn std::error::Error + Send + Sync>> {
         )
     })?;
 
-    let circle =
-        PathBuilder::from_circle(32.0, 32.0, 20.0).ok_or_else(|| {
-            std::io::Error::new(
-                std::io::ErrorKind::InvalidInput,
-                "circle path is empty",
-            )
-        })?;
+    let circle = PathBuilder::from_circle(32.0, 32.0, 20.0).ok_or_else(|| {
+        std::io::Error::new(std::io::ErrorKind::InvalidInput, "circle path is empty")
+    })?;
     let mut fill = Paint::default();
     fill.set_color_rgba8(220, 90, 40, 255);
     pixmap.fill_path(
@@ -46,10 +42,7 @@ fn draw_scene() -> Result<Pixmap, Box<dyn std::error::Error + Send + Sync>> {
     line.move_to(16.0, 48.0);
     line.line_to(48.0, 16.0);
     let line = line.finish().ok_or_else(|| {
-        std::io::Error::new(
-            std::io::ErrorKind::InvalidInput,
-            "line path is empty",
-        )
+        std::io::Error::new(std::io::ErrorKind::InvalidInput, "line path is empty")
     })?;
     let mut stroke = Paint::default();
     stroke.set_color_rgba8(255, 255, 255, 255);

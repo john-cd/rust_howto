@@ -39,9 +39,7 @@ fn parse_message(bytes: &[u8]) -> Option<MidiMessage> {
     let channel = status & 0x0F;
     match (status & 0xF0, data) {
         // A "note on" with velocity 0 is, by convention, a "note off".
-        (0x90, &[key, 0]) | (0x80, &[key, _]) => {
-            Some(MidiMessage::NoteOff { channel, key })
-        }
+        (0x90, &[key, 0]) | (0x80, &[key, _]) => Some(MidiMessage::NoteOff { channel, key }),
         (0x90, &[key, velocity]) => Some(MidiMessage::NoteOn {
             channel,
             key,

@@ -34,8 +34,8 @@ fn replace_with_tempfile(target: &Path, contents: &[u8]) -> anyhow::Result<()> {
         .parent()
         .context("the target path has no parent directory")?;
     #[cfg(unix)]
-    let parent_directory = fs::File::open(dir)
-        .context("open parent directory for synchronization")?;
+    let parent_directory =
+        fs::File::open(dir).context("open parent directory for synchronization")?;
     let mut temp = NamedTempFile::new_in(dir)?;
     temp.write_all(contents)?;
     // Flush the data to disk *before* the rename. Otherwise, after a crash the
@@ -61,12 +61,8 @@ fn replace_with_tempfile(target: &Path, contents: &[u8]) -> anyhow::Result<()> {
 ///
 /// Returns an error if temporary-file creation, writing, synchronization, or
 /// replacement fails.
-fn replace_with_atomicwrites(
-    target: &Path,
-    contents: &[u8],
-) -> anyhow::Result<()> {
-    AtomicFile::new(target, AllowOverwrite)
-        .write(|file| file.write_all(contents))?;
+fn replace_with_atomicwrites(target: &Path, contents: &[u8]) -> anyhow::Result<()> {
+    AtomicFile::new(target, AllowOverwrite).write(|file| file.write_all(contents))?;
     Ok(())
 }
 
@@ -107,8 +103,7 @@ mod tests {
     /// Replaces an existing file through tempfile and cleans up temporary
     /// names.
     #[test]
-    fn tempfile_variant_replaces_and_leaves_no_stray_files()
-    -> anyhow::Result<()> {
+    fn tempfile_variant_replaces_and_leaves_no_stray_files() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
         let target = dir.path().join("a.txt");
         replace_with_tempfile(&target, b"one")?;
@@ -120,8 +115,7 @@ mod tests {
 
     /// Replaces an existing file through atomicwrites without stray files.
     #[test]
-    fn atomicwrites_variant_replaces_and_leaves_no_stray_files()
-    -> anyhow::Result<()> {
+    fn atomicwrites_variant_replaces_and_leaves_no_stray_files() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
         let target = dir.path().join("b.txt");
         replace_with_atomicwrites(&target, b"one")?;

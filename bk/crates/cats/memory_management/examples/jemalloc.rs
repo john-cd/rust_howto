@@ -43,10 +43,9 @@ mod example {
         // Many statistics are cached and only updated when the epoch is
         // advanced.
         epoch::advance().expect("the jemalloc example invariant should hold");
-        let allocated = stats::allocated::read()
-            .expect("the jemalloc example invariant should hold");
-        let resident = stats::resident::read()
-            .expect("the jemalloc example invariant should hold");
+        let allocated =
+            stats::allocated::read().expect("the jemalloc example invariant should hold");
+        let resident = stats::resident::read().expect("the jemalloc example invariant should hold");
         println!("{allocated} bytes allocated / {resident} bytes resident");
 
         // Full allocator statistics:

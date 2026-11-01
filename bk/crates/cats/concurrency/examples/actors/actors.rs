@@ -52,9 +52,7 @@ fn spawn_counter() -> (CounterHandle, tokio::task::JoinHandle<()>) {
     let (sender, mut receiver) = mpsc::channel(8);
     let task = tokio::spawn(async move {
         let mut total = 0;
-        while let Some(Message::Add { amount, reply_to }) =
-            receiver.recv().await
-        {
+        while let Some(Message::Add { amount, reply_to }) = receiver.recv().await {
             total += amount;
             // A dropped reply receiver means the caller no longer needs the
             // response.

@@ -30,9 +30,7 @@ use std::net::TcpListener;
 /// Accepts one connection on `listener` and returns the text it sends.
 fn read_one_connection(listener: TcpListener) -> Result<String, Error> {
     let port = listener.local_addr()?;
-    println!(
-        "Listening on {port}; send one line and close the connection to finish"
-    );
+    println!("Listening on {port}; send one line and close the connection to finish");
     let (mut tcp_stream, addr) = listener.accept()?;
     println!("Connection received! {addr:?} is sending data.");
     let mut input = String::new();
@@ -92,9 +90,7 @@ mod tests {
     fn empty_connection_yields_empty_input() -> Result<(), Error> {
         let listener = TcpListener::bind((Ipv4Addr::LOCALHOST, 0))?;
         let address = listener.local_addr()?;
-        let client = std::thread::spawn(move || {
-            std::net::TcpStream::connect(address).map(drop)
-        });
+        let client = std::thread::spawn(move || std::net::TcpStream::connect(address).map(drop));
         assert_eq!(read_one_connection(listener)?, "");
         client.join().expect("client thread should complete")?;
         Ok(())

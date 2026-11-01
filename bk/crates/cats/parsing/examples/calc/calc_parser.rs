@@ -43,8 +43,7 @@ fn token<'a>(input: &mut Input<'a>) -> ModalResult<Token<'a>, ContextError> {
             .take()
             .try_map(str::parse)
             .map(Token::Number),
-        take_while(1.., |c: char| c.is_alphabetic() || c == '_')
-            .map(Token::Ident),
+        take_while(1.., |c: char| c.is_alphabetic() || c == '_').map(Token::Ident),
         one_of(['+', '-', '*', '/', '^']).map(Token::Op),
         '('.value(Token::LParen),
         ')'.value(Token::RParen),
@@ -246,10 +245,7 @@ mod tests {
             calculate("1 +"),
             Err("unexpected end of input at byte 3".to_owned())
         );
-        assert_eq!(
-            calculate("1 + $"),
-            Err("unexpected input at byte 4".into())
-        );
+        assert_eq!(calculate("1 + $"), Err("unexpected input at byte 4".into()));
         assert_eq!(calculate("(1 + 2"), Err("expected ')' at byte 6".into()));
         assert_eq!(calculate("1 2"), Err("trailing input at byte 2".into()));
         assert_eq!(calculate("y"), Err("unknown variable `y`".into()));

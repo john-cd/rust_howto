@@ -34,8 +34,8 @@ struct Author {
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or an insert or query fails.
 fn main() -> anyhow::Result<()> {
-    let database_url = std::env::var("DATABASE_URL")
-        .context("set DATABASE_URL to connect to PostgreSQL")?;
+    let database_url =
+        std::env::var("DATABASE_URL").context("set DATABASE_URL to connect to PostgreSQL")?;
     let mut client = Client::connect(&database_url, NoTls)
         .context("connect to PostgreSQL using DATABASE_URL")?;
 
@@ -60,8 +60,7 @@ fn main() -> anyhow::Result<()> {
     // Bulk insert the authors into the database to prevent N+1 queries.
     // Build the query string and the parameters vector.
     if !authors.is_empty() {
-        let mut query =
-            String::from("INSERT INTO author (name, country) VALUES ");
+        let mut query = String::from("INSERT INTO author (name, country) VALUES ");
         let mut params: Vec<&(dyn ToSql + Sync)> = Vec::new();
 
         for (i, (key, value)) in authors.iter().enumerate() {

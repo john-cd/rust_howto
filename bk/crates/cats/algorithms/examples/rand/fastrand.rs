@@ -4,18 +4,17 @@
 //! Fast pseudo-random number generation with `fastrand`.
 //!
 //! ### Advantages of `fastrand`
-//! - **Performance & Size**: Extremely fast execution with minimal dependency
-//!   overhead and small compiled binary size.
-//! - **Simplicity**: Direct, easy-to-use API for standard random primitives,
-//!   sampling, shuffling, and range generation.
-//! - **Thread Safety & Custom Rng**: Offers a global thread-local generator as
-//!   well as custom-seeded `Rng` instances.
+//! - **Performance & Size**: Extremely fast execution with minimal dependency overhead and small
+//!   compiled binary size.
+//! - **Simplicity**: Direct, easy-to-use API for standard random primitives, sampling, shuffling,
+//!   and range generation.
+//! - **Thread Safety & Custom Rng**: Offers a global thread-local generator as well as
+//!   custom-seeded `Rng` instances.
 //!
 //! ### Limitations & Warnings
-//! - **Not Cryptographically Secure**: Uses PCG-XSH-RR, which is predictable.
-//!   Do not use `fastrand` for security-sensitive operations such as key
-//!   generation, nonce creation, or password hashing. Use `rand` or `getrandom`
-//!   instead for cryptographic requirements.
+//! - **Not Cryptographically Secure**: Uses PCG-XSH-RR, which is predictable. Do not use `fastrand`
+//!   for security-sensitive operations such as key generation, nonce creation, or password hashing.
+//!   Use `rand` or `getrandom` instead for cryptographic requirements.
 //!
 //! BEWARE: `fastrand` is NOT cryptographically secure.
 

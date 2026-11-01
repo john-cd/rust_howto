@@ -65,8 +65,7 @@ mod tests {
     /// Updating a persistent vector leaves the original unchanged.
     #[test]
     fn vector_is_persistent() {
-        let v1: Vector<i32> =
-            Vector::new().push_back(1).push_back(2).push_back(3);
+        let v1: Vector<i32> = Vector::new().push_back(1).push_back(2).push_back(3);
         let v2 = v1.set(1, 20).expect("index in range");
         assert_eq!(v1.iter().copied().collect::<Vec<_>>(), [1, 2, 3]);
         assert_eq!(v2.iter().copied().collect::<Vec<_>>(), [1, 20, 3]);

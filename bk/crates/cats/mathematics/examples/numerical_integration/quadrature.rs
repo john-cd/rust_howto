@@ -27,15 +27,11 @@ impl std::fmt::Display for IntegrationError {
         let message = match self {
             Self::NonFiniteBounds => "integration bounds must be finite",
             Self::ZeroSubintervals => "the subinterval count must be positive",
-            Self::OddSimpsonSubintervalCount => {
-                "Simpson's rule requires an even subinterval count"
-            }
+            Self::OddSimpsonSubintervalCount => "Simpson's rule requires an even subinterval count",
             Self::UnrepresentableStep => {
                 "the step size is not representable as a finite nonzero value"
             }
-            Self::NonFiniteSample => {
-                "the integrand must produce finite samples at finite points"
-            }
+            Self::NonFiniteSample => "the integrand must produce finite samples at finite points",
             Self::NonFiniteEstimate => "the integral estimate is not finite",
         };
 
@@ -108,8 +104,8 @@ where
         return Ok(0.0);
     }
 
-    let mut weighted_sum = checked_sample(&integrand, lower)? / 2.0
-        + checked_sample(&integrand, upper)? / 2.0;
+    let mut weighted_sum =
+        checked_sample(&integrand, lower)? / 2.0 + checked_sample(&integrand, upper)? / 2.0;
     for index in 1..subintervals {
         let point = lower + step * index as f64;
         weighted_sum += checked_sample(&integrand, point)?;
@@ -143,8 +139,7 @@ where
         return Ok(0.0);
     }
 
-    let mut weighted_sum =
-        checked_sample(&integrand, lower)? + checked_sample(&integrand, upper)?;
+    let mut weighted_sum = checked_sample(&integrand, lower)? + checked_sample(&integrand, upper)?;
     for index in 1..subintervals {
         let point = lower + step * index as f64;
         let weight = if index % 2 == 0 { 2.0 } else { 4.0 };
@@ -165,9 +160,8 @@ fn main() {
     let integrand = |x: f64| x * x;
     let trapezoidal = integrate_trapezoidal(integrand, 0.0, 1.0, 100)
         .expect("finite bounds and samples should produce a finite trapezoidal estimate");
-    let simpson = integrate_simpson(integrand, 0.0, 1.0, 100).expect(
-        "finite bounds and samples should produce a finite Simpson estimate",
-    );
+    let simpson = integrate_simpson(integrand, 0.0, 1.0, 100)
+        .expect("finite bounds and samples should produce a finite Simpson estimate");
 
     println!("∫₀¹ x² dx ≈ {trapezoidal:.8} (trapezoidal)");
     println!("∫₀¹ x² dx ≈ {simpson:.8} (Simpson's rule)");
@@ -195,9 +189,8 @@ fn trapezoidal_rule_converges_for_a_quadratic() {
 /// Verifies Simpson's rule integrates a quadratic to floating-point precision.
 #[test]
 fn simpson_rule_integrates_a_quadratic() {
-    let estimate = integrate_simpson(|x| x * x, 0.0, 1.0, 8).expect(
-        "Simpson's rule should integrate a quadratic with an even partition",
-    );
+    let estimate = integrate_simpson(|x| x * x, 0.0, 1.0, 8)
+        .expect("Simpson's rule should integrate a quadratic with an even partition");
 
     assert!((estimate - 1.0 / 3.0).abs() < 1e-14);
 }
@@ -223,10 +216,10 @@ fn integration_rejects_non_finite_bounds_and_samples() {
 /// Verifies swapping finite bounds negates the integral estimate.
 #[test]
 fn integration_preserves_orientation_of_bounds() {
-    let forward = integrate_trapezoidal(|x| x, 0.0, 1.0, 16)
-        .expect("the forward interval should integrate");
-    let reverse = integrate_trapezoidal(|x| x, 1.0, 0.0, 16)
-        .expect("the reversed interval should integrate");
+    let forward =
+        integrate_trapezoidal(|x| x, 0.0, 1.0, 16).expect("the forward interval should integrate");
+    let reverse =
+        integrate_trapezoidal(|x| x, 1.0, 0.0, 16).expect("the reversed interval should integrate");
 
     assert!((forward + reverse).abs() < 1e-15);
 }

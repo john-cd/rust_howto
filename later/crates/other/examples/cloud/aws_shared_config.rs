@@ -20,10 +20,7 @@ use aws_config::timeout::TimeoutConfig;
 ///
 /// `region` and `profile` override what the environment provides. Retries and
 /// timeouts are set explicitly rather than left to the defaults.
-pub async fn load_config(
-    region: Option<&str>,
-    profile: Option<&str>,
-) -> SdkConfig {
+pub async fn load_config(region: Option<&str>, profile: Option<&str>) -> SdkConfig {
     // Pin a behavior version so SDK upgrades do not change defaults silently.
     let mut loader = aws_config::defaults(BehaviorVersion::latest())
         .retry_config(RetryConfig::standard().with_max_attempts(5))

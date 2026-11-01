@@ -54,9 +54,7 @@ fn parse_inline_triangle() -> Result<(usize, usize), ::gltf::Error> {
 /// Runs the example and prints the parsed geometry counts.
 fn main() -> Result<(), ::gltf::Error> {
     let (vertex_count, index_count) = parse_inline_triangle()?;
-    println!(
-        "Parsed a glTF triangle with {vertex_count} vertices and {index_count} indices."
-    );
+    println!("Parsed a glTF triangle with {vertex_count} vertices and {index_count} indices.");
     Ok(())
 }
 // ANCHOR_END: example
@@ -73,8 +71,7 @@ mod tests {
 
     /// Verifies the inline triangle has three vertices and three indices.
     #[test]
-    fn inline_triangle_has_three_vertices_and_indices()
-    -> Result<(), ::gltf::Error> {
+    fn inline_triangle_has_three_vertices_and_indices() -> Result<(), ::gltf::Error> {
         assert_eq!(parse_inline_triangle()?, (3, 3));
         Ok(())
     }

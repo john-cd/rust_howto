@@ -68,8 +68,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
     let mut scope = Scope::new();
     scope.push("x", 42_i64);
     scope.push_constant("SCALE", 10_i64);
-    let result: i64 =
-        engine.eval_expression_with_scope(&mut scope, "(x + 1) * SCALE")?;
+    let result: i64 = engine.eval_expression_with_scope(&mut scope, "(x + 1) * SCALE")?;
     assert_eq!(result, 430);
     println!("{result}");
 

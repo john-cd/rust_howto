@@ -53,10 +53,10 @@ async fn main() -> anyhow::Result<()> {
 
     // Query by the generated identifier so repeated runs find this insert.
     let filter = doc! { "_id": inserted.inserted_id };
-    let found =
-        collection.find_one(filter.clone()).await?.ok_or_else(|| {
-            anyhow::anyhow!("inserted MongoDB user was not found")
-        })?;
+    let found = collection
+        .find_one(filter.clone())
+        .await?
+        .ok_or_else(|| anyhow::anyhow!("inserted MongoDB user was not found"))?;
     anyhow::ensure!(
         found.name == "Alice" && found.age == 30,
         "inserted MongoDB user did not match the expected values"

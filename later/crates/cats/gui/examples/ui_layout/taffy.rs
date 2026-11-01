@@ -61,9 +61,7 @@ fn compute_child_layouts() -> anyhow::Result<[(f32, f32, f32, f32); 2]> {
 
 /// Prints each child's computed position and size.
 fn main() -> anyhow::Result<()> {
-    for (index, (x, y, width, height)) in
-        compute_child_layouts()?.into_iter().enumerate()
-    {
+    for (index, (x, y, width, height)) in compute_child_layouts()?.into_iter().enumerate() {
         println!(
             "Child {}: x = {x}, y = {y}, width = {width}, height = {height}",
             index + 1

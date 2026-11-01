@@ -85,9 +85,7 @@ mod tests {
         assert!(insert_sql.contains("\"title\""));
         assert!(insert_sql.contains("\"content\""));
         assert!(insert_sql.contains("'Hello SeaORM'"));
-        assert!(
-            insert_sql.contains("'Building SQL without opening a database'")
-        );
+        assert!(insert_sql.contains("'Building SQL without opening a database'"));
     }
 
     /// Selects posts whose title contains the requested text.

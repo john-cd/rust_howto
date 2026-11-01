@@ -48,8 +48,7 @@ mod tests {
 
     /// Verifies that the regression model predicts the expected numeric range.
     #[test]
-    fn regression_predicts_values_near_the_linear_trend()
-    -> Result<(), Box<dyn Error>> {
+    fn regression_predicts_values_near_the_linear_trend() -> Result<(), Box<dyn Error>> {
         let predictions = regression_predictions()?;
 
         assert_eq!(predictions.len(), 2);

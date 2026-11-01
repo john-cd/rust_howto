@@ -5,14 +5,13 @@
 //! functions on byte buffers.
 //!
 //! Hasher categories:
-//! - Fast non-cryptographic hashers (`xxhash-rust` XXH3, `foldhash`, `ahash`,
-//!   `rustc-hash`) are optimized for speed and throughput when hashing
-//!   in-memory data, checksums, or map keys.
-//! - Standard library `DefaultHasher` (SipHash) provides HashDoS mitigation for
-//!   general-purpose maps.
-//! - Cryptographic hashers (`blake3`, `sha2`) provide strong collision
-//!   resistance and preimage resistance for signatures and tamper-evident
-//!   digests. BLAKE3 additionally utilizes SIMD parallelism.
+//! - Fast non-cryptographic hashers (`xxhash-rust` XXH3, `foldhash`, `ahash`, `rustc-hash`) are
+//!   optimized for speed and throughput when hashing in-memory data, checksums, or map keys.
+//! - Standard library `DefaultHasher` (SipHash) provides HashDoS mitigation for general-purpose
+//!   maps.
+//! - Cryptographic hashers (`blake3`, `sha2`) provide strong collision resistance and preimage
+//!   resistance for signatures and tamper-evident digests. BLAKE3 additionally utilizes SIMD
+//!   parallelism.
 
 use std::hash::BuildHasher;
 use std::hash::Hasher;

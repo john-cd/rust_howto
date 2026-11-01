@@ -21,8 +21,7 @@ use x509_cert::time::Validity;
 fn main() -> anyhow::Result<()> {
     let subject = Name::from_str("CN=example.com,O=Rust HowTo,C=US")?;
     let serial_number = SerialNumber::from(42u32);
-    let validity: Validity<Rfc5280> =
-        Validity::from_now(Duration::from_hours(24))?;
+    let validity: Validity<Rfc5280> = Validity::from_now(Duration::from_hours(24))?;
 
     println!("Subject DER length: {}", subject.to_der()?.len());
     println!("Serial number: {serial_number}");
@@ -44,8 +43,7 @@ mod tests {
     fn certificate_fields_have_expected_der_encodings() -> anyhow::Result<()> {
         let subject = Name::from_str("CN=example.com,O=Rust HowTo,C=US")?;
         let serial_number = SerialNumber::from(42u32);
-        let validity: Validity<Rfc5280> =
-            Validity::from_now(Duration::from_hours(24))?;
+        let validity: Validity<Rfc5280> = Validity::from_now(Duration::from_hours(24))?;
 
         let subject_der = subject.to_der()?;
         assert_eq!(subject_der.first(), Some(&0x30));

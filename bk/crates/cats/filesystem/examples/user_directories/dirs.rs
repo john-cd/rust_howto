@@ -75,8 +75,7 @@ mod tests {
         {
             assert!(dir.is_absolute(), "{dir:?}");
         }
-        if let (Some(home), Some(cache)) = (dirs::home_dir(), dirs::cache_dir())
-        {
+        if let (Some(home), Some(cache)) = (dirs::home_dir(), dirs::cache_dir()) {
             assert!(cache.starts_with(&home) || cache.is_absolute());
         }
     }

@@ -143,8 +143,7 @@ mod tests {
     /// Verifies relative links resolve against a relative base href.
     #[test]
     fn resolves_base_href_and_filters_non_http_links() -> Result<()> {
-        let document_url =
-            Url::parse("https://example.test/articles/item.html")?;
+        let document_url = Url::parse("https://example.test/articles/item.html")?;
         let document = Html::parse_document(
             r#"<base href="../docs/"><a href="guide.html">guide</a><a href="/about">about</a><a href="mailto:help@example.test">email</a>"#,
         );
@@ -152,10 +151,7 @@ mod tests {
         let links = collect_http_links(&base_url, &document)?;
 
         assert_eq!(base_url.as_str(), "https://example.test/docs/");
-        assert!(
-            links
-                .contains(&Url::parse("https://example.test/docs/guide.html")?)
-        );
+        assert!(links.contains(&Url::parse("https://example.test/docs/guide.html")?));
         assert!(links.contains(&Url::parse("https://example.test/about")?));
         assert_eq!(links.len(), 2);
         Ok(())
@@ -164,8 +160,7 @@ mod tests {
     /// Verifies pages without a base element retain the full document URL.
     #[test]
     fn defaults_base_to_document_url() -> Result<()> {
-        let document_url =
-            Url::parse("https://example.test/articles/item.html?version=1")?;
+        let document_url = Url::parse("https://example.test/articles/item.html?version=1")?;
         let document = Html::parse_document("<a href=next.html>next</a>");
 
         assert_eq!(get_base_url(&document_url, &document)?, document_url);

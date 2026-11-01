@@ -21,9 +21,7 @@ use futures_util::TryStreamExt;
 async fn main() -> anyhow::Result<()> {
     let docker = Docker::connect_with_local_defaults()?;
     let containers = docker
-        .list_containers(Some(
-            ListContainersOptionsBuilder::new().all(true).build(),
-        ))
+        .list_containers(Some(ListContainersOptionsBuilder::new().all(true).build()))
         .await?;
     println!("{} existing containers", containers.len());
     let image = "alpine:3.23";

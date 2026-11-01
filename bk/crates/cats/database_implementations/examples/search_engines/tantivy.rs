@@ -44,10 +44,8 @@ fn main() -> tantivy::Result<()> {
     reader.reload()?;
     let searcher = reader.searcher();
 
-    let query = QueryParser::for_index(&index, vec![title, body])
-        .parse_query("search OR sea")?;
-    let top_docs =
-        searcher.search(&query, &TopDocs::with_limit(10).order_by_score())?;
+    let query = QueryParser::for_index(&index, vec![title, body]).parse_query("search OR sea")?;
+    let top_docs = searcher.search(&query, &TopDocs::with_limit(10).order_by_score())?;
     assert_eq!(top_docs.len(), 2);
 
     for (score, doc_address) in top_docs {

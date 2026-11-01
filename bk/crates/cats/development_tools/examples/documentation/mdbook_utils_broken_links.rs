@@ -28,9 +28,7 @@ fn find_broken_links(markdown_dir: &Path) -> Result<String> {
         .arg("--output")
         .arg(&report_path)
         .status()
-        .context(
-            "run `mdbook-utils` (install it with `cargo install mdbook-utils`)",
-        )?;
+        .context("run `mdbook-utils` (install it with `cargo install mdbook-utils`)")?;
     anyhow::ensure!(status.success(), "mdbook-utils failed: {status}");
     fs::read_to_string(&report_path).context("read the broken-links report")
 }
@@ -89,8 +87,7 @@ mod tests {
 
     #[test]
     fn missing_tool_or_directory_is_reported_as_an_error() {
-        let dir =
-            tempfile::tempdir().expect("temporary directory should be created");
+        let dir = tempfile::tempdir().expect("temporary directory should be created");
         let nested = dir.path().join("does-not-exist");
         // Either `mdbook-utils` is absent, or it fails on the missing
         // directory.

@@ -52,9 +52,7 @@ fn main() -> anyhow::Result<()> {
     }
     println!("members without `[lints] workspace = true`: {missing:?}");
     if !missing.is_empty() {
-        anyhow::bail!(
-            "workspace packages missing `[lints] workspace = true`: {missing:?}"
-        );
+        anyhow::bail!("workspace packages missing `[lints] workspace = true`: {missing:?}");
     }
     Ok(())
 }

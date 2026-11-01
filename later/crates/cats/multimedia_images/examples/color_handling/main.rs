@@ -51,9 +51,7 @@ mod tests {
 
         assert!(linear.red < f32::from(stored.red) / 255.0);
         assert!((i16::from(display.red) - i16::from(stored.red)).abs() <= 1);
-        assert!(
-            (i16::from(display.green) - i16::from(stored.green)).abs() <= 1
-        );
+        assert!((i16::from(display.green) - i16::from(stored.green)).abs() <= 1);
         assert!((i16::from(display.blue) - i16::from(stored.blue)).abs() <= 1);
     }
 

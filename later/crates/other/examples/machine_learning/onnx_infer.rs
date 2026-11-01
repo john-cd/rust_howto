@@ -30,9 +30,7 @@ impl Model {
     fn load(env: &Environment, version: u32, bytes: &[u8]) -> Result<Self> {
         Ok(Self {
             version,
-            session: Mutex::new(
-                Session::builder(env)?.commit_from_memory(bytes)?,
-            ),
+            session: Mutex::new(Session::builder(env)?.commit_from_memory(bytes)?),
         })
     }
 }
@@ -66,8 +64,7 @@ impl Engine {
             .lock()
             .map_err(|_| anyhow!("poisoned session"))?;
         let outputs = session.run(ort::inputs!["X" => input])?;
-        let (_shape, probabilities) =
-            outputs["probabilities"].try_extract_tensor::<f32>()?;
+        let (_shape, probabilities) = outputs["probabilities"].try_extract_tensor::<f32>()?;
         Ok((model.version, probabilities[1]))
     }
 }

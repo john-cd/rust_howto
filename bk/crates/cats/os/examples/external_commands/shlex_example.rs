@@ -11,10 +11,7 @@ use std::process::Command;
 
 /// Formats a program and its arguments as a line that can be pasted into a
 /// POSIX shell. Use it for display or logs only.
-fn display_command(
-    program: &str,
-    args: &[&str],
-) -> Result<String, shlex::QuoteError> {
+fn display_command(program: &str, args: &[&str]) -> Result<String, shlex::QuoteError> {
     let mut parts = vec![shlex::try_quote(program)?.into_owned()];
     for arg in args {
         parts.push(shlex::try_quote(arg)?.into_owned());

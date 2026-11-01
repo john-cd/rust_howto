@@ -95,9 +95,7 @@ mod tests {
         let directory = tempfile::tempdir()?;
         let destination = directory.path().join("download.bin");
 
-        let downloaded =
-            download_to(&format!("{}/file", server.url()), &destination)
-                .await?;
+        let downloaded = download_to(&format!("{}/file", server.url()), &destination).await?;
 
         mock.assert_async().await;
         assert_eq!(downloaded, 7);

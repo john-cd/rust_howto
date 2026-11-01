@@ -32,9 +32,8 @@ fn main() -> Result<(), &'static str> {
 
     // Create a `DateTime` object representing the time one billion seconds
     // after the Unix epoch.
-    let date_time_after_a_billion_seconds =
-        DateTime::<Utc>::from_timestamp(1_000_000_000, 0)
-            .ok_or("timestamp is outside the supported range")?;
+    let date_time_after_a_billion_seconds = DateTime::<Utc>::from_timestamp(1_000_000_000, 0)
+        .ok_or("timestamp is outside the supported range")?;
     println!(
         "Date after a billion seconds since 1970-01-01 00:00:00 was {date_time_after_a_billion_seconds}."
     );

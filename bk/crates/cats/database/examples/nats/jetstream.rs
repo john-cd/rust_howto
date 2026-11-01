@@ -6,12 +6,12 @@
 //!
 //! The recipe shows the parts that matter for reliability:
 //!
-//! - the publisher waits for the server's acknowledgement and sets a
-//!   `Nats-Msg-Id` header, so JetStream drops duplicate publishes;
-//! - the consumer is durable, pulls bounded batches, and acknowledges each
-//!   message only after it was handled;
-//! - delivery is at least once, so handling is idempotent: a redelivered order
-//!   is acknowledged without being applied twice;
+//! - the publisher waits for the server's acknowledgement and sets a `Nats-Msg-Id` header, so
+//!   JetStream drops duplicate publishes;
+//! - the consumer is durable, pulls bounded batches, and acknowledges each message only after it
+//!   was handled;
+//! - delivery is at least once, so handling is idempotent: a redelivered order is acknowledged
+//!   without being applied twice;
 //! - malformed messages are terminated instead of being redelivered forever.
 
 use std::collections::HashSet;
@@ -83,10 +83,7 @@ impl Processor {
 }
 
 /// Publishes `order` and waits until JetStream has stored it.
-async fn publish_order(
-    js: &jetstream::Context,
-    order: &Order,
-) -> anyhow::Result<()> {
+async fn publish_order(js: &jetstream::Context, order: &Order) -> anyhow::Result<()> {
     let mut headers = async_nats::HeaderMap::new();
     // JetStream ignores a second publish with the same id within the
     // stream's duplicate window.

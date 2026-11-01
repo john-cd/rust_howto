@@ -97,8 +97,7 @@ mod tests {
         let archive_file = File::create(&archive_path)?;
         let enc = GzEncoder::new(archive_file, Compression::default());
         let mut tar_builder = tar::Builder::new(enc);
-        tar_builder
-            .append_path_with_name(&source_file, "bundle/logs/example.txt")?;
+        tar_builder.append_path_with_name(&source_file, "bundle/logs/example.txt")?;
         let enc = tar_builder.into_inner()?;
         enc.finish()?;
 

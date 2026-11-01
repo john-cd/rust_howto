@@ -51,10 +51,7 @@ fn recent_entries(dir: &Path) -> Result<Vec<String>> {
                 }
             }
         } else {
-            lines.push(
-                "Last modification time is not supported on this platform."
-                    .to_owned(),
-            );
+            lines.push("Last modification time is not supported on this platform.".to_owned());
         }
     }
     Ok(lines)

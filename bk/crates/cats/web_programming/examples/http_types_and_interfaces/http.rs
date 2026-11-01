@@ -90,9 +90,7 @@ fn main() -> anyhow::Result<()> {
         request
             .headers()
             .get(CONTENT_TYPE)
-            .ok_or_else(|| anyhow::anyhow!(
-                "request has no Content-Type header"
-            ))?
+            .ok_or_else(|| anyhow::anyhow!("request has no Content-Type header"))?
             .to_str()?
     );
     println!("Request Accept: {:?}", request.headers().get(ACCEPT));
@@ -101,9 +99,7 @@ fn main() -> anyhow::Result<()> {
         request
             .headers()
             .get(CONTENT_LENGTH)
-            .ok_or_else(|| anyhow::anyhow!(
-                "request has no Content-Length header"
-            ))?
+            .ok_or_else(|| anyhow::anyhow!("request has no Content-Length header"))?
             .to_str()?
             .parse::<usize>()?
     );
@@ -117,9 +113,7 @@ fn main() -> anyhow::Result<()> {
         response
             .headers()
             .get(CONTENT_TYPE)
-            .ok_or_else(|| anyhow::anyhow!(
-                "response has no Content-Type header"
-            ))?
+            .ok_or_else(|| anyhow::anyhow!("response has no Content-Type header"))?
             .to_str()?
     );
 
@@ -143,8 +137,7 @@ mod tests {
 
     /// Preserves appended values for a repeated header in insertion order.
     #[test]
-    fn appends_and_reads_repeated_header_values_in_order() -> anyhow::Result<()>
-    {
+    fn appends_and_reads_repeated_header_values_in_order() -> anyhow::Result<()> {
         let headers = build_headers()?;
         let cookies = headers
             .get_all(SET_COOKIE)
@@ -189,9 +182,7 @@ mod tests {
         assert_eq!(
             headers
                 .get(CONTENT_LENGTH)
-                .ok_or_else(|| anyhow::anyhow!(
-                    "request has no Content-Length"
-                ))?
+                .ok_or_else(|| anyhow::anyhow!("request has no Content-Length"))?
                 .to_str()?
                 .parse::<usize>()?,
             5

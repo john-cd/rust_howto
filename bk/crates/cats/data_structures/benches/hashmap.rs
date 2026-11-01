@@ -5,15 +5,12 @@
 //! `ahash::AHashMap`, and `rustc_hash::FxHashMap`.
 //!
 //! Hasher trade-offs:
-//! - `std::collections::HashMap` uses SipHash by default, which protects
-//!   against HashDoS attacks with attacker-controlled keys at the cost of
-//!   higher hashing latency.
-//! - `ahash::AHashMap` uses a fast, non-cryptographic algorithm that leverages
-//!   CPU instructions like AES-NI when available, making it excellent for
-//!   string keys and general use.
-//! - `rustc_hash::FxHashMap` uses FxHash, a lightweight multiply-and-rotate
-//!   hasher optimized for short numeric keys (e.g., AST node IDs or integer
-//!   handles).
+//! - `std::collections::HashMap` uses SipHash by default, which protects against HashDoS attacks
+//!   with attacker-controlled keys at the cost of higher hashing latency.
+//! - `ahash::AHashMap` uses a fast, non-cryptographic algorithm that leverages CPU instructions
+//!   like AES-NI when available, making it excellent for string keys and general use.
+//! - `rustc_hash::FxHashMap` uses FxHash, a lightweight multiply-and-rotate hasher optimized for
+//!   short numeric keys (e.g., AST node IDs or integer handles).
 
 use std::collections::HashMap;
 use std::hint::black_box;

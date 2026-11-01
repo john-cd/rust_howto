@@ -10,10 +10,8 @@ use x509_cert::der::Decode as _;
 
 /// Generates a local certificate and parses its DER structure.
 fn main() -> anyhow::Result<()> {
-    let certified_key =
-        generate_simple_self_signed(vec!["localhost".to_owned()])?;
-    let _certificate =
-        Certificate::from_der(certified_key.cert.der().as_ref())?;
+    let certified_key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
+    let _certificate = Certificate::from_der(certified_key.cert.der().as_ref())?;
 
     println!("Parsed a DER-encoded X.509 certificate.");
     Ok(())

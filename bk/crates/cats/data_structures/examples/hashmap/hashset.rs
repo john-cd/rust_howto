@@ -64,8 +64,7 @@ fn main() {
     assert_eq!(difference, HashSet::from([1, 2]));
 
     // Symmetric difference (elements in either set but not both).
-    let symmetric_difference: HashSet<_> =
-        set1.symmetric_difference(&set2).copied().collect();
+    let symmetric_difference: HashSet<_> = set1.symmetric_difference(&set2).copied().collect();
     println!("Symmetric Difference: {symmetric_difference:?}"); // 1, 2, 4, 5.
     assert_eq!(symmetric_difference.len(), 4);
 

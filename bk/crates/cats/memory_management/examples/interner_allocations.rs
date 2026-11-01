@@ -46,12 +46,7 @@ unsafe impl GlobalAlloc for CountingAllocator {
         unsafe { System.dealloc(ptr, layout) };
     }
 
-    unsafe fn realloc(
-        &self,
-        ptr: *mut u8,
-        layout: Layout,
-        new_size: usize,
-    ) -> *mut u8 {
+    unsafe fn realloc(&self, ptr: *mut u8, layout: Layout, new_size: usize) -> *mut u8 {
         // SAFETY: The caller supplies the original allocation, layout, and new
         // size.
         let result = unsafe { System.realloc(ptr, layout, new_size) };

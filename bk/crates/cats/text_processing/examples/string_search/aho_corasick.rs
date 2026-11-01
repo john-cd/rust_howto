@@ -124,7 +124,7 @@ fn main() -> anyhow::Result<()> {
         .map(|keyword| folded_text.contains(&keyword.to_ascii_lowercase()))
         .collect();
     let mut aho_matches = vec![false; keywords.len()];
-    for (pattern, _, _) in &matches {
+    for (pattern, ..) in &matches {
         aho_matches[*pattern] = true;
     }
     assert_eq!(aho_matches, contains_matches);

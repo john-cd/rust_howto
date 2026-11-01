@@ -36,8 +36,7 @@ use tokio_postgres::NoTls;
 async fn main() -> anyhow::Result<()> {
     let database_url = std::env::var("DATABASE_URL")
         .context("set DATABASE_URL to a reachable PostgreSQL database")?;
-    let (client, connection) =
-        tokio_postgres::connect(&database_url, NoTls).await?;
+    let (client, connection) = tokio_postgres::connect(&database_url, NoTls).await?;
     let connection_task = tokio::spawn(connection);
 
     client

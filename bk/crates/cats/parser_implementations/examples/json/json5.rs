@@ -82,10 +82,8 @@ mod tests {
     /// JSON5 extensions are accepted.
     #[test]
     fn parses_json5_extensions() {
-        let value: Value = json5::from_str(
-            "{unquoted: 'x', list: [1, 2,], 'quoted key': true}",
-        )
-        .expect("valid JSON5");
+        let value: Value = json5::from_str("{unquoted: 'x', list: [1, 2,], 'quoted key': true}")
+            .expect("valid JSON5");
         assert_eq!(value["unquoted"], "x");
         assert_eq!(value["list"], serde_json::json!([1, 2]));
         assert_eq!(value["quoted key"], true);

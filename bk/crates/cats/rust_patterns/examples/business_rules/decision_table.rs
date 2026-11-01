@@ -63,9 +63,7 @@ fn evaluate(context: serde_json::Value) -> anyhow::Result<serde_json::Value> {
         .build()?;
     let response = runtime
         .block_on(decision.evaluate(context.into()))
-        .map_err(|error| {
-            anyhow::anyhow!("decision evaluation failed: {error}")
-        })?;
+        .map_err(|error| anyhow::anyhow!("decision evaluation failed: {error}"))?;
     let result = response.result.to_value();
     if result.get("preferred").is_none() {
         anyhow::bail!("no decision-table rule matched the supplied inputs");
@@ -77,19 +75,17 @@ fn evaluate(context: serde_json::Value) -> anyhow::Result<serde_json::Value> {
 /// Demonstrates successful matches and clear errors for invalid inputs.
 fn main() -> anyhow::Result<()> {
     // Rule `r1` matches first.
-    let result =
-        evaluate(json!({ "accountType": "tfsa", "assetClass": "bond" }))?;
+    let result = evaluate(json!({ "accountType": "tfsa", "assetClass": "bond" }))?;
     println!("{result}");
     assert_eq!(result["preferred"], "rrsp");
 
     // An empty cell matches anything, so `r2` applies to every account type.
-    let result =
-        evaluate(json!({ "accountType": "margin", "assetClass": "bond" }))?;
+    let result = evaluate(json!({ "accountType": "margin", "assetClass": "bond" }))?;
     assert_eq!(result["preferred"], "taxable");
 
     // Missing required inputs are rejected before evaluation.
-    let missing_input_error = evaluate(json!({ "assetClass": "bond" }))
-        .expect_err("accountType is required");
+    let missing_input_error =
+        evaluate(json!({ "assetClass": "bond" })).expect_err("accountType is required");
     assert!(
         missing_input_error
             .to_string()
@@ -126,8 +122,7 @@ mod tests {
     /// Verifies that an absent account type produces an actionable error.
     #[test]
     fn missing_account_type_is_rejected() {
-        let error = evaluate(json!({ "assetClass": "bond" }))
-            .expect_err("accountType is required");
+        let error = evaluate(json!({ "assetClass": "bond" })).expect_err("accountType is required");
 
         assert!(
             error

@@ -33,9 +33,7 @@ fn main() {
     let mut out = Vec::new();
     writeln!(out, "{count} item").expect("writing to a `Vec` cannot fail");
 
-    println!(
-        "use_shortcuts example: glob imports, combined imports, and aliases"
-    );
+    println!("use_shortcuts example: glob imports, combined imports, and aliases");
 }
 
 // ANCHOR_END: example

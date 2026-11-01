@@ -10,14 +10,12 @@
 use plotters::prelude::*;
 
 /// Generates an SVG string containing a line chart plot.
-fn generate_line_chart_svg()
--> Result<String, Box<dyn std::error::Error + Send + Sync>> {
+fn generate_line_chart_svg() -> Result<String, Box<dyn std::error::Error + Send + Sync>> {
     let mut buffer = String::new();
 
     {
         // Bind drawing area to the string buffer using the SVG backend.
-        let root = SVGBackend::with_string(&mut buffer, (600, 400))
-            .into_drawing_area();
+        let root = SVGBackend::with_string(&mut buffer, (600, 400)).into_drawing_area();
         root.fill(&WHITE)?;
 
         // Build Cartesian chart context with coordinate ranges and label space.
@@ -63,8 +61,7 @@ mod tests {
     /// expected elements.
     #[test]
     fn test_generate_line_chart_svg() {
-        let svg =
-            generate_line_chart_svg().expect("SVG generation should succeed.");
+        let svg = generate_line_chart_svg().expect("SVG generation should succeed.");
         assert!(
             svg.contains("<svg"),
             "Generated output should be valid SVG containing '<svg'."

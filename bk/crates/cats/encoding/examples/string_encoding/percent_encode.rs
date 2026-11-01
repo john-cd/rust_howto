@@ -16,8 +16,7 @@ use percent_encoding::percent_decode;
 use percent_encoding::utf8_percent_encode;
 
 /// <https://url.spec.whatwg.org/#fragment-percent-encode-set>.
-const FRAGMENT: &AsciiSet =
-    &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
+const FRAGMENT: &AsciiSet = &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
 
 /// Percent-encodes a string, then decodes it.
 fn main() -> Result<(), Utf8Error> {
@@ -61,8 +60,7 @@ mod tests {
     /// Reserved characters are escaped; invalid UTF-8 is an error.
     #[test]
     fn escapes_and_rejects_invalid_utf8() -> Result<(), Utf8Error> {
-        let encoded: String =
-            utf8_percent_encode("a <b>\"c\"", FRAGMENT).collect();
+        let encoded: String = utf8_percent_encode("a <b>\"c\"", FRAGMENT).collect();
         assert_eq!(encoded, "a%20%3Cb%3E%22c%22");
         assert_eq!(
             percent_decode(b"%41%20%e2%9d%a4").decode_utf8()?,

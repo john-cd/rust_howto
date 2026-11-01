@@ -26,8 +26,7 @@ fn locale_for(header: &str) -> &'static str {
 /// Returns a localized API error for a missing user.
 fn missing_user(header: &str, user_id: u64) -> String {
     let locale = locale_for(header);
-    rust_i18n::t!("errors.user_not_found", locale = locale, id = user_id)
-        .to_string()
+    rust_i18n::t!("errors.user_not_found", locale = locale, id = user_id).to_string()
 }
 
 /// Prints one localized API error using the client's preferred language.

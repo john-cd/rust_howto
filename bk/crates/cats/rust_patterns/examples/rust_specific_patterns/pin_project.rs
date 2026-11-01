@@ -26,8 +26,7 @@ use pin_project::pinned_drop;
 /// The `#[pin_project]` attribute creates a projection type covering all the
 /// fields of struct or enum.
 // ///
-/// - For the fields that use #[pin] attribute, it creates the pinned reference
-///   to the field.
+/// - For the fields that use #[pin] attribute, it creates the pinned reference to the field.
 /// - For the other fields, it creates a normal reference to the field.
 ///
 /// This works for tuple structs as well.
@@ -133,8 +132,7 @@ impl SelfReferential {
 /// Creates a self-referential struct, pins it and reads through its pointer.
 fn example2() {
     // Pin the struct in a heap allocation before creating the self-reference.
-    let mut pinned_self_ref =
-        Box::pin(SelfReferential::new(String::from("self-referential data")));
+    let mut pinned_self_ref = Box::pin(SelfReferential::new(String::from("self-referential data")));
 
     // Initialize the self-reference.
     pinned_self_ref.as_mut().init();
@@ -161,10 +159,7 @@ impl<F: Future> Future for PollCounter<F> {
     type Output = F::Output;
 
     /// Counts this poll and delegates to the pinned inner future.
-    fn poll(
-        self: Pin<&mut Self>,
-        context: &mut Context<'_>,
-    ) -> Poll<Self::Output> {
+    fn poll(self: Pin<&mut Self>, context: &mut Context<'_>) -> Poll<Self::Output> {
         let this = self.project();
         *this.polls += 1;
         this.future.poll(context)
@@ -204,9 +199,7 @@ impl<T: Debug, U: Debug> PinnedEnum<T, U> {
         match self.project() {
             // Note the named projection type:
             EnumProj::Variant1(pinned, unpinned) => {
-                println!(
-                    "Processing Variant1 with pinned {pinned:?} and unpinned: {unpinned:?}"
-                );
+                println!("Processing Variant1 with pinned {pinned:?} and unpinned: {unpinned:?}");
                 // `pinned` is `Pin<&mut T>`,
                 // `unpinned` is `&mut U`.
             }
@@ -217,8 +210,7 @@ impl<T: Debug, U: Debug> PinnedEnum<T, U> {
 // Example 3: Enum.
 /// Projects a pinned enum onto its variant.
 fn example3() {
-    let mut enum_value =
-        PinnedEnum::Variant1(String::from("pinned enum data"), 123);
+    let mut enum_value = PinnedEnum::Variant1(String::from("pinned enum data"), 123);
     let mut pinned_enum = unsafe { Pin::new_unchecked(&mut enum_value) };
 
     pinned_enum.as_mut().process();

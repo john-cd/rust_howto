@@ -54,8 +54,8 @@ mod tests {
         vec.par_sort_unstable();
         assert_eq!(vec.len(), 100);
         assert!(
-            vec.iter().all(|s| s.len() == 5
-                && s.chars().all(|c| c.is_ascii_alphanumeric()))
+            vec.iter()
+                .all(|s| s.len() == 5 && s.chars().all(|c| c.is_ascii_alphanumeric()))
         );
         assert!(vec.windows(2).all(|w| w[0] <= w[1]));
     }

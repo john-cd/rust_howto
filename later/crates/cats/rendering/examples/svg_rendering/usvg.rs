@@ -39,8 +39,7 @@ mod tests {
 
     /// Verifies the sample SVG can be parsed and inspected.
     #[test]
-    fn test_usvg_example_entry_point()
-    -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    fn test_usvg_example_entry_point() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         run()
     }
 }

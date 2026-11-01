@@ -98,11 +98,9 @@ fn main() {
     println!("{greeting}");
 
     let module = MyModule::builder()
-        .with_component_parameters::<EnglishConversation>(
-            EnglishConversationParameters {
-                person: "John".to_owned(),
-            },
-        )
+        .with_component_parameters::<EnglishConversation>(EnglishConversationParameters {
+            person: "John".to_owned(),
+        })
         .build();
     let convo: Arc<dyn Conversation> = module.resolve();
     println!("{}", convo.start());
@@ -133,11 +131,9 @@ mod tests {
     #[test]
     fn conversation_uses_the_injected_greeter_and_parameters() {
         let module = MyModule::builder()
-            .with_component_parameters::<EnglishConversation>(
-                EnglishConversationParameters {
-                    person: "John".to_owned(),
-                },
-            )
+            .with_component_parameters::<EnglishConversation>(EnglishConversationParameters {
+                person: "John".to_owned(),
+            })
             .build();
         let conversation: Arc<dyn Conversation> = module.resolve();
         assert_eq!(conversation.start(), "Hello, John!");

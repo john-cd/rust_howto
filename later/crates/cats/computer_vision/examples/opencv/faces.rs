@@ -21,8 +21,7 @@ use opencv::prelude::*;
 fn main() -> Result<(), Box<dyn Error>> {
     let model_path = std::env::var("OPENCV_HAAR_CASCADE")?;
     let mut classifier = CascadeClassifier::new(&model_path)?;
-    let frame =
-        Mat::new_rows_cols_with_default(64, 64, CV_8UC1, Scalar::all(0.0))?;
+    let frame = Mat::new_rows_cols_with_default(64, 64, CV_8UC1, Scalar::all(0.0))?;
     let mut faces = Vector::<Rect>::new();
     classifier.detect_multi_scale(
         &frame,

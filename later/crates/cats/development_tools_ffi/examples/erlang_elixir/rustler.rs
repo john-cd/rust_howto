@@ -66,9 +66,7 @@ fn main() {
     #[cfg(not(feature = "erlang"))]
     println!("Rustler example requires the `erlang` feature.");
     #[cfg(feature = "erlang")]
-    println!(
-        "Rustler NIFs defined. These are intended to be loaded by an Elixir/Erlang VM."
-    );
+    println!("Rustler NIFs defined. These are intended to be loaded by an Elixir/Erlang VM.");
 }
 // ANCHOR_END: example
 

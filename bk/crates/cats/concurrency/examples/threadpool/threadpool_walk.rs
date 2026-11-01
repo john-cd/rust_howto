@@ -113,8 +113,7 @@ mod tests {
     }
 
     #[test]
-    fn compute_digest_matches_the_known_sha256()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn compute_digest_matches_the_known_sha256() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;
         let path = dir.path().join("a.iso");
         std::fs::write(&path, b"abc")?;

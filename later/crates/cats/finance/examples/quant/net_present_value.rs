@@ -10,8 +10,7 @@
 fn main() {
     let initial_investment = -1000.0;
     let future_payments = [600.0, 600.0];
-    let present_value =
-        initial_investment + financial::npv(0.10, &future_payments);
+    let present_value = initial_investment + financial::npv(0.10, &future_payments);
     let expected = -1000.0 + 600.0 / 1.10 + 600.0 / 1.10_f64.powi(2);
     assert!((present_value - expected).abs() < 1e-9);
     println!("Net present value: {present_value:.2}");
@@ -29,9 +28,6 @@ mod tests {
     #[test]
     fn discounts_future_payments_from_an_initial_outflow() {
         super::main();
-        assert!(
-            (financial::npv(0.0, &[-1000.0, 600.0, 600.0]) - 200.0).abs()
-                < 1e-9
-        );
+        assert!((financial::npv(0.0, &[-1000.0, 600.0, 600.0]) - 200.0).abs() < 1e-9);
     }
 }

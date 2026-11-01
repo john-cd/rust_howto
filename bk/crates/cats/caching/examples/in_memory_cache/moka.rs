@@ -6,14 +6,14 @@
 //! ### Purpose and Architecture of `moka`
 //! `moka` is a fast, feature-rich, concurrent caching library for Rust inspired
 //! by Java's Caffeine:
-//! - **High Concurrency**: Provides lock-free or highly concurrent read/write
-//!   operations using lock striping and lock-free data structures.
-//! - **TinyLFU Eviction Policy**: Uses TinyLFU (Frequency-based eviction) to
-//!   achieve near-optimal hit ratios compared to basic LRU policies.
-//! - **TTL & TTI Expiration**: Supports Time-To-Live (TTL) and Time-To-Idle
-//!   (TTI) entry expiration policies.
-//! - **Synchronous & Asynchronous**: Provides both synchronous
-//!   (`moka::sync::Cache`) and async (`moka::future::Cache`) interfaces.
+//! - **High Concurrency**: Provides lock-free or highly concurrent read/write operations using lock
+//!   striping and lock-free data structures.
+//! - **TinyLFU Eviction Policy**: Uses TinyLFU (Frequency-based eviction) to achieve near-optimal
+//!   hit ratios compared to basic LRU policies.
+//! - **TTL & TTI Expiration**: Supports Time-To-Live (TTL) and Time-To-Idle (TTI) entry expiration
+//!   policies.
+//! - **Synchronous & Asynchronous**: Provides both synchronous (`moka::sync::Cache`) and async
+//!   (`moka::future::Cache`) interfaces.
 //!
 //! `moka` also provides an asynchronous (futures aware) cache in its `future`
 //! module.

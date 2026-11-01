@@ -46,9 +46,7 @@ mod tests {
     #[test]
     fn parse_item_names_returns_named_declarations() -> anyhow::Result<()> {
         assert_eq!(
-            parse_item_names(
-                "fn greet() {} struct Person; enum State { Ready }"
-            )?,
+            parse_item_names("fn greet() {} struct Person; enum State { Ready }")?,
             ["greet", "Person", "State"]
         );
         Ok(())

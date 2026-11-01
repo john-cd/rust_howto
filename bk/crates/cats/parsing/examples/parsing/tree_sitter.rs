@@ -35,8 +35,7 @@ fn query_rust(source: &str) -> anyhow::Result<Vec<(String, String)>> {
     let mut cursor = QueryCursor::new();
     let mut captures = Vec::new();
 
-    let mut matches =
-        cursor.matches(&query, tree.root_node(), source.as_bytes());
+    let mut matches = cursor.matches(&query, tree.root_node(), source.as_bytes());
     while let Some(matched) = matches.next() {
         for capture in matched.captures() {
             let label = &capture_names[capture.index as usize];

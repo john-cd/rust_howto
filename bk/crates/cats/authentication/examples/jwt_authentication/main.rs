@@ -10,8 +10,7 @@ use std::time::UNIX_EPOCH;
 
 use anyhow::Context as _;
 
-const TEST_JWT_SECRET: &str =
-    "default_test_secret_key_that_is_at_least_32_bytes_long";
+const TEST_JWT_SECRET: &str = "default_test_secret_key_that_is_at_least_32_bytes_long";
 
 /// Signs and verifies an in-memory token using the `JWT_SECRET` environment
 /// variable.
@@ -20,8 +19,8 @@ const TEST_JWT_SECRET: &str =
 /// Returns an error if `JWT_SECRET` is missing, too short, or token creation
 /// or verification fails.
 fn main() -> anyhow::Result<()> {
-    let secret = std::env::var("JWT_SECRET")
-        .context("set JWT_SECRET to at least 32 random bytes")?;
+    let secret =
+        std::env::var("JWT_SECRET").context("set JWT_SECRET to at least 32 random bytes")?;
     run_with_secret(&secret)
 }
 

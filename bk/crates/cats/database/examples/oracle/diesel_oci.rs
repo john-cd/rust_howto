@@ -56,18 +56,15 @@ fn main() -> anyhow::Result<()> {
 
     // Read the Oracle connection details from environment variables.
     let db_url = env::var("ORACLE_DB_URL").expect("ORACLE_DB_URL not set");
-    let username =
-        env::var("ORACLE_DB_USERNAME").expect("ORACLE_DB_USERNAME not set");
-    let password =
-        env::var("ORACLE_DB_PASSWORD").expect("ORACLE_DB_PASSWORD not set");
+    let username = env::var("ORACLE_DB_USERNAME").expect("ORACLE_DB_USERNAME not set");
+    let password = env::var("ORACLE_DB_PASSWORD").expect("ORACLE_DB_PASSWORD not set");
 
     // Connect to Oracle through Diesel and the `diesel_oci` backend.
-    let mut connection: OciConnection =
-        establish_connection(&db_url, &username, &password)?;
+    let mut connection: OciConnection = establish_connection(&db_url, &username, &password)?;
 
     // Fetch a few rows to demonstrate querying the database.
-    let results = diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5")
-        .load::<User>(&mut connection)?;
+    let results =
+        diesel::sql_query("SELECT * FROM users WHERE ROWNUM <= 5").load::<User>(&mut connection)?;
 
     // Print the results.
     for user in results {
@@ -113,8 +110,7 @@ mod tests {
         let db_url = env::var("ORACLE_DB_URL")?;
         let username = env::var("ORACLE_DB_USERNAME")?;
         let password = env::var("ORACLE_DB_PASSWORD")?;
-        let mut connection =
-            establish_connection(&db_url, &username, &password)?;
+        let mut connection = establish_connection(&db_url, &username, &password)?;
         connection.batch_execute(
             "CREATE TABLE users (id NUMBER(10) NOT NULL, username VARCHAR2(255), password VARCHAR2(255))",
         )?;
@@ -133,9 +129,8 @@ mod tests {
 // To resolve this on Linux:
 // 1. Install `libaio1`: `sudo apt-get install libaio1`
 // 2. Download and extract the Oracle Instant Client.
-// 3. Set the `LD_LIBRARY_PATH` environment variable to the directory containing
-//    the Instant Client libraries: `export
-//    LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH`
+// 3. Set the `LD_LIBRARY_PATH` environment variable to the directory containing the Instant Client
+//    libraries: `export LD_LIBRARY_PATH=/path/to/instantclient:$LD_LIBRARY_PATH`
 // 4. Alternatively, add the path to `/etc/ld.so.conf.d/` and run `ldconfig`.
 
 // The simplest Oracle Client is the free Oracle Instant Client.

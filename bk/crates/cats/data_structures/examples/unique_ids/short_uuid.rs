@@ -18,8 +18,8 @@ pub fn run() -> anyhow::Result<()> {
 
     // The text parses back to the same value.
     // The error type does not implement `std::error::Error`.
-    let parsed = ShortUuid::parse_str(&text)
-        .map_err(|e| anyhow::anyhow!("invalid short UUID: {e:?}"))?;
+    let parsed =
+        ShortUuid::parse_str(&text).map_err(|e| anyhow::anyhow!("invalid short UUID: {e:?}"))?;
     assert_eq!(parsed, short);
 
     // It converts losslessly to and from a regular UUID.

@@ -69,20 +69,17 @@ impl UserRepository for InMemoryUserRepository {
     }
 
     fn add_user(&self, user: User) {
-        let mut users =
-            self.users.lock().expect("mutex should not be poisoned");
+        let mut users = self.users.lock().expect("mutex should not be poisoned");
         users.insert(user.id, user);
     }
 
     fn update_user(&self, user: User) {
-        let mut users =
-            self.users.lock().expect("mutex should not be poisoned");
+        let mut users = self.users.lock().expect("mutex should not be poisoned");
         users.insert(user.id, user);
     }
 
     fn delete_user(&self, id: i32) {
-        let mut users =
-            self.users.lock().expect("mutex should not be poisoned");
+        let mut users = self.users.lock().expect("mutex should not be poisoned");
         users.remove(&id);
     }
 

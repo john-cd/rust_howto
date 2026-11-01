@@ -28,9 +28,7 @@ pub(crate) mod b_module {
 fn main() {
     println!("{}", a_module::visible_in_crate_only());
     println!("{}", b_module::visible_in_crate_only());
-    println!(
-        "visibility_pub_crate example: pub(crate) restricts visibility to the current crate"
-    );
+    println!("visibility_pub_crate example: pub(crate) restricts visibility to the current crate");
 }
 // ANCHOR_END: example
 

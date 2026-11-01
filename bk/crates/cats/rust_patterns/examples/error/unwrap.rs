@@ -70,9 +70,8 @@ mod tests {
     fn unwrap_panics_on_error() {
         let result = std::panic::catch_unwind(|| "x".parse::<u32>().unwrap());
         assert!(result.is_err());
-        let result = std::panic::catch_unwind(|| {
-            Err::<i32, &str>("boom").expect("Failed to do something.")
-        });
+        let result =
+            std::panic::catch_unwind(|| Err::<i32, &str>("boom").expect("Failed to do something."));
         assert!(result.is_err());
     }
 }

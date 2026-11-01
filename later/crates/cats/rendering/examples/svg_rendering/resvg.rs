@@ -38,11 +38,10 @@ fn render_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 /// created.
 fn render_svg_to_pixmap()
 -> Result<resvg::tiny_skia::Pixmap, Box<dyn std::error::Error + Send + Sync>> {
-    let tree =
-        resvg::usvg::Tree::from_str(SVG, &resvg::usvg::Options::default())?;
+    let tree = resvg::usvg::Tree::from_str(SVG, &resvg::usvg::Options::default())?;
     let size = tree.size().to_int_size();
-    let mut pixmap = resvg::tiny_skia::Pixmap::new(size.width(), size.height())
-        .ok_or_else(|| {
+    let mut pixmap =
+        resvg::tiny_skia::Pixmap::new(size.width(), size.height()).ok_or_else(|| {
             std::io::Error::new(
                 std::io::ErrorKind::InvalidInput,
                 "SVG viewport is too large to allocate as a pixmap",

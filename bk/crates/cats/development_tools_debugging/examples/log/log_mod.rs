@@ -38,9 +38,7 @@ fn main() {
     log::info!("[root] info");
     log::debug!("[root] debug");
     foo::run();
-    println!(
-        "log_mod example: set RUST_LOG=debug to see all module-specific log output above"
-    );
+    println!("log_mod example: set RUST_LOG=debug to see all module-specific log output above");
 }
 // ANCHOR_END: example
 
@@ -56,13 +54,9 @@ mod tests {
     /// Runs the log mod example through its entry point.
     #[test]
     fn test_log_mod_example_entry_point() {
-        isolated::run(
-            module_path!(),
-            "test_log_mod_example_entry_point",
-            || {
-                main();
-            },
-        );
+        isolated::run(module_path!(), "test_log_mod_example_entry_point", || {
+            main();
+        });
     }
 
     // output-only: the example only emits log records, and the process-wide

@@ -109,8 +109,7 @@ mod tests {
     /// Opening a missing file fails with `ENOENT`.
     #[test]
     fn opening_a_missing_file_fails() {
-        let result =
-            open("/this/path/does/not/exist", OFlag::O_RDONLY, Mode::empty());
+        let result = open("/this/path/does/not/exist", OFlag::O_RDONLY, Mode::empty());
         assert_eq!(result.err(), Some(nix::errno::Errno::ENOENT));
     }
 }

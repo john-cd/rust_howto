@@ -25,8 +25,8 @@ use postgres::NoTls;
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or either table cannot be created.
 fn main() -> anyhow::Result<()> {
-    let database_url = std::env::var("DATABASE_URL")
-        .context("set DATABASE_URL to connect to PostgreSQL")?;
+    let database_url =
+        std::env::var("DATABASE_URL").context("set DATABASE_URL to connect to PostgreSQL")?;
     let mut client = Client::connect(&database_url, NoTls)
         .context("connect to PostgreSQL using DATABASE_URL")?;
 

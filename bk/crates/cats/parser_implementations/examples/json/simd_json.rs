@@ -75,9 +75,8 @@ fn main() {
     // Example using `OwnedValue` (for modifications).
     // This is slower then the `BorrowedValue` as a tradeoff for getting rid of
     // lifetimes.
-    let mut owned_json: OwnedValue =
-        simd_json::to_owned_value(&mut json_string)
-            .expect("the simd json example invariant should hold");
+    let mut owned_json: OwnedValue = simd_json::to_owned_value(&mut json_string)
+        .expect("the simd json example invariant should hold");
 
     if let Some(name) = owned_json.get_mut("name") {
         *name = OwnedValue::from("Bob");
@@ -105,9 +104,7 @@ mod tests {
     /// Typed accessors read the parsed values.
     #[test]
     fn reads_values() {
-        let mut data =
-            br#"{"name": "Alice", "age": 30, "nested": {"value": true}}"#
-                .to_vec();
+        let mut data = br#"{"name": "Alice", "age": 30, "nested": {"value": true}}"#.to_vec();
         let json = simd_json::to_borrowed_value(&mut data).expect("valid JSON");
         assert_eq!(json.get_str("name"), Some("Alice"));
         assert_eq!(json.get_u64("age"), Some(30));
@@ -123,8 +120,7 @@ mod tests {
     fn owned_value_can_be_modified() -> Result<(), Box<dyn std::error::Error>> {
         let mut data = br#"{"name": "Alice"}"#.to_vec();
         let mut owned = simd_json::to_owned_value(&mut data)?;
-        *owned.get_mut("name").ok_or("missing value")? =
-            OwnedValue::from("Bob");
+        *owned.get_mut("name").ok_or("missing value")? = OwnedValue::from("Bob");
         assert_eq!(owned.get_str("name"), Some("Bob"));
         Ok(())
     }

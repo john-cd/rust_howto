@@ -60,9 +60,7 @@ fn print() -> anyhow::Result<()> {
 /// If non-null, `cstr_ptr` must point to a readable allocation containing a
 /// NUL terminator within that allocation. The pointed-to bytes must not be
 /// mutated for the duration of this call. See `CStr::from_ptr`'s contract.
-unsafe fn cstr_to_rust_string(
-    cstr_ptr: *const c_char,
-) -> anyhow::Result<String> {
+unsafe fn cstr_to_rust_string(cstr_ptr: *const c_char) -> anyhow::Result<String> {
     if cstr_ptr.is_null() {
         return Err(anyhow!("C string pointer is null."));
     }

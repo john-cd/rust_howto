@@ -42,8 +42,7 @@ fn main() -> anyhow::Result<()> {
     };
 
     let encoded = encode_to_vec(&data, standard())?;
-    let (decoded, consumed): (MyData, usize) =
-        decode_from_slice(&encoded, standard())?;
+    let (decoded, consumed): (MyData, usize) = decode_from_slice(&encoded, standard())?;
     assert_eq!(data, decoded);
     assert_eq!(encoded.len(), consumed);
 
@@ -98,8 +97,7 @@ mod tests {
 
     /// Both sides of a connection must agree on the configuration.
     #[test]
-    fn fixed_int_encoding_is_larger_and_incompatible_with_standard()
-    -> anyhow::Result<()> {
+    fn fixed_int_encoding_is_larger_and_incompatible_with_standard() -> anyhow::Result<()> {
         let fixed = bincode::config::standard().with_fixed_int_encoding();
         let encoded = encode_to_vec(sample(), fixed)?;
         // 8-byte length + 5 name bytes + 4-byte age + 1 boolean byte.

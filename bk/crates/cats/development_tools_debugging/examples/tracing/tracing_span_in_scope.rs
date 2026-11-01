@@ -102,9 +102,7 @@ mod tests {
         fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
             self.0
                 .lock()
-                .map_err(|_| {
-                    std::io::Error::other("tracing output mutex is poisoned")
-                })?
+                .map_err(|_| std::io::Error::other("tracing output mutex is poisoned"))?
                 .extend_from_slice(data);
             Ok(data.len())
         }
@@ -153,14 +151,8 @@ mod tests {
                 .unwrap_or_else(|| panic!("{needle} in {out}"))
         };
         assert!(line("I'm in the span!").contains("my_async_function_scope"));
-        assert!(
-            !line("I'm not in the span!").contains("my_async_function_scope")
-        );
-        assert!(
-            line("I'm also in the span!").contains("my_async_function_scope")
-        );
-        assert!(
-            line("I'm still in the span!").contains("my_async_function_scope")
-        );
+        assert!(!line("I'm not in the span!").contains("my_async_function_scope"));
+        assert!(line("I'm also in the span!").contains("my_async_function_scope"));
+        assert!(line("I'm still in the span!").contains("my_async_function_scope"));
     }
 }

@@ -51,8 +51,7 @@ fn main() {
 
     // Iterate over the non-zero entries of each row.
     for (row, row_vec) in a.outer_iterator().enumerate() {
-        let entries: Vec<(usize, f64)> =
-            row_vec.iter().map(|(col, &value)| (col, value)).collect();
+        let entries: Vec<(usize, f64)> = row_vec.iter().map(|(col, &value)| (col, value)).collect();
         println!("row {row}: {entries:?}");
     }
 
@@ -115,11 +114,7 @@ mod tests {
     fn multiplies_by_dense_vector() {
         let a = tridiagonal();
         let mut y = vec![0.0; 4];
-        mul_acc_mat_vec_csr(
-            a.view(),
-            [1.0, 2.0, 3.0, 4.0].as_slice(),
-            y.as_mut_slice(),
-        );
+        mul_acc_mat_vec_csr(a.view(), [1.0, 2.0, 3.0, 4.0].as_slice(), y.as_mut_slice());
         assert_eq!(y, vec![0.0, 0.0, 0.0, 5.0]);
     }
 

@@ -11,11 +11,9 @@
 //! other Arrow-compatible systems (like Python's `PyArrow`, Spark, etc.)
 //! without expensive serialization/deserialization.
 //!
-//! - SQL Support: We can query data registered within `DataFusion` using
-//!   standard SQL.
-//! - `DataFrame` API: It also provides a programmatic `DataFrame` API (similar
-//!   in concept to Pandas or Polars) for building query plans step-by-step in
-//!   Rust code.
+//! - SQL Support: We can query data registered within `DataFusion` using standard SQL.
+//! - `DataFrame` API: It also provides a programmatic `DataFrame` API (similar in concept to Pandas
+//!   or Polars) for building query plans step-by-step in Rust code.
 //!
 //! Both query APIs calculate the same total amount for each department.
 
@@ -89,19 +87,14 @@ fn assert_grouped_totals(batches: &[RecordBatch]) -> Result<()> {
             .column(0)
             .as_any()
             .downcast_ref::<StringArray>()
-            .ok_or_else(|| {
-                anyhow!("query returned a non-string department column")
-            })?;
+            .ok_or_else(|| anyhow!("query returned a non-string department column"))?;
         let amounts = batch
             .column(1)
             .as_any()
             .downcast_ref::<Int64Array>()
-            .ok_or_else(|| {
-                anyhow!("query returned a non-integer total column")
-            })?;
+            .ok_or_else(|| anyhow!("query returned a non-integer total column"))?;
         for row in 0..batch.num_rows() {
-            totals
-                .push((departments.value(row).to_owned(), amounts.value(row)));
+            totals.push((departments.value(row).to_owned(), amounts.value(row)));
         }
     }
     totals.sort_unstable();

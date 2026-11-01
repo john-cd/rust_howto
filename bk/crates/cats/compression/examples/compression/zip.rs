@@ -82,8 +82,8 @@ mod tests {
         let dir = tempfile::tempdir()?;
         let path = dir.path().join("a.zip");
         let mut zip = ZipWriter::new(File::create(&path)?);
-        let options = SimpleFileOptions::default()
-            .compression_method(zip::CompressionMethod::Deflated);
+        let options =
+            SimpleFileOptions::default().compression_method(zip::CompressionMethod::Deflated);
         zip.start_file("hello.txt", options)?;
         zip.write_all(b"Test")?;
         zip.add_directory("empty_folder", options)?;

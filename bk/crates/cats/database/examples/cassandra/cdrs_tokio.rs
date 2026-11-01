@@ -66,19 +66,17 @@ impl RowStruct {
 /// # Errors
 ///
 /// Returns an error if the query fails or a result row cannot be decoded.
-async fn select_user(
-    session: &CurrentSession,
-    id: Uuid,
-) -> anyhow::Result<Option<RowStruct>> {
+async fn select_user(session: &CurrentSession, id: Uuid) -> anyhow::Result<Option<RowStruct>> {
     let response = session
         .query_with_values(
             "SELECT id, name, age FROM test_keyspace.users WHERE id = ?",
             query_values!(id),
         )
         .await?;
-    let rows = response.response_body()?.into_rows().ok_or_else(|| {
-        anyhow::anyhow!("the SELECT response did not contain rows")
-    })?;
+    let rows = response
+        .response_body()?
+        .into_rows()
+        .ok_or_else(|| anyhow::anyhow!("the SELECT response did not contain rows"))?;
 
     rows.into_iter()
         .next()
@@ -103,11 +101,7 @@ async fn example() -> anyhow::Result<()> {
 
     let session: CurrentSession = tokio::time::timeout(
         CONNECTION_TIMEOUT,
-        TcpSessionBuilder::new(
-            RoundRobinLoadBalancingStrategy::new(),
-            cluster_config,
-        )
-        .build(),
+        TcpSessionBuilder::new(RoundRobinLoadBalancingStrategy::new(), cluster_config).build(),
     )
     .await
     .context("time out connecting to Cassandra at 127.0.0.1:9042")?

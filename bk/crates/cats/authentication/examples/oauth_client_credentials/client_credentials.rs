@@ -32,13 +32,12 @@ fn request_protected_resource(
     token_url: &str,
     resource_url: &str,
 ) -> anyhow::Result<(String, Option<Duration>)> {
-    let oauth_client =
-        BasicClient::new(ClientId::new("demo-client".to_owned()))
-            .set_client_secret(ClientSecret::new("demo-secret".to_owned()))
-            .set_auth_uri(AuthUrl::new(
-                "http://auth.example.test/authorize".to_owned(),
-            )?)
-            .set_token_uri(TokenUrl::new(token_url.to_owned())?);
+    let oauth_client = BasicClient::new(ClientId::new("demo-client".to_owned()))
+        .set_client_secret(ClientSecret::new("demo-secret".to_owned()))
+        .set_auth_uri(AuthUrl::new(
+            "http://auth.example.test/authorize".to_owned(),
+        )?)
+        .set_token_uri(TokenUrl::new(token_url.to_owned())?);
 
     let oauth_http_client = oauth2::reqwest::blocking::ClientBuilder::new()
         // Never follow redirects from a token endpoint.
@@ -93,10 +92,8 @@ fn main() -> anyhow::Result<()> {
         then.status(200).body("mock records");
     });
 
-    let (body, expires_in) = request_protected_resource(
-        &auth_server.url("/token"),
-        &resource_server.url("/records"),
-    )?;
+    let (body, expires_in) =
+        request_protected_resource(&auth_server.url("/token"), &resource_server.url("/records"))?;
 
     token_mock.assert();
     resource_mock.assert();
@@ -135,11 +132,9 @@ mod tests {
                 .body(r#"{"error":"invalid_client"}"#);
         });
 
-        let err = request_protected_resource(
-            &auth_server.url("/token"),
-            "http://127.0.0.1:1/unused",
-        )
-        .expect_err("the token request is rejected");
+        let err =
+            request_protected_resource(&auth_server.url("/token"), "http://127.0.0.1:1/unused")
+                .expect_err("the token request is rejected");
 
         token_mock.assert();
         assert!(

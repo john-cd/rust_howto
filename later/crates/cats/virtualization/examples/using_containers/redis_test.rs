@@ -20,16 +20,13 @@ use tokio::net::TcpStream;
 async fn main() -> anyhow::Result<()> {
     let container = GenericImage::new("redis", "8.2")
         .with_exposed_port(6379.tcp())
-        .with_wait_for(WaitFor::message_on_stdout(
-            "Ready to accept connections",
-        ))
+        .with_wait_for(WaitFor::message_on_stdout("Ready to accept connections"))
         .start()
         .await?;
     let host = container.get_host().await?;
     let port = container.get_host_port_ipv4(6379.tcp()).await?;
     tokio::time::timeout(Duration::from_secs(5), async {
-        let mut stream =
-            TcpStream::connect((host.to_string().as_str(), port)).await?;
+        let mut stream = TcpStream::connect((host.to_string().as_str(), port)).await?;
         stream.write_all(b"*1\r\n$4\r\nPING\r\n").await?;
         let mut response = [0; 7];
         stream.read_exact(&mut response).await?;

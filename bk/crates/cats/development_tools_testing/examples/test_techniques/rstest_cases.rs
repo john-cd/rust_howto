@@ -58,8 +58,7 @@ mod tests {
     /// Checks that durations increase as the unit gets larger.
     #[rstest]
     fn units_increase(inputs: Vec<&str>) {
-        let seconds: Vec<u64> =
-            inputs.iter().filter_map(|s| parse_seconds(s)).collect();
+        let seconds: Vec<u64> = inputs.iter().filter_map(|s| parse_seconds(s)).collect();
         assert!(seconds.is_sorted());
     }
 

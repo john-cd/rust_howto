@@ -69,8 +69,7 @@ mod tests {
     /// Returns an empty path when both paths identify the same location.
     #[test]
     fn identical_paths_give_an_empty_path() {
-        let path =
-            PathBuf::from(if cfg!(windows) { r"C:\a\b" } else { "/a/b" });
+        let path = PathBuf::from(if cfg!(windows) { r"C:\a\b" } else { "/a/b" });
         assert_eq!(relative_to(&path, &path), Some(PathBuf::new()));
     }
 

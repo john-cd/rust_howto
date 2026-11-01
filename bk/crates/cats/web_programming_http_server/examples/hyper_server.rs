@@ -28,8 +28,7 @@ async fn main() -> anyhow::Result<()> {
 
         tokio::spawn(async move {
             let io = TokioIo::new(stream);
-            let connection = http1::Builder::new()
-                .serve_connection(io, service_fn(handle_request));
+            let connection = http1::Builder::new().serve_connection(io, service_fn(handle_request));
 
             if let Err(error) = connection.await {
                 eprintln!("Error serving HTTP connection: {error}");
@@ -39,9 +38,7 @@ async fn main() -> anyhow::Result<()> {
 }
 
 /// Converts a Hyper request into a response for the small example API.
-async fn handle_request(
-    request: Request<Incoming>,
-) -> Result<Response<Full<Bytes>>, Infallible> {
+async fn handle_request(request: Request<Incoming>) -> Result<Response<Full<Bytes>>, Infallible> {
     Ok(response_for(request.method(), request.uri().path()))
 }
 
@@ -57,8 +54,7 @@ fn response_for(method: &Method, path: &str) -> Response<Full<Bytes>> {
         (StatusCode::METHOD_NOT_ALLOWED, "Method not allowed")
     };
 
-    let mut response =
-        Response::new(Full::new(Bytes::from_static(body.as_bytes())));
+    let mut response = Response::new(Full::new(Bytes::from_static(body.as_bytes())));
     *response.status_mut() = status;
     response
 }

@@ -45,9 +45,7 @@ fn main() -> anyhow::Result<()> {
     let times = next_times("0 30 9 * * Mon-Fri *", now, 3)?;
     let expected: Vec<_> = [(2026, 10, 26), (2026, 10, 27), (2026, 10, 28)]
         .into_iter()
-        .filter_map(|(y, m, d)| {
-            Utc.with_ymd_and_hms(y, m, d, 9, 30, 0).single()
-        })
+        .filter_map(|(y, m, d)| Utc.with_ymd_and_hms(y, m, d, 9, 30, 0).single())
         .collect();
     assert_eq!(times, expected);
 

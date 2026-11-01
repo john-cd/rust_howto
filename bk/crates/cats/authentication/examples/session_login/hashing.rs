@@ -6,14 +6,13 @@
 //! ### Argon2id Password Hashing
 //! Argon2id is the winner of the Password Hashing Competition (PHC) and is
 //! recommended by OWASP for secure password storage:
-//! - **Hybrid Variant**: Argon2id combines Argon2i (resistant to side-channel
-//!   attacks) and Argon2d (resistant to GPU cracking attacks).
-//! - **Memory-Hard Algorithm**: Configurable memory, time cost, and parallelism
-//!   parameters significantly increase the resource cost for attackers
-//!   attempting brute-force dictionary attacks.
-//! - **PHC String Standard**: Output hashes are formatted as standard
-//!   self-describing PHC strings `$argon2id$v=...$m=...,t=...,p=...$salt$hash`
-//!   containing algorithm parameters, salt, and hash.
+//! - **Hybrid Variant**: Argon2id combines Argon2i (resistant to side-channel attacks) and Argon2d
+//!   (resistant to GPU cracking attacks).
+//! - **Memory-Hard Algorithm**: Configurable memory, time cost, and parallelism parameters
+//!   significantly increase the resource cost for attackers attempting brute-force dictionary
+//!   attacks.
+//! - **PHC String Standard**: Output hashes are formatted as standard self-describing PHC strings
+//!   `$argon2id$v=...$m=...,t=...,p=...$salt$hash` containing algorithm parameters, salt, and hash.
 //!
 //! This example demonstrates how to hash and verify passwords securely using
 //! Argon2id. It also shows an alternative using the `password-auth` crate for

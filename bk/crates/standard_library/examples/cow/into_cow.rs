@@ -74,10 +74,7 @@ mod tests {
 
     #[test]
     fn test_custom_description_is_owned() {
-        let custom = describe_status(&HttpStatus::Custom(
-            500,
-            "Internal Server Error".to_owned(),
-        ));
+        let custom = describe_status(&HttpStatus::Custom(500, "Internal Server Error".to_owned()));
         assert!(matches!(custom, Cow::Owned(_)));
         assert_eq!(custom, "Status: 500 Internal Server Error");
     }

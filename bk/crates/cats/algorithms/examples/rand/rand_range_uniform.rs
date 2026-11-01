@@ -19,8 +19,7 @@ fn main() {
     let mut rng = rand::rng();
 
     // Create a uniform distribution over the range [1, 7):
-    let die =
-        Uniform::try_from(1..7).expect("the sample range should be valid");
+    let die = Uniform::try_from(1..7).expect("the sample range should be valid");
 
     loop {
         let throw = die.sample(&mut rng);

@@ -82,11 +82,7 @@ mod tests {
     use super::*;
 
     /// Without any example feature, `main` has nothing to run and succeeds.
-    #[cfg(not(any(
-        feature = "diesel",
-        feature = "sea_orm",
-        feature = "sqlx"
-    )))]
+    #[cfg(not(any(feature = "diesel", feature = "sea_orm", feature = "sqlx")))]
     #[test]
     fn test_main_is_a_no_op_without_features() {
         assert!(main().is_ok());

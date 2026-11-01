@@ -2,8 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-/// Detect a GitHub URL, returning `(detected, username, repo)`, where `detected` is `true` if it is a proper Github URL,
-/// `false` otherwise. In the latter case, `username` and `repo` are empty string slices.
+/// Detect a GitHub URL, returning `(detected, username, repo)`, where `detected` is `true` if it is
+/// a proper Github URL, `false` otherwise. In the latter case, `username` and `repo` are empty
+/// string slices.
 pub fn detect_github_url(url: &str) -> (bool, &str, &str) {
     let re2: &regex::Regex = crate::regex!(
         r"^http(?:s)?://(?:www\.)?github.com/(?<username>[\w_\.\-]+)/(?<repo>[\w_\.\-]+?)(?:/.*|\.git)?$"
@@ -26,7 +27,8 @@ pub fn detect_github_url(url: &str) -> (bool, &str, &str) {
 mod tests {
     use super::*;
 
-    /// Verifies that valid GitHub URLs return `true` along with extracted username and repository name.
+    /// Verifies that valid GitHub URLs return `true` along with extracted username and repository
+    /// name.
     #[test]
     fn test_detect_github_url_valid() {
         let valid_cases = [

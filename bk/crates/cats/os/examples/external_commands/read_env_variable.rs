@@ -45,8 +45,7 @@ mod tests {
     /// A variable that is not set falls back to the default value.
     #[test]
     fn unset_variable_uses_default() {
-        let value =
-            env::var("RUST_HOWTO_SURELY_UNSET").unwrap_or("".to_owned());
+        let value = env::var("RUST_HOWTO_SURELY_UNSET").unwrap_or("".to_owned());
         assert_eq!(value, "");
     }
 }

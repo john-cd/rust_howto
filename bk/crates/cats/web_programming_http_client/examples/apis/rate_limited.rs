@@ -29,8 +29,7 @@ fn header_u64(headers: &HeaderMap, name: &str) -> Result<Option<u64>> {
 ///
 /// GitHub returns `403` or `429` when a rate limit is exceeded:
 /// - If `retry-after` is present, wait that many seconds.
-/// - Else, if `x-ratelimit-remaining` is `0`, wait until the UTC epoch time in
-///   `x-ratelimit-reset`.
+/// - Else, if `x-ratelimit-remaining` is `0`, wait until the UTC epoch time in `x-ratelimit-reset`.
 /// - For a `429` without those headers, wait at least one minute.
 ///
 /// A bare `403` without rate-limit headers is ambiguous, so this helper does
@@ -40,9 +39,7 @@ fn rate_limit_wait(
     headers: &HeaderMap,
     now: SystemTime,
 ) -> Result<Option<Duration>> {
-    if status != StatusCode::FORBIDDEN
-        && status != StatusCode::TOO_MANY_REQUESTS
-    {
+    if status != StatusCode::FORBIDDEN && status != StatusCode::TOO_MANY_REQUESTS {
         return Ok(None);
     }
 
@@ -120,10 +117,7 @@ mod tests {
     fn expired_window_waits_zero() -> Result<()> {
         let mut headers = HeaderMap::new();
         headers.insert("x-ratelimit-remaining", HeaderValue::from_static("0"));
-        headers.insert(
-            "x-ratelimit-reset",
-            HeaderValue::from_static("1699999000"),
-        );
+        headers.insert("x-ratelimit-reset", HeaderValue::from_static("1699999000"));
         assert_eq!(
             rate_limit_wait(StatusCode::FORBIDDEN, &headers, now())?,
             Some(Duration::ZERO)
@@ -137,10 +131,7 @@ mod tests {
         let mut headers = HeaderMap::new();
         headers.insert(RETRY_AFTER, HeaderValue::from_static("30"));
         headers.insert("x-ratelimit-remaining", HeaderValue::from_static("0"));
-        headers.insert(
-            "x-ratelimit-reset",
-            HeaderValue::from_static("1700009999"),
-        );
+        headers.insert("x-ratelimit-reset", HeaderValue::from_static("1700009999"));
         assert_eq!(
             rate_limit_wait(StatusCode::TOO_MANY_REQUESTS, &headers, now())?,
             Some(Duration::from_secs(30))
@@ -152,11 +143,7 @@ mod tests {
     #[test]
     fn secondary_limit_waits_a_minute() -> Result<()> {
         assert_eq!(
-            rate_limit_wait(
-                StatusCode::TOO_MANY_REQUESTS,
-                &HeaderMap::new(),
-                now()
-            )?,
+            rate_limit_wait(StatusCode::TOO_MANY_REQUESTS, &HeaderMap::new(), now())?,
             Some(Duration::from_mins(1))
         );
         Ok(())

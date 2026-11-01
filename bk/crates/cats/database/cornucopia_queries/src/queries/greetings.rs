@@ -17,10 +17,7 @@ impl<'c, 'a, 's, C, T: 'c, const N: usize> StringQuery<'c, 'a, 's, C, T, N>
 where
     C: GenericClient,
 {
-    pub fn map<R>(
-        self,
-        mapper: fn(&str) -> R,
-    ) -> StringQuery<'c, 'a, 's, C, R, N> {
+    pub fn map<R>(self, mapper: fn(&str) -> R) -> StringQuery<'c, 'a, 's, C, R, N> {
         StringQuery {
             client: self.client,
             params: self.params,
@@ -32,13 +29,8 @@ where
     }
 
     pub async fn one(self) -> Result<T, tokio_postgres::Error> {
-        let row = crate::client::async_::one(
-            self.client,
-            self.query,
-            &self.params,
-            self.cached,
-        )
-        .await?;
+        let row =
+            crate::client::async_::one(self.client, self.query, &self.params, self.cached).await?;
         Ok((self.mapper)((self.extractor)(&row)?))
     }
 
@@ -47,13 +39,8 @@ where
     }
 
     pub async fn opt(self) -> Result<Option<T>, tokio_postgres::Error> {
-        let opt_row = crate::client::async_::opt(
-            self.client,
-            self.query,
-            &self.params,
-            self.cached,
-        )
-        .await?;
+        let opt_row =
+            crate::client::async_::opt(self.client, self.query, &self.params, self.cached).await?;
         Ok(opt_row
             .map(|row| {
                 let extracted = (self.extractor)(&row)?;

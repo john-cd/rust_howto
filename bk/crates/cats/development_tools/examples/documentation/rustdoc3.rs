@@ -12,9 +12,7 @@
 
 /// Prints a description of inner doc comments.
 fn main() {
-    println!(
-        "//! ... are `inner` comments that apply to the containing module (or crate)."
-    );
+    println!("//! ... are `inner` comments that apply to the containing module (or crate).");
 }
 
 // ANCHOR_END: example

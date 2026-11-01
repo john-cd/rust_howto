@@ -26,8 +26,8 @@ use redis::Connection;
 /// A `Result` containing a `Connection` to the Redis server on success, or an
 /// error if the connection fails.
 fn connect() -> Result<Connection> {
-    let redis_host_name = env::var("REDIS_HOSTNAME")
-        .unwrap_or_else(|_| "127.0.0.1:6379".to_owned());
+    let redis_host_name =
+        env::var("REDIS_HOSTNAME").unwrap_or_else(|_| "127.0.0.1:6379".to_owned());
     let redis_password = env::var("REDIS_PASSWORD").unwrap_or_default();
     // Does Redis server need a secure connection?
     let uri_scheme = if tls_enabled(env::var("IS_TLS").ok().as_deref()) {
@@ -35,8 +35,7 @@ fn connect() -> Result<Connection> {
     } else {
         "redis"
     };
-    let redis_conn_url =
-        format!("{uri_scheme}://:{redis_password}@{redis_host_name}");
+    let redis_conn_url = format!("{uri_scheme}://:{redis_password}@{redis_host_name}");
     // `open` does not actually open a connection yet, but it does perform some
     // basic checks on the URL that might make the operation fail.
     Ok(redis::Client::open(redis_conn_url)?.get_connection()?)

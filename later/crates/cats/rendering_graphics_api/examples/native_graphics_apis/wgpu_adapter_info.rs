@@ -24,8 +24,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut descriptor = InstanceDescriptor::new_without_display_handle();
     descriptor.backends = wgpu::Backends::PRIMARY;
     let instance = Instance::new(descriptor);
-    let adapter = block_on(instance.request_adapter(&RequestAdapterOptions::default()))
-        .map_err(|error| {
+    let adapter =
+        block_on(instance.request_adapter(&RequestAdapterOptions::default())).map_err(|error| {
             std::io::Error::other(format!(
                 "could not select a GPU adapter; check the installed graphics drivers: {error}"
             ))

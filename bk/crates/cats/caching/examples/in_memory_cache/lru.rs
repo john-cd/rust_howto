@@ -7,11 +7,10 @@
 //! An LRU cache organizes items in order of use. When the cache reaches its
 //! pre-allocated maximum capacity and a new item is inserted, the cache
 //! automatically evicts the *least recently accessed* item:
-//! - **Access Updating**: Accessing an existing key (via `get` or `get_mut`)
-//!   promotes that key to the most recently used position.
-//! - **Bounded Memory Usage**: Setting a strict capacity ensures predictable,
-//!   bounded memory usage for caching scenarios such as database query caching
-//!   or image buffering.
+//! - **Access Updating**: Accessing an existing key (via `get` or `get_mut`) promotes that key to
+//!   the most recently used position.
+//! - **Bounded Memory Usage**: Setting a strict capacity ensures predictable, bounded memory usage
+//!   for caching scenarios such as database query caching or image buffering.
 
 use std::num::NonZeroUsize;
 
@@ -20,9 +19,7 @@ use lru::LruCache;
 /// Fills an LRU cache beyond its capacity and shows which entries are evicted.
 fn main() {
     // Create an LRU cache with a capacity of 3:
-    let mut cache = LruCache::new(
-        NonZeroUsize::new(3).expect("cache capacity should be nonzero"),
-    );
+    let mut cache = LruCache::new(NonZeroUsize::new(3).expect("cache capacity should be nonzero"));
 
     // Insert some key-value pairs into the cache:
     cache.put(1, "one");

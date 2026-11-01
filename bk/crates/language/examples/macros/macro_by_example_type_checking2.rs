@@ -3,8 +3,7 @@
 // ANCHOR: example
 //! Restricting the types a declarative macro accepts.
 
-// 1. If you want to allow expressions but ensure they are numeric, you can
-//    enforce type checking:
+// 1. If you want to allow expressions but ensure they are numeric, you can enforce type checking:
 /// Prints an expression that must be coercible to `f64`.
 macro_rules! ensure_numeric_expression {
     ($val:expr) => {{
@@ -49,8 +48,8 @@ macro_rules! must_be_string {
 }
 
 // 4. Ensure that only certain types can be processed by a macro.
-//    - Define a trait that describes the action we want to perform. This
-//      creates a common interface for different types to implement.
+//    - Define a trait that describes the action we want to perform. This creates a common interface
+//      for different types to implement.
 /// A trait implemented only for the types that the macro accepts.
 trait Processable {
     /// Processes the value.
@@ -80,7 +79,7 @@ impl_processable_for_integer!(
 // This compiles only if there is an `impl` for the type of the expression.
 /// Calls `process` on an expression whose type must be an integer.
 macro_rules! integer_only {
-    ( $e:expr ) => {
+    ($e:expr) => {
         $e.process();
     };
 }

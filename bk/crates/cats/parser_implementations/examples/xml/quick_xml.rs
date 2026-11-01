@@ -42,10 +42,7 @@ fn main() -> anyhow::Result<()> {
                 println!("start: {}", event.name().as_ref());
             }
             Event::Text(event) => {
-                println!(
-                    "text: {}",
-                    quick_xml::escape::unescape(event.as_ref())?
-                );
+                println!("text: {}", quick_xml::escape::unescape(event.as_ref())?);
             }
             Event::End(event) => {
                 println!("end: {}", event.name().as_ref());
@@ -96,8 +93,7 @@ mod tests {
     /// XML child elements populate the corresponding person fields.
     #[test]
     fn deserializes_person_fields() -> anyhow::Result<()> {
-        let person: Person =
-            from_str("<person><name>John Doe</name><age>32</age></person>")?;
+        let person: Person = from_str("<person><name>John Doe</name><age>32</age></person>")?;
 
         assert_eq!(
             person,

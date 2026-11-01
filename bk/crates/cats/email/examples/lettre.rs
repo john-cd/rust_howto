@@ -53,16 +53,14 @@ fn main() -> anyhow::Result<()> {
 /// Returns an error if required environment variables are missing, the relay
 /// configuration is invalid, or message delivery fails.
 fn send_email() -> anyhow::Result<()> {
-    let smtp_server = std::env::var("SMTP_SERVER")
-        .context("set SMTP_SERVER to the SMTP relay host")?;
-    let smtp_username = std::env::var("SMTP_USERNAME")
-        .context("set SMTP_USERNAME to the SMTP account name")?;
-    let smtp_password = std::env::var("SMTP_PASSWORD")
-        .context("set SMTP_PASSWORD to the SMTP account password")?;
-    let smtp_from = std::env::var("SMTP_FROM")
-        .context("set SMTP_FROM to the sender mailbox")?;
-    let smtp_to = std::env::var("SMTP_TO")
-        .context("set SMTP_TO to the recipient mailbox")?;
+    let smtp_server =
+        std::env::var("SMTP_SERVER").context("set SMTP_SERVER to the SMTP relay host")?;
+    let smtp_username =
+        std::env::var("SMTP_USERNAME").context("set SMTP_USERNAME to the SMTP account name")?;
+    let smtp_password =
+        std::env::var("SMTP_PASSWORD").context("set SMTP_PASSWORD to the SMTP account password")?;
+    let smtp_from = std::env::var("SMTP_FROM").context("set SMTP_FROM to the sender mailbox")?;
+    let smtp_to = std::env::var("SMTP_TO").context("set SMTP_TO to the recipient mailbox")?;
 
     let email = build_message(&smtp_from, &smtp_to)?;
 
@@ -118,9 +116,8 @@ mod tests {
     /// Malformed addresses are reported with context naming the variable.
     #[test]
     fn rejects_invalid_addresses() {
-        let error =
-            build_message("not an address", "recipient@example.invalid")
-                .expect_err("invalid sender must be rejected");
+        let error = build_message("not an address", "recipient@example.invalid")
+            .expect_err("invalid sender must be rejected");
         assert!(format!("{error:#}").contains("SMTP_FROM"));
 
         let error = build_message("sender@example.invalid", "")

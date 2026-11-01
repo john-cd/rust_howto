@@ -70,11 +70,7 @@ fn calculate_task_levels() -> Result<Vec<Vec<u32>>, Cycle<NodeIndex>> {
     let configure = graph.add_node(5);
     let compile = graph.add_node(3);
     let package = graph.add_node(7);
-    graph.extend_with_edges([
-        (fetch, compile),
-        (configure, compile),
-        (compile, package),
-    ]);
+    graph.extend_with_edges([(fetch, compile), (configure, compile), (compile, package)]);
 
     let levels = topological_levels(&graph)?;
     let mut totals = HashMap::with_capacity(graph.node_count());
@@ -107,8 +103,7 @@ fn calculate_task_levels() -> Result<Vec<Vec<u32>>, Cycle<NodeIndex>> {
 
 /// Prints each level's computed task totals.
 fn main() {
-    let levels =
-        calculate_task_levels().expect("the sample task graph is acyclic");
+    let levels = calculate_task_levels().expect("the sample task graph is acyclic");
     for (index, totals) in levels.iter().enumerate() {
         println!("Level {} totals: {totals:?}", index + 1);
     }
@@ -123,8 +118,7 @@ pub fn run() {
 /// Verifies that each ready level runs only after its prerequisites.
 #[test]
 fn test_topological_levels_wait_for_prerequisites() {
-    let levels =
-        calculate_task_levels().expect("the sample task graph is acyclic");
+    let levels = calculate_task_levels().expect("the sample task graph is acyclic");
     assert_eq!(levels, vec![vec![2, 5], vec![10], vec![17]]);
 }
 
@@ -150,8 +144,7 @@ mod tests {
                 &prop::collection::vec((0usize..8, 0usize..8), 0..40),
                 |candidate_edges| {
                     let mut graph = DiGraph::<(), ()>::new();
-                    let nodes =
-                        (0..8).map(|_| graph.add_node(())).collect::<Vec<_>>();
+                    let nodes = (0..8).map(|_| graph.add_node(())).collect::<Vec<_>>();
 
                     for (source, target) in candidate_edges {
                         if source < target {
@@ -159,8 +152,7 @@ mod tests {
                         }
                     }
 
-                    let order = toposort(&graph, None)
-                        .expect("forward-only edges form a DAG");
+                    let order = toposort(&graph, None).expect("forward-only edges form a DAG");
                     let positions = order
                         .iter()
                         .enumerate()
@@ -168,10 +160,7 @@ mod tests {
                         .collect::<HashMap<_, _>>();
 
                     for edge in graph.edge_references() {
-                        prop_assert!(
-                            positions[&edge.source()]
-                                < positions[&edge.target()]
-                        );
+                        prop_assert!(positions[&edge.source()] < positions[&edge.target()]);
                     }
                     Ok(())
                 },

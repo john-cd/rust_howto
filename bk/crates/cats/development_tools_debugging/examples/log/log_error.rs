@@ -21,9 +21,7 @@ fn main() {
     if let Err(err) = response {
         log::error!("Failed to execute query: {err}");
     }
-    println!(
-        "log_error example: set RUST_LOG=error to see the error log above"
-    );
+    println!("log_error example: set RUST_LOG=error to see the error log above");
 }
 
 // ANCHOR_END: example
@@ -40,13 +38,9 @@ mod tests {
     /// Runs the log error example through its entry point.
     #[test]
     fn test_log_error_example_entry_point() {
-        isolated::run(
-            module_path!(),
-            "test_log_error_example_entry_point",
-            || {
-                main();
-            },
-        );
+        isolated::run(module_path!(), "test_log_error_example_entry_point", || {
+            main();
+        });
     }
 
     #[test]

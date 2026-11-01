@@ -48,8 +48,7 @@ mod tests {
     /// The global map holds the seeded entries and can be updated.
     #[test]
     fn global_map_is_seeded_and_mutable() {
-        let mut data =
-            GLOBAL_DATA.lock().expect("mutex should not be poisoned");
+        let mut data = GLOBAL_DATA.lock().expect("mutex should not be poisoned");
         assert_eq!(data.get(&13).map(String::as_str), Some("Spica"));
         assert_eq!(data.get(&74).map(String::as_str), Some("Hoyten"));
         data.insert(99, "Test".to_owned());

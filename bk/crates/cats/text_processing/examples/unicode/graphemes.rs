@@ -13,8 +13,7 @@ use unicode_segmentation::UnicodeSegmentation;
 /// Prints grapheme clusters and compares their count with other string lengths.
 fn main() {
     let text = "e\u{301} 🇫🇷";
-    let graphemes =
-        UnicodeSegmentation::graphemes(text, true).collect::<Vec<_>>();
+    let graphemes = UnicodeSegmentation::graphemes(text, true).collect::<Vec<_>>();
 
     println!("UTF-8 bytes: {}", text.len());
     println!("Unicode scalar values: {}", text.chars().count());

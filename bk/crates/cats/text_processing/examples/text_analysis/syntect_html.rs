@@ -19,8 +19,7 @@ use syntect::util::LinesWithEndings;
 use syntect::util::as_24_bit_terminal_escaped;
 
 // Loading the bundled grammars and themes is slow: do it once.
-static SYNTAXES: LazyLock<SyntaxSet> =
-    LazyLock::new(SyntaxSet::load_defaults_newlines);
+static SYNTAXES: LazyLock<SyntaxSet> = LazyLock::new(SyntaxSet::load_defaults_newlines);
 static THEMES: LazyLock<ThemeSet> = LazyLock::new(ThemeSet::load_defaults);
 
 const THEME: &str = "base16-ocean.dark";
@@ -45,8 +44,7 @@ fn main() -> anyhow::Result<()> {
     let mut highlighter = HighlightLines::new(syntax, theme);
     let mut terminal = String::new();
     for line in LinesWithEndings::from(code) {
-        let ranges: Vec<(Style, &str)> =
-            highlighter.highlight_line(line, &SYNTAXES)?;
+        let ranges: Vec<(Style, &str)> = highlighter.highlight_line(line, &SYNTAXES)?;
         terminal.push_str(&as_24_bit_terminal_escaped(&ranges, false));
     }
     println!("{terminal}\x1b[0m");

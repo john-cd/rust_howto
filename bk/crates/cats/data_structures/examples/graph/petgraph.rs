@@ -51,8 +51,7 @@ fn main() {
     }
 
     // Create an undirected graph:
-    let mut undirected_graph =
-        Graph::<&str, &str, Undirected>::new_undirected();
+    let mut undirected_graph = Graph::<&str, &str, Undirected>::new_undirected();
 
     // Add nodes to the undirected graph:
     let e = undirected_graph.add_node("Node E");

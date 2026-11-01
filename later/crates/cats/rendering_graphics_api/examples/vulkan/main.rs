@@ -65,7 +65,7 @@ mod tests {
     /// Verifies that, when Vulkan is present, it is at least version 1.0.
     #[test]
     fn reports_a_plausible_version_when_available() -> anyhow::Result<()> {
-        if let Some((major, _, _)) = instance_version()? {
+        if let Some((major, ..)) = instance_version()? {
             assert!(major >= 1);
         }
         Ok(())

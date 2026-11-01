@@ -51,9 +51,7 @@ impl Config {
 ///
 /// Returns an error if configuration cannot be read or the pool cannot be
 /// built. When `max_size` is set, it overrides the environment configuration.
-fn create_pool_with_max_size(
-    max_size: Option<usize>,
-) -> anyhow::Result<deadpool_postgres::Pool> {
+fn create_pool_with_max_size(max_size: Option<usize>) -> anyhow::Result<deadpool_postgres::Pool> {
     // Loads the `.env` file from the current directory or parents.
     dotenv().ok();
     // Hydrate pool and connection options from environment variables.
@@ -133,8 +131,7 @@ mod tests {
     /// Exercises pool checkout and query behavior with many concurrent clients.
     #[tokio::test]
     #[ignore = "requires a reachable PostgreSQL service and PG__* environment variables"]
-    async fn serves_concurrent_queries_through_the_pool() -> anyhow::Result<()>
-    {
+    async fn serves_concurrent_queries_through_the_pool() -> anyhow::Result<()> {
         /// Maximum number of PostgreSQL connections in the test pool.
         const MAX_POOL_SIZE: usize = 8;
         /// Number of requests submitted to the pool.
@@ -154,15 +151,11 @@ mod tests {
             let peak_checkouts = Arc::clone(&peak_checkouts);
             tasks.spawn(async move {
                 let client = pool.get().await?;
-                let active =
-                    active_checkouts.fetch_add(1, Ordering::SeqCst) + 1;
+                let active = active_checkouts.fetch_add(1, Ordering::SeqCst) + 1;
                 peak_checkouts.fetch_max(active, Ordering::SeqCst);
 
                 let query_result = client
-                    .query_one(
-                        "SELECT pg_sleep(0.01), $1::integer",
-                        &[&request_id],
-                    )
+                    .query_one("SELECT pg_sleep(0.01), $1::integer", &[&request_id])
                     .await;
                 drop(client);
                 active_checkouts.fetch_sub(1, Ordering::SeqCst);

@@ -32,20 +32,14 @@ pub struct HelloReply {
 
 /// Browser: `tonic-web-wasm-client` speaks gRPC-Web over `fetch`.
 #[cfg(target_arch = "wasm32")]
-pub async fn say_hello(
-    url: String,
-    name: String,
-) -> Result<String, tonic::Status> {
+pub async fn say_hello(url: String, name: String) -> Result<String, tonic::Status> {
     let client = tonic_web_wasm_client::Client::new(url);
     call(Grpc::new(client), name).await
 }
 
 /// Native targets: a regular tonic `Channel`.
 #[cfg(not(target_arch = "wasm32"))]
-pub async fn say_hello(
-    url: String,
-    name: String,
-) -> Result<String, tonic::Status> {
+pub async fn say_hello(url: String, name: String) -> Result<String, tonic::Status> {
     let channel = tonic::transport::Endpoint::from_shared(url)
         .map_err(|e| tonic::Status::invalid_argument(e.to_string()))?
         .connect_lazy();
@@ -53,17 +47,12 @@ pub async fn say_hello(
 }
 
 /// The call itself is the same on both targets.
-async fn call<T>(
-    mut grpc: Grpc<T>,
-    name: String,
-) -> Result<String, tonic::Status>
+async fn call<T>(mut grpc: Grpc<T>, name: String) -> Result<String, tonic::Status>
 where
     T: tonic::client::GrpcService<tonic::body::Body>,
     T::Error: Into<tonic::codegen::StdError>,
-    T::ResponseBody:
-        tonic::codegen::Body<Data = tonic::codegen::Bytes> + Send + 'static,
-    <T::ResponseBody as tonic::codegen::Body>::Error:
-        Into<tonic::codegen::StdError> + Send,
+    T::ResponseBody: tonic::codegen::Body<Data = tonic::codegen::Bytes> + Send + 'static,
+    <T::ResponseBody as tonic::codegen::Body>::Error: Into<tonic::codegen::StdError> + Send,
 {
     grpc.ready()
         .await

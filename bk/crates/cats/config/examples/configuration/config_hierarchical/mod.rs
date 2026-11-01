@@ -99,8 +99,7 @@ fn main() -> Result<()> {
     let config_dir = tempfile::tempdir()?;
     write_sample_files(config_dir.path())?;
 
-    let cli_args =
-        parse_command_line_args(Some(vec!["myapp", "--port", "8888"]));
+    let cli_args = parse_command_line_args(Some(vec!["myapp", "--port", "8888"]));
     let settings = read_settings(cli_args, config_dir.path(), None)?;
 
     assert_eq!(settings.service.port, 8888);
@@ -135,14 +134,12 @@ mod tests {
         let config_dir = tempfile::tempdir()?;
         write_sample_files(config_dir.path())?;
 
-        let cli_args =
-            parse_command_line_args(Some(vec!["myapp", "--port", "8888"]));
+        let cli_args = parse_command_line_args(Some(vec!["myapp", "--port", "8888"]));
         let environment = HashMap::from([
             ("APP_SERVICE__NAME".to_owned(), "MyService".to_owned()),
             ("APP_DATABASE__MAX_CONNECTIONS".to_owned(), "25".to_owned()),
         ]);
-        let settings =
-            read_settings(cli_args, config_dir.path(), Some(environment))?;
+        let settings = read_settings(cli_args, config_dir.path(), Some(environment))?;
 
         assert_eq!(settings.service.name, "MyService");
         assert_eq!(settings.service.port, 8888);

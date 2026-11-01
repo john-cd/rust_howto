@@ -51,8 +51,8 @@ fn http_response() -> String {
 
 /// Accepts connections and dispatches each request on the local executor.
 async fn serve() -> anyhow::Result<()> {
-    let listener = TcpListener::bind("127.0.0.1:8080")
-        .map_err(|e| anyhow::anyhow!("failed to bind: {e}"))?;
+    let listener =
+        TcpListener::bind("127.0.0.1:8080").map_err(|e| anyhow::anyhow!("failed to bind: {e}"))?;
     println!("Glommio server listening on http://127.0.0.1:8080");
     accept_loop(listener).await
 }
@@ -76,10 +76,9 @@ async fn accept_loop(listener: TcpListener) -> anyhow::Result<()> {
 /// Starts the Glommio executor and serves HTTP requests until the process
 /// stops.
 fn main() -> anyhow::Result<()> {
-    let executor =
-        LocalExecutorBuilder::default().spawn(serve).map_err(|e| {
-            anyhow::anyhow!("failed to start Glommio executor: {e}")
-        })?;
+    let executor = LocalExecutorBuilder::default()
+        .spawn(serve)
+        .map_err(|e| anyhow::anyhow!("failed to start Glommio executor: {e}"))?;
     executor
         .join()
         .map_err(|_| anyhow::anyhow!("Glommio executor thread panicked"))??;
@@ -111,11 +110,9 @@ mod tests {
     fn serves_a_request_over_loopback() {
         let executor = LocalExecutorBuilder::default()
             .spawn(|| async {
-                let listener = TcpListener::bind("127.0.0.1:0")
-                    .map_err(|e| anyhow::anyhow!("{e}"))?;
-                let addr = listener
-                    .local_addr()
-                    .map_err(|e| anyhow::anyhow!("{e}"))?;
+                let listener =
+                    TcpListener::bind("127.0.0.1:0").map_err(|e| anyhow::anyhow!("{e}"))?;
+                let addr = listener.local_addr().map_err(|e| anyhow::anyhow!("{e}"))?;
                 glommio::spawn_local(accept_loop(listener)).detach();
 
                 let mut client = TcpStream::connect(addr)

@@ -14,9 +14,8 @@ use url::Url;
 
 /// Removes the fragment and the query of a URL.
 fn main() -> Result<(), ParseError> {
-    let parsed = Url::parse(
-        "https://github.com/rust-lang/rust/issues?labels=E-easy&state=open#new-issue",
-    )?;
+    let parsed =
+        Url::parse("https://github.com/rust-lang/rust/issues?labels=E-easy&state=open#new-issue")?;
     let cleaned: &str = &parsed[..Position::AfterPath];
     assert_eq!(cleaned, "https://github.com/rust-lang/rust/issues");
     println!("`cleaned`: {cleaned}");

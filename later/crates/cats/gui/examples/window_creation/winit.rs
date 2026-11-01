@@ -25,8 +25,7 @@ struct App {
 impl ApplicationHandler for App {
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
         if self.window.is_none() {
-            let attributes =
-                Window::default_attributes().with_title("Winit window");
+            let attributes = Window::default_attributes().with_title("Winit window");
             match event_loop.create_window(attributes) {
                 Ok(window) => self.window = Some(window),
                 Err(error) => {

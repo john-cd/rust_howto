@@ -38,9 +38,7 @@ fn main() -> anyhow::Result<()> {
         .wait()?;
 
     if status.success() {
-        anyhow::bail!(
-            "`ls` unexpectedly succeeded for the missing path `oops`."
-        );
+        anyhow::bail!("`ls` unexpectedly succeeded for the missing path `oops`.");
     }
     println!("`ls` exited with {status}, as expected for the missing path.");
 

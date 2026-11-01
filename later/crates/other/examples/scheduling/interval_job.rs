@@ -18,11 +18,7 @@ use tokio_util::sync::CancellationToken;
 
 /// Runs `job` every `period` until `token` is cancelled. Returns how many
 /// times the job ran.
-async fn run_periodically<F, Fut>(
-    period: Duration,
-    token: CancellationToken,
-    mut job: F,
-) -> u32
+async fn run_periodically<F, Fut>(period: Duration, token: CancellationToken, mut job: F) -> u32
 where
     F: FnMut() -> Fut,
     Fut: std::future::Future<Output = ()>,
@@ -50,8 +46,7 @@ async fn demo() -> anyhow::Result<()> {
         sleep(Duration::from_secs(35)).await;
         stopper.cancel();
     });
-    let runs =
-        run_periodically(Duration::from_secs(10), token, || async {}).await;
+    let runs = run_periodically(Duration::from_secs(10), token, || async {}).await;
     assert_eq!(runs, 4);
 
     // A job slower than the period: runs of 25 s with a 10 s period.

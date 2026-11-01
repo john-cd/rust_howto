@@ -36,8 +36,7 @@ fn main() {
     original_trait_object.recite();
 
     // Clone the trait object.
-    let cloned_trait_object: Box<dyn MyTrait> =
-        dyn_clone::clone_box(&*original_trait_object);
+    let cloned_trait_object: Box<dyn MyTrait> = dyn_clone::clone_box(&*original_trait_object);
 
     // Call the `MyTrait` function on the cloned object.
     cloned_trait_object.recite();

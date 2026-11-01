@@ -90,8 +90,7 @@ mod tests {
     }
 
     #[test]
-    fn get_args_parses_the_embedded_argument_list()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn get_args_parses_the_embedded_argument_list() -> Result<(), Box<dyn std::error::Error>> {
         let args = get_args()?;
         assert_eq!(args.name, "John");
         assert_eq!(args.age, 30);
@@ -99,8 +98,7 @@ mod tests {
     }
 
     #[test]
-    fn lexopt_rejects_a_non_numeric_age_value()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn lexopt_rejects_a_non_numeric_age_value() -> Result<(), Box<dyn std::error::Error>> {
         use lexopt::ValueExt as _;
         let mut parser = lexopt::Parser::from_iter(["myapp", "--age", "abc"]);
         let _ = parser.next()?;

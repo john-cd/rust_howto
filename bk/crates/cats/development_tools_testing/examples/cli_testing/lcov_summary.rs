@@ -73,10 +73,7 @@ fn summarize(input: impl BufRead) -> anyhow::Result<Vec<FileCoverage>> {
 /// # Errors
 ///
 /// Returns an error when a file is below the requested coverage threshold.
-fn check_threshold(
-    files: &[FileCoverage],
-    threshold: f64,
-) -> anyhow::Result<()> {
+fn check_threshold(files: &[FileCoverage], threshold: f64) -> anyhow::Result<()> {
     for file in files {
         anyhow::ensure!(
             file.percent() >= threshold,

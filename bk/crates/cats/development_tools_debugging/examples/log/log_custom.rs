@@ -58,8 +58,7 @@ mod tests {
 
     /// Verifies that the log custom example's main path succeeds.
     #[test]
-    fn file_appender_creates_file_in_temporary_directory() -> anyhow::Result<()>
-    {
+    fn file_appender_creates_file_in_temporary_directory() -> anyhow::Result<()> {
         let directory = tempdir()?;
         let path = directory.path().join("output.log");
         let _appender = file_appender(&path)?;

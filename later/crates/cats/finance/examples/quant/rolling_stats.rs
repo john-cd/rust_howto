@@ -61,8 +61,7 @@ fn main() {
         assert!((a - b).abs() < 1e-9);
     }
 
-    let annualized: Vec<f64> =
-        rolling.iter().map(|s| s * TRADING_DAYS.sqrt()).collect();
+    let annualized: Vec<f64> = rolling.iter().map(|s| s * TRADING_DAYS.sqrt()).collect();
     println!(
         "latest annualized volatility: {:.2}%",
         annualized.last().copied().unwrap_or_default() * 100.0

@@ -30,8 +30,7 @@ fn main() {
     assert!(key.bytes.is_empty());
 
     // `Zeroizing<T>` wraps any `Zeroize` value, wiping it on drop.
-    let passphrase =
-        Zeroizing::new(String::from("correct horse battery staple"));
+    let passphrase = Zeroizing::new(String::from("correct horse battery staple"));
     println!("passphrase has {} bytes", passphrase.len());
     // The `String` is zeroed here, when `passphrase` goes out of scope.
 

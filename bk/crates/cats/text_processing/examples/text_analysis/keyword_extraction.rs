@@ -18,8 +18,7 @@ fn main() -> anyhow::Result<()> {
     // load a full list for their language, e.g. with `StopWords::from_file`.
     let mut stop_words = StopWords::new();
     for word in [
-        "a", "an", "and", "are", "for", "in", "is", "of", "on", "the", "to",
-        "with",
+        "a", "an", "and", "are", "for", "in", "is", "of", "on", "the", "to", "with",
     ] {
         stop_words.insert(word.to_owned());
     }

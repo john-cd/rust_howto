@@ -23,8 +23,7 @@ use heed::types::*;
 /// transaction, and reading data.
 fn main() -> anyhow::Result<()> {
     // Open a database:
-    let dir =
-        tempfile::tempdir().expect("the heed example invariant should hold");
+    let dir = tempfile::tempdir().expect("the heed example invariant should hold");
     let env = unsafe {
         EnvOpenOptions::new()
             .map_size(1024 * 1024 * 10) // 10 MiB

@@ -84,9 +84,8 @@ mod tests {
     /// A message without a Subject header falls back to a placeholder.
     #[test]
     fn missing_subject_uses_placeholder() -> Result<()> {
-        let (subject, bodies) = parse_subject_and_text(
-            b"From: a@example.com\r\n\r\nplain body\r\n",
-        )?;
+        let (subject, bodies) =
+            parse_subject_and_text(b"From: a@example.com\r\n\r\nplain body\r\n")?;
         assert_eq!(subject, "(no subject)");
         assert_eq!(bodies, vec!["plain body\r\n".to_owned()]);
         Ok(())

@@ -14,15 +14,13 @@ use oracle::Connection;
 
 /// Connects to Oracle and prints up to five tables matching `R%`.
 fn main() -> anyhow::Result<()> {
-    let username = env::var("ORACLE_USER")
-        .context("set ORACLE_USER to an Oracle database user")?;
-    let password = env::var("ORACLE_PASSWORD")
-        .context("set ORACLE_PASSWORD to the user's password")?;
+    let username = env::var("ORACLE_USER").context("set ORACLE_USER to an Oracle database user")?;
+    let password =
+        env::var("ORACLE_PASSWORD").context("set ORACLE_PASSWORD to the user's password")?;
     let connect_string = env::var("ORACLE_CONNECT_STRING")
         .context("set ORACLE_CONNECT_STRING to host:port/service_name")?;
 
-    let connection =
-        Connection::connect(&username, &password, &connect_string)?;
+    let connection = Connection::connect(&username, &password, &connect_string)?;
     let mut statement = connection
         .statement(
             "SELECT table_name FROM user_tables \

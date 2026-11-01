@@ -16,8 +16,8 @@ fn print_type<T>(t: T) {
 }
 
 /// - There may be multiple type parameters.
-/// - Type parameters can be used to define the types of function arguments; or
-///   the return type; or within the function.
+/// - Type parameters can be used to define the types of function arguments; or the return type; or
+///   within the function.
 /// - They may be used one or more times.
 fn func<K, V, R: Default>(key: K, value: V) -> R {
     let _k: K = key;

@@ -109,12 +109,8 @@ mod my {
                 .try_update(Ordering::Relaxed, Ordering::Relaxed, |count| {
                     count.checked_add(1)
                 })
-                .unwrap_or_else(|_| {
-                    panic!("Arc strong reference count overflow")
-                });
-            println!(
-                "Increased the reference count; previous value: {previous_count}"
-            );
+                .unwrap_or_else(|_| panic!("Arc strong reference count overflow"));
+            println!("Increased the reference count; previous value: {previous_count}");
             Self {
                 ptr: self.ptr,
                 phantom: PhantomData,
@@ -141,12 +137,9 @@ mod my {
         fn drop(&mut self) {
             // Subtracts from the current value, returning the previous value.
             // `count` is atomic, so this is thread-safe.
-            let previous_count =
-                self.inner().count.fetch_sub(1, Ordering::Release);
+            let previous_count = self.inner().count.fetch_sub(1, Ordering::Release);
             if previous_count != 1 {
-                println!(
-                    "Decreased reference count; previous count: {previous_count}"
-                );
+                println!("Decreased reference count; previous count: {previous_count}");
                 return;
             }
             // Pair this acquire fence with every Release decrement so the

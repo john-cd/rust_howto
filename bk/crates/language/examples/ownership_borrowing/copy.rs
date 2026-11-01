@@ -25,10 +25,8 @@ fn main() {
     // Notes:
     // - `Clone` is a supertrait of `Copy`, so everything which is
     // `Copy` must also implement `Clone`.
-    // - `#[derive(Copy)]` requires that all of the struct's components
-    //   implement `Copy`.
-    // - You could also implement `Copy` and `Clone` manually with `impl`
-    //   blocks.
+    // - `#[derive(Copy)]` requires that all of the struct's components implement `Copy`.
+    // - You could also implement `Copy` and `Clone` manually with `impl` blocks.
 
     let a = S(5); // `a` is a struct that implements `Copy`.
     let b = a; // `b` is a copy of `a`.

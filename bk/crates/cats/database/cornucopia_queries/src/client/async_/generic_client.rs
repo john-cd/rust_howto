@@ -21,10 +21,7 @@ pub trait GenericClient: Send + Sync {
     fn stmt_cache() -> bool {
         false
     }
-    fn prepare(
-        &self,
-        query: &str,
-    ) -> impl Future<Output = Result<Statement, Error>> + Send;
+    fn prepare(&self, query: &str) -> impl Future<Output = Result<Statement, Error>> + Send;
     fn execute<T>(
         &self,
         query: &T,
@@ -69,11 +66,7 @@ impl GenericClient for Transaction<'_> {
         Transaction::prepare(self, query).await
     }
 
-    async fn execute<T>(
-        &self,
-        query: &T,
-        params: &[&(dyn ToSql + Sync)],
-    ) -> Result<u64, Error>
+    async fn execute<T>(&self, query: &T, params: &[&(dyn ToSql + Sync)]) -> Result<u64, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
     {
@@ -102,22 +95,14 @@ impl GenericClient for Transaction<'_> {
         Transaction::query_opt(self, statement, params).await
     }
 
-    async fn query<T>(
-        &self,
-        query: &T,
-        params: &[&(dyn ToSql + Sync)],
-    ) -> Result<Vec<Row>, Error>
+    async fn query<T>(&self, query: &T, params: &[&(dyn ToSql + Sync)]) -> Result<Vec<Row>, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
     {
         Transaction::query(self, query, params).await
     }
 
-    async fn query_raw<T, I>(
-        &self,
-        statement: &T,
-        params: I,
-    ) -> Result<RowStream, Error>
+    async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
         I: IntoIterator + Sync + Send,
@@ -132,11 +117,7 @@ impl GenericClient for Client {
         Client::prepare(self, query).await
     }
 
-    async fn execute<T>(
-        &self,
-        query: &T,
-        params: &[&(dyn ToSql + Sync)],
-    ) -> Result<u64, Error>
+    async fn execute<T>(&self, query: &T, params: &[&(dyn ToSql + Sync)]) -> Result<u64, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
     {
@@ -165,22 +146,14 @@ impl GenericClient for Client {
         Client::query_opt(self, statement, params).await
     }
 
-    async fn query<T>(
-        &self,
-        query: &T,
-        params: &[&(dyn ToSql + Sync)],
-    ) -> Result<Vec<Row>, Error>
+    async fn query<T>(&self, query: &T, params: &[&(dyn ToSql + Sync)]) -> Result<Vec<Row>, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
     {
         Client::query(self, query, params).await
     }
 
-    async fn query_raw<T, I>(
-        &self,
-        statement: &T,
-        params: I,
-    ) -> Result<RowStream, Error>
+    async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
         I: IntoIterator + Sync + Send,

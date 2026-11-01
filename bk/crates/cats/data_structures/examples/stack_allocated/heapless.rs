@@ -41,8 +41,8 @@ fn main() {
     }
 
     // Declare a fixed-size string with capacity of 16:
-    let mut string: String<16> = String::try_from("Hello")
-        .expect("the initial text fits the fixed capacity");
+    let mut string: String<16> =
+        String::try_from("Hello").expect("the initial text fits the fixed capacity");
 
     assert!(string.push_str(", world!").is_ok());
 

@@ -43,9 +43,7 @@ pub fn load() -> Settings {
 
 /// Saves the settings to `localStorage` (browser only).
 #[cfg(target_arch = "wasm32")]
-pub fn save(
-    settings: &Settings,
-) -> Result<(), gloo_storage::errors::StorageError> {
+pub fn save(settings: &Settings) -> Result<(), gloo_storage::errors::StorageError> {
     use gloo_storage::LocalStorage;
     use gloo_storage::Storage;
     LocalStorage::set(KEY, settings)

@@ -44,8 +44,7 @@ fn variants() {
     use std::fmt::Write as _;
     let mut output = String::new();
     let z = "Rust";
-    write!(&mut output, "Hello {z}!")
-        .expect("Error occurred while trying to write to a String.");
+    write!(&mut output, "Hello {z}!").expect("Error occurred while trying to write to a String.");
     assert_eq!(output, "Hello Rust!");
 }
 
@@ -160,8 +159,7 @@ mod tests {
 
         let mut output = String::new();
         let language = "Rust";
-        write!(&mut output, "Hello {language}!")
-            .expect("writing to a String succeeds");
+        write!(&mut output, "Hello {language}!").expect("writing to a String succeeds");
         assert_eq!(output, "Hello Rust!");
     }
 }

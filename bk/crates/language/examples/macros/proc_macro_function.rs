@@ -17,8 +17,7 @@ fn main() {
     let user_query = sql!(SELECT * FROM users WHERE id = 1);
     println!("Query result: {user_query}");
 
-    let product_query =
-        sql!(INSERT INTO products (name, price) VALUES ("Widget", 9.99));
+    let product_query = sql!(INSERT INTO products (name, price) VALUES ("Widget", 9.99));
     println!("Query result: {product_query}");
 }
 

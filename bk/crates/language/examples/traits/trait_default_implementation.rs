@@ -13,8 +13,7 @@ trait Summary {
     /// Traits can also provide _default implementations_ for some or all of
     /// their methods or functions.
     /// - Default implementations have a body.
-    /// - Types that implement the trait can override the default
-    ///   implementations, if desired.
+    /// - Types that implement the trait can override the default implementations, if desired.
     fn summarize(&self) -> String {
         // Default implementations can call other methods in the same trait,
         // even if these other methods don't have a default implementation.

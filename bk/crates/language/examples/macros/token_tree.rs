@@ -10,7 +10,7 @@ macro_rules! accept_single_token_tree {
 
 /// Accepts any number of token trees and expands to nothing.
 macro_rules! accept_multiple_token_trees {
-    ( $( $_:tt )* ) => {};
+    ($($_:tt)*) => {};
 }
 
 /// Calls macros with single tokens and groups of tokens.

@@ -24,9 +24,7 @@ use same_file::is_same_file;
 /// found, it returns the two paths that form the loop. Returns None otherwise.
 ///
 /// P: `AsRef<Path>` accepts `PathBuf`, `Path`...
-fn contains_loop<P: AsRef<Path>>(
-    path: P,
-) -> io::Result<Option<(PathBuf, PathBuf)>> {
+fn contains_loop<P: AsRef<Path>>(path: P) -> io::Result<Option<(PathBuf, PathBuf)>> {
     let path: &Path = path.as_ref();
     // Copy into a mutable PathBuf
     let mut path_buf: PathBuf = path.to_path_buf();
@@ -35,9 +33,7 @@ fn contains_loop<P: AsRef<Path>>(
         if is_same_file(&path_buf, path)? {
             return Ok(Some((path_buf, path.to_path_buf())));
             // Investigate the parent path against its own parents as well
-        } else if let Some((looped_path1, looped_path2)) =
-            contains_loop(&path_buf)?
-        {
+        } else if let Some((looped_path1, looped_path2)) = contains_loop(&path_buf)? {
             return Ok(Some((looped_path1, looped_path2)));
         }
     }

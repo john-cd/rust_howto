@@ -36,11 +36,7 @@ impl Handler<Add> for Counter {
     type Result = u64;
 
     /// Adds the message amount and returns the updated total.
-    fn handle(
-        &mut self,
-        message: Add,
-        _context: &mut ActorContext<Self>,
-    ) -> Self::Result {
+    fn handle(&mut self, message: Add, _context: &mut ActorContext<Self>) -> Self::Result {
         self.total += message.0;
         self.total
     }
@@ -54,12 +50,14 @@ fn run_actor() -> anyhow::Result<(u64, u64)> {
     let system = System::new();
     let totals = system.block_on(async {
         let counter = Counter { total: 0 }.start();
-        let first = counter.send(Add(2)).await.context(
-            "counter actor stopped before replying to the first message",
-        )?;
-        let second = counter.send(Add(3)).await.context(
-            "counter actor stopped before replying to the second message",
-        )?;
+        let first = counter
+            .send(Add(2))
+            .await
+            .context("counter actor stopped before replying to the first message")?;
+        let second = counter
+            .send(Add(3))
+            .await
+            .context("counter actor stopped before replying to the second message")?;
         Ok::<_, anyhow::Error>((first, second))
     })?;
 

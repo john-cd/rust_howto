@@ -57,12 +57,7 @@ fn main() -> anyhow::Result<()> {
     let db = &parsed_toml.database;
     println!(
         "{}: {} on ports {:?} (max {} connections, enabled: {}, updated {})",
-        parsed_toml.title,
-        db.server,
-        db.ports,
-        db.connection_max,
-        db.enabled,
-        db.date
+        parsed_toml.title, db.server, db.ports, db.connection_max, db.enabled, db.date
     );
 
     Ok(())

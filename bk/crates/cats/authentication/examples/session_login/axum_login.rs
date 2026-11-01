@@ -6,17 +6,15 @@
 //! ### Cookie-Based Login and Session Management
 //! Cookie-based session management maintains user authentication state across
 //! HTTP requests:
-//! 1. Upon successful authentication (verifying username and password hash),
-//!    the server creates a unique session record in a session store
-//!    (`MemoryStore`, Redis, or SQL database) and associates it with the user
-//!    ID.
-//! 2. The server sends a HTTP `Set-Cookie` header containing an
-//!    encrypted/signed session ID token back to the client browser.
-//! 3. On subsequent requests, the browser automatically includes the session
-//!    cookie in the `Cookie` header.
-//! 4. Middleware (`axum-login`) extracts the session ID, loads the session and
-//!    user permissions from the backend, and authorizes access to protected
-//!    routes.
+//! 1. Upon successful authentication (verifying username and password hash), the server creates a
+//!    unique session record in a session store (`MemoryStore`, Redis, or SQL database) and
+//!    associates it with the user ID.
+//! 2. The server sends a HTTP `Set-Cookie` header containing an encrypted/signed session ID token
+//!    back to the client browser.
+//! 3. On subsequent requests, the browser automatically includes the session cookie in the `Cookie`
+//!    header.
+//! 4. Middleware (`axum-login`) extracts the session ID, loads the session and user permissions
+//!    from the backend, and authorizes access to protected routes.
 //!
 //! Production notes: set `Secure`, `HttpOnly` and `SameSite` on the session
 //! cookie (`SessionManagerLayer::with_secure` / `with_same_site`), keep
@@ -99,22 +97,15 @@ impl AuthnBackend for Backend {
     type Error = Infallible;
     type User = User;
 
-    async fn authenticate(
-        &self,
-        creds: Credentials,
-    ) -> Result<Option<User>, Infallible> {
+    async fn authenticate(&self, creds: Credentials) -> Result<Option<User>, Infallible> {
         let user = self.users.values().find(|u| u.username == creds.username);
         // Always run one verification, whether or not the user exists.
-        let stored =
-            user.map_or(self.dummy_hash.as_str(), |u| &u.password_hash);
+        let stored = user.map_or(self.dummy_hash.as_str(), |u| &u.password_hash);
         let ok = hashing::verify(&creds.password, stored);
         Ok(user.filter(|_| ok).cloned())
     }
 
-    async fn get_user(
-        &self,
-        id: &UserId<Self>,
-    ) -> Result<Option<User>, Infallible> {
+    async fn get_user(&self, id: &UserId<Self>) -> Result<Option<User>, Infallible> {
         Ok(self.users.get(id).cloned())
     }
 }
@@ -122,20 +113,14 @@ impl AuthnBackend for Backend {
 impl AuthzBackend for Backend {
     type Permission = String;
 
-    async fn get_user_permissions(
-        &self,
-        user: &User,
-    ) -> Result<HashSet<String>, Infallible> {
+    async fn get_user_permissions(&self, user: &User) -> Result<HashSet<String>, Infallible> {
         Ok(user.permissions.clone())
     }
 }
 
 type AuthSession = axum_login::AuthSession<Backend>;
 
-async fn login(
-    mut session: AuthSession,
-    Form(creds): Form<Credentials>,
-) -> impl IntoResponse {
+async fn login(mut session: AuthSession, Form(creds): Form<Credentials>) -> impl IntoResponse {
     match session.authenticate(creds).await {
         Ok(Some(user)) => match session.login(&user).await {
             Ok(()) => StatusCode::OK,
@@ -161,10 +146,8 @@ async fn admin() -> &'static str {
 pub fn app(backend: Backend) -> Router {
     // In-memory sessions: lost on restart. Use a database-backed store in
     // production, e.g. `tower-sessions-sqlx-store`.
-    let session_layer =
-        SessionManagerLayer::new(MemoryStore::default()).with_secure(false); // `true` when served over HTTPS.
-    let auth_layer =
-        AuthManagerLayerBuilder::new(backend, session_layer).build();
+    let session_layer = SessionManagerLayer::new(MemoryStore::default()).with_secure(false); // `true` when served over HTTPS.
+    let auth_layer = AuthManagerLayerBuilder::new(backend, session_layer).build();
 
     Router::new()
         .route("/admin", get(admin))
@@ -214,11 +197,7 @@ mod tests {
         ])?))
     }
 
-    async fn login_as(
-        app: &Router,
-        name: &str,
-        pw: &str,
-    ) -> anyhow::Result<Response<Body>> {
+    async fn login_as(app: &Router, name: &str, pw: &str) -> anyhow::Result<Response<Body>> {
         let request = Request::post("/login")
             .header(header::CONTENT_TYPE, "application/x-www-form-urlencoded")
             .body(Body::from(format!("username={name}&password={pw}")))?;
@@ -226,8 +205,7 @@ mod tests {
     }
 
     fn cookie(response: &Response<Body>) -> Option<String> {
-        let value =
-            response.headers().get(header::SET_COOKIE)?.to_str().ok()?;
+        let value = response.headers().get(header::SET_COOKIE)?.to_str().ok()?;
         value.split(';').next().map(str::to_owned)
     }
 
@@ -270,8 +248,7 @@ mod tests {
         let app = test_app()?;
         let response = login_as(&app, "alice", "secret").await?;
         assert_eq!(response.status(), StatusCode::OK);
-        let session =
-            cookie(&response).ok_or_else(|| anyhow::anyhow!("no cookie"))?;
+        let session = cookie(&response).ok_or_else(|| anyhow::anyhow!("no cookie"))?;
 
         let response = get_with(&app, "/protected", Some(&session)).await?;
         assert_eq!(response.status(), StatusCode::OK);

@@ -111,16 +111,14 @@ fn or_do_that() {
 
     let safe_handle1 = thread::spawn(|| {
         for _ in 0..10_000 {
-            let mut num =
-                SAFE_COUNTER.lock().expect("mutex should not be poisoned");
+            let mut num = SAFE_COUNTER.lock().expect("mutex should not be poisoned");
             *num += 1;
         }
     });
 
     let safe_handle2 = thread::spawn(|| {
         for _ in 0..10_000 {
-            let mut num =
-                SAFE_COUNTER.lock().expect("mutex should not be poisoned");
+            let mut num = SAFE_COUNTER.lock().expect("mutex should not be poisoned");
             *num += 1;
         }
     });
@@ -128,8 +126,7 @@ fn or_do_that() {
     safe_handle1.join().expect("worker thread should not panic");
     safe_handle2.join().expect("worker thread should not panic");
 
-    let final_count =
-        *SAFE_COUNTER.lock().expect("mutex should not be poisoned");
+    let final_count = *SAFE_COUNTER.lock().expect("mutex should not be poisoned");
     println!("Final SAFE_COUNTER value: {final_count}");
     assert_eq!(final_count, initial + 20_000);
 }

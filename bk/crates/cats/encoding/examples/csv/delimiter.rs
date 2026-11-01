@@ -54,9 +54,7 @@ mod tests {
     /// Verifies the configured tab delimiter separates fields into records.
     #[test]
     fn parses_tab_delimited_records() -> anyhow::Result<()> {
-        let records = read_records(
-            "name\tplace\tid\nMark\tMelbourne\t46\nAshley\tZurich\t92",
-        )?;
+        let records = read_records("name\tplace\tid\nMark\tMelbourne\t46\nAshley\tZurich\t92")?;
         assert_eq!(
             records,
             vec![

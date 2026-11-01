@@ -45,10 +45,7 @@ async fn main() -> Result<(), Error> {
 
 /// Fetches users from the requested REST endpoint and rejects unsuccessful
 /// responses.
-async fn get_users(
-    client: &Client,
-    request_url: &str,
-) -> Result<Vec<User>, Error> {
+async fn get_users(client: &Client, request_url: &str) -> Result<Vec<User>, Error> {
     client
         .get(request_url)
         .send()
@@ -83,8 +80,7 @@ mod tests {
             .create_async()
             .await;
         let client = Client::builder().user_agent("Rust-test").build()?;
-        let request_url =
-            format!("{}/repos/john-cd/rust_howto/stargazers", server.url());
+        let request_url = format!("{}/repos/john-cd/rust_howto/stargazers", server.url());
 
         let users = get_users(&client, &request_url).await?;
 

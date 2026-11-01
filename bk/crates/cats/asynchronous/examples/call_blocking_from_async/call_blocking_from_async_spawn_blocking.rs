@@ -26,7 +26,9 @@ async fn main() {
     });
 
     // Await the completion of the blocking task.
-    blocking_task.await.expect("the call blocking from async spawn blocking example invariant should hold");
+    blocking_task
+        .await
+        .expect("the call blocking from async spawn blocking example invariant should hold");
 }
 
 // ANCHOR_END: example
@@ -47,8 +49,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn spawn_blocking_returns_the_closure_result()
-    -> Result<(), Box<dyn std::error::Error>> {
+    async fn spawn_blocking_returns_the_closure_result() -> Result<(), Box<dyn std::error::Error>> {
         let value = tokio::task::spawn_blocking(|| 6 * 7).await?;
         assert_eq!(value, 42);
         Ok(())

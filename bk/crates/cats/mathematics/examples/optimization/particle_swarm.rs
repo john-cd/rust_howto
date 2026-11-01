@@ -45,8 +45,7 @@ fn pso(
     let mut rng = StdRng::seed_from_u64(seed);
     let mut swarm: Vec<Particle> = (0..swarm_size)
         .map(|_| {
-            let position: Vec<f64> =
-                (0..dim).map(|_| rng.random_range(-BOUND..BOUND)).collect();
+            let position: Vec<f64> = (0..dim).map(|_| rng.random_range(-BOUND..BOUND)).collect();
             let best_value = f(&position);
             Particle {
                 velocity: vec![0.0; dim],

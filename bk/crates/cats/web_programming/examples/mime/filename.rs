@@ -25,10 +25,7 @@ fn find_mimetype(filename: &str) -> Mime {
 ///
 /// Returns an error if the guessed MIME type cannot be represented as a header
 /// value.
-fn set_content_type(
-    filename: &str,
-    headers: &mut HeaderMap,
-) -> Result<(), InvalidHeaderValue> {
+fn set_content_type(filename: &str, headers: &mut HeaderMap) -> Result<(), InvalidHeaderValue> {
     let mime = find_mimetype(filename);
     headers.insert(CONTENT_TYPE, HeaderValue::try_from(mime.as_ref())?);
     Ok(())

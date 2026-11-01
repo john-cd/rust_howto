@@ -29,13 +29,11 @@ fn main() {
     fnv_set.insert("item2");
 
     // We may also pre-allocate capacity for better performance:
-    let mut _map_with_capacity: HashMap<String, String> =
-        HashMap::with_capacity(100);
+    let mut _map_with_capacity: HashMap<String, String> = HashMap::with_capacity(100);
     let mut _set_with_capacity: HashSet<String> = HashSet::with_capacity(100);
 
     // Or set both capacity and a custom hasher:
-    let mut map =
-        fnv::FnvHashMap::with_capacity_and_hasher(10, Default::default());
+    let mut map = fnv::FnvHashMap::with_capacity_and_hasher(10, Default::default());
     map.insert(1, "one");
     map.insert(2, "two");
     assert_eq!(map.get(&2), Some(&"two"));

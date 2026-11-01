@@ -26,9 +26,7 @@ fn c_symbol(name: &str) -> Option<CString> {
         reason = "The host must supply a current context; this example has no window system."
     )
 )]
-unsafe fn load_context(
-    mut get_proc_address: impl FnMut(&CStr) -> *const c_void,
-) -> glow::Context {
+unsafe fn load_context(mut get_proc_address: impl FnMut(&CStr) -> *const c_void) -> glow::Context {
     // SAFETY: the caller guarantees the platform context is current and valid.
     unsafe {
         glow::Context::from_loader_function(|name| {
@@ -67,9 +65,7 @@ fn main() {
         "A GL loader resolves symbols such as {:?}.",
         c_symbol("glClear")
     );
-    println!(
-        "Create and make an OpenGL context current before calling the glow helpers."
-    );
+    println!("Create and make an OpenGL context current before calling the glow helpers.");
 }
 // ANCHOR_END: example
 
@@ -86,8 +82,7 @@ mod tests {
     }
 
     /// Mock OpenGL clear-color function used to load a test context.
-    unsafe extern "system" fn stub_clear_color(_: f32, _: f32, _: f32, _: f32) {
-    }
+    unsafe extern "system" fn stub_clear_color(_: f32, _: f32, _: f32, _: f32) {}
 
     /// Mock OpenGL clear function used to load a test context.
     unsafe extern "system" fn stub_clear(_: u32) {}
@@ -102,8 +97,7 @@ mod tests {
     /// Converts a valid OpenGL symbol name and rejects an embedded NUL byte.
     #[test]
     fn test_c_symbol_conversion() {
-        let symbol =
-            c_symbol("glClear").expect("valid symbol names have no NUL bytes");
+        let symbol = c_symbol("glClear").expect("valid symbol names have no NUL bytes");
         assert_eq!(symbol.as_c_str().to_bytes(), b"glClear");
         assert!(c_symbol("gl\0Clear").is_none());
     }
@@ -113,12 +107,8 @@ mod tests {
     fn test_context_loader_and_clear_helpers() {
         let gl = unsafe {
             super::load_context(|name| match name.to_bytes() {
-                b"glGetString" => {
-                    (stub_get_string as *const ()).cast::<c_void>()
-                }
-                b"glClearColor" => {
-                    (stub_clear_color as *const ()).cast::<c_void>()
-                }
+                b"glGetString" => (stub_get_string as *const ()).cast::<c_void>(),
+                b"glClearColor" => (stub_clear_color as *const ()).cast::<c_void>(),
                 b"glClear" => (stub_clear as *const ()).cast::<c_void>(),
                 _ => ptr::null(),
             })

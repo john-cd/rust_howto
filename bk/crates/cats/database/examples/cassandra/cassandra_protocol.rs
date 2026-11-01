@@ -70,8 +70,7 @@ mod tests {
 
     /// Verifies that a STARTUP frame encodes and decodes without a server.
     #[test]
-    fn startup_request_round_trips_through_a_protocol_frame()
-    -> anyhow::Result<()> {
+    fn startup_request_round_trips_through_a_protocol_frame() -> anyhow::Result<()> {
         let decoded = round_trip_startup_request()?;
 
         assert_eq!(decoded.opcode, cassandra_protocol::frame::Opcode::Startup);

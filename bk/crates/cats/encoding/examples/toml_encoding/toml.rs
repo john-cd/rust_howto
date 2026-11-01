@@ -98,8 +98,7 @@ mod tests {
 
     /// Values keep their TOML types; malformed documents are rejected.
     #[test]
-    fn parses_types_and_rejects_malformed_toml()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn parses_types_and_rejects_malformed_toml() -> Result<(), Box<dyn std::error::Error>> {
         let value: Value = toml::from_str("a = 1\nb = 'x'\n[t]\nc = [1, 2]")?;
         assert_eq!(value["a"].as_integer(), Some(1));
         assert_eq!(value["b"].as_str(), Some("x"));

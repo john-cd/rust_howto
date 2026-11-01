@@ -57,8 +57,7 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
                 format::run();
             }
             Commands::ParseStringIntoDatetime => {
-                parse_string_into_datetime::run()
-                    .map_err(anyhow::Error::msg)?;
+                parse_string_into_datetime::run().map_err(anyhow::Error::msg)?;
             }
             Commands::Timestamp => {
                 timestamp::run().map_err(anyhow::Error::msg)?;
@@ -126,8 +125,7 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"])
-            .expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli).expect("dispatching should succeed");
     }

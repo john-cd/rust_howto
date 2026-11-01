@@ -4,13 +4,12 @@
 //! Describe a task as data, then schedule, expand, parse and run it.
 //!
 //! - `cron` computes when the task is due.
-//! - `shellexpand` expands `$VARIABLE` and `~` in the command template. The
-//!   lookup functions are passed in, so the result does not depend on the
-//!   environment of the machine running the example.
-//! - `shell-words` splits the expanded line into program and arguments using
-//!   Unix shell quoting rules, without starting a shell.
-//! - `duct` runs the program, captures its output and fails on a non-zero exit
-//!   status.
+//! - `shellexpand` expands `$VARIABLE` and `~` in the command template. The lookup functions are
+//!   passed in, so the result does not depend on the environment of the machine running the
+//!   example.
+//! - `shell-words` splits the expanded line into program and arguments using Unix shell quoting
+//!   rules, without starting a shell.
+//! - `duct` runs the program, captures its output and fails on a non-zero exit status.
 
 use std::str::FromStr;
 
@@ -47,10 +46,9 @@ impl Task {
     ///
     /// Returns the program's standard output.
     fn run(&self, what: &str) -> Result<String> {
-        let line = shellexpand::env_with_context_no_errors(
-            &self.command,
-            |name: &str| (name == "WHAT").then_some(what),
-        );
+        let line = shellexpand::env_with_context_no_errors(&self.command, |name: &str| {
+            (name == "WHAT").then_some(what)
+        });
         let words = shell_words::split(&line)?;
         let (program, args) = words.split_first().context("empty command")?;
         let output = duct::cmd(program, args).read()?;
@@ -93,10 +91,9 @@ mod tests {
     #[test]
     fn expands_variables_and_keeps_quoted_words_together() -> Result<()> {
         let task = Task::new("0 0 * * * *", "rustc --print \"$WHAT x\"")?;
-        let line = shellexpand::env_with_context_no_errors(
-            &task.command,
-            |name: &str| (name == "WHAT").then_some("hi"),
-        );
+        let line = shellexpand::env_with_context_no_errors(&task.command, |name: &str| {
+            (name == "WHAT").then_some("hi")
+        });
         assert_eq!(shell_words::split(&line)?, ["rustc", "--print", "hi x"]);
         Ok(())
     }

@@ -20,14 +20,8 @@ const HEIGHT: f32 = 480.0;
 /// `0.0..=1.0`, as in `DirectX`, Vulkan, Metal, and WebGPU.
 fn model_view_projection() -> Mat4 {
     let model = Mat4::from_rotation_y(core::f32::consts::FRAC_PI_4);
-    let view =
-        view::look_at_mat4(Vec3::new(0.0, 0.0, 3.0), Vec3::ZERO, Vec3::Y);
-    let projection = directx::perspective(
-        core::f32::consts::FRAC_PI_3,
-        WIDTH / HEIGHT,
-        0.1,
-        100.0,
-    );
+    let view = view::look_at_mat4(Vec3::new(0.0, 0.0, 3.0), Vec3::ZERO, Vec3::Y);
+    let projection = directx::perspective(core::f32::consts::FRAC_PI_3, WIDTH / HEIGHT, 0.1, 100.0);
     projection * view * model
 }
 
@@ -81,8 +75,8 @@ mod tests {
     /// Verifies the origin lands at the screen center in front of the camera.
     #[test]
     fn projects_the_origin_to_the_screen_center() {
-        let (pixel, depth) = project(model_view_projection(), Vec3::ZERO)
-            .expect("the origin is visible");
+        let (pixel, depth) =
+            project(model_view_projection(), Vec3::ZERO).expect("the origin is visible");
         assert!((pixel - Vec2::new(WIDTH / 2.0, HEIGHT / 2.0)).length() < 1e-3);
         assert!((0.0..1.0).contains(&depth));
     }
@@ -90,9 +84,6 @@ mod tests {
     /// Verifies points behind the camera are clipped.
     #[test]
     fn clips_points_behind_the_camera() {
-        assert!(
-            project(model_view_projection(), Vec3::new(0.0, 0.0, 10.0))
-                .is_none()
-        );
+        assert!(project(model_view_projection(), Vec3::new(0.0, 0.0, 10.0)).is_none());
     }
 }

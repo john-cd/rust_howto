@@ -99,8 +99,7 @@ async fn main() -> Result<()> {
         )]),
     };
 
-    create_and_delete_gist(&Client::new(), GISTS_ENDPOINT, &token, &gist_body)
-        .await
+    create_and_delete_gist(&Client::new(), GISTS_ENDPOINT, &token, &gist_body).await
 }
 
 // ANCHOR_END: example
@@ -215,9 +214,9 @@ mod tests {
                     .then_some(value.trim())
             })
             .map(|value| {
-                value.parse::<usize>().map_err(|error| {
-                    io::Error::new(io::ErrorKind::InvalidData, error)
-                })
+                value
+                    .parse::<usize>()
+                    .map_err(|error| io::Error::new(io::ErrorKind::InvalidData, error))
             })
             .transpose()?
             .unwrap_or(0);
@@ -240,18 +239,18 @@ mod tests {
             bytes.extend_from_slice(chunk);
         }
 
-        let request_line = headers.lines().next().ok_or_else(|| {
-            io::Error::new(io::ErrorKind::InvalidData, "missing request line")
-        })?;
+        let request_line = headers
+            .lines()
+            .next()
+            .ok_or_else(|| io::Error::new(io::ErrorKind::InvalidData, "missing request line"))?;
         let body_bytes = bytes.get(body_start..body_end).ok_or_else(|| {
             io::Error::new(
                 io::ErrorKind::InvalidData,
                 "declared body is outside the request",
             )
         })?;
-        let body = std::str::from_utf8(body_bytes).map_err(|error| {
-            io::Error::new(io::ErrorKind::InvalidData, error)
-        })?;
+        let body = std::str::from_utf8(body_bytes)
+            .map_err(|error| io::Error::new(io::ErrorKind::InvalidData, error))?;
 
         Ok(RecordedRequest {
             request_line: request_line.to_owned(),
@@ -291,8 +290,7 @@ mod tests {
     /// Verifies authorization, the gist payload, and the create/delete
     /// sequence.
     #[tokio::test]
-    async fn creates_and_deletes_gist_with_authorization_and_json() -> Result<()>
-    {
+    async fn creates_and_deletes_gist_with_authorization_and_json() -> Result<()> {
         let (endpoint, server) = start_server(vec![
             (
                 201,
@@ -301,13 +299,7 @@ mod tests {
             (204, ""),
         ])?;
 
-        create_and_delete_gist(
-            &Client::new(),
-            &endpoint,
-            "test-token",
-            &test_gist_body(),
-        )
-        .await?;
+        create_and_delete_gist(&Client::new(), &endpoint, "test-token", &test_gist_body()).await?;
 
         let requests = finish_server(server)?;
         assert_eq!(requests.len(), 2);
@@ -322,11 +314,13 @@ mod tests {
                 .request_line
                 .starts_with("POST /gists HTTP/1.1")
         );
-        assert!(post_request.headers.lines().any(|header| {
-            header.eq_ignore_ascii_case("authorization: bearer test-token")
-        }));
-        let payload: serde_json::Value =
-            serde_json::from_str(&post_request.body)?;
+        assert!(
+            post_request
+                .headers
+                .lines()
+                .any(|header| { header.eq_ignore_ascii_case("authorization: bearer test-token") })
+        );
+        let payload: serde_json::Value = serde_json::from_str(&post_request.body)?;
         assert_eq!(
             payload
                 .get("description")
@@ -350,9 +344,12 @@ mod tests {
                 .request_line
                 .starts_with("DELETE /gists/gist-123 HTTP/1.1")
         );
-        assert!(delete_request.headers.lines().any(|header| {
-            header.eq_ignore_ascii_case("authorization: bearer test-token")
-        }));
+        assert!(
+            delete_request
+                .headers
+                .lines()
+                .any(|header| { header.eq_ignore_ascii_case("authorization: bearer test-token") })
+        );
 
         Ok(())
     }
@@ -363,14 +360,10 @@ mod tests {
     async fn returns_create_status_failure_without_deleting() -> Result<()> {
         let (endpoint, server) = start_server(vec![(500, "{}")])?;
 
-        let error = create_and_delete_gist(
-            &Client::new(),
-            &endpoint,
-            "test-token",
-            &test_gist_body(),
-        )
-        .await
-        .expect_err("server error must fail gist creation");
+        let error =
+            create_and_delete_gist(&Client::new(), &endpoint, "test-token", &test_gist_body())
+                .await
+                .expect_err("server error must fail gist creation");
         assert!(format!("{error:#}").contains("500"));
         assert_eq!(finish_server(server)?.len(), 1);
 
@@ -388,14 +381,10 @@ mod tests {
             (403, "{}"),
         ])?;
 
-        let error = create_and_delete_gist(
-            &Client::new(),
-            &endpoint,
-            "test-token",
-            &test_gist_body(),
-        )
-        .await
-        .expect_err("forbidden response must fail gist deletion");
+        let error =
+            create_and_delete_gist(&Client::new(), &endpoint, "test-token", &test_gist_body())
+                .await
+                .expect_err("forbidden response must fail gist deletion");
         assert!(format!("{error:#}").contains("403"));
         let requests = finish_server(server)?;
         assert_eq!(requests.len(), 2);

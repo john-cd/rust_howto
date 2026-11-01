@@ -22,14 +22,11 @@ use tokio_rustls::TlsConnector;
 use tokio_rustls::client::TlsStream;
 
 /// Builds a Rustls connector that trusts the supplied certificate roots.
-fn connector_with_roots(
-    root_store: RootCertStore,
-) -> anyhow::Result<TlsConnector> {
-    let config =
-        ClientConfig::builder_with_provider(Arc::new(ring::default_provider()))
-            .with_safe_default_protocol_versions()?
-            .with_root_certificates(root_store)
-            .with_no_client_auth();
+fn connector_with_roots(root_store: RootCertStore) -> anyhow::Result<TlsConnector> {
+    let config = ClientConfig::builder_with_provider(Arc::new(ring::default_provider()))
+        .with_safe_default_protocol_versions()?
+        .with_root_certificates(root_store)
+        .with_no_client_auth();
 
     Ok(TlsConnector::from(Arc::new(config)))
 }
@@ -68,8 +65,7 @@ async fn main() -> anyhow::Result<()> {
         .next()
         .with_context(|| format!("{host} resolved to no addresses"))?;
 
-    let mut stream =
-        connect_to_server(&host, address, webpki_root_store()).await?;
+    let mut stream = connect_to_server(&host, address, webpki_root_store()).await?;
     stream.shutdown().await?;
     println!("Established a verified TLS connection to {host}:{port}.");
     Ok(())
@@ -96,13 +92,11 @@ mod tests {
     /// Verifies that the client validates a local certificate and exchanges
     /// data.
     #[tokio::test]
-    async fn client_verifies_certificate_and_round_trips_over_loopback()
-    -> anyhow::Result<()> {
+    async fn client_verifies_certificate_and_round_trips_over_loopback() -> anyhow::Result<()> {
         let rcgen::CertifiedKey { cert, signing_key } =
             rcgen::generate_simple_self_signed(vec!["localhost".to_owned()])?;
-        let private_key = PrivateKeyDer::Pkcs8(PrivatePkcs8KeyDer::from(
-            signing_key.serialize_der(),
-        ));
+        let private_key =
+            PrivateKeyDer::Pkcs8(PrivatePkcs8KeyDer::from(signing_key.serialize_der()));
         let provider = Arc::new(ring::default_provider());
         let server_config = ServerConfig::builder_with_provider(provider)
             .with_safe_default_protocol_versions()?
@@ -122,8 +116,7 @@ mod tests {
 
         let mut root_store = RootCertStore::empty();
         root_store.add(cert.der().clone())?;
-        let mut stream =
-            connect_to_server("localhost", address, root_store).await?;
+        let mut stream = connect_to_server("localhost", address, root_store).await?;
         stream.write_all(b"ping").await?;
         let mut response = [0; 4];
         stream.read_exact(&mut response).await?;

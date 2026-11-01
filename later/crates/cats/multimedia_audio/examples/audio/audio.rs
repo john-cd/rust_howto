@@ -33,10 +33,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 
 /// Plays a 440 Hz sine wave on the output `device` with the sample type `T`.
-fn run_stream<T>(
-    device: &cpal::Device,
-    config: &cpal::StreamConfig,
-) -> Result<(), Box<dyn Error>>
+fn run_stream<T>(device: &cpal::Device, config: &cpal::StreamConfig) -> Result<(), Box<dyn Error>>
 where
     T: cpal::SizedSample + cpal::FromSample<f32>,
 {

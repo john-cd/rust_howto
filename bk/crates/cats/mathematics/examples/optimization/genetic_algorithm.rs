@@ -17,9 +17,7 @@ fn evolve() -> usize {
     random_provider::scoped_seed(42, || {
         let engine = GeneticEngine::builder()
             .codec(BitCodec::vector(BITS))
-            .fitness_fn(|genotype: Vec<bool>| {
-                genotype.into_iter().filter(|bit| *bit).count()
-            })
+            .fitness_fn(|genotype: Vec<bool>| genotype.into_iter().filter(|bit| *bit).count())
             .build();
         let result = engine.iter().until_score(BITS).take(1000).last();
         result.map_or(0, |generation| generation.score().as_usize())

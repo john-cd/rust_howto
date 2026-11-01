@@ -109,8 +109,7 @@ mod tests {
     }
 
     #[tokio::test(start_paused = true)]
-    async fn concurrent_processing_handles_every_item()
-    -> Result<(), Box<dyn std::error::Error>> {
+    async fn concurrent_processing_handles_every_item() -> Result<(), Box<dyn std::error::Error>> {
         let results = std::sync::Mutex::new(Vec::new());
         stream::iter(vec![1, 2, 3, 4, 5])
             .map(fetch_data)

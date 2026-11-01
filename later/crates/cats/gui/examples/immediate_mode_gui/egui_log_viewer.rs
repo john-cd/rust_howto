@@ -37,8 +37,7 @@ fn run_example() {
     assert_eq!(collector.events().len(), 3);
 
     let ctx = egui::Context::default();
-    let screen =
-        egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
+    let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
         screen_rect: Some(screen),
         ..Default::default()

@@ -23,10 +23,7 @@ fn build_connector() -> anyhow::Result<TlsConnector> {
 ///
 /// # Errors
 /// Returns an error if the connection or TLS handshake fails.
-fn connect_tls(
-    connector: &TlsConnector,
-    host: &str,
-) -> anyhow::Result<TlsStream<TcpStream>> {
+fn connect_tls(connector: &TlsConnector, host: &str) -> anyhow::Result<TlsStream<TcpStream>> {
     let tcp_stream = TcpStream::connect((host, 443))
         .with_context(|| format!("could not connect to {host}:443"))?;
     Ok(connector.connect(host, tcp_stream)?)
@@ -44,9 +41,7 @@ fn main() -> anyhow::Result<()> {
     match env::var("NATIVE_TLS_HOST") {
         Ok(host) => {
             let _tls_stream = connect_tls(&connector, &host)?;
-            println!(
-                "Completed a verified native TLS handshake with {host}:443."
-            );
+            println!("Completed a verified native TLS handshake with {host}:443.");
         }
         Err(VarError::NotPresent) => println!(
             "Built a native-tls connector. Set NATIVE_TLS_HOST to opt in to a TLS handshake."
@@ -79,13 +74,11 @@ mod tests {
     }
 
     #[test]
-    fn connecting_to_a_host_without_tls_port_fails_with_context()
-    -> anyhow::Result<()> {
+    fn connecting_to_a_host_without_tls_port_fails_with_context() -> anyhow::Result<()> {
         let connector = build_connector()?;
         // Nothing listens on port 443 of the loopback address in the tests.
         if TcpStream::connect(("127.0.0.1", 443)).is_err() {
-            let err =
-                connect_tls(&connector, "127.0.0.1").expect_err("no server");
+            let err = connect_tls(&connector, "127.0.0.1").expect_err("no server");
             assert!(
                 err.to_string()
                     .contains("could not connect to 127.0.0.1:443")

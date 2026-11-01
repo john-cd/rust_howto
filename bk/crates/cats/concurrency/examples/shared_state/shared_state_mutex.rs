@@ -15,19 +15,16 @@ use std::thread;
 use anyhow::anyhow;
 
 /// Increments one shared counter from several threads.
-fn count_increments(
-    thread_count: usize,
-    increments_per_thread: usize,
-) -> anyhow::Result<usize> {
+fn count_increments(thread_count: usize, increments_per_thread: usize) -> anyhow::Result<usize> {
     let counter = Arc::new(Mutex::new(0));
     let handles = (0..thread_count)
         .map(|_| {
             let counter = Arc::clone(&counter);
             thread::spawn(move || -> anyhow::Result<()> {
                 for _ in 0..increments_per_thread {
-                    *counter.lock().map_err(|_| {
-                        anyhow!("counter mutex was poisoned")
-                    })? += 1;
+                    *counter
+                        .lock()
+                        .map_err(|_| anyhow!("counter mutex was poisoned"))? += 1;
                 }
                 Ok(())
             })

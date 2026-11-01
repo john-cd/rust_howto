@@ -22,8 +22,7 @@ fn main() -> anyhow::Result<()> {
     let valid = schemars::is_valid(&serde_json::json!({ "port": 8080 }))?;
     let invalid = schemars::is_valid(&serde_json::json!({ "port": "text" }))?;
     println!("valid: {valid}, invalid: {invalid}");
-    let config: schemars::Config =
-        serde_json::from_value(serde_json::json!({ "port": 8080 }))?;
+    let config: schemars::Config = serde_json::from_value(serde_json::json!({ "port": 8080 }))?;
     println!("port: {}, verbose: {}", config.port, config.verbose);
     Ok(())
 }

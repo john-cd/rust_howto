@@ -27,8 +27,8 @@ struct Nation {
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or the query or its result rows are invalid.
 fn main() -> anyhow::Result<()> {
-    let database_url = std::env::var("DATABASE_URL")
-        .context("set DATABASE_URL to connect to PostgreSQL")?;
+    let database_url =
+        std::env::var("DATABASE_URL").context("set DATABASE_URL to connect to PostgreSQL")?;
     let mut client = Client::connect(&database_url, NoTls)
         .context("connect to PostgreSQL using DATABASE_URL")?;
 
@@ -45,9 +45,7 @@ fn main() -> anyhow::Result<()> {
 ///
 /// Returns an error if PostgreSQL rejects the query or a result column has an
 /// unexpected type.
-fn artist_counts_by_nationality(
-    client: &mut Client,
-) -> anyhow::Result<Vec<Nation>> {
+fn artist_counts_by_nationality(client: &mut Client) -> anyhow::Result<Vec<Nation>> {
     let query = "SELECT COALESCE(nationality, 'Unknown') AS nationality, \
                  COUNT(*) AS artist_count \
                  FROM artists \
@@ -87,10 +85,9 @@ mod tests {
     /// Run with `DATABASE_URL` set to a reachable PostgreSQL database.
     #[test]
     #[ignore = "needs Postgres"]
-    fn aggregates_artist_counts_by_nationality_on_postgres()
-    -> anyhow::Result<()> {
-        let database_url = std::env::var("DATABASE_URL")
-            .context("set DATABASE_URL to connect to PostgreSQL")?;
+    fn aggregates_artist_counts_by_nationality_on_postgres() -> anyhow::Result<()> {
+        let database_url =
+            std::env::var("DATABASE_URL").context("set DATABASE_URL to connect to PostgreSQL")?;
         let mut client = Client::connect(&database_url, NoTls)
             .context("connect to PostgreSQL using DATABASE_URL")?;
         client.batch_execute("CREATE TEMP TABLE artists (nationality TEXT)")?;

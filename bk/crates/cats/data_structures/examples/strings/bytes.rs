@@ -20,8 +20,7 @@ fn main() {
     assert_eq!(res, "hello world");
     println!(
         "{}",
-        std::str::from_utf8(&res)
-            .expect("sample plaintext should be valid UTF-8")
+        std::str::from_utf8(&res).expect("sample plaintext should be valid UTF-8")
     );
 }
 

@@ -47,10 +47,8 @@ fn list_top_dependencies() -> Result<()> {
         let mut handles = Vec::with_capacity(summary.most_downloaded.len());
         for crate_info in &summary.most_downloaded {
             handles.push(scope.spawn(move || {
-                let deps = client_ref.crate_dependencies(
-                    &crate_info.id,
-                    &crate_info.max_version,
-                )?;
+                let deps =
+                    client_ref.crate_dependencies(&crate_info.id, &crate_info.max_version)?;
                 Ok((crate_info, deps))
             }));
         }
@@ -58,9 +56,9 @@ fn list_top_dependencies() -> Result<()> {
         handles
             .into_iter()
             .map(|handle| {
-                handle.join().map_err(|_| {
-                    anyhow::anyhow!("crate dependency worker panicked")
-                })?
+                handle
+                    .join()
+                    .map_err(|_| anyhow::anyhow!("crate dependency worker panicked"))?
             })
             .collect()
     })?;
@@ -98,8 +96,7 @@ fn search_for_crates(search: impl Into<String>) -> Result<CratesPage> {
 #[tracing::instrument(err)]
 fn main() -> Result<()> {
     // Initialize tracing subscriber
-    tracing_subscriber::fmt::try_init()
-        .map_err(|e| anyhow::anyhow!(e.to_string()))?;
+    tracing_subscriber::fmt::try_init().map_err(|e| anyhow::anyhow!(e.to_string()))?;
     tracing::info!("Starting crates_io API example");
 
     // Search for crates that mention "signature verification":
@@ -147,8 +144,7 @@ mod tests {
 
     #[test]
     fn client_rejects_an_invalid_user_agent() {
-        let result =
-            SyncClient::new("bad\nagent", std::time::Duration::from_millis(1));
+        let result = SyncClient::new("bad\nagent", std::time::Duration::from_millis(1));
         assert!(result.is_err());
     }
 }

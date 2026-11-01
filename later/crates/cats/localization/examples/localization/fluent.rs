@@ -28,22 +28,16 @@ const FR: &str = "greeting = Bonjour, { $name } !\nitems = { $count ->\n    [one
 /// # Errors
 /// Returns an error when the locale cannot be parsed, the resource is invalid,
 /// or the resource cannot be added to the bundle.
-fn new_bundle(
-    locale: &str,
-    source: &str,
-) -> ExampleResult<FluentBundle<FluentResource>> {
+fn new_bundle(locale: &str, source: &str) -> ExampleResult<FluentBundle<FluentResource>> {
     let locale = locale.parse::<LanguageIdentifier>()?;
-    let resource =
-        FluentResource::try_new(source.to_owned()).map_err(|(_, errors)| {
-            io::Error::other(format!(
-                "could not parse Fluent resource: {errors:?}"
-            ))
-        })?;
+    let resource = FluentResource::try_new(source.to_owned()).map_err(|(_, errors)| {
+        io::Error::other(format!("could not parse Fluent resource: {errors:?}"))
+    })?;
     let mut bundle = FluentBundle::new(vec![locale]);
     bundle.set_use_isolating(false);
-    bundle.add_resource(resource).map_err(|errors| {
-        io::Error::other(format!("could not add Fluent resource: {errors:?}"))
-    })?;
+    bundle
+        .add_resource(resource)
+        .map_err(|errors| io::Error::other(format!("could not add Fluent resource: {errors:?}")))?;
     Ok(bundle)
 }
 
@@ -63,9 +57,9 @@ fn format_message(
             format!("Fluent message `{message_id}` was not found"),
         )
     })?;
-    let pattern = message.value().ok_or_else(|| {
-        io::Error::other(format!("Fluent message `{message_id}` has no value"))
-    })?;
+    let pattern = message
+        .value()
+        .ok_or_else(|| io::Error::other(format!("Fluent message `{message_id}` has no value")))?;
     let mut errors = Vec::new();
     let formatted = bundle.format_pattern(pattern, args, &mut errors);
     if !errors.is_empty() {
@@ -160,8 +154,8 @@ mod tests {
     #[test]
     fn unknown_message_is_a_not_found_error() -> ExampleResult<()> {
         let english = new_bundle("en-US", EN_US)?;
-        let error = format_message(&english, "missing", None)
-            .expect_err("the bundle has no such message");
+        let error =
+            format_message(&english, "missing", None).expect_err("the bundle has no such message");
         let io_error = error
             .downcast_ref::<io::Error>()
             .expect("the error comes from the example");

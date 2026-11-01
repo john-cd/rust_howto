@@ -34,9 +34,7 @@ fn non_zero_size(width: u32, height: u32) -> Option<(NonZeroU32, NonZeroU32)> {
 }
 
 /// Presents a solid blue frame, skipping zero-sized minimized windows.
-fn draw(
-    surface: &mut Surface<Rc<Window>, Rc<Window>>,
-) -> Result<(), Box<dyn std::error::Error>> {
+fn draw(surface: &mut Surface<Rc<Window>, Rc<Window>>) -> Result<(), Box<dyn std::error::Error>> {
     let size = surface.window().inner_size();
     let Some((width, height)) = non_zero_size(size.width, size.height) else {
         return Ok(());
@@ -55,9 +53,10 @@ impl ApplicationHandler for App {
             return;
         }
         let result = (|| -> Result<_, Box<dyn std::error::Error>> {
-            let window = Rc::new(event_loop.create_window(
-                Window::default_attributes().with_title("Software pixels"),
-            )?);
+            let window = Rc::new(
+                event_loop
+                    .create_window(Window::default_attributes().with_title("Software pixels"))?,
+            );
             let context = Context::new(window.clone())?;
             let surface = Surface::new(&context, window)?;
             surface.window().request_redraw();
@@ -72,12 +71,7 @@ impl ApplicationHandler for App {
         }
     }
 
-    fn window_event(
-        &mut self,
-        event_loop: &ActiveEventLoop,
-        _id: WindowId,
-        event: WindowEvent,
-    ) {
+    fn window_event(&mut self, event_loop: &ActiveEventLoop, _id: WindowId, event: WindowEvent) {
         match event {
             WindowEvent::CloseRequested => event_loop.exit(),
             WindowEvent::Resized(_) => {

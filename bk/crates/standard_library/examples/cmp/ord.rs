@@ -25,9 +25,7 @@ struct Version {
 // Implement `PartialEq` to define when two versions are equal.
 impl PartialEq for Version {
     fn eq(&self, other: &Self) -> bool {
-        self.major == other.major
-            && self.minor == other.minor
-            && self.patch == other.patch
+        self.major == other.major && self.minor == other.minor && self.patch == other.patch
     }
 }
 

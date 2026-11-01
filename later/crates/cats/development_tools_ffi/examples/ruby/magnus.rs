@@ -19,10 +19,7 @@ fn embedded_greeting() -> Result<String, Error> {
     // this thread, and keeps the cleanup guard alive through all Ruby calls.
     let ruby = unsafe { magnus::embed::init() };
 
-    ruby.define_global_function(
-        "hello_rust",
-        magnus::function!(hello_rust, 1),
-    )?;
+    ruby.define_global_function("hello_rust", magnus::function!(hello_rust, 1))?;
 
     ruby.eval::<String>("hello_rust('Ada')")
 }
@@ -54,8 +51,7 @@ mod tests {
     #[test]
     #[ignore = "needs Ruby headers and libruby"]
     fn embedded_ruby_returns_the_rust_greeting() {
-        let greeting =
-            embedded_greeting().expect("embedded Ruby should call hello_rust");
+        let greeting = embedded_greeting().expect("embedded Ruby should call hello_rust");
 
         assert_eq!(greeting, "Hello, Ada!");
     }

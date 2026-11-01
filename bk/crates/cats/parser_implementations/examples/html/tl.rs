@@ -49,9 +49,7 @@ fn main() -> anyhow::Result<()> {
 
     // Find the title.
     // Also try: `p.content`, `li`, `p[class]`.
-    if let Some(handle) =
-        dom.query_selector("title").and_then(|mut iter| iter.next())
-    {
+    if let Some(handle) = dom.query_selector("title").and_then(|mut iter| iter.next()) {
         let node = handle
             .get(parser)
             .ok_or(anyhow::anyhow!("Failed to retrieve node."))?;

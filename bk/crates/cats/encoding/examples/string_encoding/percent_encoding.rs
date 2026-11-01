@@ -75,10 +75,7 @@ mod tests {
             let encoded = encode_url_component(input);
             let decoded = decode_url_component(&encoded)?;
 
-            assert_eq!(
-                input, decoded,
-                "Encoding and decoding failed for: {input}"
-            );
+            assert_eq!(input, decoded, "Encoding and decoding failed for: {input}");
         }
 
         Ok(())

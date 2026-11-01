@@ -27,8 +27,8 @@ const SIZE: i32 = 256;
 /// Returns an error if Skia cannot allocate the surface.
 fn draw() -> anyhow::Result<Surface> {
     // A raster surface renders on the CPU into its own pixel buffer.
-    let mut surface = surfaces::raster_n32_premul((SIZE, SIZE))
-        .context("create a Skia raster surface")?;
+    let mut surface =
+        surfaces::raster_n32_premul((SIZE, SIZE)).context("create a Skia raster surface")?;
     let canvas = surface.canvas();
     canvas.clear(Color::WHITE);
 
@@ -98,12 +98,7 @@ mod tests {
 
     /// Reads one RGBA pixel back from the surface.
     fn pixel(surface: &mut Surface, x: i32, y: i32) -> [u8; 4] {
-        let info = ImageInfo::new(
-            (1, 1),
-            ColorType::RGBA8888,
-            AlphaType::Premul,
-            None,
-        );
+        let info = ImageInfo::new((1, 1), ColorType::RGBA8888, AlphaType::Premul, None);
         let mut rgba = [0_u8; 4];
         assert!(surface.read_pixels(&info, &mut rgba, 4, (x, y)));
         rgba

@@ -70,8 +70,6 @@ mod tests {
     /// elsewhere.
     #[test]
     fn example_runs_for_the_current_target() {
-        main().expect(
-            "Linux should allow querying the temporary file with statx",
-        );
+        main().expect("Linux should allow querying the temporary file with statx");
     }
 }

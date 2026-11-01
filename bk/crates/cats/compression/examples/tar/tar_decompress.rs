@@ -22,10 +22,7 @@ use tar::Archive;
 /// be extracted.
 fn main() -> io::Result<()> {
     let work_dir = std::env::temp_dir().join("rust_howto_tar_compress_example");
-    decompress_archive(
-        &work_dir.join("archive.tar.gz"),
-        &work_dir.join("unpacked"),
-    )
+    decompress_archive(&work_dir.join("archive.tar.gz"), &work_dir.join("unpacked"))
 }
 
 /// Extracts the gzip-compressed tar archive at `archive_path` into
@@ -35,10 +32,7 @@ fn main() -> io::Result<()> {
 ///
 /// Returns an I/O error if the archive cannot be read, the destination cannot
 /// be created, or extraction fails.
-fn decompress_archive(
-    archive_path: &Path,
-    destination: &Path,
-) -> io::Result<()> {
+fn decompress_archive(archive_path: &Path, destination: &Path) -> io::Result<()> {
     let tar_gz = File::open(archive_path)?;
     let tar = GzDecoder::new(tar_gz);
     let mut archive = Archive::new(tar);
@@ -91,11 +85,7 @@ mod tests {
         header.set_size(expected.len() as u64);
         header.set_mode(0o644);
         header.set_cksum();
-        builder.append_data(
-            &mut header,
-            "source/message.txt",
-            expected.as_slice(),
-        )?;
+        builder.append_data(&mut header, "source/message.txt", expected.as_slice())?;
         drop(builder.into_inner()?.finish()?);
 
         decompress_archive(&archive_path, &destination)?;
@@ -113,9 +103,8 @@ mod tests {
         // `main` unpacks the archive that the compression example creates.
         crate::tar_compress::run()?;
         main()?;
-        let unpacked = std::env::temp_dir().join(
-            "rust_howto_tar_compress_example/unpacked/backup/logs/example.txt",
-        );
+        let unpacked = std::env::temp_dir()
+            .join("rust_howto_tar_compress_example/unpacked/backup/logs/example.txt");
         assert_eq!(fs::read(unpacked)?, b"A file in the sample archive.\n");
         Ok(())
     }
@@ -123,11 +112,8 @@ mod tests {
     #[test]
     fn missing_archive_is_an_error() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;
-        let err = decompress_archive(
-            &dir.path().join("missing.tar.gz"),
-            &dir.path().join("out"),
-        )
-        .expect_err("the archive does not exist");
+        let err = decompress_archive(&dir.path().join("missing.tar.gz"), &dir.path().join("out"))
+            .expect_err("the archive does not exist");
         assert_eq!(err.kind(), io::ErrorKind::NotFound);
         Ok(())
     }

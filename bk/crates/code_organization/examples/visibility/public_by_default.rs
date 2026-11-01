@@ -71,9 +71,7 @@ fn main() {
     // Use the public trait:
     use a_module::Trait;
     println!("method = {}", p.method());
-    println!(
-        "public_by_default example: enum variants and trait items are public by default"
-    );
+    println!("public_by_default example: enum variants and trait items are public by default");
 }
 
 // ANCHOR_END: example

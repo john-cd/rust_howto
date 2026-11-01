@@ -45,10 +45,7 @@ mod tests {
             Color::Yellow.bold().paint("x").to_string(),
             "\u{1b}[1;33mx\u{1b}[0m"
         );
-        assert_eq!(
-            Color::Yellow.paint("x").to_string(),
-            "\u{1b}[33mx\u{1b}[0m"
-        );
+        assert_eq!(Color::Yellow.paint("x").to_string(), "\u{1b}[33mx\u{1b}[0m");
         assert_eq!(
             Style::new().bold().paint("x").to_string(),
             "\u{1b}[1mx\u{1b}[0m"

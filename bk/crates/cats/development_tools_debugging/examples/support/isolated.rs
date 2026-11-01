@@ -29,8 +29,7 @@ pub fn run(module_path: &str, name: &str, body: impl FnOnce()) {
         .map_or(module_path, |(_, rest)| rest);
     let test_path = format!("{relative}::{name}");
 
-    let exe = std::env::current_exe()
-        .expect("the test executable path should be available");
+    let exe = std::env::current_exe().expect("the test executable path should be available");
     let output = Command::new(exe)
         .args([test_path.as_str(), "--exact", "--test-threads=1"])
         .env(CHILD_MARKER, "1")

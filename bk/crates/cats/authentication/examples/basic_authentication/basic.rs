@@ -77,8 +77,7 @@ mod tests {
     /// Verifies valid credentials receive 200 and invalid ones receive 401
     /// without a socket.
     #[test]
-    fn basic_auth_route_accepts_valid_and_rejects_invalid_credentials()
-    -> anyhow::Result<()> {
+    fn basic_auth_route_accepts_valid_and_rejects_invalid_credentials() -> anyhow::Result<()> {
         let request = basic_auth_request(
             &Client::new(),
             "https://example.test/protected",

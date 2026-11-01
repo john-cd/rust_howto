@@ -16,10 +16,7 @@ use gix::object::tree::diff::Action;
 
 /// Counts the commits (among the last `limit`, first parent only) that
 /// touched each path.
-fn churn(
-    repo: &gix::Repository,
-    limit: usize,
-) -> anyhow::Result<BTreeMap<String, usize>> {
+fn churn(repo: &gix::Repository, limit: usize) -> anyhow::Result<BTreeMap<String, usize>> {
     let mut counts = BTreeMap::new();
     let head = repo.head_commit()?;
     for info in head.ancestors().first_parent_only().all()?.take(limit) {
@@ -42,10 +39,7 @@ fn churn(
 }
 
 /// Finds the repository containing `path` and counts recent path changes.
-fn churn_at(
-    path: &Path,
-    limit: usize,
-) -> anyhow::Result<BTreeMap<String, usize>> {
+fn churn_at(path: &Path, limit: usize) -> anyhow::Result<BTreeMap<String, usize>> {
     let repo = gix::discover(path)?;
     churn(&repo, limit)
 }

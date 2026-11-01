@@ -12,8 +12,7 @@ use anyhow::Result;
 
 /// Sends a GET request to <http://httpbin.org/get> and prints the response.
 fn main() -> Result<()> {
-    let res = reqwest::blocking::get("https://httpbin.org/get")?
-        .error_for_status()?;
+    let res = reqwest::blocking::get("https://httpbin.org/get")?.error_for_status()?;
 
     println!("Status: {}", res.status());
     println!("Headers:\n{:#?}", res.headers());

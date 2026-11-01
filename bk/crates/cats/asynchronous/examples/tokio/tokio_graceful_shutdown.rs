@@ -34,9 +34,7 @@ async fn countdown() {
 
 /// An example subsystem that either counts down or waits for a shutdown
 /// request.
-async fn countdown_subsystem(
-    subsys: &mut SubsystemHandle,
-) -> anyhow::Result<()> {
+async fn countdown_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
     tracing::info!("Starting countdown ...");
     tokio::select! {
         // `on_shutdown_requested` waits for the shutdown mode to be triggered.
@@ -69,10 +67,8 @@ async fn panic_subsystem(_subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
 /// A subsystem that starts the other subsystems as its children.
 async fn parent_subsystem(subsys: &mut SubsystemHandle) -> anyhow::Result<()> {
     tracing::info!("Parent subsystem started.");
-    let nested =
-        subsys.start(SubsystemBuilder::new("Nested", nested_subsystem));
-    let _panic_sub =
-        subsys.start(SubsystemBuilder::new("Panic", panic_subsystem));
+    let nested = subsys.start(SubsystemBuilder::new("Nested", nested_subsystem));
+    let _panic_sub = subsys.start(SubsystemBuilder::new("Panic", panic_subsystem));
 
     // Shut down only the nested subsystem while the parent continues running.
     tokio::time::sleep(Duration::from_millis(100)).await;
@@ -127,8 +123,7 @@ mod tests {
 
     /// Runs the tokio graceful shutdown example through its entry point.
     #[test]
-    fn test_tokio_graceful_shutdown_example_entry_point() -> anyhow::Result<()>
-    {
+    fn test_tokio_graceful_shutdown_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }

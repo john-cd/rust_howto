@@ -33,10 +33,7 @@ fn total_size(root: &Path) -> Result<u64> {
                     entry
                         .metadata()
                         .with_context(|| {
-                            format!(
-                                "reading metadata for {}",
-                                entry.path().display()
-                            )
+                            format!("reading metadata for {}", entry.path().display())
                         })?
                         .len(),
                 )

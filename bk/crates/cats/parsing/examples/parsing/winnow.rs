@@ -21,8 +21,7 @@ fn parse_list(input: &mut &str) -> ModalResult<Vec<i32>> {
 /// Parses a comma-separated list of numbers with `winnow`.
 fn main() -> anyhow::Result<()> {
     let mut input = "1,2,3,4,5";
-    let result = parse_list(&mut input)
-        .map_err(|e| anyhow::anyhow!("Parsing failed: {e:?}"))?;
+    let result = parse_list(&mut input).map_err(|e| anyhow::anyhow!("Parsing failed: {e:?}"))?;
 
     println!("Parsed numbers: {result:?}");
     assert_eq!(result, vec![1, 2, 3, 4, 5]);

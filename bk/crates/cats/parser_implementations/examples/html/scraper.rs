@@ -29,9 +29,8 @@ fn main() -> anyhow::Result<()> {
 
 /// Returns the text of elements that match a CSS selector.
 fn select_text(document: &Html, query: &str) -> anyhow::Result<Vec<String>> {
-    let selector = Selector::parse(query).map_err(|error| {
-        anyhow::anyhow!("invalid CSS selector {query:?}: {error:?}")
-    })?;
+    let selector = Selector::parse(query)
+        .map_err(|error| anyhow::anyhow!("invalid CSS selector {query:?}: {error:?}"))?;
     let text = document
         .select(&selector)
         .map(|element| element.text().collect::<String>().trim().to_owned())
@@ -57,9 +56,8 @@ mod tests {
     /// Selects only matching headings and preserves their document order.
     #[test]
     fn scraper_selects_html_by_css_selector() -> anyhow::Result<()> {
-        let document = Html::parse_document(
-            "<article><h2>First</h2><p>Skip</p><h2>Second</h2></article>",
-        );
+        let document =
+            Html::parse_document("<article><h2>First</h2><p>Skip</p><h2>Second</h2></article>");
 
         let headings = select_text(&document, "article > h2")?;
 

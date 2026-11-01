@@ -27,10 +27,9 @@ fn fragment_main() -> @location(0) vec4<f32> {
 ///
 /// No GPU, window, or driver is involved: `naga` is a pure Rust translator.
 fn compile_to_spirv() -> anyhow::Result<Vec<u32>> {
-    let module = wgsl::parse_str(SHADER)
-        .map_err(|error| anyhow::anyhow!(error.emit_to_string(SHADER)))?;
-    let info = Validator::new(ValidationFlags::all(), Capabilities::all())
-        .validate(&module)?;
+    let module =
+        wgsl::parse_str(SHADER).map_err(|error| anyhow::anyhow!(error.emit_to_string(SHADER)))?;
+    let info = Validator::new(ValidationFlags::all(), Capabilities::all()).validate(&module)?;
     let words = spv::write_vec(&module, &info, &spv::Options::default(), None)?;
     Ok(words)
 }

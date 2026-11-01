@@ -15,8 +15,7 @@ use std::rc::Rc;
 /// Shares a mutable vector between several owners with `Rc<RefCell<_>>`.
 fn main() {
     // Create a vector that can be shared and mutated through `RefCell`.
-    let shared_vec: Rc<RefCell<Vec<i32>>> =
-        Rc::new(RefCell::new(vec![1, 2, 3]));
+    let shared_vec: Rc<RefCell<Vec<i32>>> = Rc::new(RefCell::new(vec![1, 2, 3]));
 
     // Clone the `Rc` to create another owner of the same vector.
     let owner2 = Rc::clone(&shared_vec);

@@ -20,15 +20,12 @@ fn main() {
 
     // Adapt each field predicate to the `File` record.
     let name_contains_predicate = predicate::str::contains(name_contains);
-    let name_predicate = predicate::function(|file: &File| {
-        name_contains_predicate.eval(file.name.as_str())
-    })
-    .fn_name("name_contains");
+    let name_predicate =
+        predicate::function(|file: &File| name_contains_predicate.eval(file.name.as_str()))
+            .fn_name("name_contains");
     let min_size_predicate = predicate::gt(min_size_kb);
-    let size_predicate = predicate::function(|file: &File| {
-        min_size_predicate.eval(&file.size_kb)
-    })
-    .fn_name("size_gt");
+    let size_predicate = predicate::function(|file: &File| min_size_predicate.eval(&file.size_kb))
+        .fn_name("size_gt");
 
     // Combine the simple predicates to require both conditions.
     let combined_filter = name_predicate.and(size_predicate);

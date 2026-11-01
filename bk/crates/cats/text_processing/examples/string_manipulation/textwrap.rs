@@ -51,8 +51,7 @@ fn main() {
     println!("\nWith hyphenation enabled:");
     let dictionary = Standard::from_embedded(Language::EnglishUS)
         .expect("the textwrap example invariant should hold");
-    let options =
-        Options::new(15).word_splitter(WordSplitter::Hyphenation(dictionary));
+    let options = Options::new(15).word_splitter(WordSplitter::Hyphenation(dictionary));
     let hyphenated = fill(text, &options);
     println!("{hyphenated}");
 
@@ -64,8 +63,7 @@ fn main() {
     println!("{long_word_wrapped}");
 
     // Preserving indentation of the first line.
-    let indented_text =
-        "    This paragraph has\nan indentation that should be preserved.";
+    let indented_text = "    This paragraph has\nan indentation that should be preserved.";
     println!("\nPreserving first-line indent:");
     let options = Options::new(30).subsequent_indent("    ");
     let preserved = fill(indented_text, &options);
@@ -91,8 +89,7 @@ mod tests {
     /// No wrapped line exceeds the width.
     #[test]
     fn lines_fit_the_width() {
-        let text =
-            "The quick brown fox jumps over the lazy dog and keeps running.";
+        let text = "The quick brown fox jumps over the lazy dog and keeps running.";
         let lines = wrap(text, 20);
         assert!(lines.len() > 1);
         assert!(lines.iter().all(|l| l.len() <= 20), "{lines:?}");
@@ -124,8 +121,7 @@ mod tests {
     #[test]
     fn hyphenation_splits_words() -> Result<(), Box<dyn std::error::Error>> {
         let dictionary = Standard::from_embedded(Language::EnglishUS)?;
-        let options = Options::new(10)
-            .word_splitter(WordSplitter::Hyphenation(dictionary));
+        let options = Options::new(10).word_splitter(WordSplitter::Hyphenation(dictionary));
         let lines = wrap("extraordinary circumstances", &options);
         assert!(lines.iter().any(|l| l.ends_with('-')), "{lines:?}");
         Ok(())

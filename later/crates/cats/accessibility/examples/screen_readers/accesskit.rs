@@ -31,11 +31,7 @@ fn accessibility_tree() -> TreeUpdate {
     label.set_value("Changes are ready to save");
 
     TreeUpdate {
-        nodes: vec![
-            (window_id, window),
-            (button_id, button),
-            (label_id, label),
-        ],
+        nodes: vec![(window_id, window), (button_id, button), (label_id, label)],
         tree: Some(TreeInfo::new(window_id)),
         tree_id: TreeId::ROOT,
         focus: button_id,

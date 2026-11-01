@@ -71,12 +71,8 @@ fn select() -> (bool, i32) {
         })
         .wait();
     let result = match selected {
-        Selected::Boolean(value) => {
-            (value, rx1.recv().expect("second value was sent"))
-        }
-        Selected::Number(value) => {
-            (rx0.recv().expect("first value was sent"), value)
-        }
+        Selected::Boolean(value) => (value, rx1.recv().expect("second value was sent")),
+        Selected::Number(value) => (rx0.recv().expect("first value was sent"), value),
     };
     producer.join().expect("producer should finish");
     result

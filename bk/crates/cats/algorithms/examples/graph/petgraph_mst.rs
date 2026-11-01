@@ -13,16 +13,14 @@
 //! `petgraph` uses **Kruskal's algorithm** internally:
 //! 1. Sorts all graph edges in non-decreasing order of their weights.
 //! 2. Iteratively inspects edges from lightest to heaviest.
-//! 3. Adds an edge to the spanning tree if and only if it connects two
-//!    previously disconnected components (using a Disjoint-Set / Union-Find
-//!    structure), preventing cycle formation.
+//! 3. Adds an edge to the spanning tree if and only if it connects two previously disconnected
+//!    components (using a Disjoint-Set / Union-Find structure), preventing cycle formation.
 //!
 //! ### Purpose & Use Cases
-//! - **Network Infrastructure Design**: Laying telecommunication cables,
-//!   electrical grids, or water pipelines to connect all locations at minimal
-//!   construction cost.
-//! - **Approximation Algorithms**: Serving as a building block for TSP
-//!   (Travelling Salesperson Problem) heuristics and clustering algorithms.
+//! - **Network Infrastructure Design**: Laying telecommunication cables, electrical grids, or water
+//!   pipelines to connect all locations at minimal construction cost.
+//! - **Approximation Algorithms**: Serving as a building block for TSP (Travelling Salesperson
+//!   Problem) heuristics and clustering algorithms.
 
 use petgraph::Graph;
 use petgraph::algo::min_spanning_tree;
@@ -55,8 +53,7 @@ fn main() {
     // `min_spanning_tree` returns an iterator over tree elements (nodes and
     // selected edges).
     let mst_elements = min_spanning_tree(&graph);
-    let mst_graph =
-        Graph::<&str, u32, petgraph::Undirected>::from_elements(mst_elements);
+    let mst_graph = Graph::<&str, u32, petgraph::Undirected>::from_elements(mst_elements);
 
     // Print the resulting MST graph rendered in Graphviz DOT format.
     println!(

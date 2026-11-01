@@ -8,8 +8,7 @@
 //! In this example, nodes are represented as 2D coordinate positions `(x, y)`
 //! on a plane, and directed edges represent valid travel segments between nodes
 //! with associated numerical costs:
-//! - Node `A` `(0, 0)` connects to `B` `(1, 0)` (cost 1) and `D` `(1, 1)` (cost
-//!   2).
+//! - Node `A` `(0, 0)` connects to `B` `(1, 0)` (cost 1) and `D` `(1, 1)` (cost 2).
 //! - Node `B` `(1, 0)` connects to `C` `(2, 0)` (cost 1).
 //! - Node `C` `(2, 0)` connects to `E` `(2, 1)` (cost 1).
 //! - Node `D` `(1, 1)` connects to `E` `(2, 1)` (cost 1).
@@ -32,10 +31,8 @@
 //! guide its search toward the target. It evaluates candidate nodes using the
 //! cost function:
 //! $$f(n) = g(n) + h(n)$$
-//! - **$g(n)$**: The exact cost incurred to travel from the start node to node
-//!   $n$.
-//! - **$h(n)$**: An estimated cost (heuristic) to travel from node $n$ to the
-//!   goal.
+//! - **$g(n)$**: The exact cost incurred to travel from the start node to node $n$.
+//! - **$h(n)$**: An estimated cost (heuristic) to travel from node $n$ to the goal.
 //! - **$f(n)$**: The estimated total cost of a path passing through node $n$.
 //!
 //! ### Heuristic Admissibility

@@ -29,10 +29,7 @@ fn main() -> anyhow::Result<()> {
     println!("Current date and time (UTC): {now}");
 
     // Parse a date from a string.
-    let date = Date::parse(
-        "2025-01-02",
-        &format_description!("[year]-[month]-[day]"),
-    )?;
+    let date = Date::parse("2025-01-02", &format_description!("[year]-[month]-[day]"))?;
     println!("Parsed date: {date}");
 
     // Create a specific time using `Time::from_hms()`.
@@ -48,8 +45,7 @@ fn main() -> anyhow::Result<()> {
     println!("Date and time after 5 hours: {later}");
 
     // Format a date and time as a string.
-    let format =
-        format_description!("[year]-[month]-[day] [hour]:[minute]:[second]");
+    let format = format_description!("[year]-[month]-[day] [hour]:[minute]:[second]");
     let formatted = datetime!(2025-01-02 12:30 UTC).format(&format)?;
     println!("Formatted fixed date and time: {formatted}");
     let rfc3339 = OffsetDateTime::parse("2025-01-02T12:30:00Z", &Rfc3339)?;

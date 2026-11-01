@@ -19,9 +19,7 @@ fn main() {
     env_logger::init();
 
     execute_query("DROP TABLE students");
-    println!(
-        "log_debug example: set RUST_LOG=debug to see the debug log above"
-    );
+    println!("log_debug example: set RUST_LOG=debug to see the debug log above");
 }
 
 // ANCHOR_END: example
@@ -38,13 +36,9 @@ mod tests {
     /// Runs the log debug example through its entry point.
     #[test]
     fn test_log_debug_example_entry_point() {
-        isolated::run(
-            module_path!(),
-            "test_log_debug_example_entry_point",
-            || {
-                main();
-            },
-        );
+        isolated::run(module_path!(), "test_log_debug_example_entry_point", || {
+            main();
+        });
     }
 
     // output-only: the example only emits log records, and the process-wide

@@ -9,8 +9,7 @@ use duct::cmd;
 
 /// Runs `git status --short --ignore-submodules=all` and prints its output.
 fn main() -> anyhow::Result<()> {
-    let output =
-        cmd!("git", "status", "--short", "--ignore-submodules=all").read()?;
+    let output = cmd!("git", "status", "--short", "--ignore-submodules=all").read()?;
     println!("{output}");
     Ok(())
 }

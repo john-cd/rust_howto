@@ -8,11 +8,10 @@
 //! generic `M: AsRef<MediaFile>` bound accepts any type that can lend one.
 //!
 //! Prefer the simpler options first:
-//! - A narrow accessor (`fn get_file_size_bytes(&self)`) when callers need one
-//!   or two fields: it exposes only what is needed and hides the layout.
-//! - A domain-specific trait (for example `trait Media { fn id(&self) -> &str;
-//!   }`) when functions must work with several unrelated types: it names the
-//!   capability instead of the storage layout.
+//! - A narrow accessor (`fn get_file_size_bytes(&self)`) when callers need one or two fields: it
+//!   exposes only what is needed and hides the layout.
+//! - A domain-specific trait (for example `trait Media { fn id(&self) -> &str; }`) when functions
+//!   must work with several unrelated types: it names the capability instead of the storage layout.
 //! - Taking `&MediaFile` directly and letting the caller pass `&image.media`.
 //!
 //! Reach for `AsRef` only when many functions already take `&MediaFile` and

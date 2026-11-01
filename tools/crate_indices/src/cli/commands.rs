@@ -11,7 +11,8 @@ use clap_builder::builder::ValueHint;
 /// Builds the CLI user interface
 pub(super) fn cli() -> Command {
     clap::command!() // reads name, version, author, and description from `Cargo.toml`
-        .help_expected(true) // Panic if help descriptions are omitted. This choice is propagated to all child subcommands.
+        .help_expected(true) // Panic if help descriptions are omitted. This choice is propagated to all child
+        // subcommands.
         .flatten_help(true) // Flatten subcommand help into the current command's help
         .version(clap::crate_version!()) // Sets the version for the short version (-V) and help messages.
         .subcommand(subcommand_category_page())

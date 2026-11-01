@@ -56,10 +56,10 @@ impl StateMachine {
             (State::Idle, Event::Start) => State::Processing,
             (State::Processing, Event::Finish) => State::Completed,
             (State::Processing, Event::Fail) => State::Error,
-            (State::Processing, Event::Start) => State::Error, /* Illegal double start */
+            (State::Processing, Event::Start) => State::Error, // Illegal double start
             (State::Completed, Event::Reset) => State::Idle,
             (State::Error, Event::Reset) => State::Idle,
-            (_, _) => self.state, // Stay in the same state for other events
+            (..) => self.state, // Stay in the same state for other events
         };
     }
 

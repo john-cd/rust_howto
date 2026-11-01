@@ -32,11 +32,7 @@ pub fn latency_datum(service: &str, millis: f64) -> Result<MetricDatum> {
 }
 
 /// Sends the data points under `namespace`.
-pub async fn put_metrics(
-    client: &Client,
-    namespace: &str,
-    data: Vec<MetricDatum>,
-) -> Result<()> {
+pub async fn put_metrics(client: &Client, namespace: &str, data: Vec<MetricDatum>) -> Result<()> {
     client
         .put_metric_data()
         .namespace(namespace)

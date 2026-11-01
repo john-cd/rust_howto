@@ -67,8 +67,7 @@ mod tests {
     }
 
     #[test]
-    fn generated_bash_script_mentions_the_command_and_option()
-    -> std::io::Result<()> {
+    fn generated_bash_script_mentions_the_command_and_option() -> std::io::Result<()> {
         let dir = std::env::temp_dir().join("myapp-completions-test");
         std::fs::create_dir_all(&dir)?;
         let path = generate_to(Bash, &mut build_cli(), "myapp", &dir)?;

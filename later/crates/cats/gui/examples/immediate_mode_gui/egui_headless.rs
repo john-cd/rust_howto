@@ -12,12 +12,8 @@ use eframe::egui;
 ///
 /// Returns the output of the frame: the shapes to paint, the platform
 /// commands such as the clipboard text, and so on.
-pub fn run_frame(
-    ctx: &egui::Context,
-    add_contents: impl FnMut(&mut egui::Ui),
-) -> egui::FullOutput {
-    let screen =
-        egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
+pub fn run_frame(ctx: &egui::Context, add_contents: impl FnMut(&mut egui::Ui)) -> egui::FullOutput {
+    let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
         screen_rect: Some(screen),
         ..Default::default()

@@ -57,11 +57,8 @@ mod tests {
     #[test]
     fn test_question_mark_example_entry_point() {
         // Make sure the `temp` folder exists.
-        if !std::fs::exists("temp")
-            .expect("the question mark example invariant should hold")
-        {
-            std::fs::create_dir("temp")
-                .expect("example output should be writable");
+        if !std::fs::exists("temp").expect("the question mark example invariant should hold") {
+            std::fs::create_dir("temp").expect("example output should be writable");
         }
         main();
     }

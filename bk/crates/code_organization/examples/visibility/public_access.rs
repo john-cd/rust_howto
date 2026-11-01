@@ -56,9 +56,7 @@ fn main() {
     // ERROR: a_module::private_nested_module::private();
     // ERROR: a_module::private_nested_module::public();
     call_sibling();
-    println!(
-        "public_access example: public items in public modules are accessible"
-    );
+    println!("public_access example: public items in public modules are accessible");
 }
 
 // The same applies when calling from a sibling module.

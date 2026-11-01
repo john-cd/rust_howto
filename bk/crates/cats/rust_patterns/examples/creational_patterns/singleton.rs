@@ -47,8 +47,7 @@ static SETTINGS: OnceLock<Mutex<Settings>> = OnceLock::new();
 /// Returns the singleton, creating it on first use.
 fn get_settings() -> &'static Mutex<Settings> {
     // If SETTINGS hasn't been initialized yet, execute the closure.
-    SETTINGS
-        .get_or_init(|| Mutex::new(Settings::new("default_config".to_owned())))
+    SETTINGS.get_or_init(|| Mutex::new(Settings::new("default_config".to_owned())))
 }
 
 /// Reads and updates the settings through the singleton.
@@ -57,21 +56,18 @@ fn main() {
     assert!(SETTINGS.get().is_none());
 
     // Acquire a lock.
-    let settings_guard_1 =
-        get_settings().lock().expect("mutex should not be poisoned");
+    let settings_guard_1 = get_settings().lock().expect("mutex should not be poisoned");
     println!("Config 1: {}", settings_guard_1.get_config());
     drop(settings_guard_1); // Release the lock.
 
     {
-        let mut settings_guard_2 =
-            get_settings().lock().expect("mutex should not be poisoned");
+        let mut settings_guard_2 = get_settings().lock().expect("mutex should not be poisoned");
         // The `MutexGuard` provides mutable access.
         settings_guard_2.set_config("new_config".to_owned());
         println!("Config 2 updated!");
     } // Lock released here.
 
-    let settings_guard_3 =
-        get_settings().lock().expect("mutex should not be poisoned");
+    let settings_guard_3 = get_settings().lock().expect("mutex should not be poisoned");
     println!("Config 3: {}", settings_guard_3.get_config());
 }
 

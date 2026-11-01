@@ -16,8 +16,7 @@ use web_sys::window;
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 pub fn show_alert() -> Result<(), JsValue> {
-    let window = window()
-        .ok_or_else(|| JsValue::from_str("No browser window is available"))?;
+    let window = window().ok_or_else(|| JsValue::from_str("No browser window is available"))?;
     window.alert_with_message("Hello from Rust!")?;
     Ok(())
 }
@@ -26,9 +25,7 @@ pub fn show_alert() -> Result<(), JsValue> {
 /// Explains how to run the browser-only example on a native host.
 fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
-    println!(
-        "Build for wasm32-unknown-unknown to call the browser Window API."
-    );
+    println!("Build for wasm32-unknown-unknown to call the browser Window API.");
 }
 
 /// Runs the example's host-side runner.

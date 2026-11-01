@@ -4,10 +4,9 @@
 //! The Abstract Factory pattern creates families of related objects without
 //! tying-in to their concrete implementations.
 //!
-//! - The client code (in `main()`) doesn't need to know the specific classes of
-//!   the objects it creates.
-//! - The pattern ensures that the objects created belong to the same family,
-//!   enforcing consistency.
+//! - The client code (in `main()`) doesn't need to know the specific classes of the objects it
+//!   creates.
+//! - The pattern ensures that the objects created belong to the same family, enforcing consistency.
 //!
 //! The following example simulates building a UI library that needs to support
 //! different themes, like "Light" and "Dark." Each theme will have its own set

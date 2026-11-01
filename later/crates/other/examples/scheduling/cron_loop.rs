@@ -95,8 +95,7 @@ async fn demo() -> anyhow::Result<()> {
     })
     .await?;
 
-    let offsets: Vec<i64> =
-        started.iter().map(|t| (*t - start).num_seconds()).collect();
+    let offsets: Vec<i64> = started.iter().map(|t| (*t - start).num_seconds()).collect();
     assert_eq!(offsets, vec![10, 40, 50, 60]);
     Ok(())
 }
@@ -133,8 +132,7 @@ mod tests {
     }
 
     #[tokio::test(start_paused = true)]
-    async fn cancelled_token_stops_the_loop_immediately() -> anyhow::Result<()>
-    {
+    async fn cancelled_token_stops_the_loop_immediately() -> anyhow::Result<()> {
         let schedule = Schedule::from_str("*/10 * * * * *")?;
         let start = Utc
             .with_ymd_and_hms(2026, 10, 25, 12, 0, 0)
@@ -142,8 +140,7 @@ mod tests {
             .expect("a valid date");
         let token = CancellationToken::new();
         token.cancel();
-        let started =
-            run_cron(&schedule, &Clock::new(start), token, || async {}).await?;
+        let started = run_cron(&schedule, &Clock::new(start), token, || async {}).await?;
         assert!(started.is_empty());
         Ok(())
     }

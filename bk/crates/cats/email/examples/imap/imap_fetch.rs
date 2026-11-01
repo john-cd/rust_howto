@@ -40,8 +40,7 @@ pub fn summarize(raw: &[u8]) -> Option<Summary> {
 pub async fn run() -> Result<()> {
     let host = std::env::var("IMAP_HOST").context("IMAP_HOST is not set")?;
     let user = std::env::var("IMAP_USER").context("IMAP_USER is not set")?;
-    let password =
-        std::env::var("IMAP_PASSWORD").context("IMAP_PASSWORD is not set")?;
+    let password = std::env::var("IMAP_PASSWORD").context("IMAP_PASSWORD is not set")?;
 
     let stream = TcpStream::connect((host.as_str(), 993)).await?;
     let tls = TlsConnector::from(native_tls::TlsConnector::builder().build()?);

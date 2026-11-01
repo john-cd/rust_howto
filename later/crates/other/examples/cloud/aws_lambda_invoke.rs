@@ -58,11 +58,7 @@ pub async fn invoke_sync(
 }
 
 /// Queues an invocation and returns immediately (HTTP 202).
-pub async fn invoke_async(
-    client: &Client,
-    function_name: &str,
-    request: &Request,
-) -> Result<i32> {
+pub async fn invoke_async(client: &Client, function_name: &str, request: &Request) -> Result<i32> {
     let output = client
         .invoke()
         .function_name(function_name)

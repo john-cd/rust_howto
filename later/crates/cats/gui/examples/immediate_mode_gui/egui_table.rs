@@ -79,8 +79,7 @@ fn run_in_window() -> eframe::Result {
 fn main() {
     let ctx = egui::Context::default();
     let mut built = 0;
-    let screen =
-        egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
+    let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
         screen_rect: Some(screen),
         ..Default::default()

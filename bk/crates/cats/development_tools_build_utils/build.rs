@@ -28,9 +28,7 @@ fn cpp() {
 // ANCHOR: C_DEFINES
 /// Compile a C file with specific `#define` directives.
 fn cc_defines() {
-    println!(
-        "cargo::rerun-if-changed=examples/build_time_tooling/cc_defines.c"
-    );
+    println!("cargo::rerun-if-changed=examples/build_time_tooling/cc_defines.c");
     let version = format!("\"{}\"", env!("CARGO_PKG_VERSION"));
     // Compile the C example with defines supplied by this Cargo package.
     cc::Build::new()
@@ -59,9 +57,8 @@ fn out_dir_codegen() -> Result<(), Box<dyn std::error::Error>> {
         "pub const GENERATED_MESSAGE: &str = {:?};\n",
         message.trim_end()
     );
-    let out_dir = env::var_os("OUT_DIR").ok_or_else(|| {
-        io::Error::new(io::ErrorKind::NotFound, "Cargo did not set OUT_DIR")
-    })?;
+    let out_dir = env::var_os("OUT_DIR")
+        .ok_or_else(|| io::Error::new(io::ErrorKind::NotFound, "Cargo did not set OUT_DIR"))?;
     fs::write(
         PathBuf::from(out_dir).join("generated_message.rs"),
         generated,

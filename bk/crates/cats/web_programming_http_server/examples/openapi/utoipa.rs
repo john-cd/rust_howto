@@ -44,10 +44,9 @@ pub struct ApiDoc;
 /// The application router. `SwaggerUi` serves the interactive UI at
 /// `/swagger-ui` and the generated document at `/api-docs/openapi.json`.
 pub fn app() -> Router {
-    Router::new().route("/hello/{name}", get(hello)).merge(
-        SwaggerUi::new("/swagger-ui")
-            .url("/api-docs/openapi.json", ApiDoc::openapi()),
-    )
+    Router::new()
+        .route("/hello/{name}", get(hello))
+        .merge(SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", ApiDoc::openapi()))
 }
 
 /// Renders the document as pretty-printed JSON.
@@ -80,9 +79,7 @@ mod tests {
     }
 
     /// Calls a route in memory and collects its response status and body.
-    async fn get_status_and_body(
-        uri: &str,
-    ) -> anyhow::Result<(StatusCode, Vec<u8>)> {
+    async fn get_status_and_body(uri: &str) -> anyhow::Result<(StatusCode, Vec<u8>)> {
         let response = app()
             .oneshot(Request::get(uri).body(Body::empty())?)
             .await?;
@@ -95,8 +92,7 @@ mod tests {
     /// endpoint.
     #[tokio::test]
     async fn serves_the_spec_from_a_route() -> anyhow::Result<()> {
-        let (status, body) =
-            get_status_and_body("/api-docs/openapi.json").await?;
+        let (status, body) = get_status_and_body("/api-docs/openapi.json").await?;
         assert_eq!(status, StatusCode::OK);
         let doc: serde_json::Value = serde_json::from_slice(&body)?;
         assert!(doc["paths"]["/hello/{name}"].is_object());

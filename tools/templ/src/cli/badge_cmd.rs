@@ -20,18 +20,19 @@ use crate::CmdArgs2;
 /// - A description: "Create the markdown for (a) crate badge(s)".
 /// - A display order of `0` to prioritize its visibility in help messages.
 /// - An argument for specifying the crate name (defined in `super::arg_crate_name()`).
-/// - An optional argument `-a` or `--add` to specify a file to add the generated
-///   reference definitions to.
+/// - An optional argument `-a` or `--add` to specify a file to add the generated reference
+///   definitions to.
 ///
 /// The `-a` or `--add` argument has the following characteristics:
 /// - It is optional (`required(false)`).
-/// - It accepts a reference-definition file path with or without an equals sign
-///   (`-a /path/to/file` or `-a=/path/to/file`).
+/// - It accepts a reference-definition file path with or without an equals sign (`-a /path/to/file`
+///   or `-a=/path/to/file`).
 /// - It takes exactly one argument when provided (`num_args(1)`).
 /// - It expects a file path (`value_parser(clap::value_parser!(PathBuf))`).
-/// - It provides a file path hint to the shell for autocompletion (`value_hint(ValueHint::FilePath)`).
-/// - It has a help message explaining that the generated reference definitions
-///   are merged into the specified file if they do not exist already.
+/// - It provides a file path hint to the shell for autocompletion
+///   (`value_hint(ValueHint::FilePath)`).
+/// - It has a help message explaining that the generated reference definitions are merged into the
+///   specified file if they do not exist already.
 ///
 /// # Returns
 ///
@@ -61,8 +62,8 @@ pub(super) fn subcommand_badge() -> Command {
 ///
 /// # Arguments
 ///
-/// * `matches` - A reference to the `clap::ArgMatches` containing the parsed
-///   command-line arguments.
+/// * `matches` - A reference to the `clap::ArgMatches` containing the parsed command-line
+///   arguments.
 ///
 /// # Returns
 ///
@@ -71,8 +72,8 @@ pub(super) fn subcommand_badge() -> Command {
 ///
 /// The `CmdArgs2` struct contains:
 /// - `args`: A `Vec<String>` of crate names.
-/// - `file`: An `Option<PathBuf>` representing the path to the reference
-///   definition file, if provided.
+/// - `file`: An `Option<PathBuf>` representing the path to the reference definition file, if
+///   provided.
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs2> {
     let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("badge") {

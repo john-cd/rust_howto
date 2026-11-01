@@ -46,9 +46,7 @@ fn main() -> ExampleResult<()> {
 }
 
 /// Runs the example with command-line arguments supplied by the caller.
-fn run_with_args(
-    mut args: impl Iterator<Item = std::ffi::OsString>,
-) -> ExampleResult<()> {
+fn run_with_args(mut args: impl Iterator<Item = std::ffi::OsString>) -> ExampleResult<()> {
     run_guest(args.next().map(PathBuf::from))
 }
 
@@ -85,9 +83,7 @@ fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
 
     let export_names: Vec<_> = module
         .exports()
-        .map(|export| {
-            String::from_utf8_lossy(export.symbol().as_bytes()).into_owned()
-        })
+        .map(|export| String::from_utf8_lossy(export.symbol().as_bytes()).into_owned())
         .collect();
 
     println!("Loaded guest blob: {}", guest_path.display());
@@ -101,26 +97,16 @@ fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
     /// Name of the WebAssembly function exported by the guest module.
     const EXPECTED_EXPORT: &str = "add_one_with_host";
     if !export_names.iter().any(|name| name == EXPECTED_EXPORT) {
-        println!(
-            "The guest linked successfully, but it does not export `{EXPECTED_EXPORT}`."
-        );
-        println!(
-            "Use a guest that imports `host_increment` and exports `{EXPECTED_EXPORT}`."
-        );
+        println!("The guest linked successfully, but it does not export `{EXPECTED_EXPORT}`.");
+        println!("Use a guest that imports `host_increment` and exports `{EXPECTED_EXPORT}`.");
         return Ok(());
     }
 
     let mut state = HostState::default();
     let mut instance = instance_pre.instantiate()?;
     let result = instance
-        .call_typed_and_get_result::<u32, (u32,)>(
-            &mut state,
-            EXPECTED_EXPORT,
-            (41,),
-        )
-        .map_err(|error| {
-            io::Error::other(format!("guest call failed: {error:?}"))
-        })?;
+        .call_typed_and_get_result::<u32, (u32,)>(&mut state, EXPECTED_EXPORT, (41,))
+        .map_err(|error| io::Error::other(format!("guest call failed: {error:?}")))?;
 
     println!(
         "Guest returned {result}; host counter is {}.",
@@ -131,12 +117,8 @@ fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
 
 /// Prints how to run the example.
 fn print_usage() {
-    eprintln!(
-        "Usage: cargo run --example emulators -- <path-to-guest.polkavm>"
-    );
-    eprintln!(
-        "The guest should import `host_increment` and export `add_one_with_host`."
-    );
+    eprintln!("Usage: cargo run --example emulators -- <path-to-guest.polkavm>");
+    eprintln!("The guest should import `host_increment` and export `add_one_with_host`.");
 }
 
 /// Documents the contract that the guest program must fulfill.
@@ -192,16 +174,14 @@ mod tests {
     /// Verifies that a nonexistent guest blob returns an I/O error.
     #[test]
     fn missing_guest_file_is_an_error() {
-        let path =
-            std::env::temp_dir().join("rust_howto_no_such_guest.polkavm");
+        let path = std::env::temp_dir().join("rust_howto_no_such_guest.polkavm");
         assert!(run_guest(Some(path)).is_err());
     }
 
     /// Verifies that an invalid guest blob returns a parse error.
     #[test]
     fn invalid_guest_blob_is_an_error() {
-        let path =
-            std::env::temp_dir().join("rust_howto_invalid_guest.polkavm");
+        let path = std::env::temp_dir().join("rust_howto_invalid_guest.polkavm");
         fs::write(&path, b"not a polkavm blob").expect("temp dir is writable");
         let result = run_guest(Some(path.clone()));
         fs::remove_file(&path).expect("the file was just created");

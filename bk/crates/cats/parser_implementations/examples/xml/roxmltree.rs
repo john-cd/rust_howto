@@ -50,9 +50,7 @@ fn main() -> anyhow::Result<()> {
         }
 
         // Get categories.
-        if let Some(categories) =
-            book.children().find(|n| n.has_tag_name("categories"))
-        {
+        if let Some(categories) = book.children().find(|n| n.has_tag_name("categories")) {
             let category_list: Vec<&str> = categories
                 .children()
                 .filter(|n| n.has_tag_name("category"))

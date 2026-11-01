@@ -15,10 +15,7 @@ use std::time::Duration;
 use wait_timeout::ChildExt as _;
 
 /// Waits up to `limit` for `child`; returns `None` after killing it on timeout.
-fn wait_or_kill(
-    child: &mut Child,
-    limit: Duration,
-) -> std::io::Result<Option<ExitStatus>> {
+fn wait_or_kill(child: &mut Child, limit: Duration) -> std::io::Result<Option<ExitStatus>> {
     if let Some(status) = child.wait_timeout(limit)? {
         return Ok(Some(status));
     }

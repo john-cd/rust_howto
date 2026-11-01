@@ -7,13 +7,13 @@
 //! CSRF attacks trick an authenticated user's browser into submitting
 //! unauthorized requests to a target website. To protect state-changing
 //! requests (like POST forms):
-//! 1. **Token Generation**: The server generates a cryptographically random,
-//!    unpredictable token per session.
-//! 2. **Form Inclusion**: The server injects this token into an `<input
-//!    type="hidden">` form field when rendering HTML.
-//! 3. **Validation**: Upon receiving a POST request, the server extracts the
-//!    submitted token and performs a constant-time comparison against the token
-//!    stored in the user's server-side session.
+//! 1. **Token Generation**: The server generates a cryptographically random, unpredictable token
+//!    per session.
+//! 2. **Form Inclusion**: The server injects this token into an `<input type="hidden">` form field
+//!    when rendering HTML.
+//! 3. **Validation**: Upon receiving a POST request, the server extracts the submitted token and
+//!    performs a constant-time comparison against the token stored in the user's server-side
+//!    session.
 //!
 //! The token is random, stored in the server-side session, embedded in the
 //! form as a hidden field, and compared when the form is posted. A forged
@@ -38,9 +38,7 @@ async fn csrf_token(session: &Session) -> Result<String, StatusCode> {
     fn internal<E>(_: E) -> StatusCode {
         StatusCode::INTERNAL_SERVER_ERROR
     }
-    if let Some(token) =
-        session.get::<String>(TOKEN_KEY).await.map_err(internal)?
-    {
+    if let Some(token) = session.get::<String>(TOKEN_KEY).await.map_err(internal)? {
         return Ok(token);
     }
     let mut bytes = [0_u8; 32];
@@ -94,8 +92,7 @@ async fn change_email(
 
 /// Builds the application.
 pub fn app() -> Router {
-    let session_layer =
-        SessionManagerLayer::new(MemoryStore::default()).with_secure(false); // `true` when served over HTTPS.
+    let session_layer = SessionManagerLayer::new(MemoryStore::default()).with_secure(false); // `true` when served over HTTPS.
     Router::new()
         .route("/change-email", get(show_form).post(change_email))
         .layer(session_layer)
@@ -151,11 +148,7 @@ mod tests {
         Ok((cookie, token))
     }
 
-    async fn post(
-        app: &Router,
-        cookie: &str,
-        token: &str,
-    ) -> anyhow::Result<Response<Body>> {
+    async fn post(app: &Router, cookie: &str, token: &str) -> anyhow::Result<Response<Body>> {
         let request = Request::post("/change-email")
             .header(header::COOKIE, cookie)
             .header(header::CONTENT_TYPE, "application/x-www-form-urlencoded")

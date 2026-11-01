@@ -67,9 +67,7 @@ fn main() {
 
     let data_std_deviation = std_deviation(&data);
     println!("Standard deviation is {data_std_deviation:?}");
-    assert!(
-        matches!(data_std_deviation, Some(value) if (value - 3.6110942).abs() < 1e-6)
-    );
+    assert!(matches!(data_std_deviation, Some(value) if (value - 3.6110942).abs() < 1e-6));
 
     let zscore = match (data_mean, data_std_deviation) {
         (Some(mean), Some(std_deviation)) => {

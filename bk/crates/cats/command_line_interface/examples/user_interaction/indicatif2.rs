@@ -23,11 +23,16 @@ fn progress() {
     let pb = ProgressBar::new(100);
 
     // Set a custom style for the progress bar:
-    pb.set_style(ProgressStyle::default_bar()
-        // 40 characters wide. Has cyan as primary style color and blue as alternative style color.
-        .template("{spinner:.green} [{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
-        .expect("the indicatif2 example invariant should hold")
-        .progress_chars("=>."));
+    pb.set_style(
+        ProgressStyle::default_bar()
+            // 40 characters wide. Has cyan as primary style color and blue as alternative style
+            // color.
+            .template(
+                "{spinner:.green} [{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}",
+            )
+            .expect("the indicatif2 example invariant should hold")
+            .progress_chars("=>."),
+    );
 
     for _ in 0..100 {
         // Update the progress bar:

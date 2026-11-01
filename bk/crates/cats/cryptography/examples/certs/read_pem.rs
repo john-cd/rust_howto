@@ -29,8 +29,7 @@ fn read_pem_certificate(path: impl AsRef<Path>) -> anyhow::Result<Vec<u8>> {
 
 /// Writes a temporary local certificate, reads it as PEM, then removes it.
 fn main() -> anyhow::Result<()> {
-    let certified_key =
-        generate_simple_self_signed(vec!["localhost".to_owned()])?;
+    let certified_key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
     let nonce = SystemTime::now().duration_since(UNIX_EPOCH)?.as_nanos();
     let path = std::env::temp_dir().join(format!(
         "rust_howto_certificate_{}_{}.pem",
@@ -79,8 +78,7 @@ mod tests {
     #[test]
     fn reads_the_der_bytes_of_a_certificate_file() -> anyhow::Result<()> {
         let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
-        let dir = std::env::temp_dir()
-            .join(format!("read_pem_test_{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("read_pem_test_{}", std::process::id()));
         fs::create_dir_all(&dir)?;
         let path = dir.join("cert.pem");
         fs::write(&path, key.cert.pem())?;
@@ -93,8 +91,7 @@ mod tests {
     #[test]
     fn other_pem_labels_are_rejected() -> anyhow::Result<()> {
         let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
-        let dir = std::env::temp_dir()
-            .join(format!("read_pem_label_{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("read_pem_label_{}", std::process::id()));
         fs::create_dir_all(&dir)?;
         let path = dir.join("key.pem");
         fs::write(&path, key.signing_key.serialize_pem())?;
@@ -109,8 +106,7 @@ mod tests {
     #[test]
     fn missing_and_malformed_files_are_errors() -> anyhow::Result<()> {
         assert!(read_pem_certificate("/definitely/not/here.pem").is_err());
-        let dir = std::env::temp_dir()
-            .join(format!("read_pem_bad_{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("read_pem_bad_{}", std::process::id()));
         fs::create_dir_all(&dir)?;
         let path = dir.join("bad.pem");
         fs::write(&path, "not pem")?;

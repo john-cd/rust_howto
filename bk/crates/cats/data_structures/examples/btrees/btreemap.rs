@@ -62,9 +62,7 @@ fn main() {
     match entry {
         Entry::Occupied(mut occupied) => {
             let old_rating = occupied.get();
-            println!(
-                "Book '{book_title}' already exists with rating {old_rating}",
-            );
+            println!("Book '{book_title}' already exists with rating {old_rating}",);
             *occupied.get_mut() = new_rating; // Update in place.
             println!("Updated rating for '{book_title}' to {new_rating}");
         }

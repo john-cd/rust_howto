@@ -60,10 +60,7 @@ fn main() {
     println!("{config2:?}");
     println!(
         "{} {} {} {}",
-        config2.timeout,
-        config2.retries,
-        config2.endpoint,
-        config2.logging_enabled
+        config2.timeout, config2.retries, config2.endpoint, config2.logging_enabled
     );
 
     // We can also use struct update syntax to override specific fields:

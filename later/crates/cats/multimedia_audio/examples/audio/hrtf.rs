@@ -23,8 +23,7 @@ const HRIR_FIXTURE_BYTES: &[u8] = include_bytes!("fixture.hrir");
 
 /// Returns the root mean square (RMS) of a signal stream.
 fn rms(samples: impl Iterator<Item = f32>) -> f32 {
-    let (sum, count) =
-        samples.fold((0.0, 0), |(sum, count), s| (sum + s * s, count + 1));
+    let (sum, count) = samples.fold((0.0, 0), |(sum, count), s| (sum + s * s, count + 1));
     (sum / count as f32).sqrt()
 }
 
@@ -32,8 +31,7 @@ fn rms(samples: impl Iterator<Item = f32>) -> f32 {
 fn main() -> Result<(), Box<dyn Error>> {
     let sphere = HrirSphere::new(HRIR_FIXTURE_BYTES, SAMPLE_RATE)
         .map_err(|e| format!("invalid HRIR sphere: {e:?}"))?;
-    let mut processor =
-        HrtfProcessor::new(sphere, INTERPOLATION_STEPS, BLOCK_LEN);
+    let mut processor = HrtfProcessor::new(sphere, INTERPOLATION_STEPS, BLOCK_LEN);
 
     // The source must be exactly `interpolation_steps * block_len` samples.
     let source: Vec<f32> = (0..INTERPOLATION_STEPS * BLOCK_LEN)

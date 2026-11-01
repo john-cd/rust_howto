@@ -23,7 +23,8 @@ fn main() {
     let mut tt = TinyTemplate::new();
 
     // Define a template string with {placeholders}:
-    let template = "Hello, {name}! {{ if flag }}Welcome to {place}.{{ else }}Welcome home!{{ endif }}";
+    let template =
+        "Hello, {name}! {{ if flag }}Welcome to {place}.{{ else }}Welcome home!{{ endif }}";
     // Syntax summary:
     // Rendering values - { myvalue }
     // Conditionals - {{ if foo }}Foo is true{{ else }}Foo is false{{ endif }}
@@ -66,7 +67,8 @@ mod tests {
         main();
     }
 
-    const TEMPLATE: &str = "Hello, {name}! {{ if flag }}Welcome to {place}.{{ else }}Welcome home!{{ endif }}";
+    const TEMPLATE: &str =
+        "Hello, {name}! {{ if flag }}Welcome to {place}.{{ else }}Welcome home!{{ endif }}";
 
     #[derive(serde::Serialize)]
     struct Context {

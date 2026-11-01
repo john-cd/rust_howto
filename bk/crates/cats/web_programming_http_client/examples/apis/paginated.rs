@@ -130,8 +130,7 @@ impl<F: FnMut(u64) -> Result<Page>> Iterator for ReverseDependencies<F> {
                     self.next_page += 1;
                     self.seen += page.dependencies.len() as u64;
                     // Stop on an empty page, or once all items were seen.
-                    self.done =
-                        self.buffer.is_empty() || self.seen >= page.meta.total;
+                    self.done = self.buffer.is_empty() || self.seen >= page.meta.total;
                 }
                 Err(e) => {
                     self.done = true;
@@ -156,9 +155,10 @@ fn main() -> Result<()> {
     let fetch = |page: u64| -> Result<Page> {
         // Replace with `fetch_page(&Client::new(), "serde", page)` to query
         // crates.io.
-        let json = pages.get(page as usize - 1).copied().unwrap_or(
-            r#"{"dependencies":[],"versions":[],"meta":{"total":3}}"#,
-        );
+        let json = pages
+            .get(page as usize - 1)
+            .copied()
+            .unwrap_or(r#"{"dependencies":[],"versions":[],"meta":{"total":3}}"#);
         Ok(serde_json::from_str(json)?)
     };
 
@@ -212,16 +212,14 @@ mod tests {
     /// A failing fetch is yielded once, then iteration ends.
     #[test]
     fn fetch_error_ends_iteration() {
-        let mut iterator =
-            ReverseDependencies::new(|_| anyhow::bail!("network down"));
+        let mut iterator = ReverseDependencies::new(|_| anyhow::bail!("network down"));
         assert!(iterator.next().is_some_and(|item| item.is_err()));
         assert!(iterator.next().is_none());
     }
 
     /// Dependencies whose version is unknown are skipped.
     #[test]
-    fn unknown_versions_are_skipped() -> Result<(), Box<dyn std::error::Error>>
-    {
+    fn unknown_versions_are_skipped() -> Result<(), Box<dyn std::error::Error>> {
         let page: Page = serde_json::from_str(
             r#"{"dependencies":[{"version_id":9}],"versions":[],"meta":{"total":1}}"#,
         )?;

@@ -141,8 +141,7 @@ mod tests {
     }
 
     #[test]
-    fn defaults_apply_when_only_a_pattern_is_given()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn defaults_apply_when_only_a_pattern_is_given() -> Result<(), Box<dyn std::error::Error>> {
         let cli = Cli::try_parse_from(["app", "needle"])?;
         assert_eq!(cli.pattern.as_deref(), Some("needle"));
         assert_eq!(cli.port, 8080);
@@ -155,8 +154,7 @@ mod tests {
     #[test]
     fn repeated_debug_flags_are_counted_and_options_parsed()
     -> Result<(), Box<dyn std::error::Error>> {
-        let cli =
-            Cli::try_parse_from(["app", "-dd", "-p", "a/b", "p", "9000"])?;
+        let cli = Cli::try_parse_from(["app", "-dd", "-p", "a/b", "p", "9000"])?;
         assert_eq!(cli.debug, 2);
         assert_eq!(cli.path, Some(PathBuf::from("a/b")));
         assert_eq!(cli.port, 9000);
@@ -171,8 +169,7 @@ mod tests {
     }
 
     #[test]
-    fn read_subcommand_requires_files() -> Result<(), Box<dyn std::error::Error>>
-    {
+    fn read_subcommand_requires_files() -> Result<(), Box<dyn std::error::Error>> {
         let cli = Cli::try_parse_from(["app", "read", "-a", "f1", "f2"])?;
         match cli.command {
             Some(Commands::Read { all, file }) => {

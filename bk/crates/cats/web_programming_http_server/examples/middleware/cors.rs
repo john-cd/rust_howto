@@ -24,9 +24,7 @@ use tower_http::cors::Any;
 use tower_http::cors::CorsLayer;
 
 /// A simple handler that returns an empty response.
-async fn handle(
-    _request: Request<Full<Bytes>>,
-) -> Result<Response<Full<Bytes>>, Infallible> {
+async fn handle(_request: Request<Full<Bytes>>) -> Result<Response<Full<Bytes>>, Infallible> {
     Ok(Response::new(Full::default()))
 }
 

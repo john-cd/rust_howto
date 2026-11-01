@@ -23,8 +23,7 @@ fn config_from_source(
 
 /// Demonstrates an isolated environment source.
 fn main() -> anyhow::Result<()> {
-    let environment =
-        HashMap::from([("HOST".to_owned(), "1.1.1.1".to_owned())]);
+    let environment = HashMap::from([("HOST".to_owned(), "1.1.1.1".to_owned())]);
     let config = config_from_source(environment)?;
     assert_eq!(config.get("host"), Some(&"1.1.1.1".to_owned()));
     println!("Host: {}", config["host"]);
@@ -44,10 +43,8 @@ mod tests {
 
     /// Verifies a provided environment map is read without process mutation.
     #[test]
-    fn injected_environment_source_returns_the_expected_host()
-    -> anyhow::Result<()> {
-        let environment =
-            HashMap::from([("HOST".to_owned(), "192.0.2.1".to_owned())]);
+    fn injected_environment_source_returns_the_expected_host() -> anyhow::Result<()> {
+        let environment = HashMap::from([("HOST".to_owned(), "192.0.2.1".to_owned())]);
         let config = config_from_source(environment)?;
         assert_eq!(config.get("host"), Some(&"192.0.2.1".to_owned()));
         Ok(())

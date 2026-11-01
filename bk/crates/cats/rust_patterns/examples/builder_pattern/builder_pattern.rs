@@ -82,10 +82,7 @@ impl DatabaseConfigBuilder {
     }
 
     /// Sets the connection timeout in seconds.
-    fn connection_timeout_seconds(
-        mut self,
-        connection_timeout_seconds: u64,
-    ) -> Self {
+    fn connection_timeout_seconds(mut self, connection_timeout_seconds: u64) -> Self {
         self.connection_timeout_seconds = connection_timeout_seconds;
         self
     }

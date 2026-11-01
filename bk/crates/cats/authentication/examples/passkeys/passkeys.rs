@@ -102,8 +102,8 @@ impl RelyingParty {
         let user_id = account.map_or_else(Uuid::new_v4, |a| a.id);
         // Excluding existing credentials stops the same device registering
         // twice.
-        let existing: Option<Vec<_>> = account
-            .map(|a| a.passkeys.iter().map(|p| p.cred_id().clone()).collect());
+        let existing: Option<Vec<_>> =
+            account.map(|a| a.passkeys.iter().map(|p| p.cred_id().clone()).collect());
         let (options, state) = self
             .webauthn
             .start_passkey_registration(user_id, user, user, existing)?;
@@ -267,10 +267,7 @@ mod tests {
     }
 
     /// Asks the device to answer a fresh sign-in challenge for `alice`.
-    fn assertion(
-        s: &mut Setup,
-        origin: &Url,
-    ) -> Result<(Uuid, PublicKeyCredential)> {
+    fn assertion(s: &mut Setup, origin: &Url) -> Result<(Uuid, PublicKeyCredential)> {
         let (ticket, options) = s.rp.start_authentication("alice", s.now)?;
         let assertion = s
             .device

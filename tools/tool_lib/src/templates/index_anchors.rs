@@ -67,7 +67,8 @@ mod tests {
         assert_eq!(rendered, " ");
     }
 
-    /// Tests `create_index_anchors` with keywords containing special character sequences like colons and spaces.
+    /// Tests `create_index_anchors` with keywords containing special character sequences like
+    /// colons and spaces.
     #[test]
     fn test_create_index_anchors_special_characters() {
         let keywords = vec!["tokio::spawn", "hello world"];
@@ -85,7 +86,8 @@ mod tests {
         assert_eq!(rendered, "{{hi:}} ");
     }
 
-    /// Tests `create_index_anchors` with keywords containing leading, trailing, and tab/newline whitespace.
+    /// Tests `create_index_anchors` with keywords containing leading, trailing, and tab/newline
+    /// whitespace.
     #[test]
     fn test_create_index_anchors_whitespace_keywords() {
         let keywords = vec!["  leading", "trailing  ", "\ttab\n"];

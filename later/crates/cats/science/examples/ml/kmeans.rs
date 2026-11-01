@@ -33,8 +33,7 @@ fn cluster_synthetic_points() -> Result<Vec<usize>, Box<dyn Error>> {
         [10.1, 10.1],
     ];
     let dataset = DatasetBase::from(records);
-    let model =
-        KMeans::params_with_rng(2, StdRng::seed_from_u64(42)).fit(&dataset)?;
+    let model = KMeans::params_with_rng(2, StdRng::seed_from_u64(42)).fit(&dataset)?;
 
     Ok(model.predict(&dataset).to_vec())
 }
@@ -61,11 +60,9 @@ mod tests {
 
     /// Verifies K-means assigns every point to one of two clusters.
     #[test]
-    fn seeded_kmeans_labels_every_point_in_two_clusters()
-    -> Result<(), Box<dyn Error>> {
+    fn seeded_kmeans_labels_every_point_in_two_clusters() -> Result<(), Box<dyn Error>> {
         let labels = cluster_synthetic_points()?;
-        let cluster_count =
-            labels.iter().copied().collect::<BTreeSet<_>>().len();
+        let cluster_count = labels.iter().copied().collect::<BTreeSet<_>>().len();
 
         assert_eq!(labels.len(), 8);
         assert_eq!(cluster_count, 2);

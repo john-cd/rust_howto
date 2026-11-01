@@ -67,8 +67,7 @@ mod tests {
     use super::*;
 
     /// Every example is exposed as a subcommand.
-    const SUBCOMMANDS: &[&str] =
-        &["cell", "once_cell", "rc_refcell", "refcell"];
+    const SUBCOMMANDS: &[&str] = &["cell", "once_cell", "rc_refcell", "refcell"];
 
     /// The command-line definition is internally consistent.
     #[test]
@@ -104,8 +103,7 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"])
-            .expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli);
     }

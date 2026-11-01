@@ -29,8 +29,7 @@ struct BuilderOptions {
 ///
 /// Returns a Darling error for malformed input or unknown attributes.
 fn parse_options(input: TokenStream) -> darling::Result<BuilderOptions> {
-    let input: DeriveInput =
-        syn::parse2(input).map_err(darling::Error::from)?;
+    let input: DeriveInput = syn::parse2(input).map_err(darling::Error::from)?;
     BuilderOptions::from_derive_input(&input)
 }
 
@@ -41,8 +40,8 @@ fn parse_options(input: TokenStream) -> darling::Result<BuilderOptions> {
 /// Returns an error if the valid example input cannot be parsed.
 fn main() -> Result<()> {
     let valid = quote! { #[builder(prefix = "with_")] struct Foo; };
-    let options = parse_options(valid)
-        .map_err(|error| anyhow::anyhow!(error.write_errors().to_string()))?;
+    let options =
+        parse_options(valid).map_err(|error| anyhow::anyhow!(error.write_errors().to_string()))?;
     println!("{} uses prefix {:?}", options.ident, options.prefix);
 
     let invalid = quote! { #[builder(unknown = "value")] struct Foo; };

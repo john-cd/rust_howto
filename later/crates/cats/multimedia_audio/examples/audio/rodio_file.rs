@@ -30,8 +30,7 @@ fn make_wav() -> Result<Vec<u8>, Box<dyn Error>> {
     let mut writer = WavWriter::new(&mut cursor, spec)?;
     for sample in 0..800 {
         let phase = std::f32::consts::TAU * 440.0 * sample as f32 / 8_000.0;
-        writer
-            .write_sample((phase.sin() * f32::from(i16::MAX) * 0.5) as i16)?;
+        writer.write_sample((phase.sin() * f32::from(i16::MAX) * 0.5) as i16)?;
     }
     writer.finalize()?;
     Ok(cursor.into_inner())

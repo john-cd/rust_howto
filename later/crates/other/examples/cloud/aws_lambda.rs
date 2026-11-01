@@ -35,9 +35,7 @@ struct Response {
 }
 
 /// Handles a request by returning a greeting.
-async fn function_handler(
-    event: LambdaEvent<Request>,
-) -> Result<Response, Error> {
+async fn function_handler(event: LambdaEvent<Request>) -> Result<Response, Error> {
     let (payload, _context) = event.into_parts();
 
     Ok(Response {
@@ -73,8 +71,7 @@ mod tests {
         let request = Request {
             name: "Ada".to_owned(),
         };
-        let event =
-            LambdaEvent::new(request, lambda_runtime::Context::default());
+        let event = LambdaEvent::new(request, lambda_runtime::Context::default());
 
         let response = function_handler(event).await?;
 

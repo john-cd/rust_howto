@@ -1,9 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "needs AWS credentials (SES); the tests use mocks"
-)]
+#![expect(dead_code, reason = "needs AWS credentials (SES); the tests use mocks")]
 // ANCHOR: example
 //! Send an HTML and plain-text email with Amazon SES v2.
 //!
@@ -31,11 +28,7 @@ fn content(text: &str) -> Result<Content> {
 }
 
 /// Builds the message: clients that cannot render HTML fall back to the text.
-pub fn build_email(
-    subject: &str,
-    text: &str,
-    html: &str,
-) -> Result<EmailContent> {
+pub fn build_email(subject: &str, text: &str, html: &str) -> Result<EmailContent> {
     let body = Body::builder()
         .text(content(text)?)
         .html(content(html)?)

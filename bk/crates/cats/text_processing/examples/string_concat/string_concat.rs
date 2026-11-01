@@ -129,8 +129,7 @@ fn concatenate_with_write_macro() {
     let part1 = "hello";
     let part2 = " world";
     let mut result = String::new();
-    write!(&mut result, "{part1} {part2}")
-        .expect("writing formatted text to a String cannot fail");
+    write!(&mut result, "{part1} {part2}").expect("writing formatted text to a String cannot fail");
     println!("{result}");
 }
 

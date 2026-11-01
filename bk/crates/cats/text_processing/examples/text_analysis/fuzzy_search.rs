@@ -20,8 +20,7 @@ fn main() -> anyhow::Result<()> {
     // A `Matcher` owns scratch memory: create it once and reuse it.
     let mut matcher = Matcher::new(Config::DEFAULT);
     // `Smart` case matching is case-insensitive unless the query has capitals.
-    let pattern =
-        Pattern::parse("opfl", CaseMatching::Smart, Normalization::Smart);
+    let pattern = Pattern::parse("opfl", CaseMatching::Smart, Normalization::Smart);
 
     // Candidates that do not match are dropped; the rest come back sorted by
     // descending score.

@@ -23,8 +23,7 @@ impl System<f64, Vector1<f64>> for ExponentialDecay {
 
 /// Integrates from 0 to 1 and returns the final value.
 fn solve_exponential_decay() -> f64 {
-    let mut solver =
-        Rk4::new(ExponentialDecay, 0.0, Vector1::new(1.0), 1.0, 0.1);
+    let mut solver = Rk4::new(ExponentialDecay, 0.0, Vector1::new(1.0), 1.0, 0.1);
     solver
         .integrate()
         .expect("the exponential-decay system should integrate");

@@ -56,16 +56,14 @@ mod tests {
     }
 
     #[test]
-    fn named_messagepack_round_trip_preserves_the_struct() -> anyhow::Result<()>
-    {
+    fn named_messagepack_round_trip_preserves_the_struct() -> anyhow::Result<()> {
         main()
     }
 
     /// `to_vec` writes a positional array, which is smaller than the map
     /// written by `to_vec_named` but depends on the field order.
     #[test]
-    fn compact_encoding_is_an_array_and_smaller_than_named()
-    -> anyhow::Result<()> {
+    fn compact_encoding_is_an_array_and_smaller_than_named() -> anyhow::Result<()> {
         let compact = rmp_serde::to_vec(&sample())?;
         let named = rmp_serde::to_vec_named(&sample())?;
         assert!(compact.len() < named.len());

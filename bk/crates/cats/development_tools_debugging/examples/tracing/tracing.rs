@@ -91,9 +91,7 @@ mod tests {
         fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
             self.0
                 .lock()
-                .map_err(|_| {
-                    std::io::Error::other("tracing output mutex is poisoned")
-                })?
+                .map_err(|_| std::io::Error::other("tracing output mutex is poisoned"))?
                 .extend_from_slice(data);
             Ok(data.len())
         }

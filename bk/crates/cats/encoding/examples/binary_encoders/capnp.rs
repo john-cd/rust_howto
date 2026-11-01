@@ -54,10 +54,8 @@ fn main() -> anyhow::Result<()> {
     let mut message = Builder::new_default();
 
     {
-        // 2. Initialize the root object using the generated Builder type for
-        //    'MyStruct'.
-        let mut my_struct =
-            message.init_root::<foo_capnp::my_struct::Builder>();
+        // 2. Initialize the root object using the generated Builder type for 'MyStruct'.
+        let mut my_struct = message.init_root::<foo_capnp::my_struct::Builder>();
 
         // 3. Set values on the fields.
         my_struct.set_name("Hello from Rust");
@@ -109,9 +107,7 @@ mod tests {
         serialize::write_message(&mut bytes, &message)?;
 
         let mut cursor = std::io::Cursor::new(&bytes[..bytes.len() - 4]);
-        assert!(
-            serialize::read_message(&mut cursor, ReaderOptions::new()).is_err()
-        );
+        assert!(serialize::read_message(&mut cursor, ReaderOptions::new()).is_err());
         Ok(())
     }
 
@@ -120,8 +116,7 @@ mod tests {
     fn unset_fields_read_back_as_defaults() -> anyhow::Result<()> {
         let mut message = Builder::new_default();
         message.init_root::<foo_capnp::my_struct::Builder>();
-        let reader =
-            message.get_root_as_reader::<foo_capnp::my_struct::Reader>()?;
+        let reader = message.get_root_as_reader::<foo_capnp::my_struct::Reader>()?;
         assert_eq!(reader.get_name()?, "");
         assert_eq!(reader.get_value(), 0);
         Ok(())

@@ -53,26 +53,17 @@ fn write_sample_image(path: &Path) -> Result<(), Box<dyn std::error::Error>> {
 /// # Errors
 ///
 /// Returns an error if the image cannot be read, processed, or written.
-fn process_image(
-    input_path: &Path,
-    output_path: &Path,
-) -> Result<Mat, Box<dyn std::error::Error>> {
+fn process_image(input_path: &Path, output_path: &Path) -> Result<Mat, Box<dyn std::error::Error>> {
     let input = imgcodecs::imread(input_path, imgcodecs::IMREAD_COLOR)?;
     if input.empty() {
-        return Err(std::io::Error::other(
-            "OpenCV could not load the input image",
-        )
-        .into());
+        return Err(std::io::Error::other("OpenCV could not load the input image").into());
     }
 
     let grayscale = to_grayscale(&input)?;
     let edges = detect_edges(&grayscale)?;
 
     if !imgcodecs::imwrite(output_path, &edges, &Vector::new())? {
-        return Err(std::io::Error::other(
-            "OpenCV could not write the edge image",
-        )
-        .into());
+        return Err(std::io::Error::other("OpenCV could not write the edge image").into());
     }
     Ok(edges)
 }
@@ -122,12 +113,7 @@ mod tests {
     /// Converts a generated BGR frame without changing its dimensions.
     #[test]
     fn grayscale_preserves_generated_frame_dimensions() -> opencv::Result<()> {
-        let input = Mat::new_rows_cols_with_default(
-            24,
-            32,
-            CV_8UC3,
-            Scalar::all(80.0),
-        )?;
+        let input = Mat::new_rows_cols_with_default(24, 32, CV_8UC3, Scalar::all(80.0))?;
         let grayscale = to_grayscale(&input)?;
         assert_eq!((grayscale.rows(), grayscale.cols()), (24, 32));
         assert_eq!(grayscale.channels(), 1);
@@ -137,8 +123,7 @@ mod tests {
     /// Computes an empty edge mask for a generated constant grayscale frame.
     #[test]
     fn canny_preserves_dimensions_of_a_constant_frame() -> opencv::Result<()> {
-        let input =
-            Mat::new_rows_cols_with_default(24, 32, CV_8UC1, Scalar::all(0.0))?;
+        let input = Mat::new_rows_cols_with_default(24, 32, CV_8UC1, Scalar::all(0.0))?;
         let edges = detect_edges(&input)?;
         assert_eq!((edges.rows(), edges.cols()), (24, 32));
         assert_eq!(count_non_zero(&edges)?, 0);
@@ -147,8 +132,7 @@ mod tests {
 
     /// Verifies that Canny processing writes a nonempty edge image.
     #[test]
-    fn canny_processing_writes_detected_edges()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn canny_processing_writes_detected_edges() -> Result<(), Box<dyn std::error::Error>> {
         let temp_dir = tempfile::tempdir()?;
         let input_path = temp_dir.path().join("input.png");
         let output_path = temp_dir.path().join("edges.png");

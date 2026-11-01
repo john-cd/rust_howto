@@ -79,20 +79,16 @@ impl<
         escape_domain_to_sql(ty, w, (self.0)())
     }
 }
-pub struct IterSql<
-    T: ToSql,
-    I: Iterator<Item = T> + ExactSizeIterator,
-    F: Fn() -> I + Sync,
->(pub F);
-impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>
-    std::fmt::Debug for IterSql<T, I, F>
+pub struct IterSql<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>(pub F);
+impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> std::fmt::Debug
+    for IterSql<T, I, F>
 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_tuple("ArrayFn").finish()
     }
 }
-impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>
-    ToSql for IterSql<T, I, F>
+impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> ToSql
+    for IterSql<T, I, F>
 {
     to_sql_checked!();
 
@@ -130,9 +126,7 @@ impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>
         }
     }
 }
-fn downcast(
-    len: usize,
-) -> Result<i32, Box<dyn std::error::Error + Sync + Send>> {
+fn downcast(len: usize) -> Result<i32, Box<dyn std::error::Error + Sync + Send>> {
     if len > i32::MAX as usize {
         Err("value too large to transmit".into())
     } else {

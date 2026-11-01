@@ -90,8 +90,7 @@ fn simulate_single_server_queue() -> QueueReport {
             EventKind::Departure => {
                 served += 1;
                 if let Some(customer) = waiting.pop_front() {
-                    total_wait_seconds +=
-                        u64::from(event.time - customer.arrival_time);
+                    total_wait_seconds += u64::from(event.time - customer.arrival_time);
                     events.push(Reverse(Event {
                         time: event.time + customer.service_duration,
                         priority: 0,

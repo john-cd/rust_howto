@@ -24,8 +24,7 @@ fn main() -> Result<(), std::io::Error> {
     let serialized_matrix = serde_json::to_string(&matrix)?;
 
     // Deserialize the matrix.
-    let deserialized_matrix: DMatrix<i32> =
-        serde_json::from_str(&serialized_matrix)?;
+    let deserialized_matrix: DMatrix<i32> = serde_json::from_str(&serialized_matrix)?;
 
     // Verify that `deserialized_matrix` is equal to `matrix`.
     assert!(deserialized_matrix == matrix);

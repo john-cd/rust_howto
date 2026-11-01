@@ -22,8 +22,7 @@ fn main() {
     let string_slice: Arc<str> = Arc::from("Slice.");
 
     // When needing to mutate a shared string, use interior mutability.
-    let shared_mutable_string: Arc<RwLock<String>> =
-        Arc::new(RwLock::new("String".to_owned()));
+    let shared_mutable_string: Arc<RwLock<String>> = Arc::new(RwLock::new("String".to_owned()));
 
     let mut handles = vec![];
     for i in 0..2 {
@@ -34,9 +33,9 @@ fn main() {
             thread::sleep(Duration::from_millis(50 * i));
             println!(
                 "Thread {i} - {string_slice_clone} {}",
-                shared_mutable_string_clone.read().expect(
-                    "the cow alternatives example invariant should hold"
-                )
+                shared_mutable_string_clone
+                    .read()
+                    .expect("the cow alternatives example invariant should hold")
             );
             // Edit the `String`.
             shared_mutable_string_clone
@@ -85,8 +84,7 @@ mod tests {
     }
 
     #[test]
-    fn test_rwlock_string_is_mutated_by_all_threads()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_rwlock_string_is_mutated_by_all_threads() -> Result<(), Box<dyn std::error::Error>> {
         let shared = Arc::new(RwLock::new("String".to_owned()));
         let handles: Vec<_> = (0..2)
             .map(|_| {

@@ -29,8 +29,7 @@ impl KillOnCloseJob {
     /// Creates an unnamed job with the "kill on close" limit.
     fn new() -> std::io::Result<Self> {
         // SAFETY: both arguments may be null; the call returns a new handle.
-        let handle =
-            unsafe { CreateJobObjectW(std::ptr::null(), std::ptr::null()) };
+        let handle = unsafe { CreateJobObjectW(std::ptr::null(), std::ptr::null()) };
         if handle.is_null() {
             return Err(std::io::Error::last_os_error());
         }
@@ -38,12 +37,9 @@ impl KillOnCloseJob {
         let job = Self(handle);
 
         // SAFETY: an all-zero value is a valid initial state for this struct.
-        let mut info: JOBOBJECT_EXTENDED_LIMIT_INFORMATION =
-            unsafe { mem::zeroed() };
-        info.BasicLimitInformation.LimitFlags =
-            JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE;
-        let size = u32::try_from(mem::size_of_val(&info))
-            .map_err(std::io::Error::other)?;
+        let mut info: JOBOBJECT_EXTENDED_LIMIT_INFORMATION = unsafe { mem::zeroed() };
+        info.BasicLimitInformation.LimitFlags = JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE;
+        let size = u32::try_from(mem::size_of_val(&info)).map_err(std::io::Error::other)?;
         // SAFETY: `info` is valid for the size passed.
         let ok = unsafe {
             SetInformationJobObject(
@@ -62,9 +58,7 @@ impl KillOnCloseJob {
     /// Puts `child` (and the processes it later starts) into the job.
     fn assign(&self, child: &Child) -> std::io::Result<()> {
         // SAFETY: both handles are valid for the duration of the call.
-        let ok = unsafe {
-            AssignProcessToJobObject(self.0, child.as_raw_handle().cast())
-        };
+        let ok = unsafe { AssignProcessToJobObject(self.0, child.as_raw_handle().cast()) };
         if ok == 0 {
             return Err(std::io::Error::last_os_error());
         }

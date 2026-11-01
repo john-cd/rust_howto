@@ -102,8 +102,7 @@ fn demonstrate_iteration() {
     }
 
     // Filter elements (keep only even numbers):
-    let even_numbers: Vec<i32> =
-        numbers.iter().filter(|&x| x % 2 == 0).copied().collect();
+    let even_numbers: Vec<i32> = numbers.iter().filter(|&x| x % 2 == 0).copied().collect();
     println!("Even numbers: {even_numbers:?}");
 
     // Map elements (square each number).
@@ -121,8 +120,7 @@ fn demonstrate_iteration() {
 
     // Chain iterators for complex operations:
     let numbers2: Vec<i32> = vec![10, 20, 30, 40, 50];
-    let filtered_squared_sum: i32 =
-        numbers2.iter().filter(|&x| x > &20).map(|&x| x * x).sum();
+    let filtered_squared_sum: i32 = numbers2.iter().filter(|&x| x > &20).map(|&x| x * x).sum();
 
     println!("Filtered squared sum: {filtered_squared_sum}");
 

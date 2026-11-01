@@ -41,8 +41,8 @@ fn ccsds_space_packet() -> [u8; 8] {
         .expect("CCSDS header should fit in the packet buffer");
     packet[header_len..header_len + payload.len()].copy_from_slice(&payload);
 
-    let (parsed_header, parsed_payload) = SpHeader::from_be_bytes(&packet)
-        .expect("serialized CCSDS header should parse");
+    let (parsed_header, parsed_payload) =
+        SpHeader::from_be_bytes(&packet).expect("serialized CCSDS header should parse");
     assert_eq!(parsed_header.apid().value(), 0x10);
     assert_eq!(parsed_header.seq_count().value(), 1);
     assert_eq!(parsed_header.packet_type(), PacketType::Tm);

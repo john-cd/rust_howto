@@ -52,9 +52,7 @@ mod tests {
 
     use super::*;
 
-    async fn body(
-        response: axum::response::Response,
-    ) -> anyhow::Result<String> {
+    async fn body(response: axum::response::Response) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();
         Ok(String::from_utf8(bytes.to_vec())?)
     }

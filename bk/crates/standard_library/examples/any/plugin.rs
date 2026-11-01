@@ -178,8 +178,7 @@ mod tests {
     }
 
     #[test]
-    fn test_context_register_get_and_get_mut()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_context_register_get_and_get_mut() -> Result<(), Box<dyn std::error::Error>> {
         let mut ctx = Context::default();
         assert!(ctx.get::<i32>().is_none());
         ctx.register(7_i32);
@@ -195,8 +194,7 @@ mod tests {
     }
 
     #[test]
-    fn test_plugins_cooperate_through_the_context()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_plugins_cooperate_through_the_context() -> Result<(), Box<dyn std::error::Error>> {
         let mut manager = PluginManager::default();
         manager.context.register(AppState { counter: 0 });
         manager.context.register(100i32);

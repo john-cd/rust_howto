@@ -56,25 +56,19 @@ where
     type Rejection = (StatusCode, &'static str);
 
     /// Reads and verifies a bearer token without consuming the request body.
-    async fn from_request_parts(
-        parts: &mut Parts,
-        state: &S,
-    ) -> Result<Self, Self::Rejection> {
-        let Extension(secret) =
-            Extension::<JwtSecret>::from_request_parts(parts, state)
-                .await
-                .map_err(|_| {
-                    (
-                        StatusCode::INTERNAL_SERVER_ERROR,
-                        "JWT validation key is not configured",
-                    )
-                })?;
-        let token = bearer_token(parts)
-            .ok_or((StatusCode::UNAUTHORIZED, "a bearer token is required"))?;
-        let claims =
-            jwt::verify_jwt(token, secret.as_bytes()).map_err(|_| {
-                (StatusCode::UNAUTHORIZED, "the bearer token is invalid")
+    async fn from_request_parts(parts: &mut Parts, state: &S) -> Result<Self, Self::Rejection> {
+        let Extension(secret) = Extension::<JwtSecret>::from_request_parts(parts, state)
+            .await
+            .map_err(|_| {
+                (
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    "JWT validation key is not configured",
+                )
             })?;
+        let token =
+            bearer_token(parts).ok_or((StatusCode::UNAUTHORIZED, "a bearer token is required"))?;
+        let claims = jwt::verify_jwt(token, secret.as_bytes())
+            .map_err(|_| (StatusCode::UNAUTHORIZED, "the bearer token is invalid"))?;
 
         Ok(Self(claims))
     }
@@ -86,8 +80,7 @@ fn bearer_token(parts: &Parts) -> Option<&str> {
     let mut words = value.split_ascii_whitespace();
     let scheme = words.next()?;
     let token = words.next()?;
-    (scheme.eq_ignore_ascii_case("Bearer") && words.next().is_none())
-        .then_some(token)
+    (scheme.eq_ignore_ascii_case("Bearer") && words.next().is_none()).then_some(token)
 }
 
 /// Returns whether `claims` contains the requested application role.
@@ -131,8 +124,7 @@ mod tests {
             exp: u64::MAX,
             roles: roles.iter().map(|role| (*role).to_owned()).collect(),
         };
-        jwt::create_jwt(&claims, TEST_SECRET)
-            .expect("the test key should sign the test claims")
+        jwt::create_jwt(&claims, TEST_SECRET).expect("the test key should sign the test claims")
     }
 
     /// Builds a request with an optional bearer token.
@@ -149,8 +141,7 @@ mod tests {
 
     /// Sends a request through the router and returns its status code.
     async fn call_admin(token: Option<&str>) -> StatusCode {
-        let secret =
-            JwtSecret::new(TEST_SECRET).expect("the test key is long enough");
+        let secret = JwtSecret::new(TEST_SECRET).expect("the test key is long enough");
         admin_router(secret)
             .oneshot(request_with_token(token))
             .await

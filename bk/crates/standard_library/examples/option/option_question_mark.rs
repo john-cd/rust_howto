@@ -69,10 +69,7 @@ mod tests {
             get_first_char_uppercase(Some("Hello".to_owned())),
             Some('H')
         );
-        assert_eq!(
-            get_first_char_uppercase(Some("1abc".to_owned())),
-            Some('1')
-        );
+        assert_eq!(get_first_char_uppercase(Some("1abc".to_owned())), Some('1'));
     }
 
     #[test]

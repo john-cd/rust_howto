@@ -51,8 +51,7 @@ fn show_bar_chart(ui: &mut egui::Ui) -> egui_plot::PlotResponse<()> {
 /// Lays out both plots for one frame without a window.
 fn main() {
     let ctx = egui::Context::default();
-    let screen =
-        egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
+    let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
         screen_rect: Some(screen),
         ..Default::default()

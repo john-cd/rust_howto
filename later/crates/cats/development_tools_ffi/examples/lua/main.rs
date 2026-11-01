@@ -74,9 +74,8 @@ mod tests {
     fn cli_lists_all_examples() {
         Cli::command().debug_assert();
         for name in ["mlua", "mlua_scripting", "mlua_userdata"] {
-            let cli = Cli::try_parse_from(["example", name]).unwrap_or_else(
-                |error| panic!("`{name}` should parse: {error}"),
-            );
+            let cli = Cli::try_parse_from(["example", name])
+                .unwrap_or_else(|error| panic!("`{name}` should parse: {error}"));
             assert!(cli.command.is_some());
         }
     }

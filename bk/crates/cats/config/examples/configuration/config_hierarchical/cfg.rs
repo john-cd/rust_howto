@@ -29,13 +29,11 @@ pub(crate) fn read_settings(
         .set_default("service.port", 80)?
         .add_source(File::from(config_dir.join("default.toml")))
         .add_source(
-            File::from(config_dir.join(format!("{}.toml", cli_args.run_mode)))
-                .required(false),
+            File::from(config_dir.join(format!("{}.toml", cli_args.run_mode))).required(false),
         );
 
     if let Some(custom_config_file_path) = cli_args.custom_config_file_path {
-        builder = builder
-            .add_source(File::from(custom_config_file_path).required(true));
+        builder = builder.add_source(File::from(custom_config_file_path).required(true));
     }
 
     let mut environment = Environment::with_prefix("APP")

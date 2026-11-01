@@ -40,10 +40,8 @@ fn main() -> Result<Vec<Cat>> {
 
     // Prepare SQL statements for inserting cat colors and cats outside the
     // loop.
-    let mut color_stmt =
-        conn.prepare("INSERT INTO cat_colors (name) values (?1)")?;
-    let mut cat_stmt =
-        conn.prepare("INSERT INTO cats (name, color_id) values (?1, ?2)")?;
+    let mut color_stmt = conn.prepare("INSERT INTO cat_colors (name) values (?1)")?;
+    let mut cat_stmt = conn.prepare("INSERT INTO cats (name, color_id) values (?1, ?2)")?;
 
     for (color, catnames) in &cat_colors {
         color_stmt.execute([color])?;
@@ -112,10 +110,7 @@ mod tests {
         let start = std::time::Instant::now();
         for i in 0..num_colors {
             let color = format!("Color_{i}");
-            conn.execute(
-                "INSERT INTO cat_colors (name) values (?1)",
-                [&color],
-            )?;
+            conn.execute("INSERT INTO cat_colors (name) values (?1)", [&color])?;
             let last_id: String = conn.last_insert_rowid().to_string();
             for j in 0..cats_per_color {
                 let cat = format!("Cat_{i}_{j}");
@@ -133,10 +128,8 @@ mod tests {
 
         // Prepare each statement once and reuse it throughout the loop.
         let start = std::time::Instant::now();
-        let mut color_stmt =
-            conn.prepare("INSERT INTO cat_colors (name) values (?1)")?;
-        let mut cat_stmt =
-            conn.prepare("INSERT INTO cats (name, color_id) values (?1, ?2)")?;
+        let mut color_stmt = conn.prepare("INSERT INTO cat_colors (name) values (?1)")?;
+        let mut cat_stmt = conn.prepare("INSERT INTO cats (name, color_id) values (?1, ?2)")?;
 
         for i in 0..num_colors {
             let color = format!("Color_{i}");

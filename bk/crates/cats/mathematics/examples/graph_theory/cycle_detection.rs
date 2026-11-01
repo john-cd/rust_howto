@@ -23,9 +23,7 @@ fn dependency_graph() -> DiGraph<&'static str, ()> {
 }
 
 /// Returns the graph's cyclic strongly connected components as task names.
-fn cyclic_components(
-    graph: &DiGraph<&'static str, ()>,
-) -> Vec<Vec<&'static str>> {
+fn cyclic_components(graph: &DiGraph<&'static str, ()>) -> Vec<Vec<&'static str>> {
     let mut cycles = tarjan_scc(graph)
         .into_iter()
         .filter(|component| {

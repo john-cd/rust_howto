@@ -23,10 +23,7 @@ use syn::parse_quote;
 /// # Errors
 ///
 /// Returns an error if a field is unnamed.
-fn generate_struct(
-    struct_name: &Ident,
-    fields: &[syn::Field],
-) -> Result<TokenStream> {
+fn generate_struct(struct_name: &Ident, fields: &[syn::Field]) -> Result<TokenStream> {
     let mut declarations = Vec::with_capacity(fields.len());
     let mut getters = Vec::with_capacity(fields.len());
 

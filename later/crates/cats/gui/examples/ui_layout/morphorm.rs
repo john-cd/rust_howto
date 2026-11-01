@@ -94,14 +94,7 @@ impl Cache for SimpleCache {
         self.rects.get(node).map_or(0.0, |r| r.1)
     }
 
-    fn set_bounds(
-        &mut self,
-        node: &Self::Node,
-        posx: f32,
-        posy: f32,
-        width: f32,
-        height: f32,
-    ) {
+    fn set_bounds(&mut self, node: &Self::Node, posx: f32, posy: f32, width: f32, height: f32) {
         self.rects.insert(*node, (posx, posy, width, height));
     }
 }

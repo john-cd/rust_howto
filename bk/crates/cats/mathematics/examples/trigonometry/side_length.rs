@@ -47,12 +47,8 @@ mod tests {
     /// the side. A zero angle degenerates to infinity.
     #[test]
     fn computes_known_triangles() {
-        assert!(
-            (hypotenuse(std::f64::consts::FRAC_PI_6, 5.0) - 10.0).abs() < 1e-12
-        );
-        assert!(
-            (hypotenuse(std::f64::consts::FRAC_PI_2, 7.0) - 7.0).abs() < 1e-12
-        );
+        assert!((hypotenuse(std::f64::consts::FRAC_PI_6, 5.0) - 10.0).abs() < 1e-12);
+        assert!((hypotenuse(std::f64::consts::FRAC_PI_2, 7.0) - 7.0).abs() < 1e-12);
         assert!((hypotenuse(1.0, 80.0) - 95.07).abs() < 0.01);
         assert!(hypotenuse(0.0, 1.0).is_infinite());
     }

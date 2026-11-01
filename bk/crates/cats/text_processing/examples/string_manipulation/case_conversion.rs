@@ -46,8 +46,7 @@ mod tests {
 
     /// Uppercases a multibyte initial scalar without panicking on UTF-8.
     #[test]
-    fn case_conversion_capitalizes_multibyte_initial_character()
-    -> anyhow::Result<()> {
+    fn case_conversion_capitalizes_multibyte_initial_character() -> anyhow::Result<()> {
         assert_eq!(capitalize_first_char("élan vital"), "Élan vital");
         main()
     }

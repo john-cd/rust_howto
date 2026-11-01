@@ -12,8 +12,7 @@ use metrics::histogram;
 /// Records two representative HTTP request measurements.
 fn main() -> anyhow::Result<()> {
     counter!("http_requests_total", "method" => "GET").increment(1);
-    histogram!("http_request_duration_seconds", "route" => "/health")
-        .record(0.025);
+    histogram!("http_request_duration_seconds", "route" => "/health").record(0.025);
 
     println!("Recorded one request and a 25 ms duration.");
     Ok(())

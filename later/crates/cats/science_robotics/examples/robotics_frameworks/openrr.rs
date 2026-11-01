@@ -55,9 +55,9 @@ fn tip_position(angles: &[f64]) -> anyhow::Result<[f64; 3]> {
     let tip = chain
         .find_link("tip")
         .ok_or_else(|| anyhow::anyhow!("no link named `tip`"))?;
-    let position = tip.world_transform().ok_or_else(|| {
-        anyhow::anyhow!("the transform of `tip` is not computed")
-    })?;
+    let position = tip
+        .world_transform()
+        .ok_or_else(|| anyhow::anyhow!("the transform of `tip` is not computed"))?;
     let t = position.translation.vector;
     Ok([t.x, t.y, t.z])
 }
@@ -80,9 +80,9 @@ fn reach(target_xy: [f64; 2]) -> anyhow::Result<[f64; 3]> {
         .ok_or_else(|| anyhow::anyhow!("no link named `tip`"))?;
     // Choose the joints from the base to the tip, then move the target.
     let arm = k::SerialChain::from_end(tip);
-    let mut target = tip.world_transform().ok_or_else(|| {
-        anyhow::anyhow!("the transform of `tip` is not computed")
-    })?;
+    let mut target = tip
+        .world_transform()
+        .ok_or_else(|| anyhow::anyhow!("the transform of `tip` is not computed"))?;
     target.translation.vector.x = target_xy[0];
     target.translation.vector.y = target_xy[1];
     // The arm has two joints, so only the position can be constrained.
@@ -97,9 +97,9 @@ fn reach(target_xy: [f64; 2]) -> anyhow::Result<[f64; 3]> {
     };
     solver.solve_with_constraints(&arm, &target, &constraints)?;
     chain.update_transforms();
-    let reached = tip.world_transform().ok_or_else(|| {
-        anyhow::anyhow!("the transform of `tip` is not computed")
-    })?;
+    let reached = tip
+        .world_transform()
+        .ok_or_else(|| anyhow::anyhow!("the transform of `tip` is not computed"))?;
     let t = reached.translation.vector;
     Ok([t.x, t.y, t.z])
 }

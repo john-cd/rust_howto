@@ -38,15 +38,15 @@ async fn echo_round_trip() -> anyhow::Result<String> {
     let address = listener.local_addr()?;
     let server = tokio::spawn(echo_server(listener));
 
-    let (mut socket, response) =
-        connect_async(format!("ws://{address}")).await?;
+    let (mut socket, response) = connect_async(format!("ws://{address}")).await?;
     println!("Handshake status: {}", response.status());
 
     let sent = "Hello WebSocket";
     socket.send(Message::Text(sent.into())).await?;
-    let echoed = socket.next().await.ok_or_else(|| {
-        anyhow::anyhow!("echo server closed before replying")
-    })??;
+    let echoed = socket
+        .next()
+        .await
+        .ok_or_else(|| anyhow::anyhow!("echo server closed before replying"))??;
     let Message::Text(echoed) = echoed else {
         anyhow::bail!("echo server returned a non-text WebSocket message");
     };

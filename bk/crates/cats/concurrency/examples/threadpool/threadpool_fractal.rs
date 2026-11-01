@@ -35,10 +35,8 @@ fn render_julia(
         "iteration limit must be greater than zero"
     );
 
-    let width_usize =
-        usize::try_from(width).context("image width does not fit usize")?;
-    let height_usize =
-        usize::try_from(height).context("image height does not fit usize")?;
+    let width_usize = usize::try_from(width).context("image width does not fit usize")?;
+    let height_usize = usize::try_from(height).context("image height does not fit usize")?;
     let row_length = width_usize
         .checked_mul(3)
         .context("image row size overflows usize")?;
@@ -57,18 +55,10 @@ fn render_julia(
             debug_assert!(remainder.is_empty());
             for (x, pixel) in pixels.iter_mut().enumerate() {
                 let x = x as u32;
-                let iterations = julia_escape_iterations(
-                    julia_constant,
-                    x,
-                    y,
-                    width,
-                    height,
-                    max_iterations,
-                );
-                let wavelength = 380
-                    + ((u64::from(iterations) * 400)
-                        / u64::from(max_iterations))
-                        as u32;
+                let iterations =
+                    julia_escape_iterations(julia_constant, x, y, width, height, max_iterations);
+                let wavelength =
+                    380 + ((u64::from(iterations) * 400) / u64::from(max_iterations)) as u32;
                 *pixel = wavelength_to_rgb(wavelength).0;
             }
         });
@@ -85,8 +75,7 @@ fn render_julia(
 /// cannot be created, or the PNG file cannot be written.
 fn main() -> Result<()> {
     let image = render_julia(640, 480, 300)?;
-    fs::create_dir_all("temp")
-        .context("could not create the temp output directory")?;
+    fs::create_dir_all("temp").context("could not create the temp output directory")?;
     image
         .save(Path::new("temp/output.png"))
         .context("could not save the Julia set image")?;
@@ -163,8 +152,8 @@ mod tests {
     /// Verifies that rendering preserves the image dimensions in memory and in
     /// a temporary PNG.
     #[test]
-    fn threadpool_fractal_renders_requested_dimensions_in_memory_and_in_temporary_png()
-    -> Result<()> {
+    fn threadpool_fractal_renders_requested_dimensions_in_memory_and_in_temporary_png() -> Result<()>
+    {
         let temp_dir = tempfile::tempdir()?;
         let output_path = temp_dir.path().join("fractal.png");
         let image = render_julia(64, 64, 128)?;

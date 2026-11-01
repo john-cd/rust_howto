@@ -30,14 +30,12 @@ impl Message {
         // run if the value matches the pattern.
         match self {
             Self::Quit => println!("The Quit variant has no data to show."),
-            Self::Move { x, y } => println!(
-                "Move in the x direction {x} and in the y direction {y}"
-            ),
+            Self::Move { x, y } => {
+                println!("Move in the x direction {x} and in the y direction {y}")
+            }
             Self::Write(text) => println!("Message: {text}"),
             Self::ChangeColor(r, g, b) => {
-                println!(
-                    "Change the color to red {r}, green {g}, and blue {b}"
-                );
+                println!("Change the color to red {r}, green {g}, and blue {b}");
             }
         }
         // Enums make your code safer, because the compiler knows all the

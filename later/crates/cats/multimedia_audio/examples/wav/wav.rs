@@ -40,8 +40,7 @@ mod tests {
 
     /// Verifies a finalized in-memory WAV contains the sample written to it.
     #[test]
-    fn writes_and_reads_wav_without_an_audio_device()
-    -> Result<(), Box<dyn Error>> {
+    fn writes_and_reads_wav_without_an_audio_device() -> Result<(), Box<dyn Error>> {
         main()
     }
 }

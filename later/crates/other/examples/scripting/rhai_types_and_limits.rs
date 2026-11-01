@@ -48,8 +48,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 
     // Variables persist between runs when the same `Scope` is reused.
     let mut scope = Scope::new();
-    engine
-        .run_with_scope(&mut scope, "let c = new_counter(); c.increment();")?;
+    engine.run_with_scope(&mut scope, "let c = new_counter(); c.increment();")?;
     engine.run_with_scope(&mut scope, "c.increment();")?;
     let value: i64 = engine.eval_with_scope(&mut scope, "c.value")?;
     println!("counter = {value}");
@@ -80,8 +79,7 @@ mod tests {
 
     /// Runs the rhai types and limits example through its entry point.
     #[test]
-    fn test_rhai_types_and_limits_example_entry_point()
-    -> Result<(), Box<EvalAltResult>> {
+    fn test_rhai_types_and_limits_example_entry_point() -> Result<(), Box<EvalAltResult>> {
         main()
     }
 

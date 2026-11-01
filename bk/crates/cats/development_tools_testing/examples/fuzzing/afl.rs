@@ -31,10 +31,7 @@ fn fuzz_me(data: &[u8]) {
     }
 
     assert!(
-        !(data[0] == b'f'
-            && data[1] == b'u'
-            && data[2] == b'z'
-            && data[3] == b'z'),
+        !(data[0] == b'f' && data[1] == b'u' && data[2] == b'z' && data[3] == b'z'),
         "Fuzzing triggered!"
     );
 }

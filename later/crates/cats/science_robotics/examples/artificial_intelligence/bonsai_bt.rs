@@ -117,9 +117,10 @@ fn main() -> anyhow::Result<()> {
         }
     }
 
-    let count = bt.blackboard().get("counter").ok_or_else(|| {
-        anyhow::anyhow!("counter is missing from the blackboard")
-    })?;
+    let count = bt
+        .blackboard()
+        .get("counter")
+        .ok_or_else(|| anyhow::anyhow!("counter is missing from the blackboard"))?;
     assert_eq!(*count, 1);
 
     // If the behavior tree concludes (reaches a steady state),

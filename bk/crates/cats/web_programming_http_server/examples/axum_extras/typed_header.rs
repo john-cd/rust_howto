@@ -39,9 +39,7 @@ mod tests {
 
     use super::*;
 
-    async fn call(
-        headers: &[(&str, &str)],
-    ) -> anyhow::Result<(StatusCode, String)> {
+    async fn call(headers: &[(&str, &str)]) -> anyhow::Result<(StatusCode, String)> {
         let mut builder = Request::get("/whoami");
         for (k, v) in headers {
             builder = builder.header(*k, *v);
@@ -73,11 +71,8 @@ mod tests {
 
     #[tokio::test]
     async fn malformed_authorization() -> anyhow::Result<()> {
-        let (status, _) = call(&[
-            ("authorization", "Basic abc"),
-            ("user-agent", "tests/1.0"),
-        ])
-        .await?;
+        let (status, _) =
+            call(&[("authorization", "Basic abc"), ("user-agent", "tests/1.0")]).await?;
         assert_eq!(status, StatusCode::BAD_REQUEST);
         Ok(())
     }

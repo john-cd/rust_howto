@@ -28,9 +28,9 @@ impl<R: BufRead> Iterator for CsvRows<R> {
 
     /// Reads one line and splits it into fields.
     fn next(&mut self) -> Option<Self::Item> {
-        self.lines.next().map(|line| {
-            line.map(|line| line.split(',').map(str::to_owned).collect())
-        })
+        self.lines
+            .next()
+            .map(|line| line.map(|line| line.split(',').map(str::to_owned).collect()))
     }
 }
 

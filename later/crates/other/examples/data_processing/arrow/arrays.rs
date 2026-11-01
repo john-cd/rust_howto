@@ -61,8 +61,7 @@ fn create_record_batch(
 pub fn run() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
     let (integers, floats, strings) = create_arrays();
     let schema = create_schema();
-    let batch =
-        create_record_batch(schema.clone(), &integers, &floats, &strings)?;
+    let batch = create_record_batch(schema.clone(), &integers, &floats, &strings)?;
 
     assert_eq!(integers.len(), 5);
     assert_eq!(integers.value(0), 1);

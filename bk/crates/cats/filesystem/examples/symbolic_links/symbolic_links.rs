@@ -19,8 +19,7 @@ fn create_symlink(original: &Path, link: &Path) -> anyhow::Result<()> {
         use std::os::unix::fs;
 
         use anyhow::Context as _;
-        fs::symlink(original, link)
-            .context("Failed to create a new symbolic link.")
+        fs::symlink(original, link).context("Failed to create a new symbolic link.")
     }
     #[cfg(target_family = "windows")]
     {
@@ -116,11 +115,9 @@ mod tests {
     fn test_symbolic_links_example_entry_point() -> anyhow::Result<()> {
         use anyhow::Context as _;
         let temp = Path::new("./temp");
-        utils::clean_folder(temp)
-            .context("Failed to clean up the temp directory.")?;
+        utils::clean_folder(temp).context("Failed to clean up the temp directory.")?;
         if !temp.exists() {
-            fs::create_dir(temp)
-                .context("Failed to create the temp directory.")?;
+            fs::create_dir(temp).context("Failed to create the temp directory.")?;
         }
         main()?;
         Ok(())

@@ -11,13 +11,12 @@ use std::collections::HashMap;
 use std::sync::LazyLock;
 
 /// Permissions keyed by user name, initialized on first access.
-static PRIVILEGES: LazyLock<HashMap<&'static str, Vec<&'static str>>> =
-    LazyLock::new(|| {
-        let mut map = HashMap::new();
-        map.insert("James", vec!["user", "admin"]);
-        map.insert("Jim", vec!["user"]);
-        map
-    });
+static PRIVILEGES: LazyLock<HashMap<&'static str, Vec<&'static str>>> = LazyLock::new(|| {
+    let mut map = HashMap::new();
+    map.insert("James", vec!["user", "admin"]);
+    map.insert("Jim", vec!["user"]);
+    map
+});
 
 // Example function: display the access privileges for a given name.
 /// Prints the access level of the user `name`.

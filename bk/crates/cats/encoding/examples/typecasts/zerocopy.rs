@@ -179,8 +179,7 @@ fn from_bytes() -> anyhow::Result<()> {
 // 3. Enums can also be used.
 
 /// An enum can implement `IntoBytes`, if it has
-/// - a defined representation (reprs C, u8, u16, u32, u64, usize, i8, i16, i32,
-///   i64, or isize).
+/// - a defined representation (reprs C, u8, u16, u32, u64, usize, i8, i16, i32, i64, or isize).
 /// - no padding bytes; and
 /// - `IntoBytes` fields.
 ///
@@ -204,8 +203,7 @@ fn enums_also_work() {
     assert_eq!(MyEnum::A.as_bytes(), [0]);
 }
 
-/// 4. Safely transmutes a value of one type to a value of another type of the
-///    same size.
+/// 4. Safely transmutes a value of one type to a value of another type of the same size.
 fn transmute() {
     let one_dimensional: [u8; 8] = [0, 1, 2, 3, 4, 5, 6, 7];
     let two_dimensional: [[u8; 4]; 2] = zerocopy::transmute!(one_dimensional);

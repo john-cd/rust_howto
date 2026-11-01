@@ -34,7 +34,9 @@ fn main() {
     for handle in handles {
         // The `spawn` method returns a `JoinHandle`. A `JoinHandle` is
         // a future, so we can wait for it using `block_on`.
-        runtime.block_on(handle).expect("the call async from blocking tokio runtime example invariant should hold");
+        runtime
+            .block_on(handle)
+            .expect("the call async from blocking tokio runtime example invariant should hold");
     }
 }
 
@@ -68,8 +70,7 @@ mod tests {
     }
 
     #[test]
-    fn background_task_runs_on_the_runtime()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn background_task_runs_on_the_runtime() -> Result<(), Box<dyn std::error::Error>> {
         let runtime = tokio::runtime::Builder::new_current_thread()
             .enable_all()
             .start_paused(true)
@@ -79,8 +80,7 @@ mod tests {
     }
 
     #[test]
-    fn spawned_tasks_finish_even_with_one_worker()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn spawned_tasks_finish_even_with_one_worker() -> Result<(), Box<dyn std::error::Error>> {
         let runtime = tokio::runtime::Builder::new_multi_thread()
             .worker_threads(1)
             .enable_all()

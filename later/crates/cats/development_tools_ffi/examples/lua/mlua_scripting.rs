@@ -16,8 +16,7 @@ fn main() -> LuaResult<()> {
         LuaStdLib::MATH | LuaStdLib::STRING | LuaStdLib::TABLE,
         LuaOptions::default(),
     )?;
-    let multiply =
-        lua.create_function(|_, (left, right): (i64, i64)| Ok(left * right))?;
+    let multiply = lua.create_function(|_, (left, right): (i64, i64)| Ok(left * right))?;
     lua.globals().set("multiply", multiply)?;
     lua.globals().set("dofile", None::<LuaFunction>)?;
     lua.globals().set("loadfile", None::<LuaFunction>)?;

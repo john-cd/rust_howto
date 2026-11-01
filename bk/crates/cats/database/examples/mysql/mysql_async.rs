@@ -18,8 +18,7 @@ use mysql_async::prelude::*;
 async fn main() -> Result<()> {
     // ANCHOR: connect
     // For example `mysql://user:password@localhost:3306/db_name`.
-    let url = std::env::var("MYSQL_URL")
-        .context("set MYSQL_URL to the MySQL connection URL")?;
+    let url = std::env::var("MYSQL_URL").context("set MYSQL_URL to the MySQL connection URL")?;
     let pool = Pool::new(url.as_str());
     let mut conn = pool.get_conn().await?;
     // ANCHOR_END: connect

@@ -37,9 +37,7 @@ fn capnp() -> Result<(), Box<dyn std::error::Error>> {
             })?)
             .join("foo_capnp.rs");
             fs::copy(generated_path, output_path)?;
-            println!(
-                "cargo::warning=capnp compiler not found; using checked-in generated code"
-            );
+            println!("cargo::warning=capnp compiler not found; using checked-in generated code");
         }
         Err(error) => return Err(Box::new(error)),
     }

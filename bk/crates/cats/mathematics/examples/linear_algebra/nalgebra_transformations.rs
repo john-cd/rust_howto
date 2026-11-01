@@ -68,10 +68,7 @@ mod tests {
         let rotated = rotation * point;
         assert!((rotated - Point3::new(0.0, 1.0, 0.0)).norm() < 1e-12);
 
-        let isometry = Isometry3::from_parts(
-            Translation3::new(0.0, 1.0, 2.0),
-            rotation.into(),
-        );
+        let isometry = Isometry3::from_parts(Translation3::new(0.0, 1.0, 2.0), rotation.into());
         let transformed = isometry * point;
         assert!((transformed - Point3::new(0.0, 2.0, 2.0)).norm() < 1e-12);
         // The inverse undoes the transformation.

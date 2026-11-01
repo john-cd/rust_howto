@@ -49,9 +49,9 @@ fn process_messages() -> anyhow::Result<Vec<u32>> {
 
         let mut results = output_rx.iter().collect::<Vec<_>>();
         for producer in producers {
-            producer.join().map_err(|_| {
-                anyhow!("a Crossbeam producer thread panicked")
-            })??;
+            producer
+                .join()
+                .map_err(|_| anyhow!("a Crossbeam producer thread panicked"))??;
         }
         for worker in workers {
             worker

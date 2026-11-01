@@ -41,10 +41,9 @@ fn describe_content_type(headers: &HeaderMap) -> Result<Option<&'static str>> {
 /// Retrieves the Content-Type header from a successful HTTP response.
 #[tokio::main]
 async fn main() -> Result<()> {
-    let response: Response =
-        reqwest::get("https://www.rust-lang.org/logos/rust-logo-32x32.png")
-            .await?
-            .error_for_status()?;
+    let response: Response = reqwest::get("https://www.rust-lang.org/logos/rust-logo-32x32.png")
+        .await?
+        .error_for_status()?;
     let headers: &HeaderMap = response.headers();
 
     match describe_content_type(headers)? {

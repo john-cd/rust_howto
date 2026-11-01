@@ -51,10 +51,7 @@ async fn token_balance(
 }
 
 /// Returns the balance of `account`, formatted in ether.
-async fn balance_in_ether(
-    provider: &impl Provider,
-    account: Address,
-) -> anyhow::Result<String> {
+async fn balance_in_ether(provider: &impl Provider, account: Address) -> anyhow::Result<String> {
     let wei = provider.get_balance(account).await?;
     Ok(format_ether(wei))
 }
@@ -87,9 +84,7 @@ async fn main() -> anyhow::Result<()> {
     // behind `balanceOf` (a 32-byte big-endian integer).
     let asserter = Asserter::new();
     asserter.push_success(&parse_ether("1.5")?);
-    asserter.push_success(&Bytes::from(
-        U256::from(42_000_000_u64).to_be_bytes::<32>(),
-    ));
+    asserter.push_success(&Bytes::from(U256::from(42_000_000_u64).to_be_bytes::<32>()));
     let provider = ProviderBuilder::new().connect_mocked_client(asserter);
 
     let balance = balance_in_ether(&provider, ACCOUNT).await?;

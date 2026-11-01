@@ -94,10 +94,7 @@ fn check_protocol(publish_order: Ordering, read_order: Ordering) {
         };
 
         if let Some(value) = slot.try_take() {
-            assert_eq!(
-                value, 42,
-                "a reader that saw `ready` must see the payload"
-            );
+            assert_eq!(value, 42, "a reader that saw `ready` must see the payload");
         }
         slot.cancel();
 
@@ -110,9 +107,7 @@ fn check_protocol(publish_order: Ordering, read_order: Ordering) {
 /// read.
 fn run_model() {
     check_protocol(Ordering::Release, Ordering::Acquire);
-    println!(
-        "Loom explored the publication and cancellation model without a violation."
-    );
+    println!("Loom explored the publication and cancellation model without a violation.");
 }
 
 /// Runs the model.

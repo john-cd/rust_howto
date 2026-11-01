@@ -49,17 +49,14 @@ pub fn log_calls(_attr: TokenStream, item: TokenStream) -> TokenStream {
 // that has the `derive` attribute.
 /// A derive macro that implements the `DebugPrint` trait.
 #[proc_macro_derive(DebugPrint, attributes(helper))]
-pub fn debug_print_derive(
-    input: proc_macro::TokenStream,
-) -> proc_macro::TokenStream {
+pub fn debug_print_derive(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     // Parse the input tokens into a syntax tree.
     // `syn`'s `parse_macro_input!` macro converts the input `TokenStream` into
     // a structured `DeriveInput` struct.
     let ast = syn::parse_macro_input!(input as syn::DeriveInput);
 
     let name = &ast.ident; // The name of the struct/enum.
-    let (impl_generics, ty_generics, where_clause) =
-        ast.generics.split_for_impl();
+    let (impl_generics, ty_generics, where_clause) = ast.generics.split_for_impl();
 
     // The generated implementation formats `self` with `Debug`, so the type
     // deriving `DebugPrint` must also implement `Debug`.
@@ -125,14 +122,12 @@ fn process_tokens(input: proc_macro2::TokenStream) -> proc_macro2::TokenStream {
         .into_iter()
         .map(|tt| match tt {
             proc_macro2::TokenTree::Ident(ident) if ident == "old_ident" => {
-                let new_ident =
-                    proc_macro2::Ident::new("new_ident", ident.span());
+                let new_ident = proc_macro2::Ident::new("new_ident", ident.span());
                 proc_macro2::TokenTree::Ident(new_ident)
             }
             proc_macro2::TokenTree::Group(group) => {
                 let new_stream = process_tokens(group.stream());
-                let mut new_group =
-                    proc_macro2::Group::new(group.delimiter(), new_stream);
+                let mut new_group = proc_macro2::Group::new(group.delimiter(), new_stream);
                 new_group.set_span(group.span());
                 proc_macro2::TokenTree::Group(new_group)
             }
@@ -145,9 +140,7 @@ fn process_tokens(input: proc_macro2::TokenStream) -> proc_macro2::TokenStream {
 // between `proc_macro::TokenStream` and `proc_macro2::TokenStream`.
 /// A function-like macro that renames an identifier in the tokens it receives.
 #[proc_macro]
-pub fn replace_ident(
-    input: proc_macro::TokenStream,
-) -> proc_macro::TokenStream {
+pub fn replace_ident(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let input2 = proc_macro2::TokenStream::from(input);
     let output2 = process_tokens(input2);
     proc_macro::TokenStream::from(output2)

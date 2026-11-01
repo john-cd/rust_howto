@@ -32,8 +32,8 @@ use r2r::std_msgs::msg::String as StringMessage;
 /// a timeout if a greeting is not received within ten seconds.
 fn main() -> Result<()> {
     let context = Context::create().context("initialize ROS 2")?;
-    let mut node = Node::create(context, "rust_howto_pubsub", "")
-        .context("create the ROS 2 node")?;
+    let mut node =
+        Node::create(context, "rust_howto_pubsub", "").context("create the ROS 2 node")?;
     // The QoS (quality of service) profile controls delivery guarantees such
     // as reliability and queue depth; the default is fine for a demo.
     let topic = "/rust_howto/hello";

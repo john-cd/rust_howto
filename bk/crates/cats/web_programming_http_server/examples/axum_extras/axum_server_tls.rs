@@ -81,9 +81,7 @@ mod tests {
             .ok_or_else(|| anyhow::anyhow!("server did not start"))?;
 
         let client = reqwest::Client::builder()
-            .add_root_certificate(reqwest::Certificate::from_pem(
-                cert.pem().as_bytes(),
-            )?)
+            .add_root_certificate(reqwest::Certificate::from_pem(cert.pem().as_bytes())?)
             .resolve("localhost", addr)
             .build()?;
         let body = client

@@ -53,8 +53,7 @@ mod tests {
         let inv = m1.try_inverse().expect("m1 is invertible");
         assert!((m1 * inv - Matrix3::identity()).norm() < 1e-12);
 
-        let singular =
-            Matrix3::new(1.0, 2.0, 3.0, 2.0, 4.0, 6.0, 0.0, 1.0, 1.0);
+        let singular = Matrix3::new(1.0, 2.0, 3.0, 2.0, 4.0, 6.0, 0.0, 1.0, 1.0);
         assert!(singular.try_inverse().is_none());
     }
 }

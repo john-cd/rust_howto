@@ -23,9 +23,7 @@ fn main() {
             Ok(quotient) => {
                 println!("{numerator} / {denominator} = {quotient}");
             }
-            Err(error) => eprintln!(
-                "could not divide {numerator} by {denominator}: {error}"
-            ),
+            Err(error) => eprintln!("could not divide {numerator} by {denominator}: {error}"),
         }
     }
 }

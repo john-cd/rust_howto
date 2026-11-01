@@ -30,8 +30,7 @@ fn describe_tokens(stream: TokenStream, descriptions: &mut Vec<String>) {
     for token in stream {
         match token {
             TokenTree::Group(group) => {
-                descriptions
-                    .push(format!("group {:?}: {group}", group.delimiter()));
+                descriptions.push(format!("group {:?}: {group}", group.delimiter()));
                 describe_tokens(group.stream(), descriptions);
             }
             TokenTree::Ident(ident) => {

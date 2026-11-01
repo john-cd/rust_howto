@@ -41,12 +41,11 @@ mod tests {
         let fixture = create_fixture()?;
         let book_root = fixture.path().join("book");
         let recipes = tool_lib::collect_published_recipe_links(book_root)?;
-        let page =
-            tool_lib::create_category_page_from_metadata_with_recipe_links(
-                &["serde".to_owned(), "serde_json".to_owned()],
-                CATEGORY_METADATA,
-                &recipes,
-            )?;
+        let page = tool_lib::create_category_page_from_metadata_with_recipe_links(
+            &["serde".to_owned(), "serde_json".to_owned()],
+            CATEGORY_METADATA,
+            &recipes,
+        )?;
         assert!(page.contains("serde_json"));
         assert!(page.contains("Serialize JSON"));
         Ok(())

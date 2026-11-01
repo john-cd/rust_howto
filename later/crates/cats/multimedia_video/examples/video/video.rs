@@ -130,8 +130,7 @@ mod tests {
             height: 64,
             frames: 5,
         };
-        let packet_count =
-            encode(&spec).expect("synthetic frames should encode");
+        let packet_count = encode(&spec).expect("synthetic frames should encode");
         assert_eq!(packet_count, 5);
     }
 
