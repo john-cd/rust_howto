@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! This example demonstrates the use of the `clone` method
 //! to create a deep copy of a `String`.
+//!
+//! Cloning explicitly duplicates heap-allocated memory, preserving the original
+//! value while satisfying ownership rules that disallow implicit copies.
 
 /// This example demonstrates the use of the `clone` method
 /// to create a deep copy of a `String`.

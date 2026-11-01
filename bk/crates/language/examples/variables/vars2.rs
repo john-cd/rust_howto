@@ -3,6 +3,10 @@
 
 // ANCHOR: example
 //! Variable immutability and mutability.
+//!
+//! Immutability by default encourages safer concurrent programming. When
+//! mutability is required, the `mut` keyword must be explicitly specified.
+//! Mutability is deep, extending to all nested fields of a data structure.
 
 /// Declares and modifies variables.
 fn main() {

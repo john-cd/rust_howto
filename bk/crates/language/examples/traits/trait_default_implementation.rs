@@ -50,7 +50,7 @@ fn main() {
     // requiring us to write any more code.
 }
 
-// Adapted from <https://doc.rust-lang.org/book/ch10-02-traits.html>
+// Adapted from <https://doc.rust-lang.org/book/ch10-02-traits.html>.
 // ANCHOR_END: example
 
 pub fn run() {

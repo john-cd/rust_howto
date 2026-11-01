@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A struct generic over a constant, the length of an array.
+//!
+//! Const generics allow types and functions to be parameterized by values
+//! (such as array lengths) rather than just types, enabling compile-time
+//! size verification without runtime overhead.
 
 /// Struct with a const parameter.
 ///
@@ -27,6 +31,7 @@ fn main() {
     let array: InnerArray<i32, 3> = InnerArray::new(42);
     let len = array.len();
     println!("Array length: {len}");
+    // Expected output: Array length: 3.
     assert_eq!(len, 3);
 }
 

@@ -13,7 +13,7 @@ fn main() {
         // Decrement the number.
         number -= 1;
     }
-    // Prints: 5 4 3 2 1
+    // Expected output: 5 4 3 2 1.
 }
 
 // ANCHOR_END: example

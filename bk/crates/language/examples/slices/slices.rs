@@ -2,7 +2,10 @@
 
 // ANCHOR: example
 //! A slice is a view into a contiguous sequence of elements in a collection.
-//! It does not own the data it points to.
+//!
+//! A slice (`&[T]`) consists of a pointer and a length. It allows safe,
+//! borrowing access to contiguous sub-sequences without taking ownership or
+//! allocating memory.
 
 /// Create slices from an array:
 fn slice_from_array() {

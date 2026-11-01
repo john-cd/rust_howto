@@ -52,7 +52,7 @@ fn main() {
         part: &another_part,
     };
     // e2.only_if_static(); // ERROR: argument requires that `another_part` is
-    // borrowed for `'static`
+    // borrowed for `'static`.
 }
 
 // ANCHOR_END: example

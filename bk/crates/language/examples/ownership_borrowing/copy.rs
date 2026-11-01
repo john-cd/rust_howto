@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Types that implement `Copy` are copied instead of moved.
+//!
+//! The `Copy` marker trait signals that a type can be duplicated simply by
+//! copying bits in memory (like integer scalars or simple structs), so passing
+//! or assigning the value leaves the original accessible.
 
 /// Copies integers and a user-defined `Copy` type.
 fn main() {

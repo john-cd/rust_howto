@@ -52,10 +52,10 @@ fn main() {
     // Note the :: between the name of the type and the name of the variant.
     let msg = Message::Quit;
     println!("{msg:?}");
-    // Or
+    // Or assign a struct-like variant:
     let msg = Message::Move { x: 10, y: 15 };
     println!("{msg:?}");
-    // Or
+    // Or assign a tuple-like variant:
     let msg = Message::ChangeColor(127, 0, 0);
     println!("{msg:?}");
 

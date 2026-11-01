@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Passing and calling function pointers.
+//!
+//! Function pointers (`fn(...) -> ...`) point to executable code rather than
+//! closures with captured environments. They implement `Fn`, `FnMut`, and
+//! `FnOnce` traits automatically.
 
 /// Example function: add one to the input.
 fn add_one(x: i32) -> i32 {

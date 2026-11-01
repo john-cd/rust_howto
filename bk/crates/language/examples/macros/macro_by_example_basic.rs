@@ -3,6 +3,10 @@
 
 // ANCHOR: example
 //! A basic declarative macro.
+//!
+//! Declarative macros (defined with `macro_rules!`) perform pattern matching
+//! on Rust token trees and expand into code at compile time before semantic
+//! analysis and type checking.
 
 /// A basic macro-by-example (from the Rust By Example book).
 macro_rules! say_hello {

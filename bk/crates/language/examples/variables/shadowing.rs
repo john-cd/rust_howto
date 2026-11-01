@@ -36,8 +36,8 @@ fn main() {
 
     // In contrast, a mutable variable's value can change, but its type can't.
     let mut y = 10;
-    y = 20; // Valid: changing the value of `y`
-    // y = "hello"; // ERROR: cannot change the type of `y`
+    y = 20; // Valid: changing the value of `y`.
+    // y = "hello"; // ERROR: cannot change the type of `y`.
     println!("y: {y}");
 }
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Lifetime parameters on a function.
+//!
+//! Lifetime parameters (e.g. `'a`) describe relationships between the
+//! lifespans of references passed into and returned from functions, allowing
+//! the borrow checker to ensure references never outlive the data they borrow.
 
 /// This function has a lifetime parameter `'a`.
 /// The lifetime parameter can be used by references within the function
@@ -24,9 +28,11 @@ fn main() {
         let y = String::from("short");
         l = longest(&x, &y);
         println!("Longest: {l}");
+        // Expected output: Longest: looooooong.
     } // y is dropped here.
-    // println!("Longest: {l}"); // ERROR: borrowed value does not live long
-    // enough.
+    // println!("Longest: {l}");
+    // Expected output: Longest: looooooong. // ERROR: borrowed value does not
+    // live long enough.
     println!("x: {x}");
     // x is valid until this line.
 }
