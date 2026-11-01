@@ -171,3 +171,11 @@ rust-project.json
 *.msp
 *.txz
 /target
+
+# Local outputs, caches, and linked worktrees
+/build/
+/target/
+**/__pycache__/
+**/.venv/
+**/.ruff_cache/
+**/.pytest_cache/

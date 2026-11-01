@@ -45,3 +45,17 @@ typ/
 # Logs and Temp
 **/*.log
 tmp/
+
+# Local outputs, caches, and linked worktrees
+/build/
+/target/
+/.sccache
+/.worktrees/
+**/__pycache__/
+**/.venv/
+**/.ruff_cache/
+**/.pytest_cache/
+.env
+.env.*
+!.env.example
+!.env.*.example
