@@ -19,7 +19,8 @@ Contributions are most welcome! Please review the [contributing][rust-howto~cont
 
 ## Rust tooling
 
-Use `just` for build, lint, and test tasks. Install Rust, sccache, and Just. Windows recipes require Git Bash.
+Use the pinned Rust 1.99.1 toolchain from [rust-toolchain.toml](rust-toolchain.toml) with
+`just` for build, lint, and test tasks. Install Rust, sccache, and Just. Windows recipes require Git Bash.
 Build paths and diagnostics are implemented directly in the justfile.
 
 - `just build-env` displays the effective environment, checkout, and branch.
