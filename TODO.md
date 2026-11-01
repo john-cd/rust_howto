@@ -50,9 +50,7 @@ General rules for every brief: work from a clean checkout of `develop` on a topi
 - No `dead_code` allowance cleanup remains. Run the outstanding prerequisite-gated ignored checks in #2114 and #2115 when their services, desktop, operating systems, or hardware are available; NATS JetStream and Windows checks have passed.
 ## Configuration alignment (2026-11-01)
 
-Implementation is paused. Focused editor/ignore and applicable formatting commits are on
-`codex/config-homogeneity`; build/profile, CI, and documentation edits remain under review.
-See `WORKTREES.md` for the checkout slot. No branch has been pushed.
+The configuration-alignment work is integrated into `develop` in focused commits.
 
 Remaining work is tracked in GitHub:
 
