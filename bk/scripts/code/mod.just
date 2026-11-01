@@ -82,7 +82,7 @@ _default:
 # Test one package, including its doctests (all features)
 @nextestpkg pkg:
     echo "Test {{ pkg }} (all features)"
-    cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package {{ pkg }} --all-targets --locked --no-fail-fast --all-features
+    cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --package {{ pkg }} --all-targets --locked --no-fail-fast --all-features
     cd {{ quote(code_root) }}; cargo test --package {{ pkg }} --doc --locked --all-features
 
 # Build all code (default features)
@@ -112,7 +112,7 @@ _default:
 
 # Test only tests that match a given keyword
 @nextestthis test:
-    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --locked --no-fail-fast --success-output final -E 'test(~{{ test }})'
+    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --locked --no-fail-fast --success-output final -E 'test(~{{ test }})'
 
 current_crate := file_name(invocation_directory())
 
@@ -120,20 +120,20 @@ current_crate := file_name(invocation_directory())
 [no-cd]
 @nextestcurrent: _clean_temp_dir && _clean_temp_dir
     echo "Test {{ current_crate }} (all features)"
-    cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --all-targets --locked --no-fail-fast --status-level all -E 'package({{ current_crate }})' --all-features
+    cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --all-targets --locked --no-fail-fast --status-level all -E 'package({{ current_crate }})' --all-features
 
 # Test all code (no doctests) (default features)
 @nextest: _clean_temp_dir && _clean_temp_dir
     echo "Test the code under {{ quote(code_root) }} (no doctests, default features)"
-    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --all-targets --locked --no-fail-fast --status-level all
+    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --workspace --all-targets --locked --no-fail-fast --status-level all
 
 # Test all code, including doctests (all features)
 @nextestall: _clean_temp_dir && _clean_temp_dir
     echo "Test all code in {{ quote(code_root) }} (incl. doctests) (all features)"
     # sccache 0.18.0 expands web-sys rustc arguments past Windows' process command-line limit.
-    cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --workspace --exclude web_programming_http_server --exclude database --all-targets --locked --no-fail-fast --status-level all --all-features
-    db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package database --all-targets --locked --no-fail-fast --status-level all --features "$db_features"
-    cd {{ quote(code_root) }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo nextest run --config-file {{ quote(code_root + "/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
+    cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --workspace --exclude web_programming_http_server --exclude database --all-targets --locked --no-fail-fast --status-level all --all-features
+    db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --package database --all-targets --locked --no-fail-fast --status-level all --features "$db_features"
+    cd {{ quote(code_root) }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
     cd {{ quote(code_root) }}; cargo test --doc --workspace
 
 # Clean the `crates/**/temp` folders of most files prior / after testing

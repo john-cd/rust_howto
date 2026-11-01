@@ -38,11 +38,15 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
-  CARGO_TARGET_DIR: ${{ github.workspace }}/target
-  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/build
+  CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
   ## `.cargo/config.toml` enables `sccache`, which CI does not install; `rust-cache` is used instead.
   RUSTC_WRAPPER: ""
 
+  CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
+  CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
+  CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_INCREMENTAL: '0'
 permissions:
   contents: read
 
@@ -72,9 +76,13 @@ jobs:
         uses: ./.github/actions/setup-rust
         with:
           toolchain: ${{ env.RUST_VERSION }}
-          cache-workspaces: |
-            bk/crates -> ../../target
-            tools -> ../target
+          cache-workspaces: |-
+            bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            later/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            tools -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            playground -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            publish -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main
 
       - name: Install `protoc`, `jq`, NASM and Ninja (choco)
         shell: pwsh
@@ -121,7 +129,7 @@ jobs:
 
       - name: Run tests and fail on process leaks
         run: |
-          cargo nextest run --config-file nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
+          cargo nextest run --config-file .config/nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
           cargo test --workspace --doc --locked --profile ci -- --show-output
         working-directory: bk/crates
 
