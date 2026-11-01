@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Converting between types with `From` and `Into`.
+//!
+//! `From` defines a lossless conversion between types, and gives you `Into` for
+//! free. Implementing `From` for your error types is what lets `?` convert
+//! errors automatically.
 
 /// A length in millimeters.
 #[derive(Debug)]

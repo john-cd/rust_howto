@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Generates a tone with `rodio` without opening an audio device.
+//!
+//! A tone is a sine wave of one frequency; frequency (in Hz) sets the pitch.
+//! Generating samples in code is the basis of synthesizers and test signals.
+//! Here the samples are produced without opening an audio device, so the
+//! example works on any machine.
 
 use std::time::Duration;
 

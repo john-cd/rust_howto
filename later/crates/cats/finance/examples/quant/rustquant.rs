@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Price European options with the Black-Scholes formula, using `statrs` for
 //! the normal distribution. No finance crate is needed.
+//!
+//! The Black-Scholes formula prices a European option (a right to buy or sell
+//! an asset at a fixed strike price on a fixed date) from the asset price,
+//! strike, time to expiry, interest rate and volatility. `statrs` provides the
+//! normal distribution that the formula needs.
 
 use statrs::distribution::ContinuousCDF;
 use statrs::distribution::Normal;
@@ -32,8 +37,7 @@ fn price(inputs: &Inputs) -> (f64, f64) {
     } = *inputs;
     let n = Normal::standard();
     let vol_sqrt_t = volatility * years.sqrt();
-    let d1 = ((spot / strike).ln() + (rate + 0.5 * volatility.powi(2)) * years)
-        / vol_sqrt_t;
+    let d1 = ((spot / strike).ln() + (rate + 0.5 * volatility.powi(2)) * years) / vol_sqrt_t;
     let d2 = d1 - vol_sqrt_t;
     let discounted_strike = strike * (-rate * years).exp();
     let call = spot * n.cdf(d1) - discounted_strike * n.cdf(d2);
@@ -85,8 +89,7 @@ mod tests {
     #[test]
     fn put_call_parity_holds() {
         let (call, put) = price(&TEXTBOOK);
-        let parity = TEXTBOOK.spot
-            - TEXTBOOK.strike * (-TEXTBOOK.rate * TEXTBOOK.years).exp();
+        let parity = TEXTBOOK.spot - TEXTBOOK.strike * (-TEXTBOOK.rate * TEXTBOOK.years).exp();
         assert!((call - put - parity).abs() < 1e-9);
     }
 

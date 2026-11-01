@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates the use of the `rug` crate for arbitrary precision
 //! arithmetic.
+//!
+//! Arbitrary-precision arithmetic computes with as many digits as you ask for,
+//! so there is no overflow and no rounding error until you choose it. `rug`
+//! wraps the GMP library, which must be installed or built.
 
 #![cfg(target_os = "linux")]
 #![allow(clippy::approx_constant)]
@@ -30,8 +34,8 @@ fn main() {
     // 3. Casting to primitive types (None if not possible).
     assert_eq!(c.to_u32(), None);
 
-    // 4. Operations on two borrowed numbers result in an incomplete-computation
-    //    value that has to be assigned to a new value.
+    // 4. Operations on two borrowed numbers result in an incomplete-computation value that has to
+    //    be assigned to a new value.
     let a_b_ref = &a + &b;
     let sum = Integer::from(a_b_ref);
     println!("Sum of integers: {sum}");

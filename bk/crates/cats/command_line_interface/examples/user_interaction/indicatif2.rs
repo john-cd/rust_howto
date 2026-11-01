@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A progress bar with `indicatif`.
+//!
+//! A progress bar shows how much of a task is done and estimates the time left.
+//! It needs the total amount of work up front, then you advance it as items
+//! finish. It writes to the terminal and hides itself when output is not a
+//! terminal.
 
 use std::thread;
 use std::time::Duration;
@@ -18,11 +23,16 @@ fn progress() {
     let pb = ProgressBar::new(100);
 
     // Set a custom style for the progress bar:
-    pb.set_style(ProgressStyle::default_bar()
-        // 40 characters wide. Has cyan as primary style color and blue as alternative style color.
-        .template("{spinner:.green} [{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
-        .expect("the indicatif2 example invariant should hold")
-        .progress_chars("=>."));
+    pb.set_style(
+        ProgressStyle::default_bar()
+            // 40 characters wide. Has cyan as primary style color and blue as alternative style
+            // color.
+            .template(
+                "{spinner:.green} [{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}",
+            )
+            .expect("the indicatif2 example invariant should hold")
+            .progress_chars("=>."),
+    );
 
     for _ in 0..100 {
         // Update the progress bar:

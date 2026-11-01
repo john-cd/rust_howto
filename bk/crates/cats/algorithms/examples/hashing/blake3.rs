@@ -10,24 +10,23 @@
 //! cryptographic security against all known attacks.
 //!
 //! ### Underlying Technology & Architecture
-//! - **Tree Hashing**: Internally, BLAKE3 structures the input into a binary
-//!   Merkle tree of 1024-byte chunks. This architecture allows computations to
-//!   be split across multiple CPU cores or parallelized using SIMD vector
-//!   instructions (such as AVX-512 or NEON).
-//! - **Bao & BLAKE2s Heritage**: BLAKE3 is based on an optimized variation of
-//!   the BLAKE2s hash function and the Bao tree hashing scheme.
+//! - **Tree Hashing**: Internally, BLAKE3 structures the input into a binary Merkle tree of
+//!   1024-byte chunks. This architecture allows computations to be split across multiple CPU cores
+//!   or parallelized using SIMD vector instructions (such as AVX-512 or NEON).
+//! - **Bao & BLAKE2s Heritage**: BLAKE3 is based on an optimized variation of the BLAKE2s hash
+//!   function and the Bao tree hashing scheme.
 //!
 //! ### Purpose & Use Cases
-//! - **Integrity Checking**: Computing hash digests for file verification,
-//!   caching, and content-addressable storage systems.
-//! - **Streaming & Incremental Hashing**: Processing large files or network
-//!   streams in chunks without loading all data into memory at once.
-//! - **Message Authentication (MAC)**: Authenticating messages with a shared
-//!   secret key to detect unauthorized modifications.
-//! - **Key Derivation Function (KDF)**: Generating domain-specific subkeys from
-//!   master secrets using contextual salt strings.
-//! - **Extensible Output Function (XOF)**: Generating variable-length
-//!   pseudo-random outputs of arbitrary byte length.
+//! - **Integrity Checking**: Computing hash digests for file verification, caching, and
+//!   content-addressable storage systems.
+//! - **Streaming & Incremental Hashing**: Processing large files or network streams in chunks
+//!   without loading all data into memory at once.
+//! - **Message Authentication (MAC)**: Authenticating messages with a shared secret key to detect
+//!   unauthorized modifications.
+//! - **Key Derivation Function (KDF)**: Generating domain-specific subkeys from master secrets
+//!   using contextual salt strings.
+//! - **Extensible Output Function (XOF)**: Generating variable-length pseudo-random outputs of
+//!   arbitrary byte length.
 //!
 //! ### Password Hashing Warning
 //! BLAKE3 is designed for maximum speed and efficiency. It is **not** suitable

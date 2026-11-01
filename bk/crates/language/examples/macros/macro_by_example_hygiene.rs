@@ -1,13 +1,16 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Macro hygiene: variables in a macro do not clash with variables outside it.
+//!
+//! Hygiene means that variables created inside a macro do not clash with
+//! variables of the same name at the call site. The macro and the code around
+//! it cannot accidentally see each other's local variables.
 
 /// Declares a variable `x`, which is not visible where the macro is called.
 macro_rules! foo {
     () => {
-        let x = 3; // `x` is local to the macro.
+        let _x = 3; // `_x` is local to the macro.
     };
 }
 

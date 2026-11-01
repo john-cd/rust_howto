@@ -9,15 +9,14 @@
 //! obstacle (such as a wall or equipment).
 //!
 //! ### Path Planning Algorithm & Heuristic
-//! - **A* Optimization**: Computes the collision-free path with minimal total
-//!   cost from start position `(0, 0)` to target destination `(4, 4)`.
-//! - **Admissible Heuristic**: Uses Manhattan distance $|x_{\text{goal}} - x| +
-//!   |y_{\text{goal}} - y|$. In a 4-connected grid (cardinal moves: up, down,
-//!   left, right), Manhattan distance equals the theoretical minimum number of
-//!   steps needed on an unobstructed grid, ensuring the heuristic is strictly
-//!   **admissible** and guarantees an optimal path.
-//! - **Collision Avoidance**: Impassable wall cells are filtered out during
-//!   neighbor expansion (`successors`).
+//! - **A* Optimization**: Computes the collision-free path with minimal total cost from start
+//!   position `(0, 0)` to target destination `(4, 4)`.
+//! - **Admissible Heuristic**: Uses Manhattan distance $|x_{\text{goal}} - x| + |y_{\text{goal}} -
+//!   y|$. In a 4-connected grid (cardinal moves: up, down, left, right), Manhattan distance equals
+//!   the theoretical minimum number of steps needed on an unobstructed grid, ensuring the heuristic
+//!   is strictly **admissible** and guarantees an optimal path.
+//! - **Collision Avoidance**: Impassable wall cells are filtered out during neighbor expansion
+//!   (`successors`).
 
 use pathfinding::prelude::astar;
 
@@ -41,9 +40,7 @@ fn successors((x, y): (i32, i32)) -> Vec<((i32, i32), u32)> {
         .into_iter()
         .map(|(dx, dy)| (x + dx, y + dy))
         .filter(|&(nx, ny)| {
-            (0..WIDTH).contains(&nx)
-                && (0..HEIGHT).contains(&ny)
-                && !WALLS.contains(&(nx, ny))
+            (0..WIDTH).contains(&nx) && (0..HEIGHT).contains(&ny) && !WALLS.contains(&(nx, ny))
         })
         .map(|cell| (cell, 1))
         .collect()
@@ -56,8 +53,7 @@ fn main() {
 
     // The Manhattan distance heuristic never overestimates actual remaining
     // cost on a 4-connected grid.
-    let heuristic =
-        |&(x, y): &(i32, i32)| ((goal.0 - x).abs() + (goal.1 - y).abs()) as u32;
+    let heuristic = |&(x, y): &(i32, i32)| ((goal.0 - x).abs() + (goal.1 - y).abs()) as u32;
 
     // Execute A* path planning using state transitions and heuristic
     // estimation.

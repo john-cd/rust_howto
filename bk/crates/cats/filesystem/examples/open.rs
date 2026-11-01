@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to use the `open` crate to open files and URLs
 //! using the default program associated with the file type.
+//!
+//! The `open` crate asks the operating system to open a file, folder or URL
+//! with the default application, like double-clicking it. On Linux it uses
+//! `xdg-open`, on macOS `open`, and on Windows `start`.
 
 /// Opens a file with the default application.
 fn main() {

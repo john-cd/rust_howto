@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Parses Rust source text into an abstract syntax tree with `syn`.
+//!
+//! An abstract syntax tree (AST) represents the structure of source code as a
+//! tree of items, expressions and so on, without the whitespace. Tools such as
+//! compilers, linters and formatters work on it. `syn` parses Rust.
 
 use syn::Item;
 
@@ -42,9 +46,7 @@ mod tests {
     #[test]
     fn parse_item_names_returns_named_declarations() -> anyhow::Result<()> {
         assert_eq!(
-            parse_item_names(
-                "fn greet() {} struct Person; enum State { Ready }"
-            )?,
+            parse_item_names("fn greet() {} struct Person; enum State { Ready }")?,
             ["greet", "Person", "State"]
         );
         Ok(())

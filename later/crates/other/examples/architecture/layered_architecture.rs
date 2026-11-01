@@ -179,9 +179,8 @@ mod tests {
     async fn created_users_can_be_found_and_others_cannot() -> Result<()> {
         use business::UserService as _;
 
-        let service = business::SimpleUserService::new(Arc::new(
-            data::InMemoryUserRepository::new(),
-        ));
+        let service =
+            business::SimpleUserService::new(Arc::new(data::InMemoryUserRepository::new()));
         service
             .create_user(User {
                 id: 1,

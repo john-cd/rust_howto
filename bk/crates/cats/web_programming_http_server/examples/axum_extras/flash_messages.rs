@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! One-time "flash" messages with `axum-messages` and `tower-sessions`.
+//!
+//! A flash message is a one-time notice, such as "Saved", stored in the user's
+//! session and shown on the next page. It lets a handler redirect after a form
+//! post (the post/redirect/get pattern) and still report the result.
 
 use axum::Router;
 use axum::response::IntoResponse;
@@ -30,8 +34,7 @@ async fn show(messages: Messages) -> String {
 /// Builds the router. Messages are kept in the session, so the session layer
 /// must wrap the messages layer.
 pub fn app() -> Router {
-    let session_layer =
-        SessionManagerLayer::new(MemoryStore::default()).with_secure(false);
+    let session_layer = SessionManagerLayer::new(MemoryStore::default()).with_secure(false);
     Router::new()
         .route("/save", get(save))
         .route("/show", get(show))
@@ -63,9 +66,7 @@ mod tests {
         Ok(app.clone().oneshot(request.body(Body::empty())?).await?)
     }
 
-    async fn text(
-        response: axum::response::Response,
-    ) -> anyhow::Result<String> {
+    async fn text(response: axum::response::Response) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();
         Ok(String::from_utf8(bytes.to_vec())?)
     }
@@ -90,8 +91,7 @@ mod tests {
         let first = text(get_with(&app, "/show", Some(&cookie)).await?).await?;
         assert_eq!(first, "Settings saved");
 
-        let second =
-            text(get_with(&app, "/show", Some(&cookie)).await?).await?;
+        let second = text(get_with(&app, "/show", Some(&cookie)).await?).await?;
         assert!(second.is_empty());
         Ok(())
     }

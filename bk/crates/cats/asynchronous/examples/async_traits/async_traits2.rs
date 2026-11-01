@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Return-position `impl Trait` in a trait method.
+//!
+//! A trait method can return `impl Future` (return-position `impl Trait`),
+//! which is what `async fn` in traits expands to. Writing it out lets you add
+//! bounds such as `Send` that callers on multi-threaded runtimes need.
 
 /// This example demonstrates how to use `impl Trait` in a trait definition.
 ///

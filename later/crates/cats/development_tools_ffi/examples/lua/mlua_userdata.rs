@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Exposes a Rust counter as Lua userdata with a method, using vendored Lua.
+//!
+//! Userdata is a Rust value that Lua code holds as an opaque object. Methods
+//! registered on it let scripts call back into Rust, while the data stays in
+//! Rust and is owned and protected by it.
 
 use mlua::prelude::*;
 

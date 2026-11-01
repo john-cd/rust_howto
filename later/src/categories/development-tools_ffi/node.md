@@ -8,7 +8,7 @@ Interfacing with Node.js from Rust is typically done using Node-API (N-API), whi
 
 ## `napi` {#napi}
 
-[![napi][c~napi~docs~badge]][c~napi~docs] [![napi~crates.io][c~napi~crates.io~badge]][c~napi~crates.io] [![napi~repo][c~napi~repo~badge]][c~napi~repo] [![napi~lib.rs][c~napi~lib.rs~badge]][c~napi~lib.rs]{{hi:napi}}{{hi:Ffi}}{{hi:Node}}{{hi:NodeJS}}{{hi:N-api}}{{hi:napi}}
+{{#badges napi}}{{hi:Ffi}}{{hi:Node}}{{hi:NodeJS}}{{hi:N-api}}{{hi:napi}}
 
 [`napi`][c~napi~docs]↗{{hi:napi}} provides N-API bindings for `Node.js`.
 
@@ -49,7 +49,7 @@ This book's included example tests the plain Rust sum, point conversion, greetin
 
 ## `neon` {#neon}
 
-[![neon~website][c~neon~website~badge]][c~neon~website] [![neon][c~neon~docs~badge]][c~neon~docs] [![neon~crates.io][c~neon~crates.io~badge]][c~neon~crates.io] [![neon~repo][c~neon~repo~badge]][c~neon~repo] [![neon~lib.rs][c~neon~lib.rs~badge]][c~neon~lib.rs]{{hi:neon}}
+[![neon~website][c~neon~website~badge]][c~neon~website] {{#badges neon}}
 
 [`neon`][c~neon~docs]↗{{hi:neon}} is a safe abstraction layer for Node.js.
 

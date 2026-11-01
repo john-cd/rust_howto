@@ -72,11 +72,7 @@ where
 /// Runs the strict-mock demonstration and checks both expected readings.
 fn main() {
     let expectations = [
-        Transaction::write_read(
-            SENSOR_ADDR,
-            vec![REG_DEVICE_ID],
-            vec![DEVICE_ID],
-        ),
+        Transaction::write_read(SENSOR_ADDR, vec![REG_DEVICE_ID], vec![DEVICE_ID]),
         Transaction::write_read(
             SENSOR_ADDR,
             vec![REG_TEMP],
@@ -139,15 +135,10 @@ mod tests {
     /// Propagates an I2C error instead of returning a temperature value.
     #[test]
     fn propagates_bus_errors() {
-        let expectations =
-            [
-                Transaction::write_read(
-                    SENSOR_ADDR,
-                    vec![REG_TEMP],
-                    vec![0, 0],
-                )
+        let expectations = [
+            Transaction::write_read(SENSOR_ADDR, vec![REG_TEMP], vec![0, 0])
                 .with_error(ErrorKind::Other),
-            ];
+        ];
         let mut sensor = TemperatureSensor::new(Mock::new(&expectations));
 
         assert_eq!(sensor.read_temperature(), Err(ErrorKind::Other));

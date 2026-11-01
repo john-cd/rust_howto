@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Pinning values with `Pin` and `PhantomPinned`.
+//!
+//! `Pin` promises that a value will not be moved in memory. Futures made by
+//! `async` blocks can hold references into themselves, so they must stay put
+//! while polled. `PhantomPinned` marks a type that must not be moved.
 
 use std::marker::PhantomPinned;
 use std::pin::Pin;
@@ -36,8 +40,7 @@ fn main() {
     // forming a promise that the _pointee_ will not be moved or otherwise
     // invalidated.
 
-    // 1. **Trivial case:** If the pointee value's type implements `Unpin`,
-    //    which
+    // 1. **Trivial case:** If the pointee value's type implements `Unpin`, which
     // cancels the effect of `Pin`, we can wrap any pointer to that value in
     // `Pin` directly via `Pin::new`.
     // That allows `x` to participate in `Pin`-bound APIs.

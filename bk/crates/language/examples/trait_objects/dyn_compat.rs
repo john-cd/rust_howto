@@ -1,7 +1,11 @@
-#![allow(unused_variables)]
 // TODO Reviewed ??-??-2026.
 // ANCHOR: example
 //! Example of (non-)dyn-compatible traits.
+//!
+//! A trait object (`dyn Trait`) calls methods through a table of function
+//! pointers at run time (dynamic dispatch). Only dyn-compatible traits (earlier
+//! called "object safe") can be used this way: for example, methods may not be
+//! generic and may not return `Self`.
 
 use std::pin::Pin;
 use std::rc::Rc;
@@ -121,14 +125,14 @@ trait TraitMethods {
         Self: Sized;
 
     /// Takes another `Self`, so it is excluded from trait objects.
-    fn param(&self, other: Self)
+    fn param(&self, _other: Self)
     where
         Self: Sized,
     {
     }
 
     /// Has a type parameter, so it is excluded from trait objects.
-    fn typed<T>(&self, x: T)
+    fn typed<T>(&self, _x: T)
     where
         Self: Sized,
     {

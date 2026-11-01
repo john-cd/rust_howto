@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to use the `assert!` macro with a custom
 //! failure message.
+//!
+//! A custom message in `assert!` explains why a check failed, in terms of the
+//! problem instead of just two values. Include the inputs, so a failure in
+//! continuous integration can be understood without rerunning it.
 
 /// Asserts that `name` contains "Carol", with a custom failure message.
 fn check_name(name: &str) {

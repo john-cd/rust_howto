@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Runs CPU-bound work from `async` code on a dedicated thread.
+//!
+//! For long-running or CPU-heavy work, a dedicated thread avoids occupying the
+//! async runtime's blocking pool. The async side awaits the result through a
+//! channel.
 
 /// Sums `nums` on a dedicated thread and returns the result through a channel.
 async fn parallel_sum(nums: Vec<i32>) -> i32 {
@@ -43,8 +47,7 @@ mod tests {
     /// Runs the call blocking from async spawn dedicated thread example through
     /// its entry point.
     #[test]
-    fn test_call_blocking_from_async_spawn_dedicated_thread_example_entry_point()
-     {
+    fn test_call_blocking_from_async_spawn_dedicated_thread_example_entry_point() {
         main();
     }
 

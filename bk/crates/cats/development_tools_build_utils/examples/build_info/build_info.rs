@@ -1,4 +1,8 @@
 //! TODO Reviewed ??-??-2026.
+//!
+//! Embedding build details, such as the version, Git commit and build time, in
+//! the binary helps with support: a bug report can state exactly which build
+//! produced it.
 
 // ANCHOR: example
 use std::collections::BTreeSet;
@@ -46,10 +50,7 @@ fn get_dependencies(crate_info: &CrateInfo) -> BTreeSet<(String, Version)> {
 }
 
 /// Adds a crate and its collected dependencies to the ordered set.
-fn collect_dependencies(
-    crate_info: &CrateInfo,
-    dependencies: &mut BTreeSet<(String, Version)>,
-) {
+fn collect_dependencies(crate_info: &CrateInfo, dependencies: &mut BTreeSet<(String, Version)>) {
     dependencies.insert((crate_info.name.clone(), crate_info.version.clone()));
     for dependency in &crate_info.dependencies {
         collect_dependencies(dependency, dependencies);
@@ -75,9 +76,11 @@ mod tests {
     fn dependencies_include_the_crate_itself_and_are_sorted_and_unique() {
         let info = build_info();
         let deps = get_dependencies(&info.crate_info);
-        assert!(deps.iter().any(|(name, v)| {
-            *name == info.crate_info.name && *v == info.crate_info.version
-        }));
+        assert!(
+            deps.iter().any(|(name, v)| {
+                *name == info.crate_info.name && *v == info.crate_info.version
+            })
+        );
         assert!(deps.len() > 1, "the crate has dependencies");
         let names: Vec<_> = deps.iter().collect();
         assert!(names.windows(2).all(|w| w[0] < w[1]));

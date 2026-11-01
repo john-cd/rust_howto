@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Examples for working with `.env` files and `envy`.
+//!
+//! `envy` reads environment variables into a typed struct with Serde, so a
+//! missing or malformed variable becomes one clear error at startup instead of
+//! a failure deep in the program.
 
 use serde::Deserialize;
 
@@ -18,8 +22,7 @@ struct Configuration {
 fn main() {
     // Deserialize the Configuration struct from environment variables.
     // It expects a PORT environment variable to be set.
-    let c = envy::from_env::<Configuration>()
-        .expect("Please provide the PORT env variable");
+    let c = envy::from_env::<Configuration>().expect("Please provide the PORT env variable");
 
     // Deserialize the Configuration struct from environment variables with a
     // prefix. It expects a MY_APP__PORT environment variable to be set.

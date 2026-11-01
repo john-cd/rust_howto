@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A bouncing ball in a Macroquad game loop.
+//!
+//! A game loop repeats: handle input, update the game state, draw a frame.
+//! Macroquad keeps this simple with an async main that draws one frame per
+//! iteration, and runs on desktop, mobile and the web.
 
 use macroquad::prelude::*;
 

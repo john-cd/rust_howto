@@ -70,8 +70,7 @@ mod tests {
     }
 
     #[test]
-    fn test_get_mut_requires_unique_ownership()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_get_mut_requires_unique_ownership() -> Result<(), Box<dyn std::error::Error>> {
         let mut y = Rc::new(4);
         *Rc::get_mut(&mut y).ok_or("`y` is shared")? = 5;
         assert_eq!(*y, 5);

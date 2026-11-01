@@ -32,7 +32,7 @@ The [`percent-encoding`][c~percent-encoding~docs]↗ crate also provides common 
 
 ## Encode Form Data as `application/x-www-form-urlencoded` {#url}
 
-[![url][c~url~docs~badge]][c~url~docs] [![url~crates.io][c~url~crates.io~badge]][c~url~crates.io] [![url~repo][c~url~repo~badge]][c~url~repo] [![url~lib.rs][c~url~lib.rs~badge]][c~url~lib.rs]{{hi:url}}
+{{#badges url}}
 
 Form encoding uses `+` for spaces and percent-escapes other bytes as required by `application/x-www-form-urlencoded`. This is a distinct format from percent-encoding an arbitrary URL component. The `url` crate provides iterators for encoding and parsing form data.
 
@@ -62,7 +62,7 @@ Base64 represents arbitrary bytes as ASCII text; it is not encryption or compres
 
 ## Encode and Decode Hexadecimal with `hex` {#hex}
 
-[![hex][c~hex~docs~badge]][c~hex~docs]{{hi:hex}} [![hex~crates.io][c~hex~crates.io~badge]][c~hex~crates.io] [![hex~repo][c~hex~repo~badge]][c~hex~repo] [![hex~lib.rs][c~hex~lib.rs~badge]][c~hex~lib.rs] [![cat~encoding][cat~encoding~badge]][cat~encoding]
+{{#badges hex encoding=}}
 
 The [`hex`][c~hex~docs]↗{{hi:hex}} crate offers `hex::encode`, which produces lowercase hexadecimal, `hex::decode`, and `hex::decode_to_slice` for fixed-size buffers. Invalid input returns a `FromHexError`, for example for an odd length or a character that is not a hex digit. [`data-encoding`][c~data-encoding~docs]↗ (shown above) and `const-hex` are alternatives.
 
@@ -72,7 +72,7 @@ The [`hex`][c~hex~docs]↗{{hi:hex}} crate offers `hex::encode`, which produces 
 
 ## Encode Forms and Path Segments with `serde_urlencoded` and `urlencoding` {#form-urlencoded}
 
-[![serde_urlencoded][c~serde_urlencoded~docs~badge]][c~serde_urlencoded~docs]{{hi:serde_urlencoded}} [![serde_urlencoded~crates.io][c~serde_urlencoded~crates.io~badge]][c~serde_urlencoded~crates.io] [![serde_urlencoded~repo][c~serde_urlencoded~repo~badge]][c~serde_urlencoded~repo] [![serde_urlencoded~lib.rs][c~serde_urlencoded~lib.rs~badge]][c~serde_urlencoded~lib.rs] [![urlencoding][c~urlencoding~docs~badge]][c~urlencoding~docs]{{hi:urlencoding}} [![cat~encoding][cat~encoding~badge]][cat~encoding]
+{{#badges serde_urlencoded}} [![urlencoding][c~urlencoding~docs~badge]][c~urlencoding~docs]{{hi:urlencoding}} [![cat~encoding][cat~encoding~badge]][cat~encoding]
 
 [`serde_urlencoded`][c~serde_urlencoded~docs]↗{{hi:serde_urlencoded}} serializes a struct to an `application/x-www-form-urlencoded` string (a query string or form body) and parses it back, into a struct or a map. Spaces become `+`. [`urlencoding`][c~urlencoding~docs]↗{{hi:urlencoding}} escapes a single path or query segment; a space becomes `%20`.
 

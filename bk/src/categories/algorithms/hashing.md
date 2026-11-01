@@ -34,9 +34,9 @@ For attacker-controlled keys, keep the standard library's randomized `HashMap` h
 
 ## Calculate the SHA-256 Digest of a File {#sha256}
 
-[![ring][c~ring~docs~badge]][c~ring~docs] [![ring~crates.io][c~ring~crates.io~badge]][c~ring~crates.io] [![ring~repo][c~ring~repo~badge]][c~ring~repo] [![ring~lib.rs][c~ring~lib.rs~badge]][c~ring~lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges ring cryptography=Cryptography no-std="No standard library"}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}}
 
-[![data-encoding][c~data-encoding~docs~badge]][c~data-encoding~docs] [![data-encoding~crates.io][c~data-encoding~crates.io~badge]][c~data-encoding~crates.io] [![data-encoding~repo][c~data-encoding~repo~badge]][c~data-encoding~repo] [![data-encoding~lib.rs][c~data-encoding~lib.rs~badge]][c~data-encoding~lib.rs]{{hi:data-encoding}}{{hi:Hex}}{{hi:No_std}}{{hi:Base64}}{{hi:Base32}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges data-encoding encoding=Encoding no-std="No standard library"}}{{hi:Hex}}{{hi:No_std}}{{hi:Base64}}{{hi:Base32}}
 
 SHA-256 (Secure Hash Algorithm 256-bit) is part of the SHA-2 family of cryptographic hash functions. It produces a fixed-size 256-bit hash value (64 characters) from input data of any size. SHA-256 is widely used in applications such as digital signatures, certificate generation, and data integrity verification.
 
@@ -52,7 +52,7 @@ Use a cryptographic hash when a digest must resist deliberate attacks. For passw
 
 ### Hash with `blake3` {#blake3}
 
-[![blake3][c~blake3~docs~badge]][c~blake3~docs] [![blake3~crates.io][c~blake3~crates.io~badge]][c~blake3~crates.io] [![blake3~repo][c~blake3~repo~badge]][c~blake3~repo] [![blake3~lib.rs][c~blake3~lib.rs~badge]][c~blake3~lib.rs]{{hi:blake3}}
+{{#badges blake3}}
 
 [`blake3`][c~blake3~docs]↗{{hi:blake3}} implements a cryptographic hash with a tree structure that can use parallel processing. It supports incremental hashing and output of arbitrary length. BLAKE3 also provides keyed hashing and key-derivation modes, but it is not a password-hashing function; use a dedicated function such as Argon2id for passwords.
 
@@ -62,7 +62,7 @@ Use a cryptographic hash when a digest must resist deliberate attacks. For passw
 
 ### Hash with `sha2` {#sha2}
 
-[![sha2][c~sha2~docs~badge]][c~sha2~docs] [![sha2~crates.io][c~sha2~crates.io~badge]][c~sha2~crates.io] [![sha2~repo][c~sha2~repo~badge]][c~sha2~repo] [![sha2~lib.rs][c~sha2~lib.rs~badge]][c~sha2~lib.rs]{{hi:sha2}}{{hi:Hash}}{{hi:Crypto}}{{hi:sha2}}{{hi:Digest}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges sha2 cryptography=Cryptography no-std="No standard library"}}{{hi:Hash}}{{hi:Crypto}}{{hi:sha2}}{{hi:Digest}}
 
 SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions designed by the National Security Agency (NSA) and standardized by NIST.
 
@@ -74,7 +74,7 @@ SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions desi
 
 ### `foldhash` {#foldhash}
 
-[![foldhash][c~foldhash~docs~badge]][c~foldhash~docs] [![foldhash~crates.io][c~foldhash~crates.io~badge]][c~foldhash~crates.io] [![foldhash~repo][c~foldhash~repo~badge]][c~foldhash~repo] [![foldhash~lib.rs][c~foldhash~lib.rs~badge]][c~foldhash~lib.rs]{{hi:foldhash}}{{hi:Hash}}{{hi:Hasher}}{{hi:No-std}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges foldhash no-std="No standard library" algorithms=Algorithms}}{{hi:Hash}}{{hi:Hasher}}{{hi:No-std}}
 
 A fast, non-cryptographic hash function. Do not use it as a cryptographic digest or assume it protects attacker-controlled keys from collision attacks.
 
@@ -86,7 +86,7 @@ This example fixes a seed so the same input produces the same value; use randomi
 
 ### Checksum Data with `xxhash-rust` {#xxh3}
 
-[![xxhash-rust][c~xxhash-rust~docs~badge]][c~xxhash-rust~docs] [![xxhash-rust~crates.io][c~xxhash-rust~crates.io~badge]][c~xxhash-rust~crates.io] [![xxhash-rust~repo][c~xxhash-rust~repo~badge]][c~xxhash-rust~repo] [![xxhash-rust~lib.rs][c~xxhash-rust~lib.rs~badge]][c~xxhash-rust~lib.rs]{{hi:xxhash-rust}}{{hi:XXH3}}{{hi:Checksum}}{{hi:Hash}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges xxhash-rust algorithms=Algorithms}}{{hi:XXH3}}{{hi:Checksum}}{{hi:Hash}}
 
 XXH3 is a fast, non-cryptographic hash. The example appends a 128-bit XXH3 tag to a buffer, verifies it on read, and rejects a corrupted byte. A tag like this detects accidental corruption such as a truncated or bit-flipped cache file. It is **not** a message authentication code: an attacker can forge a matching tag. For tamper resistance, use an HMAC or a signature - see [[encryption | Encryption]].
 
@@ -100,7 +100,7 @@ For legacy applications, you may consider using the following hashing [algorithm
 
 ### Hash with `sha1` {#sha1}
 
-[![sha1][c~sha1~docs~badge]][c~sha1~docs] [![sha1~crates.io][c~sha1~crates.io~badge]][c~sha1~crates.io] [![sha1~repo][c~sha1~repo~badge]][c~sha1~repo] [![sha1~lib.rs][c~sha1~lib.rs~badge]][c~sha1~lib.rs]{{hi:sha1}}{{hi:Hash}}{{hi:sha1}}{{hi:Crypto}}{{hi:Digest}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges sha1 cryptography=Cryptography no-std="No standard library"}}{{hi:Hash}}{{hi:sha1}}{{hi:Crypto}}{{hi:Digest}}
 
 [`sha1`][c~sha1~docs]↗{{hi:sha1}} implements the SHA-1 hash function.
 
@@ -110,7 +110,7 @@ For legacy applications, you may consider using the following hashing [algorithm
 
 ### Hash with `md-5` {#md-5}
 
-[![md-5][c~md-5~docs~badge]][c~md-5~docs] [![md-5~crates.io][c~md-5~crates.io~badge]][c~md-5~crates.io] [![md-5~repo][c~md-5~repo~badge]][c~md-5~repo] [![md-5~lib.rs][c~md-5~lib.rs~badge]][c~md-5~lib.rs]{{hi:md-5}}{{hi:Hash}}{{hi:Md5}}{{hi:Crypto}}{{hi:Digest}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges md-5 cryptography=Cryptography no-std="No standard library"}}{{hi:Hash}}{{hi:Md5}}{{hi:Crypto}}{{hi:Digest}}
 
 [`md-5`][c~md-5~docs]↗{{hi:md-5}} implements the MD5 hash function.
 

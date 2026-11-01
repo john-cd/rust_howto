@@ -1,4 +1,8 @@
 //! Writing tests that pass, fail, return a `Result` or are ignored.
+//!
+//! `cargo test` runs every function marked `#[test]` in parallel threads, and
+//! reports failures. A test passes unless it panics, so assertions are how you
+//! check results.
 
 #![allow(clippy::eq_op)]
 

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Configures and initializes the logging system using log4rs.
+//!
+//! The `log` crate is a facade: libraries call `info!`, `warn!` and so on, and
+//! the application picks the logger that decides where the messages go.
+//! Implementing the `Log` trait gives a custom destination, such as a file or a
+//! service.
 
 use std::path::Path;
 
@@ -49,11 +54,11 @@ pub fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Verifies that the log custom example's main path succeeds.
     #[test]
-    fn file_appender_creates_file_in_temporary_directory() -> anyhow::Result<()>
-    {
+    fn file_appender_creates_file_in_temporary_directory() -> anyhow::Result<()> {
         let directory = tempdir()?;
         let path = directory.path().join("output.log");
         let _appender = file_appender(&path)?;
@@ -63,8 +68,10 @@ mod tests {
 
     #[test]
     fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        isolated::run(module_path!(), "test_main_entry_point", || {
+            if let Err(err) = main() {
+                panic!("main failed: {err:?}");
+            }
+        });
     }
 }

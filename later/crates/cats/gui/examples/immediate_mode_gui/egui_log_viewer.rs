@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Shows the `tracing` events of an application in a panel with `egui_tracing`.
+//!
+//! `tracing` records structured log events from a program. A subscriber layer
+//! can collect them, so a debugging panel inside the app can show them live.
+//! `egui` is an immediate-mode GUI: the interface is rebuilt by code on every
+//! frame.
 
 use eframe_034::egui;
 use egui_tracing::EventCollector;
@@ -32,8 +37,7 @@ fn run_example() {
     assert_eq!(collector.events().len(), 3);
 
     let ctx = egui::Context::default();
-    let screen =
-        egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
+    let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
         screen_rect: Some(screen),
         ..Default::default()

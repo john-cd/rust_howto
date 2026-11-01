@@ -29,10 +29,7 @@ pub struct MyError {
 /// Implement the `Display` trait for `MyError` to customize its string
 /// representation.
 impl std::fmt::Display for MyError {
-    fn fmt(
-        &self,
-        f: &mut std::fmt::Formatter<'_>,
-    ) -> Result<(), std::fmt::Error> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
         write!(f, "{}", self.msg)
     }
 }
@@ -76,8 +73,7 @@ mod tests {
 
     /// The error displays its message and exposes the source.
     #[test]
-    fn error_has_message_and_source() -> Result<(), Box<dyn std::error::Error>>
-    {
+    fn error_has_message_and_source() -> Result<(), Box<dyn std::error::Error>> {
         let Err(err) = example() else {
             panic!("`example` should fail");
         };

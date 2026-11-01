@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Implementing `Deref` for a smart pointer.
+//!
+//! A smart pointer owns data and behaves like a reference. Implementing `Deref`
+//! lets `*pointer` and method calls reach the inner value, via deref coercion.
 
 use std::ops::Deref;
 

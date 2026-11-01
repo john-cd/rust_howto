@@ -8,13 +8,13 @@
 
 ### Use a Custom Allocator `wee_alloc` {#wee_alloc}
 
-[![wee_alloc][c~wee_alloc~docs~badge]][c~wee_alloc~docs] [![wee_alloc~crates.io][c~wee_alloc~crates.io~badge]][c~wee_alloc~crates.io] [![wee_alloc~repo][c~wee_alloc~repo~badge]][c~wee_alloc~repo] [![wee_alloc~lib.rs][c~wee_alloc~lib.rs~badge]][c~wee_alloc~lib.rs]{{hi:wee_alloc}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
+{{#badges wee_alloc memory-management="Memory management" no-std="No standard library" wasm=WebAssembly web-programming="Web programming" embedded="Embedded development"}}
 
 [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}} is a WASM-enabled allocator.
 
 ### Use a Custom Allocator with `tikv-jemallocator` {#tikv-jemallocator}
 
-[![tikv-jemallocator][c~tikv-jemallocator~docs~badge]][c~tikv-jemallocator~docs] [![tikv-jemallocator~crates.io][c~tikv-jemallocator~crates.io~badge]][c~tikv-jemallocator~crates.io] [![tikv-jemallocator~repo][c~tikv-jemallocator~repo~badge]][c~tikv-jemallocator~repo] [![tikv-jemallocator~lib.rs][c~tikv-jemallocator~lib.rs~badge]][c~tikv-jemallocator~lib.rs]{{hi:tikv-jemallocator}}{{hi:Allocator}}{{hi:Jemalloc}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
+{{#badges tikv-jemallocator memory-management="Memory management" api-bindings="API bindings"}}{{hi:Allocator}}{{hi:Jemalloc}}
 
 `tikv-jemallocator` is a Rust allocator backed by 'jemalloc' (a well-known C library). It is a drop-in replacement for the standard Rust allocator (in `alloc::alloc`).
 
@@ -24,7 +24,7 @@
 
 ### Use the `mimalloc` Memory Allocator {#mimalloc}
 
-[![mimalloc][c~mimalloc~docs~badge]][c~mimalloc~docs] [![mimalloc~crates.io][c~mimalloc~crates.io~badge]][c~mimalloc~crates.io] [![mimalloc~repo][c~mimalloc~repo~badge]][c~mimalloc~repo] [![mimalloc~lib.rs][c~mimalloc~lib.rs~badge]][c~mimalloc~lib.rs]{{hi:mimalloc}}{{hi:Performance}}{{hi:Allocator}}{{hi:mimalloc}}{{hi:Encrypted-heap}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
+{{#badges mimalloc api-bindings="API bindings" memory-management="Memory management"}}{{hi:Performance}}{{hi:Allocator}}{{hi:mimalloc}}{{hi:Encrypted-heap}}
 
 Mimalloc is a general purpose, performance-oriented allocator built by Microsoft. It is also a drop-in replacement for the standard Rust allocator (in `alloc::alloc`).
 
@@ -48,7 +48,7 @@ Measure before switching: the best allocator depends on the workload and the pla
 
 ### `slab` {#slab}
 
-[![slab][c~slab~docs~badge]][c~slab~docs] [![slab~crates.io][c~slab~crates.io~badge]][c~slab~crates.io] [![slab~repo][c~slab~repo~badge]][c~slab~repo] [![slab~lib.rs][c~slab~lib.rs~badge]][c~slab~lib.rs]{{hi:slab}}{{hi:slab}}{{hi:Allocator}}{{hi:No_std}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges slab data-structures="Data structures" memory-management="Memory management" no-std="No standard library"}}{{hi:slab}}{{hi:Allocator}}{{hi:No_std}}
 
 [`slab`][c~slab~docs]↗{{hi:slab}} provides pre-allocated storage for a single data type. If many values of a single type are being allocated, it can be more efficient to pre-allocate the necessary storage. Since the size of the type is uniform, memory fragmentation can be avoided. Storing, clearing, and lookup operations become very cheap.
 
@@ -62,7 +62,7 @@ It is important to note that keys may be reused. In other words, once a value as
 
 ### `bumpalo` {#bumpalo}
 
-[![bumpalo][c~bumpalo~docs~badge]][c~bumpalo~docs] [![bumpalo~crates.io][c~bumpalo~crates.io~badge]][c~bumpalo~crates.io] [![bumpalo~repo][c~bumpalo~repo~badge]][c~bumpalo~repo] [![bumpalo~lib.rs][c~bumpalo~lib.rs~badge]][c~bumpalo~lib.rs]{{hi:bumpalo}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+{{#badges bumpalo memory-management="Memory management" no-std="No standard library" rust-patterns="Rust patterns"}}
 
 [`bumpalo`][c~bumpalo~docs]↗{{hi:bumpalo}} is a fast bump allocation arena for Rust. Bump allocation works by maintaining a pointer to a region of memory; each allocation simply advances this pointer, making allocations extremely cheap (O(1)). All memory is freed at once when the arena is dropped, which makes it ideal for allocating many short-lived objects with the same lifetime.
 
@@ -72,7 +72,7 @@ It is important to note that keys may be reused. In other words, once a value as
 
 ## Garbage Collection with `seize` {#seize}
 
-[![seize][c~seize~docs~badge]][c~seize~docs] [![seize~crates.io][c~seize~crates.io~badge]][c~seize~crates.io] [![seize~repo][c~seize~repo~badge]][c~seize~repo] [![seize~lib.rs][c~seize~lib.rs~badge]][c~seize~lib.rs]{{hi:seize}}{{hi:Garbage}}{{hi:Concurrency}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
+{{#badges seize concurrency=Concurrency memory-management="Memory management"}}{{hi:Garbage}}{{hi:Concurrency}}{{hi:Rcu}}{{hi:Atomic}}{{hi:Lock-free}}
 
 [`seize`][c~seize~docs]↗{{hi:seize}} allows fast, efficient, and predictable memory reclamation for concurrent data structures. It solves the problem of safely freeing shared objects when multiple threads may be reading them simultaneously, without using locks.
 

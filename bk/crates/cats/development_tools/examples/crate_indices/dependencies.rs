@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! List dependencies declared in local Cargo manifests.
+//!
+//! A `Cargo.toml` manifest lists a crate's dependencies. Reading manifests as
+//! data lets a script report which crates the book's examples use.
 
 use anyhow::Result;
 
@@ -25,8 +28,7 @@ mod tests {
     #[test]
     fn dependency_discovery_uses_local_manifests() -> Result<()> {
         let fixture = create_fixture()?;
-        let dependencies =
-            tool_lib::get_dependencies(fixture.path().join("workspace"))?;
+        let dependencies = tool_lib::get_dependencies(fixture.path().join("workspace"))?;
         assert_eq!(
             dependencies,
             vec!["serde".to_owned(), "serde_json".to_owned()]

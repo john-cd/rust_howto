@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Applies an embedded Diesel migration and round-trips a user in SQLite.
+//!
+//! An ORM (object-relational mapper) maps database rows to Rust structs, and a
+//! query builder checks queries at compile time. A migration is a versioned
+//! script that changes the schema, so every environment's database evolves the
+//! same way. SQLite is a database in a single file.
 
 use anyhow::Context as _;
 use diesel::prelude::*;
@@ -12,8 +17,7 @@ use diesel_migrations::MigrationHarness;
 use diesel_migrations::embed_migrations;
 
 /// Database migrations embedded in this example binary.
-const MIGRATIONS: EmbeddedMigrations =
-    embed_migrations!("examples/query_builders_orms/migrations");
+const MIGRATIONS: EmbeddedMigrations = embed_migrations!("examples/query_builders_orms/migrations");
 
 table! {
     users (id) {
@@ -53,13 +57,11 @@ struct NewUser<'a> {
 /// Returns an error if the in-memory database cannot be opened, the migration
 /// fails, or Diesel cannot insert and query the user.
 fn run_example() -> anyhow::Result<User> {
-    let mut connection = SqliteConnection::establish(":memory:")
-        .context("open the in-memory SQLite database")?;
+    let mut connection =
+        SqliteConnection::establish(":memory:").context("open the in-memory SQLite database")?;
     connection
         .run_pending_migrations(MIGRATIONS)
-        .map_err(|error| {
-            anyhow::anyhow!("apply the embedded user-table migration: {error}")
-        })?;
+        .map_err(|error| anyhow::anyhow!("apply the embedded user-table migration: {error}"))?;
 
     let new_user = NewUser {
         name: "Ada Lovelace",

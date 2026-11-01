@@ -30,9 +30,7 @@ fn remove_tree(base: &Path) -> io::Result<()> {
 
     // Now, remove the subdirectory and all of its contents.
     match remove_dir_all(&path) {
-        Ok(()) => println!(
-            "Directory 'sub_dir' and all contents removed successfully!"
-        ),
+        Ok(()) => println!("Directory 'sub_dir' and all contents removed successfully!"),
         Err(e) => eprintln!("Failed to remove directory: {e}"),
     }
     // Beware:
@@ -83,8 +81,7 @@ mod tests {
 
     /// Removing a missing directory is an error from the crate.
     #[test]
-    fn removing_missing_directory_fails()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn removing_missing_directory_fails() -> Result<(), Box<dyn std::error::Error>> {
         let base = tempfile::tempdir()?;
         assert!(remove_dir_all(base.path().join("missing")).is_err());
         Ok(())

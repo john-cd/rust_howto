@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Serializing and deserializing a struct to and from JSON with `serde_json`.
+//!
+//! JSON is the most common text format for web APIs. With `serde`, a struct
+//! that derives `Serialize` and `Deserialize` is converted to and from JSON,
+//! and missing or mistyped fields produce an error instead of a bad value.
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -30,13 +34,13 @@ fn main() {
     };
 
     // Serialize the `Person` instance to a JSON string.
-    let json_string = serde_json::to_string(&person)
-        .expect("the serde json example invariant should hold");
+    let json_string =
+        serde_json::to_string(&person).expect("the serde json example invariant should hold");
     println!("Serialized JSON: {json_string}");
 
     // Deserialize the JSON string back into a `Person` instance.
-    let deserialized_person: Person = serde_json::from_str(&json_string)
-        .expect("sample input should parse successfully");
+    let deserialized_person: Person =
+        serde_json::from_str(&json_string).expect("sample input should parse successfully");
     println!("Deserialized person: {deserialized_person:?}");
 }
 
@@ -58,8 +62,7 @@ mod tests {
 
     /// Round trips preserve data; out-of-range numbers are rejected.
     #[test]
-    fn roundtrips_and_rejects_out_of_range_age()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn roundtrips_and_rejects_out_of_range_age() -> Result<(), Box<dyn std::error::Error>> {
         let person = Person {
             name: "Bob".to_owned(),
             age: 255,

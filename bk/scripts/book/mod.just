@@ -12,12 +12,14 @@ exe := if os_family() == "windows" { ".exe" } else { "" }
 python := if os_family() == "windows" { "python" } else { "python3" }
 mdbook_utils_rev := env("MDBOOK_UTILS_REV", "dedddf3699e461cd418c1a044d82aabd3fec62e0")
 
+# List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- BOOK BUILDING -----------------------------------
 
+# Run the buildbook recipe. Alias: bb.
 alias bb := buildbook
 
 # Render unpublished draft chapters without adding them to the published book.
@@ -43,12 +45,14 @@ alias bb := buildbook
     {{ python }} "{{ source_directory() }}/refdefs.py" check --book-root "{{ root }}"
     {{ python }} "{{ source_directory() }}/../indices/update_refdefs_for_examples.py" check --book-root "{{ root }}"
 
+# Install the pinned mdbook-utils revision used by the book tooling.
 @_install-mdbook-utils:
     cargo install --git https://github.com/john-cd/mdbook-utils --rev {{ mdbook_utils_rev }} --locked mdbook-utils
 
 # Install the pinned word-index preprocessor when a developer renders outside CI.
 mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
 
+# Install the pinned mdbook-indexing preprocessor used to render the book.
 @_install-mdbook-indexing:
     cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing
 
@@ -102,6 +106,7 @@ mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
 
 ## ---- BOOK SERVING -----------------------------------
 
+# Run the serve recipe. Alias: s.
 alias s := serve
 
 # Serve the book (incl. link checking)
@@ -111,6 +116,7 @@ alias s := serve
     ## NOTE: can conflict with "port" / EXPOSE in the Docker / Docker Compose configuration
     ## Or use: cd {{ root }}/book/html ; python3 -m http.server 3000
 
+# Run the quick recipe. Alias: q.
 alias q := quick
 
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes

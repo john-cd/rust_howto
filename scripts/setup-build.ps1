@@ -4,10 +4,9 @@
 # TODO Reviewed ??-??-2026.
 
 param(
-    [ValidatePattern('^[a-z]$')][string]$Slot,
+    [ValidatePattern('^[ab]$')][string]$Slot,
     [string]$Branch,
     [switch]$RestartCache,
-    [string]$ExistingBaseDirs = $env:SCCACHE_BASEDIRS,
     [string]$TargetDir,
     [string]$BuildDir
 )
@@ -17,22 +16,16 @@ $repo = Split-Path -Parent $PSScriptRoot
 $commonGitDir = (& git -C $repo rev-parse --path-format=absolute --git-common-dir)
 if ($LASTEXITCODE) { throw 'Could not locate the shared Git directory.' }
 $mainRepo = Split-Path -Parent $commonGitDir.Trim()
+$codeTargetRoot = if ($env:CODE_TARGET_ROOT) { $env:CODE_TARGET_ROOT } else { 'D:\target' }
+$codeBuildRoot = if ($env:CODE_BUILD_ROOT) { $env:CODE_BUILD_ROOT } else { 'C:\code_build' }
+$codeSccacheRoot = if ($env:CODE_SCCACHE_ROOT) { $env:CODE_SCCACHE_ROOT } elseif ($env:SCCACHE_DIR) { $env:SCCACHE_DIR } else { 'D:\sccache' }
+$env:SCCACHE_CACHE_SIZE = '35G'
 
 function Get-CacheBaseDirs {
-    $configuredBases = @(
-        $ExistingBaseDirs,
-        [Environment]::GetEnvironmentVariable('SCCACHE_BASEDIRS', 'User'),
-        [Environment]::GetEnvironmentVariable('SCCACHE_BASEDIRS', 'Machine')
-    ) -join ';'
-    $bases = @($configuredBases -split ';' | Where-Object { $_ })
-    $bases += $mainRepo.Replace('\', '/')
-    $bases += 'a'..'z' | ForEach-Object { (Join-Path $mainRepo ".worktrees/$_").Replace('\', '/') }
-    $worktreePaths = @(& git -C $mainRepo worktree list --porcelain | ForEach-Object {
-        if ($_ -match '^worktree (.+)$') { $Matches[1].Replace('\', '/') }
-    })
-    if ($LASTEXITCODE) { throw 'Could not enumerate registered Git worktrees.' }
-    $bases += $worktreePaths
-    return $bases | Select-Object -Unique
+    $justfile = Join-Path $repo 'justfile'
+    $bases = & just --justfile $justfile --evaluate build_sccache_basedirs
+    if ($LASTEXITCODE) { throw 'Could not enumerate registered sccache base directories.' }
+    return $bases.Trim()
 }
 
 if ($RestartCache) {
@@ -40,7 +33,7 @@ if ($RestartCache) {
         throw 'Wait for running Cargo/rustc processes before restarting the shared sccache daemon.'
     }
     # sccache reads BASEDIRS when its daemon starts, not on each client request.
-    # Retain other projects' bases, reusable slots, and every registered worktree.
+    # Use only this repository's main checkout and registered allowed letter slots.
     $env:SCCACHE_BASEDIRS = (Get-CacheBaseDirs) -join ';'
     & sccache --stop-server
     & sccache --start-server
@@ -73,12 +66,12 @@ if ($Slot) {
 $identity = if ((Split-Path -Leaf (Split-Path -Parent $repo)) -eq '.worktrees') {
     Split-Path -Leaf $repo
 } else { 'main' }
-if ($identity -notmatch '^(main|[a-z])$') { throw 'Use a named .worktrees/a through .worktrees/z slot.' }
+if ($identity -notmatch '^(main|[ab])$') { throw 'Use only .worktrees/a or .worktrees/b.' }
 
 foreach ($entry in @(
-    @{ Link = 'target'; Destination = $(if ($env:CARGO_TARGET_DIR) { $env:CARGO_TARGET_DIR } else { "D:/target/rust_howto/$identity" }) },
-    @{ Link = 'build'; Destination = $(if ($env:CARGO_BUILD_BUILD_DIR) { $env:CARGO_BUILD_BUILD_DIR } else { "C:/code_build/rust_howto/$identity" }) },
-    @{ Link = '.sccache'; Destination = $(if ($env:SCCACHE_DIR) { $env:SCCACHE_DIR } else { 'D:/sccache' }) }
+    @{ Link = 'target'; Destination = $(if ($TargetDir) { $TargetDir } else { (Join-Path (Join-Path $codeTargetRoot "rust_howto") $identity) }) },
+    @{ Link = 'build'; Destination = $(if ($BuildDir) { $BuildDir } else { (Join-Path (Join-Path $codeBuildRoot "rust_howto") $identity) }) },
+    @{ Link = '.sccache'; Destination = $codeSccacheRoot }
 )) {
     $link = Join-Path $repo $entry.Link
     $destination = [IO.Path]::GetFullPath($entry.Destination)

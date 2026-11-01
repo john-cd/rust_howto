@@ -61,8 +61,7 @@ fn main() {
 
     // Creates a new iterator where each successive item is computed based on
     // the preceding one.
-    let mut successors_iter =
-        iter::successors(Some(1), |n| Some(n * 2)).take(3);
+    let mut successors_iter = iter::successors(Some(1), |n| Some(n * 2)).take(3);
     assert_eq!(successors_iter.next(), Some(1));
     assert_eq!(successors_iter.next(), Some(2));
     assert_eq!(successors_iter.next(), Some(4));

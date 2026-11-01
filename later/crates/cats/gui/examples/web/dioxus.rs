@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A web application with `dioxus`.
+//!
+//! Dioxus builds user interfaces from components, functions that return markup
+//! and re-run when their state changes, like React. The same code can target
+//! the web (compiled to WebAssembly), desktop and mobile.
 
 #[cfg(feature = "dioxus")]
 use dioxus::prelude::*;

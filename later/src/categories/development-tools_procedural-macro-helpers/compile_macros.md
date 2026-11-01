@@ -6,11 +6,7 @@
 
 ## `watt` {#watt}
 
-[![watt][c~watt~docs~badge]][c~watt~docs]{{hi:watt}}
-[![watt~crates.io][c~watt~crates.io~badge]][c~watt~crates.io]
-[![watt~repo][c~watt~repo~badge]][c~watt~repo]
-[![watt~lib.rs][c~watt~lib.rs~badge]][c~watt~lib.rs]
-[![cat~development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers]
+{{#badges watt development-tools::procedural-macro-helpers=}}
 
 [`watt`][c~watt~repo] runs procedural macros compiled to WebAssembly. Its documented workflow uses two crates: an implementation crate compiled to `wasm32-unknown-unknown`, and a small `proc-macro` shim that embeds and invokes the resulting `.wasm` file.
 

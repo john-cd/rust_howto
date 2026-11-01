@@ -8,7 +8,7 @@ Window libraries create native windows and deliver input and lifecycle events. T
 
 ## `winit` {#winit}
 
-[![winit][c~winit~docs~badge]][c~winit~docs] [![winit~crates.io][c~winit~crates.io~badge]][c~winit~crates.io] [![winit~repo][c~winit~repo~badge]][c~winit~repo] [![winit~lib.rs][c~winit~lib.rs~badge]][c~winit~lib.rs]{{hi:winit}}{{hi:Windowing}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+{{#badges winit gui=GUI}}{{hi:Windowing}}
 
 [`winit`][c~winit~docs]↗{{hi:winit}} is the usual starting point for a cross-platform native window and input event loop. Its current application model uses `ApplicationHandler`; pair it with a renderer or pixel presentation layer because Winit does not draw the interface.
 
@@ -18,7 +18,7 @@ Window libraries create native windows and deliver input and lifecycle events. T
 
 ## `tao` {#tao}
 
-[![tao][c~tao~docs~badge]][c~tao~docs] [![tao~crates.io][c~tao~crates.io~badge]][c~tao~crates.io] [![tao~repo][c~tao~repo~badge]][c~tao~repo] [![tao~lib.rs][c~tao~lib.rs~badge]][c~tao~lib.rs]{{hi:tao}}{{hi:Windowing}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+{{#badges tao gui=GUI}}{{hi:Windowing}}
 
 [`tao`][c~tao~docs]↗{{hi:tao}} is Tauri's cross-platform fork of Winit. Its supported platforms include Windows, macOS, Linux, iOS, and Android; on Linux it uses GTK 3. Tao does not itself provide Tauri's system menus or tray icons: use the separate [`muda`][muda~repo] and [`tray-icon`][tray-icon~repo] crates when needed. This workspace disables its Tao example because the current GTK 3 / `glib 0.18` dependency chain conflicts with its GTK 4 dependencies.
 

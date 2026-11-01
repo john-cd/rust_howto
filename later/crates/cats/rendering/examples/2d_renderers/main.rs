@@ -40,8 +40,8 @@ fn tessellate() -> anyhow::Result<VertexBuffers<[f32; 2], u16>> {
 /// Draws each mesh triangle into a CPU pixmap: the application, not Lyon,
 /// chooses the renderer.
 fn rasterize(mesh: &VertexBuffers<[f32; 2], u16>) -> anyhow::Result<Pixmap> {
-    let mut pixmap = Pixmap::new(64, 64)
-        .ok_or_else(|| anyhow::anyhow!("could not allocate the pixmap"))?;
+    let mut pixmap =
+        Pixmap::new(64, 64).ok_or_else(|| anyhow::anyhow!("could not allocate the pixmap"))?;
     pixmap.fill(Color::WHITE);
 
     let mut paint = Paint::default();
@@ -49,8 +49,7 @@ fn rasterize(mesh: &VertexBuffers<[f32; 2], u16>) -> anyhow::Result<Pixmap> {
 
     let (triangles, _) = mesh.indices.as_chunks::<3>();
     for [a, b, c] in triangles {
-        let [a, b, c] =
-            [*a, *b, *c].map(|index| mesh.vertices[usize::from(index)]);
+        let [a, b, c] = [*a, *b, *c].map(|index| mesh.vertices[usize::from(index)]);
         let mut path = PathBuilder::new();
         path.move_to(a[0], a[1]);
         path.line_to(b[0], b[1]);

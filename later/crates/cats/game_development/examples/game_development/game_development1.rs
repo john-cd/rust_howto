@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Detecting the collision of two shapes with `parry2d`.
+//!
+//! Collision detection decides whether shapes overlap, which games use for
+//! hits, walls and triggers. `parry2d` offers shapes and queries such as
+//! intersection tests and distance, in 2D.
 
 use parry2d::math::Pose;
 use parry2d::math::Vector;
@@ -20,9 +24,8 @@ fn main() {
     let cuboid_pos = Pose::from_translation(Vector::new(1.5, 0.0));
 
     // 1. Intersection test.
-    let intersects =
-        query::intersection_test(&ball_pos, &ball, &cuboid_pos, &cuboid)
-            .expect("Intersection test failed");
+    let intersects = query::intersection_test(&ball_pos, &ball, &cuboid_pos, &cuboid)
+        .expect("Intersection test failed");
     println!("Shapes intersect: {}", intersects.intersecting);
 
     // 2. Distance computation.
@@ -91,8 +94,8 @@ mod tests {
                 .expect("supported shape pair")
                 .intersecting
         );
-        let distance = query::distance(&ball_pos, &ball, &far, &cuboid)
-            .expect("supported shape pair");
+        let distance =
+            query::distance(&ball_pos, &ball, &far, &cuboid).expect("supported shape pair");
         assert!((distance.distance - 8.0).abs() < 1e-4);
         assert!(
             query::contact(&ball_pos, &ball, &far, &cuboid, 0.1)

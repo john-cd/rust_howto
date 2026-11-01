@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Redacts many words in a log line with one reusable, case-insensitive
 //! `aho-corasick` automaton.
+//!
+//! Redaction replaces sensitive words, such as names or tokens, before text is
+//! logged or shared. Building the Aho-Corasick matcher once and reusing it
+//! keeps this fast when there are many words.
 
 use aho_corasick::AhoCorasick;
 use aho_corasick::MatchKind;
@@ -38,7 +42,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

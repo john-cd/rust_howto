@@ -47,8 +47,7 @@ fn main() -> anyhow::Result<()> {
 
     // `root` verifies the buffer and returns a zero-copy view into its bytes.
     let bytes = builder.finished_data();
-    let decoded =
-        flatbuffers::root::<my_game_generated::my_game::Monster>(bytes)?;
+    let decoded = flatbuffers::root::<my_game_generated::my_game::Monster>(bytes)?;
     assert_eq!(decoded.name(), Some("Alice"));
     assert_eq!(decoded.hp(), 80);
     println!("Decoded monster: {decoded:?}");
@@ -72,9 +71,7 @@ mod tests {
     /// `root` verifies offsets and bounds, so arbitrary bytes are rejected.
     #[test]
     fn garbage_bytes_are_rejected() {
-        let result = flatbuffers::root::<my_game_generated::my_game::Monster>(
-            &[0xff; 8],
-        );
+        let result = flatbuffers::root::<my_game_generated::my_game::Monster>(&[0xff; 8]);
         assert!(result.is_err());
     }
 
@@ -88,9 +85,8 @@ mod tests {
             &my_game_generated::my_game::MonsterArgs::default(),
         );
         builder.finish(monster, None);
-        let decoded = flatbuffers::root::<my_game_generated::my_game::Monster>(
-            builder.finished_data(),
-        )?;
+        let decoded =
+            flatbuffers::root::<my_game_generated::my_game::Monster>(builder.finished_data())?;
         assert_eq!(decoded.name(), None);
         assert_eq!(decoded.hp(), 0);
         Ok(())

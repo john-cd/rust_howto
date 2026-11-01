@@ -11,8 +11,7 @@ use rcgen::generate_simple_self_signed;
 
 /// Creates and prints a certificate for the `localhost` name.
 fn main() -> anyhow::Result<()> {
-    let certified_key =
-        generate_simple_self_signed(vec!["localhost".to_owned()])?;
+    let certified_key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
 
     // Print the public certificate only; do not print or commit the private
     // key.

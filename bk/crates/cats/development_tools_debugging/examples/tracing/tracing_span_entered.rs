@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates entering and exiting a span using `entered()` and `exit()`.
+//!
+//! A span marks a period of work, such as handling one request. Events logged
+//! while the span is entered carry its context. Holding the entered guard
+//! across an `.await` is a mistake in async code; use `instrument` on the
+//! future instead.
 
 use tracing::Level;
 use tracing::span;
@@ -65,9 +70,7 @@ mod tests {
         fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
             self.0
                 .lock()
-                .map_err(|_| {
-                    std::io::Error::other("tracing output mutex is poisoned")
-                })?
+                .map_err(|_| std::io::Error::other("tracing output mutex is poisoned"))?
                 .extend_from_slice(data);
             Ok(data.len())
         }
@@ -111,15 +114,11 @@ mod tests {
                 .unwrap_or_else(|| panic!("{needle} in {out}"))
         };
         assert!(line("Code here is within the span.").contains("Some span"));
-        assert!(
-            !line("Code here is no longer within the span.")
-                .contains("Some span")
-        );
+        assert!(!line("Code here is no longer within the span.").contains("Some span"));
         assert!(!line("No longer within the span.").contains("Another span"));
         assert!(
             out.lines()
-                .filter(|l| l.contains("Within the span.")
-                    && l.contains("Another span"))
+                .filter(|l| l.contains("Within the span.") && l.contains("Another span"))
                 .count()
                 == 2,
             "{out}"

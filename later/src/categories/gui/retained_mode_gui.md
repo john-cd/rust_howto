@@ -23,7 +23,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Iced {#iced}
 
-[![iced~website][c~iced~website~badge]][c~iced~website] [![iced][c~iced~docs~badge]][c~iced~docs] [![iced~crates.io][c~iced~crates.io~badge]][c~iced~crates.io] [![iced~repo][c~iced~repo~badge]][c~iced~repo] [![iced~lib.rs][c~iced~lib.rs~badge]][c~iced~lib.rs]{{hi:iced}}{{hi:Graphics}}{{hi:Gui}}{{hi:Interface}}{{hi:Ui}}{{hi:Widgets}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+[![iced~website][c~iced~website~badge]][c~iced~website] {{#badges iced}} {{hi:Graphics}} {{hi:Gui}} {{hi:Interface}} {{hi:Ui}} {{hi:Widgets}} {{#categories gui=GUI}}
 
 [`iced`][c~iced~docs] follows the Elm Architecture: model application state, represent user actions as messages, update the state, and describe the view from it. Its current documentation lists Windows, macOS, Linux, and Web targets; the project still calls the library experimental.
 
@@ -33,7 +33,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Slint {#slint}
 
-[![slint~website][c~slint~website~badge]][c~slint~website] [![slint][c~slint~docs~badge]][c~slint~docs] [![slint~crates.io][c~slint~crates.io~badge]][c~slint~crates.io] [![slint~repo][c~slint~repo~badge]][c~slint~repo] [![slint~lib.rs][c~slint~lib.rs~badge]][c~slint~lib.rs]{{hi:slint}}{{hi:Design}}{{hi:Graphics}}{{hi:Gui}}{{hi:Toolkit}}{{hi:Ui}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~rendering::engine][cat~rendering::engine~badge]][cat~rendering::engine]{{hi:Rendering engine}}
+[![slint~website][c~slint~website~badge]][c~slint~website] {{#badges slint}} {{hi:Design}} {{hi:Graphics}} {{hi:Gui}} {{hi:Toolkit}} {{hi:Ui}} {{#categories gui=GUI,no-std="No standard library",rendering::engine="Rendering engine"}}
 
 [`slint`][c~slint~docs] separates declarative `.slint` UI from Rust application logic and supports desktop, embedded, and mobile apps. Rust applications can also target WebAssembly, where Slint draws to a canvas rather than using normal HTML controls; its documentation describes limitations such as unavailable screen-reader accessibility. The example's `App::run()` opens a window, so launch it from `later/crates` with `cargo run -p gui --example retained_mode_gui --features slint -- slint`; its component test uses the headless testing backend.
 
@@ -43,7 +43,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Floem {#floem}
 
-[![floem][c~floem~docs~badge]][c~floem~docs] [![floem~crates.io][c~floem~crates.io~badge]][c~floem~crates.io] [![floem~repo][c~floem~repo~badge]][c~floem~repo] [![floem~lib.rs][c~floem~lib.rs~badge]][c~floem~lib.rs]{{hi:floem}}
+{{#badges floem}}
 
 [`floem`][c~floem~docs] is a declarative native UI library built around fine-grained reactive signals. Its project lists Windows, macOS, and Linux support, several GPU renderers, and a CPU fallback; it is pre-1.0, so APIs may change.
 
@@ -53,7 +53,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Vizia {#vizia}
 
-[![vizia][c~vizia~docs~badge]][c~vizia~docs] [![vizia~crates.io][c~vizia~crates.io~badge]][c~vizia~crates.io] [![vizia~repo][c~vizia~repo~badge]][c~vizia~repo] [![vizia~lib.rs][c~vizia~lib.rs~badge]][c~vizia~lib.rs]{{hi:vizia}}
+{{#badges vizia}}
 
 [`vizia`][c~vizia~docs] binds views to application models and routes events back to update them. The example uses Vizia 0.4's signal-based API and lives in a separate package because its Skia dependency conflicts with the GUI workspace's Slint version.
 
@@ -63,7 +63,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ## Xilem and Masonry {#xilem}
 
-[![xilem~website][c~xilem~website~badge]][c~xilem~website] [![xilem][c~xilem~docs~badge]][c~xilem~docs] [![xilem~crates.io][c~xilem~crates.io~badge]][c~xilem~crates.io] [![xilem~repo][c~xilem~repo~badge]][c~xilem~repo] [![xilem~lib.rs][c~xilem~lib.rs~badge]][c~xilem~lib.rs]{{hi:xilem}}{{hi:Gui}}{{hi:Ui}}{{hi:Native}}{{hi:Gpu}}{{hi:Performance}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~accessibility][cat~accessibility~badge]][cat~accessibility]{{hi:Accessibility}}
+[![xilem~website][c~xilem~website~badge]][c~xilem~website] {{#badges xilem}} {{hi:Gui}} {{hi:Ui}} {{hi:Native}} {{hi:Gpu}} {{hi:Performance}} {{#categories gui=GUI,graphics=Graphics,accessibility=Accessibility}}
 
 [`xilem`][c~xilem~docs] is an experimental reactive application framework. Its native backend uses Masonry, which owns a retained widget tree; the project also maintains a separate Web backend.
 
@@ -75,19 +75,19 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 ### GPUI {#gpui}
 
-[![gpui][c~gpui~docs~badge]][c~gpui~docs] [![gpui~crates.io][c~gpui~crates.io~badge]][c~gpui~crates.io] [![gpui~repo][c~gpui~repo~badge]][c~gpui~repo] [![gpui~lib.rs][c~gpui~lib.rs~badge]][c~gpui~lib.rs]{{hi:gpui}}
+{{#badges gpui}}
 
 [GPUI][c~gpui~repo] is the hybrid immediate- and retained-mode GPU-accelerated framework used to build Zed. It targets macOS, Windows, and Linux and remains in active pre-1.0 development.
 
 ### Azul {#azul}
 
-[![azul~website][c~azul~website~badge]][c~azul~website] [![azul][c~azul~docs~badge]][c~azul~docs] [![azul~crates.io][c~azul~crates.io~badge]][c~azul~crates.io] [![azul~repo][c~azul~repo~badge]][c~azul~repo] [![azul~lib.rs][c~azul~lib.rs~badge]][c~azul~lib.rs]{{hi:azul}}{{hi:User-interface}}{{hi:Gui}}{{hi:Svg}}{{hi:Graphics}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+[![azul~website][c~azul~website~badge]][c~azul~website] {{#badges azul}} {{hi:User-interface}} {{hi:Gui}} {{hi:Svg}} {{hi:Graphics}} {{#categories gui=GUI}}
 
 [Azul][c~azul~website] offers a data-driven tree, CSS-like styling, and CPU or GPU rendering. Its 0.2.0 release covers desktop and mobile, with Web apps marked experimental; the project identifies its Rust binding as its mature language binding.
 
 ### Druid {#druid}
 
-[![druid][c~druid~docs~badge]][c~druid~docs] [![druid~crates.io][c~druid~crates.io~badge]][c~druid~crates.io] [![druid~repo][c~druid~repo~badge]][c~druid~repo] [![druid~lib.rs][c~druid~lib.rs~badge]][c~druid~lib.rs]{{hi:druid}}{{hi:Toolkit}}{{hi:Gui}}{{hi:Ui}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+{{#badges druid gui=GUI}}{{hi:Toolkit}}{{hi:Gui}}{{hi:Ui}}
 
 [`druid`][c~druid~docs] was a data-first native toolkit. Its maintainers discontinued the project and recommend Xilem for new applications; use Druid only when its existing feature set and lack of future fixes are acceptable.
 

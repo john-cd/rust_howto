@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generating thumbnails of images in parallel with `rayon` and `image`.
+//!
+//! Creating thumbnails is CPU-bound and every image is independent, which makes
+//! it ideal for data parallelism: each core resizes different images at the
+//! same time.
 
 use std::fs;
 use std::path::Path;
@@ -22,8 +26,7 @@ const THUMBNAIL_EDGE: u32 = 300;
 fn main() -> Result<()> {
     let input_dir = Path::new("images");
     let output_dir = Path::new("temp/thumbnails");
-    let thumbnail_count =
-        create_thumbnails(input_dir, output_dir, THUMBNAIL_EDGE)?;
+    let thumbnail_count = create_thumbnails(input_dir, output_dir, THUMBNAIL_EDGE)?;
     println!(
         "Saved {thumbnail_count} thumbnails into '{}'.",
         output_dir.display()
@@ -37,14 +40,10 @@ fn main() -> Result<()> {
 ///
 /// Returns an error if the glob cannot be read or any image cannot be decoded
 /// or written.
-fn create_thumbnails(
-    input_dir: &Path,
-    output_dir: &Path,
-    longest_edge: u32,
-) -> Result<usize> {
+fn create_thumbnails(input_dir: &Path, output_dir: &Path, longest_edge: u32) -> Result<usize> {
     let pattern = input_dir.join("*.jpg").to_string_lossy().replace('\\', "/");
-    let files: Vec<PathBuf> = glob_with(&pattern, MatchOptions::default())?
-        .collect::<std::result::Result<_, _>>()?;
+    let files: Vec<PathBuf> =
+        glob_with(&pattern, MatchOptions::default())?.collect::<std::result::Result<_, _>>()?;
 
     if files.is_empty() {
         return Err(anyhow!("no JPEG files found in {}", input_dir.display()));
@@ -52,24 +51,19 @@ fn create_thumbnails(
 
     fs::create_dir_all(output_dir)?;
     files.par_iter().try_for_each(|path| {
-        make_thumbnail(path, output_dir, longest_edge).with_context(|| {
-            format!("creating a thumbnail for {}", path.display())
-        })
+        make_thumbnail(path, output_dir, longest_edge)
+            .with_context(|| format!("creating a thumbnail for {}", path.display()))
     })?;
 
     Ok(files.len())
 }
 
 /// Resizes one image and saves it under the same file name in `output_dir`.
-fn make_thumbnail(
-    original: &Path,
-    output_dir: &Path,
-    longest_edge: u32,
-) -> Result<()> {
+fn make_thumbnail(original: &Path, output_dir: &Path, longest_edge: u32) -> Result<()> {
     let image = image::open(original)?;
-    let file_name = original.file_name().ok_or_else(|| {
-        anyhow!("image path has no file name: {}", original.display())
-    })?;
+    let file_name = original
+        .file_name()
+        .ok_or_else(|| anyhow!("image path has no file name: {}", original.display()))?;
     let output_path = output_dir.join(file_name);
 
     image
@@ -110,8 +104,7 @@ mod tests {
 
         assert_eq!(thumbnail_count, 3);
         for index in 0..3 {
-            let thumbnail =
-                image::open(output_dir.join(format!("image_{index}.jpg")))?;
+            let thumbnail = image::open(output_dir.join(format!("image_{index}.jpg")))?;
             assert_eq!(thumbnail.dimensions(), (16, 8));
         }
         Ok(())
@@ -128,8 +121,8 @@ mod tests {
     #[test]
     fn empty_input_directory_is_an_error() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
-        let err = create_thumbnails(dir.path(), &dir.path().join("out"), 16)
-            .expect_err("no JPEG files");
+        let err =
+            create_thumbnails(dir.path(), &dir.path().join("out"), 16).expect_err("no JPEG files");
         assert!(err.to_string().contains("no JPEG files"));
         assert!(!dir.path().join("out").exists());
         Ok(())

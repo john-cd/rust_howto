@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Lazily initializes shared global data with `std::sync::LazyLock`.
+//!
+//! A global value shared by many threads must be initialized exactly once, even
+//! if several threads ask for it at the same moment. `LazyLock` guarantees that
+//! and runs the initializer on first use.
 
 use std::collections::HashMap;
 use std::sync::LazyLock;

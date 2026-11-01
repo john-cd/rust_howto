@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Probe and decode audio formats to linear PCM samples using `symphonia`.
+//!
+//! Audio files come in many formats (MP3, FLAC, Ogg, WAV). A decoder first
+//! probes the container to detect the format, then converts the compressed data
+//! to PCM (pulse-code modulation), the plain list of samples that sound
+//! hardware and audio processing use.
 
 use std::error::Error;
 use std::io::Cursor;
@@ -16,10 +21,7 @@ use symphonia::core::meta::MetadataOptions;
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let sample_count_written = 128;
     let wav_bytes = create_sample_wav(sample_count_written)?;
-    let mss = MediaSourceStream::new(
-        Box::new(Cursor::new(wav_bytes)),
-        Default::default(),
-    );
+    let mss = MediaSourceStream::new(Box::new(Cursor::new(wav_bytes)), Default::default());
 
     let mut hint = Hint::new();
     hint.with_extension("wav");
@@ -59,9 +61,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 
 /// Helper function to build a valid WAV buffer in memory for decoding.
-fn create_sample_wav(
-    sample_count: usize,
-) -> Result<Vec<u8>, Box<dyn Error + Send + Sync>> {
+fn create_sample_wav(sample_count: usize) -> Result<Vec<u8>, Box<dyn Error + Send + Sync>> {
     let spec = hound::WavSpec {
         channels: 1,
         sample_rate: 44100,

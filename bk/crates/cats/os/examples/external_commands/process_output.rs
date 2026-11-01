@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to run an external command, capture its
 //! output, and parse it.
+//!
+//! A child process produces an exit status and the text it printed. A non-zero
+//! exit status conventionally means failure, so check it before trusting the
+//! output.
 
 use std::process::Command;
 

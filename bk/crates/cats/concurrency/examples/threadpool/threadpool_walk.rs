@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Walk a directory and computes the SHA256 digest of all iso files.
+//!
+//! A thread pool starts a fixed number of worker threads and feeds them jobs.
+//! Here directory entries are processed in parallel; results come back through
+//! a channel.
 
 use std::fs::File;
 use std::io::BufReader;
@@ -109,8 +113,7 @@ mod tests {
     }
 
     #[test]
-    fn compute_digest_matches_the_known_sha256()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn compute_digest_matches_the_known_sha256() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;
         let path = dir.path().join("a.iso");
         std::fs::write(&path, b"abc")?;

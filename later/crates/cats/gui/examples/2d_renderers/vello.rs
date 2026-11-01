@@ -1,6 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
 //! Builds and renders a simple Vello 2D scene.
+//!
+//! Vello is a 2D renderer that does most of its work on the GPU, using compute
+//! shaders. You build a scene of paths and fills, then render it to a texture.
+//! It needs a GPU (or a software Vulkan driver).
 
 use std::num::NonZeroUsize;
 
@@ -37,11 +41,7 @@ fn create_vello_renderer(device: &wgpu::Device) -> Result<Renderer> {
 }
 
 /// Creates an off-screen render target texture and its texture view.
-fn create_target_texture(
-    device: &wgpu::Device,
-    width: u32,
-    height: u32,
-) -> (Texture, TextureView) {
+fn create_target_texture(device: &wgpu::Device, width: u32, height: u32) -> (Texture, TextureView) {
     let target = device.create_texture(&TextureDescriptor {
         label: Some("Vello example target"),
         size: Extent3d {
@@ -56,17 +56,17 @@ fn create_target_texture(
         usage: TextureUsages::STORAGE_BINDING | TextureUsages::COPY_SRC,
         view_formats: &[],
     });
-    let target_view =
-        target.create_view(&wgpu::TextureViewDescriptor::default());
+    let target_view = target.create_view(&wgpu::TextureViewDescriptor::default());
     (target, target_view)
 }
 
 /// Creates a WGPU device and renders the example scene into a texture.
 async fn render_scene() -> Result<()> {
     let mut context = RenderContext::new();
-    let device_id = context.device(None).await.ok_or_else(|| {
-        anyhow::anyhow!("No compatible GPU adapter was found")
-    })?;
+    let device_id = context
+        .device(None)
+        .await
+        .ok_or_else(|| anyhow::anyhow!("No compatible GPU adapter was found"))?;
     let device_handle = &context.devices[device_id];
     let device = &device_handle.device;
     let queue = &device_handle.queue;

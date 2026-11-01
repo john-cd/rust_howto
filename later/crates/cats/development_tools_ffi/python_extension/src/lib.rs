@@ -10,9 +10,8 @@ use pyo3::prelude::*;
 /// Returns `OverflowError` if the sum does not fit in an `i64`.
 #[pyfunction]
 fn add(left: i64, right: i64) -> PyResult<i64> {
-    left.checked_add(right).ok_or_else(|| {
-        PyOverflowError::new_err("sum does not fit in a signed 64-bit integer")
-    })
+    left.checked_add(right)
+        .ok_or_else(|| PyOverflowError::new_err("sum does not fit in a signed 64-bit integer"))
 }
 
 /// Registers the example function in the importable Python module.

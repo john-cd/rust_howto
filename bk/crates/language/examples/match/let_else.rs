@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! The `let ... else` statement.
+//!
+//! `let ... else` binds a pattern and, if it does not match, runs a block that
+//! must diverge (return, break or panic). It keeps the main path unindented
+//! compared with a nested `if let`.
 
 /// Parses `input` as a number, or panics.
 fn parse_number(input: &str) -> u32 {

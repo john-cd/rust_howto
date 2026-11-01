@@ -48,8 +48,8 @@ mod tests {
     }
 
     #[test]
-    fn dotenv_returns_an_error_when_no_env_file_is_found()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn dotenv_returns_an_error_when_no_env_file_is_found() -> Result<(), Box<dyn std::error::Error>>
+    {
         let dir = tempfile::tempdir()?;
         let missing = dir.path().join("nope.env");
         assert!(dotenvy::from_path(&missing).is_err());
@@ -57,8 +57,7 @@ mod tests {
     }
 
     #[test]
-    fn variables_from_an_env_file_are_parsed()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn variables_from_an_env_file_are_parsed() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;
         let file = dir.path().join("test.env");
         std::fs::write(&file, "A_KEY=value\n# comment\nB_KEY=\"two words\"\n")?;

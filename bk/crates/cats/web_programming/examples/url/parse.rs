@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates URL parsing.
+//!
+//! A URL has parts: scheme (`https`), host (`example.com`), optional port,
+//! path, query and fragment. Parsing splits them, normalizes the text
+//! (lowercase host, percent-encoding) and reports an error if the URL is
+//! invalid.
 
 use url::ParseError;
 use url::Url;
@@ -39,9 +44,7 @@ mod tests {
     /// The parts of the URL are available after parsing.
     #[test]
     fn exposes_url_parts() -> Result<(), Box<dyn std::error::Error>> {
-        let url = Url::parse(
-            "https://github.com/rust-lang/rust/issues?labels=E-easy&state=open",
-        )?;
+        let url = Url::parse("https://github.com/rust-lang/rust/issues?labels=E-easy&state=open")?;
         assert_eq!(url.scheme(), "https");
         assert_eq!(url.host_str(), Some("github.com"));
         assert_eq!(url.path(), "/rust-lang/rust/issues");

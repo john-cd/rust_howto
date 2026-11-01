@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! This example demonstrates text styling using the `colored` crate.
+//!
+//! Terminals interpret ANSI escape sequences as colour and style commands. The
+//! `colored` crate adds methods such as `.red()` and `.bold()` to strings, and
+//! turns colour off automatically when the output is not a terminal or the
+//! `NO_COLOR` variable is set.
 
 use colored::Colorize as _;
 

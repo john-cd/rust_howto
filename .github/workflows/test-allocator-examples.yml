@@ -37,7 +37,10 @@ jobs:
           toolchain: ${{ env.RUST_VERSION }}
           nightly: "skip"
           components: ""
-          cache-workspaces: bk/crates -> ../../target
+          cache-workspaces: "bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main\nlater/crates -> ${{ github.workspace
+            }}/.ci/target/rust_howto/main\ntools -> ${{ github.workspace }}/.ci/target/rust_howto/main\nplayground -> ${{
+            github.workspace }}/.ci/target/rust_howto/main\npublish -> ${{ github.workspace }}/.ci/target/rust_howto/main\n\
+            xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main"
       - name: Test jemalloc on Linux
         run: cargo test --locked -p memory_management --example jemalloc
         working-directory: bk/crates
@@ -53,3 +56,10 @@ jobs:
           fi
           cat conflict.log
           grep -F "select only one global allocator feature" conflict.log
+env:
+  CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
+  CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
+  CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
+  CARGO_INCREMENTAL: '0'

@@ -60,7 +60,8 @@ fn main() -> anyhow::Result<()> {
                     &cat.category,
                     &cat.slug,
                     &cat.description,
-                    crate_names.iter().map(AsRef::as_ref).collect(), /* convert Vec<String> into Vec<&str> */
+                    crate_names.iter().map(AsRef::as_ref).collect(), /* convert Vec<String> into
+                                                                      * Vec<&str> */
                 )?;
                 println!("{markdown}");
             }

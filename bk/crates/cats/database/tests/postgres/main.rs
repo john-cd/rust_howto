@@ -20,10 +20,9 @@ fn main() -> anyhow::Result<()> {
 #[test]
 #[ignore = "needs Postgres"]
 fn tokio_postgres_round_trip_on_postgres() -> anyhow::Result<()> {
-    let database_url = std::env::var("DATABASE_URL")
-        .context("set DATABASE_URL to connect to PostgreSQL")?;
-    tokio::runtime::Runtime::new()?
-        .block_on(tokio_postgres::run_with_url(&database_url))
+    let database_url =
+        std::env::var("DATABASE_URL").context("set DATABASE_URL to connect to PostgreSQL")?;
+    tokio::runtime::Runtime::new()?.block_on(tokio_postgres::run_with_url(&database_url))
 }
 
 /// Does nothing when the `postgres` feature is disabled.

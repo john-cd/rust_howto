@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Extracting the login of an email address with a regular expression.
+//!
+//! A regular expression (regex) describes a text pattern. Matching an email
+//! address exactly is notoriously hard, so use a simple pattern like this only
+//! to extract likely logins; to validate, send a confirmation message.
 
 use lazy_static::lazy_static;
 use regex::Regex;

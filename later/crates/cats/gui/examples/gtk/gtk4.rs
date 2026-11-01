@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A GTK 4 application with a button and a label.
+//!
+//! GTK is a widely used toolkit for desktop interfaces on Linux (the base of
+//! GNOME), also available on Windows and macOS. A GUI program creates widgets
+//! such as buttons and labels, then connects signal handlers that run when the
+//! user acts. It needs the GTK 4 libraries installed.
 
 use gtk::Application;
 use gtk::ApplicationWindow;
@@ -51,8 +56,7 @@ fn build_ui(app: &Application) {
         let label = label.clone();
         let conditional_label = conditional_label.clone();
         move |_| {
-            let mut value =
-                counter_value.lock().expect("mutex should not be poisoned");
+            let mut value = counter_value.lock().expect("mutex should not be poisoned");
             *value += 1;
             label.set_text(&format!("Counter: {}", *value));
             update_conditional_label(&conditional_label, *value);
@@ -63,8 +67,7 @@ fn build_ui(app: &Application) {
         let label = label.clone();
         let conditional_label = conditional_label.clone();
         move |_| {
-            let mut value =
-                counter_value.lock().expect("mutex should not be poisoned");
+            let mut value = counter_value.lock().expect("mutex should not be poisoned");
             *value -= 1;
             label.set_text(&format!("Counter: {}", *value));
             update_conditional_label(&conditional_label, *value);

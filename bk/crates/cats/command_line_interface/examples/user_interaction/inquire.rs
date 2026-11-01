@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! The `inquire` crate is used for creating interactive CLI prompts.
+//!
+//! Interactive prompts ask the user questions: text input, yes/no, a list to
+//! pick from. They need a real terminal, so provide command-line flags too for
+//! scripts and continuous integration.
 
 use inquire::Confirm;
 use inquire::Select;
@@ -25,10 +29,9 @@ fn main() {
     let languages = vec!["Rust", "Python", "JavaScript", "C++", "Go", "Other"];
     // Prompt the user to select their favorite programming language from the
     // list.
-    let favorite_language =
-        Select::new("What's your favorite programming language?", languages)
-            .prompt()
-            .expect("Failed to read input");
+    let favorite_language = Select::new("What's your favorite programming language?", languages)
+        .prompt()
+        .expect("Failed to read input");
 
     // Display the collected information to the user.
     println!("Hello, {name}!");

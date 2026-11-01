@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Writes an `.xlsx` workbook with `rust_xlsxwriter`: a bold header,
 //! numbers, dates, a formula and a column width.
+//!
+//! An `.xlsx` file is a zip archive of XML documents. The crate writes it
+//! without Excel installed. Reports and data exports commonly use it because
+//! business users open it directly.
 
 use std::path::Path;
 
@@ -35,12 +39,7 @@ pub fn write_report(path: &Path) -> Result<(), XlsxError> {
     worksheet.write(1, 0, "Widget")?;
     worksheet.write(1, 1, 3)?;
     worksheet.write(1, 2, 2.5)?;
-    worksheet.write_with_format(
-        1,
-        3,
-        &ExcelDateTime::from_ymd(2024, 1, 15)?,
-        &date_format,
-    )?;
+    worksheet.write_with_format(1, 3, &ExcelDateTime::from_ymd(2024, 1, 15)?, &date_format)?;
     // A formula is stored as text. Excel recalculates it when the file opens.
     // The optional cached result lets readers that do not calculate, such as
     // `calamine`, see a value.
@@ -57,11 +56,7 @@ pub fn write_report(path: &Path) -> Result<(), XlsxError> {
     worksheet.write(3, 0, "Freebie")?;
     worksheet.write(3, 1, 5)?;
     worksheet.write(3, 2, 0)?;
-    worksheet.write_formula(
-        3,
-        4,
-        Formula::new("=B4/C4").set_result("#DIV/0!"),
-    )?;
+    worksheet.write_formula(3, 4, Formula::new("=B4/C4").set_result("#DIV/0!"))?;
 
     workbook.save(path)?;
     Ok(())

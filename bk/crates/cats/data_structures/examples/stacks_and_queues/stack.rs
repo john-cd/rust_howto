@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A stack implemented with `Vec`.
+//!
+//! A stack is last in, first out (LIFO), like a pile of plates. A `Vec` works
+//! as one with `push` and `pop`. Stacks appear in undo history and expression
+//! parsing.
 
 /// Pushes elements onto a stack and pops them in last-in, first-out order.
 fn main() {

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Tokenize HTML with `html5ever` and print the parsed tokens.
+//!
+//! HTML5 defines exactly how a browser must read even broken markup.
+//! `html5ever` follows that specification, as used in Servo. Tokenizing is the
+//! first stage: it turns the text into tags, text and comments before a tree is
+//! built.
 
 use std::cell::Cell;
 
@@ -40,11 +45,7 @@ impl TokenPrinter {
 impl TokenSink for TokenPrinter {
     type Handle = ();
 
-    fn process_token(
-        &self,
-        token: Token,
-        _line_number: u64,
-    ) -> TokenSinkResult<()> {
+    fn process_token(&self, token: Token, _line_number: u64) -> TokenSinkResult<()> {
         match token {
             CharacterTokens(text) => {
                 self.is_char(true);
@@ -125,11 +126,7 @@ mod tests {
     impl TokenSink for TagRecorder {
         type Handle = ();
 
-        fn process_token(
-            &self,
-            token: Token,
-            _line: u64,
-        ) -> TokenSinkResult<()> {
+        fn process_token(&self, token: Token, _line: u64) -> TokenSinkResult<()> {
             if let TagToken(tag) = token {
                 self.0
                     .borrow_mut()
@@ -147,8 +144,7 @@ mod tests {
         chunk.extend(html.as_bytes());
         let input = BufferQueue::default();
         input.push_back(chunk.try_reinterpret().expect("valid UTF-8"));
-        let tokenizer =
-            Tokenizer::new(TagRecorder(Default::default()), Default::default());
+        let tokenizer = Tokenizer::new(TagRecorder(Default::default()), Default::default());
         let _ = tokenizer.feed(&input);
         tokenizer.end();
         assert_eq!(

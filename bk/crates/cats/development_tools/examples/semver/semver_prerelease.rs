@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates how to work with pre-release versions using the `semver` crate.
+//!
+//! A pre-release version such as `1.0.0-beta.1` sorts before the final `1.0.0`
+//! and is skipped by default requirements, so users do not get unfinished
+//! releases by accident.
 
 use anyhow::Result;
 use semver::Version;

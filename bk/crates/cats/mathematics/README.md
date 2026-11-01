@@ -11,7 +11,7 @@ This crate contains code examples for the **Mathematics** category on crates.io.
 - **Differential Equations** (`examples/differential_equations/`): Demonstrates concepts like `exponential_decay`.
 - **Discrete Mathematics** (`examples/discrete_mathematics/`): Demonstrates concepts like `set_operations`.
 - **Graph Theory** (`examples/graph_theory/`): Demonstrates concepts like `cycle_detection`, `topological_levels`.
-- **Linear Algebra** (`examples/linear_algebra/`): Demonstrates concepts like `add_matrices`, `deserialize_matrix`, `invert_matrix`, `multiply_matrices`, `multiply_scalar_vector_matrix`, `nalgebra_decomposition`, `nalgebra_transformations`, `nalgebra_vectors`, `vector_comparison`, `vector_norm`.
+- **Linear Algebra** (`examples/linear_algebra/`): Demonstrates concepts like `add_matrices`, `deserialize_matrix`, `invert_matrix`, `multiply_matrices`, `multiply_scalar_vector_matrix`, `nalgebra_decomposition`, `nalgebra_transformations`, `nalgebra_vectors`, `sparse_matrices`, `vector_comparison`, `vector_norm`.
 - **Numerical Analysis** (`examples/numerical_analysis/`): Demonstrates concepts like `root_finding`.
 - **Numerical Integration** (`examples/numerical_integration/`): Demonstrates concepts like `quadrature`.
 - **Optimization** (`examples/optimization/`): Demonstrates concepts like `brent_minimization`, `cmaes_sphere`, `genetic_algorithm`, `nelder_mead_rosenbrock`, `particle_swarm`.

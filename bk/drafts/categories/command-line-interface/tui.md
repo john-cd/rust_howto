@@ -16,10 +16,7 @@ This separation keeps input behavior testable without a real terminal. Handle es
 
 ## Build Complex TUI {#ratatui}
 
-[![ratatui][c~ratatui~docs~badge]][c~ratatui~docs]{{hi:ratatui}}
-[![ratatui~crates.io][c~ratatui~crates.io~badge]][c~ratatui~crates.io]
-[![ratatui~repo][c~ratatui~repo~badge]][c~ratatui~repo]
-[![ratatui~lib.rs][c~ratatui~lib.rs~badge]][c~ratatui~lib.rs]
+{{#badges ratatui}}
 
 [`ratatui`][c~ratatui~website]↗ is a high-level library of widgets, layouts, and rendering utilities. It draws a frame from application state; pair it with a backend such as `crossterm` to read terminal events and manage terminal modes.
 
@@ -40,7 +37,7 @@ cargo generate ratatui/templates simple
 
 ## See Also {#see-also .skip}
 
-[![tui][c~tui~docs~badge]][c~tui~docs] [![tui~crates.io][c~tui~crates.io~badge]][c~tui~crates.io] [![tui~repo][c~tui~repo~badge]][c~tui~repo] [![tui~lib.rs][c~tui~lib.rs~badge]][c~tui~lib.rs]{{hi:tui}}{{hi:Terminal}}{{hi:Dashboard}}{{hi:tui}}
+{{#badges tui}}{{hi:Terminal}}{{hi:Dashboard}}{{hi:tui}}
 
 `tui` is another library for terminal interfaces and dashboards. Choose a library based on the backend, widget set, maintenance activity, and whether its event model fits the application.
 

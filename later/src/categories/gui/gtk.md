@@ -12,7 +12,7 @@ Widgets represent controls such as buttons and labels. Signals deliver user even
 
 ## Build a GTK 4 Window {#gtk4}
 
-[![gtk4~website][c~gtk4~website~badge]][c~gtk4~website] [![gtk4][c~gtk4~docs~badge]][c~gtk4~docs] [![gtk4~crates.io][c~gtk4~crates.io~badge]][c~gtk4~crates.io] [![gtk4~repo][c~gtk4~repo~badge]][c~gtk4~repo] [![gtk4~lib.rs][c~gtk4~lib.rs~badge]][c~gtk4~lib.rs]{{hi:gtk4}}{{hi:Gnome}}{{hi:Gtk}}{{hi:Gtk-rs}}{{hi:GUI}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+[![gtk4~website][c~gtk4~website~badge]][c~gtk4~website] {{#badges gtk4}} {{hi:Gnome}} {{hi:Gtk}} {{hi:Gtk-rs}} {{hi:GUI}} {{#categories api-bindings="API bindings",gui=GUI}}
 
 Use `gtk4` when you want direct access to GTK widgets and signals. This example builds a small interactive counter window; consult the GTK API documentation alongside the gtk-rs bindings.
 
@@ -32,7 +32,7 @@ For a larger custom widget, define the hierarchy in a GTK Builder `.ui` XML file
 
 ## Build an Elm-Style App with Relm4 {#relm4}
 
-[![relm4~website][c~relm4~website~badge]][c~relm4~website] [![relm4][c~relm4~docs~badge]][c~relm4~docs] [![relm4~crates.io][c~relm4~crates.io~badge]][c~relm4~crates.io] [![relm4~repo][c~relm4~repo~badge]][c~relm4~repo] [![relm4~lib.rs][c~relm4~lib.rs~badge]][c~relm4~lib.rs]{{hi:relm4}}{{hi:Elm}}{{hi:Gtk4}}{{hi:GUI}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+[![relm4~website][c~relm4~website~badge]][c~relm4~website] {{#badges relm4}} {{hi:Elm}} {{hi:Gtk4}} {{hi:GUI}} {{#categories gui=GUI}}
 
 [`relm4`][c~relm4~docs] is an Elm-inspired component framework built on gtk-rs. Its model, messages, and update function help organize stateful GTK applications. Run the counter example from `later/crates` with `cargo run -p gui --example gtk --features gtk -- relm4`; it requires GTK 4 development libraries and a display.
 

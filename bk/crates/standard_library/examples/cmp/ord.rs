@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Implementing ordering with `PartialOrd` and `Ord`.
+//!
+//! `PartialOrd` defines `<` and `>`; `Ord` says every pair of values can be
+//! ordered, which sorting and `BTreeMap` need. They must agree with `Eq`: two
+//! values that compare equal must be equal.
 
 use std::cmp::Ordering;
 
@@ -21,9 +25,7 @@ struct Version {
 // Implement `PartialEq` to define when two versions are equal.
 impl PartialEq for Version {
     fn eq(&self, other: &Self) -> bool {
-        self.major == other.major
-            && self.minor == other.minor
-            && self.patch == other.patch
+        self.major == other.major && self.minor == other.minor && self.patch == other.patch
     }
 }
 

@@ -34,9 +34,7 @@ mod settings {
     fn config() -> anyhow::Result<&'static Config> {
         static CONFIG: OnceLock<Result<Config, String>> = OnceLock::new();
 
-        match CONFIG.get_or_init(|| {
-            build_config(None).map_err(|error| error.to_string())
-        }) {
+        match CONFIG.get_or_init(|| build_config(None).map_err(|error| error.to_string())) {
             Ok(config) => Ok(config),
             Err(error) => Err(anyhow!(error.clone())),
         }
@@ -76,12 +74,8 @@ mod tests {
 
     /// Verifies that an injected environment value overrides the default port.
     #[test]
-    fn environment_source_overrides_the_default_without_process_mutation()
-    -> anyhow::Result<()> {
-        let source = std::collections::HashMap::from([(
-            "APP_PORT".to_owned(),
-            "9000".to_owned(),
-        )]);
+    fn environment_source_overrides_the_default_without_process_mutation() -> anyhow::Result<()> {
+        let source = std::collections::HashMap::from([("APP_PORT".to_owned(), "9000".to_owned())]);
         let config = settings::from_source(source)?;
         assert_eq!(config.get::<u16>("port")?, 9000);
         Ok(())

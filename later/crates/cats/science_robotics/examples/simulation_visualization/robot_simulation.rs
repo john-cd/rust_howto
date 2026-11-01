@@ -1,6 +1,11 @@
 // ANCHOR: example
 //! Drop a robot chassis onto a floor with Rapier's headless 2D physics
 //! pipeline.
+//!
+//! A physics engine advances bodies in small time steps, applying gravity and
+//! resolving collisions. Simulating a robot first lets you test control code
+//! without risking hardware. Rapier is a Rust physics engine; "headless" means
+//! no window is opened.
 
 use rapier2d::prelude::*;
 

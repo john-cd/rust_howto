@@ -3,6 +3,12 @@
 // ANCHOR: example
 //! Computes the great-circle distance between two places with the
 //! `haversine` crate and with `geo`.
+//!
+//! The great-circle distance is the shortest path between two points on a
+//! sphere. The haversine formula computes it from latitudes and longitudes,
+//! assuming the Earth is a sphere of mean radius 6,371 km, which is accurate to
+//! about 0.5 percent. Use it for "distance to the nearest store" features; use
+//! an ellipsoidal method for survey-grade accuracy.
 
 use geo::Distance as _;
 use geo::Haversine;

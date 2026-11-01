@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates returning and handling a recoverable error with `Result`.
+//!
+//! `Result<T, E>` represents either success (`Ok`) or a failure (`Err`) that
+//! the caller can recover from, such as a missing file. Handle it with `match`,
+//! combinators, or `?` to pass it on.
 
 /// Divides `numerator` by `denominator`, returning an error when it is zero.
 fn divide(numerator: i32, denominator: i32) -> Result<i32, &'static str> {
@@ -19,9 +23,7 @@ fn main() {
             Ok(quotient) => {
                 println!("{numerator} / {denominator} = {quotient}");
             }
-            Err(error) => eprintln!(
-                "could not divide {numerator} by {denominator}: {error}"
-            ),
+            Err(error) => eprintln!("could not divide {numerator} by {denominator}: {error}"),
         }
     }
 }

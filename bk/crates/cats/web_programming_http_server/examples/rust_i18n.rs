@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Localizes an API error using the request's `Accept-Language` header.
+//!
+//! Internationalization (i18n) adapts software to different languages. The
+//! `Accept-Language` header tells the server which languages the user prefers,
+//! in order, so error messages can come back in the right one.
 
 // This macro must be declared at the crate root. Keeping this example in its
 // own binary target gives it that root and loads `locales/*.yml`.
@@ -22,8 +26,7 @@ fn locale_for(header: &str) -> &'static str {
 /// Returns a localized API error for a missing user.
 fn missing_user(header: &str, user_id: u64) -> String {
     let locale = locale_for(header);
-    rust_i18n::t!("errors.user_not_found", locale = locale, id = user_id)
-        .to_string()
+    rust_i18n::t!("errors.user_not_found", locale = locale, id = user_id).to_string()
 }
 
 /// Prints one localized API error using the client's preferred language.

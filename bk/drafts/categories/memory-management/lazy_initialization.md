@@ -51,12 +51,7 @@ For shared global data with a fixed initializer, use `LazyLock`:
 
 ## `once_cell` {#once-cell}
 
-[![once_cell][c~once_cell~docs~badge]][c~once_cell~docs]{{hi:once_cell}}
-[![once_cell~crates.io][c~once_cell~crates.io~badge]][c~once_cell~crates.io]
-[![once_cell~repo][c~once_cell~repo~badge]][c~once_cell~repo]
-[![once_cell~lib.rs][c~once_cell~lib.rs~badge]][c~once_cell~lib.rs]
-[![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
-[![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+{{#badges once_cell memory-management="Memory management" rust-patterns="Rust patterns"}}
 
 The [`once_cell`][c~once_cell~docs]↗ crate provides `unsync::OnceCell` and `sync::OnceCell`, along with lazy wrappers. Its `sync::Lazy` is useful when supporting an older Rust version or when depending on the crate already.
 
@@ -68,13 +63,7 @@ The standard library types cover common new-code use cases. Avoid adding both `o
 
 ## `lazy_static` {#lazy-static}
 
-[![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs]{{hi:lazy_static}}
-[![lazy_static~crates.io][c~lazy_static~crates.io~badge]][c~lazy_static~crates.io]
-[![lazy_static~repo][c~lazy_static~repo~badge]][c~lazy_static~repo]
-[![lazy_static~lib.rs][c~lazy_static~lib.rs~badge]][c~lazy_static~lib.rs]
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
-[![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}}
-[![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
+{{#badges lazy_static no-std="No standard library" memory-management="Memory management" rust-patterns="Rust patterns"}}
 
 `lazy_static!` is a supported legacy alternative. Since Rust 1.80, prefer the standard library's `LazyLock` for the same thread-safe lazy initialization pattern in new code.
 

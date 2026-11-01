@@ -35,10 +35,8 @@ mod tests {
             mailchecker::deliverable(&["a@gmail.com", "b@mailinator.com"]),
             vec!["a@gmail.com"]
         );
-        let summary = imap_fetch::summarize(
-            b"From: a@example.com\r\nSubject: Hi\r\n\r\nBody\r\n",
-        )
-        .expect("message parses");
+        let summary = imap_fetch::summarize(b"From: a@example.com\r\nSubject: Hi\r\n\r\nBody\r\n")
+            .expect("message parses");
         assert_eq!(summary.subject, "Hi");
     }
 }

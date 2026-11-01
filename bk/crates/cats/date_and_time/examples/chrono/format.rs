@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Formatting the current time with `chrono`.
+//!
+//! Formatting turns a date and time into text using format specifiers such as
+//! `%Y-%m-%d`. For data exchanged between systems prefer the unambiguous ISO
+//! 8601 / RFC 3339 form; use local styles only for display.
 
 use chrono::DateTime;
 use chrono::Utc;

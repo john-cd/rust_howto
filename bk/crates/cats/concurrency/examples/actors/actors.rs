@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A small actor built from a Tokio task and message channels.
+//!
+//! The actor model structures a program as independent actors that own their
+//! state and communicate only by sending messages. Because no state is shared,
+//! there are no locks, and each actor handles one message at a time. This
+//! version builds the idea from channels and tasks, to show how it works.
 
 use anyhow::Context;
 use tokio::sync::mpsc;
@@ -47,9 +52,7 @@ fn spawn_counter() -> (CounterHandle, tokio::task::JoinHandle<()>) {
     let (sender, mut receiver) = mpsc::channel(8);
     let task = tokio::spawn(async move {
         let mut total = 0;
-        while let Some(Message::Add { amount, reply_to }) =
-            receiver.recv().await
-        {
+        while let Some(Message::Add { amount, reply_to }) = receiver.recv().await {
             total += amount;
             // A dropped reply receiver means the caller no longer needs the
             // response.

@@ -3,6 +3,12 @@
 // ANCHOR: example
 //! SHA-1 hashing with the `sha1` crate. SHA-1 is broken; do not use it for
 //! security.
+//!
+//! A hash function turns any data into a short fixed-size fingerprint. A good
+//! one is one-way, and finding two inputs with the same hash (a collision) is
+//! infeasible. SHA-1 no longer meets that bar, so keep it only for
+//! compatibility, for example with Git object names, and use SHA-256 for
+//! anything new.
 
 use hex_literal::hex;
 use sha1::Digest as _;

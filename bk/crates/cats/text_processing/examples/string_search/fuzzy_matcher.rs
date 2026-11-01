@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Fuzzy matching of strings with `fuzzy-matcher`.
+//!
+//! Fuzzy matching finds approximate matches and ranks them, like the Ctrl-P
+//! file picker in editors: typing `mrs` can find `main_result.rs`. Each match
+//! gets a score so the best come first.
 
 use fuzzy_matcher::FuzzyMatcher as _;
 use fuzzy_matcher::skim::SkimMatcherV2;
@@ -13,8 +17,7 @@ fn main() {
 
     // Define candidate strings for the search.
     let items = [
-        "fuzzy", "hazy", "buzzy", "scuzzy", "cloudy", "fuzzily", "fuzzed",
-        "fuzzé",
+        "fuzzy", "hazy", "buzzy", "scuzzy", "cloudy", "fuzzily", "fuzzed", "fuzzé",
     ];
 
     // Search for strings similar to this pattern.
@@ -91,8 +94,7 @@ mod tests {
 
     /// The matched character indices are returned.
     #[test]
-    fn indices_point_at_matched_characters()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn indices_point_at_matched_characters() -> Result<(), Box<dyn std::error::Error>> {
         let matcher = SkimMatcherV2::default();
         let (_, indices) = matcher
             .fuzzy_indices("fuzzy", "fuz")

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Describes a small interface to screen readers with AccessKit.
+//!
+//! A screen reader is software that reads the screen aloud or shows it in
+//! braille for people with visual impairments. Programs describe their
+//! interface elements (role, label, state) in an accessibility tree. AccessKit
+//! provides that tree to each platform's accessibility API.
 
 use accesskit::Node;
 use accesskit::NodeId;
@@ -26,11 +31,7 @@ fn accessibility_tree() -> TreeUpdate {
     label.set_value("Changes are ready to save");
 
     TreeUpdate {
-        nodes: vec![
-            (window_id, window),
-            (button_id, button),
-            (label_id, label),
-        ],
+        nodes: vec![(window_id, window), (button_id, button), (label_id, label)],
         tree: Some(TreeInfo::new(window_id)),
         tree_id: TreeId::ROOT,
         focus: button_id,

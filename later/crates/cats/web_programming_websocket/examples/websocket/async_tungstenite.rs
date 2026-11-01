@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! An asynchronous WebSocket client using async-tungstenite's Tokio adapter.
+//!
+//! A WebSocket is a long-lived, two-way connection that starts as an HTTP
+//! request and is then upgraded, so either side can send messages at any time.
+//! The async version waits for messages without blocking a thread, so one
+//! thread can serve many connections.
 
 use async_tungstenite::tokio::accept_async;
 use async_tungstenite::tokio::connect_async;
@@ -33,15 +38,15 @@ async fn echo_round_trip() -> anyhow::Result<String> {
     let address = listener.local_addr()?;
     let server = tokio::spawn(echo_server(listener));
 
-    let (mut socket, response) =
-        connect_async(format!("ws://{address}")).await?;
+    let (mut socket, response) = connect_async(format!("ws://{address}")).await?;
     println!("Handshake status: {}", response.status());
 
     let sent = "Hello WebSocket";
     socket.send(Message::Text(sent.into())).await?;
-    let echoed = socket.next().await.ok_or_else(|| {
-        anyhow::anyhow!("echo server closed before replying")
-    })??;
+    let echoed = socket
+        .next()
+        .await
+        .ok_or_else(|| anyhow::anyhow!("echo server closed before replying"))??;
     let Message::Text(echoed) = echoed else {
         anyhow::bail!("echo server returned a non-text WebSocket message");
     };

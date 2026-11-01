@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example shows how to POST a file to a server.
+//!
+//! A file can be uploaded as the body of a `POST` request. The `Content-Type`
+//! header tells the server how to interpret it; browsers use
+//! `multipart/form-data` for forms with files.
 
 use std::path::Path;
 
@@ -17,9 +21,9 @@ use tokio::fs;
 /// returns an unsuccessful status, or the response body cannot be read.
 async fn post_file(path: impl AsRef<Path>, endpoint: &str) -> Result<String> {
     let path = path.as_ref();
-    let contents = fs::read(path).await.with_context(|| {
-        format!("failed to read upload file {}", path.display())
-    })?;
+    let contents = fs::read(path)
+        .await
+        .with_context(|| format!("failed to read upload file {}", path.display()))?;
     let response = reqwest::Client::new()
         .post(endpoint)
         .body(contents)
@@ -37,8 +41,7 @@ async fn post_file(path: impl AsRef<Path>, endpoint: &str) -> Result<String> {
 /// `post_file`.
 #[tokio::main]
 async fn main() -> Result<()> {
-    let response_text =
-        post_file("temp/message", "https://httpbin.org/post").await?;
+    let response_text = post_file("temp/message", "https://httpbin.org/post").await?;
     println!("Response from httpbin: {response_text}");
     Ok(())
 }
@@ -115,8 +118,7 @@ mod tests {
             })?;
             request.extend_from_slice(chunk);
 
-            let Some(header_end) =
-                request.windows(4).position(|window| window == b"\r\n\r\n")
+            let Some(header_end) = request.windows(4).position(|window| window == b"\r\n\r\n")
             else {
                 continue;
             };
@@ -128,10 +130,7 @@ mod tests {
             })?;
             let headers = String::from_utf8_lossy(header_bytes);
             let body_start = header_end.checked_add(4).ok_or_else(|| {
-                io::Error::new(
-                    io::ErrorKind::InvalidData,
-                    "HTTP header length overflowed",
-                )
+                io::Error::new(io::ErrorKind::InvalidData, "HTTP header length overflowed")
             })?;
             let content_length = headers.lines().find_map(|line| {
                 let (name, value) = line.split_once(':')?;
@@ -140,13 +139,12 @@ mod tests {
                     .flatten()
             });
             if let Some(length) = content_length {
-                let body_end =
-                    body_start.checked_add(length).ok_or_else(|| {
-                        io::Error::new(
-                            io::ErrorKind::InvalidData,
-                            "HTTP request body length overflowed",
-                        )
-                    })?;
+                let body_end = body_start.checked_add(length).ok_or_else(|| {
+                    io::Error::new(
+                        io::ErrorKind::InvalidData,
+                        "HTTP request body length overflowed",
+                    )
+                })?;
                 if request.len() >= body_end {
                     break;
                 }
@@ -187,8 +185,7 @@ mod tests {
         let message_path = directory.path().join("message");
         tokio::fs::write(&message_path, b"Hello\0").await?;
 
-        let response =
-            post_file(&message_path, &format!("http://{address}/post")).await;
+        let response = post_file(&message_path, &format!("http://{address}/post")).await;
         let request = join_server(server)?;
 
         assert_eq!(response?, "accepted");
@@ -203,13 +200,12 @@ mod tests {
         let directory = tempfile::tempdir()?;
         let missing_path = directory.path().join("missing-message");
 
-        let error =
-            match post_file(&missing_path, "http://127.0.0.1:1/post").await {
-                Ok(_) => {
-                    anyhow::bail!("missing upload file unexpectedly succeeded")
-                }
-                Err(error) => error,
-            };
+        let error = match post_file(&missing_path, "http://127.0.0.1:1/post").await {
+            Ok(_) => {
+                anyhow::bail!("missing upload file unexpectedly succeeded")
+            }
+            Err(error) => error,
+        };
 
         assert!(error.to_string().contains("missing-message"));
         Ok(())
@@ -241,8 +237,7 @@ mod tests {
         let message_path = directory.path().join("message");
         tokio::fs::write(&message_path, b"Hello").await?;
 
-        let response =
-            post_file(&message_path, &format!("http://{address}/post")).await;
+        let response = post_file(&message_path, &format!("http://{address}/post")).await;
         let _request = join_server(server)?;
         let error = match response {
             Ok(_) => anyhow::bail!("HTTP 500 response unexpectedly succeeded"),

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Hashing and verifying a password with `scrypt`.
+//!
+//! Servers must never store passwords directly; they store a salted,
+//! deliberately slow hash. scrypt is memory-hard, which makes cracking with
+//! specialized hardware expensive. The salt is random data stored with the hash
+//! so equal passwords do not hash alike.
 
 // This example demonstrates how to hash and verify passwords using scrypt.
 use std::error::Error;

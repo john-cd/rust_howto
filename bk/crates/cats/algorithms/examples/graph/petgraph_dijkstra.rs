@@ -16,12 +16,12 @@
 //! (relaxes) neighbor distances if a shorter path is found.
 //!
 //! ### Key Invariants & Constraints
-//! - **Non-Negative Edge Weights**: Dijkstra's algorithm requires all edge
-//!   weights to be non-negative ($\ge 0$). Negative edge weights break greedy
-//!   relaxation invariants (use Bellman-Ford for negative weights).
-//! - **Dijkstra vs. A***: Dijkstra explores outwards uniformly in all
-//!   directions. A* is an extension that adds a heuristic estimate $h(n)$ to
-//!   direct search towards a specific target node faster.
+//! - **Non-Negative Edge Weights**: Dijkstra's algorithm requires all edge weights to be
+//!   non-negative ($\ge 0$). Negative edge weights break greedy relaxation invariants (use
+//!   Bellman-Ford for negative weights).
+//! - **Dijkstra vs. A***: Dijkstra explores outwards uniformly in all directions. A* is an
+//!   extension that adds a heuristic estimate $h(n)$ to direct search towards a specific target
+//!   node faster.
 //!
 //! ### Purpose & Use Cases
 //! - Transportation network routing (e.g., finding shortest driving distances).

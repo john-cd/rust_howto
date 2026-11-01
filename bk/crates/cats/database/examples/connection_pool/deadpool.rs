@@ -50,11 +50,7 @@ impl managed::Manager for Manager {
         Ok(Server) // In a real-world scenario, this would establish a connection.
     }
 
-    async fn recycle(
-        &self,
-        _: &mut Server,
-        _: &managed::Metrics,
-    ) -> managed::RecycleResult<Error> {
+    async fn recycle(&self, _: &mut Server, _: &managed::Metrics) -> managed::RecycleResult<Error> {
         Ok(())
     }
 }
@@ -75,9 +71,10 @@ async fn main() -> anyhow::Result<()> {
     let pool = Pool::builder(mgr).max_size(1).build()?;
 
     // Get a connection from the pool.
-    let conn = pool.get().await.map_err(|err| {
-        anyhow::anyhow!("Could not retrieve from the Pool: {err:?}")
-    })?;
+    let conn = pool
+        .get()
+        .await
+        .map_err(|err| anyhow::anyhow!("Could not retrieve from the Pool: {err:?}"))?;
     let answer = conn.get_answer().await;
     assert_eq!(answer, 42);
     drop(conn);
@@ -87,9 +84,7 @@ async fn main() -> anyhow::Result<()> {
     assert_eq!(pool.status().size, 1);
     assert_eq!(pool.status().available, 1);
     let reused_conn = pool.get().await.map_err(|err| {
-        anyhow::anyhow!(
-            "failed to get a reused connection from the pool: {err:?}"
-        )
+        anyhow::anyhow!("failed to get a reused connection from the pool: {err:?}")
     })?;
     assert_eq!(pool.status().size, 1);
     drop(reused_conn);

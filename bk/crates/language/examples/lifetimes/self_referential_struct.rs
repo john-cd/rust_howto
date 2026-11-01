@@ -4,8 +4,8 @@
 
 // ANCHOR: example
 
-/// 1. Avoid self-referential structs. Note how each field points to a portion
-///    of the `String` owned by the struct.
+/// 1. Avoid self-referential structs. Note how each field points to a portion of the `String` owned
+///    by the struct.
 struct CsvRecordTricky<'a> {
     /// The line, owned by the struct.
     line: String,
@@ -13,8 +13,8 @@ struct CsvRecordTricky<'a> {
     fields: Vec<&'a str>,
 }
 
-/// 2. Better example of a `struct` that points to owned data outside of the
-///    `struct`. Both the line and each field have the same lifetime.
+/// 2. Better example of a `struct` that points to owned data outside of the `struct`. Both the line
+///    and each field have the same lifetime.
 #[derive(Debug)]
 struct CsvRecord<'a> {
     /// The line, borrowed from outside the struct.
@@ -41,8 +41,8 @@ fn outside() {
     println!("{c:?}");
 }
 
-// 3. If multiple references to the same data are needed, `Rc<T>`
-//    (single-threaded) or `Arc<T>` (multi-threaded) can be used instead.
+// 3. If multiple references to the same data are needed, `Rc<T>` (single-threaded) or `Arc<T>`
+//    (multi-threaded) can be used instead.
 
 use std::rc::Rc;
 

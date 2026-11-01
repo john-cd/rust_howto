@@ -6,10 +6,7 @@
 
 ## Test your code with `cargo test` {#cargo-test}
 
-[![cargo][c~cargo~docs~badge]][c~cargo~docs]{{hi:cargo}}
-[![cargo~crates.io][c~cargo~crates.io~badge]][c~cargo~crates.io]
-[![cargo~repo][c~cargo~repo~badge]][c~cargo~repo]
-[![cargo~lib.rs][c~cargo~lib.rs~badge]][c~cargo~lib.rs]
+{{#badges cargo}}
 
 [`cargo test`][book~cargo~cargo-test]↗{{hi:cargo test}} to run all tests.
 `cargo test test_prefix` to run all tests that start with the provided prefix.
@@ -21,11 +18,7 @@
 
 ## Test your code Faster with `cargo nextest` {#cargo-nextest}
 
-[![cargo-nextest][c~cargo-nextest~docs~badge]][c~cargo-nextest~docs]{{hi:cargo-nextest}}
-[![cargo-nextest~crates.io][c~cargo-nextest~crates.io~badge]][c~cargo-nextest~crates.io]
-[![cargo-nextest~repo][c~cargo-nextest~repo~badge]][c~cargo-nextest~repo]
-[![cargo-nextest~lib.rs][c~cargo-nextest~lib.rs~badge]][c~cargo-nextest~lib.rs]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]
+{{#badges cargo-nextest development-tools=}}
 
 [`cargo-nextest`][c~cargo-nextest~website]↗ is a new, faster test runner for Rust.
 

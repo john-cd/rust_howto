@@ -80,7 +80,7 @@ Cargo defaults to `opt-level = 0` for development code and dependencies. Optimiz
 
 ## Use Dynamic Linking {#dynamic-linking}
 
-[![cargo-add-dynamic][c~cargo-add-dynamic~docs~badge]][c~cargo-add-dynamic~docs] [![cargo-add-dynamic~crates.io][c~cargo-add-dynamic~crates.io~badge]][c~cargo-add-dynamic~crates.io] [![cargo-add-dynamic~repo][c~cargo-add-dynamic~repo~badge]][c~cargo-add-dynamic~repo] [![cargo-add-dynamic~lib.rs][c~cargo-add-dynamic~lib.rs~badge]][c~cargo-add-dynamic~lib.rs]{{hi:cargo-add-dynamic}}{{hi:Cargo}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~compilers][cat~compilers~badge]][cat~compilers]{{hi:Compilers}}
+{{#badges cargo-add-dynamic development-tools="Development tools" compilers=Compilers}}{{hi:Cargo}}
 
 Dynamic linking can let multiple local binaries share dependencies, but it adds deployment and loader-path considerations and is not a general replacement for Cargo's default static Rust dependency linking. Treat it as a local development optimization and verify the resulting binaries in the environments where they will run.
 

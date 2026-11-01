@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Check whether an external command reports a version that meets a
 //! requirement.
+//!
+//! Semantic versioning writes versions as MAJOR.MINOR.PATCH. A patch release
+//! fixes bugs, a minor adds features compatibly, and a major may break things.
+//! Version requirements such as `^1.2` say which releases a dependency accepts.
 
 use std::ffi::OsStr;
 use std::process::Command;
@@ -23,9 +27,7 @@ fn command_version(command: &OsStr) -> Result<Option<Version>> {
             return Ok(None);
         }
         Err(error) => {
-            return Err(error).with_context(|| {
-                format!("failed to run {command:?} --version")
-            });
+            return Err(error).with_context(|| format!("failed to run {command:?} --version"));
         }
     };
 
@@ -33,8 +35,8 @@ fn command_version(command: &OsStr) -> Result<Option<Version>> {
         bail!("{command:?} --version exited with {}", output.status);
     }
 
-    let stdout = String::from_utf8(output.stdout)
-        .context("version command output was not valid UTF-8")?;
+    let stdout =
+        String::from_utf8(output.stdout).context("version command output was not valid UTF-8")?;
     let version = stdout
         .split_whitespace()
         .last()
@@ -54,8 +56,7 @@ fn parse_version_token(version: &str) -> Result<Version> {
         None => version.to_owned(),
     };
 
-    Version::parse(&normalized)
-        .context("version token was not valid semantic versioning")
+    Version::parse(&normalized).context("version token was not valid semantic versioning")
 }
 
 /// Checks whether the installed Git version satisfies the example requirement.
@@ -68,9 +69,7 @@ fn main() -> Result<()> {
     };
 
     if !version_requirement.matches(&version) {
-        bail!(
-            "Git version is lower than the minimum (found {version}, need {version_constraint})"
-        );
+        bail!("Git version is lower than the minimum (found {version}, need {version_constraint})");
     }
     println!("{version}");
     Ok(())

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Calling C++ from Rust with the `cxx` crate.
+//!
+//! FFI (foreign function interface) lets code in one language call another.
+//! `cxx` generates safe bindings between Rust and C++ from a shared
+//! declaration, checked at compile time, so you avoid hand-written `unsafe`
+//! glue.
 
 use cxx::CxxString;
 use cxx::let_cxx_string;

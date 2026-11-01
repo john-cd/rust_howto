@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Measuring the similarity of strings with `strsim`.
+//!
+//! String similarity metrics measure how close two strings are. Levenshtein
+//! distance counts the single-character edits (insert, delete, replace) needed
+//! to turn one into the other. It powers spell-checking and "did you mean"
+//! suggestions.
 
 use strsim::damerau_levenshtein;
 use strsim::hamming;
@@ -116,9 +121,7 @@ mod tests {
     #[test]
     fn similarity_scores() {
         assert!((jaro_winkler("rusty", "rusty") - 1.0).abs() < f64::EPSILON);
-        assert!(
-            (normalized_levenshtein("abc", "abc") - 1.0).abs() < f64::EPSILON
-        );
+        assert!((normalized_levenshtein("abc", "abc") - 1.0).abs() < f64::EPSILON);
         let score = sorensen_dice("aleksandr", "alexander");
         assert!((0.0..=1.0).contains(&score));
         assert!(jaro("abc", "xyz") < 0.01);

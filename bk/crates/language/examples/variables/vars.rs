@@ -1,4 +1,3 @@
-#![allow(unused)]
 #![allow(clippy::needless_late_init)]
 // TODO Reviewed ??-??-2026.
 
@@ -19,6 +18,7 @@ fn main() {
     // so you often don't need to explicitly write out the type.
     let b = -2; // Infers an integer (`i32` by default).
     let c = 3.4; // Infers a float (`f64` by default).
+    println!("a: {a}, b: {b}, c: {c}");
 
     // It is possible to separate the declaration of a variable and its
     // assignment. However, the variable must be assigned before first use.
@@ -41,10 +41,11 @@ fn main() {
     // println!("Inner var outside inner scope: {inner_var}"); // ERROR.
     println!("Outer var outside inner scope: {outer_var}");
     // Expected output:
+    // a: 1, b: 2, c: 3
     // d: separate assignment
     // Outer var: 10
     // Inner var: 20
-    // Outer var outside inner scope: 10.
+    // Outer var outside inner scope: 10
 }
 
 // ANCHOR_END: example

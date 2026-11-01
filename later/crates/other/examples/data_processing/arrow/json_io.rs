@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Write an Arrow record batch to newline-delimited JSON and read it back.
+//!
+//! Newline-delimited JSON (NDJSON) holds one JSON object per line, so files can
+//! be streamed and split. It is common for logs and data exports.
 
 use std::io::Cursor;
 use std::sync::Arc;
@@ -27,11 +30,11 @@ fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
     writer.write(batch)?;
     writer.finish()?;
 
-    let mut reader =
-        json::ReaderBuilder::new(schema).build(Cursor::new(json_bytes))?;
-    reader.next().transpose()?.ok_or_else(|| {
-        ArrowError::ParseError("JSON input contained no rows".to_owned())
-    })
+    let mut reader = json::ReaderBuilder::new(schema).build(Cursor::new(json_bytes))?;
+    reader
+        .next()
+        .transpose()?
+        .ok_or_else(|| ArrowError::ParseError("JSON input contained no rows".to_owned()))
 }
 // ANCHOR_END: example
 

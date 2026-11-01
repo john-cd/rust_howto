@@ -17,8 +17,7 @@ async fn main() -> anyhow::Result<()> {
     // Create an async bounded channel with a capacity of 0.
     // This means that the sender will block until a receiver is ready to
     // receive.
-    let (tx, rx): (AsyncSender<i32>, AsyncReceiver<i32>) =
-        kanal::bounded_async(0);
+    let (tx, rx): (AsyncSender<i32>, AsyncReceiver<i32>) = kanal::bounded_async(0);
 
     // Spawn two producer tasks.
     // `tx.clone()` is used to create a new sender
@@ -72,8 +71,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn every_produced_value_is_consumed()
-    -> Result<(), Box<dyn std::error::Error>> {
+    async fn every_produced_value_is_consumed() -> Result<(), Box<dyn std::error::Error>> {
         let (tx, rx) = kanal::bounded_async::<i32>(0);
         let p1 = tokio::spawn(producer(tx.clone(), 1));
         let p2 = tokio::spawn(producer(tx, 2));
@@ -100,8 +98,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn consumer_ends_when_the_sender_is_gone()
-    -> Result<(), Box<dyn std::error::Error>> {
+    async fn consumer_ends_when_the_sender_is_gone() -> Result<(), Box<dyn std::error::Error>> {
         let (tx, rx) = kanal::bounded_async::<i32>(1);
         tx.send(1).await?;
         drop(tx);

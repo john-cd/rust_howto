@@ -1,4 +1,9 @@
 //! Runs a short-lived container with explicit cleanup using Bollard.
+//!
+//! A container runs a program in an isolated process with its own file system,
+//! built from an image. Docker is the common runtime. Programs use its API to
+//! start throwaway services in tests. Always remove the container afterwards,
+//! or stopped containers pile up on the machine.
 
 // ANCHOR: example
 use anyhow::Context;
@@ -16,9 +21,7 @@ use futures_util::TryStreamExt;
 async fn main() -> anyhow::Result<()> {
     let docker = Docker::connect_with_local_defaults()?;
     let containers = docker
-        .list_containers(Some(
-            ListContainersOptionsBuilder::new().all(true).build(),
-        ))
+        .list_containers(Some(ListContainersOptionsBuilder::new().all(true).build()))
         .await?;
     println!("{} existing containers", containers.len());
     let image = "alpine:3.23";

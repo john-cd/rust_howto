@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Reading from standard input and writing to standard output.
+//!
+//! Standard input and output are the streams connected to the terminal or to
+//! pipes (`a | b`). Programs that read stdin and write stdout combine easily in
+//! a shell. Lock stdout once if you write a lot, to avoid repeated locking.
 
 use std::io;
 use std::io::BufRead;

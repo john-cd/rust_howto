@@ -69,9 +69,8 @@ fn derive_key(
     iterations: u32,
     parallelism: u32,
 ) -> Result<Zeroizing<[u8; KEY_LEN]>> {
-    let params =
-        Params::new(memory_kib, iterations, parallelism, Some(KEY_LEN))
-            .map_err(|e| anyhow!("invalid Argon2 parameters: {e}"))?;
+    let params = Params::new(memory_kib, iterations, parallelism, Some(KEY_LEN))
+        .map_err(|e| anyhow!("invalid Argon2 parameters: {e}"))?;
     let argon2 = Argon2::new(Algorithm::Argon2id, Version::V0x13, params);
     let mut key = Zeroizing::new([0_u8; KEY_LEN]);
     argon2
@@ -97,8 +96,7 @@ impl SealedEnvelope {
         rng.try_fill_bytes(&mut salt)
             .map_err(|error| anyhow!("salt generation failed: {error}"))?;
         let nonce: XNonce = XNonce::try_generate_from_rng(&mut rng)?;
-        let key =
-            derive_key(passphrase, &salt, MEMORY_KIB, ITERATIONS, PARALLELISM)?;
+        let key = derive_key(passphrase, &salt, MEMORY_KIB, ITERATIONS, PARALLELISM)?;
         let cipher = XChaCha20Poly1305::new_from_slice(key.as_ref())
             .map_err(|e| anyhow!("invalid key: {e}"))?;
         let ciphertext = cipher
@@ -123,16 +121,9 @@ impl SealedEnvelope {
 
     /// Decrypts the secret. Fails if the passphrase, context or any stored
     /// field is wrong or has been modified.
-    fn open(
-        &self,
-        passphrase: &[u8],
-        context: &[u8],
-    ) -> Result<Zeroizing<Vec<u8>>> {
+    fn open(&self, passphrase: &[u8], context: &[u8]) -> Result<Zeroizing<Vec<u8>>> {
         if self.version != VERSION {
-            return Err(anyhow!(
-                "unsupported envelope version {}",
-                self.version
-            ));
+            return Err(anyhow!("unsupported envelope version {}", self.version));
         }
         let salt = STANDARD.decode(&self.salt).context("salt")?;
         let nonce_bytes = STANDARD.decode(&self.nonce).context("nonce")?;
@@ -141,8 +132,7 @@ impl SealedEnvelope {
             .try_into()
             .map_err(|_| anyhow!("nonce must be {NONCE_LEN} bytes"))?;
         let nonce = XNonce::from(nonce_array);
-        let ciphertext =
-            STANDARD.decode(&self.ciphertext).context("ciphertext")?;
+        let ciphertext = STANDARD.decode(&self.ciphertext).context("ciphertext")?;
         let key = derive_key(
             passphrase,
             &salt,
@@ -167,8 +157,7 @@ impl SealedEnvelope {
 }
 
 fn main() -> Result<()> {
-    let envelope =
-        SealedEnvelope::seal(b"sk-live-1234", b"correct horse", b"source-42")?;
+    let envelope = SealedEnvelope::seal(b"sk-live-1234", b"correct horse", b"source-42")?;
     // The envelope is safe to store or ship as JSON.
     let json = serde_json::to_string_pretty(&envelope)?;
     println!("{json}");

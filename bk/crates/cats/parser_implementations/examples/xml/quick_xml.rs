@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Parse, deserialize, and write XML with `quick-xml`.
+//!
+//! XML is a text format of nested tags, used in older web services (SOAP),
+//! Office documents and many configuration files. `quick-xml` reads it as a
+//! stream of events, which needs little memory, and can also deserialize it
+//! with `serde`.
 
 use std::io::Cursor;
 
@@ -37,10 +42,7 @@ fn main() -> anyhow::Result<()> {
                 println!("start: {}", event.name().as_ref());
             }
             Event::Text(event) => {
-                println!(
-                    "text: {}",
-                    quick_xml::escape::unescape(event.as_ref())?
-                );
+                println!("text: {}", quick_xml::escape::unescape(event.as_ref())?);
             }
             Event::End(event) => {
                 println!("end: {}", event.name().as_ref());
@@ -91,8 +93,7 @@ mod tests {
     /// XML child elements populate the corresponding person fields.
     #[test]
     fn deserializes_person_fields() -> anyhow::Result<()> {
-        let person: Person =
-            from_str("<person><name>John Doe</name><age>32</age></person>")?;
+        let person: Person = from_str("<person><name>John Doe</name><age>32</age></person>")?;
 
         assert_eq!(
             person,

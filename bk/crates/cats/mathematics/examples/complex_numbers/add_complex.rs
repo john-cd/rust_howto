@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates the manipulation of complex numbers.
+//!
+//! A complex number has a real part and an imaginary part, written a + bi,
+//! where i is the square root of -1. They describe rotations and waves, and
+//! appear in signal processing, electronics and graphics. Adding them adds each
+//! part.
 
 /// Adds `(10 + 20i)` and `(3.1 - 4.2i)`.
 fn sum() -> num::complex::Complex<f64> {

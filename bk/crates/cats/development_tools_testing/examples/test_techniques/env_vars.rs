@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Reads configuration from the process environment without mutating it in
 //! tests.
+//!
+//! Environment variables are shared by all tests in a process, and tests run in
+//! parallel, so changing them can make tests interfere. Serialize such tests,
+//! or restore the variable afterwards.
 
 use std::ffi::OsString;
 
@@ -114,14 +118,13 @@ mod tests {
     #[test]
     #[ignore = "spawned by the parent test with a controlled environment"]
     fn child_checks_controlled_environment() {
-        let expected = std::env::var("APP_LOG_EXPECTED")
-            .expect("the parent supplies the expected result");
+        let expected =
+            std::env::var("APP_LOG_EXPECTED").expect("the parent supplies the expected result");
         if expected == "invalid" {
             assert!(Config::from_process_env().is_err());
             assert!(main().is_err());
         } else {
-            let config = Config::from_process_env()
-                .expect("the child environment should parse");
+            let config = Config::from_process_env().expect("the child environment should parse");
             assert_eq!(config.log_level, expected);
             assert!(main().is_ok());
         }

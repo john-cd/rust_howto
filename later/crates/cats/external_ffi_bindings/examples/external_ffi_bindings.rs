@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Compare a raw Unix process-ID binding with the standard library.
+//!
+//! FFI (foreign function interface) lets Rust call functions written in C. A
+//! binding declares the C function's signature, and calling it is `unsafe`
+//! because the compiler cannot check what C code does. Where the standard
+//! library has a safe equivalent, prefer it.
 
 /// Reads the process ID through the C library on Unix.
 #[cfg(unix)]

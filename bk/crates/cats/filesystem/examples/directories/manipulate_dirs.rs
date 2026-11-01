@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creating, listing and removing directories.
+//!
+//! `create_dir_all` creates a directory and any missing parents, like `mkdir
+//! -p`, and does not fail if the directory exists. `remove_dir_all` deletes a
+//! directory tree for good, so double-check the path.
 
 use std::fs;
 use std::path::Path;

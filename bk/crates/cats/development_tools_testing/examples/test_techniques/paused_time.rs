@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Testing timeouts and retries instantly with Tokio's paused clock.
+//!
+//! Tokio can pause its clock in tests and advance it by hand, so code with
+//! timeouts, retries or delays is tested instantly and deterministically
+//! instead of with real sleeps.
 
 use std::time::Duration;
 
@@ -38,11 +42,7 @@ mod tests {
     #[tokio::test(start_paused = true)]
     async fn times_out_without_waiting() {
         let started = Instant::now();
-        let result = timeout(
-            Duration::from_secs(5),
-            slow_answer(Duration::from_secs(60)),
-        )
-        .await;
+        let result = timeout(Duration::from_secs(5), slow_answer(Duration::from_mins(1))).await;
         assert!(result.is_err());
         // Virtual time moved by the timeout, not by the 60 seconds.
         assert_eq!(started.elapsed(), Duration::from_secs(5));
@@ -51,11 +51,7 @@ mod tests {
     /// Completes before the deadline on the paused Tokio clock.
     #[tokio::test(start_paused = true)]
     async fn completes_in_time() {
-        let result = timeout(
-            Duration::from_secs(5),
-            slow_answer(Duration::from_secs(1)),
-        )
-        .await;
+        let result = timeout(Duration::from_secs(5), slow_answer(Duration::from_secs(1))).await;
         assert_eq!(result, Ok(42));
     }
 

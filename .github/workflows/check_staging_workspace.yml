@@ -17,6 +17,12 @@ env:
   CARGO_TERM_COLOR: always
   RUSTC_WRAPPER: ""
 
+  CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
+  CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
+  CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
+  CARGO_INCREMENTAL: '0'
 permissions:
   contents: read
 
@@ -50,8 +56,13 @@ jobs:
         with:
           toolchain: ${{ env.RUST_VERSION }}
           nightly: skip
-          cache-workspaces: |
-            later/crates -> ../../target/later
+          cache-workspaces: |-
+            bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            later/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            tools -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            playground -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            publish -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main
           cache-key: staging
 
       - name: Check

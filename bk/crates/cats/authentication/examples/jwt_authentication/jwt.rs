@@ -20,12 +20,11 @@ use serde::Serialize;
 /// Claims payload encoded within the short-lived JSON Web Token.
 ///
 /// Standard JWT claim names are used to comply with RFC 7519:
-/// - `sub` (Subject): Identifies the principal (user ID or username) that is
-///   the subject of the JWT.
-/// - `exp` (Expiration Time): Identifies the expiration timestamp on or after
-///   which the token must not be accepted.
-/// - `roles`: Custom claim specifying access roles assigned to the user for
-///   authorization checks.
+/// - `sub` (Subject): Identifies the principal (user ID or username) that is the subject of the
+///   JWT.
+/// - `exp` (Expiration Time): Identifies the expiration timestamp on or after which the token must
+///   not be accepted.
+/// - `roles`: Custom claim specifying access roles assigned to the user for authorization checks.
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct Claims {
     /// The subject identifier for the authenticated user.
@@ -41,10 +40,7 @@ pub struct Claims {
 ///
 /// # Errors
 /// Returns an error if the claims cannot be serialized or signed.
-pub fn create_jwt(
-    claims: &Claims,
-    secret: &[u8],
-) -> Result<String, jsonwebtoken::errors::Error> {
+pub fn create_jwt(claims: &Claims, secret: &[u8]) -> Result<String, jsonwebtoken::errors::Error> {
     encode(
         &Header::new(Algorithm::HS256),
         claims,
@@ -57,13 +53,9 @@ pub fn create_jwt(
 /// # Errors
 /// Returns an error if the token is malformed, expired, or signed with another
 /// key.
-pub fn verify_jwt(
-    token: &str,
-    secret: &[u8],
-) -> Result<Claims, jsonwebtoken::errors::Error> {
+pub fn verify_jwt(token: &str, secret: &[u8]) -> Result<Claims, jsonwebtoken::errors::Error> {
     let validation = Validation::new(Algorithm::HS256);
-    decode::<Claims>(token, &DecodingKey::from_secret(secret), &validation)
-        .map(|data| data.claims)
+    decode::<Claims>(token, &DecodingKey::from_secret(secret), &validation).map(|data| data.claims)
 }
 // ANCHOR_END: example
 
@@ -82,11 +74,9 @@ mod tests {
 
     /// Signs and verifies claims without a network service.
     #[test]
-    fn valid_token_round_trips_claims()
-    -> Result<(), jsonwebtoken::errors::Error> {
+    fn valid_token_round_trips_claims() -> Result<(), jsonwebtoken::errors::Error> {
         let claims = unexpired_claims();
-        let token =
-            create_jwt(&claims, b"unit-test-secret-with-at-least-32-bytes")?;
+        let token = create_jwt(&claims, b"unit-test-secret-with-at-least-32-bytes")?;
 
         assert_eq!(
             verify_jwt(&token, b"unit-test-secret-with-at-least-32-bytes")?,
@@ -102,20 +92,15 @@ mod tests {
             exp: 1,
             ..unexpired_claims()
         };
-        let token =
-            create_jwt(&claims, b"unit-test-secret-with-at-least-32-bytes")?;
+        let token = create_jwt(&claims, b"unit-test-secret-with-at-least-32-bytes")?;
 
-        assert!(
-            verify_jwt(&token, b"unit-test-secret-with-at-least-32-bytes")
-                .is_err()
-        );
+        assert!(verify_jwt(&token, b"unit-test-secret-with-at-least-32-bytes").is_err());
         Ok(())
     }
 
     /// Rejects a token after its signature segment has been changed.
     #[test]
-    fn tampered_signature_is_rejected()
-    -> Result<(), jsonwebtoken::errors::Error> {
+    fn tampered_signature_is_rejected() -> Result<(), jsonwebtoken::errors::Error> {
         let token = create_jwt(
             &unexpired_claims(),
             b"unit-test-secret-with-at-least-32-bytes",
@@ -129,17 +114,11 @@ mod tests {
         } else {
             b'A'
         };
-        let tampered_signature = String::from_utf8(tampered_signature)
-            .expect("JWT signatures use ASCII characters");
+        let tampered_signature =
+            String::from_utf8(tampered_signature).expect("JWT signatures use ASCII characters");
         let tampered_token = format!("{message}.{tampered_signature}");
 
-        assert!(
-            verify_jwt(
-                &tampered_token,
-                b"unit-test-secret-with-at-least-32-bytes"
-            )
-            .is_err()
-        );
+        assert!(verify_jwt(&tampered_token, b"unit-test-secret-with-at-least-32-bytes").is_err());
         Ok(())
     }
 }

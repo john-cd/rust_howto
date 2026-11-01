@@ -7,6 +7,7 @@ Comprehensive examples of Rust GUI frameworks including Slint, Egui, Iced, and T
 ## Examples Covered
 
 - **2d Renderers** (`examples/2d_renderers/`): Demonstrates concepts like `femtovg`, `minifb`, `skia_safe`, `vello`.
+- Vello is a standalone `vello_renderer` example behind the `vello` feature. It builds on Windows; running it requires a compatible GPU adapter.
 - **Clipboard** (`examples/clipboard/`): Demonstrates concepts like `arboard`.
 - **File Dialogs** (`examples/file_dialogs/`): Demonstrates concepts like `rfd`.
 - **Gtk** (`examples/gtk/`): Demonstrates concepts like `gtk4`, `relm4`.

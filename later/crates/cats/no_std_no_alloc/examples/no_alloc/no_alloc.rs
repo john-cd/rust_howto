@@ -1,6 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
 //! A no-allocation example using fixed-capacity collections.
+//!
+//! Embedded programs often cannot allocate memory at run time, since allocation
+//! can fail or take unpredictable time. Fixed-capacity collections reserve
+//! their space in advance and return an error when full.
 
 // ANCHOR: example
 use core::fmt;

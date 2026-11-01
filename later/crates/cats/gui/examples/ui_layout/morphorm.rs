@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Computing a layout with `morphorm`.
+//!
+//! A layout engine computes the size and position of every element from rules
+//! such as "fill the width" or "stack vertically", so you do not place each
+//! pixel by hand and the interface adapts to the window size.
 
 use morphorm::*;
 
@@ -90,14 +94,7 @@ impl Cache for SimpleCache {
         self.rects.get(node).map_or(0.0, |r| r.1)
     }
 
-    fn set_bounds(
-        &mut self,
-        node: &Self::Node,
-        posx: f32,
-        posy: f32,
-        width: f32,
-        height: f32,
-    ) {
+    fn set_bounds(&mut self, node: &Self::Node, posx: f32, posy: f32, width: f32, height: f32) {
         self.rects.insert(*node, (posx, posy, width, height));
     }
 }

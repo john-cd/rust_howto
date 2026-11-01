@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A `SmallVec`, which stores a few elements inline before moving to the heap.
+//!
+//! `SmallVec` stores up to N items inline (on the stack) and moves to the heap
+//! only if it grows beyond that. It avoids an allocation for the common small
+//! case.
 
 use smallvec::SmallVec;
 use smallvec::smallvec;

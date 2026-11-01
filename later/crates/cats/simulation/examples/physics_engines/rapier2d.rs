@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A ball falling onto the ground in a 2D physics simulation with `rapier2d`.
+//!
+//! A physics engine advances bodies in small time steps, applying gravity and
+//! resolving collisions. A rigid body is a shape that does not deform. Games
+//! use physics engines for movement and collisions, and robotics uses them for
+//! simulation.
 
 use rapier2d::prelude::*;
 

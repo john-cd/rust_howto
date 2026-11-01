@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A counter application with `relm4`.
+//!
+//! Relm4 builds GTK 4 apps in the Elm style: a model holds the state, messages
+//! describe what happened, and an update function changes the state, after
+//! which the view refreshes. This keeps state changes in one place.
 
 use gtk::prelude::*;
 use relm4::prelude::*;

@@ -194,9 +194,7 @@ mod commands {
         fn validate(&self, command: &Command) -> anyhow::Result<()> {
             match command {
                 Command::CreateProduct { quantity, .. } if *quantity == 0 => {
-                    Err(anyhow::anyhow!(
-                        "Cannot create product with zero quantity!"
-                    ))
+                    Err(anyhow::anyhow!("Cannot create product with zero quantity!"))
                 }
                 Command::UpdateProductQuantity {
                     quantity_change, ..
@@ -211,8 +209,7 @@ mod commands {
         fn handle(&self, command: Command) -> anyhow::Result<()> {
             match command {
                 Command::CreateProduct { id, name, quantity } => {
-                    let event =
-                        ProductEvent::ProductCreated { id, name, quantity };
+                    let event = ProductEvent::ProductCreated { id, name, quantity };
                     self.event_store.apply_event(event);
                     Ok(())
                 }
@@ -255,15 +252,12 @@ mod commands {
 
             for event in &events {
                 match event {
-                    ProductEvent::ProductCreated { id, quantity, .. }
-                        if *id == product_id =>
-                    {
+                    ProductEvent::ProductCreated { id, quantity, .. } if *id == product_id => {
                         current_quantity = Some(*quantity);
                     }
-                    ProductEvent::ProductQuantityUpdated {
-                        id,
-                        new_quantity,
-                    } if *id == product_id => {
+                    ProductEvent::ProductQuantityUpdated { id, new_quantity }
+                        if *id == product_id =>
+                    {
                         current_quantity = Some(*new_quantity);
                     }
                     _ => {}
@@ -337,10 +331,7 @@ mod read_store {
                     ProductEvent::ProductCreated { id, name, quantity } => {
                         read_model.insert(id, Product::new(id, name, quantity));
                     }
-                    ProductEvent::ProductQuantityUpdated {
-                        id,
-                        new_quantity,
-                    } => {
+                    ProductEvent::ProductQuantityUpdated { id, new_quantity } => {
                         if let Some(product) = read_model.get_mut(&id) {
                             product.set_quantity(new_quantity);
                         }
@@ -351,8 +342,7 @@ mod read_store {
             *self
                 .read_model
                 .write()
-                .expect("the read-model lock should not be poisoned") =
-                read_model;
+                .expect("the read-model lock should not be poisoned") = read_model;
         }
     }
 }
@@ -479,13 +469,11 @@ mod tests {
     fn rebuild_replaces_snapshot_and_applies_quantity_updates() {
         let read_store = read_store::SimpleReadStore::new();
         let query_handler = query::QueryHandler::new(read_store.clone());
-        read_store.rebuild_read_model(vec![
-            events::ProductEvent::ProductCreated {
-                id: 2,
-                name: "Old product".to_owned(),
-                quantity: 1,
-            },
-        ]);
+        read_store.rebuild_read_model(vec![events::ProductEvent::ProductCreated {
+            id: 2,
+            name: "Old product".to_owned(),
+            quantity: 1,
+        }]);
         read_store.rebuild_read_model(vec![
             events::ProductEvent::ProductCreated {
                 id: 1,
@@ -518,11 +506,10 @@ mod tests {
             quantity: 10,
         })?;
 
-        let result =
-            command_handler.process(commands::Command::UpdateProductQuantity {
-                id: 1,
-                quantity_change: -11,
-            });
+        let result = command_handler.process(commands::Command::UpdateProductQuantity {
+            id: 1,
+            quantity_change: -11,
+        });
 
         assert!(result.err().is_some_and(|e| {
             e.to_string()
@@ -555,21 +542,23 @@ mod tests {
 
         let products = query_handler.get_all_products();
         assert_eq!(products.len(), 2);
-        assert!(products.iter().any(|p| p.id() == 1
-            && p.name() == "Laptop"
-            && p.quantity() == 10));
         assert!(
-            products.iter().any(|p| p.id() == 2
-                && p.name() == "Mouse"
-                && p.quantity() == 20)
+            products
+                .iter()
+                .any(|p| p.id() == 1 && p.name() == "Laptop" && p.quantity() == 10)
+        );
+        assert!(
+            products
+                .iter()
+                .any(|p| p.id() == 2 && p.name() == "Mouse" && p.quantity() == 20)
         );
     }
 }
 // Deferred (#1748): event store snapshots and read-model reconstruction need a
 // scope decision before any code is added.
 // Notes:
-// - This example can be extended with event store snapshots and more advanced
-//   read-model reconstruction.
+// - This example can be extended with event store snapshots and more advanced read-model
+//   reconstruction.
 // - See the CQRS pattern for additional architecture guidance: https://martinfowler.com/bliki/CQRS.html
 //   https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1 https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2
 //   https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs https://doc.rust-cqrs.org/intro.html

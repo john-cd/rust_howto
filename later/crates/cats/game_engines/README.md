@@ -18,3 +18,7 @@ cargo test --package game_engines
 ```
 
 Code examples correspond to chapters in `bk/src/categories/game_engines` or related book sections.
+
+The optional `ggez` 0.10 example supports Windows and Linux. To check its Windows
+build, run `cargo check --locked --package game_engines --features ggez --example game_engines`
+from `later/crates`.

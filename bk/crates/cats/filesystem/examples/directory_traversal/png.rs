@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! This example demonstrates how to use the `glob` crate
 //! to find all PNG files in a directory tree.
+//!
+//! A glob such as `**/*.png` matches files by extension at any depth. Checking
+//! the extension is quick, but does not prove the content is a PNG image.
 
 use std::path::PathBuf;
 

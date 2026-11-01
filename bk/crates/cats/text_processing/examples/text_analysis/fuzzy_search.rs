@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Ranks candidates against a partial query with `nucleo`, the matcher used
 //! by the Helix editor.
+//!
+//! Fuzzy search finds approximate matches and ranks them as you type. `nucleo`
+//! is the matcher used by the Helix editor; it is fast and scores contiguous
+//! matches and word starts higher.
 
 use nucleo::Config;
 use nucleo::Matcher;
@@ -16,8 +20,7 @@ fn main() -> anyhow::Result<()> {
     // A `Matcher` owns scratch memory: create it once and reuse it.
     let mut matcher = Matcher::new(Config::DEFAULT);
     // `Smart` case matching is case-insensitive unless the query has capitals.
-    let pattern =
-        Pattern::parse("opfl", CaseMatching::Smart, Normalization::Smart);
+    let pattern = Pattern::parse("opfl", CaseMatching::Smart, Normalization::Smart);
 
     // Candidates that do not match are dropped; the rest come back sorted by
     // descending score.
@@ -35,7 +38,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

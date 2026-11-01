@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A plain Rust command function that a Tauri app can expose to its frontend.
+//!
+//! Tauri builds desktop apps with a web front end (HTML and JavaScript) and a
+//! Rust back end. The front end calls Rust functions, called commands, over an
+//! IPC (inter-process communication) bridge; they should validate their input
+//! like any public API.
 
 /// Greets the caller by name.
 pub fn greet(name: &str) -> String {

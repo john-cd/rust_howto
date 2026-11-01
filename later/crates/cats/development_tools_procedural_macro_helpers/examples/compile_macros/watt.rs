@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Parses a function and renames it using `proc_macro2`, `syn`, and `quote`.
+//!
+//! Procedural macros are programs that rewrite code at compile time. `syn`
+//! parses Rust source into a tree, `quote` builds new code, and `proc_macro2`
+//! makes both usable outside a macro crate, for example in tests.
 
 use proc_macro2::TokenStream;
 use quote::format_ident;

@@ -20,7 +20,7 @@ For locale-aware decimal formatting with ICU4X, see [Internationalization](../in
 
 ## Convert Floating Point to String Quickly with `ryu` {#ryu}
 
-[![ryu][c~ryu~docs~badge]][c~ryu~docs] [![ryu~crates.io][c~ryu~crates.io~badge]][c~ryu~crates.io] [![ryu~repo][c~ryu~repo~badge]][c~ryu~repo] [![ryu~lib.rs][c~ryu~lib.rs~badge]][c~ryu~lib.rs]{{hi:ryu}}{{hi:Float}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
+{{#badges ryu no-std="No standard library" no-std::no-alloc="No dynamic allocation" value-formatting="Value formatting"}}{{hi:Float}}
 
 Fast floating point to string conversion.
 
@@ -38,7 +38,7 @@ Fast floating point to string conversion.
 
 ## Convert Integers to String Quickly with `itoa` {#itoa}
 
-[![itoa][c~itoa~docs~badge]][c~itoa~docs] [![itoa~crates.io][c~itoa~crates.io~badge]][c~itoa~crates.io] [![itoa~repo][c~itoa~repo~badge]][c~itoa~repo] [![itoa~lib.rs][c~itoa~lib.rs~badge]][c~itoa~lib.rs]{{hi:itoa}}{{hi:Integer}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}} [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
+{{#badges itoa no-std="No standard library" no-std::no-alloc="No dynamic allocation" value-formatting="Value formatting"}}{{hi:Integer}}
 
 Fast integer primitive to string conversion.
 
@@ -48,7 +48,7 @@ Fast integer primitive to string conversion.
 
 ## Format a Byte Count for Display with `humansize` {#humansize}
 
-[![humansize][c~humansize~docs~badge]][c~humansize~docs]{{hi:humansize}} [![humansize~crates.io][c~humansize~crates.io~badge]][c~humansize~crates.io] [![humansize~repo][c~humansize~repo~badge]][c~humansize~repo] [![humansize~lib.rs][c~humansize~lib.rs~badge]][c~humansize~lib.rs] [![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]
+{{#badges humansize value-formatting=}}
 
 [`humansize::format_size`][c~humansize~docs]↗{{hi:humansize}} formats a number of bytes as text. `DECIMAL` uses powers of 1000 (`kB`, `MB`), and `BINARY` uses powers of 1024 (`KiB`, `MiB`). `format_size_i` accepts signed values, such as a change in memory use.
 

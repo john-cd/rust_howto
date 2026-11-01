@@ -21,8 +21,7 @@ pub mod helloworld {
 /// # Errors
 /// Returns an error if the server cannot be reached or the request fails.
 async fn greet(address: SocketAddr, name: &str) -> anyhow::Result<String> {
-    let mut client =
-        GreeterClient::connect(format!("http://{address}")).await?;
+    let mut client = GreeterClient::connect(format!("http://{address}")).await?;
     let request = tonic::Request::new(HelloRequest {
         name: name.to_owned(),
     });
@@ -53,8 +52,7 @@ mod tests {
 
     /// Verifies the client helper can call a server on a loopback socket.
     #[tokio::test]
-    async fn grpc_client_receives_greeting_and_shuts_down_server()
-    -> anyhow::Result<()> {
+    async fn grpc_client_receives_greeting_and_shuts_down_server() -> anyhow::Result<()> {
         use tokio::net::TcpListener;
         use tokio::sync::oneshot;
         use tokio_stream::wrappers::TcpListenerStream;
@@ -69,12 +67,9 @@ mod tests {
                         crate::tonic::MyGreeter::default(),
                     ),
                 )
-                .serve_with_incoming_shutdown(
-                    TcpListenerStream::new(listener),
-                    async move {
-                        let _ = shutdown_receiver.await;
-                    },
-                )
+                .serve_with_incoming_shutdown(TcpListenerStream::new(listener), async move {
+                    let _ = shutdown_receiver.await;
+                })
                 .await
         });
 
@@ -83,9 +78,7 @@ mod tests {
         let server_result = server.await;
 
         assert_eq!(call_result?, "Hello Integration!");
-        shutdown_result.map_err(|()| {
-            anyhow::anyhow!("gRPC server exited before shutdown")
-        })?;
+        shutdown_result.map_err(|()| anyhow::anyhow!("gRPC server exited before shutdown"))?;
         server_result??;
         Ok(())
     }

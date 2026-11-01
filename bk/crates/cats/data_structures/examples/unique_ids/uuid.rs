@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Generating and parsing UUIDs.
+//!
+//! A UUID is a 128-bit identifier that is unique for practical purposes without
+//! any central coordination, so separate systems can create IDs independently.
+//! Version 4 is random; version 7 starts with a timestamp, which suits database
+//! keys.
 
 use uuid::Uuid;
 use uuid::uuid;

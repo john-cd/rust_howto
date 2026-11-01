@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Laying out and rasterizing text with `cosmic-text`.
+//!
+//! Text layout is harder than it looks: the library picks fonts, shapes
+//! characters (a letter can have several forms depending on its neighbours, as
+//! in Arabic), breaks lines and then draws glyphs. Any app that draws its own
+//! text, such as a game or a GUI toolkit, needs this step.
 
 use std::sync::Arc;
 
@@ -19,8 +24,7 @@ use cosmic_text::SwashCache;
 
 /// Creates a font system containing the bundled Roboto font.
 fn new_font_system() -> FontSystem {
-    let font_data =
-        include_bytes!("../../assets/Roboto-Regular.ttf").as_slice();
+    let font_data = include_bytes!("../../assets/Roboto-Regular.ttf").as_slice();
     let font_source = cosmic_text::fontdb::Source::Binary(Arc::new(font_data));
 
     FontSystem::new_with_fonts([font_source])
@@ -38,8 +42,7 @@ fn layout_text(font_system: &mut FontSystem, text: &str, width: f32) -> Buffer {
 /// Lays out a text, prints its lines, and draws its glyphs into a buffer.
 fn main() {
     let mut font_system = new_font_system();
-    let mut buffer =
-        layout_text(&mut font_system, "Hello, Cosmic Text!", 800.0);
+    let mut buffer = layout_text(&mut font_system, "Hello, Cosmic Text!", 800.0);
     let mut swash_cache = SwashCache::new();
 
     for run in buffer.layout_runs() {

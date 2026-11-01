@@ -48,7 +48,7 @@ fn main() {
     // Expected output:
     // a_func was called.
     // b_func was called.
-    // n = 1.
+    // n = 1
 }
 
 // ANCHOR_END: example

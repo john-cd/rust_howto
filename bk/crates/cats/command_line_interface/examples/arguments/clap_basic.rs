@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Main function that parses command line arguments and prints their values:
+//!
+//! Command-line arguments are the words typed after a program name. A parser
+//! reads flags (`--verbose`), options (`--output file`) and positional values,
+//! generates `--help` text and reports mistakes. `clap` is the most widely used
+//! Rust parser, and it can derive everything from a struct.
 
 use std::path::PathBuf;
 
@@ -41,8 +46,7 @@ fn cli() -> Command {
 
 /// Main function that parses command line arguments and prints their values:
 fn main() {
-    let matches =
-        cli().get_matches_from(["test_app", "-n", "42", "--file", "README.md"]);
+    let matches = cli().get_matches_from(["test_app", "-n", "42", "--file", "README.md"]);
     // In a real program, use the following to retrieve arguments from the
     // command line: `let matches = cli().get_matches();`.
 
@@ -73,13 +77,7 @@ mod tests {
 
     #[test]
     fn short_and_long_options_are_parsed() {
-        let m = cli().get_matches_from([
-            "test_app",
-            "-n",
-            "42",
-            "--file",
-            "README.md",
-        ]);
+        let m = cli().get_matches_from(["test_app", "-n", "42", "--file", "README.md"]);
         assert_eq!(m.get_one::<String>("num").map(String::as_str), Some("42"));
         assert_eq!(
             m.get_one::<PathBuf>("file"),
@@ -98,8 +96,7 @@ mod tests {
 
     #[test]
     fn version_flag_prints_the_version() {
-        let Err(err) = cli().try_get_matches_from(["test_app", "--version"])
-        else {
+        let Err(err) = cli().try_get_matches_from(["test_app", "--version"]) else {
             panic!("`--version` should stop parsing");
         };
         assert_eq!(err.kind(), clap::error::ErrorKind::DisplayVersion);

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Demonstrates a Leptos component that renders a chart with
 //! `leptos-chartistry`.
+//!
+//! Leptos is a web framework whose components re-render when their data changes
+//! (a signal changes), compiled to WebAssembly to run in the browser.
+//! Chartistry is a charting component for it.
 
 #![expect(
     clippy::same_name_method,

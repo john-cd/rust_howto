@@ -40,8 +40,8 @@ pub enum ApiResponse {
 /// Deserializes success and error responses from JSON.
 fn main() {
     let success = "{\"success\":true}";
-    let response: ApiResponse = serde_json::from_str(success)
-        .expect("sample input should parse successfully");
+    let response: ApiResponse =
+        serde_json::from_str(success).expect("sample input should parse successfully");
 
     match response {
         ApiResponse::Success {
@@ -51,8 +51,8 @@ fn main() {
     }
 
     let error = "{\"success\":false,\"_message\":\"...\"}";
-    let response: ApiResponse = serde_json::from_str(error)
-        .expect("sample input should parse successfully");
+    let response: ApiResponse =
+        serde_json::from_str(error).expect("sample input should parse successfully");
     match response {
         ApiResponse::Error {
             success: MustBe!(false),
@@ -60,9 +60,7 @@ fn main() {
         } => {}
         ApiResponse::Success { .. } => panic!(),
     }
-    println!(
-        "Deserialized ApiResponse (success and error variants) successfully"
-    );
+    println!("Deserialized ApiResponse (success and error variants) successfully");
 }
 
 // Example adapted from <https://github.com/dtolnay/monostate/blob/master/tests/test.rs>.
@@ -84,19 +82,12 @@ mod tests {
 
     /// The `MustBe!` marker only accepts its exact value.
     #[test]
-    fn must_be_rejects_mismatched_values()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn must_be_rejects_mismatched_values() -> Result<(), Box<dyn std::error::Error>> {
         let ok: ApiResponse = serde_json::from_str(r#"{"success":true}"#)?;
         assert!(matches!(ok, ApiResponse::Success { .. }));
         // `success: false` without `_message` matches neither variant.
-        assert!(
-            serde_json::from_str::<ApiResponse>(r#"{"success":false}"#)
-                .is_err()
-        );
-        assert!(
-            serde_json::from_str::<ApiResponse>(r#"{"success":"yes"}"#)
-                .is_err()
-        );
+        assert!(serde_json::from_str::<ApiResponse>(r#"{"success":false}"#).is_err());
+        assert!(serde_json::from_str::<ApiResponse>(r#"{"success":"yes"}"#).is_err());
         Ok(())
     }
 }

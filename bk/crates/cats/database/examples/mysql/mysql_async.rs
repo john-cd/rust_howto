@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Connects to MySQL or MariaDB through a pool and runs parameterized queries.
+//!
+//! A connection pool keeps a few database connections open and lends them out,
+//! because opening a connection for each request is slow. Parameterized queries
+//! send values separately from the SQL text, which prevents SQL injection.
 
 use anyhow::Context;
 use anyhow::Result;
@@ -14,8 +18,7 @@ use mysql_async::prelude::*;
 async fn main() -> Result<()> {
     // ANCHOR: connect
     // For example `mysql://user:password@localhost:3306/db_name`.
-    let url = std::env::var("MYSQL_URL")
-        .context("set MYSQL_URL to the MySQL connection URL")?;
+    let url = std::env::var("MYSQL_URL").context("set MYSQL_URL to the MySQL connection URL")?;
     let pool = Pool::new(url.as_str());
     let mut conn = pool.get_conn().await?;
     // ANCHOR_END: connect

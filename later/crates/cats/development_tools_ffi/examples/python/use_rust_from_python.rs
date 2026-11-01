@@ -4,6 +4,10 @@
 // ANCHOR: example
 //! Demonstrates how to define a PyO3 Python module in Rust, register it with
 //! `sys.modules`, and invoke its Rust function and class from embedded Python.
+//!
+//! PyO3 lets you write Python extension modules in Rust, which are fast and can
+//! use threads. Tools such as `maturin` build the module into a wheel that
+//! Python installs with `pip`.
 
 use pyo3::prelude::*;
 
@@ -26,9 +30,7 @@ use pyo3::prelude::*;
 #[pyfunction]
 fn my_function(a: i64, b: i64) -> PyResult<i64> {
     a.checked_add(b).ok_or_else(|| {
-        pyo3::exceptions::PyOverflowError::new_err(
-            "integer addition overflowed i64",
-        )
+        pyo3::exceptions::PyOverflowError::new_err("integer addition overflowed i64")
     })
 }
 
@@ -61,9 +63,7 @@ impl Counter {
     /// Returns `PyOverflowError` when the new value does not fit in an `i64`.
     fn increment(&mut self, amount: i64) -> PyResult<i64> {
         let next_value = self.value.checked_add(amount).ok_or_else(|| {
-            pyo3::exceptions::PyOverflowError::new_err(
-                "counter value overflowed i64",
-            )
+            pyo3::exceptions::PyOverflowError::new_err("counter value overflowed i64")
         })?;
         self.value = next_value;
         Ok(next_value)
@@ -191,17 +191,13 @@ mod tests {
             return Err("activate a Python virtual environment before running this test".into());
         }
 
-        let extension_dir =
-            Path::new(env!("CARGO_MANIFEST_DIR")).join("python_extension");
+        let extension_dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("python_extension");
         let maturin_status = Command::new("maturin")
             .arg("develop")
             .current_dir(&extension_dir)
             .status()?;
         if !maturin_status.success() {
-            return Err(format!(
-                "maturin develop failed with {maturin_status}"
-            )
-            .into());
+            return Err(format!("maturin develop failed with {maturin_status}").into());
         }
 
         let python_status = Command::new("python")
@@ -209,10 +205,7 @@ mod tests {
             .current_dir(&extension_dir)
             .status()?;
         if !python_status.success() {
-            return Err(format!(
-                "the Python extension example failed with {python_status}"
-            )
-            .into());
+            return Err(format!("the Python extension example failed with {python_status}").into());
         }
 
         Ok(())

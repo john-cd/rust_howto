@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creating and entering spans with `tracing`.
+//!
+//! A span marks a period of work with a name and fields, and spans can nest, so
+//! a log shows which operation produced each event. It is the basis of tracing
+//! a request through a service.
 
 use tracing::Level;
 use tracing::span;
@@ -15,12 +19,8 @@ fn main() {
     {
         // Current lexical scope.
         let _guard = span.enter();
-        println!(
-            "`enter` returns a RAII guard, which, when dropped, exits the span."
-        );
-        tracing::info!(
-            "Any trace events that occur here will occur within the span."
-        );
+        println!("`enter` returns a RAII guard, which, when dropped, exits the span.");
+        tracing::info!("Any trace events that occur here will occur within the span.");
     }
     tracing::info!("Dropping the guard exits the span.");
 }
@@ -52,9 +52,7 @@ mod tests {
         fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
             self.0
                 .lock()
-                .map_err(|_| {
-                    std::io::Error::other("tracing output mutex is poisoned")
-                })?
+                .map_err(|_| std::io::Error::other("tracing output mutex is poisoned"))?
                 .extend_from_slice(data);
             Ok(data.len())
         }

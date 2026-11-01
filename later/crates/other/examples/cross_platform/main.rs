@@ -55,8 +55,7 @@ mod tests {
     /// Without a subcommand, nothing is run.
     #[test]
     fn no_subcommand_runs_nothing() {
-        let cli =
-            Cli::try_parse_from(["example"]).expect("no arguments are valid");
+        let cli = Cli::try_parse_from(["example"]).expect("no arguments are valid");
         assert!(cli.command.is_none());
         dispatch(cli).expect("the example should run successfully");
     }

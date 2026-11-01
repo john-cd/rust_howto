@@ -32,6 +32,21 @@ name = "visibility"
 path = "examples/visibility/main.rs"
 test = true
 
+[[example]]
+name = "project_layout"
+path = "examples/project_layout/main.rs"
+test = true
+
+[[example]]
+name = "dependencies"
+path = "examples/dependencies/main.rs"
+test = true
+
+[[example]]
+name = "naming_conventions"
+path = "examples/naming_conventions/main.rs"
+test = true
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

@@ -1,6 +1,10 @@
 // ANCHOR: example
 //! Divides with a fixed-point type whose fractional precision is set in its
 //! type.
+//!
+//! Fixed-point numbers store a value as an integer with an agreed number of
+//! fractional bits. They are exact and fast without a floating-point unit, so
+//! they are used on microcontrollers and in money-like calculations.
 
 use fixed::types::I20F12;
 

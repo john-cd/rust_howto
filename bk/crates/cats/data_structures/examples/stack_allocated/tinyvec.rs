@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A `TinyVec`, which stores a few elements inline before moving to the heap.
+//!
+//! `TinyVec` stores a few items inline and spills to the heap if it grows.
+//! Unlike similar crates it uses only safe code, at the cost of requiring items
+//! that implement `Default`.
 
 use tinyvec::TinyVec;
 

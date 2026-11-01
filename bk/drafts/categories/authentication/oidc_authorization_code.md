@@ -8,7 +8,7 @@ OpenID Connect (OIDC) adds an identity layer to OAuth 2.0: after the user authen
 
 ## Sign in with the OpenID Connect authorization-code flow and PKCE {#oidc-authorization-code}
 
-[![openidconnect][c~openidconnect~docs~badge]][c~openidconnect~docs] [![openidconnect~crates.io][c~openidconnect~crates.io~badge]][c~openidconnect~crates.io] [![openidconnect~repo][c~openidconnect~repo~badge]][c~openidconnect~repo] [![openidconnect~lib.rs][c~openidconnect~lib.rs~badge]][c~openidconnect~lib.rs]{{hi:openidconnect}}{{hi:OpenID Connect}}{{hi:OIDC}}{{hi:PKCE}} [![cat~authentication][cat~authentication~badge]][cat~authentication]{{hi:Authentication}}
+{{#badges openidconnect authentication=Authentication}}{{hi:OpenID Connect}}{{hi:OIDC}}{{hi:PKCE}}
 
 The flow has four steps. The application builds an authorization URL that carries a random `state`, a random `nonce` and a PKCE challenge, and keeps the matching secrets for that one login. The callback is rejected unless its `state` matches. The authorization code is then exchanged together with the PKCE verifier, which proves that the party redeeming the code is the one that asked for it. Finally the ID token is verified: signature, issuer, audience, expiry and the nonce. The access token, by contrast, is opaque to the client; it is presented to the provider's APIs and never parsed or trusted for identity.
 

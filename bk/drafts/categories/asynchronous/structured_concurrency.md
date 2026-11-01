@@ -15,7 +15,7 @@ An asynchronous program often starts a group of tasks that should live and die t
 
 ## Run a Bounded Pool of Tasks with `JoinSet` {#joinset-pool}
 
-[![tokio][c~tokio~docs~badge]][c~tokio~docs] [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io] [![tokio~repo][c~tokio~repo~badge]][c~tokio~repo] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs]{{hi:tokio}}{{hi:JoinSet}}{{hi:Worker pool}}{{hi:Structured concurrency}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+{{#badges tokio asynchronous=Asynchronous concurrency=Concurrency}}{{hi:JoinSet}}{{hi:Worker pool}}{{hi:Structured concurrency}}
 
 [`JoinSet`][c~tokio::task::JoinSet~docs]↗{{hi:JoinSet}} owns a group of spawned tasks: dropping the set aborts them, and `join_next` yields each result as its task finishes. To bound concurrency, spawn up to a limit, then call `join_next` and spawn one more task each time a result arrives. The example collects results in completion order and distinguishes a panic from a cancellation.
 
@@ -27,7 +27,7 @@ The example builds its runtime with `start_paused(true)`. Tokio's clock then adv
 
 ## Cancel a Tree of Tasks with `CancellationToken` {#cancellation-tree}
 
-[![tokio-util][c~tokio-util~docs~badge]][c~tokio-util~docs] [![tokio-util~crates.io][c~tokio-util~crates.io~badge]][c~tokio-util~crates.io] [![tokio-util~repo][c~tokio-util~repo~badge]][c~tokio-util~repo] [![tokio-util~lib.rs][c~tokio-util~lib.rs~badge]][c~tokio-util~lib.rs]{{hi:tokio-util}}{{hi:CancellationToken}}{{hi:TaskTracker}}{{hi:Graceful shutdown}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+{{#badges tokio-util asynchronous=Asynchronous concurrency=Concurrency}}{{hi:CancellationToken}}{{hi:TaskTracker}}{{hi:Graceful shutdown}}
 
 Cancelling a parent token cancels its children, but cancelling a child does not affect its parent or siblings. Each worker waits on `token.cancelled()` in a `select!` next to its work. [`TaskTracker`][c~tokio_util::task::TaskTracker~docs]↗{{hi:TaskTracker}} lets the owner wait until a group of tasks has finished, which is what a graceful shutdown needs.
 

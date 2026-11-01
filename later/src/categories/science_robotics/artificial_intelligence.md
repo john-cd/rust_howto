@@ -8,10 +8,7 @@ Robotics AI is still maturing in Rust, but Rust's safety and performance are a g
 
 ## Plan a Path with A* and `pathfinding` {#astar}
 
-[![pathfinding][c~pathfinding~docs~badge]][c~pathfinding~docs]{{hi:pathfinding}}
-[![pathfinding~crates.io][c~pathfinding~crates.io~badge]][c~pathfinding~crates.io]
-[![pathfinding~repo][c~pathfinding~repo~badge]][c~pathfinding~repo]
-[![pathfinding~lib.rs][c~pathfinding~lib.rs~badge]][c~pathfinding~lib.rs]
+{{#badges pathfinding}}
 
 [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} implements A*, Dijkstra and other graph algorithms. A mobile robot typically turns its map into an occupancy grid; A* then finds the cheapest path using a heuristic that never overestimates the remaining cost. The example plans a path around walls on a small grid.
 
@@ -21,10 +18,7 @@ Robotics AI is still maturing in Rust, but Rust's safety and performance are a g
 
 ## Create a Behavior Tree with `bonsai-bt` {#bonsai-bt}
 
-[![bonsai-bt][c~bonsai-bt~docs~badge]][c~bonsai-bt~docs]{{hi:bonsai-bt}}
-[![bonsai-bt~crates.io][c~bonsai-bt~crates.io~badge]][c~bonsai-bt~crates.io]
-[![bonsai-bt~repo][c~bonsai-bt~repo~badge]][c~bonsai-bt~repo]
-[![bonsai-bt~lib.rs][c~bonsai-bt~lib.rs~badge]][c~bonsai-bt~lib.rs]
+{{#badges bonsai-bt}}
 
 [`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][wikipedia~behavior-tree]↗ (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
 

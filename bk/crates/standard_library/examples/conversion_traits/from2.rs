@@ -1,4 +1,3 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -55,8 +54,7 @@ fn io_operation_with_custom_error() -> Result<(), MyError> {
 
 /// Demonstrates conversions from I/O errors and string messages.
 fn main() -> Result<(), MyError> {
-    let io_error = io_operation_with_custom_error()
-        .expect_err("the sample operation fails");
+    let io_error = io_operation_with_custom_error().expect_err("the sample operation fails");
     assert!(matches!(&io_error, MyError::Io(_)));
     println!("{io_error}");
 

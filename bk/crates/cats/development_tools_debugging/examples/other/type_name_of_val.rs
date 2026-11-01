@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Printing the type of a value with `type_name_of_val`.
+//!
+//! `type_name_of_val` returns the name of a value's type as text, which is
+//! handy to learn what the compiler inferred. The exact text is not guaranteed
+//! to stay the same between compiler versions, so do not rely on it in logic.
 
 /// Returns an iterator over a range of numbers.
 fn get_iter() -> impl Iterator<Item = i32> {

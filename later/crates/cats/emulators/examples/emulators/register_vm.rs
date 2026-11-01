@@ -1,4 +1,10 @@
 //! A two-register virtual machine with a bounded fetch/decode/execute loop.
+//!
+//! A virtual machine runs programs written for an imaginary processor. Each
+//! cycle it fetches an instruction, decodes it and executes it, changing
+//! registers (small, fast storage slots). Emulators and scripting languages are
+//! built on this loop. The loop is bounded here so a faulty program cannot run
+//! forever.
 
 use core::fmt;
 
@@ -22,9 +28,7 @@ impl fmt::Display for EmuError {
             Self::UnknownInstruction(bytes) => {
                 write!(f, "unknown instruction {bytes:02x?}")
             }
-            Self::StepLimit => {
-                f.write_str("program exceeded the instruction budget")
-            }
+            Self::StepLimit => f.write_str("program exceeded the instruction budget"),
         }
     }
 }
@@ -63,8 +67,7 @@ impl Cpu<'_> {
             [0x10, value] => self.registers[0] = value,
             [0x11, value] => self.registers[1] = value,
             [0x20, 0] => {
-                self.registers[0] =
-                    self.registers[0].wrapping_add(self.registers[1]);
+                self.registers[0] = self.registers[0].wrapping_add(self.registers[1]);
             }
             [0x30, 0] => self.registers[1] = self.registers[1].wrapping_sub(1),
             [0x40, address] => {

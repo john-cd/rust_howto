@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Running `rayon` work on a custom thread pool.
+//!
+//! Rayon runs parallel iterators on a global thread pool, which defaults to one
+//! thread per CPU core. Building a custom pool lets you choose the thread count
+//! or isolate a workload.
 
 /// Computes a Fibonacci number on a pool of eight threads.
 fn main() {
@@ -9,9 +13,7 @@ fn main() {
     let pool = rayon::ThreadPoolBuilder::new()
         .num_threads(8)
         .build()
-        .expect(
-            "the multithreading rayon custom example invariant should hold",
-        );
+        .expect("the multithreading rayon custom example invariant should hold");
     // `install` executes the closure within the threadpool. Any attempts
     // to use join, scope, or parallel iterators will then operate
     // within that threadpool.
@@ -55,8 +57,7 @@ mod tests {
     }
 
     #[test]
-    fn custom_pool_has_the_requested_number_of_threads()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn custom_pool_has_the_requested_number_of_threads() -> Result<(), Box<dyn std::error::Error>> {
         let pool = rayon::ThreadPoolBuilder::new().num_threads(3).build()?;
         assert_eq!(pool.current_num_threads(), 3);
         assert_eq!(pool.install(|| fib(10)), 55);

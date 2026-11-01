@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of using a single-threaded Tokio runtime.
+//!
+//! Tokio can run on a single thread (the `current_thread` runtime) or on a pool
+//! of worker threads. A single thread is simpler and enough for programs that
+//! mostly wait on I/O,.
 
 /// Example of using a single-threaded Tokio runtime.
 fn main() {
@@ -31,8 +35,8 @@ mod tests {
     }
 
     #[test]
-    fn current_thread_runtime_returns_the_block_on_value()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn current_thread_runtime_returns_the_block_on_value() -> Result<(), Box<dyn std::error::Error>>
+    {
         let value = tokio::runtime::Builder::new_current_thread()
             .enable_all()
             .build()?

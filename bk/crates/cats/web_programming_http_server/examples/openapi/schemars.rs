@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Derive a JSON Schema with [`schemars`] and validate data against it with
 //! [`jsonschema`].
+//!
+//! A JSON Schema describes the shape of JSON data: its fields, types and
+//! constraints. It can be derived from Rust types and used to validate data,
+//! generate documentation or feed editors with autocompletion.
 
 use schemars::JsonSchema;
 use schemars::schema_for;

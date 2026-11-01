@@ -8,24 +8,22 @@ use std::hash::Hash;
 
 /// The `derive` attribute allows the quick and implementation of very common
 /// traits:
-/// - The `Debug` trait is used to provide a programmer-facing, detailed, string
-///   representation of a type.
-/// - `Clone` allows you to create an explicit, independent copy (a "clone") of
-///   a value.
-/// - `Copy` is a special marker trait indicating that a type's values can be
-///   duplicated by a simple bitwise copy (like copying bytes in memory). Types
-///   that are Copy are implicitly copied when they are assigned, passed to
-///   functions, or returned from functions, rather than being moved (which
-///   would invalidate the original). All fields (i32) are `Copy`, so `Point2D`
-///   can be `Copy`.
-/// - `PartialEq` (and `Eq`) allow instances of a type to be compared for
-///   equality (==) and inequality (!=).
-/// - `PartialOrd` (and `Ord`) allows instances of a type to be ordered, meaning
-///   you can compare them using <, >, <=, and >=.
-/// - `Hash` allows instances of a type to be "hashed," which means producing a
-///   single u64 value that represents the instance.
-/// - `Default` allows for the creation of a "default" or "initial" instance of
-///   a type, often representing a zeroed, empty, or baseline state.
+/// - The `Debug` trait is used to provide a programmer-facing, detailed, string representation of a
+///   type.
+/// - `Clone` allows you to create an explicit, independent copy (a "clone") of a value.
+/// - `Copy` is a special marker trait indicating that a type's values can be duplicated by a simple
+///   bitwise copy (like copying bytes in memory). Types that are Copy are implicitly copied when
+///   they are assigned, passed to functions, or returned from functions, rather than being moved
+///   (which would invalidate the original). All fields (i32) are `Copy`, so `Point2D` can be
+///   `Copy`.
+/// - `PartialEq` (and `Eq`) allow instances of a type to be compared for equality (==) and
+///   inequality (!=).
+/// - `PartialOrd` (and `Ord`) allows instances of a type to be ordered, meaning you can compare
+///   them using <, >, <=, and >=.
+/// - `Hash` allows instances of a type to be "hashed," which means producing a single u64 value
+///   that represents the instance.
+/// - `Default` allows for the creation of a "default" or "initial" instance of a type, often
+///   representing a zeroed, empty, or baseline state.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
 struct Point2D {
     /// The horizontal coordinate.

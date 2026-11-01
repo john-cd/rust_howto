@@ -83,6 +83,11 @@ path = "examples/option/main.rs"
 test = true
 
 [[example]]
+name = "overflow"
+path = "examples/overflow/main.rs"
+test = true
+
+[[example]]
 name = "pin"
 path = "examples/pin/main.rs"
 test = true

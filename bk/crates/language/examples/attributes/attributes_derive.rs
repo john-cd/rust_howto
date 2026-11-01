@@ -3,8 +3,9 @@
 // ANCHOR: example
 //! Deriving traits with `#[derive]`.
 //!
-//! The `derive` attribute instructs procedural macros to automatically generate
-//! standard trait implementations (such as `Debug`, `Clone`, or `PartialEq`).
+//! The `derive` attribute invokes derive macros to generate trait
+//! implementations, including standard traits such as `Debug`, `Clone`, and
+//! `PartialEq`.
 
 // This attribute tells the compiler to automatically generate
 // an implementation of the `std::fmt::Debug` trait for the `Point` struct.
@@ -28,7 +29,7 @@ fn main() {
     println!("x = {}, y = {}", p1.x, p1.y);
     // Expected output:
     // The point is: Point { x: 10, y: 20 }
-    // x = 10, y = 20.
+    // x = 10, y = 20
 }
 
 // ANCHOR_END: example

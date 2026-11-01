@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Searching a text for several patterns at once with the Aho-Corasick
 //! algorithm.
+//!
+//! Searching for many words one after another is slow. The Aho-Corasick
+//! algorithm builds an automaton from all patterns and finds every match in a
+//! single pass over the text. It is used in virus scanners, intrusion detection
+//! and keyword filters.
 
 use std::collections::HashMap;
 
@@ -119,7 +124,7 @@ fn main() -> anyhow::Result<()> {
         .map(|keyword| folded_text.contains(&keyword.to_ascii_lowercase()))
         .collect();
     let mut aho_matches = vec![false; keywords.len()];
-    for (pattern, _, _) in &matches {
+    for (pattern, ..) in &matches {
         aho_matches[*pattern] = true;
     }
     assert_eq!(aho_matches, contains_matches);

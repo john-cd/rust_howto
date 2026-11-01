@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Prints an expression with `dbg!` and continues with its value.
+//!
+//! `dbg!` prints the expression, its value and the file and line to standard
+//! error, and returns the value, so you can wrap any expression without
+//! changing behaviour. It is meant for temporary debugging; remove it before
+//! committing.
 
 /// Demonstrates that `dbg!` prints an expression and returns it.
 fn main() -> anyhow::Result<()> {

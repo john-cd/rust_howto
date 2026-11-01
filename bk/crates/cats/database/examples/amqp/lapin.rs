@@ -2,10 +2,15 @@
 
 // ANCHOR: example
 //! Publishing and consuming a message with the `lapin` AMQP client.
+//!
+//! AMQP is a protocol for message brokers such as RabbitMQ. A producer
+//! publishes messages to a queue and a consumer receives them, so the two
+//! programs are decoupled and work at their own pace. Consumers acknowledge
+//! messages so the broker can redeliver them if the consumer crashes.
 
 // This example demonstrates how to publish and consume messages with the
 // `lapin` AMQP client.
-use futures::stream::StreamExt as _; /* or: use futures_lite::stream::StreamExt; */
+use futures::stream::StreamExt as _; // or: use futures_lite::stream::StreamExt;
 use lapin::BasicProperties;
 use lapin::Channel;
 use lapin::Connection;
@@ -33,10 +38,8 @@ use lapin::types::FieldTable;
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     // Connect to a RabbitMQ server:
-    let addr = std::env::var("AMQP_ADDR")
-        .unwrap_or_else(|_| "amqp://127.0.0.1:5672".into());
-    let conn =
-        Connection::connect(&addr, ConnectionProperties::default()).await?;
+    let addr = std::env::var("AMQP_ADDR").unwrap_or_else(|_| "amqp://127.0.0.1:5672".into());
+    let conn = Connection::connect(&addr, ConnectionProperties::default()).await?;
 
     // Main entry point for most AMQP operations. A `Channel` serves as a
     // "lightweight connection" and can be obtained from a `Connection`.
@@ -68,11 +71,10 @@ async fn main() -> anyhow::Result<()> {
 
     // Publish a message to the queue.
     //
-    // - The first argument is the exchange name (empty string for the default
-    //   exchange).
+    // - The first argument is the exchange name (empty string for the default exchange).
     // - The second argument is the routing key (the generated queue name).
-    // - `BasicPublishOptions` controls routing behavior such as whether the
-    //   broker returns an unroutable message.
+    // - `BasicPublishOptions` controls routing behavior such as whether the broker returns an
+    //   unroutable message.
     let message = "Hello from Rust!";
     let confirmation = channel
         .basic_publish(
@@ -85,20 +87,15 @@ async fn main() -> anyhow::Result<()> {
         .await?
         .await?; // Wait for confirmation
 
-    anyhow::ensure!(
-        confirmation.is_ack(),
-        "broker did not acknowledge publish"
-    );
+    anyhow::ensure!(confirmation.is_ack(), "broker did not acknowledge publish");
 
     println!("Sent message: {message}");
 
     // Consume messages from the queue.
     //
     // - The first argument is the queue name.
-    // - The second argument is the consumer tag (a client-generated
-    //   identifier).
-    // - `BasicConsumeOptions` allows specifying properties like no_local,
-    //   no_ack, exclusive, etc.
+    // - The second argument is the consumer tag (a client-generated identifier).
+    // - `BasicConsumeOptions` allows specifying properties like no_local, no_ack, exclusive, etc.
     // - `FieldTable` is for additional arguments.
     let mut consumer = channel
         .basic_consume(
@@ -111,9 +108,10 @@ async fn main() -> anyhow::Result<()> {
 
     // Process messages:
     println!("Waiting for messages...");
-    let delivery = consumer.next().await.ok_or_else(|| {
-        anyhow::anyhow!("consumer stopped before receiving a message")
-    })??;
+    let delivery = consumer
+        .next()
+        .await
+        .ok_or_else(|| anyhow::anyhow!("consumer stopped before receiving a message"))??;
     let received = String::from_utf8_lossy(&delivery.data);
     anyhow::ensure!(received == message, "received an unexpected message");
     println!("Received message: {received}");

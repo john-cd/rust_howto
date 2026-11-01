@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parse a small XML document with `xml5ever` and inspect its DOM tree.
+//!
+//! XML is a text format of nested tags. A DOM (document object model) is the
+//! tree of elements built from it, which you can walk. `xml5ever` is the XML
+//! sibling of the HTML parser used in Servo.
 
 use std::borrow::Cow;
 use std::cell::Cell;
@@ -101,11 +105,7 @@ impl Default for XmlTree {
     fn default() -> Self {
         Self {
             document: Rc::new(Node {
-                name: QualName::new(
-                    None,
-                    ns!(),
-                    LocalName::from("document".to_owned()),
-                ),
+                name: QualName::new(None, ns!(), LocalName::from("document".to_owned())),
                 kind: NodeKind::Document(RefCell::new(Vec::new())),
                 parent: RefCell::new(None),
             }),
@@ -118,9 +118,7 @@ impl Default for XmlTree {
 /// Returns the child list for container nodes.
 fn children(node: &Node) -> Option<&RefCell<Vec<Handle>>> {
     match &node.kind {
-        NodeKind::Document(children) | NodeKind::Fragment(children) => {
-            Some(children)
-        }
+        NodeKind::Document(children) | NodeKind::Fragment(children) => Some(children),
         NodeKind::Element { children, .. } => Some(children),
         _ => None,
     }
@@ -178,9 +176,9 @@ impl TreeSink for XmlTree {
         attrs: Vec<Attribute>,
         flags: ElementFlags,
     ) -> Self::Handle {
-        let template_contents = flags.template.then(|| {
-            unnamed_node(NodeKind::Fragment(RefCell::new(Vec::new())))
-        });
+        let template_contents = flags
+            .template
+            .then(|| unnamed_node(NodeKind::Fragment(RefCell::new(Vec::new()))));
         new_node(
             name,
             NodeKind::Element {
@@ -217,11 +215,8 @@ impl TreeSink for XmlTree {
                 {
                     contents.borrow_mut().push_str(text.as_ref());
                 } else {
-                    let text_node = unnamed_node(NodeKind::Text(RefCell::new(
-                        text.to_string(),
-                    )));
-                    *text_node.parent.borrow_mut() =
-                        Some(Rc::downgrade(parent));
+                    let text_node = unnamed_node(NodeKind::Text(RefCell::new(text.to_string())));
+                    *text_node.parent.borrow_mut() = Some(Rc::downgrade(parent));
                     parent_children.push(text_node);
                 }
             }
@@ -277,21 +272,13 @@ impl TreeSink for XmlTree {
         self.quirks_mode.set(mode);
     }
 
-    fn append_before_sibling(
-        &self,
-        sibling: &Self::Handle,
-        new_node: NodeOrText<Self::Handle>,
-    ) {
+    fn append_before_sibling(&self, sibling: &Self::Handle, new_node: NodeOrText<Self::Handle>) {
         let new_node = match new_node {
             AppendNode(node) => node,
-            AppendText(text) => {
-                unnamed_node(NodeKind::Text(RefCell::new(text.to_string())))
-            }
+            AppendText(text) => unnamed_node(NodeKind::Text(RefCell::new(text.to_string()))),
         };
         self.remove_from_parent(&new_node);
-        let Some(parent) =
-            sibling.parent.borrow().as_ref().and_then(Weak::upgrade)
-        else {
+        let Some(parent) = sibling.parent.borrow().as_ref().and_then(Weak::upgrade) else {
             return;
         };
         let Some(parent_children) = children(&parent) else {
@@ -308,11 +295,7 @@ impl TreeSink for XmlTree {
         parent_children.insert(index, new_node);
     }
 
-    fn add_attrs_if_missing(
-        &self,
-        target: &Self::Handle,
-        attrs: Vec<Attribute>,
-    ) {
+    fn add_attrs_if_missing(&self, target: &Self::Handle, attrs: Vec<Attribute>) {
         let NodeKind::Element {
             attrs: target_attrs,
             ..
@@ -322,9 +305,10 @@ impl TreeSink for XmlTree {
         };
         let mut target_attrs = target_attrs.borrow_mut();
         for attr in attrs {
-            if !target_attrs.iter().any(|existing| {
-                existing.name.expanded() == attr.name.expanded()
-            }) {
+            if !target_attrs
+                .iter()
+                .any(|existing| existing.name.expanded() == attr.name.expanded())
+            {
                 target_attrs.push(attr);
             }
         }
@@ -346,16 +330,11 @@ impl TreeSink for XmlTree {
         }
     }
 
-    fn reparent_children(
-        &self,
-        node: &Self::Handle,
-        new_parent: &Self::Handle,
-    ) {
+    fn reparent_children(&self, node: &Self::Handle, new_parent: &Self::Handle) {
         let Some(node_children) = children(node) else {
             return;
         };
-        let moved_children =
-            node_children.borrow_mut().drain(..).collect::<Vec<_>>();
+        let moved_children = node_children.borrow_mut().drain(..).collect::<Vec<_>>();
         for child in moved_children {
             append_child(new_parent, child);
         }
@@ -396,19 +375,13 @@ fn describe(node: &Node) -> String {
 fn main() -> anyhow::Result<()> {
     let xml = r#"<library><book id="b1">Rust</book></library>"#;
     let dom = parse_document(XmlTree::default(), Default::default()).one(xml);
-    anyhow::ensure!(
-        dom.errors.borrow().is_empty(),
-        "XML parser reported errors"
-    );
+    anyhow::ensure!(dom.errors.borrow().is_empty(), "XML parser reported errors");
 
     let library = children(&dom.document)
         .and_then(|nodes| nodes.borrow().first().cloned())
         .ok_or_else(|| anyhow::anyhow!("XML document has no root element"))?;
     let library_name = dom.elem_name(&library).local_name().to_string();
-    anyhow::ensure!(
-        library_name == "library",
-        "unexpected root: {library_name}"
-    );
+    anyhow::ensure!(library_name == "library", "unexpected root: {library_name}");
 
     let book = children(&library)
         .and_then(|nodes| nodes.borrow().first().cloned())
@@ -437,9 +410,7 @@ fn main() -> anyhow::Result<()> {
     anyhow::ensure!(contents == "Rust", "unexpected book text: {contents}");
 
     println!("{}; {}", describe(&library), describe(&text));
-    println!(
-        "root: {library_name}; child: {book_name} id={book_id}; text: {contents}"
-    );
+    println!("root: {library_name}; child: {book_name} id={book_id}; text: {contents}");
     Ok(())
 }
 // ANCHOR_END: example
@@ -467,11 +438,10 @@ mod tests {
     /// Parsing well-formed XML builds the expected tree without errors.
     #[test]
     fn builds_the_tree() -> Result<(), Box<dyn std::error::Error>> {
-        let dom = parse_document(XmlTree::default(), Default::default())
-            .one(r#"<a><b k="v">t</b></a>"#);
+        let dom =
+            parse_document(XmlTree::default(), Default::default()).one(r#"<a><b k="v">t</b></a>"#);
         assert!(dom.errors.borrow().is_empty());
-        let a =
-            children(&dom.document).ok_or("missing value")?.borrow()[0].clone();
+        let a = children(&dom.document).ok_or("missing value")?.borrow()[0].clone();
         assert_eq!(&*a.name.local, "a");
         let b = children(&a).ok_or("missing value")?.borrow()[0].clone();
         assert_eq!(&*b.name.local, "b");
@@ -481,8 +451,7 @@ mod tests {
     /// Malformed XML is reported through the error list.
     #[test]
     fn malformed_xml_reports_errors() {
-        let dom = parse_document(XmlTree::default(), Default::default())
-            .one("<a><b></a>");
+        let dom = parse_document(XmlTree::default(), Default::default()).one("<a><b></a>");
         assert!(!dom.errors.borrow().is_empty());
     }
 }

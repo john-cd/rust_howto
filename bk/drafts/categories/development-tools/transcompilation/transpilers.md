@@ -6,7 +6,7 @@
 
 ## Translate C to Rust with C2Rust {#c2rust}
 
-[![c2rust~website][c~c2rust~website~badge]][c~c2rust~website] [![c2rust][c~c2rust~docs~badge]][c~c2rust~docs] [![c2rust~crates.io][c~c2rust~crates.io~badge]][c~c2rust~crates.io] [![c2rust~repo][c~c2rust~repo~badge]][c~c2rust~repo] [![c2rust~lib.rs][c~c2rust~lib.rs~badge]][c~c2rust~lib.rs]{{hi:c2rust}}{{hi:Migration}}{{hi:Translation}}{{hi:Transpiler}}{{hi:C}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
+[![c2rust~website][c~c2rust~website~badge]][c~c2rust~website] {{#badges c2rust}} {{hi:Migration}} {{hi:Translation}} {{hi:Transpiler}} {{hi:C}} {{#categories development-tools="Development tools",development-tools::ffi=FFI,command-line-utilities="Command line utilities"}}
 
 C2Rust uses Clang's compilation database to translate C99 projects into Rust. Build and test the original project first so you can compare the translated code against known behavior. The generated Rust mirrors the C structure and can contain substantial `unsafe`; treat it as a migration starting point, then refactor and verify it rather than assuming translation made it memory-safe.
 

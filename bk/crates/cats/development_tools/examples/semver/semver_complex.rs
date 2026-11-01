@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Demonstrates parsing, comparing, and serializing complex semantic version
 //! strings.
+//!
+//! Version requirements combine comparators (`>=1.2, <2.0`). Cargo's default
+//! `1.2` means `^1.2`: any compatible release at or above 1.2.0 and below
+//! 2.0.0.
 
 use anyhow::Result;
 use semver::BuildMetadata;

@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! This example demonstrates basic usage of the `winnow` crate.
+//!
+//! A parser combinator library builds parsers from small functions that are
+//! combined, for example "a number, then a comma, then another number". Each
+//! parser consumes part of the input and returns the rest, so you can build
+//! formats such as configuration files or protocols from small, testable
+//! pieces.
 
 use winnow::ascii::digit1;
 use winnow::combinator::separated;
@@ -15,8 +21,7 @@ fn parse_list(input: &mut &str) -> ModalResult<Vec<i32>> {
 /// Parses a comma-separated list of numbers with `winnow`.
 fn main() -> anyhow::Result<()> {
     let mut input = "1,2,3,4,5";
-    let result = parse_list(&mut input)
-        .map_err(|e| anyhow::anyhow!("Parsing failed: {e:?}"))?;
+    let result = parse_list(&mut input).map_err(|e| anyhow::anyhow!("Parsing failed: {e:?}"))?;
 
     println!("Parsed numbers: {result:?}");
     assert_eq!(result, vec![1, 2, 3, 4, 5]);

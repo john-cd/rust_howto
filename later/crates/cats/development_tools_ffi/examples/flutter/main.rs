@@ -6,23 +6,17 @@
 #[cfg(feature = "flutter")]
 pub mod frb_generated {
     flutter_rust_bridge::frb_generated_sse_codec!();
-    flutter_rust_bridge::frb_generated_stream_sink!(
-        default_stream_sink_codec = SseCodec
-    );
+    flutter_rust_bridge::frb_generated_stream_sink!(default_stream_sink_codec = SseCodec);
 
     impl SseEncode for String {
-        fn sse_encode(
-            self,
-            serializer: &mut flutter_rust_bridge::for_generated::SseSerializer,
-        ) {
+        fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
             use std::io::Write as _;
 
             use byteorder::WriteBytesExt as _;
 
             let bytes = self.into_bytes();
-            let length = i32::try_from(bytes.len()).expect(
-                "SSE strings must fit in the generated i32 length field",
-            );
+            let length = i32::try_from(bytes.len())
+                .expect("SSE strings must fit in the generated i32 length field");
             serializer
                 .cursor
                 .write_i32::<byteorder::NativeEndian>(length)

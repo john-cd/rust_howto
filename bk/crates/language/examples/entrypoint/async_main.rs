@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This is an example of an async main function.
+//!
+//! `main` cannot be `async` by itself, because something must run the futures.
+//! The `#[tokio::main]` attribute wraps `main` in a Tokio runtime and blocks on
+//! it.
 
 use anyhow::Result;
 

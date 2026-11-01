@@ -125,7 +125,8 @@ fn main() {
 
 /// Compares scalar, runtime-dispatched, and portable SIMD on fixed inputs.
 pub fn run() {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry();
 }

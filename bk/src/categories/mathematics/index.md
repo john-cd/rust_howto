@@ -6,7 +6,7 @@
 
 This section collects Rust crates and runnable examples for mathematical and numerical programming. The chapter tables show the examples currently available.
 
-Some commonly used crates are [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} for linear algebra, [`glam`][c~glam~docs]↗{{hi:glam}} for graphics-oriented vector and matrix operations, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for multidimensional arrays, and [`statrs`][c~statrs~docs]↗{{hi:statrs}} for statistical distributions and functions. See the [[randomness | Randomness]] chapter for random number generation.
+Some commonly used crates are [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} for linear algebra, [`glam`][c~glam~docs]↗{{hi:glam}} for graphics-oriented vector and matrix operations, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for multidimensional arrays, [`sprs`][c~sprs~docs]↗{{hi:sprs}} for sparse matrices, and [`statrs`][c~statrs~docs]↗{{hi:statrs}} for statistical distributions and functions. See the [[randomness | Randomness]] chapter for random number generation.
 
 ## Trigonometry
 
@@ -56,7 +56,7 @@ To work with numeric types beyond what is available in the standard library, use
 
 ### Fractions
 
-[![fraction][c~fraction~docs~badge]][c~fraction~docs] [![fraction~crates.io][c~fraction~crates.io~badge]][c~fraction~crates.io] [![fraction~repo][c~fraction~repo~badge]][c~fraction~repo] [![fraction~lib.rs][c~fraction~lib.rs~badge]][c~fraction~lib.rs]{{hi:fraction}}{{hi:Float}}{{hi:Numeric}}{{hi:Decimal}}{{hi:fraction}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges fraction data-structures="Data structures"}}{{hi:Float}}{{hi:Numeric}}{{hi:Decimal}}{{hi:fraction}}
 
 The [`fraction`][c~fraction~docs]↗{{hi:fraction}} crate provides fraction and decimal types with lossless arithmetic. Its API is still evolving; review its current documentation before adopting it.
 {{#include additional_numeric_types.incl.md}}

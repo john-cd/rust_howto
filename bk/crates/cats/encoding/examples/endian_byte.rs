@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Encoding and decoding a struct in little-endian byte order with `byteorder`.
+//!
+//! Endianness is the order in which the bytes of a multi-byte number are
+//! stored. Little-endian puts the least significant byte first (x86 and ARM
+//! computers); big-endian puts the most significant first (network protocols).
+//! Files and network formats must fix one order so that every machine reads the
+//! same value.
 
 use std::io::Error;
 

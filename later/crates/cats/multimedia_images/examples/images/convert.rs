@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Encode an image to PNG and JPEG in memory.
+//!
+//! PNG is lossless and suits graphics and screenshots; JPEG is lossy,
+//! discarding detail the eye barely notices, which gives much smaller photo
+//! files. Encoding in memory returns the bytes without writing a file, for
+//! example to send in an HTTP response.
 
 use std::io::Cursor;
 
@@ -10,8 +15,7 @@ use image::RgbImage;
 
 /// Encodes a small image in two formats without creating files.
 fn main() -> image::ImageResult<()> {
-    let image =
-        DynamicImage::ImageRgb8(RgbImage::from_pixel(2, 2, Rgb([40, 80, 120])));
+    let image = DynamicImage::ImageRgb8(RgbImage::from_pixel(2, 2, Rgb([40, 80, 120])));
     for format in [ImageFormat::Png, ImageFormat::Jpeg] {
         let mut encoded = Cursor::new(Vec::new());
         image.write_to(&mut encoded, format)?;
@@ -33,11 +37,7 @@ mod tests {
     /// Confirms both encoders emit their respective file signatures.
     #[test]
     fn encoded_images_have_expected_signatures() -> image::ImageResult<()> {
-        let image = DynamicImage::ImageRgb8(RgbImage::from_pixel(
-            2,
-            2,
-            Rgb([40, 80, 120]),
-        ));
+        let image = DynamicImage::ImageRgb8(RgbImage::from_pixel(2, 2, Rgb([40, 80, 120])));
         for (format, signature) in [
             (ImageFormat::Png, &b"\x89PNG\r\n\x1a\n"[..]),
             (ImageFormat::Jpeg, &b"\xff\xd8\xff"[..]),

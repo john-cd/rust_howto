@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example builder pattern.
+//!
+//! The builder pattern constructs a complex value step by step with chained
+//! method calls, so you set only the options you need and the rest take
+//! defaults. It avoids constructors with many arguments.
 
 /// The object to build.
 #[derive(Debug)]
@@ -78,10 +82,7 @@ impl DatabaseConfigBuilder {
     }
 
     /// Sets the connection timeout in seconds.
-    fn connection_timeout_seconds(
-        mut self,
-        connection_timeout_seconds: u64,
-    ) -> Self {
+    fn connection_timeout_seconds(mut self, connection_timeout_seconds: u64) -> Self {
         self.connection_timeout_seconds = connection_timeout_seconds;
         self
     }

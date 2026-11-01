@@ -10,8 +10,7 @@ use lyon::tessellation::FillVertex;
 use lyon::tessellation::VertexBuffers;
 
 /// Builds a path and returns the number of generated vertices and indices.
-fn tessellate_triangle()
--> Result<(usize, usize), lyon::tessellation::TessellationError> {
+fn tessellate_triangle() -> Result<(usize, usize), lyon::tessellation::TessellationError> {
     let mut builder = Path::builder();
     builder.begin(point(12.0, 12.0));
     builder.line_to(point(72.0, 12.0));
@@ -23,9 +22,7 @@ fn tessellate_triangle()
     FillTessellator::new().tessellate_path(
         &path,
         &FillOptions::default(),
-        &mut BuffersBuilder::new(&mut geometry, |vertex: FillVertex<'_>| {
-            vertex.position()
-        }),
+        &mut BuffersBuilder::new(&mut geometry, |vertex: FillVertex<'_>| vertex.position()),
     )?;
 
     Ok((geometry.vertices.len(), geometry.indices.len()))
@@ -39,8 +36,7 @@ fn main() -> anyhow::Result<()> {
 
 /// Tessellates the example path and reports the generated mesh size.
 pub fn run() -> anyhow::Result<()> {
-    let (vertices, indices) =
-        tessellate_triangle().map_err(anyhow::Error::from)?;
+    let (vertices, indices) = tessellate_triangle().map_err(anyhow::Error::from)?;
     println!("tessellated mesh: {vertices} vertices, {indices} indices");
     Ok(())
 }

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
+//!
+//! A stream of fallible fetches yields `Result` items. You decide what an error
+//! means: stop at the first failure, skip it, or collect all results and
+//! failures to report later.
 
 use std::time::Duration;
 
@@ -105,8 +109,7 @@ mod tests {
     }
 
     #[tokio::test(start_paused = true)]
-    async fn concurrent_processing_handles_every_item()
-    -> Result<(), Box<dyn std::error::Error>> {
+    async fn concurrent_processing_handles_every_item() -> Result<(), Box<dyn std::error::Error>> {
         let results = std::sync::Mutex::new(Vec::new());
         stream::iter(vec![1, 2, 3, 4, 5])
             .map(fetch_data)

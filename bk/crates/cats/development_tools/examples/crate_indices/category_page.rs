@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generate a category page from local TOML metadata and recipe links.
+//!
+//! This book lists crates in generated index pages. A script reads local TOML
+//! metadata for each category and writes the Markdown page, so the pages stay
+//! consistent and can be regenerated.
 
 use anyhow::Result;
 
@@ -37,12 +41,11 @@ mod tests {
         let fixture = create_fixture()?;
         let book_root = fixture.path().join("book");
         let recipes = tool_lib::collect_published_recipe_links(book_root)?;
-        let page =
-            tool_lib::create_category_page_from_metadata_with_recipe_links(
-                &["serde".to_owned(), "serde_json".to_owned()],
-                CATEGORY_METADATA,
-                &recipes,
-            )?;
+        let page = tool_lib::create_category_page_from_metadata_with_recipe_links(
+            &["serde".to_owned(), "serde_json".to_owned()],
+            CATEGORY_METADATA,
+            &recipes,
+        )?;
         assert!(page.contains("serde_json"));
         assert!(page.contains("Serialize JSON"));
         Ok(())

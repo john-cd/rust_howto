@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Find duplicate filenames in the current directory.
+//!
+//! Walking a directory tree visits every file below a path. Collecting names
+//! into a map shows files that share a name in different folders, which is
+//! useful for finding duplicates.
 
 use std::collections::HashMap;
 use std::ffi::OsString;

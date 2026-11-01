@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Propagating errors with the `?` operator through a function that parses a
 //! port.
+//!
+//! The `?` operator returns the error to the caller if a `Result` is an `Err`,
+//! and otherwise unwraps the value. The error types must match or be
+//! convertible with `From`.
 
 use std::error::Error;
 

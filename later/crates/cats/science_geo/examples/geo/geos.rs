@@ -1,4 +1,9 @@
 //! Runs GEOS spatial predicates and operations through the `geos` crate.
+//!
+//! GEOS is the C++ geometry engine behind PostGIS and QGIS. Spatial predicates
+//! answer yes/no questions, such as whether one shape contains or intersects
+//! another; operations build new shapes, such as buffers and unions. It needs
+//! the GEOS library installed.
 
 // ANCHOR: example
 #[cfg(feature = "geos")]

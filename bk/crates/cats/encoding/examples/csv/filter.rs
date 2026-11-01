@@ -52,13 +52,9 @@ mod tests {
     /// Verifies filtering preserves the header and only the matching row.
     #[test]
     fn preserves_header_and_filters_nonmatching_rows() -> anyhow::Result<()> {
-        let data =
-            "City,State,Population\nKenai,AK,7610\nWest Hollywood,CA,37031\n";
+        let data = "City,State,Population\nKenai,AK,7610\nWest Hollywood,CA,37031\n";
         let filtered = String::from_utf8(filter_csv(data, "CA")?)?;
-        assert_eq!(
-            filtered,
-            "City,State,Population\nWest Hollywood,CA,37031\n"
-        );
+        assert_eq!(filtered, "City,State,Population\nWest Hollywood,CA,37031\n");
         Ok(())
     }
 

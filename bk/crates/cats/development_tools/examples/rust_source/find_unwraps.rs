@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! A project check in the style of `cargo xtask`: find `unwrap()` and
 //! `expect()` calls with `syn`, reporting file-relative line numbers.
+//!
+//! Static analysis reads code without running it. The `syn` crate parses Rust
+//! source into a syntax tree that a visitor can walk, for example to find every
+//! `unwrap()` call that could panic.
 
 use syn::visit::Visit;
 
@@ -70,7 +74,8 @@ fn main() {
 // ANCHOR_END: example
 
 pub fn run() -> syn::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

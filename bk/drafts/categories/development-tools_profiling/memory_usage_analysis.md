@@ -20,10 +20,7 @@ On Linux, `/usr/bin/time -v ./target/release/my_app` reports peak resident memor
 
 ## Profile Heap Memory with `dhat` {#dhat}
 
-[![dhat][c~dhat~docs~badge]][c~dhat~docs]{{hi:dhat}}
-[![dhat~crates.io][c~dhat~crates.io~badge]][c~dhat~crates.io]
-[![dhat~repo][c~dhat~repo~badge]][c~dhat~repo]
-[![dhat~lib.rs][c~dhat~lib.rs~badge]][c~dhat~lib.rs]
+{{#badges dhat}}
 
 [`dhat`][c~dhat~docs]↗{{hi:dhat}} is a Rust library for heap profiling and ad-hoc event profiling. Add its global allocator and profiler to a dedicated example or feature so ordinary application builds do not pay the profiling cost. The included example writes `dhat-heap.json`, which can be explored with the DHAT viewer.
 

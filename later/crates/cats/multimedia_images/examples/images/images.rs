@@ -19,9 +19,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 
 /// Chooses a default output path when none is supplied, then writes the image.
-fn run_with_output_path(
-    output_path: Option<PathBuf>,
-) -> Result<(), Box<dyn Error + Send + Sync>> {
+fn run_with_output_path(output_path: Option<PathBuf>) -> Result<(), Box<dyn Error + Send + Sync>> {
     let output_path = output_path.unwrap_or_else(|| {
         let default = PathBuf::from("generated_image.png");
         eprintln!("No output path provided, writing to {}", default.display());
@@ -47,10 +45,7 @@ fn save_gradient_image(
 }
 
 /// Returns a gradient image of the given `width` and `height`.
-fn build_gradient_image(
-    width: u32,
-    height: u32,
-) -> ImageBuffer<Rgb<u8>, Vec<u8>> {
+fn build_gradient_image(width: u32, height: u32) -> ImageBuffer<Rgb<u8>, Vec<u8>> {
     let mut img = ImageBuffer::new(width, height);
     let max_x = u64::from(width.saturating_sub(1));
     let max_y = u64::from(height.saturating_sub(1));
@@ -58,8 +53,7 @@ fn build_gradient_image(
     for (x, y, pixel) in img.enumerate_pixels_mut() {
         let r = (u64::from(x) * 255 / max_x.max(1)) as u8;
         let g = (u64::from(y) * 255 / max_y.max(1)) as u8;
-        let b = ((u64::from(x) + u64::from(y)) * 255 / (max_x + max_y).max(1))
-            as u8;
+        let b = ((u64::from(x) + u64::from(y)) * 255 / (max_x + max_y).max(1)) as u8;
         *pixel = Rgb([r, g, b]);
     }
 
@@ -82,8 +76,7 @@ mod tests {
 
     /// Verifies that gradient image round trips through png.
     #[test]
-    fn gradient_image_round_trips_through_png()
-    -> Result<(), Box<dyn Error + Send + Sync>> {
+    fn gradient_image_round_trips_through_png() -> Result<(), Box<dyn Error + Send + Sync>> {
         let temp_dir = tempfile::tempdir()?;
         let output_path = temp_dir.path().join("gradient.png");
         save_gradient_image(&output_path, 3, 3)?;

@@ -1,8 +1,12 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! `bitflags` generate types for C-style flags with ergonomic APIs.
+//!
+//! Bit flags pack several yes/no options into one integer, one bit each, and
+//! combine them with `|`. File permissions and many operating system and
+//! protocol fields work like this. The `bitflags` crate gives them names and
+//! type safety.
 
 use std::fmt;
 
@@ -78,6 +82,7 @@ fn main() {
         "MyFlags(FLAG_A | FLAG_B)"
     );
     println!("{flags:?}");
+    assert_eq!(flags.as_u64(), 0b111);
 
     // Bitwise pattern matching:
     bitflags::bitflags_match!(flags, {

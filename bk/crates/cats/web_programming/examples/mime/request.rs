@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to retrieve the Content-Type header from a
 //! response and parse it as a MIME type.
+//!
+//! The `Content-Type` HTTP header carries the MIME type of a response, for
+//! example `application/json`. Clients use it to decide how to parse the body,
+//! so it should be checked before trusting the data.
 
 use std::str::FromStr as _;
 
@@ -37,10 +41,9 @@ fn describe_content_type(headers: &HeaderMap) -> Result<Option<&'static str>> {
 /// Retrieves the Content-Type header from a successful HTTP response.
 #[tokio::main]
 async fn main() -> Result<()> {
-    let response: Response =
-        reqwest::get("https://www.rust-lang.org/logos/rust-logo-32x32.png")
-            .await?
-            .error_for_status()?;
+    let response: Response = reqwest::get("https://www.rust-lang.org/logos/rust-logo-32x32.png")
+        .await?
+        .error_for_status()?;
     let headers: &HeaderMap = response.headers();
 
     match describe_content_type(headers)? {

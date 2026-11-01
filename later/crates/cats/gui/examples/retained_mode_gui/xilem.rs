@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A counter application with `xilem`.
+//!
+//! Xilem builds the interface from a function of the state: it returns a
+//! lightweight description of the view, and the framework compares it with the
+//! previous one and updates only what changed. This is similar to React in the
+//! web world.
 
 use xilem::EventLoop;
 use xilem::WindowOptions;
@@ -67,8 +72,7 @@ mod tests {
     /// Runs the counter when an interactive desktop session is available.
     #[test]
     #[ignore = "requires an interactive example runtime"]
-    fn test_xilem_example_entry_point()
-    -> Result<(), winit::error::EventLoopError> {
+    fn test_xilem_example_entry_point() -> Result<(), winit::error::EventLoopError> {
         run_app()
     }
 

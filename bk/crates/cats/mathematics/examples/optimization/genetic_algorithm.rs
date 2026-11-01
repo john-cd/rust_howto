@@ -1,4 +1,11 @@
 // ANCHOR: example
+//! Evolve a solution with a genetic algorithm.
+//!
+//! A genetic algorithm imitates evolution: it keeps a population of candidate
+//! solutions, selects the best, combines and randomly mutates them, and
+//! repeats. It suits problems where you can score a solution but cannot
+//! differentiate the score.
+
 use radiate::prelude::*;
 
 /// Number of bits in each candidate bit string.
@@ -10,9 +17,7 @@ fn evolve() -> usize {
     random_provider::scoped_seed(42, || {
         let engine = GeneticEngine::builder()
             .codec(BitCodec::vector(BITS))
-            .fitness_fn(|genotype: Vec<bool>| {
-                genotype.into_iter().filter(|bit| *bit).count()
-            })
+            .fitness_fn(|genotype: Vec<bool>| genotype.into_iter().filter(|bit| *bit).count())
             .build();
         let result = engine.iter().until_score(BITS).take(1000).last();
         result.map_or(0, |generation| generation.score().as_usize())

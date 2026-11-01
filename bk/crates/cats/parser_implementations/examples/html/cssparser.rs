@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Tokenize a small CSS declaration list with `cssparser`.
+//!
+//! CSS (Cascading Style Sheets) describes how web pages look. A tokenizer
+//! splits the text into the smallest meaningful pieces (identifiers, numbers,
+//! colons); a parser then builds structure from them. This is the CSS engine of
+//! Firefox.
 
 use cssparser::Parser;
 use cssparser::ToCss as _;

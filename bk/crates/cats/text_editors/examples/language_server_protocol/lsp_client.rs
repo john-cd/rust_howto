@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Opens a document and asks for its symbols with `lsp-server` and
 //! `lsp-types`, and shows the `Content-Length` framing that real servers use.
+//!
+//! The Language Server Protocol (LSP) lets one language tool, such as
+//! rust-analyzer, serve completions, errors and navigation to any editor, over
+//! JSON-RPC messages on a pipe. Here a client opens a document and asks the
+//! server for its symbols (functions, types and so on).
 
 use std::io::BufReader;
 use std::thread;
@@ -42,22 +47,15 @@ fn run_server(connection: Connection) -> anyhow::Result<()> {
     let mut documents: Vec<(Uri, String)> = Vec::new();
     for message in &connection.receiver {
         match message {
-            Message::Notification(n)
-                if n.method == DidOpenTextDocument::METHOD =>
-            {
-                let params: DidOpenTextDocumentParams =
-                    serde_json::from_value(n.params)?;
-                documents.push((
-                    params.text_document.uri,
-                    params.text_document.text,
-                ));
+            Message::Notification(n) if n.method == DidOpenTextDocument::METHOD => {
+                let params: DidOpenTextDocumentParams = serde_json::from_value(n.params)?;
+                documents.push((params.text_document.uri, params.text_document.text));
             }
             Message::Request(request) => {
                 if connection.handle_shutdown(&request)? {
                     break;
                 }
-                let params: DocumentSymbolParams =
-                    serde_json::from_value(request.params)?;
+                let params: DocumentSymbolParams = serde_json::from_value(request.params)?;
                 let uri = params.text_document.uri;
                 let text = documents
                     .iter()
@@ -65,10 +63,7 @@ fn run_server(connection: Connection) -> anyhow::Result<()> {
                     .map(|(_, text)| text.as_str())
                     .unwrap_or_default();
                 let symbols = function_symbols(&uri, text);
-                let response = Response::new_ok(
-                    request.id,
-                    DocumentSymbolResponse::Flat(symbols),
-                );
+                let response = Response::new_ok(request.id, DocumentSymbolResponse::Flat(symbols));
                 connection.sender.send(Message::Response(response))?;
             }
             _ => {}
@@ -132,9 +127,9 @@ fn main() -> anyhow::Result<()> {
             "fn main() {}\n\nfn helper() {}\n".into(),
         ),
     };
-    client.sender.send(
-        Notification::new(DidOpenTextDocument::METHOD.into(), open).into(),
-    )?;
+    client
+        .sender
+        .send(Notification::new(DidOpenTextDocument::METHOD.into(), open).into())?;
 
     // `textDocument/documentSymbol`.
     let params = DocumentSymbolParams {
@@ -156,8 +151,7 @@ fn main() -> anyhow::Result<()> {
     let result = response
         .response_result
         .map_err(|e| anyhow::anyhow!("server error: {}", e.message))?;
-    let DocumentSymbolResponse::Flat(symbols) = serde_json::from_value(result)?
-    else {
+    let DocumentSymbolResponse::Flat(symbols) = serde_json::from_value(result)? else {
         anyhow::bail!("expected flat symbols");
     };
     let names: Vec<&str> = symbols.iter().map(|s| s.name.as_str()).collect();
@@ -177,8 +171,7 @@ fn main() -> anyhow::Result<()> {
 
     // Over stdio every message is framed as `Content-Length: N\r\n\r\n{json}`.
     let mut wire = Vec::new();
-    Message::Notification(Notification::new("initialized".into(), ()))
-        .write(&mut wire)?;
+    Message::Notification(Notification::new("initialized".into(), ())).write(&mut wire)?;
     println!("{}", String::from_utf8_lossy(&wire));
     assert!(wire.starts_with(b"Content-Length: "));
     let decoded = Message::read(&mut BufReader::new(wire.as_slice()))?;
@@ -188,7 +181,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }
@@ -240,9 +234,9 @@ mod tests {
         let capabilities = loop {
             match Message::read(&mut reader)? {
                 Some(Message::Response(r)) if r.id == RequestId::from(1) => {
-                    break r.response_result.map_err(|e| {
-                        anyhow::anyhow!("server error: {}", e.message)
-                    })?;
+                    break r
+                        .response_result
+                        .map_err(|e| anyhow::anyhow!("server error: {}", e.message))?;
                 }
                 Some(_) => {}
                 None => anyhow::bail!("server closed the connection"),
@@ -250,8 +244,7 @@ mod tests {
         };
         assert!(capabilities["capabilities"].is_object());
 
-        Message::Notification(Notification::new("initialized".into(), ()))
-            .write(&mut writer)?;
+        Message::Notification(Notification::new("initialized".into(), ())).write(&mut writer)?;
         let uri: Uri = "file:///tmp/rust_howto_lsp_client.rs".parse()?;
         Message::Notification(Notification::new(
             DidOpenTextDocument::METHOD.into(),
@@ -275,12 +268,10 @@ mod tests {
         .write(&mut writer)?;
         let symbols = loop {
             match Message::read(&mut reader)? {
-                Some(Message::Response(response))
-                    if response.id == RequestId::from(2) =>
-                {
-                    break response.response_result.map_err(|error| {
-                        anyhow::anyhow!("server error: {}", error.message)
-                    })?;
+                Some(Message::Response(response)) if response.id == RequestId::from(2) => {
+                    break response
+                        .response_result
+                        .map_err(|error| anyhow::anyhow!("server error: {}", error.message))?;
                 }
                 Some(Message::Request(request)) => {
                     // rust-analyzer may request optional client settings while
@@ -290,8 +281,7 @@ mod tests {
                         "workspace/configuration" => serde_json::json!([]),
                         _ => serde_json::Value::Null,
                     };
-                    Message::Response(Response::new_ok(request.id, result))
-                        .write(&mut writer)?;
+                    Message::Response(Response::new_ok(request.id, result)).write(&mut writer)?;
                 }
                 Some(_) => {}
                 None => anyhow::bail!("server closed the connection"),
@@ -305,12 +295,8 @@ mod tests {
             })
         }));
 
-        Message::Request(Request::new(
-            RequestId::from(3),
-            "shutdown".into(),
-            (),
-        ))
-        .write(&mut writer)?;
+        Message::Request(Request::new(RequestId::from(3), "shutdown".into(), ()))
+            .write(&mut writer)?;
         loop {
             match Message::read(&mut reader)? {
                 Some(Message::Response(r)) if r.id == RequestId::from(3) => {
@@ -320,8 +306,7 @@ mod tests {
                 None => anyhow::bail!("server closed the connection"),
             }
         }
-        Message::Notification(Notification::new("exit".into(), ()))
-            .write(&mut writer)?;
+        Message::Notification(Notification::new("exit".into(), ())).write(&mut writer)?;
         drop(writer);
         assert!(child.wait()?.success());
         Ok(())

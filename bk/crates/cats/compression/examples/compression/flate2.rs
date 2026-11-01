@@ -65,8 +65,7 @@ fn gzip_file_round_trip() -> anyhow::Result<()> {
 
     let compressed_file = NamedTempFile::new()?;
     let mut source = source_file.reopen()?;
-    let mut encoder =
-        GzEncoder::new(compressed_file.reopen()?, Compression::fast());
+    let mut encoder = GzEncoder::new(compressed_file.reopen()?, Compression::fast());
     std::io::copy(&mut source, &mut encoder)?;
     encoder.finish()?;
 

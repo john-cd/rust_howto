@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of a function returning a `Cow`.
+//!
+//! Returning `Cow` lets a function return its input untouched (no allocation)
+//! when nothing needs changing, and a new `String` only when it does, as in
+//! escaping or normalizing text.
 
 use std::borrow::Cow;
 
@@ -31,8 +35,7 @@ fn main() {
     }
 
     let original_string_no_spaces = "HelloWorld!";
-    let modified_string_no_spaces =
-        remove_whitespaces(original_string_no_spaces);
+    let modified_string_no_spaces = remove_whitespaces(original_string_no_spaces);
 
     match modified_string_no_spaces {
         Cow::Borrowed(s) => println!("No spaces, no allocation: {s}"),

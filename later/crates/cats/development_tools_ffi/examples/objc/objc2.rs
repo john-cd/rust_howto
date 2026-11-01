@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Convert a Rust string with the typed Objective-C Foundation bindings.
+//!
+//! Objective-C is the language of Apple's Foundation and AppKit frameworks,
+//! which macOS and iOS apps use. `objc2` provides typed bindings, so Rust code
+//! can call them. This example runs on Apple platforms only.
 
 #[cfg(all(target_vendor = "apple", feature = "objc"))]
 use objc2::rc::Retained;

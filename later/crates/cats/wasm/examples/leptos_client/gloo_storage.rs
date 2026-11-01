@@ -6,6 +6,11 @@
 )]
 // ANCHOR: example
 //! Persist typed settings in the browser's local storage with [`gloo_storage`].
+//!
+//! Local storage is a small key-value store in the browser that survives page
+//! reloads, handy for user settings. It holds text only, so values are
+//! serialized with Serde. Data is per origin and readable by any script on the
+//! page, so never store secrets there.
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -38,9 +43,7 @@ pub fn load() -> Settings {
 
 /// Saves the settings to `localStorage` (browser only).
 #[cfg(target_arch = "wasm32")]
-pub fn save(
-    settings: &Settings,
-) -> Result<(), gloo_storage::errors::StorageError> {
+pub fn save(settings: &Settings) -> Result<(), gloo_storage::errors::StorageError> {
     use gloo_storage::LocalStorage;
     use gloo_storage::Storage;
     LocalStorage::set(KEY, settings)

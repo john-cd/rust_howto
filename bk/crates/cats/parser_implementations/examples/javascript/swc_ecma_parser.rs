@@ -27,10 +27,7 @@ use swc_ecma_parser::lexer::Lexer;
 /// Parses a JavaScript program and prints the resulting syntax tree.
 fn main() {
     let cm: Lrc<swc_common::SourceMap> = Default::default();
-    let fm = cm.new_source_file(
-        FileName::Custom("example.js".into()).into(),
-        "const a = 1;",
-    );
+    let fm = cm.new_source_file(FileName::Custom("example.js".into()).into(), "const a = 1;");
 
     let lexer = Lexer::new(
         Syntax::Es(EsSyntax {
@@ -68,8 +65,7 @@ mod tests {
     /// Parses a snippet into a program, or returns the parse error.
     fn parse(source: &'static str) -> Result<Program, String> {
         let cm: Lrc<swc_common::SourceMap> = Default::default();
-        let fm = cm
-            .new_source_file(FileName::Custom("test.js".into()).into(), source);
+        let fm = cm.new_source_file(FileName::Custom("test.js".into()).into(), source);
         let lexer = Lexer::new(
             Syntax::Es(EsSyntax::default()),
             EsVersion::latest(),

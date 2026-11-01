@@ -19,7 +19,7 @@ For vendor, model, cache, or instruction-set inventory on x86 and x86-64, [`raw-
 
 ### Check the Number of Logical cpu Cores {#check-number-of-logical-cpu-cores}
 
-[![num_cpus][c~num_cpus~docs~badge]][c~num_cpus~docs] [![num_cpus~crates.io][c~num_cpus~crates.io~badge]][c~num_cpus~crates.io] [![num_cpus~repo][c~num_cpus~repo~badge]][c~num_cpus~repo] [![num_cpus~lib.rs][c~num_cpus~lib.rs~badge]][c~num_cpus~lib.rs]{{hi:num_cpus}}{{hi:Cpus}}{{hi:Cores}}{{hi:Cpu}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}}{{hi:Logical cpu cores}}
+{{#badges num_cpus}} {{hi:Cpus}} {{hi:Cores}} {{hi:Cpu}} {{#categories hardware-support="Hardware support"}} {{hi:Logical cpu cores}}
 
 Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine using [`num_cpus::get`][c~num_cpus::get~docs]↗{{hi:num_cpus::get}}.
 
@@ -54,7 +54,7 @@ SIMD can speed up data-parallel operations such as processing pixels or numeric 
 
 ### Compute a Dot Product with `std::arch` and `wide` {#simd-dot-product}
 
-[![std::arch][c~std::arch~docs~badge]][c~std::arch~docs]{{hi:std::arch}} [![wide][c~wide~docs~badge]][c~wide~docs] [![wide~crates.io][c~wide~crates.io~badge]][c~wide~crates.io] [![wide~repo][c~wide~repo~badge]][c~wide~repo] [![wide~lib.rs][c~wide~lib.rs~badge]][c~wide~lib.rs]{{hi:wide}}{{hi:SIMD}}{{hi:Intrinsics}}{{hi:Runtime feature detection}} [![cat~hardware-support][cat~hardware-support~badge]][cat~hardware-support]{{hi:Hardware support}}
+[![std::arch][c~std::arch~docs~badge]][c~std::arch~docs]{{hi:std::arch}} {{#badges wide}} {{hi:SIMD}} {{hi:Intrinsics}} {{hi:Runtime feature detection}} {{#categories hardware-support="Hardware support"}}
 
 The example computes a dot product three ways:
 

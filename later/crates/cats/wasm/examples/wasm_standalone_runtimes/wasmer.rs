@@ -19,8 +19,7 @@ fn main() -> anyhow::Result<()> {
             local.get 0 local.get 1 i32.add))"#,
     )?;
     let instance = Instance::new(&mut store, &module, &imports! {})?;
-    let add: TypedFunction<(i32, i32), i32> =
-        instance.exports.get_typed_function(&store, "add")?;
+    let add: TypedFunction<(i32, i32), i32> = instance.exports.get_typed_function(&store, "add")?;
     assert_eq!(add.call(&mut store, 20, 22)?, 42);
     Ok(())
 }

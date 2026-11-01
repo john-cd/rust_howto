@@ -3,9 +3,9 @@
 // ANCHOR: example
 //! Types that implement `Copy` are copied instead of moved.
 //!
-//! The `Copy` marker trait signals that a type can be duplicated simply by
-//! copying bits in memory (like integer scalars or simple structs), so passing
-//! or assigning the value leaves the original accessible.
+//! Values that implement `Copy` are duplicated implicitly, so the original
+//! remains usable after an assignment or function call. Resource-owning types
+//! such as `String` are moved instead.
 
 /// Copies integers and a user-defined `Copy` type.
 fn main() {
@@ -25,10 +25,8 @@ fn main() {
     // Notes:
     // - `Clone` is a supertrait of `Copy`, so everything which is
     // `Copy` must also implement `Clone`.
-    // - `#[derive(Copy)]` requires that all of the struct's components
-    //   implement `Copy`.
-    // - You could also implement `Copy` and `Clone` manually with `impl`
-    //   blocks.
+    // - `#[derive(Copy)]` requires that all of the struct's components implement `Copy`.
+    // - You could also implement `Copy` and `Clone` manually with `impl` blocks.
 
     let a = S(5); // `a` is a struct that implements `Copy`.
     let b = a; // `b` is a copy of `a`.

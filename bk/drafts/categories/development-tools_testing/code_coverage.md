@@ -35,7 +35,7 @@ Coverage of documentation tests may require explicit options and toolchain suppo
 
 ## Collect Coverage with grcov {#coverage_testing}
 
-[![grcov][c~grcov~docs~badge]][c~grcov~docs] [![grcov~crates.io][c~grcov~crates.io~badge]][c~grcov~crates.io] [![grcov~repo][c~grcov~repo~badge]][c~grcov~repo] [![grcov~lib.rs][c~grcov~lib.rs~badge]][c~grcov~lib.rs]{{hi:grcov}}{{hi:Coverage}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+{{#badges grcov command-line-utilities="Command line utilities" development-tools="Development tools" development-tools::testing=Testing}}{{hi:Coverage}}
 
 grcov collects and combines Rust coverage data and can emit formats such as HTML and LCOV. It is useful when a project already has an LLVM instrumentation workflow or needs its supported report formats. Follow its documentation for the compiler flags and profile-data handling required by your setup.
 
@@ -51,7 +51,7 @@ cargo tarpaulin --workspace --out Html
 
 ## Read an LCOV Report with `lcov` {#lcov}
 
-[![lcov][c~lcov~docs~badge]][c~lcov~docs]{{hi:lcov}} [![lcov~crates.io][c~lcov~crates.io~badge]][c~lcov~crates.io] [![lcov~repo][c~lcov~repo~badge]][c~lcov~repo] [![lcov~lib.rs][c~lcov~lib.rs~badge]][c~lcov~lib.rs] [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]
+{{#badges lcov development-tools::testing=}}
 
 Coverage tools such as [`cargo llvm-cov`][cargo-llvm-cov~repo] and grcov write LCOV files. [`lcov::Reader`][c~lcov~docs]↗{{hi:lcov}} streams the records of a report (`SF` source file, `LF` lines found, `LH` lines hit, `end_of_record`). The example computes line coverage per file and fails if a file is below a threshold, which is a simple coverage gate for CI.
 

@@ -168,7 +168,7 @@ taffy = "0.15.1"
 tracing = "0.1.44"
 tracing-subscriber = "0.3.23"
 url = "2.5.8"
-vello = { version = "0.11.0", optional = true } # Uses wgpu 29, matching this workspace.
+vello = { version = "0.11.0", optional = true } # Uses wgpu 30, matching this workspace.
 wgpu = "30.0.1"
 winit = "0.30.13" # for vello, winit examples
 xilem = { version = "0.4.0", optional = true } # Experimental retained-mode UI example.

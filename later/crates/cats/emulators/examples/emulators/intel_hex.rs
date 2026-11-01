@@ -1,4 +1,8 @@
 //! Parses an Intel HEX data record and its end-of-file record.
+//!
+//! Intel HEX is a text format for firmware images: each line is a record with
+//! an address, data bytes and a checksum. Programmers for microcontrollers and
+//! EEPROM chips read it. An end-of-file record marks the last line.
 
 // ANCHOR: example
 use std::error::Error;

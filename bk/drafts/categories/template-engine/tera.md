@@ -6,7 +6,7 @@
 
 ## Create HTML Files from a Template {#create-html-from-template}
 
-[![tera~website][c~tera~website~badge]][c~tera~website] [![tera][c~tera~docs~badge]][c~tera~docs] [![tera~crates.io][c~tera~crates.io~badge]][c~tera~crates.io] [![tera~repo][c~tera~repo~badge]][c~tera~repo] [![tera~lib.rs][c~tera~lib.rs~badge]][c~tera~lib.rs]{{hi:tera}}{{hi:Django}}{{hi:Markup}}{{hi:Html}}{{hi:Jinja2}}{{hi:Template}} [![cat~template-engine][cat~template-engine~badge]][cat~template-engine]{{hi:Template engine}}
+[![tera~website][c~tera~website~badge]][c~tera~website] {{#badges tera}} {{hi:Django}} {{hi:Markup}} {{hi:Html}} {{hi:Jinja2}} {{hi:Template}} {{#categories template-engine="Template engine"}}
 
 [`tera`][c~tera~docs]↗{{hi:tera}} is a [template engine][p~template-engine]
 based on Jinja2 and Django templates. It renders text from a serializable

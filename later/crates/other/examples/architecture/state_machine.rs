@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A state machine whose transitions are triggered by events.
+//!
+//! A state machine has a finite set of states and rules for moving between them
+//! when events occur, for example an order that goes from created to paid to
+//! shipped. Modelling states as an enum makes invalid transitions impossible to
+//! write.
 
 /// Represents the possible states of the state machine.
 #[derive(Debug, PartialEq, Clone, Copy)]
@@ -51,10 +56,10 @@ impl StateMachine {
             (State::Idle, Event::Start) => State::Processing,
             (State::Processing, Event::Finish) => State::Completed,
             (State::Processing, Event::Fail) => State::Error,
-            (State::Processing, Event::Start) => State::Error, /* Illegal double start */
+            (State::Processing, Event::Start) => State::Error, // Illegal double start
             (State::Completed, Event::Reset) => State::Idle,
             (State::Error, Event::Reset) => State::Idle,
-            (_, _) => self.state, // Stay in the same state for other events
+            (..) => self.state, // Stay in the same state for other events
         };
     }
 

@@ -8,10 +8,7 @@
 
 [![Embassy][embassy~repo~badge]][embassy~repo]
 
-[![embassy][c~embassy~docs~badge]][c~embassy~docs]{{hi:embassy}}
-[![embassy~crates.io][c~embassy~crates.io~badge]][c~embassy~crates.io]
-[![embassy~repo][c~embassy~repo~badge]][c~embassy~repo]
-[![embassy~lib.rs][c~embassy~lib.rs~badge]][c~embassy~lib.rs]
+{{#badges embassy}}
 
 Embassy is a set of libraries for asynchronous embedded applications. Its executor schedules statically allocated tasks without requiring a heap. A firmware project still needs exactly one executor platform, normally supplied by its chip-specific HAL.
 

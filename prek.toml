@@ -4,6 +4,8 @@
 #
 # TODO Reviewed ??-??-2026.
 
+minimum_prek_version = "0.5.6"
+
 [[repos]]
 repo = "builtin"
 hooks = [
@@ -24,7 +26,7 @@ hooks = [
   { id = "check-vcs-permalinks" },
   { id = "check-yaml" },
   { id = "check-xml" },
-  { id = "mixed-line-ending" },
+  { id = "mixed-line-ending", args = ["--fix=lf"] },
   { id = "check-symlinks" },
   { id = "destroyed-symlinks" },
   { id = "check-merge-conflict" },
@@ -40,5 +42,8 @@ hooks = [
   { id = "format-rust-code", name = "Format Rust code with just fa", entry = "just", args = [
     "all",
     "fa",
-  ], language = "system", stages = ["pre-commit"], pass_filenames = false },
+  ], language = "system", pass_filenames = false },
+  { id = "cargo-deny", name = "cargo deny --locked check", entry = "just deny", language = "system", pass_filenames = false, always_run = true },
+  { id = "ruff-check-python-extension", name = "Ruff check (Python extension)", entry = "just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile lint", language = "system", files = '^later/crates/cats/development_tools_ffi/python_extension/.*\.py$', types = ["python"], pass_filenames = false },
+  { id = "ruff-format-python-extension", name = "Ruff format (Python extension)", entry = "just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile fmt-check", language = "system", files = '^later/crates/cats/development_tools_ffi/python_extension/.*\.py$', types = ["python"], pass_filenames = false },
 ]

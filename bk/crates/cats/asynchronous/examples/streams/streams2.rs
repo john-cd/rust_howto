@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates bounded concurrent processing with a deterministic stream.
+//!
+//! Bounded concurrency runs at most N tasks at once, for example N downloads,
+//! so a large input does not open thousands of connections. A stream with
+//! `buffer_unordered(n)` provides it.
 
 use std::time::Duration;
 

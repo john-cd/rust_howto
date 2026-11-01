@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to use the `globset` crate to match file paths
 //! against a set of glob patterns.
+//!
+//! A glob is a simple pattern such as `*.rs` or `src/**/test_*.rs`. A glob set
+//! compiles many globs together and checks a path against all of them at once,
+//! as in `.gitignore` handling.
 
 use std::fs;
 

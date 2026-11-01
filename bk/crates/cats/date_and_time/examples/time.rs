@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrate various functionalities of the `time` crate.
+//!
+//! The `time` crate is a lighter alternative to `chrono` for dates, times and
+//! durations. UTC is the world reference time; local times are UTC plus an
+//! offset that can change with daylight saving.
 
 use time::Date;
 use time::Duration;
@@ -25,10 +29,7 @@ fn main() -> anyhow::Result<()> {
     println!("Current date and time (UTC): {now}");
 
     // Parse a date from a string.
-    let date = Date::parse(
-        "2025-01-02",
-        &format_description!("[year]-[month]-[day]"),
-    )?;
+    let date = Date::parse("2025-01-02", &format_description!("[year]-[month]-[day]"))?;
     println!("Parsed date: {date}");
 
     // Create a specific time using `Time::from_hms()`.
@@ -44,8 +45,7 @@ fn main() -> anyhow::Result<()> {
     println!("Date and time after 5 hours: {later}");
 
     // Format a date and time as a string.
-    let format =
-        format_description!("[year]-[month]-[day] [hour]:[minute]:[second]");
+    let format = format_description!("[year]-[month]-[day] [hour]:[minute]:[second]");
     let formatted = datetime!(2025-01-02 12:30 UTC).format(&format)?;
     println!("Formatted fixed date and time: {formatted}");
     let rfc3339 = OffsetDateTime::parse("2025-01-02T12:30:00Z", &Rfc3339)?;
@@ -56,7 +56,8 @@ fn main() -> anyhow::Result<()> {
 
 /// Runs the `time` crate example.
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

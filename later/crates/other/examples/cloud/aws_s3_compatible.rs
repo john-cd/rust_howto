@@ -10,6 +10,11 @@
 // ANCHOR: example
 //! Point the S3 client at an S3-compatible store (MinIO, RustFS, LocalStack),
 //! optionally over HTTPS with a private certificate authority.
+//!
+//! Amazon S3 is object storage: it holds files (objects) in buckets, addressed
+//! by key. Many other stores speak the same API, such as MinIO, so the same
+//! client works if you point it at their endpoint. They commonly need
+//! path-style addressing instead of bucket names in the host.
 
 use anyhow::Context;
 use anyhow::Result;
@@ -29,13 +34,8 @@ use aws_smithy_http_client::tls::rustls_provider::CryptoMode;
 /// The keys are static here for local development only. In production, use the
 /// credential provider chain (see the shared configuration example) and never
 /// commit keys.
-pub fn s3_compatible_client(
-    endpoint: &str,
-    access_key: &str,
-    secret_key: &str,
-) -> Client {
-    let credentials =
-        Credentials::new(access_key, secret_key, None, None, "static");
+pub fn s3_compatible_client(endpoint: &str, access_key: &str, secret_key: &str) -> Client {
+    let credentials = Credentials::new(access_key, secret_key, None, None, "static");
     let config = Builder::new()
         .behavior_version(BehaviorVersion::latest())
         // Most S3-compatible stores ignore the region, but the SDK needs one.
@@ -71,8 +71,7 @@ pub fn s3_compatible_tls_client(
         .tls_context(tls_context)
         .build_https();
 
-    let credentials =
-        Credentials::new(access_key, secret_key, None, None, "static");
+    let credentials = Credentials::new(access_key, secret_key, None, None, "static");
     let config = Builder::new()
         .behavior_version(BehaviorVersion::latest())
         .region(Region::new("us-east-1"))
@@ -118,8 +117,7 @@ mod tests {
     /// Verifies that the configuration is built without contacting the store.
     #[test]
     fn client_uses_the_endpoint_and_path_style() {
-        let client =
-            s3_compatible_client("http://localhost:9000", "access", "secret");
+        let client = s3_compatible_client("http://localhost:9000", "access", "secret");
         let config = client.config();
         assert_eq!(config.region().map(Region::as_ref), Some("us-east-1"));
     }
@@ -140,8 +138,7 @@ mod tests {
         use tokio_rustls::rustls::pki_types::PrivateKeyDer;
         use tokio_rustls::rustls::pki_types::PrivatePkcs8KeyDer;
 
-        let certified =
-            rcgen::generate_simple_self_signed(vec!["localhost".to_owned()])?;
+        let certified = rcgen::generate_simple_self_signed(vec!["localhost".to_owned()])?;
         let cert_pem = certified.cert.pem();
         let key = PrivateKeyDer::from(PrivatePkcs8KeyDer::from(
             certified.signing_key.serialize_der(),
@@ -185,26 +182,16 @@ mod tests {
         let (port, cert_pem) = start_https_server().await?;
         let endpoint = format!("https://localhost:{port}");
 
-        let trusting = s3_compatible_tls_client(
-            &endpoint,
-            cert_pem.as_bytes(),
-            "access",
-            "secret",
-        )?;
+        let trusting =
+            s3_compatible_tls_client(&endpoint, cert_pem.as_bytes(), "access", "secret")?;
         trusting.head_bucket().bucket("demo").send().await?;
 
         // A client that trusts a different CA rejects the server certificate.
-        let other_ca = rcgen::generate_simple_self_signed(vec![
-            "other.example".to_owned(),
-        ])?
-        .cert
-        .pem();
-        let distrusting = s3_compatible_tls_client(
-            &endpoint,
-            other_ca.as_bytes(),
-            "access",
-            "secret",
-        )?;
+        let other_ca = rcgen::generate_simple_self_signed(vec!["other.example".to_owned()])?
+            .cert
+            .pem();
+        let distrusting =
+            s3_compatible_tls_client(&endpoint, other_ca.as_bytes(), "access", "secret")?;
         assert!(
             distrusting
                 .head_bucket()
@@ -222,11 +209,7 @@ mod tests {
     #[tokio::test]
     #[ignore = "requires an S3-compatible server on localhost:9000"]
     async fn stores_and_reads_an_object() -> Result<()> {
-        let client = s3_compatible_client(
-            "http://localhost:9000",
-            "minioadmin",
-            "minioadmin",
-        );
+        let client = s3_compatible_client("http://localhost:9000", "minioadmin", "minioadmin");
         let bytes = round_trip(&client, "rust-howto-test").await?;
         assert_eq!(bytes, b"hello");
         Ok(())

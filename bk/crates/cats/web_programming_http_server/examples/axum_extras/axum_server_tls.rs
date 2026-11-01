@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Serve an `axum` router over HTTPS with `axum-server` and `rustls`.
+//!
+//! TLS encrypts HTTP so that traffic cannot be read or changed on the network
+//! (HTTPS). The server needs a certificate and private key; for local
+//! development a self-signed certificate works, while the public internet needs
+//! one from a certificate authority such as Let's Encrypt.
 
 use std::net::SocketAddr;
 use std::time::Duration;
@@ -76,9 +81,7 @@ mod tests {
             .ok_or_else(|| anyhow::anyhow!("server did not start"))?;
 
         let client = reqwest::Client::builder()
-            .add_root_certificate(reqwest::Certificate::from_pem(
-                cert.pem().as_bytes(),
-            )?)
+            .add_root_certificate(reqwest::Certificate::from_pem(cert.pem().as_bytes())?)
             .resolve("localhost", addr)
             .build()?;
         let body = client

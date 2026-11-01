@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates a small asynchronous workload using `smol`.
+//!
+//! `smol` is a small async runtime, an alternative to Tokio, built from small,
+//! composable pieces. It suits tools that want async without the size or
+//! complexity of a large runtime.
 
 use std::time::Duration;
 

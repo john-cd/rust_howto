@@ -42,7 +42,8 @@ pub(super) static CRATE_BLOCK_REFDEFS: &str = "\
 
 /// The different modes for generating content related to a crate.
 ///
-/// This enum defines the different types of content that can be generated for a crate, such as badges, description, and reference definitions.
+/// This enum defines the different types of content that can be generated for a crate, such as
+/// badges, description, and reference definitions.
 pub enum GenerationMode {
     /// The full crate block: badges, description and reference definitions.
     CrateBlock,
@@ -52,11 +53,13 @@ pub enum GenerationMode {
     CrateBlockRefdefs,
 }
 
-/// Generates crate block badges, description, or reference definitions based on the provided crate data and generation mode.
+/// Generates crate block badges, description, or reference definitions based on the provided crate
+/// data and generation mode.
 ///
 /// # Arguments
 ///
-/// * `crate_data` - A reference to the `crates_io_api::Crate` struct containing information about the crate.
+/// * `crate_data` - A reference to the `crates_io_api::Crate` struct containing information about
+///   the crate.
 pub fn create_crate_block_badges_or_refdefs(
     crate_data: &crates_io_api::Crate,
     mode: GenerationMode,
@@ -99,7 +102,7 @@ pub fn create_crate_block_badges_or_refdefs(
         /// Whether a homepage URL was provided.
         homepage_defined: bool,
         /// The homepage URL, if one was provided.
-        homepage: &'a str, /* URL e.g. https://github.com/sollimann/bonsai, https://serde.rs */
+        homepage: &'a str, // URL e.g. https://github.com/sollimann/bonsai, https://serde.rs
         /// Whether a source repository URL was provided.
         repository_defined: bool,
         /// The source repository URL, if one was provided.
@@ -210,8 +213,9 @@ pub fn create_crate_page_section(name: &str) -> Result<String> {
     Ok(section)
 }
 
-/// Creates a "crate block" for a given crate, which includes several badges linking to various crate websites; associated keywords, categories; crate description,
-/// and reference definitions for all links.
+/// Creates a "crate block" for a given crate, which includes several badges linking to various
+/// crate websites; associated keywords, categories; crate description, and reference definitions
+/// for all links.
 ///
 /// # Arguments
 ///
@@ -300,9 +304,8 @@ static CRATE_BLOCK_RE: once_cell::sync::Lazy<regex::Regex> = once_cell::sync::La
 ///
 /// A tuple `(expanded_content, refdefs)` where:
 /// - `expanded_content` is the content with directives replaced.
-/// - `refdefs` is a `Vec` of reference definition strings (one per non-empty
-///   line from all expanded crate blocks), suitable for merging into a
-///   `refs` file.
+/// - `refdefs` is a `Vec` of reference definition strings (one per non-empty line from all expanded
+///   crate blocks), suitable for merging into a `refs` file.
 pub fn process_crate_block_directives(content: &str) -> Result<(String, Vec<String>)> {
     use std::collections::HashMap;
     use std::collections::HashSet;
@@ -361,8 +364,8 @@ pub fn process_crate_block_directives(content: &str) -> Result<(String, Vec<Stri
 /// # Arguments
 ///
 /// * `dir` - Root directory to walk recursively.
-/// * `refdefs_file` - Optional path to a refdefs file where the collected
-///   reference definitions will be merged.
+/// * `refdefs_file` - Optional path to a refdefs file where the collected reference definitions
+///   will be merged.
 pub fn expand_crate_block_directives_in_directory(
     dir: &std::path::Path,
     refdefs_file: Option<&std::path::Path>,

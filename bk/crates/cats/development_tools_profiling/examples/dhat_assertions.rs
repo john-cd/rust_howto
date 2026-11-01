@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Asserts on heap allocations in a test with `dhat`.
+//!
+//! A heap profiler such as DHAT records every allocation. Asserting on the
+//! counts in a test turns "this function should not allocate" into a regression
+//! check.
 
 #[global_allocator]
 static ALLOC: dhat::Alloc = dhat::Alloc;
@@ -26,13 +30,23 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+    use std::sync::Mutex;
+
     use super::*;
 
-    // `dhat` allows one profiler at a time per process, so keep all the
-    // allocation assertions in a single test.
+    /// The global allocator counts allocations from every thread, and `dhat`
+    /// allows one profiler per process. Tests that allocate take this lock so
+    /// the default parallel test runner (`cargo test`) cannot disturb the
+    /// counts.
+    static SERIAL: Mutex<()> = Mutex::new(());
+
+    // Keep all the allocation assertions in a single test.
     /// Verifies the optimized string builder performs one allocation.
     #[test]
     fn allocation_counts() {
+        let _guard = SERIAL
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         let _profiler = dhat::Profiler::builder().testing().build();
         let parts = ["alpha", "beta", "gamma"];
 
@@ -50,6 +64,9 @@ mod tests {
 
     #[test]
     fn test_main_entry_point() {
+        let _guard = SERIAL
+            .lock()
+            .unwrap_or_else(std::sync::PoisonError::into_inner);
         main();
     }
 }

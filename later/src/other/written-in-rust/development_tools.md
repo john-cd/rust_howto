@@ -26,10 +26,7 @@ This page maps developer-facing tools written wholly or partly in Rust, along wi
 
 ### SWC compiler {#swc}
 
-[![swc][c~swc~docs~badge]][c~swc~docs]{{hi:swc}}
-[![swc~crates.io][c~swc~crates.io~badge]][c~swc~crates.io]
-[![swc~repo][c~swc~repo~badge]][c~swc~repo]
-[![swc~lib.rs][c~swc~lib.rs~badge]][c~swc~lib.rs]
+{{#badges swc}}
 
 [`swc`][c~swc~repo]↗ (Speedy Web Compiler) is a Rust compiler and toolkit for JavaScript and TypeScript. See also [[programming_languages | Programming Languages]] and its parser tools.
 

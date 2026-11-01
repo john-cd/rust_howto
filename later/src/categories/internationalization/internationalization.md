@@ -18,7 +18,7 @@ Enable ICU4X's `compiled_data` feature to use the locale data bundled with the c
 
 ## Dates, Sorting, and Text Boundaries
 
-[![icu_datetime][c~icu_datetime~docs~badge]][c~icu_datetime~docs]{{hi:icu_datetime}} [![icu_datetime~crates.io][c~icu_datetime~crates.io~badge]][c~icu_datetime~crates.io] [![icu_datetime~repo][c~icu_datetime~repo~badge]][c~icu_datetime~repo] [![icu_datetime~lib.rs][c~icu_datetime~lib.rs~badge]][c~icu_datetime~lib.rs]
+{{#badges icu_datetime}}
 
 The `icu` crate re-exports the ICU4X component crates; [`icu_datetime`][c~icu_datetime~docs]↗ is the one behind the date formatting in the example above. Depend on it directly when you only need date and time formatting and want to avoid compiling the other components.
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Toast notifications with `egui-notify` and icons with `egui-phosphor`.
+//!
+//! A toast is a short notification that appears over the interface and fades
+//! away, like "File saved". Icon fonts draw symbols as text characters. `egui`
+//! is an immediate-mode GUI: the interface is rebuilt by code on every frame.
 
 use std::time::Duration;
 
@@ -89,8 +93,7 @@ fn run_example() {
     assert!(app.items.is_empty());
 
     // Draw one frame: the toasts are painted on top.
-    let screen =
-        egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
+    let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
         screen_rect: Some(screen),
         ..Default::default()
@@ -123,10 +126,7 @@ mod tests {
     #[test]
     fn icon_font_is_registered() {
         let mut fonts = egui::FontDefinitions::default();
-        egui_phosphor::add_to_fonts(
-            &mut fonts,
-            egui_phosphor::Variant::Regular,
-        );
+        egui_phosphor::add_to_fonts(&mut fonts, egui_phosphor::Variant::Regular);
         assert!(fonts.font_data.contains_key("phosphor"));
     }
 }

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Counts how often each file changed in the last commits with `gix`,
 //! a pure-Rust implementation of Git (no `git` executable or `libgit2`).
+//!
+//! Code churn is how often files change. Files that change very often tend to
+//! be where bugs concentrate, so counting commits per file from Git history
+//! helps decide what to refactor or test.
 
 use std::collections::BTreeMap;
 use std::path::Path;
@@ -12,10 +16,7 @@ use gix::object::tree::diff::Action;
 
 /// Counts the commits (among the last `limit`, first parent only) that
 /// touched each path.
-fn churn(
-    repo: &gix::Repository,
-    limit: usize,
-) -> anyhow::Result<BTreeMap<String, usize>> {
+fn churn(repo: &gix::Repository, limit: usize) -> anyhow::Result<BTreeMap<String, usize>> {
     let mut counts = BTreeMap::new();
     let head = repo.head_commit()?;
     for info in head.ancestors().first_parent_only().all()?.take(limit) {
@@ -38,10 +39,7 @@ fn churn(
 }
 
 /// Finds the repository containing `path` and counts recent path changes.
-fn churn_at(
-    path: &Path,
-    limit: usize,
-) -> anyhow::Result<BTreeMap<String, usize>> {
+fn churn_at(path: &Path, limit: usize) -> anyhow::Result<BTreeMap<String, usize>> {
     let repo = gix::discover(path)?;
     churn(&repo, limit)
 }
@@ -59,7 +57,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

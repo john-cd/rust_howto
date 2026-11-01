@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Inserting and querying documents in MongoDB.
+//!
+//! MongoDB is a document database: it stores flexible JSON-like documents in
+//! collections instead of rows in tables, so records need not share the same
+//! fields. Queries are documents as well.
 
 // This example demonstrates connecting to MongoDB and performing basic CRUD
 // operations with the `mongodb` crate.
@@ -49,10 +53,10 @@ async fn main() -> anyhow::Result<()> {
 
     // Query by the generated identifier so repeated runs find this insert.
     let filter = doc! { "_id": inserted.inserted_id };
-    let found =
-        collection.find_one(filter.clone()).await?.ok_or_else(|| {
-            anyhow::anyhow!("inserted MongoDB user was not found")
-        })?;
+    let found = collection
+        .find_one(filter.clone())
+        .await?
+        .ok_or_else(|| anyhow::anyhow!("inserted MongoDB user was not found"))?;
     anyhow::ensure!(
         found.name == "Alice" && found.age == 30,
         "inserted MongoDB user did not match the expected values"

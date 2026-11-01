@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
+//!
+//! HTTP headers carry metadata with requests, such as `User-Agent` (who is
+//! calling), `Accept` (the formats the client wants) and `Authorization`
+//! (credentials). Many APIs require a `User-Agent`.
 
 use std::collections::HashMap;
 
@@ -25,8 +29,7 @@ pub struct HeadersEcho {
 fn request_headers(url: url::Url) -> Result<HeadersEcho> {
     // Define default headers for all requests:
     let mut default_headers = header::HeaderMap::new();
-    default_headers
-        .insert("X-MY-HEADER", header::HeaderValue::from_static("value"));
+    default_headers.insert("X-MY-HEADER", header::HeaderValue::from_static("value"));
 
     let client = reqwest::blocking::Client::builder()
         .user_agent("Rust-test")
@@ -128,15 +131,9 @@ mod tests {
             .join()
             .map_err(|_| anyhow::anyhow!("local HTTP server panicked"))??;
 
-        assert!(
-            request.starts_with(
-                "GET /headers?lang=rust&browser=servo HTTP/1.1\r\n"
-            )
-        );
+        assert!(request.starts_with("GET /headers?lang=rust&browser=servo HTTP/1.1\r\n"));
         let request = request.to_ascii_lowercase();
-        assert!(
-            request.contains("authorization: bearer deadbeefc001cafeedecafbad")
-        );
+        assert!(request.contains("authorization: bearer deadbeefc001cafeedecafbad"));
         assert!(request.contains("x-my-header: value"));
         assert_eq!(result.headers["User-Agent"], "Rust-test");
         Ok(())

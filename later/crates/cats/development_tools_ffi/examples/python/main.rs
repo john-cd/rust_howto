@@ -70,17 +70,15 @@ mod tests {
     fn cli_lists_all_examples() {
         Cli::command().debug_assert();
         for name in ["pyo3", "use_rust_from_python"] {
-            let cli = Cli::try_parse_from(["example", name]).unwrap_or_else(
-                |error| panic!("`{name}` should parse: {error}"),
-            );
+            let cli = Cli::try_parse_from(["example", name])
+                .unwrap_or_else(|error| panic!("`{name}` should parse: {error}"));
             assert!(cli.command.is_some());
         }
     }
 
     /// Runs the no-subcommand path without reading the test harness arguments.
     #[test]
-    fn dispatch_without_a_subcommand_succeeds()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn dispatch_without_a_subcommand_succeeds() -> Result<(), Box<dyn std::error::Error>> {
         dispatch(Cli { command: None })
     }
 }

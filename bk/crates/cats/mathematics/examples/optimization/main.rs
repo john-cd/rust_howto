@@ -18,3 +18,14 @@ fn main() -> Result<(), argmin::core::Error> {
     particle_swarm::run();
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs every optimization example and asserts that none fails.
+    #[test]
+    fn test_main_runs() {
+        assert!(main().is_ok());
+    }
+}

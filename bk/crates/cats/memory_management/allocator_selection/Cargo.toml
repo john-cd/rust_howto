@@ -17,3 +17,12 @@ tikv-jemallocator = { version = "0.7.0", optional = true }
 
 # This package is separate because its features must not be enabled together.
 [workspace]
+[workspace.lints.clippy]
+await_holding_lock = "warn"
+await_holding_refcell_ref = "warn"
+dbg_macro = "warn"
+let_underscore_future = "warn"
+unwrap_used = "warn"
+todo = "warn"
+unimplemented = "warn"
+all = { level = "warn", priority = -1 }

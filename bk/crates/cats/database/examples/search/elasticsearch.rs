@@ -42,8 +42,7 @@ struct MyDocument {
 async fn main() -> anyhow::Result<()> {
     // Create an asynchronous Elasticsearch client. Remote connections must
     // use HTTPS; only local development may use plain HTTP.
-    let url = std::env::var("ELASTIC_URL")
-        .unwrap_or_else(|_| "http://localhost:9200".into());
+    let url = std::env::var("ELASTIC_URL").unwrap_or_else(|_| "http://localhost:9200".into());
     let client = build_client(&url)?;
 
     let response = index_document(&client).await?;
@@ -80,10 +79,8 @@ fn build_client(url: &str) -> anyhow::Result<Elasticsearch> {
 
 /// Parses the configured endpoint and restricts plaintext HTTP to loopback.
 fn parse_endpoint(url: &str) -> anyhow::Result<Url> {
-    let endpoint =
-        Url::parse(url).context("ELASTIC_URL must be a valid URL")?;
-    let local_http = endpoint.scheme() == "http"
-        && endpoint.host().is_some_and(is_loopback_host);
+    let endpoint = Url::parse(url).context("ELASTIC_URL must be a valid URL")?;
+    let local_http = endpoint.scheme() == "http" && endpoint.host().is_some_and(is_loopback_host);
     ensure!(
         endpoint.scheme() == "https" || local_http,
         "ELASTIC_URL must use HTTPS unless it targets localhost"
@@ -124,9 +121,9 @@ fn credentials_for_endpoint(
             Ok(Some(Credentials::Basic(username, password)))
         }
         (None, None) => Ok(None),
-        _ => anyhow::bail!(
-            "set both ELASTIC_USERNAME and ELASTIC_PASSWORD for basic authentication"
-        ),
+        _ => {
+            anyhow::bail!("set both ELASTIC_USERNAME and ELASTIC_PASSWORD for basic authentication")
+        }
     }
 }
 
@@ -147,10 +144,7 @@ async fn index_document(client: &Elasticsearch) -> anyhow::Result<Response> {
 }
 
 /// Returns a successful response or reports the operation and HTTP status.
-fn ensure_success(
-    response: Response,
-    operation: &str,
-) -> anyhow::Result<Response> {
+fn ensure_success(response: Response, operation: &str) -> anyhow::Result<Response> {
     let status = response.status_code();
     anyhow::ensure!(
         status.is_success(),
@@ -160,9 +154,7 @@ fn ensure_success(
 }
 
 /// Searches for documents in Elasticsearch based on a query.
-async fn search_document(
-    client: &Elasticsearch,
-) -> anyhow::Result<serde_json::Value> {
+async fn search_document(client: &Elasticsearch) -> anyhow::Result<serde_json::Value> {
     // Search for the document:
     let search_response = client
         .search(SearchParts::Index(&["my_index"]))
@@ -218,9 +210,9 @@ async fn bulk_documents(client: &Elasticsearch) -> anyhow::Result<()> {
 
     let response = ensure_success(response, "bulk index")?;
     let response_body = response.json::<Value>().await?;
-    let has_errors = response_body["errors"].as_bool().ok_or_else(|| {
-        anyhow::anyhow!("bulk response omitted its `errors` flag")
-    })?;
+    let has_errors = response_body["errors"]
+        .as_bool()
+        .ok_or_else(|| anyhow::anyhow!("bulk response omitted its `errors` flag"))?;
     ensure_bulk_success(has_errors)?;
 
     Ok(())
@@ -274,33 +266,16 @@ mod tests {
 
     /// Rejects credentials in URLs and incomplete basic-auth environment pairs.
     #[test]
-    fn credentials_require_https_and_both_environment_values()
-    -> anyhow::Result<()> {
+    fn credentials_require_https_and_both_environment_values() -> anyhow::Result<()> {
         let https = parse_endpoint("https://search.example.com:9200")?;
         let http = parse_endpoint("http://localhost:9200")?;
+        assert!(parse_endpoint("https://user:secret@search.example.com:9200").is_err());
+        assert!(credentials_for_endpoint(&https, Some("user".into()), None).is_err());
         assert!(
-            parse_endpoint("https://user:secret@search.example.com:9200")
-                .is_err()
+            credentials_for_endpoint(&http, Some("user".into()), Some("secret".into()),).is_err()
         );
         assert!(
-            credentials_for_endpoint(&https, Some("user".into()), None)
-                .is_err()
-        );
-        assert!(
-            credentials_for_endpoint(
-                &http,
-                Some("user".into()),
-                Some("secret".into()),
-            )
-            .is_err()
-        );
-        assert!(
-            credentials_for_endpoint(
-                &https,
-                Some("user".into()),
-                Some("secret".into()),
-            )
-            .is_ok()
+            credentials_for_endpoint(&https, Some("user".into()), Some("secret".into()),).is_ok()
         );
         Ok(())
     }

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Documenting a function, including documentation from an external file.
+//!
+//! `rustdoc` builds HTML documentation from doc comments, with links between
+//! items. Run `cargo doc --open`. Examples in the comments are tested, so the
+//! documentation stays correct.
 
 /// This is a doc comment.
 /// Note the three slashes.

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of encoding and decoding a string using hexadecimal encoding.
+//!
+//! Hexadecimal writes each byte as two characters from 0-9 and a-f. It is the
+//! usual way to display hashes, keys and binary data. It doubles the size of
+//! the data and is not encryption.
 
 use data_encoding::DecodeError;
 use data_encoding::HEXUPPER;

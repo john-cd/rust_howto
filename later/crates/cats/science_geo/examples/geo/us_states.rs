@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Recognizes US states by name or by abbreviation with `us-state-info`.
+//!
+//! State names and two-letter postal abbreviations (CA, NY) are both common in
+//! data. A lookup table normalizes either into one form, so forms and datasets
+//! can be matched.
 
 use us_state_info::State;
 

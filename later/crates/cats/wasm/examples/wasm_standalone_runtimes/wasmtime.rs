@@ -85,8 +85,8 @@ fn main() -> Result<()> {
 
     // Without a linker, we can also directly instantiate the module:
     // ```
-    // let instance = Instance::new(&mut store, &module, &[])
-    //     .context("Failed to create WASM instance")?;
+    // let instance =
+    //     Instance::new(&mut store, &module, &[]).context("Failed to create WASM instance")?;
     // ```
 
     // Get the exported function "greet" from the WebAssembly instance.

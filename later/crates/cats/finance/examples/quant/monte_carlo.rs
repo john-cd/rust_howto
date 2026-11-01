@@ -1,4 +1,9 @@
 //! Estimates a European call payoff with a reproducible random stream.
+//!
+//! Monte Carlo simulation estimates a value by averaging many random trials.
+//! Here it simulates possible final prices of an asset and averages the call
+//! option's payoff, which is max(price - strike, 0). A fixed random seed makes
+//! the result reproducible, which matters for tests.
 
 // ANCHOR: example
 use rand::SeedableRng;

@@ -32,10 +32,7 @@ fn derive_describe(input: TokenStream) -> SynResult<TokenStream> {
                 .into_iter()
                 .map(|field| {
                     field.ident.ok_or_else(|| {
-                        syn::Error::new_spanned(
-                            &ident,
-                            "Describe requires named fields",
-                        )
+                        syn::Error::new_spanned(&ident, "Describe requires named fields")
                     })
                 })
                 .collect::<SynResult<Vec<Ident>>>()?,

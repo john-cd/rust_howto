@@ -94,12 +94,10 @@ fn dispatch(cli: Cli) -> ::anyhow::Result<()> {
                 and_then::run();
             }
             Commands::Backtrace => {
-                backtrace::run()
-                    .map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
+                backtrace::run().map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
             }
             Commands::ColorEyre => {
-                color_eyre::run()
-                    .map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
+                color_eyre::run().map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
             }
             Commands::ErrorHandling => {
                 error_handling::run();
@@ -126,8 +124,7 @@ fn dispatch(cli: Cli) -> ::anyhow::Result<()> {
                 result::run();
             }
             Commands::Thiserror => {
-                thiserror::run()
-                    .map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
+                thiserror::run().map_err(|e| ::anyhow::anyhow!(e.to_string()))?;
             }
             Commands::Thiserror2 => {
                 thiserror2::run();
@@ -209,8 +206,7 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"])
-            .expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli).expect("dispatching should succeed");
     }

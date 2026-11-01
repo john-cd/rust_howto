@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates opening a file dialog using the rfd crate.
+//!
+//! A file dialog is the operating system's own "open" or "save" window. Using
+//! the native dialog gives users the interface they know, with their bookmarks
+//! and recent folders. It needs a desktop session.
 
 use std::fs;
 use std::path::Path;
@@ -11,8 +15,7 @@ use rfd::FileDialog;
 
 /// Builds a text-file dialog that starts in the current directory.
 fn text_file_dialog() -> anyhow::Result<FileDialog> {
-    let current_dir =
-        std::env::current_dir().context("read the current directory")?;
+    let current_dir = std::env::current_dir().context("read the current directory")?;
     Ok(FileDialog::new()
         .add_filter("Text files", &["txt", "md"])
         .set_title("Choose a Text File")
@@ -22,8 +25,7 @@ fn text_file_dialog() -> anyhow::Result<FileDialog> {
 /// Reads a selected file, returning None when the user cancels the dialog.
 fn process_selection(path: Option<&Path>) -> anyhow::Result<Option<String>> {
     path.map(|path| {
-        fs::read_to_string(path)
-            .with_context(|| format!("read selected file {}", path.display()))
+        fs::read_to_string(path).with_context(|| format!("read selected file {}", path.display()))
     })
     .transpose()
 }
@@ -75,17 +77,14 @@ mod tests {
             .write(true)
             .create_new(true)
             .open(&path)
-            .with_context(|| {
-                format!("create temporary file {}", path.display())
-            })?;
+            .with_context(|| format!("create temporary file {}", path.display()))?;
         file.write_all(b"selected text")
             .context("write temporary file")?;
         drop(file);
 
         let selection = process_selection(Some(path.as_path()));
-        std::fs::remove_file(&path).with_context(|| {
-            format!("remove temporary file {}", path.display())
-        })?;
+        std::fs::remove_file(&path)
+            .with_context(|| format!("remove temporary file {}", path.display()))?;
         assert_eq!(selection?.as_deref(), Some("selected text"));
         Ok(())
     }

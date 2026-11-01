@@ -14,14 +14,7 @@ Rust provides explicit arithmetic operations so you can choose the overflow beha
 - Saturate at the value's minimum or maximum values with the `saturating_*`{{hi:saturating_*}} methods.
 
 ```rust,noplayground
-fn main() {
-    let x = 255u8;
-
-    assert_eq!(x.wrapping_add(1), 0);
-    assert_eq!(x.checked_add(1), None);
-    assert_eq!(x.overflowing_add(1), (0, true));
-    assert_eq!(x.saturating_add(1), 255);
-}
+{{#include ../crates/standard_library/examples/overflow/overflow_methods.rs:example}}
 ```
 
 ## Summary of Arithmetic Behaviors
@@ -36,11 +29,7 @@ fn main() {
 For repeated wrapping arithmetic, the `std::num::Wrapping` type can also be useful:
 
 ```rust,noplayground
-use std::num::Wrapping;
-
-let x = Wrapping(255u8);
-let y = x + Wrapping(1);
-assert_eq!(y.0, 0);
+{{#include ../crates/standard_library/examples/overflow/wrapping_type.rs:example}}
 ```
 
 ## Panics in Debug vs. Wrapping in Release

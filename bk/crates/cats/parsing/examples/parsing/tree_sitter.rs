@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Parse Rust source code and query its syntax tree with Tree-sitter.
+//!
+//! Tree-sitter builds a concrete syntax tree from source code, quickly and
+//! tolerating errors, and can update it as the text changes. Editors use it for
+//! syntax highlighting, code folding and navigation. Queries match patterns in
+//! the tree.
 
 use anyhow::anyhow;
 use tree_sitter::Language;
@@ -30,8 +35,7 @@ fn query_rust(source: &str) -> anyhow::Result<Vec<(String, String)>> {
     let mut cursor = QueryCursor::new();
     let mut captures = Vec::new();
 
-    let mut matches =
-        cursor.matches(&query, tree.root_node(), source.as_bytes());
+    let mut matches = cursor.matches(&query, tree.root_node(), source.as_bytes());
     while let Some(matched) = matches.next() {
         for capture in matched.captures() {
             let label = &capture_names[capture.index as usize];

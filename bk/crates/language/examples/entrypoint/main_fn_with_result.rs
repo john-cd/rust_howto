@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Example of a `main` function returning a `Result`,
 //! in this case a specialized `Result` type for I/O operations.
+//!
+//! When `main` returns `Result`, an `Err` makes the program print the error and
+//! exit with status 1, so you can use `?` throughout. Exit codes tell shells
+//! and scripts whether a program succeeded.
 
 use std::fs::File;
 

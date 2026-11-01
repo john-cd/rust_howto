@@ -7,11 +7,11 @@
 //! immutable entry in a global string cache, allowing for:
 //!
 //! - Fast string assignment and comparisons.
-//! - Efficient storage. Only one copy of the string is held in memory, and
-//!   getting access to it is just a pointer indirection.
+//! - Efficient storage. Only one copy of the string is held in memory, and getting access to it is
+//!   just a pointer indirection.
 //! - Fast hashing ‒ the precomputed hash is stored with the string.
-//! - Fast FFI ‒ the string is stored with a terminating null byte, so can be
-//!   passed to C directly without using `CString`.
+//! - Fast FFI ‒ the string is stored with a terminating null byte, so can be passed to C directly
+//!   without using `CString`.
 //!
 //! The downside is no strings are ever freed, so if we're creating lots of
 //! strings, we might run out of memory.

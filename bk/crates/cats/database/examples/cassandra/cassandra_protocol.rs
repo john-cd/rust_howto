@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Talking to Cassandra over its native protocol with `cassandra-protocol`.
+//!
+//! Cassandra is a distributed NoSQL database built for huge data volumes and
+//! high write rates across many servers, with no single point of failure. It is
+//! queried with CQL, which looks like SQL. This example speaks its binary
+//! protocol directly.
 
 // This example demonstrates how to build and serialize Cassandra protocol
 // frames using the `cassandra_protocol` crate.
@@ -65,8 +70,7 @@ mod tests {
 
     /// Verifies that a STARTUP frame encodes and decodes without a server.
     #[test]
-    fn startup_request_round_trips_through_a_protocol_frame()
-    -> anyhow::Result<()> {
+    fn startup_request_round_trips_through_a_protocol_frame() -> anyhow::Result<()> {
         let decoded = round_trip_startup_request()?;
 
         assert_eq!(decoded.opcode, cassandra_protocol::frame::Opcode::Startup);

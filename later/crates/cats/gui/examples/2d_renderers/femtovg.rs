@@ -1,4 +1,10 @@
 // TODO Reviewed ??-??-2026.
+//! Draw a vector shape in an OpenGL window with FemtoVG.
+//!
+//! FemtoVG is a 2D vector graphics library (paths, fills, strokes, text) that
+//! draws with OpenGL, so the GPU does the work. `winit` creates the window and
+//! `glutin` the OpenGL context. It needs a desktop session with a GPU or a
+//! software OpenGL driver.
 
 use std::num::NonZeroU32;
 
@@ -40,12 +46,7 @@ fn triangle_points() -> [(f32, f32); 4] {
 }
 
 /// Draws one colorful vector shape into a FemtoVG canvas.
-fn draw_frame(
-    canvas: &mut Canvas<OpenGl>,
-    width: u32,
-    height: u32,
-    scale: f32,
-) {
+fn draw_frame(canvas: &mut Canvas<OpenGl>, width: u32, height: u32, scale: f32) {
     canvas.set_size(width, height, scale);
     canvas.clear_rect(0, 0, width, height, Color::rgb(28, 32, 42));
 
@@ -133,38 +134,30 @@ pub fn run() -> Result<()> {
                 })
                 .expect("the system provides an OpenGL configuration")
         })
-        .map_err(|error| {
-            anyhow::anyhow!("could not create the OpenGL window: {error}")
-        })?;
-    let window =
-        window.expect("the display builder creates the requested window");
+        .map_err(|error| anyhow::anyhow!("could not create the OpenGL window: {error}"))?;
+    let window = window.expect("the display builder creates the requested window");
     let window_handle = window.window_handle()?.as_raw();
     let display = config.display();
-    let context_attributes =
-        ContextAttributesBuilder::new().build(Some(window_handle));
+    let context_attributes = ContextAttributesBuilder::new().build(Some(window_handle));
 
     // Safety: the window handle remains alive for the lifetime of the GL
     // context.
-    let not_current_context =
-        unsafe { display.create_context(&config, &context_attributes)? };
+    let not_current_context = unsafe { display.create_context(&config, &context_attributes)? };
     let size = window.inner_size();
-    let surface_attributes = SurfaceAttributesBuilder::<WindowSurface>::new()
-        .build(
-            window_handle,
-            nonzero_dimension(size.width),
-            nonzero_dimension(size.height),
-        );
+    let surface_attributes = SurfaceAttributesBuilder::<WindowSurface>::new().build(
+        window_handle,
+        nonzero_dimension(size.width),
+        nonzero_dimension(size.height),
+    );
 
     // Safety: the surface uses the live window handle and matching display
     // configuration.
-    let surface =
-        unsafe { display.create_window_surface(&config, &surface_attributes)? };
+    let surface = unsafe { display.create_window_surface(&config, &surface_attributes)? };
     let context = not_current_context.make_current(&surface)?;
     // Safety: the GL context is current and each function pointer comes from
     // its display.
-    let renderer = unsafe {
-        OpenGl::new_from_function_cstr(|name| display.get_proc_address(name))?
-    };
+    let renderer =
+        unsafe { OpenGl::new_from_function_cstr(|name| display.get_proc_address(name))? };
     let canvas = Canvas::new(renderer)?;
     let mut app = FemtoVgApp {
         window,

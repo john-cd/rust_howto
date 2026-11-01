@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A concurrent hash map from the `papaya` crate, used from several threads.
+//!
+//! A concurrent hash map lets many threads read and write at once. Papaya's
+//! reads never block, and the map is built for read-heavy workloads such as
+//! caches and registries.
 
 use papaya::HashMap;
 
@@ -43,11 +47,9 @@ fn main() -> anyhow::Result<()> {
         // Read the values.
         // Note that:
         // - Read and write operations may overlap in time.
-        // - There is no support for locking the entire table nor individual
-        //   keys to prevent concurrent access, except through external
-        //   fine-grained locking.
-        // - Read operations (such as get) reflect the results of the
-        //   most-recent write.
+        // - There is no support for locking the entire table nor individual keys to prevent
+        //   concurrent access, except through external fine-grained locking.
+        // - Read operations (such as get) reflect the results of the most-recent write.
         s.spawn(|| {
             let _entries_seen = map.pin().iter().count();
         });

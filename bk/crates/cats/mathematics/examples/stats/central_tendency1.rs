@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Computing the median of a list of integers with quickselect.
+//!
+//! The median is the middle value of the sorted data, so unlike the mean it is
+//! not distorted by outliers. Quickselect finds it without sorting everything.
 
 use std::cmp::Ordering;
 
@@ -23,18 +26,17 @@ fn partition(data: &[i32]) -> Option<(Vec<i32>, i32, Vec<i32>)> {
             // (tail).
             let (pivot_slice, tail) = data.split_at(1);
             let pivot = pivot_slice[0];
-            let (left, right) =
-                tail.iter().fold((vec![], vec![]), |mut splits, next| {
-                    {
-                        let &mut (ref mut left, ref mut right) = &mut splits;
-                        if next < &pivot {
-                            left.push(*next);
-                        } else {
-                            right.push(*next);
-                        }
+            let (left, right) = tail.iter().fold((vec![], vec![]), |mut splits, next| {
+                {
+                    let &mut (ref mut left, ref mut right) = &mut splits;
+                    if next < &pivot {
+                        left.push(*next);
+                    } else {
+                        right.push(*next);
                     }
-                    splits
-                });
+                }
+                splits
+            });
 
             Some((left, pivot, right))
         }
@@ -95,9 +97,7 @@ fn median(data: &[i32]) -> Option<f64> {
             let snd_med = select(data, even / 2);
 
             match (fst_med, snd_med) {
-                (Some(fst), Some(snd)) => {
-                    Some((i64::from(fst) + i64::from(snd)) as f64 / 2.0)
-                }
+                (Some(fst), Some(snd)) => Some((i64::from(fst) + i64::from(snd)) as f64 / 2.0),
                 _ => None,
             }
         }

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Sorts the vector in parallel using Rayon's `par_sort` method.
+//!
+//! A parallel sort splits the data, sorts the parts on different cores, and
+//! merges them. It beats a sequential sort on large inputs; for small inputs
+//! the overhead of threads makes it slower.
 
 use rayon::prelude::*;
 

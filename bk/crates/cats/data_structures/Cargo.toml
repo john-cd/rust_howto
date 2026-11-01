@@ -47,6 +47,11 @@ path = "examples/graph/main.rs"
 test = true
 
 [[example]]
+name = "elsa"
+path = "examples/elsa/main.rs"
+test = true
+
+[[example]]
 name = "hashmap"
 path = "examples/hashmap/main.rs"
 test = true
@@ -59,6 +64,11 @@ test = true
 [[example]]
 name = "maps"
 path = "examples/maps/main.rs"
+test = true
+
+[[example]]
+name = "phf"
+path = "examples/phf/main.rs"
 test = true
 
 [[example]]
@@ -106,6 +116,7 @@ bloomfilter = "3.0.2"
 bytes = "1.12.1"
 clap = { version = "4.6.7", features = ["derive"] }
 crates_io_api = "0.12.0"
+elsa = "1.11"
 fixedbitset = "0.5.7"
 flagset = "0.4.7"
 fnv = "1.0.7"
@@ -114,6 +125,7 @@ indexmap = "2.14.2"
 linked-hash-map = "0.5.6"
 multimap = "0.10.1"
 petgraph = "0.8.3"
+phf = { version = "0.11", features = ["macros"] }
 priority-queue = "2.7.0"
 rangemap = "1.8.0"
 roaring = "0.12.0"

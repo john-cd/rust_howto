@@ -37,8 +37,7 @@ fn main() -> Result<String, AnyException> {
         class.def("greeting", greeting);
     });
 
-    let greeting =
-        VM::eval("RustGreeter.new.greeting")?.try_convert_to::<RString>()?;
+    let greeting = VM::eval("RustGreeter.new.greeting")?.try_convert_to::<RString>()?;
     Ok(greeting.to_string())
 }
 // ANCHOR_END: example
@@ -57,8 +56,7 @@ mod tests {
     #[test]
     #[ignore = "needs Ruby"]
     fn test_rutie_example_entry_point() {
-        let greeting =
-            main().expect("the embedded Ruby greeting should evaluate");
+        let greeting = main().expect("the embedded Ruby greeting should evaluate");
         assert_eq!(greeting, "Hello from Rutie!");
     }
 }

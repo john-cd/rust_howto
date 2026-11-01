@@ -7,6 +7,10 @@
 )]
 // ANCHOR: example
 //! Converts structured values between JavaScript and Rust with Serde.
+//!
+//! JavaScript values and Rust structs have different representations. Serde
+//! converts between them, so Rust code compiled to WebAssembly can receive a
+//! JavaScript object as a typed struct and return one back.
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -40,8 +44,7 @@ pub fn increment_visits(value: JsValue) -> Result<JsValue, JsValue> {
     let mut profile: Profile = serde_wasm_bindgen::from_value(value)
         .map_err(|error| JsValue::from_str(&error.to_string()))?;
     increment_profile(&mut profile).map_err(JsValue::from_str)?;
-    serde_wasm_bindgen::to_value(&profile)
-        .map_err(|error| JsValue::from_str(&error.to_string()))
+    serde_wasm_bindgen::to_value(&profile).map_err(|error| JsValue::from_str(&error.to_string()))
 }
 // ANCHOR_END: example
 

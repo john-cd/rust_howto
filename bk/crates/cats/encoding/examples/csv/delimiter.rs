@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates how to use a custom delimiter during CSV deserialization.
+//!
+//! CSV (comma-separated values) is a plain-text table format, with one record
+//! per line. Despite the name, files in the wild use other delimiters, such as
+//! tabs or semicolons (common where the comma is the decimal separator).
 
 use csv::Error;
 use csv::ReaderBuilder;
@@ -50,9 +54,7 @@ mod tests {
     /// Verifies the configured tab delimiter separates fields into records.
     #[test]
     fn parses_tab_delimited_records() -> anyhow::Result<()> {
-        let records = read_records(
-            "name\tplace\tid\nMark\tMelbourne\t46\nAshley\tZurich\t92",
-        )?;
+        let records = read_records("name\tplace\tid\nMark\tMelbourne\t46\nAshley\tZurich\t92")?;
         assert_eq!(
             records,
             vec![

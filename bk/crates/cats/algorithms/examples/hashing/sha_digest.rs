@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! SHA-256 digest of a file's contents with `ring`, printed as hexadecimal.
+//!
+//! A hash function turns any data into a short fixed-size fingerprint (a
+//! digest). Changing one byte of the input changes the digest completely, so
+//! comparing digests checks that a download or file is intact. SHA-256 is the
+//! standard choice. Hashing in chunks keeps memory use small for large files.
 
 use std::fs;
 use std::fs::File;
@@ -62,21 +67,18 @@ mod tests {
 
     use super::*;
 
-    const EMPTY_SHA256: &str =
-        "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855";
+    const EMPTY_SHA256: &str = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855";
 
     #[test]
     fn test_sha_digest_example_entry_point() {
         main().expect("the example should succeed");
-        let contents = fs::read_to_string("temp/file.txt")
-            .expect("the example writes the file");
+        let contents = fs::read_to_string("temp/file.txt").expect("the example writes the file");
         assert_eq!(contents, "We will generate a digest of this text");
     }
 
     #[test]
     fn digest_of_abc_is_the_known_value() {
-        let digest = sha256_digest(Cursor::new(b"abc"))
-            .expect("reading from memory cannot fail");
+        let digest = sha256_digest(Cursor::new(b"abc")).expect("reading from memory cannot fail");
         assert_eq!(
             HEXUPPER.encode(digest.as_ref()),
             "BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD"
@@ -85,16 +87,14 @@ mod tests {
 
     #[test]
     fn digest_of_empty_input_is_the_known_value() {
-        let digest = sha256_digest(Cursor::new(b""))
-            .expect("reading from memory cannot fail");
+        let digest = sha256_digest(Cursor::new(b"")).expect("reading from memory cannot fail");
         assert_eq!(HEXUPPER.encode(digest.as_ref()), EMPTY_SHA256);
     }
 
     #[test]
     fn digest_spanning_several_buffers_matches_one_shot() {
         let data = vec![b'x'; 5000];
-        let streamed = sha256_digest(Cursor::new(&data))
-            .expect("reading from memory cannot fail");
+        let streamed = sha256_digest(Cursor::new(&data)).expect("reading from memory cannot fail");
         let one_shot = ring::digest::digest(&SHA256, &data);
         assert_eq!(streamed.as_ref(), one_shot.as_ref());
     }

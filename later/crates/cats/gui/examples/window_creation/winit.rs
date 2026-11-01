@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creating a window with `winit`.
+//!
+//! A window is how a program receives input and shows pixels. `winit` creates
+//! windows on all platforms and delivers events, such as key presses and
+//! resizes, through an event loop that runs until the program exits.
 
 use winit::application::ApplicationHandler;
 use winit::event::WindowEvent;
@@ -21,8 +25,7 @@ struct App {
 impl ApplicationHandler for App {
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
         if self.window.is_none() {
-            let attributes =
-                Window::default_attributes().with_title("Winit window");
+            let attributes = Window::default_attributes().with_title("Winit window");
             match event_loop.create_window(attributes) {
                 Ok(window) => self.window = Some(window),
                 Err(error) => {

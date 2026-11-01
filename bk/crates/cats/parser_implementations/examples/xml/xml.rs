@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to read and write XML data using the
 //! `xml-rs` crate.
+//!
+//! XML is a text format of nested tags, used in older web services, Office
+//! documents and many configuration files. A reader walks through the document
+//! tag by tag, and a writer produces well-formed output with the right
+//! escaping.
 
 use std::fmt::Write as _;
 
@@ -106,8 +111,7 @@ fn write_catalog() -> anyhow::Result<String> {
     // Close root element:
     writer.write(WriteEvent::end_element())?;
 
-    String::from_utf8(writer.into_inner())
-        .context("XML writer produced invalid UTF-8")
+    String::from_utf8(writer.into_inner()).context("XML writer produced invalid UTF-8")
 }
 
 // ANCHOR_END: example
@@ -123,9 +127,7 @@ mod tests {
     /// Preserves element names, attributes, and text while parsing valid XML.
     #[test]
     fn read_xml_reports_elements_attributes_and_text() -> anyhow::Result<()> {
-        let events = read_xml(
-            r#"<library><book id="7"><title>Rust</title></book></library>"#,
-        )?;
+        let events = read_xml(r#"<library><book id="7"><title>Rust</title></book></library>"#)?;
 
         assert!(events.iter().any(|event| event == "Start: library"));
         assert!(
@@ -153,15 +155,13 @@ mod tests {
         assert!(
             events
                 .iter()
-                .any(|event| event
-                    == "Start: product with attributes: id=\"123\"")
+                .any(|event| event == "Start: product with attributes: id=\"123\"")
         );
         assert!(events.iter().any(|event| event == "  Text: Rust Book"));
         assert!(
             events
                 .iter()
-                .any(|event| event
-                    == "Start: product with attributes: id=\"456\"")
+                .any(|event| event == "Start: product with attributes: id=\"456\"")
         );
         assert!(events.iter().any(|event| event == "  Text: XML Guide"));
 

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Lists MIDI input ports with `midir` and decodes raw MIDI messages.
+//!
+//! MIDI is a protocol that sends musical events, such as "note on, key 60,
+//! velocity 90", between keyboards, synthesizers and software, rather than
+//! sound itself. A port is a connection to a device. Messages are one to three
+//! bytes: a status byte (the command and channel) followed by data bytes.
 
 use midir::MidiInput;
 
@@ -34,9 +39,7 @@ fn parse_message(bytes: &[u8]) -> Option<MidiMessage> {
     let channel = status & 0x0F;
     match (status & 0xF0, data) {
         // A "note on" with velocity 0 is, by convention, a "note off".
-        (0x90, &[key, 0]) | (0x80, &[key, _]) => {
-            Some(MidiMessage::NoteOff { channel, key })
-        }
+        (0x90, &[key, 0]) | (0x80, &[key, _]) => Some(MidiMessage::NoteOff { channel, key }),
         (0x90, &[key, velocity]) => Some(MidiMessage::NoteOn {
             channel,
             key,

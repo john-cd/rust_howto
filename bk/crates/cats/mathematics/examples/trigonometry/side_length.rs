@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Calculates the hypotenuse of a right triangle given an angle and the length
 //! of the side opposite to it.
+//!
+//! In a right triangle, sine, cosine and tangent relate an angle to the ratios
+//! of the sides. Given an angle and one side you can compute the others. Angles
+//! in Rust's `f64` methods are in radians, not degrees.
 
 /// Calculates the hypotenuse of a right triangle given an angle and the length
 /// of the side opposite to it.
@@ -43,12 +47,8 @@ mod tests {
     /// the side. A zero angle degenerates to infinity.
     #[test]
     fn computes_known_triangles() {
-        assert!(
-            (hypotenuse(std::f64::consts::FRAC_PI_6, 5.0) - 10.0).abs() < 1e-12
-        );
-        assert!(
-            (hypotenuse(std::f64::consts::FRAC_PI_2, 7.0) - 7.0).abs() < 1e-12
-        );
+        assert!((hypotenuse(std::f64::consts::FRAC_PI_6, 5.0) - 10.0).abs() < 1e-12);
+        assert!((hypotenuse(std::f64::consts::FRAC_PI_2, 7.0) - 7.0).abs() < 1e-12);
         assert!((hypotenuse(1.0, 80.0) - 95.07).abs() < 0.01);
         assert!(hypotenuse(0.0, 1.0).is_infinite());
     }

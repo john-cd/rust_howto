@@ -2,18 +2,21 @@
 
 // ANCHOR: example
 //! Demonstrates a lazily initialized global map with `std::sync::LazyLock`.
+//!
+//! A `static` must be built at compile time, which rules out maps and other
+//! heap data. `LazyLock` builds the value on first access instead, and it is
+//! safe to use from several threads.
 
 use std::collections::HashMap;
 use std::sync::LazyLock;
 
 /// Permissions keyed by user name, initialized on first access.
-static PRIVILEGES: LazyLock<HashMap<&'static str, Vec<&'static str>>> =
-    LazyLock::new(|| {
-        let mut map = HashMap::new();
-        map.insert("James", vec!["user", "admin"]);
-        map.insert("Jim", vec!["user"]);
-        map
-    });
+static PRIVILEGES: LazyLock<HashMap<&'static str, Vec<&'static str>>> = LazyLock::new(|| {
+    let mut map = HashMap::new();
+    map.insert("James", vec!["user", "admin"]);
+    map.insert("Jim", vec!["user"]);
+    map
+});
 
 // Example function: display the access privileges for a given name.
 /// Prints the access level of the user `name`.

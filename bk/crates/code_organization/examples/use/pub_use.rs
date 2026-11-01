@@ -1,4 +1,3 @@
-#![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -37,11 +36,9 @@ fn main() {
 
     println!("pub use example: functions re-exported and called successfully");
     // Notes:
-    // - Re-exports hide implementation details and flatten the module
-    //   hierarchy. `public_function` appears as if it were declared in
-    //   `a_module`.
-    // - `a_module`, while private, is accessible, because `main` is in the same
-    //   module.
+    // - Re-exports hide implementation details and flatten the module hierarchy. `public_function`
+    //   appears as if it were declared in `a_module`.
+    // - `a_module`, while private, is accessible, because `main` is in the same module.
 }
 
 // ANCHOR_END: example

@@ -1,8 +1,12 @@
-#![allow(unused)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A function-like procedural macro that processes a SQL query.
+//!
+//! A function-like procedural macro, written as `name!(...)`, runs Rust code at
+//! compile time on its input tokens. This one processes a SQL query, as crates
+//! that check queries at compile time do. It must be defined in a crate of its
+//! own.
 
 // Import our custom function-like macro.
 use proc_macros::sql;
@@ -13,8 +17,7 @@ fn main() {
     let user_query = sql!(SELECT * FROM users WHERE id = 1);
     println!("Query result: {user_query}");
 
-    let product_query =
-        sql!(INSERT INTO products (name, price) VALUES ("Widget", 9.99));
+    let product_query = sql!(INSERT INTO products (name, price) VALUES ("Widget", 9.99));
     println!("Query result: {product_query}");
 }
 

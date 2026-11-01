@@ -117,7 +117,7 @@ tonic-web = "0.14.8"
 tower = { version = "0.5.3", features = ["util"] }
 tower-cookies = "0.11.0"
 tower-http = { version = "0.7.1", features = ["full", "auth"] }
-tower-sessions = { version = "0.14.0", features = ["memory-store"] } # Must match axum-messages 0.8, which uses tower-sessions-core 0.14.
+tower-sessions = { version = "0.14.0", features = ["memory-store"] } # Pinned: axum-messages 0.8 (latest) needs tower-sessions 0.14; 0.15 is out.
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 utoipa = { version = "6.0.0", features = ["axum_extras"] }

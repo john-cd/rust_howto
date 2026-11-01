@@ -6,7 +6,7 @@
 
 ## Connect to RabbitMQ with `lapin` {#lapin}
 
-[![lapin][c~lapin~docs~badge]][c~lapin~docs] [![lapin~crates.io][c~lapin~crates.io~badge]][c~lapin~crates.io] [![lapin~repo][c~lapin~repo~badge]][c~lapin~repo] [![lapin~lib.rs][c~lapin~lib.rs~badge]][c~lapin~lib.rs]{{hi:lapin}}{{hi:RabbitMQ}}{{hi:AMQP}}{{hi:Mio}}{{hi:Futures}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+{{#badges lapin database="Database interfaces"}}{{hi:RabbitMQ}}{{hi:AMQP}}{{hi:Mio}}{{hi:Futures}}
 
 [`lapin`][c~lapin~docs]↗{{hi:lapin}} is a pure Rust AMQP 0-9-1 client that integrates with [Tokio][p~tokio].
 
@@ -28,7 +28,7 @@ cargo test -p database --example amqp --features lapin rabbitmq_round_trip -- --
 
 ## Process Messages with a Durable NATS JetStream Consumer {#nats-jetstream}
 
-[![async-nats][c~async-nats~docs~badge]][c~async-nats~docs] [![async-nats~crates.io][c~async-nats~crates.io~badge]][c~async-nats~crates.io] [![async-nats~repo][c~async-nats~repo~badge]][c~async-nats~repo] [![async-nats~lib.rs][c~async-nats~lib.rs~badge]][c~async-nats~lib.rs]{{hi:async-nats}}{{hi:NATS}}{{hi:JetStream}} [![cat~database][cat~database~badge]][cat~database]{{hi:Database interfaces}}
+{{#badges async-nats database="Database interfaces"}}{{hi:NATS}}{{hi:JetStream}}
 
 JetStream stores published messages in a stream. A durable pull consumer remembers its position on the server, so a restarted worker resumes where the previous one stopped. The recipe publishes with the server's acknowledgement and a `Nats-Msg-Id` header (the server ignores duplicate ids within its duplicate window), pulls bounded batches with a wait time, acknowledges a message only after handling it, terminates malformed messages instead of redelivering them forever, and stops cleanly on Ctrl-C. Because delivery is at least once, the handler records processed order ids so that a redelivered order is acknowledged but not applied twice.
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Compute a relative path between two paths.
+//!
+//! A relative path describes how to get from one directory to another, for
+//! example `../docs/readme.md`. It is useful in generated links and
+//! configuration that must keep working when a project folder is moved.
 
 use std::path::Path;
 use std::path::PathBuf;
@@ -65,8 +69,7 @@ mod tests {
     /// Returns an empty path when both paths identify the same location.
     #[test]
     fn identical_paths_give_an_empty_path() {
-        let path =
-            PathBuf::from(if cfg!(windows) { r"C:\a\b" } else { "/a/b" });
+        let path = PathBuf::from(if cfg!(windows) { r"C:\a\b" } else { "/a/b" });
         assert_eq!(relative_to(&path, &path), Some(PathBuf::new()));
     }
 

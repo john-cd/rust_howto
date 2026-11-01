@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! An `IndexMap`, a hash map that preserves insertion order.
+//!
+//! An `IndexMap` is a hash map that remembers insertion order and lets you
+//! access entries by position. Use it when the order of keys matters, such as
+//! in configuration files.
 
 use indexmap::IndexMap;
 

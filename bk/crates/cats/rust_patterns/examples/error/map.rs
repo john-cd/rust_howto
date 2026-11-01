@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates transforming successful values and errors with `Result`.
+//!
+//! `map` transforms the success value of a `Result` and leaves an error
+//! untouched; `map_err` transforms the error instead, for example to wrap a
+//! library error in your own type.
 
 /// Shows that `map` and `map_err` transform opposite variants of a result.
 fn main() {
@@ -10,8 +14,7 @@ fn main() {
     println!("Doubled value: {doubled:?}");
 
     let failure: Result<i32, &str> = Err("service unavailable");
-    let contextual_error =
-        failure.map_err(|error| format!("request failed: {error}"));
+    let contextual_error = failure.map_err(|error| format!("request failed: {error}"));
     println!("Contextual error: {contextual_error:?}");
 }
 // ANCHOR_END: example

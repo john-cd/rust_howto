@@ -21,5 +21,7 @@
   "bookmarks.keepBookmarksOnLineDelete": false,
   "bookmarks.saveBookmarksInProject": true,
   "rust-analyzer.initializeStopped": true,
-  "telemetry.telemetryLevel": "off"
+  "telemetry.telemetryLevel": "off",
+  "files.eol": "\n",
+  "rust-analyzer.cargo.targetDir": null
 }

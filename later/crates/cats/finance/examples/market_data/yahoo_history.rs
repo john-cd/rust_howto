@@ -29,9 +29,7 @@ fn parse_bars(json: serde_json::Value) -> anyhow::Result<Vec<Quote>> {
 /// Fetches one year of daily bars per ticker, at most two requests per
 /// second.
 async fn fetch(tickers: &[&str]) -> anyhow::Result<()> {
-    let limiter = RateLimiter::direct(Quota::per_second(
-        NonZeroU32::new(2).expect("non-zero"),
-    ));
+    let limiter = RateLimiter::direct(Quota::per_second(NonZeroU32::new(2).expect("non-zero")));
     let provider = YahooConnector::new()?;
     for ticker in tickers {
         limiter.until_ready().await;
@@ -88,8 +86,7 @@ mod tests {
 
     #[test]
     fn parses_a_saved_response() {
-        let json: serde_json::Value =
-            serde_json::from_str(SAVED).expect("valid JSON");
+        let json: serde_json::Value = serde_json::from_str(SAVED).expect("valid JSON");
         let bars = parse_bars(json).expect("parses");
         assert_eq!(bars.len(), 2);
         assert!(bars[0].high >= bars[0].low);

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates writing to and reading from a file.
+//!
+//! Reading a file line by line with a buffered reader keeps memory use low,
+//! because only one line is in memory at a time. `read_to_string` loads
+//! everything at once, which is fine for small files.
 
 use std::fs;
 use std::fs::File;

@@ -22,13 +22,13 @@ ROS applications are composed of nodes that exchange messages on topics, make re
 
 ## `rosrust`: Pure Rust Implementation of a ROS Client Library {#rosrust}
 
-[![rosrust][c~rosrust~docs~badge]][c~rosrust~docs] [![rosrust~crates.io][c~rosrust~crates.io~badge]][c~rosrust~crates.io] [![rosrust~repo][c~rosrust~repo~badge]][c~rosrust~repo] [![rosrust~lib.rs][c~rosrust~lib.rs~badge]][c~rosrust~lib.rs]{{hi:rosrust}}
+{{#badges rosrust}}
 
 [`rosrust`][c~rosrust~docs]↗{{hi:rosrust}} targets ROS 1. The former ROS 1 example and dependencies have been replaced with the ROS 2 recipe below; `rosrust` is not enabled by this workspace.
 
 ## `r2r`: Minimal ROS2 Rust Bindings {#r2r}
 
-[![r2r][c~r2r~docs~badge]][c~r2r~docs] [![r2r~crates.io][c~r2r~crates.io~badge]][c~r2r~crates.io] [![r2r~repo][c~r2r~repo~badge]][c~r2r~repo] [![r2r~lib.rs][c~r2r~lib.rs~badge]][c~r2r~lib.rs]{{hi:r2r}}
+{{#badges r2r}}
 
 [`r2r`][c~r2r~docs]↗{{hi:r2r}} offers runtime-agnostic ROS 2 bindings and typed message streams. This recipe uses `r2r` rather than a pure Rust DDS client so it can generate `std_msgs` bindings from the sourced ROS 2 installation and use its installed middleware. See the [upstream setup instructions][r2r~setup] for supported ROS distributions and prerequisites.
 

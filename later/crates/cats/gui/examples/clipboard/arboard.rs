@@ -3,14 +3,18 @@
 // ANCHOR: example
 //! This example copies text to and reads text from the system clipboard with
 //! the current `arboard` builder API.
+//!
+//! The clipboard is storage the operating system provides for copy and paste
+//! between programs. Access needs a desktop session (it fails on a headless
+//! server), and on Linux the contents can vanish when the copying program
+//! exits.
 
 use anyhow::Context;
 use arboard::Clipboard;
 
 /// Writes a sample string to the clipboard and reads it back.
 fn main() -> anyhow::Result<()> {
-    let mut clipboard =
-        Clipboard::new().context("create a system clipboard handle")?;
+    let mut clipboard = Clipboard::new().context("create a system clipboard handle")?;
     let text = "Hello, clipboard!";
 
     clipboard
@@ -21,10 +25,7 @@ fn main() -> anyhow::Result<()> {
         .get()
         .text()
         .context("read text from the system clipboard")?;
-    anyhow::ensure!(
-        clipboard_text == text,
-        "clipboard text did not round-trip"
-    );
+    anyhow::ensure!(clipboard_text == text, "clipboard text did not round-trip");
     println!("Text read from the clipboard: {clipboard_text}");
 
     Ok(())
@@ -52,8 +53,7 @@ mod tests {
     #[test]
     #[ignore = "requires a desktop clipboard and overwrites its current text"]
     fn clipboard_text_round_trip() -> anyhow::Result<()> {
-        let mut clipboard =
-            Clipboard::new().context("create a system clipboard handle")?;
+        let mut clipboard = Clipboard::new().context("create a system clipboard handle")?;
         let text = "clipboard test value";
 
         clipboard

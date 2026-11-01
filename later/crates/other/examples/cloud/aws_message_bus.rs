@@ -88,20 +88,14 @@ pub fn decode_body<M: Message + Default>(body: &str) -> Result<M> {
 }
 
 /// Encodes `message` and publishes it.
-pub async fn publish<M: Message>(
-    publisher: &dyn MessagePublisher,
-    message: &M,
-) -> Result<()> {
+pub async fn publish<M: Message>(publisher: &dyn MessagePublisher, message: &M) -> Result<()> {
     publisher.publish_body(encode_body(message)?).await
 }
 
 /// Receives messages, runs `handler` on each, and acknowledges only the ones
 /// the handler accepted. Failed messages become visible again after the
 /// visibility timeout, so handlers must be idempotent (at-least-once delivery).
-pub async fn consume<M, F>(
-    subscriber: &dyn MessageSubscriber,
-    mut handler: F,
-) -> Result<usize>
+pub async fn consume<M, F>(subscriber: &dyn MessageSubscriber, mut handler: F) -> Result<usize>
 where
     M: Message + Default,
     F: FnMut(M) -> Result<()>,
@@ -323,10 +317,8 @@ mod tests {
     async fn failed_messages_are_redelivered() -> Result<()> {
         let bus = InMemoryBus::default();
         publish(&bus, &order()).await?;
-        let handled = consume::<OrderPlaced, _>(&bus, |_| {
-            anyhow::bail!("transient failure")
-        })
-        .await?;
+        let handled =
+            consume::<OrderPlaced, _>(&bus, |_| anyhow::bail!("transient failure")).await?;
         assert_eq!(handled, 0);
         assert_eq!(bus.receive().await?.len(), 1);
         Ok(())

@@ -8,12 +8,7 @@ GraphQL is a query language and execution model for APIs. A schema defines the a
 
 ## Create a GraphQL Endpoint {#async-graphql}
 
-[![async-graphql][c~async-graphql~docs~badge]][c~async-graphql~docs]{{hi:async-graphql}}
-[![async-graphql~crates.io][c~async-graphql~crates.io~badge]][c~async-graphql~crates.io]
-[![async-graphql~repo][c~async-graphql~repo~badge]][c~async-graphql~repo]
-[![async-graphql~lib.rs][c~async-graphql~lib.rs~badge]][c~async-graphql~lib.rs]
-[![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
-[![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+{{#badges async-graphql asynchronous=Asynchronous network-programming="Network programming"}}
 
 [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}} defines the schema and resolvers. The `async-graphql-axum` adapter extracts GraphQL requests and converts execution results into HTTP responses. In this example the schema has one `hello` field and Axum serves it at `POST /graphql` on the loopback interface. The example is enabled with the `async-graphql-support` Cargo feature.
 
@@ -33,7 +28,7 @@ The HTTP request body wraps that document in JSON, for example `{"query":"{ hell
 
 ## Other Options {#other-options .skip}
 
-[![juniper~website][c~juniper~website~badge]][c~juniper~website] [![juniper][c~juniper~docs~badge]][c~juniper~docs] [![juniper~crates.io][c~juniper~crates.io~badge]][c~juniper~crates.io] [![juniper~repo][c~juniper~repo~badge]][c~juniper~repo] [![juniper~lib.rs][c~juniper~lib.rs~badge]][c~juniper~lib.rs]{{hi:juniper}}{{hi:Apollo}}{{hi:Server}}{{hi:Graphql}}{{hi:Web}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
+[![juniper~website][c~juniper~website~badge]][c~juniper~website] {{#badges juniper}} {{hi:Apollo}} {{hi:Server}} {{hi:Graphql}} {{hi:Web}} {{#categories web-programming="Web programming",asynchronous=Asynchronous,web-programming::http-server="HTTP server"}}
 
 The [`juniper`][c~juniper~docs]↗{{hi:juniper}} crate is another Rust implementation of GraphQL, facilitating the creation of GraphQL APIs with strong typing and schema definition. It allows Rust developers to define their API's data structure and query capabilities in a declarative way.
 

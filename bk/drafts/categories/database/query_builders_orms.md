@@ -8,7 +8,7 @@ These libraries offer different levels of abstraction. [`diesel`][c~diesel~docs]
 
 ## `sqlx` {#sqlx}
 
-[![sqlx][c~sqlx~docs~badge]][c~sqlx~docs] [![sqlx~crates.io][c~sqlx~crates.io~badge]][c~sqlx~crates.io] [![sqlx~repo][c~sqlx~repo~badge]][c~sqlx~repo] [![sqlx~lib.rs][c~sqlx~lib.rs~badge]][c~sqlx~lib.rs]{{hi:sqlx}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
+{{#badges sqlx database=Databases}}
 
 [`sqlx`][c~sqlx~docs]↗ is a low-level, [asynchronous][p~asynchronous] SQL library for Rust. It supports various [databases][p~databases] like PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}, and both [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`async-std`][c~async-std~docs]↗{{hi:async-std}} async runtimes. It is not an ORM: write SQL directly, and use compile-time checked macros when schema metadata is available.
 
@@ -98,10 +98,7 @@ Issue #709 replaces the SQL-printing placeholder with a runnable Diesel flow usi
 
 ## `toasty` {#toasty}
 
-[![toasty][c~toasty~docs~badge]][c~toasty~docs]{{hi:toasty}}
-[![toasty~crates.io][c~toasty~crates.io~badge]][c~toasty~crates.io]
-[![toasty~repo][c~toasty~repo~badge]][c~toasty~repo]
-[![toasty~lib.rs][c~toasty~lib.rs~badge]][c~toasty~lib.rs]
+{{#badges toasty}}
 
 `toasty` is available on crates.io and supports SQLite, Turso, PostgreSQL, MySQL, and DynamoDB. Its model derive and query macros generate typed APIs; this example uses in-memory SQLite, so it runs without a service or network access.
 

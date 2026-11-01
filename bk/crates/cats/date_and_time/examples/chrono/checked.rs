@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates checked arithmetic with `DateTime` and `Duration`.
+//!
+//! Date arithmetic can overflow or produce an invalid date. The checked methods
+//! return `None` instead of panicking, which matters when the input comes from
+//! users or files.
 
 use chrono::DateTime;
 use chrono::Duration;
@@ -12,9 +16,7 @@ use chrono::Utc;
 /// Returns the date and time one day earlier than the given date and time, or
 /// None if the operation would overflow.
 fn day_earlier(date_time: DateTime<Utc>) -> Option<DateTime<Utc>> {
-    date_time.checked_sub_signed(
-        Duration::try_days(1).expect("one day fits in a chrono duration"),
-    )
+    date_time.checked_sub_signed(Duration::try_days(1).expect("one day fits in a chrono duration"))
 }
 
 /// Demonstrates checked arithmetic with `DateTime` and `Duration`.
@@ -25,13 +27,10 @@ fn main() {
         .expect("valid fixed date");
 
     let almost_three_weeks_from_now = now
-        .checked_add_signed(
-            Duration::try_weeks(2).expect("two weeks fit in a chrono duration"),
-        )
+        .checked_add_signed(Duration::try_weeks(2).expect("two weeks fit in a chrono duration"))
         .and_then(|in_2weeks| {
             in_2weeks.checked_add_signed(
-                Duration::try_weeks(1)
-                    .expect("one week fits in a chrono duration"),
+                Duration::try_weeks(1).expect("one week fits in a chrono duration"),
             )
         })
         .and_then(day_earlier);

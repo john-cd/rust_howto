@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates how to use the `tl` crate to parse HTML.
+//!
+//! `tl` is a fast HTML parser that builds a tree of tags you can search by ID,
+//! class or tag name. It is lenient and does not follow the full HTML5
+//! error-recovery rules, so it suits well-formed pages.
 
 use tl::Node;
 use tl::Parser;
@@ -45,9 +49,7 @@ fn main() -> anyhow::Result<()> {
 
     // Find the title.
     // Also try: `p.content`, `li`, `p[class]`.
-    if let Some(handle) =
-        dom.query_selector("title").and_then(|mut iter| iter.next())
-    {
+    if let Some(handle) = dom.query_selector("title").and_then(|mut iter| iter.next()) {
         let node = handle
             .get(parser)
             .ok_or(anyhow::anyhow!("Failed to retrieve node."))?;

@@ -3,6 +3,10 @@
 
 // ANCHOR: example
 //! This function creates a gzip-compressed tar archive from a directory.
+//!
+//! A tar archive bundles many files into one, keeping paths and permissions;
+//! gzip then compresses it, giving `.tar.gz`. Build the archive while streaming
+//! to the output so that large directories need little memory.
 
 use std::fs;
 use std::fs::File;
@@ -38,10 +42,7 @@ fn main() -> io::Result<()> {
 ///
 /// Returns an I/O error if the archive cannot be created, the directory cannot
 /// be added, or the compressed stream cannot be finished.
-fn compress_directory(
-    source_dir: &Path,
-    archive_path: &Path,
-) -> io::Result<()> {
+fn compress_directory(source_dir: &Path, archive_path: &Path) -> io::Result<()> {
     let archive_file = File::create(archive_path)?;
     let encoder = GzEncoder::new(archive_file, Compression::default());
     let mut builder = tar::Builder::new(encoder);
@@ -62,8 +63,7 @@ pub fn run() -> Result<(), std::io::Error> {
 /// Serializes the tests that use the shared sample archive in the system
 /// temporary directory.
 #[cfg(test)]
-pub(crate) static SAMPLE_ARCHIVE_LOCK: std::sync::Mutex<()> =
-    std::sync::Mutex::new(());
+pub(crate) static SAMPLE_ARCHIVE_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
 #[cfg(test)]
 mod tests {
@@ -97,8 +97,7 @@ mod tests {
         let archive_file = File::open(&archive_path)?;
         let mut archive = Archive::new(GzDecoder::new(archive_file));
         archive.unpack(&destination)?;
-        let archived_contents =
-            fs::read(destination.join("backup/logs/message.txt"))?;
+        let archived_contents = fs::read(destination.join("backup/logs/message.txt"))?;
         assert_eq!(archived_contents, expected);
 
         Ok(())

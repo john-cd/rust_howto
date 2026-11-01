@@ -1,0 +1,18 @@
+# Configuration file for `prek`, a git hook framework written in Rust.
+# See https://prek.j178.dev for more information.
+#:schema https://www.schemastore.org/prek.json
+
+[[repos]]
+repo = "builtin"
+hooks = [
+  { id = "check-case-conflict" },
+  { id = "check-added-large-files" },
+  { id = "check-merge-conflict" },
+  { id = "check-yaml" },
+  { id = "check-toml" },
+  {
+    id = "trailing-whitespace",
+    args = ["--markdown-linebreak-ext=md"]
+  },
+  { id = "end-of-file-fixer" }
+]

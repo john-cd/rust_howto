@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Basics of `async` functions and `Future`s: calling, awaiting and combining
 //! them.
+//!
+//! An `async` function returns a future immediately without running; the work
+//! happens when something awaits it. This lets one thread interleave many tasks
+//! that mostly wait for networks or timers. Futures do nothing unless polled by
+//! an executor such as Tokio.
 
 use std::future::Future;
 

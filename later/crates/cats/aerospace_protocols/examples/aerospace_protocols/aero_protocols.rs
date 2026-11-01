@@ -18,8 +18,7 @@ use mavlink::MavlinkVersion;
 use mavlink::dialects::common;
 
 /// Encodes a heartbeat and reads it back from an in-memory MAVLink 2 frame.
-fn round_trip()
--> Result<(MavHeader, common::MavMessage), Box<dyn Error + Send + Sync>> {
+fn round_trip() -> Result<(MavHeader, common::MavMessage), Box<dyn Error + Send + Sync>> {
     // The header identifies the sender: the vehicle (system) and the part of
     // it (component), such as the autopilot. The sequence number lets the
     // receiver detect lost frames.
@@ -63,8 +62,7 @@ mod tests {
 
     /// Checks the decoded header and heartbeat fields after serialization.
     #[test]
-    fn heartbeat_round_trips_through_a_mavlink_frame()
-    -> Result<(), Box<dyn Error + Send + Sync>> {
+    fn heartbeat_round_trips_through_a_mavlink_frame() -> Result<(), Box<dyn Error + Send + Sync>> {
         let (header, message) = round_trip()?;
         assert_eq!(header.system_id, 1);
         assert_eq!(header.component_id, 1);
@@ -74,10 +72,7 @@ mod tests {
         };
         assert_eq!(heartbeat.custom_mode, 42);
         assert_eq!(heartbeat.mavtype, common::MavType::MAV_TYPE_QUADROTOR);
-        assert_eq!(
-            heartbeat.system_status,
-            common::MavState::MAV_STATE_STANDBY
-        );
+        assert_eq!(heartbeat.system_status, common::MavState::MAV_STATE_STANDBY);
         Ok(())
     }
 

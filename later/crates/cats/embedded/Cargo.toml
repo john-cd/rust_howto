@@ -82,5 +82,14 @@ smoltcp = { version = "0.14.0", default-features = false, features = ["proto-ipv
 unsafe_code = "allow"
 missing_docs = "allow"
 
+[workspace.lints.clippy]
+await_holding_lock = "warn"
+await_holding_refcell_ref = "warn"
+dbg_macro = "warn"
+let_underscore_future = "warn"
+unwrap_used = "warn"
+todo = "warn"
+unimplemented = "warn"
+all = { level = "warn", priority = -1 }
 [lints]
 workspace = true

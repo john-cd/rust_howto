@@ -3,13 +3,16 @@
 // ANCHOR: example
 //! This example demonstrates a simple HTTP GET request using the `reqwest`
 //! crate. It fetches data from http://<httpbin.org/get> and prints the status, headers, and body.
+//!
+//! An HTTP `GET` asks a server for a resource. The response has a status code
+//! (200 means success), headers and a body. Always check the status before
+//! using the body.
 
 use anyhow::Result;
 
 /// Sends a GET request to <http://httpbin.org/get> and prints the response.
 fn main() -> Result<()> {
-    let res = reqwest::blocking::get("https://httpbin.org/get")?
-        .error_for_status()?;
+    let res = reqwest::blocking::get("https://httpbin.org/get")?.error_for_status()?;
 
     println!("Status: {}", res.status());
     println!("Headers:\n{:#?}", res.headers());

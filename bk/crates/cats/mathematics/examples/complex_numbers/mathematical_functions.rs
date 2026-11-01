@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example shows how to use the `exp` function on a complex number.
+//!
+//! Euler's formula links the exponential function with rotation:
+//! `e^(ix) = cos x + i sin x`. Complex exponentials naturally describe waves
+//! and oscillations.
 
 use std::f64::consts::PI;
 

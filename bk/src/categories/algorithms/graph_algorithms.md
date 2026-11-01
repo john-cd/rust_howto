@@ -10,7 +10,7 @@ The [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} crate provides graph data st
 
 ## Traverse a Graph with Breadth-First Search (BFS) {#petgraph-bfs}
 
-[![petgraph][c~petgraph~docs~badge]][c~petgraph~docs] [![petgraph~crates.io][c~petgraph~crates.io~badge]][c~petgraph~crates.io] [![petgraph~repo][c~petgraph~repo~badge]][c~petgraph~repo] [![petgraph~lib.rs][c~petgraph~lib.rs~badge]][c~petgraph~lib.rs]{{hi:petgraph}}{{hi:BFS}}{{hi:Graph traversal}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges petgraph algorithms=Algorithms}}{{hi:BFS}}{{hi:Graph traversal}}
 
 Breadth-First Search (BFS){{hi:Breadth-First Search}} visits all neighbors of a node before visiting their neighbors, level by level. It is commonly used to find the shortest path in an unweighted graph or to explore all reachable nodes from a starting point.
 
@@ -20,7 +20,7 @@ Breadth-First Search (BFS){{hi:Breadth-First Search}} visits all neighbors of a 
 
 ## Traverse a Graph with Depth-First Search (DFS) {#petgraph-dfs}
 
-[![petgraph][c~petgraph~docs~badge]][c~petgraph~docs] [![petgraph~crates.io][c~petgraph~crates.io~badge]][c~petgraph~crates.io] [![petgraph~repo][c~petgraph~repo~badge]][c~petgraph~repo] [![petgraph~lib.rs][c~petgraph~lib.rs~badge]][c~petgraph~lib.rs]{{hi:petgraph}}{{hi:DFS}}{{hi:Graph traversal}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges petgraph algorithms=Algorithms}}{{hi:DFS}}{{hi:Graph traversal}}
 
 Depth-First Search (DFS){{hi:Depth-First Search}} explores as far as possible along each branch before backtracking. It is useful for cycle detection, generating topological orderings, and solving maze or pathfinding problems.
 
@@ -30,7 +30,7 @@ Depth-First Search (DFS){{hi:Depth-First Search}} explores as far as possible al
 
 ## Find Shortest Paths with Dijkstra's Algorithm {#petgraph-dijkstra}
 
-[![petgraph][c~petgraph~docs~badge]][c~petgraph~docs] [![petgraph~crates.io][c~petgraph~crates.io~badge]][c~petgraph~crates.io] [![petgraph~repo][c~petgraph~repo~badge]][c~petgraph~repo] [![petgraph~lib.rs][c~petgraph~lib.rs~badge]][c~petgraph~lib.rs]{{hi:petgraph}}{{hi:Dijkstra}}{{hi:Shortest path}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges petgraph algorithms=Algorithms}}{{hi:Dijkstra}}{{hi:Shortest path}}
 
 Dijkstra's algorithm{{hi:Dijkstra's algorithm}} finds the shortest path from a source node to all other reachable nodes in a weighted graph with non-negative edge weights. It is widely used in routing protocols, GPS navigation, and network optimization.
 
@@ -40,7 +40,7 @@ Dijkstra's algorithm{{hi:Dijkstra's algorithm}} finds the shortest path from a s
 
 ## Sort Tasks Topologically in a DAG {#petgraph-toposort}
 
-[![petgraph][c~petgraph~docs~badge]][c~petgraph~docs] [![petgraph~crates.io][c~petgraph~crates.io~badge]][c~petgraph~crates.io] [![petgraph~repo][c~petgraph~repo~badge]][c~petgraph~repo] [![petgraph~lib.rs][c~petgraph~lib.rs~badge]][c~petgraph~lib.rs]{{hi:petgraph}}{{hi:Topological sort}}{{hi:DAG}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges petgraph algorithms=Algorithms}}{{hi:Topological sort}}{{hi:DAG}}
 
 Topological sort{{hi:Topological sort}} produces a linear ordering of the nodes of a Directed Acyclic Graph (DAG) such that for every directed edge from node `u` to node `v`, `u` appears before `v` in the ordering. This is essential for task scheduling, dependency resolution (e.g., in build systems or package managers), and determining the order of operations.
 
@@ -50,7 +50,7 @@ Topological sort{{hi:Topological sort}} produces a linear ordering of the nodes 
 
 ## Find Shortest Paths with A* Search {#petgraph-astar}
 
-[![petgraph][c~petgraph~docs~badge]][c~petgraph~docs] [![petgraph~crates.io][c~petgraph~crates.io~badge]][c~petgraph~crates.io] [![petgraph~repo][c~petgraph~repo~badge]][c~petgraph~repo] [![petgraph~lib.rs][c~petgraph~lib.rs~badge]][c~petgraph~lib.rs]{{hi:petgraph}}{{hi:A* Search}}{{hi:Shortest path}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges petgraph algorithms=Algorithms}}{{hi:A* Search}}{{hi:Shortest path}}
 
 A\* Search{{hi:A* Search}} is a pathfinding algorithm that computes the shortest path by utilizing a heuristic to guide the search towards the target.
 
@@ -60,7 +60,7 @@ A\* Search{{hi:A* Search}} is a pathfinding algorithm that computes the shortest
 
 ## Find Shortest Paths on a Grid with `pathfinding` {#pathfinding-astar}
 
-[![pathfinding][c~pathfinding~docs~badge]][c~pathfinding~docs] [![pathfinding~crates.io][c~pathfinding~crates.io~badge]][c~pathfinding~crates.io] [![pathfinding~repo][c~pathfinding~repo~badge]][c~pathfinding~repo] [![pathfinding~lib.rs][c~pathfinding~lib.rs~badge]][c~pathfinding~lib.rs]{{hi:pathfinding}}{{hi:A* Search}}{{hi:Shortest path}}{{hi:Grid}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges pathfinding algorithms=Algorithms}}{{hi:A* Search}}{{hi:Shortest path}}{{hi:Grid}}
 
 The [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} crate provides many graph search algorithms. It is particularly well-suited for pathfinding on grids or in situations where the graph is defined implicitly by a successor function rather than being stored in memory.
 
@@ -70,7 +70,7 @@ The [`pathfinding`][c~pathfinding~docs]↗{{hi:pathfinding}} crate provides many
 
 ## Minimum Spanning Tree with `petgraph` {#petgraph-mst}
 
-[![petgraph][c~petgraph~docs~badge]][c~petgraph~docs] [![petgraph~crates.io][c~petgraph~crates.io~badge]][c~petgraph~crates.io] [![petgraph~repo][c~petgraph~repo~badge]][c~petgraph~repo] [![petgraph~lib.rs][c~petgraph~lib.rs~badge]][c~petgraph~lib.rs]{{hi:petgraph}}{{hi:MST}}{{hi:Minimum Spanning Tree}}{{hi:Kruskal}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}
+{{#badges petgraph algorithms=Algorithms}}{{hi:MST}}{{hi:Minimum Spanning Tree}}{{hi:Kruskal}}
 
 A Minimum Spanning Tree (MST){{hi:Minimum Spanning Tree}} is a subset of the edges of a connected, edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight.
 

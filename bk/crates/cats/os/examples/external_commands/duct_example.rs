@@ -1,12 +1,15 @@
 // ANCHOR: example
 //! Run a child command with `duct` and capture its output.
+//!
+//! A child process is another program started by yours. `duct` builds commands
+//! and pipelines with a short syntax and captures their output. Always treat
+//! the output as text from an outside program that can fail.
 
 use duct::cmd;
 
 /// Runs `git status --short --ignore-submodules=all` and prints its output.
 fn main() -> anyhow::Result<()> {
-    let output =
-        cmd!("git", "status", "--short", "--ignore-submodules=all").read()?;
+    let output = cmd!("git", "status", "--short", "--ignore-submodules=all").read()?;
     println!("{output}");
     Ok(())
 }

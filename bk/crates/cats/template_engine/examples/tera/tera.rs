@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of using the Tera template engine.
+//!
+//! A template engine fills placeholders in a text file with data, to generate
+//! HTML pages, emails or configuration. Tera uses syntax similar to Jinja2 and
+//! Django: `{{ name }}` inserts a value and `{% for %}` loops.
 
 use std::sync::LazyLock;
 
@@ -9,21 +13,20 @@ use anyhow::bail;
 use serde::Serialize;
 
 /// The templates, which are loaded and configured on first use.
-static TEMPLATES: LazyLock<tera::TeraResult<tera::Tera>> =
-    LazyLock::new(|| {
-        let manifest_dir = env!("CARGO_MANIFEST_DIR").replace('\\', "/");
-        let template_glob = format!("{manifest_dir}/examples/tera/templates/*");
-        let mut t = tera::Tera::new();
-        t.load_from_glob(&template_glob)?;
-        // Configure the Tera template engine.
-        // By default, Tera will auto-escape all content in files ending with
-        // ".html", ".htm" and ".xml".
-        // Change that with `autoescape_on`:
-        // t.autoescape_on(vec![".html"]);
-        // Also add filters here, for example:
-        t.register_filter("underscored", underscored);
-        Ok(t)
-    });
+static TEMPLATES: LazyLock<tera::TeraResult<tera::Tera>> = LazyLock::new(|| {
+    let manifest_dir = env!("CARGO_MANIFEST_DIR").replace('\\', "/");
+    let template_glob = format!("{manifest_dir}/examples/tera/templates/*");
+    let mut t = tera::Tera::new();
+    t.load_from_glob(&template_glob)?;
+    // Configure the Tera template engine.
+    // By default, Tera will auto-escape all content in files ending with
+    // ".html", ".htm" and ".xml".
+    // Change that with `autoescape_on`:
+    // t.autoescape_on(vec![".html"]);
+    // Also add filters here, for example:
+    t.register_filter("underscored", underscored);
+    Ok(t)
+});
 
 /// Filters are functions with the
 /// `fn(Value, Kwargs, &State) -> Result` definition (the value may be any
@@ -31,11 +34,7 @@ static TEMPLATES: LazyLock<tera::TeraResult<tera::Tera>> =
 /// be used within templates.
 ///
 /// The following filter replaces dashes by underscores.
-pub fn underscored(
-    val: &str,
-    _kwargs: tera::Kwargs,
-    _state: &tera::State,
-) -> String {
+pub fn underscored(val: &str, _kwargs: tera::Kwargs, _state: &tera::State) -> String {
     val.replace('-', "_")
 }
 /// A simple page struct to be used as context for the template.
@@ -68,8 +67,7 @@ fn main() -> anyhow::Result<()> {
     let page = Page {
         title: "Tera Example".to_owned(),
         heading: "Welcome to Tera".to_owned(),
-        content: "This is a simple example of using the Tera template engine."
-            .to_owned(),
+        content: "This is a simple example of using the Tera template engine.".to_owned(),
     };
 
     let context = tera::Context::from_serialize(&page)?;

@@ -1503,6 +1503,16 @@ mod tests {
     /// Include path normalization collapses nested relative components.
     #[test]
     fn relative_paths_keep_directory_identity() {
+        let path = normalize_path(Path::new("repo/book/../crates/one/examples/demo.rs"))
+            .expect("normalized path stays inside the root");
+        assert_eq!(path_to_slashes(&path), "repo/crates/one/examples/demo.rs");
+        assert!(normalize_path(Path::new("../outside.rs")).is_none());
+    }
+
+    /// A Windows drive prefix is dropped from the slash-separated form.
+    #[cfg(windows)]
+    #[test]
+    fn drive_prefixes_are_dropped_from_slash_paths() {
         let path = normalize_path(Path::new("D:/repo/book/../crates/one/examples/demo.rs"))
             .expect("normalized path stays on its drive");
         assert_eq!(path_to_slashes(&path), "repo/crates/one/examples/demo.rs");

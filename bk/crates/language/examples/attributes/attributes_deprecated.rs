@@ -3,8 +3,9 @@
 // ANCHOR: example
 //! Marking an item as deprecated with `#[deprecated]`.
 //!
-//! The `#[deprecated]` attribute informs callers that an API is scheduled for
-//! removal or replacement. It allows specifying both a version and a note.
+//! The `#[deprecated]` attribute warns callers that an API should no longer be
+//! used. A version and a note can explain when it was deprecated and suggest a
+//! replacement.
 
 #![allow(deprecated)]
 
@@ -22,7 +23,7 @@ fn main() {
     // Normally, we would get a warning about using a deprecated function.
     // Call the deprecated function.
     foo();
-    // Expected output: foo.
+    // Expected output: foo
     // In this case, the module-wide `#![allow(deprecated)]` attribute
     // (first line of the example) suppresses the warning.
 }
@@ -48,7 +49,7 @@ mod tests {
     fn test_deprecated_function_is_callable() {
         // Call the deprecated function.
         foo();
-        // Expected output: foo.
+        // Expected output: foo
     }
 
     // Output-only example: `foo` only prints.

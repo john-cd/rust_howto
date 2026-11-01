@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A `BTreeMap`, an ordered map, storing book ratings.
+//!
+//! A `BTreeMap` keeps its keys sorted, so iteration is in order and you can
+//! query ranges (all keys between a and b). Lookups take O(log n) time, against
+//! O(1) on average for a `HashMap`, which does not keep order.
 
 use std::collections::BTreeMap;
 use std::collections::btree_map::Entry;
@@ -58,9 +62,7 @@ fn main() {
     match entry {
         Entry::Occupied(mut occupied) => {
             let old_rating = occupied.get();
-            println!(
-                "Book '{book_title}' already exists with rating {old_rating}",
-            );
+            println!("Book '{book_title}' already exists with rating {old_rating}",);
             *occupied.get_mut() = new_rating; // Update in place.
             println!("Updated rating for '{book_title}' to {new_rating}");
         }

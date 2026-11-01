@@ -52,8 +52,7 @@ async fn main() -> anyhow::Result<()> {
     let upstream = Url::parse(&format!("http://{local_addr}"))
         .context("could not build the local Axum URL")?;
     let app = app();
-    let mut server =
-        tokio::spawn(async move { axum::serve(listener, app).await });
+    let mut server = tokio::spawn(async move { axum::serve(listener, app).await });
 
     // Set up a tunnel using the token from NGROK_AUTHTOKEN.
     let sess = ngrok::Session::builder()

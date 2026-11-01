@@ -39,20 +39,14 @@ mod tests {
     /// The example runs end to end.
     /// Runs the pem rfc7468 example through its entry point.
     #[test]
-    fn test_pem_rfc7468_example_entry_point()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_pem_rfc7468_example_entry_point() -> Result<(), Box<dyn std::error::Error>> {
         main()
     }
 
     /// The document has the RFC 7468 boundary lines and a base64 body.
     #[test]
-    fn encoded_document_has_boundary_lines()
-    -> Result<(), Box<dyn std::error::Error>> {
-        let pem = encode_string(
-            "TEST DATA",
-            LineEnding::LF,
-            &[0x30, 0x03, 0x02, 0x01, 0x2a],
-        )?;
+    fn encoded_document_has_boundary_lines() -> Result<(), Box<dyn std::error::Error>> {
+        let pem = encode_string("TEST DATA", LineEnding::LF, &[0x30, 0x03, 0x02, 0x01, 0x2a])?;
         assert_eq!(
             pem,
             "-----BEGIN TEST DATA-----\nMAMCASo=\n-----END TEST DATA-----\n"
@@ -62,11 +56,9 @@ mod tests {
 
     /// Long input is wrapped at 64 characters per line.
     #[test]
-    fn long_bodies_wrap_at_64_columns() -> Result<(), Box<dyn std::error::Error>>
-    {
+    fn long_bodies_wrap_at_64_columns() -> Result<(), Box<dyn std::error::Error>> {
         let pem = encode_string("DATA", LineEnding::LF, &[7_u8; 100])?;
-        let body: Vec<&str> =
-            pem.lines().filter(|l| !l.starts_with("-----")).collect();
+        let body: Vec<&str> = pem.lines().filter(|l| !l.starts_with("-----")).collect();
         assert!(body.len() > 1);
         assert!(body.iter().all(|l| l.len() <= 64));
         Ok(())

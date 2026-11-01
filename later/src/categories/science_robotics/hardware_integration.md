@@ -10,10 +10,7 @@ For microcontroller firmware setup and bare-metal environments, see [[embedded |
 
 ## Serial Communication {#serial-communication}
 
-[![serialport][c~serialport~docs~badge]][c~serialport~docs]{{hi:serialport}}
-[![serialport~crates.io][c~serialport~crates.io~badge]][c~serialport~crates.io]
-[![serialport~repo][c~serialport~repo~badge]][c~serialport~repo]
-[![serialport~lib.rs][c~serialport~lib.rs~badge]][c~serialport~lib.rs]
+{{#badges serialport}}
 
 Serial ports (UART, RS-232, RS-485) are standard interfaces for communicating with motor controllers, IMUs, GPS receivers, and power distribution boards.
 
@@ -21,10 +18,7 @@ Serial ports (UART, RS-232, RS-485) are standard interfaces for communicating wi
 
 ## Linux SBC Peripherals {#linux-sbc-peripherals}
 
-[![linux-embedded-hal][c~linux-embedded-hal~docs~badge]][c~linux-embedded-hal~docs]{{hi:linux-embedded-hal}}
-[![linux-embedded-hal~crates.io][c~linux-embedded-hal~crates.io~badge]][c~linux-embedded-hal~crates.io]
-[![linux-embedded-hal~repo][c~linux-embedded-hal~repo~badge]][c~linux-embedded-hal~repo]
-[![linux-embedded-hal~lib.rs][c~linux-embedded-hal~lib.rs~badge]][c~linux-embedded-hal~lib.rs]
+{{#badges linux-embedded-hal}}
 
 Robots running Linux on single-board computers interface with onboard GPIO pins, I2C buses, and SPI devices using Linux kernel driver interfaces (`sysfs`, `gpio-cdev`, `/dev/i2c-*`, `/dev/spidev*`).
 
@@ -33,12 +27,7 @@ Robots running Linux on single-board computers interface with onboard GPIO pins,
 
 ## Portable Device Drivers with `embedded-hal` 1.0 {#embedded-hal}
 
-[![embedded-hal][c~embedded-hal~docs~badge]][c~embedded-hal~docs]{{hi:embedded-hal}}
-[![embedded-hal~crates.io][c~embedded-hal~crates.io~badge]][c~embedded-hal~crates.io]
-[![embedded-hal~repo][c~embedded-hal~repo~badge]][c~embedded-hal~repo]
-[![embedded-hal~lib.rs][c~embedded-hal~lib.rs~badge]][c~embedded-hal~lib.rs]
-[![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges embedded-hal embedded="Embedded development" no-std="No standard library"}}
 
 The [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} crate defines hardware abstraction traits for I2C, SPI, digital I/O, PWM, and delay functions. A driver generic over these traits can be reused with compatible bare-metal or Linux implementations and host-side mocks. The traits do not guarantee identical hardware, timing, or configuration behavior; test on each target.
 
@@ -50,10 +39,7 @@ The following example implements a sensor driver generic over any `embedded_hal:
 
 ## CAN Bus Communication {#can-bus}
 
-[![socketcan][c~socketcan~docs~badge]][c~socketcan~docs]{{hi:socketcan}}
-[![socketcan~crates.io][c~socketcan~crates.io~badge]][c~socketcan~crates.io]
-[![socketcan~repo][c~socketcan~repo~badge]][c~socketcan~repo]
-[![socketcan~lib.rs][c~socketcan~lib.rs~badge]][c~socketcan~lib.rs]
+{{#badges socketcan}}
 
 Controller Area Network (CAN) bus is a real-time, fault-tolerant differential serial bus standard widely used in robotics, mobile manipulators, and automotive systems for high-speed motor controller and sensor communication.
 

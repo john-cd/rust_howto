@@ -3,6 +3,10 @@
 
 // ANCHOR: example
 //! Calls embedded Python code and passes it positional arguments with PyO3.
+//!
+//! PyO3 connects Rust and Python. Embedding runs a Python interpreter inside a
+//! Rust program. It needs a Python installation and the global interpreter lock
+//! (GIL), which allows only one thread to run Python code at a time.
 
 use pyo3::ffi::c_str;
 use pyo3::prelude::*;
@@ -53,9 +57,7 @@ fn main() -> PyResult<()> {
     Python::initialize();
 
     // Run a Python script:
-    Python::attach(|py| {
-        py.run(pyo3::ffi::c_str!("print('Hello World')"), None, None)
-    })?;
+    Python::attach(|py| py.run(pyo3::ffi::c_str!("print('Hello World')"), None, None))?;
 
     test_my_function()
 }

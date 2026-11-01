@@ -6,6 +6,11 @@
 )]
 // ANCHOR: example
 //! Publish a custom metric with dimensions to Amazon CloudWatch.
+//!
+//! Amazon CloudWatch collects metrics and logs from AWS services. A custom
+//! metric is a number your own program publishes, such as orders processed;
+//! dimensions are labels, such as the environment, that let you slice it.
+//! Running this needs AWS credentials.
 
 use anyhow::Context;
 use anyhow::Result;
@@ -27,11 +32,7 @@ pub fn latency_datum(service: &str, millis: f64) -> Result<MetricDatum> {
 }
 
 /// Sends the data points under `namespace`.
-pub async fn put_metrics(
-    client: &Client,
-    namespace: &str,
-    data: Vec<MetricDatum>,
-) -> Result<()> {
+pub async fn put_metrics(client: &Client, namespace: &str, data: Vec<MetricDatum>) -> Result<()> {
     client
         .put_metric_data()
         .namespace(namespace)

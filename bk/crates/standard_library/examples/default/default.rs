@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! The `Default` trait provides a way to create a default value for a type.
 //! It initializes a struct without manually specifying every field.
+//!
+//! `Default` gives a type a sensible starting value. Deriving it, or using
+//! `..Default::default()` in a struct literal, lets you set only the fields you
+//! care about.
 
 // `derive` implements it automatically:
 /// A configuration, with the default values of each type.
@@ -56,10 +60,7 @@ fn main() {
     println!("{config2:?}");
     println!(
         "{} {} {} {}",
-        config2.timeout,
-        config2.retries,
-        config2.endpoint,
-        config2.logging_enabled
+        config2.timeout, config2.retries, config2.endpoint, config2.logging_enabled
     );
 
     // We can also use struct update syntax to override specific fields:

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! The newtype pattern: implementing an external trait on an external type.
+//!
+//! The orphan rule forbids implementing an external trait for an external type.
+//! A newtype wraps the type in your own struct, which you own, so you can
+//! implement the trait for it.
 
 use std::fmt;
 

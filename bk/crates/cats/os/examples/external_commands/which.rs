@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Demonstrates how to use the `which` crate to find the location of
 //! executables.
+//!
+//! The `PATH` environment variable lists the directories that the system
+//! searches for programs. `which` finds the full path of a program the same way
+//! a shell does, so you can check that a tool is installed before running it.
 
 use std::env;
 

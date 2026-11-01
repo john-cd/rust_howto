@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Run an ONNX model trained elsewhere (here, a scikit-learn logistic
 //! regression) with `ort`, and hot-swap the model without a restart.
+//!
+//! ONNX is an open format for trained machine-learning models, so a model built
+//! in Python (scikit-learn, PyTorch) can run in Rust. Inference means using a
+//! trained model to predict from new data, as opposed to training it. It needs
+//! the ONNX Runtime library.
 
 use std::sync::Arc;
 use std::sync::Mutex;
@@ -25,9 +30,7 @@ impl Model {
     fn load(env: &Environment, version: u32, bytes: &[u8]) -> Result<Self> {
         Ok(Self {
             version,
-            session: Mutex::new(
-                Session::builder(env)?.commit_from_memory(bytes)?,
-            ),
+            session: Mutex::new(Session::builder(env)?.commit_from_memory(bytes)?),
         })
     }
 }
@@ -61,8 +64,7 @@ impl Engine {
             .lock()
             .map_err(|_| anyhow!("poisoned session"))?;
         let outputs = session.run(ort::inputs!["X" => input])?;
-        let (_shape, probabilities) =
-            outputs["probabilities"].try_extract_tensor::<f32>()?;
+        let (_shape, probabilities) = outputs["probabilities"].try_extract_tensor::<f32>()?;
         Ok((model.version, probabilities[1]))
     }
 }

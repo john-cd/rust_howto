@@ -45,3 +45,37 @@ typ/
 # Logs and Temp
 **/*.log
 tmp/
+
+# Repository metadata and worktree state
+**/.git/
+/.worktrees/
+**/.worktrees/
+
+# Rust and native build outputs
+/target/
+/build/
+**/build/
+/debug/
+**/debug/
+/.sccache/
+**/.sccache/
+*.pdb
+*.profraw
+*.profdata
+
+# Python caches and environments
+**/__pycache__/
+**/.venv/
+**/.ruff_cache/
+**/.pytest_cache/
+**/.ipynb_checkpoints/
+
+# CI runner output
+/.ci/
+**/.ci/
+
+# Secrets and local environment files
+**/.env
+**/.env.*
+!/.env.example
+!**/.env.example

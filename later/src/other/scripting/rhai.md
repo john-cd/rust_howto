@@ -6,14 +6,7 @@
 
 ## Embed Rust Scripting in Your Application {#rust-scripting}
 
-[![rhai][c~rhai~docs~badge]][c~rhai~docs]{{hi:rhai}}
-[![rhai~crates.io][c~rhai~crates.io~badge]][c~rhai~crates.io]
-[![rhai~repo][c~rhai~repo~badge]][c~rhai~repo]
-[![rhai~lib.rs][c~rhai~lib.rs~badge]][c~rhai~lib.rs]
-[![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}}
-[![cat~parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations]{{hi:Parser implementations}}
-[![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
-[![cat~wasm][cat~wasm~badge]][cat~wasm]{{hi:WebAssembly}}
+{{#badges rhai embedded="Embedded development" parser-implementations="Parser implementations" no-std="No standard library" wasm=WebAssembly}}
 
 [rhai][c~rhai~website]↗{{hi:rhai}} is an embedded scripting language and evaluation engine that gives a safe and easy way to add scripting to any Rust application.{{hi:Scripting in Rust}}
 

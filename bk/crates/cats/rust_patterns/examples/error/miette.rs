@@ -93,10 +93,7 @@ mod mylib {
     /// Example function that fails.
     /// Returns an error with source-code context to demonstrate Miette
     /// diagnostics.
-    #[expect(
-        unreachable_code,
-        reason = "the example returns an error on purpose"
-    )]
+    #[expect(unreachable_code, reason = "the example returns an error on purpose")]
     pub fn this_fails() -> Result<()> {
         // You can use plain strings as a `Source`,
         // or anything that implements the one-method `Source` trait.

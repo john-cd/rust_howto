@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Different ways to concatenate strings.
+//!
+//! A Rust `String` owns heap memory and can grow; a `&str` is a borrowed view.
+//! `+` consumes the left `String`, while `format!` builds a new one without
+//! consuming anything. `push_str` appends in place and is the most efficient
+//! inside loops.
 
 /// Concatenates with the `+` operator.
 fn concatenate_with_plus() {
@@ -124,8 +129,7 @@ fn concatenate_with_write_macro() {
     let part1 = "hello";
     let part2 = " world";
     let mut result = String::new();
-    write!(&mut result, "{part1} {part2}")
-        .expect("writing formatted text to a String cannot fail");
+    write!(&mut result, "{part1} {part2}").expect("writing formatted text to a String cannot fail");
     println!("{result}");
 }
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generating and parsing ULIDs, sortable unique identifiers.
+//!
+//! A ULID is a 128-bit identifier that starts with a timestamp, so IDs created
+//! later sort later. That keeps database indexes efficient, unlike random
+//! UUIDs. It is written in 26 characters.
 
 use std::str::FromStr as _;
 

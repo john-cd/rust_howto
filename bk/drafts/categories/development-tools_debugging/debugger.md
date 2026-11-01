@@ -4,13 +4,10 @@
 
 Rust's toolchain provides `rust-gdb` and `rust-lldb` wrappers for launching GDB or LLDB with Rust type visualizers configured. Install the underlying debugger for your operating system, then build with Cargo's `dev` profile so the binary includes debug information.
 
-For example, save this as `src/main.rs`:
+For example, this tested example has a local value that you can inspect while stepping through the program:
 
 ```rust
-fn main() {
-    let answer = 40 + 2;
-    println!("{answer}");
-}
+{{#include ../../../crates/cats/development_tools_debugging/examples/debugger/main.rs:example}}
 ```
 
 ## Debug from a Terminal {#terminal-debuggers}

@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Initializes a shared value once with `std::sync::OnceLock`.
+//!
+//! A `OnceLock` starts empty and can be set exactly once, even when several
+//! threads race to do it. It suits global configuration that is read after
+//! startup.
 
 use std::sync::OnceLock;
 

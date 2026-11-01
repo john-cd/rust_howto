@@ -40,8 +40,7 @@ fn main() {
     println!("DER Encoded: {der_encoded:?}");
 
     // Decode the DER back to `MyStruct`:
-    let decoded_struct =
-        MyStruct::from_der(&der_encoded).expect("Failed to decode");
+    let decoded_struct = MyStruct::from_der(&der_encoded).expect("Failed to decode");
     println!("Decoded Struct: {decoded_struct:?}");
 
     // Verify that the decoded struct matches the original:

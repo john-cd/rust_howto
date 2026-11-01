@@ -47,9 +47,7 @@ fn parse_retry_after(value: &str) -> Option<Duration> {
 async fn fetch(url: &str) -> Result<String> {
     let response = reqwest::get(url).await?;
     let status = response.status();
-    if status == StatusCode::TOO_MANY_REQUESTS
-        || status == StatusCode::SERVICE_UNAVAILABLE
-    {
+    if status == StatusCode::TOO_MANY_REQUESTS || status == StatusCode::SERVICE_UNAVAILABLE {
         let retry_after = response
             .headers()
             .get(RETRY_AFTER)
@@ -74,8 +72,7 @@ async fn fetch_with_retry_after(url: &str) -> Result<String> {
         .retry(backoff)
         .when(|err| err.downcast_ref::<Throttled>().is_some())
         .adjust(|err, computed| {
-            let requested =
-                err.downcast_ref::<Throttled>().and_then(|t| t.retry_after);
+            let requested = err.downcast_ref::<Throttled>().and_then(|t| t.retry_after);
             // Cap the wait: never sleep longer than a minute.
             requested
                 .map(|d| d.min(Duration::from_mins(1)))

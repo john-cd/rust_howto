@@ -12,7 +12,7 @@ A program that is stopped with Ctrl-C (`SIGINT`) or `SIGTERM` is killed immediat
 
 ## Shut Down Gracefully on Ctrl-C with `ctrlc` {#ctrlc}
 
-[![ctrlc][c~ctrlc~docs~badge]][c~ctrlc~docs]{{hi:ctrlc}} [![ctrlc~crates.io][c~ctrlc~crates.io~badge]][c~ctrlc~crates.io] [![ctrlc~repo][c~ctrlc~repo~badge]][c~ctrlc~repo] [![ctrlc~lib.rs][c~ctrlc~lib.rs~badge]][c~ctrlc~lib.rs] [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+{{#badges ctrlc os="Operating systems"}}
 
 [`ctrlc::set_handler`][c~ctrlc~docs]↗{{hi:ctrlc::set_handler}} runs a closure on a dedicated thread when Ctrl-C is pressed. The example sets an `AtomicBool`, which a worker thread polls; `main` then joins the worker. Enable the crate's `termination` feature to also handle `SIGTERM` and `SIGHUP` on Unix, and the equivalent events on Windows.
 
@@ -22,7 +22,7 @@ A program that is stopped with Ctrl-C (`SIGINT`) or `SIGTERM` is killed immediat
 
 ## Shut Down an Async Service on Ctrl-C or SIGTERM with `tokio::signal` {#tokio-signal}
 
-[![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} [![tokio~crates.io][c~tokio~crates.io~badge]][c~tokio~crates.io] [![tokio~repo][c~tokio~repo~badge]][c~tokio~repo] [![tokio~lib.rs][c~tokio~lib.rs~badge]][c~tokio~lib.rs] [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+{{#badges tokio os="Operating systems" asynchronous=Asynchronous}}
 
 In async code, await [`tokio::signal::ctrl_c`][c~tokio::signal::ctrl_c~docs]↗{{hi:tokio::signal::ctrl_c}} in a `tokio::select!` next to the work to be stopped. On Unix, listen for `SIGTERM` as well with `tokio::signal::unix::signal(SignalKind::terminate())`. The service function takes the shutdown future as a parameter, so tests can pass a future they control.
 

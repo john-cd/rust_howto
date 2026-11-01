@@ -25,9 +25,9 @@ fn increments_with_shared_mutex() -> anyhow::Result<usize> {
             let data = Arc::clone(&data);
             thread::spawn(move || -> anyhow::Result<()> {
                 for _ in 0..50 {
-                    *data.lock().map_err(|_| {
-                        anyhow!("shared-data mutex was poisoned")
-                    })? += 1;
+                    *data
+                        .lock()
+                        .map_err(|_| anyhow!("shared-data mutex was poisoned"))? += 1;
                 }
                 Ok(())
             })
@@ -66,8 +66,7 @@ mod tests {
 
     /// Checks that the shared mutex protects all concurrent increments.
     #[test]
-    fn shared_mutex_returns_the_total_number_of_increments()
-    -> anyhow::Result<()> {
+    fn shared_mutex_returns_the_total_number_of_increments() -> anyhow::Result<()> {
         assert_eq!(increments_with_shared_mutex()?, 150);
         Ok(())
     }

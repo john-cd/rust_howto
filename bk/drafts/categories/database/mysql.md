@@ -8,7 +8,7 @@
 
 ## Connect and Run Parameterized Queries {#mysql_async}
 
-[![mysql_async][c~mysql_async~docs~badge]][c~mysql_async~docs]{{hi:mysql_async}} [![mysql_async~crates.io][c~mysql_async~crates.io~badge]][c~mysql_async~crates.io] [![mysql_async~repo][c~mysql_async~repo~badge]][c~mysql_async~repo] [![mysql_async~lib.rs][c~mysql_async~lib.rs~badge]][c~mysql_async~lib.rs] [![cat~database][cat~database~badge]][cat~database]{{hi:Database}}
+{{#badges mysql_async database=Database}}
 
 Read the connection URL (`mysql://user:password@host:3306/database`) from the environment at the application entry point rather than hard-coding credentials. `Pool::new` does not connect; the first `get_conn` call does.
 

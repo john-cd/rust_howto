@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Count NYSE trading days and step forward by a number of trading days with
 //! the `trading-calendar` crate.
+//!
+//! Markets are closed on weekends and holidays, so "ten days from now" in
+//! finance means ten trading days. A trading calendar knows these closures. It
+//! matters for settlement dates, interest accrual and backtests. NYSE is the
+//! New York Stock Exchange.
 
 use anyhow::Result;
 use chrono::Days;

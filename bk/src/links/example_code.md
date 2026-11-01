@@ -62,7 +62,7 @@ You may also consult the code examples from various Rust books:
 
 ## Templates {#rust-templates}
 
-[![cargo-generate][c~cargo-generate~docs~badge]][c~cargo-generate~docs] [![cargo-generate~crates.io][c~cargo-generate~crates.io~badge]][c~cargo-generate~crates.io] [![cargo-generate~repo][c~cargo-generate~repo~badge]][c~cargo-generate~repo] [![cargo-generate~lib.rs][c~cargo-generate~lib.rs~badge]][c~cargo-generate~lib.rs]{{hi:cargo-generate}}
+{{#badges cargo-generate}}
 
 [`cargo-generate`][c~cargo-generate~repo]↗ helps you get up and running quickly with a new Rust project by leveraging a pre-existing `git` repository as a template.
 

@@ -26,28 +26,23 @@ use candle_nn::loss;
 /// its parameters.
 fn training_losses() -> Result<(f32, f32)> {
     let device = Device::Cpu;
-    let inputs: Vec<f32> =
-        (-10..=10).map(|value| value as f32 / 10.0).collect();
-    let targets: Vec<f32> =
-        inputs.iter().map(|value| 2.0 * value + 1.0).collect();
+    let inputs: Vec<f32> = (-10..=10).map(|value| value as f32 / 10.0).collect();
+    let targets: Vec<f32> = inputs.iter().map(|value| 2.0 * value + 1.0).collect();
     let input = Tensor::from_vec(inputs.clone(), (inputs.len(), 1), &device)?;
     let target = Tensor::from_vec(targets, (inputs.len(), 1), &device)?;
 
     let variables = VarMap::new();
-    let builder =
-        VarBuilder::from_varmap(&variables, candle_core::DType::F32, &device);
+    let builder = VarBuilder::from_varmap(&variables, candle_core::DType::F32, &device);
     let model = linear(1, 1, builder)?;
     let mut optimizer = SGD::new(variables.all_vars(), 0.1)?;
 
-    let initial_loss =
-        loss::mse(&model.forward(&input)?, &target)?.to_scalar::<f32>()?;
+    let initial_loss = loss::mse(&model.forward(&input)?, &target)?.to_scalar::<f32>()?;
     for _ in 0..250 {
         let prediction = model.forward(&input)?;
         let current_loss = loss::mse(&prediction, &target)?;
         optimizer.backward_step(&current_loss)?;
     }
-    let final_loss =
-        loss::mse(&model.forward(&input)?, &target)?.to_scalar::<f32>()?;
+    let final_loss = loss::mse(&model.forward(&input)?, &target)?.to_scalar::<f32>()?;
 
     Ok((initial_loss, final_loss))
 }

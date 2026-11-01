@@ -51,10 +51,9 @@ mod tests {
     fn test_retain_example_entry_point() {
         use std::io::Write as _;
 
-        std::fs::create_dir_all("temp")
-            .expect("example output should be writable");
-        let mut f = std::fs::File::create("temp/number.txt")
-            .expect("example output should be writable");
+        std::fs::create_dir_all("temp").expect("example output should be writable");
+        let mut f =
+            std::fs::File::create("temp/number.txt").expect("example output should be writable");
         writeln!(f, "42").expect("the retain example invariant should hold");
 
         main().expect("example entry point should succeed");

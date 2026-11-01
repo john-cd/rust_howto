@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! This example demonstrates how to traverse a directory and find files that
 //! have been modified within the last 24 hours.
+//!
+//! Walking a directory tree visits every file below a path, and a filter
+//! selects the ones you want by name or extension, like the `find` command.
 
 use std::path::Path;
 use std::path::PathBuf;
@@ -27,12 +30,12 @@ fn recently_modified(root: &Path) -> Result<Vec<PathBuf>> {
     for entry in WalkDir::new(root).sort_by_file_name() {
         let entry = entry?;
         let path = entry.path();
-        let metadata = entry.metadata().with_context(|| {
-            format!("reading metadata for {}", path.display())
-        })?;
-        let modified = metadata.modified().with_context(|| {
-            format!("reading modification time for {}", path.display())
-        })?;
+        let metadata = entry
+            .metadata()
+            .with_context(|| format!("reading metadata for {}", path.display()))?;
+        let modified = metadata
+            .modified()
+            .with_context(|| format!("reading modification time for {}", path.display()))?;
 
         // `elapsed` returns an error if the modification time is in the future.
         if modified
@@ -75,8 +78,7 @@ mod tests {
         let old = dir.path().join("old.txt");
         std::fs::write(&fresh, "")?;
         std::fs::write(&old, "")?;
-        let two_days_ago =
-            std::time::SystemTime::now() - std::time::Duration::from_hours(48);
+        let two_days_ago = std::time::SystemTime::now() - std::time::Duration::from_hours(48);
         std::fs::File::options()
             .write(true)
             .open(&old)?

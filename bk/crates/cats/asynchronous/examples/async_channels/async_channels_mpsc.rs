@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A Tokio multi-producer, single-consumer (`mpsc`) channel.
+//!
+//! A channel passes values between tasks so that they need not share memory.
+//! `mpsc` means multi-producer, single-consumer: many senders, one receiver. A
+//! bounded channel makes senders wait when it is full (backpressure), so a fast
+//! producer cannot overwhelm a slow consumer.
 
 use tokio::sync::mpsc;
 
@@ -18,9 +23,9 @@ pub async fn multi_producer_single_receiver() {
     tokio::spawn(async move {
         for i in 1..=10 {
             let res = some_computation(i).await;
-            tx.send(res).await.expect(
-                "the async channels mpsc example invariant should hold",
-            );
+            tx.send(res)
+                .await
+                .expect("the async channels mpsc example invariant should hold");
         }
     });
 

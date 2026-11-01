@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `sort` method on a vector.
+//!
+//! Sorting orders a collection so that searching and comparing become faster.
+//! Rust's `sort` is stable, which means equal elements keep their original
+//! relative order, and runs in O(n log n) time.
 
 fn main() {
     let mut vec = vec![1, 5, 10, 2, 15];

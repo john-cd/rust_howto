@@ -46,11 +46,9 @@ fn run_server(connection: Connection) -> anyhow::Result<()> {
                 let response = match request.method.as_str() {
                     HoverRequest::METHOD => {
                         let hover = Hover {
-                            contents: HoverContents::Scalar(
-                                MarkedString::String(
-                                    "Hello from the server".into(),
-                                ),
-                            ),
+                            contents: HoverContents::Scalar(MarkedString::String(
+                                "Hello from the server".into(),
+                            )),
                             range: None,
                         };
                         Response::new_ok(request.id, hover)
@@ -85,13 +83,9 @@ fn main() -> anyhow::Result<()> {
         anyhow::bail!("expected the initialize response");
     };
     assert_eq!(init_response.id, RequestId::from(1));
-    client.sender.send(
-        lsp_server::Notification::new(
-            "initialized".into(),
-            serde_json::json!({}),
-        )
-        .into(),
-    )?;
+    client
+        .sender
+        .send(lsp_server::Notification::new("initialized".into(), serde_json::json!({})).into())?;
 
     // 2. A hover request. Responses are matched to requests by id.
     let uri: Uri = "file:///project/main.rs".parse()?;
@@ -102,10 +96,9 @@ fn main() -> anyhow::Result<()> {
         },
         work_done_progress_params: Default::default(),
     };
-    client.sender.send(
-        Request::new(RequestId::from(2), HoverRequest::METHOD.into(), params)
-            .into(),
-    )?;
+    client
+        .sender
+        .send(Request::new(RequestId::from(2), HoverRequest::METHOD.into(), params).into())?;
     let Message::Response(hover_response) = client.receiver.recv()? else {
         anyhow::bail!("expected the hover response");
     };
@@ -136,7 +129,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

@@ -8,12 +8,15 @@ services:
       dockerfile: .devcontainer/Dockerfile # path relative to context
       args:
         RUST_IMAGE_LABEL: ${RUST_IMAGE_LABEL:?rust image label must be defined}
+        PYTHON_VERSION: ${PYTHON_VERSION:?Python version must be defined}
+        PYTHON_LINUX_SOURCE_SHA256: ${PYTHON_LINUX_SOURCE_SHA256:?Python source checksum must be defined}
         RUSTFMT_TOOLCHAIN: ${RUSTFMT_TOOLCHAIN:-}
         MDBOOK_VERSION: ${MDBOOK_VERSION:?mdbook version must be defined}
         MDBOOK_LINKCHECK_VERSION: ${MDBOOK_LINKCHECK_VERSION:?mdbook-linkcheck version must be defined}
         MDBOOK_INDEXING_VERSION: ${MDBOOK_INDEXING_VERSION:?mdbook-indexing version must be defined}
         MDBOOK_PANDOC_VERSION: ${MDBOOK_PANDOC_VERSION:?mdbook-pandoc version must be defined}
         MDBOOK_UTILS_REV: ${MDBOOK_UTILS_REV:?mdbook-utils revision must be defined}
+        CARGO_BINSTALL_VERSION: ${CARGO_BINSTALL_VERSION:?cargo-binstall version must be defined}
         CARGO_NEXTEST_VERSION: ${CARGO_NEXTEST_VERSION:?cargo-nextest version must be defined}
         JUST_VERSION: ${JUST_VERSION:?just version must be defined}
         TECTONIC_VERSION: ${TECTONIC_VERSION:?tectonic version must be defined}
@@ -23,9 +26,18 @@ services:
         RUMDL_VERSION: ${RUMDL_VERSION:?rumdl version must be defined}
         PREK_VERSION: ${PREK_VERSION:?prek version must be defined}
         MATURIN_VERSION: ${MATURIN_VERSION:?maturin version must be defined}
+        SCCACHE_VERSION: ${SCCACHE_VERSION:?sccache version must be defined}
+        CARGO_DENY_VERSION: ${CARGO_DENY_VERSION:?cargo-deny version must be defined}
+        LYCHEE_VERSION: ${LYCHEE_VERSION:?lychee version must be defined}
         FLUTTER_VERSION: ${FLUTTER_VERSION:?Flutter version must be defined}
         FLUTTER_GIT_REVISION: ${FLUTTER_GIT_REVISION:?Flutter Git revision must be defined}
         FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: ${FLUTTER_RUST_BRIDGE_CODEGEN_VERSION:?Flutter Rust Bridge codegen version must be defined}
+        BACON_VERSION: ${BACON_VERSION:?bacon version must be defined}
+        RIPGREP_VERSION: ${RIPGREP_VERSION:?ripgrep version must be defined}
+        KANI_VERIFIER_VERSION: ${KANI_VERIFIER_VERSION:?Kani version must be defined}
+        GH_CLI_VERSION: ${GH_CLI_VERSION:?GitHub CLI version must be defined}
+        GH_CLI_LINUX_AMD64_SHA256: ${GH_CLI_LINUX_AMD64_SHA256:?GitHub CLI x64 checksum must be defined}
+        GH_CLI_LINUX_ARM64_SHA256: ${GH_CLI_LINUX_ARM64_SHA256:?GitHub CLI ARM64 checksum must be defined}
         ORACLE_CLIENT_VERSION: ${ORACLE_CLIENT_VERSION:?Oracle Instant Client version must be defined}
         ORACLE_CLIENT_DOWNLOAD_ID: ${ORACLE_CLIENT_DOWNLOAD_ID:?Oracle download ID must be defined}
         ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256: ${ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256:?Linux x64 Oracle Basic Light checksum must be defined}
@@ -36,6 +48,7 @@ services:
         ONNXRUNTIME_LINUX_X64_SHA256: ${ONNXRUNTIME_LINUX_X64_SHA256:?Linux x64 ONNX Runtime checksum must be defined}
         ONNXRUNTIME_LINUX_AARCH64_SHA256: ${ONNXRUNTIME_LINUX_AARCH64_SHA256:?Linux ARM64 ONNX Runtime checksum must be defined}
         PANDOC_VERSION: ${PANDOC_VERSION:?pandoc version must be defined}
+        PANDOC_LINUX_AMD64_DEB_SHA256: ${PANDOC_LINUX_AMD64_DEB_SHA256:?Pandoc Linux x64 checksum must be defined}
       secrets:
         - source: github_token
           target: github_token

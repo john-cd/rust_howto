@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Demonstrates the use of `unwrap()` and `expect()` for handling `Result`
 //! types.
+//!
+//! `unwrap()` returns the value or panics, and `expect("why")` panics with your
+//! message. They are fine in tests and quick prototypes, or where failure is
+//! impossible; in other code prefer `?` or explicit handling.
 
 #![allow(
     clippy::unnecessary_literal_unwrap,
@@ -66,9 +70,8 @@ mod tests {
     fn unwrap_panics_on_error() {
         let result = std::panic::catch_unwind(|| "x".parse::<u32>().unwrap());
         assert!(result.is_err());
-        let result = std::panic::catch_unwind(|| {
-            Err::<i32, &str>("boom").expect("Failed to do something.")
-        });
+        let result =
+            std::panic::catch_unwind(|| Err::<i32, &str>("boom").expect("Failed to do something."));
         assert!(result.is_err());
     }
 }

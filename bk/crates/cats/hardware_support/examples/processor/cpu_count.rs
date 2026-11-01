@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to get the number of logical cores on the
 //! system. It uses the `num_cpus` crate.
+//!
+//! A logical core is an execution unit the operating system schedules threads
+//! on; with hyper-threading one physical core appears as two. The count is a
+//! good default for the size of a thread pool for CPU-bound work.
 
 /// Returns the number of logical cores on the system.
 fn logical_cores() -> usize {

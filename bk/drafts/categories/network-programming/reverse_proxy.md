@@ -6,10 +6,7 @@
 
 ## `rathole` {#rathole}
 
-[![rathole][c~rathole~docs~badge]][c~rathole~docs]{{hi:rathole}}
-[![rathole~crates.io][c~rathole~crates.io~badge]][c~rathole~crates.io]
-[![rathole~repo][c~rathole~repo~badge]][c~rathole~repo]
-[![rathole~lib.rs][c~rathole~lib.rs~badge]][c~rathole~lib.rs]
+{{#badges rathole}}
 
 [`rathole`][c~rathole~repo]↗{{hi:rathole}} is a Rust TCP/UDP tunnel for exposing a service behind NAT through a server with a public IP. It forwards connections at the transport layer; it does not inspect HTTP paths or rewrite HTTP headers. Use it to connect a private service to a public relay, then put an HTTP reverse proxy in front when you need host or path routing.
 
@@ -68,12 +65,7 @@ For a conventional HTTP reverse proxy, [`nginx`][nginx~website]↗{{hi:nginx}} a
 
 ## `pingora` {#pingora}
 
-[![pingora][c~pingora~docs~badge]][c~pingora~docs]{{hi:pingora}}
-[![pingora~crates.io][c~pingora~crates.io~badge]][c~pingora~crates.io]
-[![pingora~repo][c~pingora~repo~badge]][c~pingora~repo]
-[![pingora~lib.rs][c~pingora~lib.rs~badge]][c~pingora~lib.rs]
-[![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
-[![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
+{{#badges pingora asynchronous=Asynchronous network-programming="Network programming"}}
 
 [`Pingora`][c~pingora~docs]↗{{hi:pingora}} is a Rust framework for programmable HTTP/1 and HTTP/2 proxies, including gRPC and WebSocket traffic. It fits custom proxy logic, load balancing, and observability needs; it is a service framework rather than a ready-made reverse-proxy binary. Linux is its primary supported environment, Unix-like platforms receive best-effort support, and Windows support is preliminary.
 

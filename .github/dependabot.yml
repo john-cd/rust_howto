@@ -1,51 +1,138 @@
 # TODO Reviewed ??-??-2026.
-
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
-# YAML cheat sheet: https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes
-
+# Maintained dependency roots; immutable test fixtures are intentionally excluded.
 version: 2
 updates:
-  - package-ecosystem: "cargo" # See documentation for possible values
+  - package-ecosystem: cargo
     open-pull-requests-limit: 5
-    directories:
-      - "/bk/crates"
-      - "/later/crates"
-      - "/playground"
-      - "/publish"
-      - "/tools"
-      - "/xmpl"
     schedule:
-      interval: "monthly"
+      interval: monthly
+      day: monday
+      time: 06:00
+      timezone: America/Los_Angeles
     groups:
       cargo-dependencies:
         patterns:
           - "*"
-  - package-ecosystem: "docker"
-    directory: "/.devcontainer"
-    schedule:
-      interval: "monthly"
-  - package-ecosystem: "docker-compose"
-    directory: "/.devcontainer"
-    schedule:
-      interval: "monthly"
-  # Dependabot updates public Dev Container Features in `devcontainer.json`.
-  # https://containers.dev/guide/dependabot
-  - package-ecosystem: "devcontainers"
-    directory: "/"
+    directories:
+      - /bk/crates
+      - /bk/crates/cats/database/examples/query_builders_orms/toasty_validation
+      - /bk/crates/cats/memory_management/allocator_selection
+      - /later/crates
+      - /later/crates/cats/development_tools_ffi/python_extension
+      - /later/crates/cats/embedded
+      - /later/crates/cats/gui/vizia
+      - /later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest
+      - /playground
+      - /publish
+      - /tools
+      - /xmpl
+  - package-ecosystem: uv
+    directory: /later/crates/cats/development_tools_ffi/python_extension
     schedule:
       interval: monthly
-  - package-ecosystem: "github-actions"
-    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
+      day: monday
+      time: 06:00
+      timezone: America/Los_Angeles
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: rust-toolchain
+    directory: /
+    schedule:
+      interval: monthly
+      day: monday
+      time: 06:00
+      timezone: America/Los_Angeles
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: docker
+    schedule:
+      interval: monthly
+      day: monday
+      time: 06:00
+      timezone: America/Los_Angeles
+    directory: /.devcontainer
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: docker-compose
+    schedule:
+      interval: monthly
+      day: monday
+      time: 06:00
+      timezone: America/Los_Angeles
+    directory: /.devcontainer
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: devcontainers
+    schedule:
+      interval: monthly
+      day: monday
+      time: 06:00
+      timezone: America/Los_Angeles
+    directory: /
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: github-actions
+    schedule:
+      interval: monthly
+      day: monday
+      time: 06:00
+      timezone: America/Los_Angeles
     directories:
-      - "/"
-      - "/.github/actions/*"
+      - /
+      - /.github/actions/docker-login
+      - /.github/actions/load-pinned-versions
+      - /.github/actions/set-cache-scope
+      - /.github/actions/setup-rust
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: gitsubmodule
     schedule:
-      interval: "monthly"
-  - package-ecosystem: "gitsubmodule"
-    directory: "/"
-    schedule:
-      interval: "monthly"
+      interval: monthly
+      day: monday
+      time: 06:00
+      timezone: America/Los_Angeles
+    directory: /
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch

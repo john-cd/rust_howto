@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Documentation comments on a struct and its constructor.
+//!
+//! `rustdoc` builds HTML documentation from doc comments. Intra-doc links such
+//! as [`Vec`] connect items and are checked by `rustdoc`, which warns about
+//! links that break after a rename.
 
 /// Returns a `Person` struct with the given name.
 ///

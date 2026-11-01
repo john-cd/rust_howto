@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates the `doc-comment` crate for attaching
 //! documentation text to a Rust item.
+//!
+//! Doc comments (`///` for items, `//!` for the enclosing module or crate)
+//! become the generated documentation. Code blocks in them are compiled and run
+//! as tests by `cargo test`, so examples cannot go stale.
 
 use doc_comment::doc_comment;
 
@@ -23,6 +27,11 @@ fn main() {
     documented_function();
 }
 // ANCHOR_END: example
+
+pub fn run() {
+    // Same body as `main`; calling `main` trips `clippy::main_recursion`.
+    documented_function();
+}
 
 #[cfg(test)]
 mod tests {

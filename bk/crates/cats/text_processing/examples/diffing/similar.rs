@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Diffing lines and words with `similar` and styling the result with
 //! `console`.
+//!
+//! A diff lists the lines (or words) that were added or removed between two
+//! texts, the way `git diff` does. It is used for code review, merge tools and
+//! test failure messages.
 
 use console::Style;
 use similar::ChangeTag;

@@ -5,37 +5,20 @@
 # TODO Reviewed ??-??-2026.
 
 set -euo pipefail
+export SCCACHE_CACHE_SIZE=35G
 
 repo=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)
 common_git_dir=$(git -C "$repo" rev-parse --path-format=absolute --git-common-dir)
 main_repo=$(dirname -- "$common_git_dir")
-
-get_cache_bases() {
-    local bases=${1:-${SCCACHE_BASEDIRS:-}}
-    append_base() {
-        case ":$bases:" in
-            *":$1:"*) ;;
-            *) bases=${bases:+$bases:}$1 ;;
-        esac
-    }
-    append_base "$main_repo"
-    for slot in {a..z}; do
-        append_base "$main_repo/.worktrees/$slot"
-    done
-    local worktrees
-    worktrees=$(git -C "$main_repo" worktree list --porcelain)
-    while IFS= read -r line; do
-        [[ $line == 'worktree '* ]] && append_base "${line#worktree }"
-    done <<< "$worktrees"
-    printf '%s' "$bases"
-}
+target_override=
+build_override=
 
 if [[ ${1:-} == --restart-cache ]]; then
     if pgrep -x 'cargo|rustc' >/dev/null; then
         echo 'Wait for running Cargo/rustc processes before restarting sccache.' >&2
         exit 1
     fi
-    export SCCACHE_BASEDIRS=$(get_cache_bases "${2:-${SCCACHE_BASEDIRS:-}}")
+    export SCCACHE_BASEDIRS="$(just --justfile "$repo/justfile" --evaluate build_sccache_basedirs)"
     sccache --stop-server || true # An already stopped daemon needs no action.
     sccache --start-server
     sccache --show-stats
@@ -45,8 +28,8 @@ fi
 if [[ ${1:-} == --slot ]]; then
     slot=${2:-}
     branch=${3:-}
-    if [[ ! $slot =~ ^[a-z]$ || -z $branch ]]; then
-        echo 'Specify a slot a through z and a branch.' >&2
+    if [[ ! $slot =~ ^[ab]$ || -z $branch ]]; then
+        echo 'Specify a slot a or b and a branch.' >&2
         exit 1
     fi
     checkout=$main_repo/.worktrees/$slot
@@ -62,20 +45,23 @@ if [[ ${1:-} == --slot ]]; then
     fi
     repo=$checkout
     # Keep explicit user overrides, not just's exports for the parent checkout.
-    export CARGO_TARGET_DIR=${4:-}
-    export CARGO_BUILD_BUILD_DIR=${5:-}
+    target_override=${4:-}
+    build_override=${5:-}
 fi
 
 identity=main
 if [[ $(basename -- "$(dirname -- "$repo")") == .worktrees ]]; then
     identity=$(basename -- "$repo")
 fi
-if [[ ! $identity =~ ^(main|[a-z])$ ]]; then
-    echo 'Use a named .worktrees/a through .worktrees/z slot.' >&2
+if [[ ! $identity =~ ^(main|[ab])$ ]]; then
+    echo 'Use only .worktrees/a or .worktrees/b.' >&2
     exit 1
 fi
 
 cache_home=${XDG_CACHE_HOME:-$HOME/.cache}
+code_target_root=${CODE_TARGET_ROOT:-$cache_home/cargo-target}
+code_build_root=${CODE_BUILD_ROOT:-$cache_home/cargo-build}
+code_sccache_root=${CODE_SCCACHE_ROOT:-${SCCACHE_DIR:-$cache_home/sccache}}
 link_directory() {
     local link=$1 destination=$2
     if [[ $destination != /* ]]; then
@@ -94,6 +80,6 @@ link_directory() {
     printf '%s -> %s\n' "$link" "$destination"
 }
 
-link_directory "$repo/target" "${CARGO_TARGET_DIR:-$cache_home/rust_howto/target/$identity}"
-link_directory "$repo/build" "${CARGO_BUILD_BUILD_DIR:-$cache_home/rust_howto/build/$identity}"
-link_directory "$repo/.sccache" "${SCCACHE_DIR:-$cache_home/sccache}"
+link_directory "$repo/target" "${target_override:-$code_target_root/rust_howto/$identity}"
+link_directory "$repo/build" "${build_override:-$code_build_root/rust_howto/$identity}"
+link_directory "$repo/.sccache" "$code_sccache_root"

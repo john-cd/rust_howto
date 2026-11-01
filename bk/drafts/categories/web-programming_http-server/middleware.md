@@ -34,7 +34,7 @@ The example uses permissive CORS settings so a local browser demo can send reque
 
 ## Investigate Alternatives to `tower` {#alternatives}
 
-[![trillium][c~trillium~docs~badge]][c~trillium~docs] [![trillium~crates.io][c~trillium~crates.io~badge]][c~trillium~crates.io] [![trillium~repo][c~trillium~repo~badge]][c~trillium~repo] [![trillium~lib.rs][c~trillium~lib.rs~badge]][c~trillium~lib.rs]{{hi:trillium}}{{hi:Async}}{{hi:trillium}}{{hi:Framework}}[![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}[![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}{{hi:HTTP server}}
+{{#badges trillium}} {{hi:Async}} {{hi:trillium}} {{hi:Framework}} {{#categories web-programming::http-server="HTTP server",web-programming="Web programming"}} {{hi:HTTP server}}
 
 [`trillium`][c~trillium~docs]↗{{hi:trillium}} is a modular toolkit for building async web apps
 

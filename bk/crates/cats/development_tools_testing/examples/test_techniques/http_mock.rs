@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Tests an HTTP client against a local mock server with `httpmock`.
+//!
+//! A mock HTTP server runs locally and answers with canned responses, so a
+//! client can be tested without the internet and with failures that are hard to
+//! trigger on demand, such as timeouts and error codes.
 
 /// Fetches the plain-text greeting for `name` from `base_url`.
 fn fetch_greeting(base_url: &str, name: &str) -> anyhow::Result<String> {
@@ -46,6 +50,13 @@ mod tests {
     }
 
     /// Converts a non-success HTTP status into an error.
+    /// `main` targets a fixed address, so it needs a service listening there.
+    #[test]
+    #[ignore = "requires a greeting service on localhost:8080"]
+    fn main_greets_through_the_service() {
+        assert!(main().is_ok());
+    }
+
     #[test]
     fn reports_a_server_error() {
         let server = MockServer::start();
@@ -64,7 +75,8 @@ mod tests {
 
 #[allow(clippy::items_after_test_module)]
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

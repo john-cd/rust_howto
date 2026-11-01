@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Runs CPU-bound work from `async` code on the Rayon thread pool.
+//!
+//! An async runtime runs many tasks on a few threads, so a task that computes
+//! for a long time without awaiting blocks the others. Handing CPU-heavy work
+//! to a separate thread pool, such as Rayon's, keeps the runtime responsive.
 
 use rayon::prelude::*;
 

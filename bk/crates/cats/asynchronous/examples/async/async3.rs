@@ -1,4 +1,11 @@
 // ANCHOR: example
+//! Run a task on the Tokio runtime and await its result.
+//!
+//! `tokio::spawn` starts a task that runs concurrently, possibly on another
+//! thread, and returns a handle. Awaiting the handle gives the task's result,
+//! or an error if it panicked. Tasks are cheap, so a program can spawn
+//! thousands. `#[tokio::main]` creates the runtime that runs them.
+
 /// Runs a task on the Tokio runtime and awaits its result.
 #[tokio::main]
 async fn main() {

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Comparing types at runtime with `TypeId`.
+//!
+//! A `TypeId` is a unique identifier of a type, available at run time.
+//! Comparing them tells whether two values have the same type, and it is the
+//! key that allows storing one value per type in a map.
 
 use std::any::Any;
 use std::any::TypeId;

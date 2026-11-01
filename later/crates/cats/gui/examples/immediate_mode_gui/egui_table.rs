@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A virtualized data table with `egui_extras`.
+//!
+//! A virtualized table only draws the rows currently visible, so it stays fast
+//! with millions of rows. `egui` is an immediate-mode GUI: the interface is
+//! rebuilt by code on every frame.
 
 use eframe::egui;
 use egui_extras::Column;
@@ -75,8 +79,7 @@ fn run_in_window() -> eframe::Result {
 fn main() {
     let ctx = egui::Context::default();
     let mut built = 0;
-    let screen =
-        egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
+    let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
         screen_rect: Some(screen),
         ..Default::default()

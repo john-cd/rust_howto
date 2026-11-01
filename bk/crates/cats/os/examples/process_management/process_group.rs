@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Kill a child and all of its descendants with a Unix process group.
+//!
+//! A process group collects a process and the children it starts. Killing the
+//! group ends the whole tree, which a plain kill of the parent does not. A Unix
+//! mechanism.
 
 use std::os::unix::process::CommandExt as _;
 use std::process::Child;

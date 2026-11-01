@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! Minimize a function with particle swarm optimization.
+//!
+//! Particle swarm optimization moves many candidate points through the search
+//! space; each one is pulled towards its own best position and the swarm's
+//! best. It needs no gradients and works on difficult functions.
+
 use rand::RngExt;
 use rand::SeedableRng;
 use rand::rngs::StdRng;
@@ -39,8 +45,7 @@ fn pso(
     let mut rng = StdRng::seed_from_u64(seed);
     let mut swarm: Vec<Particle> = (0..swarm_size)
         .map(|_| {
-            let position: Vec<f64> =
-                (0..dim).map(|_| rng.random_range(-BOUND..BOUND)).collect();
+            let position: Vec<f64> = (0..dim).map(|_| rng.random_range(-BOUND..BOUND)).collect();
             let best_value = f(&position);
             Particle {
                 velocity: vec![0.0; dim],

@@ -8,11 +8,7 @@ Cargo auditing tools answer different questions. Run them as part of a review or
 
 ## Audit `cargo.lock` Files for Crates Containing Security Vulnerabilities {#cargo-audit}
 
-[![cargo-audit][c~cargo-audit~docs~badge]][c~cargo-audit~docs]{{hi:cargo-audit}}
-[![cargo-audit~crates.io][c~cargo-audit~crates.io~badge]][c~cargo-audit~crates.io]
-[![cargo-audit~repo][c~cargo-audit~repo~badge]][c~cargo-audit~repo]
-[![cargo-audit~lib.rs][c~cargo-audit~lib.rs~badge]][c~cargo-audit~lib.rs]
-[![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}} [![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+{{#badges cargo-audit development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}}
 
 `cargo audit` checks the dependency versions recorded in `Cargo.lock` against the RustSec Advisory Database. It reports known vulnerabilities and advisories; it does not inspect source code for every possible defect.
 
@@ -25,12 +21,7 @@ Run it from the package or workspace root. Review each advisory and select an up
 
 ## Embed the Exact Crate Versions in Your Rust Executable for Auditability {#cargo-auditable}
 
-[![cargo-auditable][c~cargo-auditable~docs~badge]][c~cargo-auditable~docs]{{hi:cargo-auditable}}
-[![cargo-auditable~crates.io][c~cargo-auditable~crates.io~badge]][c~cargo-auditable~crates.io]
-[![cargo-auditable~repo][c~cargo-auditable~repo~badge]][c~cargo-auditable~repo]
-[![cargo-auditable~lib.rs][c~cargo-auditable~lib.rs~badge]][c~cargo-auditable~lib.rs]
-[![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
-[![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
+{{#badges cargo-auditable development-tools::cargo-plugins="Cargo plugins" encoding=Encoding}}
 
 [cargo-auditable][c~cargo-auditable~repo]↗{{hi:cargo-auditable}} makes production Rust binaries auditable.
 
@@ -40,11 +31,7 @@ This works by embedding data about the dependency tree in [JSON][p~json] format 
 
 ## List the license(s) of Dependencies {#cargo-license}
 
-[![cargo-license][c~cargo-license~docs~badge]][c~cargo-license~docs]{{hi:cargo-license}}
-[![cargo-license~crates.io][c~cargo-license~crates.io~badge]][c~cargo-license~crates.io]
-[![cargo-license~repo][c~cargo-license~repo~badge]][c~cargo-license~repo]
-[![cargo-license~lib.rs][c~cargo-license~lib.rs~badge]][c~cargo-license~lib.rs]
-[![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+{{#badges cargo-license development-tools::cargo-plugins="Cargo plugins"}}
 
 [`cargo-license`][c~cargo-license~docs]↗{{hi:cargo-license}} is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand to see license of dependencies.
 
@@ -52,11 +39,7 @@ Install [`cargo-license`][c~cargo-license~docs]↗{{hi:cargo-license}} with `car
 
 ## `cargo deny` {#cargo-deny}
 
-[![cargo-deny][c~cargo-deny~docs~badge]][c~cargo-deny~docs]{{hi:cargo-deny}}
-[![cargo-deny~crates.io][c~cargo-deny~crates.io~badge]][c~cargo-deny~crates.io]
-[![cargo-deny~repo][c~cargo-deny~repo~badge]][c~cargo-deny~repo]
-[![cargo-deny~lib.rs][c~cargo-deny~lib.rs~badge]][c~cargo-deny~lib.rs]
-[![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
+{{#badges cargo-deny development-tools::cargo-plugins="Cargo plugins"}}
 
 [`cargo-deny`][c~cargo-deny~docs]↗{{hi:cargo-deny}} is a [`cargo`][c~cargo~docs]↗{{hi:cargo}} plugin that lints your project's dependency graph to ensure all your dependencies conform to your expectations and requirements.
 

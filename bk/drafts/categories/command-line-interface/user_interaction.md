@@ -10,12 +10,7 @@ Send diagnostics and progress to standard error so standard output can remain ma
 
 ## Ask for Confirmation, Selection, Text Input {#inquire}
 
-[![inquire][c~inquire~docs~badge]][c~inquire~docs]{{hi:inquire}}
-[![inquire~crates.io][c~inquire~crates.io~badge]][c~inquire~crates.io]
-[![inquire~repo][c~inquire~repo~badge]][c~inquire~repo]
-[![inquire~lib.rs][c~inquire~lib.rs~badge]][c~inquire~lib.rs]
-[![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
-[![cat~value-formatting][cat~value-formatting~badge]][cat~value-formatting]{{hi:Value formatting}}
+{{#badges inquire command-line-interface="Command-line interface" value-formatting="Value formatting"}}
 
 [`inquire`][c~inquire~docs]↗{{hi:inquire}} provides several different prompts, in order to interactively ask the user for information via the CLI.
 
@@ -29,11 +24,7 @@ Handle prompt cancellation and input errors as normal outcomes instead of panick
 
 ## Display Progress Bars and Spinners {#indicatif}
 
-[![indicatif][c~indicatif~docs~badge]][c~indicatif~docs]{{hi:indicatif}}
-[![indicatif~crates.io][c~indicatif~crates.io~badge]][c~indicatif~crates.io]
-[![indicatif~repo][c~indicatif~repo~badge]][c~indicatif~repo]
-[![indicatif~lib.rs][c~indicatif~lib.rs~badge]][c~indicatif~lib.rs]
-[![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
+{{#badges indicatif command-line-interface="Command-line interface"}}
 
 [`indicatif`][c~indicatif~docs]↗{{hi:indicatif}} is a progress bar library for command line applications. It allows developers to create and manage progress bars, spinners, and other visual feedback mechanisms for long-running tasks.{{hi:Progress bars and spinners}}
 

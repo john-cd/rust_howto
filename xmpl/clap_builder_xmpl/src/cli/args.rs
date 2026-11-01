@@ -21,7 +21,8 @@ pub(super) fn arg_config() -> Arg {
         .long("config") // --config
         .alias("configuration") // --configuration (hidden alias - use `visible_alias` to show in the help message)
         // default .num_args(1)
-        .value_name("FILE") // FILE, not <config>, is the placeholder for the argument's value in the help message / usage.
+        .value_name("FILE") // FILE, not <config>, is the placeholder for the argument's value in the help message /
+        // usage.
         .value_parser(value_parser!(PathBuf)) // Parse and validate the FILE value before storing it into ArgMatches as the given type.
         .value_hint(ValueHint::FilePath) // Provide the shell a hint about how to complete this argument.
         .help("Provides a custom config file")
@@ -83,7 +84,6 @@ mod tests {
     use std::process::Command;
 
     use super::*;
-
     use crate::cli::cli;
 
     /// Checks Clap's environment-backed arguments in a child with explicit values.

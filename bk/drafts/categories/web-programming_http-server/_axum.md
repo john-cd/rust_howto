@@ -6,7 +6,7 @@
 
 ## Create a web Server with `axum` {#axum}
 
-[![axum][c~axum~docs~badge]][c~axum~docs] [![axum~crates.io][c~axum~crates.io~badge]][c~axum~crates.io] [![axum~repo][c~axum~repo~badge]][c~axum~repo] [![axum~lib.rs][c~axum~lib.rs~badge]][c~axum~lib.rs]{{hi:axum}}{{hi:Framework}}{{hi:Http}}{{hi:Web}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
+{{#badges axum asynchronous=Asynchronous network-programming="Network programming" web-programming::http-server="HTTP server"}}{{hi:Framework}}{{hi:Http}}{{hi:Web}}
 
 [`axum`][c~axum~docs]↗{{hi:axum}} is an HTTP web framework built around [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`tower`][c~tower~docs]↗{{hi:tower}} services. A `Router` maps paths and methods to handlers. Extractors such as `Path`, `Query`, and `Json` turn request data into typed handler arguments, while `State` supplies shared application state.
 

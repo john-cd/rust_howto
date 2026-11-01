@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! A `MultiMap`, which associates several values with one key.
+//!
+//! A multimap associates several values with one key, for example the tags of a
+//! post or the headers of an HTTP request that may repeat.
 
 use anyhow::Result;
 use crates_io_api::Category;

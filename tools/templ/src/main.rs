@@ -112,7 +112,6 @@ fn dispatch_with_categories(
             // all_categories.iter().for_each( |c| println!("{c:?}") )
         }
         // Returns crate information from the crates.io API for one or more crates.
-        //
         Cmd::Info(i) => {
             for name in i.args {
                 let info = get_info_for_crate(&name)?;
@@ -212,7 +211,8 @@ mod tests {
         assert!(output.contains("text-processing"));
     }
 
-    /// Runs `main`, which parses the real process arguments (not valid for this CLI under the test harness).
+    /// Runs `main`, which parses the real process arguments (not valid for this CLI under the test
+    /// harness).
     #[test]
     #[ignore = "main() parses the real process arguments, which belong to the test harness"]
     fn main_runs() {

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parsing command-line arguments with `pico-args`.
+//!
+//! `pico-args` is a tiny command-line parser with no derive macros and no
+//! generated help. It trades convenience for fast compile times and a small
+//! binary.
 
 use pico_args::Arguments;
 
@@ -70,8 +74,7 @@ mod tests {
     }
 
     #[test]
-    fn options_flags_and_free_arguments_are_extracted()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn options_flags_and_free_arguments_are_extracted() -> Result<(), Box<dyn std::error::Error>> {
         let mut args = Arguments::from_vec(
             ["--name", "Ann", "--age", "7", "--verbose", "f.txt"]
                 .map(Into::into)
@@ -93,9 +96,7 @@ mod tests {
 
     #[test]
     fn invalid_numbers_and_leftovers_are_reported() {
-        let mut args = Arguments::from_vec(
-            ["--age", "x", "--extra"].map(Into::into).to_vec(),
-        );
+        let mut args = Arguments::from_vec(["--age", "x", "--extra"].map(Into::into).to_vec());
         assert!(args.opt_value_from_str::<_, u32>("--age").is_err());
         assert_eq!(
             args.finish().len(),

@@ -3,8 +3,9 @@
 // ANCHOR: example
 //! The `main` function, the entry point of a binary crate.
 //!
-//! In Rust, execution starts at the `main` function of an executable crate.
-//! When no explicit return type is specified, `main` returns `()`.
+//! `main` is where a binary crate starts. It takes no arguments (read them with
+//! `std::env::args`) and returns `()` or a `Result`. Library crates have no
+//! `main`.
 
 // `main` takes no parameters and, in this case,
 // implicitly returns the "unit type" (),
@@ -12,7 +13,7 @@
 /// Prints a greeting.
 fn main() {
     println!("Hello, world!");
-    // Expected output: Hello, world!.
+    // Expected output: Hello, world!
 }
 
 // ANCHOR_END: example

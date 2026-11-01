@@ -4,6 +4,15 @@
 
 This overview highlights a small set of software projects that demonstrate where Rust is used. It is a curated introduction, not a complete catalog.
 
+## Example Status
+
+The tested crate example is a placeholder; this page currently provides a
+curated project overview rather than an executable integration:
+
+```rust,ignore
+{{#include ../../../crates/other/examples/written_in_rust/main.rs:example}}
+```
+
 ## Systems Programming
 
 | Area                            | Examples and details                                                                                                                                                                                                                                                                                                                   |

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Pipeline architecture: stages connected by channels, each on its own thread.
+//!
+//! A pipeline splits work into stages connected by channels, each stage on its
+//! own thread, like an assembly line. While one item is in stage two, the next
+//! is already in stage one, which raises throughput.
 
 use std::sync::mpsc;
 use std::thread;

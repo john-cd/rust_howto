@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Extract strongly typed headers with [`axum_extra::TypedHeader`].
+//!
+//! HTTP headers are text. A typed header is parsed into a Rust type for you,
+//! such as an `Authorization: Bearer` token or a `User-Agent`, and an invalid
+//! or missing header turns into an error response.
 
 use axum::Router;
 use axum::routing::get;
@@ -35,9 +39,7 @@ mod tests {
 
     use super::*;
 
-    async fn call(
-        headers: &[(&str, &str)],
-    ) -> anyhow::Result<(StatusCode, String)> {
+    async fn call(headers: &[(&str, &str)]) -> anyhow::Result<(StatusCode, String)> {
         let mut builder = Request::get("/whoami");
         for (k, v) in headers {
             builder = builder.header(*k, *v);
@@ -69,11 +71,8 @@ mod tests {
 
     #[tokio::test]
     async fn malformed_authorization() -> anyhow::Result<()> {
-        let (status, _) = call(&[
-            ("authorization", "Basic abc"),
-            ("user-agent", "tests/1.0"),
-        ])
-        .await?;
+        let (status, _) =
+            call(&[("authorization", "Basic abc"), ("user-agent", "tests/1.0")]).await?;
         assert_eq!(status, StatusCode::BAD_REQUEST);
         Ok(())
     }

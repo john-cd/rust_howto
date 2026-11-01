@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Wipes a secret from memory when it is dropped, using `zeroize`'s derive
 //! macros.
+//!
+//! When a value is dropped, its memory is normally left as it was, so a secret
+//! may stay readable in a core dump or swap file. Zeroizing overwrites it, and
+//! the crate uses tricks to stop the compiler from optimizing the write away.
 
 use zeroize::Zeroize;
 use zeroize::ZeroizeOnDrop;
@@ -26,8 +30,7 @@ fn main() {
     assert!(key.bytes.is_empty());
 
     // `Zeroizing<T>` wraps any `Zeroize` value, wiping it on drop.
-    let passphrase =
-        Zeroizing::new(String::from("correct horse battery staple"));
+    let passphrase = Zeroizing::new(String::from("correct horse battery staple"));
     println!("passphrase has {} bytes", passphrase.len());
     // The `String` is zeroed here, when `passphrase` goes out of scope.
 

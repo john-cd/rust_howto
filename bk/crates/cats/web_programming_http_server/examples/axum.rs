@@ -72,9 +72,7 @@ async fn query(Query(_params): Query<HashMap<String, String>>) -> String {
 // `serde_json::Value`. `Json` supports any type that implements
 // `serde::Deserialize`.
 /// Returns the JSON body of the request.
-async fn json(
-    Json(payload): Json<serde_json::Value>,
-) -> Json<serde_json::Value> {
+async fn json(Json(payload): Json<serde_json::Value>) -> Json<serde_json::Value> {
     Json(payload)
 }
 
@@ -116,9 +114,7 @@ async fn main() -> anyhow::Result<()> {
     tracing_subscriber::registry()
         .with(
             tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| {
-                    format!("{}=debug", env!("CARGO_CRATE_NAME")).into()
-                }),
+                .unwrap_or_else(|_| format!("{}=debug", env!("CARGO_CRATE_NAME")).into()),
         )
         .with(tracing_subscriber::fmt::layer())
         .try_init()?;

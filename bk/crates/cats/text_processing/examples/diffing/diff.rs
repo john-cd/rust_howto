@@ -13,8 +13,7 @@ use diff::Result;
 /// Compares two strings line by line and prints the differences.
 fn main() -> anyhow::Result<()> {
     let old_text = "Hello world\nThis is a test\nOf the diff library";
-    let new_text =
-        "Hello world\nThis is a sample\nOf the diff library\nWith a new line";
+    let new_text = "Hello world\nThis is a sample\nOf the diff library\nWith a new line";
 
     // Computes the diff between the lines of two strings.
     let changeset = diff::lines(old_text, new_text);

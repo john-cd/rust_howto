@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A `SkipMap`, an ordered map built on a skip list.
+//!
+//! A skip list keeps sorted elements in layered linked lists, where upper
+//! layers skip ahead, giving O(log n) search without rebalancing like a tree.
+//! Databases use it for in-memory sorted indexes, and it is easier to make
+//! concurrent than a tree.
 
 use skiplist::SkipMap;
 

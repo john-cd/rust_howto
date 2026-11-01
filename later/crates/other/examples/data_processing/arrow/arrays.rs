@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Build typed Arrow arrays, a schema, and a record batch.
+//!
+//! Apache Arrow is a columnar in-memory format: each column of a table is
+//! stored contiguously, which makes scans and analytics fast and lets different
+//! tools (Python, Rust, databases) share data without copying. A record batch
+//! is a set of equally long columns plus a schema.
 
 use std::sync::Arc;
 
@@ -56,8 +61,7 @@ fn create_record_batch(
 pub fn run() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
     let (integers, floats, strings) = create_arrays();
     let schema = create_schema();
-    let batch =
-        create_record_batch(schema.clone(), &integers, &floats, &strings)?;
+    let batch = create_record_batch(schema.clone(), &integers, &floats, &strings)?;
 
     assert_eq!(integers.len(), 5);
     assert_eq!(integers.value(0), 1);

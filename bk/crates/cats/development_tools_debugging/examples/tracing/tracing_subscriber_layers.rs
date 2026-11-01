@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Composing a `tracing` subscriber from layers and filters.
+//!
+//! Layers add behaviour to a subscriber and stack: one layer might print to the
+//! terminal, another write JSON to a file, and a filter drop noisy modules.
+//! Each layer sees every event.
 
 use std::error::Error;
 use std::io;
@@ -48,13 +52,12 @@ fn layers() {
     )
 )]
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
-    // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
-    //    variable, ignoring any invalid filter directives.
+    // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment variable, ignoring
+    //    any invalid filter directives.
     let _filter_layer1 = EnvFilter::from_default_env();
 
-    // 2. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment
-    //    variable, or "info" if the environment variable is unset or contains
-    //    any invalid filter directives.
+    // 2. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment variable, or "info"
+    //    if the environment variable is unset or contains any invalid filter directives.
     let _filter_layer2 = EnvFilter::try_from_default_env()
         .or_else(|_| EnvFilter::try_new("info"))
         .expect("the tracing subscriber layers example invariant should hold");
@@ -133,11 +136,14 @@ mod tests {
     use std::process::Command;
 
     use super::*;
+    use crate::isolated;
 
     /// Exercises the tracing layer configuration.
     #[test]
     fn test_layers() {
-        layers();
+        isolated::run(module_path!(), "test_layers", || {
+            layers();
+        });
     }
 
     /// Checks that filters can be built.
@@ -160,21 +166,23 @@ mod tests {
     #[test]
     #[ignore = "needs a parent-controlled filter environment"]
     fn child_checks_custom_filter() {
-        filter().expect(
-            "the tracing subscriber layers example invariant should hold",
-        );
+        filter().expect("the tracing subscriber layers example invariant should hold");
     }
 
     /// Verifies that per layer filtering.
     #[test]
     fn test_per_layer_filtering() {
-        per_layer_filtering();
+        isolated::run(module_path!(), "test_per_layer_filtering", || {
+            per_layer_filtering();
+        });
     }
 
     #[test]
     fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+        isolated::run(module_path!(), "test_main_entry_point", || {
+            if let Err(err) = main() {
+                panic!("main failed: {err:?}");
+            }
+        });
     }
 }

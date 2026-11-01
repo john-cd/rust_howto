@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Compute line coverage per file from an LCOV report and enforce a minimum.
+//!
+//! Code coverage reports which lines tests execute. LCOV is a plain-text report
+//! format produced by tools such as `cargo llvm-cov`, and parsing it lets a
+//! script summarize or enforce a coverage threshold.
 
 use std::io::BufRead;
 
@@ -69,10 +73,7 @@ fn summarize(input: impl BufRead) -> anyhow::Result<Vec<FileCoverage>> {
 /// # Errors
 ///
 /// Returns an error when a file is below the requested coverage threshold.
-fn check_threshold(
-    files: &[FileCoverage],
-    threshold: f64,
-) -> anyhow::Result<()> {
+fn check_threshold(files: &[FileCoverage], threshold: f64) -> anyhow::Result<()> {
     for file in files {
         anyhow::ensure!(
             file.percent() >= threshold,

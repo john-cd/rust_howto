@@ -1,0 +1,7 @@
+[profile.dev.package]
+mimalloc = {opt-level = 3}
+tikv-jemalloc-sys = {opt-level = 3}
+
+[profile.debugging.package]
+mimalloc = {opt-level = 0, debug = 2}
+tikv-jemalloc-sys = {opt-level = 0, debug = 2}

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Type-level numbers with `typenum`.
+//!
+//! Type-level numbers move numeric values into the type system, so the compiler
+//! checks them. For example, a vector type can carry its length, and adding two
+//! vectors of different lengths fails to compile.
 
 use std::marker::PhantomData;
 

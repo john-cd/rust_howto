@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates matrix decompositions using the `nalgebra` crate.
+//!
+//! A decomposition splits a matrix into simpler ones (such as LU, QR or SVD).
+//! It is the practical way to solve equations, fit curves and compute inverses
+//! with good numerical accuracy.
 
 use nalgebra::Matrix3;
 
@@ -63,10 +67,8 @@ mod tests {
     fn svd_reconstructs_matrix() {
         let m = Matrix3::new(3.0_f64, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 3.0);
         let svd = m.svd(true, true);
-        let (u, v_t) =
-            (svd.u.expect("u requested"), svd.v_t.expect("v_t requested"));
-        let reconstructed =
-            u * Matrix3::from_diagonal(&svd.singular_values) * v_t;
+        let (u, v_t) = (svd.u.expect("u requested"), svd.v_t.expect("v_t requested"));
+        let reconstructed = u * Matrix3::from_diagonal(&svd.singular_values) * v_t;
         assert!((reconstructed - m).norm() < 1e-12);
         // Eigenvalues are 5, 2, 2.
         let sv = svd.singular_values;

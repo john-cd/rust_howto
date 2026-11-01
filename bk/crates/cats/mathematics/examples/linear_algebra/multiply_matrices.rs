@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! This example demonstrates matrix multiplication using the `ndarray` crate.
+//!
+//! Matrix multiplication combines rows of the first matrix with columns of the
+//! second, so the first matrix's column count must equal the second's row
+//! count. Applying a graphics transformation to a point is a matrix
+//! multiplication.
 
 use ndarray::arr2;
 

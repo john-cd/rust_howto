@@ -2,16 +2,20 @@
 
 // ANCHOR: example
 //! Dynamic typing with the `Any` trait.
+//!
+//! Rust is statically typed, but `Any` lets you hold a value of unknown type
+//! and ask at run time whether it is a given type (`downcast_ref`). It is used
+//! for plugin systems and heterogeneous containers; prefer enums or generics
+//! when the set of types is known.
 
 use std::any::Any;
 
-// - `is::<T>(&self) -> bool` checks if the underlying concrete type of the
-//   trait object is `T`.
-// - `downcast_ref::<T>(&self) -> Option<&T>` attempts to downcast the trait
-//   object to a reference `&T`.
+// - `is::<T>(&self) -> bool` checks if the underlying concrete type of the trait object is `T`.
+// - `downcast_ref::<T>(&self) -> Option<&T>` attempts to downcast the trait object to a reference
+//   `&T`.
 // It returns `Some(&T)` if successful, `None` otherwise.
-// - `downcast_mut::<T>(&mut self) -> Option<&mut T>` is similar to
-//   `downcast_ref`, but provides a mutable reference.
+// - `downcast_mut::<T>(&mut self) -> Option<&mut T>` is similar to `downcast_ref`, but provides a
+//   mutable reference.
 //
 // All are implemented on `dyn Any`, `dyn Any + Send`, `dyn Any + Send + Sync`.
 /// Returns whether `s` is a `String`.
@@ -84,8 +88,7 @@ mod tests {
     }
 
     #[test]
-    fn test_downcast_returns_the_box_on_failure()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_downcast_returns_the_box_on_failure() -> Result<(), Box<dyn std::error::Error>> {
         let boxed: Box<dyn Any> = Box::new("text".to_owned());
         let back = boxed.downcast::<i32>().err().ok_or("unexpected i32")?;
         let text = back.downcast::<String>().map_err(|_| "not a String")?;

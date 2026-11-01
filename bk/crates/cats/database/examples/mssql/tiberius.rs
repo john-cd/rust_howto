@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Connects to SQL Server with explicit credentials and runs a parameterized
 //! query.
+//!
+//! SQL Server is Microsoft's relational database; Tiberius speaks its TDS
+//! protocol. Parameterized queries send values separately from the SQL text,
+//! which prevents SQL injection, the attack where user input is interpreted as
+//! SQL.
 
 use anyhow::Context;
 use anyhow::Result;
@@ -16,12 +21,10 @@ use tokio_util::compat::TokioAsyncWriteCompatExt as _;
 #[tokio::main]
 async fn main() -> Result<()> {
     // ANCHOR: connect
-    let host = std::env::var("MSSQL_HOST")
-        .context("set MSSQL_HOST to the SQL Server host")?;
-    let user = std::env::var("MSSQL_USER")
-        .context("set MSSQL_USER to the SQL login")?;
-    let password = std::env::var("MSSQL_PASSWORD")
-        .context("set MSSQL_PASSWORD to the SQL login password")?;
+    let host = std::env::var("MSSQL_HOST").context("set MSSQL_HOST to the SQL Server host")?;
+    let user = std::env::var("MSSQL_USER").context("set MSSQL_USER to the SQL login")?;
+    let password =
+        std::env::var("MSSQL_PASSWORD").context("set MSSQL_PASSWORD to the SQL login password")?;
     let mut config = Config::new();
     config.host(host);
     config.port(1433);

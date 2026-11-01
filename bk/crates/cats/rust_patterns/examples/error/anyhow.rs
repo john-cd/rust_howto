@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates the use of the `anyhow` crate for error handling.
+//!
+//! `anyhow` is for applications: one `anyhow::Error` type holds any error and
+//! lets you add context (`.context("reading the config")`) as it propagates,
+//! which makes error messages readable. Libraries usually define their own
+//! error types instead.
 
 use anyhow::Context as _;
 use anyhow::Result;

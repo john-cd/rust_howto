@@ -32,8 +32,7 @@ async fn main() -> Result<()> {
     let mut writer = ZipFileWriter::new(file.compat_write());
 
     let content = b"Hello, async world!";
-    let entry =
-        ZipEntryBuilder::new("hello.txt".into(), Compression::Stored).build();
+    let entry = ZipEntryBuilder::new("hello.txt".into(), Compression::Stored).build();
 
     writer.write_entry_whole(entry, content).await?;
     writer.close().await?;
@@ -97,8 +96,7 @@ mod tests {
     async fn archive_with_several_entries_lists_them_in_order() -> Result<()> {
         let mut writer = ZipFileWriter::new(Vec::new().compat_write());
         for (name, data) in [("a.txt", "first"), ("dir/b.txt", "second")] {
-            let entry =
-                ZipEntryBuilder::new(name.into(), Compression::Stored).build();
+            let entry = ZipEntryBuilder::new(name.into(), Compression::Stored).build();
             writer.write_entry_whole(entry, data.as_bytes()).await?;
         }
         let bytes = writer.close().await?.into_inner();
@@ -120,8 +118,7 @@ mod tests {
 
     #[tokio::test]
     async fn opening_garbage_is_an_error() {
-        let result =
-            ZipArchiveReader::open(Cursor::new(b"not a zip".to_vec())).await;
+        let result = ZipArchiveReader::open(Cursor::new(b"not a zip".to_vec())).await;
         assert!(result.is_err());
     }
 }

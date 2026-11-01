@@ -159,8 +159,7 @@ fn main() {
     );
 
     // Generate random sentences:
-    let sentences: Vec<String> =
-        (0..3).map(|_| Sentence(3..10).fake()).collect();
+    let sentences: Vec<String> = (0..3).map(|_| Sentence(3..10).fake()).collect();
     println!("Random Sentences: {sentences:#?}");
 
     // Generate random user agents:

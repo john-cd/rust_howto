@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Modifying a `Cow` in place, cloning it on write.
+//!
+//! `to_mut` gives mutable access to the data inside a `Cow`. If it was
+//! borrowed, it is cloned first, so the original is never changed (clone on
+//! write).
 
 use std::borrow::Cow;
 

@@ -28,9 +28,7 @@ fn describe(message: &Message) -> Option<String> {
             "battery {}%, height {} dm",
             data.battery_percentage, data.height
         )),
-        Message::Response(ResponseMsg::Connected(_)) => {
-            Some("connected".to_owned())
-        }
+        Message::Response(ResponseMsg::Connected(_)) => Some("connected".to_owned()),
         _ => None,
     }
 }
@@ -48,9 +46,9 @@ fn connect_drone() -> Result<()> {
         if matches!(message, Message::Response(ResponseMsg::Connected(_))) {
             // `throw_and_go` starts the motors when the drone is thrown into
             // the air by hand; it is a quick way to launch without a button.
-            drone.throw_and_go().map_err(|()| {
-                anyhow::anyhow!("the drone rejected the command")
-            })?;
+            drone
+                .throw_and_go()
+                .map_err(|()| anyhow::anyhow!("the drone rejected the command"))?;
         }
     }
     Ok(())
@@ -102,8 +100,8 @@ mod tests {
     /// A captured-style flight-data packet decodes into the expected text.
     #[test]
     fn flight_data_is_described() {
-        let message = Message::try_from(flight_data_packet(12, 87))
-            .expect("the packet is well formed");
+        let message =
+            Message::try_from(flight_data_packet(12, 87)).expect("the packet is well formed");
         assert_eq!(
             describe(&message).as_deref(),
             Some("battery 87%, height 12 dm")

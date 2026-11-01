@@ -1,4 +1,3 @@
-#![allow(unused_imports)]
 // TODO Reviewed ??-??-2026.
 // ANCHOR: example
 //! Accessing private items from the same module and its children.
@@ -43,9 +42,7 @@ fn main() {
 
     // A public function may expose the behavior of private ones:
     alias::not_private();
-    println!(
-        "private_access example: private items accessed only from parent/same module"
-    );
+    println!("private_access example: private items accessed only from parent/same module");
 }
 
 // ANCHOR_END: example

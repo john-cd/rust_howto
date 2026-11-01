@@ -61,8 +61,8 @@ mod tests {
     fn tone_has_the_expected_format() {
         let source = tone();
         let channels = NonZeroUsize::from(source.channels()).get();
-        let sample_rate = usize::try_from(source.sample_rate().get())
-            .expect("the sample rate fits in usize");
+        let sample_rate =
+            usize::try_from(source.sample_rate().get()).expect("the sample rate fits in usize");
         assert_eq!(channels, 1);
         let samples = source.count();
         let expected = sample_rate * channels * 2;
@@ -75,8 +75,7 @@ mod tests {
     /// Opening the default sink succeeds when an output device exists.
     #[test]
     #[ignore = "needs an audio output device"]
-    fn default_sink_can_be_opened() -> Result<(), Box<dyn Error + Send + Sync>>
-    {
+    fn default_sink_can_be_opened() -> Result<(), Box<dyn Error + Send + Sync>> {
         let _sink = DeviceSinkBuilder::open_default_sink()?;
         Ok(())
     }
@@ -84,8 +83,7 @@ mod tests {
     /// Plays the tone through the entry point.
     #[test]
     #[ignore = "needs an audio output device"]
-    fn test_play_sound_example_entry_point()
-    -> Result<(), Box<dyn Error + Send + Sync>> {
+    fn test_play_sound_example_entry_point() -> Result<(), Box<dyn Error + Send + Sync>> {
         run()
     }
 }

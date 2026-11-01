@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Computing the mean and the standard deviation of a list of integers.
+//!
+//! The standard deviation measures how spread out the values are around the
+//! mean: about two thirds of normally distributed data lies within one standard
+//! deviation of the mean. The sample version divides by n-1 and the population
+//! version by n.
 
 /// Calculates the mean (average) of a slice of i32 integers.
 ///
@@ -62,9 +67,7 @@ fn main() {
 
     let data_std_deviation = std_deviation(&data);
     println!("Standard deviation is {data_std_deviation:?}");
-    assert!(
-        matches!(data_std_deviation, Some(value) if (value - 3.6110942).abs() < 1e-6)
-    );
+    assert!(matches!(data_std_deviation, Some(value) if (value - 3.6110942).abs() < 1e-6));
 
     let zscore = match (data_mean, data_std_deviation) {
         (Some(mean), Some(std_deviation)) => {

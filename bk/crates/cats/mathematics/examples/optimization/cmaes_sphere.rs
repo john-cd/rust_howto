@@ -1,4 +1,11 @@
 // ANCHOR: example
+//! Minimize the sphere function with CMA-ES.
+//!
+//! CMA-ES is an evolutionary optimizer: it samples candidates from a
+//! distribution and adapts the distribution towards the better ones. It needs
+//! no gradients, so it works on noisy or badly behaved functions. The sphere
+//! function is a standard test whose minimum is at the origin.
+
 use cmaes::CMAESOptions;
 use cmaes::DVector;
 use cmaes::TerminationReason;

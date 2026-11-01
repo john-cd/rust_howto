@@ -1,4 +1,10 @@
 // ANCHOR: example
+//! Find a root of a function numerically.
+//!
+//! A root of a function is an input where it equals zero. Solving equations
+//! such as f(x) = 0 numerically means starting from a guess or a bracket and
+//! refining it until the error is small enough.
+
 use argmin::core::CostFunction;
 use argmin::core::Error;
 use argmin::core::Executor;

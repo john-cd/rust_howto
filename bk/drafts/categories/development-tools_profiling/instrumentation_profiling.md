@@ -35,6 +35,16 @@ To look at the profile, install the viewer with `cargo install puffin_viewer`, r
 
 To test instrumented code without a server or a viewer, add a sink with `puffin::GlobalFrameView::default()`, run the code, finish a frame, and inspect `latest_frame()`. The unit tests of this example do so.
 
+## Time a Code Block with `measure_time` {#measure-time}
+
+[![measure_time][c~measure_time~docs~badge]][c~measure_time~docs]{{hi:measure_time}} [![measure_time~crates.io][c~measure_time~crates.io~badge]][c~measure_time~crates.io] [![measure_time~repo][c~measure_time~repo~badge]][c~measure_time~repo] [![cat~development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling]{{hi:Profiling}}{{hi:Timing}}
+
+[`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} is the lightest form of instrumentation: `print_time!("label")` starts a timer that prints the elapsed time when the enclosing scope ends. Use it for a quick look at how long a block takes, not for statistically sound measurements; for those, see [Benchmarking][p~benchmarking].
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_profiling/src/memory_usage_analysis/measure_time.rs:example}}
+```
+
 ## Practical Notes {#practical-notes}
 
 - **Overhead**: each recorded scope costs tens of nanoseconds. Keep scopes out of the innermost loops, and turn recording off (`set_scopes_on(false)`) when nobody is looking. A failed `Server::new`, for instance because the port is taken, should disable profiling, not crash the application.

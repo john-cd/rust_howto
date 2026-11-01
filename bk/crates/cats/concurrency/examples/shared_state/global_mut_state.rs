@@ -12,8 +12,7 @@ use anyhow::Result;
 use anyhow::anyhow;
 
 /// Global fruit list initialized once and protected by a mutex.
-static FRUIT: LazyLock<Mutex<Vec<String>>> =
-    LazyLock::new(|| Mutex::new(Vec::new()));
+static FRUIT: LazyLock<Mutex<Vec<String>>> = LazyLock::new(|| Mutex::new(Vec::new()));
 
 /// Adds `fruit` to the global database.
 fn insert(fruit: &str) -> Result<()> {
@@ -89,8 +88,7 @@ mod tests {
             .map_err(|_| anyhow!("Failed to acquire MutexGuard"))?
             .len();
         std::thread::scope(|s| {
-            let handles: Vec<_> =
-                (0..8).map(|_| s.spawn(|| insert("fig"))).collect();
+            let handles: Vec<_> = (0..8).map(|_| s.spawn(|| insert("fig"))).collect();
             for handle in handles {
                 handle
                     .join()

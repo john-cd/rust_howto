@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Logging an error with the `log` crate.
+//!
+//! Logging an error with `error!` records that something failed, with enough
+//! context to find it later. Log an error where it is handled, not at every
+//! layer it passes through, or the same failure appears many times.
 
 /// Simulates executing a database query.
 /// This function always returns an error for demonstration purposes.
@@ -17,9 +21,7 @@ fn main() {
     if let Err(err) = response {
         log::error!("Failed to execute query: {err}");
     }
-    println!(
-        "log_error example: set RUST_LOG=error to see the error log above"
-    );
+    println!("log_error example: set RUST_LOG=error to see the error log above");
 }
 
 // ANCHOR_END: example
@@ -31,11 +33,14 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Runs the log error example through its entry point.
     #[test]
     fn test_log_error_example_entry_point() {
-        main();
+        isolated::run(module_path!(), "test_log_error_example_entry_point", || {
+            main();
+        });
     }
 
     #[test]

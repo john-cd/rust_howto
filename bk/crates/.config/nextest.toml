@@ -11,6 +11,7 @@ dir = "../../target/bk/nextest"
 # This section defines the default nextest profile. Custom profiles are layered
 # on top of the default profile.
 [profile.default]
+fail-fast = true
 # The set of tests run by `cargo nextest run` by default.
 # default-filter = "all()"
 
@@ -53,7 +54,7 @@ run-extra-args = []
 # failed and retried tests.
 #
 # Can be overridden through the `--status-level` flag.
-status-level = "pass"
+status-level = "fail"
 
 # Similar to status-level, show these test statuses at the end of the run.
 final-status-level = "flaky"
@@ -69,15 +70,11 @@ final-status-level = "flaky"
 # For large test suites and CI it is generally useful to use "immediate-final".
 #
 # Can be overridden through the `--failure-output` option.
-failure-output = "immediate"
+failure-output = "final"
 
 # "success-output" controls production of standard output and standard error on success. This should
 # generally be set to "never".
 success-output = "never"
-
-# Cancel the test run on the first failure. For CI runs, consider setting this
-# to false.
-fail-fast = true
 
 # Treat a test that takes longer than the configured 'period' as slow, and print a message.
 # See <https://nexte.st/docs/features/slow-tests> for more information.
@@ -86,7 +83,7 @@ fail-fast = true
 # which will cause slow tests to be terminated after the specified number of
 # periods have passed.
 # Example: slow-timeout = { period = "60s", terminate-after = 2 }
-slow-timeout = { period = "60s" }
+slow-timeout = { period = "60s", terminate-after = 2 }
 
 # Treat a test as leaky if after the process is shut down, standard output and standard error
 # aren't closed within this duration.
@@ -137,10 +134,13 @@ store-failure-output = true
 [profile.default-miri]
 
 [profile.ci]
+inherits = "default"
 default-filter = "not (test(ignore_in_ci) or test(require_external_svc))"
 
 # Do not cancel the test run on the first failure.
 fail-fast = false
+
+retries = 2
 
 # Show skipped, passed tests, failed tests...
 status-level = "skip"
@@ -148,3 +148,9 @@ status-level = "skip"
 # Output failures as soon as they happen and at the end of
 # the test run;
 failure-output = "immediate-final"
+
+final-status-level = "skip"
+
+[profile.ci.junit]
+path = "junit.xml"
+report-name = "rust-howto-bk-ci"

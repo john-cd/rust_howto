@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example using `Box<T>` for recursive data structures.
+//!
+//! A recursive type such as a linked list or tree would have infinite size if
+//! it contained itself. A `Box` is a fixed-size pointer to the heap, which
+//! breaks the cycle.
 
 /// Represents a single element in a (highly simplified) linked list.
 struct Node {

@@ -8,7 +8,7 @@ Interfacing with Objective-C from Rust is typically done using the Objective-C r
 
 ## `objc2` {#objc2}
 
-[![objc2][c~objc2~docs~badge]][c~objc2~docs] [![objc2~crates.io][c~objc2~crates.io~badge]][c~objc2~crates.io] [![objc2~repo][c~objc2~repo~badge]][c~objc2~repo] [![objc2~lib.rs][c~objc2~lib.rs~badge]][c~objc2~lib.rs]{{hi:objc2}}
+{{#badges objc2}}
 
 Objective-C bindings for Rust.
 

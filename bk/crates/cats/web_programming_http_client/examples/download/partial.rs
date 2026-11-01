@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Downloads a file in verified byte ranges.
+//!
+//! HTTP range requests (the `Range: bytes=0-99` header) ask the server for part
+//! of a file. They allow resuming interrupted downloads and fetching in
+//! parallel. Servers that support them answer with status 206 (Partial
+//! Content).
 
 use std::fs::File;
 use std::io;
@@ -83,11 +88,7 @@ impl Iterator for PartialRangeIter {
 /// Returns an error if the server omits or provides invalid length metadata,
 /// does not return `206 Partial Content` for a range, returns a mismatched or
 /// incomplete range, or if a request or write fails.
-fn download_to<W: Write>(
-    url: &str,
-    chunk_size: u32,
-    output: &mut W,
-) -> Result<()> {
+fn download_to<W: Write>(url: &str, chunk_size: u32, output: &mut W) -> Result<()> {
     if chunk_size == 0 {
         bail!("chunk_size must be greater than zero");
     }
@@ -100,9 +101,8 @@ fn download_to<W: Write>(
         .context("HEAD response omitted Content-Length")?
         .to_str()
         .context("HEAD response Content-Length was not valid text")?;
-    let content_length = u64::from_str(content_length).context(
-        "HEAD response Content-Length was not a valid unsigned integer",
-    )?;
+    let content_length = u64::from_str(content_length)
+        .context("HEAD response Content-Length was not a valid unsigned integer")?;
 
     if content_length == 0 {
         return Ok(());
@@ -111,15 +111,11 @@ fn download_to<W: Write>(
     for range in PartialRangeIter::new(0, content_length - 1, chunk_size)? {
         let start = *range.start();
         let end = *range.end();
-        let range_header =
-            HeaderValue::from_str(&format!("bytes={start}-{end}"))?;
-        let mut response =
-            client.get(url).header(RANGE, range_header).send()?;
+        let range_header = HeaderValue::from_str(&format!("bytes={start}-{end}"))?;
+        let mut response = client.get(url).header(RANGE, range_header).send()?;
         let status = response.status();
         if status != StatusCode::PARTIAL_CONTENT {
-            bail!(
-                "Expected 206 Partial Content for bytes {start}-{end}, got {status}"
-            );
+            bail!("Expected 206 Partial Content for bytes {start}-{end}, got {status}");
         }
 
         let content_range = response
@@ -128,12 +124,9 @@ fn download_to<W: Write>(
             .context("206 response omitted Content-Range")?
             .to_str()
             .context("206 response Content-Range was not valid text")?;
-        let expected_content_range =
-            format!("bytes {start}-{end}/{content_length}");
+        let expected_content_range = format!("bytes {start}-{end}/{content_length}");
         if content_range != expected_content_range {
-            bail!(
-                "Expected Content-Range {expected_content_range}, got {content_range}"
-            );
+            bail!("Expected Content-Range {expected_content_range}, got {content_range}");
         }
 
         let expected_bytes = end
@@ -229,12 +222,10 @@ mod tests {
 
                 let (start, end) = parse_range_header(&request)?;
                 if range_status == StatusCode::PARTIAL_CONTENT {
-                    let start = usize::try_from(start).map_err(|error| {
-                        io::Error::new(io::ErrorKind::InvalidData, error)
-                    })?;
-                    let end = usize::try_from(end).map_err(|error| {
-                        io::Error::new(io::ErrorKind::InvalidData, error)
-                    })?;
+                    let start = usize::try_from(start)
+                        .map_err(|error| io::Error::new(io::ErrorKind::InvalidData, error))?;
+                    let end = usize::try_from(end)
+                        .map_err(|error| io::Error::new(io::ErrorKind::InvalidData, error))?;
                     let body = content.get(start..=end).ok_or_else(|| {
                         io::Error::new(
                             io::ErrorKind::InvalidData,
@@ -270,8 +261,7 @@ mod tests {
             match listener.accept() {
                 Ok((stream, _)) => return Ok(stream),
                 Err(error)
-                    if error.kind() == io::ErrorKind::WouldBlock
-                        && Instant::now() < deadline =>
+                    if error.kind() == io::ErrorKind::WouldBlock && Instant::now() < deadline =>
                 {
                     std::thread::sleep(Duration::from_millis(10));
                 }
@@ -300,9 +290,8 @@ mod tests {
             })?;
             request.extend_from_slice(chunk);
             if request.windows(4).any(|window| window == b"\r\n\r\n") {
-                return String::from_utf8(request).map_err(|error| {
-                    io::Error::new(io::ErrorKind::InvalidData, error)
-                });
+                return String::from_utf8(request)
+                    .map_err(|error| io::Error::new(io::ErrorKind::InvalidData, error));
             }
         }
     }
@@ -333,12 +322,12 @@ mod tests {
                 "Range header omitted its start or end",
             )
         })?;
-        let start = start.parse::<u64>().map_err(|error| {
-            io::Error::new(io::ErrorKind::InvalidData, error)
-        })?;
-        let end = end.parse::<u64>().map_err(|error| {
-            io::Error::new(io::ErrorKind::InvalidData, error)
-        })?;
+        let start = start
+            .parse::<u64>()
+            .map_err(|error| io::Error::new(io::ErrorKind::InvalidData, error))?;
+        let end = end
+            .parse::<u64>()
+            .map_err(|error| io::Error::new(io::ErrorKind::InvalidData, error))?;
         if start > end {
             return Err(io::Error::new(
                 io::ErrorKind::InvalidData,
@@ -349,9 +338,7 @@ mod tests {
     }
 
     /// Joins the server and returns its captured requests.
-    fn join_server(
-        server: JoinHandle<io::Result<Vec<String>>>,
-    ) -> Result<Vec<String>> {
+    fn join_server(server: JoinHandle<io::Result<Vec<String>>>) -> Result<Vec<String>> {
         server
             .join()
             .map_err(|_| anyhow::anyhow!("local range server panicked"))?
@@ -391,11 +378,7 @@ mod tests {
     #[test]
     fn downloads_all_ranges_without_gaps_or_overlaps() -> Result<()> {
         let content = b"0123456789".to_vec();
-        let (url, server) = start_range_server(
-            content.clone(),
-            StatusCode::PARTIAL_CONTENT,
-            4,
-        )?;
+        let (url, server) = start_range_server(content.clone(), StatusCode::PARTIAL_CONTENT, 4)?;
         let mut output = Vec::new();
 
         let download_result = download_to(&url, 4, &mut output);
@@ -404,16 +387,15 @@ mod tests {
 
         assert_eq!(output, content);
         assert_eq!(requests.len(), 4);
-        assert!(requests.first().is_some_and(|request| {
-            request.starts_with("HEAD /resource HTTP/1.1\r\n")
-        }));
+        assert!(
+            requests
+                .first()
+                .is_some_and(|request| { request.starts_with("HEAD /resource HTTP/1.1\r\n") })
+        );
         let ranges = requests
             .iter()
             .skip(1)
-            .map(|request| {
-                range_header(request)
-                    .context("GET request omitted its Range header")
-            })
+            .map(|request| range_header(request).context("GET request omitted its Range header"))
             .collect::<Result<Vec<_>>>()?;
         assert_eq!(ranges, ["bytes=0-3", "bytes=4-7", "bytes=8-9"]);
         Ok(())
@@ -422,8 +404,7 @@ mod tests {
     /// Verifies an empty file needs only HEAD and leaves the output empty.
     #[test]
     fn empty_file_does_not_send_range_requests() -> Result<()> {
-        let (url, server) =
-            start_range_server(Vec::new(), StatusCode::PARTIAL_CONTENT, 1)?;
+        let (url, server) = start_range_server(Vec::new(), StatusCode::PARTIAL_CONTENT, 1)?;
         let mut output = Vec::new();
 
         download_to(&url, 4, &mut output)?;
@@ -431,9 +412,11 @@ mod tests {
 
         assert!(output.is_empty());
         assert_eq!(requests.len(), 1);
-        assert!(requests.first().is_some_and(|request| {
-            request.starts_with("HEAD /resource HTTP/1.1\r\n")
-        }));
+        assert!(
+            requests
+                .first()
+                .is_some_and(|request| { request.starts_with("HEAD /resource HTTP/1.1\r\n") })
+        );
         Ok(())
     }
 

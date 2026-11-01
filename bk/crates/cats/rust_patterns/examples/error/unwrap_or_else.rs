@@ -61,11 +61,8 @@ mod tests {
     #[test]
     fn test_unwrap_or_else_example_entry_point() {
         use std::fs;
-        if !fs::exists("temp")
-            .expect("the example temp directory should be accessible")
-        {
-            fs::create_dir("temp")
-                .expect("the example temp directory should be created");
+        if !fs::exists("temp").expect("the example temp directory should be accessible") {
+            fs::create_dir("temp").expect("the example temp directory should be created");
         }
         main();
     }

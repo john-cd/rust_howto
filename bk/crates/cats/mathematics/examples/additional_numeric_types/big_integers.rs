@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates big integer manipulation.
+//!
+//! A normal integer overflows beyond 64 bits. Big integers grow as needed,
+//! which cryptography, exact factorials and similar tasks need, at the cost of
+//! speed.
 
 use num::bigint::BigInt;
 use num::bigint::ToBigInt as _;

@@ -8,18 +8,23 @@
     Installs development dependencies for Windows.
 #>
 
-Write-Host "Installing Rust components..." -ForegroundColor Cyan
-$rustfmtToolchain = if ($env:RUSTFMT_TOOLCHAIN) {
-    $env:RUSTFMT_TOOLCHAIN
+$defaultTempRoot = if (Test-Path -LiteralPath 'D:\temp' -PathType Container) {
+    'D:\temp'
 } else {
-    (Select-String -Path (Join-Path $PSScriptRoot "..\rustfmt-toolchain.toml") -Pattern '^channel\s*=\s*"([^"]+)"').Matches[0].Groups[1].Value
+    'C:\temp'
 }
-rustup default stable
-rustup toolchain install $rustfmtToolchain
-rustup component add clippy
-rustup component add rustfmt --toolchain $rustfmtToolchain
-
-Write-Host "Installing system tools via Winget..." -ForegroundColor Cyan
+$temporaryRoot = if ($env:CODE_TEMP_ROOT) { $env:CODE_TEMP_ROOT } else { $defaultTempRoot }
+if (-not (Test-Path -LiteralPath $temporaryRoot -PathType Container)) {
+    New-Item -ItemType Directory -Path $temporaryRoot -Force | Out-Null
+}
+$env:TEMP = $temporaryRoot
+$env:TMP = $temporaryRoot
+$env:TMPDIR = $temporaryRoot
+$toolsRoot = if ($env:CODE_TOOLS_ROOT) { $env:CODE_TOOLS_ROOT } else { 'C:\tools' }
+$packagesRoot = if ($env:CODE_PACKAGES_ROOT) { $env:CODE_PACKAGES_ROOT } else { 'D:\packages' }
+if (-not (Test-Path -LiteralPath $toolsRoot -PathType Container)) {
+    New-Item -ItemType Directory -Path $toolsRoot -Force | Out-Null
+}
 
 $toolVersions = @{}
 Get-Content (Join-Path $PSScriptRoot ".env") | ForEach-Object {
@@ -28,8 +33,20 @@ Get-Content (Join-Path $PSScriptRoot ".env") | ForEach-Object {
     }
 }
 
-# Install Just (Task Runner)
-winget install --id Casey.Just --exact --source winget --accept-source-agreements --accept-package-agreements
+Write-Host "Installing Rust components..." -ForegroundColor Cyan
+$rustVersion = $toolVersions["RUST_VERSION"]
+$rustfmtToolchain = if ($env:RUSTFMT_TOOLCHAIN) {
+    $env:RUSTFMT_TOOLCHAIN
+} else {
+    (Select-String -Path (Join-Path $PSScriptRoot "..\rustfmt-toolchain.toml") -Pattern '^channel\s*=\s*"([^"]+)"').Matches[0].Groups[1].Value
+}
+rustup toolchain install $rustVersion --profile minimal
+rustup default $rustVersion
+rustup component add clippy rustfmt --toolchain $rustVersion
+rustup toolchain install $rustfmtToolchain --profile minimal --component rustfmt
+
+Write-Host "Installing system tools via Winget..." -ForegroundColor Cyan
+
 # Install LLVM/Clang (Required for bindgen in some crates)
 winget install --id LLVM.LLVM -e --source winget --accept-source-agreements --accept-package-agreements
 winget install --id SQLite.SQLite -e --source winget --accept-source-agreements --accept-package-agreements
@@ -37,24 +54,55 @@ winget install --id SQLite.SQLite -e --source winget --accept-source-agreements 
 winget install --id Ninja-build.Ninja -e --source winget --accept-source-agreements --accept-package-agreements
 # Install the SDKs used by the Java, Ruby, and Python FFI examples.
 winget install --id EclipseAdoptium.Temurin.21.JDK -e --source winget --accept-source-agreements --accept-package-agreements
-winget install --id Python.Python.3.13 -e --source winget --accept-source-agreements --accept-package-agreements
-winget install --id RubyInstallerTeam.RubyWithDevKit.3.3 -e --source winget --accept-source-agreements --accept-package-agreements
+winget install 9NQ7512CXL7T -e --accept-package-agreements --disable-interactivity
+$pythonVersion = $toolVersions["PYTHON_VERSION"]
+pymanager install $pythonVersion
+# Install the Ruby 4.0 runtime, headers, and libraries required by Rutie.
 & (Join-Path $PSScriptRoot 'install_ruby_4_0.ps1')
 
-# Install the repository-pinned Pandoc release. Its MSI updates PATH when installed.
+# Install the repository-pinned portable Pandoc release under the shared tool root.
 $pandocVersion = $toolVersions["PANDOC_VERSION"]
-$pandocInstaller = Join-Path $env:TEMP "pandoc-$pandocVersion-windows-x86_64.msi"
-$pandocUri = "https://github.com/jgm/pandoc/releases/download/$pandocVersion/pandoc-$pandocVersion-windows-x86_64.msi"
-Invoke-WebRequest -Uri $pandocUri -OutFile $pandocInstaller
-$pandocHash = (Get-FileHash -LiteralPath $pandocInstaller -Algorithm SHA256).Hash.ToLowerInvariant()
-if ($pandocHash -ne $toolVersions["PANDOC_WINDOWS_MSI_SHA256"]) {
-    throw "Pandoc MSI SHA-256 did not match the pinned digest: $pandocHash"
-}
-$quotedPandocInstaller = '"{0}"' -f $pandocInstaller
-$pandocInstall = Start-Process -FilePath msiexec.exe -ArgumentList @('/i', $quotedPandocInstaller, '/qn', '/norestart') -Wait -PassThru
-Remove-Item -LiteralPath $pandocInstaller -ErrorAction SilentlyContinue
-if ($pandocInstall.ExitCode -notin @(0, 3010)) {
-    throw "Pandoc installer failed with exit code $($pandocInstall.ExitCode)."
+$pandocDirectory = Join-Path (Join-Path $toolsRoot 'pandoc') $pandocVersion
+$pandocExecutable = Join-Path $pandocDirectory 'pandoc.exe'
+if (-not (Test-Path -LiteralPath $pandocExecutable -PathType Leaf)) {
+    if (Test-Path -LiteralPath $pandocDirectory) {
+        throw "Pandoc install directory exists without pandoc.exe: $pandocDirectory"
+    }
+
+    $pandocArchive = Join-Path $env:TEMP "pandoc-$pandocVersion-windows-x86_64.zip"
+    $pandocStage = Join-Path $env:TEMP "pandoc-$pandocVersion-$PID"
+    if (Test-Path -LiteralPath $pandocStage) {
+        throw "Pandoc staging directory already exists: $pandocStage"
+    }
+
+    Invoke-WebRequest -Uri "https://github.com/jgm/pandoc/releases/download/$pandocVersion/pandoc-$pandocVersion-windows-x86_64.zip" -OutFile $pandocArchive
+    $pandocHash = (Get-FileHash -LiteralPath $pandocArchive -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($pandocHash -ne $toolVersions['PANDOC_WINDOWS_ZIP_SHA256']) {
+        Remove-Item -LiteralPath $pandocArchive -ErrorAction SilentlyContinue
+        throw "Pandoc ZIP SHA-256 did not match the pinned digest: $pandocHash"
+    }
+
+    New-Item -ItemType Directory -Path $pandocStage | Out-Null
+    try {
+        Expand-Archive -LiteralPath $pandocArchive -DestinationPath $pandocStage -Force
+        $pandocSource = Get-ChildItem -LiteralPath $pandocStage -Filter 'pandoc.exe' -File -Recurse | Select-Object -First 1
+        if (-not $pandocSource) {
+            throw 'Pandoc ZIP is missing pandoc.exe.'
+        }
+        $pandocSourceDirectory = $pandocSource.Directory.FullName
+        New-Item -ItemType Directory -Path (Split-Path -Parent $pandocDirectory) -Force | Out-Null
+        Move-Item -LiteralPath $pandocSourceDirectory -Destination $pandocDirectory
+    } finally {
+        if (Test-Path -LiteralPath $pandocStage) {
+            $tempRoot = [IO.Path]::GetFullPath($env:TEMP).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
+            $resolvedStage = [IO.Path]::GetFullPath($pandocStage)
+            if (-not $resolvedStage.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase)) {
+                throw "Refusing to remove Pandoc staging directory outside TEMP: $resolvedStage"
+            }
+            Remove-Item -LiteralPath $resolvedStage -Recurse -Force
+        }
+        Remove-Item -LiteralPath $pandocArchive -ErrorAction SilentlyContinue
+    }
 }
 
 # Winget installs these tools outside the current shell's inherited PATH on some hosts.
@@ -68,16 +116,78 @@ function Add-UserPath {
     $resolvedDirectory = (Resolve-Path -LiteralPath $Directory).Path.TrimEnd('\')
     $processEntries = @($env:Path -split ';' | Where-Object { $_ })
     if (-not ($processEntries | Where-Object { $_.TrimEnd('\') -ieq $resolvedDirectory })) {
-        $env:Path = "$env:Path;$resolvedDirectory"
+        $env:Path = "$resolvedDirectory;$env:Path"
     }
 
     $userPath = [Environment]::GetEnvironmentVariable('Path', 'User')
     $userEntries = @($userPath -split ';' | Where-Object { $_ })
     if (-not ($userEntries | Where-Object { $_.TrimEnd('\') -ieq $resolvedDirectory })) {
-        $newUserPath = if ([string]::IsNullOrWhiteSpace($userPath)) { $resolvedDirectory } else { "$userPath;$resolvedDirectory" }
+        $newUserPath = if ([string]::IsNullOrWhiteSpace($userPath)) { $resolvedDirectory } else { "$resolvedDirectory;$userPath" }
         [Environment]::SetEnvironmentVariable('Path', $newUserPath, 'User')
     }
 }
+
+Add-UserPath -Directory $pandocDirectory
+
+# Install OpenSSL through the pinned vcpkg release so openssl-sys can discover
+# the x64 libraries using its default Rust/MSVC triplet.
+function Install-VcpkgOpenSsl {
+    $vcpkgVersion = $toolVersions['VCPKG_VERSION']
+    $vcpkgRoot = if ($env:VCPKG_ROOT) {
+        [IO.Path]::GetFullPath($env:VCPKG_ROOT)
+    } else {
+        Join-Path (Join-Path $packagesRoot 'vcpkg') $vcpkgVersion
+    }
+    $vcpkgExecutable = Join-Path $vcpkgRoot 'vcpkg.exe'
+    $bootstrapScript = Join-Path $vcpkgRoot 'bootstrap-vcpkg.bat'
+
+    if (-not (Test-Path -LiteralPath $vcpkgExecutable -PathType Leaf)) {
+        if (-not (Test-Path -LiteralPath $bootstrapScript -PathType Leaf)) {
+            if (Test-Path -LiteralPath $vcpkgRoot) {
+                throw "VCPKG_ROOT exists but is not a vcpkg checkout: $vcpkgRoot"
+            }
+
+            $vcpkgParent = Split-Path -Parent $vcpkgRoot
+            New-Item -ItemType Directory -Path $vcpkgParent -Force | Out-Null
+            & git clone --branch $vcpkgVersion --depth 1 --single-branch https://github.com/microsoft/vcpkg.git $vcpkgRoot
+            if ($LASTEXITCODE -ne 0) {
+                throw "Could not clone vcpkg release $vcpkgVersion (exit code $LASTEXITCODE)."
+            }
+        }
+
+        & $bootstrapScript -disableMetrics
+        if ($LASTEXITCODE -ne 0) {
+            throw "vcpkg bootstrap failed with exit code $LASTEXITCODE."
+        }
+    }
+
+    $triplet = 'x64-windows-static-md'
+    [Environment]::SetEnvironmentVariable('VCPKG_ROOT', $vcpkgRoot, 'User')
+    [Environment]::SetEnvironmentVariable('VCPKGRS_TRIPLET', $triplet, 'User')
+    $env:VCPKG_ROOT = $vcpkgRoot
+    $env:VCPKGRS_TRIPLET = $triplet
+    Add-UserPath -Directory $vcpkgRoot
+
+    & $vcpkgExecutable install "openssl:$triplet" --disable-metrics
+    if ($LASTEXITCODE -ne 0) {
+        throw "vcpkg OpenSSL installation failed with exit code $LASTEXITCODE."
+    }
+
+    $opensslInstall = Join-Path $vcpkgRoot "installed\$triplet"
+    foreach ($requiredFile in @(
+        (Join-Path (Join-Path $opensslInstall 'include') 'openssl\opensslv.h'),
+        (Join-Path (Join-Path $opensslInstall 'lib') 'libcrypto.lib'),
+        (Join-Path (Join-Path $opensslInstall 'lib') 'libssl.lib')
+    )) {
+        if (-not (Test-Path -LiteralPath $requiredFile -PathType Leaf)) {
+            throw "vcpkg OpenSSL installation is missing a required SDK file: $requiredFile"
+        }
+    }
+
+    Write-Host "OpenSSL SDK installed for $triplet in $vcpkgRoot" -ForegroundColor Green
+}
+
+Install-VcpkgOpenSsl
 
 # Install the pinned Oracle Instant Client runtime and SDK for OCI examples.
 function Install-OracleInstantClient {
@@ -88,10 +198,7 @@ function Install-OracleInstantClient {
     }
 
     $oracleDirectoryName = "instantclient_$($Matches.major)_$($Matches.minor)"
-    $oracleVersionDirectory = Join-Path $env:LOCALAPPDATA 'Programs'
-    $oracleVersionDirectory = Join-Path $oracleVersionDirectory 'Oracle'
-    $oracleVersionDirectory = Join-Path $oracleVersionDirectory 'InstantClient'
-    $oracleVersionDirectory = Join-Path $oracleVersionDirectory $oracleVersion
+    $oracleVersionDirectory = Join-Path (Join-Path $toolsRoot 'oracle') $oracleVersion
     $oracleDirectory = Join-Path $oracleVersionDirectory $oracleDirectoryName
     $oracleDll = Join-Path $oracleDirectory 'oci.dll'
     $oracleSdkDirectory = Join-Path $oracleDirectory 'sdk'
@@ -178,7 +285,7 @@ Install-OracleInstantClient
 function Install-OnnxRuntime {
     $version = $toolVersions['ONNXRUNTIME_VERSION']
     $archiveName = "onnxruntime-win-x64-$version"
-    $installRoot = Join-Path (Join-Path $env:LOCALAPPDATA 'Programs') 'onnxruntime'
+    $installRoot = Join-Path  'onnxruntime'
     $runtimeDirectory = Join-Path $installRoot $archiveName
     $runtimeDll = Join-Path (Join-Path $runtimeDirectory 'lib') 'onnxruntime.dll'
 
@@ -251,7 +358,7 @@ if ($javaHome) {
 
 # Install the pinned NASM build required by aws-lc-sys.
 $nasmVersion = $toolVersions["NASM_VERSION"]
-$nasmDirectory = Join-Path $env:LOCALAPPDATA "Programs\NASM\$nasmVersion"
+$nasmDirectory = Join-Path (Join-Path $toolsRoot 'nasm') $nasmVersion
 $nasmExecutable = Join-Path $nasmDirectory "nasm.exe"
 if (-not (Test-Path -LiteralPath $nasmExecutable -PathType Leaf)) {
     if (Test-Path -LiteralPath $nasmDirectory) {
@@ -299,11 +406,8 @@ $env:Path = "$nasmDirectory;$env:Path"
 @(
     (Join-Path $env:ProgramFiles 'LLVM\bin'),
     (Join-Path $env:ProgramFiles 'NASM'),
-    'C:\Ruby33-x64\bin',
-    'C:\Ruby33-x64\msys64\usr\bin',
     (Join-Path $env:LOCALAPPDATA 'Pandoc'),
-    (Join-Path $env:LOCALAPPDATA 'bin'),
-    (Join-Path $env:LOCALAPPDATA 'bin\NASM')
+    (Join-Path $env:LOCALAPPDATA 'bin')
 ) | ForEach-Object { Add-UserPath -Directory $_ }
 
 # Use the publisher's pinned prebuilt binary instead of compiling Tectonic's native libraries.
@@ -315,7 +419,7 @@ $tectonicHash = (Get-FileHash -LiteralPath $tectonicArchive -Algorithm SHA256).H
 if ($tectonicHash -ne $toolVersions["TECTONIC_WINDOWS_SHA256"]) {
     throw "Tectonic archive SHA-256 did not match the pinned digest: $tectonicHash"
 }
-$tectonicDirectory = Join-Path $env:LOCALAPPDATA "Programs\Tectonic\$tectonicVersion"
+$tectonicDirectory = Join-Path (Join-Path $toolsRoot 'tectonic') $tectonicVersion
 New-Item -ItemType Directory -Force -Path $tectonicDirectory | Out-Null
 Expand-Archive -LiteralPath $tectonicArchive -DestinationPath $tectonicDirectory -Force
 Remove-Item -LiteralPath $tectonicArchive -ErrorAction SilentlyContinue
@@ -324,12 +428,16 @@ Add-UserPath -Directory $tectonicDirectory
 # The GTK 4 and Relm4 examples are Linux-only in later/crates/cats/gui.
 
 # Install cargo-binstall for Rust-based tools
-Set-ExecutionPolicy Unrestricted -Scope Process; iex (iwr "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.ps1").Content
+$binstallVersion = $toolVersions["CARGO_BINSTALL_VERSION"]
+$env:BINSTALL_VERSION = $binstallVersion
+Set-ExecutionPolicy Unrestricted -Scope Process; iex (iwr "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/v$binstallVersion/install-from-binstall-release.ps1").Content
+Remove-Item Env:BINSTALL_VERSION -ErrorAction SilentlyContinue
 
 Write-Host "Installing Rust-based tools..." -ForegroundColor Cyan
 $tools = @(
     @{ Name = "mdbook"; Version = $toolVersions["MDBOOK_VERSION"] },
     @{ Name = "mdbook-linkcheck"; Version = $toolVersions["MDBOOK_LINKCHECK_VERSION"] },
+    @{ Name = "mdbook-admonish"; Version = $toolVersions["MDBOOK_ADMONISH_VERSION"] },
     @{ Name = "cargo-nextest"; Version = $toolVersions["CARGO_NEXTEST_VERSION"] },
     @{ Name = "just"; Version = $toolVersions["JUST_VERSION"] },
     @{ Name = "cargo-fmt-toml"; Version = $toolVersions["CARGO_FMT_TOML_VERSION"] },
@@ -351,7 +459,7 @@ foreach ($tool in $tools) {
 }
 
 $flutterVersion = $toolVersions["FLUTTER_VERSION"]
-$flutterInstallPath = Join-Path $env:LOCALAPPDATA "Programs\Flutter\$flutterVersion"
+$flutterInstallPath = Join-Path $toolsRoot "flutter-sdk-$flutterVersion"
 & (Join-Path $PSScriptRoot "install_flutter_sdk.ps1") `
     -Version $flutterVersion `
     -GitRevision $toolVersions["FLUTTER_GIT_REVISION"] `
@@ -365,7 +473,6 @@ $env:Path = "$flutterBin;$env:Path"
 cargo install --git https://github.com/john-cd/mdbook-utils --rev $toolVersions["MDBOOK_UTILS_REV"] --locked mdbook-utils
 cargo install --locked --force --version $toolVersions["MDBOOK_INDEXING_VERSION"] mdbook-indexing
 cargo binstall --no-confirm --secure --version $toolVersions["MDBOOK_PANDOC_VERSION"] mdbook-pandoc
-cargo binstall --no-confirm --secure mdbook-admonish
 
 Write-Host "Environment check:" -ForegroundColor Cyan
 just --version
@@ -381,10 +488,18 @@ tectonic --version
 cargo fmt-toml --version
 dprint --version
 rumdl --version
-python --version
+$pythonVersionOutput = python --version
+if ($LASTEXITCODE -ne 0 -or $pythonVersionOutput -notmatch ("^Python {0}$" -f [regex]::Escape($pythonVersion))) {
+    throw "Expected Python $pythonVersion on PATH, got: $pythonVersionOutput"
+}
+$pythonVersionOutput
 java --version
 javac --version
-ruby --version
+$rubyVersionOutput = ruby --version
+if ($LASTEXITCODE -ne 0 -or $rubyVersionOutput -notmatch '^ruby 4\.0\.\d+\b') {
+    throw "Expected ruby on PATH to resolve to Ruby 4.0.x, got: $rubyVersionOutput"
+}
+$rubyVersionOutput
 & $env:RUBY --version
 maturin --version
 flutter --version

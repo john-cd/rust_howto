@@ -60,8 +60,7 @@ mod tests {
     #[test]
     fn default_config_creates_context() {
         let cfg = Config::default();
-        let ctx: Context<u8> =
-            cfg.new_context().expect("default context should build");
+        let ctx: Context<u8> = cfg.new_context().expect("default context should build");
         let _frame = ctx.new_frame();
     }
 }

@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Represent, add, and format money with an explicit currency.
+//!
+//! Never store money as `f64`: binary floating point cannot represent values
+//! such as 0.10 exactly, so errors creep into totals. Libraries like this keep
+//! an exact amount together with its currency, and refuse to add dollars to
+//! euros.
 
 use rusty_money::Money;
 use rusty_money::iso;
@@ -17,8 +22,7 @@ pub fn run() {
     assert_eq!(total.to_string(), "$21.59");
 
     // Parse user input in the currency's own format.
-    let parsed =
-        Money::from_str("1,000.50", iso::USD).expect("valid USD amount");
+    let parsed = Money::from_str("1,000.50", iso::USD).expect("valid USD amount");
     assert_eq!(parsed.amount().to_string(), "1000.50");
 
     // The same amount formats according to the currency's conventions.
@@ -26,8 +30,7 @@ pub fn run() {
     assert_eq!(euros.to_string(), "€1.234,56");
 
     // Adding different currencies is an error, not a meaningless number.
-    let mixed =
-        Money::from_minor(100, iso::USD).add(Money::from_minor(100, iso::EUR));
+    let mixed = Money::from_minor(100, iso::USD).add(Money::from_minor(100, iso::EUR));
     assert!(mixed.is_err());
 }
 // ANCHOR_END: example

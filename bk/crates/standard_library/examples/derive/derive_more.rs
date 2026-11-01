@@ -106,9 +106,7 @@ fn main() {
 
 // More complex example: Multiple derives on a single type.
 /// An amount of money.
-#[derive(
-    Add, AddAssign, Sub, SubAssign, From, Into, Display, Debug, Clone, Copy,
-)]
+#[derive(Add, AddAssign, Sub, SubAssign, From, Into, Display, Debug, Clone, Copy)]
 struct Amount(f64);
 
 // Custom error type with derive_more's `Error` trait.
@@ -127,11 +125,7 @@ enum AppError {
 
 // Using multiple types with `derive_more`.
 /// Moves `value` from one amount to another, unless the balance is too low.
-fn transfer_amount(
-    from: &mut Amount,
-    to: &mut Amount,
-    value: Amount,
-) -> Result<(), AppError> {
+fn transfer_amount(from: &mut Amount, to: &mut Amount, value: Amount) -> Result<(), AppError> {
     if from.0 < value.0 {
         return Err(AppError::InsufficientFundsError);
     }

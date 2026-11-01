@@ -3,6 +3,5 @@
 /// Keeps the invalid mutation of a live shared reborrow from compiling.
 #[test]
 fn mutable_access_conflicts_with_live_shared_reborrow() {
-    trybuild::TestCases::new()
-        .compile_fail("tests/ui/incompatible_shared_reborrow.rs");
+    trybuild::TestCases::new().compile_fail("tests/ui/incompatible_shared_reborrow.rs");
 }

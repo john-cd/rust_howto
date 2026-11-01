@@ -19,6 +19,10 @@ mod tracing_subscriber3b;
 mod tracing_subscriber4;
 mod tracing_subscriber_layers;
 
+#[cfg(test)]
+#[path = "../support/isolated.rs"]
+mod isolated;
+
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
@@ -55,10 +59,7 @@ enum Commands {
     #[command(name = "tracing_subscriber1b")]
     TracingSubscriber1b,
     /// Runs the example that composes tracing subscriber layers.
-    #[command(
-        name = "tracing_subscriber_layers",
-        alias = "tracing_subscriber2"
-    )]
+    #[command(name = "tracing_subscriber_layers", alias = "tracing_subscriber2")]
     TracingSubscriberLayers,
     /// Runs the `tracing_subscriber2b` example.
     #[command(name = "tracing_subscriber2b")]
@@ -103,8 +104,7 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
                 tracing_subscriber1b::run();
             }
             Commands::TracingSubscriberLayers => {
-                tracing_subscriber_layers::run()
-                    .map_err(|e| anyhow::anyhow!(e.to_string()))?;
+                tracing_subscriber_layers::run().map_err(|e| anyhow::anyhow!(e.to_string()))?;
             }
             Commands::TracingSubscriber2b => {
                 tracing_subscriber2b::run();
@@ -184,8 +184,7 @@ mod tests {
     /// Running without a subcommand selects nothing and succeeds.
     #[test]
     fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"])
-            .expect("no subcommand is accepted");
+        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
         assert!(cli.command.is_none());
         dispatch(cli).expect("dispatching should succeed");
     }

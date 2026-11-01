@@ -10,7 +10,7 @@ Many GUI frameworks include their own layout model: [egui][ex~gui~egui] position
 
 ## `taffy` {#taffy}
 
-[![taffy][c~taffy~docs~badge]][c~taffy~docs] [![taffy~crates.io][c~taffy~crates.io~badge]][c~taffy~crates.io] [![taffy~repo][c~taffy~repo~badge]][c~taffy~repo] [![taffy~lib.rs][c~taffy~lib.rs~badge]][c~taffy~lib.rs]{{hi:taffy}}{{hi:Cross-platform}}{{hi:Css-grid}}{{hi:Flexbox}}{{hi:Grid}}{{hi:Layout}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+{{#badges taffy gui=GUI}}{{hi:Cross-platform}}{{hi:Css-grid}}{{hi:Flexbox}}{{hi:Grid}}{{hi:Layout}}
 
 Taffy implements CSS Flexbox and Grid layout calculations in a toolkit-independent tree. It is also used by UI stacks such as Bevy UI and Dioxus; choose it when an application needs to compute layout separately from rendering.
 
@@ -20,7 +20,7 @@ Taffy implements CSS Flexbox and Grid layout calculations in a toolkit-independe
 
 ## `morphorm` {#morphorm}
 
-[![morphorm][c~morphorm~docs~badge]][c~morphorm~docs] [![morphorm~crates.io][c~morphorm~crates.io~badge]][c~morphorm~crates.io] [![morphorm~repo][c~morphorm~repo~badge]][c~morphorm~repo] [![morphorm~lib.rs][c~morphorm~lib.rs~badge]][c~morphorm~lib.rs]{{hi:morphorm}}{{hi:Flex}}{{hi:Gui}}{{hi:Layout}}{{hi:Ui}}
+{{#badges morphorm}}{{hi:Flex}}{{hi:Gui}}{{hi:Layout}}{{hi:Ui}}
 
 Morphorm uses a one-pass tree traversal to calculate node sizes and positions, with row, column, overlay, and grid layout types. Vizia uses it for adaptive layout; choose it when a toolkit or application needs a separate layout tree.
 

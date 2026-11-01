@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Format a byte count as a human-readable size.
+//!
+//! People read "1.5 MiB" faster than "1572864". Binary units (KiB, MiB) use
+//! powers of 1024; decimal units (kB, MB) use 1000, so pick the one your
+//! audience expects.
 
 use humansize::BINARY;
 use humansize::DECIMAL;

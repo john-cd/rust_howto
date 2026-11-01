@@ -1,11 +1,13 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "needs AWS credentials (SES); the tests use mocks"
-)]
+#![expect(dead_code, reason = "needs AWS credentials (SES); the tests use mocks")]
 // ANCHOR: example
 //! Send an HTML and plain-text email with Amazon SES v2.
+//!
+//! Amazon SES is a service for sending email at scale. A message has a
+//! plain-text and an HTML part, and mail clients choose the one they can show.
+//! You must verify the sender address or domain before it will send. Running
+//! this needs AWS credentials.
 
 use anyhow::Context;
 use anyhow::Result;
@@ -26,11 +28,7 @@ fn content(text: &str) -> Result<Content> {
 }
 
 /// Builds the message: clients that cannot render HTML fall back to the text.
-pub fn build_email(
-    subject: &str,
-    text: &str,
-    html: &str,
-) -> Result<EmailContent> {
+pub fn build_email(subject: &str, text: &str, html: &str) -> Result<EmailContent> {
     let body = Body::builder()
         .text(content(text)?)
         .html(content(html)?)

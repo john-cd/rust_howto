@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Removes dangerous markup from untrusted HTML with `ammonia`.
+//!
+//! XSS (cross-site scripting) is an attack where untrusted HTML runs a script
+//! in another user's browser. Sanitizing removes dangerous tags and attributes,
+//! keeping a safe allow-list. Always sanitize user-submitted HTML before
+//! showing it.
 
 use ammonia::Builder;
 
@@ -36,7 +41,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

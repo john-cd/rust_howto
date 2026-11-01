@@ -51,8 +51,7 @@ mod tests {
     /// Headings, emphasis and lists are rendered.
     #[test]
     fn renders_markdown() {
-        let html =
-            to_html("# Title\n\n**bold** and *italic*\n\n* one\n* two\n");
+        let html = to_html("# Title\n\n**bold** and *italic*\n\n* one\n* two\n");
         assert!(html.contains("<h1>Title</h1>"), "{html}");
         assert!(html.contains("<strong>bold</strong>"), "{html}");
         assert!(html.contains("<em>italic</em>"), "{html}");

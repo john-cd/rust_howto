@@ -31,10 +31,7 @@ impl<G: Forward<f64>> CachedGeocoder<G> {
     }
 
     /// Returns the coordinates (longitude, latitude) of the best match.
-    fn locate(
-        &mut self,
-        query: &str,
-    ) -> Result<Option<Point<f64>>, GeocodingError> {
+    fn locate(&mut self, query: &str) -> Result<Option<Point<f64>>, GeocodingError> {
         let key = normalize(query);
         if let Some(hit) = self.cache.get(&key) {
             return Ok(*hit);
@@ -74,10 +71,7 @@ struct Gazetteer {
 }
 
 impl Forward<f64> for Gazetteer {
-    fn forward(
-        &self,
-        address: &str,
-    ) -> Result<Vec<Point<f64>>, GeocodingError> {
+    fn forward(&self, address: &str) -> Result<Vec<Point<f64>>, GeocodingError> {
         self.calls.set(self.calls.get() + 1);
         if address == "eiffel tower, paris" {
             Ok(vec![Point::new(2.2945, 48.8584)])

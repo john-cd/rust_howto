@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! `comrak` is a `CommonMark` and GitHub-flavored Markdown compatible parser.
+//!
+//! CommonMark is a precise specification of Markdown, which has many ambiguous
+//! dialects. GitHub-flavored Markdown (GFM) adds tables, task lists and
+//! strikethrough. `comrak` parses and renders both, for example to convert
+//! Markdown to HTML.
 
 use comrak::Arena;
 use comrak::Options;
@@ -12,8 +17,7 @@ use comrak::parse_document;
 
 /// Converts markdown to HTML.
 fn to_html() {
-    let markdown_input =
-        "# Hello world\n\nThis is **bold** text and *italic* text.";
+    let markdown_input = "# Hello world\n\nThis is **bold** text and *italic* text.";
     let html_output = markdown_to_html(markdown_input, &Options::default());
 
     println!("{html_output}");
@@ -25,11 +29,7 @@ fn to_html() {
 /// # Arguments
 /// * `document` - The markdown document to modify.
 /// * `orig_string` - The string to replace.
-fn replace_text(
-    document: &str,
-    orig_string: &str,
-    replacement: &str,
-) -> String {
+fn replace_text(document: &str, orig_string: &str, replacement: &str) -> String {
     // The returned nodes are created in the supplied `Arena`, and are bound by
     // its lifetime.
     let arena = Arena::new();
@@ -46,8 +46,7 @@ fn replace_text(
     }
 
     let mut html = String::new();
-    format_html(root, &Options::default(), &mut html)
-        .expect("failed to format HTML");
+    format_html(root, &Options::default(), &mut html).expect("failed to format HTML");
 
     html
 }

@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Inspect MP4 container metadata including tracks and duration using `mp4`.
+//!
+//! MP4 is a container: it holds separate tracks (video, audio, subtitles) plus
+//! metadata such as duration and codecs. Reading the metadata is cheap because
+//! the index is stored apart from the media data, so you need not decode the
+//! video.
 
 use std::error::Error;
 use std::io::Cursor;
@@ -14,9 +19,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let duration = mp4.duration();
     let track_count = mp4.tracks().len();
 
-    println!(
-        "MP4 container contains {track_count} track(s) with duration {duration:?}."
-    );
+    println!("MP4 container contains {track_count} track(s) with duration {duration:?}.");
 
     #[allow(
         clippy::iter_over_hash_type,
@@ -42,8 +45,7 @@ fn create_sample_mp4() -> Result<Vec<u8>, Box<dyn Error + Send + Sync>> {
         compatible_brands: vec![str::parse("isom")?, str::parse("iso2")?],
         timescale: 1000,
     };
-    let mut writer =
-        mp4::Mp4Writer::write_start(Cursor::new(&mut buf), &config)?;
+    let mut writer = mp4::Mp4Writer::write_start(Cursor::new(&mut buf), &config)?;
 
     let media_conf = mp4::TrackConfig {
         track_type: mp4::TrackType::Audio,

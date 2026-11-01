@@ -2,10 +2,7 @@
 
 #![cfg_attr(
     not(test),
-    expect(
-        dead_code,
-        reason = "needs a Kubernetes cluster; the tests use mocks"
-    )
+    expect(dead_code, reason = "needs a Kubernetes cluster; the tests use mocks")
 )]
 // ANCHOR: example
 //! A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`),
@@ -107,13 +104,9 @@ pub fn desired_deployment(echo: &Echo) -> Result<Deployment, ReconcileError> {
 }
 
 /// Brings the cluster closer to the desired state, then reports the status.
-async fn reconcile(
-    echo: Arc<Echo>,
-    ctx: Arc<Context>,
-) -> Result<Action, ReconcileError> {
+async fn reconcile(echo: Arc<Echo>, ctx: Arc<Context>) -> Result<Action, ReconcileError> {
     let namespace = echo.namespace().ok_or(ReconcileError::MissingMetadata)?;
-    let deployments: Api<Deployment> =
-        Api::namespaced(ctx.client.clone(), &namespace);
+    let deployments: Api<Deployment> = Api::namespaced(ctx.client.clone(), &namespace);
     let desired = desired_deployment(&echo)?;
 
     // Server-side apply: creates or updates, so reconciling twice is harmless.
@@ -133,9 +126,7 @@ async fn reconcile(
             .patch_status(
                 &echo.name_any(),
                 &PatchParams::default(),
-                &Patch::Merge(
-                    json!({ "status": EchoStatus { ready_replicas: ready } }),
-                ),
+                &Patch::Merge(json!({ "status": EchoStatus { ready_replicas: ready } })),
             )
             .await?;
     }
@@ -143,11 +134,7 @@ async fn reconcile(
 }
 
 /// Decides what to do after a failed reconciliation: retry later.
-fn error_policy(
-    _echo: Arc<Echo>,
-    error: &ReconcileError,
-    _ctx: Arc<Context>,
-) -> Action {
+fn error_policy(_echo: Arc<Echo>, error: &ReconcileError, _ctx: Arc<Context>) -> Action {
     eprintln!("reconcile failed: {error}");
     Action::requeue(Duration::from_secs(15))
 }
@@ -236,7 +223,7 @@ mod tests {
     #[test]
     fn desired_deployment_follows_the_spec() -> Result<(), ReconcileError> {
         let deployment = desired_deployment(&echo())?;
-        let spec = deployment.spec.expect("spec");
+        let spec = deployment.spec;
         assert_eq!(spec.replicas, Some(2));
         let owners = deployment.metadata.owner_references.expect("owner");
         assert_eq!(owners[0].kind, "Echo");

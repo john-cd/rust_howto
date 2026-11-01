@@ -3,9 +3,9 @@
 // ANCHOR: example
 //! Using `impl Trait` as an argument type and as a return type.
 //!
-//! `impl Trait` syntax allows functions to accept or return unnameable or
-//! abstract types that satisfy a trait, avoiding trait object overhead
-//! while hiding internal concrete types.
+//! `impl Trait` in argument position means "any type implementing the trait".
+//! In return position it hides the concrete type, which is useful for closures
+//! and iterators whose real type cannot be written.
 
 // Define an example trait and two structs that implement it:
 /// A thing that can speak.

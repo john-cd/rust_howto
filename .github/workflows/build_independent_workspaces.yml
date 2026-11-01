@@ -43,6 +43,12 @@ env:
   ## CI uses rust-cache instead of the local sccache wrapper.
   RUSTC_WRAPPER: ""
 
+  CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
+  CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
+  CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
+  CARGO_INCREMENTAL: '0'
 permissions:
   contents: read
 
@@ -83,8 +89,13 @@ jobs:
         uses: ./.github/actions/setup-rust
         with:
           toolchain: ${{ env.RUST_VERSION }}
-          cache-workspaces: |
-            ${{ matrix.workspace }} -> ../target/${{ matrix.workspace }}
+          cache-workspaces: |-
+            bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            later/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            tools -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            playground -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            publish -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main
           cache-key: ${{ matrix.workspace }}
 
       - name: Format

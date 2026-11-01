@@ -219,6 +219,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Store Collections of Objects that Need Unique, Stable, Safe Identifiers][ex~data-structures~slotmap]
 - [![smallvec][c~smallvec~docs~badge]][c~smallvec~docs]
   - [Store Small Vectors on the Stack with Fallback to the Heap, with `smallvec`][ex~data-structures~smallvec]
+- [![sprs][c~sprs~docs~badge]][c~sprs~docs]
+  - [Work with Sparse Matrices][ex~mathematics~sparse-matrices]
 - [![sqlx][c~sqlx~docs~badge]][c~sqlx~docs]
 - [![statrs][c~statrs~docs~badge]][c~statrs~docs]
 - [![std][c~std~docs~badge]][c~std~docs]

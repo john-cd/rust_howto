@@ -123,7 +123,6 @@ cargo-fuzz
 cargo-geiger
 cargo-hack
 cargo-hakari
-cargo-husky
 cargo-insta
 cargo-license
 cargo-lichking
@@ -227,7 +226,6 @@ der
 derive
 derive_builder
 devx-cmd
-devx-pre-commit
 dhat
 dialoguer
 dicom

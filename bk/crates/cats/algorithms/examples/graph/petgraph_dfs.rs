@@ -14,11 +14,10 @@
 //! to explore remaining unvisited branch choices.
 //!
 //! ### Key Properties & Comparison with BFS
-//! - **Memory Efficiency**: In deep sparse graphs, DFS uses memory proportional
-//!   to maximum search depth $O(V)$, whereas BFS memory grows with frontier
-//!   width $O(V)$.
-//! - **Non-Optimal Paths**: Unlike BFS, DFS does **not** guarantee finding the
-//!   shortest path on unweighted graphs.
+//! - **Memory Efficiency**: In deep sparse graphs, DFS uses memory proportional to maximum search
+//!   depth $O(V)$, whereas BFS memory grows with frontier width $O(V)$.
+//! - **Non-Optimal Paths**: Unlike BFS, DFS does **not** guarantee finding the shortest path on
+//!   unweighted graphs.
 //!
 //! ### Typical Use Cases
 //! - Detecting cycles in directed or undirected graphs.

@@ -28,8 +28,7 @@ fn unwrap_expect() {
     // which is useful for debugging.
     // If calling `expect` is always safe, explain why in the message.
     let z = Some("A string");
-    let _value =
-        z.expect("Can't panic: the `Option` is guaranteed to be `Some`.");
+    let _value = z.expect("Can't panic: the `Option` is guaranteed to be `Some`.");
 }
 
 /// Provides default values with `unwrap_or`, `unwrap_or_default` and

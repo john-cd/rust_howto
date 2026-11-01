@@ -34,7 +34,8 @@ impl model::Category {
 
 /// Retrieves the categories associated with a given crate name from `crates.io`.
 ///
-/// This function queries the `crates.io` API to fetch the category information for the specified crate.
+/// This function queries the `crates.io` API to fetch the category information for the specified
+/// crate.
 ///
 /// Returns a list of categories for a crate, given its name
 pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<model::Category>> {

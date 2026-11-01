@@ -10,12 +10,11 @@
 //! NEON).
 //!
 //! ### Non-Cryptographic Checksum vs. Cryptographic MAC
-//! - **Accidental Corruption Detection**: XXH3 reliably detects accidental bit
-//!   flips, truncated files, network transmission errors, and disk corruption.
-//! - **NOT Malice-Proof**: Because XXH3 is non-cryptographic, an intentional
-//!   adversary can easily forge a valid matching XXH3 checksum for tampered
-//!   payload data. For tamper resistance against malicious attackers, use HMAC
-//!   (e.g., `HMAC-SHA256`) or digital signatures.
+//! - **Accidental Corruption Detection**: XXH3 reliably detects accidental bit flips, truncated
+//!   files, network transmission errors, and disk corruption.
+//! - **NOT Malice-Proof**: Because XXH3 is non-cryptographic, an intentional adversary can easily
+//!   forge a valid matching XXH3 checksum for tampered payload data. For tamper resistance against
+//!   malicious attackers, use HMAC (e.g., `HMAC-SHA256`) or digital signatures.
 //!
 //! ### Purpose & Use Cases
 //! - In-memory data frame checksums in high-throughput network streaming.
@@ -64,7 +63,8 @@ fn main() {
 
 /// Runs the XXH3 checksum example by calling `main()`.
 pub fn run() {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry();
 }

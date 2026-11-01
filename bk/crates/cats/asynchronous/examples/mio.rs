@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! This example demonstrates basic `mio` event polling with a `Waker`.
+//!
+//! `mio` is the low-level layer under Tokio: it asks the operating system (via
+//! epoll, kqueue or IOCP) to say which sockets are ready, so one thread can
+//! watch thousands of connections. A `Waker` lets another thread interrupt the
+//! wait.
 
 use std::time::Duration;
 
@@ -60,8 +65,7 @@ mod tests {
         let waker = Waker::new(poll.registry(), WAKE_TOKEN)?;
         waker.wake()?;
         poll.poll(&mut events, Some(Duration::from_millis(500)))?;
-        let tokens: Vec<Token> =
-            events.iter().map(mio::event::Event::token).collect();
+        let tokens: Vec<Token> = events.iter().map(mio::event::Event::token).collect();
         assert_eq!(tokens, [WAKE_TOKEN]);
         Ok(())
     }

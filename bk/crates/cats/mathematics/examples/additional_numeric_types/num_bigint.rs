@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates the usage of `BigInt` for large integer arithmetic.
+//!
+//! A normal integer overflows beyond 64 bits. `BigInt` grows as needed, which
+//! cryptography and exact calculations such as large factorials need, at the
+//! cost of speed.
 
 use std::str::FromStr as _;
 

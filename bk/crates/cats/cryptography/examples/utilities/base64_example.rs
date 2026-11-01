@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Encode and decode bytes with the `base64` crate.
+//!
+//! Base64 represents arbitrary bytes using 64 printable characters, so binary
+//! data can travel through text-only channels such as JSON or email. It makes
+//! the data about a third larger and is not encryption.
 
 use base64::Engine as _;
 use base64::engine::general_purpose::STANDARD;

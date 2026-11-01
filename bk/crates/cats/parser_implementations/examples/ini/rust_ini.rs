@@ -77,8 +77,7 @@ mod tests {
 
     /// Verifies that the rust ini example's main path succeeds.
     #[test]
-    fn rust_ini_example_parses_and_writes_configuration() -> anyhow::Result<()>
-    {
+    fn rust_ini_example_parses_and_writes_configuration() -> anyhow::Result<()> {
         use std::fs;
         fs::create_dir_all("temp")?;
         main()?;

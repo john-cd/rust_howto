@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Send an HTTPS request with a client certificate and private key.
+//!
+//! In mutual TLS (mTLS) both sides prove who they are with certificates, not
+//! just the server. It is common between internal services (a service mesh) and
+//! for devices that call APIs, as the certificate acts as a strong credential.
 
 use std::time::Duration;
 
@@ -15,10 +19,7 @@ use rustls::crypto::ring;
 
 /// Builds a client that trusts the supplied server CA and presents a client
 /// identity.
-fn build_client(
-    ca_certificate_pem: &[u8],
-    client_identity_pem: &[u8],
-) -> anyhow::Result<Client> {
+fn build_client(ca_certificate_pem: &[u8], client_identity_pem: &[u8]) -> anyhow::Result<Client> {
     install_crypto_provider()?;
     let ca_certificate = Certificate::from_pem(ca_certificate_pem)?;
     let identity = Identity::from_pem(client_identity_pem)?;
@@ -62,10 +63,8 @@ async fn main() -> anyhow::Result<()> {
 
     let ca_certificate_pem = std::fs::read(&ca_path)
         .with_context(|| format!("reading CA certificate from {ca_path}"))?;
-    let client_identity_pem =
-        std::fs::read(&identity_path).with_context(|| {
-            format!("reading client identity from {identity_path}")
-        })?;
+    let client_identity_pem = std::fs::read(&identity_path)
+        .with_context(|| format!("reading client identity from {identity_path}"))?;
     let client = build_client(&ca_certificate_pem, &client_identity_pem)?;
     let response = client.get(&url).send().await?.error_for_status()?;
 
@@ -121,8 +120,8 @@ mod tests {
     /// Builds an Ed25519 PKCS#8 fixture key from a fixed test-only seed.
     fn fixture_key(seed: u8) -> anyhow::Result<KeyPair> {
         let mut der = vec![
-            0x30, 0x2e, 0x02, 0x01, 0x00, 0x30, 0x05, 0x06, 0x03, 0x2b, 0x65,
-            0x70, 0x04, 0x22, 0x04, 0x20,
+            0x30, 0x2e, 0x02, 0x01, 0x00, 0x30, 0x05, 0x06, 0x03, 0x2b, 0x65, 0x70, 0x04, 0x22,
+            0x04, 0x20,
         ];
         der.extend([seed; 32]);
         let private_key = PrivatePkcs8KeyDer::from(der);
@@ -135,10 +134,7 @@ mod tests {
 
     /// Assigns fixed validity dates so local certificate fixtures are
     /// reproducible.
-    fn set_fixture_validity(
-        params: &mut CertificateParams,
-        serial_number: u64,
-    ) {
+    fn set_fixture_validity(params: &mut CertificateParams, serial_number: u64) {
         params.not_before = date_time_ymd(2020, 1, 1);
         params.not_after = date_time_ymd(2100, 1, 1);
         params.serial_number = Some(SerialNumber::from(serial_number));
@@ -146,40 +142,30 @@ mod tests {
 
     /// Creates a local CA, a localhost server certificate, and a client
     /// identity.
-    fn local_certificate_fixtures() -> anyhow::Result<LocalCertificateFixtures>
-    {
+    fn local_certificate_fixtures() -> anyhow::Result<LocalCertificateFixtures> {
         let mut ca_params = CertificateParams::default();
         set_fixture_validity(&mut ca_params, 1);
         ca_params.is_ca = IsCa::Ca(BasicConstraints::Constrained(0));
-        ca_params.key_usages =
-            vec![KeyUsagePurpose::KeyCertSign, KeyUsagePurpose::CrlSign];
+        ca_params.key_usages = vec![KeyUsagePurpose::KeyCertSign, KeyUsagePurpose::CrlSign];
         let ca_key = fixture_key(1)?;
         let ca_certificate = ca_params.self_signed(&ca_key)?;
         let issuer = Issuer::from_params(&ca_params, &ca_key);
 
         let server_key = fixture_key(2)?;
-        let mut server_params =
-            CertificateParams::new(vec!["localhost".to_owned()])?;
+        let mut server_params = CertificateParams::new(vec!["localhost".to_owned()])?;
         set_fixture_validity(&mut server_params, 2);
         server_params.key_usages = vec![KeyUsagePurpose::DigitalSignature];
-        server_params.extended_key_usages =
-            vec![ExtendedKeyUsagePurpose::ServerAuth];
-        let server_certificate =
-            server_params.signed_by(&server_key, &issuer)?;
+        server_params.extended_key_usages = vec![ExtendedKeyUsagePurpose::ServerAuth];
+        let server_certificate = server_params.signed_by(&server_key, &issuer)?;
 
         let client_key = fixture_key(3)?;
         let mut client_params = CertificateParams::default();
         set_fixture_validity(&mut client_params, 3);
         client_params.key_usages = vec![KeyUsagePurpose::DigitalSignature];
-        client_params.extended_key_usages =
-            vec![ExtendedKeyUsagePurpose::ClientAuth];
-        let client_certificate =
-            client_params.signed_by(&client_key, &issuer)?;
-        let client_identity_pem = format!(
-            "{}{}",
-            client_certificate.pem(),
-            client_key.serialize_pem()
-        );
+        client_params.extended_key_usages = vec![ExtendedKeyUsagePurpose::ClientAuth];
+        let client_certificate = client_params.signed_by(&client_key, &issuer)?;
+        let client_identity_pem =
+            format!("{}{}", client_certificate.pem(), client_key.serialize_pem());
 
         Ok(LocalCertificateFixtures {
             ca_certificate_der: ca_certificate.der().clone(),
@@ -193,10 +179,7 @@ mod tests {
     }
 
     /// Reads one bounded HTTP request and returns a fixed response over TLS.
-    async fn serve_one_request(
-        listener: TcpListener,
-        acceptor: TlsAcceptor,
-    ) -> anyhow::Result<()> {
+    async fn serve_one_request(listener: TcpListener, acceptor: TlsAcceptor) -> anyhow::Result<()> {
         let (tcp_stream, _) = listener.accept().await?;
         let mut tls_stream = acceptor.accept(tcp_stream).await?;
         let mut request = Vec::with_capacity(1024);
@@ -204,10 +187,7 @@ mod tests {
         while !request.windows(4).any(|window| window == b"\r\n\r\n") {
             let mut chunk = [0; 1024];
             let bytes_read = tls_stream.read(&mut chunk).await?;
-            ensure!(
-                bytes_read > 0,
-                "client closed before sending HTTP headers"
-            );
+            ensure!(bytes_read > 0, "client closed before sending HTTP headers");
             request.extend_from_slice(&chunk[..bytes_read]);
             ensure!(
                 request.len() <= 16 * 1024,
@@ -230,8 +210,7 @@ mod tests {
     /// Verifies a reqwest client presents its identity to a trusted loopback
     /// mTLS server.
     #[tokio::test]
-    async fn client_certificate_authenticates_to_loopback_server()
-    -> anyhow::Result<()> {
+    async fn client_certificate_authenticates_to_loopback_server() -> anyhow::Result<()> {
         let fixtures = local_certificate_fixtures()?;
         let mut client_roots = RootCertStore::empty();
         client_roots.add(fixtures.ca_certificate_der.clone())?;
@@ -240,15 +219,13 @@ mod tests {
             Arc::new(ring::default_provider()),
         )
         .build()?;
-        let server_config = ServerConfig::builder_with_provider(Arc::new(
-            ring::default_provider(),
-        ))
-        .with_safe_default_protocol_versions()?
-        .with_client_cert_verifier(verifier)
-        .with_single_cert(
-            vec![fixtures.server_certificate_der],
-            fixtures.server_private_key,
-        )?;
+        let server_config = ServerConfig::builder_with_provider(Arc::new(ring::default_provider()))
+            .with_safe_default_protocol_versions()?
+            .with_client_cert_verifier(verifier)
+            .with_single_cert(
+                vec![fixtures.server_certificate_der],
+                fixtures.server_private_key,
+            )?;
         let listener = TcpListener::bind("127.0.0.1:0").await?;
         let address = listener.local_addr()?;
         let acceptor = TlsAcceptor::from(Arc::new(server_config));

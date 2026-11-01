@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Returning a borrowed or an owned string with `Cow`.
+//!
+//! `Cow` (clone on write) holds either a borrowed or an owned value. Both
+//! `&str` and `String` convert into it with `into()`, so a function can return
+//! whichever is cheaper.
 
 use std::borrow::Cow;
 
@@ -70,10 +74,7 @@ mod tests {
 
     #[test]
     fn test_custom_description_is_owned() {
-        let custom = describe_status(&HttpStatus::Custom(
-            500,
-            "Internal Server Error".to_owned(),
-        ));
+        let custom = describe_status(&HttpStatus::Custom(500, "Internal Server Error".to_owned()));
         assert!(matches!(custom, Cow::Owned(_)));
         assert_eq!(custom, "Status: 500 Internal Server Error");
     }

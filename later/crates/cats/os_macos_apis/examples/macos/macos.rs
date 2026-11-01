@@ -1,6 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
 //! Read the macOS version through typed Foundation bindings.
+//!
+//! Foundation is Apple's base framework for macOS and iOS apps. The typed
+//! bindings let Rust call it without writing Objective-C. It runs on macOS
+//! only.
 
 // ANCHOR: example
 use std::io;

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to multiply a scalar by a vector and then
 //! multiply a matrix by the resulting vector.
+//!
+//! A scalar is a single number, a vector is a list of numbers (for example a
+//! position) and a matrix is a grid. Multiplying by a scalar scales every
+//! element.
 
 use ndarray::Array1;
 use ndarray::arr1;

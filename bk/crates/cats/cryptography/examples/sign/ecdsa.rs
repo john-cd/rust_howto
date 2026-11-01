@@ -77,8 +77,7 @@ mod tests {
     fn wrong_key_is_rejected() -> anyhow::Result<()> {
         let mut rng = SysRng;
         let signer = SigningKey::try_generate_from_rng(&mut rng)?;
-        let other =
-            VerifyingKey::from(SigningKey::try_generate_from_rng(&mut rng)?);
+        let other = VerifyingKey::from(SigningKey::try_generate_from_rng(&mut rng)?);
         let signature: Signature = signer.sign(b"message");
         assert!(other.verify(b"message", &signature).is_err());
         Ok(())

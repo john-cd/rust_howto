@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Parses Rust source text with `syn` (outside of a procedural macro) and
 //! counts the items it defines with a `Visit` implementation.
+//!
+//! `syn` parses Rust source text into a syntax tree of items, functions and
+//! expressions. It is the foundation of procedural macros and of tools that
+//! analyse or rewrite Rust code.
 
 use syn::visit::Visit;
 
@@ -63,7 +67,8 @@ fn main() -> syn::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> syn::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

@@ -16,7 +16,7 @@
 
 ## Create a Priority Queue {#priority-queue}
 
-[![priority-queue][c~priority-queue~docs~badge]][c~priority-queue~docs] [![priority-queue~crates.io][c~priority-queue~crates.io~badge]][c~priority-queue~crates.io] [![priority-queue~repo][c~priority-queue~repo~badge]][c~priority-queue~repo] [![priority-queue~lib.rs][c~priority-queue~lib.rs~badge]][c~priority-queue~lib.rs]{{hi:priority-queue}}{{hi:Heap}}{{hi:Priority}}{{hi:Queue}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges priority-queue algorithms=Algorithms data-structures="Data structures"}}{{hi:Heap}}{{hi:Priority}}{{hi:Queue}}
 
 A priority queue is a type of data structure where each element is assigned a priority, and elements with higher priority are processed before those with lower priority. Common use cases include:
 

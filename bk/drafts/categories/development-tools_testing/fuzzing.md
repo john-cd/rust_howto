@@ -51,7 +51,7 @@ This is a more advanced technique where you provide the same input to two differ
 
 ## `cargo fuzz` {#cargo-fuzz}
 
-[![cargo-fuzz][c~cargo-fuzz~docs~badge]][c~cargo-fuzz~docs] [![cargo-fuzz~crates.io][c~cargo-fuzz~crates.io~badge]][c~cargo-fuzz~crates.io] [![cargo-fuzz~repo][c~cargo-fuzz~repo~badge]][c~cargo-fuzz~repo] [![cargo-fuzz~lib.rs][c~cargo-fuzz~lib.rs~badge]][c~cargo-fuzz~lib.rs]{{hi:cargo-fuzz}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Testing}}
+{{#badges cargo-fuzz development-tools::testing=Testing}}
 
 A [`cargo`][c~cargo~docs]↗{{hi:cargo}} subcommand for fuzzing with [`libFuzzer`][libFuzzer~website]↗{{hi:libFuzzer}}. It is the most integrated tool for Rust fuzzing.
 
@@ -64,7 +64,7 @@ To get started:
 
 ## `afl` {#afl}
 
-[![afl][c~afl~docs~badge]][c~afl~docs] [![afl~crates.io][c~afl~crates.io~badge]][c~afl~crates.io] [![afl~repo][c~afl~repo~badge]][c~afl~repo] [![afl~lib.rs][c~afl~lib.rs~badge]][c~afl~lib.rs]{{hi:afl}}
+{{#badges afl}}
 
 Fuzz testing (or fuzzing) is a software [testing][p~testing] technique used to find security and stability issues by providing pseudo-random data as input to the software. AFLplusplus is a popular, effective, and modern fuzz [testing][p~testing] tool based on AFL. [`afl.rs`][c~afl~docs]↗{{hi:afl.rs}} allows one to run AFLplusplus on code written in the Rust programming [language][p~language].
 
@@ -74,7 +74,7 @@ Fuzz testing (or fuzzing) is a software [testing][p~testing] technique used to f
 
 ## `bolero` {#bolero}
 
-[![bolero][c~bolero~docs~badge]][c~bolero~docs] [![bolero~crates.io][c~bolero~crates.io~badge]][c~bolero~crates.io] [![bolero~repo][c~bolero~repo~badge]][c~bolero~repo] [![bolero~lib.rs][c~bolero~lib.rs~badge]][c~bolero~lib.rs]{{hi:bolero}}
+{{#badges bolero}}
 
 [`bolero`][c~bolero~docs]↗{{hi:bolero}} provides a unified interface for multiple fuzzing engines. It is particularly useful because it allows you to run your fuzz targets as regular unit tests during development, ensuring that they don't bit-rot.
 
@@ -84,7 +84,7 @@ Fuzz testing (or fuzzing) is a software [testing][p~testing] technique used to f
 
 ## `honggfuzz` {#honggfuzz}
 
-[![honggfuzz][c~honggfuzz~docs~badge]][c~honggfuzz~docs] [![honggfuzz~crates.io][c~honggfuzz~crates.io~badge]][c~honggfuzz~crates.io] [![honggfuzz~repo][c~honggfuzz~repo~badge]][c~honggfuzz~repo] [![honggfuzz~lib.rs][c~honggfuzz~lib.rs~badge]][c~honggfuzz~lib.rs]{{hi:honggfuzz}}
+{{#badges honggfuzz}}
 
 [`honggfuzz-rs`][c~honggfuzz~docs]↗{{hi:honggfuzz}} provides bindings for Honggfuzz. It is known for its multi-process and multi-threaded design, making it very fast on multi-core systems.
 

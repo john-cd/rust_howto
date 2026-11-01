@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Demonstrates basic usage of the `nu-ansi-term` crate for colored and styled
 //! terminal output.
+//!
+//! ANSI escape sequences are special characters that terminals interpret as
+//! styling (colour, bold, underline). `nu-ansi-term` builds them from a
+//! `Style`, which can be combined with colours. Output that is piped to a file
+//! should usually omit them.
 
 use nu_ansi_term::Color;
 use nu_ansi_term::Style;
@@ -40,10 +45,7 @@ mod tests {
             Color::Yellow.bold().paint("x").to_string(),
             "\u{1b}[1;33mx\u{1b}[0m"
         );
-        assert_eq!(
-            Color::Yellow.paint("x").to_string(),
-            "\u{1b}[33mx\u{1b}[0m"
-        );
+        assert_eq!(Color::Yellow.paint("x").to_string(), "\u{1b}[33mx\u{1b}[0m");
         assert_eq!(
             Style::new().bold().paint("x").to_string(),
             "\u{1b}[1mx\u{1b}[0m"

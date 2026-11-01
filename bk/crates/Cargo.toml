@@ -15,6 +15,7 @@ members = [
     "cats/cryptography",
     "cats/data_structures",
     "cats/database",
+    "cats/database/cornucopia_queries",
     "cats/database_implementations",
     "cats/date_and_time",
     "cats/development_tools",

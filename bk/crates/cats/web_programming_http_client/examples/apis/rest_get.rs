@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to make a GET request to a REST API and
 //! deserialize the JSON response.
+//!
+//! REST APIs use HTTP verbs on URLs: `GET` reads a resource, `POST` creates
+//! one, `PUT`/`PATCH` update it and `DELETE` removes it. Responses usually
+//! carry JSON and a status code: 2xx means success, 4xx a client error and 5xx
+//! a server error.
 
 use reqwest::Client;
 use reqwest::Error;
@@ -40,10 +45,7 @@ async fn main() -> Result<(), Error> {
 
 /// Fetches users from the requested REST endpoint and rejects unsuccessful
 /// responses.
-async fn get_users(
-    client: &Client,
-    request_url: &str,
-) -> Result<Vec<User>, Error> {
+async fn get_users(client: &Client, request_url: &str) -> Result<Vec<User>, Error> {
     client
         .get(request_url)
         .send()
@@ -78,8 +80,7 @@ mod tests {
             .create_async()
             .await;
         let client = Client::builder().user_agent("Rust-test").build()?;
-        let request_url =
-            format!("{}/repos/john-cd/rust_howto/stargazers", server.url());
+        let request_url = format!("{}/repos/john-cd/rust_howto/stargazers", server.url());
 
         let users = get_users(&client, &request_url).await?;
 

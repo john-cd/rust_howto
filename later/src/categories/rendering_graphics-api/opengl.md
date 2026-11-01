@@ -10,23 +10,10 @@ OpenGL is a cross-platform graphics API with a large installed base, but it is a
 
 [![glow][c~glow~docs~badge]][c~glow~docs] [![glow~crates.io][c~glow~crates.io~badge]][c~glow~crates.io]{{hi:glow}}
 
-[`glow`][c~glow~docs]↗{{hi:glow}} provides bindings for OpenGL, OpenGL ES, and WebGL behind one Rust API. The [`egui_glow` integration][egui_glow~repo] uses it for GL rendering; `wgpu` provides a separate GL/GLES backend on supported targets.
+[`glow`][c~glow~docs]↗{{hi:glow}} provides bindings for OpenGL, OpenGL ES, and WebGL behind one Rust API. The [`egui_glow` integration][egui_glow~repo] uses it for GL rendering; `wgpu` provides a separate GL/GLES backend on supported targets. The tested example below shows how to load the bindings and clear a framebuffer; a windowing crate must create and make the context current first.
 
-The fragment below assumes a current OpenGL context and a `gl_display` from `glutin`; it is illustrative and is not compiled with the book examples.
-
-```rust,ignore
-let gl = unsafe {
-    glow::Context::from_loader_function(|symbol| {
-        let symbol = std::ffi::CString::new(symbol)
-            .expect("OpenGL function names contain no NUL bytes");
-        gl_display.get_proc_address(&symbol)
-    })
-};
-
-unsafe {
-    gl.clear_color(0.08, 0.12, 0.2, 1.0);
-    gl.clear(glow::COLOR_BUFFER_BIT);
-}
+```rust
+{{#include ../../../crates/cats/rendering_graphics_api/examples/opengl/main.rs:example}}
 ```
 
 ## Create a window and context with `glutin` and `winit` {#glutin}

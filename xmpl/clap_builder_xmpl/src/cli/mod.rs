@@ -35,16 +35,20 @@ fn cli() -> Command {
     Command::new(env!("CARGO_CRATE_NAME")) // Or use: `crate_name!()`.
         .about("A demo CLI-based tool") // Sets the program's description for the short help (-h).
         .long_about("A tool that can open one or more files or query data.") // Sets the program's description for the long help (--help).
-        // optional: .after_help("Longer explanation to appear after the options when displaying the help information from --help or -h")
-        .help_expected(true) // Panic if help descriptions are omitted. This choice is propagated to all child subcommands.
+        // optional: .after_help("Longer explanation to appear after the options when displaying the
+        // help information from --help or -h")
+        .help_expected(true) // Panic if help descriptions are omitted. This choice is propagated to all child
+        // subcommands.
         .flatten_help(true) // Flatten subcommand help into the current command's help.
         .version(crate_version!()) // Sets the version for the short version (-V) and help messages.
-        // optional: .propagate_version(true) // Specifies to use the version of the current command for all subcommands.
-        // optional: .author(clap::crate_authors!("\n")) // Set the authors. A custom help_template is needed for the author info to show up.
+        // optional: .propagate_version(true) // Specifies to use the version of the current command
+        // for all subcommands. optional: .author(clap::crate_authors!("\n")) // Set the
+        // authors. A custom help_template is needed for the author info to show up.
         .styles(styles)
         .args([arg_filepaths(), arg_config(), arg_verbose()])
-        .infer_subcommands(true) // Allow partial matches of subcommand names and their aliases. For example, to match a subcommand named test, one could use t, te, tes, and test.
-        // We define three subcommands.
+        .infer_subcommands(true) // Allow partial matches of subcommand names and their aliases. For example, to match a
+        // subcommand named test, one could use t, te, tes, and test. We define three
+        // subcommands.
         .subcommand(opencmd::cmd())
         .subcommand(querycmd::cmd())
         .subcommand(testcmd::cmd())

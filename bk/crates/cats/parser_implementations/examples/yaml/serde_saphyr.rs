@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Serialize a Rust value to YAML and deserialize it with `serde-saphyr`.
+//!
+//! YAML is a human-friendly data format that uses indentation, popular for
+//! configuration such as Kubernetes manifests and CI pipelines. Its flexibility
+//! has pitfalls: a wrong indentation changes the meaning, and older YAML 1.1
+//! parsers read an unquoted `no` as a boolean. Typed deserialization catches
+//! many such mistakes.
 
 use serde::Deserialize;
 use serde::Serialize;

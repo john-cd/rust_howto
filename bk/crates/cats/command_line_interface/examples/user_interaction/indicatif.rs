@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A styled progress spinner with `indicatif` and `console`.
+//!
+//! Long-running tasks should show that they are alive. A spinner suits work of
+//! unknown length. `indicatif` redraws a single terminal line, so the output
+//! does not scroll.
 
 use std::thread;
 use std::time::Duration;

@@ -379,6 +379,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "alga"
+version = "0.9.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4f823d037a7ec6ea2197046bafd4ae150e6bc36f9ca347404f46a46823fa84f2"
+dependencies = [
+ "approx 0.3.2",
+ "num-complex 0.2.4",
+ "num-traits",
+]
+
+[[package]]
 name = "algorithms"
 version = "0.1.2"
 dependencies = [
@@ -634,6 +645,15 @@ dependencies = [
 
 [[package]]
 name = "approx"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0e60b75072ecd4168020818c0107f2857bb6c4e64252d8d3983f6263b40a5c3"
+dependencies = [
+ "num-traits",
+]
+
+[[package]]
+name = "approx"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cab112f0a86d568ea0e627cc1d6be74a1e9cd55214684db5561995f6dad897c6"
@@ -697,7 +717,7 @@ checksum = "ba6958a87117ff5e1d0d7716856a4303752518012ec4a67a68446b6631a1a54d"
 dependencies = [
  "anyhow",
  "cfg-if",
- "num-complex",
+ "num-complex 0.4.6",
  "num-integer",
  "num-traits",
  "rand 0.9.5",
@@ -791,7 +811,7 @@ dependencies = [
  "chrono",
  "half",
  "hashbrown 0.17.1",
- "num-complex",
+ "num-complex 0.4.6",
  "num-integer",
  "num-traits",
 ]
@@ -3058,17 +3078,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cargo_toml"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "82f4b26e751e711a5302649417f2da046dce6391b2ea30a4820f37462314f0b9"
-dependencies = [
- "semver",
- "serde",
- "toml 1.1.8+spec-1.1.0",
-]
-
-[[package]]
 name = "caseless"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3298,20 +3307,6 @@ dependencies = [
  "parse-zoneinfo",
  "phf 0.11.3",
  "phf_codegen 0.11.3",
-]
-
-[[package]]
-name = "chumsky"
-version = "0.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e0d2bfadce76f963d776feff99db6dc33783829539258314776383b33e2a00f8"
-dependencies = [
- "hashbrown 0.15.5",
- "regex-automata",
- "serde",
- "stacker",
- "unicode-ident",
- "unicode-segmentation",
 ]
 
 [[package]]
@@ -4109,55 +4104,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f8f80099a98041a3d1622845c271458a2d73e688351bf3cb999266764b81d48"
 
 [[package]]
-name = "cornucopia"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0723dc5cce45add2ae353b03e2ec981c02a2d2e2e1b945b5cf4ff0e536bb8320"
-dependencies = [
- "cargo_toml 1.0.1",
- "chumsky",
- "clap",
- "futures",
- "heck 0.5.0",
- "indexmap 2.14.2",
- "miette",
- "postgres-types",
- "prettyplease 0.3.0",
- "proc-macro2",
- "quote",
- "rand 0.10.3",
- "serde",
- "syn 3.0.9",
- "tempfile",
- "thiserror 2.0.21",
- "tokio",
- "tokio-postgres",
- "toml 1.1.8+spec-1.1.0",
-]
-
-[[package]]
-name = "cornucopia_async"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "38063b8553edf452cccc674f07b3b5e3144a24712e46647bfc357040f25fdc12"
-dependencies = [
- "async-trait",
- "cornucopia_client_core",
- "tokio-postgres",
-]
-
-[[package]]
-name = "cornucopia_client_core"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "95a087271917ca54f32499539f3f44c8dc112ffea0f39f47d6cde075df8d2f18"
-dependencies = [
- "fallible-iterator 0.2.0",
- "postgres-protocol",
- "postgres-types",
-]
-
-[[package]]
 name = "cpubits"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4889,6 +4835,7 @@ dependencies = [
  "clap",
  "crates_io_api",
  "criterion",
+ "elsa",
  "fixedbitset 0.5.7",
  "flagset",
  "fnv",
@@ -4897,6 +4844,7 @@ dependencies = [
  "linked-hash-map",
  "multimap",
  "petgraph 0.8.3",
+ "phf 0.11.3",
  "priority-queue",
  "rangemap",
  "roaring 0.12.0",
@@ -4921,8 +4869,7 @@ dependencies = [
  "cdrs-tokio",
  "clap",
  "config 0.15.27",
- "cornucopia",
- "cornucopia_async",
+ "database-cornucopia-queries",
  "deadpool",
  "deadpool-postgres",
  "diesel",
@@ -4956,6 +4903,18 @@ dependencies = [
  "tokio-util",
  "url",
  "uuid",
+]
+
+[[package]]
+name = "database-cornucopia-queries"
+version = "0.0.0"
+dependencies = [
+ "deadpool-postgres",
+ "futures",
+ "postgres",
+ "postgres-protocol",
+ "postgres-types",
+ "tokio-postgres",
 ]
 
 [[package]]
@@ -5405,7 +5364,7 @@ version = "0.1.2"
 dependencies = [
  "afl",
  "anyhow",
- "approx",
+ "approx 0.5.1",
  "arbitrary",
  "assert_cmd",
  "bolero",
@@ -6078,6 +6037,15 @@ dependencies = [
  "sec1 0.8.1",
  "subtle",
  "zeroize",
+]
+
+[[package]]
+name = "elsa"
+version = "1.11.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9abf33c656a7256451ebb7d0082c5a471820c31269e49d807c538c252352186e"
+dependencies = [
+ "stable_deref_trait",
 ]
 
 [[package]]
@@ -7434,7 +7402,7 @@ version = "0.7.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "777d18aa0f12f8b285331cd867133ee14422b3f023f6d388034c47d43e28786a"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "num-traits",
  "rstar 0.10.0",
  "rstar 0.11.0",
@@ -8744,8 +8712,6 @@ version = "0.15.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9229cfe53dfd69f0609a49f65461bd93001ea1ef889cd5529dd176593f5338a1"
 dependencies = [
- "allocator-api2",
- "equivalent",
  "foldhash 0.1.5",
 ]
 
@@ -11542,7 +11508,7 @@ name = "mathematics"
 version = "0.1.2"
 dependencies = [
  "anyhow",
- "approx",
+ "approx 0.5.1",
  "argmin",
  "argmin-math",
  "clap",
@@ -11566,6 +11532,7 @@ dependencies = [
  "rust_decimal",
  "rust_decimal_macros",
  "serde_json",
+ "sprs",
  "typenum",
  "uom",
 ]
@@ -12226,10 +12193,10 @@ version = "0.33.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9d43ddcacf343185dfd6de2ee786d9e8b1c2301622afab66b6c73baf9882abfd"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "matrixmultiply",
  "nalgebra-macros 0.2.2",
- "num-complex",
+ "num-complex 0.4.6",
  "num-rational",
  "num-traits",
  "rand 0.8.8",
@@ -12244,7 +12211,7 @@ version = "0.34.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "df76ea0ff5c7e6b88689085804d6132ded0ddb9de5ca5b8aeb9eeadc0508a70a"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "glam 0.14.0",
  "glam 0.15.2",
  "glam 0.16.0",
@@ -12265,7 +12232,7 @@ dependencies = [
  "glam 0.32.1",
  "matrixmultiply",
  "nalgebra-macros 0.3.0",
- "num-complex",
+ "num-complex 0.4.6",
  "num-rational",
  "num-traits",
  "serde",
@@ -12327,9 +12294,9 @@ version = "0.17.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "520080814a7a6b4a6e9070823bb24b4531daac8c4627e08ba5de8c5ef2f2752d"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "matrixmultiply",
- "num-complex",
+ "num-complex 0.4.6",
  "num-integer",
  "num-traits",
  "portable-atomic",
@@ -12651,7 +12618,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "35bd024e8b2ff75562e5f34e7f4905839deb4b22955ef5e73d2fea1b9813cb23"
 dependencies = [
  "num-bigint 0.4.8",
- "num-complex",
+ "num-complex 0.4.6",
  "num-integer",
  "num-iter",
  "num-rational",
@@ -12700,6 +12667,16 @@ name = "num-cmp"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "63335b2e2c34fae2fb0aa2cecfd9f0832a1e24b3b32ecec612c3426d46dc8aaa"
+
+[[package]]
+name = "num-complex"
+version = "0.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b6b19411a9719e753aff12e5187b74d60d3dc449ec3f4dc21e3989c3f554bc95"
+dependencies = [
+ "autocfg",
+ "num-traits",
+]
 
 [[package]]
 name = "num-complex"
@@ -13526,7 +13503,7 @@ version = "0.7.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ddeed8580d347d2abf3dcf06a5f0b3dc020258338526b277847cd4248a70fc64"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "libm",
  "palette_derive",
  "palette_math",
@@ -14747,6 +14724,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "postgres-derive"
+version = "0.4.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4d9d9089bb0ce62f4b5d52a0be0f4acfb35738b979380670d3dea85fe38d6ddd"
+dependencies = [
+ "heck 0.5.0",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.119",
+]
+
+[[package]]
 name = "postgres-protocol"
 version = "0.6.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -14756,6 +14745,7 @@ dependencies = [
  "byteorder",
  "bytes",
  "fallible-iterator 0.2.0",
+ "getrandom 0.4.3",
  "hmac 0.13.0",
  "md-5 0.11.0",
  "memchr",
@@ -14772,6 +14762,7 @@ checksum = "851ca9db4932932d69f3ea811b1abe63087a0f740a47692619dd40d4899b68be"
 dependencies = [
  "bytes",
  "fallible-iterator 0.2.0",
+ "postgres-derive",
  "postgres-protocol",
 ]
 
@@ -18473,8 +18464,8 @@ version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c99284beb21666094ba2b75bbceda012e610f5479dfcc2d6e2426f53197ffd95"
 dependencies = [
- "approx",
- "num-complex",
+ "approx 0.5.1",
+ "num-complex 0.4.6",
  "num-traits",
  "paste",
  "wide 0.7.33",
@@ -18803,6 +18794,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "sprs"
+version = "0.11.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "59468ff1d42d9e2439415c7dbb6d9d965253dac6986f29dbcda72c2e36e94fb7"
+dependencies = [
+ "alga",
+ "ndarray",
+ "num-complex 0.4.6",
+ "num-traits",
+ "num_cpus",
+ "rayon",
+ "smallvec",
+]
+
+[[package]]
 name = "sqlite-wasm-rs"
 version = "0.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -19101,7 +19107,7 @@ version = "0.18.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2a3fe7c28c6512e766b0874335db33c94ad7b8f9054228ae1c2abd47ce7d335e"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "nalgebra 0.33.3",
  "num-traits",
  "rand 0.8.8",
@@ -21752,7 +21758,7 @@ name = "tool_lib"
 version = "0.1.2"
 dependencies = [
  "anyhow",
- "cargo_toml 0.22.3",
+ "cargo_toml",
  "crates_io_api",
  "itertools 0.14.0",
  "once_cell",

@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! A Bloom filter, a compact set that can give false positives but no false
 //! negatives.
+//!
+//! A Bloom filter answers "have I seen this item?" using very little memory. It
+//! may say yes for an item it has not seen (a false positive), but never says
+//! no for one it has. It is used to skip expensive lookups, for example to
+//! avoid disk reads for keys that do not exist.
 
 use bloomfilter::Bloom;
 

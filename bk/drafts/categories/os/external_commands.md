@@ -16,7 +16,7 @@ When invoking child processes, pass each argument individually via `.arg()` or `
 
 ## Locate Installed Executables with `which` {#which}
 
-[![which][c~which~docs~badge]][c~which~docs] [![which~crates.io][c~which~crates.io~badge]][c~which~crates.io] [![which~repo][c~which~repo~badge]][c~which~repo] [![which~lib.rs][c~which~lib.rs~badge]][c~which~lib.rs]{{hi:which}}{{hi:Command}}{{hi:Unix}}{{hi:Which-rs}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}} [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+{{#badges which filesystem=Filesystem os="Operating systems"}}{{hi:Command}}{{hi:Unix}}{{hi:Which-rs}}
 
 [`which`][c~which~docs]↗{{hi:which}} locates executables using the platform's search path. It can help explain why an optional tool cannot be found, but still handle errors from launching the returned path.
 
@@ -93,10 +93,7 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 
 ## Run Child Processes Using `duct` {#run-child-processes-using-duct}
 
-[![duct][c~duct~docs~badge]][c~duct~docs]{{hi:duct}}
-[![duct~crates.io][c~duct~crates.io~badge]][c~duct~crates.io]
-[![duct~repo][c~duct~repo~badge]][c~duct~repo]
-[![duct~lib.rs][c~duct~lib.rs~badge]][c~duct~lib.rs]
+{{#badges duct}}
 
 [`duct`][c~duct~repo]↗{{hi:duct}} is a library for running child processes. [`duct`][c~duct~docs]↗{{hi:duct}} makes it easy to build pipelines and redirect I/O like a shell. At the same time, [`duct`][c~duct~docs]↗{{hi:duct}} helps write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c~duct~gotchas~repo]↗ are handled for you.
 
@@ -114,7 +111,7 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 
 ## Split and Quote Command Lines with `shlex` {#shlex}
 
-[![shlex][c~shlex~docs~badge]][c~shlex~docs]{{hi:shlex}} [![shlex~crates.io][c~shlex~crates.io~badge]][c~shlex~crates.io] [![shlex~repo][c~shlex~repo~badge]][c~shlex~repo] [![shlex~lib.rs][c~shlex~lib.rs~badge]][c~shlex~lib.rs] [![cat~os][cat~os~badge]][cat~os]{{hi:Operating systems}}
+{{#badges shlex os="Operating systems"}}
 
 [`shlex`][c~shlex~docs]↗ splits a string into words the way a POSIX shell would (`shlex::split`), and quotes a word so that it can be pasted into a shell (`shlex::try_quote`). Use it to parse a command line you receive as a string, or to print a copy-pasteable command in logs and error messages. `try_quote` returns an error for input it cannot quote, such as a NUL byte.
 

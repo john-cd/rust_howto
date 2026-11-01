@@ -54,11 +54,7 @@ impl App for Counter {
     type Model = Model;
     type ViewModel = ViewModel;
 
-    fn update(
-        &self,
-        event: Self::Event,
-        model: &mut Self::Model,
-    ) -> Command<Effect, Event> {
+    fn update(&self, event: Self::Event, model: &mut Self::Model) -> Command<Effect, Event> {
         match event {
             Event::Increment => model.count += 1,
             Event::Decrement => model.count -= 1,

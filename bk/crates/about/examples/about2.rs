@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! This example demonstrates how to parse a URL and extract a portion of it.
+//!
+//! A URL has parts: scheme, host, port, path, query and fragment. A parser
+//! splits them and reports invalid input as an error.
 
 use url::Position;
 use url::Url;
@@ -35,8 +38,7 @@ mod tests {
     }
 
     #[test]
-    fn test_example_strips_the_query() -> Result<(), Box<dyn std::error::Error>>
-    {
+    fn test_example_strips_the_query() -> Result<(), Box<dyn std::error::Error>> {
         assert_eq!(example()?, "https://httpbin.org/cookies/set");
         Ok(())
     }

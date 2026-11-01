@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Check whether we are reading & writing to the same file.
+//!
+//! Two different paths can name the same file, through hard links or symbolic
+//! links. Comparing path strings is not enough; the `same_file` crate compares
+//! the underlying file identities. It prevents, for example, copying a file
+//! onto itself.
 
 use std::io::Error;
 

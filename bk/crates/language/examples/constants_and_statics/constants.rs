@@ -16,7 +16,7 @@ fn main() {
     println!("The length is: {LEN}");
 
     // The above is equivalent to:
-    // Inlining turns `LEN` directly into the literal `5usize`.
+    // println!("The length is: {}", 5usize);
 
     // Constants are always immutable.
     // ERROR: LEN += 1;

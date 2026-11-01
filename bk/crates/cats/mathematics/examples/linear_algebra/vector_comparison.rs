@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates how to compare vectors using the `approx` crate.
+//!
+//! Floating-point numbers are rarely exactly equal after calculations (0.1 +
+//! 0.2 is not 0.3). Compare them within a tolerance, as the `approx` crate
+//! does, instead of with `==`.
 
 use approx::assert_abs_diff_eq;
 use ndarray::Array;

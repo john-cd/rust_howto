@@ -15,16 +15,14 @@
 //! fixed-size byte arrays.
 //!
 //! ### Core Security Guarantees
-//! - **Pre-image Resistance**: Given a hash digest $H$, it is computationally
-//!   infeasible to find any input message $M$ such that $\text{hash}(M) = H$.
-//! - **Collision Resistance**: It is computationally infeasible to find two
-//!   distinct inputs $M_1 \neq M_2$ such that $\text{hash}(M_1) =
-//!   \text{hash}(M_2)$.
+//! - **Pre-image Resistance**: Given a hash digest $H$, it is computationally infeasible to find
+//!   any input message $M$ such that $\text{hash}(M) = H$.
+//! - **Collision Resistance**: It is computationally infeasible to find two distinct inputs $M_1
+//!   \neq M_2$ such that $\text{hash}(M_1) = \text{hash}(M_2)$.
 //!
 //! ### Purpose & Use Cases
 //! - Digital signatures, TLS/SSL certificate verification, and Git commit IDs.
-//! - Cryptographic integrity checking for software releases and download
-//!   packages.
+//! - Cryptographic integrity checking for software releases and download packages.
 //! - Proof-of-work algorithms (such as Bitcoin mining).
 
 // Constant-Time Base64 encoding.

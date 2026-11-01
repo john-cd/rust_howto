@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates how to add two matrices using the `ndarray` crate.
+//!
+//! A matrix is a rectangular grid of numbers. Matrices are used for graphics
+//! transformations, machine learning and solving systems of equations. Adding
+//! two matrices of the same shape adds element by element.
 
 use ndarray::arr2;
 

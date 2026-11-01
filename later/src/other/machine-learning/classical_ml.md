@@ -6,7 +6,7 @@
 
 ## Train a Classifier with `smartcore` {#smartcore}
 
-[![smartcore][c~smartcore~docs~badge]][c~smartcore~docs] [![smartcore~crates.io][c~smartcore~crates.io~badge]][c~smartcore~crates.io] [![smartcore~repo][c~smartcore~repo~badge]][c~smartcore~repo] [![smartcore~lib.rs][c~smartcore~lib.rs~badge]][c~smartcore~lib.rs]{{hi:smartcore}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+{{#badges smartcore science=Science}}
 
 [`smartcore`][c~smartcore~docs]↗{{hi:smartcore}} is a pure-Rust machine learning library (regression, classification, clustering, metrics). The recipe fits a logistic regression on a small in-memory dataset and checks the accuracy. For anything beyond a toy, hold out a test set. See also the [machine learning overview][p~classical-machine-learning]↗.
 

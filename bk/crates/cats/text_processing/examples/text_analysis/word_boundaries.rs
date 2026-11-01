@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Finds word boundaries with Unicode text segmentation (UAX #29), e.g. to
 //! count words or to feed a spell checker.
+//!
+//! Where a word begins and ends is not obvious: contractions, hyphens, numbers
+//! and languages without spaces all complicate it. Unicode Standard Annex #29
+//! defines the rules, which double-click selection and word counting follow.
 
 use unicode_segmentation::UnicodeSegmentation;
 
@@ -31,7 +35,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

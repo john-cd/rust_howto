@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! Example of a function accepting either owned or borrowed values
 //! at its input.
+//!
+//! Accepting `Cow` lets a caller pass either a borrowed `&str` or an owned
+//! `String`, and the function allocates only if it must change the text.
 
 use std::borrow::Cow;
 

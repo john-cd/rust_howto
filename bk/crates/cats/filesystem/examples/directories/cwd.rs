@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates how to get the current working directory.
+//!
+//! The current working directory is the starting point for relative paths. It
+//! is set by where the program was launched, not where the executable lives, so
+//! do not depend on it for finding your own files.
 
 use std::env;
 use std::path::PathBuf;

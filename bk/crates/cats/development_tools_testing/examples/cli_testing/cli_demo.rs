@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! A small executable used by the command-line integration tests.
+//!
+//! A command-line program can be tested end to end by running the real binary
+//! and checking its exit code, output and error text. This catches problems
+//! that unit tests of functions miss, such as argument parsing.
 
 use std::ffi::OsString;
 
@@ -23,7 +27,7 @@ struct Args {
 ///
 /// Returns an error when parsing fails or when the greeting action fails.
 fn main() -> anyhow::Result<()> {
-    run_from(std::env::args_os())
+    run_with_args(std::env::args_os())
 }
 
 /// Parses `args` and prints the resulting greeting.
@@ -34,7 +38,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 ///
 /// Returns an error if greeting creation fails.
-fn run_from<I, S>(args: I) -> anyhow::Result<()>
+fn run_with_args<I, S>(args: I) -> anyhow::Result<()>
 where
     I: IntoIterator<Item = S>,
     S: Into<OsString> + Clone,
@@ -59,6 +63,12 @@ fn greet(args: Args) -> anyhow::Result<String> {
 }
 // ANCHOR_END: example
 
+/// Runs the demo with fixed arguments: `main` reads the process arguments,
+/// which belong to the test harness under `cargo test`.
+pub fn run() -> anyhow::Result<()> {
+    run_with_args(["cli-demo"])
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -82,7 +92,9 @@ mod tests {
     /// Runs the entry-point argument path with deterministic arguments.
     #[test]
     fn test_main_entry_point() -> anyhow::Result<()> {
-        run_from(["cli-demo"])?;
+        run_with_args(["cli-demo"])?;
+        run()?;
+        assert!(run_with_args(["cli-demo", "--fail"]).is_err());
         Ok(())
     }
 }

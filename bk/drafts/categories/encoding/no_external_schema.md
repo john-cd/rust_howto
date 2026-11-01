@@ -6,7 +6,7 @@
 
 ## MessagePack with `rmp-serde` {#rmp-serde}
 
-[![rmp-serde][c~rmp-serde~docs~badge]][c~rmp-serde~docs] [![rmp-serde~crates.io][c~rmp-serde~crates.io~badge]][c~rmp-serde~crates.io] [![rmp-serde~repo][c~rmp-serde~repo~badge]][c~rmp-serde~repo] [![rmp-serde~lib.rs][c~rmp-serde~lib.rs~badge]][c~rmp-serde~lib.rs]{{hi:rmp-serde}}{{hi:MessagePack}}{{hi:Serialization}}{{hi:Serde}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
+{{#badges rmp-serde encoding=Encoding}}{{hi:MessagePack}}{{hi:Serialization}}{{hi:Serde}}
 
 [`rmp-serde`][c~rmp-serde~docs]↗{{hi:rmp-serde}} connects MessagePack with [`serde`][c~serde~docs]↗{{hi:serde}}. This example uses `to_vec_named` to encode struct field names as a map. `to_vec` uses a compact positional array; both formats require the matching Rust type when decoding into `MyData`.
 
@@ -16,7 +16,7 @@
 
 ## `postcard` {#postcard}
 
-[![postcard][c~postcard~docs~badge]][c~postcard~docs] [![postcard~crates.io][c~postcard~crates.io~badge]][c~postcard~crates.io] [![postcard~repo][c~postcard~repo~badge]][c~postcard~repo] [![postcard~lib.rs][c~postcard~lib.rs~badge]][c~postcard~lib.rs]{{hi:postcard}}{{hi:Framing}}{{hi:Serde}}{{hi:Cobs}} [![cat~embedded][cat~embedded~badge]][cat~embedded]{{hi:Embedded development}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges postcard embedded="Embedded development" no-std="No standard library"}}{{hi:Framing}}{{hi:Serde}}{{hi:Cobs}}
 
 [`postcard`][c~postcard~docs]↗{{hi:postcard}} is a [`#![no_std]`][book~rust-reference~no_std] and [`serde`][c~serde~docs]↗{{hi:serde}}-compatible message library for Rust. It targets constrained environments and provides a stable wire format; its `heapless` and `alloc` features let an application choose how to buffer encoded messages.
 
@@ -26,7 +26,7 @@
 
 ## `rkyv` {#rkyv}
 
-[![rkyv][c~rkyv~docs~badge]][c~rkyv~docs] [![rkyv~crates.io][c~rkyv~crates.io~badge]][c~rkyv~crates.io] [![rkyv~repo][c~rkyv~repo~badge]][c~rkyv~repo] [![rkyv~lib.rs][c~rkyv~lib.rs~badge]][c~rkyv~lib.rs]{{hi:rkyv}}{{hi:Serialization}}{{hi:Zero-copy}}{{hi:Archive}}{{hi:No_std}}{{hi:rkyv}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}} [![cat~no-std::no-alloc][cat~no-std::no-alloc~badge]][cat~no-std::no-alloc]{{hi:No dynamic allocation}}
+{{#badges rkyv encoding=Encoding no-std="No standard library" no-std::no-alloc="No dynamic allocation"}}{{hi:Serialization}}{{hi:Zero-copy}}{{hi:Archive}}{{hi:No_std}}{{hi:rkyv}}
 
 [`rkyv`][c~rkyv~docs]↗{{hi:rkyv}} is a fast zero-copy deserialization framework that allows arbitrary field types and safe zero-copy mutation. Unlike the Serde formats compared above, it stores a type-specific archive layout for direct access; the types on both sides therefore form part of the compatibility contract.
 

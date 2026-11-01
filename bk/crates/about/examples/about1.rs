@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates converting a byte slice representing an IPv6
 //! address to an `IpAddr` type.
+//!
+//! An IPv6 address is 128 bits, written as eight groups of hexadecimal digits.
+//! Converting between its byte form and a typed address makes network code
+//! clear and safe.
 
 use std::net::IpAddr;
 use std::str;
@@ -10,8 +14,8 @@ use std::str;
 // The following function includes calls that can fail:
 // - Errors are caught and propagated back to the caller with the `?` operator.
 // - Note how the function returns a `Result` type.
-// - We have chosen to use the flexible `Result` type alias from the very
-//   commonly used `anyhow` library.
+// - We have chosen to use the flexible `Result` type alias from the very commonly used `anyhow`
+//   library.
 // - This function does not panic.
 
 /// Converts a byte slice holding an IPv6 address into an `IpAddr`.
@@ -55,8 +59,7 @@ mod tests {
     }
 
     #[test]
-    fn test_example_parses_ipv6_address()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_example_parses_ipv6_address() -> Result<(), Box<dyn std::error::Error>> {
         let addr = example()?;
         assert_eq!(addr, "2001:db8::1".parse::<IpAddr>()?);
         assert!(addr.is_ipv6());

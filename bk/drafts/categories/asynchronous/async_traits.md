@@ -42,7 +42,7 @@ A trait with a native `async fn`{{hi:AFIT}}{{hi:Async fn in traits}} is used thr
 
 ## Make the Futures of a Trait `Send` {#rpitit-send}
 
-[![trait-variant][c~trait-variant~docs~badge]][c~trait-variant~docs] [![trait-variant~crates.io][c~trait-variant~crates.io~badge]][c~trait-variant~crates.io] [![trait-variant~repo][c~trait-variant~repo~badge]][c~trait-variant~repo] [![trait-variant~lib.rs][c~trait-variant~lib.rs~badge]][c~trait-variant~lib.rs]{{hi:trait-variant}}{{hi:Send}}{{hi:Return-position impl Trait in traits}}{{hi:RPITIT}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}}
+{{#badges trait-variant asynchronous=Asynchronous}}{{hi:Send}}{{hi:Return-position impl Trait in traits}}{{hi:RPITIT}}
 
 `tokio::spawn` requires the future to be `Send`, and the compiler cannot know that for a generic `async fn` in a trait. There are two fixes:
 

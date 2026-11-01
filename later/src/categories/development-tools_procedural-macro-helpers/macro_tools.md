@@ -12,12 +12,7 @@ When authoring a derive macro, parse the input into a syntax tree before inspect
 
 ## `cargo expand` {#cargo-expand}
 
-[![cargo-expand][c~cargo-expand~docs~badge]][c~cargo-expand~docs]{{hi:cargo-expand}}
-[![cargo-expand~crates.io][c~cargo-expand~crates.io~badge]][c~cargo-expand~crates.io]
-[![cargo-expand~repo][c~cargo-expand~repo~badge]][c~cargo-expand~repo]
-[![cargo-expand~lib.rs][c~cargo-expand~lib.rs~badge]][c~cargo-expand~lib.rs]
-[![cat~development-tools::cargo-plugins][cat~development-tools::cargo-plugins~badge]][cat~development-tools::cargo-plugins]{{hi:Cargo plugins}}
-[![cat~development-tools::debugging][cat~development-tools::debugging~badge]][cat~development-tools::debugging]{{hi:Debugging}}
+{{#badges cargo-expand development-tools::cargo-plugins="Cargo plugins" development-tools::debugging=Debugging}}
 
 `cargo expand` prints the Rust code produced after macro expansion, which helps inspect generated code and debug macros. It uses rustc's unstable expansion interface, so use a nightly toolchain when required. Install nightly `rustfmt` for formatted output; `--ugly` skips formatting.
 

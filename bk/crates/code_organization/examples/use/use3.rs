@@ -46,10 +46,7 @@ mod tests {
     fn test_build_map() {
         let map = build_map();
         assert_eq!(map.len(), 1);
-        assert_eq!(
-            map.get(&42).map(String::as_str),
-            Some("my favorite number")
-        );
+        assert_eq!(map.get(&42).map(String::as_str), Some("my favorite number"));
         assert_eq!(map.get(&0), None);
     }
 

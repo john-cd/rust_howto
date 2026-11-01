@@ -6,6 +6,15 @@
 
 Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. Includes HTTP API wrappers as well. Non-idiomatic or unsafe bindings can be found in [[external-ffi-bindings | External FFI Bindings]].
 
+## Example Status
+
+No API binding demonstration is implemented in this category yet. The included
+crate example is a tested placeholder that marks this gap:
+
+```rust,ignore
+{{#include ../../../crates/cats/api_bindings/examples/api_bindings/main.rs:example}}
+```
+
 ## Database Bindings
 
 Bindings for popular databases like PostgreSQL, MySQL, and SQLite. Numerous crates exist, including [`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}}, [`rusqlite`][c~rusqlite~docs]↗{{hi:rusqlite}}, [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}}, etc.

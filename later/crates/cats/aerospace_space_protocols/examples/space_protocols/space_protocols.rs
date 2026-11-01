@@ -1,4 +1,11 @@
 // TODO Reviewed ??-??-2026.
+//! Build and parse CCSDS space packets and ECSS PUS packets.
+//!
+//! Spacecraft and ground stations exchange small binary packets over radio
+//! links. CCSDS defines the basic space packet, and the ECSS PUS standard
+//! defines named services, such as a connection test, on top of it. This
+//! example creates each kind of packet, serializes it to bytes and parses it
+//! back.
 
 // ANCHOR: ccsds-space-packet
 /// Serializes a CCSDS packet and checks its primary header and payload.
@@ -34,8 +41,8 @@ fn ccsds_space_packet() -> [u8; 8] {
         .expect("CCSDS header should fit in the packet buffer");
     packet[header_len..header_len + payload.len()].copy_from_slice(&payload);
 
-    let (parsed_header, parsed_payload) = SpHeader::from_be_bytes(&packet)
-        .expect("serialized CCSDS header should parse");
+    let (parsed_header, parsed_payload) =
+        SpHeader::from_be_bytes(&packet).expect("serialized CCSDS header should parse");
     assert_eq!(parsed_header.apid().value(), 0x10);
     assert_eq!(parsed_header.seq_count().value(), 1);
     assert_eq!(parsed_header.packet_type(), PacketType::Tm);

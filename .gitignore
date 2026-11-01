@@ -9,16 +9,16 @@ mdbook-scrub.log
 # Persistent worktree slots and external Cargo build junctions
 /.worktrees/
 
-/build/
+/build
 
 # Local previews of unpublished books.
 /later/book/
 /bk/drafts/book/
 
-/.sccache/
+/.sccache
 
 # Local snapshot of registered worktrees and build-cache usage.
-WORKTREES.md
+/WORKTREES.md
 
 .rumdl_cache/
 
@@ -150,7 +150,6 @@ rust-project.json
 *.bz2
 *.xz
 *.lzma
-*.cab
 *.xar
 *.zst
 *.tzst
@@ -166,7 +165,34 @@ rust-project.json
 *.egg
 *.deb
 *.rpm
-*.msi
-*.msm
-*.msp
 *.txz
+/target
+
+# Repository-local outputs and generated files
+**/.worktrees/
+/.ci/
+**/.ci/
+/build/
+**/build/
+/target/
+**/target/
+/debug/
+**/debug/
+/.sccache/
+**/.sccache/
+rustc-ice-*.txt
+**/__pycache__/
+**/.venv/
+**/.ruff_cache/
+**/.pytest_cache/
+**/.ipynb_checkpoints/
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+!.env.*.example

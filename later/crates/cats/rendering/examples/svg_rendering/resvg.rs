@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Parses an SVG and rasterizes it to a PNG with `resvg`.
+//!
+//! SVG is an XML format that describes drawings as shapes and paths instead of
+//! pixels, so it scales without blurring. Rasterizing turns it into a pixel
+//! image, such as a PNG, for places that cannot display SVG.
 
 const SVG: &str = r##"
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="100" viewBox="0 0 160 100">
@@ -34,11 +38,10 @@ fn render_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 /// created.
 fn render_svg_to_pixmap()
 -> Result<resvg::tiny_skia::Pixmap, Box<dyn std::error::Error + Send + Sync>> {
-    let tree =
-        resvg::usvg::Tree::from_str(SVG, &resvg::usvg::Options::default())?;
+    let tree = resvg::usvg::Tree::from_str(SVG, &resvg::usvg::Options::default())?;
     let size = tree.size().to_int_size();
-    let mut pixmap = resvg::tiny_skia::Pixmap::new(size.width(), size.height())
-        .ok_or_else(|| {
+    let mut pixmap =
+        resvg::tiny_skia::Pixmap::new(size.width(), size.height()).ok_or_else(|| {
             std::io::Error::new(
                 std::io::ErrorKind::InvalidInput,
                 "SVG viewport is too large to allocate as a pixmap",

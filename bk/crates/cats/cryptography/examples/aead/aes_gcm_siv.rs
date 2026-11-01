@@ -21,8 +21,7 @@ use rand::rngs::SysRng;
 /// Encryption Cipher).
 fn main() -> anyhow::Result<()> {
     // Generate a random 256-bit key:
-    let key: Key<Aes256GcmSiv> =
-        Key::<Aes256GcmSiv>::try_generate_from_rng(&mut SysRng)?;
+    let key: Key<Aes256GcmSiv> = Key::<Aes256GcmSiv>::try_generate_from_rng(&mut SysRng)?;
 
     // Use a fixed nonce for this one-message demonstration. A production
     // protocol should follow AES-GCM-SIV's nonce and usage limits.
@@ -77,8 +76,7 @@ mod tests {
     /// Runs the aes gcm siv example through its entry point.
     #[test]
     fn test_aes_gcm_siv_example_entry_point() -> anyhow::Result<()> {
-        main()
-            .map_err(|_| anyhow::anyhow!("Failed encryption or decryption"))?;
+        main().map_err(|_| anyhow::anyhow!("Failed encryption or decryption"))?;
         Ok(())
     }
 }

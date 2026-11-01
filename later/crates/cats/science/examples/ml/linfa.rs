@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Predict numeric values with a linear regression model from `linfa-linear`.
+//!
+//! Linear regression fits a straight line (or plane) through data to predict a
+//! number, such as a price from its features. Training finds the coefficients
+//! that minimize the squared error. It is simple and fast, and a good first
+//! baseline model.
 
 use std::error::Error;
 
@@ -43,8 +48,7 @@ mod tests {
 
     /// Verifies that the regression model predicts the expected numeric range.
     #[test]
-    fn regression_predicts_values_near_the_linear_trend()
-    -> Result<(), Box<dyn Error>> {
+    fn regression_predicts_values_near_the_linear_trend() -> Result<(), Box<dyn Error>> {
         let predictions = regression_predictions()?;
 
         assert_eq!(predictions.len(), 2);

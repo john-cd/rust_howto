@@ -4,6 +4,10 @@
 // ANCHOR: example
 //! Nested routes, a route parameter and a not-found route with
 //! [`leptos_router`].
+//!
+//! A router maps URLs to components in a single-page application, so the
+//! address bar and the back button work although the page never fully reloads.
+//! A route parameter, such as `/users/:id`, captures part of the URL.
 
 use leptos::prelude::*;
 use leptos_router::components::Outlet;

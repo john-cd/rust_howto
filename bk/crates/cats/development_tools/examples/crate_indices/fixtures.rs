@@ -2,6 +2,10 @@
 
 // ANCHOR: fixture_support
 //! Shared local files for the crate-index examples.
+//!
+//! Test fixtures are small, fixed input files. Shared fixtures keep the tests
+//! of the index generators short and deterministic, since they do not depend on
+//! the real book contents.
 
 use std::fs;
 use std::path::Path;
@@ -21,8 +25,7 @@ crates = ["serde", "serde_json"]
 
 /// Creates a Cargo manifest and book-index fixture without network access.
 pub(crate) fn create_fixture() -> Result<TempDir> {
-    let fixture =
-        tempfile::tempdir().context("create crate-index fixture directory")?;
+    let fixture = tempfile::tempdir().context("create crate-index fixture directory")?;
     write_fixture_file(
         fixture.path(),
         "workspace/crates/sample/Cargo.toml",
@@ -47,18 +50,12 @@ pub(crate) fn create_fixture() -> Result<TempDir> {
 }
 
 /// Writes one fixture file and creates its parent directory when necessary.
-fn write_fixture_file(
-    root: &Path,
-    relative_path: &str,
-    contents: &str,
-) -> Result<()> {
+fn write_fixture_file(root: &Path, relative_path: &str, contents: &str) -> Result<()> {
     let path = root.join(relative_path);
-    let parent = path.parent().with_context(|| {
-        format!("fixture path has no parent: {}", path.display())
-    })?;
-    fs::create_dir_all(parent)
-        .with_context(|| format!("create {}", parent.display()))?;
-    fs::write(&path, contents)
-        .with_context(|| format!("write {}", path.display()))
+    let parent = path
+        .parent()
+        .with_context(|| format!("fixture path has no parent: {}", path.display()))?;
+    fs::create_dir_all(parent).with_context(|| format!("create {}", parent.display()))?;
+    fs::write(&path, contents).with_context(|| format!("write {}", path.display()))
 }
 // ANCHOR_END: fixture_support

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creates and manages a desktop window with Tao.
+//!
+//! A window is how a program receives input and shows pixels. `tao` is a fork
+//! of `winit` maintained for the Tauri framework, with extra features such as
+//! menus. An event loop delivers key presses, resizes and similar events.
 
 use std::error::Error;
 

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates transformations in 3D using the `nalgebra` crate:
 //! rotations, translations, and composing them into isometries.
+//!
+//! In 3D graphics and robotics, rotations, translations and scaling are
+//! represented by matrices or by quaternions (a compact rotation format that
+//! avoids "gimbal lock"). Combining transformations is multiplying them.
 
 use std::f64::consts::PI;
 
@@ -64,10 +68,7 @@ mod tests {
         let rotated = rotation * point;
         assert!((rotated - Point3::new(0.0, 1.0, 0.0)).norm() < 1e-12);
 
-        let isometry = Isometry3::from_parts(
-            Translation3::new(0.0, 1.0, 2.0),
-            rotation.into(),
-        );
+        let isometry = Isometry3::from_parts(Translation3::new(0.0, 1.0, 2.0), rotation.into());
         let transformed = isometry * point;
         assert!((transformed - Point3::new(0.0, 2.0, 2.0)).norm() < 1e-12);
         // The inverse undoes the transformation.

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! A bounded `flume` channel for commands sent to a loop that handles them
 //! once per "tick" (a UI frame, a game loop iteration, a control cycle).
+//!
+//! A tick channel delivers a message at a regular interval. Waiting on it
+//! together with other channels lets a worker do periodic work, such as
+//! flushing a buffer, while it handles requests.
 
 use std::thread;
 use std::time::Duration;

@@ -19,11 +19,7 @@ fn tokenize(xml: &str) -> anyhow::Result<Vec<String>> {
                 tokens.push(format!("start:{}", local.as_str()));
             }
             Token::Attribute { local, value, .. } => {
-                tokens.push(format!(
-                    "attribute:{}={}",
-                    local.as_str(),
-                    value.as_str()
-                ));
+                tokens.push(format!("attribute:{}={}", local.as_str(), value.as_str()));
             }
             Token::ElementEnd { end, .. } => match end {
                 ElementEnd::Close(_, local) => {

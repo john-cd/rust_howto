@@ -1,6 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 //! Builds typed settings from files, environment variables, and CLI overrides.
+//!
+//! Layered configuration merges several sources, from lowest to highest
+//! priority: built-in defaults, a file, environment variables, and command-line
+//! flags. This lets one build run in development and production with only the
+//! differences overridden.
 
 use std::collections::HashMap;
 use std::path::Path;
@@ -24,13 +29,11 @@ pub(crate) fn read_settings(
         .set_default("service.port", 80)?
         .add_source(File::from(config_dir.join("default.toml")))
         .add_source(
-            File::from(config_dir.join(format!("{}.toml", cli_args.run_mode)))
-                .required(false),
+            File::from(config_dir.join(format!("{}.toml", cli_args.run_mode))).required(false),
         );
 
     if let Some(custom_config_file_path) = cli_args.custom_config_file_path {
-        builder = builder
-            .add_source(File::from(custom_config_file_path).required(true));
+        builder = builder.add_source(File::from(custom_config_file_path).required(true));
     }
 
     let mut environment = Environment::with_prefix("APP")

@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates creating database tables in PostgreSQL using the
 //! `postgres` crate.
+//!
+//! A table has typed columns and constraints such as `PRIMARY KEY` (unique row
+//! identity) and `REFERENCES` (a foreign key linking to another table). `CREATE
+//! TABLE` defines the schema before any row can be stored. PostgreSQL is a
+//! popular open-source relational database.
 
 use anyhow::Context as _;
 use postgres::Client;
@@ -20,8 +25,8 @@ use postgres::NoTls;
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or either table cannot be created.
 fn main() -> anyhow::Result<()> {
-    let database_url = std::env::var("DATABASE_URL")
-        .context("set DATABASE_URL to connect to PostgreSQL")?;
+    let database_url =
+        std::env::var("DATABASE_URL").context("set DATABASE_URL to connect to PostgreSQL")?;
     let mut client = Client::connect(&database_url, NoTls)
         .context("connect to PostgreSQL using DATABASE_URL")?;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Creating temporary files and directories with `tempfile`.
+//!
+//! Temporary files are for scratch data. The `tempfile` crate creates them with
+//! unpredictable names in a safe way (avoiding race conditions an attacker
+//! could exploit) and deletes them when the handle is dropped.
 
 use std::fs::File;
 use std::io::Read;
@@ -37,10 +41,9 @@ fn main() -> std::io::Result<()> {
     // Rust destructors being run, so will (almost) never fail to clean up
     // the temporary file.
 
-    // 2. Use `spooled_tempfile()` when needing an in-memory buffer that will
-    //    ultimately be backed by a temporary file if it gets too large. This
-    //    variant is also secure/reliable in the presence of a pathological
-    //    temporary file cleaner.
+    // 2. Use `spooled_tempfile()` when needing an in-memory buffer that will ultimately be backed
+    //    by a temporary file if it gets too large. This variant is also secure/reliable in the
+    //    presence of a pathological temporary file cleaner.
     let mut file = spooled_tempfile(15);
     writeln!(file, "short")?;
     assert!(!file.is_rolled());
@@ -70,10 +73,9 @@ fn main() -> std::io::Result<()> {
     // succeeded.
     temp_dir.close()?;
 
-    // 4. Use `NamedTempFile::new()` when needing a named temporary file that
-    //    whose path can be referred to. `NamedTempFile` also relies on Rust
-    //    destructors for cleanup, which may fail. Read the documentation and
-    //    prefer `tempfile()` in most cases.
+    // 4. Use `NamedTempFile::new()` when needing a named temporary file that whose path can be
+    //    referred to. `NamedTempFile` also relies on Rust destructors for cleanup, which may fail.
+    //    Read the documentation and prefer `tempfile()` in most cases.
     let temp_file0 = NamedTempFile::new()?;
     println!("Temporary file created at: {:?}", temp_file0.path());
 

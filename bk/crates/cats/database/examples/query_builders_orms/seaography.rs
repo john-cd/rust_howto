@@ -90,8 +90,7 @@ async fn main() -> anyhow::Result<()> {
     let db = Database::connect("sqlite::memory:").await?;
 
     // 2. Create table schema from entity definition.
-    let create_table =
-        Schema::new(DbBackend::Sqlite).create_table_from_entity(post::Entity);
+    let create_table = Schema::new(DbBackend::Sqlite).create_table_from_entity(post::Entity);
     db.execute(&create_table).await?;
 
     // 3. Insert sample data.
@@ -106,9 +105,8 @@ async fn main() -> anyhow::Result<()> {
     // 4. Build GraphQL schema using Seaography.
     let builder_ctx = Box::leak(Box::new(BuilderContext::default()));
     let mut builder = Builder::new(builder_ctx, db.clone());
-    let related_entity_filter = RelatedEntityFilter::<post::Entity>::build::<
-        post::Relation,
-    >(builder_ctx);
+    let related_entity_filter =
+        RelatedEntityFilter::<post::Entity>::build::<post::Relation>(builder_ctx);
     builder.register_entity::<post::Entity>(vec![], &related_entity_filter);
     let schema = builder
         .register_related_entity_filter::<post::Entity>(related_entity_filter)

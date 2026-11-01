@@ -82,6 +82,12 @@ defaults:
 env:
   IMAGE_NAME: johncd/rust_howto_ci
 
+  CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
+  CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
+  CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
+  CARGO_INCREMENTAL: '0'
 jobs:
   validate-pr:
     if: ${{ github.event_name == 'pull_request' }}
@@ -186,12 +192,25 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Set build cache scope
         uses: ./.github/actions/set-cache-scope
+      - name: Install compiler cache
+        uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177
+        with:
+          tool: sccache@0.19.0
       - name: Rust Cache
         # Swatinem/rust-cache v2.9.3
         uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
         with:
           shared-key: "rust-howto-shared"
           cache-targets: "false"
+          key: config-v1-${{ github.workflow }}-${{ github.job }}-${{ runner.arch }}-${{
+            hashFiles('**/.cargo/config.toml', '**/rust-toolchain.toml', '**/Cargo.lock') }}
+          cache-directories: ${{ github.workspace }}/.ci/build/rust_howto/main
+          save-if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}',
+            github.event.repository.default_branch) }}
+          workspaces: "bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main\nlater/crates -> ${{ github.workspace
+            }}/.ci/target/rust_howto/main\ntools -> ${{ github.workspace }}/.ci/target/rust_howto/main\nplayground -> ${{
+            github.workspace }}/.ci/target/rust_howto/main\npublish -> ${{ github.workspace }}/.ci/target/rust_howto/main\n\
+            xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main"
       - name: Login to Docker Hub
         uses: ./.github/actions/docker-login
         with:
@@ -216,13 +235,25 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Set build cache scope
         uses: ./.github/actions/set-cache-scope
+      - name: Install compiler cache
+        uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177
+        with:
+          tool: sccache@0.19.0
       - name: Rust Cache
         # Swatinem/rust-cache v2.9.3
         uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
         with:
           shared-key: "rust-howto-shared"
           cache-targets: "false"
-          save-if: false # Only restore in the final build stage
+          save-if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}',
+            github.event.repository.default_branch) }} # Only restore in the final build stage
+          key: config-v1-${{ github.workflow }}-${{ github.job }}-${{ runner.arch }}-${{
+            hashFiles('**/.cargo/config.toml', '**/rust-toolchain.toml', '**/Cargo.lock') }}
+          cache-directories: ${{ github.workspace }}/.ci/build/rust_howto/main
+          workspaces: "bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main\nlater/crates -> ${{ github.workspace
+            }}/.ci/target/rust_howto/main\ntools -> ${{ github.workspace }}/.ci/target/rust_howto/main\nplayground -> ${{
+            github.workspace }}/.ci/target/rust_howto/main\npublish -> ${{ github.workspace }}/.ci/target/rust_howto/main\n\
+            xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main"
       - name: Login to Docker Hub
         uses: ./.github/actions/docker-login
         with:

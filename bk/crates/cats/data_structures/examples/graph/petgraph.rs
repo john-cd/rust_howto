@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Building and traversing a directed graph with `petgraph`.
+//!
+//! A graph is a set of nodes connected by edges, for example cities and roads,
+//! or tasks and dependencies. `petgraph` stores graphs and provides algorithms
+//! such as shortest path and topological sort.
 
 use petgraph::Directed;
 use petgraph::Undirected;
@@ -47,8 +51,7 @@ fn main() {
     }
 
     // Create an undirected graph:
-    let mut undirected_graph =
-        Graph::<&str, &str, Undirected>::new_undirected();
+    let mut undirected_graph = Graph::<&str, &str, Undirected>::new_undirected();
 
     // Add nodes to the undirected graph:
     let e = undirected_graph.add_node("Node E");

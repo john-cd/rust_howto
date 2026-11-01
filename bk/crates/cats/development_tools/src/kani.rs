@@ -20,8 +20,8 @@ fn add(a: i32, b: i32) -> i32 {
 // When Kani builds your code (using `cargo kani`), it
 // - sets `cfg(kani)` for target crate compilation (including dependencies).
 // - injects the kani crate.
-// - sets `cfg(kani_host)` for host build targets, such as any build script and
-//   procedural macro crates.
+// - sets `cfg(kani_host)` for host build targets, such as any build script and procedural macro
+//   crates.
 //
 // The following Kani verification code is isolated in its own module and only
 // compiled when Kani is in use.
@@ -86,8 +86,8 @@ mod verification {
     // Check 1: kani::estimate_size.assertion.1
     //          - Status: FAILURE
     //          - Description: "Oh no, a failing corner case!"
-    //          - Location: crates/cats/development_tools/src/kani.rs:41:13 in
-    //            function kani::estimate_size
+    //          - Location: crates/cats/development_tools/src/kani.rs:41:13 in function
+    //            kani::estimate_size
 
     // By default, Kani only reports failures, not how the failure happened.
     // Kani offers an (experimental) concrete playback feature that provides

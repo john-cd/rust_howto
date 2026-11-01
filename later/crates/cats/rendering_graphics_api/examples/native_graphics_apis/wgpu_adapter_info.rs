@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Reports the native graphics API behind a headless `wgpu` adapter.
+//!
+//! An adapter represents a physical or software GPU. Vulkan, Metal and DirectX
+//! 12 are the graphics APIs of Linux/Android, Apple and Windows. The adapter's
+//! name, vendor and backend help diagnose why a program runs slowly, or on a
+//! software renderer.
 
 use std::error::Error;
 
@@ -19,8 +24,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut descriptor = InstanceDescriptor::new_without_display_handle();
     descriptor.backends = wgpu::Backends::PRIMARY;
     let instance = Instance::new(descriptor);
-    let adapter = block_on(instance.request_adapter(&RequestAdapterOptions::default()))
-        .map_err(|error| {
+    let adapter =
+        block_on(instance.request_adapter(&RequestAdapterOptions::default())).map_err(|error| {
             std::io::Error::other(format!(
                 "could not select a GPU adapter; check the installed graphics drivers: {error}"
             ))

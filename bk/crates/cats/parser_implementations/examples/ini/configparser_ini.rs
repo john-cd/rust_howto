@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates parsing INI text and using typed getters with
 //! `configparser`.
+//!
+//! INI is a simple configuration format of `[sections]` containing `key =
+//! value` lines, used on Windows and by many tools. It has no standard for
+//! types, so the typed getters convert text to numbers and booleans.
 
 use anyhow::Context;
 use anyhow::anyhow;

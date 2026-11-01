@@ -4,8 +4,9 @@
 //! This example demonstrates the use of the `clone` method
 //! to create a deep copy of a `String`.
 //!
-//! Cloning explicitly duplicates heap-allocated memory, preserving the original
-//! value while satisfying ownership rules that disallow implicit copies.
+//! Assigning a non-`Copy` value such as `String` moves ownership. Calling
+//! `clone()` makes an independent copy, which can be expensive, so clone only
+//! when you need two owned values.
 
 /// This example demonstrates the use of the `clone` method
 /// to create a deep copy of a `String`.

@@ -48,18 +48,13 @@ impl TryFrom<String> for EmailAddress {
 
     fn try_from(value: String) -> Result<Self, Self::Error> {
         let mut parts = value.split('@');
-        let (Some(local), Some(domain), None) =
-            (parts.next(), parts.next(), parts.next())
-        else {
+        let (Some(local), Some(domain), None) = (parts.next(), parts.next(), parts.next()) else {
             return Err(EmailError::MissingAt);
         };
         if local.is_empty() {
             return Err(EmailError::EmptyLocalPart);
         }
-        if !domain.contains('.')
-            || domain.starts_with('.')
-            || domain.ends_with('.')
-        {
+        if !domain.contains('.') || domain.starts_with('.') || domain.ends_with('.') {
             return Err(EmailError::InvalidDomain);
         }
         Ok(Self(value))
@@ -138,8 +133,7 @@ mod tests {
     /// Checks validation, parsing, conversion, and JSON round trips.
     /// Runs the validated newtype example through its entry point.
     #[test]
-    fn test_validated_newtype_example_entry_point()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_validated_newtype_example_entry_point() -> Result<(), Box<dyn std::error::Error>> {
         main()
     }
 }

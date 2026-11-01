@@ -6,13 +6,13 @@
 //!
 //! The relying party (this program):
 //!
-//! 1. builds an authorization URL carrying `state`, `nonce` and a PKCE
-//!    challenge, and remembers the matching secrets for this one login;
+//! 1. builds an authorization URL carrying `state`, `nonce` and a PKCE challenge, and remembers the
+//!    matching secrets for this one login;
 //! 2. on the callback, rejects a `state` it did not issue;
 //! 3. exchanges the code, proving possession of the PKCE verifier;
-//! 4. verifies the **ID token**: signature, issuer, audience, expiry and nonce.
-//!    The **access token** is opaque to the client: it is only presented to the
-//!    provider's APIs and is never parsed or trusted here.
+//! 4. verifies the **ID token**: signature, issuer, audience, expiry and nonce. The **access
+//!    token** is opaque to the client: it is only presented to the provider's APIs and is never
+//!    parsed or trusted here.
 //!
 //! The token endpoint is a closure returning a signed fixture, so no network
 //! or browser is involved. The fixture signs with HS256 and the client secret
@@ -160,9 +160,7 @@ where
         .exchange_code(AuthorizationCode::new(code.to_owned()))?
         .set_pkce_verifier(pending.pkce_verifier)
         .request(http)
-        .map_err(|error| {
-            anyhow::anyhow!("exchange the authorization code: {error}")
-        })?;
+        .map_err(|error| anyhow::anyhow!("exchange the authorization code: {error}"))?;
     let id_token = tokens
         .id_token()
         .context("the provider returned no ID token")?;
@@ -213,9 +211,9 @@ fn token_endpoint(
             openidconnect::url::form_urlencoded::parse(request.body())
                 .into_owned()
                 .collect();
-        let verifier_ok = form.iter().any(|(key, value)| {
-            key == "code_verifier" && *value == expected_verifier
-        });
+        let verifier_ok = form
+            .iter()
+            .any(|(key, value)| key == "code_verifier" && *value == expected_verifier);
         let body = if verifier_ok {
             json!({
                 "access_token": "opaque-access-token",
@@ -305,10 +303,7 @@ mod tests {
         secret: &str,
     ) -> anyhow::Result<Identity> {
         let id_token = sign(claims, secret)?;
-        let http = token_endpoint(
-            id_token,
-            attempt.pending.pkce_verifier.secret().clone(),
-        );
+        let http = token_endpoint(id_token, attempt.pending.pkce_verifier.secret().clone());
         finish_login(
             &attempt.client,
             attempt.pending,
@@ -329,6 +324,11 @@ mod tests {
     }
 
     /// The authorization URL carries state, nonce and an S256 challenge.
+    #[test]
+    fn main_completes_a_simulated_login() {
+        assert!(main().is_ok());
+    }
+
     #[test]
     fn authorization_url_has_state_nonce_and_pkce() {
         let client = build_client(ISSUER).expect("valid metadata");
@@ -356,8 +356,8 @@ mod tests {
     fn valid_login_returns_the_identity() {
         let attempt = attempt();
         let claims = good_claims(&attempt);
-        let identity = finish_with(attempt, &claims, CLIENT_SECRET)
-            .expect("a valid ID token is accepted");
+        let identity =
+            finish_with(attempt, &claims, CLIENT_SECRET).expect("a valid ID token is accepted");
         assert_eq!(identity.subject, "user-1234");
         assert_eq!(identity.email.as_deref(), Some("ada@example.test"));
     }
@@ -375,12 +375,7 @@ mod tests {
     #[test]
     fn nonce_mismatch_is_rejected() {
         let attempt = attempt();
-        let claims = id_token_claims(
-            ISSUER,
-            CLIENT_ID,
-            "some-other-nonce",
-            unix_now() + 3600,
-        );
+        let claims = id_token_claims(ISSUER, CLIENT_ID, "some-other-nonce", unix_now() + 3600);
         assert!(finish_with(attempt, &claims, CLIENT_SECRET).is_err());
     }
 
@@ -428,10 +423,7 @@ mod tests {
     fn invalid_signature_is_rejected() {
         let attempt = attempt();
         let claims = good_claims(&attempt);
-        assert!(
-            finish_with(attempt, &claims, "another-secret-another-secret-xx")
-                .is_err()
-        );
+        assert!(finish_with(attempt, &claims, "another-secret-another-secret-xx").is_err());
     }
 
     /// The provider refuses a code redeemed with the wrong PKCE verifier.

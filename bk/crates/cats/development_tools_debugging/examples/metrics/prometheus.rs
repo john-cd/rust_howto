@@ -1,5 +1,10 @@
 // ANCHOR: example
 //! Renders metrics in Prometheus exposition format without opening a port.
+//!
+//! Prometheus is a monitoring system that scrapes numbers from services over
+//! HTTP and stores them as time series. A counter only increases (requests
+//! served), a gauge goes up and down (memory in use) and a histogram buckets
+//! values (latency).
 
 use metrics::counter;
 use metrics::histogram;
@@ -13,8 +18,7 @@ fn main() -> anyhow::Result<()> {
     metrics::with_local_recorder(&recorder, || {
         counter!("http_requests_total", "method" => "GET").increment(1);
         metrics::gauge!("active_requests").set(3.0);
-        histogram!("http_request_duration_seconds", "route" => "/health")
-            .record(0.025);
+        histogram!("http_request_duration_seconds", "route" => "/health").record(0.025);
     });
 
     println!("{}", handle.render());
@@ -41,8 +45,7 @@ mod tests {
         let handle = recorder.handle();
 
         metrics::with_local_recorder(&recorder, || {
-            metrics::counter!("test_requests_total", "method" => "GET")
-                .increment(1);
+            metrics::counter!("test_requests_total", "method" => "GET").increment(1);
             metrics::gauge!("test_active_requests").set(3.0);
             metrics::histogram!("test_request_duration_seconds").record(0.025);
         });

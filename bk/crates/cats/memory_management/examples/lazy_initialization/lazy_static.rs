@@ -18,8 +18,7 @@ use lazy_static::lazy_static;
 // initialized only once, the first time it's accessed.
 // - Any type within the macro needs to fulfill the Sync trait.
 // - If a type has a destructor, it will not run when the process exits.
-// - The `static ref` keywords are passed to the macro, they are not part of the
-//   language per se.
+// - The `static ref` keywords are passed to the macro, they are not part of the language per se.
 lazy_static! {
     // `CONFIG` is a lazily-initialized HashMap that holds configuration data.
 /// Configuration map initialized once and shared by all callers.
@@ -61,9 +60,9 @@ fn main() -> anyhow::Result<()> {
     // lock is held. Our non-atomic increment is safe because we're the only
     // thread which can access the shared state when the lock is held.
     {
-        let mut counter: MutexGuard<'_, i32> = COUNTER.lock().expect(
-            "counter mutex is not poisoned before this example locks it",
-        );
+        let mut counter: MutexGuard<'_, i32> = COUNTER
+            .lock()
+            .expect("counter mutex is not poisoned before this example locks it");
         *counter += 1;
         println!("Counter: {}", *counter);
     } // The lock is unlocked here.

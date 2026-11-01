@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Downloads a file as binary response chunks into a temporary directory.
+//!
+//! Large files should be saved in chunks as they arrive instead of being loaded
+//! into memory first, so a multi-gigabyte download needs only a small buffer.
+//! Writing to a temporary directory keeps the example from touching your files.
 
 use std::path::Path;
 
@@ -91,9 +95,7 @@ mod tests {
         let directory = tempfile::tempdir()?;
         let destination = directory.path().join("download.bin");
 
-        let downloaded =
-            download_to(&format!("{}/file", server.url()), &destination)
-                .await?;
+        let downloaded = download_to(&format!("{}/file", server.url()), &destination).await?;
 
         mock.assert_async().await;
         assert_eq!(downloaded, 7);

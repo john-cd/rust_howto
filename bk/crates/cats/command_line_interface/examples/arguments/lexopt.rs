@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates how to use the `lexopt` crate to parse command
 //! line arguments.
+//!
+//! `lexopt` is a minimal command-line parser: it only splits arguments into
+//! options and values, and you write the logic yourself. It compiles quickly
+//! and adds little to the binary, which suits small tools.
 
 /// The parsed command-line arguments.
 struct Args {
@@ -86,8 +90,7 @@ mod tests {
     }
 
     #[test]
-    fn get_args_parses_the_embedded_argument_list()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn get_args_parses_the_embedded_argument_list() -> Result<(), Box<dyn std::error::Error>> {
         let args = get_args()?;
         assert_eq!(args.name, "John");
         assert_eq!(args.age, 30);
@@ -95,8 +98,7 @@ mod tests {
     }
 
     #[test]
-    fn lexopt_rejects_a_non_numeric_age_value()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn lexopt_rejects_a_non_numeric_age_value() -> Result<(), Box<dyn std::error::Error>> {
         use lexopt::ValueExt as _;
         let mut parser = lexopt::Parser::from_iter(["myapp", "--age", "abc"]);
         let _ = parser.next()?;

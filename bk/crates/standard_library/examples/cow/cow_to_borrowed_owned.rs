@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates various uses and conversions of `Cow` (Clone-on-Write).
+//!
+//! `Cow` (clone on write) holds either a borrowed or an owned value and clones
+//! only when needed. `into_owned` gives a fully owned value; `to_mut` clones if
+//! the data is still borrowed.
 
 use std::borrow::Borrow as _;
 use std::borrow::Cow;

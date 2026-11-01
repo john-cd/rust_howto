@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Initializes the logger and logs warning, info, and debug messages from the
 //! root module, then calls `foo::run()`.
+//!
+//! Log messages carry the module path where they were produced, so levels can
+//! be set per module, for example verbose for one module and quiet for the
+//! rest.
 
 /// A module that logs messages and has a nested module.
 mod foo {
@@ -34,9 +38,7 @@ fn main() {
     log::info!("[root] info");
     log::debug!("[root] debug");
     foo::run();
-    println!(
-        "log_mod example: set RUST_LOG=debug to see all module-specific log output above"
-    );
+    println!("log_mod example: set RUST_LOG=debug to see all module-specific log output above");
 }
 // ANCHOR_END: example
 
@@ -47,11 +49,14 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Runs the log mod example through its entry point.
     #[test]
     fn test_log_mod_example_entry_point() {
-        main();
+        isolated::run(module_path!(), "test_log_mod_example_entry_point", || {
+            main();
+        });
     }
 
     // output-only: the example only emits log records, and the process-wide

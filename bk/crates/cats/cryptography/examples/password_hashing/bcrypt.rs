@@ -56,8 +56,7 @@ mod tests {
     }
 
     #[test]
-    fn hash_verifies_only_the_original_password() -> Result<(), Box<dyn Error>>
-    {
+    fn hash_verifies_only_the_original_password() -> Result<(), Box<dyn Error>> {
         let hashed = hash("correct horse", 4)?;
         assert!(hashed.starts_with("$2b$04$"));
         assert!(verify("correct horse", &hashed)?);

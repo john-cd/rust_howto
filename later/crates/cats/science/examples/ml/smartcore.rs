@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Train a SmartCore decision-tree classifier on synthetic data and measure its
 //! accuracy on a seeded holdout split.
+//!
+//! A decision tree classifier predicts a label by asking a series of yes/no
+//! questions about the features. It is trained on labelled examples and
+//! measured by accuracy on data it predicts. Trees are easy to read but can
+//! overfit, which means memorizing the training data instead of generalizing.
 
 use std::error::Error;
 
@@ -39,8 +44,7 @@ fn holdout_accuracy() -> Result<f64, Box<dyn Error>> {
     let (x_train, x_test, y_train, y_test) =
         train_test_split(&features, &labels, 0.25, true, Some(42));
 
-    let classifier =
-        DecisionTreeClassifier::fit(&x_train, &y_train, Default::default())?;
+    let classifier = DecisionTreeClassifier::fit(&x_train, &y_train, Default::default())?;
     let predictions = classifier.predict(&x_test)?;
 
     Ok(accuracy(&y_test, &predictions))
@@ -68,8 +72,7 @@ mod tests {
 
     /// Verifies that the seeded holdout split yields accurate predictions.
     #[test]
-    fn seeded_classifier_exceeds_accuracy_threshold()
-    -> Result<(), Box<dyn Error>> {
+    fn seeded_classifier_exceeds_accuracy_threshold() -> Result<(), Box<dyn Error>> {
         let score = holdout_accuracy()?;
 
         assert!(

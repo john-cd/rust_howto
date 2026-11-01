@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Combinators from `futures_util`, applied to asynchronous fetches that may
 //! fail.
+//!
+//! Combinators transform futures and streams without writing state machines by
+//! hand, much as iterator adapters do for iterators. Here fetches that can fail
+//! are mapped, filtered and collected.
 
 use std::time::Duration;
 
@@ -44,10 +48,8 @@ async fn main() {
     // - `try_join` for handling errors in combined futures.
 
     // `ready` creates a future that is immediately ready with a value.
-    let future1 =
-        time::sleep(Duration::from_millis(100)).then(|()| future::ready(1));
-    let future2 =
-        time::sleep(Duration::from_millis(50)).then(|()| future::ready(2));
+    let future1 = time::sleep(Duration::from_millis(100)).then(|()| future::ready(1));
+    let future2 = time::sleep(Duration::from_millis(50)).then(|()| future::ready(2));
 
     // `select` requires `Future` + `Unpin` bounds.
     pin_mut!(future1);
@@ -135,14 +137,12 @@ mod tests {
     }
 
     #[tokio::test(start_paused = true)]
-    async fn combinators_transform_and_recover()
-    -> Result<(), Box<dyn std::error::Error>> {
-        let mapped =
-            fetch_data(1).map(|r| r.map(|d| format!("Processed: {d}")));
+    async fn combinators_transform_and_recover() -> Result<(), Box<dyn std::error::Error>> {
+        let mapped = fetch_data(1).map(|r| r.map(|d| format!("Processed: {d}")));
         assert_eq!(mapped.await?, "Processed: Data for id 1");
 
-        let recovered = fetch_data(3)
-            .or_else(|_| async { Ok::<_, String>("Fallback data".to_owned()) });
+        let recovered =
+            fetch_data(3).or_else(|_| async { Ok::<_, String>("Fallback data".to_owned()) });
         assert_eq!(recovered.await?, "Fallback data");
 
         let both = future::try_join(fetch_data(1), fetch_data(4)).await;
@@ -160,10 +160,8 @@ mod tests {
 
     #[tokio::test(start_paused = true)]
     async fn select_returns_the_shorter_sleep_first() {
-        let slow =
-            time::sleep(Duration::from_millis(100)).then(|()| future::ready(1));
-        let fast =
-            time::sleep(Duration::from_millis(50)).then(|()| future::ready(2));
+        let slow = time::sleep(Duration::from_millis(100)).then(|()| future::ready(1));
+        let fast = time::sleep(Duration::from_millis(50)).then(|()| future::ready(2));
         pin_mut!(slow, fast);
         match future::select(slow, fast).await {
             future::Either::Right((val, _)) => assert_eq!(val, 2),

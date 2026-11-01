@@ -67,9 +67,9 @@ fn negotiate() -> Result<String> {
     // The offerer sends audio; a valid offer needs at least one media line.
     let mut changes = offerer.sdp_api();
     changes.add_media(MediaKind::Audio, Direction::SendOnly, None, None, None);
-    let (offer, pending) = changes.apply().ok_or_else(|| {
-        anyhow::anyhow!("adding media should produce an offer")
-    })?;
+    let (offer, pending) = changes
+        .apply()
+        .ok_or_else(|| anyhow::anyhow!("adding media should produce an offer"))?;
     let offer_sdp = offer.to_sdp_string();
 
     // Signaling is up to the application: send the offer to the other peer.
@@ -119,13 +119,8 @@ mod tests {
     /// widths.
     #[test]
     fn frame_metadata_advances_and_wraps() {
-        let frames = timestamped_frames(
-            u16::MAX,
-            u32::MAX - 3,
-            4,
-            [vec![0x10], vec![0x20]],
-        )
-        .collect::<Vec<_>>();
+        let frames = timestamped_frames(u16::MAX, u32::MAX - 3, 4, [vec![0x10], vec![0x20]])
+            .collect::<Vec<_>>();
 
         assert_eq!(
             frames,

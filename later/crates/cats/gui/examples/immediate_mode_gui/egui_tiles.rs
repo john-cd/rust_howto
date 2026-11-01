@@ -33,12 +33,7 @@ impl Pane {
 struct TreeBehavior;
 
 impl Behavior<Pane> for TreeBehavior {
-    fn pane_ui(
-        &mut self,
-        ui: &mut egui::Ui,
-        _tile_id: TileId,
-        pane: &mut Pane,
-    ) -> UiResponse {
+    fn pane_ui(&mut self, ui: &mut egui::Ui, _tile_id: TileId, pane: &mut Pane) -> UiResponse {
         ui.heading(&pane.title);
         UiResponse::None
     }
@@ -89,8 +84,7 @@ fn run_example() {
 
     // Draw the tree. This needs an `egui::Context`, not a window.
     let ctx = egui::Context::default();
-    let screen =
-        egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
+    let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
         screen_rect: Some(screen),
         ..Default::default()

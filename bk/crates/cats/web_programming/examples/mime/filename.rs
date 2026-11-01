@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Finding the MIME type of a file from its name.
+//!
+//! A MIME type (media type) such as `image/png` or `text/html` tells software
+//! what kind of data a file or HTTP response contains. Guessing it from the
+//! file extension is quick but can be wrong, because the extension is only a
+//! naming convention.
 
 use http::header::CONTENT_TYPE;
 use http::header::HeaderMap;
@@ -20,10 +25,7 @@ fn find_mimetype(filename: &str) -> Mime {
 ///
 /// Returns an error if the guessed MIME type cannot be represented as a header
 /// value.
-fn set_content_type(
-    filename: &str,
-    headers: &mut HeaderMap,
-) -> Result<(), InvalidHeaderValue> {
+fn set_content_type(filename: &str, headers: &mut HeaderMap) -> Result<(), InvalidHeaderValue> {
     let mime = find_mimetype(filename);
     headers.insert(CONTENT_TYPE, HeaderValue::try_from(mime.as_ref())?);
     Ok(())

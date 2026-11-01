@@ -13,12 +13,11 @@
 //!
 //! ### Algorithm Overview & Heuristic Selection
 //! - **A* Evaluation**: Uses $f(n) = g(n) + h(n)$ to prioritize search paths.
-//! - **Manhattan Distance**: On a 4-connected grid (moving up, down, left,
-//!   right), the Manhattan distance $|x_1 - x_2| + |y_1 - y_2|$ represents the
-//!   exact minimum distance without obstacles, making it an **admissible**
-//!   heuristic.
-//! - **Obstacle Avoidance**: Impassable grid cells (walls) are excluded
-//!   directly within the `successors` transition function.
+//! - **Manhattan Distance**: On a 4-connected grid (moving up, down, left, right), the Manhattan
+//!   distance $|x_1 - x_2| + |y_1 - y_2|$ represents the exact minimum distance without obstacles,
+//!   making it an **admissible** heuristic.
+//! - **Obstacle Avoidance**: Impassable grid cells (walls) are excluded directly within the
+//!   `successors` transition function.
 
 use pathfinding::prelude::astar;
 

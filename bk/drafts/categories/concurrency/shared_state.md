@@ -56,7 +56,7 @@ Use a mutex when one thread at a time may read or mutate a value. Keep the criti
 
 ## Use `parking_lot` Primitives When They Fit {#parking-lot}
 
-[![parking_lot][c~parking_lot~docs~badge]][c~parking_lot~docs] [![parking_lot~crates.io][c~parking_lot~crates.io~badge]][c~parking_lot~crates.io] [![parking_lot~repo][c~parking_lot~repo~badge]][c~parking_lot~repo] [![parking_lot~lib.rs][c~parking_lot~lib.rs~badge]][c~parking_lot~lib.rs]{{hi:parking_lot}}{{hi:Mutex}}{{hi:Thread}}{{hi:Rwlock}}{{hi:Condvar}}{{hi:Once}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}
+{{#badges parking_lot concurrency=Concurrency}}{{hi:Mutex}}{{hi:Thread}}{{hi:Rwlock}}{{hi:Condvar}}{{hi:Once}}
 
 [`parking_lot`][c~parking_lot~docs]↗{{hi:parking_lot}} provides mutexes, read-write locks, condition variables, and one-time initialization with a different API and implementation tradeoffs. The standard library primitives work well for most uses; benchmark before choosing a lock for performance reasons.
 

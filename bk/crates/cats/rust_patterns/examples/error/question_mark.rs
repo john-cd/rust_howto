@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates the use of `?`.
+//!
+//! The `?` operator returns the error to the caller if a `Result` is an `Err`,
+//! and otherwise unwraps the value. It replaces long chains of `match` and
+//! keeps the happy path readable.
 
 use std::fs::File;
 use std::io;
@@ -53,11 +57,8 @@ mod tests {
     #[test]
     fn test_question_mark_example_entry_point() {
         // Make sure the `temp` folder exists.
-        if !std::fs::exists("temp")
-            .expect("the question mark example invariant should hold")
-        {
-            std::fs::create_dir("temp")
-                .expect("example output should be writable");
+        if !std::fs::exists("temp").expect("the question mark example invariant should hold") {
+            std::fs::create_dir("temp").expect("example output should be writable");
         }
         main();
     }

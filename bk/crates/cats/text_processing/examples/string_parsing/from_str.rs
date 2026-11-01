@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Parsing a color from a string by implementing `FromStr`.
+//!
+//! The `FromStr` trait defines how a type is created from text, which also
+//! makes `"...".parse::<T>()` work. Implement it for your own types and return
+//! an error type that explains what was wrong.
 
 use std::error::Error;
 use std::fmt::Display;
@@ -33,9 +37,7 @@ impl Display for RgbParseError {
     /// Formats an RGB parsing error for a user-facing diagnostic.
     fn fmt(&self, formatter: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::InvalidFormat => {
-                formatter.write_str("expected an ASCII color in #RRGGBB form")
-            }
+            Self::InvalidFormat => formatter.write_str("expected an ASCII color in #RRGGBB form"),
             Self::InvalidComponent(error) => {
                 write!(formatter, "invalid hexadecimal RGB component: {error}")
             }
@@ -59,21 +61,15 @@ impl FromStr for Rgb {
 
     /// Parses an ASCII color hex code in the exact `#RRGGBB` form.
     fn from_str(hex_code: &str) -> Result<Self, Self::Err> {
-        if !hex_code.is_ascii()
-            || hex_code.len() != 7
-            || !hex_code.starts_with('#')
-        {
+        if !hex_code.is_ascii() || hex_code.len() != 7 || !hex_code.starts_with('#') {
             return Err(RgbParseError::InvalidFormat);
         }
 
         // The ASCII and exact-length checks above make these byte boundaries
         // valid UTF-8 slice boundaries.
-        let r = u8::from_str_radix(&hex_code[1..3], 16)
-            .map_err(RgbParseError::InvalidComponent)?;
-        let g = u8::from_str_radix(&hex_code[3..5], 16)
-            .map_err(RgbParseError::InvalidComponent)?;
-        let b = u8::from_str_radix(&hex_code[5..7], 16)
-            .map_err(RgbParseError::InvalidComponent)?;
+        let r = u8::from_str_radix(&hex_code[1..3], 16).map_err(RgbParseError::InvalidComponent)?;
+        let g = u8::from_str_radix(&hex_code[3..5], 16).map_err(RgbParseError::InvalidComponent)?;
+        let b = u8::from_str_radix(&hex_code[5..7], 16).map_err(RgbParseError::InvalidComponent)?;
 
         Ok(Self { r, g, b })
     }

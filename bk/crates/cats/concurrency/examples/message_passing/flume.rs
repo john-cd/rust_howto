@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Channels from the `flume` crate: bounded and unbounded, sync and async, and
 //! `select`.
+//!
+//! A channel lets threads (or tasks) pass values to each other instead of
+//! sharing memory. Flume is a fast channel that works from both blocking and
+//! async code.
 
 use std::thread;
 
@@ -67,12 +71,8 @@ fn select() -> (bool, i32) {
         })
         .wait();
     let result = match selected {
-        Selected::Boolean(value) => {
-            (value, rx1.recv().expect("second value was sent"))
-        }
-        Selected::Number(value) => {
-            (rx0.recv().expect("first value was sent"), value)
-        }
+        Selected::Boolean(value) => (value, rx1.recv().expect("second value was sent")),
+        Selected::Number(value) => (rx0.recv().expect("first value was sent"), value),
     };
     producer.join().expect("producer should finish");
     result

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Sharing a configuration between threads with `Arc`, and cloning it on write
 //! with `Arc::make_mut`.
+//!
+//! `Arc` shares ownership of a value between threads. `Arc::make_mut`
+//! implements copy-on-write: if you are the only owner it mutates in place,
+//! otherwise it clones first, so other holders keep seeing the old value.
 
 use std::sync::Arc;
 
@@ -41,11 +45,7 @@ mod cfg {
 
         /// Updates the configuration, cloning it first if other `Arc` pointers
         /// to it exist (clone-on-write).
-        pub fn update(
-            self: &mut Arc<Self>,
-            server_address: String,
-            max_connections: u8,
-        ) {
+        pub fn update(self: &mut Arc<Self>, server_address: String, max_connections: u8) {
             // If there are other `Arc` pointers to the same allocation,
             // then `make_mut` will clone the inner value to a new allocation to
             // ensure unique ownership. This is also referred to as

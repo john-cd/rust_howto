@@ -1,6 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 //! A host binary that calls the library's core-only checksum implementation.
+//!
+//! `no_std` code uses only the `core` library: no operating system and no heap.
+//! It suits firmware, kernels and embedded boards. A checksum is a small value
+//! computed from data to detect accidental corruption, but it does not protect
+//! against deliberate tampering.
 
 // ANCHOR: example
 use no_std::checksum;

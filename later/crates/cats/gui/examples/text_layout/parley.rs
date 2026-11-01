@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Laying out rich text with `parley`.
+//!
+//! Rich text mixes fonts, sizes and colours within one paragraph. Layout turns
+//! the text into positioned lines and glyphs, handling shaping, line breaks and
+//! bidirectional text (left-to-right and right-to-left mixed).
 
 use std::sync::Arc;
 
@@ -40,8 +44,7 @@ fn layout_text(
     layout_cx: &mut LayoutContext<[u8; 4]>,
 ) -> Layout<[u8; 4]> {
     let mut builder = layout_cx.ranged_builder(font_cx, text, 1.0, true);
-    builder
-        .push_default(StyleProperty::FontFamily(FontFamily::named("Roboto")));
+    builder.push_default(StyleProperty::FontFamily(FontFamily::named("Roboto")));
     builder.push_default(StyleProperty::FontSize(16.0));
 
     let mut layout = builder.build(text);
@@ -84,8 +87,7 @@ mod tests {
     fn wraps_text_at_narrow_width() {
         let text = "Parley lays out this longer sentence using the bundled Roboto font.";
         let max_width = 100.0;
-        let mut font_cx =
-            font_context().expect("the bundled Roboto font is valid");
+        let mut font_cx = font_context().expect("the bundled Roboto font is valid");
         let mut layout_cx: LayoutContext<[u8; 4]> = LayoutContext::new();
         let layout = layout_text(text, max_width, &mut font_cx, &mut layout_cx);
 

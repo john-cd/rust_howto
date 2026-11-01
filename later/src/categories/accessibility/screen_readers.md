@@ -6,12 +6,7 @@
 
 ## Make a User Interface Accessible to Screen Readers {#accesskit}
 
-[![accesskit][c~accesskit~docs~badge]][c~accesskit~docs]{{hi:accesskit}}
-[![accesskit~crates.io][c~accesskit~crates.io~badge]][c~accesskit~crates.io]
-[![accesskit~repo][c~accesskit~repo~badge]][c~accesskit~repo]
-[![accesskit~lib.rs][c~accesskit~lib.rs~badge]][c~accesskit~lib.rs]
-[![cat~accessibility][cat~accessibility~badge]][cat~accessibility]{{hi:Accessibility}}
-[![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}
+{{#badges accesskit accessibility=Accessibility gui=GUI}}
 
 [`accesskit`][c~accesskit~docs]↗{{hi:accesskit}} represents an interface as a tree of nodes with roles, accessible names, values, and relationships. A toolkit sends full trees and incremental updates to a platform adapter; the adapter maps them to the operating system's accessibility API. AccessKit's released adapters include Windows UI Automation, macOS `NSAccessibility`, and Unix AT-SPI. A tree can be built and checked without opening a window, as in this example, but it does not prove that a running application works with a screen reader.
 

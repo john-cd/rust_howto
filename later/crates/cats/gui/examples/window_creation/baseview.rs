@@ -62,9 +62,7 @@ fn main() -> Result<(), baseview::Error> {
     let settings = WindowSettings::new()
         .with_title(TITLE)
         .with_size(LogicalSize::new(SIZE.0, SIZE.1));
-    let window = Window::create(settings, |_context: WindowContext| {
-        Ok(BaseviewExample)
-    })?;
+    let window = Window::create(settings, |_context: WindowContext| Ok(BaseviewExample))?;
     window.run_until_closed()
 }
 // ANCHOR_END: example

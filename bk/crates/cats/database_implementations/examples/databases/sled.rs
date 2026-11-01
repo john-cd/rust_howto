@@ -41,8 +41,7 @@ fn main() -> anyhow::Result<()> {
     // modification, or deletion:
     // - If old is `None`, it will only set the value if it doesn't exist yet.
     // - If new is `None`, it will delete the value if old is correct.
-    // - If both old and new are `Some`, it will modify the value only if old is
-    //   correct.
+    // - If both old and new are `Some`, it will modify the value only if old is correct.
     db.compare_and_swap(
         b"key1",               // key
         Some(b"Hello, Sled!"), // old value

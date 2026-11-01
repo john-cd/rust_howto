@@ -24,7 +24,7 @@ When you control the format, consider whether a more explicit format such as TOM
 
 ## Parse INI with `rust-ini` {#rust-ini}
 
-[![rust-ini][c~rust-ini~docs~badge]][c~rust-ini~docs] [![rust-ini~crates.io][c~rust-ini~crates.io~badge]][c~rust-ini~crates.io] [![rust-ini~repo][c~rust-ini~repo~badge]][c~rust-ini~repo] [![rust-ini~lib.rs][c~rust-ini~lib.rs~badge]][c~rust-ini~lib.rs]{{hi:rust-ini}}{{hi:INI}}{{hi:Configuration}}
+{{#badges rust-ini}}{{hi:INI}}{{hi:Configuration}}
 
 [`rust-ini`][c~rust-ini~docs]↗{{hi:rust-ini}} provides an `Ini` value with methods to load, inspect, modify, and write sections and properties. Its crate name in Rust code is `ini`, so it is distinct from the [`ini`][c~ini~docs] macro crate described below.
 

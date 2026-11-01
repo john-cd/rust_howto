@@ -3,6 +3,9 @@
 // ANCHOR: example
 //! This example demonstrates how to use `env_logger` to format log messages
 //! with timestamps.
+//!
+//! Timestamps in logs show when things happened and let you correlate events
+//! across machines. Prefer UTC and a standard layout such as RFC 3339.
 
 use std::io::Write as _;
 
@@ -44,11 +47,18 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Runs the log timestamp example through its entry point.
     #[test]
     fn test_log_timestamp_example_entry_point() {
-        main();
+        isolated::run(
+            module_path!(),
+            "test_log_timestamp_example_entry_point",
+            || {
+                main();
+            },
+        );
     }
 
     // output-only: the example only emits log records, and the process-wide

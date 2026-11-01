@@ -29,7 +29,7 @@ AEAD is commonly used in secure communication protocols such as [TLS][p~tls] (Tr
 
 ## `aes-gcm-siv` {#aes-gcm-siv}
 
-[![aes-gcm-siv][c~aes-gcm-siv~docs~badge]][c~aes-gcm-siv~docs] [![aes-gcm-siv~crates.io][c~aes-gcm-siv~crates.io~badge]][c~aes-gcm-siv~crates.io] [![aes-gcm-siv~repo][c~aes-gcm-siv~repo~badge]][c~aes-gcm-siv~repo] [![aes-gcm-siv~lib.rs][c~aes-gcm-siv~lib.rs~badge]][c~aes-gcm-siv~lib.rs]{{hi:aes-gcm-siv}}{{hi:Aes}}{{hi:Encryption}}{{hi:AEAD}}{{hi:Siv}}{{hi:Aes-gcm}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges aes-gcm-siv cryptography=Cryptography no-std="No standard library"}}{{hi:Aes}}{{hi:Encryption}}{{hi:AEAD}}{{hi:Siv}}{{hi:Aes-gcm}}
 
 [`aes-gcm-siv`][c~aes-gcm-siv~docs]↗{{hi:aes-gcm-siv}} is a pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encryption Cipher (RFC 8452) with optional architecture-specific hardware acceleration.
 
@@ -41,7 +41,7 @@ AES-GCM-SIV (Advanced [Encryption][p~encryption] Standard - Galois/Counter Mode 
 
 ## `aes-gcm` {#aes-gcm}
 
-[![aes-gcm][c~aes-gcm~docs~badge]][c~aes-gcm~docs] [![aes-gcm~crates.io][c~aes-gcm~crates.io~badge]][c~aes-gcm~crates.io] [![aes-gcm~repo][c~aes-gcm~repo~badge]][c~aes-gcm~repo] [![aes-gcm~lib.rs][c~aes-gcm~lib.rs~badge]][c~aes-gcm~lib.rs]{{hi:aes-gcm}}{{hi:Aes}}{{hi:Encryption}}{{hi:GCM}}{{hi:AEAD}}{{hi:Ghash}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges aes-gcm cryptography=Cryptography no-std="No standard library"}}{{hi:Aes}}{{hi:Encryption}}{{hi:GCM}}{{hi:AEAD}}{{hi:Ghash}}
 
 [`aes-gcm`][c~aes-gcm~docs]↗{{hi:aes-gcm}} is a pure Rust implementation of the AES-GCM (Galois/Counter Mode) Authenticated Encryption with Associated Data (AEAD) Cipher with optional architecture-specific hardware acceleration.
 
@@ -49,7 +49,7 @@ For a complete AES-GCM round trip and tampering test, see the [AES-256-GCM recip
 
 ## ChaCha20Poly1305 {#chacha20poly1305}
 
-[![chacha20poly1305~website][c~chacha20poly1305~website~badge]][c~chacha20poly1305~website] [![chacha20poly1305][c~chacha20poly1305~docs~badge]][c~chacha20poly1305~docs] [![chacha20poly1305~crates.io][c~chacha20poly1305~crates.io~badge]][c~chacha20poly1305~crates.io] [![chacha20poly1305~repo][c~chacha20poly1305~repo~badge]][c~chacha20poly1305~repo] [![chacha20poly1305~lib.rs][c~chacha20poly1305~lib.rs~badge]][c~chacha20poly1305~lib.rs]{{hi:chacha20poly1305}}{{hi:Chacha20}}{{hi:Poly1305}}{{hi:AEAD}}{{hi:Xchacha20}}{{hi:Xchacha20poly1305}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+[![chacha20poly1305~website][c~chacha20poly1305~website~badge]][c~chacha20poly1305~website] {{#badges chacha20poly1305}} {{hi:Chacha20}} {{hi:Poly1305}} {{hi:AEAD}} {{hi:Xchacha20}} {{hi:Xchacha20poly1305}} {{#categories cryptography=Cryptography,no-std="No standard library"}}
 
 [`chacha20poly1305`][c~chacha20poly1305~docs]↗{{hi:chacha20poly1305}} is a pure Rust implementation of the ChaCha20Poly1305 Authenticated Encryption with Additional Data Cipher (RFC 8439) with optional architecture-specific hardware acceleration. Also contains implementations of the XChaCha20Poly1305 extended nonce variant of ChaCha20Poly1305, and the reduced-round ChaCha8Poly1305 and ChaCha12Poly1305 lightweight variants.
 

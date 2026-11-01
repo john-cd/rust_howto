@@ -52,7 +52,7 @@ Escape sequences for `parse_from_str` follow Chrono's [`strftime` format rules][
 
 ## `humantime` {#humantime}
 
-[![humantime][c~humantime~docs~badge]][c~humantime~docs] [![humantime~crates.io][c~humantime~crates.io~badge]][c~humantime~crates.io] [![humantime~repo][c~humantime~repo~badge]][c~humantime~repo] [![humantime~lib.rs][c~humantime~lib.rs~badge]][c~humantime~lib.rs]{{hi:humantime}}{{hi:Parser}}{{hi:Time}}{{hi:Human}}{{hi:Duration}}{{hi:Human-friendly}} [![cat~date-and-time][cat~date-and-time~badge]][cat~date-and-time]{{hi:Date and time}}
+{{#badges humantime date-and-time="Date and time"}}{{hi:Parser}}{{hi:Time}}{{hi:Human}}{{hi:Duration}}{{hi:Human-friendly}}
 
 A parser and formatter for `std::time::{Duration, SystemTime}`. The example parses `2h 30m 15s` into a duration and formats it back into a human-readable string. `humantime` also supports RFC 3339 timestamps when an application needs to parse a `SystemTime`.
 

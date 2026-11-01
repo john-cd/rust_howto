@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Adapts buffered input lines into simple comma-separated row values.
+//!
+//! The adapter pattern converts one interface to the one a caller expects, like
+//! a power plug adapter. Here buffered input lines are turned into rows of
+//! values.
 
 use std::io::BufRead;
 use std::io::Cursor;
@@ -24,9 +28,9 @@ impl<R: BufRead> Iterator for CsvRows<R> {
 
     /// Reads one line and splits it into fields.
     fn next(&mut self) -> Option<Self::Item> {
-        self.lines.next().map(|line| {
-            line.map(|line| line.split(',').map(str::to_owned).collect())
-        })
+        self.lines
+            .next()
+            .map(|line| line.map(|line| line.split(',').map(str::to_owned).collect()))
     }
 }
 

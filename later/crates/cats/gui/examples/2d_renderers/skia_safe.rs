@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Draw shapes into an in-memory image with `skia-safe` (CPU raster, no GPU or
 //! window) and encode it as PNG.
+//!
+//! Skia is the 2D graphics library behind Chrome and Android. A canvas receives
+//! drawing commands; a surface holds the pixels. Rendering on the CPU into an
+//! image needs no window or GPU, which makes the example easy to run and test.
 
 use anyhow::Context as _;
 use skia_safe::Color;
@@ -23,8 +27,8 @@ const SIZE: i32 = 256;
 /// Returns an error if Skia cannot allocate the surface.
 fn draw() -> anyhow::Result<Surface> {
     // A raster surface renders on the CPU into its own pixel buffer.
-    let mut surface = surfaces::raster_n32_premul((SIZE, SIZE))
-        .context("create a Skia raster surface")?;
+    let mut surface =
+        surfaces::raster_n32_premul((SIZE, SIZE)).context("create a Skia raster surface")?;
     let canvas = surface.canvas();
     canvas.clear(Color::WHITE);
 
@@ -43,7 +47,7 @@ fn draw() -> anyhow::Result<Surface> {
     paint.set_color(Color::BLUE);
     paint.set_style(PaintStyle::Stroke);
     paint.set_stroke_width(4.0);
-    canvas.draw_path(&builder.detach(None), &paint);
+    canvas.draw_path(&builder.detach(), &paint);
 
     Ok(surface)
 }
@@ -94,12 +98,7 @@ mod tests {
 
     /// Reads one RGBA pixel back from the surface.
     fn pixel(surface: &mut Surface, x: i32, y: i32) -> [u8; 4] {
-        let info = ImageInfo::new(
-            (1, 1),
-            ColorType::RGBA8888,
-            AlphaType::Premul,
-            None,
-        );
+        let info = ImageInfo::new((1, 1), ColorType::RGBA8888, AlphaType::Premul, None);
         let mut rgba = [0_u8; 4];
         assert!(surface.read_pixels(&info, &mut rgba, 4, (x, y)));
         rgba

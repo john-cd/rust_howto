@@ -7,8 +7,7 @@ use fontdue::Font;
 use fontdue::FontSettings;
 
 /// A font bundled with the repository (Apache License 2.0).
-const FONT_BYTES: &[u8] =
-    include_bytes!("../../../gui/assets/Roboto-Regular.ttf");
+const FONT_BYTES: &[u8] = include_bytes!("../../../gui/assets/Roboto-Regular.ttf");
 
 /// Rasterizes `'A'` at 32 pixels and returns its bitmap size and coverage.
 fn rasterize_glyph() -> anyhow::Result<(usize, usize, u32)> {

@@ -25,15 +25,15 @@ The server below binds to loopback port 3000, accepts connections, adapts each T
 
 ## `hyper` TLS Support {#hyper-tls-support .skip}
 
-[![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] [![hyper-tls][c~hyper-tls~docs~badge]][c~hyper-tls~docs] [![hyper-tls~crates.io][c~hyper-tls~crates.io~badge]][c~hyper-tls~crates.io] [![hyper-tls~repo][c~hyper-tls~repo~badge]][c~hyper-tls~repo] [![hyper-tls~lib.rs][c~hyper-tls~lib.rs~badge]][c~hyper-tls~lib.rs]{{hi:hyper-tls}}{{hi:Http}}{{hi:Https}}{{hi:Hyper}}{{hi:Ssl}}{{hi:Tls}}
+[![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] {{#badges hyper-tls}} {{hi:Http}} {{hi:Https}} {{hi:Hyper}} {{hi:Ssl}} {{hi:Tls}}
 
 [`hyper-tls`][c~hyper-tls~crates.io]↗ is the default TLS implementation for use with Hyper (native TLS). Hyper does not configure TLS itself. TLS adapters such as `hyper-rustls`, `hyper-tls`, and `hyper-openssl` are separate crates; check that an adapter supports the same Hyper major version as your application.
 
-[![hyper-rustls][c~hyper-rustls~docs~badge]][c~hyper-rustls~docs] [![hyper-rustls~crates.io][c~hyper-rustls~crates.io~badge]][c~hyper-rustls~crates.io] [![hyper-rustls~repo][c~hyper-rustls~repo~badge]][c~hyper-rustls~repo] [![hyper-rustls~lib.rs][c~hyper-rustls~lib.rs~badge]][c~hyper-rustls~lib.rs]{{hi:hyper-rustls}}
+{{#badges hyper-rustls}}
 
 Rustls integration for HTTPS with Hyper, in pure Rust.
 
-[![hyper-openssl][c~hyper-openssl~docs~badge]][c~hyper-openssl~docs] [![hyper-openssl~crates.io][c~hyper-openssl~crates.io~badge]][c~hyper-openssl~crates.io] [![hyper-openssl~repo][c~hyper-openssl~repo~badge]][c~hyper-openssl~repo] [![hyper-openssl~lib.rs][c~hyper-openssl~lib.rs~badge]][c~hyper-openssl~lib.rs]{{hi:hyper-openssl}}
+{{#badges hyper-openssl}}
 
 TLS support for Hyper through OpenSSL.
 

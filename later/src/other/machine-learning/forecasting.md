@@ -6,7 +6,7 @@
 
 ## Forecast a Seasonal Series with `augurs` {#augurs}
 
-[![augurs][c~augurs~docs~badge]][c~augurs~docs] [![augurs~crates.io][c~augurs~crates.io~badge]][c~augurs~crates.io] [![augurs~repo][c~augurs~repo~badge]][c~augurs~repo] [![augurs~lib.rs][c~augurs~lib.rs~badge]][c~augurs~lib.rs]{{hi:augurs}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+{{#badges augurs science=Science}}
 
 [`augurs`][c~augurs~docs]↗{{hi:augurs}} is a time-series toolkit written in Rust. The recipe uses MSTL (multiple seasonal-trend decomposition) to remove the weekly pattern and an exponential smoothing (ETS) model for the trend, then forecasts two weeks with a 95% interval. The crate's ETS models are not seasonal themselves, which is why the seasonality is handled by MSTL. The crate's API is still evolving: pin the version.
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A named thread created with `std::thread::Builder`.
+//!
+//! The thread builder sets a name and stack size before starting a thread. A
+//! name shows up in debuggers, panic messages and profilers, which helps a lot
+//! when diagnosing a multi-threaded program.
 
 use std::thread;
 

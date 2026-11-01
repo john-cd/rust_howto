@@ -101,10 +101,10 @@ mod tests {
         let mut response = ResponseHeader::build(200, None)?;
         add_example_response_header(&mut response)?;
 
-        let value =
-            response.headers.get(RESPONSE_HEADER_NAME).ok_or_else(|| {
-                anyhow::anyhow!("the example response header is missing")
-            })?;
+        let value = response
+            .headers
+            .get(RESPONSE_HEADER_NAME)
+            .ok_or_else(|| anyhow::anyhow!("the example response header is missing"))?;
         assert_eq!(value.to_str()?, RESPONSE_HEADER_VALUE);
 
         Ok(())

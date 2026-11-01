@@ -1,5 +1,9 @@
 // ANCHOR: example
 //! Serves the Prometheus payload from an Axum `/metrics` route.
+//!
+//! Metrics are numbers that describe a running service, such as request counts
+//! and latencies. A monitoring system such as Prometheus scrapes them
+//! periodically from an HTTP endpoint, conventionally `/metrics`.
 
 use axum::Router;
 use axum::routing::get;
@@ -9,8 +13,7 @@ use metrics_exporter_prometheus::PrometheusBuilder;
 fn router() -> (Router, metrics_exporter_prometheus::PrometheusRecorder) {
     let recorder = PrometheusBuilder::new().build_recorder();
     let handle = recorder.handle();
-    let app = Router::new()
-        .route("/metrics", get(move || async move { handle.render() }));
+    let app = Router::new().route("/metrics", get(move || async move { handle.render() }));
     (app, recorder)
 }
 
@@ -18,8 +21,7 @@ fn router() -> (Router, metrics_exporter_prometheus::PrometheusRecorder) {
 fn main() -> anyhow::Result<()> {
     let (_app, recorder) = router();
     metrics::with_local_recorder(&recorder, || {
-        metrics::counter!("http_requests_total", "method" => "GET")
-            .increment(1);
+        metrics::counter!("http_requests_total", "method" => "GET").increment(1);
     });
     // In a real service: `axum::serve(listener, app).await?;`
     println!("{}", recorder.handle().render());
@@ -48,8 +50,7 @@ mod tests {
     async fn metrics_route_renders_recorded_series() -> anyhow::Result<()> {
         let (app, recorder) = router();
         metrics::with_local_recorder(&recorder, || {
-            metrics::counter!("route_test_total", "method" => "GET")
-                .increment(1);
+            metrics::counter!("route_test_total", "method" => "GET").increment(1);
         });
 
         let response = app

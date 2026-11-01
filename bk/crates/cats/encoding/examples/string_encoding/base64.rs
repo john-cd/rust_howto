@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates how to encode and decode a string using `base64`.
+//!
+//! Base64 represents arbitrary bytes using 64 printable characters, so binary
+//! data can travel through text-only channels such as JSON, email or URLs. It
+//! makes the data about a third larger and is not encryption.
 
 use std::str;
 

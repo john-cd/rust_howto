@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Demonstrates the use of the `zeroize` crate to securely clear sensitive data
 //! from memory.
+//!
+//! When a value is dropped, its memory is normally left as it was, so a secret
+//! may stay readable in a core dump or swap file. Zeroizing overwrites it, and
+//! the crate uses tricks to stop the compiler from optimizing the write away.
 
 // This example demonstrates how to securely clear sensitive data from memory
 // using the `zeroize` crate.

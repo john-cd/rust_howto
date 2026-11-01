@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! A reader-writer lock from `parking_lot`.
+//!
+//! A read-write lock allows many readers at once, or one writer. It helps when
+//! data is read often and changed rarely, such as configuration.
 
 use parking_lot::RwLock;
 

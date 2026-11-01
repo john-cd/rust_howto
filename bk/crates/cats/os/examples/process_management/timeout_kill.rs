@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Run a command with a timeout and kill it if it takes too long.
+//!
+//! A program that hangs must not hang its caller. Waiting for a child with a
+//! time limit, and killing it afterwards, keeps tools such as test runners and
+//! build scripts responsive.
 
 use std::process::Child;
 use std::process::Command;
@@ -11,10 +15,7 @@ use std::time::Duration;
 use wait_timeout::ChildExt as _;
 
 /// Waits up to `limit` for `child`; returns `None` after killing it on timeout.
-fn wait_or_kill(
-    child: &mut Child,
-    limit: Duration,
-) -> std::io::Result<Option<ExitStatus>> {
+fn wait_or_kill(child: &mut Child, limit: Duration) -> std::io::Result<Option<ExitStatus>> {
     if let Some(status) = child.wait_timeout(limit)? {
         return Ok(Some(status));
     }

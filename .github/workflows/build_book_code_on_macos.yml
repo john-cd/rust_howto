@@ -32,11 +32,15 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
-  CARGO_TARGET_DIR: ${{ github.workspace }}/target
-  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/build
+  CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
   ## CI uses rust-cache instead of the local sccache wrapper.
   RUSTC_WRAPPER: ""
 
+  CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
+  CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
+  CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_INCREMENTAL: '0'
 permissions:
   contents: read
 
@@ -65,15 +69,20 @@ jobs:
         uses: ./.github/actions/setup-rust
         with:
           toolchain: ${{ env.RUST_VERSION }}
-          cache-workspaces: |
-            bk/crates -> ../../target
+          cache-workspaces: |-
+            bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            later/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            tools -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            playground -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            publish -> ${{ github.workspace }}/.ci/target/rust_howto/main
+            xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main
 
       - name: Install Protocol Buffers compiler
         run: brew install protobuf ninja
 
       - name: Install Nextest and cargo-deny
-        # taiki-e/install-action v2.87.30
-        uses: taiki-e/install-action@1e29709c0ec63babbe8f266397a465f29a825f91
+        # taiki-e/install-action v2.88.0
+        uses: taiki-e/install-action@86f7a0ffb25f40114606501a311ebcfaf882ea32
         with:
           tool: cargo-nextest@${{ env.CARGO_NEXTEST_VERSION }},cargo-deny
 
@@ -99,6 +108,6 @@ jobs:
 
       - name: Run tests and fail on process leaks
         run: |
-          cargo nextest run --config-file nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
+          cargo nextest run --config-file .config/nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
           cargo test --workspace --doc --locked --profile ci -- --show-output
         working-directory: bk/crates

@@ -10,5 +10,6 @@
 | [Use nalgebra Vectors][ex~mathematics~nalgebra-vectors]                                                     | {{#crate nalgebra}} | {{#categories mathematics=Mathematics}} |
 | [Apply Transformations][ex~mathematics~nalgebra-transformations]                                            | {{#crate nalgebra}} | {{#categories mathematics=Mathematics}} |
 | [Decompose a Matrix with SVD][ex~mathematics~nalgebra-svd]                                                  | {{#crate nalgebra}} | {{#categories mathematics=Mathematics}} |
+| [Work with Sparse Matrices][ex~mathematics~sparse-matrices]                                                 | {{#crate sprs}}     | {{#categories mathematics=Mathematics}} |
 | [Compare Vectors][ex~mathematics~vector-comparison]                                                         | {{#crate nalgebra}} | {{#categories mathematics=Mathematics}} |
 | [(De)serialize a Matrix][ex~mathematics~deserialize-a-matrix]                                               | {{#crate nalgebra}} | {{#categories mathematics=Mathematics}} |

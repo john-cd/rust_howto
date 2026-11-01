@@ -73,10 +73,7 @@ impl howto::greeter::logger::Host for State {
 /// preopened directories, environment variables, arguments, network or
 /// inherited standard streams. Add capabilities with `WasiCtxBuilder` only
 /// when the guest needs them.
-fn instantiate(
-    engine: &Engine,
-    component: &Component,
-) -> Result<(Store<State>, Greeter)> {
+fn instantiate(engine: &Engine, component: &Component) -> Result<(Store<State>, Greeter)> {
     let mut linker = Linker::new(engine);
     wasmtime_wasi::p2::add_to_linker_sync(&mut linker)?;
     Greeter::add_to_linker::<State, HasSelf<State>>(&mut linker, |s| s)?;
@@ -117,9 +114,7 @@ fn build_guest() -> Result<Option<PathBuf>> {
         .context("failed to run cargo")?;
     if !status.status.success() {
         let stderr = String::from_utf8_lossy(&status.stderr);
-        if stderr.contains("wasm32-wasip2")
-            && stderr.contains("target may not be installed")
-        {
+        if stderr.contains("wasm32-wasip2") && stderr.contains("target may not be installed") {
             return Ok(None);
         }
         anyhow::bail!("building the guest failed:\n{stderr}");

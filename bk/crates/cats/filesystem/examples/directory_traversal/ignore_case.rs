@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates how to ignore case when matching file names.
+//!
+//! File name case sensitivity differs: Linux is case sensitive, while Windows
+//! and default macOS volumes are not. Matching case-insensitively finds files
+//! regardless of how they were capitalized.
 
 use std::path::PathBuf;
 

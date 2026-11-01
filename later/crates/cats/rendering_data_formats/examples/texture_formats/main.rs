@@ -72,10 +72,7 @@ fn main() -> anyhow::Result<()> {
     let header = ktx2_header_round_trip()?;
     println!(
         "KTX2: {}x{}, {} levels, {:?}",
-        header.pixel_width,
-        header.pixel_height,
-        header.level_count,
-        header.format
+        header.pixel_width, header.pixel_height, header.level_count, header.format
     );
     Ok(())
 }

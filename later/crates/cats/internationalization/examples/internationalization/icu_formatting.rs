@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Formats numbers and dates with ICU4X using two different locales.
+//!
+//! Numbers and dates are written differently around the world (1,234.5 or
+//! 1.234,5; month/day or day/month). ICU4X, from the Unicode Consortium, holds
+//! locale data and formatting rules, and is designed to run in small, portable
+//! programs.
 
 use std::error::Error;
 
@@ -14,12 +19,8 @@ use icu::locale::Locale;
 use icu::locale::locale;
 
 /// Formats a decimal with the grouping and digits selected by `locale`.
-fn format_number(
-    locale: Locale,
-    value: &Decimal,
-) -> Result<String, Box<dyn Error + Send + Sync>> {
-    let formatter =
-        DecimalFormatter::try_new(locale.into(), Default::default())?;
+fn format_number(locale: Locale, value: &Decimal) -> Result<String, Box<dyn Error + Send + Sync>> {
+    let formatter = DecimalFormatter::try_new(locale.into(), Default::default())?;
 
     Ok(formatter.format_to_string(value))
 }
@@ -34,8 +35,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     println!("de-DE: {german}");
     let date = Date::try_new_iso(2025, 1, 15)?;
     for locale in [locale!("en-US"), locale!("de-DE")] {
-        let formatter =
-            DateTimeFormatter::try_new(locale.into(), YMD::medium())?;
+        let formatter = DateTimeFormatter::try_new(locale.into(), YMD::medium())?;
         println!("{}", formatter.format(&date));
     }
     Ok(())
@@ -53,8 +53,7 @@ mod tests {
 
     /// Verifies that ICU4X applies locale-specific grouping separators.
     #[test]
-    fn formats_grouping_for_english_and_german()
-    -> Result<(), Box<dyn Error + Send + Sync>> {
+    fn formats_grouping_for_english_and_german() -> Result<(), Box<dyn Error + Send + Sync>> {
         let value = Decimal::from(1_234_567);
 
         assert_eq!(format_number(locale!("en-US"), &value)?, "1,234,567");

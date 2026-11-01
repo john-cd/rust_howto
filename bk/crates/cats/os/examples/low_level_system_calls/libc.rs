@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! This example demonstrates how to use `libc` to call into the C standard
 //! library from Rust.
+//!
+//! A system call is a request from a program to the operating system kernel.
+//! `libc` exposes the C standard library functions, so calls are `unsafe`: the
+//! compiler cannot check pointers or error codes. Prefer a safe wrapper such as
+//! `nix` when one exists.
 
 use std::ffi::CStr;
 use std::ffi::CString;
@@ -55,9 +60,7 @@ fn print() -> anyhow::Result<()> {
 /// If non-null, `cstr_ptr` must point to a readable allocation containing a
 /// NUL terminator within that allocation. The pointed-to bytes must not be
 /// mutated for the duration of this call. See `CStr::from_ptr`'s contract.
-unsafe fn cstr_to_rust_string(
-    cstr_ptr: *const c_char,
-) -> anyhow::Result<String> {
+unsafe fn cstr_to_rust_string(cstr_ptr: *const c_char) -> anyhow::Result<String> {
     if cstr_ptr.is_null() {
         return Err(anyhow!("C string pointer is null."));
     }

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Build Arrow columns by hand with the `arrow-array` crate, combine them
 //! into a `RecordBatch`, and print it with `arrow-cast`.
+//!
+//! Apache Arrow is a columnar in-memory format: each column is stored
+//! contiguously, which makes scans and analytics fast. Building arrays by hand
+//! shows what Arrow holds: the values plus a validity bitmap that marks nulls.
 
 use std::sync::Arc;
 

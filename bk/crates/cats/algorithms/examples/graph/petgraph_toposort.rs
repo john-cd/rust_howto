@@ -15,12 +15,11 @@
 //! error.
 //!
 //! ### Purpose & Use Cases
-//! - **Build Systems & Compilers**: Resolving compilation order for source
-//!   modules and crate dependencies (e.g., Cargo build graph).
-//! - **Task Schedulers**: Determining valid execution sequences for data
-//!   workflow pipelines (e.g., ETL jobs or Airflow DAGs).
-//! - **Instruction Scheduling**: Ordering hardware instructions to avoid data
-//!   hazard stalls.
+//! - **Build Systems & Compilers**: Resolving compilation order for source modules and crate
+//!   dependencies (e.g., Cargo build graph).
+//! - **Task Schedulers**: Determining valid execution sequences for data workflow pipelines (e.g.,
+//!   ETL jobs or Airflow DAGs).
+//! - **Instruction Scheduling**: Ordering hardware instructions to avoid data hazard stalls.
 
 use petgraph::Graph;
 use petgraph::algo::toposort;

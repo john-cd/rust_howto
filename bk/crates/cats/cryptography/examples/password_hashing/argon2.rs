@@ -2,6 +2,12 @@
 
 // ANCHOR: example
 //! Examples of password hashing and key derivation with Argon2.
+//!
+//! Servers must never store passwords directly; they store a salted,
+//! deliberately slow hash. Argon2 won the Password Hashing Competition and is
+//! the recommended choice: it needs a lot of memory as well as time, which
+//! makes cracking with GPUs expensive. The salt is random data stored with the
+//! hash.
 
 use argon2::Argon2;
 use argon2::password_hash::Error;
@@ -54,15 +60,8 @@ fn password_hashing(password_to_save: &[u8]) -> Result<String, Error> {
 
 /// Verify a given password against the provided PHC string.
 /// Returns true if the password is correct.
-fn password_verification(
-    password_to_check: &[u8],
-    phc_string: &str,
-) -> Result<bool, Error> {
-    password_verification_with(
-        &Argon2::default(),
-        password_to_check,
-        phc_string,
-    )
+fn password_verification(password_to_check: &[u8], phc_string: &str) -> Result<bool, Error> {
+    password_verification_with(&Argon2::default(), password_to_check, phc_string)
 }
 
 /// Verifies a password using the provided Argon2 configuration.
@@ -93,11 +92,7 @@ fn key_derivation() -> Result<(), Error> {
 
     // Hash a password and associated parameters into the provided output
     // buffer.
-    Argon2::default().hash_password_into(
-        password,
-        salt,
-        &mut output_key_material,
-    )?;
+    Argon2::default().hash_password_into(password, salt, &mut output_key_material)?;
 
     // `output_key_material` can now be used as a cryptographic key.
 
@@ -166,9 +161,7 @@ mod tests {
     /// Reports malformed PHC strings as errors instead of accepting them.
     #[test]
     fn argon2_verification_rejects_malformed_hash() {
-        assert!(
-            password_verification(b"password", "not a PHC string").is_err()
-        );
+        assert!(password_verification(b"password", "not a PHC string").is_err());
     }
 
     #[test]

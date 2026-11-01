@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Demonstrates basic serialization and deserialization using `serde`.
+//!
+//! Serialization turns a Rust value into a format such as JSON, and
+//! deserialization turns it back. `serde` does this for many formats through
+//! derive macros, so the same struct works with JSON, TOML, YAML and binary
+//! formats.
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -33,13 +38,12 @@ fn main() {
     };
 
     // Serialize the struct to a JSON string.
-    let json = serde_json::to_string(&person)
-        .expect("the serde example invariant should hold");
+    let json = serde_json::to_string(&person).expect("the serde example invariant should hold");
     println!("Serialized: {json}");
 
     // Deserialize the JSON string back to a struct.
-    let deserialized_person: Person = serde_json::from_str(&json)
-        .expect("sample input should parse successfully");
+    let deserialized_person: Person =
+        serde_json::from_str(&json).expect("sample input should parse successfully");
     println!("Deserialized: {deserialized_person:?}");
 }
 
@@ -61,8 +65,7 @@ mod tests {
 
     /// Fields are renamed, `None` is skipped, and round trips preserve data.
     #[test]
-    fn renames_fields_and_skips_none() -> Result<(), Box<dyn std::error::Error>>
-    {
+    fn renames_fields_and_skips_none() -> Result<(), Box<dyn std::error::Error>> {
         let person = Person {
             first: "Jane".to_owned(),
             last: "Roe".to_owned(),
@@ -72,9 +75,7 @@ mod tests {
         assert_eq!(json, r#"{"first_name":"Jane","last_name":"Roe"}"#);
         let back: Person = serde_json::from_str(&json)?;
         assert_eq!(back, person);
-        assert!(
-            serde_json::from_str::<Person>(r#"{"first_name":"x"}"#).is_err()
-        );
+        assert!(serde_json::from_str::<Person>(r#"{"first_name":"x"}"#).is_err());
         Ok(())
     }
 }

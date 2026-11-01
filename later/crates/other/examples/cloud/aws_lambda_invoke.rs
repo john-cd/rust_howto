@@ -6,6 +6,11 @@
 )]
 // ANCHOR: example
 //! Invoke an AWS Lambda function synchronously and asynchronously.
+//!
+//! AWS Lambda runs your function on demand without servers to manage. A
+//! synchronous invocation waits for the result; an asynchronous one queues the
+//! event and returns at once, and Lambda retries on failure. Running this needs
+//! AWS credentials.
 
 use anyhow::Context;
 use anyhow::Result;
@@ -53,11 +58,7 @@ pub async fn invoke_sync(
 }
 
 /// Queues an invocation and returns immediately (HTTP 202).
-pub async fn invoke_async(
-    client: &Client,
-    function_name: &str,
-    request: &Request,
-) -> Result<i32> {
+pub async fn invoke_async(client: &Client, function_name: &str, request: &Request) -> Result<i32> {
     let output = client
         .invoke()
         .function_name(function_name)

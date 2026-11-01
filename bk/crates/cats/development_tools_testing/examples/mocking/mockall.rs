@@ -1,4 +1,8 @@
 //! Mocking a trait with `mockall`.
+//!
+//! A mock replaces a real dependency (a database or a web service) in a test.
+//! `mockall` generates a mock from a trait, lets you set the expected calls and
+//! return values, and fails the test when the expectations are not met.
 
 pub fn run() {
     main();
@@ -75,11 +79,7 @@ impl<T: UserRepository> UserService<T> {
     ///
     /// * `id` - The ID of the user to update.
     /// * `new_email` - The new email address.
-    fn update_user_email(
-        &self,
-        id: u64,
-        new_email: String,
-    ) -> Result<User, String> {
+    fn update_user_email(&self, id: u64, new_email: String) -> Result<User, String> {
         // Get the user:
         let mut user = self.get_user(id)?;
 
@@ -215,9 +215,7 @@ mod tests {
         mock_repo
             .expect_save()
             .withf(|user: &User| {
-                user.id == 1
-                    && user.name == "John Doe"
-                    && user.email == "newemail@example.com"
+                user.id == 1 && user.name == "John Doe" && user.email == "newemail@example.com"
             })
             .times(1)
             .returning(|_| Ok(()));
@@ -226,13 +224,11 @@ mod tests {
         let service = UserService::new(mock_repo);
 
         // Call the method we want to test.
-        let result =
-            service.update_user_email(1, "newemail@example.com".to_owned());
+        let result = service.update_user_email(1, "newemail@example.com".to_owned());
 
         // Assert the result.
         assert!(result.is_ok());
-        let updated_user =
-            result.expect("the mockall example invariant should hold");
+        let updated_user = result.expect("the mockall example invariant should hold");
         assert_eq!(updated_user.id, 1);
         assert_eq!(updated_user.name, "John Doe");
         assert_eq!(updated_user.email, "newemail@example.com");

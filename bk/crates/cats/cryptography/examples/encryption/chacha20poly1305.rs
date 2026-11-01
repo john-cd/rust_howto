@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Authenticated encryption with ChaCha20-Poly1305, with and without associated
 //! data.
+//!
+//! ChaCha20-Poly1305 is a modern authenticated cipher, fast even without
+//! hardware AES support. Authenticated means decryption fails if the data was
+//! tampered with. Associated data is extra information, such as a header, that
+//! is authenticated but not encrypted. Never reuse a nonce with the same key.
 
 // Trait that provides in-place stateless AEAD:
 // Algorithm:
@@ -57,14 +62,8 @@ fn encrypt_then_decrypt() -> anyhow::Result<()> {
         // and returning the authentication tag.
         // In-place encryption eliminates `alloc` requirements.
         tag = cipher
-            .encrypt_inout_detached(
-                &nonce,
-                b"",
-                ciphertext.as_mut_slice().into(),
-            )
-            .map_err(|_| {
-                anyhow::anyhow!("ChaCha20-Poly1305 encryption failed")
-            })?;
+            .encrypt_inout_detached(&nonce, b"", ciphertext.as_mut_slice().into())
+            .map_err(|_| anyhow::anyhow!("ChaCha20-Poly1305 encryption failed"))?;
 
         println!("Ciphertext: {ciphertext:x?}");
         println!("Tag: {tag:x?}");
@@ -80,14 +79,12 @@ fn encrypt_then_decrypt() -> anyhow::Result<()> {
         let mut decrypted_plaintext = ciphertext.clone();
         let decrypted_result = cipher_dec.decrypt_inout_detached(
             &nonce,
-            b"", // No associated_data in this example
+            b"",                                       // No associated_data in this example
             decrypted_plaintext.as_mut_slice().into(), // Buffer
             &tag,
         );
 
-        decrypted_result.map_err(|_| {
-            anyhow::anyhow!("ChaCha20-Poly1305 authentication failed")
-        })?;
+        decrypted_result.map_err(|_| anyhow::anyhow!("ChaCha20-Poly1305 authentication failed"))?;
         assert_eq!(decrypted_plaintext, plaintext);
     }
 
@@ -132,11 +129,7 @@ fn aad() -> anyhow::Result<()> {
 
     let mut ciphertext_aad = plaintext.clone();
     let tag_aad = cipher_aad
-        .encrypt_inout_detached(
-            &nonce,
-            aad,
-            ciphertext_aad.as_mut_slice().into(),
-        )
+        .encrypt_inout_detached(&nonce, aad, ciphertext_aad.as_mut_slice().into())
         .map_err(|_| anyhow::anyhow!("ChaCha20-Poly1305 encryption failed"))?;
 
     println!("Ciphertext with AAD: {ciphertext_aad:x?}");
@@ -150,9 +143,7 @@ fn aad() -> anyhow::Result<()> {
         &tag_aad,
     );
 
-    decrypted_result_aad.map_err(|_| {
-        anyhow::anyhow!("ChaCha20-Poly1305 authentication failed")
-    })?;
+    decrypted_result_aad.map_err(|_| anyhow::anyhow!("ChaCha20-Poly1305 authentication failed"))?;
     assert_eq!(decrypted_plaintext_aad, plaintext);
 
     let wrong_aad = b"different associated data";

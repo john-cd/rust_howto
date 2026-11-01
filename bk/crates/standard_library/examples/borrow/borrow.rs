@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Looking up a `HashMap` of `String` keys with a `&str`, thanks to `Borrow`.
+//!
+//! The `Borrow` trait is why you can look up a `HashMap<String, V>` with a
+//! `&str`: the key type can be borrowed as `str`, and hashing and equality
+//! agree for both, so no `String` has to be allocated for the lookup.
 
 use std::collections::HashMap;
 

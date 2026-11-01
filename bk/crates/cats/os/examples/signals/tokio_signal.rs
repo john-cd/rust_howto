@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Shut an async service down on Ctrl-C or SIGTERM with Tokio.
+//!
+//! Services should shut down gracefully: stop accepting new work, finish what
+//! is in flight, then exit. Orchestrators such as Kubernetes ask for this with
+//! SIGTERM, and a user at a terminal with Ctrl-C (SIGINT).
 
 use std::future::Future;
 use std::time::Duration;
@@ -15,8 +19,7 @@ async fn shutdown_signal() -> anyhow::Result<()> {
 
     #[cfg(unix)]
     {
-        let mut sigterm =
-            signal::unix::signal(signal::unix::SignalKind::terminate())?;
+        let mut sigterm = signal::unix::signal(signal::unix::SignalKind::terminate())?;
         tokio::select! {
             result = ctrl_c => result?,
             _ = sigterm.recv() => {}
@@ -52,8 +55,7 @@ pub fn run() -> anyhow::Result<()> {
     let runtime = tokio::runtime::Runtime::new()?;
     runtime.block_on(async {
         // Without a signal, waiting for shutdown simply times out:
-        let waited =
-            time::timeout(Duration::from_millis(10), shutdown_signal()).await;
+        let waited = time::timeout(Duration::from_millis(10), shutdown_signal()).await;
         assert!(waited.is_err());
 
         // In a real program, pass `async { let _ = shutdown_signal().await; }`

@@ -1,4 +1,9 @@
 //! Tokenizes a small arithmetic expression with logos.
+//!
+//! Tokenization (lexing) is the first stage of a compiler or interpreter: it
+//! splits source text into tokens such as numbers, operators and identifiers. A
+//! parser then builds structure from the tokens. `logos` generates a fast lexer
+//! from annotated enums.
 
 use logos::Logos;
 

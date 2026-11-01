@@ -27,11 +27,7 @@ From the `bk/crates` workspace, pass the package and target you want to profile:
 
 ## `criterion` {#criterion}
 
-[![criterion][c~criterion~docs~badge]][c~criterion~docs]{{hi:criterion}}
-[![criterion~crates.io][c~criterion~crates.io~badge]][c~criterion~crates.io]
-[![criterion~repo][c~criterion~repo~badge]][c~criterion~repo]
-[![criterion~lib.rs][c~criterion~lib.rs~badge]][c~criterion~lib.rs]
-[![cat~development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling]{{hi:Profiling}}
+{{#badges criterion development-tools::profiling=Profiling}}
 
 [`criterion`][c~criterion~docs]↗{{hi:criterion}} measures a Rust function over
 repeated samples and reports statistical comparisons with prior runs. Keep
@@ -49,11 +45,7 @@ mode with:
 
 ## `divan` {#divan}
 
-[![divan][c~divan~docs~badge]][c~divan~docs]{{hi:divan}}
-[![divan~crates.io][c~divan~crates.io~badge]][c~divan~crates.io]
-[![divan~repo][c~divan~repo~badge]][c~divan~repo]
-[![divan~lib.rs][c~divan~lib.rs~badge]][c~divan~lib.rs]
-[![cat~development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling]{{hi:Profiling}}
+{{#badges divan development-tools::profiling=Profiling}}
 
 [`divan`][c~divan~docs]↗{{hi:divan}} is a simple yet powerful benchmarking library with allocation profiling.
 
@@ -70,11 +62,7 @@ with:
 
 ## `hyperfine` {#hyperfine}
 
-[![hyperfine][c~hyperfine~docs~badge]][c~hyperfine~docs]{{hi:hyperfine}}
-[![hyperfine~crates.io][c~hyperfine~crates.io~badge]][c~hyperfine~crates.io]
-[![hyperfine~repo][c~hyperfine~repo~badge]][c~hyperfine~repo]
-[![hyperfine~lib.rs][c~hyperfine~lib.rs~badge]][c~hyperfine~lib.rs]
-[![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command line utilities}}
+{{#badges hyperfine command-line-utilities="Command line utilities"}}
 
 [`hyperfine`][c~hyperfine~docs]↗{{hi:hyperfine}} measures whole commands and
 reports run-to-run variation. It is useful for comparing end-to-end behavior;
@@ -86,6 +74,49 @@ run the same representative input for each command. Install it with:
 
 ```console
 {{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/hyperfine.sh}}
+```
+
+## Criterion Benchmarks from the Book {#book-benchmarks}
+
+These Criterion targets compare real implementations from the book's example
+crates. Run them from `bk/crates`; results depend on the machine and build
+configuration, so use them to compare changes on the same system.
+
+### Hash Functions {#hashing-benchmark}
+
+Compare hash functions over small and medium byte buffers:
+
+```console
+cargo bench --package algorithms --bench hashing
+```
+
+```rust,editable
+{{#include ../../../crates/cats/algorithms/benches/hashing.rs:example}}
+```
+
+### Arena and Heap Allocation {#arena-benchmark}
+
+Compare `bumpalo` arena allocation with `Box` allocation:
+
+```console
+cargo bench --package memory_management --bench arena
+```
+
+```rust,editable
+{{#include ../../../crates/cats/memory_management/benches/arena.rs:example}}
+```
+
+### Hash Map Implementations {#hashmap-benchmark}
+
+Compare the standard library, `ahash`, and `rustc-hash` for string and integer
+keys:
+
+```console
+cargo bench --package data_structures --bench hashmap
+```
+
+```rust,editable
+{{#include ../../../crates/cats/data_structures/benches/hashmap.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}

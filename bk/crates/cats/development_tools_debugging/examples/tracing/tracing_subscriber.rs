@@ -1,13 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! - `tracing` is a framework for instrumenting Rust programs to collect
-//!   scoped, structured, and async-aware diagnostics.
-//! - Its `Subscriber` trait represents the functionality necessary to collect
-//!   this trace data.
-//! - The `tracing-subscriber` crate contains tools for composing subscribers
-//!   out of smaller units of behaviour, and batteries-included implementations
-//!   of common subscriber functionality.
+//! - `tracing` is a framework for instrumenting Rust programs to collect scoped, structured, and
+//!   async-aware diagnostics.
+//! - Its `Subscriber` trait represents the functionality necessary to collect this trace data.
+//! - The `tracing-subscriber` crate contains tools for composing subscribers out of smaller units
+//!   of behaviour, and batteries-included implementations of common subscriber functionality.
 //! - In particular, the `tracing_subscriber::fmt` module provides a default
 //!   implementation of the `Subscriber` trait that records `Events` and `Spans`
 //!   by formatting them as text and logging them to stdout.
@@ -55,11 +53,18 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::isolated;
 
     /// Runs the tracing subscriber example through its entry point.
     #[test]
     fn test_tracing_subscriber_example_entry_point() {
-        main();
+        isolated::run(
+            module_path!(),
+            "test_tracing_subscriber_example_entry_point",
+            || {
+                main();
+            },
+        );
     }
 
     // output-only: the example installs the process-wide subscriber, which can

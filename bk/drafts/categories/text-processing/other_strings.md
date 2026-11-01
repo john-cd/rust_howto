@@ -30,7 +30,7 @@ For FFI declarations, use the pointer type required by the API, such as `*const 
 
 ## Work with arbitrary bytes with `bstr` {#bstr}
 
-[![bstr][c~bstr~docs~badge]][c~bstr~docs] [![bstr~crates.io][c~bstr~crates.io~badge]][c~bstr~crates.io] [![bstr~repo][c~bstr~repo~badge]][c~bstr~repo] [![bstr~lib.rs][c~bstr~lib.rs~badge]][c~bstr~lib.rs]{{hi:bstr}}{{hi:Text}}{{hi:String}}{{hi:Byte}}{{hi:Bytes}}{{hi:Str}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+{{#badges bstr encoding=Encoding text-processing="Text processing"}}{{hi:Text}}{{hi:String}}{{hi:Byte}}{{hi:Bytes}}{{hi:Str}}
 
 [`bstr`][c~bstr~docs]↗{{hi:bstr}} provides string-like operations on byte sequences that may be invalid UTF-8. Use it when the input is byte-oriented and must be preserved, such as data read from a file or external process. Operations on bytes do not automatically correspond to Unicode characters or grapheme clusters.
 
@@ -40,7 +40,7 @@ For FFI declarations, use the pointer type required by the API, such as `*const 
 
 ## Intern strings with `ustr` {#ustr}
 
-[![ustr][c~ustr~docs~badge]][c~ustr~docs] [![ustr~crates.io][c~ustr~crates.io~badge]][c~ustr~crates.io] [![ustr~repo][c~ustr~repo~badge]][c~ustr~repo] [![ustr~lib.rs][c~ustr~lib.rs~badge]][c~ustr~lib.rs]{{hi:ustr}}{{hi:Ffi}}{{hi:Interning}}{{hi:String}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges ustr caching=Caching data-structures="Data structures"}}{{hi:Ffi}}{{hi:Interning}}{{hi:String}}
 
 The [`ustr`][c~ustr~docs]↗{{hi:ustr}} crate interns strings so equal values can share a stored representation. This can reduce repeated string storage and make equality checks inexpensive, at the cost of interning-table lookups and retained entries. It is useful when strings are reused often and are not frequently assembled or changed; measure with the application's workload.
 
@@ -52,7 +52,7 @@ You may also use the [string_cache][c~string_cache~docs]↗ library for internin
 
 ## Store short strings with `compact_str` {#compact_str}
 
-[![compact_str][c~compact_str~docs~badge]][c~compact_str~docs] [![compact_str~crates.io][c~compact_str~crates.io~badge]][c~compact_str~crates.io] [![compact_str~repo][c~compact_str~repo~badge]][c~compact_str~repo] [![compact_str~lib.rs][c~compact_str~lib.rs~badge]][c~compact_str~lib.rs]{{hi:compact_str}}{{hi:Compact}}{{hi:Memory}}{{hi:Mutable}}{{hi:Small}}{{hi:String}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~parsing][cat~parsing~badge]][cat~parsing]{{hi:Parsing tools}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+{{#badges compact_str encoding=Encoding memory-management="Memory management" parsing="Parsing tools" text-processing="Text processing"}}{{hi:Compact}}{{hi:Memory}}{{hi:Mutable}}{{hi:Small}}{{hi:String}}
 
 [`compact_str`][c~compact_str~docs]↗{{hi:compact_str}} provides `CompactString`, which stores short strings inline in the value and longer strings in allocated storage. Inline storage is part of the value; it is not necessarily on the stack. Consider it when an application has many short strings, and compare memory use and performance with `String` for that workload.
 

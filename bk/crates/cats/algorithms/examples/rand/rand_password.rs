@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Generates a random password from a custom set of characters with `rand`.
+//!
+//! A password generator draws each character independently from an allowed set.
+//! Password strength comes from the length and from a secure random source; the
+//! operating-system-seeded generator used here is suitable.
 
 use rand::RngExt as _;
 

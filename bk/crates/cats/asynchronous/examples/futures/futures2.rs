@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Polling several futures at once with `join!` and `join_all`.
+//!
+//! `join!` runs several futures concurrently and waits for all of them, which
+//! is faster than awaiting them one after another when each mostly waits for
+//! the network. `join_all` does the same for a whole collection.
 
 use futures::join;
 

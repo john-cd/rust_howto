@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Write an Arrow record batch to CSV and read it back.
+//!
+//! CSV is a plain-text format with no types, while Arrow columns are typed.
+//! Converting between them needs a schema, or inference from the data.
 
 use std::io::Cursor;
 use std::sync::Arc;
@@ -27,9 +30,10 @@ fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
     let mut reader = csv::ReaderBuilder::new(schema)
         .with_header(true)
         .build(Cursor::new(csv_bytes))?;
-    reader.next().transpose()?.ok_or_else(|| {
-        ArrowError::ParseError("CSV input contained no rows".to_owned())
-    })
+    reader
+        .next()
+        .transpose()?
+        .ok_or_else(|| ArrowError::ParseError("CSV input contained no rows".to_owned()))
 }
 // ANCHOR_END: example
 

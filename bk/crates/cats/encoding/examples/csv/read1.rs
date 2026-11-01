@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! This example demonstrates deserializing CSV records into a struct.
+//!
+//! Deserializing turns each CSV row into a struct, using the header names as
+//! field names, so the rest of the program works with typed values instead of
+//! strings.
 
 use serde::Deserialize;
 

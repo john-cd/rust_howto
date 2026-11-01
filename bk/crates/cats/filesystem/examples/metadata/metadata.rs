@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Reading the metadata of files and directories.
+//!
+//! File metadata is information about a file apart from its content: size,
+//! type, permissions and times (modified, accessed and, on some systems,
+//! created). It comes from the file system.
 
 use std::fs;
 use std::time::UNIX_EPOCH;

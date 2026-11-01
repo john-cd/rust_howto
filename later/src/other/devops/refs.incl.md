@@ -12,20 +12,18 @@
 [ex~devops~automation]: release_automation.md#automation
 [ex~devops~cargo-deb]: release_automation.md#cargo-deb
 [ex~devops~cargo-dist]: release_automation.md#cargo-dist
-[ex~devops~cargo-integrated-hook-managers]: version_control.md#cargo-integrated-hook-managers
 [ex~devops~cargo-release]: release_automation.md#cargo-release
 [ex~devops~cargo]: release_automation.md#cargo
 [ex~devops~cdci]: cd_ci.md#cdci
 [ex~devops~changelog]: release_automation.md#changelog
 [ex~devops~check-your-code-before-committing]: version_control.md#check-your-code-before-committing
-[ex~devops~choose-a-hook-manager]: version_control.md#choose-a-hook-manager
+[ex~devops~install-git-hooks-with-prek]: version_control.md#use-prek-for-git-hooks
 [ex~devops~compilation-caching]: github_actions.md#compilation-caching
 [ex~devops~continuous-integration]: cd_ci.md#continuous-integration
 [ex~devops~delivery-deployment]: cd_ci.md#delivery-deployment
 [ex~devops~git-libraries-and-rust-tools]: version_control.md#git-libraries-and-rust-tools
 [ex~devops~github-actions]: cd_ci.md#github-actions
 [ex~devops~installation-of-development-tools]: github_actions.md#installation-of-development-tools
-[ex~devops~pre-commit-rust-checks]: version_control.md#pre-commit-rust-checks
 [ex~devops~publish-to-crates-io]: release_automation.md#publish-to-crates-io
 [ex~devops~release-plz]: release_automation.md#release-plz
 [ex~devops~rust-ci]: github_actions.md#rust-ci
@@ -54,7 +52,6 @@
 [infra~kube-docs]: https://docs.rs/kube/latest/kube/
 [infra~pulumi-rust-status]: https://www.pulumi.com/releases/changelog/2026-08-18-experimental-rust-support/
 [infra~terraform-provider-language]: https://developer.hashicorp.com/terraform/plugin/best-practices/provider-code
-[lefthook~repo]: https://github.com/evilmartians/lefthook
 [nextest~running~docs]: https://nexte.st/docs/running/
 [octocrab~api~docs]: https://docs.rs/octocrab/latest/octocrab/
 [prek~repo]: https://github.com/j178/prek
@@ -80,6 +77,5 @@
 [rust-cache~action~repo]: https://github.com/Swatinem/rust-cache
 [rust-howto~windows-workflow]: https://github.com/john-cd/rust_howto/blob/develop/.github/workflows/build_book_code_and_book_on_windows.yml
 [rust-toolchain~repo]: https://github.com/dtolnay/rust-toolchain
-[rusty-hook~repo]: https://github.com/swellaby/rusty-hook
 [setup-rust-toolchain~repo]: https://github.com/actions-rust-lang/setup-rust-toolchain
 [zizmor~usage~docs]: https://docs.zizmor.sh/usage/

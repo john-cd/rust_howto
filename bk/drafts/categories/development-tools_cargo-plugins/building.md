@@ -45,15 +45,15 @@ Choose the smallest tool that fits the task: use Cargo profiles and build script
 
 ### Use `devx` {#devx}
 
-[![devx-cmd][c~devx-cmd~docs~badge]][c~devx-cmd~docs] [![devx-cmd~crates.io][c~devx-cmd~crates.io~badge]][c~devx-cmd~crates.io] [![devx-cmd~repo][c~devx-cmd~repo~badge]][c~devx-cmd~repo] [![devx-cmd~lib.rs][c~devx-cmd~lib.rs~badge]][c~devx-cmd~lib.rs]{{hi:devx-cmd}}{{hi:Cmd}}{{hi:Bash}}{{hi:Shell}}{{hi:Process}} [![devx-pre-commit][c~devx-pre-commit~docs~badge]][c~devx-pre-commit~docs] [![devx-pre-commit~crates.io][c~devx-pre-commit~crates.io~badge]][c~devx-pre-commit~crates.io] [![devx-pre-commit~repo][c~devx-pre-commit~repo~badge]][c~devx-pre-commit~repo] [![devx-pre-commit~lib.rs][c~devx-pre-commit~lib.rs~badge]][c~devx-pre-commit~lib.rs]{{hi:devx-pre-commit}}{{hi:Formatter}}{{hi:Hook}}{{hi:Pre-commit}}{{hi:Rustfmt}}{{hi:Git}} [![cat~development-tools][cat~development-tools~badge]][cat~development-tools]{{hi:Development tools}}
+{{#badges devx-cmd}} {{hi:Cmd}} {{hi:Bash}} {{hi:Shell}} {{hi:Process}} {{#categories development-tools="Development tools"}}
 
 [`devx`][devx~repo]↗{{hi:devx}} is a collection of utilities for writing your own dev scripts in Rust. The project is inspired by and intended for seamless usage with [`cargo-xtask`][c~cargo-xtask~repo]↗ idioms.
 
-[`devx-cmd`][c~devx-cmd~docs]↗{{hi:devx-cmd}} provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts. [`devx-pre-commit`][c~devx-pre-commit~docs]↗{{hi:devx-pre-commit}} creates git pre-commit hooks that enforce good practices.
+[`devx-cmd`][c~devx-cmd~docs]↗{{hi:devx-cmd}} provides primitives for spawning child processes that are easier than `std::process targeted` when used in development scripts.
 
 ## Write cross-platform `bash`-like scripts in Rust with `xshell` {#xshell}
 
-[![xshell][c~xshell~docs~badge]][c~xshell~docs] [![xshell~crates.io][c~xshell~crates.io~badge]][c~xshell~crates.io] [![xshell~repo][c~xshell~repo~badge]][c~xshell~repo] [![xshell~lib.rs][c~xshell~lib.rs~badge]][c~xshell~lib.rs]{{hi:xshell}} [![cat~development-tools::build-utils][cat~development-tools::build-utils~badge]][cat~development-tools::build-utils]{{hi:Build Utils}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
+{{#badges xshell development-tools::build-utils="Build Utils" filesystem=Filesystem}}
 
 "[`xshell`][c~xshell~repo]↗{{hi:xshell}} is a swiss-army knife for writing cross-platform 'bash' scripts in Rust.
 

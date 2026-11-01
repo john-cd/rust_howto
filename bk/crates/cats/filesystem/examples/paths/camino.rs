@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! UTF-8 paths with `camino`.
+//!
+//! Standard Rust paths (`Path`) can hold bytes that are not valid UTF-8, which
+//! makes them awkward to print. `camino` provides paths that are always UTF-8,
+//! which is simpler when you only deal with ordinary names.
 
 use std::path::PathBuf;
 

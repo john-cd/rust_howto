@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Extracts key phrases from a paragraph with RAKE (Rapid Automatic Keyword
 //! Extraction).
+//!
+//! Keyword extraction finds the phrases that best describe a text. RAKE splits
+//! the text at stop words (such as "the" and "of") and punctuation, then ranks
+//! the remaining candidates by how often their words occur and co-occur. It
+//! needs no training data.
 
 use rake::KeywordScore;
 use rake::Rake;
@@ -13,8 +18,7 @@ fn main() -> anyhow::Result<()> {
     // load a full list for their language, e.g. with `StopWords::from_file`.
     let mut stop_words = StopWords::new();
     for word in [
-        "a", "an", "and", "are", "for", "in", "is", "of", "on", "the", "to",
-        "with",
+        "a", "an", "and", "are", "for", "in", "is", "of", "on", "the", "to", "with",
     ] {
         stop_words.insert(word.to_owned());
     }
@@ -46,7 +50,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

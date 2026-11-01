@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Serves an Axum route with common `tower-http` middleware.
+//!
+//! Middleware wraps a handler to add behaviour for every request, such as
+//! logging, compression or timeouts, without changing the handler. `tower-http`
+//! supplies common layers.
 
 use std::time::Duration;
 
@@ -115,9 +119,9 @@ mod tests {
         let mut response = Vec::new();
         client.read_to_end(&mut response).await?;
         let response = String::from_utf8(response)?;
-        shutdown_sender.send(()).map_err(|()| {
-            anyhow::anyhow!("server shutdown receiver dropped")
-        })?;
+        shutdown_sender
+            .send(())
+            .map_err(|()| anyhow::anyhow!("server shutdown receiver dropped"))?;
         tokio::time::timeout(Duration::from_secs(2), server).await???;
 
         let response_headers = response

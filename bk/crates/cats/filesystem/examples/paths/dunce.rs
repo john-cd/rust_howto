@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Canonicalize a path without the Windows `\\?\` prefix.
+//!
+//! On Windows, `canonicalize` returns paths with a `\\?\` prefix that many
+//! programs cannot handle. `dunce` removes it when it is safe to do so.
 
 use std::fs;
 use std::path::Path;

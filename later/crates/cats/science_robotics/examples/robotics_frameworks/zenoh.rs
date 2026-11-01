@@ -5,6 +5,12 @@
 
 // ANCHOR: example
 //! Publishes and receives several local telemetry values with `zenoh`.
+//!
+//! Zenoh is a publish/subscribe protocol for robots and edge devices. Data is
+//! published to hierarchical key expressions such as `robot/battery`, and
+//! subscribers receive values for the keys they match, with no central broker
+//! needed. It also supports queries, so one program can ask another for the
+//! latest value.
 
 use std::time::Duration;
 
@@ -12,8 +18,7 @@ use anyhow::Result;
 use zenoh::Config;
 
 const KEY_EXPR: &str = "science/robotics/telemetry";
-const TELEMETRY: [&str; 3] =
-    ["temperature=21.5", "temperature=21.7", "temperature=21.9"];
+const TELEMETRY: [&str; 3] = ["temperature=21.5", "temperature=21.7", "temperature=21.9"];
 
 /// Opens a Zenoh session and prints the received telemetry values.
 ///
@@ -51,13 +56,10 @@ async fn publish_and_receive(config: Config) -> Result<Vec<String>> {
 
     let mut received = Vec::with_capacity(TELEMETRY.len());
     for _ in TELEMETRY {
-        let sample = tokio::time::timeout(
-            Duration::from_secs(5),
-            subscriber.recv_async(),
-        )
-        .await
-        .map_err(|_| anyhow::anyhow!("timed out waiting for telemetry"))?
-        .map_err(zenoh_error)?;
+        let sample = tokio::time::timeout(Duration::from_secs(5), subscriber.recv_async())
+            .await
+            .map_err(|_| anyhow::anyhow!("timed out waiting for telemetry"))?
+            .map_err(zenoh_error)?;
         received.push(
             sample
                 .payload()

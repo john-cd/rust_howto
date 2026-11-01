@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates vector operations using the `nalgebra` crate:
 //! creating vectors, computing dot and cross products, norm, and normalization.
+//!
+//! A vector is a list of numbers, such as a position or a velocity. The dot
+//! product measures how aligned two vectors are; the cross product gives a
+//! vector perpendicular to both (3D only); the norm is the length.
 
 use nalgebra::Vector3;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Example of a self-referential struct using pinning.
+//!
+//! A self-referential struct holds a pointer to its own data. Moving the struct
+//! would invalidate that pointer, so the value must be pinned in place with
+//! `Pin`. This is the problem that `async` blocks solve internally.
 
 /// A self-referential struct, which is pinned.
 mod selfref {
@@ -49,10 +53,9 @@ mod selfref {
             let self_ptr: *const String = &boxed.data;
             unsafe {
                 // Get a mutable reference to the pinned struct.
-                // - `as_mut` goes from `&mut Pin<Pointer<T>>` to `Pin<&mut T>`
-                //   (here `Pointer` is a `Box`).
-                // - `get_unchecked_mut` gets a mutable reference to what's
-                //   inside of the `Pin`.
+                // - `as_mut` goes from `&mut Pin<Pointer<T>>` to `Pin<&mut T>` (here `Pointer` is a
+                //   `Box`).
+                // - `get_unchecked_mut` gets a mutable reference to what's inside of the `Pin`.
                 let mut_ref: &mut Self = Pin::get_unchecked_mut(boxed.as_mut());
                 // Assign the right address.
                 mut_ref.ptr = self_ptr;
@@ -156,8 +159,7 @@ fn main() {
 
     use selfref::*;
 
-    let pinned: Pin<Box<SelfRef>> =
-        SelfRef::new("I am a self-referential struct.");
+    let pinned: Pin<Box<SelfRef>> = SelfRef::new("I am a self-referential struct.");
 
     assert!(std::ptr::eq(&pinned.data, pinned.ptr));
 
@@ -168,8 +170,7 @@ fn main() {
     // Meanwhile, we are free to move the smart pointer around.
     let mut still_unmoved = pinned;
 
-    let mut other_pinned =
-        SelfRef::new("I am another self-referential struct.");
+    let mut other_pinned = SelfRef::new("I am another self-referential struct.");
 
     // Perform an assignment.
     still_unmoved.as_mut().assign(other_pinned.as_mut());

@@ -88,7 +88,7 @@ clap = { version = "4.6.7", features = ["derive"] }
 cmaes = "0.2.2" # CMA-ES evolution strategy.
 fixed = "1.31.0"
 half = "2.7.1"
-nalgebra = { version = "0.34.2", features = ["serde-serialize"] } # Pinned: ode_solvers uses nalgebra 0.34.
+nalgebra = { version = "0.34.2", features = ["serde-serialize"] } # Pinned: ode_solvers 0.6.2 (latest) requires nalgebra ^0.34; nalgebra 0.35 is out.
 ndarray = { version = "0.17.2", features = [
     "approx",
 ] } # was pinned to 0.15.6 for linfa
@@ -105,6 +105,7 @@ rayon = "1.12.0" # Parallel evaluation of independent graph levels.
 rust_decimal = "1.43.0"
 rust_decimal_macros = "1.40.0"
 serde_json = "1.0.154"
+sprs = "0.11.6"
 typenum = "1.20.1"
 uom = "0.38.0" # Type-safe physical quantities and unit conversion.
 

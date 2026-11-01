@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Highlights source code with `syntect` (TextMate grammars and themes), as
 //! HTML and as terminal escape codes.
+//!
+//! Syntax highlighting colours code by the role of each token. `syntect` uses
+//! the same grammars and themes as Sublime Text and TextMate, and here emits
+//! HTML for web pages or documentation.
 
 use std::sync::LazyLock;
 
@@ -15,8 +19,7 @@ use syntect::util::LinesWithEndings;
 use syntect::util::as_24_bit_terminal_escaped;
 
 // Loading the bundled grammars and themes is slow: do it once.
-static SYNTAXES: LazyLock<SyntaxSet> =
-    LazyLock::new(SyntaxSet::load_defaults_newlines);
+static SYNTAXES: LazyLock<SyntaxSet> = LazyLock::new(SyntaxSet::load_defaults_newlines);
 static THEMES: LazyLock<ThemeSet> = LazyLock::new(ThemeSet::load_defaults);
 
 const THEME: &str = "base16-ocean.dark";
@@ -41,8 +44,7 @@ fn main() -> anyhow::Result<()> {
     let mut highlighter = HighlightLines::new(syntax, theme);
     let mut terminal = String::new();
     for line in LinesWithEndings::from(code) {
-        let ranges: Vec<(Style, &str)> =
-            highlighter.highlight_line(line, &SYNTAXES)?;
+        let ranges: Vec<(Style, &str)> = highlighter.highlight_line(line, &SYNTAXES)?;
         terminal.push_str(&as_24_bit_terminal_escaped(&ranges, false));
     }
     println!("{terminal}\x1b[0m");
@@ -52,7 +54,8 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
     let entry = main;
     entry()
 }

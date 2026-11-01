@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! Compressing and decompressing a file asynchronously with
 //! `async_compression`.
+//!
+//! Compression stores data in fewer bytes, which saves disk space and network
+//! time at the cost of some CPU. The asynchronous version compresses while
+//! reading and writing without blocking a thread.
 
 use std::io::Result as IoResult;
 use std::path::Path;
@@ -56,8 +60,7 @@ async fn main() -> anyhow::Result<()> {
 
     // 4. Verify the decompressed content.
     let original_content = tokio::fs::read_to_string(&input_filename).await?;
-    let decompressed_content =
-        tokio::fs::read_to_string(&decompressed_filename).await?;
+    let decompressed_content = tokio::fs::read_to_string(&decompressed_filename).await?;
     anyhow::ensure!(
         original_content == decompressed_content,
         "decompressed content differs from the original"
@@ -72,10 +75,7 @@ async fn main() -> anyhow::Result<()> {
 /// # Errors
 ///
 /// Returns an I/O error if either file cannot be opened or copied.
-async fn compress_file_async(
-    source_path: &Path,
-    dest_path: &Path,
-) -> IoResult<()> {
+async fn compress_file_async(source_path: &Path, dest_path: &Path) -> IoResult<()> {
     let mut source_file = File::open(source_path).await?;
     let dest_file = File::create(dest_path).await?;
 
@@ -91,10 +91,7 @@ async fn compress_file_async(
 /// # Errors
 ///
 /// Returns an I/O error if either file cannot be opened or copied.
-async fn decompress_file_async(
-    source_path: &Path,
-    dest_path: &Path,
-) -> IoResult<()> {
+async fn decompress_file_async(source_path: &Path, dest_path: &Path) -> IoResult<()> {
     let source_file = File::open(source_path).await?;
     let mut dest_file = File::create(dest_path).await?;
 
@@ -130,8 +127,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn compress_then_decompress_roundtrips_the_file() -> anyhow::Result<()>
-    {
+    async fn compress_then_decompress_roundtrips_the_file() -> anyhow::Result<()> {
         let dir = tempdir()?;
         let input = dir.path().join("in.txt");
         let gz = dir.path().join("in.gz");

@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! An actor with the `ractor` crate: a greeter that counts the greetings it
 //! handles.
+//!
+//! The actor model structures a program as independent actors that own their
+//! state and communicate only by sending messages. Ractor, inspired by Erlang's
+//! OTP, adds supervision: a parent actor can restart a child that fails.
 
 #![allow(unexpected_cfgs)]
 
@@ -75,8 +79,7 @@ impl ractor::Actor for Greeter {
         state: &mut Self::State,
     ) -> Result<(), ActorProcessingErr> {
         state.count += 1;
-        let reply =
-            format!("Hello, {}! (greeting #{})", message.name, state.count);
+        let reply = format!("Hello, {}! (greeting #{})", message.name, state.count);
         // A caller may cancel a request after sending it; the actor can still
         // process the message and stop normally.
         let _ = message.reply_to.send(reply);

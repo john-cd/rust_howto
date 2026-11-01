@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A line plot and a bar chart with `egui_plot`.
+//!
+//! In an immediate-mode GUI the interface is rebuilt by code on every frame,
+//! rather than created once as a tree of widgets. This makes simple tools and
+//! dashboards quick to write. `egui_plot` draws charts inside such an
+//! interface.
 
 use eframe::egui;
 use egui_plot::Bar;
@@ -46,8 +51,7 @@ fn show_bar_chart(ui: &mut egui::Ui) -> egui_plot::PlotResponse<()> {
 /// Lays out both plots for one frame without a window.
 fn main() {
     let ctx = egui::Context::default();
-    let screen =
-        egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
+    let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
         screen_rect: Some(screen),
         ..Default::default()

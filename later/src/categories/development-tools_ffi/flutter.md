@@ -44,7 +44,7 @@ The import paths depend on the generated package name and configured output dire
 
 ## `flutter_rust_bridge` {#flutter_rust_bridge}
 
-[![flutter_rust_bridge][c~flutter_rust_bridge~docs~badge]][c~flutter_rust_bridge~docs] [![flutter_rust_bridge~crates.io][c~flutter_rust_bridge~crates.io~badge]][c~flutter_rust_bridge~crates.io] [![flutter_rust_bridge~repo][c~flutter_rust_bridge~repo~badge]][c~flutter_rust_bridge~repo] [![flutter_rust_bridge~lib.rs][c~flutter_rust_bridge~lib.rs~badge]][c~flutter_rust_bridge~lib.rs]{{hi:flutter_rust_bridge}}{{hi:Bindings}}{{hi:Ffi}}{{hi:Code-generation}}{{hi:Flutter}}{{hi:Dart}} [![cat~development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi]{{hi:FFI}}
+{{#badges flutter_rust_bridge development-tools::ffi=FFI}}{{hi:Bindings}}{{hi:Ffi}}{{hi:Code-generation}}{{hi:Flutter}}{{hi:Dart}}
 
 [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} is a Flutter/Dart and Rust binding generator.
 

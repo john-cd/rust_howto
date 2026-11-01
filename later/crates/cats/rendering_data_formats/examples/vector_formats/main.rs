@@ -24,8 +24,8 @@ fn rasterize(svg: &str, max_side: u32) -> anyhow::Result<Pixmap> {
     let width = (size.width() * scale).ceil() as u32;
     let height = (size.height() * scale).ceil() as u32;
 
-    let mut pixmap = Pixmap::new(width, height)
-        .ok_or_else(|| anyhow::anyhow!("invalid output size"))?;
+    let mut pixmap =
+        Pixmap::new(width, height).ok_or_else(|| anyhow::anyhow!("invalid output size"))?;
     resvg::render(
         &tree,
         Transform::from_scale(scale, scale),

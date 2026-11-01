@@ -80,10 +80,8 @@ fn in_memory_tracing() -> (SdkTracerProvider, InMemorySpanExporter) {
 #[cfg(feature = "opentelemetry")]
 fn main() -> anyhow::Result<()> {
     let (provider, exporter) = in_memory_tracing();
-    let subscriber = tracing_subscriber::registry().with(
-        tracing_opentelemetry::layer()
-            .with_tracer(provider.tracer("rust_howto")),
-    );
+    let subscriber = tracing_subscriber::registry()
+        .with(tracing_opentelemetry::layer().with_tracer(provider.tracer("rust_howto")));
 
     tracing::subscriber::with_default(subscriber, || {
         let mut headers = HeaderMap::new();
@@ -146,8 +144,7 @@ mod tests {
     fn collect_spans(body: impl FnOnce()) -> Vec<SpanData> {
         let (provider, exporter) = in_memory_tracing();
         let subscriber = tracing_subscriber::registry().with(
-            tracing_opentelemetry::layer()
-                .with_tracer(provider.tracer("trace_context_test")),
+            tracing_opentelemetry::layer().with_tracer(provider.tracer("trace_context_test")),
         );
         tracing::subscriber::with_default(subscriber, body);
         provider.force_flush().expect("flush should succeed");
@@ -188,8 +185,7 @@ mod tests {
             handler
                 .attributes
                 .iter()
-                .any(|kv| kv.key.as_str() == "http.route"
-                    && kv.value.as_str() == "/health"),
+                .any(|kv| kv.key.as_str() == "http.route" && kv.value.as_str() == "/health"),
             "the route attribute should be exported"
         );
     }
@@ -214,8 +210,7 @@ mod tests {
     /// Without a header, the handler starts a new root trace.
     #[test]
     fn missing_header_starts_a_new_trace() {
-        let spans =
-            collect_spans(|| handle_request(&HeaderMap::new(), "/health"));
+        let spans = collect_spans(|| handle_request(&HeaderMap::new(), "/health"));
         let handler = span_named(&spans, "handle_request");
         assert_eq!(handler.parent_span_id, SpanId::INVALID);
     }
@@ -256,14 +251,10 @@ mod tests {
                 client_request(&mut second);
             }
             // Interleave: both handler spans are open at the same time.
-            let span_a =
-                tracing::info_span!("handle_request", http.route = "a");
-            let span_b =
-                tracing::info_span!("handle_request", http.route = "b");
-            let parent_a =
-                TraceContextPropagator::new().extract(&HeaderExtractor(&first));
-            let parent_b = TraceContextPropagator::new()
-                .extract(&HeaderExtractor(&second));
+            let span_a = tracing::info_span!("handle_request", http.route = "a");
+            let span_b = tracing::info_span!("handle_request", http.route = "b");
+            let parent_a = TraceContextPropagator::new().extract(&HeaderExtractor(&first));
+            let parent_b = TraceContextPropagator::new().extract(&HeaderExtractor(&second));
             span_a
                 .set_parent(parent_a)
                 .expect("the span is registered with the subscriber");

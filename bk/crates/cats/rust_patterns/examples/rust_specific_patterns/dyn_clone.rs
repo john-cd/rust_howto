@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Demonstrates how to clone trait objects using the `dyn_clone` crate.
+//!
+//! A trait object (`Box<dyn Trait>`) cannot be cloned directly, because `Clone`
+//! requires knowing the concrete size. The `dyn_clone` crate adds a `clone_box`
+//! mechanism so you can clone boxed trait objects.
 
 use dyn_clone::DynClone;
 
@@ -32,8 +36,7 @@ fn main() {
     original_trait_object.recite();
 
     // Clone the trait object.
-    let cloned_trait_object: Box<dyn MyTrait> =
-        dyn_clone::clone_box(&*original_trait_object);
+    let cloned_trait_object: Box<dyn MyTrait> = dyn_clone::clone_box(&*original_trait_object);
 
     // Call the `MyTrait` function on the cloned object.
     cloned_trait_object.recite();

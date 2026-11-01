@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Runs a headless `wgpu` compute shader that doubles each storage-buffer
 //! value.
+//!
+//! A GPU runs thousands of small programs in parallel. A compute shader is a
+//! program for the GPU that does general calculations instead of drawing.
+//! `wgpu` is one Rust API over Vulkan, Metal, DirectX and WebGPU. Data is
+//! copied to GPU buffers, processed, then read back.
 
 use std::error::Error;
 
@@ -36,8 +41,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     reason = "WGSL u32 storage buffers use little-endian byte order"
 )]
 async fn run_compute() -> Result<(), Box<dyn Error>> {
-    let mut instance_desc =
-        wgpu::InstanceDescriptor::new_without_display_handle();
+    let mut instance_desc = wgpu::InstanceDescriptor::new_without_display_handle();
     instance_desc.backends = wgpu::Backends::PRIMARY;
     let instance = wgpu::Instance::new(instance_desc);
 
@@ -63,12 +67,11 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
         .iter()
         .flat_map(|value| value.to_le_bytes())
         .collect::<Vec<_>>();
-    let storage_buffer =
-        device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
-            label: Some("values to double"),
-            contents: &input_bytes,
-            usage: wgpu::BufferUsages::STORAGE | wgpu::BufferUsages::COPY_SRC,
-        });
+    let storage_buffer = device.create_buffer_init(&wgpu::util::BufferInitDescriptor {
+        label: Some("values to double"),
+        contents: &input_bytes,
+        usage: wgpu::BufferUsages::STORAGE | wgpu::BufferUsages::COPY_SRC,
+    });
     let buffer_size = u64::try_from(input_bytes.len())?;
     let readback_buffer = device.create_buffer(&wgpu::BufferDescriptor {
         label: Some("compute results"),
@@ -81,15 +84,14 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
         label: Some("double values shader"),
         source: wgpu::ShaderSource::Wgsl(COMPUTE_SHADER.into()),
     });
-    let pipeline =
-        device.create_compute_pipeline(&wgpu::ComputePipelineDescriptor {
-            label: Some("double values pipeline"),
-            layout: None,
-            module: &shader,
-            entry_point: Some("double_values"),
-            compilation_options: Default::default(),
-            cache: None,
-        });
+    let pipeline = device.create_compute_pipeline(&wgpu::ComputePipelineDescriptor {
+        label: Some("double values pipeline"),
+        layout: None,
+        module: &shader,
+        entry_point: Some("double_values"),
+        compilation_options: Default::default(),
+        cache: None,
+    });
     let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
         label: Some("values bind group"),
         layout: &pipeline.get_bind_group_layout(0),
@@ -100,31 +102,19 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
     });
 
     let value_count = u32::try_from(INPUT_VALUES.len())?;
-    let mut encoder =
-        device.create_command_encoder(&wgpu::CommandEncoderDescriptor {
-            label: Some("double values commands"),
-        });
+    let mut encoder = device.create_command_encoder(&wgpu::CommandEncoderDescriptor {
+        label: Some("double values commands"),
+    });
     {
-        let mut compute_pass =
-            encoder.begin_compute_pass(&wgpu::ComputePassDescriptor {
-                label: Some("double values pass"),
-                timestamp_writes: None,
-            });
+        let mut compute_pass = encoder.begin_compute_pass(&wgpu::ComputePassDescriptor {
+            label: Some("double values pass"),
+            timestamp_writes: None,
+        });
         compute_pass.set_pipeline(&pipeline);
         compute_pass.set_bind_group(0, &bind_group, &[]);
-        compute_pass.dispatch_workgroups(
-            value_count.div_ceil(WORKGROUP_SIZE),
-            1,
-            1,
-        );
+        compute_pass.dispatch_workgroups(value_count.div_ceil(WORKGROUP_SIZE), 1, 1);
     }
-    encoder.copy_buffer_to_buffer(
-        &storage_buffer,
-        0,
-        &readback_buffer,
-        0,
-        buffer_size,
-    );
+    encoder.copy_buffer_to_buffer(&storage_buffer, 0, &readback_buffer, 0, buffer_size);
     let _submission = queue.submit([encoder.finish()]);
 
     let result = read_u32_values(&device, &readback_buffer)?;
@@ -155,24 +145,22 @@ fn read_u32_values(
     buffer: &wgpu::Buffer,
 ) -> Result<Vec<u32>, Box<dyn Error>> {
     let (sender, receiver) = std::sync::mpsc::sync_channel(1);
-    buffer.slice(..).map_async(wgpu::MapMode::Read, move |result| {
-        // The receiver remains alive through polling and receiving the callback below.
-        sender
-            .send(result)
-            .expect("the readback receiver remains in scope until mapping completes");
-    });
+    buffer
+        .slice(..)
+        .map_async(wgpu::MapMode::Read, move |result| {
+            // The receiver remains alive through polling and receiving the callback below.
+            sender
+                .send(result)
+                .expect("the readback receiver remains in scope until mapping completes");
+        });
     device.poll(wgpu::PollType::wait_indefinitely())?;
     receiver.recv()??;
 
     let values = {
         let mapped = buffer.slice(..).get_mapped_range()?;
-        let (words, remainder) =
-            mapped.as_chunks::<{ std::mem::size_of::<u32>() }>();
+        let (words, remainder) = mapped.as_chunks::<{ std::mem::size_of::<u32>() }>();
         if !remainder.is_empty() {
-            return Err(std::io::Error::other(
-                "readback size is not a multiple of four",
-            )
-            .into());
+            return Err(std::io::Error::other("readback size is not a multiple of four").into());
         }
         words.iter().copied().map(u32::from_le_bytes).collect()
     };

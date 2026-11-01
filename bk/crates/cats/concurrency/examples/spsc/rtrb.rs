@@ -43,10 +43,7 @@ fn full_and_empty() {
 ///
 /// This function neither allocates nor yields; it handles the sample transfer
 /// portion of a real-time callback.
-fn drain_block(
-    consumer: &mut Consumer<f32>,
-    block: &mut [f32; BLOCK_SIZE],
-) -> usize {
+fn drain_block(consumer: &mut Consumer<f32>, block: &mut [f32; BLOCK_SIZE]) -> usize {
     block.fill(0.0);
     let mut filled = 0;
     for slot in block {

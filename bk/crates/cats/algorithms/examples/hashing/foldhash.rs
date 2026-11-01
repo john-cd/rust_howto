@@ -14,17 +14,14 @@
 //! bit dispersion and low collision rates.
 //!
 //! ### Fixed Seed vs. Random Seed
-//! - **Default HashMap (SipHash-1/3)**: Uses randomized per-process seeds to
-//!   defend against HashDoS (Hash Denial of Service) collision attacks.
-//! - **Fixed Seed (`FixedState`)**: Using a explicit, fixed 64-bit seed
-//!   guarantees that identical inputs generate the exact same 64-bit hash code
-//!   across multiple runs or program restarts.
+//! - **Default HashMap (SipHash-1/3)**: Uses randomized per-process seeds to defend against HashDoS
+//!   (Hash Denial of Service) collision attacks.
+//! - **Fixed Seed (`FixedState`)**: Using a explicit, fixed 64-bit seed guarantees that identical
+//!   inputs generate the exact same 64-bit hash code across multiple runs or program restarts.
 //!
 //! ### Purpose & Use Cases
-//! - Fast hash table keys when resistance to external HashDoS attacks is not
-//!   needed.
-//! - Reproducible test fixtures, deterministic caching, and compiler symbol
-//!   tables.
+//! - Fast hash table keys when resistance to external HashDoS attacks is not needed.
+//! - Reproducible test fixtures, deterministic caching, and compiler symbol tables.
 
 use std::hash::BuildHasher as _;
 

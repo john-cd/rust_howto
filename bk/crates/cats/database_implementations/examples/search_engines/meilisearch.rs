@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This is an example of how to use the MeiliSearch Rust SDK to index and
 //! search documents.
+//!
+//! Meilisearch is a search server with typo tolerance and instant results,
+//! suited to "search as you type". Documents are sent to an index, and searches
+//! go through its HTTP API. The example needs a running server.
 
 use std::env;
 
@@ -31,8 +35,7 @@ struct MyDocument {
 /// It requires a running `MeiliSearch` instance.
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> anyhow::Result<()> {
-    let meilisearch_url =
-        env::var("MEILISEARCH_URL").unwrap_or("http://localhost:7700".into());
+    let meilisearch_url = env::var("MEILISEARCH_URL").unwrap_or("http://localhost:7700".into());
     let meilisearch_api_key: Option<String> = env::var("MEILI_MASTER_KEY").ok();
     run_with_config(meilisearch_url, meilisearch_api_key).await
 }
@@ -124,8 +127,7 @@ mod tests {
         // set `MEILISEARCH_URL` (and `MEILI_MASTER_KEY`) to use another server.
         let meilisearch_url = env::var("MEILISEARCH_URL")
             .unwrap_or("http://rust_howto_dev-meilisearch-1:7700".into());
-        let meilisearch_api_key: Option<String> =
-            env::var("MEILI_MASTER_KEY").ok();
+        let meilisearch_api_key: Option<String> = env::var("MEILI_MASTER_KEY").ok();
         run_with_config(meilisearch_url, meilisearch_api_key).await
     }
 }

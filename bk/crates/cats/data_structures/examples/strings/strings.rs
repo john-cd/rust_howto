@@ -2,8 +2,11 @@
 
 // ANCHOR: example
 //! This example demonstrates common string types in Rust.
-
-#![allow(unused_assignments)]
+//!
+//! Rust has two main string types: `String`, an owned, growable UTF-8 buffer,
+//! and `&str`, a borrowed view into one. Indexing by byte position can split a
+//! multi-byte character, so Rust makes you ask for characters or bytes
+//! explicitly.
 
 // `String` stores UTF-8 bytes and can represent Unicode text; ASCII is a subset
 // of UTF-8.
@@ -11,6 +14,7 @@
 fn string() {
     // Create an empty string:
     let mut s1 = String::new();
+    assert!(s1.is_empty());
 
     // Create a `String` from a string literal via the `From` trait.
     s1 = String::from("hello");

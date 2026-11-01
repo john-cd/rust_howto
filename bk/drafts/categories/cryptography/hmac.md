@@ -6,7 +6,7 @@
 
 ## Sign and Verify a Message with a HMAC Digest {#hmac}
 
-[![ring][c~ring~docs~badge]][c~ring~docs] [![ring~crates.io][c~ring~crates.io~badge]][c~ring~crates.io] [![ring~repo][c~ring~repo~badge]][c~ring~repo] [![ring~lib.rs][c~ring~lib.rs~badge]][c~ring~lib.rs]{{hi:ring}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}} [![cat~no-std][cat~no-std~badge]][cat~no-std]{{hi:No standard library}}
+{{#badges ring cryptography=Cryptography no-std="No standard library"}}{{hi:Crypto}}{{hi:Cryptography}}{{hi:Rand}}{{hi:Rsa}}{{hi:ECC}}
 
 HMAC (Hash-based Message Authentication Code) combines a secret key with a cryptographic hash to authenticate bytes. The sender computes a tag and the receiver checks it with the same key. A valid tag shows that the data matches and that some holder of the shared key created it; it does not identify which holder. HMAC does not encrypt data.
 

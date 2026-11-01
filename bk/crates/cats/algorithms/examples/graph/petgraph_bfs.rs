@@ -14,11 +14,11 @@
 //! moving on to 2-hop neighbors, 3-hop neighbors, and so on.
 //!
 //! ### Key Properties & Shortest Path Guarantee
-//! - **Unweighted Shortest Path**: On unweighted graphs (where all edge costs
-//!   are equal), BFS is guaranteed to discover the path with the minimum number
-//!   of edges from the source to any reachable destination.
-//! - **Level-Order Exploration**: Ensures systematically visiting shallower
-//!   nodes before deeper nodes.
+//! - **Unweighted Shortest Path**: On unweighted graphs (where all edge costs are equal), BFS is
+//!   guaranteed to discover the path with the minimum number of edges from the source to any
+//!   reachable destination.
+//! - **Level-Order Exploration**: Ensures systematically visiting shallower nodes before deeper
+//!   nodes.
 //!
 //! ### Typical Use Cases
 //! - Finding shortest paths in unweighted networks or mazes.

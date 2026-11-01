@@ -6,7 +6,7 @@
 
 ## Check a Publication and Cancellation Protocol with Loom {#loom-model-checking}
 
-[![loom][c~loom~docs~badge]][c~loom~docs] [![loom~crates.io][c~loom~crates.io~badge]][c~loom~crates.io] [![loom~repo][c~loom~repo~badge]][c~loom~repo] [![loom~lib.rs][c~loom~lib.rs~badge]][c~loom~lib.rs]{{hi:loom}}{{hi:Concurrency}}{{hi:Model checking}}{{hi:Interleavings}} [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}} [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Development tools::Testing}}
+{{#badges loom concurrency=Concurrency development-tools::testing="Development tools::Testing"}}{{hi:Concurrency}}{{hi:Model checking}}{{hi:Interleavings}}
 
 An ordinary test runs one schedule of your threads and usually passes even when a rare interleaving is wrong. [`loom`][c~loom~docs]↗{{hi:loom}} is a permutation tester: [`loom::model`][c~loom::model~docs]↗{{hi:loom::model}} runs a closure many times and, within a bound, explores the thread schedules and the values that [atomic operations][ex~concurrency~atomics] may observe under the C11 memory model. If any execution fails an assertion, deadlocks, or races on a `loom::cell::UnsafeCell`, the test fails and reports the schedule.
 

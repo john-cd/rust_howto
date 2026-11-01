@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Prints the great-circle distance between Paris and London.
+//!
+//! Latitude and longitude locate a point on the Earth in degrees. The
+//! great-circle (shortest) distance between two points comes from the haversine
+//! formula, which treats the Earth as a sphere.
 
 /// Calculates the distance between two points on the Earth's surface using the
 /// Haversine formula.
@@ -20,15 +24,12 @@ fn haversine_distance_kilometers(
     let latitude1 = latitude1_degrees.to_radians();
     let latitude2 = latitude2_degrees.to_radians();
     let delta_latitude = (latitude1_degrees - latitude2_degrees).to_radians();
-    let delta_longitude =
-        (longitude1_degrees - longitude2_degrees).to_radians();
+    let delta_longitude = (longitude1_degrees - longitude2_degrees).to_radians();
 
     // Haversine formula:
     // a = sin²(Δφ/2) + cos φ1 ⋅ cos φ2 ⋅ sin²(Δλ/2)
     let a = (delta_latitude / 2.0).sin().powi(2)
-        + latitude1.cos()
-            * latitude2.cos()
-            * (delta_longitude / 2.0).sin().powi(2);
+        + latitude1.cos() * latitude2.cos() * (delta_longitude / 2.0).sin().powi(2);
     // Clamp rounding noise at coincident and antipodal points into the
     // mathematical domain of the square roots.
     let a = a.clamp(0.0, 1.0);
@@ -40,11 +41,9 @@ fn haversine_distance_kilometers(
 /// Prints the great-circle distance between Paris and London.
 fn main() {
     // Latitude and longitude of Paris in degrees.
-    let (paris_latitude_degrees, paris_longitude_degrees) =
-        (48.85341_f64, 2.34880_f64);
+    let (paris_latitude_degrees, paris_longitude_degrees) = (48.85341_f64, 2.34880_f64);
     // Latitude and longitude of London in degrees.
-    let (london_latitude_degrees, london_longitude_degrees) =
-        (51.50853_f64, -0.12574_f64);
+    let (london_latitude_degrees, london_longitude_degrees) = (51.50853_f64, -0.12574_f64);
 
     let distance = haversine_distance_kilometers(
         paris_latitude_degrees,
@@ -88,9 +87,7 @@ mod tests {
     #[test]
     fn distance_matches_coincident_points_and_paris_to_london() {
         assert_eq!(haversine_distance_kilometers(48.0, 2.0, 48.0, 2.0), 0.0);
-        let distance = haversine_distance_kilometers(
-            48.85341, 2.34880, 51.50853, -0.12574,
-        );
+        let distance = haversine_distance_kilometers(48.85341, 2.34880, 51.50853, -0.12574);
         assert!((distance - 344.0).abs() < 2.0);
     }
 }

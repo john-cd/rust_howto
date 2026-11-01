@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Spawn threads and collect their results through `JoinHandle::join`.
+//!
+//! A thread runs code concurrently with the rest of the program. `spawn` starts
+//! one and returns a handle; `join` waits for it to finish and returns its
+//! result, or the error if it panicked.
 
 use std::thread;
 

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A custom `proptest` strategy that only generates valid values.
+//!
+//! A strategy tells `proptest` how to generate test inputs, for example numbers
+//! in a range or strings matching a pattern. Good strategies produce realistic
+//! data, so failures are meaningful.
 
 /// A closed range of whole numbers with `start <= end`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

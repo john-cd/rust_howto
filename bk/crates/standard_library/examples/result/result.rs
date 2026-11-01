@@ -137,9 +137,7 @@ fn read_and_parse_file_thiserror(file_path: &str) -> Result<i32, MyError2> {
 // may be to return a trait object (`dyn Error`, typically wrapped in a `Box`)
 // at the cost of greater opacity...
 /// Reads a number from a file, boxing the errors as `dyn Error`.
-fn read_and_parse_file2(
-    file_path: &str,
-) -> Result<i32, Box<dyn std::error::Error>> {
+fn read_and_parse_file2(file_path: &str) -> Result<i32, Box<dyn std::error::Error>> {
     let mut file = File::open(file_path)?;
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
@@ -204,8 +202,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_result_example_entry_point()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_result_example_entry_point() -> Result<(), Box<dyn std::error::Error>> {
         // `example.txt` does not exist: every function reports an error, but
         // `main` itself succeeds.
         main()?;
@@ -214,21 +211,20 @@ mod tests {
 
     /// Writes `contents` to a unique file in the temp directory.
     fn temp_file(name: &str, contents: &str) -> io::Result<PathBuf> {
-        let path = std::env::temp_dir()
-            .join(format!("result_example_{}_{name}", std::process::id()));
+        let path =
+            std::env::temp_dir().join(format!("result_example_{}_{name}", std::process::id()));
         std::fs::write(&path, contents)?;
         Ok(path)
     }
 
     fn missing_path() -> String {
-        let path = std::env::temp_dir()
-            .join(format!("result_example_{}_missing", std::process::id()));
+        let path =
+            std::env::temp_dir().join(format!("result_example_{}_missing", std::process::id()));
         path.to_string_lossy().into_owned()
     }
 
     #[test]
-    fn test_read_file_variants_return_the_contents()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_read_file_variants_return_the_contents() -> Result<(), Box<dyn std::error::Error>> {
         let path = temp_file("contents", "42\n")?;
         let p = path.to_str().ok_or("non-UTF-8 path")?;
         assert_eq!(read_file(p)?, "42\n");
@@ -247,8 +243,8 @@ mod tests {
     }
 
     #[test]
-    fn test_read_and_parse_file_variants_parse_a_number()
-    -> Result<(), Box<dyn std::error::Error>> {
+    fn test_read_and_parse_file_variants_parse_a_number() -> Result<(), Box<dyn std::error::Error>>
+    {
         let path = temp_file("number", " 42 \n")?;
         let p = path.to_str().ok_or("non-UTF-8 path")?;
         assert_eq!(read_and_parse_file(p)?, 42);
@@ -260,8 +256,7 @@ mod tests {
     }
 
     #[test]
-    fn test_parse_errors_are_reported() -> Result<(), Box<dyn std::error::Error>>
-    {
+    fn test_parse_errors_are_reported() -> Result<(), Box<dyn std::error::Error>> {
         let path = temp_file("not_a_number", "abc")?;
         let p = path.to_str().ok_or("non-UTF-8 path")?;
         assert!(read_and_parse_file(p).is_err());

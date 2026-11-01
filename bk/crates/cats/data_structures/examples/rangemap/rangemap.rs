@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! A `RangeMap`, which maps ranges of keys to values.
+//!
+//! A range map associates values with ranges of keys, for example IP address
+//! blocks, memory regions or time intervals. Overlapping inserts are merged or
+//! split automatically.
 
 use rangemap::RangeMap;
 

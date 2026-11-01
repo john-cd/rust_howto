@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! A broadcast channel from the `postage` crate: several receivers get every
 //! message.
+//!
+//! A broadcast channel delivers every message to every receiver, like a notice
+//! board, instead of to just one of them. It suits events that several parts of
+//! a program react to, such as a shutdown signal.
 
 use postage::broadcast;
 use postage::prelude::Sink as _;

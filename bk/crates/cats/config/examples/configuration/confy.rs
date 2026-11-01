@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Loads a typed configuration with confy.
+//!
+//! `confy` stores a settings struct in the user's configuration directory (for
+//! example `~/.config/<app>/` on Linux) and creates it with defaults on first
+//! use, so you do not choose the path for each operating system yourself.
 
 use serde::Deserialize;
 use serde::Serialize;

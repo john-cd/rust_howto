@@ -15,10 +15,17 @@ use std::path::PathBuf;
 ///
 /// ```rust
 /// use std::path::Path;
+///
 /// use tool_lib::extend_extension;
 ///
-/// assert_eq!(extend_extension(&Path::new("file.md"), "new"), Path::new("file.new.md"));
-/// assert_eq!(extend_extension(&Path::new("file"), "new"), Path::new("file.new"));
+/// assert_eq!(
+///     extend_extension(&Path::new("file.md"), "new"),
+///     Path::new("file.new.md")
+/// );
+/// assert_eq!(
+///     extend_extension(&Path::new("file"), "new"),
+///     Path::new("file.new")
+/// );
 /// ```
 pub fn extend_extension<P: AsRef<Path>>(filepath: &P, insert: &str) -> PathBuf {
     let filepath = filepath.as_ref();

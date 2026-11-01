@@ -63,7 +63,8 @@ fn run_window() -> Result<()> {
     while window.is_open() && !window.is_key_down(Key::Escape) {
         fill_gradient(&mut buffer, offset);
 
-        // Copy the finished frame to the window; this also processes input events.
+        // Copy the finished frame to the window; this also processes input
+        // events.
         window.update_with_buffer(&buffer, WIDTH, HEIGHT)?;
 
         offset = offset.wrapping_add(1);
@@ -72,9 +73,7 @@ fn run_window() -> Result<()> {
         // The sleep below caps the loop at roughly 60 frames per second.
         let elapsed = last_frame.elapsed();
         if elapsed < Duration::from_millis(16) {
-            std::thread::sleep(
-                Duration::from_millis(16).saturating_sub(elapsed),
-            );
+            std::thread::sleep(Duration::from_millis(16).saturating_sub(elapsed));
         }
         last_frame = Instant::now();
     }

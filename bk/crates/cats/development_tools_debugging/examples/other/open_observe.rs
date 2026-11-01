@@ -35,9 +35,7 @@ fn main() -> anyhow::Result<()> {
 #[cfg(feature = "opentelemetry")]
 fn run_with_endpoint(endpoint: Option<&str>) -> anyhow::Result<()> {
     let Some(endpoint) = endpoint else {
-        println!(
-            "Set OTEL_EXPORTER_OTLP_ENDPOINT to send a trace to OpenObserve."
-        );
+        println!("Set OTEL_EXPORTER_OTLP_ENDPOINT to send a trace to OpenObserve.");
         return Ok(());
     };
 

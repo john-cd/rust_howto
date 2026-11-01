@@ -8,10 +8,7 @@ Serde is a framework for converting Rust data to and from a shared data model. F
 
 ## Serialization with `serde` {#serde}
 
-[![serde][c~serde~docs~badge]][c~serde~docs]{{hi:serde}}
-[![serde~crates.io][c~serde~crates.io~badge]][c~serde~crates.io]
-[![serde~repo][c~serde~repo~badge]][c~serde~repo]
-[![serde~lib.rs][c~serde~lib.rs~badge]][c~serde~lib.rs]
+{{#badges serde}}
 
 [`serde`][c~serde~docs]↗{{hi:serde}} is the de facto standard serialization library. Use in conjunction with sub-crates like [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}} for the specific format that you are using.
 
@@ -23,10 +20,7 @@ Enable the `derive` feature and derive `Serialize` and `Deserialize` for ordinar
 
 ## (De)serialize JSON {#serde-json2}
 
-[![serde_json][c~serde_json~docs~badge]][c~serde_json~docs]{{hi:serde_json}}
-[![serde_json~crates.io][c~serde_json~crates.io~badge]][c~serde_json~crates.io]
-[![serde_json~repo][c~serde_json~repo~badge]][c~serde_json~repo]
-[![serde_json~lib.rs][c~serde_json~lib.rs~badge]][c~serde_json~lib.rs]
+{{#badges serde_json}}
 
 [`serde-json`][c~serde_json~docs]↗{{hi:serde-json}}
 
@@ -53,10 +47,7 @@ Capture names of fields that the target type does not recognize while deserializ
 
 ## `monostate` {#monostate}
 
-[![monostate][c~monostate~docs~badge]][c~monostate~docs]{{hi:monostate}}
-[![monostate~crates.io][c~monostate~crates.io~badge]][c~monostate~crates.io]
-[![monostate~repo][c~monostate~repo~badge]][c~monostate~repo]
-[![monostate~lib.rs][c~monostate~lib.rs~badge]][c~monostate~lib.rs]
+{{#badges monostate}}
 
 The [`monostate`][c~monostate~docs]↗{{hi:monostate}} library implements a type macro for a zero-sized type that is Serde deserializable only from one specific value.
 

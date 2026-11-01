@@ -34,7 +34,7 @@ Run the example from `later/crates` with `cargo run -p rendering --example 2d_ve
 
 ## `femtovg` {#femtovg}
 
-[![femtovg][c~femtovg~docs~badge]][c~femtovg~docs] [![femtovg~crates.io][c~femtovg~crates.io~badge]][c~femtovg~crates.io] [![femtovg~repo][c~femtovg~repo~badge]][c~femtovg~repo] [![femtovg~lib.rs][c~femtovg~lib.rs~badge]][c~femtovg~lib.rs]{{hi:femtovg}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
+{{#badges femtovg graphics=Graphics}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}}
 
 [`femtovg`][c~femtovg~docs]↗{{hi:femtovg}} provides a canvas-style API for antialiased 2D paths, images, and text. Its OpenGL renderer needs a compatible graphics context supplied by the application. Use it when you want a higher-level drawing canvas and already have, or can create, the required window and context.
 
@@ -46,7 +46,7 @@ The companion example creates a window and OpenGL context with `winit` and `glut
 
 ## `vger` {#vger}
 
-[![vger][c~vger~docs~badge]][c~vger~docs] [![vger~crates.io][c~vger~crates.io~badge]][c~vger~crates.io] [![vger~repo][c~vger~repo~badge]][c~vger~repo] [![vger~lib.rs][c~vger~lib.rs~badge]][c~vger~lib.rs]{{hi:vger}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
+{{#badges vger graphics=Graphics}}{{hi:Canvas}}{{hi:Drawing}}{{hi:Gpu}}{{hi:Graphics}}{{hi:Vector}}
 
 [`vger`][c~vger~docs]↗{{hi:vger}} is a GPU renderer aimed at dynamic 2D interfaces. It provides a rendering layer for applications that need frequently changing shapes and UI elements; check its current backend and platform requirements before choosing it.
 
@@ -54,7 +54,7 @@ The latest `vger` release (0.4.0) dates from September 2024, so treat the crate 
 
 ## `skia-safe` {#skia-safe}
 
-[![skia-safe][c~skia-safe~docs~badge]][c~skia-safe~docs] [![skia-safe~crates.io][c~skia-safe~crates.io~badge]][c~skia-safe~crates.io] [![skia-safe~repo][c~skia-safe~repo~badge]][c~skia-safe~repo] [![skia-safe~lib.rs][c~skia-safe~lib.rs~badge]][c~skia-safe~lib.rs]{{hi:skia-safe}}{{hi:OpenGL}}{{hi:Pdf}}{{hi:Rust-bindings}}{{hi:Skia}}{{hi:Vulkan}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~multimedia::images][cat~multimedia::images~badge]][cat~multimedia::images]{{hi:Images}} [![cat~rendering::graphics-api][cat~rendering::graphics-api~badge]][cat~rendering::graphics-api]{{hi:Graphics APIs}} [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
+{{#badges skia-safe api-bindings="API bindings" graphics=Graphics multimedia::images=Images rendering::graphics-api="Graphics APIs" visualization=Visualization}}{{hi:OpenGL}}{{hi:Pdf}}{{hi:Rust-bindings}}{{hi:Skia}}{{hi:Vulkan}}
 
 [`skia-safe`][c~skia-safe~docs]↗{{hi:skia-safe}} offers "Bindings to the Skia C++ library. The most complete option with excellent performance. However, it can be difficult to get it to compile." ([blessed.rs][blessed.rs-graphics~website]↗).
 
@@ -66,7 +66,7 @@ The build script of `skia-safe` downloads prebuilt Skia binaries for common targ
 
 ## `vello` {#vello}
 
-[![vello][c~vello~docs~badge]][c~vello~docs] [![vello~crates.io][c~vello~crates.io~badge]][c~vello~crates.io] [![vello~repo][c~vello~repo~badge]][c~vello~repo] [![vello~lib.rs][c~vello~lib.rs~badge]][c~vello~lib.rs]{{hi:vello}}{{hi:2d}}{{hi:Vector-graphics}} [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}} [![cat~rendering][cat~rendering~badge]][cat~rendering]{{hi:Rendering}}
+{{#badges vello graphics=Graphics rendering=Rendering}}{{hi:2d}}{{hi:Vector-graphics}}
 
 [`vello`][c~vello~docs]↗{{hi:vello}} is a GPU compute-centric 2D renderer built on `wgpu`. Build and test its scene independently of a device, then render it when a compatible GPU adapter is available. From `later/crates`, run the off-screen example with `cargo run -p gui --example vello_renderer --features vello`; it requires a compatible GPU adapter.
 

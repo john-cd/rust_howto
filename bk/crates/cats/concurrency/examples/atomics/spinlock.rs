@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! A spinlock built on an atomic flag, with a guard that unlocks it on drop.
+//!
+//! A spinlock makes a waiting thread loop until the lock is free instead of
+//! sleeping. It suits very short critical sections, but wastes CPU if held
+//! long, so prefer `Mutex` in application code. Atomic operations with memory
+//! ordering (`Acquire`, `Release`) make the lock correct.
 
 use std::cell::UnsafeCell;
 use std::marker::PhantomData;

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Sorts a vector of structs, by their derived order and by a chosen field.
+//!
+//! Structs can be sorted by their derived ordering (field by field, in
+//! declaration order) or by a key you choose, such as one field. Choose a key
+//! when the default order is not the one users expect.
 
 /// A struct with `name` and `age` fields.
 ///

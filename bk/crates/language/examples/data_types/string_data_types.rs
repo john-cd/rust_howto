@@ -25,7 +25,7 @@ fn main() {
     // Expected output:
     // String slice: Hello
     // Owned string: World
-    // String concatenation: Hello + World = HelloWorld.
+    // String concatenation: Hello + World = HelloWorld
 }
 
 // ANCHOR_END: example

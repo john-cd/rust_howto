@@ -79,8 +79,7 @@ mod tests {
     #[test]
     fn default_values_are_not_encoded() {
         assert!(Person::default().encode_to_vec().is_empty());
-        let decoded =
-            Person::decode(&[][..]).expect("an empty buffer is valid");
+        let decoded = Person::decode(&[][..]).expect("an empty buffer is valid");
         assert_eq!(decoded, Person::default());
     }
 

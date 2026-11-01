@@ -44,6 +44,8 @@ sudo apt-get update \
     libffi-dev \
     libfontconfig1-dev \
     libfreetype6-dev \
+    libbz2-dev \
+    libexpat1-dev \
     libgdbm-compat-dev \
     libgdbm-dev \
     libgmp-dev \
@@ -55,10 +57,11 @@ sudo apt-get update \
     libncurses-dev \
     libopencv-dev \
     libpng-dev \
-    libpython3-dev \
+    liblzma-dev \
     libreadline-dev \
     librocksdb-dev \
     librsvg2-dev \
+    libsqlite3-dev \
     libssl-dev \
     libsystemd-dev \
     libudev-dev \
@@ -78,21 +81,29 @@ sudo apt-get update \
     ninja-build \
     pkg-config \
     protobuf-compiler \
+    tk-dev \
     unzip \
     python3 \
-    python-is-python3 \
-    python3-venv \
     ruby-dev \
     unzip \
     wget \
     xz-utils \
     zip \
     xorg-dev \
+    uuid-dev \
     jq \
     fzf \
     zlib1g-dev \
 && nasm --version \
 && sudo apt-get clean -y
+
+# Install the same checksum-pinned CPython used by the Windows setup.
+bash "$repo_root/.devcontainer/install_python_3_15.sh"
+python_version_output="$(python3 --version)"
+if [[ "${python_version_output}" != "Python ${PYTHON_VERSION}" ]]; then
+    printf 'Expected Python %s on PATH, got: %s\n' "${PYTHON_VERSION}" "${python_version_output}" >&2
+    exit 1
+fi
 
 # Install the pinned Oracle Instant Client Basic Light and SDK for OCI examples.
 ORACLE_CLIENT_ARCH="$(uname -m)" "$repo_root/.devcontainer/install_oracle_client.sh" "$HOME/.local/opt/oracle"
@@ -122,21 +133,30 @@ touch "$HOME/.profile"
 if ! grep -Fqx "$ruby_profile_line" "$HOME/.profile"; then
     printf '%s\n' "$ruby_profile_line" >> "$HOME/.profile"
 fi
+ruby_version_output="$(ruby --version)"
+if [[ ! "${ruby_version_output}" =~ ^ruby\ 4\.0\.[0-9]+ ]]; then
+    printf 'Expected ruby on PATH to resolve to Ruby 4.0.x, got: %s\n' "${ruby_version_output}" >&2
+    exit 1
+fi
 
 # Install Pandoc binary
 wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -O /tmp/pandoc.deb \
+    && echo "${PANDOC_LINUX_AMD64_DEB_SHA256}  /tmp/pandoc.deb" | sha256sum --check \
     && sudo dpkg -i /tmp/pandoc.deb \
     && rm /tmp/pandoc.deb
 
 # Rust install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
-rustup update && rustup component add clippy rustfmt
-rustup toolchain install "$RUSTFMT_TOOLCHAIN" \
-    && rustup component add rustfmt clippy --toolchain "$RUSTFMT_TOOLCHAIN"
+rustup toolchain install "$RUST_VERSION" --profile minimal
+rustup default "$RUST_VERSION"
+rustup component add clippy rustfmt --toolchain "$RUST_VERSION"
+rustup toolchain install "$RUSTFMT_TOOLCHAIN" --profile minimal --component rustfmt
 
 ## binstall
-curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+curl -L --proto '=https' --tlsv1.2 -sSf \
+    "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/v${CARGO_BINSTALL_VERSION}/install-from-binstall-release.sh" \
+    | BINSTALL_VERSION="$CARGO_BINSTALL_VERSION" bash
 
 cargo binstall --no-confirm --secure --version "$CARGO_NEXTEST_VERSION" cargo-nextest
 cargo binstall --no-confirm --secure --version "$MATURIN_VERSION" maturin
@@ -149,7 +169,11 @@ cargo binstall --no-confirm --secure --force --version "$DPRINT_VERSION" dprint
 cargo binstall --no-confirm --secure --force --version "$RUMDL_VERSION" rumdl
 cargo binstall --no-confirm --secure --force --version "$PREK_VERSION" prek
 cargo binstall --no-confirm --secure --version "$FLUTTER_RUST_BRIDGE_CODEGEN_VERSION" flutter_rust_bridge_codegen
-cargo binstall --no-confirm --secure sccache cargo-deny lychee bacon ripgrep
+cargo binstall --no-confirm --secure --version "$SCCACHE_VERSION" sccache
+cargo binstall --no-confirm --secure --version "$CARGO_DENY_VERSION" cargo-deny
+cargo binstall --no-confirm --secure --version "$LYCHEE_VERSION" lychee
+cargo binstall --no-confirm --secure --version "$BACON_VERSION" bacon
+cargo binstall --no-confirm --secure --version "$RIPGREP_VERSION" ripgrep
 
 flutter_install_path="$HOME/.local/share/flutter/$FLUTTER_VERSION"
 bash "$repo_root/.devcontainer/install_flutter_sdk.sh" \
@@ -200,10 +224,16 @@ fi
 cargo install --locked --force --version "$MDBOOK_INDEXING_VERSION" mdbook-indexing
 cargo install --git https://github.com/john-cd/mdbook-utils --rev "$MDBOOK_UTILS_REV" --locked --force mdbook-utils
 
-# GitHub
-curl -sS https://webi.sh/gh | sh
+cargo binstall --no-confirm --secure --version "$KANI_VERIFIER_VERSION" kani-verifier
 
-cargo binstall --no-confirm --secure kani-verifier
+# Install the GitHub CLI from its versioned, checksum-verified upstream archive.
+bash "$repo_root/.devcontainer/install_gh_cli.sh" "$HOME/.local"
+export PATH="$HOME/.local/bin:$PATH"
+gh_profile_line='export PATH="$HOME/.local/bin:$PATH"'
+touch "$HOME/.profile"
+if ! grep -Fqx "$gh_profile_line" "$HOME/.profile"; then
+    printf '%s\n' "$gh_profile_line" >> "$HOME/.profile"
+fi
 tectonic --version
 nasm --version
 flutter --version

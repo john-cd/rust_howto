@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Moves an entity with a headless Bevy ECS app.
+//!
+//! Bevy uses an entity component system (ECS). Entities are plain IDs,
+//! components are data attached to them (such as a position), and systems are
+//! functions that run over all entities having certain components. This
+//! separates data from behaviour and lets the engine run systems in parallel.
 
 use bevy::prelude::*;
 
@@ -28,10 +33,7 @@ fn spawn_mover(mut commands: Commands<'_, '_>) {
 }
 
 /// Moves entities according to their velocity and elapsed frame time.
-fn movement(
-    mut query: Query<'_, '_, (&mut Position, &Velocity)>,
-    time: Res<'_, Time>,
-) {
+fn movement(mut query: Query<'_, '_, (&mut Position, &Velocity)>, time: Res<'_, Time>) {
     for (mut position, velocity) in &mut query {
         position.0 += velocity.0 * time.delta_secs();
     }
@@ -69,9 +71,7 @@ mod tests {
     #[test]
     fn movement_advances_position_without_a_window() {
         let mut app = build_app();
-        app.insert_resource(TimeUpdateStrategy::ManualDuration(
-            Duration::from_secs(1),
-        ));
+        app.insert_resource(TimeUpdateStrategy::ManualDuration(Duration::from_secs(1)));
 
         app.update();
         app.update();

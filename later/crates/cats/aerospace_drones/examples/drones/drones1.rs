@@ -45,13 +45,11 @@ trait Flyer {
 
 impl Flyer for Drone {
     fn take_off(&mut self) -> Result<()> {
-        Self::take_off(self)
-            .map_err(|()| anyhow::anyhow!("the drone rejected `take_off`"))
+        Self::take_off(self).map_err(|()| anyhow::anyhow!("the drone rejected `take_off`"))
     }
 
     fn land(&mut self) -> Result<()> {
-        Self::land(self)
-            .map_err(|()| anyhow::anyhow!("the drone rejected `land`"))
+        Self::land(self).map_err(|()| anyhow::anyhow!("the drone rejected `land`"))
     }
 }
 

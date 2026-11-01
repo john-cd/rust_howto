@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! Terminal control with `crossterm`: raw mode, colors, cursor movement and key
 //! events.
+//!
+//! A terminal normally waits for a full line and echoes keys. Raw mode turns
+//! that off, so a program receives each key press at once and can draw anywhere
+//! on the screen. Always restore the terminal on exit, or the shell is left
+//! unusable. `crossterm` works on Windows and Unix.
 
 use std::io::Write as _;
 use std::io::stdout;
@@ -101,8 +106,7 @@ mod tests {
     }
 
     #[test]
-    fn terminal_commands_produce_the_expected_escape_sequences()
-    -> anyhow::Result<()> {
+    fn terminal_commands_produce_the_expected_escape_sequences() -> anyhow::Result<()> {
         let mut out: Vec<u8> = Vec::new();
         queue!(out, Clear(ClearType::All), cursor::MoveTo(0, 0))?;
         assert_eq!(String::from_utf8(out.clone())?, "\u{1b}[2J\u{1b}[1;1H");

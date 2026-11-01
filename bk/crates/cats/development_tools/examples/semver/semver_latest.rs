@@ -45,9 +45,7 @@ fn main() -> Result<()> {
 
     let max_matching_version =
         find_max_matching_version("<= 1.0.0", vec!["0.9.0", "1.0.0", "1.0.1"])?;
-    tracing::info!(
-        "Maximum matching version for <= 1.0.0 is: {max_matching_version:?}"
-    );
+    tracing::info!("Maximum matching version for <= 1.0.0 is: {max_matching_version:?}");
     assert_eq!(max_matching_version, Some(Version::parse("1.0.0")?));
     println!(
         "Max version matching '<= 1.0.0': {:?}",
@@ -64,9 +62,7 @@ fn main() -> Result<()> {
             "3.4.5-alpha.9",
         ],
     )?;
-    tracing::info!(
-        "Maximum matching version for >1.2.3-alpha.3 is: {max_match_2:?}"
-    );
+    tracing::info!("Maximum matching version for >1.2.3-alpha.3 is: {max_match_2:?}");
     println!("Max version matching '>1.2.3-alpha.3': {:?}", max_match_2);
 
     assert_eq!(max_match_2, Some(Version::parse("1.2.3-beta.4")?));

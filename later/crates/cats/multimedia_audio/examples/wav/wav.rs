@@ -1,4 +1,8 @@
 //! Writes and reads a WAV file through an in-memory cursor.
+//!
+//! WAV is an uncompressed audio container: a header describing the sample rate,
+//! channels and bit depth, followed by the raw samples. A `Cursor` lets the
+//! code read and write a memory buffer as if it were a file.
 
 use std::error::Error;
 use std::io::Cursor;
@@ -36,8 +40,7 @@ mod tests {
 
     /// Verifies a finalized in-memory WAV contains the sample written to it.
     #[test]
-    fn writes_and_reads_wav_without_an_audio_device()
-    -> Result<(), Box<dyn Error>> {
+    fn writes_and_reads_wav_without_an_audio_device() -> Result<(), Box<dyn Error>> {
         main()
     }
 }

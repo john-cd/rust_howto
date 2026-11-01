@@ -3,6 +3,10 @@
 // ANCHOR: example
 //! This example demonstrates basic error handling in Rust using the `Result`
 //! type.
+//!
+//! Rust has no exceptions. A function that can fail returns `Result<T, E>`:
+//! `Ok(value)` or `Err(error)`. The compiler forces you to handle the error,
+//! which prevents forgotten checks.
 
 use std::io;
 use std::io::BufRead as _;
@@ -16,8 +20,7 @@ fn main() {
     // `read_line` reads all bytes until a newline (the 0xA byte) is reached,
     // and append them to the provided String. `read_line` returns a
     // `Result` value, which is either success (`Ok`) or failure (`Err`).
-    let result: Result<usize, std::io::Error> =
-        my_cursor.read_line(&mut my_string);
+    let result: Result<usize, std::io::Error> = my_cursor.read_line(&mut my_string);
 
     // We can process the `Result` as needed.
     match result {

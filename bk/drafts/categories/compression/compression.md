@@ -6,7 +6,7 @@
 
 ## Compress or Decompress Data with `flate2` {#compress-decompress}
 
-[![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo] [![flate2~lib.rs][c~flate2~lib.rs~badge]][c~flate2~lib.rs]{{hi:flate2}}{{hi:Encoding}}{{hi:Gzip}}{{hi:Zlib}}{{hi:Deflate}}{{hi:Zlib-ng}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
+{{#badges flate2 api-bindings="API bindings" compression=Compression}}{{hi:Encoding}}{{hi:Gzip}}{{hi:Zlib}}{{hi:Deflate}}{{hi:Zlib-ng}}
 
 [`flate2`][c~flate2~docs]↗{{hi:flate2}} provides DEFLATE compression and decompression, exposed as Read / BufRead / Write streams. It supports zlib, gzip, and raw deflate streams.
 
@@ -22,7 +22,7 @@ The in-memory example below needs no files; the next section works with files.
 
 ## Compress and Decompress a File with Gzip {#gzip-file}
 
-[![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo] [![flate2~lib.rs][c~flate2~lib.rs~badge]][c~flate2~lib.rs]{{hi:flate2}}{{hi:Gzip}}{{hi:File I/O}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
+{{#badges flate2 compression=Compression}}{{hi:Gzip}}{{hi:File I/O}}
 
 Wrap a reader in `GzDecoder` to restore a gzip stream, or a writer in `GzEncoder` to create one. The example copies through temporary files and checks that the restored bytes match the original.
 
@@ -42,7 +42,7 @@ Wrap a reader in `GzDecoder` to restore a gzip stream, or a writer in `GzEncoder
 
 ## Create a ZIP Archive with `zip` {#zip}
 
-[![zip][c~zip~docs~badge]][c~zip~docs] [![zip~crates.io][c~zip~crates.io~badge]][c~zip~crates.io] [![zip~repo][c~zip~repo~badge]][c~zip~repo] [![zip~lib.rs][c~zip~lib.rs~badge]][c~zip~lib.rs]{{hi:zip}}{{hi:Compression}}{{hi:zip}}{{hi:Archive}}
+{{#badges zip}}{{hi:Compression}}{{hi:zip}}{{hi:Archive}}
 
 [`zip`][c~zip~docs]↗ creates ZIP archives with named entries and per-entry options. Use it when synchronous file or archive I/O fits the surrounding program; choose the compression method and enabled features to match the archive you need to produce.
 
@@ -52,7 +52,7 @@ Wrap a reader in `GzDecoder` to restore a gzip stream, or a writer in `GzEncoder
 
 ## Write and Read a ZIP Archive with `async_zip` {#async-zip}
 
-[![async_zip][c~async_zip~docs~badge]][c~async_zip~docs] [![async_zip~crates.io][c~async_zip~crates.io~badge]][c~async_zip~crates.io] [![async_zip~repo][c~async_zip~repo~badge]][c~async_zip~repo] [![async_zip~lib.rs][c~async_zip~lib.rs~badge]][c~async_zip~lib.rs]{{hi:async_zip}}{{hi:Async}}{{hi:Zip}}{{hi:Archive}} [![cat~asynchronous][cat~asynchronous~badge]][cat~asynchronous]{{hi:Asynchronous}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
+{{#badges async_zip asynchronous=Asynchronous compression=Compression}}{{hi:Async}}{{hi:Zip}}{{hi:Archive}}
 
 Use `async_zip` when archive reads or writes need to participate in an async task. The example writes an entry, reads the archive back, and verifies its contents using Tokio and the crate's compatibility adapter.
 

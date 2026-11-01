@@ -20,10 +20,7 @@ fn main() {
     match my {
         My(string) => {
             // `string` is moved here.
-            println!(
-                "Type of `string`: {}",
-                std::any::type_name_of_val(&string)
-            );
+            println!("Type of `string`: {}", std::any::type_name_of_val(&string));
         } // `string` is dropped.
     }
     // Hence `my` can't be used anymore.
@@ -38,7 +35,7 @@ fn main() {
 
     #[allow(clippy::single_match)]
     match robot_name {
-        Some(ref name) => println!("Name (immutable ref): {name}"), /* `name` is `&String` */
+        Some(ref name) => println!("Name (immutable ref): {name}"), // `name` is `&String`
         None => (),
     }
 

@@ -23,7 +23,7 @@ Rules of thumb:
 
 ## Redact Secrets in `Debug` and `Display` Output {#redacted-secret}
 
-[![secrecy][c~secrecy~docs~badge]][c~secrecy~docs] [![secrecy~crates.io][c~secrecy~crates.io~badge]][c~secrecy~crates.io] [![secrecy~repo][c~secrecy~repo~badge]][c~secrecy~repo] [![secrecy~lib.rs][c~secrecy~lib.rs~badge]][c~secrecy~lib.rs]{{hi:secrecy}}{{hi:Secret}}{{hi:Redact}}{{hi:Logging}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
+{{#badges secrecy cryptography=Cryptography}}{{hi:Secret}}{{hi:Redact}}{{hi:Logging}}
 
 A newtype whose `Debug` and `Display` implementations print a placeholder lets a configuration struct derive `Debug` without leaking its credentials. Reading the value requires an explicit `expose_secret` call, which is easy to find in a code review. [`secrecy`][c~secrecy~docs]↗{{hi:secrecy}} provides a maintained version of the same idea that also wipes the value on drop.
 
@@ -33,7 +33,7 @@ A newtype whose `Debug` and `Display` implementations print a placeholder lets a
 
 ## Wipe Secrets from Memory {#zeroize-secrets}
 
-[![zeroize][c~zeroize~docs~badge]][c~zeroize~docs] [![zeroize~crates.io][c~zeroize~crates.io~badge]][c~zeroize~crates.io] [![zeroize~repo][c~zeroize~repo~badge]][c~zeroize~repo] [![zeroize~lib.rs][c~zeroize~lib.rs~badge]][c~zeroize~lib.rs]{{hi:zeroize}}{{hi:Zeroizing}}{{hi:Memory}}{{hi:Drop}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
+{{#badges zeroize cryptography=Cryptography}}{{hi:Zeroizing}}{{hi:Memory}}{{hi:Drop}}
 
 [`zeroize`][c~zeroize~docs]↗{{hi:zeroize}} overwrites memory in a way the compiler may not optimize away. Derive `Zeroize` and `ZeroizeOnDrop` on a struct that holds a secret, or wrap a value in `Zeroizing<T>`.
 
@@ -45,7 +45,7 @@ Zeroizing has limits: it clears only the memory it owns. A `clone()`, a `String`
 
 ## Store Secrets in the OS Credential Store {#keyring}
 
-[![keyring][c~keyring~docs~badge]][c~keyring~docs] [![keyring~crates.io][c~keyring~crates.io~badge]][c~keyring~crates.io] [![keyring~repo][c~keyring~repo~badge]][c~keyring~repo] [![keyring~lib.rs][c~keyring~lib.rs~badge]][c~keyring~lib.rs]{{hi:keyring}}{{hi:Keychain}}{{hi:Credential Manager}}{{hi:Secret Service}} [![cat~cryptography][cat~cryptography~badge]][cat~cryptography]{{hi:Cryptography}}
+{{#badges keyring cryptography=Cryptography}}{{hi:Keychain}}{{hi:Credential Manager}}{{hi:Secret Service}}
 
 [`keyring`][c~keyring~docs]↗{{hi:keyring}} stores, loads, and deletes secrets in Windows Credential Manager, the macOS Keychain, or the Linux Secret Service. The secret never touches your configuration files. The test that talks to the real store is marked `#[ignore]` because CI machines and containers often have none; a second test checks the wrapper without touching the store.
 

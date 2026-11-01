@@ -35,9 +35,7 @@ fn main() {
     println!("{}", public_to_external_crates());
     println!("{}", public_api::also_public_to_external_crates());
     println!("{}", crate_helper_module::crate_helper());
-    println!(
-        "visibility_external_code example: public and private visibility in a crate"
-    );
+    println!("visibility_external_code example: public and private visibility in a crate");
 }
 // ANCHOR_END: example
 

@@ -1,8 +1,11 @@
-#![allow(unused_variables)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A lifetime parameter on a struct and on its `impl` blocks.
+//!
+//! A struct that holds a reference needs a lifetime parameter, which says the
+//! struct cannot outlive the data it borrows. The compiler then rejects code
+//! that would leave a dangling reference.
 
 /// A struct that holds a reference to a string slice.
 struct Excerpt<'a> {
@@ -51,6 +54,7 @@ fn main() {
     let e2: Excerpt<'_> = Excerpt {
         part: &another_part,
     };
+    println!("{} level {}", e2.part(), e2.level());
     // e2.only_if_static(); // ERROR: argument requires that `another_part` is
     // borrowed for `'static`.
 }

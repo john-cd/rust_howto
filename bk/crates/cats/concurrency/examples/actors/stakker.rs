@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! An actor with the `stakker` crate: a counter that processes messages.
+//!
+//! The actor model structures a program as independent actors that own their
+//! state and communicate only by sending messages. Stakker is single-threaded,
+//! which avoids locking and suits embedded and real-time use.
 
 use std::sync::mpsc;
 use std::time::Instant;
@@ -45,9 +49,9 @@ fn run_actor() -> anyhow::Result<(u32, u32)> {
             5,
             ret_do!(move |value: Option<u32>| {
                 if let Some(value) = value {
-                    first_reply_sender.send(value).expect(
-                        "the first reply receiver stays open until delivery",
-                    );
+                    first_reply_sender
+                        .send(value)
+                        .expect("the first reply receiver stays open until delivery");
                 }
             })
         )
@@ -58,21 +62,21 @@ fn run_actor() -> anyhow::Result<(u32, u32)> {
             10,
             ret_do!(move |value: Option<u32>| {
                 if let Some(value) = value {
-                    reply_sender.send(value).expect(
-                        "the second reply receiver stays open until delivery",
-                    );
+                    reply_sender
+                        .send(value)
+                        .expect("the second reply receiver stays open until delivery");
                 }
             })
         )
     );
 
     stakker.run(Instant::now(), false);
-    let first = reply_receiver.recv().context(
-        "counter actor stopped before replying to the first increment",
-    )?;
-    let second = reply_receiver.recv().context(
-        "counter actor stopped before replying to the second increment",
-    )?;
+    let first = reply_receiver
+        .recv()
+        .context("counter actor stopped before replying to the first increment")?;
+    let second = reply_receiver
+        .recv()
+        .context("counter actor stopped before replying to the second increment")?;
     Ok((first, second))
 }
 

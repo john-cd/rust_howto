@@ -39,15 +39,13 @@ fn main() {
     let message = b"Secret message";
     println!(
         "Original message: {:?}",
-        String::from_utf8(message.to_vec())
-            .expect("sample plaintext should be valid UTF-8")
+        String::from_utf8(message.to_vec()).expect("sample plaintext should be valid UTF-8")
     );
 
     // Generate a 2048-bit private key:
     let mut rng = OsRng;
     let bits = 2048;
-    let private_key =
-        RsaPrivateKey::new(&mut rng, bits).expect("failed to generate a key");
+    let private_key = RsaPrivateKey::new(&mut rng, bits).expect("failed to generate a key");
 
     // Derive the public key from the private key:
     let public_key = RsaPublicKey::from(&private_key);
@@ -68,8 +66,7 @@ fn main() {
 
     println!(
         "Decrypted message: {:?}",
-        String::from_utf8(decrypted_message)
-            .expect("sample plaintext should be valid UTF-8")
+        String::from_utf8(decrypted_message).expect("sample plaintext should be valid UTF-8")
     );
 }
 // ANCHOR_END: example

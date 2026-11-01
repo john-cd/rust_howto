@@ -8,7 +8,7 @@ _Interning_{{hi:Interning}}{{hi:String interning}} stores each distinct string o
 
 ## Intern Strings by Hand or with `ustr` {#interning}
 
-[![ustr][c~ustr~docs~badge]][c~ustr~docs] [![ustr~crates.io][c~ustr~crates.io~badge]][c~ustr~crates.io] [![ustr~repo][c~ustr~repo~badge]][c~ustr~repo] [![ustr~lib.rs][c~ustr~lib.rs~badge]][c~ustr~lib.rs]{{hi:ustr}}{{hi:Interning}}{{hi:String interning}}{{hi:Symbol table}} [![cat~memory-management][cat~memory-management~badge]][cat~memory-management]{{hi:Memory management}} [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]{{hi:Data structures}}
+{{#badges ustr memory-management="Memory management" data-structures="Data structures"}}{{hi:Interning}}{{hi:String interning}}{{hi:Symbol table}}
 
 The example shows two interners:
 

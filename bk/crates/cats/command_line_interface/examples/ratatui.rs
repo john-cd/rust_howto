@@ -3,6 +3,11 @@
 // ANCHOR: example
 //! The main function initializes the terminal, runs the application, and
 //! restores the terminal to its original state.
+//!
+//! Ratatui draws text user interfaces (TUIs): full-screen programs inside a
+//! terminal, like `htop`. Each frame you describe widgets and layout; the
+//! library draws only what changed. A backend such as `crossterm` handles the
+//! terminal.
 
 use std::io;
 
@@ -157,9 +162,10 @@ impl Widget for &App {
         // Within the root widget (and its children), we call the `render`
         // method, passing in the area which we want to render the
         // widgets to. Here, we draw a `Block` widget with a title:
-        let title_block = Block::default().borders(Borders::ALL).title(
-            Span::styled("Ratatui example", Style::default().fg(Color::Yellow)),
-        );
+        let title_block = Block::default().borders(Borders::ALL).title(Span::styled(
+            "Ratatui example",
+            Style::default().fg(Color::Yellow),
+        ));
         title_block.render(chunks[0], buf);
 
         // We can create a custom Widget struct to encapsulate the rendering
@@ -170,21 +176,16 @@ impl Widget for &App {
         // Draw another Paragraph widget in the third chunk as a footer,
         // with instructions dependent on the current mode:
         let current_navigation_text = match self.mode {
-            Mode::Running => Span::styled(
-                "Press 'q' to quit",
-                Style::default().fg(Color::Green),
-            ),
+            Mode::Running => Span::styled("Press 'q' to quit", Style::default().fg(Color::Green)),
             Mode::Exiting => Span::styled(
                 "Press 'y' to confirm, 'n' to cancel",
                 Style::default().fg(Color::LightRed),
             ),
-            Mode::Done => {
-                Span::styled("Goodbye!", Style::default().fg(Color::White))
-            }
+            Mode::Done => Span::styled("Goodbye!", Style::default().fg(Color::White)),
         };
 
-        let footer = Paragraph::new(current_navigation_text)
-            .block(Block::default().borders(Borders::ALL));
+        let footer =
+            Paragraph::new(current_navigation_text).block(Block::default().borders(Borders::ALL));
         footer.render(chunks[2], buf);
     }
 }

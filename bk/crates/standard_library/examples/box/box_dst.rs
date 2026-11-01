@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Boxing dynamically sized types.
+//!
+//! Dynamically sized types (DSTs), such as `str`, slices and `dyn Trait`, have
+//! no size known at compile time, so they must be behind a pointer. A `Box` is
+//! the owning pointer for them.
 
 /// Creates boxes of a slice and a string.
 fn main() {

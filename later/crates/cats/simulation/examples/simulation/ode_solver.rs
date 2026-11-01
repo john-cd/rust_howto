@@ -1,6 +1,11 @@
 // ANCHOR: example
 //! Integrate exponential decay with a fixed-step fourth-order Runge-Kutta
 //! solver.
+//!
+//! An ordinary differential equation (ODE) describes how a quantity changes
+//! over time, for example radioactive decay or a cooling cup of coffee. A
+//! solver approximates the solution in small steps; fourth-order Runge-Kutta
+//! (RK4) is a popular method that stays accurate with moderate step sizes.
 
 use ode_solvers::Rk4;
 use ode_solvers::System;
@@ -18,8 +23,7 @@ impl System<f64, Vector1<f64>> for ExponentialDecay {
 
 /// Integrates from 0 to 1 and returns the final value.
 fn solve_exponential_decay() -> f64 {
-    let mut solver =
-        Rk4::new(ExponentialDecay, 0.0, Vector1::new(1.0), 1.0, 0.1);
+    let mut solver = Rk4::new(ExponentialDecay, 0.0, Vector1::new(1.0), 1.0, 0.1);
     solver
         .integrate()
         .expect("the exponential-decay system should integrate");
