@@ -4,6 +4,7 @@
 
 ## Working agreement and task tracking
 
+- Keep answers concise, use American spelling, use Unix-style line endings.
 - Read this file, the root `README.md`, `TODO.md` when present, the relevant `justfile` and Cargo manifests, and `git status` before editing. Follow the owning component's documentation and existing architecture.
 - Keep updates concise and actionable, with links to relevant files. State the current issue, branch, and checkout when ownership changes.
 - Preserve unrelated staged, unstaged, and untracked work. Keep edits and commits scoped to the requested task.
@@ -192,4 +193,10 @@ Python project directories in this repository:
 - Use `CODE_PACKAGES_ROOT` for package data (Windows `D:/packages`) and `CODE_TOOLS_ROOT` for portable tools (Windows `C:/tools`). Existing tool-specific environment overrides take precedence; changing a root does not move installed packages.
 - Run Cargo through `just cargo`. The runner must export central per-repo/per-slot target and build paths, sccache with incremental disabled, and only registered allowed sccache base directories.
 - Windows intermediate builds must use NTFS. The runner validates `CODE_BUILD_ROOT` before Cargo starts; a ReFS override is an error. Defaults are `C:/code_build/<repo>/<slot>` and `D:/target/<repo>/<slot>`.
-- Run `just configure-cargo-host` once per host and after changing roots to configure direct Cargo's central fallback. Direct Cargo shares the host target folder and isolates intermediates by workspace-path hash; use the runner for stable named checkout slots.
+- Run `just configure-cargo-host` once per host and after changing roots to configure direct Cargo's central fallback. Run the build-setup recipe per checkout. Direct Cargo and rust-analyzer then use that checkout's target/build links; the host config remains a fallback for repositories without local output settings.
+
+## Configuration consistency
+
+Follow [CONFIGURATION.md](CONFIGURATION.md) when changing repository tooling. Use American
+spelling and LF line endings; keep README, contributor instructions, and configuration comments
+synchronized. Preserve documented platform, domain, and teaching-example exceptions.
