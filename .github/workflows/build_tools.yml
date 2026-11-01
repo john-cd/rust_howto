@@ -45,6 +45,12 @@ defaults:
 env:
   CARGO_TERM_COLOR: always
 
+  CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
+  CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
+  CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
+  CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
+  CARGO_INCREMENTAL: '0'
 jobs:
   build:
     runs-on: ubuntu-latest

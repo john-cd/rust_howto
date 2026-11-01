@@ -58,11 +58,18 @@ runs:
         rustup show
         cargo --version
 
+    - name: Install compiler cache
+      uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177
+      with:
+        tool: sccache@0.19.0
     - name: Cache Cargo artifacts
       if: ${{ inputs.cache == 'true' }}
       # Swatinem/rust-cache v2.9.3
       uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
       with:
         workspaces: ${{ inputs.cache-workspaces }}
-        key: ${{ inputs.cache-key }}
-        save-if: ${{ inputs.save-cache == 'true' }}
+        key: ${{ inputs.cache-key }}-config-v1-${{ github.workflow }}-${{ github.job }}-${{ runner.arch }}-${{
+          hashFiles('**/.cargo/config.toml', '**/rust-toolchain.toml', '**/Cargo.lock') }}
+        save-if: ${{ inputs.save-cache == 'true' && github.event_name == 'push' && github.ref ==
+          format('refs/heads/{0}', github.event.repository.default_branch) }}
+        cache-directories: ${{ env.CARGO_BUILD_BUILD_DIR }}
