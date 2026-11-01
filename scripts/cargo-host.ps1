@@ -1,7 +1,8 @@
 # Validate host storage and optionally configure direct Cargo's central fallback.
 param(
     [Parameter(Mandatory)][string]$BuildRoot,
-    [switch]$ConfigureHost
+    [switch]$ConfigureHost,
+    [switch]$LinkOutputs
 )
 $ErrorActionPreference = 'Stop'
 $fullBuildRoot = [IO.Path]::GetFullPath($BuildRoot)
@@ -28,6 +29,38 @@ if ($IsWindows) {
         throw "Cargo intermediate builds require NTFS; $BuildRoot uses $fileSystem. Set CODE_BUILD_ROOT to an NTFS directory."
     }
 }
+
+# Connect checkout-local Cargo/IDE paths to this checkout's central output slot.
+if ($LinkOutputs) {
+    $checkout = Split-Path -Parent $PSScriptRoot
+    $parent = Split-Path -Parent $checkout
+    $slot = if ((Split-Path -Leaf $parent) -eq '.worktrees') { Split-Path -Leaf $checkout } else { 'main' }
+    if ($slot -ne 'main' -and $slot -cnotmatch '^[a-j]$') { throw "Invalid checkout slot: $slot" }
+    $repo = if ($slot -eq 'main') { Split-Path -Leaf $checkout } else { Split-Path -Leaf (Split-Path -Parent $parent) }
+    $cacheHome = if ($env:XDG_CACHE_HOME) { $env:XDG_CACHE_HOME } else { Join-Path $HOME '.cache' }
+    $targetRoot = if ($env:CODE_TARGET_ROOT) { $env:CODE_TARGET_ROOT } elseif ($IsWindows) { 'D:/target' } else { Join-Path $cacheHome 'cargo-target' }
+    $cacheRoot = if ($env:CODE_SCCACHE_ROOT) { $env:CODE_SCCACHE_ROOT } elseif ($env:SCCACHE_DIR) { $env:SCCACHE_DIR } elseif ($IsWindows) { 'D:/sccache' } else { Join-Path $cacheHome 'sccache' }
+    $outputs = [ordered]@{
+        target = Join-Path (Join-Path $targetRoot $repo) $slot
+        build = Join-Path (Join-Path $fullBuildRoot $repo) $slot
+        '.sccache' = $cacheRoot
+    }
+    foreach ($name in $outputs.Keys) {
+        $destination = [IO.Path]::GetFullPath($outputs[$name])
+        $link = Join-Path $checkout $name
+        $item = Get-Item -LiteralPath $link -Force -ErrorAction SilentlyContinue
+        if ($null -ne $item) {
+            if (-not ($item.Attributes -band [IO.FileAttributes]::ReparsePoint)) { throw "Refusing to replace existing directory or file: $link" }
+            $existingTarget = [IO.Path]::GetFullPath($item.ResolveLinkTarget($true).FullName)
+            if ($existingTarget -ne $destination) { throw "Refusing to replace $link -> $existingTarget (expected $destination)" }
+        } else {
+            New-Item -ItemType Directory -Path $destination -Force | Out-Null
+            $kind = if ($IsWindows) { 'Junction' } else { 'SymbolicLink' }
+            New-Item -ItemType $kind -Path $link -Target $destination | Out-Null
+        }
+    }
+}
+
 if ($ConfigureHost) {
     $packages = if ($env:CODE_PACKAGES_ROOT) { $env:CODE_PACKAGES_ROOT } elseif ($IsWindows) { 'D:/packages' } else { Join-Path $HOME '.local/share' }
     $cargoHome = if ($env:CARGO_HOME) { $env:CARGO_HOME } else { Join-Path $packages 'cargo' }

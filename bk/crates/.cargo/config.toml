@@ -1,3 +1,4 @@
+# Shared profiles are inherited from the repository root .cargo/config.toml.
 # TODO Reviewed ??-??-2026.
 
 # Reference: https://doc.rust-lang.org/cargo/reference/config.html
@@ -105,114 +106,81 @@ CLANG_SYS_STATIC = "1"
 # # Same keys for a normal profile (minus `panic`, `lto`, and `rpath`).
 
 ## Defaults for profile.dev
-[profile.dev]
-# Workspace code (the book examples) compiles fastest unoptimized; dependencies
-# below stay size-optimized so heavy test workloads (hashing, compression) keep their speed.
-opt-level = 0
-# Line tables keep backtraces readable at a fraction of the full debug-info cost.
-debug = "line-tables-only"
-# split-debuginfo = '...'  # Platform-specific.
-# strip = "none"  # Keep symbols and line tables so panics and test failures show readable backtraces.
-# debug-assertions = true
-# overflow-checks = true
-# lto = false
-lto = "off"
-# panic = 'unwind'
-# incremental = true
-# codegen-units = 256
-# rpath = false
 
-[profile.dev.package."*"]
-opt-level = "s"
-debug = 0
+[profile.dev.package]
+ahash = {opt-level = 3}
+blake3 = {opt-level = 3}
+crc32fast = {opt-level = 3}
+dashmap = {opt-level = 3}
+fancy-regex = {opt-level = 3}
+flate2 = {opt-level = 3}
+hashbrown = {opt-level = 3}
+indexmap = {opt-level = 3}
+libm = {opt-level = 3}
+memchr = {opt-level = 3}
+mimalloc = {opt-level = 3}
+miniz_oxide = {opt-level = 3}
+nalgebra = {opt-level = 3}
+ndarray = {opt-level = 3}
+num-bigint = {opt-level = 3}
+num-traits = {opt-level = 3}
+petgraph = {opt-level = 3}
+proc-macro2 = {opt-level = 3}
+quote = {opt-level = 3}
+rand = {opt-level = 3}
+rand_chacha = {opt-level = 3}
+rayon = {opt-level = 3}
+rayon-core = {opt-level = 3}
+regex = {opt-level = 3}
+regex-automata = {opt-level = 3}
+regex-syntax = {opt-level = 3}
+rustls = {opt-level = 3}
+sha2 = {opt-level = 3}
+simd-json = {opt-level = 3}
+smallvec = {opt-level = 3}
+sqlx-macros = {opt-level = 3}
+sqlx-macros-core = {opt-level = 3}
+syn = {opt-level = 3}
+tikv-jemalloc-sys = {opt-level = 3}
+xxhash-rust = {opt-level = 3}
+zstd = {opt-level = 3}
+zstd-sys = {opt-level = 3}
 
-# Example: enable a small amount of optimization in debug mode
-# [profile.dev]
-# opt-level = 1
-# # Enable high optimizations for dependencies, but not for our code:
-# [profile.dev.package."*"]
-# opt-level = 3
-
-## Default for release
-# [profile.release]
-# opt-level = 3
-# debug = false
-# split-debuginfo = '...'  # Platform-specific.
-# strip = false
-# debug-assertions = false
-# overflow-checks = false
-# lto = false
-# panic = 'unwind'
-# incremental = false
-# codegen-units = 16
-# rpath = false
-
-## "ci" is used by the Github Action CD/CI workflow -  no need to optimize heavily
-[profile.ci]
-inherits = "release" # Inherits debug = false debug-assertions = false overflow-checks = false incremental = false...
-opt-level = "s" # Optimize for binary size
-strip = true # Stripping debug info can greatly reduce binary size.
-lto = "off" # No link-time optimization
-codegen-units = 256 # More code generation units allows more of a crate to be processed in parallel possibly reducing compile time, but may produce slower code.
-# see: https://doc.rust-lang.org/cargo/reference/profiles.html
-# see: https://nnethercote.github.io/perf-book/build-configuration.html
-
-[profile.ci.package."*"] # Override profile for all packages.
-opt-level = 0
-
-# [registries.<name>]  # registries other than crates.io
-# index = "..."          # URL of the registry index
-# token = "..."          # authentication token for the registry
-
-# [registry]
-# default = "..."        # name of the default registry
-# token = "..."          # authentication token for crates.io
-
-# [source.<name>]      # source definition and replacement
-# replace-with = "..."   # replace this source with the given named source
-# directory = "..."      # path to a directory source
-# registry = "..."       # URL to a registry source
-# local-registry = "..." # path to a local registry source
-# git = "..."            # URL of a git repository source
-# branch = "..."         # branch name for the git repository
-# tag = "..."            # tag name for the git repository
-# rev = "..."            # revision for the git repository
-
-# [target.x86_64-unknown-linux-gnu]
-# linker = "clang"
-# rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
-
-## Using `lld`
-# [target.x86_64-unknown-linux-gnu]
-# rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
-
-## Another variant
-# [target.x86_64-unknown-linux-gnu]
-# linker = "/usr/bin/clang"
-# rustflags = ["-Clink-arg=-fuse-ld=lld", "-Zshare-generics=y"]
-
-# [target.<triple>]
-# linker = "..."            # linker to use
-# runner = "..."            # wrapper to run executables
-# rustflags = ["...", "..."]  # custom flags for `rustc`
-
-# [target.<cfg>]
-# runner = "..."            # wrapper to run executables
-# rustflags = ["...", "..."]  # custom flags for `rustc`
-
-# [target.<triple>.<links>] # `links` build script override
-# rustc-link-lib = ["foo"]
-# rustc-link-search = ["/path/to/foo"]
-# rustc-flags = ["-L", "/some/path"]
-# rustc-cfg = ['key="value"']
-# rustc-env = {key = "value"}
-# rustc-cdylib-link-arg = ["..."]
-# metadata_key1 = "value"
-# metadata_key2 = "value"
-
-# [term]
-# quiet = false          # whether cargo output is quiet
-# verbose = false        # whether cargo provides verbose output
-# color = 'auto'         # whether cargo colorizes output
-# progress.when = 'auto' # whether cargo shows progress bar
-# progress.width = 80    # width of progress bar
+[profile.debugging.package]
+ahash = {opt-level = 0, debug = 2}
+blake3 = {opt-level = 0, debug = 2}
+crc32fast = {opt-level = 0, debug = 2}
+dashmap = {opt-level = 0, debug = 2}
+fancy-regex = {opt-level = 0, debug = 2}
+flate2 = {opt-level = 0, debug = 2}
+hashbrown = {opt-level = 0, debug = 2}
+indexmap = {opt-level = 0, debug = 2}
+libm = {opt-level = 0, debug = 2}
+memchr = {opt-level = 0, debug = 2}
+mimalloc = {opt-level = 0, debug = 2}
+miniz_oxide = {opt-level = 0, debug = 2}
+nalgebra = {opt-level = 0, debug = 2}
+ndarray = {opt-level = 0, debug = 2}
+num-bigint = {opt-level = 0, debug = 2}
+num-traits = {opt-level = 0, debug = 2}
+petgraph = {opt-level = 0, debug = 2}
+proc-macro2 = {opt-level = 0, debug = 2}
+quote = {opt-level = 0, debug = 2}
+rand = {opt-level = 0, debug = 2}
+rand_chacha = {opt-level = 0, debug = 2}
+rayon = {opt-level = 0, debug = 2}
+rayon-core = {opt-level = 0, debug = 2}
+regex = {opt-level = 0, debug = 2}
+regex-automata = {opt-level = 0, debug = 2}
+regex-syntax = {opt-level = 0, debug = 2}
+rustls = {opt-level = 0, debug = 2}
+sha2 = {opt-level = 0, debug = 2}
+simd-json = {opt-level = 0, debug = 2}
+smallvec = {opt-level = 0, debug = 2}
+sqlx-macros = {opt-level = 0, debug = 2}
+sqlx-macros-core = {opt-level = 0, debug = 2}
+syn = {opt-level = 0, debug = 2}
+tikv-jemalloc-sys = {opt-level = 0, debug = 2}
+xxhash-rust = {opt-level = 0, debug = 2}
+zstd = {opt-level = 0, debug = 2}
+zstd-sys = {opt-level = 0, debug = 2}

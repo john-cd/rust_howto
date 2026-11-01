@@ -1,18 +1,54 @@
-# Run configure-cargo-host through this repo's runner once per host for direct Cargo defaults.
-# Use the runner's cargo command for isolated per-checkout outputs and cache base directories.
 # TODO Reviewed ??-??-2026.
+# Build configuration: see CONFIGURATION.md at the repository root.
+# Run the repository build-setup recipe to link target/build to the central checkout slot.
 
-# Paths are relative to the repository root. `just build-setup` creates junctions
-# on Windows or symlinks on Linux to persistent directories outside the checkout.
 [build]
 rustc-wrapper = "sccache"
 incremental = false
 # Direct Cargo and workspace justfiles use sccache with incremental compilation disabled.
 
 # The justfile/Makefile.toml reads CODE_*_ROOT overrides (with Windows and XDG defaults) and exports per-checkout Cargo output paths; use its cargo command for these roots.
+target-dir = "target"
+build-dir = "build"
+
 [env]
 # The workspace justfiles replace the per-checkout base with the registered worktree list.
-SCCACHE_DIR = { value = ".sccache", relative = true }
 # Direct Cargo defaults to this checkout; the just runner supplies the registered worktree list.
 SCCACHE_BASEDIRS = { value = ".", relative = true }
-SCCACHE_CACHE_SIZE = { value = "35G", force = true }
+
+[env.SCCACHE_CACHE_SIZE]
+value = "35G"
+force = true
+
+[profile.dev]
+# Unoptimized workspace code, small cached dependencies, and no link-time optimization.
+opt-level = 0
+debug = "line-tables-only"
+lto = "off"
+incremental = false
+codegen-units = 256
+build-override = {opt-level = 3, debug = 0, codegen-units = 16}
+
+[profile.dev.package]
+"*" = {opt-level = "s", debug = 0, codegen-units = 16}
+# Package overrides take precedence over build-override; macro parsing crates stay optimized.
+
+[profile.test]
+incremental = false
+
+[profile.debugging]
+inherits = "dev"
+opt-level = 0
+debug = 2
+build-override = {opt-level = 0, debug = 2}
+
+[profile.debugging.package]
+"*" = {opt-level = 0, debug = 2}
+
+[profile.ci]
+inherits = "dev"
+incremental = false
+
+[profile.tools]
+inherits = "dev"
+opt-level = 2
