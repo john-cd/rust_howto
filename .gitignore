@@ -150,7 +150,6 @@ rust-project.json
 *.bz2
 *.xz
 *.lzma
-*.cab
 *.xar
 *.zst
 *.tzst
@@ -166,16 +165,34 @@ rust-project.json
 *.egg
 *.deb
 *.rpm
-*.msi
-*.msm
-*.msp
 *.txz
 /target
 
-# Local outputs, caches, and linked worktrees
+# Repository-local outputs and generated files
+**/.worktrees/
+/.ci/
+**/.ci/
 /build/
+**/build/
 /target/
+**/target/
+/debug/
+**/debug/
+/.sccache/
+**/.sccache/
+rustc-ice-*.txt
 **/__pycache__/
 **/.venv/
 **/.ruff_cache/
 **/.pytest_cache/
+**/.ipynb_checkpoints/
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
