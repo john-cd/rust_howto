@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Variable immutability and mutability.
+//!
+//! Immutability by default helps prevent accidental changes. Use `mut` on a
+//! binding to allow ordinary mutation through it; interior-mutability types
+//! provide their own APIs for changing state through shared references.
 
 /// Declares and modifies variables.
 fn main() {
@@ -14,8 +18,8 @@ fn main() {
     // ERROR: i = 6;
     println!("i: {i}");
 
-    // Rust's immutability is deep, not shallow:
-    // it applies to the inner fields of a struct, tuple, array, etc.
+    // A binding is immutable unless it is declared with `mut`.
+    // Without `mut`, fields cannot be mutated through that binding either.
     let s = MyStruct { flag: true };
     // s.flag = false; // ERROR: cannot assign to `s.flag`, as `s` is not
     // declared as mutable.

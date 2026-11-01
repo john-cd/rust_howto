@@ -13,7 +13,7 @@ fn main() {
         // Decrement the number.
         number -= 1;
     }
-    // Prints: 5 4 3 2 1
+    // Prints 5 4 3 2 1 with a space after each number.
 }
 
 // ANCHOR_END: example

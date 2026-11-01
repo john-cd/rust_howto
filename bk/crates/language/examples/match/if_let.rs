@@ -9,7 +9,7 @@
 fn main() {
     let config_max: Option<u8> = Some(3u8);
 
-    // If `config_max` is `Some`, bind the inner value to `max`
+    // If `config_max` is `Some`, bind the inner value to `max`.
     if let Some(max) = config_max {
         // `max` is available here.
         println!("The maximum is configured to be {max}.");

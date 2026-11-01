@@ -3,9 +3,9 @@
 // ANCHOR: example
 //! A struct generic over a constant, the length of an array.
 //!
-//! Const generics parameterize a type by a value, here an array length, so
-//! `Buffer<8>` and `Buffer<16>` are different types, checked at compile time
-//! and without heap allocation.
+//! Const generics parameterize a type by a value. Here, `InnerArray<i32, 8>`
+//! and `InnerArray<i32, 16>` are different types, checked at compile time and
+//! stored without a heap allocation.
 
 /// Struct with a const parameter.
 ///
@@ -31,6 +31,7 @@ fn main() {
     let array: InnerArray<i32, 3> = InnerArray::new(42);
     let len = array.len();
     println!("Array length: {len}");
+    // Expected output: Array length: 3
     assert_eq!(len, 3);
 }
 

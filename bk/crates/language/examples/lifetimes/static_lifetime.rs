@@ -19,6 +19,7 @@ fn my_string() -> &'static str {
 /// Prints a `'static` string.
 fn main() {
     println!("{}", my_string());
+    // Expected output: I have a static lifetime.
 }
 
 // ANCHOR_END: example

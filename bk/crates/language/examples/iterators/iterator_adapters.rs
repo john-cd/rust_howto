@@ -2,6 +2,11 @@
 
 // ANCHOR: example
 //! Iterator adapters, such as `map`, that transform an iterator lazily.
+//!
+//! Iterator adapters take an existing iterator and produce a new one with
+//! modified behavior (such as `map`, `filter`, or `take`). Because adapters
+//! are lazy, computations only execute when consumer methods like `collect`
+//! drive iteration.
 
 /// Chains iterator adapters and collects the result.
 fn main() {

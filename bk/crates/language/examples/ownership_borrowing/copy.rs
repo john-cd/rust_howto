@@ -3,9 +3,9 @@
 // ANCHOR: example
 //! Types that implement `Copy` are copied instead of moved.
 //!
-//! Small, simple types such as integers implement `Copy`: assigning them copies
-//! the bits and the original stays usable. Types that own resources, such as
-//! `String`, are moved instead.
+//! Values that implement `Copy` are duplicated implicitly, so the original
+//! remains usable after an assignment or function call. Resource-owning types
+//! such as `String` are moved instead.
 
 /// Copies integers and a user-defined `Copy` type.
 fn main() {

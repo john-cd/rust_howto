@@ -56,7 +56,7 @@ fn main() {
     };
     println!("{} level {}", e2.part(), e2.level());
     // e2.only_if_static(); // ERROR: argument requires that `another_part` is
-    // borrowed for `'static`
+    // borrowed for `'static`.
 }
 
 // ANCHOR_END: example

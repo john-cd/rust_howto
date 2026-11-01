@@ -30,9 +30,10 @@ fn main() {
         let y = String::from("short");
         l = longest(&x, &y);
         println!("Longest: {l}");
+        // Expected output: Longest: looooooong
     } // y is dropped here.
-    // println!("Longest: {l}"); // ERROR: borrowed value does not live long
-    // enough.
+    // println!("Longest: {l}");
+    // ERROR: `l` could borrow from `y`, which is dropped at this point.
     println!("x: {x}");
     // x is valid until this line.
 }

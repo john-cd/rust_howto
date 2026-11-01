@@ -4,9 +4,9 @@
 //! This example demonstrates the use of the `clone` method
 //! to create a deep copy of a `String`.
 //!
-//! Every value has one owner; assigning it moves ownership. `clone()` makes an
-//! independent deep copy, which can be expensive, so clone only when you really
-//! need two owners.
+//! Assigning a non-`Copy` value such as `String` moves ownership. Calling
+//! `clone()` makes an independent copy, which can be expensive, so clone only
+//! when you need two owned values.
 
 /// This example demonstrates the use of the `clone` method
 /// to create a deep copy of a `String`.

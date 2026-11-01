@@ -31,7 +31,7 @@ fn main() {
     generic(1);
 
     // We can also explicitly specify the type parameter `char` for `generic()`.
-    // Note the use of the 'turbofish' notation: `::<>`
+    // Note the use of the 'turbofish' notation: `::<T>`.
     generic::<char>('a');
 
     take_two(Some(3), "4");

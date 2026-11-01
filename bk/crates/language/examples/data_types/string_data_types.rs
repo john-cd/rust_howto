@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! String data types: `&str`, `String` and string literals.
+//!
+//! Rust distinguishes between borrowed string slices (`&str`), which reference
+//! existing UTF-8 data, and owned growable strings (`String`), which manage
+//! heap memory.
 
 /// Creates and prints strings of different types.
 fn main() {
@@ -18,6 +22,10 @@ fn main() {
         v,
         u.to_owned() + &v
     );
+    // Expected output:
+    // String slice: Hello
+    // Owned string: World
+    // String concatenation: Hello + World = HelloWorld
 }
 
 // ANCHOR_END: example

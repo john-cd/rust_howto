@@ -1,7 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Trait example.
+//! Defining and implementing traits in Rust.
+//!
+//! Traits define shared behavior that multiple types can implement, similar
+//! to interfaces in other languages. They allow writing polymorphic code
+//! via static dispatch (generics) or dynamic dispatch (trait objects).
 
 /// A trait with one method.
 pub trait Summary {

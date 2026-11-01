@@ -13,6 +13,7 @@
 /// Prints a greeting.
 fn main() {
     println!("Hello, world!");
+    // Expected output: Hello, world!
 }
 
 // ANCHOR_END: example

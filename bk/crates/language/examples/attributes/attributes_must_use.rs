@@ -2,6 +2,9 @@
 
 // ANCHOR: example
 //! Warning about an ignored result with `#[must_use]`.
+//!
+//! The `#[must_use]` attribute warns when a function's return value is ignored
+//! instead of being used.
 
 /// The `#[must_use]` attribute indicates that the return value of a function
 /// must be used. This attribute can also be applied to traits, structs, enums,
@@ -15,6 +18,7 @@ fn add(a: i32, b: i32) -> i32 {
 fn main() {
     // Use the return value of the function.
     println!("{}", add(1, 2));
+    // Expected output: 3
 
     // Uncomment the following to see the warning:
     // "unused return value of `attributes_must_use::add` that must be used"

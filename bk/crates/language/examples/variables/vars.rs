@@ -3,6 +3,10 @@
 
 // ANCHOR: example
 //! Variables are used to store values.
+//!
+//! In Rust, variables are immutable by default and scoped to the enclosing
+//! block (`{}`). The compiler uses type inference so explicit type annotations
+//! are usually optional except for disambiguation.
 
 /// Variables are used to store values.
 fn main() {
@@ -36,6 +40,12 @@ fn main() {
     } // End of inner scope - `inner_var` goes out of scope.
     // println!("Inner var outside inner scope: {inner_var}"); // ERROR.
     println!("Outer var outside inner scope: {outer_var}");
+    // Expected output:
+    // a: 1, b: 2, c: 3
+    // d: separate assignment
+    // Outer var: 10
+    // Inner var: 20
+    // Outer var outside inner scope: 10
 }
 
 // ANCHOR_END: example

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! Silencing the warning about unused code with `#[allow(dead_code)]`.
+//!
+//! The Rust compiler generates warnings for code that is defined but never
+//! referenced, helping prevent dead code accumulation. The `dead_code` lint
+//! can be silenced using `#[allow(dead_code)]` when developing or prototyping.
 
 /// This function is defined but never called.
 ///
@@ -12,6 +16,7 @@ fn unused_function() {}
 /// Does not call `unused_function`.
 fn main() {
     println!("Nobody is calling `unused_function`.");
+    // Expected output: Nobody is calling `unused_function`.
 }
 
 // ANCHOR_END: example

@@ -2,6 +2,10 @@
 
 // ANCHOR: example
 //! The unit type `()` and the never type `!`.
+//!
+//! The unit type `()` represents the absence of meaningful data and has a
+//! single zero-sized value `()`. The never type `!` represents computations
+//! that never complete (such as infinite loops or calls to panic/exit).
 
 // The unit type is used when there is nothing to return:
 /// Returns the unit type explicitly.
@@ -41,6 +45,10 @@ fn main() {
         Err(()) => diverge(),
     };
     println!("n = {n}");
+    // Expected output:
+    // a_func was called.
+    // b_func was called.
+    // n = 1
 }
 
 // ANCHOR_END: example
