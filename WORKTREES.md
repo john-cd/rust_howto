@@ -49,15 +49,14 @@ See the README for this repository's project paths and commands.
 
 ## Current state
 
-Reviewed 2026-11-01. The primary checkout and slot `b` are clean at `a6ce8788`,
-synchronized with `origin/develop`. Slot `a` remains on the
-`codex/issue-2168-worktree-inventory` branch for this review.
+Reviewed 2026-11-01. After integration, the primary checkout and reusable slots
+are clean and synchronized at the `develop` head.
 
-| Checkout        | Branch or revision     | Status and cache          |
-| --------------- | ---------------------- | ------------------------- |
-| Repository root | `develop` / `a6ce8788` | Clean; cache slot `main`. |
-| `.worktrees/a`  | `codex/issue-2168-worktree-inventory` | Inventory review; cache slot `a`. |
-| `.worktrees/b`  | detached / `a6ce8788`  | Clean; cache slot `b`.    |
+| Checkout        | Branch or revision  | Status and cache          |
+| --------------- | ------------------- | ------------------------- |
+| Repository root | `develop`           | Clean; cache slot `main`. |
+| `.worktrees/a`  | detached at develop | Clean; cache slot `a`.    |
+| `.worktrees/b`  | detached at develop | Clean; cache slot `b`.    |
 
 The `main`, `a`, and `b` target and intermediate build directories remain in
 place. The shared `D:/sccache` remains in place. The empty orphan
@@ -74,8 +73,9 @@ Cargo or rustc processes.
   `develop`: `codex/fix-proc-macro-error2-warning`,
   `codex/issue-2117-finish-epic`, `codex/issue-2118-native-platform-ci`,
   `codex/issue-2145-badge-migration`,
-  `codex/issue-2169-language-enum-clippy`, and
-  `codex/issue-2168-review-worktrees`.
+  `codex/issue-2169-language-enum-clippy`, `codex/issue-2168-review-worktrees`,
+  and `codex/issue-2168-worktree-inventory` (after its inventory commit is
+  integrated).
 - Preserved `codex/issue-2120-kube-5`: it has two patch-unique commits and no
   worktree. One changes the `kube` dependency to 5.0.0; the other refreshes
   multiple lockfiles. The branch remains for scoped review. GitHub #2120 is a
