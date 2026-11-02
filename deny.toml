@@ -58,4 +58,7 @@ highlight = "all"
 unknown-registry = "deny"
 unknown-git = "deny"
 allow-registry = ["https://github.com/rust-lang/crates.io-index"]
-allow-git = []
+allow-git = [
+  # The tools workspace pins book_tooling in Cargo.lock.
+  "https://github.com/john-cd/book_tooling",
+]

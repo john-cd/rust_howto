@@ -3,7 +3,7 @@
 [workspace]
 resolver = "3"
 members = ["cats/*", "other"]
-exclude = ["cats/embedded"]
+exclude = ["cats/embedded", "patches/proc-macro-error2"]
 
 [workspace.dependencies]
 anyhow = "1.0.104"
@@ -1355,3 +1355,7 @@ volatile_composites = "warn"
 # Checks for while loops comparing floating point values.
 # Relaxed: Scratch examples; style nits are not enforced.
 while_float = "allow"
+
+# Keep this local fix until all active dependency paths can use the maintained v3 crate.
+[patch.crates-io]
+proc-macro-error2 = { path = "patches/proc-macro-error2" }

@@ -4,6 +4,7 @@
 name = "fixture-library"
 version = "0.1.0"
 edition = "2024"
+publish = false
 repository = "https://example.com/fixture-library"
 
 [lib]
