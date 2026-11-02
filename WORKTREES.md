@@ -49,4 +49,13 @@ See the README for this repository's project paths and commands.
 
 ## Current state
 
-The 2026-11-01 configuration alignment was integrated into develop; no dedicated alignment worktree remains. Use git worktree list --porcelain and git status --short for live ownership and cleanliness.
+Reviewed 2026-11-01. The primary checkout is clean on `develop`; this inventory
+commit is local and not yet pushed.
+
+| Checkout        | Branch or revision | Status |
+| --------------- | ------------------ | ------ |
+| Repository root | `develop` | Clean; inventory commit remains local. |
+| `.worktrees/a`  | `codex/issue-2168-worktree-inventory` / `c601f143` | Clean; inventory review is committed. |
+| `.worktrees/b`  | detached / `a6ce8788` | Clean. |
+
+Use `git worktree list --porcelain` and `git status --short` to refresh this snapshot.
