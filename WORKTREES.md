@@ -49,13 +49,69 @@ See the README for this repository's project paths and commands.
 
 ## Current state
 
-Reviewed 2026-11-01. The primary checkout is clean on `develop`; this inventory
-commit is local and not yet pushed.
+Reviewed 2026-11-01. The primary checkout and slot `b` are clean at `a6ce8788`,
+synchronized with `origin/develop`. Slot `a` remains on the
+`codex/issue-2168-worktree-inventory` branch for this review.
 
-| Checkout        | Branch or revision | Status |
-| --------------- | ------------------ | ------ |
-| Repository root | `develop` | Clean; inventory commit remains local. |
-| `.worktrees/a`  | `codex/issue-2168-worktree-inventory` / `c601f143` | Clean; inventory review is committed. |
-| `.worktrees/b`  | detached / `a6ce8788` | Clean. |
+| Checkout        | Branch or revision     | Status and cache          |
+| --------------- | ---------------------- | ------------------------- |
+| Repository root | `develop` / `a6ce8788` | Clean; cache slot `main`. |
+| `.worktrees/a`  | `codex/issue-2168-worktree-inventory` | Inventory review; cache slot `a`. |
+| `.worktrees/b`  | detached / `a6ce8788`  | Clean; cache slot `b`.    |
 
-Use `git worktree list --porcelain` and `git status --short` to refresh this snapshot.
+The `main`, `a`, and `b` target and intermediate build directories remain in
+place. The shared `D:/sccache` remains in place. The empty orphan
+`D:/target/rust_howto/c` directory was removed after confirming it had no
+children, no registered checkout, no `C:/code_build/rust_howto/c`, and no active
+Cargo or rustc processes.
+
+### Branch and pull request review
+
+- `develop` was `962858a3` and matched `origin/develop` before this task. Commit
+  `a6ce8788` was integrated by fast-forward and pushed; the existing merge-commit
+  count remains 26.
+- Deleted these six local topic refs after verifying each was an ancestor of
+  `develop`: `codex/fix-proc-macro-error2-warning`,
+  `codex/issue-2117-finish-epic`, `codex/issue-2118-native-platform-ci`,
+  `codex/issue-2145-badge-migration`,
+  `codex/issue-2169-language-enum-clippy`, and
+  `codex/issue-2168-review-worktrees`.
+- Preserved `codex/issue-2120-kube-5`: it has two patch-unique commits and no
+  worktree. One changes the `kube` dependency to 5.0.0; the other refreshes
+  multiple lockfiles. The branch remains for scoped review. GitHub #2120 is a
+  closed benchmark PR, so the branch label and current PR number do not match.
+- Preserved all eight local backup branches because each has unique commits:
+  `backup/retired/2026-11-01/rust-howto-devcontainer-heavy-parity`,
+  `backup/retired/2026-11-01/rust-howto-issue2117-windows-review`,
+  `backup/retired/2026-11-01/rust-howto-issue2157-config`,
+  `backup/retired/2026-11-01/rust-howto-repo-lint-config`,
+  `backup/tooling-20261031/develop-before`,
+  `backup/tooling-20261031/working-state`,
+  `backup/tooling-20261031/worktree-a`, and
+  `backup/tooling-20261031/worktree-c`.
+- Preserved remote branches with unique work: `origin/codex/develop-sync-linux`
+  (two patch-unique commits),
+  `origin/codex/wsl-develop-pre-sync-adf3123b0` (67 patch-unique commits),
+  `origin/jules-9822694969820978133-5365577d` (one post-merge unique commit),
+  and the backup refs. Deleted
+  `origin/backup/tooling-20261031/worktree-b` because its tip was already in
+  `develop` and it had no patch-unique commits. `origin/main` remains the
+  independent empty history. No PRs are open; the reviewed closed-without-merge
+  PR refs #2124 and #2152 are absent locally and remotely.
+- The Jules branch commit combines Dependabot YAML quoting with example-output
+  comments that are inaccurate in at least two cases. Neither part was
+  cherry-picked; the unique commit remains preserved for later review.
+
+### Temporary and generated-file review
+
+The only search hits were three identical
+`mdbook-utils/.jules/sentinel.md` review markers in the submodule checkout and
+its `a` and `b` worktrees. The marker is tracked in the separate
+`D:/code/mdbook-utils` clone's history (`e3b80f0`, “chore(review): add
+final-review markers”), so these copies were kept. The nested submodule Git
+metadata could not be read from this checkout because of a permission denial,
+so it was left untouched. No other LLM-related or temporary-file candidates
+were found.
+
+Use `git worktree list --porcelain` and `git status --short` to refresh this
+snapshot.
