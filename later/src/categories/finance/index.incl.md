@@ -1,3 +1,5 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
 | Topic                   | Guide                                     | Covers                                                           |
 | ----------------------- | ----------------------------------------- | ---------------------------------------------------------------- |
 | Quantitative analysis   | [Quantitative Analysis](quant.md)         | Option pricing, rolling statistics, and trading-day calculations |

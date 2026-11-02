@@ -1,3 +1,5 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
 # Makes error reporting in procedural macros nice and easy
 
 [![docs.rs](https://docs.rs/proc-macro-error2/badge.svg)](https://docs.rs/proc-macro-error2)

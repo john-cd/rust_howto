@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Parses and inspects the normalized SVG tree produced by `usvg`.
 //!

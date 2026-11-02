@@ -1,3 +1,5 @@
+# TODO Reviewed ??-??-2026
+
 [default]
 # Reviewed book-specific commands, names, crates, product names, and acronyms.
 [default.extend-words]

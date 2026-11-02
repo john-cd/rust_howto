@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Demonstrates stable references in an `elsa::FrozenVec`.
 
 // ANCHOR: example

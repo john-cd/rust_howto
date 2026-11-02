@@ -1,3 +1,5 @@
+# TODO Reviewed ??-??-2026
+
 # Composite action: set `GHA_CACHE_SCOPE`, the scope of the Docker layer cache (`type=gha`)
 # referenced by `.devcontainer/compose-ci.yaml`. The scope changes when the pinned versions
 # or the lock files change.

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# TODO Reviewed ??-??-2026
+
 """Rebuild the example references of `src/indices/refs.incl.md`.
 
 Cross-platform replacement for `update_refdefs_for_index_of_examples.sh`.

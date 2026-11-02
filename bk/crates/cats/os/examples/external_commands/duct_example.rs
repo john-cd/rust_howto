@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Run a child command with `duct` and capture its output.
 //!

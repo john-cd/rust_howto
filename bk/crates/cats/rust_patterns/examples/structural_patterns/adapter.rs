@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Adapts buffered input lines into simple comma-separated row values.
 //!

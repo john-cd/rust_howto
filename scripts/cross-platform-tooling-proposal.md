@@ -1,3 +1,5 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
 # Proposal: make every command work on Linux and Windows
 
 Status: implementation in progress (issue #2000). Keep `just` as the task runner, use Bash as the preferred scripting language with Git Bash on Windows, and migrate suitable shared script logic to Rust tools incrementally. Do not adopt cargo-make or Python for tooling. Scope: `rust_howto` (the `justfile`s, `bk/scripts/**`, `scripts/`, `.devcontainer/`), with notes on `book_tooling` and `mdbook-utils`.

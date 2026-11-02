@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# TODO Reviewed ??-??-2026
+
 """Check that the dependency-audit workflow triggers on dependency-only changes.
 
 Every maintained audited workspace's manifests, lockfile and `cargo deny` policy

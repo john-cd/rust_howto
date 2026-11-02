@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Ruby-independent greeting logic shared with the native example.
 
 /// Returns the text exposed by the Ruby example.

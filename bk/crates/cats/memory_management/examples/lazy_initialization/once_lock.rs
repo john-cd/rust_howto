@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Initializes a shared value once with `std::sync::OnceLock`.
 //!

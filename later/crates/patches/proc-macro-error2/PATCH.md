@@ -1,3 +1,5 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
 # Local patch
 
 This source is `proc-macro-error2` 2.0.1 from crates.io. The compatibility fix

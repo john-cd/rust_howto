@@ -1,3 +1,5 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
 # Vector Graphics Formats
 
 [![cat~rendering::data-formats][cat~rendering::data-formats~badge]][cat~rendering::data-formats]{{hi:Vector formats}}{{hi:Rendering data formats}}

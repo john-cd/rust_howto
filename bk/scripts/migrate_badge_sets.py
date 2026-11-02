@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# TODO Reviewed ??-??-2026
+
 """Rewrite compatible crate badge sets in Markdown blocks to `{{#badges}}` (#2132, #2145).
 
 Idempotent: complete standard crate badge groups (docs.rs, crates.io, repository, lib.rs)

@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Shows that shared reborrows of one mutable reference may overlap.
 
 // ANCHOR: example

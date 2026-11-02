@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# TODO Reviewed ??-??-2026
+
 # Install a checksum-pinned GitHub CLI release for Linux.
 
 set -euo pipefail

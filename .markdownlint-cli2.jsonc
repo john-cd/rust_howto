@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // markdownlint-cli2 configuration for the book content.
 // Run `just mdlint` from bk/.
 {

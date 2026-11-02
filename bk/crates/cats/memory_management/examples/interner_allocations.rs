@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Counts allocation calls made by the hand-written string interner.
 //!
 //! A string interner stores each distinct string once and hands out a small ID.

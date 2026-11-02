@@ -1,3 +1,5 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
 # Tokenizing Input with Logos
 
 A lexer turns source text into a sequence of tokens that a parser can consume. [logos][c~logos~docs]↗{{hi:logos}} derives an efficient lexer from token definitions and regular expressions.

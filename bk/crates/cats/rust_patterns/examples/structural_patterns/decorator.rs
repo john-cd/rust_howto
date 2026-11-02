@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Wraps a reader to add byte-counting behavior.
 //!

@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Using items from an external crate (a dependency).
 
 // ANCHOR: example

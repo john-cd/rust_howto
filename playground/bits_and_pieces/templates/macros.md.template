@@ -1,3 +1,5 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
 {# Returns a badge block for a given crate#}
 {% macro badges(crate_name) %}
 [![{{ crate_name }}][c~{{ crate_name | underscore }}~docs~badge]][c~{{ crate_name | underscore }}~docs]

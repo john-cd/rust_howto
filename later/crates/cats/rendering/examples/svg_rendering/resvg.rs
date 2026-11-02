@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Parses an SVG and rasterizes it to a PNG with `resvg`.
 //!

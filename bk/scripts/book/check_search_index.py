@@ -1,3 +1,5 @@
+# TODO Reviewed ??-??-2026
+
 # Purpose: Check the built-in HTML search index for expected and private book content.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #

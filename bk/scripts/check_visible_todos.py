@@ -1,3 +1,5 @@
+# TODO Reviewed ??-??-2026
+
 # Purpose: Fail when a TODO placeholder is visible in published Markdown.
 # Usage: From bk/, run the matching just recipe and pass its arguments.
 #

@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Exports a Rust function as a loadable Lua module with `mlua`'s `module`
 //! feature.

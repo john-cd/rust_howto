@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Estimates a European call payoff with a reproducible random stream.
 //!
 //! Monte Carlo simulation estimates a value by averaging many random trials.

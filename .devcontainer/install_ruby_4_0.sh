@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# TODO Reviewed ??-??-2026
+
 set -euo pipefail
 
 ruby_version=4.0.9

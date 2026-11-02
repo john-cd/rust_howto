@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Demonstrates a compile-time perfect hash map.
 
 // ANCHOR: example

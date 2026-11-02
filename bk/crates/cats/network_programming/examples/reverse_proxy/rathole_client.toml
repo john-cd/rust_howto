@@ -1,3 +1,5 @@
+# TODO Reviewed ??-??-2026
+
 # Replace the key and token placeholders with values matching server.toml.
 # Keep this file private because it contains the service token.
 [client]

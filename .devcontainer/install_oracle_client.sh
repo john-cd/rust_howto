@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# TODO Reviewed ??-??-2026
+
 # Install a checksum-pinned Oracle Instant Client Basic Light and SDK pair.
 
 set -euo pipefail

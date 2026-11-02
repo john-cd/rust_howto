@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Wrapping byte arithmetic without allocation or operating-system services.
 
 // ANCHOR: example

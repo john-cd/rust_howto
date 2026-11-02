@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Lazily initializes a single-threaded value with `std::cell::LazyCell`.
 //!

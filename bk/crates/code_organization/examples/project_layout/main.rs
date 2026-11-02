@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Organizing a library with reexports and a prelude.
 //!
 //! The modules are declared inline so that the example fits in one file. In a

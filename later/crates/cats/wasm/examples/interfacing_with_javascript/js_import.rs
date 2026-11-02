@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 // ANCHOR: example
 //! Imports a JavaScript function into Rust through `wasm-bindgen`.
 //!

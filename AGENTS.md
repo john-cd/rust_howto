@@ -2,6 +2,11 @@
 
 # rust_howto Instructions
 
+## Human review markers
+
+- `TODO Reviewed ??-??-<year>` and `Reviewed <date>` comments are for human review only. Preserve existing markers verbatim during edits; do not remove them or treat them as software TODOs.
+- When modifying a file that contains a `Reviewed <date>` marker without `TODO`, preserve that marker and add a separate `TODO Reviewed ??-??-<year>` comment to request fresh human review.
+
 ## Working agreement and task tracking
 
 - Keep answers concise, use American spelling, use Unix-style line endings.
@@ -10,7 +15,6 @@
 - Preserve unrelated staged, unstaged, and untracked work. Keep edits and commits scoped to the requested task.
 - Track implementation work in GitHub Issues. Link acceptance criteria to source and validation evidence; record blockers and concrete remaining work on the issue. Use priorities `P0` through `P4` where the tracker supports them.
 - Reconcile actionable `TODO` and `LATER` entries with issues instead of maintaining duplicate backlogs. Do not delete unresolved comments or rename a `TODO` to a `NOTE` to hide unfinished work.
-- Preserve human review comments and `TODO Reviewed` markers; those markers are reserved for human review.
 - Close an issue only after its acceptance criteria, required checks, and focused commits are complete. A merged PR alone is insufficient evidence.
 
 ## Git workflow

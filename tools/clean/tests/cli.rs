@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026
+
 //! Runs the `clean` binary against temporary trees only.
 
 use std::fs;

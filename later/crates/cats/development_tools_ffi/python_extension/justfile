@@ -1,11 +1,17 @@
+# TODO Reviewed ??-??-2026
+
 # Purpose: Run this Python project with its configured environment and external output directories.
 # Usage: Run just --list from this directory to inspect the available recipes.
 
 # Python tasks for later/crates/cats/development_tools_ffi/python_extension.
 import '../../../../../scripts/env.just'
+# py_project_path is repository-relative and scopes source, cache, and output paths.
+# py_environment_project selects the locked dependency environment; set it to a shared
+# project key when sibling tools should reuse that project's virtual environment.
 
 py_project_path := "later/crates/cats/development_tools_ffi/python_extension"
 py_environment_project := "later/crates/cats/development_tools_ffi/python_extension"
+# A separate lightweight environment lets Ruff run without installing/building the extension.
 py_lint_environment := replace(join(CODE_PYTHON_ENV_ROOT, py_environment_key + "-lint"), "\\", "/")
 
 # List the available project recipes.

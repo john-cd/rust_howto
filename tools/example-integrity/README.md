@@ -1,3 +1,5 @@
+<!-- TODO Reviewed ??-??-2026 -->
+
 # `example-integrity`
 
 This read-only tool inventories the book's Markdown chapters, recursive includes,

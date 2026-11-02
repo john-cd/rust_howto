@@ -3,6 +3,12 @@
 #
 # TODO Reviewed ??-??-2026.
 
+# Storage-root overrides: CODE_REPOS_ROOT names the canonical checkout root for tools;
+# CODE_TEMP_ROOT holds temporary files;
+# CODE_PACKAGES_ROOT stores package-manager data; CODE_TOOLS_ROOT stores portable tools.
+# CODE_TARGET_ROOT stores compiled artifacts, CODE_BUILD_ROOT stores intermediate Cargo files
+# (required to be on NTFS on Windows), and CODE_SCCACHE_ROOT selects the compiler cache.
+# SCCACHE_DIR is retained as a fallback when CODE_SCCACHE_ROOT is unset.
 build_repo := parent_directory(source_directory())
 build_parent := parent_directory(build_repo)
 build_slot := if build_parent =~ '^([A-Za-z]:)?[/\\]*$' { "main" } else if file_name(build_parent) == ".worktrees" { file_name(build_repo) } else { "main" }

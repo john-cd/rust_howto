@@ -1,4 +1,6 @@
 #!/bin/sh
+# TODO Reviewed ??-??-2026
+
 set -e
 
 echo '+just fmtall'
