@@ -37,7 +37,7 @@ env:
   CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
-  CARGO_INCREMENTAL: '0'
+  CARGO_INCREMENTAL: "0"
 jobs:
   macos:
     name: macOS APIs and Objective-C (advisory)
@@ -54,9 +54,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Load pinned tool versions
-        uses: $/.github/actions/load-pinned-versions
+        uses: ./.github/actions/load-pinned-versions
       - name: Set up Rust
-        uses: $/.github/actions/setup-rust
+        uses: ./.github/actions/setup-rust
         with:
           toolchain: ${{ env.RUST_VERSION }}
           nightly: skip
@@ -88,7 +88,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Load pinned tool versions
-        uses: $/.github/actions/load-pinned-versions
+        uses: ./.github/actions/load-pinned-versions
       - name: Lint and test inside FreeBSD
         # vmactions/freebsd-vm v1.5.9
         uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc
