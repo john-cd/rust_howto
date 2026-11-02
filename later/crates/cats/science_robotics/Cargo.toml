@@ -62,7 +62,7 @@ embedded-hal = "1.0.0"
 futures = { version = "0.3.34", optional = true }
 k = "0.32.0" # Kinematics (the library underneath OpenRR).
 kiddo.workspace = true
-lz4_flex = { version = "0.10.0", default-features = false, features = ["safe-decode"], optional = true } # Mitigates RUSTSEC-2026-0041 for the lz4_flex pulled in by zenoh-transport.
+lz4_flex = { version = "0.14.0", default-features = false, features = ["safe-decode"], optional = true } # Mitigates RUSTSEC-2026-0041 for the lz4_flex pulled in by zenoh-transport.
 pathfinding = "4.16.0"
 pid = "4.0.0"
 r2r = { version = "0.9.7", optional = true }

@@ -24120,7 +24120,7 @@ dependencies = [
  "futures",
  "k",
  "kiddo",
- "lz4_flex 0.10.0",
+ "lz4_flex 0.14.0",
  "pathfinding",
  "pid",
  "r2r",
