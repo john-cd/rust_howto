@@ -52,10 +52,10 @@ it does not update arbitrary version strings in shell scripts or custom formatte
 Rust-cache entries include toolchain/environment inputs plus workflow, job, architecture, and
 Cargo-config/lockfile hashes. Save Rust artifact caches only on pushes to the default branch;
 pull requests restore caches. CI sets matching `CODE_*` and `CARGO_*` paths under `.ci/target/<repo>/main` and
-`.ci/build/<repo>/main`. Rust-cache workspace maps use those same absolute paths,
-including intermediate artifacts, so direct Cargo and task runners reuse one output tree.
-Keep specialized coverage, target, feature, and release jobs isolated. sccache is pinned where
-installed, and incremental compilation stays disabled, including when using GitHub caches.
+`.ci/build/<repo>/main`. Rust-cache workspace maps and its intermediate-artifact directory use
+the same paths as Cargo. Specialized jobs may choose separate outputs when their cache mappings
+use those same paths. `setup-rust` installs pinned sccache before Rust commands, and incremental
+compilation stays disabled with both sccache and GitHub artifact caches.
 An artifact cache does not make Rust incremental compilation compatible with sccache.
 Python workflows use setup-uv caching keyed by `uv.lock`, and commands retain `--locked`.
 Container builds retain their existing cargo-chef/BuildKit strategy; when cooking dependencies,

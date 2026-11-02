@@ -19,21 +19,21 @@ _default:
 
 # Format Cargo manifests in every independent Rust workspace.
 @fmt-toml:
-    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded tools xmpl playground publish; do \
+    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl playground publish; do \
       echo "Formatting Cargo manifests in ${workspace}"; \
       cargo fmt-toml --workspace-path "${workspace}"; \
     done
 
 # Check Cargo manifest formatting in every independent Rust workspace.
 @fmt-toml-check:
-    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded tools xmpl playground publish; do \
+    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl playground publish; do \
       echo "Checking Cargo manifests in ${workspace}"; \
       cargo fmt-toml --check --workspace-path "${workspace}"; \
     done
 
 # Check dependency advisories, licenses, duplicate versions, and registry sources.
 @deny:
-    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded tools xmpl playground publish; do \
+    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl playground publish; do \
       echo "Checking dependency policy in ${workspace}"; \
       cargo deny --locked --manifest-path "${workspace}/Cargo.toml" --workspace check; \
     done

@@ -21,10 +21,6 @@ permissions:
 jobs:
   allocator-examples:
     runs-on: ubuntu-24.04
-    env:
-      CARGO_TARGET_DIR: ${{ github.workspace }}/target
-      CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/build
-      RUSTC_WRAPPER: ""
     steps:
       - name: Checkout
         # actions/checkout v7.0.1
@@ -62,4 +58,4 @@ env:
   CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
-  CARGO_INCREMENTAL: '0'
+  CARGO_INCREMENTAL: "0"

@@ -17,6 +17,15 @@ class AuditWorkflowPathTests(unittest.TestCase):
         self.assertIn("push: missing xmpl/Cargo.lock", problems)
         self.assertIn("pull_request: missing xmpl/Cargo.lock", problems)
 
+    def test_dropping_a_nested_workspace_lockfile_is_reported(self) -> None:
+        lockfile = (
+            "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
+        )
+        text = WORKFLOW.read_text().replace(f'      - "{lockfile}"\n', "")
+        problems = missing(trigger_paths(text))
+        self.assertIn(f"push: missing {lockfile}", problems)
+        self.assertIn(f"pull_request: missing {lockfile}", problems)
+
 
 if __name__ == "__main__":
     unittest.main()

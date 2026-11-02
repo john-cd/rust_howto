@@ -18,10 +18,11 @@ jobs:
           ## Setting this to not fail the workflow while deleting cache keys.
           set +e
           echo "Deleting caches..."
-          for cacheKey in $cacheKeys
-          do
-              gh cache delete $cacheKey
-          done
+          while IFS= read -r cacheKey; do
+              if [[ -n "$cacheKey" ]]; then
+                  gh cache delete "$cacheKey"
+              fi
+          done <<< "$cacheKeys"
           echo "Done"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -32,4 +33,4 @@ env:
   CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
-  CARGO_INCREMENTAL: '0'
+  CARGO_INCREMENTAL: "0"

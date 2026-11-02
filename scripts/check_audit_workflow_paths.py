@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Check that the dependency-audit workflow triggers on dependency-only changes.
 
-Every audited workspace's manifests, lockfile and `cargo deny` policy must be
-covered by both `push.paths` and `pull_request.paths` in
-`.github/workflows/audit_dependencies.yml`.
+Every maintained audited workspace's manifests, lockfile and `cargo deny` policy
+must be covered by both `push.paths` and `pull_request.paths` in
+`.github/workflows/audit_dependencies.yml`. Immutable Cargo fixtures under
+`bk/scripts` are intentionally excluded from this automated coverage.
 
 Run: python3 scripts/check_audit_workflow_paths.py
 """
@@ -18,7 +19,15 @@ WORKFLOW = ROOT / ".github" / "workflows" / "audit_dependencies.yml"
 # Audited workspace -> policy file.
 WORKSPACES = {
     "bk/crates": "bk/crates/deny.toml",
+    "bk/crates/cats/database/examples/query_builders_orms/toasty_validation": "bk/crates/deny.toml",
+    "bk/crates/cats/memory_management/allocator_selection": "bk/crates/deny.toml",
     "later/crates": "later/crates/deny.toml",
+    "later/crates/cats/development_tools_ffi/python_extension": "later/crates/deny.toml",
+    "later/crates/cats/embedded": "later/crates/deny.toml",
+    "later/crates/cats/gui/vizia": "later/crates/deny.toml",
+    "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest": "later/crates/deny.toml",
+    "playground": "bk/crates/deny.toml",
+    "publish": "bk/crates/deny.toml",
     "tools": "bk/crates/deny.toml",
     "xmpl": "bk/crates/deny.toml",
 }

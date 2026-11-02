@@ -30,7 +30,6 @@ concurrency:
 
 env:
   CARGO_TERM_COLOR: always
-  RUSTC_WRAPPER: ""
 
   CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
   CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build

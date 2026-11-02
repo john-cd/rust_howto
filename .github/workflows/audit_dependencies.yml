@@ -1,7 +1,8 @@
 # TODO Reviewed ??-??-2026.
 
-## Audits the book workspace's dependencies with `cargo deny` (RustSec advisories, licenses, bans and sources).
+## Audits maintained Cargo dependency roots with `cargo deny` (advisories, licenses, bans and sources).
 ## Configuration: `bk/crates/deny.toml`. Also runs weekly because new advisories appear without code changes.
+## Immutable Cargo fixtures under `bk/scripts` are excluded from automated dependency updates/audits.
 name: Audit dependencies
 
 on:
@@ -11,9 +12,33 @@ on:
       - "bk/crates/Cargo.lock"
       - "bk/crates/Cargo.toml"
       - "bk/crates/**/Cargo.toml"
+      - "bk/crates/cats/database/examples/query_builders_orms/toasty_validation/Cargo.lock"
+      - "bk/crates/cats/database/examples/query_builders_orms/toasty_validation/Cargo.toml"
+      - "bk/crates/cats/database/examples/query_builders_orms/toasty_validation/**/Cargo.toml"
+      - "bk/crates/cats/memory_management/allocator_selection/Cargo.lock"
+      - "bk/crates/cats/memory_management/allocator_selection/Cargo.toml"
+      - "bk/crates/cats/memory_management/allocator_selection/**/Cargo.toml"
       - "later/crates/Cargo.lock"
       - "later/crates/Cargo.toml"
       - "later/crates/**/Cargo.toml"
+      - "later/crates/cats/development_tools_ffi/python_extension/Cargo.lock"
+      - "later/crates/cats/development_tools_ffi/python_extension/Cargo.toml"
+      - "later/crates/cats/development_tools_ffi/python_extension/**/Cargo.toml"
+      - "later/crates/cats/embedded/Cargo.lock"
+      - "later/crates/cats/embedded/Cargo.toml"
+      - "later/crates/cats/embedded/**/Cargo.toml"
+      - "later/crates/cats/gui/vizia/Cargo.lock"
+      - "later/crates/cats/gui/vizia/Cargo.toml"
+      - "later/crates/cats/gui/vizia/**/Cargo.toml"
+      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
+      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.toml"
+      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/**/Cargo.toml"
+      - "playground/Cargo.lock"
+      - "playground/Cargo.toml"
+      - "playground/**/Cargo.toml"
+      - "publish/Cargo.lock"
+      - "publish/Cargo.toml"
+      - "publish/**/Cargo.toml"
       - "tools/Cargo.lock"
       - "tools/Cargo.toml"
       - "tools/**/Cargo.toml"
@@ -29,9 +54,33 @@ on:
       - "bk/crates/Cargo.lock"
       - "bk/crates/Cargo.toml"
       - "bk/crates/**/Cargo.toml"
+      - "bk/crates/cats/database/examples/query_builders_orms/toasty_validation/Cargo.lock"
+      - "bk/crates/cats/database/examples/query_builders_orms/toasty_validation/Cargo.toml"
+      - "bk/crates/cats/database/examples/query_builders_orms/toasty_validation/**/Cargo.toml"
+      - "bk/crates/cats/memory_management/allocator_selection/Cargo.lock"
+      - "bk/crates/cats/memory_management/allocator_selection/Cargo.toml"
+      - "bk/crates/cats/memory_management/allocator_selection/**/Cargo.toml"
       - "later/crates/Cargo.lock"
       - "later/crates/Cargo.toml"
       - "later/crates/**/Cargo.toml"
+      - "later/crates/cats/development_tools_ffi/python_extension/Cargo.lock"
+      - "later/crates/cats/development_tools_ffi/python_extension/Cargo.toml"
+      - "later/crates/cats/development_tools_ffi/python_extension/**/Cargo.toml"
+      - "later/crates/cats/embedded/Cargo.lock"
+      - "later/crates/cats/embedded/Cargo.toml"
+      - "later/crates/cats/embedded/**/Cargo.toml"
+      - "later/crates/cats/gui/vizia/Cargo.lock"
+      - "later/crates/cats/gui/vizia/Cargo.toml"
+      - "later/crates/cats/gui/vizia/**/Cargo.toml"
+      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
+      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.toml"
+      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/**/Cargo.toml"
+      - "playground/Cargo.lock"
+      - "playground/Cargo.toml"
+      - "playground/**/Cargo.toml"
+      - "publish/Cargo.lock"
+      - "publish/Cargo.toml"
+      - "publish/**/Cargo.toml"
       - "tools/Cargo.lock"
       - "tools/Cargo.toml"
       - "tools/**/Cargo.toml"
@@ -82,8 +131,8 @@ jobs:
             ${{ matrix.checks == 'advisories' && '--all-features' || '' }}
           command-arguments: --hide-inclusion-graph
 
-  ## The other workspaces: `later/crates` has its own policy (`later/crates/deny.toml`);
-  ## `tools` and `xmpl` reuse the book's policy. Advisories stay non-blocking.
+  ## Independent Cargo roots use the `later/crates` policy or reuse the book's policy.
+  ## This broad matrix remains advisory; the primary book policy checks stay required.
   cargo-deny-other:
     name: cargo deny (${{ matrix.workspace }})
     runs-on: ubuntu-24.04
@@ -96,6 +145,22 @@ jobs:
           - workspace: tools
             config: bk/crates/deny.toml
           - workspace: xmpl
+            config: bk/crates/deny.toml
+          - workspace: bk/crates/cats/database/examples/query_builders_orms/toasty_validation
+            config: bk/crates/deny.toml
+          - workspace: bk/crates/cats/memory_management/allocator_selection
+            config: bk/crates/deny.toml
+          - workspace: later/crates/cats/development_tools_ffi/python_extension
+            config: later/crates/deny.toml
+          - workspace: later/crates/cats/embedded
+            config: later/crates/deny.toml
+          - workspace: later/crates/cats/gui/vizia
+            config: later/crates/deny.toml
+          - workspace: later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest
+            config: later/crates/deny.toml
+          - workspace: playground
+            config: bk/crates/deny.toml
+          - workspace: publish
             config: bk/crates/deny.toml
     continue-on-error: true
     steps:
@@ -112,4 +177,4 @@ env:
   CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
-  CARGO_INCREMENTAL: '0'
+  CARGO_INCREMENTAL: "0"

@@ -40,15 +40,12 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
-  ## CI uses rust-cache instead of the local sccache wrapper.
-  RUSTC_WRAPPER: ""
-
   CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
   CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
   CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
-  CARGO_INCREMENTAL: '0'
+  CARGO_INCREMENTAL: "0"
 permissions:
   contents: read
 
@@ -73,9 +70,6 @@ jobs:
         include:
           - workspace: xmpl
             doctests: true
-    env:
-      CARGO_TARGET_DIR: ${{ github.workspace }}/target/${{ matrix.workspace }}
-      CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/${{ matrix.workspace }}/build
     steps:
       - name: Code checkout
         # actions/checkout v7.0.1

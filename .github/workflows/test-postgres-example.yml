@@ -38,9 +38,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     env:
-      CARGO_TARGET_DIR: ${{ github.workspace }}/target
-      CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/target/build
-      RUSTC_WRAPPER: "" # `.cargo/config.toml` enables sccache, which CI does not install.
       DATABASE_URL: host=127.0.0.1 port=5432 user=postgres password=password dbname=library
     steps:
       - name: Checkout
@@ -70,4 +67,4 @@ env:
   CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
-  CARGO_INCREMENTAL: '0'
+  CARGO_INCREMENTAL: "0"
