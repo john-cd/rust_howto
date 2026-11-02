@@ -69,19 +69,21 @@ config discovery starts at the command's working directory; run from the owning 
 especially when that workspace has a child config. Config values override manifest profiles,
 and environment/command-line overrides take precedence over config values.
 
-| Profile                                | Workspace code                                           | Dependencies and build tools                                                                                                                 |
-| -------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dev` / `test`                         | `opt-level = 0`, line tables, LTO off, 256 codegen units | `opt-level = "s"`, no debug info, 16 units; selected hashing, collections, math, regex, parallelism, allocator and macro crates use level 3. |
-| `debugging`                            | Level 0 and full symbols                                 | Level 0 and full symbols, including build scripts/procedural macros; intentionally uses a separate cache variant.                            |
-| `ci`                                   | Inherits `dev`, incremental disabled                     | Same flags as `dev` for dependency cache reuse. Use release jobs for performance validation.                                                 |
-| `tools`                                | Level 2 for repeatedly executed repository tools         | Same dependency flags as `dev`; build overrides request level 3 with no debug info; named package overrides take precedence.                 |
-| `release` / other specialized profiles | Preserve existing shipping/profiling choices             | Preserve existing shipping/profiling choices.                                                                                                |
+| Profile                                | Workspace code                                           | Dependencies and build tools                                                                                         |
+| -------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `dev` / `test`                         | `opt-level = 0`, line tables, LTO off, 256 codegen units | `opt-level = "s"`, no debug info, 16 units; the wildcard package override applies to all non-workspace dependencies. |
+| `debugging`                            | Level 0 and full symbols                                 | Level 0 and full symbols, including build scripts/procedural macros; intentionally uses a separate cache variant.    |
+| `ci`                                   | Inherits `dev`, incremental disabled                     | Same flags as `dev` for dependency cache reuse. Use release jobs for performance validation.                         |
+| `tools`                                | Level 2 for repeatedly executed repository tools         | Same dependency flags as `dev`; build overrides apply only to units not matched by a package override.               |
+| `release` / other specialized profiles | Preserve existing shipping/profiling choices             | Preserve existing shipping/profiling choices.                                                                        |
 
-`test` inherits `dev`. Package overrides take precedence over build overrides; macro parsing
-crates are tuned explicitly. Optimization can increase cold compile time, and size optimization
-is not guaranteed to make every crate smaller. Matching profile flags improves cache eligibility;
-compiler versions, target/features, source paths, native tools, and rustflags also affect hits.
-The `debugging` profile intentionally rebuilds dependencies to make them debuggable.
+`test` inherits `dev`. Cargo checks named package overrides first, then the wildcard package
+override, then the build override. This configuration has no named package-specific optimization
+overrides, so do not attribute level-3 optimization to selected dependency groups. Optimization
+can increase cold compile time, and size optimization is not guaranteed to make every crate
+smaller. Matching profile flags improves cache eligibility; compiler versions, target/features,
+source paths, native tools, and rustflags also affect hits. The `debugging` profile intentionally
+rebuilds dependencies to make them debuggable.
 
 Run `just build-setup` once per checkout. It creates ignored `target`, `build`, and `.sccache`
 links and refuses to replace existing files, directories, or links to another slot. PowerShell 7
@@ -96,13 +98,14 @@ rust-analyzer from allocating an additional target tree. Inherited `CARGO_*` env
 can override these settings; launch the editor without another checkout's output variables.
 Multiple independent workspaces share a checkout's output slot and Cargo locking.
 
-Build scripts/macros are optimized because they execute during compilation. Cargo gives
-package overrides precedence over build overrides, so unspecified external build dependencies
-use the size-optimized wildcard and explicitly tuned macro parsing crates use level 3. sccache caches
-eligible library compilations, not linking of binaries, dynamic libraries, or procedural macros.
-Keep the shared 35 GiB cache and stable per-slot directories. Inspect running Cargo/rustc
-processes before restarting sccache. Clean only demonstrated stale/corrupt content, never by
-recursively deleting a checkout link or another active slot.
+The level-3 build override applies to build scripts, procedural macros, and their dependencies
+only when no package override matches. The wildcard package override matches non-workspace
+dependencies first, including external build dependencies. Confirm effective unit-graph flags
+before describing a dependency group as specially optimized. sccache caches eligible library
+compilations, not linking of binaries, dynamic libraries, or procedural macros. Keep the shared
+35 GiB cache and stable per-slot directories. Inspect running Cargo/rustc processes before
+restarting sccache. Clean only demonstrated stale/corrupt content, never by recursively deleting a
+checkout link or another active slot.
 
 Select profiles with `just cargo build --profile debugging` or `--profile tools`; ordinary
 build/test uses `dev`/`test`. Select a Cargo profile in nextest with `--cargo-profile ci`, independently
@@ -122,8 +125,22 @@ dependencies, debug symbols, and release/LTO settings before adopting a new defa
 
 ## Validation evidence
 
-Validation results and remaining prerequisites are recorded here before the topic is committed.
-No cross-platform performance improvement is claimed from configuration inspection alone.
+The `tools` unit graph was inspected with Cargo `1.99.1` and `nightly-2026-10-22` on Windows slot
+`b`, using `cargo +nightly-2026-10-22 -Z unstable-options build --unit-graph --locked --offline
+--manifest-path tools/Cargo.toml -p mdbook-scrub --profile <dev|test|ci|tools|debugging>`. The
+`dev`, `test`, and `ci` workspace units use level 0, line tables, and 256 codegen units; their
+dependency units use size optimization, no debug info, and 16 codegen units. `tools` workspace
+units use level 2 with line tables and 256 codegen units. `debugging` units use level 0, full
+symbols, and disabled incremental compilation. The graph confirms the wildcard dependency
+override; this checkout has no named package-specific profile overrides.
+
+On Windows slot `b`, `scripts/setup-build.ps1` reused the expected target/build/cache junctions
+and refused an alternate `CODE_TARGET_ROOT` because the existing target junction points elsewhere.
+`scripts/cargo-host.ps1 -BuildRoot C:/code_build -LinkOutputs` accepted the NTFS build volume and
+existing checkout links. These checks do not establish cold/warm build time, artifact size,
+sccache hit rate, or hosted Linux/macOS linker behavior. Those measurements and hosted checks
+remain open; no cross-platform performance improvement is claimed from configuration inspection
+alone.
 
 ## References
 

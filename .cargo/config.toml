@@ -27,11 +27,11 @@ debug = "line-tables-only"
 lto = "off"
 incremental = false
 codegen-units = 256
-build-override = {opt-level = 3, debug = 0, codegen-units = 16}
+build-override = { opt-level = 3, debug = 0, codegen-units = 16 }
 
 [profile.dev.package]
-"*" = {opt-level = "s", debug = 0, codegen-units = 16}
-# Package overrides take precedence over build-override; macro parsing crates stay optimized.
+"*" = { opt-level = "s", debug = 0, codegen-units = 16 }
+# This wildcard also matches non-workspace build dependencies before build-override.
 
 [profile.test]
 incremental = false
@@ -40,10 +40,10 @@ incremental = false
 inherits = "dev"
 opt-level = 0
 debug = 2
-build-override = {opt-level = 0, debug = 2}
+build-override = { opt-level = 0, debug = 2 }
 
 [profile.debugging.package]
-"*" = {opt-level = 0, debug = 2}
+"*" = { opt-level = 0, debug = 2 }
 
 [profile.ci]
 inherits = "dev"
