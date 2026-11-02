@@ -6,7 +6,7 @@
 
 - Keep answers concise, use American spelling, use Unix-style line endings.
 - Read this file, the root `README.md`, `TODO.md` when present, the relevant `justfile` and Cargo manifests, and `git status` before editing. Follow the owning component's documentation and existing architecture.
-- Keep updates concise and actionable, with links to relevant files. State the current issue, branch, and checkout when ownership changes.
+- Keep updates concise and actionable, with links to relevant files. Whenever you change the active branch or worktree, immediately state the current branch name and worktree path in your next update. Include the current issue when ownership changes.
 - Preserve unrelated staged, unstaged, and untracked work. Keep edits and commits scoped to the requested task.
 - Track implementation work in GitHub Issues. Link acceptance criteria to source and validation evidence; record blockers and concrete remaining work on the issue. Use priorities `P0` through `P4` where the tracker supports them.
 - Reconcile actionable `TODO` and `LATER` entries with issues instead of maintaining duplicate backlogs. Do not delete unresolved comments or rename a `TODO` to a `NOTE` to hide unfinished work.
@@ -58,7 +58,7 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 
 - `develop` is the default integration branch. `main` starts with an empty root commit and has independent history. The primary checkout keeps its stable `main` cache identity so the branch rename does not invalidate compiled artifacts.
 - Keep the primary checkout at `D:\code\rust_howto` on `develop`, using cache slot `main`. The only permitted topic worktrees are `D:\code\rust_howto\.worktrees\a` and `D:\code\rust_howto\.worktrees\b`. Inspect `git worktree list` and each slot's status before choosing one; preserve dirty or active slots. Do not create additional worktrees. `main` is the primary checkout's cache identity, not a folder under `.worktrees`.
-- Reuse an existing clean, inactive slot for each new topic so its Cargo target and intermediate build directories stay warm. Inspect its status, branch, ownership, and unintegrated work before switching branches; never disturb a dirty or active slot. Use only slots `a` and `b`; do not create another worktree. Preserve these slots and their caches instead of removing and recreating them between tasks. Do not create additional slots.
+- Reuse a clean, inactive `a` or `b` slot so its Cargo target and intermediate build directories stay warm. This repository currently maps its build caches only for these slots; if both are unavailable, ask before creating or using another slot.
 - On Windows, build artifacts belong in CODE_TARGET_ROOT\rust_howto\slot and intermediate artifacts in CODE_BUILD_ROOT\rust_howto\slot, where slot is main, a, or b. On Linux/macOS, use the XDG cache folder (or ~/.cache) under rust_howto/target/slot and rust_howto/build/slot. Keep these directories across branch changes to reuse compiled dependencies.
 - Every workspace justfile imports scripts/build.just, which detects the slot automatically and sets external per-checkout target/build paths. No RUST_HOWTO_WORKTREE_NAME variable is needed.
 - Use `just cargo <subcommand> <args...>` from the owning workspace's justfile for ad hoc Cargo commands; the shared recipe forwards arguments while retaining its configured build environment. The repository root, `bk`, and `later` are not Cargo workspace roots themselves, so pass `--manifest-path` for the intended workspace when invoking from those justfile directories.
@@ -138,7 +138,7 @@ These Rust design and error-handling rules govern maintained tools and reusable 
 
 ## Central build outputs and worktrees
 
-- Keep auxiliary Git worktrees under .worktrees/ and name them with one lowercase letter from a through j. Only use slots a and b for new tasks.
+- Keep auxiliary Git worktrees directly under `.worktrees/` in slots `a`, `b`, or `c` only; keep the primary checkout separate.
 - Keep the main worktree on `develop`. Keep topic branches in auxiliary worktrees.
 - Windows: target outputs go to CODE_TARGET_ROOT/rust_howto/<slot> and intermediate build outputs go to CODE_BUILD_ROOT/rust_howto/slot. Keep CODE_BUILD_ROOT on an NTFS volume; do not use a ReFS volume for builds.
 - Linux/macOS: target outputs go to the XDG cache folder (or ~/.cache) under cargo-target/rust_howto/<slot>; intermediate outputs go under cargo-build/rust_howto/<slot>.
@@ -187,7 +187,7 @@ Python project directories in this repository:
 ## Required repository storage and Git policy
 
 - Keep the primary checkout on `develop`. Keep `main` as an independent empty root commit; do not merge development history into it.
-- Auxiliary worktrees must be direct children of the repo's `.worktrees/` directory, named a and b only. Never create task-named or external worktree directories.
+- Auxiliary worktrees must be direct children of `.worktrees/` and use slots `a`, `b`, or `c` only. Never use task-named or external worktree paths.
 - Preserve unique commits on named branches before moving a detached checkout. Keep history linear, squash unpublished related changes, and never rewrite published history without explicit authorization.
 - Use `CODE_TEMP_ROOT` for Windows temp files: `D:/temp` when available, otherwise `C:/temp`. Unix uses its native `TMPDIR` or `/tmp`.
 - Use `CODE_PACKAGES_ROOT` for package data (Windows `D:/packages`) and `CODE_TOOLS_ROOT` for portable tools (Windows `C:/tools`). Existing tool-specific environment overrides take precedence; changing a root does not move installed packages.
@@ -200,3 +200,26 @@ Python project directories in this repository:
 Follow [CONFIGURATION.md](CONFIGURATION.md) when changing repository tooling. Use American
 spelling and LF line endings; keep README, contributor instructions, and configuration comments
 synchronized. Preserve documented platform, domain, and teaching-example exceptions.
+
+## Required worktree workflow
+
+- Keep the primary checkout (`main` worktree) on `develop`. Do task work in the primary checkout or in direct
+  children of `.worktrees/` named `a`, `b`, or `c`. Never use task-named directories, other slots, or
+  external locations. Reuse a clean, inactive permitted slot whenever possible.
+- Before reusing a slot, inspect `git worktree list`, branch, status, ownership, and active build
+  processes. Never reset, overwrite, move, or remove a dirty or active worktree. If no permitted slot is
+  available, stop and ask; do not create another slot or custom path.
+
+- For each issue or task, implement in its worktree, lint the changes, format the changed files, and
+  make a focused commit. Keep the worktree clean; make a WIP commit if needed. Wait until the task is
+  complete to integrate into `develop` linearly. Then lint and format the whole repository and commit
+  integration fixes. Do not leave dirty worktrees.
+- Detach a clean, unused worktree and retain its slot and build directory. Delete topic branches only
+  after confirming they are fully merged; never delete `develop`.
+- Always keep the primary checkout's build directory. Preserve build directories for slots `a`, `b`, and
+  `c` when disk space allows. When disk space is low, inspect active worktrees and build processes; remove
+  the oldest obsolete build directories first. Then clean task-owned temporary directories and obsolete
+  `build`/`target` directories. Do not remove directories used by active checkouts or processes.
+- `cargo-deny` findings are not a blocker gate. Fix them, add a justified exception, or create a follow-up
+  issue or task and record the outcome. Other OS or Docker validation is not a blocker gate either;
+  create a follow-up issue or task when that validation is unavailable.
