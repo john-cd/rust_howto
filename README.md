@@ -124,8 +124,11 @@ environment synchronized from the locked `lint` dependency group only; they do
 not install or build the Python extension. `just uv <args...>` forwards arbitrary
 uv commands and `just run <command...>` runs a command in the development environment.
 
-`just hooks-install` installs the repository's prek hooks; `just hooks` runs
-them against all files. Install prek first if needed with `just uv tool install prek`.
+From the repository root, `just hooks-install` installs the prek hooks and
+`just hooks-run` runs them on staged files. The Rust hook formats only staged
+Rust files with the pinned nightly formatter. From the Python project directory,
+`just hooks` runs all repository hooks against tracked files. Install prek first
+if needed with `just uv tool install prek`.
 
 Virtual environments use `CODE_PYTHON_ENV_ROOT/<repo>/<project>/<slot>`.
 Caches and generated files use matching paths under `CODE_PYTHON_BUILD_ROOT`
