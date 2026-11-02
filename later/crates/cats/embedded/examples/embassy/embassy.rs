@@ -21,8 +21,7 @@ use embassy_time::Timer;
 const MESSAGE_COUNT: usize = 3;
 
 /// Carries sample values from the producer task to the consumer task.
-static SENSOR_VALUES: Channel<CriticalSectionRawMutex, u32, MESSAGE_COUNT> =
-    Channel::new();
+static SENSOR_VALUES: Channel<CriticalSectionRawMutex, u32, MESSAGE_COUNT> = Channel::new();
 
 /// Stores each value received by the consumer for the host test to inspect.
 static RECEIVED_VALUES: [AtomicU32; MESSAGE_COUNT] =
@@ -68,19 +67,16 @@ async fn stop_after_deadline() {
 
 /// Starts all three tasks and reports task-allocation failures.
 fn spawn_tasks(spawner: Spawner) -> anyhow::Result<()> {
-    let producer = send_sensor_values().map_err(|error| {
-        anyhow::anyhow!("failed to spawn the sensor producer: {error:?}")
-    })?;
+    let producer = send_sensor_values()
+        .map_err(|error| anyhow::anyhow!("failed to spawn the sensor producer: {error:?}"))?;
     spawner.spawn(producer);
 
-    let consumer = receive_sensor_values().map_err(|error| {
-        anyhow::anyhow!("failed to spawn the sensor consumer: {error:?}")
-    })?;
+    let consumer = receive_sensor_values()
+        .map_err(|error| anyhow::anyhow!("failed to spawn the sensor consumer: {error:?}"))?;
     spawner.spawn(consumer);
 
-    let timeout = stop_after_deadline().map_err(|error| {
-        anyhow::anyhow!("failed to spawn the timeout task: {error:?}")
-    })?;
+    let timeout = stop_after_deadline()
+        .map_err(|error| anyhow::anyhow!("failed to spawn the timeout task: {error:?}"))?;
     spawner.spawn(timeout);
     Ok(())
 }
@@ -92,9 +88,9 @@ fn spawn_tasks(spawner: Spawner) -> anyhow::Result<()> {
 /// Returns an error if the executor lock is poisoned, a task cannot be spawned,
 /// or the task deadline expires before all readings arrive.
 fn run_example() -> anyhow::Result<Vec<u32>> {
-    let _run_guard = RUN_LOCK.lock().map_err(|_| {
-        anyhow::anyhow!("the host Embassy run lock was poisoned")
-    })?;
+    let _run_guard = RUN_LOCK
+        .lock()
+        .map_err(|_| anyhow::anyhow!("the host Embassy run lock was poisoned"))?;
     for received in &RECEIVED_VALUES {
         received.store(0, Ordering::Relaxed);
     }
@@ -149,8 +145,8 @@ mod tests {
     /// Verifies that the host consumer receives every message in order.
     #[test]
     fn host_tasks_exchange_messages_in_order() {
-        let received_values = run_example()
-            .expect("the host Embassy tasks should finish before the deadline");
+        let received_values =
+            run_example().expect("the host Embassy tasks should finish before the deadline");
 
         assert_eq!(received_values, [10, 20, 30]);
     }

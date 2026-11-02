@@ -25,8 +25,8 @@ type Queue = Deque<Vec<u8, 8>, 4>;
 fn enqueue(queue: &mut Queue, reading: &Reading) -> anyhow::Result<bool> {
     let mut buffer = [0_u8; 8];
     let encoded = postcard::to_slice(reading, &mut buffer)?;
-    let message = Vec::from_slice(encoded)
-        .map_err(|_| anyhow::anyhow!("message exceeds the buffer"))?;
+    let message =
+        Vec::from_slice(encoded).map_err(|_| anyhow::anyhow!("message exceeds the buffer"))?;
     Ok(queue.push_back(message).is_ok())
 }
 

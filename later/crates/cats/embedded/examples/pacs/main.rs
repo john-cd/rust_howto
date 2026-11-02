@@ -123,8 +123,7 @@ mod tests {
     #[test]
     fn modify_preserves_other_pins() {
         let taken = AtomicBool::new(false);
-        let peripherals =
-            Peripherals::take_once(&taken).expect("first take succeeds");
+        let peripherals = Peripherals::take_once(&taken).expect("first take succeeds");
         peripherals.gpio.registers.mode.write(0b11 << 2);
         turn_on_led(&peripherals.gpio);
         assert_eq!(

@@ -16,10 +16,7 @@ enum FlashError {
 
 impl core::fmt::Display for FlashError {
     /// Formats the simulated NOR flash error for diagnostics.
-    fn fmt(
-        &self,
-        formatter: &mut core::fmt::Formatter<'_>,
-    ) -> core::fmt::Result {
+    fn fmt(&self, formatter: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(formatter, "NOR flash operation failed: {self:?}")
     }
 }
@@ -52,13 +49,8 @@ impl ReadNorFlash for RamNorFlash {
     const READ_SIZE: usize = 1;
 
     /// Copies bytes from the in-memory flash region.
-    fn read(
-        &mut self,
-        offset: u32,
-        bytes: &mut [u8],
-    ) -> Result<(), Self::Error> {
-        let start =
-            usize::try_from(offset).map_err(|_| FlashError::OutOfBounds)?;
+    fn read(&mut self, offset: u32, bytes: &mut [u8]) -> Result<(), Self::Error> {
+        let start = usize::try_from(offset).map_err(|_| FlashError::OutOfBounds)?;
         let end = start
             .checked_add(bytes.len())
             .filter(|end| *end <= self.bytes.len())
@@ -79,14 +71,12 @@ impl NorFlash for RamNorFlash {
 
     /// Programs bytes only when every bit transition is from one to zero.
     fn write(&mut self, offset: u32, bytes: &[u8]) -> Result<(), Self::Error> {
-        let start =
-            usize::try_from(offset).map_err(|_| FlashError::OutOfBounds)?;
+        let start = usize::try_from(offset).map_err(|_| FlashError::OutOfBounds)?;
         let end = start
             .checked_add(bytes.len())
             .filter(|end| *end <= self.bytes.len())
             .ok_or(FlashError::OutOfBounds)?;
-        if !start.is_multiple_of(Self::WRITE_SIZE)
-            || !bytes.len().is_multiple_of(Self::WRITE_SIZE)
+        if !start.is_multiple_of(Self::WRITE_SIZE) || !bytes.len().is_multiple_of(Self::WRITE_SIZE)
         {
             return Err(FlashError::Unaligned);
         }
@@ -105,15 +95,12 @@ impl NorFlash for RamNorFlash {
 
     /// Erases a half-open range whose bounds align to complete erase blocks.
     fn erase(&mut self, from: u32, to: u32) -> Result<(), Self::Error> {
-        let start =
-            usize::try_from(from).map_err(|_| FlashError::OutOfBounds)?;
+        let start = usize::try_from(from).map_err(|_| FlashError::OutOfBounds)?;
         let end = usize::try_from(to).map_err(|_| FlashError::OutOfBounds)?;
         if start > end || end > self.bytes.len() {
             return Err(FlashError::OutOfBounds);
         }
-        if !start.is_multiple_of(Self::ERASE_SIZE)
-            || !end.is_multiple_of(Self::ERASE_SIZE)
-        {
+        if !start.is_multiple_of(Self::ERASE_SIZE) || !end.is_multiple_of(Self::ERASE_SIZE) {
             return Err(FlashError::Unaligned);
         }
         self.bytes[start..end].fill(0xff);

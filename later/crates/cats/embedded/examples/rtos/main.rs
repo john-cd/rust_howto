@@ -11,10 +11,7 @@ struct Job {
 
 /// Runs one discrete tick per job, always choosing the highest-priority ready
 /// job.
-fn fixed_priority_schedule(
-    jobs: &mut [Job],
-    horizon: u8,
-) -> Vec<(u8, &'static str)> {
+fn fixed_priority_schedule(jobs: &mut [Job], horizon: u8) -> Vec<(u8, &'static str)> {
     let mut schedule = Vec::new();
 
     for tick in 0..horizon {

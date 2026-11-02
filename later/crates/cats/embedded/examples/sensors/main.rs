@@ -12,10 +12,7 @@ enum BusError {
 
 impl core::fmt::Display for BusError {
     /// Formats the simulated bus error for diagnostics.
-    fn fmt(
-        &self,
-        formatter: &mut core::fmt::Formatter<'_>,
-    ) -> core::fmt::Result {
+    fn fmt(&self, formatter: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(formatter, "the simulated sensor rejected the transaction")
     }
 }
@@ -45,9 +42,7 @@ impl I2c for MockI2c {
     ) -> Result<(), Self::Error> {
         match operations {
             [Operation::Write(register), Operation::Read(bytes)]
-                if address == 0x48
-                    && *register == [0x00]
-                    && bytes.len() == 2 =>
+                if address == 0x48 && *register == [0x00] && bytes.len() == 2 =>
             {
                 bytes.copy_from_slice(&215_i16.to_be_bytes());
                 Ok(())
