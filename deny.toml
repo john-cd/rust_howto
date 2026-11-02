@@ -19,6 +19,24 @@ version = 2
 unmaintained = "workspace"
 unsound = "workspace"
 yanked = "deny"
+ignore = [
+  # Dependabot alerts #148 and #288: zenoh-transport 1.10.2 requires lz4_flex 0.10.0,
+  # which predates the fix in 0.11.6. science_robotics enables safe-decode, but that
+  # does not cover reused output buffers. Remove when Zenoh accepts a fixed release.
+  {
+    id = "RUSTSEC-2026-0041",
+    reason = "Only science_robotics 0.1.2 and zenoh-transport 1.10.2 currently introduce this vulnerable version; the upstream version constraint prevents upgrading. Tracked in #2116.",
+    allow = ["science_robotics@=0.1.2", "zenoh-transport@=1.10.2"],
+  },
+  # Dependabot alert #86: trading-calendar 0.2.3 requires lru 0.12.5; the fix is >=0.16.3.
+  # The repo's unsound = "workspace" scope does not scan this transitive dependency;
+  # retain the narrow exception to record the Dependabot disposition without broadening policy.
+  {
+    id = "RUSTSEC-2026-0002",
+    reason = "Dependabot reports lru 0.12.5 via trading-calendar 0.2.3; no upstream release accepts fixed lru yet. The current unsound = workspace policy excludes transitive deps. Tracked in #2116.",
+    allow = ["trading-calendar@=0.2.3"],
+  },
+]
 
 [licenses]
 allow = [
