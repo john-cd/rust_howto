@@ -52,13 +52,13 @@ See the README for this repository's project paths and commands.
 Reviewed 2026-11-01. The primary checkout will be synchronized with
 `origin/develop` after the #2168 fast-forward. Slot `a` will be detached at the
 resulting `develop` head. Slot `b` is active on a separate issue branch and is
-preserved with its uncommitted change.
+preserved with 17 changed paths.
 
-| Checkout        | Branch or revision                                       | Status and cache                                           |
-| --------------- | -------------------------------------------------------- | ---------------------------------------------------------- |
-| Repository root | `develop`                                                | Clean; cache slot `main`.                                  |
-| `.worktrees/a`  | detached at `develop` after integration                  | Clean; cache slot `a`.                                     |
-| `.worktrees/b`  | `codex/issues-2163-2164-2165-config-policy` / `2b85bde8` | Active; `scripts/cargo-host.ps1` modified; cache slot `b`. |
+| Checkout        | Branch or revision                                       | Status and cache                          |
+| --------------- | -------------------------------------------------------- | ----------------------------------------- |
+| Repository root | `develop`                                                | Clean; cache slot `main`.                 |
+| `.worktrees/a`  | detached at `develop` after integration                  | Clean; cache slot `a`.                    |
+| `.worktrees/b`  | `codex/issues-2163-2164-2165-config-policy` / `2b85bde8` | Active; 17 changed paths; cache slot `b`. |
 
 The `main`, `a`, and `b` target and intermediate build directories remain in
 place. The shared `D:/sccache` remains in place. The empty orphan
@@ -73,7 +73,7 @@ Cargo or rustc processes.
   count remains 26.
 - Preserved the shared local `develop` refresh commit `4bfa6544d` found during
   this review; it remains linear and will be pushed with the #2168 commits.
-- Deleted these six local topic refs after verifying each was an ancestor of
+- Deleted these seven local topic refs after verifying each was an ancestor of
   `develop`: `codex/fix-proc-macro-error2-warning`,
   `codex/issue-2117-finish-epic`, `codex/issue-2118-native-platform-ci`,
   `codex/issue-2145-badge-migration`,
@@ -85,8 +85,11 @@ Cargo or rustc processes.
   multiple lockfiles. The branch remains for scoped review. GitHub #2120 is a
   closed benchmark PR, so the branch label and current PR number do not match.
 - Preserved the active slot-b branch `codex/issues-2163-2164-2165-config-policy`
-  at `2b85bde8` with an uncommitted change in `scripts/cargo-host.ps1`; it was
-  not switched, cleaned, or deleted.
+  at `2b85bde8` with 17 changed paths across Cargo config, workflow files,
+  configuration docs, Just commands, and the audit-path checker;
+  `COMMIT_ISSUE_2164.txt` is untracked. `CONFIGURATION.md` and
+  `scripts/cargo-host.ps1` each have staged and unstaged edits. The branch,
+  changes, and cache were left untouched.
 - Preserved all eight local backup branches because each has unique commits:
   `backup/retired/2026-11-01/rust-howto-devcontainer-heavy-parity`,
   `backup/retired/2026-11-01/rust-howto-issue2117-windows-review`,
