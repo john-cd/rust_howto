@@ -51,12 +51,12 @@ fn main() {
 
     // Using the `EnumString` trait:
     match input_string_south.parse::<Direction>() {
-        Ok(direction) => println!("Parsed '{input_string_south}' successfully: {direction:?}.",),
+        Ok(direction) => println!("Parsed '{input_string_south}' successfully: {direction:?}."),
         Err(e) => println!("Failed to parse '{input_string_south}': {e}."),
     }
 
     match input_string_invalid.parse::<Direction>() {
-        Ok(direction) => println!("Parsed '{input_string_invalid}' successfully: {direction:?}.",),
+        Ok(direction) => println!("Parsed '{input_string_invalid}' successfully: {direction:?}."),
         Err(e) => {
             println!("Failed to parse '{input_string_invalid}': {e}.");
         }

@@ -31,7 +31,7 @@ impl Message {
         match self {
             Self::Quit => println!("The Quit variant has no data to show."),
             Self::Move { x, y } => {
-                println!("Move in the x direction {x} and in the y direction {y}")
+                println!("Move in the x direction {x} and in the y direction {y}");
             }
             Self::Write(text) => println!("Message: {text}"),
             Self::ChangeColor(r, g, b) => {
