@@ -61,6 +61,9 @@ dev = [
     { name = "maturin" },
     { name = "ruff" },
 ]
+lint = [
+    { name = "ruff" },
+]
 
 [package.metadata]
 
@@ -69,6 +72,7 @@ dev = [
     { name = "maturin", specifier = ">=1.9.4,<2.0" },
     { name = "ruff", specifier = ">=0.15.10" },
 ]
+lint = [{ name = "ruff", specifier = ">=0.15.10" }]
 
 [[package]]
 name = "tomli"

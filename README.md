@@ -119,8 +119,10 @@ by those Justfiles; no Python environment wrapper is required.
 
 From a project's directory, run `just sync`, `just fmt`, `just lint`, or
 `just check`. `just --list` shows its available tasks. Named validation tasks
-use `uv run --locked`; `just uv <args...>` forwards arbitrary uv commands and
-`just run <command...>` runs a command in the locked environment.
+use `uv run --locked`. Ruff formatting and linting use a separate `<slot>-lint`
+environment synchronized from the locked `lint` dependency group only; they do
+not install or build the Python extension. `just uv <args...>` forwards arbitrary
+uv commands and `just run <command...>` runs a command in the development environment.
 
 `just hooks-install` installs the repository's prek hooks; `just hooks` runs
 them against all files. Install prek first if needed with `just uv tool install prek`.
