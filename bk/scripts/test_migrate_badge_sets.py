@@ -82,16 +82,25 @@ class BadgeSetMigrationTests(unittest.TestCase):
             "{{#categories science=,algorithms=Algorithms}} {{hi:after}}",
         )
 
-    def test_convert_keeps_unindexed_groups_and_converts_complete_groups(self) -> None:
-        """Converts complete groups beside groups whose index terms cannot be preserved."""
+    def test_convert_omits_crate_index_for_unindexed_groups(self) -> None:
+        """Converts complete badge groups without inventing a crate index term."""
+        unindexed = "{{#badges unstyled=}}"
+
         self.assertEqual(
             convert(f"{UNINDEXED_CRATE_BADGE_BLOCK} {OTHER_CRATE_BADGE_BLOCK}"),
-            f"{UNINDEXED_CRATE_BADGE_BLOCK} " + "{{#badges serde}}",
+            f"{unindexed} {{{{#badges serde}}}}",
         )
         self.assertEqual(
             convert(f"{OTHER_CRATE_BADGE_BLOCK} {UNINDEXED_CRATE_BADGE_BLOCK}"),
-            "{{#badges serde}} " + UNINDEXED_CRATE_BADGE_BLOCK,
+            "{{#badges serde}} " + unindexed,
         )
+
+    def test_migrate_converts_unindexed_badges_idempotently(self) -> None:
+        """Migrates unindexed groups once and retains the explicit omission marker."""
+        migrated, count = migrate(UNINDEXED_CRATE_BADGE_BLOCK)
+
+        self.assertEqual((migrated, count), ("{{#badges unstyled=}}", 1))
+        self.assertEqual(migrate(migrated), (migrated, 0))
 
     def test_migrate_is_idempotent_and_preserves_unsupported_badges(self) -> None:
         """Migrates complete groups once and keeps unsupported badge groups intact."""

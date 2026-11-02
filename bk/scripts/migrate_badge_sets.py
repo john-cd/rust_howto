@@ -4,7 +4,8 @@
 Idempotent: complete standard crate badge groups (docs.rs, crates.io, repository, lib.rs)
 and their category badges are replaced while unsupported groups are left untouched. Website
 badges and standalone `{{hi:...}}` terms retain their original positions. A category without
-`{{hi:<Title>}}` uses `slug=` to omit its index term.
+`{{hi:<Title>}}` uses `slug=` to omit its index term. Crate groups without a crate index term use
+`crate=`.
 
 Usage (from the repository root): migrate_badge_sets.py [--check] [ROOT ...]   (default roots: bk/src later/src bk/drafts)
 """
@@ -72,23 +73,22 @@ def convert_group(tokens):
         return None
     i += 1
 
-    hi_seen = False
+    crate_indexed = False
     if tokens[i : i + 1] == [("hi", name)]:
-        hi_seen, i = True, i + 1
+        crate_indexed, i = True, i + 1
     for suffix in ("crates.io", "repo", "lib.rs"):
         if i >= len(tokens) or crate_badge_name(tokens[i], suffix) != name:
             return None
         i += 1
-    if not hi_seen:
-        if tokens[i : i + 1] != [("hi", name)]:
-            return None
-        i += 1
+    if not crate_indexed and tokens[i : i + 1] == [("hi", name)]:
+        crate_indexed, i = True, i + 1
 
     extras = []
     while i < len(tokens) and tokens[i][0] == "hi":
         extras.append(tokens[i][1])
         i += 1
-    parts = ["{{#badges " + name + "}}"]
+    crate_index = "" if crate_indexed else "="
+    parts = ["{{#badges " + name + crate_index + "}}"]
     parts.extend(f"{{{{hi:{extra}}}}}" for extra in extras)
     categories = []
 

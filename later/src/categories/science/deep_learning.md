@@ -26,7 +26,7 @@ Train with `burn`, `candle`, or `tch`, or train elsewhere and run an exported mo
 
 ## `candle` {#deep-learning}
 
-[![candle-core][c~candle-core~docs~badge]][c~candle-core~docs] [![candle-core~crates.io][c~candle-core~crates.io~badge]][c~candle-core~crates.io] [![candle-core~repo][c~candle-core~repo~badge]][c~candle-core~repo] [![candle-core~lib.rs][c~candle-core~lib.rs~badge]][c~candle-core~lib.rs]{{hi:candle}}{{hi:candle-core}}{{hi:BLAS}}{{hi:Machine-learning}}{{hi:Tensor}}[![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
+{{#badges candle-core=}} {{hi:candle}} {{hi:candle-core}} {{hi:BLAS}} {{hi:Machine-learning}} {{hi:Tensor}} {{#categories science=Science}}
 
 [`candle`][c~candle-core~docs]↗{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural networks. Read [Candle][blog~candle]↗ for the motivation behind the project.
 

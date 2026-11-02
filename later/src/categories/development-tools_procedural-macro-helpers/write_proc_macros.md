@@ -12,7 +12,7 @@ A procedural macro crate uses the compiler-provided [`proc_macro`][c~proc_macro~
 
 ## `proc-macro2` {#proc-macro2}
 
-[![proc-macro2][c~proc-macro2~docs~badge]][c~proc-macro2~docs] [![proc-macro2~crates.io][c~proc-macro2~crates.io~badge]][c~proc-macro2~crates.io] [![proc-macro2~repo][c~proc-macro2~repo~badge]][c~proc-macro2~repo] [![proc-macro2~lib.rs][c~proc-macro2~lib.rs~badge]][c~proc-macro2~lib.rs]
+{{#badges proc-macro2=}}
 
 Use [`proc-macro2`][c~proc-macro2~docs] types in reusable parsing and generation code. They work in ordinary libraries and tests as well as proc-macro crates, so most behavior can be tested without invoking the compiler's macro interface.
 
@@ -45,7 +45,7 @@ pub fn describe(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
 ## Generate Output with `quote` {#quote}
 
-[![quote][c~quote~docs~badge]][c~quote~docs] [![quote~crates.io][c~quote~crates.io~badge]][c~quote~crates.io] [![quote~repo][c~quote~repo~badge]][c~quote~repo] [![quote~lib.rs][c~quote~lib.rs~badge]][c~quote~lib.rs]
+{{#badges quote=}}
 
 [`quote`][c~quote~docs] builds `proc_macro2::TokenStream` values from Rust-like syntax. Use interpolation for parsed identifiers and types instead of assembling generated source as strings.
 
@@ -55,7 +55,7 @@ pub fn describe(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
 ## Parse Derive Attributes with `darling` {#darling}
 
-[![darling][c~darling~docs~badge]][c~darling~docs] [![darling~crates.io][c~darling~crates.io~badge]][c~darling~crates.io] [![darling~repo][c~darling~repo~badge]][c~darling~repo] [![darling~lib.rs][c~darling~lib.rs~badge]][c~darling~lib.rs]
+{{#badges darling=}}
 
 [`darling`][c~darling~docs] derives parsers for common derive-macro inputs and attributes. Use it when its input model fits the macro; direct `syn` parsing remains available for custom syntax.
 

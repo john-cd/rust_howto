@@ -18,7 +18,7 @@ A Tokio task and channels can implement a small actor without an actor-framework
 
 ## `actix` {#actix}
 
-[![actix][c~actix~docs~badge]][c~actix~docs] [![actix~crates.io][c~actix~crates.io~badge]][c~actix~crates.io] [![actix~repo][c~actix~repo~badge]][c~actix~repo] [![actix~lib.rs][c~actix~lib.rs~badge]][c~actix~lib.rs]
+{{#badges actix=}}
 
 [`actix`][c~actix~docs]↗ uses typed messages and an actor system for synchronous or asynchronous message handling, with supervision support.
 
@@ -28,7 +28,7 @@ A Tokio task and channels can implement a small actor without an actor-framework
 
 ## `ractor` {#ractor}
 
-[![ractor][c~ractor~docs~badge]][c~ractor~docs] [![ractor~crates.io][c~ractor~crates.io~badge]][c~ractor~crates.io] [![ractor~repo][c~ractor~repo~badge]][c~ractor~repo] [![ractor~lib.rs][c~ractor~lib.rs~badge]][c~ractor~lib.rs]
+{{#badges ractor=}}
 
 [`ractor`][c~ractor~docs]↗ is an Erlang-inspired actor framework with actor lifecycle and supervision primitives, and support for Tokio or async-std runtimes.
 
@@ -38,13 +38,13 @@ A Tokio task and channels can implement a small actor without an actor-framework
 
 ## `kameo` {#kameo}
 
-[![kameo][c~kameo~docs~badge]][c~kameo~docs] [![kameo~crates.io][c~kameo~crates.io~badge]][c~kameo~crates.io] [![kameo~repo][c~kameo~repo~badge]][c~kameo~repo] [![kameo~lib.rs][c~kameo~lib.rs~badge]][c~kameo~lib.rs]
+{{#badges kameo=}}
 
 [`kameo`][c~kameo~docs]↗ provides asynchronous actors with supervision and fault-recovery support; see its guide for examples.
 
 ## `stakker` {#stakker}
 
-[![stakker~website][c~stakker~website~badge]][c~stakker~website] [![stakker][c~stakker~docs~badge]][c~stakker~docs] [![stakker~crates.io][c~stakker~crates.io~badge]][c~stakker~crates.io] [![stakker~repo][c~stakker~repo~badge]][c~stakker~repo] [![stakker~lib.rs][c~stakker~lib.rs~badge]][c~stakker~lib.rs]
+[![stakker~website][c~stakker~website~badge]][c~stakker~website] {{#badges stakker=}}
 
 [`stakker`][c~stakker~docs]↗ is a lightweight, single-threaded actor runtime that uses deferred calls and callbacks for message replies.
 
