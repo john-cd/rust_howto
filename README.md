@@ -56,10 +56,9 @@ builds have stopped.
 ### Output paths and worktrees
 
 Keep the primary checkout on `develop`. Use `.worktrees/a` and
-`.worktrees/b` for new auxiliary checkouts; preserve the existing detached
-`.worktrees/c` as a legacy checkout with its own `c` output slot.
-Preserve active or dirty checkouts when reusing slots. The primary checkout's
-output slot is `main`, regardless of its branch name.
+`.worktrees/b` for auxiliary checkouts. Preserve active or dirty checkouts when
+reusing slots, and keep each slot's build cache. The primary checkout's output
+slot is `main`, regardless of its branch name.
 
 | Variable            | Windows default | Linux/macOS default                                       |
 | ------------------- | --------------- | --------------------------------------------------------- |
