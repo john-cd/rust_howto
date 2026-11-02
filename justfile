@@ -11,6 +11,9 @@ set shell := ["bash", "-uc"]
 
 # Use Git Bash on Windows so recipes share one shell syntax across platforms.
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
+set quiet
+
+export CARGO_TERM_QUIET := env("CARGO_TERM_QUIET", "true")
 
 # List the available recipes and task modules.
 [no-exit-message]
