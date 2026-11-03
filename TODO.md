@@ -25,6 +25,6 @@ Keep implementation briefs self-contained here because Jules cannot read GitHub 
 
 ### #2166 — Clarify two marker syntax questions
 
-Decide whether an empty line belongs before `ANCHOR_END` in `{{#include}}` markers and whether `{{!crate }}` should be supported or documented. Record the decision in the relevant parser or documentation issue and update this file to link the decision.
+Decision: anchor selection includes every line between the matching markers, including a blank line immediately before `ANCHOR_END`; put the end marker directly after the last desired line to omit that blank line. `mdbook-utils` expands `{{#include ...}}` only and preserves `{{!crate }}` as literal text; it is not a special directive. The parser documentation and focused tests are in [mdbook-utils](https://github.com/john-cd/mdbook-utils).
 
 Acceptance: document the chosen syntax and run the focused parser/documentation checks for any behavior change.
