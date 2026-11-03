@@ -2,6 +2,42 @@
 
 # Task tracking
 
+<!-- recommended-issue-order:start -->
+
+## Recommended issue order
+
+Snapshot: November 3, 2026. Read each list from top to bottom: quick wins first,
+then the remaining ready work in priority/dependency order. Quick wins are bounded
+candidates, not time estimates. Recheck the live issue and current source before
+starting; this index does not mark acceptance complete. Existing notes below are
+context and may reference issues that have since closed.
+
+Ready means a concrete engineering slice can start without a new owner decision or
+external account/host. Where an issue mixes local work and external acceptance, only
+the named local slice is ready. Blocked entries state what releases the block;
+fixture preparation and investigation can continue independently.
+
+### Ready: quick wins
+
+No clearly bounded quick win is currently open; start with the priority list below.
+
+### Ready: priority order
+
+- [#2163: Epic: Finish shared formatting, lint, and hook policy validation](https://github.com/john-cd/rust_howto/issues/2163) — Local formatting/lint/teaching-example fixes; keep native-stack and human gates separate.
+- [#2165: Epic: Complete dependency-update coverage and consistent CI caching](https://github.com/john-cd/rust_howto/issues/2165) — Local updater/cache/security dispositions; upstream waits remain under #2116.
+
+### Blocked or deferred
+
+- [#2164: Epic: Validate and finalize Cargo profiles, output paths, and linker policy](https://github.com/john-cd/rust_howto/issues/2164) — Remaining cross-platform/linker acceptance needs the corresponding hosts/CI; completed Windows measurements need no replay.
+- [#2151: Validate ignored example-entry tests from #2133 (services, nextest, clippy 1.97 lints)](https://github.com/john-cd/rust_howto/issues/2151) — Real service-backed/native feature environments and the specified nextest checks.
+- [#2159: Standardize devcontainer Ruby setup on Ruby 4.0](https://github.com/john-cd/rust_howto/issues/2159) — Host Ruby 3.3 removal and Ruby 4.0 resolution verification; implementation is already present.
+- [#2160: Validate pinned Python and heavy-test service versions](https://github.com/john-cd/rust_howto/issues/2160) — Docker Linux engine, runtime/service images and Oracle registry credentials where required.
+- [#2118: Epic: tooling, CI and repository infrastructure](https://github.com/john-cd/rust_howto/issues/2118) — Infrastructure epic: remaining container/host runtime evidence.
+- [#2116: Epic: waiting on an upstream release or advisory fix](https://github.com/john-cd/rust_howto/issues/2116) — Compatible fixed upstream dependencies; keep exact release/constraint triggers in the issue.
+- [#2113: Epic: human decisions, reviews, and host-dependent validation](https://github.com/john-cd/rust_howto/issues/2113) — Human reviews, accounts, native libraries and host prerequisites.
+
+<!-- recommended-issue-order:end -->
+
 Open work is tracked in [GitHub Issues](https://github.com/john-cd/rust_howto/issues).
 Keep one topic per issue, except epics, with a problem, task list, and acceptance criteria.
 Record status and validation evidence in the issue rather than duplicating checklists here.
