@@ -117,9 +117,9 @@ mdfmt path:
 mdfmt-check path:
     dprint check {{ path }}
 
-# Lint book, draft, and future Markdown with the existing markdownlint rules
-lint-md:
-    rumdl check --config .markdownlint.yaml --deny-config-warnings --no-cache --exclude '**/refs/dependency-refs.md' src drafts ../later/src
+# Lint book, draft, and future Markdown with the pinned markdownlint-cli2
+lint-md *args='':
+    cd .. && npx --yes markdownlint-cli2@0.24.0 {{ args }}
 
 # Alias for book serve
 s:
@@ -167,9 +167,9 @@ mod spelling 'scripts/spelling'
 spell extra_param='':
     @just spelling spell {{ extra_param }}
 
-# Lint Markdown (book, drafts, later) with the pinned markdownlint-cli2; works on Windows and Unix (needs Node.js).
+# Backward-compatible alias for lint-md
 mdlint *args='':
-    cd .. && npx --yes markdownlint-cli2@0.24.0 {{ args }}
+    @just lint-md {{ args }}
 
 # Generate a Markdown link for paths matching the supplied pattern.
 lnk pattern:

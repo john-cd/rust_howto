@@ -109,13 +109,7 @@ Pass a path under `src`, `drafts`, or `../later/src` to format or check that fil
 
 ## Lint Markdown {#lint-book-markdown}
 
-Install [`rumdl`][rumdl~repo] version 0.3.0 with `cargo install rumdl --version 0.3.0 --locked`. From `bk/`, run `just lint-md` to lint `src`, `drafts`, and `../later/src` on Windows, Linux, or macOS. This check keeps markdownlint installed and applies its rule choices from `.markdownlint.yaml` to all three paths; the config is passed explicitly because `later/src` is outside the `bk/` directory tree. The generated `src/refs/dependency-refs.md` fragment is excluded because its intentional blank line between each reference triggers MD012 thousands of times; `just book refdefs-check` verifies that generated file instead. Include-only `refs.incl.md` fragments locally disable MD057 because their relative links are resolved from the pages that include them.
-
-The Markdownlint MD040 `language_only: false` setting is omitted because it is markdownlint's default and rumdl's compatibility loader does not support that redundant option.
-
-## Lint Markdown {#lint-markdown}
-
-With Node.js installed, run `just mdlint` from `bk/` to lint `bk/src`, `bk/drafts`, and `later/src` with the pinned `markdownlint-cli2` 0.24.0 on Windows, Linux, or macOS. The rules live in `bk/.markdownlint.yaml`; `.markdownlint-cli2.jsonc` at the repository root selects the files and skips the generated `crates_by_category.md` index. The recorded baseline is zero errors; fix new findings or tune the rule set rather than adding inline suppressions.
+Install Node.js. From `bk/`, run `just lint-md` to lint `bk/src`, `bk/drafts`, and `later/src` with the pinned `markdownlint-cli2` 0.24.0 on Windows, Linux, or macOS. The rules live in `bk/.markdownlint.yaml`; `.markdownlint-cli2.jsonc` at the repository root selects the files, skips the generated `crates_by_category.md` index, and ignores the generated `dependency-refs.md` list. Include-only `refs.incl.md` fragments locally disable MD057 because their relative links are resolved from the pages that include them. The recorded baseline is zero errors; fix new findings or tune the rule set rather than adding inline suppressions.
 
 ## Check spelling {#check-spelling}
 

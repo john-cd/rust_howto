@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026
 
 // markdownlint-cli2 configuration for the book content.
-// Run `just mdlint` from bk/.
+// Run `just lint-md` from bk/ (`just mdlint` remains an alias).
 {
   "config": { "extends": "bk/.markdownlint.yaml" },
   "globs": [
@@ -12,7 +12,8 @@
   "ignores": [
     "**/node_modules/**",
     "**/target/**",
-    "bk/src/indices/crates_by_category.md"
+    "bk/src/indices/crates_by_category.md",
+    "**/refs/dependency-refs.md"
   ],
   "gitignore": true,
   "noBanner": true,
