@@ -4,7 +4,7 @@
 # TODO Reviewed ??-??-2026.
 
 param(
-    [ValidatePattern('^[ab]$')][string]$Slot,
+    [ValidatePattern('^[abc]$')][string]$Slot,
     [string]$Branch,
     [switch]$RestartCache,
     [string]$TargetDir,
@@ -33,7 +33,7 @@ if ($RestartCache) {
         throw 'Wait for running Cargo/rustc processes before restarting the shared sccache daemon.'
     }
     # sccache reads BASEDIRS when its daemon starts, not on each client request.
-    # Use only this repository's main checkout and registered allowed letter slots.
+    # Use only this repository's main checkout and registered slots a, b, and c.
     $env:SCCACHE_BASEDIRS = (Get-CacheBaseDirs) -join ';'
     & sccache --stop-server
     & sccache --start-server
@@ -66,7 +66,7 @@ if ($Slot) {
 $identity = if ((Split-Path -Leaf (Split-Path -Parent $repo)) -eq '.worktrees') {
     Split-Path -Leaf $repo
 } else { 'main' }
-if ($identity -notmatch '^(main|[ab])$') { throw 'Use only .worktrees/a or .worktrees/b.' }
+if ($identity -notmatch '^(main|[abc])$') { throw 'Use only .worktrees/a, .worktrees/b, or .worktrees/c.' }
 
 foreach ($entry in @(
     @{ Link = 'target'; Destination = $(if ($TargetDir) { $TargetDir } else { (Join-Path (Join-Path $codeTargetRoot "rust_howto") $identity) }) },

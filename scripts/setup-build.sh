@@ -28,8 +28,8 @@ fi
 if [[ ${1:-} == --slot ]]; then
     slot=${2:-}
     branch=${3:-}
-    if [[ ! $slot =~ ^[ab]$ || -z $branch ]]; then
-        echo 'Specify a slot a or b and a branch.' >&2
+    if [[ ! $slot =~ ^[abc]$ || -z $branch ]]; then
+        echo 'Specify a slot a, b, or c and a branch.' >&2
         exit 1
     fi
     checkout=$main_repo/.worktrees/$slot
@@ -53,8 +53,8 @@ identity=main
 if [[ $(basename -- "$(dirname -- "$repo")") == .worktrees ]]; then
     identity=$(basename -- "$repo")
 fi
-if [[ ! $identity =~ ^(main|[ab])$ ]]; then
-    echo 'Use only .worktrees/a or .worktrees/b.' >&2
+if [[ ! $identity =~ ^(main|[abc])$ ]]; then
+    echo 'Use only .worktrees/a, .worktrees/b, or .worktrees/c.' >&2
     exit 1
 fi
 

@@ -52,8 +52,9 @@ it does not update arbitrary version strings in shell scripts or custom formatte
 
 ## CI caches
 
-Rust-cache entries include toolchain/environment inputs plus workflow, job, architecture, and
-Cargo-config/lockfile hashes. Save Rust artifact caches only on pushes to the default branch;
+Rust-cache entries include toolchain/environment inputs plus workflow, job, architecture, Cargo
+manifest/lockfile/configuration, and workflow-file hashes. The workflow hash captures target,
+feature, and profile choices made by the build commands. Save Rust artifact caches only on pushes to the default branch;
 pull requests restore caches. CI sets matching `CODE_*` and `CARGO_*` paths under `.ci/target/<repo>/main` and
 `.ci/build/<repo>/main`. Rust-cache workspace maps and its intermediate-artifact directory use
 the same paths as Cargo. Specialized jobs may choose separate outputs when their cache mappings

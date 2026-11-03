@@ -35,7 +35,7 @@ To deploy the book, run **Build the book code and deploy the book to GitHub Page
 - **Tools.** Prebuilt binaries come from `taiki-e/install-action`; the unpinned `cargo-binstall` bootstrap script is gone.
   `mdbook-indexing` and `mdbook-utils` are installed with `cargo install --locked` and cached with `~/.cargo/bin`.
 - **Shell.** `run` steps use `bash`, including on Windows.
-- **Compiler cache.** `setup-rust` installs pinned sccache before Rust commands. Rust-cache uses the same target/build paths as Cargo, and `CARGO_INCREMENTAL=0` keeps sccache-compatible builds. Jobs without the composite action disable the wrapper only in the job that lacks sccache.
+- **Compiler cache.** `setup-rust` installs pinned sccache before Rust commands. Rust-cache uses the same target/build paths as Cargo, and its key hashes Cargo manifests, lockfiles, Cargo configs, toolchains, and workflow inputs that define target, feature, and profile choices. `CARGO_INCREMENTAL=0` keeps sccache-compatible builds. Cache writes are limited to pushes on the default branch. Jobs without the composite action disable the wrapper only in the job that lacks sccache.
 - **Permissions.** `contents: read` by default; only the Pages deploy job gets `pages: write` and `id-token: write`.
 - **Toolchain bumps.** Update `.devcontainer/.env` (`RUST_VERSION`) and `rustfmt-toolchain.toml`. Workflows and Just
   recipes read the nightly formatter pin from that file.

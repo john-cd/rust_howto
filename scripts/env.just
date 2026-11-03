@@ -14,7 +14,7 @@ py_repo_root := parent_directory(source_directory())
 py_main_repo := if file_name(parent_directory(py_repo_root)) == ".worktrees" { parent_directory(parent_directory(py_repo_root)) } else { py_repo_root }
 py_repo_name := file_name(py_main_repo)
 py_raw_slot := if file_name(parent_directory(py_repo_root)) == ".worktrees" { file_name(py_repo_root) } else { "main" }
-py_slot := if py_raw_slot =~ '^(main|[ab])$' { py_raw_slot } else { error("Invalid Python worktree slot: " + py_raw_slot) }
+py_slot := if py_raw_slot =~ '^(main|[abc])$' { py_raw_slot } else { error("Invalid Python worktree slot: " + py_raw_slot) }
 py_project_dir := join(py_repo_root, py_project_path)
 py_project_key := if py_project_path == "." { join(py_repo_name, py_slot) } else { join(py_repo_name, py_project_path, py_slot) }
 py_environment_key := if py_environment_project == "." { join(py_repo_name, py_slot) } else { join(py_repo_name, py_environment_project, py_slot) }

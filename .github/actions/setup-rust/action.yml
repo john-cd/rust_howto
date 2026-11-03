@@ -71,7 +71,8 @@ runs:
       with:
         workspaces: ${{ inputs.cache-workspaces }}
         key: ${{ inputs.cache-key }}-config-v1-${{ github.workflow }}-${{ github.job }}-${{ runner.arch }}-${{
-          hashFiles('**/.cargo/config.toml', '**/rust-toolchain.toml', '**/Cargo.lock') }}
+          hashFiles('**/.cargo/config.toml', '**/Cargo.toml', '**/Cargo.lock', '**/rust-toolchain.toml',
+          '.github/workflows/**/*.yml') }}
         save-if: ${{ inputs.save-cache == 'true' && github.event_name == 'push' && github.ref ==
           format('refs/heads/{0}', github.event.repository.default_branch) }}
         cache-directories: ${{ env.CARGO_BUILD_BUILD_DIR }}

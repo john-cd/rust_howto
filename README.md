@@ -46,7 +46,7 @@ disabled and a 35G cache limit. The runner exports `RUSTC_WRAPPER=sccache`,
 command-line overrides still take precedence for direct Cargo invocations.
 
 `CODE_SCCACHE_ROOT` overrides `SCCACHE_DIR`; otherwise the default below applies.
-The task runner sets `SCCACHE_BASEDIRS` to the main checkout and registered `.worktrees/a` and `.worktrees/b`,
+The task runner sets `SCCACHE_BASEDIRS` to the main checkout and registered `.worktrees/a`, `.worktrees/b`, and `.worktrees/c`,
 discarding inherited unrelated paths. sccache reads daemon settings at startup;
 wait for all builds to finish before restarting a daemon with stale settings.
 
@@ -55,8 +55,8 @@ builds have stopped.
 
 ### Output paths and worktrees
 
-Keep the primary checkout on `develop`. Use `.worktrees/a` and
-`.worktrees/b` for auxiliary checkouts. Preserve active or dirty checkouts when
+Keep the primary checkout on `develop`. Use `.worktrees/a`, `.worktrees/b`, and
+`.worktrees/c` for auxiliary checkouts. Preserve active or dirty checkouts when
 reusing slots, and keep each slot's build cache. The primary checkout's output
 slot is `main`, regardless of its branch name.
 

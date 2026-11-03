@@ -37,7 +37,7 @@ if ($LinkOutputs) {
     $checkout = Split-Path -Parent $PSScriptRoot
     $parent = Split-Path -Parent $checkout
     $slot = if ((Split-Path -Leaf $parent) -eq '.worktrees') { Split-Path -Leaf $checkout } else { 'main' }
-    if ($slot -ne 'main' -and $slot -cnotmatch '^[ab]$') { throw 'Use only .worktrees/a or .worktrees/b.' }
+    if ($slot -ne 'main' -and $slot -cnotmatch '^[abc]$') { throw 'Use only .worktrees/a, .worktrees/b, or .worktrees/c.' }
     $repo = if ($slot -eq 'main') { Split-Path -Leaf $checkout } else { Split-Path -Leaf (Split-Path -Parent $parent) }
     $cacheHome = if ($env:XDG_CACHE_HOME) { $env:XDG_CACHE_HOME } else { Join-Path $HOME '.cache' }
     $targetRoot = if ($env:CODE_TARGET_ROOT) { $env:CODE_TARGET_ROOT } elseif ($IsWindows) { 'D:/target' } else { Join-Path $cacheHome 'cargo-target' }

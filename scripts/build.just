@@ -28,7 +28,7 @@ build_inherited_intermediate := env("CARGO_BUILD_BUILD_DIR", "")
 build_target_dir := join(build_target_base, tooling_slot)
 build_intermediate_dir := join(build_intermediate_base, tooling_slot)
 # Native Just paths; validate slots before exporting build directories.
-tooling_slot := if build_slot =~ '^(main|[ab])$' { build_slot } else { error("Invalid worktree slot: " + build_slot) }
+tooling_slot := if build_slot =~ '^(main|[abc])$' { build_slot } else { error("Invalid worktree slot: " + build_slot) }
 tooling_main := if file_name(parent_directory(build_repo)) == ".worktrees" { parent_directory(parent_directory(build_repo)) } else { build_repo }
 build_sccache_basedirs := trim(shell('''
 set -euo pipefail
@@ -38,7 +38,7 @@ git -C "$root" -c core.fsmonitor=false worktree list --porcelain | while IFS= re
     case "$line" in
         "worktree $root/.worktrees/"*)
             slot=${line#"worktree $root/.worktrees/"}
-            if [[ $slot =~ ^[ab]$ ]]; then
+            if [[ $slot =~ ^[abc]$ ]]; then
                 printf '%s%s/.worktrees/%s' "$2" "$root" "$slot"
             fi
             ;;
