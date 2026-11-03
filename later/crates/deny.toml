@@ -23,15 +23,6 @@ all-features = false
 [advisories]
 ignore = [
   { id = "RUSTSEC-2026-0258", reason = "h2 0.3.27 is pinned by hyper 0.14 through geocoding 0.4 in science_geo. Only the optional locate_online helper reaches the fixed OpenStreetMap provider; the example entry point and tests use a fake provider, and users cannot select an endpoint. A malicious peer could still send hostile HTTP/2 frames if that helper is used. No compatible geocoding update exists; keep staging-only." },
-  # Dependabot alert #148: only the optional Zenoh stack reaches this vulnerable version.
-  { id = "RUSTSEC-2026-0041", reason = "lz4_flex 0.10.0 remains required by zenoh-transport 1.10.2 through the optional `zenoh` feature; the direct science_robotics dependency now uses a fixed release, but it does not replace Zenoh's separate transitive 0.10.0 copy. The Zenoh example uses a local-only session with default transport (no compression negotiated, no untrusted peer data). Recheck when a zenoh release updates its dependency; keep staging-only.", allow = [
-    "zenoh-transport@=1.10.2",
-  ] },
-  # Dependabot alert #86: trading-calendar 0.2.3 requires vulnerable lru 0.12.5; the fix starts at 0.16.3.
-  # The unsound = "workspace" policy does not scan transitive dependencies, so record this narrow exception without broadening the scan scope.
-  { id = "RUSTSEC-2026-0002", reason = "lru 0.12.5 is introduced by trading-calendar 0.2.3 in the staging finance examples; the current release still requires the vulnerable lru series, so Cargo cannot select fixed lru 0.16.3. Recheck when trading-calendar accepts a fixed release; tracked in #2116.", allow = [
-    "trading-calendar@=0.2.3",
-  ] },
   { id = "RUSTSEC-2026-0194", reason = "quick-xml 0.39.4 is pinned by urdf-rs 0.9.1 (via k 0.32.0 in science_robotics); the fix is in 0.41. The kinematics example parses only a URDF string embedded in the source, never untrusted XML. Recheck when urdf-rs updates quick-xml; keep staging-only." },
   { id = "RUSTSEC-2026-0195", reason = "quick-xml 0.39.4 is pinned by urdf-rs 0.9.1 (via k 0.32.0 in science_robotics); the fix is in 0.41. The kinematics example parses only a URDF string embedded in the source, never untrusted XML. Recheck when urdf-rs updates quick-xml; keep staging-only." },
   { id = "RUSTSEC-2026-0192", reason = "ttf-parser 0.25.1 is unmaintained and has no patched release. The current graph reaches it through fontdb 0.23.0 and fontdue 0.9.5 in staging GUI, rendering, and game examples. Recheck before promotion and when these dependency chains change; tracked in #2116." },
@@ -111,4 +102,6 @@ allow-git = [
   "https://github.com/cloudflare/pingora",
   # Kube is pinned to the merged PR #2086 revision (see `other/Cargo.toml`).
   "https://github.com/kube-rs/kube",
+  # trading-calendar is pinned to an upstream commit with the fixed lru dependency.
+  "https://github.com/danjloveless/trading-calendar",
 ]

@@ -45,7 +45,7 @@ serde_json = "1.0.154"
 statrs = "0.19.1" # Normal distribution for the Black-Scholes example.
 ta-statistics = "0.2.6"
 tokio = { version = "1.54.1", features = ["rt", "macros"] }
-trading-calendar = "0.2.3"
+trading-calendar = { git = "https://github.com/danjloveless/trading-calendar.git", rev = "7b03202e8e6b02f6f433e5f1adaedef053c2cf6f" }
 yahoo_finance_api = "5.0.0"
 
 [lints]

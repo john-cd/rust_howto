@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
-// Enabled by the `zenoh` Cargo feature. The advisory exception for the
-// `lz4_flex` 0.10 series that Zenoh requires is documented in deny.toml.
+// Enabled by the `zenoh` Cargo feature. The workspace pins Zenoh's transport
+// to the upstream fix for `lz4_flex`.
 
 // ANCHOR: example
 //! Publishes and receives several local telemetry values with `zenoh`.

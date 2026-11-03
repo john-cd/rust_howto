@@ -1,0 +1,314 @@
+// Copyright (c) 2023 ZettaScale Technology
+//
+// This program and the accompanying materials are made available under the
+// terms of the Eclipse Public License 2.0 which is available at
+// http://www.eclipse.org/legal/epl-2.0, or the Apache License, Version 2.0
+// which is available at https://www.apache.org/licenses/LICENSE-2.0.
+//
+// SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
+//
+// Contributors:
+//   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//
+
+#[cfg(feature = "unstable")]
+use zenoh_protocol::core::CongestionControl;
+use zenoh_protocol::core::Priority;
+use zenoh_protocol::core::PriorityRange;
+use zenoh_protocol::core::Reliability;
+use zenoh_protocol::network::NetworkMessageExt;
+use zenoh_protocol::network::NetworkMessageMut;
+use zenoh_protocol::network::NetworkMessageRef;
+use zenoh_result::ZResult;
+
+use super::transport::TransportUnicastUniversal;
+use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
+
+impl TransportUnicastUniversal {
+    /// Returns the index of the best matching [`Reliability`]-[`PriorityRange`] pair.
+    ///
+    /// The result is either:
+    /// 1. A "full match" where the pair matches both `reliability` and `priority`. In case of
+    ///    multiple candidates, the pair with the smaller range is selected.
+    /// 2. A "partial match" where the pair match `reliability` and **not** `priority`.
+    /// 3. An "any match" where any available pair is selected.
+    ///
+    /// If `elements` is empty then [`None`] is returned.
+    fn select(
+        elements: impl Iterator<Item = (Reliability, Option<PriorityRange>)>,
+        reliability: Reliability,
+        priority: Priority,
+    ) -> Option<usize> {
+        #[derive(Default)]
+        struct Match {
+            full: Option<usize>,
+            partial: Option<usize>,
+            any: Option<usize>,
+        }
+
+        let (match_, _) = elements.enumerate().fold(
+            (Match::default(), Option::<PriorityRange>::None),
+            |(mut match_, mut prev_priorities), (i, (r, ps))| {
+                match (r.eq(&reliability), ps.filter(|ps| ps.contains(&priority))) {
+                    (true, Some(priorities))
+                        if prev_priorities
+                            .as_ref()
+                            .map_or(true, |ps| ps.len() > priorities.len()) =>
+                    {
+                        match_.full = Some(i);
+                        prev_priorities = Some(priorities);
+                    }
+                    (true, None) if match_.partial.is_none() => match_.partial = Some(i),
+                    _ if match_.any.is_none() => match_.any = Some(i),
+                    _ => {}
+                };
+
+                (match_, prev_priorities)
+            },
+        );
+
+        match_.full.or(match_.partial).or(match_.any)
+    }
+
+    fn handle_push_result(
+        &self,
+        msg: NetworkMessageRef,
+        pushed: bool,
+        #[cfg(feature = "stats")] stats: zenoh_stats::LinkStats,
+    ) {
+        if !pushed && !msg.is_droppable() {
+            tracing::error!(
+                "Unable to push non droppable network message to {}. Closing transport!",
+                self.config.zid
+            );
+            // Synchronously mark the transmission pipelines of this transport as disabled
+            // so that any subsequent push to this unresponsive transport fails fast with
+            // `TransportClosed` instead of blocking for another `wait_before_close` period.
+            //
+            // This is critical because the thread executing this code may be an RX runtime
+            // worker that is holding routing locks (e.g. the routing tables) while pushing
+            // declarations. If such a thread kept blocking on pushes to this transport,
+            // the close task spawned below on the same starved runtime would never get to
+            // run, leaving the whole session deadlocked
+            // (see https://github.com/eclipse-zenoh/zenoh/issues/1876 and
+            // https://github.com/eclipse-zenoh/zenoh/issues/2581).
+            {
+                let transport_links = self
+                    .links
+                    .read()
+                    .expect("reading `TransportUnicastUniversal::links` should not fail");
+                for tl in transport_links.get_links().iter() {
+                    tl.pipeline.mark_disabled();
+                }
+            }
+            zenoh_runtime::ZRuntime::RX.spawn({
+                let transport = self.clone();
+                async move {
+                    // Do not enqueue a Close frame on an unresponsive pipeline:
+                    // push_transport_message can wait indefinitely for a free batch,
+                    // preventing teardown from cancelling the stalled TX task.
+                    if let Err(e) = transport.delete().await {
+                        tracing::error!(
+                            "Error closing transport with {}: {}",
+                            transport.config.zid,
+                            e
+                        );
+                    }
+                }
+            });
+        }
+        #[cfg(feature = "stats")]
+        if pushed {
+            stats.inc_network_message(zenoh_stats::Tx, msg);
+        } else {
+            stats.tx_observe_congestion(msg);
+        }
+    }
+
+    #[allow(unused_mut)] // When feature "shared-memory" is not enabled
+    #[allow(clippy::let_and_return)] // When feature "stats" is not enabled
+    #[inline(always)]
+    pub(crate) fn internal_schedule(&self, mut msg: NetworkMessageMut) -> ZResult<bool> {
+        let transport_links = self
+            .links
+            .read()
+            .expect("reading `TransportUnicastUniversal::links` should not fail");
+
+        let Some(transport_link_index) = Self::select(
+            transport_links.get_links().iter().map(|tl| {
+                (
+                    tl.link
+                        .config
+                        .reliability
+                        .unwrap_or(Reliability::from(tl.link.link.is_reliable())),
+                    tl.link.config.priorities.clone(),
+                )
+            }),
+            Reliability::from(msg.is_reliable()),
+            msg.priority(),
+        ) else {
+            tracing::trace!(
+                "Message dropped because the transport has no links: {}",
+                msg
+            );
+            // No Link found
+            #[cfg(feature = "stats")]
+            self.stats.tx_observe_no_link(msg.as_ref());
+            return Ok(false);
+        };
+
+        let transport_link = transport_links
+            .get_links()
+            .get(transport_link_index)
+            .expect("transport link index should be valid");
+
+        #[cfg(feature = "shared-memory")]
+        let shm_handoff_transaction = self.shm_context.as_ref().map(|shm_context| {
+            crate::common::shm::interop::map_zmsg_to_partner(
+                &mut msg,
+                &shm_context.shm_config,
+                &shm_context.shm_provider,
+                &transport_link.link.shm_handoff.tx,
+                shm_context.policy,
+            )
+        });
+
+        let msg = msg.as_ref();
+
+        let pipeline = transport_link.pipeline.clone();
+        tracing::trace!(
+            "Scheduled {:?} for transmission to {} ({})",
+            msg,
+            transport_link.link.link.get_dst(),
+            self.get_zid()
+        );
+
+        #[cfg(feature = "stats")]
+        let stats = transport_link.stats.clone();
+
+        #[cfg(feature = "unstable")]
+        if msg.congestion_control() == CongestionControl::BlockFirst {
+            let priority = msg.priority();
+            if transport_link.block_first_waiters[priority as usize]
+                .wait_timeout(self.manager.config.wait_before_drop)
+                .is_err()
+            {
+                #[cfg(feature = "stats")]
+                stats.tx_observe_congestion(msg);
+                return Ok(false);
+            };
+            let transport = self.clone();
+            let block_first_notifier =
+                transport_link.block_first_notifiers[priority as usize].clone();
+            let msg = NetworkMessageExt::to_owned(&msg);
+            zenoh_runtime::ZRuntime::Net.spawn_blocking(move || {
+                let msg = msg.as_ref();
+                if let Ok(pushed) = pipeline.push_network_message(msg) {
+                    transport.handle_push_result(
+                        msg,
+                        pushed,
+                        #[cfg(feature = "stats")]
+                        stats,
+                    );
+                }
+                let _ = block_first_notifier.notify();
+            });
+            // Message should be sent as it is blocking.
+            return Ok(true);
+        }
+
+        // Drop the guard before the push_zenoh_message since
+        // the link could be congested and this operation could
+        // block for fairly long time
+        drop(transport_links);
+
+        let pushed = pipeline.push_network_message(msg)?;
+
+        #[cfg(feature = "shared-memory")]
+        if pushed {
+            if let Some(mut transaction) = shm_handoff_transaction {
+                transaction.commit();
+            }
+        }
+
+        self.handle_push_result(
+            msg,
+            pushed,
+            #[cfg(feature = "stats")]
+            stats,
+        );
+        Ok(pushed)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use zenoh_protocol::core::Priority;
+    use zenoh_protocol::core::PriorityRange;
+    use zenoh_protocol::core::Reliability;
+
+    use crate::unicast::universal::transport::TransportUnicastUniversal;
+
+    macro_rules! priority_range {
+        ($start:literal, $end:literal) => {
+            PriorityRange::new($start.try_into().unwrap()..=$end.try_into().unwrap())
+        };
+    }
+
+    #[test]
+    /// Tests the "full match" scenario with exactly one candidate.
+    fn test_link_selection_scenario_1() {
+        let selection = TransportUnicastUniversal::select(
+            [
+                (Reliability::Reliable, Some(priority_range!(0, 1))),
+                (Reliability::Reliable, Some(priority_range!(1, 2))),
+                (Reliability::BestEffort, Some(priority_range!(0, 1))),
+            ]
+            .into_iter(),
+            Reliability::Reliable,
+            Priority::try_from(0).unwrap(),
+        );
+        assert_eq!(selection, Some(0));
+    }
+
+    #[test]
+    /// Tests the "full match" scenario with multiple candidates.
+    fn test_link_selection_scenario_2() {
+        let selection = TransportUnicastUniversal::select(
+            [
+                (Reliability::Reliable, Some(priority_range!(0, 2))),
+                (Reliability::Reliable, Some(priority_range!(0, 1))),
+            ]
+            .into_iter(),
+            Reliability::Reliable,
+            Priority::try_from(0).unwrap(),
+        );
+        assert_eq!(selection, Some(1));
+    }
+
+    #[test]
+    /// Tests the "partial match" scenario.
+    fn test_link_selection_scenario_3() {
+        let selection = TransportUnicastUniversal::select(
+            [
+                (Reliability::BestEffort, Some(priority_range!(0, 1))),
+                (Reliability::Reliable, None),
+            ]
+            .into_iter(),
+            Reliability::Reliable,
+            Priority::try_from(0).unwrap(),
+        );
+        assert_eq!(selection, Some(1));
+    }
+
+    #[test]
+    /// Tests the "any match" scenario.
+    fn test_link_selection_scenario_4() {
+        let selection = TransportUnicastUniversal::select(
+            [(Reliability::BestEffort, None)].into_iter(),
+            Reliability::Reliable,
+            Priority::try_from(0).unwrap(),
+        );
+        assert_eq!(selection, Some(0));
+    }
+}

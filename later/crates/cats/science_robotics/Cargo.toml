@@ -62,7 +62,6 @@ embedded-hal = "1.0.0"
 futures = { version = "0.3.34", optional = true }
 k = "0.32.0" # Kinematics (the library underneath OpenRR).
 kiddo.workspace = true
-lz4_flex = { version = "0.14.0", default-features = false, features = ["safe-decode"], optional = true } # Mitigates RUSTSEC-2026-0041 for the lz4_flex pulled in by zenoh-transport.
 pathfinding = "4.16.0"
 pid = "4.0.0"
 r2r = { version = "0.9.7", optional = true }
@@ -79,8 +78,8 @@ embedded-hal-mock.workspace = true
 [features]
 # Requires a sourced ROS 2 installation and libclang; disabled by default.
 ros2 = ["dep:futures", "dep:r2r"]
-# Pulls in the Zenoh pub/sub stack; see the lz4_flex note in deny.toml.
-zenoh = ["dep:zenoh", "dep:lz4_flex"]
+# Pulls in the Zenoh pub/sub stack; the pinned upstream transport patch uses fixed lz4_flex.
+zenoh = ["dep:zenoh"]
 
 [lints]
 workspace = true
