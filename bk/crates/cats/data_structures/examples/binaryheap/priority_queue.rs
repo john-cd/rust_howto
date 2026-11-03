@@ -92,7 +92,7 @@ fn custom_type_usage() {
     // Change the priority of a task:
     let task_to_change = Task::new(2, "Update documentation");
     if let Some(old_priority) = task_queue.change_priority(&task_to_change, 75) {
-        println!("Changed priority of task {task_to_change:?} from {old_priority} to 75",);
+        println!("Changed priority of task {task_to_change:?} from {old_priority} to 75");
     }
 
     // Process all tasks:
