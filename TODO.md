@@ -32,7 +32,10 @@ No clearly bounded quick win is currently open; start with the priority list bel
 - [#2151: Validate ignored example-entry tests from #2133 (services, nextest, clippy 1.97 lints)](https://github.com/john-cd/rust_howto/issues/2151) — Real service-backed/native feature environments and the specified nextest checks.
 - [#2159: Standardize devcontainer Ruby setup on Ruby 4.0](https://github.com/john-cd/rust_howto/issues/2159) — Host Ruby 3.3 removal and Ruby 4.0 resolution verification; implementation is already present.
 - [#2160: Validate pinned Python and heavy-test service versions](https://github.com/john-cd/rust_howto/issues/2160) — Docker Linux engine, runtime/service images and Oracle registry credentials where required.
-- [#2118: Epic: tooling, CI and repository infrastructure](https://github.com/john-cd/rust_howto/issues/2118) — Infrastructure epic: remaining container/host runtime evidence.
+- [#2173: Record native-platform CI results after hosted runners
+  start](https://github.com/john-cd/rust_howto/issues/2173) —
+  Advisory macOS/FreeBSD jobs are still queued; record their results
+  when GitHub assigns runners.
 - [#2116: Epic: waiting on an upstream release or advisory fix](https://github.com/john-cd/rust_howto/issues/2116) — Compatible fixed upstream dependencies; keep exact release/constraint triggers in the issue.
 - [#2113: Epic: human decisions, reviews, and host-dependent validation](https://github.com/john-cd/rust_howto/issues/2113) — Human reviews, accounts, native libraries and host prerequisites.
 
