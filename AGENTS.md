@@ -25,7 +25,8 @@
 - Keep history linear. Rebase topic branches onto current `develop` before integration; use fast-forward integration or squash-merge PRs according to the requested workflow. Do not create merge commits to synchronize `develop`.
 - Inspect local and remote history before integrating. Fast-forward when only behind; rebase unpublished local commits when histories diverge. Never rewrite shared history; use `--force-with-lease` only for an authorized update to an unshared rebased topic branch.
 - Preserve the repository's existing independent `main` history. Do not push directly to `main`.
-- Use focused commits with `type(scope): imperative summary` (`feat`, `fix`, `docs`, `refactor`, `test`, `perf`, `build`, `ci`, `chore`, or `style`). Include related GitHub issue or PR links and short bullets describing the changes.
+- Create at least one commit for every GitHub issue. Each commit must address only one issue; never combine changes for multiple issues in a single commit. An issue may have multiple focused commits when needed.
+- Use focused commits with `type(scope): imperative summary` (`feat`, `fix`, `docs`, `refactor`, `test`, `perf`, `build`, `ci`, `chore`, or `style`). Include the related GitHub issue or PR link and short bullets describing the changes.
 - Compare content and ancestry before retiring topic branches. Keep reusable worktree directories and their caches; do not discard unique work.
 
 ## Build, test, and lint
@@ -216,7 +217,9 @@ synchronized. Preserve documented platform, domain, and teaching-example excepti
   available, stop and ask; do not create another slot or custom path.
 
 - For each issue or task, implement in its worktree, lint the changes, format the changed files, and
-  make a focused commit. Keep the worktree clean; make a WIP commit if needed. Wait until the task is
+  make a focused commit. For issue work, make at least one commit per issue and keep every commit
+  limited to that single issue. Do not combine multiple issues in one commit. Keep the worktree
+  clean; make a WIP commit if needed. Wait until the task is
   complete to integrate into `develop` linearly. Then lint and format the whole repository and commit
   integration fixes. Do not leave dirty worktrees.
 - Detach a clean, unused worktree and retain its slot and build directory. Delete topic branches only
