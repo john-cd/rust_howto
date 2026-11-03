@@ -6,69 +6,69 @@
 # Lean debug info: halves build time and target size; panics keep readable backtraces.
 
 [profile.dev.package]
-ahash = {opt-level = 3}
-blake3 = {opt-level = 3}
-crc32fast = {opt-level = 3}
-dashmap = {opt-level = 3}
-flate2 = {opt-level = 3}
-hashbrown = {opt-level = 3}
-indexmap = {opt-level = 3}
-libm = {opt-level = 3}
-memchr = {opt-level = 3}
-miniz_oxide = {opt-level = 3}
-nalgebra = {opt-level = 3}
-ndarray = {opt-level = 3}
-num-bigint = {opt-level = 3}
-num-traits = {opt-level = 3}
-petgraph = {opt-level = 3}
-proc-macro2 = {opt-level = 3}
-quote = {opt-level = 3}
-rand = {opt-level = 3}
-rand_chacha = {opt-level = 3}
-rayon = {opt-level = 3}
-rayon-core = {opt-level = 3}
-regex = {opt-level = 3}
-regex-automata = {opt-level = 3}
-regex-syntax = {opt-level = 3}
-rustfft = {opt-level = 3}
-rustls = {opt-level = 3}
-sha2 = {opt-level = 3}
-smallvec = {opt-level = 3}
-syn = {opt-level = 3}
-xxhash-rust = {opt-level = 3}
-zstd = {opt-level = 3}
-zstd-sys = {opt-level = 3}
+ahash = { opt-level = 3 }
+blake3 = { opt-level = 3 }
+crc32fast = { opt-level = 3 }
+dashmap = { opt-level = 3 }
+flate2 = { opt-level = 3 }
+hashbrown = { opt-level = 3 }
+indexmap = { opt-level = 3 }
+libm = { opt-level = 3 }
+memchr = { opt-level = 3 }
+miniz_oxide = { opt-level = 3 }
+nalgebra = { opt-level = 3 }
+ndarray = { opt-level = 3 }
+num-bigint = { opt-level = 3 }
+num-traits = { opt-level = 3 }
+petgraph = { opt-level = 3 }
+proc-macro2 = { opt-level = 3 }
+quote = { opt-level = 3 }
+rand = { opt-level = 3 }
+rand_chacha = { opt-level = 3 }
+rayon = { opt-level = 3 }
+rayon-core = { opt-level = 3 }
+regex = { opt-level = 3 }
+regex-automata = { opt-level = 3 }
+regex-syntax = { opt-level = 3 }
+rustfft = { opt-level = 3 }
+rustls = { opt-level = 3 }
+sha2 = { opt-level = 3 }
+smallvec = { opt-level = 3 }
+syn = { opt-level = 3 }
+xxhash-rust = { opt-level = 3 }
+zstd = { opt-level = 3 }
+zstd-sys = { opt-level = 3 }
 
 [profile.debugging.package]
-ahash = {opt-level = 0, debug = 2}
-blake3 = {opt-level = 0, debug = 2}
-crc32fast = {opt-level = 0, debug = 2}
-dashmap = {opt-level = 0, debug = 2}
-flate2 = {opt-level = 0, debug = 2}
-hashbrown = {opt-level = 0, debug = 2}
-indexmap = {opt-level = 0, debug = 2}
-libm = {opt-level = 0, debug = 2}
-memchr = {opt-level = 0, debug = 2}
-miniz_oxide = {opt-level = 0, debug = 2}
-nalgebra = {opt-level = 0, debug = 2}
-ndarray = {opt-level = 0, debug = 2}
-num-bigint = {opt-level = 0, debug = 2}
-num-traits = {opt-level = 0, debug = 2}
-petgraph = {opt-level = 0, debug = 2}
-proc-macro2 = {opt-level = 0, debug = 2}
-quote = {opt-level = 0, debug = 2}
-rand = {opt-level = 0, debug = 2}
-rand_chacha = {opt-level = 0, debug = 2}
-rayon = {opt-level = 0, debug = 2}
-rayon-core = {opt-level = 0, debug = 2}
-regex = {opt-level = 0, debug = 2}
-regex-automata = {opt-level = 0, debug = 2}
-regex-syntax = {opt-level = 0, debug = 2}
-rustfft = {opt-level = 0, debug = 2}
-rustls = {opt-level = 0, debug = 2}
-sha2 = {opt-level = 0, debug = 2}
-smallvec = {opt-level = 0, debug = 2}
-syn = {opt-level = 0, debug = 2}
-xxhash-rust = {opt-level = 0, debug = 2}
-zstd = {opt-level = 0, debug = 2}
-zstd-sys = {opt-level = 0, debug = 2}
+ahash = { opt-level = 0, debug = 2 }
+blake3 = { opt-level = 0, debug = 2 }
+crc32fast = { opt-level = 0, debug = 2 }
+dashmap = { opt-level = 0, debug = 2 }
+flate2 = { opt-level = 0, debug = 2 }
+hashbrown = { opt-level = 0, debug = 2 }
+indexmap = { opt-level = 0, debug = 2 }
+libm = { opt-level = 0, debug = 2 }
+memchr = { opt-level = 0, debug = 2 }
+miniz_oxide = { opt-level = 0, debug = 2 }
+nalgebra = { opt-level = 0, debug = 2 }
+ndarray = { opt-level = 0, debug = 2 }
+num-bigint = { opt-level = 0, debug = 2 }
+num-traits = { opt-level = 0, debug = 2 }
+petgraph = { opt-level = 0, debug = 2 }
+proc-macro2 = { opt-level = 0, debug = 2 }
+quote = { opt-level = 0, debug = 2 }
+rand = { opt-level = 0, debug = 2 }
+rand_chacha = { opt-level = 0, debug = 2 }
+rayon = { opt-level = 0, debug = 2 }
+rayon-core = { opt-level = 0, debug = 2 }
+regex = { opt-level = 0, debug = 2 }
+regex-automata = { opt-level = 0, debug = 2 }
+regex-syntax = { opt-level = 0, debug = 2 }
+rustfft = { opt-level = 0, debug = 2 }
+rustls = { opt-level = 0, debug = 2 }
+sha2 = { opt-level = 0, debug = 2 }
+smallvec = { opt-level = 0, debug = 2 }
+syn = { opt-level = 0, debug = 2 }
+xxhash-rust = { opt-level = 0, debug = 2 }
+zstd = { opt-level = 0, debug = 2 }
+zstd-sys = { opt-level = 0, debug = 2 }

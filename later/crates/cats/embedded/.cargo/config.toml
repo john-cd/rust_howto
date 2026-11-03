@@ -1,19 +1,19 @@
 # TODO Reviewed ??-??-2026
 
 [profile.dev.package]
-memchr = {opt-level = 3}
-proc-macro2 = {opt-level = 3}
-quote = {opt-level = 3}
-regex-automata = {opt-level = 3}
-regex-syntax = {opt-level = 3}
-smallvec = {opt-level = 3}
-syn = {opt-level = 3}
+memchr = { opt-level = 3 }
+proc-macro2 = { opt-level = 3 }
+quote = { opt-level = 3 }
+regex-automata = { opt-level = 3 }
+regex-syntax = { opt-level = 3 }
+smallvec = { opt-level = 3 }
+syn = { opt-level = 3 }
 
 [profile.debugging.package]
-memchr = {opt-level = 0, debug = 2}
-proc-macro2 = {opt-level = 0, debug = 2}
-quote = {opt-level = 0, debug = 2}
-regex-automata = {opt-level = 0, debug = 2}
-regex-syntax = {opt-level = 0, debug = 2}
-smallvec = {opt-level = 0, debug = 2}
-syn = {opt-level = 0, debug = 2}
+memchr = { opt-level = 0, debug = 2 }
+proc-macro2 = { opt-level = 0, debug = 2 }
+quote = { opt-level = 0, debug = 2 }
+regex-automata = { opt-level = 0, debug = 2 }
+regex-syntax = { opt-level = 0, debug = 2 }
+smallvec = { opt-level = 0, debug = 2 }
+syn = { opt-level = 0, debug = 2 }

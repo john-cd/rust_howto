@@ -2,7 +2,7 @@
 
 # Configuration file for `prek`, a git hook framework written in Rust.
 # See https://prek.j178.dev for more information.
-#:schema https://www.schemastore.org/prek.json
+# :schema https://www.schemastore.org/prek.json
 
 [[repos]]
 repo = "builtin"
@@ -14,7 +14,7 @@ hooks = [
   { id = "check-toml" },
   {
     id = "trailing-whitespace",
-    args = ["--markdown-linebreak-ext=md"]
+    args = ["--markdown-linebreak-ext=md"],
   },
-  { id = "end-of-file-fixer" }
+  { id = "end-of-file-fixer" },
 ]

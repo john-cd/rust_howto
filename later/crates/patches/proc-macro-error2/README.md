@@ -15,7 +15,7 @@ To achieve this, this crate serves as a tiny shim around `proc_macro::Diagnostic
 When the underlying diagnostic type is finally stabilized, this crate will be simply
 delegating to it, requiring no changes in your code!
 
-So you can just use this crate and have *both* some of `proc_macro::Diagnostic` functionality
+So you can just use this crate and have _both_ some of `proc_macro::Diagnostic` functionality
 available on stable ahead of time and your error-reporting code future-proof.
 
 ```toml
@@ -23,7 +23,7 @@ available on stable ahead of time and your error-reporting code future-proof.
 proc-macro-error2 = "2.0"
 ```
 
-*Supports rustc 1.61 and up*
+_Supports rustc 1.61 and up_
 
 [Documentation and guide][guide]
 
@@ -52,13 +52,19 @@ pub fn make_fn(input: TokenStream) -> TokenStream {
 This is how the error is rendered in a terminal:
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/50968528/78830016-d3b46a80-79d6-11ea-9de2-972e8d7904ef.png" width="600">
+  <img
+    src="https://user-images.githubusercontent.com/50968528/78830016-d3b46a80-79d6-11ea-9de2-972e8d7904ef.png"
+    width="600"
+  >
 </p>
 
 And this is what your users will see in their IDE:
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/50968528/78830547-a9af7800-79d7-11ea-822e-59e29bda335c.png" width="600">
+  <img
+    src="https://user-images.githubusercontent.com/50968528/78830547-a9af7800-79d7-11ea-822e-59e29bda335c.png"
+    width="600"
+  >
 </p>
 
 ## Examples
@@ -158,9 +164,9 @@ pub fn make_answer(input: TokenStream) -> TokenStream {
 
 ## Real world examples
 
-* [`structopt-derive`](https://github.com/TeXitoi/structopt/tree/master/structopt-derive)
+- [`structopt-derive`](https://github.com/TeXitoi/structopt/tree/master/structopt-derive)
   (abort-like usage)
-* [`auto-impl`](https://github.com/auto-impl-rs/auto_impl/) (emit-like usage)
+- [`auto-impl`](https://github.com/auto-impl-rs/auto_impl/) (emit-like usage)
 
 ## Limitations
 
@@ -183,34 +189,34 @@ you either "bubble up" the error up to the top-level of the macro and convert it
 a [`compile_error!`][compl_err] invocation or just use a good old panic. Both these ways suck:
 
 - Former sucks because it's quite redundant to unroll a proper error handling
-    just for critical errors that will crash the macro anyway; so people mostly
-    choose not to bother with it at all and use panic. Simple `.expect` is too tempting.
+  just for critical errors that will crash the macro anyway; so people mostly
+  choose not to bother with it at all and use panic. Simple `.expect` is too tempting.
 
-    Also, if you do decide to implement this `Result`-based architecture in your macro
-    you're going to have to rewrite it entirely once [`proc_macro::Diagnostic`][] is finally
-    stable. Not cool.
+  Also, if you do decide to implement this `Result`-based architecture in your macro
+  you're going to have to rewrite it entirely once [`proc_macro::Diagnostic`][] is finally
+  stable. Not cool.
 
 - Later sucks because there's no way to carry out the span info via `panic!`.
-    `rustc` will highlight the invocation itself but not some specific token inside it.
+  `rustc` will highlight the invocation itself but not some specific token inside it.
 
-    Furthermore, panics aren't for error-reporting at all; panics are for bug-detecting
-    (like unwrapping on `None` or out-of-range indexing) or for early development stages
-    when you need a prototype ASAP so error handling can wait. Mixing these usages only
-    messes things up.
+  Furthermore, panics aren't for error-reporting at all; panics are for bug-detecting
+  (like unwrapping on `None` or out-of-range indexing) or for early development stages
+  when you need a prototype ASAP so error handling can wait. Mixing these usages only
+  messes things up.
 
 - There is [`proc_macro::Diagnostic`][] which is awesome but it has been experimental
-    for more than a year and is unlikely to be stabilized any time soon.
+  for more than a year and is unlikely to be stabilized any time soon.
 
-    This crate's API is intentionally designed to be compatible with `proc_macro::Diagnostic`
-    and delegates to it whenever possible. Once `Diagnostics` is stable this crate
-    will **always** delegate to it, no code changes will be required on user side.
+  This crate's API is intentionally designed to be compatible with `proc_macro::Diagnostic`
+  and delegates to it whenever possible. Once `Diagnostics` is stable this crate
+  will **always** delegate to it, no code changes will be required on user side.
 
 That said, we need a solution, but this solution must meet these conditions:
 
 - It must be better than `panic!`. The main point: it must offer a way to carry the span information
-    over to user.
+  over to user.
 - It must take as little effort as possible to migrate from `panic!`. Ideally, a new
-    macro with similar semantics plus ability to carry out span info.
+  macro with similar semantics plus ability to carry out span info.
 - It must maintain compatibility with [`proc_macro::Diagnostic`][] .
 - **It must be usable on stable**.
 
@@ -219,6 +225,7 @@ This crate aims to provide such a mechanism. All you have to do is annotate your
 [`abort!`]/[`abort_call_site!`] where appropriate, see [the Guide][guide].
 
 ## Disclaimer
+
 Please note that **this crate is not intended to be used in any way other
 than error reporting in procedural macros**, use `Result` and `?` (possibly along with one of the
 many helpers out there) for anything else.
@@ -228,18 +235,17 @@ many helpers out there) for anything else.
 #### License
 
 <sup>
-Licensed under either of <a href="LICENSE-APACHE">Apache License, Version
-2.0</a> or <a href="LICENSE-MIT">MIT license</a> at your option.
+  Licensed under either of <a href="LICENSE-APACHE">Apache License, Version
+    2.0</a> or <a href="LICENSE-MIT">MIT license</a> at your option.
 </sup>
 
 <br>
 
 <sub>
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
-be dual licensed as above, without any additional terms or conditions.
+  Unless you explicitly state otherwise, any contribution intentionally submitted
+  for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
+  be dual licensed as above, without any additional terms or conditions.
 </sub>
-
 
 [compl_err]: https://doc.rust-lang.org/std/macro.compile_error.html
 [`proc_macro::Diagnostic`]: https://doc.rust-lang.org/proc_macro/struct.Diagnostic.html

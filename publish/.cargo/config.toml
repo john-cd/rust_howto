@@ -6,15 +6,15 @@
 # Lean debug info: halves build time and target size; panics keep readable backtraces.
 
 [profile.dev.package]
-hashbrown = {opt-level = 3}
-indexmap = {opt-level = 3}
-proc-macro2 = {opt-level = 3}
-quote = {opt-level = 3}
-syn = {opt-level = 3}
+hashbrown = { opt-level = 3 }
+indexmap = { opt-level = 3 }
+proc-macro2 = { opt-level = 3 }
+quote = { opt-level = 3 }
+syn = { opt-level = 3 }
 
 [profile.debugging.package]
-hashbrown = {opt-level = 0, debug = 2}
-indexmap = {opt-level = 0, debug = 2}
-proc-macro2 = {opt-level = 0, debug = 2}
-quote = {opt-level = 0, debug = 2}
-syn = {opt-level = 0, debug = 2}
+hashbrown = { opt-level = 0, debug = 2 }
+indexmap = { opt-level = 0, debug = 2 }
+proc-macro2 = { opt-level = 0, debug = 2 }
+quote = { opt-level = 0, debug = 2 }
+syn = { opt-level = 0, debug = 2 }
