@@ -1,6 +1,9 @@
 # Repository configuration
 
 Reviewed 2026-11-01. This is the consistency plan and reference for `rust_howto`.
+
+<!-- TODO Reviewed ??-??-2026 -->
+
 Keep this file, README, contributor guidance, and configuration comments synchronized.
 
 ## Consistency plan
@@ -69,21 +72,51 @@ config discovery starts at the command's working directory; run from the owning 
 especially when that workspace has a child config. Config values override manifest profiles,
 and environment/command-line overrides take precedence over config values.
 
-| Profile                                | Workspace code                                           | Dependencies and build tools                                                                                         |
-| -------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `dev` / `test`                         | `opt-level = 0`, line tables, LTO off, 256 codegen units | `opt-level = "s"`, no debug info, 16 units; the wildcard package override applies to all non-workspace dependencies. |
-| `debugging`                            | Level 0 and full symbols                                 | Level 0 and full symbols, including build scripts/procedural macros; intentionally uses a separate cache variant.    |
-| `ci`                                   | Inherits `dev`, incremental disabled                     | Same flags as `dev` for dependency cache reuse. Use release jobs for performance validation.                         |
-| `tools`                                | Level 2 for repeatedly executed repository tools         | Same dependency flags as `dev`; build overrides apply only to units not matched by a package override.               |
-| `release` / other specialized profiles | Preserve existing shipping/profiling choices             | Preserve existing shipping/profiling choices.                                                                        |
+| Profile                                | Workspace code                                           | Dependencies and build tools                                                                                                              |
+| -------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `dev` / `test`                         | `opt-level = 0`, line tables, LTO off, 256 codegen units | `opt-level = "s"`, no debug info, usually 16 units; exact package overrides may select level 3 for hot-path or compile-time dependencies. |
+| `debugging`                            | Level 0 and full symbols                                 | Level 0 and full symbols, including build scripts/procedural macros; intentionally uses a separate cache variant.                         |
+| `ci`                                   | Inherits `dev`, incremental disabled                     | Same flags as `dev` for dependency cache reuse. Use release jobs for performance validation.                                              |
+| `tools`                                | Level 2 for repeatedly executed repository tools         | Same dependency flags as `dev`; build overrides apply only to units not matched by a package override.                                    |
+| `release` / other specialized profiles | Preserve existing shipping/profiling choices             | Preserve existing shipping/profiling choices.                                                                                             |
 
-`test` inherits `dev`. Cargo checks named package overrides first, then the wildcard package
-override, then the build override. This configuration has no named package-specific optimization
-overrides, so do not attribute level-3 optimization to selected dependency groups. Optimization
-can increase cold compile time, and size optimization is not guaranteed to make every crate
-smaller. Matching profile flags improves cache eligibility; compiler versions, target/features,
-source paths, native tools, and rustflags also affect hits. The `debugging` profile intentionally
-rebuilds dependencies to make them debuggable.
+`test` and `ci` inherit `dev`. Cargo checks an exact package override first, then the wildcard
+package override, then the build override. The independent `bk/crates`, `later/crates`, and `tools`
+workspaces each keep exact package overrides paired with level-0/full-symbol entries in
+`profile.debugging`; their lists differ where their dependency graphs differ. These exceptions
+cover hashing, collections, math, regex, parallelism, allocators, and compile-time tooling. A named
+package override takes precedence over `build-override`, including when that package is a build
+dependency. Level 3 is a workload choice, not a general compile-time or size guarantee. Matching
+profile flags improves cache eligibility; compiler versions, target/features, source paths, native
+tools, and rustflags also affect hits. The `debugging` profile intentionally rebuilds dependencies
+to make them debuggable.
+
+An effective unit-graph spot check on 2026-11-02 used Rust 1.99.1 for builds and
+`nightly-2026-10-22` for Cargo's unstable graph output, on `x86_64-pc-windows-msvc`. From `tools/`,
+the command below was run for each listed profile:
+
+```powershell
+foreach ($profile in @('dev', 'test', 'debugging', 'ci', 'tools')) {
+    cargo +nightly-2026-10-22 -Z unstable-options build --unit-graph --locked --offline -p mdbook-scrub --profile $profile
+}
+```
+
+Each graph contained 133 units and 3 roots. For `dev`, `test`, and `ci`, the 3 workspace units had
+level 0, line tables, LTO off, 256 codegen units, and incremental off; 13 named dependency units
+had level 3 and no debug info; the remaining 117 units used size optimization and no debug info.
+Build scripts and procedural macros may report no codegen-unit setting. `tools` had the same
+dependency flags and level-2 workspace units. All 133 `debugging` units had level 0, full symbols,
+and incremental off. This validates one package graph in `tools`; other package graphs and hosted
+platforms still need their own checks.
+
+For `mdbook-scrub` with the `ci` profile, an isolated Windows measurement used Rust 1.99.1,
+sccache 0.19.0, fresh target/build roots, and a dedicated local sccache server/cache. The cold build
+took 116.13 seconds, wrote 21,867,284 bytes, and had 102 cache misses with no hits. After cleaning
+only that target's `ci` profile outputs, two same-path warm replays took 97.99 and 46.84 seconds;
+each had 90 cache hits and 12 misses among 102 cacheable compiler calls, with the same output size.
+The isolated cache reported no cache errors or timeouts. Another run with a different target path
+had no hits. The warm timing variance and other concurrent machine builds make these single-package
+measurements unsuitable for claiming a general performance improvement.
 
 Run `just build-setup` once per checkout. It creates ignored `target`, `build`, and `.sccache`
 links and refuses to replace existing files, directories, or links to another slot. PowerShell 7
@@ -96,7 +129,17 @@ and `CODE_BUILD_ROOT/<repo>/<slot>` paths. Direct Cargo and rust-analyzer inheri
 `target`/`build` config paths, which resolve through those links. `cargo.targetDir = null` prevents
 rust-analyzer from allocating an additional target tree. Inherited `CARGO_*` environment variables
 can override these settings; launch the editor without another checkout's output variables.
-Multiple independent workspaces share a checkout's output slot and Cargo locking.
+Multiple independent workspaces share a checkout's output slot and Cargo locking. On Windows,
+slot `b` setup ran twice successfully; its `target`, `build`, and `.sccache` junctions resolved to
+the configured central paths. A mismatched target override was rejected without changing the
+junction. The build root was confirmed as NTFS (the target root is ReFS, which is allowed). The
+direct Cargo `ci` build above wrote into those central paths. With elevated process access, the Just
+base-directory probe and `build-setup` passed, and evaluation confirmed that `CODE_TARGET_ROOT` and
+`CODE_BUILD_ROOT` overrides select the requested slot paths. `just cache-setup` correctly refused
+to restart sccache while other Cargo/rustc processes were active; retry only after those builds end.
+The default sandbox blocks the Git Bash child processes used by Just, so these runner checks require
+elevated process access in this environment. The rust-analyzer target-dir configuration was
+inspected, but an actual rust-analyzer invocation was not tested.
 
 The level-3 build override applies to build scripts, procedural macros, and their dependencies
 only when no package override matches. The wildcard package override matches non-workspace
@@ -113,12 +156,12 @@ of nextest's test-runner `--profile ci`.
 
 ## Linkers
 
-| Platform         | Policy                                                                                                                                                                                           |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Windows MSVC     | Rust-bundled `rust-lld.exe` in the maintained repos; preserve stack flags. Rust How-To retains its measured default-linker exception. MSVC libraries/SDK are still required.                     |
-| x86-64 GNU/Linux | Rust 1.90+ already defaults to LLD. Existing mold users retain mold and its installation steps. For AArch64/other triples, explicitly install/configure the appropriate linker before switching. |
-| macOS            | Use the modern Apple linker shipped with Xcode 15+. sold's maintainer now recommends Apple's linker.                                                                                             |
-| Experiments      | Compare mold and Wild on representative native Linux binaries. Wild lists Linux/Wasm support and future Mach-O/Windows/incremental-linking work; do not assume universal drop-in support.        |
+| Platform         | Policy                                                                                                                                                                                                               |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows MSVC     | Rust How-To keeps the MSVC toolchain default; an earlier `rust-lld` comparison showed no gain. Preserve stack flags. MSVC libraries/SDK are still required. This validation did not capture the invoked linker path. |
+| x86-64 GNU/Linux | Rust 1.90+ already defaults to LLD. Existing mold users retain mold and its installation steps. For AArch64/other triples, explicitly install/configure the appropriate linker before switching.                     |
+| macOS            | Use the modern Apple linker shipped with Xcode 15+. sold's maintainer now recommends Apple's linker.                                                                                                                 |
+| Experiments      | Compare mold and Wild on representative native Linux binaries. Wild lists Linux/Wasm support and future Mach-O/Windows/incremental-linking work; do not assume universal drop-in support.                            |
 
 Changing linker flags invalidates compiler cache keys. Benchmark cold and warm links with native
 dependencies, debug symbols, and release/LTO settings before adopting a new default.
@@ -131,21 +174,30 @@ The `tools` unit graph was inspected with Cargo `1.99.1` and `nightly-2026-10-22
 `dev`, `test`, and `ci` workspace units use level 0, line tables, and 256 codegen units; their
 dependency units use size optimization, no debug info, and 16 codegen units. `tools` workspace
 units use level 2 with line tables and 256 codegen units. `debugging` units use level 0, full
-symbols, and disabled incremental compilation. The graph confirms the wildcard dependency
-override; this checkout has no named package-specific profile overrides.
+symbols, and disabled incremental compilation. For this package graph, 13 named dependency units
+receive level 3 before the wildcard override selects size optimization for other dependencies.
+The full package-specific lists differ by workspace and are recorded in their local Cargo
+configuration files.
 
 On Windows slot `b`, `scripts/setup-build.ps1` reused the expected target/build/cache junctions
 and refused an alternate `CODE_TARGET_ROOT` because the existing target junction points elsewhere.
 `scripts/cargo-host.ps1 -BuildRoot C:/code_build -LinkOutputs` accepted the NTFS build volume and
-existing checkout links. These checks do not establish cold/warm build time, artifact size,
-sccache hit rate, or hosted Linux/macOS linker behavior. Those measurements and hosted checks
-remain open; no cross-platform performance improvement is claimed from configuration inspection
-alone.
+existing checkout links. With elevated process access, the Just base-directory probe, `build-setup`,
+and custom `CODE_TARGET_ROOT`/`CODE_BUILD_ROOT` evaluation passed. `just deny` passed all 13 configured
+Cargo dependency-policy roots after the `pulldown-cmark` security update and scoped zip exceptions.
+`just all ca` passed the Windows Clippy matrix for the initialized workspaces; the optional
+`mdbook-utils` checkout was skipped because its submodule is uninitialized. The repository-wide
+`dprint check` also passes. A native Ubuntu WSL smoke link with Rust 1.99.1 on
+`x86_64-unknown-linux-gnu` invoked GCC's LLD 23.1.1; this confirms the compiler default, not the
+repository's full Linux workspace matrix. The Apple linker and macOS workspace checks remain
+unverified because no macOS runner is available. Warm-cache timings varied substantially, so no
+cross-platform performance improvement is claimed from these measurements.
 
 ## References
 
 - [Cargo profiles](https://doc.rust-lang.org/cargo/reference/profiles.html) and
   [configuration precedence](https://doc.rust-lang.org/cargo/reference/config.html).
+- [Rust 1.90 release notes: LLD default on x86-64 Linux](https://blog.rust-lang.org/2025/09/18/Rust-1.90.0/).
 - [sccache Rust limitations](https://github.com/mozilla/sccache/blob/main/docs/Rust.md).
 - [Dependabot options](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference).
 - [Rust 1.90 LLD default](https://blog.rust-lang.org/2025/09/01/rust-lld-on-1.90.0-stable/),
