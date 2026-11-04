@@ -29,15 +29,19 @@ struct VideoSpec {
 /// Fills the next frame with a horizontal luma gradient that shifts by
 /// `shift` samples, so that consecutive frames differ.
 fn send_frame(context: &mut Context<u8>, shift: usize) -> Result<()> {
-    // The frame is allocated by the context, which knows the pixel format,
-    // the chroma subsampling and the padding that this encoder needs.
+    // Creating the frame via `context.new_frame()` ensures that the frame
+    // buffer matches the encoder context configuration, including the pixel
+    // format, color space, chroma subsampling, and internal memory padding.
+    // Video codecs like AV1 process blocks (such as 64x64 or 128x128 superblocks)
+    // that extend beyond the visible video boundary, requiring padded borders.
     let mut frame = context.new_frame();
     for (index, plane) in frame.planes.iter_mut().enumerate() {
         let plane_width = plane.cfg.width;
         let plane_height = plane.cfg.height;
         for row in plane.rows_iter_mut() {
             for (x, sample) in row.iter_mut().enumerate() {
-                // Plane 0 is luma; planes 1 and 2 are chroma, left neutral.
+                // Plane 0 is luma (brightness); planes 1 and 2 are chroma (color difference).
+                // Luma is varied over time to create visible motion, while chroma is neutral (128).
                 *sample = if index == 0 {
                     ((x + shift) % 256) as u8
                 } else {
@@ -45,8 +49,9 @@ fn send_frame(context: &mut Context<u8>, shift: usize) -> Result<()> {
                 };
             }
         }
-        // The encoder reads blocks that extend past the visible area, so the
-        // edge samples are replicated into the padding.
+        // The encoder operates on blocks that often extend beyond the visible canvas.
+        // Replicating border pixels into the surrounding padding prevents compression
+        // artifacts at image edges.
         plane.pad(plane_width, plane_height);
     }
     context.send_frame(frame)?;
@@ -55,14 +60,20 @@ fn send_frame(context: &mut Context<u8>, shift: usize) -> Result<()> {
 
 /// Encodes the synthetic video and returns the number of packets produced.
 fn encode(spec: &VideoSpec) -> Result<usize> {
-    // Speed preset 10 is the fastest and the least efficient.
+    // Speed preset 10 represents the fastest encoding tier with the lowest
+    // compression efficiency, making it ideal for quick test runs and real-time streaming.
+    // AV1 encoders evaluate multiple prediction modes, transform sizes, and motion vectors;
+    // higher speed presets disable the most computationally expensive search passes.
     let mut encoder_config = EncoderConfig::with_speed_preset(10);
     encoder_config.width = spec.width;
     encoder_config.height = spec.height;
 
+    // Wrap the low-level encoder settings in an immutable overall configuration.
     let config = Config::default().with_encoder_config(encoder_config);
-    // The context owns the encoder state; the sample type (`u8`) matches the
-    // 8-bit pixels written above.
+
+    // Initialize the encoder context from the configuration. The context maintains the
+    // internal encoder state machine, reference frame buffers, rate control models, and
+    // packet queuing. The generic type parameter `u8` specifies 8-bit color depth per channel.
     let mut context = config.new_context::<u8>()?;
 
     for frame_index in 0..spec.frames {
