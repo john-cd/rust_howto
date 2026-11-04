@@ -27,3 +27,55 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<crate::CmdArgs> {
     }
     cmdargs
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Checks that multiple crate names are collected into `CmdArgs`.
+    #[test]
+    fn parses_multiple_crate_names() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_info())
+            .try_get_matches_from(["templ", "info", "serde", "tokio"])
+            .expect("arguments should parse");
+
+        let args = get_cmd(&matches).expect("info subcommand should be present");
+
+        assert_eq!(args.args, vec!["serde".to_owned(), "tokio".to_owned()]);
+    }
+
+    /// Checks that the visible alias `i` works as an alias for `info`.
+    #[test]
+    fn alias_i_is_recognized() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_info())
+            .try_get_matches_from(["templ", "i", "axum"])
+            .expect("arguments should parse");
+
+        let args = get_cmd(&matches).expect("info subcommand should be recognized via alias i");
+
+        assert_eq!(args.args, vec!["axum".to_owned()]);
+    }
+
+    /// Checks that omitting the required crate argument fails argument parsing.
+    #[test]
+    fn missing_crate_name_fails() {
+        let result = Command::new("templ")
+            .subcommand(subcommand_info())
+            .try_get_matches_from(["templ", "info"]);
+
+        assert!(result.is_err(), "missing crate name should fail parsing");
+    }
+
+    /// Checks that `get_cmd` returns `None` when the subcommand was not called.
+    #[test]
+    fn returns_none_when_subcommand_not_invoked() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_info())
+            .try_get_matches_from(["templ"])
+            .expect("base command should parse");
+
+        assert!(get_cmd(&matches).is_none());
+    }
+}
