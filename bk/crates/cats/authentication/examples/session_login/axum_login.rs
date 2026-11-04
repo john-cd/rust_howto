@@ -159,8 +159,8 @@ pub fn app(backend: Backend) -> Router {
 }
 // ANCHOR_END: example
 
-/// Demonstrates initialization of the axum_login application backend.
-pub fn run() -> anyhow::Result<()> {
+/// Initializes the application router with a backend containing a demo user.
+fn main() -> anyhow::Result<()> {
     let user = User {
         id: 1,
         username: "alice".to_owned(),
@@ -168,7 +168,13 @@ pub fn run() -> anyhow::Result<()> {
         permissions: std::iter::once("admin.read".to_owned()).collect(),
     };
     let _router = app(Backend::new(vec![user])?);
+    println!("Successfully initialized the session login router.");
     Ok(())
+}
+
+/// Runs the session login example.
+pub fn run() -> anyhow::Result<()> {
+    main()
 }
 
 #[cfg(test)]
@@ -274,5 +280,10 @@ mod tests {
             StatusCode::FORBIDDEN
         );
         Ok(())
+    }
+
+    #[test]
+    fn test_axum_login_entry_point() -> anyhow::Result<()> {
+        main()
     }
 }
