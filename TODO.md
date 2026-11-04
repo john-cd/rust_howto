@@ -23,14 +23,12 @@ No clearly bounded quick win is currently open; start with the priority list bel
 
 ### Ready: priority order
 
-- [#2163: Epic: Finish shared formatting, lint, and hook policy validation](https://github.com/john-cd/rust_howto/issues/2163) — Local formatting/lint/teaching-example fixes; keep native-stack and human gates separate.
 - [#2165: Epic: Complete dependency-update coverage and consistent CI caching](https://github.com/john-cd/rust_howto/issues/2165) — Local updater/cache/security dispositions; upstream waits remain under #2116.
 
 ### Blocked or deferred
 
 - [#2164: Epic: Validate and finalize Cargo profiles, output paths, and linker policy](https://github.com/john-cd/rust_howto/issues/2164) — Remaining cross-platform/linker acceptance needs the corresponding hosts/CI; completed Windows measurements need no replay.
 - [#2151: Validate ignored example-entry tests from #2133 (services, nextest, clippy 1.97 lints)](https://github.com/john-cd/rust_howto/issues/2151) — Real service-backed/native feature environments and the specified nextest checks.
-- [#2159: Standardize devcontainer Ruby setup on Ruby 4.0](https://github.com/john-cd/rust_howto/issues/2159) — Host Ruby 3.3 removal and Ruby 4.0 resolution verification; implementation is already present.
 - [#2160: Validate pinned Python and heavy-test service versions](https://github.com/john-cd/rust_howto/issues/2160) — Docker Linux engine, runtime/service images and Oracle registry credentials where required.
 - [#2173: Record native-platform CI results after hosted runners
   start](https://github.com/john-cd/rust_howto/issues/2173) —
@@ -52,21 +50,14 @@ Record status and validation evidence in the issue rather than duplicating check
 
 ## Maintenance
 
-- [Finish shared formatting, lint, and hook policy validation](https://github.com/john-cd/rust_howto/issues/2163).
 - [Validate and finalize Cargo profiles, output paths, and linker policy](https://github.com/john-cd/rust_howto/issues/2164).
 - [Complete dependency-update coverage and consistent CI caching](https://github.com/john-cd/rust_howto/issues/2165).
-- [Review and reconcile repository branches and worktrees](https://github.com/john-cd/rust_howto/issues/2168).
-- [Review or close PR #2161 through its follow-up](https://github.com/john-cd/rust_howto/issues/2167).
 
 ## Briefs for work without GitHub access
 
 Keep implementation briefs self-contained here because Jules cannot read GitHub issue descriptions. Issue links provide traceability; they do not replace the scope or acceptance details.
 
-### #2166 — Clarify two marker syntax questions
-
-Decision: anchor selection includes every line between the matching markers, including a blank line immediately before `ANCHOR_END`; put the end marker directly after the last desired line to omit that blank line. `mdbook-utils` expands `{{#include ...}}` only and preserves `{{!crate }}` as literal text; it is not a special directive. The parser documentation and focused tests are in [mdbook-utils](https://github.com/john-cd/mdbook-utils).
-
-Acceptance: document the chosen syntax and run the focused parser/documentation checks for any behavior change.
+No open briefs.
 
 ## Codebase Audit Fixes and Improvements
 
@@ -74,9 +65,6 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 ### 1. Unit Tests and Coverage
 
-- **Resolve regression in `tools/crate_indices` offline generation test**:
-  - `tests::category_index_matches_offline_generation` fails because `bk/src/indices/crates_by_category.md` lists `sprs` under the `Mathematics` category table, but `sprs` is omitted from `bk/master/crates.txt` and `bk/master/crate_categories.toml`.
-  - Fix: Add `sprs` to `bk/master/crates.txt` and `bk/master/crate_categories.toml` under the `Mathematics` category entry, and ensure both `category_index_covers_master_crates` and `category_index_matches_offline_generation` pass cleanly.
 - **Add unit tests for CLI argument parsing across `tools/crate_indices`**:
   - Currently, `tools/crate_indices/src/cli/mod.rs` and `tools/crate_indices/src/cli/commands.rs` have 0 unit tests.
   - Add unit tests verifying subcommand resolution, default values (`--book-root`, `--file`, `--directory`), alias resolution (`c`, `a`, `p`, `l`, `u`, `e`), and error handling on invalid argument combinations.
@@ -96,10 +84,6 @@ A comprehensive review of the monorepo identified the following fixes, improveme
   - Implement integration tests in `tools/crate_indices/tests/cli.rs` testing CLI execution of `list_crates`, `category_page_from_metadata`, and `expand_crate_blocks` against isolated test fixtures.
   - Implement integration tests in `tools/templ/tests/cli.rs` asserting markdown badge output formatting and error reporting.
   - Implement integration tests in `tools/example-integrity/tests/cli.rs` verifying JSON schema output structure and `--fail` exit status handling on intentional broken fixture books.
-- **Add integration tests for `xmpl/` workspace crates**:
-  - Neither `xmpl/cancelable` nor `xmpl/clap_builder_xmpl` has a `tests/` integration directory; all tests are embedded within `src/`.
-  - Add external integration tests in `xmpl/cancelable/tests/` to verify worker lifecycle, cancellation under high queue load, and thread termination across independent process invocations.
-  - Add external integration tests in `xmpl/clap_builder_xmpl/tests/` to exercise full CLI binary execution with various flags and subcommands.
 
 ### 3. Examples and Benchmarks
 
@@ -114,20 +98,9 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 ### 4. Documentation and Doc Comments
 
-- **Add missing doc comments on functions and methods across `tools` and `xmpl`**:
-  - Document private helpers and trait implementations where missing:
-    - `tools/example-integrity/src/main.rs`: `run_with`.
-    - `tools/mdbook-scrub/src/regexes.rs`: visitor methods `visit_fenced_code_block`, `visit_code_span`, `visit_html_comment`.
-    - `tools/mdbook-scrub/src/lib.rs` & `tools/mdbook-private/src/lib.rs`: preprocessor trait methods (`name`, `run`, `supports_renderer`).
-    - `xmpl/cancelable/src/cancel.rs` & `xmpl/cancelable/src/worker.rs`: `Drop` and `Default` implementations where domain behavior is defined.
 - **Document public API items and non-main helpers across book examples**:
   - Multiple non-generated book examples contain public functions or types without rustdoc comments (e.g., `bk/crates/cats/authentication/examples/session_login/axum_login.rs`, `bk/crates/cats/web_programming_http_server/examples/axum_extras/axum_server_tls.rs`, and `bk/crates/code_organization/examples/naming_conventions/main.rs`).
   - Add educational doc comments explaining parameters, return values, errors, and concurrency guarantees, adhering to the requirement that all comments end with a period.
-- **Update workspace documentation in `tools/README.md`**:
-  - `tools/README.md` only documents four tools (`clean`, `crate_indices`, `templ`, `tool_lib`).
-  - Add descriptions and usage instructions for the remaining tools in the workspace: `example-integrity`, `mdbook-scrub`, and `mdbook-private`.
-- **Remove unused import warning in `tools/clean/src/main.rs`**:
-  - `clean/src/main.rs:12:5` imports `std::os::unix::fs::symlink` which triggers an unused import compiler warning under Linux. Replace or remove the unused import.
 
 ### 5. Architecture and Workspace Dependency Isolation
 
@@ -141,6 +114,5 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 - **Reconcile `bk/master/crates.txt` and `bk/master/crate_categories.toml` with actual book recipes**:
   - The book documents `sprs` in `bk/src/categories/mathematics/linear_algebra.md` and links it in `crates_by_category.md` and `crates_alphabetical.md`, but `sprs` was omitted from master files. Audit all crates across `bk/crates` to ensure 100% synchronization between recipe includes, master crate lists, and generated indices.
-- **Reconcile `tools/README.md` and `bin/README.md` with tool outputs**:
-  - Update `tools/README.md` to reflect all seven active members of the workspace.
+- **Verify `bin/README.md` against `just release`**:
   - Verify that `just release` recipes build and copy all required executables into `bin/` with clear usage documentation.
