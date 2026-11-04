@@ -1,12 +1,14 @@
 # Worktrees
 
-Updated 2026-11-02 (America/Los_Angeles). This file describes the managed layout;
+<!-- TODO Reviewed ??-??-2026 -->
+
+Updated 2026-11-03 (America/Los_Angeles). This file describes the managed layout;
 use `git worktree list --porcelain` and `git status --short` for live state.
 
 - The primary checkout stays on `develop` and uses cache slot `main`.
 - `main` is an independent empty root commit, with no development history.
 - Auxiliary checkouts must be direct children of `.worktrees/`, named with one
-  lowercase letter: a and b only. Reuse clean slots and preserve their caches.
+  lowercase letter: a, b, or c. Reuse clean slots and preserve their caches.
 - Before moving a detached checkout, preserve its unique commits on a named
   branch and push that branch. Dirty work must be committed before switching.
 - Squash related unpublished commits, rebase or fast-forward to synchronize
@@ -49,21 +51,24 @@ See the README for this repository's project paths and commands.
 
 ## Current state
 
-Reviewed 2026-11-02. The primary checkout is clean on `develop` and synchronized
-with `origin/develop`. Slots `a` and `b` are clean detached snapshots; slot `b`
-is at the current `develop` head.
+Reviewed 2026-11-03. The primary checkout is clean on `develop` and synchronized
+with `origin/develop`. Slot `a` is clean on `codex/issue-2163-quality`; slot `b`
+is clean on `codex/issue-2164-cargo-profiles`; slot `c` is clean and detached at
+`931d6b84`.
 
-| Checkout        | Branch or revision                                       | Status and cache                          |
-| --------------- | -------------------------------------------------------- | ----------------------------------------- |
-| Repository root | `develop`                                                | Clean; cache slot `main`.                 |
-| `.worktrees/a`  | detached at `develop` after integration                  | Clean; cache slot `a`.                    |
-| `.worktrees/b`  | detached at `5249eeac` | Clean; cache slot `b`. |
+| Checkout        | Branch or revision                | Status and cache                                         |
+| --------------- | --------------------------------- | -------------------------------------------------------- |
+| Repository root | `develop`                         | Clean; cache slot `main`.                                |
+| `.worktrees/a`  | `codex/issue-2163-quality`        | Clean; cache slot `a`.                                   |
+| `.worktrees/b`  | `codex/issue-2164-cargo-profiles` | Clean; cache slot `b`.                                   |
+| `.worktrees/c`  | detached at `931d6b84`            | Clean; C: intermediate cache cleared due low disk space. |
 
-The `main`, `a`, and `b` target and intermediate build directories remain in
-place. The shared `D:/sccache` remains in place. The empty orphan
-`D:/target/rust_howto/c` directory was removed after confirming it had no
-children, no registered checkout, no `C:/code_build/rust_howto/c`, and no active
-Cargo or rustc processes.
+The primary `main` cache and worktree `a`/`b` caches remain in place. The
+inactive slot `c` intermediate cache was removed on 2026-11-03 after confirming
+the checkout was clean and detached, its tip was already contained in `develop`,
+and no Cargo or rustc process was active. Its empty `C:/code_build/rust_howto/c`
+directory was recreated so the slot remains reusable. The shared `D:/sccache`
+remains in place.
 
 ### Branch and pull request review
 
