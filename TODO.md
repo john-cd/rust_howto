@@ -67,3 +67,80 @@ Keep implementation briefs self-contained here because Jules cannot read GitHub 
 Decision: anchor selection includes every line between the matching markers, including a blank line immediately before `ANCHOR_END`; put the end marker directly after the last desired line to omit that blank line. `mdbook-utils` expands `{{#include ...}}` only and preserves `{{!crate }}` as literal text; it is not a special directive. The parser documentation and focused tests are in [mdbook-utils](https://github.com/john-cd/mdbook-utils).
 
 Acceptance: document the chosen syntax and run the focused parser/documentation checks for any behavior change.
+
+## Codebase Audit Fixes and Improvements
+
+A comprehensive review of the monorepo identified the following fixes, improvements, and gaps across testing, documentation, architecture, and tool verification.
+
+### 1. Unit Tests and Coverage
+
+- **Resolve regression in `tools/crate_indices` offline generation test**:
+  - `tests::category_index_matches_offline_generation` fails because `bk/src/indices/crates_by_category.md` lists `sprs` under the `Mathematics` category table, but `sprs` is omitted from `bk/master/crates.txt` and `bk/master/crate_categories.toml`.
+  - Fix: Add `sprs` to `bk/master/crates.txt` and `bk/master/crate_categories.toml` under the `Mathematics` category entry, and ensure both `category_index_covers_master_crates` and `category_index_matches_offline_generation` pass cleanly.
+- **Add unit tests for CLI argument parsing across `tools/crate_indices`**:
+  - Currently, `tools/crate_indices/src/cli/mod.rs` and `tools/crate_indices/src/cli/commands.rs` have 0 unit tests.
+  - Add unit tests verifying subcommand resolution, default values (`--book-root`, `--file`, `--directory`), alias resolution (`c`, `a`, `p`, `l`, `u`, `e`), and error handling on invalid argument combinations.
+- **Add unit tests for `tools/templ` CLI subcommands**:
+  - Subcommands `badge_cmd`, `category_badge_cmd`, `category_badges_for_crate_cmd`, `config_flag`, `crate_name_arg`, `info_cmd`, and `rbe` lack unit tests for argument parsing and option propagation.
+  - Add unit tests in each CLI module verifying flag combinations, defaults, and error branches.
+- **Add unit tests for `publish/src/main.rs`**:
+  - `publish` has 0 tests. Add unit tests verifying `Cargo.toml` parsing, fallback behavior when workspace inheritance is active, and manifest serialization.
+- **Expand helper unit testing across complex example modules**:
+  - While all example modules comply with `test()` invoking `main()`, large example modules (e.g., in `bk/crates/cats/database`, `bk/crates/cats/asynchronous`, and `bk/crates/cats/concurrency`) rely solely on end-to-end execution of `main()`.
+  - Refactor large `main()` routines into discrete helper functions and add unit tests exercising edge cases, timeouts, and error handling for these helpers.
+
+### 2. Integration Tests
+
+- **Add end-to-end integration test suites for tools in `tools/`**:
+  - `tools/clean`, `tools/mdbook-scrub`, and `tools/mdbook-private` contain `tests/` directories, but `tools/crate_indices`, `tools/templ`, and `tools/example-integrity` do not.
+  - Implement integration tests in `tools/crate_indices/tests/cli.rs` testing CLI execution of `list_crates`, `category_page_from_metadata`, and `expand_crate_blocks` against isolated test fixtures.
+  - Implement integration tests in `tools/templ/tests/cli.rs` asserting markdown badge output formatting and error reporting.
+  - Implement integration tests in `tools/example-integrity/tests/cli.rs` verifying JSON schema output structure and `--fail` exit status handling on intentional broken fixture books.
+- **Add integration tests for `xmpl/` workspace crates**:
+  - Neither `xmpl/cancelable` nor `xmpl/clap_builder_xmpl` has a `tests/` integration directory; all tests are embedded within `src/`.
+  - Add external integration tests in `xmpl/cancelable/tests/` to verify worker lifecycle, cancellation under high queue load, and thread termination across independent process invocations.
+  - Add external integration tests in `xmpl/clap_builder_xmpl/tests/` to exercise full CLI binary execution with various flags and subcommands.
+
+### 3. Examples and Benchmarks
+
+- **Add Criterion / Divan benchmarks to performance-sensitive crates**:
+  - Only four crates in `bk/crates` currently define benchmarks (`development_tools_profiling`, `memory_management`, `data_structures`, and `algorithms`).
+  - Add benchmarks for high-throughput utilities in `tools/tool_lib` (e.g., `published_recipes` link extraction regexes, crate block parsing, and markdown template generation).
+  - Add benchmarks in `tools/example-integrity` measuring chapter parsing, regex anchoring, and module target graph traversal across large book trees.
+  - Add benchmarks in `xmpl/cancelable` measuring task submission throughput, channel contention, and cancellation latency under concurrency.
+- **Provide standalone runnable examples for reusable libraries**:
+  - `tools/tool_lib` is a core library used by all tools but has no `examples/` directory showing how to construct category badges, format crate sections, or parse published recipes.
+  - Add minimal example binaries under `tools/tool_lib/examples/` demonstrating programmatic use of the API.
+
+### 4. Documentation and Doc Comments
+
+- **Add missing doc comments on functions and methods across `tools` and `xmpl`**:
+  - Document private helpers and trait implementations where missing:
+    - `tools/example-integrity/src/main.rs`: `run_with`.
+    - `tools/mdbook-scrub/src/regexes.rs`: visitor methods `visit_fenced_code_block`, `visit_code_span`, `visit_html_comment`.
+    - `tools/mdbook-scrub/src/lib.rs` & `tools/mdbook-private/src/lib.rs`: preprocessor trait methods (`name`, `run`, `supports_renderer`).
+    - `xmpl/cancelable/src/cancel.rs` & `xmpl/cancelable/src/worker.rs`: `Drop` and `Default` implementations where domain behavior is defined.
+- **Document public API items and non-main helpers across book examples**:
+  - Multiple non-generated book examples contain public functions or types without rustdoc comments (e.g., `bk/crates/cats/authentication/examples/session_login/axum_login.rs`, `bk/crates/cats/web_programming_http_server/examples/axum_extras/axum_server_tls.rs`, and `bk/crates/code_organization/examples/naming_conventions/main.rs`).
+  - Add educational doc comments explaining parameters, return values, errors, and concurrency guarantees, adhering to the requirement that all comments end with a period.
+- **Update workspace documentation in `tools/README.md`**:
+  - `tools/README.md` only documents four tools (`clean`, `crate_indices`, `templ`, `tool_lib`).
+  - Add descriptions and usage instructions for the remaining tools in the workspace: `example-integrity`, `mdbook-scrub`, and `mdbook-private`.
+- **Remove unused import warning in `tools/clean/src/main.rs`**:
+  - `clean/src/main.rs:12:5` imports `std::os::unix::fs::symlink` which triggers an unused import compiler warning under Linux. Replace or remove the unused import.
+
+### 5. Architecture and Workspace Dependency Isolation
+
+- **Isolate git dependencies in `tools/Cargo.toml`**:
+  - `tools/Cargo.toml` depends on `book_tool` via git (`git = "https://github.com/john-cd/book_tooling"`, rev `1e9cc3458f19d53c102aca5da36bc7e8baeac2d3`). Because this repository requires authentication or specific network access, running standard offline builds or checking workspace crates in isolated environments fails.
+  - Decouple `mdbook-scrub` from the external git dependency, or vendor the required directive parser functionality directly into `tools/tool_lib` or an internal member crate to achieve hermetic builds.
+- **Enforce centralized lint configuration across sub-workspaces**:
+  - Ensure all workspaces (`bk/crates`, `later/crates`, `tools`, `xmpl`, `publish`, `playground`) inherit identical workspace-level lints and deny rules from root configurations (`deny.toml`, `clippy.toml`, `rustfmt.toml`).
+
+### 6. Discrepancies between Documentation and Code
+
+- **Reconcile `bk/master/crates.txt` and `bk/master/crate_categories.toml` with actual book recipes**:
+  - The book documents `sprs` in `bk/src/categories/mathematics/linear_algebra.md` and links it in `crates_by_category.md` and `crates_alphabetical.md`, but `sprs` was omitted from master files. Audit all crates across `bk/crates` to ensure 100% synchronization between recipe includes, master crate lists, and generated indices.
+- **Reconcile `tools/README.md` and `bin/README.md` with tool outputs**:
+  - Update `tools/README.md` to reflect all seven active members of the workspace.
+  - Verify that `just release` recipes build and copy all required executables into `bin/` with clear usage documentation.
