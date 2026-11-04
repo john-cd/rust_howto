@@ -45,6 +45,7 @@ pub struct Worker {
 }
 
 impl Default for Worker {
+    /// Starts a new worker thread ready to execute tasks.
     fn default() -> Self {
         Self::new()
     }
@@ -174,6 +175,7 @@ impl Worker {
 }
 
 impl Drop for Worker {
+    /// Signals the worker thread to stop and waits for it to finish.
     fn drop(&mut self) {
         let _ = self.die();
     }
