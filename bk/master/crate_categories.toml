@@ -157,7 +157,7 @@ crates = ["axum"]
 category = "Mathematics"
 slug = "mathematics"
 description = "Crates with a mathematical aspect."
-crates = ["nalgebra", "nalgebra-lapack", "rug", "rust_decimal"]
+crates = ["nalgebra", "nalgebra-lapack", "rug", "rust_decimal", "sprs"]
 
 [[categories]]
 category = "Memory management"
