@@ -19,7 +19,7 @@ gate. Rutie 0.14.3 is enabled there with the `ruby` feature. Rutie's [current
 support table][ffi~rutie-support] includes 64-bit Windows and ties each release
 line to particular Ruby versions: Rutie 0.14.x requires Ruby 4.0, while 0.13.x
 supports Ruby 3.2 through 3.4. The provisioning helpers target Ruby 4.0.9
-from source on Linux and RubyInstaller 4.0.7-1 on Windows, reusing any
+from source on Linux and RubyInstaller 4.0.9-1 on Windows, reusing any
 installed Ruby 4.0.x release. Both provide headers and libraries from the Ruby
 4.0 series. Building the Windows example also needs the Visual Studio C++
 Build Tools.
