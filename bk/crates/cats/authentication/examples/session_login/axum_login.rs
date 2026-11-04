@@ -84,6 +84,19 @@ pub struct Backend {
 }
 
 impl Backend {
+    /// Constructs a new in-memory authentication and authorization backend.
+    ///
+    /// Accepts a list of `User` instances to populate the initial user store.
+    /// Computes a dummy password hash so that authentication attempts with
+    /// non-existent usernames incur identical processing time, preventing
+    /// timing side-channel username enumeration.
+    ///
+    /// # Errors
+    /// Returns an error if hashing the dummy password fails.
+    ///
+    /// # Concurrency
+    /// Internal state is wrapped in `Arc` references, allowing safe concurrent
+    /// access across multiple worker threads handling incoming HTTP requests.
     pub fn new(users: Vec<User>) -> anyhow::Result<Self> {
         Ok(Self {
             users: Arc::new(users.into_iter().map(|u| (u.id, u)).collect()),
@@ -120,6 +133,14 @@ impl AuthzBackend for Backend {
 
 type AuthSession = axum_login::AuthSession<Backend>;
 
+/// Authenticates submitted credentials and logs the user into the active session.
+///
+/// Verifies the provided credentials against the authentication backend.
+/// On successful credential verification, cycles the session ID via `session.login`
+/// to protect against session fixation attacks and returns `StatusCode::OK`.
+/// If the credentials do not match or the user does not exist, returns `StatusCode::UNAUTHORIZED`.
+/// Any backend or session store failure results in `StatusCode::INTERNAL_SERVER_ERROR`.
+/// Handlers run asynchronously and concurrently on the Axum runtime.
 async fn login(mut session: AuthSession, Form(creds): Form<Credentials>) -> impl IntoResponse {
     match session.authenticate(creds).await {
         Ok(Some(user)) => match session.login(&user).await {
@@ -131,6 +152,12 @@ async fn login(mut session: AuthSession, Form(creds): Form<Credentials>) -> impl
     }
 }
 
+/// Renders a greeting for authenticated users on a protected route.
+///
+/// Reads the authenticated user identity from the session state.
+/// Protected by the `login_required!` middleware layer, redirecting
+/// unauthenticated visitors to `/login`.
+/// Executes asynchronously and can be invoked concurrently by multiple requests.
 async fn protected(session: AuthSession) -> String {
     match session.user {
         Some(user) => format!("Hello, {}!", user.username),
@@ -138,11 +165,20 @@ async fn protected(session: AuthSession) -> String {
     }
 }
 
+/// Renders the administrative area content.
+///
+/// Protected by the `permission_required!` middleware requiring the `admin.read`
+/// permission. Returns `StatusCode::FORBIDDEN` if the user lacks the permission.
+/// Executes asynchronously and can be called concurrently across worker tasks.
 async fn admin() -> &'static str {
     "Admin area"
 }
 
-/// Builds the application.
+/// Builds the application router with configured routes and authentication middleware.
+///
+/// Accepts the initialized `backend` and registers the session manager layer along
+/// with authentication and authorization route layers.
+/// The resulting `Router` is safe to share and clone across concurrent request worker threads.
 pub fn app(backend: Backend) -> Router {
     // In-memory sessions: lost on restart. Use a database-backed store in
     // production, e.g. `tower-sessions-sqlx-store`.

@@ -16,15 +16,33 @@ use axum::routing::get;
 use axum_server::Handle;
 use axum_server::tls_rustls::RustlsConfig;
 
-/// Builds the router.
+/// Builds the Axum router serving a simple text response over TLS.
+///
+/// Returns an Axum `Router` configured with the root path (`/`).
+/// The returned router can be shared safely across worker threads.
 pub fn app() -> Router {
     Router::new().route("/", get(|| async { "hello over TLS" }))
 }
 
-/// Serves `app` over HTTPS until `handle` asks the server to shut down.
+/// Serves the Axum application over HTTPS until signaled to shut down.
 ///
+/// Binds a TLS socket to `addr` using the cryptographic keys in `config`,
+/// registering `handle` to manage shutdown notifications.
 /// In production, load the certificate and key with
 /// `RustlsConfig::from_pem_file("cert.pem", "key.pem")` instead.
+///
+/// # Parameters
+/// - `addr`: The socket address on which the HTTPS server will listen.
+/// - `config`: The Rustls configuration containing the TLS certificate and private key.
+/// - `handle`: The server handle used to query listening address and initiate graceful shutdown.
+///
+/// # Errors
+/// Returns an `std::io::Error` if socket binding fails or if an I/O error
+/// occurs during protocol negotiation or request serving.
+///
+/// # Concurrency
+/// Runs concurrently on the asynchronous Tokio runtime, spawning tasks for
+/// incoming TLS client connections until shutdown is signaled.
 #[cfg_attr(
     not(test),
     expect(dead_code, reason = "binds a TLS socket; exercised by the test")
@@ -40,8 +58,18 @@ pub async fn serve_https(
         .await
 }
 
-/// Stops accepting connections and waits up to `grace` for in-flight
-/// requests to finish.
+/// Stops accepting connections and waits up to `grace` for in-flight requests to finish.
+///
+/// Signals the running server instance identified by `handle` to initiate a
+/// graceful shutdown sequence. In-flight requests will be allowed to complete
+/// until the timeout `grace` period elapses.
+///
+/// # Parameters
+/// - `handle`: The server handle associated with the active TLS server.
+/// - `grace`: Maximum duration allowed for active requests before forcibly closing connections.
+///
+/// # Concurrency
+/// Thread-safe and can be invoked from any thread or asynchronous task.
 #[cfg_attr(
     not(test),
     expect(dead_code, reason = "stops the TLS server; exercised by the test")
