@@ -24,3 +24,58 @@ pub(super) fn get_cmd_arg_crate_name(m: &clap::ArgMatches) -> Vec<String> {
         .map(std::convert::Into::into)
         .collect::<Vec<String>>()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use clap::Command;
+
+    /// Checks that a single crate name is extracted.
+    #[test]
+    fn extracts_single_crate_name() {
+        let matches = Command::new("test_cmd")
+            .arg(arg_crate_name())
+            .try_get_matches_from(["test_cmd", "serde"])
+            .expect("arguments should parse");
+
+        let names = get_cmd_arg_crate_name(&matches);
+        assert_eq!(names, vec!["serde".to_owned()]);
+    }
+
+    /// Checks that multiple crate names are extracted in order.
+    #[test]
+    fn extracts_multiple_crate_names() {
+        let matches = Command::new("test_cmd")
+            .arg(arg_crate_name())
+            .try_get_matches_from(["test_cmd", "serde", "tokio", "clap"])
+            .expect("arguments should parse");
+
+        let names = get_cmd_arg_crate_name(&matches);
+        assert_eq!(
+            names,
+            vec!["serde".to_owned(), "tokio".to_owned(), "clap".to_owned()]
+        );
+    }
+
+    /// Checks that missing crate name fails argument validation.
+    #[test]
+    fn missing_crate_name_fails() {
+        let result = Command::new("test_cmd")
+            .arg(arg_crate_name())
+            .try_get_matches_from(["test_cmd"]);
+
+        assert!(result.is_err(), "missing crate name should fail");
+    }
+
+    /// Checks that empty vector is returned when optional crate name argument is not provided.
+    #[test]
+    fn empty_vector_when_arg_not_present() {
+        let matches = Command::new("test_cmd")
+            .arg(arg_crate_name().required(false))
+            .try_get_matches_from(["test_cmd"])
+            .expect("arguments should parse");
+
+        let names = get_cmd_arg_crate_name(&matches);
+        assert!(names.is_empty());
+    }
+}
