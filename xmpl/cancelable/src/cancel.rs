@@ -88,6 +88,7 @@ impl CancelTokenSource {
 }
 
 impl Default for CancelTokenSource {
+    /// Creates a source with no active tasks.
     fn default() -> Self {
         Self::new()
     }
@@ -115,6 +116,7 @@ impl CancelToken {
 }
 
 impl Drop for CancelToken {
+    /// Unregisters the task from the cancellation registry when its token is dropped.
     fn drop(&mut self) {
         let Some(tasks) = self.tasks.upgrade() else {
             return;

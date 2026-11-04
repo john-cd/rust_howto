@@ -116,16 +116,19 @@ impl ProtectedSpanCollector {
 }
 
 impl<'a> Visitor<'a> for ProtectedSpanCollector {
+    /// Collects protected spans for each line in a fenced code block.
     fn visit_fenced_code_block(&mut self, data: &'a FencedCodeBlockData<'a>) {
         for line in &data.lines {
             self.add_span(line);
         }
     }
 
+    /// Collects protected spans for inline code span content.
     fn visit_code_span(&mut self, data: &'a CodeSpanData<'a>) {
         self.add_span(data.content);
     }
 
+    /// Collects protected spans for each line in an HTML comment.
     fn visit_html_comment(&mut self, data: &'a HtmlCommentData<'a>) {
         for line in &data.lines {
             self.add_span(line);
