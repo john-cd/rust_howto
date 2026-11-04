@@ -16,16 +16,6 @@ use rav1e::prelude::Context;
 use rav1e::prelude::EncoderConfig;
 use rav1e::prelude::EncoderStatus;
 
-/// Describes the synthetic video to encode.
-struct VideoSpec {
-    /// Width in pixels.
-    width: usize,
-    /// Height in pixels.
-    height: usize,
-    /// Number of frames to encode.
-    frames: u64,
-}
-
 /// Fills the next frame with a horizontal luma gradient that shifts by
 /// `shift` samples, so that consecutive frames differ.
 fn send_frame(context: &mut Context<u8>, shift: usize) -> Result<()> {
@@ -53,19 +43,20 @@ fn send_frame(context: &mut Context<u8>, shift: usize) -> Result<()> {
     Ok(())
 }
 
-/// Encodes the synthetic video and returns the number of packets produced.
-fn encode(spec: &VideoSpec) -> Result<usize> {
+/// Encodes a synthetic video of the given dimensions and frame count,
+/// returning the number of packets produced.
+fn encode(width: usize, height: usize, frames: u64) -> Result<usize> {
     // Speed preset 10 is the fastest and the least efficient.
     let mut encoder_config = EncoderConfig::with_speed_preset(10);
-    encoder_config.width = spec.width;
-    encoder_config.height = spec.height;
+    encoder_config.width = width;
+    encoder_config.height = height;
 
     let config = Config::default().with_encoder_config(encoder_config);
     // The context owns the encoder state; the sample type (`u8`) matches the
     // 8-bit pixels written above.
     let mut context = config.new_context::<u8>()?;
 
-    for frame_index in 0..spec.frames {
+    for frame_index in 0..frames {
         send_frame(&mut context, frame_index as usize * 4)?;
     }
     // Tell the encoder that no more frames follow so it emits what it holds.
@@ -99,16 +90,11 @@ fn encode(spec: &VideoSpec) -> Result<usize> {
 
 /// Encodes ten 64-by-64 frames.
 fn main() -> Result<()> {
-    let spec = VideoSpec {
-        width: 64,
-        height: 64,
-        frames: 10,
-    };
-    let packet_count = encode(&spec)?;
-    println!(
-        "Encoded {} frame(s) into {packet_count} AV1 packet(s).",
-        spec.frames
-    );
+    let width = 64;
+    let height = 64;
+    let frames = 10;
+    let packet_count = encode(width, height, frames)?;
+    println!("Encoded {frames} frame(s) into {packet_count} AV1 packet(s).");
     Ok(())
 }
 // ANCHOR_END: example
@@ -125,24 +111,21 @@ mod tests {
     /// Every frame of a short video is encoded into a packet, offline.
     #[test]
     fn encodes_every_frame() {
-        let spec = VideoSpec {
-            width: 64,
-            height: 64,
-            frames: 5,
-        };
-        let packet_count = encode(&spec).expect("synthetic frames should encode");
+        let packet_count = encode(64, 64, 5).expect("synthetic frames should encode");
         assert_eq!(packet_count, 5);
+    }
+
+    /// Verifies encoding with non-square custom frame dimensions passed as arguments.
+    #[test]
+    fn encodes_custom_dimensions() {
+        let packet_count = encode(80, 48, 2).expect("custom dimensions should encode");
+        assert_eq!(packet_count, 2);
     }
 
     /// A frame size the encoder cannot use is reported as an error.
     #[test]
     fn rejects_an_empty_frame_size() {
-        let spec = VideoSpec {
-            width: 0,
-            height: 0,
-            frames: 1,
-        };
-        assert!(encode(&spec).is_err());
+        assert!(encode(0, 0, 1).is_err());
     }
 
     /// The example runs through its entry point.
