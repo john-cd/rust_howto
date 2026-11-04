@@ -9,7 +9,9 @@
 
 /// This function is defined but never called.
 ///
-/// The attribute below disables the `dead_code` lint for this function.
+/// In production code, unused functions should typically be removed to keep
+/// the codebase clean and maintainable. In early development or prototyping,
+/// the attribute below suppresses the `dead_code` compiler warning.
 #[allow(dead_code)]
 fn unused_function() {}
 
