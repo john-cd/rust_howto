@@ -51,24 +51,26 @@ See the README for this repository's project paths and commands.
 
 ## Current state
 
-Reviewed 2026-11-03. The primary checkout is clean on `develop` and synchronized
-with `origin/develop`. Slot `a` is clean on `codex/issue-2163-quality`; slot `b`
-is clean on `codex/issue-2164-cargo-profiles`; slot `c` is clean and detached at
-`931d6b84`.
+Reviewed 2026-11-03. The primary checkout is on `develop`; integration is
+linear and will be synchronized with `origin/develop` after the reviewed topic
+commits are pushed. Slot `a` will be detached at the integrated `develop` tip
+after delivery. Slot `b` remains on `codex/issue-2164-cargo-profiles`. Slot `c`
+is detached at `931d6b84` with a cherry-pick in progress; preserve it and do not
+reuse it.
 
-| Checkout        | Branch or revision                | Status and cache                                         |
-| --------------- | --------------------------------- | -------------------------------------------------------- |
-| Repository root | `develop`                         | Clean; cache slot `main`.                                |
-| `.worktrees/a`  | `codex/issue-2163-quality`        | Clean; cache slot `a`.                                   |
-| `.worktrees/b`  | `codex/issue-2164-cargo-profiles` | Clean; cache slot `b`.                                   |
-| `.worktrees/c`  | detached at `931d6b84`            | Clean; C: intermediate cache cleared due low disk space. |
+| Checkout        | Branch or revision                | Status and cache                                            |
+| --------------- | --------------------------------- | ----------------------------------------------------------- |
+| Repository root | `develop`                         | Clean after integration; cache slot `main`.                 |
+| `.worktrees/a`  | detached at integrated `develop`  | Clean after delivery; cache slot `a`.                       |
+| `.worktrees/b`  | `codex/issue-2164-cargo-profiles` | Clean; cache slot `b`.                                      |
+| `.worktrees/c`  | detached at `931d6b84`            | Cherry-pick in progress; preserve; C: intermediate cleared. |
 
-The primary `main` cache and worktree `a`/`b` caches remain in place. The
-inactive slot `c` intermediate cache was removed on 2026-11-03 after confirming
-the checkout was clean and detached, its tip was already contained in `develop`,
-and no Cargo or rustc process was active. Its empty `C:/code_build/rust_howto/c`
-directory was recreated so the slot remains reusable. The shared `D:/sccache`
-remains in place.
+The primary `main` cache and worktree `a`/`b` caches remain in place. Slot `c`'s
+intermediate cache was removed on 2026-11-03 after confirming no Cargo or rustc
+process was active and the checkout's worktree was clean at a detached tip
+already contained in `develop`. Its empty `C:/code_build/rust_howto/c` directory
+was recreated. The shared `D:/sccache` remains in place. A Git cherry-pick is
+currently in progress in slot `c`; preserve it until that operation is resolved.
 
 ### Branch and pull request review
 
