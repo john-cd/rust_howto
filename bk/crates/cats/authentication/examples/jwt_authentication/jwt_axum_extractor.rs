@@ -115,16 +115,30 @@ mod tests {
 
     use super::*;
 
-    const TEST_SECRET: &[u8] = b"unit-test-secret-with-at-least-32-bytes";
+    /// Obtains a 32-byte secret for unit testing by reading `JWT_SECRET` from
+    /// the environment or generating cryptographically random bytes.
+    fn test_secret() -> [u8; 32] {
+        if let Ok(var) = std::env::var("JWT_SECRET") {
+            let bytes = var.as_bytes();
+            if bytes.len() >= 32 {
+                let mut secret = [0_u8; 32];
+                secret.copy_from_slice(&bytes[..32]);
+                return secret;
+            }
+        }
+        let mut secret = [0_u8; 32];
+        getrandom::fill(&mut secret).expect("system randomness should be available for unit tests");
+        secret
+    }
 
     /// Signs a valid token for the requested roles using the test key.
-    fn token_for_roles(roles: &[&str]) -> String {
+    fn token_for_roles(roles: &[&str], secret: &[u8]) -> String {
         let claims = Claims {
             sub: "alice".to_owned(),
             exp: u64::MAX,
             roles: roles.iter().map(|role| (*role).to_owned()).collect(),
         };
-        jwt::create_jwt(&claims, TEST_SECRET).expect("the test key should sign the test claims")
+        jwt::create_jwt(&claims, secret).expect("the test key should sign the test claims")
     }
 
     /// Builds a request with an optional bearer token.
@@ -140,8 +154,8 @@ mod tests {
     }
 
     /// Sends a request through the router and returns its status code.
-    async fn call_admin(token: Option<&str>) -> StatusCode {
-        let secret = JwtSecret::new(TEST_SECRET).expect("the test key is long enough");
+    async fn call_admin(token: Option<&str>, secret_bytes: &[u8]) -> StatusCode {
+        let secret = JwtSecret::new(secret_bytes).expect("the test key is long enough");
         admin_router(secret)
             .oneshot(request_with_token(token))
             .await
@@ -152,14 +166,16 @@ mod tests {
     /// Rejects a request that has no bearer token.
     #[tokio::test]
     async fn missing_bearer_token_returns_401() {
-        assert_eq!(call_admin(None).await, StatusCode::UNAUTHORIZED);
+        let secret = test_secret();
+        assert_eq!(call_admin(None, &secret).await, StatusCode::UNAUTHORIZED);
     }
 
     /// Rejects a bearer token with an invalid signature.
     #[tokio::test]
     async fn invalid_bearer_token_returns_401() {
+        let secret = test_secret();
         assert_eq!(
-            call_admin(Some("not.a.valid-token")).await,
+            call_admin(Some("not.a.valid-token"), &secret).await,
             StatusCode::UNAUTHORIZED
         );
     }
@@ -167,16 +183,21 @@ mod tests {
     /// Rejects a valid token when its subject lacks the admin role.
     #[tokio::test]
     async fn missing_admin_role_returns_403() {
-        let token = token_for_roles(&["reader"]);
+        let secret = test_secret();
+        let token = token_for_roles(&["reader"], &secret);
 
-        assert_eq!(call_admin(Some(&token)).await, StatusCode::FORBIDDEN);
+        assert_eq!(
+            call_admin(Some(&token), &secret).await,
+            StatusCode::FORBIDDEN
+        );
     }
 
     /// Allows a valid token when its subject has the admin role.
     #[tokio::test]
     async fn admin_role_returns_200() {
-        let token = token_for_roles(&["admin"]);
+        let secret = test_secret();
+        let token = token_for_roles(&["admin"], &secret);
 
-        assert_eq!(call_admin(Some(&token)).await, StatusCode::OK);
+        assert_eq!(call_admin(Some(&token), &secret).await, StatusCode::OK);
     }
 }
