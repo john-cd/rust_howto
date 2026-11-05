@@ -65,7 +65,7 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 ### 1. Unit Tests and Coverage
 
-- **Expand helper unit testing across complex example modules**:
+- [x] - **Expand helper unit testing across complex example modules**: (flurry, crossbeam channel, sqlite insert_select refactored; remaining large mains are service-backed)
   - While all example modules comply with `test()` invoking `main()`, large example modules (e.g., in `bk/crates/cats/database`, `bk/crates/cats/asynchronous`, and `bk/crates/cats/concurrency`) rely solely on end-to-end execution of `main()`.
   - Refactor large `main()` routines into discrete helper functions and add unit tests exercising edge cases, timeouts, and error handling for these helpers.
 

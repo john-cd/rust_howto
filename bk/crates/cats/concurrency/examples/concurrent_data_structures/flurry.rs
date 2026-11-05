@@ -10,13 +10,13 @@ use std::thread;
 
 use flurry::HashMap;
 
-/// This example demonstrates the basic usage of the `flurry::HashMap` for
-/// concurrent data access. It showcases how to insert, read, remove, and
-/// iterate over the map, both sequentially and concurrently.
-fn main() -> anyhow::Result<()> {
-    // Create a new Flurry `HashMap`.
-    // Wrap in an `Arc`, so that it can be shared between threads:
-    let map = Arc::new(HashMap::new());
+/// The map shared between threads: owned strings to integers.
+type SharedMap = Arc<HashMap<String, i32>>;
+
+/// Inserts, reads, and removes entries from the current thread.
+///
+/// Leaves the map holding `key1`, `key2`, and `key3` with the values `1`, `2`, and `3`.
+fn sequential_operations(map: &SharedMap) {
     {
         // Many of the access methods take a reference to a `Guard`.
         // We obtain a `Guard` using `HashMap::guard` and can
@@ -66,15 +66,22 @@ fn main() -> anyhow::Result<()> {
         // map is not undergoing concurrent updates in other threads.
         assert_eq!(mref.len(), 3);
     }
+}
 
-    let m = Arc::clone(&map);
+/// Writes the entries `key4` and `key5` from one thread while another reads the map twice.
+///
+/// # Errors
+///
+/// Returns an error if either thread panics.
+fn concurrent_access(map: &SharedMap) -> anyhow::Result<()> {
+    let m = Arc::clone(map);
     let writer_thread = thread::spawn(move || {
         for i in 4..=5 {
             m.pin().insert(format!("key{i}"), i);
         }
     });
 
-    let m2 = Arc::clone(&map);
+    let m2 = Arc::clone(map);
     let reader_thread = thread::spawn(move || {
         for _ in 1..=2 {
             // Read multiple times:
@@ -87,10 +94,22 @@ fn main() -> anyhow::Result<()> {
 
     writer_thread
         .join()
-        .expect("writer thread should complete successfully");
+        .map_err(|_| anyhow::anyhow!("writer thread panicked"))?;
     reader_thread
         .join()
-        .expect("reader thread should complete successfully");
+        .map_err(|_| anyhow::anyhow!("reader thread panicked"))?;
+    Ok(())
+}
+
+/// This example demonstrates the basic usage of the `flurry::HashMap` for
+/// concurrent data access. It showcases how to insert, read, remove, and
+/// iterate over the map, both sequentially and concurrently.
+fn main() -> anyhow::Result<()> {
+    // Create a new Flurry `HashMap`.
+    // Wrap in an `Arc`, so that it can be shared between threads:
+    let map: SharedMap = Arc::new(HashMap::new());
+    sequential_operations(&map);
+    concurrent_access(&map)?;
 
     let mref = map.pin();
     for i in 1..=5 {
@@ -113,6 +132,30 @@ mod tests {
     #[test]
     fn test_flurry_example_entry_point() {
         main().expect("flurry recipe should pass its assertions");
+    }
+
+    /// The sequential helper leaves exactly the three expected entries.
+    #[test]
+    fn sequential_operations_leave_three_entries() {
+        let map: SharedMap = Arc::new(HashMap::new());
+        sequential_operations(&map);
+        let mref = map.pin();
+        assert_eq!(mref.len(), 3);
+        assert_eq!(mref.get("key0"), None);
+        assert_eq!(mref.get("key3"), Some(&3));
+    }
+
+    /// The concurrent helper adds both written entries and keeps the existing ones.
+    #[test]
+    fn concurrent_access_adds_entries_without_losing_existing_ones() {
+        let map: SharedMap = Arc::new(HashMap::new());
+        map.pin().insert("key1".to_owned(), 1);
+        concurrent_access(&map).expect("threads should finish");
+        let mref = map.pin();
+        assert_eq!(mref.len(), 3);
+        assert_eq!(mref.get("key4"), Some(&4));
+        assert_eq!(mref.get("key5"), Some(&5));
+        assert_eq!(mref.get("key1"), Some(&1));
     }
 }
 // review https://github.com/jonhoo/flurry/blob/main/benches/flurry_dashmap.rs
