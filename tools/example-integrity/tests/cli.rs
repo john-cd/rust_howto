@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Runs the `example-integrity` binary against temporary repositories only.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::fs;
 use std::path::Path;

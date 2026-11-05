@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Runs the `templ` binary for subcommands that need no network access.
+//!
+//! TODO Reviewed ??-??-2026
 
 use std::process::Command;
 use std::process::Output;
