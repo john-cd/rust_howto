@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Composing a `tracing` subscriber from layers and filters.
@@ -127,6 +127,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     main()
 }

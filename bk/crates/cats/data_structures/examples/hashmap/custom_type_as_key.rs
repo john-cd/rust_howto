@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Demonstrate using a custom type as the key in a `HashMap`.
@@ -67,6 +67,7 @@ fn calculate_hash<T: Hash>(t: &T) -> u64 {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

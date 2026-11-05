@@ -104,4 +104,71 @@ mod tests {
 
         assert_eq!(args.file, Some(PathBuf::from("custom/refs.md")));
     }
+
+    /// Verifies short `-a` option correctly propagates the reference file path.
+    #[test]
+    fn add_short_option_propagates_path() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_badge())
+            .try_get_matches_from(["templ", "badge", "tokio", "-a", "refs.md"])
+            .expect("arguments should parse");
+
+        let args = get_cmd(&matches).expect("badge subcommand should be present");
+
+        assert_eq!(args.args, vec!["tokio".to_owned()]);
+        assert_eq!(args.file, Some(PathBuf::from("refs.md")));
+    }
+
+    /// Checks that multiple crate names are collected and the add option defaults to None when
+    /// omitted.
+    #[test]
+    fn multiple_crate_names_without_add_option() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_badge())
+            .try_get_matches_from(["templ", "badge", "serde", "tokio", "axum"])
+            .expect("arguments should parse");
+
+        let args = get_cmd(&matches).expect("badge subcommand should be present");
+
+        assert_eq!(
+            args.args,
+            vec!["serde".to_owned(), "tokio".to_owned(), "axum".to_owned()]
+        );
+        assert_eq!(args.file, None);
+    }
+
+    /// Checks that the visible alias `b` works as an alias for `badge`.
+    #[test]
+    fn alias_b_is_recognized() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_badge())
+            .try_get_matches_from(["templ", "b", "serde"])
+            .expect("arguments should parse");
+
+        let args = get_cmd(&matches).expect("badge subcommand should be recognized via alias");
+
+        assert_eq!(args.args, vec!["serde".to_owned()]);
+        assert_eq!(args.file, None);
+    }
+
+    /// Checks that omitting the required crate name argument fails argument parsing.
+    #[test]
+    fn missing_crate_name_fails() {
+        let result = Command::new("templ")
+            .subcommand(subcommand_badge())
+            .try_get_matches_from(["templ", "badge"]);
+
+        assert!(result.is_err(), "missing crate name should fail parsing");
+    }
+
+    /// Checks that `get_cmd` returns `None` when the badge subcommand was not called.
+    #[test]
+    fn returns_none_when_subcommand_not_invoked() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_badge())
+            .try_get_matches_from(["templ"])
+            .expect("base command should parse");
+
+        assert!(get_cmd(&matches).is_none());
+    }
 }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Multi-producer, multi-consumer (MPMC) async channel communication.
@@ -68,52 +68,68 @@ async fn consumer(id: usize, rx: Receiver<String>) {
     assert_eq!(rx.try_recv(), Err(TryRecvError::Closed));
 }
 
-/// Spawns producers and consumers that share one channel and waits for them to
-/// finish.
-#[tokio::main]
-async fn main() {
-    let (tx, rx) = bounded(2); // Create a bounded channel with a capacity of 2.
-    // You may also use an unbounded queue.
+/// Spawns the specified number of producer tasks.
+fn spawn_producers(tx: &Sender<String>, count: usize) -> Vec<task::JoinHandle<()>> {
+    let mut tasks = Vec::with_capacity(count);
+    for i in 0..count {
+        let producer_tx = tx.clone();
+        tasks.push(task::spawn(producer(i, producer_tx)));
+    }
+    tasks
+}
 
+/// Spawns the specified number of consumer tasks.
+fn spawn_consumers(rx: &Receiver<String>, count: usize) -> Vec<task::JoinHandle<()>> {
+    let mut tasks = Vec::with_capacity(count);
+    for i in 0..count {
+        let consumer_rx = rx.clone();
+        tasks.push(task::spawn(consumer(i, consumer_rx)));
+    }
+    tasks
+}
+
+/// Coordinates the full lifecycle of producers and consumers on a bounded channel.
+async fn run_channel_pipeline(
+    capacity: usize,
+    num_producers: usize,
+    num_consumers: usize,
+) -> anyhow::Result<()> {
+    let (tx, rx) = bounded(capacity);
     assert_eq!(rx.try_recv(), Err(TryRecvError::Empty));
 
-    // Create 3 producer tasks:
-    let mut producer_tasks = vec![];
-    for i in 0..3 {
-        let tx = tx.clone();
-        producer_tasks.push(task::spawn(producer(i, tx)));
-    }
-    assert_eq!(tx.sender_count(), 4);
-
-    // Create 2 consumer tasks:
-    let mut consumer_tasks = vec![];
-    for i in 0..2 {
-        let rx = rx.clone();
-        consumer_tasks.push(task::spawn(consumer(i, rx)));
-    }
-    assert_eq!(rx.receiver_count(), 3);
+    let producer_tasks = spawn_producers(&tx, num_producers);
+    let consumer_tasks = spawn_consumers(&rx, num_consumers);
 
     for task in producer_tasks {
-        let _ = task.await;
+        task.await?;
     }
     println!(
         "The current number of messages in the channel is {}",
         tx.len()
     );
 
-    // Close the channel to signal consumers that no more messages will be sent:
+    // Close channel to signal consumers that no further messages will arrive.
     drop(tx);
-    // or tx.close();
     assert!(rx.is_closed());
 
     for task in consumer_tasks {
-        let _ = task.await;
+        task.await?;
     }
-    // The channel is empty:
     assert!(rx.is_empty());
+    Ok(())
+}
+
+/// Spawns producers and consumers that share one channel and waits for them to
+/// finish.
+#[tokio::main]
+async fn main() {
+    if let Err(err) = run_channel_pipeline(2, 3, 2).await {
+        eprintln!("Pipeline execution failed: {err}");
+    }
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }
@@ -126,5 +142,43 @@ mod tests {
     #[test]
     fn test_async_channel_example_entry_point() {
         main();
+    }
+
+    /// Verifies that sending to a closed channel fails promptly.
+    #[tokio::test]
+    async fn producer_terminates_when_channel_is_closed() {
+        let (tx, rx) = bounded::<String>(1);
+        drop(rx);
+        assert!(tx.is_closed());
+        let result = tx.send("hello".to_owned()).await;
+        assert!(result.is_err());
+    }
+
+    /// Verifies that consuming from an empty closed channel yields Closed error.
+    #[tokio::test]
+    async fn consumer_observes_closure_on_empty_channel() {
+        let (tx, rx) = bounded::<String>(2);
+        drop(tx);
+        assert_eq!(rx.try_recv(), Err(TryRecvError::Closed));
+        assert!(rx.recv().await.is_err());
+    }
+
+    /// Verifies that consumer receives buffered items before observing channel closure.
+    #[tokio::test]
+    async fn consumer_drains_remaining_messages_after_close() {
+        let (tx, rx) = bounded(5);
+        tx.send("first".to_owned()).await.unwrap();
+        tx.send("second".to_owned()).await.unwrap();
+        drop(tx);
+
+        assert_eq!(rx.recv().await, Ok("first".to_owned()));
+        assert_eq!(rx.recv().await, Ok("second".to_owned()));
+        assert_eq!(rx.try_recv(), Err(TryRecvError::Closed));
+    }
+
+    /// Verifies that the channel pipeline completes successfully with single producer and consumer.
+    #[tokio::test]
+    async fn pipeline_runs_to_completion() -> anyhow::Result<()> {
+        run_channel_pipeline(1, 1, 1).await
     }
 }

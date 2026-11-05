@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example shows how to filter CSV data based on a query.
@@ -41,6 +41,7 @@ West Hollywood,CA,37031,34.0900000,-118.3608333";
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

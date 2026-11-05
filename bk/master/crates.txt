@@ -76,6 +76,7 @@ skiplist
 slint
 slotmap
 smallvec
+sprs
 sqlx
 statrs
 std

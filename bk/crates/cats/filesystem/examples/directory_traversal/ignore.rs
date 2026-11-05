@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to use the `ignore` crate to traverse a
@@ -53,6 +53,7 @@ fn walk(root: &std::path::Path, extra: &str) -> Vec<String> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

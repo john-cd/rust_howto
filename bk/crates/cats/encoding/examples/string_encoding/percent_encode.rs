@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Example of percent encoding and decoding strings.
@@ -42,6 +42,7 @@ fn main() -> Result<(), Utf8Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Utf8Error> {
     main()
 }

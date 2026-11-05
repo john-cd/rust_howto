@@ -35,3 +35,62 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     }
     cmdargs
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Checks that multiple category arguments are collected into `CmdArgs`.
+    #[test]
+    fn parses_multiple_categories() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_category_badge())
+            .try_get_matches_from(["templ", "category_badge", "development-tools", "wasm"])
+            .expect("arguments should parse");
+
+        let args = get_cmd(&matches).expect("category_badge subcommand should be present");
+
+        assert_eq!(
+            args.args,
+            vec!["development-tools".to_owned(), "wasm".to_owned()]
+        );
+    }
+
+    /// Checks that the visible alias `c` works as an alias for `category_badge`.
+    #[test]
+    fn alias_c_is_recognized() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_category_badge())
+            .try_get_matches_from(["templ", "c", "gui"])
+            .expect("arguments should parse");
+
+        let args =
+            get_cmd(&matches).expect("category_badge subcommand should be recognized via alias");
+
+        assert_eq!(args.args, vec!["gui".to_owned()]);
+    }
+
+    /// Checks that omitting the required category argument fails argument parsing.
+    #[test]
+    fn missing_category_fails() {
+        let result = Command::new("templ")
+            .subcommand(subcommand_category_badge())
+            .try_get_matches_from(["templ", "category_badge"]);
+
+        assert!(
+            result.is_err(),
+            "missing category argument should fail parsing"
+        );
+    }
+
+    /// Checks that `get_cmd` returns `None` when the subcommand was not called.
+    #[test]
+    fn returns_none_when_subcommand_not_invoked() {
+        let matches = Command::new("templ")
+            .subcommand(subcommand_category_badge())
+            .try_get_matches_from(["templ"])
+            .expect("base command should parse");
+
+        assert!(get_cmd(&matches).is_none());
+    }
+}

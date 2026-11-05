@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Encode and verify HS256 JSON Web Tokens for a first-party API.
@@ -63,6 +63,22 @@ pub fn verify_jwt(token: &str, secret: &[u8]) -> Result<Claims, jsonwebtoken::er
 mod tests {
     use super::*;
 
+    /// Obtains a 32-byte secret for unit testing by reading `JWT_SECRET` from
+    /// the environment or generating cryptographically random bytes.
+    fn test_secret() -> [u8; 32] {
+        if let Ok(var) = std::env::var("JWT_SECRET") {
+            let bytes = var.as_bytes();
+            if bytes.len() >= 32 {
+                let mut secret = [0_u8; 32];
+                secret.copy_from_slice(&bytes[..32]);
+                return secret;
+            }
+        }
+        let mut secret = [0_u8; 32];
+        getrandom::fill(&mut secret).expect("system randomness should be available for unit tests");
+        secret
+    }
+
     /// Returns deterministic claims that remain valid for signature tests.
     fn unexpired_claims() -> Claims {
         Claims {
@@ -76,12 +92,10 @@ mod tests {
     #[test]
     fn valid_token_round_trips_claims() -> Result<(), jsonwebtoken::errors::Error> {
         let claims = unexpired_claims();
-        let token = create_jwt(&claims, b"unit-test-secret-with-at-least-32-bytes")?;
+        let secret = test_secret();
+        let token = create_jwt(&claims, &secret)?;
 
-        assert_eq!(
-            verify_jwt(&token, b"unit-test-secret-with-at-least-32-bytes")?,
-            claims
-        );
+        assert_eq!(verify_jwt(&token, &secret)?, claims);
         Ok(())
     }
 
@@ -92,19 +106,18 @@ mod tests {
             exp: 1,
             ..unexpired_claims()
         };
-        let token = create_jwt(&claims, b"unit-test-secret-with-at-least-32-bytes")?;
+        let secret = test_secret();
+        let token = create_jwt(&claims, &secret)?;
 
-        assert!(verify_jwt(&token, b"unit-test-secret-with-at-least-32-bytes").is_err());
+        assert!(verify_jwt(&token, &secret).is_err());
         Ok(())
     }
 
     /// Rejects a token after its signature segment has been changed.
     #[test]
     fn tampered_signature_is_rejected() -> Result<(), jsonwebtoken::errors::Error> {
-        let token = create_jwt(
-            &unexpired_claims(),
-            b"unit-test-secret-with-at-least-32-bytes",
-        )?;
+        let secret = test_secret();
+        let token = create_jwt(&unexpired_claims(), &secret)?;
         let (message, signature) = token
             .rsplit_once('.')
             .expect("a signed JWT has a signature segment");
@@ -118,7 +131,21 @@ mod tests {
             String::from_utf8(tampered_signature).expect("JWT signatures use ASCII characters");
         let tampered_token = format!("{message}.{tampered_signature}");
 
-        assert!(verify_jwt(&tampered_token, b"unit-test-secret-with-at-least-32-bytes").is_err());
+        assert!(verify_jwt(&tampered_token, &secret).is_err());
         Ok(())
+    }
+
+    /// Verifies that dynamic test secret generation creates a valid 32-byte key.
+    #[test]
+    fn test_secret_is_valid_32_bytes() {
+        let secret = test_secret();
+        assert_eq!(secret.len(), 32);
+        // Ensure that two generated secrets are non-empty and unpredictable when not pinned by env
+        let claims = unexpired_claims();
+        let token = create_jwt(&claims, &secret).expect("32-byte secret should create a token");
+        assert_eq!(
+            verify_jwt(&token, &secret).expect("token should verify with secret"),
+            claims
+        );
     }
 }

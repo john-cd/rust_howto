@@ -1,5 +1,5 @@
 #![cfg(any(target_os = "linux", target_os = "windows"))]
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Demonstrates how to define a PyO3 Python module in Rust, register it with

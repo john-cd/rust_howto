@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026
 
 //! Naming conventions for getters and iterators.
 
@@ -9,19 +9,32 @@ pub struct S {
 }
 
 impl S {
-    /// A general constructor is named `new`.
+    /// Constructs a new instance of `S` from any type convertible into a `String`.
+    ///
+    /// Following the Rust API Guidelines (C-CTOR), the primary constructor is named `new`.
+    ///
+    /// # Parameters
+    /// - `first`: The initial string value, converted into an owned `String`.
     pub fn new(first: impl Into<String>) -> Self {
         Self {
             first: first.into(),
         }
     }
 
-    // Not `get_first`.
+    /// Returns an immutable reference to the wrapped `first` string slice.
+    ///
+    /// Following Rust API Guidelines (C-GETTER), getter methods omit the `get_` prefix
+    /// when returning a borrowed reference to an internal field.
+    /// Multiple reader threads can access this method concurrently without synchronization.
     pub fn first(&self) -> &str {
         &self.first
     }
 
-    // Not `get_first_mut`, `get_mut_first`, or `mut_first`.
+    /// Returns a mutable reference to the wrapped `first` string.
+    ///
+    /// Following Rust API Guidelines (C-GETTER), mutating getters use the `_mut` suffix
+    /// rather than `get_mut_first` or `mut_first`.
+    /// Requires exclusive mutable access (`&mut self`), preventing concurrent data races.
     pub fn first_mut(&mut self) -> &mut String {
         &mut self.first
     }

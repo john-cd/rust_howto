@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates the `doc-comment` crate for attaching
@@ -28,6 +28,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     // Same body as `main`; calling `main` trips `clippy::main_recursion`.
     documented_function();

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Find duplicate filenames in the current directory.
@@ -48,6 +48,7 @@ fn duplicate_names(root: &Path) -> Result<Vec<OsString>> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A validated newtype: an `EmailAddress` that cannot hold invalid data, even
@@ -120,6 +120,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("{e}");

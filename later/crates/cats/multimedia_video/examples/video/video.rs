@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Encodes a short synthetic video as AV1 packets using `rav1e`.
@@ -16,28 +16,22 @@ use rav1e::prelude::Context;
 use rav1e::prelude::EncoderConfig;
 use rav1e::prelude::EncoderStatus;
 
-/// Describes the synthetic video to encode.
-struct VideoSpec {
-    /// Width in pixels.
-    width: usize,
-    /// Height in pixels.
-    height: usize,
-    /// Number of frames to encode.
-    frames: u64,
-}
-
 /// Fills the next frame with a horizontal luma gradient that shifts by
 /// `shift` samples, so that consecutive frames differ.
 fn send_frame(context: &mut Context<u8>, shift: usize) -> Result<()> {
-    // The frame is allocated by the context, which knows the pixel format,
-    // the chroma subsampling and the padding that this encoder needs.
+    // Creating the frame via `context.new_frame()` ensures that the frame
+    // buffer matches the encoder context configuration, including the pixel
+    // format, color space, chroma subsampling, and internal memory padding.
+    // Video codecs like AV1 process blocks (such as 64x64 or 128x128 superblocks)
+    // that extend beyond the visible video boundary, requiring padded borders.
     let mut frame = context.new_frame();
     for (index, plane) in frame.planes.iter_mut().enumerate() {
         let plane_width = plane.cfg.width;
         let plane_height = plane.cfg.height;
         for row in plane.rows_iter_mut() {
             for (x, sample) in row.iter_mut().enumerate() {
-                // Plane 0 is luma; planes 1 and 2 are chroma, left neutral.
+                // Plane 0 is luma (brightness); planes 1 and 2 are chroma (color difference).
+                // Luma is varied over time to create visible motion, while chroma is neutral (128).
                 *sample = if index == 0 {
                     ((x + shift) % 256) as u8
                 } else {
@@ -45,27 +39,35 @@ fn send_frame(context: &mut Context<u8>, shift: usize) -> Result<()> {
                 };
             }
         }
-        // The encoder reads blocks that extend past the visible area, so the
-        // edge samples are replicated into the padding.
+        // The encoder operates on blocks that often extend beyond the visible canvas.
+        // Replicating border pixels into the surrounding padding prevents compression
+        // artifacts at image edges.
         plane.pad(plane_width, plane_height);
     }
     context.send_frame(frame)?;
     Ok(())
 }
 
-/// Encodes the synthetic video and returns the number of packets produced.
-fn encode(spec: &VideoSpec) -> Result<usize> {
-    // Speed preset 10 is the fastest and the least efficient.
+/// Encodes a synthetic video of the given dimensions and frame count,
+/// returning the number of packets produced.
+fn encode(width: usize, height: usize, frames: u64) -> Result<usize> {
+    // Speed preset 10 represents the fastest encoding tier with the lowest
+    // compression efficiency, making it ideal for quick test runs and real-time streaming.
+    // AV1 encoders evaluate multiple prediction modes, transform sizes, and motion vectors;
+    // higher speed presets disable the most computationally expensive search passes.
     let mut encoder_config = EncoderConfig::with_speed_preset(10);
-    encoder_config.width = spec.width;
-    encoder_config.height = spec.height;
+    encoder_config.width = width;
+    encoder_config.height = height;
 
+    // Wrap the low-level encoder settings in an immutable overall configuration.
     let config = Config::default().with_encoder_config(encoder_config);
-    // The context owns the encoder state; the sample type (`u8`) matches the
-    // 8-bit pixels written above.
+
+    // Initialize the encoder context from the configuration. The context maintains the
+    // internal encoder state machine, reference frame buffers, rate control models, and
+    // packet queuing. The generic type parameter `u8` specifies 8-bit color depth per channel.
     let mut context = config.new_context::<u8>()?;
 
-    for frame_index in 0..spec.frames {
+    for frame_index in 0..frames {
         send_frame(&mut context, frame_index as usize * 4)?;
     }
     // Tell the encoder that no more frames follow so it emits what it holds.
@@ -99,16 +101,11 @@ fn encode(spec: &VideoSpec) -> Result<usize> {
 
 /// Encodes ten 64-by-64 frames.
 fn main() -> Result<()> {
-    let spec = VideoSpec {
-        width: 64,
-        height: 64,
-        frames: 10,
-    };
-    let packet_count = encode(&spec)?;
-    println!(
-        "Encoded {} frame(s) into {packet_count} AV1 packet(s).",
-        spec.frames
-    );
+    let width = 64;
+    let height = 64;
+    let frames = 10;
+    let packet_count = encode(width, height, frames)?;
+    println!("Encoded {frames} frame(s) into {packet_count} AV1 packet(s).");
     Ok(())
 }
 // ANCHOR_END: example
@@ -125,24 +122,21 @@ mod tests {
     /// Every frame of a short video is encoded into a packet, offline.
     #[test]
     fn encodes_every_frame() {
-        let spec = VideoSpec {
-            width: 64,
-            height: 64,
-            frames: 5,
-        };
-        let packet_count = encode(&spec).expect("synthetic frames should encode");
+        let packet_count = encode(64, 64, 5).expect("synthetic frames should encode");
         assert_eq!(packet_count, 5);
+    }
+
+    /// Verifies encoding with non-square custom frame dimensions passed as arguments.
+    #[test]
+    fn encodes_custom_dimensions() {
+        let packet_count = encode(80, 48, 2).expect("custom dimensions should encode");
+        assert_eq!(packet_count, 2);
     }
 
     /// A frame size the encoder cannot use is reported as an error.
     #[test]
     fn rejects_an_empty_frame_size() {
-        let spec = VideoSpec {
-            width: 0,
-            height: 0,
-            frames: 1,
-        };
-        assert!(encode(&spec).is_err());
+        assert!(encode(0, 0, 1).is_err());
     }
 
     /// The example runs through its entry point.

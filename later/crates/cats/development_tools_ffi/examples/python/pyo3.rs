@@ -1,5 +1,5 @@
 #![cfg(any(target_os = "linux", target_os = "windows"))]
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Calls embedded Python code and passes it positional arguments with PyO3.

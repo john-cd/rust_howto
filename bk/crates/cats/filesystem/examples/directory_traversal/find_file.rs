@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to traverse a directory and find files that
@@ -54,6 +54,7 @@ fn recently_modified(root: &Path) -> Result<Vec<PathBuf>> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

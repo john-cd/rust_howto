@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! The `kanal` crate is used for inter-thread communication, similar to Rust's
@@ -55,6 +55,7 @@ async fn consumer(rx: AsyncReceiver<i32>) -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

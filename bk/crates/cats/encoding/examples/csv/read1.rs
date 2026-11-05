@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates deserializing CSV records into a struct.
@@ -46,6 +46,7 @@ fn main() -> Result<(), csv::Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), csv::Error> {
     main()
 }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Seals a secret under a passphrase: Argon2id derives a key, and
@@ -170,6 +170,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("{e:#}");

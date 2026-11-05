@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to use the `ring` crate to generate an HMAC
@@ -46,6 +46,7 @@ fn main() -> Result<(), Unspecified> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Unspecified> {
     main()
 }

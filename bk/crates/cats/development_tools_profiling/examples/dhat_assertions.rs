@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Asserts on heap allocations in a test with `dhat`.
@@ -24,6 +24,7 @@ fn main() {
     run();
 }
 
+/// Runs the example.
 pub fn run() {
     println!("{}", with_capacity(&["a", "b", "c"]));
 }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 #![expect(dead_code, reason = "needs AWS credentials (SES); the tests use mocks")]
 // ANCHOR: example

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! The `derive_more` crate extends Rust's built-in derive functionality to
@@ -137,6 +137,7 @@ fn transfer_amount(from: &mut Amount, to: &mut Amount, value: Amount) -> Result<
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

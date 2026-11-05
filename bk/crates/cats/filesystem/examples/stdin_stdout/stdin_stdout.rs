@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Reading from standard input and writing to standard output.
@@ -44,6 +44,7 @@ fn main() -> io::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> io::Result<()> {
     main()
 }

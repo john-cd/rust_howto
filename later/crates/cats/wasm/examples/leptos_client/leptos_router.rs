@@ -1,5 +1,5 @@
 #![allow(clippy::same_name_method)]
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Nested routes, a route parameter and a not-found route with

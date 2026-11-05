@@ -4,7 +4,7 @@
 //! so you do not pay for starting a thread for each job. Each pixel of a
 //! fractal image can be computed independently, which makes it a good fit.
 
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 use std::fs;
 use std::path::Path;

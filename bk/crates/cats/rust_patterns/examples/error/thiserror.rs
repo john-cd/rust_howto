@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Defining an error type with `thiserror`.
@@ -71,6 +71,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
 }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This function demonstrates inserting data into a SQLite database and then
@@ -24,26 +24,30 @@ struct Cat {
     color: String,
 }
 
-/// This function demonstrates inserting data into a SQLite database and then
-/// selecting it back.
-fn main() -> Result<Vec<Cat>> {
-    let conn = Connection::open_in_memory()?;
+/// Creates the `cat_colors` and `cats` tables.
+///
+/// # Errors
+///
+/// Returns an error if the tables already exist or SQLite rejects the statements.
+fn create_schema(conn: &Connection) -> Result<()> {
     conn.execute_batch(
         "CREATE TABLE cat_colors (id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE);
          CREATE TABLE cats (id INTEGER PRIMARY KEY, name TEXT NOT NULL, color_id INTEGER NOT NULL);",
-    )?;
+    )
+}
 
-    // Create a HashMap to store cat colors and their corresponding names.
-    let mut cat_colors = HashMap::new();
-    cat_colors.insert(String::from("Blue"), vec!["Tigger", "Sammy"]);
-    cat_colors.insert(String::from("Black"), vec!["Oreo", "Biscuit"]);
-
+/// Inserts each color, then every cat of that color, using prepared statements.
+///
+/// # Errors
+///
+/// Returns an error if a color is inserted twice or the tables do not exist.
+fn insert_cats(conn: &Connection, cat_colors: &HashMap<String, Vec<&str>>) -> Result<()> {
     // Prepare SQL statements for inserting cat colors and cats outside the
     // loop.
     let mut color_stmt = conn.prepare("INSERT INTO cat_colors (name) values (?1)")?;
     let mut cat_stmt = conn.prepare("INSERT INTO cats (name, color_id) values (?1, ?2)")?;
 
-    for (color, catnames) in &cat_colors {
+    for (color, catnames) in cat_colors {
         color_stmt.execute([color])?;
         // Get the SQLite rowid of the most recent successful INSERT.
         let last_id = conn.last_insert_rowid();
@@ -54,7 +58,15 @@ fn main() -> Result<Vec<Cat>> {
             cat_stmt.execute(rusqlite::params![cat, last_id])?;
         }
     }
+    Ok(())
+}
 
+/// Selects every cat together with the name of its color.
+///
+/// # Errors
+///
+/// Returns an error if the tables do not exist or a row cannot be read.
+fn select_cats(conn: &Connection) -> Result<Vec<Cat>> {
     // Prepare a SQL statement to select cat names and their corresponding
     // colors.
     let mut stmt = conn.prepare(
@@ -71,7 +83,23 @@ fn main() -> Result<Vec<Cat>> {
         })
     })?;
 
-    let cats: Vec<Cat> = cats.collect::<Result<_>>()?;
+    cats.collect()
+}
+
+/// This function demonstrates inserting data into a SQLite database and then
+/// selecting it back.
+fn main() -> Result<Vec<Cat>> {
+    let conn = Connection::open_in_memory()?;
+    create_schema(&conn)?;
+
+    // Create a HashMap to store cat colors and their corresponding names.
+    let mut cat_colors = HashMap::new();
+    cat_colors.insert(String::from("Blue"), vec!["Tigger", "Sammy"]);
+    cat_colors.insert(String::from("Black"), vec!["Oreo", "Biscuit"]);
+
+    insert_cats(&conn, &cat_colors)?;
+
+    let cats = select_cats(&conn)?;
     for cat in &cats {
         println!("Found cat {cat:?}: {} is {}", cat.name, cat.color);
     }
@@ -80,6 +108,7 @@ fn main() -> Result<Vec<Cat>> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main().map(|_| ())
 }
@@ -149,6 +178,45 @@ mod tests {
             baseline_duration.as_secs_f64() / optimized_duration.as_secs_f64()
         );
 
+        Ok(())
+    }
+
+    /// An empty input inserts nothing and selects nothing.
+    #[test]
+    fn insert_and_select_with_no_cats_is_empty() -> Result<()> {
+        let conn = Connection::open_in_memory()?;
+        create_schema(&conn)?;
+        insert_cats(&conn, &HashMap::new())?;
+        assert!(select_cats(&conn)?.is_empty());
+        Ok(())
+    }
+
+    /// A color without cats leaves no joined rows.
+    #[test]
+    fn color_without_cats_is_not_selected() -> Result<()> {
+        let conn = Connection::open_in_memory()?;
+        create_schema(&conn)?;
+        let colors = HashMap::from([(String::from("Grey"), vec![])]);
+        insert_cats(&conn, &colors)?;
+        assert!(select_cats(&conn)?.is_empty());
+        Ok(())
+    }
+
+    /// Creating the schema twice fails instead of silently succeeding.
+    #[test]
+    fn creating_the_schema_twice_is_an_error() -> Result<()> {
+        let conn = Connection::open_in_memory()?;
+        create_schema(&conn)?;
+        assert!(create_schema(&conn).is_err());
+        Ok(())
+    }
+
+    /// Inserting before the schema exists reports an error.
+    #[test]
+    fn inserting_without_a_schema_is_an_error() -> Result<()> {
+        let conn = Connection::open_in_memory()?;
+        let colors = HashMap::from([(String::from("Blue"), vec!["Tigger"])]);
+        assert!(insert_cats(&conn, &colors).is_err());
         Ok(())
     }
 

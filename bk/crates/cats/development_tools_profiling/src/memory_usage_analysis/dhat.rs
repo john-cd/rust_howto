@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! `dhat` provides heap profiling and ad-hoc profiling capabilities,
@@ -89,6 +89,7 @@ fn main() {
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

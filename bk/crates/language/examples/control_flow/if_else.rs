@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! `if`, `else if` and `else` expressions.
@@ -34,6 +34,7 @@ fn main() {
 // All branches of an `if/else` expression must evaluate to the same type.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

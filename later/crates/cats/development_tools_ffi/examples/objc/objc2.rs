@@ -1,18 +1,19 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Convert a Rust string with the typed Objective-C Foundation bindings.
 //!
-//! Objective-C is the language of Apple's Foundation and AppKit frameworks,
-//! which macOS and iOS apps use. `objc2` provides typed bindings, so Rust code
-//! can call them. This example runs on Apple platforms only.
+//! Objective-C is the primary native object-oriented language for Apple's
+//! Foundation and AppKit frameworks on macOS and iOS. The `objc2` crate family
+//! offers strongly typed bindings to call Objective-C APIs directly from Rust.
+//! This example requires an Apple target and the `objc` feature.
 
 #[cfg(all(target_vendor = "apple", feature = "objc"))]
 use objc2::rc::Retained;
 #[cfg(all(target_vendor = "apple", feature = "objc"))]
 use objc2_foundation::NSString;
 
-/// Creates an owned Foundation string and checks its Rust round trip.
+/// Creates an owned Foundation string and verifies the Rust string round trip.
 fn main() {
     #[cfg(all(target_vendor = "apple", feature = "objc"))]
     {
@@ -29,7 +30,10 @@ fn main() {
 
 /// Runs the Foundation example or its platform fallback.
 pub fn run() {
-    main();
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
+    let entry = main;
+    entry();
 }
 
 #[cfg(test)]
@@ -42,4 +46,3 @@ mod tests {
         main();
     }
 }
-// [finish; fix; https://docs.rs/objc2/latest/objc2/](https://github.com/john-cd/rust_howto/issues/1034)

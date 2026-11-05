@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A trait method with a default implementation.
@@ -52,6 +52,7 @@ fn main() {
 // Adapted from <https://doc.rust-lang.org/book/ch10-02-traits.html>.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

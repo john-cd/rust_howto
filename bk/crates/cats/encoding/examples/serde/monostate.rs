@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to use the `monostate` crate with `serde` to
@@ -66,6 +66,7 @@ fn main() {
 // Example adapted from <https://github.com/dtolnay/monostate/blob/master/tests/test.rs>.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

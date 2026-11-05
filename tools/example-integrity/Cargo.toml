@@ -21,7 +21,12 @@ toml.workspace = true
 walkdir.workspace = true
 
 [dev-dependencies]
+criterion.workspace = true
 tempfile.workspace = true
+
+[[bench]]
+name = "audit"
+harness = false
 
 [lints]
 workspace = true

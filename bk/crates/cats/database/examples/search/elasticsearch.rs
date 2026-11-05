@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This module provides examples of interacting with Elasticsearch using the
@@ -240,6 +240,7 @@ async fn cat_indices(client: Elasticsearch) -> anyhow::Result<Response> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Creating temporary files and directories with `tempfile`.
@@ -114,6 +114,7 @@ fn main() -> std::io::Result<()> {
 // Examples adapted from <https://docs.rs/tempfile>.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> std::io::Result<()> {
     main()
 }

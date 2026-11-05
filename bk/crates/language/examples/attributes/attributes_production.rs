@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Typical lint attributes for production code.
@@ -45,6 +45,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub(crate) fn run() {
     main();
 }

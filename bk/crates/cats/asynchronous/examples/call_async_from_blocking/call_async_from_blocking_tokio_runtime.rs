@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Calls `async` code from blocking code by building a Tokio runtime by hand.
@@ -54,6 +54,7 @@ async fn my_bg_task(i: u64) {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

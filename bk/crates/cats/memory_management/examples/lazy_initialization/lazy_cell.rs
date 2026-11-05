@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 //! Lazily initializes a single-threaded value with `std::cell::LazyCell`.
@@ -17,6 +17,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

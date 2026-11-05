@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Configures and initializes the logging system using log4rs.
@@ -47,6 +47,7 @@ fn file_appender(path: impl AsRef<Path>) -> Result<FileAppender> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to serialize and deserialize a `DMatrix` using
@@ -34,6 +34,7 @@ fn main() -> Result<(), std::io::Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), std::io::Error> {
     main()
 }

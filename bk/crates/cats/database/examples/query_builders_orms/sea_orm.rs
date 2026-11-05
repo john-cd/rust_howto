@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Build `SeaORM` queries from an inline entity definition.
@@ -67,6 +67,7 @@ fn build_queries() -> (String, String) {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), DbErr> {
     main()
 }

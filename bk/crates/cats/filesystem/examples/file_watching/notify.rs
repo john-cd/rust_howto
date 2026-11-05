@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Add to your `Cargo.toml`:
@@ -47,6 +47,7 @@ fn watch_for_write(dir: &Path) -> anyhow::Result<notify::Event> {
 // Look for additional examples in <https://github.com/notify-rs/notify/tree/main/examples>.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Example of using the `flagset` crate to define and use bit flags.
@@ -60,6 +60,7 @@ fn main() {
 // Adapted from <https://docs.rs/flagset>
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

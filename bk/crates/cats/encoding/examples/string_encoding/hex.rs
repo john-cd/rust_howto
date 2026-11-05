@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Example of encoding and decoding a string using hexadecimal encoding.
@@ -30,6 +30,7 @@ fn main() -> Result<(), DecodeError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), DecodeError> {
     main()
 }

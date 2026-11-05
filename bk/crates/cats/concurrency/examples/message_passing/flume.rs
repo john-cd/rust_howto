@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Channels from the `flume` crate: bounded and unbounded, sync and async, and
@@ -79,6 +79,7 @@ fn select() -> (bool, i32) {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

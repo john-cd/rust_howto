@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to use the `HEAD` method to check if a
@@ -34,6 +34,7 @@ async fn main() -> reqwest::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> reqwest::Result<()> {
     main()
 }

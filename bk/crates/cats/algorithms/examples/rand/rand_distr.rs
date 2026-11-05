@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to sample from a normal distribution.
@@ -22,6 +22,7 @@ fn main() -> Result<(), NormalError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), NormalError> {
     main()
 }

@@ -1,4 +1,6 @@
 //! Hidden chapter fixture used to verify book preprocessing.
+//!
+//! TODO Reviewed ??-??-2026.
 
 // THIS IS HIDDEN
 
@@ -18,8 +20,6 @@
 // ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 // exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
 // aute irure dolor in reprehenderit
-
-// TODO Reviewed ??-??-2026.
 
 // ANCHOR: component
 /// Component fixture containing the float field used by the scrubber example.

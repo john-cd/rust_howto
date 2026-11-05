@@ -58,6 +58,7 @@ fn collect_dependencies(crate_info: &CrateInfo, dependencies: &mut BTreeSet<(Str
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

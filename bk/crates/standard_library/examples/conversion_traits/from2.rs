@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Converting custom errors from different sources.
@@ -66,6 +66,7 @@ fn main() -> Result<(), MyError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), MyError> {
     main()
 }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates move semantics in Rust.
@@ -25,6 +25,7 @@ fn main() {
 // of scope.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

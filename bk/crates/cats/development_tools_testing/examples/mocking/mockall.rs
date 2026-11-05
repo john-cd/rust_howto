@@ -4,6 +4,7 @@
 //! `mockall` generates a mock from a trait, lets you set the expected calls and
 //! return values, and fails the test when the expectations are not met.
 
+/// Runs the example.
 pub fn run() {
     main();
 }

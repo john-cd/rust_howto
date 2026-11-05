@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // Enabled by the `zenoh` Cargo feature. The workspace pins Zenoh's transport
 // to the upstream fix for `lz4_flex`.

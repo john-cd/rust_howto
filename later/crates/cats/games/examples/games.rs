@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A minimal game example using the `macroquad` rendering engine.
@@ -22,37 +22,76 @@ fn triangle_points(center: Vec2, radius: f32, angle: f32) -> [Vec2; 3] {
     })
 }
 
+/// Represents the dynamic visual state of the game.
+#[derive(Debug, Clone, Copy, PartialEq)]
+struct GameState {
+    /// The current rotation angle of the triangle in radians.
+    angle: f32,
+    /// The fill color of the rotating triangle.
+    color: Color,
+}
+
+impl GameState {
+    /// Creates a new default game state with zero rotation and blue color.
+    fn new() -> Self {
+        Self {
+            angle: 0.0,
+            color: BLUE,
+        }
+    }
+
+    /// Advances the rotation angle by elapsed time and updates color if requested.
+    fn update(
+        &mut self,
+        space_pressed: bool,
+        delta_time: f32,
+        color_provider: impl FnOnce() -> Color,
+    ) {
+        if space_pressed {
+            self.color = color_provider();
+        }
+        self.angle += delta_time;
+    }
+}
+
+/// Generates a random RGBA color with full opacity.
+fn random_color() -> Color {
+    Color::new(
+        rand::gen_range(0.0, 1.0),
+        rand::gen_range(0.0, 1.0),
+        rand::gen_range(0.0, 1.0),
+        1.0,
+    )
+}
+
+/// Renders a single frame displaying the triangle and instruction overlay.
+fn draw_frame(state: &GameState) {
+    clear_background(BLACK);
+
+    let center = vec2(screen_width() / 2.0, screen_height() / 2.0);
+    let points = triangle_points(center, TRIANGLE_RADIUS, state.angle);
+
+    draw_triangle(points[0], points[1], points[2], state.color);
+    draw_text(
+        "Press SPACE to change color",
+        16.0,
+        screen_height() - 20.0,
+        24.0,
+        WHITE,
+    );
+}
+
 /// Draws a rotating shape whose color changes when the space key is pressed.
 #[macroquad::main("Rendering Engine Example")]
 async fn main() {
-    let mut angle: f32 = 0.0;
-    let mut color = BLUE;
+    let mut state = GameState::new();
 
     loop {
-        clear_background(BLACK);
+        let space_pressed = is_key_pressed(KeyCode::Space);
+        state.update(space_pressed, get_frame_time(), random_color);
 
-        if is_key_pressed(KeyCode::Space) {
-            color = Color::new(
-                rand::gen_range(0.0, 1.0),
-                rand::gen_range(0.0, 1.0),
-                rand::gen_range(0.0, 1.0),
-                1.0,
-            );
-        }
+        draw_frame(&state);
 
-        let center = vec2(screen_width() / 2.0, screen_height() / 2.0);
-        let points = triangle_points(center, TRIANGLE_RADIUS, angle);
-
-        draw_triangle(points[0], points[1], points[2], color);
-        draw_text(
-            "Press SPACE to change color",
-            16.0,
-            screen_height() - 20.0,
-            24.0,
-            WHITE,
-        );
-
-        angle += get_frame_time();
         next_frame().await;
     }
 }
@@ -85,6 +124,58 @@ mod tests {
 
         let [rotated, ..] = triangle_points(center, 100.0, PI / 2.0);
         assert!((rotated - vec2(0.0, 100.0)).length() < 1e-3);
+    }
+
+    /// Verifies that `GameState::new` initializes angle to 0.0 and color to BLUE.
+    #[test]
+    fn game_state_initializes_with_defaults() {
+        let state = GameState::new();
+        assert_eq!(state.angle, 0.0);
+        assert_eq!(state.color, BLUE);
+    }
+
+    /// Verifies that `GameState::update` increments the angle by delta_time and preserves color
+    /// when space is not pressed.
+    #[test]
+    fn update_advances_angle_without_changing_color_when_space_not_pressed() {
+        let mut state = GameState::new();
+        let mut provider_called = false;
+        state.update(false, 0.5, || {
+            provider_called = true;
+            RED
+        });
+
+        assert!(!provider_called);
+        assert!((state.angle - 0.5).abs() < f32::EPSILON);
+        assert_eq!(state.color, BLUE);
+    }
+
+    /// Verifies that `GameState::update` updates the color when space key is pressed.
+    #[test]
+    fn update_changes_color_when_space_is_pressed() {
+        let mut state = GameState::new();
+        let mut provider_called = false;
+        state.update(true, 0.25, || {
+            provider_called = true;
+            RED
+        });
+
+        assert!(provider_called);
+        assert!((state.angle - 0.25).abs() < f32::EPSILON);
+        assert_eq!(state.color, RED);
+    }
+
+    /// Verifies that `random_color` produces valid RGB components between 0 and 1 with an alpha of
+    /// 1.
+    #[test]
+    fn random_color_generates_valid_rgba_bounds() {
+        for _ in 0..100 {
+            let color = random_color();
+            assert!((0.0..=1.0).contains(&color.r));
+            assert!((0.0..=1.0).contains(&color.g));
+            assert!((0.0..=1.0).contains(&color.b));
+            assert_eq!(color.a, 1.0);
+        }
     }
 
     // output-only: the example draws into a window until it is closed.

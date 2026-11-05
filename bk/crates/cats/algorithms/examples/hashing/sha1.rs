@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! SHA-1 hashing with the `sha1` crate. SHA-1 is broken; do not use it for
@@ -38,6 +38,7 @@ fn main() {
 // Example adapted from <https://docs.rs/sha1/0.11.0/sha1/index.html>.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

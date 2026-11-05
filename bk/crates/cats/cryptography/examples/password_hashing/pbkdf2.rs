@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Demonstrates the use of PBKDF2 for password hashing and verification.
@@ -29,7 +29,10 @@ fn main() -> Result<(), Unspecified> {
     let mut salt = [0u8; CREDENTIAL_LEN];
     rng.fill(&mut salt)?;
 
-    let password = "Guess Me If You Can!";
+    // Password to be hashed (in production, avoid hardcoding passwords and read
+    // from environment or secrets store):
+    let password = std::env::var("APP_PASSWORD")
+        .unwrap_or_else(|_| "sample_password_for_demo_only".to_owned());
     let mut pbkdf2_hash = [0u8; CREDENTIAL_LEN];
     pbkdf2::derive(
         pbkdf2::PBKDF2_HMAC_SHA512,
@@ -65,6 +68,7 @@ fn main() -> Result<(), Unspecified> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), Unspecified> {
     main()
 }
@@ -77,6 +81,46 @@ mod tests {
     /// Runs the pbkdf2 example through its entry point.
     #[test]
     fn test_pbkdf2_example_entry_point() {
-        println!("{:?}", main());
+        assert!(main().is_ok());
+    }
+
+    /// Verifies that PBKDF2 hash verification succeeds for matching passwords
+    /// and rejects incorrect attempts.
+    #[test]
+    fn test_pbkdf2_verification_rejects_wrong_password() {
+        const CREDENTIAL_LEN: usize = digest::SHA512_OUTPUT_LEN;
+        let n_iter = NonZeroU32::new(10_000).expect("iteration count should be non-zero");
+        let rng = rand::SystemRandom::new();
+        let mut salt = [0u8; CREDENTIAL_LEN];
+        rng.fill(&mut salt)
+            .expect("random salt generation should succeed");
+
+        let password = "custom_test_password";
+        let mut hash = [0u8; CREDENTIAL_LEN];
+        pbkdf2::derive(
+            pbkdf2::PBKDF2_HMAC_SHA512,
+            n_iter,
+            &salt,
+            password.as_bytes(),
+            &mut hash,
+        );
+
+        let verification_success = pbkdf2::verify(
+            pbkdf2::PBKDF2_HMAC_SHA512,
+            n_iter,
+            &salt,
+            password.as_bytes(),
+            &hash,
+        );
+        assert!(verification_success.is_ok());
+
+        let verification_failure = pbkdf2::verify(
+            pbkdf2::PBKDF2_HMAC_SHA512,
+            n_iter,
+            &salt,
+            b"wrong_password",
+            &hash,
+        );
+        assert!(verification_failure.is_err());
     }
 }

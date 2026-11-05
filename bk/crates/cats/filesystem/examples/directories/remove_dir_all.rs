@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Add to `Cargo.toml`:
@@ -54,6 +54,7 @@ fn remove_tree(base: &Path) -> io::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> io::Result<()> {
     main()
 }
