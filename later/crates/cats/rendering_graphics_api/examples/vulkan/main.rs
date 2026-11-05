@@ -1,7 +1,6 @@
-//! Loads the Vulkan library with `ash` and reports the instance version.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Loads the Vulkan library with `ash` and reports the instance version.
 // ANCHOR: example
 use ash::Entry;
 use ash::vk;

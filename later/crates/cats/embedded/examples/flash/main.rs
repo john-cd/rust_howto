@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 use embedded_storage::nor_flash::ErrorType;

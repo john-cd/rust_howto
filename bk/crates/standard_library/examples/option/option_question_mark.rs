@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! The `?` operator shines when we have a sequence of operations, each of

@@ -1,7 +1,6 @@
-//! Encodes messages with `postcard` into a bounded `heapless` queue.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Encodes messages with `postcard` into a bounded `heapless` queue.
 // ANCHOR: example
 use heapless::Deque;
 use heapless::Vec;

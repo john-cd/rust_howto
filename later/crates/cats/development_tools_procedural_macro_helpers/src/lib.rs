@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026.
+
 //! Procedural macros used by the workspace's macro examples.
 
 use darling::FromDeriveInput;
@@ -23,8 +25,6 @@ pub fn my_macro(input: TokenStream) -> TokenStream {
         };
     TokenStream::from(expanded)
 }
-
-// TODO Reviewed ??-??-2026.
 
 // ANCHOR: attribute_macro
 /// This is an attribute macro example.

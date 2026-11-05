@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Model-checks a publication and cancellation protocol with `loom`.

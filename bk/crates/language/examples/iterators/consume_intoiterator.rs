@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Consuming any `IntoIterator` in a generic function.

@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Serves the Prometheus payload from an Axum `/metrics` route.

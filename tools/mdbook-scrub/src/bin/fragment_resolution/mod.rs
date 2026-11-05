@@ -1,6 +1,6 @@
 //! Resolves local Markdown fragments for the mdBook linkcheck adapter.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::collections::HashMap;
 use std::collections::HashSet;

@@ -1,4 +1,6 @@
 //! Criterion benchmarks for chapter parsing, include anchoring, and module graph traversal.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::fmt::Write as _;
 use std::fs;

@@ -1,6 +1,6 @@
-#![cfg_attr(
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
+#![cfg_attr(
     not(test),
     expect(
         dead_code,

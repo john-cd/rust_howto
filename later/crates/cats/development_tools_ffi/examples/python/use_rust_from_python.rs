@@ -1,6 +1,6 @@
-#![cfg(any(target_os = "linux", target_os = "windows"))]
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+#![cfg(any(target_os = "linux", target_os = "windows"))]
 // ANCHOR: example
 //! Demonstrates how to define a PyO3 Python module in Rust, register it with
 //! `sys.modules`, and invoke its Rust function and class from embedded Python.

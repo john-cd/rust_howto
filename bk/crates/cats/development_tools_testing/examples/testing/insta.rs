@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026.
+
 //! Snapshot testing with `insta`.
 //!
 //! A snapshot test compares the output with a reference file stored in the
@@ -9,8 +11,6 @@
 pub fn run() {
     main();
 }
-
-// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 // Snapshot testing with the `insta` crate keeps track of how your data

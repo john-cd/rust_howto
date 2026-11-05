@@ -1,7 +1,6 @@
-//! Validates a WGSL shader with `naga` and translates it to SPIR-V.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Validates a WGSL shader with `naga` and translates it to SPIR-V.
 // ANCHOR: example
 use naga::back::spv;
 use naga::front::wgsl;

@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Run untrusted WebAssembly in a `wasmtime` sandbox: a fuel budget bounds the

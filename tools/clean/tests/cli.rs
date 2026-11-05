@@ -1,6 +1,6 @@
 //! Runs the `clean` binary against temporary trees only.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::fs;
 use std::path::Path;

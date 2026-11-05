@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Draws software pixels in a native Winit window.
 //!

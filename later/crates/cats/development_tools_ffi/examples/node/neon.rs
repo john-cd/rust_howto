@@ -1,6 +1,6 @@
-#![allow(unexpected_cfgs)]
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+#![allow(unexpected_cfgs)]
 // ANCHOR: example
 //! This example demonstrates how to create a simple Neon module that exports
 //! a function to JavaScript.

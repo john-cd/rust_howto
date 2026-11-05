@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Runs the AES-GCM and ChaCha20-Poly1305 encryption examples.
+//!
+//! TODO Reviewed ??-??-2026.
 
 mod aes_gcm;
 mod chacha20poly1305;

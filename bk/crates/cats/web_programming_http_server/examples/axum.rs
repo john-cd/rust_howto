@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026.
+
 //! This module demonstrates basic usage of axum.
 //!
 //! `axum` is a web application framework designed to work with `tokio`
@@ -6,9 +8,6 @@
 //! authorization, and more, for free.
 //! See the current Axum documentation for its `Router`, extractors, and
 //! server APIs.
-//!
-//! TODO Reviewed ??-??-2026.
-
 // ANCHOR: example
 use std::collections::HashMap;
 use std::sync::Arc;

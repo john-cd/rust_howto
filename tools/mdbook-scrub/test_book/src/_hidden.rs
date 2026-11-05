@@ -1,7 +1,6 @@
-//! Hidden chapter fixture used to verify book preprocessing.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Hidden chapter fixture used to verify book preprocessing.
 // THIS IS HIDDEN
 
 // Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

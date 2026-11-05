@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Runs the metrics examples.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;

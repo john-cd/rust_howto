@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: pus-telecommand
 //! Create and parse a PUS-C telecommand.

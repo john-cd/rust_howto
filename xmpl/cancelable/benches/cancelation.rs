@@ -1,4 +1,6 @@
 //! Criterion benchmarks for task submission, registry contention, and cancellation latency.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::hint::black_box;
 use std::thread;

@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Uses a newtype so user identifiers cannot be confused with arbitrary

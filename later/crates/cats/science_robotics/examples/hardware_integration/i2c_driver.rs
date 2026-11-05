@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026.
+
 //! Generic I2C driver example using `embedded-hal` 1.0 traits.
 //!
 //! I2C is a two-wire bus that connects a controller (such as a robot's
@@ -7,9 +9,6 @@
 //! defines traits for such buses, so a driver written against them works on
 //! any board. Here a mock bus replaces real hardware, so the example runs on a
 //! normal computer.
-//!
-//! TODO Reviewed ??-??-2026.
-
 // ANCHOR: example
 use embedded_hal::i2c::I2c;
 use embedded_hal_mock::eh1::i2c::Mock;

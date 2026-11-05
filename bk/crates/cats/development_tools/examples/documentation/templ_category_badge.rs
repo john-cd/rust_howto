@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Generate a category badge with the shared `templ` renderer.
 //!

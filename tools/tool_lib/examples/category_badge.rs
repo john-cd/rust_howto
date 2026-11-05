@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Constructing category badges using `tool_lib`.
 //!

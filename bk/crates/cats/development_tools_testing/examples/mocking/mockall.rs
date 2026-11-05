@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026.
+
 //! Mocking a trait with `mockall`.
 //!
 //! A mock replaces a real dependency (a database or a web service) in a test.
@@ -8,8 +10,6 @@
 pub fn run() {
     main();
 }
-
-// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 // This example demonstrates how to use the `mockall` crate for mocking.

@@ -2,6 +2,8 @@
 //!
 //! Verifies worker lifecycle, cancellation behavior under high queue load,
 //! and thread termination across independent process invocations.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::process::Command;
 use std::thread;

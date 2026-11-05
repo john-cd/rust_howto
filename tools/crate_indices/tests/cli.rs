@@ -1,6 +1,6 @@
 //! Runs the `crate-indices` binary against temporary fixtures only.
 //!
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 use std::fs;
 use std::path::Path;

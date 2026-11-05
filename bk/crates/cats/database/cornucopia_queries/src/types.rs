@@ -1,3 +1,3 @@
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 // This file was generated with `cornucopia`. Do not modify.

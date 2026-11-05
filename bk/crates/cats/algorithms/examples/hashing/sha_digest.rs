@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! SHA-256 digest of a file's contents with `ring`, printed as hexadecimal.

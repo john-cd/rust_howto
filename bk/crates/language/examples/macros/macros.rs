@@ -1,6 +1,6 @@
-#![allow(clippy::useless_vec)]
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+#![allow(clippy::useless_vec)]
 // ANCHOR: example
 //! Ways to use function-like macros: as expressions, statements, items and
 //! types.

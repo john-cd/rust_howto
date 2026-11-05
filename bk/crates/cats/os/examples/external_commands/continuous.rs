@@ -1,6 +1,6 @@
-#![cfg(target_os = "linux")]
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+#![cfg(target_os = "linux")]
 // ANCHOR: example
 //! This example demonstrates how to continuously read from the standard output
 //! of an external command, filter the output, and print the filtered lines. It

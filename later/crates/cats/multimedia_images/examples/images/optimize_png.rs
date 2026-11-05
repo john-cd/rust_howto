@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Optimizes a generated PNG and verifies its decoded pixels.
 //!

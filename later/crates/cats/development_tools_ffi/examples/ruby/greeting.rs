@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Ruby-independent greeting logic shared with the native example.
+//!
+//! TODO Reviewed ??-??-2026.
 
 /// Returns the text exposed by the Ruby example.
 pub fn message() -> String {

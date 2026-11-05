@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Draw shapes into an in-memory image with `skia-safe` (CPU raster, no GPU or

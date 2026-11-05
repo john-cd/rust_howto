@@ -1,7 +1,6 @@
-//! Writing and reading a ZIP archive asynchronously with `async_zip`.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Writing and reading a ZIP archive asynchronously with `async_zip`.
 // ANCHOR: example
 
 use anyhow::Context as _;

@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A bounded worker pool with `JoinSet`: keep at most `LIMIT` tasks running,

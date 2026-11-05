@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Runs the build information example.
+//!
+//! TODO Reviewed ??-??-2026.
 
 mod build_info;
 

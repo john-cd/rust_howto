@@ -1,6 +1,8 @@
 //! Renders category and Rust By Example badges without any network access.
 //!
 //! Run with `cargo run -p tool_lib --example badges`.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use tool_lib::create_category_badge;
 use tool_lib::create_rbe_badge;

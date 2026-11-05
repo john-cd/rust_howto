@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Finds the closest measurement in a small three-dimensional point cloud.
 //!

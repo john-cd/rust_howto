@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Runs the ahead-of-time macro helper example.
+//!
+//! TODO Reviewed ??-??-2026.
 
 mod watt;
 

@@ -1,6 +1,8 @@
 //! Formats a crates-by-category page from an inline metadata snapshot.
 //!
 //! Run with `cargo run -p tool_lib --example category_page`.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use tool_lib::create_category_page_from_metadata;
 

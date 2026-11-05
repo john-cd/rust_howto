@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Runs GEOS spatial predicates and operations through the `geos` crate.
 //!

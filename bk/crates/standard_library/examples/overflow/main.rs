@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Runs examples of explicit integer overflow behavior.
+//!
+//! TODO Reviewed ??-??-2026.
 
 mod overflow_methods;
 mod wrapping_type;

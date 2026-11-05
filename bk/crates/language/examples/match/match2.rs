@@ -1,6 +1,6 @@
-#![allow(clippy::match_single_binding)]
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+#![allow(clippy::match_single_binding)]
 // ANCHOR: example
 //! Matching a struct against patterns.
 

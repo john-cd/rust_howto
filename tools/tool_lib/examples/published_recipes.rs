@@ -1,6 +1,8 @@
 //! Lists the recipes that the published book links to each crate.
 //!
 //! Run with `cargo run -p tool_lib --example published_recipes`.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::path::Path;
 

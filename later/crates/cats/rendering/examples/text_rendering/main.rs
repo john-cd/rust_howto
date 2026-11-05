@@ -1,7 +1,6 @@
-//! Rasterizes a glyph with `fontdue` and reads metrics with `ttf-parser`.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Rasterizes a glyph with `fontdue` and reads metrics with `ttf-parser`.
 // ANCHOR: example
 use fontdue::Font;
 use fontdue::FontSettings;

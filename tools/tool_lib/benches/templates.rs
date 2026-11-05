@@ -1,4 +1,6 @@
 //! Criterion benchmarks for the Markdown generation and link extraction helpers.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::collections::BTreeMap;
 use std::fmt::Write as _;

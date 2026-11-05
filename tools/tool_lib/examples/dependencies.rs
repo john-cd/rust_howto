@@ -1,6 +1,8 @@
 //! Lists the dependencies declared by the book's example crates.
 //!
 //! Run with `cargo run -p tool_lib --example dependencies`.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::path::Path;
 

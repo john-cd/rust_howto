@@ -1,6 +1,7 @@
+// TODO Reviewed ??-??-2026.
+
 //! Honour `429 Too Many Requests` and `Retry-After`.
 //!
-//! TODO Reviewed ??-??-2026.
 //!
 //! A server that is overloaded or rate limiting you answers `429 Too Many
 //! Requests`, often with a `Retry-After` header that says how long to wait.

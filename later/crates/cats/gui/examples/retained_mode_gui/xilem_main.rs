@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Standalone entry point for the Xilem counter example.
+//!
+//! TODO Reviewed ??-??-2026.
 
 #[path = "xilem.rs"]
 mod xilem;

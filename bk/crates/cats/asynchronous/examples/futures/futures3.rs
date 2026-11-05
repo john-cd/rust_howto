@@ -1,6 +1,6 @@
-#![allow(clippy::async_yields_async)]
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+#![allow(clippy::async_yields_async)]
 // ANCHOR: example
 //! # Futures
 //!

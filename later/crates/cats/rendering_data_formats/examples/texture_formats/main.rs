@@ -1,7 +1,6 @@
-//! Round-trips DDS and KTX2 container metadata without a GPU.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Round-trips DDS and KTX2 container metadata without a GPU.
 // ANCHOR: example
 use ddsfile::AlphaMode;
 use ddsfile::D3D10ResourceDimension;

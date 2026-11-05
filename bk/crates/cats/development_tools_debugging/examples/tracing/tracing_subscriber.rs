@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! - `tracing` is a framework for instrumenting Rust programs to collect scoped, structured, and

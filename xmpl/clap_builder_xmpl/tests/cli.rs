@@ -2,6 +2,8 @@
 //!
 //! Exercises full CLI binary execution with various flags, subcommands,
 //! environment variables, and error cases.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::process::Command;
 

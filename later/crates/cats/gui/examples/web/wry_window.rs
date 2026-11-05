@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
 // Preserved for reference; its Cargo example is disabled while tao/wry require
 // the affected GTK 3/glib 0.18 dependency chain.

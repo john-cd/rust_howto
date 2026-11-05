@@ -1,11 +1,11 @@
+// TODO Reviewed ??-??-2026.
+
 //! Runs a bounded pair of Embassy tasks on the host executor.
 //!
 //! Embassy is an async runtime for microcontrollers: tasks wait on timers and
 //! hardware events without blocking, so one tiny chip can do many things at
 //! once without an operating system. Here the tasks run on the host computer so
 //! the example works anywhere.
-//! TODO Reviewed ??-??-2026.
-
 // ANCHOR: example
 use std::sync::Mutex;
 use std::sync::atomic::AtomicBool;

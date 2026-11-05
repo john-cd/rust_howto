@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Loads a Haar cascade and applies it to a generated grayscale frame.
 //!

@@ -1,7 +1,6 @@
-//! Lists the serial ports that the operating system reports.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Lists the serial ports that the operating system reports.
 // ANCHOR: example
 use serialport::SerialPortInfo;
 use serialport::SerialPortType;

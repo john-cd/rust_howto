@@ -1,5 +1,3 @@
-//! TODO Reviewed ??-??-2026
-
 //! Test helper: runs a test body in a fresh process.
 //!
 //! Several examples install a process-wide logger or tracing subscriber, which
@@ -7,6 +5,8 @@
 //! example binary in one process, so those tests re-run themselves in a child
 //! process. `cargo nextest` already starts a process per test; the child is a
 //! cheap, harmless repeat there.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::process::Command;
 

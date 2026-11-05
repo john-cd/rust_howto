@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Checks the `compile_fail` snippet in the axum add-ons page with `trybuild`.
+//!
+//! TODO Reviewed ??-??-2026.
 
 /// The handler with a body extractor before `State` must fail to compile with
 /// the diagnostic that `#[debug_handler]` produces.

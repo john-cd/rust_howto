@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026
-
 //! Runs the append-only collection examples.
+//!
+//! TODO Reviewed ??-??-2026.
 
 mod frozen_map;
 mod frozen_vec;
