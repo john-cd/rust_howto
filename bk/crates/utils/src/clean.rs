@@ -150,7 +150,8 @@ mod tests {
         assert!(file_path.is_file());
     }
 
-    /// Checks that a symbolic link inside the directory is removed without deleting the link target.
+    /// Checks that a symbolic link inside the directory is removed without deleting the link
+    /// target.
     #[cfg(unix)]
     #[test]
     fn test_clean_folder_symlinks() {

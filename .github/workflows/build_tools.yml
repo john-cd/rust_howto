@@ -64,6 +64,11 @@ jobs:
         uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
 
       - name: Build local-tool-builder image
+        env:
+          # tools/ depends on the private john-cd/book_tooling repository, which the
+          # default GITHUB_TOKEN cannot read. Add a read-only PAT as the repository
+          # secret BOOK_TOOLING_TOKEN (not needed if book_tooling becomes public).
+          GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
         run: |
           source .devcontainer/.env
           cache_scope="rust_howto_tools-${RUST_VERSION}-$(sha256sum tools/Cargo.lock | cut -c1-12)"
@@ -74,6 +79,7 @@ jobs:
             --build-arg RUST_IMAGE_LABEL="$RUST_IMAGE_LABEL" \
             --cache-from type=gha,scope="$cache_scope" \
             --cache-to type=gha,mode=max,scope="$cache_scope" \
+            ${GH_TOKEN:+--secret id=github_token,env=GH_TOKEN} \
             --load .
 
       - name: Run tools tests inside container
