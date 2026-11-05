@@ -59,6 +59,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

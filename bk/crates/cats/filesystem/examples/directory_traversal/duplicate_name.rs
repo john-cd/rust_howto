@@ -48,6 +48,7 @@ fn duplicate_names(root: &Path) -> Result<Vec<OsString>> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

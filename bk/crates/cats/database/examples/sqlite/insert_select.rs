@@ -108,6 +108,7 @@ fn main() -> Result<Vec<Cat>> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main().map(|_| ())
 }

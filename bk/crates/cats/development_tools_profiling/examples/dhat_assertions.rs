@@ -24,6 +24,7 @@ fn main() {
     run();
 }
 
+/// Runs the example.
 pub fn run() {
     println!("{}", with_capacity(&["a", "b", "c"]));
 }

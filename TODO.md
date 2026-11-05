@@ -79,7 +79,7 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 ### 4. Documentation and Doc Comments
 
-- **Document public API items and non-main helpers across book examples**:
+- [x] - **Document public API items and non-main helpers across book examples**: (every `pub fn run` wrapper now documented)
   - Multiple non-generated book examples contain public functions or types without rustdoc comments (e.g., `bk/crates/cats/authentication/examples/session_login/axum_login.rs`, `bk/crates/cats/web_programming_http_server/examples/axum_extras/axum_server_tls.rs`, and `bk/crates/code_organization/examples/naming_conventions/main.rs`).
   - Add educational doc comments explaining parameters, return values, errors, and concurrency guarantees, adhering to the requirement that all comments end with a period.
 

@@ -51,6 +51,7 @@ fn create_tables(conn: &Connection) -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

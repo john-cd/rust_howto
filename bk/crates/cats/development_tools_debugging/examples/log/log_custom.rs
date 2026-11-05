@@ -47,6 +47,7 @@ fn file_appender(path: impl AsRef<Path>) -> Result<FileAppender> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

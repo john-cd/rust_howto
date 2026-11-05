@@ -79,6 +79,7 @@ fn call_sibling() {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

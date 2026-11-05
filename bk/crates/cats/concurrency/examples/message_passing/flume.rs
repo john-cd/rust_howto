@@ -79,6 +79,7 @@ fn select() -> (bool, i32) {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -41,6 +41,7 @@ West Hollywood,CA,37031,34.0900000,-118.3608333";
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

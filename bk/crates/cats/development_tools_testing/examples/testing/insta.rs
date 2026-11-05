@@ -5,6 +5,7 @@
 //! the difference and lets you accept it. It is convenient for large outputs
 //! such as generated text or JSON.
 
+/// Runs the example.
 pub fn run() {
     main();
 }

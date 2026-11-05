@@ -6,6 +6,7 @@
 
 #![allow(clippy::eq_op)]
 
+/// Runs the example.
 pub fn run() {
     main();
 }

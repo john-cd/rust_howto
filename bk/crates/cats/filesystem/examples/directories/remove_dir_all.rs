@@ -54,6 +54,7 @@ fn remove_tree(base: &Path) -> io::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> io::Result<()> {
     main()
 }

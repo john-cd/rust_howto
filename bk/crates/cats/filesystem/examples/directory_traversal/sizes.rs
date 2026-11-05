@@ -46,6 +46,7 @@ fn total_size(root: &Path) -> Result<u64> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

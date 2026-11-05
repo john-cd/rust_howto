@@ -59,6 +59,7 @@ fn main() -> Result<(), Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("credential store unavailable: {e}");
