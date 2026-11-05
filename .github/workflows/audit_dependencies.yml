@@ -172,6 +172,8 @@ jobs:
           arguments: --workspace --config ${{ matrix.config }}
           command-arguments: --hide-inclusion-graph
 env:
+  ## The cargo-deny action runs in a container without sccache, which .cargo/config.toml sets as the rustc wrapper.
+  RUSTC_WRAPPER: ""
   CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
   CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
   CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main

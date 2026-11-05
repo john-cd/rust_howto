@@ -26,7 +26,6 @@ ignore = [
   {
     id = "RUSTSEC-2026-0002",
     reason = "Dependabot reports lru 0.12.5 via trading-calendar 0.2.3; no upstream release accepts fixed lru yet. The current unsound = workspace policy excludes transitive deps. Tracked in #2116.",
-    allow = ["trading-calendar@=0.2.3"],
   },
 ]
 
