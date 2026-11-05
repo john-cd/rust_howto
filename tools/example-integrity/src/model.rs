@@ -2,10 +2,11 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+use serde::Deserialize;
 use serde::Serialize;
 
 /// The complete, deterministic inventory and its integrity diagnostics.
-#[derive(Debug, Default, Serialize)]
+#[derive(Debug, Default, Deserialize, Serialize)]
 pub struct Report {
     /// Markdown pages with their edition and navigation disposition.
     pub chapters: Vec<ChapterRecord>,
@@ -38,7 +39,7 @@ impl Report {
 }
 
 /// A Markdown page and its publication, visibility, and example state.
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct ChapterRecord {
     /// Canonical repository-relative page path.
     pub path: String,
@@ -60,7 +61,7 @@ pub struct ChapterRecord {
 }
 
 /// A Markdown fragment and the pages that include it.
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct FragmentRecord {
     /// Canonical repository-relative fragment path.
     pub path: String,
@@ -69,7 +70,7 @@ pub struct FragmentRecord {
 }
 
 /// One native or custom source reference found in Markdown.
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct IncludeRecord {
     /// Canonical repository-relative Markdown file containing the directive.
     pub source_path: String,
@@ -99,7 +100,7 @@ pub struct IncludeRecord {
 }
 
 /// A Cargo target and its source identity.
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct CargoTargetRecord {
     /// Stable identity based on the package manifest and target name.
     pub identity: String,
@@ -118,7 +119,7 @@ pub struct CargoTargetRecord {
 }
 
 /// One reachable Rust module and the conditions under which it is included.
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct ModuleRecord {
     /// Cargo target that reaches the module.
     pub target_identity: String,
@@ -131,7 +132,7 @@ pub struct ModuleRecord {
 }
 
 /// A Rust code fence that is not expanded from a source file.
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct SnippetRecord {
     /// Canonical repository-relative Markdown page or fragment.
     pub path: String,
@@ -146,7 +147,7 @@ pub struct SnippetRecord {
 }
 
 /// A Rust file anchored for inclusion and its testing or support role.
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct ExampleSourceRecord {
     /// Canonical repository-relative Rust source path.
     pub path: String,
@@ -164,7 +165,7 @@ pub struct ExampleSourceRecord {
 }
 
 /// One path-specific reason that a chapter or example may be excluded.
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct ExceptionRecord {
     /// Exact repository-relative path or directory prefix.
     pub path: String,
@@ -173,7 +174,7 @@ pub struct ExceptionRecord {
 }
 
 /// A stable diagnostic describing an integrity gap.
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct Diagnostic {
     /// Severity: error or warning.
     pub severity: String,
