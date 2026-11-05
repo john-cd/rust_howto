@@ -1,0 +1,19 @@
+# TODO Reviewed ??-??-2026
+
+edition = "2024"
+style_edition = "2024"
+unstable_features = true
+max_width = 100
+comment_width = 100
+newline_style = "Unix"
+hard_tabs = false
+tab_spaces = 4
+reorder_imports = true
+group_imports = "StdExternalCrate"
+imports_granularity = "Item"
+wrap_comments = true
+normalize_comments = true
+format_code_in_doc_comments = true
+reorder_impl_items = true
+condense_wildcard_suffixes = true
+format_macro_matchers = true

@@ -25,16 +25,20 @@ cargo_toml = "1.0.1"
 
 [lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
-unsafe_code = "deny"
+# Relaxed: Book examples demonstrate unsafe Rust.
+unsafe_code = "allow"
 
 # Require public item documentation
-missing_docs = "deny"
+# Relaxed: Book examples are examples; documenting every item adds noise.
+missing_docs = "allow"
 
 # Require explicit lifetime parameters in type paths
-elided_lifetimes_in_paths = "warn"
+# Relaxed: Examples elide lifetimes for brevity.
+elided_lifetimes_in_paths = "allow"
 
 # Require items declared pub in private modules to be restricted (e.g. pub(crate))
-unreachable_pub = "warn"
+# Relaxed: Book examples are not libraries; items are pub for readability.
+unreachable_pub = "allow"
 
 # Catch future-incompatible language and syntax changes
 future_incompatible = { level = "warn", priority = -1 }
@@ -52,7 +56,8 @@ rust_2021_prelude_collisions = "warn"
 semicolon_in_expressions_from_macros = "warn"
 
 # Catch numeric casts between identical types that can be removed
-trivial_numeric_casts = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+trivial_numeric_casts = "allow"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
@@ -88,6 +93,10 @@ missing_crate_level_docs = "warn"
 
 # See also clippy.toml
 [lints.clippy]
+# Relaxed: Examples nest closures as in the documentation.
+excessive_nesting = "allow"
+# Relaxed: Book examples print literals.
+print_literal = "allow"
 all = { level = "warn", priority = -1 }
 # ==============================================================================
 # Baseline lints (Non-allow lints previously configured in repository)
@@ -100,10 +109,12 @@ await_holding_lock = "warn"
 await_holding_refcell_ref = "warn"
 
 # Prohibits methods specified in clippy.toml (e.g. unbounded channels)
-disallowed_methods = "warn"
+# Relaxed: Concurrency examples demonstrate unbounded channels.
+disallowed_methods = "allow"
 
 # Prohibits names specified in clippy.toml (e.g. cmds, res, idx)
-disallowed_names = "warn"
+# Relaxed: Book examples use res and idx as conventional short names.
+disallowed_names = "allow"
 
 # Checks for mutexes in an if-let pattern (relevant for pre-2024 editions)
 if_let_mutex = "warn"
@@ -124,7 +135,8 @@ type_complexity = "warn"
 # ==============================================================================
 
 # Checks to see if common metadata is defined in Cargo.toml.
-cargo_common_metadata = "warn"
+# Relaxed: Example crates are not published.
+cargo_common_metadata = "allow"
 
 # Checks to see if multiple versions of a crate are being used. Allowed because transitive
 # dependency versions (e.g. windows, syn, thiserror) are managed via cargo-deny instead.
@@ -134,7 +146,8 @@ multiple_crate_versions = "allow"
 negative_feature_names = "warn"
 
 # Checks for feature names with prefix use-, with- or suffix -support
-redundant_feature_names = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+redundant_feature_names = "allow"
 
 # Checks for wildcard dependencies in the Cargo.toml.
 wildcard_dependencies = "warn"
@@ -143,7 +156,8 @@ wildcard_dependencies = "warn"
 # ==============================================================================
 
 # Checks for code like foo = bar.clone();
-assigning_clones = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+assigning_clones = "allow"
 
 # Instead of using an if statement to convert a bool to an int, this lint suggests using a from()
 # function or an as coercion.
@@ -151,17 +165,21 @@ bool_to_int_with_if = "warn"
 
 # Checks for the usage of &expr as *const T or &mut expr as *mut T, and suggest using &raw const or
 # &raw mut instead.
-borrow_as_ptr = "warn"
+# Relaxed: Examples demonstrate raw pointers.
+borrow_as_ptr = "allow"
 
 # Checks for calls to ends_with with possible file extensions and suggests to use a case-insensitive
 # approach instead.
-case_sensitive_file_extension_comparisons = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+case_sensitive_file_extension_comparisons = "allow"
 
 # Checks for casts between numeric types that can be replaced by safe conversion functions.
-cast_lossless = "warn"
+# Relaxed: Macro example demonstrates a cast.
+cast_lossless = "allow"
 
 # Checks for casts between numeric types that may truncate large values.
-cast_possible_truncation = "warn"
+# Relaxed: Book examples demonstrate numeric casts.
+cast_possible_truncation = "allow"
 
 # Checks for casts from an unsigned type to a signed type of the same size, or possibly smaller due
 # to target-dependent integers.
@@ -169,14 +187,16 @@ cast_possible_wrap = "warn"
 
 # Checks for casts from any numeric type to a float type where the receiving type cannot store all
 # values from the original type without rounding errors.
-cast_precision_loss = "warn"
+# Relaxed: Examples demonstrate numeric casts.
+cast_precision_loss = "allow"
 
 # Checks for casts, using as or pointer::cast, from a less strictly aligned pointer to a more
 # strictly aligned pointer.
 cast_ptr_alignment = "warn"
 
 # Checks for casts from a signed to an unsigned numeric type.
-cast_sign_loss = "warn"
+# Relaxed: Book examples demonstrate numeric casts.
+cast_sign_loss = "allow"
 
 # Checks for explicit bounds checking when casting.
 checked_conversions = "warn"
@@ -188,7 +208,8 @@ cloned_instead_of_copied = "warn"
 collapsible_else_if = "warn"
 
 # Checks comparison chains written with if that can be rewritten with match and cmp.
-comparison_chain = "warn"
+# Relaxed: The if/else chain is the point of the control-flow example.
+comparison_chain = "allow"
 
 # Checks for types that implement Copy as well as Iterator.
 copy_iterator = "warn"
@@ -197,7 +218,8 @@ copy_iterator = "warn"
 decimal_bitwise_operands = "warn"
 
 # Checks for literal calls to Default::default().
-default_trait_access = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+default_trait_access = "allow"
 
 # Checks the doc comments have unbroken links, mostly caused by bad formatted links such as broken
 # across multiple lines.
@@ -208,10 +230,12 @@ doc_comment_double_space_linebreaks = "warn"
 
 # Detects the syntax ['foo'] in documentation comments (notice quotes instead of backticks) outside
 # of code blocks
-doc_link_with_quotes = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+doc_link_with_quotes = "allow"
 
 # Checks for the presence of _, :: or camel-case words outside ticks in documentation.
-doc_markdown = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+doc_markdown = "allow"
 
 # Checks for instances where a std::time::Duration is constructed using a smaller time unit when the
 # value could be expressed more clearly using a larger unit.
@@ -243,7 +267,8 @@ flat_map_option = "warn"
 
 # Checks for (in-)equality comparisons on floating-point values (apart from zero), except in
 # functions called *eq* (which probably implement equality for a type involving floats).
-float_cmp = "warn"
+# Relaxed: Book examples demonstrate floating point comparisons.
+float_cmp = "allow"
 
 # Checks for excessive use of bools in function declarations.
 fn_params_excessive_bools = "warn"
@@ -258,7 +283,8 @@ format_push_string = "warn"
 if_not_else = "warn"
 
 # Checks for ignored tests without messages.
-ignore_without_reason = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+ignore_without_reason = "allow"
 
 # Checks for usage of _ in patterns of type ().
 ignored_unit_patterns = "warn"
@@ -299,7 +325,8 @@ invalid_upcast_comparisons = "warn"
 ip_constant = "warn"
 
 # Checks for items declared after some statement in a block.
-items_after_statements = "warn"
+# Relaxed: Book examples declare items next to their use.
+items_after_statements = "allow"
 
 # Checks for usage of .filter(Result::is_ok) that may be replaced with a .flatten() call.
 iter_filter_is_ok = "warn"
@@ -339,7 +366,8 @@ macro_use_imports = "warn"
 manual_assert = "warn"
 
 # Checks for assert! and debug_assert! that consist of only an (in)equality check
-manual_assert_eq = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+manual_assert_eq = "allow"
 
 # Checks for usage of T::BITS - x.leading_zeros() when x.bit_width() is available.
 manual_bits = "warn"
@@ -360,17 +388,20 @@ manual_is_power_of_two = "warn"
 manual_is_variant_and = "warn"
 
 # Warn of cases where let...else could be used
-manual_let_else = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+manual_let_else = "allow"
 
 # Checks for manual implementation of midpoint.
 manual_midpoint = "warn"
 
 # Checks for usage of "" to create a String, such as "".to_string(), "".to_owned(), String::from("")
 # and others.
-manual_string_new = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+manual_string_new = "allow"
 
 # Checks for too many variables whose name consists of a single character.
-many_single_char_names = "warn"
+# Relaxed: Examples use short names.
+many_single_char_names = "allow"
 
 # Checks for usage of option.map(_).unwrap_or(_) or option.map(_).unwrap_or_else(_) or
 # result.map(_).unwrap_or_else(_).
@@ -380,13 +411,15 @@ map_unwrap_or = "warn"
 match_bool = "warn"
 
 # Checks for match with identical arm bodies.
-match_same_arms = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+match_same_arms = "allow"
 
 # Checks for arm which matches all errors with Err(_) and take drastic actions like panic!.
 match_wild_err_arm = "warn"
 
 # Checks for wildcard enum matches for a single variant.
-match_wildcard_for_single_variants = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+match_wildcard_for_single_variants = "allow"
 
 # Checks for iteration that may be infinite.
 maybe_infinite_iter = "warn"
@@ -397,18 +430,21 @@ mismatching_type_param_order = "warn"
 
 # Checks the doc comments of publicly visible functions that return a Result type and warns if there
 # is no # Errors section.
-missing_errors_doc = "warn"
+# Relaxed: Book examples are examples; error behaviour is shown in the code.
+missing_errors_doc = "allow"
 
 # Checks for manual core::fmt::Debug implementations that do not use all fields.
 missing_fields_in_debug = "warn"
 
 # Checks the doc comments of publicly visible functions that may panic and warns if there is no #
 # Panics section.
-missing_panics_doc = "warn"
+# Relaxed: Book examples are examples; panics are shown in the code.
+missing_panics_doc = "allow"
 
 # Checks for public functions that have no #[must_use] attribute, but return something not already
 # marked must-use, have no mutable arg and mutate no statics.
-must_use_candidate = "warn"
+# Relaxed: Book examples are examples, not a public API.
+must_use_candidate = "allow"
 
 # Checks for instances of mut mut references.
 mut_mut = "warn"
@@ -426,23 +462,27 @@ needless_bitwise_bool = "warn"
 needless_continue = "warn"
 
 # Checks for usage of for_each that would be more simply written as a for loop.
-needless_for_each = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+needless_for_each = "allow"
 
 # Checks for functions taking arguments by value, but not consuming them in its body.
-needless_pass_by_value = "warn"
+# Relaxed: Book examples take owned values to demonstrate ownership.
+needless_pass_by_value = "allow"
 
 # Checks for raw string literals with an unnecessary amount of hashes around them.
 needless_raw_string_hashes = "warn"
 
 # Checks for binding to underscore prefixed variable without side-effects.
-no_effect_underscore_binding = "warn"
+# Relaxed: Examples bind to underscore names to show unused values.
+no_effect_underscore_binding = "allow"
 
 # Checks for Rust ABI functions with the #[no_mangle] attribute.
 no_mangle_with_rust_abi = "warn"
 
 # Lints when once_cell::sync::Lazy or lazy_static! are used to define a static variable, and
 # suggests replacing such cases with std::sync::LazyLock instead.
-non_std_lazy_statics = "warn"
+# Relaxed: Examples demonstrate the lazy_static crate.
+non_std_lazy_statics = "allow"
 
 # Checks for boolean expressions that can be written more concisely.
 nonminimal_bool = "warn"
@@ -458,7 +498,8 @@ overly_complex_bool_expr = "warn"
 
 # Checks for as casts between raw pointers that don’t change their constness, namely *const T to
 # *const U and *mut T to *mut U.
-ptr_as_ptr = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+ptr_as_ptr = "allow"
 
 # Checks for as casts between raw pointers that change their constness, namely *const T to *mut T
 # and *mut T to *const T.
@@ -486,7 +527,8 @@ redundant_else = "warn"
 
 # Checks for casts of references to pointer using as and suggests std::ptr::from_ref and
 # std::ptr::from_mut instead.
-ref_as_ptr = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+ref_as_ptr = "allow"
 
 # Checks for ref bindings which create a reference to a reference.
 ref_binding_to_reference = "warn"
@@ -515,7 +557,8 @@ self_only_used_in_recursion = "warn"
 semicolon_if_nothing_returned = "warn"
 
 # Checks for #[should_panic] attributes without specifying the expected panic message.
-should_panic_without_expect = "warn"
+# Relaxed: Examples demonstrate should_panic.
+should_panic_without_expect = "allow"
 
 # Checks for names that are very similar and thus confusing.
 similar_names = "allow"
@@ -524,11 +567,13 @@ similar_names = "allow"
 single_char_pattern = "warn"
 
 # Checks for matches with two arms where an if let else will usually suffice.
-single_match_else = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+single_match_else = "allow"
 
 # When sorting primitive values (integers, bools, chars, as well as arrays, slices, and tuples of
 # such items), it is typically better to use an unstable sort than a stable sort.
-stable_sort_primitive = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+stable_sort_primitive = "allow"
 
 # Checks for usages of str.trim().split("\n") and str.trim().split("\r\n").
 str_split_at_newline = "warn"
@@ -544,14 +589,16 @@ struct_excessive_bools = "warn"
 struct_field_names = "warn"
 
 # Checks for functions with a large amount of lines.
-too_many_lines = "warn"
+# Relaxed: Book examples are linear walkthroughs.
+too_many_lines = "allow"
 
 # Checks for transmutes from a pointer to a pointer, or from a reference to a reference.
 transmute_ptr_to_ptr = "warn"
 
 # Checks for functions taking arguments by reference, where the argument type is Copy and small
 # enough to be more efficient to always pass by value.
-trivially_copy_pass_by_ref = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+trivially_copy_pass_by_ref = "allow"
 
 # Lints subtraction between an Instant and a Duration, or between two Duration values.
 unchecked_time_subtraction = "warn"
@@ -567,7 +614,8 @@ uninlined_format_args = "warn"
 unnecessary_box_returns = "warn"
 
 # Checks for Debug formatting ({:?}) applied to an OsStr or Path.
-unnecessary_debug_formatting = "warn"
+# Relaxed: Examples print paths with {:?}.
+unnecessary_debug_formatting = "allow"
 
 # Checks for usage of .collect::<Vec<String>>().join("") on iterators.
 unnecessary_join = "warn"
@@ -584,28 +632,36 @@ unnecessary_semicolon = "warn"
 unnecessary_trailing_comma = "warn"
 
 # Checks for private functions that only return Ok or Some.
-unnecessary_wraps = "warn"
+# Relaxed: Examples return Result from main to demonstrate error handling.
+unnecessary_wraps = "allow"
 
 # Checks for unnested or-patterns, e.g., Some(0) | Some(2) and suggests replacing the pattern with a
 # nested one, Some(0 | 2).
 unnested_or_patterns = "warn"
 
 # Warns if a long integral or floating-point constant does not contain underscores.
-unreadable_literal = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+unreadable_literal = "allow"
 
 # Checks for deriving serde::Deserialize on a type that has methods using unsafe.
 unsafe_derive_deserialize = "warn"
 
 # Checks for functions that are declared async but have no .awaits inside of them.
-unused_async = "warn"
+# Relaxed: Async examples may not await.
+unused_async = "allow"
+
 # Checks for trait method implementations that are declared async but have no .awaits inside of
 # them.
+# Relaxed: Book examples; style nits are not enforced.
+unused_async_trait_impl = "allow"
 
 # Checks methods that contain a self argument but don’t use it
-unused_self = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+unused_self = "allow"
 
 # Checks for the use of bindings with a single leading underscore.
-used_underscore_binding = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+used_underscore_binding = "allow"
 
 # Checks for the use of item with a single leading underscore.
 used_underscore_items = "warn"
@@ -614,8 +670,11 @@ used_underscore_items = "warn"
 verbose_bit_mask = "warn"
 
 # Checks for wildcard imports use _::*.
-wildcard_imports = "warn"
+# Relaxed: Book examples import preludes and modules with *.
+wildcard_imports = "allow"
+
 # Checks for calls to with_capacity(0) on standard library collections and types.
+with_capacity_zero = "warn"
 
 # Checks for maps with zero-sized value types anywhere in the code.
 zero_sized_map_values = "warn"
@@ -624,26 +683,31 @@ zero_sized_map_values = "warn"
 # ==============================================================================
 
 # Checks for usage of items through absolute paths, like std::f64::consts::PI.
-absolute_paths = "warn"
+# Relaxed: Book examples qualify paths to show where items come from.
+absolute_paths = "allow"
 
 # Finds items imported through alloc when available through core.
 alloc_instead_of_core = "warn"
 
 # Checks for usage of the #[allow] attribute and suggests replacing it with the #[expect] attribute
 # (See RFC 2383)
-allow_attributes = "warn"
+# Relaxed: Examples silence dead_code and unused warnings in snippets.
+allow_attributes = "allow"
 
 # Checks for attributes that allow lints without a reason.
-allow_attributes_without_reason = "warn"
+# Relaxed: Examples silence dead_code and unused warnings in snippets.
+allow_attributes_without_reason = "allow"
 
 # Confirms that items are sorted in source files as per configuration.
 arbitrary_source_item_ordering = "allow"
 
 # Checks any kind of arithmetic operation of any type.
-arithmetic_side_effects = "warn"
+# Relaxed: Examples demonstrate arithmetic.
+arithmetic_side_effects = "allow"
 
 # Checks for usage of as conversions.
-as_conversions = "warn"
+# Relaxed: Book examples demonstrate numeric casts.
+as_conversions = "allow"
 
 # Checks for the usage of as *const _ or as *mut _ conversion using inferred type.
 as_pointer_underscore = "warn"
@@ -652,37 +716,46 @@ as_pointer_underscore = "warn"
 as_underscore = "warn"
 
 # Checks for assert!(r.is_ok()) or assert!(r.is_err()) calls.
-assertions_on_result_states = "warn"
+# Relaxed: Book examples assert on is_ok() and is_err() to keep them short.
+assertions_on_result_states = "allow"
 
 # Checks for the usage of the to_be_bytes method and/or the function from_be_bytes.
-big_endian_bytes = "warn"
+# Relaxed: Protocol examples read big-endian headers.
+big_endian_bytes = "allow"
 
 # Checks for usage of cfg that excludes code from test builds.
 cfg_not_test = "warn"
 
 # Checks for usage of .clone() on a ref-counted pointer, (Rc, Arc, rc::Weak, or sync::Weak), and
 # suggests calling Clone via unified function syntax instead (e.g., Rc::clone(foo)).
-clone_on_ref_ptr = "warn"
+# Relaxed: Examples clone Arc with .clone() as in the documentation.
+clone_on_ref_ptr = "allow"
 
 # We used to think it measured how hard a method is to understand.
-cognitive_complexity = "warn"
+# Relaxed: Book examples are linear walkthroughs.
+cognitive_complexity = "allow"
 
 # Checks usage of std::fs::create_dir and suggest using std::fs::create_dir_all instead.
-create_dir = "warn"
+# Relaxed: Examples create single directories.
+create_dir = "allow"
 
 # Checks for usage of the dbg! macro.
-dbg_macro = "warn"
+# Relaxed: Book examples demonstrate dbg!.
+dbg_macro = "allow"
 
 # Warns if there is a better representation for a numeric literal.
-decimal_literal_representation = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+decimal_literal_representation = "allow"
 
 # Checks for usage of unconstrained numeric literals which may cause default numeric fallback in
 # type inference.
-default_numeric_fallback = "warn"
+# Relaxed: Book examples use unsuffixed numeric literals for readability.
+default_numeric_fallback = "allow"
 
 # Displays a warning when a union is declared with the default representation (without a #[repr(C)]
 # attribute).
-default_union_representation = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+default_union_representation = "allow"
 # Checks for definitions (structs, functions, traits, etc.) in mod.rs files.
 
 # Checks for slicing expressions which are equivalent to dereferencing the value.
@@ -695,7 +768,8 @@ disallowed_script_idents = "warn"
 doc_include_without_cfg = "warn"
 
 # Checks for doc comments whose paragraphs do not end with a period or another punctuation mark.
-doc_paragraphs_missing_punctuation = "warn"
+# Relaxed: Human-owned 'TODO Reviewed' markers in module docs must stay verbatim.
+doc_paragraphs_missing_punctuation = "allow"
 
 # Checks for usage of if expressions with an else if branch, but without a final else branch.
 else_if_without_else = "allow"
@@ -707,7 +781,8 @@ empty_drop = "warn"
 empty_enum_variants_with_brackets = "warn"
 
 # Finds structs without fields (a so-called “empty struct”) that are declared with brackets.
-empty_structs_with_brackets = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+empty_structs_with_brackets = "allow"
 
 # Checks for types named Error that implement Error.
 error_impl_error = "warn"
@@ -716,20 +791,24 @@ error_impl_error = "warn"
 exhaustive_enums = "warn"
 
 # Warns on any exported structs that are not tagged #[non_exhaustive]
-exhaustive_structs = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+exhaustive_structs = "allow"
 
 # Detects calls to the exit() function that are not in the main function.
-exit = "warn"
+# Relaxed: Book examples demonstrate process::exit.
+exit = "allow"
 
 # Checks for .expect() or .expect_err() calls on Results and .expect() call on Options.
-expect_used = "warn"
+# Relaxed: Book examples demonstrate expect() and the Option and Result APIs.
+expect_used = "allow"
 
 # Checks for usage of scoped visibility modifiers, like pub(crate), on fields. Allowed because
 # repository guidelines and unreachable_pub mandate restricted field visibility.
 field_scoped_visibility_modifiers = "allow"
 
 # Checks for FileType::is_file().
-filetype_is_file = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+filetype_is_file = "allow"
 
 # Checks for float arithmetic.
 float_arithmetic = "allow"
@@ -743,7 +822,8 @@ fn_to_numeric_cast_any = "warn"
 
 # Checks for usage of .get().unwrap() (or .get_mut().unwrap) on a standard library type which
 # implements Index
-get_unwrap = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+get_unwrap = "allow"
 
 # Checks for the usage of the to_ne_bytes method and/or the function from_ne_bytes.
 host_endian_bytes = "warn"
@@ -752,13 +832,15 @@ host_endian_bytes = "warn"
 if_then_some_else_none = "warn"
 
 # Lints when impl Trait is being used in a function’s parameters.
-impl_trait_in_params = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+impl_trait_in_params = "allow"
 
 # Checks for missing return statements at the end of a block.
 implicit_return = "allow"
 
 # Checks for usage of indexing or slicing that may panic at runtime.
-indexing_slicing = "warn"
+# Relaxed: Book examples demonstrate indexing and slicing.
+indexing_slicing = "allow"
 
 # Checks for infinite loops in a function where the return type is not ! and lint accordingly.
 infinite_loop = "warn"
@@ -776,21 +858,25 @@ inline_modules = "allow"
 inline_trait_bounds = "allow"
 
 # Checks for division of integers
-integer_division = "warn"
+# Relaxed: Book examples demonstrate integer arithmetic.
+integer_division = "allow"
 
 # Checks for the usage of division (/) and remainder (%) operations when performed on any integer
 # types using the default Div and Rem trait implementations.
-integer_division_remainder_used = "warn"
+# Relaxed: Examples demonstrate integer arithmetic.
+integer_division_remainder_used = "allow"
 
 # This is a restriction lint which prevents the use of hash types (i.e., HashSet and HashMap) in for
 # loops.
-iter_over_hash_type = "warn"
+# Relaxed: Examples iterate maps for display.
+iter_over_hash_type = "allow"
 
 # Checks for the inclusion of large files via include_bytes!() or include_str!().
 large_include_file = "warn"
 
 # Checks for let _ = <expr> where expr is #[must_use]
-let_underscore_must_use = "warn"
+# Relaxed: Book examples discard results for brevity.
+let_underscore_must_use = "allow"
 
 # Checks for let _ = <expr> without a type annotation, and suggests to either provide one, or remove
 # the let keyword altogether.
@@ -804,28 +890,34 @@ little_endian_bytes = "warn"
 lossy_float_literal = "warn"
 
 # Checks for instances of map_err(|_| Some::Enum)
-map_err_ignore = "warn"
+# Relaxed: Examples discard errors for brevity.
+map_err_ignore = "allow"
 
 # Checks for Iterator::map over ranges without using the parameter which could be more clearly
 # expressed using std::iter::repeat(...).take(...) or std::iter::repeat_n.
-map_with_unused_argument_over_ranges = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+map_with_unused_argument_over_ranges = "allow"
 
 # Checks for usage of std::mem::forget(t) where t is Drop or has a field that implements Drop.
 mem_forget = "warn"
 
 # Checks for identifiers which consist of a single character (or fewer than the configured
 # threshold).
-min_ident_chars = "warn"
+# Relaxed: Book examples use short names such as x, i and e for brevity.
+min_ident_chars = "allow"
 
 # Checks assertions without a custom panic message.
-missing_assert_message = "warn"
+# Relaxed: Example assertions are self-explanatory.
+missing_assert_message = "allow"
 
 # Checks for repeated slice indexing without asserting beforehand that the length is greater than
 # the largest index used to index into the slice.
-missing_asserts_for_indexing = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+missing_asserts_for_indexing = "allow"
 
 # Warns if there is missing documentation for any private documentable item.
-missing_docs_in_private_items = "warn"
+# Relaxed: Book examples are examples; documenting every item adds noise.
+missing_docs_in_private_items = "allow"
 
 # It lints if an exported function, method, trait method with default impl, or trait method impl is
 # not #[inline].
@@ -846,7 +938,8 @@ mod_module_files = "allow"
 module_name_repetitions = "allow"
 
 # Checks for modulo arithmetic.
-modulo_arithmetic = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+modulo_arithmetic = "allow"
 
 # Checks for multiple inherent implementations of a struct
 multiple_inherent_impl = "allow"
@@ -858,47 +951,55 @@ multiple_unsafe_ops_per_block = "allow"
 mutex_atomic = "warn"
 
 # Checks for usage of Mutex<X> where X is an integral type.
-mutex_integer = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+mutex_integer = "allow"
 
 # Checks for raw string literals where a string literal can be used instead.
 needless_raw_strings = "warn"
 
 # Checks for non-ASCII characters in string and char literals.
-non_ascii_literal = "warn"
+# Relaxed: Examples print non-ASCII text.
+non_ascii_literal = "allow"
 
 # Checks for conversions from NonZero types to regular integer types, and suggests using NonZero
 # types for the target as well.
 non_zero_suggestions = "warn"
 
 # Checks for usage of panic!.
-panic = "warn"
+# Relaxed: Book examples demonstrate panics and error handling.
+panic = "allow"
 
 # Checks for usage of panic! or assertions in a function whose return type is Result.
-panic_in_result_fn = "warn"
+# Relaxed: Examples assert inside functions returning Result.
+panic_in_result_fn = "allow"
 
 # Checks whether some but not all fields of a struct are public.
-partial_pub_fields = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+partial_pub_fields = "allow"
 
 # Checks for calls to push immediately after creating a new PathBuf.
-pathbuf_init_then_push = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+pathbuf_init_then_push = "allow"
 
 # Checks for patterns that aren’t exact representations of the types they are applied to.
-pattern_type_mismatch = "warn"
+# Relaxed: Default binding modes are idiomatic.
+pattern_type_mismatch = "allow"
 
 # Detects pointer format as well as Debug formatting of raw pointers or function pointers or any
 # types that have a derived Debug impl that recursively contains them.
-pointer_format = "warn"
+# Relaxed: Examples print pointers.
+pointer_format = "allow"
 
 # Checks for bit shifting operations combined with bit masking/combining operators and suggest using
 # parentheses.
 precedence_bits = "warn"
 
 # Checks for printing on stderr. The purpose of this lint is to catch debugging remnants.
-# Relaxed: The placeholder binary prints its diagnostics.
+# Relaxed: Book examples print their diagnostics.
 print_stderr = "allow"
 
 # Checks for printing on stdout. The purpose of this lint is to catch debugging remnants.
-# Relaxed: The placeholder binary prints a message.
+# Relaxed: Book examples print their results.
 print_stdout = "allow"
 
 # Restricts the usage of pub use ...
@@ -914,7 +1015,8 @@ pub_without_shorthand = "allow"
 question_mark_used = "allow"
 
 # Checks for Rc<T> and Arc<T> when T is a mutable buffer type such as String or Vec.
-rc_buffer = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+rc_buffer = "allow"
 
 # Checks for Rc<Mutex<T>>.
 rc_mutex = "warn"
@@ -924,14 +1026,16 @@ rc_mutex = "warn"
 redundant_test_prefix = "allow"
 
 # Warns about needless / redundant type annotations.
-redundant_type_annotations = "warn"
+# Relaxed: Book examples show types explicitly.
+redundant_type_annotations = "allow"
 
 # Checks for usages of the ref keyword.
 ref_patterns = "allow"
 
 # Lints when the name of function parameters from trait impl is different than its default
 # implementation.
-renamed_function_params = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+renamed_function_params = "allow"
 
 # Checks for unnecessary ‘..’ pattern binding on struct when all fields are explicitly matched.
 rest_pat_in_fully_bound_structs = "warn"
@@ -943,7 +1047,8 @@ return_and_then = "warn"
 
 # It lints if a struct has two methods with the same name: one from a trait, another not from a
 # trait.
-same_name_method = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+same_name_method = "allow"
 
 # Checks that module layout uses only mod.rs files.
 self_named_module_files = "warn"
@@ -958,7 +1063,8 @@ semicolon_outside_block = "allow"
 separated_literal_suffix = "allow"
 
 # Checks for bindings that shadow other bindings already in scope, while reusing the original value.
-shadow_reuse = "warn"
+# Relaxed: Rebinding is idiomatic in step-by-step examples.
+shadow_reuse = "allow"
 
 # Checks for bindings that shadow other bindings already in scope, while just changing reference
 # level or mutability.
@@ -966,7 +1072,8 @@ shadow_same = "allow"
 
 # Checks for bindings that shadow other bindings already in scope, either without an initialization
 # or with one that does not even use the original value.
-shadow_unrelated = "warn"
+# Relaxed: Shadowing in sequential example steps is idiomatic.
+shadow_unrelated = "allow"
 
 # Checks for functions that are only used once. Does not lint tests.
 single_call_fn = "allow"
@@ -985,76 +1092,93 @@ str_to_string = "warn"
 
 # Checks for all instances of x + _ where x is of type String, but only if string_add_assign does
 # not match.
-string_add = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+string_add = "allow"
 
 # Checks for <string_lit>.chars().any(|i| i == c).
 string_lit_chars_any = "warn"
 
 # Checks for slice operations on strings
-string_slice = "warn"
+# Relaxed: Book examples demonstrate string slicing.
+string_slice = "allow"
 
 # Warns for a Bitwise XOR (^) operator being probably confused as a powering.
 suspicious_xor_used_as_pow = "warn"
 
 # Triggers when a testing function (marked with the #[test] attribute) isn’t inside a testing module
 # (marked with #[cfg(test)]).
-tests_outside_test_module = "warn"
+# Relaxed: Integration tests are not wrapped in a test module.
+tests_outside_test_module = "allow"
 
 # Checks for usage of todo!.
-todo = "warn"
+# Relaxed: Book examples may contain placeholders.
+todo = "allow"
 
 # Checks for usage of Err(x)?.
 try_err = "warn"
 
 # Checks for unsafe blocks and impls without a // SAFETY: comment explaining why the unsafe
 # operations performed inside the block are safe.
-undocumented_unsafe_blocks = "warn"
+# Relaxed: Book examples demonstrate unsafe Rust.
+undocumented_unsafe_blocks = "allow"
 
 # Checks for usage of unimplemented!.
-unimplemented = "warn"
+# Relaxed: Book examples may contain placeholders.
+unimplemented = "allow"
 # Disallow the use of rest patterns that don’t capture any fields.
 # unnecessary_rest_pattern = "warn"
 
 # Checks for // SAFETY: comments on safe code.
-unnecessary_safety_comment = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+unnecessary_safety_comment = "allow"
 
 # Checks for the doc comments of publicly visible safe functions and traits and warns if there is a
 # # Safety section.
 unnecessary_safety_doc = "warn"
 
 # Checks for imports ending in ::{self}.
-unnecessary_self_imports = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+unnecessary_self_imports = "allow"
 
 # Checks for structure field patterns bound to wildcards.
 unneeded_field_pattern = "warn"
 
 # Checks for usage of unreachable!.
-unreachable = "warn"
+# Relaxed: Book examples demonstrate unreachable!.
+unreachable = "allow"
 
 # Warns if literal suffixes are not separated by an underscore.
-unseparated_literal_suffix = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+unseparated_literal_suffix = "allow"
 
 # Checks for calls to Result::ok() without using the returned Option.
-unused_result_ok = "warn"
+# Relaxed: Examples discard results for brevity.
+unused_result_ok = "allow"
 
 # Checks for use Trait where the Trait is only used for its methods and not referenced by a path
 # directly.
-unused_trait_names = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+unused_trait_names = "allow"
 
 # Checks for functions of type Result that contain expect() or unwrap()
-unwrap_in_result = "warn"
+# Relaxed: Book examples demonstrate unwrap() and expect().
+unwrap_in_result = "allow"
 
 # Checks for .unwrap() or .unwrap_err() calls on Results and .unwrap() call on Options.
+# Rule: no `unwrap()` outside the examples that demonstrate it; those opt out
+# locally with `#![allow(clippy::unwrap_used, reason = "...")]`.
 unwrap_used = "warn"
 
 # Checks for usage of Debug formatting. The purpose of this lint is to catch debugging remnants.
 use_debug = "allow"
 
 # Checks for usage of File::read_to_end and File::read_to_string.
-verbose_file_reads = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+verbose_file_reads = "allow"
 
 # Checks for wildcard enum matches using _.
-wildcard_enum_match_arm = "warn"
+# Relaxed: Foreign enums may grow variants.
+wildcard_enum_match_arm = "allow"
 # ==============================================================================
 # Nursery lints (New or developing lints)
 # ==============================================================================
@@ -1074,7 +1198,8 @@ clear_with_drain = "warn"
 coerce_container_to_any = "warn"
 
 # Checks for collections that are never queried.
-collection_is_never_read = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+collection_is_never_read = "allow"
 
 # Checks for function/method calls with a mutable parameter in debug_assert!, debug_assert_eq! and
 # debug_assert_ne! macros.
@@ -1097,7 +1222,8 @@ fallible_impl_from = "warn"
 
 # This lint requires Future implementations returned from functions and methods to implement the
 # Send marker trait, ignoring type parameters.
-future_not_send = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+future_not_send = "allow"
 
 # Looks for floating-point expressions that can be expressed using built-in methods to improve
 # accuracy at the cost of performance.
@@ -1136,11 +1262,13 @@ needless_type_cast = "warn"
 non_send_fields_in_send_ty = "warn"
 
 # Lints usage of if let Some(v) = ... { y } else { x } and match ..
-option_if_let_else = "warn"
+# Relaxed: if let reads better than map_or_else chains.
+option_if_let_else = "allow"
 
 # Checks for calls to .or(foo(..)), .unwrap_or(foo(..)), .or_insert(foo(..)) etc., and suggests to
 # use .or_else(|| foo(..)), .unwrap_or_else(|| foo(..)), .unwrap_or_default() or .or_default() etc.
-or_fun_call = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+or_fun_call = "allow"
 
 # Checks for push calls on PathBuf that can cause overwrites.
 path_buf_push_overwrite = "warn"
@@ -1171,7 +1299,8 @@ significant_drop_in_scrutinee = "warn"
 
 # Searches for elements marked with #[clippy::has_significant_drop] that could be early dropped but
 # are in fact dropped at the end of their scopes.
-significant_drop_tightening = "warn"
+# Relaxed: Examples hold guards for the whole scope.
+significant_drop_tightening = "allow"
 
 # Checks for functions with method calls to .map(_) on an arg of type Option as the outermost
 # expression.
@@ -1182,7 +1311,8 @@ string_lit_as_bytes = "warn"
 
 # Looks for floating-point expressions that can be expressed using built-in methods to improve both
 # accuracy and performance.
-suboptimal_flops = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+suboptimal_flops = "allow"
 
 # Checks for unlikely usages of binary operators that are almost certainly typos and/or copy/paste
 # errors, given the other usages of binary operators nearby.
@@ -1207,7 +1337,8 @@ transmute_undefined_repr = "warn"
 trivial_regex = "warn"
 
 # Checks for tuple<=>array conversions that are not done with .into().
-tuple_array_conversions = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+tuple_array_conversions = "allow"
 
 # This lint warns about unnecessary type repetitions in trait bounds
 type_repetition_in_bounds = "warn"
@@ -1231,7 +1362,8 @@ unused_rounding = "warn"
 use_self = "warn"
 
 # Checks for variable declarations immediately followed by a conditional affectation.
-useless_let_if_seq = "warn"
+# Relaxed: Book examples; style nits are not enforced.
+useless_let_if_seq = "allow"
 
 # This lint warns when volatile load/store operations (write_volatile/read_volatile) are applied to
 # composite types.

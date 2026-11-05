@@ -38,6 +38,10 @@ impl Report {
 }
 
 /// A Markdown page and its publication, visibility, and example state.
+#[expect(
+    clippy::struct_excessive_bools,
+    reason = "Context flags mirror independent directive options."
+)]
 #[derive(Debug, Serialize)]
 pub struct ChapterRecord {
     /// Canonical repository-relative page path.

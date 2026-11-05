@@ -6,6 +6,7 @@ use std::fmt::Display;
 use std::fmt::Formatter;
 
 /// The reasons why a task failed.
+#[non_exhaustive]
 #[derive(PartialEq, Eq, Clone, Copy, Debug)]
 pub enum TaskError {
     /// The task was interrupted.
