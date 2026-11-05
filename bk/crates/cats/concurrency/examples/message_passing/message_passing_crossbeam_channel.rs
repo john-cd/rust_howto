@@ -10,9 +10,30 @@
 
 use std::thread;
 
+use crossbeam_channel::Receiver;
 use crossbeam_channel::RecvError;
+use crossbeam_channel::Sender;
 use crossbeam_channel::TryRecvError;
 use crossbeam_channel::unbounded;
+
+/// Spawns a background thread to send a message across a cloned channel sender.
+fn send_on_worker_thread<T: Send + 'static>(sender: Sender<T>, message: T) -> thread::JoinHandle<()> {
+    thread::spawn(move || {
+        sender
+            .send(message)
+            .expect("the message passing crossbeam channel example invariant should hold");
+    })
+}
+
+/// Drains all currently available messages without blocking.
+fn drain_available<T>(receiver: &Receiver<T>) -> Vec<T> {
+    receiver.try_iter().collect()
+}
+
+/// Collects all messages from a disconnected channel until drained.
+fn collect_remaining<T>(receiver: &Receiver<T>) -> Vec<T> {
+    receiver.iter().collect()
+}
 
 /// Demonstrates the use of crossbeam channels for message passing between
 /// threads.
@@ -32,10 +53,7 @@ fn main() {
 
     // Spawn a new thread to send a message into the channel.
     // Note that the cloned sender is moved into the thread.
-    let producer = thread::spawn(move || {
-        s2.send("Hi!")
-            .expect("the message passing crossbeam channel example invariant should hold");
-    });
+    let producer = send_on_worker_thread(s2, "Hi!");
 
     // Blocks until receiving the message from the channel.
     // Receive the message and assert that it's "Hi!".
@@ -50,7 +68,7 @@ fn main() {
         .expect("the message passing crossbeam channel example invariant should hold");
     // Receive all remaining messages currently in the channel
     // (non-blocking).
-    let v: Vec<_> = r1.try_iter().collect();
+    let v: Vec<_> = drain_available(&r1);
     assert_eq!(v, ["0"]);
     println!("{v:?}");
 
@@ -64,7 +82,7 @@ fn main() {
     // ERROR s1.send("2").unwrap();
 
     // ...but any remaining messages can still be received.
-    let remaining: Vec<_> = r1.iter().collect();
+    let remaining: Vec<_> = collect_remaining(&r1);
     assert_eq!(remaining, ["1"]);
     println!("{remaining:?}");
     // Note that the call to `collect` would block if the channel were not
@@ -94,5 +112,44 @@ mod tests {
     #[test]
     fn test_message_passing_crossbeam_channel_example_entry_point() {
         main();
+    }
+
+    /// Verifies that draining an empty channel yields an empty vector.
+    #[test]
+    fn drain_available_on_empty_channel_returns_empty_vec() {
+        let (_s, r) = unbounded::<i32>();
+        assert!(drain_available(&r).is_empty());
+    }
+
+    /// Verifies non-blocking drain collects multiple pending items.
+    #[test]
+    fn drain_available_collects_all_buffered_items() {
+        let (s, r) = unbounded();
+        s.send(10).unwrap();
+        s.send(20).unwrap();
+        s.send(30).unwrap();
+        assert_eq!(drain_available(&r), vec![10, 20, 30]);
+        assert_eq!(r.try_recv(), Err(TryRecvError::Empty));
+    }
+
+    /// Verifies that worker thread message sender works with join handle.
+    #[test]
+    fn worker_thread_sends_payload_successfully() {
+        let (s, r) = unbounded();
+        let handle = send_on_worker_thread(s, 42);
+        handle.join().unwrap();
+        assert_eq!(r.recv(), Ok(42));
+    }
+
+    /// Verifies disconnected channel error behavior for send and receive.
+    #[test]
+    fn disconnected_channel_returns_errors() {
+        let (s, r) = unbounded::<&str>();
+        drop(r);
+        assert!(s.send("fail").is_err());
+
+        let (s2, r2) = unbounded::<&str>();
+        drop(s2);
+        assert_eq!(r2.recv(), Err(RecvError));
     }
 }
