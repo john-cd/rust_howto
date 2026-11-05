@@ -7,7 +7,7 @@ This crate contains code examples for the **Authentication** category on crates.
 ## Examples Covered
 
 - **Basic Authentication** (`examples/basic_authentication/`): Demonstrates concepts like `basic`.
-- **Jwt Authentication** (`examples/jwt_authentication/`): Demonstrates concepts like `jwt`, `jwt_axum_extractor`.
+- **Jwt Authentication** (`examples/jwt_authentication/`): Demonstrates concepts like `jwt`, `jwt_axum_extractor`, `jwt_service`.
 - **Oauth Client Credentials** (`examples/oauth_client_credentials/`): Demonstrates concepts like `client_credentials`.
 - **Session Login** (`examples/session_login/`): Demonstrates concepts like `axum_login`, `csrf`, `hashing`.
 
