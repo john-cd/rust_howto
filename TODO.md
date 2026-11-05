@@ -65,25 +65,10 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 ### 1. Unit Tests and Coverage
 
-- **Add unit tests for CLI argument parsing across `tools/crate_indices`**:
-  - Currently, `tools/crate_indices/src/cli/mod.rs` and `tools/crate_indices/src/cli/commands.rs` have 0 unit tests.
-  - Add unit tests verifying subcommand resolution, default values (`--book-root`, `--file`, `--directory`), alias resolution (`c`, `a`, `p`, `l`, `u`, `e`), and error handling on invalid argument combinations.
-- **Add unit tests for `tools/templ` CLI subcommands**:
-  - Subcommands `badge_cmd`, `category_badge_cmd`, `category_badges_for_crate_cmd`, `config_flag`, `crate_name_arg`, `info_cmd`, and `rbe` lack unit tests for argument parsing and option propagation.
-  - Add unit tests in each CLI module verifying flag combinations, defaults, and error branches.
-- **Add unit tests for `publish/src/main.rs`**:
-  - `publish` has 0 tests. Add unit tests verifying `Cargo.toml` parsing, fallback behavior when workspace inheritance is active, and manifest serialization.
 - **Expand helper unit testing across complex example modules**:
   - While all example modules comply with `test()` invoking `main()`, large example modules (e.g., in `bk/crates/cats/database`, `bk/crates/cats/asynchronous`, and `bk/crates/cats/concurrency`) rely solely on end-to-end execution of `main()`.
   - Refactor large `main()` routines into discrete helper functions and add unit tests exercising edge cases, timeouts, and error handling for these helpers.
 
-### 2. Integration Tests
-
-- **Add end-to-end integration test suites for tools in `tools/`**:
-  - `tools/clean`, `tools/mdbook-scrub`, and `tools/mdbook-private` contain `tests/` directories, but `tools/crate_indices`, `tools/templ`, and `tools/example-integrity` do not.
-  - Implement integration tests in `tools/crate_indices/tests/cli.rs` testing CLI execution of `list_crates`, `category_page_from_metadata`, and `expand_crate_blocks` against isolated test fixtures.
-  - Implement integration tests in `tools/templ/tests/cli.rs` asserting markdown badge output formatting and error reporting.
-  - Implement integration tests in `tools/example-integrity/tests/cli.rs` verifying JSON schema output structure and `--fail` exit status handling on intentional broken fixture books.
 
 ### 3. Examples and Benchmarks
 
@@ -92,9 +77,6 @@ A comprehensive review of the monorepo identified the following fixes, improveme
   - Add benchmarks for high-throughput utilities in `tools/tool_lib` (e.g., `published_recipes` link extraction regexes, crate block parsing, and markdown template generation).
   - Add benchmarks in `tools/example-integrity` measuring chapter parsing, regex anchoring, and module target graph traversal across large book trees.
   - Add benchmarks in `xmpl/cancelable` measuring task submission throughput, channel contention, and cancellation latency under concurrency.
-- **Provide standalone runnable examples for reusable libraries**:
-  - `tools/tool_lib` is a core library used by all tools but has no `examples/` directory showing how to construct category badges, format crate sections, or parse published recipes.
-  - Add minimal example binaries under `tools/tool_lib/examples/` demonstrating programmatic use of the API.
 
 ### 4. Documentation and Doc Comments
 
@@ -112,7 +94,5 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 ### 6. Discrepancies between Documentation and Code
 
-- **Reconcile `bk/master/crates.txt` and `bk/master/crate_categories.toml` with actual book recipes**:
-  - The book documents `sprs` in `bk/src/categories/mathematics/linear_algebra.md` and links it in `crates_by_category.md` and `crates_alphabetical.md`, but `sprs` was omitted from master files. Audit all crates across `bk/crates` to ensure 100% synchronization between recipe includes, master crate lists, and generated indices.
 - **Verify `bin/README.md` against `just release`**:
   - Verify that `just release` recipes build and copy all required executables into `bin/` with clear usage documentation.
