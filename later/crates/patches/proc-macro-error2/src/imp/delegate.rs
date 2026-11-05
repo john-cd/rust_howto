@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 //! This implementation uses [`proc_macro::Diagnostic`], nightly only.
 

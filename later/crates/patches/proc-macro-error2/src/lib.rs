@@ -1,4 +1,4 @@
-//! TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026.
 
 //! # proc-macro-error2
 //!
