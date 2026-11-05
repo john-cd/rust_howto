@@ -119,6 +119,9 @@ jobs:
         # docker/setup-buildx-action v4.4.1
         uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
       - name: Build, test, lint, and render through Compose
+        env:
+          # Build secret for fetching the private john-cd/book_tooling repository.
+          GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
         run: |
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run \
             --rm --build --pull never \
