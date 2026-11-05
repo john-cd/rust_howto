@@ -69,7 +69,6 @@ A comprehensive review of the monorepo identified the following fixes, improveme
   - While all example modules comply with `test()` invoking `main()`, large example modules (e.g., in `bk/crates/cats/database`, `bk/crates/cats/asynchronous`, and `bk/crates/cats/concurrency`) rely solely on end-to-end execution of `main()`.
   - Refactor large `main()` routines into discrete helper functions and add unit tests exercising edge cases, timeouts, and error handling for these helpers.
 
-
 ### 3. Examples and Benchmarks
 
 - **Add Criterion / Divan benchmarks to performance-sensitive crates**:
@@ -86,9 +85,6 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 ### 5. Architecture and Workspace Dependency Isolation
 
-- **Isolate git dependencies in `tools/Cargo.toml`**:
-  - `tools/Cargo.toml` depends on `book_tool` via git (`git = "https://github.com/john-cd/book_tooling"`, rev `1e9cc3458f19d53c102aca5da36bc7e8baeac2d3`). Because this repository requires authentication or specific network access, running standard offline builds or checking workspace crates in isolated environments fails.
-  - Decouple `mdbook-scrub` from the external git dependency, or vendor the required directive parser functionality directly into `tools/tool_lib` or an internal member crate to achieve hermetic builds.
 - **Enforce centralized lint configuration across sub-workspaces**:
   - Ensure all workspaces (`bk/crates`, `later/crates`, `tools`, `xmpl`, `publish`, `playground`) inherit identical workspace-level lints and deny rules from root configurations (`deny.toml`, `clippy.toml`, `rustfmt.toml`).
 
