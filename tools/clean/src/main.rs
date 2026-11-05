@@ -8,8 +8,6 @@
 
 use std::fs;
 use std::fs::DirEntry;
-#[cfg(unix)]
-use std::os::unix::fs::symlink;
 use std::path::Path;
 use std::path::PathBuf;
 

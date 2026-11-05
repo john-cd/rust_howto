@@ -88,6 +88,7 @@ impl CancelTokenSource {
 }
 
 impl Default for CancelTokenSource {
+    /// Creates a source with no active tasks.
     fn default() -> Self {
         Self::new()
     }
@@ -115,6 +116,7 @@ impl CancelToken {
 }
 
 impl Drop for CancelToken {
+    /// Unregisters the task from the cancellation registry when its token is dropped.
     fn drop(&mut self) {
         let Some(tasks) = self.tasks.upgrade() else {
             return;
@@ -129,5 +131,142 @@ impl Drop for CancelToken {
         {
             tasks.remove(&self.id);
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies that creating a token sets its initial cancellation state to uncancelled.
+    #[test]
+    fn test_make_token_and_check() -> anyhow::Result<()> {
+        let source = CancelTokenSource::new();
+        let token = source.make_token(42)?;
+        assert_eq!(token.check(), Ok(()));
+        Ok(())
+    }
+
+    /// Verifies that cancelling an active task causes `check()` to report an interruption error.
+    #[test]
+    fn test_cancel_task() -> anyhow::Result<()> {
+        let source = CancelTokenSource::new();
+        let token = source.make_token(10)?;
+        source.cancel_task(10)?;
+        assert_eq!(token.check(), Err(TaskError::Interrupted));
+        Ok(())
+    }
+
+    /// Verifies that attempting to cancel a task ID that is not registered returns an error.
+    #[test]
+    fn test_cancel_task_not_active() {
+        let source = CancelTokenSource::new();
+        let result = source.cancel_task(99);
+        assert!(result.is_err());
+        assert!(
+            result
+                .err()
+                .is_some_and(|e| e.to_string().contains("is not active"))
+        );
+    }
+
+    /// Verifies that `cancel_all` flags all currently registered tasks as cancelled.
+    #[test]
+    fn test_cancel_all() -> anyhow::Result<()> {
+        let source = CancelTokenSource::new();
+        let token1 = source.make_token(1)?;
+        let token2 = source.make_token(2)?;
+        let token3 = source.make_token(3)?;
+
+        assert_eq!(token1.check(), Ok(()));
+        assert_eq!(token2.check(), Ok(()));
+        assert_eq!(token3.check(), Ok(()));
+
+        source.cancel_all()?;
+
+        assert_eq!(token1.check(), Err(TaskError::Interrupted));
+        assert_eq!(token2.check(), Err(TaskError::Interrupted));
+        assert_eq!(token3.check(), Err(TaskError::Interrupted));
+        Ok(())
+    }
+
+    /// Verifies that attempting to register an ID that is already active fails.
+    #[test]
+    fn test_duplicate_registration_fails() -> anyhow::Result<()> {
+        let source = CancelTokenSource::new();
+        let _token = source.make_token(7)?;
+        let duplicate_result = source.make_token(7);
+        assert!(duplicate_result.is_err());
+        assert!(
+            duplicate_result
+                .err()
+                .is_some_and(|e| e.to_string().contains("already registered"))
+        );
+        Ok(())
+    }
+
+    /// Verifies that dropping a token removes the task registration, allowing the ID to be reused.
+    #[test]
+    fn test_token_drop_deregisters_task() -> anyhow::Result<()> {
+        let source = CancelTokenSource::new();
+        let token = source.make_token(15)?;
+        assert!(source.make_token(15).is_err());
+        drop(token);
+        // Once dropped, registering the same task ID should succeed.
+        let token_new = source.make_token(15)?;
+        assert_eq!(token_new.check(), Ok(()));
+        Ok(())
+    }
+
+    /// Verifies that `CancelTokenSource::default()` functions the same as `new()`.
+    #[test]
+    fn test_default_source() -> anyhow::Result<()> {
+        let source = CancelTokenSource::default();
+        let token = source.make_token(100)?;
+        assert_eq!(token.check(), Ok(()));
+        source.cancel_task(100)?;
+        assert_eq!(token.check(), Err(TaskError::Interrupted));
+        Ok(())
+    }
+
+    /// Verifies that dropping a token when the source has already been dropped does not panic.
+    #[test]
+    fn test_token_drop_after_source_dropped() -> anyhow::Result<()> {
+        let token = {
+            let source = CancelTokenSource::new();
+            source.make_token(5)?
+        };
+        // Source is now dropped; dropping token should safely exit when weak pointer fails to upgrade.
+        drop(token);
+        Ok(())
+    }
+
+    /// Verifies that dropping a stale token does not remove an active task with the same ID.
+    #[test]
+    fn test_stale_token_drop_does_not_remove_active_task() -> anyhow::Result<()> {
+        let source = CancelTokenSource::new();
+        let token1 = source.make_token(20)?;
+
+        // Manually craft a stale token pointing to the same registry and ID, but with a different AtomicBool.
+        let stale_token = CancelToken {
+            id: 20,
+            cancelled: Arc::new(AtomicBool::new(false)),
+            tasks: Arc::downgrade(&source.tasks),
+        };
+
+        // Dropping the stale token should not remove token1's registration because the Arc pointers differ.
+        drop(stale_token);
+
+        // Attempting to register ID 20 should still fail because token1 is still registered.
+        assert!(source.make_token(20).is_err());
+
+        // Now cancel task 20 and verify token1 reflects the cancellation.
+        source.cancel_task(20)?;
+        assert_eq!(token1.check(), Err(TaskError::Interrupted));
+
+        // Dropping the genuine token1 removes the task.
+        drop(token1);
+        assert!(source.make_token(20).is_ok());
+        Ok(())
     }
 }
