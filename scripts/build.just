@@ -29,7 +29,7 @@ build_target_dir := join(build_target_base, tooling_slot)
 build_intermediate_dir := join(build_intermediate_base, tooling_slot)
 # Native Just paths; validate slots before exporting build directories.
 tooling_slot := if build_slot =~ '^(main|[abc])$' { build_slot } else { error("Invalid worktree slot: " + build_slot) }
-tooling_main := if file_name(parent_directory(build_repo)) == ".worktrees" { parent_directory(parent_directory(build_repo)) } else { build_repo }
+tooling_main := if build_parent =~ '^([A-Za-z]:)?[/\\]*$' { build_repo } else if file_name(build_parent) == ".worktrees" { parent_directory(build_parent) } else { build_repo }
 build_sccache_basedirs := trim(shell('''
 set -euo pipefail
 root=$1
@@ -50,8 +50,8 @@ export CARGO_TARGET_DIR := build_target_dir
 export CARGO_BUILD_TARGET_DIR := build_target_dir
 host_build_volume := if os() == "windows" { trim(shell('pwsh.exe -NoLogo -NoProfile -File "$1" -BuildRoot "$2"', join(build_repo, "scripts/cargo-host.ps1"), build_code_build_root)) } else { "ok" }
 export CARGO_BUILD_BUILD_DIR := if host_build_volume == "ok" { build_intermediate_dir } else { error("Cargo build root must use NTFS") }
-export RUSTC_WRAPPER := "sccache"
-export CARGO_BUILD_RUSTC_WRAPPER := "sccache"
+export RUSTC_WRAPPER := env("RUSTC_WRAPPER", "sccache")
+export CARGO_BUILD_RUSTC_WRAPPER := env("CARGO_BUILD_RUSTC_WRAPPER", "sccache")
 export CARGO_INCREMENTAL := "0"
 export SCCACHE_DIR := build_code_sccache_root
 export SCCACHE_CACHE_SIZE := "35G"
