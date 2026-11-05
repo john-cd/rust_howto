@@ -26,6 +26,17 @@ struct VideoSpec {
     frames: u64,
 }
 
+impl VideoSpec {
+    /// Creates a new video specification with the given dimensions and frame count.
+    const fn new(width: usize, height: usize, frames: u64) -> Self {
+        Self {
+            width,
+            height,
+            frames,
+        }
+    }
+}
+
 /// Fills the next frame with a horizontal luma gradient that shifts by
 /// `shift` samples, so that consecutive frames differ.
 fn send_frame(context: &mut Context<u8>, shift: usize) -> Result<()> {
@@ -99,11 +110,12 @@ fn encode(spec: &VideoSpec) -> Result<usize> {
 
 /// Encodes ten 64-by-64 frames.
 fn main() -> Result<()> {
-    let spec = VideoSpec {
-        width: 64,
-        height: 64,
-        frames: 10,
-    };
+    // Pass video dimensions and target frame count as arguments to configure
+    // the synthetic video stream instead of hardcoding raw struct literals.
+    let width = 64;
+    let height = 64;
+    let frames = 10;
+    let spec = VideoSpec::new(width, height, frames);
     let packet_count = encode(&spec)?;
     println!(
         "Encoded {} frame(s) into {packet_count} AV1 packet(s).",
@@ -125,11 +137,10 @@ mod tests {
     /// Every frame of a short video is encoded into a packet, offline.
     #[test]
     fn encodes_every_frame() {
-        let spec = VideoSpec {
-            width: 64,
-            height: 64,
-            frames: 5,
-        };
+        let width = 64;
+        let height = 64;
+        let frames = 5;
+        let spec = VideoSpec::new(width, height, frames);
         let packet_count = encode(&spec).expect("synthetic frames should encode");
         assert_eq!(packet_count, 5);
     }
@@ -137,11 +148,10 @@ mod tests {
     /// A frame size the encoder cannot use is reported as an error.
     #[test]
     fn rejects_an_empty_frame_size() {
-        let spec = VideoSpec {
-            width: 0,
-            height: 0,
-            frames: 1,
-        };
+        let width = 0;
+        let height = 0;
+        let frames = 1;
+        let spec = VideoSpec::new(width, height, frames);
         assert!(encode(&spec).is_err());
     }
 
