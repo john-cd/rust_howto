@@ -71,7 +71,7 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 ### 3. Examples and Benchmarks
 
-- **Add Criterion / Divan benchmarks to performance-sensitive crates**:
+- [x] - **Add Criterion / Divan benchmarks to performance-sensitive crates**:
   - Only four crates in `bk/crates` currently define benchmarks (`development_tools_profiling`, `memory_management`, `data_structures`, and `algorithms`).
   - Add benchmarks for high-throughput utilities in `tools/tool_lib` (e.g., `published_recipes` link extraction regexes, crate block parsing, and markdown template generation).
   - Add benchmarks in `tools/example-integrity` measuring chapter parsing, regex anchoring, and module target graph traversal across large book trees.

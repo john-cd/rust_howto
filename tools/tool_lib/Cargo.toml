@@ -35,9 +35,14 @@ walkdir = { workspace = true }
 
 [dev-dependencies]
 chrono = { workspace = true }
+criterion = { workspace = true }
 mockito = { workspace = true }
 serde_json = { workspace = true }
 url = { workspace = true }
+
+[[bench]]
+name = "templates"
+harness = false
 
 [lints]
 workspace = true
