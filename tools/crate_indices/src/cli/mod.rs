@@ -206,12 +206,14 @@ mod tests {
 
     #[test]
     fn no_subcommand_selects_none() {
-        assert!(matches!(parse(&[]).unwrap(), Cmd::None));
+        assert!(matches!(parse(&[]).expect("parse succeeds"), Cmd::None));
     }
 
     #[test]
     fn category_page_collects_crate_names() {
-        let Cmd::CategoryPage(a) = parse(&["category_page", "serde", "rand"]).unwrap() else {
+        let Cmd::CategoryPage(a) =
+            parse(&["category_page", "serde", "rand"]).expect("parse succeeds")
+        else {
             panic!("wrong command");
         };
         assert_eq!(a.crate_names, ["serde", "rand"]);
@@ -220,29 +222,38 @@ mod tests {
     #[test]
     fn aliases_resolve_to_same_commands() {
         assert!(matches!(
-            parse(&["c", "serde"]).unwrap(),
+            parse(&["c", "serde"]).expect("parse succeeds"),
             Cmd::CategoryPage(_)
         ));
         assert!(matches!(
-            parse(&["a", "serde"]).unwrap(),
+            parse(&["a", "serde"]).expect("parse succeeds"),
             Cmd::AlphabeticalCratePage(_)
         ));
-        assert!(matches!(parse(&["p", "serde"]).unwrap(), Cmd::CratePage(_)));
-        assert!(matches!(parse(&["l"]).unwrap(), Cmd::ListCrates(_)));
         assert!(matches!(
-            parse(&["u", "serde"]).unwrap(),
+            parse(&["p", "serde"]).expect("parse succeeds"),
+            Cmd::CratePage(_)
+        ));
+        assert!(matches!(
+            parse(&["l"]).expect("parse succeeds"),
+            Cmd::ListCrates(_)
+        ));
+        assert!(matches!(
+            parse(&["u", "serde"]).expect("parse succeeds"),
             Cmd::UpdateRefDefs(_)
         ));
-        assert!(matches!(parse(&["e"]).unwrap(), Cmd::ExpandCrateBlocks(_)));
+        assert!(matches!(
+            parse(&["e"]).expect("parse succeeds"),
+            Cmd::ExpandCrateBlocks(_)
+        ));
     }
 
     #[test]
     fn list_crates_defaults_to_current_directory() {
-        let Cmd::ListCrates(a) = parse(&["list_crates"]).unwrap() else {
+        let Cmd::ListCrates(a) = parse(&["list_crates"]).expect("parse succeeds") else {
             panic!("wrong command");
         };
         assert_eq!(a.dirpathbuf, Path::new("."));
-        let Cmd::ListCrates(a) = parse(&["l", "-d", "x"]).unwrap() else {
+        let Cmd::ListCrates(a) = parse(&["l", "-d", "x"]).expect("parse succeeds") else {
             panic!("wrong command");
         };
         assert_eq!(a.dirpathbuf, Path::new("x"));
@@ -250,11 +261,14 @@ mod tests {
 
     #[test]
     fn update_refdefs_default_file() {
-        let Cmd::UpdateRefDefs(a) = parse(&["update_refdefs", "serde"]).unwrap() else {
+        let Cmd::UpdateRefDefs(a) = parse(&["update_refdefs", "serde"]).expect("parse succeeds")
+        else {
             panic!("wrong command");
         };
         assert_eq!(a.filepathbuf, Path::new("./src/refs/crate-refs.md"));
-        let Cmd::UpdateRefDefs(a) = parse(&["u", "serde", "--file", "f.md"]).unwrap() else {
+        let Cmd::UpdateRefDefs(a) =
+            parse(&["u", "serde", "--file", "f.md"]).expect("parse succeeds")
+        else {
             panic!("wrong command");
         };
         assert_eq!(a.filepathbuf, Path::new("f.md"));
@@ -262,12 +276,15 @@ mod tests {
 
     #[test]
     fn expand_crate_blocks_file_is_optional() {
-        let Cmd::ExpandCrateBlocks(a) = parse(&["expand_crate_blocks"]).unwrap() else {
+        let Cmd::ExpandCrateBlocks(a) = parse(&["expand_crate_blocks"]).expect("parse succeeds")
+        else {
             panic!("wrong command");
         };
         assert_eq!(a.dirpathbuf, Path::new("."));
         assert!(a.refdefs_filepathbuf.is_none());
-        let Cmd::ExpandCrateBlocks(a) = parse(&["e", "-d", "d", "-f", "r.md"]).unwrap() else {
+        let Cmd::ExpandCrateBlocks(a) =
+            parse(&["e", "-d", "d", "-f", "r.md"]).expect("parse succeeds")
+        else {
             panic!("wrong command");
         };
         assert_eq!(a.refdefs_filepathbuf.as_deref(), Some(Path::new("r.md")));
@@ -281,13 +298,13 @@ mod tests {
             "m.toml",
             "serde",
         ])
-        .unwrap() else {
+        .expect("parse succeeds") else {
             panic!("wrong command");
         };
         assert_eq!(a.metadata_path, Path::new("m.toml"));
         assert_eq!(a.book_root, Path::new("."));
         let Cmd::AlphabeticalCratePage(a) =
-            parse(&["alphabetical_page", "--book-root", "bk", "serde"]).unwrap()
+            parse(&["alphabetical_page", "--book-root", "bk", "serde"]).expect("parse succeeds")
         else {
             panic!("wrong command");
         };
@@ -297,13 +314,13 @@ mod tests {
     #[test]
     fn invalid_arguments_are_rejected() {
         // Missing required crate name.
-        assert!(parse(&["category_page"]).is_err());
+        parse(&["category_page"]).expect_err("parse fails");
         // Missing required --metadata.
-        assert!(parse(&["category_page_from_metadata", "serde"]).is_err());
+        parse(&["category_page_from_metadata", "serde"]).expect_err("parse fails");
         // Unknown subcommand and unknown flag.
-        assert!(parse(&["bogus"]).is_err());
-        assert!(parse(&["list_crates", "--nope"]).is_err());
+        parse(&["bogus"]).expect_err("parse fails");
+        parse(&["list_crates", "--nope"]).expect_err("parse fails");
         // Flag without a value.
-        assert!(parse(&["list_crates", "-d"]).is_err());
+        parse(&["list_crates", "-d"]).expect_err("parse fails");
     }
 }

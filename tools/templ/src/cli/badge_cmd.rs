@@ -119,7 +119,8 @@ mod tests {
         assert_eq!(args.file, Some(PathBuf::from("refs.md")));
     }
 
-    /// Checks that multiple crate names are collected and the add option defaults to None when omitted.
+    /// Checks that multiple crate names are collected and the add option defaults to None when
+    /// omitted.
     #[test]
     fn multiple_crate_names_without_add_option() {
         let matches = Command::new("templ")

@@ -27,8 +27,9 @@ pub(super) fn get_cmd_arg_crate_name(m: &clap::ArgMatches) -> Vec<String> {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use clap::Command;
+
+    use super::*;
 
     /// Checks that a single crate name is extracted.
     #[test]

@@ -26,8 +26,9 @@ pub(super) fn get_config(matches: &ArgMatches) -> Config {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use clap::Command;
+
+    use super::*;
 
     /// Checks that the verbose flag defaults to false when omitted.
     #[test]

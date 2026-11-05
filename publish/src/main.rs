@@ -122,6 +122,6 @@ authors.workspace = true
         let manifest =
             Manifest::from_slice(include_bytes!("../Cargo.toml")).expect("bundled manifest");
         assert!(manifest.package.is_some());
-        assert!(describe(&manifest).is_ok());
+        describe(&manifest).expect("manifest describes");
     }
 }
