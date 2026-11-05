@@ -1,6 +1,8 @@
 //! Starts a task on a worker thread, cancels it, then stops the worker.
 //!
 //! Run with `cargo run -p cancelable --example cancel_task`.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::thread;
 use std::time::Duration;

@@ -1,6 +1,8 @@
 //! Styles or removes `<!--private ... -->` blocks with the preprocessor.
 //!
 //! Run with `cargo run -p mdbook-private --example private_blocks`.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use mdbook_preprocessor::Preprocessor;
 use mdbook_preprocessor::PreprocessorContext;
@@ -44,7 +46,15 @@ mod tests {
     #[test]
     fn remove_drops_secret() {
         main().expect("example should succeed");
-        assert!(!render(json!({ "remove": true })).expect("render").contains("SECRET"));
-        assert!(render(json!({ "remove": false })).expect("render").contains("SECRET"));
+        assert!(
+            !render(json!({ "remove": true }))
+                .expect("render")
+                .contains("SECRET")
+        );
+        assert!(
+            render(json!({ "remove": false }))
+                .expect("render")
+                .contains("SECRET")
+        );
     }
 }

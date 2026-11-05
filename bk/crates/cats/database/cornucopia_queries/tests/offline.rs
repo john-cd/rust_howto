@@ -2,6 +2,8 @@
 //!
 //! No PostgreSQL server is needed: they exercise the (de)serialization helpers
 //! and the query constructors only.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use database_cornucopia_queries::ArrayIterator;
 use database_cornucopia_queries::ArraySql;
