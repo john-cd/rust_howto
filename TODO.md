@@ -32,7 +32,7 @@ Record status and validation evidence in the issue rather than duplicating check
 
 #### Tests and examples
 
-- [#2206: Tests/examples for remaining tool-crate gaps](https://github.com/john-cd/rust_howto/issues/2206) — Tests/docs only.
+- [#2225: Remaining tool-crate test gaps and mdbook-utils vendoring decision](https://github.com/john-cd/rust_howto/issues/2225) — Tests/docs only; split from #2206.
 
 <!-- recommended-issue-order:end -->
 
