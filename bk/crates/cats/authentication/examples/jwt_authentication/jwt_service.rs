@@ -1,7 +1,7 @@
-// TODO Reviewed ??-??-2026.
-
 //! Demonstrates creating, signing, and verifying a JSON Web Token (JWT) as well
 //! as configuring an Axum router protected by bearer-token authentication.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::time::SystemTime;
 use std::time::UNIX_EPOCH;

@@ -1,6 +1,8 @@
 //! Builds the integrity report for a repository and prints a summary.
 //!
 //! Run with `cargo run -p example-integrity --example report -- <repo-root>`.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::path::PathBuf;
 
