@@ -27,7 +27,6 @@ ignore = [
   {
     id = "RUSTSEC-2026-0041",
     reason = "zenoh-transport 1.10.2 still introduces lz4_flex 0.10.0 through the optional Zenoh feature; the fixed direct science_robotics dependency no longer selects this vulnerable version. Zenoh's version constraint prevents updating its transitive dependency. Tracked in #2116.",
-    allow = ["zenoh-transport@=1.10.2"],
   },
   # Dependabot alert #86: trading-calendar 0.2.3 requires lru 0.12.5; the fix is >=0.16.3.
   # The repo's unsound = "workspace" scope does not scan this transitive dependency;
@@ -35,7 +34,6 @@ ignore = [
   {
     id = "RUSTSEC-2026-0002",
     reason = "Dependabot reports lru 0.12.5 via trading-calendar 0.2.3; no upstream release accepts fixed lru yet. The current unsound = workspace policy excludes transitive deps. Tracked in #2116.",
-    allow = ["trading-calendar@=0.2.3"],
   },
 ]
 
