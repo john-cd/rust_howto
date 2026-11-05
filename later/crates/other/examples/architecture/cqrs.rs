@@ -90,6 +90,15 @@ mod events {
         },
     }
 
+    /// A snapshot of model state at a given event version.
+    #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+    pub struct Snapshot<T> {
+        /// The captured state.
+        pub state: T,
+        /// The event count or sequence number when this snapshot was captured.
+        pub version: usize,
+    }
+
     /// `EventRepository` trait.
     ///
     /// Acts as the source of truth for the system's state.
@@ -101,6 +110,12 @@ mod events {
         /// Returns the events, or only the latest `limit` events if a limit is
         /// given.
         fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent>;
+
+        /// Returns all events recorded after the specified version offset.
+        fn get_events_since(&self, version: usize) -> Vec<ProductEvent>;
+
+        /// Returns the total number of events recorded.
+        fn event_count(&self) -> usize;
     }
 
     impl EventRepository for SimpleEventStore {
@@ -123,6 +138,25 @@ mod events {
             } else {
                 events.clone()
             }
+        }
+
+        fn get_events_since(&self, version: usize) -> Vec<ProductEvent> {
+            let events = self
+                .events
+                .read()
+                .expect("the cqrs example invariant should hold");
+            if version >= events.len() {
+                Vec::new()
+            } else {
+                events[version..].to_vec()
+            }
+        }
+
+        fn event_count(&self) -> usize {
+            self.events
+                .read()
+                .expect("the cqrs example invariant should hold")
+                .len()
         }
     }
 
@@ -275,6 +309,7 @@ mod read_store {
 
     use super::domain::Product;
     use super::events::ProductEvent;
+    use super::events::Snapshot;
 
     /// `ProductRepository` trait.
     /// Repository with domain objects.
@@ -321,24 +356,60 @@ mod read_store {
             }
         }
 
+        /// Applies a single domain event to the read model map.
+        fn apply_event_to_map(read_model: &mut HashMap<u32, Product>, event: &ProductEvent) {
+            match event {
+                ProductEvent::ProductCreated { id, name, quantity } => {
+                    read_model.insert(*id, Product::new(*id, name.clone(), *quantity));
+                }
+                ProductEvent::ProductQuantityUpdated { id, new_quantity } => {
+                    if let Some(product) = read_model.get_mut(id) {
+                        product.set_quantity(*new_quantity);
+                    }
+                }
+            }
+        }
+
         /// Rebuilds the read model from the event store.
         ///
         /// This is used to re-create the read model from the event store.
         pub fn rebuild_read_model(&self, events: Vec<ProductEvent>) {
             let mut read_model = HashMap::new();
-            for event in events {
-                match event {
-                    ProductEvent::ProductCreated { id, name, quantity } => {
-                        read_model.insert(id, Product::new(id, name, quantity));
-                    }
-                    ProductEvent::ProductQuantityUpdated { id, new_quantity } => {
-                        if let Some(product) = read_model.get_mut(&id) {
-                            product.set_quantity(new_quantity);
-                        }
-                    }
-                }
+            for event in &events {
+                Self::apply_event_to_map(&mut read_model, event);
             }
             // Publish the complete snapshot with one write-lock acquisition.
+            *self
+                .read_model
+                .write()
+                .expect("the read-model lock should not be poisoned") = read_model;
+        }
+
+        /// Captures a snapshot of the current read model with its corresponding event version.
+        pub fn create_snapshot(&self, version: usize) -> Snapshot<HashMap<u32, Product>> {
+            let read_model = self
+                .read_model
+                .read()
+                .expect("the read-model lock should not be poisoned");
+            Snapshot {
+                state: read_model.clone(),
+                version,
+            }
+        }
+
+        /// Reconstructs the read model from an optional snapshot and any subsequent delta events.
+        pub fn reconstruct_from_snapshot(
+            &self,
+            snapshot: Option<Snapshot<HashMap<u32, Product>>>,
+            delta_events: Vec<ProductEvent>,
+        ) {
+            let mut read_model = match snapshot {
+                Some(s) => s.state,
+                None => HashMap::new(),
+            };
+            for event in &delta_events {
+                Self::apply_event_to_map(&mut read_model, event);
+            }
             *self
                 .read_model
                 .write()
@@ -424,6 +495,15 @@ fn main() -> anyhow::Result<()> {
         println!("Product not found");
     }
 
+    // Capture an event store snapshot of the read model at the current event version.
+    let snapshot_version = command_handler.event_store.event_count();
+    let snapshot = read_store.create_snapshot(snapshot_version);
+    println!(
+        "Captured read-model snapshot at event version {}: {} products",
+        snapshot.version,
+        snapshot.state.len()
+    );
+
     command_handler
         .process(Command::CreateProduct {
             id: 2,
@@ -432,8 +512,12 @@ fn main() -> anyhow::Result<()> {
         })
         .expect("the cqrs example invariant should hold");
 
-    let events = command_handler.event_store.get_events(None);
-    read_store.rebuild_read_model(events);
+    // Reconstruct the read model using the snapshot plus subsequent delta events.
+    let delta_events = command_handler
+        .event_store
+        .get_events_since(snapshot.version);
+    read_store.reconstruct_from_snapshot(Some(snapshot), delta_events);
+
     if let Some(product) = query_handler.get_product(2) {
         println!("Product: {product:?}");
     } else {
@@ -553,12 +637,117 @@ mod tests {
                 .any(|p| p.id() == 2 && p.name() == "Mouse" && p.quantity() == 20)
         );
     }
+
+    /// Verifies that reconstructing from a snapshot plus delta events produces the correct state.
+    #[test]
+    fn test_snapshot_creation_and_reconstruction() {
+        let read_store = read_store::SimpleReadStore::new();
+        let initial_query = query::QueryHandler::new(read_store.clone());
+
+        read_store.rebuild_read_model(vec![
+            events::ProductEvent::ProductCreated {
+                id: 1,
+                name: "Keyboard".to_owned(),
+                quantity: 15,
+            },
+            events::ProductEvent::ProductCreated {
+                id: 2,
+                name: "Monitor".to_owned(),
+                quantity: 5,
+            },
+        ]);
+
+        assert_eq!(initial_query.get_all_products().len(), 2);
+
+        // Capture snapshot at version 2.
+        let snapshot = read_store.create_snapshot(2);
+        assert_eq!(snapshot.version, 2);
+        assert_eq!(snapshot.state.len(), 2);
+
+        // Create a new fresh read store and reconstruct using snapshot + delta events.
+        let restored_store = read_store::SimpleReadStore::new();
+        let restored_query = query::QueryHandler::new(restored_store.clone());
+
+        let delta_events = vec![
+            events::ProductEvent::ProductQuantityUpdated {
+                id: 1,
+                new_quantity: 12,
+            },
+            events::ProductEvent::ProductCreated {
+                id: 3,
+                name: "Webcam".to_owned(),
+                quantity: 8,
+            },
+        ];
+
+        restored_store.reconstruct_from_snapshot(Some(snapshot), delta_events);
+
+        let p1 = restored_query
+            .get_product(1)
+            .expect("the product should exist");
+        assert_eq!(p1.quantity(), 12);
+        assert_eq!(p1.name(), "Keyboard");
+
+        let p2 = restored_query
+            .get_product(2)
+            .expect("the product should exist");
+        assert_eq!(p2.quantity(), 5);
+
+        let p3 = restored_query
+            .get_product(3)
+            .expect("the product should exist");
+        assert_eq!(p3.quantity(), 8);
+    }
+
+    /// Verifies reconstruction when no snapshot is provided (rebuilding from delta events only).
+    #[test]
+    fn test_reconstruction_without_snapshot() {
+        let read_store = read_store::SimpleReadStore::new();
+        let query_handler = query::QueryHandler::new(read_store.clone());
+
+        let delta_events = vec![events::ProductEvent::ProductCreated {
+            id: 10,
+            name: "Desk".to_owned(),
+            quantity: 3,
+        }];
+
+        read_store.reconstruct_from_snapshot(None, delta_events);
+
+        let desk = query_handler
+            .get_product(10)
+            .expect("the product should exist");
+        assert_eq!(desk.name(), "Desk");
+        assert_eq!(desk.quantity(), 3);
+    }
+
+    /// Verifies event repository versioning methods `get_events_since` and `event_count`.
+    #[test]
+    fn test_event_store_versioning_and_slices() {
+        let event_store = events::SimpleEventStore::new();
+        assert_eq!(event_store.event_count(), 0);
+        assert!(event_store.get_events_since(0).is_empty());
+
+        event_store.apply_event(events::ProductEvent::ProductCreated {
+            id: 1,
+            name: "Item 1".to_owned(),
+            quantity: 5,
+        });
+        event_store.apply_event(events::ProductEvent::ProductCreated {
+            id: 2,
+            name: "Item 2".to_owned(),
+            quantity: 10,
+        });
+
+        assert_eq!(event_store.event_count(), 2);
+        assert_eq!(event_store.get_events_since(0).len(), 2);
+        assert_eq!(event_store.get_events_since(1).len(), 1);
+        assert_eq!(event_store.get_events_since(2).len(), 0);
+        assert_eq!(event_store.get_events_since(99).len(), 0);
+    }
 }
-// Deferred (#1748): event store snapshots and read-model reconstruction need a
-// scope decision before any code is added.
 // Notes:
-// - This example can be extended with event store snapshots and more advanced read-model
-//   reconstruction.
+// - This example demonstrates event store snapshots and read-model reconstruction, allowing the
+//   read store to restore from a snapshot and only replay subsequent delta events.
 // - See the CQRS pattern for additional architecture guidance: https://martinfowler.com/bliki/CQRS.html
 //   https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1 https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2
 //   https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs https://doc.rust-cqrs.org/intro.html
