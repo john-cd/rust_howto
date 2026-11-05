@@ -90,5 +90,5 @@ A comprehensive review of the monorepo identified the following fixes, improveme
 
 ### 6. Discrepancies between Documentation and Code
 
-- **Verify `bin/README.md` against `just release`**:
+- [x] **Verify `bin/README.md` against `just release`**:
   - Verify that `just release` recipes build and copy all required executables into `bin/` with clear usage documentation.

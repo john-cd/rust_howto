@@ -73,7 +73,7 @@ alias nta := nextestall
     cargo doc --no-deps --workspace --locked --document-private-items
     cd ../target/tools/doc/ ; python3 -m http.server 9000
 
-# Build release binaries into the configured external artifact directory.
+# Build release binaries and copy them into the repository's bin/ directory.
 @release:
     echo "Build the tools in $(pwd) in release mode and copy to {{ root }}/../bin"
-    cargo +{{ rustfmt_toolchain }} build --bins --locked --all-features --release -Z unstable-options --artifact-dir "{{ join(build_intermediate_base, build_slot, "artifacts") }}"
+    artifacts="{{ join(build_intermediate_base, build_slot, "artifacts") }}";     cargo +{{ rustfmt_toolchain }} build --bins --locked --all-features --release -Z unstable-options --artifact-dir "$artifacts" &&     mkdir -p "{{ root }}/../bin" &&     for f in "$artifacts"/*; do         case "$f" in *.pdb|*.d|*.dwp|*.dSYM) continue ;; esac;         [ -f "$f" ] && cp -f "$f" "{{ root }}/../bin/";     done
