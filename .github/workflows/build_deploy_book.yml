@@ -170,6 +170,10 @@ jobs:
       # - name: List Docker builders (debug)
       #   run: docker buildx ls
       - name: Build, cache (type=gha), and push to DockerHub
+        env:
+          # compose.yaml passes GH_TOKEN as the `github_token` build secret so cargo can
+          # fetch the private john-cd/book_tooling repository (see build_tools.yml).
+          GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
         run: |
           docker buildx bake -f compose.yaml -f compose-ci.yaml \
             --push --allow=fs.read=.. \
