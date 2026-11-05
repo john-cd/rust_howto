@@ -236,7 +236,8 @@ mod tests {
             let source = CancelTokenSource::new();
             source.make_token(5)?
         };
-        // Source is now dropped; dropping token should safely exit when weak pointer fails to upgrade.
+        // Source is now dropped; dropping token should safely exit when weak pointer fails to
+        // upgrade.
         drop(token);
         Ok(())
     }
@@ -247,14 +248,16 @@ mod tests {
         let source = CancelTokenSource::new();
         let token1 = source.make_token(20)?;
 
-        // Manually craft a stale token pointing to the same registry and ID, but with a different AtomicBool.
+        // Manually craft a stale token pointing to the same registry and ID, but with a different
+        // AtomicBool.
         let stale_token = CancelToken {
             id: 20,
             cancelled: Arc::new(AtomicBool::new(false)),
             tasks: Arc::downgrade(&source.tasks),
         };
 
-        // Dropping the stale token should not remove token1's registration because the Arc pointers differ.
+        // Dropping the stale token should not remove token1's registration because the Arc pointers
+        // differ.
         drop(stale_token);
 
         // Attempting to register ID 20 should still fail because token1 is still registered.
