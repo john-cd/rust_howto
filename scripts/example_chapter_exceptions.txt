@@ -15,6 +15,7 @@ bk/crates/cats/graphics/examples/graphics.rs
 bk/crates/cats/development_tools_debugging/examples/support/isolated.rs
 bk/crates/cats/development_tools/examples/crate_indices/fixtures.rs
 later/crates/cats/development_tools_ffi/examples/ruby/greeting.rs
+bk/crates/cats/authentication/examples/jwt_authentication/jwt_service.rs
 # Cargo entry points that only `mod` the chapter-included napi.rs, neon.rs and xilem.rs.
 later/crates/cats/development_tools_ffi/examples/node/napi_main.rs
 later/crates/cats/development_tools_ffi/examples/node/neon_main.rs
