@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026
 
 //! Discounts a fixed sequence of cash flows with `financial`.
 //!

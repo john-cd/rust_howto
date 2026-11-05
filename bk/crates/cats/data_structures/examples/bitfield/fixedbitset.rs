@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! A fixed-size bit set with `fixedbitset`: a visited set for a graph walk.

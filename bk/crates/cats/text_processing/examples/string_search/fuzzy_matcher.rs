@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Fuzzy matching of strings with `fuzzy-matcher`.

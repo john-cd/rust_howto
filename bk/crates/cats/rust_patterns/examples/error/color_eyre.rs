@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Demonstrates how to use the `color-eyre` crate for enhanced error reporting.

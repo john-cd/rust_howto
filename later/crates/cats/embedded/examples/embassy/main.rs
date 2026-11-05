@@ -1,5 +1,5 @@
 //! Starts the host-side Embassy task example.
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 mod embassy;
 

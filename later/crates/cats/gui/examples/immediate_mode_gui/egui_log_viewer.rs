@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Shows the `tracing` events of an application in a panel with `egui_tracing`.

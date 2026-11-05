@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This module demonstrates how to reduce a hierarchical URL to its origin.

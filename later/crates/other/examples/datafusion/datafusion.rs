@@ -1,5 +1,5 @@
 #![cfg(feature = "datafusion")]
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example registers an in-memory Arrow table and groups its rows with

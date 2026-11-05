@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Demonstrates the use of `AtomicCell` from the `crossbeam-utils` crate.

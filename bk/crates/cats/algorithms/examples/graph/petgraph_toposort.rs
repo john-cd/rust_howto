@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Topological sorting of a Directed Acyclic Graph (DAG) using `petgraph`.

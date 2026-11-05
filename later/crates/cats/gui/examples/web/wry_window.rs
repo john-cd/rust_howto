@@ -1,5 +1,4 @@
-
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // Preserved for reference; its Cargo example is disabled while tao/wry require
 // the affected GTK 3/glib 0.18 dependency chain.
@@ -149,11 +148,7 @@ mod tests {
             "javascript:alert(1)",
             "file://example.com/share/report.html",
         ] {
-            assert_eq!(
-                validate_local_uri(uri),
-                Err(UriError::NotLocal),
-                "{uri}"
-            );
+            assert_eq!(validate_local_uri(uri), Err(UriError::NotLocal), "{uri}");
         }
         assert_eq!(validate_local_uri("not a uri"), Err(UriError::Invalid));
     }

@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026
 
 // ANCHOR: example
 //! Minimize the Rosenbrock function with Nelder-Mead.

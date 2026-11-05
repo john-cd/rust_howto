@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026
 
 //! A two-register virtual machine with a bounded fetch/decode/execute loop.
 //!

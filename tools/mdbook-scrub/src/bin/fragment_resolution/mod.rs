@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026
 
 //! Resolves local Markdown fragments for the mdBook linkcheck adapter.
 

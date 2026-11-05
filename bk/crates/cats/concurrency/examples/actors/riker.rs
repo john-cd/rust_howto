@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates a simple `riker` actor that receives a message.
@@ -27,12 +27,7 @@ struct PingPongActor;
 impl Actor for PingPongActor {
     type Msg = PingPongActorMsg;
 
-    fn recv(
-        &mut self,
-        ctx: &Context<Self::Msg>,
-        msg: Self::Msg,
-        sender: Sender,
-    ) {
+    fn recv(&mut self, ctx: &Context<Self::Msg>, msg: Self::Msg, sender: Sender) {
         self.receive(ctx, msg, sender);
     }
 }
@@ -40,12 +35,7 @@ impl Actor for PingPongActor {
 impl Receive<Ping> for PingPongActor {
     type Msg = PingPongActorMsg;
 
-    fn receive(
-        &mut self,
-        _ctx: &Context<Self::Msg>,
-        _msg: Ping,
-        _sender: Sender,
-    ) {
+    fn receive(&mut self, _ctx: &Context<Self::Msg>, _msg: Ping, _sender: Sender) {
         println!("Received Ping message");
     }
 }
@@ -53,12 +43,7 @@ impl Receive<Ping> for PingPongActor {
 impl Receive<Pong> for PingPongActor {
     type Msg = PingPongActorMsg;
 
-    fn receive(
-        &mut self,
-        _ctx: &Context<Self::Msg>,
-        _msg: Pong,
-        _sender: Sender,
-    ) {
+    fn receive(&mut self, _ctx: &Context<Self::Msg>, _msg: Pong, _sender: Sender) {
         println!("Received Pong message");
     }
 }

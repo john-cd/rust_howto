@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Writes an `.xlsx` workbook with `rust_xlsxwriter`: a bold header,

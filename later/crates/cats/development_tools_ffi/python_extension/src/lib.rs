@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026
 
 //! A small Python extension module implemented in Rust with PyO3.
 

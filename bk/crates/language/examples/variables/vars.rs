@@ -1,5 +1,5 @@
 #![allow(clippy::needless_late_init)]
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! Variables are used to store values.

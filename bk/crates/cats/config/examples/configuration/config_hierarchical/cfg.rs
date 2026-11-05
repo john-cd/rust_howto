@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 //! Builds typed settings from files, environment variables, and CLI overrides.
 //!

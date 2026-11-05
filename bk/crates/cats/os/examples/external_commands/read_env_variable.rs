@@ -1,5 +1,5 @@
 #![cfg(target_family = "unix")]
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to read an environment variable.

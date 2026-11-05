@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+//! TODO Reviewed ??-??-2026
 
 //! Runs the `templ` binary for subcommands that need no network access.
 

@@ -4,7 +4,7 @@
 //! hardware events without blocking, so one tiny chip can do many things at
 //! once without an operating system. Here the tasks run on the host computer so
 //! the example works anywhere.
-// TODO Reviewed ??-??-2026.
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 use std::sync::Mutex;
