@@ -34,15 +34,15 @@ async fn work(n: u64) -> u64 {
     n * n
 }
 
-/// Runs `inputs` with at most `LIMIT` tasks at a time.
-async fn run_pool(inputs: Vec<u64>) -> Outcome {
+/// Runs `inputs` with at most `limit` tasks at a time using a JoinSet worker pool.
+async fn run_pool_with_limit(inputs: Vec<u64>, limit: usize) -> Outcome {
     let mut pending = inputs.into_iter();
     let mut set = JoinSet::new();
     let mut outcome = Outcome::default();
 
     loop {
         // Fill the pool.
-        while set.len() < LIMIT {
+        while set.len() < limit {
             match pending.next() {
                 Some(n) => {
                     set.spawn(work(n));
@@ -60,6 +60,11 @@ async fn run_pool(inputs: Vec<u64>) -> Outcome {
         }
     }
     outcome
+}
+
+/// Runs `inputs` with at most `LIMIT` tasks at a time.
+async fn run_pool(inputs: Vec<u64>) -> Outcome {
+    run_pool_with_limit(inputs, LIMIT).await
 }
 
 /// `abort_all` cancels the remaining tasks; they report a cancelled
@@ -118,5 +123,26 @@ mod tests {
     #[test]
     fn test_joinset_pool_example_entry_point() {
         main();
+    }
+
+    /// Verifies that empty inputs to the pool result in an empty outcome.
+    #[tokio::test(start_paused = true)]
+    async fn pool_handles_empty_inputs() {
+        let outcome = run_pool(vec![]).await;
+        assert_eq!(outcome, Outcome::default());
+    }
+
+    /// Verifies that individual panicking tasks are counted without halting remaining tasks.
+    #[tokio::test(start_paused = true)]
+    async fn pool_records_panicked_tasks_and_continues() {
+        let outcome = run_pool(vec![13, 10]).await;
+        assert_eq!(outcome.panicked, 1);
+        assert_eq!(outcome.results, vec![100]);
+    }
+
+    /// Verifies that aborting tasks in a JoinSet counts all cancellations.
+    #[tokio::test(start_paused = true)]
+    async fn abort_demo_cancels_all_spawned_tasks() {
+        assert_eq!(abort_demo().await, 3);
     }
 }
