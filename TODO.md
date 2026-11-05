@@ -14,7 +14,8 @@ Record status and validation evidence in the issue rather than duplicating check
 
 ### Blocked or deferred
 
-- [#2164: Epic: Validate and finalize Cargo profiles, output paths, and linker policy](https://github.com/john-cd/rust_howto/issues/2164) — Remaining cross-platform/linker acceptance needs the corresponding hosts/CI; completed Windows measurements need no replay.
+- [#2202: Run native Linux and macOS linker and workspace validation for Cargo profiles](https://github.com/john-cd/rust_howto/issues/2202) — Needs a macOS runner and a native Linux host or CI.
+- [#2203: Capture Windows linker invocation, rust-analyzer target dir, and mdbook-utils in workspace matrix](https://github.com/john-cd/rust_howto/issues/2203) — Windows-host checks plus initializing the `mdbook-utils` submodule.
 - [#2151: Validate ignored example-entry tests from #2133 (services, nextest, clippy 1.97 lints)](https://github.com/john-cd/rust_howto/issues/2151) — Real service-backed/native feature environments and the specified nextest checks.
 - [#2160: Validate pinned Python and heavy-test service versions](https://github.com/john-cd/rust_howto/issues/2160) — Docker Linux engine, runtime/service images and Oracle registry credentials where required.
 - [#2173: Record native-platform CI results after hosted runners
@@ -33,5 +34,6 @@ Record status and validation evidence in the issue rather than duplicating check
 
 ## Maintenance
 
-- [Validate and finalize Cargo profiles, output paths, and linker policy](https://github.com/john-cd/rust_howto/issues/2164).
+- [Native Linux and macOS Cargo profile validation](https://github.com/john-cd/rust_howto/issues/2202).
+- [Windows linker, rust-analyzer, and mdbook-utils validation](https://github.com/john-cd/rust_howto/issues/2203).
 - [Complete dependency-update coverage and consistent CI caching](https://github.com/john-cd/rust_howto/issues/2165).
