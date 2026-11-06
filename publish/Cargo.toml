@@ -23,6 +23,9 @@ exclude = [".cargo/", "justfile", "clippy.toml"]
 [dependencies]
 cargo_toml = "1.0.1"
 
+[dev-dependencies]
+toml = "1.1.8"
+
 [lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
 unsafe_code = "deny"
