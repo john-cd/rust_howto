@@ -127,7 +127,7 @@ authors.workspace = true
 }
 
 #[cfg(test)]
-mod tests {
+mod manifest_parsing_tests {
     use cargo_toml::Edition;
     use cargo_toml::Inheritable;
     use cargo_toml::Manifest;
