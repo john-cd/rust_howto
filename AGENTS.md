@@ -36,19 +36,19 @@ This repository is a monorepo with several independent Rust workspaces. Run comm
 
 | Area                          | Working directory | Build / lint / test                                                                           | Run one test                                            |
 | ----------------------------- | ----------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Main book examples            | `bk\`             | `just ba`, `just ca`, `just nta`                                                              | `just ntt <keyword>`                                    |
+| Main book examples            | `bk\`             | `just b`, `just lc`, `just t`                                                                 | `just ntt <keyword>`                                    |
 | Book rendering                | `bk\`             | `just bb` to build the book, `just s` to serve it, `just q` for a faster preview path on Unix | n/a                                                     |
-| Future/staging crates         | `later\`          | `just ba`, `just ca`, `just nta`                                                              | `cargo test -p <crate> <test_name>` from `later\crates` |
-| Helper binaries               | `tools\`          | `just ba`, `just ca`, `just nta`                                                              | `cargo test -p <crate> <test_name>`                     |
-| Additional long-form examples | `xmpl\`           | `just ba`, `just ca`, `just nta`                                                              | `cargo test -p <crate> <test_name>`                     |
-| Scratch workspace             | `playground\`     | `just ba`, `just ca`, `just nta`                                                              | `cargo test -p <crate> <test_name>`                     |
-| Placeholder published crate   | `publish\`        | `just ba`, `just ca`, `just nta`                                                              | `cargo test <test_name>`                                |
+| Future/staging crates         | `later\`          | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>` from `later\crates` |
+| Helper binaries               | `tools\`          | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>`                     |
+| Additional long-form examples | `xmpl\`           | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>`                     |
+| Scratch workspace             | `playground\`     | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>`                     |
+| Placeholder published crate   | `publish\`        | `just b`, `just lc`, `just t`                                                                 | `cargo test <test_name>`                                |
 
 Additional repo-specific commands:
 
 - `just all <cmd>` at the repo root fans out to the main subprojects.
 - `just release` in `tools\` builds the helper binaries and copies them into the repo-level `bin\` directory.
-- `rustfmt-toolchain.toml` is the nightly formatter pin used by the workspace `just` recipes. Use `just fmtall` to format a workspace.
+- `rustfmt-toolchain.toml` is the nightly formatter pin used by the workspace `just` recipes. Use `just fa` (`just format-all`) to format a workspace; `just ca` (`just check-all`) runs every check.
 
 ## High-level architecture
 

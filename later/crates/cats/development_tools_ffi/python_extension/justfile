@@ -14,20 +14,45 @@ py_environment_project := "later/crates/cats/development_tools_ffi/python_extens
 # A separate lightweight environment lets Ruff run without installing/building the extension.
 py_lint_environment := replace(join(CODE_PYTHON_ENV_ROOT, py_environment_key + "-lint"), "\\", "/")
 
+# Uniform task names (short aliases; old names kept as aliases).
+alias f := format
+alias fa := format-all
+alias fmt := format
+alias fc := format-check
+alias fmt-check := format-check
+alias l := lint
+alias lf := lint
+alias lint-fix := lint
+alias lc := lint-check
+alias la := lint-all
+alias c := check
+alias ca := check-all
+alias b := build
+
 # List the available project recipes.
 default:
     @just --justfile {{quote(justfile())}} --list
 
 # Format the project Python files with Ruff.
-fmt: _python-lint-prepare
+format: _python-lint-prepare
     UV_PROJECT_ENVIRONMENT={{quote(py_lint_environment)}} uv --directory {{quote(py_project_dir)}} run --locked --no-sync ruff format .
 
+# Format everything (Python).
+format-all: format
+
 # Check Python formatting without changing files.
-fmt-check: _python-lint-prepare
+format-check: _python-lint-prepare
     UV_PROJECT_ENVIRONMENT={{quote(py_lint_environment)}} uv --directory {{quote(py_project_dir)}} run --locked --no-sync ruff format --check .
 
-# Lint the project Python files with Ruff.
+# Lint the project Python files with Ruff and apply safe fixes.
 lint: _python-lint-prepare
+    UV_PROJECT_ENVIRONMENT={{quote(py_lint_environment)}} uv --directory {{quote(py_project_dir)}} run --locked --no-sync ruff check --fix .
+
+# Lint with autofix (the same as lint here).
+lint-all: lint
+
+# Lint the project Python files with Ruff without changing files.
+lint-check: _python-lint-prepare
     UV_PROJECT_ENVIRONMENT={{quote(py_lint_environment)}} uv --directory {{quote(py_project_dir)}} run --locked --no-sync ruff check .
 
 # Build and install the Python extension in the configured environment.
@@ -42,3 +67,9 @@ _python-lint-prepare: _python-prepare
 check: _python-lint-prepare
     UV_PROJECT_ENVIRONMENT={{quote(py_lint_environment)}} uv --directory {{quote(py_project_dir)}} run --locked --no-sync ruff format --check .
     UV_PROJECT_ENVIRONMENT={{quote(py_lint_environment)}} uv --directory {{quote(py_project_dir)}} run --locked --no-sync ruff check .
+
+# Run all checks without modifying files: format check and lint check.
+check-all: check
+
+# Run the local CI gates (the same as check-all).
+ci: check-all

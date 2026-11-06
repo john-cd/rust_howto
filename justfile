@@ -15,7 +15,20 @@ set quiet
 
 export CARGO_TERM_QUIET := env("CARGO_TERM_QUIET", "true")
 
-# Uniform task names (short aliases).
+# Uniform task names (short aliases). The aggregate tasks run in every workspace.
+alias f := format
+alias fa := format-all
+alias fc := format-check
+alias l := lint
+alias lf := lint
+alias lint-fix := lint
+alias lc := lint-check
+alias la := lint-all
+alias c := check
+alias ca := check-all
+alias b := build
+alias t := test
+alias d := doc
 alias de := deny
 alias hi := hooks-install
 alias hr := hooks-run
@@ -56,6 +69,42 @@ _default:
       just "$wkspace" {{ quote(cmd) }} || status=1; \
       echo "------------------------"; \
     done; exit "$status"
+
+# Format Rust code in every workspace.
+format: (all "format")
+
+# Format everything in every workspace.
+format-all: (all "format-all")
+
+# Check formatting in every workspace.
+format-check: (all "format-check")
+
+# Lint with autofix in every workspace.
+lint: (all "lint")
+
+# Lint without changes in every workspace.
+lint-check: (all "lint-check")
+
+# Lint with autofix, plus extra linters, in every workspace.
+lint-all: (all "lint-all")
+
+# Check all targets in every workspace.
+check: (all "check")
+
+# Run all checks without modifying files in every workspace (deny is separate).
+check-all: (all "check-all")
+
+# Build every workspace.
+build: (all "build")
+
+# Test every workspace.
+test: (all "test")
+
+# Build documentation in every workspace.
+doc: (all "doc")
+
+# Run the local CI gates: check-all plus dependency policy.
+ci: check-all deny
 
 # Book
 mod bk

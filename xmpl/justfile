@@ -20,57 +20,92 @@ rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_def
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
 
-# Format all Rust packages and their local path dependencies. Alias: fa.
-alias fa := fmtall
+# Uniform task names (short aliases; old names kept as aliases).
+alias f := format
+alias fa := format-all
+alias fc := format-check
+alias l := lint
+alias lf := lint
+alias lint-fix := lint
+alias lc := lint-check
+alias la := lint-all
+alias c := check
+alias ca := check-all
+alias b := build
+alias t := test
+alias d := doc
+alias fmtall := format-all
+alias cka := check
+alias checkall := check
+alias ba := build
+alias buildall := build
+alias clippyall := lint-check
+alias nta := test
+alias nextestall := test
+alias docall := doc-serve
+alias r := run
+alias runall := run
+alias ra := run
 
-# Format all packages and their local path-based dependencies
-@fmtall:
+
+# Format all Rust packages and their local path-based dependencies.
+@format:
     echo "Formatting all packages and their local path-based dependencies in $(pwd)"
     cargo +{{ rustfmt_toolchain }} fmt --all
 
-# Check all Rust targets with every configured feature. Alias: cka.
-alias cka := checkall
+# Format everything (Rust).
+@format-all: format
 
-# Check all code (all packages, all features)
-@checkall:
+# Check Rust formatting without changing files.
+@format-check:
+    echo "Checking formatting of all packages and their local path-based dependencies in $(pwd)"
+    cargo +{{ rustfmt_toolchain }} fmt --all -- --check
+
+# Check all Rust targets with every configured feature.
+@check:
     echo "Check all code (all packages, all features) in $(pwd)"
     cargo check --workspace --all-targets --locked --all-features
-# `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
 
-# Build all Rust targets with every configured feature. Alias: ba.
-alias ba := buildall
-
-# Build all packages (all features)
-@buildall:
-    echo "Build all packages, all features in $(pwd)"
-    cargo build --workspace --all-targets --locked --all-features --timings
-
-# Lint all Rust targets and features with Clippy. Alias: ca.
-alias ca := clippyall
-
-# Scan all code for common mistakes (all packages, all features)
-@clippyall:
+# Lint all Rust targets and features with Clippy (no changes).
+@lint-check:
     echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
     cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
 
-# Run the configured workspace tests and doctests. Alias: nta.
-alias nta := nextestall
+# Lint with autofix: apply Clippy suggestions.
+@lint:
+    echo "Lint with autofix (all packages, all features) in $(pwd)"
+    cargo clippy --fix --allow-dirty --allow-staged --workspace --all-targets --locked --all-features
 
-# Test all code in the workspace (incl. doctests) (all features)
-@nextestall:
+# Lint with autofix (same as lint here; Markdown/workflow linters are not part of this workspace).
+@lint-all: lint
+
+# Run all checks without modifying files: format, lint, check, test (deny runs separately from the repository root).
+@check-all: format-check lint-check check test
+
+# Run the local CI gates (the same as check-all).
+@ci: check-all
+
+# Build all packages (all features).
+@build:
+    echo "Build all packages, all features in $(pwd)"
+    cargo build --workspace --all-targets --locked --all-features --timings
+
+# Run the configured workspace tests and doctests.
+@test:
     echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
     -cargo test --doc --workspace --quiet # nextest does not handle doctests
     cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
 
-#alias ra := runall
-
-# Run additional examples (under the `crates/xmpl` folder)
-@runall:
-    ./scripts/runall.sh {{ root }}
-
-# Build and display the `cargo doc` documentation
-@docall:
-    echo "Build and display the `cargo doc` documentation for $(pwd)"
+# Build the cargo doc documentation.
+@doc:
+    echo "Build the cargo doc documentation for $(pwd)"
     cargo clean --doc
     cargo doc --no-deps --workspace --locked --document-private-items
+
+# Build and display the cargo doc documentation.
+@doc-serve: doc
     cd ../target/xmpl/doc/ ; python3 -m http.server 9000
+
+# Run additional examples (under the `crates/xmpl` folder)
+@run:
+    ./scripts/runall.sh {{ root }}
