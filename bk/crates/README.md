@@ -65,7 +65,7 @@ You may also manually execute one of the following commands:
 ```bash
 cd <crate_folder>
 
-just fmtall
+just fa
 
 cargo check --tests --examples
 

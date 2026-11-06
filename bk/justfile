@@ -20,31 +20,86 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
 
+# Uniform task names (short aliases; old names kept as aliases).
+alias f := format
+alias fa := format-all
+alias fc := format-check
+alias l := lint
+alias lf := lint
+alias lint-fix := lint
+alias lc := lint-check
+alias la := lint-all
+alias c := check
+alias ca := check-all
+alias t := test
+alias d := doc
+alias p := prep
+alias fmtall := format-all
+alias cka := check
+alias checkall := check
+alias ba := build-all
+alias buildall := build-all
+alias clippyall := lint-check
+alias nta := test
+alias nextestall := test
+alias docall := doc-serve
+
 # Format the current crate
 [no-cd]
-fc:
+fmtcurrent:
     @just code fmtcurrent
+
+# Format all packages and their local path-based dependencies
+format:
+    @just code fmtall
+
+# Format everything (Rust code; use `just mdfmt <path>` for Markdown).
+format-all: format
+
+# Check Rust formatting without changing files.
+format-check:
+    @just code fmtcheck
+
+# Lint all code with autofix (Clippy suggestions applied).
+lint:
+    @just code clippyfix
+
+# Scan all code for common mistakes without changing files (all features)
+lint-check:
+    @just code clippyall
+
+# Lint with autofix, then lint the book Markdown.
+lint-all: lint lint-md
+
+# Check all code (all features)
+check:
+    @just code checkall
+
+# Run all checks without modifying files: format, lint, check, test (deny is separate).
+check-all: format-check lint-check check test
+
+# Run the local CI gates (the same as check-all).
+ci: check-all
+
+# Build the Rust API documentation for the book examples.
+doc:
+    @just docs _builddocall
+
+# Build and serve the Rust API documentation for the book examples.
+doc-serve:
+    @just docs docall
+
+# Before pushing: format everything, lint with autofix, then run all checks.
+prep: format-all lint check-all
 
 # Format Cargo manifests with cargo-fmt-toml
 fmt-toml:
     @just code fmt-toml
 
-# Format all packages and their local path-based dependencies
-fmtall:
-    @just code fmtall
-
-# Format all Rust packages and their local path dependencies. Alias: fa.
-alias fa := fmtall
-
 # Check code in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]
 ckc:
     @just code checkcurrent
-
-# Check all code (all features)
-[no-cd]
-cka:
-    @just code checkall
 
 # Build the package in the current crate (or the default packages of the workspace if in the root) (all features)
 [no-cd]
@@ -68,16 +123,14 @@ ntp pkg:
     @just code nextestpkg {{ pkg }}
 
 # Build all code (default features)
-b:
+build:
     @just code build
 
-# Build all code (all features)
-ba:
-    @just code buildall
+alias b := build
 
-# Scan all code for common mistakes (all features)
-ca:
-    @just code clippyall
+# Build all code (all features)
+build-all:
+    @just code buildall
 
 # Test only tests that match a given keyword
 ntt test:
@@ -93,7 +146,7 @@ nt:
     @just code nextest
 
 # Test all code, including doctests (all features)
-nta:
+test:
     @just code nextestall
 
 # Format, build, lint, and test the Rust book examples.

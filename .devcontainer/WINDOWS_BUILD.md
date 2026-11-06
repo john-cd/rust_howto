@@ -65,10 +65,11 @@ just build-setup
 From `bk`, the main workspace recipes are:
 
 ```powershell
-just cka  # Check all code with all features.
-just ca   # Run Clippy across the workspace.
+just c    # Check all code with all features.
+just lc   # Run Clippy across the workspace.
 just ba   # Build all code with all features.
-just nta  # Run all tests, including doctests.
+just t    # Run all tests, including doctests.
+just ca   # Run every check: format, lint, check, test.
 just bb   # Build the book.
 just s    # Serve the book locally.
 ```

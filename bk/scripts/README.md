@@ -43,7 +43,7 @@ An included module has its own settings and default recipe directory. Set the mo
 
 ## Contributor commands
 
-From `bk/`, run `just ba`, `just ca`, and `just nta` for the example workspace build, Clippy, and tests. Run `just bb` to build the book and `just s` to serve it. Use `just q` for a faster Unix-only preview. A focused example test is `just ntt <keyword>` from `bk/`; direct Cargo tests run from `bk/crates/`.
+From `bk/`, run `just ba`, `just lc`, and `just t` for the example workspace build, Clippy, and tests. Run `just bb` to build the book and `just s` to serve it. Use `just q` for a faster Unix-only preview. A focused example test is `just ntt <keyword>` from `bk/`; direct Cargo tests run from `bk/crates/`.
 
 [docker~website]: https://docker.com
 [just~website]: https://just.systems/man/en

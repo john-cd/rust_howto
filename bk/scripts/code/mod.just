@@ -36,6 +36,11 @@ _default:
     echo "Formatting all packages and their local path-based dependencies in {{ quote(code_root) }}"
     cd {{ quote(code_root) }}; cargo +{{ rustfmt_toolchain }} fmt --all
 
+# Check Rust formatting of all packages without changing files
+@fmtcheck:
+    echo "Checking formatting of all packages in {{ quote(code_root) }}"
+    cd {{ quote(code_root) }}; cargo +{{ rustfmt_toolchain }} fmt --all -- --check
+
 # Format Cargo manifests in the book examples workspace
 @fmt-toml:
     cargo fmt-toml --workspace-path {{ quote(code_root) }}
@@ -104,6 +109,13 @@ _default:
     cd {{ quote(code_root) }}; cargo clippy --workspace --exclude web_programming_http_server --exclude database --all-targets --locked --all-features -- -D warnings
     db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo clippy --package database --all-targets --locked --features "$db_features" -- -D warnings
     cd {{ quote(code_root) }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --package web_programming_http_server --all-targets --locked --all-features -- -D warnings
+
+# Lint all code with autofix: apply Clippy suggestions (all features)
+@clippyfix:
+    echo "Lint with autofix (all features) in {{ quote(code_root) }}"
+    cd {{ quote(code_root) }}; cargo clippy --fix --allow-dirty --allow-staged --workspace --exclude web_programming_http_server --exclude database --all-targets --locked --all-features
+    db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo clippy --fix --allow-dirty --allow-staged --package database --all-targets --locked --features "$db_features"
+    cd {{ quote(code_root) }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --fix --allow-dirty --allow-staged --package web_programming_http_server --all-targets --locked --all-features
 
 # Test any doctests in the workspace
 @doctest:
