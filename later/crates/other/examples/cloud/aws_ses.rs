@@ -1,6 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(dead_code, reason = "needs AWS credentials (SES); the tests use mocks")]
+#![cfg_attr(
+    not(test),
+    expect(dead_code, reason = "needs AWS credentials (SES); the tests use mocks")
+)]
 // ANCHOR: example
 //! Send an HTML and plain-text email with Amazon SES v2.
 //!
@@ -75,6 +78,42 @@ mod tests {
         let body = message.body().expect("body");
         assert_eq!(body.text().map(Content::data), Some("plain"));
         assert_eq!(body.html().map(Content::data), Some("<b>html</b>"));
+        Ok(())
+    }
+
+    /// Builds a client that targets LocalStack (`AWS_ENDPOINT_URL`, default
+    /// `http://localhost:4566`) with dummy credentials.
+    fn localstack_client() -> Client {
+        let endpoint = std::env::var("AWS_ENDPOINT_URL")
+            .unwrap_or_else(|_| "http://localhost:4566".to_owned());
+        let config = aws_sdk_sesv2::Config::builder()
+            .behavior_version(aws_sdk_sesv2::config::BehaviorVersion::latest())
+            .region(aws_sdk_sesv2::config::Region::new("us-east-1"))
+            .endpoint_url(endpoint)
+            .credentials_provider(aws_sdk_sesv2::config::Credentials::new(
+                "test", "test", None, None, "static",
+            ))
+            .build();
+        Client::from_conf(config)
+    }
+
+    /// Sends an email through a local SES v2 emulator. The community edition
+    /// of LocalStack does not include SES v2; use Moto instead:
+    /// `pip install "moto[server]"`, then `moto_server -p 5000` and
+    /// `AWS_ENDPOINT_URL=http://localhost:5000`. SES v2 requires a verified
+    /// sender, so the test creates the identity first.
+    #[tokio::test]
+    #[ignore = "requires an SES v2 emulator (Moto) on AWS_ENDPOINT_URL"]
+    async fn email_is_accepted() -> Result<()> {
+        let client = localstack_client();
+        client
+            .create_email_identity()
+            .email_identity("sender@example.com")
+            .send()
+            .await?;
+        let email = build_email("Hi", "plain", "<b>html</b>")?;
+        let id = send_email(&client, "sender@example.com", "to@example.com", email).await?;
+        assert!(id.is_some());
         Ok(())
     }
 }
