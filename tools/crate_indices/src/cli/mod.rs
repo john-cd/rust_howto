@@ -89,44 +89,58 @@ pub(crate) struct ExpandCrateBlocksCmdArgs {
 pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
     // Parse the specified command-line arguments, exiting on failure.
     let matches = commands::cli().get_matches_from(capture_stdin()?);
+    Ok(parse_matches(&matches))
+}
+
+/// Parses command-line argument matches into the corresponding [`Cmd`].
+fn parse_matches(matches: &clap::ArgMatches) -> Cmd {
     if let Some(m) = matches.subcommand_matches("category_page") {
-        Ok(Cmd::CategoryPage(CmdArgs {
+        Cmd::CategoryPage(CmdArgs {
             crate_names: get_crate_names(m),
-        }))
+        })
     } else if let Some(m) = matches.subcommand_matches("category_page_from_metadata") {
-        Ok(Cmd::CategoryPageFromMetadata(
-            CategoryPageFromMetadataCmdArgs {
-                crate_names: get_crate_names(m),
-                metadata_path: get_metadata_path(m),
-                book_root: get_book_root(m),
-            },
-        ))
+        Cmd::CategoryPageFromMetadata(CategoryPageFromMetadataCmdArgs {
+            crate_names: get_crate_names(m),
+            metadata_path: get_metadata_path(m),
+            book_root: get_book_root(m),
+        })
     } else if let Some(m) = matches.subcommand_matches("alphabetical_page") {
-        Ok(Cmd::AlphabeticalCratePage(AlphabeticalCratePageCmdArgs {
+        Cmd::AlphabeticalCratePage(AlphabeticalCratePageCmdArgs {
             crate_names: get_crate_names(m),
             book_root: get_book_root(m),
-        }))
+        })
     } else if let Some(m) = matches.subcommand_matches("crate_page") {
-        Ok(Cmd::CratePage(CmdArgs {
+        Cmd::CratePage(CmdArgs {
             crate_names: get_crate_names(m),
-        }))
+        })
     } else if let Some(m) = matches.subcommand_matches("update_refdefs") {
-        Ok(Cmd::UpdateRefDefs(CmdArgs2 {
+        Cmd::UpdateRefDefs(CmdArgs2 {
             crate_names: get_crate_names(m),
             filepathbuf: get_file_path(m),
-        }))
+        })
     } else if let Some(m) = matches.subcommand_matches("list_crates") {
-        Ok(Cmd::ListCrates(DirectoryCmdArgs {
+        Cmd::ListCrates(DirectoryCmdArgs {
             dirpathbuf: get_dir_path(m),
-        }))
+        })
     } else if let Some(m) = matches.subcommand_matches("expand_crate_blocks") {
-        Ok(Cmd::ExpandCrateBlocks(ExpandCrateBlocksCmdArgs {
+        Cmd::ExpandCrateBlocks(ExpandCrateBlocksCmdArgs {
             dirpathbuf: get_dir_path(m),
             refdefs_filepathbuf: get_optional_file_path(m),
-        }))
+        })
     } else {
-        Ok(Cmd::None)
+        Cmd::None
     }
+}
+
+#[cfg(test)]
+/// Parses the command-line arguments from an iterator and returns the selected [`Cmd`].
+fn try_get_cmd_from<I, T>(args: I) -> Result<Cmd, clap::Error>
+where
+    I: IntoIterator<Item = T>,
+    T: Into<std::ffi::OsString> + Clone,
+{
+    let matches = commands::cli().try_get_matches_from(args)?;
+    Ok(parse_matches(&matches))
 }
 
 /// Read from Stdin e.g. if called with `cat file.txt | my_app `
@@ -183,4 +197,257 @@ fn get_dir_path(m: &clap::ArgMatches) -> PathBuf {
 /// Returns `None` if the argument was not provided.
 fn get_optional_file_path(m: &clap::ArgMatches) -> Option<PathBuf> {
     m.get_one::<PathBuf>("file_path").cloned()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies parsing when no subcommand is provided.
+    #[test]
+    fn test_try_get_cmd_none() {
+        let cmd = try_get_cmd_from(["crate-indices"]).expect("empty args should parse");
+        assert!(matches!(cmd, Cmd::None));
+    }
+
+    /// Verifies resolution of `category_page` and alias `c`.
+    #[test]
+    fn test_try_get_cmd_category_page() {
+        let cmd = try_get_cmd_from(["crate-indices", "category_page", "serde", "tokio"])
+            .expect("should parse");
+        match cmd {
+            Cmd::CategoryPage(args) => {
+                assert_eq!(args.crate_names, vec!["serde", "tokio"]);
+            }
+            _ => panic!("expected CategoryPage, got {cmd:?}"),
+        }
+
+        let cmd_alias = try_get_cmd_from(["crate-indices", "c", "axum"]).expect("should parse");
+        match cmd_alias {
+            Cmd::CategoryPage(args) => {
+                assert_eq!(args.crate_names, vec!["axum"]);
+            }
+            _ => panic!("expected CategoryPage, got {cmd_alias:?}"),
+        }
+    }
+
+    /// Verifies resolution of `category_page_from_metadata` with default and custom book-root.
+    #[test]
+    fn test_try_get_cmd_category_page_from_metadata() {
+        let cmd = try_get_cmd_from([
+            "crate-indices",
+            "category_page_from_metadata",
+            "--metadata",
+            "meta.toml",
+            "serde",
+        ])
+        .expect("should parse");
+        match cmd {
+            Cmd::CategoryPageFromMetadata(args) => {
+                assert_eq!(args.crate_names, vec!["serde"]);
+                assert_eq!(args.metadata_path, PathBuf::from("meta.toml"));
+                assert_eq!(args.book_root, PathBuf::from("."));
+            }
+            _ => panic!("expected CategoryPageFromMetadata, got {cmd:?}"),
+        }
+
+        let cmd_custom = try_get_cmd_from([
+            "crate-indices",
+            "category_page_from_metadata",
+            "--metadata",
+            "meta.toml",
+            "--book-root",
+            "my_root",
+            "serde",
+            "tokio",
+        ])
+        .expect("should parse");
+        match cmd_custom {
+            Cmd::CategoryPageFromMetadata(args) => {
+                assert_eq!(args.crate_names, vec!["serde", "tokio"]);
+                assert_eq!(args.metadata_path, PathBuf::from("meta.toml"));
+                assert_eq!(args.book_root, PathBuf::from("my_root"));
+            }
+            _ => panic!("expected CategoryPageFromMetadata, got {cmd_custom:?}"),
+        }
+    }
+
+    /// Verifies resolution of `alphabetical_page` and alias `a`.
+    #[test]
+    fn test_try_get_cmd_alphabetical_page() {
+        let cmd = try_get_cmd_from(["crate-indices", "alphabetical_page", "serde"])
+            .expect("should parse");
+        match cmd {
+            Cmd::AlphabeticalCratePage(args) => {
+                assert_eq!(args.crate_names, vec!["serde"]);
+                assert_eq!(args.book_root, PathBuf::from("."));
+            }
+            _ => panic!("expected AlphabeticalCratePage, got {cmd:?}"),
+        }
+
+        let cmd_alias =
+            try_get_cmd_from(["crate-indices", "a", "--book-root", "custom_root", "tokio"])
+                .expect("should parse");
+        match cmd_alias {
+            Cmd::AlphabeticalCratePage(args) => {
+                assert_eq!(args.crate_names, vec!["tokio"]);
+                assert_eq!(args.book_root, PathBuf::from("custom_root"));
+            }
+            _ => panic!("expected AlphabeticalCratePage, got {cmd_alias:?}"),
+        }
+    }
+
+    /// Verifies resolution of `crate_page` and alias `p`.
+    #[test]
+    fn test_try_get_cmd_crate_page() {
+        let cmd = try_get_cmd_from(["crate-indices", "crate_page", "serde", "clap"])
+            .expect("should parse");
+        match cmd {
+            Cmd::CratePage(args) => {
+                assert_eq!(args.crate_names, vec!["serde", "clap"]);
+            }
+            _ => panic!("expected CratePage, got {cmd:?}"),
+        }
+
+        let cmd_alias = try_get_cmd_from(["crate-indices", "p", "tracing"]).expect("should parse");
+        match cmd_alias {
+            Cmd::CratePage(args) => {
+                assert_eq!(args.crate_names, vec!["tracing"]);
+            }
+            _ => panic!("expected CratePage, got {cmd_alias:?}"),
+        }
+    }
+
+    /// Verifies resolution of `list_crates` and alias `l`.
+    #[test]
+    fn test_try_get_cmd_list_crates() {
+        let cmd = try_get_cmd_from(["crate-indices", "list_crates"]).expect("should parse");
+        match cmd {
+            Cmd::ListCrates(args) => {
+                assert_eq!(args.dirpathbuf, PathBuf::from("."));
+            }
+            _ => panic!("expected ListCrates, got {cmd:?}"),
+        }
+
+        let cmd_alias =
+            try_get_cmd_from(["crate-indices", "l", "-d", "some/path"]).expect("should parse");
+        match cmd_alias {
+            Cmd::ListCrates(args) => {
+                assert_eq!(args.dirpathbuf, PathBuf::from("some/path"));
+            }
+            _ => panic!("expected ListCrates, got {cmd_alias:?}"),
+        }
+    }
+
+    /// Verifies resolution of `update_refdefs` and alias `u`.
+    #[test]
+    fn test_try_get_cmd_update_refdefs() {
+        let cmd =
+            try_get_cmd_from(["crate-indices", "update_refdefs", "anyhow"]).expect("should parse");
+        match cmd {
+            Cmd::UpdateRefDefs(args) => {
+                assert_eq!(args.crate_names, vec!["anyhow"]);
+                assert_eq!(args.filepathbuf, PathBuf::from("./src/refs/crate-refs.md"));
+            }
+            _ => panic!("expected UpdateRefDefs, got {cmd:?}"),
+        }
+
+        let cmd_alias = try_get_cmd_from([
+            "crate-indices",
+            "u",
+            "--file",
+            "my_refs.md",
+            "serde",
+            "tokio",
+        ])
+        .expect("should parse");
+        match cmd_alias {
+            Cmd::UpdateRefDefs(args) => {
+                assert_eq!(args.crate_names, vec!["serde", "tokio"]);
+                assert_eq!(args.filepathbuf, PathBuf::from("my_refs.md"));
+            }
+            _ => panic!("expected UpdateRefDefs, got {cmd_alias:?}"),
+        }
+    }
+
+    /// Verifies resolution of `expand_crate_blocks` and alias `e`.
+    #[test]
+    fn test_try_get_cmd_expand_crate_blocks() {
+        let cmd = try_get_cmd_from(["crate-indices", "expand_crate_blocks"]).expect("should parse");
+        match cmd {
+            Cmd::ExpandCrateBlocks(args) => {
+                assert_eq!(args.dirpathbuf, PathBuf::from("."));
+                assert_eq!(args.refdefs_filepathbuf, None);
+            }
+            _ => panic!("expected ExpandCrateBlocks, got {cmd:?}"),
+        }
+
+        let cmd_alias =
+            try_get_cmd_from(["crate-indices", "e", "--directory", "docs", "-f", "refs.md"])
+                .expect("should parse");
+        match cmd_alias {
+            Cmd::ExpandCrateBlocks(args) => {
+                assert_eq!(args.dirpathbuf, PathBuf::from("docs"));
+                assert_eq!(args.refdefs_filepathbuf, Some(PathBuf::from("refs.md")));
+            }
+            _ => panic!("expected ExpandCrateBlocks, got {cmd_alias:?}"),
+        }
+    }
+
+    /// Verifies argument extraction helper functions directly against `ArgMatches`.
+    #[test]
+    fn test_argument_extraction_helpers() {
+        let matches = commands::cli()
+            .try_get_matches_from([
+                "crate-indices",
+                "expand_crate_blocks",
+                "-d",
+                "target_dir",
+                "-f",
+                "target_file.md",
+            ])
+            .expect("should parse");
+        let sub_matches = matches
+            .subcommand_matches("expand_crate_blocks")
+            .expect("subcommand matches");
+
+        assert_eq!(get_dir_path(sub_matches), PathBuf::from("target_dir"));
+        assert_eq!(
+            get_optional_file_path(sub_matches),
+            Some(PathBuf::from("target_file.md"))
+        );
+
+        let matches_update = commands::cli()
+            .try_get_matches_from([
+                "crate-indices",
+                "update_refdefs",
+                "-f",
+                "ref_file.md",
+                "c1",
+                "c2",
+            ])
+            .expect("should parse");
+        let sub_update = matches_update
+            .subcommand_matches("update_refdefs")
+            .expect("subcommand matches");
+        assert_eq!(get_file_path(sub_update), PathBuf::from("ref_file.md"));
+        assert_eq!(get_crate_names(sub_update), vec!["c1", "c2"]);
+
+        let matches_meta = commands::cli()
+            .try_get_matches_from([
+                "crate-indices",
+                "category_page_from_metadata",
+                "--metadata",
+                "meta.toml",
+                "--book-root",
+                "root_dir",
+                "c3",
+            ])
+            .expect("should parse");
+        let sub_meta = matches_meta
+            .subcommand_matches("category_page_from_metadata")
+            .expect("subcommand matches");
+        assert_eq!(get_metadata_path(sub_meta), PathBuf::from("meta.toml"));
+        assert_eq!(get_book_root(sub_meta), PathBuf::from("root_dir"));
+    }
 }
