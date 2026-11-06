@@ -46,7 +46,7 @@ type CurrentSession = Session<
 #[derive(Clone, Debug, IntoCdrsValue, cdrs_tokio::TryFromRow, PartialEq)]
 struct RowStruct {
     /// Unique identifier of the row.
-    key: Uuid,
+    id: Uuid,
     /// Name of the person.
     name: String,
     /// Age of the person, in years.
@@ -57,7 +57,7 @@ impl RowStruct {
     /// Converts the row into the values bound to an insert query.
     fn into_query_values(self) -> QueryValues {
         // Transforms arguments to values consumed by queries
-        query_values!("id" => self.key, "name" => self.name, "age" => self.age)
+        query_values!("id" => self.id, "name" => self.name, "age" => self.age)
     }
 }
 
@@ -123,7 +123,7 @@ KEY, name TEXT, age INT);",
 
     let id = Uuid::new_v4();
     let new_user = RowStruct {
-        key: id,
+        id,
         name: "Alice".to_owned(),
         age: 30,
     };
@@ -141,7 +141,7 @@ KEY, name TEXT, age INT);",
         inserted.name == "Alice" && inserted.age == 30,
         "inserted row did not match the expected values"
     );
-    println!("Inserted user: {} (ID: {})", inserted.name, inserted.key);
+    println!("Inserted user: {} (ID: {})", inserted.name, inserted.id);
 
     let rows = session
         .query_with_values(
