@@ -40,7 +40,6 @@ harness = false
 [dev-dependencies]
 criterion = { workspace = true }
 chrono = { workspace = true }
-criterion = { workspace = true }
 mockito = { workspace = true }
 serde_json = { workspace = true }
 url = { workspace = true }
