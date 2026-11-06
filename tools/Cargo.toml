@@ -23,7 +23,6 @@ criterion = "0.8.2"
 clap = { version = "4.6.7", features = ["cargo", "derive"] }
 clap_builder = "4.6.7"
 crates_io_api = "0.12.0"
-criterion = "0.8.2"
 itertools = "0.15.0"
 # `tool_lib` still uses 0.14 while `crate_indices` uses 0.15.
 itertools_014 = { package = "itertools", version = "0.14.0" }

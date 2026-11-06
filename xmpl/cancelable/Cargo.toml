@@ -36,6 +36,3 @@ harness = false
 
 [lints]
 workspace = true
-
-[dev-dependencies]
-criterion = { workspace = true }
