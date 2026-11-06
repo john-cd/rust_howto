@@ -1,6 +1,6 @@
-#![allow(clippy::same_name_method)]
 // TODO Reviewed ??-??-2026.
 
+#![allow(clippy::same_name_method)]
 // ANCHOR: example
 //! Nested routes, a route parameter and a not-found route with
 //! [`leptos_router`].

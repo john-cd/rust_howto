@@ -66,6 +66,7 @@ fn main() {
 struct S;
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

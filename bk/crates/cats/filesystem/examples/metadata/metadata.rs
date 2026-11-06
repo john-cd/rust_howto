@@ -74,6 +74,7 @@ fn inspect_tree(base: &std::path::Path) -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

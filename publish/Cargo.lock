@@ -59,6 +59,7 @@ name = "rust_howto"
 version = "0.1.2"
 dependencies = [
  "cargo_toml",
+ "toml",
 ]
 
 [[package]]

@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026
-
 //! A small Python extension module implemented in Rust with PyO3.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use pyo3::exceptions::PyOverflowError;
 use pyo3::prelude::*;

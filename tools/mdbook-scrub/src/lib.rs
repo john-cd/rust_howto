@@ -161,12 +161,14 @@ impl Default for Preproc {
 }
 
 impl Preprocessor for Preproc {
+    /// Returns the preprocessor stage name.
     fn name(&self) -> &str {
         self.config_key()
             .strip_prefix("preprocessor.")
             .expect("preprocessor config keys have a prefix")
     }
 
+    /// Preprocesses the book according to the configured stage.
     fn run(&self, ctx: &PreprocessorContext, book: Book) -> Result<Book> {
         info!("Running `{}` mdBook preprocessor", self.name());
         match self.stage {
@@ -175,6 +177,7 @@ impl Preprocessor for Preproc {
         }
     }
 
+    /// Checks whether the preprocessor supports the specified renderer.
     fn supports_renderer(&self, renderer: &str) -> Result<bool> {
         Ok(renderer != "not-supported")
     }

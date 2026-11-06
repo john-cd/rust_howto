@@ -1,6 +1,6 @@
-#![cfg(feature = "ros2")]
 // TODO Reviewed ??-??-2026.
 
+#![cfg(feature = "ros2")]
 // ANCHOR: example
 //! Publish and receive `std_msgs/String` messages with a ROS 2 node.
 //!

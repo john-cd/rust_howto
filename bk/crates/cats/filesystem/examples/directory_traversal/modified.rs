@@ -59,6 +59,7 @@ fn recent_entries(dir: &Path) -> Result<Vec<String>> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

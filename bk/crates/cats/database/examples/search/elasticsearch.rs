@@ -240,6 +240,7 @@ async fn cat_indices(client: Elasticsearch) -> anyhow::Result<Response> {
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

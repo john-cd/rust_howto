@@ -66,6 +66,7 @@ fn main() {
 // Example adapted from <https://github.com/dtolnay/monostate/blob/master/tests/test.rs>.
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

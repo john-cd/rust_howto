@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026
-
 //! Runs the lexer example.
+//!
+//! TODO Reviewed ??-??-2026.
 
 mod tokenization;
 

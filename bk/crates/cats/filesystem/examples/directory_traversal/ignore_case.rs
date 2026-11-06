@@ -38,6 +38,7 @@ fn find_ignoring_case(pattern: &str) -> Result<Vec<PathBuf>> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

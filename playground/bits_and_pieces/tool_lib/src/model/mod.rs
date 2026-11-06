@@ -2,8 +2,6 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-
-
 pub mod book;
 mod crates;
 

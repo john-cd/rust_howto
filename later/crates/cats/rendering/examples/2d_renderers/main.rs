@@ -1,7 +1,6 @@
-//! Tessellates a path with Lyon and rasterizes the mesh with tiny-skia.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Tessellates a path with Lyon and rasterizes the mesh with tiny-skia.
 // ANCHOR: example
 use lyon::math::point;
 use lyon::path::Path;

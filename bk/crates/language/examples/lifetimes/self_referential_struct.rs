@@ -1,7 +1,6 @@
-//! Alternatives to self-referential structs.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Alternatives to self-referential structs.
 // ANCHOR: example
 
 /// 1. Avoid self-referential structs. Note how each field points to a portion of the `String` owned
@@ -89,6 +88,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

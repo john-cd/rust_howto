@@ -73,6 +73,7 @@ fn make_thumbnail(original: &Path, output_dir: &Path, longest_edge: u32) -> Resu
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026
-
 //! Lists and runs Docker containers, then exercises an isolated Redis service.
+//!
+//! TODO Reviewed ??-??-2026.
 
 mod docker_client;
 mod redis_test;

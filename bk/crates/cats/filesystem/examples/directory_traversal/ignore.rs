@@ -53,6 +53,7 @@ fn walk(root: &std::path::Path, extra: &str) -> Vec<String> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

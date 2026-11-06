@@ -1,7 +1,6 @@
-//! Rasterizes an SVG document at a bounded output size.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Rasterizes an SVG document at a bounded output size.
 // ANCHOR: example
 use resvg::tiny_skia::Pixmap;
 use resvg::tiny_skia::Transform;

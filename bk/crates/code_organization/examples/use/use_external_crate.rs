@@ -40,6 +40,7 @@ fn main() -> Result<()> {
 mod anyhow {}
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

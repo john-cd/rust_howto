@@ -137,6 +137,7 @@ fn transfer_amount(from: &mut Amount, to: &mut Amount, value: Amount) -> Result<
 }
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026
-
 //! Runs examples of structural patterns in Rust.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;

@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026.
+
 //! Writing tests that pass, fail, return a `Result` or are ignored.
 //!
 //! `cargo test` runs every function marked `#[test]` in parallel threads, and
@@ -6,11 +8,10 @@
 
 #![allow(clippy::eq_op)]
 
+/// Runs the example.
 pub fn run() {
     main();
 }
-
-// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 // This example demonstrates how to write unit tests.

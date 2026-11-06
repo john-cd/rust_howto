@@ -1,6 +1,6 @@
-#![cfg(target_family = "unix")]
 // TODO Reviewed ??-??-2026.
 
+#![cfg(target_family = "unix")]
 // ANCHOR: example
 //! This example demonstrates how to read an environment variable.
 //! If the environment variable is not set, a default value is used.
@@ -21,6 +21,7 @@ fn main() {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     main();
 }

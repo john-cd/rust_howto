@@ -46,6 +46,7 @@ fn main() -> Result<(), csv::Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), csv::Error> {
     main()
 }

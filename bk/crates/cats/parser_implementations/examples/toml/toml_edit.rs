@@ -84,6 +84,7 @@ path = "src/main.rs"
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

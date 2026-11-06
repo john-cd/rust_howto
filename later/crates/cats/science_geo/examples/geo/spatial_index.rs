@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Uses an R-tree to find a nearby point without a network lookup.
 //!

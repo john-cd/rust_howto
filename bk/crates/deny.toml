@@ -14,11 +14,9 @@ ignore = [
   { id = "RUSTSEC-2026-0291", reason = "No fixed owned-alloc or lockfree release exists. The sole path is the Linux-only Glommio teaching example, which documents the panicking-Drop trigger and production risk." },
   { id = "RUSTSEC-2026-0387", reason = "crypto-bigint 0.5.5 is pinned by elliptic-curve 0.13 (p256/p384 0.13) through jsonwebtoken 11.1.0 in the authentication chapter; the cryptography chapter already uses p256 0.14. Revisit when jsonwebtoken moves to elliptic-curve 0.14." },
   { id = "RUSTSEC-2026-0367", reason = "zip 8.6.0 is pinned by zen-engine 2.1.6 (rust_patterns); no newer zen-engine exists. The book's own zip 9.x dependency (compression chapter) is not affected, and the decision_table example does not extract archives." },
-  { id = "RUSTSEC-2026-0429", reason = "zip 8.6.0 is pinned by zen-engine 2.1.6, which requires zip ^8; the fix is in zip 9.0.0. The decision_table example evaluates in-memory rules and never extracts archives. Recheck when zen-engine accepts zip 9; tracked in #2116.", allow = [
-    "zen-engine@=2.1.6",
-  ] },
   { id = "RUSTSEC-2026-0368", reason = "Same zen-engine pin as RUSTSEC-2026-0367: the vulnerable extract() is never called by the examples." },
   { id = "RUSTSEC-2026-0369", reason = "Same zen-engine pin as RUSTSEC-2026-0367: the vulnerable extract() is never called by the examples." },
+  { id = "RUSTSEC-2026-0429", reason = "zip 8.6.0 is pinned by zen-engine 2.1.6, which requires zip ^8; the fix is in zip 9.0.0. The decision_table example evaluates in-memory rules and never extracts archives. Recheck when zen-engine accepts zip 9; tracked in #2116." },
   { id = "RUSTSEC-2026-0391", reason = "zstd 0.13.3 is pinned by pingora-core (git rev in network_programming); pingora HEAD still uses 0.13.3 as of 2026-10-28. The network_programming sources do not call zstd directly." },
   { id = "RUSTSEC-2026-0398", reason = "zstd-safe 7.3.0 is pinned through zstd 0.13.3 by pingora; the Seekable API is not used." },
   { id = "RUSTSEC-2026-0403", reason = "zstd-safe 7.3.0 is pinned through zstd 0.13.3 by pingora; legacy-frame streaming decompression is not used by the examples." },

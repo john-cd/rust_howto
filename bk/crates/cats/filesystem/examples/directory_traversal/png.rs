@@ -33,6 +33,7 @@ fn find_pngs(pattern: &str) -> Result<Vec<PathBuf>> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

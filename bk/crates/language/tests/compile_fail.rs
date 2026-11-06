@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026
-
 //! Checks that an incompatible mutable reborrow fails to compile.
+//!
+//! TODO Reviewed ??-??-2026.
 
 /// Keeps the invalid mutation of a live shared reborrow from compiling.
 #[test]

@@ -1,7 +1,6 @@
-//! Client-side rate limiting.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Client-side rate limiting.
 // ANCHOR: example
 //! Limit the rate of outgoing calls with a token bucket.
 //!

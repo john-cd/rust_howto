@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 //! Reads an orientation tag from a generated TIFF/EXIF record.
 //!

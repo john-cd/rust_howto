@@ -1,10 +1,11 @@
 //! Runs one of the `tar` examples, chosen on the command line.
 //!
-//! TODO Reviewed ??-??-2026.
 //!
 //! A tar file is an archive: it bundles many files and directories into one
 //! file, keeping paths and permissions, but it does not compress. It is usually
 //! combined with gzip, giving `.tar.gz`, to ship a whole directory.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;

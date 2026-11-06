@@ -1,7 +1,6 @@
-//! Runs an in-memory WebAssembly module with Wasmer.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Runs an in-memory WebAssembly module with Wasmer.
 // ANCHOR: example
 use wasmer::Instance;
 use wasmer::Module;

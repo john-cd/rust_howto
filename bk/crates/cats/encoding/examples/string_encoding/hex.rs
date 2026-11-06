@@ -30,6 +30,7 @@ fn main() -> Result<(), DecodeError> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), DecodeError> {
     main()
 }

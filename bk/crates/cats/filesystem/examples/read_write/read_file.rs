@@ -80,6 +80,7 @@ fn main() -> Result<(), io::Error> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<(), io::Error> {
     main()
 }

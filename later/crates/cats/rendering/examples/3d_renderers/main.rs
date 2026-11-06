@@ -1,8 +1,7 @@
+// TODO Reviewed ??-??-2026.
+
 //! Projects a 3D triangle to screen space the way a renderer's vertex stage
 //! does.
-//!
-//! TODO Reviewed ??-??-2026.
-
 // ANCHOR: example
 use glam::Mat4;
 use glam::Vec2;

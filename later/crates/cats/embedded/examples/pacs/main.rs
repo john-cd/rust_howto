@@ -1,7 +1,6 @@
-//! Models the register block and ownership token of a peripheral access crate.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Models the register block and ownership token of a peripheral access crate.
 // ANCHOR: example
 use core::cell::UnsafeCell;
 use core::sync::atomic::AtomicBool;

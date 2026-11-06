@@ -1,5 +1,6 @@
-#![allow(clippy::same_name_method)]
 // TODO Reviewed ??-??-2026.
+
+#![allow(clippy::same_name_method)]
 #![cfg_attr(
     not(test),
     expect(

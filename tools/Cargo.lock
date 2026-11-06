@@ -404,6 +404,7 @@ dependencies = [
  "clap",
  "clap_builder",
  "itertools 0.15.0",
+ "tempfile",
  "tool_lib",
  "tracing",
  "tracing-subscriber",
@@ -1240,6 +1241,7 @@ dependencies = [
 name = "mdbook-private"
 version = "0.3.0"
 dependencies = [
+ "anyhow",
  "mdbook-preprocessor",
  "regex",
  "serde",
@@ -2197,6 +2199,7 @@ dependencies = [
  "anyhow",
  "clap",
  "clap_builder",
+ "tempfile",
  "tool_lib",
  "tracing",
  "tracing-subscriber",

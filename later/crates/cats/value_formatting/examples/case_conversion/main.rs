@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026
-
 //! Runs the case-conversion example.
+//!
+//! TODO Reviewed ??-??-2026.
 
 mod case_conversion;
 

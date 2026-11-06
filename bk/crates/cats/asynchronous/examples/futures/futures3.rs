@@ -1,6 +1,6 @@
-#![allow(clippy::async_yields_async)]
 // TODO Reviewed ??-??-2026.
 
+#![allow(clippy::async_yields_async)]
 // ANCHOR: example
 //! # Futures
 //!
@@ -55,6 +55,7 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> Result<()> {
     main()
 }

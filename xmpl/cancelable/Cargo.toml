@@ -27,6 +27,13 @@ crossbeam-channel = { workspace = true }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
 
+[dev-dependencies]
+criterion = { workspace = true }
+
+[[bench]]
+name = "cancelation"
+harness = false
+
 [lints]
 workspace = true
 

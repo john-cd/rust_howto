@@ -1,7 +1,6 @@
-//! Demonstrates dependency-free numerical integration.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
+//! Demonstrates dependency-free numerical integration.
 // ANCHOR: example
 /// Errors returned by the composite integration methods.
 #[derive(Debug, PartialEq, Eq)]

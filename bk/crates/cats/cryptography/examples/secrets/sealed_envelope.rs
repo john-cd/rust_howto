@@ -170,6 +170,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("{e:#}");

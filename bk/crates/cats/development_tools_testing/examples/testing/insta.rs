@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026.
+
 //! Snapshot testing with `insta`.
 //!
 //! A snapshot test compares the output with a reference file stored in the
@@ -5,11 +7,10 @@
 //! the difference and lets you accept it. It is convenient for large outputs
 //! such as generated text or JSON.
 
+/// Runs the example.
 pub fn run() {
     main();
 }
-
-// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 // Snapshot testing with the `insta` crate keeps track of how your data

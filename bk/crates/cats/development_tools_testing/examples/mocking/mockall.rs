@@ -1,14 +1,15 @@
+// TODO Reviewed ??-??-2026.
+
 //! Mocking a trait with `mockall`.
 //!
 //! A mock replaces a real dependency (a database or a web service) in a test.
 //! `mockall` generates a mock from a trait, lets you set the expected calls and
 //! return values, and fails the test when the expectations are not met.
 
+/// Runs the example.
 pub fn run() {
     main();
 }
-
-// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 // This example demonstrates how to use the `mockall` crate for mocking.

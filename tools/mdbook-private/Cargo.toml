@@ -19,5 +19,8 @@ serde = { workspace = true }
 # Read and write mdBook's preprocessor protocol.
 serde_json = { workspace = true }
 
+[dev-dependencies]
+anyhow = { workspace = true }
+
 [lints]
 workspace = true

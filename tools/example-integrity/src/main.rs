@@ -35,6 +35,8 @@ fn run() -> Result<ExitCode> {
     run_with(Args::parse())
 }
 
+/// Runs the integrity check for the repository using the provided arguments and outputs a JSON
+/// report.
 fn run_with(args: Args) -> Result<ExitCode> {
     let repo_root = args.repo_root.unwrap_or_else(default_repository_root);
     let report = build_report(&repo_root)

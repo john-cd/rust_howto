@@ -47,10 +47,12 @@ impl Default for Config {
 pub struct Private;
 
 impl Preprocessor for Private {
+    /// Returns the preprocessor name.
     fn name(&self) -> &'static str {
         "private"
     }
 
+    /// Preprocesses the book by styling or removing private content and chapters.
     fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
         // Invalid privacy settings must fail the build rather than expose content.
         let config = ctx
@@ -85,6 +87,7 @@ impl Preprocessor for Private {
         Ok(book)
     }
 
+    /// Checks whether the preprocessor supports the specified renderer.
     fn supports_renderer(&self, renderer: &str) -> Result<bool> {
         Ok(renderer != "not-supported")
     }

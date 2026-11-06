@@ -19,6 +19,7 @@ book_tool = { git = "https://github.com/john-cd/book_tooling", rev = "1e9cc3458f
 ] }
 cargo_toml = "0.22.3"
 chrono = "0.4.45"
+criterion = "0.8.2"
 clap = { version = "4.6.7", features = ["cargo", "derive"] }
 clap_builder = "4.6.7"
 crates_io_api = "0.12.0"

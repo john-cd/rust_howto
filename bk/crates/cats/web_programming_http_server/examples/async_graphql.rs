@@ -1,11 +1,10 @@
+// TODO Reviewed ??-??-2026.
+
 //! A small GraphQL endpoint using `async-graphql` with Axum.
 //!
 //! The `/graphql` route accepts GraphQL requests and runs them against a schema
 //! with one `hello` query field. The optional `async-graphql-support` feature
 //! enables this example.
-//!
-//! TODO Reviewed ??-??-2026.
-
 // ANCHOR: example
 use async_graphql::EmptyMutation;
 use async_graphql::EmptySubscription;
@@ -69,6 +68,7 @@ async fn serve() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     tokio::runtime::Builder::new_multi_thread()
         .enable_all()

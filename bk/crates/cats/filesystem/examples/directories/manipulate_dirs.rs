@@ -76,6 +76,7 @@ fn manipulate_dirs(base: &Path) -> std::io::Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> std::io::Result<()> {
     main()
 }

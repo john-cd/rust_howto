@@ -116,6 +116,7 @@ fn write_catalog() -> anyhow::Result<String> {
 
 // ANCHOR_END: example
 
+/// Runs the example.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
