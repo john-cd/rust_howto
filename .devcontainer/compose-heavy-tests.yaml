@@ -23,6 +23,13 @@ services:
       MONGODB_URI: "mongodb://${MONGODB_USER:?Set MONGODB_USER}:${MONGODB_PASSWORD:?Set MONGODB_PASSWORD}@mongodb:27017"
       MSSQL_ADDR: mssql:1433
       ORACLE_ADDR: oracle:1521
+      ORACLE_CONNECT_STRING: oracle:1521/FREEPDB1
+      ORACLE_USER: system
+      ORACLE_USERNAME: system
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD:?Set ORACLE_PASSWORD}
+      ORACLE_DB_URL: oracle:1521/FREEPDB1
+      ORACLE_DB_USERNAME: system
+      ORACLE_DB_PASSWORD: ${ORACLE_PASSWORD:?Set ORACLE_PASSWORD}
       POSTGRES_ADDR: postgres:5432
       REDIS_HOSTNAME: redis:6379
 
@@ -94,9 +101,7 @@ services:
   oracle:
     image: ${ORACLE_IMAGE:?Oracle image must be defined}
     environment:
-      - ORACLE_SID=ORCLCDB
-      - ORACLE_PDB=ORCLPDB1
-      - ORACLE_PWD=${ORACLE_PASSWORD:?Set ORACLE_PASSWORD}
+      - ORACLE_PASSWORD=${ORACLE_PASSWORD:?Set ORACLE_PASSWORD}
     ports:
       - 1521:1521
 
