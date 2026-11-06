@@ -165,3 +165,175 @@ fn arg_directory() -> clap::Arg {
         .default_value(".")
         .help("Path of the directory to search for Cargo.toml files")
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Verifies that the clap command configuration contains no internal errors.
+    #[test]
+    fn verify_cli() {
+        cli().debug_assert();
+    }
+
+    /// Verifies that `--book-root` defaults to `.` when omitted in subcommands.
+    #[test]
+    fn test_subcommand_defaults() {
+        let matches = cli()
+            .try_get_matches_from(["crate-indices", "alphabetical_page", "tokio"])
+            .expect("arguments should parse");
+        let sub_matches = matches
+            .subcommand_matches("alphabetical_page")
+            .expect("subcommand should match");
+        assert_eq!(
+            sub_matches.get_one::<PathBuf>("book_root"),
+            Some(&PathBuf::from("."))
+        );
+
+        let matches_list = cli()
+            .try_get_matches_from(["crate-indices", "list_crates"])
+            .expect("arguments should parse");
+        let sub_list = matches_list
+            .subcommand_matches("list_crates")
+            .expect("subcommand should match");
+        assert_eq!(
+            sub_list.get_one::<PathBuf>("directory"),
+            Some(&PathBuf::from("."))
+        );
+
+        let matches_update = cli()
+            .try_get_matches_from(["crate-indices", "update_refdefs", "tokio"])
+            .expect("arguments should parse");
+        let sub_update = matches_update
+            .subcommand_matches("update_refdefs")
+            .expect("subcommand should match");
+        assert_eq!(
+            sub_update.get_one::<PathBuf>("file_path"),
+            Some(&PathBuf::from("./src/refs/crate-refs.md"))
+        );
+    }
+
+    /// Verifies custom values for `--book-root`, `--file`, and `--directory`.
+    #[test]
+    fn test_custom_arguments() {
+        let matches_alpha = cli()
+            .try_get_matches_from([
+                "crate-indices",
+                "alphabetical_page",
+                "--book-root",
+                "my_book",
+                "serde",
+            ])
+            .expect("arguments should parse");
+        let sub_alpha = matches_alpha
+            .subcommand_matches("alphabetical_page")
+            .expect("subcommand should match");
+        assert_eq!(
+            sub_alpha.get_one::<PathBuf>("book_root"),
+            Some(&PathBuf::from("my_book"))
+        );
+
+        let matches_update = cli()
+            .try_get_matches_from([
+                "crate-indices",
+                "update_refdefs",
+                "-f",
+                "custom/refs.md",
+                "tokio",
+            ])
+            .expect("arguments should parse");
+        let sub_update = matches_update
+            .subcommand_matches("update_refdefs")
+            .expect("subcommand should match");
+        assert_eq!(
+            sub_update.get_one::<PathBuf>("file_path"),
+            Some(&PathBuf::from("custom/refs.md"))
+        );
+
+        let matches_list = cli()
+            .try_get_matches_from(["crate-indices", "list_crates", "-d", "custom/dir"])
+            .expect("arguments should parse");
+        let sub_list = matches_list
+            .subcommand_matches("list_crates")
+            .expect("subcommand should match");
+        assert_eq!(
+            sub_list.get_one::<PathBuf>("directory"),
+            Some(&PathBuf::from("custom/dir"))
+        );
+    }
+
+    /// Verifies all single-letter visible aliases (`c`, `a`, `p`, `l`, `u`, `e`).
+    #[test]
+    fn test_subcommand_aliases() {
+        let matches_c = cli()
+            .try_get_matches_from(["crate-indices", "c", "serde"])
+            .expect("alias 'c' should parse");
+        assert_eq!(matches_c.subcommand_name(), Some("category_page"));
+
+        let matches_a = cli()
+            .try_get_matches_from(["crate-indices", "a", "serde"])
+            .expect("alias 'a' should parse");
+        assert_eq!(matches_a.subcommand_name(), Some("alphabetical_page"));
+
+        let matches_p = cli()
+            .try_get_matches_from(["crate-indices", "p", "serde"])
+            .expect("alias 'p' should parse");
+        assert_eq!(matches_p.subcommand_name(), Some("crate_page"));
+
+        let matches_l = cli()
+            .try_get_matches_from(["crate-indices", "l"])
+            .expect("alias 'l' should parse");
+        assert_eq!(matches_l.subcommand_name(), Some("list_crates"));
+
+        let matches_u = cli()
+            .try_get_matches_from(["crate-indices", "u", "serde"])
+            .expect("alias 'u' should parse");
+        assert_eq!(matches_u.subcommand_name(), Some("update_refdefs"));
+
+        let matches_e = cli()
+            .try_get_matches_from(["crate-indices", "e"])
+            .expect("alias 'e' should parse");
+        assert_eq!(matches_e.subcommand_name(), Some("expand_crate_blocks"));
+    }
+
+    /// Verifies error handling when required arguments are missing or invalid combinations are
+    /// given.
+    #[test]
+    fn test_invalid_argument_errors() {
+        // Missing required crate name in category_page.
+        let err = cli()
+            .try_get_matches_from(["crate-indices", "category_page"])
+            .expect_err("category_page without crate name should fail");
+        assert_eq!(err.kind(), clap::error::ErrorKind::MissingRequiredArgument);
+
+        // Missing required crate name in crate_page.
+        let err = cli()
+            .try_get_matches_from(["crate-indices", "crate_page"])
+            .expect_err("crate_page without crate name should fail");
+        assert_eq!(err.kind(), clap::error::ErrorKind::MissingRequiredArgument);
+
+        // Missing required crate name in update_refdefs.
+        let err = cli()
+            .try_get_matches_from(["crate-indices", "update_refdefs"])
+            .expect_err("update_refdefs without crate name should fail");
+        assert_eq!(err.kind(), clap::error::ErrorKind::MissingRequiredArgument);
+
+        // Missing required metadata option in category_page_from_metadata.
+        let err = cli()
+            .try_get_matches_from(["crate-indices", "category_page_from_metadata", "serde"])
+            .expect_err("category_page_from_metadata without metadata should fail");
+        assert_eq!(err.kind(), clap::error::ErrorKind::MissingRequiredArgument);
+
+        // Unknown subcommand.
+        let err = cli()
+            .try_get_matches_from(["crate-indices", "nonexistent"])
+            .expect_err("unknown subcommand should fail");
+        assert_eq!(err.kind(), clap::error::ErrorKind::InvalidSubcommand);
+
+        // Unexpected flag in category_page.
+        let err = cli()
+            .try_get_matches_from(["crate-indices", "category_page", "--unknown-flag", "serde"])
+            .expect_err("unexpected flag should fail");
+        assert_eq!(err.kind(), clap::error::ErrorKind::UnknownArgument);
+    }
+}
