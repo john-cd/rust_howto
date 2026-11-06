@@ -16,6 +16,10 @@ publish.workspace = true
 keywords = ["concurrency", "cancellation", "crossbeam", "patterns", "threads"]
 categories = ["asynchronous"]
 
+[[bench]]
+name = "cancelable_bench"
+harness = false
+
 [dependencies]
 anyhow = { workspace = true }
 crossbeam = { workspace = true }
@@ -25,3 +29,6 @@ tracing-subscriber = { workspace = true }
 
 [lints]
 workspace = true
+
+[dev-dependencies]
+criterion = { workspace = true }

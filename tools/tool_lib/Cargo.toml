@@ -33,7 +33,12 @@ tracing = { workspace = true }
 trim-in-place = { workspace = true }
 walkdir = { workspace = true }
 
+[[bench]]
+name = "tool_lib_bench"
+harness = false
+
 [dev-dependencies]
+criterion = { workspace = true }
 chrono = { workspace = true }
 mockito = { workspace = true }
 serde_json = { workspace = true }
