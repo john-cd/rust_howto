@@ -16,7 +16,7 @@ keywords = ["rust-howto", "playground", "experimental", "snippets"]
 license-file = "../LICENSE"
 publish = false
 repository = "https://github.com/john-cd/rust_howto/tools/"
-rust-version = "1.99"
+rust-version = "1.98.1"
 description = "Experimental scratchpad and work-in-progress snippets for the Rust How-to project."
 
 [workspace.lints.rust]

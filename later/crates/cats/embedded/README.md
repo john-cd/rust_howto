@@ -32,7 +32,7 @@ From the repository root, validate them with:
 ```powershell
 cargo test --manifest-path later/crates/cats/embedded/Cargo.toml --locked --all-targets
 cargo clippy --manifest-path later/crates/cats/embedded/Cargo.toml --locked --all-targets -- -D warnings
-cargo +nightly-2026-10-22 fmt --manifest-path later/crates/cats/embedded/Cargo.toml --all -- --check
+cargo +nightly-2026-11-06 fmt --manifest-path later/crates/cats/embedded/Cargo.toml --all -- --check
 ```
 
 The standalone Embassy workspace demonstrates host task behavior; board-specific firmware uses a matching HAL and target configuration. See [the Embassy chapter](../../../src/categories/embedded/embassy.md) and [#751](https://github.com/john-cd/rust_howto/issues/751).

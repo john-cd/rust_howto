@@ -26,7 +26,7 @@ keywords = ["examples", "rust-by-example", "tutorial", "reference"]
 license-file = "../LICENSE"
 publish = false
 repository = "https://github.com/john-cd/rust_howto/xmpl/"
-rust-version = "1.99"
+rust-version = "1.98.1"
 description = "A collection of standalone, ready-to-run Rust code examples for various programming domains."
 
 [workspace.lints.rust]

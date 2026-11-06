@@ -9,7 +9,7 @@ Keep this file, README, contributor guidance, and configuration comments synchro
 ## Consistency plan
 
 1. Share LF/UTF-8 editing defaults and language formatting conventions.
-2. Pin nightly Rustfmt to `nightly-2026-10-22` and align lint baselines while preserving stricter rules, domain limits, and teaching examples.
+2. Pin nightly Rustfmt to `nightly-2026-11-06` and align lint baselines while preserving stricter rules, domain limits, and teaching examples.
 3. Enumerate maintained dependency roots and use predictable monthly grouped updates.
 4. Isolate checkout outputs, align dependency compiler flags, and make CI caches configuration-aware.
 5. Validate format/lint and representative builds; measure cold/warm time and output size before
@@ -93,12 +93,12 @@ tools, and rustflags also affect hits. The `debugging` profile intentionally reb
 to make them debuggable.
 
 An effective unit-graph spot check on 2026-11-02 used Rust 1.99.1 for builds and
-`nightly-2026-10-22` for Cargo's unstable graph output, on `x86_64-pc-windows-msvc`. From `tools/`,
+`nightly-2026-11-06` for Cargo's unstable graph output, on `x86_64-pc-windows-msvc`. From `tools/`,
 the command below was run for each listed profile:
 
 ```powershell
 foreach ($profile in @('dev', 'test', 'debugging', 'ci', 'tools')) {
-    cargo +nightly-2026-10-22 -Z unstable-options build --unit-graph --locked --offline -p mdbook-scrub --profile $profile
+    cargo +nightly-2026-11-06 -Z unstable-options build --unit-graph --locked --offline -p mdbook-scrub --profile $profile
 }
 ```
 
@@ -169,8 +169,8 @@ dependencies, debug symbols, and release/LTO settings before adopting a new defa
 
 ## Validation evidence
 
-The `tools` unit graph was inspected with Cargo `1.99.1` and `nightly-2026-10-22` on Windows slot
-`b`, using `cargo +nightly-2026-10-22 -Z unstable-options build --unit-graph --locked --offline
+The `tools` unit graph was inspected with Cargo `1.99.1` and `nightly-2026-11-06` on Windows slot
+`b`, using `cargo +nightly-2026-11-06 -Z unstable-options build --unit-graph --locked --offline
 --manifest-path tools/Cargo.toml -p mdbook-scrub --profile <dev|test|ci|tools|debugging>`. The
 `dev`, `test`, and `ci` workspace units use level 0, line tables, and 256 codegen units; their
 dependency units use size optimization, no debug info, and 16 codegen units. `tools` workspace
