@@ -98,4 +98,38 @@ mod tests {
     fn malformed_response_is_an_error() {
         assert!(parse_response(b"not json").is_err());
     }
+
+    /// Builds a client that targets LocalStack (`AWS_ENDPOINT_URL`, default
+    /// `http://localhost:4566`) with dummy credentials.
+    fn localstack_client() -> Client {
+        let endpoint = std::env::var("AWS_ENDPOINT_URL")
+            .unwrap_or_else(|_| "http://localhost:4566".to_owned());
+        let config = aws_sdk_lambda::Config::builder()
+            .behavior_version(aws_sdk_lambda::config::BehaviorVersion::latest())
+            .region(aws_sdk_lambda::config::Region::new("us-east-1"))
+            .endpoint_url(endpoint)
+            .credentials_provider(aws_sdk_lambda::config::Credentials::new(
+                "test", "test", None, None, "static",
+            ))
+            .build();
+        Client::from_conf(config)
+    }
+
+    /// Invokes a function that already exists in LocalStack. Name it with
+    /// `LAMBDA_FUNCTION`; it must return `{"message":"Hello, Ada!"}` for the
+    /// request `{"name":"Ada"}`. Start LocalStack with the Docker socket
+    /// mounted so it can run the function.
+    #[tokio::test]
+    #[ignore = "requires LocalStack (Lambda) on localhost:4566 and LAMBDA_FUNCTION"]
+    async fn function_is_invoked() -> Result<()> {
+        let client = localstack_client();
+        let function = std::env::var("LAMBDA_FUNCTION")?;
+        let request = Request {
+            name: "Ada".to_owned(),
+        };
+        let response = invoke_sync(&client, &function, &request).await?;
+        assert_eq!(response.message, "Hello, Ada!");
+        assert_eq!(invoke_async(&client, &function, &request).await?, 202);
+        Ok(())
+    }
 }

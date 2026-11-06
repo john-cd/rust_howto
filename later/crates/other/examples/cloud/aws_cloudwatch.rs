@@ -1,8 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
-#![expect(
-    dead_code,
-    reason = "needs AWS credentials (CloudWatch); the tests use mocks"
+#![cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "needs AWS credentials (CloudWatch); the tests use mocks"
+    )
 )]
 // ANCHOR: example
 //! Publish a custom metric with dimensions to Amazon CloudWatch.
@@ -57,6 +60,43 @@ mod tests {
         assert_eq!(datum.unit(), Some(&StandardUnit::Milliseconds));
         assert_eq!(datum.dimensions().len(), 1);
         assert_eq!(datum.dimensions()[0].value(), Some("api"));
+        Ok(())
+    }
+
+    /// Builds a client that targets LocalStack (`AWS_ENDPOINT_URL`, default
+    /// `http://localhost:4566`) with dummy credentials.
+    fn localstack_client() -> Client {
+        let endpoint = std::env::var("AWS_ENDPOINT_URL")
+            .unwrap_or_else(|_| "http://localhost:4566".to_owned());
+        let config = aws_sdk_cloudwatch::Config::builder()
+            .behavior_version(aws_sdk_cloudwatch::config::BehaviorVersion::latest())
+            .region(aws_sdk_cloudwatch::config::Region::new("us-east-1"))
+            .endpoint_url(endpoint)
+            .credentials_provider(aws_sdk_cloudwatch::config::Credentials::new(
+                "test", "test", None, None, "static",
+            ))
+            .build();
+        Client::from_conf(config)
+    }
+
+    /// Sends a metric to LocalStack and lists it back. Start LocalStack first:
+    /// `docker run -p 4566:4566 localstack/localstack`.
+    #[tokio::test]
+    #[ignore = "requires LocalStack (CloudWatch) on localhost:4566"]
+    async fn metrics_are_stored() -> Result<()> {
+        let client = localstack_client();
+        put_metrics(&client, "RustHowto/Test", vec![latency_datum("api", 12.5)?]).await?;
+        let listed = client
+            .list_metrics()
+            .namespace("RustHowto/Test")
+            .send()
+            .await?;
+        assert!(
+            listed
+                .metrics()
+                .iter()
+                .any(|m| m.metric_name() == Some("RequestLatency"))
+        );
         Ok(())
     }
 }

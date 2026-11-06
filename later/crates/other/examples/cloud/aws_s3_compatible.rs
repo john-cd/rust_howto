@@ -205,11 +205,19 @@ mod tests {
 
     /// Exercises a real store. Start one first, for example MinIO on port 9000
     /// with the keys `minioadmin` / `minioadmin`, then run
-    /// `cargo test -- --ignored`.
+    /// `cargo test -- --ignored`. Set `S3_ENDPOINT` (and `S3_ACCESS_KEY`,
+    /// `S3_SECRET_KEY`) to use another store, e.g. LocalStack on
+    /// `http://localhost:4566` with the keys `test` / `test`.
     #[tokio::test]
     #[ignore = "requires an S3-compatible server on localhost:9000"]
     async fn stores_and_reads_an_object() -> Result<()> {
-        let client = s3_compatible_client("http://localhost:9000", "minioadmin", "minioadmin");
+        let var =
+            |name: &str, default: &str| std::env::var(name).unwrap_or_else(|_| default.to_owned());
+        let client = s3_compatible_client(
+            &var("S3_ENDPOINT", "http://localhost:9000"),
+            &var("S3_ACCESS_KEY", "minioadmin"),
+            &var("S3_SECRET_KEY", "minioadmin"),
+        );
         let bytes = round_trip(&client, "rust-howto-test").await?;
         assert_eq!(bytes, b"hello");
         Ok(())

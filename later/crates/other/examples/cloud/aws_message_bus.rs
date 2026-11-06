@@ -341,4 +341,82 @@ mod tests {
         // Valid base64 that is not a valid message.
         assert!(decode_body::<OrderPlaced>("/////w==").is_err());
     }
+
+    /// Builds a config that targets LocalStack (`AWS_ENDPOINT_URL`, default
+    /// `http://localhost:4566`) with dummy credentials.
+    async fn localstack_config() -> aws_config::SdkConfig {
+        let endpoint = std::env::var("AWS_ENDPOINT_URL")
+            .unwrap_or_else(|_| "http://localhost:4566".to_owned());
+        aws_config::defaults(aws_config::BehaviorVersion::latest())
+            .region(aws_config::Region::new("us-east-1"))
+            .endpoint_url(endpoint)
+            .credentials_provider(aws_sdk_sqs::config::Credentials::new(
+                "test", "test", None, None, "static",
+            ))
+            .load()
+            .await
+    }
+
+    /// Publishes through SNS to a subscribed SQS queue and consumes the
+    /// message, then checks that it is gone. Start LocalStack first:
+    /// `docker run -p 4566:4566 localstack/localstack`.
+    #[tokio::test]
+    #[ignore = "requires LocalStack (SQS and SNS) on localhost:4566"]
+    async fn sns_fans_out_to_sqs() -> Result<()> {
+        let config = localstack_config().await;
+        let sqs = aws_sdk_sqs::Client::new(&config);
+        let sns = aws_sdk_sns::Client::new(&config);
+
+        let queue_url = sqs
+            .create_queue()
+            .queue_name("rust-howto-orders")
+            .send()
+            .await?
+            .queue_url()
+            .context("no queue URL")?
+            .to_owned();
+        let queue_arn = sqs
+            .get_queue_attributes()
+            .queue_url(&queue_url)
+            .attribute_names(aws_sdk_sqs::types::QueueAttributeName::QueueArn)
+            .send()
+            .await?
+            .attributes()
+            .and_then(|a| a.get(&aws_sdk_sqs::types::QueueAttributeName::QueueArn))
+            .context("no queue ARN")?
+            .to_owned();
+        let topic_arn = sns
+            .create_topic()
+            .name("rust-howto-orders")
+            .send()
+            .await?
+            .topic_arn()
+            .context("no topic ARN")?
+            .to_owned();
+        sns.subscribe()
+            .topic_arn(&topic_arn)
+            .protocol("sqs")
+            .endpoint(queue_arn)
+            // Deliver the original message, not the SNS JSON envelope.
+            .attributes("RawMessageDelivery", "true")
+            .send()
+            .await?;
+
+        publish(&SnsTopic::new(sns, topic_arn), &order()).await?;
+
+        let bus = SqsBus::new(sqs, queue_url);
+        let mut handled = Vec::new();
+        for _ in 0..3 {
+            let count = consume::<OrderPlaced, _>(&bus, |m| {
+                handled.push(m);
+                Ok(())
+            })
+            .await?;
+            if count > 0 {
+                break;
+            }
+        }
+        assert_eq!(handled, vec![order()]);
+        Ok(())
+    }
 }
