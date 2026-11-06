@@ -17,10 +17,11 @@ use crates_io_api::SyncClient;
 /// The client is configured with a rate limit.
 #[tracing::instrument(err)]
 fn get_client() -> Result<SyncClient> {
-    let client = SyncClient::new(
-        "my-user-agent (my-contact@domain.com)",
-        std::time::Duration::from_secs(1),
-    )?;
+    // crates.io rejects placeholder user agents with HTTP 403: set
+    // `CRATES_IO_USER_AGENT` to your own application name and contact.
+    let user_agent = std::env::var("CRATES_IO_USER_AGENT")
+        .unwrap_or_else(|_| "my-user-agent (my-contact@domain.com)".to_owned());
+    let client = SyncClient::new(&user_agent, std::time::Duration::from_secs(1))?;
     Ok(client)
 }
 
@@ -95,8 +96,9 @@ fn search_for_crates(search: impl Into<String>) -> Result<CratesPage> {
 /// Searches `crates.io` for crates and displays information about a crate.
 #[tracing::instrument(err)]
 fn main() -> Result<()> {
-    // Initialize tracing subscriber
-    tracing_subscriber::fmt::try_init().map_err(|e| anyhow::anyhow!(e.to_string()))?;
+    // Initialize the tracing subscriber. Ignore the error when one is already
+    // installed (for example, by an earlier call in the same process).
+    tracing_subscriber::fmt::try_init().ok();
     tracing::info!("Starting crates_io API example");
 
     // Search for crates that mention "signature verification":
