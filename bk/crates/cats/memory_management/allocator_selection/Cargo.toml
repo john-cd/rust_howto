@@ -4,7 +4,7 @@
 name = "allocator_selection"
 version = "0.1.0"
 edition = "2024"
-rust-version = "1.99"
+rust-version = "1.98.1"
 publish = false
 
 [dependencies]

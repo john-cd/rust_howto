@@ -61,7 +61,7 @@ license-file = "../LICENSE"
 publish = false
 readme = "README.md"
 repository = "https://github.com/john-cd/rust_howto/tools/"
-rust-version = "1.99"
+rust-version = "1.98.1"
 description = "Internal tooling for managing the Rust How-to book, including cleaning, templating, and link scrubbing."
 
 [workspace.lints.rust]
