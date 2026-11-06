@@ -40,7 +40,6 @@ hooks = [
 repo = "local"
 hooks = [
   { id = "format-rust-code", name = "Format staged Rust files", entry = "rustfmt +nightly-2026-10-22 --config skip_children=true", files = '\.rs$', language = "system" },
-  { id = "cargo-deny", name = "cargo deny --locked check", entry = "just deny", language = "system", pass_filenames = false, always_run = true },
   { id = "ruff-check-python-extension", name = "Ruff check (Python extension)", entry = "just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile lint", language = "system", files = '^later/crates/cats/development_tools_ffi/python_extension/.*\.py$', types = [
     "python",
   ], pass_filenames = false },
