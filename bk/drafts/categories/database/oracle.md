@@ -41,7 +41,7 @@ test:
 
 ```sh
 docker run --detach --rm --name rust-howto-oracle-free -p 127.0.0.1:1521:1521 \
-  -e ORACLE_PASSWORD=change-me gvenzl/oracle-free
+  -e ORACLE_PASSWORD=change-me gvenzl/oracle-free:23.26.1-slim-faststart
 export ORACLE_USER=system
 export ORACLE_PASSWORD=change-me
 export ORACLE_CONNECT_STRING=127.0.0.1:1521/FREEPDB1
