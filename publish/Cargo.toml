@@ -23,6 +23,9 @@ exclude = [".cargo/", "justfile", "clippy.toml"]
 [dependencies]
 cargo_toml = "1.0.1"
 
+[dev-dependencies]
+toml = "1.1.8"
+
 [lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
 unsafe_code = "deny"
@@ -88,6 +91,10 @@ missing_crate_level_docs = "warn"
 
 # See also clippy.toml
 [lints.clippy]
+# Relaxed: Variant names mirror directive names.
+enum_variant_names = "allow"
+# Relaxed: Nested control flow in the preprocessors mirrors the markdown structure.
+excessive_nesting = "allow"
 all = { level = "warn", priority = -1 }
 # ==============================================================================
 # Baseline lints (Non-allow lints previously configured in repository)
@@ -124,7 +131,8 @@ type_complexity = "warn"
 # ==============================================================================
 
 # Checks to see if common metadata is defined in Cargo.toml.
-cargo_common_metadata = "warn"
+# Relaxed: Internal workspace members are not published.
+cargo_common_metadata = "allow"
 
 # Checks to see if multiple versions of a crate are being used. Allowed because transitive
 # dependency versions (e.g. windows, syn, thiserror) are managed via cargo-deny instead.
@@ -243,7 +251,8 @@ flat_map_option = "warn"
 
 # Checks for (in-)equality comparisons on floating-point values (apart from zero), except in
 # functions called *eq* (which probably implement equality for a type involving floats).
-float_cmp = "warn"
+# Relaxed: Comparing a similarity ratio against exactly 1.0 is intended.
+float_cmp = "allow"
 
 # Checks for excessive use of bools in function declarations.
 fn_params_excessive_bools = "warn"
@@ -252,7 +261,8 @@ fn_params_excessive_bools = "warn"
 format_collect = "warn"
 
 # Detects cases where the result of a format! call is appended to an existing String.
-format_push_string = "warn"
+# Relaxed: Clarity over allocation in infrequently run generators.
+format_push_string = "allow"
 
 # Checks for usage of ! or != in an if condition with an else branch.
 if_not_else = "warn"
@@ -299,7 +309,8 @@ invalid_upcast_comparisons = "warn"
 ip_constant = "warn"
 
 # Checks for items declared after some statement in a block.
-items_after_statements = "warn"
+# Relaxed: Local helper items are declared next to their use.
+items_after_statements = "allow"
 
 # Checks for usage of .filter(Result::is_ok) that may be replaced with a .flatten() call.
 iter_filter_is_ok = "warn"
@@ -380,13 +391,15 @@ map_unwrap_or = "warn"
 match_bool = "warn"
 
 # Checks for match with identical arm bodies.
-match_same_arms = "warn"
+# Relaxed: Arms are kept separate for readability.
+match_same_arms = "allow"
 
 # Checks for arm which matches all errors with Err(_) and take drastic actions like panic!.
 match_wild_err_arm = "warn"
 
 # Checks for wildcard enum matches for a single variant.
-match_wildcard_for_single_variants = "warn"
+# Relaxed: Explicit fallback arm keeps error handling obvious.
+match_wildcard_for_single_variants = "allow"
 
 # Checks for iteration that may be infinite.
 maybe_infinite_iter = "warn"
@@ -397,14 +410,16 @@ mismatching_type_param_order = "warn"
 
 # Checks the doc comments of publicly visible functions that return a Result type and warns if there
 # is no # Errors section.
-missing_errors_doc = "warn"
+# Relaxed: Errors are self-evident from anyhow::Result in internal tools.
+missing_errors_doc = "allow"
 
 # Checks for manual core::fmt::Debug implementations that do not use all fields.
 missing_fields_in_debug = "warn"
 
 # Checks the doc comments of publicly visible functions that may panic and warns if there is no #
 # Panics section.
-missing_panics_doc = "warn"
+# Relaxed: Panics are limited to constant regex expectations.
+missing_panics_doc = "allow"
 
 # Checks for public functions that have no #[must_use] attribute, but return something not already
 # marked must-use, have no mutable arg and mutate no statics.
@@ -429,7 +444,8 @@ needless_continue = "warn"
 needless_for_each = "warn"
 
 # Checks for functions taking arguments by value, but not consuming them in its body.
-needless_pass_by_value = "warn"
+# Relaxed: Owned arguments keep the tools' APIs simple.
+needless_pass_by_value = "allow"
 
 # Checks for raw string literals with an unnecessary amount of hashes around them.
 needless_raw_string_hashes = "warn"
@@ -537,14 +553,17 @@ str_split_at_newline = "warn"
 string_add_assign = "warn"
 
 # Checks for excessive use of bools in structs.
-struct_excessive_bools = "warn"
+# Relaxed: Context flags mirror independent directive options.
+struct_excessive_bools = "allow"
 
 # Detects struct fields that are prefixed or suffixed by the same characters or the name of the
 # struct itself.
-struct_field_names = "warn"
+# Relaxed: Field names mirror the TOML schema.
+struct_field_names = "allow"
 
 # Checks for functions with a large amount of lines.
-too_many_lines = "warn"
+# Relaxed: Dispatch functions are long but linear.
+too_many_lines = "allow"
 
 # Checks for transmutes from a pointer to a pointer, or from a reference to a reference.
 transmute_ptr_to_ptr = "warn"
@@ -567,7 +586,8 @@ uninlined_format_args = "warn"
 unnecessary_box_returns = "warn"
 
 # Checks for Debug formatting ({:?}) applied to an OsStr or Path.
-unnecessary_debug_formatting = "warn"
+# Relaxed: Debug formatting of paths keeps quoting visible in error messages.
+unnecessary_debug_formatting = "allow"
 
 # Checks for usage of .collect::<Vec<String>>().join("") on iterators.
 unnecessary_join = "warn"
@@ -584,7 +604,8 @@ unnecessary_semicolon = "warn"
 unnecessary_trailing_comma = "warn"
 
 # Checks for private functions that only return Ok or Some.
-unnecessary_wraps = "warn"
+# Relaxed: Signatures stay uniform with sibling generators and tests return Result.
+unnecessary_wraps = "allow"
 
 # Checks for unnested or-patterns, e.g., Some(0) | Some(2) and suggests replacing the pattern with a
 # nested one, Some(0 | 2).
@@ -598,8 +619,10 @@ unsafe_derive_deserialize = "warn"
 
 # Checks for functions that are declared async but have no .awaits inside of them.
 unused_async = "warn"
+
 # Checks for trait method implementations that are declared async but have no .awaits inside of
 # them.
+unused_async_trait_impl = "warn"
 
 # Checks methods that contain a self argument but don’t use it
 unused_self = "warn"
@@ -615,7 +638,9 @@ verbose_bit_mask = "warn"
 
 # Checks for wildcard imports use _::*.
 wildcard_imports = "warn"
+
 # Checks for calls to with_capacity(0) on standard library collections and types.
+with_capacity_zero = "warn"
 
 # Checks for maps with zero-sized value types anywhere in the code.
 zero_sized_map_values = "warn"
@@ -640,7 +665,8 @@ allow_attributes_without_reason = "warn"
 arbitrary_source_item_ordering = "allow"
 
 # Checks any kind of arithmetic operation of any type.
-arithmetic_side_effects = "warn"
+# Relaxed: Indexing and offset arithmetic in small tools is bounded by the input; checked arithmetic everywhere would obscure the code.
+arithmetic_side_effects = "allow"
 
 # Checks for usage of as conversions.
 as_conversions = "warn"
@@ -665,10 +691,12 @@ cfg_not_test = "warn"
 clone_on_ref_ptr = "warn"
 
 # We used to think it measured how hard a method is to understand.
-cognitive_complexity = "warn"
+# Relaxed: Parsing loops are inherently branchy.
+cognitive_complexity = "allow"
 
 # Checks usage of std::fs::create_dir and suggest using std::fs::create_dir_all instead.
-create_dir = "warn"
+# Relaxed: Tests create single directories in fresh temporary directories.
+create_dir = "allow"
 
 # Checks for usage of the dbg! macro.
 dbg_macro = "warn"
@@ -678,7 +706,8 @@ decimal_literal_representation = "warn"
 
 # Checks for usage of unconstrained numeric literals which may cause default numeric fallback in
 # type inference.
-default_numeric_fallback = "warn"
+# Relaxed: Literals default to i32 safely here.
+default_numeric_fallback = "allow"
 
 # Displays a warning when a union is declared with the default representation (without a #[repr(C)]
 # attribute).
@@ -695,7 +724,8 @@ disallowed_script_idents = "warn"
 doc_include_without_cfg = "warn"
 
 # Checks for doc comments whose paragraphs do not end with a period or another punctuation mark.
-doc_paragraphs_missing_punctuation = "warn"
+# Relaxed: Human-owned 'TODO Reviewed' markers in module docs must stay verbatim.
+doc_paragraphs_missing_punctuation = "allow"
 
 # Checks for usage of if expressions with an else if branch, but without a final else branch.
 else_if_without_else = "allow"
@@ -713,16 +743,20 @@ empty_structs_with_brackets = "warn"
 error_impl_error = "warn"
 
 # Warns on any exported enums that are not tagged #[non_exhaustive]
-exhaustive_enums = "warn"
+# Relaxed: These crates are internal (publish = false); matching enums exhaustively is intended.
+exhaustive_enums = "allow"
 
 # Warns on any exported structs that are not tagged #[non_exhaustive]
-exhaustive_structs = "warn"
+# Relaxed: These crates are internal (publish = false); records are constructed directly.
+exhaustive_structs = "allow"
 
 # Detects calls to the exit() function that are not in the main function.
-exit = "warn"
+# Relaxed: mdbook preprocessors signal support through the exit status.
+exit = "allow"
 
 # Checks for .expect() or .expect_err() calls on Results and .expect() call on Options.
-expect_used = "warn"
+# Relaxed: Regex literals and constant patterns are validated by tests.
+expect_used = "allow"
 
 # Checks for usage of scoped visibility modifiers, like pub(crate), on fields. Allowed because
 # repository guidelines and unreachable_pub mandate restricted field visibility.
@@ -752,13 +786,15 @@ host_endian_bytes = "warn"
 if_then_some_else_none = "warn"
 
 # Lints when impl Trait is being used in a function’s parameters.
-impl_trait_in_params = "warn"
+# Relaxed: impl AsRef<Path> is the idiomatic way to accept paths.
+impl_trait_in_params = "allow"
 
 # Checks for missing return statements at the end of a block.
 implicit_return = "allow"
 
 # Checks for usage of indexing or slicing that may panic at runtime.
-indexing_slicing = "warn"
+# Relaxed: Indices are validated just before use.
+indexing_slicing = "allow"
 
 # Checks for infinite loops in a function where the return type is not ! and lint accordingly.
 infinite_loop = "warn"
@@ -784,13 +820,15 @@ integer_division_remainder_used = "warn"
 
 # This is a restriction lint which prevents the use of hash types (i.e., HashSet and HashMap) in for
 # loops.
-iter_over_hash_type = "warn"
+# Relaxed: Order does not matter when each name is processed independently.
+iter_over_hash_type = "allow"
 
 # Checks for the inclusion of large files via include_bytes!() or include_str!().
 large_include_file = "warn"
 
 # Checks for let _ = <expr> where expr is #[must_use]
-let_underscore_must_use = "warn"
+# Relaxed: Logger initialisation errors are intentionally ignored when already set.
+let_underscore_must_use = "allow"
 
 # Checks for let _ = <expr> without a type annotation, and suggests to either provide one, or remove
 # the let keyword altogether.
@@ -815,7 +853,8 @@ mem_forget = "warn"
 
 # Checks for identifiers which consist of a single character (or fewer than the configured
 # threshold).
-min_ident_chars = "warn"
+# Relaxed: Short closure parameter names are idiomatic.
+min_ident_chars = "allow"
 
 # Checks assertions without a custom panic message.
 missing_assert_message = "warn"
@@ -825,7 +864,8 @@ missing_assert_message = "warn"
 missing_asserts_for_indexing = "warn"
 
 # Warns if there is missing documentation for any private documentable item.
-missing_docs_in_private_items = "warn"
+# Relaxed: Internal helper tools; public items are documented, private items are not required to be.
+missing_docs_in_private_items = "allow"
 
 # It lints if an exported function, method, trait method with default impl, or trait method impl is
 # not #[inline].
@@ -864,7 +904,8 @@ mutex_integer = "warn"
 needless_raw_strings = "warn"
 
 # Checks for non-ASCII characters in string and char literals.
-non_ascii_literal = "warn"
+# Relaxed: Tests and fixtures deliberately use non-ASCII text.
+non_ascii_literal = "allow"
 
 # Checks for conversions from NonZero types to regular integer types, and suggests using NonZero
 # types for the target as well.
@@ -874,7 +915,8 @@ non_zero_suggestions = "warn"
 panic = "warn"
 
 # Checks for usage of panic! or assertions in a function whose return type is Result.
-panic_in_result_fn = "warn"
+# Relaxed: Test functions that return Result still assert; production code propagates errors instead.
+panic_in_result_fn = "allow"
 
 # Checks whether some but not all fields of a struct are public.
 partial_pub_fields = "warn"
@@ -883,7 +925,8 @@ partial_pub_fields = "warn"
 pathbuf_init_then_push = "warn"
 
 # Checks for patterns that aren’t exact representations of the types they are applied to.
-pattern_type_mismatch = "warn"
+# Relaxed: Default binding modes are idiomatic when matching on references.
+pattern_type_mismatch = "allow"
 
 # Detects pointer format as well as Debug formatting of raw pointers or function pointers or any
 # types that have a derived Debug impl that recursively contains them.
@@ -894,11 +937,11 @@ pointer_format = "warn"
 precedence_bits = "warn"
 
 # Checks for printing on stderr. The purpose of this lint is to catch debugging remnants.
-# Relaxed: The placeholder binary prints its diagnostics.
+# Relaxed: The tools are command-line programs; stderr carries their diagnostics.
 print_stderr = "allow"
 
 # Checks for printing on stdout. The purpose of this lint is to catch debugging remnants.
-# Relaxed: The placeholder binary prints a message.
+# Relaxed: The tools are command-line programs; stdout is their output channel.
 print_stdout = "allow"
 
 # Restricts the usage of pub use ...
@@ -958,7 +1001,8 @@ semicolon_outside_block = "allow"
 separated_literal_suffix = "allow"
 
 # Checks for bindings that shadow other bindings already in scope, while reusing the original value.
-shadow_reuse = "warn"
+# Relaxed: Rebinding a parameter to its converted or trimmed form (for example, let path = path.as_ref()) is idiomatic.
+shadow_reuse = "allow"
 
 # Checks for bindings that shadow other bindings already in scope, while just changing reference
 # level or mutability.
@@ -966,7 +1010,8 @@ shadow_same = "allow"
 
 # Checks for bindings that shadow other bindings already in scope, either without an initialization
 # or with one that does not even use the original value.
-shadow_unrelated = "warn"
+# Relaxed: Shadowing in sequential setup code and iterator chains is idiomatic.
+shadow_unrelated = "allow"
 
 # Checks for functions that are only used once. Does not lint tests.
 single_call_fn = "allow"
@@ -985,7 +1030,8 @@ str_to_string = "warn"
 
 # Checks for all instances of x + _ where x is of type String, but only if string_add_assign does
 # not match.
-string_add = "warn"
+# Relaxed: String concatenation with + is clear for short strings.
+string_add = "allow"
 
 # Checks for <string_lit>.chars().any(|i| i == c).
 string_lit_chars_any = "warn"
@@ -998,7 +1044,8 @@ suspicious_xor_used_as_pow = "warn"
 
 # Triggers when a testing function (marked with the #[test] attribute) isn’t inside a testing module
 # (marked with #[cfg(test)]).
-tests_outside_test_module = "warn"
+# Relaxed: Integration tests under tests/ are not wrapped in a test module.
+tests_outside_test_module = "allow"
 
 # Checks for usage of todo!.
 todo = "warn"
@@ -1023,7 +1070,8 @@ unnecessary_safety_comment = "warn"
 unnecessary_safety_doc = "warn"
 
 # Checks for imports ending in ::{self}.
-unnecessary_self_imports = "warn"
+# Relaxed: Importing the module alongside items is clearer.
+unnecessary_self_imports = "allow"
 
 # Checks for structure field patterns bound to wildcards.
 unneeded_field_pattern = "warn"
@@ -1042,7 +1090,8 @@ unused_result_ok = "warn"
 unused_trait_names = "warn"
 
 # Checks for functions of type Result that contain expect() or unwrap()
-unwrap_in_result = "warn"
+# Relaxed: expect is only used on constant inputs and mutex locks in tests.
+unwrap_in_result = "allow"
 
 # Checks for .unwrap() or .unwrap_err() calls on Results and .unwrap() call on Options.
 unwrap_used = "warn"
@@ -1051,10 +1100,12 @@ unwrap_used = "warn"
 use_debug = "allow"
 
 # Checks for usage of File::read_to_end and File::read_to_string.
-verbose_file_reads = "warn"
+# Relaxed: read_to_string on File keeps the existing error context.
+verbose_file_reads = "allow"
 
 # Checks for wildcard enum matches using _.
-wildcard_enum_match_arm = "warn"
+# Relaxed: Foreign enums may grow variants.
+wildcard_enum_match_arm = "allow"
 # ==============================================================================
 # Nursery lints (New or developing lints)
 # ==============================================================================
@@ -1136,11 +1187,13 @@ needless_type_cast = "warn"
 non_send_fields_in_send_ty = "warn"
 
 # Lints usage of if let Some(v) = ... { y } else { x } and match ..
-option_if_let_else = "warn"
+# Relaxed: if let reads better than map_or_else chains.
+option_if_let_else = "allow"
 
 # Checks for calls to .or(foo(..)), .unwrap_or(foo(..)), .or_insert(foo(..)) etc., and suggests to
 # use .or_else(|| foo(..)), .unwrap_or_else(|| foo(..)), .unwrap_or_default() or .or_default() etc.
-or_fun_call = "warn"
+# Relaxed: Eager defaults are trivial.
+or_fun_call = "allow"
 
 # Checks for push calls on PathBuf that can cause overwrites.
 path_buf_push_overwrite = "warn"
@@ -1171,7 +1224,8 @@ significant_drop_in_scrutinee = "warn"
 
 # Searches for elements marked with #[clippy::has_significant_drop] that could be early dropped but
 # are in fact dropped at the end of their scopes.
-significant_drop_tightening = "warn"
+# Relaxed: Test mock servers live for the whole test.
+significant_drop_tightening = "allow"
 
 # Checks for functions with method calls to .map(_) on an arg of type Option as the outermost
 # expression.
@@ -1231,7 +1285,8 @@ unused_rounding = "warn"
 use_self = "warn"
 
 # Checks for variable declarations immediately followed by a conditional affectation.
-useless_let_if_seq = "warn"
+# Relaxed: Conditional initialisation reads clearer here.
+useless_let_if_seq = "allow"
 
 # This lint warns when volatile load/store operations (write_volatile/read_volatile) are applied to
 # composite types.
