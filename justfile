@@ -15,6 +15,11 @@ set quiet
 
 export CARGO_TERM_QUIET := env("CARGO_TERM_QUIET", "true")
 
+# Uniform task names (short aliases).
+alias de := deny
+alias hi := hooks-install
+alias hr := hooks-run
+
 # List the available recipes and task modules.
 [no-exit-message]
 _default:
