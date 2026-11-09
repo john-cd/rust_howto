@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Purpose: Run a test that depends on a configured external service.
-# Usage: From bk/, run the matching just recipe and pass its arguments.
+# Usage: From bk/, run the matching just recipe with service or service:test.
 #
 # TODO Reviewed ??-??-2026.
 
@@ -8,7 +8,12 @@ set -euo pipefail
 
 root="$(realpath "$1")"
 d="${root}/.devcontainer"
-feature="$2"
+selection="$2"
+service="${selection%%:*}"
+test_filter="${selection#*:}"
+if [[ "${selection}" != *:* ]]; then
+    test_filter="${selection}"
+fi
 
 compose() {
     docker compose --env-file "${d}/.env" \
@@ -21,7 +26,7 @@ compose() {
 cleanup() {
     local exit_status=$?
     trap - EXIT
-    compose rm -f --stop --volumes "$feature" || {
+    compose rm -f --stop --volumes "$service" || {
         local cleanup_status=$?
         if (( exit_status == 0 )); then
             exit_status=$cleanup_status
@@ -32,12 +37,12 @@ cleanup() {
 
 trap cleanup EXIT
 
-## "feature" must be the name of a service in `compose-heavy-tests.yaml`
-## and the name of a test or test module under `crates`.
+## "selection" is a service name, optionally followed by :test-name.
+## The test-name filters test names or binary ids.
 ##
-## Start a service, waiting for it to be running|healthy.
-compose up --wait "$feature"
+## Start the selected service and wait until it is running or healthy.
+compose up --wait "$service"
 
-## Run tests, which names include the feature name, ignoring the default filter that normally suppress "require_external_svc" tests.
+## Run tests, which names include the selected test-name, ignoring the default filter that normally suppress "require_external_svc" tests.
 cd "$root"
-cargo nextest run --all-targets --locked --no-tests=warn --no-fail-fast --success-output immediate --ignore-default-filter --all-features -E "test(~${feature}) or binary_id(~${feature})"
+cargo nextest run --all-targets --locked --no-tests=warn --no-fail-fast --success-output immediate --ignore-default-filter --all-features -E "test(~${test_filter}) or binary_id(~${test_filter})"

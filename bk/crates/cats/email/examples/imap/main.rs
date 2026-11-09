@@ -21,10 +21,20 @@ mod tests {
     use super::*;
 
     /// Runs the example against a real IMAP server.
-    #[test]
-    #[ignore = "needs IMAP_HOST, IMAP_USER, IMAP_PASSWORD and a reachable IMAP server"]
-    fn require_external_svc() -> anyhow::Result<()> {
-        main()?;
+    #[tokio::test]
+    #[ignore = "needs IMAP settings, an expected subject, and an unseen message"]
+    async fn require_external_svc() -> anyhow::Result<()> {
+        use anyhow::Context as _;
+
+        let expected_subject = std::env::var("IMAP_EXPECTED_SUBJECT")
+            .context("set IMAP_EXPECTED_SUBJECT to the seeded message subject")?;
+        let summaries = imap_fetch::fetch_unseen().await?;
+        assert!(
+            summaries
+                .iter()
+                .any(|summary| summary.subject == expected_subject),
+            "no unseen message had subject {expected_subject:?}"
+        );
         Ok(())
     }
 

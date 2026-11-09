@@ -12,7 +12,7 @@ Read a mailbox over IMAP, then parse the messages. IMAP is stateful: connect, lo
 
 [`imap`][c~imap~docs]↗{{hi:imap}} is a synchronous IMAP client. The example connects over TLS (port 993) with [`native-tls`][c~native-tls~docs]↗{{hi:native-tls}}, logs in, selects `INBOX`, searches for `UNSEEN` messages, fetches each as `RFC822`, and parses it with [`mail-parser`][c~mail-parser~docs]↗{{hi:mail-parser}}. For asynchronous code, use [`async-imap`][c~async-imap~docs]↗{{hi:async-imap}}.
 
-The example needs a server, so the book does not run it; it reads `IMAP_HOST`, `IMAP_USER`, and `IMAP_PASSWORD` from the environment and reports a clear error when one is missing. The message-processing step, `summarize`, is a pure function with unit tests over a sample message.
+The example needs a server, so the book does not run it; it reads `IMAP_HOST`, `IMAP_USER`, and `IMAP_PASSWORD` from the environment and reports a clear error when one is missing. `IMAP_PORT` is optional and defaults to 993. To trust an additional local test root certificate, set `MAIL_TLS_ROOT_CERT` to its PEM file path; certificate and hostname validation remain enabled. The ignored service test also requires an unseen message whose subject matches `IMAP_EXPECTED_SUBJECT`. The message-processing step, `summarize`, is a pure function with unit tests over a sample message.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/email/examples/imap/imap_fetch.rs:example}}

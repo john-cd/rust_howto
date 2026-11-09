@@ -14,9 +14,19 @@ services:
     environment:
       RUST_LOG: debug
       AMQP_ADDR: "amqp://${AMQP_USER:?Set AMQP_USER}:${AMQP_PASSWORD:?Set AMQP_PASSWORD}@rust_howto-amqp-1:5672"
-      SMTP_SERVER: smtp:1025
-      SMTP_USER: ${SMTP_USER:?Set SMTP_USER}
-      SMTP_PASSWORD: ${SMTP_PASSWORD:?Set SMTP_PASSWORD}
+      # GreenMail serves implicit-TLS SMTP/IMAP with this test-only root certificate.
+      SMTP_SERVER: mail
+      SMTP_PORT: "3465"
+      SMTP_USERNAME: ${MAIL_USER:?Set MAIL_USER}
+      SMTP_PASSWORD: ${MAIL_PASSWORD:?Set MAIL_PASSWORD}
+      SMTP_FROM: ${MAIL_USER}@localhost
+      SMTP_TO: ${MAIL_USER}@localhost
+      IMAP_HOST: mail
+      IMAP_PORT: "3993"
+      IMAP_USER: ${MAIL_USER}
+      IMAP_PASSWORD: ${MAIL_PASSWORD}
+      IMAP_EXPECTED_SUBJECT: "Rust How-To local IMAP fixture"
+      MAIL_TLS_ROOT_CERT: /tmp/mail-test.crt
       CASSANDRA_ADDR: cassandra:9042
       ELASTICSEARCH_ADDR: http://elasticsearch:9200
       MEILISEARCH_ADDR: http://meilisearch:7700
@@ -32,6 +42,8 @@ services:
       ORACLE_DB_PASSWORD: ${ORACLE_PASSWORD:?Set ORACLE_PASSWORD}
       POSTGRES_ADDR: postgres:5432
       REDIS_HOSTNAME: redis:6379
+    volumes:
+      - ./mail-test.crt:/tmp/mail-test.crt:ro
 
   amqp:
     image: ${RABBITMQ_IMAGE:?RabbitMQ image must be defined}
@@ -116,11 +128,23 @@ services:
     expose:
       - 5432
 
-  smtp:
-    image: ${SMTP_IMAGE:?SMTP image must be defined}
+  # Local TLS mail server (SMTPS on 3465, IMAPS on 3993) with a preloaded unseen message.
+  mail:
+    image: ${MAIL_IMAGE:?Mail server image must be defined}
+    environment:
+      GREENMAIL_OPTS: >-
+        -Dgreenmail.setup.test.smtps -Dgreenmail.setup.test.imaps
+        -Dgreenmail.hostname=0.0.0.0 -Dgreenmail.startup.timeout=30000
+        -Dgreenmail.users=${MAIL_USER:?Set MAIL_USER}:${MAIL_PASSWORD:?Set MAIL_PASSWORD}@localhost
+        -Dgreenmail.preload.dir=/tmp/mail-preload
+        -Dgreenmail.tls.keystore.file=/tmp/mail-test.p12
+        -Dgreenmail.tls.keystore.password=mail-test-only
+    volumes:
+      - ./mail-test.p12:/tmp/mail-test.p12:ro
+      - ./mail-preload:/tmp/mail-preload:ro
     ports:
-      - "1025:1025"
-      - "8025:8025"
+      - "3465:3465"
+      - "3993:3993"
     restart: unless-stopped
 
   # https://hub.docker.com/_/redis
