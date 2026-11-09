@@ -1,11 +1,11 @@
-// TODO Reviewed ??-??-2026.
-
 // ANCHOR: example
 //! Parsing published recipes using `tool_lib`.
 //!
 //! This example demonstrates how to use `tool_lib::collect_published_recipe_links`
 //! to scan an mdBook structure for published recipes and collect mapping of crate
 //! names to their published recipes.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::fs;
 use std::path::Path;

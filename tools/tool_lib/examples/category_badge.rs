@@ -1,10 +1,10 @@
-// TODO Reviewed ??-??-2026.
-
 // ANCHOR: example
 //! Constructing category badges using `tool_lib`.
 //!
 //! This example demonstrates how to use `tool_lib::create_category_badge` to
 //! construct Markdown category badges and index markers for crates.io categories.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
 

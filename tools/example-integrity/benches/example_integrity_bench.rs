@@ -168,18 +168,21 @@ fn benchmark_anchor_extraction(c: &mut Criterion) {
 use std::sync::Arc;
 
 // ANCHOR: setup
+/// Initializes sample benchmark state.
 fn initialize() -> Arc<String> {
     Arc::new(\"state\".to_owned())
 }
 // ANCHOR_END: setup
 
 // ANCHOR: run
+/// Executes the sample benchmark operation.
 fn execute() {
     println!(\"running\");
 }
 // ANCHOR_END: run
 
 // ANCHOR: teardown
+/// Releases the sample benchmark state.
 fn cleanup() {}
 // ANCHOR_END: teardown
 ";

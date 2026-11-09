@@ -1,6 +1,7 @@
-// TODO Reviewed ??-??-2026.
-
 //! Fixture source for a book example that declares a static value.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // This setup code must not be included.
 
 // ANCHOR: example
