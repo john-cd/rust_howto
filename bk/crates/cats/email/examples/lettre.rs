@@ -5,6 +5,9 @@
 //!
 //! Set `SMTP_SERVER`, `SMTP_USERNAME`, and `SMTP_PASSWORD` to the relay
 //! settings. Set `SMTP_FROM` and `SMTP_TO` to valid mailbox addresses.
+//! `SMTP_PORT` is optional; implicit TLS defaults to port 465. To trust an
+//! additional local test certificate without disabling certificate or
+//! hostname validation, set `MAIL_TLS_ROOT_CERT` to its PEM file path.
 //!
 //! The offline test builds a message without reading configuration or opening a
 //! connection. The ignored integration test sends it through the configured
@@ -17,6 +20,9 @@ use lettre::Transport as _;
 use lettre::message::Mailbox;
 use lettre::message::header::ContentType;
 use lettre::transport::smtp::authentication::Credentials;
+use lettre::transport::smtp::client::Certificate;
+use lettre::transport::smtp::client::Tls;
+use lettre::transport::smtp::client::TlsParameters;
 
 /// Builds a plain-text message from the supplied mailbox addresses.
 ///
@@ -65,14 +71,45 @@ fn send_email() -> anyhow::Result<()> {
     let email = build_message(&smtp_from, &smtp_to)?;
 
     let creds = Credentials::new(smtp_username, smtp_password);
-    let mailer = SmtpTransport::relay(&smtp_server)
+    let mut builder = SmtpTransport::relay(&smtp_server)
         .context("configure the SMTP relay")?
-        .credentials(creds)
-        .build();
+        .credentials(creds);
+    match std::env::var("SMTP_PORT") {
+        Ok(port) => {
+            builder = builder.port(port.parse().context("parse SMTP_PORT as a port number")?);
+        }
+        Err(std::env::VarError::NotPresent) => {}
+        Err(error) => return Err(error).context("read SMTP_PORT"),
+    }
+    let tls = build_tls_parameters(smtp_server)?;
+    builder = builder.tls(Tls::Wrapper(tls));
+    let mailer = builder.build();
 
     mailer.send(&email).context("send the email through SMTP")?;
     println!("Email sent successfully!");
     Ok(())
+}
+
+/// Builds SMTP TLS parameters and optionally trusts one additional PEM root.
+///
+/// # Errors
+///
+/// Returns an error if the optional root certificate cannot be read or parsed,
+/// or if the TLS parameters cannot be built.
+fn build_tls_parameters(domain: String) -> anyhow::Result<TlsParameters> {
+    let mut builder = TlsParameters::builder(domain);
+    match std::env::var("MAIL_TLS_ROOT_CERT") {
+        Ok(path) => {
+            let pem = std::fs::read(&path)
+                .with_context(|| format!("read MAIL_TLS_ROOT_CERT from {path}"))?;
+            let certificate = Certificate::from_pem(&pem)
+                .context("parse MAIL_TLS_ROOT_CERT as a PEM certificate")?;
+            builder = builder.add_root_certificate(certificate);
+        }
+        Err(std::env::VarError::NotPresent) => {}
+        Err(error) => return Err(error).context("read MAIL_TLS_ROOT_CERT"),
+    }
+    builder.build().context("build SMTP TLS parameters")
 }
 // ANCHOR_END: example
 

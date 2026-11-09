@@ -30,7 +30,7 @@
 {{#include ../../../crates/cats/email/examples/lettre.rs:example}}
 ```
 
-The example requires an SMTP relay and reads `SMTP_SERVER`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM`, and `SMTP_TO` from the environment. Its regular test only builds a message with reserved `.invalid` addresses; the ignored integration test sends through the relay and needs credentials and network access. A relay may be hosted by your provider or an email service such as [SendGrid][sendgrid~website].
+The example requires an SMTP relay and reads `SMTP_SERVER`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM`, and `SMTP_TO` from the environment. `SMTP_PORT` is optional and defaults to 465 for implicit TLS. To trust an additional local test root certificate, set `MAIL_TLS_ROOT_CERT` to its PEM file path; the example keeps certificate and hostname validation enabled. Its regular test builds a message offline, while the ignored integration test sends through the relay and needs credentials and network access. A relay may be hosted by your provider or an email service such as [SendGrid][sendgrid~website].
 
 ### Send Emails Asynchronously {#send-emails-asynchronously .skip}
 

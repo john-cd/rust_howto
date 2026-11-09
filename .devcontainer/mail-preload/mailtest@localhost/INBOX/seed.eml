@@ -1,0 +1,8 @@
+From: Rust How-To <mailtest@localhost>
+To: Mail Test <mailtest@localhost>
+Subject: Rust How-To local IMAP fixture
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Unseen message loaded for the local IMAP integration test.
