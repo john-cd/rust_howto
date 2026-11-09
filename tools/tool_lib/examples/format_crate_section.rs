@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026.
-
 // ANCHOR: example
 //! Formatting crate sections and crate blocks using `tool_lib`.
 //!
@@ -8,6 +6,8 @@
 //! 2. Crate category rows (`create_category_and_crates`).
 //! 3. Markdown crate badges, descriptions, and reference definitions from crate metadata
 //!    (`create_crate_block_badges_or_refdefs`).
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::collections::BTreeMap;
 

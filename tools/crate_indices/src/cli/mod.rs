@@ -204,11 +204,13 @@ mod tests {
             .map(|m| cmd_from_matches(&m))
     }
 
+    /// A CLI invocation without a subcommand selects the no-op command.
     #[test]
     fn no_subcommand_selects_none() {
         assert!(matches!(parse(&[]).expect("parse succeeds"), Cmd::None));
     }
 
+    /// The category-page command collects each positional crate name.
     #[test]
     fn category_page_collects_crate_names() {
         let Cmd::CategoryPage(a) =
@@ -219,6 +221,7 @@ mod tests {
         assert_eq!(a.crate_names, ["serde", "rand"]);
     }
 
+    /// Short aliases resolve to their corresponding subcommands.
     #[test]
     fn aliases_resolve_to_same_commands() {
         assert!(matches!(
@@ -247,6 +250,7 @@ mod tests {
         ));
     }
 
+    /// The crate-list command defaults its directory to the current directory.
     #[test]
     fn list_crates_defaults_to_current_directory() {
         let Cmd::ListCrates(a) = parse(&["list_crates"]).expect("parse succeeds") else {
@@ -259,6 +263,7 @@ mod tests {
         assert_eq!(a.dirpathbuf, Path::new("x"));
     }
 
+    /// The refdef update command selects its default output file.
     #[test]
     fn update_refdefs_default_file() {
         let Cmd::UpdateRefDefs(a) = parse(&["update_refdefs", "serde"]).expect("parse succeeds")
@@ -274,6 +279,7 @@ mod tests {
         assert_eq!(a.filepathbuf, Path::new("f.md"));
     }
 
+    /// The crate-block command accepts optional source and reference paths.
     #[test]
     fn expand_crate_blocks_file_is_optional() {
         let Cmd::ExpandCrateBlocks(a) = parse(&["expand_crate_blocks"]).expect("parse succeeds")
@@ -290,6 +296,7 @@ mod tests {
         assert_eq!(a.refdefs_filepathbuf.as_deref(), Some(Path::new("r.md")));
     }
 
+    /// Metadata and alphabetical commands default the book root to the current directory.
     #[test]
     fn metadata_and_alphabetical_use_book_root_default() {
         let Cmd::CategoryPageFromMetadata(a) = parse(&[
@@ -311,6 +318,7 @@ mod tests {
         assert_eq!(a.book_root, Path::new("bk"));
     }
 
+    /// Unknown commands, missing values, and unknown flags are rejected.
     #[test]
     fn invalid_arguments_are_rejected() {
         // Missing required crate name.
