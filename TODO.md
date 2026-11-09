@@ -10,7 +10,7 @@ Record status and validation evidence in the issue rather than duplicating check
 
 ## Ready and blocked issues
 
-Snapshot: November 6, 2026, from live GitHub issues. Issue #2238 was completed on November 9.
+Snapshot: November 9, 2026, from live GitHub issues. Issues #2238 and #2203 were completed on November 9.
 Ready issues can start now, in priority order. Blocked issues are grouped by blocker; each group
 has one tracking issue labelled `tracking`. Epics are listed where they wait on a blocker.
 Recheck the live issue before starting.
@@ -20,7 +20,6 @@ Recheck the live issue before starting.
 - [#2235: Remaining live checks: Lambda invoke, MinIO, OIDC PKCE, OTel collector](https://github.com/john-cd/rust_howto/issues/2235)
 - [#2211: Validate the Python 3.15.2 devcontainer and Maturin/PyO3 example](https://github.com/john-cd/rust_howto/issues/2211)
 - [#2225: Remaining tool-crate test gaps and mdbook-utils vendoring decision (split from #2206)](https://github.com/john-cd/rust_howto/issues/2225)
-- [#2203: Capture Windows linker invocation, rust-analyzer target dir, and mdbook-utils in workspace matrix](https://github.com/john-cd/rust_howto/issues/2203)
 
 ### Blocked
 

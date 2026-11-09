@@ -126,10 +126,18 @@ uses native cache roots and symlinks. Existing Rust How-To setup recipes also pr
 shell setup. Do not copy platform-specific links between Windows and Linux checkouts.
 
 The existing `just cargo <subcommand> ...` runner sets absolute `CODE_TARGET_ROOT/<repo>/<slot>`
-and `CODE_BUILD_ROOT/<repo>/<slot>` paths. Direct Cargo and rust-analyzer inherit checkout-local
-`target`/`build` config paths, which resolve through those links. `cargo.targetDir = null` prevents
-rust-analyzer from allocating an additional target tree. Inherited `CARGO_*` environment variables
-can override these settings; launch the editor without another checkout's output variables.
+and `CODE_BUILD_ROOT/<repo>/<slot>` paths. Direct Cargo and rust-analyzer use the checkout-local
+`target`/`build` paths, which resolve through those links. With
+`rust-analyzer.cargo.targetDir = null`, rust-analyzer follows Cargo metadata's target directory
+rather than allocating another target tree. Inherited `CARGO_*` environment variables can override
+these settings; launch the editor without another checkout's output variables.
+
+On Windows slot `a` (2026-11-09), `rust-analyzer analysis-stats --disable-build-scripts .`
+completed from `tools/` (32 crates, 12,783 lines of code, and four failed MIR bodies out of the
+analysis). Cargo metadata for that workspace reported
+`D:\code\rust_howto\.worktrees\a\target`, a junction to `D:\target\rust_howto\a`. The run did not
+create `tools/target` or `tools/build`; build scripts were disabled, so it emitted no compile
+artifacts.
 Multiple independent workspaces share a checkout's output slot and Cargo locking. On Windows,
 slot `b` setup ran twice successfully; its `target`, `build`, and `.sccache` junctions resolved to
 the configured central paths. A mismatched target override was rejected without changing the
@@ -157,12 +165,12 @@ of nextest's test-runner `--profile ci`.
 
 ## Linkers
 
-| Platform         | Policy                                                                                                                                                                                                               |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Windows MSVC     | Rust How-To keeps the MSVC toolchain default; an earlier `rust-lld` comparison showed no gain. Preserve stack flags. MSVC libraries/SDK are still required. This validation did not capture the invoked linker path. |
-| x86-64 GNU/Linux | Rust 1.90+ already defaults to LLD. Existing mold users retain mold and its installation steps. For AArch64/other triples, explicitly install/configure the appropriate linker before switching.                     |
-| macOS            | Use the modern Apple linker shipped with Xcode 15+. sold's maintainer now recommends Apple's linker.                                                                                                                 |
-| Experiments      | Compare mold and Wild on representative native Linux binaries. Wild lists Linux/Wasm support and future Mach-O/Windows/incremental-linking work; do not assume universal drop-in support.                            |
+| Platform         | Policy                                                                                                                                                                                                                                        |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows MSVC     | Rust How-To keeps the MSVC toolchain default; an earlier `rust-lld` comparison showed no gain. Preserve stack flags. MSVC libraries/SDK are still required. The invoked linker was captured on 2026-11-09; see the validation evidence below. |
+| x86-64 GNU/Linux | Rust 1.90+ already defaults to LLD. Existing mold users retain mold and its installation steps. For AArch64/other triples, explicitly install/configure the appropriate linker before switching.                                              |
+| macOS            | Use the modern Apple linker shipped with Xcode 15+. sold's maintainer now recommends Apple's linker.                                                                                                                                          |
+| Experiments      | Compare mold and Wild on representative native Linux binaries. Wild lists Linux/Wasm support and future Mach-O/Windows/incremental-linking work; do not assume universal drop-in support.                                                     |
 
 Changing linker flags invalidates compiler cache keys. Benchmark cold and warm links with native
 dependencies, debug symbols, and release/LTO settings before adopting a new default.
@@ -193,6 +201,22 @@ Cargo dependency-policy roots after the `pulldown-cmark` security update and sco
 repository's full Linux workspace matrix. The Apple linker and macOS workspace checks remain
 unverified because no macOS runner is available. Warm-cache timings varied substantially, so no
 cross-platform performance improvement is claimed from these measurements.
+
+On Windows slot `a`, `just cargo rustc --locked --package mdbook-scrub --bin mdbook-scrub --
+--print link-args` selected Visual Studio 2022 Build Tools MSVC 14.44.35207's
+`C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\link.exe`, not `rust-lld`.
+
+The 2026-11-09 issue rerun initialized `mdbook-utils` at submodule revision
+`821b2cfc1fe2b0d19ca63559826b8c3f412d25bb` and included it in `just all fa` and `just all ca`;
+focused `just mdbook-utils fa`, `just mdbook-utils ca`, and `just mdbook-utils deny` all passed. The
+full `just all fa` and `just all ca` runs also reported the
+Windows `bk/crates` rustfmt filename-length error (OS error 206). Clippy additionally reported an
+existing infinite loop in `later/crates/cats/games/examples/games.rs` and two existing findings in
+`tools`: `unused_trait_names` in `mdbook-private/examples/private_blocks.rs` and
+`assertions_on_result_states` in `example-integrity/tests/report.rs`. The repository-wide `just
+deny` run stopped at `bk/crates` on RUSTSEC-2026-0455 for `actix-http` 3.20.1; the focused
+`mdbook-utils` dependency-policy check passed. The top-level `deny` recipe now includes the optional
+submodule and skips it when it is not initialized.
 
 ## References
 
