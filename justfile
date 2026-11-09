@@ -54,7 +54,11 @@ _default:
 
 # Check dependency advisories, licenses, duplicate versions, and registry sources.
 @deny:
-    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl playground publish; do \
+    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl playground publish mdbook-utils; do \
+      if [ "$workspace" = "mdbook-utils" ] && [ ! -f "$workspace/Cargo.toml" ]; then \
+        echo "Skipping optional workspace mdbook-utils (submodule not initialized)"; \
+        continue; \
+      fi; \
       echo "Checking dependency policy in ${workspace}"; \
       cargo deny --locked --manifest-path "${workspace}/Cargo.toml" --workspace check; \
     done
