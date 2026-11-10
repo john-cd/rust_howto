@@ -9,6 +9,7 @@
 
 use std::hint::black_box;
 
+use criterion::BatchSize;
 use criterion::BenchmarkId;
 use criterion::Criterion;
 use criterion::Throughput;
@@ -37,7 +38,9 @@ fn synthetic_book(chapters: usize) -> Book {
     book
 }
 
-/// Benchmarks the scrub stage for several book sizes after checking its output.
+/// Benchmarks the scrub call for several book sizes after checking its output.
+///
+/// Cloning the owned input book is setup work and remains outside the timed routine.
 fn bench_scrub_stage(criterion: &mut Criterion) {
     let context = PreprocessorContext::new(".".into(), Config::default(), "html".into());
     let preprocessor = Preproc::new();
@@ -55,6 +58,14 @@ fn bench_scrub_stage(criterion: &mut Criterion) {
         !content.contains("hidden</div>") && !content.contains("_hidden.rs"),
         "scrub stage must remove hidden content"
     );
+    assert!(
+        content.contains("Visible paragraph"),
+        "scrub stage should preserve visible prose"
+    );
+    assert!(
+        content.contains("fn main()"),
+        "scrub stage should preserve Rust code fences"
+    );
 
     let mut group = criterion.benchmark_group("scrub_stage");
     for chapters in [1_usize, 10, 100] {
@@ -66,11 +77,15 @@ fn bench_scrub_stage(criterion: &mut Criterion) {
             BenchmarkId::from_parameter(chapters),
             &book,
             |bencher, book| {
-                bencher.iter(|| {
-                    preprocessor
-                        .run(&context, black_box(book.clone()))
-                        .expect("scrub stage should succeed")
-                });
+                bencher.iter_batched(
+                    || book.clone(),
+                    |input| {
+                        preprocessor
+                            .run(&context, black_box(input))
+                            .expect("scrub stage should succeed")
+                    },
+                    BatchSize::LargeInput,
+                );
             },
         );
     }
