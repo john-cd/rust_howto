@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible problem
+body:
+  - type: markdown
+    attributes:
+      value: Before filing, search for an existing report and remove sensitive data.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the command, input, and smallest useful example.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include operating system, toolchain, and repository revision.
+    validations:
+      required: true

@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a change to the project
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What need or limitation would this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the behavior you would like.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
