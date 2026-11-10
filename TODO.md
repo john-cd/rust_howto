@@ -10,14 +10,12 @@ Record status and validation evidence in the issue rather than duplicating check
 
 ## Ready and blocked issues
 
-Snapshot: November 10, 2026, from live GitHub issues. Issues #2238 and #2203 were completed on November 9; #2211 now has a concrete external-account blocker after partial validation.
+Snapshot: November 10, 2026, from live GitHub issues. Issues #2238 and #2203 were completed on November 9; #2225 was completed after validation; #2211 remains blocked on GitHub read credentials for the full devcontainer build.
 Ready issues can start now, in priority order. Blocked issues are grouped by blocker; each group
 has one tracking issue labelled `tracking`. Epics are listed where they wait on a blocker.
 Recheck the live issue before starting.
 
 ### Ready
-
-- [#2225: Remaining tool-crate test gaps and mdbook-utils vendoring decision (split from #2206)](https://github.com/john-cd/rust_howto/issues/2225)
 
 ### Blocked
 
