@@ -10,6 +10,12 @@ second expands the book's custom directives after those includes, including
 directives in included Markdown. Both stages work on the in-memory book; they do
 not rewrite source files.
 
+The `supports` command does not initialize logging, so renderer capability
+checks work from read-only directories. During preprocessing, structured logs
+go to `mdbook-scrub.log` in the current directory. If that file cannot be
+opened, the preprocessor reports the problem on stderr and sends logs there;
+stdout remains reserved for mdBook's JSON protocol.
+
 Custom directives in code spans, fenced code blocks and HTML comments remain
 literal. An unresolved custom directive or example path fails the build with a
 chapter-specific error.

@@ -3,6 +3,7 @@
 //! TODO Reviewed ??-??-2026.
 
 use std::io;
+use std::io::Write as _;
 use std::process;
 
 use clap::Arg;
@@ -37,19 +38,6 @@ fn make_app() -> Command {
 fn main() {
     let matches = make_app().get_matches();
 
-    // Logging:
-    let log_file = std::fs::OpenOptions::new()
-        .append(true)
-        .create(true)
-        .open("mdbook-scrub.log")
-        .expect("mdbook-scrub.log should be writable");
-
-    let _ = tracing_subscriber::fmt()
-        .with_max_level(tracing::Level::INFO)
-        .json()
-        .with_writer(std::sync::Mutex::new(log_file))
-        .try_init();
-
     let preprocessor = match matches.get_one::<String>("stage").map(String::as_str) {
         Some("directives") => mdbook_scrub::Preproc::directives(),
         _ => mdbook_scrub::Preproc::new(),
@@ -57,10 +45,61 @@ fn main() {
 
     if let Some(sub_args) = matches.subcommand_matches("supports") {
         handle_supports(&preprocessor, sub_args);
-    } else if let Err(e) = handle_preprocessing(&preprocessor) {
+    }
+
+    initialize_logging();
+
+    if let Err(e) = handle_preprocessing(&preprocessor) {
         eprintln!("{e}");
         process::exit(1);
     }
+}
+
+/// Initializes structured logging, falling back to stderr when the log file is unavailable.
+fn initialize_logging() {
+    let log_file = std::fs::OpenOptions::new()
+        .append(true)
+        .create(true)
+        .open("mdbook-scrub.log");
+
+    match log_file {
+        Ok(log_file) => {
+            if let Err(error) = tracing_subscriber::fmt()
+                .with_max_level(tracing::Level::INFO)
+                .json()
+                .with_writer(std::sync::Mutex::new(log_file))
+                .try_init()
+            {
+                report_logging_failure(format_args!(
+                    "could not initialize file logging: {error}; falling back to stderr"
+                ));
+                initialize_stderr_logging();
+            }
+        }
+        Err(error) => {
+            report_logging_failure(format_args!(
+                "could not open mdbook-scrub.log: {error}; falling back to stderr"
+            ));
+            initialize_stderr_logging();
+        }
+    }
+}
+
+/// Installs the structured logger with stderr as its output.
+fn initialize_stderr_logging() {
+    if let Err(error) = tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::INFO)
+        .json()
+        .with_writer(io::stderr)
+        .try_init()
+    {
+        report_logging_failure(format_args!("could not initialize stderr logging: {error}"));
+    }
+}
+
+/// Writes a best-effort logging diagnostic without panicking if stderr is unavailable.
+fn report_logging_failure(message: std::fmt::Arguments<'_>) {
+    let _ = writeln!(io::stderr().lock(), "mdbook-scrub: {message}");
 }
 
 // If the preprocessor supports the renderer, then `mdbook` runs it a second
