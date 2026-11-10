@@ -17,7 +17,6 @@ Recheck the live issue before starting.
 
 ### Ready
 
-- [#2235: Remaining live checks: Lambda invoke, MinIO, OIDC PKCE, OTel collector](https://github.com/john-cd/rust_howto/issues/2235)
 - [#2211: Validate the Python 3.15.2 devcontainer and Maturin/PyO3 example](https://github.com/john-cd/rust_howto/issues/2211)
 - [#2225: Remaining tool-crate test gaps and mdbook-utils vendoring decision (split from #2206)](https://github.com/john-cd/rust_howto/issues/2225)
 
