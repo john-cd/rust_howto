@@ -8,7 +8,7 @@ use naga::valid::Capabilities;
 use naga::valid::ValidationFlags;
 use naga::valid::Validator;
 
-const SHADER: &str = r"
+const SHADER: &str = "
 @vertex
 fn vertex_main(@builtin(vertex_index) index: u32) -> @builtin(position) vec4<f32> {
     let x = f32(i32(index) - 1);

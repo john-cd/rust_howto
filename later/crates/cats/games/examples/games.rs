@@ -86,6 +86,10 @@ fn draw_frame(state: &GameState) {
 async fn main() {
     let mut state = GameState::new();
 
+    #[expect(
+        clippy::infinite_loop,
+        reason = "The frame loop runs until the window is closed and the process exits"
+    )]
     loop {
         let space_pressed = is_key_pressed(KeyCode::Space);
         state.update(space_pressed, get_frame_time(), random_color);

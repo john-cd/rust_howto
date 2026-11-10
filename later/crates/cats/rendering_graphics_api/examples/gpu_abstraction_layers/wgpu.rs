@@ -14,7 +14,7 @@ use std::error::Error;
 use pollster::block_on;
 use wgpu::util::DeviceExt;
 
-const COMPUTE_SHADER: &str = r"
+const COMPUTE_SHADER: &str = "
 @group(0) @binding(0)
 var<storage, read_write> values: array<u32>;
 

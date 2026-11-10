@@ -1538,6 +1538,7 @@ dependencies = [
  "anyhow",
  "book_tool",
  "clap",
+ "criterion",
  "mdbook-driver",
  "mdbook-markdown",
  "mdbook-preprocessor",
