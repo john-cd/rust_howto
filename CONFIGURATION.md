@@ -133,8 +133,8 @@ rather than allocating another target tree. Inherited `CARGO_*` environment vari
 these settings; launch the editor without another checkout's output variables.
 
 On Windows slot `a` (2026-11-09), `rust-analyzer analysis-stats --disable-build-scripts .`
-completed from `tools/` (32 crates, 12,783 lines of code, and four failed MIR bodies out of the
-analysis). Cargo metadata for that workspace reported
+completed from `tools/` (32 crates, 12,783 lines of code, and four failed MIR bodies, reported as
+0%). Cargo metadata for that workspace reported
 `D:\code\rust_howto\.worktrees\a\target`, a junction to `D:\target\rust_howto\a`. The run did not
 create `tools/target` or `tools/build`; build scripts were disabled, so it emitted no compile
 artifacts.
@@ -208,15 +208,17 @@ On Windows slot `a`, `just cargo rustc --locked --package mdbook-scrub --bin mdb
 
 The 2026-11-09 issue rerun initialized `mdbook-utils` at submodule revision
 `821b2cfc1fe2b0d19ca63559826b8c3f412d25bb` and included it in `just all fa` and `just all ca`;
-focused `just mdbook-utils fa`, `just mdbook-utils ca`, and `just mdbook-utils deny` all passed. The
-full `just all fa` and `just all ca` runs also reported the
-Windows `bk/crates` rustfmt filename-length error (OS error 206). Clippy additionally reported an
-existing infinite loop in `later/crates/cats/games/examples/games.rs` and two existing findings in
-`tools`: `unused_trait_names` in `mdbook-private/examples/private_blocks.rs` and
-`assertions_on_result_states` in `example-integrity/tests/report.rs`. The repository-wide `just
-deny` run stopped at `bk/crates` on RUSTSEC-2026-0455 for `actix-http` 3.20.1; the focused
-`mdbook-utils` dependency-policy check passed. The top-level `deny` recipe now includes the optional
-submodule and skips it when it is not initialized.
+focused `just mdbook-utils fa`, `just mdbook-utils ca`, and `just mdbook-utils deny` all passed. In
+slot `a`, the full `just all fa` and `just all ca` runs also failed in `bk/crates` rustfmt with
+Windows filename-length error 206. On integrated `develop`, `just all ca` passed formatting but
+Clippy could not spawn rustc for `web-sys` in `bk/crates`; it also reported `mem_forget` in the
+Rustler example and `exhaustive_enums` in the UniFFI example under `later/crates`. The full root
+`just deny` run passed its first three roots after the primary checkout's staged `actix-http`
+upgrade to 3.20.3, then stopped in `toasty_validation` on RUSTSEC-2026-0459 for `libsqlite3-sys`
+0.37.0. The existing [#2116](https://github.com/john-cd/rust_howto/issues/2116) tracks this
+dependency compatibility blocker, so the root loop did not reach `mdbook-utils`; its focused deny
+check passed. The top-level `deny` recipe now includes the optional submodule and skips it when it
+is not initialized.
 
 ## References
 
