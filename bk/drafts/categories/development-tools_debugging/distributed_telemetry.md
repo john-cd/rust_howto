@@ -30,6 +30,8 @@ Distributed traces need context propagation to connect spans across process boun
 
 The example below injects the current span's context into a header map on the client side, extracts it in the handler, and parents the handler span on it. An in-memory span exporter lets the tests assert that both spans share a trace ID, that the handler is the client's child, and that a missing or malformed `traceparent` starts a new, independent trace. Treat incoming headers as untrusted: use only the `TraceContextPropagator` (no baggage propagator), never log header values, and attach the extracted context to the handler's own span rather than to the thread so concurrent requests cannot leak context into each other. Run the `trace_context` example with the `opentelemetry` feature enabled.
 
+The example uses the in-memory exporter by default. To send its spans to an OTLP/HTTP collector, set `OTEL_EXPORTER_OTLP_ENDPOINT` to the collector base URL, such as `http://localhost:4318`; the exporter adds the `/v1/traces` path. The signal-specific `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` variable may also be set to the full trace endpoint. The provider shuts down after sending the client and handler spans.
+
 ```rust,editable
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/trace_context.rs:example}}
 ```

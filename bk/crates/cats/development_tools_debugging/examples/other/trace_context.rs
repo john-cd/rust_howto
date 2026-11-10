@@ -6,7 +6,9 @@
 //!
 //! The client injects a `traceparent` header from its current span; the
 //! handler extracts it and parents its own span on it. Spans are collected by
-//! an in-memory exporter, so no collector or network is needed.
+//! an in-memory exporter by default, so no collector or network is needed. Set
+//! `OTEL_EXPORTER_OTLP_ENDPOINT` (or `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT`) to
+//! send them to an OTLP/HTTP collector.
 
 #[cfg(feature = "opentelemetry")]
 use http::HeaderMap;
@@ -20,6 +22,8 @@ use opentelemetry::trace::TracerProvider as _;
 use opentelemetry_http::HeaderExtractor;
 #[cfg(feature = "opentelemetry")]
 use opentelemetry_http::HeaderInjector;
+#[cfg(feature = "opentelemetry")]
+use opentelemetry_otlp::SpanExporter;
 #[cfg(feature = "opentelemetry")]
 use opentelemetry_sdk::propagation::TraceContextPropagator;
 #[cfg(feature = "opentelemetry")]
@@ -76,23 +80,23 @@ fn in_memory_tracing() -> (SdkTracerProvider, InMemorySpanExporter) {
     (provider, exporter)
 }
 
-/// Sends one request through the client and the handler and prints the spans.
+/// Sends one request through the client and handler, using OTLP when configured.
 #[cfg(feature = "opentelemetry")]
 fn main() -> anyhow::Result<()> {
+    let collector_configured = std::env::var_os("OTEL_EXPORTER_OTLP_TRACES_ENDPOINT").is_some()
+        || std::env::var_os("OTEL_EXPORTER_OTLP_ENDPOINT").is_some();
+    if collector_configured {
+        run_with_otlp_exporter()
+    } else {
+        run_with_in_memory_exporter()
+    }
+}
+
+/// Sends one request through the client and handler, then prints captured spans.
+#[cfg(feature = "opentelemetry")]
+fn run_with_in_memory_exporter() -> anyhow::Result<()> {
     let (provider, exporter) = in_memory_tracing();
-    let subscriber = tracing_subscriber::registry()
-        .with(tracing_opentelemetry::layer().with_tracer(provider.tracer("rust_howto")));
-
-    tracing::subscriber::with_default(subscriber, || {
-        let mut headers = HeaderMap::new();
-        {
-            let _client = tracing::info_span!("client").entered();
-            client_request(&mut headers);
-        }
-        println!("traceparent: {:?}", headers.get("traceparent"));
-        handle_request(&headers, "/health");
-    });
-
+    run_trace_context(&provider);
     provider.force_flush()?;
     for span in exporter.get_finished_spans()? {
         println!(
@@ -105,6 +109,41 @@ fn main() -> anyhow::Result<()> {
     }
     provider.shutdown()?;
     Ok(())
+}
+
+/// Sends the request spans to the configured OTLP/HTTP collector.
+#[cfg(feature = "opentelemetry")]
+fn run_with_otlp_exporter() -> anyhow::Result<()> {
+    let exporter = SpanExporter::builder().with_http().build()?;
+    let provider = SdkTracerProvider::builder()
+        .with_resource(
+            opentelemetry_sdk::Resource::builder()
+                .with_service_name("rust_howto")
+                .with_attribute(KeyValue::new("deployment.environment", "doc"))
+                .build(),
+        )
+        .with_batch_exporter(exporter)
+        .build();
+    run_trace_context(&provider);
+    provider.shutdown()?;
+    Ok(())
+}
+
+/// Injects and extracts a trace context while recording one client/handler request.
+#[cfg(feature = "opentelemetry")]
+fn run_trace_context(provider: &SdkTracerProvider) {
+    let subscriber = tracing_subscriber::registry()
+        .with(tracing_opentelemetry::layer().with_tracer(provider.tracer("rust_howto")));
+
+    tracing::subscriber::with_default(subscriber, || {
+        let mut headers = HeaderMap::new();
+        {
+            let _client = tracing::info_span!("client").entered();
+            client_request(&mut headers);
+        }
+        println!("traceparent: {:?}", headers.get("traceparent"));
+        handle_request(&headers, "/health");
+    });
 }
 
 /// Prints a message when the `opentelemetry` feature is not enabled.
@@ -127,7 +166,7 @@ mod entry_tests {
     /// The entry point runs without a collector.
     #[test]
     fn main_runs_offline() {
-        main().expect("the in-memory exporter needs no network");
+        run_with_in_memory_exporter().expect("the in-memory exporter needs no network");
     }
 }
 
