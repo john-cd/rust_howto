@@ -84,11 +84,18 @@ _default:
     echo "Clippy {{ pkg }} (all features)"
     cd {{ quote(code_root) }}; cargo clippy --package {{ pkg }} --all-targets --locked --all-features -- -D warnings
 
-# Test one package, including its doctests (all features)
+# Test one package, including doctests when it has a library target (all features)
 @nextestpkg pkg:
     echo "Test {{ pkg }} (all features)"
     cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --package {{ pkg }} --all-targets --locked --no-fail-fast --all-features
-    cd {{ quote(code_root) }}; cargo test --package {{ pkg }} --doc --locked --all-features
+    cd {{ quote(code_root) }}; \
+        set -o pipefail; \
+        has_lib_target="$(cargo metadata --no-deps --format-version 1 --locked --all-features | python -c 'import json, sys; name = sys.argv[1]; packages = json.load(sys.stdin)["packages"]; package = next(item for item in packages if item["name"] == name); print(str(any(kind == "lib" or kind == "proc-macro" for target in package["targets"] for kind in target["kind"])).lower())' {{ quote(pkg) }})" || exit $?; \
+        if [ "$has_lib_target" = "true" ]; then \
+            cargo test --package {{ pkg }} --doc --locked --all-features; \
+        else \
+            echo "Skipping doctests for {{ pkg }}: no library target"; \
+        fi
 
 # Build all code (default features)
 @build:
