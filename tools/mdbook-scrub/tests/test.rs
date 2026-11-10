@@ -14,6 +14,7 @@ use mdbook_preprocessor::PreprocessorContext;
 use mdbook_preprocessor::book::Book;
 use mdbook_preprocessor::book::Chapter;
 use mdbook_scrub::Preproc;
+use tempfile::tempdir;
 
 /// Runs the directive preprocessor through mdBook's JSON protocol.
 fn run_directive_protocol(context: PreprocessorContext, book: Book) -> Output {
@@ -103,6 +104,88 @@ fn supports_renderer_subcommand_matches_mdbook_protocol() {
         .output()
         .expect("the mdbook-scrub executable should start");
     assert!(!unsupported.status.success());
+}
+
+/// Lets renderer capability checks succeed when the log destination is unavailable.
+#[test]
+fn supports_renderer_does_not_require_a_writable_log_destination() {
+    let directory = tempdir().expect("a temporary directory should be available");
+    let log_path = directory.path().join("mdbook-scrub.log");
+    std::fs::create_dir(&log_path).expect("a directory should block the log file path");
+
+    let output = Command::new(env!("CARGO_BIN_EXE_mdbook-scrub"))
+        .args(["supports", "html"])
+        .current_dir(directory.path())
+        .output()
+        .expect("the mdbook-scrub executable should start");
+
+    assert!(output.status.success());
+    assert!(output.stdout.is_empty());
+    assert!(output.stderr.is_empty());
+    assert!(log_path.is_dir());
+}
+
+/// Processes valid stdin when the log destination is unavailable and keeps JSON on stdout.
+#[test]
+fn preprocessing_falls_back_to_stderr_when_log_destination_is_unavailable() {
+    let directory = tempdir().expect("a temporary directory should be available");
+    let log_path = directory.path().join("mdbook-scrub.log");
+    std::fs::create_dir(&log_path).expect("a directory should block the log file path");
+
+    let root = std::path::Path::new("test_book")
+        .canonicalize()
+        .expect("the test book root should exist");
+    let config = mdbook_preprocessor::config::Config::from_disk(root.join("book.toml"))
+        .expect("the test book configuration should parse");
+    let context = PreprocessorContext::new(root, config, "html".into());
+    let mut book = Book::new();
+    book.push_item(Chapter::new(
+        "Example",
+        "Valid book content".into(),
+        "example.md",
+        Vec::new(),
+    ));
+    let input = serde_json::to_vec(&(&context, &book))
+        .expect("the preprocessor context and book should serialize");
+
+    let mut child = Command::new(env!("CARGO_BIN_EXE_mdbook-scrub"))
+        .current_dir(directory.path())
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .spawn()
+        .expect("the mdbook-scrub executable should start");
+    child
+        .stdin
+        .take()
+        .expect("the child should accept protocol input")
+        .write_all(&input)
+        .expect("the protocol input should be written");
+    let output = child
+        .wait_with_output()
+        .expect("the mdbook-scrub process should finish");
+
+    assert!(
+        output.status.success(),
+        "stderr: {}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let processed: Book = serde_json::from_slice(&output.stdout)
+        .expect("preprocessor stdout should contain only book JSON");
+    assert_eq!(
+        processed
+            .chapters()
+            .next()
+            .expect("the processed book should retain its chapter")
+            .content,
+        "Valid book content"
+    );
+    let stderr = String::from_utf8_lossy(&output.stderr);
+    assert!(
+        stderr.contains("could not open mdbook-scrub.log"),
+        "{stderr}"
+    );
+    assert!(stderr.contains("falling back to stderr"), "{stderr}");
 }
 
 /// Keeps JSON on stdout while expanding a valid Rust example directive.
