@@ -29,7 +29,12 @@ tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
 
 [dev-dependencies]
+criterion = { workspace = true }
 mdbook-driver = { workspace = true }
+
+[[bench]]
+name = "scrub_bench"
+harness = false
 
 [lints]
 workspace = true

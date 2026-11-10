@@ -40,7 +40,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 
     // Define a simple script.
     // Review further examples at <https://github.com/rhaiscript/rhai/tree/main/scripts>.
-    let script = r"
+    let script = "
         // Define variables:
         let a = 42;
         let b = 58;

@@ -48,6 +48,10 @@ async fn async_main() {
         velocity: vec2(160.0, 120.0),
     };
 
+    #[expect(
+        clippy::infinite_loop,
+        reason = "The frame loop runs until the window is closed and the process exits"
+    )]
     loop {
         clear_background(WHITE);
         step(

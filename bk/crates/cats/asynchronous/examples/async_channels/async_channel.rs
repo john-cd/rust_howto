@@ -167,8 +167,12 @@ mod tests {
     #[tokio::test]
     async fn consumer_drains_remaining_messages_after_close() {
         let (tx, rx) = bounded(5);
-        tx.send("first".to_owned()).await.unwrap();
-        tx.send("second".to_owned()).await.unwrap();
+        tx.send("first".to_owned())
+            .await
+            .expect("channel has capacity");
+        tx.send("second".to_owned())
+            .await
+            .expect("channel has capacity");
         drop(tx);
 
         assert_eq!(rx.recv().await, Ok("first".to_owned()));

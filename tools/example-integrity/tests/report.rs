@@ -8,7 +8,8 @@ use tempfile::tempdir;
 /// An unresolvable repository root is an error.
 #[test]
 fn missing_root_is_an_error() {
-    assert!(build_report(std::path::Path::new("/definitely/not/here")).is_err());
+    build_report(std::path::Path::new("/definitely/not/here"))
+        .expect_err("a missing root must fail");
 }
 
 /// An empty repository yields a report without chapters.

@@ -254,7 +254,7 @@ mod commands {
                 } => {
                     let current_quantity = self.get_current_quantity(id);
                     if let Some(current) = current_quantity {
-                        let new_quantity = current as i32 + quantity;
+                        let new_quantity = current.cast_signed() + quantity;
                         if new_quantity < 0 {
                             return Err(anyhow::anyhow!(
                                 "Update would result in negative quantity for product {id}!"

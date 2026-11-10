@@ -4,7 +4,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-use mdbook_preprocessor::Preprocessor;
+use mdbook_preprocessor::Preprocessor as _;
 use mdbook_preprocessor::PreprocessorContext;
 use mdbook_preprocessor::book::Book;
 use mdbook_preprocessor::book::BookItem;

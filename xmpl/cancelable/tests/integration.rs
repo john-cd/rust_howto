@@ -52,20 +52,26 @@ fn test_cancellation_under_high_queue_load() -> anyhow::Result<()> {
     let mut worker = Worker::new();
     let mut task_ids = Vec::new();
 
-    // The worker queue has a capacity of 5 tasks.
-    // The first task will immediately start executing, and subsequent tasks will fill the bounded
-    // queue.
-    for _ in 0..6 {
+    // The worker queue has a capacity of 5 tasks and each task runs for about 300 ms.
+    // Submit many tasks in a tight loop: at most one running task plus a full queue can be
+    // accepted, regardless of how quickly the worker thread starts, so the rest are rejected.
+    let mut rejected = 0_usize;
+    for _ in 0..20 {
         let task = Task::new();
-        task_ids.push(task.task_id());
-        let _ = worker.start(task);
+        let task_id = task.task_id();
+        if worker.start(task).is_ok() {
+            task_ids.push(task_id);
+        } else {
+            rejected += 1;
+        }
     }
-
-    // Attempting to push even more tasks should fail with a full queue error.
-    let overflow_task = Task::new();
-    let overflow_result = worker.start(overflow_task);
     assert!(
-        overflow_result.is_err(),
+        task_ids.len() <= 6,
+        "at most the running task plus a full queue may be accepted, got {}",
+        task_ids.len()
+    );
+    assert!(
+        rejected >= 14,
         "task queue should reject submissions when full"
     );
 
