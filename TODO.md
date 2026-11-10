@@ -10,14 +10,13 @@ Record status and validation evidence in the issue rather than duplicating check
 
 ## Ready and blocked issues
 
-Snapshot: November 9, 2026, from live GitHub issues. Issues #2238 and #2203 were completed on November 9.
+Snapshot: November 10, 2026, from live GitHub issues. Issues #2238 and #2203 were completed on November 9; #2211 now has a concrete external-account blocker after partial validation.
 Ready issues can start now, in priority order. Blocked issues are grouped by blocker; each group
 has one tracking issue labelled `tracking`. Epics are listed where they wait on a blocker.
 Recheck the live issue before starting.
 
 ### Ready
 
-- [#2211: Validate the Python 3.15.2 devcontainer and Maturin/PyO3 example](https://github.com/john-cd/rust_howto/issues/2211)
 - [#2225: Remaining tool-crate test gaps and mdbook-utils vendoring decision (split from #2206)](https://github.com/john-cd/rust_howto/issues/2225)
 
 ### Blocked
@@ -37,6 +36,7 @@ Recheck the live issue before starting.
 
 #### Hardware, external host or account — tracker [#2240](https://github.com/john-cd/rust_howto/issues/2240)
 
+- [#2211: Validate the Python 3.15.2 devcontainer and Maturin/PyO3 example](https://github.com/john-cd/rust_howto/issues/2211) — the locked Windows extension build and import pass with CPython 3.15.2/Maturin 1.16.0; the full devcontainer build cannot fetch `john-cd/book_tooling` because no valid GitHub read token is available.
 - [#2236: Build heavy native stacks and re-run all-feature Clippy in `later` crates](https://github.com/john-cd/rust_howto/issues/2236)
 - [#2214: Validate macOS and FreeBSD native examples](https://github.com/john-cd/rust_howto/issues/2214)
 - [#2213: Validate GUI, window and hardware examples on a desktop or device](https://github.com/john-cd/rust_howto/issues/2213)
