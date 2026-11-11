@@ -130,6 +130,6 @@ export CARGO_HOME := env("CARGO_HOME", if os() == "windows" { join(build_code_pa
 export NUGET_PACKAGES := env("NUGET_PACKAGES", join(build_code_packages_root, "nuget"))
 export npm_config_cache := env("npm_config_cache", join(build_code_packages_root, "npm"))
 
-# Configure the host fallback; regular recipes retain their separate checkout slots.
+# Configure shared Cargo compiler defaults; checkout output slots remain separate.
 configure-cargo-host:
     pwsh -NoLogo -NoProfile -File {{quote(join(build_repo, "scripts/cargo-host.ps1"))}} -BuildRoot {{quote(build_code_build_root)}} -ConfigureHost
