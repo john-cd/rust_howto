@@ -212,9 +212,16 @@ email_local_character = _{
 }
 email_domain_label = {
     ASCII_ALPHANUMERIC
-    | ASCII_ALPHANUMERIC
-        ~ (ASCII_ALPHANUMERIC | "-"){0,61}
+    ~ (
+        !("." | ">" | EOI)
+        ~ email_domain_inner_character{0,61}
         ~ ASCII_ALPHANUMERIC
+    )?
+}
+// Stop before the final alphanumeric so the following expression can consume it.
+email_domain_inner_character = _{
+    !(ASCII_ALPHANUMERIC ~ ("." | ">" | EOI))
+    ~ (ASCII_ALPHANUMERIC | "-")
 }
 
 // CommonMark fenced code blocks
