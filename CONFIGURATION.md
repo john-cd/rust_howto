@@ -155,7 +155,7 @@ only when no package override matches. The wildcard package override matches non
 dependencies first, including external build dependencies. Confirm effective unit-graph flags
 before describing a dependency group as specially optimized. sccache caches eligible library
 compilations, not linking of binaries, dynamic libraries, or procedural macros. Keep the shared
-35 GiB cache and stable per-slot directories. Inspect running Cargo/rustc processes before
+45 GiB cache and stable per-slot directories. Inspect running Cargo/rustc processes before
 restarting sccache. Clean only demonstrated stale/corrupt content, never by recursively deleting a
 checkout link or another active slot.
 

@@ -5,7 +5,7 @@
 # TODO Reviewed ??-??-2026.
 
 set -euo pipefail
-export SCCACHE_CACHE_SIZE=35G
+export SCCACHE_CACHE_SIZE=45G
 
 repo=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)
 common_git_dir=$(git -C "$repo" rev-parse --path-format=absolute --git-common-dir)

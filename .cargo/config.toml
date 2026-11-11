@@ -17,7 +17,7 @@ build-dir = "build"
 SCCACHE_BASEDIRS = { value = ".", relative = true }
 
 [env.SCCACHE_CACHE_SIZE]
-value = "35G"
+value = "45G"
 force = true
 
 [profile.dev]
