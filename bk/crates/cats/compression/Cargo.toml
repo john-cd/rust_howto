@@ -29,18 +29,27 @@ test = true
 
 [dependencies]
 # General
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
-async-compression = { version = "0.4.51", features = ["tokio", "gzip"] }
+# Adaptors between compression crates and Rust's modern asynchronous IO types.
+async-compression = { version = "0.4.52", features = ["tokio", "gzip"] }
 
 # Tokio adapter for async ZIP I/O; the example writes stored entries without a codec.
 async_zip = { version = "0.0.19", features = ["tokio"] }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
-flate2 = "1.1.10"
+# DEFLATE compression and decompression exposed as Read/BufRead/Write streams. Supports miniz_oxide and multiple zlib implementations. Supports...
+flate2 = "1.1.11"
+# Futures, streams, and async I/O combinators
 futures-lite = "2.6.1"
+# A Rust implementation of a TAR file reader and writer. This library does not currently handle compression, but it is abstract over all I/O...
 tar = "0.4.46"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
+# Additional utilities for working with Tokio.
 tokio-util = { version = "0.7.20", features = ["compat"] }
-zip = "9.1.2"
+# Library to support the reading and writing of zip files.
+zip = "9.5.1"
 
 [dev-dependencies]
 # Creates automatically cleaned temporary directories and files for the examples.

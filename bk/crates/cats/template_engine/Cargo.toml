@@ -28,9 +28,13 @@ path = "examples/tinytemplate/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
+# Template engine based on Jinja2/Django templates
 tera = { version = "2.4.0", features = ["glob_fs"] }
+# Simple, lightweight template engine
 tinytemplate = "1.2.1"
 
 [lints]

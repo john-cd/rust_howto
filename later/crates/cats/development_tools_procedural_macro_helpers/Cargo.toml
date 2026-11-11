@@ -37,14 +37,22 @@ test = true
 
 [dependencies]
 ## General
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A proc-macro library for reading attributes into structs when implementing custom derives.
 darling = "0.24.1"
+# Macros for all your token pasting needs
 paste = "1.0.15"
+# A minimal `syn` syntax tree pretty-printer
 prettyplease = "0.3.0"
+# A substitute implementation of the compiler's `proc_macro` API to decouple token-based libraries from the procedural macro use case.
 proc-macro2 = "1.0.107"
+# Builds Rust token streams with quasi-quoting macros for procedural macros.
 quote = "1.0.47"
-syn = { version = "3.0.9", features = ["full"] }
+# Parser for Rust source code
+syn = { version = "3.0.10", features = ["full"] }
 
 [lints]
 workspace = true

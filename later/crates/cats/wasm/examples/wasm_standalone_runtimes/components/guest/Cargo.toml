@@ -8,7 +8,8 @@ publish = false
 crate-type = ["cdylib"]
 
 [dependencies]
-wit-bindgen = "0.46.0"
+# Rust bindings generator and runtime support for WIT and the component model. Used when compiling Rust programs to the component model.
+wit-bindgen = "0.63.0"
 
 # TODO Reviewed ??-??-2026.
 

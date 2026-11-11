@@ -23,12 +23,16 @@ path = "examples/websocket/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Async binding for Tungstenite, the Lightweight stream-based WebSocket implementation
 async-tungstenite = { version = "0.35.0", features = [
     "tokio-runtime",
     "tokio-native-tls",
 ] }
+# Common utilities and extension traits for the futures-rs library.
 futures-util = "0.3.34"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net"] }
 # Tokio WebSocket client with TLS for the secure echo endpoint.
 tokio-tungstenite = { version = "0.30.0", features = ["native-tls"] }

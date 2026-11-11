@@ -66,50 +66,90 @@ test = true
 # These RustCrypto examples have no external crypto-library build dependency;
 # running key-generation examples uses the operating system's secure RNG.
 aes-gcm = "0.11.1"
+# Pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encryption Cipher (RFC 8452) with optional architecture-specific...
 aes-gcm-siv = "0.12.1"
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Pure Rust implementation of the Argon2 password hashing function with support for the Argon2d, Argon2i, and Argon2id algorithmic variants
 argon2 = "0.6.0"
+# encodes and decodes base64 as bytes or utf8
 base64 = "0.23.1"
+# Pure Rust implementation of Base64 (RFC 4648) which avoids any usages of data-dependent branches/LUTs and thereby provides portable "best effort"...
 base64ct = "1.8.3"
+# Easily hash and verify passwords using bcrypt
 bcrypt = "0.19.3"
+# Pure Rust implementation of the ChaCha20Poly1305 Authenticated Encryption with Additional Data Cipher (RFC 8439) with optional...
 chacha20poly1305 = "0.11.0"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Efficient and customizable data-encoding functions like base64, base32, and hex
 data-encoding = "2.11.1"
+# Pure Rust embedded-friendly implementation of the Distinguished Encoding Rules (DER) for Abstract Syntax Notation One (ASN.1) as described in ITU...
 der = { version = "0.8.3", features = ["derive", "alloc"] }
+# Traits for cryptographic hash functions and message authentication codes
 digest = "0.11.3"
+# Pure Rust implementation of the Digital Signature Algorithm (DSA) as specified in FIPS 186-4 (Digital Signature Standard), providing RFC6979...
 dsa = "0.7.0"
+# Pure Rust implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA) as specified in FIPS 186-4 (Digital Signature Standard),...
 ecdsa = "0.17.0"
+# Edwards Digital Signature Algorithm (EdDSA) over Curve25519 (as specified in RFC 8032) support library providing signature type definitions and...
 ed25519 = "3.0.0"
+# Fast and efficient ed25519 EdDSA key generations, signing, and verification in pure Rust.
 ed25519-dalek = { version = "3.0.0", features = ["rand_core"] }
+# A small cross-platform library for retrieving random data from system source
 getrandom = "0.4.3"
+# Fast byte array to hex string conversion
 hex = "0.4.3"
+# A protective and efficient HTTP library for all.
 hyper = { version = "1.12.0", features = ["client"] }
+# Default TLS implementation for use with hyper
 hyper-tls = "0.6.0"
+# Reads and writes secrets through the operating system's credential store.
 keyring = "4.2.0"
+# A wrapper over a platform's native TLS implementation
 native-tls = "0.2.18"
+# Pure Rust implementation of the NIST P-256 (a.k.a. secp256r1, prime256v1) elliptic curve as defined in SP 800-186, with support for ECDH, ECDSA...
 p256 = { version = "0.14.0", features = ["pkcs8"] }
+# PEM Encoding (RFC 7468) for PKIX, PKCS, and CMS Structures, implementing a strict subset of the original Privacy-Enhanced Mail encoding intended...
 pem-rfc7468 = { version = "1.0.0", features = ["alloc"] }
+# Pure Rust implementation of Public-Key Cryptography Standards (PKCS) #8: Private-Key Information Syntax Specification (RFC 5208), with additional...
 pkcs8 = "0.11.0"
 # Enable rand's OS-backed CSPRNG for the example keys; compilation and Clippy
 # need no extra software, while running these examples needs OS entropy.
 rand = { version = "0.10.3", features = ["sys_rng"] }
+# Core random number generation traits and tools for implementation.
 rand_core = "0.10.1"
+# higher level HTTP client library
 reqwest = { version = "0.13.5", default-features = false, features = ["rustls-no-provider"] }
+# Provides cryptographic primitives and TLS building blocks for networked applications.
 ring = "0.17.14"
-rsa = "0.9.10"
+# Pure Rust RSA implementation
+rsa = "0.10.0"
+# Rustls is a modern TLS library written in Rust.
 rustls = { version = "0.23.46", default-features = false, features = ["ring", "std", "tls12"] }
+# Scrypt password-based key derivation function
 scrypt = { version = "0.12.0", features = ["password-hash", "getrandom", "phc"] }
+# Wrapper types and traits for secret management which help ensure they aren't accidentally copied, logged, or otherwise exposed (as much as...
 secrecy = "0.10.3"
+# A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
+# A JSON serialization file format
 serde_json = "1.0.154"
+# Computes SHA-1 digests for protocol compatibility and data identification.
 sha1 = "0.11.0"
+# Traits for cryptographic signature algorithms (e.g. ECDSA, Ed25519)
 signature = "3.0.0"
+# Pure-Rust traits and utilities for constant-time cryptographic implementations.
 subtle = "2.6.1"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["io-util", "macros", "net", "rt-multi-thread"] }
+# Asynchronous TLS/SSL streams for Tokio using Rustls.
 tokio-rustls = { version = "0.26.6", default-features = false, features = ["ring", "tls12", "logging"] }
 # Mozilla's WebPKI roots for validating public TLS server certificates.
-webpki-roots = "1.0.11"
+webpki-roots = "1.0.12"
+# Pure Rust implementation of the X.509 Public Key Infrastructure Certificate format as described in RFC 5280
 x509-cert = { version = "0.3.0", features = ["builder"] }
+# Securely clear secrets from memory with a simple trait built on stable Rust primitives which guarantee memory is zeroed using an operation will...
 zeroize = { version = "1.9.1", features = ["derive"] }
 
 [dev-dependencies]

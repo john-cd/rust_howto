@@ -97,26 +97,43 @@ test = true
 required-features = ["uniffi"]
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Library for reading/writing numbers in big-endian and little-endian.
 byteorder = { version = "1.5.0", optional = true }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Safe interop between Rust and C++
 cxx = { version = "1.0.205", optional = true }
+# Flutter/Dart <-> Rust binding generator, feature-rich, but seamless and simple
 flutter_rust_bridge = { version = "=2.13.0", optional = true }
+# Rust bindings to the JNI
 jni = { version = "0.22.4", optional = true }
+# High level bindings to Lua 5.5/5.4/5.3/5.2/5.1 (including LuaJIT) and Luau
 mlua = { version = "0.12.2", features = ["lua54"], optional = true }
-napi = { version = "3.15.0", features = ["async"], optional = true }
-napi-derive = { version = "3", optional = true }
+# Exposes Rust functions and types through Node.js's N-API interface.
+napi = { version = "3.16.1", features = ["async"], optional = true }
+# Generates Node.js N-API bindings from annotated Rust functions and types.
+napi-derive = { version = "3.7.0", optional = true }
+# A safe abstraction layer for Node.js.
 neon = { version = "1.1.2", optional = true }
+# Safe Rust wrappers for creating Erlang NIF functions
 rustler = { version = "0.39.0", optional = true }
+# The tie between Ruby and Rust.
 rutie = { version = "0.14.3", optional = true }
+# a multi-language bindings generator for rust
 uniffi = { version = "0.32.2", optional = true }
 
 [build-dependencies]
+# Easy support for interacting between JS and Rust.
 bindgen = "0.73.2"
+# A tool for generating C bindings to Rust code.
 cbindgen = "0.29.4"
 # sccache 0.18 cannot parse the MSVC /Tp command emitted by cc 1.9.
 cc = "=1.8.0"
+# C++ code generator for integrating `cxx` crate into a Cargo build.
 cxx-build = { version = "1.0.205", optional = true } # Generates and compiles the optional C++ bridge example.
+# a multi-language bindings generator for rust
 uniffi = { version = "0.32.2", optional = true }
 
 [features]
@@ -132,8 +149,11 @@ ruby = ["dep:magnus", "dep:rutie"]
 uniffi = ["dep:uniffi"]
 
 [target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
+# Objective-C interface and runtime bindings
 objc2 = { version = "0.6.5", optional = true }
+# Bindings to the AppKit framework
 objc2-app-kit = { version = "0.3.2", optional = true }
+# Bindings to the Foundation framework
 objc2-foundation = { version = "0.3.2", optional = true }
 
 [target.'cfg(not(target_os = "windows"))'.dependencies]

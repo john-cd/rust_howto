@@ -49,30 +49,49 @@ test = true
 
 [dependencies]
 ## General
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Pure Rust implementation of the Argon2 password hashing function with support for the Argon2d, Argon2i, and Argon2id algorithmic variants
 argon2 = "0.6.0"
+# HTTP routing and request handling library that focuses on ergonomics and modularity
 axum = { version = "0.8.9", features = ["form"] }
+# 🪪 User identification, authentication, and authorization for Axum.
 axum-login = "0.18.0"
+# A small cross-platform library for retrieving random data from system source
 getrandom = "0.4.3" # Generate random CSRF tokens.
+# Combinators and adapters for HTTP request or response bodies.
 http-body-util = "0.1.5"
+# Create and decode JWTs in a strongly typed way.
 jsonwebtoken = { version = "11.1.0", features = [
     "rust_crypto",
 ] } # Sign and validate HS256 JSON Web Tokens with RustCrypto.
+# An extensible, strongly-typed implementation of OAuth2
 oauth2 = { version = "5.0.0", features = ["reqwest-blocking"] }
-openidconnect = { version = "4.0.1", default-features = false } # OpenID Connect relying party; the example supplies its own HTTP client.
-password-auth = "1.0.0"
+# Implements OpenID Connect client flows and token validation.
+openidconnect = { version = "4.1.0", default-features = false } # OpenID Connect relying party; the example supplies its own HTTP client.
+# Password authentication library with a focus on simplicity and ease-of-use, including support for Argon2, PBKDF2, and scrypt password hashing...
+password-auth = "2.0.0"
+# higher level HTTP client library
 reqwest = { version = "0.13.5", features = ["blocking"] }
+# A generic serialization/deserialization framework
 serde = "1.0.229"
+# A JSON serialization file format
 serde_json = "1.0.154"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] } # Run the asynchronous Axum tests.
+# Tower is a library of modular and reusable components for building robust clients and servers.
 tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
 # Pinned: axum-login 0.18 (latest) needs the tower-sessions 0.14 SessionManagerLayer; tower-sessions 0.15 is out.
-tower-sessions = { version = "0.14.0", features = ["memory-store"] }
+# 🥠 Sessions as a `tower` and `axum` middleware.
+tower-sessions = { version = "0.15.0", features = ["memory-store"] }
 # Pinned to the stable 0.5 line; 0.6 is published only as a development pre-release.
+# Webauthn Authenticator Client Library
 webauthn-authenticator-rs = { version = "0.5.5", features = ["softpasskey"] } # Software authenticator that stands in for a real device in tests.
+# Webauthn Framework for Rust Web Servers
 webauthn-rs = "0.5.5"
 
 [dev-dependencies]
+# HTTP mocking library for Rust
 httpmock = "0.9.0"
 
 [lints]

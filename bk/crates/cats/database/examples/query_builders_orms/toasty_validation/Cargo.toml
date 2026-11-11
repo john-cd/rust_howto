@@ -7,8 +7,11 @@ edition = "2024"
 publish = false
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# An async ORM for Rust supporting SQL and NoSQL databases
 toasty = { version = "0.11.0", default-features = false, features = ["sqlite"] }
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 
 # Toasty's SQLite driver uses a newer libsqlite3-sys than the database examples

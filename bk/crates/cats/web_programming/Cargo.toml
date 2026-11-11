@@ -48,22 +48,35 @@ path = "examples/url/main.rs"
 test = true
 
 [dependencies]
+# Sanitizes untrusted HTML by removing unsafe elements and attributes.
 ammonia = "4.2.4"
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Types and traits for working with bytes
 bytes = "1.12.1"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A set of types for representing HTTP requests and responses.
 http = "1.5.0"
+# Combinators and adapters for HTTP request or response bodies.
 http-body-util = "0.1.5"
+# A macro for declaring lazily evaluated statics in Rust.
 lazy_static = "1.5.1"
-mime = "0.3.17"
+# Provides strongly typed MIME media types and parsing.
+mime = "0.3.18"
 # Guesses a MIME type from a file name's extension.
 mime_guess = "2.0.5"
+# A pull parser for CommonMark
 pulldown-cmark = "0.13.6"
+# A lightweight regex engine that optimizes for binary size and compilation time.
 regex = "1.13.1"
+# higher level HTTP client library
 reqwest = "0.13.5"
 # Parses HTML documents and selects elements with CSS selectors.
 scraper = "0.29.0"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+# URL library for Rust, based on the WHATWG URL Standard
 url = "2.5.8"
 
 [lints]

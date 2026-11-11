@@ -23,11 +23,17 @@ path = "examples/virtualization/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = { workspace = true, optional = true }
+# An asynchronous Docker daemon API
 bollard = { workspace = true, optional = true }
+# Common utilities and extension traits for the futures-rs library.
 futures-util = { workspace = true, optional = true }
+# A library for integration-testing against docker containers from within Rust.
 testcontainers = { workspace = true, optional = true }
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { workspace = true, optional = true }
+# Interprets WebAssembly modules in a lightweight embedded runtime.
 wasmi = "2.0.0"
 
 [[example]]

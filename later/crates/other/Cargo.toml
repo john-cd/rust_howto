@@ -82,86 +82,135 @@ test = true
 # `cargo tree --locked -i chrono --features polars,datafusion` when bumping either crate.
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Atomically replaces shared Arc values without taking a reader-side lock.
 arc-swap = { version = "1", optional = true }
+# Minimal implementation of the Arrow specification forked from arrow2
 arrow = { version = "60.1.0", features = ["csv", "json", "prettyprint"], optional = true }
+# Array abstractions for Apache Arrow
 arrow-array = { version = "60.1.0", optional = true } # Typed columns and `RecordBatch`, without the umbrella crate.
+# Cast kernel and utilities for Apache Arrow
 arrow-cast = { version = "60.1.0", features = ["prettyprint"], optional = true } # Pretty-print record batches.
+# Support for the Arrow IPC format
 arrow-ipc = { version = "60.1.0", optional = true } # Arrow IPC file and stream formats.
+# Type erasure for async trait methods
 async-trait = "0.1.92"
+# A time-series toolkit for forecasting, outlier detection, clustering and more.
 augurs = { version = "0.10", features = ["ets", "mstl"] }
-aws-config = { version = "1.13.0", default-features = false, features = [
+# AWS SDK config and credential provider implementations.
+aws-config = { version = "1.13.2", default-features = false, features = [
     "credentials-process",
     "default-https-client",
     "rt-tokio",
     "sso",
 ] }
-aws-sdk-cloudwatch = { version = "1.138.0", default-features = false, features = [
+# AWS SDK for Amazon CloudWatch
+aws-sdk-cloudwatch = { version = "1.142.0", default-features = false, features = [
     "default-https-client",
     "rt-tokio",
 ] }
-aws-sdk-lambda = { version = "1.154.0", default-features = false, features = [
+# AWS SDK for AWS Lambda
+aws-sdk-lambda = { version = "1.158.0", default-features = false, features = [
     "default-https-client",
     "rt-tokio",
 ] }
-aws-sdk-s3 = { version = "1.155.0", default-features = false, features = [
+# AWS SDK for Amazon Simple Storage Service
+aws-sdk-s3 = { version = "1.159.0", default-features = false, features = [
     "default-https-client",
     "http-1x",
     "rt-tokio",
     "sigv4a",
 ] }
-aws-sdk-sesv2 = { version = "1.143.0", default-features = false, features = [
+# AWS SDK for Amazon Simple Email Service
+aws-sdk-sesv2 = { version = "1.147.0", default-features = false, features = [
     "default-https-client",
     "rt-tokio",
     "sigv4a",
 ] }
-aws-sdk-sns = { version = "1.119.0", default-features = false, features = [
+# AWS SDK for Amazon Simple Notification Service
+aws-sdk-sns = { version = "1.123.0", default-features = false, features = [
     "default-https-client",
     "rt-tokio",
 ] }
-aws-sdk-sqs = { version = "1.117.0", default-features = false, features = [
+# AWS SDK for Amazon Simple Queue Service
+aws-sdk-sqs = { version = "1.121.0", default-features = false, features = [
     "default-https-client",
     "rt-tokio",
 ] }
+# HTTP client abstractions for generated smithy clients
 aws-smithy-http-client = { version = "1.5.2", default-features = false, features = [
     "rustls-aws-lc",
 ] } # Custom TLS trust store for S3-compatible stores.
+# HTTP routing and request handling library that focuses on ergonomics and modularity
 axum = "0.8.9"
+# encodes and decodes base64 as bytes or utf8
 base64 = "0.23.1" # Binary Protobuf payloads in SQS text bodies.
+# Date and time library for Rust
 chrono = "0.4.45"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A cron expression parser and schedule explorer.
 cron = "0.17.0"
+# Cross-platform app development in Rust
 crux_core = "0.20.0"
+# DataFusion is an in-memory query engine that uses Apache Arrow as the memory model
 datafusion = { version = "55.2.0", default-features = false, features = [
     "sql",
 ], optional = true } # Enable SQL without unused native compression codecs.
+# a library for running child processes
 duct = "1.1.2"
-futures = "0.3"
+# An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
+futures = "0.3.34"
+# Bindings for the Kubernetes client API
 k8s-openapi = { version = "0.29", features = ["latest"] }
+# Kubernetes client and async controller runtime
 kube = { version = "5.0.0", features = ["derive", "runtime", "client"] }
+# Runs Rust handlers in the AWS Lambda execution environment.
 lambda_runtime = "1.5.0"
+# A safe Rust wrapper for ONNX Runtime 1.31 - Optimize and accelerate machine learning inference & training
 ort = { version = "2.0.0-rc.15", optional = true } # Downloads ONNX Runtime binaries at build time
+# DataFrame library based on Apache Arrow
 polars = { version = "0.55.2", default-features = false, features = ["lazy"], optional = true }
-prost = "0.14.4" # Protobuf message derive.
+# A Protocol Buffers implementation for the Rust Language.
+prost = "0.14.5" # Protobuf message derive.
+# Rust X.509 certificate generator
 rcgen = "0.14.10" # Test certificates for the TLS trust store example.
+# Embedded scripting for Rust
 rhai = "1.27.0"
-schemars = "1"
+# Generate JSON Schemas from Rust code
+schemars = "1.2.3"
+# A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
+# A JSON serialization file format
 serde_json = "1.0.154" # Converts Arrow JSON output back into Serde rows, and parses Lambda payloads.
+# Compile Time Dependency Injection for Rust
 shaku = "0.6.3"
+# Process command line according to parsing rules of UNIX shell
 shell-words = "1.1.1"
+# Shell-like expansions in strings
 shellexpand = "3.1.2"
+# Service implementation to run an axum webserver on shuttle
 shuttle-axum = "0.57.0"
+# Runtime to run a service on the Shuttle platform (https://www.shuttle.dev)
 shuttle-runtime = "0.57.0"
+# Machine Learning in Rust.
 smartcore = "0.7.0"
+# Derives standard Error implementations for custom Rust error types.
 thiserror = "2"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time", "test-util"] }
+# Asynchronous TLS/SSL streams for Tokio using Rustls.
 tokio-rustls = "0.26.6" # Local HTTPS server for the trust store test.
+# Additional utilities for working with Tokio.
 tokio-util = "0.7.20"
+# Application-level tracing for Rust.
 tracing = "0.1.44"
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = "0.3.23"
 
 [dev-dependencies]
+# Cross-platform app development in Rust
 crux_core = { version = "0.20.0", features = ["testing"] } # The `expect_*` assertions on `Command` need this feature since 0.20.
 
 [features]

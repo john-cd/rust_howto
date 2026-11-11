@@ -33,9 +33,13 @@ path = "examples/pixel_buffers/main.rs"
 test = true
 
 [dependencies]
+# Imaging library. Provides basic image processing and encoders/decoders for common image formats.
 image = "0.25.10"
+# Exif parsing library written in pure Rust
 kamadak-exif.workspace = true
+# A lossless PNG compression optimizer
 oxipng.workspace = true
+# Convert and manage colors with a focus on correctness, flexibility and ease of use.
 palette = "0.7.7"
 
 [dev-dependencies]

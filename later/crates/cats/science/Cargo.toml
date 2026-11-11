@@ -23,17 +23,27 @@ path = "examples/ml/main.rs"
 test = true
 
 [dependencies]
+# Provides tensors, devices, and core operations for the Candle machine-learning framework.
 candle-core = { version = "0.11.1", optional = true }
+# Provides neural-network layers and training utilities for Candle.
 candle-nn = { version = "0.11.1", optional = true }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A Machine Learning framework for Rust
 linfa = "0.8.1"
+# A collection of clustering algorithms
 linfa-clustering = "0.8.1"
+# A Machine Learning framework for Rust
 linfa-linear = "0.8.1"
+# An n-dimensional array for general elements and for numerics. Lightweight array views and slicing; views support chunking and splitting.
 ndarray = "0.17.2"
 # Linfa 0.8.1 uses ndarray 0.16 types; keep this alias on 0.16 so arrays compose with Linfa APIs.
+# An n-dimensional array for general elements and for numerics. Lightweight array views and slicing; views support chunking and splitting.
 ndarray_016 = { package = "ndarray", version = "0.16.1" }
 # Linfa 0.8 uses rand 0.8 traits for seeded K-means; keep its RNG on that API line.
-rand_08 = { package = "rand", version = "0.8.5", features = ["std", "std_rng"] }
+# Random number generators and other randomness functionality.
+rand_08 = { package = "rand", version = "0.8.8", features = ["std", "std_rng"] }
+# Machine Learning in Rust.
 smartcore = "0.7.0"
 
 [features]

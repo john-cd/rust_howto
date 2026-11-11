@@ -23,6 +23,7 @@ path = "examples/aerospace/main.rs"
 test = true
 
 [dependencies]
+# A pure Rust implementation of the SGP4 algorithm for satellite propagation
 sgp4 = "2.4.0"
 
 [lints]

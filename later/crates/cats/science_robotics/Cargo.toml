@@ -54,25 +54,43 @@ path = "examples/simulation_visualization/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Type erasure for async trait methods
 async-trait = "0.1.92"
+# Implements behavior trees for organizing reactive robotics and game logic.
 bonsai-bt = "0.14.0"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A Hardware Abstraction Layer (HAL) for embedded systems
 embedded-hal = "1.0.0"
+# An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
 futures = { version = "0.3.34", optional = true }
+# k is for kinematics
 k = "0.32.0" # Kinematics (the library underneath OpenRR).
+# A high-performance, flexible, ergonomic k-d tree library. Ideal for geo- and astro- nearest-neighbour and k-nearest-neighbor queries
 kiddo.workspace = true
+# Pathfinding, flow, and graph algorithms
 pathfinding = "4.16.0"
+# Calculates proportional-integral-derivative control outputs for feedback systems.
 pid = "4.0.0"
+# Easy to use, runtime-agnostic, async rust bindings for ROS2.
 r2r = { version = "0.9.7", optional = true }
+# 2-dimensional physics engine in Rust.
 rapier2d = "0.36.1"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+# Application-level tracing for Rust.
 tracing = "0.1.44"
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = "0.3.23"
-urdf-rs = "0.9.1" # Parses the URDF robot description used by `k`.
+# Parses and serializes robot descriptions in the URDF XML format.
+urdf-rs = "0.10.0" # Parses the URDF robot description used by `k`.
+# Zenoh: The Zero Overhead Pub/Sub/Query Protocol.
 zenoh = { version = "1.10.2", default-features = false, features = ["transport_tcp"], optional = true } # No compression, auth or shared memory: the local example needs only TCP.
 
 [dev-dependencies]
+# A collection of mocked devices that implement the embedded-hal traits
 embedded-hal-mock.workspace = true
 
 [features]

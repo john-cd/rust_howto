@@ -38,19 +38,29 @@ path = "examples/mailparse.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Async IMAP client for Rust
 async-imap = { version = "0.12.0", default-features = false, features = [
     "runtime-tokio",
 ] }
+# An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
 futures = "0.3.34"
+# Render HTML as plain text.
 html2text = "0.17.4"
+# Builds and sends email messages through SMTP and other mail transports.
 lettre = { version = "0.11.23", features = ["tokio1-native-tls"] }
-mail-parser = "1.0.0"
+# Fast and robust e-mail parsing library for Rust
+mail-parser = "1.0.1"
+# Cross-language temporary (disposable/throwaway) email detection library. Covers 2740 fake email providers.
 mailchecker = "6.0.21"
 # Parse raw email messages and MIME parts for the book example.
 mailparse = "0.18.0"
+# A wrapper over a platform's native TLS implementation
 native-tls = "0.2.18"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "net", "rt-multi-thread"] }
+# An implementation of TLS/SSL streams for Tokio using native-tls giving an implementation of TLS for nonblocking I/O streams.
 tokio-native-tls = "0.3.1"
 
 [lints]

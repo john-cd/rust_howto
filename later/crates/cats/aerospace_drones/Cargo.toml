@@ -23,7 +23,9 @@ path = "examples/drones/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# SDK for intel DJI Tello drone using the native api
 tello = "0.6.3"
 
 [lints]

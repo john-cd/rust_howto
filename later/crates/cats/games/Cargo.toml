@@ -22,6 +22,7 @@ path = "examples/games.rs"
 test = true
 
 [dependencies]
+# Simple and easy to use graphics library
 macroquad = "0.4.16"
 
 [lints]

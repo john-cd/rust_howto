@@ -7,4 +7,5 @@ edition = "2024"
 publish = false
 
 [dependencies]
+# Fixture dependency used to verify renamed Cargo dependency aliases.
 fixture-alias.workspace = true

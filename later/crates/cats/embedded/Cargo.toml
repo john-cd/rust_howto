@@ -59,21 +59,32 @@ path = "examples/useful_crates_embedded/main.rs"
 test = true
 
 [dev-dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104" # Provides consistent fallible example entry points.
+# Provides portable critical-section primitives for embedded and concurrent code.
 critical-section = { version = "1.2.0", features = [
     "std",
 ] } # Provides host-safe locking for the shared Embassy channel.
+# async/await executor designed for embedded usage
 embassy-executor = { version = "0.10.0", features = [
     "executor-thread",
     "platform-std",
 ] } # Runs Embassy tasks with the host executor.
+# no-std, no-alloc synchronization primitives with async support
 embassy-sync = "0.8.0" # Provides the bounded task-to-task message channel.
+# Instant and Duration for embedded no-std systems, with async timer support
 embassy-time = { version = "0.5.1", features = ["std"] } # Provides host timers for the task example and timeout.
+# A Hardware Abstraction Layer (HAL) for embedded systems
 embedded-hal = "1.0.0" # Portable traits used by the host-side peripheral examples.
+# A Storage Abstraction Layer for Embedded Systems
 embedded-storage = "0.3.2" # NOR flash traits used by the in-memory flash model.
+# `static` friendly data structures that don't require dynamic memory allocation
 heapless = "0.9.3" # Provides the bounded queue and vector.
+# A no_std + serde compatible message library for Rust
 postcard = "1.1.3" # Encodes messages compactly without an allocator.
+# A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] } # Derives the message encoding.
+# A TCP/IP stack designed for bare-metal, real-time systems without a heap.
 smoltcp = { version = "0.14.0", default-features = false, features = ["proto-ipv4"] }
 
 [workspace]

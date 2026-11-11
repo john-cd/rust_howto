@@ -67,21 +67,33 @@ path = "examples/slab.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A fast bump allocation arena for Rust.
 bumpalo = { version = "3.20.3", features = ["boxed"] }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A macro for declaring lazily evaluated statics in Rust.
 lazy_static = "1.5.1"
+# Performance and security oriented drop-in allocator
 mimalloc = "0.1.52"
+# Single assignment cells and lazy values.
 once_cell = "1.21.4"
+# Fast, efficient, and robust memory reclamation for concurrent data structures.
 seize = "0.5.1"
+# Pre-allocated storage for a uniform data type
 slab = "0.4.12"
+# Fast, FFI-friendly string interning.
 ustr = "1.1.0"
 
 [dev-dependencies]
+# Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion = "0.8.2"
 
 [target.'cfg(not(target_env = "msvc"))'.dependencies]
+# A safe wrapper over jemalloc's control and introspection APIs
 tikv-jemalloc-ctl = { version = "0.7.0", features = ["stats", "use_std"] }
+# A Rust allocator backed by jemalloc
 tikv-jemallocator = "0.7.0"
 
 [lints]

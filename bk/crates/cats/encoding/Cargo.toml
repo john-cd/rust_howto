@@ -67,45 +67,79 @@ path = "examples/typecasts/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# encodes and decodes base64 as bytes or utf8
 base64 = "0.23.1"
+# A binary serialization / deserialization strategy that uses Serde for transforming structs into bytes and vice versa!
 bincode = { version = "=2", features = [
     "serde",
 ] } # Keep 2.x: 3.0.0 is a tombstone release without the `serde` feature or an API
+# A crate for mucking around with piles of bytes.
 bytemuck = { version = "1.25.2", features = ["derive"] }
+# Library for reading/writing numbers in big-endian and little-endian.
 byteorder = "1.5.0"
+# An Excel/OpenDocument Spreadsheet reader and deserializer in pure Rust
 calamine = "0.38.0"
+# runtime library for Cap'n Proto data encoding
 capnp = "0.27.3"
+# serde implementation of CBOR using ciborium-basic
 ciborium = "0.2.2"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Fast CSV parsing with support for serde.
 csv = "1.4.0"
+# Efficient and customizable data-encoding functions like base64, base32, and hex
 data-encoding = "2.11.1"
+# Official FlatBuffers Rust runtime library.
 flatbuffers = "25.12.19"
+# `static` friendly data structures that don't require dynamic memory allocation
 heapless = "0.9.3"
+# Fast byte array to hex string conversion
 hex = "0.4.3" # Hexadecimal encoding and decoding.
+# Type that deserializes only from one specific value
 monostate = "1.0.3"
+# Percent encoding and decoding
 percent-encoding = "2.3.2"
+# A no_std + serde compatible message library for Rust
 postcard = { version = "1.1.3", features = ["use-std"] }
-prost = "0.14.4"
-prost-types = "0.14.4"
+# A Protocol Buffers implementation for the Rust Language.
+prost = "0.14.5"
+# Prost definitions of Protocol Buffers well known types.
+prost-types = "0.14.5"
+# Zero-copy deserialization framework for Rust
 rkyv = "0.8.18"
+# Serde support for MessagePack
 rmp-serde = "1.3.1"
+# A Rust library for writing Excel 2007 xlsx files
 rust_xlsxwriter = "0.102.0"
+# A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
+# Find out about keys that are ignored when deserializing data
 serde_ignored = "0.1.14"
+# A JSON serialization file format
 serde_json = "1.0.154"
+# Serializes and deserializes URL-encoded form data with Serde.
 serde_urlencoded = "0.7.1" # `application/x-www-form-urlencoded` (de)serialization.
-toml = "1.1.8"
+# A native Rust encoder and decoder of TOML-formatted files and streams. Provides implementations of the standard Serialize/Deserialize traits for...
+toml = "1.2.1"
+# URL library for Rust, based on the WHATWG URL Standard
 url = "2.5.8"
+# A Rust library for doing URL percentage encoding.
 urlencoding = "2.1.3" # Percent-encode and decode a string.
+# Zerocopy makes zero-cost memory manipulation effortless. We write "unsafe" so you don't have to.
 zerocopy = { version = "0.8.63", features = ["derive"] }
 
 [dev-dependencies]
+# A library for managing temporary files and directories.
 tempfile = "3.27.0"
 
 [build-dependencies]
+# Cap'n Proto code generation
 capnpc = "0.27.0"
-prost-build = "0.14.4"
+# Generate Prost annotated Rust types from Protocol Buffers files.
+prost-build = "0.14.5"
+# A rust implementation of the protobuf compiler.
 protox = "0.10.0" # Compile .proto files without launching a protoc executable.
 
 [lints]

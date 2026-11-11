@@ -44,13 +44,19 @@ path = "examples/vulkan/main.rs"
 test = true
 
 [dependencies]
+# GL on Whatever: a set of bindings to run GL (Open GL, OpenGL ES, and WebGL) anywhere, and avoid target-specific code.
 glow = "0.18.0" # Cross-platform OpenGL, OpenGL ES, and WebGL bindings.
+# Synchronously block the thread until a future completes
 pollster = { version = "1.0.1", optional = true } # runs the example's async GPU setup
+# Cross-platform, safe, pure-rust graphics API
 wgpu = { version = "30.0.1", optional = true } # was pinned for ggez
 
 [dev-dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104" # Provides consistent fallible example entry points.
+# Vulkan bindings for Rust
 ash = "0.38.0" # Loads the Vulkan library at runtime; the example runs without one.
+# Shader translator and validator. Part of the wgpu project
 naga = { version = "30.0.1", features = ["wgsl-in", "spv-out"] } # validates the WGSL without a GPU
 
 [features]

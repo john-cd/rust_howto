@@ -17,11 +17,17 @@ keywords = ["cleanup", "testing", "filesystem", "dev-tools", "cli"]
 categories = ["development-tools", "command-line-utilities"]
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = { workspace = true }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { workspace = true }
+# A library for managing temporary files and directories.
 tempfile = { workspace = true }
+# Application-level tracing for Rust.
 tracing = { workspace = true }
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { workspace = true }
+# Recursively walk a directory.
 walkdir = { workspace = true }
 
 [lints]

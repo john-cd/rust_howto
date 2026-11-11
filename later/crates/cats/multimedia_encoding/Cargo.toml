@@ -23,9 +23,13 @@ path = "examples/encoding/main.rs"
 test = true
 
 [dependencies]
+# A wav encoding and decoding library
 hound = "3.5.1"
+# MP4 reader and writer library in Rust.
 mp4 = "0.14.0"
+# The fastest and safest AV1 encoder
 rav1e = { version = "0.8.1", default-features = false }
+# Pure Rust media container and audio decoding library.
 symphonia = { version = "0.6.1", features = ["all"] }
 
 [lints]

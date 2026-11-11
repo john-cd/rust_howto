@@ -41,17 +41,26 @@ path = "examples/pest/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A byte-oriented, zero-copy, parser combinators library
 nom = "8.0.0"
-pest = "2.9.5"
-pest_derive = "2.9.5"
-tree-sitter = "0.27.1"
+# Parses input using grammars defined with the Parsing Expression Grammar model.
+pest = "2.9.6"
+# Generates pest parser implementations from grammar files at compile time.
+pest_derive = "2.9.6"
+# Rust bindings to the Tree-sitter parsing library
+tree-sitter = "0.27.2"
+# Rust grammar for tree-sitter
 tree-sitter-rust = "0.24.2"
-winnow = "1.0.4"
+# A byte-oriented, zero-copy, parser combinators library
+winnow = "1.0.5"
 
 [build-dependencies]
-pest_generator = "2.9.5"
+# Generates parser code from pest grammar definitions.
+pest_generator = "2.9.6"
 
 [lints]
 workspace = true

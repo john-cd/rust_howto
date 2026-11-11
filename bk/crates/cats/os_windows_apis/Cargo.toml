@@ -23,10 +23,13 @@ path = "examples/windows/main.rs"
 test = true
 
 [dependencies]
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
 
 [target.'cfg(target_os = "windows")'.dependencies]
+# Raw FFI bindings for all of Windows API.
 winapi = { version = "0.3.9", features = ["winuser", "libloaderapi", "minwindef"] }
+# Rust for Windows
 windows = { version = "0.62.2", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging"] }
 
 [lints]

@@ -23,7 +23,9 @@ path = "examples/space_protocols/main.rs"
 test = true
 
 [dependencies]
+# Modern and lightweight implementation of u2, u3, u4, ..., u127.
 arbitrary-int = "2.2.0"
+# Generic implementations for various CCSDS and ECSS packet standards
 spacepackets = "0.19.0"
 
 [lints]

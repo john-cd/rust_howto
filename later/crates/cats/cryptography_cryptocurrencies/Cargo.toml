@@ -25,8 +25,11 @@ path = "examples/cryptocurrencies/main.rs"
 test = true
 
 [dependencies]
+# Connect applications to blockchains
 alloy = { version = "2.5.0", default-features = false, features = ["std", "contract", "sol-types", "provider-http", "reqwest", "reqwest-rustls-tls", "signer-local"] }
+# Flexible concrete Error type built on std::error::Error
 anyhow = { workspace = true }
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { workspace = true }
 
 [lints]

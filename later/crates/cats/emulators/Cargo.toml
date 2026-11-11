@@ -23,8 +23,10 @@ path = "examples/emulators/main.rs"
 test = true
 
 [dependencies]
+# A Rust library for parsing and generating Intel HEX (or IHEX) objects. This format is commonly used for representing compiled program code and...
 ihex = "3.0.0"
-polkavm = "0.37.0"
+# A fast and secure RISC-V based virtual machine
+polkavm = "0.38.0"
 
 [lints]
 workspace = true

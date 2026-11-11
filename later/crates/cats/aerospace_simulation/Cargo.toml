@@ -23,7 +23,9 @@ path = "examples/aerospace_simulation/main.rs"
 test = true
 
 [dependencies]
+# Numerical methods to solve ordinary differential equations (ODEs) in Rust.
 ode_solvers = "0.6.2"
+# A pure Rust implementation of the SGP4 algorithm for satellite propagation
 sgp4 = "2.4.0"
 
 [lints]

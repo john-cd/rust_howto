@@ -23,7 +23,9 @@ path = "examples/neuroscience/main.rs"
 test = true
 
 [dependencies]
+# An n-dimensional array for general elements and for numerics. Lightweight array views and slicing; views support chunking and splitting.
 ndarray = "0.17.2" # Matches the ndarray type used by nifti's volume writer.
+# Rust implementation of the NIfTI file format
 nifti = { version = "0.18.0", features = ["ndarray_volumes"] }
 
 [lints]
