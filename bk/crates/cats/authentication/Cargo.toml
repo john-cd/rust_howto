@@ -81,9 +81,8 @@ serde_json = "1.0.154"
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] } # Run the asynchronous Axum tests.
 # Tower is a library of modular and reusable components for building robust clients and servers.
 tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
-# Pinned: axum-login 0.18 (latest) needs the tower-sessions 0.14 SessionManagerLayer; tower-sessions 0.15 is out.
-# 🥠 Sessions as a `tower` and `axum` middleware.
-tower-sessions = { version = "0.15.0", features = ["memory-store"] }
+# Session middleware with in-memory storage; pin 0.14.0 to match axum-login's session-layer types.
+tower-sessions = { version = "=0.14.0", features = ["memory-store"] }
 # Pinned to the stable 0.5 line; 0.6 is published only as a development pre-release.
 # Webauthn Authenticator Client Library
 webauthn-authenticator-rs = { version = "0.5.5", features = ["softpasskey"] } # Software authenticator that stands in for a real device in tests.

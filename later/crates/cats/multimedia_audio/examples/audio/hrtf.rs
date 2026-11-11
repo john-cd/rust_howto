@@ -17,8 +17,7 @@ use hrtf::HrtfProcessor;
 use hrtf::Vec3;
 
 const SAMPLE_RATE: u32 = 44_100;
-const BLOCK_LEN: usize = 128;
-const INTERPOLATION_STEPS: usize = 4;
+const SOURCE_LEN: usize = 512;
 
 /// HRIR sphere fixture bytes compiled into the binary.
 const HRIR_FIXTURE_BYTES: &[u8] = include_bytes!("fixture.hrir");
@@ -33,10 +32,10 @@ fn rms(samples: impl Iterator<Item = f32>) -> f32 {
 fn main() -> Result<(), Box<dyn Error>> {
     let sphere = HrirSphere::new(HRIR_FIXTURE_BYTES, SAMPLE_RATE)
         .map_err(|e| format!("invalid HRIR sphere: {e:?}"))?;
-    let mut processor = HrtfProcessor::new(sphere, INTERPOLATION_STEPS, BLOCK_LEN);
+    let mut processor = HrtfProcessor::new(sphere, SOURCE_LEN);
 
-    // The source must be exactly `interpolation_steps * block_len` samples.
-    let source: Vec<f32> = (0..INTERPOLATION_STEPS * BLOCK_LEN)
+    // The source length must match the HRTF processor's configured frame length.
+    let source: Vec<f32> = (0..SOURCE_LEN)
         .map(|i| {
             let time = i as f32 / SAMPLE_RATE as f32;
             (std::f32::consts::TAU * 440.0 * time).sin()
@@ -47,20 +46,17 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // The vector points from the listener to the source.
     let direction = Vec3::new(1.0, 1.0, 1.0);
-    // The processor keeps the tail of the convolution between calls; reuse
-    // these buffers for the next block of the same source.
-    let mut prev_left = Vec::new();
-    let mut prev_right = Vec::new();
+    // The processor keeps the convolution history between frames of this source.
+    let mut history = Vec::new();
     processor.process_samples(HrtfContext {
         source: &source,
         output: &mut output,
         new_sample_vector: direction,
         prev_sample_vector: direction,
-        prev_left_samples: &mut prev_left,
-        prev_right_samples: &mut prev_right,
-        // Equal gains: no distance fade within the block.
-        new_distance_gain: 1.0,
-        prev_distance_gain: 1.0,
+        history: &mut history,
+        // Equal gains: no distance fade within the frame.
+        new_gain: 1.0,
+        prev_gain: 1.0,
     });
 
     let left = rms(output.iter().map(|&(left, _)| left));
