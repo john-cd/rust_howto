@@ -21,10 +21,12 @@ exclude = [".cargo/", "justfile", "clippy.toml"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# `Cargo.toml` struct definitions for parsing with Serde
 cargo_toml = "1.0.1"
 
 [dev-dependencies]
-toml = "1.1.8"
+# A native Rust encoder and decoder of TOML-formatted files and streams. Provides implementations of the standard Serialize/Deserialize traits for...
+toml = "1.2.1"
 
 [lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited

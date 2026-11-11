@@ -23,12 +23,18 @@ path = "examples/game_engines/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = { version = "1.0.104", optional = true }
-bevy = { version = "0.20.0", default-features = false, features = ["default_app"], optional = true ,
+# A refreshingly simple data-driven game engine and app framework
+bevy = { version = "0.20.1", default-features = false, features = ["default_app"], optional = true ,
 }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Feature-rich, easy-to-use, 2D/3D game engine with a scene editor. Like Godot, but in Rust.
 fyrox = { version = "1.0.1", optional = true }
+# A lightweight game framework for making 2D games with minimum friction, inspired by Love2D.
 ggez = { version = "0.10.0", optional = true }
+# Simple and easy to use graphics library
 macroquad = "0.4.16"
 
 [features]

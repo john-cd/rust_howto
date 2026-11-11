@@ -23,6 +23,7 @@ path = "examples/freebsd/main.rs"
 test = true
 
 [target.'cfg(target_os = "freebsd")'.dependencies]
+# Simplified interface to libc::sysctl
 sysctl = "=0.6.0" # Pinned: 0.7.1 conflicts with gemm-common's `sysctl` requirement.
 
 [lints]

@@ -119,14 +119,21 @@ test = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A macro to ergonomically define an item depending on a large number of #[cfg] parameters. Structured like an if-else chain, the first matching...
 cfg-if = "1.0.5"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Core procedural macro implementations (derive, attribute, and function-like) used in the book examples.
 proc_macros = { path = "../proc_macros" }
+# Helpful macros for working with enums and strings
 strum = { version = "0.28.0", features = ["derive"] }
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 
 [dev-dependencies]
+# Test harness for ui tests of compiler diagnostics
 trybuild = "1.0.122"
 
 [features]

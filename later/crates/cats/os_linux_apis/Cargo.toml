@@ -23,7 +23,9 @@ path = "examples/linux/main.rs"
 test = true
 
 [target.'cfg(target_os = "linux")'.dependencies]
+# Safe Rust bindings to POSIX/Unix/Linux/Winsock-like syscalls
 rustix = { version = "1.1.6", features = ["fs"] }
+# A library for managing temporary files and directories.
 tempfile = "3.27.0"
 
 [lints]

@@ -15,22 +15,37 @@ keywords = ["book", "mdbook", "rustbook", "documentation"]
 categories = ["command-line-utilities", "text-processing", "parser-implementations"]
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = { workspace = true } # Adds chapter and directive context to preprocessing errors.
+# A unified CLI for book tooling
 book_tool = { workspace = true } # Reuses directives without the CLI's HTTP stack.
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { workspace = true }
+# Markdown processing used in mdBook
 mdbook-markdown = { workspace = true }
+# Library to assist implementing an mdBook preprocessor
 mdbook-preprocessor = { workspace = true }
+# A collection of Rust-based tools for processing Markdown files, particularly for books and documentation projects.
 parse_lib = { workspace = true } # Protects code and comments during legacy cleanup.
+# A lightweight regex engine that optimizes for binary size and compilation time.
 regex = { workspace = true }
+# Parser and evaluator for Cargo's flavor of Semantic Versioning
 semver = { workspace = true }
+# A generic serialization/deserialization framework
 serde = { workspace = true }
+# A JSON serialization file format
 serde_json = { workspace = true }
+# Application-level tracing for Rust.
 tracing = { workspace = true }
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { workspace = true }
 
 [dev-dependencies]
+# Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion = { workspace = true }
+# High-level library for running mdBook
 mdbook-driver = { workspace = true }
+# A library for managing temporary files and directories.
 tempfile = { workspace = true }
 
 [[bench]]

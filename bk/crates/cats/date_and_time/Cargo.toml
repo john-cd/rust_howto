@@ -38,10 +38,15 @@ path = "examples/time.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Date and time library for Rust
 chrono = "0.4.45"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A parser and formatter for std::time::{Duration, SystemTime}
 humantime = "2.4.0"
+# Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].
 time = { version = "0.3.55", features = [
     "formatting",
     "parsing",

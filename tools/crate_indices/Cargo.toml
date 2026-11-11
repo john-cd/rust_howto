@@ -21,15 +21,23 @@ name = "crate-indices"
 path = "src/main.rs"
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = { workspace = true }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { workspace = true }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap_builder = { workspace = true }
+# Extra iterator adaptors, iterator methods, free functions, and macros.
 itertools = { workspace = true }
+# Tools & templates for the rust_howto book
 tool_lib = { workspace = true }
+# Application-level tracing for Rust.
 tracing = { workspace = true }
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { workspace = true }
 
 [dev-dependencies]
+# A library for managing temporary files and directories.
 tempfile = { workspace = true }
 
 [lints]

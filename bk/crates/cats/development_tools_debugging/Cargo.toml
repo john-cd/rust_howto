@@ -48,42 +48,73 @@ path = "examples/tracing/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# HTTP routing and request handling library that focuses on ergonomics and modularity
 axum = { version = "0.8.9", default-features = false, features = ["http1", "tokio"] } # Serve a `/metrics` route.
+# Date and time library for Rust
 chrono = "0.4.45"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A logging implementation for `log` which is configured via an environment variable.
 env_logger = "0.11.11"
+# A set of types for representing HTTP requests and responses.
 http = { version = "1.5.0", optional = true } # Header map used to carry the trace context.
-log = "0.4.34"
+# A lightweight logging facade for Rust
+log = "0.4.35"
+# A highly configurable multi-output logging implementation for the `log` facade
 log4rs = "1.4.0"
+# A lightweight metrics facade.
 metrics = "0.24.6" # Instrumentation facade for emitting counters and histograms.
+# A metrics-compatible exporter for sending metrics to Prometheus.
 metrics-exporter-prometheus = { version = "0.18.3", default-features = false } # In-memory recorder and Prometheus exposition format.
+# OpenTelemetry API for Rust
 opentelemetry = { version = "0.33.1", optional = true }
+# Helper implementations for sending HTTP requests. Uses include propagating and extracting context over http, exporting telemetry, requesting...
 opentelemetry-http = { version = "0.33.1", optional = true } # Header injector and extractor for propagators.
+# Exporter for the OpenTelemetry Collector
 opentelemetry-otlp = { version = "0.33.1", default-features = false, features = [
     "http-proto",
     "reqwest-blocking-client",
     "trace",
 ], optional = true } # Builds an OTLP/HTTP exporter for OpenObserve traces.
+# Semantic conventions for OpenTelemetry
 opentelemetry-semantic-conventions = { version = "0.33.1", optional = true } # Names for standard attribute keys such as `http.route`.
+# An OpenTelemetry exporter for stdout
 opentelemetry-stdout = { version = "0.33.1", optional = true } # Exports spans to stdout for a self-contained example.
+# The SDK for the OpenTelemetry metrics collection and distributed tracing framework
 opentelemetry_sdk = { version = "0.33.1", default-features = false, features = ["rt-tokio", "trace", "testing"], optional = true } # Provides tracer providers for the stdout exporter example.
+# A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
+# Structured, extensible, composable logging for Rust
 slog = "2.8.2"
+# Asynchronous drain for slog-rs
 slog-async = "2.8.0"
+# Logging scopes for slog-rs
 slog-scope = "4.4.1"
+# Unix terminal drain and formatter for slog-rs
 slog-term = "2.9.2"
+# A library for managing temporary files and directories.
 tempfile = "3.27.0"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+# Application-level tracing for Rust.
 tracing = "0.1.44"
+# Provides utilities for file appenders and making non-blocking writers.
 tracing-appender = "0.2.5"
+# OpenTelemetry integration for tracing
 tracing-opentelemetry = { version = "0.34.0", optional = true }
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { version = "0.3.23", features = ["env-filter", "time", "json"] }
 
 [dev-dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Combinators and adapters for HTTP request or response bodies.
 http-body-util = "0.1.5"
+# Helper types/functions used by the metrics ecosystem.
 metrics-util = { version = "0.20.4", features = ["debugging"] } # In-memory recorder for metric behavior tests.
+# Tower is a library of modular and reusable components for building robust clients and servers.
 tower = { version = "0.5.3", features = ["util"] } # Exercise routes without opening a socket.
 
 [features]
@@ -100,6 +131,7 @@ opentelemetry = [
 ]
 
 [target.'cfg(target_os = "linux")'.dependencies]
+# Syslog message formatter and writer, supporting unix sockets, UDP and TCP exporters
 syslog = "7.0.0"
 
 [lints]

@@ -28,7 +28,9 @@ path = "examples/simulation/main.rs"
 test = true
 
 [dependencies]
+# Numerical methods to solve ordinary differential equations (ODEs) in Rust.
 ode_solvers = "0.6.2"
+# 2-dimensional physics engine in Rust.
 rapier2d = "0.36.1"
 
 [lints]

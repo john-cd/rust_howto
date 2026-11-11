@@ -84,30 +84,48 @@ test = true
 
 [dependencies]
 ## General
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Async multi-producer multi-consumer channel
 async-channel = "2.5.0"
 # Deferred (#1748): add `async-stream = "0.3.6"` only when a streams recipe needs it;
 # `futures::stream` covers the current recipes.
 async-trait = "0.1.92"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
 futures = "0.3.34"
+# Executors for asynchronous tasks based on the futures-rs library.
 futures-executor = "0.3.34"
+# Common utilities and extension traits for the futures-rs library.
 futures-util = "0.3.34"
-kanal = "0.1.1" # NOTE: pre version
+# The fast sync and async channel that Rust deserves
+kanal = "0.1.1"
 # Enable readiness polling and wakers for the Mio example.
 mio = { version = "1.2.4", features = ["os-poll"] }
+# An async channel library
 postage = "0.5.0"
+# Random number generators and other randomness functionality.
 rand = { version = "0.10.3", features = ["thread_rng"] }
+# Either acts as rayon or creates a single-threaded facade
 rayon = "1.12.0"
+# higher level HTTP client library
 reqwest = "0.13.5"
+# A small and fast async runtime
 smol = "2.0.2"
+# Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].
 time = "0.3.55"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["rt-multi-thread", "fs", "macros", "sync", "time", "test-util"] }
+# Utilities to perform a graceful shutdown on a Tokio based service.
 tokio-graceful-shutdown = "0.20.0"
 # Cancellation tokens for coordinating task shutdown.
 tokio-util = { version = "0.7.20", features = ["rt"] }
+# Application-level tracing for Rust.
 tracing = "0.1.44"
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+# Utilities for working with impl traits in Rust
 trait-variant = "0.1.3"
 
 [lints]

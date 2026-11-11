@@ -21,13 +21,19 @@ name = "cancelable_bench"
 harness = false
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = { workspace = true }
+# Tools for concurrent programming
 crossbeam = { workspace = true }
+# Multi-producer multi-consumer channels for message passing
 crossbeam-channel = { workspace = true }
+# Application-level tracing for Rust.
 tracing = { workspace = true }
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { workspace = true }
 
 [dev-dependencies]
+# Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion = { workspace = true }
 
 [[bench]]

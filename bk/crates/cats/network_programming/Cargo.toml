@@ -28,20 +28,28 @@ path = "examples/server/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# HTTP routing and request handling library that focuses on ergonomics and modularity
 axum = { version = "0.8.9", features = ["tokio"] }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# The ngrok agent SDK
 ngrok = { version = "0.19.0", default-features = false, features = [
     "axum",
     "ring",
 ] } # Share the ring TLS backend across Windows dependencies.
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "signal"] }
+# URL library for Rust, based on the WHATWG URL Standard
 url = "2.5.8"
 
 [dev-dependencies]
+# Tower is a library of modular and reusable components for building robust clients and servers.
 tower = { version = "0.5.3", features = ["util"] } # Exercise Axum routes without binding a network port.
 
 [target.'cfg(target_family = "unix")'.dependencies]
+# Type erasure for async trait methods
 async-trait = "0.1.92"
 # Pin the upstream fix for Pingora 0.9.0's zero-capacity readers on Tokio 1.54.
 pingora = { git = "https://github.com/cloudflare/pingora", rev = "5b30d71d63d13c2f65eebfa9101e4e118c3194b8", features = ["lb"] }
@@ -49,6 +57,7 @@ pingora = { git = "https://github.com/cloudflare/pingora", rev = "5b30d71d63d13c
 [target.'cfg(target_os = "linux")'.dependencies]
 # Supplies async read and write extension traits for Glommio TCP streams.
 futures-lite = "2.6.1"
+# Glommio is a thread-per-core crate that makes writing highly parallel asynchronous applications in a thread-per-core architecture easier for...
 glommio = "0.9.0"
 
 [lints]

@@ -26,6 +26,7 @@ path = "examples/split.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 
 [lints]

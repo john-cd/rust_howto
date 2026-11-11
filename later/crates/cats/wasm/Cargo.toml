@@ -48,31 +48,54 @@ path = "examples/yew/main.rs"
 test = true
 
 [dependencies]
+# Spawn asynchronous tasks in an executor-independent way.
 any_spawner = { version = "0.3.0", features = ["tokio"] }
 
 ## General
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# the BLAKE3 hash function
 blake3 = { version = "1.8.7", optional = true }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# HTTP requests library for WASM Apps
 gloo-net = "0.7.0"
+# Convenience crate for working with local and session storage in browser
 gloo-storage = "0.4.0"
+# Icon data from free icon libraries.
 icondata = { version = "0.7.0", default-features = false, features = ["lucide"] }
 # LATER add example?
-js-sys = "0.3.106"
-leptos = { version = "0.8.22", features = ["ssr"] }
+# Bindings for all JS global objects and functions in all JS environments like Node.js and browsers, built on `#[wasm_bindgen]` using the...
+js-sys = "0.3.107"
+# Leptos is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
+leptos = { version = "0.8.23", features = ["ssr"] }
+# Router for the Leptos web framework.
 leptos_router = { version = "0.8.17", features = ["ssr"] }
-prost = "0.14.4"
+# A Protocol Buffers implementation for the Rust Language.
+prost = "0.14.5"
+# A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
+# A JSON serialization file format
 serde_json = "1.0.154"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
-tonic = "0.14.7"
-tonic-prost = "0.14.7"
-wasm-bindgen = "0.2.129"
-wasmparser = "0.262.0"
-wasmtime = { version = "50.0.0", optional = true } # Heavy compile
-wasmtime-wasi = { version = "50.0.0", optional = true } # WASI for components
-wat = "1.262.0"
-web-sys = { version = "0.3.106", features = ["Window"] }
+# A gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility.
+tonic = "0.14.9"
+# Prost codec implementation for tonic
+tonic-prost = "0.14.9"
+# Easy support for interacting between JS and Rust.
+wasm-bindgen = "0.2.130"
+# A simple event-driven library for parsing WebAssembly binary files.
+wasmparser = "0.263.0"
+# High-level API to expose the Wasmtime runtime
+wasmtime = { version = "50.0.1", optional = true } # Heavy compile
+# WASI implementation in Rust
+wasmtime-wasi = { version = "50.0.1", optional = true } # WASI for components
+# Rust parser for the WebAssembly Text format, WAT
+wat = "1.263.0"
+# Bindings for all Web APIs, a procedurally generated crate from WebIDL
+web-sys = { version = "0.3.107", features = ["Window"] }
+# A framework for creating reliable and efficient web applications
 yew = { version = "0.23.0", features = ["csr", "ssr"] }
 
 [features]
@@ -80,15 +103,20 @@ wasmer = ["dep:wasmer"]
 wasmtime = ["dep:wasmtime", "dep:wasmtime-wasi", "dep:blake3"]
 
 [target.'cfg(target_os = "windows")'.dependencies]
+# Executes WebAssembly modules in an embeddable, configurable runtime.
 wasmer = { workspace = true, features = ["v8-default"], optional = true }
 
 [target.'cfg(not(target_os = "windows"))'.dependencies]
+# Executes WebAssembly modules in an embeddable, configurable runtime.
 wasmer = { workspace = true, features = ["singlepass"], optional = true }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
+# Native Serde adapter for wasm-bindgen
 serde-wasm-bindgen = "0.6.5"
+# grpc-web implementation for use by tonic clients in browsers via webassembly
 tonic-web-wasm-client = "0.9.2"
-wasm-bindgen-futures = "0.4.79"
+# Bridging the gap between Rust Futures and JavaScript Promises
+wasm-bindgen-futures = "0.4.80"
 
 [lints]
 workspace = true

@@ -38,22 +38,35 @@ path = "examples/low_level_system_calls/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Easy Ctrl-C handler for Rust projects
 ctrlc = { version = "3.5.2", features = ["termination"] }
+# a library for running child processes
 duct = "1.1.2"
+# Raw FFI bindings to platform libraries like libc.
 libc = "0.2.191"
+# A lightweight regex engine that optimizes for binary size and compilation time.
 regex = "1.13.1"
+# Split a string into shell words, like Python's shlex.
 shlex = "2.0.1"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "signal", "time", "process"] }
+# A crate to wait on a child process with a timeout specified across Unix and Windows platforms.
 wait-timeout = "0.2.1"
+# A Rust equivalent of Unix command "which". Locate installed executable in cross platforms.
 which = "8.0.6"
+# Utilities for quick shell scripting in Rust
 xshell = "0.2.7"
 
 [target."cfg(unix)".dependencies]
+# Rust friendly bindings to *nix APIs
 nix = { version = "0.31.3", features = ["signal", "process"] }
 
 [target."cfg(windows)".dependencies]
+# Rust for Windows
 windows-sys = { version = "0.61.2", features = [
     "Win32_Foundation",
     "Win32_System_JobObjects",

@@ -35,8 +35,10 @@ tempfile = "3.27.0"
 opencv = ["dep:opencv", "dep:image"]
 
 [target.'cfg(target_os = "linux")'.dependencies]
+# Imaging library. Provides basic image processing and encoders/decoders for common image formats.
 image = { version = "0.25.10", optional = true }
-opencv = { version = "0.101.1", default-features = false, features = [
+# Rust bindings for OpenCV
+opencv = { version = "0.102.0", default-features = false, features = [
     "clang-runtime",
     "imgcodecs",
     "imgproc",

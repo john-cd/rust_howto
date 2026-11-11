@@ -23,9 +23,13 @@ path = "examples/in_memory_cache/main.rs"
 test = true
 
 [dependencies]
-cached = "4.0.3"
+# Generic cache implementations and simplified function memoization
+cached = "4.1.1"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A LRU cache implementation
 lru = "0.19.0"
+# A fast and concurrent cache library inspired by Java Caffeine
 moka = { version = "0.12.16", features = ["sync"] }
 
 [lints]

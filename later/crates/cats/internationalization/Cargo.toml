@@ -23,6 +23,7 @@ path = "examples/internationalization/main.rs"
 test = true
 
 [dependencies]
+# ICU4X: International Components for Unicode, written in Rust
 icu = { version = "2.4.0", features = ["compiled_data"] }
 
 [lints]

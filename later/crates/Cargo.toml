@@ -3,24 +3,44 @@
 [workspace]
 resolver = "3"
 members = ["cats/*", "other"]
-exclude = ["cats/embedded", "patches/proc-macro-error2"]
+exclude = [
+    "cats/embedded",
+    "patches/proc-macro-error2",
+    "patches/zenoh-transport-1.10.2",
+]
 
 [workspace.dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# An asynchronous Docker daemon API
 bollard = "0.21.1"
+# A collection of mocked devices that implement the embedded-hal traits
 embedded-hal-mock = { version = "0.11.1", default-features = false, features = ["eh1"] }
+# A collection of finance calculations mimicking some of Excel Financial Functions interface
 financial = "1.1.5"
-futures-util = "0.3.32"
+# Common utilities and extension traits for the futures-rs library.
+futures-util = "0.3.34"
+# Read and write GeoJSON vector geographic data
 geojson = { version = "1.0.0", features = ["geo-types"] }
-kamadak-exif = "0.6.1"
+# Exif parsing library written in pure Rust
+kamadak-exif = "0.6.2"
+# A high-performance, flexible, ergonomic k-d tree library. Ideal for geo- and astro- nearest-neighbour and k-nearest-neighbor queries
 kiddo = { version = "6.3.0", default-features = false }
+# A lossless PNG compression optimizer
 oxipng = { version = "10.2.1", default-features = false }
-rand = "0.10.1"
+# Random number generators and other randomness functionality.
+rand = "0.10.3"
+# Sampling from random number distributions
 rand_distr = "0.6.0"
-rstar = "0.13.0"
+# An R*-tree spatial index
+rstar = "0.14.0"
+# Presents software-rendered pixel buffers in native windows across platforms.
 softbuffer = "0.4.8"
+# A library for integration-testing against docker containers from within Rust.
 testcontainers = "0.28.0"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net", "io-util", "time"] }
+# Executes WebAssembly modules in an embeddable, configurable runtime.
 wasmer = { version = "7.5.0", default-features = false, features = ["wat"] }
 
 [workspace.package]
@@ -1399,6 +1419,7 @@ while_float = "warn"
 
 # Keep this local fix until all active dependency paths can use the maintained v3 crate.
 [patch.crates-io]
+# Almost drop-in replacement to panics in proc-macros
 proc-macro-error2 = { path = "patches/proc-macro-error2" }
 # Backport Zenoh's 0.11.6 lz4_flex bump to the 1.10.2 crate until a release is published.
 zenoh-transport = { path = "patches/zenoh-transport-1.10.2" }

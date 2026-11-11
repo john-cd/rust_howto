@@ -24,6 +24,7 @@ test = true
 # autolib = false
 
 [target.'cfg(unix)'.dependencies]
+# Raw FFI bindings to platform libraries like libc.
 libc = "0.2.191"
 
 [lints]

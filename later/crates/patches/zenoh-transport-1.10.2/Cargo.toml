@@ -84,57 +84,71 @@ uring = [
 name = "zenoh_transport"
 path = "src/lib.rs"
 
+# Type erasure for async trait methods
 [dependencies.async-trait]
-version = "0.1.89"
+version = "0.1.92"
 
+# Utilities for concurrent programming
 [dependencies.crossbeam-utils]
-version = "0.8.21"
+version = "0.8.23"
 
+# A blazingly fast multi-producer channel
 [dependencies.flume]
-version = "0.11.1"
+version = "0.12.0"
 
+# An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
 [dependencies.futures]
-version = "0.3.31"
+version = "0.3.34"
 
+# A macro for declaring lazily evaluated statics in Rust.
 [dependencies.lazy_static]
-version = "1.5.0"
+version = "1.5.1"
 
+# This crate provides concurrent data structures and a solution to the ABA problem as an alternative of hazard pointers
 [dependencies.lockfree]
 version = "0.5"
 optional = true
 
+# Fastest LZ4 implementation in Rust, no unsafe by default.
 [dependencies.lz4_flex]
-version = "0.11.6"
+version = "0.10.0"
 
+# Random number generators and other randomness functionality.
 [dependencies.rand]
-version = "0.8.5"
+version = "0.9.5"
 features = ["default"]
 default-features = false
 
+# A fast thread-safe single producer-single consumer ring buffer
 [dependencies.ringbuffer-spsc]
 version = "0.1.15"
 
+# Pure Rust RSA implementation
 [dependencies.rsa]
-version = "0.9.9"
+version = "0.9.10"
 optional = true
 
+# A generic serialization/deserialization framework
 [dependencies.serde]
-version = "1.0.225"
+version = "1.0.229"
 features = [
     "derive",
     "default",
 ]
 default-features = false
 
+# Implementation of the SHA-3 family of cryptographic hash algorithms
 [dependencies.sha3]
-version = "0.10.8"
+version = "0.10.9"
 
+# Safe mutable static and non const static initialization, and code execution at program startup/exit.
 [dependencies.static_init]
 version = "1.0.3"
 optional = true
 
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 [dependencies.tokio]
-version = "1.47.1"
+version = "1.53.3"
 features = [
     "fs",
     "io-util",
@@ -146,63 +160,81 @@ features = [
 ]
 default-features = false
 
+# Additional utilities for working with Tokio.
 [dependencies.tokio-util]
-version = "0.7.16"
+version = "0.7.19"
 features = ["rt"]
 
+# Application-level tracing for Rust.
 [dependencies.tracing]
-version = "0.1.41"
+version = "0.1.44"
 
+# Efficient byte buffers used by Zenoh protocol and transport code.
 [dependencies.zenoh-buffers]
 version = "=1.10.2"
 default-features = false
 
+# Encodes and decodes Zenoh protocol messages.
 [dependencies.zenoh-codec]
 version = "=1.10.2"
 
+# Configuration types and parsing for Zenoh.
 [dependencies.zenoh-config]
 version = "=1.10.2"
 
+# Core identifiers, primitives, and types for Zenoh.
 [dependencies.zenoh-core]
 version = "=1.10.2"
 
+# Cryptographic primitives and security helpers for Zenoh.
 [dependencies.zenoh-crypto]
 version = "=1.10.2"
 
+# Transport link abstractions used by Zenoh.
 [dependencies.zenoh-link]
 version = "=1.10.2"
 
+# Shared utilities for Zenoh transport link implementations.
 [dependencies.zenoh-link-commons]
 version = "=1.10.2"
 
+# Zenoh wire protocol message and data types.
 [dependencies.zenoh-protocol]
 version = "=1.10.2"
 default-features = false
 
+# Shared error and result types used by Zenoh crates.
 [dependencies.zenoh-result]
 version = "=1.10.2"
 default-features = false
 
+# Runtime services and resource management for Zenoh.
 [dependencies.zenoh-runtime]
 version = "=1.10.2"
 
+# Shared-memory transport support for Zenoh.
 [dependencies.zenoh-shm]
 version = "=1.10.2"
 optional = true
 
+# Statistics and telemetry types for Zenoh.
 [dependencies.zenoh-stats]
 version = "=1.10.2"
 optional = true
 
+# Synchronization primitives used by Zenoh components.
 [dependencies.zenoh-sync]
 version = "=1.10.2"
 
+# Task spawning and async execution helpers for Zenoh.
 [dependencies.zenoh-task]
 version = "=1.10.2"
 
+# Linux io_uring transport support for Zenoh.
 [dependencies.zenoh-uring]
 version = "=1.10.2"
 optional = true
 
+# Common utilities shared across Zenoh crates.
 [dependencies.zenoh-util]
 version = "=1.10.2"

@@ -23,6 +23,7 @@ path = "examples/video/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104" # Return encoder setup and flush errors from the example.
 # Encode synthetic AV1 frames in the runnable book example without NASM.
 rav1e = { version = "0.8.1", default-features = false }

@@ -23,7 +23,9 @@ path = "examples/localization/main.rs"
 test = true
 
 [dependencies]
+# A low-level implementation of a collection of localization messages for a single locale for Project Fluent, a localization system designed to...
 fluent-bundle = "0.16.0"
+# API for managing Unicode Language Identifiers
 unic-langid = "0.9.6"
 
 [lints]

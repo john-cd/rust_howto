@@ -23,6 +23,7 @@ path = "examples/macos/main.rs"
 test = true
 
 [target.'cfg(target_os = "macos")'.dependencies]
+# Bindings to the Foundation framework
 objc2-foundation = { version = "0.3.2", default-features = false, features = ["NSProcessInfo", "NSString", "std"] }
 
 [lints]

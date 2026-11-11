@@ -24,10 +24,15 @@ test = true
 
 [dependencies]
 ## General
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
-leptos = { version = "0.8.22", features = ["ssr"] }
+# Leptos is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
+leptos = { version = "0.8.23", features = ["ssr"] }
+# Chartistry is a charting library for Leptos
 leptos-chartistry = "0.2.3"
+# A plotting library powered by Plotly.js
 plotly = "0.14.1"
+# A Rust drawing library focus on data plotting for both WASM and native applications
 plotters = { version = "0.3.7", default-features = false, features = ["svg_backend", "line_series"] }
 
 [lints]

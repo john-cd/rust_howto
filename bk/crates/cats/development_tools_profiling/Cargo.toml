@@ -42,14 +42,21 @@ path = "examples/puffin_server.rs"
 test = true
 
 [dependencies]
+# Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion = "0.8.2"
+# A library for heap profiling and ad hoc profiling with DHAT.
 dhat = "0.3.3"
+# Provices macros to measure the time until end of scope.
 measure_time = "0.9.0"
+# This crate provides a very thin abstraction over other profiler crates.
 profiling = "1.0.18"
+# Simple instrumentation profiler for games
 puffin = "0.20.0"
+# TCP server/client for puffin profiler data
 puffin_http = "0.17.0"
 
 [dev-dependencies]
+# Provides statistical microbenchmarking, output formatting, and benchmark comparison tools.
 divan = "0.1.21"
 
 ## Config for dhat example below:

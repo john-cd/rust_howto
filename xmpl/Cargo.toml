@@ -5,13 +5,21 @@ resolver = "3"
 members = ["cancelable", "clap_builder_xmpl"]
 
 [workspace.dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["cargo", "env"] }
+# Tools for concurrent programming
 crossbeam = "0.8.5"
+# Multi-producer multi-consumer channels for message passing
 crossbeam-channel = "0.5.17"
+# Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion = "0.8.2"
+# A logging implementation for `log` which is configured via an environment variable.
 env_logger = "0.11.11"
+# Application-level tracing for Rust.
 tracing = "0.1.44"
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 
 # Default values for packages in the workspace

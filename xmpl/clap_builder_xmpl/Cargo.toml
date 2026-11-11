@@ -18,7 +18,9 @@ categories = ["command-line-utilities"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { workspace = true }
+# A logging implementation for `log` which is configured via an environment variable.
 env_logger = { workspace = true }
 
 [lints]

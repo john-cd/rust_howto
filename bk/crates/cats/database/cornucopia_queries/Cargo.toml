@@ -10,12 +10,18 @@ rust-version = "1.98.1"
 publish = false
 
 [dependencies]
-deadpool-postgres= { version = "^0.14.1", optional = true}
-futures= { version = "^0.3.32"}
-postgres= { version = "^0.19.13", optional = true}
-postgres-protocol= { version = "^0.6.11"}
-postgres-types= { version = "^0.2.13", features = ["derive"]}
-tokio-postgres= { version = "^0.7.17", default-features = false}
+# Dead simple async pool for tokio-postgres
+deadpool-postgres= { version = "^0.14.2", optional = true}
+# An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
+futures= { version = "^0.3.34"}
+# A native, synchronous PostgreSQL client
+postgres= { version = "^0.19.14", optional = true}
+# Low level Postgres protocol APIs
+postgres-protocol= { version = "^0.6.12"}
+# Conversions between Rust and Postgres values
+postgres-types= { version = "^0.2.14", features = ["derive"]}
+# A native, asynchronous PostgreSQL client
+tokio-postgres= { version = "^0.7.18", default-features = false}
 
 [features]
 deadpool = ["dep:deadpool-postgres", "tokio-postgres/default"]

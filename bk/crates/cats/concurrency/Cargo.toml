@@ -83,52 +83,81 @@ path = "examples/threadpool/main.rs"
 test = true
 
 [dependencies]
-actix = "0.13.5"
+# Actor framework for Rust
+actix = "0.13.6"
 
 ## General
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Generate accurate and informative tree dumps of asynchronous tasks.
 await-tree = { version = "0.3.1", features = ["tokio"] }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Tools for concurrent programming
 crossbeam = "0.8.5"
+# Multi-producer multi-consumer channels for message passing
 crossbeam-channel = "0.5.17"
+# Provides lock-free queues for passing data between concurrent threads.
 crossbeam-queue = "0.3.14"
+# Utilities for concurrent programming
 crossbeam-utils = "0.8.23"
+# Blazing fast concurrent HashMap for Rust.
 dashmap = "6.2.1"
+# A blazingly fast multi-producer channel
 flume = { version = "0.12.0", features = ["select"] }
+# Rust port of Java's ConcurrentHashMap
 flurry = "0.5.2"
+# An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
 futures = "0.3.34"
+# Support for matching file paths against Unix shell style patterns.
 glob = "0.3.4"
 # JPEG and PNG are the only codecs used by the thumbnail and fractal examples.
 image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
+# Extra iterator adaptors, iterator methods, free functions, and macros.
 itertools = "0.15.0"
+# A macro for declaring lazily evaluated statics in Rust.
 lazy_static = "1.5.1"
+# A collection of numeric types and traits for Rust, including bigint, complex, rational, range iterators, generic integers, and more!
 num = "0.4.3"
+# Get the number of CPUs on a machine.
 num_cpus = "1.17.0"
+# A fast and ergonomic concurrent hash-table for read-heavy workloads.
 papaya = "0.2.5"
+# More compact and efficient implementations of the standard synchronization primitives.
 parking_lot = "0.13.0"
-ractor = "0.16.5"
+# A actor framework for Rust
+ractor = "0.16.6"
+# Random number generators and other randomness functionality.
 rand = { version = "0.10.3", features = ["thread_rng"] }
+# Either acts as rayon or creates a single-threaded facade
 rayon = "1.12.0"
 # Disabled: Riker has no compatible update for its vulnerable transitive dependencies.
 # riker = { version = "0.4.2", optional = true }
 ringbuf = "0.6.0"
+# A realtime-safe single-producer single-consumer ring buffer
 rtrb = "0.4.1"
 # Pure Rust SHA-256 for the parallel file-hashing example, without a native `cc` build.
 sha2 = "0.11.1"
 # Stakker actor example in the actors chapter.
 stakker = { version = "0.2.16", optional = true, features = ["multi-thread"] }
+# Library for managing threads priority and schedule policies
 thread-priority = "3.1.1"
+# A thread pool for running a number of jobs on a fixed set of worker threads.
 threadpool = "1.8.1"
+# Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].
 time = "0.3.55"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+# Recursively walk a directory.
 walkdir = "2.5.0"
 
 # Creates isolated JPEG fixtures for the thumbnail example test.
 [dev-dependencies]
 # Model checker used by the `loom_model` example.
-loom = "0.7.2"
+loom = "0.7.3"
 # Compile-time trait assertions for the spinlock guard.
 static_assertions = "1.1.0"
+# A library for managing temporary files and directories.
 tempfile = "3.27.0"
 
 [features]

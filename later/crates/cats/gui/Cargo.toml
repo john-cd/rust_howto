@@ -128,52 +128,95 @@ path = "examples/window_creation/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Image and text handling for the OS clipboard.
 arboard = "3.7.0"
+# Low-level windowing system geared towards making audio plugin UIs.
 baseview = { git = "https://github.com/RustAudio/baseview", rev = "4fe59b368f50573127fa1285767208781bc03cdf", optional = true }
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Pure Rust multi-line text handling
 cosmic-text = "0.19.0"
+# Build fullstack web, desktop, and mobile apps with a single codebase.
 dioxus = { version = "0.7.10", optional = true }
+# Renders Dioxus components to HTML strings for server-side rendering.
 dioxus-ssr = { version = "0.7.10", optional = true }
+# egui framework - write GUI apps that compiles to web and/or natively
 eframe = "0.37.0"
+# egui framework - write GUI apps that compiles to web and/or natively
 eframe_034 = { package = "eframe", version = "0.34.3", optional = true }
+# egui framework - write GUI apps that compiles to web and/or natively
 eframe_036 = { package = "eframe", version = "0.36.2", optional = true }
+# An easy-to-use immediate mode GUI that runs on both web and native
 egui = "0.37.0"
-egui-notify = { version = "0.23.0", optional = true } # Blocked: 0.24 needs egui 0.37, but egui-phosphor 0.14 (used with it in egui_toasts_icons) needs egui 0.36.
+# Simple notifications library for egui
+egui-notify = { version = "0.24.0", optional = true } # Blocked: 0.24 needs egui 0.37, but egui-phosphor 0.14 (used with it in egui_toasts_icons) needs egui 0.36.
+# Phosphor icons for egui
 egui-phosphor = { version = "0.14.0", optional = true } # Latest release; depends on egui 0.36, one release behind egui 0.37.
+# Extra functionality and widgets for the egui GUI library
 egui_extras = "0.37.0"
+# Immediate mode plotting for the egui GUI library
 egui_plot = "0.38.0"
+# A tiling layout engine for egui with drag-and-drop and resizing
 egui_tiles = { version = "0.18.0", optional = true }
+# Integrates tracing and logging with egui for event collection/visualization
 egui_tracing = { version = "0.3.0", optional = true } # Latest release; depends on egui 0.34, so it is paired with eframe_034 (egui_log_viewer).
+# Antialiased 2D vector drawing library
 femtovg = { version = "0.28.0", optional = true }
+# A native Rust UI library with fine-grained reactivity
 floem = { version = "0.2.0", optional = true }
+# Provides Rust function bindings for the OpenGL graphics API.
 gl = { version = "0.14.0", optional = true }
+# Cross-platform OpenGL context provider.
 glutin = { version = "0.32.3", optional = true }
+# Glutin bootstrapping helpers with winit
 glutin-winit = { version = "0.5.0", optional = true }
+# A cross-platform GUI library inspired by Elm
 iced = { version = "0.14.0", optional = true }
+# Cross-platform window setup with optional bitmap rendering
 minifb = { version = "0.29.0", optional = true }
+# A UI layout engine
 morphorm = "0.9.0"
+# Shader translator and validator. Part of the wgpu project
 naga26 = { package = "naga", version = "26.0.0", features = ["termcolor"], optional = true }
+# Shader translator and validator. Part of the wgpu project
 naga27 = { package = "naga", version = "27.0.3", features = ["termcolor"], optional = true }
+# Parley provides an API for implementing rich text layout.
 parley = "0.12.0" # Also requires smallvec 1.16.
+# Synchronously block the thread until a future completes
 pollster = { version = "1.0.1", optional = true } # for the Vello example
+# Interoperability library for Rust Windowing applications.
 raw-window-handle = { version = "0.6.2", optional = true }
-rfd = "0.17.2"
+# Opens native file and folder selection dialogs across desktop platforms.
+rfd = "0.18.0"
+# Safe Skia Bindings for Rust
 skia-safe = { version = "=0.153.3", features = [
     "gl",
 ], optional = true } # Matches Slint's Skia version; Vizia uses an isolated workspace.
+# GUI toolkit to efficiently develop fluid graphical user interfaces for embedded devices and desktop applications
 slint = { version = "=1.18.1", optional = true }
+# Presents software-rendered pixel buffers in native windows across platforms.
 softbuffer = { workspace = true, optional = true }
+# A flexible UI layout library
 taffy = "0.15.1"
+# Application-level tracing for Rust.
 tracing = "0.1.44"
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = "0.3.23"
+# URL library for Rust, based on the WHATWG URL Standard
 url = "2.5.8"
+# A GPU compute-centric 2D renderer.
 vello = { version = "0.11.0", optional = true } # Uses wgpu 30, matching this workspace.
+# Cross-platform, safe, pure-rust graphics API
 wgpu = "30.0.1"
+# Cross-platform window creation library.
 winit = "0.30.13" # for vello, winit examples
+# A next-generation cross-platform Rust UI framework.
 xilem = { version = "0.4.0", optional = true } # Experimental retained-mode UI example.
 
 [dev-dependencies]
+# Testing library for egui based on kittest and AccessKit
 egui_kittest = "0.37.0" # Same version as `egui`.
 # Slint exposes its headless testing backend only through this internal crate; the public API has no equivalent.
 i-slint-backend-testing = "=1.18.1" # Matches Slint's internal, non-semver testing API.
@@ -202,15 +245,20 @@ xilem = ["dep:xilem", "dep:naga26"]
 
 # GTK examples currently target non-Windows systems; see gtk.md for native setup.
 [target.'cfg(not(target_os = "windows"))'.dependencies]
+# UNMAINTAINED Rust bindings for the GTK+ 3 library (use gtk4 instead)
 gtk = { package = "gtk4", version = "0.11.5", optional = true }
+# An idiomatic GUI library inspired by Elm and based on gtk4-rs
 relm4 = { version = "0.11.0", optional = true }
+# An idiomatic GUI library inspired by Elm and based on gtk4-rs
 relm4-components = { version = "0.11.0", optional = true }
 
 # eframe enables Fontconfig dlopen for fontique 0.11; Slint 1.18 and Parley 0.12
 # use fontique 0.8 and 0.12, which share yeslogic-fontconfig-sys 6. Enable the
 # same mode on both versions so Cargo feature unification does not hide their FFI.
 [target.'cfg(target_os = "linux")'.dependencies]
+# Font enumeration and fallback.
 fontique_012 = { package = "fontique", version = "0.12.0", features = ["fontconfig-dlopen"] }
+# Font enumeration and fallback.
 fontique_08 = { package = "fontique", version = "0.8.0", features = ["fontconfig-dlopen"] }
 
 [lints]

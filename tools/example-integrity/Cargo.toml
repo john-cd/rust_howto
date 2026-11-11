@@ -10,14 +10,23 @@ readme = "README.md"
 publish.workspace = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow.workspace = true
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap.workspace = true
-quote = "1.0.45"
+# Builds Rust token streams with quasi-quoting macros for procedural macros.
+quote = "1.0.47"
+# A lightweight regex engine that optimizes for binary size and compilation time.
 regex.workspace = true
+# A generic serialization/deserialization framework
 serde.workspace = true
+# A JSON serialization file format
 serde_json.workspace = true
-syn = { version = "2", features = ["full"] }
+# Parser for Rust source code
+syn = { version = "3.0.10", features = ["full"] }
+# A native Rust encoder and decoder of TOML-formatted files and streams. Provides implementations of the standard Serialize/Deserialize traits for...
 toml.workspace = true
+# Recursively walk a directory.
 walkdir.workspace = true
 
 [[bench]]
@@ -25,7 +34,9 @@ name = "example_integrity_bench"
 harness = false
 
 [dev-dependencies]
+# Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion.workspace = true
+# A library for managing temporary files and directories.
 tempfile.workspace = true
 
 [[bench]]

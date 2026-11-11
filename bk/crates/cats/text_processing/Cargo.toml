@@ -93,37 +93,67 @@ path = "examples/unicode/main.rs"
 test = true
 
 [dependencies]
+# Fast multiple substring searching.
 aho-corasick = "1.1.5"
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A string type that is not required to be valid UTF-8.
 bstr = "1.13.1"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Provides macros for concatenating string slices into owned strings.
 concat-string = "1.0.1"
+# A terminal and console abstraction for Rust
 console = "0.16.6"
 # Concatenates constant string slices during compilation.
 constcat = "0.6.1"
+# An LCS based slice and string diffing implementation.
 diff = "0.1.13"
-fancy-regex = "0.20.0"
+# An implementation of regexes, supporting a relatively rich set of features, including backreferences and look-around.
+fancy-regex = "0.20.1"
+# Finds approximate text matches for search and ranking tasks.
 fuzzy-matcher = "0.3.7"
+# heck is a case conversion library.
 heck = "0.5.0"
+# Knuth-Liang hyphenation for a variety of languages
 hyphenation = "0.8.4"
+# Defines indented multi-line string literals with common indentation removed.
 indoc = "2.0.8"
+# A small crate for generically joining iterators with a separator
 joinery = "3.1.0"
+# A macro for declaring lazily evaluated statics in Rust.
 lazy_static = "1.5.1"
+# Raw FFI bindings to platform libraries like libc.
 libc = "0.2.191"
+# Provides extremely fast (uses SIMD on x86_64, aarch64 and wasm32) routines for 1, 2 or 3 byte search and single substring search.
 memchr = "2.8.3"
+# plug and play high performance fuzzy matcher
 nucleo = "0.5.0"
+# Single assignment cells and lazy values.
 once_cell = "1.21.4"
+# Rust implementation of Rapid Automatic Keyword Extraction (RAKE) algorithm
 rake = "0.3.6"
+# A lightweight regex engine that optimizes for binary size and compilation time.
 regex = "1.13.1"
+# A diff library for Rust
 similar = "3.2.1"
+# Convert a unicode string to a slug
 slug = "0.1.6" # Turn a title into a URL-friendly slug.
+# Implementations of string similarity metrics. Includes Hamming, Levenshtein, OSA, Damerau-Levenshtein, Jaro, Jaro-Winkler, and Sørensen-Dice.
 strsim = "0.11.1"
+# library for high quality syntax highlighting and code intelligence using Sublime Text's grammars
 syntect = { version = "5.3.0", default-features = false, features = ["default-fancy"] }
+# Library for word wrapping, indenting, and dedenting strings. Has optional support for Unicode and emojis as well as machine hyphenation.
 textwrap = { version = "0.16.4", features = ["hyphenation"] }
-tree-sitter = "0.27.1"
+# Rust bindings to the Tree-sitter parsing library
+tree-sitter = "0.27.2"
+# JSON grammar for tree-sitter
 tree-sitter-json = "0.24.8"
+# This crate provides functions for normalization of Unicode strings, including Canonical and Compatible Decomposition and Recomposition, as...
 unicode-normalization = "0.1.26"
+# This crate provides Grapheme Cluster, Word and Sentence boundaries according to Unicode Standard Annex #29 rules.
 unicode-segmentation = "1.13.3"
+# Fast, FFI-friendly string interning.
 ustr = "1.1.0"
 
 [lints]

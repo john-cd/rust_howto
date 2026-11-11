@@ -23,8 +23,11 @@ path = "examples/game_development/main.rs"
 test = true
 
 [dependencies]
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
-glam = "0.34.1"
+# A simple and fast 3D math library for games and graphics
+glam = "0.34.3"
+# 2 dimensional collision detection library in Rust.
 parry2d = "0.31.1"
 
 [lints]

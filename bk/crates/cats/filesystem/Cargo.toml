@@ -78,25 +78,45 @@ path = "examples/user_directories/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Atomic file-writes.
 atomicwrites = "0.4.4" # Atomic file replacement.
+# Provides UTF-8 validated path and path-buffer types.
 camino = "1.2.6"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# A tiny mid-level library that provides platform-specific standard locations of directories for config, cache and other data on Linux, Windows and...
 directories = "6.0.0"
+# A tiny low-level library that provides platform-specific standard locations of directories for config, cache and other data on Linux, Windows,...
 dirs = "7.0.0"
+# Normalize Windows paths to the most compatible format, avoiding UNC where possible
 dunce = "1.0.5" # Canonicalize paths without the Windows `\\?\` prefix.
+# Support for matching file paths against Unix shell style patterns.
 glob = "0.3.4"
+# Cross platform single glob and glob set matching. Glob set matching is the process of matching one or more glob patterns against a single...
 globset = "0.4.21"
+# A fast library for efficiently matching ignore files such as `.gitignore` against file paths.
 ignore = "0.4.34"
+# Small crate to infer file type based on magic number signatures
 infer = "0.22.0" # Detect file types from their content.
+# Cross-platform Rust API for memory-mapped file IO
 memmap2 = "0.9.12"
-notify = "8.2.1"
+# Cross-platform filesystem notification library
+notify = "8.2.2"
+# Open a path or URL using the program configured on the system
 open = "5.4.5"
+# Library for diffing paths to obtain relative paths
 pathdiff = "0.2.3" # Relative paths between two paths.
+# A safe, reliable implementation of remove_dir_all for Windows
 remove_dir_all = { version = "1.0.0", features = ["parallel"] }
+# A simple crate for determining whether two file paths point to the same file.
 same-file = "1.0.6"
+# A library for managing temporary files and directories.
 tempfile = "3.27.0"
+# Research projects for genetic programming, optimization, and quantitative finance.
 utils = { path = "../../utils" }
+# Recursively walk a directory.
 walkdir = "2.5.0"
 
 [lints]

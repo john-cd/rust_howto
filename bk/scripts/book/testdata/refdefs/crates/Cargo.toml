@@ -5,4 +5,5 @@ members = ["app", "fixture-library"]
 resolver = "3"
 
 [workspace.dependencies]
+# Fixture dependency used to verify renamed Cargo dependency aliases.
 fixture-alias = { package = "fixture-library", path = "fixture-library" }

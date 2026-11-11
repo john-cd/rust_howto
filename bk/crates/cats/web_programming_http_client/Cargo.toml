@@ -53,26 +53,41 @@ path = "examples/retry_after/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Make retry like a built-in feature provided by Rust.
 backon = "1.6.0"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
 # Iterates over reqwest's streamed response chunks when downloading files.
 futures-util = "0.3.34"
+# A rate-limiting implementation in Rust
 governor = "0.10.4"
+# Combinators and adapters for HTTP request or response bodies.
 http-body-util = "0.1.5"
+# A protective and efficient HTTP library for all.
 hyper = "1.12.0"
+# Provides runtime, client, server, and protocol utilities for Hyper applications.
 hyper-util = "0.1.21"
+# higher level HTTP client library
 reqwest = { version = "0.13.5", features = ["blocking", "json", "stream"] }
+# A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
+# A library for managing temporary files and directories.
 tempfile = "3.27.0"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "io-std"] }
-ureq = "3.5.0"
+# Simple, safe HTTP client
+ureq = "3.5.1"
+# URL library for Rust, based on the WHATWG URL Standard
 url = "2.5.8"
 
 [dev-dependencies]
+# HTTP mocking for Rust.
 mockito = "1.7.2"
 # Parses captured JSON request bodies in the REST API example tests.
 serde_json = "1.0.154"
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["time", "test-util"] }
 
 [lints]

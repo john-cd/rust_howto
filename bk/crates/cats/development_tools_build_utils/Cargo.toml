@@ -34,7 +34,10 @@ path = "examples/build_info/main.rs"
 test = true
 
 [dependencies]
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Automatic cfg for Rust compiler features
+# Detects compiler and platform capabilities from a build script.
 autocfg = "1.5.1"
 # ANCHOR: build-info
 # Embed collected build metadata in the example binary.
@@ -42,14 +45,18 @@ build-info = "0.0.47"
 # ANCHOR_END: build-info
 # sccache 0.18 cannot parse the MSVC /Tp command emitted by cc 1.9.
 cc = "=1.8.0"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# Application-level tracing for Rust.
 tracing = "0.1.44"
+# Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 
 ## See build.rs
 [build-dependencies]
 # Collect Git, timestamp, compiler, and dependency metadata at build time.
 build-info-build = "0.0.47"
+# A build-time dependency for Cargo build scripts to assist in invoking the native C compiler to compile native C code into a static archive to be...
 cc = "=1.8.0"
 
 [lints]

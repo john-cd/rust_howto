@@ -23,6 +23,7 @@ path = "examples/aerospace_protocols/main.rs"
 test = true
 
 [dependencies]
+# Implements the MAVLink data interchange format for UAVs.
 mavlink = "0.21.0"
 
 [lints]

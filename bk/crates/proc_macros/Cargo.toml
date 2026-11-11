@@ -20,9 +20,12 @@ categories = ["development-tools::procedural-macro-helpers"]
 proc-macro = true
 
 [dependencies]
+# A substitute implementation of the compiler's `proc_macro` API to decouple token-based libraries from the procedural macro use case.
 proc-macro2 = "1.0.107"
+# Builds Rust token streams with quasi-quoting macros for procedural macros.
 quote = "1.0.47"
-syn = { version = "3.0.9", features = ["full"] } # "full" feature is often needed for parsing various Rust constructs
+# Parser for Rust source code
+syn = { version = "3.0.10", features = ["full"] } # "full" feature is often needed for parsing various Rust constructs
 
 [lints]
 workspace = true

@@ -107,36 +107,66 @@ path = "examples/vector/main.rs"
 test = true
 
 [dependencies]
+# A non-cryptographic hash function using AES-NI for high performance
 ahash = "0.8.12"
+# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A vector with fixed capacity, backed by an array (it can be stored on the stack too). Implements fixed capacity ArrayVec and ArrayString.
 arrayvec = "0.7.8"
+# A macro to generate structures which behave like bitflags.
 bitflags = "2.13.2"
+# Addresses memory by bits, for packed collections and bitfields
 bitvec = "1.1.1"
+# Bloom filter for space-efficient probabilistic set membership tests with configurable false-positive rates
 bloomfilter = "3.0.2"
+# Types and traits for working with bytes
 bytes = "1.12.1"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
+# API client for crates.io
 crates_io_api = "0.12.0"
-elsa = "1.11"
-fixedbitset = "0.5.7"
+# Append-only collections for Rust where borrows to entries can outlive insertions
+elsa = "1.11.2"
+# FixedBitSet is a simple bitset collection
+fixedbitset = "0.5.9"
+# Data types and a macro for generating enumeration-based bit flags
 flagset = "0.4.7"
+# Provides Fowler–Noll–Vo hashers for fast non-cryptographic hashing.
 fnv = "1.0.7"
+# `static` friendly data structures that don't require dynamic memory allocation
 heapless = "0.9.3"
+# A hash table with consistent order and fast iteration.
 indexmap = "2.14.2"
+# A HashMap wrapper that holds key-value pairs in insertion order
 linked-hash-map = "0.5.6"
+# Stores multiple values for each key in a map-like collection.
 multimap = "0.10.1"
+# Graph data structure library. Provides graph types and graph algorithms.
 petgraph = "0.8.3"
-phf = { version = "0.11", features = ["macros"] }
+# Runtime support for perfect hash function data structures
+phf = { version = "0.14", features = ["macros"] }
+# A Priority Queue implemented as a heap with a function to efficiently change the priority of an item.
 priority-queue = "2.7.0"
+# Map and set data structures whose keys are stored as ranges. Contiguous and overlapping ranges that map to the same value are coalesced into a...
 rangemap = "1.8.0"
+# A better compressed bitset - pure Rust implementation
 roaring = "0.12.0"
+# A speedy, non-cryptographic hashing algorithm used by rustc
 rustc-hash = "2.1.3"
+# A library to generate and parse short uuids
 short-uuid = "0.2.1" # Compact, URL-safe UUIDs.
+# Skiplist implementation in Rust for fast insertion and removal, including a normal skiplist, ordered skiplist, and skipmap.
 skiplist = "2.0.1"
+# Stores values behind stable keys that remain valid as other entries change.
 slotmap = "1.1.1"
-smallvec = "1.16.4" # alpha
+# 'Small vector' optimization: store up to a small number of items on the stack
+smallvec = "1.16.5" # alpha
+# `tinyvec` provides 100% safe vec-like data structures.
 tinyvec = { version = "1.13.3", features = ["alloc"] }
+# a Universally Unique Lexicographically Sortable Identifier implementation
 ulid = "3.0.0"
-uuid = { version = "1.29.0", features = [
+# A library to generate and parse UUIDs.
+uuid = { version = "1.29.2", features = [
     # Lets us generate random UUIDs.
     "v4",
     # Use a faster (but still sufficiently random) RNG.
@@ -146,6 +176,7 @@ uuid = { version = "1.29.0", features = [
 ] }
 
 [dev-dependencies]
+# Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion = "0.8.2"
 
 [lints]
