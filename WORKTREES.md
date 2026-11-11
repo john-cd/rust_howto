@@ -36,10 +36,7 @@ Unix defaults use XDG cache or `~/.cache` under `cargo-target` and
 `cargo-build`. The runner enables sccache with incremental compilation disabled
 and computes base directories from registered allowed worktrees.
 
-Run `just configure-cargo-host` once per host and after changing roots.
-It configures the host fallback in `CARGO_HOME/config.toml`. Run the repository's
-`build-setup` recipe per checkout; local Cargo output settings take precedence and
-rust-analyzer follows the same target/build links. See [README](README.md).
+Run `just configure-cargo-host` once per host and after changing roots. It keeps shared compiler defaults in `CARGO_HOME/config.toml` and removes global target/build output overrides. Run build-setup once per checkout. Task-runner Cargo commands pass absolute `D:/target/<repo>/<slot>` and `C:/code_build/<repo>/<slot>` paths; use checkout links or explicit Cargo environment paths for direct Cargo and rust-analyzer as required by the host filesystem. See [README](README.md).
 
 ## Python
 

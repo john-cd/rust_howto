@@ -200,7 +200,7 @@ Python project directories in this repository:
 - Use `CODE_PACKAGES_ROOT` for package data (Windows `D:/packages`) and `CODE_TOOLS_ROOT` for portable tools (Windows `C:/tools`). Existing tool-specific environment overrides take precedence; changing a root does not move installed packages.
 - Run Cargo through `just cargo`. The runner must export central per-repo/per-slot target and build paths, sccache with incremental disabled, and only registered allowed sccache base directories.
 - Windows intermediate builds must use NTFS. The runner validates `CODE_BUILD_ROOT` before Cargo starts; a ReFS override is an error. Defaults are `C:/code_build/<repo>/<slot>` and `D:/target/<repo>/<slot>`.
-- Run `just configure-cargo-host` once per host and after changing roots to configure direct Cargo's central fallback. Run the build-setup recipe per checkout. Direct Cargo and rust-analyzer then use that checkout's target/build links; the host config remains a fallback for repositories without local output settings.
+- Run `just configure-cargo-host` once per host and after changing roots to set shared compiler defaults in `CARGO_HOME/config.toml`; it removes global target/build output overrides. Run build-setup once per checkout to create its `target` and `build` links to `D:/target/<repo>/<slot>` and `C:/code_build/<repo>/<slot>`. Task-runner Cargo commands pass those same per-slot paths directly. For plain Cargo or rust-analyzer, use the checkout links or explicit absolute `CARGO_TARGET_DIR`/`CARGO_BUILD_BUILD_DIR` values where filesystem behavior requires them.
 
 ## Configuration consistency
 

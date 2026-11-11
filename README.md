@@ -155,17 +155,7 @@ it does not move existing installations. Tool-specific overrides such as
 Rust builds also read `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and
 `CODE_SCCACHE_ROOT`. Their Windows defaults are `C:/code_build`, `D:/target`,
 and `D:/sccache`. The runner rejects non-NTFS intermediate build roots.
-Run `just configure-cargo-host` once per host (PowerShell 7 is required for
-this setup command), and rerun it after changing roots. This preserves other Cargo
-settings and sets the host fallback in `CARGO_HOME/config.toml` for repositories
-without local output settings:
-`CODE_TARGET_ROOT/direct-cargo` for targets and
-`CODE_BUILD_ROOT/direct-cargo/{workspace-path-hash}` for intermediates.
-Use `just cargo <arguments>` for isolated per-repo/worktree directories,
-the configured temp environment, and registered sccache base directories.
-Run the build-setup recipe per checkout so direct Cargo and rust-analyzer use
-that checkout's target/build links. Local config takes precedence over the host
-fallback. The runner uses sccache with incremental compilation disabled.
+Run `just configure-cargo-host` once per host (PowerShell 7 is required), and rerun it after changing roots. It preserves other Cargo settings, keeps the shared sccache and incremental defaults in `CARGO_HOME/config.toml`, and removes global output-directory overrides. Each checkout's Cargo config routes `target` and `build` through checkout-local links to `D:/target/<repo>/<slot>` and `C:/code_build/<repo>/<slot>`. Run the build-setup recipe once per checkout before using plain Cargo or rust-analyzer; task-runner Cargo commands supply the same per-slot paths and repository sccache settings.
 
 ## Repository configuration
 
