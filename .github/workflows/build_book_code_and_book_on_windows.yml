@@ -69,6 +69,16 @@ jobs:
       - name: Load pinned tool versions
         uses: ./.github/actions/load-pinned-versions
 
+      - name: Install OpenSSL for Vcpkg
+        shell: pwsh
+        run: |
+          if (-not $env:VCPKG_INSTALLATION_ROOT) {
+            throw 'The Windows runner does not define VCPKG_INSTALLATION_ROOT.'
+          }
+          $env:VCPKG_ROOT = $env:VCPKG_INSTALLATION_ROOT
+          "VCPKG_ROOT=$env:VCPKG_ROOT" | Out-File -FilePath $env:GITHUB_ENV -Append
+          vcpkg install openssl:x64-windows-static-md
+
       - name: Set up Rust (pinned stable + nightly rustfmt, cached)
         uses: ./.github/actions/setup-rust
         with:
