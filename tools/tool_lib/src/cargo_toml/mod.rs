@@ -80,6 +80,7 @@ mod tests {
     use cargo_toml::DependencyDetail;
     use cargo_toml::DepsSet;
     use cargo_toml::InheritedDependencyDetail;
+    use cargo_toml::VersionReq;
     use tempfile::tempdir;
 
     use super::*;
@@ -100,9 +101,12 @@ mod tests {
         let mut deps = DepsSet::new();
         deps.insert(
             "simple_dep".to_owned(),
-            Dependency::Simple("1.0".to_owned()),
+            Dependency::Simple(VersionReq::parse("1.0").expect("valid version requirement")),
         );
-        deps.insert("another_dep".to_owned(), Dependency::Simple("*".to_owned()));
+        deps.insert(
+            "another_dep".to_owned(),
+            Dependency::Simple(VersionReq::STAR),
+        );
 
         let mut names = extract_crate_names(&deps);
         names.sort(); // Sort for consistent assertion
@@ -132,7 +136,7 @@ mod tests {
         deps.insert(
             "detailed_dep".to_owned(),
             Dependency::Detailed(Box::new(DependencyDetail {
-                version: Some("1.0".to_owned()),
+                version: Some(VersionReq::parse("1.0").expect("valid version requirement")),
                 package: None, // No explicit package name.
                 ..Default::default()
             })),
@@ -149,7 +153,7 @@ mod tests {
         deps.insert(
             "alias_dep".to_owned(), // This is the alias.
             Dependency::Detailed(Box::new(DependencyDetail {
-                version: Some("1.0".to_owned()),
+                version: Some(VersionReq::parse("1.0").expect("valid version requirement")),
                 package: Some("real_crate_name".to_owned()), // Explicit package name.
                 ..Default::default()
             })),
@@ -164,7 +168,10 @@ mod tests {
     #[test]
     fn test_extract_mixed() {
         let mut deps = DepsSet::new();
-        deps.insert("simple".to_owned(), Dependency::Simple("1.0".to_owned()));
+        deps.insert(
+            "simple".to_owned(),
+            Dependency::Simple(VersionReq::parse("1.0").expect("valid version requirement")),
+        );
         deps.insert(
             "inherited".to_owned(),
             Dependency::Inherited(InheritedDependencyDetail {
@@ -175,7 +182,7 @@ mod tests {
         deps.insert(
             "detailed".to_owned(),
             Dependency::Detailed(Box::new(DependencyDetail {
-                version: Some("1.0".to_owned()),
+                version: Some(VersionReq::parse("1.0").expect("valid version requirement")),
                 ..Default::default()
             })),
         );
