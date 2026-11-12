@@ -123,7 +123,7 @@ jobs:
           # Build secret for fetching the private john-cd/book_tooling repository.
           GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
         run: |
-          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run \
+          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run \
             --rm --build --pull never \
             book
 
@@ -178,7 +178,7 @@ jobs:
           # fetch the private john-cd/book_tooling repository (see build_tools.yml).
           GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
         run: |
-          docker buildx bake -f compose.yaml -f compose-ci.yaml \
+          docker buildx bake -f compose.yaml -f compose.ci.yaml \
             --push --allow=fs.read=.. \
             --builder=${{ steps.builder.outputs.name }}
         working-directory: ./.devcontainer/
@@ -225,7 +225,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Run partitioned tests
         run: |
-          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run --rm \
+          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run --rm \
             -e NEXTEST_ARGS="--partition hash:${{ matrix.partition }}/2" \
             -e SKIP_BOOK_BUILD="true" \
             book
@@ -268,7 +268,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build the book
         run: |
-          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml run --rm \
+          docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run --rm \
             -e SKIP_TESTS="true" \
             -e BUILD_PDF="${{ inputs.build_pdf || false }}" \
             book

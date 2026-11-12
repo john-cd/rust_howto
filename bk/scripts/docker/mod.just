@@ -21,8 +21,8 @@ push_ci:
     docker login
     d="{{ root }}/../.devcontainer/"
     cd ${d}
-    docker buildx bake -f compose.yaml -f compose-ci.yaml --pull --push --allow=fs.read=..
-    ## OR: docker compose -f compose.yaml -f compose-ci.yaml build --pull --push
+    docker buildx bake -f compose.yaml -f compose.ci.yaml --pull --push --allow=fs.read=..
+    ## OR: docker compose -f compose.yaml -f compose.ci.yaml build --pull --push
 
 # Push the development Docker image to DockerHub.
 [group('push')]
@@ -36,7 +36,7 @@ list_services:
     d="{{ root }}/.devcontainer/"
     docker compose -f ${d}compose.yaml \
       -f ${d}compose.override.yaml \
-      -f ${d}compose-heavy-tests.yaml \
+      -f ${d}compose.heavy-tests.yaml \
       ps --all
 
 #down:
@@ -45,7 +45,7 @@ list_services:
 #  d="{{root}}/.devcontainer/"
 #  docker compose -f ${d}compose.yaml \
 #    -f ${d}compose.override.yaml \
-#    -f ${d}compose-heavy-tests.yaml down
+#    -f ${d}compose.heavy-tests.yaml down
 
 # List docker networks
 #list_networks:

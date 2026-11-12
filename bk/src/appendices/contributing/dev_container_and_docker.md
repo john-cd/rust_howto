@@ -70,8 +70,8 @@ Test the docker compose setup used during CI using:
 
 ```bash
 cd ./.devcontainer
-docker compose -f compose.yaml -f compose-ci.yaml build
-docker compose -f compose.yaml -f compose-ci.yaml run book # Or simply docker compose -f compose.yaml -f compose-ci.yaml up
+docker compose -f compose.yaml -f compose.ci.yaml build
+docker compose -f compose.yaml -f compose.ci.yaml run book # Or simply docker compose -f compose.yaml -f compose.ci.yaml up
 ```
 
 It uses the `ci` target in `.devcontainer/Dockerfile`.
