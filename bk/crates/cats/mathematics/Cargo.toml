@@ -96,8 +96,8 @@ cmaes = "0.2.2" # CMA-ES evolution strategy.
 fixed = "1.31.0"
 # Half-precision floating point f16 and bf16 types for Rust implementing the IEEE 754-2008 standard binary16 and bfloat16 types.
 half = "2.7.1"
-# General-purpose linear algebra library with transformations and statically-sized or dynamically-sized matrices.
-nalgebra = { version = "0.35.0", features = ["serde-serialize"] } # Pinned: ode_solvers 0.6.2 (latest) requires nalgebra ^0.34; nalgebra 0.35 is out.
+# General-purpose linear algebra library; pin 0.34.2 to match ode_solvers 0.6.2's matrix types.
+nalgebra = { version = "=0.34.2", features = ["serde-serialize"] }
 # An n-dimensional array for general elements and for numerics. Lightweight array views and slicing; views support chunking and splitting.
 ndarray = { version = "0.17.2", features = [
     "approx",
