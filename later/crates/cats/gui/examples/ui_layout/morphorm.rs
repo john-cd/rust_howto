@@ -199,7 +199,7 @@ impl Node for Entity {
     fn content_size(
         &self,
         _: &Self::Store,
-        _: &mut Self::SubLayout<'_>,
+        (): &mut Self::SubLayout<'_>,
         _: Option<f32>,
         _: Option<f32>,
     ) -> Option<(f32, f32)> {

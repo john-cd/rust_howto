@@ -159,7 +159,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature = "opentelemetry"))]
 mod entry_tests {
     use super::*;
 
