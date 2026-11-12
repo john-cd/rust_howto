@@ -5,8 +5,7 @@
 //!
 //! PKCS#8 is the standard container for private keys, which records the key
 //! algorithm along with the key bytes. It can be DER (binary) or PEM (Base64
-//! text with `-----BEGIN PRIVATE KEY-----` lines). Treat private keys as
-//! secrets.
+//! text with a standard label and encoded body). Treat private keys as secrets.
 
 // This example demonstrates how to encode and decode PKCS#8 private keys.
 // Security: `rsa` has no fix for RUSTSEC-2023-0071. This local key-format
@@ -14,14 +13,13 @@
 use std::fs::File;
 use std::io::Write as _;
 
-use rsa::RsaPrivateKey;
+use rand::rngs::SysRng;
+use rsa::PrivateKey;
 // Trait to parse a private key from a PKCS#8 encoded document:
 use rsa::pkcs8::DecodePrivateKey as _;
 // Trait to serialize a private key to a PKCS#8 encoded document:
 use rsa::pkcs8::EncodePrivateKey as _;
 use rsa::pkcs8::LineEnding;
-// Operating System's Random Number Generator:
-use rsa::rand_core::OsRng;
 // Components of an RSA private key:
 use rsa::traits::PrivateKeyParts as _;
 
@@ -35,8 +33,8 @@ use rsa::traits::PrivateKeyParts as _;
 /// and the data in the middle is the base 64 data.
 fn main() -> anyhow::Result<()> {
     // Generate an RSA keypair:
-    let mut rng = OsRng;
-    let private_key = RsaPrivateKey::new(&mut rng, 2048)?;
+    let mut rng = SysRng;
+    let private_key = PrivateKey::new(&mut rng, 2048)?;
 
     // Encode the private key in PKCS#8 format:
     let pkcs8_pem = private_key.to_pkcs8_pem(LineEnding::LF)?;
@@ -50,7 +48,7 @@ fn main() -> anyhow::Result<()> {
     let pem: String = std::fs::read_to_string("private_key.pem")?;
 
     // Decode the private key from PKCS#8:
-    let decoded_private_key = RsaPrivateKey::from_pkcs8_pem(&pem)?;
+    let decoded_private_key = PrivateKey::from_pkcs8_pem(&pem)?;
 
     // Verify that the decoded key is the same as the original:
     assert_eq!(private_key.primes(), decoded_private_key.primes());

@@ -13,19 +13,19 @@
 // Security: `rsa` has no fix for RUSTSEC-2023-0071. This example performs a
 // local round trip only; do not expose decryption timing to attackers or use
 // this crate for production cryptography.
-// Operating System's Random Number Generator compatible with rsa.
+// Operating system's cryptographically secure random number generator.
+use rand::rngs::SysRng;
 // Encryption using PKCS#1 v1.5 padding.
 use rsa::Pkcs1v15Encrypt;
 // Private and Public keys:
-use rsa::RsaPrivateKey;
-use rsa::RsaPublicKey;
-use rsa::rand_core::OsRng;
+use rsa::PrivateKey;
+use rsa::PublicKey;
 
 // RSA encryption and decryption.
 //
 // In this example, we:
-// - generate a 2048-bit RSA private key using `RsaPrivateKey::new`.
-// - derive the corresponding public key using `RsaPublicKey::from`.
+// - generate a 2048-bit RSA private key using `PrivateKey::new`.
+// - derive the corresponding public key using `PublicKey::from`.
 // - encrypt a message to be encrypted using the public key with
 // `PaddingScheme::new_pkcs1v15_encrypt`.
 // - decrypt the message using the private key with the same padding scheme.
@@ -43,12 +43,12 @@ fn main() {
     );
 
     // Generate a 2048-bit private key:
-    let mut rng = OsRng;
+    let mut rng = SysRng;
     let bits = 2048;
-    let private_key = RsaPrivateKey::new(&mut rng, bits).expect("failed to generate a key");
+    let private_key = PrivateKey::new(&mut rng, bits).expect("failed to generate a key");
 
     // Derive the public key from the private key:
-    let public_key = RsaPublicKey::from(&private_key);
+    let public_key = PublicKey::from(&private_key);
 
     // Encrypt the message using the public key:
     let encrypted_message = public_key
