@@ -14,6 +14,10 @@ publish.workspace = true
 keywords = ["book", "mdbook", "rustbook", "documentation"]
 categories = ["command-line-utilities", "text-processing", "parser-implementations"]
 
+[[bench]]
+name = "scrub_bench"
+harness = false
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = { workspace = true } # Adds chapter and directive context to preprocessing errors.
@@ -47,10 +51,6 @@ criterion = { workspace = true }
 mdbook-driver = { workspace = true }
 # A library for managing temporary files and directories.
 tempfile = { workspace = true }
-
-[[bench]]
-name = "scrub_bench"
-harness = false
 
 [lints]
 workspace = true

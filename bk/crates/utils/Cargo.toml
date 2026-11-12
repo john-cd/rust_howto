@@ -24,9 +24,9 @@ tracing = "0.1.44"
 # Recursively walk a directory.
 walkdir = "2.5.0"
 
-[lints]
-workspace = true
-
 [dev-dependencies]
 # A library for managing temporary files and directories.
 tempfile = "3.27.0"
+
+[lints]
+workspace = true
