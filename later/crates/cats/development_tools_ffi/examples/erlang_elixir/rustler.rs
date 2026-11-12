@@ -1,6 +1,14 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+#![cfg_attr(
+    feature = "erlang",
+    allow(
+        clippy::mem_forget,
+        reason = "Rustler's init macro keeps its generated function table alive for the VM lifetime"
+    )
+)]
+
 //! Native implemented functions for Erlang and Elixir with `rustler`.
 //!
 //! Erlang and Elixir run on the BEAM virtual machine, which is great at

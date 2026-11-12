@@ -13,6 +13,7 @@ uniffi::setup_scaffolding!();
 /// An error that crosses the language boundary as a native exception.
 #[derive(Debug, PartialEq, Eq, uniffi::Error)]
 #[uniffi(flat_error)]
+#[non_exhaustive]
 pub enum ArithmeticError {
     /// The result does not fit in a `u64`.
     IntegerOverflow,
