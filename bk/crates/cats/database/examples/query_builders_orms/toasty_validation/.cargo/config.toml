@@ -25,3 +25,6 @@ regex-automata = { opt-level = 0, debug = 2 }
 regex-syntax = { opt-level = 0, debug = 2 }
 smallvec = { opt-level = 0, debug = 2 }
 syn = { opt-level = 0, debug = 2 }
+
+[env]
+SCCACHE_BASEDIRS = { value = ".", relative = true }
