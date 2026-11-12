@@ -4,3 +4,6 @@
 # Shared build paths and sccache settings are inherited from the root .cargo/config.toml.
 
 # Lean debug info: halves build time and target size; panics keep readable backtraces.
+
+[env]
+SCCACHE_BASEDIRS = { value = ".", relative = true }

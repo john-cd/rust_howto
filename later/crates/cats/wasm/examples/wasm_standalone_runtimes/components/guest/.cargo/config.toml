@@ -15,3 +15,6 @@ memchr = { opt-level = 0, debug = 2 }
 proc-macro2 = { opt-level = 0, debug = 2 }
 quote = { opt-level = 0, debug = 2 }
 syn = { opt-level = 0, debug = 2 }
+
+[env]
+SCCACHE_BASEDIRS = { value = ".", relative = true }
