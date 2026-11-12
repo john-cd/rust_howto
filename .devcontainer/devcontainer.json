@@ -1,8 +1,9 @@
 // Dev Container setup
+// rust-howto devcontainer configuration uses a project-prefixed Compose service.
 // Keep this file as simple as possible and use Docker Compose files to configure the container instead.
 // For format details, see https://aka.ms/devcontainer.json.
 {
-  "name": "mdbook on Debian",
+  "name": "rust-howto - mdbook on Debian",
   // More info: https://containers.dev/guide/dockerfile
   "dockerComposeFile": [
     "compose.yaml",
@@ -10,7 +11,7 @@
   ],
   // The 'service' property is the name of the service in .devcontainer/compose.yaml
   // for the container that VS Code should use.
-  "service": "book",
+  "service": "rust-howto-book",
   // The optional 'workspaceFolder' property is the path VS Code should open by default when
   // connected. This is typically a file mount in .devcontainer/compose.yaml
   "workspaceFolder": "/code",

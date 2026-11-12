@@ -1,3 +1,6 @@
+# Project-scoped Compose stack: rust-howto-heavy-tests.
+# Build inputs come from tracked .devcontainer/.env; from the repo root pass --env-file .devcontainer/.env.
+# Keep credentials in ignored .devcontainer/.env.local; from the repo root pass it as a second --env-file when present.
 # TODO Reviewed ??-??-2026.
 
 # Services for tests that require a database or external cache or search engines
@@ -9,43 +12,44 @@
 # https://github.com/docker/awesome-compose
 # https://awesome-docker-compose.com
 #
+name: rust-howto-heavy-tests
 services:
-  book:
+  rust-howto-book:
     environment:
       RUST_LOG: debug
-      AMQP_ADDR: "amqp://${AMQP_USER:?Set AMQP_USER}:${AMQP_PASSWORD:?Set AMQP_PASSWORD}@rust_howto-amqp-1:5672"
+      AMQP_ADDR: "rust-howto-amqp://${AMQP_USER:?Set AMQP_USER}:${AMQP_PASSWORD:?Set AMQP_PASSWORD}@rust-howto-amqp:5672"
       # GreenMail serves implicit-TLS SMTP/IMAP with this test-only root certificate.
       SMTP_SERVER: mail
       SMTP_PORT: "3465"
       SMTP_USERNAME: ${MAIL_USER:?Set MAIL_USER}
       SMTP_PASSWORD: ${MAIL_PASSWORD:?Set MAIL_PASSWORD}
-      SMTP_FROM: ${MAIL_USER}@localhost
-      SMTP_TO: ${MAIL_USER}@localhost
-      IMAP_HOST: mail
+      SMTP_FROM: ${MAIL_USER:?Set MAIL_USER in .devcontainer/.env or the host environment}@localhost
+      SMTP_TO: ${MAIL_USER:?Set MAIL_USER in .devcontainer/.env or the host environment}@localhost
+      IMAP_HOST: rust-howto-mail
       IMAP_PORT: "3993"
-      IMAP_USER: ${MAIL_USER}
-      IMAP_PASSWORD: ${MAIL_PASSWORD}
+      IMAP_USER: ${MAIL_USER:?Set MAIL_USER in .devcontainer/.env or the host environment}
+      IMAP_PASSWORD: ${MAIL_PASSWORD:?Set MAIL_PASSWORD in .devcontainer/.env.local or the host environment}
       IMAP_EXPECTED_SUBJECT: "Rust How-To local IMAP fixture"
       MAIL_TLS_ROOT_CERT: /tmp/mail-test.crt
-      CASSANDRA_ADDR: cassandra:9042
-      ELASTICSEARCH_ADDR: http://elasticsearch:9200
-      MEILISEARCH_ADDR: http://meilisearch:7700
-      MONGODB_URI: "mongodb://${MONGODB_USER:?Set MONGODB_USER}:${MONGODB_PASSWORD:?Set MONGODB_PASSWORD}@mongodb:27017"
-      MSSQL_ADDR: mssql:1433
-      ORACLE_ADDR: oracle:1521
+      CASSANDRA_ADDR: rust-howto-cassandra:9042
+      ELASTICSEARCH_ADDR: http://rust-howto-elasticsearch:9200
+      MEILISEARCH_ADDR: http://rust-howto-meilisearch:7700
+      MONGODB_URI: "rust-howto-mongodb://${MONGODB_USER:?Set MONGODB_USER}:${MONGODB_PASSWORD:?Set MONGODB_PASSWORD}@rust-howto-mongodb:27017"
+      MSSQL_ADDR: rust-howto-mssql:1433
+      ORACLE_ADDR: rust-howto-oracle:1521
       ORACLE_CONNECT_STRING: oracle:1521/FREEPDB1
       ORACLE_USER: system
       ORACLE_USERNAME: system
       ORACLE_PASSWORD: ${ORACLE_PASSWORD:?Set ORACLE_PASSWORD}
-      ORACLE_DB_URL: oracle:1521/FREEPDB1
+      ORACLE_DB_URL: rust-howto-oracle:1521/FREEPDB1
       ORACLE_DB_USERNAME: system
       ORACLE_DB_PASSWORD: ${ORACLE_PASSWORD:?Set ORACLE_PASSWORD}
-      POSTGRES_ADDR: postgres:5432
-      REDIS_HOSTNAME: redis:6379
+      POSTGRES_ADDR: rust-howto-postgres:5432
+      REDIS_HOSTNAME: rust-howto-redis:6379
     volumes:
       - ./mail-test.crt:/tmp/mail-test.crt:ro
 
-  amqp:
+  rust-howto-amqp:
     image: ${RABBITMQ_IMAGE:?RabbitMQ image must be defined}
     environment:
       RABBITMQ_DEFAULT_USER: ${AMQP_USER:?Set AMQP_USER}
@@ -54,14 +58,14 @@ services:
       - "5672:5672"
       - "15672:15672"
 
-  cassandra:
+  rust-howto-cassandra:
     image: ${CASSANDRA_IMAGE:?Cassandra image must be defined}
     ports:
       - 9042:9042
     environment:
       - CASSANDRA_CLUSTER_NAME=cassandra_infra
 
-  elasticsearch:
+  rust-howto-elasticsearch:
     image: ${ELASTICSEARCH_IMAGE:?Elasticsearch image must be defined}
     environment:
       discovery.type: single-node
@@ -81,7 +85,7 @@ services:
       timeout: 10s
       retries: 3
 
-  meilisearch:
+  rust-howto-meilisearch:
     image: ${MEILISEARCH_IMAGE:?Meilisearch image must be defined}
     ports:
       - 7700:7700
@@ -90,7 +94,7 @@ services:
     restart: unless-stopped
 
   # https://hub.docker.com/_/mongo
-  mongodb:
+  rust-howto-mongodb:
     image: ${MONGODB_IMAGE:?MongoDB image must be defined}
     ports:
       - "27017:27017"
@@ -102,7 +106,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER:?Set MONGODB_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD:?Set MONGODB_PASSWORD}
 
-  mssql:
+  rust-howto-mssql:
     image: ${MSSQL_IMAGE:?SQL Server image must be defined}
     ports:
       - 1433:1433
@@ -110,26 +114,26 @@ services:
       MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Set MSSQL_SA_PASSWORD}
       ACCEPT_EULA: "Y"
 
-  oracle:
+  rust-howto-oracle:
     image: ${ORACLE_IMAGE:?Oracle image must be defined}
     environment:
       - ORACLE_PASSWORD=${ORACLE_PASSWORD:?Set ORACLE_PASSWORD}
     ports:
       - 1521:1521
 
-  postgres:
+  rust-howto-postgres:
     image: ${POSTGRES_IMAGE:?PostgreSQL image must be defined}
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
       - POSTGRES_DB=library
     restart: always
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - rust-howto-db-data:/var/lib/postgresql/data
     expose:
       - 5432
 
   # Local TLS mail server (SMTPS on 3465, IMAPS on 3993) with a preloaded unseen message.
-  mail:
+  rust-howto-mail:
     image: ${MAIL_IMAGE:?Mail server image must be defined}
     environment:
       GREENMAIL_OPTS: >-
@@ -148,7 +152,7 @@ services:
     restart: unless-stopped
 
   # https://hub.docker.com/_/redis
-  redis:
+  rust-howto-redis:
     image: ${REDIS_IMAGE:?Redis image must be defined}
     restart: always
     # command: redis-server --requirepass yourpassword # or edit redis.conf
@@ -156,4 +160,4 @@ services:
       - 6379
 
 volumes:
-  db_data: {}
+  rust-howto-db-data: {}
